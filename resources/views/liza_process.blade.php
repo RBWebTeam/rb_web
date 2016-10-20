@@ -57,7 +57,7 @@
 			 <option>have</option>
 			 <option>have not</option>
 			 </select> 
-			delayed/defaulted on a Loan EMI or Credit Card payment in the last 3 m  onths..</h3> 
+			delayed/defaulted on a Loan EMI or Credit Card payment in the last 3 months..</h3> 
 			</div>
 			
 			<div class="text-center" style="display:none;" id="btn_step1">
@@ -68,7 +68,7 @@
 	   
 	  
 	   <div class="col-md-4 liza1" >
-			<div class="text-center guid" id="pop1">En     ter your monthly takehome salary here!
+			<div class="text-center guid" id="pop1">Enter your monthly takehome salary here!
 	Without any performance bonus or incentives!</div>
 <div class="patch"><img src="images/patch_down.png"></div>
         <div class="text-center img1"><img src="images/photo.jpg"></div>

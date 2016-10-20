@@ -61,7 +61,7 @@
 			</div>
 			
 			<div class="text-center" style="display:none;" id="btn_step1">
-			<button class="btn btn-primary btn-outline with-arrow animate-box" >Con    tinue<i class="icon-arrow-right"></i></button>
+			<button class="btn btn-primary btn-outline with-arrow animate-box" >Continue<i class="icon-arrow-right"></i></button>
 			</div>
 		</div>
 	   

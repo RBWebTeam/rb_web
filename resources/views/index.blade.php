@@ -24,7 +24,7 @@
 		   				<div class="slider-text-inner">
 		   					<h2 class="slide-head">Personal Loan</h2>
 							<p>Stay ahead of the curve with the Best in the Market</p>
-		   					<p><a href="#" class="btn btn-primary btn-lg">View More</a></p>
+		   					<p><a href="{{URL::to('personal_loan')}}" class="btn btn-primary btn-lg">View More</a></p>
 		   				</div>
 		   			</div>
 		   		

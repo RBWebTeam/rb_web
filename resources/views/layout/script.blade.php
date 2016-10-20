@@ -21,6 +21,8 @@
         //alert(obj.options[obj.selectedIndex].value);
 
         document.getElementById(val).style.display='block';
+        $('#pop1').empty();
+        $('#pop1').append( "<p>Enter the amount you want</p>" );
         return false;
       }
 

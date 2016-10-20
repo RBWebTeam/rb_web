@@ -67,9 +67,9 @@
 	   
 	   
 	  
-	   <div class="col-md-4 liza1">
-		<div class="text-center guid">Enter your monthly takehome salary here!
-Without any performance bonus or incentives!</div>
+	   <div class="col-md-4 liza1" >
+			<div class="text-center guid" id="pop1">Enter your monthly takehome salary here!
+	Without any performance bonus or incentives!</div>
 <div class="patch"><img src="images/patch_down.png"></div>
         <div class="text-center img1"><img src="images/photo.jpg"></div>
 		</div>

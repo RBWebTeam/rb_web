@@ -57,7 +57,7 @@
 			 <option>have</option>
 			 <option>have not</option>
 			 </select> 
-			delayed/defaulted on a Loan EMI or Credit Card payment in the last 3 months..</h3> 
+			delayed/defaulted on a Loan EMI or Credit Card payment in the last 3 m  onths..</h3> 
 			</div>
 			
 			<div class="text-center" style="display:none;" id="btn_step1">

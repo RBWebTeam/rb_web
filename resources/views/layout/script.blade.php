@@ -25,11 +25,44 @@
         $('#pop1').append( "<p>Enter the amount you want</p>" );
         return false;
       }
+       function changeDiv(prv,nxt){
 
+        //alert(obj.options[obj.selectedIndex].value);
+
+        document.getElementById(prv).style.display='none';
+        document.getElementById(nxt).style.display='block';
+        $('#pop1').empty();
+        $('#pop1').append( "<p>Great! please fill this form too</p>" );
+        window.scrollTo(0, 0);
+        return false;
+      }
+
+  function yr_months(yr,mnth,obj){
+
+        //alert(obj.options[obj.selectedIndex].value);
+        var m=$("#"+mnth).val();
+        var y= parseInt($("#"+mnth).val(),10) /12;
+        var new_y=parseInt(y,10);
+        if(m>=12)
+          {
+            var new_m=parseInt($("#"+mnth).val(),10) % 12;
+            $('#'+yr).empty();
+            $('#'+yr).val(parseInt($("#"+yr).val(),10)+new_y);
+            $('#'+mnth).empty();
+            $('#'+mnth).val(new_m);
+            $('#pop1').empty();
+            $('#pop1').append( "<p>1 year has 12 months only</p>" );
+          }else{
+            $('#pop1').empty();
+            $('#pop1').append( "<p>you really seems expierienceed in your line of work</p>" );
+          }
+          document.getElementById(obj).style.display='block';
+          return false;
+      }
       function changeText(obj,val){
-        $('input[name="loanamt"]').keyup(function() {
+        $("#"+obj).keyup(function() {
           var x=$(this).val().length ;
-        if (x>=5 && x<=8) {
+        if ((obj=='total_sal' && x>=4) ||(x>=5 && x<=8) ) {
         document.getElementById(val).style.display='block';
         return false;
       }

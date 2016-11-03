@@ -52,12 +52,19 @@
 						<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" data-target="#">SME Loan &nbsp;<i class="icon-chevron-down"></i></a>
 						 
 						 <ul class="dropdown-menu">
-						    <li><a href="#">Home Loan</a></li>
-							<li><a href="{{URL::to('personal_loan')}}">Personal Loan</a></li>
-							<li><a href="#">Loan against Property</a></li>
-							<li><a href="#">SME Loan</a></li>
-							<li><a href="#">Home Loan Transfer</a></li>
-							<li><a href="#">Car Loan</a>
+						    <li>
+							<a href="#">Unsequenced Business Loan</a>
+							<a href="#">Loan against Property</a>
+							<a href="#">Commercial Property Purchase</a>
+							</li>
+							<li>
+							<a href="#">Lease Rent Discounting</a>
+							<a href="#">Working capital</a>
+							<a href="#">Export/Import Finance</a>
+						
+							</li>
+							<li><a href="#">Over Draft / cash Credit</a></li>
+							
 							</li>
 						</ul>
 						</li>

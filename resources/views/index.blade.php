@@ -127,12 +127,12 @@
 	</div>
 	<div id="fh5co-services-section">
 		<div class="container borrd-btm">
-			<div class="row">
+			<!-- <div class="row">
 				<div class="col-md-6 col-md-offset-3 text-center fh5co-heading animate-box">
 					<h2>Get Free Quote </h2>
 					<p class="mrg-btm">Our strong relationship with leading Banks means we can give you the confidence you need to make the right choice.</p>
 				</div>
-			</div>
+			</div> -->
 			<div class="row dv-hr">
 				<div class="col-md-2 animate-box h3-pd-btm">
 					<div class="services">
@@ -209,7 +209,7 @@
 			<div class="row">
 				<div class="pricing">
 					<div class="col-md-3 animate-box">
-						<div class="price-box">
+						<div class="price-box popular">
 							
 							<div class="icon-style"><img src="{{URL::to('images/icon1.png')}}" /></div>
 							<h4 class="mrg-btm">Buy With Confidence</h4>
@@ -219,7 +219,7 @@
 					</div>
 
 					<div class="col-md-3 animate-box">
-						<div class="price-box">
+						<div class="price-box popular">
 							<div class="icon-style"><img src="{{URL::to('images/icon2.png')}}" /></div>
 							<h4 class="mrg-btm">Experts in small stuff</h4>
 							<p>Our Experts take care of all the small & big Terms & conditions so that you enjoy what really matters to you.</p>
@@ -237,7 +237,7 @@
 					</div>
 
 					<div class="col-md-3 animate-box">
-						<div class="price-box">
+						<div class="price-box popular">
 							<div class="icon-style"><img src="{{URL::to('images/icon4.png')}}" /></div>
 							<h4 class="mrg-btm">Your way or Highway</h4>
 							<p>We don't push, We give you plenty of options, solution & facts, its your call, your decision. We are only here to help you.</p>

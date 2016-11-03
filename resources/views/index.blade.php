@@ -1,6 +1,4 @@
 @include('layout.header')
-
-	
     <div class="container">
 	<aside id="fh5co-hero">
 	<div class=""></div>

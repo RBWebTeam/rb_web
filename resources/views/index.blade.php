@@ -12,7 +12,7 @@
 		   			<div class="slider-text">
 		   				<div class="slider-text-inner">
 		   					<h2 class="slide-head">Home Loan aSAsaS</h2>
-							<p>Stay ahead of the curve with the Best in the Market</p>
+							<p>Stay ahead of the curveaaaaaaa with the Best in the Market</p>
 		   					<p><a href="#" class="btn btn-primary btn-lg">View More</a></p>
 		   				</div>
 		   			</div>

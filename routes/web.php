@@ -26,4 +26,5 @@ Route::get('compare','CompareController@compare');
 Route::get('emi','CompareController@emi');
 Route::get('credit-report','CompareController@credit_report');
 Route::get('contact-us','ContactController@contact_us'); //not linked to index till now
-
+//sidebar forms
+Route::post('sidebar','FormController@sidebar');

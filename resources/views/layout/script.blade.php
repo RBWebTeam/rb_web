@@ -3,6 +3,7 @@
         <!-- jQuery -->
         
     <script src="{{URL::to('js/jquery.min.js')}}"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
     <script>
            $('ul.dropdown-menu [data-toggle=dropdown]').on('click', function(event) {
     // Avoid following the href location when clicking
@@ -149,21 +150,25 @@ $(document).ready(function(){
           <h4 class="modal-title">Instant Call Back</h4>
         </div>
         <div class="modal-body">
-          <form name="subscribe-form" id="subscribe-form1" method="post">
+          <form name="instant_call_form" id="instant_call_form" method="post" >
+          {{ csrf_field() }}
+          <input type="hidden" name="form" value="instant_call">
+          <input type="hidden" name="url" value="">
 									<div>
 										<fieldset>
-											<input class="newsletter-name" name="" placeholder="Name" required>
+											<input class="newsletter-name" name="name" placeholder="Name" required>
 										</fieldset>
 										</div>
 									<div>
 										<fieldset>
-											<input type="text" class="newsletter-name" name="" pattern="[789][0-9]{9}" required maxlength="10" placeholder="Mobile Number">
+											<input type="text" class="newsletter-name" name="contact" pattern="[789][0-9]{9}" required maxlength="10" placeholder="Mobile Number">
 										</fieldset>									
 										</div>
 									<div>
-											<button class="btn btn-primary btn-outline with-arrow">Submit<i class="icon-arrow-right"></i></button>
+											<a class="btn btn-primary btn-outline with-arrow" id="instant_call_submit">Submit<i class="icon-arrow-right"></i></a>
 									</div>
 						</form>
+            <div id='msg' style="display: none;"><p>Thanks. We will reach you soon.</p></div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -184,15 +189,15 @@ $(document).ready(function(){
           <h4 class="modal-title">Talk To Us</h4>
         </div>
         <div class="modal-body">
-          <form name="subscribe-form" id="subscribe-form1" method="post">
+          <form name="talk_to_us_form" id="talk_to_us_form" method="post">
 									<div>
 										<fieldset>
-											<input class="newsletter-name" name="" placeholder="Name" required>
+											<input class="newsletter-name" name="name" placeholder="Name" required>
 										</fieldset>
 										</div>
 									<div>
 										<fieldset>
-											<input type="text" class="newsletter-name" name="" pattern="[789][0-9]{9}" required maxlength="10" placeholder="Mobile Number">
+											<input type="text" class="newsletter-name" name="contact" pattern="[789][0-9]{9}" required maxlength="10" placeholder="Mobile Number">
 										</fieldset>									
 										</div>
 									<div>
@@ -219,15 +224,15 @@ $(document).ready(function(){
           <h4 class="modal-title">Email Us</h4>
         </div>
         <div class="modal-body">
-          <form name="subscribe-form" id="subscribe-form1" method="post">
+          <form name="email_us_form" id="email_us_form" method="post">
 									<div>
 										<fieldset>
-											<input class="newsletter-name" name="" placeholder="Name" required>
+											<input class="newsletter-name" name="name" placeholder="Name" required>
 										</fieldset>
 										</div>
 									<div>
 										<fieldset>
-											<input type="text" class="newsletter-name" name="" pattern="[789][0-9]{9}" required maxlength="10" placeholder="Mobile Number">
+											<input type="email" class="newsletter-name" name="email"  required  placeholder="Email address">
 										</fieldset>									
 										</div>
 									<div>
@@ -254,15 +259,15 @@ $(document).ready(function(){
           <h4 class="modal-title">Help</h4>
         </div>
         <div class="modal-body">
-          <form name="subscribe-form" id="subscribe-form1" method="post">
+          <form name="help_form" id="help_form" method="post">
 									<div>
 										<fieldset>
-											<input class="newsletter-name" name="" placeholder="Name" required>
+											<input class="newsletter-name" name="name" placeholder="Name" required>
 										</fieldset>
 										</div>
 									<div>
 										<fieldset>
-											<input type="text" class="newsletter-name" name="" pattern="[789][0-9]{9}" required maxlength="10" placeholder="Mobile Number">
+											<input type="text" class="newsletter-name" name="contact" pattern="[789][0-9]{9}" required maxlength="10" placeholder="Mobile Number">
 										</fieldset>									
 										</div>
 									<div>
@@ -278,7 +283,34 @@ $(document).ready(function(){
     </div>
   </div>
 <!---Help End -->
+<script type="text/javascript">
+  $(document).ready(function(){
+   
+     $("#instant_call_submit").click(function(event){
+    event.preventDefault();
+    $form=$('#instant_call_form');
+    if(! $form.valid()){
+      return false;
+    }else{
+      $.ajax({  
+               type: "POST",  
+               url: "{{URL::to('sidebar')}}",
+               data : $('#instant_call_form').serialize(),
+               success: function(msg){
+                if(msg=='true'){
+                  $('#instant_call_form').hide();
+                  $('#msg').show();
+                }
+                //console.log(msg);
+               }  
+               }); 
 
+    }
+    
+  });
+  });
+ 
+</script>
 	</body>
 </html>
 

@@ -14,7 +14,7 @@
 Route::get('/', function () {
     return view('index');
 });
-Route::get('personal_loan','PersonalLoanController@index');
+Route::get('personal-loan','PersonalLoanController@index');
 Route::get('apply_personal_loan','PersonalLoanController@apply');
 Route::get('compare','CompareController@compare');
 Route::get('emi','CompareController@emi');

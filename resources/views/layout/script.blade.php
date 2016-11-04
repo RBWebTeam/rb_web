@@ -138,7 +138,7 @@ $(document).ready(function(){
     $.fn.bootstrapCarousel = $.fn.carousel;
     delete $.fn.carousel;
 </script>
-<!---Instant Call Back Start ----------->
+<!---Instant Call Back Start-->
 <div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog">
     
@@ -157,7 +157,7 @@ $(document).ready(function(){
 										</div>
 									<div>
 										<fieldset>
-											<input type="text" class="newsletter-name" name=""pattern="[789][0-9]{9}" required maxlength="10" placeholder="Mobile Number">
+											<input type="text" class="newsletter-name" name="" pattern="[789][0-9]{9}" required maxlength="10" placeholder="Mobile Number">
 										</fieldset>									
 										</div>
 									<div>
@@ -172,8 +172,8 @@ $(document).ready(function(){
       
     </div>
   </div>
-<!---Instant Call Back End ----------->
-<!---Talk to us Start ----------->
+<!---Instant Call Back End -->
+<!---Talk to us Start -->
 <div class="modal fade" id="myModal1" role="dialog">
     <div class="modal-dialog">
     
@@ -192,7 +192,7 @@ $(document).ready(function(){
 										</div>
 									<div>
 										<fieldset>
-											<input type="text" class="newsletter-name" name=""pattern="[789][0-9]{9}" required maxlength="10" placeholder="Mobile Number">
+											<input type="text" class="newsletter-name" name="" pattern="[789][0-9]{9}" required maxlength="10" placeholder="Mobile Number">
 										</fieldset>									
 										</div>
 									<div>
@@ -207,8 +207,8 @@ $(document).ready(function(){
       
     </div>
   </div>
-<!---Talk To Us End ----------->
-<!---Email Us Start ----------->
+<!---Talk To Us End -->
+<!---Email Us Start -->
 <div class="modal fade" id="myModal2" role="dialog">
     <div class="modal-dialog">
     
@@ -227,7 +227,7 @@ $(document).ready(function(){
 										</div>
 									<div>
 										<fieldset>
-											<input type="text" class="newsletter-name" name=""pattern="[789][0-9]{9}" required maxlength="10" placeholder="Mobile Number">
+											<input type="text" class="newsletter-name" name="" pattern="[789][0-9]{9}" required maxlength="10" placeholder="Mobile Number">
 										</fieldset>									
 										</div>
 									<div>
@@ -242,8 +242,8 @@ $(document).ready(function(){
       
     </div>
   </div>
-<!---Email Us End ----------->
-<!---Help Start ----------->
+<!---Email Us End -->
+<!---Help Start -->
 <div class="modal fade" id="myModal3" role="dialog">
     <div class="modal-dialog">
     
@@ -262,7 +262,7 @@ $(document).ready(function(){
 										</div>
 									<div>
 										<fieldset>
-											<input type="text" class="newsletter-name" name=""pattern="[789][0-9]{9}" required maxlength="10" placeholder="Mobile Number">
+											<input type="text" class="newsletter-name" name="" pattern="[789][0-9]{9}" required maxlength="10" placeholder="Mobile Number">
 										</fieldset>									
 										</div>
 									<div>
@@ -277,7 +277,7 @@ $(document).ready(function(){
       
     </div>
   </div>
-<!---Help End --------- -->
+<!---Help End -->
 
 	</body>
 </html>

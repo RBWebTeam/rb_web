@@ -3,8 +3,8 @@
 	
 	<aside id="fh5co-hero">
 	<div class="col-md-12">
-	<p class="text-left"><a href="{{URL::to('/')}}">Home</a>/Personal Loan</p>
-	<h2 class="align-center loan-head">Personal Loan</h2>
+	<p class="text-left"><a href="{{URL::to('/')}}">Home</a>/Loan Against Property</p>
+	<h2 class="align-center loan-head">Loan Against Property</h2>
 	</div>
 	<div class=""></div>
 	<div class="flexslider col-md-7 slide-left">
@@ -105,7 +105,7 @@
 								 <li>Comapre with 100 banks.</li>
 							</ul>
 						
-							<a class="btn btn-primary btn-outline with-arrow">Compare<i class="icon-arrow-right"></i></a>
+							<a class="btn btn-primary btn-outline with-arrow" href="{{URL::to('compare')}}" >Compare<i class="icon-arrow-right"></i></a>
 						</div>
 					</div>
 
@@ -118,7 +118,7 @@
 								 <li>check your elgibility</li>
 								 <li>calculate your EMIs.</li>
 							</ul>
-							<a class="btn btn-primary btn-outline with-arrow">Calculate EMI<i class="icon-arrow-right"></i></a>
+							<a class="btn btn-primary btn-outline with-arrow" href="{{URL::to('emi')}}">Calculate EMI<i class="icon-arrow-right"></i></a>
 						</div>
 					</div>
 					

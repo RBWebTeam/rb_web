@@ -10,7 +10,9 @@ class PersonalLoanController extends Controller
 {
     //
     public function index(){
-    	return view('personal_loan');
+    	$data['title']='Personal Loan';
+    	$data['description']='Apply for Personal Loan';
+    	return view('personal_loan')->with($data);
     }
  	public function apply(){
     	return view('liza_process');

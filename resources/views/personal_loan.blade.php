@@ -1,36 +1,4 @@
 @include('layout.header')
-	<div id="fh5co-page">
-	<header id="fh5co-header" role="banner" class="navbar navbar-default navbar-fixed-top">
-		<div class="container">
-			<div class="header-inner">
-				<h1><a href="index.html"><img src="images/logo.png" width="160" height="47" /></a></h1>
-				<nav role="navigation">
-					<ul>
-						<!--- <li><a href="index.html">Home</a></li> - -->
-						
-						<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" data-target="#">SME Loan &nbsp;<i class="icon-chevron-down"></i></a>
-						 <ul class="dropdown-menu">
-						    <li><a href="#">Home Loan</a></li>
-							<li><a href="#">Personal Loan</a></li>
-							<li><a href="#">Loan against Property</a></li>
-							<li><a href="#">SME Loan</a></li>
-							<li><a href="#">Home Loan Transfer</a></li>
-							<li><a href="#">Car Loan</a></li>
-						</ul>
-						
-						</li>
-						<li><a href="#">Retail Loan</a></li>
-						<li><a href="#">Other Loan</a></li>
-						<li><a href="#">Credit Loan</a></li>
-						<li><a href="#">Balance Transfer</a></li>
-						<!--- <li class="cta"><a href="#">Apply For Loan</a></li>--->
-                        <!--- <li class="con-no">1800-267-629-6</li> --->
-					</ul>
-				</nav>
-			</div>
-		</div>
-	</header>
-	<!-----------------------------Header End -------------------------------------- -->
     <div class="container">
 	
 	<aside id="fh5co-hero">

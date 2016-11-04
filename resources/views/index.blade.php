@@ -11,7 +11,7 @@
 		   				<div class="slider-text-inner">
 		   					<h2 class="slide-head">Home Loan </h2>
 							<p>Stay ahead of the curve with the Best in the Market</p>
-		   					<p><a href="#" class="btn btn-primary btn-lg">View More</a></p>
+		   					<p><a href="{{URL::to('home-loan')}}" class="btn btn-primary btn-lg">View More</a></p>
 		   				</div>
 		   			</div>
 		   		
@@ -31,10 +31,9 @@
 		   		   <br>
 		   			<div class="slider-text">
 		   				<div class="slider-text-inner">
-						    <h2>Loan</h2>
-		   					<h2 class="slide-head">against Property</h2>
+		   					<h2 class="slide-head"> Loan against Property</h2>
 							<p>Stay ahead of the curve with the Best in the Market</p>
-		   					<p><a href="#" class="btn btn-primary btn-lg">View More</a></p>
+		   					<p><a href="{{URL::to('loan-against-property')}}" class="btn btn-primary btn-lg">View More</a></p>
 		   				</div>
 		   			</div>
 		   		
@@ -45,7 +44,7 @@
 		   				<div class="slider-text-inner">
 		   					<h2 class="slide-head">SME Loan</h2>
 							<p>Stay ahead of the curve with the Best in the Market</p>
-		   					<p><a href="#" class="btn btn-primary btn-lg">View More</a></p>
+		   					<p><a href="{{URL::to('sme-loan')}}" class="btn btn-primary btn-lg">View More</a></p>
 		   				</div>
 		   			</div>
 		   		
@@ -56,7 +55,7 @@
 		   				<div class="slider-text-inner">
 		   					<h2 class="slide-head">Home Loan Transfer</h2>
 							<p>Stay ahead of the curve with the Best in the Market</p>
-		   					<p><a href="#" class="btn btn-primary btn-lg">View More</a></p>
+		   					<p><a href="{{URL::to('home-loan-transfer')}}" class="btn btn-primary btn-lg">View More</a></p>
 		   				</div>
 		   			</div>
 		   		
@@ -67,7 +66,7 @@
 		   				<div class="slider-text-inner">
 		   					<h2 class="slide-head">Car Loan</h2>
 							<p>Stay ahead of the curve with the Best in the Market</p>
-		   					<p><a href="#" class="btn btn-primary btn-lg">View More</a></p>
+		   					<p><a href="{{URL::to('car-loan')}}" class="btn btn-primary btn-lg">View More</a></p>
 		   				</div>
 		   			</div>
 		   		

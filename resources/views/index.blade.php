@@ -135,62 +135,68 @@
 			<div class="row dv-hr">
 				<div class="col-md-2 animate-box h3-pd-btm">
 					<div class="services">
-						
+						<a class="anchor_decoration" href="{{URL::to('home-loan')}}">
 						<div class="desc">
 						<i class="icon-home"></i>
 							<h3>Home Loan</h3>
 							
 						</div>
+						</a>
 					</div>
 				</div>
 				<div class="col-md-2 animate-box h3-pd-btm">
 					<div class="services">
-						
+						<a class="anchor_decoration" href="{{URL::to('personal-loan')}}">
 						<div class="desc">
 						<i class="icon-user"></i>
 							<h3>Personal Loan</h3>
 							
 						</div>
+						</a>
 					</div>
 				</div>
 				<div class="col-md-2 animate-box h3-pd-btm">
 					<div class="services">
-						
+						<a class="anchor_decoration" href="{{URL::to('loan-against-property')}}">
 						<div class="desc">
 						<i class="icon-money"></i>
 							<h3>Loan against <br>Property</h3>
 						
 						</div>
+						</a>
 					</div>
 				</div>
 				<div class="col-md-2 animate-box h3-pd-btm">
 					<div class="services">
-						
+						<a class="anchor_decoration" href="{{URL::to('sme-loan')}}">
 						<div class="desc">
 						<i class="icon-tablet"></i>
 							<h3>SME Loan</h3>
 						
 						</div>
+						</a>
 					</div>
 				</div>
 				<div class="col-md-2 animate-box h3-pd-btm">
 					<div class="services">
-						
+						<a class="anchor_decoration" href="{{URL::to('home-loan-transfer')}}">
 						<div class="desc">
 						<i class="icon-line-chart"></i>
 							<h3>Home <br> Loan Transfer</h3>
 							
 						</div>
+						</a>
 					</div>
 				</div>
 				<div class="col-md-2 animate-box h3-pd-btm">
 					<div class="services">
-						
+						<a class="anchor_decoration" href="{{URL::to('car-loan')}}">
 						<div class="desc">
 						<i class="icon-car"></i>
 							<h3>Car Loan</h3>
 						
 						</div>
+						</a>
 					</div>
 				</div>
 			</div>

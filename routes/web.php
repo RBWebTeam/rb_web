@@ -23,8 +23,9 @@ Route::get('car-loan','LoanController@car_loan');
 
 Route::get('apply_personal_loan','LoanController@apply');
 Route::get('compare','CompareController@compare');
+Route::get('view-loan','CompareController@view_loan');
 Route::get('emi','CompareController@emi');
 Route::get('credit-report','CompareController@credit_report');
-Route::get('contact-us','ContactController@contact_us'); //not linked to index till now
+Route::get('contact-us','ContactController@contact_us'); //not linked to index page till now
 //sidebar forms
 Route::post('sidebar','FormController@sidebar');

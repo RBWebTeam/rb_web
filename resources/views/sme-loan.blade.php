@@ -3,8 +3,8 @@
 	
 	<aside id="fh5co-hero">
 	<div class="col-md-12">
-	<p class="text-left"><a href="{{URL::to('/')}}">Home</a>/Personal Loan</p>
-	<h2 class="align-center loan-head">Personal Loan</h2>
+	<p class="text-left"><a href="{{URL::to('/')}}">Home</a>/Sme Loan</p>
+	<h2 class="align-center loan-head">SME Loan</h2>
 	</div>
 	<div class=""></div>
 	<div class="flexslider col-md-7 slide-left">

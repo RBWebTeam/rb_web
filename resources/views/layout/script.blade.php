@@ -288,7 +288,9 @@ $(document).ready(function(){
    
      $("#instant_call_submit").click(function(event){
     event.preventDefault();
-    $form=$('#instant_call_form');
+    var form=$(this).closest("form").attr('id');
+    //console.log(form);return false;
+    $form=$('#'+form);
     if(! $form.valid()){
       return false;
     }else{
@@ -298,7 +300,7 @@ $(document).ready(function(){
                data : $('#instant_call_form').serialize(),
                success: function(msg){
                 if(msg=='true'){
-                  $('#instant_call_form').hide();
+                  $form.hide();
                   $('#msg').show();
                 }
                 //console.log(msg);

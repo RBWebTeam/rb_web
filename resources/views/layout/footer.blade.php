@@ -1,4 +1,30 @@
-<div class="container">
+<div class="fh5co-cta" style="background-image: url(images/slide_2.jpg);">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="col-md-12 text-center animate-box">
+                <h3>Want to save your Hard-earned Money?</h3>
+                <p>Subscribe to our monthly newsletter</p>
+                <form name="subscribe-form" id="subscribe-form1" method="post">
+                                    <div class=" col-sm-offset-1 col-sm-4">
+                                        <fieldset>
+                                            <input class="newsletter-name" id="" name="" placeholder="Name" required>
+                                        </fieldset>
+                                        </div>
+                                    <div class="col-sm-4">
+                                        <fieldset>
+                                            <input type="text" class="newsletter-name" name="" pattern="[789][0-9]{9}" required maxlength="10" placeholder="Mobile Number">
+                                        </fieldset>                                 
+                                        </div>
+                                    <div class="col-sm-2 btncent">
+                                    <button class="btn btn-primary btn-outline with-arrow">Call Me Now<i class="icon-arrow-right"></i></button>
+        
+                                    </div>
+                        </form>
+                
+            </div>
+        </div>
+    </div>
+    <div class="container">
 <div class="col-md-12 quotes"><h2>Quotes generated till date :25856</h2></div>
 </div>
 	<footer id="fh5co-footer" role="contentinfo">

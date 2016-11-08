@@ -303,7 +303,7 @@ $(document).ready(function(){
     alert("ok");
    });
 
-     $("#instant_call_submit").click(function(event){
+     $(".sidebar-submit").click(function(event){
 
     event.preventDefault();
     var form=$(this).closest("form").attr('id');

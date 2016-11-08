@@ -297,8 +297,14 @@ $(document).ready(function(){
 <!---Help End -->
 <script type="text/javascript">
   $(document).ready(function(){
-   
-     $(".sidebar-submit").click(function(event){
+
+
+   $(".clr-blue").click(function(){
+    alert("ok");
+   });
+
+     $("#instant_call_submit").click(function(event){
+
     event.preventDefault();
     var form=$(this).closest("form").attr('id');
     //console.log(form);return false;

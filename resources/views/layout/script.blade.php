@@ -153,7 +153,6 @@ $(document).ready(function(){
           <form name="instant_call_form" id="instant_call_form" method="post" >
           {{ csrf_field() }}
           <input type="hidden" name="form" value="instant_call">
-          <input type="hidden" name="url" value="">
 									<div>
 										<fieldset>
 											<input class="newsletter-name" name="name" placeholder="Name" required>
@@ -165,10 +164,11 @@ $(document).ready(function(){
 										</fieldset>									
 										</div>
 									<div>
-											<a class="btn btn-primary btn-outline with-arrow" id="instant_call_submit">Submit<i class="icon-arrow-right"></i></a>
+											<a class="btn btn-primary btn-outline with-arrow sidebar-submit" id="instant_call_submit">Submit<i class="icon-arrow-right"></i></a>
 									</div>
 						</form>
-            <div id='msg' style="display: none;"><p>Thanks. We will reach you soon.</p></div>
+            <div class='msg' style="display: none;"><p>Thanks. We will reach you soon.</p></div>
+            <div class='msg_err' style="display: none;"><p>Ooops. Something went wrong.</p></div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -190,6 +190,8 @@ $(document).ready(function(){
         </div>
         <div class="modal-body">
           <form name="talk_to_us_form" id="talk_to_us_form" method="post">
+          {{ csrf_field() }}
+          <input type="hidden" name="form" value="talk_to_us_form">
 									<div>
 										<fieldset>
 											<input class="newsletter-name" name="name" placeholder="Name" required>
@@ -201,9 +203,11 @@ $(document).ready(function(){
 										</fieldset>									
 										</div>
 									<div>
-											<button class="btn btn-primary btn-outline with-arrow">Submit<i class="icon-arrow-right"></i></button>
+											<button class="btn btn-primary btn-outline with-arrow sidebar-submit">Submit<i class="icon-arrow-right"></i></button>
 									</div>
 						</form>
+            <div class='msg' style="display: none;"><p>Thanks. We will reach you soon.</p></div>
+            <div class='msg_err' style="display: none;"><p>Ooops. Something went wrong.</p></div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -225,6 +229,8 @@ $(document).ready(function(){
         </div>
         <div class="modal-body">
           <form name="email_us_form" id="email_us_form" method="post">
+          {{ csrf_field() }}
+          <input type="hidden" name="form" value="email_us_form">
 									<div>
 										<fieldset>
 											<input class="newsletter-name" name="name" placeholder="Name" required>
@@ -236,9 +242,11 @@ $(document).ready(function(){
 										</fieldset>									
 										</div>
 									<div>
-											<button class="btn btn-primary btn-outline with-arrow">Submit<i class="icon-arrow-right"></i></button>
+											<button class="btn btn-primary btn-outline with-arrow sidebar-submit">Submit<i class="icon-arrow-right"></i></button>
 									</div>
 						</form>
+            <div class='msg' style="display: none;"><p>Thanks. We will reach you soon.</p></div>
+            <div class='msg_err' style="display: none;"><p>Ooops. Something went wrong.</p></div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -260,6 +268,8 @@ $(document).ready(function(){
         </div>
         <div class="modal-body">
           <form name="help_form" id="help_form" method="post">
+          {{ csrf_field() }}
+          <input type="hidden" name="form" value="help_form">
 									<div>
 										<fieldset>
 											<input class="newsletter-name" name="name" placeholder="Name" required>
@@ -271,9 +281,11 @@ $(document).ready(function(){
 										</fieldset>									
 										</div>
 									<div>
-											<button class="btn btn-primary btn-outline with-arrow">Submit<i class="icon-arrow-right"></i></button>
+											<button class="btn btn-primary btn-outline with-arrow sidebar-submit">Submit<i class="icon-arrow-right"></i></button>
 									</div>
 						</form>
+            <div class='msg' style="display: none;"><p>Thanks. We will reach you soon.</p></div>
+            <div class='msg_err' style="display: none;"><p>Ooops. Something went wrong.</p></div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -286,7 +298,7 @@ $(document).ready(function(){
 <script type="text/javascript">
   $(document).ready(function(){
    
-     $("#instant_call_submit").click(function(event){
+     $(".sidebar-submit").click(function(event){
     event.preventDefault();
     var form=$(this).closest("form").attr('id');
     //console.log(form);return false;
@@ -297,11 +309,14 @@ $(document).ready(function(){
       $.ajax({  
                type: "POST",  
                url: "{{URL::to('sidebar')}}",
-               data : $('#instant_call_form').serialize(),
+               data : $('#'+form).serialize(),
                success: function(msg){
                 if(msg=='true'){
                   $form.hide();
-                  $('#msg').show();
+                  $('.msg').show();
+                }else{
+                  $form.hide();
+                  $('.msg_err').show();
                 }
                 //console.log(msg);
                }  

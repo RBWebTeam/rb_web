@@ -7,7 +7,7 @@
 	<h2 class="align-center loan-head">Personal Loan</h2>
 	</div>
 	<div class=""></div>
-	<div class="flexslider col-md-7 slide-left">
+	<div class="flexslider col-md-8">
 	<div id="myCarousel" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
   <ol class="carousel-indicators">
@@ -52,26 +52,27 @@
 
 		<div class="col-md-4 red-bg1">
 	   <div class="form-in">
-
-              <span class="head-1 heading-bmar">Request A Call Back<span><br>
-             <form class="" id="compareform" role="form" method="POST" action="customer_form.php">
+             
+             <form class="head-1 heading-bmar" id="compareform" role="form" method="POST">
+             <span >Request A Call Back</span><br>
+              {{ csrf_field() }}
+                <input type="hidden" name="form" value="subscribe-form">
 				  <div class="form-group">
-				  
 				    <div>
-				      <input type="text" class="form-control" id="name" name="name" placeholder="Name" required class="clr-ddd" />
+				      <input type="text" class="form-control" id="name" name="name" placeholder="Name" required />
 				    </div>
 				  </div>
 			<div class="form-group">
 		   
 		    <div> 
-		    <input type="text" name="contact" id="contact" class="form-control" 
-			pattern="[789][0-9]{9}" required maxlength="10" placeholder="Mobile No." class="clr-ddd">
+		    <input type="text" name="contact" id="contact" class="form-control clr-ddd" onkeypress="fnAllowNumeric(event)" 
+			pattern="[789][0-9]{9}" required maxlength="10" placeholder="Mobile No." >
 		    </div>
 		  </div>
 				 <div class="form-group">
 				  
 				    <div>
-				      <input type="email" class="form-control" id="name" name="name" placeholder="Email Id" required class="clr-ddd" />
+				      <input type="email" class="form-control clr-ddd" id="name" name="name" placeholder="Email Id" required  />
                  
 				    </div>
 				  </div>
@@ -79,10 +80,12 @@
 			  
 			  <div class="form-group centr-obj"> 
 			    
-			     <button class="btn btn-primary btn-outline with-arrow">Submit<i class="icon-arrow-right"></i></button>
+			    <button class="btn btn-primary btn-outline with-arrow sidebar-submit">Submit<i class="icon-arrow-right"></i></button>
 			   
 			  </div>
 			</form>
+			<div class='msg' style="display: none;"><p>Thanks. We will reach you soon.</p></div>
+            <div class='msg_err' style="display: none;"><p>Ooops. Something went wrong.</p></div>
 		</div>	
 	</div>
 	</aside>

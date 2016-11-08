@@ -298,11 +298,6 @@ $(document).ready(function(){
 <script type="text/javascript">
   $(document).ready(function(){
 
-
-   $(".clr-blue").click(function(){
-    alert("ok");
-   });
-
      $(".sidebar-submit").click(function(event){
 
     event.preventDefault();

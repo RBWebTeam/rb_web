@@ -260,21 +260,28 @@
 				<h1 class="h1-hd">Confused About Loans ?</h1>
 				<h3>Talk to our experts to have all your question answered</h3>
 				<br>
-				<form name="subscribe-form" id="subscribe-form1" method="post">
-									<div class=" col-sm-offset-1 col-sm-4">
-										<fieldset>
-											<input class="newsletter-name" name="" placeholder="Name" required>
-										</fieldset>
-										</div>
-									<div class="col-sm-4">
-										<fieldset>
-											<input type="text" class="newsletter-name" name=""pattern="[789][0-9]{9}" required maxlength="10" placeholder="Mobile Number">
-										</fieldset>									
-										</div>
-									<div class="col-sm-2 btncent">
-											<button class="btn btn-primary btn-outline with-arrow">Call Me Now<i class="icon-arrow-right"></i></button>
-									</div>
-						</form>
+				 <form name="talk_to_us_form" id="talk_to_us_form" method="post">
+          			{{ csrf_field() }}
+		          		<input type="hidden" name="form" value="talk_to_us_form">
+		          		
+						<div class=" col-sm-offset-1 col-sm-4">
+							<fieldset>
+								<input class="newsletter-name" name="name" placeholder="Name" required>
+							</fieldset>
+							</div>
+						<div class="col-sm-4">
+							<fieldset>
+								<input type="text" class="newsletter-name" name="contact" onkeypress="return fnAllowNumeric(event)" pattern="[789][0-9]{9}" required maxlength="10" placeholder="Mobile Number" >
+							</fieldset>									
+							</div>
+						<div class="col-sm-2 btncent">
+								<button class="btn btn-primary btn-outline with-arrow sidebar-submit">Call Me Now<i class="icon-arrow-right"></i></button>
+						</div>
+				</form>
+            <div class='msg' style="display: none;"><p>Thanks. We will reach you soon.</p></div>
+            <div class='msg_err' style="display: none;"><p>Ooops. Something went wrong.</p></div>
+
+
 			</div>
 		</div>
 	</div>

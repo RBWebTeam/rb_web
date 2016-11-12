@@ -1430,3 +1430,6 @@ select {
 
 /** Mega Menu  **/
 
+.anchor_decoration{
+  text-decoration: none !important;
+}

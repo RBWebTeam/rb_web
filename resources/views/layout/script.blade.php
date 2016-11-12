@@ -3,6 +3,7 @@
         <!-- jQuery -->
         
     <script src="{{URL::to('js/jquery.min.js')}}"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
     <script>
            $('ul.dropdown-menu [data-toggle=dropdown]').on('click', function(event) {
     // Avoid following the href location when clicking
@@ -138,7 +139,7 @@ $(document).ready(function(){
     $.fn.bootstrapCarousel = $.fn.carousel;
     delete $.fn.carousel;
 </script>
-<!---Instant Call Back Start ----------->
+<!---Instant Call Back Start-->
 <div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog">
     
@@ -149,21 +150,25 @@ $(document).ready(function(){
           <h4 class="modal-title">Instant Call Back</h4>
         </div>
         <div class="modal-body">
-          <form name="subscribe-form" id="subscribe-form1" method="post">
+          <form name="instant_call_form" id="instant_call_form" method="post" >
+          {{ csrf_field() }}
+          <input type="hidden" name="form" value="instant_call">
 									<div>
 										<fieldset>
-											<input class="newsletter-name" name="" placeholder="Name" required>
+											<input class="newsletter-name" name="name" placeholder="Name" required>
 										</fieldset>
 										</div>
 									<div>
 										<fieldset>
-											<input type="text" class="newsletter-name" name=""pattern="[789][0-9]{9}" required maxlength="10" placeholder="Mobile Number">
+											<input type="text" class="newsletter-name" name="contact" pattern="[789][0-9]{9}" required maxlength="10" placeholder="Mobile Number">
 										</fieldset>									
 										</div>
 									<div>
-											<button class="btn btn-primary btn-outline with-arrow">Submit<i class="icon-arrow-right"></i></button>
+											<a class="btn btn-primary btn-outline with-arrow sidebar-submit" id="instant_call_submit">Submit<i class="icon-arrow-right"></i></a>
 									</div>
 						</form>
+            <div class='msg' style="display: none;"><p>Thanks. We will reach you soon.</p></div>
+            <div class='msg_err' style="display: none;"><p>Ooops. Something went wrong.</p></div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -172,8 +177,8 @@ $(document).ready(function(){
       
     </div>
   </div>
-<!---Instant Call Back End ----------->
-<!---Talk to us Start ----------->
+<!---Instant Call Back End -->
+<!---Talk to us Start -->
 <div class="modal fade" id="myModal1" role="dialog">
     <div class="modal-dialog">
     
@@ -184,21 +189,25 @@ $(document).ready(function(){
           <h4 class="modal-title">Talk To Us</h4>
         </div>
         <div class="modal-body">
-          <form name="subscribe-form" id="subscribe-form1" method="post">
+          <form name="talk_to_us_form" id="talk_to_us_form" method="post">
+          {{ csrf_field() }}
+          <input type="hidden" name="form" value="talk_to_us_form">
 									<div>
 										<fieldset>
-											<input class="newsletter-name" name="" placeholder="Name" required>
+											<input class="newsletter-name" name="name" placeholder="Name" required>
 										</fieldset>
 										</div>
 									<div>
 										<fieldset>
-											<input type="text" class="newsletter-name" name=""pattern="[789][0-9]{9}" required maxlength="10" placeholder="Mobile Number">
+											<input type="text" class="newsletter-name" name="contact" pattern="[789][0-9]{9}" required maxlength="10" placeholder="Mobile Number">
 										</fieldset>									
 										</div>
 									<div>
-											<button class="btn btn-primary btn-outline with-arrow">Submit<i class="icon-arrow-right"></i></button>
+											<button class="btn btn-primary btn-outline with-arrow sidebar-submit">Submit<i class="icon-arrow-right"></i></button>
 									</div>
 						</form>
+            <div class='msg' style="display: none;"><p>Thanks. We will reach you soon.</p></div>
+            <div class='msg_err' style="display: none;"><p>Ooops. Something went wrong.</p></div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -207,8 +216,8 @@ $(document).ready(function(){
       
     </div>
   </div>
-<!---Talk To Us End ----------->
-<!---Email Us Start ----------->
+<!---Talk To Us End -->
+<!---Email Us Start -->
 <div class="modal fade" id="myModal2" role="dialog">
     <div class="modal-dialog">
     
@@ -219,21 +228,25 @@ $(document).ready(function(){
           <h4 class="modal-title">Email Us</h4>
         </div>
         <div class="modal-body">
-          <form name="subscribe-form" id="subscribe-form1" method="post">
+          <form name="email_us_form" id="email_us_form" method="post">
+          {{ csrf_field() }}
+          <input type="hidden" name="form" value="email_us_form">
 									<div>
 										<fieldset>
-											<input class="newsletter-name" name="" placeholder="Name" required>
+											<input class="newsletter-name" name="name" placeholder="Name" required>
 										</fieldset>
 										</div>
 									<div>
 										<fieldset>
-											<input type="text" class="newsletter-name" name=""pattern="[789][0-9]{9}" required maxlength="10" placeholder="Mobile Number">
+											<input type="email" class="newsletter-name" name="email"  required  placeholder="Email address">
 										</fieldset>									
 										</div>
 									<div>
-											<button class="btn btn-primary btn-outline with-arrow">Submit<i class="icon-arrow-right"></i></button>
+											<button class="btn btn-primary btn-outline with-arrow sidebar-submit">Submit<i class="icon-arrow-right"></i></button>
 									</div>
 						</form>
+            <div class='msg' style="display: none;"><p>Thanks. We will reach you soon.</p></div>
+            <div class='msg_err' style="display: none;"><p>Ooops. Something went wrong.</p></div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -242,8 +255,8 @@ $(document).ready(function(){
       
     </div>
   </div>
-<!---Email Us End ----------->
-<!---Help Start ----------->
+<!---Email Us End -->
+<!---Help Start -->
 <div class="modal fade" id="myModal3" role="dialog">
     <div class="modal-dialog">
     
@@ -254,21 +267,25 @@ $(document).ready(function(){
           <h4 class="modal-title">Help</h4>
         </div>
         <div class="modal-body">
-          <form name="subscribe-form" id="subscribe-form1" method="post">
+          <form name="help_form" id="help_form" method="post">
+          {{ csrf_field() }}
+          <input type="hidden" name="form" value="help_form">
 									<div>
 										<fieldset>
-											<input class="newsletter-name" name="" placeholder="Name" required>
+											<input class="newsletter-name" name="name" placeholder="Name" required>
 										</fieldset>
 										</div>
 									<div>
 										<fieldset>
-											<input type="text" class="newsletter-name" name=""pattern="[789][0-9]{9}" required maxlength="10" placeholder="Mobile Number">
+											<input type="text" class="newsletter-name" name="contact" pattern="[789][0-9]{9}" required maxlength="10" placeholder="Mobile Number">
 										</fieldset>									
 										</div>
 									<div>
-											<button class="btn btn-primary btn-outline with-arrow">Submit<i class="icon-arrow-right"></i></button>
+											<button class="btn btn-primary btn-outline with-arrow sidebar-submit">Submit<i class="icon-arrow-right"></i></button>
 									</div>
 						</form>
+            <div class='msg' style="display: none;"><p>Thanks. We will reach you soon.</p></div>
+            <div class='msg_err' style="display: none;"><p>Ooops. Something went wrong.</p></div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -277,8 +294,41 @@ $(document).ready(function(){
       
     </div>
   </div>
-<!---Help End --------- -->
+<!---Help End -->
+<script type="text/javascript">
+  $(document).ready(function(){
 
+     $(".sidebar-submit").click(function(event){
+
+    event.preventDefault();
+    var form=$(this).closest("form").attr('id');
+    //console.log(form);return false;
+    $form=$('#'+form);
+    if(! $form.valid()){
+      return false;
+    }else{
+      $.ajax({  
+               type: "POST",  
+               url: "{{URL::to('sidebar')}}",
+               data : $('#'+form).serialize(),
+               success: function(msg){
+                if(msg=='true'){
+                  $form.hide();
+                  $('.msg').show();
+                }else{
+                  $form.hide();
+                  $('.msg_err').show();
+                }
+                //console.log(msg);
+               }  
+               }); 
+
+    }
+    
+  });
+  });
+ 
+</script>
 	</body>
 </html>
 

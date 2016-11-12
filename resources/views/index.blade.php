@@ -11,7 +11,7 @@
 		   				<div class="slider-text-inner">
 		   					<h2 class="slide-head">Home Loan </h2>
 							<p>Stay ahead of the curve with the Best in the Market</p>
-		   					<p><a href="#" class="btn btn-primary btn-lg">View More</a></p>
+		   					<p><a href="{{URL::to('home-loan')}}" class="btn btn-primary btn-lg">View More</a></p>
 		   				</div>
 		   			</div>
 		   		
@@ -22,7 +22,7 @@
 		   				<div class="slider-text-inner">
 		   					<h2 class="slide-head">Personal Loan</h2>
 							<p>Stay ahead of the curve with the Best in the Market</p>
-		   					<p><a href="{{URL::to('personal_loan')}}" class="btn btn-primary btn-lg">View More</a></p>
+		   					<p><a href="{{URL::to('personal-loan')}}" class="btn btn-primary btn-lg">View More</a></p>
 		   				</div>
 		   			</div>
 		   		
@@ -31,10 +31,9 @@
 		   		   <br>
 		   			<div class="slider-text">
 		   				<div class="slider-text-inner">
-						    <h2>Loan</h2>
-		   					<h2 class="slide-head">against Property</h2>
+		   					<h2 class="slide-head"> Loan against Property</h2>
 							<p>Stay ahead of the curve with the Best in the Market</p>
-		   					<p><a href="#" class="btn btn-primary btn-lg">View More</a></p>
+		   					<p><a href="{{URL::to('loan-against-property')}}" class="btn btn-primary btn-lg">View More</a></p>
 		   				</div>
 		   			</div>
 		   		
@@ -45,7 +44,7 @@
 		   				<div class="slider-text-inner">
 		   					<h2 class="slide-head">SME Loan</h2>
 							<p>Stay ahead of the curve with the Best in the Market</p>
-		   					<p><a href="#" class="btn btn-primary btn-lg">View More</a></p>
+		   					<p><a href="{{URL::to('sme-loan')}}" class="btn btn-primary btn-lg">View More</a></p>
 		   				</div>
 		   			</div>
 		   		
@@ -56,7 +55,7 @@
 		   				<div class="slider-text-inner">
 		   					<h2 class="slide-head">Home Loan Transfer</h2>
 							<p>Stay ahead of the curve with the Best in the Market</p>
-		   					<p><a href="#" class="btn btn-primary btn-lg">View More</a></p>
+		   					<p><a href="{{URL::to('home-loan-transfer')}}" class="btn btn-primary btn-lg">View More</a></p>
 		   				</div>
 		   			</div>
 		   		
@@ -67,7 +66,7 @@
 		   				<div class="slider-text-inner">
 		   					<h2 class="slide-head">Car Loan</h2>
 							<p>Stay ahead of the curve with the Best in the Market</p>
-		   					<p><a href="#" class="btn btn-primary btn-lg">View More</a></p>
+		   					<p><a href="{{URL::to('car-loan')}}" class="btn btn-primary btn-lg">View More</a></p>
 		   				</div>
 		   			</div>
 		   		
@@ -136,62 +135,68 @@
 			<div class="row dv-hr">
 				<div class="col-md-2 animate-box h3-pd-btm">
 					<div class="services">
-						
+						<a class="anchor_decoration" href="{{URL::to('home-loan')}}">
 						<div class="desc">
 						<i class="icon-home"></i>
 							<h3>Home Loan</h3>
 							
 						</div>
+						</a>
 					</div>
 				</div>
 				<div class="col-md-2 animate-box h3-pd-btm">
 					<div class="services">
-						
+						<a class="anchor_decoration" href="{{URL::to('personal-loan')}}">
 						<div class="desc">
 						<i class="icon-user"></i>
 							<h3>Personal Loan</h3>
 							
 						</div>
+						</a>
 					</div>
 				</div>
 				<div class="col-md-2 animate-box h3-pd-btm">
 					<div class="services">
-						
+						<a class="anchor_decoration" href="{{URL::to('loan-against-property')}}">
 						<div class="desc">
 						<i class="icon-money"></i>
 							<h3>Loan against <br>Property</h3>
 						
 						</div>
+						</a>
 					</div>
 				</div>
 				<div class="col-md-2 animate-box h3-pd-btm">
 					<div class="services">
-						
+						<a class="anchor_decoration" href="{{URL::to('sme-loan')}}">
 						<div class="desc">
 						<i class="icon-tablet"></i>
 							<h3>SME Loan</h3>
 						
 						</div>
+						</a>
 					</div>
 				</div>
 				<div class="col-md-2 animate-box h3-pd-btm">
 					<div class="services">
-						
+						<a class="anchor_decoration" href="{{URL::to('home-loan-transfer')}}">
 						<div class="desc">
 						<i class="icon-line-chart"></i>
 							<h3>Home <br> Loan Transfer</h3>
 							
 						</div>
+						</a>
 					</div>
 				</div>
 				<div class="col-md-2 animate-box h3-pd-btm">
 					<div class="services">
-						
+						<a class="anchor_decoration" href="{{URL::to('car-loan')}}">
 						<div class="desc">
 						<i class="icon-car"></i>
 							<h3>Car Loan</h3>
 						
 						</div>
+						</a>
 					</div>
 				</div>
 			</div>
@@ -255,21 +260,28 @@
 				<h1 class="h1-hd">Confused About Loans ?</h1>
 				<h3>Talk to our experts to have all your question answered</h3>
 				<br>
-				<form name="subscribe-form" id="subscribe-form1" method="post">
-									<div class=" col-sm-offset-1 col-sm-4">
-										<fieldset>
-											<input class="newsletter-name" name="" placeholder="Name" required>
-										</fieldset>
-										</div>
-									<div class="col-sm-4">
-										<fieldset>
-											<input type="text" class="newsletter-name" name=""pattern="[789][0-9]{9}" required maxlength="10" placeholder="Mobile Number">
-										</fieldset>									
-										</div>
-									<div class="col-sm-2 btncent">
-											<button class="btn btn-primary btn-outline with-arrow">Call Me Now<i class="icon-arrow-right"></i></button>
-									</div>
-						</form>
+				 <form name="talk_to_us_form" id="talk_to_us_form" method="post">
+          			{{ csrf_field() }}
+		          		<input type="hidden" name="form" value="talk_to_us_form">
+		          		
+						<div class=" col-sm-offset-1 col-sm-4">
+							<fieldset>
+								<input class="newsletter-name" name="name" placeholder="Name" required>
+							</fieldset>
+							</div>
+						<div class="col-sm-4">
+							<fieldset>
+								<input type="text" class="newsletter-name" name="contact" onkeypress="return fnAllowNumeric(event)" pattern="[789][0-9]{9}" required maxlength="10" placeholder="Mobile Number" >
+							</fieldset>									
+							</div>
+						<div class="col-sm-2 btncent">
+								<button class="btn btn-primary btn-outline with-arrow sidebar-submit">Call Me Now<i class="icon-arrow-right"></i></button>
+						</div>
+				</form>
+            <div class='msg' style="display: none;"><p>Thanks. We will reach you soon.</p></div>
+            <div class='msg_err' style="display: none;"><p>Ooops. Something went wrong.</p></div>
+
+
 			</div>
 		</div>
 	</div>
@@ -433,31 +445,5 @@
 		</div>
 	</div>
 	
-	<div class="fh5co-cta" style="background-image: url(images/slide_2.jpg);">
-		<div class="overlay"></div>
-		<div class="container">
-			<div class="col-md-12 text-center animate-box">
-				<h3>Want to save your Hard-earned Money?</h3>
-                <p>Subscribe to our monthly newsletter</p>
-                <form name="subscribe-form" id="subscribe-form1" method="post">
-									<div class=" col-sm-offset-1 col-sm-4">
-										<fieldset>
-											<input class="newsletter-name" id="" name="" placeholder="Name" required>
-										</fieldset>
-										</div>
-									<div class="col-sm-4">
-										<fieldset>
-											<input type="text" class="newsletter-name" name="" pattern="[789][0-9]{9}" required maxlength="10" placeholder="Mobile Number">
-										</fieldset>									
-										</div>
-									<div class="col-sm-2 btncent">
-									<button class="btn btn-primary btn-outline with-arrow">Call Me Now<i class="icon-arrow-right"></i></button>
-		
-									</div>
-						</form>
-				
-			</div>
-		</div>
-	</div>
 @include('layout.footer')
 @include('layout.script')

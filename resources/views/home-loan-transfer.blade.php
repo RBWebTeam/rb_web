@@ -1,42 +1,10 @@
 @include('layout.header')
-	<div id="fh5co-page">
-	<header id="fh5co-header" role="banner" class="navbar navbar-default navbar-fixed-top">
-		<div class="container">
-			<div class="header-inner">
-				<h1><a href="index.html"><img src="images/logo.png" width="160" height="47" /></a></h1>
-				<nav role="navigation">
-					<ul>
-						<!--- <li><a href="index.html">Home</a></li> - -->
-						
-						<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" data-target="#">SME Loan &nbsp;<i class="icon-chevron-down"></i></a>
-						 <ul class="dropdown-menu">
-						    <li><a href="#">Home Loan</a></li>
-							<li><a href="#">Personal Loan</a></li>
-							<li><a href="#">Loan against Property</a></li>
-							<li><a href="#">SME Loan</a></li>
-							<li><a href="#">Home Loan Transfer</a></li>
-							<li><a href="#">Car Loan</a></li>
-						</ul>
-						
-						</li>
-						<li><a href="#">Retail Loan</a></li>
-						<li><a href="#">Other Loan</a></li>
-						<li><a href="#">Credit Loan</a></li>
-						<li><a href="#">Balance Transfer</a></li>
-						<!--- <li class="cta"><a href="#">Apply For Loan</a></li>--->
-                        <!--- <li class="con-no">1800-267-629-6</li> --->
-					</ul>
-				</nav>
-			</div>
-		</div>
-	</header>
-	<!-----------------------------Header End -------------------------------------- -->
     <div class="container">
 	
 	<aside id="fh5co-hero">
 	<div class="col-md-12">
-	<p class="text-left"><a href="{{URL::to('/')}}">Home</a>/Personal Loan</p>
-	<h2 class="align-center loan-head">Personal Loan</h2>
+	<p class="text-left"><a href="{{URL::to('/')}}">Home</a>/Home Loan Transfer</p>
+	<h2 class="align-center loan-head">Home Loan Transfer</h2>
 	</div>
 	<div class=""></div>
 	<div class="flexslider col-md-7 slide-left">
@@ -137,7 +105,7 @@
 								 <li>Comapre with 100 banks.</li>
 							</ul>
 						
-							<a class="btn btn-primary btn-outline with-arrow">Compare<i class="icon-arrow-right"></i></a>
+							<a class="btn btn-primary btn-outline with-arrow" href="{{URL::to('compare')}}" >Compare<i class="icon-arrow-right"></i></a>
 						</div>
 					</div>
 
@@ -150,7 +118,7 @@
 								 <li>check your elgibility</li>
 								 <li>calculate your EMIs.</li>
 							</ul>
-							<a class="btn btn-primary btn-outline with-arrow">Calculate EMI<i class="icon-arrow-right"></i></a>
+							<a class="btn btn-primary btn-outline with-arrow" href="{{URL::to('emi')}}">Calculate EMI<i class="icon-arrow-right"></i></a>
 						</div>
 					</div>
 					
@@ -283,32 +251,6 @@
 		
 </div>
 </div>
-	
-	<div class="fh5co-cta" style="background-image: url(images/slide_2.jpg);">
-		<div class="overlay"></div>
-		<div class="container">
-			<div class="col-md-12 text-center animate-box">
-				<h3>Want to save your Hard-earned Money?</h3>
-                <p>Subscribe to our monthly newsletter</p>
-                <form name="subscribe-form" id="subscribe-form1" method="post">
-									<div class=" col-sm-offset-1 col-sm-4">
-										<fieldset>
-											<input class="newsletter-name" id="" name="" placeholder="Name" required>
-										</fieldset>
-										</div>
-									<div class="col-sm-4">
-										<fieldset>
-											<input type="text" class="newsletter-name" name="" pattern="[789][0-9]{9}" required maxlength="10" placeholder="Mobile Number">
-										</fieldset>									
-										</div>
-									<div class="col-sm-2 btncent">
-									<button class="btn btn-primary btn-outline with-arrow">Call Me Now<i class="icon-arrow-right"></i></button>
-		
-									</div>
-						</form>
-				
-			</div>
-		</div>
-	</div>
+
 @include('layout.footer')
 @include('layout.script')

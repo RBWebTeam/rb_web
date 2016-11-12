@@ -96,7 +96,7 @@
 		<div class="container">
 			
 			<div class="row">
-				<div class="pricing">
+				<div class="pricing pad">
 					<div class="col-md-4 animate-box">
 						<div class="price-box popular">
 							

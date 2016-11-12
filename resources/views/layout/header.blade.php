@@ -8,7 +8,7 @@
 	<meta name="description" content="<?php if(isset($description))echo $description; else echo "RupeeBoss provides all kind of loans."; ?>" />
 	<meta name="keywords" content="" />
 	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-	<link rel="shortcut icon" href="favicon.ico">
+	<link rel="shortcut icon" href="{{URL::to('images/rb_fav.png')}}">
 	<link rel="stylesheet" href="{{URL::to('fonts/Raleway.css')}}" type="text/css">
 	<!-- Animate.css -->
 	<link rel="stylesheet" href="{{URL::to('css/animate.css')}}">

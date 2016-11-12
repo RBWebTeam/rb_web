@@ -7,7 +7,7 @@
 	<h2 class="align-center loan-head">Home Loan Transfer</h2>
 	</div>
 	<div class=""></div>
-	<div class="flexslider col-md-7 slide-left">
+	<div class="flexslider col-md-8">
 	<div id="myCarousel" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
   <ol class="carousel-indicators">
@@ -93,7 +93,7 @@
 		<div class="container">
 			
 			<div class="row">
-				<div class="pricing">
+				<div class="pricing pad">
 					<div class="col-md-4 animate-box">
 						<div class="price-box popular">
 							

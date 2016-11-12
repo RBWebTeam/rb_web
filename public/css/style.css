@@ -731,6 +731,7 @@ td {padding:5px; text-align:center;}
 }
 #fh5co-blog-section .item-grid .v-align {
   padding: 30px;
+  border: 1px solid #eee;
 }
 #fh5co-blog-section .item-grid .v-align h3 {
   font-weight: 700;
@@ -1257,6 +1258,7 @@ td {padding:5px; text-align:center;}
 .js .animate-box {
   opacity: 0;
   text-align:center;
+  padding:10px;
   /* padding:20px 0px; */
   cursor:pointer;
   transition:all 0.3s linear;-moz-transition:all 0.3s linear;-webkit-transition:all 0.3s linear;

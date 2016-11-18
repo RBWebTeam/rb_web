@@ -10,10 +10,7 @@
 | to using a Closure or controller method. Build something great!
 |
 */
-
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/','HomeController@index');
 Route::get('personal-loan','LoanController@personal_loan');
 Route::get('home-loan','LoanController@home_loan');
 Route::get('loan-against-property','LoanController@lap');

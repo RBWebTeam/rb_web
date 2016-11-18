@@ -29,3 +29,7 @@ Route::get('credit-report','CompareController@credit_report');
 Route::get('contact-us','ContactController@contact_us'); //not linked to index page till now
 //sidebar forms
 Route::post('sidebar','FormController@sidebar');
+Route::get('widget','LoanController@car_loan');
+Route::get('widget', function () {
+    return view('widget.html');
+});

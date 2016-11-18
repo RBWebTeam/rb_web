@@ -27,6 +27,3 @@ Route::get('contact-us','ContactController@contact_us'); //not linked to index p
 //sidebar forms
 Route::post('sidebar','FormController@sidebar');
 Route::get('widget','LoanController@car_loan');
-Route::get('widget', function () {
-    return view('widget.html');
-});

@@ -96,9 +96,12 @@
 				  <div class="form-group">
 				   
 				    <div class=""> 
+				  
 				       <select name="sell" class="form-control" id="sell" required>
-				       <option value=""><span style="color: gray;font-family: bold; ">City</span></option>
-					
+				         @foreach($city as $city_name)
+				       <option value="{{ $city_name->City_Id }}" data-state="{{$city_name->state_id}}"><span style="color: gray;font-family: bold; ">{{ $city_name->City_Name }}</span></option>
+
+						@endforeach
 					</select>
 
 
@@ -108,8 +111,9 @@
 			   
 			    <div class=""> 
 			      <select class="form-control" name="prod" id="prod" required>
-			        <option value=""><span style="color: gray;font-family: bold; ">Loan</span></option>
-			        
+			      @foreach($loan as $product)
+			        <option value="{{$product->prod_id}}"><span style="color: gray;font-family: bold; ">{{$product->prod_name}}</span></option>
+			        @endforeach
 			      </select>
 			    </div>
 			  </div>

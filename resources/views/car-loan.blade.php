@@ -18,21 +18,21 @@
   </ol>
 
   <!-- Wrapper for slides -->
-  <div class="carousel-inner" role="listbox">
+ <div class="carousel-inner" role="listbox">
     <div class="item active">
-      <img src="images/loan.jpg" alt="">
+      <img src="{{URL::to('images/loan.jpg')}}" alt="">
     </div>
 
     <div class="item">
-      <img src="images/loan.jpg" alt="">
+      <img src="{{URL::to('images/loan.jpg')}}" alt="">
     </div>
 
     <div class="item">
-      <img src="images/loan.jpg" alt="">
+      <img src="{{URL::to('images/loan.jpg')}}" alt="">
     </div>
 
     <div class="item">
-      <img src="images/loan.jpg" alt="">
+      <img src="{{URL::to('images/loan.jpg')}}" alt="">
     </div>
   </div>
 

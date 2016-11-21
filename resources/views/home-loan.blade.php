@@ -20,22 +20,21 @@
   <!-- Wrapper for slides -->
   <div class="carousel-inner" role="listbox">
     <div class="item active">
-      <img src="images/loan.jpg" alt="">
+      <img src="{{URL::to('images/loan.jpg')}}" alt="">
     </div>
 
     <div class="item">
-      <img src="images/loan.jpg" alt="">
+      <img src="{{URL::to('images/loan.jpg')}}" alt="">
     </div>
 
     <div class="item">
-      <img src="images/loan.jpg" alt="">
+      <img src="{{URL::to('images/loan.jpg')}}" alt="">
     </div>
 
     <div class="item">
-      <img src="images/loan.jpg" alt="">
+      <img src="{{URL::to('images/loan.jpg')}}" alt="">
     </div>
   </div>
-
   <!-- Left and right controls -->
   <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
     <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>

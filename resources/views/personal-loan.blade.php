@@ -53,8 +53,8 @@
 		<div class="col-md-4 red-bg1">
 	   <div class="form-in">
              
-             <form class="head-1 heading-bmar" id="compareform" role="form" method="POST">
-             <span >Request A Call Back</span><br>
+             <form class="" id="compareform" role="form" method="POST">
+             <span class="head-1 heading-bmar">Request A Call Back</span><br>
               {{ csrf_field() }}
                 <input type="hidden" name="form" value="subscribe-form">
 				  <div class="form-group">
@@ -72,7 +72,7 @@
 				 <div class="form-group">
 				  
 				    <div>
-				      <input type="email" class="form-control clr-ddd" id="name" name="name" placeholder="Email Id" required  />
+				      <input type="email" class="form-control clr-ddd" id="email" name="email" placeholder="Email Id" required  />
                  
 				    </div>
 				  </div>

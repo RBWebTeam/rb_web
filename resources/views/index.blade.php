@@ -260,7 +260,7 @@
  <div class="fh5co-cta" style="background-image: url(images/slide_2.jpg);">
 		<div class="overlay"></div>
 		<div class="container">
-			<div class="col-md-12 text-center animate-box wht-brd">
+			<div class="col-md-12 text-center animate-box wht-brd pad">
 				<h1 class="h1-hd">Confused About Loans ?</h1>
 				<h3>Talk to our experts to have all your question answered</h3>
 				<br>

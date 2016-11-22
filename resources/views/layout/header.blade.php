@@ -30,8 +30,8 @@
 	<body>
 
 	<!-- Side bar -->
-	<div class="arrow-don" style="display:none;">Hi &nbsp;<i class="icon-hand-stop-o"></i></div>
-    <div class="sidebar">
+	<div class="arrow-don">Hi &nbsp;<i class="icon-hand-stop-o"></i></div>
+    <div class="sidebar" style="display:none;">
     <ul>
         <li class="hide-dv"><a href="#"><i class="icon-arrow-left"></i>&nbsp;Hide</a></li>
          <li class="call-back" data-toggle="modal" data-target="#myModal"><a href="#">Instant <br>Call Back</a></li>

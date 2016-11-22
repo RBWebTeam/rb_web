@@ -52,9 +52,9 @@
 
 		<div class="col-md-4 red-bg1">
 	   <div class="form-in">
-             
+              <span class="head-1 heading-bmar">Request A Call Back</span>
              <form class="" id="compareform" role="form" method="POST">
-             <span class="head-1 heading-bmar">Request A Call Back</span><br>
+            
               {{ csrf_field() }}
                 <input type="hidden" name="form" value="subscribe-form">
 				  <div class="form-group">
@@ -80,7 +80,7 @@
 			  
 			  <div class="form-group centr-obj"> 
 			    
-			    <button class="btn btn-primary btn-outline with-arrow sidebar-submit">Submit<i class="icon-arrow-right"></i></button>
+			    <button class="btn btn-primary btn-outline with-arrow sidebar-submit" disabled="disabled">Submit<i class="icon-arrow-right"></i></button>
 			   
 			  </div>
 			</form>
@@ -244,14 +244,7 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
-
-			
 	  	</div>
-		
-		
-		
-		
-		
 </div>
 </div>
 	

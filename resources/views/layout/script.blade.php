@@ -294,6 +294,31 @@ $(document).ready(function(){
       
     </div>
   </div>
+<!-- popup1 Start-->
+    <div id="page1" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Select Your Profession?</h4>
+      </div>
+      <div class="modal-body">
+    <ul>
+        <li><span><input type="radio" name="emp_type" id="emp_type" data-dismiss="modal" /></span>&nbsp; salaried</li>
+      <li><span><input type="radio" name="emp_type" id="emp_type" data-dismiss="modal"/></span>&nbsp; self-employed (eg. doctor)</li>
+      <li><span><input type="radio" name="emp_type" id="emp_type" data-dismiss="modal"/></span>&nbsp; self-employed business</li>
+      </ul>
+      </div>
+      
+    </div>
+   
+  </div>
+</div>
+
+<!-- popup1 end-->
+
 <!---Help End -->
 <script type="text/javascript">
   $(document).ready(function(){
@@ -307,6 +332,7 @@ $(document).ready(function(){
     if(! $form.valid()){
       return false;
     }else{
+
       $.ajax({  
                type: "POST",  
                url: "{{URL::to('sidebar')}}",
@@ -324,6 +350,17 @@ $(document).ready(function(){
                }); 
 
     }
+
+    .on('err.field.fv', function(e, data) {
+            if (data.fv.getSubmitButton()) {
+                data.fv.disableSubmitButtons(false);
+            }
+        })
+        .on('success.field.fv', function(e, data) {
+            if (data.fv.getSubmitButton()) {
+                data.fv.disableSubmitButtons(false);
+            }
+        });
     
   });
   });

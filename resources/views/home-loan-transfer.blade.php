@@ -71,8 +71,7 @@
 				 <div class="form-group">
 				  
 				    <div>
-				      <input type="email" class="form-control" id="name" name="name" placeholder="Email Id" required class="clr-ddd" />
-                 
+				     <input type="email" class="form-control clr-ddd" id="email" name="email" placeholder="Email Id" required  />
 				    </div>
 				  </div>
 			 

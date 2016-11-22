@@ -70,7 +70,7 @@
 				 <div class="form-group">
 				  
 				    <div>
-				      <input type="email" class="form-control" id="name" name="name" placeholder="Email Id" required class="clr-ddd" />
+				      <input type="email" class="form-control" id="email" name="email" placeholder="Email Id" required class="clr-ddd" />
                  
 				    </div>
 				  </div>
@@ -78,7 +78,7 @@
 			  
 			  <div class="form-group centr-obj"> 
 			    
-			     <button class="btn btn-primary btn-outline with-arrow">Submit<i class="icon-arrow-right"></i></button>
+			     <button class="btn btn-primary btn-outline with-arrow sidebar-submit">Submit<i class="icon-arrow-right"></i></button>
 			   
 			  </div>
 			</form>

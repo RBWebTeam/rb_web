@@ -80,7 +80,7 @@
 			  
 			  <div class="form-group centr-obj"> 
 			    
-			    <button class="btn btn-primary btn-outline with-arrow sidebar-submit" disabled="disabled">Submit<i class="icon-arrow-right"></i></button>
+			    <button class="btn btn-primary btn-outline with-arrow sidebar-submit" >Submit<i class="icon-arrow-right"></i></button>
 			   
 			  </div>
 			</form>

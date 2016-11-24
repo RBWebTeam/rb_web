@@ -45,7 +45,7 @@ class LoanController extends Controller
     }
 
  	public function apply(){
-    	return view('liza-process');
+    	return view('personal-loan-process');
     }
        
 }

@@ -1,9 +1,16 @@
 
     <script src="{{URL::to('js/modernizr-2.6.2.min.js')}}"></script>
         <!-- jQuery -->
-        
     <script src="{{URL::to('js/jquery.min.js')}}"></script>
+    <link href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" rel="Stylesheet"></link>
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/themes/base/minified/jquery-ui.min.css" type="text/css" />
+    <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js" ></script>
     <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
+    <link href="http://demo.expertphp.in/css/jquery.ui.autocomplete.css" rel="stylesheet">
+    <script src="http://demo.expertphp.in/js/jquery.js"></script>
+    <script src="http://demo.expertphp.in/js/jquery-ui.min.js"></script>
+
+
     <script>
            $('ul.dropdown-menu [data-toggle=dropdown]').on('click', function(event) {
     // Avoid following the href location when clicking
@@ -139,190 +146,31 @@ $(document).ready(function(){
     $.fn.bootstrapCarousel = $.fn.carousel;
     delete $.fn.carousel;
 </script>
-<!---Instant Call Back Start-->
-<div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog">
-    
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Instant Call Back</h4>
-        </div>
-        <div class="modal-body">
-          <form name="instant_call_form" id="instant_call_form" method="post" >
-          {{ csrf_field() }}
-          <input type="hidden" name="form" value="instant_call">
-									<div>
-										<fieldset>
-											<input class="newsletter-name" name="name" placeholder="Name" required>
-										</fieldset>
-										</div>
-									<div>
-										<fieldset>
-											<input type="text" class="newsletter-name" name="contact" pattern="[789][0-9]{9}" required maxlength="10" placeholder="Mobile Number">
-										</fieldset>									
-										</div>
-									<div>
-											<a class="btn btn-primary btn-outline with-arrow sidebar-submit" id="instant_call_submit">Submit<i class="icon-arrow-right"></i></a>
-									</div>
-						</form>
-            <div class='msg' style="display: none;"><p>Thanks. We will reach you soon.</p></div>
-            <div class='msg_err' style="display: none;"><p>Ooops. Something went wrong.</p></div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-      
-    </div>
-  </div>
-<!---Instant Call Back End -->
-<!---Talk to us Start -->
-<div class="modal fade" id="myModal1" role="dialog">
-    <div class="modal-dialog">
-    
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Talk To Us</h4>
-        </div>
-        <div class="modal-body">
-          <form name="talk_to_us_form" id="talk_to_us_form" method="post">
-          {{ csrf_field() }}
-          <input type="hidden" name="form" value="talk_to_us_form">
-									<div>
-										<fieldset>
-											<input class="newsletter-name" name="name" placeholder="Name" required>
-										</fieldset>
-										</div>
-									<div>
-										<fieldset>
-											<input type="text" class="newsletter-name" name="contact" pattern="[789][0-9]{9}" required maxlength="10" placeholder="Mobile Number">
-										</fieldset>									
-										</div>
-									<div>
-											<button class="btn btn-primary btn-outline with-arrow sidebar-submit">Submit<i class="icon-arrow-right"></i></button>
-									</div>
-						</form>
-            <div class='msg' style="display: none;"><p>Thanks. We will reach you soon.</p></div>
-            <div class='msg_err' style="display: none;"><p>Ooops. Something went wrong.</p></div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-      
-    </div>
-  </div>
-<!---Talk To Us End -->
-<!---Email Us Start -->
-<div class="modal fade" id="myModal2" role="dialog">
-    <div class="modal-dialog">
-    
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Email Us</h4>
-        </div>
-        <div class="modal-body">
-          <form name="email_us_form" id="email_us_form" method="post">
-          {{ csrf_field() }}
-          <input type="hidden" name="form" value="email_us_form">
-									<div>
-										<fieldset>
-											<input class="newsletter-name" name="name" placeholder="Name" required>
-										</fieldset>
-										</div>
-									<div>
-										<fieldset>
-											<input type="email" class="newsletter-name" name="email"  required  placeholder="Email address">
-										</fieldset>									
-										</div>
-									<div>
-											<button class="btn btn-primary btn-outline with-arrow sidebar-submit">Submit<i class="icon-arrow-right"></i></button>
-									</div>
-						</form>
-            <div class='msg' style="display: none;"><p>Thanks. We will reach you soon.</p></div>
-            <div class='msg_err' style="display: none;"><p>Ooops. Something went wrong.</p></div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-      
-    </div>
-  </div>
-<!---Email Us End -->
-<!---Help Start -->
-<div class="modal fade" id="myModal3" role="dialog">
-    <div class="modal-dialog">
-    
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Help</h4>
-        </div>
-        <div class="modal-body">
-          <form name="help_form" id="help_form" method="post">
-          {{ csrf_field() }}
-          <input type="hidden" name="form" value="help_form">
-									<div>
-										<fieldset>
-											<input class="newsletter-name" name="name" placeholder="Name" required>
-										</fieldset>
-										</div>
-									<div>
-										<fieldset>
-											<input type="text" class="newsletter-name" name="contact" pattern="[789][0-9]{9}" required maxlength="10" placeholder="Mobile Number">
-										</fieldset>									
-										</div>
-									<div>
-											<button class="btn btn-primary btn-outline with-arrow sidebar-submit">Submit<i class="icon-arrow-right"></i></button>
-									</div>
-						</form>
-            <div class='msg' style="display: none;"><p>Thanks. We will reach you soon.</p></div>
-            <div class='msg_err' style="display: none;"><p>Ooops. Something went wrong.</p></div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-      
-    </div>
-  </div>
-<!-- popup1 Start-->
-    <div id="page1" class="modal fade" role="dialog">
-  <div class="modal-dialog">
 
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-      <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Select Your Profession?</h4>
-      </div>
-      <div class="modal-body">
-    <ul>
-        <li><span><input type="radio" name="emp_type" id="emp_type" data-dismiss="modal" /></span>&nbsp; salaried</li>
-      <li><span><input type="radio" name="emp_type" id="emp_type" data-dismiss="modal"/></span>&nbsp; self-employed (eg. doctor)</li>
-      <li><span><input type="radio" name="emp_type" id="emp_type" data-dismiss="modal"/></span>&nbsp; self-employed business</li>
-      </ul>
-      </div>
-      
-    </div>
-   
-  </div>
-</div>
-
-<!-- popup1 end-->
-
-<!---Help End -->
 <script type="text/javascript">
   $(document).ready(function(){
+    $('.pop_up').click(function(){
+       // console.log($(this).closest("form").attr('id'));
+       var span_name=$(this).parent().find('span').attr('id');
+       var modal_name=$(this).parent().find('a').attr('data-target');
+       var form_name=$(modal_name).find('form').attr('id');
+        $('#'+form_name +' input').on('change', function() {
+       var input_name=$('#'+form_name).find('input').attr('name');   
+       var append=$('input[name='+input_name+']:checked','#'+form_name).val();
+          console.log(modal_name);
+        $('#'+span_name).empty().append(append);
+        $(modal_name).modal('hide');
+        
+      });
+    });
 
+
+    
+  //    $('#exst_loan_form input').on('change', function() {
+  //   $('#exst_loan_detail').empty().append($('input[name=exst_loan]:checked', '#exst_loan_form').val());
+  //   $('#page2').modal('toggle');
+  //   changeTest(this,'q4');
+  // });
      $(".sidebar-submit").click(function(event){
 
     event.preventDefault();
@@ -332,7 +180,6 @@ $(document).ready(function(){
     if(! $form.valid()){
       return false;
     }else{
-
       $.ajax({  
                type: "POST",  
                url: "{{URL::to('sidebar')}}",
@@ -348,24 +195,59 @@ $(document).ready(function(){
                 //console.log(msg);
                }  
                }); 
-
     }
+  });
+//      $(function()
+// {
+//    $( "#q" ).autocomplete({
+//     source: "search/autocomplete",
+//     minLength: 3,
+//     select: function(event, ui) {
+//       $('#q').val(ui.item.value);
+//     }
+//   });
+// });
+  });
 
-    .on('err.field.fv', function(e, data) {
-            if (data.fv.getSubmitButton()) {
-                data.fv.disableSubmitButtons(false);
+
+$('document').ready(function(){
+/* $('#search-input').attr('autocomplete', 'on');*/
+$("#q").autocomplete({
+source : "{{ URL('search/autocomplete') }}",
+minlength: 2  ,
+
+       select: function(event,ui){
+
+           $('#q').val(ui.item.value);
+           console.log($('#q').val(ui.item.value));
+
             }
-        })
-        .on('success.field.fv', function(e, data) {
-            if (data.fv.getSubmitButton()) {
-                data.fv.disableSubmitButtons(false);
-            }
-        });
-    
-  });
-  });
- 
+    });
+});
+
+   $(document).ready(function() {
+    src = "{{ route('searchajax') }}";
+     $(".search_city").autocomplete({
+        source: function(request, response) {
+            $.ajax({
+                url: src,
+                dataType: "json",
+                data: {
+                    term : request.term
+                },
+                success: function(data) {
+                    response(data);
+                   
+                }
+            });
+        },
+        min_length: 3,
+       
+    });
+});
+
+
 </script>
 	</body>
 </html>
-
+@include('layout.modal')

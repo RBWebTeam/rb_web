@@ -27,3 +27,6 @@ Route::get('contact-us','ContactController@contact_us'); //not linked to index p
 //sidebar forms
 Route::post('sidebar','FormController@sidebar');
 Route::get('widget','LoanController@car_loan');
+//Route::get('search/autocomplete', 'SearchController@autocomplete');
+Route::get('autocomplete',array('as'=>'autocomplete','uses'=>'AutoCompleteController@index'));
+Route::get('searchajax',array('as'=>'searchajax','uses'=>'AutoCompleteController@autoComplete'));	

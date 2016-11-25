@@ -3,7 +3,7 @@
     <!--- liza Step First   - -->
 	    <div class="container">
 		<div class="liza col-md-8" id="step-1">
-		   <div class="col-md-12 text-center"><h4>Apply for an Easy Personal Loan in 37 seconds</h4></div>
+		   <div class="col-md-12 text-center"><h4>Apply for an Easy Personal Loan in 30 seconds</h4></div>
 		   <p class="text-center">Step 1 of 3</p>
 			<div class="col-md-12 text-center animate-box cont" id="q1">
              <h3>I am a
@@ -47,12 +47,12 @@
 
 	   <!--- liza Step Two   - -->
 		<div class="liza col-md-8" style="display: none;" id="step-2">
-		   <div class="col-md-12 text-center"><h4>Apply for an Easy Personal Loan in 37 seconds</h4></div>
+		   <div class="col-md-12 text-center"><h4>Apply for an Easy Personal Loan in 30 seconds</h4></div>
 		   <p class="text-center">Step 2 of 3</p>
-			<div class="col-md-12 text-center animate-box cont">
+			<div class="text-center animate-box cont">
 			<div class="col-md-12 text-center animate-box cont" >
              <h3>I work at 
-			  <input type="text" id="comp_name" name="comp_name" onkeyup="changeTest(this,'m_sal')" class="input-pad" placeholder="Your company name" tabindex="1">
+			  <input type="text" id="comp_name" name="comp_name" onkeyup="changeTest(this,'m_sal')" class="input-pad company-nm" placeholder="Your company name" tabindex="1">
 			</h3>
 			
 			</div>
@@ -85,18 +85,19 @@
 	   </div>
 	   
 	<!--- Liza Step Three -- -->
-	<div class="liza col-md-8" style="display: none;" id="step-3">
-		   <div class="col-md-12 text-center"><h4>Apply for an Easy Personal Loan in 37 seconds</h4></div>
+	<div class="liza col-md-8" style="display:none;" id="step-3">
+		   <div class="col-md-12 text-center"><h4>Apply for an Easy Personal Loan in 30 seconds</h4></div>
 		   <p class="text-center">Step 3 of 3</p>
-			<div class="col-md-12 text-center animate-box cont">
+			<div class="text-center animate-box cont">
 			<div class="col-md-12 text-center animate-box cont" id="live_here" >
-             <h3>I have been living in<br>
-             <form action={{URL('search/autocomplete')}} method="POST" >
+			<form action={{URL('search/autocomplete')}} method="POST" >
+             <h3>I have been living in
+             
 		  	
 			<input type="text" class="search_city input-pad" id='city_name' placeholder='your city'>city
-			</form><br>
+			</form>
 			 Since
-			 <input type="date" id="living_since" name="living_since" class="input-pad" onchange="changeTest(this,'stay_in')">
+			 <input type="date" id="living_since" name="living_since" class="input-pad company-nm1" onchange="changeTest(this,'stay_in')">
 			</h3>
 			
 			</div>
@@ -105,8 +106,8 @@
 			</h3>
 			</div>
 			
-			<div class="col-md-12 text-center animate-box cont1" style="display:none" id="dob"><h3>My date of birth is<br>
-			<input type="date" id="dob" name="dob" class="input-pad" onchange="changeTest(this,'step_3_btn')">
+			<div class="col-md-12 text-center animate-box cont1" style="display:none" id="dob"><h3>My date of birth is
+			<input type="date" id="dob" name="dob" class="input-pad company-nm1" onchange="changeTest(this,'step_3_btn')">
 
 			</h3>
 			</div>
@@ -121,10 +122,9 @@
 	   <!-- Liza Step Three End -->
 	   
 	  <!-- POP Up code start -->
-	   <div class="col-md-4 liza1" >
-			<div class="text-center guid" id="pop1">Enter your monthly takehome salary here!
-	Without any performance bonus or incentives!</div>
-<div class="patch"><img src="images/patch_down.png"></div>
+	   <div class="col-md-4 liza1">
+		<div class="text-center guid nl-form-errors" id='pop1'>Select your professional!</div>
+
         <div class="text-center img1"><img src="images/photo.jpg"></div>
 		</div>
 		<!-- POP Up code end -->

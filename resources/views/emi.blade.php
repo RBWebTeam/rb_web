@@ -1,9 +1,10 @@
 @include('layout.header')
-	<div id="fh5co-page">
-	<div class="fh5co-contact animate-box">
+	<div id="fh5co-hero">
+	<div class="animate-box">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12 text-left fh5co-heading animate-box fadeInUp animated">
+				<p class="text-left"><a href="{{URL::to('/')}}">Home</a>/EMI</p>
 					<h2>EMI</h2>
 					
 </div>

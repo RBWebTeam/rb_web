@@ -94,6 +94,7 @@
           document.getElementById(obj).style.display='block';
           return false;
       }
+      
       function changeText(obj,val){
         $("#"+obj).keyup(function() {
             var x=$(this).val().length ;
@@ -283,6 +284,7 @@ minlength: 2  ,
         min_length: 3,
        
     });
+
 });
 
 $(document).ready(function(){

@@ -87,7 +87,7 @@
 	   </div>
 	   
 	<!--- Liza Step Three -- -->
-	<div class="liza col-md-8"  id="step-3">
+	<div class="liza col-md-8" style="display: none;" id="step-3">
 		   <div class="col-md-12 text-center"><h4>Apply for an Easy Personal Loan in 30 seconds</h4>
 		   </div>
 		   <p class="text-center">Step 3 of 3</p>

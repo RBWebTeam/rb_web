@@ -1466,7 +1466,7 @@ select {
 input[type=radio]:checked ~ .check {
   border: 5px solid #0DFF92;
 }
-.fltr h3 {text-align:cent.comp-pging:10px;}
+.fltr h3 {text-align:center; pad.modal-body inputding:10px;}
 .fltr input {padding:5px;margin-right:5px;}
 .modal-body input {background:#eee;}
 .modal-body li {color:#15a9fa;}
@@ -1476,7 +1476,8 @@ input[type=radio]:checked ~ .check {
 radio {background:#ff0000;}
 .top-mrg {margin-top:5px;margin:0 auto;}
 .center-img div img {margin:0 auto;}
-.bg-white {background:#fff; padding:20px 0px;margin-bottom:20px;margin: 0px 0px 20px 0px;}
+.bg-white {background:#fff; padding:20px 0px;margin-bottom:20px;margin:0px;}
+.bg-white1 {background:#fff; padding:0px;margin:0px;}
 .left-lin {border-left:1px dashed #ddd; padding-left:50px;}
 .partnr {padding-bottom:10px;}
 .container-fluid {margin:0px; padding:0px;}
@@ -1484,10 +1485,11 @@ radio {background:#ff0000;}
 a:hover, a:focus {text-decoration:none;}
 .call {border:1px dashed #ccc;padding:10px;}
 .modal-open .modal {z-index:10000;}
-.navbar-default{background:#fff;}
-.blue-bg {color:#fff;background:#3aa6d3;padding:10px;}
-.company-nm {width:250px;min-width:250px;}
-.company-nm1 {width:200px;min-width:200px;}
+.bankpg .img-responsive {margin:0 auto;}
+.bg-white1 .jumbotron {background:#fff; padding-top:4px; padding-bottom:5px;}
+.bnkpg {border:5px solid #1f386e;}
+.tbl {border:1px solid #ccc;}
+
 
 
 

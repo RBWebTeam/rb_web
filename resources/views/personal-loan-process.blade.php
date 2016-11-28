@@ -115,7 +115,7 @@
 
 			<div class="text-center" style="display:none;" id="step_3_btn">
 			<a class="btn btn-primary btn-outline with-arrow animate-box" onclick="changeDiv('step-3','step-2')">Go Back<i class="icon-arrow-right"></i></a>
-			<button class="btn btn-primary btn-outline with-arrow animate-box" type="submit">Get me a Loan<i class="icon-arrow-right"></i></button>
+			<a class="btn btn-primary btn-outline with-arrow animate-box" data-toggle="modal" data-target="#login">Get me a Loan<i class="icon-arrow-right"></i></a>
 			</div>
 			
 		</div>

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Response;
 use App\Http\Requests;
 
 class FormController extends Controller
@@ -48,6 +48,15 @@ class FormController extends Controller
         print "<pre>";
         print_r($input);
         return "test success";
+    }
+     public function otp(Request $req){
+        $input = $req->all();
+        // print "<pre>";
+        // print_r($input);
+        return Response::json(array(
+                            'data' => true,
+                        ));
+
     }
 
 }

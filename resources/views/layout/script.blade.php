@@ -29,7 +29,7 @@
         //alert(obj.options[obj.selectedIndex].value);
 
         document.getElementById(val).style.display='block';
-
+        
         $('#pop1').empty();
         if(val=='q2'){
         $('#pop1').append( "<p>Enter the amount you want</p>" );
@@ -196,7 +196,7 @@ $(document).ready(function(){
         $('#'+form_name +' input').on('change', function() {
        var input_name=$('#'+form_name).find('input').attr('name');   
        var append=$('input[name='+input_name+']:checked','#'+form_name).val();
-          console.log($('#'+span_name));
+        //  console.log($('#'+span_name));
         $('#'+span_name).val(append);
         $(modal_name).modal('hide');
         
@@ -285,8 +285,43 @@ minlength: 2  ,
     });
 });
 
+$(document).ready(function(){
+   $("#send_otp_button").click(function(event){
+
+    event.preventDefault();
+    var form=$(this).closest("form").attr('id');
+    //console.log(form);return false;
+    $form=$('#'+form);
+    if(! $form.valid()){
+      return false;
+    }else{
+      $.ajax({  
+               type: "POST",  
+               url: "{{URL::to('otp')}}",
+               dataType:"json",
+               data : $('#'+form).serialize(),
+               success: function(data){
+                 var data_1=data['data'];
+                 console.log(data_1);
+                if(data_1==true){
+                    $('#login').hide();
+                   // $('#otp_div').show();
+
+
+                  }else{
+                      $('.msg_err').show();
+                  }
+               }  
+      }); 
+    }
+  });
+    });
+
 
 </script>
+
+
+
 	</body>
 </html>
 @include('layout.modal')

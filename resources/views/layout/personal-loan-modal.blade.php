@@ -228,3 +228,77 @@ Liza process page 3
 </div>
 
 <!-- popup8 end-->
+<!-- login Start-->
+    <div id="login" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+      
+        <h4 class="modal-title">Fill details</h4>
+      </div>
+      <div >
+     <div> 
+   <div id="send_otp">  
+    <form class="form-horizontal" id="login_form" method="POST">
+     {{ csrf_field() }}
+   
+    <div class="form-group">
+    
+    <label for="name" class="col-sm-2 control-label">Name</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="name" name="name" placeholder="your good name" required>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="email" class="col-sm-2 control-label">Email</label>
+    <div class="col-sm-10">
+      <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="contact" class="col-sm-2 control-label">Contact</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="contact" name="contact" placeholder="Contact number" required>
+    </div>
+  </div>
+  <div class="form-group">
+    
+    <div class="col-sm-10">
+     <span id='msg_err' style="display: none;">Fill the form</span>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button class="btn btn-default"  id="send_otp_button" data-toggle="modal" data-target="#otp_modal">Send OTP</button>
+    </div>
+  </div>
+  </form>
+  </div>
+      </div>
+      </div>
+      
+    </div>
+   
+  </div>
+</div>
+
+<!-- login end-->
+<!-- otp Start-->
+<div id="otp_modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Enter OTP</h4>
+        <form id="otp_form">
+         {{ csrf_field() }}
+         <input type="text" name="otp" id="otp" required>
+         <button class="btn btn-default"  id="verify_otp" >Verify</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- otp end-->

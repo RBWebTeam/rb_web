@@ -190,14 +190,14 @@ $(document).ready(function(){
   $(document).ready(function(){
     $('.pop_up').click(function(){
        // console.log($(this).closest("form").attr('id'));
-       var span_name=$(this).parent().find('span').attr('id');
+       var span_name=$(this).parent().find('input').attr('id');
        var modal_name=$(this).parent().find('a').attr('data-target');
        var form_name=$(modal_name).find('form').attr('id');
         $('#'+form_name +' input').on('change', function() {
        var input_name=$('#'+form_name).find('input').attr('name');   
        var append=$('input[name='+input_name+']:checked','#'+form_name).val();
-          console.log(modal_name);
-        $('#'+span_name).empty().append(append);
+          console.log($('#'+span_name));
+        $('#'+span_name).val(append);
         $(modal_name).modal('hide');
         
       });

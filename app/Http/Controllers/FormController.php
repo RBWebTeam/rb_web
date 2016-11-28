@@ -34,7 +34,7 @@ class FormController extends Controller
     $http_result = curl_exec($ch);
     $error = curl_error($ch);
     $http_code = curl_getinfo($ch ,CURLINFO_HTTP_CODE);
-     print_r($http_result);exit();
+     //print_r($http_result);exit();
     curl_close($ch);
 	if($http_result==1){
 		return 'true';
@@ -42,4 +42,12 @@ class FormController extends Controller
 		return 'false';
 		//return 'true';
 	}
+
+    public function p_loan_submit(Request $req){
+        $input = $req->all();
+        print "<pre>";
+        print_r($input);
+        return "test success";
+    }
+
 }

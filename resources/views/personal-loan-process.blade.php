@@ -11,7 +11,7 @@
 			professional </h3> 
 			</div>
 			<div class="col-md-12 text-center animate-box cont" style="display:none;" id="q2" ><h3>and I want a <span class="clr-blue1">Personal Loan</span> of Rs. 
-			<input type="tel" id="loanamt" name="loanamt"  onkeypress="return fnAllowNumeric(event)" onkeyup="changeText('loanamt','q3')" class="input-pad" placeholder="1,00,000" tabindex="1">
+			<input type="tel" id="loanamt" name="loanamt" onkeyup="changeText('loanamt','q3')"  onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="1,00,000" tabindex="1">
 			.</h3>
 			</div>
 			
@@ -52,7 +52,7 @@
 			<div class="text-center animate-box cont">
 			<div class="col-md-12 text-center animate-box cont" >
              <h3>I work at 
-			  <input type="text" id="comp_name" name="comp_name" onkeyup="changeTest(this,'m_sal')" class="input-pad company-nm" placeholder="Your company name" tabindex="1">
+			  <input type="text" id="comp_name" name="comp_name" onblur="changeTest(this,'m_sal')" class="input-pad company-nm" placeholder="Your company name" tabindex="1">
 			</h3>
 			
 			</div>
@@ -92,8 +92,6 @@
 			<div class="col-md-12 text-center animate-box cont" id="live_here" >
 			<form action={{URL('search/autocomplete')}} method="POST" >
              <h3>I have been living in
-             
-		  	
 			<input type="text" class="search_city input-pad" id='city_name' placeholder='your city'>city
 			</form>
 			 Since

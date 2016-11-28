@@ -3,8 +3,8 @@
 	
 	<aside id="fh5co-hero">
 	<div class="col-md-12">
-	<p class="text-left"><a href="{{URL::to('/')}}">Home</a>/Personal Loan</p>
-	<h2 class="align-center loan-head">Personal Loan</h2>
+	<p class="text-left"><a href="{{URL::to('/')}}">Home</a>/personal-loan</p>
+	<h2 class="align-center loan-head">Personal-Loan</h2>
 	</div>
 	<div class=""></div>
 	<div class="flexslider col-md-8">
@@ -18,7 +18,7 @@
   </ol>
 
   <!-- Wrapper for slides -->
- <div class="carousel-inner" role="listbox">
+  <div class="carousel-inner" role="listbox">
     <div class="item active">
       <img src="{{URL::to('images/loan.jpg')}}" alt="">
     </div>
@@ -35,7 +35,6 @@
       <img src="{{URL::to('images/loan.jpg')}}" alt="">
     </div>
   </div>
-
   <!-- Left and right controls -->
   <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
     <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
@@ -52,8 +51,9 @@
 
 		<div class="col-md-4 red-bg1">
 	   <div class="form-in">
-              <span class="head-1 heading-bmar">Request A Call Back</span>
-             <form class="" id="compareform" role="form" method="POST">
+
+              <span class="head-1 heading-bmar">Request A Call Back<span><br>
+              <form class="" id="compareform" role="form" method="POST">
             
               {{ csrf_field() }}
                 <input type="hidden" name="form" value="subscribe-form">
@@ -84,9 +84,9 @@
 			   
 			  </div>
 			</form>
-			<div class='msg' style="display: none;"><p>Thanks. We will reach you soon.</p></div>
-            <div class='msg_err' style="display: none;"><p>Ooops. Something went wrong.</p></div>
 		</div>	
+		<div class='msg' style="display: none;"><p>Thanks. We will reach you soon.</p></div>
+            <div class='msg_err' style="display: none;"><p>Ooops. Something went wrong.</p></div>
 	</div>
 	</aside>
 	</div>
@@ -244,7 +244,14 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
+
+			
 	  	</div>
+		
+		
+		
+		
+		
 </div>
 </div>
 	

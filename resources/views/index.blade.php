@@ -10,7 +10,7 @@
 		   			<div class="slider-text">
 		   				<div class="slider-text-inner">
 		   					<h2 class="slide-head">Home Loan </h2>
-							<p>Stay ahead of the curve with the Best in the Market</p>
+							<h5>Stay ahead of the curve with the Best in the Market</h5>
 		   					<p><a href="{{URL::to('home-loan')}}" class="btn btn-primary btn-lg">View More</a></p>
 		   				</div>
 		   			</div>
@@ -21,7 +21,7 @@
 		   			<div class="slider-text">
 		   				<div class="slider-text-inner">
 		   					<h2 class="slide-head">Personal Loan</h2>
-							<p>Stay ahead of the curve with the Best in the Market</p>
+							<h5>Stay ahead of the curve with the Best in the Market</h5>
 		   					<p><a href="{{URL::to('personal-loan')}}" class="btn btn-primary btn-lg">View More</a></p>
 		   				</div>
 		   			</div>
@@ -32,7 +32,7 @@
 		   			<div class="slider-text">
 		   				<div class="slider-text-inner">
 		   					<h2 class="slide-head"> Loan against Property</h2>
-							<p>Stay ahead of the curve with the Best in the Market</p>
+							<h5>Stay ahead of the curve with the Best in the Market</h5>
 		   					<p><a href="{{URL::to('loan-against-property')}}" class="btn btn-primary btn-lg">View More</a></p>
 		   				</div>
 		   			</div>
@@ -43,7 +43,7 @@
 		   			<div class="slider-text">
 		   				<div class="slider-text-inner">
 		   					<h2 class="slide-head">SME Loan</h2>
-							<p>Stay ahead of the curve with the Best in the Market</p>
+							<h5>Stay ahead of the curve with the Best in the Market</h5>
 		   					<p><a href="{{URL::to('sme-loan')}}" class="btn btn-primary btn-lg">View More</a></p>
 		   				</div>
 		   			</div>
@@ -54,7 +54,7 @@
 		   			<div class="slider-text">
 		   				<div class="slider-text-inner">
 		   					<h2 class="slide-head">Home Loan Transfer</h2>
-							<p>Stay ahead of the curve with the Best in the Market</p>
+							<h5>Stay ahead of the curve with the Best in the Market</h5>
 		   					<p><a href="{{URL::to('home-loan-transfer')}}" class="btn btn-primary btn-lg">View More</a></p>
 		   				</div>
 		   			</div>
@@ -65,7 +65,7 @@
 		   			<div class="slider-text">
 		   				<div class="slider-text-inner">
 		   					<h2 class="slide-head">Car Loan</h2>
-							<p>Stay ahead of the curve with the Best in the Market</p>
+							<h5>Stay ahead of the curve with the Best in the Market</h5>
 		   					<p><a href="{{URL::to('car-loan')}}" class="btn btn-primary btn-lg">View More</a></p>
 		   				</div>
 		   			</div>
@@ -206,6 +206,21 @@
 			</div>
 		</div>
 	</div>
+	
+		<div class="container">
+			
+			<div class="row bg-white animate-box">
+
+					<div class="col-md-8 animate-box fadeInUp animated">
+						<div class="center-img">
+							<div><img src="images/Credit-Report.png" class="img-responsive" /></div>
+												
+						</div>
+					</div>
+					<div class="col-md-4 left-lin"><img src="images/Report.png" class="img-responsive;" /><button class="btn btn-primary btn-outline with-arrow top-mrg">Apply For Credit Report<i class="icon-arrow-right"></i></button></div>
+
+			</div>
+		</div>
 	
 	<div id="fh5co-pricing-section">
 		<div class="container">

@@ -47,5 +47,6 @@ class LoanController extends Controller
  	public function apply(){
     	return view('personal-loan-process');
     }
+    
        
 }

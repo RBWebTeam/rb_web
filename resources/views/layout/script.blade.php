@@ -29,8 +29,26 @@
         //alert(obj.options[obj.selectedIndex].value);
 
         document.getElementById(val).style.display='block';
+
         $('#pop1').empty();
+        if(val=='q2'){
         $('#pop1').append( "<p>Enter the amount you want</p>" );
+        }else if(val=='q4'){
+          $('#pop1').append( "<p>Any loan taken in past</p>" );
+        }else if(val=='q5'){
+          $('#pop1').append( "<p>Any credit card you have</p>" );
+        }else if(val=='q6'){
+          $('#pop1').append( "<p>Ever delayed EMI?</p>" );
+        }else if(val=='m_sal'){
+          $('#pop1').append( "<p>You net salary</p>" );
+        }else if(val=='stay_in'){
+           $('#pop1').append( "<p>You stay with</p>" );
+        }else if(val=='dob'){
+           $('#pop1').append( "<p>I wonder if your birthday is today</p>" );
+        }
+        else{
+           $('#pop1').append( "<p>Please Proceed</p>" );
+        }
         return false;
       }
        function changeDiv(prv,nxt){
@@ -40,7 +58,13 @@
         document.getElementById(prv).style.display='none';
         document.getElementById(nxt).style.display='block';
         $('#pop1').empty();
-        $('#pop1').append( "<p>Great! please fill this form too</p>" );
+        if(nxt=='step-2'){
+          $('#pop1').append( "<p>Where do you work?</p>" );   
+        }else if(nxt=='step-3'){
+          $('#pop1').append( "<p>Tell us about the your residence</p>" );   
+        }else{
+          $('#pop1').append( "<p>Great! please fill this form too</p>" );
+        }
         window.scrollTo(0, 0);
         return false;
       }
@@ -60,27 +84,42 @@
             $('#'+mnth).val(new_m);
             $('#pop1').empty();
             $('#pop1').append( "<p>1 year has 12 months only</p>" );
-          }else{
+            }else if(obj=='sal_rcv_by'){
+            $('#pop1').append( "<p>How you get your Vitamin M(money/salary)</p>" );
+            }else{
             $('#pop1').empty();
-            $('#pop1').append( "<p>you really seems expierienceed in your line of work</p>" );
+            $('#pop1').append( "<p>Great!! tell us more</p>" );
           }
+          
           document.getElementById(obj).style.display='block';
           return false;
       }
       
       function changeText(obj,val){
         $("#"+obj).keyup(function() {
-          var x=$(this).val().length ;
-        if ((obj=='total_sal' && x>=4) ||(x>=5 && x<=8) ) {
-        document.getElementById(val).style.display='block';
-        return false;
-      }
-      else{
-        document.getElementById(val).style.display='none';
-        return false;
-      }
-});
-              }
+            var x=$(this).val().length ;
+            if ((obj=='total_sal' && x>=4) ||(x>=5 && x<=8) ) {
+            document.getElementById(val).style.display='block';
+            return false;
+          }
+          else {
+            document.getElementById(val).style.display='none';
+            return false;
+          }
+           
+      });
+
+      $('#pop1').empty();
+      if(val=='q3'){
+           $('#pop1').append( "<p>Have any existing loan</p>" );
+        }else if(val=='exp'){
+          $('#pop1').append( "<p>Entr your expierience in current company</p>" );
+        }else if(val=='total_exp'){
+          $('#pop1').append( "<p>Entr your total expierience</p>" );
+        }else{
+          $('#pop1').append( "<p>Please go on</p>" );
+        }
+}
 
       function fnAllowNumeric(evt) {
       evt = (evt) ? evt : window.event;
@@ -152,14 +191,14 @@ $(document).ready(function(){
   $(document).ready(function(){
     $('.pop_up').click(function(){
        // console.log($(this).closest("form").attr('id'));
-       var span_name=$(this).parent().find('span').attr('id');
+       var span_name=$(this).parent().find('input').attr('id');
        var modal_name=$(this).parent().find('a').attr('data-target');
        var form_name=$(modal_name).find('form').attr('id');
         $('#'+form_name +' input').on('change', function() {
        var input_name=$('#'+form_name).find('input').attr('name');   
        var append=$('input[name='+input_name+']:checked','#'+form_name).val();
-          console.log(modal_name);
-        $('#'+span_name).empty().append(append);
+          console.log($('#'+span_name));
+        $('#'+span_name).val(append);
         $(modal_name).modal('hide');
         
       });

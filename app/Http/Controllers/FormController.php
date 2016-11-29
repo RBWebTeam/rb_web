@@ -3,9 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Response;
 use App\Http\Requests;
-
+use Session;
+use DB;
 class FormController extends Controller
 {
 	function sidebar(Request $req){
@@ -48,6 +49,50 @@ class FormController extends Controller
         print "<pre>";
         print_r($input);
         return "test success";
+    }
+    
+     public function otp(Request $req){
+        //print_r("expression");exit();
+        $input = $req->all();
+        //sms curl to write here
+        $otp = mt_rand(100000, 999999);
+    //$input->session()->put('contact', $input['contact']);
+        Session::put('contact', $req['contact']);
+        $value = Session::get('contact');
+        //ends 
+        //insert into DB
+        $query=DB::table('otp')->insert(
+        ['name' => $req['name'],'contact'=>$req['contact'],'email'=>$req['email']
+        ,'source'=>'web_user','product'=>$req['product'],'otp'=>$otp,'status'=>'0','created_at'=> date("Y-m-d H:i:s")]
+        );
+        if($query){
+            return Response::json(array(
+                            'data' => true,
+                        ));
+        }else{
+            return Response::json(array(
+                            'data' => false,
+                        ));
+        }
+    }
+     public function otp_verify(Request $req){
+        
+        //insert into DB
+        //$c_date=date("Y-m-d H:i:s");
+        $phone = Session::get('contact');
+        $query=DB::table('otp')
+            ->where('otp', $req['otp'])
+            ->where('contact',$phone)
+            ->update(['status' => 1]);
+        if($query){
+            return Response::json(array(
+                            'data' => true,
+                        ));
+        }else{
+            return Response::json(array(
+                            'data' => false,
+                        ));
+        }
     }
 
 }

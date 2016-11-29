@@ -50,7 +50,7 @@
                     <li><a href="{{URL::to('home-loans/pnb')}}">PNB Housing </a></li>
                     <li><a href="{{URL::to('home-loans/finance')}}">Finance</a></li>
                     <li><a href="{{URL::to('home-loans/reliance')}}">Reliance Capital</a></li>
-                    <li><a href="{{URL::to('home-loans/standard')}}">Standard Chartered</a></li>  
+                    <li><a href="{{URL::to('home-loans/standard')}}">Standard Chartered</a></li> 
 				</ul>
 			</div>
 			<div class="col-md-2 col-md-push-1 col-sm-12 col-sm-push-0 col-xs-12 col-xs-push-0">

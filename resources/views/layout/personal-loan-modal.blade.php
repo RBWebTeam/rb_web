@@ -260,17 +260,18 @@ Liza process page 3
   <div class="form-group">
     <label for="contact" class="col-sm-2 control-label">Contact</label>
     <div class="col-sm-10">
-      <input type="text" class="form-control" id="contact" name="contact" placeholder="Contact number" required>
+      <input type="text" class="form-control" id="contact" name="contact" placeholder="Contact number"  pattern="[789][0-9]{9}" required maxlength="10" minlength="10" onkeypress="return fnAllowNumeric(event)">
     </div>
   </div>
   <div class="form-group">
     
     <div class="col-sm-10">
-     <span id='msg_err' style="display: none;">Fill the form</span>
+     <span id='msg_err' style="display: none;">oops something went wrong</span>
     </div>
   </div>
   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
+    <input type="hidden" name="product" value="personal_loan">
       <button class="btn btn-default"  id="send_otp_button" data-toggle="modal" data-target="#otp_modal">Send OTP</button>
     </div>
   </div>
@@ -292,10 +293,12 @@ Liza process page 3
     <div class="modal-content">
       <div class="modal-header">
         <h4 class="modal-title">Enter OTP</h4>
-        <form id="otp_form">
+        <form id="otp_form" class="form-horizontal">
          {{ csrf_field() }}
-         <input type="text" name="otp" id="otp" required>
-         <button class="btn btn-default"  id="verify_otp" >Verify</button>
+         <input type="text" class="form-control" name="otp" id="otp" minlength="6" maxlength="6" required onkeypress="return fnAllowNumeric(event)">
+         <span id='otp_err' style="display: none; color: red">oops!! OTP is wrong</span><br>
+         <button class="btn btn-default"  class="form-control" id="verify_otp" >Verify</button><br>
+         
       </div>
     </div>
   </div>

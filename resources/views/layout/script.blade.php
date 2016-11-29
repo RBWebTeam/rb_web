@@ -85,6 +85,7 @@
             $('#pop1').empty();
             $('#pop1').append( "<p>1 year has 12 months only</p>" );
             }else if(obj=='sal_rcv_by'){
+              $('#pop1').empty();
             $('#pop1').append( "<p>How you get your Vitamin M(money/salary)</p>" );
             }else{
             $('#pop1').empty();
@@ -306,17 +307,42 @@ $(document).ready(function(){
                  var data_1=data['data'];
                  console.log(data_1);
                 if(data_1==true){
-                    $('#login').hide();
-                   // $('#otp_div').show();
-
-
+                    $('#login').modal('hide');
                   }else{
-                      $('.msg_err').show();
+                    $('#msg_err').show();
                   }
                }  
       }); 
     }
   });
+
+   $("#verify_otp").click(function(event){
+
+    event.preventDefault();
+    var form=$(this).closest("form").attr('id');
+    //console.log(form);return false;
+    $form=$('#'+form);
+    if(! $form.valid()){
+      return false;
+    }else{
+      $.ajax({  
+               type: "POST",  
+               url: "{{URL::to('otp_verify')}}",
+               dataType:"json",
+               data : $('#'+form).serialize(),
+               success: function(data){
+                 var data_1=data['data'];
+                 console.log(data_1);
+                if(data_1==true){
+                    $('#otp_modal').modal('hide');
+                  }else{
+                    $('#otp_err').show();
+                  }
+               }  
+      }); 
+    }
+  });
+
     });
 
 

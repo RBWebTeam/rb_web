@@ -36,7 +36,7 @@
 			<div class="col-md-2 col-sm-12 col-sm-push-0 col-xs-12 col-xs-push-0">
 				<h3>Home Loan</h3>
 				<ul class="float">
-					<li><a href="#">ICICI Bank</a></li>
+					<li><a href="{{URL::to('bank')}}" data-target="icici" id="bank_name">ICICI Bank</a></li>
 					<li><a href="#">Axis Bank</a></li>
 					<li><a href="#">SBI Bank</a></li>
 					<li><a href="#">HDFC Bank</a></li>

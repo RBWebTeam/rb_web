@@ -33,4 +33,6 @@ Route::get('autocomplete',array('as'=>'autocomplete','uses'=>'AutoCompleteContro
 Route::get('searchajax',array('as'=>'searchajax','uses'=>'AutoCompleteController@autoComplete'));	
 Route::post('personal-loan-submit','FormController@p_loan_submit')->middleware('Login');
 Route::post('otp','FormController@otp');
+Route::post('otp_verify','FormController@otp_verify');
+Route::get('bank','BankController@index');
 //Route::get('Login','LoginController@index');

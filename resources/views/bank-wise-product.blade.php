@@ -3,7 +3,7 @@
 	
 	<aside id="fh5co-hero">
 	<div class="col-md-12">
-	<p class="text-left">home/axis-bank</p>
+	<p class="text-left">home/{{$bank_name}}</p>
 	</div>
 	<div class="col-md-8 bg-white1 bnkpg">
 		<div class="jumbotron text-center bankpg">

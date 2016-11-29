@@ -14,4 +14,8 @@ class HomeController extends Controller
 		//print_r($data);
 	    return view('index')->with($data);
 	}
+	public function footercontent($id){
+		$data['bank_name'] = $id;
+	    return view('bank-wise-product')->with($data);
+	}
 }

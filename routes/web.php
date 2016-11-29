@@ -32,3 +32,8 @@ Route::get('widget','LoanController@car_loan');
 Route::get('autocomplete',array('as'=>'autocomplete','uses'=>'AutoCompleteController@index'));
 Route::get('searchajax',array('as'=>'searchajax','uses'=>'AutoCompleteController@autoComplete'));	
 Route::post('personal-loan-submit','FormController@p_loan_submit');
+
+Route::get('home-loans/{id}', 'HomeController@footercontent');
+Route::get('personal-loans/{id}', 'HomeController@footercontent');
+Route::get('sme-loans/{id}', 'HomeController@footercontent');
+Route::get('business-loans/{id}', 'HomeController@footercontent');

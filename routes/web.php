@@ -42,3 +42,4 @@ Route::get('business-loans/{id}', 'HomeController@footercontent');
 Route::post('otp','FormController@otp');
 Route::post('otp_verify','FormController@otp_verify');
 Route::get('bank','BankController@index');
+Route::get('logout','HomeController@logout');

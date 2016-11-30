@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Http\Requests;
 use DB;
 class HomeController extends Controller
 {
@@ -18,4 +17,9 @@ class HomeController extends Controller
 		$data['bank_name'] = $id;
 	    return view('bank-wise-product')->with($data);
 	}
+	public function logout(Request $req){
+		$req->session()->flush();
+	    return redirect('/');
+	}
+
 }

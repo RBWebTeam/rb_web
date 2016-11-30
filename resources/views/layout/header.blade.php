@@ -71,7 +71,44 @@
 						<li><a href="#">Retail Loan</a></li>
 						<li><a href="#">Other Loan</a></li>
 						<li><a href="#">Credit Loan</a></li>
-						<li><a href="#">Balance Transfer</a></li>
+						<li><a href="#">Balance Transfer </a></li>
+						<?php if(Session::get('is_login')){
+							?>
+							<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" data-target="account">My Account&nbsp;<i class="icon-chevron-down"></i></a>
+							
+							<ul class="dropdown-menu" id='account'>
+							    <li>
+								<a href={{URL::to('logout')}}>logout</a>
+								<a href="#">My Account</a>
+								<a href="#">My credit score</a>
+								<a href="#">Emi calculator</a>
+								<a href='#'>Applied loan</a>
+								</li>
+							</ul>
+							</li>
+						<?php }else{
+							?>
+							<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" data-target="#">Login&nbsp;<i class="icon-chevron-down"></i></a>
+							</li>
+						<?php }
+						?>
+						 <!-- <ul class="dropdown-menu">
+						    <li>
+							<a href="#">Sign In</a>
+							<a href="#">Loan against Property</a>
+							<a href="#">Commercial Property Purchase</a>
+							</li>
+							<li>
+							<a href="#">Lease Rent Discounting</a>
+							<a href="#">Working capital</a>
+							<a href="#">Export/Import Finance</a>
+						
+							</li>
+							<li><a href="#">Over Draft / cash Credit</a></li>
+							
+							</li>
+						</ul> -->
+						
 						<!--- <li class="cta"><a href="#">Apply For Loan</a></li>- -->
                         <!--- <li class="con-no">1800-267-629-6</li> - -->
 					</ul>

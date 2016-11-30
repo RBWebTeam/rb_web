@@ -305,7 +305,7 @@ $(document).ready(function(){
                data : $('#'+form).serialize(),
                success: function(data){
                  var data_1=data['data'];
-                 console.log(data_1);
+                // console.log(data_1);
                 if(data_1==true){
                     $('#login').modal('hide');
                   }else{
@@ -332,8 +332,13 @@ $(document).ready(function(){
                data : $('#'+form).serialize(),
                success: function(data){
                  var data_1=data['data'];
-                 console.log(data_1);
+                 //console.log(data_1);
                 if(data_1==true){
+                   // $.post('personal-loan-submit', $('#personal_loan_process_form').serialize());
+                  
+                     var form_name=$('#elem').parent().find('form').attr('id');
+                     $.post('personal-loan-submit', $('#'+form_name).serialize());
+                     
                     $('#otp_modal').modal('hide');
                   }else{
                     $('#otp_err').show();

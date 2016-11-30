@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Http\Requests;
 use DB;
 class HomeController extends Controller
 {
@@ -14,4 +13,13 @@ class HomeController extends Controller
 		//print_r($data);
 	    return view('index')->with($data);
 	}
+	public function footercontent($id){
+		$data['bank_name'] = $id;
+	    return view('bank-wise-product')->with($data);
+	}
+	public function logout(Request $req){
+		$req->session()->flush();
+	    return redirect('/');
+	}
+
 }

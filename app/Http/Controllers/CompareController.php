@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
-
+use Auth;
 class CompareController extends Controller
 {
     //
@@ -13,7 +13,9 @@ class CompareController extends Controller
     	return view('compare');
     }
     public function view_loan(){
-    	return view('view-loan');
+        
+    	   return view('view-loan');
+        
     }
  	public function emi(){
     	return view('emi');

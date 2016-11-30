@@ -1,7 +1,7 @@
 @include('layout.header')
 
     <!--- liza Step First   - -->
-	    <div class="container">
+	    <div class="container" id='elem'>
 	    <form name='personal_loan_process_form' id='personal_loan_process_form' action={{URL::to('personal-loan-submit')}} method="POST">
 	    	  {{ csrf_field() }}
 		<div class="liza col-md-8" id="step-1">
@@ -95,7 +95,7 @@
 			<div class="col-md-12 text-center animate-box cont" id="live_here" >
 			<form action={{URL('search/autocomplete')}} method="POST" >
              <h3>I have been living in
-			<input type="text" class="search_city input-pad" id='city_name' placeholder='your city'>city
+			<input type="text" class="search_city input-pad" id='city_name' name='city_name' placeholder='your city'>city
 			</form>
 			 Since
 			 <input type="date" id="living_since" name="living_since" class="input-pad company-nm1" onchange="changeTest(this,'stay_in')">
@@ -113,9 +113,9 @@
 			</h3>
 			</div>
 
-			<div class="text-center" style="display:none;" id="step_3_btn">
+			<div class="text-center" style="display: none"  id="step_3_btn">
 			<a class="btn btn-primary btn-outline with-arrow animate-box" onclick="changeDiv('step-3','step-2')">Go Back<i class="icon-arrow-right"></i></a>
-			<button class="btn btn-primary btn-outline with-arrow animate-box" type="submit">Get me a Loan<i class="icon-arrow-right"></i></button>
+			<a class="btn btn-primary btn-outline with-arrow animate-box" data-toggle="modal" data-target="#login">Get me a Loan<i class="icon-arrow-right"></i></a>
 			</div>
 			
 		</div>

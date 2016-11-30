@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Response;
 use App\Http\Requests;
-
+use Session;
+use Auth;
+use DB;
 class FormController extends Controller
 {
 	function sidebar(Request $req){
@@ -48,6 +50,58 @@ class FormController extends Controller
         print "<pre>";
         print_r($input);
         return "test success";
+    }
+    
+     public function otp(Request $req){
+        //print_r("expression");exit();
+        $input = $req->all();
+        //sms curl to write here
+        //$otp = mt_rand(100000, 999999);
+        $otp=123456;
+        //CommanDataLoad.Send_SMS_Save_Data('mobileno', 'SMSBody', 'ip', 'RBERP');
+    //$input->session()->put('contact', $input['contact']);
+        Session::put('contact', $req['contact']);
+        $value = Session::get('contact');
+        //ends 
+        //insert into DB
+        $query=DB::table('otp')->insertGetId(
+        ['name' => $req['name'],'contact'=>$req['contact'],'email'=>$req['email']
+        ,'source'=>'web_user','product'=>$req['product'],'otp'=>$otp,'status'=>'0','created_at'=> date("Y-m-d H:i:s")]
+        );
+        Session::put('login_id',$query);
+        if($query){
+            return Response::json(array(
+                            'data' => true,
+                        ));
+        }else{
+            return Response::json(array(
+                            'data' => false,
+                        ));
+        }
+    }
+     public function otp_verify(Request $req){
+        //print_r($req->all());
+        //insert into DB
+        //$c_date=date("Y-m-d H:i:s");
+        $phone = Session::get('contact');
+        $query=DB::table('otp')
+            ->where('otp', $req['otp'])
+            ->where('contact',$phone)
+            ->update(['status' => 1]);
+        if($query){
+
+            //p_loan_submit();
+             Session::put('user_id',Session::get('login_id'));
+             Session::put('is_login',1);
+             //print_r(Session::get('user_id'));
+            return Response::json(array(
+                            'data' => true,
+                        ));
+        }else{
+            return Response::json(array(
+                            'data' => false,
+                        ));
+        }
     }
 
 }

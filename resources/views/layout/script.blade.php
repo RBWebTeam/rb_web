@@ -104,6 +104,10 @@
             return false;
           }
           else {
+            if(x>8){
+              $('#pop1').empty();
+            $('#pop1').append( "<p>We dont provide that much of loan.</p>" );
+            }
             document.getElementById(val).style.display='none';
             return false;
           }
@@ -290,7 +294,9 @@ minlength: 2  ,
 
 $(document).ready(function(){
    $("#send_otp_button").click(function(event){
-
+    $('#send_otp_button').hide();
+    $('#pls_wait').show();
+    
     event.preventDefault();
     var form=$(this).closest("form").attr('id');
     //console.log(form);return false;
@@ -307,6 +313,8 @@ $(document).ready(function(){
                  var data_1=data['data'];
                 // console.log(data_1);
                 if(data_1==true){
+                  //data-target="#otp_modal"
+                    $('#otp_modal').modal('toggle');
                     $('#login').modal('hide');
                   }else{
                     $('#msg_err').show();
@@ -320,6 +328,9 @@ $(document).ready(function(){
 
     event.preventDefault();
     var form=$(this).closest("form").attr('id');
+    $('#wait').show();
+    $('#verify_otp').hide();
+    
     //console.log(form);return false;
     $form=$('#'+form);
     if(! $form.valid()){
@@ -338,10 +349,12 @@ $(document).ready(function(){
                   
                      var form_name=$('#elem').parent().find('form').attr('id');
                      $.post('personal-loan-submit', $('#'+form_name).serialize());
-                     
+                      window.location.href = "{{URL::to('view-loan')}}";
                     $('#otp_modal').modal('hide');
                   }else{
                     $('#otp_err').show();
+                    $('#wait').hide();
+                    $('#verify_otp').show();
                   }
                }  
       }); 

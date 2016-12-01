@@ -272,7 +272,8 @@ Liza process page 3
   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
     <input type="hidden" name="product" value="personal_loan">
-      <button class="btn btn-default"  id="send_otp_button" data-toggle="modal" data-target="#otp_modal">Send OTP</button>
+      <button class="btn btn-default"  id="send_otp_button" data-toggle="modal" >Send OTP</button>
+      <span id='pls_wait' style="display:none;color: red">Checking .... Please wait</span>
     </div>
   </div>
   </form>
@@ -298,7 +299,8 @@ Liza process page 3
          <input type="text" class="form-control" name="otp" id="otp" minlength="6" maxlength="6" required onkeypress="return fnAllowNumeric(event)">
          <span id='otp_err' style="display: none; color: red">oops!! OTP is wrong</span><br>
          <button class="btn btn-default"  class="form-control" id="verify_otp" >Verify</button><br>
-         
+         </form>
+         <span id='wait' style="display: none; color: red">Checking ... please wait</span><br>
       </div>
     </div>
   </div>

@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
-use Auth;
+use Session;
+
 class CompareController extends Controller
 {
     //
@@ -13,8 +14,11 @@ class CompareController extends Controller
     	return view('compare');
     }
     public function view_loan(){
-        
+        if(Session::get('is_login')){
     	   return view('view-loan');
+        }else{
+            return redirect('/');
+        }
         
     }
  	public function emi(){

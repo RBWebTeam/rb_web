@@ -81,7 +81,7 @@
 								<a href={{URL::to('logout')}}>logout</a>
 								<a href="#">My Account</a>
 								<a href="#">My credit score</a>
-								<a href="#">Emi calculator</a>
+								<a href="{{URL::to('emi')}}">Emi calculator</a>
 								<a href='#'>Applied loan</a>
 								</li>
 							</ul>

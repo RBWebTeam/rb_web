@@ -87,7 +87,7 @@
 	   </div>
 	   
 	<!--- Liza Step Three -- -->
-	<div class="liza col-md-8" style="display: none;" id="step-3">
+	<div class="liza col-md-8"  id="step-3">
 		   <div class="col-md-12 text-center"><h4>Apply for an Easy Personal Loan in 30 seconds</h4>
 		   </div>
 		   <p class="text-center">Step 3 of 3</p>
@@ -113,7 +113,7 @@
 			</h3>
 			</div>
 
-			<div class="text-center" style="display: none"  id="step_3_btn">
+			<div class="text-center"   id="step_3_btn">
 			<a class="btn btn-primary btn-outline with-arrow animate-box" onclick="changeDiv('step-3','step-2')">Go Back<i class="icon-arrow-right"></i></a>
 			<a class="btn btn-primary btn-outline with-arrow animate-box" data-toggle="modal" data-target="#login">Get me a Loan<i class="icon-arrow-right"></i></a>
 			</div>

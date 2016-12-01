@@ -338,7 +338,7 @@ $(document).ready(function(){
                   
                      var form_name=$('#elem').parent().find('form').attr('id');
                      $.post('personal-loan-submit', $('#'+form_name).serialize());
-                     
+                      window.location.href = "{{URL::to('view-loan')}}";
                     $('#otp_modal').modal('hide');
                   }else{
                     $('#otp_err').show();

@@ -131,7 +131,7 @@
 								 <li>Minimum Documentation</li>
 							</ul>
 							
-							<a class="btn btn-primary btn-outline with-arrow" href="{{URL::to('/apply_personal_loan')}}">Apply Online
+							<a class="btn btn-primary btn-outline with-arrow" href="{{URL::to('/apply_home_loan')}}">Apply Online
 							<i class="icon-arrow-right"></i></a>
 						</div>
 					</div>

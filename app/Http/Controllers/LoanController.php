@@ -47,6 +47,19 @@ class LoanController extends Controller
  	public function apply(){
     	return view('personal-loan-process');
     }
+
+    public function apply_home_loan(){
+
+        return view('home-loan-process');
+
+    }
+
+
+    public function apply_loan_against_property(){
+     
+         return view('loan-against-property-process');
+        
+    }
     
        
 }

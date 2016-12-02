@@ -43,3 +43,7 @@ Route::post('otp','FormController@otp');
 Route::post('otp_verify','FormController@otp_verify');
 Route::get('bank','BankController@index');
 Route::get('logout','HomeController@logout');
+/* dp */
+
+Route::get('apply_home_loan','LoanController@apply_home_loan');
+Route::get('apply_loan_against_property','LoanController@apply_loan_against_property');

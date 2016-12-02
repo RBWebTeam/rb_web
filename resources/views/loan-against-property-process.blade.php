@@ -1,7 +1,7 @@
 @include('layout.header')
 <div class="container" id='elem'>
-	  <form name='personal_loan_process_form' id='personal_loan_process_form' action={{URL::to('personal-loan-submit')}} method="POST">  {{ csrf_field() }}
-
+	  <form name='LAP_process_form' id='LAP_process_form' action={{URL::to('personal-loan-submit')}} method="POST">  {{ csrf_field() }}
+	  <input type="hidden" id="product" name="product_name" value="Loan_Against_Property">
 		<div class="liza col-md-8" id="step1ofagiansp" >
 		   <div class="col-md-12 text-center"><h4>Apply for an Easy Personal Loan in 30 seconds</h4></div>
 		   <p class="text-center">Step 1 of 3</p>
@@ -148,10 +148,16 @@
 			</div>
 
 
-      <div class="text-center" style="display:none;" id="step_2_gainst">
-			<a class="btn btn-primary btn-outline with-arrow animate-box" onclick="changeDiv('step-2','step-1')">Go Back<i class="icon-arrow-right"></i></a>
-			<a class="btn btn-primary btn-outline with-arrow animate-box" onclick="changeDiv('step-2','step-3')">Final Step<i class="icon-arrow-right"></i></a>
-	</div>
+   <!--    <div class="text-center" style="display:none;" id="stepAgainst2">
+		<a class="btn btn-primary btn-outline with-arrow animate-box" onclick="loanAgainstfn('step1ag')">Go Back<i class="icon-arrow-right"></i></a>
+			<a class="btn btn-primary btn-outline with-arrow animate-box" onclick="loanAgainstfn('step3ag')">Final Step<i class="icon-arrow-right"></i></a>
+	</div> -->
+
+	<!-- <div class="text-center" id="step2_against">
+		<a class="btn btn-primary btn-outline with-arrow animate-box" onclick="loanAgainstfn('step1ag')">Go Back<i class="icon-arrow-right"></i></a>
+	</div> -->
+
+
  </div>
 
 
@@ -198,9 +204,14 @@
 		</div>
       
 
-        <div class="text-center" id="step2_gainst">
+  <!--       <div class="text-center" id="step2_against">
 		<a class="btn btn-primary btn-outline with-arrow animate-box" onclick="loanAgainstfn('step_2')">Go Back<i class="icon-arrow-right"></i></a>
 		</div>
+
+<div class="text-center" style="display:none" id="step_2_gainst">
+		<a class="btn btn-primary btn-outline with-arrow animate-box" onclick="loanAgainstfn('step_2')">Go Back<i class="icon-arrow-right"></i></a>
+			<a class="btn btn-primary btn-outline with-arrow animate-box" onclick="loanAgainstfn('step3ag')">Final Step<i class="icon-arrow-right"></i></a>
+</div> -->
 
 	   </div>
 

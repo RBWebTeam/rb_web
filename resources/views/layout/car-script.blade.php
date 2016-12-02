@@ -26,38 +26,40 @@
 <script>
    
 
-   function changeTest(obj,val){
+   function changeTest_car(obj,val){
 
         //alert(obj.options[obj.selectedIndex].value);
 
         document.getElementById(val).style.display='block';
         
         $('#pop1').empty();
-        if(val=='q2'){
+        if(val=='manufacture'){
         //  document.getElementById('q3').style.display='none';
         $('#pop1').append( "<p>Which car you want(manufacture-year)</p>" );
-        }else if(val=='q3'){
+        }else if(val=='preferred'){
           
           if(obj.value=="New Car"){
-            document.getElementById('q2').style.display='none  ';
+            document.getElementById('manufacture').style.display='none  ';
           }
           $('#pop1').append( "<p>Your Dream Car</p>" );
-        }else if(val=='q4'){
+        }else if(val=='living_currently'){
           $('#pop1').append( "<p>Where do yo reside</p>" );
-        }else if(val=='q5'){
+        }else if(val=='work_at'){
           $('#pop1').append( "<p>Where do you work</p>" );
 
-        }else if(val=='q6'){
+        }else if(val=='takehome_salary'){
           $('#pop1').append( "<p>Your monthly takehome salary!!</p>" );
-        }else if(val=='q7'){
+        }else if(val=='experience'){
           $('#pop1').append( "<p>Your experience in the above company is</p>" );
-           }else if(val=='q10'){
-          $('#pop1').append( "<p>Where your Vitamin M(money/salary) get deposit into</p>" );
-        }else if(val=='stay_in'){
+           }else if(val=='salary_deposit'){
+          $('#pop1').append( "<p>Where your money/salary get deposit into</p>" );
+        }else if(val=='amt_borrow'){
+          $('#pop1').append("<p>Amount to be borrowed</p>");
+        }
+
+        else if(val=='living_in'){
           $('#pop1').append( "<p>You stay with</p>" );
-        }else if(val=='stay_in'){
-           $('#pop1').append( "<p>You stay with</p>" );
-        }else if(val=='dob'){
+        }else if(val=='birth'){
            $('#pop1').append( "<p>I wonder if your birthday is today</p>" );
         }
         else{
@@ -65,7 +67,7 @@
         }
         return false;
       }
-       function changeDiv(prv,nxt){
+       function changeDiv_car(prv,nxt){
 
         //alert(obj.options[obj.selectedIndex].value);
 
@@ -83,7 +85,7 @@
         return false;
       }
 
-  function yr_months(yr,mnth,obj){
+  function yr_months_car(yr,mnth,obj){
 
         //alert(obj.options[obj.selectedIndex].value);
         var m=$("#"+mnth).val();
@@ -98,9 +100,9 @@
             $('#'+mnth).val(new_m);
             $('#pop1').empty();
             $('#pop1').append( "<p>1 year has 12 months only</p>" );
-            }else if(obj=='q9'){
+            }else if(obj=='salary_by'){
               $('#pop1').empty();
-            $('#pop1').append( "<p>How you get your Vitamin M(money/salary)</p>" );
+            $('#pop1').append( "<p>How you get your money/salary</p>" );
             }else{
             $('#pop1').empty();
             $('#pop1').append( "<p>Entr your total expierience</p>" );
@@ -110,10 +112,10 @@
           return false;
       }
       
-      function changeText(obj,val){
+      function changeText_car(obj,val){
         $("#"+obj).keyup(function() {
             var x=$(this).val().length ;
-            if ((obj=='total_sal' && x>=5)  ) {
+            if ((obj=='total_salary' && x>=5)  ) {
             
 
             document.getElementById(val).style.display='block';
@@ -127,7 +129,7 @@
       });
 
       $('#pop1').empty();
-      if(val=='q4'){
+      if(val=='living_currently'){
            $('#pop1').append( "<p>Where do you reside</p>" );
         }else if(val=='exp'){
           $('#pop1').append( "<p>Entr your expierience in current company</p>" );

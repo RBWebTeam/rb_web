@@ -44,6 +44,32 @@
         }else if(val=='stay_in'){
            $('#pop1').append( "<p>You stay with</p>" );
         }else if(val=='dob'){
+           $('#pop1').append( "<p>I wonder if your birthday is today</p>" );//now if else from car -praveen
+        }else if(val=='manufacture'){
+        //  document.getElementById('q3').style.display='none';
+        $('#pop1').append( "<p>Which car you want(manufacture-year)</p>" );
+        }else if(val=='preferred'){
+          if(obj.value=="New Car"){
+            document.getElementById('manufacture').style.display='none  ';
+          }
+          $('#pop1').append( "<p>Your Dream Car</p>" );
+        }else if(val=='living_currently'){
+          $('#pop1').append( "<p>Where do yo reside</p>" );
+        }else if(val=='work_at'){
+          $('#pop1').append( "<p>Where do you work</p>" );
+
+        }else if(val=='takehome_sal'){
+          $('#pop1').append( "<p>Your monthly takehome salary!!</p>" );
+        }else if(val=='exp'){
+          $('#pop1').append( "<p>Your experience in the above company is</p>" );
+           }else if(val=='salary_deposit'){
+          $('#pop1').append( "<p>Where your money/salary get deposit into</p>" );
+        }else if(val=='amt_borrow'){
+          $('#pop1').append("<p>Amount to be borrowed</p>");
+        }
+        else if(val=='living_in'){
+          $('#pop1').append( "<p>You stay with</p>" );
+        }else if(val=='birth'){
            $('#pop1').append( "<p>I wonder if your birthday is today</p>" );
         }
         else{
@@ -51,6 +77,8 @@
         }
         return false;
       }
+
+
        function changeDiv(prv,nxt){
 
         //alert(obj.options[obj.selectedIndex].value);
@@ -62,6 +90,8 @@
           $('#pop1').append( "<p>Where do you work?</p>" );   
         }else if(nxt=='step-3'){
           $('#pop1').append( "<p>Tell us about the your residence</p>" );   
+        }else if(nxt=='start-2'){
+          $('#pop1').append( "<p>Living in city since?</p>" );   //of car loan by praveen
         }else{
           $('#pop1').append( "<p>Great! please fill this form too</p>" );
         }
@@ -84,7 +114,7 @@
             $('#'+mnth).val(new_m);
             $('#pop1').empty();
             $('#pop1').append( "<p>1 year has 12 months only</p>" );
-            }else if(obj=='sal_rcv_by'){
+            }else if(obj=='sal_rcv_by' || obj=='salary_by'){
               $('#pop1').empty();
             $('#pop1').append( "<p>How you get your Vitamin M(money/salary)</p>" );
             }else{
@@ -100,7 +130,7 @@
         $("#"+obj).keyup(function() {
             var x=$(this).val().length ;
             if ((obj=='total_sal' && x>=4) ||(x>=5 && x<=8) ) {
-            document.getElementById(val).style.display='block';
+              document.getElementById(val).style.display='block';
             return false;
           }
           else {

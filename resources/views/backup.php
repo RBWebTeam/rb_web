@@ -1,20 +1,19 @@
 @include('layout.header')
 
     <!--- liza Step First   - -->
-	    <div class="container" id='elem'>
+	    <div class="container">
 	    <form name='personal_loan_process_form' id='personal_loan_process_form' action={{URL::to('personal-loan-submit')}} method="POST">
 	    	  {{ csrf_field() }}
-	    	  <input type="hidden" id="product" name="product_name" value="personal_loan">
 		<div class="liza col-md-8" id="step-1">
-		   <div class="col-md-12 text-center"><h4>Apply for an Easy Personal Loan in 30 seconds</h4></div>
+		   <div class="col-md-12 text-center"><h4>Apply for an Easy Car Loan in 30 seconds</h4></div>
 		   <p class="text-center">Step 1 of 3</p>
 			<div class="col-md-12 text-center animate-box cont" id="q1">
-             <h3>I am a
+             <h3>What type of car are you looking for
 			 <a href="#" class="svalue clr-blue pop_up" data-toggle="modal" data-target="#page1" ><input type="text" style="color:000;" class="clr-blue" id="emp_detail" name="emp_detail"  placeholder="Select" readonly></a>
-			professional </h3> 
+			. </h3> 
 			</div>
-			<div class="col-md-12 text-center animate-box cont" style="display:none;" id="q2" ><h3>and I want a <span class="clr-blue1">Personal Loan</span> of Rs. 
-			<input type="tel" id="loanamt" name="loanamt" onkeyup="changeText('loanamt','q3')"  onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="1,00,000" tabindex="1">
+			<div class="col-md-12 text-center animate-box cont" style="display:none;" id="q2" ><h3>My preferred car is
+			<input type="tel" id="loanamt" name="loanamt" onkeyup="changeText('loanamt','q3')"  onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="Select" tabindex="1">
 			.</h3>
 			</div>
 			
@@ -96,7 +95,7 @@
 			<div class="col-md-12 text-center animate-box cont" id="live_here" >
 			<form action={{URL('search/autocomplete')}} method="POST" >
              <h3>I have been living in
-			<input type="text" class="search_city input-pad" id='city_name' name='city_name' placeholder='your city'>city
+			<input type="text" class="search_city input-pad" id='city_name' placeholder='your city'>city
 			</form>
 			 Since
 			 <input type="date" id="living_since" name="living_since" class="input-pad company-nm1" onchange="changeTest(this,'stay_in')">
@@ -114,9 +113,9 @@
 			</h3>
 			</div>
 
-			<div class="text-center" style="display: none;" id="step_3_btn">
+			<div class="text-center" style="display:none;" id="step_3_btn">
 			<a class="btn btn-primary btn-outline with-arrow animate-box" onclick="changeDiv('step-3','step-2')">Go Back<i class="icon-arrow-right"></i></a>
-			<a class="btn btn-primary btn-outline with-arrow animate-box product_name" data-toggle="modal" data-target="#login">Get me a Loan<i class="icon-arrow-right"></i></a>
+			<button class="btn btn-primary btn-outline with-arrow animate-box" type="submit">Get me a Loan<i class="icon-arrow-right"></i></button>
 			</div>
 			
 		</div>
@@ -135,4 +134,4 @@
 
 @include('layout.footer')
 @include('layout.script')
-@include('layout.personal-loan-modal')
+@include('layout.car-loan-modal')

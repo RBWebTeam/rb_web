@@ -18,7 +18,7 @@ Route::get('sme-loan','LoanController@sme_loan');
 Route::get('home-loan-transfer','LoanController@home_loan_transfer');
 Route::get('car-loan','LoanController@car_loan');
 
-Route::get('apply_personal_loan','LoanController@apply');
+Route::get('apply-personal-loan','LoanController@apply');
 Route::get('compare','CompareController@compare');
 Route::get('view-loan','CompareController@view_loan');
 Route::get('emi','CompareController@emi');
@@ -34,6 +34,9 @@ Route::get('searchajax',array('as'=>'searchajax','uses'=>'AutoCompleteController
 
 Route::post('personal-loan-submit','FormController@p_loan_submit');
 
+Route::get('apply_car_loan','LoanController@apply_car_loan');
+
+
 Route::get('home-loans/{id}', 'HomeController@footercontent');
 Route::get('personal-loans/{id}', 'HomeController@footercontent');
 Route::get('sme-loans/{id}', 'HomeController@footercontent');
@@ -43,7 +46,11 @@ Route::post('otp','FormController@otp');
 Route::post('otp_verify','FormController@otp_verify');
 Route::get('bank','BankController@index');
 Route::get('logout','HomeController@logout');
+
 /* dp */
 
 Route::get('apply_home_loan','LoanController@apply_home_loan');
 Route::get('apply_loan_against_property','LoanController@apply_loan_against_property');
+
+
+

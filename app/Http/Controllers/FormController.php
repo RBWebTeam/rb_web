@@ -71,17 +71,9 @@ class FormController extends Controller
         Session::put('login_id',$query);
         if($query){
             //calling service to send sms 
-            // $post_data = json_encode(array(
-            //     "mobNo" => $req['contact'],
-            //     "msgData"=>"your otp is ".$otp." - RupeeBoss.com",
-            //     "source"=>"WEB"
-            // ));
             $post_data='{"mobNo":"'.$req['contact'].'","msgData":"your otp is '.$otp.' - RupeeBoss.com",
                 "source":"WEB"}';
             $url = "http://beta.services.rupeeboss.com/LoginDtls.svc/xmlservice/sendSMS";
-            //print "<pre>";
-            //print_r($post_data);
-            //$post_data = json_encode($data);
             $ch = curl_init();
             curl_setopt($ch, CURLOPT_VERBOSE, 1);
             curl_setopt( $ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
@@ -91,19 +83,13 @@ class FormController extends Controller
             curl_setopt($ch, CURLOPT_FAILONERROR, 0);
             curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
             curl_setopt($ch, CURLOPT_POSTFIELDS,$post_data);
-             //print_r($post_data);
             $http_result = curl_exec($ch);
             $error = curl_error($ch);
             $http_code = curl_getinfo($ch ,CURLINFO_HTTP_CODE);
-            // print_r($http_result);
-            // print_r($error);
-             //exit();
             $obj = json_decode($http_result);
             // statusId response 0 for success, 1 for failure
-            //rint $obj->{'statusId'};
             curl_close($ch);
-            if($obj->{'statusId'}==1){
-
+            if($obj->{'statusId'}==0){
                 return Response::json(array(
                             'data' => true,
                         ));
@@ -112,13 +98,11 @@ class FormController extends Controller
                             'data' => false,
                         ));
             }
-        // return Response::json(array(
-        //                     'data' => true,
-        //                 ));
-        // }else{
-        //     return Response::json(array(
-        //                     'data' => false,
-        //                 ));
+        
+        }else{
+             return Response::json(array(
+                            'data' => false,
+                        ));
         }
     }
      public function otp_verify(Request $req){

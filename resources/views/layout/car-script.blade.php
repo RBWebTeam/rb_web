@@ -24,31 +24,20 @@
     </script>
     <!-- function addede later -->
 <script>
-     function changeTest(obj,val){
+   
+
+   function changeTest_car(obj,val){
 
         //alert(obj.options[obj.selectedIndex].value);
 
         document.getElementById(val).style.display='block';
         
         $('#pop1').empty();
-        if(val=='q2'){
-        $('#pop1').append( "<p>Enter the amount you want</p>" );
-        }else if(val=='q4'){
-          $('#pop1').append( "<p>Any loan taken in past</p>" );
-        }else if(val=='q5'){
-          $('#pop1').append( "<p>Any credit card you have</p>" );
-        }else if(val=='q6'){
-          $('#pop1').append( "<p>Ever delayed EMI?</p>" );
-        }else if(val=='m_sal'){
-          $('#pop1').append( "<p>You net salary</p>" );
-        }else if(val=='stay_in'){
-           $('#pop1').append( "<p>You stay with</p>" );
-        }else if(val=='dob'){
-           $('#pop1').append( "<p>I wonder if your birthday is today</p>" );//now if else from car -praveen
-        }else if(val=='manufacture'){
+        if(val=='manufacture'){
         //  document.getElementById('q3').style.display='none';
         $('#pop1').append( "<p>Which car you want(manufacture-year)</p>" );
         }else if(val=='preferred'){
+          
           if(obj.value=="New Car"){
             document.getElementById('manufacture').style.display='none  ';
           }
@@ -58,28 +47,27 @@
         }else if(val=='work_at'){
           $('#pop1').append( "<p>Where do you work</p>" );
 
-        }else if(val=='takehome_sal'){
+        }else if(val=='takehome_salary'){
           $('#pop1').append( "<p>Your monthly takehome salary!!</p>" );
-        }else if(val=='exp'){
+        }else if(val=='experience'){
           $('#pop1').append( "<p>Your experience in the above company is</p>" );
            }else if(val=='salary_deposit'){
           $('#pop1').append( "<p>Where your money/salary get deposit into</p>" );
         }else if(val=='amt_borrow'){
           $('#pop1').append("<p>Amount to be borrowed</p>");
         }
+
         else if(val=='living_in'){
           $('#pop1').append( "<p>You stay with</p>" );
         }else if(val=='birth'){
            $('#pop1').append( "<p>I wonder if your birthday is today</p>" );
         }
         else{
-           $('#pop1').append( "<p>Please Proceed</p>" );
+           $('#pop1').append( "<p>Great !!! please proceed</p>" );
         }
         return false;
       }
-
-
-       function changeDiv(prv,nxt){
+       function changeDiv_car(prv,nxt){
 
         //alert(obj.options[obj.selectedIndex].value);
 
@@ -87,11 +75,9 @@
         document.getElementById(nxt).style.display='block';
         $('#pop1').empty();
         if(nxt=='step-2'){
-          $('#pop1').append( "<p>Where do you work?</p>" );   
+          $('#pop1').append( "<p>Living in city since?</p>" );   
         }else if(nxt=='step-3'){
           $('#pop1').append( "<p>Tell us about the your residence</p>" );   
-        }else if(nxt=='start-2'){
-          $('#pop1').append( "<p>Living in city since?</p>" );   //of car loan by praveen
         }else{
           $('#pop1').append( "<p>Great! please fill this form too</p>" );
         }
@@ -99,7 +85,7 @@
         return false;
       }
 
-  function yr_months(yr,mnth,obj){
+  function yr_months_car(yr,mnth,obj){
 
         //alert(obj.options[obj.selectedIndex].value);
         var m=$("#"+mnth).val();
@@ -114,30 +100,28 @@
             $('#'+mnth).val(new_m);
             $('#pop1').empty();
             $('#pop1').append( "<p>1 year has 12 months only</p>" );
-            }else if(obj=='sal_rcv_by' || obj=='salary_by'){
+            }else if(obj=='salary_by'){
               $('#pop1').empty();
-            $('#pop1').append( "<p>How you get your Vitamin M(money/salary)</p>" );
+            $('#pop1').append( "<p>How you get your money/salary</p>" );
             }else{
             $('#pop1').empty();
-            $('#pop1').append( "<p>Great!! tell us more</p>" );
+            $('#pop1').append( "<p>Entr your total expierience</p>" );
           }
           
           document.getElementById(obj).style.display='block';
           return false;
       }
       
-      function changeText(obj,val){
+      function changeText_car(obj,val){
         $("#"+obj).keyup(function() {
             var x=$(this).val().length ;
-            if ((obj=='total_sal' && x>=4) ||(x>=5 && x<=8) ) {
-              document.getElementById(val).style.display='block';
+            if ((obj=='total_salary' && x>=5)  ) {
+            
+
+            document.getElementById(val).style.display='block';
             return false;
           }
           else {
-            if(x>8){
-              $('#pop1').empty();
-            $('#pop1').append( "<p>We dont provide that much of loan.</p>" );
-            }
             document.getElementById(val).style.display='none';
             return false;
           }
@@ -145,14 +129,14 @@
       });
 
       $('#pop1').empty();
-      if(val=='q3'){
-           $('#pop1').append( "<p>Have any existing loan</p>" );
+      if(val=='living_currently'){
+           $('#pop1').append( "<p>Where do you reside</p>" );
         }else if(val=='exp'){
           $('#pop1').append( "<p>Entr your expierience in current company</p>" );
         }else if(val=='total_exp'){
-          $('#pop1').append( "<p>Entr your total expierience</p>" );
+          $('#pop1').append( "<p>How you recieve your salary</p>" );
         }else{
-          $('#pop1').append( "<p>Please go on</p>" );
+          $('#pop1').append( "<p>Entr your expierience in current company</p>" );
         }
 }
 
@@ -324,16 +308,14 @@ minlength: 2  ,
 
 $(document).ready(function(){
    $("#send_otp_button").click(function(event){
+
     event.preventDefault();
-    
     var form=$(this).closest("form").attr('id');
     //console.log(form);return false;
     $form=$('#'+form);
     if(! $form.valid()){
       return false;
     }else{
-      $('#send_otp_button').hide();
-    $('#pls_wait').show();
       $.ajax({  
                type: "POST",  
                url: "{{URL::to('otp')}}",
@@ -341,14 +323,11 @@ $(document).ready(function(){
                data : $('#'+form).serialize(),
                success: function(data){
                  var data_1=data['data'];
-               // console.log(data_1);
+                // console.log(data_1);
                 if(data_1==true){
-                  //data-target="#otp_modal"
-                    $('#otp_modal').modal('toggle');
                     $('#login').modal('hide');
                   }else{
                     $('#msg_err').show();
-                     
                   }
                }  
       }); 
@@ -356,12 +335,9 @@ $(document).ready(function(){
   });
 
    $("#verify_otp").click(function(event){
-    //alert("ok");return false;
+
     event.preventDefault();
     var form=$(this).closest("form").attr('id');
-    $('#wait').show();
-    $('#verify_otp').hide();
-    
     //console.log(form);return false;
     $form=$('#'+form);
     if(! $form.valid()){
@@ -380,27 +356,15 @@ $(document).ready(function(){
                   
                      var form_name=$('#elem').parent().find('form').attr('id');
                      $.post('personal-loan-submit', $('#'+form_name).serialize());
-
-                     window.location.href = "{{URL::to('view-loan')}}";
+                     
                     $('#otp_modal').modal('hide');
                   }else{
                     $('#otp_err').show();
-                    $('#wait').hide();
-                    $('#verify_otp').show();
                   }
                }  
       }); 
     }
   });
-
-  $('.product_name').click(function (){
-    var prod_name=$('#product').val();
-    $('#product_login').val(prod_name);
-  });
-
-  
-  
-
 
     });
 
@@ -411,84 +375,4 @@ $(document).ready(function(){
 
 	</body>
 </html>
-<!-- login Start-->
-    <div id="login" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-      
-        <h4 class="modal-title">Fill details</h4>
-      </div>
-      <div >
-     <div> 
-   <div id="send_otp">  
-    <form class="form-horizontal" id="login_form" method="POST">
-     {{ csrf_field() }}
-   
-    <div class="form-group">
-    
-    <label for="name" class="col-sm-2 control-label">Name</label>
-    <div class="col-sm-10">
-      <input type="text" class="form-control" id="name" name="name" placeholder="your good name" required>
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="email" class="col-sm-2 control-label">Email</label>
-    <div class="col-sm-10">
-      <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="contact" class="col-sm-2 control-label">Contact</label>
-    <div class="col-sm-10">
-      <input type="text" class="form-control" id="contact" name="contact" placeholder="Contact number"  pattern="[789][0-9]{9}" required maxlength="10" minlength="10" onkeypress="return fnAllowNumeric(event)">
-    </div>
-  </div>
-  <div class="form-group">
-    
-    <div class="col-sm-10">
-     <span id='msg_err' style="display: none;">oops something went wrong</span>
-     <span id='pls_wait' style="display: none;color: red;">Please wait .....</span>
-    </div>
-
-  </div>
-  <div class="form-group">
-    <div class="col-sm-offset-2 col-sm-10">
-    <input type="hidden" name="product" id="product_login" value="">
-      <button class="btn btn-default"  id="send_otp_button" >Send OTP</button>
-    </div>
-  </div>
-  </form>
-  </div>
-      </div>
-      </div>
-      
-    </div>
-   
-  </div>
-</div>
-
-<!-- login end-->
-<!-- otp Start-->
-<div id="otp_modal" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <h4 class="modal-title">Enter OTP</h4>
-        <form id="otp_form" class="form-horizontal">
-         {{ csrf_field() }}
-         <input type="text" class="form-control" name="otp" id="otp" minlength="6" maxlength="6" required onkeypress="return fnAllowNumeric(event)">
-         <span id='otp_err' style="display: none; color: red">oops!! OTP is wrong</span><br>
-         <button class="btn btn-default"  class="form-control" id="verify_otp" >Verify</button><br>
-         
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- otp end-->
-
 @include('layout.modal')

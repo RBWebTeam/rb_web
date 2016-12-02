@@ -279,7 +279,7 @@
 				<h1 class="h1-hd">Confused About Loans ?</h1>
 				<h3>Talk to our experts to have all your question answered</h3>
 				<br>
-				 <form name="talk_to_us_form" id="talk_to_us_form" method="post">
+				 <form name="talkus_form" id="talkus_form" method="post">
           			{{ csrf_field() }}
 		          		<input type="hidden" name="form" value="talk_to_us_form">
 		          		
@@ -299,8 +299,6 @@
 				</form>
             <div class='msg' style="display: none;"><p>Thanks. We will reach you soon.</p></div>
             <div class='msg_err' style="display: none;"><p>Ooops. Something went wrong.</p></div>
-
-
 			</div>
 		</div>
 	</div>

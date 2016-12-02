@@ -490,5 +490,3 @@ $(document).ready(function(){
 </div>
 
 <!-- otp end-->
-
-@include('layout.modal')

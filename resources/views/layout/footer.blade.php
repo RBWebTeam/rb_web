@@ -245,7 +245,4 @@
         </ul>
     </div>
 </div>
-<!-- chat Box End  -->
-
-@include('layout.modal')
-
+<!--- chat Box End  --->

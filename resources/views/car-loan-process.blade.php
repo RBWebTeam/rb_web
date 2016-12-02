@@ -1,12 +1,13 @@
 @include('layout.header')
 
     <!--- liza Step First   - -->
-	    <div class="container" id='car'>
+	    <div class="container" id='elem'>
 	    <form name='car_loan_process_form' id='car_loan_process_form' action={{URL::to('personal-loan-submit')}} method="POST">
 	    	  {{ csrf_field() }}
+	    <input type="hidden" id="product" name="product_name" value="car_loan">
 		<div class="liza col-md-8" id="start-1">
 		   <div class="col-md-12 text-center"><h4>Apply for an Easy Car Loan in 30 seconds</h4></div>
-		   <p class="text-center">Step 1 of 3</p>
+		   <p class="text-center">Step 1 of 2</p>
 			<div class="col-md-12 text-center animate-box cont" id="car_looking">
              <h3>What type of car are you looking for
 			 <a href="#" class="svalue clr-blue pop_up" data-toggle="modal" data-target="#page1" ><input type="text" style="color:000;" class="clr-blue" id="car_detail" name="car_detail"  placeholder="Select" readonly></a>
@@ -79,7 +80,7 @@
 
 			    <div class="col-md-12 text-center animate-box cont" style="display:none;"  id="amt_borrow">
 			    <h3>Amount to be borrowed<span class="clr-blue1"></span>
-			     <input type="number" id="amt_borrowed" name="amt_borrowed" min="200000" onblur="changeTest(this,'car_step1')" class="input-pad amt-borrowed" placeholder="Amount" tabindex="1">
+			     <input type="number" id="amt_borrowed" name="amt_borrowed" min="200000" maxlength="6" onblur="changeTest(this,'car_step1')" class="input-pad amt-borrowed" placeholder="Amount" tabindex="1">
 			    .</h3></div>
 
 			
@@ -91,9 +92,9 @@
 
 
 	   <!--- liza Step Two   - -->
-		<div class="liza col-md-8" style="display:none;"	 id="start-2">
+		<div class="liza col-md-8" 	style="display: none;" id="start-2">
 		   <div class="col-md-12 text-center"><h4>Apply for an Easy Personal Loan in 30 seconds</h4></div>
-		   <p class="text-center">Step 2 of 3</p>
+		   <p class="text-center">Step 2 of 2</p>
 			<div class="text-center animate-box cont">
 			<div class="col-md-12 text-center animate-box cont" >
 			   
@@ -118,9 +119,9 @@
 			</div>
 
 			 
-			<div class="text-center" style="display:none;" id="step_2_btn">
+			<div class="text-center" style="display: none;"  id="step_2_btn">
 			<a class="btn btn-primary btn-outline with-arrow animate-box" onclick="changeDiv('start-2','start-1')">Go Back<i class="icon-arrow-right"></i></a>
-			<a class="btn btn-primary btn-outline with-arrow animate-box" data-toggle="modal" data-target="#login">Get me a Loan<i class="icon-arrow-right"></i></a></div>
+			<a class="btn btn-primary btn-outline with-arrow animate-box product_name" data-toggle="modal" data-target="#login">Get me a Loan<i class="icon-arrow-right"></i></a></div>
 		</div>
 	   </div>
 	   

@@ -324,16 +324,16 @@ minlength: 2  ,
 
 $(document).ready(function(){
    $("#send_otp_button").click(function(event){
-    $('#send_otp_button').hide();
-    $('#pls_wait').show();
-    
     event.preventDefault();
+    
     var form=$(this).closest("form").attr('id');
     //console.log(form);return false;
     $form=$('#'+form);
     if(! $form.valid()){
       return false;
     }else{
+      $('#send_otp_button').hide();
+    $('#pls_wait').show();
       $.ajax({  
                type: "POST",  
                url: "{{URL::to('otp')}}",
@@ -341,13 +341,14 @@ $(document).ready(function(){
                data : $('#'+form).serialize(),
                success: function(data){
                  var data_1=data['data'];
-                // console.log(data_1);
+               // console.log(data_1);
                 if(data_1==true){
                   //data-target="#otp_modal"
                     $('#otp_modal').modal('toggle');
                     $('#login').modal('hide');
                   }else{
                     $('#msg_err').show();
+                     
                   }
                }  
       }); 
@@ -355,7 +356,7 @@ $(document).ready(function(){
   });
 
    $("#verify_otp").click(function(event){
-
+    //alert("ok");return false;
     event.preventDefault();
     var form=$(this).closest("form").attr('id');
     $('#wait').show();
@@ -379,7 +380,8 @@ $(document).ready(function(){
                   
                      var form_name=$('#elem').parent().find('form').attr('id');
                      $.post('personal-loan-submit', $('#'+form_name).serialize());
-                      window.location.href = "{{URL::to('view-loan')}}";
+
+                     window.location.href = "{{URL::to('view-loan')}}";
                     $('#otp_modal').modal('hide');
                   }else{
                     $('#otp_err').show();
@@ -391,6 +393,15 @@ $(document).ready(function(){
     }
   });
 
+  $('.product_name').click(function (){
+    var prod_name=$('#product').val();
+    $('#product_login').val(prod_name);
+  });
+
+  
+  
+
+
     });
 
 
@@ -400,4 +411,84 @@ $(document).ready(function(){
 
 	</body>
 </html>
+<!-- login Start-->
+    <div id="login" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+      
+        <h4 class="modal-title">Fill details</h4>
+      </div>
+      <div >
+     <div> 
+   <div id="send_otp">  
+    <form class="form-horizontal" id="login_form" method="POST">
+     {{ csrf_field() }}
+   
+    <div class="form-group">
+    
+    <label for="name" class="col-sm-2 control-label">Name</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="name" name="name" placeholder="your good name" required>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="email" class="col-sm-2 control-label">Email</label>
+    <div class="col-sm-10">
+      <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="contact" class="col-sm-2 control-label">Contact</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="contact" name="contact" placeholder="Contact number"  pattern="[789][0-9]{9}" required maxlength="10" minlength="10" onkeypress="return fnAllowNumeric(event)">
+    </div>
+  </div>
+  <div class="form-group">
+    
+    <div class="col-sm-10">
+     <span id='msg_err' style="display: none;">oops something went wrong</span>
+     <span id='pls_wait' style="display: none;color: red;">Please wait .....</span>
+    </div>
+
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+    <input type="hidden" name="product" id="product_login" value="">
+      <button class="btn btn-default"  id="send_otp_button" >Send OTP</button>
+    </div>
+  </div>
+  </form>
+  </div>
+      </div>
+      </div>
+      
+    </div>
+   
+  </div>
+</div>
+
+<!-- login end-->
+<!-- otp Start-->
+<div id="otp_modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Enter OTP</h4>
+        <form id="otp_form" class="form-horizontal">
+         {{ csrf_field() }}
+         <input type="text" class="form-control" name="otp" id="otp" minlength="6" maxlength="6" required onkeypress="return fnAllowNumeric(event)">
+         <span id='otp_err' style="display: none; color: red">oops!! OTP is wrong</span><br>
+         <button class="btn btn-default"  class="form-control" id="verify_otp" >Verify</button><br>
+         
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- otp end-->
+
 @include('layout.modal')

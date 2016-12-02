@@ -49,7 +49,6 @@ class LoanController extends Controller
     }
     
     public function apply_car_loan(){
-
       return view('car-loan-process');
     }
        

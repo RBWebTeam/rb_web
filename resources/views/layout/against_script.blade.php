@@ -60,13 +60,39 @@
   
             if(arguments.length==0){
              }else if(arguments.length==1){
-                 if(f1=='step_2'){
-                 show_hide("step2Against",1);
-                 }
-                 if(f1=='step1ag'){
-                  show_hide("step1ofagiansp",1);
+
+               if(f1=='step_2'){       
+                  
+                 popup("you are currently residing ");           
+                 show_hide("step2ofagiansp",1);
+                 show_hide("step1ofagiansp",0);
+              
+
+              }
+
+              if(f1=='step_1'){
+               show_hide("step2ofagiansp",0);
+               show_hide("step1ofagiansp",1);
+
+              }
+              if(f1=='step_3'){
+                
+               popup("relationship with co-borrower ");
+               show_hide("step3ofagiansp",1);
+               show_hide("step2ofagiansp",0);
+               show_hide("step1ofagiansp",0);
+              }
+              if(f1=='step_2_of3'){
+               
+               show_hide("step3ofagiansp",0);
+               show_hide("step2ofagiansp",1);
+               show_hide("step1ofagiansp",0);
                    
-                 }
+              }
+
+
+
+                 
              }else if(arguments.length==2){
                    
                   if(f2=='against2qe'){
@@ -111,10 +137,6 @@
                           }});
               }else if(f2=='selectpro'){
                           show_hide("next_step",1);
-                          popup("Select currently residing"); 
-              }else if(f2=='step_2'){
-                          show_hide("step1ofagiansp",0);
-                          show_hide("step2Against",1);
                           popup("Select currently residing"); 
               }else if(f2=='curr_residing'){
                     if(f1.value.length!='' ){
@@ -174,14 +196,15 @@
                        $(document).on('keyup','#co_borrowemi',function(){
                         var num=parseInt($(this).val());
                       if(num>50000){
-                        popup(" Step complete");
-                       show_hide("step_2_gainst",1);
+                       popup(" Step complete");
+                     //  show_hide("step_2_gainst",1);
+                       show_hide("step3",1);
                         
                         
                         
                   }else{ 
                         popup("Please enter an amount greater than Rs 1,00,000");
-                       show_hide("step_2_gainst",0);
+                      //  show_hide("step_2_gainst",0);
                   }});
                   }
             }else if(arguments.length==3){
@@ -209,24 +232,22 @@
                   if(f2=='borrower_against'){
    
                           if(f3=='yes'){
-                            popup("relationship with co-borrower");
-                            show_hide("step3Against",1);
-                            show_hide("relationship_against",1);
-                            show_hide("step2Against",0);
+                            popup("Slect final step");
+                            
+                             show_hide("stepAgainst2",1);
+                             show_hide("step2_against_sumbit",0);
                             
                           }else{
                             popup("Next Step");
-                            show_hide("step3Against",0);
-                            //show_hide("step_2_gainst",1);
-                            
+                           
                             
                           }
                           if(f3=='no'){
-                           
-                            show_hide("step2_against",0);
-                            show_hide("stepAgainst2",1);
+                            show_hide("stepAgainst2",0);
+                            show_hide("step2_against_sumbit",1);
+                            
                           }
-                          
+                        
                         
                   }
 
@@ -235,19 +256,19 @@
                           if(f3=='Salaried'){
                               popup(" co-borrower monthly income");
                               show_hide("cobor_month",1);
-                             show_hide("step_2_gainst",0);
+                              show_hide("step3",0);
+                           
                           }
                           if(f3=='self_emp'){
                               popup(" co-borrower monthly income");
                              show_hide("cobor_month",1);
-                             show_hide("step_2_gainst",0);
+                              show_hide("step3",0);
                           }
                           if(f3=='no_work'){
-                            popup(" Step complete");
-                            show_hide("cobor_month",0);
-                             show_hide("step_2_gainst",1);
-                              show_hide("co_borrow_EMI",0);
-                             
+                             popup(" Step complete");
+                             show_hide("cobor_month",0);
+                             show_hide("co_borrow_EMI",0);
+                             show_hide("step3",1);
                             
                           
                           }

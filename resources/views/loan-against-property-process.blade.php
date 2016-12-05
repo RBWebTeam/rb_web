@@ -77,7 +77,7 @@
 
 
 				<div class="text-center" style="display:none;" id="next_step">
-				             <a class="btn btn-primary btn-outline with-arrow animate-box" onclick="loanAgainstfn(this,'step_2')" >Continue<i class="icon-arrow-right"></i></a>
+				     <a class="btn btn-primary btn-outline with-arrow animate-box" onclick="loanAgainstfn('step_2')" >Continue<i class="icon-arrow-right"></i></a>
 				</div>
  
 
@@ -85,7 +85,7 @@
 
 
 	   <!--- liza Step Two   - -->
-		<div class="liza col-md-8"   style="display:none"	 id="step2Against">
+		<div class="liza col-md-8"   style="display:none"	 id="step2ofagiansp">
 		   <div class="col-md-12 text-center"><h4>Apply for an Easy Personal Loan in 30 seconds</h4></div>
 		   <p class="text-center">Step 2 of 3</p>
 			
@@ -148,21 +148,25 @@
 			</div>
 
 
-   <!--    <div class="text-center" style="display:none;" id="stepAgainst2">
-		<a class="btn btn-primary btn-outline with-arrow animate-box" onclick="loanAgainstfn('step1ag')">Go Back<i class="icon-arrow-right"></i></a>
-			<a class="btn btn-primary btn-outline with-arrow animate-box" onclick="loanAgainstfn('step3ag')">Final Step<i class="icon-arrow-right"></i></a>
-	</div> -->
+     <div class="text-center" style="display:none;" id="stepAgainst2">
+		<a class="btn btn-primary btn-outline with-arrow animate-box" onclick="loanAgainstfn('step_1')">Go Back<i class="icon-arrow-right"></i></a>
+			<a class="btn btn-primary btn-outline with-arrow animate-box" onclick="loanAgainstfn('step_3')">Final Step<i class="icon-arrow-right"></i></a>
+	</div>
 
 	<!-- <div class="text-center" id="step2_against">
 		<a class="btn btn-primary btn-outline with-arrow animate-box" onclick="loanAgainstfn('step1ag')">Go Back<i class="icon-arrow-right"></i></a>
 	</div> -->
+
+	<div class="text-center" id="step2_against_sumbit" style="display:none;">
+		<a class="btn btn-primary btn-outline with-arrow animate-box" onclick="loanAgainstfn('Sumbit')">Sumbit<i class="icon-arrow-right"></i></a>
+	</div>
 
 
  </div>
 
 
 	   <!--- Third step-->
-       <div class="liza col-md-8"   style="display:none"	 id="step3Against" >
+       <div class="liza col-md-8"   style="display:none"	 id="step3ofagiansp" >
 		   <div class="col-md-12 text-center"><h4>Apply for an Easy Personal Loan in 30 seconds</h4></div>
 		   <p class="text-center">Step 3 of 3</p>
 
@@ -204,14 +208,28 @@
 		</div>
       
 
-  <!--       <div class="text-center" id="step2_against">
-		<a class="btn btn-primary btn-outline with-arrow animate-box" onclick="loanAgainstfn('step_2')">Go Back<i class="icon-arrow-right"></i></a>
-		</div>
+   <!--      <div class="text-center" id="step2_against2">
+		<a class="btn btn-primary btn-outline with-arrow animate-box" onclick="loanAgainstfn('step_2_none')">Go Back<i class="icon-arrow-right"></i></a>
 
-<div class="text-center" style="display:none" id="step_2_gainst">
+		<a style="display:none" id="step_2_gainst" class="btn btn-primary btn-outline with-arrow animate-box" onclick="loanAgainstfn('step3ag')">Final Step<i class="icon-arrow-right"></i></a>
+		</div> -->
+
+<!-- <div class="text-center" style="display:none" id="step_2_gainst">
 		<a class="btn btn-primary btn-outline with-arrow animate-box" onclick="loanAgainstfn('step_2')">Go Back<i class="icon-arrow-right"></i></a>
 			<a class="btn btn-primary btn-outline with-arrow animate-box" onclick="loanAgainstfn('step3ag')">Final Step<i class="icon-arrow-right"></i></a>
+</div>
+ -->
+
+ <div class="text-center" style="display:none;" id="step3">
+		<a class="btn btn-primary btn-outline with-arrow animate-box" onclick="loanAgainstfn('step_2_of3')">Go Back<i class="icon-arrow-right"></i></a>
+		 <a class="btn btn-primary btn-outline with-arrow animate-box" onclick="loanAgainstfn('Sumbit')">Sumbit<i class="icon-arrow-right"></i></a>
+</div>
+
+
+<!-- <div class="text-center" id="last_submit" style="display:none;">
+		<a class="btn btn-primary btn-outline with-arrow animate-box" onclick="loanAgainstfn('Sumbit')">Sumbit<i class="icon-arrow-right"></i></a>
 </div> -->
+
 
 	   </div>
 

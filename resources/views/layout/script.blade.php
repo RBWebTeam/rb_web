@@ -483,7 +483,7 @@ $(document).ready(function(){
          <input type="text" class="form-control" name="otp" id="otp" minlength="6" maxlength="6" required onkeypress="return fnAllowNumeric(event)">
          <span id='otp_err' style="display: none; color: red">oops!! OTP is wrong</span><br>
          <button class="btn btn-default"  class="form-control" id="verify_otp" >Verify</button><br>
-         
+         </form>
       </div>
     </div>
   </div>

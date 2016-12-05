@@ -79,7 +79,7 @@
 
 							<?php if(Session::get('is_login')){
 							?>
-							<li class="user-ic dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle"><i class="icon-user uicon"></i></a>My Account&nbsp;<i class="icon-chevron-down"></i></a>
+							<li class="user-ic dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle"><i class="icon-user uicon hidden-xs hidden-sm"></i></a><span class="hidden-lg hidden-md">My Account&nbsp;</span><i class="icon-chevron-down"></i></a>
 							
 							<ul class="dropdown-menu" id='account'>
 							    <li>
@@ -93,7 +93,7 @@
 							</li>
 						<?php }else{
 							?>
-							<li class="user-ic dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle"><i class="icon-user uicon"></i>Login</a>
+							<li class="user-ic dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle"><i class="icon-user uicon hidden-xs hidden-sm"></i><span class="hidden-lg hidden-md">Login</span></a>
 							</li>
 						<?php }
 						?>
@@ -104,4 +104,4 @@
 			</div>
 		</div>
 	</header>
-	<!-----------------------------Header End -------------------------------------- -->
+	<!--Header End -->

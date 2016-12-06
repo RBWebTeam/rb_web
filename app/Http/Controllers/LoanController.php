@@ -43,6 +43,13 @@ class LoanController extends Controller
     	$data['description']='Apply for Car Loan';
     	return view('car-loan')->with($data);
     }
+    public function business_loan(){
+        $data['title']='Business Loan';
+        $data['description']='Apply for Business Loan';
+        return view('business-loan')->with($data);
+    }
+
+
 
  	public function apply(){
     	return view('personal-loan-process');
@@ -50,6 +57,10 @@ class LoanController extends Controller
     
     public function apply_car_loan(){
       return view('car-loan-process');
+    }
+
+     public function apply_business_loan(){
+      return view('business-loan-process');
     }
        
 }

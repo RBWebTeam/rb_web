@@ -17,7 +17,7 @@ Route::get('loan-against-property','LoanController@lap');
 Route::get('sme-loan','LoanController@sme_loan');
 Route::get('home-loan-transfer','LoanController@home_loan_transfer');
 Route::get('car-loan','LoanController@car_loan');
-Route::get('business-loan','LoanController@car_loan');
+Route::get('business-loan','LoanController@business_loan');
 
 
 Route::get('apply-personal-loan','LoanController@apply');

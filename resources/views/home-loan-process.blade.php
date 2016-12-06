@@ -22,72 +22,80 @@
 
               <div class="col-md-12 text-center animate-box cont" style="display:none;" id="purpose_of_your" >
 			    <h3>Enter Amount you wish to borrow<span class="clr-blue1"></span>
-			     <input type="tel" id="amount" name="amount"  onkeypress="return fnAllowNumeric(event)" onkeyup="Enter_amount('amount','Enter_amount')" class="input-pad" placeholder="1,00,000" tabindex="1">
+			     <input type="tel" id="amount" name="amount"  onkeypress="return fnAllowNumeric(event)" onkeyup="homeLoanFn(this,'Enter_amount')" class="input-pad" placeholder="1,00,000" tabindex="1">
 			    .</h3>
 			</div>
 
 
 			 <div class="col-md-12 text-center animate-box cont" style="display:none;" id="currently_employed">
                 <h3>How are you currently employed
-			       <a href="#" class="svalue clr-blue currently_employee" data-toggle="modal" data-target="#home-page2" ><input type="text" style="color:000;" class="clr-blue" id="kind_of_property" name="kind_of_property"  placeholder="Select" readonly></a>
+			       <a href="#" class="svalue clr-blue purposeofloan_popup" data-toggle="modal" data-target="#home-page2" ><input type="text" style="color:000;" class="clr-blue" id="kind_of_property" name="kind_of_property"  placeholder="Select" readonly></a>
 			     </h3> 
 			</div>
 
              <div class="col-md-12 text-center animate-box cont" style="display:none;" id="annual_income" >
 			    <h3>Your gross annual income<span class="clr-blue1"></span>
-			     <input type="tel" id="annu_income" name="annu_income"  onkeypress="return fnAllowNumeric(event)" onkeyup="Enter_amount('annu_income','Enter_amount')" class="input-pad" placeholder="1,00,000" tabindex="1">
+			     <input type="tel" id="annu_income" name="annu_income"  onkeypress="return fnAllowNumeric(event)" onkeyup="homeLoanFn(this,'annu_income')" class="input-pad" placeholder="1,00,000" tabindex="1">
 			    .</h3>
 			</div>
                  
             <div class="col-md-12 text-center animate-box cont" style="display:none;" id="property_identified">
                 <h3>What kind of property you want..
-			       <a href="#" class="svalue clr-blue kind_of_property_popup" data-toggle="modal" data-target="#home-page3" ><input type="text" style="color:000;" class="clr-blue" id="property_you" name="property_you"  placeholder="Select" readonly></a>
+			       <a href="#" class="svalue clr-blue purposeofloan_popup" data-toggle="modal" data-target="#home-page3" ><input type="text" style="color:000;" class="clr-blue" id="property_you" name="property_you"  placeholder="Select" readonly></a>
 			     </h3> 
 			</div>
 		
 
 		    <div class="col-md-12 text-center animate-box cont" style="display:none;" id="property_name" >
 			    <h3>Property name<span class="clr-blue1"></span>
-			     <input type="tel" id="loanamt" name="loanamt"  onkeypress="return fnString(event,this)"  class="input-pad" placeholder="Property name" onkeyup="proprty_f(this,'loanamt')" tabindex="1">
+			     <input type="tel" id="pro_name_h" name="pro_name_h"  onkeypress="return fnString(event,this)"  class="input-pad" placeholder="Property name" onkeyup="homeLoanFn(this,'pro_name_h')" tabindex="1">
 			    .</h3>
 			</div>
 
 
 			<div class="col-md-12 text-center animate-box cont" style="display:none;" id="type_of_loan">
                 <h3>What type of loan are you looking for
-			       <a href="#" class="svalue clr-blue type_of_loan__" data-toggle="modal" data-target="#home-page4" ><input type="text" style="color:000;" class="clr-blue" id="type_of_loan_" name="type_of_loan_"  placeholder="Select" readonly></a>
+			   <a href="#" class="svalue clr-blue purposeofloan_popup" data-toggle="modal" data-target="#home_page4" ><input type="text" style="color:000;" class="clr-blue" id="type_of_loan_" name="type_of_loan_"  placeholder="Select" readonly></a>
 			     </h3> 
 			</div>
 
 			 <div class="col-md-12 text-center animate-box cont" style="display:none;" id="property_Cost" >
 			    <h3>Property Cost<span class="clr-blue1"></span>
-			     <input type="tel" id="annu_income" name="annu_income"  onkeypress="return fnAllowNumeric(event)" onkeyup="property_cost()" class="input-pad" placeholder="1,00,000" tabindex="1">
+			     <input type="tel" id="property_cost_h" name="property_cost_h"  onkeypress="return fnAllowNumeric(event)" onkeyup="homeLoanFn(this,'property_cost_h')" class="input-pad" placeholder="1,00,000" tabindex="1">
 			    .</h3>
 			</div>
 
 
             <div class="col-md-12 text-center animate-box cont" style="display:none;" id="cost_of_the_plot" >
 			    <h3>What is the cost of the plot<span class="clr-blue1"></span>
-			     <input type="tel" id="cost_of" name="cost_of"  onkeypress="return fnAllowNumeric(event)" onkeyup="cost_of_plot('cost_of_')" class="input-pad" placeholder="1,00,000" tabindex="1">
+			     <input type="tel" id="cost_of" name="cost_of"  onkeypress="return fnAllowNumeric(event)" onkeyup="homeLoanFn(this,'cost_of_')" class="input-pad" placeholder="1,00,000" tabindex="1">
 			    .</h3>
 			</div>
              
               <div class="col-md-12 text-center animate-box cont" style="display:none;" id="cost_of_construction" >
 			    <h3>What is your cost of construction <span class="clr-blue1"></span>
-			     <input type="tel" id="cost_construction" name="cost_construction"  onkeypress="return fnAllowNumeric(event)" onkeyup="cost_ofconstruction('ofconstruction')" class="input-pad" placeholder="1,00,000" tabindex="1">
+			     <input type="tel" id="cost_construction" name="cost_construction"  onkeypress="return fnAllowNumeric(event)" onkeyup="homeLoanFn('ofconstruction')" class="input-pad" placeholder="1,00,000" tabindex="1">
 			    .</h3>
 			</div>
+             
 
+           <div class="col-md-12 text-center animate-box cont" style="display:none" id="property_city">
+			<form action={{URL('search/autocomplete')}} method="POST" >
+                <h3>Choose your property city
+			<input type="text" class="search_city input-pad" id='city_name' onkeyup="homeLoanFn(this,'city_live')" name='city_name' placeholder='your city'>
+                 
+			</form>
+		</div>
 
-			<div class="col-md-12 text-center animate-box cont" style="display:none;" id="property_city" >
+			<!-- <div class="col-md-12 text-center animate-box cont" style="display:none;" id="property_city" >
 			    <h3>Choose your property city<span class="clr-blue1"></span>
-			     <select id="current_reside" onchange="property_city()">
+			     <select id="current_reside" onchange="homeLoanFn()">
 			     	<option>Mumbai</option>
 			     	<option>Mumbai</option>
 			     	<option>Mumbai</option>
 			     </select>
 			    .</h3>
-			</div>
+			</div> -->
 
 			<div class="col-md-12 text-center animate-box cont" style="display:none;" id="currently_reside" >
 			    <h3>Where do you currently reside <span class="clr-blue1"></span>
@@ -236,7 +244,7 @@
 
 	  <!-- POP Up code start -->
 	   <div class="col-md-4 liza1">
-		<div class="text-center guid nl-form-errors" id='pop1'>Select Purpose of your Loan!</div>
+		<div class="text-center guid nl-form-errors" id='home_append'>Select Purpose of your Loan!</div>
 
         <div class="text-center img1"><img src="images/photo.jpg"></div>
 		</div>

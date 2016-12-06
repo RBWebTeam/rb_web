@@ -10,9 +10,9 @@
         <div class="modal-body">
          <ul>
           <form id="emp_type_form">
-              <li><span><input type="radio" name="pro_identi"  value="property_identified"  size="50" onclick="changeTest(this,'home_property');" /></span>&nbsp; property identified</li>
-            <li><span><input type="radio" name="pro_identi" value="not_identified"  onclick="changeTest(this,'home_property');"/></span>&nbsp; Property not identified</li>
-            <li><span><input type="radio" name="pro_identi"  value="existing_home_laon"  onclick="changeTest(this,'home_property');"/></span>&nbsp; Transfer your existing home laon</li>
+              <li><span><input type="radio" name="pro_identi"  value="property_identified"  size="50" onclick="homeLoanFn(this,'home_property');" /></span>&nbsp; property identified</li>
+            <li><span><input type="radio" name="pro_identi" value="not_identified"  onclick="homeLoanFn(this,'home_property');"/></span>&nbsp; Property not identified</li>
+            <li><span><input type="radio" name="pro_identi"  value="existing_home_laon"  onclick="homeLoanFn(this,'home_property');"/></span>&nbsp; Transfer your existing home laon</li>
             </form>
         </ul>
       </div>
@@ -35,8 +35,8 @@
         <div class="modal-body">  
         <ul>
           <form id="how_currently_employed">
-            <li><span><input type="radio" name="currnt_emp"  value="Salaried"  size="50" onclick="currently_employee(this,'Salaried');" /></span>&nbsp;Salaried</li>
-          <li><span><input type="radio" name="currnt_emp" value="Self employed"  onclick="currently_employee(this,'Self_employed');"/></span>&nbsp; Self employed</li>
+            <li><span><input type="radio" name="currnt_emp"  value="Salaried"  size="50" onclick="homeLoanFn(this,'Salaried');" /></span>&nbsp;Salaried</li>
+          <li><span><input type="radio" name="currnt_emp" value="Self employed"  onclick="homeLoanFn(this,'Self_employed');"/></span>&nbsp; Self employed</li>
           </form>
         </ul>
       </div> 
@@ -58,9 +58,9 @@
       <div class="modal-body">
        <ul>
          <form id="kind_of_place">
-            <li><span><input type="radio" name="currnt_emp"  value="ready to move in"  size="50" onclick="kind_of_property(this,'ready_to_move');" /></span>&nbsp;ready to move in</li>
-          <li><span><input type="radio" name="currnt_emp" value="Under construction"  onclick="kind_of_property(this,'construction');"/></span>&nbsp; Under construction</li>
-          <li><span><input type="radio" name="currnt_emp" value="Plot"  onclick="kind_of_property(this,'plot');"/>
+            <li><span><input type="radio" name="currnt_emp"  value="ready to move in"  size="50" onclick="homeLoanFn(this,'ready_to_move');" /></span>&nbsp;ready to move in</li>
+          <li><span><input type="radio" name="currnt_emp" value="Under construction"  onclick="homeLoanFn(this,'ready_to_move');"/></span>&nbsp; Under construction</li>
+          <li><span><input type="radio" name="currnt_emp" value="Plot"  onclick="homeLoanFn(this,'plot');"/>
           </span>&nbsp; Plot</li>
           </form>
        </ul>
@@ -73,7 +73,7 @@
 
 
  <!-- home poup2 Start-->
-<div id="home-page4" class="modal fade" role="dialog">
+<div id="home_page4" class="modal fade" role="dialog">
   <div class="modal-dialog">
     <!-- Modal content-->
     <div class="modal-content">
@@ -84,8 +84,8 @@
         <div class="modal-body">  
         <ul>
           <form id="type_of_loan_loking">
-            <li><span><input type="radio" name="currnt_emp"  value="Purchase a plot"  size="50" onclick="type_of_loan(this,'purchase_plot');" /></span>&nbsp;Purchase a plot</li>
-          <li><span><input type="radio" name="currnt_emp" value="Construct a plot your own"  onclick="type_of_loan(this,'construct_plot');"/></span>&nbsp; Construct a plot your own</li>
+            <li><span><input type="radio" name="currnt_emp"  value="Purchase a plot"  size="50" onclick="homeLoanFn(this,'purchase_plot');" /></span>&nbsp;Purchase a plot</li>
+          <li><span><input type="radio" name="currnt_emp" value="Construct a plot your own"  onclick="homeLoanFn(this,'construct_plot');"/></span>&nbsp; Construct a plot your own</li>
           </form>
         </ul>
       </div> 

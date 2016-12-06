@@ -1,15 +1,5 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| This file is where you may define all of the routes that are handled
-| by your application. Just tell Laravel the URIs it should respond
-| to using a Closure or controller method. Build something great!
-|
-*/
 Route::get('/','HomeController@index');
 Route::get('personal-loan','LoanController@personal_loan');
 Route::get('home-loan','LoanController@home_loan');
@@ -47,7 +37,7 @@ Route::post('otp_verify','FormController@otp_verify');
 Route::get('bank','BankController@index');
 Route::get('logout','HomeController@logout');
 
-/* dp */
+/* by dp */
 
 Route::get('apply_home_loan','LoanController@apply_home_loan');
 Route::get('apply_loan_against_property','LoanController@apply_loan_against_property');

@@ -239,13 +239,6 @@ $(document).ready(function(){
       });
     });
 
-
-    
-  //    $('#exst_loan_form input').on('change', function() {
-  //   $('#exst_loan_detail').empty().append($('input[name=exst_loan]:checked', '#exst_loan_form').val());
-  //   $('#page2').modal('toggle');
-  //   changeTest(this,'q4');
-  // });
      $(".sidebar-submit").click(function(event){
 
     event.preventDefault();

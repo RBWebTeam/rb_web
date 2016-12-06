@@ -93,7 +93,132 @@
   </div>
 </div>
 
+
+<div id="profession_page" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content       our Profession Type-->
+    <div class="modal-content">
+      <div class="modal-header">
+       <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Your Profession Type</h4>
+        </div>
+        <div class="modal-body">  
+        <ul>
+          <form id="type_of_Profession">
+
+            <li><span>
+            <input type="radio" name="profType" value="Architect"  size="50" onclick="homeLoanFn(this,'profType');" /></span>&nbsp;Architect
+            </li>
+             <li><span>
+            <input type="radio" name="profType" value="Chartered Accountant"  size="50" onclick="homeLoanFn(this,'profType');" /></span>&nbsp;Chartered Accountant
+            </li>
+             <li><span>
+            <input type="radio" name="profType" value="Company Secretary"  size="50" onclick="homeLoanFn(this,'profType');" /></span>&nbsp;Company Secretary
+            </li>
+             <li><span>
+            <input type="radio" name="profType" value="Consultant"  size="50" onclick="homeLoanFn(this,'profType');" /></span>&nbsp;Consultant
+            </li>
+           <li><span>
+            <input type="radio" name="profType" value="Accountant"  size="50" onclick="homeLoanFn(this,'profType');" /></span>&nbsp;Accountant
+            </li>
+             <li><span>
+            <input type="radio" name="profType" value="Dentist"  size="50" onclick="homeLoanFn(this,'profType');" /></span>&nbsp;Dentist
+            </li>
+            <li><span>
+            <input type="radio" name="profType" value="Engineer"  size="50" onclick="homeLoanFn(this,'profType');" /></span>&nbsp;Engineer
+            </li>
+             <li><span>
+            <input type="radio" name="profType" value="Doctor"  size="50" onclick="homeLoanFn(this,'profType');" /></span>&nbsp;Doctor
+            </li>
+            <li><span>
+            <input type="radio" name="profType" value="Lawyer"  size="50" onclick="homeLoanFn(this,'profType');" /></span>&nbsp;Lawyer
+            </li>
+             <li><span>
+            <input type="radio" name="profType" value="MBA"  size="50" onclick="homeLoanFn(this,'profType');" /></span>&nbsp;MBA
+            </li>
+            <li><span>
+            <input type="radio" name="profType" value="Others"  size="50" onclick="homeLoanFn(this,'profType');" /></span>&nbsp;Others
+            </li>
+          </form>
+        </ul>
+      </div> 
+    </div>
+  </div>
+</div>
+<!--Your Bank account is with-->
+
+
+<div id="account_page" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content       our Profession Type-->
+    <div class="modal-content">
+      <div class="modal-header">
+       <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Your Profession Type</h4>
+        </div>
+        <div class="modal-body">  
+        <ul>
+          <form id="banck_acount">
+
+            <li><span>
+            <input type="radio" name="home_acoutn" value="HDFC"  size="50" onclick="homeLoanFn(this,'home_acoutn');" /></span>&nbsp;HDFC
+            </li>
+             <li><span>
+            <input type="radio" name="home_acoutn" value="SBI"  size="50" onclick="homeLoanFn(this,'home_acoutn');" /></span>&nbsp;SBI
+            </li>
+             <li><span>
+            <input type="radio" name="home_acoutn" value="ICICI"  size="50" onclick="homeLoanFn(this,'home_acoutn');" /></span>&nbsp;ICICI
+            </li>
+            <li><span>
+            <input type="radio" name="home_acoutn" value="AXIS"  size="50" onclick="homeLoanFn(this,'home_acoutn');" /></span>&nbsp;AXIS
+            </li>
+            <li><span>
+            <input type="radio" name="home_acoutn" value="Standard Chartered Bank"  size="50" onclick="homeLoanFn(this,'home_acoutn');" /></span>&nbsp;Standard Chartered Bank
+            </li>
+             <li><span>
+            <input type="radio" name="home_acoutn" value="Andhra Bank"  size="50" onclick="homeLoanFn(this,'home_acoutn');" /></span>&nbsp;Andhra Bank
+            </li>
+             <li><span>
+            <input type="radio" name="home_acoutn" value="Axis Bank"  size="50" onclick="homeLoanFn(this,'home_acoutn');" /></span>&nbsp;Axis Bank
+            </li>
+            <li><span>
+            <input type="radio" name="home_acoutn" value="Abhyuday Co-op Bank Ltd"  size="50" onclick="homeLoanFn(this,'home_acoutn');" /></span>&nbsp;Abhyuday Co-op Bank Ltd
+            </li>
+            <li><span>
+            <input type="radio" name="home_acoutn" value="Abhyuday Co-op Bank Ltd"  size="50" onclick="homeLoanFn(this,'home_acoutn');" /></span>&nbsp;Allahabad Bank
+            </li>
+          </form>
+        </ul>
+      </div> 
+    </div>
+  </div>
+</div>
+
+
+
+
 <div id="home-page5" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+       <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Your relationship with the co-borrower</h4>
+        </div>
+        <div class="modal-body">  
+        <ul>
+          <form id="relationship_co_borrower">
+            <li><span><input type="radio" name="relation_borrower_"  value="Yes"  size="50" onclick="homeLoanFn(this,'Yes');" /></span>&nbsp;Yes</li>
+          <li><span><input type="radio" name="relation_borrower_" value="No"  onclick="homeLoanFn(this,'No');"/></span>&nbsp; No</li>
+          </form>
+        </ul>
+      </div> 
+    </div>
+  </div>
+</div>
+
+
+<div id="home_page_borrower" class="modal fade" role="dialog">
   <div class="modal-dialog">
     <!-- Modal content-->
     <div class="modal-content">
@@ -104,14 +229,34 @@
         <div class="modal-body">  
         <ul>
           <form id="add_co_borrower">
-            <li><span><input type="radio" name="co_borrower_"  value="Yes"  size="50" onclick="co_borrower_f(this,'Yes');" /></span>&nbsp;Yes</li>
-          <li><span><input type="radio" name="co_borrower_" value="No"  onclick="co_borrower_f(this,'No');"/></span>&nbsp; No</li>
+            
+              <li><span>
+            <input type="radio" name="add_borrow" value="Spouse"  size="50" onclick="homeLoanFn(this,'add_borrow');" /></span>&nbsp;Spouse
+            </li>
+             <li><span>
+            <input type="radio" name="add_borrow" value="Father"  size="50" onclick="homeLoanFn(this,'add_borrow');" /></span>&nbsp;Father
+            </li>
+             <li><span>
+            <input type="radio" name="add_borrow" value="Mother"  size="50" onclick="homeLoanFn(this,'add_borrow');" /></span>&nbsp;Mother
+            </li>
+            <li><span>
+            <input type="radio" name="add_borrow" value="Brother"  size="50" onclick="homeLoanFn(this,'add_borrow');" /></span>&nbsp;Brother
+            </li>
+            <li><span>
+            <input type="radio" name="add_borrow" value="Sister"  size="50" onclick="homeLoanFn(this,'add_borrow');" /></span>&nbsp;Sister
+            </li>
+             <li><span>
+            <input type="radio" name="add_borrow" value="Child"  size="50" onclick="homeLoanFn(this,'add_borrow');" /></span>&nbsp;Child
+            </li>
+
           </form>
         </ul>
       </div> 
     </div>
   </div>
 </div>
+
+
 
 <div id="home-page6" class="modal fade" role="dialog">
   <div class="modal-dialog">
@@ -124,8 +269,10 @@
         <div class="modal-body">  
         <ul>
           <form id="employment__type">
-            <li><span><input type="radio" name="co_borrower_emp"  value="Salaried"  size="50" onclick="employment_f(this,'Salaried_');" /></span>&nbsp;Salaried</li>
-          <li><span><input type="radio" name="co_borrower_emp" value="Self_employed"  onclick="employment_f(this,'Self_employed_');"/></span>&nbsp; Self_employed</li>
+            <li><span><input type="radio" name="co_borrower_emp"  value="Salaried"  size="50" onclick="homeLoanFn(this,'co_working');" /></span>&nbsp;Salaried</li>
+          <li><span><input type="radio" name="co_borrower_emp" value="Self employed"  onclick="homeLoanFn(this,'co_working');"/></span>&nbsp; Self employed</li>
+           <li><span><input type="radio" name="co_borrower_emp"  value="Salaried"  size="50" onclick="homeLoanFn(this,'no_working');" /></span>&nbsp;Non working</li>
+
           </form>
         </ul>
       </div> 

@@ -57,19 +57,19 @@
             
               {{ csrf_field() }}
                 <input type="hidden" name="form" value="subscribe-form">
-				  <div class="form-group">
+				  <div class="form-group has-error">
 				    <div>
 				      <input type="text" class="form-control" id="name" name="name" placeholder="Name" required />
 				    </div>
 				  </div>
-			<div class="form-group">
+			<div class="form-group has-error">
 		   
 		    <div> 
 		    <input type="text" name="contact" id="contact" class="form-control clr-ddd" onkeypress="fnAllowNumeric(event)" 
 			pattern="[789][0-9]{9}" required maxlength="10" placeholder="Mobile No." >
 		    </div>
 		  </div>
-				 <div class="form-group">
+				 <div class="form-group has-error">
 				  
 				    <div>
 				      <input type="email" class="form-control clr-ddd" id="email" name="email" placeholder="Email Id" required  />

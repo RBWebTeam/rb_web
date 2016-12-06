@@ -3,8 +3,8 @@
 	
 	<aside id="fh5co-hero">
 	<div class="col-md-12">
-	<p class="text-left"><a href="{{URL::to('/')}}">Home</a>/personal-loan</p>
-	<h2 class="align-center loan-head">Personal-Loan</h2>
+	<p class="text-left"><a href="{{URL::to('/')}}">Home</a>/business-loan</p>
+	<h2 class="align-center loan-head">Business-Loan</h2>
 	</div>
 	<div class=""></div>
 	<div class="flexslider col-md-8">
@@ -57,19 +57,19 @@
             
               {{ csrf_field() }}
                 <input type="hidden" name="form" value="subscribe-form">
-				  <div class="form-group has-error">
+				  <div class="form-group">
 				    <div>
 				      <input type="text" class="form-control" id="name" name="name" placeholder="Name" required />
 				    </div>
 				  </div>
-			<div class="form-group has-error">
+			<div class="form-group">
 		   
 		    <div> 
 		    <input type="text" name="contact" id="contact" class="form-control clr-ddd" onkeypress="fnAllowNumeric(event)" 
 			pattern="[789][0-9]{9}" required maxlength="10" placeholder="Mobile No." >
 		    </div>
 		  </div>
-				 <div class="form-group has-error">
+				 <div class="form-group">
 				  
 				    <div>
 				      <input type="email" class="form-control clr-ddd" id="email" name="email" placeholder="Email Id" required  />
@@ -135,7 +135,7 @@
 								 <li>Minimum Documentation</li>
 							</ul>
 							
-							<a class="btn btn-primary btn-outline with-arrow" href="{{URL::to('/apply-personal-loan')}}">Apply Online
+							<a class="btn btn-primary btn-outline with-arrow" href="{{URL::to('/apply_business_loan')}}">Apply Online
 							<i class="icon-arrow-right"></i></a>
 						</div>
 					</div>

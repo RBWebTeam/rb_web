@@ -1,15 +1,5 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| This file is where you may define all of the routes that are handled
-| by your application. Just tell Laravel the URIs it should respond
-| to using a Closure or controller method. Build something great!
-|
-*/
 Route::get('/','HomeController@index');
 Route::get('personal-loan','LoanController@personal_loan');
 Route::get('home-loan','LoanController@home_loan');
@@ -17,6 +7,8 @@ Route::get('loan-against-property','LoanController@lap');
 Route::get('sme-loan','LoanController@sme_loan');
 Route::get('home-loan-transfer','LoanController@home_loan_transfer');
 Route::get('car-loan','LoanController@car_loan');
+Route::get('business-loan','LoanController@business_loan');
+
 
 Route::get('apply-personal-loan','LoanController@apply');
 Route::get('compare','CompareController@compare');
@@ -35,7 +27,7 @@ Route::get('searchajax',array('as'=>'searchajax','uses'=>'AutoCompleteController
 Route::post('personal-loan-submit','FormController@p_loan_submit');
 
 Route::get('apply_car_loan','LoanController@apply_car_loan');
-
+Route::get('apply_business_loan','LoanController@apply_business_loan');
 
 Route::get('home-loans/{id}', 'HomeController@footercontent');
 Route::get('personal-loans/{id}', 'HomeController@footercontent');
@@ -47,7 +39,7 @@ Route::post('otp_verify','FormController@otp_verify');
 Route::get('bank','BankController@index');
 Route::get('logout','HomeController@logout');
 
-/* dp */
+/* by dp */
 
 Route::get('apply_home_loan','LoanController@apply_home_loan');
 Route::get('apply_loan_against_property','LoanController@apply_loan_against_property');

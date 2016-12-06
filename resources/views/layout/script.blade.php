@@ -29,12 +29,20 @@
         //alert(obj.options[obj.selectedIndex].value);
 
         document.getElementById(val).style.display='block';
-        
+        //console.log(val);
         $('#pop1').empty();
         if(val=='q2'){
         $('#pop1').append( "<p>Enter the amount you want</p>" );
         }else if(val=='q4'){
           $('#pop1').append( "<p>Any loan taken in past</p>" );
+        }else if(val=='type_of_profession'){
+          $('#type_of_emp_profession').hide();
+          $('#gross_annual').hide();
+          $('#pop1').append( "<p>Select your self employed business</p>" );
+        }else if(val=='turnover'){
+          
+          //$('#type_of_profession').show();
+          $('#pop1').append( "<p>Mention your gross annual sales / turnover Rs. </p>" )
         }else if(val=='q5'){
           $('#pop1').append( "<p>Any credit card you have</p>" );
         }else if(val=='q6'){
@@ -71,7 +79,19 @@
           $('#pop1').append( "<p>You stay with</p>" );
         }else if(val=='birth'){
            $('#pop1').append( "<p>I wonder if your birthday is today</p>" );
+        }else if(val=='emi_pay'){
+           $('#pop1').append( "<p>Total EMI you pay currently  Rs.</p>" );
+        }else if(val=='pan_card'){
+           $('#pop1').append( "<p>Please enter your pancard number </p>" );
+        }else if(val=='type_of_emp_profession'){
+            $('#turnover').hide();
+          $('#type_of_profession').hide();
+           $('#pop1').append( "<p>Select your profession </p>" );
+        }else if(val=='gross_annual'){
+           $('#pop1').append( "<p>Mention your gross annual receipt Rs. </p>" );
         }
+
+
         else{
            $('#pop1').append( "<p>Please Proceed</p>" );
         }
@@ -87,7 +107,9 @@
         document.getElementById(nxt).style.display='block';
         $('#pop1').empty();
         if(nxt=='step-2'){
-          $('#pop1').append( "<p>Where do you work?</p>" );   
+          $('#pop1').append( "<p>Where do you work?</p>" ); 
+        }else if(nxt=='level-2'){
+          $('#pop1').append( "<p>Tell us your experience in current professions </p>" );  
         }else if(nxt=='step-3'){
           $('#pop1').append( "<p>Tell us about the your residence</p>" );   
         }else if(nxt=='start-2'){
@@ -117,6 +139,9 @@
             }else if(obj=='sal_rcv_by' || obj=='salary_by'){
               $('#pop1').empty();
             $('#pop1').append( "<p>How you get your Vitamin M(money/salary)</p>" );
+            }else if('bank_acc'){
+              $('#pop1').empty();
+            $('#pop1').append( "<p>Your account is associated with which bank</p>" );
             }else{
             $('#pop1').empty();
             $('#pop1').append( "<p>Great!! tell us more</p>" );
@@ -151,6 +176,14 @@
           $('#pop1').append( "<p>Entr your expierience in current company</p>" );
         }else if(val=='total_exp'){
           $('#pop1').append( "<p>Entr your total expierience</p>" );
+        }else if(val=='desired_amt'){
+          $('#pop1').append( "<p>Please enter your desired amount</p>" );
+        }else if(val=='residence'){
+          $('#pop1').append( "<p>Where do you reside, since when</p>" );
+        }else if(val=='date_birth'){
+          $('#pop1').append( "<p>I wonder if your birthday is today</p>" );
+        }else if(val=='residence_pincode'){
+          $('#pop1').append( "<p>Enter your residence pincode</p>" );
         }else{
           $('#pop1').append( "<p>Please go on</p>" );
         }
@@ -239,13 +272,6 @@ $(document).ready(function(){
       });
     });
 
-
-    
-  //    $('#exst_loan_form input').on('change', function() {
-  //   $('#exst_loan_detail').empty().append($('input[name=exst_loan]:checked', '#exst_loan_form').val());
-  //   $('#page2').modal('toggle');
-  //   changeTest(this,'q4');
-  // });
      $(".sidebar-submit").click(function(event){
 
     event.preventDefault();

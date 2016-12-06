@@ -53,9 +53,9 @@
 		   		    <br>
 		   			<div class="slider-text">
 		   				<div class="slider-text-inner">
-		   					<h2 class="slide-head">Home Loan Transfer</h2>
+		   					<h2 class="slide-head">Business Loan</h2>
 							<h5>Stay ahead of the curve with the Best in the Market</h5>
-		   					<p><a href="{{URL::to('home-loan-transfer')}}" class="btn btn-primary btn-lg">View More</a></p>
+		   					<p><a href="{{URL::to('business-loan')}}" class="btn btn-primary btn-lg">View More</a></p>
 		   				</div>
 		   			</div>
 		   		
@@ -112,7 +112,7 @@
 			    <div class=""> 
 			      <select class="form-control" name="prod" id="prod" required>
 			      @foreach($loan as $product)
-			        <option value="{{$product->prod_id}}"><span style="color: gray;font-family: bold; ">{{$product->prod_name}}</span></option>
+			        <option value="{{$product->Product_Id}}"><span style="color: gray;font-family: bold; ">{{$product->Name}}</span></option>
 			        @endforeach
 			      </select>
 			    </div>
@@ -183,10 +183,10 @@
 				</div>
 				<div class="col-md-2 animate-box h3-pd-btm">
 					<div class="services">
-						<a class="anchor_decoration" href="{{URL::to('home-loan-transfer')}}">
+						<a class="anchor_decoration" href="{{URL::to('business-loan')}}">
 						<div class="desc">
 						<i class="icon-line-chart"></i>
-							<h3>Home <br> Loan Transfer</h3>
+							<h3>Business <br> Loan </h3>
 							
 						</div>
 						</a>

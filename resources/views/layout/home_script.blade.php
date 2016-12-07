@@ -245,7 +245,7 @@ function validation(val){
                      
                     }else if(f2=='no_working'){
                      show_hide('btn_v',1);
-                     show_hide('btn_v2',0);
+                     //show_hide('btn_v2',0);
                      
 
                     }else if(f2=='income'){
@@ -263,10 +263,10 @@ function validation(val){
 
                        var number=parseInt(f1.value);
                             if(number>50000){
-                        show_hide('btn_v2',1);
+                        show_hide('btn_v',1);
                       }else{
                        validation('Please enter an amount greater than Rs 1,00,000');
-                       show_hide('btn_v2',0);
+                       show_hide('btn_v',0);
 
                       }
 

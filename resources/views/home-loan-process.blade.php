@@ -83,22 +83,7 @@
 			</div>
              
 
-           <div class="col-md-12 text-center animate-box cont" style="display:none" id="property_city">
-			<form action={{URL('search/autocomplete')}} method="POST" >
-                <h3>Choose your property city
-			<input type="text" class="search_city input-pad" id='city_name' onkeyup="homeLoanFn(this,'city_live')" name='city_name' placeholder='your city'>
-                 
-			</form>
-		</div>
-
-	
-   <div class="col-md-12 text-center animate-box cont" style="display:none" id="currently_reside">
-			<form action={{URL('search/autocomplete')}} method="POST" >
-                <h3>Where do you currently reside
-			<input type="text" class="search_city input-pad" id='current_reside' onkeyup="homeLoanFn(this,'current_reside')" name='current_reside' placeholder='your city'>
-                 
-			</form>
-	</div>
+     
 		
 
     <div class="text-center" style="display:none;" id="next_btn">
@@ -116,13 +101,6 @@
 	
 
 		       <p class="text-center">Step 2 of 3</p> 
-
-
-		  <!--  <div class="col-md-12  text-center animate-box cont"  id="profession_type" >
-			    <h3>Your Profession Type<span class="clr-blue1"></span>
-			    <input type="tel" id="profe_type" name="profe_type"   onkeyup="profession_f()" class="input-pad" placeholder="Select Profession" tabindex="1">
-			    .</h3>
-			</div> -->
 
 
 			<div class="col-md-12 text-center animate-box cont" id="profession_type">
@@ -161,10 +139,6 @@
 			    .</h3>
 			</div>
 
-<!-- 	<div class="text-center" style="display:none;" id="next_btn3">
-			<a class="btn btn-primary btn-outline with-arrow animate-box" onclick="next_step_3('step2','step3')" >
-			Continue<i class="icon-arrow-right"></i></a>
-	</div> -->
 
 	  <div class="text-center" style="display:none;" id="step_home">
 		<a class="btn btn-primary btn-outline with-arrow animate-box" onclick="homeLoanFn('home_step1')">Go Back<i class="icon-arrow-right"></i></a>
@@ -180,11 +154,6 @@
 
 			
     <p class="text-center">Step 3 of 3</p> 
-		<!-- 	<div class="col-md-12 text-center animate-box cont">
-			    <h3>My date of birth is .</h3>
-			   <input type="text" id="dob_" name="dob_"  onkeypress="return fnAllowNumeric(event)" onchange="dob_f()" >
-			    
-			 </div> -->
 
 
 			<div class="col-md-12  text-center animate-box cont"   id="home_dob" >
@@ -220,27 +189,6 @@
 			     </h3> 
 			</div>
 
-			<!-- <div class="col-md-12 text-center animate-box cont" style="display:none;" id="relation_ship" >
-			    <h3>Your relationship with the co-borrower<span class="clr-blue1"></span>
-			     <select id="relationship" onchange="relationship_f()" name="relationship">
-			     	<option>Spouse</option>
-			     	<option>Father</option>
-			     	<option>Mother</option>
-			     	<option>Brother</option>
-			     	<option>Sister</option>
-			     	<option>Child</option>
-			     </select>
-			    .</h3>
-			</div> -->
-<!-- 
-			<div class="col-md-12 text-center animate-box cont" style="display:none;" id="employment_type">
-                <h3>Your co-borrower's employment type
-  <a href="#" class="svalue clr-blue purposeofloan_popup" data-toggle="modal" data-target="#home-page6" >
-	<input type="text" style="color:000;" class="clr-blue" id="coborrower_employment" name="coborrower_employment">
-	</a>
-			     </h3> 
-			</div>
- -->
 
  <div class="col-md-12 text-center animate-box cont" style="display:none;" id="employment_type">
                  <h3>Your co-borrower's employment type
@@ -264,21 +212,35 @@
 
 
 
-            <!-- <div class="text-center" style="display:none;" style="display:none;" id="btn_v" >
-		     <button class="btn btn-primary btn-outline with-arrow animate-box"  >
-			submit<i class="icon-arrow-right"></i></button>
-	       </div>
- -->
+	 <div class="col-md-12 text-center animate-box cont" style="display:none" id="property_city">
+			<form action={{URL('search/autocomplete')}} method="POST" >
+                <h3>Choose your property city
+			<input type="text" class="search_city input-pad" id='city_name' onkeyup="homeLoanFn(this,'city_live')" name='city_name' placeholder='your city'>
+                 
+			</form>
+		</div>
+
+	
+   <div class="col-md-12 text-center animate-box cont" style="display:none" id="currently_reside">
+			<form action={{URL('search/autocomplete')}} method="POST" >
+                <h3>Where do you currently reside
+			<input type="text" class="search_city input-pad" id='current_reside' onkeyup="homeLoanFn(this,'current_reside')" name='current_reside' placeholder='your city'>
+                 
+			</form>
+	</div>
+
 
     <div class="text-center" style="display:none;" id="btn_v">
 		<a class="btn btn-primary btn-outline with-arrow animate-box" onclick="homeLoanFn('step2HomeLone')">Go Back<i class="icon-arrow-right"></i></a>
-			<a class="btn btn-primary btn-outline with-arrow animate-boxproduct_name" data-toggle="modal" data-target="#login">Submit Step1<i class="icon-arrow-right"></i></a>
+			<a class="btn btn-primary btn-outline with-arrow animate-boxproduct_name" data-toggle="modal" data-target="#login">Submit Step<i class="icon-arrow-right"></i></a>
 	   </div>
 
-	    <div class="text-center" style="display:none;" id="btn_v2">
+	   <!--  <div class="text-center" style="display:none;" id="btn_v2">
 		<a class="btn btn-primary btn-outline with-arrow animate-box" onclick="homeLoanFn('home_step2')">Go Back<i class="icon-arrow-right"></i></a>
-			<a class="btn btn-primary btn-outline with-arrow animate-box product_name" data-toggle="modal" data-target="#login">Submit Step<i class="icon-arrow-right"></i></a>
+			<a class="btn btn-primary btn-outline with-arrow animate-box product_name" data-toggle="modal" data-target="#login">Submit Ste2<i class="icon-arrow-right"></i></a>
 	   </div>
+ -->
+
 
      </div>
 

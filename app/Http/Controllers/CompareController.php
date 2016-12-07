@@ -24,6 +24,13 @@ class CompareController extends Controller
  	public function emi(){
     	return view('emi');
     }
+    public function emi2(){
+        return view('emi/emi');
+    }
+     public function emi_cal(Request $req){
+        $data=$req->all();
+        return view('emi/emi_cal')->with($data);
+    }
     public function credit_report(){
     	return view('free-credit-report');
     }

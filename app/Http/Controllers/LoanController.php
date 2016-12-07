@@ -55,6 +55,13 @@ class LoanController extends Controller
     	return view('personal-loan-process');
     }
 
+    public function smeLoan(request $request){
+           
+            
+
+        return view('personal-loan-process',['sme'=>$request->sme]);
+    }
+
     public function apply_home_loan(){
 
         return view('home-loan-process');

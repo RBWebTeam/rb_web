@@ -1,5 +1,9 @@
 
 <script>
+
+
+
+
   $( function() {
     $( "#datepicker" ).datepicker();
   } );
@@ -32,6 +36,7 @@ function validation(val){
                  }else if(arguments.length==1){
 
                    if(f1=='step2HomeLone'){
+                    validation('Your Profession Type ');
                      show_hide('step_Secound',1); 
                      show_hide('step_First',0); 
                      show_hide('next_step3',0); 
@@ -273,6 +278,7 @@ function validation(val){
                  }
 
      }
+
 
 
        function fnString(e, t){

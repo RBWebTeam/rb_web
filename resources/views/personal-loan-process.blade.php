@@ -4,16 +4,26 @@
 	    <div class="container" id='elem'>
 	    <form name='personal_loan_process_form' id='personal_loan_process_form' action={{URL::to('personal-loan-submit')}} method="POST">
 	    	  {{ csrf_field() }}
-	    	  <input type="hidden" id="product" name="product_name" value="personal_loan">
+              
+			@if (isset($sme))
+			 <?php $loan="SME" ;?>
+		    @else
+			 <?php $loan="Personal" ;?>
+		    @endif
+	 <input type="hidden" id="product" name="product_name" value="<?php echo $loan;?>">
 		<div class="liza col-md-8" id="step-1">
-		   <div class="col-md-12 text-center"><h4>Apply for an Easy Personal Loan in 30 seconds</h4></div>
+
+                        
+		   <div class="col-md-12 text-center"><h4>Apply for an Easy   <?php echo $loan;?> Loan in 30 seconds</h4></div>
 		   <p class="text-center">Step 1 of 3</p>
+
+		   
 			<div class="col-md-12 text-center animate-box cont" id="q1">
              <h3>I am a
 			 <a href="#" class="svalue clr-blue pop_up" data-toggle="modal" data-target="#page1" ><input type="text" style="color:000;" class="clr-blue" id="emp_detail" name="emp_detail"  placeholder="Select" readonly></a>
 			professional </h3> 
 			</div>
-			<div class="col-md-12 text-center animate-box cont" style="display:none;" id="q2" ><h3>and I want a <span class="clr-blue1">Personal Loan</span> of Rs. 
+			<div class="col-md-12 text-center animate-box cont" style="display:none;" id="q2" ><h3>and I want a <span class="clr-blue1"><?php echo $loan;?>  Loan</span> of Rs. 
 			<input type="tel" id="loanamt" name="loanamt" onkeyup="changeText('loanamt','q3')"  onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="1,00,000" tabindex="1">
 			.</h3>
 			</div>

@@ -1,5 +1,9 @@
 @include('layout.header')
 
+
+
+
+
     
 	    <div class="container" id='elem'>
 	    <form name='home_loan_process_form' id='home_loan_process_form' action={{URL::to('personal-loan-submit')}} method="POST">
@@ -147,7 +151,7 @@
 
 			<div class="col-md-12  text-center animate-box cont" style="display: none;"  id="full_name_pancart" >
 			    <h3>Your Full Name   (As per PAN Card)<span class="clr-blue1"></span>
-			    <input type="tel" id="pan_cart_name" name="pan_cart_name"   onkeyup="homeLoanFn(this,'pan_cart_name')" class="input-pad" placeholder="Full Name" tabindex="1">
+			    <input type="tel" id="pan_cart_name" name="pan_cart_name" onkeypress="return fnString(event,this)"   onkeyup="homeLoanFn(this,'pan_cart_name')" class="input-pad" placeholder="Full Name" tabindex="1">
 			    .</h3>
 			</div>
 

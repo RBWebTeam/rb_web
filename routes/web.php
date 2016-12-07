@@ -43,6 +43,6 @@ Route::get('logout','HomeController@logout');
 
 Route::get('apply_home_loan','LoanController@apply_home_loan');
 Route::get('apply_loan_against_property','LoanController@apply_loan_against_property');
-
+/* API routes to be written here */ 
 
 

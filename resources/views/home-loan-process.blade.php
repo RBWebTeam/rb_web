@@ -170,7 +170,7 @@
 </div>	
                
                <!--- third step -->
-     <div class="liza col-md-8"  style="display:none;"   id="next_step3">
+     <div class="liza col-md-8"    id="next_step3">
 
 		   <div class="col-md-12 text-center"><h4>Apply for an Easy Home Loan in 30 seconds ddd</h4></div>
 
@@ -268,12 +268,12 @@
 
     <div class="text-center" style="display:none;" id="btn_v">
 		<a class="btn btn-primary btn-outline with-arrow animate-box" onclick="homeLoanFn('step2HomeLone')">Go Back<i class="icon-arrow-right"></i></a>
-			<a class="btn btn-primary btn-outline with-arrow animate-box" onclick="homeLoanFn('home_sumit')">Submit Step<i class="icon-arrow-right"></i></a>
+			<a class="btn btn-primary btn-outline with-arrow animate-boxproduct_name" data-toggle="modal" data-target="#login">Submit Step1<i class="icon-arrow-right"></i></a>
 	   </div>
 
 	    <div class="text-center" style="display:none;" id="btn_v2">
 		<a class="btn btn-primary btn-outline with-arrow animate-box" onclick="homeLoanFn('home_step2')">Go Back<i class="icon-arrow-right"></i></a>
-			<a class="btn btn-primary btn-outline with-arrow animate-box" onclick="homeLoanFn('home_sumit')">Submit Step<i class="icon-arrow-right"></i></a>
+			<a class="btn btn-primary btn-outline with-arrow animate-box product_name" data-toggle="modal" data-target="#login">Submit Step<i class="icon-arrow-right"></i></a>
 	   </div>
 
      </div>
@@ -290,5 +290,6 @@
 		</div>
 
 @include('layout.footer')
+@include('layout.script')
 @include('layout.home_script')
 @include('layout.home-loan-modal')

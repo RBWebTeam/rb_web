@@ -222,7 +222,7 @@
 
  <div class="text-center" style="display:none;" id="step3">
 		<a class="btn btn-primary btn-outline with-arrow animate-box" onclick="loanAgainstfn('step_2_of3')">Go Back<i class="icon-arrow-right"></i></a>
-		 <a class="btn btn-primary btn-outline with-arrow animate-box" onclick="loanAgainstfn('Sumbit')">Sumbit<i class="icon-arrow-right"></i></a>
+		 <a class="btn btn-primary btn-outline with-arrow animate-box product_name" data-toggle="modal" data-target="#login">Sumbit<i class="icon-arrow-right"></i></a>
 </div>
 
 
@@ -242,5 +242,6 @@
 		<!-- POP Up code end -->
 		</div>
 @include('layout.footer')
+@include('layout.script')
 @include('layout.against_script')
 @include('layout.against-loan-modal')

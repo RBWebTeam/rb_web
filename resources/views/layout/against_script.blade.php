@@ -1,29 +1,4 @@
 
-    <script src="{{URL::to('js/modernizr-2.6.2.min.js')}}"></script>
-        <!-- jQuery -->
-    <script src="{{URL::to('js/jquery.min.js')}}"></script>
-    <link href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" rel="Stylesheet"></link>
-    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/themes/base/minified/jquery-ui.min.css" type="text/css" />
-    <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js" ></script>
-    
-    <link href="http://demo.expertphp.in/css/jquery.ui.autocomplete.css" rel="stylesheet">
-    <script src="http://demo.expertphp.in/js/jquery.js"></script>
-    <script src="http://demo.expertphp.in/js/jquery-ui.min.js"></script>
-<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
-
-    <script>
-           $('ul.dropdown-menu [data-toggle=dropdown]').on('click', function(event) {
-    // Avoid following the href location when clicking
-    event.preventDefault(); 
-    // Avoid having the menu to close when clicking
-    event.stopPropagation(); 
-    // Re-add .open to parent sub-menu item
-    $(this).parent().addClass('open');
-    $(this).parent().find("ul").parent().find("li.dropdown").addClass('open');
-});
-    </script>
-    <!-- function addede later -->
-
 <script>
      function popup(val){
           var obj=new Object;
@@ -479,7 +454,3 @@ $(document).ready(function(){
 </script>
 
 
-
-	</body>
-</html>
-@include('layout.modal')

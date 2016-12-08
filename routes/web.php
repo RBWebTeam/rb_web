@@ -1,5 +1,4 @@
 <?php
-
 Route::get('/','HomeController@index');
 Route::get('personal-loan','LoanController@personal_loan');
 Route::get('home-loan','LoanController@home_loan');

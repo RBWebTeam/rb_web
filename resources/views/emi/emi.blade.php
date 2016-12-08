@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
   <title></title>
-  <script src="{{URL::to('emi/jquery-2.1.4.min.js')}}"></script>
-    <script src="{{URL::to('emi/Chart.js')}}"></script>
+  <script src="jquery-2.1.4.min.js"></script>
+    <script src="Chart.js"></script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -52,7 +52,7 @@
     <div class="form-group right-block">
        <label class="control-label" for="Loan Tenure">Loan Tenure:</label>
         <input type="number" name="loanterm" class="form-control" id="loanterm" placeholder="Loan Tenure" value="" onblur="myfun()">
-		<br>
+    <br>
     <div class="btn-group">
           <label class="btn btn-primary"><input type="radio" name="Year" id="Year" value="" checked="checked">Yr</label>
              <label class="btn btn-primary"><input type="radio" name="Year" id="Month" value="">Mo</label>
@@ -140,12 +140,11 @@
       //console.log(loanterm);
       $.ajax({  
                type: "POST",  
-               url: "{{URL::to('emi_cal')}}",
-               dataType:"json",
-               
-               data : { "_token": "{{ csrf_token() }}",'loanamount': loanamount , 'loaninterest': loaninterest ,'loanterm' :loanterm},
+               url: "emi_cal.php",
+               dataType:'json',
+               data : { 'loanamount': loanamount , 'loaninterest': loaninterest ,'loanterm' :loanterm},
                success: function(msg){
-                //console.log(msg);
+                console.log(msg);
                 change(msg.amount,msg.ttl_pay,msg.ttl_payment);
 
                 emibreakup(msg.amount,loanamount,loaninterest,loanterm);
@@ -158,6 +157,7 @@
                    $("#1").show();
                    $("#2").show();
                    $("#3").show();
+                   console.log(msg.saving);
                }  
                }); 
         //myfun1(document.getElementById('emi').innerHTML,document.getElementById('emi1').innerHTML,document.getElementById('emi2').innerHTML);

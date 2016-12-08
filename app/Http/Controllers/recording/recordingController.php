@@ -5,6 +5,7 @@ namespace App\Http\Controllers\recording;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
+
 use DB;
 use Response;
 class recordingController extends Controller
@@ -26,6 +27,5 @@ class recordingController extends Controller
                         ));
      	  }
      	 // return view('recording/recording');
-
      }
 }

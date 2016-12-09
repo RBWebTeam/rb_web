@@ -1,8 +1,112 @@
-
-<!DOCTYPE html>
 <html>
-<head>
-	<title></title>
+
+	<head>
+	<title>Writing to a text file</title>
+	</head>
+	<body>
+
+
+
+    <script language="JScript">
+   
+
+
+		function saveAs(uri, filename) {
+  var link = document.createElement('a');
+  if (typeof link.download === 'string') {
+    link.href = uri;
+    link.download = filename;
+
+    //Firefox requires the link to be in the body
+    document.body.appendChild(link);
+    
+    //simulate click
+    link.click();
+
+    //remove the link when done
+    document.body.removeChild(link);
+  } else {
+    window.open(uri);
+  }
+}
+
+var file ="data:video/3gpp;base64,AAAAHGZ0eXAzZ3A0AAACAGlzb21pc28yM2dwNAAAAAhmcmVlAABlyG1kYXQ8kRcWvmZ54eAB56/wRAAAgABIMAAAAAAAAIggAAAAADxIdySWZnnh4AHnuvAAAADAAAAAAAAAAAAAAAAAAAAAPFUAiLZmeeHgAefP8AAAAIAAAAAAAAAAAAAAAAAAAAA8SPkflmZ54eAB54rwAAAAwAAAAAAAAAAAAAAAAAAAADxU/R+2Znnh4AHnz/AAAACAAAAAAAAAAAAAAAAAAAAAPEj1H5ZmeeHgAeeK8AAAAMAAAAAAAAAAAAAAAAAAAAA8VP0ftmZ54eAB58/wAAAAgAAAAAAAAAAAAAAAA=";
+
+
+
+
+
+   // window.loads=saveAs(file, 'logo.mp3');
+    
+    var data = new FormData();
+data.append("data" , "the_text_you_want_to_save");
+var xhr = (window.XMLHttpRequest) ? new XMLHttpRequest() : new activeXObject("Microsoft.XMLHTTP");
+xhr.open( 'post', 'http://localhost/htdocs/newrb/public/a', true );
+alert(xhr.send(data));
+
+
+   
+    </script>
+
+
+
+
+
+
+
+
+<?php
+
+echo $_SERVER['DOCUMENT_ROOT'];
+exit;
+
+// $content = "some text here";
+// $fp = fopen('http://localhost/newrb/public/a'. "/myText.txt","wb");
+// fwrite($fp,$content);
+// fclose($fp);
+
+
+//file_put_contents( "http://localhost/newrb/public/a" . '/index.html', "Aasasassa");
+
+ $fileLocation = "http://localhost/htdocs/newrb/public/a" . "/myfile.txt";
+  $file = fopen($fileLocation,"w");
+  $content = "Your text here";
+  fwrite($file,$content);
+  fclose($file);;
+?>
+
+	</body>
+	</html>
+
+
+
+
+
+
+
+	<?php exit; ?>
+
+
+	 
+
+<script type="text/javascript">
+	
+	var Sound = (function () {
+    var df = document.createDocumentFragment();
+    return function Sound(src) {
+        var snd = new Audio(src);
+        df.appendChild(snd); // keep in fragment until finished playing
+        snd.addEventListener('ended', function () {df.removeChild(snd);});
+        snd.play();
+        return snd;
+    }
+}());
+// then do it
+var snd = Sound("data:audio/wav;base64," + base64string);
+</script>
+
+
+
 
 	<script type="text/javascript">
 		

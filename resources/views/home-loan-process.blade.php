@@ -148,7 +148,7 @@
 </div>	
                
                <!--- third step -->
-     <div class="liza col-md-8"    id="next_step3">
+     <div class="liza col-md-8"  style="display:none;"   id="next_step3">
 
 		   <div class="col-md-12 text-center"><h4>Apply for an Easy Home Loan in 30 seconds ddd</h4></div>
 

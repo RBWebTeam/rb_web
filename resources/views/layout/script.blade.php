@@ -71,8 +71,19 @@
           $('#pop1').append( "<p>You stay with</p>" );
         }else if(val=='birth'){
            $('#pop1').append( "<p>I wonder if your birthday is today</p>" );
-        }
-        else{
+        }else if(val=='type_of_profession'){ //business loan script//
+           $('#pop1').append( "<p>Select your business</p>" );
+        }else if(val=='turnover'){
+           $('#pop1').append( "<p>Enter your gross annual sales/turnover</p>" );
+        }else if(val=='emi_pay'){
+           $('#pop1').append( "<p>How much total EMI you pay currently</p>" );
+        }else if(val=='pan_card'){
+           $('#pop1').append( "<p>Please enter your pan card number</p>" );
+        }else if(val=='type_of_emp_profession'){
+           $('#pop1').append( "<p>Select your profession</p>" );
+        }else if(val=='gross_annual'){
+           $('#pop1').append( "<p>Enter your gross annual reciept</p>" );
+        }else{
            $('#pop1').append( "<p>Please Proceed</p>" );
         }
         return false;
@@ -151,6 +162,14 @@
           $('#pop1').append( "<p>Entr your expierience in current company</p>" );
         }else if(val=='total_exp'){
           $('#pop1').append( "<p>Entr your total expierience</p>" );
+        }else if(val=='desired_amt'){ //business loan script//
+          $('#pop1').append( "<p>Enter your desired loan amount</p>" );
+        }else if(val=='residence'){
+          $('#pop1').append( "<p>Where do you reside and since when</p>" );
+        }else if(val=='date_birth'){
+          $('#pop1').append( "<p>I wonder if your birthday is today</p>" );
+        }else if(val=='residence_pincode'){
+          $('#pop1').append( "<p>Enter your residence pincode</p>" );
         }else{
           $('#pop1').append( "<p>Please go on</p>" );
         }
@@ -398,19 +417,19 @@ $(document).ready(function(){
     });
   
   //get location of the person on load chrome
-  window.onload = function() {
-  var startPos;
-  var geoSuccess = function(position) {
-    startPos = position;
-    var lat= startPos.coords.latitude;
-    var log = startPos.coords.longitude;
-    console.log(lat);
-  console.log(log);
-  };
-  navigator.geolocation.getCurrentPosition(geoSuccess);
+  // window.onload = function() {
+  // var startPos;
+  // var geoSuccess = function(position) {
+  //   startPos = position;
+  //   var lat= startPos.coords.latitude;
+  //   var log = startPos.coords.longitude;
+  //   console.log(lat);
+  // console.log(log);
+  // };
+  // navigator.geolocation.getCurrentPosition(geoSuccess);
 
 
-};
+// };
 
 </script>
 

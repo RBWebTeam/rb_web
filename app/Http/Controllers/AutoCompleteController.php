@@ -10,6 +10,10 @@ class AutoCompleteController extends Controller {
         return view('personal-loan-process');
    }
     public function autoComplete(Request $request) {
+
+
+
+        
         $term = Input::get('term');
         $products=DB::table('city_master')->select('city_name')
         ->where('city_name', 'LIKE', '%'.$term.'%')

@@ -2,12 +2,13 @@
 
 
 
-
-
     
 	    <div class="container" id='elem'>
 	    <form name='home_loan_process_form' id='home_loan_process_form' action={{URL::to('personal-loan-submit')}} method="POST">
-	    	  {{ csrf_field() }}
+	    	
+
+	    	  <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
+
 	    	   <input type="hidden" id="product" name="product_name" value="Home_loan">
 		<div class="liza col-md-8"  id="step_First" style="display: block;">
 		   <div class="col-md-12 text-center"><h4>Apply for an Easy Home Loan in 30 seconds</h4></div>
@@ -83,21 +84,19 @@
 			</div>
              
             
+
+
+
              <div class="col-md-12 text-center animate-box cont" style="display:none" id="property_city">
-			<form action={{URL('search/autocomplete')}} method="POST" >
-                <h3>Choose your property city
-			<input type="text" class="search_city input-pad" id='city_name' onkeyup="homeLoanFn(this,'city_live')" name='city_name' placeholder='your city'>
-                 
-			</form>
-		</div>
+                <h3>Choose your property city 
+			<input type="text" class="search_city input-pad" id='city_name' onkeyup="homeLoanFn(this,'city_live')" name='city_name' placeholder='your city'>        
+		   </div>
 
 	
    <div class="col-md-12 text-center animate-box cont" style="display:none" id="currently_reside">
-			<form action={{URL('search/autocomplete')}} method="POST" >
+			
                 <h3>Where do you currently reside
-			<input type="text" class="search_city input-pad" id='current_reside' onkeyup="homeLoanFn(this,'current_reside')" name='current_reside' placeholder='your city'>
-                 
-			</form>
+			<input type="text" class="search_city input-pad" id='current_reside' onkeyup="homeLoanFn(this,'current_reside')" name='current_reside' placeholder='your city'>	
 	</div>
 
      

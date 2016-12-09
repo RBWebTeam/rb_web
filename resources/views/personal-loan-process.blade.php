@@ -14,7 +14,7 @@
 		<div class="liza col-md-8" id="step-1">
 
                         
-		   <div class="col-md-12 text-center"><h4>Apply for an Easy   <?php echo $loan;?> Loan in 30 seconds</h4></div>
+		   <div class="col-md-12 text-center"><h4>Apply for an Easy <?php echo $loan;?> Loan in 30 seconds</h4></div>
 		   <p class="text-center">Step 1 of 3</p>
 
 		   
@@ -138,7 +138,7 @@
 	   <div class="col-md-4 liza1">
 		<div class="text-center guid nl-form-errors" id='pop1'>Select your professional!</div>
 
-        <div class="text-center img1"><img src="images/photo.jpg"></div>
+        <div class="text-center img1"><img src="{{URL::to('images/photo.jpg')}}"></div>
 		</div>
 		<!-- POP Up code end -->
 		</div>

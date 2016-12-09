@@ -82,6 +82,23 @@
 			    .</h3>
 			</div>
              
+            
+             <div class="col-md-12 text-center animate-box cont" style="display:none" id="property_city">
+			<form action={{URL('search/autocomplete')}} method="POST" >
+                <h3>Choose your property city
+			<input type="text" class="search_city input-pad" id='city_name' onkeyup="homeLoanFn(this,'city_live')" name='city_name' placeholder='your city'>
+                 
+			</form>
+		</div>
+
+	
+   <div class="col-md-12 text-center animate-box cont" style="display:none" id="currently_reside">
+			<form action={{URL('search/autocomplete')}} method="POST" >
+                <h3>Where do you currently reside
+			<input type="text" class="search_city input-pad" id='current_reside' onkeyup="homeLoanFn(this,'current_reside')" name='current_reside' placeholder='your city'>
+                 
+			</form>
+	</div>
 
      
 		
@@ -148,7 +165,7 @@
 </div>	
                
                <!--- third step -->
-     <div class="liza col-md-8"    id="next_step3">
+     <div class="liza col-md-8"  style="display:none;"   id="next_step3">
 
 		   <div class="col-md-12 text-center"><h4>Apply for an Easy Home Loan in 30 seconds ddd</h4></div>
 
@@ -212,23 +229,7 @@
 
 
 
-	 <div class="col-md-12 text-center animate-box cont" style="display:none" id="property_city">
-			<form action={{URL('search/autocomplete')}} method="POST" >
-                <h3>Choose your property city
-			<input type="text" class="search_city input-pad" id='city_name' onkeyup="homeLoanFn(this,'city_live')" name='city_name' placeholder='your city'>
-                 
-			</form>
-		</div>
-
 	
-   <div class="col-md-12 text-center animate-box cont" style="display:none" id="currently_reside">
-			<form action={{URL('search/autocomplete')}} method="POST" >
-                <h3>Where do you currently reside
-			<input type="text" class="search_city input-pad" id='current_reside' onkeyup="homeLoanFn(this,'current_reside')" name='current_reside' placeholder='your city'>
-                 
-			</form>
-	</div>
-
 
     <div class="text-center" style="display:none;" id="btn_v">
 		<a class="btn btn-primary btn-outline with-arrow animate-box" onclick="homeLoanFn('step2HomeLone')">Go Back<i class="icon-arrow-right"></i></a>

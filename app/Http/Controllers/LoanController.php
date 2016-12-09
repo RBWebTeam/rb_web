@@ -63,15 +63,17 @@ class LoanController extends Controller
     }
 
     public function apply_home_loan(){
-
-        return view('home-loan-process');
+$query=DB::table('bank_master')->select('Bank_Name')->get();
+        return view('home-loan-process',['data'=>$query]);
 
     }
 
 
     public function apply_loan_against_property(){
-     
-         return view('loan-against-property-process');
+
+
+         $data=DB::table('bank_master')->select('Bank_Name')->get();
+         return view('loan-against-property-process',['data'=>$data]);
         
     }
     

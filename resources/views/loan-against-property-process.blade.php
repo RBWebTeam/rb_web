@@ -21,13 +21,13 @@
 		
 
 		 <div class="col-md-12 text-center animate-box cont" style="display:none" id="livehere">
-			<form action={{URL('search/autocomplete')}} method="POST" >
+		
                 <h3>Choose your property city
 			<input type="text" class="search_city input-pad" id='city_name' onkeyup="loanAgainstfn(this,'city_live')" name='city_name' placeholder='your city'>
                   
                  
 
-			</form>
+		
 		</div>
        
      
@@ -53,7 +53,7 @@
 		</div>
 
 
-		<div class="col-md-12 text-center animate-box cont" style="display:none;" id="TypProfession" >
+	<!-- 	<div class="col-md-12 text-center animate-box cont" style="display:none;" id="TypProfession" >
 			    <h3>Select Profession type<span class="clr-blue1"></span>
 			     <select id="selectpro" onchange="loanAgainstfn(this,'selectpro')">
 			     	 <option value="">---Select---</option>
@@ -73,6 +73,16 @@
 			     </select>
 			    .</h3>
 			</div>
+ -->
+
+
+
+
+			<div class="col-md-12 text-center animate-box cont"  style="display:none;" id="TypProfession">
+	            <h3>Select Profession type
+				 <a href="#" class="svalue clr-blue pop_up" data-toggle="modal" data-target="#professaginst" ><input type="text" style="color:000;" class="clr-blue" id="proTypAgain" name="proTypAgain"  placeholder="Select" readonly></a>
+				</h3> 
+			</div>
 
 
 
@@ -85,16 +95,16 @@
 
 
 	   <!--- liza Step Two   - -->
-		<div class="liza col-md-8"   style="display:none"	 id="step2ofagiansp">
+		<div class="liza col-md-8"   	style="display:none;" id="step2ofagiansp">
 		   <div class="col-md-12 text-center"><h4>Apply for an Easy Personal Loan in 30 seconds</h4></div>
 		   <p class="text-center">Step 2 of 3</p>
 			
           <div class="col-md-12 text-center animate-box cont"  id="currently_residing">
-			<form action={{URL('search/autocomplete')}} method="POST" >
+			
                 <h3>City where you are currently residing
 			<input type="text" class="search_city input-pad" id='curr_residing' onkeyup="loanAgainstfn(this,'curr_residing')" name='curr_residing' placeholder='your city'>
                   
-			</form>
+			
 		</div>
 
          <div class="col-md-12 text-center animate-box cont"  style="display:none" id="grossanual" >
@@ -120,7 +130,7 @@
 		</div>
 
 
-		<div class="col-md-12 text-center animate-box cont" style="display:none;" id="bankAcount" >
+		<!-- <div class="col-md-12 text-center animate-box cont" style="display:none;" id="bankAcount" >
 			    <h3>Select Your bank account is with?<span class="clr-blue1"></span>
 			     <select id="bankacount" onchange="loanAgainstfn(this,'bankacount')">
 			     	 <option value="">---Select---</option>
@@ -137,7 +147,16 @@
 					    						<option value="5" >Others</option>
 			    </select>
 			    .</h3>
+			</div> -->
+
+
+			<div class="col-md-12 text-center animate-box cont"  style="display:none;" id="bankAcount">
+	            <h3>Select Your bank account is with
+				 <a href="#" class="svalue clr-blue pop_up" data-toggle="modal" data-target="#bankAcountaginst" ><input type="text" style="color:000;" class="clr-blue" id="bankacount" name="bankacount"  placeholder="Select" readonly></a>
+				</h3> 
 			</div>
+
+
 
 
 			
@@ -166,11 +185,11 @@
 
 
 	   <!--- Third step-->
-       <div class="liza col-md-8"   style="display:none"	 id="step3ofagiansp" >
+       <div class="liza col-md-8"   	style="display:none;" id="step3ofagiansp" >
 		   <div class="col-md-12 text-center"><h4>Apply for an Easy Personal Loan in 30 seconds</h4></div>
 		   <p class="text-center">Step 3 of 3</p>
 
-		    <div class="col-md-12 text-center animate-box cont"   id="relationship_against" >
+		   <!--  <div class="col-md-12 text-center animate-box cont"   id="relationship_against" >
 			    <h3>What is your relationship with co-borrower<span class="clr-blue1"></span>
 			     <select id="releation_agai" name="releation_agai" onchange="loanAgainstfn(this,'releation_agai')">
 			     	 <option value="">---Select---</option>
@@ -182,6 +201,13 @@
 					    						
 			     </select>
 			    .</h3>
+			</div>
+ -->
+
+ <div class="col-md-12 text-center animate-box cont"   id="relationship_against">
+	            <h3>What is your relationship with co-borrower
+				 <a href="#" class="svalue clr-blue pop_up" data-toggle="modal" data-target="#against_co_borrw" ><input type="text" style="color:000;" class="clr-blue" id="releation_agai" name="releation_agai"  placeholder="Select" readonly></a>
+				</h3> 
 			</div>
 
 

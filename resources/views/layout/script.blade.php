@@ -398,19 +398,19 @@ $(document).ready(function(){
     });
   
   //get location of the person on load chrome
-  window.onload = function() {
-  var startPos;
-  var geoSuccess = function(position) {
-    startPos = position;
-    var lat= startPos.coords.latitude;
-    var log = startPos.coords.longitude;
-    console.log(lat);
-  console.log(log);
-  };
-  navigator.geolocation.getCurrentPosition(geoSuccess);
+  // window.onload = function() {
+  // var startPos;
+  // var geoSuccess = function(position) {
+  //   startPos = position;
+  //   var lat= startPos.coords.latitude;
+  //   var log = startPos.coords.longitude;
+  //   console.log(lat);
+  // console.log(log);
+  // };
+  // navigator.geolocation.getCurrentPosition(geoSuccess);
 
 
-};
+// };
 
 </script>
 

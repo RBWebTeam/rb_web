@@ -232,7 +232,7 @@
 
     <div class="text-center" style="display:none;" id="btn_v">
 		<a class="btn btn-primary btn-outline with-arrow animate-box" onclick="homeLoanFn('step2HomeLone')">Go Back<i class="icon-arrow-right"></i></a>
-			<a class="btn btn-primary btn-outline with-arrow animate-boxproduct_name" data-toggle="modal" data-target="#login">Submit Step<i class="icon-arrow-right"></i></a>
+			<a class="btn btn-primary btn-outline with-arrow animate-box product_name" data-toggle="modal" data-target="#login">Submit Step<i class="icon-arrow-right"></i></a>
 	   </div>
 
 	   <!--  <div class="text-center" style="display:none;" id="btn_v2">

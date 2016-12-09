@@ -4,7 +4,7 @@
 	    <div class="container" id='elem'>
 	    <form name='business_loan_process_form' id='business_loan_process_form' action={{URL::to('personal-loan-submit')}} method="POST">
 	    	  {{ csrf_field() }}
-	    <input type="hidden" id="product" name="product_name" value="car_loan">
+	    <input type="hidden" id="product" name="product_name" value="business_loan">
 		<div class="liza col-md-8" id="start-1">
 		   <div class="col-md-12 text-center"><h4>Apply for an Easy Business Loan in 30 seconds</h4></div>
 		   <p class="text-center">Step 1 of 3</p>

@@ -112,7 +112,7 @@
 			    <div class=""> 
 			      <select class="form-control" name="prod" id="prod" required>
 			      @foreach($loan as $product)
-			        <option value="{{$product->Product_Id}}"><span style="color: gray;font-family: bold; ">{{$product->Name}}</span></option>
+			        <option value="{{$product->Product_Id}}"><span style="color: gray;font-family: bold; ">{{$product->Product_Name}}</span></option>
 			        @endforeach
 			      </select>
 			    </div>

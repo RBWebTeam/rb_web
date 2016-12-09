@@ -5,6 +5,7 @@ namespace App\Http\Controllers\recording;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
+
 use DB;
 use Response;
 use App\recording\recordingModel;
@@ -53,6 +54,7 @@ print $success ? $file : 'Unable to save the file.';
                         ));
      	  }
 
+
      	 //return view('recording/recording');
      	 // 4nIX34mQNxvSFXBu3Y8sKg5r6l4tkvjLZIwM2EFn
 
@@ -66,6 +68,7 @@ print $success ? $file : 'Unable to save the file.';
            
            
         return view('recording/show',['query'=>$query]);
+
 
      }
 }

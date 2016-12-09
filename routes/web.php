@@ -1,5 +1,4 @@
 <?php
-
 Route::get('/','HomeController@index');
 Route::get('personal-loan','LoanController@personal_loan');
 Route::get('home-loan','LoanController@home_loan');
@@ -44,9 +43,14 @@ Route::get('apply_sme_loan/{sme}','LoanController@smeLoan');
 Route::get('apply_home_loan','LoanController@apply_home_loan');
 Route::get('apply_loan_against_property','LoanController@apply_loan_against_property');
 
+
 Route::post('recording','recording\recordingController@recording');
 Route::get('recording/show','recording\recordingController@show');
 
 /* API routes to be written here */ 
+
+/*emi test*/
+Route::get('emi2','CompareController@emi2');
+Route::post('emi_cal','CompareController@emi_cal');
 
 

@@ -10,7 +10,7 @@ class HomeController extends Controller
 {
 	public function index(){
 		$data['city'] = DB::table('city_master')->select('City_Name','state_id','City_Id')->get();
-		$data['loan'] = DB::table('Product_Master')->select('Name','Product_Id')->get();
+		$data['loan'] = DB::table('Product_Master')->select('Product_Name','Product_Id')->get();
 		//print "<pre>";
 		//print_r($data);
 	    return view('index')->with($data);

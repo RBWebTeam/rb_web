@@ -158,7 +158,7 @@
 	</div> -->
 
 	<div class="text-center" id="step2_against_sumbit" style="display:none;">
-		<a class="btn btn-primary btn-outline with-arrow animate-box" onclick="loanAgainstfn('Sumbit')">Sumbit<i class="icon-arrow-right"></i></a>
+		<a class="btn btn-primary btn-outline with-arrow animate-box product_name" data-toggle="modal" data-target="#login">Sumbit<i class="icon-arrow-right"></i></a>
 	</div>
 
 
@@ -206,23 +206,10 @@
 			    onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="1,00,000"  maxlength='10'  tabindex="1">
 		     </h3>
 		</div>
-      
-
-   <!--      <div class="text-center" id="step2_against2">
-		<a class="btn btn-primary btn-outline with-arrow animate-box" onclick="loanAgainstfn('step_2_none')">Go Back<i class="icon-arrow-right"></i></a>
-
-		<a style="display:none" id="step_2_gainst" class="btn btn-primary btn-outline with-arrow animate-box" onclick="loanAgainstfn('step3ag')">Final Step<i class="icon-arrow-right"></i></a>
-		</div> -->
-
-<!-- <div class="text-center" style="display:none" id="step_2_gainst">
-		<a class="btn btn-primary btn-outline with-arrow animate-box" onclick="loanAgainstfn('step_2')">Go Back<i class="icon-arrow-right"></i></a>
-			<a class="btn btn-primary btn-outline with-arrow animate-box" onclick="loanAgainstfn('step3ag')">Final Step<i class="icon-arrow-right"></i></a>
-</div>
- -->
 
  <div class="text-center" style="display:none;" id="step3">
 		<a class="btn btn-primary btn-outline with-arrow animate-box" onclick="loanAgainstfn('step_2_of3')">Go Back<i class="icon-arrow-right"></i></a>
-		 <a class="btn btn-primary btn-outline with-arrow animate-box" onclick="loanAgainstfn('Sumbit')">Sumbit<i class="icon-arrow-right"></i></a>
+		 <a class="btn btn-primary btn-outline with-arrow animate-box product_name" data-toggle="modal" data-target="#login">Sumbit<i class="icon-arrow-right"></i></a>
 </div>
 
 
@@ -242,5 +229,6 @@
 		<!-- POP Up code end -->
 		</div>
 @include('layout.footer')
+@include('layout.script')
 @include('layout.against_script')
 @include('layout.against-loan-modal')

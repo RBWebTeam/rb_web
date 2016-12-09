@@ -10,9 +10,9 @@
         <div class="modal-body">
          <ul>
           <form id="emp_type_form">
-              <li><span><input type="radio" name="pro_identi"  value="property_identified"  size="50" onclick="homeLoanFn(this,'home_property');" /></span>&nbsp; property identified</li>
-            <li><span><input type="radio" name="pro_identi" value="not_identified"  onclick="homeLoanFn(this,'home_property');"/></span>&nbsp; Property not identified</li>
-            <li><span><input type="radio" name="pro_identi"  value="existing_home_laon"  onclick="homeLoanFn(this,'home_property');"/></span>&nbsp; Transfer your existing home loan</li>
+              <li><span><input type="radio" name="pro_identi"  value="property identified"  size="50" onclick="homeLoanFn(this,'home_property');" /></span>&nbsp; property identified</li>
+            <li><span><input type="radio" name="pro_identi" value="Property not identified"  onclick="homeLoanFn(this,'home_property');"/></span>&nbsp; Property not identified</li>
+            <li><span><input type="radio" name="pro_identi"  value="Transfer your existing home loan"  onclick="homeLoanFn(this,'home_property');"/></span>&nbsp; Transfer your existing home loan</li>
             </form>
         </ul>
       </div>

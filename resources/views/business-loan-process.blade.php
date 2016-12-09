@@ -20,7 +20,7 @@
 				</div>
 
 
-				<div class="col-md-12 text-center animate-box cont" style="display:none;" id="type_of_emp_profession" onchange="changeTest(this,'gross_annual')">
+				<div class="col-md-12 text-center animate-box cont" style="display:none;" id="type_of_emp_profession" onchange="changeTest(this,'groannual')">
 		             <h3>Self Employed Professional
 					 <a href="#" class="svalue clr-blue pop_up" data-toggle="modal" data-target="#page3" ><input type="text" style="color:000;" class="clr-blue" id="profession_emp_type" name="profession_emp_type"  placeholder="Select" readonly></a>
 				    .</h3> 
@@ -41,10 +41,10 @@
 				</div>
 
 				<div class="col-md-12 text-center animate-box cont" style="display:none;" id="residence" >
-					<form action={{URL('search/autocomplete')}} method="POST" >
+
 		             <h3>Where do you currently reside 
 					<input type="text" class="search_city input-pad" id='city_name' name='city_name' placeholder='your city'>
-					</form>
+					
 					 Since
 					 <input type="date" id="living_since" name="living_since" class="input-pad company-nm1" onchange="changeTest(this,'btn_step1')">
 					</h3>

@@ -122,7 +122,7 @@
                           show_hide("curr_empl_y",0);
                           popup("Please enter year between 1 to 9");
                           }});
-              }else if(f2=='selectpro'){
+              }else if(f2=='proTagainst'){
                           show_hide("next_step",1);
                           popup("Select currently residing"); 
               }else if(f2=='curr_residing'){
@@ -163,10 +163,10 @@
                          popup("Please enter an amount greater than Rs 1,00,000");
                          show_hide("bankAcount",0);
                          }});
-               }else if(f2=='bankacount'){
+               }else if(f2=='bankAcount'){
                         popup("Select Yes or No");
                         show_hide("want_co_borrower",1);                      
-               }else if(f2=='releation_agai'){                   
+               }else if(f2=='add_borrowAgainst'){                   
                         popup("Select employment ");
                         show_hide("employment_co_borrow",1);
                }else if(f2=='co_borrwo'){

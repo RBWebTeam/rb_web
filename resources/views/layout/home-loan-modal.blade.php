@@ -271,7 +271,7 @@
           <form id="employment__type">
             <li><span><input type="radio" name="co_borrower_emp"  value="Salaried"  size="50" onclick="homeLoanFn(this,'co_working');" /></span>&nbsp;Salaried</li>
           <li><span><input type="radio" name="co_borrower_emp" value="Self employed"  onclick="homeLoanFn(this,'co_working');"/></span>&nbsp; Self employed</li>
-           <li><span><input type="radio" name="co_borrower_emp"  value="Salaried"  size="50" onclick="homeLoanFn(this,'no_working');" /></span>&nbsp;Non working</li>
+           <li><span><input type="radio" name="co_borrower_emp"  value="Non working"  size="50" onclick="homeLoanFn(this,'no_working');" /></span>&nbsp;Non working</li>
 
           </form>
         </ul>

@@ -71,7 +71,7 @@
           $('#pop1').append( "<p>You stay with</p>" );
         }else if(val=='birth'){
            $('#pop1').append( "<p>I wonder if your birthday is today</p>" );
-        }else if(val=='type_of_profession'){ //business loan script//
+        }else if(val=='type_of_profession'){ //business loan script
            $('#pop1').append( "<p>Select your business</p>" );
         }else if(val=='turnover'){
            $('#pop1').append( "<p>Enter your gross annual sales/turnover</p>" );
@@ -417,19 +417,19 @@ $(document).ready(function(){
     });
   
   //get location of the person on load chrome
-  // window.onload = function() {
-  // var startPos;
-  // var geoSuccess = function(position) {
-  //   startPos = position;
-  //   var lat= startPos.coords.latitude;
-  //   var log = startPos.coords.longitude;
-  //   console.log(lat);
-  // console.log(log);
-  // };
-  // navigator.geolocation.getCurrentPosition(geoSuccess);
+  window.onload = function() {
+  var startPos;
+  var geoSuccess = function(position) {
+    startPos = position;
+    var lat= startPos.coords.latitude;
+    var log = startPos.coords.longitude;
+    console.log(lat);
+  console.log(log);
+  };
+  navigator.geolocation.getCurrentPosition(geoSuccess);
 
 
-// };
+};
 
 </script>
 

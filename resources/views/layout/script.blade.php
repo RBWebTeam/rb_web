@@ -99,14 +99,14 @@
           document.getElementById('btn_step1').style.display='none';
            $('#pop1').append( "<p>Select your business</p>" );
         }else if(val=='turnover'){
-          console.log(val);
+          //console.log(val);
            $('#pop1').append( "<p>Enter your gross annual sales/turnover</p>" );
         }else if(val=='emi_pay'){
            $('#pop1').append( "<p>How much total EMI you pay currently</p>" );
         }else if(val=='pan_card'){
            $('#pop1').append( "<p>Please enter your pan card number</p>" );
         }else if(val=='type_of_emp_profession'){
-          console.log(val);
+          //console.log(val);
           document.getElementById('type_of_profession').style.display='none';
           document.getElementById('turnover').style.display='none';
           document.getElementById('desired_amt').style.display='none';
@@ -170,12 +170,28 @@
       }
       
       function changeText(obj,val){
-        console.log(val);
         $("#"+obj).keyup(function() {
+            //pan card validation code 
+            if(obj=='card'){
+               var str =$('#card').val();
+               var pancardPattern = /^([a-zA-Z]{5})(\d{4})([a-zA-Z]{1})$/;
+               var res = str.match(pancardPattern);
+               if(res){
+                $('#pop1').empty();
+                $('#pop1').append( "<p>Great!! tell us more</p>" );
+                 document.getElementById(val).style.display='block';
+               }else{
+                $('#pop1').empty();
+                $('#pop1').append( "<p>Enter correct pan card number</p>" );
+                document.getElementById(val).style.display='none';
+               }
+               return false;
+            }
+
+          //Rest code for text fields with numbers
             var x=$(this).val().length ;
             if (((obj=='total_sal' || obj=='loan') && x>6) ||(x>=5 && x<=8) ) {
               document.getElementById(val).style.display='block';
-              // document.getElementById('residence').style.display='none';
             return false;
           }
           else {
@@ -207,8 +223,8 @@
           $('#pop1').append( "<p>Entr your expierience in current company</p>" );
         }else if(val=='total_exp'){
           $('#pop1').append( "<p>Entr your total expierience</p>" );
-        }else if(val=='desired_amt'){ //business loan script//
-          //console.log(val);
+        }else if(val=='desired_amt'){ 
+        //business loan script//
           $('#pop1').append( "<p>Enter your desired loan amount</p>" );
         }else if(val=='residence'){
           $('#pop1').append( "<p>Where do you reside and since when</p>" );
@@ -305,7 +321,6 @@ $(document).ready(function(){
     });
 
      $(".sidebar-submit").click(function(event){
-
     event.preventDefault();
     var form=$(this).closest("form").attr('id');
     //console.log(form);return false;
@@ -330,35 +345,19 @@ $(document).ready(function(){
                }); 
     }
   });
-//      $(function()
-// {
-//    $( "#q" ).autocomplete({
-//     source: "search/autocomplete",
-//     minLength: 3,
-//     select: function(event, ui) {
-//       $('#q').val(ui.item.value);
-//     }
-//   });
-// });
-  });
-
-
+});
 $('document').ready(function(){
-/* $('#search-input').attr('autocomplete', 'on');*/
-$("#q").autocomplete({
-source : "{{ URL('search/autocomplete') }}",
-minlength: 2  ,
-
+        /* $('#search-input').attr('autocomplete', 'on');*/
+        $("#q").autocomplete({
+        source : "{{ URL('search/autocomplete') }}",
+        minlength: 2  ,
        select: function(event,ui){
-
            $('#q').val(ui.item.value);
-           console.log($('#q').val(ui.item.value));
-
             }
-    });
+      });
 });
 
-   $(document).ready(function() {
+   $(document).ready(function(){
     src = "{{ route('searchajax') }}";
      $(".search_city").autocomplete({
         source: function(request, response) {
@@ -384,8 +383,7 @@ $(document).ready(function(){
    $("#send_otp_button").click(function(event){
     event.preventDefault();
     
-    var form=$(this).closest("form").attr('id');
-    //console.log(form);return false;
+    var form=$(this).closest("form").attr('id');   
     $form=$('#'+form);
     if(! $form.valid()){
       return false;
@@ -399,9 +397,7 @@ $(document).ready(function(){
                data : $('#'+form).serialize(),
                success: function(data){
                  var data_1=data['data'];
-               // console.log(data_1);
                 if(data_1==true){
-                  //data-target="#otp_modal"
                     $('#otp_modal').modal('toggle');
                     $('#login').modal('hide');
                   }else{
@@ -414,13 +410,10 @@ $(document).ready(function(){
   });
 
    $("#verify_otp").click(function(event){
-    //alert("ok");return false;
     event.preventDefault();
     var form=$(this).closest("form").attr('id');
     $('#wait').show();
     $('#verify_otp').hide();
-    
-    //console.log(form);return false;
     $form=$('#'+form);
     if(! $form.valid()){
       return false;
@@ -432,14 +425,9 @@ $(document).ready(function(){
                data : $('#'+form).serialize(),
                success: function(data){
                  var data_1=data['data'];
-                 //console.log(data_1);
                 if(data_1==true){
-                   // $.post('personal-loan-submit', $('#personal_loan_process_form').serialize());
-                  
                      var form_name=$('#elem').parent().find('form').attr('id');
                      $.post('personal-loan-submit', $('#'+form_name).serialize());
-
-                   //  window.location.href = "{{URL::to('view-loan')}}";
                     $('#otp_modal').modal('hide');
                   }else{
                     $('#otp_err').show();
@@ -463,19 +451,20 @@ $(document).ready(function(){
     });
   
   //get location of the person on load chrome
-  window.onload = function() {
-  var startPos;
-  var geoSuccess = function(position) {
-    startPos = position;
-    var lat= startPos.coords.latitude;
-    var log = startPos.coords.longitude;
-    console.log(lat);
-  console.log(log);
-  };
-  navigator.geolocation.getCurrentPosition(geoSuccess);
+//   window.onload = function() {
+//   var startPos;
+//   var geoSuccess = function(position) {
+//     startPos = position;
+//     var lat= startPos.coords.latitude;
+//     var log = startPos.coords.longitude;
+//    // console.log(lat);
+//  // console.log(log);
+//   };
+//   navigator.geolocation.getCurrentPosition(geoSuccess);
 
 
-};
+// };
+
 
 </script>
 

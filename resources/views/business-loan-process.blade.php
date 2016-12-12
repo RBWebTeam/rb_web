@@ -20,7 +20,7 @@
 				</div>
 
 
-				<div class="col-md-12 text-center animate-box cont" style="display:none;" id="type_of_emp_profession" onchange="changeTest(this,'groannual')">
+				<div class="col-md-12 text-center animate-box cont" style="display:none;" id="type_of_emp_profession" onchange="changeTest(this,'gross_annual')">
 		             <h3>Self Employed Professional
 					 <a href="#" class="svalue clr-blue pop_up" data-toggle="modal" data-target="#page3" ><input type="text" style="color:000;" class="clr-blue" id="profession_emp_type" name="profession_emp_type"  placeholder="Select" readonly></a>
 				    .</h3> 
@@ -98,7 +98,7 @@
 
 				<div class="col-md-12 text-center animate-box cont" style="display:none;" id="residence_pincode" >
 					<h3>Residence Pincode. 
-					<input type="tel" id="pincode" name="pincode" onkeyup="changeText('pincode','step_2_btn')"  onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="1,00,000" tabindex="1">
+					<input type="tel" id="pincode" name="pincode" onkeyup="changeText('pincode','step_2_btn')"  onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="Pincode" tabindex="1" maxlength="6" minlength="6">
 					.</h3>
 				</div>
 				

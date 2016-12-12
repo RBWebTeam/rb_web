@@ -11,6 +11,10 @@
     <script src="http://demo.expertphp.in/js/jquery-ui.min.js"></script>
 <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
 
+
+
+
+
     <script>
            $('ul.dropdown-menu [data-toggle=dropdown]').on('click', function(event) {
     // Avoid following the href location when clicking
@@ -23,6 +27,21 @@
 });
     </script>
     <!-- function addede later -->
+
+    <script type='text/javascript'>
+  $(function(){
+    $('.datepicker').datepicker({
+        changeMonth: false,
+        changeYear: true,
+        showButtonPanel: true,
+        yearRange: '1950:2017',
+        dateFormat: 'yy',
+        onClose: function(dateText, inst) { 
+            var year = $("#ui-datepicker-div .ui-datepicker-year :selected").val();
+            $(this).datepicker('setDate', new Date(year, 0, 1));
+        }});
+    });
+</script>
 <script>
      function changeTest(obj,val){
 
@@ -46,7 +65,7 @@
         }else if(val=='dob'){
            $('#pop1').append( "<p>I wonder if your birthday is today</p>" );//now if else from car -praveen
         }else if(val=='manufacture'){
-        //  document.getElementById('q3').style.display='none';
+         document.getElementById('preferred').style.display='none';
         $('#pop1').append( "<p>Which car you want(manufacture-year)</p>" );
         }else if(val=='preferred'){
           if(obj.value=="New Car"){
@@ -72,14 +91,27 @@
         }else if(val=='birth'){
            $('#pop1').append( "<p>I wonder if your birthday is today</p>" );
         }else if(val=='type_of_profession'){ //business loan script
+          //console.log(val);
+          document.getElementById('type_of_emp_profession').style.display='none';
+          document.getElementById('gross_annual').style.display='none';
+          document.getElementById('desired_amt').style.display='none';
+          document.getElementById('residence').style.display='none';
+          document.getElementById('btn_step1').style.display='none';
            $('#pop1').append( "<p>Select your business</p>" );
         }else if(val=='turnover'){
+          console.log(val);
            $('#pop1').append( "<p>Enter your gross annual sales/turnover</p>" );
         }else if(val=='emi_pay'){
            $('#pop1').append( "<p>How much total EMI you pay currently</p>" );
         }else if(val=='pan_card'){
            $('#pop1').append( "<p>Please enter your pan card number</p>" );
         }else if(val=='type_of_emp_profession'){
+          console.log(val);
+          document.getElementById('type_of_profession').style.display='none';
+          document.getElementById('turnover').style.display='none';
+          document.getElementById('desired_amt').style.display='none';
+          document.getElementById('residence').style.display='none';
+          document.getElementById('btn_step1').style.display='none';
            $('#pop1').append( "<p>Select your profession</p>" );
         }else if(val=='gross_annual'){
            $('#pop1').append( "<p>Enter your gross annual reciept</p>" );
@@ -138,18 +170,31 @@
       }
       
       function changeText(obj,val){
+        console.log(val);
         $("#"+obj).keyup(function() {
             var x=$(this).val().length ;
-            if ((obj=='total_sal' && x>=4) ||(x>=5 && x<=8) ) {
+            if (((obj=='total_sal' || obj=='loan') && x>6) ||(x>=5 && x<=8) ) {
               document.getElementById(val).style.display='block';
+              // document.getElementById('residence').style.display='none';
             return false;
           }
           else {
             if(x>8){
-              $('#pop1').empty();
+            $('#pop1').empty();
             $('#pop1').append( "<p>We dont provide that much of loan.</p>" );
-            }
+            } if(obj=='annual_receipt' ||  obj=='total_emi'){
+                document.getElementById(val).style.display='block';
+                $('#pop1').empty();
+                $('#pop1').append( "<p>Please Proceed</p>" );
+            }if(x<5){
             document.getElementById(val).style.display='none';
+           }if(obj=='pincode'){
+                document.getElementById(val).style.display='block';
+                $('#pop1').empty();
+                $('#pop1').append( "<p>Enter your  pincode</p>" );
+            }if(x<6){
+            document.getElementById(val).style.display='none';
+           }
             return false;
           }
            
@@ -163,6 +208,7 @@
         }else if(val=='total_exp'){
           $('#pop1').append( "<p>Entr your total expierience</p>" );
         }else if(val=='desired_amt'){ //business loan script//
+          //console.log(val);
           $('#pop1').append( "<p>Enter your desired loan amount</p>" );
         }else if(val=='residence'){
           $('#pop1').append( "<p>Where do you reside and since when</p>" );

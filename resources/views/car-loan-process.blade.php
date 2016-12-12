@@ -16,33 +16,25 @@
 
 			<div class="col-md-12 text-center animate-box cont" style="display:none;"  id="manufacture">
 			    <h3>Year of manufacture<span class="clr-blue1"></span>
-			     <input type="number" id="year_of_manufacture" name="year_of_manufacture" min="1901"   onblur="changeTest(this,'preferred')" class="input-pad amt-borrowed" placeholder="Year" tabindex="1">
+			     <input type="text" id="year_of_manufacture" name="year_of_manufacture"  onblur="changeTest(this,'preferred')" class="input-pad amt-borrowed datepicker" placeholder="Year" tabindex="1">
 			    .</h3></div>
 
 			<div class="col-md-12 text-center animate-box cont" style="display:none;"  id="preferred">
 			    <h3>My preferred car<span class="clr-blue1"></span>
-			     <input type="text" id="preferred_car" name="preferred_car" onblur="changeTest(this,'living_currently')" class="input-pad preferred-car" placeholder="Your preferred car" tabindex="1">
+			     <input type="text" id="preferred_car" name="preferred_car" onblur="changeTest(this,'work_at')" class="input-pad preferred-car" placeholder="Your preferred car" tabindex="1">
 			    .</h3></div>
 			
-			<div class="col-md-12 text-center animate-box cont" style="display:none;" onchange="changeTest(this,'work_at')" id="living_currently">
-			    <h3>Where do you live currently<span class="clr-blue1"></span>
-			     <select >
-			     	<option>Mumbai</option>
-			     	<option>Pune</option>
-			     	<option>Bangalore</option>
-                    <option>Hyderabad</option>
-			     	<option>Chennai</option>
-			     	<option>Delhi</option>
-			     	<option>Secunderabad</option>
-			     	<option>Mangalore</option>
-			     	<option>Goa</option>
-			     	<option>Guntur</option>
-			     	<option>Vizag</option>
-			     	<option>Vijaywada</option>
-			     	</select>
-			    .</h3></div>
+			<!-- <div class="col-md-12 text-center animate-box cont" style="display:none;" id="reside" >
 
-
+		             <h3>Where do you currently reside 
+					<input type="text" class="search_city input-pad" id='city_name' name='city_name' placeholder='your city'>
+					
+					 Since
+					 <input type="date" id="living_since" name="living_since" class="input-pad company-nm1" onchange="changeTest(this,'work_at')">
+					</h3>
+				
+			</div>
+ -->
 			    <div class="col-md-12 text-center animate-box cont" style="display:none;" onchange="changeTest(this,'takehome_sal')" id="work_at"> 
              <h3>I work at 
 			  <input type="text" id="comp_nm" name="comp_nm" onblur="changeTest(this,'takehome_sal')" class="input-pad company-name" placeholder="Your company name" tabindex="1">
@@ -98,10 +90,10 @@
 			<div class="text-center animate-box cont">
 			<div class="col-md-12 text-center animate-box cont" >
 			   
-			    <form action={{URL('search/autocomplete')}} method="POST" >
+			    
              <h3>I have been living in
 			<input type="text" class="search_city input-pad" id='city_nm' name='city_nm' placeholder='your city'>city
-			</form>
+			
 			     	Since
 			     	<input type="date" id="living_since_in_city" name="living_since_in_city" class="input-pad company-nm1" onchange="changeTest(this,'living_in')">
 			    .</h3></div>

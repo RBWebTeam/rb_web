@@ -26,7 +26,7 @@
     <!-- Chatbox  -->
 	<link rel="stylesheet" href="{{URL::to('css/chatbox.css')}}">
 	<!-- Modernizr JS -->
-	
+	<!-- <link rel="manifest" href="{{URL::to('extension/manifest.json')}}"> -->
 	</head>
 	<body>
 

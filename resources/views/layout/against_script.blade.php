@@ -200,15 +200,18 @@
                           popup("Next Step"); 
                           show_hide("TypProfession",0);
                           show_hide("next_step",1);
+                          document.getElementById ("proTypAgain").value ='';
                     }else if(f3=='professional'){
                                    
                               popup("Select Profession type");
                               show_hide("TypProfession",1);
                               show_hide("next_step",0);
+                              document.getElementById ("proTypAgain").value ='';
                     }else if(f3=='Business'){
                               show_hide("TypProfession",1);
                               popup("Select Profession type");
                               show_hide("next_step",0);
+                              document.getElementById ("proTypAgain").value ='';
                     }else{
                               
                               show_hide("TypProfession",0);
@@ -225,7 +228,12 @@
                              show_hide("step2_against_sumbit",0);
                             
                           }else{
-                            popup("Next Step");
+
+                               document.getElementById ("against_co_borrw").value ='';
+                               document.getElementById ("emp_co_bor").value ='';
+                               document.getElementById ("co_borrwo").value ='';
+                               document.getElementById ("co_borrowemi").value ='';
+                               popup("Submit query");
                            
                             
                           }
@@ -245,13 +253,21 @@
                               show_hide("cobor_month",1);
                               show_hide("step3",0);
                            
+                              document.getElementById ("co_borrwo").value ='';
+                              document.getElementById ("co_borrowemi").value ='';
                           }
                           if(f3=='self_emp'){
                               popup(" co-borrower monthly income");
                              show_hide("cobor_month",1);
                               show_hide("step3",0);
+                              document.getElementById ("co_borrwo").value ='';
+                              document.getElementById ("co_borrowemi").value ='';
                           }
                           if(f3=='no_work'){
+
+
+                             document.getElementById ("co_borrwo").value ='';
+                             document.getElementById ("co_borrowemi").value ='';
                              popup(" Step complete");
                              show_hide("cobor_month",0);
                              show_hide("co_borrow_EMI",0);

@@ -103,12 +103,31 @@ function validation(val){
                      show_hide('type_of_loan',0);
                      show_hide('cost_of_the_plot',0);
                      show_hide('next_btn',0);
+                        document.getElementById ("type_of_loan_").value ='';
+                        document.getElementById ("cost_of").value ='';
+                        document.getElementById ("cost_construction").value ='';
+
+                  document.getElementById ("pro_name_h").value ='';
+                  document.getElementById ("property_cost_h").value ='';
+                  document.getElementById ("city_name").value ='';
+                  document.getElementById ("current_reside").value ='';
+
                   }else if(f2=='plot'){
                    validation('Type of loan are you looking for');
                    show_hide('type_of_loan',1); 
                    show_hide('property_name',0); 
                    show_hide('property_Cost',0); 
                     show_hide('next_btn',0);
+                    
+                  document.getElementById ("pro_name_h").value ='';
+                  document.getElementById ("property_cost_h").value ='';
+                  document.getElementById ("city_name").value ='';
+                  document.getElementById ("current_reside").value ='';
+                
+                   document.getElementById ("type_of_loan_").value ='';
+                        document.getElementById ("cost_of").value ='';
+                        document.getElementById ("cost_construction").value ='';
+
                   }else if(f2=='pro_name_h'){
                     validation('Property Cost');
                     show_hide('property_Cost',1); 
@@ -232,8 +251,25 @@ function validation(val){
                       validation('Select relationship with the co-borrower');
                       show_hide('relation_ship',1);
                       show_hide('btn_v',0);
+
+                      document.getElementById ("relationship").value ='';
+                      document.getElementById ("coborrower_employment").value ='';
+                      document.getElementById ("income").value ='';
+                      document.getElementById ("emipaid").value ='';
+
                     }else if(f2=='No'){
-                       show_hide('btn_v',1);
+                             show_hide('btn_v',1);
+                              show_hide('relation_ship',0);
+                               show_hide('employment_type',0);
+                                show_hide('annual_in',0);
+                                 show_hide('emi_paid',0);
+                                validation('submit query');
+
+                      document.getElementById ("relationship").value ='';
+                      document.getElementById ("coborrower_employment").value ='';
+                      document.getElementById ("income").value ='';
+                      document.getElementById ("emipaid").value ='';
+
                      
                     }else if(f2=='add_borrow'){
                         validation("Select  co-borrower's employment type");
@@ -242,11 +278,19 @@ function validation(val){
                       validation("Co-borrower's annual income ");
                       show_hide('annual_in',1);
                       show_hide('btn_v',0);
+
+                       document.getElementById ("income").value ='';
+                                  document.getElementById ("emipaid").value ='';
                      
                     }else if(f2=='no_working'){
                      show_hide('btn_v',1);
-                     //show_hide('btn_v2',0);
-                     
+                                 show_hide('annual_in',0);
+                                 show_hide('emi_paid',0);
+                                 validation('submit query');
+
+                                  document.getElementById ("income").value ='';
+                                  document.getElementById ("emipaid").value ='';
+
 
                     }else if(f2=='income'){
 

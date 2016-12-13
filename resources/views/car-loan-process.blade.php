@@ -37,7 +37,7 @@
  -->
 			    <div class="col-md-12 text-center animate-box cont" style="display:none;" onchange="changeTest(this,'takehome_sal')" id="work_at"> 
              <h3>I work at 
-			  <input type="text" id="comp_nm" name="comp_nm" onblur="changeTest(this,'takehome_sal')" class="input-pad company-name" placeholder="Your company name" tabindex="1">
+			  <input type="text" id="comp_nm" name="comp_name" onblur="changeTest(this,'takehome_sal')" class="input-pad company-name" placeholder="Your company name" tabindex="1">
 			.</h3>
 			
 			</div>
@@ -48,20 +48,20 @@
 			</div>
 
 			<div class="col-md-12 text-center animate-box cont" style="display:none;" id="exp"><h3>My experience in the above company is
-			<input type="tel" id="exp_in_yr" name="exp_in_yr" class="input-pad" placeholder="Years" onkeypress="return fnAllowNumeric(event)" maxlength="2">years and
-			<input type="tel" id="exp_in_mnth" name="exp_in_mnth" class="input-pad" placeholder="months" onkeypress="return fnAllowNumeric(event)" onkeyup="yr_months('exp_in_yr','exp_in_mnth','total_exp')" maxlength="2">months
+			<input type="tel" id="exp_in_yr" name="exp_in_company_yr" class="input-pad" placeholder="Years" onkeypress="return fnAllowNumeric(event)" maxlength="2">years and
+			<input type="tel" id="exp_in_mnth" name="exp_in_company_mnth" class="input-pad" placeholder="months" onkeypress="return fnAllowNumeric(event)" onkeyup="yr_months('exp_in_yr','exp_in_mnth','total_exp')" maxlength="2">months
 			.</h3>
 			</div>
 
 			<div class="col-md-12 text-center animate-box cont" id="total_exp" style="display:none;"" ><h3>My total experience is
-			<input type="tel" id="total_yr_in_company" name="total_yr_in_company" class="input-pad" placeholder="Years" onkeypress="return fnAllowNumeric(event)" maxlength="2">years and
-			<input type="tel" id="total_mnth_in_company" name="total_mnth_in _company" class="input-pad" placeholder="months" onkeypress="return fnAllowNumeric(event)" onkeyup="yr_months('total_yr_in_company','total_mnth_in_company','salary_by')" maxlength="2">months.
+			<input type="tel" id="total_yr_in_company" name="overall_exp_yr" class="input-pad" placeholder="Years" onkeypress="return fnAllowNumeric(event)" maxlength="2">years and
+			<input type="tel" id="total_mnth_in_company" name="overall_exp_mnth" class="input-pad" placeholder="months" onkeypress="return fnAllowNumeric(event)" onkeyup="yr_months('total_yr_in_company','total_mnth_in_company','salary_by')" maxlength="2">months.
 			.</h3>
 			</div>
 
 			<div class="col-md-12 text-center animate-box cont1" style="display:none;" id="salary_by" >
 			<h3>I receive my salary by
-			<a href="#" class="svalue clr-blue pop_up" data-toggle="modal" data-target="#page2" ><input type="text" style="color:000;" class="clr-blue" id="salary_via" name="salary_via" onk readonly placeholder="Select"></a>
+			<a href="#" class="svalue clr-blue pop_up" data-toggle="modal" data-target="#page2" ><input type="text" style="color:000;" class="clr-blue" id="salary_via" name="salary_via_details" onk readonly placeholder="Select"></a>
 			.</h3> 
 			</div>
 
@@ -72,7 +72,8 @@
 
 			    <div class="col-md-12 text-center animate-box cont" style="display:none;"  id="amt_borrow">
 			    <h3>Amount to be borrowed<span class="clr-blue1"></span>
-			     <input type="number" id="amt_borrowed" name="amt_borrowed" min="200000" maxlength="6" onblur="changeTest(this,'car_step1')" class="input-pad amt-borrowed" placeholder="Amount" tabindex="1">
+			     <input type="tel" id="amt_borrowed" name="loanamount"  maxlength="10"
+			     onkeypress="return fnAllowNumeric(event)" onblur="changeTest(this,'car_step1')" class="input-pad amt-borrowed" placeholder="Amount" tabindex="1">
 			    .</h3></div>
 
 			
@@ -92,20 +93,20 @@
 			   
 			    
              <h3>I have been living in
-			<input type="text" class="search_city input-pad" id='city_nm' name='city_nm' placeholder='your city'>city
+			<input type="text" class="search_city input-pad" id='city_nm' name='city_name' placeholder='your city'>city
 			
 			     	Since
-			     	<input type="date" id="living_since_in_city" name="living_since_in_city" class="input-pad company-nm1" onchange="changeTest(this,'living_in')">
+			     	<input type="date" id="living_since_in_city" name="living_since" class="input-pad company-nm1" onchange="changeTest(this,'living_in')">
 			    .</h3></div>
 
 
 			    <div class="col-md-12 text-center animate-box cont" style="display:none;" id="living_in"  ><h3>and I stay in
-			<a href="#" class="svalue clr-blue pop_up" data-toggle="modal" data-target="#page3" ><input type="text" style="color:000;" class="clr-blue" id="stay_details" name="stay_details" readonly placeholder="Select"></a>
+			<a href="#" class="svalue clr-blue pop_up" data-toggle="modal" data-target="#page3" ><input type="text" style="color:000;" class="clr-blue" id="stay_details" name="stay_in_details" readonly placeholder="Select"></a>
 			</h3>
 			</div>
 
 			<div class="col-md-12 text-center animate-box cont1" style="display:none" id="birth"><h3>My date of birth is
-			<input type="date" id="date_of_birth" name="date_of_birth" class="input-pad company-nm11" onchange="changeTest(this,'step_2_btn')">
+			<input type="date" id="date_of_birth" name="dob" class="input-pad company-nm11" onchange="changeTest(this,'step_2_btn')">
 
 			</h3>
 			</div>

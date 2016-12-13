@@ -33,4 +33,24 @@ class ApiController extends Controller
                             'data' => $data,
                         ));
 	}
+
+	public function GetLAPQuotes(Request $req){
+		//echo "jjjj";
+		$data=DB::table('bank_product')
+								->where('Product_Id','=',$req['PropertyID'])
+								//->where('PropertyCost','=',$req['PropertyCost'])
+								->where('Max_Tenure','=',$req['LoanTenure'])
+								->where('guarantor_required','=',$req['LoanRequired'])
+							//	->where('City','=',$req['City'])
+								->orWhere('Min_Income_Salary','=',$req['ApplicantSource'])
+								//->where('ApplicantIncome','=',$req['ApplicantIncome'])
+							//	->where('ApplicantObligations','=',$req['ApplicantObligations'])
+							//	->where('CoApplicantIncome','=',$req['CoApplicantIncome'])
+							//	->where('CoApplicantObligations','=',$req['CoApplicantObligations'])
+								->get();
+       return Response::json(array(
+                            'data' => $data,
+         ));                   
+
+	}
 }

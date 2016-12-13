@@ -65,11 +65,21 @@
         }else if(val=='dob'){
            $('#pop1').append( "<p>I wonder if your birthday is today</p>" );//now if else from car -praveen
         }else if(val=='manufacture'){
-         document.getElementById('preferred').style.display='none';
+        document.getElementById('preferred').style.display='none';
+        document.getElementById('work_at').style.display='none';
+        document.getElementById('takehome_sal').style.display='none ';
+        document.getElementById('exp').style.display='none ';
+        document.getElementById('total_exp').style.display='none';
+        document.getElementById('salary_by').style.display='none';
+        document.getElementById('salary_deposit').style.display='none';
+        document.getElementById('amt_borrow').style.display='none';
+        document.getElementById('car_step1').style.display='none';
+
         $('#pop1').append( "<p>Which car you want(manufacture-year)</p>" );
         }else if(val=='preferred'){
           if(obj.value=="New Car"){
             document.getElementById('manufacture').style.display='none  ';
+
           }
           $('#pop1').append( "<p>Your Dream Car</p>" );
         }else if(val=='living_currently'){

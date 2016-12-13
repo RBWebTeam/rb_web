@@ -39,7 +39,7 @@ Route::get('bank','BankController@index');
 Route::get('logout','HomeController@logout');
 
 /* by dp */
-Route::get('apply_sme_loan/{sme}','LoanController@smeLoan');
+Route::get('apply_sme_loan','LoanController@smeLoan');
 Route::get('apply_home_loan','LoanController@apply_home_loan');
 Route::get('apply_loan_against_property','LoanController@apply_loan_against_property');
 

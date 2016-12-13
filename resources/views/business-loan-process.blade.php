@@ -92,7 +92,7 @@
 
 				<div class="col-md-12 text-center animate-box cont" style="display:none;" id="pan_card" >
 					<h3>Your Pan Card number
-					<input type="tel" id="card" name="card" onkeyup="changeText('card','residence_pincode')"  onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="1,00,000" tabindex="1">
+					<input type="tel" id="card" name="card" onkeyup="changeText('card','residence_pincode')"   class="input-pad" placeholder="Pan Card" maxlength="10" minlength="10" tabindex="1">
 					.</h3>
 				</div>
 

@@ -92,10 +92,15 @@
            $('#pop1').append( "<p>I wonder if your birthday is today</p>" );
         }else if(val=='type_of_profession'){ //business loan script
           //console.log(val);
+
           document.getElementById('type_of_emp_profession').style.display='none';
+          $('#type_of_emp_profession').value="";
           document.getElementById('gross_annual').style.display='none';
+           $('#gross_annual').value="";
           document.getElementById('desired_amt').style.display='none';
+           $('#desired_amt').value="";
           document.getElementById('residence').style.display='none';
+            $('#residence').value="";
           document.getElementById('btn_step1').style.display='none';
            $('#pop1').append( "<p>Select your business</p>" );
         }else if(val=='turnover'){
@@ -108,9 +113,13 @@
         }else if(val=='type_of_emp_profession'){
           //console.log(val);
           document.getElementById('type_of_profession').style.display='none';
+          $('#type_of_profession').value="";
           document.getElementById('turnover').style.display='none';
+           $('#turnover').value="";
           document.getElementById('desired_amt').style.display='none';
+          $('#desired_amt').value="";
           document.getElementById('residence').style.display='none';
+             $('#residence').value="";
           document.getElementById('btn_step1').style.display='none';
            $('#pop1').append( "<p>Select your profession</p>" );
         }else if(val=='gross_annual'){

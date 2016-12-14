@@ -24,7 +24,7 @@
 			professional </h3> 
 			</div>
 			<div class="col-md-12 text-center animate-box cont" style="display:none;" id="q2" ><h3>and I want a <span class="clr-blue1"><?php echo $loan;?>  Loan</span> of Rs. 
-			<input type="tel" id="loanamt" name="loanamt" onkeyup="changeText('loanamt','q3')"  onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="1,00,000" tabindex="1">
+			<input type="tel" id="loanamt" name="loanamount" onkeyup="changeText('loanamt','q3')"  onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="1,00,000" tabindex="1">
 			.</h3>
 			</div>
 			
@@ -42,7 +42,7 @@
 		     
 			<div class="col-md-12 text-center animate-box cont" style="display:none;" onchange="changeTest(this,'q6')" id=q5>
 			<h3>I
-			 <a href="#" class="svalue clr-blue pop_up" data-toggle="modal" data-target="#page4" ><input type="text" style="color:000;" class="clr-blue" id="credti_card_detail" name="credti_card_detail" readonly placeholder="Select"></a>
+			 <a href="#" class="svalue clr-blue pop_up" data-toggle="modal" data-target="#page4" ><input type="text" style="color:000;" class="clr-blue" id="credti_card_detail" name="credit_card_detail" readonly placeholder="Select"></a>
 			credit card(s).</h3> 
 			</div>
 			
@@ -75,14 +75,14 @@
 			</div>
 			
 			<div class="col-md-12 text-center animate-box cont" style="display:none;" id="exp"><h3>My experience in the above company is
-			<input type="tel" id="yr" name="yr" class="input-pad" placeholder="Years" onkeypress="return fnAllowNumeric(event)" maxlength="2">years and
-			<input type="tel" id="mnth" name="mnth" class="input-pad" placeholder="months" onkeypress="return fnAllowNumeric(event)" onkeyup="yr_months('yr','mnth','total_exp')" maxlength="2">months.
+			<input type="tel" id="yr" name="exp_in_company_yr" class="input-pad" placeholder="Years" onkeypress="return fnAllowNumeric(event)" maxlength="2">years and
+			<input type="tel" id="mnth" name="exp_in_company_mnth" class="input-pad" placeholder="months" onkeypress="return fnAllowNumeric(event)" onkeyup="yr_months('yr','mnth','total_exp')" maxlength="2">months.
 			</h3>
 			</div>
 			
 			<div class="col-md-12 text-center animate-box cont" id="total_exp" style="display:none;"" ><h3>My total experience is
-			<input type="tel" id="total_yr" name="total_yr" class="input-pad" placeholder="Years" onkeypress="return fnAllowNumeric(event)" maxlength="2">years and
-			<input type="tel" id="total_mnth" name="total_mnth" class="input-pad" placeholder="months" onkeypress="return fnAllowNumeric(event)" onkeyup="yr_months('total_yr','total_mnth','sal_rcv_by')" maxlength="2">months.
+			<input type="tel" id="total_yr" name="overall_exp_yr" class="input-pad" placeholder="Years" onkeypress="return fnAllowNumeric(event)" maxlength="2">years and
+			<input type="tel" id="total_mnth" name="overall_exp_mnth" class="input-pad" placeholder="months" onkeypress="return fnAllowNumeric(event)" onkeyup="yr_months('total_yr','total_mnth','sal_rcv_by')" maxlength="2">months.
 			</h3>
 			</div>
 			

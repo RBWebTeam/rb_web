@@ -58,7 +58,7 @@ class LoanController extends Controller
     public function smeLoan(request $request){
         $data['title']='SME Loan';
         $data['description']='Apply for SME Loan';
-        return view('personal-loan-process',['sme'=>$request->sme])->with($data);
+        return view('personal-loan-process',['sme'=>'sme'])->with($data);
     }
 
     public function apply_home_loan(){

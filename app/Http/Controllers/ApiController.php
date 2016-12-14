@@ -33,10 +33,9 @@ class ApiController extends Controller
                             'data' => $data,
                         ));
 	}
-
-	public function GetLAPQuotes(Request $req){
-		//echo "jjjj";
-		$data=DB::table('bank_product')
+	//by DP
+	public function GetHomeLoanQuotes(Request $req){
+					   $data=DB::table('bank_product')
 								->where('Product_Id','=',$req['PropertyID'])
 								//->where('PropertyCost','=',$req['PropertyCost'])
 								->where('Max_Tenure','=',$req['LoanTenure'])
@@ -50,7 +49,7 @@ class ApiController extends Controller
 								->get();
        return Response::json(array(
                             'data' => $data,
-         ));                   
+                        ));
+    }
 
-	}
 }

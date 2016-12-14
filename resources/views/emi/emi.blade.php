@@ -157,7 +157,7 @@
                    $("#1").show();
                    $("#2").show();
                    $("#3").show();
-                   console.log(msg.saving);
+                   //console.log(msg.saving);
                }  
                }); 
         //myfun1(document.getElementById('emi').innerHTML,document.getElementById('emi1').innerHTML,document.getElementById('emi2').innerHTML);

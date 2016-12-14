@@ -1,17 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <title></title>
-  <script src="jquery-2.1.4.min.js"></script>
-    <script src="Chart.js"></script>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
- <!--  <script src="copy.js"></script> -->
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+@include('layout.header')
 <style>
   .rw-hei {height:360px;border: 2px dashed #ccc;border-right:none;}
   .brd-rgt {border-right: 2px dashed #ccc;}
@@ -90,7 +77,33 @@
     </div>
     </div>
    </div>
-</body>
+<div class="container">
+
+  <h2 class="text-center">Schedule showing payments:</h2>
+    <table class="table table-bordered table-striped" id="emipaymenttable">
+
+    <thead>
+      <tr class="tbl-clr">
+        <th bgcolor="#c2da6b" class="col-xs-3 col-md-1" id="yearheader">Year</th>
+
+        <th bgcolor="#4A9ACF" class="col-sm-3 hidden-xs" id="principalheader"><center>Principal</center><center>(A)</center></th>
+        
+        <th bgcolor="2DC6D1" class="col-sm-3 hidden-xs" id="interestheader"><center>Interest</center><center>(B)</center></th>
+        <th bgcolor="BF5850" class="col-sm-3 hidden-xs" id="totalheader"><center>Total Payment</center><center>(A+B)</center></th>
+        <th bgcolor="D8BC31" class="col-xs-4 col-sm-3" id="balanceheader"><center>Balance</center></th>
+        </tr>
+    </thead>
+    <tbody>
+      
+    </tbody>
+
+
+  </table>
+</div>
+
+@include('layout.footer')
+@include('layout.script')
+<!-- //emi scripts started -->
 <script type="text/javascript">
 
   $(document).ready(function(){
@@ -138,15 +151,15 @@
         var loanterm = $("#loanterm").val();
       }
       //console.log(loanterm);
+      var v_token = "{{csrf_token()}}";
       $.ajax({  
                type: "POST",  
-               url: "emi_cal.php",
+               url: "{{URL::to('emi_cal')}}",
                dataType:'json',
-               data : { 'loanamount': loanamount , 'loaninterest': loaninterest ,'loanterm' :loanterm},
+               data : { 'loanamount': loanamount , 'loaninterest': loaninterest ,'loanterm' :loanterm, '_token': v_token},
                success: function(msg){
                 console.log(msg);
                 change(msg.amount,msg.ttl_pay,msg.ttl_payment);
-
                 emibreakup(msg.amount,loanamount,loaninterest,loanterm);
                  var numb = msg.amount.toFixed();
                   $('#emi').empty().append(numb);
@@ -246,33 +259,4 @@ function emibreakup(E,P,r,n)
         return thousandsAndRest[1].replace(/\B(?=(\d{2})+(?!\d))/g, ",") + "," + thousandsAndRest[2];
     }
   </script>
-
-
-
-
-<div class="container">
-
-  <h2 class="text-center">Schedule showing payments:</h2>
-    <table class="table table-bordered table-striped" id="emipaymenttable">
-
-    <thead>
-      <tr class="tbl-clr">
-        <th bgcolor="#c2da6b" class="col-xs-3 col-md-1" id="yearheader">Year</th>
-
-        <th bgcolor="#4A9ACF" class="col-sm-3 hidden-xs" id="principalheader"><center>Principal</center><center>(A)</center></th>
-        
-        <th bgcolor="2DC6D1" class="col-sm-3 hidden-xs" id="interestheader"><center>Interest</center><center>(B)</center></th>
-        <th bgcolor="BF5850" class="col-sm-3 hidden-xs" id="totalheader"><center>Total Payment</center><center>(A+B)</center></th>
-        <th bgcolor="D8BC31" class="col-xs-4 col-sm-3" id="balanceheader"><center>Balance</center></th>
-        </tr>
-    </thead>
-    <tbody>
-      
-    </tbody>
-
-
-  </table>
-</div>
-
-
-</html>
+<!-- emi scripts end -->

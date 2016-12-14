@@ -375,16 +375,16 @@ $(document).ready(function(){
   });
 });
 //search city autocomplete
-$('document').ready(function(){
-        /* $('#search-input').attr('autocomplete', 'on');*/
-        $("#q").autocomplete({
-        source : "{{ URL('search/autocomplete') }}",
-        minlength: 2  ,
-       select: function(event,ui){
-           $('#q').val(ui.item.value);
-            }
-      });
-});
+// $('document').ready(function(){
+//         /* $('#search-input').attr('autocomplete', 'on');*/
+//         $("#q").autocomplete({
+//         source : "{{ URL('search/autocomplete') }}",
+//         minlength: 3,
+//        select: function(event,ui){
+//            $('#q').val(ui.item.value);
+//             }
+//       });
+// });
 
    $(document).ready(function(){
     src = "{{ route('searchajax') }}";

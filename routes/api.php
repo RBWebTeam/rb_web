@@ -19,3 +19,4 @@ Route::get('/user', function (Request $request) {
 
 Route::post('comman-api','ApiController@comman');
 Route::post('get-loans','ApiController@GetHomeLoanQuotes');
+Route::post('test','ApiController@test');

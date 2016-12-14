@@ -48,7 +48,12 @@ Route::post('recording','recording\recordingController@recording');
 Route::get('recording/show','recording\recordingController@show');
 
 /* API routes to be written here */ 
+Route::get('api','ApiController@GetLAPQuotes');
+
+
 Route::get('api','LoanQuatesController@GetHomeLoanQuotes');
+Route::get('api2','LoanQuatesController@GetPersonalLoanQuotes');
+
 /*emi test*/
 Route::get('emi2','CompareController@emi2');
 Route::post('emi_cal','CompareController@emi_cal');

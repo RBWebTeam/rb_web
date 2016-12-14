@@ -1,6 +1,5 @@
 @include('layout.header')
 </head>
-
 <body>
 <<<<<<< HEAD
 <center>
@@ -12,7 +11,7 @@
   <div class="container" id="fh5co-hero">
     <center>
       <div class="section-title"><h1>Loan EMI Calculator</h1></div>
-      <p class="sub-title">Recalculate your Loan EMI and Total Interest Due in a snap!</p>
+      <p class="sub-title">Recalculate your Loan EMI and Total Interest Due in a snap!!</p>
       <h3 class="section-title" id="emi-loan-header">Loan Details:</h3>
 >>>>>>> f489dac5795f9e376f0a4813abd5d3bfc0deb1bd
 

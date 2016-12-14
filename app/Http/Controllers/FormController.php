@@ -18,7 +18,7 @@ class FormController extends Controller
         'form'    =>$req['form'] 
         );
 
-        //put curl code here to save in DB
+    //put curl code here to save in DB
     $url = "http://beta.erp.rupeeboss.com/CustomerWebRequest.aspx";
     //print "<pre>";
     // print_r($post_data);
@@ -46,8 +46,11 @@ class FormController extends Controller
     public function p_loan_submit(Request $req){
         //call api to submit form data
         $input = $req->all();
+        $new_array = array('customer_contact' => Session::get('contact'), 'customer_name' => Session::get('name'),'customer_email' => Session::get('email'));
+        //adding lead detail to post data
+        $res=array_merge($input,$new_array);
         print "<pre>";
-        print_r($input);
+        print_r($res);
         return "test success";
     }
     
@@ -57,8 +60,10 @@ class FormController extends Controller
         //$otp = mt_rand(100000, 999999);
         $otp=123456;
         //CommanDataLoad.Send_SMS_Save_Data('mobileno', 'SMSBody', 'ip', 'RBERP');
-        
+        //setting details to session to retrive at time of posting
         Session::put('contact', $req['contact']);
+        Session::put('name', $req['name']);
+        Session::put('email', $req['email']);
         $value = Session::get('contact');
         //ends 
 

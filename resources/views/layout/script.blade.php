@@ -365,6 +365,7 @@ $(document).ready(function(){
     }
   });
 });
+//search city autocomplete
 $('document').ready(function(){
         /* $('#search-input').attr('autocomplete', 'on');*/
         $("#q").autocomplete({
@@ -397,7 +398,7 @@ $('document').ready(function(){
     });
 
 });
-
+//city search ends here
 $(document).ready(function(){
    $("#send_otp_button").click(function(event){
     event.preventDefault();
@@ -447,6 +448,7 @@ $(document).ready(function(){
                 if(data_1==true){
                      var form_name=$('#elem').parent().find('form').attr('id');
                      $.post('personal-loan-submit', $('#'+form_name).serialize());
+
                     $('#otp_modal').modal('hide');
                   }else{
                     $('#otp_err').show();
@@ -537,7 +539,7 @@ $(document).ready(function(){
   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
     <input type="hidden" name="product" id="product_login" value="">
-      <button class="btn btn-default"  id="send_otp_button" >Send OTP</button>
+      <a class="btn btn-default"  id="send_otp_button" >Send OTP</a>
     </div>
   </div>
   </form>

@@ -16,12 +16,11 @@
    .em3 {color:#4A9ACF;}
 </style>
 </head>
-
 <body>
   <div class="container" id="fh5co-hero">
     <center>
       <div class="section-title"><h1>Loan EMI Calculator</h1></div>
-      <p class="sub-title">Recalculate your Loan EMI and Total Interest Due in a snap!</p>
+      <p class="sub-title">Recalculate your Loan EMI and Total Interest Due in a snap!!</p>
       <h3 class="section-title" id="emi-loan-header">Loan Details:</h3>
 
     </center>

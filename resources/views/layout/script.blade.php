@@ -10,7 +10,7 @@
     <script src="http://demo.expertphp.in/js/jquery.js"></script>
     <script src="http://demo.expertphp.in/js/jquery-ui.min.js"></script>
 <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
-
+    <script src="{{URL::to('emi/Chart.js')}}"></script>
 
 
 
@@ -78,7 +78,16 @@
         $('#pop1').append( "<p>Which car you want(manufacture-year)</p>" );
         }else if(val=='preferred'){
           if(obj.value=="New Car"){
+            
             document.getElementById('manufacture').style.display='none  ';
+            document.getElementById('work_at').style.display='none';
+            document.getElementById('takehome_sal').style.display='none ';
+            document.getElementById('exp').style.display='none ';
+            document.getElementById('total_exp').style.display='none';
+            document.getElementById('salary_by').style.display='none';
+            document.getElementById('salary_deposit').style.display='none';
+            document.getElementById('amt_borrow').style.display='none';
+           document.getElementById('car_step1').style.display='none';
 
           }
           $('#pop1').append( "<p>Your Dream Car</p>" );
@@ -468,7 +477,7 @@ $(document).ready(function(){
 
 
     });
-  
+
   //get location of the person on load chrome
 //   window.onload = function() {
 //   var startPos;
@@ -486,8 +495,6 @@ $(document).ready(function(){
 
 
 </script>
-
-
 
 	</body>
 </html>

@@ -1,12 +1,29 @@
 @include('layout.header')
+<style>
+  .rw-hei {height:360px;border: 2px dashed #ccc;border-right:none;}
+  .brd-rgt {border-right: 2px dashed #ccc;}
+  body {color:#666;}
+  .tbl-clr {color:#fff; }
+  .tbl-clr td {text-align:center;}
+   .rw-hei p {font-size:16px;color:#999;}
+   .rw-hei h1 {margin-top:10px;}
+   .sub-title {color:#999;}
+   .emi-cal {background:#333;padding:10px;display:block;color:#fff; text-align:center;}
+   .mthy {Font-weight:bold;}
+   .table-bordered>thead>tr>th {color:#fff;}
+   .em1 {color:#c2da6b;}
+   .em2 {color:#00B9B9;}
+   .em3 {color:#4A9ACF;}
+</style>
 </head>
-<body>
 
+<body>
   <div class="container" id="fh5co-hero">
     <center>
       <div class="section-title"><h1>Loan EMI Calculator</h1></div>
-      <p class="sub-title">Recalculate your Loan EMI and Total Interest Due in a snap!!</p>
+      <p class="sub-title">Recalculate your Loan EMI and Total Interest Due in a snap!</p>
       <h3 class="section-title" id="emi-loan-header">Loan Details:</h3>
+
     </center>
       <div class="row">
       <div class="col-sm-4 rw-hei" style="background-color:lavender;"><h3 class="emi-cal">EMI Calculator</h3>

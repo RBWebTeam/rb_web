@@ -1,20 +1,12 @@
 @include('layout.header')
 </head>
 <body>
-<<<<<<< HEAD
-<center>
-<div ><h1>Personal Loan EMI Calculator</h1></div>
-<p class="sub-title">Recalculate your Personal Loan EMI and Total Interest Due in a snap!</p>
-<h3 class="section-title" id="emi-loan-header">Your Personal Loan Details</h3>
-</center>
-=======
+
   <div class="container" id="fh5co-hero">
     <center>
       <div class="section-title"><h1>Loan EMI Calculator</h1></div>
       <p class="sub-title">Recalculate your Loan EMI and Total Interest Due in a snap!!</p>
       <h3 class="section-title" id="emi-loan-header">Loan Details:</h3>
->>>>>>> f489dac5795f9e376f0a4813abd5d3bfc0deb1bd
-
     </center>
       <div class="row">
       <div class="col-sm-4 rw-hei" style="background-color:lavender;"><h3 class="emi-cal">EMI Calculator</h3>

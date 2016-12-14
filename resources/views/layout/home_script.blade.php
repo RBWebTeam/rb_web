@@ -103,6 +103,9 @@ function validation(val){
                      show_hide('type_of_loan',0);
                      show_hide('cost_of_the_plot',0);
                      show_hide('next_btn',0);
+
+                     var pro=$('#pro_name_h').val();
+                     
                         document.getElementById ("type_of_loan_").value ='';
                         document.getElementById ("cost_of").value ='';
                         document.getElementById ("cost_construction").value ='';

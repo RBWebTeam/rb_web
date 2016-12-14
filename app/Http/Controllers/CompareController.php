@@ -21,9 +21,10 @@ class CompareController extends Controller
         }
         
     }
- 	public function emi(){
-    	return view('emi');
-    }
+ 	// public function emi(){
+  //       //print_r("hiiiiiiiiiii");
+  //   	return view('emi');
+  //   }
     public function emi2(){
         return view('emi/emi');
     }

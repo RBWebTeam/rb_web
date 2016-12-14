@@ -10,7 +10,7 @@
     <script src="http://demo.expertphp.in/js/jquery.js"></script>
     <script src="http://demo.expertphp.in/js/jquery-ui.min.js"></script>
 <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
-
+    <script src="{{URL::to('emi/Chart.js')}}"></script>
 
 
 
@@ -470,7 +470,7 @@ $(document).ready(function(){
 
 
     });
-  
+
   //get location of the person on load chrome
 //   window.onload = function() {
 //   var startPos;
@@ -488,8 +488,6 @@ $(document).ready(function(){
 
 
 </script>
-
-
 
 	</body>
 </html>

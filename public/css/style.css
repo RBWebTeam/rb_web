@@ -1494,8 +1494,21 @@ a:hover, a:focus {text-decoration:none;}
 #fh5co-header nav ul .user-ic ul {width:auto;}
 .drop {margin-top:5px;}
 
-
-
+/*emi css*/
+ .rw-hei {height:360px;border: 2px dashed #ccc;border-right:none;}
+  .brd-rgt {border-right: 2px dashed #ccc;}
+  body {color:#666;}
+  .tbl-clr {color:#fff; }
+  .tbl-clr td {text-align:center;}
+   .rw-hei p {font-size:16px;color:#999;}
+   .rw-hei h1 {margin-top:10px;}
+   .sub-title {color:#999;}
+   .emi-cal {background:#333;padding:10px;display:block;color:#fff; text-align:center;}
+   .mthy {Font-weight:bold;}
+   .table-bordered>thead>tr>th {color:#fff;}
+   .em1 {color:#c2da6b;}
+   .em2 {color:#00B9B9;}
+   .em3 {color:#4A9ACF;}
 
 
 

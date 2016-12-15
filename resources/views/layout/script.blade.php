@@ -368,6 +368,7 @@ $(document).ready(function(){
     }
   });
 });
+
 $('document').ready(function(){
         /* $('#search-input').attr('autocomplete', 'on');*/
         $("#q").autocomplete({

@@ -11,7 +11,7 @@
                   <!--first question--> 
 			<div class="col-md-12 text-center animate-box cont" id="h_que1">
                  <h3>What is the purpose of your Loan..
-			       <a href="#" class="svalue clr-blue pop_up" data-toggle="modal" data-target="#home-page1" ><input type="text" style="color:000;" class="clr-blue" id="purpose_of_loan" name="purpose"  placeholder="Select" readonly></a>
+			       <a href="#" class="svalue clr-blue purposeofloan_popup" data-toggle="modal" data-target="#home-page1" ><input type="text" style="color:000;" class="clr-blue" id="purpose_of_loan" name="purpose"  placeholder="Select" readonly></a>
 			     </h3> 
 			</div>
      
@@ -25,8 +25,8 @@
 
 		<div class="col-md-12 text-center animate-box cont" style="display:none;" id="currently_employed">
                 <h3>How are you currently employed
-			       <a href="#" class="svalue clr-blue pop_up" data-toggle="modal" data-target="#home-page2" ><input type="text" style="color:000;" class="clr-blue" id="currently_emp" name=" 	 "  placeholder="Select" readonly>
-			       <input type="hidden" class="clr-blue" id="currently_emp_id" name="currently_emp_id"  placeholder="Select" readonly>
+			       <a href="#" class="svalue clr-blue purposeofloan_popup" data-toggle="modal" data-target="#home-page2" ><input type="text" style="color:000;" class="clr-blue" id="currently_emp" name="emp_detail"  placeholder="Select" readonly>
+			       	<input type="hidden" class="clr-blue" id="emp_detail_id" name="emp_detail_id"  placeholder="Select" readonly>
 			       </a>
 			     </h3> 
 		</div>
@@ -39,7 +39,7 @@
                  
           <div class="col-md-12 text-center animate-box cont" style="display:none;" id="property_identified">
                 <h3>What kind of property you want..
-			       <a href="#" class="svalue clr-blue pop_up" data-toggle="modal" data-target="#home-page3" ><input type="text" style="color:000;" class="clr-blue" id="property_you" name="kind_of_property"  placeholder="Select" readonly></a>
+			       <a href="#" class="svalue clr-blue purposeofloan_popup" data-toggle="modal" data-target="#home-page3" ><input type="text" style="color:000;" class="clr-blue" id="property_you" name="kind_of_property"  placeholder="Select" readonly></a>
 			     </h3> 
 			</div>
 		
@@ -53,7 +53,7 @@
 
 			<div class="col-md-12 text-center animate-box cont" style="display:none;" id="type_of_loan">
                 <h3>What type of loan are you looking for
-			   <a href="#" class="svalue clr-blue pop_up" data-toggle="modal" data-target="#home_page4" ><input type="text" style="color:000;" class="clr-blue" id="type_of_loan_" name="type_of_loan"  placeholder="Select" readonly></a>
+			   <a href="#" class="svalue clr-blue purposeofloan_popup" data-toggle="modal" data-target="#home_page4" ><input type="text" style="color:000;" class="clr-blue" id="type_of_loan_" name="type_of_loan"  placeholder="Select" readonly></a>
 			     </h3> 
 			</div>
 
@@ -95,21 +95,19 @@
 </div>	
 
 	<!--- liza Step secound   - -->	
-<div class="liza col-md-8" style="display: none"  id="step_Secound">
+<div class="liza col-md-8" style="display:none;"   id="step_Secound">
 		   <div class="col-md-12 text-center"><h4>Apply for an Easy Home Loan in 30 seconds</h4></div>
 		       <p class="text-center">Step 2 of 3</p> 
 			<div class="col-md-12 text-center animate-box cont" id="profession_type">
                  <h3>Your Profession Type
-			       <a href="#" class="svalue clr-blue pop_up" data-toggle="modal" data-target="#profession_page" ><input type="text" style="color:000;" class="clr-blue" id="profe_type" name="profession_type"  placeholder="Select" readonly>
-			       	
-			       </a>
+			       <a href="#" class="svalue clr-blue purposeofloan_popup" data-toggle="modal" data-target="#profession_page" ><input type="text" style="color:000;" class="clr-blue" id="profe_type" name="profession_type"  placeholder="Select" readonly></a>
 			     </h3> 
 			</div>
 
 
             <div class="col-md-12 text-center animate-box cont" style="display:none;" id="bank_acc" >
                  <h3>Your Bank account is with
-			       <a href="#" class="svalue clr-blue pop_up" data-toggle="modal" data-target="
+			       <a href="#" class="svalue clr-blue purposeofloan_popup" data-toggle="modal" data-target="
 			       #account_page" ><input type="text" style="color:000;" class="clr-blue" id="account_with" name="bank_account"  placeholder="Select" readonly></a>
 			     </h3> 
 			</div>
@@ -167,27 +165,27 @@
 
 			<div class="col-md-12 text-center animate-box cont" id="gender" style="display:none;">
                  <h3>Select gender
-			       <a href="#" class="svalue clr-blue pop_up" data-toggle="modal" data-target="#home-gender" ><input type="text" style="color:000;" class="clr-blue" id="gender_" name="gender"  placeholder="Select" readonly></a>
+			       <a href="#" class="svalue clr-blue purposeofloan_popup" data-toggle="modal" data-target="#home-gender" ><input type="text" style="color:000;" class="clr-blue" id="gender_" name="gender"  placeholder="Select" readonly></a>
 			     </h3> 
 			</div> 
 
 			<div class="col-md-12 text-center animate-box cont" style="display:none;" id="co_borrower">
                  <h3>Do you want to add co borrower
-			       <a href="#" class="svalue clr-blue pop_up" data-toggle="modal" data-target="#home-page5" ><input type="text" style="color:000;" class="clr-blue" id="borrower_" name="add_borrower"  placeholder="Select" readonly></a>
+			       <a href="#" class="svalue clr-blue purposeofloan_popup" data-toggle="modal" data-target="#home-page5" ><input type="text" style="color:000;" class="clr-blue" id="borrower_" name="add_borrower"  placeholder="Select" readonly></a>
 			     </h3> 
 			</div>
 
 
 			<div class="col-md-12 text-center animate-box cont" style="display:none;" id="relation_ship">
                  <h3>Your relationship with the co-borrower
-			       <a href="#" class="svalue clr-blue pop_up" data-toggle="modal" data-target="#home_page_borrower" ><input type="text" style="color:000;" class="clr-blue" id="relationship" name="relationship_borrower"  placeholder="Select" readonly></a>
+			       <a href="#" class="svalue clr-blue purposeofloan_popup" data-toggle="modal" data-target="#home_page_borrower" ><input type="text" style="color:000;" class="clr-blue" id="relationship" name="relationship_borrower"  placeholder="Select" readonly></a>
 			     </h3> 
 			</div>
 
 
  <div class="col-md-12 text-center animate-box cont" style="display:none;" id="employment_type">
                  <h3>Your co-borrower's employment type
-			       <a href="#" class="svalue clr-blue pop_up" data-toggle="modal" data-target="#home-page6" ><input type="text" style="color:000;" class="clr-blue" id="coborrower_employment" name="borrower_emp_type"  placeholder="Select" readonly></a>
+			       <a href="#" class="svalue clr-blue purposeofloan_popup" data-toggle="modal" data-target="#home-page6" ><input type="text" style="color:000;" class="clr-blue" id="coborrower_employment" name="borrower_emp_type"  placeholder="Select" readonly></a>
 			     </h3> 
 			</div>
 

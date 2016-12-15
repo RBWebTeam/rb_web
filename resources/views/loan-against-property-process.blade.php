@@ -42,10 +42,10 @@
 		    Year </h3>
 		</div>
          
-         <div class="col-md-12 text-center animate-box cont"   id="curr_empl_y">
+         <div class="col-md-12 text-center animate-box cont" style="display: none" id="curr_empl_y">
 	            <h3>How are you currently employed
 				 <a href="#" class="svalue clr-blue pop_up" data-toggle="modal" data-target="#curr_popup" ><input type="text" style="color:000;" class="clr-blue" id="curr_emp" name="emp_detail"  placeholder="Select" readonly>
-				 <input type="hidden" class="clr-blue" id="emp_detail_id" name="emp_detail_id"  placeholder="Select" readonly></a>
+				 <input type="hidden" class="clr-blue" id="curr_emp_id" name="emp_detail_id"  placeholder="Select" readonly></a>
 				</h3> 
 		</div>
 
@@ -65,7 +65,7 @@
 
 
 	   <!--- liza Step Two   - -->
-		<div class="liza col-md-8"   	 id="step2ofagiansp">
+		<div class="liza col-md-8" style="display: none" id="step2ofagiansp">
 		   <div class="col-md-12 text-center"><h4>Apply for an Easy Personal Loan in 30 seconds</h4></div>
 		   <p class="text-center">Step 2 of 3</p>
           <div class="col-md-12 text-center animate-box cont"  id="currently_residing">
@@ -102,7 +102,7 @@
 				</h3> 
 			</div>
 			
-			<div class="col-md-12 text-center animate-box cont" id="want_co_borrower" >
+			<div class="col-md-12 text-center animate-box cont" style="display: none" id="want_co_borrower" >
 	            <h3>Do you want to add co-borrower
 				 <a href="#" class="svalue clr-blue pop_up" data-toggle="modal" data-target="#co_borrow" >
 				 <input type="text" style="color:000;" class="clr-blue" id="co_borrow_again" name="add_borrower"  placeholder="Select" readonly></a>

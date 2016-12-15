@@ -359,26 +359,4 @@ function validation(val){
 </script>
 
 
-<script type="text/javascript">
-  $(document).ready(function(){
-    $('.purposeofloan_popup').click(function(){
-       // console.log($(this).closest("form").attr('id'));
-       var span_name=$(this).parent().find('input').attr('id');
-       var modal_name=$(this).parent().find('a').attr('data-target');
-       var form_name=$(modal_name).find('form').attr('id');
-        $('#'+form_name +' input').on('change', function() {
-       var input_name=$('#'+form_name).find('input').attr('name');   
-       var append=$('input[name='+input_name+']:checked','#'+form_name).val();
-          console.log($('#'+span_name));
-        $('#'+span_name).val(append);
-        $(modal_name).modal('hide');
-        
-      });
 
-    });
-
-    
-
-  });
-</script>
-	

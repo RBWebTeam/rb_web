@@ -33,6 +33,20 @@ class ApiController extends Controller
                             'data' => $data,
                         ));
 	}
+	public function compare(Request $req){
+		//print "<pre>";
+		//print_r($req->all());
+
+//  PropertyCost ,LoanTenure,LoanRequired ,ApplicantGender,ApplicantIncome ,ApplicantObligations ,
+// ApplicantDOB ,CoApplicantYes  ,CoApplicantIncome, CoApplicantObligations,
+// Turnover ,ProfitAfterTax ,Depreciation ,DirectorRemuneration ,ApplicantSource 
+		//print_r("call  usp_get_bank_quot ("'.$req['PropertyCost'].'","'.$req['LoanTenure'].'","'.$req['LoanRequired'].'","'.$req['ApplicantGender'].'","'.$req['ApplicantIncome'].'","'.$req['ApplicantObligations'].'","'.$req['ApplicantDOB'].'","'.$req['CoApplicantYes'].'","'.$req['CoApplicantIncome'].'","'.$req['CoApplicantObligations'].'","'.$req['Turnover'].'","'.$req['ProfitAfterTax'].'","'.$req['Depreciation'].'","'.$req['DirectorRemuneration'].'","'.$req['ApplicantSource'].'")");exit();
+		 $data=DB::select('call  usp_get_bank_quot ("'.$req['PropertyCost'].'","'.$req['LoanTenure'].'","'.$req['LoanRequired'].'","'.$req['ApplicantGender'].'","'.$req['ApplicantIncome'].'","'.$req['ApplicantObligations'].'","'.$req['ApplicantDOB'].'","'.$req['CoApplicantYes'].'","'.$req['CoApplicantIncome'].'","'.$req['CoApplicantObligations'].'","'.$req['Turnover'].'","'.$req['ProfitAfterTax'].'","'.$req['Depreciation'].'","'.$req['DirectorRemuneration'].'","'.$req['ApplicantSource'].'")'	);
+
+		 return Response::json(array(
+                            'data' => $data,
+                        ));
+	}
 	//by DP
 	public function GetHomeLoanQuotes(Request $req){
 					   $data=DB::table('bank_product')

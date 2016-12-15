@@ -12,8 +12,8 @@
       
     <ul>
     <form id="profession_type_form">
-        <li><span><input type="radio" name="emp_type"  value="2" onchange="changeTest(this,'type_of_profession')" /></span>&nbsp; Self Employed Business</li>
-      <li><span><input type="radio" name="emp_type" value="2"  onclick="changeTest(this,'type_of_emp_profession');"/></span>&nbsp; Self Employed Professional(eg. doctor)</li>
+        <li><span><input type="radio" name="emp_type"  value="Self Employed Business" onchange="changeTest(this,'type_of_profession')" /></span>&nbsp; Self Employed Business</li>
+      <li><span><input type="radio" name="emp_type" value="Self Employed Professional"  onclick="changeTest(this,'type_of_emp_profession');"/></span>&nbsp; Self Employed Professional(eg. doctor)</li>
       
       </form>
       </ul>

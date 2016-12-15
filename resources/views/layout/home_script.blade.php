@@ -241,14 +241,18 @@ function validation(val){
                      }else if(f2=='turn_over'){
                         var number=parseInt(f1.value);
                             if(number>50000){
-                      validation('Do you want to add co borrower');
-                      show_hide('co_borrower',1);
+                    
+                     validation('Select gender');
+                      show_hide('gender',1);
                     }else{
 
                        validation('Please enter an amount greater than Rs 1,00,000');
-                      show_hide('co_borrower',0);
+                      show_hide('gender',0);
                      }
-
+                  
+                       }else if(f2=='genderV'){
+                            validation('Do you want to add co borrower');
+                         show_hide('co_borrower',1);
                     }else if(f2=='Yes'){
                         
                       validation('Select relationship with the co-borrower');

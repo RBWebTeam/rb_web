@@ -138,7 +138,7 @@
 </div>	
                
                <!--- third step -->
-     <div class="liza col-md-8"  style="display:none;"   id="next_step3">
+     <div class="liza col-md-8"  style="display:none;"  id="next_step3">
 		   <div class="col-md-12 text-center"><h4>Apply for an Easy Home Loan in 30 seconds ddd</h4></div>
             <p class="text-center">Step 3 of 3</p> 
 
@@ -160,6 +160,12 @@
 			     <input type="tel" id="turn_over" name="turnover"  onkeypress="return fnAllowNumeric(event)" onkeyup="homeLoanFn(this,'turn_over')" class="input-pad" placeholder="1,00,000" tabindex="1">
 			    .</h3>
 			</div>
+
+			<div class="col-md-12 text-center animate-box cont" id="gender" style="display:none;">
+                 <h3>Select gender
+			       <a href="#" class="svalue clr-blue purposeofloan_popup" data-toggle="modal" data-target="#home-gender" ><input type="text" style="color:000;" class="clr-blue" id="gender_" name="gender"  placeholder="Select" readonly></a>
+			     </h3> 
+			</div> 
 
 			<div class="col-md-12 text-center animate-box cont" style="display:none;" id="co_borrower">
                  <h3>Do you want to add co borrower

@@ -13,6 +13,9 @@ class HomeController extends Controller
 		$data['loan'] = DB::table('Product_Master')->select('Product_Name','Product_Id')->get();
 		//print "<pre>";
 		//print_r($data);
+		// $data['proc_city']=DB::select('call city_prm("DELHI")');
+		// print "<pre>";
+		// print_r($data['proc_city']);exit();
 	    return view('index')->with($data);
 	}
 	public function footercontent($id){

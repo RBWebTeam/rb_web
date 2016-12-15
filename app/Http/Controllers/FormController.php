@@ -47,6 +47,10 @@ class FormController extends Controller
         //call api to submit form data
         $input = $req->all();
         $new_array = array('customer_contact' => Session::get('contact'), 'customer_name' => Session::get('name'),'customer_email' => Session::get('email'));
+        $city_id=DB::table('city_master')->select('city_id')
+        ->where('city_name', 'LIKE', '%'.$req['city_name'].'%')
+        ->get();
+        $input['city_name']=$city_id[0]->city_id;
         //adding lead detail to post data
         $res=array_merge($input,$new_array);
         print "<pre>";

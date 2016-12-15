@@ -121,7 +121,7 @@
 								 <li>check your elgibility</li>
 								 <li>calculate your EMIs.</li>
 							</ul>
-							<a class="btn btn-primary btn-outline with-arrow" href="{{URL::to('emi')}}">Calculate EMI<i class="icon-arrow-right"></i></a>
+							<a class="btn btn-primary btn-outline with-arrow" href="{{URL::to('check_emi')}}">Calculate EMI<i class="icon-arrow-right"></i></a>
 						</div>
 					</div>
 					

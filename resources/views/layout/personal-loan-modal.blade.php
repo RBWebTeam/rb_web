@@ -12,8 +12,10 @@
       
     <ul>
     <form id="emp_type_form">
-        <li><span><input type="radio" name="emp_type"  value="1"  onclick="changeTest(this,'q2');" /></span>&nbsp; salaried</li>
-      <li><span><input type="radio" name="emp_type" value="2"  onclick="changeTest(this,'q2');"/></span>&nbsp; self-employed (eg. doctor)</li>
+
+        <li><span><input type="radio" name="emp_type" data-value="1" value="salaried"  onclick="changeTest(this,'q2');" /></span>&nbsp; salaried</li>
+      <li><span><input type="radio" name="emp_type" data-value="2" value="self-employed"  onclick="changeTest(this,'q2');"/></span>&nbsp; self-employed </li>
+
       <!-- <li><span><input type="radio" name="emp_type"  value="self-employed business"  onclick="changeTest(this,'q2');"/></span>&nbsp; self-employed business</li> -->
       </form>
       </ul>

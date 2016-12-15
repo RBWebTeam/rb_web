@@ -51,5 +51,13 @@ class ApiController extends Controller
                             'data' => $data,
                         ));
     }
-
+    public function test(Request $req){
+		$a = $req->all();
+		$jsonText = $a;
+		$myArray = json_decode($jsonText, true);
+		print_r($myArray);
+       // return Response::json(array(
+       //                      'data' => $data,
+       //                  ));
+    }
 }

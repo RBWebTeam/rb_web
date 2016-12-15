@@ -12,7 +12,7 @@ Route::get('business-loan','LoanController@business_loan');
 Route::get('apply-personal-loan','LoanController@apply');
 Route::get('compare','CompareController@compare');
 Route::get('view-loan','CompareController@view_loan');
-Route::get('emi','CompareController@emi');
+// Route::get('emi1','CompareController@emi');
 Route::get('credit-report','CompareController@credit_report');
 Route::get('contact-us','ContactController@contact_us'); //not linked to index page till now
 //sidebar forms
@@ -48,9 +48,14 @@ Route::post('recording','recording\recordingController@recording');
 Route::get('recording/show','recording\recordingController@show');
 
 /* API routes to be written here */ 
+Route::get('api','ApiController@GetLAPQuotes');
+
+
 Route::get('api','LoanQuatesController@GetHomeLoanQuotes');
+Route::get('api2','LoanQuatesController@GetPersonalLoanQuotes');
+
 /*emi test*/
-Route::get('emi2','CompareController@emi2');
+Route::get('check_emi','CompareController@emi2');
 Route::post('emi_cal','CompareController@emi_cal');
 
 

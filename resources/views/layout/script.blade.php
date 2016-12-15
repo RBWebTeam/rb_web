@@ -330,10 +330,13 @@ $(document).ready(function(){
        var modal_name=$(this).parent().find('a').attr('data-target');
        var form_name=$(modal_name).find('form').attr('id');
         $('#'+form_name +' input').on('change', function() {
-       var input_name=$('#'+form_name).find('input').attr('name');   
+       var input_name=$('#'+form_name).find('input').attr('name');
+
        var append=$('input[name='+input_name+']:checked','#'+form_name).val();
-        //  console.log($('#'+span_name));
+       var input_name_id=$('input[name='+input_name+']:checked','#'+form_name).attr('data-value');
+         //console.log(input_name_id);
         $('#'+span_name).val(append);
+        $('#'+span_name+'_id').val(input_name_id);
         $(modal_name).modal('hide');
         
       });
@@ -365,7 +368,7 @@ $(document).ready(function(){
     }
   });
 });
-//search city autocomplete
+
 $('document').ready(function(){
         /* $('#search-input').attr('autocomplete', 'on');*/
         $("#q").autocomplete({
@@ -398,7 +401,7 @@ $('document').ready(function(){
     });
 
 });
-//city search ends here
+
 $(document).ready(function(){
    $("#send_otp_button").click(function(event){
     event.preventDefault();
@@ -448,7 +451,6 @@ $(document).ready(function(){
                 if(data_1==true){
                      var form_name=$('#elem').parent().find('form').attr('id');
                      $.post('personal-loan-submit', $('#'+form_name).serialize());
-
                     $('#otp_modal').modal('hide');
                   }else{
                     $('#otp_err').show();
@@ -539,7 +541,7 @@ $(document).ready(function(){
   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
     <input type="hidden" name="product" id="product_login" value="">
-      <a class="btn btn-default"  id="send_otp_button" >Send OTP</a>
+      <button class="btn btn-default"  id="send_otp_button" >Send OTP</button>
     </div>
   </div>
   </form>

@@ -10,7 +10,7 @@
     <script src="http://demo.expertphp.in/js/jquery.js"></script>
     <script src="http://demo.expertphp.in/js/jquery-ui.min.js"></script>
 <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
-    <script src="{{URL::to('emi/Chart.js')}}"></script>
+
 
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
 
@@ -78,16 +78,7 @@
         $('#pop1').append( "<p>Which car you want(manufacture-year)</p>" );
         }else if(val=='preferred'){
           if(obj.value=="New Car"){
-            
             document.getElementById('manufacture').style.display='none  ';
-            document.getElementById('work_at').style.display='none';
-            document.getElementById('takehome_sal').style.display='none ';
-            document.getElementById('exp').style.display='none ';
-            document.getElementById('total_exp').style.display='none';
-            document.getElementById('salary_by').style.display='none';
-            document.getElementById('salary_deposit').style.display='none';
-            document.getElementById('amt_borrow').style.display='none';
-           document.getElementById('car_step1').style.display='none';
 
           }
           $('#pop1').append( "<p>Your Dream Car</p>" );
@@ -339,10 +330,13 @@ $(document).ready(function(){
        var modal_name=$(this).parent().find('a').attr('data-target');
        var form_name=$(modal_name).find('form').attr('id');
         $('#'+form_name +' input').on('change', function() {
-       var input_name=$('#'+form_name).find('input').attr('name');   
+       var input_name=$('#'+form_name).find('input').attr('name');
+
        var append=$('input[name='+input_name+']:checked','#'+form_name).val();
-        //  console.log($('#'+span_name));
+       var input_name_id=$('input[name='+input_name+']:checked','#'+form_name).attr('data-value');
+         //console.log(input_name_id);
         $('#'+span_name).val(append);
+        $('#'+span_name+'_id').val(input_name_id);
         $(modal_name).modal('hide');
         
       });
@@ -374,17 +368,17 @@ $(document).ready(function(){
     }
   });
 });
-//search city autocomplete
-// $('document').ready(function(){
-//         /* $('#search-input').attr('autocomplete', 'on');*/
-//         $("#q").autocomplete({
-//         source : "{{ URL('search/autocomplete') }}",
-//         minlength: 3,
-//        select: function(event,ui){
-//            $('#q').val(ui.item.value);
-//             }
-//       });
-// });
+
+$('document').ready(function(){
+        /* $('#search-input').attr('autocomplete', 'on');*/
+        $("#q").autocomplete({
+        source : "{{ URL('search/autocomplete') }}",
+        minlength: 2  ,
+       select: function(event,ui){
+           $('#q').val(ui.item.value);
+            }
+      });
+});
 
    $(document).ready(function(){
     src = "{{ route('searchajax') }}";
@@ -407,7 +401,7 @@ $(document).ready(function(){
     });
 
 });
-//city search ends here
+
 $(document).ready(function(){
    $("#send_otp_button").click(function(event){
     event.preventDefault();
@@ -457,7 +451,6 @@ $(document).ready(function(){
                 if(data_1==true){
                      var form_name=$('#elem').parent().find('form').attr('id');
                      $.post('personal-loan-submit', $('#'+form_name).serialize());
-
                     $('#otp_modal').modal('hide');
                   }else{
                     $('#otp_err').show();
@@ -479,7 +472,7 @@ $(document).ready(function(){
 
 
     });
-
+  
   //get location of the person on load chrome
 //   window.onload = function() {
 //   var startPos;
@@ -497,6 +490,8 @@ $(document).ready(function(){
 
 
 </script>
+
+
 
 	</body>
 </html>
@@ -546,7 +541,7 @@ $(document).ready(function(){
   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
     <input type="hidden" name="product" id="product_login" value="">
-      <a class="btn btn-default"  id="send_otp_button" >Send OTP</a>
+      <button class="btn btn-default"  id="send_otp_button" >Send OTP</button>
     </div>
   </div>
   </form>

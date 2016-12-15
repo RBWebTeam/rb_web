@@ -21,6 +21,27 @@
 </div>
 
 
+ <div id="home-gender" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Select  gender</h4>
+        </div>
+        <div class="modal-body">
+         <ul>
+          <form id="emp_type_form_gender">
+              <li><span><input type="radio" name="pro_identi"  value="male"  size="50" onclick="homeLoanFn(this,'genderV');" /></span>&nbsp;male</li>
+            <li><span><input type="radio" name="pro_identi" value="female"  onclick="homeLoanFn(this,'genderV');"/></span>&nbsp;female</li>
+            
+            </form>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 
  <!-- home poup2 Start-->
@@ -35,8 +56,8 @@
         <div class="modal-body">  
         <ul>
           <form id="how_currently_employed">
-            <li><span><input type="radio" name="currnt_emp"  value="Salaried"  size="50" onclick="homeLoanFn(this,'Salaried');" /></span>&nbsp;Salaried</li>
-          <li><span><input type="radio" name="currnt_emp" value="Self employed"  onclick="homeLoanFn(this,'Self_employed');"/></span>&nbsp; Self employed</li>
+            <li><span><input type="radio" name="currnt_emp"  data-value="1" value="salaried"   size="50" onclick="homeLoanFn(this,'Salaried');" /></span>&nbsp;Salaried</li>
+          <li><span><input type="radio" name="currnt_emp" data-value="2" value="self-employed"   onclick="homeLoanFn(this,'Self_employed');"/></span>&nbsp; Self employed</li>
           </form>
         </ul>
       </div> 
@@ -269,9 +290,9 @@
         <div class="modal-body">  
         <ul>
           <form id="employment__type">
-            <li><span><input type="radio" name="co_borrower_emp"  value="Salaried"  size="50" onclick="homeLoanFn(this,'co_working');" /></span>&nbsp;Salaried</li>
-          <li><span><input type="radio" name="co_borrower_emp" value="Self employed"  onclick="homeLoanFn(this,'co_working');"/></span>&nbsp; Self employed</li>
-           <li><span><input type="radio" name="co_borrower_emp"  value="Non working"  size="50" onclick="homeLoanFn(this,'no_working');" /></span>&nbsp;Non working</li>
+            <li><span><input type="radio" name="co_borrower_emp" data-value="1" value="salaried"   size="50" onclick="homeLoanFn(this,'co_working');" /></span>&nbsp;Salaried</li>
+          <li><span><input type="radio" name="co_borrower_emp" data-value="2" value="self-employed"  onclick="homeLoanFn(this,'co_working');"/></span>&nbsp; Self employed</li>
+        <!--    <li><span><input type="radio" name="co_borrower_emp"  value="Non working"  size="50" onclick="homeLoanFn(this,'no_working');" /></span>&nbsp;Non working</li> -->
 
           </form>
         </ul>

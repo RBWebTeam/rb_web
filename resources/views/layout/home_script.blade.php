@@ -103,6 +103,9 @@ function validation(val){
                      show_hide('type_of_loan',0);
                      show_hide('cost_of_the_plot',0);
                      show_hide('next_btn',0);
+
+                     var pro=$('#pro_name_h').val();
+                     
                         document.getElementById ("type_of_loan_").value ='';
                         document.getElementById ("cost_of").value ='';
                         document.getElementById ("cost_construction").value ='';
@@ -238,14 +241,18 @@ function validation(val){
                      }else if(f2=='turn_over'){
                         var number=parseInt(f1.value);
                             if(number>50000){
-                      validation('Do you want to add co borrower');
-                      show_hide('co_borrower',1);
+                    
+                     validation('Select gender');
+                      show_hide('gender',1);
                     }else{
 
                        validation('Please enter an amount greater than Rs 1,00,000');
-                      show_hide('co_borrower',0);
+                      show_hide('gender',0);
                      }
-
+                  
+                       }else if(f2=='genderV'){
+                            validation('Do you want to add co borrower');
+                         show_hide('co_borrower',1);
                     }else if(f2=='Yes'){
                         
                       validation('Select relationship with the co-borrower');
@@ -352,26 +359,4 @@ function validation(val){
 </script>
 
 
-<script type="text/javascript">
-  $(document).ready(function(){
-    $('.purposeofloan_popup').click(function(){
-       // console.log($(this).closest("form").attr('id'));
-       var span_name=$(this).parent().find('input').attr('id');
-       var modal_name=$(this).parent().find('a').attr('data-target');
-       var form_name=$(modal_name).find('form').attr('id');
-        $('#'+form_name +' input').on('change', function() {
-       var input_name=$('#'+form_name).find('input').attr('name');   
-       var append=$('input[name='+input_name+']:checked','#'+form_name).val();
-          console.log($('#'+span_name));
-        $('#'+span_name).val(append);
-        $(modal_name).modal('hide');
-        
-      });
 
-    });
-
-    
-
-  });
-</script>
-	

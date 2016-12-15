@@ -170,14 +170,14 @@ use App\recording\recordingModel;
         <form id="current_emp_id">
           <li>
           <span>
-             <input type="radio" name="against_p"  value="Salaried"  onclick="loanAgainstfn(this,'curr_emp_id','Salaried');" />
+             <input type="radio" name="against_p"  data-value="1" value="salaried"   onclick="loanAgainstfn(this,'curr_emp_id','Salaried');" />
             </span>
                              &nbsp; Salaried</li> <li><span>
-              <input type="radio" name="against_p" value="Self Employed Professional" onclick="loanAgainstfn(this,'curr_emp_id','professional');"/>
+              <input type="radio" name="against_p" data-value="2" value="self-employed" onclick="loanAgainstfn(this,'curr_emp_id','professional');"/>
              </span>
-                             &nbsp; Self Employed Professional</li> <li><span>
+                             &nbsp; Self Employed Professional</li><!--  <li><span>
              <input type="radio" name="against_p"  value="Self Employed Business"  onclick="loanAgainstfn(this,'curr_emp_id','Business');"/> 
-        </span>              &nbsp; Self Employed Business</li>
+        </span>              &nbsp; Self Employed Business</li> -->
          </form>
        </ul>
       </div>
@@ -226,14 +226,14 @@ use App\recording\recordingModel;
         <form id="employment_type_aginst">
           <li>
           <span>
-             <input type="radio" name="co_borrow_against"  value="Salaried"  onclick="loanAgainstfn(this,'employment_tuype_against','Salaried');" />
+             <input type="radio" name="co_borrow_against"  data-value="1" value="salaried"   onclick="loanAgainstfn(this,'employment_tuype_against','Salaried');" />
             </span>
                              &nbsp; Salaried</li> <li><span>
-              <input type="radio" name="co_borrow_against" value="Self Employed" onclick="loanAgainstfn(this,'employment_tuype_against','self_emp');"/>
+              <input type="radio" name="co_borrow_against"  data-value="2" value="self-employed" onclick="loanAgainstfn(this,'employment_tuype_against','self_emp');"/>
              </span>
-                             &nbsp; Self Employed</li> <li><span>
+                             &nbsp; Self Employed</li> <!-- <li><span>
              <input type="radio" name="co_borrow_against"  value="Non Working"  onclick="loanAgainstfn(this,'employment_tuype_against','no_work');"/> 
-        </span>              &nbsp; Non Working</li>
+        </span>              &nbsp; Non Working</li> -->
          </form>
        </ul>
       </div>

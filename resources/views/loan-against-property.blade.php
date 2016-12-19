@@ -1,9 +1,9 @@
 @include('layout.header')
     <div class="container">
-	
+
 	<aside id="fh5co-hero">
 	<div class="col-md-12">
-	<p class="text-left"><a href="{{URL::to('/')}}">Home</a>/Loan Against Property</p>
+	<p class="text-left"><a href="{{URL::to('/')}}">Home</a>/{{$id->Product_Name}}</p>
 	<h2 class="align-center loan-head">Loan Against Property</h2>
 	</div>
 	<div class=""></div>
@@ -59,6 +59,7 @@
 				  
 				    <div>
 				      <input type="text" class="form-control" id="name" name="name" placeholder="Name" required class="clr-ddd" />
+				      <input type="hidden" class="form-control" id="product" value="{{$id->Product_Name}}" name="product"  />
 				    </div>
 				  </div>
 			<div class="form-group">
@@ -105,7 +106,7 @@
 								 <li>Comapre with 100 banks.</li>
 							</ul>
 						
-							<a class="btn btn-primary btn-outline with-arrow" href="{{URL::to('compare')}}" >Compare<i class="icon-arrow-right"></i></a>
+							<a class="btn btn-primary btn-outline with-arrow" href="{{URL::to('get-loan')}}/{{$id->Product_Id}}" >Compare<i class="icon-arrow-right"></i></a>
 						</div>
 					</div>
 
@@ -132,7 +133,7 @@
 								 <li>Minimum Documentation</li>
 							</ul>
 							
-							<a class="btn btn-primary btn-outline with-arrow" href="{{URL::to('/apply_loan_against_property')}}">Apply Online
+							<a class="btn btn-primary btn-outline with-arrow" href="{{URL::to('/apply-loan-against-property')}}">Apply Online
 							<i class="icon-arrow-right"></i></a>
 						</div>
 					</div>

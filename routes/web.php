@@ -28,7 +28,7 @@ Route::post('personal-loan-submit','FormController@p_loan_submit');
 Route::get('apply-car-loan','LoanController@apply_car_loan');
 Route::get('apply-business-loan','LoanController@apply_business_loan');
 
-Route::get('home-loans/{id}', 'HomeController@footercontent');
+//Route::get('home-loans/{id}', 'HomeController@footercontent');
 Route::get('personal-loans/{id}', 'HomeController@footercontent');
 Route::get('sme-loans/{id}', 'HomeController@footercontent');
 Route::get('business-loans/{id}', 'HomeController@footercontent');
@@ -48,14 +48,14 @@ Route::post('recording','recording\recordingController@recording');
 Route::get('recording/show','recording\recordingController@show');
 
 /* API routes to be written here */ 
+
 Route::get('api','ApiController@GetLAPQuotes');
 Route::get('get-loan/{loan}','ApiController@compareLoan');
 
 // Route::get('api','LoanQuatesController@GetHomeLoanQuotes');
 
-
 /*emi test*/
 Route::get('check_emi','CompareController@emi2');
 Route::post('emi_cal','CompareController@emi_cal');
-
+Route::get('loan-details/{product}/{bank}','BankController@home_loanBank');
 

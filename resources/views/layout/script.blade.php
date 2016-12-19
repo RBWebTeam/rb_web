@@ -450,7 +450,7 @@ $(document).ready(function(){
                  var data_1=data['data'];
                 if(data_1==true){
                      var form_name=$('#elem').parent().find('form').attr('id');
-                     $.post('personal-loan-submit', $('#'+form_name).serialize());
+                     $.post('loan-submit', $('#'+form_name).serialize());
                     $('#otp_modal').modal('hide');
                   }else{
                     $('#otp_err').show();

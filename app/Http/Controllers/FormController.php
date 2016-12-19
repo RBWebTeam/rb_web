@@ -51,31 +51,39 @@ class FormController extends Controller
         $city_id=DB::table('City_Master')->select('city_id')
         ->where('city_name', 'LIKE', '%'.$req['city_name'].'%')
         ->get();
-        $input['city_name']=$city_id[0]->city_id;
+        $input['city_name']=(string)$city_id[0]->city_id;
         //adding city_id to post data
         $res=array_merge($input,$new_array);
         //print_r($res);
-        $data =json_encode($res);
+        //$data =json_encode($res);
         //$data_1=str_replace('"','',$data);
-        print_r($data);
+        //print_r($data);
         //CustomerLaravelWebRequest
             $url = "http://beta.erp.rupeeboss.com/CustomerLaravelWebRequest.aspx";
             $ch = curl_init();
             curl_setopt($ch, CURLOPT_VERBOSE, 1);
-            curl_setopt( $ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
+            //curl_setopt( $ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
             curl_setopt($ch, CURLOPT_URL, $url);
             curl_setopt($ch, CURLOPT_POST, 1);
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
             curl_setopt($ch, CURLOPT_FAILONERROR, 0);
             curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
-            curl_setopt($ch, CURLOPT_POSTFIELDS,$data);
+            curl_setopt($ch, CURLOPT_POSTFIELDS,$res);
             $http_result = curl_exec($ch);
             $error = curl_error($ch);
             $http_code = curl_getinfo($ch ,CURLINFO_HTTP_CODE);
-            $obj = json_decode($http_result);
+            //$obj = json_decode($http_result);
             print "<pre>";
-            print_r($obj);
-            return "test";
+            if($http_result==1){
+                $data= redirect()->action('ApiController@compare');
+                print_r($data);
+
+
+                return view('contact')->with($data);
+            }else
+                return 'false';
+                //return 'true';
+            }
     }
     
      public function otp(Request $req){
@@ -83,14 +91,12 @@ class FormController extends Controller
         //sms curl to write here
         //$otp = mt_rand(100000, 999999);
         $otp=123456;
-        //CommanDataLoad.Send_SMS_Save_Data('mobileno', 'SMSBody', 'ip', 'RBERP');
         //setting details to session to retrive at time of posting
         Session::put('contact', $req['contact']);
         Session::put('name', $req['name']);
         Session::put('email', $req['email']);
         $value = Session::get('contact');
         //ends 
-
         //insert into DB
         $query=DB::table('otp')->insertGetId(
         ['name' => $req['name'],'contact'=>$req['contact'],'email'=>$req['email']

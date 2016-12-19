@@ -2,7 +2,7 @@
 
     <!--- liza Step First   - -->
 	    <div class="container" id='elem'>
-	    <form name='personal_loan_process_form' id='personal_loan_process_form' action={{URL::to('personal-loan-submit')}} method="POST">
+	    <form name='personal_loan_process_form' id='personal_loan_process_form' action={{URL::to('loan-submit')}} method="POST">
 	    	  {{ csrf_field() }}
               <?php $loan_name="Personal";?>
 			@if (isset($sme))

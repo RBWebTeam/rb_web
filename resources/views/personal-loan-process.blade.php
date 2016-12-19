@@ -4,11 +4,11 @@
 	    <div class="container" id='elem'>
 	    <form name='personal_loan_process_form' id='personal_loan_process_form' action={{URL::to('personal-loan-submit')}} method="POST">
 	    	  {{ csrf_field() }}
-              
+              <?php $loan_name="Personal";?>
 			@if (isset($sme))
-			 <?php $loan=6 ;?>
+			 <?php $loan=6 ; $loan_name="SME"?>
 		    @else
-			 <?php $loan=9 ;?>
+			 <?php $loan=9 ?>
 		    @endif
 	 <input type="hidden" id="product" name="product_name" value="<?php echo $loan;?>">
 		<div class="liza col-md-8" id="step-1">
@@ -24,7 +24,7 @@
 			 <input type="hidden" class="clr-blue" id="emp_detail_id" name="emp_detail_id"  placeholder="Select" readonly></a>
 			professional </h3> 
 			</div>
-			<div class="col-md-12 text-center animate-box cont" style="display:none;" id="q2" ><h3>and I want a <span class="clr-blue1"><?php echo $loan;?>  Loan</span> of Rs. 
+			<div class="col-md-12 text-center animate-box cont" style="display:none;" id="q2" ><h3>and I want a <span class="clr-blue1"><?php echo $loan_name;?>  Loan</span> of Rs. 
 			<input type="tel" id="loanamt" name="loanamount" onkeyup="changeText('loanamt','q3')"  onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="1,00,000" tabindex="1">
 			.</h3>
 			</div>
@@ -99,7 +99,7 @@
 	   </div>
 	   
 	<!--- Liza Step Three -- -->
-	<div class="liza col-md-8" id="step-3">
+	<div class="liza col-md-8" style="display: none;" id="step-3">
 		   <div class="col-md-12 text-center"><h4>Apply for an Easy Personal Loan in 30 seconds</h4>
 		   </div>
 		   <p class="text-center">Step 3 of 3</p>
@@ -125,7 +125,7 @@
 			</h3>
 			</div>
 
-			<div class="text-center" id="step_3_btn">
+			<div class="text-center" style="display: none;" id="step_3_btn">
 			<a class="btn btn-primary btn-outline with-arrow animate-box" onclick="changeDiv('step-3','step-2')">Go Back<i class="icon-arrow-right"></i></a>
 			<a class="btn btn-primary btn-outline with-arrow animate-box product_name" data-toggle="modal" data-target="#login">Get me a Loan<i class="icon-arrow-right"></i></a>
 			</div>

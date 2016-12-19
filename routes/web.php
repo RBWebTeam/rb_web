@@ -49,10 +49,10 @@ Route::get('recording/show','recording\recordingController@show');
 
 /* API routes to be written here */ 
 Route::get('api','ApiController@GetLAPQuotes');
+Route::get('get-loan/{loan}','ApiController@compareLoan');
 
+// Route::get('api','LoanQuatesController@GetHomeLoanQuotes');
 
-Route::get('api','LoanQuatesController@GetHomeLoanQuotes');
-Route::get('api2','LoanQuatesController@GetPersonalLoanQuotes');
 
 /*emi test*/
 Route::get('check_emi','CompareController@emi2');

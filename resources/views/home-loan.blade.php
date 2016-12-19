@@ -104,7 +104,7 @@
 								 <li>Comapre with 100 banks.</li>
 							</ul>
 						
-							<a class="btn btn-primary btn-outline with-arrow" href="{{URL::to('compare')}}" >Compare<i class="icon-arrow-right"></i></a>
+	  <a class="btn btn-primary btn-outline with-arrow" href="{{URL::to('get-loan/home-loan')}}" >Compare<i class="icon-arrow-right"></i></a>
 						</div>
 					</div>
 

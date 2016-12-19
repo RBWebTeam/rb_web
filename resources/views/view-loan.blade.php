@@ -2,62 +2,17 @@
     <div id="fh5co-hero">
 	<div class="container">
 	<div class=" pad">
-	<p class="text-left">home/personal-loan</p>
+	<p class="text-left">home/{{$home_loan}}</p>
     <h2 class="align-center loan-head">View Options</h2>
 	</div>
-<!--    <div class="col-md-3 fadeInUp tbl fltr tbl1">
-    <h3>Filter</h3>
-	<hr>
-	<h4>Interest Type</h4>
-	
-	
-	
-	<hr>
-	<h4>Min / Max Loan Requirment</h4>
-	Filter by price interval: 
-	<input type="hidden" name="min_value" id="min_value" value="">
- <hr>
- <h4>EMI Capacity</h4>
-	<input type="hidden" name="min_value" id="min_value" value="">
-	<hr>
-	<h4>Bank Type</h4>
-	<span><input type="radio" name="radio" />Private Bank</span><br>
-	<span><input type="radio" name="radio" />PSU Bank </span>
-	<hr>
-	<h4>Max Tenure</h4>
-	<span><input type="radio" name="radio" />3 Years</span><br>
-	<span><input type="radio" name="radio" />4 Years</span><br>
-	<span><input type="radio" name="radio" />5 Years</span>
-	<hr>
-	<h4>Processing Fee</h4>
-	<input type="checkbox" name="1" />No Processing Fee
-	<hr>
-    </div> -->
+
     
 	<div class="col-md-9 pad11">
     
     <div class="">
     <table width="100%" border="1" class="tbl pad1">
   <tr>
-    <td>Your {{$home_loan}} Loan Search for <b>5 Lakhs</b> Loan</td>
-   <!--  <td><button class="default">Modify Details</button></td> -->
- <!--    <td>sort by 
-    <select>
-        <option>Interest Rate</option>
-        <option>10000</option>
-        <option>20000</option>
-        <option>30000</option>
-        
-    </select>
-    </td>
-    <td>Processing Fees 
-    <select>
-        <option>3000</option>
-        <option>3000</option>
-        <option>2000</option>
-        <option>3000</option>
-        
-    </select></td> -->
+    <td>Your {{$home_loan}}  Search for <!-- <b>5 Lakhs</b> Loan</td> -->
   </tr>
 </table>
 </div>
@@ -74,7 +29,7 @@
     <td width="16%" class="upper">Interst Rate</td>
     <td width="16%" class="upper">Loan Amount</td>
     <td width="18%" class="upper">emi</td>
-    <td width="17%"><a href="{{url('apply_home_loan')}}">Apply Online</a></td>
+    <td width="17%"><a href="{{url('apply')}}-{{$home_loan}}">Apply Online</a></td>
   </tr>
 
   <tr>

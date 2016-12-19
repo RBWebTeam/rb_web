@@ -13,39 +13,70 @@ class LoanController extends Controller
 // Route::get('personal-loan','LoanController@smi_loan');
 // Route::get('personal-loan','LoanController@home_loan_transfer');
 // Route::get('personal-loan','LoanController@car_loan');
+
+
+   
+
     public function personal_loan(){
     	$data['title']='Personal Loan';
     	$data['description']='Apply for Personal Loan';
+        $data['id']=DB::table('product_master')
+                      ->where('Product_Name','=','Personal Loan')
+                      ->first();
     	return view('personal-loan')->with($data);
     }
     public function home_loan(){
+
+
     	$data['title']='Home Loan';
     	$data['description']='Apply for Home Loan';
+
+        $data['id']=DB::table('product_master')
+                      ->where('Product_Name','=','Home Loan')
+                      ->first();
     	return view('home-loan')->with($data);
     }
     public function lap(){
     	$data['title']='Loan Against Propertry';
     	$data['description']='Apply for Loan Against Propertry';
+
+        $data['id']=DB::table('product_master')
+                      ->where('Product_Name','=','LAP')
+                      ->first();
     	return view('loan-against-property')->with($data);
     }
     public function sme_loan(){
     	$data['title']='SME Loan';
     	$data['description']='Apply for SME Loan';
+
+        // $data['id']=DB::table('product_master')
+        //               ->where('Product_Name','=','sem')
+        //               ->first();
     	return view('sme-loan')->with($data);
     }
     public function home_loan_transfer(){
     	$data['title']='Home Loan Transfer';
     	$data['description']='Apply for Home Loan Transfer';
+
     	return view('home-loan-transfer')->with($data);
     }
     public function car_loan(){
     	$data['title']='Car Loan';
     	$data['description']='Apply for Car Loan';
+
+        $data['id']=DB::table('product_master')
+                      ->where('Product_Name','=','Car Loan')
+                      ->first();
+
     	return view('car-loan')->with($data);
     }
     public function business_loan(){
         $data['title']='Business Loan';
         $data['description']='Apply for Business Loan';
+
+        $data['id']=DB::table('product_master')
+                      ->where('Product_Name','=','Business Loan')
+                      ->first();
         return view('business-loan')->with($data);
     }
 
@@ -62,7 +93,7 @@ class LoanController extends Controller
     }
 
     public function apply_home_loan(){
-$query=DB::table('bank_master')->select('Bank_Name')->get();
+         $query=DB::table('bank_master')->select('Bank_Name')->get();
         return view('home-loan-process',['data'=>$query]);
 
     }
@@ -72,6 +103,7 @@ $query=DB::table('bank_master')->select('Bank_Name')->get();
 
 
          $data=DB::table('bank_master')->select('Bank_Name')->get();
+
          return view('loan-against-property-process',['data'=>$data]);
         
     }

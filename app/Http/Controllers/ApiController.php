@@ -80,13 +80,12 @@ class ApiController extends Controller
 
 
     public function compareLoan($loan){
-
-           
+      
               $product_query=DB::table('product_master')->select('Product_Id','Product_Name')
-                      ->where('Product_Name','=',str_replace('-',' ',$loan))
+                      ->where('Product_ID','=',$loan)
                       ->first();    
-   // echo $product_query->Product_Id;
-
+//     echo $product_query->Product_Name;
+// exit;
 
 
  //      $getQuery=DB::table('bank_product_web_intrest')
@@ -98,19 +97,24 @@ class ApiController extends Controller
 	// ->take('4')
 	// ->get();
 
+      if($product_query){
+
+
       $getQuery= DB::table('bank_product_web_intrest')
     ->join('bank_master', 'bank_master.bank_id', '=', 'bank_product_web_intrest.bank_id')
     ->join('bank_product_web_pf', 'bank_product_web_pf.product_id', '=', 'bank_product_web_intrest.Product_Id')
     ->join('bank_product_web', 'bank_product_web.Product_Id', '=', 'bank_product_web_intrest.Product_Id')
-    ->where('bank_product_web_intrest.Product_Id', '=',$product_query->Product_Id)
+    ->where('bank_product_web_intrest.Product_Id', '=',$loan)
     ->orderBy('bank_product_web_intrest.roi', 'DESC')
 	->take('4')
 	->get();
     
+    
 
-
-  return view('view-loan',['home_loan'=>"home-loan",'getQuery'=>$getQuery]);
-
+  return view('view-loan',['home_loan'=>$product_query->Product_Name,'getQuery'=>$getQuery]);
+}else{
+	echo "wrong";
+}
            // return view('view-loan',['home_loan'=>"home-loan",'getQuery'=>$getQuery,'Product_Name'=>$product_query->Product_Name]);
     }
 }

@@ -35,13 +35,42 @@ class ApiController extends Controller
 	}
 	public function compare(Request $req){
 		//API to get bank quote
-		$data=DB::select('call  usp_get_bank_quot ("'.$req['PropertyCost'].'","'.$req['LoanTenure'].'","'.$req['LoanRequired'].'","'.$req['ApplicantGender'].'","'.$req['ApplicantIncome'].'","'.$req['ApplicantObligations'].'","'.$req['ApplicantDOB'].'","'.$req['CoApplicantYes'].'","'.$req['CoApplicantIncome'].'","'.$req['CoApplicantObligations'].'","'.$req['Turnover'].'","'.$req['ProfitAfterTax'].'","'.$req['Depreciation'].'","'.$req['DirectorRemuneration'].'","'.$req['CoApplicantTurnover'].'","'.$req['CoApplicantProfitAfterTax'].'","'.$req['CoApplicantDepreciation'].'","'.$req['CoApplicantDirectorRemuneration'].'","'.$req['ApplicantSource'].'")'	);
+		// $data=DB::select('call  usp_get_bank_quot ("'.$req['PropertyCost'].'","'.$req['LoanTenure'].'","'.$req['LoanRequired'].'","'.$req['ApplicantGender'].'","'.$req['ApplicantIncome'].'","'.$req['ApplicantObligations'].'","'.$req['ApplicantDOB'].'","'.$req['CoApplicantYes'].'","'.$req['CoApplicantIncome'].'","'.$req['CoApplicantObligations'].'","'.$req['Turnover'].'","'.$req['ProfitAfterTax'].'","'.$req['Depreciation'].'","'.$req['DirectorRemuneration'].'","'.$req['CoApplicantTurnover'].'","'.$req['CoApplicantProfitAfterTax'].'","'.$req['CoApplicantDepreciation'].'","'.$req['CoApplicantDirectorRemuneration'].'","'.$req['ApplicantSource'].'")'	);
+
+
+          
+          
+		DB::table('bank_quote_api_request')->insert([
+			'PropertyID' =>$req->PropertyID,
+			'PropertyCost' =>0,
+			'LoanTenure' =>0,
+			'LoanRequired' =>0,
+			'City' =>0,
+			'ApplicantNme' =>0,
+			'LoanTenure' =>0,
+			'LoanTenure' =>0,
+			'LoanTenure' =>0,
+			'LoanTenure' =>0,
+			'LoanTenure' =>0,
+			'LoanTenure' =>0,
+			'LoanTenure' =>0,
+			'LoanTenure' =>0,
+			'LoanTenure' =>0,
+			'LoanTenure' =>0,
+			'LoanTenure' =>0,
+			'LoanTenure' =>0,
+			'LoanTenure' =>0,
+			'LoanTenure' =>0,
+
+
+			]);
 
 
 
-		 return Response::json(array(
-                            'data' => $data,
-                        ));
+
+		 // return Response::json(array(
+   //                          'data' => $data,
+   //                      ));
 	}
 	//by DP
 	public function GetHomeLoanQuotes(Request $req){

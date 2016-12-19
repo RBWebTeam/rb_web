@@ -2,7 +2,7 @@
 
     <!--- liza Step First   - -->
 <div class="container" id='elem'>
-	<form name='business_loan_process_form' id='business_loan_process_form' action={{URL::to('personal-loan-submit')}} method="POST">
+	<form name='business_loan_process_form' id='business_loan_process_form' action={{URL::to('loan-submit')}} method="POST">
 		    	  {{ csrf_field() }}
 		    <input type="hidden" id="product" name="product_name" value="business_loan">
 			<div class="liza col-md-8" id="start-1">

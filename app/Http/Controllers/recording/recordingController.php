@@ -21,15 +21,12 @@ class recordingController extends Controller
 
 
 
- 
-
-
 define('UPLOAD_DIR', $_SERVER['DOCUMENT_ROOT']."/rec/");
 $img = $req['base64string'];
 $img = str_replace("data:".$req['file_name']."/".$req['extension'].";base64,", '', $img);
 $img = str_replace(' ', '+', $img);
 $data = base64_decode($img);
-$a= uniqid() . '.mp3';
+$a= uniqid() . '.3gp';
 $file = UPLOAD_DIR . $a;
 $success = file_put_contents($file, $data);
 print $success ? $file : 'Unable to save the file.';

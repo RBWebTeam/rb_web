@@ -43,7 +43,7 @@
     <ul>
     <form id="exst_loan_form">
         <li><span><input type="radio" name="exst_loan"  value="Do"  onclick="changeTest(this,'q4');"/></span>&nbsp; Do</li>
-      <li><span><input type="radio" name="exst_loan" value="Don`t"  onclick="changeTest(this,'q4');"/></span>&nbsp; Don`t</li>
+      <li><span><input type="radio" name="exst_loan" value="Dont"  onclick="changeTest(this,'q4');"/></span>&nbsp; Don`t</li>
      
       </form>
       </ul>

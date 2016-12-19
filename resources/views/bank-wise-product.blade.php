@@ -82,10 +82,12 @@
     <td width="18%" class="upper">Age</td>
     <td width="18%" class="upper">Women Rate Of Interest</td>
     <td width="18%" class="upper">Minimum Credit Score</td>
-     <td width="18%" class="upper">Tenure</td>
+    <td width="18%" class="upper">Tenure</td>
+    <td width="18%" class="upper">Profession</td>
 
 
-    <td width="17%"><a href="{{url('apply')}}dw">Apply Online</a></td>
+
+   <!--  <td class="upper" width="17%"><a href="{{url('apply')}}dw">Apply Online</a></td> -->
   </tr>
 
   <tr>
@@ -97,7 +99,9 @@
    <td>{{$value->Min_Age}}-{{$value->Max_Age}}</td>
    <td>{{$value->Women_roi}}</td>
    <td>{{$value->MinCredit_Score}}</td> 
-   <td>{{$value->Min_Tenure}}-{{$value->Max_Tenure}}</td>  
+   <td>{{$value->Min_Tenure}}-{{$value->Max_Tenure}}Years</td> 
+   <td><p>Salaried</p></td> 
+   <td class="upper" width="17%"><a href="{{URL::to('apply-')}}{{$product}}">Apply Online</a></td>
 
     <!-- <td rowspan="2"><strong>Specil Features:-</strong> Pre close Fee 0%</td>
   </tr> -->
@@ -114,11 +118,11 @@
  <table>
 <div id="{{$key}}" class="collapse" style="background-color: #F6F6F6; width: 100%;height: auto;">
    
-     as you can see the foreach is no returning any data there is nothing wrong with the query because laravel give me no error at all. but i cant just get the foreach to display the data im looking for.
-
-i try with $cup->songlist.title; and it dont work ether.
-
-Thanks any help will be appretiated. againg sorry for my English.
+   <li class="list-group-item"><i class="fa fa-dot-circle-o" aria-hidden="true"></i> No guarantor required</li>
+          <li class="list-group-item"><i class="fa fa-dot-circle-o" aria-hidden="true"></i> No pre-closure and part payment fee
+            <mark style="color: red">Special offers are available for women applicants at a lower rate</mark></li>
+          <li class="list-group-item"><i class="fa fa-dot-circle-o" aria-hidden="true"></i> Age at least 18 and less than 60</li>
+           <li class="list-group-item"><i class="fa fa-dot-circle-o" aria-hidden="true"></i> Salaried / Self - Employed with regular income,Earn more than the minimum income required</li>
   </div>
 
    </table>

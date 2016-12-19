@@ -3,8 +3,8 @@
 	
 	<aside id="fh5co-hero">
 	<div class="col-md-12">
-	<p class="text-left"><a href="{{URL::to('/')}}">Home</a>/personal-loan</p>
-	<h2 class="align-center loan-head">Personal-Loan</h2>
+	<p class="text-left"><a href="{{URL::to('/')}}">Home</a>/{{$id->Product_Name}}</p>
+	<h2 class="align-center loan-head">Personal Loan</h2>
 	</div>
 	<div class=""></div>
 	<div class="flexslider col-md-8">
@@ -60,6 +60,7 @@
 				  <div class="form-group has-error">
 				    <div>
 				      <input type="text" class="form-control" id="name" name="name" placeholder="Name" required />
+				       <input type="hidden" class="form-control" id="product" value="{{$id->Product_Name}}" name="product"  />
 				    </div>
 				  </div>
 			<div class="form-group has-error">
@@ -108,7 +109,7 @@
 								 <li>Comapre with 100 banks.</li>
 							</ul>
 						
-							<a class="btn btn-primary btn-outline with-arrow" href="{{URL::to('compare')}}" >Compare<i class="icon-arrow-right"></i></a>
+							<a class="btn btn-primary btn-outline with-arrow" href="{{URL::to('get-loan')}}/{{$id->Product_Id}}" >Compare<i class="icon-arrow-right"></i></a>
 						</div>
 					</div>
 

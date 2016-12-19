@@ -25,8 +25,8 @@ Route::get('searchajax',array('as'=>'searchajax','uses'=>'AutoCompleteController
 
 Route::post('personal-loan-submit','FormController@p_loan_submit');
 
-Route::get('apply_car_loan','LoanController@apply_car_loan');
-Route::get('apply_business_loan','LoanController@apply_business_loan');
+Route::get('apply-car-loan','LoanController@apply_car_loan');
+Route::get('apply-business-loan','LoanController@apply_business_loan');
 
 //Route::get('home-loans/{id}', 'HomeController@footercontent');
 Route::get('personal-loans/{id}', 'HomeController@footercontent');
@@ -39,9 +39,9 @@ Route::get('bank','BankController@index');
 Route::get('logout','HomeController@logout');
 
 /* by dp */
-Route::get('apply_sme_loan','LoanController@smeLoan');
-Route::get('apply_home_loan','LoanController@apply_home_loan');
-Route::get('apply_loan_against_property','LoanController@apply_loan_against_property');
+Route::get('apply-sme-loan','LoanController@smeLoan');
+Route::get('apply-home-loan','LoanController@apply_home_loan');
+Route::get('apply-loan-against-property','LoanController@apply_loan_against_property');
 
 
 Route::post('recording','recording\recordingController@recording');
@@ -49,6 +49,10 @@ Route::get('recording/show','recording\recordingController@show');
 
 /* API routes to be written here */ 
 
+Route::get('api','ApiController@GetLAPQuotes');
+Route::get('get-loan/{loan}','ApiController@compareLoan');
+
+// Route::get('api','LoanQuatesController@GetHomeLoanQuotes');
 
 /*emi test*/
 Route::get('check_emi','CompareController@emi2');

@@ -47,15 +47,35 @@ class FormController extends Controller
         //call api to submit form data
         $input = $req->all();
         $new_array = array('customer_contact' => Session::get('contact'), 'customer_name' => Session::get('name'),'customer_email' => Session::get('email'));
-        $city_id=DB::table('city_master')->select('city_id')
+        //replacing city name with id
+        $city_id=DB::table('City_Master')->select('city_id')
         ->where('city_name', 'LIKE', '%'.$req['city_name'].'%')
         ->get();
         $input['city_name']=$city_id[0]->city_id;
-        //adding lead detail to post data
+        //adding city_id to post data
         $res=array_merge($input,$new_array);
-        print "<pre>";
-        print_r($res);
-        return "test success";
+        //print_r($res);
+        $data =json_encode($res);
+        //$data_1=str_replace('"','',$data);
+        print_r($data);
+        //CustomerLaravelWebRequest
+            $url = "http://beta.erp.rupeeboss.com/CustomerLaravelWebRequest.aspx";
+            $ch = curl_init();
+            curl_setopt($ch, CURLOPT_VERBOSE, 1);
+            curl_setopt( $ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
+            curl_setopt($ch, CURLOPT_URL, $url);
+            curl_setopt($ch, CURLOPT_POST, 1);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+            curl_setopt($ch, CURLOPT_FAILONERROR, 0);
+            curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+            curl_setopt($ch, CURLOPT_POSTFIELDS,$data);
+            $http_result = curl_exec($ch);
+            $error = curl_error($ch);
+            $http_code = curl_getinfo($ch ,CURLINFO_HTTP_CODE);
+            $obj = json_decode($http_result);
+            print "<pre>";
+            print_r($obj);
+            return "test";
     }
     
      public function otp(Request $req){

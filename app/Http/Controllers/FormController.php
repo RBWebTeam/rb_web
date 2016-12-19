@@ -48,7 +48,7 @@ class FormController extends Controller
         $input = $req->all();
         $new_array = array('customer_contact' => Session::get('contact'), 'customer_name' => Session::get('name'),'customer_email' => Session::get('email'));
         //replacing city name with id
-        $city_id=DB::table('city_master')->select('city_id')
+        $city_id=DB::table('City_Master')->select('city_id')
         ->where('city_name', 'LIKE', '%'.$req['city_name'].'%')
         ->get();
         $input['city_name']=$city_id[0]->city_id;

@@ -15,7 +15,7 @@ class AutoCompleteController extends Controller {
 
         
         $term = Input::get('term');
-        $products=DB::table('city_master')->select('city_name')
+        $products=DB::table('City_Master')->select('city_name')
         ->where('city_name', 'LIKE', '%'.$term.'%')
         ->take(5)->get();
         //print_r( $products);

@@ -48,7 +48,7 @@ class FormController extends Controller
         $input = $req->all();
         $new_array = array('customer_contact' => Session::get('contact'), 'customer_name' => Session::get('name'),'customer_email' => Session::get('email'));
         //replacing city name with id
-        $city_id=DB::table('City_Master')->select('city_id')
+        $city_id=DB::table('city_master')->select('city_id')
         ->where('city_name', 'LIKE', '%'.$req['city_name'].'%')
         ->get();
         $input['city_name']=(string)$city_id[0]->city_id;
@@ -74,16 +74,17 @@ class FormController extends Controller
             $http_code = curl_getinfo($ch ,CURLINFO_HTTP_CODE);
             //$obj = json_decode($http_result);
             print "<pre>";
-            if($http_result==1){
-                $data= redirect()->action('ApiController@compare');
-                print_r($data);
+            print_r($http_result);
+            return $http_result;
+            // if($http_result==1){
+            //     $data= redirect()->action('ApiController@compare');
+            //     print_r($data);
+            //     return view('contact')->with($data);
 
-
-                return view('contact')->with($data);
-            }else
-                return 'false';
-                //return 'true';
-            }
+            // }else{
+            //     return 'false';
+            //     //return 'true';
+            // }
     }
     
      public function otp(Request $req){

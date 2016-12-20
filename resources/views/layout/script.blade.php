@@ -5,7 +5,7 @@
     <link href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" rel="Stylesheet"></link>
     <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/themes/base/minified/jquery-ui.min.css" type="text/css" />
     <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js" ></script>
-    
+    <script src="{{URL::to('emi/Chart.js')}}"></script>
     <link href="http://demo.expertphp.in/css/jquery.ui.autocomplete.css" rel="stylesheet">
     <script src="http://demo.expertphp.in/js/jquery.js"></script>
     <script src="http://demo.expertphp.in/js/jquery-ui.min.js"></script>

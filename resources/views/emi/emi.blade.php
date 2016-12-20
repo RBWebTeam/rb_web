@@ -103,7 +103,7 @@
 </div>
 
 @include('layout.footer')
-@include('layout.script')
+@include('layout.script') 
 <!-- //emi scripts started -->
 <script type="text/javascript">
 
@@ -186,7 +186,7 @@
     //console.log(a);
       var ctx = $("#mycanvas").get(0).getContext("2d");
       //console.log(a);
-        //pie chart data
+        //pie Chart data
         //sum of values = 360
         var data = [
           {

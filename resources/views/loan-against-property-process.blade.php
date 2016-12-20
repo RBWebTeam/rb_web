@@ -1,6 +1,6 @@
 @include('layout.header')
 <div class="container" id='elem'>
-	  <form name='LAP_process_form' id='LAP_process_form' action={{URL::to('personal-loan-submit')}} method="POST"> 
+	  <form name='LAP_process_form' id='LAP_process_form' action={{URL::to('loan-submit')}} method="POST"> 
 	   {{ csrf_field() }}
 	  <input type="hidden" id="product" name="product_name" value="Loan_Against_Property">
 		<div class="liza col-md-8" id="step1ofagiansp" >

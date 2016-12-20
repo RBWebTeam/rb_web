@@ -21,13 +21,7 @@ class BankController extends Controller
                       ->first();    
                  // echo $product_query->Bank_Id;
 
-
-
-      // $getQuery=DB::table('bank_product_web_intrest')
-      //  ->select('bank_id','product_id','amt_from','amt_to','roi','roi_type')
-      //  // ->join('bank_product_web','bank_product_web_intrest.bank_id','=' 'bank_product_web.bank_id')
-      //  ->where('Bank_Id','=',$product_query->Bank_Id)
-      //  ->get();
+        $data['product'] =$product;
 
         $getQuery=DB::table('bank_product_web_intrest')
             ->join('bank_product_web', 'bank_product_web_intrest.bank_id', '=', 'bank_product_web.Bank_id')

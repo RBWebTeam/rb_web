@@ -23,15 +23,15 @@ Route::get('widget','LoanController@car_loan');
 Route::get('autocomplete',array('as'=>'autocomplete','uses'=>'AutoCompleteController@index'));
 Route::get('searchajax',array('as'=>'searchajax','uses'=>'AutoCompleteController@autoComplete'));	
 
-Route::post('personal-loan-submit','FormController@p_loan_submit');
+Route::post('loan-submit','FormController@p_loan_submit');
 
 Route::get('apply-car-loan','LoanController@apply_car_loan');
 Route::get('apply-business-loan','LoanController@apply_business_loan');
 
 //Route::get('home-loans/{id}', 'HomeController@footercontent');
-Route::get('personal-loans/{id}', 'HomeController@footercontent');
-Route::get('sme-loans/{id}', 'HomeController@footercontent');
-Route::get('business-loans/{id}', 'HomeController@footercontent');
+//Route::get('personal-loans/{id}', 'HomeController@footercontent');
+//Route::get('sme-loans/{id}', 'HomeController@footercontent');
+//Route::getallheaders(oid)t('business-loans/{id}', 'HomeController@footercontent');
 
 Route::post('otp','FormController@otp');
 Route::post('otp_verify','FormController@otp_verify');
@@ -58,4 +58,7 @@ Route::get('get-loan/{loan}','ApiController@compareLoan');
 Route::get('check_emi','CompareController@emi2');
 Route::post('emi_cal','CompareController@emi_cal');
 Route::get('loan-details/{product}/{bank}','BankController@home_loanBank');
+Route::get('switch_me','CompareController@switchme');
+Route::post('switch_cal','CompareController@switch_cal');
+
 

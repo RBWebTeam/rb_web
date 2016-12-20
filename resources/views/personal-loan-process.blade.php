@@ -2,7 +2,7 @@
 
     <!--- liza Step First   - -->
 	    <div class="container" id='elem'>
-	    <form name='personal_loan_process_form' id='personal_loan_process_form' action={{URL::to('personal-loan-submit')}} method="POST">
+	    <form name='personal_loan_process_form' id='personal_loan_process_form' action={{URL::to('loan-submit')}} method="POST">
 	    	  {{ csrf_field() }}
               <?php $loan_name="Personal";?>
 			@if (isset($sme))
@@ -14,7 +14,7 @@
 		<div class="liza col-md-8" id="step-1">
 
                         
-		   <div class="col-md-12 text-center"><h4>Apply for an Easy <?php echo $loan;?> Loan in 30 seconds</h4></div>
+		   <div class="col-md-12 text-center"><h4>Apply for an Easy <?php echo $loan_name;?> Loan in 30 seconds</h4></div>
 		   <p class="text-center">Step 1 of 3</p>
 
 		   

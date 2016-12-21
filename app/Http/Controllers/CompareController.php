@@ -50,7 +50,8 @@ class CompareController extends Controller
          //     echo "<br>";
          // }
    
-      return view('emi/switch_me');
+      // return view('emi/switch_me');
+            return view('emi/switch_me',['query'=>$query]);
     }
 
     public function switch_cal(Request $req){

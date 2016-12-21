@@ -183,6 +183,48 @@
   </table>
 </div>
 
+
+<!-- <div class="container">
+   <div class="row">
+     <div class="col-md-12 pad11">
+    
+    <div class="">
+    <table width="100%" border="1" class="tbl pad1">
+  <tr>
+   <!--  <td>Your  Loan Search for <b>5 Lakhs</b> Loan</td>   -->
+</table>
+</div>
+
+ @foreach($query as  $key=>$value )
+ <div><br>
+    <!-- <div class="table-responsive"> -->
+  <table width="100%" border="1" class="tbl">
+   
+  
+
+  <tr>
+    <td width="16%" class="upper">Bank Name</td>
+    <td width="16%" class="upper">Rate Of Interest</td>
+    <td width="18%" class="upper">Drop in Interest</td>
+    <td width="18%" class="upper">Loan EMI</td>
+    <td width="18%" class="upper">New Loan EMI</td>
+    <td width="18%" class="upper">Savings</td>
+  </tr>
+
+  <tr>
+    <td>{{$value->Bank_Name}}</td>
+    <td>{{$value->roi}}</td> 
+    <td>{{$value->roi}}</td> 
+    <td>{{$value->roi}}</td> 
+    <td>{{$value->roi}}</td> 
+    <td>{{$value->roi}}</td> 
+  </table>
+
+</div>
+@endforeach
+
+</div></div></div></div>
+
 @include('layout.footer')
 @include('layout.script')
 

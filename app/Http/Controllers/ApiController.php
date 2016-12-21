@@ -37,6 +37,7 @@ class ApiController extends Controller
 
 	public function compare(Request $req){
 		//API to get bank quote
+
 		$req_all= implode(',',$req->all());
 		$log=DB::table('api_log')
 			 ->insertGetId(['api_name'=>'GetHomeLoanQuotes',
@@ -77,6 +78,7 @@ class ApiController extends Controller
 			'called_at'=>date("Y-m-d H:i:s"),
 			'status'=>'pending'
 			]);
+
 
 		$data=DB::select('call  usp_get_bank_quot ("'.$req['PropertyCost'].'","'.$req['LoanTenure'].'","'.$req['LoanRequired'].'","'.$req['ApplicantGender'].'","'.$req['ApplicantIncome'].'","'.$req['ApplicantObligations'].'","'.$req['ApplicantDOB'].'","'.$req['CoApplicantYes'].'","'.$req['CoApplicantIncome'].'","'.$req['CoApplicantObligations'].'","'.$req['Turnover'].'","'.$req['ProfitAfterTax'].'","'.$req['Depreciation'].'","'.$req['DirectorRemuneration'].'","'.$req['CoApplicantTurnover'].'","'.$req['CoApplicantProfitAfterTax'].'","'.$req['CoApplicantDepreciation'].'","'.$req['CoApplicantDirectorRemuneration'].'","'.$req['ApplicantSource'].'")');
 

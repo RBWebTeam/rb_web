@@ -305,5 +305,5 @@ Applicants should be above 24 years of age at the time of Axis Limited home loan
 	</div>
 	
 	
-	@include('layout.footer')
+@include('layout.footer')
 @include('layout.script')

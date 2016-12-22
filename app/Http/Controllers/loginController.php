@@ -55,7 +55,7 @@ class loginController extends Controller
                $query->email=$req->email;
                $query->contact=$req->contact;
                $query->password=md5($req->password);
-               $query->created_at=1; 	
+               $query->created_at=date("Y-m-d H:i:s"); 	
                $query->save();
            }else{
           

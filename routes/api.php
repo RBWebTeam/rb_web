@@ -18,6 +18,8 @@ Route::get('/user', function (Request $request) {
 })->middleware('auth:api');
 
 Route::post('comman-api','ApiController@comman');
+Route::post('compare-personal-loan','ApiController@comapre_personal_loan');
 Route::post('get-loans','ApiController@GetHomeLoanQuotes');
 Route::post('test','ApiController@test');
 Route::post('compare-api','ApiController@compare');
+Route::post('compare-test','ApiController@compare_test');

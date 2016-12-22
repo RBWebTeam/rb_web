@@ -106,6 +106,9 @@ document.getElementById('login').style.display="block";
 								</li>
 							</ul>
 							</li>
+
+                          	 <li><?php echo Session::get('name');?></li>
+                        
 						<?php }else{
 							?>
 						<!-- 	<li class="user-ic dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle"><i class="icon-user uicon hidden-xs hidden-sm"></i><span class="hidden-lg hidden-md">Login</span></a>
@@ -120,8 +123,7 @@ document.getElementById('login').style.display="block";
 
 							</ul>
 					</li>
-
-                        <?php }?>
+                         <?php }	?>
 						
                         <!--- <li class="con-no">1800-267-629-6</li> - -->
 					</ul>

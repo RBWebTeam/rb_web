@@ -55,8 +55,19 @@ class loginController extends Controller
                $query->email=$req->email;
                $query->contact=$req->contact;
                $query->password=md5($req->password);
-               $query->created_at=1; 	
-               $query->save();
+               $query->created_at=date('Y-m-d H:i:s');
+               if($query->save()) {
+                     
+               	      $req->session()->put('email',$query->email);
+		          	  $req->session()->put('contact',$query->contact);
+		              $req->session()->put('user_id',$query->id);
+		              $req->session()->put('name',$query->username);
+		              $req->session()->put('is_login',1);
+		              $error="3";
+		              echo $error;
+    }
+
+                     
            }else{
           
               $error="1";

@@ -374,6 +374,7 @@ $(document).ready(function(){
 
        if(form=="login_form"){
 
+
          if(! $form.valid()){
          }else{
              
@@ -409,8 +410,7 @@ $(document).ready(function(){
                url: "{{URL::to('registration')}}",
                data : $('#'+form).serialize(),
                success: function(msg){
-
-                   
+                
                 if(msg=='1'){
                   $("#registration1").show();
                   $form.show();
@@ -419,10 +419,13 @@ $(document).ready(function(){
                   $("#registration1").show();
                   $form.show();
                   $("#erroremail").text("Email already exist in our database");
+                }else if(msg=="3"){
+                 window.location.href ='http://localhost:8000/';
+
                 }else{
                  
-                   $form.hide();
-                   $('.msg').show();
+                  // $form.hide();
+                  // $('.msg').show();
                 }
                 //console.log(msg);
                }  

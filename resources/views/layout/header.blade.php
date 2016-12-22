@@ -30,6 +30,8 @@
 	</head>
 	<body>
 
+@include('layout.modal')
+	
 	<!-- Side bar -->
 	<div class="arrow-don">Hi &nbsp;<i class="icon-hand-stop-o"></i></div>
     <div class="sidebar" style="display:none;">
@@ -93,8 +95,20 @@
 							</li>
 						<?php }else{
 							?>
-							<li class="user-ic dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle"><i class="icon-user uicon hidden-xs hidden-sm"></i><span class="hidden-lg hidden-md">Login</span></a>
-							</li>
+						<!-- 	<li class="user-ic dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle"><i class="icon-user uicon hidden-xs hidden-sm"></i><span class="hidden-lg hidden-md">Login</span></a>
+							</li> -->
+
+
+					<li class="user-ic dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" data-target="#"> <i class="icon-user uicon hidden-xs hidden-sm"></i><span class="hidden-lg hidden-md">Login</span></a>
+						 
+						   <ul class="dropdown-menu" style="di">
+						    <li>
+							<a href="#" data-toggle="modal" data-target="#log_popup">Sign in</a>
+
+							</ul>
+					</li>
+
+
 						<?php }
 						?>
 						
@@ -104,4 +118,159 @@
 			</div>
 		</div>
 	</header>
+
+
+
+
+
+
 	<!--Header End -->
+<script type = "text/javascript" 
+         src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js">
+         	
+ </script>
+
+
+  <!--  Durga pratap script login and registration -->
+<script>
+ 
+ function registration(){
+         document.getElementById('login').style.display="none";
+      document.getElementById('registration1').style.display="block";
+
+ }
+  
+//  var flag=0;
+// function passwordf(){
+
+//    var pas=document.getElementById("password").value;
+//    if(pas.length>5){
+//      document.getElementById("errors").innerHTML="right";
+//    }else{
+//    	document.getElementById("errors").innerHTML="The password must be at least 6 characters";
+//    }
+// }
+
+
+// function confirmp(){
+        
+//           var pas=document.getElementById("password").value;
+//           var cpas=document.getElementById("password_confirm").value;
+
+//             	  if(pas.length>5 && cpas.length>5){
+//            if(pas==cpas){
+//            	  document.getElementById("submit_btn").style.display="block";	
+//            }else{
+//            	   document.getElementById("errors").innerHTML="not match";
+//            	    flag=1;
+//            }
+//        }else{
+// document.getElementById("errors").innerHTML="The password must be at least 6 characters";
+//  flag=1;
+
+//         }
+
+// }
+
+// function validateForm(){
+// 	console.log("form");
+//  flag=0;
+// passwordf();
+// confirmp();
+// alert(flag);
+
+
+//    if(flag==1)
+//       return false;
+//         else
+//          return true;
+        
+
+// }
+
+
+  $(document).ready(function(){
+
+     $("#login_").click(function(){
+       var emails=$("#emails").val(); 
+       var login_pass=$("#login_pass").val(); 
+       var datring   =$("#_token").val(); 
+
+           $.ajax({
+               type:'POST',
+               url:'{{url("login")}}',
+               dataType:'json',
+               data: {_token :datring,emails:emails,login_pass:login_pass},
+               success:function(data){
+            
+                  var numb = data.data;
+                  var numb1 = data.data1;
+                    
+                 // $("#msg").html(numb);	
+               //  alert(numb1);
+
+
+                         
+               }
+            });
+              
+          
+     }); 
+     
+
+    
+
+//     $("#register_form").click(function(){
+
+//        var firstName=$("#firstName").val(); 
+//        var email=$("#email").val(); 
+//        var password=$("#password").val(); 
+//        var password_confirm=$("#password_confirm").val(); 
+//        var datring   =$("#_token").val(); 
+
+
+// var re =/[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,4}/igm;
+// if (email== '' || !re.test(email)){
+//     alert('Please enter a valid email address.');
+//     $("#emailerror").html("Please enter a valid email address");
+//     return false;
+// }else{
+           
+//            if(password.length>6 && password==password_confirm){
+           
+//           $.ajax({
+//                type:'POST',
+//                url:'{{url("registration")}}',
+//               // dataType:'json',
+//              data: {_token :datring,firstName:firstName,email:email,password:password},
+//                success:function(data){
+//                  var numb = data;
+                  
+
+
+                         
+//                }
+//             });
+
+//       }else{
+
+//            $("#msgreg").html("not match");
+//       }
+
+//   }
+
+//     });
+
+
+  });
+
+</script> 
+
+
+
+
+
+
+
+
+

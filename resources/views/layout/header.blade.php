@@ -29,7 +29,22 @@
 	<!-- <link rel="manifest" href="{{URL::to('extension/manifest.json')}}"> -->
 	</head>
 	<body>
+@include('layout.modal')
+<script>
+ function registration(){
+         document.getElementById('login').style.display="none";
+        document.getElementById('registration1').style.display="block";
 
+ }
+
+ function backf(){
+
+document.getElementById('login').style.display="block";
+ document.getElementById('registration1').style.display="none";
+
+ }
+</script>
+	
 	<!-- Side bar -->
 	<div class="arrow-don">Hi &nbsp;<i class="icon-hand-stop-o"></i></div>
     <div class="sidebar" style="display:none;">
@@ -93,10 +108,20 @@
 							</li>
 						<?php }else{
 							?>
-							<li class="user-ic dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle"><i class="icon-user uicon hidden-xs hidden-sm"></i><span class="hidden-lg hidden-md">Login</span></a>
-							</li>
-						<?php }
-						?>
+						<!-- 	<li class="user-ic dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle"><i class="icon-user uicon hidden-xs hidden-sm"></i><span class="hidden-lg hidden-md">Login</span></a>
+							</li> -->
+
+
+					<li class="user-ic dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" data-target="#"> <i class="icon-user uicon hidden-xs hidden-sm"></i><span class="hidden-lg hidden-md">Login</span></a>
+						 
+						   <ul class="dropdown-menu" >
+						    <li>
+							<a href="#" data-toggle="modal" data-target="#log_popup">Sign in</a>
+
+							</ul>
+					</li>
+
+                        <?php }?>
 						
                         <!--- <li class="con-no">1800-267-629-6</li> - -->
 					</ul>
@@ -104,4 +129,12 @@
 			</div>
 		</div>
 	</header>
-	<!--Header End -->
+
+
+
+
+
+
+
+
+

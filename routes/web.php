@@ -42,7 +42,8 @@ Route::get('logout','HomeController@logout');
 Route::get('apply-sme-loan','LoanController@smeLoan');
 Route::get('apply-home-loan','LoanController@apply_home_loan');
 Route::get('apply-loan-against-property','LoanController@apply_loan_against_property');
-
+Route::post('login','loginController@login');
+Route::post('registration','loginController@register_form');
 
 Route::post('recording','recording\recordingController@recording');
 Route::get('recording/show','recording\recordingController@show');
@@ -50,7 +51,7 @@ Route::get('recording/show','recording\recordingController@show');
 /* API routes to be written here */ 
 
 Route::get('api','ApiController@GetLAPQuotes');
-Route::get('get-loan/{loan}','ApiController@compareLoan');
+Route::get('get-loan/{loan}','BankController@compareLoan');
 
 // Route::get('api','LoanQuatesController@GetHomeLoanQuotes');
 

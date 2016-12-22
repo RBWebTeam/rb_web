@@ -346,6 +346,8 @@ $(document).ready(function(){
     event.preventDefault();
     var form=$(this).closest("form").attr('id');
     //console.log(form);return false;
+  
+
     $form=$('#'+form);
     if(! $form.valid()){
       return false;
@@ -366,6 +368,72 @@ $(document).ready(function(){
                }  
                }); 
     }
+
+
+       // ...login...dp..
+
+       if(form=="login_form"){
+
+         if(! $form.valid()){
+         }else{
+             
+             $.ajax({  
+               type: "POST",  
+               url: "{{URL::to('login')}}",
+               data : $('#'+form).serialize(),
+               success: function(msg){
+                     $("#login_form").show();
+                     if(msg=="email"){
+            $("#msg").text("Your email or password is incorrect. please try again?");               
+                     }else if(msg=="right"){
+                       window.location.href ='http://localhost:8000/';
+                     }
+
+
+               }  
+           }); 
+
+
+   }
+}
+
+ 
+   // ...registration_form...dp..
+       if(form=="registration_form"){
+         if(! $form.valid()){
+         }else{
+
+ 
+          $.ajax({  
+               type: "POST",  
+               url: "{{URL::to('registration')}}",
+               data : $('#'+form).serialize(),
+               success: function(msg){
+
+                   
+                if(msg=='1'){
+                  $("#registration1").show();
+                  $form.show();
+                  $("#errors").text("password and confirm password does not match");
+                 }else if(msg=="2"){
+                  $("#registration1").show();
+                  $form.show();
+                  $("#erroremail").text("Email already exist in our database");
+                }else{
+                 
+                   $form.hide();
+                   $('.msg').show();
+                }
+                //console.log(msg);
+               }  
+               }); 
+
+         }
+       
+       }
+
+       //end by dp
+
   });
 });
 
@@ -649,6 +717,8 @@ function emibreakup(E,P,r,n)
 <!-- emi scripts end -->
 
 
+
+
 	</body>
 </html>
 <!-- login Start-->
@@ -732,3 +802,48 @@ function emibreakup(E,P,r,n)
 <!-- otp end-->
 
 @include('layout.modal')
+
+
+<!-- by dp facebook login-->
+<style type="text/css">body{
+    color: #888888;
+    font-family: 'Bree Serif',serif;
+    font-size: 16px;
+    min-height: 2000px;
+}
+
+.login_modal_footer{margin-top:5px;}
+.login_modal_header .modal-title {text-align: center;font-family:'Philosopher',sans-serif; }
+.form-group{position: relative;}
+.form-group .login-field-icon {
+    font-size: 20px;
+    position: absolute;
+    right: 15px;
+    top: 3px;
+    transition: all 0.25s ease 0s;
+    padding-top: 2%;
+}
+.login-modal{
+    width:100%;
+    padding-bottom:20px;
+}
+
+.modal-register-btn{margin: 4% 33% 2% 33% ;width:100%;}
+.login-modal input{height:40px; box-shadow: none; border:1px solid #ddd;}
+.modal-body-left{float:left; width:50%; padding-right:4%; border-right:4px solid #ddd;}
+.modal-body-right{float:right; width:47%;}
+.login-link{padding:0 20%;}
+.modal-social-icons{padding:0 10%;}
+.facebook, .twitter, .google, .linkedin {width:100%;height:40px; padding-top:2%; margin-top:2%;}
+.modal-icons{margin-left: -10px; margin-right: 20px;}
+.google, .google:hover{background-color:#dd4b39;border:2px solid #dd4b39;color:#fff;}
+.twitter, .twitter:hover{ background-color: #00aced; border:2px solid #00aced;color: #fff;}
+.facebook, .facebook:hover{background-color: #3b5999; border:2px solid #3b5999;color:#fff;}
+.linkedin, .linkedin:hover{background-color: #007bb6; border: 2px solid #007bb6; color:#fff;}
+#social-icons-conatainer{position: relative;}
+#center-line{position: absolute;  right: 265.7px;top: 80px;background:#ddd;  border: 4px solid #DDDDDD;border-radius: 20px;}
+.modal-login-btn{width:100%;height:40px; margin-bottom:10px;}
+#modal-launcher{margin: 30% 0 0 30%; }
+
+
+  </style>

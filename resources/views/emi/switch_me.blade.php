@@ -1,6 +1,6 @@
 @include('layout.header')
 <style>
-  .rw-hei {height:550px;border: 2px dashed #ccc;border-right:none;}
+  .rw-hei {height:590px;border: 2px dashed #ccc;border-right:none;}
   .brd-rgt {border-right: 2px dashed #ccc;}
   body {color:#666;}
   .tbl-clr {color:#fff; }
@@ -130,18 +130,21 @@
      <center>
        <p>Loan EMI :<i class="fa fa-caret-right" style="font-size:20px;" aria-hidden="true"></i></p>
        <h2 class="em1">₹ <b><span id="emi">0</span></b></h2>
-       <!-- <p>Total Payable Interest :</p>
+      <!--  <p>Total Payable Interest :</p>
        <h2 class="em2">₹ <b><span id="emi1">0</span></b></h2>
        <p>Total Payment(Principal + Int) :</p>
        <h2 class="em3">₹ <b><span id="emi2">0</span></b></h2> -->
        <p>Drop_EMI : <i class="fa fa-caret-down" style="font-size:20px;color:lightgreen;" aria-hidden="true"></i> </p>
-       <h2 class="em2">₹ <b><span id="emi1">0</span></b></h2>
+       <h2 class="em5">₹ <b><span id="emi3">0</span></b></h2>
        <p>New Loan EMI : <i class="fa fa-caret-down" style="font-size:20px;color:lightgreen;" aria-hidden="true"></i></p>
-       <h2 class="em3">₹ <b><span id="emi2">0</span></b></h2>
+       <h2 class="em6">₹ <b><span id="emi4">0</span></b></h2>
         <p>Drop-in Interest Rate: <i class="fa fa-caret-down" style="font-size:20px;color:lightgreen;" aria-hidden="true"></i></p>
-       <h2 class="em4"> <b><span id="emi3">0</span>%</b></h2>
+       <h2 class="em7"> <b><span id="emi5">0</span>%</b></h2>
        <p><h6>Your <mark style="color:red">Savings</mark> through reduced Interest: <i class="fa fa-credit-card" style="font-size:18px;color:"></i></h6></p>
-       <h2 class="em5">₹ <b><span id="emi4">0</span></b></h2>
+       <h2 class="em8">₹ <b><span id="emi6">0</span></b></h2>
+       <p><h2>Query:</h2></p>
+       <p><h2 class="em8">₹ <b><span id="emi7">0</span></b></h2></p>
+       
 
 
        <!-- <div id="b"></div> -->
@@ -158,72 +161,32 @@
 </div>
 </div>
 
-
 <div class="container">
+  
 
-  <h2 class="text-center">Savings Table:</h2>
-    <table class="table table-bordered table-striped" id="emipaymenttable">
+  <h2 class="text-center">Savings:</h2>
+  <table class="table table-bordered table-striped" id="emipaymenttable">
 
     <thead>
       <tr class="tbl-clr">
-        <th bgcolor="#c2da6b" class="col-xs-3 col-md-1" id="bankheader">Bank Name</th>
+        <th bgcolor="#c2da6b" class="col-xs-3 col-md-1" id="yearheader">Year</th>
 
-        <th bgcolor="#4A9ACF" class="col-sm-3 hidden-xs" id="roiheader"><center>Rate Of Interest</center></th>
-        <th bgcolor="D8BC31" class="col-xs-4 col-sm-3" id="dropin_intceheader"><center>Drop in Interest</center></th>
-        <th bgcolor="2DC6D1" class="col-sm-3 hidden-xs" id="emiheader"><center>Loan Emi</center></th>
-        <th bgcolor="BF5850" class="col-sm-3 hidden-xs" id="new_emiheader"><center>New Loan Emi</center></th>
-        <th bgcolor="D8BC31" class="col-xs-4 col-sm-3" id="savings"><center>Savings</center></th>
-        </tr>
+        <th bgcolor="#4A9ACF" class="col-sm-3 hidden-xs" id="principalheader"><center>Principal</center><center>(A)</center></th>
+        
+        <th bgcolor="2DC6D1" class="col-sm-3 hidden-xs" id="interestheader"><center>Interest</center><center>(B)</center></th>
+        <th bgcolor="BF5850" class="col-sm-3 hidden-xs" id="totalheader"><center>Total Payment</center><center>(A+B)</center></th>
+        <th bgcolor="D8BC31" class="col-xs-4 col-sm-3" id="balanceheader"><center>Balance</center></th>
+      </tr>
     </thead>
     <tbody>
-      
     </tbody>
-
-
   </table>
+  <div id="test"></div>
 </div>
 
 
-<!-- <div class="container">
-   <div class="row">
-     <div class="col-md-12 pad11">
-    
-    <div class="">
-    <table width="100%" border="1" class="tbl pad1">
-  <tr>
-   <!--  <td>Your  Loan Search for <b>5 Lakhs</b> Loan</td>   -->
-</table>
-</div>
 
- @foreach($query as  $key=>$value )
- <div><br>
-    <!-- <div class="table-responsive"> -->
-  <table width="100%" border="1" class="tbl">
-   
-  
 
-  <tr>
-    <td width="16%" class="upper">Bank Name</td>
-    <td width="16%" class="upper">Rate Of Interest</td>
-    <td width="18%" class="upper">Drop in Interest</td>
-    <td width="18%" class="upper">Loan EMI</td>
-    <td width="18%" class="upper">New Loan EMI</td>
-    <td width="18%" class="upper">Savings</td>
-  </tr>
-
-  <tr>
-    <td>{{$value->Bank_Name}}</td>
-    <td>{{$value->roi}}</td> 
-    <td>{{$value->roi}}</td> 
-    <td>{{$value->roi}}</td> 
-    <td>{{$value->roi}}</td> 
-    <td>{{$value->roi}}</td> 
-  </table>
-
-</div>
-@endforeach
-
-</div></div></div></div>
 
 @include('layout.footer')
 @include('layout.script')
@@ -234,12 +197,14 @@
     $("#Month").change(function(){
       var amt = $("#loanterm").val();
       var month = amt *12;
+      
       //console.log(month);
       $('#loanterm').val(month);
     });
     $("#Year").change(function(){
       var amt1 = $("#loanterm").val();
       var yr = amt1 / 12;
+      //console.log(yr);
       //console.log(year);
       $('#loanterm').val(yr);
     });
@@ -268,51 +233,55 @@
        var v_token = "{{csrf_token()}}";
       $.ajax({  
                type: "POST",  
-               url: "{{URL::to('switch_cal')}}",
+               url: "{{URL::to('calculation')}}",
                dataType:'json',
                data : { 'loanamount': loanamount , 'loaninterest': loaninterest ,'loanterm' :loanterm,'_token': v_token},
                // 'bank':bank},
                success: function(msg){
-                console.log(msg);
-               
+                //console.log(msg);
 
-                //emibreakup(msg.amount,loanamount,loaninterest,loanterm);
-                 var numb = msg.amount.toFixed();
-                  $('#emi').empty().append(numb);
-                  // var numb1 = msg.ttl_pay.toFixed();
-                  // $('#emi1').empty().append(numb1);
-                  //  var numb2 = msg.ttl_payment.toFixed();
-                  // $('#emi2').empty().append(numb2);
-                  var numb1 = msg.drop_emi.toFixed();
-                  $('#emi1').empty().append(numb1);
-                  var numb2 = msg.new_amount.toFixed();
-                  $('#emi2').empty().append(numb2);
-                  // var numb3 = msg.new_interest.toFixed();
-                  $('#emi3').empty().append(msg.drop_in_int);
-                  var numb3 = msg.savings.toFixed();
-                  $('#emi4').empty().append(numb3);
+                  //  var numb = msg.amount.toFixed();
+                  // $('#emi').empty().append(numb);
+                  // // $('#emi1').empty().append(msg.total);
+                  // // $('#emi2').empty().append(msg.ttl_payment);
+                  //  var numb1 = msg.drop_emi.toFixed();
+                  // $('#emi3').empty().append(numb1);
 
+                  //  var numb2 = msg.new_amount.toFixed();
+                  // $('#emi4').empty().append(numb2);
 
-                  //  var b = msg.bank;
-                    
+                  //  //var numb3 = msg.drop_in_int.toFixed();
+                  // $('#emi5').empty().append(msg.drop_in_int);
 
-                   // var dictionary = '{"SBI":"9.8","HDFC":"8.2","ICIC":"12.4","BOB":"11.5"}';
+                  // var numb4 = msg.savings.toFixed();
+                  // $('#emi6').empty().append(numb4);
 
-//  var result=JSON.parse(msg.bank);
+                  // //console.log(numb4);
 
-//  for(var k in result) {
-//    //console.log(k, result[k]);
-
-//     $('#b').append(k, result[k]+"<BR>");
-// }
-                  
-              
+                  // $('#emi7').empty().append(msg.query[0].roi);
+                  //console.log(msg.query);
+                  //var html ="";
+                  // $.each(msg.query, function(index, value) {
+                  //   var html = "<h1>"+value.Bank_Name+"</h1>";
+                  //   $("#test").empty().append(html);
+                  // });
+                  //$("#test").empty().append(msg);
+                  if(msg.success == true) {
+              //user_jobs div defined on page
+              $('#test').html(msg.html);
+            } else {
+              console.log("false");
+            }
 
                   $("#1").show();
-                  $("#2").show();
-                  $("#3").show();
+                  // $("#2").show();
+                  // $("#3").show();
                   $("#4").show();
                   $("#5").show();
+                  $("#6").show();
+                  $("#7").show();
+                   $("#8").show();
+                  
                    
                }  
                }); 

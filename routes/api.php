@@ -21,3 +21,4 @@ Route::post('comman-api','ApiController@comman');
 Route::post('get-loans','ApiController@GetHomeLoanQuotes');
 Route::post('test','ApiController@test');
 Route::post('compare-api','ApiController@compare');
+Route::post('compare-test','ApiController@compare_test');

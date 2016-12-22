@@ -7,8 +7,53 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use DB;
 use Response;
+use App\bank_quote_api_request;
 class ApiController extends Controller
 {
+	///start
+	public function compare_test(Request $req){
+		//API to get bank quote
+		$request=$req;
+		$req_all= implode(',',$req->all());
+		$log=DB::table('api_log')
+		->insertGetId(['api_name'=>'GetHomeLoanQuotes_test',
+			'status'=>'Pending',
+			'request'=>$req_all,			 		   
+			'error'=>'0',
+			'created_at'=>date("Y-m-d H:i:s"),
+			'updated_at'=>date("Y-m-d H:i:s")
+
+			]);
+		
+		try{
+			$data=DB::select('call  usp_get_bank_quot ("'.$req['PropertyCost'].'","'.$req['LoanTenure'].'","'.$req['LoanRequired'].'","'.$req['ApplicantGender'].'","'.$req['ApplicantIncome'].'","'.$req['ApplicantObligations'].'","'.$req['ApplicantDOB'].'","'.$req['CoApplicantYes'].'","'.$req['CoApplicantIncome'].'","'.$req['CoApplicantObligations'].'","'.$req['Turnover'].'","'.$req['ProfitAfterTax'].'","'.$req['Depreciation'].'","'.$req['DirectorRemuneration'].'","'.$req['CoApplicantTurnover'].'","'.$req['CoApplicantProfitAfterTax'].'","'.$req['CoApplicantDepreciation'].'","'.$req['CoApplicantDirectorRemuneration'].'","'.$req['ApplicantSource'].'")');
+		}catch (Exception $e) {
+
+			echo 'Caught exception: '.  $e->getMessage(). "\n";
+			die("exception");
+		}
+		$save=new bank_quote_api_request();	
+		 $id=$save->store($request);
+		if($data){
+			$status="Success";
+
+		}else{
+			$status="Failure";
+		}
+
+		$log_update=DB::table('api_log')
+		->where('id','=',$log)
+		->update(['status'=>$status,'updated_at'=>date("Y-m-d H:i:s")]);
+
+		$status_update=DB::table('bank_quote_api_request')
+		->where('ID','=',$id)
+		->update(['status'=>$status]);
+		
+		return Response::json(array(
+			'data' => $data,
+			));
+	}
+	///test end
 	public function comman(Request $req){
 		//print "<pre>";
 		//print_r($req->all());
@@ -30,99 +75,64 @@ class ApiController extends Controller
 		}
 		//print_r($data);
 		return Response::json(array(
-                            'data' => $data,
-                        ));
+			'data' => $data,
+			));
 	}
-
-
 	public function compare(Request $req){
 		//API to get bank quote
-
 		$req_all= implode(',',$req->all());
 		$log=DB::table('api_log')
-			 ->insertGetId(['api_name'=>'GetHomeLoanQuotes',
-			 		   'status'=>'Pending',
-			 		   'request'=>$req_all,			 		   
-			 		   'error'=>'0',
-			 		   'created_at'=>date("Y-m-d H:i:s"),
-			 		   'updated_at'=>date("Y-m-d H:i:s")
+		->insertGetId(['api_name'=>'GetHomeLoanQuotes',
+			'status'=>'Pending',
+			'request'=>$req_all,			 		   
+			'error'=>'0',
+			'created_at'=>date("Y-m-d H:i:s"),
+			'updated_at'=>date("Y-m-d H:i:s")
 
-			 	]);
-		$insert=DB::table('bank_quote_api_request')->insertGetId([
-			'PropertyID' =>$req['PropertyID'],
-			'PropertyCost' =>$req['PropertyCost'],
-			'LoanTenure' =>$req['LoanTenure'],
-			'LoanRequired' =>$req['LoanRequired'],
-			'City' =>$req['City'],
-			'ApplicantNme' =>$req['ApplicantNme'],
-			'ApplicantGender'=>$req['ApplicantGender'],
-			'ApplicantSource' =>$req['ApplicantSource'],
-			'ApplicantIncome' =>$req['ApplicantIncome'],
-			'ApplicantObligations'=>$req['ApplicantObligations'],
-			'ApplicantDOB' =>$req['ApplicantDOB'],
-			'CoApplicantYes' =>$req['CoApplicantYes'],
-			'CoApplicantGender' =>$req['CoApplicantGender'],
-			'CoApplicantSource' =>$req['CoApplicantSource'],
-			'CoApplicantIncome' =>$req['CoApplicantIncome'],
-			'CoApplicantObligations'=>$req['CoApplicantObligations'],
-			'CoApplicantDOB' =>$req['CoApplicantDOB'],
-			'Turnover' =>$req['Turnover'],
-			'ProfitAfterTax' =>$req['ProfitAfterTax'],
-			'Depreciation'=>$req['Depreciation'],
-			'DirectorRemuneration' =>$req['DirectorRemuneration'],
-			'CoApplicantTurnover' =>$req['CoApplicantTurnover'],
-			'CoApplicantProfitAfterTax' =>$req['CoApplicantProfitAfterTax'],
-			'CoApplicantDepreciation' =>$req['CoApplicantDepreciation'],
-			'CoApplicantDirectorRemuneration' =>$req['CoApplicantDirectorRemuneration'],	
-			'brokerID' =>$req['brokerID'],
-			'called_at'=>date("Y-m-d H:i:s"),
-			'status'=>'pending'
 			]);
 
+		try{
+			$data=DB::select('call  usp_get_bank_quot ("'.$req['PropertyCost'].'","'.$req['LoanTenure'].'","'.$req['LoanRequired'].'","'.$req['ApplicantGender'].'","'.$req['ApplicantIncome'].'","'.$req['ApplicantObligations'].'","'.$req['ApplicantDOB'].'","'.$req['CoApplicantYes'].'","'.$req['CoApplicantIncome'].'","'.$req['CoApplicantObligations'].'","'.$req['Turnover'].'","'.$req['ProfitAfterTax'].'","'.$req['Depreciation'].'","'.$req['DirectorRemuneration'].'","'.$req['CoApplicantTurnover'].'","'.$req['CoApplicantProfitAfterTax'].'","'.$req['CoApplicantDepreciation'].'","'.$req['CoApplicantDirectorRemuneration'].'","'.$req['ApplicantSource'].'")');
+		}catch (Exception $e) {
 
-		$data=DB::select('call  usp_get_bank_quot ("'.$req['PropertyCost'].'","'.$req['LoanTenure'].'","'.$req['LoanRequired'].'","'.$req['ApplicantGender'].'","'.$req['ApplicantIncome'].'","'.$req['ApplicantObligations'].'","'.$req['ApplicantDOB'].'","'.$req['CoApplicantYes'].'","'.$req['CoApplicantIncome'].'","'.$req['CoApplicantObligations'].'","'.$req['Turnover'].'","'.$req['ProfitAfterTax'].'","'.$req['Depreciation'].'","'.$req['DirectorRemuneration'].'","'.$req['CoApplicantTurnover'].'","'.$req['CoApplicantProfitAfterTax'].'","'.$req['CoApplicantDepreciation'].'","'.$req['CoApplicantDirectorRemuneration'].'","'.$req['ApplicantSource'].'")');
-
+			echo 'Caught exception: '.  $e->getMessage(). "\n";
+			die("exception");
+		}
+		
 		if($data){
 			$status="Success";
-		
+
 		}else{
 			$status="Failure";
 		}
 
-			 $status_update=DB::table('bank_quote_api_request')
-			 ->where('ID','=',$insert)
-			 ->update(['status'=>$status]);
+		$log_update=DB::table('api_log')
+		->where('id','=',$log)
+		->update(['status'=>$status,'updated_at'=>date("Y-m-d H:i:s")]);
 
-			 $log_update=DB::table('api_log')
-			 ->where('id','=',$log)
-			 ->update(['status'=>$status,'updated_at'=>date("Y-m-d H:i:s")]);
-
-		//return $insert;
-
-
-		 return Response::json(array(
-                            'data' => $data,
-                        ));
+		return Response::json(array(
+			'data' => $data,
+			));
 	}
 	//by DP
 	public function GetHomeLoanQuotes(Request $req){
-					   $data=DB::table('bank_product')
-								->where('Product_Id','=',$req['PropertyID'])
+		$data=DB::table('bank_product')
+		->where('Product_Id','=',$req['PropertyID'])
 								//->where('PropertyCost','=',$req['PropertyCost'])
-								->where('Max_Tenure','=',$req['LoanTenure'])
-								->where('guarantor_required','=',$req['LoanRequired'])
+		->where('Max_Tenure','=',$req['LoanTenure'])
+		->where('guarantor_required','=',$req['LoanRequired'])
 							//	->where('City','=',$req['City'])
-								->orWhere('Min_Income_Salary','=',$req['ApplicantSource'])
+		->orWhere('Min_Income_Salary','=',$req['ApplicantSource'])
 								//->where('ApplicantIncome','=',$req['ApplicantIncome'])
 							//	->where('ApplicantObligations','=',$req['ApplicantObligations'])
 							//	->where('CoApplicantIncome','=',$req['CoApplicantIncome'])
 							//	->where('CoApplicantObligations','=',$req['CoApplicantObligations'])
-								->get();
-       return Response::json(array(
-                            'data' => $data,
-                        ));
-    }
-    public function test(Request $req){
+		->get();
+		return Response::json(array(
+			'data' => $data,
+			));
+	}
+	public function test(Request $req){
 		$a = $req->all();
 		$jsonText = $a;
 		$myArray = json_decode($jsonText, true);
@@ -130,17 +140,17 @@ class ApiController extends Controller
        // return Response::json(array(
        //                      'data' => $data,
        //                  ));
-    }
+	}
 
 
 
 
 
-    public function compareLoan($loan){
-      
-              $product_query=DB::table('product_master')->select('Product_Id','Product_Name')
-                      ->where('Product_ID','=',$loan)
-                      ->first();    
+	public function compareLoan($loan){
+
+		$product_query=DB::table('product_master')->select('Product_Id','Product_Name')
+		->where('Product_ID','=',$loan)
+		->first();    
 //     echo $product_query->Product_Name;
 // exit;
 
@@ -154,24 +164,24 @@ class ApiController extends Controller
 	// ->take('4')
 	// ->get();
 
-      if($product_query){
+		if($product_query){
 
 
-      $getQuery= DB::table('bank_product_web_intrest')
-    ->join('bank_master', 'bank_master.bank_id', '=', 'bank_product_web_intrest.bank_id')
-    ->join('bank_product_web_pf', 'bank_product_web_pf.product_id', '=', 'bank_product_web_intrest.Product_Id')
-    ->join('bank_product_web', 'bank_product_web.Product_Id', '=', 'bank_product_web_intrest.Product_Id')
-    ->where('bank_product_web_intrest.Product_Id', '=',$loan)
-    ->orderBy('bank_product_web_intrest.roi', 'DESC')
-	->take('4')
-	->get();
-    
-    
+			$getQuery= DB::table('bank_product_web_intrest')
+			->join('bank_master', 'bank_master.bank_id', '=', 'bank_product_web_intrest.bank_id')
+			->join('bank_product_web_pf', 'bank_product_web_pf.product_id', '=', 'bank_product_web_intrest.Product_Id')
+			->join('bank_product_web', 'bank_product_web.Product_Id', '=', 'bank_product_web_intrest.Product_Id')
+			->where('bank_product_web_intrest.Product_Id', '=',$loan)
+			->orderBy('bank_product_web_intrest.roi', 'DESC')
+			->take('4')
+			->get();
 
-  return view('view-loan',['home_loan'=>$product_query->Product_Name,'getQuery'=>$getQuery]);
-}else{
-	echo "wrong";
-}
+
+
+			return view('view-loan',['home_loan'=>$product_query->Product_Name,'getQuery'=>$getQuery]);
+		}else{
+			echo "wrong";
+		}
            // return view('view-loan',['home_loan'=>"home-loan",'getQuery'=>$getQuery,'Product_Name'=>$product_query->Product_Name]);
-    }
+	}
 }

@@ -169,25 +169,35 @@
             <h2 class="modal-title" id="myModalLabel">Login to Your Account</h2>
           </div>
           <div class="modal-body login-modal">
-            <p id="msg"></p>
+            <p id="msg" style="color:#EF6C00;font-size: 12"></p>
             <br/>
             <div class="clearfix"></div>
             <div id='social-icons-conatainer'>
         
-              <div class='modal-body-left'>
-                <div class="form-group">
-                      <input type="text" id="emails" name="emails" placeholder="Enter  Email" value="" class="form-control login-field">
+              <div class='modal-body-left' >
+
+               <form name="login_form" id="login_form"   method="post">
+
+               <div class="form-group">
+                  <input type="text"  name="email_login" placeholder="Enter  Email"  class="form-control login-field" required>
                       <i class="fa fa-user login-field-icon"></i>
-                  </div>
+                 </div>
                      
                     <input type="hidden" id='_token' name="_token" value="{{csrf_token()}}">
                   <div class="form-group">
-                      <input type="password" id="login_pass" name="login_pass" placeholder="Password" value="" class="form-control login-field">
+                      <input type="password" name="login_pass" placeholder="Password"  class="form-control login-field" required>
                       <i class="fa fa-lock login-field-icon"></i>
                   </div>
 
                     
-                  <a href="#" id="login_" class="btn btn-success modal-login-btn">Login</a>
+                 <a id="login_submit" class="btn btn-success modal-login-btn sidebar-submit ">Login</a>
+
+                  <!--  <div>
+                      <a class="btn btn-primary btn-outline with-arrow sidebar-submit" id="registration_submit">Submit<i class="icon-arrow-right"></i></a>
+                  </div> -->
+
+                 </form>
+
                   <a href="#"  class="login-link text-center">Lost your password?</a>
               </div>
         
@@ -223,7 +233,7 @@
           <h4 class="modal-title">Registration</h4>
         </div>
         <div class="modal-body">
-          <form name="registration_form" id="registration_form" action="#"  method="post"  >
+          <form name="registration_form" id="registration_form"   method="post"  >
           {{ csrf_field() }}
 
                <div><fieldset>
@@ -233,6 +243,7 @@
 
           <div><fieldset>
           <input class="newsletter-name" type="email" id="reg_email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" placeholder="email" required>
+          <div id="erroremail"></div>
           </fieldset>                 
           </div>
           
@@ -252,14 +263,20 @@
          <input type="password" class="newsletter-name"  name="password_confirm" id="password_confirm" placeholder="password confirm" >
           </fieldset>
       </div>
-  <button type="submit"  class="btn btn-primary btn-outline with-arrow sidebar-submit" id="registration_submit">Submit<i class="icon-arrow-right"></i></button>
 
-                  <!-- <div>
+
+                  <div>
                       <a class="btn btn-primary btn-outline with-arrow sidebar-submit" id="registration_submit">Submit<i class="icon-arrow-right"></i></a>
-                  </div> -->
+                  </div>
+
+                  <a href="#" onclick="backf()">login</a>
+
             </form>
+
+
+
+
             <div class='msg' style="display: none;"><p>Thanks. We will reach you soon.</p></div>
-            <div class='msg_err' style="display: none;"><p>Ooops. Something went wrong.</p></div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

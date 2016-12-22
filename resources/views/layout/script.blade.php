@@ -368,11 +368,39 @@ $(document).ready(function(){
                }  
                }); 
     }
+
+
+       // ...login...dp..
+
+       if(form=="login_form"){
+
+         if(! $form.valid()){
+         }else{
+             
+             $.ajax({  
+               type: "POST",  
+               url: "{{URL::to('login')}}",
+               data : $('#'+form).serialize(),
+               success: function(msg){
+                     $("#login_form").show();
+                     if(msg=="email"){
+            $("#msg").text("Your email or password is incorrect. please try again?");               
+                     }else if(msg=="right"){
+                       window.location.href ='http://localhost:8000/';
+                     }
+
+
+               }  
+           }); 
+
+
+   }
+}
+
  
    // ...registration_form...dp..
        if(form=="registration_form"){
          if(! $form.valid()){
-
          }else{
 
  
@@ -382,15 +410,19 @@ $(document).ready(function(){
                data : $('#'+form).serialize(),
                success: function(msg){
 
-                alert(msg);
-            
-                if(msg=='true'){
                    
-                  // $form.hide();
-                  // $('.msg').show();
+                if(msg=='1'){
+                  $("#registration1").show();
+                  $form.show();
+                  $("#errors").text("password and confirm password does not match");
+                 }else if(msg=="2"){
+                  $("#registration1").show();
+                  $form.show();
+                  $("#erroremail").text("Email already exist in our database");
                 }else{
-                  // $form.hide();
-                  // $('.msg_err').show();
+                 
+                   $form.hide();
+                   $('.msg').show();
                 }
                 //console.log(msg);
                }  

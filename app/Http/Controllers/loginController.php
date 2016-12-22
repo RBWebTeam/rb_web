@@ -14,38 +14,31 @@ use Illuminate\Support\Facades\Hash;
 class loginController extends Controller
 {
       public function login(Request $request){
-
-
-           $data='';
-        // $request=' ';
-           $query=new registrationModel();
- 
-          $value=$query->where('email','=',$request->emails)->first();
          
-          if($value!=''){     
-          if (Hash::check($request->login_pass, $value->password)) {
+  
+          $query=new registrationModel();
+          $value=$query->where('email','=',$request->email_login)
+          ->where('password','=',md5($request->login_pass))
+          ->first();
+          	if($value!=''){ 
+		          	  $request->session()->put('email',$value->email);
+		          	  $request->session()->put('contact',$value->contact);
+		              $request->session()->put('user_id',$value->id);
+		              $request->session()->put('name',$value->username);
+		              $request->session()->put('is_login',1);
 
-          	    $data="right";
-               
+		             
+
+		          	  $error="right";
+          	     echo $error;
                 }else{
-               	 $data="your email or password is incorrect. please try again";
+               	      $error="email";
+               	 echo $error;
+               	 // Session::flush(); 
                 }
 
 
-           }else{
-
-            	$data="your email or password is incorrect. please try again";
-           }
-
-
-
-     
-return Response::json(array(
-                            'data' =>$data,
-                            
-                        ));
-
-      }
+       }
 
 
       public function register_form(Request $req){
@@ -54,25 +47,25 @@ return Response::json(array(
 
       	 $sel=DB::table("user_registration")->where('email','=',$req->email)->get();
          $count=$sel->count();
-               if($count<0){
+               if($count==0){
                if($req->password==$req->password_confirm){	
-               $query->password=bcrypt($request->password);
                $query=new registrationModel();
+               // $query->password=bcrypt($req->password);
                $query->username=$req->name;
                $query->email=$req->email;
                $query->contact=$req->contact;
-               $query->password=bcrypt($req->password);
+               $query->password=md5($req->password);
                $query->created_at=1; 	
                $query->save();
            }else{
           
-              $error="password and confirm password does not match";
+              $error="1";
               echo $error;
 
            }
                }else{
 
-               	$error="Email already exist in our database";
+               	$error="2";
                	echo $error;
                }
              

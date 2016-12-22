@@ -8,16 +8,11 @@ class bank_quote_api_request extends Model
 {
     //
     protected $table='bank_quote_api_request';
-    protected $fillable = ['PropertyID', 'PropertyCost', 'LoanTenure', 'LoanRequired', 'City','ApplicantNme','ApplicantGender','ApplicantSource','ApplicantIncome','ApplicantObligations','ApplicantDOB','CoApplicantYes','CoApplicantGender','CoApplicantSource','CoApplicantIncome','CoApplicantObligations','CoApplicantDOB','Turnover','ProfitAfterTax','Depreciation','DirectorRemuneration','CoApplicantTurnover','CoApplicantProfitAfterTax','CoApplicantDepreciation','CoApplicantDirectorRemuneration','brokerID','created_at', 'updated_at'];
-
-
+    protected $fillable = ['PropertyID', 'PropertyCost', 'LoanTenure', 'LoanRequired', 'City','ApplicantNme','ApplicantGender','ApplicantSource','ApplicantIncome','ApplicantObligations','ApplicantDOB','CoApplicantYes','CoApplicantGender','CoApplicantSource','CoApplicantIncome','CoApplicantObligations','CoApplicantDOB','Turnover','ProfitAfterTax','Depreciation','DirectorRemuneration','CoApplicantTurnover','CoApplicantProfitAfterTax','CoApplicantDepreciation','CoApplicantDirectorRemuneration','BrokerId','created_at', 'updated_at'];
     public function store(Request $request)
     {
-        // Validate the request...
-     //    print"<pre>"
-    	// print_r($request);exit();
         $table = new bank_quote_api_request();
-
+        //print_r($request->BrokerId);exit();   
         // $table->PropertyID = $request->PropertyID;
         // $table->PropertyCost = $request->PropertyCost;
         //  $table->LoanTenure = $request->LoanTenure;
@@ -45,7 +40,7 @@ class bank_quote_api_request extends Model
         //  $table->CoApplicantDirectorRemuneration    = $request->CoApplicantDirectorRemuneration   ;
         //  $table->brokerID    = $request->brokerID   ;
 
-        $input = $request->all();
+         $input = $request->all();
    		 $id = $table::create($input)->id;
 
    		 return $id;

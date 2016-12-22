@@ -22,6 +22,7 @@ class recordingController extends Controller
 define('UPLOAD_DIR',public_path('/rec/'));
 //define('UPLOAD_DIR', $_SERVER['DOCUMENT_ROOT']."/rec/");
 
+
 $extension="3gpp";
 $file_name="video";
 $img = $req['base64string'];

@@ -45,7 +45,7 @@
   
 <div class="container">
   <div class="row">
-     <div class="col-sm-4 rw-hei" style="background-color:lavender;"><h3 class="emi-cal">Home Loan Transfer Savings  <i class="fa fa-exchange" aria-hidden="true"></i></h3>
+     <div class="col-sm-6 rw-hei brd-rgt" style="background-color:lavender;"><h3 class="emi-cal">Home Loan Transfer Savings  <i class="fa fa-exchange" aria-hidden="true"></i></h3>
      <!-- <i class="fa fa-exchange" aria-hidden="true"></i> -->
     <div class="form-group">
        <label class="control-label" for="Loan Amount">Outstanding Principal:</label>
@@ -79,8 +79,7 @@
     </div>
     <div class="form-group">
        <label class="control-label" for="Current Lender">Current Lender:</label>
-      <!--  <select 
-      <!--    name="bank" id="bank" onblur="myfun()"> --> 
+     
       <select>
        <option value="ADITYA BIRLA FINANCE LIMITED">ADITYA BIRLA FINANCE LIMITED</option>
        <option value="ADITYA-BIRLA HOUSING FINANCIAL LIMITED">ADITYA BIRLA HOUSING FINANCIAL LIMITED</option>
@@ -104,7 +103,7 @@
        <option value="ICICI BANK LIMITED">ICICI BANK LIMITED</option>
        <option value="ICICI BANK">ICICI BANK</option>
        </select>
-      <!--  </label> -->
+    
     </div>
 
 
@@ -121,7 +120,7 @@
     
      <p id="err" style="display:none;">Please Fill All Inputs
     </div>
-    <div class="col-sm-4 rw-hei" style="background-color:lavenderblush;"><h3 class="transfer-cal">
+    <div class="col-sm-6 rw-hei brd-rgt" style="background-color:lavenderblush;"><h3 class="transfer-cal">
     <i class="fa fa-credit-card" aria-hidden="true"></i>  My Savings</h3>
     <!-- <i class="fa fa-cog fa-spin fa-2x fa-fw"></i>
     <span class="sr-only">Loading...</span></h3> -->
@@ -142,51 +141,26 @@
        <h2 class="em7"> <b><span id="emi5">0</span>%</b></h2>
        <p><h6>Your <mark style="color:red">Savings</mark> through reduced Interest: <i class="fa fa-credit-card" style="font-size:18px;color:"></i></h6></p>
        <h2 class="em8">₹ <b><span id="emi6">0</span></b></h2>
-       <p><h2>Query:</h2></p>
-       <p><h2 class="em8">₹ <b><span id="emi7">0</span></b></h2></p>
+       
        
 
 
        <!-- <div id="b"></div> -->
       </center>
   </div>
-  <div class="col-sm-4 rw-hei brd-rgt" style="background-color:lavender"><h3><center>Break-up of Loan Details</center></h3>
+  <!-- <div class="col-sm-4 rw-hei brd-rgt" style="background-color:lavender"><h3><center>Break-up of Loan Details</center></h3>
      <div class="text-center"><i class="fa fa-cloud" style="font-size:18px;color:#c2da6b;"></i>&nbsp;<span>Loan EMI</span>
      </div>
      <div class="text-center"><i class="fa fa-cloud" style="font-size:18px;color:#00B9B9;"></i>&nbsp;<span>Total Payable Interest</span>
      </div>
      <div class="text-center"><i class="fa fa-cloud" style="font-size:18px;color:#4A9ACF;"></i>&nbsp;<span>Total Payment(Principal + Interest)</span>
      </div>
-  </div>
+  </div> -->
 </div>
 </div>
 
-<div class="container">
-  
-
-  <h2 class="text-center">Savings:</h2>
-  <table class="table table-bordered table-striped" id="emipaymenttable">
-
-    <thead>
-      <tr class="tbl-clr">
-        <th bgcolor="#c2da6b" class="col-xs-3 col-md-1" id="yearheader">Year</th>
-
-        <th bgcolor="#4A9ACF" class="col-sm-3 hidden-xs" id="principalheader"><center>Principal</center><center>(A)</center></th>
-        
-        <th bgcolor="2DC6D1" class="col-sm-3 hidden-xs" id="interestheader"><center>Interest</center><center>(B)</center></th>
-        <th bgcolor="BF5850" class="col-sm-3 hidden-xs" id="totalheader"><center>Total Payment</center><center>(A+B)</center></th>
-        <th bgcolor="D8BC31" class="col-xs-4 col-sm-3" id="balanceheader"><center>Balance</center></th>
-      </tr>
-    </thead>
-    <tbody>
-    </tbody>
-  </table>
-  <div id="test"></div>
-</div>
-
-
-
-
+<center><h1>Savings Table:<i class="fa fa-hand-o-down" aria-hidden="true"></i></h1></center>
+<div id="test"></div>
 
 @include('layout.footer')
 @include('layout.script')
@@ -238,23 +212,23 @@
                data : { 'loanamount': loanamount , 'loaninterest': loaninterest ,'loanterm' :loanterm,'_token': v_token},
                // 'bank':bank},
                success: function(msg){
-                //console.log(msg);
+                console.log(msg);
 
-                  //  var numb = msg.amount.toFixed();
-                  // $('#emi').empty().append(numb);
+                    var numb = msg.amount.toFixed();
+                   $('#emi').empty().append(numb);
                   // // $('#emi1').empty().append(msg.total);
                   // // $('#emi2').empty().append(msg.ttl_payment);
-                  //  var numb1 = msg.drop_emi.toFixed();
-                  // $('#emi3').empty().append(numb1);
+                    var numb1 = msg.drop_emi.toFixed();
+                  $('#emi3').empty().append(numb1);
 
-                  //  var numb2 = msg.new_amount.toFixed();
-                  // $('#emi4').empty().append(numb2);
+                    var numb2 = msg.new_amount.toFixed();
+                   $('#emi4').empty().append(numb2);
 
-                  //  //var numb3 = msg.drop_in_int.toFixed();
-                  // $('#emi5').empty().append(msg.drop_in_int);
+                  var numb3 = msg.drop_in_int.toFixed();
+                   $('#emi5').empty().append(msg.drop_in_int);
 
-                  // var numb4 = msg.savings.toFixed();
-                  // $('#emi6').empty().append(numb4);
+                   var numb4 = msg.savings.toFixed();
+                   $('#emi6').empty().append(numb4);
 
                   // //console.log(numb4);
 
@@ -280,7 +254,7 @@
                   $("#5").show();
                   $("#6").show();
                   $("#7").show();
-                   $("#8").show();
+                   // $("#8").show();
                   
                    
                }  

@@ -49,9 +49,9 @@ class CompareController extends Controller
       ->where('bank_product_web_intrest.product_id','=',12)
       ->where('bank_product_web_intrest.roi','<',$req['loaninterest'])
       ->orderBy('bank_product_web_intrest.roi', 'DESC')
-      ->take(10)
+      ->take(15)
       ->get();
-     // print_r();exit();
+     
 
       if(isset($req))
 {
@@ -83,25 +83,23 @@ $new_rate=$getQuery[0]->roi/12/100;
 
 
 
-$new_amount = $loanamount * $new_rate * (pow(1 + $new_rate, $loanterm) / (pow(1 + $new_rate, $loanterm) - 1));
-//print_r($new_amount);exit();
-$new_total =(($new_amount*$loanterm)-$loanamount);
-$new_ttl_payment = $loanamount+$new_total;
-$drop_emi= $amount-$new_amount;
-$drop_in_int=(($loaninterest*12*100)-($new_rate*12*100));
-$savings=$total-$new_total;
-//echo round($amount);
-//print"<pre>";
-//print_r($getQuery);exit();
+  $new_amount = $loanamount * $new_rate * (pow(1 + $new_rate, $loanterm) / (pow(1 + $new_rate, $loanterm) - 1));
+
+  $new_total =(($new_amount*$loanterm)-$loanamount);
+  $new_ttl_payment = $loanamount+$new_total;
+  $drop_emi= $amount-$new_amount;
+  $drop_in_int=(($loaninterest*12*100)-($new_rate*12*100));
+  $savings=$total-$new_total;
+
 $test =json_decode(json_encode($getQuery),true);
-//print"<pre>";
-//print_r($test);exit();
-//json_encode($arrayName = array('query'=>($test)));
+//$test1 = array('bank_detail' => $test);
+$user =array('loanamount' => $loanamount, 'loaninterest' => $loaninterest , 'loanterm'=> $loanterm );
+// $a=array_push($test, $loaninterest,$loanamount,$loanterm);
+// print_r($test);exit();
 
-   //return view('emi/switch_cal')->with($arrayName);  
 
-  $returnHTML = view('emi/switch_cal')->with('data', $test)->render();
-return response()->json(array('success' => true, 'html'=>$returnHTML));                            
+  $returnHTML = view('emi/switch_cal')->with('data', $test)->with('sata', $user)->render();
+return response()->json(array('success' => true, 'amount'=>$amount, 'new_amount'=>$new_amount, 'drop_emi'=>$drop_emi,'drop_in_int'=>$drop_in_int, 'savings'=>$savings, 'html'=>$returnHTML));                            
                                     }
 
       
@@ -110,3 +108,4 @@ return response()->json(array('success' => true, 'html'=>$returnHTML));
 
  
 }
+?>

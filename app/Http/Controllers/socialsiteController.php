@@ -8,7 +8,6 @@ use App\Http\Requests;
 //use App\Http\Controllers\Controller;
 use Socialite;
 use App\registrationModel;
-
 class SocialsiteController extends Controller{
      
      public function  facebook(){

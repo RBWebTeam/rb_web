@@ -75,7 +75,6 @@ class LoginController extends Controller
                	echo $error;
                }
              
-
       }
       //added by manish to logout
         public function logout(Request $req){

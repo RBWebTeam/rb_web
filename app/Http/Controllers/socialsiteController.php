@@ -12,6 +12,7 @@ use Validator;
 use Redirect;
 use Session;
 use URL;
+
 class SocialsiteController extends Controller{
      
      public function  facebook(){

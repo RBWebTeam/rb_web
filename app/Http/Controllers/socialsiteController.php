@@ -8,6 +8,11 @@ use App\Http\Requests;
 //use App\Http\Controllers\Controller;
 use Socialite;
 use App\registrationModel;
+use Validator;
+use Redirect;
+use Session;
+use URL;
+
 class SocialsiteController extends Controller{
      
      public function  facebook(){
@@ -46,8 +51,12 @@ class SocialsiteController extends Controller{
 
       	 $query=new registrationModel();
          $authUser =$query->where('provider_user_id', $facebookUser->id)->first();
- 
         if ($authUser){
+
+                       Session::set('email', $authUser->email);
+                       Session::set('user_id', $authUser->id);
+                       Session::set('name', $authUser->username);
+                       Session::set('is_login', 1);
             return $authUser;
         }
  

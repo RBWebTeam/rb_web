@@ -28,17 +28,7 @@
   <p>Let's find out how much you can save!!</p>
   <p>Know how much you'll save. Please enter your current home loan details.</p> 
 </center>  
-             <span class="item-label i-want-to">
-                                    I Want to :
-                                
             
-             <li ng-repeat="service in intro.ServiceList" class="ng-scope">
-                                <a href="" ng-click="intro.updateService(service.value, service.name)" data-value="1" class="ng-binding">
-                                    Switch My Home Loan
-                                </a>
-                            </li><!-- end ngRepeat: service in intro.ServiceList --><li ng-repeat="service in intro.ServiceList" class="ng-scope selected">
-                                <td class="upper" width="17%"><a href="{{URL::to('apply-home-loan')}}">Get A New Home Loan</a></td>
-                            </li></span>
                             
   
 </div>
@@ -170,7 +160,7 @@
   $(document).ready(function(){
     $("#Month").change(function(){
       var amt = $("#loanterm").val();
-      var month = amt *12;
+      var month = amt;
       
       //console.log(month);
       $('#loanterm').val(month);

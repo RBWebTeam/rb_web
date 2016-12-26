@@ -9,8 +9,12 @@ use DB;
 class ProfileController extends Controller
 {
     function my_profile(Request $req){
-
-        return view('my-profile');
+    	if(Session::get('is_login')){
+        	return view('my-profile');
+    	}else{
+    		return redirect('/');
+    	}
     }
+  
 
 }

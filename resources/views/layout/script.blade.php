@@ -473,7 +473,7 @@ $(".login-submit").click(function(event){
                      }else if(msg=="right"){
 
 
-                       window.location.href ='http://localhost:8000/';
+                       window.location.href ="{{URL::to('profile')}}";
                      }
 
 

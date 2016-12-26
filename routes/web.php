@@ -48,6 +48,9 @@ Route::post('registration','loginController@register_form');
 Route::post('recording','recording\recordingController@recording');
 Route::get('recording/show','recording\recordingController@show');
 
+Route::get('facebook','socialsiteController@facebook');
+Route::get('callback','socialsiteController@callback');
+
 /* API routes to be written here */ 
 
 Route::get('api','ApiController@GetLAPQuotes');

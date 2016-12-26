@@ -11,7 +11,7 @@ use Redirect;
 use Session;
 use URL;
 use Illuminate\Support\Facades\Hash;
-class loginController extends Controller
+class LoginController extends Controller
 {
       public function login(Request $request){
          
@@ -77,4 +77,9 @@ class loginController extends Controller
              
 
       }
+      //added by manish to logout
+        public function logout(Request $req){
+          $req->session()->flush();
+            return redirect('/');
+        }
 }

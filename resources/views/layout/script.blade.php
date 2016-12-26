@@ -345,13 +345,14 @@ $(document).ready(function(){
      $(".sidebar-submit").click(function(event){
     event.preventDefault();
     var form=$(this).closest("form").attr('id');
-    //console.log(form);return false;
+    //return false;
   
 
     $form=$('#'+form);
     if(! $form.valid()){
       return false;
     }else{
+      console.log("hutiya");
       $.ajax({  
                type: "POST",  
                url: "{{URL::to('sidebar')}}",
@@ -472,7 +473,7 @@ $(".login-submit").click(function(event){
                      }else if(msg=="right"){
 
 
-                       window.location.href ='http://localhost:8000/';
+                       window.location.href ="{{URL::to('profile')}}";
                      }
 
 
@@ -893,12 +894,7 @@ function emibreakup(E,P,r,n)
 
 
 <!-- by dp facebook login-->
-<style type="text/css">body{
-    color: #888888;
-    font-family: 'Bree Serif',serif;
-    font-size: 16px;
-    min-height: 2000px;
-}
+<style type="text/css">
 
 .login_modal_footer{margin-top:5px;}
 .login_modal_header .modal-title {text-align: center;font-family:'Philosopher',sans-serif; }

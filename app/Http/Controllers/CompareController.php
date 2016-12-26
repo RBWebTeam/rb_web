@@ -48,8 +48,9 @@ class CompareController extends Controller
       ->select('bank_product_web_intrest.bank_id AS bank_id','bank_product_web_intrest.roi AS roi','bank_master.Bank_Name AS Bank_Name')
       ->where('bank_product_web_intrest.product_id','=',12)
       ->where('bank_product_web_intrest.roi','<',$req['loaninterest'])
+      ->where('bank_product_web_intrest.Profession','=',$req['profession'])
       ->orderBy('bank_product_web_intrest.roi', 'DESC')
-      ->take(15)
+      ->take(20)
       ->get();
      
 

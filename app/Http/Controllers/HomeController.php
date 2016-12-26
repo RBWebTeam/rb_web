@@ -22,8 +22,5 @@ class HomeController extends Controller
 		$data['bank_name'] = $id;
 	    return view('bank-wise-product')->with($data);
 	}
-	public function logout(Request $req){
-		$req->session()->flush();
-	    return redirect('/');
-	}
+	
 }

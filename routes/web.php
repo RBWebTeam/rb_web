@@ -36,20 +36,20 @@ Route::get('apply-business-loan','LoanController@apply_business_loan');
 Route::post('otp','FormController@otp');
 Route::post('otp_verify','FormController@otp_verify');
 Route::get('bank','BankController@index');
-Route::get('logout','HomeController@logout');
+Route::get('logout','LoginController@logout');
 
 /* by dp */
 Route::get('apply-sme-loan','LoanController@smeLoan');
 Route::get('apply-home-loan','LoanController@apply_home_loan');
 Route::get('apply-loan-against-property','LoanController@apply_loan_against_property');
-Route::post('login','loginController@login');
-Route::post('registration','loginController@register_form');
+Route::post('login','LoginController@login');
+Route::post('registration','LoginController@register_form');
 
 Route::post('recording','recording\recordingController@recording');
 Route::get('recording/show','recording\recordingController@show');
 
-Route::get('facebook','socialsiteController@facebook');
-Route::get('callback','socialsiteController@callback');
+Route::get('facebook','SocialsiteController@facebook');
+Route::get('callback','SocialsiteController@callback');
 
 /* API routes to be written here */ 
 
@@ -62,7 +62,7 @@ Route::get('get-loan/{loan}','BankController@compareLoan');
 Route::get('check_emi','CompareController@emi2');
 Route::post('emi_cal','CompareController@emi_cal');
 Route::get('loan-details/{product}/{bank}','BankController@home_loanBank');
-Route::get('switch_me','CompareController@switchme');
+Route::get('home-loan-transfer','CompareController@switchme');
 Route::post('calculation','CompareController@calculation');
-
+Route::get('profile','ProfileController@my_profile');
 

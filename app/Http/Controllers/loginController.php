@@ -82,4 +82,9 @@ class LoginController extends Controller
              
 
       }
+      //added by manish to logout
+        public function logout(Request $req){
+          $req->session()->flush();
+            return redirect('/');
+        }
 }

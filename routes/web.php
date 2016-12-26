@@ -36,7 +36,7 @@ Route::get('apply-business-loan','LoanController@apply_business_loan');
 Route::post('otp','FormController@otp');
 Route::post('otp_verify','FormController@otp_verify');
 Route::get('bank','BankController@index');
-Route::get('logout','HomeController@logout');
+Route::get('logout','LoginController@logout');
 
 /* by dp */
 Route::get('apply-sme-loan','LoanController@smeLoan');

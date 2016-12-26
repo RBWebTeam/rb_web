@@ -1,4 +1,4 @@
-@include('layout.header')
+  @include('layout.header')
 <style>
   .rw-hei {height:590px;border: 2px dashed #ccc;border-right:none;}
   .brd-rgt {border-right: 2px dashed #ccc;}
@@ -12,11 +12,7 @@
    .transfer-cal {background:#333;padding:10px;display:block;color:#fff; text-align:center;}
    .mthy {Font-weight:bold;}
    .table-bordered>thead>tr>th {color:#fff;}
-   /*.em1 {color:#c2da6b;}
-   .em2 {color:#00B9B9;}
-   .em3 {color:#4A9ACF;}*/
-   /*.em4 {color:#42f4ce;}*/
-   /*.em5 {color:#f44268;}*/
+   
 </style>
 </head>
 
@@ -45,29 +41,16 @@
       <label class="control-label" for="Interest Rate">Interest Rate:</label>
       <input type="number" name="loaninterest" step="0.01" min="0" class="form-control" id="loaninterest" placeholder="Interest"  value="" onblur="myfun()">
     </div>
-    <div class="form-group">
-       <label class="control-label" for="Your Property Location">Your Property Location:</label>
-       <select>
-       <option value="AGRA">AGRA</option>
-       <option value="AHMEDABAD">AHMEDABAD</option>
-       <option value="AMRITSAR">AMRITSAR</option>
-       <option value="ANANTNAG">ANANTNAG</option>
-       <option value="AURANGABAD">AURANGABAD</option>
-       <option value="BANGALORE">BANGALORE</option>
-       <option value="CHANDIGARH">CHANDIGARH</option>
-       <option value="CHENNAI">CHENNAI</option>
-       <option value="DELHI">DELHI</option>
-       <option value="FARIDABAD">FARIDABAD</option>
-       <option value="HYDERABAD">HYDERABAD</option>
-       <option value="INDORE">INDORE</option>
-       <option value="KALYAN-DOMBIVALI">KALYAN-DOMBIVALI</option>
-       <option value="MUMBAI">MUMBAI</option>
-       <option value="THANE">THANE</option>
-       <option value="VIZAG">VIZAG</option>
+    <div class="form-group" >
+       <label class="control-label" for="Your Property Location">Your Profession Type:</label>
+       <select name="profession" id="profession" onblur="myfun()">
+       <option value="1">Salaried</option>
+       <option value="2">Self-Employed</option>
+       
        </select>
       <!--  </label> -->
     </div>
-    <div class="form-group">
+    <!-- <div class="form-group">
        <label class="control-label" for="Current Lender">Current Lender:</label>
      
       <select>
@@ -95,7 +78,7 @@
        </select>
     
     </div>
-
+ -->
 
     <div class="form-group right-block">
        <label class="control-label" for="Loan Tenure">Remaining Tenure:</label>
@@ -193,13 +176,15 @@
       }else{
         var loanterm = $("#loanterm").val();
       }
-      //console.log(loanterm);
+      var profession=$("#profession").val();
+
+      
        var v_token = "{{csrf_token()}}";
       $.ajax({  
                type: "POST",  
                url: "{{URL::to('calculation')}}",
                dataType:'json',
-               data : { 'loanamount': loanamount , 'loaninterest': loaninterest ,'loanterm' :loanterm,'_token': v_token},
+               data : { 'loanamount': loanamount , 'loaninterest': loaninterest ,'loanterm' :loanterm,'_token': v_token,'profession':profession},
                // 'bank':bank},
                success: function(msg){
                 console.log(msg);

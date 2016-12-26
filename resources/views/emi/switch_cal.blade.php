@@ -32,7 +32,7 @@ foreach ($data as $key => $value){?>
 <tr>
 	<td>{{ $value['Bank_Name']}}</td>
     <td>{{ $value['roi']}}</td>
-    <?php
+    <?php try{
     $new_rate=$value['roi']/12/100;
 
     $amount = $loanamount * $loaninterest * (pow(1 + $loaninterest, $loanterm) / (pow(1 + $loaninterest, $loanterm) - 1));
@@ -47,6 +47,9 @@ foreach ($data as $key => $value){?>
 	  $drop_emi= $amount-$new_amount;
 	  $drop_in_int=(($loaninterest*12*100)-($new_rate*12*100));
 	  $savings=$total-$new_total; 
+  }catch(Exception $e){
+    //echo "roi is 0 in database";
+  }
     ?>
     <td><?php echo number_format((float)$amount, 2, '.', '');  ?>  </td>
     <td><?php  echo number_format((float)$new_amount, 2, '.', ''); ?>  </td>

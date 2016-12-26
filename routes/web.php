@@ -62,7 +62,7 @@ Route::get('get-loan/{loan}','BankController@compareLoan');
 Route::get('check_emi','CompareController@emi2');
 Route::post('emi_cal','CompareController@emi_cal');
 Route::get('loan-details/{product}/{bank}','BankController@home_loanBank');
-Route::get('switch_me','CompareController@switchme');
+Route::get('home-loan-transfer','CompareController@switchme');
 Route::post('calculation','CompareController@calculation');
 Route::get('profile','ProfileController@my_profile');
 

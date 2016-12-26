@@ -42,14 +42,14 @@ Route::get('logout','HomeController@logout');
 Route::get('apply-sme-loan','LoanController@smeLoan');
 Route::get('apply-home-loan','LoanController@apply_home_loan');
 Route::get('apply-loan-against-property','LoanController@apply_loan_against_property');
-Route::post('login','loginController@login');
-Route::post('registration','loginController@register_form');
+Route::post('login','LoginController@login');
+Route::post('registration','LoginController@register_form');
 
 Route::post('recording','recording\recordingController@recording');
 Route::get('recording/show','recording\recordingController@show');
 
-Route::get('facebook','socialsiteController@facebook');
-Route::get('callback','socialsiteController@callback');
+Route::get('facebook','SocialsiteController@facebook');
+Route::get('callback','SocialsiteController@callback');
 
 /* API routes to be written here */ 
 

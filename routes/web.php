@@ -61,5 +61,5 @@ Route::post('emi_cal','CompareController@emi_cal');
 Route::get('loan-details/{product}/{bank}','BankController@home_loanBank');
 Route::get('switch_me','CompareController@switchme');
 Route::post('calculation','CompareController@calculation');
-
+Route::get('profile','ProfileController@my_profile');
 

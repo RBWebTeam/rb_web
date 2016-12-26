@@ -190,7 +190,7 @@
                   </div>
 
                     
-                 <a id="login_submit" class="btn btn-success modal-login-btn sidebar-submit ">Login</a>
+                 <a id="login_submit" class="btn btn-success modal-login-btn login-submit ">Login</a>
 
                   <!--  <div>
                       <a class="btn btn-primary btn-outline with-arrow sidebar-submit" id="registration_submit">Submit<i class="icon-arrow-right"></i></a>
@@ -201,15 +201,15 @@
                   <a href="#"  class="login-link text-center">Lost your password?</a>
               </div>
         
-              <!-- <div class='modal-body-right'>
+              <div class='modal-body-right'>
                 <div class="modal-social-icons">
-                  <a href='#' class="btn btn-default facebook"> <i class="fa fa-facebook modal-icons"></i> Sign In with Facebook </a>
-                  <a href='#' class="btn btn-default twitter"> <i class="fa fa-twitter modal-icons"></i> Sign In with Twitter </a>
+                  <a href="{{url('facebook')}}" class="btn btn-default facebook"> <i class="fa fa-facebook modal-icons"></i> Sign In with Facebook </a>
+                 <!--  <a href='#' class="btn btn-default twitter"> <i class="fa fa-twitter modal-icons"></i> Sign In with Twitter </a>
                   <a href='#' class="btn btn-default google"> <i class="fa fa-google-plus modal-icons"></i> Sign In with Google </a>
-                  <a href='#' class="btn btn-default linkedin"> <i class="fa fa-linkedin modal-icons"></i> Sign In with Linkedin </a>
+                  <a href='#' class="btn btn-default linkedin"> <i class="fa fa-linkedin modal-icons"></i> Sign In with Linkedin </a> -->
                 </div> 
               </div>  
-              <div id='center-line'> OR </div> -->
+              <div id='center-line'> OR </div>
             </div>                                                        
             <div class="clearfix"></div>
 
@@ -266,7 +266,7 @@
 
 
                   <div>
-                      <a class="btn btn-primary btn-outline with-arrow sidebar-submit" id="registration_submit">Submit<i class="icon-arrow-right"></i></a>
+                      <a class="btn btn-primary btn-outline with-arrow registration-submit" id="registration_submit">Submit<i class="icon-arrow-right"></i></a>
                   </div>
 
                   <a href="#" onclick="backf()">login</a>

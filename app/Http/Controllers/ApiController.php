@@ -16,7 +16,7 @@ class ApiController extends Controller
 		$request=$req;
 		$req_all= implode(',',$req->all());
 		$log=DB::table('api_log')
-		->insertGetId(['api_name'=>'GetHomeLoanQuotes_test',
+		->insertGetId(['api_name'=>'GetHomeLoanQuotes',
 			'status'=>'Pending',
 			'request'=>$req_all,			 		   
 			'error'=>'0',
@@ -48,7 +48,15 @@ class ApiController extends Controller
 		$status_update=DB::table('bank_quote_api_request')
 		->where('ID','=',$id)
 		->update(['status'=>$status]);
-		
+		for($i=0;$i<sizeof($data);$i++){
+			$bank=$data[$i]->Bank_Id;
+			$product=$data[$i]->Product_Id;
+			$profession=$data[$i]->Profession;
+			$new_data=DB::select('call  get_fixed_roi("'.$bank.'","'.$product.'","'.$profession.'")');
+			//$data[$i]->quote_id=$id;
+			$data[$i]->fixed_roi=$new_data;
+
+		}		
 		return Response::json(array(
 			'data' => $data,
 			'quote_id'=>$id
@@ -83,7 +91,7 @@ class ApiController extends Controller
 		//API to get bank quote
 		$req_all= implode(',',$req->all());
 		$log=DB::table('api_log')
-		->insertGetId(['api_name'=>'GetHomeLoanQuotes',
+		->insertGetId(['api_name'=>'GetHomeLoanQuotes_test',
 			'status'=>'Pending',
 			'request'=>$req_all,			 		   
 			'error'=>'0',
@@ -111,6 +119,14 @@ class ApiController extends Controller
 		->where('id','=',$log)
 		->update(['status'=>$status,'updated_at'=>date("Y-m-d H:i:s")]);
 
+		for($i=0;$i<sizeof($data);$i++){
+			$bank=$data[$i]->Bank_Id;
+			$product=$data[$i]->Product_Id;
+			$profession=$data[$i]->Profession;
+			
+			$new_data=DB::select('call  get_fixed_roi("'.$bank.'","'.$product.'","'.$profession.'")');
+			$data[$i]->fixed_roi=$new_data;
+		}		
 		return Response::json(array(
 			'data' => $data,
 			));
@@ -139,7 +155,9 @@ class ApiController extends Controller
 			echo 'Caught exception: '.  $e->getMessage(). "\n";
 			die("exception");
 		}
-		
+		$save=new bank_quote_api_request();	
+		 $id=$save->store($req);
+
 		if($data){
 			$status="Success";
 

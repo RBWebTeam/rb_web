@@ -345,13 +345,14 @@ $(document).ready(function(){
      $(".sidebar-submit").click(function(event){
     event.preventDefault();
     var form=$(this).closest("form").attr('id');
-    //console.log(form);return false;
+    //return false;
   
 
     $form=$('#'+form);
     if(! $form.valid()){
       return false;
     }else{
+      console.log("hutiya");
       $.ajax({  
                type: "POST",  
                url: "{{URL::to('sidebar')}}",
@@ -372,39 +373,124 @@ $(document).ready(function(){
 
        // ...login...dp..
 
-       if(form=="login_form"){
+//        if(form=="login_form"){
 
 
+//          if(! $form.valid()){
+//          }else{
+             
+//              $.ajax({  
+//                type: "POST",  
+//                url: "{{URL::to('login')}}",
+//                data : $('#'+form).serialize(),
+//                success: function(msg){
+              
+//                      $("#login_form").show();
+//                      if(msg=="email"){
+
+
+
+//             $("#msg").text("Your email or password is incorrect. please try again?");               
+//                      }else if(msg=="right"){
+
+
+//                        window.location.href ='http://localhost:8000/';
+//                      }
+
+
+//                }  
+//            }); 
+
+
+//    }
+// }
+
+ 
+//    // ...registration_form...dp..
+//        if(form=="registration_form"){
+//          if(! $form.valid()){
+//          }else{
+
+ 
+//           $.ajax({  
+//                type: "POST",  
+//                url: "{{URL::to('registration')}}",
+//                data : $('#'+form).serialize(),
+//                success: function(msg){
+                
+//                 if(msg=='1'){
+//                   $("#registration1").show();
+//                   $form.show();
+//                   $("#errors").text("password and confirm password does not match");
+//                  }else if(msg=="2"){
+//                   $("#registration1").show();
+//                   $form.show();
+//                   $("#erroremail").text("Email already exist in our database");
+//                 }else if(msg=="3"){
+//                  window.location.href ='http://localhost:8000/';
+
+//                 }else{
+                 
+//                   // $form.hide();
+//                   // $('.msg').show();
+//                 }
+//                 //console.log(msg);
+//                }  
+//                }); 
+
+//          }
+       
+//        }
+
+//        //end by dp
+
+  });
+
+
+// by dp
+
+$(".login-submit").click(function(event){
+    event.preventDefault();
+    var form=$(this).closest("form").attr('id');
+    //console.log(form);return false;
+         $form=$('#'+form);
          if(! $form.valid()){
          }else{
-             
+          var s=$('#'+form).serialize();
+
              $.ajax({  
                type: "POST",  
                url: "{{URL::to('login')}}",
                data : $('#'+form).serialize(),
                success: function(msg){
+              
                      $("#login_form").show();
                      if(msg=="email"){
+
+
+
             $("#msg").text("Your email or password is incorrect. please try again?");               
                      }else if(msg=="right"){
+
+
                        window.location.href ='http://localhost:8000/';
                      }
 
 
                }  
            }); 
-
-
    }
-}
 
- 
-   // ...registration_form...dp..
-       if(form=="registration_form"){
+ });
+
+// ...registration_form...dp..
+$(".registration-submit").click(function(event){
+    event.preventDefault();
+    var form=$(this).closest("form").attr('id');
+    //console.log(form);return false;
+         $form=$('#'+form);
          if(! $form.valid()){
          }else{
-
- 
           $.ajax({  
                type: "POST",  
                url: "{{URL::to('registration')}}",
@@ -428,16 +514,16 @@ $(document).ready(function(){
                   // $('.msg').show();
                 }
                 //console.log(msg);
+
                }  
-               }); 
+           }); 
 
          }
-       
-       }
-
+    
+   });
        //end by dp
 
-  });
+
 });
 
 $('document').ready(function(){
@@ -808,12 +894,7 @@ function emibreakup(E,P,r,n)
 
 
 <!-- by dp facebook login-->
-<style type="text/css">body{
-    color: #888888;
-    font-family: 'Bree Serif',serif;
-    font-size: 16px;
-    min-height: 2000px;
-}
+<style type="text/css">
 
 .login_modal_footer{margin-top:5px;}
 .login_modal_header .modal-title {text-align: center;font-family:'Philosopher',sans-serif; }

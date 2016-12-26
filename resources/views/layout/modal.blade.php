@@ -269,7 +269,7 @@
                       <a class="btn btn-primary btn-outline with-arrow registration-submit" id="registration_submit">Submit<i class="icon-arrow-right"></i></a>
                   </div>
 
-                  <a href="#" onclick="backf()">login</a>
+                  <a href="#" onclick="backf()">already user login here</a>
 
             </form>
 
@@ -280,7 +280,11 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
+          
         </div>
+
+
       </div>
 
 

@@ -16,67 +16,42 @@ use URL;
 class SocialsiteController extends Controller{
      
      public function  facebook(){
-
-
      	 return Socialite::driver('facebook')->redirect();
      }
 
-      public function  callback(){
-
-
-
-      	
+      public function  callback(){ 	
            try {
             $user = Socialite::driver('facebook')->user();
-
         } catch (Exception $e) {
             return redirect('facebook');
         }
- 
         $authUser = $this->findOrCreateUser($user);
- 
         // registrationModel::login($authUser, true);
-         
-
-
         return redirect('/');
-       
-
-
-
+      
      }
 
-
-      
-
-
-
-     public function  google(){
-       
-
+ 
+     public function  google(){     
        return Socialite::driver('google')->redirect();
      }
 
       public function  Googlecallback(){
-
       try {
           $user = Socialite::driver('google')->user();
          
           }catch (Exception $e) {
             return redirect('google');
         }
-
-        $authUser = $this->findOrCreateUser($user);
+                    $authUser = $this->findOrCreateUser($user);
                     return redirect('/');
-
 
           }
 
 
 
           private function findOrCreateUser($facebookUser){
-
-         $query=new registrationModel();
+             $query=new registrationModel();
          $authUser =$query->where('provider_user_id', $facebookUser->id)->first();
         if ($authUser){
 

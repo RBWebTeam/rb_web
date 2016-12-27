@@ -40,11 +40,7 @@ return [
     'facebook' => [
     'client_id' => '624024964433110',
     'client_secret' => '3f82391ea7976d8d7c9d485d15024f35',
-    'redirect' => url('callback'),
+    'redirect' => 'staging.rupeeboss.com/callback',
 ],
-
-
-
-
 
 ];

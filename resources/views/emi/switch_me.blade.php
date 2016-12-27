@@ -35,10 +35,10 @@
      <!-- <i class="fa fa-exchange" aria-hidden="true"></i> -->
     <div class="form-group">
        <label class="control-label" for="Loan Amount">Outstanding Principal:</label>
-       <input type="number" name="loanamount" class="form-control" id="loanamount" placeholder="Loan Amount" value=""  onblur="myfun()">
+       <input type="number" name="loanamount" class="form-control" id="loanamount" placeholder="Loan Amount" value="" onblur ="myfun()">
     </div>
     <div class="form-group">
-      <label class="control-label" for="Interest Rate">Interest Rate:</label>
+      <label class="control-label" for="Interest Rate"> Current Interest Rate:</label>
       <input type="number" name="loaninterest" step="0.01" min="0" class="form-control" id="loaninterest" placeholder="Interest"  value="" onblur="myfun()">
     </div>
     <div class="form-group" >
@@ -50,36 +50,7 @@
        </select>
       <!--  </label> -->
     </div>
-    <!-- <div class="form-group">
-       <label class="control-label" for="Current Lender">Current Lender:</label>
-     
-      <select>
-       <option value="ADITYA BIRLA FINANCE LIMITED">ADITYA BIRLA FINANCE LIMITED</option>
-       <option value="ADITYA-BIRLA HOUSING FINANCIAL LIMITED">ADITYA BIRLA HOUSING FINANCIAL LIMITED</option>
-       <option value="AU HOUSING FINANCE LIMITED">AU HOUSING FINANCE LIMITED</option>
-       <option value="AXIS BANK LTD">AXIS BANK LTD</option>
-       <option value="BAJAJ FINANCE LIMITED">BAJAJ FINANCE LIMITED</option>
-       <option value="CAPITAL FIRST LIMITED">CAPITAL FIRST LIMITED</option>
-       <option value="CAPRI GLOBAL CAPITAL LIMITED">CAPRI GLOBAL CAPITAL LIMITED</option>
-       <option value="CITI">CITI</option>
-       <option value="CREDIT SUDHAR">CREDIT SUDHAR</option>
-       <option value="DBS">DBS</option>
-       <option value="DCB BANK">DCB BANK</option>
-       <option value="DEUTSCHE BANK">DEUTSCHE BANK</option>
-       <option value="EDELWEISS FINANCE LIMITED">EDELWEISS FINANCE LIMITED</option>
-       <option value="FULLERTON INDIA CREDIT COMPANY LIMIT">FULLERTON INDIA CREDIT COMPANY LIMITED</option>
-       <option value="HDB FINANCIAL SERVICES LTD">HDB FINANCIAL SERVICES LTD</option>
-       <option value="HDFC BANK LTD ">HDFC BANK LTD</option>
-       <option value="HDFC LTD">HDFC LTD</option>
-       <option value="HERO FIN CORP">HERO FIN CORP</option>
-       <option value="HSBCK">HSBC</option>
-       <option value="ICICI BANK LIMITED">ICICI BANK LIMITED</option>
-       <option value="ICICI BANK">ICICI BANK</option>
-       </select>
-    
-    </div>
- -->
-
+   
     <div class="form-group right-block">
        <label class="control-label" for="Loan Tenure">Remaining Tenure:</label>
         <input type="number" name="loanterm" class="form-control" id="loanterm" placeholder="Loan Tenure" value="" onblur="myfun()">
@@ -121,22 +92,38 @@
        <!-- <div id="b"></div> -->
       </center>
   </div>
-  <!-- <div class="col-sm-4 rw-hei brd-rgt" style="background-color:lavender"><h3><center>Break-up of Loan Details</center></h3>
-     <div class="text-center"><i class="fa fa-cloud" style="font-size:18px;color:#c2da6b;"></i>&nbsp;<span>Loan EMI</span>
-     </div>
-     <div class="text-center"><i class="fa fa-cloud" style="font-size:18px;color:#00B9B9;"></i>&nbsp;<span>Total Payable Interest</span>
-     </div>
-     <div class="text-center"><i class="fa fa-cloud" style="font-size:18px;color:#4A9ACF;"></i>&nbsp;<span>Total Payment(Principal + Interest)</span>
-     </div>
-  </div> -->
+  
 </div>
 </div>
+
+
+
 
 <center><h1>Savings Table:<i class="fa fa-hand-o-down" aria-hidden="true"></i></h1></center>
 <div id="test"></div>
 
+
+
 @include('layout.footer')
 @include('layout.script')
+
+<div class="modal fade" tabindex="-1" role="dialog" id="homeTransfer">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Modal title</h4>
+      </div>
+      <div class="modal-body">
+        <p>Amount should be greater than 500000&hellip;</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
 
 <script type="text/javascript">
 
@@ -167,6 +154,7 @@
        if(lm >0 && lin >0 && lt>0){
       
       var loanamount = $("#loanamount").val();
+      //console.log(loanamount);
       var loaninterest = $("#loaninterest").val();
        // var bank = $("#bank").val();
          
@@ -177,6 +165,7 @@
         var loanterm = $("#loanterm").val();
       }
       var profession=$("#profession").val();
+      //console.log(profession);
 
       
        var v_token = "{{csrf_token()}}";
@@ -187,53 +176,45 @@
                data : { 'loanamount': loanamount , 'loaninterest': loaninterest ,'loanterm' :loanterm,'_token': v_token,'profession':profession},
                // 'bank':bank},
                success: function(msg){
-                console.log(msg);
-
-                    var numb = msg.amount.toFixed();
+                  //console.log(msg.success);
+                  if(msg.success ==true){
+                  var numb = msg.amount.toFixed();
                    $('#emi').empty().append(numb);
-                  // // $('#emi1').empty().append(msg.total);
-                  // // $('#emi2').empty().append(msg.ttl_payment);
+                  
                     var numb1 = msg.drop_emi.toFixed();
                   $('#emi3').empty().append(numb1);
 
                     var numb2 = msg.new_amount.toFixed();
                    $('#emi4').empty().append(numb2);
 
-                  var numb3 = msg.drop_in_int.toFixed();
-                   $('#emi5').empty().append(msg.drop_in_int);
+                  
+                   $('#emi5').empty().append( msg.drop_in_int);
 
                    var numb4 = msg.savings.toFixed();
                    $('#emi6').empty().append(numb4);
+                   $("#1").show();
+                      
+                        $("#4").show();
+                        $("#5").show();
+                        $("#6").show();
+                        $("#7").show();
+                        $('#test').html(msg.html);
+                  }else{
+                     $('#homeTransfer').modal('show');  
+                      
 
-                  // //console.log(numb4);
+                  }
+                    
 
-                  // $('#emi7').empty().append(msg.query[0].roi);
-                  //console.log(msg.query);
-                  //var html ="";
-                  // $.each(msg.query, function(index, value) {
-                  //   var html = "<h1>"+value.Bank_Name+"</h1>";
-                  //   $("#test").empty().append(html);
-                  // });
-                  //$("#test").empty().append(msg);
-                  if(msg.success == true) {
-              //user_jobs div defined on page
-              $('#test').html(msg.html);
-            } else {
-              console.log("false");
-            }
-
-                  $("#1").show();
-                  // $("#2").show();
-                  // $("#3").show();
-                  $("#4").show();
-                  $("#5").show();
-                  $("#6").show();
-                  $("#7").show();
-                   // $("#8").show();
                   
-                   
-               }  
-               }); 
+              
+
+                        
+                        
+                        
+                         
+                     }  
+                  }); 
         
         
         $("#err").hide();
@@ -246,4 +227,5 @@
 
 </script>
 
-<!-- emi scripts end -->
+
+

@@ -25,15 +25,21 @@
 
   
   <?php 
-  $loanamount =$sata['loanamount'];
-  $loaninterest =$sata['loaninterest'];
-  $loanterm =$sata['loanterm'];
+  $loanamount =(float)$sata['loanamount'];
+  $loaninterest =(float)$sata['loaninterest'];
+  $loanterm =(float)$sata['loanterm'];
+  
 foreach ($data as $key => $value){?>
 <tr>
 	<td>{{ $value['Bank_Name']}}</td>
     <td>{{ $value['roi']}}</td>
+    
     <?php try{
     $new_rate=$value['roi']/12/100;
+    
+    //print_r($loanamount);exit();
+
+ 
 
     $amount = $loanamount * $loaninterest * (pow(1 + $loaninterest, $loanterm) / (pow(1 + $loaninterest, $loanterm) - 1));
     $total =(($amount*$loanterm)-$loanamount);
@@ -46,16 +52,15 @@ foreach ($data as $key => $value){?>
 	  $new_ttl_payment = $loanamount+$new_total;
 	  $drop_emi= $amount-$new_amount;
 	  $drop_in_int=(($loaninterest*12*100)-($new_rate*12*100));
-	  $savings=$total-$new_total; 
-  }catch(Exception $e){
-    //echo "roi is 0 in database";
+	  $savings=$total-$new_total;
+  }catch (Exception $e){
+
   }
     ?>
     <td><?php echo number_format((float)$amount, 2, '.', '');  ?>  </td>
     <td><?php  echo number_format((float)$new_amount, 2, '.', ''); ?>  </td>
     <td><?php echo number_format((float)$drop_emi, 2, '.', ''); ?>  </td>
     <td><?php echo ($drop_in_int); ?>  </td>
-   <!--  <td><?php echo number_format((float)$savings, 2, '.', ''); ?>  </td> -->
     <td><?php echo round($savings); ?>  </td>
     <td width="17%"><a href="{{URL::to('apply-home-loan')}}">Apply Online</a></td>
                            

@@ -30,7 +30,14 @@
     <td width="16%" class="upper">Loan Amount</td>
     <td width="18%" class="upper">emi</td>
     <?php $Loans=strtolower(str_replace(' ','-',$home_loan));?>
-    <td width="17%"><a href="{{url('apply-')}}<?php echo $Loans?>">Apply Online</a></td>
+     
+     <?php if($home_loan=='apply-lap'){?>
+
+    <td width="17%"><a href="{{url('loan-against-property')}}">Apply Online</a></td>
+
+    <?php }else{?>
+   <td width="17%"><a href="{{url('apply-')}}<?php echo $Loans?>">Apply Online</a></td>
+    <?php }?>
   </tr>
 
   <tr>

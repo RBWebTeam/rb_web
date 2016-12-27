@@ -40,7 +40,13 @@ return [
     'facebook' => [
     'client_id' => '624024964433110',
     'client_secret' => '3f82391ea7976d8d7c9d485d15024f35',
-    'redirect' => url('callback'),
+    'redirect' =>'http://localhost:8000/callback',
+],
+
+    'google' => [
+    'client_id' => '752185558821-9vlmac53np7bgdo3kn9d2e5ft39t7gud.apps.googleusercontent.com',
+    'client_secret' => '63n4XDZCSSRVE0605TzasMX0',
+    'redirect' =>'http://localhost:8000/google/callback',
 ],
 
 

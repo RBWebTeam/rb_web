@@ -47,9 +47,36 @@ class SocialsiteController extends Controller{
      }
 
 
-      private function findOrCreateUser($facebookUser){
+      
 
-      	 $query=new registrationModel();
+
+
+     public function  google(){
+       
+
+       return Socialite::driver('google')->redirect();
+     }
+
+      public function  Googlecallback(){
+
+      try {
+          $user = Socialite::driver('google')->user();
+         
+          }catch (Exception $e) {
+            return redirect('google');
+        }
+
+        $authUser = $this->findOrCreateUser($user);
+                    return redirect('/');
+
+
+          }
+
+
+
+          private function findOrCreateUser($facebookUser){
+
+         $query=new registrationModel();
          $authUser =$query->where('provider_user_id', $facebookUser->id)->first();
         if ($authUser){
 
@@ -70,4 +97,6 @@ class SocialsiteController extends Controller{
             'provider' => $facebookUser->avatar
         ]);
     }
+
+
 }

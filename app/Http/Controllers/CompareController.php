@@ -49,24 +49,26 @@ class CompareController extends Controller
       ->where('bank_product_web_intrest.product_id','=',12)
       ->where('bank_product_web_intrest.roi','<',$req['loaninterest'])
       ->where('bank_product_web_intrest.Profession','=',$req['profession'])
-      ->orderBy('bank_product_web_intrest.roi', 'DESC')
-      ->take(20)
-      ->get();
-     
+      ->where('bank_product_web_intrest.roi_type','=','Floating')
+      ->where('bank_product_web_intrest.amt_from','<=',$req["loanamount"])
+      ->where('bank_product_web_intrest.amt_to','>=',$req["loanamount"])
+      ->orderBy('bank_product_web_intrest.roi', 'ASC')
 
-      if(isset($req))
-{
+       //->take(5)
+      ->get();
+
+      $resultArray = json_decode(json_encode($getQuery), true);
+      //print_r($resultArray);exit();
+     // if(empty($resultArray)){
+     //  echo "empty";
+     // }else{
+     //  echo "not empty";
+     // };exit();
+if (!empty($resultArray)) {
 $loanamount=$req['loanamount'];
 $loaninterest=$req['loaninterest']/12/100;
 $loanterm=$req['loanterm'];
-//getting minimum roi from db
-//divide by 0 problem
-// if($getQuery[0]->roi==0){
-//   $getQuery[0]->roi=1;
-// } //remove when you have real data not containg 0.00 % roi in db
-// $new_rate=$getQuery[0]->roi;
 
-// print_r($new_rate);exit();
 
 $amount = $loanamount * $loaninterest * (pow(1 + $loaninterest, $loanterm) / (pow(1 + $loaninterest, $loanterm) - 1));
 $total =(($amount*$loanterm)-$loanamount);
@@ -80,6 +82,9 @@ if($getQuery[0]->roi==0){
 
 } //remove when you have real data not containg 0.00 % roi in db
 $new_rate=$getQuery[0]->roi/12/100;
+
+
+
 
 
 
@@ -101,7 +106,16 @@ $user =array('loanamount' => $loanamount, 'loaninterest' => $loaninterest , 'loa
 
   $returnHTML = view('emi/switch_cal')->with('data', $test)->with('sata', $user)->render();
 return response()->json(array('success' => true, 'amount'=>$amount, 'new_amount'=>$new_amount, 'drop_emi'=>$drop_emi,'drop_in_int'=>$drop_in_int, 'savings'=>$savings, 'html'=>$returnHTML));                            
-                                    }
+                                  
+
+}
+else{
+   
+  return response()->json(array('success' => false));
+
+}
+
+
 
       
     }

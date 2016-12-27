@@ -198,7 +198,7 @@
 
                  </form>
 
-                  <a href="#"  class="login-link text-center">Lost your password?</a>
+                 <!--  <a href="#"  class="login-link text-center">Lost your password?</a> -->
               </div>
         
               <div class='modal-body-right'>
@@ -270,7 +270,7 @@
                       <a class="btn btn-primary btn-outline with-arrow registration-submit" id="registration_submit">Submit<i class="icon-arrow-right"></i></a>
                   </div>
 
-                  <a href="#" onclick="backf()">already user login here</a>
+                <!--   <a href="#" onclick="backf()">already user login here</a> -->
 
             </form>
 
@@ -282,8 +282,10 @@
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 
-          
+        <div style="float: left;">   <a href="#"  onclick="backf()"> Login here</a></div>
         </div>
+
+
 
 
       </div>

@@ -29,7 +29,8 @@
     <td width="16%" class="upper">Interst Rate</td>
     <td width="16%" class="upper">Loan Amount</td>
     <td width="18%" class="upper">emi</td>
-    <td width="17%"><a href="{{url('apply-').strtolower(str_replace(' ','-',$home_loan))}}">Apply Online</a></td>
+    <?php $Loans=strtolower(str_replace(' ','-',$home_loan));?>
+    <td width="17%"><a href="{{url('apply-')}}<?php echo $Loans?>">Apply Online</a></td>
   </tr>
 
   <tr>

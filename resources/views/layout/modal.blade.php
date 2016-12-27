@@ -198,14 +198,15 @@
 
                  </form>
 
-                  <a href="#"  class="login-link text-center">Lost your password?</a>
+                 <!--  <a href="#"  class="login-link text-center">Lost your password?</a> -->
               </div>
         
               <div class='modal-body-right'>
                 <div class="modal-social-icons">
                   <a href="{{url('facebook')}}" class="btn btn-default facebook"> <i class="fa fa-facebook modal-icons"></i> Sign In with Facebook </a>
+                   <a href="{{url('google')}}" class="btn btn-default google"> <i class="fa fa-google-plus modal-icons"></i> Sign In with Google </a>
                  <!--  <a href='#' class="btn btn-default twitter"> <i class="fa fa-twitter modal-icons"></i> Sign In with Twitter </a>
-                  <a href='#' class="btn btn-default google"> <i class="fa fa-google-plus modal-icons"></i> Sign In with Google </a>
+                 
                   <a href='#' class="btn btn-default linkedin"> <i class="fa fa-linkedin modal-icons"></i> Sign In with Linkedin </a> -->
                 </div> 
               </div>  
@@ -269,7 +270,7 @@
                       <a class="btn btn-primary btn-outline with-arrow registration-submit" id="registration_submit">Submit<i class="icon-arrow-right"></i></a>
                   </div>
 
-                  <a href="#" onclick="backf()">login</a>
+                <!--   <a href="#" onclick="backf()">already user login here</a> -->
 
             </form>
 
@@ -280,7 +281,13 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
+        <div style="float: left;">   <a href="#"  onclick="backf()"> Login here</a></div>
         </div>
+
+
+
+
       </div>
 
 

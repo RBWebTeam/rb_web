@@ -51,6 +51,9 @@ Route::get('recording/show','recording\recordingController@show');
 Route::get('facebook','SocialsiteController@facebook');
 Route::get('callback','SocialsiteController@callback');
 
+Route::get('google','SocialsiteController@google');
+Route::get('google/callback','SocialsiteController@Googlecallback');
+
 /* API routes to be written here */ 
 
 Route::get('api','ApiController@GetLAPQuotes');

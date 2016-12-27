@@ -89,8 +89,8 @@ document.getElementById('login').style.display="block";
 						<li><a href="#">Retail Loan</a></li>
 						<li><a href="#">Other Loan</a></li>
 						<li><a href="#">Credit Loan</a></li>
-						<li><a href="#">Balance Transfer</a></li>
-						
+						<!-- <li><a href="#">Balance Transfer</a></li> -->
+						<li><a href="{{URL::to('home-loan-transfer')}}">Home Loan Transfer</a></li>						
 
 							<?php if(Session::get('is_login')){
 							?>

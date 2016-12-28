@@ -53,6 +53,9 @@ Route::get('callback','SocialsiteController@callback');
 
 Route::get('google','SocialsiteController@google');
 Route::get('google/callback','SocialsiteController@Googlecallback');
+Route::post('profile/update','ProfileController@profileupdate');
+Route::post('profile/extradetails','ProfileController@extradetails');
+
 
 /* API routes to be written here */ 
 

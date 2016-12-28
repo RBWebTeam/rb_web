@@ -58,6 +58,13 @@ class LoginController extends Controller
                   
                   $query->created_at=date('Y-m-d H:i:s');
                if($query->save()) {
+                  $insert=DB::table('customer_details')
+                         ->insertGetId(['user_id'=>$query->id,
+                            'address'=>'',
+                            'dob'=>'',
+                            'gender'=>'',
+                            'credit_score'=>'',]);
+                
                	  $req->session()->put('email',$query->email);
 		          	  $req->session()->put('contact',$query->contact);
 		              $req->session()->put('user_id',$query->id);

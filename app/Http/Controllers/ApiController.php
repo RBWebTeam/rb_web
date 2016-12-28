@@ -10,7 +10,7 @@ use Response;
 use App\bank_quote_api_request;
 class ApiController extends Controller
 {
-	///start
+
 	public function compare(Request $req){
 		//API to get bank quote
 		$request=$req;
@@ -48,21 +48,35 @@ class ApiController extends Controller
 		$status_update=DB::table('bank_quote_api_request')
 		->where('ID','=',$id)
 		->update(['status'=>$status]);
+		//pushing fixed roi details
 		for($i=0;$i<sizeof($data);$i++){
 			$bank=$data[$i]->Bank_Id;
 			$product=$data[$i]->Product_Id;
 			$profession=$data[$i]->Profession;
 			$new_data=DB::select('call  get_fixed_roi("'.$bank.'","'.$product.'","'.$profession.'")');
-			//$data[$i]->quote_id=$id;
+
+			unset($data[$i]->foir);
+			unset($data[$i]->ltv);
+			unset($data[$i]->ltvamt);
+			unset($data[$i]->pf);
+			unset($data[$i]->pf_type);
+			for($j=0;$j<(sizeof($new_data));$j++){
+				
+				$time=$new_data[$j]->years_to*12;
+				$rate=$new_data[$j]->roi/12/100;
+				//print_r("time->".$time	." amount->".$req['LoanRequired']. " rate->".$rate ." ->");
+				$emi= ceil($req['LoanRequired'] * $rate / (1 - (pow(1/(1 + $rate),$time))));
+				$new_data[$j]->emi=$emi;
+			}
 			$data[$i]->fixed_roi=$new_data;
 
-		}		
+		}		//exit();
 		return Response::json(array(
 			'data' => $data,
 			'quote_id'=>$id
 			));
 	}
-	///test end
+	
 	public function comman(Request $req){
 		//print "<pre>";
 		//print_r($req->all());

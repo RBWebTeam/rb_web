@@ -1,5 +1,5 @@
 @include('layout.header')
-    <div class="container">
+    <div class="container-fluid">
 	<aside id="fh5co-hero">
 	<div class=""></div>
 		<div class="flexslider col-md-8">

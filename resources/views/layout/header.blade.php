@@ -29,7 +29,7 @@
 	<!-- <link rel="manifest" href="{{URL::to('extension/manifest.json')}}"> -->
 	</head>
 	<body>
-@include('layout.modal')
+@include('layout.login_modal')
 <script>
  function registration(){
          document.getElementById('login').style.display="none";

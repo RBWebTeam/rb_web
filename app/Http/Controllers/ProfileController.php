@@ -16,6 +16,9 @@ class ProfileController extends Controller
     		return redirect('/');
     	}
     }
+    function show_quotes(Request $req){
+    	return view('show_quotes')->with($req);
+    }
   
 
 }

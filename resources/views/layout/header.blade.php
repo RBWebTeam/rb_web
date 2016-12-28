@@ -99,6 +99,7 @@ document.getElementById('login').style.display="block";
 							<ul class="dropdown-menu" id='account'>
 							    <li>
 								<a href={{URL::to('logout')}}>logout</a>
+								<a href="{{url('profile')}}">My Profile</a>
 								<a href="#">My Account</a>
 								<a href="#">My credit score</a>
 								<a href="{{URL::to('check_emi')}}">Emi calculator</a>

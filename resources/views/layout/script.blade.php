@@ -524,6 +524,63 @@ $(".registration-submit").click(function(event){
        //end by dp
 
 
+    // my profile details 
+    $(".profile-details").click(function(event){
+
+    event.preventDefault();
+    var form=$(this).closest("form").attr('id');
+
+
+         $form=$('#'+form);
+         if(! $form.valid()){
+
+         }else{
+          var s=$('#'+form).serialize();
+             $.ajax({  
+               type: "POST",  
+               url: "{{URL::to('profile/update')}}",
+               data : $('#'+form).serialize(),
+               success: function(msg){
+              
+             alert("Success full update.");
+
+
+               }  
+           }); 
+   }
+
+ });
+
+    /// profile extra details
+
+  $(".extradetailsbtn").click(function(event){
+    event.preventDefault();
+    var form=$(this).closest("form").attr('id');
+         $form=$('#'+form);
+         if(! $form.valid()){
+         }else{
+          var s=$('#'+form).serialize();
+             $.ajax({  
+               type: "POST",  
+               url: "{{URL::to('profile/extradetails')}}",
+               data : $('#'+form).serialize(),
+               success: function(msg){
+              
+           alert("Success full update.");
+
+
+               }  
+           }); 
+   }
+
+ });
+
+
+
+////////
+
+
+
 });
 
 $('document').ready(function(){

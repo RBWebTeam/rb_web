@@ -32,11 +32,14 @@
                                 <div class="col-md-6 pad11"><input name="email" value="{{$query->email}}" type="text" placeholder="Email Id" readonly></div>
                                
                                <div class="col-md-6 pad11">
-                               <input name="contact" type="text" placeholder="Mobile No." value="{{$query->contact}}" required maxlength="10"  pattern="[0-9]{10}">
+                               <input name="contact" type="text" placeholder="Mobile No." value="{{$query->contact}}" required maxlength="10" min="8"  pattern="[7-9]{1}[0-9]{9}">
                                </div>
+                                <div class="col-md-6 pad11" id="errorphon"></div>
+                               
 
                             
                                 <input type="hidden" id='_token' name="_token" value="{{csrf_token()}}">
+
 
 
                                 <div  class="col-md-12">
@@ -51,16 +54,36 @@
                         <div class="tab-pane" id="extraDetails">   
                          <form name="extradetailsform" id="extradetailsform" method="post" >   
                                 <div class="col-md-6 pad11">
-                                    <input name="dob" value="{{$details->dob}}" type="date" placeholder="Date of Birth" required>
+                                  @if(isset($cquery->dob))
+                                     <?php $dob=$cquery->dob;?>
+                                  @else
+                                     <?php $dob='';?>
+                                  @endif
+                                    <input name="dob" value="{{$dob}}" type="date" placeholder="Date of Birth" required>
                                 </div>
+                                <div class="col-md-6 pad11" id="errordetails"></div>
+                                
+
+                                  @if(isset($cquery->dob))
+                                      <?php $gender=$cquery->gender;?>
+                                  @else
+                                      <?php $gender='';?>
+                                  @endif
                                 <div class="col-md-12">
                                     <span><strong>Gender :-</strong></span> &nbsp;&nbsp; Male 
-                                    <input name="gender" value="male" <?php if($details->gender=='male'){?>checked="checked"<?php }?>  type="radio" class="rado" required> | Female 
-                                    <input name="gender"  value="female" <?php if($details->gender=='female'){?>checked="checked"<?php }?>  type="radio" class="rado" required>
+                                    <input name="gender" value="male" <?php if ($gender == 'male') echo "checked='checked'"; ?>  type="radio" class="rado" required> | Female 
+                                    <input name="gender" <?php if ($gender == 'female') echo "checked='checked'"; ?> value="female" type="radio" class="rado" required>
                                 </div>
                                         <br>
+
+
+                                   @if(isset($cquery->dob))
+                                      <?php $address=$cquery->address;?>
+                                   @else
+                                      <?php $address='';?>
+                                   @endif
                                  <div class="col-md-12 pad11">
-                                    <textarea name="address" cols="" rows="4" placeholder="Address" required> {{$details->address}}</textarea>
+                                    <textarea name="address" cols="" rows="4" placeholder="Address" required>{{$address}}</textarea>
                                  </div>
 
                                  <input type="hidden" id='_token' name="_token" value="{{csrf_token()}}">
@@ -74,7 +97,7 @@
 
                           <div class="tab-pane" id="credit-score">
 
-                          <div class="col-md-12"> Your credit score {{$details->credit_score}} </div>
+                          <div class="col-md-12"> Your credit score  </div>
 
                            <div class="col-md-12">
                            <p>Get Free Credit Report <a href="#"> click Here..</a></p>

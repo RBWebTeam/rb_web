@@ -238,30 +238,35 @@
           {{ csrf_field() }}
 
                <div><fieldset>
-        <input class="newsletter-name" name="name"  placeholder="Name" required>
+        <input class="newsletter-name" name="name"  placeholder="Name" >
+         <div id="errorName"></div>
           </fieldset>
+         
         </div>
 
           <div><fieldset>
-          <input class="newsletter-name" type="email" id="reg_email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" placeholder="email" required>
-          <div id="erroremail"></div>
+          <input class="newsletter-name" type="email" placeholder="Email" id="reg_email" name="email" >
+          <div id="errorEmail"></div>
           </fieldset>                 
           </div>
           
           <div><fieldset>
-            <input type="text" class="newsletter-name" name="contact" pattern="[789][0-9]{9}" required maxlength="10" placeholder="Mobile Number" >
+            <input type="text" class="newsletter-name" name="contact" pattern="[789][0-9]{9}"  maxlength="10" placeholder="Mobile Number" >
+              <div id="errorcontact"></div>
           </fieldset>                 
           </div>
 
       <div><fieldset>
-        <input type="password" class="newsletter-name" id="password"  name="password" placeholder="password" required>
-          </fieldset><div id="errors"></div>
+        <input type="password" class="newsletter-name" id="password"  name="password" placeholder="password" >
+         <div id="errorpassword"></div>
+          </fieldset>
       </div>
 
       <div><fieldset>
         <!--  <input type="password" class="newsletter-name" onblur="confirmp()"  name="password_confirm" placeholder="password_confirm" > -->
 
          <input type="password" class="newsletter-name"  name="password_confirm" id="password_confirm" placeholder="password confirm" >
+         <div id="errorpasswordconfirm"></div>
           </fieldset>
       </div>
 
@@ -277,12 +282,12 @@
 
 
 
-            <div class='msg' style="display: none;"><p>Thanks. We will reach you soon.</p></div>
+            <div class='msg' style="display: none;"><p>Thanks. You are successfully registered.</p></div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 
-        <div style="float: left;">   <a href="#"  onclick="backf()"> Login here</a></div>
+        <div style="float: left;" id="Login-here">   <a href="#"  onclick="backf()"> Login here</a></div>
         </div>
 
 

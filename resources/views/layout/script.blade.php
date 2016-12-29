@@ -496,23 +496,62 @@ $(".registration-submit").click(function(event){
                url: "{{URL::to('registration')}}",
                data : $('#'+form).serialize(),
                success: function(msg){
-                
-                if(msg=='1'){
-                  $("#registration1").show();
-                  $form.show();
-                  $("#errors").text("password and confirm password does not match");
-                 }else if(msg=="2"){
-                  $("#registration1").show();
-                  $form.show();
-                  $("#erroremail").text("Email already exist in our database");
-                }else if(msg=="3"){
-                 window.location.href ='http://localhost:8000/';
-
-                }else{
                  
-                  // $form.hide();
-                  // $('.msg').show();
-                }
+                   if(msg.name){
+                      $("#errorName").text(msg.name);
+                  }else{
+                     $("#errorName").text('');
+                  }
+                  
+                   if(msg.email){
+                      $("#errorEmail").text(msg.email);
+                  }else{
+                     $("#errorEmail").text('');
+                  }
+                  
+                   if(msg.contact){
+                      $("#errorcontact").text(msg.contact);
+                  }else{
+                     $("#errorcontact").text('');
+                  }
+
+                  if(msg.password){
+                      $("#errorpassword").text(msg.password);
+                  }else{
+                     $("#errorpassword").text('');
+                  }
+                
+                if(msg.password_confirm){
+                      $("#errorpasswordconfirm").text(msg.password_confirm);
+                  }else{
+                     $("#errorpasswordconfirm").text('');
+                  }
+                  
+                 if(msg=='1'){
+                  $form.hide();
+                  $('.msg').show();
+                  $('#Login-here').hide();
+                 }
+              
+                // if(msg=='1'){
+                //   $("#registration1").show();
+                //   $form.show();
+                //   $("#errors").text("password and confirm password does not match");
+                //  }else if(msg=="2"){
+                //   $("#registration1").show();
+                //   $form.show();
+                //   $("#erroremail").text("Email already exist in our database");
+                // }else if(msg=="3"){
+                //  window.location.href ='http://localhost:8000/';
+
+                // }else{
+                 
+                //   // $form.hide();
+                //   // $('.msg').show();
+                // }
+
+
+
                 //console.log(msg);
 
                }  
@@ -529,7 +568,7 @@ $(".registration-submit").click(function(event){
 
     event.preventDefault();
     var form=$(this).closest("form").attr('id');
-
+   var contact=$(this).closest("form").find("input[name=contact]").val();
 
          $form=$('#'+form);
          if(! $form.valid()){
@@ -540,9 +579,18 @@ $(".registration-submit").click(function(event){
                type: "POST",  
                url: "{{URL::to('profile/update')}}",
                data : $('#'+form).serialize(),
+               dataType: 'json',
                success: function(msg){
+
+               //alert(msg.contact); 
               
-             alert("Success full update.");
+                 if(msg==1){
+                   $("#errorphon").text("Successfully updated ");
+                 }else{
+                  
+                   $("#errorphon").text(msg.contact);
+
+                 }
 
 
                }  
@@ -566,8 +614,11 @@ $(".registration-submit").click(function(event){
                data : $('#'+form).serialize(),
                success: function(msg){
               
-           alert("Success full update.");
-
+              if(msg==1){
+              $("#errordetails").text("Record inserted successfully");
+              }else if(msg==2){ 
+              $("#errordetails").text("Successfully updated ");
+              }
 
                }  
            }); 

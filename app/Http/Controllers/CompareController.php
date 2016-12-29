@@ -42,6 +42,7 @@ class CompareController extends Controller
     }
 
     public function calculation(Request $req){
+      
 
       $getQuery=DB::table('bank_product_web_intrest')
       ->join('bank_master', 'bank_product_web_intrest.bank_id', '=', 'bank_master.Bank_id')

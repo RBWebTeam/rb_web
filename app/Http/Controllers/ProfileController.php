@@ -15,17 +15,17 @@ class ProfileController extends Controller
     function my_profile(Request $req){
 
 
-    	if(Session::get('is_login'))
-    	{ 
+      if(Session::get('is_login'))
+      { 
 
-    		$get_id=Session::get('user_id');
+        $get_id=Session::get('user_id');
             $query=DB::table('user_registration')->where('id','=',$get_id)->first();
             $cquery=DB::table('customer_details')->where('user_id','=',$get_id)->first();
 
-        	return view('my-profile',['query'=>$query,'cquery'=>$cquery]);
-    	}else{
-    		return redirect('/');
-    	}
+          return view('my-profile',['query'=>$query,'cquery'=>$cquery]);
+      }else{
+        return redirect('/');
+      }
     }
 
     public function profileupdate(Request $req){
@@ -43,7 +43,7 @@ class ProfileController extends Controller
                    DB::table('user_registration')->where('id', $get_id)->update(array('contact' => $req->contact,'username'=>$req->username));
 
                  $error="1";
-		         echo $error;
+             echo $error;
 
   }
            
@@ -62,25 +62,25 @@ class ProfileController extends Controller
        DB::table('customer_details')->where('user_id', $get_id)->update(array('address' => $req->address,'dob'=>$req->dob,'gender'=>$req->gender));
 
         $error="2";
-		echo $error;
+    echo $error;
 
         }else{
 
               $insert=DB::table('customer_details')
-		           ->insertGetId(['user_id'=>$get_id,
-			                      'address'=>$req->address,
-			                      'dob'=>$req->dob,
-			                      'gender'=>$req->gender,
-			                      'credit_score'=>0,
- 	
-			]);
+               ->insertGetId(['user_id'=>$get_id,
+                            'address'=>$req->address,
+                            'dob'=>$req->dob,
+                            'gender'=>$req->gender,
+                            'credit_score'=>0,
+  
+      ]);
 
-		       $error="1";
-		       echo $error;
+           $error="1";
+           echo $error;
 
        }  
 
-    	}
+      }
 
 
     }

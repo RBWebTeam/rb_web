@@ -371,79 +371,6 @@ $(document).ready(function(){
     }
 
 
-       // ...login...dp..
-
-//        if(form=="login_form"){
-
-
-//          if(! $form.valid()){
-//          }else{
-             
-//              $.ajax({  
-//                type: "POST",  
-//                url: "{{URL::to('login')}}",
-//                data : $('#'+form).serialize(),
-//                success: function(msg){
-              
-//                      $("#login_form").show();
-//                      if(msg=="email"){
-
-
-
-//             $("#msg").text("Your email or password is incorrect. please try again?");               
-//                      }else if(msg=="right"){
-
-
-//                        window.location.href ='http://localhost:8000/';
-//                      }
-
-
-//                }  
-//            }); 
-
-
-//    }
-// }
-
- 
-//    // ...registration_form...dp..
-//        if(form=="registration_form"){
-//          if(! $form.valid()){
-//          }else{
-
- 
-//           $.ajax({  
-//                type: "POST",  
-//                url: "{{URL::to('registration')}}",
-//                data : $('#'+form).serialize(),
-//                success: function(msg){
-                
-//                 if(msg=='1'){
-//                   $("#registration1").show();
-//                   $form.show();
-//                   $("#errors").text("password and confirm password does not match");
-//                  }else if(msg=="2"){
-//                   $("#registration1").show();
-//                   $form.show();
-//                   $("#erroremail").text("Email already exist in our database");
-//                 }else if(msg=="3"){
-//                  window.location.href ='http://localhost:8000/';
-
-//                 }else{
-                 
-//                   // $form.hide();
-//                   // $('.msg').show();
-//                 }
-//                 //console.log(msg);
-//                }  
-//                }); 
-
-//          }
-       
-//        }
-
-//        //end by dp
-
   });
 
 
@@ -466,8 +393,6 @@ $(".login-submit").click(function(event){
               
                      $("#login_form").show();
                      if(msg=="email"){
-
-
 
             $("#msg").text("Your email or password is incorrect. please try again?");               
                      }else if(msg=="right"){
@@ -535,26 +460,6 @@ $(".registration-submit").click(function(event){
                   $('#Login-here').hide();
                  }
               
-                // if(msg=='1'){
-                //   $("#registration1").show();
-                //   $form.show();
-                //   $("#errors").text("password and confirm password does not match");
-                //  }else if(msg=="2"){
-                //   $("#registration1").show();
-                //   $form.show();
-                //   $("#erroremail").text("Email already exist in our database");
-                // }else if(msg=="3"){
-                //  window.location.href ='http://localhost:8000/';
-
-                // }else{
-                 
-                //   // $form.hide();
-                //   // $('.msg').show();
-                // }
-
-
-
-                //console.log(msg);
 
                }  
            }); 

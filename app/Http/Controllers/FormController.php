@@ -6,6 +6,7 @@ use App\Http\Requests;
 use Session;
 use Auth;
 use DB;
+use Redirect;
 class FormController extends Controller
 {
     function sidebar(Request $req){
@@ -46,18 +47,23 @@ class FormController extends Controller
     public function p_loan_submit(Request $req){
         //call api to submit form data
         $input = $req->all();
+       //print_r($input);exit();
         $new_array = array('customer_contact' => Session::get('contact'), 'customer_name' => Session::get('name'),'customer_email' => Session::get('email'));
         //replacing city name with id
-        $city_id=DB::table('city_master')->select('city_id')
-        ->where('city_name', 'LIKE', '%'.$req['city_name'].'%')
-        ->get();
-        $input['city_name']=(string)$city_id[0]->city_id;
-        //adding city_id to post data
+        if($req['city_name']){
+            $city_id=DB::table('city_master')->select('city_id')
+            ->where('city_name', 'LIKE', '%'.$req['city_name'].'%')
+            ->get();
+            $input['city_name']=(string)$city_id[0]->city_id;
+            //adding city_id to post data
+           
+        } 
         $res=array_merge($input,$new_array);
-        //print_r($res);
+       
         //$data =json_encode($res);
         //$data_1=str_replace('"','',$data);
-        //print_r($data);
+
+       // print_r($res);exit();
         //CustomerLaravelWebRequest
             $url = "http://beta.erp.rupeeboss.com/CustomerLaravelWebRequest.aspx";
             $ch = curl_init();
@@ -73,22 +79,33 @@ class FormController extends Controller
             $error = curl_error($ch);
             $http_code = curl_getinfo($ch ,CURLINFO_HTTP_CODE);
             //$obj = json_decode($http_result);
-            print "<pre>";
-            print_r($http_result);
-            return $http_result;
-            // if($http_result==1){
-            //     $data= redirect()->action('ApiController@compare');
-            //     print_r($data);
-            //     return view('contact')->with($data);
-
-            // }else{
-            //     return 'false';
-            //     //return 'true';
-            // }
+            //print "<pre>";
+           // print_r($http_result);
+           // return $http_result;
+            if($http_result==1){
+                if(isset($req['income'])){
+                    $income=$req['income'];
+                }else{
+                    $income=$req['turnover'];
+                }
+                
+                $quote_data=DB::select('call  usp_get_personal_loan_quot ("'.$req['dob'].'","'.$req['emp_detail_id'].'","'.$income.'","'.$req['obligation'].'","'.$req['loan_tenure'].'","'.$req['loan_amount'].'")');
+                //return Redirect::to('show-quotes')->with($quote_data);
+                
+            }
+            else{
+                return "no quotes";
+            }
+            //$new_data=json_decode(json_encode($quote_data));
+            //return Redirect::action('FormController@show_quotes',array('$data'=>$new_data));
+            
+            //see url
+            return view('show-quotes')->with(array('data' =>$quote_data));
     }
     
      public function otp(Request $req){
         $input = $req->all();
+        //print_r($input);exit(); 
         //sms curl to write here
         //$otp = mt_rand(100000, 999999);
         $otp=123456;
@@ -164,6 +181,10 @@ class FormController extends Controller
                             'data' => false,
                         ));
         }
+    }
+    function show_quotes(Request $req){
+        print_r($req->all());
+       //return view('show-quotes')->with($req);
     }
 
 }

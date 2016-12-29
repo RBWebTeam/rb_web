@@ -72,3 +72,9 @@ Route::get('home-loan-transfer','CompareController@switchme');
 Route::post('calculation','CompareController@calculation');
 Route::get('profile','ProfileController@my_profile');
 
+//new loans test
+
+Route::get('test-personal-loan','LoanController@apply_p_test');
+Route::get('show-quotes','FormController@show_quotes');
+
+

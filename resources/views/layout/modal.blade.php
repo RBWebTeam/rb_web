@@ -155,6 +155,7 @@
   </div>
 
 <!---Help End -->
+<<<<<<< HEAD
 
   <!-- Modal  Sign in-->
   <div class="modal fade" id="log_popup" role="dialog">

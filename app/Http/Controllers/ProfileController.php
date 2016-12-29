@@ -28,7 +28,6 @@ class ProfileController extends Controller
     	}
     }
 
-
     public function profileupdate(Request $req){
 
  //'contact' => 'required|min:11|numeric',
@@ -82,6 +81,7 @@ class ProfileController extends Controller
        }  
 
     	}
+
 
     }
   

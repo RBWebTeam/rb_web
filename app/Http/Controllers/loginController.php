@@ -44,7 +44,6 @@ class LoginController extends Controller
       public function register_form(Request $req){
 
 
-   
  $val =Validator::make($req->all(), [
                 'name' => 'required|min:5',
                 'contact' => 'required|regex:/^[0-9]{10}+$/',

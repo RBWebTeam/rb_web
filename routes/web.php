@@ -68,4 +68,7 @@ Route::get('loan-details/{product}/{bank}','BankController@home_loanBank');
 Route::get('home-loan-transfer','CompareController@switchme');
 Route::post('calculation','CompareController@calculation');
 Route::get('profile','ProfileController@my_profile');
+// 
+
+
 

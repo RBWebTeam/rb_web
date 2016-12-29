@@ -113,10 +113,9 @@
 					<div class="col-md-4 animate-box">
 						<div class="price-box popular">
 							<div class="ic1"><img src="images/ic2.png" /></div>
-							<h4 class="mrg-btm">Check Eligibility & Calculate EMI</h4>
+							<h4 class="mrg-btm">Calculate EMI</h4>
 							<ul>
-							     <li>Check your credit score</li>
-								 <li>check your elgibility</li>
+							     
 								 <li>calculate your EMIs.</li>
 							</ul>
 							<a class="btn btn-primary btn-outline with-arrow" href="{{URL::to('check_emi')}}">Calculate EMI<i class="icon-arrow-right"></i></a>

@@ -99,7 +99,7 @@
 
 
 
-<center><h1>Savings Table:<i class="fa fa-hand-o-down" aria-hidden="true"></i></h1></center>
+
 <div id="test"></div>
 
 
@@ -112,11 +112,13 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title">Modal title</h4>
+        <h4 class="modal-title"></h4>
       </div>
       <div class="modal-body">
-        <p>Amount should be greater than 500000&hellip;</p>
+        <h3><p>Amount should be greater than "5,00,000" and lesser than "10,00,000,000".</p></h3>
+        <h3><p>As well as Interest should be greater than 9%. If less you already on Lower Rate.</p></h3>
       </div>
+      
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         
@@ -192,14 +194,15 @@
 
                    var numb4 = msg.savings.toFixed();
                    $('#emi6').empty().append(numb4);
-                   $("#1").show();
-                      
+
+                        $("#1").show();
                         $("#4").show();
                         $("#5").show();
                         $("#6").show();
                         $("#7").show();
                         $('#test').html(msg.html);
                   }else{
+                    console.log(lm);
                      $('#homeTransfer').modal('show');  
                       
 

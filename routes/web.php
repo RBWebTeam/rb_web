@@ -53,6 +53,9 @@ Route::get('callback','SocialsiteController@callback');
 
 Route::get('google','SocialsiteController@google');
 Route::get('google/callback','SocialsiteController@Googlecallback');
+Route::post('profile/update','ProfileController@profileupdate');
+Route::post('profile/extradetails','ProfileController@extradetails');
+
 
 /* API routes to be written here */ 
 
@@ -70,5 +73,11 @@ Route::post('calculation','CompareController@calculation');
 Route::get('profile','ProfileController@my_profile');
 // 
 
+
+
+//new loans test
+
+Route::get('test-personal-loan','LoanController@apply_p_test');
+Route::get('show-quotes','FormController@show_quotes');
 
 

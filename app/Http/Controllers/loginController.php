@@ -43,11 +43,23 @@ class LoginController extends Controller
 
       public function register_form(Request $req){
 
-      	          $sel=DB::table("user_registration")->where('email','=',$req->email)->get();
-                  $count=$sel->count();
-               if($count==0){
-               if($req->password==$req->password_confirm){	
-                  $query=new registrationModel();
+
+   
+ $val =Validator::make($req->all(), [
+                'name' => 'required|min:5',
+                'contact' => 'required|regex:/^[0-9]{10}+$/',
+                'email' => 'required|email|unique:user_registration',
+                'password' =>'required|min:5',
+                'password_confirm' => 'required|min:5|same:password',
+                            ]);
+
+           if ($val->fails()){
+
+              return response()->json($val->messages(), 200);
+           }else{
+
+
+             $query=new registrationModel();
                   $query->username=$req->name;
                   $query->email=$req->email;
                   $query->contact=$req->contact;
@@ -58,28 +70,16 @@ class LoginController extends Controller
                   
                   $query->created_at=date('Y-m-d H:i:s');
                if($query->save()) {
-               	  $req->session()->put('email',$query->email);
-		          	  $req->session()->put('contact',$query->contact);
-		              $req->session()->put('user_id',$query->id);
-		              $req->session()->put('name',$query->username);
-		              $req->session()->put('is_login',1);
-		              $error="3";
-		         echo $error;
-    }
-
-           }else{
-          
-                   $error="1";
-              echo $error;
-
-           }
-               }else{
-
-                    $error="2";
-               	echo $error;
-               }
-             
-      }
+                  $req->session()->put('email',$query->email);
+                  $req->session()->put('contact',$query->contact);
+                  $req->session()->put('user_id',$query->id);
+                  $req->session()->put('name',$query->username);
+                  $req->session()->put('is_login',1);
+                  $error="1";
+             echo $error;
+        }
+     }
+ }
       //added by manish to logout
         public function logout(Request $req){
           $req->session()->flush();

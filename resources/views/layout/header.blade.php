@@ -29,7 +29,7 @@
 	<!-- <link rel="manifest" href="{{URL::to('extension/manifest.json')}}"> -->
 	</head>
 	<body>
-@include('layout.modal')
+@include('layout.login_modal')
 <script>
  function registration(){
          document.getElementById('login').style.display="none";
@@ -46,7 +46,7 @@ document.getElementById('login').style.display="block";
 </script>
 	
 	<!-- Side bar -->
-	<div class="arrow-don">Hi &nbsp;<i class="icon-hand-stop-o"></i></div>
+	<div class="arrow-don">Hello &nbsp;<i class="icon-hand-stop-o"></i></div>
     <div class="sidebar" style="display:none;">
     <ul>
         <li class="hide-dv"><a href="#"><i class="icon-arrow-left"></i>&nbsp;Hide</a></li>
@@ -69,28 +69,27 @@ document.getElementById('login').style.display="block";
 						 
 						 <ul class="dropdown-menu">
 						    <li>
-							<a href="#">Unsequenced Business Loan</a>
-							<a href="#">Loan against Property</a>
+							<a href="#">Unsecured Business Loan</a>
+							<a href="#">Loan Against Property</a>
 							<a href="#">Commercial Property Purchase</a>
 							</li>
 							<li>
 							<a href="#">Lease Rent Discounting</a>
-							<a href="#">Working capital</a>
+							<a href="#">Working Capital</a>
 							<a href="#">Export/Import Finance</a>
 						
 							</li>
-							<li><a href="#">Over Draft / cash Credit</a>
+							<li><a href="#">Over Draft / Cash Credit</a>
 							
 							</li>
 							
 							</li>
 						</ul>
 						</li>
-						<li><a href="#">Retail Loan</a></li>
-						<li><a href="#">Other Loan</a></li>
-						<li><a href="#">Credit Loan</a></li>
+						
+						<li><a href="#">Credit Card</a></li>
 						<!-- <li><a href="#">Balance Transfer</a></li> -->
-						<li><a href="{{URL::to('home-loan-transfer')}}">Home Loan Transfer</a></li>						
+						<li><a href="{{URL::to('home-loan-transfer')}}">Balance Transfer</a></li>						
 
 							<?php if(Session::get('is_login')){
 							?>
@@ -99,6 +98,7 @@ document.getElementById('login').style.display="block";
 							<ul class="dropdown-menu" id='account'>
 							    <li>
 								<a href={{URL::to('logout')}}>logout</a>
+								<a href="{{url('profile')}}">My Profile</a>
 								<a href="#">My Account</a>
 								<a href="#">My credit score</a>
 								<a href="{{URL::to('check_emi')}}">Emi calculator</a>

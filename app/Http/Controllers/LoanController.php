@@ -115,5 +115,8 @@ class LoanController extends Controller
      public function apply_business_loan(){
       return view('business-loan-process');
     }
-       
+      
+    public function apply_p_test(){
+      return view('personal-loan-test');
+    }
 }

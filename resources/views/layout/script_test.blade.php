@@ -46,96 +46,23 @@
      function changeTest(obj,val){
 
         //alert(obj.options[obj.selectedIndex].value);
+        
 
         document.getElementById(val).style.display='block';
         
         $('#pop1').empty();
         if(val=='q2'){
-        $('#pop1').append( "<p>Enter the amount you want</p>" );
-        }else if(val=='q4'){
-          $('#pop1').append( "<p>Any loan taken in past</p>" );
-        }else if(val=='q5'){
-          $('#pop1').append( "<p>Any credit card you have</p>" );
-        }else if(val=='q6'){
-          $('#pop1').append( "<p>Ever delayed EMI?</p>" );
-        }else if(val=='m_sal'){
-          $('#pop1').append( "<p>You net salary</p>" );
-        }else if(val=='stay_in'){
-           $('#pop1').append( "<p>You stay with</p>" );
-        }else if(val=='dob'){
-           $('#pop1').append( "<p>I wonder if your birthday is today</p>" );//now if else from car -praveen
-        }else if(val=='manufacture'){
-        document.getElementById('preferred').style.display='none';
-        document.getElementById('work_at').style.display='none';
-        document.getElementById('takehome_sal').style.display='none ';
-        document.getElementById('exp').style.display='none ';
-        document.getElementById('total_exp').style.display='none';
-        document.getElementById('salary_by').style.display='none';
-        document.getElementById('salary_deposit').style.display='none';
-        document.getElementById('amt_borrow').style.display='none';
-        document.getElementById('car_step1').style.display='none';
-
-        $('#pop1').append( "<p>Which car you want(manufacture-year)</p>" );
-        }else if(val=='preferred'){
-          if(obj.value=="New Car"){
-            document.getElementById('manufacture').style.display='none  ';
-
-          }
-          $('#pop1').append( "<p>Your Dream Car</p>" );
-        }else if(val=='living_currently'){
-          $('#pop1').append( "<p>Where do yo reside</p>" );
-        }else if(val=='work_at'){
-          $('#pop1').append( "<p>Where do you work</p>" );
-
-        }else if(val=='takehome_sal'){
-          $('#pop1').append( "<p>Your monthly takehome salary!!</p>" );
-        }else if(val=='exp'){
-          $('#pop1').append( "<p>Your experience in the above company is</p>" );
-           }else if(val=='salary_deposit'){
-          $('#pop1').append( "<p>Where your money/salary get deposit into</p>" );
-        }else if(val=='amt_borrow'){
-          $('#pop1').append("<p>Amount to be borrowed</p>");
-        }
-        else if(val=='living_in'){
-          $('#pop1').append( "<p>You stay with</p>" );
-        }else if(val=='birth'){
-           $('#pop1').append( "<p>I wonder if your birthday is today</p>" );
-        }else if(val=='type_of_profession'){ //business loan script
-          //console.log(val);
-
-          document.getElementById('type_of_emp_profession').style.display='none';
-          $('#type_of_emp_profession').value="";
-          document.getElementById('gross_annual').style.display='none';
-           $('#gross_annual').value="";
-          document.getElementById('desired_amt').style.display='none';
-           $('#desired_amt').value="";
-          document.getElementById('residence').style.display='none';
-            $('#residence').value="";
-          document.getElementById('btn_step1').style.display='none';
-           $('#pop1').append( "<p>Select your business</p>" );
-        }else if(val=='turnover'){
-          //console.log(val);
-           $('#pop1').append( "<p>Enter your gross annual sales/turnover</p>" );
-        }else if(val=='emi_pay'){
-           $('#pop1').append( "<p>How much total EMI you pay currently</p>" );
-        }else if(val=='pan_card'){
-           $('#pop1').append( "<p>Please enter your pan card number</p>" );
-        }else if(val=='type_of_emp_profession'){
-          //console.log(val);
-          document.getElementById('type_of_profession').style.display='none';
-          $('#type_of_profession').value="";
-          document.getElementById('turnover').style.display='none';
-           $('#turnover').value="";
-          document.getElementById('desired_amt').style.display='none';
-          $('#desired_amt').value="";
-          document.getElementById('residence').style.display='none';
-             $('#residence').value="";
-          document.getElementById('btn_step1').style.display='none';
-           $('#pop1').append( "<p>Select your profession</p>" );
-        }else if(val=='gross_annual'){
-           $('#pop1').append( "<p>Enter your gross annual reciept</p>" );
+          $("#q2_year").hide();
+          $('#pop1').append( "<p>Enter your net Income</p>" );
+        }else  if(val=='q5'){
+            $('#pop1').empty();
+            $('#pop1').append( "<p>Loan amount you wants to borrow</p>" );
+            $("#q4").hide();
+        }else  if(val=='q2_year'){
+          $('#pop1').append( "<p>Enter your net Income</p>" );
+          $("#q2").hide();
         }else{
-           $('#pop1').append( "<p>Please Proceed</p>" );
+            $('#pop1').append( "<p>Please Proceed</p>" );
         }
         return false;
       }
@@ -190,26 +117,27 @@
       
       function changeText(obj,val){
         $("#"+obj).keyup(function() {
-            //pan card validation code 
+            //pan card validation
             if(obj=='card'){
-               var str =$('#card').val();
-               var pancardPattern = /^([a-zA-Z]{5})(\d{4})([a-zA-Z]{1})$/;
-               var res = str.match(pancardPattern);
-               if(res){
-                $('#pop1').empty();
-                $('#pop1').append( "<p>Great!! tell us more</p>" );
-                 document.getElementById(val).style.display='block';
-               }else{
-                $('#pop1').empty();
-                $('#pop1').append( "<p>Enter correct pan card number</p>" );
-                document.getElementById(val).style.display='none';
-               }
-               return false;
-            }
+             var str =$('#card').val();
+             var pancardPattern = /^([a-zA-Z]{5})(\d{4})([a-zA-Z]{1})$/;
+             var res = str.match(pancardPattern);
+             if(res){
+              $('#pop1').empty();
+              $('#pop1').append( "<p>Great!! tell us more</p>" );
+               document.getElementById(val).style.display='block';
+             }else{
+              $('#pop1').empty();
+              $('#pop1').append( "<p>Enter correct pan card number</p>" );
+              document.getElementById(val).style.display='none';
+             }
+             return false;
+        }
 
           //Rest code for text fields with numbers
             var x=$(this).val().length ;
-            if (((obj=='total_sal' || obj=='loan') && x>6) ||(x>=5 && x<=8) ) {
+           
+            if ((obj=='loan_tenure')||((obj=='total_sal' || obj=='loan') && x>6) ||(x>=5 && x<=8) ) {
               document.getElementById(val).style.display='block';
             return false;
           }
@@ -346,13 +274,12 @@ $(document).ready(function(){
     event.preventDefault();
     var form=$(this).closest("form").attr('id');
     //return false;
-  
+    console.log(form);
 
     $form=$('#'+form);
     if(! $form.valid()){
       return false;
     }else{
-      
       $.ajax({  
                type: "POST",  
                url: "{{URL::to('sidebar')}}",
@@ -496,62 +423,23 @@ $(".registration-submit").click(function(event){
                url: "{{URL::to('registration')}}",
                data : $('#'+form).serialize(),
                success: function(msg){
-                 
-                   if(msg.name){
-                      $("#errorName").text(msg.name);
-                  }else{
-                     $("#errorName").text('');
-                  }
-                  
-                   if(msg.email){
-                      $("#errorEmail").text(msg.email);
-                  }else{
-                     $("#errorEmail").text('');
-                  }
-                  
-                   if(msg.contact){
-                      $("#errorcontact").text(msg.contact);
-                  }else{
-                     $("#errorcontact").text('');
-                  }
-
-                  if(msg.password){
-                      $("#errorpassword").text(msg.password);
-                  }else{
-                     $("#errorpassword").text('');
-                  }
                 
-                if(msg.password_confirm){
-                      $("#errorpasswordconfirm").text(msg.password_confirm);
-                  }else{
-                     $("#errorpasswordconfirm").text('');
-                  }
-                  
-                 if(msg=='1'){
-                  $form.hide();
-                  $('.msg').show();
-                  $('#Login-here').hide();
-                 }
-              
-                // if(msg=='1'){
-                //   $("#registration1").show();
-                //   $form.show();
-                //   $("#errors").text("password and confirm password does not match");
-                //  }else if(msg=="2"){
-                //   $("#registration1").show();
-                //   $form.show();
-                //   $("#erroremail").text("Email already exist in our database");
-                // }else if(msg=="3"){
-                //  window.location.href ='http://localhost:8000/';
+                if(msg=='1'){
+                  $("#registration1").show();
+                  $form.show();
+                  $("#errors").text("password and confirm password does not match");
+                 }else if(msg=="2"){
+                  $("#registration1").show();
+                  $form.show();
+                  $("#erroremail").text("Email already exist in our database");
+                }else if(msg=="3"){
+                 window.location.href ='http://localhost:8000/';
 
-                // }else{
+                }else{
                  
-                //   // $form.hide();
-                //   // $('.msg').show();
-                // }
-
-
-
+                  // $form.hide();
+                  // $('.msg').show();
+                }
                 //console.log(msg);
 
                }  
@@ -561,75 +449,6 @@ $(".registration-submit").click(function(event){
     
    });
        //end by dp
-
-
-    // my profile details 
-    $(".profile-details").click(function(event){
-
-    event.preventDefault();
-    var form=$(this).closest("form").attr('id');
-   var contact=$(this).closest("form").find("input[name=contact]").val();
-
-         $form=$('#'+form);
-         if(! $form.valid()){
-
-         }else{
-          var s=$('#'+form).serialize();
-             $.ajax({  
-               type: "POST",  
-               url: "{{URL::to('profile/update')}}",
-               data : $('#'+form).serialize(),
-               dataType: 'json',
-               success: function(msg){
-
-               //alert(msg.contact); 
-              
-                 if(msg==1){
-                   $("#errorphon").text("Successfully updated ");
-                 }else{
-                  
-                   $("#errorphon").text(msg.contact);
-
-                 }
-
-
-               }  
-           }); 
-   }
-
- });
-
-    /// profile extra details
-
-  $(".extradetailsbtn").click(function(event){
-    event.preventDefault();
-    var form=$(this).closest("form").attr('id');
-         $form=$('#'+form);
-         if(! $form.valid()){
-         }else{
-          var s=$('#'+form).serialize();
-             $.ajax({  
-               type: "POST",  
-               url: "{{URL::to('profile/extradetails')}}",
-               data : $('#'+form).serialize(),
-               success: function(msg){
-              
-              if(msg==1){
-              $("#errordetails").text("Record inserted successfully");
-              }else if(msg==2){ 
-              $("#errordetails").text("Successfully updated ");
-              }
-
-               }  
-           }); 
-   }
-
- });
-
-
-
-////////
-
 
 
 });
@@ -715,7 +534,8 @@ $(document).ready(function(){
                  var data_1=data['data'];
                 if(data_1==true){
                      var form_name=$('#elem').parent().find('form').attr('id');
-                     $.post('loan-submit', $('#'+form_name).serialize());
+                     //$.post('loan-submit', $('#'+form_name).serialize());
+                     $('#'+form_name).submit();
                     $('#otp_modal').modal('hide');
                   }else{
                     $('#otp_err').show();
@@ -913,11 +733,6 @@ function emibreakup(E,P,r,n)
   </script>
 <!-- emi scripts end -->
 
-
-
-
-	</body>
-</html>
 <!-- login Start-->
     <div id="login_process" class="modal fade" role="dialog">
   <div class="modal-dialog">
@@ -998,5 +813,8 @@ function emibreakup(E,P,r,n)
 
 <!-- otp end-->
 
-@include('layout.modal')
+
+	</body>
+</html>
+
 

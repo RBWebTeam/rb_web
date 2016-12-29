@@ -80,26 +80,26 @@
 
                <div><fieldset>
         <input class="newsletter-name" name="name"  placeholder="Name" >
-         <div id="errorName"></div>
+         <div  class="text-danger" id="errorName"></div>
           </fieldset>
          
         </div>
 
           <div><fieldset>
           <input class="newsletter-name" type="email" placeholder="Email" id="reg_email" name="email" >
-          <div id="errorEmail"></div>
+          <div  class="text-danger" id="errorEmail"></div>
           </fieldset>                 
           </div>
           
           <div><fieldset>
             <input type="text" class="newsletter-name" name="contact" pattern="[789][0-9]{9}"  maxlength="10" placeholder="Mobile Number" >
-              <div id="errorcontact"></div>
+              <div class="text-danger" id="errorcontact"></div>
           </fieldset>                 
           </div>
 
       <div><fieldset>
         <input type="password" class="newsletter-name" id="password"  name="password" placeholder="password" >
-         <div id="errorpassword"></div>
+         <div class="text-danger" id="errorpassword"></div>
           </fieldset>
       </div>
 
@@ -107,7 +107,7 @@
 
       <fieldset>
          <input type="password" class="newsletter-name"  name="password_confirm" id="password_confirm" placeholder="password confirm" >
-         <div id="errorpasswordconfirm"></div>
+         <div class="text-danger" id="errorpasswordconfirm"></div>
        </fieldset>
 
       </div>

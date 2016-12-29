@@ -426,41 +426,41 @@ $(".registration-submit").click(function(event){
                    
                      
 
-                //    if(msg.name){
-                //       $("#errorName").text(msg.name);
-                //   }else{
-                //      $("#errorName").text('');
-                //   }
-                //     $("#errorEmail").text(msg.email);
-                //    if(msg.email){
-                //       $("#errorEmail").text(msg.email);
-                //   }else{
-                //      $("#errorEmail").text('');
-                //   }
+                   if(msg.name){
+                      $("#errorName").text(msg.name);
+                  }else{
+                     $("#errorName").text('');
+                  }
+                    $("#errorEmail").text(msg.email);
+                   if(msg.email){
+                      $("#errorEmail").text(msg.email);
+                  }else{
+                     $("#errorEmail").text('');
+                  }
                   
-                //    if(msg.contact){
-                //       $("#errorcontact").text(msg.contact);
-                //   }else{
-                //      $("#errorcontact").text('');
-                //   }
+                   if(msg.contact){
+                      $("#errorcontact").text(msg.contact);
+                  }else{
+                     $("#errorcontact").text('');
+                  }
 
-                //   if(msg.password){
-                //       $("#errorpassword").text(msg.password);
-                //   }else{
-                //      $("#errorpassword").text('');
-                //   }
+                  if(msg.password){
+                      $("#errorpassword").text(msg.password);
+                  }else{
+                     $("#errorpassword").text('');
+                  }
                 
-                // if(msg.password_confirm){
-                //       $("#errorpasswordconfirm").text(msg.password_confirm);
-                //   }else{
-                //      $("#errorpasswordconfirm").text('');
-                //   }
+                if(msg.password_confirm){
+                      $("#errorpasswordconfirm").text(msg.password_confirm);
+                  }else{
+                     $("#errorpasswordconfirm").text('');
+                  }
                   
-                //  if(msg=='1'){
-                //   $form.hide();
-                //   $('.msg').show();
-                //   $('#Login-here').hide();
-                //  }
+                 if(msg=='1'){
+                  $form.hide();
+                  $('.msg').show();
+                  $('#Login-here').hide();
+                 }
               
 
 

@@ -12,6 +12,13 @@ class ApiController extends Controller
 {
 
 	public function compare(Request $req){
+		//handling corner cases
+			if(isset($req['quote_id']) && $req['quote_id']==0 && !$req['LoanTenure'] ){
+					return Response::json(array(
+				'error' => "Insufficient/wrong information Passed"
+				
+			));
+			}else{
 		//API to get bank quote
 		$request=$req;
 		$req_all= implode(',',$req->all());
@@ -26,14 +33,34 @@ class ApiController extends Controller
 			]);
 		
 		try{
-			$data=DB::select('call  usp_get_bank_quot ("'.$req['PropertyCost'].'","'.$req['LoanTenure'].'","'.$req['LoanRequired'].'","'.$req['ApplicantGender'].'","'.$req['ApplicantIncome'].'","'.$req['ApplicantObligations'].'","'.$req['ApplicantDOB'].'","'.$req['CoApplicantYes'].'","'.$req['CoApplicantIncome'].'","'.$req['CoApplicantObligations'].'","'.$req['Turnover'].'","'.$req['ProfitAfterTax'].'","'.$req['Depreciation'].'","'.$req['DirectorRemuneration'].'","'.$req['CoApplicantTurnover'].'","'.$req['CoApplicantProfitAfterTax'].'","'.$req['CoApplicantDepreciation'].'","'.$req['CoApplicantDirectorRemuneration'].'","'.$req['ApplicantSource'].'","'.$req['ProductId'].'")');
-		}catch (Exception $e) {
+			
+
+				if(isset($req['quote_id']) ){
+					$quote=DB::table('bank_quote_api_request')
+					->where('ID','=',$req['quote_id'])
+					->get();
+					$quote_req=json_decode(json_encode($quote));
+					//print_r($quote);exit();
+					if(count($quote_req)>0){
+				//print_r($quote_req);exit();
+				$data=DB::select('call  usp_get_bank_quot ("'.$quote_req[0]->PropertyCost.'","'.$quote_req[0]->LoanTenure.'","'.$quote_req[0]->LoanRequired.'","'.$quote_req[0]->ApplicantGender .'","'.$quote_req[0]->ApplicantIncome .'","'.$quote_req[0]->ApplicantObligations .'","'.$quote_req[0]->ApplicantDOB .'","'.$quote_req[0]->CoApplicantYes .'","'.$quote_req[0]->CoApplicantIncome .'","'.$quote_req[0]->CoApplicantObligations .'","'.$quote_req[0]->Turnover .'","'.$quote_req[0]->ProfitAfterTax .'","'.$quote_req[0]->Depreciation .'","'.$quote_req[0]->DirectorRemuneration .'","'.$quote_req[0]->CoApplicantTurnover .'","'.$quote_req[0]->CoApplicantProfitAfterTax .'","'.$quote_req[0]->CoApplicantDepreciation .'","'.$quote_req[0]->CoApplicantDirectorRemuneration .'","'.$quote_req[0]->ApplicantSource .'","'.$quote_req[0]->ProductId .'")');
+					}else{
+						goto run;
+					}
+					$id=$req['quote_id'];
+
+				}else{
+		run:
+					$data=DB::select('call  usp_get_bank_quot ("'.$req['PropertyCost'].'","'.$req['LoanTenure'].'","'.$req['LoanRequired'].'","'.$req['ApplicantGender'].'","'.$req['ApplicantIncome'].'","'.$req['ApplicantObligations'].'","'.$req['ApplicantDOB'].'","'.$req['CoApplicantYes'].'","'.$req['CoApplicantIncome'].'","'.$req['CoApplicantObligations'].'","'.$req['Turnover'].'","'.$req['ProfitAfterTax'].'","'.$req['Depreciation'].'","'.$req['DirectorRemuneration'].'","'.$req['CoApplicantTurnover'].'","'.$req['CoApplicantProfitAfterTax'].'","'.$req['CoApplicantDepreciation'].'","'.$req['CoApplicantDirectorRemuneration'].'","'.$req['ApplicantSource'].'","'.$req['ProductId'].'")');
+					$save=new bank_quote_api_request();	
+		 			$id=$save->store($request);
+				}
+			}catch (Exception $e) {
 
 			echo 'Caught exception: '.  $e->getMessage(). "\n";
 			die("exception");
 		}
-		$save=new bank_quote_api_request();	
-		 $id=$save->store($request);
+		
 		if($data){
 			$status="Success";
 
@@ -70,11 +97,14 @@ class ApiController extends Controller
 			}
 			$data[$i]->fixed_roi=$new_data;
 
-		}		//exit();
+			}
+
+				//exit();
 		return Response::json(array(
 			'data' => $data,
 			'quote_id'=>$id
 			));
+		}
 	}
 	
 	public function comman(Request $req){
@@ -147,6 +177,13 @@ class ApiController extends Controller
 	}
 	//quote of personal loan API
 	public function comapre_personal_loan(Request $req){
+		//handling corner cases
+		if(isset($req['quote_id']) && $req['quote_id']==0 && !$req['LoanTenure'] ){
+					return Response::json(array(
+				'error' => "Insufficient/wrong information Passed"
+				
+			));
+			}else{
 		//API to get bank quote
 		$req_all= implode(',',$req->all());
 		$log=DB::table('api_log')
@@ -160,17 +197,33 @@ class ApiController extends Controller
 			]);
 
 		try{
-
-
+			if(isset($req['quote_id'])){
+					$quote=DB::table('bank_quote_api_request')
+					->where('ID','=',$req['quote_id'])
+					->get();
+					$quote_req=json_decode(json_encode($quote));
+					//print_r($quote_req);exit();
+					if(count($quote_req)>0){
+						$data=DB::select('call  usp_get_personal_loan_quot ("'. $quote_req[0]->ApplicantDOB .'","'. $quote_req[0]->ApplicantSource .'","'. $quote_req[0]->ApplicantIncome .'","'. $quote_req[0]->ApplicantObligations .'","'. $quote_req[0]->LoanTenure .'","'. $quote_req[0]->LoanRequired .'")');
+					}
+					else{
+						goto run_else;
+					}
+			$id=$req['quote_id'];
+			}else{
+run_else:			
 			$data=DB::select('call  usp_get_personal_loan_quot ("'.$req['ApplicantDOB'].'","'.$req['ApplicantSource'].'","'.$req['ApplicantIncome'].'","'.$req['ApplicantObligations'].'","'.$req['LoanTenure'].'","'.$req['LoanRequired'].'")');
-		//		print_r($data);exit();
+				//		print_r($data);exit();
+				$save=new bank_quote_api_request();	
+				$req['ProductId']=9;//personal lona product id
+		 		$id=$save->store($req);
+			}
 		}catch (Exception $e) {
 
 			echo 'Caught exception: '.  $e->getMessage(). "\n";
 			die("exception");
 		}
-		$save=new bank_quote_api_request();	
-		 $id=$save->store($req);
+		
 
 		if($data){
 			$status="Success";
@@ -188,6 +241,7 @@ class ApiController extends Controller
 			'quote_id'=>$id
 			));
 	}
+}
 
 	//by DP
 	public function GetHomeLoanQuotes(Request $req){

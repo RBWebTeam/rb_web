@@ -20,9 +20,9 @@
 
 <div class="jumbotron text-center" style="background-color:lightblue;" id="fh5co-hero">
 <center>
-  <p class="text-primary"><h2>Home Loan Transfer Service</h2></p> 
+  <p class="text-primary"><h2>Balance Transfer Service</h2></p> 
   <p>Let's find out how much you can save!!</p>
-  <p>Know how much you'll save. Please enter your current home loan details.</p> 
+  <p>Please enter your current loan details.</p> 
 </center>  
             
                             

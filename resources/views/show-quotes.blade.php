@@ -1,8 +1,5 @@
-@include('layout.header')
-  
-@foreach ($quote_data as $value)
 
-<p>{{$value}}</p>
+@foreach ($data as $value)
+
+<input type="text" value={{$value}}>
 @endforeach
-@include('layout.footer')
-@include('layout.script')

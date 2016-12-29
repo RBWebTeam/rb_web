@@ -98,7 +98,9 @@ class FormController extends Controller
             }
             //$new_data=json_decode(json_encode($quote_data));
             //return Redirect::action('FormController@show_quotes',array('$data'=>$new_data));
-            return view('show-quotes')->with($quote_data);
+            
+            //see url
+            return view('show-quotes')->with(array('data' =>$quote_data));
     }
     
      public function otp(Request $req){

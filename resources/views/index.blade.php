@@ -308,7 +308,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-6 col-md-offset-3 text-center fh5co-heading animate-box">
-					<h2>About RupeeBoss</h2>
+					<h2>WHO WE ARE.</h2>
 				
 				</div>
 			</div>

@@ -31,7 +31,7 @@
 			</div>
 			<div class="col-md-12 text-center animate-box cont" style="display: none;" id="q2_year">
              <h3>my yearly income is
-			 <input type="tel" id="income_year" name="turnover" onkeyup="changeText('income','q3')"  onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="1,00,000" tabindex="1">
+			 <input type="tel" id="income_year" name="turnover" onkeyup="changeText('income_year','q3')"  onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="1,00,000" tabindex="1">
 			 </h3> 
 			</div>
 			<div class="col-md-12 text-center animate-box cont" style="display: none;" id="q3">

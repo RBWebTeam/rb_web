@@ -78,6 +78,7 @@ Route::get('profile','ProfileController@my_profile');
 //new loans test
 
 Route::get('test-personal-loan','LoanController@apply_p_test');
+Route::get('test-home-loan','LoanController@apply_h_test');
 Route::get('show-quotes','FormController@show_quotes');
 
 

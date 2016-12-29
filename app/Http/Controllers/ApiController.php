@@ -103,11 +103,9 @@ class ApiController extends Controller
 	}
 	public function compare_test(Request $req){
 		//API to get bank quote
-		$request=$req;
 		$req_all= implode(',',$req->all());
-		print_r($req);exit();
 		$log=DB::table('api_log')
-		->insertGetId(['api_name'=>'GetHomeLoanQuotes',
+		->insertGetId(['api_name'=>'GetHomeLoanQuotes_test',
 			'status'=>'Pending',
 			'request'=>$req_all,			 		   
 			'error'=>'0',
@@ -115,7 +113,7 @@ class ApiController extends Controller
 			'updated_at'=>date("Y-m-d H:i:s")
 
 			]);
-		
+
 		try{
 			$data=DB::select('call  usp_get_bank_quot ("'.$req['PropertyCost'].'","'.$req['LoanTenure'].'","'.$req['LoanRequired'].'","'.$req['ApplicantGender'].'","'.$req['ApplicantIncome'].'","'.$req['ApplicantObligations'].'","'.$req['ApplicantDOB'].'","'.$req['CoApplicantYes'].'","'.$req['CoApplicantIncome'].'","'.$req['CoApplicantObligations'].'","'.$req['Turnover'].'","'.$req['ProfitAfterTax'].'","'.$req['Depreciation'].'","'.$req['DirectorRemuneration'].'","'.$req['CoApplicantTurnover'].'","'.$req['CoApplicantProfitAfterTax'].'","'.$req['CoApplicantDepreciation'].'","'.$req['CoApplicantDirectorRemuneration'].'","'.$req['ApplicantSource'].'","'.$req['ProductId'].'")');
 		}catch (Exception $e) {
@@ -123,8 +121,7 @@ class ApiController extends Controller
 			echo 'Caught exception: '.  $e->getMessage(). "\n";
 			die("exception");
 		}
-		$save=new bank_quote_api_request();	
-		 $id=$save->store($request);
+		
 		if($data){
 			$status="Success";
 
@@ -136,35 +133,16 @@ class ApiController extends Controller
 		->where('id','=',$log)
 		->update(['status'=>$status,'updated_at'=>date("Y-m-d H:i:s")]);
 
-		$status_update=DB::table('bank_quote_api_request')
-		->where('ID','=',$id)
-		->update(['status'=>$status]);
-		//pushing fixed roi details
 		for($i=0;$i<sizeof($data);$i++){
 			$bank=$data[$i]->Bank_Id;
 			$product=$data[$i]->Product_Id;
 			$profession=$data[$i]->Profession;
+			
 			$new_data=DB::select('call  get_fixed_roi("'.$bank.'","'.$product.'","'.$profession.'")');
-
-			unset($data[$i]->foir);
-			unset($data[$i]->ltv);
-			unset($data[$i]->ltvamt);
-			unset($data[$i]->pf);
-			unset($data[$i]->pf_type);
-			for($j=0;$j<(sizeof($new_data));$j++){
-				
-				$time=$new_data[$j]->years_to*12;
-				$rate=$new_data[$j]->roi/12/100;
-				//print_r("time->".$time	." amount->".$req['LoanRequired']. " rate->".$rate ." ->");
-				$emi= ceil($req['LoanRequired'] * $rate / (1 - (pow(1/(1 + $rate),$time))));
-				$new_data[$j]->emi=$emi;
-			}
 			$data[$i]->fixed_roi=$new_data;
-
-		}		//exit();
+		}		
 		return Response::json(array(
 			'data' => $data,
-			'quote_id'=>$id
 			));
 	}
 	//quote of personal loan API

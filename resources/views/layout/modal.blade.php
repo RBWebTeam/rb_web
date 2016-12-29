@@ -155,7 +155,7 @@
   </div>
 
 <!---Help End -->
-<<<<<<< HEAD
+
 
   <!-- Modal  Sign in-->
   <div class="modal fade" id="log_popup" role="dialog">
@@ -263,12 +263,14 @@
           </fieldset>
       </div>
 
-      <div><fieldset>
-        <!--  <input type="password" class="newsletter-name" onblur="confirmp()"  name="password_confirm" placeholder="password_confirm" > -->
+      <div>
 
+      <fieldset>
          <input type="password" class="newsletter-name"  name="password_confirm" id="password_confirm" placeholder="password confirm" >
          <div id="errorpasswordconfirm"></div>
-          </fieldset>
+       </fieldset>
+
+
       </div>
 
 

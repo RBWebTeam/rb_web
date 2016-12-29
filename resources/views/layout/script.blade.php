@@ -494,15 +494,17 @@ $(".registration-submit").click(function(event){
           $.ajax({  
                type: "POST",  
                url: "{{URL::to('registration')}}",
+               dataType: 'json',
                data : $('#'+form).serialize(),
+
                success: function(msg){
-                 
+              
                    if(msg.name){
                       $("#errorName").text(msg.name);
                   }else{
                      $("#errorName").text('');
                   }
-                  
+                    $("#errorEmail").text(msg.email);
                    if(msg.email){
                       $("#errorEmail").text(msg.email);
                   }else{

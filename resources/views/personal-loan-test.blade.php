@@ -66,8 +66,11 @@
 					.</h3>
 			</div>
 			<div class="text-center" id="step_3_btn">
-			
-			<a class="btn btn-primary btn-outline with-arrow animate-box product_name" data-toggle="modal" data-target="#login_process">Get me a Loan<i class="icon-arrow-right"></i></a>
+			<?php if(Session::get('is_login')) {?>
+				<button class="btn btn-primary btn-outline with-arrow animate-box product_name" >Get me a Loan<i class="icon-arrow-right"></i></button>
+			<?php }else{?>
+				<a class="btn btn-primary btn-outline with-arrow animate-box product_name" data-toggle="modal" data-target="#login_process">Get me a Loan<i class="icon-arrow-right"></i></a>
+			<?php } ?>
 			</div>
 	 </div>
 

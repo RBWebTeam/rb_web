@@ -94,13 +94,13 @@ class FormController extends Controller
                 
             }
             else{
+                $quote_data ="no result found";
                 return "no quotes";
             }
-            //$new_data=json_decode(json_encode($quote_data));
-            //return Redirect::action('FormController@show_quotes',array('$data'=>$new_data));
-            
-            //see url
-            return view('show-quotes')->with(array('data' =>$quote_data));
+            $data['product'] ="Personal Loan";
+            $data['quote_data'] =$quote_data;
+            //print"<pre>";print_r($data);exit();
+            return view('show-quotes')->with($data);
     }
     
      public function otp(Request $req){

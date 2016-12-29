@@ -9,7 +9,7 @@ Route::get('car-loan','LoanController@car_loan');
 Route::get('business-loan','LoanController@business_loan');
 
 
-Route::get('apply-personal-loan','LoanController@apply');
+Route::get('apply-personal-loan','LoanController@apply_p_test');
 Route::get('compare','CompareController@compare');
 Route::get('view-loan','CompareController@view_loan');
 // Route::get('emi1','CompareController@emi');

@@ -423,7 +423,9 @@ $(".registration-submit").click(function(event){
                data : $('#'+form).serialize(),
 
                success: function(msg){
-              
+                   
+                     
+
                    if(msg.name){
                       $("#errorName").text(msg.name);
                   }else{
@@ -461,6 +463,7 @@ $(".registration-submit").click(function(event){
                  }
               
 
+
                }  
            }); 
 
@@ -493,6 +496,7 @@ $(".registration-submit").click(function(event){
               
                  if(msg==1){
                    $("#errorphon").text("Successfully updated ");
+
                  }else{
                   
                    $("#errorphon").text(msg.contact);

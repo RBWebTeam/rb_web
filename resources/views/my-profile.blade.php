@@ -34,7 +34,7 @@
                                <div class="col-md-6 pad11">
                                <input name="contact" type="text" placeholder="Mobile No." value="{{$query->contact}}" required maxlength="10" min="8"  pattern="[7-9]{1}[0-9]{9}">
                                </div>
-                                <div class="col-md-6 pad11" id="errorphon"></div>
+                                <div class="col-md-6 pad11 text-danger"  id="errorphon"></div>
                                
 
                             
@@ -61,7 +61,7 @@
                                   @endif
                                     <input name="dob" value="{{$dob}}" type="date" placeholder="Date of Birth" required>
                                 </div>
-                                <div class="col-md-6 pad11" id="errordetails"></div>
+                                <div class="col-md-6 pad11 text-danger" id="errordetails"></div>
                                 
 
                                   @if(isset($cquery->dob))

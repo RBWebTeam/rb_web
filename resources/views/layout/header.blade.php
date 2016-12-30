@@ -60,6 +60,27 @@ document.getElementById('login').style.display="block";
 	<!---------------Sidebar Popup Div Start --------- -->
 	<div id="fh5co-page">
 	<header id="fh5co-header" role="banner" class="navbar navbar-default navbar-fixed-top">
+	 <div class="container-fluid top-bg">
+        <div class="container">
+
+            <ul class="top-lnk">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">Careers</a></li>
+                
+            </ul>
+
+            <ul class="nav-pills pull-right social-icon">
+                <li><a href="#" title="Facebook"><i class="icon-twitter"></i></a></li>
+                <li><a href="#" title="Linkedin"><i class="icon-facebook"></i></a></li>
+                <li><a href="#"><i class="icon-google-plus"></i></a></li>
+                <li><a href="#" title="instagram"><i class="icon-instagram"></i></a></li>
+                <li><a href=""><i class="icon-phone"></i> 1800-267-629-6</a></li>
+            </ul>
+
+        </div>
+    </div>
 		<div class="container">
 			<div class="header-inner">
 				<h1><a href="{{URL::to('/')}}"><img src="{{URL::to('images/logo.png')}}" width="160" height="47" /></a></h1>

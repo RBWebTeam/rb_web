@@ -86,12 +86,7 @@ class ProfileController extends Controller
     }
 
 
-    public function check(){
 
-
-return view('show-quotes');
-
-    }
   
 
 }

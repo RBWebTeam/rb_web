@@ -52,7 +52,14 @@
         
         $('#pop1').empty();
         if(val=='q2'){
+          $('#self_q').hide();
+          $('#self_q2').hide();
+          $('#self_q3').hide();
           $("#q2_year").hide();
+          $('#profit').val('');
+          $('#depreciation').val('');
+          $('#remuneration').val('');
+          $("#income_year").val('');
           $('#pop1').append( "<p>Enter your net Income</p>" );
         }else  if(val=='q5'){
             $('#pop1').empty();
@@ -61,7 +68,23 @@
         }else  if(val=='q2_year'){
           $('#pop1').append( "<p>Enter your net Income</p>" );
           $("#q2").hide();
-        }else{
+          $('#income').val('');
+        }else if(val=='co_sal'){
+           $('#co_self').hide();
+          $('#co_self_q2').hide();
+          $('#co_self_q3').hide();
+          $('#co_profit_all').hide();
+          $('#co_profit').val('');
+          $('#co_depreciation').val('');
+          $("#co_income_year").val('');
+          $('#co_remuneration').val('');
+        }else if(val=='co_self'){
+          $('#co_sal').hide();
+          $('#income').val('');
+          $('#pop1').empty();
+          $('#pop1').append( "<p>Enter your net Income</p>" );
+        }
+        else{
             $('#pop1').append( "<p>Please Proceed</p>" );
         }
         return false;
@@ -179,6 +202,10 @@
           $('#pop1').append( "<p>I wonder if your birthday is today</p>" );
         }else if(val=='residence_pincode'){
           $('#pop1').append( "<p>Enter your residence pincode</p>" );
+        }else if(val=='q6'){
+          $('#pop1').append( "<p>Enter your loan tenure</p>" );
+        }else if(val=='q7'){
+          $('#pop1').append( "<p>I wonder if your birthday is today</p>" );
         }else{
           $('#pop1').append( "<p>Please go on</p>" );
         }
@@ -199,12 +226,18 @@
 
 $(document).ready(function(){
     $(".hide-dv").click(function(){
-        $(".sidebar").hide("fast");
+        $("#sidebar").hide("fast");
         $(".arrow-don").show("fast");
     });
     $(".arrow-don").click(function(){
         $(".sidebar").show("fast");
         $(".arrow-don").hide("fast");
+    });
+    $("#co_button").click(function(){
+        $("#have_co_applicant").val("yes");
+    });
+    $("#no_co_app").click(function(){
+        $("#have_co_applicant").val("no");
     });
 });
 </script>

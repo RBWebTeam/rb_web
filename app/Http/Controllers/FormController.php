@@ -80,7 +80,7 @@ class FormController extends Controller
             $http_code = curl_getinfo($ch ,CURLINFO_HTTP_CODE);
             //$obj = json_decode($http_result);
             //print "<pre>";
-           // print_r($http_result);
+           //print_r($http_result);exit();
            // return $http_result;
             if($http_result==1){
                 if(isset($req['income'])){
@@ -99,7 +99,7 @@ class FormController extends Controller
             }
             $data['product'] ="Personal Loan";
             $data['quote_data'] =$quote_data;
-            //print"<pre>";print_r($data);exit();
+            print"<pre>";print_r($data);exit();
             return view('show-quotes')->with($data);
     }
     

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+hea<!DOCTYPE html>
 <html class="no-js"> 
 	<head>
 	<meta charset="utf-8">
@@ -57,7 +57,60 @@ document.getElementById('login').style.display="block";
          <li class="chat"><a href="#">Live Chat</a></li>
     </ul>
     </div>
-	
+    <div class="tp-dwn"><img src="images/callback-icon.png"/></div>
+	<div class="sidebar1" style="display:none;">
+    	<div class="">
+	   <div class="form-in">
+            
+             <span class="head-2">Compare, Research & Buy<span>
+             
+             <form class="" id="compareform" role="form" method="POST" action="customer_form.php">
+				  <div class="form-group">
+				  
+				    <div>
+				
+				      <input type="text" class="form-control" id="name" name="name" placeholder="Name" required class="clr-ddd" />
+                 
+				    </div>
+				  </div>
+			<div class="form-group">
+		   
+		    <div> 
+		    <input type="text" name="contact" id="contact" class="form-control" pattern="[789][0-9]{9}" required maxlength="10" placeholder="Contact" class="clr-ddd">
+		    </div>
+		  </div>
+				  <div class="form-group">
+				   
+				    <div class=""> 
+				  
+				       <select name="sell" class="form-control" id="sell" required>
+				         @foreach($city as $city_name)
+				       <option value="{{ $city_name->City_Id }}" data-state="{{$city_name->state_id}}"><span style="color: gray;font-family: bold; ">{{ $city_name->City_Name }}</span></option>
+
+						@endforeach
+					</select>
+
+
+				    </div>
+				  </div>
+			  <div class="form-group">
+			   
+			    <div class=""> 
+			      <select class="form-control" name="prod" id="prod" required>
+			      @foreach($loan as $product)
+			        <option value="{{$product->Product_Id}}"><span style="color: gray;font-family: bold; ">{{$product->Product_Name}}</span></option>
+			        @endforeach
+			      </select>
+			    </div>
+			  </div>
+			  
+			  <div class="form-group centr-obj"> 
+			    
+			     <button class="btn btn-primary btn-outline with-arrow">Submit<i class="icon-arrow-right"></i></button>
+			   
+			  </div>
+			</form>
+		</div>
 	</div>
     </div>
 	<!---------------Sidebar Popup Div Start --------- -->
@@ -76,13 +129,11 @@ document.getElementById('login').style.display="block";
             </ul>
 
             <ul class="nav-pills pull-right social-icon">
-
                 <li><a href="#" title="Facebook"><i class="icon-twitter"></i></a></li>
                 <li><a href="#" title="Linkedin"><i class="icon-facebook"></i></a></li>
                 <li><a href="#"><i class="icon-google-plus"></i></a></li>
                 <li><a href="#" title="instagram"><i class="icon-instagram"></i></a></li>
                 <li><a href=""><i class="icon-phone"></i> 1800-267-629-6</a></li>
-
             </ul>
 
         </div>
@@ -124,10 +175,11 @@ document.getElementById('login').style.display="block";
 							
 							<ul class="dropdown-menu" id='account'>
 							    <li>
-								<a href={{URL::to('logout')}}>Logout</a>
+								<a href={{URL::to('logout')}}>logout</a>
 								<a href="{{url('profile')}}">My Profile</a>
 								<a href="#">My Account</a>
-								<a href="#">My Credit Score</a>
+								<a href="#">My credit score</a>
+								<a href="{{URL::to('check_emi')}}">Emi calculator</a>
 								<a href='#'>Applied loan</a>
 								</li>
 							</ul>

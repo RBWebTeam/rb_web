@@ -277,6 +277,15 @@ $(document).ready(function(){
     $(".arrow-don").click(function(){
         $(".sidebar").show("fast");
         $(".arrow-don").hide("fast");
+        $(".sidebar1").hide("fast");
+    });
+});
+</script>
+<script>
+$(document).ready(function(){
+    $(".tp-dwn").click(function(){
+        $(".sidebar1").toggle("fast");
+
     });
 });
 </script>

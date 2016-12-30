@@ -77,6 +77,7 @@
 						<div class="text-center" style="display: none;" id="step_2_btn">
 							<a class="btn btn-primary btn-outline with-arrow animate-box" id="co_button" onclick="changeDiv('step-1','step-2')">Have Co-Applicant<i class="icon-arrow-right"></i></a>
 							<a class="btn btn-primary btn-outline with-arrow animate-box product_name" id="no_co_app" data-toggle="modal" data-target="#login_process">No Co-Applicant<i class="icon-arrow-right"></i></a>
+							<input type="hidden" name="have_co_applicant" value="" id="have_co_applicant">
 						</div>
 						
 
@@ -130,8 +131,10 @@
 					
 						
 					<!-- step-2 finished -->
-					<div class="text-center" style="display: none;" id="last_button">
+					<div class="text-center">
 						<a class="btn btn-primary btn-outline with-arrow animate-box" id="back" onclick="changeDiv('step-2','step-1')">Back<i class="icon-arrow-right"></i></a>
+					</div>
+					<div class="text-center" style="display: none;" id="last_button">
 						<a class="btn btn-primary btn-outline with-arrow animate-box product_name" data-toggle="modal" data-target="#login_process">Submit<i class="icon-arrow-right"></i></a>
 					</div>
 			</div>		

@@ -202,6 +202,10 @@
           $('#pop1').append( "<p>I wonder if your birthday is today</p>" );
         }else if(val=='residence_pincode'){
           $('#pop1').append( "<p>Enter your residence pincode</p>" );
+        }else if(val=='q6'){
+          $('#pop1').append( "<p>Enter your loan tenure</p>" );
+        }else if(val=='q7'){
+          $('#pop1').append( "<p>I wonder if your birthday is today</p>" );
         }else{
           $('#pop1').append( "<p>Please go on</p>" );
         }

@@ -60,8 +60,9 @@ class FormController extends Controller
             //adding city_id to post data
            
         } 
-        $res=array_merge($input,$new_array);
-        //print_r($res);
+        $res_arr=array_merge($input,$new_array);
+        $res=json_encode($res_arr);
+        print_r($res);
             $url = "http://beta.erp.rupeeboss.com/CustomerLaravelWebRequest.aspx";
             $ch = curl_init();
             curl_setopt($ch, CURLOPT_VERBOSE, 1);
@@ -75,7 +76,8 @@ class FormController extends Controller
             $http_result = curl_exec($ch);
             $error = curl_error($ch);
             $http_code = curl_getinfo($ch ,CURLINFO_HTTP_CODE);
-            //print_r($http_result);
+            print_r("\n hiiiiiiiiii");
+            print_r($http_result);
             if($http_result==1){
                 if(isset($req['income'])){
                     $income=$req['income'];

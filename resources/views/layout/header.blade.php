@@ -70,7 +70,7 @@ document.getElementById('login').style.display="block";
             <ul class="top-lnk">
                 <li><a href="#">Home</a></li>
                 <li><a href="{{URL::to('about-us')}}">About Us</a></li>
-                <li><a href={{URL::to('contact-us')}}>Contact Us</a></li>
+                <li><a href="{{URL::to('contact-us')}}">Contact Us</a></li>
                 
                 
             </ul>
@@ -96,17 +96,17 @@ document.getElementById('login').style.display="block";
 						 
 						 <ul class="dropdown-menu">
 						    <li>
-							<a href="#">Unsecured Business Loan</a>
-							<a href="#">Loan Against Property</a>
-							<a href="#">Commercial Property Purchase</a>
+							<a href="{{URL::to('apply-sme-loan')}}">Unsecured Business Loan</a>
+							<a href="{{URL::to('apply-sme-loan')}}">Loan Against Property</a>
+							<a href="{{URL::to('apply-sme-loan')}}">Commercial Property Purchase</a>
 							</li>
 							<li>
-							<a href="#">Lease Rent Discounting</a>
-							<a href="#">Working Capital</a>
-							<a href="#">Export/Import Finance</a>
+							<a href="{{URL::to('apply-sme-loan')}}">Lease Rent Discounting</a>
+							<a href="{{URL::to('apply-sme-loan')}}">Working Capital</a>
+							<a href="{{URL::to('apply-sme-loan')}}">Export/Import Finance</a>
 						
 							</li>
-							<li><a href="#">Over Draft / Cash Credit</a>
+							<li><a href="{{URL::to('apply-sme-loan')}}">Over Draft / Cash Credit</a>
 							
 							</li>
 							
@@ -114,7 +114,7 @@ document.getElementById('login').style.display="block";
 						</ul>
 						</li>
 						
-						<li><a href="#">Credit Card</a></li>
+						<li><a href="{{URL::to('contact-us')}}">Credit Card</a></li>
 						<!-- <li><a href="#">Balance Transfer</a></li> -->
 						<li><a href="{{URL::to('home-loan-transfer')}}">Balance Transfer</a></li>						
 

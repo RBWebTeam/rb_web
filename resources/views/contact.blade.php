@@ -47,7 +47,7 @@
 					</div>
 					<div class="row">
 						<div class="form-group col-sm-6">
-						  <button type="button" id="subscribe-form-submit1" class="btn btn-danger btn-lg" style="background-color:#ed1c24">CALL ME BACK NOW</button>
+						  <button type="button" id="subscribe-form-submit1" class="btn btn-danger btn-lg sidebar-submit" style="background-color:#ed1c24">CALL ME BACK NOW</button>
 						</div>
 					</div>
 				</form>

@@ -75,7 +75,7 @@
   </tr>
   <tr>
     <td>
-    <input type="checkbox" name="checkbox" value="{{$q->Bank_Name}}"  data-id="{{$q->Bank_Id}}"/></td>
+    <input type="checkbox" name="checkbox" value="{{$q->Bank_Name}}" class="{{$q->Bank_Id}}"  data-id="{{$q->Bank_Id}}"/></td>
     <td>Personal Loan</td>
     <td>{{$q->roi }}%</td>
     <td>{{$q->LoanRequired}}</td>
@@ -134,11 +134,16 @@ var limit =4;
 $('input[name="checkbox"]').change(function(){ 
   if($("input[name='checkbox']:checked").length >= limit) {
        this.checked = false;      
+
+     
    }else{
       var id=$(this).attr("data-id");
   if (this.checked) {
        var id=$(this).attr("data-id");
        var span="<div class='col-md-2 col img-c white-bg' id='" +id + "'><span class='close btnspan' >×</span><img src='images/kotak.png' width='50' height='46'>" + this.value + "</div>";
+
+           // var count=$(span).size();
+
         $("#AllBank").append(span);
   
   }else{
@@ -152,12 +157,13 @@ $('input[name="checkbox"]').change(function(){
 
  
 $(document).ready(function () {
-
     $(document).on('click', '.btnspan', function () {
 
          var id=$(this).closest("div").attr("id");
+        $("."+id).attr('checked',false);
+        $("#"+id).remove();
+    
 
-         $("#"+id).remove();
   });
 
 });

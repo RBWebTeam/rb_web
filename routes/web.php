@@ -71,6 +71,11 @@ Route::get('loan-details/{product}/{bank}','BankController@home_loanBank');
 Route::get('home-loan-transfer','CompareController@switchme');
 Route::post('calculation','CompareController@calculation');
 Route::get('profile','ProfileController@my_profile');
+Route::get('about-us','HomeController@about_us');
+Route::get('disclaimer-page','HomeController@disclaimer');
+Route::get('privacy-policy-page','HomeController@privacy_policy');
+
+
 // 
 
 

@@ -77,6 +77,7 @@
 						<div class="text-center" style="display: none;" id="step_2_btn">
 							<a class="btn btn-primary btn-outline with-arrow animate-box" id="co_button" onclick="changeDiv('step-1','step-2')">Have Co-Applicant<i class="icon-arrow-right"></i></a>
 							<a class="btn btn-primary btn-outline with-arrow animate-box product_name" id="no_co_app" data-toggle="modal" data-target="#login_process">No Co-Applicant<i class="icon-arrow-right"></i></a>
+							<input type="hidden" name="have_co_applicant" value="" id="have_co_applicant">
 						</div>
 						
 
@@ -96,7 +97,7 @@
 
 						<div class="col-md-12 text-center animate-box cont" style="display: none;" id="co_sal">
 						<h3>Co-Applicant monthly income is
-							<input type="tel" id="co_income" name="co-applicant_income" onkeyup="changeText('co_income','co_obl')"  onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="1,00,000" tabindex="1">
+							<input type="tel" id="co_income" name="co_applicant_income" onkeyup="changeText('co_income','co_obl')"  onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="1,00,000" tabindex="1">
 						</h3> 
 					</div>
 					<div class="col-md-12 text-center animate-box cont" style="display: none;" id="co_self">
@@ -107,31 +108,33 @@
 					<!-- self employed question -->
 					<div class="col-md-12 text-center animate-box cont" style="display: none;" id="co_profit_all">
 						<h3>Co-Applicant profit after tax is
-							<input type="tel" id="co_profit" name="co-applicant-profit-after-tax" onkeyup="changeText('co_profit','co_self_q2')"  onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="1,00,000" tabindex="1">
+							<input type="tel" id="co_profit" name="co_applicant_profit_after_tax" onkeyup="changeText('co_profit','co_self_q2')"  onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="1,00,000" tabindex="1">
 						</h3> 
 					</div>
 
 					<div class="col-md-12 text-center animate-box cont" style="display: none;" id="co_self_q2">
 						<h3>Co-Applicant depreciation is
-							<input type="tel" id="co_depreciation" name="co-applicant-depreciation" onkeyup="changeText('co_depreciation','co_self_q3')"  onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="1,00,000" tabindex="1">
+							<input type="tel" id="co_depreciation" name="co_applicant_depreciation" onkeyup="changeText('co_depreciation','co_self_q3')"  onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="1,00,000" tabindex="1">
 						</h3> 
 					</div>
 					<div class="col-md-12 text-center animate-box cont" style="display: none;" id="co_self_q3">
 						<h3>Co-Applicant  Director remuneration is
-							<input type="tel" id="co_remuneration" name="co-applicant-remuneration" onkeyup="changeText('co_remuneration','co_obl')"  onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="1,00,000" tabindex="1">
+							<input type="tel" id="co_remuneration" name="co_applicant_remuneration" onkeyup="changeText('co_remuneration','co_obl')"  onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="1,00,000" tabindex="1">
 						</h3> 
 					</div>
 
 						<div class="col-md-12 text-center animate-box cont" style="display: none" id="co_obl">
 							<h3>Co-Applicant remaining loan amount is
-								<input type="tel" id="co_obligation" name="co-applicant_obligation"  onkeyup="changeText('co_obligation','last_button')"  onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="1,00,000" tabindex="1">
+								<input type="tel" id="co_obligation" name="co_applicant_obligation"  onkeyup="changeText('co_obligation','last_button')"  onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="1,00,000" tabindex="1">
 							</h3> 
 						</div>
 					
 						
 					<!-- step-2 finished -->
-					<div class="text-center" style="display: none;" id="last_button">
+					<div class="text-center">
 						<a class="btn btn-primary btn-outline with-arrow animate-box" id="back" onclick="changeDiv('step-2','step-1')">Back<i class="icon-arrow-right"></i></a>
+					</div>
+					<div class="text-center" style="display: none;" id="last_button">
 						<a class="btn btn-primary btn-outline with-arrow animate-box product_name" data-toggle="modal" data-target="#login_process">Submit<i class="icon-arrow-right"></i></a>
 					</div>
 			</div>		

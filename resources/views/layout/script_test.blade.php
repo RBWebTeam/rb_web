@@ -222,12 +222,18 @@
 
 $(document).ready(function(){
     $(".hide-dv").click(function(){
-        $(".sidebar").hide("fast");
+        $("#sidebar").hide("fast");
         $(".arrow-don").show("fast");
     });
     $(".arrow-don").click(function(){
         $(".sidebar").show("fast");
         $(".arrow-don").hide("fast");
+    });
+    $("#co_button").click(function(){
+        $("#have_co_applicant").val("yes");
+    });
+    $("#no_co_app").click(function(){
+        $("#have_co_applicant").val("no");
     });
 });
 </script>

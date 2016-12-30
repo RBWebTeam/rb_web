@@ -99,7 +99,7 @@ class FormController extends Controller
             }
             $data['product'] ="Personal Loan";
             $data['quote_data'] =$quote_data;
-            print"<pre>";print_r($data);exit();
+            //print"<pre>";
             return view('show-quotes')->with($data);
     }
     

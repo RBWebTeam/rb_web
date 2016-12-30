@@ -81,7 +81,7 @@ document.getElementById('login').style.display="block";
                 <li><a href="#" title="Linkedin"><i class="icon-facebook"></i></a></li>
                 <li><a href="#"><i class="icon-google-plus"></i></a></li>
                 <li><a href="#" title="instagram"><i class="icon-instagram"></i></a></li>
-                <li><a href=""><i class="icon-phone"></i> 1800-267-629-6</a></li>
+                <li><a href=""><i class="icon-phone"></i> 	</a></li>
 
             </ul>
 

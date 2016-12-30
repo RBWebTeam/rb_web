@@ -61,10 +61,17 @@
 
 			</h3>
 			</div>
-			<div class="col-md-12 text-center animate-box cont" style="display:none;" id="q8" >
+			<div class="col-md-12 text-center animate-box cont"  id="q8" >
 					<h3> and Pan Card number is
-					<input type="tel" id="card" name="pan_number" onkeyup="changeText('card','step_3_btn')"   class="input-pad" placeholder="Pan Card" maxlength="10" minlength="10" tabindex="1">
+					<input type="tel" id="card" name="pan_number" style="display:none;" onkeyup="changeText('card','q9')"   class="input-pad" placeholder="Pan Card" maxlength="10" minlength="10" tabindex="1">
 					.</h3>
+			</div>
+
+			<div class="col-md-12 text-center animate-box cont" style="display:none;" id="q9" >
+				<form action={{URL('search/autocomplete')}} method="POST" >
+	             <h3>I have been living in
+				<input type="text" class="search_city input-pad" id='city_name' name='city_name' onkeypress="changeTest('city_name','step_3_btn')" placeholder='your city'>city
+				</form>
 			</div>
 			<div class="text-center" style="display: none;" id="step_3_btn">
 			<?php if(Session::get('is_login')) {?>

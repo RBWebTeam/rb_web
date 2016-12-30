@@ -125,10 +125,15 @@
 
 						<div class="col-md-12 text-center animate-box cont" style="display: none" id="co_obl">
 							<h3>Co-Applicant remaining loan amount is
-								<input type="tel" id="co_obligation" name="co_applicant_obligation"  onkeyup="changeText('co_obligation','last_button')"  onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="1,00,000" tabindex="1">
+								<input type="tel" id="co_obligation" name="co_applicant_obligation"  onkeyup="changeText('co_obligation','city_name')"  onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="1,00,000" tabindex="1">
 							</h3> 
 						</div>
-					
+					<div class="col-md-12 text-center animate-box cont" style="display:none;" id="q9" >
+						<form action={{URL('search/autocomplete')}} method="POST" >
+			             <h3>I have been living in
+						<input type="text" class="search_city input-pad" id='city_name' name='city_name' onkeypress="changeTest('city_name','last_button')" placeholder='your city'>city
+						</form>
+				</div>
 						
 					<!-- step-2 finished -->
 					<div class="text-center">

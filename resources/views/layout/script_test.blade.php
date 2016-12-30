@@ -207,6 +207,8 @@
           $('#pop1').append( "<p>Enter your loan tenure</p>" );
         }else if(val=='q7'){
           $('#pop1').append( "<p>I wonder if your birthday is today</p>" );
+        }else if(val=='self_q'){
+          $('#pop1').append( "<p>I wonder if your birthday is today</p>" );
         }else{
           $('#pop1').append( "<p>Please go on</p>" );
         }

@@ -9,7 +9,7 @@ Route::get('car-loan','LoanController@car_loan');
 Route::get('business-loan','LoanController@business_loan');
 
 
-Route::get('apply-personal-loan','LoanController@apply');
+Route::get('apply-personal-loan','LoanController@apply_p_test');
 Route::get('compare','CompareController@compare');
 Route::get('view-loan','CompareController@view_loan');
 // Route::get('emi1','CompareController@emi');
@@ -40,8 +40,8 @@ Route::get('logout','LoginController@logout');
 
 /* by dp */
 Route::get('apply-sme-loan','LoanController@smeLoan');
-Route::get('apply-home-loan','LoanController@apply_home_loan');
-Route::get('apply-loan-against-property','LoanController@apply_loan_against_property');
+Route::get('apply-home-loan','LoanController@apply_h_test');
+Route::get('apply-loan-against-property','LoanController@apply_h_test');
 Route::post('login','LoginController@login');
 Route::post('registration','LoginController@register_form');
 
@@ -83,6 +83,7 @@ Route::get('privacy-policy-page','HomeController@privacy_policy');
 //new loans test
 
 Route::get('test-personal-loan','LoanController@apply_p_test');
+Route::get('test-home-loan','LoanController@apply_h_test');
 Route::get('show-quotes','FormController@show_quotes');
 
 

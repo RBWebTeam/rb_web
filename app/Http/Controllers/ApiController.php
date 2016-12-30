@@ -45,6 +45,7 @@ class ApiController extends Controller
 				//print_r($quote_req);exit();
 				$data=DB::select('call  usp_get_bank_quot ("'.$quote_req[0]->PropertyCost.'","'.$quote_req[0]->LoanTenure.'","'.$quote_req[0]->LoanRequired.'","'.$quote_req[0]->ApplicantGender .'","'.$quote_req[0]->ApplicantIncome .'","'.$quote_req[0]->ApplicantObligations .'","'.$quote_req[0]->ApplicantDOB .'","'.$quote_req[0]->CoApplicantYes .'","'.$quote_req[0]->CoApplicantIncome .'","'.$quote_req[0]->CoApplicantObligations .'","'.$quote_req[0]->Turnover .'","'.$quote_req[0]->ProfitAfterTax .'","'.$quote_req[0]->Depreciation .'","'.$quote_req[0]->DirectorRemuneration .'","'.$quote_req[0]->CoApplicantTurnover .'","'.$quote_req[0]->CoApplicantProfitAfterTax .'","'.$quote_req[0]->CoApplicantDepreciation .'","'.$quote_req[0]->CoApplicantDirectorRemuneration .'","'.$quote_req[0]->ApplicantSource .'","'.$quote_req[0]->ProductId .'")');
 					}else{
+						//quote dont exist in db
 						goto run;
 					}
 					$id=$req['quote_id'];

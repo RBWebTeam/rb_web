@@ -31,7 +31,7 @@
 			</div>
 			<div class="col-md-12 text-center animate-box cont" style="display: none;" id="q2_year">
              <h3>my yearly income is
-			 <input type="tel" id="income_year" name="turnover" onkeyup="changeText('income','q3')"  onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="1,00,000" tabindex="1">
+			 <input type="tel" id="income_year" name="turnover" onkeyup="changeText('income_year','q3')"  onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="1,00,000" tabindex="1">
 			 </h3> 
 			</div>
 			<div class="col-md-12 text-center animate-box cont" style="display: none;" id="q3">
@@ -66,8 +66,11 @@
 					.</h3>
 			</div>
 			<div class="text-center" id="step_3_btn">
-			
-			<a class="btn btn-primary btn-outline with-arrow animate-box product_name" data-toggle="modal" data-target="#login_process">Get me a Loan<i class="icon-arrow-right"></i></a>
+			<?php if(Session::get('is_login')) {?>
+				<button class="btn btn-primary btn-outline with-arrow animate-box product_name" >Get me a Loan<i class="icon-arrow-right"></i></button>
+			<?php }else{?>
+				<a class="btn btn-primary btn-outline with-arrow animate-box product_name" data-toggle="modal" data-target="#login_process">Get me a Loan<i class="icon-arrow-right"></i></a>
+			<?php } ?>
 			</div>
 	 </div>
 

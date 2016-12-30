@@ -69,9 +69,9 @@ document.getElementById('login').style.display="block";
 
             <ul class="top-lnk">
                 <li><a href="#">Home</a></li>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Contact Us</a></li>
-                <li><a href="#">Careers</a></li>
+                <li><a href="{{URL::to('about-us')}}">About Us</a></li>
+                <li><a href={{URL::to('contact-us')}}>Contact Us</a></li>
+                
                 
             </ul>
 

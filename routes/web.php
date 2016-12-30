@@ -57,6 +57,7 @@ Route::post('profile/update','ProfileController@profileupdate');
 Route::post('profile/extradetails','ProfileController@extradetails');
 
 
+
 /* API routes to be written here */ 
 
 Route::get('api','ApiController@GetLAPQuotes');

@@ -74,7 +74,8 @@
     <td width="17%"><button>Apply Online</button></td>
   </tr>
   <tr>
-    <td><input type="checkbox" name="cehckbox"/></td>
+    <td>
+    <input type="checkbox" name="checkbox" value="{{$q->Bank_Name}}" class="{{$q->Bank_Id}}"  data-id="{{$q->Bank_Id}}"/></td>
     <td>Personal Loan</td>
     <td>{{$q->roi }}%</td>
     <td>{{$q->LoanRequired}}</td>
@@ -105,13 +106,66 @@
 <div class="container pad">
  <div class="col-md-12 animate-box fadeInUp animated col">
  <div class="col-md-4 img-c"><img src="images/compare-img.png"></div>
-  <div class="col-md-2 col img-c white-bg"><button type="button" class="close" data-dismiss="modal">×</button>
-    <img src="images/kotak.png" width="50" height="46">Kotak Mahindra Bank</div>
-  <div class="col-md-2 col img-c white-bg"><button type="button" class="close" data-dismiss="modal">×</button><img src="images/axis.png" width="50" height="46">Axis Bank</div>
+
+   <form action="#" method="post">
+
+<div id="AllBank">
+
+</div>
+<!--   <div class="col-md-2 col img-c white-bg"><button type="button" class="close" data-dismiss="modal">×</button><img src="images/axis.png" width="50" height="46">Axis Bank</div>
   <div class="col-md-2 col img-c white-bg"><button type="button" class="close" data-dismiss="modal">×</button><img src="images/hdfc.png" width="50" height="46">HDFC Bank</div>
+ -->
   <div class="col-md-2 comp-btn"><a href="#" class="btn btn-primary btn-outline with-arrow">Compare<i class="icon-arrow-right"></i></a></div>
+
+ </form>
+
  </div>
 </div>
 </div>
+
+
+
 @include('layout.footer')
 @include('layout.script')
+
+<script type="text/javascript">
+var clicks = 0;
+var limit =4;
+$('input[name="checkbox"]').change(function(){ 
+  if($("input[name='checkbox']:checked").length >= limit) {
+       this.checked = false;      
+
+     
+   }else{
+      var id=$(this).attr("data-id");
+  if (this.checked) {
+       var id=$(this).attr("data-id");
+       var span="<div class='col-md-2 col img-c white-bg' id='" +id + "'><span class='close btnspan' >×</span><img src='images/kotak.png' width='50' height='46'>" + this.value + "</div>";
+
+           // var count=$(span).size();
+
+        $("#AllBank").append(span);
+  
+  }else{
+   
+  $("#"+id).remove();
+
+  }
+   }
+  
+});
+
+ 
+$(document).ready(function () {
+    $(document).on('click', '.btnspan', function () {
+
+         var id=$(this).closest("div").attr("id");
+        $("."+id).attr('checked',false);
+        $("#"+id).remove();
+    
+
+  });
+
+});
+
+</script>

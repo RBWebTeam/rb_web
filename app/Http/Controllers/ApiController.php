@@ -272,5 +272,23 @@ run_else:
        //                  ));
 	}
 
+	public function getcustomer(Request $req){
+		//$a = $req->all();
+		//echo $quote =$req->ID;
+
+        $data=DB::table('bank_quote_api_request')
+		->where('ID','=',$req->ID)->first();
+          
+         return Response::json(array(
+			'data' => $data,
+			));
+
+	}
+
+
+
+
+
+
 
 }

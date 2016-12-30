@@ -2,7 +2,7 @@
 <div class="container" id='elem'>
 	<form name='home_loan_process_form' id='home_loan_process_form' action={{URL::to('loan-submit')}} method="POST">
 		<input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
-		<input type="hidden" id="product" name="product_name" value=12>
+		<input type="hidden" id="product" name="product_name" value=7>
 		<div class="col-md-12 text-center"><h4>Apply for an Easy Home Loan in 30 seconds</h4></div>
 		<div class="liza col-md-8"  id="step-1" style="display: block;">
 			<!--- liza Step First   - -->

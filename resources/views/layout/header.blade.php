@@ -76,11 +76,13 @@ document.getElementById('login').style.display="block";
             </ul>
 
             <ul class="nav-pills pull-right social-icon">
+
                 <li><a href="#" title="Facebook"><i class="icon-twitter"></i></a></li>
                 <li><a href="#" title="Linkedin"><i class="icon-facebook"></i></a></li>
                 <li><a href="#"><i class="icon-google-plus"></i></a></li>
                 <li><a href="#" title="instagram"><i class="icon-instagram"></i></a></li>
                 <li><a href=""><i class="icon-phone"></i> 1800-267-629-6</a></li>
+
             </ul>
 
         </div>
@@ -122,11 +124,10 @@ document.getElementById('login').style.display="block";
 							
 							<ul class="dropdown-menu" id='account'>
 							    <li>
-								<a href={{URL::to('logout')}}>logout</a>
+								<a href={{URL::to('logout')}}>Logout</a>
 								<a href="{{url('profile')}}">My Profile</a>
 								<a href="#">My Account</a>
-								<a href="#">My credit score</a>
-								<a href="{{URL::to('check_emi')}}">Emi calculator</a>
+								<a href="#">My Credit Score</a>
 								<a href='#'>Applied loan</a>
 								</li>
 							</ul>

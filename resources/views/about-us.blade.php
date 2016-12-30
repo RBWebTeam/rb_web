@@ -20,18 +20,18 @@ Our refreshingly simple yet smart system allows you to get what you desire faste
 							<h2 class="abhead">Our Advantage</h2>
 							
 							<div class="col-sm-4 col-xs-6">
-								<div align="center"> <img src="images/new_images/abouticon/6.png" width="120" height="100"></div>
+								<div align="center"> <img src="images/abouticon/6.png" width="120" height="100"></div>
 								<h4 class="abhead1">Expert Advice</h4>
 								
 							</div>
 							
 							<div class="col-sm-4 col-xs-6">
-								<div align="center"> <img src="images/new_images/abouticon/2.png" width="120" height="100"></div>
+								<div align="center"> <img src="images/abouticon/2.png" width="120" height="100"></div>
 								<h4 class="abhead1">Quick Process</h4>
 							</div>
 							
 							<div class="col-sm-4 col-xs-6">
-								<div align="center"> <img src="images/new_images/abouticon/3.png" width="120" height="100"></div>
+								<div align="center"> <img src="images/abouticon/3.png" width="120" height="100"></div>
 								<h4 class="abhead1">Simple Document</h4>
 							</div>
 							
@@ -39,18 +39,18 @@ Our refreshingly simple yet smart system allows you to get what you desire faste
 							
 							
 							<div class="col-sm-4 col-xs-6">
-								<div align="center"> <img src="images/new_images/abouticon/4.png" width="120" height="100"></div>
+								<div align="center"> <img src="images/abouticon/4.png" width="120" height="100"></div>
 								<h4 class="abhead1">Easy Search</h4>
 								
 							</div>
 							
 							<div class="col-sm-4 col-xs-6">
-								<div align="center"> <img src="images/new_images/abouticon/5.png" width="120" height="100"></div>
+								<div align="center"> <img src="images/abouticon/5.png" width="120" height="100"></div>
 								<h4 class="abhead1">Instant Approval</h4>
 							</div>
 							
 							<div class="col-sm-4 col-xs-6">
-								<div align="center"> <img src="images/new_images/abouticon/1.png" width="120" height="100"></div>
+								<div align="center"> <img src="images/abouticon/1.png" width="120" height="100"></div>
 								<h4 class="abhead1">Fast Cash</h4>
 							</div>
 							
@@ -81,13 +81,13 @@ Our refreshingly simple yet smart system allows you to get what you desire faste
 					<img class="imgicon" src="images/new_images/icon/pc.png">
 				</div>
 				
-				<div class="col-sm-3 osfont">
+				<!-- <div class="col-sm-3 osfont">
 				<p class="applycon2" style="font-size: 28px;font-weight:300">Apply for a Loan Online</p>
 				</div>
 				
 				<div class="col-sm-2 lbtn">
-					<a class="btn btn-default btn1" href="customer_form.php"> Lets Start </a>
-				</div>
+					<a class="btn btn-default btn1"> Lets Start </a>
+				</div> -->
 				
 			</div>
 		</div>

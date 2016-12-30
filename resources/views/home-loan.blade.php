@@ -114,7 +114,7 @@
 							<div class="ic1"><img src="images/ic2.png" /></div>
 							<h4 class="mrg-btm">Calculate EMI</h4>
 							<ul>
-							      <li>EMI Calculator is easy to use, intuitive to understand and is quick to perform..</li>
+							      <li>EMI Calculator is easy to use, intuitive to understand and is quick to perform.</li>
 								 <li>calculate your EMIs.</li>
 							</ul>
 							<a class="btn btn-primary btn-outline with-arrow" href="{{URL::to('check_emi')}}">Calculate EMI<i class="icon-arrow-right"></i></a>

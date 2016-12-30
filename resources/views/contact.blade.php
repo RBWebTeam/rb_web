@@ -2,7 +2,7 @@
 <div class="container" id="fh5co-hero">
 <div class="row">
 		<div class="col-sm-5">
-			<img src="images/new_images/helpbg.jpg" class="img-responsive" style="width:100%;height:auto; border:1px solid #ddd;">
+			<img src="{{URL::to('images/helpbg _new.jpg')}}" class="img-responsive" style="width:100%;height:auto; border:1px solid #ddd;">
 		</div>
 		<div class="col-sm-7">
 			<h1>Have us call you now. <span style="color:red">It's FREE!</span></h1>

@@ -1,4 +1,4 @@
-<div class="fh5co-cta" style="background-image: url(/images/slide_2.jpg);">
+<!-- <div class="fh5co-cta" style="background-image: url(/images/slide_2.jpg);">
         <div class="overlay"></div>
         <div class="container">
             <div class="col-md-12 text-center animate-box">
@@ -27,7 +27,7 @@
             <div class='msg_err' style="display: none;"><p>Ooops. Something went wrong.</p></div>
             </div>
         </div>
-    </div>
+    </div> -->
     <div class="container">
 <div class="col-md-12 quotes"><h2>Quotes generated till date :25856</h2></div>
 </div>

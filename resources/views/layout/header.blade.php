@@ -59,7 +59,26 @@ document.getElementById('login').style.display="block";
     </div>
 	<!---------------Sidebar Popup Div Start --------- -->
 	<div id="fh5co-page">
+
 	<header id="fh5co-header" role="banner" class="navbar navbar-default navbar-fixed-top">
+	<div class="container colo">
+
+            <ul class="nav nav-pills pull-left remove">
+                <li role="presentation"><a href="/" title="Home" class="txt11black topnav-padding" onclick="eventsubmmision(7,'click','Home','event topnav',null)">Home</a></li>
+                <li role="presentation"><a href="/about-us" title="About Us" class="txt11black topnav-padding" onclick="eventsubmmision(7,'click','About Us','event topnav',null)">About Us</a></li>
+                <li role="presentation"><a href="/contact-us" title="Contact Us" class="txt11black topnav-padding" onclick="eventsubmmision(7,'click','Contact Us','event topnav',null)">Contact Us</a></li>
+               
+            </ul>
+
+            <ul class="nav-pills pull-right social-icon">
+                <i class="fa fa-facebook-square" aria-hidden="true" style="font-size:30px;"></i>
+                <i class="fa fa-linkedin-square" aria-hidden="true" style="font-size:30px;"></i>
+                <i class="fa fa-twitter-square" aria-hidden="true" style="font-size:30px;"></i>
+                <i class="fa fa-google-plus-square" aria-hidden="true" style="font-size:30px;"></i>
+                <a href="tel:1800-419-419-9" class="txtwhite"><i class="fa fa-phone-square"></i>1800-419-419-9</a>
+            </ul>
+
+        </div>
 		<div class="container">
 			<div class="header-inner">
 				<h1><a href="{{URL::to('/')}}"><img src="{{URL::to('images/logo.png')}}" width="160" height="47" /></a></h1>

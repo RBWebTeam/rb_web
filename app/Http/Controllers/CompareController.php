@@ -42,7 +42,7 @@ class CompareController extends Controller
     }
 
     public function calculation(Request $req){
-      
+
 
       $getQuery=DB::table('bank_product_web_intrest')
       ->join('bank_master', 'bank_product_web_intrest.bank_id', '=', 'bank_master.Bank_id')
@@ -58,70 +58,50 @@ class CompareController extends Controller
        //->take(5)
       ->get();
 
-      $resultArray = json_decode(json_encode($getQuery), true);
-      //print_r($resultArray);exit();
-     // if(empty($resultArray)){
-     //  echo "empty";
-     // }else{
-     //  echo "not empty";
-     // };exit();
-if (!empty($resultArray)) {
-$loanamount=$req['loanamount'];
-$loaninterest=$req['loaninterest']/12/100;
-$loanterm=$req['loanterm'];
+    $resultArray = json_decode(json_encode($getQuery), true);
+     
+        if (!empty($resultArray)) {
+            $loanamount=$req['loanamount'];
+            $loaninterest=$req['loaninterest']/12/100;
+            $loanterm=$req['loanterm'];
 
 
-$amount = $loanamount * $loaninterest * (pow(1 + $loaninterest, $loanterm) / (pow(1 + $loaninterest, $loanterm) - 1));
-$total =(($amount*$loanterm)-$loanamount);
+            $amount = $loanamount * $loaninterest * (pow(1 + $loaninterest, $loanterm) / (pow(1 + $loaninterest, $loanterm) - 1));
+              $total =(($amount*$loanterm)-$loanamount);
 
-$ttl_payment = $loanamount+$total;
+              $ttl_payment = $loanamount+$total;
 
-//savings//
-if($getQuery[0]->roi==0){
-  $getQuery[0]->roi=1;
+         //savings//
+        if($getQuery[0]->roi==0){
+            $getQuery[0]->roi=1;
+          }
+            $new_rate=$getQuery[0]->roi/12/100;
+            $new_amount = $loanamount * $new_rate * (pow(1 + $new_rate, $loanterm) / (pow(1 + $new_rate, $loanterm) - 1));
 
+            $new_total =(($new_amount*$loanterm)-$loanamount);
+            $new_ttl_payment = $loanamount+$new_total;
+            $drop_emi= $amount-$new_amount;
+            $drop_in_int=(($loaninterest*12*100)-($new_rate*12*100));
+            $savings=$total-$new_total;
 
-} //remove when you have real data not containg 0.00 % roi in db
-$new_rate=$getQuery[0]->roi/12/100;
+      $test =json_decode(json_encode($getQuery),true);
 
-
-
-
-
-
-
-  $new_amount = $loanamount * $new_rate * (pow(1 + $new_rate, $loanterm) / (pow(1 + $new_rate, $loanterm) - 1));
-
-  $new_total =(($new_amount*$loanterm)-$loanamount);
-  $new_ttl_payment = $loanamount+$new_total;
-  $drop_emi= $amount-$new_amount;
-  $drop_in_int=(($loaninterest*12*100)-($new_rate*12*100));
-  $savings=$total-$new_total;
-
-$test =json_decode(json_encode($getQuery),true);
-//$test1 = array('bank_detail' => $test);
-$user =array('loanamount' => $loanamount, 'loaninterest' => $loaninterest , 'loanterm'=> $loanterm );
-// $a=array_push($test, $loaninterest,$loanamount,$loanterm);
-// print_r($test);exit();
-
-
-  $returnHTML = view('emi/switch_cal')->with('data', $test)->with('sata', $user)->render();
-return response()->json(array('success' => true, 'amount'=>$amount, 'new_amount'=>$new_amount, 'drop_emi'=>$drop_emi,'drop_in_int'=>$drop_in_int, 'savings'=>$savings, 'html'=>$returnHTML));                            
-                                  
-
-}
-else{
+      $user =array('loanamount' => $loanamount, 'loaninterest' => $loaninterest , 'loanterm'=> $loanterm );
+              $returnHTML = view('emi/switch_cal')->with('data', $test)->with('sata', $user)->render();
+              return response()->json(array('success' => true, 'amount'=>$amount, 'new_amount'=>$new_amount, 'drop_emi'=>$drop_emi,'drop_in_int'=>$drop_in_int, 'savings'=>$savings, 'html'=>$returnHTML));                            
+            }
+              else{
    
-  return response()->json(array('success' => false));
+              return response()->json(array('success' => false));
 
-}
+                 }
 
 
 
       
-    }
+                 }
  
 
  
-}
+                 }
 ?>

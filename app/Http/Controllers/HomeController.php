@@ -22,5 +22,20 @@ class HomeController extends Controller
 		$data['bank_name'] = $id;
 	    return view('bank-wise-product')->with($data);
 	}
+
+	public function about_us(){
+		return view('about-us');
+	}
+
+	public function disclaimer(){
+		return view('disclaimer');
+
+	}
+	public function privacy_policy(){
+		return view('privacy-policy-page');
+
+	}
+
+
 	
 }

@@ -20,9 +20,9 @@
 
 <div class="jumbotron text-center" style="background-color:lightblue;" id="fh5co-hero">
 <center>
-  <p class="text-primary"><h2>Balance Transfer Service</h2></p> 
+  <p class="text-primary"><h2>Home Loan Transfer Service</h2></p> 
   <p>Let's find out how much you can save!!</p>
-  <p>Please enter your current loan details.</p> 
+  <p>Know how much you'll save. Please enter your current home loan details.</p> 
 </center>  
             
                             
@@ -115,8 +115,8 @@
         <h4 class="modal-title"></h4>
       </div>
       <div class="modal-body">
-        <h3><p>Amount should be greater than "5,00,000" and lesser than "10,00,000,000".</p></h3>
-        <h3><p>As well as Interest should be greater than 9%. If less you already on Lower Rate.</p></h3>
+        <h4><p>Amount should be greater than "5,00,000" and lesser than "10,00,000,000".</p></h4>
+        <h4><p>As well as Interest should be greater than 9%. If less you are already on Lower Rate.</p></h4>
       </div>
       
       <div class="modal-footer">
@@ -202,7 +202,7 @@
                         $("#7").show();
                         $('#test').html(msg.html);
                   }else{
-                    console.log(lm);
+                    console.log(msg.success);
                      $('#homeTransfer').modal('show');  
                       
 

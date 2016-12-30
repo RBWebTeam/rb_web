@@ -61,51 +61,11 @@ Our refreshingly simple yet smart system allows you to get what you desire faste
 <div style="clear:both"></div>
 
 <!-- Apply for loan online -->
-	<div class="container-fluid">
-		<div class="row">
-			<div class="col-sm-12 applycon">
-			
-				<div class="col-sm-1">
-					<img class="imgicon" src="images/new_images/icon/phone.png">
-				</div>
-				
-				<div class="col-sm-4 osfont">
-					<p class="applycon1" style="font-weight:300;font-size:19px">Want to meet a Loan Expert? <br><br>Fix an appointment now on <span style="color:red">1800-267-629-6</span><br> <span style="font-size:12px">Mon-Sat,10am-7pm</span></p>
-				</div>
-				
-				<div class="col-sm-1 dot">
-				
-				</div>
-				
-				<div class="col-sm-1 ">
-					<img class="imgicon" src="images/new_images/icon/pc.png">
-				</div>
-				
-				<!-- <div class="col-sm-3 osfont">
-				<p class="applycon2" style="font-size: 28px;font-weight:300">Apply for a Loan Online</p>
-				</div>
-				
-				<div class="col-sm-2 lbtn">
-					<a class="btn btn-default btn1"> Lets Start </a>
-				</div> -->
-				
-			</div>
-		</div>
-	</div>
+	
 <!-- Apply for loan online closed -->
 
 
-
-
-
-						
-
-
-
-						
-						
-						
-						<div class="col-sm-12" style="margin-bottom:20px;">
+                            <div class="col-sm-12" style="margin-bottom:20px;">
 
 							 <div class="col-sm-1">
 							

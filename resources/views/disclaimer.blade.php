@@ -15,9 +15,6 @@ Visitors to this website/portal and every third party is hereby informed that th
 <div class="col-sm-4">
 </div>
 
-<div class="col-sm-4">
-<h3><span style="font-weight: bold;">Talk to a Loan Expert</span></h3>
-</div>
 
 <div class="col-sm-4">
 </div>
@@ -26,23 +23,7 @@ Visitors to this website/portal and every third party is hereby informed that th
   
 	
 								
-								<div class="col-sm-4">
-									<form name="newsletter" method="post" action="#">
-										<fieldset>
-											<input id="newsletter-email" type="email" name="email" placeholder="Name">
-										</fieldset>
-									</form>
-								</div>
-                                                                <div class="col-sm-4">
-									<form name="newsletter" method="post" action="#">
-										<fieldset>
-											<input id="newsletter-email" type="email" name="email" placeholder="Mobile Number">
-										</fieldset>
-									</form>
-								</div>
-                                                                <div class="col-sm-2 btncent">
-									<button class="btn btn-default btn1" type="submit" name="submit" value="">Call Me Now</button>
-							        </div>
+								
 
 
 							</div>

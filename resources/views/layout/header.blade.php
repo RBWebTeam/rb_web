@@ -71,10 +71,10 @@ document.getElementById('login').style.display="block";
             </ul>
 
             <ul class="nav-pills pull-right social-icon">
-                <i class="fa fa-facebook-square" aria-hidden="true" style="font-size:30px;"></i>
-                <i class="fa fa-linkedin-square" aria-hidden="true" style="font-size:30px;"></i>
-                <i class="fa fa-twitter-square" aria-hidden="true" style="font-size:30px;"></i>
-                <i class="fa fa-google-plus-square" aria-hidden="true" style="font-size:30px;"></i>
+                <a href="#"><i class="fa fa-facebook-square" aria-hidden="true" style="font-size:30px;"></i></a>
+                <a href="#"><i class="fa fa-linkedin-square" aria-hidden="true" style="font-size:30px;"></i></a>
+                <a href="#"><i class="fa fa-twitter-square" aria-hidden="true" style="font-size:30px;"></i></a>
+                <a href="#"><i class="fa fa-google-plus-square" aria-hidden="true" style="font-size:30px;"></i></a>
                 <a href="tel:1800-419-419-9" class="txtwhite"><i class="fa fa-phone-square"></i>1800-419-419-9</a>
             </ul>
 

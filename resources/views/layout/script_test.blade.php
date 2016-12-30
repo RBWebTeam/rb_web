@@ -66,7 +66,7 @@
             $('#pop1').append( "<p>Loan amount you wants to borrow</p>" );
             $("#q4").hide();
         }else  if(val=='q2_year'){
-          $('#pop1').append( "<p>Enter your net Income</p>" );
+          $('#pop1').append( "<p>Enter your net turnover</p>" );
           $("#q2").hide();
           $('#income').val('');
         }else if(val=='co_sal'){
@@ -83,8 +83,9 @@
           $('#income').val('');
           $('#pop1').empty();
           $('#pop1').append( "<p>Enter your net Income</p>" );
-        }
-        else{
+        }else if(val=='q8'){
+          $('#pop1').append( "<p>Enter your valid pancard number</p>" )
+        }else{
             $('#pop1').append( "<p>Please Proceed</p>" );
         }
         return false;
@@ -188,7 +189,7 @@
 
       $('#pop1').empty();
       if(val=='q3'){
-           $('#pop1').append( "<p>Have any existing loan</p>" );
+           $('#pop1').append( "<p>Do you have any existing loan</p>" );
         }else if(val=='exp'){
           $('#pop1').append( "<p>Entr your expierience in current company</p>" );
         }else if(val=='total_exp'){

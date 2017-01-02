@@ -3,9 +3,10 @@
 	<form name='home_loan_process_form' id='home_loan_process_form' action={{URL::to('loan-submit')}} method="POST">
 		<input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
 		<input type="hidden" id="product" name="product_name" value=7>
-		<div class="col-md-12 text-center"><h4>Apply for an Easy Home Loan in 30 seconds</h4></div>
+		
 		<div class="liza col-md-8"  id="step-1" style="display: block;">
 			<!--- liza Step First   - -->
+			<div class="col-md-12 text-center"><h4>Apply for an Easy Loan against property in 30 seconds</h4></div>
 			<p class="text-center">Step 1 of 2</p> 
 			<!--first question--> 
 			<div class="col-md-12 text-center animate-box cont" id="q1">
@@ -55,8 +56,13 @@
 							</h3> 
 						</div>
 						<div class="col-md-12 text-center animate-box cont" style="display: none" id="q5">
-							<h3>Loan required
-								<input type="tel" id="loan_amount" name="loan_amount"  onkeyup="changeText('loan_amount','q6')"  onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="1,00,000" tabindex="1">
+							<h3>I required loan of 
+								<input type="tel" id="loan_amount" name="loan_amount"  onkeyup="changeText('loan_amount','q_prop')"  onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="1,00,000" tabindex="1">
+							</h3> 
+						</div>
+						<div class="col-md-12 text-center animate-box cont" style="display: none" id="q_prop">
+							<h3>and my property cost is
+								<input type="tel" id="property_cost" name="property_cost"  onkeyup="changeText('property_cost','q6')"  onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="1,00,000" tabindex="1">
 							</h3> 
 						</div>
 						<div class="col-md-12 text-center animate-box cont" style="display: none" id="q6">
@@ -70,14 +76,29 @@
 						</div>
 						<div class="col-md-12 text-center animate-box cont1" style="display: none" id="q8">
 							<h3>My date of birth is
-								<input type="date" id="dob" name="dob" class="input-pad company-nm1" onchange="changeTest(this,'step_2_btn')">
+								<input type="date" id="dob" name="dob" class="input-pad company-nm1" onchange="changeTest(this,'q9')">
 							</h3>
 						</div>
+						<div class="col-md-12 text-center animate-box cont" style="display:none;" id="q9" >
 						
+				             <h3>I have been living in
+							<input type="text" class="search_city input-pad" id='city_name' name='city_name' onkeypress="changeTest('city_name','step_2_btn')" placeholder='your city'>city
+							
+						</div>
+						
+
 						<div class="text-center" style="display: none;" id="step_2_btn">
 							<a class="btn btn-primary btn-outline with-arrow animate-box" id="co_button" onclick="changeDiv('step-1','step-2')">Have Co-Applicant<i class="icon-arrow-right"></i></a>
-							<a class="btn btn-primary btn-outline with-arrow animate-box product_name" id="no_co_app" data-toggle="modal" data-target="#login_process">No Co-Applicant<i class="icon-arrow-right"></i></a>
-							<input type="hidden" name="have_co_applicant" value="" id="have_co_applicant">
+							
+								<?php if(Session::get('is_login')) {?>
+									<button class="btn btn-primary btn-outline with-arrow animate-box product_name" >Get me a Loan<i class="icon-arrow-right"></i></button>
+								<?php }else{?>
+									<a class="btn btn-primary btn-outline with-arrow animate-box product_name" id="no_co_app" data-toggle="modal" data-target="#login_process">No Co-Applicant<i class="icon-arrow-right"></i></a>
+								
+								<?php } ?>
+								<input type="hidden" name="have_co_applicant" value="" id="have_co_applicant">
+							
+							
 						</div>
 						
 
@@ -102,7 +123,7 @@
 					</div>
 					<div class="col-md-12 text-center animate-box cont" style="display: none;" id="co_self">
 						<h3>Co-Applicant turnover is
-							<input type="tel" id="co_income_year" name="co-applicant-turnover" onkeyup="changeText('co_income_year','co_profit_all')"  onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="1,00,000" tabindex="1">
+							<input type="tel" id="co_income_year" name="co_applicant_turnover" onkeyup="changeText('co_income_year','co_profit_all')"  onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="1,00,000" tabindex="1">
 						</h3> 
 					</div>
 					<!-- self employed question -->
@@ -125,23 +146,22 @@
 
 						<div class="col-md-12 text-center animate-box cont" style="display: none" id="co_obl">
 							<h3>Co-Applicant remaining loan amount is
-								<input type="tel" id="co_obligation" name="co_applicant_obligation"  onkeyup="changeText('co_obligation','city_name')"  onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="1,00,000" tabindex="1">
+								<input type="tel" id="co_obligation" name="co_applicant_obligation"  onkeyup="changeText('co_obligation','last_button')"  onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="1,00,000" tabindex="1">
 							</h3> 
 						</div>
-					<div class="col-md-12 text-center animate-box cont" style="display:none;" id="q9" >
-						<form action={{URL('search/autocomplete')}} method="POST" >
-			             <h3>I have been living in
-						<input type="text" class="search_city input-pad" id='city_name' name='city_name' onkeypress="changeTest('city_name','last_button')" placeholder='your city'>city
-						</form>
-				</div>
-						
+				
 					<!-- step-2 finished -->
 					<div class="text-center">
 						<a class="btn btn-primary btn-outline with-arrow animate-box" id="back" onclick="changeDiv('step-2','step-1')">Back<i class="icon-arrow-right"></i></a>
 					</div>
 					<div class="text-center" style="display: none;" id="last_button">
-						<a class="btn btn-primary btn-outline with-arrow animate-box product_name" data-toggle="modal" data-target="#login_process">Submit<i class="icon-arrow-right"></i></a>
+						<?php if(Session::get('is_login')) {?>
+							<button class="btn btn-primary btn-outline with-arrow animate-box product_name" >Get me a Loan<i class="icon-arrow-right"></i></button>
+						<?php }else{?>
+							<a class="btn btn-primary btn-outline with-arrow animate-box product_name" data-toggle="modal" data-target="#login_process">Submit<i class="icon-arrow-right"></i></a>
+						<?php } ?>
 					</div>
+					
 			</div>		
 				</form>
 			<!-- POP Up code start -->

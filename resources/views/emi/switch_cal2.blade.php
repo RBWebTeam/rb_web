@@ -74,8 +74,8 @@ foreach ($data as $key => $value){?>
                         <h6><?php echo $loanterm ?></h6>
                       </div>
                     </td>
-                    <td class="td-main-1">
-                      <img src="images/edit-home-icon.png" class="img-responsive">
+                    <td class="td-main-1"><a href="{{URL::to('apply-home-loan')}}"> <img src="images/edit-home-icon.png" class="img-responsive"></a>
+                    }
                     </td>
                   </tr>
                             

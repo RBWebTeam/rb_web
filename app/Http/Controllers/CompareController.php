@@ -11,9 +11,47 @@ use Response;
 class CompareController extends Controller
 {
     //
-    public function compare(){
-    	return view('compare');
+    public function compare(Request $req){
+
+         if(count($req->bank_id)==3){
+          
+            $val=$req->bank_id[0];
+            $val1=$req->bank_id[1];
+            $val2=$req->bank_id[2];
+                
+ $getQuery= DB::table('bank_master')
+    ->join('bank_product_web_intrest','bank_product_web_intrest.Bank_Id',
+     '=', 'bank_master.Bank_Id')
+    ->select(   
+       'bank_master.Bank_Name')
+    ->where('bank_product_web_intrest.Product_Id', '=',9)
+    ->whereIn('bank_master.Bank_Id', array($val,$val1,$val2))
+    ->get();
+    
+
+  //     $getQuery= DB::table('bank_master')
+  // ->whereIn('Bank_Id', array($val,$val1,$val2))
+  // ->get();
+  
+  foreach ($getQuery as $key => $value) {
+    echo $value->Bank_Name;
+    echo " <br>";
+  }
+
+               return view('compare');
+
+
+         }else{
+
+             echo "r";
+         }
+
+     
+    
     }
+
+
+
     public function view_loan(){
         // if(Session::get('is_login')){
     	   return view('view-loan');

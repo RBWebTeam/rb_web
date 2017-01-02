@@ -10,7 +10,7 @@ Route::get('business-loan','LoanController@business_loan');
 
 
 Route::get('apply-personal-loan','LoanController@apply_p_test');
-Route::get('compare','CompareController@compare');
+Route::post('compare','CompareController@compare');
 Route::get('view-loan','CompareController@view_loan');
 // Route::get('emi1','CompareController@emi');
 Route::get('credit-report','CompareController@credit_report');
@@ -55,7 +55,7 @@ Route::get('google','SocialsiteController@google');
 Route::get('google/callback','SocialsiteController@Googlecallback');
 Route::post('profile/update','ProfileController@profileupdate');
 Route::post('profile/extradetails','ProfileController@extradetails');
-Route::post('check','ProfileController@check');
+
 
 
 /* API routes to be written here */ 

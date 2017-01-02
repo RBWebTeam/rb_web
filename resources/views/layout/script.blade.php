@@ -1,4 +1,3 @@
-
     <script src="{{URL::to('js/modernizr-2.6.2.min.js')}}"></script>
         <!-- jQuery -->
     <script src="{{URL::to('js/jquery.min.js')}}"></script>
@@ -13,8 +12,6 @@
 
 
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
-
-
     <script>
            $('ul.dropdown-menu [data-toggle=dropdown]').on('click', function(event) {
     // Avoid following the href location when clicking
@@ -912,7 +909,7 @@ function emibreakup(E,P,r,n)
   </div>
 </div>
 
-<!-- otp end-->
+<!-- otp end here-->
 
 @include('layout.modal')
 

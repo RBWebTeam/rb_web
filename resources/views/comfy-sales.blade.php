@@ -76,21 +76,13 @@ $(document).ready(function(){
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12 text-left fh5co-heading animate-box fadeInUp animated">
-					<h2>About us</h2>
+					<h2>Comfy Sales Leaflet</h2>
 					</div>				
 				<div class="col-md-12">
 					<div class="row pad11 white-bg comp-pg">
-               <h2>About RupeeBoss.com</h2>
 
-<p>At <b>RupeeBoss.com</b>, we are guided by the philosophy – When You Need a Loan, You’re not Alone! This guiding principle is a reflection of our commitment towards ensuring the most hassle-free experience in procuring a loan, be it for personal needs, or that of your business.</p>
-
-<p><b>RupeeBoss.com</b> aspires to be India’s preferred destination for the widest range of loan products including retail, SME and Credit Card products. We will offer best terms for Person Loan, Home Loan, Car Loan to Working Capital, SME Loan, Business Loan, and more. Our product advisors leave no stone unturned to ensure that your loan requirement is not just well studied, it’s also taken up with utmost sincerity to ensure you get the best of breed options to choose from.</p>
-
-<p>Our extensive relationships with all major national, PSU, Private and NBFC service providers, coupled with the cutting edge technology ensure that upon specifying your requirement, you get the most competitive options that are tailor made to suit your needs, and all of this done at a few clicks.</p>
-
-<p>At <b>RupeeBoss.com</b>, we are committed in ensuring the best experience in terms of customer service and satisfaction, and hence all our customer reps are cherry picked and our escalation matrix goes right up to our CEO.
-
-So let’s get started together and get you the loan / credit card that you deserve.</p>
+                   <img src="{{URL::to('images/Comfy-Sales Leaflet-Front.jpg')}}" class="img-responsive"/>
+				   <img src="{{URL::to('images/Comfy-Sales Leaflet-Back.jpg')}}" class="img-responsive"/>
 					</div>
 				</div>
 			</div>
@@ -124,6 +116,7 @@ So let’s get started together and get you the loan / credit card that you dese
 
 	</body>
 </html>
+
 
 
 </div>

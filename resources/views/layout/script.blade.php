@@ -832,11 +832,7 @@ function emibreakup(E,P,r,n)
     }
   </script>
 <!-- emi scripts end -->
-
-
-
-
-	</body>
+</body>
 </html>
 <!-- login Start-->
     <div id="login_process" class="modal fade" role="dialog">

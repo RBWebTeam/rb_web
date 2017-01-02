@@ -55,6 +55,7 @@ Route::get('google','SocialsiteController@google');
 Route::get('google/callback','SocialsiteController@Googlecallback');
 Route::post('profile/update','ProfileController@profileupdate');
 Route::post('profile/extradetails','ProfileController@extradetails');
+Route::post('check','ProfileController@check');
 
 
 /* API routes to be written here */ 
@@ -74,6 +75,7 @@ Route::get('profile','ProfileController@my_profile');
 Route::get('about-us','HomeController@about_us');
 Route::get('disclaimer-page','HomeController@disclaimer');
 Route::get('privacy-policy-page','HomeController@privacy_policy');
+Route::get('balance-transfer','CompareController@switchme_mobile');
 
 
 // 
@@ -87,3 +89,5 @@ Route::get('test-home-loan','LoanController@apply_h_test');
 Route::get('show-quotes','FormController@show_quotes');
 
 
+//for dc
+Route::post('calculationfordc','CompareController@calculationfordc');

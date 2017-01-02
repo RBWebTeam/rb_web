@@ -35,35 +35,43 @@
 			 </h3> 
 			</div>
 			<div class="col-md-12 text-center animate-box cont" style="display: none;" id="q3">
-			<h3>I
+			<h3>I have
 			<a href="#" class="svalue clr-blue pop_up" data-toggle="modal" data-target="#page2" ><input type="text" style="color:000;" class="clr-blue" id="exst_loan_detail" name="exst_loan_detail" readonly placeholder="Select"></a>
-			have existing loan(s)</h3> 
+			 existing loan(s)</h3> 
 			</div>
 
 			<div class="col-md-12 text-center animate-box cont" style="display: none" id="q4">
-             <h3>remaining loan amount is
+             <h3>and my existing loan amount is
 			 <input type="tel" id="obligation" name="obligation"  onkeyup="changeText('obligation','q5')"  onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="1,00,000" tabindex="1">
 			 </h3> 
 			</div>
 			<div class="col-md-12 text-center animate-box cont" style="display: none" id="q5">
-             <h3>Loan required
+             <h3>I want a Personal Loan of Rs.
 			 <input type="tel" id="loan_amount" name="loan_amount"  onkeyup="changeText('loan_amount','q6')"  onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="1,00,000" tabindex="1">
 			 </h3> 
 			</div>
 			<div class="col-md-12 text-center animate-box cont" style="display: none" id="q6">
-             <h3>Loan tenure
+             <h3>and required loan for
 			 <input type="tel" id="loan_tenure" name="loan_tenure"  onkeypress="changeText('loan_tenure','q7')"  onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="20" tabindex="1" maxlength="2" >
+			 years
 			 </h3> 
 			</div>
-			<div class="col-md-12 text-center animate-box cont1" style="display: none" id="q7"><h3>My date of birth is
+			<div class="col-md-12 text-center animate-box cont1" style="display: none" id="q7"><h3>my date of birth is
 			<input type="date" id="dob" name="dob" class="input-pad company-nm1" onchange="changeTest(this,'q8')">
 
 			</h3>
 			</div>
 			<div class="col-md-12 text-center animate-box cont" style="display:none;" id="q8" >
-					<h3>Your Pan Card number
-					<input type="tel" id="card" name="pan_number" onkeyup="changeText('card','step_3_btn')"   class="input-pad" placeholder="Pan Card" maxlength="10" minlength="10" tabindex="1">
+					<h3> and Pan Card number is
+					<input type="tel" id="card" name="pan_number"  onkeyup="changeText('card','q9')"   class="input-pad" placeholder="Pan Card" maxlength="10" minlength="10" tabindex="1">
 					.</h3>
+			</div>
+
+			<div class="col-md-12 text-center animate-box cont" style="display:none;" id="q9" >
+				<form action={{URL('search/autocomplete')}} method="POST" >
+	             <h3>I have been living in
+				<input type="text" class="search_city input-pad" id='city_name' name='city_name' onkeypress="changeTest('city_name','step_3_btn')" placeholder='your city'>city
+				</form>
 			</div>
 			<div class="text-center" style="display: none;" id="step_3_btn">
 			<?php if(Session::get('is_login')) {?>

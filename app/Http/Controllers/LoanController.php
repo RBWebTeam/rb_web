@@ -122,4 +122,7 @@ class LoanController extends Controller
       public function apply_h_test(){
       return view('home-loan-test');
     }
+    public function apply_lap_test(){
+      return view('lap-test');
+    }
 }

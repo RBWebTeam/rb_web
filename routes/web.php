@@ -41,7 +41,7 @@ Route::get('logout','LoginController@logout');
 /* by dp */
 Route::get('apply-sme-loan','LoanController@smeLoan');
 Route::get('apply-home-loan','LoanController@apply_h_test');
-Route::get('apply-loan-against-property','LoanController@apply_h_test');
+Route::get('apply-loan-against-property','LoanController@apply_lap_test');
 Route::post('login','LoginController@login');
 Route::post('registration','LoginController@register_form');
 

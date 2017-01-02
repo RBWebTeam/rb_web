@@ -1,5 +1,6 @@
 @include('layout.header')
 <div class="container" id="fh5co-hero">
+<div>
 <div class="row">
 		<div class="col-sm-5">
 			<img src="{{URL::to('images/helpbg _new.jpg')}}" class="img-responsive" style="width:100%;height:auto; border:1px solid #ddd;">

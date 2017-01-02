@@ -3,7 +3,7 @@
 	<aside id="fh5co-hero">
 	<div class=""></div>
 		<div class="flexslider col-md-12">
-		<div class="pull-right mar-tp "><a href="{{URL::to('contact-us
+		<div class="pull-right mar-tp "><a href="{{URL::to('comfy-sales
 		')}}"><img src="images/sliding-right-img.png" class="img-responsive"/></a></div>
 			<ul class="slides">
 		   	<li style="background-image: url(images/slide_1.png);">

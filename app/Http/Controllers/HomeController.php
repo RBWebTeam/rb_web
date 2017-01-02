@@ -36,6 +36,10 @@ class HomeController extends Controller
 
 	}
 
+	public function comfy_sales(){
+		return view('comfy-sales');
+	}
+
 
 	
 }

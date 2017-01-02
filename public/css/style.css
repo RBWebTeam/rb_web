@@ -1174,7 +1174,7 @@ td {padding:10px; text-align:center;}
     display: block;
     top:82px;
   }
-  #fh5co-header nav ul li.cta {}}
+  # nav ul li.cta {}}
 }
 
 #fh5co-pricing-section {
@@ -1605,3 +1605,8 @@ input[type="radio"] {margin:0px;}
 #center-line{position: absolute;  right: 265.7px;top: 80px;background:#ddd;  border: 4px solid #DDDDDD;border-radius: 20px;}
 .modal-login-btn{width:100%;height:40px; margin-bottom:10px;}
 #modal-launcher{margin: 30% 0 0 30%; }
+
+
+#elem{
+  margin-top: 70px;
+}

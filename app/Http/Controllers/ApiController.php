@@ -40,6 +40,7 @@ class ApiController extends Controller
 					$quote_req=json_decode(json_encode($quote));
 					//print_r($quote);exit();
 				if(count($quote_req)>0){
+
 					$PropertyID=$req['PropertyID'] ? $req['PropertyID'] : $quote_req[0]->PropertyID;
 					$propcost=$req['PropertyCost'] ? $req['PropertyCost'] : $quote_req[0]->PropertyCost;
 					$Turnover=$req['Turnover'] ? $req['Turnover'] : $quote_req[0]->Turnover;
@@ -74,6 +75,8 @@ class ApiController extends Controller
 					
 					$update=DB::table('bank_quote_api_request')
 				            ->where('id', $req['quote_id'])
+				            ->where('ProductId',7)
+				            ->orwhere('ProductId',12)
 				            ->update(['PropertyID' =>$PropertyID,
 				            		 'ApplicantNme'=>$ApplicantNme,
 				            		  'City'=>$City,
@@ -109,6 +112,11 @@ class ApiController extends Controller
 						//print_r($data);exit();	
 					}else{
 						//quote dont exist in db
+						if(!(isset($req['PropertyCost']) && isset($req['LoanTenure']) && isset($req['LoanRequired']) && isset($req['ApplicantGender']) && isset($req['ApplicantIncome']) && isset($req['ApplicantObligations']) && isset($req['ApplicantDOB']) && isset($req['CoApplicantYes']) && isset($req['CoApplicantIncome']) && isset($req['CoApplicantObligations']) && isset($req['Turnover']) && isset($req['ProfitAfterTax']) && isset($req['Depreciation']) && isset($req['DirectorRemuneration']) && isset($req['CoApplicantTurnover']) && isset($req['CoApplicantProfitAfterTax']) && isset($req['CoApplicantDepreciation']) && isset($req['CoApplicantDirectorRemuneration']) && isset($req['ApplicantSource']) && isset($req['ProductId']) )){
+								return Response::json(array(
+								'Error' => " !!! quote id not in DB. Please send all parameters to get new quote.!!!"
+								));
+							}
 						goto run;
 					}
 					$id=$req['quote_id'];
@@ -120,10 +128,7 @@ class ApiController extends Controller
 		 			$id=$save->store($request);
 				}
 			}catch (Exception $e) {
-			return Response::json(array(
-						'error' => " !!! quote id not in DB. Please send all parameters to get new quote.!!!",
-						'quote_id'=>$id
-						));
+			echo "exception ".$e;
 			die("exception");
 		}
 		
@@ -243,13 +248,6 @@ class ApiController extends Controller
 	}
 	//quote of personal loan API
 	public function comapre_personal_loan(Request $req){
-		//handling corner cases
-		if(isset($req['quote_id']) && $req['quote_id']==0 && !$req['LoanTenure'] ){
-					return Response::json(array(
-				'error' => "Insufficient/wrong information Passed"
-				
-			));
-			}else{
 		//API to get bank quote
 		$req_all= implode(',',$req->all());
 		$log=DB::table('api_log')
@@ -269,10 +267,36 @@ class ApiController extends Controller
 					->get();
 					$quote_req=json_decode(json_encode($quote));
 					//print_r($quote_req);exit();
+					
+
 					if(count($quote_req)>0){
-						$data=DB::select('call  usp_get_personal_loan_quot ("'. $quote_req[0]->ApplicantDOB .'","'. $quote_req[0]->ApplicantSource .'","'. $quote_req[0]->ApplicantIncome .'","'. $quote_req[0]->ApplicantObligations .'","'. $quote_req[0]->LoanTenure .'","'. $quote_req[0]->LoanRequired .'")');
+						$ApplicantDOB=$req['ApplicantDOB'] ? $req['ApplicantDOB'] : $quote_req[0]->ApplicantDOB;
+					$ApplicantSource=$req['ApplicantSource'] ? $req['ApplicantSource'] : $quote_req[0]->ApplicantSource;
+					$ApplicantIncome=$req['ApplicantIncome'] ? $req['ApplicantIncome'] : $quote_req[0]->ApplicantIncome;
+					$ApplicantObligations=$req['ApplicantObligations'] ? $req['ApplicantObligations'] : $quote_req[0]->ApplicantObligations;
+					$LoanTenure=$req['LoanTenure'] ? $req['LoanTenure'] : $quote_req[0]->LoanTenure;
+					$LoanRequired=$req['LoanRequired'] ? $req['LoanRequired'] : $quote_req[0]->LoanRequired;
+					$update=DB::table('bank_quote_api_request')
+				            ->where('id', $req['quote_id'])
+				            ->where('ProductId',9)
+				            ->update(['ApplicantDOB' =>$ApplicantDOB,
+				            		   'ApplicantSource' =>$ApplicantSource,
+				            		   'ApplicantIncome' =>$ApplicantIncome,
+				            		   'ApplicantObligations' =>$ApplicantObligations,
+				            		   'LoanTenure' =>$LoanTenure,
+				            		   'LoanRequired' =>$LoanRequired,
+				            		   'updated_at'=>date("Y-m-d H:i:s")
+				            	]);
+				            
+						$data=DB::select('call  usp_get_personal_loan_quot ("'. $ApplicantDOB .'","'. $ApplicantSource .'","'. $ApplicantIncome .'","'. $ApplicantObligations .'","'. $LoanTenure .'","'. $LoanRequired .'")');
 					}
 					else{
+						if(!(isset($req['ApplicantDOB']) && isset($req['ApplicantSource']) && isset($req['ApplicantIncome']) && isset($req['ApplicantObligations']) && isset($req['LoanTenure']) && isset($req['LoanRequired'])))
+						{
+							return Response::json(array(
+								'Error' => " !!! quote id not in DB. Please send all parameters to get new quote.!!!"
+								));
+						}
 						goto run_else;
 					}
 			$id=$req['quote_id'];
@@ -306,7 +330,7 @@ run_else:
 			'data' => $data,
 			'quote_id'=>$id
 			));
-	}
+	
 }
 
 	//by DP

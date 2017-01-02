@@ -29,22 +29,7 @@
 	<!-- <link rel="manifest" href="{{URL::to('extension/manifest.json')}}"> -->
 	</head>
 	<body>
-@include('layout.login_modal')
-<script>
- function registration(){
-         document.getElementById('login').style.display="none";
-        document.getElementById('registration1').style.display="block";
-
- }
-
- function backf(){
-
-document.getElementById('login').style.display="block";
- document.getElementById('registration1').style.display="none";
-
- }
-</script>
-	
+	<div class="hello">
 	<!-- Side bar -->
 	<div class="arrow-don">Hello &nbsp;<i class="icon-hand-stop-o"></i></div>
     <div class="sidebar" style="display:none;">
@@ -58,9 +43,8 @@ document.getElementById('login').style.display="block";
     </ul>
     </div>
 	
-	</div>
-    </div>
-	<!---------------Sidebar Popup Div Start --------- -->
+	
+	<!-- Sidebar Popup Div Start -->
 	<div id="fh5co-page">
 
 	<header id="fh5co-header" role="banner" class="navbar navbar-default navbar-fixed-top">
@@ -68,7 +52,7 @@ document.getElementById('login').style.display="block";
         <div class="container">
 
             <ul class="top-lnk">
-                <li><a href="#">Home</a></li>
+                <li><a href="{{URL::to('/')}}">Home</a></li>
                 <li><a href="{{URL::to('about-us')}}">About Us</a></li>
                 <li><a href="{{URL::to('contact-us')}}">Contact Us</a></li>
                 
@@ -146,7 +130,7 @@ document.getElementById('login').style.display="block";
 						   <ul class="dropdown-menu" >
 						    <li>
 							<a href="#" data-toggle="modal" data-target="#log_popup">Sign in</a>
-
+							</li>
 							</ul>
 					</li>
                          <?php }	?>
@@ -157,7 +141,8 @@ document.getElementById('login').style.display="block";
 			</div>
 		</div>
 	</header>
-
+</div>
+</div>
 
 
 

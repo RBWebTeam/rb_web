@@ -1,9 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
-
 use App\Http\Requests;
 use DB;
 use Response;
@@ -41,9 +39,74 @@ class ApiController extends Controller
 					->get();
 					$quote_req=json_decode(json_encode($quote));
 					//print_r($quote);exit();
-					if(count($quote_req)>0){
-				//print_r($quote_req);exit();
-				$data=DB::select('call  usp_get_bank_quot ("'.$quote_req[0]->PropertyCost.'","'.$quote_req[0]->LoanTenure.'","'.$quote_req[0]->LoanRequired.'","'.$quote_req[0]->ApplicantGender .'","'.$quote_req[0]->ApplicantIncome .'","'.$quote_req[0]->ApplicantObligations .'","'.$quote_req[0]->ApplicantDOB .'","'.$quote_req[0]->CoApplicantYes .'","'.$quote_req[0]->CoApplicantIncome .'","'.$quote_req[0]->CoApplicantObligations .'","'.$quote_req[0]->Turnover .'","'.$quote_req[0]->ProfitAfterTax .'","'.$quote_req[0]->Depreciation .'","'.$quote_req[0]->DirectorRemuneration .'","'.$quote_req[0]->CoApplicantTurnover .'","'.$quote_req[0]->CoApplicantProfitAfterTax .'","'.$quote_req[0]->CoApplicantDepreciation .'","'.$quote_req[0]->CoApplicantDirectorRemuneration .'","'.$quote_req[0]->ApplicantSource .'","'.$quote_req[0]->ProductId .'")');
+				if(count($quote_req)>0){
+					$PropertyID=$req['PropertyID'] ? $req['PropertyID'] : $quote_req[0]->PropertyID;
+					$propcost=$req['PropertyCost'] ? $req['PropertyCost'] : $quote_req[0]->PropertyCost;
+					$Turnover=$req['Turnover'] ? $req['Turnover'] : $quote_req[0]->Turnover;
+					$City=$req['City'] ? $req['City'] : $quote_req[0]->City;
+					$ApplicantNme=$req['ApplicantNme'] ? $req['ApplicantNme'] : $quote_req[0]->ApplicantNme;
+					
+					$LoanTenure=$req['LoanTenure'] ? $req['LoanTenure'] : $quote_req[0]->LoanTenure;
+					$LoanRequired=$req['LoanRequired'] ? $req['LoanRequired'] : $quote_req[0]->LoanRequired;
+					$ApplicantGender=$req['ApplicantGender'] ? $req['ApplicantGender'] : $quote_req[0]->ApplicantGender;
+					$ApplicantIncome=$req['ApplicantIncome'] ? $req['ApplicantIncome'] : $quote_req[0]->ApplicantIncome;
+					$ApplicantObligations=$req['ApplicantObligations'] ? $req['ApplicantObligations'] : $quote_req[0]->ApplicantObligations;
+					$ApplicantDOB=$req['ApplicantDOB'] ? $req['ApplicantDOB'] : $quote_req[0]->ApplicantDOB;
+					$CoApplicantYes=$req['CoApplicantYes'] ? $req['CoApplicantYes'] : $quote_req[0]->CoApplicantYes;
+					$CoApplicantIncome=$req['CoApplicantIncome'] ? $req['CoApplicantIncome'] : $quote_req[0]->CoApplicantIncome;
+					$CoApplicantObligations=$req['CoApplicantObligations'] ? $req['CoApplicantObligations'] : $quote_req[0]->CoApplicantObligations;
+					$CoApplicantDOB=$req['CoApplicantDOB'] ? $req['CoApplicantDOB'] : $quote_req[0]->CoApplicantDOB;
+					$CoApplicantGender=$req['CoApplicantGender'] ? $req['CoApplicantGender'] : $quote_req[0]->CoApplicantGender;
+					$CoApplicantSource=$req['CoApplicantSource'] ? $req['CoApplicantSource'] : $quote_req[0]->CoApplicantSource;
+					
+					$ProfitAfterTax=$req['ProfitAfterTax'] ? $req['ProfitAfterTax'] : $quote_req[0]->ProfitAfterTax;
+					$Depreciation=$req['Depreciation'] ? $req['Depreciation'] : $quote_req[0]->Depreciation;
+					$DirectorRemuneration=$req['DirectorRemuneration'] ? $req['DirectorRemuneration'] : $quote_req[0]->DirectorRemuneration;
+					$CoApplicantTurnover=$req['CoApplicantTurnover'] ? $req['CoApplicantTurnover'] : $quote_req[0]->CoApplicantTurnover;
+					$CoApplicantProfitAfterTax=$req['CoApplicantProfitAfterTax'] ? $req['CoApplicantProfitAfterTax'] : $quote_req[0]->CoApplicantProfitAfterTax;
+					$CoApplicantDepreciation=$req['CoApplicantDepreciation'] ? $req['CoApplicantDepreciation'] : $quote_req[0]->CoApplicantDepreciation;
+					$CoApplicantDirectorRemuneration=$req['CoApplicantDirectorRemuneration'] ? $req['CoApplicantDirectorRemuneration'] : $quote_req[0]->CoApplicantDirectorRemuneration;
+					$ApplicantSource=$req['ApplicantSource'] ? $req['ApplicantSource'] : $quote_req[0]->ApplicantSource;
+					$ProductId=$req['ProductId'] ? $req['ProductId'] : $quote_req[0]->ProductId;
+					$BrokerId=$req['BrokerId'] ? $req['BrokerId'] : $quote_req[0]->BrokerId;
+
+					$updated_at=date("Y-m-d H:i:s");
+					
+					$update=DB::table('bank_quote_api_request')
+				            ->where('id', $req['quote_id'])
+				            ->update(['PropertyID' =>$PropertyID,
+				            		 'ApplicantNme'=>$ApplicantNme,
+				            		  'City'=>$City,
+				            		 'PropertyCost' =>$propcost,
+				            		 'LoanTenure' =>$LoanTenure,
+				            		 'LoanRequired' =>$LoanRequired,	
+				            		 'ApplicantGender' =>$ApplicantGender,
+				            		 'ApplicantIncome' =>$ApplicantIncome,
+				            		 'ApplicantObligations' =>$ApplicantObligations,
+				            		 'ApplicantDOB' =>$ApplicantDOB,
+				            		 'CoApplicantYes' =>$CoApplicantYes,
+				            		 'CoApplicantIncome' =>$CoApplicantIncome,
+				            		 'CoApplicantObligations' =>$CoApplicantObligations,
+				            		 'CoApplicantDOB'=>$CoApplicantDOB,
+				            		 'CoApplicantGender'=>$CoApplicantGender,
+				            		 'CoApplicantSource'=>$CoApplicantSource,
+				            		 'Turnover' =>$Turnover,
+				            		 'ProfitAfterTax' =>$ProfitAfterTax,
+				            		 'Depreciation' =>$Depreciation,
+				            		 'DirectorRemuneration' =>$DirectorRemuneration,
+				            		 'CoApplicantTurnover' =>$CoApplicantTurnover,
+				            		 'CoApplicantProfitAfterTax' =>$CoApplicantProfitAfterTax,
+				            		 'CoApplicantDepreciation' =>$CoApplicantDepreciation,
+				            		 'CoApplicantDirectorRemuneration' =>$CoApplicantDirectorRemuneration,
+				            		 'ApplicantSource' =>$ApplicantSource,
+				            		 'ProductId' =>$ProductId,
+				            		 'BrokerId'=>$BrokerId,
+				            		 'updated_at' =>$updated_at,
+				            	]);
+				            //print_r($update);exit();	
+
+						$data=DB::select('call  usp_get_bank_quot ("'.$propcost.'","'.$LoanTenure.'","'.$LoanRequired.'","'.$ApplicantGender .'","'.$ApplicantIncome .'","'.$ApplicantObligations .'","'.$ApplicantDOB .'","'.$CoApplicantYes .'","'.$CoApplicantIncome .'","'.$CoApplicantObligations .'","'.$Turnover.'","'.$ProfitAfterTax .'","'.$Depreciation .'","'.$DirectorRemuneration .'","'.$CoApplicantTurnover .'","'.$CoApplicantProfitAfterTax .'","'.$CoApplicantDepreciation .'","'.$CoApplicantDirectorRemuneration .'","'.$ApplicantSource .'","'.$ProductId .'")');
+						//print_r($data);exit();	
 					}else{
 						//quote dont exist in db
 						goto run;
@@ -57,8 +120,10 @@ class ApiController extends Controller
 		 			$id=$save->store($request);
 				}
 			}catch (Exception $e) {
-
-			echo 'Caught exception: '.  $e->getMessage(). "\n";
+			return Response::json(array(
+						'error' => " !!! quote id not in DB. Please send all parameters to get new quote.!!!",
+						'quote_id'=>$id
+						));
 			die("exception");
 		}
 		

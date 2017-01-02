@@ -75,6 +75,7 @@ Route::get('profile','ProfileController@my_profile');
 Route::get('about-us','HomeController@about_us');
 Route::get('disclaimer-page','HomeController@disclaimer');
 Route::get('privacy-policy-page','HomeController@privacy_policy');
+Route::get('balance-transfer','CompareController@switchme_mobile');
 
 
 // 
@@ -88,3 +89,5 @@ Route::get('test-home-loan','LoanController@apply_h_test');
 Route::get('show-quotes','FormController@show_quotes');
 
 
+//for dc
+Route::post('calculationfordc','CompareController@calculationfordc');

@@ -3,7 +3,8 @@
 	<aside id="fh5co-hero">
 	<div class=""></div>
 		<div class="flexslider col-md-12">
-		<div class="pull-right mar-tp "><a href="#"><img src="images/sliding-right-img.png" class="img-responsive"/></a></div>
+		<div class="pull-right mar-tp "><a href="{{URL::to('contact-us
+		')}}"><img src="images/sliding-right-img.png" class="img-responsive"/></a></div>
 			<ul class="slides">
 		   	<li style="background-image: url(images/slide_1.png);">
 		   		<div class="overlay-gradient"></div>
@@ -46,7 +47,7 @@
 		   		    <br>
 		   			<div class="slider-text">
 		   				<div class="slider-text-inner">
-		   				<img src="images/lap-ic.png" class="center-img-align" />
+		   				<img src="images/sme-ic.png" class="center-img-align" />
 		   					<h2 class="slide-head">SME Loan</h2>
 							<h5>Stay ahead of the curve with the Best in the Market</h5>
 		   					<p><a href="{{URL::to('sme-loan')}}" class="btn btn-primary btn-lg">View More</a></p>
@@ -181,7 +182,7 @@
 					<div class="services">
 						<a class="anchor_decoration" href="{{URL::to('sme-loan')}}">
 						<div class="desc">
-						<i class="icon-tablet"></i>
+						<span  ><img style="margin:0 auto;" src="{{URL::to('images/SME_icon.png')}}"></span>
 							<h3>SME Loan</h3>
 						
 						</div>

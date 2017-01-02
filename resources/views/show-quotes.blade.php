@@ -107,7 +107,7 @@
  <div class="col-md-12 animate-box fadeInUp animated col">
  <div class="col-md-4 img-c"><img src="images/compare-img.png"></div>
 
-   <form   method="post" name="comparebankid" id="comparebankid">
+   <form action="#" method="post">
 
 <div id="AllBank">
 
@@ -115,7 +115,7 @@
 <!--   <div class="col-md-2 col img-c white-bg"><button type="button" class="close" data-dismiss="modal">×</button><img src="images/axis.png" width="50" height="46">Axis Bank</div>
   <div class="col-md-2 col img-c white-bg"><button type="button" class="close" data-dismiss="modal">×</button><img src="images/hdfc.png" width="50" height="46">HDFC Bank</div>
  -->
-  <div style="display: none;" id="btncompare" class="col-md-2 comp-btn comparebutton"><button class="btn btn-primary btn-outline with-arrow">Compare<i class="icon-arrow-right"></i></button></div>
+  <div style="display: none;" id="btncompare" class="col-md-2 comp-btn"><a href="#" class="btn btn-primary btn-outline with-arrow">Compare<i class="icon-arrow-right"></i></a></div>
 
  </form>
 
@@ -141,7 +141,7 @@ $('input[name="checkbox"]').change(function(){
       var id=$(this).attr("data-id");
   if (this.checked) {
        var id=$(this).attr("data-id");
-       var span="<div class='col-md-2 col img-c white-bg' id='"+id+"'><input type='hidden' name='bank_id[]' id="+id+" value="+id+" ><span class='close btnspan' >×</span><img src='images/kotak.png' width='50' height='46'>"+this.value+"</div>";
+       var span="<div class='col-md-2 col img-c white-bg' id='" +id + "'><span class='close btnspan' >×</span><img src='images/kotak.png' width='50' height='46'>" + this.value + "</div>";
 
            $(document).ready(function() {
                  if($(".btnspan").length==2){
@@ -163,7 +163,6 @@ $('input[name="checkbox"]').change(function(){
  
 $(document).ready(function () {
     $(document).on('click', '.btnspan', function () {
-
          var id=$(this).closest("div").attr("id");
         $("."+id).attr('checked',false);
         $("#"+id).remove();
@@ -171,28 +170,6 @@ $(document).ready(function () {
 
   });
 
-// post data from form
-
-
-
-
-
 });
-
-
-
-$(document).on('click','.comparebutton',function(e){
-e.preventDefault();
-
- 
-  var formid=$(this).closest("form").attr("id");
-
-        
-        alert($('#'+formid).serialize());
-
-
-});
-
-
 
 </script>

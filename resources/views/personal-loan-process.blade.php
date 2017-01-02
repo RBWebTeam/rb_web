@@ -1,7 +1,7 @@
 @include('layout.header')
 
     <!--- liza Step First   - -->
-	    <div class="container" id='elem'>
+	    <div class="container" id='elem' >
 	    <form name='personal_loan_process_form' id='personal_loan_process_form' action={{URL::to('loan-submit')}} method="POST">
 	    	  {{ csrf_field() }}
               <?php $loan_name="Personal";?>
@@ -11,10 +11,11 @@
 			 <?php $loan=9 ?>
 		    @endif
 	 <input type="hidden" id="product" name="product_name" value="<?php echo $loan;?>">
+	 <div>
 		<div class="liza col-md-8" id="step-1">
 
                         
-		   <div class="col-md-12 text-center"><h4>Apply for an Easy <?php echo $loan_name;?> Loan in 30 seconds</h4></div>
+		   <div class="col-md-12 text-center" ><h4>Apply for an Easy <?php echo $loan_name;?> Loan in 30 seconds</h4></div>
 		   <p class="text-center">Step 1 of 3</p>
 
 		   
@@ -56,6 +57,7 @@
 			<div class="text-center" style="display:none;" id="btn_step1">
 			<a class="btn btn-primary btn-outline with-arrow animate-box" onclick="changeDiv('step-1','step-2')" >Continue<i class="icon-arrow-right"></i></a>
 			</div>
+		</div>
 		</div>
 
 
@@ -132,6 +134,7 @@
 			
 		</div>
 	   </div>
+
 	   <!-- Liza Step Three End -->
 
 	   </form>
@@ -143,6 +146,7 @@
 		</div>
 		<!-- POP Up code end -->
 		</div>
+
 
 @include('layout.footer')
 @include('layout.script')

@@ -429,9 +429,6 @@ $(".registration-submit").click(function(event){
                data : $('#'+form).serialize(),
 
                success: function(msg){
-                   
-                     
-
                    if(msg.name){
                       $("#errorName").text(msg.name);
                   }else{

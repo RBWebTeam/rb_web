@@ -1180,7 +1180,7 @@ rb-services-section{padding:0px;}
 @media screen and (max-width: 786px) {
   .fh5co-nav-toggle {
     display: block;
-    top:82px;
+    top:51px;
   }
   # nav ul li.cta {}}
 }
@@ -1555,7 +1555,7 @@ top: -.25em;left: 20%;margin: 0 0 0 -.25em;}
 .slider-text-inner img {margin:0 auto;}
 .arrow-don:hover {background:#0c3878;}
 .tp-dwn:hover {background:#0c3878;}
-.arrow-don{border-bottom:1px solid #0c3878;}
+
 .tp-dwn {top:198px;padding: 10px 16px 10px 17px;position:fixed; z-index:10000;cursor:pointer;background:#fff;color:#fff;}
 .mar-tp {    margin-top: 15px;position: absolute;right: 0px; z-index: 100;}
 
@@ -1630,7 +1630,6 @@ input[type="radio"] {margin:0px;}
 .slider-text-inner img {margin:0 auto;}
 .arrow-don:hover {background:#0c3878;}
 .tp-dwn:hover {background:#0c3878;}
-.arrow-don{border-bottom:1px solid #0c3878;}
 .tp-dwn {top:198px;padding: 10px 16px 10px 17px;position:fixed; z-index:10000;cursor:pointer;background:#fff;color:#fff;}
 .mar-tp {    margin-top: 15px;position: absolute;right: 0px; z-index: 100; height:357px;}
 .img2 img {    margin-top: 8px;

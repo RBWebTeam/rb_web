@@ -13,6 +13,7 @@
 foreach ($data as $key => $value){?>
    
     <?php try{
+      // print_r($data);exit();
     $new_rate=$value['roi']/12/100;
     
     //print_r($loanamount);exit();
@@ -58,7 +59,8 @@ foreach ($data as $key => $value){?>
                       </div>
                       <div class="loan-floating">
                         <p>PROCESSING FEE</p>
-                        <h6>{{ $value['pf']}}</h6>
+                        <h6>{{ $value['pf']}} &nbsp; {{ $value['pf_type']}}</h6>
+                        
                       </div>
                     </td>
                     <td class="td-main">

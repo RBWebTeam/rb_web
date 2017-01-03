@@ -22,7 +22,7 @@
 	<script src="https://code.jquery.com/jquery-1.12.3.min.js" integrity="sha256-aaODHAgvwQW1bFOGXMeX+pC4PZIPsvn2h1sArYOhgXQ=" crossorigin="anonymous"></script>
 	<!--<script src="js/jquery-1.12.3.min.js" integrity="sha256-aaODHAgvwQW1bFOGXMeX+pC4PZIPsvn2h1sArYOhgXQ=" crossorigin="anonymous"></script>-->
 	
-	<script src="js/jQuery.min.js"></script>
+	
 	<script type="text/javascript" src="{{URL::to('js/material.min.js')}}"></script>
 	<script type="text/javascript" src="{{URL::to('js/moment-with-locales.min.js')}}"></script>
 	<script type="text/javascript" src="{{URL::to('js/bootstrap-material-datetimepicker.js')}}"></script>
@@ -225,7 +225,7 @@ h4.great {
 									
 									<div class="col-xs-6 form-padding">
 										<div class="form-control" title="Present Interest Rate(should be greater than 9.0%)" style="margin-bottom:14px; height:50px; position:relative;">
-											<input type="number" class="form-input-new" onkeyup="myfun();alert_him(this); " onblur="" required name="loaninterest" id="loaninterest" step="0.01" min="0">
+											<input type="number" class="form-input-new" onkeyup="myfun()" onblur="alert_him(this)" required name="loaninterest" id="loaninterest" step="0.01" min="0">
 											<span class="highlight"></span><span class="bar"></span>
 											<label class="form-label-new">Present Interest Rate </label>
 											<div class="clear"></div>

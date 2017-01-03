@@ -29,6 +29,7 @@
 	<link rel="stylesheet" href="https://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
 <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.min.js"></script>
 
+
 	<style>
 	 
 .price-box {
@@ -175,7 +176,7 @@ h4.great {
         <div class="header-left"><a href="#" style="color:#fff;"><i class="fa fa-angle-left" aria-hidden="true"></i></a></div>
 		<div class="header-middle">BALANCE TRANSFER SAVING</div>
 		<div class="header-right">
-			<div class="top-nav">
+			<!-- <div class="top-nav">
 				<nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right" id="cbp-spmenu-s2">
 					<h3>Menu</h3>
 					<a class="scroll" href="#home" class="active">Link 1</a>
@@ -184,11 +185,12 @@ h4.great {
 					<a class="scroll" href="#team">Link 1</a>
 				</nav>
 				<div class="main buttonset">	
-					<!-- Class "cbp-spmenu-open" gets applied to menu and "cbp-spmenu-push-toleft" or "cbp-spmenu-push-toright" to the body -->
+					 Class "cbp-spmenu-open" gets applied to menu and "cbp-spmenu-push-toleft" or "cbp-spmenu-push-toright" to the body 
 					<button id="showRightPush"><img src="images/menu-icon.png" alt=""/></button>
-					<!--<span class="menu"></span>-->
+					<span class="menu"></span>
 				</div>
 			</div>
+			 -->
 		</div> 
 	</header>
 	
@@ -210,6 +212,26 @@ h4.great {
 						
 						<form action="" class="">
 								<div class="form-group">
+									
+									<div class="col-xs-6 form-padding">
+										<div class="form-control" title="Outstanding Principal (should be greater than 500000 and less than 1000000000)" style="margin-bottom:14px; height:50px; position:relative;">
+											<input type="number" class="form-input-new" onkeyup="myfun()" required name="loanamount" id="loanamount" onblur="alert_him(this)">
+											<span class="highlight"></span><span class="bar"></span>
+											<label class="form-label-new">Outstanding Principal
+										    </label>
+											<div class="clear"></div>
+										</div>
+									</div>
+									
+									<div class="col-xs-6 form-padding">
+										<div class="form-control" title="Present Interest Rate(should be greater than 9.0%)" style="margin-bottom:14px; height:50px; position:relative;">
+											<input type="number" class="form-input-new" onkeyup="myfun();alert_him(this); " onblur="" required name="loaninterest" id="loaninterest" step="0.01" min="0">
+											<span class="highlight"></span><span class="bar"></span>
+											<label class="form-label-new">Present Interest Rate </label>
+											<div class="clear"></div>
+										</div>
+									</div>
+
 									<div class="loan-tenure">
 									<center>
 										<div class="type-cover" >
@@ -235,23 +257,8 @@ h4.great {
 										</div>
 									</div>
 								</div>
-									<div class="col-xs-6 form-padding">
-										<div class="form-control" style="margin-bottom:14px; height:50px; position:relative;">
-											<input type="number" class="form-input-new" onkeyup="myfun()" required name="loanamount" id="loanamount">
-											<span class="highlight"></span><span class="bar"></span>
-											<label class="form-label-new">Outstanding Principal</label>
-											<div class="clear"></div>
-										</div>
-									</div>
-									
-									<div class="col-xs-6 form-padding">
-										<div class="form-control" style="margin-bottom:14px; height:50px; position:relative;">
-											<input type="number" class="form-input-new" onkeyup="myfun()"  required name="loaninterest" id="loaninterest" step="0.01" min="0">
-											<span class="highlight"></span><span class="bar"></span>
-											<label class="form-label-new">Present Interest Rate(0%) </label>
-											<div class="clear"></div>
-										</div>
-									</div>
+
+
 								</div><!--End form group-->
 								
 							
@@ -331,6 +338,49 @@ h4.great {
 		</div>
 		<div class="clearfix top-type-info"></div>
         </div><!-- /.row -->
+
+        <div class="modal fade" tabindex="-1" role="dialog" id="homeTransfer">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title"></h4>
+      </div>
+      <div class="modal-body">
+        <h5><p>Outstanding Principal (should be greater than 500000 and less than 1000000000).</p></h5>
+        
+      </div>
+      
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <div class="modal fade" tabindex="-1" role="dialog" id="homeTransfer1">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title"></h4>
+      </div>
+      <div class="modal-body">
+        <h5><p>Interest should be <mark style="color:red">greater than 9.0%</mark>.If less..Congrats you are already on lowest rate.</p></h5>
+        
+      </div>
+      
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
 		</section><!-- /.content -->
 	 
       <!-- <footer>
@@ -420,22 +470,22 @@ h4.great {
 	
 	<script src="js/classie.js"></script>
 		<script>
-			var menuRight = document.getElementById( 'cbp-spmenu-s2' ),
-			showRightPush = document.getElementById( 'showRightPush' ),
-			body = document.body;
+			// var menuRight = document.getElementById( 'cbp-spmenu-s2' ),
+			// showRightPush = document.getElementById( 'showRightPush' ),
+			// body = document.body;
 
-			showRightPush.onclick = function() {
-				classie.toggle( this, 'active' );
-				classie.toggle( body, 'cbp-spmenu-push-toleft' );
-				classie.toggle( menuRight, 'cbp-spmenu-open' );
-				disableOther( 'showRightPush' );
-			};
+			// showRightPush.onclick = function() {
+			// 	classie.toggle( this, 'active' );
+			// 	classie.toggle( body, 'cbp-spmenu-push-toleft' );
+			// 	classie.toggle( menuRight, 'cbp-spmenu-open' );
+			// 	disableOther( 'showRightPush' );
+			// };
 
-			function disableOther( button ) {
-				if( button !== 'showRightPush' ) {
-					classie.toggle( showRightPush, 'disabled' );
-				}
-			}
+			// function disableOther( button ) {
+			// 	if( button !== 'showRightPush' ) {
+			// 		classie.toggle( showRightPush, 'disabled' );
+			// 	}
+			// }
 		</script>
 		
 		<!--<script src="js/jQuery.min.js"></script>-->
@@ -479,33 +529,39 @@ h4.great {
 			});
 		</script>
 		 <script>
-	       $(document).ready(function () {
+	       $(document).ready(function () 
+	       {
         $("#slider").slider({
             range: "min",
             animate: true,
             value: 1,
             min: 0,
             max: 30,
-            step: 6,
-            slide: function (event, ui) {
+            step: 1,
+            slide: function (event, ui)
+
+            {
                 update(1, ui.value); //changed
 
             }
+
         });
 
         //Added, set initial value.
-        $("#amount").val(0);
-        $("#amount-label").text(0);
+        $("#amount").val(1);
+        $("#amount-label").text(1);
 
 
 
-        update();
+        update(1,1);
     });
 
     //changed. now with parameter
     function update(slider, val) {
         //changed. Now, directly take value from ui.value. if not set (initial, will use current value.)
-        var $amount = slider == 1 ? val : $("#amount").val();
+        // var $amount = slider == 1 ? val : $("#amount").val();
+        var $amount = val;
+         //console.log(val);
 
         /* commented
          $amount = $( "#slider" ).slider( "value" );
@@ -531,8 +587,7 @@ h4.great {
     $("#Year").change(function(){
       var amt1 = $("#loanterm").val();
       var yr = amt1 / 12;
-      //console.log(yr);
-      //console.log(year);
+      
       $('#loanterm').val(yr);
     });
     });
@@ -543,6 +598,7 @@ $('#slider').slider({
     change: function(event, ui) { 
         //alert(ui.value); 
         $("#loanterm").val(ui.value);
+        myfun();
 
     } 
 });
@@ -554,27 +610,18 @@ $('#slider').slider({
        if(lm >0 && lin >0 && lt>0){
       
       var loanamount = $("#loanamount").val();
-      if(loanamount<500000 || loanamount>1000000000){
-      	alert("Amount should be greater than 500000 and less than 1000000000  ");
-      }
+      // if(loanamount<500000 || loanamount>1000000000){
+      // 	alert("Amount should be greater than 500000 and less than 1000000000  ");
+      // }
 
       var loaninterest = $("#loaninterest").val();
-      if(loaninterest<9){
-      	alert("Interest Rate should be greater than 9%. If less, you are already on lower rate");
-      }
+      // if(loaninterest<9){
+      // 	alert("Interest Rate should be greater than 9%. If less, you are already on lower rate");
+      // }
       var a = $("#loanterm").val();
       var loanterm =a*12;
-      console.log(loanterm);
-       // var bank = $("#bank").val();
-         
-      // if ($("#Year").prop("checked")) {
-      //   var loanterm1 = $("#loanterm").val();
-      //   var loanterm = loanterm1*12;
-      // }else{
-      //   var loanterm = $("#loanterm").val();
-      // }
-      //var profession=$("#profession").val();
-      //console.log("ok");
+     // console.log(loanterm);
+       
 
       
        var v_token = "{{csrf_token()}}";
@@ -585,7 +632,7 @@ $('#slider').slider({
                data : { 'loanamount': loanamount , 'loaninterest': loaninterest ,'loanterm' :loanterm,'_token': v_token},
                // 'bank':bank},
                success: function(msg){
-                  //console.log(msg.success);
+                  // console.log(msg.success);
                   if(msg.success ==true){
                   var numb = msg.amount.toFixed();
                    $('#emi').empty().append(numb);
@@ -608,12 +655,31 @@ $('#slider').slider({
                         $("#6").show();
                         $("#7").show();
                         $('#test').html(msg.html);
-                  }else{
-                    console.log(msg.success);
-                     $('#homeTransfer').modal('show');  
+                        $('#test').show();
+                    }
+
+                  else{ 
+                   $('#emi').empty().append("");
+                  
+                  $('#emi3').empty().append("");
+
+                   $('#emi4').empty().append("");
+
+                  
+                   $('#emi5').empty().append("");
+                   $('#emi6').empty().append("");
+
+                        $("#1").show();
+                        $("#4").show();
+                        $("#5").show();
+                        $("#6").show();
+                        $("#7").show();
+                        $('#test').hide();
+                        $('#').hide();
+                        
                       
 
-                  }
+                   }
                  }  
                 }); 
         
@@ -625,9 +691,25 @@ $('#slider').slider({
     
   }
 
-
+ 
 </script>
-	
+<script type="text/javascript">
+	function alert_him(e){
+		//console.log(e.id + " "+e.value);
+ 	
+ 	 if(e.id=="loanamount" &&( e.value<500000 || e.value>1000000000)){
+
+ 		// alert("Outstanding Principal (should be greater than 500000 and less than 1000000000)");
+ 		$('#homeTransfer').modal('show');
+
+ 	 }else if(e.id=="loaninterest" && e.value < 9){
+
+ 	 	// alert("Congrats you are already on lowest rate.");
+ 	 	$('#homeTransfer1').modal('show');
+
+ 	}
+ }	
+</script>
   </body>
   
  

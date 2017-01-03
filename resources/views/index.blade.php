@@ -13,7 +13,9 @@
 		   				<div class="slider-text-inner">
 		   				 <img src="images/home-ic.png" class="center-img-align" />
 		   					<h2 class="slide-head">Home Loan </h2>
-							<h5>Stay ahead of the curve with the Best in the Market</h5>
+
+							<h5>Staya ahead of the curve with the Best in the Market</h5>
+
 		   					<p><a href="{{URL::to('home-loan')}}" class="btn btn-primary btn-lg">View More</a></p>
 		   				</div>
 		   			</div>

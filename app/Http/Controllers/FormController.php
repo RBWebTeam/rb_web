@@ -78,7 +78,7 @@ class FormController extends Controller
             $http_code = curl_getinfo($ch ,CURLINFO_HTTP_CODE);
            // print_r("\n hiiiiiiiiii");
            // print_r($http_result);
-            if($http_result==1){
+            //if($http_result==1){
                 if(isset($req['income'])){
                     $income=$req['income'];
                 }else{
@@ -93,7 +93,7 @@ class FormController extends Controller
             }
               
                 
-            }
+           // }
             else{
                 $quote_data ="no result found";
                 return "no quotes";

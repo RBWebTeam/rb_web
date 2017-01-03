@@ -87,20 +87,6 @@ class ProfileController extends Controller
 
 
 
- public function check(Request $req){
-
-
-
-      foreach ($req->bank_id as $key => $value) {
-        
-        echo $value;
-         
-      }
-
-
-
- }
-
-
+  
 
 }

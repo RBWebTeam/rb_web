@@ -76,9 +76,9 @@
   <tr>
     <td>
     <input type="checkbox" name="checkbox" value="{{$q->Bank_Name}}" class="{{$q->Bank_Id}}"  data-id="{{$q->Bank_Id}}"/></td>
-    <td>Personal Loan</td>
-    <td>{{$q->roi }}%</td>
-    <td>{{$q->LoanRequired}}</td>
+    <td id="">Personal Loan</td>
+    <td id="{{$q->roi}}">{{$q->roi }}%</td>
+    <td id="{{$q->LoanRequired}}">{{$q->LoanRequired}}</td>
     <td>{{$q->emi}} (for {{$q->LoanTenure}} years)</td>
     <td rowspan="2"><strong>Specil Features:</strong>- Pre close Fee {{$q->Pre_Closer_Fixed}}%</td>
   </tr>
@@ -107,7 +107,8 @@
  <div class="col-md-12 animate-box fadeInUp animated col">
  <div class="col-md-4 img-c"><img src="images/compare-img.png"></div>
 
-   <form action="#" method="post">
+   <form   method="post" name="compareform" id="compareform" action="compare">
+<input type="hidden" id='_token' name="_token" value="{{csrf_token()}}">
 
 <div id="AllBank">
 
@@ -115,7 +116,7 @@
 <!--   <div class="col-md-2 col img-c white-bg"><button type="button" class="close" data-dismiss="modal">×</button><img src="images/axis.png" width="50" height="46">Axis Bank</div>
   <div class="col-md-2 col img-c white-bg"><button type="button" class="close" data-dismiss="modal">×</button><img src="images/hdfc.png" width="50" height="46">HDFC Bank</div>
  -->
-  <div style="display: none;" id="btncompare" class="col-md-2 comp-btn"><a href="#" class="btn btn-primary btn-outline with-arrow">Compare<i class="icon-arrow-right"></i></a></div>
+  <div  id="btncompare" class="col-md-2 comp-btn"><button class="btn btn-primary btn-outline with-arrow comparebutton">Compare<i class="icon-arrow-right"></i></button></div>
 
  </form>
 
@@ -139,9 +140,10 @@ $('input[name="checkbox"]').change(function(){
      
    }else{
       var id=$(this).attr("data-id");
+      
   if (this.checked) {
-       var id=$(this).attr("data-id");
-       var span="<div class='col-md-2 col img-c white-bg' id='" +id + "'><span class='close btnspan' >×</span><img src='images/kotak.png' width='50' height='46'>" + this.value + "</div>";
+      // var id=$(this).attr("data-id");
+       var span="<div class='col-md-2 col img-c white-bg' id='" +id + "'><input type='hidden' name='bank_id[]' id='"+id+"' value='"+id+"' ><span class='close btnspan' >×</span><img src='images/kotak.png' width='50' height='46'>" + this.value + "</div>";
 
            $(document).ready(function() {
                  if($(".btnspan").length==2){
@@ -162,7 +164,9 @@ $('input[name="checkbox"]').change(function(){
 
  
 $(document).ready(function () {
+
     $(document).on('click', '.btnspan', function () {
+
          var id=$(this).closest("div").attr("id");
         $("."+id).attr('checked',false);
         $("#"+id).remove();
@@ -171,5 +175,35 @@ $(document).ready(function () {
   });
 
 });
+
+
+
+
+
+// $(document).on('click','.comparebutton',function(e){
+// e.preventDefault();
+//   var form=$(this).closest("form").attr("id");
+
+//      $.ajax({  
+//                type: "POST",  
+//                url: "{{URL::to('compare')}}",
+//                data : $('#'+form).serialize(),
+//               // dataType: 'json',
+//                success: function(msg){  
+
+            
+//                alert(msg); 
+
+
+//                }  
+//            }); 
+
+
+// });
+
+
+
+
+
 
 </script>

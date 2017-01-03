@@ -157,8 +157,8 @@
 
 <!--compare page-->
 
-<div id="fh5co-hero" style="top: auto;">
-  <div class="animate-box" style="display:none;" id="fclass1">
+<div id="fh5co-hero" style="display:none;top: auto;" class="fclass1">
+  <div class="animate-box"  >
     <div class="container">
       <div class="row">
         <div class="col-md-12 text-left fh5co-heading animate-box fadeInUp animated">
@@ -221,11 +221,7 @@ $('input[name="checkbox"]').change(function(){
 
        var span="<div class='col-md-2 col img-c white-bg' id='" +id + "'><input type='hidden' name='bank_id[]' id='"+id+"' value='"+id+"' ><span class='close btnspan' >×</span><img src='images/kotak.png' width='50' height='46'>" + this.value + "</div>";
 
-      
        var  tables="<tbody style='float:left;' id='" +tid+ "'><tr><td>"+this.value+"</td></tr><tr><td>"+LoanRequired+"</td></tr><tr><td>"+pinterst+"</td></tr><tr><td>"+emi+"(for "+LoanTenure +" years)</td></tr><tr><td>"+processingfee+"</td></tr><tr><td>"+Pre_Closer_Fixed+"</td></tr><tr><td><a href='#' class='btn btn-primary btn-outline'>Apply Now</a></td></tr></tbody>" ;
-
-
-
 
           if(x==2){
             $('#btncompare').show();} x++;
@@ -241,7 +237,6 @@ $('input[name="checkbox"]').change(function(){
   
 });
 
- 
 $(document).ready(function () {
     $(document).on('click', '.btnspan', function () {
          var id=$(this).closest("div").attr("id");
@@ -256,21 +251,15 @@ $(document).ready(function () {
 
 });
 
-
 $(document).on('click','#btncompare',function(e){
-
-$('#fclass1').show();
-
- $("html, body").animate({
+$('.fclass1').show();
+$("html, body").animate({
         scrollTop: 0
     }, 600);
 
 $('.fclass').hide();
 $('#compID').hide();
-
 });
-
-
 
 
 // $(document).on('click','.comparebutton',function(e){
@@ -291,12 +280,6 @@ $('#compID').hide();
 //                }  
 //            }); 
 
-
 // });
-
-
-
-
-
 
 </script>

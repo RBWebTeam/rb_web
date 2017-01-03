@@ -7,7 +7,7 @@
 	</div>
 
     
-	<div class="col-md-9 pad11">
+	<div class="col-md-12 pad11">
     
     <div class="">
     <table width="100%" border="1" class="tbl pad1">
@@ -61,11 +61,11 @@
  <table>
 <div id="{{$key}}" class="collapse" style="background-color: #F6F6F6; width: 100%;height: auto;">
    
-     as you can see the foreach is no returning any data there is nothing wrong with the query because laravel give me no error at all. but i cant just get the foreach to display the data im looking for.
-
-i try with $cup->songlist.title; and it dont work ether.
-
-Thanks any help will be appretiated. againg sorry for my English.
+  <li class="list-group-item"><i class="fa fa-dot-circle-o" aria-hidden="true"></i> No guarantor required</li>
+          <li class="list-group-item"><i class="fa fa-dot-circle-o" aria-hidden="true"></i> No pre-closure and part payment fee
+            <mark style="color: red">Special offers are available for women applicants at a lower rate</mark></li>
+          <li class="list-group-item"><i class="fa fa-dot-circle-o" aria-hidden="true"></i> Age at least 18 and less than 60</li>
+           <li class="list-group-item"><i class="fa fa-dot-circle-o" aria-hidden="true"></i> Salaried / Self - Employed with regular income,Earn more than the minimum income required</li>
   </div>
 
    </table>

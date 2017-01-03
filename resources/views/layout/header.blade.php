@@ -55,9 +55,9 @@
                 <li class="hidden-xs"><a href="{{URL::to('/')}}">Home</a></li>
                 <li class="hidden-xs"><a href="{{URL::to('about-us')}}">About Us</a></li>
                 <li class="hidden-xs"><a href="{{URL::to('contact-us')}}">Contact Us</a></li>
-				<li><a href="{{URL::to('my-universe')}}">My Universe </a></li>
-				<li><a href="{{URL::to('rba-login')}}">RBA Login </a></li>
-				<li><a href="{{URL::to('media')}}">Media</a></li>
+				<li><a href="{{URL::to('contact-us')}}">My Universe </a></li>
+				<li><a href="{{URL::to('contact-us')}}">RBA Login </a></li>
+				<li><a href="{{URL::to('contact-us')}}">Media</a></li>
                 
                 
 	            </ul>

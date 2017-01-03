@@ -13,6 +13,10 @@ class CompareController extends Controller
     //
     public function compare(Request $req){
 
+
+            return view('compare');
+           exit;
+
          if(count($req->bank_id)==3){
           
             $val=$req->bank_id[0];

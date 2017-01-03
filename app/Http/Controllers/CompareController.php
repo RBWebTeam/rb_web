@@ -151,7 +151,8 @@ class CompareController extends Controller
 
       $getQuery=DB::table('bank_product_web_intrest')
       ->join('bank_master', 'bank_product_web_intrest.bank_id', '=', 'bank_master.Bank_id')
-      ->select('bank_product_web_intrest.bank_id AS bank_id','bank_product_web_intrest.roi AS roi','bank_master.Bank_Name AS Bank_Name')
+      ->join('bank_product_web_pf', 'bank_product_web_intrest.bank_id', '=', 'bank_product_web_pf.bank_id')
+      ->select('bank_product_web_intrest.bank_id AS bank_id','bank_product_web_intrest.roi AS roi','bank_master.Bank_Name AS Bank_Name','bank_product_web_pf.pf AS pf')
       ->where('bank_product_web_intrest.product_id','=',12)
       ->where('bank_product_web_intrest.roi','<',$req['loaninterest'])
       ->where('bank_product_web_intrest.Profession','=',"1")

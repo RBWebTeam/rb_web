@@ -1,6 +1,6 @@
 @include('layout.header')
-    <div id="fh5co-hero">
-	<div class="container">
+    <div id="fh5co-hero" class="fclass" style="display:block;">
+	<div class="container" >
 	<div class=" pad">
 	<p class="text-left">home/{{$product}}</p>
     <h2 class="align-center loan-head">View Options</h2>
@@ -76,11 +76,20 @@
   <tr>
     <td>
     <input type="checkbox" name="checkbox" value="{{$q->Bank_Name}}" class="{{$q->Bank_Id}}"  data-id="{{$q->Bank_Id}}"/></td>
-    <td id="">Personal Loan</td>
-    <td id="{{$q->roi}}">{{$q->roi }}%</td>
-    <td id="{{$q->LoanRequired}}">{{$q->LoanRequired}}</td>
-    <td>{{$q->emi}} (for {{$q->LoanTenure}} years)</td>
-    <td rowspan="2"><strong>Specil Features:</strong>- Pre close Fee {{$q->Pre_Closer_Fixed}}%</td>
+
+    <input type="hidden" name="interst" class="interst" value="{{$q->roi }}">
+    <input type="hidden" name="LoanRequired" class="LoanRequired" value="{{$q->LoanRequired }}">
+    <input type="hidden" name="emi" class="emi" value="{{$q->emi }}">
+    <input type="hidden" name="LoanTenure" class="LoanTenure" value="{{$q->LoanTenure }}">
+   <input type="hidden" name="Pre_Closer_Fixed" class="Pre_Closer_Fixed" value="{{$q->Pre_Closer_Fixed }}">
+
+    <input type="hidden" name="processingfee" class="processingfee" value="{{$q->processingfee }}">
+
+    <td >Personal Loan</td>
+    <td >{{$q->roi }}%</td>
+    <td >{{$q->LoanRequired}}</td>
+    <td >{{$q->emi}} (for {{$q->LoanTenure}} years)</td>
+    <td   rowspan="2"><strong>Specil Features:</strong>- Pre close Fee {{$q->Pre_Closer_Fixed}}%</td>
   </tr>
   <tr>
     <td><i class="icon-thumbs-up"></i></td>
@@ -102,30 +111,83 @@
 	</div>
 </div>
 	
-<div class="container-fluid white-bg">	
+
+
+<div class="container-fluid white-bg"  id="compID" style=" display: block;">	
 <div class="container pad">
  <div class="col-md-12 animate-box fadeInUp animated col">
  <div class="col-md-4 img-c"><img src="images/compare-img.png"></div>
 
-   <form   method="post" name="compareform" id="compareform" action="compare">
+   
+
+<!-- <div id="AllBank">
+</div><form   method="post" name="compareform" id="compareform" action="compare">
 <input type="hidden" id='_token' name="_token" value="{{csrf_token()}}">
 
-<div id="AllBank">
-
-</div>
-<!--   <div class="col-md-2 col img-c white-bg"><button type="button" class="close" data-dismiss="modal">×</button><img src="images/axis.png" width="50" height="46">Axis Bank</div>
-  <div class="col-md-2 col img-c white-bg"><button type="button" class="close" data-dismiss="modal">×</button><img src="images/hdfc.png" width="50" height="46">HDFC Bank</div>
  -->
-  <div  id="btncompare" class="col-md-2 comp-btn"><button class="btn btn-primary btn-outline with-arrow comparebutton">Compare<i class="icon-arrow-right"></i></button></div>
+<!--   <div class="col-md-2 col img-c white-bg"><button type="button" class="close" data-dismiss="modal">×</button><img src="images/axis.png" width="50" height="46">Axis Bank</div>
+  <div class="col-md-2 col img-c white-bg"><button type="button" class="close" data-dismiss="modal">×</button><img src="images/hdfc.png" width="50" height="46">HDFC Bank</div> </form>
+ -->
+ <div id="AllBank" ></div>
+  <div style="display: none"  id="btncompare" class="col-md-2 comp-btn"><a class="btn btn-primary btn-outline with-arrow comparebutton">Compare<i class="icon-arrow-right"></i></a></div>
 
- </form>
+
+
+ 
+<!-- <div class="table-responsive">
+<table  id="tables"  width="100%" border="1" class="table-bordered">
+
+<tbody style='float:left;'>
+<tr><td>Bank Name </td></tr>
+<tr><td>Loan Amount</td></tr>
+<tr><td>Rate</td></tr>
+<tr><td>EMI</td></tr>
+<tr><td>Processing Fee</td></tr>
+<tr><td>Pre closed Fee</tr></td>
+</tbody>
+
+</table >
+</div> -->
+
 
  </div>
 </div>
+
 </div>
 
+<!--compare page-->
 
+<div id="fh5co-hero" style="top: auto;">
+  <div class="animate-box" style="display:none;" id="fclass1">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-left fh5co-heading animate-box fadeInUp animated">
+        <p class="text-left"><a href="{{URL::to('/')}}">Home</a>/Compare</p>
+          <h2>Compare</h2>
+          </div>  
+        <div class="col-md-12">
+          <div class="row pad11 white-bg comp-pg">
+  <div class="table-responsive">
+<table  id="tables"  width="100%" border="1" class="table-bordered" align="center" sty>
+  
+<tbody style='float:left; '>
+<tr><td>Bank Name </td></tr>
+<tr><td>Loan Amount</td></tr>
+<tr><td>Rate</td></tr>
+<tr><td>EMI</td></tr>
+<tr><td>Processing Fee</td></tr>
+<tr><td>Pre closed Fee</td></tr>
+</tbody>
 
+</table>
+</div>
+   
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 @include('layout.footer')
 @include('layout.script')
 
@@ -133,49 +195,80 @@
 var clicks = 0;
 var limit =4;
 var array=[];
+
+var max = 2;
+var x = 0;
+var ids=0;
 $('input[name="checkbox"]').change(function(){ 
   if($("input[name='checkbox']:checked").length >= limit) {
        this.checked = false;      
 
-     
+    
    }else{
-      var id=$(this).attr("data-id");
-      
+   var id=$(this).attr("data-id");
+   var tid=id;
+   var closest=$(this).closest('tr');
+   var pinterst =closest.find('.interst').val();
+   var LoanRequired =closest.find('.LoanRequired').val();
+   var processingfee =closest.find('.processingfee').val();
+   var emi =closest.find('.emi').val();
+   var LoanTenure =closest.find('.LoanTenure').val();
+   var Pre_Closer_Fixed =closest.find('.Pre_Closer_Fixed').val();
+
+  // <input type='hidden' name='pinterst[]' id='"+pinterst+"' value='"+pinterst+"' >
+
   if (this.checked) {
-      // var id=$(this).attr("data-id");
+
        var span="<div class='col-md-2 col img-c white-bg' id='" +id + "'><input type='hidden' name='bank_id[]' id='"+id+"' value='"+id+"' ><span class='close btnspan' >×</span><img src='images/kotak.png' width='50' height='46'>" + this.value + "</div>";
 
-           $(document).ready(function() {
-                 if($(".btnspan").length==2){
-                     $('#btncompare').show();}      
-              
-            })
+      
+       var  tables="<tbody style='float:left;' id='" +tid+ "'><tr><td>"+this.value+"</td></tr><tr><td>"+LoanRequired+"</td></tr><tr><td>"+pinterst+"</td></tr><tr><td>"+emi+"(for "+LoanTenure +" years)</td></tr><tr><td>"+processingfee+"</td></tr><tr><td>"+Pre_Closer_Fixed+"</td></tr><tr><td><a href='#' class='btn btn-primary btn-outline'>Apply Now</a></td></tr></tbody>" ;
 
-        $("#AllBank").append(span);
-  
-  }else{
-   
-  $("#"+id).remove();
 
-  }
+
+
+          if(x==2){
+            $('#btncompare').show();} x++;
+            $("#AllBank").append(span);
+            $("#tables").append(tables);
+            }else{
+            $("#"+id).remove();
+            $("#"+tid).remove();
+            if(x!=2){
+            $('#btncompare').hide();}x--;
+       }
    }
   
 });
 
  
 $(document).ready(function () {
-
     $(document).on('click', '.btnspan', function () {
-
          var id=$(this).closest("div").attr("id");
-        $("."+id).attr('checked',false);
-        $("#"+id).remove();
-    
-
+         var tid=id;
+                $("."+id).attr('checked',false);
+                $("#"+id).remove();
+                 $("#"+tid).remove();
+                if(x!=2){
+                $('#btncompare').hide(); 
+      }x--;
   });
 
 });
 
+
+$(document).on('click','#btncompare',function(e){
+
+$('#fclass1').show();
+
+ $("html, body").animate({
+        scrollTop: 0
+    }, 600);
+
+$('.fclass').hide();
+$('#compID').hide();
+
+});
 
 
 

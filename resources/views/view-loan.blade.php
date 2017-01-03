@@ -29,11 +29,11 @@
     <td width="16%" class="upper">Interst Rate</td>
     <td width="16%" class="upper">Loan Amount</td>
     <td width="18%" class="upper">emi</td>
-    <?php $Loans=strtolower(str_replace(' ','-',$home_loan));?>
+    <?php $Loans=strtolower(str_replace(' ','-',$home_loan)); ?>
      
-     <?php if($home_loan=='apply-lap'){?>
+     <?php if($Loans=='lap'){?>
 
-    <td width="17%"><a href="{{url('loan-against-property')}}">Apply Online</a></td>
+    <td width="17%"><a href="{{url('apply-loan-against-property')}}">Apply Online</a></td>
 
     <?php }else{?>
    <td width="17%"><a href="{{url('apply-')}}<?php echo $Loans?>">Apply Online</a></td>
@@ -78,96 +78,6 @@
 
 </div>
 @endforeach
-<!-- <div class="table-responsive">
-<table width="100%" border="1" class="tbl">
-  <tr>
-    <td width="9%" class="upper">Compare</td>
-    <td><div class="img-c"><img src="images/axis.jpg" width="100" height="30"></div></td>
-    <td width="16%" class="upper">Interst Rate</td>
-    <td width="16%" class="upper">Loan Amount</td>
-    <td width="18%" class="upper">emi</td>
-    <td width="17%"><button>Apply Online</button></td>
-  </tr>
-  <tr>
-    <td><input type="checkbox" name="cehckbox"/></td>
-    <td>Personal Loan</td>
-    <td>15.20%</td>
-    <td>150000</td>
-    <td>10,000 (for 3 years)</td>
-    <td rowspan="2"><strong>Specil Features:</strong>- Pre close Fee 0%</td>
-  </tr>
-  <tr>
-    <td><i class="icon-thumbs-up"></i></td>
-    <td class="upper"><a href="#">Know More</a></td>
-    <td>Processing Fee - INR 11200 + ST</td>
-    <td>Intrest Paid - INR 50,000</td>
-    <td>Max tenure - 2Years</td>
-    </tr>
-
-
-</table>
-</div>
- -->
-
-
-
-
-<!-- <div class="table-responsive">
-<table width="100%" border="1" class="tbl">
-  <tr>
-    <td width="9%" class="upper">Compare</td>
-    <td><div class="img-c"><img src="images/axis.jpg" width="100" height="30"></div></td>
-    <td width="16%" class="upper">Interst Rate</td>
-    <td width="16%" class="upper">Loan Amount</td>
-    <td width="18%" class="upper">emi</td>
-    <td width="17%"><button>Apply Online</button></td>
-  </tr>
-  <tr>
-    <td><input type="checkbox" name="cehckbox"/></td>
-    <td>Personal Loan</td>
-    <td>15.20%</td>
-    <td>150000</td>
-    <td>10,000 (for 3 years)</td>
-    <td rowspan="2"><strong>Specil Features:</strong>- Pre close Fee 0%</td>
-  </tr>
-  <tr>
-    <td><i class="icon-thumbs-up"></i></td>
-    <td class="upper"><a href="#">Know More</a></td>
-    <td>Processing Fee - INR 11200 + ST</td>
-    <td>Intrest Paid - INR 50,000</td>
-    <td>Max tenure - 2Years</td>
-    </tr>
-</table>
-</div> -->
-
-<!-- <div class="table-responsive">
-<table width="100%" border="1" class="tbl">
-  <tr>
-    <td width="9%" class="upper">Compare</td>
-    <td><div class="img-c"><img src="images/axis.jpg" width="100" height="30"></div></td>
-    <td width="16%" class="upper">Interst Rate</td>
-    <td width="16%" class="upper">Loan Amount</td>
-    <td width="18%" class="upper">emi</td>
-    <td width="17%"><button>Apply Online</button></td>
-  </tr>
-  <tr>
-    <td><input type="checkbox" name="cehckbox"/></td>
-    <td>Personal Loan</td>
-    <td>15.20%</td>
-    <td>150000</td>
-    <td>10,000 (for 3 years)</td>
-    <td rowspan="2"><strong>Specil Features:</strong>- Pre close Fee 0%</td>
-  </tr>
-  <tr>
-    <td><i class="icon-thumbs-up"></i></td>
-    <td class="upper"><a href="#">Know More</a></td>
-    <td>Processing Fee - INR 11200 + ST</td>
-    <td>Intrest Paid - INR 50,000</td>
-    <td>Max tenure - 2Years</td>
-    </tr>
-</table>
-</div> -->
-
 	</div>
 	</div>
 </div>

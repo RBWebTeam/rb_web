@@ -52,9 +52,9 @@
         <div class="container">
 
             <ul class="top-lnk">
-                <li><a href="{{URL::to('/')}}">Home</a></li>
-                <li><a href="{{URL::to('about-us')}}">About Us</a></li>
-                <li><a href="{{URL::to('contact-us')}}">Contact Us</a></li>
+                <li class="hidden-xs"><a href="{{URL::to('/')}}">Home</a></li>
+                <li class="hidden-xs"><a href="{{URL::to('about-us')}}">About Us</a></li>
+                <li class="hidden-xs"><a href="{{URL::to('contact-us')}}">Contact Us</a></li>
                 
                 
             </ul>
@@ -141,8 +141,6 @@
 			</div>
 		</div>
 	</header>
-</div>
-</div>
 
 
 

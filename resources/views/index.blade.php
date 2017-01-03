@@ -3,9 +3,11 @@
 	<aside id="fh5co-hero">
 	<div class=""></div>
 		<div class="flexslider col-md-12">
+
 		<div class="pull-right mar-tp ">
 		<a href="{{URL::to('comfy-sales
 		')}}" class="img2"><img src="images/sliding-right-img-2.png" class="img-responsive"/></a>
+
 		  <a href="Expressloan.php" class="img3"><img src="images/sliding-right-img-1.png" class="img-responsive"/></a>
 		   <a href="Savingac.php" class="img4"><img src="images/sliding-right-img-3.png" class="img-responsive"/></a>
 		</div>
@@ -85,7 +87,14 @@
 		   	</li>
 		  	</ul>
 	  	</div>
-		 <!-- <div class="col-md-4 red-bg">
+		<!--<div class="col-md-12 ">
+		 <div class="pull-right mar-tp ">
+		<a href="rupeebosscomfy.php" class="img2"><img src="images/sliding-right-img-2.png" class="img-responsive"/></a>
+		  <a href="Expressloan.php" class="img3"><img src="images/sliding-right-img-1.png" class="img-responsive"/></a>
+		   <a href="Savingac.php" class="img4"><img src="images/sliding-right-img-3.png" class="img-responsive"/></a>
+		</div>
+		</div>
+		  <div class="col-md-4 red-bg">
 	   <div class="form-in">
              <div class="trapezium1"> 
               <span class="head-1">Compare, Research & Buy<span>

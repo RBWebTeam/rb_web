@@ -649,11 +649,16 @@ $('#slider').slider({
                    var numb4 = msg.savings.toFixed();
                    $('#emi6').empty().append(numb4);
 
+
+                   var numb5 = msg.emiperlacs.toFixed();
+                   $('#emi7').empty().append(numb5);
+
                         $("#1").show();
                         $("#4").show();
                         $("#5").show();
                         $("#6").show();
                         $("#7").show();
+                         $("#8").show();
                         $('#test').html(msg.html);
                         $('#test').show();
                     }

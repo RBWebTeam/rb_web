@@ -1,35 +1,4 @@
-<!-- <div class="fh5co-cta" style="background-image: url(/images/slide_2.jpg);">
-        <div class="overlay"></div>
-        <div class="container">
-            <div class="col-md-12 text-center animate-box">
-                <h3>Want to save your Hard-earned Money?</h3>
-                <p>Subscribe to our monthly newsletter</p>
-                <form name="subscribe-form" id="subscribe-form" method="post">
-                   {{ csrf_field() }}
-                <input type="hidden" name="form" value="subscribe-form">
-                        
-                    <div class=" col-sm-offset-1 col-sm-4">
-                        <fieldset>
-                            <input class="newsletter-name" id="name" name="name" placeholder="Name" required>
-                        </fieldset>
-                        </div>
-                    <div class="col-sm-4">
-                        <fieldset>
-                            <input type="email" class="newsletter-name" name="email"  required placeholder="Email Id">
-                        </fieldset>                                 
-                        </div>
-                    <div class="col-sm-2 btncent">
-                    <button class="btn btn-primary btn-outline with-arrow sidebar-submit">Subscribe Now<i class="icon-arrow-right"></i></button>
-
-                    </div>
-            </form>
-            <div class='msg' style="display: none;"><p>Thanks. We will reach you soon.</p></div>
-            <div class='msg_err' style="display: none;"><p>Ooops. Something went wrong.</p></div>
-            </div>
-        </div>
-    </div> -->
-    <div class="container">
-<div class="col-md-12 quotes"><h2>Quotes generated till date :25856</h2></div>
+<div class="container">
 </div>
 	<footer id="fh5co-footer" role="contentinfo">
 		<div class="container">

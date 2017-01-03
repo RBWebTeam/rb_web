@@ -32,6 +32,7 @@ foreach ($data as $key => $value){?>
     $drop_emi= $amount-$new_amount;
     $drop_in_int=(($loaninterest*12*100)-($new_rate*12*100));
     $savings=$total-$new_total;
+    $emiperlacs=($new_amount/100000);
   }catch (Exception $e){
 
   }
@@ -59,14 +60,14 @@ foreach ($data as $key => $value){?>
                       </div>
                       <div class="loan-floating">
                         <p>PROCESSING FEE</p>
-                        <h6>{{ $value['pf']}} &nbsp; {{ $value['pf_type']}}</h6>
+                        <h7>{{ $value['pf']}} &nbsp; {{ $value['pf_type']}}</h7>
                         
                       </div>
                     </td>
                     <td class="td-main">
                       <div class="loan-amt">
                         <p>EMI PER LAC</p>
-                        <h6>815</h6>
+                        <h6><?php  echo number_format((float)$emiperlacs, 2, '.', ''); ?></h6>
                       </div>
                       <div class="loan-floating">
                         <p>TENURE(in months)</p>

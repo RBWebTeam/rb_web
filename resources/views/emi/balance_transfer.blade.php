@@ -368,7 +368,7 @@ h4.great {
         <h4 class="modal-title"></h4>
       </div>
       <div class="modal-body">
-        <h5><p>Interest should be <mark style="color:red">greater than 9.0%</mark>.If less..Congrats you are already on lowest rate.</p></h5>
+        <h5><p>Interest should be <mark style="color:red">greater than 9.10%</mark>.If less..Congrats you are already on lowest rate.</p></h5>
         
       </div>
       
@@ -703,13 +703,9 @@ $('#slider').slider({
 		//console.log(e.id + " "+e.value);
  	
  	 if(e.id=="loanamount" &&( e.value<500000 || e.value>1000000000)){
-
- 		// alert("Outstanding Principal (should be greater than 500000 and less than 1000000000)");
  		$('#homeTransfer').modal('show');
 
- 	 }else if(e.id=="loaninterest" && e.value < 9){
-
- 	 	// alert("Congrats you are already on lowest rate.");
+ 	 }else if(e.id=="loaninterest" && e.value <= 9.10){
  	 	$('#homeTransfer1').modal('show');
 
  	}

@@ -48,7 +48,7 @@ foreach ($data as $key => $value){?>
                       </div>
                       <div class="loan-floating">
                         <p>FLOATING</p>
-                        <h6><?php echo ($drop_in_int); ?></h6>
+                        <h6><?php echo number_format((float)$value['roi'], 2, '.', '') ?></h6>
                       </div>
                     </td>
                     <td class="td-main">
@@ -67,7 +67,7 @@ foreach ($data as $key => $value){?>
                         <h6>815</h6>
                       </div>
                       <div class="loan-floating">
-                        <p>TENURE</p>
+                        <p>TENURE(in months)</p>
                         <h6><?php echo $loanterm ?></h6>
                       </div>
                     </td>

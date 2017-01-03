@@ -155,12 +155,15 @@ class CompareController extends Controller
       ->where('bank_product_web_intrest.roi_type','=','Floating')
       ->where('bank_product_web_intrest.amt_from','<=',$req["loanamount"])
       ->where('bank_product_web_intrest.amt_to','>=',$req["loanamount"])
+      ->where('bank_product_web_pf.amt_from','<=',$req["loanamount"])
+      ->where('bank_product_web_pf.amt_to','>=',$req["loanamount"])
       ->orderBy('bank_product_web_intrest.roi', 'ASC')
 
        //->take(5)
       ->get();
 
     $resultArray = json_decode(json_encode($getQuery), true);
+    print_r($getQuery);exit();
      
         if (!empty($resultArray)) {
             $loanamount=$req['loanamount'];

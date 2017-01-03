@@ -13,6 +13,10 @@ class CompareController extends Controller
     //
     public function compare(Request $req){
 
+
+            return view('compare');
+           exit;
+
          if(count($req->bank_id)==3){
           
             $val=$req->bank_id[0];
@@ -145,23 +149,9 @@ class CompareController extends Controller
       public function calculationfordc(Request $req){
 
 
-      $getQuery=DB::table('bank_product_web_intrest')
-      ->join('bank_master', 'bank_product_web_intrest.bank_id', '=', 'bank_master.Bank_id')
-      ->join('bank_product_web_pf', 'bank_product_web_intrest.bank_id', '=', 'bank_product_web_pf.bank_id')
-      ->select('bank_product_web_intrest.bank_id AS bank_id','bank_product_web_intrest.roi AS roi','bank_master.Bank_Name AS Bank_Name','bank_product_web_pf.pf AS pf')
-      ->where('bank_product_web_intrest.product_id','=',12)
-      ->where('bank_product_web_intrest.roi','<',$req['loaninterest'])
-      ->where('bank_product_web_intrest.Profession','=',"1")
-      ->where('bank_product_web_intrest.roi_type','=','Floating')
-      ->where('bank_product_web_intrest.amt_from','<=',$req["loanamount"])
-      ->where('bank_product_web_intrest.amt_to','>=',$req["loanamount"])
-      ->where('bank_product_web_pf.amt_from','<=',$req["loanamount"])
-      ->where('bank_product_web_pf.amt_to','>=',$req["loanamount"])
-      ->orderBy('bank_product_web_intrest.roi', 'ASC')
 
-       //->take(5)
-      ->get();
-
+      $getQuery=DB::select('call usp_get_balance_transfer_quot("'.$req['loanamount'].'","'.$req['loaninterest'].'","12")');
+     // print_r($getQuery);exit();
     $resultArray = json_decode(json_encode($getQuery), true);
     print_r($getQuery);exit();
      

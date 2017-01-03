@@ -555,7 +555,7 @@ $('document').ready(function(){
         /* $('#search-input').attr('autocomplete', 'on');*/
         $("#q").autocomplete({
         source : "{{ URL('search/autocomplete') }}",
-        minlength: 2  ,
+        minlength: 3,
        select: function(event,ui){
            $('#q').val(ui.item.value);
             }
@@ -578,7 +578,7 @@ $('document').ready(function(){
                 }
             });
         },
-        min_length: 3,
+        min_length:3,
        
     });
 

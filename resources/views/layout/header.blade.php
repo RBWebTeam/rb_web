@@ -57,7 +57,7 @@
                 <li class="hidden-xs"><a href="{{URL::to('contact-us')}}">Contact Us</a></li>
                 
                 
-            </ul>
+	            </ul>
 
             <ul class="nav-pills pull-right social-icon">
 

@@ -84,7 +84,7 @@
 		   	</li>
 		  	</ul>
 	  	</div>
-		<!-- <div class="col-md-4 red-bg">
+		 <!-- <div class="col-md-4 red-bg">
 	   <div class="form-in">
              <div class="trapezium1"> 
               <span class="head-1">Compare, Research & Buy<span>
@@ -136,7 +136,7 @@
 			  </div>
 			</form>
 		</div>	
-	</div> -->
+	</div>  -->
 	</aside>
 	</div>
 	<div id="fh5co-services-section">
@@ -410,7 +410,8 @@
   </div>
 </div>
 			
-</div></div>
+</div>
+</div>
 	
 	<div id="fh5co-blog-section" class="fh5co-light-grey-section">
 		<div class="container">
@@ -475,8 +476,7 @@
 		</div>
 	</div>
 	
-	</div>
-	</div>
+
 	
 @include('layout.footer')
 @include('layout.script')

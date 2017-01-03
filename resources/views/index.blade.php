@@ -3,8 +3,11 @@
 	<aside id="fh5co-hero">
 	<div class=""></div>
 		<div class="flexslider col-md-12">
-		<div class="pull-right mar-tp "><a href="{{URL::to('comfy-sales
-		')}}"><img src="images/sliding-right-img.png" class="img-responsive"/></a></div>
+		<div class="pull-right mar-tp ">
+		<a href="rupeebosscomfy.php" class="img2"><img src="images/sliding-right-img-2.png" class="img-responsive"/></a>
+		  <a href="Expressloan.php" class="img3"><img src="images/sliding-right-img-1.png" class="img-responsive"/></a>
+		   <a href="Savingac.php" class="img4"><img src="images/sliding-right-img-3.png" class="img-responsive"/></a>
+		</div>
 			<ul class="slides">
 		   	<li style="background-image: url(images/slide_1.png);">
 		   		<div class="overlay-gradient"></div>
@@ -13,9 +16,7 @@
 		   				<div class="slider-text-inner">
 		   				 <img src="images/home-ic.png" class="center-img-align" />
 		   					<h2 class="slide-head">Home Loan </h2>
-
 							<h5>Stay ahead of the curve with the Best in the Market</h5>
-
 		   					<p><a href="{{URL::to('home-loan')}}" class="btn btn-primary btn-lg">View More</a></p>
 		   				</div>
 		   			</div>
@@ -139,15 +140,15 @@
 	</aside>
 	</div>
 	<div id="fh5co-services-section">
-		<div class="container borrd-btm">
+		<div class="container-fluid">
 			<!-- <div class="row">
 				<div class="col-md-6 col-md-offset-3 text-center fh5co-heading animate-box">
 					<h2>Get Free Quote </h2>
 					<p class="mrg-btm">Our strong relationship with leading Banks means we can give you the confidence you need to make the right choice.</p>
 				</div>
 			</div> -->
-			<div class="row dv-hr">
-				<div class="col-md-2 animate-box h3-pd-btm">
+			<div class="dv-hr">
+				<div class="col-md-2 animate-box no-padding">
 					<div class="services">
 						<a class="anchor_decoration" href="{{URL::to('home-loan')}}">
 						<div class="desc">
@@ -158,7 +159,7 @@
 						</a>
 					</div>
 				</div>
-				<div class="col-md-2 animate-box h3-pd-btm">
+				<div class="col-md-2 animate-box no-padding">
 					<div class="services">
 						<a class="anchor_decoration" href="{{URL::to('personal-loan')}}">
 						<div class="desc">
@@ -169,7 +170,7 @@
 						</a>
 					</div>
 				</div>
-				<div class="col-md-2 animate-box h3-pd-btm">
+				<div class="col-md-2 animate-box no-padding">
 					<div class="services">
 						<a class="anchor_decoration" href="{{URL::to('loan-against-property')}}">
 						<div class="desc">
@@ -180,7 +181,7 @@
 						</a>
 					</div>
 				</div>
-				<div class="col-md-2 animate-box h3-pd-btm">
+				<div class="col-md-2 animate-box no-padding">
 					<div class="services">
 						<a class="anchor_decoration" href="{{URL::to('sme-loan')}}">
 						<div class="desc">
@@ -191,7 +192,7 @@
 						</a>
 					</div>
 				</div>
-				<div class="col-md-2 animate-box h3-pd-btm">
+				<div class="col-md-2 animate-box no-padding">
 					<div class="services">
 						<a class="anchor_decoration" href="{{URL::to('business-loan')}}">
 						<div class="desc">
@@ -202,7 +203,7 @@
 						</a>
 					</div>
 				</div>
-				<div class="col-md-2 animate-box h3-pd-btm">
+				<div class="col-md-2 animate-box no-padding">
 					<div class="services">
 						<a class="anchor_decoration" href="{{URL::to('car-loan')}}">
 						<div class="desc">
@@ -217,30 +218,30 @@
 		</div>
 	</div>
 	
-		<div class="container">
+		<div class="container-fluid bg-gray">
 			
-			<div class="row bg-white animate-box">
-
-					<div class="col-md-8 animate-box fadeInUp animated">
+			<div class="animate-box">
+                    <div class="col-md-1"></div>
+					<div class="col-md-6 animate-box fadeInUp animated">
 						<div class="center-img">
 							<div><img src="images/Credit-Report.png" class="img-responsive" /></div>
 												
 						</div>
 					</div>
 					<div class="col-md-4 left-lin"><img src="images/Report.png" class="img-responsive;" /><button class="btn btn-primary btn-outline with-arrow top-mrg">Apply For Credit Report<i class="icon-arrow-right"></i></button></div>
-
+                   <div class="col-md-1"></div>
 			</div>
 		</div>
 	
 	<div id="fh5co-pricing-section">
-		<div class="container">
-			<div class="row">
+		<div class="container-fluid white-bg">
+			<div class="row no-margin">
 				<div class="col-md-6 col-md-offset-3 text-center fh5co-heading animate-box">
 					<h2>What you get?</h2>
-					<p class="mrg-btm">Stay ahead of the curve with the Best in the Market</p>
+					
 				</div>
 			</div>
-			<div class="row">
+			<div class="row no-margin">
 				<div class="pricing">
 					<div class="col-md-3 animate-box">
 						<div class="price-box popular">
@@ -315,10 +316,10 @@
 		</div>
 	</div>
 	<div id="fh5co-work-section" class="fh5co-light-grey-section">
-		<div class="container">
+		<div class="container-fluid bg-gray">
 			<div class="row">
 				<div class="col-md-6 col-md-offset-3 text-center fh5co-heading animate-box">
-					<h2>WHO WE ARE.</h2>
+					<h2>WHO WE ARE</h2>
 				
 				</div>
 			</div>
@@ -472,6 +473,9 @@
 				
 			</div>
 		</div>
+	</div>
+	
+	</div>
 	</div>
 	
 @include('layout.footer')

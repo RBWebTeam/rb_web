@@ -153,7 +153,7 @@ class CompareController extends Controller
       $getQuery=DB::select('call usp_get_balance_transfer_quot("'.$req['loanamount'].'","'.$req['loaninterest'].'","12")');
      // print_r($getQuery);exit();
     $resultArray = json_decode(json_encode($getQuery), true);
-    print_r($getQuery);exit();
+  
      
         if (!empty($resultArray)) {
             $loanamount=$req['loanamount'];

@@ -8,11 +8,8 @@
   <?php 
   $loanamount =(float)$sata['loanamount'];
   $loaninterest =(float)$sata['loaninterest'];
-  if(isset($sata['loanterm'])){
-    $loanterm =(float)$sata['loanterm'];
-  }else{
-    $loanterm =0;
-  }
+  $loanterm =(float)$sata['loanterm'];
+  
 foreach ($data as $key => $value){?>
    
     <?php try{
@@ -61,7 +58,7 @@ foreach ($data as $key => $value){?>
                       </div>
                       <div class="loan-floating">
                         <p>PROCESSING FEE</p>
-                        <h6>15,000</h6>
+                        <h6>{{ $value['pf']}}</h6>
                       </div>
                     </td>
                     <td class="td-main">
@@ -75,7 +72,7 @@ foreach ($data as $key => $value){?>
                       </div>
                     </td>
                     <td class="td-main-1"><a href="{{URL::to('apply-home-loan')}}"> <img src="images/edit-home-icon.png" class="img-responsive"></a>
-                    }
+                    
                     </td>
                   </tr>
                             

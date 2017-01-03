@@ -77,11 +77,11 @@ document.getElementById('login').style.display="block";
 
             <ul class="nav-pills pull-right social-icon">
 
-                <li><a href="#" title="Facebook"><i class="icon-twitter"></i></a></li>
-                <li><a href="#" title="Linkedin"><i class="icon-facebook"></i></a></li>
-                <li><a href="#"><i class="icon-google-plus"></i></a></li>
+                <li><a href="{{URL::to('https://twitter.com/rupeeboss')}}" title="Twitter"><i class="icon-twitter"></i></a></li>
+                <li><a href="{{URL::to('www.facebook.com/rupeeboss')}}" title="Facebook"><i class="icon-facebook"></i></a></li>
+                <li><a href="{{URL::to('https://plus.google.com/112574970643410375765')}}" title="GooglePlus><i class="icon-google-plus"></i></a></li>
                 <li><a href="#" title="instagram"><i class="icon-instagram"></i></a></li>
-                <li><a href=""><i class="icon-phone"></i> 1800-267-629-6	</a></li>
+                <li><a href="{{URL::to('contact-us')}}"><i class="icon-phone"></i> 1800-267-629-6	</a></li>
 
             </ul>
 
@@ -157,6 +157,7 @@ document.getElementById('login').style.display="block";
 			</div>
 		</div>
 	</header>
+	
 
 
 

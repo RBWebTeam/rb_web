@@ -52,7 +52,7 @@
 	</div>
 
 	
-
+    <div class="table-responsive">
 	<div class="container">
 	 <div class="row">
 	   <div class="col-md-12 pad11">
@@ -136,6 +136,8 @@
 @endforeach
 
 </div></div></div><!-- </div> -->
+</div>
+
 	
 	<div class="container">
 	 <div class="row">

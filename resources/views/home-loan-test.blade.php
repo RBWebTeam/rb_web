@@ -25,6 +25,7 @@
 							<input type="tel" id="income_year" name="turnover" onkeyup="changeText_new('income_year','self_q')"  onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="1,00,000" tabindex="1">
 						</h3> 
 					</div>
+					
 					<!-- self employed question -->
 					<div class="col-md-12 text-center animate-box cont" style="display: none;" id="self_q">
 						<h3>my profit after tax is
@@ -76,19 +77,19 @@
 						</div>
 						<div class="col-md-12 text-center animate-box cont1" style="display: none" id="q8">
 							<h3>My date of birth is
-								<input type="date" id="dob" name="dob" class="input-pad company-nm1" onchange="changeTest(this,'q9')">
+								<input type="date" id="dob" name="dob" class="input-pad company-nm1" onchange="changeTest_new(this,'q9')">
 							</h3>
 						</div>
 						<div class="col-md-12 text-center animate-box cont" style="display:none;" id="q9" >
 						
 				             <h3>I have been living in
-							<input type="text" class="search_city input-pad" id='city_name' name='city_name' onkeypress="changeTest('city_name','step_2_btn')" placeholder='your city'>city</h3>
+							<input type="text" class="search_city input-pad" id='city_name' name='city_name' onkeypress="changeTest_new('city_name','step_2_btn')" placeholder='your city'>city</h3>
 							
 						</div>
 						
 
 						<div class="text-center" style="display: none;" id="step_2_btn">
-							<a class="btn btn-primary btn-outline with-arrow animate-box" id="co_button" onclick="changeTest_new('step-1','step-2')">Have Co-Applicant<i class="icon-arrow-right"></i></a>
+							<a class="btn btn-primary btn-outline with-arrow animate-box" id="co_button" onclick="changeTest_new_new('step-1','step-2')">Have Co-Applicant<i class="icon-arrow-right"></i></a>
 							
 								<?php if(Session::get('is_login')) {?>
 									<button class="btn btn-primary btn-outline with-arrow animate-box product_name" >Get me a Loan<i class="icon-arrow-right"></i></button>
@@ -152,7 +153,7 @@
 				
 					<!-- step-2 finished -->
 					<div class="text-center">
-						<a class="btn btn-primary btn-outline with-arrow animate-box" id="back" onclick="changeTest_new('step-2','step-1')">Back<i class="icon-arrow-right"></i></a>
+						<a class="btn btn-primary btn-outline with-arrow animate-box" id="back" onclick="changeTest_new_new('step-2','step-1')">Back<i class="icon-arrow-right"></i></a>
 					</div>
 					<div class="text-center" style="display: none;" id="last_button">
 						<?php if(Session::get('is_login')) {?>

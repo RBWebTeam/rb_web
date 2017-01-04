@@ -81,7 +81,6 @@
 			<?php } ?>
 			</div>
 	 </div>
-
 	 </form>
 	  <!-- POP Up code start -->
 	   <div class="col-md-4 liza1">

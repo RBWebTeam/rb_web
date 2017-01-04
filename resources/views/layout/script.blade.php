@@ -788,7 +788,8 @@ function emibreakup(E,P,r,n)
     xd='',
     tempDate = start, 
     monthCount = 1,
-  fdr='<table><thead><tr><th bgcolor="#c2da6b" class="mthy">Month-Year</th><th bgcolor="4A9ACF" class="pa">Principal(A)</th><th bgcolor="2DC6D1" class="int">Interest(B)</th><th bgcolor="BF5850" class="tp">Total Payment(A + B)</th><th bgcolor="D8BC31" class="tbal">Balance</th></tr></thead><tbody>';
+    
+  fdr='<table><h2 class="text-center">Schedule showing payments:</h2><tr><th bgcolor="#c2da6b" class="mthy">Month-Year</th><th bgcolor="4A9ACF" class="pa">Principal(A)</th><th bgcolor="2DC6D1" class="int">Interest(B)</th><th bgcolor="BF5850" class="tp">Total Payment(A + B)</th><th bgcolor="D8BC31" class="tbal">Balance</th></tr><tbody>';
      
     var color='white';
     for(var i=0;i<n;i++)

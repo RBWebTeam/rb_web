@@ -19,7 +19,6 @@ class FormController extends Controller
         'email'    => $req['email']?$req['email']:'',
         'form'    =>$req['form'] 
         );
-
     //put curl code here to save in DB
     $url = "http://beta.erp.rupeeboss.com/CustomerWebRequest.aspx";
     //print "<pre>";

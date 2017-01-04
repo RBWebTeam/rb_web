@@ -40,6 +40,10 @@ class HomeController extends Controller
 		return view('comfy-sales');
 	}
 
+	public function express_loan(){
+		return view('express-loan');
+	}
+
 
 	
 }

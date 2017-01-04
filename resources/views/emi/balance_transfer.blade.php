@@ -268,7 +268,8 @@ h4.great {
 										<div class="form-control" style="margin-bottom:14px; height:50px; position:relative;">
 											<span type="name" class="form-input-new" required></span>
 											<span class="highlight"></span><span class="bar"></span>
-											<label class="form-label-new">Present EMI</label>
+											
+											<span style="position: absolute; z-index: 999; margin: 1px 0 0 8px; font-size: 10px; color: #0281ca;">Present EMI</span>
 											<h4 class="em1 pull-right">₹ <b><span id="emi">0</span></b></h4>
 											<div class="clear"></div>
 										</div>
@@ -277,7 +278,8 @@ h4.great {
 										<div class="form-control" style="margin-bottom:14px; height:50px; position:relative;">
 											<span type="name" class="form-input-new" required ></span>
 											<span class="highlight"></span><span class="bar"></span>
-											<label class="form-label-new">EMI Reduction</label>
+										
+											<span style="position: absolute; z-index: 999; margin: 1px 0 0 8px; font-size: 10px; color: #0281ca;">EMI Reduction</span>
 											<h4 class="em5 pull-right">₹ <b><span id="emi3">0</span></b></h4>
 											<div class="clear"></div>
 										</div>
@@ -289,7 +291,8 @@ h4.great {
 										<div class="form-control" style="margin-bottom:14px; height:50px; position:relative;">
 											<span type="name" class="form-input-new" required ></span>
 											<span class="highlight"></span><span class="bar"></span>
-											<label class="form-label-new">New EMI</label>
+										
+											<span style="position: absolute; z-index: 999; margin: 1px 0 0 8px; font-size: 10px; color: #0281ca;">New EMI</span>
 											<h4 class="em6 pull-right">₹ <b><span id="emi4">0</span></b></h4>
 											<div class="clear"></div>
 										</div>
@@ -298,7 +301,8 @@ h4.great {
 										<div class="form-control" style="margin-bottom:14px; height:50px; position:relative;">
 											<span type="name" class="form-input-new"  required></span>
 											<span class="highlight"></span><span class="bar"></span>
-											<label class="form-label-new">Int. Rate Reduction</label>
+											
+											<span style="position: absolute; z-index: 999; margin: 1px 0 0 8px; font-size: 10px; color: #0281ca;">Int. Rate Reduction</span>
 											<h4 class="em7 pull-right"> <b><span id="emi5">0</span>%</b></h4>
 											<div class="clear"></div>
 										</div>
@@ -311,7 +315,7 @@ h4.great {
 									<div class="text-center">
 										<div class="scaling-slider">
 											<div class="pad" style="color:#999;padding-top:5px;">YOUR SAVINGS THROUGH REDUCED INTEREST </div>
-											<div><b><span  id="emi6" style= " font-size:35px;color:#c00000;">₹ 0</span></b></div>
+											<div><b style= " font-size:34px;color:#c00000;">₹ <span  id="emi6" style= " font-size:35px;color:#c00000;">0</span></b></div>
 										</div>
 									</div>
 								</div>

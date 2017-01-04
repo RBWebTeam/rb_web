@@ -9,7 +9,6 @@
         <h4 class="modal-title">Select Your Profession?</h4>
       </div>
       <div class="modal-body">
-      
     <ul>
     <form id="emp_type_form">
 

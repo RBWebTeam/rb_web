@@ -249,6 +249,7 @@
 		<div class="container-fluid white-bg">
 			<div class="row no-margin">
 				<div class="col-md-6 col-md-offset-3 text-center fh5co-heading animate-box">
+				<br>
 					<h2>What you get?</h2>
 					
 				</div>
@@ -331,7 +332,7 @@
 		<div class="container-fluid bg-gray">
 			<div class="row">
 				<div class="col-md-6 col-md-offset-3 text-center fh5co-heading animate-box">
-					<h2>WHO WE ARE</h2>
+					<h2>Who We Are?</h2>
 				
 				</div>
 			</div>

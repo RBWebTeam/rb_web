@@ -31,7 +31,7 @@
 	<body>
 	<div class="hello">
 	<!-- Side bar -->
-	<div class="arrow-don">Hello &nbsp;<i class="icon-hand-stop-o"></i></div>
+	<div class="arrow-don"><i class="icon-hand-stop-o"></i></div>
     <div class="sidebar" style="display:none;">
     <ul>
         <li class="hide-dv"><a href="#"><i class="icon-arrow-left"></i>&nbsp;Hide</a></li>
@@ -39,7 +39,9 @@
          <li class="call-back1" data-toggle="modal" data-target="#myModal1"><a href="#">Talk to us</a></li>
          <li class="call-back2" data-toggle="modal" data-target="#myModal2"><a href="#">Email Us</a></li>
          <li class="call-back3" data-toggle="modal" data-target="#myModal3"><a href="#">Help</a></li>
-         
+
+         <!-- <li class="chat"><a href="#">Live Chat</a></li> --->
+
     </ul>
     </div>
 	
@@ -50,18 +52,17 @@
 	<header id="fh5co-header" role="banner" class="navbar navbar-default navbar-fixed-top">
 	 <div class="container-fluid top-bg">
         <div class="container">
-
+         <div class="col-md-8 hidden-sm">
             <ul class="top-lnk">
                 <li class="hidden-xs"><a href="{{URL::to('/')}}">Home</a></li>
                 <li class="hidden-xs"><a href="{{URL::to('about-us')}}">About Us</a></li>
                 <li class="hidden-xs"><a href="{{URL::to('contact-us')}}">Contact Us</a></li>
-				<li><a href="{{URL::to('contact-us')}}">My Universe </a></li>
-				<li><a href="{{URL::to('contact-us')}}">RBA Login </a></li>
-				<li><a href="{{URL::to('contact-us')}}">Media</a></li>
-                
-                
+				<li><a href="{{URL::to('my-universe')}}">My Universe </a></li>
+				<li><a href="{{URL::to('rba-login')}}">RBA Login </a></li>
+				<li><a href="{{URL::to('media')}}">Media</a></li>
 	            </ul>
-
+               </div>
+			<div class="col-md-4">      
             <ul class="nav-pills pull-right social-icon">
 
                 <li><a href="{{URL::to('https://twitter.com/rupeeboss')}}" title="Twitter"><i class="icon-twitter"></i></a></li>
@@ -71,7 +72,7 @@
                 <li><a href="{{URL::to('contact-us')}}"><i class="icon-phone"></i> 1800-267-629-6	</a></li>
 
             </ul>
-
+          </div>
         </div>
     </div>
 		<div class="container">

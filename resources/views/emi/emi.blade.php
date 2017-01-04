@@ -46,23 +46,7 @@
 </div>
 </div>
 <div class="container">
-  <h2 class="text-center">Schedule showing payments:</h2>
-  <table class="table table-bordered table-striped" id="emipaymenttable">
-
-    <thead>
-      <tr class="tbl-clr">
-        <th bgcolor="#c2da6b" class="col-xs-3 col-md-1" id="yearheader">Year</th>
-
-        <th bgcolor="#4A9ACF" class="col-sm-3 hidden-xs" id="principalheader"><center>Principal</center><center>(A)</center></th>
-        
-        <th bgcolor="2DC6D1" class="col-sm-3 hidden-xs" id="interestheader"><center>Interest</center><center>(B)</center></th>
-        <th bgcolor="BF5850" class="col-sm-3 hidden-xs" id="totalheader"><center>Total Payment</center><center>(A+B)</center></th>
-        <th bgcolor="D8BC31" class="col-xs-4 col-sm-3" id="balanceheader"><center>Balance</center></th>
-      </tr>
-    </thead>
-    <tbody>
-    </tbody>
-  </table>
+<table class="table table-bordered table-striped" id="emipaymenttable"></table>
 </div>
 @include('layout.footer')
 @include('layout.script') 

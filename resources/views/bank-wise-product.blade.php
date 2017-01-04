@@ -52,7 +52,7 @@
 	</div>
 
 	
-    <div class="table-responsive">
+   
 	<div class="container">
 	 <div class="row">
 	   <div class="col-md-12 pad11">
@@ -64,8 +64,10 @@
    -->
 </table>
 </div>
+ 
 
  @foreach($getQuery as  $key=>$value )
+ <div class="table-responsive">
  <div><br>
     <!-- <div class="table-responsive"> -->
 	<table width="100%" border="1" class="tbl">
@@ -102,8 +104,8 @@
    <td><p>Salaried</p></td> 
    <td class="upper" width="17%"><a href="{{URL::to('apply-')}}{{$product}}">Apply Online</a></td>
 
-    <!-- <td rowspan="2"><strong>Specil Features:-</strong> Pre close Fee 0%</td>
-  </tr> -->
+    <td rowspan="2"><strong>Specil Features:-</strong> Pre close Fee 0%</td>
+  </tr>
     <tr>
   <!--   <td><i class="icon-thumbs-up"></i></td> -->
     <td class="upper">  <button type="button" data-toggle="collapse" data-target="#{{$key}}">Know More</button><!-- <a href="#">Know More</a> --></td>
@@ -133,10 +135,12 @@
 </table>
 
 </div>
+</div>
 @endforeach
 
+
 </div></div></div><!-- </div> -->
-</div>
+
 
 	
 	<div class="container">

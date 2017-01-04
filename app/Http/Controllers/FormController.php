@@ -65,7 +65,7 @@ class FormController extends Controller
                   $query->provider=0;
                   $query->created_at=date("Y-m-d H:i:s");
         if($query->save()) {
-                  $req=session()->put('user_status','fresh');
+                  $req->session()->put('user_status','fresh');
                   $req->session()->put('user_id',$query->id);
                   $req->session()->put('is_login',1);
                  

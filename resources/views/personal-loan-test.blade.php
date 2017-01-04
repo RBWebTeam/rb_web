@@ -70,7 +70,7 @@
 			<div class="col-md-12 text-center animate-box cont" style="display:none;" id="q9" >
 				<form action={{URL('search/autocomplete')}} method="POST" >
 	             <h3>I have been living in
-				<input type="text" class="search_city input-pad" id='city_name' name='city_name' onkeypress="changeTest('city_name','step_3_btn')" placeholder='your city'>city
+				<input type="text" class="search_city input-pad" id='city_name' name='city_name' onkeyup="changeTest('city_name','step_3_btn')" placeholder='your city'>city
 				</form>
 			</div>
 			<div class="text-center" style="display: none;" id="step_3_btn">

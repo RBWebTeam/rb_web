@@ -3,11 +3,15 @@
 	<aside id="fh5co-hero">
 	<div class=""></div>
 		<div class="flexslider col-md-12">
+
 		<div class="pull-right mar-tp ">
 		<a href="{{URL::to('comfy-sales
 		')}}" class="img2"><img src="images/sliding-right-img-2.png" class="img-responsive"/></a>
-		  <a href="Expressloan.php" class="img3"><img src="images/sliding-right-img-1.png" class="img-responsive"/></a>
-		   <a href="Savingac.php" class="img4"><img src="images/sliding-right-img-3.png" class="img-responsive"/></a>
+
+		  <a href="{{URL::to('contact-us
+		')}}" class="img3"><img src="images/sliding-right-img-1.png" class="img-responsive"/></a>
+		   <a href="{{URL::to('contact-us
+		')}}" class="img4"><img src="images/sliding-right-img-3.png" class="img-responsive"/></a>
 		</div>
 			<ul class="slides">
 		   	<li style="background-image: url(images/slide_1.png);">
@@ -15,7 +19,7 @@
 		   		  <br>
 		   			<div class="slider-text">
 		   				<div class="slider-text-inner">
-		   				 <img src="images/home-ic.png" class="center-img-align" />
+		   				 <img src="images/home-ic.png" class="center-img-align img-responsive" />
 		   					<h2 class="slide-head">Home Loan </h2>
 							<h5>Stay ahead of the curve with the Best in the Market</h5>
 		   					<p><a href="{{URL::to('home-loan')}}" class="btn btn-primary btn-lg">View More</a></p>
@@ -27,7 +31,7 @@
 		   		  <br>
 		   			<div class="slider-text">
 		   				<div class="slider-text-inner">
-		   				<img src="images/personal-ic.png" class="center-img-align" />
+		   				<img src="images/personal-ic.png" class="center-img-align img-responsive" />
 		   					<h2 class="slide-head">Personal Loan</h2>
 							<h5>Stay ahead of the curve with the Best in the Market</h5>
 		   					<p><a href="{{URL::to('personal-loan')}}" class="btn btn-primary btn-lg">View More</a></p>
@@ -39,7 +43,7 @@
 		   		   <br>
 		   			<div class="slider-text">
 		   				<div class="slider-text-inner">
-		   				<img src="images/lap-ic.png" class="center-img-align" />
+		   				<img src="images/lap-ic.png" class="center-img-align img-responsive" />
 		   					<h2 class="slide-head"> Loan against Property</h2>
 							<h5>Stay ahead of the curve with the Best in the Market</h5>
 		   					<p><a href="{{URL::to('loan-against-property')}}" class="btn btn-primary btn-lg">View More</a></p>
@@ -51,7 +55,7 @@
 		   		    <br>
 		   			<div class="slider-text">
 		   				<div class="slider-text-inner">
-		   				<img src="images/sme-ic.png" class="center-img-align" />
+		   				<img src="images/sme-ic.png" class="center-img-align img-responsive" />
 		   					<h2 class="slide-head">SME Loan</h2>
 							<h5>Stay ahead of the curve with the Best in the Market</h5>
 		   					<p><a href="{{URL::to('sme-loan')}}" class="btn btn-primary btn-lg">View More</a></p>
@@ -63,7 +67,7 @@
 		   		    <br>
 		   			<div class="slider-text">
 		   				<div class="slider-text-inner">
-		   				<img src="images/balance-ic.png" class="center-img-align" />
+		   				<img src="images/balance-ic.png" class="center-img-align img-responsive" />
 		   					<h2 class="slide-head">Business Loan</h2>
 							<h5>Stay ahead of the curve with the Best in the Market</h5>
 		   					<p><a href="{{URL::to('business-loan')}}" class="btn btn-primary btn-lg">View More</a></p>
@@ -75,7 +79,7 @@
 		   		  <br>
 		   			<div class="slider-text">
 		   				<div class="slider-text-inner">
-		   				<img src="images/car-ic.png" class="center-img-align" />
+		   				<img src="images/car-ic.png" class="center-img-align img-responsive" />
 		   					<h2 class="slide-head">Car Loan</h2>
 							<h5>Stay ahead of the curve with the Best in the Market</h5>
 		   					<p><a href="{{URL::to('car-loan')}}" class="btn btn-primary btn-lg">View More</a></p>
@@ -85,7 +89,14 @@
 		   	</li>
 		  	</ul>
 	  	</div>
-		 <!-- <div class="col-md-4 red-bg">
+		<!--<div class="col-md-12 ">
+		 <div class="pull-right mar-tp ">
+		<a href="rupeebosscomfy.php" class="img2"><img src="images/sliding-right-img-2.png" class="img-responsive"/></a>
+		  <a href="Expressloan.php" class="img3"><img src="images/sliding-right-img-1.png" class="img-responsive"/></a>
+		   <a href="Savingac.php" class="img4"><img src="images/sliding-right-img-3.png" class="img-responsive"/></a>
+		</div>
+		</div>
+		  <div class="col-md-4 red-bg">
 	   <div class="form-in">
              <div class="trapezium1"> 
               <span class="head-1">Compare, Research & Buy<span>
@@ -229,7 +240,7 @@
 												
 						</div>
 					</div>
-					<div class="col-md-4 left-lin"><img src="images/Report.png" class="img-responsive;" /><button class="btn btn-primary btn-outline with-arrow top-mrg">Apply For Credit Report<i class="icon-arrow-right"></i></button></div>
+					<div class="col-md-4 left-lin"><img src="images/Report.png" class="img-responsive hidden-sm" /><button class="btn btn-primary btn-outline with-arrow top-mrg">Apply For Credit Report<i class="icon-arrow-right"></i></button></div>
                    <div class="col-md-1"></div>
 			</div>
 		</div>

@@ -67,7 +67,7 @@
                 <li><a href="{{URL::to('https://twitter.com/rupeeboss')}}" title="Twitter"><i class="icon-twitter"></i></a></li>
                 <li><a href="{{URL::to('https://www.facebook.com/rupeeboss')}}" title="Facebook"><i class="icon-facebook"></i></a></li>
                 <li><a href="{{URL::to('https://plus.google.com/112574970643410375765')}}" title="GooglePlus"><i class="icon-google-plus"></i></a></li>
-                <li><a href="#" title="instagram"><i class="icon-instagram"></i></a></li>
+                <!-- <li><a href="#" title="instagram"><i class="icon-instagram"></i></a></li> -->
                 <li><a href="{{URL::to('contact-us')}}"><i class="icon-phone"></i> 1800-267-629-6	</a></li>
 
             </ul>
@@ -107,9 +107,9 @@
 						 
 						 <ul class="dropdown-menu">
 						    <li>
-							<a href="{{URL::to('home-loan')}}">Home Loan</a>
-							<a href="{{URL::to('personal-loan')}}">Personal Loan</a>
-							<a href="{{URL::to('loan-against-property')}}">Loan Against Property</a>
+							<a href="{{URL::to('home-loan-transfer')}}">Home Loan</a>
+							<a href="{{URL::to('home-loan-transfer')}}">Personal Loan</a>
+							<a href="{{URL::to('home-loan-transfer')}}">Loan Against Property</a>
 							</li>
 							</ul>					   
 					

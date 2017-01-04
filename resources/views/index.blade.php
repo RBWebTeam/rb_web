@@ -8,8 +8,10 @@
 		<a href="{{URL::to('comfy-sales
 		')}}" class="img2"><img src="images/sliding-right-img-2.png" class="img-responsive"/></a>
 
-		  <a href="Expressloan.php" class="img3"><img src="images/sliding-right-img-1.png" class="img-responsive"/></a>
-		   <a href="Savingac.php" class="img4"><img src="images/sliding-right-img-3.png" class="img-responsive"/></a>
+		  <a href="{{URL::to('contact-us
+		')}}" class="img3"><img src="images/sliding-right-img-1.png" class="img-responsive"/></a>
+		   <a href="{{URL::to('contact-us
+		')}}" class="img4"><img src="images/sliding-right-img-3.png" class="img-responsive"/></a>
 		</div>
 			<ul class="slides">
 		   	<li style="background-image: url(images/slide_1.png);">

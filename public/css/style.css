@@ -1662,4 +1662,7 @@ input[type="radio"] {margin:0px;}
 .no-margin{
 	margin:0px;
 }
-
+.center-blg img {
+    margin: 0 auto;
+    margin-bottom: 5px;
+}

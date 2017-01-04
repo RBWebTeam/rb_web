@@ -13,8 +13,8 @@
     <ul>
     <form id="emp_type_form">
 
-        <li><span><input type="radio" name="emp_type" data-value="1" value="salaried"  onclick="changeTest(this,'q2');" /></span>&nbsp; salaried</li>
-      <li><span><input type="radio" name="emp_type" data-value="2" value="self-employed"  onclick="changeTest(this,'q2_year');"/></span>&nbsp; self-employed </li>
+        <li><span><input type="radio" name="emp_type" data-value="1" value="salaried"  onclick="changeTest_new(this,'q2');" /></span>&nbsp; salaried</li>
+      <li><span><input type="radio" name="emp_type" data-value="2" value="self-employed"  onclick="changeTest_new(this,'q2_year');"/></span>&nbsp; self-employed </li>
       </form>
       </ul>
       
@@ -41,8 +41,8 @@
     <ul>
     <form id="obligation_form">
 
-        <li><span><input type="radio" name="obligation_type" value="yes"  onclick="changeTest(this,'q4');" /></span>&nbsp; YES</li>
-      <li><span><input type="radio" name="obligation_type" value="no"  onclick="changeTest(this,'q5');"/></span>&nbsp; NO </li>
+        <li><span><input type="radio" name="obligation_type" value="yes"  onclick="changeTest_new(this,'q4');" /></span>&nbsp; YES</li>
+      <li><span><input type="radio" name="obligation_type" value="no"  onclick="changeTest_new(this,'q5');"/></span>&nbsp; NO </li>
       </form>
       </ul>
       

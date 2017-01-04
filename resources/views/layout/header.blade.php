@@ -29,7 +29,7 @@
 	<!-- <link rel="manifest" href="{{URL::to('extension/manifest.json')}}"> -->
 	</head>
 	<body>
-	<div class="hello">
+	
 	<!-- Side bar -->
 	<div class="arrow-don"><i class="icon-hand-stop-o"></i></div>
     <div class="sidebar" style="display:none;">
@@ -57,9 +57,9 @@
                 <li class="hidden-xs"><a href="{{URL::to('/')}}">Home</a></li>
                 <li class="hidden-xs"><a href="{{URL::to('about-us')}}">About Us</a></li>
                 <li class="hidden-xs"><a href="{{URL::to('contact-us')}}">Contact Us</a></li>
-				<li><a href="{{URL::to('my-universe')}}">My Universe </a></li>
-				<li><a href="{{URL::to('rba-login')}}">RBA Login </a></li>
-				<li><a href="{{URL::to('media')}}">Media</a></li>
+				<li><a href="{{URL::to('contact-us')}}">Employee Login </a></li>
+				<li><a href="{{URL::to('contact-us')}}">RBA Login </a></li>
+				<li><a href="{{URL::to('contact-us')}}">Media</a></li>
 	            </ul>
                </div>
 			<div class="col-md-4">      
@@ -101,9 +101,25 @@
 							</li>
 						</ul>
 						</li>
+
+						<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" data-target="#">Retail Loan</a>
+
+						<ul class="dropdown-menu">
+						<li>
+							<a href="{{URL::to('apply-home-loan')}}">Home Loan</a>
+							<a href="{{URL::to('apply-loan-against-property')}}">Loan Against Property</a>
+							<a href="{{URL::to('apply-personal-loan')}}">Personal Loan</a>
+							<a href="{{URL::to('apply-car-loan')}}">Car Loan</a>
+
+						</li>
+							
+
+						</ul>
+
+
 						
 						<li><a href="{{URL::to('contact-us')}}">Credit Card</a></li>
-						<!-- <li><a href="#">Balance Transfer</a></li> -->
+						
 						 <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" data-target="#">Balance Transfer</a>
 						 
 						 <ul class="dropdown-menu">
@@ -114,7 +130,8 @@
 							</li>
 							</ul>					   
 					        </li>
-							<li></li>
+							
+
 
 							<?php if(Session::get('is_login')){
 							?>

@@ -167,9 +167,10 @@
           </div>  
         <div class="col-md-12">
           <div class="row pad11 white-bg comp-pg">
-  <div class="table-responsive">
-<table  id="tables"  width="100%" border="1" class="table-bordered" align="center" sty>
-  
+  <div class="table-responsive" >
+  <a href="#" id="backid" class="btn btn-primary btn-outline with-arrow ">Back</a>
+<table  id="tables"   border="1" style="margin: auto;">
+
 <tbody style='float:left; '>
 <tr><td>Bank Name </td></tr>
 <tr><td>Loan Amount</td></tr>
@@ -178,7 +179,6 @@
 <tr><td>Processing Fee</td></tr>
 <tr><td>Pre closed Fee</td></tr>
 </tbody>
-
 </table>
 </div>
    
@@ -237,6 +237,7 @@ $('input[name="checkbox"]').change(function(){
   
 });
 
+//  if bank name cut  than remove bank name and unselect check box
 $(document).ready(function () {
     $(document).on('click', '.btnspan', function () {
          var id=$(this).closest("div").attr("id");
@@ -251,14 +252,19 @@ $(document).ready(function () {
 
 });
 
+// show hide btn
 $(document).on('click','#btncompare',function(e){
 $('.fclass1').show();
 $("html, body").animate({
         scrollTop: 0
     }, 600);
-
 $('.fclass').hide();
 $('#compID').hide();
+});
+$(document).on('click','#backid',function(e){
+$('.fclass1').hide();
+$('.fclass').show();
+$('#compID').show();
 });
 
 

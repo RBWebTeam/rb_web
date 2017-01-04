@@ -74,7 +74,7 @@
           {{ csrf_field() }}
 
                <div><fieldset>
-        <input class="newsletter-name" name="name"  placeholder="Name" required >
+        <input class="newsletter-name" name="name"  placeholder="Name"  >
          <div  class="text-danger" id="errorName"></div>
           </fieldset>
          
@@ -116,7 +116,7 @@
         <div class="modal-footer">
                            <button type="button" class="btn btn-default" data-dismiss="modal">Close
                            </button>
-                            <div style="float: left;" id="Login-here">   <a href="#"  onclick="backf()"> Login here</a>
+                            <div style="float: left;" id="Login-here" class="btn btn-primary btn-outline with-arrow">   <a href="#"  onclick="backf()"> Login here</a>
                             </div>
         </div>
 

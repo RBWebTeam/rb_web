@@ -788,7 +788,7 @@ function emibreakup(E,P,r,n)
     xd='',
     tempDate = start, 
     monthCount = 1,
-  fdr='<table><thead><tr><th bgcolor="#c2da6b" class="mthy">Month-Year</th><th bgcolor="4A9ACF" class="pa">Principal(A)</th><th bgcolor="2DC6D1" class="int">Interest(B)</th><th bgcolor="BF5850" class="tp">Total Payment(A + B)</th><th bgcolor="D8BC31" class="tbal">Balance</th></tr></thead><tbody>';
+  fdr='<table><h2 class="text-center">Schedule showing payments:</h2><tr><th bgcolor="#c2da6b" class="mthy">Month-Year</th><th bgcolor="4A9ACF" class="pa">Principal(A)</th><th bgcolor="2DC6D1" class="int">Interest(B)</th><th bgcolor="BF5850" class="tp">Total Payment(A + B)</th><th bgcolor="D8BC31" class="tbal">Balance</th></tr><tbody>';
      
     var color='white';
     for(var i=0;i<n;i++)
@@ -826,6 +826,164 @@ function emibreakup(E,P,r,n)
     }
   </script>
 <!-- emi scripts end -->
+
+<!-- adding new scripts for loan form process -->
+<script>
+     function changeTest_new(obj,val){
+        document.getElementById(val).style.display='block';
+        $('#pop1').empty();
+        //console.log(obj+" "+val);
+        if(val=='q2'){
+          $('#self_q').hide();
+          $('#self_q2').hide();
+          $('#self_q3').hide();
+          $("#q2_year").hide();
+          $('#profit').val('');
+          $('#depreciation').val('');
+          $('#remuneration').val('');
+          $("#income_year").val('');
+          $('#pop1').append( "<p>Enter your net Income</p>" );
+        }else  if(val=='q5'){
+            $('#pop1').empty();
+            $('#pop1').append( "<p>Loan amount you wants to borrow</p>" );
+            $("#q4").hide();
+        }else  if(val=='q2_year'){
+          $('#pop1').append( "<p>Enter your net turnover</p>" );
+          $("#q2").hide();
+          $('#income').val('');
+        }else if(val=='co_sal'){
+           $('#co_self').hide();
+          $('#co_self_q2').hide();
+          $('#co_self_q3').hide();
+          $('#co_profit_all').hide();
+          $('#co_profit').val('');
+          $('#co_depreciation').val('');
+          $("#co_income_year").val('');
+          $('#co_remuneration').val('');
+        }else if(val=='co_self'){
+          $('#co_sal').hide();
+          $('#income').val('');
+          $('#pop1').empty();
+          $('#pop1').append( "<p>Enter your net Income</p>" );
+        }else if(val=='q8'){
+          $('#pop1').append( "<p>Enter your valid pancard number</p>" )
+        }else{
+            $('#pop1').append( "<p>Please Proceed</p>" );
+        }
+        return false;
+      }
+
+
+       function changeDiv_new(prv,nxt){
+
+        //alert(obj.options[obj.selectedIndex].value);
+
+        document.getElementById(prv).style.display='none';
+        document.getElementById(nxt).style.display='block';
+        $('#pop1').empty();
+        if(nxt=='step-2'){
+          $('#pop1').append( "<p>Where do you work?</p>" );   
+        }else if(nxt=='step-3'){
+          $('#pop1').append( "<p>Tell us about the your residence</p>" );   
+        }else if(nxt=='start-2'){
+          $('#pop1').append( "<p>Living in city since?</p>" );   //of car loan by praveen
+        }else{
+          $('#pop1').append( "<p>Great! please fill this form too</p>" );
+        }
+        window.scrollTo(0, 0);
+        return false;
+      }
+
+            function changeText_new(obj,val){
+            $("#"+obj).keyup(function() {
+            //pan card validation
+            
+                  if(obj=='card'){
+                   var str =$('#card').val();
+                   var pancardPattern = /^([a-zA-Z]{5})(\d{4})([a-zA-Z]{1})$/;
+                   var res = str.match(pancardPattern);
+                   if(res){
+                        $('#pop1').empty();
+                        $('#pop1').append( "<p>Great!! tell us more</p>" );
+                         document.getElementById(val).style.display='block';
+                   }else{
+                        $('#pop1').empty();
+                        $('#pop1').append( "<p>Enter correct pan card number</p>" );
+                        document.getElementById(val).style.display='none';
+                   }
+                   return false;
+                  }
+
+                //Rest code for text fields with numbers
+                  var x=$(this).val().length ;
+                  if ((obj=='loan_tenure')||((obj=='total_sal' || obj=='loan') && x>6) ||(x>=5 && x<=8) ) {
+                      document.getElementById(val).style.display='block';
+                      return false;
+                  }
+                else {
+                  if(x>8){
+                        $('#pop1').empty();
+                        $('#pop1').append( "<p>We dont provide that much of loan.</p>" );
+                  } if(obj=='annual_receipt' ||  obj=='total_emi'){
+                        document.getElementById(val).style.display='block';
+                        $('#pop1').empty();
+                        $('#pop1').append( "<p>Please Proceed</p>" );
+                  }if(x<5){
+                        document.getElementById(val).style.display='none';
+                  }if(obj=='pincode'){
+                        document.getElementById(val).style.display='block';
+                        $('#pop1').empty();
+                        $('#pop1').append( "<p>Enter your  pincode</p>" );
+                  }if(x<6){
+                        document.getElementById(val).style.display='none';
+                  }
+                  return false;
+                }
+                 
+            });
+
+      $('#pop1').empty();
+      if(val=='q3'){
+           $('#pop1').append( "<p>Do you have any existing loan</p>" );
+        }else if(val=='exp'){
+          $('#pop1').append( "<p>Entr your expierience in current company</p>" );
+        }else if(val=='total_exp'){
+          $('#pop1').append( "<p>Entr your total expierience</p>" );
+        }else if(val=='desired_amt'){ 
+        //business loan script//
+          $('#pop1').append( "<p>Enter your desired loan amount</p>" );
+        }else if(val=='residence'){
+          $('#pop1').append( "<p>Where do you reside and since when</p>" );
+        }else if(val=='date_birth'){
+          $('#pop1').append( "<p>I wonder if your birthday is today</p>" );
+        }else if(val=='residence_pincode'){
+          $('#pop1').append( "<p>Enter your residence pincode</p>" );
+        }else if(val=='q6'){
+          $('#pop1').append( "<p>Enter your loan tenure</p>" );
+        }else if(val=='q7'){
+          $('#pop1').append( "<p>I wonder if your birthday is today</p>" );
+        }else if(val=='self_q'){
+          $('#pop1').append( "<p>I wonder if your birthday is today</p>" );
+        }else{
+          $('#pop1').append( "<p>Please go on</p>" );
+        }
+}
+
+</script>
+<!-- new process script ends -->
+<!-- co applicant script for new process -->
+<script>
+
+$(document).ready(function(){
+    $("#co_button").click(function(){
+        $("#have_co_applicant").val("yes");
+    });
+    $("#no_co_app").click(function(){
+        $("#have_co_applicant").val("no");
+    });
+});
+</script>
+<!-- co script ends -->
 	</body>
 </html>
 <!-- login Start-->

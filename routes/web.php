@@ -71,6 +71,7 @@ Route::get('disclaimer-page','HomeController@disclaimer');
 Route::get('privacy-policy-page','HomeController@privacy_policy');
 Route::get('balance-transfer','CompareController@switchme_mobile');
 Route::get('comfy-sales','HomeController@comfy_sales');
+Route::get('express-loan','HomeController@express_loan');
 
 
 

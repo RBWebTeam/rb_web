@@ -80,12 +80,13 @@
 								<input type="date" id="dob" name="dob" class="input-pad company-nm1" onchange="changeTest_new(this,'q9')">
 							</h3>
 						</div>
-						<div class="col-md-12 text-center animate-box cont" style="display:none;" id="q9" >
 						
-				             <h3>I have been living in
-							<input type="text" class="search_city input-pad" id='city_name' name='city_name' onkeypress="changeTest_new('city_name','step_2_btn')" placeholder='your city'> city</h3>
-							
-						</div>
+						<div class="col-md-12 text-center animate-box cont" style="display:none;" id="q9" >
+						<form action={{URL('search/autocomplete')}} method="POST" >
+			             <h3>I have been living in
+						<input type="text" class="search_city input-pad" id='city_name' name='city_name' onkeyup="changeTest('city_name','step_2_btn')" placeholder='your city'>city</h3>
+						</form>
+					</div>
 						
 
 						<div class="text-center" style="display: none;" id="step_2_btn">

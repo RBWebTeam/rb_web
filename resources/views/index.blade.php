@@ -10,7 +10,7 @@
 
 		  <a href="{{URL::to('express-loan
 		')}}" class="img3"><img src="images/sliding-right-img-1.png" class="img-responsive"/></a>
-		   <a href="{{URL::to('comfy-sales
+		   <a href="{{URL::to('contact-us
 		')}}" class="img4"><img src="images/sliding-right-img-3.png" class="img-responsive"/></a>
 		</div>
 			<ul class="slides">

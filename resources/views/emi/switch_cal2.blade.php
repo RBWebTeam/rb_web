@@ -3,8 +3,8 @@
                       <p>Remaning Tenure</p>
                     </div>
                   </center>
-                <a href="#">
-                    </a>
+                <!-- <a href="#">
+                    </a> -->
   <?php 
   $loanamount =(float)$sata['loanamount'];
   $loaninterest =(float)$sata['loaninterest'];
@@ -60,7 +60,7 @@ foreach ($data as $key => $value){?>
                       </div>
                       <div class="loan-floating">
                         <p>PROCESSING FEE</p>
-                        <h7>{{ $value['pf']}} &nbsp; {{ $value['pf_type']}}</h7>
+                        <h7>{{ $value['pf']}} &nbsp; ({{ $value['pf_type']}})</h7>
                         
                       </div>
                     </td>

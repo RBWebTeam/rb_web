@@ -39,7 +39,7 @@
          <li class="call-back1" data-toggle="modal" data-target="#myModal1"><a href="#">Talk to us</a></li>
          <li class="call-back2" data-toggle="modal" data-target="#myModal2"><a href="#">Email Us</a></li>
          <li class="call-back3" data-toggle="modal" data-target="#myModal3"><a href="#">Help</a></li>
-         <li class="chat"><a href="#">Live Chat</a></li>
+         
     </ul>
     </div>
 	

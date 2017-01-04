@@ -27,12 +27,6 @@ Route::post('loan-submit','FormController@p_loan_submit');
 
 Route::get('apply-car-loan','LoanController@apply_car_loan');
 Route::get('apply-business-loan','LoanController@apply_business_loan');
-
-//Route::get('home-loans/{id}', 'HomeController@footercontent');
-//Route::get('personal-loans/{id}', 'HomeController@footercontent');
-//Route::get('sme-loans/{id}', 'HomeController@footercontent');
-//Route::getallheaders(oid)t('business-loans/{id}', 'HomeController@footercontent');
-
 Route::post('otp','FormController@otp');
 Route::post('otp_verify','FormController@otp_verify');
 Route::get('bank','BankController@index');

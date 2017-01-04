@@ -19,8 +19,8 @@ class ProfileController extends Controller
       { 
 
         $get_id=Session::get('user_id');
-            $query=DB::table('user_registration')->where('id','=',$get_id)->first();
-            $cquery=DB::table('customer_details')->where('user_id','=',$get_id)->first();
+        $query=DB::table('user_registration')->where('id','=',$get_id)->first();
+        $cquery=DB::table('customer_details')->where('user_id','=',$get_id)->first();
 
           return view('my-profile',['query'=>$query,'cquery'=>$cquery]);
       }else{

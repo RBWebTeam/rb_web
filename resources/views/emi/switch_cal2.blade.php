@@ -37,7 +37,7 @@ foreach ($data as $key => $value){?>
 
   }
     ?>
- 
+     <div class="table-responsive">
     <table class="table table-bordered">
                   <tbody><tr><td class="td-main-1" width="146">
                       <img src="images/logo-aditya-birla.png" class="img-responsive">
@@ -81,6 +81,7 @@ foreach ($data as $key => $value){?>
                             
               </tbody>
               </table>
+              </div>
           
 
 

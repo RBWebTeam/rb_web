@@ -29,7 +29,7 @@
 	<!-- <link rel="manifest" href="{{URL::to('extension/manifest.json')}}"> -->
 	</head>
 	<body>
-	<div class="hello">
+	
 	<!-- Side bar -->
 	<div class="arrow-don"><i class="icon-hand-stop-o"></i></div>
     <div class="sidebar" style="display:none;">
@@ -104,7 +104,7 @@
 						
 						<li><a href="{{URL::to('contact-us')}}">Credit Card</a></li>
 						<!-- <li><a href="#">Balance Transfer</a></li> -->
-						 <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" data-target="#">Balance Transfer</a>
+						 <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" data-target="#">Balance Transfer</a></li>
 						 
 						 <ul class="dropdown-menu">
 						    <li>

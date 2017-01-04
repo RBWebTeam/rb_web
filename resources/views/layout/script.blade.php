@@ -826,16 +826,13 @@ function emibreakup(E,P,r,n)
     }
   </script>
 <!-- emi scripts end -->
+
 <!-- adding new scripts for loan form process -->
 <script>
      function changeTest_new(obj,val){
-
-        //alert(obj.options[obj.selectedIndex].value);
-        
-
         document.getElementById(val).style.display='block';
-        
         $('#pop1').empty();
+        //console.log(obj+" "+val);
         if(val=='q2'){
           $('#self_q').hide();
           $('#self_q2').hide();
@@ -896,53 +893,54 @@ function emibreakup(E,P,r,n)
         window.scrollTo(0, 0);
         return false;
       }
-            function changeText_new(obj,val){
-        $("#"+obj).keyup(function() {
-            //pan card validation
-            if(obj=='card'){
-             var str =$('#card').val();
-             var pancardPattern = /^([a-zA-Z]{5})(\d{4})([a-zA-Z]{1})$/;
-             var res = str.match(pancardPattern);
-             if(res){
-              $('#pop1').empty();
-              $('#pop1').append( "<p>Great!! tell us more</p>" );
-               document.getElementById(val).style.display='block';
-             }else{
-              $('#pop1').empty();
-              $('#pop1').append( "<p>Enter correct pan card number</p>" );
-              document.getElementById(val).style.display='none';
-             }
-             return false;
-        }
 
-          //Rest code for text fields with numbers
-            var x=$(this).val().length ;
-           
-            if ((obj=='loan_tenure')||((obj=='total_sal' || obj=='loan') && x>6) ||(x>=5 && x<=8) ) {
-              document.getElementById(val).style.display='block';
-            return false;
-          }
-          else {
-            if(x>8){
-            $('#pop1').empty();
-            $('#pop1').append( "<p>We dont provide that much of loan.</p>" );
-            } if(obj=='annual_receipt' ||  obj=='total_emi'){
-                document.getElementById(val).style.display='block';
-                $('#pop1').empty();
-                $('#pop1').append( "<p>Please Proceed</p>" );
-            }if(x<5){
-            document.getElementById(val).style.display='none';
-           }if(obj=='pincode'){
-                document.getElementById(val).style.display='block';
-                $('#pop1').empty();
-                $('#pop1').append( "<p>Enter your  pincode</p>" );
-            }if(x<6){
-            document.getElementById(val).style.display='none';
-           }
-            return false;
-          }
-           
-      });
+            function changeText_new(obj,val){
+            $("#"+obj).keyup(function() {
+            //pan card validation
+            
+                  if(obj=='card'){
+                   var str =$('#card').val();
+                   var pancardPattern = /^([a-zA-Z]{5})(\d{4})([a-zA-Z]{1})$/;
+                   var res = str.match(pancardPattern);
+                   if(res){
+                        $('#pop1').empty();
+                        $('#pop1').append( "<p>Great!! tell us more</p>" );
+                         document.getElementById(val).style.display='block';
+                   }else{
+                        $('#pop1').empty();
+                        $('#pop1').append( "<p>Enter correct pan card number</p>" );
+                        document.getElementById(val).style.display='none';
+                   }
+                   return false;
+                  }
+
+                //Rest code for text fields with numbers
+                  var x=$(this).val().length ;
+                  if ((obj=='loan_tenure')||((obj=='total_sal' || obj=='loan') && x>6) ||(x>=5 && x<=8) ) {
+                      document.getElementById(val).style.display='block';
+                      return false;
+                  }
+                else {
+                  if(x>8){
+                        $('#pop1').empty();
+                        $('#pop1').append( "<p>We dont provide that much of loan.</p>" );
+                  } if(obj=='annual_receipt' ||  obj=='total_emi'){
+                        document.getElementById(val).style.display='block';
+                        $('#pop1').empty();
+                        $('#pop1').append( "<p>Please Proceed</p>" );
+                  }if(x<5){
+                        document.getElementById(val).style.display='none';
+                  }if(obj=='pincode'){
+                        document.getElementById(val).style.display='block';
+                        $('#pop1').empty();
+                        $('#pop1').append( "<p>Enter your  pincode</p>" );
+                  }if(x<6){
+                        document.getElementById(val).style.display='none';
+                  }
+                  return false;
+                }
+                 
+            });
 
       $('#pop1').empty();
       if(val=='q3'){

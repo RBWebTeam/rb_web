@@ -13,8 +13,8 @@
     <ul>
     <form id="emp_type_form">
 
-        <li><span><input type="radio" name="emp_type" data-value="1" value="salaried"  onclick="changeTest(this,'q2');" /></span>&nbsp; salaried</li>
-      <li><span><input type="radio" name="emp_type" data-value="2" value="self-employed"  onclick="changeTest(this,'q2_year');"/></span>&nbsp; self-employed </li>
+        <li><span><input type="radio" name="emp_type" data-value="1" value="salaried"  onclick="changeTest_new(this,'q2');" /></span>&nbsp; salaried</li>
+      <li><span><input type="radio" name="emp_type" data-value="2" value="self-employed"  onclick="changeTest_new(this,'q2_year');"/></span>&nbsp; self-employed </li>
       </form>
       </ul>
       
@@ -41,8 +41,8 @@
     <ul>
     <form id="obligation_form">
 
-        <li><span><input type="radio" name="obligation_type" value="yes"  onclick="changeTest(this,'q4');" /></span>&nbsp; YES</li>
-      <li><span><input type="radio" name="obligation_type" value="no"  onclick="changeTest(this,'q5');"/></span>&nbsp; NO </li>
+        <li><span><input type="radio" name="obligation_type" value="yes"  onclick="changeTest_new(this,'q4');" /></span>&nbsp; YES</li>
+      <li><span><input type="radio" name="obligation_type" value="no"  onclick="changeTest_new(this,'q5');"/></span>&nbsp; NO </li>
       </form>
       </ul>
       
@@ -69,8 +69,8 @@
     <ul>
     <form id="gender_form">
 
-        <li><span><input type="radio" name="gender_type" value="male"  onclick="changeTest(this,'q8');" /></span>&nbsp; Male</li>
-      <li><span><input type="radio" name="gender_type" value="female"  onclick="changeTest(this,'q8');"/></span>&nbsp; Female </li>
+        <li><span><input type="radio" name="gender_type" value="male"  onclick="changeTest_new(this,'q8');" /></span>&nbsp; Male</li>
+      <li><span><input type="radio" name="gender_type" value="female"  onclick="changeTest_new(this,'q8');"/></span>&nbsp; Female </li>
       </form>
       </ul>
       
@@ -97,8 +97,8 @@
     <ul>
     <form id="co_emp_type_form">
 
-        <li><span><input type="radio" name="co_emp_type" data-value="1" value="salaried"  onclick="changeTest(this,'co_sal');" /></span>&nbsp; salaried</li>
-      <li><span><input type="radio" name="co_emp_type" data-value="2" value="self-employed"  onclick="changeTest(this,'co_self');"/></span>&nbsp; self-employed </li>
+        <li><span><input type="radio" name="co_emp_type" data-value="1" value="salaried"  onclick="changeTest_new(this,'co_sal');" /></span>&nbsp; salaried</li>
+      <li><span><input type="radio" name="co_emp_type" data-value="2" value="self-employed"  onclick="changeTest_new(this,'co_self');"/></span>&nbsp; self-employed </li>
       </form>
       </ul>
       
@@ -125,8 +125,8 @@
     <ul>
     <form id="have_co_form">
 
-        <li><span><input type="radio" name="have_co_app" value="YES"  onclick="changeTest(this,'step_2_btn');" /></span>&nbsp; YES</li>
-      <li><span><input type="radio" name="have_co_app" value="NO"  onclick="changeTest(this,'step_2_btn');"/></span>&nbsp; NO </li>
+        <li><span><input type="radio" name="have_co_app" value="YES"  onclick="changeTest_new(this,'step_2_btn');" /></span>&nbsp; YES</li>
+      <li><span><input type="radio" name="have_co_app" value="NO"  onclick="changeTest_new(this,'step_2_btn');"/></span>&nbsp; NO </li>
       </form>
       </ul>
       

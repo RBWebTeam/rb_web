@@ -13,8 +13,8 @@
     <ul>
     <form id="emp_type_form">
 
-        <li><span><input type="radio" name="emp_type" data-value="1" value="salaried"  onclick="changeTest_new(this,'q2');" /></span>&nbsp; salaried</li>
-      <li><span><input type="radio" name="emp_type" data-value="2" value="self-employed"  onclick="changeTest_new(this,'q2_year');"/></span>&nbsp; self-employed </li>
+        <li><span><input type="radio" name="emp_type" data-value="1" id="salari_ed" value="salaried"  onclick="changeTest_new(this,'q2');" /></span>&nbsp; <label for="salari_ed"> salaried</label></li>
+      <li><span><input type="radio" name="emp_type" data-value="2" id="sel_empid" value="self-employed"  onclick="changeTest_new(this,'q2_year');"/></span>&nbsp; <label for="sel_empid">self-employed </label></li>
       </form>
       </ul>
       
@@ -41,8 +41,8 @@
     <ul>
     <form id="obligation_form">
 
-        <li><span><input type="radio" name="obligation_type" value="yes"  onclick="changeTest_new(this,'q4');" /></span>&nbsp; YES</li>
-      <li><span><input type="radio" name="obligation_type" value="no"  onclick="changeTest_new(this,'q5');"/></span>&nbsp; NO </li>
+        <li><span><input type="radio" name="obligation_type" value="yes" id="yes_id"  onclick="changeTest_new(this,'q4');" /></span>&nbsp; <label for="yes_id"> YES</label></li>
+      <li><span><input type="radio" name="obligation_type" value="no" id="no_id"  onclick="changeTest_new(this,'q5');"/></span>&nbsp;<label for="no_id"> NO</label> </li>
       </form>
       </ul>
       
@@ -69,8 +69,8 @@
     <ul>
     <form id="gender_form">
 
-        <li><span><input type="radio" name="gender_type" value="male"  onclick="changeTest_new(this,'q8');" /></span>&nbsp; Male</li>
-      <li><span><input type="radio" name="gender_type" value="female"  onclick="changeTest_new(this,'q8');"/></span>&nbsp; Female </li>
+        <li><span><input type="radio" name="gender_type" value="male" id="maleID"  onclick="changeTest_new(this,'q8');" /></span>&nbsp; <label for="maleID">Male</label></li>
+      <li><span><input type="radio" name="gender_type" value="female" id="femalID" onclick="changeTest_new(this,'q8');"/></span>&nbsp;<label for="femalID"> Female</label> </li>
       </form>
       </ul>
       
@@ -97,8 +97,8 @@
     <ul>
     <form id="co_emp_type_form">
 
-        <li><span><input type="radio" name="co_emp_type" data-value="1" value="salaried"  onclick="changeTest_new(this,'co_sal');" /></span>&nbsp; salaried</li>
-      <li><span><input type="radio" name="co_emp_type" data-value="2" value="self-employed"  onclick="changeTest_new(this,'co_self');"/></span>&nbsp; self-employed </li>
+        <li><span><input type="radio" name="co_emp_type" data-value="1" id="csalaried_ID" value="salaried"  onclick="changeTest_new(this,'co_sal');" /></span>&nbsp; <label for="csalaried_ID">salaried</label></li>
+      <li><span><input type="radio" name="co_emp_type" data-value="2" id="co_self_emp" value="self-employed"  onclick="changeTest_new(this,'co_self');"/></span>&nbsp; <label for="co_self_emp">self-employed </label></li>
       </form>
       </ul>
       

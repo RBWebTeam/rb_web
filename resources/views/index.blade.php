@@ -89,76 +89,12 @@
 		   	</li>
 		  	</ul>
 	  	</div>
-		<!--<div class="col-md-12 ">
-		 <div class="pull-right mar-tp ">
-		<a href="rupeebosscomfy.php" class="img2"><img src="images/sliding-right-img-2.png" class="img-responsive"/></a>
-		  <a href="Expressloan.php" class="img3"><img src="images/sliding-right-img-1.png" class="img-responsive"/></a>
-		   <a href="Savingac.php" class="img4"><img src="images/sliding-right-img-3.png" class="img-responsive"/></a>
-		</div>
-		</div>
-		  <div class="col-md-4 red-bg">
-	   <div class="form-in">
-             <div class="trapezium1"> 
-              <span class="head-1">Compare, Research & Buy<span>
-             </div>
-             <form class="" id="compareform" role="form" method="POST" action="customer_form.php">
-				  <div class="form-group">
-				  
-				    <div>
-				
-				      <input type="text" class="form-control" id="name" name="name" placeholder="Name" required class="clr-ddd" />
-                 
-				    </div>
-				  </div>
-			<div class="form-group">
-		   
-		    <div> 
-		    <input type="text" name="contact" id="contact" class="form-control" pattern="[789][0-9]{9}" required maxlength="10" placeholder="Contact" class="clr-ddd">
-		    </div>
-		  </div>
-				  <div class="form-group">
-				   
-				    <div class=""> 
-				  
-				       <select name="sell" class="form-control" id="sell" required>
-				         @foreach($city as $city_name)
-				       <option value="{{ $city_name->City_Id }}" data-state="{{$city_name->state_id}}"><span style="color: gray;font-family: bold; ">{{ $city_name->City_Name }}</span></option>
-
-						@endforeach
-					</select>
-
-
-				    </div>
-				  </div>
-			  <div class="form-group">
-			   
-			    <div class=""> 
-			      <select class="form-control" name="prod" id="prod" required>
-			      @foreach($loan as $product)
-			        <option value="{{$product->Product_Id}}"><span style="color: gray;font-family: bold; ">{{$product->Product_Name}}</span></option>
-			        @endforeach
-			      </select>
-			    </div>
-			  </div>
-			  
-			  <div class="form-group centr-obj"> 
-			    
-			     <button class="btn btn-primary btn-outline with-arrow">Submit<i class="icon-arrow-right"></i></button>
-			   
-			  </div>
-			</form>
-		</div>	
-	</div>  -->
+		
 	</aside>
 	</div>
 	<div id="fh5co-services-section">
 		<div class="container-fluid">
-			<!-- <div class="row">
-				<div class="col-md-6 col-md-offset-3 text-center fh5co-heading animate-box">
-					<h2>Get Free Quote </h2>
-					<p class="mrg-btm">Our strong relationship with leading Banks means we can give you the confidence you need to make the right choice.</p>
-				</div>
-			</div> -->
+			
 			<div class="dv-hr">
 				<div class="col-md-2 animate-box no-padding">
 					<div class="services">

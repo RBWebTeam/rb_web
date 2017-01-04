@@ -65,9 +65,8 @@ class LoginController extends Controller
                   $query->password=md5($req->password);
                   $query->provider_user_id=0;
                   $query->provider=0;
-                  
-                  
                   $query->created_at=date('Y-m-d H:i:s');
+
                if($query->save()) {
                   $req->session()->put('email',$query->email);
                   $req->session()->put('contact',$query->contact);
@@ -75,7 +74,7 @@ class LoginController extends Controller
                   $req->session()->put('name',$query->username);
                   $req->session()->put('is_login',1);
                   $error="1";
-             echo $error;
+                  echo $error;
         }
      }
  }

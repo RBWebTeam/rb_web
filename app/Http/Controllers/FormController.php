@@ -7,6 +7,7 @@ use Session;
 use Auth;
 use DB;
 use Redirect;
+use App\registrationModel;
 class FormController extends Controller
 {
     function sidebar(Request $req){
@@ -50,6 +51,25 @@ class FormController extends Controller
         //print "<pre>";
        
         $new_array = array('customer_contact' => Session::get('contact'), 'customer_name' => Session::get('name'),'customer_email' => Session::get('email'));
+       // $add_user=DB::select("INSERT INTO user_registration(username, email, contact,password,provider,provider_user_id, created_at) VALUES('".Session::get('name')."','".Session::get('email')."','".Session::get('contact')."','123456','0','WEBSITE','".date("Y-m-d H:i:s")."' ) ");
+
+
+        
+
+         $query=new registrationModel();
+                  $query->username=Session::get('name');
+                  $query->email=Session::get('email');
+                  $query->contact=Session::get('contact');
+                  $query->password=md5(123456);
+                  $query->provider_user_id=0;
+                  $query->provider=0;
+                  $query->created_at=date("Y-m-d H:i:s");
+        if($query->save()) {
+                  $req=session()->put('user_status','fresh');
+                  $req->session()->put('user_id',$query->id);
+                  $req->session()->put('is_login',1);
+                 
+        }
 
         //replacing city name with id
         if($req['city_name']){
@@ -58,7 +78,6 @@ class FormController extends Controller
             ->get();
             $input['city_name']=(string)$city_id[0]->city_id;
             //adding city_id to post data
-           
         } 
         $res_arr=array_merge($input,$new_array);
         $res=json_encode($res_arr);

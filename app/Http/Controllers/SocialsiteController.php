@@ -26,7 +26,7 @@ class SocialsiteController extends Controller{
         }
         $authUser = $this->findOrCreateUser($user);
         // registrationModel::login($authUser, true);
-        return redirect('/');
+        return Redirect::back();
       
      }
 
@@ -43,7 +43,7 @@ class SocialsiteController extends Controller{
             return redirect('google');
         }
                     $authUser = $this->findOrCreateUser($user);
-                    return redirect('/');
+                     return Redirect::back();
 
           }
 

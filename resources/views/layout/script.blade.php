@@ -852,10 +852,14 @@ function emibreakup(E,P,r,n)
           $('#remuneration').val('');
           $("#income_year").val('');
           $('#pop1').append( "<p>Enter your net Income</p>" );
+        }else  if(val=='q4'){
+          $('#pop1').append( "<p>Any existing loan history</p>" );
         }else  if(val=='q5'){
             $('#pop1').empty();
             $('#pop1').append( "<p>Loan amount you wants to borrow</p>" );
             $("#q4").hide();
+        }else if(val=='date_birth'){
+          $('#pop1').append( "<p>I wonder if your birthday is today</p>" );
         }else  if(val=='q2_year'){
           $('#pop1').append( "<p>Enter your net turnover</p>" );
           $("#q2").hide();
@@ -869,6 +873,17 @@ function emibreakup(E,P,r,n)
           $('#co_depreciation').val('');
           $("#co_income_year").val('');
           $('#co_remuneration').val('');
+          $('#pop1').empty();
+          $('#pop1').append( "<p>Your monthly Salary is</p>" );
+        }else if(val=='co_obl_emi'){
+          $('#pop1').empty();
+          $('#pop1').append( "<p>co-applicant EMI is</p>" );
+        }else if(val=='last_button' && obj!='co_obligation'){
+          $('#pop1').empty();
+          $('#pop1').append( "<p>Great go on!!!</p>" );
+          $('#co_obligation').val('');
+          $('#co_obl_emi').hide('');
+          
         }else if(val=='co_self'){
           $('#co_sal').hide();
           $('#income').val('');
@@ -885,13 +900,15 @@ function emibreakup(E,P,r,n)
 
        function changeDiv_new(prv,nxt){
 
-        //alert(obj.options[obj.selectedIndex].value);
+       //alert(prv+nxt);
 
         document.getElementById(prv).style.display='none';
         document.getElementById(nxt).style.display='block';
         $('#pop1').empty();
         if(nxt=='step-2'){
           $('#pop1').append( "<p>Where do you work?</p>" );   
+        }else if(nxt=='step-2_co'){
+          $('#pop1').append( "<p>The profession of your co-applicant is</p>" );   
         }else if(nxt=='step-3'){
           $('#pop1').append( "<p>Tell us about the your residence</p>" );   
         }else if(nxt=='start-2'){
@@ -954,6 +971,8 @@ function emibreakup(E,P,r,n)
       $('#pop1').empty();
       if(val=='q3'){
            $('#pop1').append( "<p>Do you have any existing loan</p>" );
+        }else  if(val=='q_prop'){
+           $('#pop1').append( "<p>Your property price is</p>" );
         }else if(val=='exp'){
           $('#pop1').append( "<p>Entr your expierience in current company</p>" );
         }else if(val=='total_exp'){
@@ -970,9 +989,9 @@ function emibreakup(E,P,r,n)
         }else if(val=='q6'){
           $('#pop1').append( "<p>Enter your loan tenure</p>" );
         }else if(val=='q7'){
-          $('#pop1').append( "<p>I wonder if your birthday is today</p>" );
+          $('#pop1').append( "<p>Have special offers for female</p>" );
         }else if(val=='self_q'){
-          $('#pop1').append( "<p>I wonder if your birthday is today</p>" );
+          $('#pop1').append( "<p>Your total profit after tax is</p>" );
         }else{
           $('#pop1').append( "<p>Please go on</p>" );
         }

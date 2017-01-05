@@ -9,6 +9,8 @@
 
     <th bgcolor="#4A9ACF" class="col-sm-3 hidden-xs" id="rateheader"><center>Rate Of Interest<i class="fa fa-caret-down" style="font-size:20px;color:lightgreen;" aria-hidden="true"></i></center></th>
 
+    <th bgcolor="#4A9ACF" class="col-sm-3 hidden-xs" id="rateheader"><center>Processing FEE<i class="fa fa-caret-down" style="font-size:20px;color:lightgreen;" aria-hidden="true"></i></center></th>
+
     <th bgcolor="2DC6D1" class="col-sm-3 hidden-xs" id="emiheader"><center>Loan EMI</center></th>
 
     <th bgcolor="BF5850" class="col-sm-3 hidden-xs" id="newemiheader"><center>New Loan EMI<i class="fa fa-caret-down" style="font-size:20px;color:lightgreen;" aria-hidden="true"></i></center></th>
@@ -34,6 +36,7 @@ foreach ($data as $key => $value){?>
 <tr>
 	<td>{{ $value['Bank_Name']}}</td>
     <td>{{ $value['roi']}}</td>
+    <td>{{ $value['pf']}} &nbsp; ({{ $value['pf_type']}})</td>
     
     <?php try{
     $new_rate=$value['roi']/12/100;

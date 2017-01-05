@@ -44,6 +44,10 @@ class HomeController extends Controller
 		return view('express-loan');
 	}
 
+	public function credit_card(){
+		return view('credit-card');
+	}
+
 
 	
 }

@@ -51,15 +51,15 @@ class SocialsiteController extends Controller{
 
           private function findOrCreateUser($facebookUser){
              $query=new registrationModel();
-         $authUser =$query->where('provider_user_id', $facebookUser->id)->first();
+             $authUser =$query->where('provider_user_id', $facebookUser->id)->first();
         if ($authUser){
 
                        Session::set('email', $authUser->email);
                        Session::set('user_id', $authUser->id);
                        Session::set('name', $authUser->username);
                        Session::set('is_login', 1);
-                return Redirect::back();
-
+               
+            return $authUser;
         }
  
         //  $query->create([
@@ -87,8 +87,11 @@ class SocialsiteController extends Controller{
                   Session::set('user_id',$query->id);
                   Session::set('name',$query->username);
                   Session::set('is_login',1);
-                return Redirect::back();
+               
         }
+
+      
+
 
           
     }

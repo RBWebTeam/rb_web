@@ -3,7 +3,7 @@
 	
 	<aside id="fh5co-hero">
 	<div class="col-md-12">
-	<p class="text-left">home/{{$bank_name}}</p>
+	<p class="text-left"><a href="{{url('/')}}">home</a>/{{$bank_name}}</p>
 	</div>
 	<div class="col-md-8 bg-white1 bnkpg">
 		<div class="jumbotron text-center bankpg">
@@ -104,7 +104,7 @@
    <td><p>Salaried</p></td> 
    <td class="upper" width="17%"><a href="{{URL::to('apply-')}}{{$product}}">Apply Online</a></td>
 
-    <td rowspan="2"><strong>Specil Features:-</strong> Pre close Fee 0%</td>
+    <td rowspan="2"><strong>Special Features:-</strong> Pre close Fee 0%</td>
   </tr>
     <tr>
   <!--   <td><i class="icon-thumbs-up"></i></td> -->

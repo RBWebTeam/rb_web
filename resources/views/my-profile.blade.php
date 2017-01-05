@@ -59,7 +59,7 @@
                                   @else
                                      <?php $dob='';?>
                                   @endif
-                                    <input name="dob" value="{{$dob}}" type="date" placeholder="Date of Birth" required>
+                                    <input name="text" value="{{$dob}}" class="datepicker" placeholder="Date of Birth" required>
                                 </div>
                                 <div class="col-md-6 pad11 text-danger" id="errordetails"></div>
                                 

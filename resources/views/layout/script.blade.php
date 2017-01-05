@@ -31,7 +31,7 @@
         changeYear: true,
         showButtonPanel: true,
         yearRange: '1950:2017',
-        dateFormat: 'yy',
+        dateFormat: 'yy-dd-mm',
         onClose: function(dateText, inst) { 
             var year = $("#ui-datepicker-div .ui-datepicker-year :selected").val();
             $(this).datepicker('setDate', new Date(year, 0, 1));

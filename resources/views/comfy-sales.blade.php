@@ -76,7 +76,7 @@ $(document).ready(function(){
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12 text-left fh5co-heading animate-box fadeInUp animated">
-					<h2>Comfy Sales Leaflet</h2>
+					<h2>Comfy Leaflet</h2>
 					</div>				
 				<div class="col-md-12">
 					<div class="row pad11 white-bg comp-pg">

@@ -583,7 +583,11 @@ $('document').ready(function(){
 $(document).ready(function(){
    $("#send_otp_button").click(function(event){
     event.preventDefault();
-    
+    if($('#set_pwd_confirm').val()!=$('#set_pwd').val()){
+      $('#pwd_match').show();
+      //alert("ped ");
+      return false;
+    }
     var form=$(this).closest("form").attr('id');   
     $form=$('#'+form);
     if(! $form.valid()){
@@ -591,6 +595,7 @@ $(document).ready(function(){
     }else{
       $('#send_otp_button').hide();
     $('#pls_wait').show();
+    $('#pwd_match').hide();
       $.ajax({  
                type: "POST",  
                url: "{{URL::to('otp')}}",
@@ -983,6 +988,7 @@ $(document).ready(function(){
     });
 });
 </script>
+
 <!-- co script ends -->
 	</body>
 </html>
@@ -1022,17 +1028,36 @@ $(document).ready(function(){
     </div>
   </div>
   <div class="form-group">
+     <label for="set_pwd" class="col-sm-2 control-label">Password</label>
+    <div class="col-sm-10">
+      <input type="password" class="form-control" id="set_pwd" name="set_pwd" placeholder="Password" required maxlength="10" minlength="6" >
+      </div>
+  </div>
+  <div class="form-group">
+     <label for="set_pwd_confirm" class="col-sm-2 control-label">Password</label>
+    <div class="col-sm-10">
+      <input type="password" class="form-control" id="set_pwd_confirm" name="set_pwd_confirm" placeholder="Confirm Password" required maxlength="10" minlength="6" >
+      </div>
+  </div>
+  <div class="form-group">
     
     <div class="col-sm-10">
-     <span id='msg_err' style="display: none;">oops something went wrong</span>
+     <span id='msg_err' style="display: none;color:red;">oops something went wrong</span>
      <span id='pls_wait' style="display: none;color: red;">Please wait .....</span>
+     <span id='pwd_match' style="display: none; color:red;">Password do not match.</span>
     </div>
 
   </div>
   <div class="form-group">
-    <div class="col-sm-offset-2 col-sm-10">
+    <div class="col-sm-offset-2 col-sm-6">
     <input type="hidden" name="product" id="product_login" value="">
-      <button class="btn btn-default"  id="send_otp_button" >Send OTP</button>
+      <button class="btn btn-default"  id="send_otp_button"  >Send OTP</button>
+    </div>
+    </div>
+    <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-6">
+    
+      <a class="btn btn-default"  id="already_user" data-toggle="modal" data-target="#log_popup" data-dismiss="modal" >Already User</a>
     </div>
   </div>
   </form>

@@ -48,24 +48,11 @@ class FormController extends Controller
         //call api to submit form data
         $input = $req->all();
        
-       
         $new_array = array('customer_contact' => Session::get('contact'), 'customer_name' => Session::get('name'),'customer_email' => Session::get('email'));
-       
-         $query=new registrationModel();
-                  $query->username=Session::get('name');
-                  $query->email=Session::get('email');
-                  $query->contact=Session::get('contact');
-                  $query->password=md5(123456);
-                  $query->provider_user_id=0;
-                  $query->provider=0;
-                  $query->created_at=date("Y-m-d H:i:s");
-        if($query->save()) {
-                  $req->session()->put('user_status','fresh');
-                  $req->session()->put('user_id',$query->id);
-                  $req->session()->put('is_login',1);
-                 
-        }
-
+       $update_id=Session::get('verify_id');
+         $update_user=DB::table('user_registration')
+         ->where('id',$update_id)
+         ->update(['provider'=>'WEBSITE-VERIFIED']);
         //replacing city name with id
         if($req['city_name']){
             $city_id=DB::table('city_master')->select('city_id')
@@ -75,8 +62,6 @@ class FormController extends Controller
             //adding city_id to post data
         } 
         $res_arr=array_merge($input,$new_array);
-        $res=json_encode($res_arr);
-        
             $url = "http://beta.erp.rupeeboss.com/CustomerLaravelWebRequest.aspx";
             $ch = curl_init();
             curl_setopt($ch, CURLOPT_VERBOSE, 1);
@@ -86,13 +71,13 @@ class FormController extends Controller
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
             curl_setopt($ch, CURLOPT_FAILONERROR, 0);
             curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
-            curl_setopt($ch, CURLOPT_POSTFIELDS,$res);
+            curl_setopt($ch, CURLOPT_POSTFIELDS,$res_arr);
             $http_result = curl_exec($ch);
             $error = curl_error($ch);
             $http_code = curl_getinfo($ch ,CURLINFO_HTTP_CODE);
-           // print_r("\n hiiiiiiiiii");
+          // print_r("\n hiiiiiiiiii");
            // print_r($http_result);
-            //if($http_result==1){
+            if($http_result==1){
                 if(isset($req['income'])){
                     $income=$req['income'];
                 }else{
@@ -107,7 +92,7 @@ class FormController extends Controller
             }
               
                 
-           // }
+            }
             else{
                 $quote_data ="no result found";
                 return "no quotes";
@@ -128,6 +113,24 @@ class FormController extends Controller
         Session::put('contact', $req['contact']);
         Session::put('name', $req['name']);
         Session::put('email', $req['email']);
+        // save user but not verified till now
+        $qu=new registrationModel();
+                  $qu->username=$req['name'];
+                  $qu->email= $req['email'];
+                  $qu->contact= $req['contact'];
+                  $qu->password= md5($req['set_pwd']);
+                  $qu->provider_user_id=0;
+                  $qu->provider='WEBSITE-NOT-VERIFIED';
+                  $qu->created_at=date("Y-m-d H:i:s");
+        if($qu->save()) {
+               
+           Session::put('verify_id',$qu->id);
+                 // $req->session()->put('is_login',1);
+                 
+        }
+        // user entered 
+
+
         $value = Session::get('contact');
         //ends 
         //insert into DB

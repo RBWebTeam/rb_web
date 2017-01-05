@@ -628,7 +628,8 @@ $(document).ready(function(){
                  var data_1=data['data'];
                 if(data_1==true){
                      var form_name=$('#elem').parent().find('form').attr('id');
-                     $.post('loan-submit', $('#'+form_name).serialize());
+                     //$.post('loan-submit', $('#'+form_name).serialize());
+                    $('#'+form_name).submit();
                     $('#otp_modal').modal('hide');
                   }else{
                     $('#otp_err').show();
@@ -915,7 +916,7 @@ function emibreakup(E,P,r,n)
 
                 //Rest code for text fields with numbers
                   var x=$(this).val().length ;
-                  if ((obj=='loan_tenure')||((obj=='total_sal' || obj=='loan') && x>6) ||(x>=5 && x<=8) ) {
+                  if ((obj=='loan_tenure')||((obj=='total_sal' || obj=='loan') && x>6) ||(x>=3 && x<=8) ) {
                       document.getElementById(val).style.display='block';
                       return false;
                   }

@@ -79,26 +79,16 @@ class CompareController extends Controller
     	return view('free-credit-report');
     }
 
-    public function switchme(){
-      return view('emi/switch_me');
+    public function switchme($loan){
+      //print"<pre>";print_r($loan);exit();
+      $data['loan'] =$loan;
+      return view('emi/switch_me')->with($data);
     }
 
     public function calculation(Request $req){
+      //print_r($req->all());exit();
 
-
-      $getQuery=DB::table('bank_product_web_intrest')
-      ->join('bank_master', 'bank_product_web_intrest.bank_id', '=', 'bank_master.Bank_id')
-      ->select('bank_product_web_intrest.bank_id AS bank_id','bank_product_web_intrest.roi AS roi','bank_master.Bank_Name AS Bank_Name')
-      ->where('bank_product_web_intrest.product_id','=',12)
-      ->where('bank_product_web_intrest.roi','<',$req['loaninterest'])
-      ->where('bank_product_web_intrest.Profession','=',$req['profession'])
-      ->where('bank_product_web_intrest.roi_type','=','Floating')
-      ->where('bank_product_web_intrest.amt_from','<=',$req["loanamount"])
-      ->where('bank_product_web_intrest.amt_to','>=',$req["loanamount"])
-      ->orderBy('bank_product_web_intrest.roi', 'ASC')
-
-       //->take(5)
-      ->get();
+     $getQuery=DB::select('call usp_get_balance_transfer_quot("'.$req['loanamount'].'","'.$req['loaninterest'].'","'.$req['product_id'].'")');
 
     $resultArray = json_decode(json_encode($getQuery), true);
      
@@ -142,6 +132,11 @@ class CompareController extends Controller
 
       
                  }
+
+
+
+
+
 
       public function switchme_mobile(){
                  return view('emi/balance_transfer');

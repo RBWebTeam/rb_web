@@ -63,7 +63,7 @@ Route::get('get-loan/{loan}','BankController@compareLoan');
 Route::get('check_emi','CompareController@emi2');
 Route::post('emi_cal','CompareController@emi_cal');
 Route::get('loan-details/{product}/{bank}','BankController@home_loanBank');
-Route::get('home-loan-transfer','CompareController@switchme');
+Route::get('home-loan-transfer/{loan}','CompareController@switchme');
 Route::post('calculation','CompareController@calculation');
 Route::get('profile','ProfileController@my_profile');
 Route::get('about-us','HomeController@about_us');
@@ -72,6 +72,7 @@ Route::get('privacy-policy-page','HomeController@privacy_policy');
 Route::get('balance-transfer','CompareController@switchme_mobile');
 Route::get('comfy-sales','HomeController@comfy_sales');
 Route::get('express-loan','HomeController@express_loan');
+Route::get('credit-card','HomeController@credit_card');
 
 
 

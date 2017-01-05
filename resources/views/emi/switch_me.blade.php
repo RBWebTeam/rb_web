@@ -19,11 +19,25 @@
 <body>
 
 <div class="jumbotron text-center" style="background-color:lightblue;" id="fh5co-hero">
+<?php if($loan == "home-loan") {?>
 <center>
   <p class="text-primary"><h2>Home Loan Transfer Service</h2></p> 
   <p>Let's find out how much you can save!!</p>
   <p>Know how much you'll save. Please enter your current home loan details.</p> 
-</center>  
+</center>
+<?php }elseif($loan == "personal-loan"){?>
+<center>
+  <p class="text-primary"><h2>Personal Loan Transfer Service</h2></p> 
+  <p>Let's find out how much you can save!!</p>
+  <p>Know how much you'll save. Please enter your current home loan details.</p> 
+</center>
+<?php }else{?>
+<center>
+  <p class="text-primary"><h2>Loan Against Property Transfer Service</h2></p> 
+  <p>Let's find out how much you can save!!</p>
+  <p>Know how much you'll save. Please enter your current home loan details.</p> 
+</center>
+<?php }?>
             
                             
   
@@ -31,7 +45,16 @@
   
 <div class="container">
   <div class="row">
-     <div class="col-sm-6 rw-hei brd-rgt" style="background-color:lavender;"><h3 class="emi-cal">Home Loan Transfer Savings  <i class="fa fa-exchange" aria-hidden="true"></i></h3>
+     <div class="col-sm-6 rw-hei brd-rgt" style="background-color:lavender;"><h3 class="emi-cal">
+    <?php if($loan == "home-loan") {?>
+     Home Loan Transfer Savings  <i class="fa fa-exchange" aria-hidden="true"></i></h3>
+    <?php }elseif($loan == "personal-loan"){?>
+    Personal Loan Transfer Savings  <i class="fa fa-exchange" aria-hidden="true"></i></h3>
+    <?php }else{?>
+    Loan Against Property Transfer Savings  <i class="fa fa-exchange" aria-hidden="true"></i></h3>
+    <?php }?>
+
+
      <!-- <i class="fa fa-exchange" aria-hidden="true"></i> -->
     <div class="form-group">
        <label class="control-label" for="Loan Amount">Outstanding Principal:</label>
@@ -41,16 +64,16 @@
       <label class="control-label" for="Interest Rate"> Current Interest Rate:</label>
       <input type="number" name="loaninterest" step="0.01" min="0" class="form-control" id="loaninterest" placeholder="Interest"  value="" onblur="myfun()">
     </div>
-    <div class="form-group" >
+    <!-- <div class="form-group" >
        <label class="control-label" for="Your Property Location">Your Profession Type:</label>
        <select name="profession" id="profession" onblur="myfun()">
        <option value="1">Salaried</option>
        <option value="2">Self-Employed</option>
        
        </select>
-      <!--  </label> -->
+      
     </div>
-   
+    -->
     <div class="form-group right-block">
        <label class="control-label" for="Loan Tenure">Remaining Tenure:</label>
         <input type="number" name="loanterm" class="form-control" id="loanterm" placeholder="Loan Tenure" value="" onblur="myfun()">
@@ -60,6 +83,14 @@
              <label class="btn btn-primary"><input type="radio" name="Year" id="Month" value="">Mo</label>
     </div>
     </div>
+
+    <?php if($loan == "home-loan") {?>
+    <input type="hidden" name="product_id" id="product_id" value="12">
+    <?php }elseif($loan == "personal-loan"){?>
+    <input type="hidden" name="product_id" id="product_id" value="9">
+    <?php }else{?>
+    <input type="hidden" name="product_id" id="product_id" value="7">
+    <?php }?>
 
     
      <p id="err" style="display:none;">Please Fill All Inputs
@@ -107,7 +138,8 @@
 @include('layout.footer')
 @include('layout.script')
 
-<div class="modal fade" tabindex="-1" role="dialog" id="homeTransfer">
+<?php if($loan == "home-loan") {?>
+    <div class="modal fade" tabindex="-1" role="dialog" id="homeTransfer">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -116,7 +148,7 @@
       </div>
       <div class="modal-body">
         <h4><p>Amount should be greater than "5,00,000" and lesser than "10,00,000,000".</p></h4>
-        <h4><p>As well as Interest should be greater than 9%. If less you are already on Lower Rate.</p></h4>
+        <h4><p>As well as Interest should be greater than  9.05%. If less you are already on Lower Rate.</p></h4>
       </div>
       
       <div class="modal-footer">
@@ -126,6 +158,51 @@
     </div>
   </div>
 </div>
+
+    <?php }elseif($loan == "personal-loan"){?>
+   <div class="modal fade" tabindex="-1" role="dialog" id="homeTransfer">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title"></h4>
+      </div>
+      <div class="modal-body">
+        <h4><p>Amount should be greater than "1,00,000" and lesser than "10,00,000,000".</p></h4>
+        <h4><p>As well as Interest should be greater than (Or)equal to 11.49% If less you are already on Lower Rate.</p></h4>
+      </div>
+      
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+    <?php }else{?>
+    <div class="modal fade" tabindex="-1" role="dialog" id="homeTransfer">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title"></h4>
+      </div>
+      <div class="modal-body">
+        <h4><p>Amount should be greater than "5,00,000" and lesser than "10,00,000,000".</p></h4>
+        <h4><p>As well as Interest should be greater than (Or)equal to 10.25%. If less you are already on Lower Rate.</p></h4>
+      </div>
+      
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+    <?php }?>
+
+
 
 <script type="text/javascript">
 
@@ -167,6 +244,7 @@
         var loanterm = $("#loanterm").val();
       }
       var profession=$("#profession").val();
+      var product_id=$("#product_id").val();
       //console.log(profession);
 
       
@@ -175,7 +253,7 @@
                type: "POST",  
                url: "{{URL::to('calculation')}}",
                dataType:'json',
-               data : { 'loanamount': loanamount , 'loaninterest': loaninterest ,'loanterm' :loanterm,'_token': v_token,'profession':profession},
+               data : { 'loanamount': loanamount , 'loaninterest': loaninterest ,'loanterm' :loanterm,'_token': v_token,'profession':profession,'product_id':product_id},
                // 'bank':bank},
                success: function(msg){
                   //console.log(msg.success);
@@ -202,7 +280,7 @@
                         $("#7").show();
                         $('#test').html(msg.html);
                   }else{
-                    console.log(msg.success);
+                    //console.log(msg.success);
                      $('#homeTransfer').modal('show');  
                       
 

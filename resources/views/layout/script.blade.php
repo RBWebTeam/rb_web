@@ -628,7 +628,8 @@ $(document).ready(function(){
                  var data_1=data['data'];
                 if(data_1==true){
                      var form_name=$('#elem').parent().find('form').attr('id');
-                     $.post('loan-submit', $('#'+form_name).serialize());
+                     //$.post('loan-submit', $('#'+form_name).serialize());
+                    $('#'+form_name).submit();
                     $('#otp_modal').modal('hide');
                   }else{
                     $('#otp_err').show();

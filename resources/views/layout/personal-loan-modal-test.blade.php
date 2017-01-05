@@ -17,7 +17,6 @@
       <li><span><input type="radio" name="emp_type" data-value="2" id="slef_salariedID" value="self-employed"  onclick="changeTest_new(this,'q2_year');"/></span>&nbsp; <label for="slef_salariedID"> self-employed </label></li>
       </form>
       </ul>
-      
       </div>
       
     </div>

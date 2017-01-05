@@ -14,7 +14,6 @@ use Session;
 use URL;
 
 class SocialsiteController extends Controller{
-     
      public function  facebook(){
      	 return Socialite::driver('facebook')->redirect();
      }
@@ -27,7 +26,7 @@ class SocialsiteController extends Controller{
         }
         $authUser = $this->findOrCreateUser($user);
         // registrationModel::login($authUser, true);
-        return redirect('/');
+        return Redirect::back();
       
      }
 
@@ -44,7 +43,7 @@ class SocialsiteController extends Controller{
             return redirect('google');
         }
                     $authUser = $this->findOrCreateUser($user);
-                    return redirect('/');
+                     return Redirect::back();
 
           }
 

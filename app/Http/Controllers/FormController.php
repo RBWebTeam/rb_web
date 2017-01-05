@@ -19,7 +19,6 @@ class FormController extends Controller
         'email'    => $req['email']?$req['email']:'',
         'form'    =>$req['form'] 
         );
-
     //put curl code here to save in DB
     $url = "http://beta.erp.rupeeboss.com/CustomerWebRequest.aspx";
     //print "<pre>";
@@ -48,14 +47,10 @@ class FormController extends Controller
     public function p_loan_submit(Request $req){
         //call api to submit form data
         $input = $req->all();
-        //print "<pre>";
+       
        
         $new_array = array('customer_contact' => Session::get('contact'), 'customer_name' => Session::get('name'),'customer_email' => Session::get('email'));
-       // $add_user=DB::select("INSERT INTO user_registration(username, email, contact,password,provider,provider_user_id, created_at) VALUES('".Session::get('name')."','".Session::get('email')."','".Session::get('contact')."','123456','0','WEBSITE','".date("Y-m-d H:i:s")."' ) ");
-
-
-        
-
+       
          $query=new registrationModel();
                   $query->username=Session::get('name');
                   $query->email=Session::get('email');
@@ -81,7 +76,7 @@ class FormController extends Controller
         } 
         $res_arr=array_merge($input,$new_array);
         $res=json_encode($res_arr);
-        //print_r($res);
+        
             $url = "http://beta.erp.rupeeboss.com/CustomerLaravelWebRequest.aspx";
             $ch = curl_init();
             curl_setopt($ch, CURLOPT_VERBOSE, 1);
@@ -119,7 +114,7 @@ class FormController extends Controller
             }
             $data['product'] ="Personal Loan";
             $data['quote_data'] =$quote_data;
-            //print"<pre>";
+           
             return view('show-quotes')->with($data);
     }
     

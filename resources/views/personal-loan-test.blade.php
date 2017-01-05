@@ -12,7 +12,6 @@
 		    @endif
 	 <input type="hidden" id="product" name="product_name" value="<?php echo $loan;?>">
 	 <div class="liza col-md-8" id="step-1">
-
                         
 		   <div class="col-md-12 text-center"><h4>Apply for an Easy <?php echo $loan_name;?> Loan in 30 seconds</h4></div>
 		   <p class="text-center">Step 1 of 3</p>
@@ -41,7 +40,7 @@
 			</div>
 
 			<div class="col-md-12 text-center animate-box cont" style="display: none" id="q4">
-             <h3>and my existing loan amount is
+             <h3>and my existing loan EMI is
 			 <input type="tel" id="obligation" name="obligation"  onkeyup="changeText_new('obligation','q5')"  onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="1,00,000" tabindex="1">
 			 </h3> 
 			</div>
@@ -63,7 +62,7 @@
 			</div>
 			<div class="col-md-12 text-center animate-box cont" style="display:none;" id="q8" >
 					<h3> and Pan Card number is
-					<input type="tel" id="card" name="pan_number"  onkeyup="changeText_new('card','q9')"   class="input-pad" placeholder="Pan Card" maxlength="10" minlength="10" tabindex="1">
+					<input type="text" id="card" name="pan_number"  onkeyup="changeText_new('card','q9')"   class="input-pad" placeholder="Pan Card" maxlength="10" minlength="10" tabindex="1">
 					.</h3>
 			</div>
 

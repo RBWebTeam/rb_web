@@ -43,7 +43,6 @@
 							<input type="tel" id="remuneration" name="remuneration" onkeyup="changeText_new('remuneration','q3')"  onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="1,00,000" tabindex="1">
 						</h3> 
 					</div>
-
 					<!-- self employed question ends -->
 					<div class="col-md-12 text-center animate-box cont" style="display: none;" id="q3">
 						<h3>I
@@ -52,7 +51,7 @@
 						</div>
 
 						<div class="col-md-12 text-center animate-box cont" style="display: none" id="q4">
-							<h3>remaining loan amount is
+							<h3>remaining loan EMI is
 								<input type="tel" id="obligation" name="obligation"  onkeyup="changeText_new('obligation','q5')"  onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="1,00,000" tabindex="1">
 							</h3> 
 						</div>

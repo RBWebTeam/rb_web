@@ -10,7 +10,6 @@
     <script src="http://demo.expertphp.in/js/jquery-ui.min.js"></script>
 <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
 
-
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
     <script>
            $('ul.dropdown-menu [data-toggle=dropdown]').on('click', function(event) {
@@ -403,8 +402,8 @@ $(".login-submit").click(function(event){
             $("#msg").text("Your email or password is incorrect. please try again?");               
                      }else if(msg=="right"){
 
-
-                       window.location.href ="{{URL::to('profile')}}";
+                      window.location="{{ URL::previous() }}";
+                      //window.location.href ="{{URL::to('profile')}}";
                      }
 
 
@@ -463,6 +462,10 @@ $(".registration-submit").click(function(event){
                   $form.hide();
                   $('.msg').show();
                   $('#Login-here').hide();
+                 
+                  window.location="{{ URL::previous() }}";
+
+
                  }
               
 
@@ -629,7 +632,8 @@ $(document).ready(function(){
                  var data_1=data['data'];
                 if(data_1==true){
                      var form_name=$('#elem').parent().find('form').attr('id');
-                     $.post('loan-submit', $('#'+form_name).serialize());
+                     //$.post('loan-submit', $('#'+form_name).serialize());
+                    $('#'+form_name).submit();
                     $('#otp_modal').modal('hide');
                   }else{
                     $('#otp_err').show();
@@ -916,7 +920,7 @@ function emibreakup(E,P,r,n)
 
                 //Rest code for text fields with numbers
                   var x=$(this).val().length ;
-                  if ((obj=='loan_tenure')||((obj=='total_sal' || obj=='loan') && x>6) ||(x>=5 && x<=8) ) {
+                  if ((obj=='loan_tenure')||((obj=='total_sal' || obj=='loan') && x>6) ||(x>=3 && x<=8) ) {
                       document.getElementById(val).style.display='block';
                       return false;
                   }

@@ -91,7 +91,7 @@
 							<h4 class="mrg-btm">Tribe</h4>
 							<ul>
 							     <li>Online Sanction</li>
-								 <li>Minimized Documetation</li>
+								 <li>Minimum Documentation</li>
 								 <li>Express cash</li>
 							</ul>
 						
@@ -105,7 +105,7 @@
 							<h4 class="mrg-btm">Aditya Birla</h4>
 							<ul>
 							     <li>Online Sanction</li>
-								 <li>Minimized Documetation</li>
+								 <li>Minimum Documentation</li>
 								 <li>Express cash</li>
 							</ul>
 							<button class="btn btn-primary btn-outline with-arrow">Apply Now<i class="icon-arrow-right"></i></button>
@@ -118,7 +118,7 @@
 							<h4 class="mrg-btm">Apply Online Loan</h4>
 							<ul>
 							     <li>Online Sanction</li>
-								 <li>Minimized Documetation</li>
+								 <li>Minimum Documentation</li>
 								 <li>Express cash</li>
 							</ul>
 							
@@ -201,6 +201,7 @@
 				
 			</div>
   </div>
+</div>
 </div>
 </div>
 

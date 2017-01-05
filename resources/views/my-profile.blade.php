@@ -17,7 +17,7 @@
                    <li><a href="#extraDetails" data-toggle="tab">Extra Details</a></li>
                      <li><a href="#credit-score" data-toggle="tab">My credit score </a></li>
                        <li><a href="#Loan-history" data-toggle="tab">Loan history </a></li>
-                         <li><a href="#Track-Apllication" data-toggle="tab">Track Apllication </a></li>
+                         <li><a href="#Track-Apllication" data-toggle="tab">Track application </a></li>
                     <li></li>
                    
                 </ul>
@@ -60,6 +60,8 @@
                                      <?php $dob='';?>
                                   @endif
                                     <input name="text" value="{{$dob}}" class="datepicker" placeholder="Date of Birth" required>
+
+                                    
                                 </div>
                                 <div class="col-md-6 pad11 text-danger" id="errordetails"></div>
                                 
@@ -115,7 +117,7 @@
 
                           <div class="tab-pane" id="Track-Apllication">
 
-                         Track Apllication
+                         Track application
 
                           </div>
                         

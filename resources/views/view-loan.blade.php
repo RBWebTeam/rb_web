@@ -2,7 +2,7 @@
     <div id="fh5co-hero">
 	<div class="container">
 	<div class=" pad">
-	<p class="text-left">home/{{$home_loan}}</p>
+	<p class="text-left"><a href="{{url('/')}}">home</a>/{{$home_loan}}</p>
     <h2 class="align-center loan-head">View Options</h2>
 	</div>
 

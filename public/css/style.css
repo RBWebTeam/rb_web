@@ -1643,22 +1643,30 @@ input[type="radio"] {margin:0px;}
     margin-right:0px;
     right: 0px;
     position: absolute;
+	transition:all 0.3s linear;-moz-transition:all 0.3s linear;-webkit-transition:all 0.3s linear;
+	
 	}
 .img3 img {
 	margin-top: 125px;
     margin-right:5px;
-	background:
+	transition:all 0.3s linear;-moz-transition:all 0.3s linear;-webkit-transition:all 0.3s linear;
 }
 .img4 img {
 	margin-top:-68px;
     margin-right:0px;
     right: 0px;
     position: absolute;
+	transition:all 0.3s linear;-moz-transition:all 0.3s linear;-webkit-transition:all 0.3s linear;
 }
+.img2 img:hover {background: url(../images/sliding-right-img-2_blue.png) no-repeat;transition:all 0.3s linear;-moz-transition:all 0.3s linear;-webkit-transition:all 0.3s linear;}
+.img3 img:hover {background: url(../images/sliding-right-img-1_blue.png) no-repeat;transition:all 0.3s linear;-moz-transition:all 0.3s linear;-webkit-transition:all 0.3s linear;}
+.img4 img:hover {background: url(../images/sliding-right-img-3_blue.png) no-repeat;transition:all 0.3s linear;-moz-transition:all 0.3s linear;-webkit-transition:all 0.3s linear;}
+
+
 .bg-gray {background:#eee; margin-bottom:20px; padding:15px; 0px;}
 .no-padding {padding-left:0px; padding-right:0px; padding-bottom:0px;}
 #fh5co-services-section {padding:0px;}
-.pull-right img:hover {opacity:0.6;}
+
 .no-margin{
 	margin:0px;
 }

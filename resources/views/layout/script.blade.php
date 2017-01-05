@@ -402,8 +402,8 @@ $(".login-submit").click(function(event){
             $("#msg").text("Your email or password is incorrect. please try again?");               
                      }else if(msg=="right"){
 
-
-                       window.location.href ="{{URL::to('profile')}}";
+                      window.location="{{ URL::previous() }}";
+                      //window.location.href ="{{URL::to('profile')}}";
                      }
 
 
@@ -462,6 +462,10 @@ $(".registration-submit").click(function(event){
                   $form.hide();
                   $('.msg').show();
                   $('#Login-here').hide();
+                 
+                  window.location="{{ URL::previous() }}";
+
+
                  }
               
 

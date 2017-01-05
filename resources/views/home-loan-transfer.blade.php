@@ -6,7 +6,6 @@
 	<p class="text-left"><a href="{{URL::to('/')}}">Home</a>/Home Loan Transfer</p>
 	<h2 class="align-center loan-head">Home Loan Transfer</h2>
 	</div>
-	<div class=""></div>
 	<div class="flexslider col-md-8">
 	<div id="myCarousel" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->

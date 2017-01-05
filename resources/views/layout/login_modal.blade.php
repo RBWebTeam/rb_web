@@ -93,7 +93,7 @@
           </div>
 
       <div><fieldset>
-        <input type="password" class="newsletter-name" id="password"  name="password" placeholder="password" >
+        <input type="password" class="newsletter-name" id="password"  name="password" placeholder="Password" >
          <div class="text-danger" id="errorpassword"></div>
           </fieldset>
       </div>
@@ -101,7 +101,7 @@
       <div>
 
       <fieldset>
-         <input type="password" class="newsletter-name"  name="password_confirm" id="password_confirm" placeholder="password confirm" >
+         <input type="password" class="newsletter-name"  name="password_confirm" id="password_confirm" placeholder="Password Confirm" >
          <div class="text-danger" id="errorpasswordconfirm"></div>
        </fieldset>
 

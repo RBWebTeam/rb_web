@@ -104,7 +104,7 @@
 
       <fieldset>
 
-         <input type="password" class="newsletter-name"  name="password_confirm" id="password_confirm" placeholder="confirm password" >
+         <input type="password" class="newsletter-name"  name="password_confirm" id="password_confirm" placeholder="Password Confirm " >
 
         
          <div class="text-danger" id="errorpasswordconfirm"></div>

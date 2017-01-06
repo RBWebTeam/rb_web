@@ -368,10 +368,15 @@ $(document).ready(function(){
                success: function(msg){
                 if(msg=='true'){
                   $form.hide();
-                  $('.msg').show();
+                  var a =$('#'+form).parent().find('.msg')
+                  //console.log(a);
+                  $(a).show();
+                  //$('.msg').show();
                 }else{
                   $form.hide();
-                  $('.msg_err').show();
+                  var b =$('#'+form).parent().find('.msg_err')
+                  //console.log(a);
+                  $(b).show();
                 }
                 //console.log(msg);
                }  

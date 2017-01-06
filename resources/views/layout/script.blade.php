@@ -874,7 +874,7 @@ function emibreakup(E,P,r,n)
           $("#co_income_year").val('');
           $('#co_remuneration').val('');
           $('#pop1').empty();
-          $('#pop1').append( "<p>Your monthly Salary is</p>" );
+          $('#pop1').append( "<p>and monthly Salary is</p>" );
         }else if(val=='co_obl_emi'){
           $('#pop1').empty();
           $('#pop1').append( "<p>co-applicant EMI is</p>" );
@@ -888,8 +888,9 @@ function emibreakup(E,P,r,n)
           $('#co_sal').hide();
           $('#income').val('');
           $('#pop1').empty();
-          $('#pop1').append( "<p>Enter your net Income</p>" );
-        }else if(val=='q8'){
+          $('#pop1').append( "<p>Turnover of your co-applicant</p>" );
+        }
+        else if(val=='q8'){
           $('#pop1').append( "<p>Enter your valid pancard number</p>" )
         }else{
             $('#pop1').append( "<p>Please Proceed</p>" );
@@ -949,7 +950,7 @@ function emibreakup(E,P,r,n)
                 else {
                   if(x>8){
                         $('#pop1').empty();
-                        $('#pop1').append( "<p>We dont provide that much of loan.</p>" );
+                        $('#pop1').append( "<p>Thats a lot of money.</p>" );
                   } if(obj=='annual_receipt' ||  obj=='total_emi'){
                         document.getElementById(val).style.display='block';
                         $('#pop1').empty();
@@ -990,8 +991,16 @@ function emibreakup(E,P,r,n)
           $('#pop1').append( "<p>Enter your loan tenure</p>" );
         }else if(val=='q7'){
           $('#pop1').append( "<p>Have special offers for female</p>" );
+        }else if(val=='co_obl_yes'){
+          $('#pop1').append( "<p>Co-Applicant have any existing loan?</p>" );
         }else if(val=='self_q'){
           $('#pop1').append( "<p>Your total profit after tax is</p>" );
+        }else if(val=='co_profit_all'){
+          $('#pop1').append( "<p>co-applicant profit after tax </p>" )
+        }else if(val=='co_self_q2'){
+          $('#pop1').append( "<p>co-applicant depreciation  </p>" )
+        }else if(val=='co_self_q3'){
+          $('#pop1').append( "<p>co-applicant Director remuneration  </p>" )
         }else{
           $('#pop1').append( "<p>Please go on</p>" );
         }

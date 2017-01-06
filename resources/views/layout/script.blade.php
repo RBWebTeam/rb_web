@@ -269,6 +269,10 @@ $(document).ready(function(){
 <script>
 
 $(document).ready(function(){
+    $(".callclass").click(function(){
+      $(".sidebar").hide("fast");
+        $(".arrow-don").show("fast");
+    });
     $(".hide-dv").click(function(){
         $(".sidebar").hide("fast");
         $(".arrow-don").show("fast");

@@ -29,7 +29,7 @@
 			 </h3> 
 			</div>
 			<div class="col-md-12 text-center animate-box cont" style="display: none;" id="q2_year">
-             <h3>my yearly income is
+             <h3>my turnover is
 			 <input type="tel" id="income_year" name="turnover" onkeyup="changeText_new('income_year','q3')"  onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="1,00,000" tabindex="1">
 			 </h3> 
 			</div>
@@ -72,7 +72,7 @@
 				<input type="text" class="search_city input-pad" id='city_name' name='city_name' onfocus="changeTest('city_name','step_3_btn')" placeholder='your city'>city</h3>
 				
 			</div>
-			<div class="text-center" style="display: none;" id="step_3_btn">
+			<div class="text-center" id="step_3_btn">
 			<?php if(Session::get('is_login')) {?>
 				<button class="btn btn-primary btn-outline with-arrow animate-box product_name" >Get me a Loan<i class="icon-arrow-right"></i></button>
 			<?php }else{?>

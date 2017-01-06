@@ -65,10 +65,12 @@
 <div style="display:none;" id="registration1">
              <!-- registration-->
  <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Registration</h4>
-        </div>
+       
+<div class="modal-header login_modal_header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h2 class="modal-title" id="myModalLabel">Registration </h2>
+          </div>
+
         <div class="modal-body">
           <form name="registration_form" id="registration_form"   method="post"  >
           {{ csrf_field() }}

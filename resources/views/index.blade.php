@@ -12,7 +12,7 @@
 
 		</div>
 			<ul class="slides">
-		   	<li style="background-image: url(images/slide_1.png);">
+		   	<li style="background-image: url(images/slide_1.jpg);">
 		   		<div class="overlay-gradient"></div>
 		   		  <br>
 		   			<div class="slider-text">
@@ -25,7 +25,7 @@
 		   			</div>
 		   		
 		   	</li>
-		   	<li style="background-image: url(images/slide_1.png);">
+		   	<li style="background-image: url(images/slide_2.jpg);">
 		   		  <br>
 		   			<div class="slider-text">
 		   				<div class="slider-text-inner">
@@ -37,7 +37,7 @@
 		   			</div>
 		   		
 		   	</li>
-		   	<li style="background-image: url(images/slide_1.png);">
+		   	<li style="background-image: url(images/slide_3.jpg);">
 		   		   <br>
 		   			<div class="slider-text">
 		   				<div class="slider-text-inner">
@@ -49,7 +49,7 @@
 		   			</div>
 		   		
 		   	</li>
-			<li style="background-image: url(images/slide_1.png);">
+			<li style="background-image: url(images/slide_4.jpg);">
 		   		    <br>
 		   			<div class="slider-text">
 		   				<div class="slider-text-inner">
@@ -61,7 +61,7 @@
 		   			</div>
 		   		
 		   	</li>
-			<li style="background-image: url(images/slide_1.png);">
+			<li style="background-image: url(images/slide_5.jpg);">
 		   		    <br>
 		   			<div class="slider-text">
 		   				<div class="slider-text-inner">
@@ -73,7 +73,7 @@
 		   			</div>
 		   		
 		   	</li>
-			<li style="background-image: url(images/slide_1.png);">
+			<li style="background-image: url(images/slide_6.jpg);">
 		   		  <br>
 		   			<div class="slider-text">
 		   				<div class="slider-text-inner">

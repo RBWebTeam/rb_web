@@ -1,4 +1,5 @@
 <div class="container">
+<div class="table-responsive">
 <center><h1>Savings Table:<i class="fa fa-hand-o-down" aria-hidden="true"></i></h1></center>
  <div class="outer-border" style="border:2px dashed #ccc; padding:30px">
 <h2 class="text-center">Savings:</h2>
@@ -87,5 +88,6 @@ th, td {
 </style>
 </table>
     
+  </div>
   </div>
   </div>

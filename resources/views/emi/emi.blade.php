@@ -23,8 +23,9 @@
      <div class="btn-group">
       <label class="btn btn-primary"><input type="radio" name="Year" id="Year" value="" checked="checked">Yr</label>
       <label class="btn btn-primary"><input type="radio" name="Year" id="Month" value="">Mo</label>
+       <p id="err" style="display:none;"><b><span style="color:red">Please Fill All Inputs</span></b>
     </div>
-    <p id="err" style="display:none;"><b><mark style="color:red">Please Fill All Inputs</mark></b>
+    
    </div>
   
   </div>
@@ -47,8 +48,11 @@
  </div>
 </div>
 </div>
+
 <div class="container">
+<div class="table-responsive">
 <table class="table table-bordered table-striped" id="emipaymenttable"></table>
+</div>
 </div>
 @include('layout.footer')
 @include('layout.script') 

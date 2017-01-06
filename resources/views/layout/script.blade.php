@@ -488,6 +488,54 @@ $(".registration-submit").click(function(event){
          }
     
    });
+
+
+  $("#forgotps").click(function(event){
+    $("#forgotpassword").show();
+    $("#registration1").hide();
+    $("#login").hide();
+
+   });
+
+$("#f_password").click(function(event){
+
+     event.preventDefault();
+    var form=$(this).closest("form").attr('id');
+        $form=$('#'+form);
+         if(! $form.valid()){
+         }else{
+
+             $.ajax({  
+               type: "POST",  
+               url: "{{URL::to('forgot-password')}}",
+               data : $('#'+form).serialize(),
+               dataType: 'json',
+               success: function(msg){
+
+                   if(msg==1){
+                    $("#forgotpass").text("Email does not exist in our database!!!");
+                   }else if(msg.email){
+                    $("#forgotpass").text(msg.email);
+                   }else if(msg==2){
+                       $(".forgotps").text("Email sent on your registered email id, Please check it and come back soon.");
+                   //$form.hide();
+                  $('.forgotps').show();
+                  $('#forgot_password_form').hide();
+                   }else{
+                    $("#forgotpass").text("Oops somthing went wrong!!!");
+                    
+                   }
+                     
+                     
+                     
+
+               }  
+           });
+       
+      }
+ 
+});
+
        //end by dp
 
 
@@ -496,7 +544,7 @@ $(".registration-submit").click(function(event){
 
     event.preventDefault();
     var form=$(this).closest("form").attr('id');
-   var contact=$(this).closest("form").find("input[name=contact]").val();
+    var contact=$(this).closest("form").find("input[name=contact]").val();
 
          $form=$('#'+form);
          if(! $form.valid()){

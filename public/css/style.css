@@ -47,17 +47,19 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 h3 {
 	
-	margin: 0 0 0px 0;
+	margin: 0 0 6px 0;
 	font-size:20px;
 	
 	
 }
 h5 {
 	font-size:30px;
-	color:#666;
+	color:#fff;
+	background:blue;
 	opacity:0.6;
 	padding:0px 20px;
-	display:block;
+	display: -webkit-inline-box;
+	border-radius:5px;-moz-border-radius:5px;-webkit-border-radius:7px;
 	}
 
 ::-webkit-selection {
@@ -412,7 +414,7 @@ td {padding:10px; text-align:center;}
   text-transform:uppercase;
 }
 #fh5co-header nav ul ul li a {font-size:13px; padding:5px 10px; text-transform:capitalize;font-weight:normal;color:#fff;}
-#fh5co-header nav ul ul {width:auto; margin-top:25px;padding:10px;background: #000;opacity: 0.4;}
+#fh5co-header nav ul ul {width:auto; margin-top:18px;padding:10px;background: #000;opacity: 0.9;}
 
 #fh5co-header nav ul li a i {
   line-height: 0;
@@ -553,7 +555,11 @@ td {padding:10px; text-align:center;}
 #fh5co-hero .flexslider .slider-text > .slider-text-inner h2 {
   font-size:50px;
   font-weight: 400;
-  color: #2278ab;
+  color: #fff;
+  background:blue;
+  box-shadow:1px 1px 3px 1px #000;
+  border-radius:7px;-moz-border-radius:7px;-webkit-border-radius:7px;-o-border-radius:7px;
+  display: -webkit-inline-box;
   font-weight:bold;
 }
 @media screen and (max-width: 768px) {
@@ -1215,7 +1221,7 @@ rb-services-section{padding:0px;}
   -o-transition: 0.3s;
   transition: 0.3s;
 }
-#fh5co-pricing-section .price-box:hover {background:#4bc3f5;}
+#fh5co-pricing-section .price-box:hover {background:#b8dae8;}
 #fh5co-pricing-section .price-box.popular .btn-select-plan {
   background: #ec1b23;
 }
@@ -1281,7 +1287,7 @@ rb-services-section{padding:0px;}
   transition:all 0.3s linear;-moz-transition:all 0.3s linear;-webkit-transition:all 0.3s linear;
 }
 .js .h3-pd-btm:hover {color:#ec1b23;}   
-#fh5co-services-section .services i:hover {color:#ec1b23;transition:all 0.3s linear;-moz-transition:all 0.3s linear;-webkit-transition:all 0.3s linear;}
+
 /*# sourceMappingURL=style.css.map */
 
 
@@ -1296,7 +1302,7 @@ rb-services-section{padding:0px;}
 .head-1 {text-transform:uppercase;color:#fff;display: block;font-size: 20px;padding-top: 20px;text-align:center;}
 .head-2 {font-size:18px; padding-bottom:8px; display: block;}
 .centr-obj {text-align:center;}
-#fh5co-services-section .services i {color:#1f386e;font-size:60px;} 
+
 
 .icon-style {    font-size: 40px;padding: 20px;padding-left:18px;color: #fff;display: block;width: 81px;border-radius: 50px;
 border: #3px solid #999;background:#1f386e;margin: 10px;margin: 10px auto;text-align: center;-webkit-transition: all 0.3s linear;}
@@ -1413,12 +1419,15 @@ border-radius: 7px;padding: 1em;margin-top: 1em;}
  .sec select {width: 100%;padding: 6px;border: 2px solid rgba(0, 0, 0, 0.1); border-radius:2px;-moz-border-radius:2px;-webkit-border-radius:2px;}
  .tab-content {padding:10px;}
  .dropdown-menu li a {font-size:12px;}
- #fh5co-services-section .services .icon-home {color:#3aa6d3;}
- #fh5co-services-section .services .icon-user {color:#1a1a18;}
- #fh5co-services-section .services .icon-money {color:#9dbb33;}
- #fh5co-services-section .services .icon-tablet {color:#ea1310;}
- #fh5co-services-section .services .icon-line-chart {color:#147456;}
- #fh5co-services-section .services .icon-car {color:#1f386e;}
+ #fh5co-services-section .services .icon-home:hover {color:#3aa6d3;}
+ #fh5co-services-section .services .icon-user:hover {color:#1a1a18;}
+ #fh5co-services-section .services .icon-money:hover {color:#9dbb33;}
+ #fh5co-services-section .services .icon-tablet:hover {color:#ea1310;}
+ #fh5co-services-section .services .icon-line-chart:hover {color:#147456;}
+ #fh5co-services-section .services .icon-car:hover {color:#1f386e;}   
+ 
+ #fh5co-services-section .services i {color:#a7d3e5;font-size:60px;} 
+
  
 @media only screen and (max-width:768px) {
 	.form-in {border:none;}
@@ -1504,7 +1513,7 @@ input[type=radio]:checked ~ .check {
 .fltr input {padding:5px;margin-right:5px;}
 .modal-body input {background:#eee;}
 .modal-body li {color:#15a9fa;}
-.modal-body li span {padding:0px;  border-radius:50px;border-bottom: 2px solid #15a9fa;}
+.modal-body li span {padding:0px;  border-radius:50px;}
 .flexslider li a:hover {text-decoration:none;}
 .slider-text-inner h2 b {text-shadow:1px 1px 1px #666;}
 radio {background:#ff0000;}
@@ -1568,6 +1577,7 @@ top: -.25em;left: 20%;margin: 0 0 0 -.25em;}
 
 
 /*emi css*/
+
  .rw-hei {height:375px;border: 2px dashed #ccc;border-right:none;}
   .brd-rgt {border-right: 2px dashed #ccc;}
   body {color:#666;}
@@ -1674,3 +1684,4 @@ input[type="radio"] {margin:0px;}
     margin: 0 auto;
     margin-bottom: 5px;
 }
+tr:hover {box-shadow:1px 1px 3px 1px #999;}

@@ -1,51 +1,57 @@
   @include('layout.header')
 <style>
-  .rw-hei {height:590px;border: 2px dashed #ccc;border-right:none;}
-  .brd-rgt {border-right: 2px dashed #ccc;}
   body {color:#666;}
   .tbl-clr {color:#fff; }
   .tbl-clr td {text-align:center;}
-   .rw-hei p {font-size:16px;color:#999;}
+  .rw-hei{margin-bottom:20px; height:280px;}
+   .rw-hei p {font-size:16px;color:#999; margin-bottom:10px;}
    .rw-hei h1 {margin-top:10px;}
    .sub-title {color:#999;}
-   .emi-cal {background:#333;padding:10px;display:block;color:#fff; text-align:center;}
-   .transfer-cal {background:#333;padding:10px;display:block;color:#fff; text-align:center;}
+   .emi-cal {background:#666;padding:10px;color:#fff; text-align:center;}
+   .transfer-cal {background:#666;padding:10px;color:#fff; text-align:center;}
    .mthy {Font-weight:bold;}
    .table-bordered>thead>tr>th {color:#fff;}
+   .fh5co-cta {background:#666; margin-top:106px; margin-bottom:20px;}
    
 </style>
 </head>
 
 <body>
 
-<div class="jumbotron text-center" style="background-color:lightblue;" id="fh5co-hero">
-<?php if($loan == "home-loan") {?>
-<center>
-  <p class="text-primary"><h2>Home Loan Transfer Service</h2></p> 
-  <p>Let's find out how much you can save!!</p>
-  <p>Know how much you'll save. Please enter your current home loan details.</p> 
-</center>
-<?php }elseif($loan == "personal-loan"){?>
-<center>
-  <p class="text-primary"><h2>Personal Loan Transfer Service</h2></p> 
-  <p>Let's find out how much you can save!!</p>
-  <p>Know how much you'll save. Please enter your current home loan details.</p> 
-</center>
-<?php }else{?>
-<center>
-  <p class="text-primary"><h2>Loan Against Property Transfer Service</h2></p> 
-  <p>Let's find out how much you can save!!</p>
-  <p>Know how much you'll save. Please enter your current home loan details.</p> 
-</center>
-<?php }?>
-            
-                            
-  
-</div>
+
+<div class="fh5co-cta">
+		<div class="overlay"></div>
+		<?php if($loan == "home-loan") {?>
+		<div class="container">
+			<div class="col-md-12 text-center animate-box wht-brd pad fadeInUp animated">
+				<h1 class="h1-hd">Home Loan Transfer Service</h1>
+				<h3>Let's find out how much you can save!!</h3>
+				<h3>Know how much you'll save. Please enter your current home loan details.</h3>
+			</div>
+		</div>
+		<?php }elseif($loan == "personal-loan"){?>
+		<div class="container">
+			<div class="col-md-12 text-center animate-box wht-brd pad fadeInUp animated">
+				<h1 class="h1-hd">Personal Loan Transfer Service</h1>
+				<h3>Let's find out how much you can save!!</h3>
+				<h3>Know how much you'll save. Please enter your current home loan details.</h3>
+			</div>
+		</div>
+		<?php }else{?>
+		<div class="container">
+			<div class="col-md-12 text-center animate-box wht-brd pad fadeInUp animated">
+				<h1 class="h1-hd">Loan Against Property Transfer Service</h1>
+				<h3>Let's find out how much you can save!!</h3>
+				<h3>Know how much you'll save. Please enter your current home loan details.</h3>
+			</div>
+		</div>
+		<?php }?>
+	</div>
+	
   
 <div class="container">
   <div class="row">
-     <div class="col-sm-6 rw-hei brd-rgt" style="background-color:lavender;"><h3 class="emi-cal">
+     <div class="col-sm-6 rw-hei" style="background-color:#fff;"><h3 class="emi-cal">
     <?php if($loan == "home-loan") {?>
      Home Loan Transfer Savings  <i class="fa fa-exchange" aria-hidden="true"></i></h3>
     <?php }elseif($loan == "personal-loan"){?>
@@ -57,12 +63,12 @@
 
      <!-- <i class="fa fa-exchange" aria-hidden="true"></i> -->
     <div class="form-group">
-       <label class="control-label" for="Loan Amount">Outstanding Principal:</label>
-       <input type="number" name="loanamount" class="form-control" id="loanamount" placeholder="Loan Amount" value="" onblur ="myfun()">
+       <!-- <label class="control-label" for="Loan Amount">Outstanding Principal:</label> -->
+       <input type="text" name="loanamount" class="form-control" id="loanamount" placeholder="Loan Amount" value="" onblur ="myfun()">
     </div>
     <div class="form-group">
-      <label class="control-label" for="Interest Rate"> Current Interest Rate:</label>
-      <input type="number" name="loaninterest" step="0.01" min="0" class="form-control" id="loaninterest" placeholder="Interest"  value="" onblur="myfun()">
+      <!-- <label class="control-label" for="Interest Rate"> Current Interest Rate:</label> -->
+      <input type="text" name="loaninterest" step="0.01" min="0" class="form-control" id="loaninterest" placeholder="Interest"  value="" onBlur="myfun()">
     </div>
     <!-- <div class="form-group" >
        <label class="control-label" for="Your Property Location">Your Profession Type:</label>
@@ -75,8 +81,8 @@
     </div>
     -->
     <div class="form-group right-block">
-       <label class="control-label" for="Loan Tenure">Remaining Tenure:</label>
-        <input type="number" name="loanterm" class="form-control" id="loanterm" placeholder="Loan Tenure" value="" onblur="myfun()">
+       <!-- <label class="control-label" for="Loan Tenure">Remaining Tenure:</label> -->
+        <input type="text" name="loanterm" class="form-control" id="loanterm" placeholder="Loan Tenure" value="" onBlur="myfun()">
     <br>
     <div class="btn-group">
           <label class="btn btn-primary"><input type="radio" name="Year" id="Year" value="" checked="checked">Yr</label>
@@ -102,19 +108,18 @@
      <!-- <i class="fa fa-credit-card" aria-hidden="true"></i></h3> -->
      
      <center>
-       <p>Loan EMI :<i class="fa fa-caret-right" style="font-size:20px;" aria-hidden="true"></i></p>
-       <h2 class="em1">₹ <b><span id="emi">0</span></b></h2>
+       <p>Loan EMI :<i class="fa fa-caret-right" style="font-size:20px;" aria-hidden="true"></i><b class="em1"> ₹ <span id="emi">0</span></b></p>
+      
       <!--  <p>Total Payable Interest :</p>
        <h2 class="em2">₹ <b><span id="emi1">0</span></b></h2>
        <p>Total Payment(Principal + Int) :</p>
        <h2 class="em3">₹ <b><span id="emi2">0</span></b></h2> -->
-       <p>Drop_EMI : <i class="fa fa-caret-down" style="font-size:20px;color:lightgreen;" aria-hidden="true"></i> </p>
-       <h2 class="em5">₹ <b><span id="emi3">0</span></b></h2>
-       <p>New Loan EMI : <i class="fa fa-caret-down" style="font-size:20px;color:lightgreen;" aria-hidden="true"></i></p>
-       <h2 class="em6">₹ <b><span id="emi4">0</span></b></h2>
-        <p>Drop-in Interest Rate: <i class="fa fa-caret-down" style="font-size:20px;color:lightgreen;" aria-hidden="true"></i></p>
-       <h2 class="em7"> <b><span id="emi5">0</span>%</b></h2>
-       <p><h6>Your <mark style="color:red">Savings</mark> through reduced Interest: <i class="fa fa-credit-card" style="font-size:18px;color:"></i></h6></p>
+       <p>Drop_EMI : <i class="fa fa-caret-right" style="font-size:20px;" aria-hidden="true"></i> ₹ <b class="em5"><span id="emi3">0</span></b></p>
+       <p>New Loan EMI : <i class="fa fa-caret-right" style="font-size:20px;" aria-hidden="true"></i><b class="em6">₹<span id="emi4">0</span></b></p>
+   
+        <p>Drop-in Interest Rate: <i class="fa fa-caret-down" style="font-size:20px;color:lightgreen;" aria-hidden="true"></i> <b class="em7"><span id="emi5">0</span>%</b></p>
+		
+       <p><h6>Your <mark style="color:red">Savings</mark> through reduced Interest: <i class="fa fa-caret-right" style="font-size:20px;" aria-hidden="true"></i></h6></p>
        <h2 class="em8">₹ <b><span id="emi6">0</span></b></h2>
        
        

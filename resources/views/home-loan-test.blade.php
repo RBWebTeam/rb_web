@@ -6,7 +6,7 @@
 		
 		<div class="liza col-md-8"  id="step-1" style="display: block;">
 			<!--- liza Step First   - -->
-			<div class="col-md-12 text-center"><h4>Apply for an Easy Home Loan in 30 seconds</h4></div>
+			<div class="col-md-12 text-center"><h4>Apply for an Easy Loan against property in 30 seconds</h4></div>
 			<p class="text-center">Step 1 of 2</p> 
 			<!--first question--> 
 			<div class="col-md-12 text-center animate-box cont" id="q1">
@@ -25,7 +25,6 @@
 							<input type="tel" id="income_year" name="turnover" onkeyup="changeText_new('income_year','self_q')"  onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="1,00,000" tabindex="1">
 						</h3> 
 					</div>
-
 					<!-- self employed question -->
 					<div class="col-md-12 text-center animate-box cont" style="display: none;" id="self_q">
 						<h3>my profit after tax is
@@ -43,6 +42,7 @@
 							<input type="tel" id="remuneration" name="remuneration" onkeyup="changeText_new('remuneration','q3')"  onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="1,00,000" tabindex="1">
 						</h3> 
 					</div>
+
 					<!-- self employed question ends -->
 					<div class="col-md-12 text-center animate-box cont" style="display: none;" id="q3">
 						<h3>I
@@ -74,12 +74,11 @@
 							<a href="#" class="svalue clr-blue pop_up" data-toggle="modal" data-target="#gender_popup" ><input type="text" style="color:000;" class="clr-blue" id="gender" name="gender"  placeholder="Select" readonly>
 							</h3></a>	
 						</div>
-						<div class="col-md-12 text-center animate-box cont1" style="display: none" id="q8">
+						<div class="col-md-12 text-center animate-box cont1" style="display: none" id="date_birth">
 							<h3>My date of birth is
-								<input type="date" id="dob" name="dob" class="input-pad company-nm1" onchange="changeTest_new(this,'q9')">
+								<input type="text" id="dob" name="dob" class="input-pad company-nm1 datepicker" onchange="changeTest_new(this,'q9')">
 							</h3>
 						</div>
-						
 						<div class="col-md-12 text-center animate-box cont" style="display:none;" id="q9" >
 							
 				             <h3>I have been living in
@@ -88,8 +87,8 @@
 						</div>
 						
 
-						<div class="text-center" style="display: none;" id="step_2_btn">
-							<a class="btn btn-primary btn-outline with-arrow animate-box" id="co_button" onclick="changeDiv_new('step-1','step-2')">Have Co-Applicant<i class="icon-arrow-right"></i></a>
+						<div class="text-center" style="display: none" id="step_2_btn">
+							<a class="btn btn-primary btn-outline with-arrow animate-box" id="co_button" onclick="changeDiv_new('step-1','step-2_co')">Have Co-Applicant<i class="icon-arrow-right"></i></a>
 							
 								<?php if(Session::get('is_login')) {?>
 									<button class="btn btn-primary btn-outline with-arrow animate-box product_name" >Get me a Loan<i class="icon-arrow-right"></i></button>
@@ -106,7 +105,7 @@
 						</div>
 
 					<!---  Step Two   - -->
-					<div class="liza col-md-8" style="display: none;" 	 id="step-2">
+					<div class="liza col-md-8" style="display: none;" 	 id="step-2_co">
 					   
 					   <p class="text-center">Step 2 of 3</p>
 						<div class="col-md-12 text-center animate-box cont" id="co_q">
@@ -141,19 +140,31 @@
 					</div>
 					<div class="col-md-12 text-center animate-box cont" style="display: none;" id="co_self_q3">
 						<h3>Co-Applicant  Director remuneration is
-							<input type="tel" id="co_remuneration" name="co_applicant_remuneration" onkeyup="changeText_new('co_remuneration','co_obl')"  onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="1,00,000" tabindex="1">
+							<input type="tel" id="co_remuneration" name="co_applicant_remuneration" onkeyup="changeText_new('co_remuneration','co_obl_yes')"  onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="1,00,000" tabindex="1">
 						</h3> 
 					</div>
-
-						<div class="col-md-12 text-center animate-box cont" style="display: none" id="co_obl">
-							<h3>Co-Applicant remaining loan amount is
+					<div class="col-md-12 text-center animate-box cont" style="display: none" id="co_obl_yes">
+							<h3>Co-Applicant has any existing loan
+								<a href="#" class="svalue clr-blue pop_up" data-toggle="modal" data-target="#co_obl_yes_pop" ><input type="text" style="color:000;" class="clr-blue" id="co_obl_loan" name="co_obl_yes"  placeholder="Select" readonly>
+								</a>
+							</h3> 
+					</div>
+					<div class="col-md-12 text-center animate-box cont" style="display: none" id="co_obl_emi">
+							<h3>Co-Applicant remaining loan EMI is
 								<input type="tel" id="co_obligation" name="co_applicant_obligation"  onkeyup="changeText_new('co_obligation','last_button')"  onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="1,00,000" tabindex="1">
+							</h3> 
+					</div>
+						
+						<div class="col-md-12 text-center animate-box cont" style="display: none" id="co_obl_yes">
+							<h3>Co-Applicant remaining loan EMI is
+								<a href="#" class="svalue clr-blue pop_up" data-toggle="modal" data-target="#co_obl_yes_pop" ><input type="text" style="color:000;" class="clr-blue" id="co_obl_loan" name="co_obl_yes"  placeholder="Select" readonly>
+								</a>
 							</h3> 
 						</div>
 				
 					<!-- step-2 finished -->
 					<div class="text-center">
-						<a class="btn btn-primary btn-outline with-arrow animate-box" id="back" onclick="changeTest_new('step-2','step-1')">Back<i class="icon-arrow-right"></i></a>
+						<a class="btn btn-primary btn-outline with-arrow animate-box" id="back" onclick="changeDiv_new('step-2_co','step-1')">Back<i class="icon-arrow-right"></i></a>
 					</div>
 					<div class="text-center" style="display: none;" id="last_button">
 						<?php if(Session::get('is_login')) {?>

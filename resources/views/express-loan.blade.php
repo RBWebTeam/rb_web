@@ -3,7 +3,7 @@
 	
 	<aside id="fh5co-hero">
 	<div class="col-md-12">
-	<p class="text-left">home/Express Loan</p>
+	<p class="text-left"><a href="{{URL::to('/')}}">Home</a>/Express Loan</p>
 	<h2 class="align-center loan-head">Express Loan</h2>
 	</div>
 	<div class=""></div>

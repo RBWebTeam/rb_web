@@ -1,8 +1,10 @@
     <script src="{{URL::to('js/modernizr-2.6.2.min.js')}}"></script>
         <!-- jQuery -->
     <script src="{{URL::to('js/jquery.min.js')}}"></script>
+
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	
+
     <link href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" rel="Stylesheet"></link>
     <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/themes/base/minified/jquery-ui.min.css" type="text/css" />
     <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js" ></script>
@@ -25,25 +27,21 @@
 });
     </script>
     <!-- function addede later -->
-	
-	<script>
+
+  <script>
+
 $(document).ready(function(){
     $('[data-toggle="popover"]').popover();   
 });
 </script>
 
+
     <script type='text/javascript'>
   $(function(){
     $('.datepicker').datepicker({
-        changeMonth: false,
-        changeYear: true,
-        showButtonPanel: true,
         yearRange: '1950:2017',
-        dateFormat: 'yy',
-        onClose: function(dateText, inst) { 
-            var year = $("#ui-datepicker-div .ui-datepicker-year :selected").val();
-            $(this).datepicker('setDate', new Date(year, 0, 1));
-        }});
+        dateFormat: 'yy-dd-mm',
+        });
     });
 </script>
 <script>
@@ -274,6 +272,10 @@ $(document).ready(function(){
 <script>
 
 $(document).ready(function(){
+    $(".callclass").click(function(){
+      $(".sidebar").hide("fast");
+        $(".arrow-don").show("fast");
+    });
     $(".hide-dv").click(function(){
         $(".sidebar").hide("fast");
         $(".arrow-don").show("fast");
@@ -373,10 +375,15 @@ $(document).ready(function(){
                success: function(msg){
                 if(msg=='true'){
                   $form.hide();
-                  $('.msg').show();
+                  var a =$('#'+form).parent().find('.msg')
+                  //console.log(a);
+                  $(a).show();
+                  //$('.msg').show();
                 }else{
                   $form.hide();
-                  $('.msg_err').show();
+                  var b =$('#'+form).parent().find('.msg_err')
+                  //console.log(a);
+                  $(b).show();
                 }
                 //console.log(msg);
                }  
@@ -741,7 +748,7 @@ $(document).ready(function(){
                dataType:'json',
                data : { 'loanamount': loanamount , 'loaninterest': loaninterest ,'loanterm' :loanterm, '_token': v_token},
                success: function(msg){
-               // console.log(msg);
+               //console.log(msg);
                 change(msg.amount,msg.ttl_pay,msg.ttl_payment);
                 emibreakup(msg.amount,loanamount,loaninterest,loanterm);
                  var numb = msg.amount.toFixed();
@@ -775,19 +782,19 @@ $(document).ready(function(){
             value: a,
             color: "#c2da6b",
             highlight: "#c2da6b",
-            label: "Loan EMI"
+           
           },
           {
             value: b,
             color: "#00B9B9",
             highlight: "#00B9B9",
-            label: "Total Payable Interest "
+      
           },
           {
             value: c,
             color: "#4A9ACF",
             highlight: "#4A9ACF",
-            label: "Total Payment(Principal + Interest)"
+            
           }
         ];
 
@@ -860,10 +867,14 @@ function emibreakup(E,P,r,n)
           $('#remuneration').val('');
           $("#income_year").val('');
           $('#pop1').append( "<p>Enter your net Income</p>" );
+        }else  if(val=='q4'){
+          $('#pop1').append( "<p>Any existing loan history</p>" );
         }else  if(val=='q5'){
             $('#pop1').empty();
             $('#pop1').append( "<p>Loan amount you wants to borrow</p>" );
             $("#q4").hide();
+        }else if(val=='date_birth'){
+          $('#pop1').append( "<p>I wonder if your birthday is today</p>" );
         }else  if(val=='q2_year'){
           $('#pop1').append( "<p>Enter your net turnover</p>" );
           $("#q2").hide();
@@ -877,12 +888,24 @@ function emibreakup(E,P,r,n)
           $('#co_depreciation').val('');
           $("#co_income_year").val('');
           $('#co_remuneration').val('');
+          $('#pop1').empty();
+          $('#pop1').append( "<p>and monthly Salary is</p>" );
+        }else if(val=='co_obl_emi'){
+          $('#pop1').empty();
+          $('#pop1').append( "<p>co-applicant EMI is</p>" );
+        }else if(val=='last_button' && obj!='co_obligation'){
+          $('#pop1').empty();
+          $('#pop1').append( "<p>Great go on!!!</p>" );
+          $('#co_obligation').val('');
+          $('#co_obl_emi').hide('');
+          
         }else if(val=='co_self'){
           $('#co_sal').hide();
           $('#income').val('');
           $('#pop1').empty();
-          $('#pop1').append( "<p>Enter your net Income</p>" );
-        }else if(val=='q8'){
+          $('#pop1').append( "<p>Turnover of your co-applicant</p>" );
+        }
+        else if(val=='q8'){
           $('#pop1').append( "<p>Enter your valid pancard number</p>" )
         }else{
             $('#pop1').append( "<p>Please Proceed</p>" );
@@ -893,13 +916,15 @@ function emibreakup(E,P,r,n)
 
        function changeDiv_new(prv,nxt){
 
-        //alert(obj.options[obj.selectedIndex].value);
+       //alert(prv+nxt);
 
         document.getElementById(prv).style.display='none';
         document.getElementById(nxt).style.display='block';
         $('#pop1').empty();
         if(nxt=='step-2'){
           $('#pop1').append( "<p>Where do you work?</p>" );   
+        }else if(nxt=='step-2_co'){
+          $('#pop1').append( "<p>The profession of your co-applicant is</p>" );   
         }else if(nxt=='step-3'){
           $('#pop1').append( "<p>Tell us about the your residence</p>" );   
         }else if(nxt=='start-2'){
@@ -940,7 +965,7 @@ function emibreakup(E,P,r,n)
                 else {
                   if(x>8){
                         $('#pop1').empty();
-                        $('#pop1').append( "<p>We dont provide that much of loan.</p>" );
+                        $('#pop1').append( "<p>Thats a lot of money.</p>" );
                   } if(obj=='annual_receipt' ||  obj=='total_emi'){
                         document.getElementById(val).style.display='block';
                         $('#pop1').empty();
@@ -962,6 +987,8 @@ function emibreakup(E,P,r,n)
       $('#pop1').empty();
       if(val=='q3'){
            $('#pop1').append( "<p>Do you have any existing loan</p>" );
+        }else  if(val=='q_prop'){
+           $('#pop1').append( "<p>Your property price is</p>" );
         }else if(val=='exp'){
           $('#pop1').append( "<p>Entr your expierience in current company</p>" );
         }else if(val=='total_exp'){
@@ -978,9 +1005,17 @@ function emibreakup(E,P,r,n)
         }else if(val=='q6'){
           $('#pop1').append( "<p>Enter your loan tenure</p>" );
         }else if(val=='q7'){
-          $('#pop1').append( "<p>I wonder if your birthday is today</p>" );
+          $('#pop1').append( "<p>Have special offers for female</p>" );
+        }else if(val=='co_obl_yes'){
+          $('#pop1').append( "<p>Co-Applicant have any existing loan?</p>" );
         }else if(val=='self_q'){
-          $('#pop1').append( "<p>I wonder if your birthday is today</p>" );
+          $('#pop1').append( "<p>Your total profit after tax is</p>" );
+        }else if(val=='co_profit_all'){
+          $('#pop1').append( "<p>co-applicant profit after tax </p>" )
+        }else if(val=='co_self_q2'){
+          $('#pop1').append( "<p>co-applicant depreciation  </p>" )
+        }else if(val=='co_self_q3'){
+          $('#pop1').append( "<p>co-applicant Director remuneration  </p>" )
         }else{
           $('#pop1').append( "<p>Please go on</p>" );
         }
@@ -1005,8 +1040,9 @@ $(document).ready(function(){
 	</body>
 </html>
 <!-- login Start-->
-    <div id="login_process" class="modal fade" role="dialog">
-  <div class="modal-dialog">
+
+<div id="login_process" class="modal fade" role="dialog">
+<div class="modal-dialog">
 
     <!-- Modal content-->
     <div class="modal-content">
@@ -1014,68 +1050,62 @@ $(document).ready(function(){
       
         <h4 class="modal-title">Fill details</h4>
       </div>
-      <div >
-     <div> 
+     
    <div id="send_otp">  
     <form class="form-horizontal" id="login_form_process" method="POST">
      {{ csrf_field() }}
    
     <div class="form-group">
     
-    <label for="name" class="col-sm-2 control-label">Name</label>
-    <div class="col-sm-10">
+    <label for="name" class="col-sm-3 control-label">Name</label>
+    <div class="col-sm-6">
       <input type="text" class="form-control" id="name" name="name" placeholder="your good name" required>
     </div>
   </div>
   <div class="form-group">
-    <label for="email" class="col-sm-2 control-label">Email</label>
-    <div class="col-sm-10">
+    <label for="email" class="col-sm-3 control-label">Email</label>
+    <div class="col-sm-6">
       <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
     </div>
   </div>
   <div class="form-group">
-    <label for="contact" class="col-sm-2 control-label">Contact</label>
-    <div class="col-sm-10">
+    <label for="contact" class="col-sm-3 control-label">Contact</label>
+    <div class="col-sm-6">
       <input type="text" class="form-control" id="contact" name="contact" placeholder="Contact number"  pattern="[789][0-9]{9}" required maxlength="10" minlength="10" onkeypress="return fnAllowNumeric(event)">
     </div>
   </div>
   <div class="form-group">
-     <label for="set_pwd" class="col-sm-2 control-label">Password</label>
-    <div class="col-sm-10">
+     <label for="set_pwd" class="col-sm-3 control-label">Password</label>
+    <div class="col-sm-6">
       <input type="password" class="form-control" id="set_pwd" name="set_pwd" placeholder="Password" required maxlength="10" minlength="6" >
       </div>
   </div>
   <div class="form-group">
-     <label for="set_pwd_confirm" class="col-sm-2 control-label">Password</label>
-    <div class="col-sm-10">
+     <label for="set_pwd_confirm" class="col-sm-3 control-label">Password</label>
+    <div class="col-sm-6">
       <input type="password" class="form-control" id="set_pwd_confirm" name="set_pwd_confirm" placeholder="Confirm Password" required maxlength="10" minlength="6" >
       </div>
   </div>
   <div class="form-group">
     
-    <div class="col-sm-10">
+    <div class="col-sm-6">
      <span id='msg_err' style="display: none;color:red;">oops something went wrong</span>
      <span id='pls_wait' style="display: none;color: red;">Please wait .....</span>
      <span id='pwd_match' style="display: none; color:red;">Password do not match.</span>
     </div>
 
   </div>
-  <div class="form-group">
-    <div class="col-sm-offset-2 col-sm-6">
+  <div class="form-group ">
+    <div class="col-sm-offset-2 col-sm-5">
     <input type="hidden" name="product" id="product_login" value="">
       <button class="btn btn-default"  id="send_otp_button"  >Send OTP</button>
     </div>
-    </div>
-    <div class="form-group">
-    <div class="col-sm-offset-2 col-sm-6">
-    
+    <div class="col-sm-5">
       <a class="btn btn-default"  id="already_user" data-toggle="modal" data-target="#log_popup" data-dismiss="modal" >Already User</a>
     </div>
   </div>
   </form>
   </div>
-      </div>
-      </div>
       
     </div>
    

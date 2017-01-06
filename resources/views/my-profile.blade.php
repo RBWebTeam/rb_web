@@ -15,9 +15,9 @@
                     <li class="active"><a href="#profile" data-toggle="tab" class="pad-lft-rgt">My Profile<i class="icon-profile"></i></a></li>
                 <!--     <li><a href="#messages" data-toggle="tab">Notifications</a></li> -->
                    <li><a href="#extraDetails" data-toggle="tab">Extra Details</a></li>
-                     <li><a href="#credit-score" data-toggle="tab">My credit score </a></li>
-                       <li><a href="#Loan-history" data-toggle="tab">Loan history </a></li>
-                         <li><a href="#Track-Apllication" data-toggle="tab">Track Apllication </a></li>
+                     <li><a href="#credit-score" data-toggle="tab">My Credit Score </a></li>
+                       <li><a href="#Loan-history" data-toggle="tab">Loan History </a></li>
+                         <li><a href="#Track-Apllication" data-toggle="tab">Track Application </a></li>
                     <li></li>
                    
                 </ul>
@@ -59,7 +59,9 @@
                                   @else
                                      <?php $dob='';?>
                                   @endif
-                                    <input name="dob" value="{{$dob}}" type="date" placeholder="Date of Birth" required>
+                                    <input name="text" value="{{$dob}}" class="datepicker" placeholder="Date of Birth" required>
+
+                                    
                                 </div>
                                 <div class="col-md-6 pad11 text-danger" id="errordetails"></div>
                                 
@@ -115,7 +117,7 @@
 
                           <div class="tab-pane" id="Track-Apllication">
 
-                         Track Apllication
+                         Track application
 
                           </div>
                         

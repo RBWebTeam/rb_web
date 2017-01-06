@@ -2,7 +2,7 @@
     <div id="fh5co-hero">
 	<div class="container">
 	<div class=" pad">
-	<p class="text-left">home/{{$home_loan}}</p>
+
     <h2 class="align-center loan-head">View Options</h2>
 	</div>
 
@@ -12,7 +12,7 @@
     <div class="">
     <table width="100%" border="1" class="tbl pad1">
   <tr>
-    <td>Your {{$home_loan}}  Search for <!-- <b>5 Lakhs</b> Loan</td> -->
+   <!--  <td>Your {{$home_loan}}  Search for --> 
   </tr>
 </table>
 </div>
@@ -26,17 +26,17 @@
   <tr>
     <!-- <td width="9%" class="upper">Compare</td> -->
     <td><div class="img-c"><!-- <img src="{{url('images/axis.jpg')}}" width="100" height="30"> -->{{$value->Bank_Name}}</div></td>
-    <td width="16%" class="upper">Interst Rate</td>
+    <td width="16%" class="upper">Interest Rate</td>
     <td width="16%" class="upper">Loan Amount</td>
     <td width="18%" class="upper">emi</td>
     <?php $Loans=strtolower(str_replace(' ','-',$home_loan)); ?>
      
      <?php if($Loans=='lap'){?>
 
-    <td width="17%"><a href="{{url('apply-loan-against-property')}}">Apply Online</a></td>
+    <td width="17%"><h4><a href="{{url('apply-loan-against-property')}}">Apply Online</h4></a></td>
 
     <?php }else{?>
-   <td width="17%"><a href="{{url('apply-')}}<?php echo $Loans?>">Apply Online</a></td>
+   <td width="17%"><h4><a href="{{url('apply-')}}<?php echo $Loans?>">Apply Online</a></h4></td>
     <?php }?>
   </tr>
 
@@ -82,17 +82,6 @@
 	</div>
 </div>
 	
-<div class="container-fluid white-bg">	
-<div class="container pad">
- <div class="col-md-12 animate-box fadeInUp animated col">
- <div class="col-md-4 img-c"><img src="{{url('images/compare-img.png')}}"></div>
-  <div class="col-md-2 col img-c white-bg"><button type="button" class="close" data-dismiss="modal">×</button>
-    <img src="{{url('images/kotak.png')}}" width="50" height="46">Kotak Mahindra Bank</div>
-  <div class="col-md-2 col img-c white-bg"><button type="button" class="close" data-dismiss="modal">×</button><img src="{{url('images/axis.png')}}" width="50" height="46">Axis Bank</div>
-  <div class="col-md-2 col img-c white-bg"><button type="button" class="close" data-dismiss="modal">×</button><img src="{{url('images/hdfc.png')}}" width="50" height="46">HDFC Bank</div>
-  <div class="col-md-2 comp-btn"><a href="#" class="btn btn-primary btn-outline with-arrow">Compare<i class="icon-arrow-right"></i></a></div>
- </div>
-</div>
-</div>
+
 @include('layout.footer')
 @include('layout.script')

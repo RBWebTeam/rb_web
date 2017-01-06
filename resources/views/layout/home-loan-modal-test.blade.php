@@ -68,8 +68,8 @@
     <ul>
     <form id="gender_form">
 
-        <li><span><input type="radio" name="gender_type" value="male" id="maleID"  onclick="changeTest_new(this,'q8');" /></span>&nbsp; <label for="maleID">Male</label></li>
-      <li><span><input type="radio" name="gender_type" value="female" id="femalID" onclick="changeTest_new(this,'q8');"/></span>&nbsp;<label for="femalID"> Female</label> </li>
+        <li><span><input type="radio" name="gender_type" value="male" id="maleID"  onclick="changeTest_new(this,'date_birth');" /></span>&nbsp; <label for="maleID">Male</label></li>
+      <li><span><input type="radio" name="gender_type" value="female" id="femalID" onclick="changeTest_new(this,'date_birth');"/></span>&nbsp;<label for="femalID"> Female</label> </li>
       </form>
       </ul>
       
@@ -126,6 +126,33 @@
 
         <li><span><input type="radio" name="have_co_app" value="YES"  onclick="changeTest_new(this,'step_2_btn');" /></span>&nbsp; YES</li>
       <li><span><input type="radio" name="have_co_app" value="NO"  onclick="changeTest_new(this,'step_2_btn');"/></span>&nbsp; NO </li>
+      </form>
+      </ul>
+      
+      </div>
+      
+    </div>
+   
+  </div>
+</div>
+<!-- co pop end -->
+<!-- co pop -->
+ <div id="co_obl_yes_pop" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Any loan?</h4>
+      </div>
+      <div class="modal-body">
+      
+    <ul>
+    <form id="have_co_loan_form">
+
+        <li><span><input type="radio" name="have_co_app_loan" value="YES"  onclick="changeTest_new(this,'co_obl_emi');" /></span>&nbsp; YES</li>
+      <li><span><input type="radio" name="have_co_app_loan" value="NO"  onclick="changeTest_new(this,'last_button');"/></span>&nbsp; NO </li>
       </form>
       </ul>
       

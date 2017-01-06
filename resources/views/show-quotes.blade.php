@@ -2,7 +2,7 @@
     <div id="fh5co-hero" class="fclass" style="display:block;">
 	<div class="container" >
 	<div class=" pad">
-	<p class="text-left">home/{{$product}}</p>
+<!-- 	<p class="text-left">home/{{$product}}</p> -->
     <h2 class="align-center loan-head">View Options</h2>
 	</div>
    <div class="col-md-3 fadeInUp tbl fltr tbl1" style="display:none;">

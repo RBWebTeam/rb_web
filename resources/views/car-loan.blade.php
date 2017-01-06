@@ -3,7 +3,7 @@
 	
 	<aside id="fh5co-hero">
 	<div class="col-md-12">
-	<p class="text-left"><a href="{{URL::to('/')}}">Home</a>/{{$id->Product_Name}}</p>
+	<!-- <p class="text-left"><a href="{{URL::to('/')}}">Home</a>/{{$id->Product_Name}}</p> -->
 	<h2 class="align-center loan-head">Car-Loan</h2>
 	</div>
 	<div class=""></div>
@@ -133,6 +133,7 @@
 							     <li>Expert Assistance</li>
 								 <li>Faster Processing</li>
 								 <li>Minimum Documentation</li>
+								 <li>More convenient</li>
 							</ul>
 							
 							<a class="btn btn-primary btn-outline with-arrow" href="{{URL::to('/apply-car-loan')}}">Apply Online

@@ -83,4 +83,44 @@ class LoginController extends Controller
           $req->session()->flush();
             return redirect('/');
         }
+
+
+
+        public function forgot_password(Request $req){
+             $query=new registrationModel();
+              $val =Validator::make($req->all(), [
+                'email' => 'required|email',
+                            ]);
+           if ($val->fails()){
+              return response()->json($val->messages(), 200);
+           }else{
+              $value=$query->where('email','=',$req->email)
+              ->first();
+              if($value!=''){
+                           
+                    $to      = 'scriptdp@gmail.com';
+                    $subject = 'the subject';
+                    $message = 'hello';
+                    $headers = 'From: wecare@rupeeboss.com' . "\r\n" .
+                        'Reply-To: wecare@rupeeboss.com' . "\r\n" .
+                        'X-Mailer: PHP/' . phpversion();
+                    $mail=mail($to, $subject, $message, $headers);
+                    if($mail){
+                            $error=2;
+                            echo $error;
+                    }else{
+                            $error=3;
+                            echo $error;
+                    }
+                       
+                       // $error=2;
+                       //       echo $error;
+                 }else{
+                  
+                    $error=1;
+                    echo $error;
+                 }
+
+                }
+        }
 }

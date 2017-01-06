@@ -27,6 +27,7 @@
 									</div>
 						</form>
             <div class='msg' style="display: none;"><p>Thanks. We will reach you soon.</p></div>
+            <div class='msg_err' style="display: none;"><p>Ooops. Something went wrong.</p></div>
             
         </div>
         <div class="modal-footer">

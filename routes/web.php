@@ -73,6 +73,8 @@ Route::get('balance-transfer','CompareController@switchme_mobile');
 Route::get('comfy-sales','HomeController@comfy_sales');
 Route::get('express-loan','HomeController@express_loan');
 Route::get('credit-card','HomeController@credit_card');
+Route::get('savings-account','HomeController@savings_account');
+
 
 
 

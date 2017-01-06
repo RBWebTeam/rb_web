@@ -85,6 +85,7 @@
     <td width="18%" class="upper">Minimum Credit Score</td>
     <td width="18%" class="upper">Tenure</td>
     <td width="18%" class="upper">Profession</td>
+    <td class="upper" width="17%"><a href="{{URL::to('apply-')}}{{$product}}">Apply Online</a></td>
 
 
 
@@ -102,7 +103,7 @@
    <td>{{$value->MinCredit_Score}}</td> 
    <td>{{$value->Min_Tenure}}-{{$value->Max_Tenure}}Years</td> 
    <td><p>Salaried</p></td> 
-   <td class="upper" width="17%"><a href="{{URL::to('apply-')}}{{$product}}">Apply Online</a></td>
+  <!--  <td class="upper" width="17%"><a href="{{URL::to('apply-')}}{{$product}}">Apply Online</a></td> -->
 
     <td rowspan="2"><strong>Special Features:-</strong> Pre close Fee 0%</td>
   </tr>

@@ -27,7 +27,7 @@
     <td>Blockbuster Benefits Rs. 1000 ...
       <a data-toggle="popover" data-placement="bottom" data-trigger="hover" data-content=" BookMyShow voucher as a welcome gift free movie ticket per month on crossing spends of Rs. 10,000 and 1 Additional free movie ticket every month on crossing spends of Rs. 15,000 10 Reward Points / Rs. 100 spent at BookMyShow and select dining partners." style="color:#39F; font-weight:bold;">More</a></td>
     <td>Waiver of Convenience fee at BookMyShow...<a data-toggle="popover" data-placement="bottom" data-trigger="hover" data-content="for first 15 transactions every year. Accelerated Rewards Earn accelerated 20 reward points per Rs. 100 spent on all dining spends on Wednesdays Earn accelerated 10 reward points per Rs 100 spent on BookMyShow and select dining partners years)" style="color:#39F; font-weight:bold;">More</a> </td>
-    <td><button>Apply Online</button></td>
+    <td><a href="{{URL::to('contact-us')}}">Apply Online</a></td>
   </tr>
   
   <tr id="0" class="collapse" aria-expanded="true">
@@ -45,7 +45,7 @@
     <td>Earn 1 reward point for every Rs 100  ...
       <a data-toggle="popover" data-placement="bottom" data-trigger="hover" data-content=" spent on all purchases.Swipe within 60 days and get 2000 reward points. Spend Rs 10,000 and get additional 1000 reward points." style="color:#39F; font-weight:bold;">More</a></td>
     <td>Use your card for purchases of Rs1.2 ...<a data-toggle="popover" data-placement="bottom" data-trigger="hover" data-content="Lakhs or more in a year and get a gift voucher of Rs1000.Fuel Surcharge waiver of 2.5%*.*Fuel Transactions between Rs 500 to Rs 4,000 will be eligible for waiver of fuel surcharge." style="color:#39F; font-weight:bold;">More</a> </td>
-    <td><button>Apply Online</button></td>
+    <td><a href="{{URL::to('contact-us')}}">Apply Online</a></td>
   </tr>
     <tr id="1" class="collapse" aria-expanded="true">
     <td colspan="6"><p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p></td>
@@ -63,7 +63,7 @@
     <td>Double reward points on all  ...
       <a data-toggle="popover" data-placement="bottom" data-trigger="hover" data-content=" your spends during the weekends .2 reward points for every Rs 100 on all purchases during weekdays.Reward Points worth Rs 10,650 + Fuel waiver Rs 1,80." style="color:#39F; font-weight:bold;">More</a></td>
     <td>Fuel Transaction between Rs 500...<a data-toggle="popover" data-placement="bottom" data-trigger="hover" data-content="to Rs 4,000 will be eligible for waiver of fuel surcharge" style="color:#39F; font-weight:bold;">More</a> </td>
-    <td><button>Apply Online</button></td>
+    <td><a href="{{URL::to('contact-us')}}">Apply Online</a></td>
   </tr>
     <tr id="2" class="collapse" aria-expanded="true">
     <td colspan="6"><p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p></td>
@@ -82,7 +82,7 @@
     <td>X cash rewards on dining, gro...
       <a data-toggle="popover" data-placement="bottom" data-trigger="hover" data-content=" ceries and at supermarkets. Buy 1, get 1 movie ticket free, through the week on first come first serve basis." style="color:#39F; font-weight:bold;">More</a></td>
     <td>Minimum 15% savings at ...<a data-toggle="popover" data-placement="bottom" data-trigger="hover" data-content="participating restaurants.Complimentary Provogue tie on joining" style="color:#39F; font-weight:bold;">More</a> </td>
-    <td><button>Apply Online</button></td>
+    <td><a href="{{URL::to('contact-us')}}">Apply Online</a></td>
   </tr>
     <tr id="3" class="collapse" aria-expanded="true">
     <td colspan="6"><p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p></td>
@@ -101,7 +101,7 @@
     <td>Reduce fuel bills with 2.5% cashback and ...
       <a data-toggle="popover" data-placement="bottom" data-trigger="hover" data-content=" 2.5% fuel surcharge waiver.Earn free fuel with 2.5X rewards on fuel purchases.Up to ₹ 200 off every month on movie tickets." style="color:#39F; font-weight:bold;">More</a></td>
     <td> Complimentary airport lounge...<a data-toggle="popover" data-placement="bottom" data-trigger="hover" data-content="access.Minimum 15% savings at leading restaurants" style="color:#39F; font-weight:bold;">More</a> </td>
-    <td><button>Apply Online</button></td>
+    <td><a href="{{URL::to('contact-us')}}">Apply Online</a></td>
   </tr>
     <tr id="4" class="collapse" aria-expanded="true">
     <td colspan="6"><p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p></td>

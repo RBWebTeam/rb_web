@@ -64,11 +64,11 @@
      <!-- <i class="fa fa-exchange" aria-hidden="true"></i> -->
     <div class="form-group">
        <!-- <label class="control-label" for="Loan Amount">Outstanding Principal:</label> -->
-       <input type="text" name="loanamount" class="form-control" id="loanamount" placeholder="Loan Amount" value="" onblur ="myfun()">
+       <input type="text" name="loanamount" class="form-control" id="loanamount" placeholder="Loan Amount" value="" onblur ="myfun()" onkeypress="return isNumberKey(event)">
     </div>
     <div class="form-group">
       <!-- <label class="control-label" for="Interest Rate"> Current Interest Rate:</label> -->
-      <input type="text" name="loaninterest" step="0.01" min="0" class="form-control" id="loaninterest" placeholder="Interest"  value="" onBlur="myfun()">
+      <input type="text" name="loaninterest" step="0.01" min="0" class="form-control" id="loaninterest" placeholder="Interest"  value="" onblur="myfun()" onkeypress="return isNumberKey(event)">
     </div>
     <!-- <div class="form-group" >
        <label class="control-label" for="Your Property Location">Your Profession Type:</label>
@@ -82,7 +82,7 @@
     -->
     <div class="form-group right-block">
        <!-- <label class="control-label" for="Loan Tenure">Remaining Tenure:</label> -->
-        <input type="text" name="loanterm" class="form-control" id="loanterm" placeholder="Loan Tenure" value="" onBlur="myfun()">
+        <input type="text" name="loanterm" class="form-control" id="loanterm" placeholder="Loan Tenure" value="" onblur="myfun()" onkeypress="return isNumberKey(event)">
     <br>
     <div class="btn-group">
           <label class="btn btn-primary"><input type="radio" name="Year" id="Year" value="" checked="checked">Yr</label>
@@ -99,7 +99,7 @@
     <?php }?>
 
     
-     <p id="err" style="display:none;">Please Fill All Inputs
+     <p id="err" style="display:none;"><b><span style="color:red">Please Fill All Inputs</span></b>
     </div>
     <div class="col-sm-6 rw-hei brd-rgt" style="background-color:lavenderblush;"><h3 class="transfer-cal">
     <i class="fa fa-credit-card" aria-hidden="true"></i>  My Savings</h3>

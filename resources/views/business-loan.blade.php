@@ -133,6 +133,7 @@
 							     <li>Expert Assistance</li>
 								 <li>Faster Processing</li>
 								 <li>Minimum Documentation</li>
+								 <li>More convenient</li>
 							</ul>
 							
 							<a class="btn btn-primary btn-outline with-arrow" href="{{URL::to('/apply-business-loan')}}">Apply Online

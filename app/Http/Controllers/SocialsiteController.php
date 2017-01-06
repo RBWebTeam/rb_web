@@ -19,15 +19,31 @@ class SocialsiteController extends Controller{
      }
 
       public function  callback(){ 	
+
+         $query=new registrationModel();
             try {
                   $user = Socialite::driver('facebook')->user();
                  }catch (Exception $e){
                   return redirect('facebook');
                  }
                   $authUser = $this->findOrCreateUser($user);
-        // registrationModel::login($authUser, true);
-                  return Redirect::back();
-      
+        
+                  // $query->username($authUser, true);
+
+                //  return Redirect::back();
+                    
+                     if($authUser){
+                      
+                      return Redirect::back();
+
+                     }else{
+                    return redirect()->to('/');
+
+                     }
+
+               //auth()->login($user);
+             //  return redirect()->to('/home');
+                    
      }
 
  
@@ -43,7 +59,17 @@ class SocialsiteController extends Controller{
                   return redirect('google');
           }
           $authUser = $this->findOrCreateUser($user);
-                  return Redirect::back();
+                 // return Redirect::back();
+
+               
+                  if($authUser){
+                      
+                      return Redirect::back();
+
+                     }else{
+                    return redirect()->to('/');
+
+                     }
 
           }
 
@@ -52,15 +78,15 @@ class SocialsiteController extends Controller{
           private function findOrCreateUser($facebookUser){
              $query=new registrationModel();
              $authUser =$query->where('provider_user_id', $facebookUser->id)->first();
-        if ($authUser){
+         if ($authUser){
 
                        Session::set('email', $authUser->email);
                        Session::set('user_id', $authUser->id);
                        Session::set('name', $authUser->username);
                        Session::set('is_login', 1);
                
-            return $authUser;
-        }
+             return $authUser->username;
+        }else{
  
         //  $query->create([
         //     'username' => $facebookUser->name,
@@ -91,7 +117,9 @@ class SocialsiteController extends Controller{
         }
 
       
+}
 
+return  $authUser;
 
           
     }

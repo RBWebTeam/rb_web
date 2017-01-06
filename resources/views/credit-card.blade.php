@@ -14,8 +14,8 @@
     <td width="9%" class="upper">Select</td>
     <td class="upper">Credit Card</td>
     <td width="16%" class="upper">Fee</td>
-    <td width="16%" class="upper">Reword</td>
-    <td width="18%" class="upper">Joing Benefit</td>
+    <td width="16%" class="upper">Reward</td>
+    <td width="18%" class="upper">Joining Benefits</td>
     <td width="17%" class="upper">Apply Now</td>
   </tr>
   <tr>

@@ -10,21 +10,21 @@
     <div class="col-sm-4 rw-hei" style="background-color:lavender;"><h3 class="emi-cal">EMI Calculator</h3>
       <div class="form-group">
        <label class="control-label" for="Loan Amount">Loan Amount:</label>
-       <input type="number" name="loanamount" class="form-control" id="loanamount" placeholder="Loan Amount" value=""  onblur="myfun()">
+       <input type="text" name="loanamount" class="form-control" id="loanamount" placeholder="Loan Amount" onkeypress="return fnAllowNumeric(event)"  value=""  onblur="myfun()" >
      </div>
      <div class="form-group">
       <label class="control-label" for="Interest Rate">Interest Rate:</label>
-      <input type="number" name="loaninterest" step="0.01" min="0" class="form-control" id="loaninterest" placeholder="Interest"  value="" onblur="myfun()">
+      <input type="text" name="loaninterest" step="0.01" min="0" class="form-control" id="loaninterest" placeholder="Interest" onkeypress="return fnAllowNumeric(event)"  value="" onblur="myfun()" >
     </div>
     <div class="form-group right-block">
      <label class="control-label" for="Loan Tenure">Loan Tenure:</label>
-     <input type="number" name="loanterm" class="form-control" id="loanterm" placeholder="Loan Tenure" value="" onblur="myfun()">
+     <input type="text" name="loanterm" class="form-control" id="loanterm" placeholder="Loan Tenure" onkeypress="return fnAllowNumeric(event)" value="" onblur="myfun()">
      <br>
      <div class="btn-group">
       <label class="btn btn-primary"><input type="radio" name="Year" id="Year" value="" checked="checked">Yr</label>
       <label class="btn btn-primary"><input type="radio" name="Year" id="Month" value="">Mo</label>
     </div>
-  </div>
+   </div>
   <p id="err" style="display:none;">Please Fill All Inputs
   </div>
   <div class="col-sm-4 rw-hei" style="background-color:lavenderblush;">

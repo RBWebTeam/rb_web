@@ -3,7 +3,7 @@
 	
 	<aside id="fh5co-hero">
 	<div class="col-md-12">
-	<p class="text-left"><a href="{{URL::to('/')}}">Home</a>/{{$id->Product_Name}}</p>
+	<!-- <p class="text-left"><a href="{{URL::to('/')}}">Home</a>/{{$id->Product_Name}}</p> -->
 	<h2 class="align-center loan-head">Car-Loan</h2>
 	</div>
 	<div class=""></div>

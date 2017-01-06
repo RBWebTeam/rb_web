@@ -37,8 +37,7 @@
 
                  
                  </form>
-
-                
+                <a href="#" id="forgotps"   class="login-link text-center">Lost your password?</a>
               </div>
         
               <div class='modal-body-right'>
@@ -127,6 +126,43 @@
 
      </div>
 </div>
+
+     <!-- forgot password-->
+<div id="forgotpassword" style="display: none;">
+        
+ <div class="modal-content">
+       
+<div class="modal-header ">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h2 class="modal-title" id="myModalLabel">Forgot password  </h2>
+          </div>
+
+        <div class="modal-body">
+        <form name="forgot_password_form" id="forgot_password_form"   method="post"  >
+          {{ csrf_field() }}
+               <div><fieldset>
+        <input class="newsletter-name" name="email"  id="email" placeholder="forgot password"  >
+         <div  class="text-danger" id="forgotpass"></div>
+          </fieldset>
+        </div>
+
+                  <div>
+                      <button class="btn btn-primary btn-outline with-arrow " id="f_password">Submit<i class="icon-arrow-right"></i></button>
+                  </div>
+      </form>
+
+         <div class='forgotps' style="display: none;"><p>Thanks. You are successfully registered.</p></div>
+        </div>
+        <div class="modal-footer">
+                           <button type="button" class="btn btn-default" data-dismiss="modal">Close
+                           </button>
+                         
+        </div>
+
+     </div>
+</div>
+
+ <!-- forgot password  end-->
 
       </div>
       

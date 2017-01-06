@@ -1,6 +1,8 @@
     <script src="{{URL::to('js/modernizr-2.6.2.min.js')}}"></script>
         <!-- jQuery -->
     <script src="{{URL::to('js/jquery.min.js')}}"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	
     <link href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" rel="Stylesheet"></link>
     <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/themes/base/minified/jquery-ui.min.css" type="text/css" />
     <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js" ></script>
@@ -23,6 +25,12 @@
 });
     </script>
     <!-- function addede later -->
+	
+	<script>
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover();   
+});
+</script>
 
     <script type='text/javascript'>
   $(function(){

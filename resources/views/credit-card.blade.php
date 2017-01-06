@@ -131,7 +131,7 @@
 <tr>
     <td><input type="checkbox" name="cehckbox"/> <button style="display:none;" data-toggle="collapse" data-target="#6" aria-expanded="true">Details </button></td>
     <td><img src="images/hdfc-credit-card.jpg" width="150" height="96" style="margin:0 auto; margin-bottom:5px;">
-    <span>ICICI Bank Rubyx Credit Cards</span>
+    <span>JetPrivilege HDFC Bank World</span>
     </td>
     <td>Annual Fees- Rs.1000/- plus applicable service tax ... <a data-toggle="popover" data-placement="bottom" data-trigger="hover" data-content="Annual Fees Reversal- On crossing Rs.1.5 lac annual spends in a year get annual fees reversal worth Rs.1000/" style="color:#39F; font-weight:bold;">More</a></td>
     <td>Blockbuster Benefits Rs. 1000 ...

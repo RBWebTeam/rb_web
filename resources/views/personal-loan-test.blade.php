@@ -51,11 +51,11 @@
 			</div>
 			<div class="col-md-12 text-center animate-box cont" style="display: none" id="q6">
              <h3>and required loan for
-			 <input type="tel" id="loan_tenure" name="loan_tenure"  onkeypress="changeText_new('loan_tenure','q7')"  onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="20" tabindex="1" maxlength="2" >
+			 <input type="tel" id="loan_tenure" name="loan_tenure"  onkeypress="changeText_new('loan_tenure','date_birth')"  onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="20" tabindex="1" maxlength="2" >
 			 years
 			 </h3> 
 			</div>
-			<div class="col-md-12 text-center animate-box cont1" style="display: none" id="q7"><h3>my date of birth is
+			<div class="col-md-12 text-center animate-box cont1" style="display: none" id="date_birth"><h3>my date of birth is
 			<input type="text" id="dob" name="dob" class="input-pad company-nm1 datepicker" onchange="changeTest_new(this,'q8')">
 
 			</h3>

@@ -24,8 +24,9 @@
       <label class="btn btn-primary"><input type="radio" name="Year" id="Year" value="" checked="checked">Yr</label>
       <label class="btn btn-primary"><input type="radio" name="Year" id="Month" value="">Mo</label>
     </div>
+    <p id="err" style="display:none;"><b><mark style="color:red">Please Fill All Inputs</mark></b>
    </div>
-  <p id="err" style="display:none;">Please Fill All Inputs
+  
   </div>
   <div class="col-sm-4 rw-hei" style="background-color:lavenderblush;">
    <br><br>

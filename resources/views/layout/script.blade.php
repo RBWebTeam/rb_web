@@ -733,7 +733,7 @@ $(document).ready(function(){
                dataType:'json',
                data : { 'loanamount': loanamount , 'loaninterest': loaninterest ,'loanterm' :loanterm, '_token': v_token},
                success: function(msg){
-               // console.log(msg);
+               //console.log(msg);
                 change(msg.amount,msg.ttl_pay,msg.ttl_payment);
                 emibreakup(msg.amount,loanamount,loaninterest,loanterm);
                  var numb = msg.amount.toFixed();

@@ -1,6 +1,7 @@
     <script src="{{URL::to('js/modernizr-2.6.2.min.js')}}"></script>
         <!-- jQuery -->
     <script src="{{URL::to('js/jquery.min.js')}}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <link href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" rel="Stylesheet"></link>
     <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/themes/base/minified/jquery-ui.min.css" type="text/css" />
     <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js" ></script>
@@ -23,6 +24,14 @@
 });
     </script>
     <!-- function addede later -->
+  
+  <script>
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover();   
+});
+</script>
+
+
 
     <script type='text/javascript'>
   $(function(){
@@ -260,6 +269,10 @@
 <script>
 
 $(document).ready(function(){
+    $(".callclass").click(function(){
+      $(".sidebar").hide("fast");
+        $(".arrow-don").show("fast");
+    });
     $(".hide-dv").click(function(){
         $(".sidebar").hide("fast");
         $(".arrow-don").show("fast");
@@ -359,10 +372,15 @@ $(document).ready(function(){
                success: function(msg){
                 if(msg=='true'){
                   $form.hide();
-                  $('.msg').show();
+                  var a =$('#'+form).parent().find('.msg')
+                  //console.log(a);
+                  $(a).show();
+                  //$('.msg').show();
                 }else{
                   $form.hide();
-                  $('.msg_err').show();
+                  var b =$('#'+form).parent().find('.msg_err')
+                  //console.log(a);
+                  $(b).show();
                 }
                 //console.log(msg);
                }  
@@ -761,19 +779,19 @@ $(document).ready(function(){
             value: a,
             color: "#c2da6b",
             highlight: "#c2da6b",
-            label: "Loan EMI"
+           
           },
           {
             value: b,
             color: "#00B9B9",
             highlight: "#00B9B9",
-            label: "Total Payable Interest "
+      
           },
           {
             value: c,
             color: "#4A9ACF",
             highlight: "#4A9ACF",
-            label: "Total Payment(Principal + Interest)"
+            
           }
         ];
 

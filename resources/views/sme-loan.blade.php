@@ -104,7 +104,7 @@
 								 <li>Comapre with 100 banks.</li>
 							</ul>
 						
-							<a class="btn btn-primary btn-outline with-arrow" href="{{URL::to('compare')}}" >Compare<i class="icon-arrow-right"></i></a>
+							<a class="btn btn-primary btn-outline with-arrow" href="{{URL::to('personal-loan')}}" >Compare<i class="icon-arrow-right"></i></a>
 						</div>
 					</div>
 
@@ -128,6 +128,7 @@
 							     <li>Expert Assistance</li>
 								 <li>Faster Processing</li>
 								 <li>Minimum Documentation</li>
+								 <li>More convenient</li>
 							</ul>
 							
 							<a class="btn btn-primary btn-outline with-arrow" href="{{URL::to('/apply-sme-loan')}}">Apply Online

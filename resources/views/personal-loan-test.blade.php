@@ -89,9 +89,7 @@
 		</div>
 		<!-- POP Up code end -->
 		</div>
-
 	 <!-- </div> -->
-
 @include('layout.footer')
 @include('layout.personal-loan-modal-test')
 @include('layout.script')

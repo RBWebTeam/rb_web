@@ -1686,7 +1686,7 @@ input[type="radio"] {margin:0px;}
 }
 tr:hover {box-shadow:1px 1px 3px 1px #999;}
 
-
+/*scroll css*/
 #scroll {
     position:fixed;
     right:10px;

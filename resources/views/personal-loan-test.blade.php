@@ -76,7 +76,7 @@
 				<input type="text" class="search_city input-pad" id='city_name' name='city_name' onfocus="changeTest('city_name','step_3_btn')" placeholder='your city'>city</h3>
 				
 			</div>
-			<div class="text-center" id="step_3_btn">
+			<div class="text-center" style="display: none" id="step_3_btn">
 			<?php if(Session::get('is_login')) {?>
 				<button class="btn btn-primary btn-outline with-arrow animate-box product_name" >Get me a Loan<i class="icon-arrow-right"></i></button>
 			<?php }else{?>

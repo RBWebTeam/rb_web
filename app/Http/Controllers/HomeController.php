@@ -48,6 +48,10 @@ class HomeController extends Controller
 		return view('credit-card');
 	}
 
+	public function savings_account(){
+		return view('savings-account');
+	}
+
 
 	
 }

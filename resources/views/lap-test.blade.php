@@ -76,7 +76,7 @@
 						</div>
 						<div class="col-md-12 text-center animate-box cont1" style="display: none" id="date_birth">
 							<h3>My date of birth is
-								<input type="text" id="dob" name="dob" class="input-pad company-nm1 datepicker" onchange="changeTest_new(this,'q9')">
+								<input type="text" id="dob" name="dob" class="input-pad company-nm1 lastReporteddate" onchange="changeTest_new(this,'q9')">
 							</h3>
 						</div>
 						<div class="col-md-12 text-center animate-box cont" style="display:none;" id="q9" >

@@ -174,7 +174,7 @@
 												
 						</div>
 					</div>
-					<div class="col-md-4 left-lin"><img src="images/Report.png" class="img-responsive hidden-sm" /><button class="btn btn-primary btn-outline with-arrow top-mrg">Apply For Credit Report<i class="icon-arrow-right"></i></button></div>
+					<div class="col-md-4 left-lin"><img src="images/Report.png" class="img-responsive hidden-sm" /><a class="btn btn-primary btn-outline with-arrow top-mrg" href="{{URL::to('credit-report')}}">Apply For Credit Report<i class="icon-arrow-right"></i></a></div>
                    <div class="col-md-1"></div>
 			</div>
 		</div>

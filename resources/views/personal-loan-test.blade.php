@@ -55,8 +55,12 @@
 			 years
 			 </h3> 
 			</div>
-			<div class="col-md-12 text-center animate-box cont1" style="display: none" id="date_birth"><h3>my date of birth is
-			<input type="text" id="dob" name="dob" class="input-pad company-nm1 datepicker" onchange="changeTest_new(this,'q8')">
+
+			<div class="col-md-12 text-center animate-box cont1" style="display: none" id="q7"><h3>my date of birth is
+			<!-- <input type="text" id="dob" name="dob" class="input-pad company-nm1 datepicker" onchange="changeTest_new(this,'q8')"> -->
+                                    
+ <input type="text" class="datepicker minimumSize lastReporteddate" id="dob"  name="dob" onchange="changeTest_new(this,'q8')"  />
+
 
 			</h3>
 			</div>
@@ -72,7 +76,7 @@
 				<input type="text" class="search_city input-pad" id='city_name' name='city_name' onfocus="changeTest('city_name','step_3_btn')" placeholder='your city'>city</h3>
 				
 			</div>
-			<div class="text-center" id="step_3_btn">
+			<div class="text-center" style="display: none" id="step_3_btn">
 			<?php if(Session::get('is_login')) {?>
 				<button class="btn btn-primary btn-outline with-arrow animate-box product_name" >Get me a Loan<i class="icon-arrow-right"></i></button>
 			<?php }else{?>
@@ -89,9 +93,7 @@
 		</div>
 		<!-- POP Up code end -->
 		</div>
-
 	 <!-- </div> -->
-
 @include('layout.footer')
 @include('layout.personal-loan-modal-test')
 @include('layout.script')

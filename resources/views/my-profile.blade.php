@@ -59,9 +59,10 @@
                                   @else
                                      <?php $dob='';?>
                                   @endif
-                                    <input name="text" value="{{$dob}}" class="datepicker" placeholder="Date of Birth" required>
-
+                             <!--   <input name="text" value="{{$dob}}" class="datepicker" placeholder="Date of Birth" required>
+ -->
                                     
+ <input type="text" class="datepicker minimumSize lastReporteddate" name="date" value="{{$dob}}" />
                                 </div>
                                 <div class="col-md-6 pad11 text-danger" id="errordetails"></div>
                                 
@@ -130,7 +131,8 @@
         
     </aside>
 </div>
+
+
 @include('layout.footer')
 @include('layout.script')
-
 

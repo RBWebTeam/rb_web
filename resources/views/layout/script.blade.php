@@ -35,7 +35,7 @@ $(document).ready(function(){
 });
 </script>
 
-
+<!-- 
     <script type='text/javascript'>
   $(function(){
     $('.datepicker').datepicker({
@@ -43,6 +43,49 @@ $(document).ready(function(){
         dateFormat: 'yy-dd-mm',
         });
     });
+</script> -->
+
+
+<script type="text/javascript">
+  var d = new Date();
+var year = d.getFullYear() - 18;
+d.setFullYear(year);
+
+$(".lastReporteddate").datepicker({ dateFormat: "yy-mm-dd",
+        changeMonth: true,
+        changeYear: true,
+        maxDate: year,
+        minDate: "-100Y",
+            yearRange: '-100:' + year + '',
+            defaultDate: d
+     });
+
+$("#button").click(function(){
+        var dob = $(".lastReporteddate").val();
+        var now = new Date();
+        var birthdate = dob.split("/");
+        var born = new Date(birthdate[2], birthdate[1]-1, birthdate[0]);
+        age=get_age(born,now);
+     
+        console.log(birthdate[2]+" : "+birthdate[1]+" : "+birthdate[0]);
+        console.log(age);
+    
+        if (age<=18)
+        {
+       alert("Input Error - Age should be greater then or equal to 18");
+            return false;
+        }
+});
+
+
+    function get_age(born, now) {
+      var birthday = new Date(now.getFullYear(), born.getMonth(), born.getDate());
+      if (now >= birthday) 
+        return now.getFullYear() - born.getFullYear();
+      else
+        return now.getFullYear() - born.getFullYear() - 1;
+    }
+
 </script>
 <script>
      function changeTest(obj,val){

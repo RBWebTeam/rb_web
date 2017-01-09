@@ -118,7 +118,7 @@
 
 						<div class="col-md-12 text-center animate-box cont" style="display: none;" id="co_sal">
 						<h3>Co-Applicant monthly income is
-							<input type="tel" id="co_income" name="co_applicant_income" onkeyup="changeText_new('co_income','co_obl')"  onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="1,00,000" tabindex="1">
+							<input type="tel" id="co_income" name="co_applicant_income" onkeyup="changeText_new('co_income','co_obl_yes')"  onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="1,00,000" tabindex="1">
 						</h3> 
 					</div>
 					<div class="col-md-12 text-center animate-box cont" style="display: none;" id="co_self">

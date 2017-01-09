@@ -98,6 +98,7 @@
 			</div>
 			
 		</div>
+        <a href="javascript:void(0);" id="scroll" title="Scroll to Top" style="display: none;">Top<span></span></a>
 	</footer>
 	</div>
 <!--- chat Box Start  -->
@@ -214,6 +215,7 @@
         </ul>
     </div>
 </div>
+
 <!--- chat Box End  -->
 
 

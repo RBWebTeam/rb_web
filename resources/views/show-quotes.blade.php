@@ -1,6 +1,9 @@
 @include('layout.header')
+
     <div id="fh5co-hero" class="fclass" style="display:block;">
 	<div class="container" >
+  <div class="table-responsive">
+
 	<div class=" pad">
 <!-- 	<p class="text-left">home/{{$product}}</p> -->
     <h2 class="align-center loan-head">View Options</h2>
@@ -109,6 +112,7 @@
 
 	</div>
 	</div>
+</div>
 </div>
 	
 

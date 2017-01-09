@@ -63,7 +63,7 @@ class FormController extends Controller
 
         } 
         $res_arr=array_merge($input,$new_array);
-         print_r($res_arr);
+        // print_r($res_arr);
             $url = "http://beta.erp.rupeeboss.com/CustomerLaravelWebRequest.aspx";
             $ch = curl_init();
             curl_setopt($ch, CURLOPT_VERBOSE, 1);
@@ -78,7 +78,7 @@ class FormController extends Controller
             $error = curl_error($ch);
             $http_code = curl_getinfo($ch ,CURLINFO_HTTP_CODE);
           // print_r("\n hiiiiiiiiii");
-            print_r($http_result);exit();
+            //print_r($http_result);exit();
             if($http_result==1){
                 if(isset($req['income'])){
                     $income=$req['income'];

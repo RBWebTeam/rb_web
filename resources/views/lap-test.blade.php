@@ -166,7 +166,7 @@
 				
 					<!-- step-2 finished -->
 					<div class="text-center">
-						<a class="btn btn-primary btn-outline with-arrow animate-box" id="back" onclick="changeDiv_new('step-2_co','step-1')">Back<i class="icon-arrow-right"></i></a>
+						<a class="btn btn-primary btn-outline with-arrow animate-box" id="back" onclick="changeDiv_new('step-2_co','step-1')"><center>Back</center></a>
 					</div>
 					<div class="text-center" style="display: none;" id="last_button">
 						<?php if(Session::get('is_login')) {?>

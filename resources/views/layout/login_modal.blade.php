@@ -22,16 +22,14 @@
                <form name="login_form" id="login_form"   method="post">
 
                <div class="form-group">
-
-                  <input type="text"  name="email_login" placeholder="Enter  Email"  class="form-control login-field" autofocus="autofocus" required>
-              
-                      <i class="fa fa-user login-field-icon"></i>
-                 </div>
+                 
+                  <input type="text"  name="email_login" placeholder="Enter  Email"  class="form-control login-field" autofocus="autofocus" required>              
+                </div>
                      
                     <input type="hidden" id='_token' name="_token" value="{{csrf_token()}}">
                   <div class="form-group">
                       <input type="password" name="login_pass" placeholder="Password"  class="form-control login-field"  required>
-                      <i class="fa fa-lock login-field-icon"></i>
+                     
                   </div>
 
                     
@@ -39,7 +37,7 @@
 
                  
                  </form>
-                <a href="#" id="forgotps"   class="login-link text-center">Lost your password?</a>
+                <a href="javascript:void(0)" id="forgotps"   class="login-link text-center">Lost your password?</a>
               </div>
         
               <div class='modal-body-right'>
@@ -122,7 +120,7 @@
         <div class="modal-footer">
                            <button type="button" class="btn btn-default" data-dismiss="modal">Close
                            </button>
-                            <div style="float: left;" id="Login-here" class="btn btn-primary btn-outline with-arrow">   <a href="#"  onclick="backf()"> Login here</a>
+                            <div style="float: left;" id="Login-here" class="btn btn-primary btn-outline with-arrow">   <a href="javascript:void(0)"  onclick="backf()"> Login here</a>
                             </div>
         </div>
 

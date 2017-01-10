@@ -66,12 +66,13 @@
 					.</h3>
 	</div>
 
+<!-- onfocus="changeTest_new('city_name','step_3_btn')" -->
 	<div class="col-md-12 text-center animate-box cont" style="display:none;" id="q9" >
 	             <h3>I have been living in
-				<input type="text" class="search_city input-pad" id='city_name' name='city_name' onfocus="changeTest('city_name','step_3_btn')" placeholder='your city'  value="<?php echo isset($_COOKIE['city_name'])?$_COOKIE['city_name']:'' ;?>">city</h3>
+				<input type="text" class="search_city input-pad" id='city_name' name='city_name' placeholder='your city'  value="<?php echo isset($_COOKIE['city_name'])?$_COOKIE['city_name']:'' ;?>">city</h3>
 				
 	</div>
-	<div class="text-center" id="step_3_btn">
+	<div class="text-center" id="step_3_btn" style="display:none;">
 			<?php if(Session::get('is_login')) {?>
 				<button class="btn btn-primary btn-outline with-arrow animate-box product_name" >Get me a Loan<i class="icon-arrow-right"></i></button>
 			<?php }else{?>

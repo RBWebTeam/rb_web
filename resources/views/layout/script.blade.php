@@ -1173,16 +1173,16 @@ $("#city_name").on("autocompletechange", function(event,ui) {
     document.cookie ="city_name"+"="+escape(cookieValue)
                  + ";expires="+expire.toGMTString();
 
-
-            if(cookieValue.length>2){
-             $('#pop1').empty();
-             $('#pop1').append("<p>Get loan.");
-             $('#step_3_btn').show();
-           }else{
-             $('#pop1').empty();
-             $('#pop1').append( "<p>The city name must be at least 5 characters" );
-              $('#step_3_btn').hide();
-           }
+$('#step_3_btn').show();
+           //  if(cookieValue.length>2){
+           //   $('#pop1').empty();
+           //   $('#pop1').append("<p>Get loan.");
+           //   $('#step_3_btn').show();
+           // }else{
+           //   $('#pop1').empty();
+           //   $('#pop1').append( "<p>The city name must be at least 5 characters" );
+           //    $('#step_3_btn').hide();
+           // }
     });
 
 </script>

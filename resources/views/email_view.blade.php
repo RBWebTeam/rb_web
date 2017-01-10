@@ -1,1 +1,2 @@
-<h1>hehehehehehehehe</h1>
+<h1>Welcome to rupeeboss.com</h1>
+<p>{{$data}}</p>

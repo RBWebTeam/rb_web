@@ -147,7 +147,7 @@
         </div>
 
                   <div>
-                      <button class="btn btn-primary btn-outline with-arrow " id="f_password">Submit<i class="icon-arrow-right"></i></button>
+                      <input class="btn btn-primary btn-outline with-arrow " type="submit" id="f_password">
                   </div>
       </form>
 

@@ -42,8 +42,8 @@
     <div class="">
     <table width="100%" border="1" class="tbl pad1">
   <tr>
-    <td>Your Personal Loan Search for <b>5 Lakhs</b> Loan</td>
-    <td><a class="default btn btn-primary" href="{{URL::to('test-personal-loan')}}">Modify Details</a></td>
+    <td>Your {{$product}} Search for <b>{{$loan_amount}} Lakhs</b> Loan</td>
+    <td><a class="default btn btn-primary" href="<?php echo $url;?>">Modify Details</a></td>
     <td>sort by 
     <select>
         <option>Interest Rate</option>

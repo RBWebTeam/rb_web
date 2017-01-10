@@ -1082,6 +1082,8 @@ function emibreakup(E,P,r,n)
            $('#pop1').append( "<p>Do you have any existing loan</p>" );
         }else  if(val=='q_prop'){
            $('#pop1').append( "<p>Your property price is</p>" );
+        }else  if(val=='q5'){
+           $('#pop1').append( "<p>Amount you want to borrow</p>" );
         }else if(val=='exp'){
           $('#pop1').append( "<p>Entr your expierience in current company</p>" );
         }else if(val=='total_exp'){
@@ -1128,6 +1130,56 @@ $(document).ready(function(){
     });
 });
 </script>
+<script type="text/javascript">
+  function SetCookie(cookieName,cookieValue,nDays) {
+    console.log(cookieName);console.log(cookieValue);console.log(nDays);
+ var today = new Date();
+ var expire = new Date();
+ if (nDays==null || nDays==0) nDays=1;
+ expire.setTime(today.getTime() + 3600000*24*nDays);
+ document.cookie = cookieName+"="+escape(cookieValue)
+                 + ";expires="+expire.toGMTString();
+}
+</script>
+<script type="text/javascript">
+  function SetCookie_pop(cookieName,cookieValue,nDays) {
+    console.log(cookieName);console.log(cookieValue);console.log(nDays);
+ var today = new Date();
+ var expire = new Date();
+ if (nDays==null || nDays==0) nDays=1;
+ expire.setTime(today.getTime() + 3600000*24*nDays);
+ if(cookieName == 'salaried'){
+    document.cookie = cookieName+"="+escape(cookieValue)
+                 + ";expires="+expire.toGMTString();
+    document.cookie = cookieName_id+"_id"+"="+escape('1')
+                 + ";expires="+expire.toGMTString();
+ }else{
+    document.cookie = cookieName+"="+escape(cookieValue)
+                 + ";expires="+expire.toGMTString(); 
+    document.cookie = cookieName+"_id"+"="+escape('2')
+                 + ";expires="+expire.toGMTString();
+ }
+ 
+}
+</script>
+
+<!--scroll up function  -->
+<script type='text/javascript'>
+$(document).ready(function(){ 
+    $(window).scroll(function(){ 
+        if ($(this).scrollTop() > 400) { 
+            $('#scroll').fadeIn(); 
+        } else { 
+            $('#scroll').fadeOut(); 
+        } 
+    }); 
+    $('#scroll').click(function(){ 
+        $("html, body").animate({ scrollTop: 0 }, 600); 
+        return false; 
+    }); 
+});
+</script>
+<!-- scroll up ends -->
 
 <!-- co script ends -->
 	</body>
@@ -1225,6 +1277,9 @@ $(document).ready(function(){
 </div>
 
 <!-- otp end here-->
+
+<!-- up scroller  -->
+
 
 @include('layout.modal')
 

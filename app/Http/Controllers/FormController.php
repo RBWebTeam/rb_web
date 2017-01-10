@@ -96,12 +96,22 @@ class FormController extends Controller
                 
             }
             else{
-                $quote_data ="no result found";
+                $quote_data =$req['product_name'];
                 return "no quotes";
             }
-            $data['product'] ="Personal Loan";
+            if($req['product_name'] == 9){
+                $data['product'] ="Personal Loan";
+                $data['url'] ="apply-personal-loan";
+            }elseif($req['product_name'] == 12){
+                $data['product'] ="Home Loan";
+                $data['url'] ="apply-home-loan";
+            }elseif($req['product_name'] == 7){
+                $data['product'] ="Loan Against Property";
+                $data['url'] ="apply-loan-against-property";
+            }
+            
+            $data['loan_amount'] =$req['loan_amount'];
             $data['quote_data'] =$quote_data;
-           
             return view('show-quotes')->with($data);
     }
     
@@ -203,8 +213,8 @@ class FormController extends Controller
         }
     }
     function show_quotes(Request $req){
-        print_r($req->all());
-       //return view('show-quotes')->with($req);
+        //print_r($req->all());
+       return view('show-quotes')->with($req);
     }
 
 }

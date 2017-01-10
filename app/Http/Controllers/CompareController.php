@@ -82,14 +82,7 @@ class CompareController extends Controller
       $data['city'] = DB::table('city_master')
       ->select('City_Name','state_id','City_Id')
       ->get();
-    //   print "<pre>";
-    //   print_r(iterator_to_array($data['city']));
-
-    // exit();
-      $new_data['city']=iterator_to_array($data['city']);
-      $new_data['telephone']=iterator_to_array($data['telephone']);
-
-    	return view('credit-report')->with($data);
+     	return view('credit-report')->with($data);
     }
 
     public function switchme($loan){

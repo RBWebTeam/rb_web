@@ -14,6 +14,7 @@
     <script src="http://demo.expertphp.in/js/jquery-ui.min.js"></script>
 <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
 
+
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
     <script>
            $('ul.dropdown-menu [data-toggle=dropdown]').on('click', function(event) {
@@ -37,6 +38,7 @@ $(document).ready(function(){
     });
     
   }); 
+
 </script>
 
 <!-- 
@@ -114,7 +116,7 @@ $(".lastReporteddate").datepicker({ dateFormat: "yy-mm-dd",
         }else if(val=='stay_in'){
            $('#pop1').append( "<p>You stay with</p>" );
         }else if(val=='dob'){
-           $('#pop1').append( "<p>I wonder if your birthday is today</p>" );//now if else from car -praveen
+           $('#pop1').append( "<p>Enter your birthdate.!!</p>" );//now if else from car -praveen
         }else if(val=='manufacture'){
         document.getElementById('preferred').style.display='none';
         document.getElementById('work_at').style.display='none';
@@ -150,7 +152,7 @@ $(".lastReporteddate").datepicker({ dateFormat: "yy-mm-dd",
         else if(val=='living_in'){
           $('#pop1').append( "<p>You stay with</p>" );
         }else if(val=='birth'){
-           $('#pop1').append( "<p>I wonder if your birthday is today</p>" );
+           $('#pop1').append( "<p>Enter your birthdate.!!</p>" );
         }else if(val=='type_of_profession'){ //business loan script
           //console.log(val);
 
@@ -299,7 +301,7 @@ $(".lastReporteddate").datepicker({ dateFormat: "yy-mm-dd",
         }else if(val=='residence'){
           $('#pop1').append( "<p>Where do you reside and since when</p>" );
         }else if(val=='date_birth'){
-          $('#pop1').append( "<p>I wonder if your birthday is today</p>" );
+          $('#pop1').append( "<p>Enter your birthdate.!!</p>" );
         }else if(val=='residence_pincode'){
           $('#pop1').append( "<p>Enter your residence pincode</p>" );
         }else{
@@ -670,8 +672,12 @@ $('document').ready(function(){
         minlength: 3,
        select: function(event,ui){
            $('#q').val(ui.item.value);
+  
+
             }
       });
+
+
 });
 
    $(document).ready(function(){
@@ -686,6 +692,8 @@ $('document').ready(function(){
                 },
                 success: function(data) {
                     response(data);
+
+
                    
                 }
             });
@@ -971,7 +979,7 @@ function emibreakup(E,P,r,n)
             $('#pop1').append( "<p>Loan amount you wants to borrow</p>" );
             $("#q4").hide();
         }else if(val=='date_birth'){
-          $('#pop1').append( "<p>I wonder if your birthday is today</p>" );
+          $('#pop1').append( "<p>Enter your birthdate.!!</p>" );
         }else  if(val=='q2_year'){
           $('#pop1').append( "<p>Enter your net turnover</p>" );
           $("#q2").hide();
@@ -1098,7 +1106,7 @@ function emibreakup(E,P,r,n)
         }else if(val=='residence'){
           $('#pop1').append( "<p>Where do you reside and since when</p>" );
         }else if(val=='date_birth'){
-          $('#pop1').append( "<p>I wonder if your birthday is today</p>" );
+          $('#pop1').append( "<p>Enter your birthdate.!!</p>" );
         }else if(val=='residence_pincode'){
           $('#pop1').append( "<p>Enter your residence pincode</p>" );
         }else if(val=='q6'){
@@ -1109,6 +1117,10 @@ function emibreakup(E,P,r,n)
           $('#pop1').append( "<p>Co-Applicant have any existing loan?</p>" );
         }else if(val=='self_q'){
           $('#pop1').append( "<p>Your total profit after tax is</p>" );
+        }else if(val=='self_q2'){
+          $('#pop1').append( "<p>Your depreciation is</p>" );
+        }else if(val=='self_q3'){
+          $('#pop1').append( "<p>Director remuneration is</p>" );
         }else if(val=='co_profit_all'){
           $('#pop1').append( "<p>co-applicant profit after tax </p>" )
         }else if(val=='co_self_q2'){
@@ -1163,6 +1175,17 @@ $("#city_name").on("autocompletechange", function(event,ui) {
     expire.setTime(today.getTime() + 3600000*24*nDays);
     document.cookie ="city_name"+"="+escape(cookieValue)
                  + ";expires="+expire.toGMTString();
+
+$('#step_3_btn').show();
+           //  if(cookieValue.length>2){
+           //   $('#pop1').empty();
+           //   $('#pop1').append("<p>Get loan.");
+           //   $('#step_3_btn').show();
+           // }else{
+           //   $('#pop1').empty();
+           //   $('#pop1').append( "<p>The city name must be at least 5 characters" );
+           //    $('#step_3_btn').hide();
+           // }
     });
 
 </script>
@@ -1208,6 +1231,15 @@ $(document).ready(function(){
 <!-- scroll up ends -->
 
 <!-- co script ends -->
+<!-- credit card function -->
+
+<script>
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover();   
+});
+</script>
+
+<!-- credit card ends -->
 	</body>
 </html>
 <!-- login Start-->

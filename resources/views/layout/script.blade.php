@@ -32,9 +32,11 @@
 
 $(document).ready(function(){
     $('[data-toggle="popover"]').popover();
-    $(this).find('input[type="submit"]').attr('disabled','disabled');
-  });    
-});
+    $('#forgot_password_form').one('submit', function() {
+      $(this).find('input[type="submit"]').attr('disabled','disabled');
+    });
+    
+  }); 
 </script>
 
 <!-- 

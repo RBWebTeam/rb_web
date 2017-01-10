@@ -69,10 +69,10 @@
 										<div class="form-group">
 											<h4 class="hdr">&nbsp;&nbsp;&nbsp;&nbsp;Contact Details</h4>
 											<div class="col-md-4">
-												<input type="text" id="mobile" name="mobileNo" class="form-control" placeholder="Mobile" required onkeypress="return fnAllowNumeric(event)">
+												<input type="text" id="mobile" name="mobileNo" class="form-control" placeholder="Mobile" maxlength="10" minlength="10" required onkeypress="return fnAllowNumeric(event)">
 											</div>
 											<div class="col-md-4">
-												<input type="text" class="form-control" id="telephoneNo" name="telephoneNo" placeholder="telephone No" required="" onkeypress="return fnAllowNumeric(event)">
+												<input type="text" class="form-control" id="telephoneNo" name="telephoneNo" placeholder="telephone No" required="" onkeypress="return fnAllowNumeric(event)" maxlength="10" minlength="10">
 											</div>
 											
 

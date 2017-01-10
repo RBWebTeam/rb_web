@@ -188,5 +188,5 @@
 </div>
 
 @include('layout.footer')
-@include('layout.home-loan-modal-test')
+@include('layout.lap-modal')
 @include('layout.script')

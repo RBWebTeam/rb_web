@@ -19,57 +19,57 @@
 		   
 			<div class="col-md-12 text-center animate-box cont" id="q1">
              <h3>I am a
-			 <a href="#" class="svalue clr-blue pop_up" data-toggle="modal" data-target="#page1" ><input type="text" style="color:000;" class="clr-blue" id="emp_detail" name="emp_detail"  placeholder="Select" readonly value="<?php echo isset($_COOKIE['emp_type'])?$_COOKIE['emp_type']:'' ;?>">
-			 <input type="hidden" class="clr-blue" id="emp_detail_id" name="emp_detail_id"  placeholder="Select" readonly value="<?php echo isset($_COOKIE['emp_type_id'])?$_COOKIE['emp_type_id']:'' ;?>"></a>
+			 <a href="#" class="svalue clr-blue pop_up" data-toggle="modal" data-target="#page1" ><input type="text" style="color:000;" class="clr-blue" id="emp_detail" name="emp_detail"  placeholder="Select" readonly value="<?php echo isset($_COOKIE['personal_loan_emp_type'])?$_COOKIE['personal_loan_emp_type']:'' ;?>">
+			 <input type="hidden" class="clr-blue" id="emp_detail_id" name="emp_detail_id"  placeholder="Select" readonly value="<?php echo isset($_COOKIE['personal_loan_emp_type_id'])?$_COOKIE['personal_loan_emp_type_id']:'' ;?>"></a>
 			professional </h3> 
 			</div>
 			<div class="col-md-12 text-center animate-box cont" style="display: none;" id="q2">
              <h3>my monthly income is
-			 <input type="tel" id="income" name="income" onkeyup="changeText_new('income','q3')"  onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="1,00,000" tabindex="1" onchange="SetCookie('income',this.value,1);" value="<?php echo isset($_COOKIE['income'])?$_COOKIE['income']:'' ;?>">
+			 <input type="tel" id="income" name="income" onkeyup="changeText_new('income','q3')"  onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="1,00,000" tabindex="1" onchange="SetCookie('personal_loan_income',this.value,1);" value="<?php echo isset($_COOKIE['personal_loan_income'])?$_COOKIE['personal_loan_income']:'' ;?>">
 			 </h3> 
 			</div>
 			<div class="col-md-12 text-center animate-box cont" style="display: none;" id="q2_year">
              <h3>my turnover is
-			 <input type="tel" id="income_year" name="turnover" onkeyup="changeText_new('income_year','q3')"  onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="1,00,000" tabindex="1" onchange="SetCookie('turnover',this.value,1);" value="<?php echo isset($_COOKIE['turnover'])?$_COOKIE['turnover']:'' ;?>">
+			 <input type="tel" id="income_year" name="turnover" onkeyup="changeText_new('income_year','q3')"  onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="1,00,000" tabindex="1" onchange="SetCookie('personal_loan_turnover',this.value,1);" value="<?php echo isset($_COOKIE['personal_loan_turnover'])?$_COOKIE['personal_loan_turnover']:'' ;?>">
 			 </h3> 
 			</div>
 			<div class="col-md-12 text-center animate-box cont" style="display: none;" id="q3">
 			<h3>I have
-			<a href="#" class="svalue clr-blue pop_up" data-toggle="modal" data-target="#page2" ><input type="text" style="color:000;" class="clr-blue" id="exst_loan_detail" name="exst_loan_detail" readonly placeholder="Select" value="<?php echo isset($_COOKIE['exst_loan_detail'])?$_COOKIE['exst_loan_detail']:'' ;?>"></a>
+			<a href="#" class="svalue clr-blue pop_up" data-toggle="modal" data-target="#page2" ><input type="text" style="color:000;" class="clr-blue" id="exst_loan_detail" name="exst_loan_detail" readonly placeholder="Select" value="<?php echo isset($_COOKIE['personal_loan_exst_loan_detail'])?$_COOKIE['personal_loan_exst_loan_detail']:'' ;?>"></a>
 			 existing loan(s)</h3> 
 			</div>
 
 			<div class="col-md-12 text-center animate-box cont" style="display: none" id="q4">
              <h3>and my existing loan EMI is
-			 <input type="tel" id="obligation" name="obligation"  onkeyup="changeText_new('obligation','q5')"  onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="1,00,000" tabindex="1" onchange="SetCookie('obligation',this.value,1);" value="<?php echo isset($_COOKIE['obligation'])?$_COOKIE['obligation']:'' ;?>">
+			 <input type="tel" id="obligation" name="obligation"  onkeyup="changeText_new('obligation','q5')"  onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="1,00,000" tabindex="1" onchange="SetCookie('personal_loan_obligation',this.value,1);" value="<?php echo isset($_COOKIE['personal_loan_obligation'])?$_COOKIE['personal_loan_obligation']:'' ;?>">
 			 </h3> 
 			</div>
 			<div class="col-md-12 text-center animate-box cont" style="display: none" id="q5">
              <h3>I want a Personal Loan of Rs.
-			 <input type="tel" id="loan_amount" name="loan_amount"  onkeyup="changeText_new('loan_amount','q6')"  onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="1,00,000" tabindex="1" onchange="SetCookie('loan_amount',this.value,1);" value="<?php echo isset($_COOKIE['loan_amount'])?$_COOKIE['loan_amount']:'' ;?>">
+			 <input type="tel" id="loan_amount" name="loan_amount"  onkeyup="changeText_new('loan_amount','q6')"  onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="1,00,000" tabindex="1" onchange="SetCookie('personal_loan_loan_amount',this.value,1);" value="<?php echo isset($_COOKIE['personal_loan_loan_amount'])?$_COOKIE['personal_loan_loan_amount']:'' ;?>">
 			 </h3> 
 			</div>
 			<div class="col-md-12 text-center animate-box cont" style="display: none" id="q6">
              <h3>and required loan for
-			 <input type="tel" id="loan_tenure" name="loan_tenure"  onkeypress="changeText_new('loan_tenure','q7')"  onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="20" tabindex="1" maxlength="2" onchange="SetCookie('loan_tenure',this.value,1);" value="<?php echo isset($_COOKIE['loan_tenure'])?$_COOKIE['loan_tenure']:'' ;?>">
+			 <input type="tel" id="loan_tenure" name="loan_tenure"  onkeypress="changeText_new('loan_tenure','q7')"  onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="20" tabindex="1" maxlength="2" onchange="SetCookie('personal_loan_loan_tenure',this.value,1);" value="<?php echo isset($_COOKIE['personal_loan_loan_tenure'])?$_COOKIE['personal_loan_loan_tenure']:'' ;?>">
 			 years
 			 </h3> 
 			</div>
 
 			<div class="col-md-12 text-center animate-box cont1" style="display: none" id="q7"><h3>my date of birth is 
-			               <input type="text" id="dob" name="dob" class="datepicker minimumSize lastReporteddate" onchange="changeTest_new(this,'q8')"  value="<?php echo isset($_COOKIE['dob'])?$_COOKIE['dob']:'' ;?>">
+			               <input type="text" id="dob" name="dob" class="datepicker minimumSize lastReporteddate" onchange="changeTest_new(this,'q8')"  value="<?php echo isset($_COOKIE['personal_loan_dob'])?$_COOKIE['personal_loan_dob']:'' ;?>">
 			</h3>
 			</div>
 	<div class="col-md-12 text-center animate-box cont" style="display:none;" id="q8" >
 					<h3> and Pan Card number is
-					<input type="text" id="card" name="pan_number"  onkeyup="changeText_new('card','q9')"   class="input-pad" placeholder="Pan Card" maxlength="10" minlength="10" tabindex="1" onchange="SetCookie('pan_number',this.value,1);" value="<?php echo isset($_COOKIE['pan_number'])?$_COOKIE['pan_number']:'' ;?>">
+					<input type="text" id="card" name="pan_number"  onkeyup="changeText_new('card','q9')"   class="input-pad" placeholder="Pan Card" maxlength="10" minlength="10" tabindex="1" onchange="SetCookie('personal_loan_pan_number',this.value,1);" value="<?php echo isset($_COOKIE['personal_loan_pan_number'])?$_COOKIE['personal_loan_pan_number']:'' ;?>">
 					.</h3>
 	</div>
 
 <!-- onfocus="changeTest_new('city_name','step_3_btn')" -->
 	<div class="col-md-12 text-center animate-box cont" style="display:none;" id="q9" >
 	             <h3>I have been living in
-				<input type="text" class="search_city input-pad" id='city_name' name='city_name' placeholder='your city'  value="<?php echo isset($_COOKIE['city_name'])?$_COOKIE['city_name']:'' ;?>">city</h3>
+				<input type="text" class="search_city input-pad" id='city_name' name='city_name' placeholder='your city'  value="<?php echo isset($_COOKIE['personal_loan_city_name'])?$_COOKIE['personal_loan_city_name']:'' ;?>">city</h3>
 				
 	</div>
 	<div class="text-center" id="step_3_btn" style="display:none;">

@@ -1204,7 +1204,7 @@ $(document).ready(function(){
     
     <label for="name" class="col-sm-3 control-label">Name</label>
     <div class="col-sm-6">
-      <input type="text" class="form-control" id="name" name="name" placeholder="your good name" required>
+      <input type="text" class="form-control" id="name" name="name" placeholder="your good name" autofocus="autofocus" required>
     </div>
   </div>
   <div class="form-group">

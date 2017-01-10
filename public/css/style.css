@@ -816,6 +816,12 @@ rb-services-section{padding:0px;}
 .fh5co-contact {
   padding: 2em 0;
 }
+@media screen and (min-width: 768px) {
+  .liza1 {
+    position: fixed;
+    left:65%;
+  }
+}
 @media screen and (max-width: 768px) {
   .fh5co-about,
   .fh5co-team,

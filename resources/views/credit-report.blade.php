@@ -31,7 +31,7 @@
 											<input type="text" class="form-control lastReporteddate" id="dob" name="dob" placeholder="Date of Birth*" required>
 										</div>
 										<div class="col-md-8">Male &nbsp;&nbsp;
-											<input type="radio" name="gender" class="radiob">&nbsp;&nbsp; Female &nbsp;&nbsp;<input type="radio" name="gender" class="radiob">
+											<input type="radio" name="gender" class="radiob" required>&nbsp;&nbsp; Female &nbsp;&nbsp;<input type="radio" name="gender" class="radiob">
 										</div>
 
 									</div>
@@ -50,7 +50,7 @@
 										</div>
 
 										<div class="col-md-4">
-												<select >
+												<select required>
 											  @foreach($city as $city_name)
 				      						 <option value="{{ $city_name->City_Id }}" data-state="{{$city_name->state_id}}">
 				      						 	<span style="font-family: bold; ">{{ $city_name->City_Name }}
@@ -74,7 +74,18 @@
 											<div class="col-md-4">
 												<input type="text" class="form-control" id="telephoneNo" name="telephoneNo" placeholder="telephone No" required="" onkeypress="return fnAllowNumeric(event)" maxlength="10" minlength="10">
 											</div>
-											
+											<div class="col-md-4">
+												<select required>
+												<option>Telephone type</option>
+											  @foreach($telephone as $tele)
+				      						 <option value="{{ $tele->Telephone_Value }}" >
+				      						 	<span style="font-family: bold; ">{{ $tele->Telephone_Name }}
+				      						 	</span>
+				      						 </option>
+
+												@endforeach
+												</select>
+											</div>
 
 											<div class="col-md-12">
 												<input type="email" class="form-control" placeholder="Email Address*" required>

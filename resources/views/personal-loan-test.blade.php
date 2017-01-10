@@ -15,7 +15,6 @@
                         
 		   <div class="col-md-12 text-center"><h4>Apply for an Easy <?php echo $loan_name;?> Loan in 30 seconds</h4></div>
 		   <p class="text-center">Step 1 of 3</p>
-
 		   
 			<div class="col-md-12 text-center animate-box cont" id="q1">
              <h3>I am a
@@ -23,17 +22,32 @@
 			 <input type="hidden" class="clr-blue" id="emp_detail_id" name="emp_detail_id"  placeholder="Select" readonly value="<?php echo isset($_COOKIE['personal_loan_emp_type_id'])?$_COOKIE['personal_loan_emp_type_id']:'' ;?>"></a>
 			professional </h3> 
 			</div>
-			<div class="col-md-12 text-center animate-box cont" style="display: none;" id="q2">
+			<?php if(isset($_COOKIE['income'])){
+		   	$class ="block";
+		   	}else{
+		   	$class ="none";
+		   	} ?>
+			<div class="col-md-12 text-center animate-box cont" style="display: {{$class}}" id="q2">
              <h3>my monthly income is
 			 <input type="tel" id="income" name="income" onkeyup="changeText_new('income','q3')"  onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="1,00,000" tabindex="1" onchange="SetCookie('personal_loan_income',this.value,1);" value="<?php echo isset($_COOKIE['personal_loan_income'])?$_COOKIE['personal_loan_income']:'' ;?>">
 			 </h3> 
 			</div>
-			<div class="col-md-12 text-center animate-box cont" style="display: none;" id="q2_year">
+			<?php if(isset($_COOKIE['turnover'])){
+		   	$class ="block";
+		   	}else{
+		   	$class ="none";
+		   	} ?>
+			<div class="col-md-12 text-center animate-box cont" style="display: {{$class}};" id="q2_year">
              <h3>my turnover is
 			 <input type="tel" id="income_year" name="turnover" onkeyup="changeText_new('income_year','q3')"  onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="1,00,000" tabindex="1" onchange="SetCookie('personal_loan_turnover',this.value,1);" value="<?php echo isset($_COOKIE['personal_loan_turnover'])?$_COOKIE['personal_loan_turnover']:'' ;?>">
 			 </h3> 
 			</div>
-			<div class="col-md-12 text-center animate-box cont" style="display: none;" id="q3">
+			<?php if(isset($_COOKIE['exst_loan_detail'])){
+		   	$class ="block";
+		   	}else{
+		   	$class ="none";
+		   	} ?>
+			<div class="col-md-12 text-center animate-box cont" style="display: {{$class}};" id="q3">
 			<h3>I have
 			<a href="#" class="svalue clr-blue pop_up" data-toggle="modal" data-target="#page2" ><input type="text" style="color:000;" class="clr-blue" id="exst_loan_detail" name="exst_loan_detail" readonly placeholder="Select" value="<?php echo isset($_COOKIE['personal_loan_exst_loan_detail'])?$_COOKIE['personal_loan_exst_loan_detail']:'' ;?>"></a>
 			 existing loan(s)</h3> 

@@ -40,8 +40,8 @@
     <ul>
     <form id="obligation_form">
 
-        <li><span><input type="radio" name="obligation_type" value="yes" id="p_yesID" onclick="changeTest_new(this,'q4');" /></span>&nbsp; <label for="p_yesID">YES</label></li>
-      <li><span><input type="radio" name="obligation_type" value="no" id="p_no"  onclick="changeTest_new(this,'q5');"/></span>&nbsp; <label for="p_no"> NO </label></li>
+        <li><span><input type="radio" name="obligation_type" value="yes" id="p_yesID" onclick="changeTest_new(this,'q4');" onchange="SetCookie_pop('exst_loan_detail',this.value,1);"/></span>&nbsp; <label for="p_yesID">YES</label></li>
+      <li><span><input type="radio" name="obligation_type" value="no" id="p_no"  onclick="changeTest_new(this,'q5');" onchange="SetCookie_pop('exst_loan_detail',this.value,1);"/></span>&nbsp; <label for="p_no"> NO </label></li>
       </form>
       </ul>
       

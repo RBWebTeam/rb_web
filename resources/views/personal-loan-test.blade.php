@@ -55,9 +55,9 @@
 			 years
 			 </h3> 
 			</div>
-			<div class="col-md-12 text-center animate-box cont1" style="display: none" id="q7"><h3>my date of birth is
-			<input type="text" id="dob" name="dob" class="input-pad company-nm1 datepicker" onchange="changeTest_new(this,'q8')" onkeyup="SetCookie('dob',this.value,1);" value="<?php echo isset($_COOKIE['dob'])?$_COOKIE['dob']:'' ;?>">
 
+			<div class="col-md-12 text-center animate-box cont1" style="display: none" id="q7"><h3>my date of birth is
+			<input type="text" id="dob" name="dob" class="datepicker minimumSize lastReporteddate" onchange="changeTest_new(this,'q8')" onkeyup="SetCookie('dob',this.value,1);" value="<?php echo isset($_COOKIE['dob'])?$_COOKIE['dob']:'' ;?>">
 			</h3>
 			</div>
 			<div class="col-md-12 text-center animate-box cont" style="display:none;" id="q8" >

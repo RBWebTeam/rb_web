@@ -141,7 +141,7 @@
         <form name="forgot_password_form" id="forgot_password_form"   method="post"  >
           {{ csrf_field() }}
                <div><fieldset>
-        <input class="newsletter-name" name="email"  id="email" placeholder="forgot password"  >
+        <input class="newsletter-name" name="email"  id="email" placeholder="Email ID"  >
          <div  class="text-danger" id="forgotpass"></div>
           </fieldset>
         </div>

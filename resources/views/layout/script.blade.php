@@ -1131,15 +1131,36 @@ $(document).ready(function(){
 });
 </script>
 <script type="text/javascript">
-  function SetCookie(cookieName,cookieValue,nDays) {
-    console.log(cookieName);console.log(cookieValue);console.log(nDays);
+
  var today = new Date();
  var expire = new Date();
+  function SetCookie(cookieName,cookieValue,nDays) {
+  console.log(cookieName);console.log(cookieValue);console.log(nDays); 
  if (nDays==null || nDays==0) nDays=1;
  expire.setTime(today.getTime() + 3600000*24*nDays);
  document.cookie = cookieName+"="+escape(cookieValue)
                  + ";expires="+expire.toGMTString();
 }
+
+
+ $("#dob").change(function(){
+ var cookieValue=document.getElementById("dob").value;
+  var nDays=1;
+  if (nDays==null || nDays==0) nDays=1;
+    expire.setTime(today.getTime() + 3600000*24*1);
+    document.cookie ="dob"+"="+escape(cookieValue)
+                 + ";expires="+expire.toGMTString();
+});
+
+$("#city_name").on("autocompletechange", function(event,ui) {
+  var cookieValue=document.getElementById("city_name").value;
+  var nDays=1;
+  if (nDays==null || nDays==0) nDays=1;
+    expire.setTime(today.getTime() + 3600000*24*nDays);
+    document.cookie ="city_name"+"="+escape(cookieValue)
+                 + ";expires="+expire.toGMTString();
+    });
+
 </script>
 <script type="text/javascript">
   function SetCookie_pop(cookieName,cookieValue,nDays) {
@@ -1154,6 +1175,7 @@ $(document).ready(function(){
     document.cookie = cookieName_id+"_id"+"="+escape('1')
                  + ";expires="+expire.toGMTString();
  }else{
+
     document.cookie = cookieName+"="+escape(cookieValue)
                  + ";expires="+expire.toGMTString(); 
     document.cookie = cookieName+"_id"+"="+escape('2')
@@ -1204,7 +1226,7 @@ $(document).ready(function(){
     
     <label for="name" class="col-sm-3 control-label">Name</label>
     <div class="col-sm-6">
-      <input type="text" class="form-control" id="name" name="name" placeholder="your good name" required>
+      <input type="text" class="form-control" id="name" name="name" placeholder="your good name" autofocus="autofocus" required>
     </div>
   </div>
   <div class="form-group">

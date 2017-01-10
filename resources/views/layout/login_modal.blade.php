@@ -22,13 +22,15 @@
                <form name="login_form" id="login_form"   method="post">
 
                <div class="form-group">
-                  <input type="text"  name="email_login" placeholder="Enter  Email"  class="form-control login-field" required autofocus="autofocus">
+
+                  <input type="text"  name="email_login" placeholder="Enter  Email"  class="form-control login-field" autofocus="autofocus" required>
+              
                       <i class="fa fa-user login-field-icon"></i>
                  </div>
                      
                     <input type="hidden" id='_token' name="_token" value="{{csrf_token()}}">
                   <div class="form-group">
-                      <input type="password" name="login_pass" placeholder="Password"  class="form-control login-field" required>
+                      <input type="password" name="login_pass" placeholder="Password"  class="form-control login-field"  required>
                       <i class="fa fa-lock login-field-icon"></i>
                   </div>
 

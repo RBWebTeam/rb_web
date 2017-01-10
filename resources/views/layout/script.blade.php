@@ -31,9 +31,7 @@
   <script>
 
 $(document).ready(function(){
-    $('[data-toggle="popover"]').popover();
-    $(this).find('input[type="submit"]').attr('disabled','disabled');
-  });    
+    $('[data-toggle="popover"]').popover();   
 });
 </script>
 
@@ -668,25 +666,11 @@ $('document').ready(function(){
         minlength: 3,
        select: function(event,ui){
            $('#q').val(ui.item.value);
+  
 
             }
       });
 
-
-$("#city_name").keyup(function(){
-         var city=$("#city_name").val();
-           if(city.length>2){
-             $('#pop1').empty();
-             $('#pop1').append( "<p>Get loan." );
-          document.getElementById("step_3_btn").style.display="block";
-               
-           }else{
-             $('#pop1').empty();
-             $('#pop1').append( "<p>The city name must be at least 5 characters" );
-             document.getElementById("step_3_btn").style.display="none";
-             
-           }
-});
 
 });
 
@@ -701,8 +685,9 @@ $("#city_name").keyup(function(){
                     term : request.term
                 },
                 success: function(data) {
-                    //response(data);
-     
+                    response(data);
+
+
                    
                 }
             });
@@ -1180,6 +1165,17 @@ $("#city_name").on("autocompletechange", function(event,ui) {
     expire.setTime(today.getTime() + 3600000*24*nDays);
     document.cookie ="city_name"+"="+escape(cookieValue)
                  + ";expires="+expire.toGMTString();
+
+
+            if(cookieValue.length>2){
+             $('#pop1').empty();
+             $('#pop1').append("<p>Get loan.");
+             $('#step_3_btn').show();
+           }else{
+             $('#pop1').empty();
+             $('#pop1').append( "<p>The city name must be at least 5 characters" );
+              $('#step_3_btn').hide();
+           }
     });
 
 </script>

@@ -47,7 +47,7 @@ class CompareController extends Controller
 
          }else{
 
-             echo "r";
+             echo "error";
          }
 
      
@@ -76,7 +76,20 @@ class CompareController extends Controller
         return view('emi/emi_cal')->with($data);
     }
     public function credit_report(){
-    	return view('free-credit-report');
+      $data['telephone']=DB::table('experian_telephonetype')
+      ->select('Telephone_Name','Telephone_Value')
+      ->get();
+      $data['city'] = DB::table('city_master')
+      ->select('City_Name','state_id','City_Id')
+      ->get();
+    //   print "<pre>";
+    //   print_r(iterator_to_array($data['city']));
+
+    // exit();
+      $new_data['city']=iterator_to_array($data['city']);
+      $new_data['telephone']=iterator_to_array($data['telephone']);
+
+    	return view('credit-report')->with($data);
     }
 
     public function switchme($loan){

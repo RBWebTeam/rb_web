@@ -56,29 +56,28 @@
 			 </h3> 
 			</div>
 
-			<div class="col-md-12 text-center animate-box cont1" style="display: none" id="q7"><h3>my date of birth is
-			<input type="text" id="dob" name="dob" class="datepicker minimumSize lastReporteddate" onchange="changeTest_new(this,'q8')" onkeyup="SetCookie('dob',this.value,1);" value="<?php echo isset($_COOKIE['dob'])?$_COOKIE['dob']:'' ;?>">
+			<div class="col-md-12 text-center animate-box cont1" style="display: none" id="q7"><h3>my date of birth is 
+			               <input type="text" id="dob" name="dob" class="datepicker minimumSize lastReporteddate" onchange="changeTest_new(this,'q8')"  value="<?php echo isset($_COOKIE['dob'])?$_COOKIE['dob']:'' ;?>">
 			</h3>
 			</div>
-			<div class="col-md-12 text-center animate-box cont" style="display:none;" id="q8" >
+	<div class="col-md-12 text-center animate-box cont" style="display:none;" id="q8" >
 					<h3> and Pan Card number is
 					<input type="text" id="card" name="pan_number"  onkeyup="changeText_new('card','q9')"   class="input-pad" placeholder="Pan Card" maxlength="10" minlength="10" tabindex="1" onchange="SetCookie('pan_number',this.value,1);" value="<?php echo isset($_COOKIE['pan_number'])?$_COOKIE['pan_number']:'' ;?>">
 					.</h3>
-			</div>
+	</div>
 
-			<div class="col-md-12 text-center animate-box cont" style="display:none;" id="q9" >
-				
+	<div class="col-md-12 text-center animate-box cont" style="display:none;" id="q9" >
 	             <h3>I have been living in
-				<input type="text" class="search_city input-pad" id='city_name' name='city_name' onfocus="changeTest('city_name','step_3_btn')" placeholder='your city' onkeyup="SetCookie('city_name',this.value,1);" value="<?php echo isset($_COOKIE['city_name'])?$_COOKIE['city_name']:'' ;?>">city</h3>
+				<input type="text" class="search_city input-pad" id='city_name' name='city_name' onfocus="changeTest('city_name','step_3_btn')" placeholder='your city'  value="<?php echo isset($_COOKIE['city_name'])?$_COOKIE['city_name']:'' ;?>">city</h3>
 				
-			</div>
-			<div class="text-center" id="step_3_btn">
+	</div>
+	<div class="text-center" id="step_3_btn">
 			<?php if(Session::get('is_login')) {?>
 				<button class="btn btn-primary btn-outline with-arrow animate-box product_name" >Get me a Loan<i class="icon-arrow-right"></i></button>
 			<?php }else{?>
 				<a class="btn btn-primary btn-outline with-arrow animate-box product_name" data-toggle="modal" data-target="#login_process">Get me a Loan<i class="icon-arrow-right"></i></a>
 			<?php } ?>
-			</div>
+	</div>
 	 </div>
 	 </form>
 	  <!-- POP Up code start -->

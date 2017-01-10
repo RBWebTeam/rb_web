@@ -13,20 +13,24 @@
                    {{ csrf_field() }}
                 <input type="hidden" name="form" value="contact-back-form">
                         
-                    <div  class=" col-sm-offset-1 col-sm-4">
-                        <fieldset>
-                            <input  class="newsletter-name" id="name" name="name" placeholder="Name" required>
-                        </fieldset>
-                        </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="name">Name:</label>
                     <div class="col-sm-4">
-                        <fieldset>
-                            <input type="tel" class="newsletter-name" name="contact" onkeypress="return fnAllowNumeric(event)" required placeholder="Number">
-                        </fieldset>                                 
-                        </div>
-                    <div class="col-sm-2 btncent">
-                    <button class="btn btn-primary btn-outline with-arrow sidebar-submit" >Call Me Back<i class="icon-arrow-right"></i></button>
+                        <input class="newsletter-name" id="name" name="name" placeholder="Name" required>
+                    </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="contact">Contact:</label>
+                    <div class="col-sm-4">
+                        <input type="tel" class="newsletter-name" name="contact" onkeypress="return fnAllowNumeric(event)" placeholder="Number" required>
+                    </div>
+                    </div>
+                    <div class="form-group">        
+                    <div class="col-sm-offset-2 col-sm-8"><br>
+                            <button class="btn btn-primary btn-outline with-arrow sidebar-submit" >Call Me Back<i class="icon-arrow-right"></i></button>
 
                     </div>
+                    </div> 
             </form>
            
 			</div>

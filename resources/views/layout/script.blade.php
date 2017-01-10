@@ -1082,6 +1082,8 @@ function emibreakup(E,P,r,n)
            $('#pop1').append( "<p>Do you have any existing loan</p>" );
         }else  if(val=='q_prop'){
            $('#pop1').append( "<p>Your property price is</p>" );
+        }else  if(val=='q5'){
+           $('#pop1').append( "<p>Amount you want to borrow</p>" );
         }else if(val=='exp'){
           $('#pop1').append( "<p>Entr your expierience in current company</p>" );
         }else if(val=='total_exp'){
@@ -1160,6 +1162,24 @@ $(document).ready(function(){
  
 }
 </script>
+
+<!--scroll up function  -->
+<script type='text/javascript'>
+$(document).ready(function(){ 
+    $(window).scroll(function(){ 
+        if ($(this).scrollTop() > 400) { 
+            $('#scroll').fadeIn(); 
+        } else { 
+            $('#scroll').fadeOut(); 
+        } 
+    }); 
+    $('#scroll').click(function(){ 
+        $("html, body").animate({ scrollTop: 0 }, 600); 
+        return false; 
+    }); 
+});
+</script>
+<!-- scroll up ends -->
 
 <!-- co script ends -->
 	</body>
@@ -1257,6 +1277,9 @@ $(document).ready(function(){
 </div>
 
 <!-- otp end here-->
+
+<!-- up scroller  -->
+
 
 @include('layout.modal')
 

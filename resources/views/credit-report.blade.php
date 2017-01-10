@@ -43,17 +43,25 @@
 											<input type="text" class="form-control" placeholder="flat No / Plot No / House No*" required="">
 										</div>
 										<div class="col-md-4">
-											<input type="text" class="form-control" placeholder="Building / Society Name" required="">
+											<input type="text" class="form-control" placeholder="Building / Society Name" >
 										</div>
 										<div class="col-md-4">
-											<input type="text" class="form-control" placeholder="Road No / Area / Locality" required="">
+											<input type="text" class="form-control" placeholder="Road No / Area / Locality">
 										</div>
 
 										<div class="col-md-4">
-											<input type="text" class="form-control search_city" id='city_name' name='city' placeholder='your city'></div>
-											
+												<select >
+											  @foreach($city as $city_name)
+				      						 <option value="{{ $city_name->City_Id }}" data-state="{{$city_name->state_id}}">
+				      						 	<span style="font-family: bold; ">{{ $city_name->City_Name }}
+				      						 	</span>
+				      						 </option>
+
+												@endforeach
+												</select>
+										</div>
 											<div class="col-md-4">
-												<input type="text" id="pincode" name="pincode" class="form-control" placeholder="Pincode*" onkeypress="return fnAllowNumeric(event)" maxlength="6">
+												<input type="text" id="pincode" name="pincode" class="form-control" placeholder="Pincode*" onkeypress="return fnAllowNumeric(event)" maxlength="6" required>
 											</div>
 										</div>
 									</div>
@@ -66,11 +74,7 @@
 											<div class="col-md-4">
 												<input type="text" class="form-control" id="telephoneNo" name="telephoneNo" placeholder="telephone No" required="" onkeypress="return fnAllowNumeric(event)">
 											</div>
-											<div class="col-md-4">
-												<select>
-													<option>Telephone Type</option>
-												</select>
-											</div>
+											
 
 											<div class="col-md-12">
 												<input type="email" class="form-control" placeholder="Email Address*" required>
@@ -81,7 +85,7 @@
 										<div class="form-group">
 											<h4 class="hdr">&nbsp;&nbsp;&nbsp;&nbsp;Identity Details</h4>
 											<div class="col-md-4">
-												<input type="text" name="pan" class="form-control" placeholder="Pancard*" required="">
+												<input type="text" id="pan" name="pan" class="form-control" placeholder="Pancard*" required="">
 											</div>
 											<div class="col-md-4">
 												<input type="text" class="form-control" placeholder="Passport No*" required="">

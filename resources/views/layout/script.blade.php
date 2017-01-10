@@ -666,8 +666,26 @@ $('document').ready(function(){
         minlength: 3,
        select: function(event,ui){
            $('#q').val(ui.item.value);
+
             }
       });
+
+
+$("#city_name").keyup(function(){
+         var city=$("#city_name").val();
+           if(city.length>2){
+             $('#pop1').empty();
+             $('#pop1').append( "<p>Get loan." );
+          document.getElementById("step_3_btn").style.display="block";
+               
+           }else{
+             $('#pop1').empty();
+             $('#pop1').append( "<p>The city name must be at least 5 characters" );
+             document.getElementById("step_3_btn").style.display="none";
+             
+           }
+});
+
 });
 
    $(document).ready(function(){
@@ -681,7 +699,8 @@ $('document').ready(function(){
                     term : request.term
                 },
                 success: function(data) {
-                    response(data);
+                    //response(data);
+     
                    
                 }
             });

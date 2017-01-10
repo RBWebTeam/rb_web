@@ -99,27 +99,24 @@ class LoginController extends Controller
               ->first();
               if($value!=''){
                            
-                    // $to      = 'scriptdp@gmail.com';
-                    // $subject = 'the subject';
-                    // $message = 'hello';
-                    // $headers = 'From: wecare@rupeeboss.com' . "\r\n" .
-                    //     'Reply-To: wecare@rupeeboss.com' . "\r\n" .
-                    //     'X-Mailer: PHP/' . phpversion();
-                    // $mail=mail($to, $subject, $message, $headers);
-                $data ="this is test";
-
+                    $password = mt_rand(100000, 999999);
+                $data ="Please use ".$password." as password to login for ur email ".$req->email."";
                 $email = $req->email;
                 $mail = Mail::send('email_view',['data' => $data], function($message) use($email) {
-                $message->from('wecare@rupeeboss.com', 'Verify');
+                $message->from('wecare@rupeeboss.com', 'RupeeBoss');
                 $message->to($email)
-                ->subject('Verify your email address');
+                ->subject('Your New Password');
                 });
-                    print_r($mail);exit();
-                    if($mail){
-                            $error=2;
+                    print_r($mail);
+                    if(Mail::failures()){
+                            $error=3;
                             echo $error;
                     }else{
-                            $error=3;
+
+                    $query=DB::table('user_registration')
+                              ->where('email', $req->email)
+                              ->update(['password' => md5($password)]);
+                            $error=2;
                             echo $error;
                     }
                        

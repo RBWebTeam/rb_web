@@ -37,7 +37,7 @@ class SocialsiteController extends Controller{
                       return Redirect::back();
 
                      }else{
-                    return redirect()->to('/');
+                    return Redirect::back();
 
                      }
 
@@ -67,7 +67,7 @@ class SocialsiteController extends Controller{
                       return Redirect::back();
 
                      }else{
-                    return redirect()->to('/');
+                    return Redirect::back();
 
                      }
 

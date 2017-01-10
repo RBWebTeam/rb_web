@@ -10,6 +10,7 @@ use Validator;
 use Redirect;
 use Session;
 use URL;
+use Mail;
 use Illuminate\Support\Facades\Hash;
 class LoginController extends Controller
 {
@@ -98,13 +99,22 @@ class LoginController extends Controller
               ->first();
               if($value!=''){
                            
-                    $to      = 'scriptdp@gmail.com';
-                    $subject = 'the subject';
-                    $message = 'hello';
-                    $headers = 'From: wecare@rupeeboss.com' . "\r\n" .
-                        'Reply-To: wecare@rupeeboss.com' . "\r\n" .
-                        'X-Mailer: PHP/' . phpversion();
-                    $mail=mail($to, $subject, $message, $headers);
+                    // $to      = 'scriptdp@gmail.com';
+                    // $subject = 'the subject';
+                    // $message = 'hello';
+                    // $headers = 'From: wecare@rupeeboss.com' . "\r\n" .
+                    //     'Reply-To: wecare@rupeeboss.com' . "\r\n" .
+                    //     'X-Mailer: PHP/' . phpversion();
+                    // $mail=mail($to, $subject, $message, $headers);
+                $data ="this is test";
+
+                $email = $req->email;
+                $mail = Mail::send('email_view',['data' => $data], function($message) use($email) {
+                $message->from('wecare@rupeeboss.com', 'Verify');
+                $message->to($email)
+                ->subject('Verify your email address');
+                });
+                    print_r($mail);exit();
                     if($mail){
                             $error=2;
                             echo $error;

@@ -22,7 +22,9 @@
                <form name="login_form" id="login_form"   method="post">
 
                <div class="form-group">
+
                   <input type="text"  name="email_login" placeholder="Enter  Email"  class="form-control login-field" autofocus="autofocus" required>
+              
                       <i class="fa fa-user login-field-icon"></i>
                  </div>
                      
@@ -75,7 +77,7 @@
           {{ csrf_field() }}
 
                <div><fieldset>
-        <input class="newsletter-name" name="name"  placeholder="Name"  >
+        <input class="newsletter-name" name="name"  placeholder="Name" autofocus="autofocus">
          <div  class="text-danger" id="errorName"></div>
           </fieldset>
          
@@ -141,7 +143,7 @@
         <form name="forgot_password_form" id="forgot_password_form"   method="post"  >
           {{ csrf_field() }}
                <div><fieldset>
-        <input class="newsletter-name" name="email"  id="email" placeholder="forgot password"  >
+        <input class="newsletter-name" name="email"  id="email" placeholder="Email ID"  >
          <div  class="text-danger" id="forgotpass"></div>
           </fieldset>
         </div>

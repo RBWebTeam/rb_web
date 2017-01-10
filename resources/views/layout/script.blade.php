@@ -1130,6 +1130,38 @@ $(document).ready(function(){
     });
 });
 </script>
+<script type="text/javascript">
+  function SetCookie(cookieName,cookieValue,nDays) {
+    console.log(cookieName);console.log(cookieValue);console.log(nDays);
+ var today = new Date();
+ var expire = new Date();
+ if (nDays==null || nDays==0) nDays=1;
+ expire.setTime(today.getTime() + 3600000*24*nDays);
+ document.cookie = cookieName+"="+escape(cookieValue)
+                 + ";expires="+expire.toGMTString();
+}
+</script>
+<script type="text/javascript">
+  function SetCookie_pop(cookieName,cookieValue,nDays) {
+    console.log(cookieName);console.log(cookieValue);console.log(nDays);
+ var today = new Date();
+ var expire = new Date();
+ if (nDays==null || nDays==0) nDays=1;
+ expire.setTime(today.getTime() + 3600000*24*nDays);
+ if(cookieName == 'salaried'){
+    document.cookie = cookieName+"="+escape(cookieValue)
+                 + ";expires="+expire.toGMTString();
+    document.cookie = cookieName_id+"_id"+"="+escape('1')
+                 + ";expires="+expire.toGMTString();
+ }else{
+    document.cookie = cookieName+"="+escape(cookieValue)
+                 + ";expires="+expire.toGMTString(); 
+    document.cookie = cookieName+"_id"+"="+escape('2')
+                 + ";expires="+expire.toGMTString();
+ }
+ 
+}
+</script>
 
 <!--scroll up function  -->
 <script type='text/javascript'>

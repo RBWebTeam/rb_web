@@ -9,9 +9,9 @@
 				</div>
 				<div class="col-md-9 white-bg">
 					<div class="row text-left comp-pg rate">
-						<p><b>Would like to know your credit score before applying a loan against property</b></p>
-						<p>your personal information is requied to retrive your Experian credit Report and Score. 
-							All of the information you provide will be transfrred to us throught a private secure connection</p>
+						<p><b>Would like to know your credit score before applying a for loan 	</b></p>
+						<p>your personal information is requied to retrive your credit Report and Score. 
+							All of the information you provide will be transfered to us through a private secure connection</p>
 							<form class="" id="compareform" role="form" method="POST" action="">
 								<div class="row">
 									<div class="form-group">
@@ -76,7 +76,7 @@
 											</div>
 											<div class="col-md-4">
 												<select required>
-												<option>Telephone type</option>
+												
 											  @foreach($telephone as $tele)
 				      						 <option value="{{ $tele->Telephone_Value }}" >
 				      						 	<span style="font-family: bold; ">{{ $tele->Telephone_Name }}

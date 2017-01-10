@@ -19,13 +19,13 @@
 		   
 			<div class="col-md-12 text-center animate-box cont" id="q1">
              <h3>I am a
-			 <a href="#" class="svalue clr-blue pop_up" data-toggle="modal" data-target="#page1" ><input type="text" style="color:000;" class="clr-blue" id="emp_detail" name="emp_detail"  placeholder="Select" readonly>
-			 <input type="hidden" class="clr-blue" id="emp_detail_id" name="emp_detail_id"  placeholder="Select" readonly></a>
+			 <a href="#" class="svalue clr-blue pop_up" data-toggle="modal" data-target="#page1" ><input type="text" style="color:000;" class="clr-blue" id="emp_detail" name="emp_detail"  placeholder="Select" readonly value="<?php echo isset($_COOKIE['emp_type'])?$_COOKIE['emp_type']:'' ;?>">
+			 <input type="hidden" class="clr-blue" id="emp_detail_id" name="emp_detail_id"  placeholder="Select" readonly value="<?php echo isset($_COOKIE['emp_type_id'])?$_COOKIE['emp_type_id']:'' ;?>"></a>
 			professional </h3> 
 			</div>
 			<div class="col-md-12 text-center animate-box cont" style="display: none;" id="q2">
              <h3>my monthly income is
-			 <input type="tel" id="income" name="income" onkeyup="changeText_new('income','q3')"  onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="1,00,000" tabindex="1">
+			 <input type="tel" id="income" name="income" onkeyup="changeText_new('income','q3')"  onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="1,00,000" tabindex="1" onchange="SetCookie('income',this.value,1);" value="<?php echo isset($_COOKIE['income'])?$_COOKIE['income']:'' ;?>">
 			 </h3> 
 			</div>
 			<div class="col-md-12 text-center animate-box cont" style="display: none;" id="q2_year">
@@ -41,7 +41,7 @@
 
 			<div class="col-md-12 text-center animate-box cont" style="display: none" id="q4">
              <h3>and my existing loan EMI is
-			 <input type="tel" id="obligation" name="obligation"  onkeyup="changeText_new('obligation','q5')"  onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="1,00,000" tabindex="1">
+			 <input type="tel" id="obligation" name="obligation"  onkeyup="changeText_new('obligation','q5')"  onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="1,00,000" tabindex="1" onchange="SetCookie('obligation',this.value,1);" value="<?php echo isset($_COOKIE['obligation'])?$_COOKIE['obligation']:'' ;?>">
 			 </h3> 
 			</div>
 			<div class="col-md-12 text-center animate-box cont" style="display: none" id="q5">
@@ -51,15 +51,12 @@
 			</div>
 			<div class="col-md-12 text-center animate-box cont" style="display: none" id="q6">
              <h3>and required loan for
-			 <input type="tel" id="loan_tenure" name="loan_tenure"  onkeypress="changeText_new('loan_tenure','date_birth')"  onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="20" tabindex="1" maxlength="2" >
+			 <input type="tel" id="loan_tenure" name="loan_tenure"  onkeypress="changeText_new('loan_tenure','q7')"  onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="20" tabindex="1" maxlength="2" >
 			 years
 			 </h3> 
 			</div>
-
-			<div class="col-md-12 text-center animate-box cont1" style="display: none" id="date_birth"><h3>my date of birth is
-			
- 			<input type="text" class="datepicker minimumSize lastReporteddate" id="dob"  name="dob" onchange="changeTest_new(this,'q8')"  />
-
+			<div class="col-md-12 text-center animate-box cont1" style="display: none" id="q7"><h3>my date of birth is
+			<input type="text" id="dob" name="dob" class="input-pad company-nm1 datepicker" onchange="changeTest_new(this,'q8')">
 
 			</h3>
 			</div>
@@ -75,7 +72,7 @@
 				<input type="text" class="search_city input-pad" id='city_name' name='city_name' onfocus="changeTest('city_name','step_3_btn')" placeholder='your city'>city</h3>
 				
 			</div>
-			<div class="text-center" style="display: none" id="step_3_btn">
+			<div class="text-center" id="step_3_btn">
 			<?php if(Session::get('is_login')) {?>
 				<button class="btn btn-primary btn-outline with-arrow animate-box product_name" >Get me a Loan<i class="icon-arrow-right"></i></button>
 			<?php }else{?>
@@ -92,7 +89,9 @@
 		</div>
 		<!-- POP Up code end -->
 		</div>
+
 	 <!-- </div> -->
+
 @include('layout.footer')
 @include('layout.personal-loan-modal-test')
 @include('layout.script')

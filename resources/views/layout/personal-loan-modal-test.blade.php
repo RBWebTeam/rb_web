@@ -13,8 +13,8 @@
     <ul>
     <form id="emp_type_form">
 
-        <li><span><input type="radio" name="emp_type" data-value="1" value="salaried"  onclick="changeTest_new(this,'q2');" id="psalariedID" /></span>&nbsp;<label for="psalariedID"> salaried</label></li>
-      <li><span><input type="radio" name="emp_type" data-value="2" id="slef_salariedID" value="self-employed"  onclick="changeTest_new(this,'q2_year');"/></span>&nbsp; <label for="slef_salariedID"> self-employed </label></li>
+        <li><span><input type="radio" name="emp_type" data-value="1" value="salaried"  onclick="changeTest_new(this,'q2');" id="psalariedID" onchange="SetCookie_pop('emp_type',this.value,1);"/></span>&nbsp;<label for="psalariedID"> salaried</label></li>
+      <li><span><input type="radio" name="emp_type" data-value="2" id="slef_salariedID" value="self-employed"  onclick="changeTest_new(this,'q2_year');" onchange="SetCookie_pop('emp_type',this.value,1);"/></span>&nbsp; <label for="slef_salariedID"> self-employed </label></li>
       </form>
       </ul>
       </div>

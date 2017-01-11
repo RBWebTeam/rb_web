@@ -18,6 +18,9 @@
                      <li><a href="#credit-score" data-toggle="tab">My Credit Score </a></li>
                        <li><a href="#Loan-history" data-toggle="tab">Loan History </a></li>
                          <li><a href="#Track-Apllication" data-toggle="tab">Track Application </a></li>
+
+                           <li><a href="#change-password" data-toggle="tab">Change password </a></li>
+
                     <li></li>
                    
                 </ul>
@@ -62,12 +65,12 @@
                              <!--   <input name="text" value="{{$dob}}" class="datepicker" placeholder="Date of Birth" required>
  -->
                                     
- <input type="text" class="datepicker minimumSize lastReporteddate" name="date" value="{{$dob}}" />
+ <input type="text" class="datepicker minimumSize lastReporteddate" name="dob" value="{{$dob}}" />
                                 </div>
                                 <div class="col-md-6 pad11 text-danger" id="errordetails"></div>
                                 
 
-                                  @if(isset($cquery->dob))
+                                  @if(isset($cquery->gender))
                                       <?php $gender=$cquery->gender;?>
                                   @else
                                       <?php $gender='';?>
@@ -80,7 +83,7 @@
                                         <br>
 
 
-                                   @if(isset($cquery->dob))
+                                   @if(isset($cquery->address))
                                       <?php $address=$cquery->address;?>
                                    @else
                                       <?php $address='';?>
@@ -119,6 +122,55 @@
                           <div class="tab-pane" id="Track-Apllication">
 
                          Track application
+
+                          </div>
+
+
+                          <div class="tab-pane" id="change-password">
+                          <div id="success" class="col-md-6 pad11 text-danger"></div>
+                          <br>
+                          <div id="success1" class="col-md-6 pad11 text-danger"></div>
+
+                          <br><br>
+ 
+            <div class="tab-pane active" id="profile">
+                 <form id="confirmpassword" name="confirmpassword" role="form" method="POST"> {{ csrf_field() }}
+
+                <div class="form-group has-error">
+                  <div>
+                    <input type="password" class="form-control" id="currentpassword" name="currentpassword" placeholder="Current Password"  />
+                  </div>
+
+                  <div id="currentp"></div>
+                </div>
+
+                  <div class="form-group has-error">
+                    <div> 
+                    <input type="password" name="password" id="password" class="form-control clr-ddd"  placeholder="New Password" >
+                    </div>
+                     <div id="newpass"></div>
+                  </div>
+
+
+
+                  
+                <div class="form-group has-error">
+                    <div> 
+                    <input type="password" name="confirmpassword" id="confirmpassword" class="form-control clr-ddd"  placeholder="Confirm Password" >
+                    </div>
+                     <div id="confirmpass"></div>
+                  </div>
+
+       
+                  
+                  <div class="form-group centr-obj"> 
+                    <button class="btn btn-primary btn-outline with-arrow change_password_form" >Submit<i class="icon-arrow-right"></i></button>
+                  </div>
+
+      </form>
+
+                        </div>
+
 
                           </div>
                         

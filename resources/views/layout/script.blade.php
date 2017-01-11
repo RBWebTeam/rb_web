@@ -587,6 +587,63 @@ $("#f_password").click(function(event){
  
 });
 
+
+
+//   change password ......
+
+$(".change_password_form").click(function(event){
+event.preventDefault();
+    var form=$(this).closest("form").attr('id');
+    var contact=$(this).closest("form").find("input[name=contact]").val();
+
+         $form=$('#'+form);
+         if(! $form.valid()){
+
+         }else{
+         $.ajax({  
+               type: "POST",  
+               url: "{{URL::to('change-password')}}",
+               data : $('#'+form).serialize(),
+              // dataType: 'json',
+               success: function(msg){
+            
+                        
+                    if(msg.currentpassword){
+                      $("#currentp").text(msg.currentpassword);
+                     }else{
+                      $("#currentp").text('');
+                     }
+                     if(msg.password){
+                       $("#newpass").text(msg.password);
+                     }else{
+                      $("#newpass").text('');
+                     }
+                      if(msg.confirmpassword){
+                       $("#confirmpass").text(msg.confirmpassword);
+                     }else{
+                      $("#confirmpass").text('');
+                     }
+                     if(msg==1){
+                       $("#success").text('Your password has been changed successfully.');
+                       
+                     }else{
+                       $("#success").text('');
+                     }
+                    if(msg==2){
+                      $("#success1").text("your password does not match");
+                     }else{
+                        $("#success1").text('');
+                     }
+                     
+
+               }  
+           });
+             
+         }
+
+});
+
+
        //end by dp
 
 

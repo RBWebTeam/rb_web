@@ -22,6 +22,7 @@ class ProfileController extends Controller
         $query=DB::table('user_registration')->where('id','=',$get_id)->first();
         $cquery=DB::table('customer_details')->where('user_id','=',$get_id)->first();
 
+
           return view('my-profile',['query'=>$query,'cquery'=>$cquery]);
       }else{
         return redirect('/');
@@ -87,6 +88,51 @@ class ProfileController extends Controller
 
 
 
+
+public function  change_password(Request $req){
+       
+ $val =Validator::make($req->all(), [
+                
+                'currentpassword' => 'required',
+                'password' => 'required|min:5',
+                'confirmpassword' => 'required|min:5|same:password',
+                            ]);
+
+           if ($val->fails()){
+
+              return response()->json($val->messages(), 200);
+           }else{
+
+            
+        
+               $query=new registrationModel();
+
+                 
+
+               $value=$query->where('email','=',Session::get('email'))
+              ->first();
+             
+              if($value->password==md5($req->currentpassword)){
+
+                
+                          $query->where('email',Session::get('email'))
+                          ->update(array('password' =>md5($req->confirmpassword)));
+            
+                 $error="1";
+                echo $error;
+              }else{
+
+                 $error="2";
+                echo $error;
+              }
+
+
+             
+              
+           
+            }
+                
+}
   
 
 }

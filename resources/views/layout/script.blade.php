@@ -33,8 +33,11 @@
 
 $(document).ready(function(){
     $('[data-toggle="popover"]').popover();
-    $(this).find('input[type="submit"]').attr('disabled','disabled');
-  });    
+    $('#forgot_password_form').one('submit', function() {
+      $(this).find('input[type="submit"]').attr('disabled','disabled');
+    });
+    
+  }); 
 
 </script>
 
@@ -586,6 +589,63 @@ $("#f_password").click(function(event){
       }
  
 });
+
+
+
+//   change password ......
+
+$(".change_password_form").click(function(event){
+event.preventDefault();
+    var form=$(this).closest("form").attr('id');
+    var contact=$(this).closest("form").find("input[name=contact]").val();
+
+         $form=$('#'+form);
+         if(! $form.valid()){
+
+         }else{
+         $.ajax({  
+               type: "POST",  
+               url: "{{URL::to('change-password')}}",
+               data : $('#'+form).serialize(),
+              // dataType: 'json',
+               success: function(msg){
+            
+                        
+                    if(msg.currentpassword){
+                      $("#currentp").text(msg.currentpassword);
+                     }else{
+                      $("#currentp").text('');
+                     }
+                     if(msg.password){
+                       $("#newpass").text(msg.password);
+                     }else{
+                      $("#newpass").text('');
+                     }
+                      if(msg.confirmpassword){
+                       $("#confirmpass").text(msg.confirmpassword);
+                     }else{
+                      $("#confirmpass").text('');
+                     }
+                     if(msg==1){
+                       $("#success").text('Your password has been changed successfully.');
+                       
+                     }else{
+                       $("#success").text('');
+                     }
+                    if(msg==2){
+                      $("#success1").text("your password does not match");
+                     }else{
+                        $("#success1").text('');
+                     }
+                     
+
+               }  
+           });
+             
+         }
+
+});
+
 
        //end by dp
 
@@ -1148,7 +1208,7 @@ $(document).ready(function(){
  var today = new Date();
  var expire = new Date();
   function SetCookie(cookieName,cookieValue,nDays) {
-  console.log(cookieName);console.log(cookieValue);console.log(nDays); 
+  //console.log(cookieName);console.log(cookieValue);console.log(nDays); 
  if (nDays==null || nDays==0) nDays=1;
  expire.setTime(today.getTime() + 3600000*24*nDays);
  document.cookie = cookieName+"="+escape(cookieValue)
@@ -1188,7 +1248,7 @@ $('#step_3_btn').show();
 </script>
 <script type="text/javascript">
   function SetCookie_pop(cookieName,cookieValue,nDays) {
-    console.log(cookieName);console.log(cookieValue);console.log(nDays);
+    //console.log(cookieName);console.log(cookieValue);console.log(nDays);
  var today = new Date();
  var expire = new Date();
  if (nDays==null || nDays==0) nDays=1;
@@ -1212,6 +1272,10 @@ $('#step_3_btn').show();
 <!--scroll up function  -->
 <script type='text/javascript'>
 $(document).ready(function(){ 
+$('.close1').click(function(){
+  location.reload();
+});
+
     $(window).scroll(function(){ 
         if ($(this).scrollTop() > 400) { 
             $('#scroll').fadeIn(); 

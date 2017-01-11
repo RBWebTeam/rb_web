@@ -51,6 +51,8 @@ Route::post('profile/update','ProfileController@profileupdate');
 Route::post('profile/extradetails','ProfileController@extradetails');
 Route::post('forgot-password','LoginController@forgot_password');
 
+Route::post('change-password','ProfileController@change_password');
+
 
 /* API routes to be written here */ 
 

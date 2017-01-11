@@ -1,7 +1,8 @@
-<div class="container">
 <div class="table-responsive">
+<div class="container">
+
+<div class="outer-border" style="border:2px dashed #ccc; padding:30px">
 <center><h1>Savings Table:<i class="fa fa-hand-o-down" aria-hidden="true"></i></h1></center>
- <div class="outer-border" style="border:2px dashed #ccc; padding:30px">
 <h2 class="text-center">Savings:</h2>
 <table class="table table-bordered table-striped" id="emipaymenttable">
 

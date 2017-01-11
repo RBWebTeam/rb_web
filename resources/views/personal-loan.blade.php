@@ -49,10 +49,10 @@
 			
 	  	</div>
 
-		<div class="col-md-4 red-bg1">
+		<div class="col-md-4 red-bg1 fly_with">
 	   <div class="form-in">
 
-              <span class="head-1 heading-bmar">Request A Call Back</span><br>
+              <span class="head-1 heading-bmar">Request A Call Back</span>
               <form class="" id="compareform" role="form" method="POST">
             
               {{ csrf_field() }}

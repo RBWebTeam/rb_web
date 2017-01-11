@@ -33,8 +33,11 @@
 
 $(document).ready(function(){
     $('[data-toggle="popover"]').popover();
-    $(this).find('input[type="submit"]').attr('disabled','disabled');
-  });    
+    $('#forgot_password_form').one('submit', function() {
+      $(this).find('input[type="submit"]').attr('disabled','disabled');
+    });
+    
+  }); 
 
 </script>
 
@@ -1205,7 +1208,7 @@ $(document).ready(function(){
  var today = new Date();
  var expire = new Date();
   function SetCookie(cookieName,cookieValue,nDays) {
-  console.log(cookieName);console.log(cookieValue);console.log(nDays); 
+  //console.log(cookieName);console.log(cookieValue);console.log(nDays); 
  if (nDays==null || nDays==0) nDays=1;
  expire.setTime(today.getTime() + 3600000*24*nDays);
  document.cookie = cookieName+"="+escape(cookieValue)
@@ -1245,7 +1248,7 @@ $('#step_3_btn').show();
 </script>
 <script type="text/javascript">
   function SetCookie_pop(cookieName,cookieValue,nDays) {
-    console.log(cookieName);console.log(cookieValue);console.log(nDays);
+    //console.log(cookieName);console.log(cookieValue);console.log(nDays);
  var today = new Date();
  var expire = new Date();
  if (nDays==null || nDays==0) nDays=1;

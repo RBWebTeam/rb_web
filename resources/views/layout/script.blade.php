@@ -1301,6 +1301,11 @@ $(document).ready(function(){
 </script>
 
 <!-- credit card ends -->
+<!-- post by fb/google -->
+
+
+
+<!-- post end -->
 	</body>
 </html>
 <!-- login Start-->

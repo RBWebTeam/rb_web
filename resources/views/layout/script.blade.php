@@ -1301,6 +1301,7 @@ $(document).ready(function(){
 </script>
 
 <!-- credit card ends -->
+
 	</body>
 </html>
 <!-- login Start-->

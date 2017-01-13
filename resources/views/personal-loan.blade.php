@@ -49,8 +49,8 @@
 			
 	  	</div>
 
-		<div class="col-md-4 red-bg1 fly_with">
-	   <div class="form-in">
+		<div class="col-md-4 red-bg1 ">
+	   <div class="form-in ">
 
               <span class="head-1 heading-bmar">Request A Call Back</span>
               <form class="" id="compareform" role="form" method="POST">
@@ -79,7 +79,7 @@
 				  </div>
 			 
 			  
-			  <div class="form-group centr-obj"> 
+			  <div class="form-group centr-obj submit_button"> 
 			    
 			    <button class="btn btn-primary btn-outline with-arrow sidebar-submit" >Submit<i class="icon-arrow-right"></i></button>
 			   

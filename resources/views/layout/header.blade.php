@@ -26,7 +26,9 @@
     <!-- Chatbox  -->
 	<link rel="stylesheet" href="{{URL::to('css/chatbox.css')}}">
 	<!-- Modernizr JS -->
-	<!-- <link rel="manifest" href="{{URL::to('extension/manifest.json')}}"> -->
+	<!-- <link rel="manifest" href="{{URL::to('extension/manifest.json')}}"> --><meta name="google-signin-client_id" content="752185558821-9vlmac53np7bgdo3kn9d2e5ft39t7gud.apps.googleusercontent.com">
+	
+
 	</head>
 	<body>
 	

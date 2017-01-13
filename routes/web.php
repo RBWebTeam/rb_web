@@ -53,7 +53,8 @@ Route::post('forgot-password','LoginController@forgot_password');
 
 Route::post('change-password','ProfileController@change_password');
 
-
+Route::post('facebook/login','SocialsiteController@facebooklogin');
+Route::post('google/login','SocialsiteController@googlelogin');
 /* API routes to be written here */ 
 
 Route::get('api','ApiController@GetLAPQuotes');

@@ -39,11 +39,17 @@
                  </form>
                 <a href="javascript:void(0)" id="forgotps"   class="login-link text-center">Lost your password?</a>
               </div>
-        
-              <div class='modal-body-right'>
+
+
+
+
+
+             <div class='modal-body-right'>
                 <div class="modal-social-icons">
-                  <a href="{{url('facebook')}}" class="btn btn-default facebook"> <i class="fa fa-facebook modal-icons"></i> Sign In with Facebook </a>
-                   <a href="{{url('google')}}" class="btn btn-default google"> <i class="fa fa-google-plus modal-icons"></i> Sign In with Google </a>
+                  <a href="javascript:void(0);" onclick="fbLogin();" id="fbid" class="btn btn-default facebook"> <i class="fa fa-facebook modal-icons"></i> Sign In with Facebook </a>
+
+                  <div class="g-signin2 " id="googleID" data-longtitle="true" data-onsuccess="Google_signIn" data-theme="light" data-width="200"></div>
+                   <!-- <a href="{{url('google')}}" class="btn btn-default google"> <i class="fa fa-google-plus modal-icons"></i> Sign In with Google </a> -->
                 
                 </div> 
               </div>  

@@ -1275,6 +1275,10 @@ $('#step_3_btn').show();
 <!--scroll up function  -->
 <script type='text/javascript'>
 $(document).ready(function(){ 
+$('.close1').click(function(){
+  location.reload();
+});
+
     $(window).scroll(function(){ 
         if ($(this).scrollTop() > 400) { 
             $('#scroll').fadeIn(); 
@@ -1300,6 +1304,11 @@ $(document).ready(function(){
 </script>
 
 <!-- credit card ends -->
+<!-- post by fb/google -->
+
+
+
+<!-- post end -->
 	</body>
 </html>
 <!-- login Start-->

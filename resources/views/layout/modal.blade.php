@@ -31,7 +31,7 @@
             
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-default close1" data-dismiss="modal">Close</button>
         </div>
       </div>
       
@@ -70,7 +70,7 @@
             <div class='msg_err' style="display: none;"><p>Ooops. Something went wrong.</p></div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-default close1" data-dismiss="modal">Close</button>
         </div>
       </div>
       
@@ -109,7 +109,7 @@
             <div class='msg_err' style="display: none;"><p>Ooops. Something went wrong.</p></div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-default close1" data-dismiss="modal">Close</button>
         </div>
       </div>
       
@@ -148,7 +148,7 @@
             <div class='msg_err' style="display: none;"><p>Ooops. Something went wrong.</p></div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-default close1" data-dismiss="modal">Close</button>
         </div>
       </div>
       

@@ -17,7 +17,7 @@
 
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
 
-
+<script src="https://apis.google.com/js/platform.js" async defer></script>
 
     <script>
            $('ul.dropdown-menu [data-toggle=dropdown]').on('click', function(event) {

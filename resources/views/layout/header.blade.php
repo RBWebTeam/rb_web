@@ -26,10 +26,9 @@
     <!-- Chatbox  -->
 	<link rel="stylesheet" href="{{URL::to('css/chatbox.css')}}">
 	<!-- Modernizr JS -->
-	<!-- <link rel="manifest" href="{{URL::to('extension/manifest.json')}}"> -->
-	<meta name="google-signin-client_id" content="752185558821-9vlmac53np7bgdo3kn9d2e5ft39t7gud.apps.googleusercontent.com">
+	<!-- <link rel="manifest" href="{{URL::to('extension/manifest.json')}}"> --><meta name="google-signin-client_id" content="752185558821-9vlmac53np7bgdo3kn9d2e5ft39t7gud.apps.googleusercontent.com">
 	
-<script src="https://apis.google.com/js/platform.js" async defer></script>
+
 	</head>
 	<body>
 	
@@ -78,7 +77,7 @@
           </div>
         </div>
     </div>
-		<div class="container" id="small_header">
+		<div class="container">
 			<div class="header-inner">
 				<h1><a href="{{URL::to('/')}}"><img src="{{URL::to('images/logo.png')}}" width="160" height="47" /></a></h1>
 				<nav role="navigation">
@@ -135,7 +134,6 @@
 					        </li>
 							
 
-                                
 
 							<?php if(Session::get('is_login')){
 							?>

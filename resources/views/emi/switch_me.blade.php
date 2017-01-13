@@ -99,7 +99,7 @@
     <?php }?>
 
     
-     <p id="err" style="display:none;"><b><span style="color:red">Please Fill All Inputs</span></b>
+     <p id="err" style="display:none;"><b><span style="color:red">Please Fill All Inputs</span></b></p>
     </div>
     <div class="col-sm-6 rw-hei brd-rgt" style="background-color:lavenderblush;"><h3 class="transfer-cal">
     <i class="fa fa-credit-card" aria-hidden="true"></i>  My Savings</h3>

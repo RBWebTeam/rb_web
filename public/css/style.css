@@ -1300,7 +1300,7 @@ rb-services-section{padding:0px;}
 .red-bg1 { background:#1f386e url(../images/form_bg.png);}
 .form-in {color: #fff;padding:30px;/*border:1px dashed rgb(74, 126, 204);*/padding-top: 10px;padding-bottom: 0px;}
 .form-in input {background:#eaeaea;color:#999;border:none;margin-bottom:5px;}
-.form-in select {background:#eaeaea;color:#999;border:none;margin-bottom:5px;height:38px;border-radius: 3px; width:100%;}
+.form-in select {background:#eaeaea;color:#999;border:none;margin-bottom:5px;height:30px;border-radius: 3px; width:100%;}
 .slider-text {text-align:center; padding:20px;}
 .img-plac {width:185px; height:169px;}
 .mrg-btm {margin-bottom:10px;}
@@ -1359,7 +1359,7 @@ input[placeholder], [placeholder], *[placeholder] {color: #1f386e !important;}
 .chat-win {display:none;} 
 .loan-head {padding:20px;display:block; text-align:center;padding-top:0px;}
  .slide-left {margin: 0px 30px;}
- .heading-bmar {margin-bottom:20px;display:block;}
+ .heading-bmar {padding-top: 0px; margin-bottom:1px;display:block;}
  .testimonials {float:right;}
  .user-ico {font-size:35px;margin: 0 auto; margin-top:20px; margin-bottom:10px; width:60px; text-align:center;background:#ddd;border:1px solid #eee;border-radius:100px;}
  .btm-o {margin-bottom:5px;}
@@ -1724,9 +1724,5 @@ tr:hover {box-shadow:1px 1px 3px 1px #999;}
     -ms-filter:"alpha(opacity=100)";
 }
 
-.impblock{
-  display: block;
-}
-.impnone{
-  display: none;
-}
+
+

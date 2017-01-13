@@ -1,6 +1,6 @@
-    <script src="{{URL::to('js/modernizr-2.6.2.min.js')}}"></script>
+  <script src="{{URL::to('js/modernizr-2.6.2.min.js')}}"></script>
         <!-- jQuery -->
-    <script src="{{URL::to('js/jquery.min.js')}}"></script>
+  <script src="{{URL::to('js/jquery.min.js')}}"></script>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	
@@ -1304,11 +1304,7 @@ $(document).ready(function(){
 </script>
 
 <!-- credit card ends -->
-<!-- post by fb/google -->
 
-
-
-<!-- post end -->
 	</body>
 </html>
 <!-- login Start-->

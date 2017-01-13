@@ -49,7 +49,7 @@
 	
 	
 	<!-- Sidebar Popup Div Start -->
-	<div id="fh5co-page">
+	<div id="fh5co-page"   >
 
 	<header id="fh5co-header" role="banner" class="navbar navbar-default navbar-fixed-top">
 	 <div class="container-fluid top-bg">
@@ -76,8 +76,9 @@
             </ul>
           </div>
         </div>
-    </div> 
-		<div class="container" id="small_head">
+
+    </div>
+		<div class="container" id="refreshID">
 			<div class="header-inner">
 				<h1><a href="{{URL::to('/')}}"><img src="{{URL::to('images/logo.png')}}" width="160" height="47" /></a></h1>
 				<nav role="navigation">
@@ -139,9 +140,9 @@
 							?>
 							<li class="user-ic dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle"><i class="icon-user uicon hidden-xs hidden-sm"></i></a><span class="hidden-lg hidden-md">My Account&nbsp;</span><i class="icon-chevron-down"></i></a>
 							
-							<ul class="dropdown-menu" id='account'>
-							    <li>
-								<a href={{URL::to('logout')}}>Logout</a>
+							<ul class="dropdown-menu"  >
+							    <li> 
+								<a id="googleLOG" href={{URL::to('logout')}}>Logout</a>
 								<a href="{{url('profile')}}">My Profile</a>
 								<a href="#">My Account</a>
 								<a href="#">My Credit Score</a>
@@ -173,7 +174,7 @@
 				</nav>
 			</div>
 		</div>
-	</header>
+	</header>  
 	
 
 

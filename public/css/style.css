@@ -1298,7 +1298,7 @@ rb-services-section{padding:0px;}
 
 
 .red-bg1 { background:#1f386e url(../images/form_bg.png);}
-.form-in {color: #fff;padding:30px;/*border:1px dashed rgb(74, 126, 204);*/padding-top: 10px;padding-bottom: 0px;}
+.form-in {color: #fff;padding:30px;/*border:1px dashed rgb(74, 126, 204);*/padding-top: 10px;}
 .form-in input {background:#eaeaea;color:#999;border:none;margin-bottom:5px;}
 .form-in select {background:#eaeaea;color:#999;border:none;margin-bottom:5px;height:30px;border-radius: 3px; width:100%;}
 .slider-text {text-align:center; padding:20px;}
@@ -1723,6 +1723,5 @@ tr:hover {box-shadow:1px 1px 3px 1px #999;}
     opacity:1;filter:"alpha(opacity=100)";
     -ms-filter:"alpha(opacity=100)";
 }
-
 
 

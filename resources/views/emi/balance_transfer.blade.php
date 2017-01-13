@@ -34,7 +34,6 @@
 	 
 .price-box {
 	margin: 0 auto;
-	background: #E9E9E9;
 	border-radius: 10px;
 	
 }
@@ -73,7 +72,7 @@
 }
 
 .ui-slider-horizontal .ui-slider-handle {
-	margin-left: -0.5em !important;
+	margin-left: -20px !important;
 }
 
 .ui-slider .ui-slider-handle {
@@ -167,34 +166,26 @@ h4.great {
     top: 100%;
     z-index: 99;
 }
+
+label {
+    color: #999;
+    font-size: 22px;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 15px;
+    top: 1px;
+    transition: all 0.2s ease;
+    font-weight: 500;
+}
 	</style>
 	
   </head>
   
   <body class="cbp-spmenu-push">
-    <header class="main-header">
-        <div class="header-left"><a href="#" style="color:#fff;"><i class="fa fa-angle-left" aria-hidden="true"></i></a></div>
-		<div class="header-middle">BALANCE TRANSFER SAVING</div>
-		<div class="header-right">
-			<!-- <div class="top-nav">
-				<nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right" id="cbp-spmenu-s2">
-					<h3>Menu</h3>
-					<a class="scroll" href="#home" class="active">Link 1</a>
-					<a class="scroll" href="#feature">Link 1</a>
-					<a class="scroll" href="#screenshots">Link 1</a>
-					<a class="scroll" href="#team">Link 1</a>
-				</nav>
-				<div class="main buttonset">	
-					 Class "cbp-spmenu-open" gets applied to menu and "cbp-spmenu-push-toleft" or "cbp-spmenu-push-toright" to the body 
-					<button id="showRightPush"><img src="images/menu-icon.png" alt=""/></button>
-					<span class="menu"></span>
-				</div>
-			</div>
-			 -->
-		</div> 
-	</header>
+   
 	
-	<div class="wrapper-1">
+	<div class="">
        <!-- Main content -->
         <section class="container-1">
 			<div class="row">
@@ -215,7 +206,7 @@ h4.great {
 									
 									<div class="col-xs-6 form-padding">
 										<div class="form-control" title="Outstanding Principal (should be greater than 500000 and less than 1000000000)" style="margin-bottom:14px; height:50px; position:relative;">
-											<input type="number" class="form-input-new" onkeyup="myfun()" required name="loanamount" id="loanamount" onblur="alert_him(this)">
+											<input type="text" maxlength="9" class="form-input-new" onkeyup="myfun()" required name="loanamount" id="loanamount" onblur="alert_him(this)">
 											<span class="highlight"></span><span class="bar"></span>
 											<label class="form-label-new">Outstanding Principal
 										    </label>
@@ -225,7 +216,7 @@ h4.great {
 									
 									<div class="col-xs-6 form-padding">
 										<div class="form-control" title="Present Interest Rate(should be greater than 9.0%)" style="margin-bottom:14px; height:50px; position:relative;">
-											<input type="number" class="form-input-new" onkeyup="myfun()" onblur="alert_him(this)" required name="loaninterest" id="loaninterest" step="0.01" min="0">
+											<input type="text" maxlength="2" class="form-input-new" onkeyup="myfun()" onblur="alert_him(this)" required name="loaninterest" id="loaninterest" step="0.01" min="0">
 											<span class="highlight"></span><span class="bar"></span>
 											<label class="form-label-new">Present Interest Rate </label>
 											<div class="clear"></div>
@@ -269,7 +260,7 @@ h4.great {
 											<span type="name" class="form-input-new" required></span>
 											<span class="highlight"></span><span class="bar"></span>
 											
-											<span style="position: absolute; z-index: 999; margin: 1px 0 0 8px; font-size: 10px; color: #0281ca;">Present EMI</span>
+											<span style="position: absolute; z-index: 999; margin: 1px 0 0 4px; font-size: 10px; color: #bababa;">PRESENT EMI</span>
 											<h4 class="em1 pull-right">₹ <b><span id="emi">0</span></b></h4>
 											<div class="clear"></div>
 										</div>
@@ -279,7 +270,7 @@ h4.great {
 											<span type="name" class="form-input-new" required ></span>
 											<span class="highlight"></span><span class="bar"></span>
 										
-											<span style="position: absolute; z-index: 999; margin: 1px 0 0 8px; font-size: 10px; color: #0281ca;">EMI Reduction</span>
+											<span style="position: absolute; z-index: 999; margin: 1px 0 0 4px; font-size: 10px; color: #bababa;">EMI REDUCTION</span>
 											<h4 class="em5 pull-right">₹ <b><span id="emi3">0</span></b></h4>
 											<div class="clear"></div>
 										</div>
@@ -292,7 +283,7 @@ h4.great {
 											<span type="name" class="form-input-new" required ></span>
 											<span class="highlight"></span><span class="bar"></span>
 										
-											<span style="position: absolute; z-index: 999; margin: 1px 0 0 8px; font-size: 10px; color: #0281ca;">New EMI</span>
+											<span style="position: absolute; z-index: 999; margin: 1px 0 0 4px; font-size: 10px; color: #bababa;">NEW EMI</span>
 											<h4 class="em6 pull-right">₹ <b><span id="emi4">0</span></b></h4>
 											<div class="clear"></div>
 										</div>
@@ -302,7 +293,7 @@ h4.great {
 											<span type="name" class="form-input-new"  required></span>
 											<span class="highlight"></span><span class="bar"></span>
 											
-											<span style="position: absolute; z-index: 999; margin: 1px 0 0 8px; font-size: 10px; color: #0281ca;">Int. Rate Reduction</span>
+											<span style="position: absolute; z-index: 999; margin: 1px 0 0 4px; font-size: 10px; color: #bababa;">INT. RATE REDUCTION</span>
 											<h4 class="em7 pull-right"> <b><span id="emi5">0</span>%</b></h4>
 											<div class="clear"></div>
 										</div>
@@ -474,22 +465,22 @@ h4.great {
 	
 	<script src="js/classie.js"></script>
 		<script>
-			// var menuRight = document.getElementById( 'cbp-spmenu-s2' ),
-			// showRightPush = document.getElementById( 'showRightPush' ),
-			// body = document.body;
+		    var menuRight = document.getElementById( 'cbp-spmenu-s2' ),
+			 showRightPush = document.getElementById( 'showRightPush' ),
+			 body = document.body;
 
-			// showRightPush.onclick = function() {
-			// 	classie.toggle( this, 'active' );
-			// 	classie.toggle( body, 'cbp-spmenu-push-toleft' );
-			// 	classie.toggle( menuRight, 'cbp-spmenu-open' );
-			// 	disableOther( 'showRightPush' );
-			// };
+			 showRightPush.onclick = function() {
+			 classie.toggle( this, 'active' );
+			classie.toggle( body, 'cbp-spmenu-push-toleft' );
+			classie.toggle( menuRight, 'cbp-spmenu-open' );
+			disableOther( 'showRightPush' );
+			};
 
-			// function disableOther( button ) {
-			// 	if( button !== 'showRightPush' ) {
-			// 		classie.toggle( showRightPush, 'disabled' );
-			// 	}
-			// }
+			function disableOther( button ) {
+				if( button !== 'showRightPush' ) {
+					classie.toggle( showRightPush, 'disabled' );
+				}
+			}
 		</script>
 		
 		<!--<script src="js/jQuery.min.js"></script>-->
@@ -541,7 +532,7 @@ h4.great {
             value: 1,
             min: 0,
             max: 30,
-            step: 1,
+            
             slide: function (event, ui)
 
             {

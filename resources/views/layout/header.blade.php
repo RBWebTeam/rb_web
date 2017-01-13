@@ -76,8 +76,8 @@
             </ul>
           </div>
         </div>
-    </div>
-		<div class="container">
+    </div> 
+		<div class="container" id="small_head">
 			<div class="header-inner">
 				<h1><a href="{{URL::to('/')}}"><img src="{{URL::to('images/logo.png')}}" width="160" height="47" /></a></h1>
 				<nav role="navigation">

@@ -158,9 +158,3 @@
 
 @include('layout.footer')
 @include('layout.script')
-
-<script>
-$(document).ready(function(){
-    $('[data-toggle="popover"]').popover();   
-});
-</script>

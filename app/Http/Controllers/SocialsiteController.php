@@ -125,4 +125,90 @@ return  $authUser;
     }
 
 
+
+    public function facebooklogin(Request $res){
+                      $vale=$res->response;
+             $query=new registrationModel();
+             $authUser =$query->where('provider_user_id',$vale['id'])->first();
+
+               if ($authUser){
+                       Session::set('email', $authUser->email);
+                       Session::set('user_id', $authUser->id);
+                       Session::set('name', $authUser->username);
+                       Session::set('is_login', 1);
+               $arr = array('error' => 1);
+               echo json_encode($arr);
+        }else{
+ 
+
+                  $query->username=$vale['first_name'];
+                  $query->email=$vale['email'];
+                  $query->contact=0;
+                  $query->password=0;
+                  $query->provider_user_id=$vale['id'];
+                  $query->provider=$vale['link'];
+                  $query->created_at=date('Y-m-d H:i:s');
+
+               if($query->save()) {
+                  Session::set('email',$query->email);
+                  Session::set('contact',$query->contact);
+                  Session::set('user_id',$query->id);
+                  Session::set('name',$query->username);
+                  Session::set('is_login',1);
+               
+        }
+
+                $arr = array('error' => 2);
+               echo json_encode($arr);
+
+
+        }
+
+    }
+
+
+
+
+ public function googlelogin(Request $res){
+                      $vale=$res->response;
+                  
+                 
+             $query=new registrationModel();
+             $authUser =$query->where('provider_user_id',$vale['Eea'])->first();
+
+               if ($authUser){
+                       Session::set('email', $authUser->email);
+                       Session::set('user_id', $authUser->id);
+                       Session::set('name', $authUser->username);
+                       Session::set('is_login', 1);
+               $arr = array('error' => 1);
+               echo json_encode($arr);
+        }else{
+ 
+
+                  $query->username=$vale['ig'];
+                  $query->email=$vale['U3'];
+                  $query->contact=1;
+                  $query->password=1;
+                  $query->provider_user_id=$vale['Eea'];
+                  $query->provider=$vale['Paa'];
+                  $query->created_at=date('Y-m-d H:i:s');
+
+               if($query->save()) {
+                  Session::set('email',$query->email);
+                  Session::set('contact',$query->contact);
+                  Session::set('user_id',$query->id);
+                  Session::set('name',$query->username);
+                  Session::set('is_login',1);
+               
+        }
+
+                $arr = array('error' => 2);
+                 echo json_encode($arr);
+
+
+        }
+
+    }
+
 }

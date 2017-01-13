@@ -1,6 +1,6 @@
 <center>
                     <div class="type-cover">
-                      <p>Remaning Tenure</p>
+                      <p>Bank-wise Details Table</p>
                     </div>
                   </center>
                 <!-- <a href="#">
@@ -32,7 +32,8 @@ foreach ($data as $key => $value){?>
     $drop_emi= $amount-$new_amount;
     $drop_in_int=(($loaninterest*12*100)-($new_rate*12*100));
     $savings=$total-$new_total;
-    $emiperlacs=($new_amount/100000);
+    $aaa= $loanamount/100000;
+    $emiperlacs=($new_amount/$aaa);
   }catch (Exception $e){
 
   }
@@ -74,7 +75,7 @@ foreach ($data as $key => $value){?>
                         <h6><?php echo $loanterm ?></h6>
                       </div>
                     </td>
-                    <td class="td-main-1"><a href="{{URL::to('apply-home-loan')}}"> <img src="images/edit-home-icon.png" class="img-responsive"></a>
+                    <td class="td-main-1"> <img src="images/edit-home-icon.png" class="img-responsive"></a>
                     
                     </td>
                   </tr>

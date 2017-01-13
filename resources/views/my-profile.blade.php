@@ -18,8 +18,12 @@
                      <li><a href="#credit-score" data-toggle="tab">My Credit Score </a></li>
                        <li><a href="#Loan-history" data-toggle="tab">Loan History </a></li>
                          <li><a href="#Track-Apllication" data-toggle="tab">Track Application </a></li>
-
-                           <li><a href="#change-password" data-toggle="tab">Change password </a></li>
+                            
+                               @if($query->password!='0')
+                                      <li><a href="#change-password" data-toggle="tab">Change password </a></li>
+                                @endif
+                                     
+                        
 
                     <li></li>
                    
@@ -113,16 +117,11 @@
 
 
                           <div class="tab-pane" id="Loan-history">
-
                          Loan history
-
                           </div>
 
-
                           <div class="tab-pane" id="Track-Apllication">
-
                          Track application
-
                           </div>
 
 
@@ -130,7 +129,6 @@
                           <div id="success" class="col-md-6 pad11 text-danger"></div>
                           <br>
                           <div id="success1" class="col-md-6 pad11 text-danger"></div>
-
                           <br><br>
  
             <div class="tab-pane active" id="profile">
@@ -151,9 +149,6 @@
                      <div id="newpass"></div>
                   </div>
 
-
-
-                  
                 <div class="form-group has-error">
                     <div> 
                     <input type="password" name="confirmpassword" id="confirmpassword" class="form-control clr-ddd"  placeholder="Confirm Password" >

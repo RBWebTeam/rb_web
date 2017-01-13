@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
   <head>
     <meta charset="UTF-8">
@@ -48,14 +48,14 @@
 .ui-slider .ui-slider-handle {
 	position: absolute !important;
 	z-index: 2 !important;
-	width: 3.2em !important;
-	height: 2.2em !important;
+	width: 4.0em !important;
+	height: 2.1em !important;
 	cursor: default !important;
 	margin: 0 -20px auto !important;
 	text-align: center !important;	
-	line-height: 30px !important;
+	
 	color: #FFFFFF !important;
-	font-size: 15px !important;
+	
 }
 
 .ui-corner-all {
@@ -206,7 +206,10 @@ label {
 									
 									<div class="col-xs-6 form-padding">
 										<div class="form-control" title="Outstanding Principal (should be greater than 500000 and less than 1000000000)" style="margin-bottom:14px; height:50px; position:relative;">
-											<input type="text" maxlength="9" class="form-input-new" onkeyup="myfun()" required name="loanamount" id="loanamount" onblur="alert_him(this)">
+
+											<input type="text" class="form-input-new" onkeyup="myfun()" required name="loanamount" id="loanamount" maxlength="9"  onkeypress="return isNumberKey(event)" onblur="alert_him(this)">
+
+
 											<span class="highlight"></span><span class="bar"></span>
 											<label class="form-label-new">Outstanding Principal
 										    </label>
@@ -216,7 +219,9 @@ label {
 									
 									<div class="col-xs-6 form-padding">
 										<div class="form-control" title="Present Interest Rate(should be greater than 9.0%)" style="margin-bottom:14px; height:50px; position:relative;">
-											<input type="text" maxlength="2" class="form-input-new" onkeyup="myfun()" onblur="alert_him(this)" required name="loaninterest" id="loaninterest" step="0.01" min="0">
+
+											<input type="text" class="form-input-new" onkeyup="myfun();alert_him1(this);" required name="loaninterest" id="loaninterest" step="0.01" min="0"  onkeypress="return isNumberKey(event)">
+
 											<span class="highlight"></span><span class="bar"></span>
 											<label class="form-label-new">Present Interest Rate </label>
 											<div class="clear"></div>
@@ -529,7 +534,7 @@ label {
         $("#slider").slider({
             range: "min",
             animate: true,
-            value: 1,
+            value: 0,
             min: 0,
             max: 30,
             
@@ -543,12 +548,12 @@ label {
         });
 
         //Added, set initial value.
-        $("#amount").val(1);
-        $("#amount-label").text(1);
+        $("#amount").val(0);
+        $("#amount-label").text(0);
 
 
 
-        update(1,1);
+        update(0,0);
     });
 
     //changed. now with parameter
@@ -564,9 +569,12 @@ label {
          */
 
         $("#amount").val($amount);
+        //console.log($("#amount").val($amount));
         $("#amount-label").text($amount);
+        //console.log($("#amount-label").text($amount));
+        var years = "years";
 
-        $('#slider a').html('<label>' + $amount + '</label><div class="ui-slider-label-inner"></div>');
+        $('#slider a').html('<label>' + $amount + 'years  </label><div class="ui-slider-label-inner"></div>');
     }
 	</script>
 	<script type="text/javascript">
@@ -599,6 +607,7 @@ $('#slider').slider({
 });
  
   function myfun(){ 
+  	alert_him();
     var lm = $("#loanamount").val().length;
        var lin = $("#loaninterest").val().length;
        var lt = $("#loanterm").val().length;
@@ -694,18 +703,45 @@ $('#slider').slider({
 	function alert_him(e){
 		//console.log(e.id + " "+e.value);
  	
- 	 if(e.id=="loanamount" &&( e.value<500000 || e.value>1000000000)){
+ 	//  if(e.id=="loanamount" &&( e.value<500000 || e.value>1000000000)){
 
- 		// alert("Outstanding Principal (should be greater than 500000 and less than 1000000000)");
- 		$('#homeTransfer').modal('show');
+ 	// 	// alert("Outstanding Principal (should be greater than 500000 and less than 1000000000)");
+ 	// 	$('#homeTransfer').modal('show');
 
- 	 }else if(e.id=="loaninterest" && e.value < 9){
+ 	//  }else if(e.id=="loaninterest" && e.value < 9 && e.value != ""){
 
- 	 	// alert("Congrats you are already on lowest rate.");
- 	 	$('#homeTransfer1').modal('show');
+ 	//  	// alert("Congrats you are already on lowest rate.");
+ 	//  	$('#homeTransfer1').modal('show');
 
- 	}
+ 	// }
+ 	$("#loanamount").change(function(){
+	if(parseInt(this.value) < 500000 || parseInt(this.value)>1000000000){
+        $('#homeTransfer').modal('show');
+     }
+})
  }	
+</script>
+<script type="text/javascript">
+	function alert_him1(e){
+		
+ 	$("#loaninterest").change(function(){
+	if(parseInt(this.value) < 9 || this.value == 9){
+        $('#homeTransfer1').modal('show');
+     }
+})
+}
+</script>
+<script>
+function isNumberKey(evt)
+       {
+          var charCode = (evt.which) ? evt.which : evt.keyCode;
+          if (charCode != 46 && charCode > 31 
+            && (charCode < 48 || charCode > 57))
+             return false;
+
+          return true;
+       }
+
 </script>
   </body>
   

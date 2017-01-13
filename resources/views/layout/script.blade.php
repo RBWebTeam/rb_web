@@ -1498,12 +1498,12 @@ function update_user_data(response)
             
                if(msg.error==1){
                 // location.reload();
-                 //$("#log_popup").modal('hide');
+                 $("#log_popup").modal('hide');
              }
            
              if(msg.error==2){
 
-                 //$("#log_popup").modal('hide');
+                 $("#log_popup").modal('hide');
                }
             }
       });

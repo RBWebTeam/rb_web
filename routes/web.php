@@ -94,3 +94,6 @@ Route::get('show-quotes','FormController@show_quotes');
 
 //for dc
 Route::post('calculationfordc','CompareController@calculationfordc');
+// Experian'
+Route::post('show-credit-report','ExperianController@call');
+

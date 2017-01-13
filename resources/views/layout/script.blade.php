@@ -1,6 +1,6 @@
-    <script src="{{URL::to('js/modernizr-2.6.2.min.js')}}"></script>
+  <script src="{{URL::to('js/modernizr-2.6.2.min.js')}}"></script>
         <!-- jQuery -->
-    <script src="{{URL::to('js/jquery.min.js')}}"></script>
+  <script src="{{URL::to('js/jquery.min.js')}}"></script>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	
@@ -1304,8 +1304,8 @@ $(document).ready(function(){
 </script>
 
 <!-- credit card ends -->
-<!-- post by fb/google -->
 
+<<<<<<< HEAD
 <!-- facebook and loagin function-->
 <script>
 window.fbAsyncInit = function() {
@@ -1413,7 +1413,7 @@ function update_user_data(response)
                  //$("#manuload").load("load.html");
                  // window.location.hash = $(this).attr("manuload");
                    
-                  $("#refreshID").load(location.href + " #refreshID");
+                 // $("#refreshID").load(location.href + " #refreshID");
 
                    
                    
@@ -1431,6 +1431,8 @@ function update_user_data(response)
 
 
 <!-- post end -->
+=======
+>>>>>>> fe8771eff270c5f6653fb4ab2db6b23d0d67a6d0
 	</body>
 </html>
 <!-- login Start-->

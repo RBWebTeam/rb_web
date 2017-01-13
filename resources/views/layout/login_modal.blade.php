@@ -124,7 +124,7 @@
          <div class='msg' style="display: none;"><p>Thanks. You are successfully registered.</p></div>
         </div>
         <div class="modal-footer">
-                           <button type="button" class="btn btn-default close1" data-dismiss="modal">Close
+                           <button type="button" class="btn btn-default" data-dismiss="modal">Close
                            </button>
                             <div style="float: left;" id="Login-here" class="btn btn-primary btn-outline with-arrow">   <a href="javascript:void(0)"  onclick="backf()"> Login here</a>
                             </div>

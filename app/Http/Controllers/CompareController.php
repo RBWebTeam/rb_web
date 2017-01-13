@@ -82,6 +82,11 @@ class CompareController extends Controller
       $data['city'] = DB::table('city_master')
       ->select('City_Name','state_id','City_Id')
       ->get();
+      $data['state'] = DB::table('experian_state_master')
+      ->select('State_Id','State_Code','State_Name')
+      ->get();
+     //  print "<pre>";
+      //print_r($data['state']);exit();
      	return view('credit-report')->with($data);
     }
 

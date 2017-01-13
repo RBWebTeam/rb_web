@@ -1,20 +1,3 @@
-Skip to content
-This repository
-Search
-Pull requests
-Issues
-Gist
- @manishdixit18
- Unwatch 1
-  Unstar 1
-  Fork 1 pradeepmkhandekar/RBSite Private
- Code  Issues 0  Pull requests 0  Projects 0  Wiki  Pulse  Graphs
-Tree: 1beea676ff Find file Copy pathRBSite/resources/views/layout/lap-modal.blade.php
-1beea67  a day ago
-@manishdixit18 manishdixit18 making new modal of LAP
-1 contributor
-RawBlameHistory     
-166 lines (124 sloc)  5.64 KB
 <!-- popup1 Start-->
     <div id="page1" class="modal fade" role="dialog">
   <div class="modal-dialog">

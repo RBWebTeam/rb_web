@@ -48,7 +48,7 @@
                 <div class="modal-social-icons">
                   <a href="javascript:void(0);" onclick="fbLogin();" id="fbid" class="btn btn-default facebook"> <i class="fa fa-facebook modal-icons"></i> Sign In with Facebook </a>
 
-                  <div class="g-signin2 " id="googleID" data-longtitle="true" data-onsuccess="Google_signIn" data-theme="light" data-width="200"></div>
+                  <div class="g-signin2 google_ID" id="googleID" data-longtitle="true" data-onsuccess="Google_signIn" data-theme="light" data-width="200"></div>
                    <!-- <a href="{{url('google')}}" class="btn btn-default google"> <i class="fa fa-google-plus modal-icons"></i> Sign In with Google </a> -->
                 
                 </div> 

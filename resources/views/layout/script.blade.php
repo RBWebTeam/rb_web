@@ -1363,9 +1363,9 @@ function getFbUserData(){
              }
            
              if(msg.error==2){
-
-              location.reload();
-                 $("#log_popup").modal('hide');
+               //location.reload();
+                  $("#log_popup").modal('hide');
+                  $("#refreshID").load(location.href + " #refreshID");
                }
            }
 
@@ -1378,13 +1378,14 @@ function getFbUserData(){
 </script>
 <script type="text/javascript">
 
-function Google_signIn(googleUser) {
+function Google_signIn(googleUser) {  
 
-  var profile = googleUser.getBasicProfile();    
+   var profile = googleUser.getBasicProfile();  
+   $('.google_ID').click(function(){
 
- $('#googleID').click(function(){
-      update_user_data(profile); 
-  });
+      update_user_data(profile);
+    });
+
 }
 
 $("#googleLOG").click(function(){
@@ -1397,6 +1398,9 @@ $("#googleLOG").click(function(){
 
 function update_user_data(response) 
 {    
+
+ 
+
       $.ajax({
             type: "POST",
              dataType: 'json',
@@ -1407,13 +1411,17 @@ function update_user_data(response)
                     $("#log_popup").modal('hide');
                     $("#refreshID").load(location.href + " #refreshID");
              }
-           
              if(msg.error==2){
-
-                 $("#log_popup").modal('hide');
+                   $("#log_popup").modal('hide');
                    $("#refreshID").load(location.href + " #refreshID");
                }
+
+             
+
+                 
             }
+
+
       });
 
 }

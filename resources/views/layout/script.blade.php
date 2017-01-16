@@ -1305,7 +1305,6 @@ $(document).ready(function(){
 
 <!-- credit card ends -->
 
-<<<<<<< HEAD
 <!-- facebook and loagin function-->
 <script>
 window.fbAsyncInit = function() {
@@ -1380,24 +1379,22 @@ function getFbUserData(){
 <script type="text/javascript">
 
 function Google_signIn(googleUser) {
-  var profile = googleUser.getBasicProfile();        
 
+  var profile = googleUser.getBasicProfile();    
+
+ $('#googleID').click(function(){
       update_user_data(profile); 
-
+  });
 }
 
 $("#googleLOG").click(function(){
-
-
  var auth2 = gapi.auth2.getAuthInstance();
     auth2.signOut().then(function () {
-         
-        //$( this ).find( "refreshID" ).stop( true, true ).fadeIn();
-    });
 
+    });
 });
 
- 
+
 function update_user_data(response) 
 {    
       $.ajax({
@@ -1407,21 +1404,14 @@ function update_user_data(response)
             url: "{{url('google/login')}}",
             success: function(msg) {
                if(msg.error==1){
-                // location.reload();
-                 $("#log_popup").modal('hide');
-
-                 //$("#manuload").load("load.html");
-                 // window.location.hash = $(this).attr("manuload");
-                   
-                 // $("#refreshID").load(location.href + " #refreshID");
-
-                   
-                   
+                    $("#log_popup").modal('hide');
+                    $("#refreshID").load(location.href + " #refreshID");
              }
            
              if(msg.error==2){
 
                  $("#log_popup").modal('hide');
+                   $("#refreshID").load(location.href + " #refreshID");
                }
             }
       });
@@ -1431,8 +1421,7 @@ function update_user_data(response)
 
 
 <!-- post end -->
-=======
->>>>>>> fe8771eff270c5f6653fb4ab2db6b23d0d67a6d0
+
 	</body>
 </html>
 <!-- login Start-->

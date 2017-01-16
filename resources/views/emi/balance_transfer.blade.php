@@ -299,7 +299,7 @@ label {
 											<span class="highlight"></span><span class="bar"></span>
 											
 											<span style="position: absolute; z-index: 999; margin: 1px 0 0 4px; font-size: 10px; color: #bababa;">INT. RATE REDUCTION</span>
-											<h4 class="em7 pull-right"> <b><span id="emi5">0</span>%</b></h4>
+											<h4 class="em7 pull-right"> <b><span id="emi5">0</span> %</b></h4>
 											<div class="clear"></div>
 										</div>
 									</div>
@@ -557,7 +557,7 @@ label {
         //console.log($("#amount-label").text($amount));
         var yrs = "yrs";
 
-        $('#slider a').html('<label>' + $amount + 'yrs  </label><div class="ui-slider-label-inner"></div>');
+        $('#slider a').html('<label>' + $amount + ' yrs  </label><div class="ui-slider-label-inner"></div>');
     }
 	</script>
 	<script type="text/javascript">

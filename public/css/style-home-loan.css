@@ -134,7 +134,7 @@ body {
 .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
     padding: 8px;
     line-height: 1.42857143;
-    vertical-align: middle;
+   
     border-top: 1px solid #ddd;
 }
 p {
@@ -297,10 +297,10 @@ p {
 	margin:0 0 15px 0;
 }	
 .scaling-slider {
-    width: 97.6%;
+   
     height: 75px;
     border: 1px solid #d2d2d2;
-    left: 1%;
+    margin: 0px 5px;
     position: relative;
 }	
 .summary {
@@ -380,6 +380,7 @@ p {
 }
 .td-main {
 	font-size:10px; padding:0 !important;
+	width: 26%;
 }
 .td-main-1 {
 	font-size:10px; padding:0 !important; text-align:center; 

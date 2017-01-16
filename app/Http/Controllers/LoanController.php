@@ -54,12 +54,7 @@ class LoanController extends Controller
         //               ->first();
     	return view('sme-loan')->with($data);
     }
-    public function home_loan_transfer(){
-    	$data['title']='Home Loan Transfer';
-    	$data['description']='Apply for Home Loan Transfer';
-
-    	return view('home-loan-transfer')->with($data);
-    }
+  
     public function car_loan(){
     	$data['title']='Car Loan';
     	$data['description']='Apply for Car Loan';

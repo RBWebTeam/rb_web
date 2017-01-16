@@ -1245,13 +1245,12 @@ label {
 	transition: all 0.2s ease;
 	font-weight:500;
 }
-/* active */
 input:focus ~ label, input.used ~ label {
 	top: 2px !important;
 	bottom:auto !important;
   transform: scale(.75); left: 1px;
-	/* font-size: 14px; */
-	color: #0281ca;
+  left: -9px;
+	color: #bababa !important;
 }
 /* Underline 
 .bar {

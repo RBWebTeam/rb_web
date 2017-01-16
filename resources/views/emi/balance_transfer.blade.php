@@ -72,7 +72,7 @@
 }
 
 .ui-slider-horizontal .ui-slider-handle {
-	margin-left: -20px !important;
+	margin-left: -27px !important;
 }
 
 .ui-slider .ui-slider-handle {

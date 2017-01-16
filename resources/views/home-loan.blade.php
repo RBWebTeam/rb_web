@@ -50,7 +50,7 @@
 	  	</div>
 
 		<div class="col-md-4 red-bg1 ">
-	   <div class="form-in ">
+	   <div class="form-in">
 
               <span class="head-1 heading-bmar">Request A Call Back</span>
               <form class="" id="compareform" role="form" method="POST">

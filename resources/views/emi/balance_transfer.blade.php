@@ -577,9 +577,9 @@ h4.great {
         //console.log($("#amount").val($amount));
         $("#amount-label").text($amount);
         //console.log($("#amount-label").text($amount));
-        var years = "years";
+        var yrs = "yrs";
 
-        $('#slider a').html('<label>' + $amount + 'years  </label><div class="ui-slider-label-inner"></div>');
+        $('#slider a').html('<label>' + $amount + 'yrs  </label><div class="ui-slider-label-inner"></div>');
     }
 	</script>
 	<script type="text/javascript">

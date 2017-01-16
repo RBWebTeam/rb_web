@@ -36,7 +36,8 @@
   
 foreach ($data as $key => $value){?>
 <tr>
-	<td>{{ $value['Bank_Name']}}</td>
+
+	<td><img src="{{ $value['Bank_Logo']}}" class="img-responsive">{{ $value['Bank_Name']}}</td>
     <td>{{ $value['roi']}}</td>
     <td>{{ $value['pf']}} &nbsp; ({{ $value['pf_type']}})</td>
     

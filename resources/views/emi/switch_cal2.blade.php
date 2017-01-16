@@ -39,10 +39,17 @@ foreach ($data as $key => $value){?>
 
   }
     ?>
+<<<<<<< HEAD
 	
     <table class="table table-bordered ">
                   <tbody><tr><td class="td-main-1" width="100">
                       <img src="images/logo-aditya-birla.png" class="img-responsive">
+=======
+   
+    <table class="table table-bordered">
+                  <tbody><tr><td class="td-main-1" width="100">
+                      <img src="{{ $value['Bank_Logo']}}" class="img-responsive">
+>>>>>>> b1f404ffa51606cb4e50a9e228ddc2e71cb0e085
                       <p>{{ $value['Bank_Name']}}</p>
                     </td>
                     <td class="td-main">
@@ -62,7 +69,12 @@ foreach ($data as $key => $value){?>
                       </div>
                       <div class="loan-floating">
                         <p>PROCESSING FEE</p>
+<<<<<<< HEAD
                         <h6>{{ $value['pf']}} &nbsp; ({{ $value['pf_type']}})</h6>
+=======
+                        <h6>{{ $value['pf']}}</h6> &nbsp; <h7>({{ $value['pf_type']}})</h7>
+                        
+>>>>>>> b1f404ffa51606cb4e50a9e228ddc2e71cb0e085
                       </div>
                     </td>
                     <td class="td-main">
@@ -75,7 +87,13 @@ foreach ($data as $key => $value){?>
                         <h6><?php echo $loanterm ?></h6>
                       </div>
                     </td>
+<<<<<<< HEAD
                     <!-- <td class="td-main-1"> <img src="images/edit-home-icon.png" class="img-responsive"></a></td> -->
+=======
+                    <!-- <td class="td-main-1"> <img src="images/edit-home-icon.png" class="img-responsive"></a> -->
+                    
+                    </td>
+>>>>>>> b1f404ffa51606cb4e50a9e228ddc2e71cb0e085
                   </tr>
                             
               </tbody>

@@ -1305,7 +1305,6 @@ $(document).ready(function(){
 
 <!-- credit card ends -->
 
-<<<<<<< HEAD
 <!-- facebook and loagin function-->
 <script>
 window.fbAsyncInit = function() {
@@ -1364,9 +1363,9 @@ function getFbUserData(){
              }
            
              if(msg.error==2){
-
-              location.reload();
-                 $("#log_popup").modal('hide');
+               //location.reload();
+                  $("#log_popup").modal('hide');
+                  $("#refreshID").load(location.href + " #refreshID");
                }
            }
 
@@ -1379,27 +1378,29 @@ function getFbUserData(){
 </script>
 <script type="text/javascript">
 
-function Google_signIn(googleUser) {
-  var profile = googleUser.getBasicProfile();        
+function Google_signIn(googleUser) {  
 
-      update_user_data(profile); 
+   var profile = googleUser.getBasicProfile();  
+   $('.google_ID').click(function(){
+
+      update_user_data(profile);
+    });
 
 }
 
 $("#googleLOG").click(function(){
-
-
  var auth2 = gapi.auth2.getAuthInstance();
     auth2.signOut().then(function () {
-         
-        //$( this ).find( "refreshID" ).stop( true, true ).fadeIn();
-    });
 
+    });
 });
 
- 
+
 function update_user_data(response) 
 {    
+
+ 
+
       $.ajax({
             type: "POST",
              dataType: 'json',
@@ -1407,23 +1408,20 @@ function update_user_data(response)
             url: "{{url('google/login')}}",
             success: function(msg) {
                if(msg.error==1){
-                // location.reload();
-                 $("#log_popup").modal('hide');
-
-                 //$("#manuload").load("load.html");
-                 // window.location.hash = $(this).attr("manuload");
-                   
-                 // $("#refreshID").load(location.href + " #refreshID");
-
-                   
-                   
+                    $("#log_popup").modal('hide');
+                    $("#refreshID").load(location.href + " #refreshID");
              }
-           
              if(msg.error==2){
-
-                 $("#log_popup").modal('hide');
+                   $("#log_popup").modal('hide');
+                   $("#refreshID").load(location.href + " #refreshID");
                }
+
+             
+
+                 
             }
+
+
       });
 
 }
@@ -1431,8 +1429,7 @@ function update_user_data(response)
 
 
 <!-- post end -->
-=======
->>>>>>> fe8771eff270c5f6653fb4ab2db6b23d0d67a6d0
+
 	</body>
 </html>
 <!-- login Start-->
@@ -1526,114 +1523,5 @@ function update_user_data(response)
     </div>
   </div>
 </div>
-
-<!-- otp end here-->
-
-<!-- up scroller  -->
-<script>
-window.fbAsyncInit = function() {
-    // FB JavaScript SDK configuration and setup
-    FB.init({
-      appId      : '624024964433110', // FB App ID
-      cookie     : true,  // enable cookies to allow the server to access the session
-      xfbml      : true,  // parse social plugins on this page
-      version    : 'v2.8' // use graph api version 2.8
-    });
-    
-    // Check whether the user already logged in
-    FB.getLoginStatus(function(response) {
-        if (response.status === 'connected') {
-            //display user data
-           // getFbUserData();
-        }
-    });
-};
-
-// Load the JavaScript SDK asynchronously
-(function(d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s); js.id = id;
-    js.src = "//connect.facebook.net/en_US/sdk.js";
-    fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));
-
-// Facebook login with JavaScript SDK
-function fbLogin() {
-    FB.login(function (response) {
-        if (response.authResponse) {
-            // Get and display the user profile data
-            getFbUserData();
-        } else {
-            document.getElementById('status').innerHTML = 'User cancelled login or did not fully authorize.';
-        }
-    }, {scope: 'email'});
-}
-
-// Fetch the user profile data from facebook
-function getFbUserData(){
-    FB.api('/me', {locale: 'en_US', fields: 'id,first_name,last_name,email,link,gender,locale,picture'},
-    function (response){
-         $.ajax({
-            type: "POST",
-            dataType: 'json',
-            data: {response,"_token": "{{ csrf_token() }}"},
-            url: "{{url('facebook/login')}}",
-            success: function(msg) {
-             if(msg.error==1){
-               //  location.reload();
-                 $("#log_popup").modal('hide');
-             }
-           
-             if(msg.error==2){
-
-              location.reload();
-                 $("#log_popup").modal('hide');
-               }
-           }
-
-         });
-
-
-    });
-}
-
-</script>
-
-<script type="text/javascript">
-  
-
-function Google_signIn(googleUser) {
-
-  var profile = googleUser.getBasicProfile(); 
-    $("#googleID").click(function(){
-      update_user_data(profile);
-    });
-   
-}
-
-function update_user_data(response) 
-{
-      $.ajax({
-            type: "POST",
-             dataType: 'json',
-             data: {response,"_token": "{{ csrf_token() }}"},
-            url: "{{url('google/login')}}",
-            success: function(msg) {
-            
-               if(msg.error==1){
-                // location.reload();
-                 $("#log_popup").modal('hide');
-             }
-           
-             if(msg.error==2){
-
-                 $("#log_popup").modal('hide');
-               }
-            }
-      });
-}
-
-</script>
 @include('layout.modal')
 

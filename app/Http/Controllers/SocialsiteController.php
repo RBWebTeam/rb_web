@@ -201,7 +201,7 @@ return  $authUser;
                   Session::set('name',$query->username);
                   Session::set('is_login',1);
                
-        }
+        } 
 
                 $arr = array('error' => 2);
                  echo json_encode($arr);

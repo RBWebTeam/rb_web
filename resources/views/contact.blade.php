@@ -1,6 +1,7 @@
 @include('layout.header')
+<br>
 <div class="container" id="fh5co-hero">
-<div>
+
 <div class="row">
 		<div class="col-sm-5">
 			<img src="{{URL::to('images/helpbg _new.jpg')}}" class="img-responsive">
@@ -13,15 +14,15 @@
                    {{ csrf_field() }}
                 <input type="hidden" name="form" value="contact-back-form">
                         
-                    <div class="form-group">
+                    <div class="form-group col-sm-6">
                         <label class="control-label col-sm-2" for="name">Name:</label>
-                    <div class="col-sm-4">
+                    <div class="">
                         <input class="newsletter-name" id="name" name="name" placeholder="Name" required>
                     </div>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group col-sm-6">
                         <label class="control-label col-sm-2" for="contact">Contact:</label>
-                    <div class="col-sm-4">
+                    <div class="">
                         <input type="tel" class="newsletter-name" name="contact" onkeypress="return fnAllowNumeric(event)" placeholder="Number" required>
                     </div>
                     </div>
@@ -52,7 +53,7 @@
              <span id='err' style="color: red; display: none;">Will reach you soon</span>
 		</div>
 	</div>
-</div>
+
 </div>
 @include('layout.footer')
 @include('layout.script')

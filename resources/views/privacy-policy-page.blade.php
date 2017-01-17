@@ -1,10 +1,18 @@
 @include('layout.header')
 <div class="container" id="fh5co-hero">
-<div class="col-sm-12 disrborder">
-							<center><h2 class="privacyh2">Privacy Policy</h2></center>
-							
-							
-							<p>By using the website and/or registering yourself at rupeeboss.com you authorize us &amp; our associate partners to contact you via email or phone call and offer you their services for the product you have opted for, imparting product knowledge, offer promotional offers running on website &amp; offers offered by the associated third parties. And Irrespective of the fact if also you have registered yourself under DND or DNC or NCPR service, you still authorize us to give you a call from the Rupeeboss Financial Services Pvt. Ltd &amp; associate partners for the above mentioned purposes till 60 days of your registration with us.<br>
+
+	<div id="fh5co-page">
+
+	<div class="fh5co-contact animate-box">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 text-left fh5co-heading animate-box fadeInUp animated">
+					<h2>Privacy Policy</h2>
+					</div>				
+				<div class="col-md-12">
+					<div class="row pad11 white-bg comp-pg">
+           
+   <p>By using the website and/or registering yourself at rupeeboss.com you authorize us &amp; our associate partners to contact you via email or phone call and offer you their services for the product you have opted for, imparting product knowledge, offer promotional offers running on website &amp; offers offered by the associated third parties. And Irrespective of the fact if also you have registered yourself under DND or DNC or NCPR service, you still authorize us to give you a call from the Rupeeboss Financial Services Pvt. Ltd &amp; associate partners for the above mentioned purposes till 60 days of your registration with us.<br>
 This Privacy Rupeeboss Financial Services Pvt. Ltd covers RFSPL's treatment of personally identifiable information that Rupeeboss Financial Services Pvt. Ltd collects when you are on the Rupeeboss Financial Services Pvt. Ltd site, and when you use RFSPL's services. This Rupeeboss Financial Services Pvt. Ltd also covers RFSPL's treatment of any personally identifiable information that RFSPL's business partners share with Rupeeboss Financial Services Pvt. Ltd. This Rupeeboss Financial Services Pvt. Ltd does not apply to the practices of companies that Rupeeboss Financial Services Pvt. Ltd does not own or control or to people that Rupeeboss Financial Services Pvt. Ltd does not employ or manage.
 Rupeeboss Financial Services Pvt. Ltd collects personally identifiable information when you register for a Rupeeboss Financial Services Pvt. Ltd account, when you use certain Rupeeboss Financial Services Pvt. Ltd products or services, when you visit Rupeeboss Financial Services Pvt. Ltd pages, and when you enter promotions or sweepstakes. Rupeeboss Financial Services Pvt. Ltd may also receive personally identifiable information from our business partners.<br>
 When you register with Rupeeboss Financial Services Pvt. Ltd, we ask for your first name, last name, state, city, email, birth date, and gender. Once you register with Rupeeboss Financial Services Pvt. Ltd and sign in to our services, you are not anonymous to us.<br>
@@ -26,11 +34,22 @@ We use third-party service providers to serve ads on our behalf across the Inter
 
                                                         <p>
 							<span class="pphead">Privacy RFSPL Changes:<br></span>RFSPL may amend this RFSPL from time to time, at our discretion. If we make any substantial changes in the way we use your personal information we will notify you by posting the changes here on these Privacy RFSPL pages.</p>
-							
-							
-							
-						</div>
 
+					</div>
+				</div>
+			</div>
+		</div>	
+	</div>
+
+	
+	
+	
+	
+	
+	
+	</div>
+	
+	
 </div>
 @include('layout.footer')
 @include('layout.script')

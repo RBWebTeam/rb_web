@@ -39,15 +39,16 @@
                                 <div class="col-md-6 pad11"><input name="email" value="{{$query->email}}" type="text" placeholder="Email Id" readonly></div>
                                
                                <div class="col-md-6 pad11">
-                               <input name="contact" type="text" placeholder="Mobile No." value="{{$query->contact}}" required maxlength="10" min="8"  pattern="[7-9]{1}[0-9]{9}">
+                                 @if($query->contact==0)
+                                    <input name="contact" type="text" placeholder="Mobile No."  required maxlength="10" min="8"  pattern="[7-9]{1}[0-9]{9}">
+                                  @else
+                                     <input name="contact" type="text" placeholder="Mobile No." value="{{$query->contact}}" required maxlength="10" min="8"  pattern="[7-9]{1}[0-9]{9}">
+                                  @endif
+
                                </div>
                                 <div class="col-md-6 pad11 text-danger"  id="errorphon"></div>
-                               
-
                             
                                 <input type="hidden" id='_token' name="_token" value="{{csrf_token()}}">
-
-
 
                                 <div  class="col-md-12">
                                 <button class="btn btn-primary profile-details">Update</button>
@@ -61,16 +62,14 @@
                         <div class="tab-pane" id="extraDetails">   
                          <form name="extradetailsform" id="extradetailsform" method="post" >   
                                 <div class="col-md-6 pad11">
-                                  @if(isset($cquery->dob))
-                                     <?php $dob=$cquery->dob;?>
+                                    @if(isset($cquery->dob))
+                                     <input type="text" class="datepicker minimumSize lastReporteddate" name="dob" value="{{$cquery->dob}}"  />
                                   @else
-                                     <?php $dob='';?>
+                                    <input type="text" class="datepicker minimumSize lastReporteddate" name="dob"  placeholder="Date Of Birth" required />
                                   @endif
-                             <!--   <input name="text" value="{{$dob}}" class="datepicker" placeholder="Date of Birth" required>
- -->
-                                    
- <input type="text" class="datepicker minimumSize lastReporteddate" name="dob" value="{{$dob}}" />
-                                </div>
+                           
+
+  </div>
                                 <div class="col-md-6 pad11 text-danger" id="errordetails"></div>
                                 
 

@@ -1,5 +1,5 @@
 @include('layout.header')
-<div id="fh5co-page">
+<div id="fh5co-hero">
 	<div class="fh5co-contact animate-box">
 		<div class="container">
 			<div class="row">
@@ -7,7 +7,7 @@
 					<h2>Free Credit Report</h2>
 					
 				</div>
-				<div class="col-md-9 white-bg">
+				<div class="col-md-12 white-bg">
 					<div class="row text-left comp-pg rate">
 						<p><b>Would like to know your credit score before applying 	for loan 	</b></p>
 						<p>your personal information is requied to retrive your credit Report and Score. 

@@ -1,14 +1,16 @@
 @include('layout.header')
 
-	<aside id="fh5co-hero">
+    <div class="container">
+	 
+	<aside class="pad-tp">
 	<div class="col-md-12">
 	<!-- <p class="text-left"><a href="{{url('/')}}">home</a>/{{$bank_name}}</p> -->
 	</div>
-	<div class="col-md-8 bg-white1 bnkpg">
-		<div class="jumbotron text-center bankpg">
+	<div class="col-md-8 bg-white bnkpg">
+		<div class="text-center bankpg">
 		<img src="{{URL::to('images/bank/axis.png')}}" class="img-responsive" />
-		 <h2>{{$bank_name}}</h2>
-		 <p>{{$bank_name}} Home Loan</p>
+		
+		 <h3>{{$bank_name}} Home Loan</h3>
 		</div>	
 	  	</div>
 
@@ -48,7 +50,7 @@
 		</div>	
 	</div>
 	</aside>
-
+	</div>
 
 	
    
@@ -67,7 +69,7 @@
 
  @foreach($getQuery as  $key=>$value )
  <div class="table-responsive">
- <div><br>
+ <div>
     <!-- <div class="table-responsive"> -->
 	<table width="100%" border="1" class="tbl">
    
@@ -76,15 +78,15 @@
   <tr>
     <!-- <td width="9%" class="upper">Compare</td> -->
     <!-- <td><div class="img-c"> --><!-- <img src="{{url('images/axis.jpg')}}" width="100" height="30"> --><!-- Bank_ID</div></td> -->
-    <td width="16%" class="upper">Rate Of Interest</td>
-    <td width="16%" class="upper">Loan Amount</td>
-    <td width="18%" class="upper">Minimum Income</td>
-    <td width="18%" class="upper">Age</td>
-    <td width="18%" class="upper">Women Rate Of Interest</td>
-    <td width="18%" class="upper">Minimum Credit Score</td>
-    <td width="18%" class="upper">Tenure</td>
-    <td width="18%" class="upper">Profession</td>
-    <td class="upper" width="17%"><a href="{{URL::to('apply-')}}{{$product}}">Apply Online</a></td>
+    <td class="upper">Rate Of Interest</td>
+    <td class="upper">Loan Amount</td>
+    <td class="upper">Minimum Income</td>
+    <td class="upper">Age</td>
+    <td class="upper">Women Rate Of Interest</td>
+    <td class="upper">Minimum Credit Score</td>
+    <td class="upper">Tenure</td>
+    <td class="upper">Profession</td>
+    <td class="upper"><a href="{{URL::to('apply-')}}{{$product}}">Apply Online</a></td>
 
 
 

@@ -93,7 +93,10 @@
 								<?php if(Session::get('is_login')) {?>
 									<button class="btn btn-primary btn-outline with-arrow animate-box product_name" >Get me a Loan<i class="icon-arrow-right"></i></button>
 								<?php }else{?>
-									<a class="btn btn-primary btn-outline with-arrow animate-box product_name" id="no_co_app" data-toggle="modal" data-target="#login_process">No Co-Applicant<i class="icon-arrow-right"></i></a>
+
+								   <button  style="display:none" class="btn btn-primary btn-outline with-arrow animate-box product_name " id="btn_refresh">Get me a Loan<i class="icon-arrow-right"></i></button>
+
+									<a class="btn btn-primary btn-outline with-arrow animate-box product_name btn_refresh1"              id="no_co_app" data-toggle="modal" data-target="#login_process">No Co-Applicant<i class="icon-arrow-right"></i></a>
 								
 								<?php } ?>
 								<input type="hidden" name="have_co_applicant" value="" id="have_co_applicant">
@@ -170,7 +173,9 @@
 						<?php if(Session::get('is_login')) {?>
 							<button class="btn btn-primary btn-outline with-arrow animate-box product_name" >Get me a Loan<i class="icon-arrow-right"></i></button>
 						<?php }else{?>
-							<a class="btn btn-primary btn-outline with-arrow animate-box product_name" data-toggle="modal" data-target="#login_process">Submit<i class="icon-arrow-right"></i></a>
+						<button  style="display:none" class="btn btn-primary btn-outline with-arrow animate-box product_name " id="btn_refresh_co">Get me a Loan<i class="icon-arrow-right"></i></button>
+
+							<a class="btn btn-primary btn-outline with-arrow animate-box product_name" id="btn_refresh_co1" data-toggle="modal" data-target="#login_process">Submit<i class="icon-arrow-right"></i></a>
 						<?php } ?>
 					</div>
 					

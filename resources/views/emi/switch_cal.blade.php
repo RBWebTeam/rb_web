@@ -1,29 +1,30 @@
-<div class="table-responsive">
-<div class="container">
 
-<div class="outer-border" style="border:2px dashed #ccc; padding:30px">
-<center><h1>Savings Table:<i class="fa fa-hand-o-down" aria-hidden="true"></i></h1></center>
-<h2 class="text-center">Savings:</h2>
+<div class="container white-bg">
+<div class="table-responsive">
+<div class="outer-border">
+<br>
+<center><h1>Savings Table:</center>
+<br>
 <table class="table table-bordered table-striped" id="emipaymenttable">
 
   <tr class="tbl-clr">
-    <th bgcolor="#c2da6b" class="col-xs-3 col-md-1" id="bankheader">Bank Name</th>
+    <th bgcolor="#999"  class="col-xs-3 col-md-1" id="bankheader">Bank Name</th>
 
-    <th bgcolor="#4A9ACF" class="col-sm-3 hidden-xs" id="rateheader"><center>Rate Of Interest<i class="fa fa-caret-down" style="font-size:20px;color:lightgreen;" aria-hidden="true"></i></center></th>
+    <th bgcolor="#999" class="col-sm-2 hidden-xs" id="rateheader"><center>Rate Of Interest</center></th>
 
-    <th bgcolor="#4A9ACF" class="col-sm-3 hidden-xs" id="rateheader"><center>Processing FEE<i class="fa fa-caret-down" style="font-size:20px;color:lightgreen;" aria-hidden="true"></i></center></th>
+    <th bgcolor="#999" class="col-sm-2 hidden-xs" id="rateheader"><center>Processing FEE</center></th>
 
-    <th bgcolor="2DC6D1" class="col-sm-3 hidden-xs" id="emiheader"><center>Loan EMI</center></th>
+    <th bgcolor="#999" class="col-sm-2 hidden-xs" id="emiheader"><center>Loan EMI</center></th>
 
-    <th bgcolor="BF5850" class="col-sm-3 hidden-xs" id="newemiheader"><center>New Loan EMI<i class="fa fa-caret-down" style="font-size:20px;color:lightgreen;" aria-hidden="true"></i></center></th>
+    <th bgcolor="#999" class="col-sm-3 hidden-xs" id="newemiheader"><center>New Loan EMI</center></th>
 
-    <th bgcolor="D8BC31" class="col-xs-4 col-sm-3" id="dropemiheader"><center>Drop EMI<i class="fa fa-caret-down" style="font-size:20px;color:lightgreen;" aria-hidden="true"></i></center></th>
+    <th bgcolor="#999" class="col-xs-4 col-sm-3" id="dropemiheader"><center>Drop EMI</center></th>
 
-    <th bgcolor="2DC6D1" class="col-sm-3 hidden-xs" id="dropininterestheader"><center>Drop In Interest<i class="fa fa-caret-down" style="font-size:20px;color:lightgreen;" aria-hidden="true"></i></center></th>
+    <th bgcolor="#999" class="col-sm-3 hidden-xs" id="dropininterestheader"><center>Drop In Interest</center></th>
 
-    <th bgcolor="#c2da6b" class="col-xs-3 col-md-1" id="savingsheader"><center>Savings<i class="fa fa-caret-down" style="font-size:20px;color:lightgreen;" aria-hidden="true"></i></center></th>
+    <th bgcolor="#999" class="col-sm-3" id="savingsheader"><center>Savings</center></th>
 
-    <th bgcolor="#4A9ACF" class="col-xs-3 col-md-1" id="applyheader"><center>Apply</center></th>
+    <th bgcolor="#999" class="col-sm-3" id="applyheader"><center>Apply Online</center></th>
 
   </tr>
   

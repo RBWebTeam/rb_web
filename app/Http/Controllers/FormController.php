@@ -116,6 +116,17 @@ class FormController extends Controller
     }
     
      public function otp(Request $req){
+
+          $qu=new registrationModel();
+          $emailcheck=$qu->where('email','=',$req->email)
+          ->count();
+       
+          if($emailcheck!=0){
+             return Response::json(array(
+                            'emailID' => true,
+                             ));
+          }else{
+
         $input = $req->all();
         //print_r($input);exit(); 
         //sms curl to write here
@@ -187,7 +198,10 @@ class FormController extends Controller
                             'data' => false,
                         ));
         }
-    }
+
+  }
+
+}
      public function otp_verify(Request $req){
         //print_r($req->all());
         //insert into DB

@@ -1463,9 +1463,9 @@ function isNumberKey(evt)
     <div class="modal-content">
       <div class="modal-header">
       
-        <h4 class="modal-title">Fill details</h4>
+        <h4 class="modal-title text-center"><b>Registration Form</b></h4>
       </div>
-     
+     <br>
    <div id="send_otp">  
     <form class="form-horizontal" id="login_form_process" method="POST">
      {{ csrf_field() }}
@@ -1511,11 +1511,11 @@ function isNumberKey(evt)
 
   </div>
   <div class="form-group ">
-    <div class="col-sm-offset-2 col-sm-5">
+    <div class="col-sm-offset-3 col-sm-3">
     <input type="hidden" name="product" id="product_login" value="">
       <button class="btn btn-default"  id="send_otp_button"  >Send OTP</button>
     </div>
-    <div class="col-sm-5">
+    <div class="col-sm-3">
       <a class="btn btn-default"  id="already_user" data-toggle="modal" data-target="#log_popup" data-dismiss="modal" >Already User</a>
     </div>
   </div>

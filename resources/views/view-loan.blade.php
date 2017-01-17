@@ -25,7 +25,7 @@
 
   <tr>
     <!-- <td width="9%" class="upper">Compare</td> -->
-    <td><div class="img-c"><!-- <img src="{{url('images/axis.jpg')}}" width="100" height="30"> -->{{$value->Bank_Name}}</div></td>
+    <td><img src="{{ $value->Bank_Logo}}" width="100" height="30">{{$value->Bank_Name}}</td>
     <td width="16%" class="upper">Interest Rate</td>
     <td width="16%" class="upper">Loan Amount</td>
     <td width="18%" class="upper">emi</td>

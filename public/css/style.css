@@ -113,7 +113,7 @@ td {padding:10px; text-align:center;}
   border-color: #ec1b23 !important;
 }
 .btn-primary.btn-outline {
-  background: transparent;
+  background:#fff;
   color: #3aa6d3;
   border: 2px solid #3aa6d3;
 }
@@ -1297,8 +1297,8 @@ rb-services-section{padding:0px;}
 /*# sourceMappingURL=style.css.map */
 
 
-.red-bg1 { background:#1f386e url(../images/form_bg.png);}
-.form-in {color: #fff;padding:30px;/*border:1px dashed rgb(74, 126, 204);*/padding-top: 10px; font-size: 12px;}
+.red-bg1 { background:#1f386e url(../images/form_bg.png); height:283px;}
+.form-in {color: #ccc;padding:30px;/*border:1px dashed rgb(74, 126, 204);*/padding-top: 10px; font-size: 12px;}
 .form-in input {background:#eaeaea;color:#999;border:none;}
 .form-in select {background:#eaeaea;color:#999;border:none;margin-bottom:5px;height:30px;border-radius: 3px; width:100%;}
 .slider-text {text-align:center; padding:20px;}
@@ -1357,7 +1357,7 @@ input[placeholder], [placeholder], *[placeholder] {color: #1f386e !important;}
 .icon-map-marker {font-size:25px; float:left;}
 .modal-body input, button {margin-bottom:10px; color:#396fbf;border:none;}
 .chat-win {display:none;} 
-.loan-head {padding:20px;display:block; text-align:center;padding-top:0px;}
+.loan-head {padding:20px;display:block; text-align:center;padding-top:0px; margin-top:20px;}
  .slide-left {margin: 0px 30px;}
  .heading-bmar {padding-top: 0px; margin-bottom:1px;display:block;}
  .testimonials {float:right;}
@@ -1556,7 +1556,7 @@ top: -.25em;left: 20%;margin: 0 0 0 -.25em;}
 .compr {margin:5px;}
 .top-lnk > li > a {padding:0px 12px; }
 
-.top-bg {background:#3699c1;}
+.top-bg {background:#3699c1;padding:4px;}
 .top-lnk li  {float:left;padding:2px 10px;list-style-type:none;}
 
 .top-bg {background:#218bb7;}
@@ -1564,7 +1564,7 @@ top: -.25em;left: 20%;margin: 0 0 0 -.25em;}
 .top-lnk li a {color:#fff;}
 .top-lnk li a:hover {color:#ec9fa1;}
 .social-icon li {list-style-type:none;}
-.social-icon {margin-right:40px;}
+.social-icon {margin-right:40px;margin-top:3px;}
 .social-icon li a{color:#fff;padding:0px 5px;}
 .top-bg ul, ol {margin-bottom:2px;margin-left: -30px; font-size:12px;}
 
@@ -1585,7 +1585,7 @@ top: -.25em;left: 20%;margin: 0 0 0 -.25em;}
 
 /*emi css*/
 
- .rw-hei {height:380px;border: 2px dashed #ccc;border-right:none;}
+ .rw-hei {height:390px;border: 2px dashed #ccc;border-right:none;}
  .brd-rgt {border-right: 2px dashed #ccc;}
   body {color:#666;}
   .tbl-clr {color:#fff; }
@@ -1691,7 +1691,6 @@ input[type="radio"] {margin:0px;}
     margin: 0 auto;
     margin-bottom: 5px;
 }
-tr:hover {box-shadow:1px 1px 3px 1px #999;}
 
 /*scroll css*/
 #scroll {
@@ -1724,6 +1723,9 @@ tr:hover {box-shadow:1px 1px 3px 1px #999;}
     opacity:1;filter:"alpha(opacity=100)";
     -ms-filter:"alpha(opacity=100)";
 }
+
+.has-error div{height:55px;} 
+.bankpg img {margin:0 auto;}
 
 
 

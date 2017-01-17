@@ -1378,15 +1378,24 @@ function getFbUserData(){
 </script>
 <script type="text/javascript">
 
+  
+var element=document.getElementById("session_ID").value;
+
 function Google_signIn(googleUser) {  
 
-   var profile = googleUser.getBasicProfile();  
-   $('.google_ID').click(function(){
+ var profile = googleUser.getBasicProfile();  
+  
 
-      update_user_data(profile);
+  //var element = document.getElementById("session_ID").value;
+
+   $('.google_ID').click(function(){
+       update_user_data(profile);
     });
 
+
 }
+
+
 
 $("#googleLOG").click(function(){
  var auth2 = gapi.auth2.getAuthInstance();

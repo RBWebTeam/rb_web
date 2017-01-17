@@ -20,20 +20,13 @@
   <!-- Wrapper for slides -->
   <div class="carousel-inner" role="listbox">
     <div class="item active">
-      <img src="{{URL::to('images/loan.jpg')}}" alt="">
+      <img src="{{URL::to('images/01/home.jpg')}}" alt="">
     </div>
 
     <div class="item">
-      <img src="{{URL::to('images/loan.jpg')}}" alt="">
+      <img src="{{URL::to('images/01/home.jpg')}}" alt="">
     </div>
 
-    <div class="item">
-      <img src="{{URL::to('images/loan.jpg')}}" alt="">
-    </div>
-
-    <div class="item">
-      <img src="{{URL::to('images/loan.jpg')}}" alt="">
-    </div>
   </div>
   <!-- Left and right controls -->
   <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
@@ -57,20 +50,20 @@
             
               {{ csrf_field() }}
                 <input type="hidden" name="form" value="subscribe-form">
-				  <div class="form-group has-error">
+				  <div class="has-error">
 				    <div>
 				      <input type="text" class="form-control" id="name" name="name" placeholder="Name" required />
 				       <input type="hidden" class="form-control" id="product" value="{{$id->Product_Name}}" name="product"  />
 				    </div>
 				  </div>
-			<div class="form-group has-error">
+			<div class="has-error">
 		   
 		    <div> 
 		    <input type="text" name="contact" id="contact" class="form-control clr-ddd" onkeypress="fnAllowNumeric(event)" 
 			pattern="[789][0-9]{9}" required maxlength="10" placeholder="Mobile No." >
 		    </div>
 		  </div>
-				 <div class="form-group has-error">
+				 <div class="has-error">
 				  
 				    <div>
 				      <input type="email" class="form-control clr-ddd" id="email" name="email" placeholder="Email Id" required  />
@@ -79,7 +72,7 @@
 				  </div>
 			 
 			  
-			  <div class="form-group centr-obj"> 
+			  <div class="centr-obj"> 
 			    
 			    <button class="btn btn-primary btn-outline with-arrow sidebar-submit" >Submit</button>
 			   

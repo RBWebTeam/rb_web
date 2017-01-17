@@ -1,3 +1,4 @@
+
 <center>
                     <div class="type-cover">
                       <p>Bank-wise Details Table</p>
@@ -38,10 +39,12 @@ foreach ($data as $key => $value){?>
 
   }
     ?>
+
    
     <table class="table table-bordered">
                   <tbody><tr><td class="td-main-1" width="100">
                       <img src="{{ $value['Bank_Logo']}}" class="img-responsive">
+
                       <p>{{ $value['Bank_Name']}}</p>
                     </td>
                     <td class="td-main">
@@ -63,6 +66,7 @@ foreach ($data as $key => $value){?>
                         <p>PROCESSING FEE</p>
                         <h6>{{ $value['pf']}} &nbsp;({{ $value['pf_type']}})</h6>
                         
+
                       </div>
                     </td>
                     <td class="td-main">
@@ -75,13 +79,17 @@ foreach ($data as $key => $value){?>
                         <h6><?php echo $loanterm ?></h6>
                       </div>
                     </td>
+
+
                     <!-- <td class="td-main-1"> <img src="images/edit-home-icon.png" class="img-responsive"></a> -->
                     
                     </td>
+
                   </tr>
                             
               </tbody>
               </table>
+			 
            
           
 

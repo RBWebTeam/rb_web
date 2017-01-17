@@ -470,9 +470,22 @@ $(".login-submit").click(function(event){
 
             $("#msg").text("Your email or password is incorrect. please try again?");               
                      }else if(msg=="right"){
-
-                      window.location="{{ URL::previous() }}";
+                     // window.location="{{ URL::previous() }}";
                       //window.location.href ="{{URL::to('profile')}}";
+
+                       $("#log_popup").modal('hide');
+                       $("#refreshID").load(location.href + " #refreshID");
+                       
+                       
+                        $('#btn_refresh').show();
+                        $('#btn_refresh1').hide();
+                        $('.btn_refresh1').hide();
+                        $('#no_co_app').hide();
+                        // Co-Applicant
+                        $('#btn_refresh_co').show();
+                        $('#btn_refresh_co1').hide();
+                        
+
                      }
 
 
@@ -531,8 +544,17 @@ $(".registration-submit").click(function(event){
                   $form.hide();
                   $('.msg').show();
                   $('#Login-here').hide();
-                 
-                  window.location="{{ URL::previous() }}";
+                //  window.location="{{ URL::previous() }}";
+
+                       $("#log_popup").modal('hide');
+                       $("#refreshID").load(location.href + " #refreshID");
+                        $('#btn_refresh').show();
+                        $('#btn_refresh1').hide();
+                        $('.btn_refresh1').hide();
+                        $('#no_co_app').hide();
+                        // Co-Applicant
+                        $('#btn_refresh_co').show();
+                        $('#btn_refresh_co1').hide()
 
 
                  }
@@ -780,6 +802,7 @@ $(document).ready(function(){
       $('#send_otp_button').hide();
     $('#pls_wait').show();
     $('#pwd_match').hide();
+    $('#msg_err_email').hide();
       $.ajax({  
                type: "POST",  
                url: "{{URL::to('otp')}}",
@@ -787,11 +810,23 @@ $(document).ready(function(){
                data : $('#'+form).serialize(),
                success: function(data){
                  var data_1=data['data'];
+                 var emailID=data['emailID'];
                 if(data_1==true){
                     $('#otp_modal').modal('toggle');
                     $('#login_process').modal('hide');
+                    $('#msg_err_email').hide();
+                  }else if(emailID==true){
+                      $('#login_process').modal('show');
+                      $('#send_otp_button').show();
+                      $('#pls_wait').hide();
+                       $('#pwd_match').hide();
+                       $('#msg_err').hide();
+                          
+                        $('#msg_err_email').show();
+                        
                   }else{
                     $('#msg_err').show();
+                    $('#msg_err_email').hide();
                      
                   }
                }  
@@ -1357,15 +1392,35 @@ function getFbUserData(){
             url: "{{url('facebook/login')}}",
             success: function(msg) {
              if(msg.error==1){
-               //  location.reload();
-                 $("#log_popup").modal('hide');
-                 $("#refreshID").load(location.href + " #refreshID");
+               var element=document.getElementById("session_ID").value;
+                  $("#log_popup").modal('hide');
+                  $("#refreshID").load(location.href + " #refreshID");
+                 
+                        $('#btn_refresh').show();
+                        $('#btn_refresh1').hide();
+                        $('.btn_refresh1').hide();
+                        $('#no_co_app').hide();
+                        // Co-Applicant
+                        $('#btn_refresh_co').show();
+                        $('#btn_refresh_co1').hide()
+                     
+                   //  var getdata=$('#'+form_name).serialize();
+                   //  console.log(getdata);
+                   //$('#'+form_name).submit();
              }
            
              if(msg.error==2){
-               //location.reload();
-                  $("#log_popup").modal('hide');
-                  $("#refreshID").load(location.href + " #refreshID");
+                       $("#log_popup").modal('hide');
+                       $("#refreshID").load(location.href + " #refreshID");
+                        
+                        $('#btn_refresh').show();
+                        $('#btn_refresh1').hide();
+                        $('.btn_refresh1').hide();
+                        $('#no_co_app').hide();
+                        // Co-Applicant
+                        $('#btn_refresh_co').show();
+                        $('#btn_refresh_co1').hide()
+
                }
            }
 
@@ -1379,7 +1434,6 @@ function getFbUserData(){
 <script type="text/javascript">
 
   
-var element=document.getElementById("session_ID").value;
 
 function Google_signIn(googleUser) {  
 
@@ -1417,12 +1471,31 @@ function update_user_data(response)
             url: "{{url('google/login')}}",
             success: function(msg) {
                if(msg.error==1){
-                    $("#log_popup").modal('hide');
-                    $("#refreshID").load(location.href + " #refreshID");
+
+                     $("#log_popup").modal('hide');
+                     $("#refreshID").load(location.href + " #refreshID");
+            
+                        $('#btn_refresh').show();
+                        $('#btn_refresh1').hide();
+                        $('.btn_refresh1').hide();
+                        $('#no_co_app').hide();
+                        // Co-Applicant
+                        $('#btn_refresh_co').show();
+                        $('#btn_refresh_co1').hide()
+
              }
              if(msg.error==2){
-                   $("#log_popup").modal('hide');
-                   $("#refreshID").load(location.href + " #refreshID");
+                       $("#log_popup").modal('hide');
+                       $("#refreshID").load(location.href + " #refreshID");
+                       
+                        $('#btn_refresh').show();
+                        $('#btn_refresh1').hide();
+                        $('.btn_refresh1').hide();
+                        $('#no_co_app').hide();
+                        // Co-Applicant
+                        $('#btn_refresh_co').show();
+                        $('#btn_refresh_co1').hide()
+
                }
 
              
@@ -1494,6 +1567,8 @@ function update_user_data(response)
      <span id='msg_err' style="display: none;color:red;">oops something went wrong</span>
      <span id='pls_wait' style="display: none;color: red;">Please wait .....</span>
      <span id='pwd_match' style="display: none; color:red;">Password do not match.</span>
+
+     <span id="msg_err_email"  style="display: none; color:red;">Email id already exists.</span>
     </div>
 
   </div>

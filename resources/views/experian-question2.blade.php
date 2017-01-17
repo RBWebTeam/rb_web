@@ -1,4 +1,4 @@
-
+<?php if($result->questionToCustomer!=null){ ?> 
 			<form id="generate_question2" name="generate_question1"> 
 			{{ csrf_field()}}
 				<label>
@@ -30,7 +30,31 @@
 				
 				?>
 				<br>
-				<a class="btn btn-primary btn-outline with-arrow animate-box next_qest1" >submit<i class="icon-arrow-right"></i></a>
+				<a class="btn btn-primary btn-outline with-arrow next_qest1" >submit<i class="icon-arrow-right"></i></a>
 
 
 			</form>
+			<?php }else{?>
+			<p>processed {{$result->responseJson}}</p>
+			<?php }?>
+<script type="text/javascript">
+  $('.next_qest1').click(function(){
+    alert("new qstn1");
+    $.ajax({  
+               type: "POST",  
+               url: "{{URL::to('gen-qstn')}}",
+               data : $('#generate_question2').serialize(),
+               success: function(msg){
+                console.log(msg);  
+                if(msg.success==true){
+                $('#generate_question').hide();
+                $('#nxt_qstn').html("");
+                $('#nxt_qstn').html(msg.html);
+                }else{
+                  
+                }
+              
+               }  
+               }); 
+  });
+</script>

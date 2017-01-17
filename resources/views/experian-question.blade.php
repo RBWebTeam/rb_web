@@ -1,4 +1,3 @@
-
 @include('layout.header')
 <div class="container">
 	<aside id="fh5co-hero">
@@ -7,6 +6,7 @@
 			<h3> Please answer the questions</h3>
 
 			<div id="frst_qstn"> 
+			<?php if($result->questionToCustomer!=null){ ?> 
 			<form id="generate_question" name="generate_question"> 
 			{{ csrf_field()}}
 				<label>
@@ -43,10 +43,13 @@
 
 
 			</form>
+			<?php }else{?>
+			<p>processed {{$result->responseJson}}</p>
+			<?php }?>
 			</div>
-			
+			<div id="nxt_qstn"></div>
 		</div>
-<div id="nxt_qstn"></div>
+
 	</aside>
 </div>
 
@@ -54,6 +57,9 @@
 @include('layout.script')
 <script type="text/javascript">
 	$('.next_qest').click(function(){
+		if(<?php echo "'".$result->responseJson."'"; ?>=='passedReport'){
+			alert("report passed");
+		}
 		$.ajax({  
                type: "POST",  
                url: "{{URL::to('gen-qstn')}}",
@@ -62,7 +68,7 @@
                	// console.log(msg);	
                 if(msg.success==true){
                 $('#generate_question').hide();
-
+                $('#nxt_qstn').html("");
                 $('#nxt_qstn').html(msg.html);
                 }else{
                   

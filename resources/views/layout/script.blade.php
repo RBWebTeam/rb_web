@@ -1508,26 +1508,7 @@ function update_user_data(response)
 
 }
 </script>
-<script type="text/javascript">
-  $('.next_qest1').click(function(){
-    $.ajax({  
-               type: "POST",  
-               url: "{{URL::to('gen-qstn')}}",
-               data : $('#generate_question2').serialize(),
-               success: function(msg){
-                console.log(msg);  
-                if(msg.success==true){
-                $('#generate_question').hide();
 
-                $('#nxt_qstn').html(msg.html);
-                }else{
-                  
-                }
-              
-               }  
-               }); 
-  });
-</script>
 
 <script>
 function isNumberKey(evt)

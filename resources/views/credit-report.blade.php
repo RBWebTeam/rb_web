@@ -135,24 +135,13 @@
 									</button>
 								</div>
 							</form>
-						</div>
-
 					</div>
 
-					<!-- <div class="col-md-3 pull-right">
-						<div class="text-center guid nl-form-errors">Enter your monthly takehome salary here!
-							Without any performance bonus or incentives!</div>
-
-							<div class="text-center img1"><img src="images/photo.jpg">
-							</div>
-						</div> -->
-					</div>
-				</div>	
+				</div>
 			</div>
-
-
-		</div>
-
-		@include('layout.footer')
-		@include('layout.script')
+		</div>	
+	</div>
+</div>
+@include('layout.footer')
+@include('layout.script')
 

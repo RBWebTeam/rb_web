@@ -36,16 +36,17 @@ class ExperianController extends Controller
     }else{
         $x=str_replace('"','',$http_result);
         $new_data=explode('~', $x);
-        //print_r($new_data);
-        $result=$this->gen_ques($new_data,$qs);
-        $qs++;
-       // print_r($result);
+       
+        return $this->gen_ques($new_data,0);
+        
     }
 	}
 
     public function gen_ques($new_data,$qs){
     //$str='"'..'"';
-    $arr = '{"stage1hitid":"'.$new_data[0].'","stage2hitid":"'.$new_data[1].'","stage2sessionid":"'.$new_data[3].'","answer":"","questionId":"'.$qs.'"}';
+    if($qs==0){
+        $arr = '{"stage1hitid":"'.$new_data[0].'","stage2hitid":"'.$new_data[1].'","stage2sessionid":"'.$new_data[3].'","answer":"","questionId":"'.$qs.'"}';
+    }
     //generate question api
     $url = "http://api.rupeeboss.com/CreditAPI.svc/generateQuestionForConsumer";    
     $ch = curl_init();
@@ -66,13 +67,11 @@ class ExperianController extends Controller
     $str=str_replace('\\', '', $s);
     $str2=explode(',', $str);
     //print_r($str2);exit();
-    $this->experian_question($str2);
-    //return $str2;
-    }
 
-    public function experian_question($data){
-        print_r($data);
-        $x=$data;
-        return view('experian-question')->with($x);
+    $res1=json_decode($http_result);
+    $res=json_decode($res1);
+       // print_r($res->questionToCustomer->question);exit();
+        
+    return view('experian-question',['result'=>$res]);
     }
 }

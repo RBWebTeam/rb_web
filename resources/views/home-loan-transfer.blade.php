@@ -49,8 +49,8 @@
 			
 	  	</div>
 
-		<div class="col-md-4 red-bg1">
-	   <div class="form-in">
+		<div class="col-md-4 red-bg1 ">
+	   <div class="form-in fly_with">
 
               <span class="head-1 heading-bmar">Request A Call Back<span><br>
              <form class="" id="compareform" role="form" method="POST" action="customer_form.php">

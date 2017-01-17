@@ -50,6 +50,12 @@
 
                   <div class="g-signin2 google_ID" id="googleID" data-longtitle="true" data-onsuccess="Google_signIn" data-theme="light" data-width="200"></div>
                    <!-- <a href="{{url('google')}}" class="btn btn-default google"> <i class="fa fa-google-plus modal-icons"></i> Sign In with Google </a> -->
+
+                    <?php if(Session::get('is_login')){?>
+                       <input type="hidden" name="session_ID" id="session_ID" value="<?php echo Session::get('name');?>">
+                      <?php }else{?>
+                         <input type="hidden" name="session_ID" id="session_ID" value="0">
+                      <?php } ?>
                 
                 </div> 
               </div>  

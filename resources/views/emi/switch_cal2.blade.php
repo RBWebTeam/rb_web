@@ -64,8 +64,7 @@ foreach ($data as $key => $value){?>
                       </div>
                       <div class="loan-floating">
                         <p>PROCESSING FEE</p>
-
-                        <h6>{{ $value['pf']}}</h6> &nbsp; <h7>({{ $value['pf_type']}})</h7>
+                        <h6>{{ $value['pf']}} &nbsp;({{ $value['pf_type']}})</h6>
                         
 
                       </div>

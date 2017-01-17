@@ -1,6 +1,5 @@
 @include('layout.header')
-    <div class="container">
-	
+
 	<aside id="fh5co-hero">
 	<div class="col-md-12">
 	<!-- <p class="text-left"><a href="{{url('/')}}">home</a>/{{$bank_name}}</p> -->
@@ -49,7 +48,7 @@
 		</div>	
 	</div>
 	</aside>
-	</div>
+
 
 	
    

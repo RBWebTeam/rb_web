@@ -59,7 +59,8 @@ public function compareLoan($loan){
        'bank_product_web_intrest.amt_to','bank_product_web_intrest.roi', 
        'bank_master.Bank_Name',
        'bank_product_web_pf.pf',
-       'bank_product_web.Min_Tenure','bank_product_web.Max_Tenure')
+       'bank_product_web.Min_Tenure','bank_product_web.Max_Tenure',
+       'bank_master.Document1 AS Bank_Logo')
     ->where('bank_product_web_intrest.Product_Id', '=',$loan)
     ->orderBy('bank_product_web_intrest.roi', 'DESC')
   ->take('4')

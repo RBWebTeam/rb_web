@@ -10,7 +10,7 @@
 			<h1 class="">Have us call you now.</h1>
 			<h2>Your contact details:</h2>
 			<div class="row">
-			<!-- <form name="contact_back_now" id="subscribe-form" method="post">
+			<form name="contact_back_now" id="subscribe-form" method="post">
                    {{ csrf_field() }}
                 <input type="hidden" name="form" value="contact-back-form">
                         
@@ -32,20 +32,8 @@
 
                     </div>
                     </div> 
-            </form> -->
-            <form class="form-inline" name="contact_back_now" id="subscribe-form" method="post">
-            {{ csrf_field() }}
-            <input type="hidden" name="form" value="contact-back-form">
-              <div class="form-group">
-                <label for="exampleInputName2">Name</label>
-                <input type="text" class="form-control" id="exampleInputName2" placeholder="Jane Doe" name="name">
-              </div>
-              <div class="form-group">
-                <label for="exampleInputEmail2">Email</label>
-                <input type="text" class="form-control"  name="contact" onkeypress="return fnAllowNumeric(event)" placeholder="Number" minlength="10" maxlength="10">
-              </div>
-              <button type="submit" class="btn btn-primary btn-outline with-arrow sidebar-submit">Send invitation<i class="icon-arrow-right"></i></button>
             </form>
+            
             <div class='msg' style="display: none;"><p>Thanks. We will reach you soon.</p></div>
             <div class='msg_err' style="display: none;"><p>Ooops. Something went wrong.</p></div>
            

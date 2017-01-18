@@ -1,8 +1,8 @@
 @include('layout.header')
-	<div id="fh5co-page">
 
+	<div id="fh5co-page">
 	<div class="fh5co-contact animate-box">
-		<div class="container">
+		<div class="container" id="fh5co-hero">
 			<div class="row">
 				<div class="col-md-12 text-left fh5co-heading animate-box fadeInUp animated">
 					<h2>Comfy Leaflet</h2>

@@ -35,7 +35,7 @@
 	<body>
 	
 	<!-- Side bar -->
-	<div class="arrow-don"><i class="icon-hand-stop-o"></i></div>
+	<div class="arrow-don" title="Help Section"><i class="icon-hand-stop-o"></i></div>
     <div class="sidebar" style="display:none;">
     <ul>
         <li class="hide-dv"><a href="#"><i class="icon-arrow-left"></i>&nbsp;Hide</a></li>

@@ -17,8 +17,10 @@
 
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
 
-<script src="https://apis.google.com/js/platform.js" async defer></script>
+<!-- <script src="https://apis.google.com/js/platform.js" async defer></script> -->
 
+
+   
     <script>
            $('ul.dropdown-menu [data-toggle=dropdown]').on('click', function(event) {
     // Avoid following the href location when clicking
@@ -1431,46 +1433,60 @@ function getFbUserData(){
 <script>
 (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+
+
 <script type="text/javascript">
-
-  
-
-function Google_signIn(googleUser) {  
-
- var profile = googleUser.getBasicProfile();  
-  
-
-  //var element = document.getElementById("session_ID").value;
-
-   $('.google_ID').click(function(){
-       update_user_data(profile);
-    });
-
-
-}
-
-
-
-$("#googleLOG").click(function(){
- var auth2 = gapi.auth2.getAuthInstance();
-    auth2.signOut().then(function () {
-
-    });
-});
-
-
-function update_user_data(response) 
-{    
-
  
+function logout()
+{
+    gapi.auth.signOut();
+    location.reload();
+}
+function login() 
+{
+  var myParams = {
+    'clientid' : '752185558821-9vlmac53np7bgdo3kn9d2e5ft39t7gud.apps.googleusercontent.com',
+    'cookiepolicy' : 'single_host_origin',
+    'callback' : 'loginCallback',
+    'approvalprompt':'force',
+    'scope' : 'https://www.googleapis.com/auth/plus.login https://www.googleapis.com/auth/plus.profile.emails.read'
+  };
+  gapi.auth.signIn(myParams);
+}
+ 
+function loginCallback(result)
+{
+    if(result['status']['signed_in'])
+    {
+        var request = gapi.client.plus.people.get(
+        {
+            'userId': 'me'
+        });
+        request.execute(function (resp)
+        {
+            var email = '';
+            if(resp['emails'])
+            {
+                for(i = 0; i < resp['emails'].length; i++)
+                {
+                    if(resp['emails'][i]['type'] == 'account')
+                    {
+                        email = resp['emails'][i]['value'];
+                    }
+                }
+            }
 
-      $.ajax({
+
+
+             $.ajax({
             type: "POST",
              dataType: 'json',
-             data: {response,"_token": "{{ csrf_token() }}"},
+             data: {resp,"_token": "{{ csrf_token() }}"},
             url: "{{url('google/login')}}",
             success: function(msg) {
-               if(msg.error==1){
+
+
+                   if(msg.error==1){
 
                      $("#log_popup").modal('hide');
                      $("#refreshID").load(location.href + " #refreshID");
@@ -1498,16 +1514,32 @@ function update_user_data(response)
 
                }
 
-             
-
-                 
             }
 
-
-      });
-
+          });
+ 
+ 
+        });
+ 
+    }
+ 
 }
+function onLoadCallback()
+{
+    gapi.client.setApiKey('AIzaSyAApSt32vaY85Td0GN1ceCBCpe3Fcz44U8');
+    gapi.client.load('plus', 'v1',function(){});
+}
+ 
+    </script>
+ 
+<script type="text/javascript">
+      (function() {
+       var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+       po.src = 'https://apis.google.com/js/client.js?onload=onLoadCallback';
+       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+     })();
 </script>
+
 
 <script>
 function isNumberKey(evt)

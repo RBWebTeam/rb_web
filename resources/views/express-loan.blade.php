@@ -45,7 +45,7 @@
 	   <div class="form-in">
 
               <span class="head-1 heading-bmar">Request A Call Back<span><br>
-             <form class="" id="compareform" role="form" method="POST" action="customer_form.php">
+             <form class="" id="compare_form" role="form" method="POST" action="customer_form.php">
 				  <div class="form-group">
 				  
 				    <div>
@@ -79,7 +79,7 @@
 	</aside>
 	</div>
 
-<div id="fh5co-pricing-section">
+	<div id="fh5co-pricing-section">
 		<div class="container">
 			
 			<div class="row">
@@ -130,18 +130,17 @@
 			</div>
 		</div>
 	</div>
-
-	<div id="fh5co-work-section" class="fh5co-light-grey-section">
+<div id="fh5co-work-section" class="fh5co-light-grey-section">
 		<div class="container">
-<div class="col-md-12">
-<ul class="nav nav-tabs">
-<li class="active"><a data-toggle="tab" href="#home">Overview</a></li>
-<li><a data-toggle="tab" href="#menu1">Points to Consider</a></li>
-<li><a data-toggle="tab" href="#menu2">The Rupeeboss Advantage</a></li>
-</ul>
+			<div class="col-md-12">
+				<ul class="nav nav-tabs">
+					<li class="active"><a data-toggle="tab" href="#home">Overview</a></li>
+					<li><a data-toggle="tab" href="#menu1">Points to Consider</a></li>
+					<li><a data-toggle="tab" href="#menu2">The Rupeeboss Advantage</a></li>
+				</ul>
 
-<div class="tab-content">
-  <div id="home" class="tab-pane fade in active">
+				<div class="tab-content">
+	<div id="home" class="tab-pane fade in active">
     <div class="row">
 				
 				<div class="col-md-12 animate-box">
@@ -163,48 +162,10 @@
 				
 			</div>
   </div>
-  <div id="menu1" class="tab-pane fade">
-    <div class="row">
-				<div class="col-md-12 animate-box">
-					<a href="#" class="item-grid">
-						
-						<div class="v-align">
-							<div class="v-align-middle">
-								<h3 class="title">Fill the form & get the loan</h3>
-								<P class="p-clr">Applying is as simple as reading this. The process will be completed before your coffee gets cold!
-								Our Experts know the pain of getting a Loan. They put your Interest First & work to achieve it.
-								Our Experts know the pain of getting a Loan. They put your Interest First & work to achieve it.
-								Our Experts know the pain of getting a Loan. They put your Interest First & work to achieve it.</P>
-							</div>
-						</div>
-					</a>
-				</div>
-				
-			</div>
-  </div>
-  <div id="menu2" class="tab-pane fade">
-    <div class="row">
-				<div class="col-md-12 animate-box">
-					<a href="#" class="item-grid">
-						
-						<div class="v-align">
-							<div class="v-align-middle">
-								<h3 class="title">Get the loan</h3>
-								<P class="p-clr">Applying is as simple as reading this. The process will be completed before your coffee gets cold!
-								Our Experts know the pain of getting a Loan. They put your Interest First & work to achieve it.
-								Our Experts know the pain of getting a Loan. They put your Interest First & work to achieve it.
-								Our Experts know the pain of getting a Loan. They put your Interest First & work to achieve it.</P>
-							</div>
-						</div>
-					</a>
-				</div>
-				
-			</div>
-  </div>
 </div>
 </div>
 </div>
-
+</div>
 
 @include('layout.footer')
 @include('layout.script')

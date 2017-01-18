@@ -8,6 +8,7 @@ use Auth;
 use DB;
 use Redirect;
 use App\registrationModel;
+use App\bank_quote_api_request;
 class FormController extends Controller
 {
     function sidebar(Request $req){
@@ -92,8 +93,10 @@ class FormController extends Controller
 
                 $quote_data=DB::select('call  usp_get_bank_quot ("'.$req['property_cost'].'","'.$req['loan_tenure'].'","'.$req['loan_amount'].'","'.$req['gender'].'","'.$req['income'].'","'.$req['obligation'].'","'.$req['dob'].'","'.$req['have_co_applicant'].'","'.$req['CoApplicantIncome'].'","'.$req['co_applicant_obligation'].'","'.$req['Turnover'].'","'.$req['profit_after_tax'].'","'.$req['depreciation'].'","'.$req['remuneration'].'","'.$req['co_applicant_turnover'].'","'.$req['co_applicant_profit_after_tax'].'","'.$req['co_applicant_depreciation'].'","'.$req['co_applicant_remuneration'].'","'.$req['emp_detail_id'].'","'.$product_id.'")');
             }
-              
-                
+
+             $save=new bank_quote_api_request();    
+            $id=$save->save_liza($req);
+            $data['quote_id']=$id;
             }
             else{
                 $quote_data =$req['product_name'];

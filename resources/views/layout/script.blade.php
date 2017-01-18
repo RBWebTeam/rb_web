@@ -1012,7 +1012,7 @@ function emibreakup(E,P,r,n)
     xd='',
     tempDate = start, 
     monthCount = 1,
-  fdr='<table><h2 class="text-center">Schedule showing payments:</h2><tr><th bgcolor="#c2da6b" class="mthy">Month-Year</th><th bgcolor="4A9ACF" class="pa">Principal(A)</th><th bgcolor="2DC6D1" class="int">Interest(B)</th><th bgcolor="BF5850" class="tp">Total Payment(A + B)</th><th bgcolor="D8BC31" class="tbal">Balance</th></tr><tbody>';
+  fdr='<table><h2 class="text-center" style="margin:0 auto;padding:20px ">Schedule showing payments:</h2><tr><th bgcolor="#c2da6b" class="mthy bg-clr-tbl">Month-Year</th><th bgcolor="4A9ACF" class="pa bg-clr-tbl">Principal(A)</th><th bgcolor="2DC6D1" class="int bg-clr-tbl">Interest(B)</th><th bgcolor="BF5850" class="tp bg-clr-tbl">Total Payment(A + B)</th><th bgcolor="D8BC31" class="tbal bg-clr-tbl">Balance</th></tr><tbody>';
      
     var color='white';
     for(var i=0;i<n;i++)
@@ -1022,12 +1022,12 @@ function emibreakup(E,P,r,n)
       {
         //console.log(tempDate.getFullYear());
 
-        color='lightblue';
+        color='#f9f9f9';
       }
       else
       {
         //console.log("in else");
-        color='#ffc8c4';
+        color='#e4f2f9';
       }
 
         var e=tempDate.getMonth()+1;

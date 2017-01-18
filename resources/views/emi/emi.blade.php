@@ -1,13 +1,13 @@
 @include('layout.header')
+<br>
 <div class="container" id="fh5co-hero">
 
   <center>
     <div class="section-title"><h1>Loan EMI Calculator</h1></div>
     <p class="sub-title">Recalculate your Loan EMI and Total Interest Due in a snap!</p>
-    <h3 class="section-title" id="emi-loan-header">Loan Details:</h3>
   </center>
   <div class="row">
-    <div class="col-sm-4 rw-hei" style="background-color:lavender;"><h3 class="emi-cal">EMI Calculator</h3>
+    <div class="col-sm-4 rw-hei" style="background-color:#fff;"><h3 class="emi-cal"><b>EMI Calculator</b></h3>
       <div class="form-group">
        <label class="control-label" for="Loan Amount">Loan Amount:</label>
        <input type="text" name="loanamount" class="form-control" id="loanamount" placeholder="Loan Amount" onkeypress="return isNumberKey(event)"  value=""  onblur="myfun()" >
@@ -21,10 +21,12 @@
      <label class="control-label" for="Loan Tenure">Loan Tenure:</label>
      <input type="text" name="loanterm" class="form-control" id="loanterm" placeholder="Loan Tenure" onkeypress="return isNumberKey(event)" value="" onblur="myfun()">
      <br>
+	 
      <div class="btn-group">
+	 <p id="err" style="display:none;"><span style="color:red;position:absolute;font-size:13px;">Please Fill All Inputs</span></p>
       <label class="btn btn-primary"><input type="radio" name="Year" id="Year" value="" checked="checked">Yr</label>
       <label class="btn btn-primary"><input type="radio" name="Year" id="Month" value="">Mo</label>
-       <p id="err" style="display:none;"><b><span style="color:red">Please Fill All Inputs</span></b></p>
+       
        
     </div>
     
@@ -34,7 +36,7 @@
   
   </div>
   <div class="col-sm-4 rw-hei" style="background-color:lavenderblush;">
-   <br><br>
+   <h3 class="emi-cal"><b>Loan Details</b></h3>
    <center>
      <p>Loan EMI :</p>
      <h2 class="em1">₹ <b><span id="emi">0</span></b></h2>
@@ -44,7 +46,7 @@
      <h2 class="em3">₹ <b><span id="emi2">0</span></b></h2>
    </center>
  </div>
- <div class="col-sm-4 rw-hei brd-rgt" style="background-color:lavender"><h3><center>Break-up of Loan Details</center></h3>
+ <div class="col-sm-4 rw-hei brd-rgt" style="background-color:#fff"><h3 class="emi-cal"><b>Break-up of Loan Details</b></h3>
    <div class="text-center"><i class="fa fa-cloud" style="font-size:18px;color:#c2da6b;"></i>&nbsp;<span>Loan EMI</span></div>
    <div class="text-center"><i class="fa fa-cloud" style="font-size:18px;color:#00B9B9;"></i>&nbsp;<span>Total Payable Interest</span></div>
    <div class="text-center"><i class="fa fa-cloud" style="font-size:18px;color:#4A9ACF;"></i>&nbsp;<span>Total Payment(Principal + Interest)</span></div>
@@ -53,11 +55,12 @@
 </div>
 </div>
 
-<div class="container">
+<div class="container white-bg">
 <div class="table-responsive">
 <table class="table table-bordered table-striped" id="emipaymenttable"></table>
 </div>
 </div>
+<br>
 @include('layout.footer')
 @include('layout.script') 
 

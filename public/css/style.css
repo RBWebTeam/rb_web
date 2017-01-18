@@ -79,15 +79,11 @@ h5 {
 td {padding:10px; text-align:center;}
 
 .btn {
-  margin-right: 4px;
   margin-bottom: 4px;
   font-family: "Raleway", Arial, sans-serif;
   font-size: 16px;
   font-weight: 400;
-  -webkit-border-radius: 30px;
-  -moz-border-radius: 30px;
-  -ms-border-radius: 30px;
-  border-radius: 30px;
+  
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s;
@@ -1726,6 +1722,7 @@ input[type="radio"] {margin:0px;}
 .bnkpg {height: 284px;}
 .bankpg h3 {margin-top:15px;color:#666;}
 .tbl-clr th {padding:2px;}
+.bg-clr-tbl {text-align:center; color:#fff;}
 
 
 

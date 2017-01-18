@@ -38,11 +38,11 @@
   <div class="col-sm-4 rw-hei" style="background-color:lavenderblush;">
    <h3 class="emi-cal"><b>Loan Details</b></h3>
    <center>
-     <p>Loan EMI :</p>
+     <span>Loan EMI :</span>
      <h2 class="em1">₹ <b><span id="emi">0</span></b></h2>
-     <p>Total Payable Interest :</p>
+     <span>Total Payable Interest :</span>
      <h2 class="em2">₹ <b><span id="emi1">0</span></b></h2>
-     <p>Total Payment(Principal + Int) :</p>
+     <span>Total Payment(Principal + Int) :</span>
      <h2 class="em3">₹ <b><span id="emi2">0</span></b></h2>
    </center>
  </div>

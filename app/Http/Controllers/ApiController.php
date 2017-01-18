@@ -383,16 +383,81 @@ run_else:
        //                  ));
 	}
 
-	public function getcustomer(Request $req){
+	public function getCustomer(Request $req){
 		//$a = $req->all();
 		//echo $quote =$req->ID;
 
         $data=DB::table('bank_quote_api_request')
 		->where('ID','=',$req->ID)->first();
-          
+         if($data){
+			$status_Id=0;
+			$msg="data delievered";
+			
+		}
+		else{
+			
+			$status_Id=1;
+			$msg=" Something went wrong.";
+			
+		}
+
          return Response::json(array(
 			'data' => $data,
+			'status_Id'=>$status_Id,
+			'msg'=>$msg
 			));
 
 	}
+	public function getCity(Request $req){
+		//$a = $req->all();
+		//echo $quote =$req->ID;
+
+        $data=DB::table('city_master')
+		->get();
+          if($data){
+			$status_Id=0;
+			$msg="data delievered";
+			
+		}
+		else{
+			
+			$status_Id=1;
+			$msg=" Something went wrong.";
+			
+		}
+
+         return Response::json(array(
+			'data' => $data,
+			'status_Id'=>$status_Id,
+			'msg'=>$msg
+			));
+         
+
+	}
+	public function getProduct(Request $req){
+		//$a = $req->all();
+		//echo $quote =$req->ID;
+
+        $data=DB::table('product_master')
+		->get();
+         if($data){
+			$status_Id=0;
+			$msg="data delievered";
+			
+		}
+		else{
+			
+			$status_Id=1;
+			$msg=" Something went wrong.";
+			
+		}
+
+         return Response::json(array(
+			'data' => $data,
+			'status_Id'=>$status_Id,
+			'msg'=>$msg
+			));
+
+	}
+	
 }

@@ -36,7 +36,10 @@
 			</form>
 			<?php }else{?>
 			<p>processed {{$result->responseJson}}</p>
-			<?php }?>
+			<?php
+				$html_data=$result->showHtmlReportForCreditReport;
+
+			 }?>
 <script type="text/javascript">
   $('.next_qest1').click(function(){
     alert("new qstn1");

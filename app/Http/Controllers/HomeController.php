@@ -52,6 +52,16 @@ class HomeController extends Controller
 		return view('savings-account');
 	}
 
+	public function lead_status(){
+		$data['a'] = DB::table('user_registration')
+       ->orderBy('user_registration.contact', 'DESC')
+		->get();
+		print"<pre>";
+		print_r($data['a']);
+		
+	}
+
+
 
 	
 }

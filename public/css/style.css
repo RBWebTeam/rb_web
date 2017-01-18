@@ -79,15 +79,11 @@ h5 {
 td {padding:10px; text-align:center;}
 
 .btn {
-  margin-right: 4px;
   margin-bottom: 4px;
   font-family: "Raleway", Arial, sans-serif;
   font-size: 16px;
   font-weight: 400;
-  -webkit-border-radius: 30px;
-  -moz-border-radius: 30px;
-  -ms-border-radius: 30px;
-  border-radius: 30px;
+  
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s;
@@ -900,13 +896,7 @@ rb-services-section{padding:0px;}
   }
 }
 .fh5co-cta .overlay {
- /* background: rgba(0, 0, 0, 0.7); */
- background:#000;
- opacity:0.2;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  top: 0;
+ background:#218bb7;
   position: absolute;
   z-index: 1;
 }
@@ -1526,7 +1516,7 @@ input[type=radio]:checked ~ .check {
 radio {background:#ff0000;}
 .top-mrg {margin-top:5px;margin:0 auto;}
 .center-img div img {margin:0 auto;}
-.bg-white {background:#fff; padding:20px 0px;margin-bottom:20px;margin: 0px 0px 20px 0px; border:10px solid #e6e6e6;}
+.bg-white {background:#fff; padding:20px 0px;margin-bottom:20px;margin: 0px 0px 20px 0px; border:2px solid #e6e6e6;}
 .left-lin {border-left:1px dashed #ddd;}
 .partnr {padding-bottom:10px;}
 .container-fluid {margin:0px; padding:0px;}
@@ -1585,15 +1575,17 @@ top: -.25em;left: 20%;margin: 0 0 0 -.25em;}
 
 /*emi css*/
 
- .rw-hei {height:390px;border: 2px dashed #ccc;border-right:none;}
- .brd-rgt {border-right: 2px dashed #ccc;}
+
+ .rw-hei {height:380px;border-right:none;border-left: 1px solid #eee;}
+
   body {color:#666;}
   .tbl-clr {color:#fff; }
   .tbl-clr td {text-align:center;}
+  .transfer-cal {padding:10px;color:#666; text-align:center;margin-bottom: 15px;}
    .rw-hei p {font-size:16px;color:#999;}
    .rw-hei h1 {margin-top:10px;}
    .sub-title {color:#999;}
-   .emi-cal {background:#333;padding:10px;display:block;color:#fff; text-align:center;}
+   .emi-cal {padding:10px;display:block;color:#666; text-align:center;margin-bottom: 15px;}
    .mthy {Font-weight:bold;}
    .table-bordered>thead>tr>th {color:#fff;}
    .em1 {color:#c2da6b;}
@@ -1726,6 +1718,11 @@ input[type="radio"] {margin:0px;}
 
 .has-error div{height:55px;} 
 .bankpg img {margin:0 auto;}
+.pad-tp {margin-top:120px;}
+.bnkpg {height: 284px;}
+.bankpg h3 {margin-top:15px;color:#666;}
+.tbl-clr th {padding:2px;}
+.bg-clr-tbl {text-align:center; color:#fff;}
 
 
 

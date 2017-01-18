@@ -1,5 +1,5 @@
 @include('layout.header')
-<div id="fh5co-page">
+<div id="fh5co-hero">
 	<div class="fh5co-contact animate-box">
 		<div class="container">
 			<div class="row">
@@ -7,7 +7,7 @@
 					<h2>Free Credit Report</h2>
 					
 				</div>
-				<div class="col-md-9 white-bg">
+				<div class="col-md-12 white-bg">
 					<div class="row text-left comp-pg rate">
 						<p><b>Would like to know your credit score before applying 	for loan 	</b></p>
 						<p>your personal information is requied to retrive your credit Report and Score. 
@@ -46,10 +46,10 @@
 											<input type="text" class="form-control" placeholder="flat No / Plot No / House No*" name="flatPlotHouseNo" required="">
 										</div>
 										<div class="col-md-4">
-											<input type="text" class="form-control" placeholder="Building / Society Name" >
+											<input type="text" class="form-control" placeholder="Building / Society Name" name="society">
 										</div>
 										<div class="col-md-4">
-											<input type="text" class="form-control" placeholder="Road No / Area / Locality">
+											<input type="text" class="form-control" placeholder="Road No / Area / Locality" name="locality">
 										</div>
 
 										<div class="col-md-4">
@@ -113,20 +113,20 @@
 												<input type="text" id="pan" name="pan" class="form-control" placeholder="Pancard*" required="">
 											</div>
 											<div class="col-md-4">
-												<input type="text" class="form-control" placeholder="Passport No*" 	>
+												<input type="text" class="form-control" placeholder="Passport No*" name="passport"	>
 											</div>
 											<div class="col-md-4">
-												<input type="text" class="form-control" placeholder="Aadhaar No*" >
+												<input type="text" class="form-control" placeholder="Aadhaar No*" name="aadhaar">
 											</div>
 
 											<div class="col-md-4">
-												<input type="text" class="form-control" placeholder="Voter Id*" >
+												<input type="text" class="form-control" placeholder="Voter Id*" name="voterid" >
 											</div>
 											<div class="col-md-4">
 												<input type="text" class="form-control" placeholder="Driving License No*" name="driverLicenseNo" >
 											</div>
 											<div class="col-md-4">
-												<input type="text" class="form-control" placeholder="Ration card No" >
+												<input type="text" class="form-control" placeholder="Ration card No" name="rationcard" >
 											</div>
 
 
@@ -135,24 +135,13 @@
 									</button>
 								</div>
 							</form>
-						</div>
-
 					</div>
 
-					<!-- <div class="col-md-3 pull-right">
-						<div class="text-center guid nl-form-errors">Enter your monthly takehome salary here!
-							Without any performance bonus or incentives!</div>
-
-							<div class="text-center img1"><img src="images/photo.jpg">
-							</div>
-						</div> -->
-					</div>
-				</div>	
+				</div>
 			</div>
-
-
-		</div>
-
-		@include('layout.footer')
-		@include('layout.script')
+		</div>	
+	</div>
+</div>
+@include('layout.footer')
+@include('layout.script')
 

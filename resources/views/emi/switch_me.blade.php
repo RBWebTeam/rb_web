@@ -7,8 +7,8 @@
    .rw-hei p {font-size:16px;color:#999; margin-bottom:10px;}
    .rw-hei h1 {margin-top:10px;}
    .sub-title {color:#999;}
-   .emi-cal {background:#666;padding:10px;color:#fff; text-align:center;}
-   .transfer-cal {background:#666;padding:10px;color:#fff; text-align:center;}
+
+   
    .mthy {Font-weight:bold;}
    .table-bordered>thead>tr>th {color:#fff;}
    .fh5co-cta {background:#666; margin-top:106px; margin-bottom:20px;}
@@ -83,11 +83,13 @@
     <div class="form-group right-block">
        <!-- <label class="control-label" for="Loan Tenure">Remaining Tenure:</label> -->
         <input type="text" name="loanterm" class="form-control" id="loanterm" placeholder="Loan Tenure" value="" onblur="myfun()" onkeypress="return isNumberKey(event)">
-    <br>
-    <div class="btn-group">
+    <p id="err" style="display:none;"><span style="color:red; font-size:13px; position:absolute;">Please Fill All Inputs</span></p>
+	
+    <div class="btn-group pad">
           <label class="btn btn-primary"><input type="radio" name="Year" id="Year" value="" checked="checked">Yr</label>
              <label class="btn btn-primary"><input type="radio" name="Year" id="Month" value="">Mo</label>
     </div>
+	
     </div>
 
     <?php if($loan == "home-loan") {?>
@@ -99,27 +101,27 @@
     <?php }?>
 
     
-     <p id="err" style="display:none;"><b><span style="color:red">Please Fill All Inputs</span></b></p>
+     
     </div>
-    <div class="col-sm-6 rw-hei brd-rgt" style="background-color:lavenderblush;"><h3 class="transfer-cal">
-    <i class="fa fa-credit-card" aria-hidden="true"></i>  My Savings</h3>
+    <div class="col-sm-6 rw-hei brd-rgt" style="background-color:#fff"><h3 class="transfer-cal">
+    My Savings <i class="fa fa-credit-card" aria-hidden="true"></i></h3>
     <!-- <i class="fa fa-cog fa-spin fa-2x fa-fw"></i>
     <span class="sr-only">Loading...</span></h3> -->
      <!-- <i class="fa fa-credit-card" aria-hidden="true"></i></h3> -->
      
      <center>
-       <p>Loan EMI :<i class="fa fa-caret-right" style="font-size:20px;" aria-hidden="true"></i><b class="em1"> ₹ <span id="emi">0</span></b></p>
+       <p>Loan EMI :<b class="em1"> ₹ <span id="emi">0</span></b></p>
       
       <!--  <p>Total Payable Interest :</p>
        <h2 class="em2">₹ <b><span id="emi1">0</span></b></h2>
        <p>Total Payment(Principal + Int) :</p>
        <h2 class="em3">₹ <b><span id="emi2">0</span></b></h2> -->
-       <p>Drop_EMI : <i class="fa fa-caret-right" style="font-size:20px;" aria-hidden="true"></i> ₹ <b class="em5"><span id="emi3">0</span></b></p>
-       <p>New Loan EMI : <i class="fa fa-caret-right" style="font-size:20px;" aria-hidden="true"></i><b class="em6">₹<span id="emi4">0</span></b></p>
+       <p>Drop_EMI : ₹ <b class="em5"><span id="emi3">0</span></b></p>
+       <p>New Loan EMI : <b class="em6">₹<span id="emi4">0</span></b></p>
    
-        <p>Drop-in Interest Rate: <i class="fa fa-caret-down" style="font-size:20px;color:lightgreen;" aria-hidden="true"></i> <b class="em7"><span id="emi5">0</span>%</b></p>
+        <p>Drop-in Interest Rate:<b class="em7"><span id="emi5">0</span>%</b></p>
 		
-       <p><h6>Your <mark style="color:red">Savings</mark> through reduced Interest: <i class="fa fa-caret-right" style="font-size:20px;" aria-hidden="true"></i></h6></p>
+       <p><h6>Your <mark style="color:red">Savings</mark> through reduced Interest:</h6></p>
        <h2 class="em8">₹ <b><span id="emi6">0</span></b></h2>
        
        

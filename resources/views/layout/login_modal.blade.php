@@ -48,8 +48,12 @@
                 <div class="modal-social-icons">
                   <a href="javascript:void(0);" onclick="fbLogin();" id="fbid" class="btn btn-default facebook"> <i class="fa fa-facebook modal-icons"></i> Sign In with Facebook </a>
 
-                  <div class="g-signin2 google_ID" id="googleID" data-longtitle="true" data-onsuccess="Google_signIn" data-theme="light" data-width="200"></div>
-                   <!-- <a href="{{url('google')}}" class="btn btn-default google"> <i class="fa fa-google-plus modal-icons"></i> Sign In with Google </a> -->
+                <!--   <div class="g-signin2 google_ID" id="googleID" data-longtitle="true" data-onsuccess="Google_signIn" data-theme="light" data-width="200"></div> -->
+
+                   <a href="#" class="btn btn-default google" onclick="login();"> <i class="fa fa-google-plus modal-icons"></i> Sign In with Google </a>
+
+                   <!-- <input type="button"  value="Login" onclick="login()" /> -->
+                   <!-- <input type="button"  value="Logout" onclick="logout()" /> -->
 
                     <?php if(Session::get('is_login')){?>
                        <input type="hidden" name="session_ID" id="session_ID" value="<?php echo Session::get('name');?>">

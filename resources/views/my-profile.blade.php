@@ -32,7 +32,7 @@
             <div class="col-md-9 col-sm-12">
                 <!-- Tab panes -->
                 <div class="row">
-                    <div class="tab-content pad-no">
+                    <div class="tab-content">
                         <div class="tab-pane active" id="profile">
                             <form name="profile_update" id="profile_update" method="post">
                                 <div class="col-md-6 pad11"><input name="username" value="{{$query->username}}" type="text" placeholder="Type Your Full Name" required></div>
@@ -128,36 +128,37 @@
                           <div id="success" class="col-md-6 pad11 text-danger"></div>
                           <br>
                           <div id="success1" class="col-md-6 pad11 text-danger"></div>
-                          <br><br>
+                          
  
             <div class="tab-pane active" id="profile">
                  <form id="confirmpassword" name="confirmpassword" role="form" method="POST"> {{ csrf_field() }}
 
-                <div class="form-group has-error">
-                  <div>
+                <div class="has-error">
+                  <div class="high">
                     <input type="password" class="form-control" id="currentpassword" name="currentpassword" placeholder="Current Password"  />
+					<span id="currentp"></span>
                   </div>
-
-                  <div id="currentp"></div>
                 </div>
 
-                  <div class="form-group has-error">
-                    <div> 
+                  <div class="has-error">
+                    <div class="high"> 
                     <input type="password" name="password" id="password" class="form-control clr-ddd"  placeholder="New Password" >
+					<span id="newpass"></span>
                     </div>
-                     <div id="newpass"></div>
+
                   </div>
 
-                <div class="form-group has-error">
-                    <div> 
+                <div class="has-error">
+                    <div class="high"> 
                     <input type="password" name="confirmpassword" id="confirmpassword" class="form-control clr-ddd"  placeholder="Confirm Password" >
+					<span id="confirmpass"></span>
                     </div>
-                     <div id="confirmpass"></div>
+                    
                   </div>
 
        
                   
-                  <div class="form-group centr-obj"> 
+                  <div> 
                     <button class="btn btn-primary btn-outline with-arrow change_password_form" >Submit<i class="icon-arrow-right"></i></button>
                   </div>
 

@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title><?php if(isset($title))echo $title; else echo "RupeeBoss-Apply for a Loan"; ?></title>
-	<meta name="google-signin-client_id" content="752185558821-9vlmac53np7bgdo3kn9d2e5ft39t7gud.apps.googleusercontent.com">
+	<!-- <meta name="google-signin-client_id" content="752185558821-9vlmac53np7bgdo3kn9d2e5ft39t7gud.apps.googleusercontent.com"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="<?php if(isset($description))echo $description; else echo "RupeeBoss provides all kind of loans."; ?>" />
 	<meta name="keywords" content="" />
@@ -35,7 +35,7 @@
 	<body>
 	
 	<!-- Side bar -->
-	<div class="arrow-don"><i class="icon-hand-stop-o"></i></div>
+	<div class="arrow-don" title="Help Section"><i class="icon-hand-stop-o"></i></div>
     <div class="sidebar" style="display:none;">
     <ul>
         <li class="hide-dv"><a href="#"><i class="icon-arrow-left"></i>&nbsp;Hide</a></li>

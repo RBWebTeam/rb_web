@@ -170,11 +170,23 @@ return  $authUser;
 
 
  public function googlelogin(Request $res){
-                      $vale=$res->response;
+                      $vale=$res->resp;
+                      $str=$vale['image']['url'];
+                      $email='';
+                      $length=count($vale['emails']);
+
+                for($i = 0; $i < $length; $i++){
+                    if($vale['emails'][$i]['type'] == 'account')
+                    {
+                        $email = $vale['emails'][$i]['value'];
+                    }
+                }
+
+               
+                     
                   
-                 
              $query=new registrationModel();
-             $authUser =$query->where('provider_user_id',$vale['Eea'])->first();
+             $authUser =$query->where('provider_user_id',$vale['id'])->first();
 
                if ($authUser){
                        Session::set('email', $authUser->email);
@@ -186,12 +198,14 @@ return  $authUser;
         }else{
  
 
-                  $query->username=$vale['ig'];
-                  $query->email=$vale['U3'];
+
+
+                  $query->username=$vale['displayName'];
+                  $query->email=$email;
                   $query->contact=1;
                   $query->password=1;
-                  $query->provider_user_id=$vale['Eea'];
-                  $query->provider=$vale['Paa'];
+                  $query->provider_user_id=$vale['id'];
+                  $query->provider=$str;
                   $query->created_at=date('Y-m-d H:i:s');
 
                if($query->save()) {

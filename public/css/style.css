@@ -21,7 +21,6 @@ body {
   color: #7f7f7f;
   background: #fff;
   height: 100%;
-  position: relative;
 }
 
 a {
@@ -1325,7 +1324,7 @@ border: #3px solid #999;background:#1f386e;margin: 10px;margin: 10px auto;text-a
 .h3-pd-btm {transform: scale(1.1);-moz-transform: scale(1.1);-webkit-transform: scale(1.1);}
 .mrg-btm {margin-bottom:8px;padding:0px;}
 .dv-hr .h3-pd-btm {transform: scale(1.1);-moz-transform: scale(1.1);-webkit-transform: scale(1.1);}
-.nav-tabs > li > a {font-weight:bold;}
+
 .md-higt {height:170px;}
 .con-no {padding-left:10px;}
 .sidebar {background:#1f386e;position:fixed; left:0px; top:150px; width:80px;z-index:100001;}
@@ -1510,7 +1509,7 @@ input[type=radio]:checked ~ .check {
 .fltr input {padding:5px;margin-right:5px;}
 .modal-body input {background:#eee;}
 .modal-body li {color:#15a9fa;}
-.modal-body li span {padding:0px;  border-radius:50px;}
+.modal-body li span {padding:0px;  border-radius:50px; vertical-align: middle;padding-right: 5px;}     
 .flexslider li a:hover {text-decoration:none;}
 .slider-text-inner h2 b {text-shadow:1px 1px 1px #666;}
 radio {background:#ff0000;}
@@ -1723,6 +1722,10 @@ input[type="radio"] {margin:0px;}
 .bankpg h3 {margin-top:15px;color:#666;}
 .tbl-clr th {padding:2px;}
 .bg-clr-tbl {text-align:center; color:#fff;}
+.has-error span{font-size:12px;color:#ff0000;display:block;}
+.has-error .high {height:60px;}
+.tabs-left {border:1px solid #ddd; background:#fff;}
 
-
+overflow-y: scroll;
+overflow-x: hidden;
 

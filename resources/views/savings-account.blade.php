@@ -1,6 +1,9 @@
 @include('layout.header')
+<br>
 <div class="container" id="fh5co-hero">
-
+<div class="col-md-12 text-left fh5co-heading animate-box fadeInUp animated">
+					<h2>Savings Account</h2>
+					</div>
         <img src="{{URL::to('images/idfc/1.jpg')}}" class="img-responsive"/>
 	    <img src="{{URL::to('images/idfc/2.jpg')}}" class="img-responsive"/>
 	    <img src="{{URL::to('images/idfc/3.jpg')}}" class="img-responsive"/>
@@ -15,6 +18,7 @@
 	    <img src="{{URL::to('images/idfc/12.jpg')}}" class="img-responsive"/>
 
 </div>
+<br>
 @include('layout.footer')
 @include('layout.script')
 

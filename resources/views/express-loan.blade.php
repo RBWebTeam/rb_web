@@ -45,7 +45,7 @@
 	   <div class="form-in">
 
               <span class="head-1 heading-bmar">Request A Call Back<span><br>
-             <form class="" id="compareform" role="form" method="POST" action="customer_form.php">
+             <form class="" id="compare_form" role="form" method="POST" action="customer_form.php">
 				  <div class="form-group">
 				  
 				    <div>

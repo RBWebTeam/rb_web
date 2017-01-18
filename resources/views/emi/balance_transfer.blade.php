@@ -31,6 +31,70 @@
 
 
 	<style>
+	.slider {
+  position: relative;
+  margin-top: 20px;
+  margin-bottom: 15px;
+  width: 90%;
+  background: #2A3137;
+  /* -moz-box-shadow: inset 0 0 10px #999;
+  -webkit-box-shadow: inset 0 0 10px #999;
+  box-shadow: inset 0 0 10px #999;*/
+  height: 15px;
+  border-radius: 10px;
+  border: 1px solid #DDDDDD;
+  margin-left: 15px;
+}
+
+.slider .ui-slider-handle {
+  position: absolute;
+  background: #10A447;
+  border-radius: 5px;
+  width: 20px;
+  height: 50px;
+  top: -16px;
+  left: 50px;
+  border-style: none;
+  box-shadow: none;
+
+}
+
+input[type=text] {
+  border: 1px solid #10A447;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  padding: 5px 10px;
+  margin-top: -15px;
+  text-align: center;
+  background-color: #ffffff;
+  width: 120px;
+  color: #2A3137;
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 5px;
+  margin-left: 5px;
+}
+
+.minus, .plus {
+  display: inline-block;
+  float: left;
+  border: 1px solid #aaa;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  padding: 5px 10px;
+  margin-top: -15px;
+  text-align: center;
+  background-color: #e3e3e3;
+  color: #333;
+  font-size: 18px;
+  font-weight: bold;
+  margin-left: 5px;
+  cursor: pointer;
+  width: 10px;
+  margin-top: 5px;
+}
 	 
 .price-box {
 	margin: 0 auto;
@@ -242,7 +306,9 @@ label {
 									            
 
 									                <div class="col-sm-12" style="margin-top:30px;">
-									                    <div id="slider" onchange="myfun()"></div> <span class="glyphicon glyphicon-minus" style="float:left"></span><span class="glyphicon glyphicon-plus" style="float:right"></span> 
+									                    <div id="slider" onchange="myfun()"></div>
+									                    <div id="minus1" class="minus"><span>-</span></div>
+    													<div id="plus1" class="plus">+</div>
 									                </div>
 									           
 									           
@@ -529,6 +595,22 @@ label {
             }
 
         });
+        // plus-minus
+        $("#plus1").click(function () {
+    var value = $("#slider").val();
+    console.log(value)
+    //var step = $("#slider-range-max").slider("option", "step");
+
+    $("#slider").slider("value", value + 1);
+  });
+
+  $("#minus1").click(function () {
+    var value = $("#slider-range-max").slider("value")
+    var step = $("#slider-range-max").slider("option", "step");
+
+    $("#slider-range-max").slider("value", value - step);
+  });
+  // end of plus-minus
 
         //Added, set initial value.
         $("#amount").val(0);
@@ -541,23 +623,17 @@ label {
 
     //changed. now with parameter
     function update(slider, val) {
-        //changed. Now, directly take value from ui.value. if not set (initial, will use current value.)
-        // var $amount = slider == 1 ? val : $("#amount").val();
+       
         var $amount = val;
-         //console.log(val);
-
-        /* commented
-         $amount = $( "#slider" ).slider( "value" );
-         $duration = $( "#slider2" ).slider( "value" );
-         */
-
-        $("#amount").val($amount);
-        //console.log($("#amount").val($amount));
+         console.log(val);
+         $("#amount").val($amount);
+        // console.log($("#amount").val($amount));
         $("#amount-label").text($amount);
         //console.log($("#amount-label").text($amount));
         var yrs = "yrs";
 
         $('#slider a').html('<label>' + $amount + ' yrs  </label><div class="ui-slider-label-inner"></div>');
+
     }
 	</script>
 	<script type="text/javascript">
@@ -587,7 +663,11 @@ $('#slider').slider({
         myfun();
 
     } 
-});
+
+}
+);
+
+
  
   function myfun(){ 
   	alert_him();

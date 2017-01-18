@@ -45,7 +45,7 @@ foreach ($data as $key => $value){?>
                   <tbody><tr><td class="td-main-1" width="100">
                       <img src="{{ $value['Bank_Logo']}}" class="img-responsive">
 
-                      <p>{{ $value['Bank_Name']}}</p>
+                      
                     </td>
                     <td class="td-main">
                       <div class="loan-amt">

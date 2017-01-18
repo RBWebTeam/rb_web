@@ -193,6 +193,7 @@ $(".lastReporteddate").datepicker({ dateFormat: "yy-mm-dd",
            $('#pop1').append( "<p>Enter your gross annual reciept</p>" );
         }else{
            $('#pop1').append( "<p>Please Proceed</p>" );
+
         }
         return false;
       }
@@ -1191,7 +1192,7 @@ function emibreakup(E,P,r,n)
         }else  if(val=='q_prop'){
            $('#pop1').append( "<p>Your property price is</p>" );
         }else  if(val=='q5'){
-           $('#pop1').append( "<p>Amount you want to borrow</p>" );
+           $('#pop1').append( "<p>Where do you reside</p>" );
         }else if(val=='exp'){
           $('#pop1').append( "<p>Entr your expierience in current company</p>" );
         }else if(val=='total_exp'){

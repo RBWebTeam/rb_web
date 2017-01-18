@@ -83,11 +83,13 @@
     <div class="form-group right-block">
        <!-- <label class="control-label" for="Loan Tenure">Remaining Tenure:</label> -->
         <input type="text" name="loanterm" class="form-control" id="loanterm" placeholder="Loan Tenure" value="" onblur="myfun()" onkeypress="return isNumberKey(event)">
-    <br>
-    <div class="btn-group">
+    <p id="err" style="display:none;"><span style="color:red; font-size:13px; position:absolute;">Please Fill All Inputs</span></p>
+	
+    <div class="btn-group pad">
           <label class="btn btn-primary"><input type="radio" name="Year" id="Year" value="" checked="checked">Yr</label>
              <label class="btn btn-primary"><input type="radio" name="Year" id="Month" value="">Mo</label>
     </div>
+	
     </div>
 
     <?php if($loan == "home-loan") {?>
@@ -99,7 +101,7 @@
     <?php }?>
 
     
-     <p id="err" style="display:none;"><b><span style="color:red">Please Fill All Inputs</span></b></p>
+     
     </div>
     <div class="col-sm-6 rw-hei brd-rgt" style="background-color:#fff"><h3 class="transfer-cal">
     My Savings <i class="fa fa-credit-card" aria-hidden="true"></i></h3>

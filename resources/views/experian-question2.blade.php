@@ -35,20 +35,34 @@
 
 			</form>
 			<?php }else{?>
-			<p>processed {{$result->responseJson}}</p>
+			<p>Response :: {{$result->responseJson}}</p>
+
+
 			<?php
-				$html_data=$result->showHtmlReportForCreditReport;
+				if($result->responseJson=="passedReport"){
+					//refer http://php.net/manual/en/domdocument.getelementbyid.php
+					$html_data=$result->showHtmlReportForCreditReport;
+					$doc = new DomDocument;
+					$doc->validateOnParse = true;
+					$doc->loadHTML($html_data);
+					$xml=$doc->getElementsByTagName('input')->tagName.val();
+					$xml_doc = new DomDocument;
+					$xml_doc->validateOnParse = true;
+					$xml_doc->loadXML($xml);
+					$score=$xml_doc->getElementsByTagName('Score')->tagName.val();
+					echo "<h1> Your Credit Score is :: ".$score."</h1>";
+				}
 
 			 }?>
 <script type="text/javascript">
   $('.next_qest1').click(function(){
-    alert("new qstn1");
+    //alert("new qstn1");
     $.ajax({  
                type: "POST",  
                url: "{{URL::to('gen-qstn')}}",
                data : $('#generate_question2').serialize(),
                success: function(msg){
-                console.log(msg);  
+                //console.log(msg);  
                 if(msg.success==true){
                 $('#generate_question').hide();
                 $('#nxt_qstn').html("");

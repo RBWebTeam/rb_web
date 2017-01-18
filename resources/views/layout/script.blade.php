@@ -15,6 +15,7 @@
 <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
 
 
+
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
 
 <script src="https://apis.google.com/js/platform.js" async defer></script>
@@ -1581,7 +1582,7 @@ function isNumberKey(evt)
      <span id='pls_wait' style="display: none;color: red;">Please wait .....</span>
      <span id='pwd_match' style="display: none; color:red;">Password do not match.</span>
 
-     <span id="msg_err_email"  style="display: none; color:red;">Email id already exists.</span>
+     <span id="msg_err_email"  style="display: none; color:red;"><center>Email id already exists.</center></span>
     </div>
 
   </div>

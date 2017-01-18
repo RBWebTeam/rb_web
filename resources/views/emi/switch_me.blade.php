@@ -64,7 +64,7 @@
      <!-- <i class="fa fa-exchange" aria-hidden="true"></i> -->
     <div class="form-group">
        <!-- <label class="control-label" for="Loan Amount">Outstanding Principal:</label> -->
-       <input type="text" name="loanamount" class="form-control" id="loanamount" placeholder="Loan Amount" value="" onblur ="myfun()" onkeypress="return isNumberKey(event)">
+       <input type="text" name="loanamount" class="form-control" id="loanamount" placeholder="Loan Amount" value="" onblur ="myfun()" onkeypress="return isNumberKey(event)" maxlength="9">
     </div>
     <div class="form-group">
       <!-- <label class="control-label" for="Interest Rate"> Current Interest Rate:</label> -->

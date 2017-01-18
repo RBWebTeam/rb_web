@@ -6,7 +6,7 @@
 		
 		<div class="liza col-md-8"  id="step-1" style="display: block;">
 			<!--- liza Step First   - -->
-			<div class="col-md-12 text-center"><h4>Apply for an Easy Loan against property in 30 seconds</h4></div>
+			<div class="col-md-12 text-center"><h4>Apply for an Easy Home Loan in 30 seconds</h4></div>
 			<p class="text-center">Step 1 of 2</p> 
 			<!--first question--> 
 			<div class="col-md-12 text-center animate-box cont" id="q1">

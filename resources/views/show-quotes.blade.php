@@ -74,7 +74,8 @@
     <td width="16%" class="upper">Interst Rate</td>
     <td width="16%" class="upper">Loan Amount</td>
     <td width="18%" class="upper">emi</td>
-    <td width="17%"><a class="btn btn-success" href="http://beta.erp.rupeeboss.com/homeloan/Home_Loan_Application_Form.aspx?appid=0&qoutid={{$quote_id}}&BankId={{$q->Bank_Id}}">Apply Online</a></td>
+    <td width="17%"><a class="btn btn-success" 
+    href="{{URL::to('apply-lead-online')}}?appid=0&qoutid={{$quote_id}}&BankId={{$q->Bank_Id}}">Apply Online</a></td>
   </tr>
   <tr>
     <td>

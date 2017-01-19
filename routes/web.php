@@ -77,6 +77,7 @@ Route::get('express-loan','HomeController@express_loan');
 Route::get('credit-card','HomeController@credit_card');
 Route::get('savings-account','HomeController@savings_account');
 Route::get('lead-status','HomeController@lead_status');
+Route::get('apply-lead-online','ProfileController@applyonline');
 
 
 

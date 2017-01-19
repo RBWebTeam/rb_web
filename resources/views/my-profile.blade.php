@@ -105,11 +105,14 @@
 
 
                           <div class="tab-pane" id="credit-score">
-
-                          <div class="col-md-12"> Your credit score  </div>
-
+                          @if(isset($cquery->credit_score))
+                                      <?php $credit_score=$cquery->credit_score;?>
+                                  @else
+                                      <?php $credit_score='Not yet Evaluated.';?>
+                                  @endif
+                          <div class="col-md-12"><h2> Your credit score `{{$credit_score}}`</h2>  </div>
                            <div class="col-md-12">
-                           <p>Get Free Credit Report <a href="#"> click Here..</a></p>
+                           <p>Get Free Credit Report <a href="{{url('credit-report')}}"> click Here..</a></p>
                            </div>
 
                           </div>

@@ -12,7 +12,7 @@ use Validator;
 use Redirect;
 use Session;
 use URL;
-
+use DB;
 class SocialsiteController extends Controller{
      public function  facebook(){
      	 return Socialite::driver('facebook')->redirect();
@@ -155,6 +155,7 @@ return  $authUser;
                   Session::set('user_id',$query->id);
                   Session::set('name',$query->username);
                   Session::set('is_login',1);
+                  DB::table('customer_details')->insert(['user_id' =>$query->id]);
                
         }
 
@@ -202,8 +203,8 @@ return  $authUser;
 
                   $query->username=$vale['displayName'];
                   $query->email=$email;
-                  $query->contact=1;
-                  $query->password=1;
+                  $query->contact=0;
+                  $query->password=0;
                   $query->provider_user_id=$vale['id'];
                   $query->provider=$str;
                   $query->created_at=date('Y-m-d H:i:s');
@@ -214,6 +215,7 @@ return  $authUser;
                   Session::set('user_id',$query->id);
                   Session::set('name',$query->username);
                   Session::set('is_login',1);
+                  DB::table('customer_details')->insert(['user_id' =>$query->id]);
                
         } 
 

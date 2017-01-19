@@ -7,182 +7,136 @@
          <div class="modal-content">
           <div style="display: block;" id="login">
              <!-- login-->
-          <div class="modal-header login_modal_header">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            <h2 class="modal-title" id="myModalLabel">Login to Your Account</h2>
+         
+      <div class="modal-body login-modal">  
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+       <div class="panel pan-log">
+          <div class="panel-heading">
+            <div class="row" id="forgot-password-hide">
+              <div class="col-xs-6">
+                <a href="#" class="active" id="login-form-link">Login</a>
+              </div>
+              <div class="col-xs-6">
+                <a href="#" id="register-form-link">Register</a>
+              </div>
+            </div>
+            <div class="row" id="forgot-password-show" style="display: none;">
+              <div class="col-xs-6">
+                <h3>Forgot Password</h3>
+              </div>
+            </div>
+            <hr>
           </div>
-          <div class="modal-body login-modal">
-            <p id="msg" style="color:#EF6C00;font-size: 12"></p>
-            <br/>
-            <div class="clearfix"></div>
-            <div id='social-icons-conatainer'>
-        
-              <div class='modal-body-left' >
 
-               <form name="login_form" id="login_form"   method="post">
 
-               <div class="form-group">
-                 
-                  <input type="text"  name="email_login" placeholder="Enter  Email"  class="form-control login-field" autofocus="autofocus" required>              
-                </div>
-                     
-                    <input type="hidden" id='_token' name="_token" value="{{csrf_token()}}">
+
+          <div class="panel-body">
+            <div class="row">
+              <div class="col-lg-6">
+            <form class="login-form" name="login_form" id="login_form"  method="post" style="display: block;">                   {{ csrf_field() }}
                   <div class="form-group">
-                      <input type="password" name="login_pass" placeholder="Password"  class="form-control login-field"  required>
-                     
+                    <input type="text" name="email_login" id="email_login" tabindex="1" class="form-control" placeholder="Username" value="">
+                  </div>
+                     <div class="form-group">
+                    <input type="password" name="login_pass" id="login_pass" tabindex="2" class="form-control" placeholder="Password">
+                    <span id="msg" class="error-msg"></span>
+                  </div>
+                      
+                
+                  <div class="form-group">
+                    <div class="row">
+                      <div class="col-lg-12">
+                        <div class="text-center">
+                         <!--  <a href="#" tabindex="5" class="forgot-password">Forgot Password?</a> -->
+                           <a href="#" id="forgot-form-link">Forgot password?</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="row">
+                      <div class="col-sm-6 col-sm-offset-3">
+                            <button id="login_submit" class="form-control btn btn-log login-submit ">Login</button>
+                      </div>
+                    </div>
                   </div>
 
-                    
-                 <a id="login_submit" class="btn btn-success modal-login-btn login-submit ">Login</a>
+                </form>
+                </div>
+                <div class="col-lg-6 social-ico">
+               <a href="javascript:void(0);" onclick="fbLogin();" id="fbid" class="btn btn-default facebook"> <i class="fa fa-facebook modal-icons"></i> Facebook </a>
+                <a href="#" class="btn btn-default google" onclick="login();"> <i class="fa fa-google-plus modal-icons"></i> Google</a>
+               </div>
 
-                 
-                 </form>
-                <a href="javascript:void(0)" id="forgotps"   class="login-link text-center">Lost your password?</a>
+                <div class="col-lg-12">
+                <form class="register-form" style="display: none;" name="registration_form" id="registration_form"   method="post" >  {{ csrf_field() }}
+
+                  <div class="form-group">
+                    <input type="text" name="name" id="name" tabindex="1" class="form-control" placeholder="Username" >
+                      <span id="errorName" class="error-msg"></span>
+                  </div>
+
+                  <div class="form-group">
+                    <input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="Email Address"  >
+                    <span id="errorEmail"  class="error-msg" ></span>
+                  </div>
+
+                   <div class="form-group">
+                    <input type="text" name="contact" id="contact" tabindex="1" class="form-control" placeholder="Mobile Number" >
+                    <span id="errorcontact"  class="error-msg"></span>
+                  </div>
+
+                  <div class="form-group">
+                    <input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Password">
+                     <span id="errorpassword"  class="error-msg" ></span>
+                  </div>
+
+                  <div class="form-group">
+                    <input type="password" name="password_confirm" id="password_confirm" tabindex="2" class="form-control" placeholder="Confirm Password">
+                     <span id="errorpasswordconfirm"  class="error-msg"></span>
+                  </div>
+
+                  <div class="form-group">
+                    <div class="row">
+                      <div class="col-sm-6 col-sm-offset-3">
+                        <button class="form-control btn btn-log registration-submit" id="registration_submit"> Register</i></button>
+                      </div>
+                    </div>
+                  </div>
+
+                </form>
               </div>
+              
+         <div class="col-lg-12">
+             <form class="forgot-form" style="display: none;" name="forgot_password_form" id="forgot_password_form"   method="post"  > {{ csrf_field() }}
+                 <div class="form-group">
+                    <input type="text" name="email" id="email" tabindex="1" class="form-control" placeholder="Email ID" >
+                    <span id="forgotpass"  class="text-danger"></span>
+                  </div>
+                    <div class="form-group">
+                    <div class="row">
+                      <div class="col-sm-3 col-sm-offset-3">
+                        <button class="form-control btn btn-log " id="f_password">Submit</button>
+                        
+                      </div>
+                      <a href="#" id="back_id" class="btn btn-default">Back</a>
+                    </div>
 
 
-
-
-
-             <div class='modal-body-right'>
-                <div class="modal-social-icons">
-                  <a href="javascript:void(0);" onclick="fbLogin();" id="fbid" class="btn btn-default facebook"> <i class="fa fa-facebook modal-icons"></i> Sign In with Facebook </a>
-
-                <!--   <div class="g-signin2 google_ID" id="googleID" data-longtitle="true" data-onsuccess="Google_signIn" data-theme="light" data-width="200"></div> -->
-
-                   <a href="#" class="btn btn-default google" onclick="login();"> <i class="fa fa-google-plus modal-icons"></i> Sign In with Google </a>
-
-                   <!-- <input type="button"  value="Login" onclick="login()" /> -->
-                   <!-- <input type="button"  value="Logout" onclick="logout()" /> -->
-
-                    <?php if(Session::get('is_login')){?>
-                       <input type="hidden" name="session_ID" id="session_ID" value="<?php echo Session::get('name');?>">
-                      <?php }else{?>
-                         <input type="hidden" name="session_ID" id="session_ID" value="0">
-                      <?php } ?>
-                
-                </div> 
-              </div>  
-              <div id='center-line'> OR </div>
-            </div>                                                        
-            <div class="clearfix"></div>
-
-            <div class="form-group modal-register-btn">
-              <button id="registration" onclick="registration()" class="btn btn-default"> New User Please Register</button>
+                  </div>           
+              </form>
+          </div>
+              
+              
             </div>
           </div>
-          <div class="clearfix"></div>
-          <div class="modal-footer login_modal_footer">
-          </div>
-        
-      </div>
-
-<div style="display:none;" id="registration1">
-             <!-- registration-->
- <div class="modal-content">
-       
-<div class="modal-header login_modal_header">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            <h2 class="modal-title" id="myModalLabel">Registration </h2>
-          </div>
-
-        <div class="modal-body">
-          <form name="registration_form" id="registration_form"   method="post"  >
-          {{ csrf_field() }}
-
-               <div><fieldset>
-        <input class="newsletter-name" name="name"  placeholder="Name" autofocus="autofocus">
-         <div  class="text-danger" id="errorName"></div>
-          </fieldset>
-         
         </div>
-
-          <div><fieldset>
-          <input class="newsletter-name" type="email" placeholder="Email" id="reg_email" name="email" >
-          <div  class="text-danger" id="errorEmail"></div>
-          </fieldset>                 
-          </div>
-          
-          <div><fieldset>
-            <input type="text" class="newsletter-name" name="contact" pattern="[789][0-9]{9}"  maxlength="10" placeholder="Mobile Number" >
-              <div class="text-danger" id="errorcontact"></div>
-          </fieldset>                 
-          </div>
-
-      <div><fieldset>
-        <input type="password" class="newsletter-name" id="password"  name="password" placeholder="Password" >
-         <div class="text-danger" id="errorpassword"></div>
-          </fieldset>
-      </div>
-
-      <div>
-
-      <fieldset>
-
-         <input type="password" class="newsletter-name"  name="password_confirm" id="password_confirm" placeholder="Password Confirm " >
-
-        
-         <div class="text-danger" id="errorpasswordconfirm"></div>
-       </fieldset>
-
-      </div>
-                  <div>
-                      <a class="btn btn-primary btn-outline with-arrow registration-submit" id="registration_submit">Submit<i class="icon-arrow-right"></i></a>
-                  </div>
-      </form>
-
-         <div class='msg' style="display: none;"><p>Thanks. You are successfully registered.</p></div>
-        </div>
-        <div class="modal-footer">
-                           <button type="button" class="btn btn-default" data-dismiss="modal">Close
-                           </button>
-                            <div style="float: left;" id="Login-here" class="btn btn-primary btn-outline with-arrow">   <a href="javascript:void(0)"  onclick="backf()"> Login here</a>
-                            </div>
-        </div>
-
-     </div>
-</div>
-
-     <!-- forgot password-->
-<div id="forgotpassword" style="display: none;">
-        
- <div class="modal-content">
-       
-<div class="modal-header ">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            <h2 class="modal-title" id="myModalLabel">Forgot password  </h2>
-          </div>
-
-        <div class="modal-body">
-        <form name="forgot_password_form" id="forgot_password_form"   method="post"  >
-          {{ csrf_field() }}
-               <div><fieldset>
-        <input class="newsletter-name" name="email"  id="email" placeholder="Email ID"  >
-         <div  class="text-danger" id="forgotpass"></div>
-          </fieldset>
-        </div>
-
-                  <div>
-                      <input class="btn btn-primary btn-outline with-arrow " type="submit" id="f_password">
-                  </div>
-      </form>
-
-         <div class='forgotps' style="display: none;"><p>Thanks. You are successfully registered.</p></div>
-        </div>
-        <div class="modal-footer">
-                           <button type="button" class="btn btn-default" data-dismiss="modal">Close
-                           </button>
-                         
-        </div>
-
-     </div>
-</div>
-
- <!-- forgot password  end-->
-
-      </div>
       
+
+           </div>
+         </div>
+       </div>
     </div>
-  </div>
-  <!-- Modal  Sign in end -->
+</div>
+
 

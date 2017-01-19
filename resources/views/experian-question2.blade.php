@@ -42,18 +42,18 @@
 					//refer http://php.net/manual/en/domdocument.getelementbyid.php
 
 					$html_data=$result->showHtmlReportForCreditReport;
-			
+					print_r($html_data);
 					$doc = new DomDocument;
 					 $doc->validateOnParse = true;
 					 libxml_use_internal_errors(true);
 					$doc->loadHTML($html_data);
 					libxml_use_internal_errors(false);
 					
-					 $xml=$doc->getElementsByTagName('input')->item(0);
-					 $xml_doc = new DomDocument;
-					 $xml_doc->validateOnParse = true;
-					$xml_doc->loadXML($xml);
-					print_r($xml_doc);exit();
+					//  $xml=$doc->getElementsByTagName('input')->item(0);
+					//  $xml_doc = new DomDocument;
+					//  $xml_doc->validateOnParse = true;
+					// $xml_doc->loadXML($xml);
+					print_r($doc);exit();
 					//print_r($html_data);// "<h1> Your Credit Score is :: ".serialize($xml)."</h1>";
 				}
 

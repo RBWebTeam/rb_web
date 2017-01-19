@@ -8,7 +8,8 @@
           <div style="display: block;" id="login">
              <!-- login-->
          
-      <div class="modal-body login-modal">
+      <div class="modal-body login-modal">  
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
        <div class="panel pan-log">
           <div class="panel-heading">
             <div class="row" id="forgot-password-hide">
@@ -24,9 +25,11 @@
                 <h3>Forgot Password</h3>
               </div>
             </div>
-
             <hr>
           </div>
+
+
+
           <div class="panel-body">
             <div class="row">
               <div class="col-lg-6">
@@ -96,7 +99,7 @@
                   <div class="form-group">
                     <div class="row">
                       <div class="col-sm-6 col-sm-offset-3">
-                        <button class="form-control btn btn-log registration-submit" id="registration_submit">Submit<i class="icon-arrow-right"></i></button>
+                        <button class="form-control btn btn-log registration-submit" id="registration_submit"> Register</i></button>
                       </div>
                     </div>
                   </div>
@@ -112,10 +115,14 @@
                   </div>
                     <div class="form-group">
                     <div class="row">
-                      <div class="col-sm-6 col-sm-offset-3">
-                        <button class="form-control btn btn-log " id="f_password">Submit<i class="icon-arrow-right"></i></button>
+                      <div class="col-sm-3 col-sm-offset-3">
+                        <button class="form-control btn btn-log " id="f_password">Submit</button>
+                        
                       </div>
+                      <a href="#" id="back_id" class="btn btn-default">Back</a>
                     </div>
+
+
                   </div>           
               </form>
           </div>
@@ -124,11 +131,7 @@
             </div>
           </div>
         </div>
-
-            <div class="modal-footer">
-                           <button type="button" class="btn btn-default" data-dismiss="modal">Close
-                           </button>                
-            </div>      
+      
 
            </div>
          </div>

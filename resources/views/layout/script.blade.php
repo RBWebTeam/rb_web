@@ -1591,6 +1591,17 @@ function isNumberKey(evt)
     e.preventDefault();
   });
 
+ $('#back_id').click(function(e) {
+    $(".login-form").delay(100).fadeIn(100);
+    $(".register-form").fadeOut(100);
+    $("#forgot-password-hide").delay(100).fadeIn(100);
+    $("#forgot-password-show").fadeOut(100);
+    $(".social-ico").fadeIn(100);
+    $(".forgot-form").fadeOut(100);
+    $(this).addClass('active');
+    e.preventDefault();
+  });
+
 
 });
 

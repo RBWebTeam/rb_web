@@ -1846,3 +1846,9 @@ body {background:#eee;}
 
 
 .error-msg {color:#ff0000;font-size:12px;margin-top: -13px; position: absolute; }
+
+/*404 error*/ 
+.error-img{margin:0 auto;}
+.error-template {padding: 40px 15px;text-align: center;}
+.error-actions {margin-top:15px;margin-bottom:15px;}
+.error-actions .btn { margin-right:10px; }

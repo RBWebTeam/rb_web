@@ -5,7 +5,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use DB;
 use Response;
-use App\bank_quote_api_request;
+use App\experian_request_model;
 class ExperianController extends Controller
 {
 
@@ -15,6 +15,8 @@ class ExperianController extends Controller
         $data=json_encode($post_data);
       //  print "<pre>";
         // print_r($post_data);exit();
+        $save=new experian_request_model(); 
+        $id=$save->store($req);
     	$url = "http://api.rupeeboss.com/CreditAPI.svc/LandingPageSubmit";    
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_VERBOSE, 1);

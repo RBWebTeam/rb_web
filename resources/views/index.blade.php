@@ -296,7 +296,7 @@
 						<div class="v-align md-higt">
 							<div class="v-align-middle">
 								<h3 class="title">Dedicated Service</h3>
-								<p class="p-clr">We Listen, We Discuss then we Advise the Best solution to fit your R+5`equirements.</p>
+								<p class="p-clr">We Listen, We Discuss then we Advise the Best solution to fit your Requirements.</p>
                                 <br>
 							</div>
 						</div>

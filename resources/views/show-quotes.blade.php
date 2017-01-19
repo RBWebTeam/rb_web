@@ -70,16 +70,16 @@
 <table width="100%" border="1" class="tbl">
   <tr>
     <td width="9%" class="upper">Compare</td>
-    <td width="16%" class="upper"><span style="color:red;">{{$q->Bank_Name}}</span></td>
+    <td width="16%" class="upper"><span style="color:red;"><img src="{{$q->Bank_Logo}}" class="img-responsive"></span></td>
     <td width="16%" class="upper">Interst Rate</td>
     <td width="16%" class="upper">Loan Amount</td>
     <td width="18%" class="upper">emi</td>
-    <td width="17%"><button>Apply Online</button></td>
+    <td width="17%"><a class="btn btn-success" href="http://beta.erp.rupeeboss.com/homeloan/Home_Loan_Application_Form.aspx?appid=0&qoutid={{$quote_id}}&BankId={{$q->Bank_Id}}">Apply Online</a></td>
   </tr>
   <tr>
     <td>
-    <input type="checkbox" name="checkbox" value="{{$q->Bank_Name}}" class="{{$q->Bank_Id}}"  data-id="{{$q->Bank_Id}}"/></td>
-
+    <input type="checkbox" name="checkbox" value="{{$q->Bank_Name}}"  class="{{$q->Bank_Id}}"  data-id="{{$q->Bank_Id}}"/></td>
+    <input type="hidden" name="logo" class="logo" value="{{$q->Bank_Logo }}">
     <input type="hidden" name="interst" class="interst" value="{{$q->roi }}">
     <input type="hidden" name="LoanRequired" class="LoanRequired" value="{{$q->LoanRequired }}">
     <input type="hidden" name="emi" class="emi" value="{{$q->emi }}">
@@ -212,6 +212,7 @@ $('input[name="checkbox"]').change(function(){
    var id=$(this).attr("data-id");
    var tid=id;
    var closest=$(this).closest('tr');
+   var logo =closest.find('.logo').val();
    var pinterst =closest.find('.interst').val();
    var LoanRequired =closest.find('.LoanRequired').val();
    var processingfee =closest.find('.processingfee').val();
@@ -223,7 +224,7 @@ $('input[name="checkbox"]').change(function(){
 
   if (this.checked) {
 
-       var span="<div class='col-md-2 col img-c white-bg' id='" +id + "'><input type='hidden' name='bank_id[]' id='"+id+"' value='"+id+"' ><span class='close btnspan' >×</span><img src='images/kotak.png' width='50' height='46'>" + this.value + "</div>";
+       var span="<div class='col-md-2 col img-c white-bg' id='" +id + "'><input type='hidden' name='bank_id[]' id='"+id+"' value='"+id+"' ><span class='close btnspan' >×</span><img src='"+logo+"'class='img-responsive' width='100' height='80'>" + this.value + "</div>";
 
        var  tables="<tbody style='float:left;' id='" +tid+ "'><tr><td>"+this.value+"</td></tr><tr><td>"+LoanRequired+"</td></tr><tr><td>"+pinterst+"</td></tr><tr><td>"+emi+"(for "+LoanTenure +" years)</td></tr><tr><td>"+processingfee+"</td></tr><tr><td>"+Pre_Closer_Fixed+"</td></tr><tr><td><a href='#' class='btn btn-primary btn-outline'>Apply Now</a></td></tr></tbody>" ;
 

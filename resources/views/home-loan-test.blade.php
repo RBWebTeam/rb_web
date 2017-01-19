@@ -6,7 +6,7 @@
 		
 		<div class="liza col-md-8"  id="step-1" style="display: block;">
 			<!--- liza Step First   - -->
-			<div class="col-md-12 text-center"><h4>Apply for an Easy Loan against property in 30 seconds</h4></div>
+			<div class="col-md-12 text-center"><h4>Apply for an Easy Home Loan in 30 seconds</h4></div>
 			<p class="text-center">Step 1 of 2</p> 
 			<!--first question--> 
 			<div class="col-md-12 text-center animate-box cont" id="q1">
@@ -55,10 +55,11 @@
 								<input type="tel" id="obligation" name="obligation"  onkeyup="changeText_new('obligation','q5')"  onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="1,00,000" tabindex="1">
 							</h3> 
 						</div>
-						<div class="col-md-12 text-center animate-box cont" style="display: none" id="q5">
-							<h3>I required loan of 
-								<input type="tel" id="loan_amount" name="loan_amount"  onkeyup="changeText_new('loan_amount','q_prop')"  onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="1,00,000" tabindex="1">
-							</h3> 
+						<div class="col-md-12 text-center animate-box cont" style="display:none;" id="q5" >
+							
+				             <h3>I have been living in
+							<input type="text" class="search_city input-pad" id='city_name' name='city_name' onblur="changeTest_new('city_name','q_prop')" placeholder='your city'>city</h3>
+							
 						</div>
 						<div class="col-md-12 text-center animate-box cont" style="display: none" id="q_prop">
 							<h3>and my property cost is
@@ -79,11 +80,10 @@
 								<input type="text" id="dob" name="dob" class="input-pad company-nm1 lastReporteddate" onchange="changeTest_new(this,'q9')">
 							</h3>
 						</div>
-						<div class="col-md-12 text-center animate-box cont" style="display:none;" id="q9" >
-							
-				             <h3>I have been living in
-							<input type="text" class="search_city input-pad" id='city_name' name='city_name' onfocus="changeTest_new('city_name','step_2_btn')" placeholder='your city'>city</h3>
-							
+						<div class="col-md-12 text-center animate-box cont" style="display: none" id="q9">
+							<h3>I required loan of 
+								<input type="tel" id="loan_amount" name="loan_amount"  onkeyup="changeText_new('loan_amount','step_2_btn')"  onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="1,00,000" tabindex="1" >
+							</h3> 
 						</div>
 						
 

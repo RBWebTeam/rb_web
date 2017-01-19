@@ -15,6 +15,7 @@
 <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
 
 
+
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
 
 <!-- <script src="https://apis.google.com/js/platform.js" async defer></script> -->
@@ -194,6 +195,7 @@ $(".lastReporteddate").datepicker({ dateFormat: "yy-mm-dd",
            $('#pop1').append( "<p>Enter your gross annual reciept</p>" );
         }else{
            $('#pop1').append( "<p>Please Proceed</p>" );
+
         }
         return false;
       }
@@ -1192,7 +1194,7 @@ function emibreakup(E,P,r,n)
         }else  if(val=='q_prop'){
            $('#pop1').append( "<p>Your property price is</p>" );
         }else  if(val=='q5'){
-           $('#pop1').append( "<p>Amount you want to borrow</p>" );
+           $('#pop1').append( "<p>Where do you reside</p>" );
         }else if(val=='exp'){
           $('#pop1').append( "<p>Entr your expierience in current company</p>" );
         }else if(val=='total_exp'){
@@ -1613,7 +1615,7 @@ function isNumberKey(evt)
      <span id='pls_wait' style="display: none;color: red;">Please wait .....</span>
      <span id='pwd_match' style="display: none; color:red;">Password do not match.</span>
 
-     <span id="msg_err_email"  style="display: none; color:red;">Email id already exists.</span>
+     <span id="msg_err_email"  style="display: none; color:red;"><center>Email id already exists.</center></span>
     </div>
 
   </div>

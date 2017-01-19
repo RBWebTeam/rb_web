@@ -23,7 +23,7 @@
                     <div class="form-group col-sm-6">
                         <label class="control-label col-sm-2" for="contact">Contact:</label>
                     <div class="">
-                        <input type="tel" class="newsletter-name" name="contact" onkeypress="return fnAllowNumeric(event)" placeholder="Number" required>
+                        <input type="tel" class="newsletter-name" name="contact" onkeypress="return fnAllowNumeric(event)" placeholder="Number" minlength="10" maxlength="10" required>
                     </div>
                     </div>
                     <div class="form-group">        

@@ -70,7 +70,7 @@
 <table width="100%" border="1" class="tbl">
   <tr>
     <td width="9%" class="upper">Compare</td>
-    <td width="16%" class="upper"><span style="color:red;">{{$q->Bank_Name}}</span></td>
+    <td width="16%" class="upper"><span style="color:red;"><img src="{{ $q->Bank_Logo}}" class="img-responsive"></span></td>
     <td width="16%" class="upper">Interst Rate</td>
     <td width="16%" class="upper">Loan Amount</td>
     <td width="18%" class="upper">emi</td>
@@ -78,7 +78,7 @@
   </tr>
   <tr>
     <td>
-    <input type="checkbox" name="checkbox" value="{{$q->Bank_Name}}" class="{{$q->Bank_Id}}"  data-id="{{$q->Bank_Id}}"/></td>
+    <input type="checkbox" name="checkbox" value="{{$q->Bank_Name}}"  class="{{$q->Bank_Id}}"  data-id="{{$q->Bank_Id}}"/></td>
 
     <input type="hidden" name="interst" class="interst" value="{{$q->roi }}">
     <input type="hidden" name="LoanRequired" class="LoanRequired" value="{{$q->LoanRequired }}">
@@ -223,7 +223,7 @@ $('input[name="checkbox"]').change(function(){
 
   if (this.checked) {
 
-       var span="<div class='col-md-2 col img-c white-bg' id='" +id + "'><input type='hidden' name='bank_id[]' id='"+id+"' value='"+id+"' ><span class='close btnspan' >×</span><img src='images/kotak.png' width='50' height='46'>" + this.value + "</div>";
+       var span="<div class='col-md-2 col img-c white-bg' id='" +id + "'><input type='hidden' name='bank_id[]' id='"+id+"' value='"+id+"' ><span class='close btnspan' >×</span><img src='{{$q->Bank_Logo}}'class='img-responsive' width='100' height='80'>" + this.value + "</div>";
 
        var  tables="<tbody style='float:left;' id='" +tid+ "'><tr><td>"+this.value+"</td></tr><tr><td>"+LoanRequired+"</td></tr><tr><td>"+pinterst+"</td></tr><tr><td>"+emi+"(for "+LoanTenure +" years)</td></tr><tr><td>"+processingfee+"</td></tr><tr><td>"+Pre_Closer_Fixed+"</td></tr><tr><td><a href='#' class='btn btn-primary btn-outline'>Apply Now</a></td></tr></tbody>" ;
 

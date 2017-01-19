@@ -69,12 +69,12 @@
  <div class="table-responsive">
 <table width="100%" border="1" class="tbl">
   <tr>
-    <td width="9%" class="upper">Compare</td>
+    <td width="9%" class="upper">Compare</td>Bank_Id
     <td width="16%" class="upper"><span style="color:red;"><img src="{{ $q->Bank_Logo}}" class="img-responsive"></span></td>
     <td width="16%" class="upper">Interst Rate</td>
     <td width="16%" class="upper">Loan Amount</td>
     <td width="18%" class="upper">emi</td>
-    <td width="17%"><button>Apply Online</button></td>
+    <td width="17%"><a class="btn btn-success" href="http://beta.erp.rupeeboss.com/homeloan/Home_Loan_Application_Form.aspx?appid=0&qoutid={{$quote_id}}&BankId={{$q->Bank_Id}}">Apply Online</a></td>
   </tr>
   <tr>
     <td>

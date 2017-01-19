@@ -134,7 +134,7 @@
 								 <li>More convenient</li>
 							</ul>
 							
-							<a class="btn btn-primary btn-outline with-arrow" href="{{URL::to('/apply-sme-loan')}}">Apply Online
+							<a class="btn btn-primary btn-outline with-arrow" href="{{URL::to('contact-us')}}">Apply Online
 							<i class="icon-arrow-right"></i></a>
 						</div>
 					</div>

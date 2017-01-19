@@ -10,6 +10,7 @@
          
       <div class="modal-body login-modal">  
     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+	<br>
        <div class="panel pan-log">
           <div class="panel-heading">
             <div class="row" id="forgot-password-hide">

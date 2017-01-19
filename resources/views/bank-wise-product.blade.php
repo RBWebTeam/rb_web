@@ -8,9 +8,9 @@
 	</div>
 	<div class="col-md-8 bg-white bnkpg">
 		<div class="text-center bankpg">
-		<img src="{{URL::to('images/bank/axis.png')}}" class="img-responsive" />
+		<img src="{{$bank_banner}}" class="img-responsive" />
 		
-		 <h3>{{$bank_name}} Home Loan</h3>
+		 
 		</div>	
 	  	</div>
 

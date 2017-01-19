@@ -262,7 +262,7 @@ label {
 									<div class="loan-tenure">
 									<center>
 										<div class="type-cover" >
-											<p>Remaning Tenure</p>
+											<p>Remaining Tenure</p>
 										</div>
 									</center>
 									<div class="text-center">

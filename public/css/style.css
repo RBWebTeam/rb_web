@@ -1726,3 +1726,120 @@ input[type="radio"] {margin:0px;}
 
 
 
+/*Login and Registration page css
+*/
+
+{
+    padding-top: 90px;
+}
+body {background:#eee;}
+
+.pan-log>.panel-heading {
+  color: #00415d;
+  background-color: #fff;
+  border-color: #fff;
+  text-align:center;
+}
+.pan-log>.panel-heading a{
+  text-decoration: none;
+  color: #666;
+  
+  font-size: 15px;
+  text-transform:uppercase;
+  -webkit-transition: all 0.1s linear;
+  -moz-transition: all 0.1s linear;
+  transition: all 0.1s linear;
+}
+.pan-log>.panel-heading a.active{
+  color: #029f5b;
+  font-size: 18px;
+  
+}
+
+.pan-log>.panel-heading hr{
+  margin-top: 10px;
+  margin-bottom: 0px;
+  clear: both;
+  border:1px solid #eee;
+  height: 1px;
+
+}
+.pan-log input[type="text"],.pan-log input[type="email"],.pan-log input[type="password"] {
+  height: 45px;
+  border: 1px solid #ddd;
+  font-size: 16px;
+  -webkit-transition: all 0.1s linear;
+  -moz-transition: all 0.1s linear;
+  transition: all 0.1s linear;
+}
+.pan-log input:hover,
+.pan-log input:focus {
+  outline:none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  border-color: #ccc;
+}
+.btn-log {
+  background-color: #59B2E0;
+  outline: none;
+  color: #fff;
+  font-size: 14px;
+  height: auto;
+  font-weight: normal;
+  padding: 14px 0;
+  text-transform: uppercase;
+  border-color: #59B2E6;
+}
+.btn-log:hover,
+.btn-log:focus {
+  color: #fff;
+  background-color: #53A3CD;
+  border-color: #53A3CD;
+}
+.forgot-password {
+  text-decoration: underline;
+  color: #888;
+}
+.forgot-password:hover,
+.forgot-password:focus {
+  text-decoration: underline;
+  color: #666;
+}
+
+.btn-register {
+  background-color: #1CB94E;
+  outline: none;
+  color: #fff;
+  font-size: 14px;
+  height: auto;
+  font-weight: normal;
+  padding: 14px 0;
+  text-transform: uppercase;
+  border-color: #1CB94A;
+}
+.btn-register:hover,
+.btn-register:focus {
+  color: #fff;
+  background-color: #1CA347;
+  border-color: #1CA347;
+}
+.facebook, .facebook {
+    background-color: #3b5999;
+  display:block;
+  margin-top:2px;
+   margin-bottom:15px;
+  padding: 10px 0px;
+    border: 2px solid #3b5999;
+    color: #fff;
+}
+.google, .google:hover {
+    background-color: #dd4b39;
+  display:block;
+  padding: 10px 0px;
+    border: 2px solid #dd4b39;
+    color: #fff;
+}
+
+
+.error-msg {color:#ff0000;font-size:12px;margin-top: -13px; position: absolute; }

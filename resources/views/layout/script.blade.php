@@ -1396,7 +1396,7 @@ function getFbUserData(){
             url: "{{url('facebook/login')}}",
             success: function(msg) {
              if(msg.error==1){
-               var element=document.getElementById("session_ID").value;
+              
                   $("#log_popup").modal('hide');
                   $("#refreshID").load(location.href + " #refreshID");
                  
@@ -1555,6 +1555,47 @@ function isNumberKey(evt)
        }
 
 </script>
+
+<!--- Login & Regitration -->
+<script>
+   $(function() {
+
+    $('#login-form-link').click(function(e) {
+    $(".login-form").delay(100).fadeIn(100);
+    $(".register-form").fadeOut(100);
+    $('#register-form-link').removeClass('active');
+    $(".social-ico").fadeIn(100);
+    $(".forgot-form").fadeOut(100);
+    $(this).addClass('active');
+    e.preventDefault();
+  });
+    $('#register-form-link').click(function(e) {
+    $(".register-form").delay(100).fadeIn(100);
+    $(".login-form").fadeOut(100); 
+    $(".social-ico").fadeOut(100);
+     $(".forgot-form").fadeOut(100);
+    $('#login-form-link').removeClass('active');
+    $(this).addClass('active');
+    e.preventDefault();
+  });
+
+  $('#forgot-form-link').click(function(e) {
+    $(".forgot-form").delay(100).fadeIn(100);
+    $(".login-form").fadeOut(100); 
+    $(".social-ico").fadeOut(100);
+    $("#forgot-password-hide").fadeOut(100);
+    $("#forgot-password-show").delay(100).fadeIn(100);
+    $('#login-form-link').removeClass('active');
+    $('#register-form-link').removeClass('active');
+    $(this).addClass('active');
+    e.preventDefault();
+  });
+
+
+});
+
+</script>
+
 
 
 <!-- post end -->

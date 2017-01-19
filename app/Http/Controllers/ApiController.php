@@ -18,7 +18,7 @@ class ApiController extends Controller
 			$new_data=$data->getData()->data;
 		}
 		else{
-			$new_data='';
+			$new_data=new stdClass();
 			$status_Id=1;
 			$msg=" Something went wrong.";
 			

@@ -35,22 +35,29 @@
 
 			</form>
 			<?php }else{?>
-			<p>Response :: {{$result->responseJson}}</p>
+			<p>Sorry To Inform, but something went south.<br> Response :: {{$result->responseJson}}</p>
+<a class="btn btn-primary btn-outline with-arrow next_qest1" >submit<i class="icon-arrow-right"></i></a>
 
 
 			<?php
 				if($result->responseJson=="passedReport"){
 					//refer http://php.net/manual/en/domdocument.getelementbyid.php
+
 					$html_data=$result->showHtmlReportForCreditReport;
-					$doc = new DomDocument;
-					$doc->validateOnParse = true;
-					$doc->loadHTML($html_data);
-					$xml=$doc->getElementsByTagName('input')->tagName.val();
-					$xml_doc = new DomDocument;
-					$xml_doc->validateOnParse = true;
-					$xml_doc->loadXML($xml);
-					$score=$xml_doc->getElementsByTagName('Score')->tagName.val();
-					echo "<h1> Your Credit Score is :: ".$score."</h1>";
+			
+					// $html_data="<html>
+					// <input type='hidden' value='<xml><score>2222</score></xml>'>
+					// </html>";
+					// $x="<xml><score>2222</score></xml>";
+					// $doc = new DomDocument;
+					// $doc->validateOnParse = true;
+					// $doc->loadHTML($html_data);
+					// $xml=$doc->getElementsByTagName('input')->item(0);
+					// $xml_doc = new DomDocument;
+					// $xml_doc->validateOnParse = true;
+					// $xml_doc->loadXML($xml);
+					// $score=$xml_doc->getElementsByTagName('Score')-> item(0) ;
+					print_r($html_data);// "<h1> Your Credit Score is :: ".serialize($xml)."</h1>";
 				}
 
 			 }?>

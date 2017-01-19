@@ -68,7 +68,7 @@
 						</div>
 						<div class="col-md-12 text-center animate-box cont" style="display: none" id="q6">
 							<h3>Loan tenure
-								<input type="tel" id="loan_tenure" name="loan_tenure"  onkeyup="changeText_new('loan_tenure','q7')"  onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="20" tabindex="1" maxlength="2" >
+								<input type="tel" id="loan_tenure" name="loan_tenure" onkeyress="changeText_new('loan_tenure','q7'); return fnAllowNumeric(event)" class="input-pad" placeholder="20" tabindex="1" maxlength="2" >
 							</h3> 
 						</div>
 						<div class="col-md-12 text-center animate-box cont1" style="display: none" id="q7"><h3>I am

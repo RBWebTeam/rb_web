@@ -102,7 +102,8 @@
 								 <li>Compare with 100 banks.</li>
 							</ul>
 						
-							<a class="btn btn-primary btn-outline with-arrow" href="{{URL::to('get-loan')}}/{{$id->Product_Id}}" >Compare<i class="icon-arrow-right"></i></a>
+							<!-- <a class="btn btn-primary btn-outline with-arrow" href="{{URL::to('get-loan')}}/{{$id->Product_Id}}" >Compare<i class="icon-arrow-right"></i></a> -->
+							<a class="btn btn-primary btn-outline with-arrow" href="{{URL::to('contact-us')}}" >Compare<i class="icon-arrow-right"></i></a>
 						</div>
 					</div>
 

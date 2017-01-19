@@ -1625,8 +1625,11 @@ function isNumberKey(evt)
         <h4 class="modal-title text-center"><b>Registration Form</b></h4>
       </div>
      <br>
+	
    <div id="send_otp">  
+   
     <form class="form-horizontal" id="login_form_process" method="POST">
+	
      {{ csrf_field() }}
    
     <div class="form-group">
@@ -1655,7 +1658,7 @@ function isNumberKey(evt)
       </div>
   </div>
   <div class="form-group">
-     <label for="set_pwd_confirm" class="col-sm-3 control-label">Password</label>
+     <label for="set_pwd_confirm" class="col-sm-3 control-label">Confirm Password</label>
     <div class="col-sm-6">
       <input type="password" class="form-control" id="set_pwd_confirm" name="set_pwd_confirm" placeholder="Confirm Password" required maxlength="10" minlength="6" >
       </div>
@@ -1672,15 +1675,17 @@ function isNumberKey(evt)
 
   </div>
   <div class="form-group ">
-    <div class="col-sm-offset-3 col-sm-3">
+    <div class="col-sm-offset-3 col-sm-6">
     <input type="hidden" name="product" id="product_login" value="">
       <button class="btn btn-default"  id="send_otp_button"  >Send OTP</button>
+	  <a class="btn btn-default"  id="already_user" data-toggle="modal" data-target="#log_popup" data-dismiss="modal" >Already User</a>
     </div>
-    <div class="col-sm-3">
-      <a class="btn btn-default"  id="already_user" data-toggle="modal" data-target="#log_popup" data-dismiss="modal" >Already User</a>
+ 
+      
     </div>
-  </div>
+ 
   </form>
+  
   </div>
       
     </div>

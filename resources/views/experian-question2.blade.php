@@ -34,30 +34,27 @@
 
 
 			</form>
-			<?php }else{?>
-			<p>Sorry To Inform, but something went south.<br> Response :: {{$result->responseJson}}</p>
-<a class="btn btn-primary btn-outline with-arrow next_qest1" >submit<i class="icon-arrow-right"></i></a>
-
-
+			<?php }else if($result->responseJson!="passedReport"){?>
+			<p>Sorry To Inform, but something went wrong	.<br> 
+			 Response :: {{$result->responseJson}}</p>
 			<?php
 				if($result->responseJson=="passedReport"){
 					//refer http://php.net/manual/en/domdocument.getelementbyid.php
 
 					$html_data=$result->showHtmlReportForCreditReport;
-			
-					// $html_data="<html>
-					// <input type='hidden' value='<xml><score>2222</score></xml>'>
-					// </html>";
-					// $x="<xml><score>2222</score></xml>";
-					// $doc = new DomDocument;
-					// $doc->validateOnParse = true;
-					// $doc->loadHTML($html_data);
-					// $xml=$doc->getElementsByTagName('input')->item(0);
-					// $xml_doc = new DomDocument;
-					// $xml_doc->validateOnParse = true;
+					print_r($html_data);
+					$doc = new DomDocument;
+					 $doc->validateOnParse = true;
+					 libxml_use_internal_errors(true);
+					$doc->loadHTML($html_data);
+					libxml_use_internal_errors(false);
+					
+					//  $xml=$doc->getElementsByTagName('input')->item(0);
+					//  $xml_doc = new DomDocument;
+					//  $xml_doc->validateOnParse = true;
 					// $xml_doc->loadXML($xml);
-					// $score=$xml_doc->getElementsByTagName('Score')-> item(0) ;
-					print_r($html_data);// "<h1> Your Credit Score is :: ".serialize($xml)."</h1>";
+					print_r($doc);exit();
+					//print_r($html_data);// "<h1> Your Credit Score is :: ".serialize($xml)."</h1>";
 				}
 
 			 }?>

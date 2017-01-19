@@ -59,42 +59,9 @@
 
 }
 
-input[type=text] {
-  border: 1px solid #10A447;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
-  padding: 5px 10px;
-  margin-top: -15px;
-  text-align: center;
-  background-color: #ffffff;
-  width: 120px;
-  color: #2A3137;
-  font-size: 18px;
-  font-weight: bold;
-  margin-top: 5px;
-  margin-left: 5px;
-}
 
-.minus, .plus {
-  display: inline-block;
-  float: left;
-  border: 1px solid #aaa;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
-  padding: 5px 10px;
-  margin-top: -15px;
-  text-align: center;
-  background-color: #e3e3e3;
-  color: #333;
-  font-size: 18px;
-  font-weight: bold;
-  margin-left: 5px;
-  cursor: pointer;
-  width: 10px;
-  margin-top: 5px;
-}
+
+
 	 
 .price-box {
 	margin: 0 auto;
@@ -307,8 +274,7 @@ label {
 
 									                <div class="col-sm-12" style="margin-top:30px;">
 									                    <div id="slider" onchange="myfun()"></div>
-									                    <div id="minus1" class="minus"><span>-</span></div>
-    													<div id="plus1" class="plus">+</div>
+									                    <span class="glyphicon glyphicon-minus" style="float:left"></span><span class="glyphicon glyphicon-plus" style="float:right"></span> 
 									                </div>
 									           
 									           
@@ -595,23 +561,7 @@ label {
             }
 
         });
-        // plus-minus
-        $("#plus1").click(function () {
-    var value = $("#slider").val();
-    console.log(value)
-    //var step = $("#slider-range-max").slider("option", "step");
-
-    $("#slider").slider("value", value + 1);
-  });
-
-  $("#minus1").click(function () {
-    var value = $("#slider-range-max").slider("value")
-    var step = $("#slider-range-max").slider("option", "step");
-
-    $("#slider-range-max").slider("value", value - step);
-  });
-  // end of plus-minus
-
+        
         //Added, set initial value.
         $("#amount").val(0);
         $("#amount-label").text(0);

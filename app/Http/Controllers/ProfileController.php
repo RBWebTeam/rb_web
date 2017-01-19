@@ -133,6 +133,16 @@ public function  change_password(Request $req){
             }
                 
 }
-  
+  public function applyonline(Request $req){
+    $request = $req->all();
+    $app = $request['appid'];
+    $quote = $request['qoutid'];
+    $bank = $request['BankId'];
+    $email=Session::get('email');
+    $update = DB::table('bank_quote_api_request')->where('ID', $quote)->where('Email', $email)->update(array('bank_id' => $bank));
+    if($update){
+      return redirect()->away('http://beta.erp.rupeeboss.com/homeloan/Home_Loan_Application_Form.aspx?appid=0&qoutid='.$quote.'&BankId='.$bank.'');
+    }
+  }
 
 }

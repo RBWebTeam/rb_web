@@ -104,7 +104,7 @@
 							<ul>
 							     <li>Check & compare loans from thousand of banks</li>
 								 <li>compare PSU & Private rates</li>
-								 <li>Comapre with 100 banks.</li>
+								 <li>Compare with 100 banks.</li>
 							</ul>
 						
 							<a class="btn btn-primary btn-outline with-arrow" href="{{URL::to('personal-loan')}}" >Compare<i class="icon-arrow-right"></i></a>
@@ -134,7 +134,7 @@
 								 <li>More convenient</li>
 							</ul>
 							
-							<a class="btn btn-primary btn-outline with-arrow" href="{{URL::to('/apply-sme-loan')}}">Apply Online
+							<a class="btn btn-primary btn-outline with-arrow" href="{{URL::to('contact-us')}}">Apply Online
 							<i class="icon-arrow-right"></i></a>
 						</div>
 					</div>

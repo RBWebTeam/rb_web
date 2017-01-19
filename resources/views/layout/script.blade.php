@@ -15,6 +15,7 @@
 <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
 
 
+
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
 
 <!-- <script src="https://apis.google.com/js/platform.js" async defer></script> -->
@@ -194,6 +195,7 @@ $(".lastReporteddate").datepicker({ dateFormat: "yy-mm-dd",
            $('#pop1').append( "<p>Enter your gross annual reciept</p>" );
         }else{
            $('#pop1').append( "<p>Please Proceed</p>" );
+
         }
         return false;
       }
@@ -1192,7 +1194,7 @@ function emibreakup(E,P,r,n)
         }else  if(val=='q_prop'){
            $('#pop1').append( "<p>Your property price is</p>" );
         }else  if(val=='q5'){
-           $('#pop1').append( "<p>Amount you want to borrow</p>" );
+           $('#pop1').append( "<p>Where do you reside</p>" );
         }else if(val=='exp'){
           $('#pop1').append( "<p>Entr your expierience in current company</p>" );
         }else if(val=='total_exp'){
@@ -1394,7 +1396,7 @@ function getFbUserData(){
             url: "{{url('facebook/login')}}",
             success: function(msg) {
              if(msg.error==1){
-               var element=document.getElementById("session_ID").value;
+              
                   $("#log_popup").modal('hide');
                   $("#refreshID").load(location.href + " #refreshID");
                  
@@ -1554,6 +1556,58 @@ function isNumberKey(evt)
 
 </script>
 
+<!--- Login & Regitration -->
+<script>
+   $(function() {
+
+    $('#login-form-link').click(function(e) {
+    $(".login-form").delay(100).fadeIn(100);
+    $(".register-form").fadeOut(100);
+    $('#register-form-link').removeClass('active');
+    $(".social-ico").fadeIn(100);
+    $(".forgot-form").fadeOut(100);
+    $(this).addClass('active');
+    e.preventDefault();
+  });
+    $('#register-form-link').click(function(e) {
+    $(".register-form").delay(100).fadeIn(100);
+    $(".login-form").fadeOut(100); 
+    $(".social-ico").fadeOut(100);
+     $(".forgot-form").fadeOut(100);
+    $('#login-form-link').removeClass('active');
+    $(this).addClass('active');
+    e.preventDefault();
+  });
+
+  $('#forgot-form-link').click(function(e) {
+    $(".forgot-form").delay(100).fadeIn(100);
+    $(".login-form").fadeOut(100); 
+    $(".social-ico").fadeOut(100);
+    $("#forgot-password-hide").fadeOut(100);
+    $("#forgot-password-show").delay(100).fadeIn(100);
+    $('#login-form-link').removeClass('active');
+    $('#register-form-link').removeClass('active');
+    $(this).addClass('active');
+    e.preventDefault();
+  });
+
+ $('#back_id').click(function(e) {
+    $(".login-form").delay(100).fadeIn(100);
+    $(".register-form").fadeOut(100);
+    $("#forgot-password-hide").delay(100).fadeIn(100);
+    $("#forgot-password-show").fadeOut(100);
+    $(".social-ico").fadeIn(100);
+    $(".forgot-form").fadeOut(100);
+    $(this).addClass('active');
+    e.preventDefault();
+  });
+
+
+});
+
+</script>
+
+
 
 <!-- post end -->
 
@@ -1613,7 +1667,7 @@ function isNumberKey(evt)
      <span id='pls_wait' style="display: none;color: red;">Please wait .....</span>
      <span id='pwd_match' style="display: none; color:red;">Password do not match.</span>
 
-     <span id="msg_err_email"  style="display: none; color:red;">Email id already exists.</span>
+     <span id="msg_err_email"  style="display: none; color:red;"><center>Email id already exists.</center></span>
     </div>
 
   </div>

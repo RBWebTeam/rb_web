@@ -44,10 +44,11 @@
 			 <input type="tel" id="obligation" name="obligation"  onkeyup="changeText_new('obligation','q5')"  onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="1,00,000" tabindex="1">
 			 </h3> 
 			</div>
-			<div class="col-md-12 text-center animate-box cont" style="display: none" id="q5">
-             <h3>I want a Personal Loan of Rs.
-			 <input type="tel" id="loan_amount" name="loan_amount"  onkeyup="changeText_new('loan_amount','q6')"  onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="1,00,000" tabindex="1">
-			 </h3> 
+			<div class="col-md-12 text-center animate-box cont" style="display:none;" id="q5" >
+				
+	             <h3>I have been living in
+				<input type="text" class="search_city input-pad" id='city_name' name='city_name' onblur="changeTest_new('city_name','q6')" placeholder='your city'>city</h3>
+				
 			</div>
 			<div class="col-md-12 text-center animate-box cont" style="display: none" id="q6">
              <h3>and required loan for
@@ -69,11 +70,10 @@
 					.</h3>
 			</div>
 
-			<div class="col-md-12 text-center animate-box cont" style="display:none;" id="q9" >
-				
-	             <h3>I have been living in
-				<input type="text" class="search_city input-pad" id='city_name' name='city_name' onfocus="changeTest('city_name','step_3_btn')" placeholder='your city'>city</h3>
-				
+			<div class="col-md-12 text-center animate-box cont" style="display: none" id="q9">
+             <h3>I want a Personal Loan of Rs.
+			 <input type="tel" id="loan_amount" name="loan_amount"  onkeyup="changeText_new('loan_amount','step_3_btn')"  onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="1,00,000" tabindex="1">
+			 </h3> 
 			</div>
 			<div class="text-center " style="display: none" id="step_3_btn">
 			<?php if(Session::get('is_login')) {?>

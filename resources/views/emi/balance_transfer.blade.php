@@ -31,6 +31,37 @@
 
 
 	<style>
+	.slider {
+  position: relative;
+  margin-top: 20px;
+  margin-bottom: 15px;
+  width: 90%;
+  background: #2A3137;
+  /* -moz-box-shadow: inset 0 0 10px #999;
+  -webkit-box-shadow: inset 0 0 10px #999;
+  box-shadow: inset 0 0 10px #999;*/
+  height: 15px;
+  border-radius: 10px;
+  border: 1px solid #DDDDDD;
+  margin-left: 15px;
+}
+
+.slider .ui-slider-handle {
+  position: absolute;
+  background: #10A447;
+  border-radius: 5px;
+  width: 20px;
+  height: 50px;
+  top: -16px;
+  left: 50px;
+  border-style: none;
+  box-shadow: none;
+
+}
+
+
+
+
 	 
 .price-box {
 	margin: 0 auto;
@@ -231,7 +262,7 @@ label {
 									<div class="loan-tenure">
 									<center>
 										<div class="type-cover" >
-											<p>Remaning Tenure</p>
+											<p>Remaining Tenure</p>
 										</div>
 									</center>
 									<div class="text-center">
@@ -242,7 +273,8 @@ label {
 									            
 
 									                <div class="col-sm-12" style="margin-top:30px;">
-									                    <div id="slider" onchange="myfun()"></div> <span class="glyphicon glyphicon-minus" style="float:left"></span><span class="glyphicon glyphicon-plus" style="float:right"></span> 
+									                    <div id="slider" onchange="myfun()"></div>
+									                    <span class="glyphicon glyphicon-minus" style="float:left"></span><span class="glyphicon glyphicon-plus" style="float:right"></span> 
 									                </div>
 									           
 									           
@@ -529,7 +561,7 @@ label {
             }
 
         });
-
+        
         //Added, set initial value.
         $("#amount").val(0);
         $("#amount-label").text(0);
@@ -541,23 +573,17 @@ label {
 
     //changed. now with parameter
     function update(slider, val) {
-        //changed. Now, directly take value from ui.value. if not set (initial, will use current value.)
-        // var $amount = slider == 1 ? val : $("#amount").val();
+       
         var $amount = val;
-         //console.log(val);
-
-        /* commented
-         $amount = $( "#slider" ).slider( "value" );
-         $duration = $( "#slider2" ).slider( "value" );
-         */
-
-        $("#amount").val($amount);
-        //console.log($("#amount").val($amount));
+         console.log(val);
+         $("#amount").val($amount);
+        // console.log($("#amount").val($amount));
         $("#amount-label").text($amount);
         //console.log($("#amount-label").text($amount));
         var yrs = "yrs";
 
         $('#slider a').html('<label>' + $amount + ' yrs  </label><div class="ui-slider-label-inner"></div>');
+
     }
 	</script>
 	<script type="text/javascript">
@@ -587,7 +613,11 @@ $('#slider').slider({
         myfun();
 
     } 
-});
+
+}
+);
+
+
  
   function myfun(){ 
   	alert_him();

@@ -34,7 +34,7 @@
 			<div class="col-md-12 text-center animate-box wht-brd pad fadeInUp animated">
 				<h1 class="h1-hd">Personal Loan Transfer Service</h1>
 				<h3>Let's find out how much you can save!!</h3>
-				<h3>Know how much you'll save. Please enter your current home loan details.</h3>
+				<h3>Know how much you'll save. Please enter your current personal loan details.</h3>
 			</div>
 		</div>
 		<?php }else{?>
@@ -42,7 +42,7 @@
 			<div class="col-md-12 text-center animate-box wht-brd pad fadeInUp animated">
 				<h1 class="h1-hd">Loan Against Property Transfer Service</h1>
 				<h3>Let's find out how much you can save!!</h3>
-				<h3>Know how much you'll save. Please enter your current home loan details.</h3>
+				<h3>Know how much you'll save. Please enter your current loan against property details.</h3>
 			</div>
 		</div>
 		<?php }?>
@@ -64,7 +64,7 @@
      <!-- <i class="fa fa-exchange" aria-hidden="true"></i> -->
     <div class="form-group">
        <!-- <label class="control-label" for="Loan Amount">Outstanding Principal:</label> -->
-       <input type="text" name="loanamount" class="form-control" id="loanamount" placeholder="Loan Amount" value="" onblur ="myfun()" onkeypress="return isNumberKey(event)">
+       <input type="text" name="loanamount" class="form-control" id="loanamount" placeholder="Loan Amount" value="" onblur ="myfun()" onkeypress="return isNumberKey(event)" maxlength="9">
     </div>
     <div class="form-group">
       <!-- <label class="control-label" for="Interest Rate"> Current Interest Rate:</label> -->

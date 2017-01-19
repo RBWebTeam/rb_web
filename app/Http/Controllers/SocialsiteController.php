@@ -12,7 +12,7 @@ use Validator;
 use Redirect;
 use Session;
 use URL;
-
+use DB;
 class SocialsiteController extends Controller{
      public function  facebook(){
      	 return Socialite::driver('facebook')->redirect();
@@ -101,8 +101,8 @@ class SocialsiteController extends Controller{
    
                   $query->username=$facebookUser->name;
                   $query->email=$facebookUser->email;
-                  $query->contact=0;
-                  $query->password=0;
+                  $query->contact='';
+                  $query->password='';
                   $query->provider_user_id=$facebookUser->id;
                   $query->provider=$facebookUser->avatar;
                   $query->created_at=date('Y-m-d H:i:s');
@@ -143,8 +143,8 @@ return  $authUser;
 
                   $query->username=$vale['first_name'];
                   $query->email=$vale['email'];
-                  $query->contact=0;
-                  $query->password=0;
+                  $query->contact='';
+                  $query->password='';
                   $query->provider_user_id=$vale['id'];
                   $query->provider=$vale['link'];
                   $query->created_at=date('Y-m-d H:i:s');
@@ -155,6 +155,7 @@ return  $authUser;
                   Session::set('user_id',$query->id);
                   Session::set('name',$query->username);
                   Session::set('is_login',1);
+                  DB::table('customer_details')->insert(['user_id' =>$query->id]);
                
         }
 
@@ -202,8 +203,8 @@ return  $authUser;
 
                   $query->username=$vale['displayName'];
                   $query->email=$email;
-                  $query->contact=1;
-                  $query->password=1;
+                  $query->contact='';
+                  $query->password='';
                   $query->provider_user_id=$vale['id'];
                   $query->provider=$str;
                   $query->created_at=date('Y-m-d H:i:s');
@@ -214,6 +215,7 @@ return  $authUser;
                   Session::set('user_id',$query->id);
                   Session::set('name',$query->username);
                   Session::set('is_login',1);
+                  DB::table('customer_details')->insert(['user_id' =>$query->id]);
                
         } 
 

@@ -74,6 +74,8 @@ class LoginController extends Controller
                   $req->session()->put('user_id',$query->id);
                   $req->session()->put('name',$query->username);
                   $req->session()->put('is_login',1);
+                  DB::table('customer_details')->insert(['user_id' =>$query->id]);
+
                   $error="1";
                   echo $error;
         }

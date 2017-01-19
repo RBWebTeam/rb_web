@@ -51,7 +51,7 @@
                                 <input type="hidden" id='_token' name="_token" value="{{csrf_token()}}">
 
                                 <div  class="col-md-12">
-                                <button class="btn btn-primary profile-details">Update</button>
+                                <button class="btn btn-primary btn-outline with-arrow profile-details">Update<i class="icon-arrow-right"></i></button>
                                 </div>
                             </form>
 
@@ -98,7 +98,7 @@
                                  <input type="hidden" id='_token' name="_token" value="{{csrf_token()}}">
                                        
                                 <div  class="col-md-12">
-                                 <button class="btn btn-primary extradetailsbtn">Submit</button>
+                                 <button class="btn btn-primary btn-outline with-arrow extradetailsbtn">Submit <i class="icon-arrow-right"></i> </button>
                                  </div>
                          </form>
                         </div>

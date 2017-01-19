@@ -9,6 +9,7 @@
              <!-- login-->
           <div class="modal-header login_modal_header">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			<br>
             <h2 class="modal-title" id="myModalLabel">Login to Your Account</h2>
           </div>
           <div class="modal-body login-modal">

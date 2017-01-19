@@ -70,20 +70,20 @@
 
 			</div>
 
-			<div class="col-md-2 col-md-push-1 col-sm-12 col-sm-push-0 col-xs-12 col-xs-push-0">
+			<div class="col-md-3 col-md-push-1 col-sm-12 col-sm-push-0 col-xs-12 col-xs-push-0">
             <h3>Office Address</h3>
-            <p><a href="https://goo.gl/iCZ5nl" target="_blank"><i class="icon-map-marker"></i></a>&nbsp;  5C/5D, 1 st ﬂoor,
+            <span><a href="https://goo.gl/iCZ5nl" target="_blank"><i class="icon-map-marker"></i></a>&nbsp;  5C/5D, 1 st ﬂoor,
             The Centrium, 
              Phoenix Marketcity, 
              Kurla West, 
-             Mumbai-400070, Maharashtra</p>
+             Mumbai-400070, Maharashtra</span>
 				<ul class="fh5co-social">
 					<li><a href="{{URL::to('https://twitter.com/rupeeboss')}}" target="_blank"><i class="icon-twitter"></i></a></li>
 					<li><a href="{{URL::to('https://www.facebook.com/rupeeboss')}}" target="_blank"><i class="icon-facebook"></i></a></li>
 					<li><a href="{{URL::to('https://plus.google.com/112574970643410375765')}}" target="_blank"><i class="icon-google-plus"></i></a></li>
 					<!-- <li><a href="#" target="_blank"><i class="icon-instagram"></i></a></li> -->
 				</ul>
-                <br>
+                
                 <p class="mrg-btm1"><b>Appointment Now</b></p>
 				
             <p class="mrg-btm"><b>1800-267-629-6</b></p>

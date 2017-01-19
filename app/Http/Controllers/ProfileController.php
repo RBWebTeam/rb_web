@@ -19,11 +19,14 @@ class ProfileController extends Controller
       { 
 
         $get_id=Session::get('user_id');
+        $email_id=Session::get('email');
+
         $query=DB::table('user_registration')->where('id','=',$get_id)->first();
         $cquery=DB::table('customer_details')->where('user_id','=',$get_id)->first();
+        $loan_history=DB::table('bank_quote_api_request')->where('Email','=',$email_id)->first();
+           
 
-
-          return view('my-profile',['query'=>$query,'cquery'=>$cquery]);
+          return view('my-profile',['query'=>$query,'cquery'=>$cquery,'loan_history'=>$loan_history]);
       }else{
         return redirect('/');
       }

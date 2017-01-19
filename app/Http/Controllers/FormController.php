@@ -152,7 +152,9 @@ class FormController extends Controller
         if($qu->save()) {
                
            Session::put('verify_id',$qu->id);
+           Session::put('user_id',$qu->id);
                  // $req->session()->put('is_login',1);
+        DB::table('customer_details')->insert(['user_id' =>$qu->id]);
                  
         }
         // user entered 
@@ -218,7 +220,7 @@ class FormController extends Controller
         if($query){
 
             //p_loan_submit();
-             Session::put('user_id',Session::get('login_id'));
+             Session::put('user_id',Session::get('verify_id'));
              Session::put('is_login',1);
              //print_r(Session::get('user_id'));
             return Response::json(array(

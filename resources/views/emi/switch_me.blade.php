@@ -34,7 +34,7 @@
 			<div class="col-md-12 text-center animate-box wht-brd pad fadeInUp animated">
 				<h1 class="h1-hd">Personal Loan Transfer Service</h1>
 				<h3>Let's find out how much you can save!!</h3>
-				<h3>Know how much you'll save. Please enter your current home loan details.</h3>
+				<h3>Know how much you'll save. Please enter your current personal loan details.</h3>
 			</div>
 		</div>
 		<?php }else{?>
@@ -42,7 +42,7 @@
 			<div class="col-md-12 text-center animate-box wht-brd pad fadeInUp animated">
 				<h1 class="h1-hd">Loan Against Property Transfer Service</h1>
 				<h3>Let's find out how much you can save!!</h3>
-				<h3>Know how much you'll save. Please enter your current home loan details.</h3>
+				<h3>Know how much you'll save. Please enter your current loan against property details.</h3>
 			</div>
 		</div>
 		<?php }?>

@@ -34,6 +34,7 @@
   $loanamount =(float)$sata['loanamount'];
   $loaninterest =(float)$sata['loaninterest'];
   $loanterm =(float)$sata['loanterm'];
+  $product_id=$sata['product_id'];
   
 foreach ($data as $key => $value){?>
 <tr>
@@ -70,7 +71,14 @@ foreach ($data as $key => $value){?>
     <td><?php echo number_format((float)$drop_emi, 2, '.', ''); ?>  </td>
     <td><?php echo ($drop_in_int); ?>  </td>
     <td><?php echo round($savings); ?>  </td>
-    <td width="17%"><a href="{{URL::to('apply-home-loan')}}">Apply Online</a></td>
+    <td width="17%">
+     <?php if($product_id == 12) {?>
+     <a href="{{URL::to('apply-home-loan')}}">Apply Online</a></td>
+    <?php }elseif($product_id == 9){?>
+    <a href="{{URL::to('apply-personal-loan')}}">Apply Online</a></td>
+    <?php }else{?>
+    <a href="{{URL::to('apply-loan-against-property')}}">Apply Online</a></td>
+    <?php }?>
                            
 
     </tr>

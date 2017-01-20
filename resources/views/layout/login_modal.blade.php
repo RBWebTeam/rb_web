@@ -70,7 +70,8 @@
                </div>
 
                 <div class="col-lg-12">
-                <form class="register-form" style="display: none;" name="registration_form" id="registration_form"   method="post" >  {{ csrf_field() }}
+                <form class="register-form" style="display: none;" name="registration_form" id="registration_form"   method="post" > 
+                 {{ csrf_field() }}
 
                   <div class="form-group">
                     <input type="text" name="name" id="name" tabindex="1" class="form-control" placeholder="Username" >
@@ -109,7 +110,8 @@
               </div>
               
          <div class="col-lg-12">
-             <form class="forgot-form" style="display: none;" name="forgot_password_form" id="forgot_password_form"   method="post"  > {{ csrf_field() }}
+             <form class="forgot-form" style="display: none;" name="forgot_password_form" id="forgot_password_form"   method="post"  >
+              {{ csrf_field() }}
                  <div class="form-group">
                     <input type="text" name="email" id="email" tabindex="1" class="form-control" placeholder="Email ID" >
                     <span id="forgotpass"  class="text-danger"></span>
@@ -126,6 +128,7 @@
 
                   </div>           
               </form>
+                <span class="forgotps"></span>
           </div>
               
               

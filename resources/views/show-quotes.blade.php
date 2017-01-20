@@ -71,7 +71,7 @@
   <tr>
     <td width="9%" class="upper">Compare</td>
     <td width="16%" class="upper"><span style="color:red;"><img src="{{$q->Bank_Logo}}" class="img-responsive"></span></td>
-    <td width="16%" class="upper">Interst Rate</td>
+    <td width="16%" class="upper">Interest Rate</td>
     <td width="16%" class="upper">Loan Amount</td>
     <td width="18%" class="upper">emi</td>
     <td width="17%"><a class="btn btn-success" 
@@ -88,12 +88,14 @@
    <input type="hidden" name="Pre_Closer_Fixed" class="Pre_Closer_Fixed" value="{{$q->Pre_Closer_Fixed }}">
 
     <input type="hidden" name="processingfee" class="processingfee" value="{{$q->processingfee }}">
+    <input type="hidden" name="url" class="url" value="{{URL::to('apply-lead-online')}}?appid=0&qoutid={{$quote_id}}&BankId={{$q->Bank_Id}}">
 
-    <td >Personal Loan</td>
+
+    <td >{{$product}}</td>
     <td >{{$q->roi }}%</td>
     <td >{{$q->LoanRequired}}</td>
     <td >{{$q->emi}} (for {{$q->LoanTenure}} years)</td>
-    <td   rowspan="2"><strong>Specil Features:</strong>- Pre close Fee {{$q->Pre_Closer_Fixed}}%</td>
+    <td   rowspan="2"><strong>Special Features:</strong>- Pre close Fee {{$q->Pre_Closer_Fixed}}%</td>
   </tr>
   <tr>
     <td><i class="icon-thumbs-up"></i></td>
@@ -167,22 +169,22 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12 text-left fh5co-heading animate-box fadeInUp animated">
-        <p class="text-left"><a href="{{URL::to('/')}}">Home</a>/Compare</p>
+        <p class="text-left"><!-- <a href="{{URL::to('/')}}">Home</a>/Compare</p> -->
           <h2>Compare</h2>
           </div>  
         <div class="col-md-12">
           <div class="row pad11 white-bg comp-pg">
   <div class="table-responsive" >
   <a href="#" id="backid" class="btn btn-primary btn-outline with-arrow ">Back</a>
-<table  id="tables"   border="1" style="margin: auto;">
+<table   id="tables"   border="1" style="margin: auto;">
 
 <tbody style='float:left; '>
-<tr><td>Bank Name </td></tr>
-<tr><td>Loan Amount</td></tr>
-<tr><td>Rate</td></tr>
-<tr><td>EMI</td></tr>
-<tr><td>Processing Fee</td></tr>
-<tr><td>Pre closed Fee</td></tr>
+<tr><td><b>Bank Name</b></td></tr>
+<tr><td><b>Loan Amount</b></td></tr>
+<tr><td><b>Rate</b></td></tr>
+<tr><td><b>EMI</b></td></tr>
+<tr><td><b>Processing Fee</b></td></tr>
+<tr><td><b>Pre closed Fee</b></td></tr>
 </tbody>
 </table>
 </div>
@@ -220,6 +222,7 @@ $('input[name="checkbox"]').change(function(){
    var emi =closest.find('.emi').val();
    var LoanTenure =closest.find('.LoanTenure').val();
    var Pre_Closer_Fixed =closest.find('.Pre_Closer_Fixed').val();
+   var url = closest.find('.url').val();
 
   // <input type='hidden' name='pinterst[]' id='"+pinterst+"' value='"+pinterst+"' >
 
@@ -227,7 +230,7 @@ $('input[name="checkbox"]').change(function(){
 
        var span="<div class='col-md-2 col img-c white-bg' id='" +id + "'><input type='hidden' name='bank_id[]' id='"+id+"' value='"+id+"' ><span class='close btnspan' >×</span><img src='"+logo+"'class='img-responsive' width='100' height='80'>" + this.value + "</div>";
 
-       var  tables="<tbody style='float:left;' id='" +tid+ "'><tr><td>"+this.value+"</td></tr><tr><td>"+LoanRequired+"</td></tr><tr><td>"+pinterst+"</td></tr><tr><td>"+emi+"(for "+LoanTenure +" years)</td></tr><tr><td>"+processingfee+"</td></tr><tr><td>"+Pre_Closer_Fixed+"</td></tr><tr><td><a href='#' class='btn btn-primary btn-outline'>Apply Now</a></td></tr></tbody>" ;
+       var  tables="<tbody style='float:left;' id='" +tid+ "'><tr><td>"+this.value+"</td></tr><tr><td>"+LoanRequired+"</td></tr><tr><td>"+pinterst+"</td></tr><tr><td>"+emi+"(for "+LoanTenure +" years)</td></tr><tr><td>"+processingfee+"</td></tr><tr><td>"+Pre_Closer_Fixed+" %</td></tr><tr><td><a href='"+url+"' class='btn btn-primary btn-outline'>Apply Now</a></td></tr></tbody>" ;
 
           if(x==2){
             $('#btncompare').show();} x++;

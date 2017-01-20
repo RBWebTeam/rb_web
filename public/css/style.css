@@ -1859,4 +1859,7 @@ body {background:#eee;}
 .blue-bg {background:#39F;color:#fff;}
 .blue-bg:hover {background:#337ab7;}
 .blue-bg a:hover {color:#fff;}
+.error{
+  color: red;
+}
 

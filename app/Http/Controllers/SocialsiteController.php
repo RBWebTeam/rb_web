@@ -29,7 +29,6 @@ class SocialsiteController extends Controller{
                   $authUser = $this->findOrCreateUser($user);
         
                   // $query->username($authUser, true);
-
                 //  return Redirect::back();
                     
                      if($authUser){

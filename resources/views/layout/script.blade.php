@@ -71,7 +71,6 @@ $(".lastReporteddate").datepicker({ dateFormat: "yy-mm-dd",
             yearRange: '-100:' + year + '',
             defaultDate: d
      });
-
 // $("#button").click(function(){
 //         var dob = $(".lastReporteddate").val();
 //         var now = new Date();
@@ -1159,10 +1158,12 @@ function emibreakup(E,P,r,n)
                    }
                    return false;
                   }
-
+                
                 //Rest code for text fields with numbers
                   var x=$(this).val().length ;
-                  if ((obj=='loan_tenure')||((obj=='total_sal' || obj=='loan') && x>6) ||(x>=3 && x<=8) ) {
+                  if ((obj=='loan_tenure') || ((obj=='total_sal' || obj=='loan') && x>6) || (x>=3 && x<=8) ) {
+                   
+                    
                       document.getElementById(val).style.display='block';
                       return false;
                   }
@@ -1275,7 +1276,7 @@ $("#city_name").on("autocompletechange", function(event,ui) {
     document.cookie ="city_name"+"="+escape(cookieValue)
                  + ";expires="+expire.toGMTString();
 
-$('#step_3_btn').show();
+//$('#step_3_btn').show();
            //  if(cookieValue.length>2){
            //   $('#pop1').empty();
            //   $('#pop1').append("<p>Get loan.");

@@ -18,25 +18,25 @@
 </div>
 
  @foreach ($getQuery as $key=>$value)
-    <div class="table-responsive">
+    <div class="table-responsive outer-brd">
 	<table width="100%" border="1" class="tbl">
    
   
 
   <tr>
     <!-- <td width="9%" class="upper">Compare</td> -->
-    <td><center><img src="{{ $value->Bank_Logo}}" width="100" height="30"></center></td>
-    <td width="16%" class="upper">Interest Rate</td>
-    <td width="16%" class="upper">Loan Amount</td>
-    <td width="18%" class="upper">emi</td>
+    <td class="bdr-btm"><center><img src="{{ $value->Bank_Logo}}" ></center></td>
+    <td width="16%" class="upper bdr-btm">Interest Rate</td>
+    <td width="16%" class="upper bdr-btm">Loan Amount</td>
+    <td width="18%" class="upper bdr-btm">emi</td>
     <?php $Loans=strtolower(str_replace(' ','-',$home_loan)); ?>
      
      <?php if($Loans=='lap'){?>
 
-    <td width="17%"><h4><a href="{{url('apply-loan-against-property')}}">Apply Online</h4></a></td>
+    <td width="17%" class="blue-bg"><h4><a href="{{url('apply-loan-against-property')}}" class="apply-btn">Apply Online</h4></a></td>
 
     <?php }else{?>
-   <td width="17%"><h4><a href="{{url('apply-')}}<?php echo $Loans?>">Apply Online</a></h4></td>
+   <td width="17%" class="blue-bg"><h4><a href="{{url('apply-')}}<?php echo $Loans?>" class="apply-btn">Apply Online</a></h4></td>
     <?php }?>
   </tr>
 
@@ -75,7 +75,6 @@
 
 
 </table>
-
 </div>
 @endforeach
 	</div>

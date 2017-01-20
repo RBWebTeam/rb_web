@@ -105,12 +105,13 @@
 
 
                           <div class="tab-pane" id="credit-score">
-                          @if(isset($cquery->credit_score))
+                            @if(isset($cquery->credit_score))
                                
-                                      <?php $credit_score=$cquery->credit_score;?>
-                                  @else
+                                      <?php if($cquery->credit_score!='' && $cquery->credit_score!='0'){ $credit_score=$cquery->credit_score;}else{
+                                            $credit_score='Not yet Evaluated.';}?>
+                            @else
                                       <?php $credit_score='Not yet Evaluated.';?>
-                          @endif
+                            @endif
                           
                           <div class="col-md-12"><h2> Your credit score `{{$credit_score}}`</h2>  </div>
                            <div class="col-md-12">
@@ -126,6 +127,7 @@
                                 <ul class="list-group" style="width:600px;">
                                   <?php foreach ($loan_history as $key => $value) { ?>
                                   <li class="list-group-item"  >
+                                  
                                     <a href="http://beta.erp.rupeeboss.com/homeloan/Home_Loan_Application_Form.aspx?appid=0&qoutid={{$value->ID}}&BankId={{$value->bank_id}}">Searched for   {{$value->Product_Name}}  <span class="badge">Date :{{date('Y:m:d', strtotime($value->created_at))}}  </span> <span class="btn btn-success btn-sm pull-right">View </span></applet></a>
                                   </li>
                                   <?php  } ?>

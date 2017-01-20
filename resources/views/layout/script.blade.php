@@ -757,7 +757,6 @@ $('document').ready(function(){
         minlength: 3,
        select: function(event,ui){
            $('#q').val(ui.item.value);
-  
 
             }
       });
@@ -769,6 +768,7 @@ $('document').ready(function(){
     src = "{{ route('searchajax') }}";
      $(".search_city").autocomplete({
         source: function(request, response) {
+            
             $.ajax({
                 url: src,
                 dataType: "json",
@@ -777,7 +777,6 @@ $('document').ready(function(){
                 },
                 success: function(data) {
                     response(data);
-
 
                    
                 }

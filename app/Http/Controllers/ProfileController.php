@@ -19,21 +19,18 @@ class ProfileController extends Controller
       { 
 
         $get_id=Session::get('user_id');
-        $email_id=Session::get('email');
+          $email_id=Session::get('email');
+
 
         $query=DB::table('user_registration')->where('id','=',$get_id)->first();
         $cquery=DB::table('customer_details')->where('user_id','=',$get_id)->first();
 
-        $loan_history=DB::table('bank_quote_api_request')->where('Email','=',$email_id)->get();
-
-    //     $loan_history= DB::table('bank_quote_api_request')
-    // ->join('bank_master', 'bank_master.Bank_Id', '=', 'bank_quote_api_request.bank_id')
-    // ->select(
-    //    'bank_master.Bank_Name',
-    //    'bank_quote_api_request.ID'
-    //     )
-    // ->where('bank_product_web_intrest.Email', '=',$email_id)
-    // ->get();
+      //  $loan_history=DB::table('bank_quote_api_request')->where('Email','=',$email_id)->get();
+        $loan_history = DB::table('product_master')
+             ->leftjoin('bank_quote_api_request', 'product_master.Product_Id', '=', 'bank_quote_api_request.bank_id')
+            ->select('bank_quote_api_request.*','product_master.*')
+            ->where('bank_quote_api_request.Email', $email_id)
+            ->get();
 
 
           return view('my-profile',['query'=>$query,'cquery'=>$cquery,'loan_history'=>$loan_history]);

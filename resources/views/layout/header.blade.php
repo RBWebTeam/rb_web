@@ -139,19 +139,18 @@
 
 							<?php if(Session::get('is_login')){
 							?>
-							<li class="user-ic dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle"><i class="icon-user uicon hidden-xs hidden-sm"></i></a><span class="hidden-lg hidden-md">My Account&nbsp;</span><i class="icon-chevron-down"></i></a>
+							<li class="user-ic dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" data-target="#"><i class="icon-user uicon hidden-xs hidden-sm"></i><span class="hidden-lg hidden-md">My Account&nbsp;</span><i class="icon-chevron-down"></i></a>
 							
 							<ul class="dropdown-menu"  >
 							    <li> 
 								<a id="googleLOG" href={{URL::to('logout')}}>Logout</a>
 								<a href="{{url('profile')}}">My Profile</a>
-								<!-- <a href="#">My Account</a> -->
 								<a href="{{URL::to('credit-report')}}">My Credit Score</a>
 								<a href='#'>Applied loan</a>
 								</li>
 							</ul>
+							
 							</li>
-
                           	 <li><?php echo Session::get('name');?></li>
                         
 						<?php }else{

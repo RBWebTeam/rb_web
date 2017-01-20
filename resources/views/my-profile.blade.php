@@ -17,7 +17,7 @@
                    <li><a href="#extraDetails" data-toggle="tab">Extra Details</a></li>
                      <li><a href="#credit-score" data-toggle="tab">My Credit Score </a></li>
                        <li><a href="#Loan-history" data-toggle="tab">Loan History </a></li>
-                         <li><a href="#Track-Apllication" data-toggle="tab">Track Application </a></li>
+                         <!-- <li><a href="#Track-Apllication" data-toggle="tab">Track Application </a></li> -->
                             
                                @if($query->password!='0')
                                       <li><a href="#change-password" data-toggle="tab">Change password </a></li>

@@ -23,8 +23,18 @@ class ProfileController extends Controller
 
         $query=DB::table('user_registration')->where('id','=',$get_id)->first();
         $cquery=DB::table('customer_details')->where('user_id','=',$get_id)->first();
-        $loan_history=DB::table('bank_quote_api_request')->where('Email','=',$email_id)->first();
-           
+
+        $loan_history=DB::table('bank_quote_api_request')->where('Email','=',$email_id)->get();
+
+    //     $loan_history= DB::table('bank_quote_api_request')
+    // ->join('bank_master', 'bank_master.Bank_Id', '=', 'bank_quote_api_request.bank_id')
+    // ->select(
+    //    'bank_master.Bank_Name',
+    //    'bank_quote_api_request.ID'
+    //     )
+    // ->where('bank_product_web_intrest.Email', '=',$email_id)
+    // ->get();
+
 
           return view('my-profile',['query'=>$query,'cquery'=>$cquery,'loan_history'=>$loan_history]);
       }else{

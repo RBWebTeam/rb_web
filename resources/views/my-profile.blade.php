@@ -121,13 +121,22 @@
 
 
                           <div class="tab-pane" id="Loan-history">
-                         Loan history
-
-                         @if(isset($loan_history->Email))
-
-                                {{$loan_history->Email}}
-
-                         @endif
+                          <div class="container">
+                          <h2  >Loan history</h2>
+                               @if(isset($loan_history))
+                                <ul class="list-group">
+                                  <?php foreach ($loan_history as $key => $value) { ?>
+                                  <li class="list-group-item">
+                                    <a href="http://beta.erp.rupeeboss.com/homeloan/Home_Loan_Application_Form.aspx?appid=0&qoutid={{$value->ID}}&BankId={{$value->bank_id}}">Searched for Loan ID {{$value->ID}}</a>
+                                  </li>
+                                  <?php  } ?>
+                                </ul>
+                               
+                                @else
+                               <p>No histories yet!!!</p>
+                                @endif
+                             </div>
+                      
                           </div>
 
                           <div class="tab-pane" id="Track-Apllication">

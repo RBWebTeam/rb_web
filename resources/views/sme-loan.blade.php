@@ -62,8 +62,8 @@
 			<div class="has-error">
 		   
 		    <div> 
-		    <input type="text" name="contact" id="contact" class="form-control clr-ddd" onkeypress="fnAllowNumeric(event)" 
-			pattern="[789][0-9]{9}" required maxlength="10" placeholder="Mobile No." >
+		    <input type="text" name="contact" id="contact" class="form-control clr-ddd" onkeypress=" return fnAllowNumeric(event)" 
+			pattern="[789][0-9]{9}" required maxlength="10" minlength="10" placeholder="Mobile No." >
 		    </div>
 		  </div>
 				 <div class="has-error">
@@ -82,8 +82,8 @@
 			  </div>
 			</form>
 		</div>	
-		<div class='msg' style="display: none;"><p>Thanks. We will reach you soon.</p></div>
-            <div class='msg_err' style="display: none;"><p>Ooops. Something went wrong.</p></div>
+		<div class='msg' style="display: none; color:red;text-align:center;"><p>Thanks. We will reach you soon.</p></div>
+            <div class='msg_err' style="display: none; color:red;text-align:center;"><p>Ooops. Something went wrong.</p></div>
 	</div>
 	
 	

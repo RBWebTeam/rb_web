@@ -1159,10 +1159,12 @@ function emibreakup(E,P,r,n)
                    }
                    return false;
                   }
-
+                
                 //Rest code for text fields with numbers
                   var x=$(this).val().length ;
-                  if ((obj=='loan_tenure')||((obj=='total_sal' || obj=='loan') && x>6) ||(x>=3 && x<=8) ) {
+                  if ((obj=='loan_tenure') || ((obj=='total_sal' || obj=='loan') && x>6) || (x>=3 && x<=8) ) {
+                   
+                    
                       document.getElementById(val).style.display='block';
                       return false;
                   }

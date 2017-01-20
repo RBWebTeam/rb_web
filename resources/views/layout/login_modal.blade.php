@@ -84,7 +84,7 @@
                   </div>
 
                    <div class="form-group">
-                    <input type="text" name="contact" id="contact" tabindex="1" class="form-control" placeholder="Mobile Number" >
+                    <input type="text" name="contact" id="contact" onkeypress="return fnAllowNumeric(event)" maxlength="10"  tabindex="1" class="form-control" placeholder="Mobile Number" >
                     <span id="errorcontact"  class="error-msg"></span>
                   </div>
 

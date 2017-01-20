@@ -768,7 +768,7 @@ $('document').ready(function(){
     src = "{{ route('searchajax') }}";
      $(".search_city").autocomplete({
         source: function(request, response) {
-               
+            
             $.ajax({
                 url: src,
                 dataType: "json",
@@ -777,6 +777,7 @@ $('document').ready(function(){
                 },
                 success: function(data) {
                     response(data);
+
                    
                 }
             });

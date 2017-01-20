@@ -25,12 +25,12 @@ class ProfileController extends Controller
         $query=DB::table('user_registration')->where('id','=',$get_id)->first();
         $cquery=DB::table('customer_details')->where('user_id','=',$get_id)->first();
       //  $loan_history=DB::table('bank_quote_api_request')->where('Email','=',$email_id)->get();
-        $loan_history = DB::table('bank_quote_api_request')
-             ->leftjoin('product_master', 'product_master.Product_Id', '=', 'bank_quote_api_request.ProductId')
+              $loan_history = DB::table('bank_quote_api_request')
+            ->leftjoin('product_master', 'product_master.Product_Id', '=', 'bank_quote_api_request.ProductId')
             ->select('bank_quote_api_request.*','product_master.*')
             ->where('bank_quote_api_request.Email', $email_id)
+            ->orderBy('bank_quote_api_request.ID', 'DESC')
             ->get();
-           //print_r($loan_history);exit();
           return view('my-profile',['query'=>$query,'cquery'=>$cquery,'loan_history'=>$loan_history]);
       }else{
         return redirect('/');

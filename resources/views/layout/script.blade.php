@@ -1059,7 +1059,7 @@ function emibreakup(E,P,r,n)
      function changeTest_new(obj,val){
         document.getElementById(val).style.display='block';
         $('#pop1').empty();
-        console.log(obj+" "+val);
+        //console.log(obj+" "+val);
         if(val=='q2'){
           $('#self_q').hide();
           $('#self_q2').hide();

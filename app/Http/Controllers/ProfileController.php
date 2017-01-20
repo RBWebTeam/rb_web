@@ -14,7 +14,6 @@ class ProfileController extends Controller
 {
     function my_profile(Request $req){
 
-
       if(Session::get('is_login'))
       { 
 
@@ -24,6 +23,7 @@ class ProfileController extends Controller
 
         $query=DB::table('user_registration')->where('id','=',$get_id)->first();
         $cquery=DB::table('customer_details')->where('user_id','=',$get_id)->first();
+
       //  $loan_history=DB::table('bank_quote_api_request')->where('Email','=',$email_id)->get();
         $loan_history = DB::table('product_master')
              ->leftjoin('bank_quote_api_request', 'product_master.Product_Id', '=', 'bank_quote_api_request.bank_id')

@@ -235,7 +235,7 @@
 		<div class="container">
 			<div class="col-md-12 text-center animate-box wht-brd pad">
 				<h1 class="h1-hd">Confused About Loans ?</h1>
-				<h3>Talk to our experts to have all your question answered</h3>
+				<h3>Talk to our experts to have all your questions answered</h3>
 				<br>
 				 <form name="talk_us_form" id="talk_us_form" method="post">
           			{{ csrf_field() }}

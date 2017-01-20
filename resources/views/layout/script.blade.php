@@ -1060,7 +1060,7 @@ function emibreakup(E,P,r,n)
      function changeTest_new(obj,val){
         document.getElementById(val).style.display='block';
         $('#pop1').empty();
-        //console.log(obj+" "+val);
+        console.log(obj+" "+val);
         if(val=='q2'){
           $('#self_q').hide();
           $('#self_q2').hide();
@@ -1277,7 +1277,7 @@ $("#city_name").on("autocompletechange", function(event,ui) {
     document.cookie ="city_name"+"="+escape(cookieValue)
                  + ";expires="+expire.toGMTString();
 
-$('#step_3_btn').show();
+//$('#step_3_btn').show();
            //  if(cookieValue.length>2){
            //   $('#pop1').empty();
            //   $('#pop1').append("<p>Get loan.");

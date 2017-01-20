@@ -29,6 +29,7 @@ class ProfileController extends Controller
             ->leftjoin('product_master', 'product_master.Product_Id', '=', 'bank_quote_api_request.ProductId')
             ->select('bank_quote_api_request.*','product_master.*')
             ->where('bank_quote_api_request.Email', $email_id)
+            ->where('bank_quote_api_request.bank_id','!=','NULL')
             ->orderBy('bank_quote_api_request.ID', 'DESC')
             ->get();
           return view('my-profile',['query'=>$query,'cquery'=>$cquery,'loan_history'=>$loan_history]);

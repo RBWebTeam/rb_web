@@ -35,6 +35,7 @@
   $loaninterest =(float)$sata['loaninterest'];
   $loanterm =(float)$sata['loanterm'];
   $product_id=$sata['product_id'];
+  $broker_id =$sata['brokerid'];
   
 foreach ($data as $key => $value){?>
 <tr>
@@ -73,11 +74,11 @@ foreach ($data as $key => $value){?>
     <td><?php echo round($savings); ?>  </td>
     <td width="17%">
      <?php if($product_id == 12) {?>
-     <a href="{{URL::to('apply-home-loan')}}">Apply Online</a></td>
+     <a href="{{URL::to('apply-lead-online')}}?appid=0&qoutid=0&BankId={{$value['Bank_Id']}}&brokerid={{$broker_id}}&loanamount={{ $loanamount}}&loaninterest={{$loaninterest }}&loanterm={{$loanterm}}">Apply Online</a></td>
     <?php }elseif($product_id == 9){?>
-    <a href="{{URL::to('apply-personal-loan')}}">Apply Online</a></td>
+    <a href="{{URL::to('apply-lead-online')}}?appid=0&qoutid=0&BankId={{$value['Bank_Id']}}&brokerid={{$broker_id}}&loanamount={{ $loanamount}}&loaninterest={{$loaninterest }}&loanterm={{$loanterm}}">Apply Online</a></td>
     <?php }else{?>
-    <a href="{{URL::to('apply-loan-against-property')}}">Apply Online</a></td>
+    <a href="{{URL::to('apply-lead-online')}}?appid=0&qoutid=0&BankId={{$value['Bank_Id']}}&brokerid={{$broker_id}}&loanamount={{ $loanamount}}&loaninterest={{$loaninterest }}&loanterm={{$loanterm}}">Apply Online</a></td>
     <?php }?>
                            
 

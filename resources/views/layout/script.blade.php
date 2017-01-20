@@ -432,15 +432,18 @@ $(document).ready(function(){
                success: function(msg){
                 if(msg=='true'){
                   $form.hide();
-                  var a =$('#'+form).parent().find('.msg')
+                 var a =$('#'+form).parent().find('.msg');
                   //console.log(a);
                   $(a).show();
-                  //$('.msg').show();
+                  $('.msg').show();
                 }else{
                   $form.hide();
-                  var b =$('#'+form).parent().find('.msg_err')
+                  var b =$('#'+form).parent().find('.msg_err');
                   //console.log(a);
                   $(b).show();
+                  $('msg_err').show();
+                  
+                  
                 }
                 //console.log(msg);
                }  
@@ -757,7 +760,6 @@ $('document').ready(function(){
         minlength: 3,
        select: function(event,ui){
            $('#q').val(ui.item.value);
-  
 
             }
       });
@@ -769,6 +771,7 @@ $('document').ready(function(){
     src = "{{ route('searchajax') }}";
      $(".search_city").autocomplete({
         source: function(request, response) {
+            
             $.ajax({
                 url: src,
                 dataType: "json",
@@ -777,7 +780,6 @@ $('document').ready(function(){
                 },
                 success: function(data) {
                     response(data);
-
 
                    
                 }
@@ -1712,5 +1714,7 @@ function isNumberKey(evt)
     </div>
   </div>
 </div>
+
+
 @include('layout.modal')
 

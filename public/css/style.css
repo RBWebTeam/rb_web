@@ -74,7 +74,7 @@ h5 {
   color: #fff;
   background: #ec1b23;
 }
-td {padding:10px; text-align:center;}
+td {padding:5px; text-align:center;}
 
 .btn {
   margin-bottom: 4px;
@@ -986,7 +986,7 @@ rb-services-section{padding:0px;}
 #fh5co-page {
   position: relative;
   z-index: 2;
-  background: #eee;
+  background:#fbfbfb;
 }
 
 #fh5co-offcanvas, .fh5co-nav-toggle, #fh5co-page {
@@ -1402,7 +1402,7 @@ input[placeholder], [placeholder], *[placeholder] {color: #1f386e !important;}
 .img-c img {margin: 0 auto;}
 .comp-btn {margin-top:20px;}
 .white-bg {background:#fff;}
-.table-responsive {margin-bottom:10px;}
+.table-responsive {margin-bottom:20px;}
 .nl-form-errors {position: relative;background: #15a9fa;-webkit-border-radius: 7px;-moz-border-radius: 7px;
 border-radius: 7px;padding: 1em;margin-top: 1em;}
 .nl-form-errors:after {content: '';position: absolute;border-style: solid;border-width: 12px 12px 0;border-color: #15a9fa transparent;
@@ -1853,6 +1853,13 @@ body {background:#eee;}
 .error-template {padding: 40px 15px;text-align: center;}
 .error-actions {margin-top:15px;margin-bottom:15px;}
 .error-actions .btn { margin-right:10px; }
+.outer-brd {border-bottom: 3px solid #ebedf0;}
+.gray-bg {background:#ddd;}
+.apply-btn {color:#fff;}
+.blue-bg {background:#39F;color:#fff;}
+.blue-bg:hover {background:#337ab7;}
+.blue-bg a:hover {color:#fff;}
 .error{
   color: red;
 }
+

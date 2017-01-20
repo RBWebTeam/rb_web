@@ -91,6 +91,7 @@
 			<div class="row">
 				<div class="pricing pad">
 					<div class="col-md-4 animate-box">
+					    <a href="{{URL::to('get-loan')}}/{{$id->Product_Id}}" >
 						<div class="price-box popular">
 							
 							<div class="ic1"><img src="images/ic1.png" /></div>
@@ -103,9 +104,11 @@
 						
 							<a class="btn btn-primary btn-outline with-arrow" href="{{URL::to('get-loan')}}/{{$id->Product_Id}}" >Compare<i class="icon-arrow-right"></i></a>
 						</div>
+						</a>
 					</div>
 
 					<div class="col-md-4 animate-box">
+					  <a href="{{URL::to('check_emi')}}" >
 						<div class="price-box popular">
 							<div class="ic1"><img src="images/ic2.png" /></div>
 							<h4 class="mrg-btm">Calculate EMI</h4>
@@ -115,9 +118,11 @@
 							</ul>
 							<a class="btn btn-primary btn-outline with-arrow" href="{{URL::to('check_emi')}}">Calculate EMI<i class="icon-arrow-right"></i></a>
 						</div>
+						</a>
 					</div>
 					
 					<div class="col-md-4 animate-box">
+					   <a href="{{URL::to('/apply-personal-loan')}}" >
 						<div class="price-box popular">
 							<div class="ic1 text-center"><img src="images/ic3.png" /></div>
 							<h4 class="mrg-btm">Apply Online Loan</h4>
@@ -131,6 +136,7 @@
 							<a class="btn btn-primary btn-outline with-arrow" href="{{URL::to('/apply-personal-loan')}}">Apply Online
 							<i class="icon-arrow-right"></i></a>
 						</div>
+						</a>
 					</div>
 
 				</div>

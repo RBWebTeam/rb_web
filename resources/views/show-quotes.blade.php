@@ -178,7 +178,7 @@
   <a href="#" id="backid" class="btn btn-primary btn-outline with-arrow ">Back</a>
 <table   id="tables"   border="1" style="margin: auto;">
 
-<tbody style='float:left; '>
+<tbody style='float:left;''>
 <tr><td><b>Bank Name</b></td></tr>
 <tr><td><b>Loan Amount</b></td></tr>
 <tr><td><b>Rate</b></td></tr>

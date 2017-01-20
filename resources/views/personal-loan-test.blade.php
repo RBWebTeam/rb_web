@@ -25,12 +25,12 @@
 			</div>
 			<div class="col-md-12 text-center animate-box cont" style="display: none;" id="q2">
              <h3>my monthly income is
-			 <input type="tel" id="income" name="income" onkeyup="changeText_new('income','q3')"  onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="1,00,000" tabindex="1">
+			 <input type="tel" id="income" name="income" oninput="changeText_new('income','q3')"  onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="1,00,000" tabindex="1">
 			 </h3> 
 			</div>
 			<div class="col-md-12 text-center animate-box cont" style="display: none;" id="q2_year">
              <h3>my turnover is
-			 <input type="tel" id="income_year" name="turnover" onkeyup="changeText_new('income_year','q3')"  onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="1,00,000" tabindex="1">
+			 <input type="tel" id="income_year" name="turnover" oninput="changeText_new('income_year','q3')"  onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="1,00,000" tabindex="1">
 			 </h3> 
 			</div>
 			<div class="col-md-12 text-center animate-box cont" style="display: none;" id="q3">
@@ -41,7 +41,7 @@
 
 			<div class="col-md-12 text-center animate-box cont" style="display: none" id="q4">
              <h3>and my existing loan EMI is
-			 <input type="tel" id="obligation" name="obligation"  onkeyup="changeText_new('obligation','q5')"  onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="1,00,000" tabindex="1">
+			 <input type="tel" id="obligation" name="obligation"  oninput="changeText_new('obligation','q5')"  onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="1,00,000" tabindex="1">
 			 </h3> 
 			</div>
 			<div class="col-md-12 text-center animate-box cont" style="display:none;" id="q5" >
@@ -50,9 +50,10 @@
 				<input type="text" class="search_city input-pad" id='city_name' name='city_name' onblur="changeTest_new('city_name','q6')" placeholder='your city'>city</h3>
 				
 			</div>
+			
 			<div class="col-md-12 text-center animate-box cont" style="display: none" id="q6">
              <h3>and required loan for
-			 <input type="tel" id="loan_tenure" name="loan_tenure"  onkeypress="changeText_new('loan_tenure','date_birth')"  onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="20" tabindex="1" maxlength="2" >
+			 <input type="tel" id="loan_tenure" name="loan_tenure"  oninput="changeText_new('loan_tenure','date_birth')"  onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="20" tabindex="1" maxlength="2" >
 			 years
 			 </h3> 
 			</div>
@@ -66,13 +67,13 @@
 			</div>
 			<div class="col-md-12 text-center animate-box cont" style="display:none;" id="q8" >
 					<h3> and Pan Card number is
-					<input type="text" id="card" name="pan_number"  onkeyup="changeText_new('card','q9')"   class="input-pad" placeholder="Pan Card" maxlength="10" minlength="10" tabindex="1">
+					<input type="text" id="card" name="pan_number"  oninput="changeText_new('card','q9')"   class="input-pad" placeholder="Pan Card" maxlength="10" minlength="10" tabindex="1">
 					.</h3>
 			</div>
 
 			<div class="col-md-12 text-center animate-box cont" style="display: none" id="q9">
              <h3>I want a Personal Loan of Rs.
-			 <input type="tel" id="loan_amount" name="loan_amount"  onkeyup="changeText_new('loan_amount','step_3_btn')"  onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="1,00,000" tabindex="1">
+			 <input type="tel" id="loan_amount" name="loan_amount"  oninput="changeText_new('loan_amount','step_3_btn')"  onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="1,00,000" tabindex="1">
 			 </h3> 
 			</div>
 			<div class="text-center " style="display: none" id="step_3_btn">

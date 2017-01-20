@@ -71,7 +71,6 @@ $(".lastReporteddate").datepicker({ dateFormat: "yy-mm-dd",
             yearRange: '-100:' + year + '',
             defaultDate: d
      });
-
 // $("#button").click(function(){
 //         var dob = $(".lastReporteddate").val();
 //         var now = new Date();
@@ -1277,7 +1276,7 @@ $("#city_name").on("autocompletechange", function(event,ui) {
     document.cookie ="city_name"+"="+escape(cookieValue)
                  + ";expires="+expire.toGMTString();
 
-$('#step_3_btn').show();
+//$('#step_3_btn').show();
            //  if(cookieValue.length>2){
            //   $('#pop1').empty();
            //   $('#pop1').append("<p>Get loan.");

@@ -36,7 +36,7 @@
               <div class="col-lg-6">
             <form class="login-form" name="login_form" id="login_form"  method="post" style="display: block;">                   {{ csrf_field() }}
                   <div class="form-group">
-                    <input type="text" name="email_login" id="email_login" tabindex="1" class="form-control" placeholder="Username" value="">
+                    <input type="text" name="email_login" id="email_login" tabindex="1" class="form-control" placeholder="Email" value="">
                   </div>
                      <div class="form-group">
                     <input type="password" name="login_pass" id="login_pass" tabindex="2" class="form-control" placeholder="Password">

@@ -105,12 +105,13 @@
 
 
                           <div class="tab-pane" id="credit-score">
-                          @if(isset($cquery->credit_score))
+                            @if(isset($cquery->credit_score))
                                
-                                      <?php $credit_score=$cquery->credit_score;?>
-                                  @else
+                                      <?php if($cquery->credit_score!='' && $cquery->credit_score!='0'){ $credit_score=$cquery->credit_score;}else{
+                                            $credit_score='Not yet Evaluated.';}?>
+                            @else
                                       <?php $credit_score='Not yet Evaluated.';?>
-                          @endif
+                            @endif
                           
                           <div class="col-md-12"><h2> Your credit score `{{$credit_score}}`</h2>  </div>
                            <div class="col-md-12">

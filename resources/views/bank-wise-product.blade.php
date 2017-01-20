@@ -86,9 +86,12 @@
     <td class="upper">Minimum Credit Score</td>
     <td class="upper">Tenure</td>
     <td class="upper">Profession</td>
+    <?php  if($product == 'home-loan' || $product =='personal-loan'){
+    ?>
     <td class="upper"><a href="{{URL::to('apply-')}}{{$product}}">Apply Online</a></td>
-
-
+	<?php }else{ ?>
+	<td class="upper"><a href="{{URL::to('contact-us')}}">Apply Online</a></td>
+	<?php } ?>
 
    <!--  <td class="upper" width="17%"><a href="{{url('apply')}}dw">Apply Online</a></td> -->
   </tr>

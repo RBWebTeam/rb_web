@@ -54,13 +54,12 @@ h3 {
 h5 {
 	font-size:30px;
 	color:#fff;
-	background:blue;
-	opacity:0.6;
+	opacity:0.8;
 	padding:0px 20px;
 	display: -webkit-inline-box;
 	border-radius:5px;-moz-border-radius:5px;-webkit-border-radius:7px;
 	}
-
+.slider-text-inner h5 {color:#ffffff;}
 ::-webkit-selection {
   color: #fff;
   background: #ec1b23;
@@ -551,8 +550,7 @@ td {padding:10px; text-align:center;}
   font-size:50px;
   font-weight: 400;
   color: #fff;
-  background:blue;
-  box-shadow:1px 1px 3px 1px #000;
+
   border-radius:7px;-moz-border-radius:7px;-webkit-border-radius:7px;-o-border-radius:7px;
   display: -webkit-inline-box;
   font-weight:bold;
@@ -588,6 +586,7 @@ rb-services-section{padding:0px;}
   height:120px;
   padding:10px;
   border: 1px solid #ddd;
+  border-top:0px;
   transition:all 0.3s linear;-moz-transition:all 0.3s linear;-webkit-transition:all 0.3s linear;-o-transition:all 0.3s linear;
 }
 
@@ -1336,7 +1335,7 @@ border: #3px solid #999;background:#1f386e;margin: 10px;margin: 10px auto;text-a
 .arrow-don {top:150px;padding:10px;position:fixed; z-index:10000;cursor:pointer;background:#3699c1;color:#fff;}
 .bdy1, .bdy2, .bdy3, .bdy4 {z-index:10000; top:0px;margin-left:70px;padding:10px;position:absolute;width:500px;height:350px;background:#ddd;border:1px solid #ccc;}
 #fh5co-offcanvas ul li a {color:#88d0ed;}
-.slide-head {opacity:0.8;-moz-opacity:0.6;-webkit-opacity:0.6;}
+.slide-head {opacity:0.8;-moz-opacity:0.8;-webkit-opacity:0.8;}
 .clr-ddd input {color:#ddd;}
 .#fh5co-header nav ul li a ul {margin-top:10px;}
 #fh5co-header nav ul li a .icon-chevron-down {top:0px; font-size:12px;}

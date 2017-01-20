@@ -67,7 +67,7 @@
 			</div>
 			<div class="col-md-12 text-center animate-box cont" style="display:none;" id="q8" >
 					<h3> and Pan Card number is
-					<input type="text" id="card" name="pan_number"  onkeypress="changeText_new('card','q9')"   class="input-pad" placeholder="Pan Card" maxlength="10" minlength="10" tabindex="1">
+					<input type="text" id="card" name="pan_number"  oninput="changeText_new('card','q9')"   class="input-pad" placeholder="Pan Card" maxlength="10" minlength="10" tabindex="1">
 					.</h3>
 			</div>
 

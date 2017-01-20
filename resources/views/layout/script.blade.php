@@ -71,7 +71,6 @@ $(".lastReporteddate").datepicker({ dateFormat: "yy-mm-dd",
             yearRange: '-100:' + year + '',
             defaultDate: d
      });
-
 // $("#button").click(function(){
 //         var dob = $(".lastReporteddate").val();
 //         var now = new Date();

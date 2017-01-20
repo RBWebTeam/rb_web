@@ -119,7 +119,6 @@
 
                           </div>
 
-
                           <div class="tab-pane" id="Loan-history">
                           <div class="container">
                           <h2  >Loan history</h2>

@@ -97,7 +97,7 @@ class CompareController extends Controller
     }
 
     public function calculation(Request $req){
-      //print_r($req->all());exit();
+      // print_r($req->all());exit();
 
      $getQuery=DB::select('call usp_get_balance_transfer_quot("'.$req['loanamount'].'","'.$req['loaninterest'].'","'.$req['product_id'].'")');
 
@@ -107,7 +107,7 @@ class CompareController extends Controller
             $loanamount=$req['loanamount'];
             $loaninterest=$req['loaninterest']/12/100;
             $loanterm=$req['loanterm'];
-
+            $brokerid = $req['brokerid'];
 
             $amount = $loanamount * $loaninterest * (pow(1 + $loaninterest, $loanterm) / (pow(1 + $loaninterest, $loanterm) - 1));
               $total =(($amount*$loanterm)-$loanamount);
@@ -130,7 +130,7 @@ class CompareController extends Controller
       $test =json_decode(json_encode($getQuery),true);
 
       $user =array('loanamount' => $loanamount, 'loaninterest' => $loaninterest , 'loanterm'=> $loanterm,
-        'product_id'=>$req['product_id']);
+        'product_id'=>$req['product_id'],'brokerid'=>$brokerid);
               $returnHTML = view('emi/switch_cal')->with('data', $test)->with('sata', $user)->render();
               return response()->json(array('success' => true, 'amount'=>$amount, 'new_amount'=>$new_amount, 'drop_emi'=>$drop_emi,'drop_in_int'=>$drop_in_int, 'savings'=>$savings,  'html'=>$returnHTML));                            
             }

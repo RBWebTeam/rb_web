@@ -383,6 +383,7 @@ run_else:
        //                  ));
 	}
 
+// Api to retrieve data by mobile app
 	public function getCustomer(Request $req){
 		//$a = $req->all();
 		//echo $quote =$req->ID;
@@ -463,5 +464,33 @@ run_else:
 			));
 
 	}
+
+	public function getPropertyType(Request $req){
+		//$a = $req->all();
+		//echo $quote =$req->ID;
+
+        $data=DB::table('property_type_master')
+        ->select('Property_Id','Property_Type')
+        ->get();
+         if($data){
+			$status_Id=0;
+			$msg="data delievered";
+			$new_data=$data;
+		}
+		else{
+			$new_data=NULL;
+			$status_Id=1;
+			$msg=" Something went wrong.";
+			
+		}
+
+         return Response::json(array(
+			'data' => $new_data,
+			'status_Id'=>$status_Id,
+			'msg'=>$msg
+			));
+
+	}
+	
 	
 }

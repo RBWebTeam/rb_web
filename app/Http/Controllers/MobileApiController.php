@@ -19,7 +19,7 @@ class MobileApiController extends ApiController
 			$new_data=$data->getData()->data;
 		}
 		else{
-			$new_data='';
+			$new_data=NULL;
 			$status_Id=1;
 			$msg=" Something went wrong.";
 			

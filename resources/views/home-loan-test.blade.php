@@ -16,18 +16,18 @@
 						professional </h3> 
 					</div>
 					<div class="col-md-12 text-center animate-box cont" style="display: none;" id="q2">
-						<h3>my monthly income is
-							<input type="tel" id="income" name="income" onkeyup="changeText_new('income','q3')"  onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="1,00,000" tabindex="1">
+						<h3>where my monthly takehome salary is Rs. 
+							<input type="tel" id="income" name="income" onkeyup="changeText_new('income','q3')"  onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="1,00,000" tabindex="1">.
 						</h3> 
 					</div>
 					<div class="col-md-12 text-center animate-box cont" style="display: none;" id="q2_year">
-						<h3>my turnover is
-							<input type="tel" id="income_year" name="turnover" onkeyup="changeText_new('income_year','self_q')"  onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="1,00,000" tabindex="1">
+						<h3>where my annual turnover is
+							<input type="tel" id="income_year" name="turnover" onkeyup="changeText_new('income_year','self_q')"  onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="1,00,000" tabindex="1">.
 						</h3> 
 					</div>
 					<!-- self employed question -->
 					<div class="col-md-12 text-center animate-box cont" style="display: none;" id="self_q">
-						<h3>my profit after tax is
+						<h3>My profit after tax is
 							<input type="tel" id="profit" name="profit_after_tax" onkeyup="changeText_new('profit','self_q2')"  onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="1,00,000" tabindex="1">
 						</h3> 
 					</div>
@@ -38,8 +38,8 @@
 						</h3> 
 					</div>
 					<div class="col-md-12 text-center animate-box cont" style="display: none;" id="self_q3">
-						<h3>Director remuneration is
-							<input type="tel" id="remuneration" name="remuneration" onkeyup="changeText_new('remuneration','q3')"  onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="1,00,000" tabindex="1">
+						<h3>and my director remuneration is
+							<input type="tel" id="remuneration" name="remuneration" onkeyup="changeText_new('remuneration','q3')"  onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="1,00,000" tabindex="1">.
 						</h3> 
 					</div>
 
@@ -51,8 +51,8 @@
 						</div>
 
 						<div class="col-md-12 text-center animate-box cont" style="display: none" id="q4">
-							<h3>remaining loan EMI is
-								<input type="tel" id="obligation" name="obligation"  onkeyup="changeText_new('obligation','q5')"  onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="1,00,000" tabindex="1">
+							<h3>and my remaining loan EMI is
+								<input type="tel" id="obligation" name="obligation"  onkeyup="changeText_new('obligation','q5')"  onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="1,00,000" tabindex="1">.
 							</h3> 
 						</div>
 						<div class="col-md-12 text-center animate-box cont" style="display:none;" id="q5" >
@@ -63,16 +63,16 @@
 						</div>
 						<div class="col-md-12 text-center animate-box cont" style="display: none" id="q_prop">
 							<h3>and my property cost is
-								<input type="tel" id="property_cost" name="property_cost"  onkeyup="changeText_new('property_cost','q6')"  onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="1,00,000" tabindex="1">
+								<input type="tel" id="property_cost" name="property_cost"  onkeyup="changeText_new('property_cost','q6')"  onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="1,00,000" tabindex="1">.
 							</h3> 
 						</div>
 						<div class="col-md-12 text-center animate-box cont" style="display: none" id="q6">
-							<h3>Loan tenure
-								<input type="tel" id="loan_tenure" name="loan_tenure"  onkeypress=" return fnAllowNumeric(event);" oninput="changeText_new('loan_tenure','q7');" class="input-pad" placeholder="20" tabindex="1" maxlength="2" >
-							</h3> 
+							<h3>I require loan for
+								<input type="tel" id="loan_tenure" name="loan_tenure"  onkeypress=" return fnAllowNumeric(event);" oninput="changeText_new('loan_tenure','q7');" class="input-pad" placeholder="20" tabindex="1" maxlength="2" >years.
+							</h3>
 						</div>
 						<div class="col-md-12 text-center animate-box cont1" style="display: none" id="q7"><h3>I am
-							<a href="#" class="svalue clr-blue pop_up" data-toggle="modal" data-target="#gender_popup" ><input type="text" style="color:000;" class="clr-blue" id="gender" name="gender"  placeholder="Select" readonly>
+							<a href="#" class="svalue clr-blue pop_up" data-toggle="modal" data-target="#gender_popup" ><input type="text" style="color:000;" class="clr-blue" id="gender" name="gender"  placeholder="Select" readonly>.
 							</h3></a>	
 						</div>
 						<div class="col-md-12 text-center animate-box cont1" style="display: none" id="date_birth">
@@ -81,8 +81,8 @@
 							</h3>
 						</div>
 						<div class="col-md-12 text-center animate-box cont" style="display: none" id="q9">
-							<h3>I required loan of 
-								<input type="tel" id="loan_amount" name="loan_amount"  onkeyup="changeText_new('loan_amount','step_2_btn')"  onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="1,00,000" tabindex="1" >
+							<h3>and I require loan amount of Rs.
+								<input type="tel" id="loan_amount" name="loan_amount"  onkeyup="changeText_new('loan_amount','step_2_btn')"  onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="1,00,000" tabindex="1" >.
 							</h3> 
 						</div>
 						
@@ -112,7 +112,7 @@
 					   
 					   <p class="text-center">Step 2 of 3</p>
 						<div class="col-md-12 text-center animate-box cont" id="co_q">
-						<h3>My Co-Applicant is
+						<h3>My Co-Applicant is a
 							<a href="#" class="svalue clr-blue pop_up" data-toggle="modal" data-target="#co_emp_popup" ><input type="text" style="color:000;" class="clr-blue" id="co_emp_detail" name="co_emp_detail"  placeholder="Select" readonly>
 								</a>
 								professional
@@ -120,13 +120,13 @@
 						</div>
 
 						<div class="col-md-12 text-center animate-box cont" style="display: none;" id="co_sal">
-						<h3>Co-Applicant monthly income is
-							<input type="tel" id="co_income" name="co_applicant_income" onkeyup="changeText_new('co_income','co_obl_yes')"  onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="1,00,000" tabindex="1">
+						<h3>where co-applicant monthly income is
+							<input type="tel" id="co_income" name="co_applicant_income" onkeyup="changeText_new('co_income','co_obl_yes')"  onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="1,00,000" tabindex="1">.
 						</h3> 
 					</div>
 					<div class="col-md-12 text-center animate-box cont" style="display: none;" id="co_self">
-						<h3>Co-Applicant turnover is
-							<input type="tel" id="co_income_year" name="co_applicant_turnover" onkeyup="changeText_new('co_income_year','co_profit_all')"  onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="1,00,000" tabindex="1">
+						<h3>where co-applicant annual turnover is
+							<input type="tel" id="co_income_year" name="co_applicant_turnover" onkeyup="changeText_new('co_income_year','co_profit_all')"  onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="1,00,000" tabindex="1">.
 						</h3> 
 					</div>
 					<!-- self employed question -->
@@ -137,24 +137,24 @@
 					</div>
 
 					<div class="col-md-12 text-center animate-box cont" style="display: none;" id="co_self_q2">
-						<h3>Co-Applicant depreciation is
+						<h3>where his/her depreciation is
 							<input type="tel" id="co_depreciation" name="co_applicant_depreciation" onkeyup="changeText_new('co_depreciation','co_self_q3')"  onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="1,00,000" tabindex="1">
 						</h3> 
 					</div>
 					<div class="col-md-12 text-center animate-box cont" style="display: none;" id="co_self_q3">
-						<h3>Co-Applicant  Director remuneration is
-							<input type="tel" id="co_remuneration" name="co_applicant_remuneration" onkeyup="changeText_new('co_remuneration','co_obl_yes')"  onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="1,00,000" tabindex="1">
+						<h3>and director remuneration is
+							<input type="tel" id="co_remuneration" name="co_applicant_remuneration" onkeyup="changeText_new('co_remuneration','co_obl_yes')"  onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="1,00,000" tabindex="1">.
 						</h3> 
 					</div>
 					<div class="col-md-12 text-center animate-box cont" style="display: none" id="co_obl_yes">
-							<h3>Co-Applicant has any existing loan
+							<h3>Do co-applicant has any existing loan
 								<a href="#" class="svalue clr-blue pop_up" data-toggle="modal" data-target="#co_obl_yes_pop" ><input type="text" style="color:000;" class="clr-blue" id="co_obl_loan" name="co_obl_yes"  placeholder="Select" readonly>
 								</a>
 							</h3> 
 					</div>
 					<div class="col-md-12 text-center animate-box cont" style="display: none" id="co_obl_emi">
-							<h3>Co-Applicant remaining loan EMI is
-								<input type="tel" id="co_obligation" name="co_applicant_obligation"  onkeyup="changeText_new('co_obligation','last_button')"  onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="1,00,000" tabindex="1">
+							<h3>and remaining loan EMI is
+								<input type="tel" id="co_obligation" name="co_applicant_obligation"  onkeyup="changeText_new('co_obligation','last_button')"  onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="1,00,000" tabindex="1">.
 							</h3> 
 					</div>
 						

@@ -2,6 +2,7 @@
 
     <div id="fh5co-hero" class="fclass" style="display:block;">
 	<div class="container" >
+  <div class="table-responsive">
 
 	<div class=" pad">
 <!-- 	<p class="text-left">home/{{$product}}</p> -->
@@ -36,10 +37,10 @@
 	<hr>
     </div>
     
-	<div class="pad11">
+	<div class="col-md-12 pad11">
     
-    <div class="table-responsive">
-    <table width="100%" border="1" class="tbl">
+    <div class="">
+    <table width="100%" border="1" class="tbl pad1">
   <tr>
     <td>Your {{$product}} Search for <b>{{$loan_amount}} Lakhs</b> Loan</td>
     <td><a class="default btn btn-primary" href="<?php echo $url;?>">Modify Details</a></td>
@@ -112,6 +113,7 @@
 
 
 
+	</div>
 	</div>
 </div>
 </div>

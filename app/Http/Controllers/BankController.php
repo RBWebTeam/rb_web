@@ -16,7 +16,7 @@ class BankController extends Controller
 	public function home_loanBank($product,$bank){
    //print_r($bank);exit();
 
-		      $product_query=DB::table('bank_master')->select('Bank_Id','Bank_Name','Document2')
+		      $product_query=DB::table('bank_master')->select('Bank_Id','Bank_Name','Document1')
                       ->where('Bank_Name','=',str_replace('-',' ',$bank))
                       ->first();    
                  // echo $product_query->Bank_Id;
@@ -35,7 +35,7 @@ class BankController extends Controller
    
 
     $data['bank_name'] =$product_query->Bank_Name;
-    $data['bank_banner'] =$product_query->Document2;
+    $data['Bank_Logo'] =$product_query->Document1;
 	    return view('bank-wise-product',['getQuery'=>$getQuery])->with($data);
 
 

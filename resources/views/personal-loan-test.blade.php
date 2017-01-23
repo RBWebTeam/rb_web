@@ -24,24 +24,24 @@
 			professional </h3> 
 			</div>
 			<div class="col-md-12 text-center animate-box cont" style="display: none;" id="q2">
-             <h3>my monthly income is
-			 <input type="tel" id="income" name="income" oninput="changeText_new('income','q3')"  onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="1,00,000" tabindex="1">
+             <h3>where my monthly takehome salary is Rs. 
+			 <input type="tel" id="income" name="income" oninput="changeText_new('income','q3')"  onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="1,00,000" tabindex="1">.
 			 </h3> 
 			</div>
 			<div class="col-md-12 text-center animate-box cont" style="display: none;" id="q2_year">
-             <h3>my turnover is
-			 <input type="tel" id="income_year" name="turnover" oninput="changeText_new('income_year','q3')"  onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="1,00,000" tabindex="1">
+             <h3>where my annual turnover is
+			 <input type="tel" id="income_year" name="turnover" oninput="changeText_new('income_year','q3')"  onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="1,00,000" tabindex="1">.
 			 </h3> 
 			</div>
 			<div class="col-md-12 text-center animate-box cont" style="display: none;" id="q3">
-			<h3>I have
+			<h3>I 
 			<a href="#" class="svalue clr-blue pop_up" data-toggle="modal" data-target="#page2" ><input type="text" style="color:000;" class="clr-blue" id="exst_loan_detail" name="exst_loan_detail" readonly placeholder="Select"></a>
-			 existing loan(s)</h3> 
+			 have existing loan(s)</h3> 
 			</div>
 
 			<div class="col-md-12 text-center animate-box cont" style="display: none" id="q4">
              <h3>and my existing loan EMI is
-			 <input type="tel" id="obligation" name="obligation"  oninput="changeText_new('obligation','q5')"  onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="1,00,000" tabindex="1">
+			 <input type="tel" id="obligation" name="obligation"  oninput="changeText_new('obligation','q5')"  onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="1,00,000" tabindex="1">.
 			 </h3> 
 			</div>
 			<div class="col-md-12 text-center animate-box cont" style="display:none;" id="q5" >
@@ -52,13 +52,13 @@
 			</div>
 			
 			<div class="col-md-12 text-center animate-box cont" style="display: none" id="q6">
-             <h3>and required loan for
+             <h3>and I require loan for
 			 <input type="tel" id="loan_tenure" name="loan_tenure"  oninput="changeText_new('loan_tenure','date_birth')"  onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="20" tabindex="1" maxlength="2" >
-			 years
+			 years.
 			 </h3> 
 			</div>
 
-			<div class="col-md-12 text-center animate-box cont1" style="display: none" id="date_birth"><h3>my date of birth is
+			<div class="col-md-12 text-center animate-box cont1" style="display: none" id="date_birth"><h3>My date of birth is
 			
  			<input type="text" class="datepicker minimumSize lastReporteddate" id="dob"  name="dob" onchange="changeTest_new(this,'q8')"  />
 
@@ -66,14 +66,14 @@
 			</h3>
 			</div>
 			<div class="col-md-12 text-center animate-box cont" style="display:none;" id="q8" >
-					<h3> and Pan Card number is
+					<h3> and my Pan Card number is
 					<input type="text" id="card" name="pan_number"  oninput="changeText_new('card','q9')"   class="input-pad" placeholder="Pan Card" maxlength="10" minlength="10" tabindex="1">
 					.</h3>
 			</div>
 
 			<div class="col-md-12 text-center animate-box cont" style="display: none" id="q9">
              <h3>I want a Personal Loan of Rs.
-			 <input type="tel" id="loan_amount" name="loan_amount"  oninput="changeText_new('loan_amount','step_3_btn')"  onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="1,00,000" tabindex="1">
+			 <input type="tel" id="loan_amount" name="loan_amount"  oninput="changeText_new('loan_amount','step_3_btn')"  onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="1,00,000" tabindex="1">.
 			 </h3> 
 			</div>
 			<div class="text-center " style="display: none" id="step_3_btn">

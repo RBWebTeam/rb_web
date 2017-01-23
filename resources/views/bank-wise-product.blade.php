@@ -8,46 +8,53 @@
 	</div>
 	<div class="col-md-8 bg-white bnkpg">
 		<div class="text-center bankpg">
+
 		<img src="{{$bank_banner}}" class="img-responsive" />
 	
+
 		 
 		</div>	
 	  	</div>
 
-		<div class="col-md-4 red-bg1">
+		<div class="col-md-4 red-bg1 ">
 	   <div class="form-in">
 
-              <span class="head-1 heading-bmar">Request A Call Back<span><br>
-             <form class="" id="compareform" role="form" method="POST" action="customer_form.php">
-				  <div class="form-group">
-				  
+              <span class="head-1 heading-bmar">Request A Call Back</span>
+              <form class="" id="compareform" role="form" method="POST">
+            
+              {{ csrf_field() }}
+                <input type="hidden" name="form" value="subscribe-form">
+				  <div class="has-error">
 				    <div>
-				      <input type="text" class="form-control" id="name" name="name" placeholder="Name" required class="clr-ddd" />
+				      <input type="text" class="form-control" id="name" name="name" placeholder="Name" required />
+				       <input type="hidden" class="form-control" id="product" value="{{$product}}" name="product"  />
 				    </div>
 				  </div>
-			<div class="form-group">
+			<div class="has-error">
 		   
 		    <div> 
-		    <input type="text" name="contact" id="contact" class="form-control" 
-			pattern="[789][0-9]{9}" required maxlength="10" placeholder="Mobile No." class="clr-ddd">
+		    <input type="text" name="contact" id="contact" class="form-control clr-ddd" onkeypress="fnAllowNumeric(event)" 
+			pattern="[789][0-9]{9}" required maxlength="10" placeholder="Mobile No." >
 		    </div>
 		  </div>
-				 <div class="form-group">
+				 <div class="has-error">
 				  
 				    <div>
-				      <input type="email" class="form-control" id="name" name="name" placeholder="Email Id" required class="clr-ddd" />
+				      <input type="email" class="form-control clr-ddd" id="email" name="email" placeholder="Email Id" required  />
                  
 				    </div>
 				  </div>
 			 
 			  
-			  <div class="form-group centr-obj"> 
+			  <div class="centr-obj"> 
 			    
-			     <button class="btn btn-primary btn-outline with-arrow">Submit<i class="icon-arrow-right"></i></button>
+			    <button class="btn btn-primary btn-outline with-arrow sidebar-submit" >Submit</button>
 			   
 			  </div>
 			</form>
 		</div>	
+		<div class='msg' style="display: none;"><p>Thanks. We will reach you soon.</p></div>
+            <div class='msg_err' style="display: none;"><p>Ooops. Something went wrong.</p></div>
 	</div>
 	</aside>
 	</div>

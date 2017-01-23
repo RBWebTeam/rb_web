@@ -59,8 +59,8 @@
 			<div class="has-error">
 		   
 		    <div> 
-		    <input type="text" name="contact" id="contact" class="form-control clr-ddd" onkeypress="fnAllowNumeric(event)" 
-			pattern="[789][0-9]{9}" required maxlength="10" placeholder="Mobile No." >
+		    <input type="text" name="contact" id="contact" class="form-control clr-ddd" onkeypress=" return fnAllowNumeric(event)" 
+			pattern="[789][0-9]{9}" required maxlength="10" minlength="10" placeholder="Mobile No." >
 		    </div>
 		  </div>
 				 <div class="has-error">
@@ -79,8 +79,8 @@
 			  </div>
 			</form>
 		</div>	
-		<div class='msg' style="display: none;"><p>Thanks. We will reach you soon.</p></div>
-            <div class='msg_err' style="display: none;"><p>Ooops. Something went wrong.</p></div>
+		<div class='msg' style="display: none; color:red;text-align:center;"><p>Thanks. We will reach you soon.</p></div>
+            <div class='msg_err' style="display: none; color:red;text-align:center;"><p>Ooops. Something went wrong.</p></div>
 	</div>
 	</aside>
 	</div>
@@ -92,6 +92,7 @@
 			<div class="row">
 				<div class="pricing pad">
 					<div class="col-md-4 animate-box">
+					<a href="{{URL::to('get-loan')}}/{{$id->Product_Id}}" >
 						<div class="price-box popular">
 							
 							<div class="ic1"><img src="images/ic1.png" /></div>
@@ -102,11 +103,13 @@
 								 <li>Compare with 100 banks.</li>
 							</ul>
 						
-	  <a class="btn btn-primary btn-outline with-arrow" href="{{URL::to('get-loan')}}/{{$id->Product_Id}}" >Compare<i class="icon-arrow-right"></i></a>
+	  <a class="btn btn-primary btn-outline with-arrow" href="{{URL::to('get-loan')}}/{{$id->Product_Id}}">Compare<i class="icon-arrow-right"></i></a>
 						</div>
+						</a>
 					</div>
 
 					<div class="col-md-4 animate-box">
+						<a href="{{URL::to('check_emi')}}" >
 						<div class="price-box popular">
 							<div class="ic1"><img src="images/ic2.png" /></div>
 							<h4 class="mrg-btm">Calculate EMI</h4>
@@ -116,9 +119,11 @@
 							</ul>
 							<a class="btn btn-primary btn-outline with-arrow" href="{{URL::to('check_emi')}}">Calculate EMI<i class="icon-arrow-right"></i></a>
 						</div>
+						</a>
 					</div>
 					
 					<div class="col-md-4 animate-box">
+					    <a href="{{URL::to('/apply-home-loan')}}" >
 						<div class="price-box popular">
 							<div class="ic1 text-center"><img src="images/ic3.png" /></div>
 							<h4 class="mrg-btm">Apply Online Loan</h4>
@@ -132,6 +137,7 @@
 							<a class="btn btn-primary btn-outline with-arrow" href="{{URL::to('/apply-home-loan')}}">Apply Online
 							<i class="icon-arrow-right"></i></a>
 						</div>
+						</a>
 					</div>
 
 				</div>

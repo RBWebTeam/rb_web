@@ -36,7 +36,7 @@
               <div class="col-lg-6">
             <form class="login-form" name="login_form" id="login_form"  method="post" style="display: block;">                   {{ csrf_field() }}
                   <div class="form-group">
-                    <input type="text" name="email_login" id="email_login" tabindex="1" class="form-control" placeholder="Username" value="">
+                    <input type="text" name="email_login" id="email_login" tabindex="1" class="form-control" placeholder="Email" value="">
                   </div>
                      <div class="form-group">
                     <input type="password" name="login_pass" id="login_pass" tabindex="2" class="form-control" placeholder="Password">
@@ -84,7 +84,7 @@
                   </div>
 
                    <div class="form-group">
-                    <input type="text" name="contact" id="contact" tabindex="1" class="form-control" placeholder="Mobile Number" >
+                    <input type="text" name="contact" id="contact" onkeypress="return fnAllowNumeric(event)" maxlength="10"  tabindex="1" class="form-control" placeholder="Mobile Number" >
                     <span id="errorcontact"  class="error-msg"></span>
                   </div>
 
@@ -92,7 +92,7 @@
                     <input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Password">
                      <span id="errorpassword"  class="error-msg" ></span>
                   </div>
-
+                   
                   <div class="form-group">
                     <input type="password" name="password_confirm" id="password_confirm" tabindex="2" class="form-control" placeholder="Confirm Password">
                      <span id="errorpasswordconfirm"  class="error-msg"></span>
@@ -128,6 +128,7 @@
 
                   </div>           
               </form>
+                <span class="forgotps"></span>
           </div>
               
               

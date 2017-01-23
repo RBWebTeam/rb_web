@@ -146,7 +146,7 @@
 								<a id="googleLOG" href={{URL::to('logout')}}>Logout</a>
 								<a href="{{url('profile')}}">My Profile</a>
 								<a href="{{URL::to('credit-report')}}">My Credit Score</a>
-								<a href='#'>Applied loan</a>
+								<a href="{{url('profile')}}">Applied loan</a>
 								</li>
 							</ul>
 							

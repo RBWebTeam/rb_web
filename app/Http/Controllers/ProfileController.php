@@ -24,15 +24,14 @@ class ProfileController extends Controller
 
         $query=DB::table('user_registration')->where('id','=',$get_id)->first();
         $cquery=DB::table('customer_details')->where('user_id','=',$get_id)->first();
-
       //  $loan_history=DB::table('bank_quote_api_request')->where('Email','=',$email_id)->get();
-        $loan_history = DB::table('product_master')
-             ->leftjoin('bank_quote_api_request', 'product_master.Product_Id', '=', 'bank_quote_api_request.bank_id')
+              $loan_history = DB::table('bank_quote_api_request')
+            ->leftjoin('product_master', 'product_master.Product_Id', '=', 'bank_quote_api_request.ProductId')
             ->select('bank_quote_api_request.*','product_master.*')
             ->where('bank_quote_api_request.Email', $email_id)
+            ->where('bank_quote_api_request.bank_id','!=','NULL')
+            ->orderBy('bank_quote_api_request.ID', 'DESC')
             ->get();
-
-
           return view('my-profile',['query'=>$query,'cquery'=>$cquery,'loan_history'=>$loan_history]);
       }else{
         return redirect('/');
@@ -148,10 +147,32 @@ public function  change_password(Request $req){
     $app = $request['appid'];
     $quote = $request['qoutid'];
     $bank = $request['BankId'];
+    if(isset($brokerid)){
+      $brokerid = $request['brokerid'];
+    }else{
+      $brokerid = "";
+    }
+     if(isset($loanamount)){
+      $loanamount = $request['loanamount'];
+    }else{
+      $loanamount = "";
+    }
+     if(isset($loaninterest)){
+      $loaninterest = $request['loaninterest'];
+    }else{
+      $loaninterest = "";
+    }
+     if(isset($loanterm)){
+      $loanterm = $request['loanterm'];
+    }else{
+      $loanterm = "";
+    }
     $email=Session::get('email');
     $update = DB::table('bank_quote_api_request')->where('ID', $quote)->where('Email', $email)->update(array('bank_id' => $bank));
     if($update){
       return redirect()->away('http://beta.erp.rupeeboss.com/homeloan/Home_Loan_Application_Form.aspx?appid=0&qoutid='.$quote.'&BankId='.$bank.'');
+    }else{
+      return redirect()->away('http://beta.erp.rupeeboss.com/homeloan/Home_Loan_Application_Form.aspx?appid=0&qoutid='.$quote.'&BankId='.$bank.'&brokerid='.$brokerid.'&loanamount='.$loanamount.'&loaninterest='.$loaninterest.'&loanterm='.$loanterm.'');
     }
   }
 

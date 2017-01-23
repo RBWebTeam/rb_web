@@ -17,7 +17,7 @@
                    <li><a href="#extraDetails" data-toggle="tab">Extra Details</a></li>
                      <li><a href="#credit-score" data-toggle="tab">My Credit Score </a></li>
                        <li><a href="#Loan-history" data-toggle="tab">Loan History </a></li>
-                         <li><a href="#Track-Apllication" data-toggle="tab">Track Application </a></li>
+                         <!-- <li><a href="#Track-Apllication" data-toggle="tab">Track Application </a></li> -->
                             
                                @if($query->password!='0')
                                       <li><a href="#change-password" data-toggle="tab">Change password </a></li>
@@ -29,9 +29,10 @@
                    
                 </ul>
             </div>
-            <div class="col-md-9 col-sm-12">
-                <!-- Tab panes -->
+			<!-- Tab panes -->
                 <div class="row">
+            <div class="col-md-8 col-sm-12">
+                
                     <div class="tab-content">
                         <div class="tab-pane active" id="profile">
                             <form name="profile_update" id="profile_update" method="post">
@@ -105,14 +106,15 @@
 
 
                           <div class="tab-pane" id="credit-score">
-                          @if(isset($cquery->credit_score))
+                            @if(isset($cquery->credit_score))
                                
-                                      <?php $credit_score=$cquery->credit_score;?>
-                                  @else
+                                      <?php if($cquery->credit_score!='' && $cquery->credit_score!='0'){ $credit_score=$cquery->credit_score;}else{
+                                            $credit_score='Not yet Evaluated.';}?>
+                            @else
                                       <?php $credit_score='Not yet Evaluated.';?>
-                          @endif
+                            @endif
                           
-                          <div class="col-md-12"><h2> Your credit score `{{$credit_score}}`</h2>  </div>
+                          <div class="col-md-12"><h2> Your credit score :: {{$credit_score}}</h2>  </div>
                            <div class="col-md-12">
                            <p>Get Free Credit Report <a href="{{url('credit-report')}}"> click Here..</a></p>
                            </div>
@@ -120,14 +122,16 @@
                           </div>
 
 
+
                           <div class="tab-pane" id="Loan-history">
                           <div class="container">
-                          <h2  >Loan history</h2>
+                          <h2  >Loan history </h2>
                                @if(isset($loan_history))
-                                <ul class="list-group" style="width:600px;">
+                                <ul class="list-group">
                                   <?php foreach ($loan_history as $key => $value) { ?>
                                   <li class="list-group-item"  >
-                                    <a href="http://beta.erp.rupeeboss.com/homeloan/Home_Loan_Application_Form.aspx?appid=0&qoutid={{$value->ID}}&BankId={{$value->bank_id}}">Searched for   {{$value->Product_Name}}  <span class="badge">Date :{{date('Y:m:d', strtotime($value->created_at))}}  </span> <span class="btn btn-success btn-sm pull-right">View </span></applet></a>
+                                  
+                                    <a href="http://beta.erp.rupeeboss.com/homeloan/Home_Loan_Application_Form.aspx?appid=0&qoutid={{$value->ID}}&BankId={{$value->bank_id}}">Searched for   {{$value->Product_Name}}  <span class="badge">Date :{{date('Y:m:d', strtotime($value->created_at))}}  </span> <span class="btn btn-success btn-sm pull-right">View </span></a>
                                   </li>
                                   <?php  } ?>
                                 </ul>
@@ -146,10 +150,10 @@
 
                           <div class="tab-pane" id="change-password">
                           <div id="success" class="col-md-6 pad11 text-danger"></div>
-                          <br>
+                          
                           <div id="success1" class="col-md-6 pad11 text-danger"></div>
                           
- 
+         
             <div class="tab-pane active" id="profile">
                  <form id="confirmpassword" name="confirmpassword" role="form" method="POST"> {{ csrf_field() }}
 

@@ -392,17 +392,17 @@ run_else:
          if($data){
 			$status_Id=0;
 			$msg="data delievered";
-			
+			$new_data=$data;
 		}
 		else{
 			
 			$status_Id=1;
 			$msg=" Something went wrong.";
-			
+			$new_data=NULL;
 		}
 
          return Response::json(array(
-			'data' => $data,
+			'data' => $new_data,
 			'status_Id'=>$status_Id,
 			'msg'=>$msg
 			));
@@ -413,21 +413,23 @@ run_else:
 		//echo $quote =$req->ID;
 
         $data=DB::table('city_master')
+        ->select('City_Id','City_Name','state_id')
+        ->where('Is_Active','=','True')
 		->get();
           if($data){
 			$status_Id=0;
 			$msg="data delievered";
-			
+			$new_data=$data;
 		}
 		else{
 			
 			$status_Id=1;
 			$msg=" Something went wrong.";
-			
+			$new_data=NULL;
 		}
 
          return Response::json(array(
-			'data' => $data,
+			'data' => $new_data,
 			'status_Id'=>$status_Id,
 			'msg'=>$msg
 			));
@@ -439,21 +441,23 @@ run_else:
 		//echo $quote =$req->ID;
 
         $data=DB::table('product_master')
+        ->select('Product_Id','Product_Name')
+        ->where('Is_Active','=','True')
 		->get();
          if($data){
 			$status_Id=0;
 			$msg="data delievered";
-			
+			$new_data=$data;
 		}
 		else{
-			
+			$new_data=NULL;
 			$status_Id=1;
 			$msg=" Something went wrong.";
 			
 		}
 
          return Response::json(array(
-			'data' => $data,
+			'data' => $new_data,
 			'status_Id'=>$status_Id,
 			'msg'=>$msg
 			));

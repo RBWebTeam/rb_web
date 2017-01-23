@@ -98,4 +98,7 @@ Route::post('calculationfordc','CompareController@calculationfordc');
 Route::post('show-credit-report','ExperianController@call');
 Route::post('gen-qstn','ExperianController@gen_ques2');
 
+//doc upload
+Route::get('doc-upload','UploadController@Upload');
+Route::post('doc-upload','UploadController@UploadPost');
 

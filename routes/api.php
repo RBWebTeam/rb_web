@@ -28,3 +28,4 @@ Route::post('mobile-api-compare','MobileApiController@mobile_api_compare');
 Route::post('getcustomer','ApiController@getCustomer');
 Route::post('getcity','ApiController@getCity');
 Route::post('getproduct','ApiController@getProduct');
+Route::post('getproperty','ApiController@getPropertyType');

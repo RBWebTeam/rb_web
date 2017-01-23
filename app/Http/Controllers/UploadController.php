@@ -15,15 +15,17 @@ class UploadController extends Controller
     public function UploadPost(Request $request)
     {
     	$this->validate($request, [
-            'Document' => 'required',
+            'Identity_Proof' => 'required',
+            'Income_Proof' => 'required',
+            'Address_Proof' => 'required'
         ]);
+         $imageName = time().'.'.$request->Identity_Proof->getClientOriginalExtension();
+        $request->Identity_Proof->move(public_path('Upload'), $imageName);
 
-        $imageName = time().'.'.$request->image->getClientOriginalExtension();
-        $request->image->move(public_path('images'), $imageName);
-		print_r($request->all());exit();
-    	return back()
-    		->with('success','Image Uploaded successfully.')
-    		->with('path',$imageName);
+       // print "<pre>";
+    	//print_r($request->all());
+    	//print_r($imageName);
+    	return "Thank You!!!";
     }
 
 }

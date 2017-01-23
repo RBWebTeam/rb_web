@@ -19,7 +19,7 @@
 		   				<div class="slider-text-inner">
 		   				 <img src="images/home-ic.png" class="center-img-align img-responsive" />
 		   					<h2 class="slide-head">Home Loan </h2>
-							<h5>Stay ahead of the curve with the Best in the Market</h5>
+							<h5>Choose the right Home Loan for you ...!!</h5>
 		   					<p><a href="{{URL::to('home-loan')}}" class="btn btn-primary btn-lg">View More</a></p>
 		   				</div>
 		   			</div>
@@ -31,7 +31,7 @@
 		   				<div class="slider-text-inner">
 		   				<img src="images/personal-ic.png" class="center-img-align img-responsive" />
 		   					<h2 class="slide-head">Personal Loan</h2>
-							<h5>Stay ahead of the curve with the Best in the Market</h5>
+							<h5>Finance Your Dreams...!!</h5>
 		   					<p><a href="{{URL::to('personal-loan')}}" class="btn btn-primary btn-lg">View More</a></p>
 		   				</div>
 		   			</div>
@@ -42,8 +42,8 @@
 		   			<div class="slider-text">
 		   				<div class="slider-text-inner">
 		   				<img src="images/lap-ic.png" class="center-img-align img-responsive" />
-		   					<h2 class="slide-head"> Loan against Property</h2>
-							<h5>Stay ahead of the curve with the Best in the Market</h5>
+		   					<h2 class="slide-head"> Loan Against Property</h2>
+							<h5>Finding you a better Deal...!!</h5>
 		   					<p><a href="{{URL::to('loan-against-property')}}" class="btn btn-primary btn-lg">View More</a></p>
 		   				</div>
 		   			</div>
@@ -55,7 +55,7 @@
 		   				<div class="slider-text-inner">
 		   				<img src="images/sme-ic.png" class="center-img-align img-responsive" />
 		   					<h2 class="slide-head">SME Loan</h2>
-							<h5>Stay ahead of the curve with the Best in the Market</h5>
+							<h5>We Support Make in India..!!</h5>
 		   					<p><a href="{{URL::to('sme-loan')}}" class="btn btn-primary btn-lg">View More</a></p>
 		   				</div>
 		   			</div>
@@ -67,7 +67,7 @@
 		   				<div class="slider-text-inner">
 		   				<img src="images/balance-ic.png" class="center-img-align img-responsive" />
 		   					<h2 class="slide-head">Business Loan</h2>
-							<h5>Stay ahead of the curve with the Best in the Market</h5>
+							<h5>Experience on your side...!!</h5>
 		   					<p><a href="{{URL::to('business-loan')}}" class="btn btn-primary btn-lg">View More</a></p>
 		   				</div>
 		   			</div>
@@ -79,7 +79,7 @@
 		   				<div class="slider-text-inner">
 		   				<img src="images/car-ic.png" class="center-img-align img-responsive" />
 		   					<h2 class="slide-head">Car Loan</h2>
-							<h5>Stay ahead of the curve with the Best in the Market</h5>
+							<h5>Thinking of your comfort first !!</h5>
 		   					<p><a href="{{URL::to('car-loan')}}" class="btn btn-primary btn-lg">View More</a></p>
 		   				</div>
 		   			</div>

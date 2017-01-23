@@ -413,6 +413,8 @@ run_else:
 		//echo $quote =$req->ID;
 
         $data=DB::table('city_master')
+        ->select('City_Id','City_Name','state_id')
+        ->where('Is_Active','=','True')
 		->get();
           if($data){
 			$status_Id=0;
@@ -439,6 +441,8 @@ run_else:
 		//echo $quote =$req->ID;
 
         $data=DB::table('product_master')
+        ->select('Product_Id','Product_Name')
+        ->where('Is_Active','=','True')
 		->get();
          if($data){
 			$status_Id=0;

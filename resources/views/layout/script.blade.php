@@ -480,9 +480,8 @@ $(".login-submit").click(function(event){
                       //window.location.href ="{{URL::to('profile')}}";
 
                        $("#log_popup").modal('hide');
-                       $("#refreshID").load(location.href + " #refreshID");
-                       
-                       
+                   $("#refreshID").load(location.href + " #refreshID");
+                                               
                         $('#btn_refresh').show();
                         $('#btn_refresh1').hide();
                         $('.btn_refresh1').hide();
@@ -935,7 +934,7 @@ $(document).ready(function(){
       //  var sp = top / bottom;
       //  var emi = ((loanamount * monthlyInterestRatio) * sp);
       //  console.log(emi);
-      var loanamount = $("#loanamount").val();
+      var loanamount = $("#loanamount").val().replace(",","");
       var loaninterest = $("#loaninterest").val();
       
 
@@ -1608,6 +1607,22 @@ function isNumberKey(evt)
 
 });
 
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+    $("input[data-type='number']").keyup(function(event){
+      // skip for arrow keys
+      if(event.which >= 37 && event.which <= 40){
+          event.preventDefault();
+      }
+      var $this = $(this);
+      var num = $this.val().replace(/,/gi, "");
+      var num2 = num.split(/(?=(?:\d{3})+$)/).join(",");
+      console.log(num2);
+      // the following line has been simplified. Revision history contains original.
+      $this.val(num2);
+  });
+});
 </script>
 
 

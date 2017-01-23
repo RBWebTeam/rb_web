@@ -8,7 +8,7 @@
 <table class="table table-bordered table-striped" id="emipaymenttable">
 
   <tr class="tbl-clr">
-    <th bgcolor="#999"  class="col-xs-3 col-md-1" id="bankheader">Bank Name</th>
+    <th bgcolor="#999"  class="col-xs-3 col-md-1" id="bankheader" style="width: 15%">Bank Name</th>
 
     <th bgcolor="#999" class="col-sm-2" id="rateheader"><center>Rate Of Interest</center></th>
 
@@ -73,13 +73,8 @@ foreach ($data as $key => $value){?>
     <td><?php echo ($drop_in_int); ?>  </td>
     <td><?php echo round($savings); ?>  </td>
     <td width="17%">
-     <?php if($product_id == 12) {?>
-     <a href="{{URL::to('apply-lead-online')}}?appid=0&qoutid=0&BankId={{$value['Bank_Id']}}&brokerid={{$broker_id}}&loanamount={{ $loanamount}}&loaninterest={{$loaninterest }}&loanterm={{$loanterm}}">Apply Online</a></td>
-    <?php }elseif($product_id == 9){?>
-    <a href="{{URL::to('apply-lead-online')}}?appid=0&qoutid=0&BankId={{$value['Bank_Id']}}&brokerid={{$broker_id}}&loanamount={{ $loanamount}}&loaninterest={{$loaninterest }}&loanterm={{$loanterm}}">Apply Online</a></td>
-    <?php }else{?>
-    <a href="{{URL::to('apply-lead-online')}}?appid=0&qoutid=0&BankId={{$value['Bank_Id']}}&brokerid={{$broker_id}}&loanamount={{ $loanamount}}&loaninterest={{$loaninterest }}&loanterm={{$loanterm}}">Apply Online</a></td>
-    <?php }?>
+    
+    <a href="{{URL::to('apply-lead-online')}}?appid=0&qoutid=0&BankId={{$value['Bank_Id']}}&brokerid={{$broker_id}}&loanamount={{ $loanamount}}&loaninterest={{$loaninterest }}&loanterm={{$loanterm}}&product={{$product_id}}">Apply Online</a></td>
                            
 
     </tr>

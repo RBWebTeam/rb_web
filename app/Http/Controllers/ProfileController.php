@@ -147,10 +147,26 @@ public function  change_password(Request $req){
     $app = $request['appid'];
     $quote = $request['qoutid'];
     $bank = $request['BankId'];
-    $brokerid = $request['brokerid'];
-    $loanamount=$request['loanamount'];
-    $loaninterest=$request['loaninterest'];
-    $loanterm=$request['loanterm'];
+    if(isset($brokerid)){
+      $brokerid = $request['brokerid'];
+    }else{
+      $brokerid = "";
+    }
+     if(isset($loanamount)){
+      $loanamount = $request['loanamount'];
+    }else{
+      $loanamount = "";
+    }
+     if(isset($loaninterest)){
+      $loaninterest = $request['loaninterest'];
+    }else{
+      $loaninterest = "";
+    }
+     if(isset($loanterm)){
+      $loanterm = $request['loanterm'];
+    }else{
+      $loanterm = "";
+    }
     $email=Session::get('email');
     $update = DB::table('bank_quote_api_request')->where('ID', $quote)->where('Email', $email)->update(array('bank_id' => $bank));
     if($update){

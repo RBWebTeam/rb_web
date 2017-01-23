@@ -25,7 +25,7 @@
 
   <tr>
     <!-- <td width="9%" class="upper">Compare</td> -->
-    <td class="bdr-btm"><center><img src="{{ $value->Bank_Logo}}" width="100" ></center></td>
+    <td class="bdr-btm"><center><img src="{{ $value->Bank_Logo}}" width="130" ></center></td>
     <td width="16%" class="upper bdr-btm">Interest Rate</td>
     <td width="16%" class="upper bdr-btm">Loan Amount</td>
     <td width="18%" class="upper bdr-btm">emi</td>

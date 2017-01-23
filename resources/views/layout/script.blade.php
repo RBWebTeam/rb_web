@@ -1352,7 +1352,7 @@ $(document).ready(function(){
 window.fbAsyncInit = function() {
     // FB JavaScript SDK configuration and setup
     FB.init({
-      appId      : '624024964433110', // FB App ID
+      appId      : '1780983575495725', // FB App ID
       cookie     : true,  // enable cookies to allow the server to access the session
       xfbml      : true,  // parse social plugins on this page
       version    : 'v2.8' // use graph api version 2.8
@@ -1450,7 +1450,7 @@ function logout()
 function login() 
 {
   var myParams = {
-    'clientid' : '752185558821-9vlmac53np7bgdo3kn9d2e5ft39t7gud.apps.googleusercontent.com',
+    'clientid' : '745040401282-v3tgmfba303mqqn1vi0dg8ejql6p40gm.apps.googleusercontent.com',
     'cookiepolicy' : 'single_host_origin',
     'callback' : 'loginCallback',
     'approvalprompt':'force',
@@ -1531,7 +1531,7 @@ function loginCallback(result)
 }
 function onLoadCallback()
 {
-    gapi.client.setApiKey('AIzaSyAApSt32vaY85Td0GN1ceCBCpe3Fcz44U8');
+    gapi.client.setApiKey('AIzaSyBiEtoXD9F-CZPBVeg3JSsXb-_IQGezk4o');
     gapi.client.load('plus', 'v1',function(){});
 }
  

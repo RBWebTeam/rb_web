@@ -92,7 +92,7 @@
                     <input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Password">
                      <span id="errorpassword"  class="error-msg" ></span>
                   </div>
-
+                   
                   <div class="form-group">
                     <input type="password" name="password_confirm" id="password_confirm" tabindex="2" class="form-control" placeholder="Confirm Password">
                      <span id="errorpasswordconfirm"  class="error-msg"></span>

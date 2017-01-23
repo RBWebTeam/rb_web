@@ -9,7 +9,7 @@
 	<div class="col-md-8 bg-white bnkpg">
 		<div class="text-center bankpg">
 		<img src="{{$bank_banner}}" class="img-responsive" />
-		
+	
 		 
 		</div>	
 	  	</div>

@@ -125,7 +125,7 @@
 
                           <div class="tab-pane" id="Loan-history">
                           <div>
-                          <h2  >Loan history </h2>
+                          <h2  >Quotes history </h2>
                                @if(isset($loan_history))
                                 <ul class="list-group">
                                   <?php foreach ($loan_history as $key => $value) { ?>

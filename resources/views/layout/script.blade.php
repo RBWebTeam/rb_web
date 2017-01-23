@@ -759,7 +759,6 @@ $('document').ready(function(){
         minlength: 3,
        select: function(event,ui){
            $('#q').val(ui.item.value);
-
             }
       });
 
@@ -778,13 +777,31 @@ $('document').ready(function(){
                     term : request.term
                 },
                 success: function(data) {
+                         
+
                     response(data);
 
                    
                 }
             });
         },
-        min_length:3,
+
+        change: function (event, ui) {
+            if (ui.item == null || ui.item == undefined) {
+                $(".search_city").val("");
+                $(".search_city").attr("disabled", false);
+                $("#q6").hide();
+                 $("#q_prop").hide();
+                $('#pop1').empty();
+                $('#pop1').append("<p>please select your city</p>" );
+            }else{
+                   $("#q6").show();
+                   $("#q_prop").show();
+                   
+               // $(".search_city").attr("disabled", true);
+            }
+        }
+        //min_length:3,
        
     });
 

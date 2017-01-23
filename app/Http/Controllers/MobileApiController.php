@@ -13,7 +13,7 @@ class MobileApiController extends ApiController
 		
 		$data= $this->compare($req);
 		//print_r($data);exit();
-		if($data!='-1'){
+		if($data!='-1' && !empty( $data->getData()->data)){
 			$status_Id=0;
 			$msg="data delievered";
 			$new_data=$data->getData()->data;

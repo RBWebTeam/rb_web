@@ -480,9 +480,8 @@ $(".login-submit").click(function(event){
                       //window.location.href ="{{URL::to('profile')}}";
 
                        $("#log_popup").modal('hide');
-                       $("#refreshID").load(location.href + " #refreshID");
-                       
-                       
+                   $("#refreshID").load(location.href + " #refreshID");
+                                               
                         $('#btn_refresh').show();
                         $('#btn_refresh1').hide();
                         $('.btn_refresh1').hide();

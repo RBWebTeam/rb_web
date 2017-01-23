@@ -274,7 +274,8 @@ label {
 
 									                <div class="col-sm-12" style="margin-top:30px;">
 									                    <div id="slider" onchange="myfun()"></div>
-									                    <span class="glyphicon glyphicon-minus" style="float:left"></span><span class="glyphicon glyphicon-plus" style="float:right"></span> 
+									                    <a href="javascript:void(0);"><span id="minus1" class="glyphicon glyphicon-minus" style="float:left"></span></a><a href="javascript:void(0)"><span id="plus1" class="glyphicon glyphicon-plus" style="float:right"></span></a> 
+									                    
 									                </div>
 									           
 									           
@@ -561,6 +562,25 @@ label {
             }
 
         });
+        $("#plus1").click(function (event,ui) {
+        	//alert("ok");
+    			var value = $("#slider").slider("value");
+
+			    var step = $("#slider").slider("option", "step");
+			    $("#slider").slider("value", value + step);
+			    var up = value + step;
+			    //update(value + step, ui.value);
+			    $('#slider a').html('<label>' + up + ' yrs  </label><div class="ui-slider-label-inner"></div>');
+		  });
+
+		  $("#minus1").click(function () {
+		  	var value = $("#slider").slider("value");
+
+			    var step = $("#slider").slider("option", "step");
+			    $("#slider").slider("value", value - step);
+			    var down = value - step;
+			    $('#slider a').html('<label>' + down + ' yrs  </label><div class="ui-slider-label-inner"></div>');
+		  });
         
         //Added, set initial value.
         $("#amount").val(0);
@@ -575,7 +595,7 @@ label {
     function update(slider, val) {
        
         var $amount = val;
-         console.log(val);
+         //console.log(val);
          $("#amount").val($amount);
         // console.log($("#amount").val($amount));
         $("#amount-label").text($amount);

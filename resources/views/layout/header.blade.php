@@ -139,7 +139,7 @@
 
 							<?php if(Session::get('is_login')){
 							?>
-							<li class="user-ic dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" data-target="#"><i class="icon-user uicon hidden-xs hidden-sm"></i><span class="hidden-lg hidden-md">My Account&nbsp;</span><i class="icon-chevron-down"></i></a>
+							<li class="user-ic dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" data-target="#"><i class="icon-user uicon hidden-xs hidden-sm"></i><span class="hidden-lg hidden-md">My Account&nbsp;</span> <i class="icon-chevron-down"></i></a>
 							
 							<ul class="dropdown-menu"  >
 							    <li> 

@@ -54,7 +54,6 @@ h3 {
 h5 {
 	font-size:30px;
 	color:#fff;
-	opacity:0.8;
 	padding:0px 20px;
 	display: -webkit-inline-box;
 	border-radius:5px;-moz-border-radius:5px;-webkit-border-radius:7px;
@@ -987,7 +986,7 @@ rb-services-section{padding:0px;}
 #fh5co-page {
   position: relative;
   z-index: 2;
-  background:#fbfbfb;
+  background:#f1f1f1;
 }
 
 #fh5co-offcanvas, .fh5co-nav-toggle, #fh5co-page {
@@ -1336,7 +1335,7 @@ border: #3px solid #999;background:#1f386e;margin: 10px;margin: 10px auto;text-a
 .arrow-don {top:150px;padding:10px;position:fixed; z-index:10000;cursor:pointer;background:#3699c1;color:#fff;}
 .bdy1, .bdy2, .bdy3, .bdy4 {z-index:10000; top:0px;margin-left:70px;padding:10px;position:absolute;width:500px;height:350px;background:#ddd;border:1px solid #ccc;}
 #fh5co-offcanvas ul li a {color:#88d0ed;}
-.slide-head {opacity:0.8;-moz-opacity:0.8;-webkit-opacity:0.8;}
+
 .clr-ddd input {color:#ddd;}
 .#fh5co-header nav ul li a ul {margin-top:10px;}
 #fh5co-header nav ul li a .icon-chevron-down {top:0px; font-size:12px;}
@@ -1411,7 +1410,7 @@ border-radius: 7px;padding: 1em;margin-top: 1em;}
  .comp-pg {padding:20px;border: 10px solid #d9dada;}
  .rate input {margin-bottom:10px;}
  .hdr {margin-top:10px; display:block;display} 
- .sec select {width: 100%;padding: 6px;border: 2px solid rgba(0, 0, 0, 0.1); border-radius:2px;-moz-border-radius:2px;-webkit-border-radius:2px;}
+ .sec select {width: 100%;padding: 6px;margin-bottom:15px;background:#fff;border:1px solid rgba(0, 0, 0, 0.1); border-radius:2px;-moz-border-radius:2px;-webkit-border-radius:2px;}
  .tab-content {padding:10px;}
  .dropdown-menu li a {font-size:12px;}
  #fh5co-services-section .services .icon-home:hover {color:#3aa6d3;}
@@ -1525,7 +1524,6 @@ a:hover, a:focus {text-decoration:none;}
 .call {border:1px dashed #ccc;padding:10px;}
 .modal-open .modal {z-index:10000;}
 .navbar-default{background:#fff;}
-.blue-bg {color:#fff;background:#3aa6d3;padding:10px;}
 .company-nm {width:250px;min-width:250px;}
 .company-nm1 {width:200px;min-width:200px;}
 .slidedv {padding-top:10px;}
@@ -1854,14 +1852,14 @@ body {background:#eee;}
 .error-template {padding: 40px 15px;text-align: center;}
 .error-actions {margin-top:15px;margin-bottom:15px;}
 .error-actions .btn { margin-right:10px; }
-.outer-brd {border-bottom: 3px solid #ebedf0;}
+.outer-brd {border:5px solid #ebedf0;}
 .gray-bg {background:#ddd;}
-.apply-btn {color:#fff;}
-.blue-bg {background:#39F;color:#fff;}
-.blue-bg:hover {background:#337ab7;}
+.apply-btn {color:#fff;background: #3699c1; padding: 10px; margin-top:3px;}
+
 .blue-bg a:hover {color:#fff;}
 .error{
   color: red;
 }
 #send_otp lable{padding-top:4px;}
+.padd-4 {padding:10px;}
 

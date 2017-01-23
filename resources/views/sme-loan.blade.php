@@ -104,7 +104,7 @@
 							<h4 class="mrg-btm">Compare Loan</h4>
 							<ul>
 							     <li>Check & compare loans from thousand of banks</li>
-								 <li>compare PSU & Private rates</li>
+								 <li>Compare PSU & Private rates</li>
 								 <li>Compare with 100 banks.</li>
 							</ul>
 						
@@ -120,7 +120,7 @@
 							<h4 class="mrg-btm">Calculate EMI</h4>
 							<ul>
 							     <li>EMI Calculator is easy to use, intuitive to understand and is quick to perform.</li>
-								 <li>calculate your EMIs.</li>
+								 <li>Calculate your EMIs.</li>
 							</ul>
 							<a class="btn btn-primary btn-outline with-arrow" href="{{URL::to('check_emi')}}">Calculate EMI<i class="icon-arrow-right"></i></a>
 						</div>

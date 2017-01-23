@@ -65,7 +65,7 @@
     <div class="form-group">
     <input type="hidden" name="brokerid" id="brokerid" value="<?php echo isset($_GET['brokerid'])?$_GET['brokerid']:'';?>">
        <!-- <label class="control-label" for="Loan Amount">Outstanding Principal:</label> -->
-       <input type="text" name="loanamount" class="form-control" id="loanamount" placeholder="Loan Amount" value="" onblur ="myfun()" onkeypress="return isNumberKey(event)" maxlength="9">
+       <input type="text" name="loanamount" class="form-control" id="loanamount" placeholder="Loan Amount" value="" onblur ="myfun()" onkeypress="return isNumberKey(event)" maxlength="9" data-type="number">
     </div>
     <div class="form-group">
       <!-- <label class="control-label" for="Interest Rate"> Current Interest Rate:</label> -->
@@ -240,7 +240,7 @@
        var lt = $("#loanterm").val().length;
        if(lm >0 && lin >0 && lt>0){
       
-      var loanamount = $("#loanamount").val();
+      var loanamount = $("#loanamount").val().replace(",","");
       //console.log(loanamount);
       var loaninterest = $("#loaninterest").val();
        // var bank = $("#bank").val();

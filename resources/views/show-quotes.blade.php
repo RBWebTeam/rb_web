@@ -74,8 +74,13 @@
     <td width="16%" class="upper">Interest Rate</td>
     <td width="16%" class="upper">Loan Amount</td>
     <td width="18%" class="upper">emi</td>
+    <?php if($product == "Personal Loan"){
+      $prod ="9";
+      }else{
+      $prod="12";
+        }?>
     <td width="17%"><a class="btn btn-success" 
-    href="{{URL::to('apply-lead-online')}}?appid=0&qoutid={{$quote_id}}&BankId={{$q->Bank_Id}}">Apply Online</a></td>
+    href="{{URL::to('apply-lead-online')}}?appid=0&qoutid={{$quote_id}}&BankId={{$q->Bank_Id}}&product={{$prod}}">Apply Online</a></td>
   </tr>
   <tr>
     <td>
@@ -86,9 +91,10 @@
     <input type="hidden" name="emi" class="emi" value="{{$q->emi }}">
     <input type="hidden" name="LoanTenure" class="LoanTenure" value="{{$q->LoanTenure }}">
    <input type="hidden" name="Pre_Closer_Fixed" class="Pre_Closer_Fixed" value="{{$q->Pre_Closer_Fixed }}">
+   <input type="hidden" name="product" class="product" value="{{$product}}">
 
     <input type="hidden" name="processingfee" class="processingfee" value="{{$q->processingfee }}">
-    <input type="hidden" name="url" class="url" value="{{URL::to('apply-lead-online')}}?appid=0&qoutid={{$quote_id}}&BankId={{$q->Bank_Id}}">
+    <input type="hidden" name="url" class="url" value="{{URL::to('apply-lead-online')}}?appid=0&qoutid={{$quote_id}}&BankId={{$q->Bank_Id}}&product={{$prod}}">
 
 
     <td >{{$product}}</td>
@@ -223,6 +229,7 @@ $('input[name="checkbox"]').change(function(){
    var LoanTenure =closest.find('.LoanTenure').val();
    var Pre_Closer_Fixed =closest.find('.Pre_Closer_Fixed').val();
    var url = closest.find('.url').val();
+   var product = closest.find('.product').val();
 
   // <input type='hidden' name='pinterst[]' id='"+pinterst+"' value='"+pinterst+"' >
 

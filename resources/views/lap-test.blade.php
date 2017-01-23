@@ -81,7 +81,7 @@
 							</h3>
 						</div>
 						<div class="col-md-12 text-center animate-box cont" style="display: none" id="q9">
-							<h3>and I require loanamount of Rs.
+							<h3>and I require loan amount of Rs.
 								<input type="tel" id="loan_amount" name="loan_amount"  onkeyup="changeText_new('loan_amount','step_2_btn')"  onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="1,00,000" tabindex="1">.
 							</h3> 
 						</div>

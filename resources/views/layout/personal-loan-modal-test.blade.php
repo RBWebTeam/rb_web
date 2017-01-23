@@ -40,8 +40,8 @@
     <ul>
     <form id="obligation_form">
 
-        <li><span><input type="radio" name="obligation_type" value="yes" id="p_yesID" onclick="changeTest_new(this,'q4');" /></span>  <label for="p_yesID">Yes</label></li>
-      <li><span><input type="radio" name="obligation_type" value="no" id="p_no"  onclick="changeTest_new(this,'q5');"/></span> <label for="p_no"> No </label></li>
+        <li><span><input type="radio" name="obligation_type" value="do" id="p_yesID" onclick="changeTest_new(this,'q4');" /></span>  <label for="p_yesID">Do</label></li>
+      <li><span><input type="radio" name="obligation_type" value="don't" id="p_no"  onclick="changeTest_new(this,'q5');"/></span> <label for="p_no">Don't</label></li>
       </form>
       </ul>
       

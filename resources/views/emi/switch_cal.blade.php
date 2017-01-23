@@ -10,17 +10,17 @@
   <tr class="tbl-clr">
     <th bgcolor="#999"  class="col-xs-3 col-md-1" id="bankheader">Bank Name</th>
 
-    <th bgcolor="#999" class="col-sm-2 hidden-xs" id="rateheader"><center>Rate Of Interest</center></th>
+    <th bgcolor="#999" class="col-sm-2" id="rateheader"><center>Rate Of Interest</center></th>
 
-    <th bgcolor="#999" class="col-sm-2 hidden-xs" id="rateheader"><center>Processing FEE</center></th>
+    <th bgcolor="#999" class="col-sm-2" id="rateheader"><center>Processing FEE</center></th>
 
-    <th bgcolor="#999" class="col-sm-2 hidden-xs" id="emiheader"><center>Loan EMI</center></th>
+    <th bgcolor="#999" class="col-sm-2" id="emiheader"><center>Loan EMI</center></th>
 
-    <th bgcolor="#999" class="col-sm-3 hidden-xs" id="newemiheader"><center>New Loan EMI</center></th>
+    <th bgcolor="#999" class="col-sm-3 " id="newemiheader"><center>New Loan EMI</center></th>
 
     <th bgcolor="#999" class="col-xs-4 col-sm-3" id="dropemiheader"><center>Drop EMI</center></th>
 
-    <th bgcolor="#999" class="col-sm-3 hidden-xs" id="dropininterestheader"><center>Drop In Interest</center></th>
+    <th bgcolor="#999" class="col-sm-3 " id="dropininterestheader"><center>Drop In Interest</center></th>
 
     <th bgcolor="#999" class="col-sm-3" id="savingsheader"><center>Savings</center></th>
 

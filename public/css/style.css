@@ -59,7 +59,7 @@ h5 {
 	display: -webkit-inline-box;
 	border-radius:5px;-moz-border-radius:5px;-webkit-border-radius:7px;
 	}
-.slider-text-inner h5 {color:#ffffff;}
+.slider-text-inner h5 {color:#ffffff; display:block;font-weight: bold;text-shadow: 1px 1px 1px #000;}
 ::-webkit-selection {
   color: #fff;
   background: #ec1b23;
@@ -90,7 +90,7 @@ td {padding:5px; text-align:center;}
   padding: 10px 20px !important;
 }
 .btn.btn-lg {
-  padding: 18px 36px !important;
+  padding: 8px 14px !important;
 }
 .btn:hover, .btn:active, .btn:focus {
   box-shadow: none !important;
@@ -550,6 +550,7 @@ td {padding:5px; text-align:center;}
   font-size:50px;
   font-weight: 400;
   color: #fff;
+  text-shadow: 1px 1px 1px #000;
 
   border-radius:7px;-moz-border-radius:7px;-webkit-border-radius:7px;-o-border-radius:7px;
   display: -webkit-inline-box;

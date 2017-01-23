@@ -31,7 +31,7 @@
 		   				<div class="slider-text-inner">
 		   				<img src="images/personal-ic.png" class="center-img-align img-responsive" />
 		   					<h2 class="slide-head">Personal Loan</h2>
-							<h5>Finance your Dreams...!!</h5>
+							<h5>Finance Your Dreams...!!</h5>
 		   					<p><a href="{{URL::to('personal-loan')}}" class="btn btn-primary btn-lg">View More</a></p>
 		   				</div>
 		   			</div>
@@ -42,7 +42,7 @@
 		   			<div class="slider-text">
 		   				<div class="slider-text-inner">
 		   				<img src="images/lap-ic.png" class="center-img-align img-responsive" />
-		   					<h2 class="slide-head"> Loan against Property</h2>
+		   					<h2 class="slide-head"> Loan Against Property</h2>
 							<h5>Finding you a better Deal...!!</h5>
 		   					<p><a href="{{URL::to('loan-against-property')}}" class="btn btn-primary btn-lg">View More</a></p>
 		   				</div>
@@ -55,7 +55,7 @@
 		   				<div class="slider-text-inner">
 		   				<img src="images/sme-ic.png" class="center-img-align img-responsive" />
 		   					<h2 class="slide-head">SME Loan</h2>
-							<h5>We support Make in India..!!</h5>
+							<h5>We Support Make in India..!!</h5>
 		   					<p><a href="{{URL::to('sme-loan')}}" class="btn btn-primary btn-lg">View More</a></p>
 		   				</div>
 		   			</div>

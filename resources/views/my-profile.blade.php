@@ -29,9 +29,10 @@
                    
                 </ul>
             </div>
-            <div class="col-md-9 col-sm-12">
-                <!-- Tab panes -->
+			<!-- Tab panes -->
                 <div class="row">
+            <div class="col-md-8 col-sm-12">
+                
                     <div class="tab-content">
                         <div class="tab-pane active" id="profile">
                             <form name="profile_update" id="profile_update" method="post">
@@ -126,7 +127,7 @@
                           <div class="container">
                           <h2  >Loan history </h2>
                                @if(isset($loan_history))
-                                <ul class="list-group" style="width:600px;">
+                                <ul class="list-group">
                                   <?php foreach ($loan_history as $key => $value) { ?>
                                   <li class="list-group-item"  >
                                   
@@ -149,10 +150,10 @@
 
                           <div class="tab-pane" id="change-password">
                           <div id="success" class="col-md-6 pad11 text-danger"></div>
-                          <br>
+                          
                           <div id="success1" class="col-md-6 pad11 text-danger"></div>
                           
- 
+         
             <div class="tab-pane active" id="profile">
                  <form id="confirmpassword" name="confirmpassword" role="form" method="POST"> {{ csrf_field() }}
 

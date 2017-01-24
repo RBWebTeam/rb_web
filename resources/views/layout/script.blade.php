@@ -951,7 +951,7 @@ $(document).ready(function(){
       //  var sp = top / bottom;
       //  var emi = ((loanamount * monthlyInterestRatio) * sp);
       //  console.log(emi);
-      var loanamount = $("#loanamount").val().replace(",","");
+      var loanamount = $("#loanamount").val();
       var loaninterest = $("#loaninterest").val();
       
 
@@ -1625,22 +1625,7 @@ function isNumberKey(evt)
 });
 
 </script>
-<script type="text/javascript">
-$(document).ready(function(){
-    $("input[data-type='number']").keyup(function(event){
-      // skip for arrow keys
-      if(event.which >= 37 && event.which <= 40){
-          event.preventDefault();
-      }
-      var $this = $(this);
-      var num = $this.val().replace(/,/gi, "");
-      var num2 = num.split(/(?=(?:\d{3})+$)/).join(",");
-      console.log(num2);
-      // the following line has been simplified. Revision history contains original.
-      $this.val(num2);
-  });
-});
-</script>
+
 
 
 

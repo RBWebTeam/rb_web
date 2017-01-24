@@ -19,11 +19,11 @@
   <!-- Wrapper for slides -->
   <div class="carousel-inner" role="listbox">
     <div class="item active">
-      <img src="images/birla_ban.png" alt="">
+      <img src="{{URL::to('images/birla_ban.png')}}" alt="">
     </div>
 
     <div class="item">
-      <img src="images/tribe_bann.png" alt="">
+      <img src="{{URL::to('images/tribe_bann.pricing')}}" alt="">
     </div>
   </div>
 
@@ -42,7 +42,7 @@
    <div class="col-md-4 red-bg1 ">
 	   <div class="form-in">
               <span class="head-1 heading-bmar">Request A Call Back</span>
-              <form class="" id="callback_form" role="form" method="POST">
+              <form  id="callback_form" role="form" method="POST">
               {{ csrf_field() }}
                 <input type="hidden" name="form" value="subscribe-form">
 				  <div class="has-error">
@@ -84,7 +84,7 @@
 					<div class="col-md-4 animate-box">
 						<div class="price-box popular">
 							
-							<div class="center-blg"><img src="images/tribe.png" /></div>
+							<div class="center-blg"><img src="{{URL::to('images/tribe.png')}}" /></div>
 							<h4 class="mrg-btm">Tribe</h4>
 							<ul>
 							     <li>Online Sanction</li>
@@ -98,7 +98,7 @@
 
 					<div class="col-md-4 animate-box">
 						<div class="price-box popular">
-							<div class="center-blg"><img src="images/birla.png" /></div>
+							<div class="center-blg"><img src="{{URL::to('images/birla.png')}}" /></div>
 							<h4 class="mrg-btm">Aditya Birla</h4>
 							<ul>
 							     <li>Online Sanction</li>
@@ -111,7 +111,7 @@
 					
 					<div class="col-md-4 animate-box">
 						<div class="price-box popular">
-							<div class="center-blg"><img src="images/apply-online.png" /></div>
+							<div class="center-blg"><img src="{{URL::to('images/apply-online.png')}}" /></div>
 							<h4 class="mrg-btm">Apply Online Loan</h4>
 							<ul>
 							     <li>Online Sanction</li>

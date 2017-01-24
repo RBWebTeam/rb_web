@@ -1,92 +1,108 @@
 @include('layout.header')
     <div class="container-fluid">
 	<aside id="fh5co-hero">
-	<div class=""></div>
-		<div class="flexslider col-md-12">
 
-		<div class="pull-right mar-tp ">
+		<div class="container-fluid">
+		<div id="myCarousel" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
+    <li data-target="#myCarousel" data-slide-to="3"></li>
+	<li data-target="#myCarousel" data-slide-to="4"></li>
+    <li data-target="#myCarousel" data-slide-to="5"></li>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox">
+  <div class="pull-right mar-tp ">
 
 		<a href="{{URL::to('comfy-sales')}}" class="img2"><img src="images/sliding-right-img-2.png" class="img-responsive"/></a>
 		  <a href="{{URL::to('express-loan')}}" class="img3"><img src="images/sliding-right-img-1.png" class="img-responsive"/></a>
 		   <a href="{{URL::to('savings-account')}}" class="img4"><img src="images/sliding-right-img-3.png" class="img-responsive"/></a>
 
 		</div>
-			<ul class="slides">
-		   	<li style="background-image: url(images/slide_1.jpg);">
-		   		<div class="overlay-gradient"></div>
-		   		  <br>
-		   			<div class="slider-text">
-		   				<div class="slider-text-inner">
-		   				 <img src="images/home-ic.png" class="center-img-align img-responsive" />
-		   					<h2 class="slide-head">Home Loan </h2>
-							<h5>Choose the right Home Loan for you ...!!</h5>
-		   					<p><a href="{{URL::to('home-loan')}}" class="btn btn-primary btn-lg">View More</a></p>
-		   				</div>
-		   			</div>
-		   		
-		   	</li>
-		   	<li style="background-image: url(images/slide_2.jpg);">
-		   		  <br>
-		   			<div class="slider-text">
-		   				<div class="slider-text-inner">
-		   				<img src="images/personal-ic.png" class="center-img-align img-responsive" />
-		   					<h2 class="slide-head">Personal Loan</h2>
-							<h5>Finance Your Dreams...!!</h5>
-		   					<p><a href="{{URL::to('personal-loan')}}" class="btn btn-primary btn-lg">View More</a></p>
-		   				</div>
-		   			</div>
-		   		
-		   	</li>
-		   	<li style="background-image: url(images/slide_3.jpg);">
-		   		   <br>
-		   			<div class="slider-text">
-		   				<div class="slider-text-inner">
-		   				<img src="images/lap-ic.png" class="center-img-align img-responsive" />
-		   					<h2 class="slide-head"> Loan Against Property</h2>
-							<h5>Finding you a better Deal...!!</h5>
-		   					<p><a href="{{URL::to('loan-against-property')}}" class="btn btn-primary btn-lg">View More</a></p>
-		   				</div>
-		   			</div>
-		   		
-		   	</li>
-			<li style="background-image: url(images/slide_4.jpg);">
-		   		    <br>
-		   			<div class="slider-text">
-		   				<div class="slider-text-inner">
-		   				<img src="images/sme-ic.png" class="center-img-align img-responsive" />
-		   					<h2 class="slide-head">SME Loan</h2>
-							<h5>We Support Make in India..!!</h5>
-		   					<p><a href="{{URL::to('sme-loan')}}" class="btn btn-primary btn-lg">View More</a></p>
-		   				</div>
-		   			</div>
-		   		
-		   	</li>
-			<li style="background-image: url(images/slide_5.jpg);">
-		   		    <br>
-		   			<div class="slider-text">
-		   				<div class="slider-text-inner">
-		   				<img src="images/balance-ic.png" class="center-img-align img-responsive" />
-		   					<h2 class="slide-head">Business Loan</h2>
-							<h5>Experience on your side...!!</h5>
-		   					<p><a href="{{URL::to('business-loan')}}" class="btn btn-primary btn-lg">View More</a></p>
-		   				</div>
-		   			</div>
-		   		
-		   	</li>
-			<li style="background-image: url(images/slide_6.jpg);">
-		   		  <br>
-		   			<div class="slider-text">
-		   				<div class="slider-text-inner">
-		   				<img src="images/car-ic.png" class="center-img-align img-responsive" />
-		   					<h2 class="slide-head">Car Loan</h2>
-							<h5>Thinking of your comfort first !!</h5>
-		   					<p><a href="{{URL::to('car-loan')}}" class="btn btn-primary btn-lg">View More</a></p>
-		   				</div>
-		   			</div>
-		   		
-		   	</li>
-		  	</ul>
-	  	</div>
+    <div class="item active">
+	<div class="slide-txt">
+	<img src="images/home-ic.png" class="center-img-align img-responsive hidden-sm" draggable="false">
+	<h2>Home Loan </h2>
+   <h4 class="hidden-sm">Choose the right Home Loan for you ...!!</h4>
+   <a href="#" class="btn btn-primary btn-lg btn-view">View More</a>
+   </div>
+      <img src="{{URL::to('images/slide_1.jpg')}}" alt=""> 
+    </div>
+
+    <div class="item">
+	<div class="slide-txt">
+	<img src="images/personal-ic.png" class="center-img-align img-responsive hidden-sm" draggable="false">
+	<h2>Personal Loan </h2>
+   <h4 class="hidden-sm">Finance Your Dreams...!!</h4>
+   <a href="#" class="btn btn-primary btn-lg btn-view">View More</a>
+   </div>
+      <img src="{{URL::to('images/slide_2.jpg')}}" alt="">
+    </div>
+
+    <div class="item">
+	<div class="slide-txt">
+	<img src="images/lap-ic.png" class="center-img-align img-responsive hidden-sm" draggable="false">
+	<h2>Loan Against Property</h2>
+   <h4 class="hidden-sm">Finding you a better Deal...!!</h4>
+   <a href="#" class="btn btn-primary btn-lg btn-view">View More</a>
+   </div>
+      <img src="{{URL::to('images/slide_3.jpg')}}" alt="">
+    </div>
+
+    <div class="item">
+	<div class="slide-txt">
+	<img src="images/sme-ic.png" class="center-img-align img-responsive hidden-sm" draggable="false">
+	<h2>SME Loan</h2>
+   <h4 class="hidden-sm">We Support Make in India..!!</h4>
+   <a href="#" class="btn btn-primary btn-lg btn-view">View More</a>
+   </div>
+      <img src="{{URL::to('images/slide_4.jpg')}}" alt="">
+    </div>
+	<div class="item">
+	<div class="slide-txt">
+	<img src="images/balance-ic.png" class="center-img-align img-responsive hidden-sm" draggable="false">
+	<h2>Business Loan</h2>
+   <h4 class="hidden-sm">Experience on your side...!!</h4>
+   <a href="#" class="btn btn-primary btn-lg btn-view">View More</a>
+   </div>
+      <img src="{{URL::to('images/slide_5.jpg')}}" alt="">
+    </div>
+	<div class="item">
+	<div class="slide-txt">
+	<img src="images/car-ic.png" class="center-img-align img-responsive hidden-sm" draggable="false">
+	<h2>Car Loan</h2>
+   <h4 class="hidden-sm">Thinking of your comfort first !!</h4>
+   <a href="#" class="btn btn-primary btn-lg btn-view">View More</a>
+   </div>
+      <img src="{{URL::to('images/slide_6.jpg')}}" alt="">
+    </div>
+  </div>
+
+  <!-- Left and right controls -->
+  <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
 		
 	</aside>
 	</div>
@@ -106,7 +122,7 @@
 					</div>
 				</div>
 				<div class="col-md-2 animate-box no-padding">
-					<div class="services">
+					<div class="services1 services">
 						<a class="anchor_decoration" href="{{URL::to('personal-loan')}}">
 						<div class="desc">
 						<i class="icon-user"></i>
@@ -117,7 +133,7 @@
 					</div>
 				</div>
 				<div class="col-md-2 animate-box no-padding">
-					<div class="services">
+					<div class="services2 services">
 						<a class="anchor_decoration" href="{{URL::to('loan-against-property')}}">
 						<div class="desc">
 						<i class="icon-money"></i>
@@ -128,7 +144,7 @@
 					</div>
 				</div>
 				<div class="col-md-2 animate-box no-padding">
-					<div class="services">
+					<div class="services3 services">
 						<a class="anchor_decoration" href="{{URL::to('sme-loan')}}">
 						<div class="desc">
 						<span  ><img style="margin:0 auto;" src="{{URL::to('images/SME_icon.png')}}"></span>
@@ -139,7 +155,7 @@
 					</div>
 				</div>
 				<div class="col-md-2 animate-box no-padding">
-					<div class="services">
+					<div class="services4 services">
 						<a class="anchor_decoration" href="{{URL::to('business-loan')}}">
 						<div class="desc">
 						<i class="icon-line-chart"></i>
@@ -150,7 +166,7 @@
 					</div>
 				</div>
 				<div class="col-md-2 animate-box no-padding">
-					<div class="services">
+					<div class="services5 services">
 						<a class="anchor_decoration" href="{{URL::to('car-loan')}}">
 						<div class="desc">
 						<i class="icon-car"></i>

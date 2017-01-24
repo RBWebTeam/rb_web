@@ -4,14 +4,14 @@
 	    <div class="container" id='elem'>
 	    <form name='personal_loan_process_form' id='personal_loan_process_form' action={{URL::to('loan-submit')}} method="POST">
 	    	  {{ csrf_field() }}
-              <?php $loan_name="Business";?>
+              <?php $loan_name="CAR";?>
 			 <?php $loan=9 ?>
-		   
+	
 	 <input type="hidden" id="product" name="product_name" value="<?php echo $loan;?>">
 	 <div class="liza col-md-8" id="step-1">
                         
 		   <div class="col-md-12 text-center"><h4>Apply for an Easy <?php echo $loan_name;?> Loan in 30 seconds</h4></div>
-		   <p class="text-center">Step 1 </p>
+		   <p class="text-center">Step 1 of 3</p>
 
 		   
 			<div class="col-md-12 text-center animate-box cont" id="q1">
@@ -94,5 +94,5 @@
 		</div>
 	 <!-- </div> -->
 @include('layout.footer')
-@include('layout.business-loan-modal-test')
+@include('layout.car-loan-modal-test')
 @include('layout.script')

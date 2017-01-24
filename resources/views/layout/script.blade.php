@@ -826,6 +826,7 @@ $(document).ready(function(){
     $('#pls_wait').show();
     $('#pwd_match').hide();
     $('#msg_err_email').hide();
+
       $.ajax({  
                type: "POST",  
                url: "{{URL::to('otp')}}",
@@ -835,8 +836,10 @@ $(document).ready(function(){
                  var data_1=data['data'];
                  var emailID=data['emailID'];
                 if(data_1==true){
-                    $('#otp_modal').modal('toggle');
-                    $('#login_process').modal('hide');
+                  $('#login_first').hide();
+                  
+                    $('#otp_div').show();
+                   // $('#login_process').modal('hide');
                     $('#msg_err_email').hide();
                   }else if(emailID==true){
                       $('#login_process').modal('show');
@@ -1653,7 +1656,7 @@ $(function(){
 <!-- login Start-->
 
 <div id="login_process" class="modal fade" role="dialog">
-<div class="modal-dialog">
+<div class="modal-dialog" id="login_first">
 
     <!-- Modal content-->
     <div class="modal-content">
@@ -1728,11 +1731,7 @@ $(function(){
     </div>
    
   </div>
-</div>
-
-<!-- login end-->
-<!-- otp Start-->
-<div id="otp_modal" class="modal fade" role="dialog">
+  <div id="otp_div" style="display: none;" role="dialog">
   <div class="modal-dialog">
     <!-- Modal content-->
     <div class="modal-content">
@@ -1748,6 +1747,11 @@ $(function(){
     </div>
   </div>
 </div>
+</div>
+
+<!-- login end-->
+<!-- otp Start-->
+
 
 
 @include('layout.modal')

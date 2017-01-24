@@ -787,7 +787,7 @@ $('document').ready(function(){
         },
 
         change: function (event, ui) {
-            if (ui.item == null || ui.item == undefined) {
+            if (ui.item == null || ui.item == undefined || ui.item.value=='No Result Found') {
                 $(".search_city").val("");
                 $(".search_city").attr("disabled", false);
                 $("#q6").hide();
@@ -795,6 +795,8 @@ $('document').ready(function(){
                 $('#pop1').empty();
                 $('#pop1').append("<p>please select your city</p>" );
             }else{
+
+ 
                    $("#q6").show();
                    $("#q_prop").show();
                    
@@ -1639,10 +1641,30 @@ $(document).ready(function(){
       // the following line has been simplified. Revision history contains original.
       $this.val(num2);
   });
+
+   
+   
+
 });
 </script>
 
+<script type="text/javascript">
 
+$(function(){
+  var parts = (document.location.toString().split('?')[1]);
+    if(parts=='my-quotes'){
+       $('#profile').removeClass('active');
+       $('.active').removeClass('active');
+       $("#Loan-history").addClass('active');
+       }else if(parts=='credit-score'){
+       $('#profile').removeClass('active');
+       $("#credit-score").addClass('active');  
+}
+
+ 
+});
+
+  </script>
 
 <!-- post end -->
 

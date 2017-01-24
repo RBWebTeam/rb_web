@@ -145,8 +145,8 @@
 							    <li> 
 								<a id="googleLOG" href={{URL::to('logout')}}>Logout</a>
 								<a href="{{url('profile')}}">My Profile</a>
-								<a href="{{URL::to('credit-report')}}">My Credit Score</a>
-								<a href="{{url('profile')}}">My Quotes</a>
+								<a href="{{URL::to('profile')}}?credit-score">My Credit Score</a>
+								<a href="{{url('profile')}}?my-quotes">My Quotes</a>
 								</li>
 							</ul>
 							

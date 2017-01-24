@@ -10,7 +10,7 @@
     <div class="col-sm-4 rw-hei" style="background-color:#fff;"><h3 class="emi-cal"><b>EMI Calculator</b></h3>
       <div class="form-group">
        <label class="control-label" for="Loan Amount">Loan Amount:</label>
-       <input type="text" name="loanamount" class="form-control" id="loanamount" placeholder="Loan Amount" onkeypress="return isNumberKey(event)"  value=""  onblur="myfun()" data-type="number" >
+       <input type="text" name="loanamount" class="form-control" id="loanamount" placeholder="Loan Amount" onkeypress="return isNumberKey(event)"  value=""  onblur="myfun()" >
        
      </div>
      <div class="form-group">

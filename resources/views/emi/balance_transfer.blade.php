@@ -646,7 +646,7 @@ $('#slider').slider({
        var lt = $("#loanterm").val().length;
        if(lm >0 && lin >0 && lt>0){
       
-      var loanamount = $("#loanamount").val().replace(",","");
+      var loanamount = $("#loanamount").val();
       // if(loanamount<500000 || loanamount>1000000000){
       // 	alert("Amount should be greater than 500000 and less than 1000000000  ");
       // }

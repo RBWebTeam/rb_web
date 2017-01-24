@@ -238,7 +238,7 @@ label {
 									<div class="col-xs-6 form-padding">
 										<div class="form-control" title="Outstanding Principal (should be greater than 500000 and less than 1000000000)" style="margin-bottom:14px; height:50px; position:relative;">
 
-											<input type="text" class="form-input-new" onkeyup="myfun()" required name="loanamount" id="loanamount" maxlength="9"  onkeypress="return isNumberKey(event)" onblur="alert_him(this)" data-type="number">
+											<input type="text" class="form-input-new" onkeyup="myfun()" required name="loanamount" id="loanamount" maxlength="9"  onkeypress="return isNumberKey(event)" onblur="alert_him(this)" >
 
 
 											<span class="highlight"></span><span class="bar"></span>
@@ -777,22 +777,7 @@ function isNumberKey(evt)
 
 </script>
 
-<script type="text/javascript">
-$(document).ready(function(){
-    $("input[data-type='number']").keyup(function(event){
-      // skip for arrow keys
-      if(event.which >= 37 && event.which <= 40){
-          event.preventDefault();
-      }
-      var $this = $(this);
-      var num = $this.val().replace(/,/gi, "");
-      var num2 = num.split(/(?=(?:\d{3})+$)/).join(",");
-      console.log(num2);
-      // the following line has been simplified. Revision history contains original.
-      $this.val(num2);
-  });
-});
-</script>
+
 
 
   </body>

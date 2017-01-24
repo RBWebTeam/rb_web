@@ -149,8 +149,9 @@
 </div></div></div><!-- </div> -->
 
 
-	
-	<div class="container" style="display:none">
+	<?php  if($product == 'home-loan' ){
+    ?>
+	<div class="container" >
 	 <div class="row">
 	   <div class="col-md-12">
 	   
@@ -163,16 +164,10 @@
       </h4>
     </div>
     <div id="collapse1" class="panel-collapse collapse in">
-      <div class="panel-body"><p>Home loans offered by Axis Bank have great features like flexible tenures, transparent processing and quick service. The home loan from Axis bank has various features which are as follows:
-The interest rates charged by the bank under its housing loan scheme are fair and reasonable making them attractive and popular among customers because they can afford the interest rates charged by the bank.</p>
-<p>Both fixed and floating rates of interest are available under the Home Loan schemes and the applicant can choose either of the two based on his or her perception about the movements of the interest rates.
-A minimum amount of 3 lakhs can be borrowed under the Axis Bank Housing Loan scheme. However, there is no upper limit on borrowing and it depends on the borrower’s repayment capability.</p>
-<p>The bank offers balance transfer scheme under the Axis Bank Housing Loan which means that if an applicant already has a home loan from a bank and is not satisfied with the charges and EMIs of that bank, he or she can transfer the existing home loan to Axis Ltd. Home Loan without any additional hassles.
-This Axis home loan offers doorstep loan service so that the customer does not need to visit the bank branch. The bank comes to the applicant’s doorstep to complete the loan processing formality
-If the applicant wishes to pay off the Axis Home loans earlier than the stipulated tenure, it is possible and there are no charges for prepayment. However, the prepayment facility is only available to customers who have chosen a floating rate of interest.
-Premium banking customers like Priority, Wealth or Burgundy, are given special benefits in the rates and charges of the Axis Home loans
-Availing of a longer tenure of 30 years results in lower EMIs making the Axis Home loan affordable to the customers.</p>
-<p>eDGE Loyalty Points Program enables earning of eDGE Reward points when the customer avails the Axis Home loans or takes a top-up home loan and on every anniversary year of the availed Axis Ltd. home loan.</p>
+      <div class="panel-body">
+      <p>RupeeBoss brings home loans to your doorstep from all leading banks and NBFC’s. Over 300 man-years of collective experience, a dedicated team of experts and a complete package to meet all your housing finance needs, RupeeBoss helps you realize your dreams</p>
+      <p>We make available home loans for individuals for fresh purchase or resale or for construction of houses. Applications can be made individually or jointly.</p>
+
 </div>
     </div>
   </div>
@@ -180,37 +175,17 @@ Availing of a longer tenure of 30 years results in lower EMIs making the Axis Ho
     <div class="panel-heading">
       <h4 class="panel-title">
         <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
-        Axis Bank Eligibility Criteria</a>
+      The RupeeBoss Advantage.</a>
       </h4>
     </div>
     <div id="collapse2" class="panel-collapse collapse">
-      <div class="panel-body"><p>The following individuals matching the respective criteria are eligible to avail the Axis Home loan:</p>
- 
-<P>Home Loan Eligibility Criteria for Salaried Applicant</p>
-
-<P>The applicant must have been employed in permanent capacity with recognized private or Government enterprise
-The prospective borrower needs to have completed 24 years of age at the time of loan application. Additionally, the maximum age of applicant by which the superannuation of the Axis housing loan must occur is 60 years. However, the home loan from Axis limited may be ended before the applicant reaches the age specified as well.</P>
- 
-<P>Home Loan Eligibility for Self-Employed Professionals</P>
-
-<P> employed professionals such as management consultant, CA, dentists, doctors, cost accountants, doctors etc. are also eligible to apply for a Axis bank home loan.
-Such individuals must be at least 24 years old when applying for the home loan, while they cannot exceed 65 years when the home loan from Axis matures.</P>
- 
-<P>Eligibility Criteria Specific to Self-Employed Applicant
-Any self-employed person who has regularly submitted his/her income tax returns may be considered for a Axis Home Loan.
-The maximum age of applicant at the time of home loan maturity is fixed at 65 years, while the minimum age of eligibility for home loan application with Axis bank is 24 years for self employed. </P> 
- 
-<P>Salaried Individuals with the following criteria
-Individuals in reputed companies of Government in permanent service.
-Applicants should be above 24 years while applying for Axis housing loan and the maximum allowable age is 60 years or up to superannuation whichever is early at the time of maturity of the Home loan from Axis limited.</P>
- 
-<P>Professionals with the following criteria
-Engineers, architects, dentists, management consultants,doctors, chartered accountants, company secretaries, cost accountants, only can apply for a Axis Home loan
-Applicants age should be above 24 at the time of home loan application and 65 years or less at the time of loan maturity.</P>
- 
-<P>Self-employed Individuals with the following criteria
-Any individual filing Income Tax Returns is eligible for applying to Axis Home loans
-Applicants should be above 24 years of age at the time of Axis Limited home loan application and 65 years or less at the time of loan maturity.</P>
+      <div class="panel-body"><ul><li>Experienced and well-qualified personnel to ensure smooth and easy processing</li></ul>
+      <ul><li>Stage wise updating on applications status</li></ul> 
+      <ul><li>Transparency in all dealings</li></ul> 
+      <ul><li>Counselling and advisory services while deciding on right loan which suits you.</li></ul> 
+      <ul><li>Efficient and quick processing of loans</li></ul>
+      <ul><li>Branches across 30 cities in India</li></ul> 
+      <ul><li>Dedicated relationship managers</li></ul>
 </div>
     </div>
   </div>
@@ -218,96 +193,25 @@ Applicants should be above 24 years of age at the time of Axis Limited home loan
     <div class="panel-heading">
       <h4 class="panel-title">
         <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">
-        Axis Home Loan Interest Rate And Charges</a>
+        Home Improvement Loan</a>
       </h4>
     </div>
     <div id="collapse3" class="panel-collapse collapse">
       <div class="panel-body">
-	     <table border="1" cellpadding="0" cellspacing="0" class="table tbl">
-	<tbody>
-		<tr>
-			<td style="width:128px">
-				<p style="text-align:center">
-					<strong>Type</strong>
-				</p>
-			</td>
-			<td style="width:156px">
-				<p style="text-align:center">
-					<strong>Axis Limited Home Loan Amount</strong>
-				</p>
-			</td>
-			<td style="width:174px">
-				<p style="text-align:center">
-					<strong>Base Rate + Mark-up</strong>
-				</p>
-			</td>
-			<td style="width:180px">
-				<p style="text-align:justify">
-					<strong>Effective rate of interest</strong>
-				</p>
-			</td>
-		</tr>
-		<tr>
-			<td colspan="1" rowspan="3" style="width:128px">
-				<p style="text-align:center">
-					<strong>Floating Rate</strong>
-				</p>
-
-				<p style="text-align:center">
-					&nbsp;
-				</p>
-			</td>
-			<td style="width:156px">
-				<p style="text-align:center">
-					Up to&nbsp; Rs 28 lacs
-				</p>
-			</td>
-			<td style="width:174px">
-				<p style="text-align:center">
-					MCLR +0.20%
-				</p>
-			</td>
-			<td style="width:180px">
-				<p style="text-align:justify">
-					9.45% p.a
-				</p>
-			</td>
-		</tr>
-		<tr>
-			<td style="width:156px">
-				<p style="text-align:center">
-					Above&nbsp; Rs 28 lacs
-				</p>
-			</td>
-			<td style="width:174px">
-				<p style="text-align:center">
-					MCLR + 0.25%
-				</p>
-			</td>
-			<td style="width:180px">
-				<p style="text-align:justify">
-					9.50% p.a
-				</p>
-			</td>
-		</tr>
-		<tr>
-			<td style="width:156px">
-				<p style="text-align:center">
-					Top-up
-				</p>
-			</td>
-			<td colspan="2" style="width:354px">
-				<p style="text-align:center">
-					Up to 30% - Same rate of Home loan
-				</p>
-
-				<p style="text-align:center">
-					30%-100%- Rates of LAP
-				</p>
-			</td>
-		</tr>
-	</tbody>
-</table>
+	    <p>The interiors of any home reflect the personal preferences and tastes of its owners. A need is invariably felt to constantly upgrade the interiors with the changing times. This loan facility seeks to cover repairs and other structural improvements</p>
+	  </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">
+       Home Extension Loan</a>
+      </h4>
+    </div>
+    <div id="collapse4" class="panel-collapse collapse">
+      <div class="panel-body">
+	    <p>Home Extension Loan for adding more space to your existing home for meeting the requirements of your growing family.</p>
 	  </div>
     </div>
   </div>
@@ -316,6 +220,173 @@ Applicants should be above 24 years of age at the time of Axis Limited home loan
 	 </div>
 	 </div>
 	</div>
+	<?php }else if ($product == 'personal-loan'){ ?>
+	<div class="container" >
+	 <div class="row">
+	   <div class="col-md-12">
+	   
+	   <div class="panel-group" id="accordion">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+        Personal Loan</a>
+      </h4>
+    </div>
+    <div id="collapse1" class="panel-collapse collapse in">
+      <div class="panel-body">
+      <p>A personal loan is a short term unsecured loan that you can use to meet current personal financial needs. It is commonly used to meet expenses related to debt restructuring, to meet Wedding Expenses, vacations, unexpected medical expenses and down payments, a personal loan may be used for practically any type of expense. Tenure of a personal loan is shorter as compared to a mortgage. Unlike mortgage, a personal loan is commonly for between one and five years.</p>
+      <p>Unlike mortgage, a personal loan is commonly for between one and five years.</p>
+
+</div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
+      The RupeeBoss Advantage.</a>
+      </h4>
+    </div>
+    <div id="collapse2" class="panel-collapse collapse">
+      <div class="panel-body"><ul><li>Experienced and well-qualified personnel to ensure smooth and easy processing.</li></ul>
+        <ul><li>Stage wise updating on applications status.</li></ul>
+        <ul><li>Transparency in all dealings.</li></ul>
+        <ul><li>Counselling and advisory services while deciding on right loan which suits you.</li></ul>
+        <ul><li>Efficient and quick processing of loans.</li></ul>
+        <ul><li>Branches across 30 cities in India.</li></ul>
+        <ul><li>Dedicated relationship managers.</li></ul> 
+</div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">
+        Why Choose a Personal Loan?</a>
+      </h4>
+    </div>
+    <div id="collapse3" class="panel-collapse collapse">
+      <div class="panel-body">
+	    <p>There's no limit to the number of ways a personal loan can be used. It can be taken for any personal reason, such as:</p>
+	    <ul><li>Renovation of your house</li></ul>
+	    <ul><li>To meet wedding expenses.</li></ul>
+	    <ul><li>To buy a new Cell Phone</li></ul>
+	    <ul><li>To plan and spend holidays with the family</li></ul>
+	    <ul><li>To simply pay off credit card bills or other debts.</li></ul>
+	  </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">
+       Documents Required:</a>
+      </h4>
+    </div>
+    <div id="collapse4" class="panel-collapse collapse">
+      <div class="panel-body">
+	    <p>Most banks have similar guidelines for documentation requirement for personal loan. The list of documents you need for a personal loan are:</p>
+	    <p>For salaried individuals:</p>
+	    <ul><li>A copy of latest salary slips or salary certificate.</li></ul>
+	    <ul><li>Form 16 and a copy of ITR for the last two years.</li></ul>
+	    <ul><li>Copy of the appointment letter or an employment certificate to prove job continuity.</li></ul>
+	    <ul><li>Last 6 months' salary account statements.</li></ul>
+	    <ul><li>Proof of employment certificate.</li></ul>
+	    <ul><li>Proof of employment certificate.</li></ul>
+	  </div>
+    </div>
+  </div>
+</div>
+	   
+	 </div>
+	 </div>
+	</div>
+    <?php }else{ ?>
+    <div class="container" >
+	 <div class="row">
+	   <div class="col-md-12">
+	   
+	   <div class="panel-group" id="accordion">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+        Business Loan</a>
+      </h4>
+    </div>
+    <div id="collapse1" class="panel-collapse collapse in">
+      <div class="panel-body">
+      <p>Do you own a business that needs funds for expansion? Or do you have a big business order in hand and require funds for some working capital?</p>
+      <p>f you can relate to any of the above situations, then a Business Loan is the right solution for you. Our team of dedicated professionals helps you determine your requirements, especially for small businesses; and you can get started within the shortest possible time.</p>
+
+</div>
+    </div>
+  </div>
+  <!-- <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
+      The RupeeBoss Advantage.</a>
+      </h4>
+    </div>
+    <div id="collapse2" class="panel-collapse collapse">
+      <div class="panel-body"><ul><li>Experienced and well-qualified personnel to ensure smooth and easy processing.</li></ul>
+        <ul><li>Stage wise updating on applications status.</li></ul>
+        <ul><li>Transparency in all dealings.</li></ul>
+        <ul><li>Counselling and advisory services while deciding on right loan which suits you.</li></ul>
+        <ul><li>Efficient and quick processing of loans.</li></ul>
+        <ul><li>Branches across 30 cities in India.</li></ul>
+        <ul><li>Dedicated relationship managers.</li></ul> 
+</div>
+    </div>
+  </div> -->
+  <!-- <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">
+        Why Choose a Personal Loan?</a>
+      </h4>
+    </div>
+    <div id="collapse3" class="panel-collapse collapse">
+      <div class="panel-body">
+	    <p>There's no limit to the number of ways a personal loan can be used. It can be taken for any personal reason, such as:</p>
+	    <ul><li>Renovation of your house</li></ul>
+	    <ul><li>To meet wedding expenses.</li></ul>
+	    <ul><li>To buy a new Cell Phone</li></ul>
+	    <ul><li>To plan and spend holidays with the family</li></ul>
+	    <ul><li>To simply pay off credit card bills or other debts.</li></ul>
+	  </div>
+    </div>
+  </div> -->
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
+       Documents Required:</a>
+      </h4>
+    </div>
+    <div id="collapse2" class="panel-collapse collapse">
+      <div class="panel-body">
+	    <p>Most banks have similar guidelines for documentation requirement for personal loan. The list of documents you need for a personal loan are:</p>
+	    <p>For salaried individuals:</p>
+	    <ul><li>Proof of Identity.</li></ul>
+	    <ul><li>Address Proof..</li></ul>
+	    <ul><li>Date of Birth Proof.</li></ul>
+	    <ul><li>Bank Statements.</li></ul>
+	    <ul><li>Latest ITR along with computation of income, B/S & P&L a/c for the last 2 yrs. certified by a CA.</li></ul>
+	    <ul><li>Proof of continuation:  Trade license /Establishment /Sales Tax certificate.</li></ul>
+	    <ul><li>Other Mandatory Documents (Sole Prop. Decl. Or Cert. Copy of Partnership Deed, Cert. Copy of MOA, AOA & Board resolution.).</li></ul>
+	  </div>
+    </div>
+  </div>
+</div>
+	   
+	 </div>
+	 </div>
+	</div>
+	<?php } ?>
+
 	
 	
 @include('layout.footer')

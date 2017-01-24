@@ -147,12 +147,12 @@
 								<a id="googleLOG" href={{URL::to('logout')}}>Logout</a>
 								<a href="{{url('profile')}}">My Profile</a>
 								<a href="{{URL::to('credit-report')}}">My Credit Score</a>
-								<a href="{{url('profile')}}">Applied loan</a>
+								<a href="{{url('profile')}}">My Quotes</a>
 								</li>
 							</ul>
 							
 							</li>
-                          	 <li><?php echo Session::get('name');?></li>
+                          	 <li><?php echo Session::get('name');?></li> 
                         
 						<?php }else{
 							?>

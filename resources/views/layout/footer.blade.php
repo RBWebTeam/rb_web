@@ -5,21 +5,27 @@
 			<div class="col-md-2 col-sm-12 col-sm-push-0 col-xs-12 col-xs-push-0">
 				<h3>Home Loan</h3>
 				<ul class="float">
-					<li><a href="{{URL::to('loan-details/home-loan/ICICI-BANK')}}">Icici Bank</a></li>
+					<li><a href="{{URL::to('loan-details/home-loan/ICICI-BANK')}}">ICICI Bank</a></li>
 					<li><a href="{{URL::to('loan-details/home-loan/AXIS-BANK-LTD')}}">Axis Bank</a></li>
-					<li><a href="{{URL::to('loan-details/home-loan/ADITYA-BIRLA-FINANCE-LIMITED')}}">Aditya Birla Finance Limited</a></li>
-					<li><a href="{{URL::to('loan-details/home-loan/AU-HOUSING-FINANCE-LIMITED')}}">Au Housing Finance Limited</a></li>
+					<!-- <li><a href="{{URL::to('loan-details/home-loan/ADITYA-BIRLA-HOUSING-FINANCIAL-LIMITED')}}">Aditya Birla Finance Limited</a></li> -->
+					<!-- <li><a href="{{URL::to('loan-details/home-loan/AU-HOUSING-FINANCE-LIMITED')}}">Au Housing Finance Limited</a></li> -->
                    
-                    <li><a href="{{URL::to('loan-details/home-loan/BAJAJ-FINANCE-LIMITED')}}">Bajaj Finance Limited</a></li>
-                    <li><a href="{{URL::to('loan-details/home-loan/CAPITAL-FIRST-LIMITED')}}">Capital First Limited</a></li>
-                   <!--  <li><a href="{{URL::to('loan-details/home-loans/idbi')}}">IDBI Bank</a></li> -->
-                    <!-- <li><a href="{{URL::to('home-loans/union')}}">Union Bank</a></li> -->
-                    <li><a href="{{URL::to('loan-details/home-loan/L-&-T')}}">L & T Finance</a></li>
-                    <!-- <li><a href="{{URL::to('loan-details/home-loans/canara')}}">Canara Bank</a></li> -->
-                    <li><a href="{{URL::to('loan-details/home-loan/PNB-HOUSING-FINANCE-LTD')}}">PNB Housing </a></li>
-                    <!-- <li><a href="{{URL::to('loan-details/home-loan/finance')}}">Finance</a></li> -->
-                    <!-- <li><a href="{{URL::to('loan-details/home-loan/reliance')}}">Reliance Capital</a></li> -->
-                    <li><a href="{{URL::to('loan-details/home-loan/STANDARD-CHARTERED-BANK')}}">Standard Chartered</a></li> 
+                   <!--  <li><a href="{{URL::to('loan-details/home-loan/BAJAJ-FINANCE-LIMITED')}}">Bajaj Finance Limited</a></li> -->
+                    <!-- <li><a href="{{URL::to('loan-details/home-loan/CAPITAL-FIRST-LIMITED')}}">Capital First Limited</a></li> -->
+                    <li><a href="{{URL::to('loan-details/home-loans/DBS')}}">DBS</a></li>
+                   <!--  <li><a href="{{URL::to('loan-details/home-loan/DHFL')}}">DHFL</a></li> -->
+                    <li><a href="{{URL::to('loan-details/home-loan/DCB-BANK')}}">DCB Bank</a></li>
+                    <li><a href="{{URL::to('loan-details/home-loans/HDFC-LTD')}}">HDFC Ltd</a></li>
+                    <li><a href="{{URL::to('loan-details/home-loans/IDFC-BANK')}}">IDFC Ltd</a></li>
+                    <li><a href="{{URL::to('loan-details/home-loans/IIFL')}}">IIFL</a></li>
+                    <li><a href="{{URL::to('loan-details/home-loan/INDIABULLS-HOUSING-FINANCE-LIMITED')}}">Indiabulls</a></li>
+                    <li><a href="{{URL::to('loan-details/home-loans/KOTAK-MAHINDRA-BANK')}}">Kotak Mahindra Bank</a></li>
+                 <!--  <li><a href="{{URL::to('loan-details/home-loan/L-&-T')}}">L & T Finance</a></li> -->
+                    
+                    <li><a href="{{URL::to('loan-details/home-loan/PNB-HOUSING-FINANCE-LTD')}}">PNB Housing Finance  </a></li>
+                    <li><a href="{{URL::to('loan-details/home-loan/STANDARD-CHARTERED-BANK')}}">Standard Chartered</a></li>
+                    <li><a href="{{URL::to('loan-details/home-loan/TATA-CAPITAL-HOUSING-FINANCE-LIMITED')}}">Tata Capital </a></li> 
+                    <li><a href="{{URL::to('loan-details/home-loan/YES-BANK')}}">Yes Bank</a></li> 
 				</ul>
 			</div>
 			<div class="col-md-2 col-md-push-1 col-sm-12 col-sm-push-0 col-xs-12 col-xs-push-0">
@@ -28,44 +34,47 @@
 					<li><a href="{{URL::to('loan-details/personal-loan/AXIS-BANK-LTD')}}">Axis Bank</a></li>
 					<li><a href="{{URL::to('loan-details/personal-loan/HDFC-LTD')}}">HDFC</a></li>
 					<li><a href="{{URL::to('loan-details/personal-loan/BAJAJ-FINANCE-LIMITED')}}">Bajaj Finance</a></li>
-					<li><a href="{{URL::to('loan-details/personal-loan/SHRIRAM CITY UNION FINANCE LIMITED')}}">Shriram Finance</a></li>
+					<li><a href="{{URL::to('loan-details/personal-loan/CAPITAL-FIRST-LIMITED')}}">Capital First </a></li>
                     <li><a href="{{URL::to('loan-details/personal-loan/FULLERTON-INDIA-CREDIT-COMPANY-LIMITED')}}">Fullerton India</a></li>
 					<li><a href="{{URL::to('loan-details/personal-loan/ICICI-BANK')}}">ICICI Bank</a></li>
 					<li><a href="{{URL::to('loan-details/personal-loan/KOTAK-MAHINDRA-BANK')}}">Kotak Mahindra</a></li>
 					<!-- <li><a href="{{URL::to('loan-details/personal-loan/reliance')}}">Reliance Capital</a></li> -->
-                    <!-- <li><a href="{{URL::to('loan-details/personal-loan/union')}}">Union Bank</a></li> -->
-                    <li><a href="{{URL::to('loan-details/personal-loan/L-&-T')}}">L & T Finance</a></li>
+                    <li><a href="{{URL::to('loan-details/personal-loan/TATA-CAPITAL-HOUSING-FINANCE-LIMITED')}}">Tata Capital</a></li>
+                    <!-- <li><a href="{{URL::to('loan-details/personal-loan/L-&-T')}}">L & T Finance</a></li> -->
 				</ul>
 
 			</div>
             <div class="col-md-2 col-md-push-1 col-sm-12 col-sm-push-0 col-xs-12 col-xs-push-0">
-				<h3>SME Loan</h3>
+				<h3>Business Loan</h3>
 				<ul class="float">
-					<li><a href="{{URL::to('loan-details/sme-loan/AXIS-BANK-LTD')}}">Axis Bank</a></li>
-					<li><a href="{{URL::to('loan-details/sme-loan/HDFC-LTD')}}">HDFC</a></li>
-					<li><a href="{{URL::to('loan-details/sme-loan/BAJAJ-FINANCE-LIMITED')}}">Bajaj Finance</a></li>
-					<li><a href="{{URL::to('loan-details/sme-loan/SHRIRAM CITY UNION FINANCE LIMITED')}}">Shriram Finance</a></li>
-                    <li><a href="{{URL::to('loan-details/sme-loan/FULLERTON-INDIA-CREDIT-COMPANY-LIMITED')}}">Fullerton India</a></li>
-					<li><a href="{{URL::to('loan-details/sme-loan/ICICI-BANK')}}">ICICI Bank</a></li>
-					<li><a href="{{URL::to('loan-details/sme-loan/KOTAK-MAHINDRA-BANK')}}">Kotak Mahindra</a></li>
-                    <!-- <li><a href="{{URL::to('loan-details/sme-loan/reliance')}}">Reliance Capital</a></li> -->
-					<!-- <li><a href="{{URL::to('loan-details/sme-loan/union')}}">Union Bank</a></li> -->
-					<li><a href="{{URL::to('loan-details/sme-loan/L-&-T')}}">L & T Finance</a></li>
+					<li><a href="{{URL::to('loan-details/business-loan/INTELLECASH-MICROFINANCE-NETWORK-COMPANY-PVT-LTD')}}">Intellecash </a></li>
+                    <li><a href="{{URL::to('loan-details/business-loan/MAGMA-FINCORP-LIMITED')}}">Magma Fincorp</a></li>
+                    <li><a href="{{URL::to('loan-details/business-loan/ICICI-BANK')}}">ICICI Bank</a></li>
+                    <li><a href="{{URL::to('loan-details/business-loan/HDFC-LTD')}}">HDFC</a></li>
+                    <li><a href="{{URL::to('loan-details/business-loan/INDUSIND-BANK')}}">Indusind Bank</a></li>
+                    <li><a href="{{URL::to('loan-details/business-loan/UPF-(Kapitaltech)')}}">UPF (Kapitaltech)</a></li>
+                    <li><a href="{{URL::to('loan-details/business-loan/RATNAKAR-BANK-LTD')}}">RBL</a></li>
+                    <li><a href="{{URL::to('loan-details/business-loan/STANDARD-CHARTERED-BANK')}}">Standard Chartered</a></li>
+                    <li><a href="{{URL::to('loan-details/business-loan/TATA-CAPITAL-HOUSING-FINANCE-LIMITED')}}">Tata Capital</a></li>
+                    <li><a href="{{URL::to('loan-details/business-loan/CAPITAL-FIRST-LIMITED')}}">Capital First</a></li>
 				</ul>
 
 			</div>
-             <div class="col-md-2 col-md-push-1 col-sm-12 col-sm-push-0 col-xs-12 col-xs-push-0">
+            <div class="col-md-2 col-md-push-1 col-sm-12 col-sm-push-0 col-xs-12 col-xs-push-0">
 				<h3>Business Loan</h3>
 				<ul class="float">
-					<li><a href="{{URL::to('loan-details/business-loan/DCB-BANK')}}">DCB</a></li>
+                    <li><a href="{{URL::to('loan-details/business-loan/AXIS-BANK-LTD')}}">Axis Bank</a></li>
+                     <li><a href="{{URL::to('loan-details/business-loan/ADITYA-BIRLA-HOUSING-FINANCIAL- LIMITED')}}">Aditya Birla</a></li>
+					<li><a href="{{URL::to('loan-details/business-loan/EDELWEISS-FINANCE-LIMITED')}}">Edelweiss </a></li>
+                    <li><a href="{{URL::to('loan-details/business-loan/CAPITAL-FIRST-LIMITED')}}">Capital First Limited</a></li>
+                    <li><a href="{{URL::to('loan-details/business-loan/DHFL')}}">DHFL</a></li>
+                    <li><a href="{{URL::to('loan-details/business-loan/DEUTSCHE-BANK')}}">Deutsche Bank</a></li>
 					<li><a href="{{URL::to('loan-details/business-loan/KOTAK-MAHINDRA-BANK')}}">Kotak Mahindra </a></li>
-					<li><a href="{{URL::to('loan-details/business-loan/YES-BANK')}}">Yes Bank</a></li>
+					<!-- <li><a href="{{URL::to('loan-details/business-loan/YES-BANK')}}">Yes Bank</a></li> -->
 					<li><a href="{{URL::to('loan-details/business-loan/BAJAJ-FINANCE-LIMITED')}}">Bajaj Finance</a></li>
-                    <li><a href="{{URL::to('loan-details/business-loan/MAGMA-HOUSING-FINANCE-LIMITED')}}">Magma Finance</a></li>
-					<li><a href="{{URL::to('loan-details/business-loan/ICICI-BANK')}}">ICICI Bank</a></li>
-					<li><a href="{{URL::to('loan-details/business-loan/HDFC-LTD')}}">HDFC</a></li>
-                    <li><a href="{{URL::to('loan-details/business-loan/TATA-CAPITAL-HOUSING-FINANCE-LIMITED')}}">Tata Capital</a></li>
-					<li><a href="{{URL::to('loan-details/business-loan/CAPITAL-FIRST-LIMITED')}}">Capital First</a></li>
+                    <li><a href="{{URL::to('loan-details/business-loan/LENDINGKART')}}">Lendingkart</a></li>
+                    <li><a href="{{URL::to('loan-details/business-loan/FULLERTON-INDIA-CREDIT-COMPANY-LIMITED')}}">Fullerton India </a></li>
+                    
 				</ul>
 
 			</div>

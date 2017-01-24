@@ -19,7 +19,7 @@
     </div>
     <div class="form-group right-block">
      <label class="control-label" for="Loan Tenure">Loan Tenure:</label>
-     <input type="text" name="loanterm" class="form-control" id="loanterm" placeholder="Loan Tenure" onkeypress="return isNumberKey(event)" value="" onblur="myfun()">
+     <input type="text" name="loanterm" class="form-control" id="loanterm" placeholder="Loan Tenure" onkeypress="return isNumberKey(event)" value="" onblur="myfun()" >
      <br>
 	 
      <div class="btn-group">

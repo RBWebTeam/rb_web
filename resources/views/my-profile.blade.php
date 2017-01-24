@@ -16,7 +16,7 @@
                 <!--     <li><a href="#messages" data-toggle="tab">Notifications</a></li> -->
                    <li><a href="#extraDetails" data-toggle="tab">Extra Details</a></li>
                      <li><a href="#credit-score" data-toggle="tab">My Credit Score </a></li>
-                       <li><a href="#Loan-history" data-toggle="tab">Loan History </a></li>
+                       <li><a href="#Loan-history" data-toggle="tab">My Quotes </a></li>
                          <!-- <li><a href="#Track-Apllication" data-toggle="tab">Track Application </a></li> -->
                             
                                @if($query->password!='0')
@@ -125,7 +125,7 @@
 
                           <div class="tab-pane" id="Loan-history">
                           <div>
-                          <h2  >Loan history </h2>
+                          <h2  >Quotes history </h2>
                                @if(isset($loan_history))
                                 <ul class="list-group">
                                   <?php foreach ($loan_history as $key => $value) { ?>

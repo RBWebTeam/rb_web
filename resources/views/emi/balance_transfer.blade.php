@@ -238,7 +238,7 @@ label {
 									<div class="col-xs-6 form-padding">
 										<div class="form-control" title="Outstanding Principal (should be greater than 500000 and less than 1000000000)" style="margin-bottom:14px; height:50px; position:relative;">
 
-											<input type="text" class="form-input-new" onkeyup="myfun()" required name="loanamount" id="loanamount" maxlength="9"  onkeypress="return isNumberKey(event)" onblur="alert_him(this)">
+											<input type="text" class="form-input-new" onkeyup="myfun()" required name="loanamount" id="loanamount" maxlength="9"  onkeypress="return isNumberKey(event)" onblur="alert_him(this)" >
 
 
 											<span class="highlight"></span><span class="bar"></span>
@@ -776,6 +776,10 @@ function isNumberKey(evt)
        }
 
 </script>
+
+
+
+
   </body>
   
  

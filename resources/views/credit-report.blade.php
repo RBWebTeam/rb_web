@@ -131,7 +131,7 @@
 
 
 										</div>
-										&nbsp;&nbsp;&nbsp;&nbsp;<button class="btn btn-primary btn-outline with-arrow animate-box fadeInUp animated" style="display: none">Confirm & Continue<i class="icon-arrow-right"></i>
+										&nbsp;&nbsp;&nbsp;&nbsp;<button class="btn btn-primary btn-outline with-arrow animate-box fadeInUp animated" >Confirm & Continue<i class="icon-arrow-right"></i>
 									</button>
 								</div>
 							</form>

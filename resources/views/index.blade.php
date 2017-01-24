@@ -182,7 +182,7 @@
 		</div>
 	</div>
 	
-		<div class="container-fluid bg-gray">
+		<div class="container-fluid white-bg">
 			
 			<div class="animate-box">
                     <div class="col-md-1"></div>
@@ -192,13 +192,18 @@
 												
 						</div>
 					</div>
-					<div class="col-md-4 left-lin"><img src="images/Report.png" class="img-responsive hidden-sm" /><a class="btn btn-primary btn-outline with-arrow top-mrg" href="{{URL::to('credit-report')}}">Apply For Credit Report<i class="icon-arrow-right"></i></a></div>
+					<div class="col-md-4">
+					<br>
+					<br>
+					<img src="images/Report.png" class="img-responsive hidden-sm">
+					<br>
+					<a class="top-mrg tp-margin" href="{{URL::to('credit-report')}}">Apply For Credit Report</a></div>
                    <div class="col-md-1"></div>
 			</div>
 		</div>
 	
 	<div id="fh5co-pricing-section">
-		<div class="container-fluid white-bg">
+		<div class="container-fluid bg-gray">
 			<div class="row no-margin">
 				<div class="col-md-6 col-md-offset-3 text-center fh5co-heading animate-box">
 				<br>

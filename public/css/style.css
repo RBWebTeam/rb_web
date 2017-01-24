@@ -580,7 +580,7 @@ rb-services-section{padding:0px;}
 }
 
 .carousel-inner .slide-txt { position:absolute; padding:30px; width:65%;}
-.carousel-inner .slide-txt h2 {font-size: 50px;font-weight: 400;color: #fff;text-shadow: 1px 1px 1px #000;border-radius: 7px;
+.carousel-inner .slide-txt h2 {text-transform:uppercase; font-size: 50px;font-weight: 400;color: #fff;text-shadow: 1px 1px 1px #000;border-radius: 7px;
 -moz-border-radius: 7px;-webkit-border-radius: 7px;-o-border-radius: 7px;display:block;font-weight: bold;text-align:center;}
 .carousel-inner h4 {margin:0 auto; text-align:center;color: #ffffff; font-size:28px;font-weight:bold;text-shadow: 1px 1px 1px #000;}
 .btn-view {margin:auto; display: table; margin-top:10px;}
@@ -1294,7 +1294,7 @@ rb-services-section{padding:0px;}
 /*# sourceMappingURL=style.css.map */
 
 
-.red-bg1 { background:#1f386e url(../images/form_bg.png); height:283px;}
+.red-bg1 { background:#4d4d4d  url(../images/form_bg.png); height:283px;}
 .form-in {color: #ccc;padding:30px;/*border:1px dashed rgb(74, 126, 204);*/padding-top: 10px; font-size: 12px;}
 .form-in input {background:#eaeaea;color:#999;border:none;}
 .form-in select {background:#eaeaea;color:#999;border:none;margin-bottom:5px;height:30px;border-radius: 3px; width:100%;}
@@ -1892,6 +1892,8 @@ body {background:#eee;}
 .mrg-btm {margin-bottom:20px;}
 
 #cTigerWrapper.cTigerWrapper .cTigerNxt .cTigerbottom .cTigerOpenPopup {background:#ed1c24;}
+.top-lnk li:hover {background:#ccc; border-radius:10px;}
+.top-lnk li a:hover {color:#fff;}
 
 
 .loader {
@@ -1903,3 +1905,15 @@ body {background:#eee;}
   z-index: 9999;
   background: url('../images/processing.gif') 50% 50% no-repeat rgb(249,249,249);
 }
+.tp-margin {text-transform: uppercase;
+    background: #28a0ff;
+    padding:10px 47px;
+    font-size: 20px;
+	margin:0 auto;
+	color:#fff;
+    margin-top:10px;
+    border: 3px solid #28a0ff;
+    margin-top: 10px;}
+.tp-margin:hover {background:#fff;border: 3px solid #28a0ff;color:#28a0ff;}
+.about-bg {background: url(../images/aboutus_bg.png) no-repeat;}
+

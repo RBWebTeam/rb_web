@@ -12,11 +12,12 @@
                 <!-- Nav tabs -->
                 <ul class="nav nav-tabs nav-stacked tabs-left">
                     
-                    <li class="active"><a href="#profile" data-toggle="tab" class="pad-lft-rgt">My Profile<i class="icon-profile"></i></a></li>
+                    <li class="active"><a href="#profile" id="#profile" data-toggle="tab" class="pad-lft-rgt">My Profile<i class="icon-profile"></i></a></li>
                 <!--     <li><a href="#messages" data-toggle="tab">Notifications</a></li> -->
-                   <li><a href="#extraDetails" data-toggle="tab">Extra Details</a></li>
+                       
+                     <li><a href="#extraDetails" data-toggle="tab">Extra Details</a></li>
                      <li><a href="#credit-score" data-toggle="tab">My Credit Score </a></li>
-                       <li><a href="#Loan-history" data-toggle="tab">My Quotes </a></li>
+                     <li><a href="#Loan-history" data-toggle="tab">My Quotes </a></li>
                          <!-- <li><a href="#Track-Apllication" data-toggle="tab">Track Application </a></li> -->
                             
                                @if($query->password!='0')

@@ -84,7 +84,7 @@ class LoanController extends Controller
     public function smeLoan(request $request){
         $data['title']='SME Loan';
         $data['description']='Apply for SME Loan';
-        return view('personal-loan-test',['sme'=>'sme'])->with($data);
+        return view('sme-test',['sme'=>'sme'])->with($data);
     }
 
     public function apply_home_loan(){
@@ -104,7 +104,7 @@ class LoanController extends Controller
     }
     
     public function apply_car_loan(){
-      return view('car-loan-process');
+      return view('car-loan-test');
     }
 
      public function apply_business_loan(){

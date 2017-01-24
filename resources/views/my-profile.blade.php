@@ -149,7 +149,7 @@
 
 
                           <div class="tab-pane" id="change-password">
-                          <div id="success" class="col-md-6 pad11 text-danger"></div>
+                          
                           
                           <div id="success1" class="col-md-6 pad11 text-danger"></div>
                           
@@ -180,7 +180,7 @@
                     
                   </div>
 
-       
+                  <div id="success" class="col-md-5 text-success"></div>
                   
                   <div> 
                     <button class="btn btn-primary btn-outline with-arrow change_password_form" >Submit<i class="icon-arrow-right"></i></button>

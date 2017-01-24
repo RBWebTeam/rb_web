@@ -9,13 +9,7 @@
     
 	<div class="col-md-12 pad11">
     
-    <div class="">
-    <table width="100%" border="1" class="tbl pad1">
-  <tr>
-   <!--  <td>Your {{$home_loan}}  Search for --> 
-  </tr>
-</table>
-</div>
+    
 
  @foreach ($getQuery as $key=>$value)
     <div class="table-responsive outer-brd">

@@ -3,20 +3,23 @@
     
     <aside id="fh5co-hero">
       
-        <div class="row" style="min-height:300px;">
+        <div class="row">
+		<h3 class="text-center" style="padding:20px;"><i class="icon-user"></i> My Profile</h3>
+		 <div class="white-bg pad mrg-btm">
             
-            <h3 class="text-center" style="padding:20px;"><i class="icon-user"></i> My Profile</h3>
+            
             
             <div class="col-md-3 col-sm-12">
                 <!-- required for floating -->
                 <!-- Nav tabs -->
                 <ul class="nav nav-tabs nav-stacked tabs-left">
                     
-                    <li class="active"><a href="#profile" data-toggle="tab" class="pad-lft-rgt">My Profile<i class="icon-profile"></i></a></li>
+                    <li class="active"><a href="#profile" id="#profile" data-toggle="tab" class="pad-lft-rgt">My Profile<i class="icon-profile"></i></a></li>
                 <!--     <li><a href="#messages" data-toggle="tab">Notifications</a></li> -->
-                   <li><a href="#extraDetails" data-toggle="tab">Extra Details</a></li>
+                       
+                     <li><a href="#extraDetails" data-toggle="tab">Extra Details</a></li>
                      <li><a href="#credit-score" data-toggle="tab">My Credit Score </a></li>
-                       <li><a href="#Loan-history" data-toggle="tab">My Quotes </a></li>
+                     <li><a href="#Loan-history" data-toggle="tab">My Quotes </a></li>
                          <!-- <li><a href="#Track-Apllication" data-toggle="tab">Track Application </a></li> -->
                             
                                @if($query->password!='0')
@@ -149,7 +152,7 @@
 
 
                           <div class="tab-pane" id="change-password">
-                          <div id="success" class="col-md-6 pad11 text-danger"></div>
+                          
                           
                           <div id="success1" class="col-md-6 pad11 text-danger"></div>
                           
@@ -180,7 +183,7 @@
                     
                   </div>
 
-       
+                  <div id="success" class="col-md-5 text-success"></div>
                   
                   <div> 
                     <button class="btn btn-primary btn-outline with-arrow change_password_form" >Submit<i class="icon-arrow-right"></i></button>
@@ -198,7 +201,7 @@
             </div>
             <div class="clearfix"></div>
         </div>
-
+         </div>
         
     </aside>
 </div>

@@ -44,7 +44,7 @@
   <tr>
     <td>Your {{$product}} Search for <b>{{$loan_amount}} Lakhs</b> Loan</td>
     <td><a class="default btn btn-primary" href="<?php echo $url;?>">Modify Details</a></td>
-    <td>sort by 
+    <!-- <td>sort by 
     <select>
         <option>Interest Rate</option>
         <option>10000</option>
@@ -60,7 +60,7 @@
         <option>2000</option>
         <option>3000</option>
         
-    </select></td>
+    </select></td> -->
   </tr>
 </table>
 </div>

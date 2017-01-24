@@ -3,9 +3,11 @@
     
     <aside id="fh5co-hero">
       
-        <div class="row" style="min-height:300px;">
+        <div class="row">
+		<h3 class="text-center" style="padding:20px;"><i class="icon-user"></i> My Profile</h3>
+		 <div class="white-bg pad mrg-btm">
             
-            <h3 class="text-center" style="padding:20px;"><i class="icon-user"></i> My Profile</h3>
+            
             
             <div class="col-md-3 col-sm-12">
                 <!-- required for floating -->
@@ -198,7 +200,7 @@
             </div>
             <div class="clearfix"></div>
         </div>
-
+         </div>
         
     </aside>
 </div>

@@ -1503,6 +1503,7 @@ border-radius: 7px;padding: 1em;margin-top: 1em;}
     height: 218px;
     line-height: 1;
 }
+.tp-margin {padding:10px;}
 
 }
 
@@ -1913,7 +1914,7 @@ body {background:#eee;}
 	color:#fff;
     margin-top:10px;
     border: 3px solid #28a0ff;
-    margin-top: 10px;}
+	}
 .tp-margin:hover {background:#fff;border: 3px solid #28a0ff;color:#28a0ff;}
 .about-bg {background: url(../images/aboutus_bg.png) no-repeat;}
 

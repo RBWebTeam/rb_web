@@ -192,12 +192,13 @@
 												
 						</div>
 					</div>
-					<div class="col-md-4">
+					<div class="col-md-4 padd">
+				
+					<img src="images/Report.png" class="img-responsive hidden-sm pad">
+			
+					<a class="top-mrg tp-margin" href="{{URL::to('credit-report')}}">Apply For Credit Report</a>
+					</div>
 					<br>
-					<br>
-					<img src="images/Report.png" class="img-responsive hidden-sm">
-					<br>
-					<a class="top-mrg tp-margin" href="{{URL::to('credit-report')}}">Apply For Credit Report</a></div>
                    <div class="col-md-1"></div>
 			</div>
 		</div>

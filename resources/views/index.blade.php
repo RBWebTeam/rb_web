@@ -27,8 +27,8 @@
 	<div class="slide-txt">
 	<img src="images/home-ic.png" class="center-img-align img-responsive hidden-sm" draggable="false">
 	<h2>Home Loan </h2>
-   <h4>Choose the right Home Loan for you ...!!</h4>
-   <a href="#" class="btn btn-primary btn-lg btn-view">View More</a>
+   <h4 class="hidden-sm">Choose the right Home Loan for you ...!!</h4>
+   <a href="{{URL::to('home-loan')}}" class="btn btn-primary btn-lg btn-view">View More</a>
    </div>
       <img src="{{URL::to('images/slide_1.jpg')}}" alt=""> 
     </div>
@@ -37,8 +37,8 @@
 	<div class="slide-txt">
 	<img src="images/personal-ic.png" class="center-img-align img-responsive hidden-sm" draggable="false">
 	<h2>Personal Loan </h2>
-   <h4>Finance Your Dreams...!!</h4>
-   <a href="#" class="btn btn-primary btn-lg btn-view">View More</a>
+   <h4 class="hidden-sm">Finance Your Dreams...!!</h4>
+   <a href="{{URL::to('personal-loan')}}" class="btn btn-primary btn-lg btn-view">View More</a>
    </div>
       <img src="{{URL::to('images/slide_2.jpg')}}" alt="">
     </div>
@@ -47,8 +47,8 @@
 	<div class="slide-txt">
 	<img src="images/lap-ic.png" class="center-img-align img-responsive hidden-sm" draggable="false">
 	<h2>Loan Against Property</h2>
-   <h4>Finding you a better Deal...!!</h4>
-   <a href="#" class="btn btn-primary btn-lg btn-view">View More</a>
+   <h4 class="hidden-sm">Finding you a better Deal...!!</h4>
+   <a href="{{URL::to('loan-against-property')}}" class="btn btn-primary btn-lg btn-view">View More</a>
    </div>
       <img src="{{URL::to('images/slide_3.jpg')}}" alt="">
     </div>
@@ -57,8 +57,9 @@
 	<div class="slide-txt">
 	<img src="images/sme-ic.png" class="center-img-align img-responsive hidden-sm" draggable="false">
 	<h2>SME Loan</h2>
-   <h4>We Support Make in India..!!</h4>
-   <a href="#" class="btn btn-primary btn-lg btn-view">View More</a>
+
+   <h4 class="hidden-sm">We Support Make in India..!!</h4>
+   <a href="{{URL::to('sme-loan')}}" class="btn btn-primary btn-lg btn-view">View More</a>
    </div>
       <img src="{{URL::to('images/slide_4.jpg')}}" alt="">
     </div>
@@ -66,8 +67,9 @@
 	<div class="slide-txt">
 	<img src="images/balance-ic.png" class="center-img-align img-responsive hidden-sm" draggable="false">
 	<h2>Business Loan</h2>
-   <h4>Experience on your side...!!</h4>
-   <a href="#" class="btn btn-primary btn-lg btn-view">View More</a>
+   <h4 class="hidden-sm">Experience on your side...!!</h4>
+   <a href="{{URL::to('business-loan')}}" class="btn btn-primary btn-lg btn-view">View More</a>
+
    </div>
       <img src="{{URL::to('images/slide_5.jpg')}}" alt="">
     </div>
@@ -75,8 +77,8 @@
 	<div class="slide-txt">
 	<img src="images/car-ic.png" class="center-img-align img-responsive hidden-sm" draggable="false">
 	<h2>Car Loan</h2>
-   <h4>Thinking of your comfort first !!</h4>
-   <a href="#" class="btn btn-primary btn-lg btn-view">View More</a>
+   <h4 class="hidden-sm">Thinking of your comfort first !!</h4>
+   <a href="{{URL::to('car-loan')}}" class="btn btn-primary btn-lg btn-view">View More</a>
    </div>
       <img src="{{URL::to('images/slide_6.jpg')}}" alt="">
     </div>

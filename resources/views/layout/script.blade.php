@@ -787,7 +787,7 @@ $('document').ready(function(){
         },
 
         change: function (event, ui) {
-            if (ui.item == null || ui.item == undefined) {
+            if (ui.item == null || ui.item == undefined || ui.item.value=='No Result Found') {
                 $(".search_city").val("");
                 $(".search_city").attr("disabled", false);
                 $("#q6").hide();
@@ -795,6 +795,8 @@ $('document').ready(function(){
                 $('#pop1').empty();
                 $('#pop1').append("<p>please select your city</p>" );
             }else{
+
+ 
                    $("#q6").show();
                    $("#q_prop").show();
                    
@@ -824,6 +826,7 @@ $(document).ready(function(){
     $('#pls_wait').show();
     $('#pwd_match').hide();
     $('#msg_err_email').hide();
+
       $.ajax({  
                type: "POST",  
                url: "{{URL::to('otp')}}",
@@ -833,8 +836,10 @@ $(document).ready(function(){
                  var data_1=data['data'];
                  var emailID=data['emailID'];
                 if(data_1==true){
-                    $('#otp_modal').modal('toggle');
-                    $('#login_process').modal('hide');
+                  $('#login_first').hide();
+                  
+                    $('#otp_div').show();
+                   // $('#login_process').modal('hide');
                     $('#msg_err_email').hide();
                   }else if(emailID==true){
                       $('#login_process').modal('show');
@@ -1626,8 +1631,23 @@ function isNumberKey(evt)
 
 </script>
 
+<script type="text/javascript">
 
+$(function(){
+  var parts = (document.location.toString().split('?')[1]);
+    if(parts=='my-quotes'){
+       $('#profile').removeClass('active');
+       $('.active').removeClass('active');
+       $("#Loan-history").addClass('active');
+       }else if(parts=='credit-score'){
+       $('#profile').removeClass('active');
+       $("#credit-score").addClass('active');  
+}
 
+ 
+});
+
+  </script>
 
 <!-- post end -->
 
@@ -1636,7 +1656,7 @@ function isNumberKey(evt)
 <!-- login Start-->
 
 <div id="login_process" class="modal fade" role="dialog">
-<div class="modal-dialog">
+<div class="modal-dialog" id="login_first">
 
     <!-- Modal content-->
     <div class="modal-content">
@@ -1711,11 +1731,7 @@ function isNumberKey(evt)
     </div>
    
   </div>
-</div>
-
-<!-- login end-->
-<!-- otp Start-->
-<div id="otp_modal" class="modal fade" role="dialog">
+  <div id="otp_div" style="display: none;" role="dialog">
   <div class="modal-dialog">
     <!-- Modal content-->
     <div class="modal-content">
@@ -1731,6 +1747,11 @@ function isNumberKey(evt)
     </div>
   </div>
 </div>
+</div>
+
+<!-- login end-->
+<!-- otp Start-->
+
 
 
 @include('layout.modal')

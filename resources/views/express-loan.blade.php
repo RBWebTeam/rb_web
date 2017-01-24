@@ -23,7 +23,7 @@
     </div>
 
     <div class="item">
-      <img src="{{URL::to('images/tribe_bann.pricing')}}" alt="">
+      <img src="{{URL::to('images/tribe_bann.png')}}" alt="">
     </div>
   </div>
 
@@ -92,7 +92,7 @@
 								 <li>Express cash</li>
 							</ul>
 						
-							<button class="btn btn-primary btn-outline with-arrow">Apply Now<i class="icon-arrow-right"></i></button>
+							<a class="btn btn-primary btn-outline with-arrow" href="URL::to('contact-us')">Apply Now<i class="icon-arrow-right"></i></a>
 						</div>
 					</div>
 

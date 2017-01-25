@@ -196,7 +196,7 @@
 				
 					<img src="images/Report.png" class="img-responsive hidden-sm pad">
 			
-					<a class="top-mrg tp-margin" href="{{URL::to('credit-report')}}">Apply For Credit Report</a>
+					<a class="tp-margin" href="{{URL::to('credit-report')}}">Apply For Credit Report</a>
 					</div>
 					<br>
                    <div class="col-md-1"></div>

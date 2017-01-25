@@ -158,8 +158,9 @@
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content col-md-12 text-justify model-hig">
 	<br>
+	<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
      <h2 class="text-center"> RupeeBoss Value Added-Credit Score Service</h2>
-	 <br>
+	<br>
 <h3>TERMS OF USE</h3>
 <p>RupeeBoss Value Added-Credit Score Service, is an online service (“Credit Score Service” / “Service”) that enables you to access your Credit Score/Report, based on the data/information/report supplied by our third party data processing service provider, M/s Experian Credit Information Services Private Limited (the “Processing Service Provider”). The said Credit Score Service consists of receipt of your credit report/score. This information is for your personal use only and the said Service/report is subject to your agreement to the provisions set forth below.
 Please read the following provisions carefully before using this Service. If you do not agree with any of these provisions, you should not use this Service. By accessing or using this Service you agree to be bound by these Terms of Use.</p>
@@ -175,17 +176,17 @@ We will obtain your prior consent if we use your identifying information for any
 <h3>3. YOUR ACCOUNT</h3>
 <p>If you use the Service, you are responsible for maintaining the confidentiality of your account, login IDs and password, and for restricting access to your computer. It is your responsibility to protect your computer system from such items, viruses, and other harmful and destructive items. You agree to accept responsibility for all activities that occur under your account or password including any request from your account. We strongly recommend that you exit from your account at the end of each session. You agree to notify RupeeBoss immediately of any unauthorized use of your account or any other breach of security. RupeeBoss reserves the right to refuse service, terminate accounts, or remove in its sole discretion. Notwithstanding the above, we retain the right at our sole discretion to deny access to anyone to the Site and the Services we offer, at any time and for any reason, including, but not limited to, for violation of this Terms of Use or Privacy Policy. Additional Standard terms and conditions of the Processing Service Provider will apply to your use of this Service.</p>
 <h3>4. DISCLAIMER OF WARRANTIES AND LIABILITY</h3>
-<p>This Service is for informational purposes only, and is intended to provide helpful and informative material on the subjects addressed. RupeeBoss does not control your credit score, which is a statistical analysis of information contained in your credit file as maintained in the system and database of Processing Service Provider, and we cannot change that information for you. However, if information in your report is inaccurate and is affecting your score, you have the right to dispute it by contacting the Processing Service Provider at consumer.support@in.experian.com.
+<p class="text-lowercase">This Service is for informational purposes only, and is intended to provide helpful and informative material on the subjects addressed. RupeeBoss does not control your credit score, which is a statistical analysis of information contained in your credit file as maintained in the system and database of Processing Service Provider, and we cannot change that information for you. However, if information in your report is inaccurate and is affecting your score, you have the right to dispute it by contacting the Processing Service Provider at consumer.support@in.experian.com.
 INFORMATION AND/OR SERVICES OFFERED ON THIS WEB SITE ARE PROVIDED "AS IS" WITHOUT ANY EXPRESS OR IMPLIED WARRANTY OF ANY KIND, INCLUDING WARRANTIES OF CORRECTNESS, COMPLETENESS, ACCURACY MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, OR NON-INFRINGEMENT. IN NO EVENT WILL RUPEEBOSS OR THE PROCESSING SERVICE  PROVIDER BE LIABLE TO ANY PARTY FOR ANY DAMAGES OF ANY KIND, INCLUDING BUT NOT LIMITED TO DIRECT, INDIRECT, SPECIAL OR CONSEQUENTIAL DAMAGES ARISING OUT OF THE USE OR INABILITY TO USE THIS WEB SITE, OR ANY LINKED WEB SITE, INCLUDING WITHOUT LIMITATION, LOST PROFITS, LOSS OF USE, BUSINESS INTERRUPTION, OR OTHER ECONOMIC LOSSES, LOSS OF PROGRAMS OR OTHER DATA, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER ACTION, EVEN IF RUPEEBOSS IS ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.</p>
 
 <h3>5. RESTRICTIONS</h3>
 <p>You agree to provide true, accurate and current information such as your full name, date of birth and address of residency etc., in the Request Form. The Service provided herein is subject to you providing true and accurate information in the Request Form and providing all the required process documents as requested by RupeeBoss and/or the Processing Service Provider. Each request is for one person only, we do not accept joint request. A Service request may be rejected by the Processing Service Provider in the event the particulars furnished by you and Process Documents do not match the information existing with-in the Processing Service Provider. You/customer, for any reason whatsoever, including but not limited to, data rejected by the data collection system maintained by Processing Service Provider or incomplete upload of data provided by you in relation to this Service. RupeeBoss shall inform you of such rejection. You hereby agree to be bound by the relevant terms of use of the Website, the website of the Processing Service Provider.</p>
-<h3>6. CONFIDENTIALITY<h3>
+<h3>6. CONFIDENTIALITY</h3>
 <p>Since it affects your use of the Services, please review our Privacy Policy and Terms of Use of this Website. We collect, use and disclose information about you as provided in our Privacy Policy. Our Privacy Policy is located on the Website and you agree to accept the terms of the Privacy Policy as a condition to your acceptance of these terms/agreement.
 We use all reasonable physical, administrative, technical and organizational measures to help protect your personal identifiable information from any loss, unauthorized access or use, or modification or disclosure thereof. We will not share your Personal Identifiable Information including Credit Reports except (1) as necessary for us to process you Request Form, (2) as permitted by law, and (3) as required by the government, law enforcement or an order of the court.M</p>
 <h3>7. IMDEMNIFICATION</h3>
 <p>You agree to indemnify, defend and hold harmless RupeeBoss and its affiliates, and their respective officers, directors, employees, agents, licensors and suppliers, and any third party providers of information to this Service, from and against any and all losses, expenses, damages and costs, including reasonable attorneys' fees, resulting from your violation of these Terms of Use or any terms and conditions applicable to Service, or your violation of the intellectual property rights of RupeeBoss, Processing Service Provider, or any of those other parties.</p>
-<h3>8. LINKS TO OTHER WEB SITES:<h3>
+<h3>8. LINKS TO OTHER WEB SITES:</h3>
 <p>For purposes of convenience, RupeeBoss's Website may contain links to third party websites. RupeeBoss makes no representations or warranties about any third party website that you may access through the links. By providing a link to those websites, RupeeBoss does not endorse, adopt, or otherwise accept any responsibility for the content or use of those websites.</p>
 <h3>9. APPLICABLE LAWS AND JURISDICTION</h3>
 <p>These Conditions shall be governed by and understood in accordance with Indian laws, more specifically the Credit Information Companies (Regulation) Act, 2005, Rules and Regulations made there under and Courts in the city of Mumbai will have exclusive jurisdiction.</p>
@@ -195,32 +196,5 @@ We use all reasonable physical, administrative, technical and organizational mea
 <p>In case of any queries with respect the Services, please you can write us at wecare@rupeeboss.com or call our Toll Free No. 1800 267 629 6. We shall use our best efforts in resolving any such queries.</p>
     </div>
 	</div>
-  </div>
-</div>
-<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" id="RB_Experian_terms_modal">
-  <div class="modal-dialog modal-lg" role="document">
-    <div class="modal-content">
-YOU HEREBY APPOINT RUPEEBOSS AS YOUR AUTHORISED REPRESENTATIVE TO RECEIVE YOUR CREDIT INFORMATION FROM EXPERIAN CREDIT INFORMATION SERVICES PRIVATE LIMITED (“Experian”).
-YOU HEREBY IRREVOCABLY AND UNCONDITIONALLY CONSENT TO SUCH CREDIT INFORMATION BEING PROVIDED BY EXPERIAN TO YOU AND RUPEEBOSS AND YOU HEREBY AGREE, ACKNOWLEDGE AND ACCEPT THE TERMS AND CONDITIONS SET FORTH HEREIN.
-
-YOU HEREBY ALSO AGREE AND ACKNOWLEDGE THAT FOR RUPEEBOSS TO SERVICE YOU AS A CUSTOMER, THE CREDIT INFORMATION SHALL BE SHARED BY EXPERIAN WITH YOU AND RUPEEBOSS ON A MONTHLY BASIS FOR A PERIOD OF 12 MONTHS CONTINUOUSLY TO ENSURE THAT YOU ARE ABLE TO HAVE AN ANNUAL VIEW OF YOUR CREDIT HISTORY. YOU FURTHER ALSO AGREE AND CONSENT TO RECEIVE SUCH CREDIT INFORMATION DIRECTLY FROM EXPERIAN AND ALSO THROUGH YOUR RUPEEBOSS ACCOUNT AS PER YOUR INDEPENDENT REGISTRATION WITH RUPEEBOSS.
-Please read the Terms and Conditions of this document carefully before accepting. By clicking on the "I ACCEPT/AGREE" button below, you are expressly agreeing to access the Experian Credit Information Report and Credit Score (as defined in the Important Information Section below) (together referred as "Credit Information") and share a copy of the Credit Information with RupeeBoss in the "as is" format. Please click on the link below to read and understand the Important Information section below.
-** This document is an electronic record in terms of the Information Technology Act, 2000 and Rules made there under, and the amended provisions pertaining to electronic records.
-Information Collection, Use, Confidentiality, No-Disclosure and Data Purging
-RUPEEBOSS/ We/ Us can only access your Credit Information as your authorized representative and we shall use the Credit Information for limited end use purpose consisting of and in relation to the services proposed to be availed by you from us on the Website. We shall not aggregate, retain, store, copy, reproduce, republish, upload, post, transmit, sell or rent the Credit Information to any other person and the same cannot be copied or reproduced other than as agreed herein. We also request you to read our Privacy Policy as provided in the website.
-We shall protect and keep confidential the Credit information both online and offline and use best in class security measures in line with applicable laws.
-The Credit Information shared by You, or received on your behalf shall be destroyed, purged, erased promptly upon the earlier of: (i) your written request to terminate this relationship with RupeeBoss; (ii) the completion of provision of the Services by us to you. 
-Governing Law and Jurisdiction
-The relationship between you and the parties shall be governed by laws of India and all claims or disputes arising there from shall be subject to the exclusive jurisdiction of the courts of [Mumbai].
-Definitions:
-Capitalized terms used herein but not defined above shall have the following meanings:
-"Business Day" means a day (other than a public holiday) on which banks are open for general business in [Mumbai].
-"Credit Information Report" means the credit information / scores / aggregates / variables or reports which shall be generated by Experian;
-"Credit Score" means the score which shall be mentioned on the Credit Information Report, which shall be computed by Experian.
-"CICRA" shall mean the Credit Information Companies (Regulation) Act, 2005 read with the Credit Information Companies Rules, 2006 and the Credit Information Companies Regulations, 2006, and shall include any other rules and regulations prescribed thereunder.
-PLEASE READ THE ABOVE MENTIONED IMPORTANT INFORMATION AND CLICK ON "ACCEPT/AGREE" FOLLOWED BY THE LINK BELOW TO COMPLETE THE AUTHORISATION PROCESS FOR SHARING OF YOUR CREDIT INFORMATION BY EXPERIAN WITH YOU AND RUPEEBOSS, IN ITS CAPACITY AS YOUR AUTHORISED REPRESENTATIVE.
-BY CLICKING "I ACCEPT/AGREE" YOU AGREE AND ACCEPT THE DISCLAIMERS AND TERMS AND CONDITIONS SET OUT HEREIN.THE TERMS AND CONDITIONS MENTIONED HEREIN MAY CHANGE IN ORDER TO COMPLY WITH GOVERNING LAWS OF THE COUNTRY AND THE CONSUMER SHALL BE BOUND TO ANY CHANGES TO THIS AGREEMENT.
-
-    </div>
   </div>
 </div>

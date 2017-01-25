@@ -128,7 +128,17 @@
 											<div class="col-md-4">
 												<input type="text" class="form-control" placeholder="Ration card No" name="rationcard" >
 											</div>
-
+										<div class="">
+										<input type="checkbox" name="terms" required>
+											I hereby confirm that I have read and understood the
+											<a href="#" data-toggle="modal" data-target="#RB_Experian_terms_modal"> Rupeeboss Terms
+											</a>
+											 and Conditions applicable to this service and that all the details furnished by me above are true and correct. I further provide consent to Rupeeboss and its affiliates to contact me with reference to financial products and this consent shall override any registration with DNC/NDNC.
+										</div>
+										<div class="">
+										<input type="checkbox" name="autorize" required>
+											I hereby authorize Rupeeboss to retrieve my Credit information report on my behalf from<a href="#" data-toggle="modal" data-target="#Experian_terms_modal"> Experian Credit Information Services Private Limited.</a>
+										</div>
 
 										</div>
 										&nbsp;&nbsp;&nbsp;&nbsp;<button class="btn btn-primary btn-outline with-arrow animate-box fadeInUp animated" >Confirm & Continue<i class="icon-arrow-right"></i>

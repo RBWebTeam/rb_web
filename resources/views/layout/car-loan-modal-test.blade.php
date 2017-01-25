@@ -12,7 +12,7 @@
       
     <ul>
     <form id="emp_type_form">
-
+       <li><span><input type="radio" name="emp_type" data-value="1" value="salaried"  onclick="changeTest_new(this,'q2');" id="psalariedID" /></span>&nbsp;<label for="psalariedID"> Salaried</label></li>
        
       <li><span><input type="radio" name="emp_type" data-value="2" id="slef_salariedID" value="self-employed"  onclick="changeTest_new(this,'q2_year');"/></span> <label for="slef_salariedID">Self-employed </label></li>
       </form>

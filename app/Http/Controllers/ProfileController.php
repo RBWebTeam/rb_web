@@ -19,7 +19,7 @@ class ProfileController extends Controller
       { 
 
         $get_id=Session::get('user_id');
-          $email_id=Session::get('email');
+        $email_id=Session::get('email');
 
 
         $query=DB::table('user_registration')->where('id','=',$get_id)->first();

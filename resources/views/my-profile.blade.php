@@ -133,8 +133,8 @@
                                 <ul class="list-group">
                                   <?php foreach ($loan_history as $key => $value) { ?>
                                   <li class="list-group-item"  >
-                                  
-                                    <a href="http://beta.erp.rupeeboss.com/homeloan/Home_Loan_Application_Form.aspx?appid=0&qoutid={{$value->ID}}&BankId={{$value->bank_id}}">Searched for   {{$value->Product_Name}}  <span class="badge">Date :{{date('Y:m:d', strtotime($value->created_at))}}  </span> <span class="btn btn-success btn-sm pull-right">View </span></a>
+                            
+                                    <a href="http://beta.erp.rupeeboss.com/homeloan/Home_Loan_Application_Form.aspx?appid=0&qoutid={{$value->ID}}&BankId={{$value->bank_id}}">Searched for   {{$value->Product_Name}}  <span class="badge">Date :{{date('Y:m:d', strtotime($value->created_at))}}  </span> <span class="btn btn-success btn-sm pull-right"> View </span></a>
                                   </li>
                                   <?php  } ?>
                                 </ul>

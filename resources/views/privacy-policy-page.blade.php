@@ -6,10 +6,10 @@
 	<div class="fh5co-contact animate-box">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-12 text-left fh5co-heading animate-box fadeInUp animated">
+				<div class="col-md-12 fh5co-heading animate-box fadeInUp animated">
 					<h2>Privacy Policy</h2>
 					</div>				
-				<div class="col-md-12">
+				<div class="col-md-12 text-left text-justify">
 					<div class="row pad11 white-bg comp-pg">
            
    <p>Privacy Policy for RupeeBoss.com

@@ -6,10 +6,10 @@
 	<div class="fh5co-contact animate-box">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-12 text-left fh5co-heading animate-box fadeInUp animated">
+				<div class="col-md-12 fh5co-heading animate-box fadeInUp animated">
 					<h2>Privacy Policy</h2>
 					</div>				
-				<div class="col-md-12">
+				<div class="col-md-12 text-left text-justify">
 					<div class="row pad11 white-bg comp-pg">
            
    <p>By using the website and/or registering yourself at rupeeboss.com you authorize us &amp; our associate partners to contact you via email or phone call and offer you their services for the product you have opted for, imparting product knowledge, offer promotional offers running on website &amp; offers offered by the associated third parties. And Irrespective of the fact if also you have registered yourself under DND or DNC or NCPR service, you still authorize us to give you a call from the Rupeeboss Financial Services Pvt. Ltd &amp; associate partners for the above mentioned purposes till 60 days of your registration with us.<br>

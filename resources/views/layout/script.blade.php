@@ -1652,11 +1652,7 @@ function getFbUserData(){
 </script>
 
 <!-- loader -->
-<script type="text/javascript">
-$(window).load(function() {
-  $(".loader").fadeOut("slow");
-})
-</script>
+
 <!-- loader ends -->
 
 <!-- post end -->
@@ -1718,6 +1714,7 @@ $(window).load(function() {
       <div class="col-sm-6">
        <span id='msg_err' style="display: none;color:red;">oops something went wrong</span>
        <span id='pls_wait' style="display: none;color: red;">Please wait .....</span>
+       
        <span id='pwd_match' style="display: none; color:red;">Password do not match.</span>
 
        <span id="msg_err_email"  style="display: none; color:red;"><center>Email id already exists.</center></span>

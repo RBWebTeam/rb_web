@@ -786,26 +786,28 @@ $('document').ready(function(){
             });
         },
 
-        change: function (event, ui) {
-            if (ui.item == null || ui.item == undefined || ui.item.value=='No Result Found') {
-                $(".search_city").val("");
-                $(".search_city").attr("disabled", false);
-                $("#q6").hide();
-                 $("#q_prop").hide();
-                $('#pop1').empty();
-                $('#pop1').append("<p>please select your city</p>" );
-            }else{
+          change: function (event, ui) {
+              if (ui.item == null || ui.item == undefined || ui.item.value=='No Result Found') {
+                  $(".search_city").val("");
+                  $(".search_city").attr("disabled", false);
+                  $("#q6").hide();
+                   $("#q_prop").hide();
+                  $('#pop1').empty();
+                  $('#pop1').append("<p>please select your city</p>" );
+              }else{
 
- 
-                   $("#q6").show();
-                   $("#q_prop").show();
-                   
-               // $(".search_city").attr("disabled", true);
-            }
-        }
+   
+                     $("#q6").show();
+                     $("#q_prop").show();
+                     
+                 // $(".search_city").attr("disabled", true);
+              }
+          }
         //min_length:3,
        
     });
+
+
 
 });
 
@@ -1229,8 +1231,14 @@ function emibreakup(E,P,r,n)
           $('#pop1').append( "<p>Enter your birthdate.!!</p>" );
         }else if(val=='residence_pincode'){
           $('#pop1').append( "<p>Enter your residence pincode</p>" );
-        }else if(val=='q6'){
-          $('#pop1').append( "<p>Enter your loan tenure</p>" );
+        }else if(val=='q6' && obj=='city_name'){
+                if($('#city_name').val()==''){
+                  $('#pop1').empty();
+                  $('#pop1').append("<p>please select your city</p>" );
+                 $('#q6').hide();
+                } 
+           
+         // $('#pop1').append( "<p>Enter your loan tenure</p>" );
         }else if(val=='q7'){
           $('#pop1').append( "<p>Have special offers for female</p>" );
         }else if(val=='co_obl_yes'){
@@ -1641,10 +1649,10 @@ $(function(){
        $("#credit-score").addClass('active');  
 }
 
+
  
 });
-
-  </script>
+</script>
 
 <!-- post end -->
 

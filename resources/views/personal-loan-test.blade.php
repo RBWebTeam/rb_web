@@ -47,7 +47,7 @@
 			<div class="col-md-12 text-center animate-box cont" style="display:none;" id="q5" >
 				
 	             <h3>I have been living in
-				<input type="text" class="search_city input-pad" id='city_name' name='city_name' onblur="changeTest_new('city_name','q6')" placeholder='your city'>city</h3>
+				<input type="text" class="search_city input-pad" id='city_name' name='city_name' onblur="changeText_new('city_name','q6')" placeholder='your city'>city</h3>
 				
 			</div>
 			

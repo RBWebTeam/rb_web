@@ -47,11 +47,11 @@
 			<div class="col-md-12 text-center animate-box cont" style="display:none;" id="q5" >
 				
 	             <h3>I have been living in
-				<input type="text" class="search_city input-pad" id='city_name' name='city_name' onblur="changeTest_new('city_name','q6')" placeholder='your city'>city</h3>
+				<input type="text" class="search_city input-pad" id='city_name' name='city_name' onblur="changeText_new('city_name','q6')" placeholder='your city'>city</h3>
 				
 			</div>
 			
-			<div class="col-md-12 text-center animate-box cont" style="display: none" id="q6">
+			<div class="col-md-12 text-center animate-box cont Q6" style="display: none" id="q6">
              <h3>and I require loan for
 			 <input type="tel" id="loan_tenure" name="loan_tenure"  oninput="changeText_new('loan_tenure','date_birth')"  onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="20" tabindex="1" maxlength="2" >
 			 years.

@@ -780,12 +780,10 @@ $(".change_password_form").click(function(event){
            
 
             response(data);
-
             
           }
         });
       },
-
       change: function (event, ui) {
         if (ui.item == null || ui.item == undefined || ui.item.value=='No Result Found') {
           $(".search_city").val("");
@@ -797,17 +795,15 @@ $(".change_password_form").click(function(event){
         }else{
 
          
-         $("#q6").show();
+         $(".Q6").show();
          $("#q_prop").show();
-         
-               // $(".search_city").attr("disabled", true);
+          
              }
            }
-        //min_length:3,
+
         
       });
-
-  });
+   });
 
   $(document).ready(function(){
    $("#send_otp_button").click(function(event){
@@ -1223,35 +1219,43 @@ $(".change_password_form").click(function(event){
         $('#pop1').append( "<p>Entr your total expierience</p>" );
       }else if(val=='desired_amt'){ 
         //business loan script//
-        $('#pop1').append( "<p>Enter your desired loan amount</p>" );
-      }else if(val=='residence'){
-        $('#pop1').append( "<p>Where do you reside and since when</p>" );
-      }else if(val=='date_birth'){
-        $('#pop1').append( "<p>Enter your birthdate.!!</p>" );
-      }else if(val=='residence_pincode'){
-        $('#pop1').append( "<p>Enter your residence pincode</p>" );
-      }else if(val=='q6'){
-        $('#pop1').append( "<p>Enter your loan tenure</p>" );
-      }else if(val=='q7'){
-        $('#pop1').append( "<p>Have special offers for female</p>" );
-      }else if(val=='co_obl_yes'){
-        $('#pop1').append( "<p>Co-Applicant have any existing loan?</p>" );
-      }else if(val=='self_q'){
-        $('#pop1').append( "<p>Your total profit after tax is</p>" );
-      }else if(val=='self_q2'){
-        $('#pop1').append( "<p>Your depreciation is</p>" );
-      }else if(val=='self_q3'){
-        $('#pop1').append( "<p>Director remuneration is</p>" );
-      }else if(val=='co_profit_all'){
-        $('#pop1').append( "<p>co-applicant profit after tax </p>" )
-      }else if(val=='co_self_q2'){
-        $('#pop1').append( "<p>co-applicant depreciation  </p>" )
-      }else if(val=='co_self_q3'){
-        $('#pop1').append( "<p>co-applicant Director remuneration  </p>" )
-      }else{
-        $('#pop1').append( "<p>Please go on</p>" );
-      }
-    }
+
+          $('#pop1').append( "<p>Enter your desired loan amount</p>" );
+        }else if(val=='residence'){
+          $('#pop1').append( "<p>Where do you reside and since when</p>" );
+        }else if(val=='date_birth'){
+          $('#pop1').append( "<p>Enter your birthdate.!!</p>" );
+        }else if(val=='residence_pincode'){
+          $('#pop1').append( "<p>Enter your residence pincode</p>" );
+        }else if(val=='q6' && obj=='city_name'){
+                if($('#city_name').val()==''){
+                  $('#pop1').empty();
+                  $('#pop1').append("<p>please select your city</p>" );
+                 $('#q6').hide();
+                } 
+           
+         // $('#pop1').append( "<p>Enter your loan tenure</p>" );
+        }else if(val=='q7'){
+          $('#pop1').append( "<p>Have special offers for female</p>" );
+        }else if(val=='co_obl_yes'){
+          $('#pop1').append( "<p>Co-Applicant have any existing loan?</p>" );
+        }else if(val=='self_q'){
+          $('#pop1').append( "<p>Your total profit after tax is</p>" );
+        }else if(val=='self_q2'){
+          $('#pop1').append( "<p>Your depreciation is</p>" );
+        }else if(val=='self_q3'){
+          $('#pop1').append( "<p>Director remuneration is</p>" );
+        }else if(val=='co_profit_all'){
+          $('#pop1').append( "<p>co-applicant profit after tax </p>" )
+        }else if(val=='co_self_q2'){
+          $('#pop1').append( "<p>co-applicant depreciation  </p>" )
+        }else if(val=='co_self_q3'){
+          $('#pop1').append( "<p>co-applicant Director remuneration  </p>" )
+        }else{
+          $('#pop1').append( "<p>Please go on</p>" );
+        }
+}
+
 
   </script>
   <!-- new process script ends -->

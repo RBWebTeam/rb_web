@@ -12,9 +12,12 @@ class ExperianController extends Controller
 	public function call(Request $req){
         $qs=0;
         $post_data=$req->all();
+         unset($post_data['terms']);
+         unset($post_data['authorize']);
         $data=json_encode($post_data);
-      //  print "<pre>";
+      // print "<pre>";
         // print_r($post_data);exit();
+        
         $save=new experian_request_model(); 
         $id=$save->store($req);
     	$url = "http://api.rupeeboss.com/CreditAPI.svc/LandingPageSubmit";    

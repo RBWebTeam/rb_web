@@ -51,7 +51,7 @@
 				
 			</div>
 			
-			<div class="col-md-12 text-center animate-box cont" style="display: none" id="q6">
+			<div class="col-md-12 text-center animate-box cont Q6" style="display: none" id="q6">
              <h3>and I require loan for
 			 <input type="tel" id="loan_tenure" name="loan_tenure"  oninput="changeText_new('loan_tenure','date_birth')"  onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="20" tabindex="1" maxlength="2" >
 			 years.

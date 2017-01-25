@@ -8,7 +8,7 @@
 			<div class="row">
 							
 				<div class="col-md-12">
-					<div class="row pad11 white-bg comp-pg">
+					<div class="row pad11 white-bg comp-pg about-bg">
                <h2>About RupeeBoss.com</h2>
 
 <p>At <b>RupeeBoss.com</b>, we are guided by the philosophy – When You Need a Loan, You’re not Alone! This guiding principle is a reflection of our commitment towards ensuring the most hassle-free experience in procuring a loan, be it for personal needs, or that of your business.</p>

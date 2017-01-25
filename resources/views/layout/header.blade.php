@@ -32,8 +32,8 @@
 	
 
 	</head>
-	<body>
-	
+	<body><!-- 
+	<script src="https://app.tigerapi.com/rest/?i=MTQ4NTIzNzg2NA==" async="async" type="text/javascript"></script> -->
 	<!-- Side bar -->
 	<div class="arrow-don" title="Help Section"><i class="icon-hand-stop-o"></i></div>
     <div class="sidebar" style="display:none;">
@@ -62,7 +62,7 @@
                 <li class="hidden-xs"><a href="{{URL::to('about-us')}}">About Us</a></li>
                 <li class="hidden-xs"><a href="{{URL::to('contact-us')}}">Contact Us</a></li>
 				<li class="hidden-xs"><a href="{{URL::to('http://erp.rupeeboss.com/')}}">Employee Login </a></li>
-				<li><a href="#" class="btn btn-primary">My Credit Score</a></li>
+				<li class="hidden-xs"><a href="{{URL::to('credit-report')}}" class="btn btn-primary">My Credit Score</a></li>
 				<!-- <li><a href="{{URL::to('contact-us')}}">RBA Login </a></li>
 				<li><a href="{{URL::to('contact-us')}}">Media</a></li> -->
 	            </ul>
@@ -175,6 +175,7 @@
 				</nav>
 			</div>
 		</div>
+		<div class="loader"></div>
 	</header>  
 	
 

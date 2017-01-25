@@ -318,7 +318,7 @@
     <div id="collapse1" class="panel-collapse collapse in">
       <div class="panel-body">
       <p>Do you own a business that needs funds for expansion? Or do you have a big business order in hand and require funds for some working capital?</p>
-      <p>f you can relate to any of the above situations, then a Business Loan is the right solution for you. Our team of dedicated professionals helps you determine your requirements, especially for small businesses; and you can get started within the shortest possible time.</p>
+      <p>If you can relate to any of the above situations, then a Business Loan is the right solution for you. Our team of dedicated professionals helps you determine your requirements, especially for small businesses; and you can get started within the shortest possible time.</p>
 
 </div>
     </div>

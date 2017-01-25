@@ -125,7 +125,7 @@
                           </div>
 
 
-
+                          <div class="col-md-8"> 
                           <div class="tab-pane" id="Loan-history">
                           <div>
                           <h2  >Quotes history </h2>
@@ -134,7 +134,7 @@
                                   <?php foreach ($loan_history as $key => $value) { ?>
                                   <li class="list-group-item"  >
                                   
-                                    <a href="http://beta.erp.rupeeboss.com/homeloan/Home_Loan_Application_Form.aspx?appid=0&qoutid={{$value->ID}}&BankId={{$value->bank_id}}">Searched for   {{$value->Product_Name}}  <span class="badge">Date :{{date('Y:m:d', strtotime($value->created_at))}}  </span> <span class="btn btn-success btn-sm ">View </span></a>
+                                    <a href="http://beta.erp.rupeeboss.com/homeloan/Home_Loan_Application_Form.aspx?appid=0&qoutid={{$value->ID}}&BankId={{$value->bank_id}}">Searched for   {{$value->Product_Name}}  <span class="badge">Date :{{date('Y:m:d', strtotime($value->created_at))}}  </span> <span class="btn btn-success btn-sm pull-right">View </span></a>
                                   </li>
                                   <?php  } ?>
                                 </ul>
@@ -145,6 +145,7 @@
                              </div>
                       
                           </div>
+						  </div>
 
                           <div class="tab-pane" id="Track-Apllication">
                          Track application

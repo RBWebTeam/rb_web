@@ -12,6 +12,8 @@ class ExperianController extends Controller
 	public function call(Request $req){
         $qs=0;
         $post_data=$req->all();
+
+        //unsetting terms and condition as no need to save in DB
          unset($post_data['terms']);
          unset($post_data['authorize']);
         $data=json_encode($post_data);

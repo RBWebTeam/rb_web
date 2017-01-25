@@ -128,7 +128,7 @@
 					</div>
 					
 					<div class="col-md-4 animate-box">
-					   <a href="{{URL::to('contact-us')}}">
+					   <a href="{{URL::to('apply-sme-loan')}}">
 						<div class="price-box popular">
 							<div class="ic1 text-center"><img src="images/ic3.png" /></div>
 							<h4 class="mrg-btm">Apply Online Loan</h4>

@@ -1648,11 +1648,7 @@ function getFbUserData(){
 </script>
 
 <!-- loader -->
-<script type="text/javascript">
-$(window).load(function() {
-  $(".loader").fadeOut("slow");
-})
-</script>
+
 <!-- loader ends -->
 
 <!-- post end -->

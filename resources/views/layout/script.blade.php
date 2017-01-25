@@ -1651,9 +1651,7 @@ function getFbUserData(){
 
 </script>
 
-<!-- loader -->
 
-<!-- loader ends -->
 
 <!-- post end -->
 
@@ -1712,8 +1710,9 @@ function getFbUserData(){
     <div class="form-group">
       
       <div class="col-sm-6">
+
        <span id='msg_err' style="display: none;color:red;">oops something went wrong</span>
-       <span id='pls_wait' style="display: none;color: red;">Please wait .....</span>
+       <span id='pls_wait' style="display: none;color: red;"><div class="loader"><img src="{{URL::to('images/processing.gif')}}"></div></span>
        
        <span id='pwd_match' style="display: none; color:red;">Password do not match.</span>
 
@@ -1747,6 +1746,8 @@ function getFbUserData(){
         <form id="otp_form" class="form-horizontal">
          {{ csrf_field() }}
          <input type="text" class="form-control" name="otp" id="otp" minlength="6" maxlength="6" required onkeypress="return fnAllowNumeric(event)">
+         <span id='wait' style="display: none; color: red"><div class="loader"><img src="{{URL::to('images/processing.gif')}}"></div></span>
+       </span><br>
          <span id='otp_err' style="display: none; color: red">oops!! OTP is wrong</span><br>
          <button class="btn btn-default"  class="form-control" id="verify_otp" >Verify</button><br>
        </form>

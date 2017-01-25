@@ -1906,6 +1906,8 @@ body {background:#eee;}
 .about-bg {background: url(../images/aboutus_bg.png) no-repeat;}
 .top-lnk .credit-score-btn:hover {background:transparent;}
 
+.model-hig {max-height:450px;overflow:scroll;}
+
 @media only screen and (max-width:480px) {
 	
 	.tp-margin {font-size:13px; padding:10px 10px;}

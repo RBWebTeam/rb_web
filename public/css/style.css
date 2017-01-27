@@ -1877,7 +1877,7 @@ body {background:#eee;}
 .error-actions .btn { margin-right:10px; }
 .outer-brd {border:5px solid #ebedf0;}
 .gray-bg {background:#ddd;}
-.apply-btn {color:#fff;background: #3699c1; padding: 10px; margin-top:3px;}
+.apply-btn {color:#fff;background: #3699c1; padding: 10px; margin:3px; display:block;}
 
 .blue-bg a:hover {color:#fff;}
 .error{
@@ -1919,9 +1919,11 @@ body {background:#eee;}
 .top-lnk .credit-score-btn:hover {background:transparent;}
 
 .model-hig {max-height:450px;overflow:scroll;}
+.crd-rpt {    width: 300px;margin: 0 auto;}
+.credit-report-bg {background: url("../images/Credit-Report_bg.png") no-repeat; padding-bottom:60px;border-bottom:1px solid #eee;}
 
 @media only screen and (max-width:480px) {
 	
-	.tp-margin {font-size:13px; padding:10px 10px;}
+	.tp-margin {font-size:13px; padding:10px 10px;margin-top: 80px;display: block;}
 }
 

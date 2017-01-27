@@ -171,7 +171,7 @@
 
                 <div class="has-error">
                   <div class="high">
-                    <input type="password" class="form-control" id="currentpassword" name="currentpassword" placeholder="Current Password"  />
+                    <input type="password" class="form-control" id="Current_password" name="Current_password" placeholder="Current Password"  />
 					<span id="currentp"></span>
                   </div>
                 </div>
@@ -186,7 +186,7 @@
 
                 <div class="has-error">
                     <div class="high"> 
-                    <input type="password" name="confirmpassword" id="confirmpassword" class="form-control clr-ddd"  placeholder="Confirm Password" >
+                    <input type="password" name="confirm_password" id="confirm_password" class="form-control clr-ddd"  placeholder="Confirm Password" >
 					<span id="confirmpass"></span>
                     </div>
                     

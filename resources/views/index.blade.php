@@ -182,19 +182,16 @@
 		</div>
 	</div>
 	
-		<div class="container-fluid white-bg">
+		<div class="container-fluid white-bg credit-report-bg">
 			
 			<div class="animate-box">
                     <div class="col-md-1"></div>
 					<div class="col-md-6 animate-box fadeInUp animated">
-						<div class="center-img">
-							<div><img src="images/Credit-Report.png" class="img-responsive" /></div>
-												
-						</div>
+						
 					</div>
 					<div class="col-md-4 padd">
 				
-					<img src="images/Report.png" class="img-responsive hidden-sm pad">
+					<img src="images/Report.png" class="img-responsive hidden-sm pad crd-rpt">
 			
 					<a class="tp-margin" href="{{URL::to('credit-report')}}">Apply For Credit Report</a>
 					</div>

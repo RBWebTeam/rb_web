@@ -1089,11 +1089,14 @@ $(".change_password_form").click(function(event){
           $('#pop1').append( "<p>Enter your net Income</p>" );
         }else  if(val=='q4'){
           $('#pop1').append( "<p>Any existing loan history</p>" );
+          $("#q6").hide();
+          $("#q_prop").hide();
         }else  if(val=='q5'){
           $('#pop1').empty();
           $('#pop1').append( "<p>Loan amount you wants to borrow</p>" );
           $("#q4").hide();
-        }else if(val=='date_birth'){
+        }
+        else if(val=='date_birth'){
           $('#pop1').append( "<p>Enter your birthdate.!!</p>" );
         }else  if(val=='q2_year'){
           $('#pop1').append( "<p>Enter your net turnover</p>" );
@@ -1714,7 +1717,7 @@ function getFbUserData(){
        <span id='msg_err' style="display: none;color:red;">oops something went wrong</span>
        <span id='pls_wait' style="display: none;color: red;"><div class="loader"><img src="{{URL::to('images/processing.gif')}}"></div></span>
        
-       <span id='pwd_match' style="display: none; color:red;">Password do not match.</span>
+       <span id='pwd_match' style="display: none; color:red;"><center>Password do not match.</center></span>
 
        <span id="msg_err_email"  style="display: none; color:red;"><center>Email id already exists.</center></span>
      </div>

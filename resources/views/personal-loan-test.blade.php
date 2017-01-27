@@ -60,7 +60,7 @@
 
 			<div class="col-md-12 text-center animate-box cont1" style="display: none" id="date_birth"><h3>My date of birth is
 			
- 			<input type="text" class="datepicker minimumSize lastReporteddate" id="dob"  name="dob" onchange="changeTest_new(this,'q8')"  />
+ 			<input type="text" class="datepicker minimumSize lastReporteddate" id="dob" readonly  name="dob" onchange="changeTest_new(this,'q8')"  />
 
 
 			</h3>

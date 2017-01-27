@@ -102,9 +102,9 @@ public function  change_password(Request $req){
        
  $val =Validator::make($req->all(), [
                 
-                'currentpassword' => 'required',
+                'Current_password' => 'required',
                 'password' => 'required|min:5',
-                'confirmpassword' => 'required|min:5|same:password',
+                'confirm_password' => 'required|min:5|same:password',
                             ]);
 
            if ($val->fails()){

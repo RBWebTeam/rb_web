@@ -58,7 +58,7 @@
 						<div class="col-md-12 text-center animate-box cont" style="display:none;" id="q5" >
 							
 				             <h3>I have been living in
-							<input type="text" class="search_city input-pad" id='city_name' name='city_name' onblur="changeTest_new('city_name','q_prop')" placeholder='your city'>city</h3>
+							<input type="text" class="search_city input-pad" id='city_name' name='city_name' onblur="changeText_new('city_name','q_prop')" placeholder='your city'>city</h3>
 							
 						</div>
 						<div class="col-md-12 text-center animate-box cont" style="display: none" id="q_prop">
@@ -77,7 +77,7 @@
 						</div>
 						<div class="col-md-12 text-center animate-box cont1" style="display: none" id="date_birth">
 							<h3>My date of birth is
-								<input type="text" id="dob" name="dob" class="input-pad company-nm1 lastReporteddate" onchange="changeTest_new(this,'q9')">
+								<input type="text" id="dob" name="dob" class="input-pad company-nm1 lastReporteddate" readonly onchange="changeTest_new(this,'q9')">
 							</h3>
 						</div>
 						<div class="col-md-12 text-center animate-box cont" style="display: none" id="q9">

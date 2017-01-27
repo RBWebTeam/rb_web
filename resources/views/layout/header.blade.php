@@ -96,10 +96,9 @@
 							<li>
 							<a href="{{URL::to('sme-loan')}}">Lease Rent Discounting</a>
 							<a href="{{URL::to('sme-loan')}}">Working Capital</a>
-							<a href="{{URL::to('sme-loan')}}">Export/Import Finance</a>
-						
+							<!-- <a href="{{URL::to('sme-loan')}}">Export/Import Finance</a> -->
 							</li>
-							<li><a href="{{URL::to('sme-loan')}}">Over Draft / Cash Credit</a>
+							<!-- <li><a href="{{URL::to('sme-loan')}}">Over Draft / Cash Credit</a> -->
 							
 							</li>
 							
@@ -114,7 +113,7 @@
 							<a href="{{URL::to('home-loan')}}">Home Loan</a>
 							<a href="{{URL::to('loan-against-property')}}">Loan Against Property</a>
 							<a href="{{URL::to('personal-loan')}}">Personal Loan</a>
-							<!-- <a href="{{URL::to('apply-car-loan')}}">Car Loan</a> -->
+							<a href="{{URL::to('car-loan')}}">Car Loan</a>
 
 						</li>
 							

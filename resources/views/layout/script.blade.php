@@ -539,8 +539,8 @@ $(".registration-submit").click(function(event){
    $("#errorpassword").text('');
  }
  
- if(msg.password_confirm){
-  $("#errorpasswordconfirm").text(msg.password_confirm);
+ if(msg.confirm_password){
+  $("#errorpasswordconfirm").text("The confirm password does not match.");
 }else{
  $("#errorpasswordconfirm").text('');
 }
@@ -641,8 +641,8 @@ $(".change_password_form").click(function(event){
               success: function(msg){
                 
                 
-                if(msg.Current_password){
-                  $("#currentp").text(msg.Current_password);
+                if(msg.current_password){
+                  $("#currentp").text(msg.current_password);
                 }else{
                   $("#currentp").text('');
                 }
@@ -651,8 +651,10 @@ $(".change_password_form").click(function(event){
                }else{
                 $("#newpass").text('');
               }
+
               if(msg.confirm_password){
-               $("#confirmpass").text(msg.confirm_password);
+             //$("#confirmpass").text(msg.confirm_password);
+             $("#confirmpass").text("The confirm password does not match.");
              }else{
               $("#confirmpass").text('');
             }

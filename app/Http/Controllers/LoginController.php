@@ -49,8 +49,8 @@ class LoginController extends Controller
                 'name' => 'required|min:5',
                 'contact' => 'required|regex:/^[0-9]{10}+$/',
                 'email' => 'required|email|unique:user_registration',
-                'password' =>'required|min:5',
-                'password_confirm' => 'required|min:5|same:password',
+                'password' =>'required|min:6',
+                'confirm_password' => 'required|min:6|same:password',
                             ]);
 
            if ($val->fails()){

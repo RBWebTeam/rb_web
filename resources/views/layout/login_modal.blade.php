@@ -94,7 +94,7 @@
                   </div>
                    
                   <div class="form-group">
-                    <input type="password" name="password_confirm" id="password_confirm" tabindex="2" class="form-control" placeholder="Confirm Password">
+                    <input type="password" name="confirm_password" id="confirm_password" tabindex="2" class="form-control" placeholder="Confirm Password">
                      <span id="errorpasswordconfirm"  class="error-msg"></span>
                   </div>
 

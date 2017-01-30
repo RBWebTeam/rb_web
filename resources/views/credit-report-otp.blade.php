@@ -7,11 +7,18 @@
    <div class="col-md-7 exp-pad"><h2>You hereby Appoint <b>RUPEEBOSS</b> As Your Authorised Representive to Receive Your Credit Information from Experian.</h2></div>
     <div class="col-lg-4">
                        <div class="exp-form">
+					   
+					   <form name="credit_report_otp_form" id="credit_report_otp_form">
 					   <h3>Enter your mobile number & verify using OTP</h3>
-					   <form>
-					   <input type="text" name="mobile" id="mobile" class="form-control" pattern="[789][0-9]{9}" required="" maxlength="10" placeholder="9XXXX XXXXX">
+					   <input type="text" name="mobile" id="mobile" class="form-control" pattern="[789][0-9]{9}" required maxlength="10" placeholder="9XXXX XXXXX">
 					   <hr class="hr-clr">
-					   <button class="btn btn-primary btn-lg btn-view">SEND OTP</button>
+					   <button class="btn btn-primary btn-lg btn-view" id="send_otp">SEND OTP</button>
+					   </form>
+					   <form name="credit_report_verify_form" id="credit_report_verify_form" style="display:none">
+					   <h3>Enter your verification code sent on your number</h3>
+					   <input type="text" name="verify" id="verify" class="form-control" pattern="[789][0-9]{9}" required maxlength="10" placeholder="verify otp">
+					   <hr class="hr-clr">
+					   <button class="btn btn-primary btn-lg btn-view" id="verify_otp">VERIFY OTP</button>
 					   </form>
 					   </div>
                              

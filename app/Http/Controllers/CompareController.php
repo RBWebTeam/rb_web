@@ -89,6 +89,9 @@ class CompareController extends Controller
       //print_r($data['state']);exit();
      	return view('credit-report')->with($data);
     }
+    public function otp(){
+      return view('credit-report-otp');
+    }
 
     public function switchme($loan){
       //print"<pre>";print_r($loan);exit();

@@ -4,7 +4,7 @@
 
 <div class="row">
 		<div class="col-sm-5">
-			<img src="{{URL::to('images/helpbg _new.jpg')}}" class="img-responsive img-thumbnail">
+			<img src="{{URL::to('images/helpbg _new.jpg')}}" class="img-responsive">
 		</div>
 		<div align="center" class="col-sm-7">
 			<h1 class="">Have us call you now.</h1>
@@ -43,6 +43,7 @@
 	</div>
 
 </div>
+<br>
 @include('layout.footer')
 @include('layout.script')
 

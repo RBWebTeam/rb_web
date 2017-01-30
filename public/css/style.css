@@ -569,7 +569,7 @@ td {padding:5px; text-align:center;}
 
 #fh5co-services-section, #fh5co-work-section, #fh5co-testimony-section,
 #fh5co-blog-section {
-  padding: 1em 0;
+  padding: 0em 0;
 }
 rb-services-section{padding:0px;}
 @media screen and (max-width: 768px) {
@@ -625,7 +625,7 @@ rb-services-section{padding:0px;}
   float: left;
   position: relative;
   
-  margin-bottom: 50px;
+  margin-bottom:5px;
   -webkit-box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.11);
   -moz-box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.11);
   box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.11);
@@ -647,6 +647,7 @@ rb-services-section{padding:0px;}
 }
 #fh5co-work-section .item-grid .v-align {
   padding:18px 30px;
+  background: #fff;
 }
 #fh5co-work-section .item-grid .v-align h3 {
   /*font-weight: 700;*/
@@ -795,7 +796,7 @@ rb-services-section{padding:0px;}
 }
 
 .fh5co-heading {
-  margin-bottom:20px;
+  margin-bottom:5px;
 }
 .fh5co-heading h2 {
   margin-bottom: 20px;
@@ -1434,7 +1435,7 @@ border-radius: 7px;padding: 1em;margin-top: 1em;}
  
 @media only screen and (max-width:768px) {
 	.form-in {border:none;}
-	
+	.exp-pad h2 {font-size:32px;}
 	.newsletter-name {margin-bottom:10px;}
 	.nav-tabs > li {float:none;}
 	.js .animate-box {border:none;}
@@ -1877,7 +1878,7 @@ body {background:#eee;}
 .error-actions .btn { margin-right:10px; }
 .outer-brd {border:5px solid #ebedf0;}
 .gray-bg {background:#ddd;}
-.apply-btn {color:#fff;background: #3699c1; padding: 10px; margin-top:3px;}
+.apply-btn {color:#fff;background: #3699c1; padding: 10px; margin:3px; display:block;}
 
 .blue-bg a:hover {color:#fff;}
 .error{
@@ -1919,9 +1920,27 @@ body {background:#eee;}
 .top-lnk .credit-score-btn:hover {background:transparent;}
 
 .model-hig {max-height:450px;overflow:scroll;}
+.crd-rpt {    width: 300px;margin: 0 auto;}
+.credit-report-bg {background: url("../images/Credit-Report_bg.png") no-repeat; padding-bottom:60px;border-bottom:1px solid #eee;}
+.exp-bg {background:url(../images/exp_bg.jpg) no-repeat;}
 
+.exp-form {
+    /* height: 200px; */
+    border: 1px solid #ccc;
+    padding:30px;
+	margin-top:20px;
+    background: #dddddd;
+    padding-bottom: 30px;
+}
+.exp-form input {padding:20px;height:45px;margin-top:10px;}
+.exp-form .hr-clr {height:1px background:#999;}
+.exp-form hr {border-top: 1px solid #ccc;}
+.exp-pad h2 {font-size:42px;padding:25px 60px; text-align:center;color:#333;}
+.bg-gray .tab-content {background:#fff;}
+.bg-gray .nav-tabs {margin-left: 35%;} 
 @media only screen and (max-width:480px) {
-	
-	.tp-margin {font-size:13px; padding:10px 10px;}
+	 .bg-gray .nav-tabs {margin-left:0px;}
+	.tp-margin {font-size:13px; padding:10px 10px;margin-top: 80px;display: block;}
+	.exp-pad h2 {font-size:32px;padding: 52px 36px;}
 }
 

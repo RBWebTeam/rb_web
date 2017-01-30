@@ -102,3 +102,6 @@ Route::post('gen-qstn','ExperianController@gen_ques2');
 Route::get('doc-upload','UploadController@Upload');
 Route::post('doc-upload','UploadController@UploadPost');
 
+
+Route::get('credit-report-otp','CompareController@otp');
+

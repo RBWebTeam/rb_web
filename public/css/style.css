@@ -1363,7 +1363,7 @@ input[placeholder], [placeholder], *[placeholder] {color: #1f386e !important;}
  .btm-o {margin-bottom:5px;}
  .ic1 img {width:45px;height:39px; text-align:center; margin:0 auto;margin-bottom:15px;}
  .slid-hig {height:284px;}
- .price-box ul li {text-align:left; margin-left:40px;}
+ .price-box ul li {text-align:left; margin-left:20px;}
  .testimonials  .carousel-indicators {bottom:-20px;}
  .testimonials .carousel-control.right {display:none;}
  .testimonials .carousel-control.left {display:none;}
@@ -1940,6 +1940,7 @@ body {background:#eee;}
 .bg-gray .nav-tabs {margin-left: 35%;} 
 @media only screen and (max-width:480px) {
 	 .bg-gray .nav-tabs {margin-left:0px;}
+	 .price-box ul li{margin-left:5px;}
 	.tp-margin {font-size:13px; padding:10px 10px;margin-top: 80px;display: block;}
 	.exp-pad h2 {font-size:32px;padding: 52px 36px;}
 }

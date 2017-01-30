@@ -61,7 +61,6 @@ class FormController extends Controller
             ->get();
             $input['city_name']=(string)$city_id[0]->city_id;
             //adding city_id to post data
-
         } 
         $res_arr=array_merge($input,$new_array);
         // print_r($res_arr);

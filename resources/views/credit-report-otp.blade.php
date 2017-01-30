@@ -64,6 +64,8 @@ THE CREDIT INFORMATION SHALL BE SHARED BY EXPERIAN WITH YOU AND RUPEEBOSS ON A M
 	 </div>
 	 </div>
 	</div>
-	
+	<script type="text/javascript">
+		
+	</script>
 @include('layout.footer')
 @include('layout.script')

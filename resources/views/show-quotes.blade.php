@@ -131,36 +131,8 @@
  <div class="col-md-12 animate-box fadeInUp animated col">
  <div class="col-md-4 img-c"><img src="images/compare-img.png"></div>
 
-   
-
-<!-- <div id="AllBank">
-</div><form   method="post" name="compareform" id="compareform" action="compare">
-<input type="hidden" id='_token' name="_token" value="{{csrf_token()}}">
-
- -->
-<!--   <div class="col-md-2 col img-c white-bg"><button type="button" class="close" data-dismiss="modal">×</button><img src="images/axis.png" width="50" height="46">Axis Bank</div>
-  <div class="col-md-2 col img-c white-bg"><button type="button" class="close" data-dismiss="modal">×</button><img src="images/hdfc.png" width="50" height="46">HDFC Bank</div> </form>
- -->
  <div id="AllBank" ></div>
   <div style="display: none"  id="btncompare" class="col-md-2 comp-btn"><a class="btn btn-primary btn-outline with-arrow comparebutton">Compare<i class="icon-arrow-right"></i></a></div>
-
-
-
- 
-<!-- <div class="table-responsive">
-<table  id="tables"  width="100%" border="1" class="table-bordered">
-
-<tbody style='float:left;'>
-<tr><td>Bank Name </td></tr>
-<tr><td>Loan Amount</td></tr>
-<tr><td>Rate</td></tr>
-<tr><td>EMI</td></tr>
-<tr><td>Processing Fee</td></tr>
-<tr><td>Pre closed Fee</tr></td>
-</tbody>
-
-</table >
-</div> -->
 
 
  </div>
@@ -168,47 +140,44 @@
 
 </div>
 
-<!--compare page-->
+  <div id="fh5co-hero" style="display:none;top: auto;" class="fclass1">
 
-<div id="fh5co-hero" style="display:none;top: auto;" class="fclass1">
-  <div class="animate-box"  >
+  <div class="fh5co-contact animate-box">
     <div class="container">
       <div class="row">
         <div class="col-md-12 text-left fh5co-heading animate-box fadeInUp animated">
-        <p class="text-left"><!-- <a href="{{URL::to('/')}}">Home</a>/Compare</p> -->
           <h2>Compare</h2>
-          </div>  
+          </div>        
         <div class="col-md-12">
           <div class="row pad11 white-bg comp-pg">
-  <div class="table-responsive" >
-  <a href="#" id="backid" class="btn btn-primary btn-outline with-arrow ">Back</a>
-<table   id="tables"   border="1" style="margin: auto;">
-
-<tbody style='float:left;''>
-<tr><td><b>Bank Name</b></td></tr>
-<tr><td><b>Loan Amount</b></td></tr>
-<tr><td><b>Rate</b></td></tr>
-<tr><td><b>EMI</b></td></tr>
-<tr><td><b>Processing Fee</b></td></tr>
-<tr><td><b>Pre closed Fee</b></td></tr>
-</tbody>
-</table>
-</div>
+   <div class="col-md-3 col-sm-6 txt-title1">
+    <ul class="comp comp-fix-pos txt-title">
    
-</div>
-</div>
-</div>
-</div>
-</div>
+    <li>&nbsp;</li>
+      <li>Loan Amount - </li>
+    <li>Rate - </li>
+    <li>EMI - </li>
+    <li>Processing Fee - </li>
+    <li>Pre closed Fee - </li>
+    <li></li>
+      <li> <a href="#" id="backid" class="btn btn-primary btn-outline">Back</a></li>
+  </ul>
+   </div>
+    
+ <div id="tables"></div>
+
+   
+          </div>
+         
+        </div>
+      </div>
+    </div>  
+  </div>
+
+  
+  </div>
 
 
-<!-----------       ---->
-
-
-
-
-
-</div>
 @include('layout.footer')
 @include('layout.script')
 
@@ -239,13 +208,15 @@ $('input[name="checkbox"]').change(function(){
    var url = closest.find('.url').val();
    var product = closest.find('.product').val();
 
-  // <input type='hidden' name='pinterst[]' id='"+pinterst+"' value='"+pinterst+"' >
+  var logo =closest.find('.logo').val();
 
   if (this.checked) {
 
        var span="<div class='col-md-2 col img-c white-bg' id='" +id + "'><input type='hidden' name='bank_id[]' id='"+id+"' value='"+id+"' ><span class='close btnspan' >×</span><img src='"+logo+"'class='img-responsive' width='100' height='80'>" + this.value + "</div>";
 
-       var  tables="<tbody style='float:left;' id='" +tid+ "'><tr><td>"+this.value+"</td></tr><tr><td>"+LoanRequired+"</td></tr><tr><td>"+pinterst+"</td></tr><tr><td>"+emi+"(for "+LoanTenure +" years)</td></tr><tr><td>"+processingfee+"</td></tr><tr><td>"+Pre_Closer_Fixed+" %</td></tr><tr><td><a href='"+url+"' class='btn btn-primary btn-outline'>Apply Now</a></td></tr></tbody>" ;
+
+ var tables="<div class='col-md-3 col-sm-6 bdr-btm' id='" +tid+ "'>  <ul  class='comp hide-title'><li><img src='"+logo+"' width='100' height='50'></li><li><span class='hidden-lg'>Loan Amount - </span>"+LoanRequired+"</li><li><span class='hidden-lg'>Rate - </span>"+emi+"(for "+LoanTenure +" years)</li><li><span class='hidden-lg'>EMI - </span>"+pinterst+"</li><li><span class='hidden-lg'>Processing Fee - </span>"+processingfee+"</li><li><span class='hidden-lg'>Pre closed Fee - </span>"+Pre_Closer_Fixed+" %</li><li></li><li><a href='"+url+"'  class='btn btn-primary btn-outline'>Apply Now</a></li></ul></div>";
+
 
           if(x==2){
             $('#btncompare').show();} x++;

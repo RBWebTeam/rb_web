@@ -201,12 +201,12 @@ We use all reasonable physical, administrative, technical and organizational mea
     <div class="modal-content col-md-12 text-justify model-hig ">
     <br>
 	<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-	<h2 class="text-center">Rupeeboss Terms </h2>
+	<h2 class="text-center">Experian Terms </h2>
 	<br>
-    <p class="text-lowercase">You HEREBY APPOINT RUPEEBOSS AS YOUR AUTHORISED REPRESENTATIVE TO RECEIVE YOUR CREDIT INFORMATION FROM EXPERIAN CREDIT INFORMATION SERVICES PRIVATE LIMITED (“Experian”).</p>
-<p class="text-lowercase">You HEREBY IRREVOCABLY AND UNCONDITIONALLY CONSENT TO SUCH CREDIT INFORMATION BEING PROVIDED BY EXPERIAN TO YOU AND RUPEEBOSS AND YOU HEREBY AGREE, ACKNOWLEDGE AND ACCEPT THE TERMS AND CONDITIONS SET FORTH HEREIN.</p>
+    <p class="text-lowercase"><span class="text-capitalize">You </span> HEREBY APPOINT RUPEEBOSS AS YOUR AUTHORISED REPRESENTATIVE TO RECEIVE YOUR CREDIT INFORMATION FROM EXPERIAN CREDIT INFORMATION SERVICES PRIVATE LIMITED (“Experian”).</p>
+<p class="text-lowercase"><span class="text-capitalize">You </span>HEREBY IRREVOCABLY AND UNCONDITIONALLY CONSENT TO SUCH CREDIT INFORMATION BEING PROVIDED BY EXPERIAN TO YOU AND RUPEEBOSS AND YOU HEREBY AGREE, ACKNOWLEDGE AND ACCEPT THE TERMS AND CONDITIONS SET FORTH HEREIN.</p>
 
-<p class="text-lowercase">YOU HEREBY ALSO AGREE AND ACKNOWLEDGE THAT FOR RUPEEBOSS TO SERVICE YOU AS A CUSTOMER, THE CREDIT INFORMATION SHALL BE SHARED BY EXPERIAN WITH YOU AND RUPEEBOSS ON A MONTHLY BASIS FOR A PERIOD OF 12 MONTHS CONTINUOUSLY TO ENSURE THAT YOU ARE ABLE TO HAVE AN ANNUAL VIEW OF YOUR CREDIT HISTORY. YOU FURTHER ALSO AGREE AND CONSENT TO RECEIVE SUCH CREDIT INFORMATION DIRECTLY FROM EXPERIAN AND ALSO THROUGH YOUR RUPEEBOSS ACCOUNT AS PER YOUR INDEPENDENT REGISTRATION WITH RUPEEBOSS.</p>
+<p class="text-lowercase"><span class="text-capitalize">You</span> HEREBY ALSO AGREE AND ACKNOWLEDGE THAT FOR RUPEEBOSS TO SERVICE YOU AS A CUSTOMER, THE CREDIT INFORMATION SHALL BE SHARED BY EXPERIAN WITH YOU AND RUPEEBOSS ON A MONTHLY BASIS FOR A PERIOD OF 12 MONTHS CONTINUOUSLY TO ENSURE THAT YOU ARE ABLE TO HAVE AN ANNUAL VIEW OF YOUR CREDIT HISTORY. YOU FURTHER ALSO AGREE AND CONSENT TO RECEIVE SUCH CREDIT INFORMATION DIRECTLY FROM EXPERIAN AND ALSO THROUGH YOUR RUPEEBOSS ACCOUNT AS PER YOUR INDEPENDENT REGISTRATION WITH RUPEEBOSS.</p>
 <p>Please read the Terms and Conditions of this document carefully before accepting. By clicking on the "I ACCEPT/AGREE" button below, you are expressly agreeing to access the Experian Credit Information Report and Credit Score (as defined in the Important Information Section below) (together referred as "Credit Information") and share a copy of the Credit Information with RupeeBoss in the "as is" format. Please click on the link below to read and understand the Important Information section below.
 ** This document is an electronic record in terms of the Information Technology Act, 2000 and Rules made there under, and the amended provisions pertaining to electronic records.</p>
 <p>Information Collection, Use, Confidentiality, No-Disclosure and Data Purging

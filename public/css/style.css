@@ -1938,7 +1938,7 @@ body {background:#eee;}
 .exp-pad h2 {font-size:42px;padding:25px 60px; text-align:center;color:#333;}
 .bg-gray .tab-content {background:#fff;}
 .bg-gray .nav-tabs {margin-left: 35%;} 
-.view-btn-tp-mrg {margin-top:-18px;}
+.view-btn-tp-mrg {margin-top: -33px;z-index: 1000; position: relative;}
 @media only screen and (max-width:480px) {
 	 .bg-gray .nav-tabs {margin-left:0px;}
 	 .price-box ul li{margin-left:5px;}

@@ -135,9 +135,9 @@
                                   <li class="list-group-item"  >
 
                                      <?php if($value->ProductId==9){?>
-                                    <a href="http://beta.erp.rupeeboss.com/homeloan/Home_Loan_Application_Form.aspx?appid=0&qoutid={{$value->ID}}&BankId={{$value->bank_id}}">Searched for   {{$value->Product_Name}}  <span class="badge">Date :{{date('Y:m:d', strtotime($value->created_at))}}  </span><br> <span class="btn btn-success btn-sm pull-right view-btn-tp-mrg">View </span></a>
+                                    <a href="http://beta.erp.rupeeboss.com/homeloan/Home_Loan_Application_Form.aspx?appid=0&qoutid={{$value->ID}}&BankId={{$value->bank_id}}">Searched for   {{$value->Product_Name}}  <span class="badge">Date :{{date('Y:m:d', strtotime($value->created_at))}}  </span><span class="btn btn-success btn-sm pull-right view-btn-tp-mrg">View </span></a>
                                     <?php }else{ ?>
-                                      <a href="http://beta.erp.rupeeboss.com/personalloan/personalloan.aspx?appid=0&qoutid={{$value->ID}}&BankId={{$value->bank_id}}">Searched for   {{$value->Product_Name}}  <span class="badge">Date :{{date('Y:m:d', strtotime($value->created_at))}}  </span><br> <span class="btn btn-success btn-sm pull-right view-btn-tp-mrg">View </span></a>
+                                      <a href="http://beta.erp.rupeeboss.com/personalloan/personalloan.aspx?appid=0&qoutid={{$value->ID}}&BankId={{$value->bank_id}}">Searched for   {{$value->Product_Name}}  <span class="badge">Date :{{date('Y:m:d', strtotime($value->created_at))}}  </span><span class="btn btn-success btn-sm pull-right view-btn-tp-mrg">View </span></a>
                                     <?php } ?>
 
 

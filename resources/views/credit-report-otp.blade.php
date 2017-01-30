@@ -10,13 +10,13 @@
 					   
 					   <form name="credit_report_otp_form" id="credit_report_otp_form">
 					   <h3>Enter your mobile number & verify using OTP</h3>
-					   <input type="text" name="mobile" id="mobile" class="form-control" pattern="[789][0-9]{9}" required maxlength="10" placeholder="9XXXX XXXXX">
+					   <input type="text" name="mobile" id="mobile" class="form-control" pattern="[789][0-9]{9}" required maxlength="10" placeholder="9XXXX XXXXX" onkeypress="return fnAllowNumeric(event)">
 					   <hr class="hr-clr">
 					   <button class="btn btn-primary btn-lg btn-view" id="send_otp">SEND OTP</button>
 					   </form>
 					   <form name="credit_report_verify_form" id="credit_report_verify_form" style="display:none">
 					   <h3>Enter your verification code sent on your number</h3>
-					   <input type="text" name="verify" id="verify" class="form-control" pattern="[789][0-9]{9}" required maxlength="10" placeholder="verify otp">
+					   <input type="text" name="verify" id="verify" class="form-control" pattern="[789][0-9]{9}" required maxlength="6" placeholder="verify otp">
 					   <hr class="hr-clr">
 					   <button class="btn btn-primary btn-lg btn-view" id="verify_otp">VERIFY OTP</button>
 					   </form>
@@ -59,8 +59,7 @@ THE CREDIT INFORMATION SHALL BE SHARED BY EXPERIAN WITH YOU AND RUPEEBOSS ON A M
 	   
 	   <p>"CICRA" shall mean the Credit Information Companies (Regulation) Act, 2005 read with the Credit Information Companies Rules, 2006 and the Credit Information Companies Regulations, 2006, 
 	   and shall include any other rules and regulations prescribed thereunder.</p>
-	   <p class="text-lowercase">PLEASE READ THE ABOVE MENTIONED IMPORTANT INFORMATION AND CLICK ON "ACCEPT" FOLLOWED BY THE LINK BELOW TO COMPLETE THE AUTHORISATION PROCESS FOR SHARING OF YOUR CREDIT INFORMATION BY EXPERIAN WITH YOU AND RUPEEBOSS, IN ITS CAPACITY AS YOUR AUTHORISED REPRESENTATIVE.</p>
-	   <p class="text-lowercase">BY CLICKING "ACCEPT" YOU AGREE AND ACCEPT THE DISCLAIMERS AND TERMS AND CONDITIONS SET OUT HEREIN.THE TERMS AND CONDITIONS MENTIONED HEREIN MAY CHANGE IN ORDER TO COMPLY WITH GOVERNING LAWS OF THE COUNTRY AND THE CONSUMER SHALL BE BOUND TO ANY CHANGES TO THIS AGREEMENT</p>
+	   
 	   </div>
 	 </div>
 	 </div>

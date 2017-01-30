@@ -539,8 +539,8 @@ $(".registration-submit").click(function(event){
    $("#errorpassword").text('');
  }
  
- if(msg.password_confirm){
-  $("#errorpasswordconfirm").text(msg.password_confirm);
+ if(msg.confirm_password){
+  $("#errorpasswordconfirm").text("The confirm password does not match.");
 }else{
  $("#errorpasswordconfirm").text('');
 }
@@ -641,8 +641,8 @@ $(".change_password_form").click(function(event){
               success: function(msg){
                 
                 
-                if(msg.currentpassword){
-                  $("#currentp").text(msg.currentpassword);
+                if(msg.current_password){
+                  $("#currentp").text(msg.current_password);
                 }else{
                   $("#currentp").text('');
                 }
@@ -651,8 +651,10 @@ $(".change_password_form").click(function(event){
                }else{
                 $("#newpass").text('');
               }
-              if(msg.confirmpassword){
-               $("#confirmpass").text(msg.confirmpassword);
+
+              if(msg.confirm_password){
+             //$("#confirmpass").text(msg.confirm_password);
+             $("#confirmpass").text("The confirm password does not match.");
              }else{
               $("#confirmpass").text('');
             }
@@ -1089,14 +1091,11 @@ $(".change_password_form").click(function(event){
           $('#pop1').append( "<p>Enter your net Income</p>" );
         }else  if(val=='q4'){
           $('#pop1').append( "<p>Any existing loan history</p>" );
-          $("#q6").hide();
-          $("#q_prop").hide();
         }else  if(val=='q5'){
           $('#pop1').empty();
           $('#pop1').append( "<p>Loan amount you wants to borrow</p>" );
           $("#q4").hide();
-        }
-        else if(val=='date_birth'){
+        }else if(val=='date_birth'){
           $('#pop1').append( "<p>Enter your birthdate.!!</p>" );
         }else  if(val=='q2_year'){
           $('#pop1').append( "<p>Enter your net turnover</p>" );
@@ -1213,7 +1212,16 @@ $(".change_password_form").click(function(event){
         if(val=='q3'){
          $('#pop1').append( "<p>Do you have any existing loan</p>" );
        }else  if(val=='q_prop'){
-         $('#pop1').append( "<p>Your property price is</p>" );
+             
+             if($('#city_name').val()==''){
+                  $('#pop1').empty();
+                  $('#pop1').append("<p>please select your city</p>" );
+                  $('#q_prop').hide();
+                }else{
+                  $('#pop1').append( "<p>Your property price is</p>" );
+                }
+
+         
        }else  if(val=='q5'){
          $('#pop1').append( "<p>Where do you reside</p>" );
        }else if(val=='exp'){
@@ -1234,10 +1242,11 @@ $(".change_password_form").click(function(event){
                 if($('#city_name').val()==''){
                   $('#pop1').empty();
                   $('#pop1').append("<p>please select your city</p>" );
-                 $('#q6').hide();
-                } 
+                  $('#q6').hide();
+                }else{
+                  $('#pop1').append( "<p>Enter your loan tenure</p>" );
+                }
            
-         // $('#pop1').append( "<p>Enter your loan tenure</p>" );
         }else if(val=='q7'){
           $('#pop1').append( "<p>Have special offers for female</p>" );
         }else if(val=='co_obl_yes'){
@@ -1654,7 +1663,9 @@ function getFbUserData(){
 
 </script>
 
+<!-- loader -->
 
+<!-- loader ends -->
 
 <!-- post end -->
 
@@ -1713,11 +1724,10 @@ function getFbUserData(){
     <div class="form-group">
       
       <div class="col-sm-6">
-
        <span id='msg_err' style="display: none;color:red;">oops something went wrong</span>
-       <span id='pls_wait' style="display: none;color: red;"><div class="loader"><img src="{{URL::to('images/processing.gif')}}"></div></span>
+       <span id='pls_wait' style="display: none;color: red;">Please wait .....</span>
        
-       <span id='pwd_match' style="display: none; color:red;"><center>Password do not match.</center></span>
+       <span id='pwd_match' style="display: none; color:red;">Password do not match.</span>
 
        <span id="msg_err_email"  style="display: none; color:red;"><center>Email id already exists.</center></span>
      </div>
@@ -1749,8 +1759,6 @@ function getFbUserData(){
         <form id="otp_form" class="form-horizontal">
          {{ csrf_field() }}
          <input type="text" class="form-control" name="otp" id="otp" minlength="6" maxlength="6" required onkeypress="return fnAllowNumeric(event)">
-         <span id='wait' style="display: none; color: red"><div class="loader"><img src="{{URL::to('images/processing.gif')}}"></div></span>
-       </span><br>
          <span id='otp_err' style="display: none; color: red">oops!! OTP is wrong</span><br>
          <button class="btn btn-default"  class="form-control" id="verify_otp" >Verify</button><br>
        </form>

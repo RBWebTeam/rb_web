@@ -163,7 +163,7 @@
                           <div class="tab-pane" id="change-password">
                           
                           
-                          <div id="success1" class="col-md-6 pad11 text-danger"></div>
+                          
                           
          
             <div class="tab-pane active" id="profile">
@@ -171,7 +171,7 @@
 
                 <div class="has-error">
                   <div class="high">
-                    <input type="password" class="form-control" id="Current_password" name="Current_password" placeholder="Current Password"  />
+                    <input type="password" class="form-control" id="current_password" name="current_password" placeholder="Current Password"  />
 					<span id="currentp"></span>
                   </div>
                 </div>
@@ -187,12 +187,18 @@
                 <div class="has-error">
                     <div class="high"> 
                     <input type="password" name="confirm_password" id="confirm_password" class="form-control clr-ddd"  placeholder="Confirm Password" >
-					<span id="confirmpass"></span>
+				           	<span id="confirmpass"></span>
+                    <br>
+                   <span id="success1" class="col-md-6 pad11 text-danger"></span>
+                    <br>
+                   <span id="success" class="col-md-5 text-success"></span>
+                    <br>
                     </div>
+
+                   
                     
                   </div>
-
-                  <div id="success" class="col-md-5 text-success"></div>
+                  
                   
                   <div> 
                     <button class="btn btn-primary btn-outline with-arrow change_password_form" >Submit<i class="icon-arrow-right"></i></button>

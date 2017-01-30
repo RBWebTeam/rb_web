@@ -11,7 +11,7 @@ class ApiController extends Controller
 	public function mobile_api_compare(Request $req){
 		
 		$data= $this->compare($req);
-		//print_r($data);exit();
+		return ($data);exit();
 		if($data!='Failure occured'){
 			$status_Id=0;
 			$msg="data delievered";

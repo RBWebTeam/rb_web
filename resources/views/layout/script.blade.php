@@ -654,7 +654,7 @@ $(".change_password_form").click(function(event){
 
               if(msg.confirm_password){
              //$("#confirmpass").text(msg.confirm_password);
-             $("#confirmpass").text("The confirm password does not match.");
+             $("#confirmpass").text("The confirm password does not match!");
              }else{
               $("#confirmpass").text('');
             }
@@ -665,7 +665,7 @@ $(".change_password_form").click(function(event){
              $("#success").text('');
            }
            if(msg==2){
-            $("#success1").text("your password does not match");
+            $("#success1").text("Old password incorrect!");
           }else{
             $("#success1").text('');
           }
@@ -1723,7 +1723,7 @@ function getFbUserData(){
     </div>
     <div class="form-group">
       
-      <div class="col-sm-6">
+      <div class="col-sm-offset-3 col-sm-6">
        <span id='msg_err' style="display: none;color:red;">oops something went wrong</span>
        <span id='pls_wait' style="display: none;color: red;">Please wait .....</span>
        

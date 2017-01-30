@@ -65,7 +65,7 @@ class FormController extends Controller
         } 
         $res_arr=array_merge($input,$new_array);
         // print_r($res_arr);
-            $url = "http://beta.erp.rupeeboss.com/CustomerLaravelWebRequest.aspx";
+            $url = "http://erp.rupeeboss.com/CustomerLaravelWebRequest.aspx";
             $ch = curl_init();
             curl_setopt($ch, CURLOPT_VERBOSE, 1);
             //curl_setopt( $ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));

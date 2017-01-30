@@ -103,5 +103,5 @@ Route::get('doc-upload','UploadController@Upload');
 Route::post('doc-upload','UploadController@UploadPost');
 
 
-Route::get('credit-report-otp','CompareController@otp');
+Route::get('credit-report-otp','CompareController@otp_page');
 

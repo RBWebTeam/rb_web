@@ -1916,7 +1916,7 @@ body {background:#eee;}
     border: 3px solid #28a0ff;
     margin-top: 10px;}
 .tp-margin:hover {background:#fff;border: 3px solid #28a0ff;color:#28a0ff;}
-.about-bg {background: url(../images/aboutus_bg.png) no-repeat;}
+.about-bg {background: url(../images/aboutus_bg.png) repeat-y;}
 .top-lnk .credit-score-btn:hover {background:transparent;}
 
 .model-hig {max-height:450px;overflow:scroll;}
@@ -1958,3 +1958,4 @@ body {background:#eee;}
   .hide-title ul {margin:0px; padding:0px;}
   .hide-title ul li {list-style-type:none;}
   .txt-title1 {font-weight:bold; text-transform:uppercase; border-right:1px solid #ddd;}
+  .error-template img {margin:0 auto;}

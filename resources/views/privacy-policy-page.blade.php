@@ -10,7 +10,7 @@
 					<h2>Privacy Policy</h2>
 					</div>				
 				<div class="col-md-12 text-left text-justify">
-					<div class="row pad11 white-bg comp-pg">
+					<div class="row pad11 white-bg comp-pg about-bg">
            
    <p>Privacy Policy for RupeeBoss.com
 

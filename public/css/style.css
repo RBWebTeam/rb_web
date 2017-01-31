@@ -1946,3 +1946,13 @@ body {background:#eee;}
 	.exp-pad h2 {font-size:32px;padding: 52px 36px;}
 }
 
+/*   compare css */
+  @media only screen and (max-width:768px) {
+ .txt-title {display:none;}
+ .bdr-btm {border:1px solid #ddd; margin-bottom:10px;}
+}
+
+.comp-pg .comp li {list-style-type:none;padding:10px;}
+  .comp-pg .comp li img {margin:0 auto;}
+  .hide-title li span {font-weight:bold;}
+  .txt-title1 {font-weight:bold; text-transform:uppercase; border-right:1px solid #ddd;}

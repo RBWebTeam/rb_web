@@ -27,6 +27,7 @@
 
 						   <a class="btn btn-primary btn-lg btn-view" id="credit_report_verify_otp">VERIFY OTP</a>
 						   <div id="otp_val" style="display: none;color: red;">Otp is of 6 digits.</div>
+						   <div id="wrong_otp" style="display: none;color: red;">Wrong Otp !!!</div>
 						   <div id="wait_div_otp" style="display: none;color: red;">Please wait ...</div>
 						   </form>
 						   </div>
@@ -63,6 +64,8 @@
 		         	$('#credit_report_otp_form').hide();
 					$('#credit_report_verify_form').show();
 		         	//console.log("hah");
+		         }else{
+		         	window.location.href="{{URL::to('went-wrong')}}";
 		         }
 		     }
 	     });
@@ -74,6 +77,7 @@
 					return false;
 				}
 			$('#otp_val').hide();
+			$('#wrong_otp').hide();
 			$('#wait_div_otp').show();
 			$.ajax({  
 		       type: "POST",  
@@ -82,13 +86,14 @@
 		       data : $('#credit_report_verify_form').serialize(),
 		       success: function(data){
 		         var data_1=data['data'];
-		         //return data_1;
+		         console.log(data_1);
 		         if(data_1){
 		         	//console.log("fine");
 
 		         	window.location.href="{{URL::to('credit-report')}}";
 		         }else{
-		         	console.log("something went wrong");
+		         	$('#wrong_otp').show();
+		         	$('#wait_div_otp').hide();
 		         }
 		     }
 	     });

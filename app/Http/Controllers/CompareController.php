@@ -104,7 +104,9 @@ class CompareController extends Controller
     }
 
     public function otp_page(){
-
+      if(Session::get('is_login'))
+        return $this->credit_report();
+      else
       return view('credit-report-otp');
     }
 

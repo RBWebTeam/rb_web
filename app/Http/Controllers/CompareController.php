@@ -162,9 +162,9 @@ class CompareController extends Controller
  public function verify_otp(Request $req){
   $phone = Session::get('contact');
     $id=Session::get('otp_id');
-
         $query=DB::table('credit_req_lead')
             ->where('id', $id)
+            ->where('otp',$req['verify'])
             ->update(['status' => 'verified']);
            
         if($query){

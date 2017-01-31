@@ -1922,20 +1922,20 @@ body {background:#eee;}
 .model-hig {max-height:450px;overflow:scroll;}
 .crd-rpt {    width: 300px;margin: 0 auto;}
 .credit-report-bg {background: url("../images/Credit-Report_bg.png") no-repeat; padding-bottom:60px;border-bottom:1px solid #eee;}
-.exp-bg {background:url(../images/exp_bg.jpg) no-repeat;}
+.exp-bg {background:url(../images/exp_bg.jpg) no-repeat;padding: 20px 0px;}
 
 .exp-form {
     /* height: 200px; */
-    border: 1px solid #ccc;
+    border: 9px solid #e4e4e4;
     padding:30px;
 	margin-top:20px;
-    background: #dddddd;
+    background: #fff;
     padding-bottom: 30px;
 }
 .exp-form input {padding:20px;height:45px;margin-top:10px;}
 .exp-form .hr-clr {height:1px background:#999;}
 .exp-form hr {border-top: 1px solid #ccc;}
-.exp-pad h2 {font-size:42px;padding:25px 60px; text-align:center;color:#333;}
+.exp-pad h2 {font-size:42px;padding:25px 60px; text-align:center;color: #fff;text-shadow: 1px 1px 1px #999;}
 .bg-gray .tab-content {background:#fff;}
 .bg-gray .nav-tabs {margin-left: 35%;} 
 .view-btn-tp-mrg {margin-top: -33px;z-index: 1000; position: relative;}

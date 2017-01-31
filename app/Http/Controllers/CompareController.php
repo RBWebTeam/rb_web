@@ -95,7 +95,7 @@ class CompareController extends Controller
       if($contact || $login){
           return view('credit-report')->with($data);
         }else{
-           return view('credit-report-otp')->with($data);
+           return view('credit-report-otp');
         }
      
      //  print "<pre>";

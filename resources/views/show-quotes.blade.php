@@ -66,7 +66,7 @@
 </div>
 @if(count($quote_data) > "")
 @foreach($quote_data as $q) 
- <div class="table-responsive">
+ <div class="table-responsive outer-brd">
 <table width="100%" border="1" class="tbl">
   <tr>
     <td width="9%" class="upper">Compare</td>

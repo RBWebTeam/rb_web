@@ -64,7 +64,7 @@
 				<h3>Business Loan</h3>
 				<ul class="float">
                     <li><a href="{{URL::to('loan-details/business-loan/AXIS-BANK-LTD')}}">Axis Bank</a></li>
-                     <li><a href="{{URL::to('loan-details/business-loan/ADITYA-BIRLA-HOUSING-FINANCIAL- LIMITED')}}">Aditya Birla</a></li>
+                     <li><a href="{{URL::to('loan-details/business-loan/ADITYA-BIRLA-HOUSING-FINANCIAL-LIMITED')}}">Aditya Birla</a></li>
 					<li><a href="{{URL::to('loan-details/business-loan/EDELWEISS-FINANCE-LIMITED')}}">Edelweiss </a></li>
                     <li><a href="{{URL::to('loan-details/business-loan/CAPITAL-FIRST-LIMITED')}}">Capital First Limited</a></li>
                     <li><a href="{{URL::to('loan-details/business-loan/DHFL')}}">DHFL</a></li>

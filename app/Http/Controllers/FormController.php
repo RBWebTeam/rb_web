@@ -99,7 +99,8 @@ class FormController extends Controller
             }
             else{
                 $quote_data =$req['product_name'];
-                return "no quotes";
+                return view("something-went-wrong");
+                //return "no quotes";
             }
             if($req['product_name'] == 9){
                 $data['product'] ="Personal Loan";

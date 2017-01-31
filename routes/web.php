@@ -78,13 +78,6 @@ Route::get('credit-card','HomeController@credit_card');
 Route::get('savings-account','HomeController@savings_account');
 Route::get('lead-status','HomeController@lead_status');
 Route::get('apply-lead-online','ProfileController@applyonline');
-
-
-
-// 
-
-
-
 //new loans test
 
 Route::get('test-personal-loan','LoanController@apply_p_test');
@@ -97,13 +90,14 @@ Route::post('calculationfordc','CompareController@calculationfordc');
 // Experian'
 Route::post('show-credit-report','ExperianController@call');
 Route::post('gen-qstn','ExperianController@gen_ques2');
-
-//doc upload
-Route::get('doc-upload','UploadController@Upload');
-Route::post('doc-upload','UploadController@UploadPost');
-
-
 Route::get('credit-report-otp','CompareController@otp_page');
 Route::post('credit-report-send-otp','CompareController@send_otp');
 Route::post('credit-report-verify','CompareController@verify_otp');
 
+
+//doc upload
+Route::get('doc-upload','UploadController@Upload');
+Route::post('doc-upload','UploadController@UploadPost');
+ 
+//something went wrong page
+Route::get('went-wrong','ErrorController@went_wrong');

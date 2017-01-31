@@ -1398,7 +1398,7 @@ input[placeholder], [placeholder], *[placeholder] {color: #1f386e !important;}
  .upper .icon-star {color:#39F; padding:5px;}
  .pad11 button {padding:2px 10px; height:30px;background:#39F;color:#fff;margin:0px;border-radius:10px;}
  .pad11 button:hover {background:#333;}
- .upper {text-transform:uppercase;font-weight:bold;}
+ .upper {text-transform:uppercase;font-weight:bold;font-size: 12px;}
  .tbl .icon-thumbs-up {font-size:25px;}
  .pad11 input[type="checkbox"] {height:20px; width:20px;}
  .compare {text-align:center;}
@@ -1876,7 +1876,7 @@ body {background:#eee;}
 .error-template {padding: 40px 15px;text-align: center;}
 .error-actions {margin-top:15px;margin-bottom:15px;}
 .error-actions .btn { margin-right:10px; }
-.outer-brd {border:5px solid #ebedf0;}
+.outer-brd {border: 5px solid #ffffff; box-shadow: 1px 1px 3px 1px #ccc;}
 .gray-bg {background:#ddd;}
 .apply-btn {color:#fff;background: #3699c1; padding: 10px; margin:3px; display:block;}
 
@@ -1916,26 +1916,26 @@ body {background:#eee;}
     border: 3px solid #28a0ff;
     margin-top: 10px;}
 .tp-margin:hover {background:#fff;border: 3px solid #28a0ff;color:#28a0ff;}
-.about-bg {background: url(../images/aboutus_bg.png) no-repeat;}
+.about-bg {background: url(../images/aboutus_bg.png) repeat-y;}
 .top-lnk .credit-score-btn:hover {background:transparent;}
 
 .model-hig {max-height:450px;overflow:scroll;}
 .crd-rpt {    width: 300px;margin: 0 auto;}
 .credit-report-bg {background: url("../images/Credit-Report_bg.png") no-repeat; padding-bottom:60px;border-bottom:1px solid #eee;}
-.exp-bg {background:url(../images/exp_bg.jpg) no-repeat;}
+.exp-bg {background:url(../images/exp_bg.jpg) no-repeat;padding: 20px 0px;}
 
 .exp-form {
     /* height: 200px; */
-    border: 1px solid #ccc;
+    border: 9px solid #e4e4e4;
     padding:30px;
 	margin-top:20px;
-    background: #dddddd;
-    padding-bottom: 30px;
+    background: #fff;
+    margin-bottom:30px;
 }
 .exp-form input {padding:20px;height:45px;margin-top:10px;}
 .exp-form .hr-clr {height:1px background:#999;}
 .exp-form hr {border-top: 1px solid #ccc;}
-.exp-pad h2 {font-size:42px;padding:25px 60px; text-align:center;color:#333;}
+.exp-pad h2 {font-size:25px;padding:10px 30px; text-align:center;color: #333;text-align: center;margin-top: 21px;opacity: 0.8;}
 .bg-gray .tab-content {background:#fff;}
 .bg-gray .nav-tabs {margin-left: 35%;} 
 .view-btn-tp-mrg {margin-top: -33px;z-index: 1000; position: relative;}
@@ -1943,7 +1943,7 @@ body {background:#eee;}
 	 .bg-gray .nav-tabs {margin-left:0px;}
 	 .price-box ul li{margin-left:5px;}
 	.tp-margin {font-size:13px; padding:10px 10px;margin-top: 80px;display: block;}
-	.exp-pad h2 {font-size:32px;padding: 52px 36px;}
+	.exp-pad h2 {font-size: 31px; padding: 17px 36px}
 }
 
 /*   compare css */
@@ -1958,3 +1958,4 @@ body {background:#eee;}
   .hide-title ul {margin:0px; padding:0px;}
   .hide-title ul li {list-style-type:none;}
   .txt-title1 {font-weight:bold; text-transform:uppercase; border-right:1px solid #ddd;}
+  .error-template img {margin:0 auto;}

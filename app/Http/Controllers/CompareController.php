@@ -95,7 +95,7 @@ class CompareController extends Controller
       if($contact || $login){
           return view('credit-report')->with($data);
         }else{
-           return view('credit-report-otp')->with($data);
+           return view('credit-report-otp');
         }
      
      //  print "<pre>";
@@ -104,7 +104,9 @@ class CompareController extends Controller
     }
 
     public function otp_page(){
-
+      if(Session::get('is_login'))
+        return $this->credit_report();
+      else
       return view('credit-report-otp');
     }
 
@@ -160,9 +162,9 @@ class CompareController extends Controller
  public function verify_otp(Request $req){
   $phone = Session::get('contact');
     $id=Session::get('otp_id');
-
         $query=DB::table('credit_req_lead')
             ->where('id', $id)
+            ->where('otp',$req['verify'])
             ->update(['status' => 'verified']);
            
         if($query){

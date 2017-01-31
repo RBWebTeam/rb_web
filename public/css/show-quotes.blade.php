@@ -1,43 +1,43 @@
 @include('layout.header')
 
     <div id="fh5co-hero" class="fclass" style="display:block;">
-  <div class="container" >
+	<div class="container" >
   <div class="table-responsive">
 
-  <div class=" pad">
-<!--  <p class="text-left">home/{{$product}}</p> -->
+	<div class=" pad">
+<!-- 	<p class="text-left">home/{{$product}}</p> -->
     <h2 class="align-center loan-head">View Options</h2>
-  </div>
+	</div>
    <div class="col-md-3 fadeInUp tbl fltr tbl1" style="display:none;">
     <h3>Filter</h3>
-  <hr>
-  <h4>Interest Type</h4>
-  
-  
-  
-  <hr>
-  <h4>Min / Max Loan Requirment</h4>
-  Filter by price interval: 
-  <input type="hidden" name="min_value" id="min_value" value="">
+	<hr>
+	<h4>Interest Type</h4>
+	
+	
+	
+	<hr>
+	<h4>Min / Max Loan Requirment</h4>
+	Filter by price interval: 
+	<input type="hidden" name="min_value" id="min_value" value="">
  <hr>
  <h4>EMI Capacity</h4>
-  <input type="hidden" name="min_value" id="min_value" value="">
-  <hr>
-  <h4>Bank Type</h4>
-  <span><input type="radio" name="radio" />Private Bank</span><br>
-  <span><input type="radio" name="radio" />PSU Bank </span>
-  <hr>
-  <h4>Max Tenure</h4>
-  <span><input type="radio" name="radio" />3 Years</span><br>
-  <span><input type="radio" name="radio" />4 Years</span><br>
-  <span><input type="radio" name="radio" />5 Years</span>
-  <hr>
-  <h4>Processing Fee</h4>
-  <input type="checkbox" name="1" />No Processing Fee
-  <hr>
+	<input type="hidden" name="min_value" id="min_value" value="">
+	<hr>
+	<h4>Bank Type</h4>
+	<span><input type="radio" name="radio" />Private Bank</span><br>
+	<span><input type="radio" name="radio" />PSU Bank </span>
+	<hr>
+	<h4>Max Tenure</h4>
+	<span><input type="radio" name="radio" />3 Years</span><br>
+	<span><input type="radio" name="radio" />4 Years</span><br>
+	<span><input type="radio" name="radio" />5 Years</span>
+	<hr>
+	<h4>Processing Fee</h4>
+	<input type="checkbox" name="1" />No Processing Fee
+	<hr>
     </div>
     
-  <div class="col-md-12 pad11">
+	<div class="col-md-12 pad11">
     
     <div class="">
     <table width="100%" border="1" class="tbl pad1">
@@ -119,14 +119,14 @@
 
 
 
-  </div>
-  </div>
+	</div>
+	</div>
 </div>
 </div>
-  
+	
 
 
-<div class="container-fluid white-bg"  id="compID" style=" display: block;">  
+<div class="container-fluid white-bg"  id="compID" style=" display: block;">	
 <div class="container pad">
  <div class="col-md-12 animate-box fadeInUp animated col">
  <div class="col-md-4 img-c"><img src="images/compare-img.png"></div>
@@ -154,10 +154,9 @@
     <ul class="comp comp-fix-pos txt-title">
    
     <li>&nbsp;</li>
-    <br>
       <li>Loan Amount - </li>
-      <li>EMI - </li>
     <li>Rate - </li>
+    <li>EMI - </li>
     <li>Processing Fee - </li>
     <li>Pre closed Fee - </li>
     <li></li>
@@ -194,8 +193,6 @@ $('input[name="checkbox"]').change(function(){
   if($("input[name='checkbox']:checked").length >= limit) {
        this.checked = false;      
 
-       alert("Please select no more than 3 Banks.");
-
     
    }else{
    var id=$(this).attr("data-id");
@@ -231,11 +228,7 @@ $('input[name="checkbox"]').change(function(){
             if(x!=2){
             $('#btncompare').hide();}x--;
        }
-
-
    }
-
-    
   
 });
 

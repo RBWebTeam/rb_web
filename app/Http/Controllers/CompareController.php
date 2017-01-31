@@ -85,13 +85,96 @@ class CompareController extends Controller
       $data['state'] = DB::table('experian_state_master')
       ->select('State_Id','State_Code','State_Name')
       ->get();
+      $contact=Session::get('contact');
+      $login=Session::get('is_login');
+       if($login){
+          //if already login then remove contact from old seessions
+          Session::forget('contact');
+          }
+
+      if($contact || $login){
+          return view('credit-report')->with($data);
+        }else{
+           return view('credit-report-otp')->with($data);
+        }
+     
      //  print "<pre>";
       //print_r($data['state']);exit();
-     	return view('credit-report')->with($data);
+     
     }
-    public function otp(){
+
+    public function otp_page(){
+
       return view('credit-report-otp');
     }
+
+ public function send_otp(Request $req){
+   $otp=123456;
+    Session::put('contact', $req['contact']);
+     $qu=DB::table('credit_req_lead')
+              ->insertGetId([
+                'contact'=> $req['contact'],
+                'otp'=>$otp,
+                'status'=>'Not Verified',
+                'created_at'=>date("Y-m-d H:i:s")
+
+      ]);
+       Session::put('otp_id', $qu);
+       if($qu>0){
+            //calling service to send sms 
+            $post_data='{"mobNo":"'.$req['contact'].'","msgData":"your otp is '.$otp.' - RupeeBoss.com",
+                "source":"WEB"}';
+            $url = "http://beta.services.rupeeboss.com/LoginDtls.svc/xmlservice/sendSMS";
+            $ch = curl_init();
+            curl_setopt($ch, CURLOPT_VERBOSE, 1);
+            curl_setopt( $ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
+            curl_setopt($ch, CURLOPT_URL, $url);
+            curl_setopt($ch, CURLOPT_POST, 1);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+            curl_setopt($ch, CURLOPT_FAILONERROR, 0);
+            curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+            curl_setopt($ch, CURLOPT_POSTFIELDS,$post_data);
+            $http_result = curl_exec($ch);
+            $error = curl_error($ch);
+            $http_code = curl_getinfo($ch ,CURLINFO_HTTP_CODE);
+            $obj = json_decode($http_result);
+            // statusId response 0 for success, 1 for failure
+            curl_close($ch);
+            if($obj->{'statusId'}==0){
+                return Response::json(array(
+                            'data' => true,
+                        ));
+            }else{
+                return Response::json(array(
+                            'data' => false,
+                        ));
+            }
+        
+        }else{
+             return Response::json(array(
+                            'data' => false,
+                        ));
+        }
+ }
+
+ public function verify_otp(Request $req){
+  $phone = Session::get('contact');
+    $id=Session::get('otp_id');
+
+        $query=DB::table('credit_req_lead')
+            ->where('id', $id)
+            ->update(['status' => 'verified']);
+           
+        if($query){
+          return Response::json(array(
+                            'data' => true,
+                        ));
+        }else{
+         return Response::json(array(
+                            'data' => false,
+                        ));
+        }
+ }
 
     public function switchme($loan){
       //print"<pre>";print_r($loan);exit();

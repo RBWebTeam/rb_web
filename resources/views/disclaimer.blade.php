@@ -9,7 +9,7 @@
 					<h2>Disclaimer</h2>
 					</div>				
 				<div class="col-md-12">
-					<div class="row pad11 white-bg comp-pg">
+					<div class="row pad11 white-bg comp-pg about-bg">
 
 			   <p>RupeeBoss intends to provide clear information about loans and insurance products and services. The information and data are generic in nature. Our efforts are to offer accurate and responsible data. We are not responsible for any sort of discrepancies.</p>
 <p>There is no purpose of violating any copyright or intellectual copyrights issue. All information provided on the portal RupeeBoss is subject to the discretion of the same and is likely to change without any notice. Though, any changes in public utility will be communicated immediately in our portal.</p>

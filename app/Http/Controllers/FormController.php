@@ -99,6 +99,7 @@ class FormController extends Controller
             }
             else{
                 $quote_data =$req['product_name'];
+                return view("something-went-wrong");
                 return "no quotes";
             }
             if($req['product_name'] == 9){

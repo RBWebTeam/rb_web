@@ -157,7 +157,7 @@
     <div class="modal-content col-md-12 text-justify model-hig">
 	<br>
 	<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-     <h2 class="text-center"> RupeeBoss Value Added-Credit Score Service</h2>
+     <h2 class="text-center"> Rupeeboss Terms</h2>
 	<br>
 <h3>TERMS OF USE</h3>
 <p>RupeeBoss Value Added-Credit Score Service, is an online service (“Credit Score Service” / “Service”) that enables you to access your Credit Score/Report, based on the data/information/report supplied by our third party data processing service provider, M/s Experian Credit Information Services Private Limited (the “Processing Service Provider”). The said Credit Score Service consists of receipt of your credit report/score. This information is for your personal use only and the said Service/report is subject to your agreement to the provisions set forth below.
@@ -201,7 +201,7 @@ We use all reasonable physical, administrative, technical and organizational mea
     <div class="modal-content col-md-12 text-justify model-hig ">
     <br>
 	<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-	<h2 class="text-center">Rupeeboss Terms </h2>
+	<h2 class="text-center">RupeeBoss Value Added-Credit Score Service </h2>
 	<br>
     <p class="text-lowercase">You HEREBY APPOINT RUPEEBOSS AS YOUR AUTHORISED REPRESENTATIVE TO RECEIVE YOUR CREDIT INFORMATION FROM EXPERIAN CREDIT INFORMATION SERVICES PRIVATE LIMITED (“Experian”).</p>
 <p class="text-lowercase">You HEREBY IRREVOCABLY AND UNCONDITIONALLY CONSENT TO SUCH CREDIT INFORMATION BEING PROVIDED BY EXPERIAN TO YOU AND RUPEEBOSS AND YOU HEREBY AGREE, ACKNOWLEDGE AND ACCEPT THE TERMS AND CONDITIONS SET FORTH HEREIN.</p>

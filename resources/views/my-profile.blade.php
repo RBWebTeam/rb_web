@@ -84,8 +84,8 @@
                                   @endif
                                 <div class="col-md-12">
                                     <span><strong>Gender :-</strong></span> &nbsp;&nbsp; Male 
-                                    <input name="gender" value="male" <?php if ($gender == 'male') echo "checked='checked'"; ?>  type="radio" class="rado" required> | Female 
-                                    <input name="gender" <?php if ($gender == 'female') echo "checked='checked'"; ?> value="female" type="radio" class="rado" required>
+                                    <input name="gender" value="male" <?php if ($gender == 'male'){ echo "checked='checked'";}else{ echo "checked='checked'"; } ?>  type="radio" class="rado" > | Female 
+                                    <input name="gender" <?php if ($gender == 'female') echo "checked='checked'"; ?> value="female" type="radio" class="rado"  >
                                 </div>
                                         <br>
 
@@ -135,9 +135,9 @@
                                   <li class="list-group-item"  >
 
                                      <?php if($value->ProductId==9){?>
-                                    <a href="http://beta.erp.rupeeboss.com/homeloan/Home_Loan_Application_Form.aspx?appid=0&qoutid={{$value->ID}}&BankId={{$value->bank_id}}">Searched for   {{$value->Product_Name}}  <span class="badge">Date :{{date('Y:m:d', strtotime($value->created_at))}}  </span> <span class="btn btn-success btn-sm pull-right">View </span></a>
+                                    <a href="http://beta.erp.rupeeboss.com/homeloan/Home_Loan_Application_Form.aspx?appid=0&qoutid={{$value->ID}}&BankId={{$value->bank_id}}">Searched for   {{$value->Product_Name}}  <span class="badge">Date :{{date('Y:m:d', strtotime($value->created_at))}}  </span><span class="btn btn-success btn-sm pull-right view-btn-tp-mrg">View </span></a>
                                     <?php }else{ ?>
-                                      <a href="http://beta.erp.rupeeboss.com/personalloan/personalloan.aspx?appid=0&qoutid={{$value->ID}}&BankId={{$value->bank_id}}">Searched for   {{$value->Product_Name}}  <span class="badge">Date :{{date('Y:m:d', strtotime($value->created_at))}}  </span> <span class="btn btn-success btn-sm pull-right">View </span></a>
+                                      <a href="http://beta.erp.rupeeboss.com/personalloan/personalloan.aspx?appid=0&qoutid={{$value->ID}}&BankId={{$value->bank_id}}">Searched for   {{$value->Product_Name}}  <span class="badge">Date :{{date('Y:m:d', strtotime($value->created_at))}}  </span><span class="btn btn-success btn-sm pull-right view-btn-tp-mrg">View </span></a>
                                     <?php } ?>
 
 
@@ -163,7 +163,7 @@
                           <div class="tab-pane" id="change-password">
                           
                           
-                          <div id="success1" class="col-md-6 pad11 text-danger"></div>
+                          
                           
          
             <div class="tab-pane active" id="profile">
@@ -171,7 +171,7 @@
 
                 <div class="has-error">
                   <div class="high">
-                    <input type="password" class="form-control" id="Current_password" name="Current_password" placeholder="Current Password"  />
+                    <input type="password" class="form-control" id="current_password" name="current_password" placeholder="Current Password"  />
 					<span id="currentp"></span>
                   </div>
                 </div>
@@ -187,12 +187,18 @@
                 <div class="has-error">
                     <div class="high"> 
                     <input type="password" name="confirm_password" id="confirm_password" class="form-control clr-ddd"  placeholder="Confirm Password" >
-					<span id="confirmpass"></span>
+				           	<span id="confirmpass"></span>
+                    <br>
+                   <span id="success1" class="col-md-6 pad11 text-danger"></span>
+                    <br>
+                   <span id="success" class="col-md-5 text-success"></span>
+                    <br>
                     </div>
+
+                   
                     
                   </div>
-
-                  <div id="success" class="col-md-5 text-success"></div>
+                  
                   
                   <div> 
                     <button class="btn btn-primary btn-outline with-arrow change_password_form" >Submit<i class="icon-arrow-right"></i></button>

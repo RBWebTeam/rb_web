@@ -182,7 +182,7 @@ INFORMATION AND/OR SERVICES OFFERED ON THIS WEB SITE ARE PROVIDED "AS IS" WITHOU
 <h3>6. CONFIDENTIALITY</h3>
 <p>Since it affects your use of the Services, please review our Privacy Policy and Terms of Use of this Website. We collect, use and disclose information about you as provided in our Privacy Policy. Our Privacy Policy is located on the Website and you agree to accept the terms of the Privacy Policy as a condition to your acceptance of these terms/agreement.
 We use all reasonable physical, administrative, technical and organizational measures to help protect your personal identifiable information from any loss, unauthorized access or use, or modification or disclosure thereof. We will not share your Personal Identifiable Information including Credit Reports except (1) as necessary for us to process you Request Form, (2) as permitted by law, and (3) as required by the government, law enforcement or an order of the court.M</p>
-<h3>7. IMDEMNIFICATION</h3>
+<h3>7. INDEMNIFICATION</h3>
 <p>You agree to indemnify, defend and hold harmless RupeeBoss and its affiliates, and their respective officers, directors, employees, agents, licensors and suppliers, and any third party providers of information to this Service, from and against any and all losses, expenses, damages and costs, including reasonable attorneys' fees, resulting from your violation of these Terms of Use or any terms and conditions applicable to Service, or your violation of the intellectual property rights of RupeeBoss, Processing Service Provider, or any of those other parties.</p>
 <h3>8. LINKS TO OTHER WEB SITES:</h3>
 <p>For purposes of convenience, RupeeBoss's Website may contain links to third party websites. RupeeBoss makes no representations or warranties about any third party website that you may access through the links. By providing a link to those websites, RupeeBoss does not endorse, adopt, or otherwise accept any responsibility for the content or use of those websites.</p>
@@ -201,12 +201,14 @@ We use all reasonable physical, administrative, technical and organizational mea
     <div class="modal-content col-md-12 text-justify model-hig ">
     <br>
 	<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-	<h2 class="text-center">RupeeBoss Value Added-Credit Score Service </h2>
-	<br>
-    <p class="text-lowercase">You HEREBY APPOINT RUPEEBOSS AS YOUR AUTHORISED REPRESENTATIVE TO RECEIVE YOUR CREDIT INFORMATION FROM EXPERIAN CREDIT INFORMATION SERVICES PRIVATE LIMITED (“Experian”).</p>
-<p class="text-lowercase">You HEREBY IRREVOCABLY AND UNCONDITIONALLY CONSENT TO SUCH CREDIT INFORMATION BEING PROVIDED BY EXPERIAN TO YOU AND RUPEEBOSS AND YOU HEREBY AGREE, ACKNOWLEDGE AND ACCEPT THE TERMS AND CONDITIONS SET FORTH HEREIN.</p>
 
-<p class="text-lowercase">YOU HEREBY ALSO AGREE AND ACKNOWLEDGE THAT FOR RUPEEBOSS TO SERVICE YOU AS A CUSTOMER, THE CREDIT INFORMATION SHALL BE SHARED BY EXPERIAN WITH YOU AND RUPEEBOSS ON A MONTHLY BASIS FOR A PERIOD OF 12 MONTHS CONTINUOUSLY TO ENSURE THAT YOU ARE ABLE TO HAVE AN ANNUAL VIEW OF YOUR CREDIT HISTORY. YOU FURTHER ALSO AGREE AND CONSENT TO RECEIVE SUCH CREDIT INFORMATION DIRECTLY FROM EXPERIAN AND ALSO THROUGH YOUR RUPEEBOSS ACCOUNT AS PER YOUR INDEPENDENT REGISTRATION WITH RUPEEBOSS.</p>
+	<h2 class="text-center">Experian Terms </h2>
+
+	<br>
+    <p class="text-lowercase"><span class="text-capitalize">You </span> HEREBY APPOINT RUPEEBOSS AS YOUR AUTHORISED REPRESENTATIVE TO RECEIVE YOUR CREDIT INFORMATION FROM EXPERIAN CREDIT INFORMATION SERVICES PRIVATE LIMITED (“Experian”).</p>
+<p class="text-lowercase"><span class="text-capitalize">You </span>HEREBY IRREVOCABLY AND UNCONDITIONALLY CONSENT TO SUCH CREDIT INFORMATION BEING PROVIDED BY EXPERIAN TO YOU AND RUPEEBOSS AND YOU HEREBY AGREE, ACKNOWLEDGE AND ACCEPT THE TERMS AND CONDITIONS SET FORTH HEREIN.</p>
+
+<p class="text-lowercase"><span class="text-capitalize">You</span> HEREBY ALSO AGREE AND ACKNOWLEDGE THAT FOR RUPEEBOSS TO SERVICE YOU AS A CUSTOMER, THE CREDIT INFORMATION SHALL BE SHARED BY EXPERIAN WITH YOU AND RUPEEBOSS ON A MONTHLY BASIS FOR A PERIOD OF 12 MONTHS CONTINUOUSLY TO ENSURE THAT YOU ARE ABLE TO HAVE AN ANNUAL VIEW OF YOUR CREDIT HISTORY. YOU FURTHER ALSO AGREE AND CONSENT TO RECEIVE SUCH CREDIT INFORMATION DIRECTLY FROM EXPERIAN AND ALSO THROUGH YOUR RUPEEBOSS ACCOUNT AS PER YOUR INDEPENDENT REGISTRATION WITH RUPEEBOSS.</p>
 <p>Please read the Terms and Conditions of this document carefully before accepting. By clicking on the "I ACCEPT/AGREE" button below, you are expressly agreeing to access the Experian Credit Information Report and Credit Score (as defined in the Important Information Section below) (together referred as "Credit Information") and share a copy of the Credit Information with RupeeBoss in the "as is" format. Please click on the link below to read and understand the Important Information section below.
 ** This document is an electronic record in terms of the Information Technology Act, 2000 and Rules made there under, and the amended provisions pertaining to electronic records.</p>
 <p>Information Collection, Use, Confidentiality, No-Disclosure and Data Purging

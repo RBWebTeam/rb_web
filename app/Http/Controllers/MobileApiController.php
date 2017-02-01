@@ -10,23 +10,25 @@ use App\bank_quote_api_request;
 class MobileApiController extends ApiController
 {
 	public function mobile_api_compare(Request $req){
-		
+		//return "hiiiii";
 		$data= $this->compare($req);
-		//print_r($data);exit();
-		if($data!='-1' && !empty( $data->getData()->data)){
+		//print_r( $data->getData()->quote_id);exit();
+		if($data!='Failure occured'){
 			$status_Id=0;
 			$msg="data delievered";
 			$new_data=$data->getData()->data;
+			$quote=$data->getData()->quote_id;
+			//$url="";
 		}
 		else{
-			$new_data=NULL;
+			$new_data=new stdClass();
 			$status_Id=1;
 			$msg=" Something went wrong.";
-			
+			$quote=new stdClass();
 		}
 		
 		//print_r($a);
-		$new_data=array('data' =>$new_data ,'msg' =>$msg,'status_Id'=>$status_Id );
+		$new_data=array('data' =>$new_data ,'msg' =>$msg,'status_Id'=>$status_Id,'quote_id'=>$quote );
 		return $new_data;
 			
 	}

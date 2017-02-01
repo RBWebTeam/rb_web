@@ -102,8 +102,8 @@ public function  change_password(Request $req){
        
  $val =Validator::make($req->all(), [
                 
-                'Current_password' => 'required',
-                'password' => 'required|min:5',
+                'current_password' => 'required',
+                'password' => 'required|min:6',
                 'confirm_password' => 'required|min:5|same:password',
                             ]);
 
@@ -121,11 +121,11 @@ public function  change_password(Request $req){
                $value=$query->where('email','=',Session::get('email'))
               ->first();
              
-              if($value->password==md5($req->currentpassword)){
+              if($value->password==md5($req->current_password)){
 
                 
                           $query->where('email',Session::get('email'))
-                          ->update(array('password' =>md5($req->confirmpassword)));
+                          ->update(array('password' =>md5($req->confirm_password)));
             
                  $error="1";
                 echo $error;

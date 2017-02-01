@@ -46,6 +46,7 @@ class FormController extends Controller
     }
 
     public function p_loan_submit(Request $req){
+        try{
         //call api to submit form data
         $input = $req->all();
        
@@ -61,7 +62,6 @@ class FormController extends Controller
             ->get();
             $input['city_name']=(string)$city_id[0]->city_id;
             //adding city_id to post data
-
         } 
         $res_arr=array_merge($input,$new_array);
         // print_r($res_arr);
@@ -100,7 +100,8 @@ class FormController extends Controller
             }
             else{
                 $quote_data =$req['product_name'];
-                return "no quotes";
+                return view("something-went-wrong");
+                //return "no quotes";
             }
             if($req['product_name'] == 9){
                 $data['product'] ="Personal Loan";
@@ -117,101 +118,110 @@ class FormController extends Controller
             $data['quote_data'] =$quote_data;
             //print"<pre>";print_r($data);exit();
             return view('show-quotes')->with($data);
+        }catch(\Exception $ee){
+            return view('went-wrong');
+        }
     }
     
      public function otp(Request $req){
+        try{
+              $qu=new registrationModel();
+              $emailcheck=$qu->where('email','=',$req->email)
+              ->count();
+           
+              if($emailcheck!=0){
+                 return Response::json(array(
+                                'emailID' => true,
+                                 ));
+              }else{
 
-          $qu=new registrationModel();
-          $emailcheck=$qu->where('email','=',$req->email)
-          ->count();
-       
-          if($emailcheck!=0){
-             return Response::json(array(
-                            'emailID' => true,
-                             ));
-          }else{
-
-        $input = $req->all();
-        //print_r($input);exit(); 
-        //sms curl to write here
-        //$otp = mt_rand(100000, 999999);
-        $otp=123456;
-        //setting details to session to retrive at time of posting
-        Session::put('contact', $req['contact']);
-        Session::put('name', $req['name']);
-        Session::put('email', $req['email']);
-        // save user but not verified till now
-        $qu=new registrationModel();
-                  $qu->username=$req['name'];
-                  $qu->email= $req['email'];
-                  $qu->contact= $req['contact'];
-                  $qu->password= md5($req['set_pwd']);
-                  $qu->provider_user_id=0;
-                  $qu->provider='WEBSITE-NOT-VERIFIED';
-                  $qu->created_at=date("Y-m-d H:i:s");
-        if($qu->save()) {
-               
-           Session::put('verify_id',$qu->id);
-           Session::put('user_id',$qu->id);
-                 // $req->session()->put('is_login',1);
-        DB::table('customer_details')->insert(['user_id' =>$qu->id]);
-                 
-        }
-        // user entered 
-
-
-        $value = Session::get('contact');
-        //ends 
-        //insert into DB
-        $query=DB::table('otp')->insertGetId(
-        ['name' => $req['name'],'contact'=>$req['contact'],'email'=>$req['email']
-        ,'source'=>'web_user','product'=>$req['product'],'otp'=>$otp,'status'=>'0','created_at'=> date("Y-m-d H:i:s")]
-        );
-
-        Session::put('login_id',$query);
-        if($query){
-            //calling service to send sms 
-            $post_data='{"mobNo":"'.$req['contact'].'","msgData":"your otp is '.$otp.' - RupeeBoss.com",
-                "source":"WEB"}';
-            $url = "http://beta.services.rupeeboss.com/LoginDtls.svc/xmlservice/sendSMS";
-            $ch = curl_init();
-            curl_setopt($ch, CURLOPT_VERBOSE, 1);
-            curl_setopt( $ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
-            curl_setopt($ch, CURLOPT_URL, $url);
-            curl_setopt($ch, CURLOPT_POST, 1);
-            curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-            curl_setopt($ch, CURLOPT_FAILONERROR, 0);
-            curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
-            curl_setopt($ch, CURLOPT_POSTFIELDS,$post_data);
-            $http_result = curl_exec($ch);
-            $error = curl_error($ch);
-            $http_code = curl_getinfo($ch ,CURLINFO_HTTP_CODE);
-            $obj = json_decode($http_result);
-            // statusId response 0 for success, 1 for failure
-            curl_close($ch);
-            if($obj->{'statusId'}==0){
-                return Response::json(array(
-                            'data' => true,
-                        ));
-            }else{
-                return Response::json(array(
-                            'data' => false,
-                        ));
+            $input = $req->all();
+            //print_r($input);exit(); 
+            //sms curl to write here
+            //$otp = mt_rand(100000, 999999);
+            $otp=123456;
+            //setting details to session to retrive at time of posting
+            Session::put('contact', $req['contact']);
+            Session::put('name', $req['name']);
+            Session::put('email', $req['email']);
+            // save user but not verified till now
+            $qu=new registrationModel();
+                      $qu->username=$req['name'];
+                      $qu->email= $req['email'];
+                      $qu->contact= $req['contact'];
+                      $qu->password= md5($req['set_pwd']);
+                      $qu->provider_user_id=0;
+                      $qu->provider='WEBSITE-NOT-VERIFIED';
+                      $qu->created_at=date("Y-m-d H:i:s");
+            if($qu->save()) {
+                   
+               Session::put('verify_id',$qu->id);
+               Session::put('user_id',$qu->id);
+                     // $req->session()->put('is_login',1);
+            DB::table('customer_details')->insert(['user_id' =>$qu->id]);
+                     
             }
-        
-        }else{
-             return Response::json(array(
+            // user entered 
+
+
+            $value = Session::get('contact');
+            //ends 
+            //insert into DB
+            $query=DB::table('otp')->insertGetId(
+            ['name' => $req['name'],'contact'=>$req['contact'],'email'=>$req['email']
+            ,'source'=>'web_user','product'=>$req['product'],'otp'=>$otp,'status'=>'0','created_at'=> date("Y-m-d H:i:s")]
+            );
+
+            Session::put('login_id',$query);
+            if($query){
+                //calling service to send sms 
+                $post_data='{"mobNo":"'.$req['contact'].'","msgData":"your otp is '.$otp.' - RupeeBoss.com",
+                    "source":"WEB"}';
+                $url = "http://beta.services.rupeeboss.com/LoginDtls.svc/xmlservice/sendSMS";
+                $ch = curl_init();
+                curl_setopt($ch, CURLOPT_VERBOSE, 1);
+                curl_setopt( $ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
+                curl_setopt($ch, CURLOPT_URL, $url);
+                curl_setopt($ch, CURLOPT_POST, 1);
+                curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+                curl_setopt($ch, CURLOPT_FAILONERROR, 0);
+                curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+                curl_setopt($ch, CURLOPT_POSTFIELDS,$post_data);
+                $http_result = curl_exec($ch);
+                $error = curl_error($ch);
+                $http_code = curl_getinfo($ch ,CURLINFO_HTTP_CODE);
+                $obj = json_decode($http_result);
+                // statusId response 0 for success, 1 for failure
+                curl_close($ch);
+                if($obj->{'statusId'}==0){
+                    return Response::json(array(
+                                'data' => true,
+                            ));
+                }else{
+                    return Response::json(array(
+                                'data' => false,
+                            ));
+                }
+            
+            }else{
+                 return Response::json(array(
+                                'data' => false,
+                            ));
+            }
+
+            }
+        }catch(\Exception $ee){
+            return Response::json(array(
                             'data' => false,
                         ));
         }
-
-  }
 
 }
      public function otp_verify(Request $req){
         //print_r($req->all());
         //insert into DB
         //$c_date=date("Y-m-d H:i:s");
+        try{
         $phone = Session::get('contact');
         $query=DB::table('otp')
             ->where('otp', $req['otp'])
@@ -231,7 +241,14 @@ class FormController extends Controller
                             'data' => false,
                         ));
         }
+        }catch(\Exception $ee){
+            return Response::json(array(
+                            'data' => false,
+                        ));
+        }
     }
+
+
     function show_quotes(Request $req){
         //print_r($req->all());
        return view('show-quotes')->with($req);

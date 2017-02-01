@@ -10,8 +10,8 @@
 				<div class="col-md-12 white-bg">
 					<div class="row text-left comp-pg rate">
 						<p><b>Would like to know your credit score before applying 	for loan 	</b></p>
-						<p>Your personal information is required to retrive your credit Report and Score. 
-							All of the information you provide will be transfered to us through a private secure connection</p>
+						<p>Your personal information is required to retrieve your credit Report and Score. 
+							All of the information you provide will be transferred to us through a private secure connection</p>
 							<form class="" id="compareform" role="form" method="POST" action="show-credit-report">
 							 {{ csrf_field() }}
 								<div class="row">
@@ -83,7 +83,12 @@
 										<div class="form-group">
 											<h4 class="hdr">&nbsp;&nbsp;&nbsp;&nbsp;Contact Details</h4>
 											<div class="col-md-4">
-												<input type="text" id="mobile" name="mobileNo" class="form-control" placeholder="Mobile" maxlength="10" minlength="10" required onkeypress="return fnAllowNumeric(event)">
+											<?php $contact=Session::get('contact');
+												if($contact){?>
+													<input type="text" id="mobile" name="mobileNo" class="form-control" readonly value=<?php echo $contact; ?>>										
+												<?php }else{?>
+													<input type="text" id="mobile" name="mobileNo" class="form-control" placeholder="Mobile" maxlength="10" minlength="10" required onkeypress="return fnAllowNumeric(event)">
+														<?php }?>
 											</div>
 											<div class="col-md-4">
 												<input type="text" class="form-control" id="telephoneNo" name="telephoneNo" placeholder="telephone No" required="" onkeypress="return fnAllowNumeric(event)" maxlength="10" minlength="10">
@@ -104,6 +109,7 @@
 											<div class="col-md-12">
 												<input type="email" class="form-control" placeholder="Email Address*" name="email" required>
 											</div>
+												
 										</div>
 									</div>
 									<div class="row">
@@ -128,14 +134,13 @@
 											<div class="col-md-4">
 												<input type="text" class="form-control" placeholder="Ration card No" name="rationcard" >
 											</div>
-										<div class="">
+										<div class="col-md-12">
 										<input type="checkbox" name="terms" required>
 											I hereby confirm that I have read and understood the
-											<a href="#" data-toggle="modal" data-target="#Experian_terms_modal"> Rupeeboss Terms
-											</a>
-											 and Conditions applicable to this service and that all the details furnished by me above are true and correct. I further provide consent to Rupeeboss and its affiliates to contact me with reference to financial products and this consent shall override any registration with DNC/NDNC.
+			<a href="#" data-toggle="modal" data-target="#Experian_terms_modal"> Rupeeboss Terms</a> and Conditions applicable to this service and that all the details furnished by me above are true and correct. I further provide consent to Rupeeboss and its affiliates to contact me with reference to financial products and this consent shall override any registration with DNC/NDNC.
+
 										</div>
-										<div class="">
+										<div class="col-md-12">
 										<input type="checkbox" name="autorize" required>
 											I hereby authorize Rupeeboss to retrieve my Credit information report on my behalf from<a href="#" data-toggle="modal" data-target="#RB_Experian_terms_modal"> Experian Credit Information Services Private Limited.</a>
 										</div>

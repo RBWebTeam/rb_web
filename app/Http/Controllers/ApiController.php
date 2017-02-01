@@ -8,27 +8,7 @@ use Response;
 use App\bank_quote_api_request;
 class ApiController extends Controller
 {
-	public function mobile_api_compare(Request $req){
-		
-		$data= $this->compare($req);
-		//print_r($data);exit();
-		if($data!='Failure occured'){
-			$status_Id=0;
-			$msg="data delievered";
-			$new_data=$data->getData()->data;
-		}
-		else{
-			$new_data=new stdClass();
-			$status_Id=1;
-			$msg=" Something went wrong.";
-			
-		}
-		
-		//print_r($a);
-		$new_data=array('data' =>$new_data ,'msg' =>$msg,'status_Id'=>$status_Id );
-		return $new_data;
-			
-	}
+	
 	public function compare(Request $req){
 		//handling corner cases
 		try{
@@ -226,6 +206,7 @@ class ApiController extends Controller
 	}
 	public function compare_test(Request $req){
 		//API to get bank quote
+		try{
 		$req_all= implode(',',$req->all());
 		$log=DB::table('api_log')
 		->insertGetId(['api_name'=>'GetHomeLoanQuotes_test',
@@ -237,13 +218,9 @@ class ApiController extends Controller
 
 			]);
 
-		try{
+		
 			$data=DB::select('call  usp_get_bank_quot ("'.$req['PropertyCost'].'","'.$req['LoanTenure'].'","'.$req['LoanRequired'].'","'.$req['ApplicantGender'].'","'.$req['ApplicantIncome'].'","'.$req['ApplicantObligations'].'","'.$req['ApplicantDOB'].'","'.$req['CoApplicantYes'].'","'.$req['CoApplicantIncome'].'","'.$req['CoApplicantObligations'].'","'.$req['Turnover'].'","'.$req['ProfitAfterTax'].'","'.$req['Depreciation'].'","'.$req['DirectorRemuneration'].'","'.$req['CoApplicantTurnover'].'","'.$req['CoApplicantProfitAfterTax'].'","'.$req['CoApplicantDepreciation'].'","'.$req['CoApplicantDirectorRemuneration'].'","'.$req['ApplicantSource'].'","'.$req['ProductId'].'")');
-		}catch (Exception $e) {
-
-			echo 'Caught exception: '.  $e->getMessage(). "\n";
-			die("exception");
-		}
+		
 		
 		if($data){
 			$status="Success";
@@ -267,6 +244,12 @@ class ApiController extends Controller
 		return Response::json(array(
 			'data' => $data,
 			));
+
+		}catch (\Exception $e) {
+			return Response::json(array(
+			'error' => $e,
+			));
+		}
 	}
 	//quote of personal loan API
 	public function comapre_personal_loan(Request $req){

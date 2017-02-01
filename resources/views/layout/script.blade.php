@@ -1654,7 +1654,64 @@ function getFbUserData(){
 
 </script>
 
+<!-- Credit card otp scripts -->
+<script type="text/javascript">
+    $('#credit_report_send_otp').click(function(){
+      //console.log($('#mobile').val().length);
+      if(($('#mobile').val().length)<10){
+          $('#mobile_val').show();
+          return false;
+      }
 
+        
+      $('#wait_div').show();
+      $('#mobile_val').hide();
+      $.ajax({  
+           type: "POST",  
+           url: "{{URL::to('credit-report-send-otp')}}",
+           dataType:"json",
+           data : $('#credit_report_otp_form').serialize(),
+           success: function(data){
+             var data_1=data['data'];
+             if(data_1){
+              $('#credit_report_otp_form').hide();
+          $('#credit_report_verify_form').show();
+              //console.log("hah");
+             }else{
+              window.location.href="{{URL::to('went-wrong')}}";
+             }
+         }
+       });
+    });
+
+    $("#credit_report_verify_otp").click(function(){
+      if($('#verify').val().length<6)
+        { $('#otp_val').show();
+          return false;
+        }
+      $('#otp_val').hide();
+      $('#wrong_otp').hide();
+      $('#wait_div_otp').show();
+      $.ajax({  
+           type: "POST",  
+           url: "{{URL::to('credit-report-verify')}}",
+           dataType:"json",
+           data : $('#credit_report_verify_form').serialize(),
+           success: function(data){
+             var data_1=data['data'];
+             console.log(data_1);
+             if(data_1){
+              //console.log("fine");
+
+              window.location.href="{{URL::to('credit-report')}}";
+             }else{
+              $('#wrong_otp').show();
+              $('#wait_div_otp').hide();
+             }
+         }
+       });
+    });
+  </script>
 
 <!-- post end -->
 

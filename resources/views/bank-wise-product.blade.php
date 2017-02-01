@@ -74,13 +74,8 @@
  
 
  @foreach($getQuery as  $key=>$value )
- <div class="table-responsive">
- <div>
-    <!-- <div class="table-responsive"> -->
+ <div class="table-responsive outer-brd">
 	<table width="100%" border="1" class="tbl">
-   
-  
-
   <tr>
     <!-- <td width="9%" class="upper">Compare</td> -->
     <!-- <td><div class="img-c"> --><!-- <img src="{{url('images/axis.jpg')}}" width="100" height="30"> --><!-- Bank_ID</div></td> -->
@@ -94,9 +89,10 @@
     <td class="upper">Profession</td>
     <?php  if($product == 'home-loan' || $product =='personal-loan'){
     ?>
-    <td class="upper"><a href="{{URL::to('apply-')}}{{$product}}">Apply Online</a></td>
+    <td class="upper"><a href="{{URL::to('apply-')}}{{$product}}" class="apply-btn">Apply Online</a></td>
 	<?php }else{ ?>
-	<td class="upper"><a href="{{URL::to('apply-business-loan')}}">Apply Online</a></td>
+	<td class="upper"><a href="{{URL::to('apply-business-loan')}}" class="apply-btn">Apply Online</a></td>
+
 	<?php } ?>
 
    <!--  <td class="upper" width="17%"><a href="{{url('apply')}}dw">Apply Online</a></td> -->
@@ -147,7 +143,6 @@
 
 </table>
 
-</div>
 </div>
 @endforeach
 

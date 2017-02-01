@@ -194,6 +194,7 @@ $('input[name="checkbox"]').change(function(){
   if($("input[name='checkbox']:checked").length >= limit) {
        this.checked = false;      
 
+
        alert("Please select no more than 3 Banks.");
 
     
@@ -218,7 +219,7 @@ $('input[name="checkbox"]').change(function(){
        var span="<div class='col-md-2 col img-c white-bg' id='" +id + "'><input type='hidden' name='bank_id[]' id='"+id+"' value='"+id+"' ><span class='close btnspan' >×</span><img src='"+logo+"'class='img-responsive' width='100' height='80'>" + this.value + "</div>";
 
 
- var tables="<div class='col-md-3 col-sm-6 bdr-btm' id='" +tid+ "'>  <ul  class='comp hide-title'><li><img src='"+logo+"' width='100' height='50'></li><li><span class='hidden-lg'>Loan Amount - </span>"+LoanRequired+"</li><li><span class='hidden-lg'>Rate - </span>"+emi+"(for "+LoanTenure +" years)</li><li><span class='hidden-lg'>EMI - </span>"+pinterst+"</li><li><span class='hidden-lg'>Processing Fee - </span>"+processingfee+"</li><li><span class='hidden-lg'>Pre closed Fee - </span>"+Pre_Closer_Fixed+" %</li><li></li><li><a href='"+url+"'  class='btn btn-primary btn-outline'>Apply Now</a></li></ul></div>";
+ var tables="<div class='col-md-3 col-sm-6 bdr-btm' id='" +tid+ "'>  <ul  class='comp hide-title'><li><img src='"+logo+"' width='100' height='50'></li><li><span class='hidden-lg'>Loan Amount - </span>"+LoanRequired+"</li><li><span class='hidden-lg'>Rate - </span>"+emi+"(for "+LoanTenure +" years)</li><li><span class='hidden-lg'>EMI - </span>"+pinterst+"%</li><li><span class='hidden-lg'>Processing Fee - </span>"+processingfee+"</li><li><span class='hidden-lg'>Pre closed Fee - </span>"+Pre_Closer_Fixed+" %</li><li></li><li><a href='"+url+"'  class='btn btn-primary btn-outline'>Apply Now</a></li></ul></div>";
 
 
           if(x==2){

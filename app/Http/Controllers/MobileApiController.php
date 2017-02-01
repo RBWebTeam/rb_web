@@ -18,17 +18,18 @@ class MobileApiController extends ApiController
 			$msg="data delievered";
 			$new_data=$data->getData()->data;
 			$quote=$data->getData()->quote_id;
-			//$url="";
+			$url="http://beta.erp.rupeeboss.com/homeloan/home_loan_application_form.aspx";
 		}
 		else{
 			$new_data=new stdClass();
 			$status_Id=1;
 			$msg=" Something went wrong.";
 			$quote=new stdClass();
+			$url=new stdClass();
 		}
 		
 		//print_r($a);
-		$new_data=array('data' =>$new_data ,'msg' =>$msg,'status_Id'=>$status_Id,'quote_id'=>$quote );
+		$new_data=array('data' =>$new_data ,'msg' =>$msg,'status_Id'=>$status_Id,'quote_id'=>$quote,'url'=>$url );
 		return $new_data;
 			
 	}

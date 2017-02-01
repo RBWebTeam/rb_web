@@ -37,7 +37,7 @@
   <tr>
 <!--     <td><input type="checkbox" name="cehckbox"/></td> -->
     <td>{{$home_loan}}</td>
-    <td>{{$value->roi}}</td>
+    <td>{{$value->roi}}%</td>
     <td>{{$value->amt_from}}-{{$value->amt_to}}</td>
     <td>10,000 (for 3 years)</td>
     <td rowspan="2"><strong>Special Features:-</strong> Pre close Fee 0%</td>
@@ -47,7 +47,7 @@
     <td class="upper">  <button type="button" data-toggle="collapse" data-target="#{{$key}}">Know More</button><!-- <a href="#">Know More</a> --></td>
     <td>Processing Fee - INR {{$value->pf}} + ST</td>
     <td>Interest Paid - INR 50,000</td>
-    <td>Max tenure - {{$value->Max_Tenure}}Years</td>
+    <td>Max tenure - {{$value->Max_Tenure}}&nbsp;Years</td>
     </tr>
 
     

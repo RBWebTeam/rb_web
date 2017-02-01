@@ -30,6 +30,7 @@ class BankController extends Controller
             ->where('bank_product_web_intrest.bank_id','=',$product_query->Bank_Id)
             ->where('bank_product_web.Profession','=','1')
             ->orderBy('bank_product_web_intrest.roi', 'DESC')
+            ->distinct()
             ->take('6')
             ->get();
    

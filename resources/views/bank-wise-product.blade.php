@@ -96,7 +96,7 @@
     ?>
     <td class="upper"><a href="{{URL::to('apply-')}}{{$product}}">Apply Online</a></td>
 	<?php }else{ ?>
-	<td class="upper"><a href="{{URL::to('contact-us')}}">Apply Online</a></td>
+	<td class="upper"><a href="{{URL::to('apply-business-loan')}}">Apply Online</a></td>
 	<?php } ?>
 
    <!--  <td class="upper" width="17%"><a href="{{url('apply')}}dw">Apply Online</a></td> -->
@@ -105,13 +105,19 @@
   <tr>
 <!--     <td><input type="checkbox" name="cehckbox"/></td> -->
     <!-- <td>{{$value->bank_id}}</td>  -->
-    <td>{{$value->roi}}</td> 
+    <td>{{$value->roi}}%</td> 
     <td>{{$value->Max_Loan_Amt}}</td> 
    <td>{{$value->Min_Income}}</td>
-   <td>{{$value->Min_Age}}-{{$value->Max_Age}}</td>
-   <td>{{$value->Women_roi}}</td>
+   <td><span>{{substr($value->Min_Age,'0',-3)}}-{{substr($value->Max_Age,'0',-3)}}</span></td>
+     @if($value->Women_roi!='')
+        <td>{{$value->Women_roi*100}}%</td> 
+     @else
+      <td>nil</td> 
+     @endif
+
+
    <td>{{$value->MinCredit_Score}}</td> 
-   <td>{{$value->Min_Tenure}}-{{$value->Max_Tenure}}Years</td> 
+   <td>{{$value->Min_Tenure}}-{{$value->Max_Tenure}}&nbsp;Years</td> 
    <td><p>Salaried</p></td> 
   <!--  <td class="upper" width="17%"><a href="{{URL::to('apply-')}}{{$product}}">Apply Online</a></td> -->
 

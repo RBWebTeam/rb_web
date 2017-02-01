@@ -84,8 +84,8 @@
                                   @endif
                                 <div class="col-md-12">
                                     <span><strong>Gender :-</strong></span> &nbsp;&nbsp; Male 
-                                    <input name="gender" value="male" <?php if ($gender == 'male') echo "checked='checked'"; ?>  type="radio" class="rado" required> | Female 
-                                    <input name="gender" <?php if ($gender == 'female') echo "checked='checked'"; ?> value="female" type="radio" class="rado" required>
+                                    <input name="gender" value="male" <?php if ($gender == 'male'){ echo "checked='checked'";}else{ echo "checked='checked'"; } ?>  type="radio" class="rado" > | Female 
+                                    <input name="gender" <?php if ($gender == 'female') echo "checked='checked'"; ?> value="female" type="radio" class="rado"  >
                                 </div>
                                         <br>
 

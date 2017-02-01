@@ -53,15 +53,8 @@
 										</div>
 
 										<div class="col-md-4">
-												<select required name="city">
-											  @foreach($city as $city_name)
-				      						 <option value="{{ $city_name->City_Id }}" data-state="{{$city_name->state_id}}">
-				      						 	<span style="font-family: bold; ">{{ $city_name->City_Name }}
-				      						 	</span>
-				      						 </option>
-
-												@endforeach
-												</select>
+										<input type="text" class="form-control" placeholder="city name" name="city" id="city">
+											
 										</div>
 										<div class="col-md-4">
 												<select required name="state">

@@ -138,8 +138,8 @@ class FormController extends Controller
             $input = $req->all();
             //print_r($input);exit(); 
             //sms curl to write here
-            //$otp = mt_rand(100000, 999999);
-            $otp=123456;
+            $otp = mt_rand(100000, 999999);
+            //$otp=123456;
             //setting details to session to retrive at time of posting
             Session::put('contact', $req['contact']);
             Session::put('name', $req['name']);

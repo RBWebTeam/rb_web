@@ -12,11 +12,12 @@ class ApiController extends Controller
 	public function compare(Request $req){
 		//handling corner cases
 		try{
-			if(isset($req['quote_id']) && $req['quote_id']==0 && !$req['LoanTenure'] ){
+			if(!isset($req['quote_id']) && $req['quote_id']==0 && !$req['LoanTenure'] ){
 					return Response::json(array(
 				'error' => "Insufficient/wrong information Passed"
 				
 			));
+
 			}else{
 		//API to get bank quote
 		$request=$req;
@@ -175,7 +176,7 @@ class ApiController extends Controller
 			));
 		}
 		}catch (\Exception $e) {
-			$error=-1;
+			$error="Failure occured";
 			return $error;
 		}
 	}
@@ -473,6 +474,29 @@ run_else:
 			'msg'=>$msg
 			));
 
+	}
+	public function getQuoteByBrokerId(Request $req){
+		//print_r($req['BrokerId']);exit();
+		$id=$req['BrokerId'];
+		 $data=DB::table('bank_quote_api_request')
+        ->where('BrokerId','=',$id)
+        ->get();
+        if($data && $req['BrokerId']){
+			$status_Id=0;
+			$msg="data delievered";
+			$new_data=$data;
+		}
+		else{
+			$new_data=NULL;
+			$status_Id=1;
+			$msg=" Something went wrong.";
+			
+		}
+		return Response::json(array(
+			'data' => $new_data,
+			'status_Id'=>$status_Id,
+			'msg'=>$msg
+			));
 	}
 	
 	

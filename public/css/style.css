@@ -1958,4 +1958,4 @@ body {background:#eee;}
   .hide-title ul {margin:0px; padding:0px;}
   .hide-title ul li {list-style-type:none;}
   .txt-title1 {font-weight:bold; text-transform:uppercase; border-right:1px solid #ddd;}
-  .error-template img {margin:0 auto;}
+  .error-template img {margin:auto; }

@@ -79,10 +79,10 @@ class SocialsiteController extends Controller{
              $authUser =$query->where('provider_user_id', $facebookUser->id)->first();
          if ($authUser){
 
-                       Session::set('email', $authUser->email);
-                       Session::set('user_id', $authUser->id);
-                       Session::set('name', $authUser->username);
-                       Session::set('is_login', 1);
+                       Session::put('email', $authUser->email);
+                       Session::put('user_id', $authUser->id);
+                       Session::put('name', $authUser->username);
+                       Session::put('is_login', 1);
                
              return $authUser->username;
         }else{
@@ -107,11 +107,11 @@ class SocialsiteController extends Controller{
                   $query->created_at=date('Y-m-d H:i:s');
 
                if($query->save()) {
-                  Session::set('email',$query->email);
-                  Session::set('contact',$query->contact);
-                  Session::set('user_id',$query->id);
-                  Session::set('name',$query->username);
-                  Session::set('is_login',1);
+                  Session::put('email',$query->email);
+                  Session::put('contact',$query->contact);
+                  Session::put('user_id',$query->id);
+                  Session::put('name',$query->username);
+                  Session::put('is_login',1);
                
         }
 
@@ -131,10 +131,10 @@ return  $authUser;
              $authUser =$query->where('provider_user_id',$vale['id'])->first();
 
                if ($authUser){
-                       Session::set('email', $authUser->email);
-                       Session::set('user_id', $authUser->id);
-                       Session::set('name', $authUser->username);
-                       Session::set('is_login', 1);
+                       Session::put('email', $authUser->email);
+                       Session::put('user_id', $authUser->id);
+                       Session::put('name', $authUser->username);
+                       Session::put('is_login', 1);
                $arr = array('error' => 1);
                echo json_encode($arr);
         }else{
@@ -149,11 +149,11 @@ return  $authUser;
                   $query->created_at=date('Y-m-d H:i:s');
 
                if($query->save()) {
-                  Session::set('email',$query->email);
-                  Session::set('contact',$query->contact);
-                  Session::set('user_id',$query->id);
-                  Session::set('name',$query->username);
-                  Session::set('is_login',1);
+                  Session::put('email',$query->email);
+                  Session::put('contact',$query->contact);
+                  Session::put('user_id',$query->id);
+                  Session::put('name',$query->username);
+                  Session::put('is_login',1);
                   DB::table('customer_details')->insert(['user_id' =>$query->id]);
                
         }
@@ -189,10 +189,10 @@ return  $authUser;
              $authUser =$query->where('provider_user_id',$vale['id'])->first();
 
                if ($authUser){
-                       Session::set('email', $authUser->email);
-                       Session::set('user_id', $authUser->id);
-                       Session::set('name', $authUser->username);
-                       Session::set('is_login', 1);
+                       Session::put('email', $authUser->email);
+                       Session::put('user_id', $authUser->id);
+                       Session::put('name', $authUser->username);
+                       Session::put('is_login', 1);
                $arr = array('error' => 1);
                echo json_encode($arr);
         }else{
@@ -209,11 +209,11 @@ return  $authUser;
                   $query->created_at=date('Y-m-d H:i:s');
 
                if($query->save()) {
-                  Session::set('email',$query->email);
-                  Session::set('contact',$query->contact);
-                  Session::set('user_id',$query->id);
-                  Session::set('name',$query->username);
-                  Session::set('is_login',1);
+                  Session::put('email',$query->email);
+                  Session::put('contact',$query->contact);
+                  Session::put('user_id',$query->id);
+                  Session::put('name',$query->username);
+                  Session::put('is_login',1);
                   DB::table('customer_details')->insert(['user_id' =>$query->id]);
                
         } 

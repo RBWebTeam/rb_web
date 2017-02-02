@@ -105,4 +105,4 @@ Route::get('went-wrong','ErrorController@went_wrong');
 // Creditcardform
 Route::get('credit-card-form','CreditcardController@credit_card_form');
 Route::post('credit-submit','CreditcardController@credit_form_submit');
-// Route::post('credit-submit','CreditcardController@store');
+

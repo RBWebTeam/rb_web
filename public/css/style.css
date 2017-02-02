@@ -1952,6 +1952,7 @@ body {background:#eee;}
  .bdr-btm {border:1px solid #ddd; margin-bottom:10px;}
 }
 
+.bt-bg {background:url(../images/bt-bg.jpg) no-repeat;}
 .comp-pg .comp li {list-style-type:none;padding:10px;}
   .comp-pg .comp li img {margin:0 auto;}
   .hide-title li span {font-weight:bold;}

@@ -19,7 +19,7 @@
 <body>
 
 
-<div class="fh5co-cta">
+<div class="fh5co-cta bt-bg" style="background:url(../images/bt-bg.jpg) no-repeat;">
 		<div class="overlay"></div>
 		<?php if($loan == "home-loan") {?>
 		<div class="container">

@@ -63,9 +63,9 @@
     </select></td> -->
   </tr>
 </table>
-</div>
+</div><?php $key=0; ?>
 @if(count($quote_data) > "")
-@foreach($quote_data as $q) 
+@foreach($quote_data as $q) <?php $key++; ?>
  <div class="table-responsive outer-brd">
 <table width="100%" border="1" class="tbl">
   <tr>
@@ -103,13 +103,28 @@
     <td >{{$q->emi}} (for {{$q->LoanTenure}} years)</td>
     <td   rowspan="2"><strong>Special Features:</strong>- Pre close Fee {{$q->Pre_Closer_Fixed}}%</td>
   </tr>
-  <tr>
+
+    <tr>
     <td><i class="icon-thumbs-up"></i></td>
-    <td class="upper"><a href="#">Know More</a></td>
+    <td class="upper"><!-- <a href="#">Know More</a>  --><button type="button" data-toggle="collapse" data-target="#{{$key}}">Know More</button></td>
     <td>Processing Fee - INR {{$q->processingfee}} + ST</td>
     <td>Guarantor Required - {{$q->guarantor_required}}</td>
     <td>Instant Approval - {{$q->eApproval}}</td>
     </tr>
+    <table>
+     <div id="{{$key}}" class="collapse" style="background-color: #F6F6F6; width: 100%;height: auto;">
+  <li class="list-group-item"><i class="fa fa-dot-circle-o" aria-hidden="true"></i> No guarantor required</li>
+
+          <li class="list-group-item"><i class="fa fa-dot-circle-o" aria-hidden="true"></i> No pre-closure and part payment fee
+            <mark style="color: red">Special offers are available for women applicants at a lower rate</mark></li>
+          <li class="list-group-item"><i class="fa fa-dot-circle-o" aria-hidden="true"></i> Age at least 18 and less than 60</li>
+           <li class="list-group-item"><i class="fa fa-dot-circle-o" aria-hidden="true"></i> Salaried / Self - Employed with regular income,Earn more than the minimum income required</li>
+
+   </div></table>
+
+
+ 
+
 </table>
 </div>
 @endforeach

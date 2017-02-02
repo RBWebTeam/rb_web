@@ -157,7 +157,7 @@
     <div class="modal-content col-md-12 text-justify model-hig">
 	<br>
 	<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-     <h2 class="text-center"> RupeeBoss Value Added-Credit Score Service</h2>
+     <h2 class="text-center"> Rupeeboss Terms</h2>
 	<br>
 <h3>TERMS OF USE</h3>
 <p>RupeeBoss Value Added-Credit Score Service, is an online service (“Credit Score Service” / “Service”) that enables you to access your Credit Score/Report, based on the data/information/report supplied by our third party data processing service provider, M/s Experian Credit Information Services Private Limited (the “Processing Service Provider”). The said Credit Score Service consists of receipt of your credit report/score. This information is for your personal use only and the said Service/report is subject to your agreement to the provisions set forth below.
@@ -201,7 +201,9 @@ We use all reasonable physical, administrative, technical and organizational mea
     <div class="modal-content col-md-12 text-justify model-hig ">
     <br>
 	<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+
 	<h2 class="text-center">Experian Terms </h2>
+
 	<br>
 	<h4 class="text-center ">CONSENT IN RELATION TO ACCESS TO CREDIT INFORMATION THROUGH EXPERIAN</h4>
     <p>This End User Agreement (the “Agreement”) is made between you (the “User” or “You”) and Rupeeboss Financial Services Private Limited, a private limited company having its registered office at C-605, Titenium Square Nr. BMW Showroom, Thaltej Ahmedabad Ahmedabad GJ 380054 India 

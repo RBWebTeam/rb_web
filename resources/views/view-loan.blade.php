@@ -15,13 +15,18 @@
     <div class="table-responsive outer-brd">
 	<table width="100%" border="1" class="tbl">
    
-  
 
   <tr>    
     <td class="bdr-btm"><center><img src="{{ $value->Bank_Logo}}" width="130" ></center></td>
+
+   
+        <td width="16%" class="upper bdr-btm"> Loan Amount </td>
     <td width="16%" class="upper bdr-btm">Loan Tenure</td>
     <td width="16%" class="upper bdr-btm">Processing Fee</td>
     <td width="18%" class="upper bdr-btm">Interest Rate</td>
+
+
+
     <?php $Loans=strtolower(str_replace(' ','-',$home_loan)); ?>
      <?php if($Loans=='lap'){?>
     <td width="17%" class="blue-bg"><h4><a href="{{url('apply-loan-against-property')}}" class="apply-btn">Apply Online</h4></a></td>
@@ -32,9 +37,11 @@
 
   <tr>
      <td class="upper">  <button type="button" data-toggle="collapse" data-target="#{{$key}}">Know More</button></td>
-     <td>{{$value->Min_Tenure}}-{{$value->Max_Tenure}}</td>
-     <td>{{$value->pf}}</td>
+     <td>{{(int)$value->amt_from }}-{{(int)$value->amt_to}}</td>
+     <td> {{$value->Min_Tenure}}-{{$value->Max_Tenure}} Years</td>
+     <td>{{$value->pf}} %</td>
      <td>{{$value->roi}}%</td>
+
      <td></td>
   </tr>
 

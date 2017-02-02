@@ -205,25 +205,27 @@ We use all reasonable physical, administrative, technical and organizational mea
 	<h2 class="text-center">Experian Terms </h2>
 
 	<br>
-    <p class="text-lowercase"><span class="text-capitalize">You </span> HEREBY APPOINT RUPEEBOSS AS YOUR AUTHORISED REPRESENTATIVE TO RECEIVE YOUR CREDIT INFORMATION FROM EXPERIAN CREDIT INFORMATION SERVICES PRIVATE LIMITED (“Experian”).</p>
-<p class="text-lowercase"><span class="text-capitalize">You </span>HEREBY IRREVOCABLY AND UNCONDITIONALLY CONSENT TO SUCH CREDIT INFORMATION BEING PROVIDED BY EXPERIAN TO YOU AND RUPEEBOSS AND YOU HEREBY AGREE, ACKNOWLEDGE AND ACCEPT THE TERMS AND CONDITIONS SET FORTH HEREIN.</p>
+	<h4 class="text-center ">CONSENT IN RELATION TO ACCESS TO CREDIT INFORMATION THROUGH EXPERIAN</h4>
+    <p>This End User Agreement (the “Agreement”) is made between you (the “User” or “You”) and Rupeeboss Financial Services Private Limited, a private limited company having its registered office at C-605, Titenium Square Nr. BMW Showroom, Thaltej Ahmedabad Ahmedabad GJ 380054 India 
+	(“Rupeeboss Financial Services Private Limited”, “Us” or “We”, which term shall include its successors and permitted assigns). The User and Rupeeboss Financial Services Private Limited shall be collectively referred to as the “Parties” and individually as a “Party”.</p>
 
-<p class="text-lowercase"><span class="text-capitalize">You</span> HEREBY ALSO AGREE AND ACKNOWLEDGE THAT FOR RUPEEBOSS TO SERVICE YOU AS A CUSTOMER, THE CREDIT INFORMATION SHALL BE SHARED BY EXPERIAN WITH YOU AND RUPEEBOSS ON A MONTHLY BASIS FOR A PERIOD OF 12 MONTHS CONTINUOUSLY TO ENSURE THAT YOU ARE ABLE TO HAVE AN ANNUAL VIEW OF YOUR CREDIT HISTORY. YOU FURTHER ALSO AGREE AND CONSENT TO RECEIVE SUCH CREDIT INFORMATION DIRECTLY FROM EXPERIAN AND ALSO THROUGH YOUR RUPEEBOSS ACCOUNT AS PER YOUR INDEPENDENT REGISTRATION WITH RUPEEBOSS.</p>
-<p>Please read the Terms and Conditions of this document carefully before accepting. By clicking on the "I ACCEPT/AGREE" button below, you are expressly agreeing to access the Experian Credit Information Report and Credit Score (as defined in the Important Information Section below) (together referred as "Credit Information") and share a copy of the Credit Information with RupeeBoss in the "as is" format. Please click on the link below to read and understand the Important Information section below.
-** This document is an electronic record in terms of the Information Technology Act, 2000 and Rules made there under, and the amended provisions pertaining to electronic records.</p>
-<p>Information Collection, Use, Confidentiality, No-Disclosure and Data Purging
-RUPEEBOSS/ We/ Us can only access your Credit Information as your authorized representative and we shall use the Credit Information for limited end use purpose consisting of and in relation to the services proposed to be availed by you from us on the Website. We shall not aggregate, retain, store, copy, reproduce, republish, upload, post, transmit, sell or rent the Credit Information to any other person and the same cannot be copied or reproduced other than as agreed herein. We also request you to read our Privacy Policy as provided in the website.</p>
-<p>We shall protect and keep confidential the Credit information both online and offline and use best in class security measures in line with applicable laws.</p>
-<p>The Credit Information shared by You, or received on your behalf shall be destroyed, purged, erased promptly upon the earlier of: (i) your written request to terminate this relationship with RupeeBoss; (ii) the completion of provision of the Services by us to you.</p> 
+	<h3>Terms and Conditions: </h3>
+	<h4>Information Collection, Use, Confidentiality, No-Disclosure and Data Purging</h4>
+	<p>Information Collection, Use, Confidentiality, No-Disclosure and Data Purging
+Rupeeboss Financial Services Private Limited shall access your Credit Information as your authorized representative and Rupeeboss Financial Services Private Limited shall use the Credit Information for limited End Use Purpose consisting of and in relation to the services proposed to be availed by you from Rupeeboss Financial Services Private Limited. We shall not aggregate, retain, store, copy, reproduce, republish, upload, post, transmit, sell or rent the Credit Information to any other person and the same cannot be copied or reproduced other than as agreed herein and in furtherance to CICRA. </p>
+
+<p>The Parties agree to protect and keep confidential the Credit Information both online and offline.</p>
+<p>The Credit Information shared by you, or received on by us on your behalf shall be destroyed, purged, erased promptly within 1 (one) Business Day of upon the completion of the transaction/ End Use Purpose for which the Credit Information report was procured. </p>
 <h3>Governing Law and Jurisdiction</h3>
-<p>The relationship between you and the parties shall be governed by laws of India and all claims or disputes arising there from shall be subject to the exclusive jurisdiction of the courts of [Mumbai].</p>
+<p>The relationship between you and Rupeeboss Financial Services Private Limited shall be governed by laws of India and all claims or disputes arising there from shall be subject to the exclusive jurisdiction of the courts of Mumbai. </p>
 <h3>Definitions:</h3>
-<p>Capitalized terms used herein but not defined above shall have the following meanings:</p>
-<p>"Business Day" means a day (other than a public holiday) on which banks are open for general business in [Mumbai].</p>
-<p class="text-lowercase">"Credit Information Report" means the credit information / scores / aggregates / variables or reports which shall be generated by Experian;</p>
-<p>"Credit Score" means the score which shall be mentioned on the Credit Information Report, which shall be computed by Experian.</p>
-<p>"CICRA" shall mean the Credit Information Companies (Regulation) Act, 2005 read with the Credit Information Companies Rules, 2006 and the Credit Information Companies Regulations, 2006, and shall include any other rules and regulations prescribed thereunder.</p>
-<p class="text-lowercase">PLEASE READ THE ABOVE MENTIONED IMPORTANT INFORMATION AND CLICK ON "ACCEPT/AGREE" FOLLOWED BY THE LINK BELOW TO COMPLETE THE AUTHORISATION PROCESS FOR SHARING OF YOUR CREDIT INFORMATION BY EXPERIAN WITH YOU AND RUPEEBOSS, IN ITS CAPACITY AS YOUR AUTHORISED REPRESENTATIVE.
-BY CLICKING "I ACCEPT/AGREE" YOU AGREE AND ACCEPT THE DISCLAIMERS AND TERMS AND CONDITIONS SET OUT HEREIN.THE TERMS AND CONDITIONS MENTIONED HEREIN MAY CHANGE IN ORDER TO COMPLY WITH GOVERNING LAWS OF THE COUNTRY AND THE CONSUMER SHALL BE BOUND TO ANY CHANGES TO THIS AGREEMENT.</p>
+<p>Capitalised terms used herein but not defined above shall have the following meanings:</p>
+<p><b>“Business Day”</b> means a day (other than a public holiday) on which banks are open for general business in Mumbai.</p>
+<p><b>“Credit Information Report”</b> means the credit information / scores/ aggregates / variables / inferences or reports which shall be generated by Experian;</p>
+<p><b>“Credit Score”</b> means the score which shall be mentioned on the Credit Information Report which shall be computed by Experian.</p>
+<p><b>“CICRA”</b> shall mean the Credit Information Companies (Regulation) Act, 2005 read with the Credit Information Companies Rules, 2006 and the Credit Information Companies Regulations, 2006, and shall include any other rules and regulations prescribed thereunder.</p>
+<p>** This document is an electronic record in terms of the Information Technology Act, 2000 and Rules made there under, and the amended provisions pertaining to electronic records.</p>
+
+
 
     </div></div></div>

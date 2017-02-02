@@ -53,15 +53,8 @@
 										</div>
 
 										<div class="col-md-4">
-												<select required name="city">
-											  @foreach($city as $city_name)
-				      						 <option value="{{ $city_name->City_Id }}" data-state="{{$city_name->state_id}}">
-				      						 	<span style="font-family: bold; ">{{ $city_name->City_Name }}
-				      						 	</span>
-				      						 </option>
-
-												@endforeach
-												</select>
+										<input type="text" class="form-control" placeholder="city name" name="city" id="city">
+											
 										</div>
 										<div class="col-md-4">
 												<select required name="state">
@@ -137,12 +130,20 @@
 										<div class="col-md-12">
 										<input type="checkbox" name="terms" required>
 											I hereby confirm that I have read and understood the
-			<a href="#" data-toggle="modal" data-target="#Experian_terms_modal"> Rupeeboss Terms</a> and Conditions applicable to this service and that all the details furnished by me above are true and correct. I further provide consent to Rupeeboss and its affiliates to contact me with reference to financial products and this consent shall override any registration with DNC/NDNC.
 
-										</div>
-										<div class="col-md-12">
-										<input type="checkbox" name="autorize" required>
-											I hereby authorize Rupeeboss to retrieve my Credit information report on my behalf from<a href="#" data-toggle="modal" data-target="#RB_Experian_terms_modal"> Experian Credit Information Services Private Limited.</a>
+											<a href="#" data-toggle="modal" data-target="#Experian_terms_modal"> Rupeeboss Terms</a> and Conditions applicable to this service and that all the details furnished by me above are true and correct. I further provide consent to Rupeeboss and its affiliates to contact me with reference to financial products and this consent shall override any registration with DNC/NDNC.
+										<p></p>
+										<hr>
+										<p>You hereby consent to Rupeeboss Financial Services Private Limited being appointed as your authorized representative to receive your Credit Information from Experian for the purpose of processing the loan applications.</p>
+<p class="text-lowercase">BY EXECUTING THIS AGREEMENT / CONSENT FORM, YOU ARE EXPRESSLY 
+AGREEING TO ACCESS THE EXPERIAN CREDIT INFORMATION REPORT AND CREDIT SCORE, 
+AGGREGATE SCORES, INFERENCES, REFERENCES AND DETAILS (AS DEFINED BELOW) (TOGETHER REFERRED AS “CREDIT INFORMATION”). 
+YOU HEREBY ALSO IRREVOCABLY AND UNCONDITIONALLY CONSENT TO SUCH CREDIT INFORMATION BEING PROVIDED BY EXPERIAN TO 
+YOU AND RUPEEBOSS FINANCIAL SERVICES PRIVATE LIMITED BY USING EXPERIAN TOOLS, 
+ALGORITHMS AND DEVICES AND YOU HEREBY AGREE, ACKNOWLEDGE AND
+ ACCEPT THE <a href="#" data-toggle="modal" data-target="#RB_Experian_terms_modal"><span class="text-capitalize">Terms and Condition</span></a> SET FORTH HEREIN.</p>
+ <p><input type="checkbox" name="autorize" required>&nbsp; Accept &nbsp;&nbsp; <input type="checkbox" name="autorize" required>&nbsp; Decline</p>
+
 										</div>
 
 										</div>

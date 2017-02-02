@@ -156,7 +156,7 @@
       </div>
       <div class="modal-body">
         <h4><p>Amount should be greater than "5,00,000" and lesser than "10,00,000,000".</p></h4>
-        <h4><p>As well as Interest should be greater than  9.05%. If less you are already on Lower Rate.</p></h4>
+        <h4><p>As well as Interest should be greater than  8.54%. If less you are already on Lower Rate.</p></h4>
       </div>
       
       <div class="modal-footer">
@@ -217,17 +217,19 @@
   $(document).ready(function(){
     $("#Month").change(function(){
       var amt = $("#loanterm").val();
+      console.log($("#loanterm").val());
       var month = amt;
       
       //console.log(month);
       $('#loanterm').val(month);
     });
     $("#Year").change(function(){
-      var amt1 = $("#loanterm").val();
+      var amt1 = $("#loanterm1").val();
+      console.log($("#loanterm").val());
       var yr = amt1 / 12;
       //console.log(yr);
       //console.log(year);
-      $('#loanterm').val(yr);
+      $('#loanterm1').val(yr);
     });
     });
 </script>

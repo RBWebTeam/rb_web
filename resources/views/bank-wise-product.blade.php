@@ -108,7 +108,7 @@
      @if($value->Women_roi!='')
         <td>{{$value->Women_roi*100}}%</td> 
      @else
-      <td>nil</td> 
+      <td>-</td> 
      @endif
 
 

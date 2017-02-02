@@ -111,7 +111,8 @@ class CompareController extends Controller
     }
 
  public function send_otp(Request $req){
-   $otp=123456;
+   //$otp=123456;
+   $otp = mt_rand(100000, 999999);
     Session::put('contact', $req['contact']);
      $qu=DB::table('credit_req_lead')
               ->insertGetId([

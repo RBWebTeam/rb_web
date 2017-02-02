@@ -1938,7 +1938,7 @@ body {background:#eee;}
 .exp-pad h2 {font-size:25px;padding:10px 30px; text-align:center;color: #333;text-align: center;margin-top: 21px;opacity: 0.8;}
 .bg-gray .tab-content {background:#fff;}
 .bg-gray .nav-tabs {margin-left: 35%;} 
-.view-btn-tp-mrg {margin-top: -33px;z-index: 1000; position: relative;}
+.view-btn-tp-mrg {margin-top:0px;z-index: 1000; position: relative;}
 @media only screen and (max-width:480px) {
 	 .bg-gray .nav-tabs {margin-left:0px;}
 	 .price-box ul li{margin-left:5px;}
@@ -1958,4 +1958,4 @@ body {background:#eee;}
   .hide-title ul {margin:0px; padding:0px;}
   .hide-title ul li {list-style-type:none;}
   .txt-title1 {font-weight:bold; text-transform:uppercase; border-right:1px solid #ddd;}
-  .error-template img {margin:0 auto;}
+  .error-template img {margin:auto; }

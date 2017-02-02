@@ -29,3 +29,4 @@ Route::post('getcustomer','ApiController@getCustomer');
 Route::post('getcity','ApiController@getCity');
 Route::post('getproduct','ApiController@getProduct');
 Route::post('getproperty','ApiController@getPropertyType');
+Route::post('get-broker-quote','ApiController@getQuoteByBrokerId');

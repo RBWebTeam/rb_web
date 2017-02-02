@@ -43,7 +43,7 @@
      <td>{{$value->roi}}%</td>
 
      <td></td>
-  </tr>,
+  </tr>
 
   
 

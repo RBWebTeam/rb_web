@@ -7,7 +7,7 @@
 	<!-- <meta name="google-signin-client_id" content="752185558821-9vlmac53np7bgdo3kn9d2e5ft39t7gud.apps.googleusercontent.com"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="<?php if(isset($description))echo $description; else echo "RupeeBoss provides all kind of loans."; ?>" />
-	<meta name="keywords" content="" />
+	<meta name="keywords" content="<?php if(isset($keywords))echo $keywords; else echo "rupeeboss loans getloan expressloan"; ?>" />
 	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 	<link rel="shortcut icon" href="{{URL::to('images/rb_fav.png')}}">
 	<link rel="stylesheet" href="{{URL::to('fonts/Raleway.css')}}" type="text/css">

@@ -374,6 +374,7 @@ run_else:
 
         $data=DB::table('bank_quote_api_request')
 		->where('ID','=',$req->ID)->first();
+		//print_r($data);exit;
          if($data){
 			$status_Id=0;
 			$msg="data delievered";
@@ -481,7 +482,9 @@ run_else:
 		 $data=DB::table('bank_quote_api_request')
         ->where('BrokerId','=',$id)
         ->get();
-        if($data && $req['BrokerId']){
+
+       // print_r($data . $req['BrokerId']);exit();
+        if($data!='[]' && $req['BrokerId']){
 			$status_Id=0;
 			$msg="data delievered";
 			$new_data=$data;

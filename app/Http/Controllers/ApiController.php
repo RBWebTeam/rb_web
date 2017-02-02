@@ -482,23 +482,51 @@ run_else:
 		 $data=DB::table('bank_quote_api_request')
         ->where('BrokerId','=',$id)
         ->get();
-
+        //calling Erp api
+       
+        		$post_data='{"BrokerId":"'.$id.'"}';
+                 $url="http://beta.services.rupeeboss.com/LoginDtls.svc/xmlservice/dsplyHomePersonalLoanAppDtls";
+                $ch = curl_init();
+                curl_setopt($ch, CURLOPT_VERBOSE, 1);
+                curl_setopt( $ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
+                curl_setopt($ch, CURLOPT_URL, $url);
+                curl_setopt($ch, CURLOPT_POST, 1);
+                curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+                curl_setopt($ch, CURLOPT_FAILONERROR, 0);
+                curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+                curl_setopt($ch, CURLOPT_POSTFIELDS,$post_data);
+                $http_result = curl_exec($ch);
+                $error = curl_error($ch);
+                $http_code = curl_getinfo($ch ,CURLINFO_HTTP_CODE);
+                $obj = json_decode($http_result);
+                // statusId response 0 for success, 1 for failure
+                curl_close($ch);
+                //print_r();exit();
        // print_r($data . $req['BrokerId']);exit();
+                if($obj->statusId==0){
+                	$application=$obj;
+                }else{
+                	$application=NULL;
+                }
+
         if($data!='[]' && $req['BrokerId']){
 			$status_Id=0;
 			$msg="data delievered";
 			$new_data=$data;
+			
 		}
 		else{
 			$new_data=NULL;
 			$status_Id=1;
 			$msg=" Something went wrong.";
-			
+			//$application=NULL;
 		}
 		return Response::json(array(
 			'data' => $new_data,
+			'application'=>$application,
 			'status_Id'=>$status_Id,
-			'msg'=>$msg
+			'msg'=>$msg,
+
 			));
 	}
 	

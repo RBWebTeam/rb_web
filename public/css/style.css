@@ -1951,7 +1951,7 @@ body {background:#eee;}
  .txt-title {display:none;}
  .bdr-btm {border:1px solid #ddd; margin-bottom:10px;}
 }
-
+.slide-hm {width:100%;}
 .bt-bg {background:url(../images/bt-bg.jpg) no-repeat;}
 .comp-pg .comp li {list-style-type:none;padding:10px;}
   .comp-pg .comp li img {margin:0 auto;}

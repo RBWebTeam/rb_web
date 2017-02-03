@@ -34,30 +34,32 @@
 
 
 			</form>
-			<?php }else if($result->responseJson!="passedReport"){?>
-			<p>Sorry To Inform, but something went wrong	.<br> 
-			 Response :: {{$result->responseJson}}</p>
-			<?php
-				if($result->responseJson=="passedReport"){
-					//refer http://php.net/manual/en/domdocument.getelementbyid.php
+			<?php }else {
+				$x=($result);
+				
+				$post_data='"'.http_build_query($result).'"';
+				//print_r($post_data);
+				 $url = "http://api.rupeeboss.com/CreditAPI.svc/getfinalResponse";
+			   
+                $ch = curl_init();
+                curl_setopt($ch, CURLOPT_VERBOSE, 1);
+                curl_setopt( $ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
+                curl_setopt($ch, CURLOPT_URL, $url);
+                curl_setopt($ch, CURLOPT_POST, 1);
+                curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+                curl_setopt($ch, CURLOPT_FAILONERROR, 0);
+                curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+                curl_setopt($ch, CURLOPT_POSTFIELDS,$post_data);
+                $http_result = curl_exec($ch);
+                $error = curl_error($ch);
+                $http_code = curl_getinfo($ch ,CURLINFO_HTTP_CODE);
+                //$obj = json_decode($http_result);
+                print_r("<h1>".$http_result."</h1>");
+                //print_r($error);
+				
+			}
 
-					$html_data=$result->showHtmlReportForCreditReport;
-					print_r($html_data);
-					$doc = new DomDocument;
-					 $doc->validateOnParse = true;
-					 libxml_use_internal_errors(true);
-					$doc->loadHTML($html_data);
-					libxml_use_internal_errors(false);
-					
-					//  $xml=$doc->getElementsByTagName('input')->item(0);
-					//  $xml_doc = new DomDocument;
-					//  $xml_doc->validateOnParse = true;
-					// $xml_doc->loadXML($xml);
-					print_r($doc);exit();
-					//print_r($html_data);// "<h1> Your Credit Score is :: ".serialize($xml)."</h1>";
-				}
-
-			 }?>
+			 ?>
 <script type="text/javascript">
   $('.next_qest1').click(function(){
     //alert("new qstn1");
@@ -66,8 +68,8 @@
                url: "{{URL::to('gen-qstn')}}",
                data : $('#generate_question2').serialize(),
                success: function(msg){
-                //console.log(msg);  
-                if(msg.success==true){
+                //console.log("2nd question"+msg);  
+                if(msg.success){
                 $('#generate_question').hide();
                 $('#nxt_qstn').html("");
                 $('#nxt_qstn').html(msg.html);

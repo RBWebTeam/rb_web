@@ -480,6 +480,7 @@ run_else:
 		//print_r($req['BrokerId']);exit();
 		$id=$req['BrokerId'];
 		 $data=DB::table('bank_quote_api_request')
+		 ->select('ID','ApplicantNme','LoanRequired','ApplicantIncome','Turnover','status','ProductId')
         ->where('BrokerId','=',$id)
         ->get();
         //calling Erp api
@@ -502,9 +503,9 @@ run_else:
                 $obj = json_decode($http_result);
                 // statusId response 0 for success, 1 for failure
                 curl_close($ch);
-       			print_r($obj->result->lstHomeLoanDtls);exit();
+       			//print_r(sizeof($obj->result->lstHomeLoanDtls));exit();
        			//print_r($obj);exit();
-                if($obj->result->lstHomeLoanDtls!='[]'){
+                if(sizeof($obj->result->lstHomeLoanDtls)>0){
                 	$application=$obj->result->lstHomeLoanDtls;
                 }else{
                 	$application=NULL;
@@ -512,13 +513,16 @@ run_else:
                
 		        if($data!='[]' ){
 					$new_data=$data;
+					for($i=0;$i<sizeof($new_data);$i++){
+						$new_data[$i]->url="http://beta.erp.rupeeboss.com/homeloan/home_loan_application_form.aspx?qoutid=".$new_data[$i]->ID;
+					}
 				}
 				else{
 					$new_data=NULL;
 					
 				}
 
-				if($obj->result->lstHomeLoanDtls=='[]' && $data=='[]'){
+				if(sizeof($obj->result->lstHomeLoanDtls)==0 && $data=='[]'){
 					$status_Id=1;
 					$msg="Something went wrong";
 				}else{

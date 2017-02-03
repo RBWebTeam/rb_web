@@ -13,7 +13,8 @@ class ExperianController extends Controller
         try{
             $qs=0;
             $post_data=$req->all();
-
+            // print "<pre>";
+            // print_r($post_data);exit();
             //unsetting terms and condition as no need to save in DB
              unset($post_data['terms']);
              unset($post_data['authorize']);
@@ -39,6 +40,7 @@ class ExperianController extends Controller
             $http_code = curl_getinfo($ch ,CURLINFO_HTTP_CODE);
              
             curl_close($ch);
+            //print_r($http_result);exit();
             if($error){
                 return "something went wrong";
             }else{
@@ -91,13 +93,13 @@ class ExperianController extends Controller
                 
             return view('experian-question',['result'=>$res,'stage1hitid'=>$new_data[0],'stage2hitid'=>$new_data[1],'stage2sessionid'=>$new_data[3],'qs'=>$qs]);
         }catch(\Exception $e){
-            return view('went-wrong');
+            return $e;
         }
     }
 
 
     public function gen_ques2(Request $req){
-       // print_r($req->qs1);exit();
+       
         try{
             $arr = '{"stage1hitid":"'.$req->stage1hitid.'","stage2hitid":"'.$req->stage2hitid.'","stage2sessionid":"'.$req->stage2sessionid.'","answer":"'.$req->qs1.':'.$req->qs2.'","questionId":"'.$req->question_count.'"}';
             
@@ -120,16 +122,14 @@ class ExperianController extends Controller
             $s=str_replace('"','', $http_result);
             $str=str_replace('\\', '', $s);
             $str2=explode(',', $str);
-            //print_r($str2);exit();
+            
 
             $res1=json_decode($http_result);
             $res=json_decode($res1);
-               // print_r($res->questionToCustomer->question);exit();
-                    //rendering view
             $returnHTML = view('experian-question2',['result'=>$res,'stage1hitid'=>$req->stage1hitid,'stage2hitid'=>$req->stage2hitid,'stage2sessionid'=>$req->stage2sessionid,'qs'=>$req->question_count])->render();
             return response()->json(array('success' => true,'html'=>$returnHTML)); 
         }catch(\Exception $e){
-            return view('went-wrong');
+            return $e;
         }  
     }
 

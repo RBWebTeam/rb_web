@@ -1,10 +1,11 @@
-  @include('layout.header')
+@include('layout.header')
 <style>
   body {color:#666;}
   .tbl-clr {color:#fff; }
   .tbl-clr td {text-align:center;}
   .rw-hei{margin-bottom:20px; height:280px;}
-   .rw-hei p {font-size:16px;color:#999; margin-bottom:10px;}
+   .rw-hei p {font-size:16px;color:#666; margin-bottom:10px;}
+   .em1 {color:#666;}
    .rw-hei h1 {margin-top:10px;}
    .sub-title {color:#999;}
 
@@ -20,38 +21,38 @@
 
 
 <div class="fh5co-cta bt-bg" style="background:url(../images/bt-bg.jpg) no-repeat;">
-		<div class="overlay"></div>
-		<?php if($loan == "home-loan") {?>
-		<div class="container">
-			<div class="col-md-12 text-center animate-box wht-brd pad fadeInUp animated">
-				<h1 class="h1-hd">Home Loan Balance Transfer</h1>
-				<h3>Let's find out how much you can save!!</h3>
-				<h3>To know,please enter your current home loan details.</h3>
-			</div>
-		</div>
-		<?php }elseif($loan == "personal-loan"){?>
-		<div class="container">
-			<div class="col-md-12 text-center animate-box wht-brd pad fadeInUp animated">
-				<h1 class="h1-hd">Personal Loan Balance Transfer </h1>
-				<h3>Let's find out how much you can save!!</h3>
-				<h3>To know,please enter your current personal loan details.</h3>
-			</div>
-		</div>
-		<?php }else{?>
-		<div class="container">
-			<div class="col-md-12 text-center animate-box wht-brd pad fadeInUp animated">
-				<h1 class="h1-hd">Loan Against Property Balance Transfer </h1>
-				<h3>Let's find out how much you can save!!</h3>
-				<h3>To know,please enter your current loan against property details.</h3>
-			</div>
-		</div>
-		<?php }?>
-	</div>
-	
+    <div class="overlay"></div>
+    <?php if($loan == "home-loan") {?>
+    <div class="container">
+      <div class="col-md-12 text-center animate-box wht-brd pad fadeInUp animated">
+        <h1 class="h1-hd">Home Loan Balance Transfer</h1>
+        <h3>Let's find out how much you can save!!</h3>
+        <h3>To know,please enter your current home loan details.</h3>
+      </div>
+    </div>
+    <?php }elseif($loan == "personal-loan"){?>
+    <div class="container">
+      <div class="col-md-12 text-center animate-box wht-brd pad fadeInUp animated">
+        <h1 class="h1-hd">Personal Loan Balance Transfer </h1>
+        <h3>Let's find out how much you can save!!</h3>
+        <h3>To know,please enter your current personal loan details.</h3>
+      </div>
+    </div>
+    <?php }else{?>
+    <div class="container">
+      <div class="col-md-12 text-center animate-box wht-brd pad fadeInUp animated">
+        <h1 class="h1-hd">Loan Against Property Balance Transfer </h1>
+        <h3>Let's find out how much you can save!!</h3>
+        <h3>To know,please enter your current loan against property details.</h3>
+      </div>
+    </div>
+    <?php }?>
+  </div>
+  
   
 <div class="container">
   <div class="row">
-     <div class="col-sm-6 rw-hei" style="background-color:#fff;"><h3 class="emi-cal">
+     <div class="col-sm-4 rw-hei" style="background-color: #ffcc99;"><h3 class="emi-cal">
     <?php if($loan == "home-loan") {?>
      Home Loan Transfer Savings  <i class="fa fa-exchange" aria-hidden="true"></i></h3>
     <?php }elseif($loan == "personal-loan"){?>
@@ -71,26 +72,21 @@
       <!-- <label class="control-label" for="Interest Rate"> Current Interest Rate:</label> -->
       <input type="text" name="loaninterest" step="0.01" min="0" class="form-control" id="loaninterest" placeholder="Interest"  value="" onblur="myfun()" onkeypress="return isNumberKey(event)">
     </div>
-    <!-- <div class="form-group" >
-       <label class="control-label" for="Your Property Location">Your Profession Type:</label>
-       <select name="profession" id="profession" onblur="myfun()">
-       <option value="1">Salaried</option>
-       <option value="2">Self-Employed</option>
-       
-       </select>
-      
-    </div>
-    -->
+   
     <div class="form-group right-block">
        <!-- <label class="control-label" for="Loan Tenure">Remaining Tenure:</label> -->
         <input type="text" name="loanterm" class="form-control" id="loanterm" placeholder="Loan Tenure" value="" onblur="myfun()" onkeypress="return isNumberKey(event)">
     <p id="err" style="display:none;"><span style="color:red; font-size:13px; position:absolute;">Please Fill All Inputs</span></p>
-	
-    <div class="btn-group pad">
-          <label class="btn btn-primary"><input type="radio" name="Year" id="Year" value="" checked="checked">Yr</label>
-             <label class="btn btn-primary"><input type="radio" name="Year" id="Month" value="">Mo</label>
+  
+    <div class="col-md-12 pad pull-right">
+  <button class="btn btn-success pull-left ">Submit</button>
+  <div class="pull-right">
+          <label><input type="radio" name="Year" id="Year" value="" checked="checked"> Yr</label>
+             <label><input type="radio" name="Year" id="Month" value=""> Mo</label>
     </div>
-	
+    </div>
+  
+  
     </div>
 
     <?php if($loan == "home-loan") {?>
@@ -101,10 +97,9 @@
     <input type="hidden" name="product_id" id="product_id" value="7">
     <?php }?>
 
-    
      
     </div>
-    <div class="col-sm-6 rw-hei brd-rgt" style="background-color:#fff"><h3 class="transfer-cal">
+    <div class="col-sm-4 rw-hei brd-rgt" style="background-color:#ccc"><h3 class="transfer-cal">
     My Savings <i class="fa fa-credit-card" aria-hidden="true"></i></h3>
     <!-- <i class="fa fa-cog fa-spin fa-2x fa-fw"></i>
     <span class="sr-only">Loading...</span></h3> -->
@@ -121,7 +116,7 @@
        <p>New Loan EMI : <b class="em6">₹<span id="emi4">0</span></b></p>
    
         <p>Drop-in Interest Rate:<b class="em7"><span id="emi5">0</span>%</b></p>
-		
+    
        <p><h6>Your <mark style="color:red">Savings</mark> through reduced Interest:</h6></p>
        <h2 class="em8">₹ <b><span id="emi6">0</span></b></h2>
        
@@ -131,6 +126,45 @@
        <!-- <div id="b"></div> -->
       </center>
   </div>
+  <div class="col-sm-4 rw-hei" style="background-color: #ffcc99;"><h3 class="emi-cal">
+    <?php if($loan == "home-loan") {?>
+     Home Loan After Transfer  <i class="fa fa-exchange" aria-hidden="true"></i></h3>
+    <?php }elseif($loan == "personal-loan"){?>
+    Personal Loan After Transfer  <i class="fa fa-exchange" aria-hidden="true"></i></h3>
+    <?php }else{?>
+    Loan Against Property After Transfer <i class="fa fa-exchange" aria-hidden="true"></i></h3>
+    <?php }?>
+
+
+     <!-- <i class="fa fa-exchange" aria-hidden="true"></i> -->
+    <div class="form-group">
+    <input type="hidden" name="brokerid" id="brokerid" value="<?php echo isset($_GET['brokerid'])?$_GET['brokerid']:'';?>">
+       <!-- <label class="control-label" for="Loan Amount">Outstanding Principal:</label> -->
+       <input type="text" name="loanamount" class="form-control" id="loanamount_new" placeholder="Loan Amount" value="" onblur ="myfun()" onkeypress="return isNumberKey(event)" maxlength="9" title="Loanamount" >
+    </div>
+    <div class="form-group">
+      <!-- <label class="control-label" for="Interest Rate"> Current Interest Rate:</label> -->
+      <input type="text" name="loaninterest" step="0.01" min="0" class="form-control" id="loaninterest_new" placeholder="Interest"  value="" onblur="myfun()" onkeypress="return isNumberKey(event)">
+    </div>
+    
+    <div class="form-group right-block">
+       <!-- <label class="control-label" for="Loan Tenure">Remaining Tenure:</label> -->
+        <input type="text" name="loanterm" class="form-control" id="loanterm_new" placeholder="Loan Tenure(in months)" value="" onblur="myfun()" onkeypress="return isNumberKey(event)">
+    <p id="err" style="display:none;"><span style="color:red; font-size:13px; position:absolute;">Please Fill All Inputs</span></p>
+  
+  
+    </div>
+
+    <?php if($loan == "home-loan") {?>
+    <input type="hidden" name="product_id" id="product_id" value="12">
+    <?php }elseif($loan == "personal-loan"){?>
+    <input type="hidden" name="product_id" id="product_id" value="9">
+    <?php }else{?>
+    <input type="hidden" name="product_id" id="product_id" value="7">
+    <?php }?>
+
+     
+    </div>
   
 </div>
 </div>
@@ -240,18 +274,23 @@
     var lm = $("#loanamount").val().length;
        var lin = $("#loaninterest").val().length;
        var lt = $("#loanterm").val().length;
+       
+       
        if(lm >0 && lin >0 && lt>0){
       
       var loanamount = $("#loanamount").val();
-      //console.log(loanamount);
+      $('#loanamount_new').val(loanamount);
+      // console.log($("#loanamount").val());
       var loaninterest = $("#loaninterest").val();
        // var bank = $("#bank").val();
          
       if ($("#Year").prop("checked")) {
         var loanterm1 = $("#loanterm").val();
         var loanterm = loanterm1*12;
+        $('#loanterm_new').val(loanterm);
       }else{
         var loanterm = $("#loanterm").val();
+
       }
       var profession=$("#profession").val();
       var product_id=$("#product_id").val();
@@ -280,7 +319,8 @@
 
                   
                    $('#emi5').empty().append( msg.drop_in_int);
-
+                   var nrate=($('#loaninterest').val())-msg.drop_in_int;
+                  $('#loaninterest_new').val( nrate);
                    var numb4 = msg.savings.toFixed();
                    $('#emi6').empty().append(numb4);
 
@@ -318,6 +358,3 @@
 
 
 </script>
-
-
-

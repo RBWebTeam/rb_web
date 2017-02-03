@@ -42,7 +42,11 @@ class HomeController extends Controller
 	}
 
 	public function express_loan(){
-		return view('express-loan');
+		$keywords='Express Finance Loans, Cash Express Loan, Express Loan Aditya Birla Group, Express Loan Bank, Express Loan Corporation, Express Loan Tribe, Express Loan Eligibility, Apply Online For Express Loan, Emergency Loans , Advance Loans ,Quick And Easy Loans ,Instant Cash Loans'; 
+
+		$data['title']='Express Loan';
+    	$data['description']='Apply for Express Loan';
+		return view('express-loan')->with($data)->with('keywords',$keywords);
 	}
 
 	public function credit_card(){
@@ -50,7 +54,10 @@ class HomeController extends Controller
 	}
 
 	public function savings_account(){
-		return view('savings-account');
+		$keywords='Best Saving Rates,Savings Account Online,Highest Rate Savings Account ,Best Interest Savings Account,Savings Bank Account,Savings Account Interest Rate Calculator,Savings Account Benefits';
+		$data['title']='Savings Account';
+    	$data['description']='Apply for Savings Account ';
+		return view('savings-account')->with($data)->with('keywords',$keywords);
 	}
 
 	public function lead_status(){

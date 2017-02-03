@@ -484,7 +484,8 @@ run_else:
         ->get();
         //calling Erp api
        
-        		$post_data='{"BrokerId":"'.$id.'"}';
+        		$post_data='{"brokerId":'.$id.'}';
+        		//print_r($post_data);exit();
                  $url="http://beta.services.rupeeboss.com/LoginDtls.svc/xmlservice/dsplyHomePersonalLoanAppDtls";
                 $ch = curl_init();
                 curl_setopt($ch, CURLOPT_VERBOSE, 1);
@@ -501,26 +502,29 @@ run_else:
                 $obj = json_decode($http_result);
                 // statusId response 0 for success, 1 for failure
                 curl_close($ch);
-                //print_r();exit();
-       // print_r($data . $req['BrokerId']);exit();
-                if($obj->statusId==0){
-                	$application=$obj;
+       			print_r($obj->result->lstHomeLoanDtls);exit();
+       			//print_r($obj);exit();
+                if($obj->result->lstHomeLoanDtls!='[]'){
+                	$application=$obj->result->lstHomeLoanDtls;
                 }else{
                 	$application=NULL;
                 }
+               
+		        if($data!='[]' ){
+					$new_data=$data;
+				}
+				else{
+					$new_data=NULL;
+					
+				}
 
-        if($data!='[]' && $req['BrokerId']){
-			$status_Id=0;
-			$msg="data delievered";
-			$new_data=$data;
-			
-		}
-		else{
-			$new_data=NULL;
-			$status_Id=1;
-			$msg=" Something went wrong.";
-			//$application=NULL;
-		}
+				if($obj->result->lstHomeLoanDtls=='[]' && $data=='[]'){
+					$status_Id=1;
+					$msg="Something went wrong";
+				}else{
+					$status_Id=0;
+					$msg="Data delievered";
+				}
 		return Response::json(array(
 			'data' => $new_data,
 			'application'=>$application,

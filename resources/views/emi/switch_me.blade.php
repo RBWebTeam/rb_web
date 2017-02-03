@@ -24,25 +24,25 @@
 		<?php if($loan == "home-loan") {?>
 		<div class="container">
 			<div class="col-md-12 text-center animate-box wht-brd pad fadeInUp animated">
-				<h1 class="h1-hd">Home Loan Transfer Service</h1>
+				<h1 class="h1-hd">Home Loan Balance Transfer</h1>
 				<h3>Let's find out how much you can save!!</h3>
-				<h3>Know how much you'll save. Please enter your current home loan details.</h3>
+				<h3>To know,please enter your current home loan details.</h3>
 			</div>
 		</div>
 		<?php }elseif($loan == "personal-loan"){?>
 		<div class="container">
 			<div class="col-md-12 text-center animate-box wht-brd pad fadeInUp animated">
-				<h1 class="h1-hd">Personal Loan Transfer Service</h1>
+				<h1 class="h1-hd">Personal Loan Balance Transfer </h1>
 				<h3>Let's find out how much you can save!!</h3>
-				<h3>Know how much you'll save. Please enter your current personal loan details.</h3>
+				<h3>To know,please enter your current personal loan details.</h3>
 			</div>
 		</div>
 		<?php }else{?>
 		<div class="container">
 			<div class="col-md-12 text-center animate-box wht-brd pad fadeInUp animated">
-				<h1 class="h1-hd">Loan Against Property Transfer Service</h1>
+				<h1 class="h1-hd">Loan Against Property Balance Transfer </h1>
 				<h3>Let's find out how much you can save!!</h3>
-				<h3>Know how much you'll save. Please enter your current loan against property details.</h3>
+				<h3>To know,please enter your current loan against property details.</h3>
 			</div>
 		</div>
 		<?php }?>

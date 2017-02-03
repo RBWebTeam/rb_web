@@ -80,7 +80,7 @@ class bank_quote_api_request extends Model
          $table->CoApplicantProfitAfterTax    = $request->co_applicant_profit_after_tax   ;
          $table->CoApplicantDepreciation    = $request->co_applicant_depreciation   ;
          $table->CoApplicantDirectorRemuneration    = $request->co_applicant_remuneration;
-         $table->brokerID    = "Website";
+         $table->brokerID    = 0;
          $table->ProductId    = $request->product_name   ;
          $table->Email    = Session::get('email')?Session::get('email'):"";
          $table->Contact =Session::get('contact')?Session::get('contact'):"";

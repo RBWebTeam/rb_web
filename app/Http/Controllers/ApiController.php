@@ -502,9 +502,9 @@ run_else:
                 $obj = json_decode($http_result);
                 // statusId response 0 for success, 1 for failure
                 curl_close($ch);
-       			//print_r($obj->result->lstHomeLoanDtls);exit();
+       			print_r($obj->result->lstHomeLoanDtls);exit();
        			//print_r($obj);exit();
-                if($obj->result->lstHomeLoanDtls=='[]'){
+                if($obj->result->lstHomeLoanDtls!='[]'){
                 	$application=$obj->result->lstHomeLoanDtls;
                 }else{
                 	$application=NULL;
@@ -518,7 +518,7 @@ run_else:
 					
 				}
 
-				if($obj->result->lstHomeLoanDtls!='[]' && $data=='[]'){
+				if($obj->result->lstHomeLoanDtls=='[]' && $data=='[]'){
 					$status_Id=1;
 					$msg="Something went wrong";
 				}else{

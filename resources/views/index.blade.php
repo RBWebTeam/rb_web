@@ -30,7 +30,7 @@
    <h4>Choose the right Home Loan for you ...!!</h4>
    <a href="{{URL::to('home-loan')}}" class="btn btn-primary btn-lg btn-view">View More</a>
    </div>
-      <img src="{{URL::to('images/slide_1.jpg')}}" alt=""> 
+      <img src="{{URL::to('images/slide_1.jpg')}}" alt="" class="slide-hm"> 
     </div>
 
     <div class="item">
@@ -40,7 +40,7 @@
    <h4>Finance Your Dreams...!!</h4>
    <a href="{{URL::to('personal-loan')}}" class="btn btn-primary btn-lg btn-view">View More</a>
    </div>
-      <img src="{{URL::to('images/slide_2.jpg')}}" alt="">
+      <img src="{{URL::to('images/slide_2.jpg')}}" alt="" class="slide-hm">
     </div>
 
     <div class="item">
@@ -50,7 +50,7 @@
    <h4>Finding you a better Deal...!!</h4>
    <a href="{{URL::to('loan-against-property')}}" class="btn btn-primary btn-lg btn-view">View More</a>
    </div>
-      <img src="{{URL::to('images/slide_3.jpg')}}" alt="">
+      <img src="{{URL::to('images/slide_3.jpg')}}" alt="" class="slide-hm">
     </div>
 
     <div class="item">
@@ -61,7 +61,7 @@
    <h4>We Support Make in India..!!</h4>
    <a href="{{URL::to('sme-loan')}}" class="btn btn-primary btn-lg btn-view">View More</a>
    </div>
-      <img src="{{URL::to('images/slide_4.jpg')}}" alt="">
+      <img src="{{URL::to('images/slide_4.jpg')}}" alt="" class="slide-hm">
     </div>
 	<div class="item">
 	<div class="slide-txt">
@@ -71,7 +71,7 @@
    <a href="{{URL::to('business-loan')}}" class="btn btn-primary btn-lg btn-view">View More</a>
 
    </div>
-      <img src="{{URL::to('images/slide_5.jpg')}}" alt="">
+      <img src="{{URL::to('images/slide_5.jpg')}}" alt="" class="slide-hm">
     </div>
 	<div class="item">
 	<div class="slide-txt">
@@ -80,7 +80,7 @@
    <h4>Thinking of your comfort first !!</h4>
    <a href="{{URL::to('car-loan')}}" class="btn btn-primary btn-lg btn-view">View More</a>
    </div>
-      <img src="{{URL::to('images/slide_6.jpg')}}" alt="">
+      <img src="{{URL::to('images/slide_6.jpg')}}" alt="" class="slide-hm">
     </div>
   </div>
 

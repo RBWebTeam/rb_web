@@ -47,30 +47,21 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $e){ 
 
-        //     if($exception instanceof NotFoundHttpException){
-        //     return response()->view('layout.missing', [], 404);
-        // }
-        // return parent::render($request, $exception);
-
-             if($this->isHttpException($e)){
-            switch ($e->getStatusCode()) {
-                // not found
-                case '404':
-                    return \Response::view('layout.missing',array(),404);
-                break;
-                // internal error
-                case '500':
-                    return \Response::view('went-wrong',array(),500);   
-                break;
- 
-                default:
-                    return $this->renderHttpException($e);
-
-                break;
-            }
-        }else{
-            return parent::render($request, $e);
+            if($e instanceof NotFoundHttpException){
+            return response()->view('layout.missing', [], 404);
         }
+        return parent::render($request, $e);
+
+
+// if ($this->isHttpException($e)) {
+//              //return $this->renderHttpExceptionView($e);
+//            return \Response::view('layout.missing',array(),404);
+//         }
+
+//         if (config('app.debug')) {
+//            // return $this->renderExceptionWithWhoops($e);
+//              return \Response::view('went-wrong',array(),500);  
+//         }
 
 
         }

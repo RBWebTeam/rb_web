@@ -125,6 +125,7 @@
 										</div class="col-md-12">
 										&nbsp;&nbsp;&nbsp;&nbsp;<button class="btn btn-primary btn-outline with-arrow animate-box fadeInUp animated credit-submit" >Confirm & Continue<i class="icon-arrow-right"></i>
 									</button>
+									<p><b>All <mark style="color:red">*</mark>fields are mandatory.</b></p>
 								</div>
 							</form>
 					</div>

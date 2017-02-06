@@ -44,7 +44,7 @@ class HomeController extends Controller
 	public function express_loan(){
 		$keywords='Express Finance Loans, Cash Express Loan, Express Loan Aditya Birla Group, Express Loan Bank, Express Loan Corporation, Express Loan Tribe, Express Loan Eligibility, Apply Online For Express Loan, Emergency Loans , Advance Loans ,Quick And Easy Loans ,Instant Cash Loans'; 
 
-		$data['title']='Express Loan';
+		$data['title']='Express Loan– Instant loan at Low interest rate on Rupeeboss.com';
     	$data['description']='Apply for Express Loan';
 		return view('express-loan')->with($data)->with('keywords',$keywords);
 	}
@@ -55,7 +55,7 @@ class HomeController extends Controller
 
 	public function savings_account(){
 		$keywords='Best Saving Rates,Savings Account Online,Highest Rate Savings Account ,Best Interest Savings Account,Savings Bank Account,Savings Account Interest Rate Calculator,Savings Account Benefits';
-		$data['title']='Savings Account';
+		$data['title']='Savings Account- Apply online at low interest rate On Rupeeboss.com';
     	$data['description']='Apply for Savings Account ';
 		return view('savings-account')->with($data)->with('keywords',$keywords);
 	}

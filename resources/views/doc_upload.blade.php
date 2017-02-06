@@ -11,20 +11,23 @@
   <div class="panel-heading"><h2>Upload Your Proof document here</h2></div>
   <div class="panel-body">
 Please Upload below documents :
-Identity Proof
-		<form action="{{ url('doc-upload') }}" enctype="multipart/form-data" method="POST">
+
+		<form action="{{ url('just-upload') }}" enctype="multipart/form-data" method="POST">
 			{{ csrf_field() }}
 			<div class="row form-group">
 				<div class="col-md-12">
+				Identity Proof
 					<input type="file" name="Identity_Proof" />
 				</div>
 			
 				<div class="col-md-12">
+				Income_Proof
 					<input type="file" name="Income_Proof" />
 				</div>
 				
 			
 				<div class="col-md-12">
+				Address_Proof
 					<input type="file" name="Address_Proof" />
 				</div>
 				<div class="col-md-6">

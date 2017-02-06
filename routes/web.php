@@ -97,7 +97,7 @@ Route::post('credit-report-verify','CompareController@verify_otp');
 
 //doc upload
 Route::get('doc-upload','UploadController@Upload');
-Route::post('doc-upload','UploadController@UploadPost');
+Route::post('just-upload','UploadController@UploadPost');
  
 //something went wrong page
 Route::get('went-wrong','ErrorController@went_wrong');

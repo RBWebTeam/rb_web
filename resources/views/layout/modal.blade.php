@@ -206,9 +206,15 @@ We use all reasonable physical, administrative, technical and organizational mea
 
 	<br>
 	<h4 class="text-center ">CONSENT IN RELATION TO ACCESS TO CREDIT INFORMATION THROUGH EXPERIAN</h4>
-    <p>This End User Agreement (the “Agreement”) is made between you (the “User” or “You”) and Rupeeboss Financial Services Private Limited, a private limited company having its registered office at C-605, Titenium Square Nr. BMW Showroom, Thaltej Ahmedabad Ahmedabad GJ 380054 India 
-	(“Rupeeboss Financial Services Private Limited”, “Us” or “We”, which term shall include its successors and permitted assigns). The User and Rupeeboss Financial Services Private Limited shall be collectively referred to as the “Parties” and individually as a “Party”.</p>
+    <p>This End User Agreement (the <b>“Agreement”</b>) is made between you (the <b>“User” or “You”</b>) and Rupeeboss Financial Services Private Limited, a private limited company having its registered office at C-605, Titenium Square Nr. BMW Showroom, Thaltej Ahmedabad Ahmedabad GJ 380054 India 
+	(“Rupeeboss Financial Services Private Limited”, <b>“Us”</b> or <b>“We”</b>, which term shall include its successors and permitted assigns). The User and Rupeeboss Financial Services Private Limited shall be collectively referred to as the <b>“Parties”</b> and individually as a <b>“Party”</b>.</p>
 
+	
+	<p>You hereby consent to Rupeeboss Financial Services Private Limited being appointed as your authorized representative to receive your Credit Information from Experian for the purpose of processing the loan applications.</p>
+<p><b>BY EXECUTING THIS AGREEMENT / CONSENT FORM, YOU ARE EXPRESSLY AGREEING TO ACCESS THE EXPERIAN CREDIT INFORMATION REPORT AND CREDIT SCORE, AGGREGATE SCORES, INFERENCES, REFERENCES AND DETAILS (AS DEFINED BELOW) (TOGETHER REFERRED AS “CREDIT INFORMATION”). YOU HEREBY ALSO IRREVOCABLY AND UNCONDITIONALLY CONSENT TO SUCH CREDIT INFORMATION BEING PROVIDED BY EXPERIAN TO YOU AND RUPEEBOSS FINANCIAL SERVICES PRIVATE LIMITED BY USING EXPERIAN TOOLS, ALGORITHMS AND DEVICES AND YOU HEREBY AGREE, ACKNOWLEDGE AND ACCEPT THE TERMS AND CONDITIONS SET FORTH HEREIN.</b></p>
+	
+	
+	
 	<h3>Terms and Conditions: </h3>
 	<h4>Information Collection, Use, Confidentiality, No-Disclosure and Data Purging</h4>
 	<p>Information Collection, Use, Confidentiality, No-Disclosure and Data Purging

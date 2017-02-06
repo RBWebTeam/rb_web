@@ -9,9 +9,9 @@
 				</div>
 				<div class="col-md-12 white-bg">
 					<div class="row text-left comp-pg rate">
-						<p><b>Would you like to know your credit score before applying 	for loan 	</b></p>
+						<p><b>Would you like to know your credit score before applying 	for a loan?</b></p>
 						<p>Your personal information is required to retrieve your Credit Report and Score. 
-							All the information you provide will be transferred to us through a private secure connection</p>
+							All the information you provide will be transferred to us through a private secure connection.</p>
 							<form class="" id="compareform" role="form" method="POST" action="show-credit-report">
 							 {{ csrf_field() }}
 								<div class="row">
@@ -41,7 +41,7 @@
 								</div>
 								<div class="row sec">
 									<div class="form-group">
-										<h4 class="hdr">&nbsp;&nbsp;&nbsp;&nbsp;Current Addresses Details</h4>
+										<h4 class="hdr">&nbsp;&nbsp;&nbsp;&nbsp;Current Address Details</h4>
 										<div class="col-md-4">
 											<input type="text" class="form-control" placeholder="Flat No / Plot No / House No*" name="flatPlotHouseNo" required="">
 										</div>
@@ -147,6 +147,7 @@
 										</div>
 										&nbsp;&nbsp;&nbsp;&nbsp;<button class="btn btn-primary btn-outline with-arrow animate-box fadeInUp animated" >Confirm & Continue<i class="icon-arrow-right"></i>
 									</button>
+									<p><b>All <mark style="color:red">*</mark>fields are mandatory.</b></p>
 								</div>
 							</form>
 					</div>

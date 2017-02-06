@@ -12,7 +12,8 @@
 						<p><b>Would you like to know your credit score before applying 	for a loan?</b></p>
 						<p>Your personal information is required to retrieve your Credit Report and Score. 
 							All the information you provide will be transferred to us through a private secure connection.</p>
-							<form class="" id="compareform" role="form" method="POST" action="show-credit-report">
+							<form class="" id="compareform" role="form" method="POST" >
+							<!-- action="show-credit-report" -->
 							 {{ csrf_field() }}
 								<div class="row">
 									<div class="form-group">
@@ -137,15 +138,15 @@
 										<p>I hereby authorize RupeeBoss to retrieve my Credit information report on my behalf from
  <a href="#" data-toggle="modal" data-target="#RB_Experian_terms_modal"><span class="text-capitalize"> Experian Credit Information Services Private Limited.</span></a></p>
  <p><div>
-          <input type="checkbox" name="agreement" value="accept" checked>&nbsp; Accept&nbsp;
-          <input type="checkbox" name="agreement" value="decline">&nbsp; Decline
+          <input type="checkbox" name="agreement1" value="accept" checked>&nbsp; Accept&nbsp;
+          <input type="checkbox" name="agreement2" value="decline">&nbsp; Decline
           
     </div></p>
 
 										</div>
 
 										</div>
-										&nbsp;&nbsp;&nbsp;&nbsp;<button class="btn btn-primary btn-outline with-arrow animate-box fadeInUp animated" >Confirm & Continue<i class="icon-arrow-right"></i>
+										&nbsp;&nbsp;&nbsp;&nbsp;<button class="btn btn-primary btn-outline with-arrow animate-box fadeInUp animated" value="Get Checked" onclick ="checkButton()" >Confirm & Continue<i class="icon-arrow-right"></i>
 									</button>
 									<p><b>All <mark style="color:red">*</mark>fields are mandatory.</b></p>
 								</div>
@@ -160,3 +161,13 @@
 @include('layout.footer')
 @include('layout.script')
 
+<script type="text/javascript">
+function checkButton(){
+	// alert("hiee");
+if(document.agreement1.checked == true){
+alert("Box1 is checked");
+} else if(document.agreement2.checked == true){
+alert("Box 2 is checked");
+}
+}
+</script>

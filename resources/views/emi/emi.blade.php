@@ -7,6 +7,7 @@
     <p class="sub-title">Recalculate your Loan EMI and Total Interest Due in a snap!</p>
   </center>
   <div class="row">
+
     <div class="col-sm-4 rw-hei" style="background-color:#fff;"><h3 class="emi-cal"><b>EMI Calculator</b></h3>
       <div class="form-group">
        <label class="control-label" for="Loan Amount">Loan Amount:</label>

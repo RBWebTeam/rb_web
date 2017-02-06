@@ -74,6 +74,8 @@
  
 
  @foreach($getQuery as  $key=>$value )
+
+
  <div class="table-responsive outer-brd">
 	<table width="100%" border="1" class="tbl">
   <tr>
@@ -87,8 +89,11 @@
     <td class="upper">Minimum Credit Score</td>
     <td class="upper">Tenure</td>
     <td class="upper">Profession</td>
-    <?php  if($product == 'home-loan' || $product =='personal-loan'){
+    <?php if($product_id == 12 || $product_id ==9){
+
     ?>
+
+    <?php $product=strtolower(str_replace(' ','-',$product)); ?>
     <td class="upper"><a href="{{URL::to('apply-')}}{{$product}}" class="apply-btn">Apply Online</a></td>
 	<?php }else{ ?>
 	<td class="upper"><a href="{{URL::to('apply-business-loan')}}" class="apply-btn">Apply Online</a></td>
@@ -100,13 +105,13 @@
 
   <tr>
 <!--     <td><input type="checkbox" name="cehckbox"/></td> -->
-    <!-- <td>{{$value->bank_id}}</td>  -->
+   <!--  <td>{{$value->Bank_Id}}</td>  -->
     <td>{{$value->roi}}%</td> 
-    <td>{{(int)$value->Max_Loan_Amt}}</td> 
+    <td>{{(int)$value->Max_Loan_Amt}}-{{(int)$value->Min_Loan_Amt}}</td> 
    <td>{{(int)$value->Min_Income}}</td>
    <td><span>{{(int)$value->Min_Age}}-{{(int)$value->Max_Age}}</span></td>
-     @if($value->Women_roi!='')
-        <td>{{$value->Women_roi*100}}%</td> 
+     @if($value->women_roi!='')
+        <td>{{$value->women_roi}}%</td> 
      @else
       <td>-</td> 
      @endif
@@ -114,10 +119,10 @@
 
    <td>{{$value->MinCredit_Score}}</td> 
    <td>{{(int)$value->Min_Tenure}}-{{(int)$value->Max_Tenure}}&nbsp;Years</td> 
-   <td><p>Salaried</p></td> 
+   <td>{{$value->Profession_Name}}</td> 
   <!--  <td class="upper" width="17%"><a href="{{URL::to('apply-')}}{{$product}}">Apply Online</a></td> -->
 
-    <td rowspan="2"><strong>Special Features:-</strong> Pre close Fee 0%</td>
+    <td rowspan="2"><strong>Special Features:-</strong> Pre close Fee {{$value->Pre_Closer_Fixed}}%</td>
   </tr>
     <tr>
   <!--   <td><i class="icon-thumbs-up"></i></td> -->
@@ -150,7 +155,7 @@
 </div></div></div><!-- </div> -->
 
 
-	<?php  if($product == 'home-loan' ){
+	<?php  if($product_id == 12){
     ?>
 	<div class="container" >
 	 <div class="row">
@@ -221,7 +226,7 @@
 	 </div>
 	 </div>
 	</div>
-	<?php }else if ($product == 'personal-loan'){ ?>
+	<?php }else if ($product_id == 9){ ?>
 	<div class="container" >
 	 <div class="row">
 	   <div class="col-md-12">

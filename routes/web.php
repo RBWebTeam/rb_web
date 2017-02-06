@@ -97,10 +97,12 @@ Route::post('credit-report-verify','CompareController@verify_otp');
 
 //doc upload
 Route::get('doc-upload','UploadController@Upload');
-Route::post('just-upload','UploadController@UploadPost');
+Route::post('doc-upload','UploadController@UploadPost');
  
 //something went wrong page
 Route::get('went-wrong','ErrorController@went_wrong');
+
+Route::get('thank-you',function (){return view('thank-you');});
 
 // Creditcardform
 Route::get('credit-card-form','CreditcardController@credit_card_form');

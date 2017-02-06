@@ -14,27 +14,24 @@ class UploadController extends Controller
 
     public function UploadPost(Request $request)
     {
-        try{
-    	$this->validate($request, [
-            'Identity_Proof' => 'required',
-            'Income_Proof' => 'required',
-            'Address_Proof' => 'required'
-        ]);
-         $imageName = time().'.'.$request->Identity_Proof->getClientOriginalExtension();
+        //print_r($request->app_id);exit;
        
-      // print_r($request->Identity_Proof->getClientMimeType());
-       // print_r($request->Identity_Proof->getClientOriginalName());
-       // print_r($request->Identity_Proof->getpathName());
-        $filepath = $request->Identity_Proof->getpathName();//Image path
-        $file =fopen($filename, "r");
-       $contents = file_get_contents($filepath);
-       print_r($contents);exit();
-       
+    	$doc = array('Identity_Proof','Income_Proof','Address_Proof');
+        
 
-       // $request->Identity_Proof->move(public_path('Upload'), $imageName);
-        $post_data='{"docType":"Identity_Proof","docextension":"jpeg",
-                    "refFBAId":"WEB","bytes":'.$contents.'}';
-                    //print_r($post_data);
+        for( $i=0;$i<3;$i++){
+            try{
+                $str=$doc[$i];
+                $imageName = time().'.'.$request->$str->getClientOriginalExtension();
+                $extension=$request->$str->getClientOriginalExtension();
+                $filename = $request->$str->getpathName();//Image path
+                $file =fopen($filename, "rb");
+                $contents = fread($file, filesize($filename));
+                $byteArray = unpack("C*",$contents); 
+                $data=array_values(($byteArray));
+                $post="[".implode(',',$data)."]";
+                $post_data='{"docType":"Identity_Proof","docextension":"'.$extension.'",
+                            "refFBAId":"'.$request->app_id.'","bytes":'.$post.'}';
                 $url = "http://beta.services.rupeeboss.com/LoginDtls.svc/xmlservice/uploadCustLoanDoc";
                 $ch = curl_init();
                 curl_setopt($ch, CURLOPT_VERBOSE, 1);
@@ -51,15 +48,22 @@ class UploadController extends Controller
                 $obj = json_decode($http_result);
                 
                 curl_close($ch);
+                //print_r($obj->statusId);exit();
+                    // return ($http_result);
 
-                return ($http_result);
-            }catch(Exception $ee){
-                return $ee;
-            }
+                if($obj->statusId==1){
+                    
+                    return view('went-wrong');
+
+                }
+                }catch(Exception $ee){
+                    return $ee;
+                }
+        }
        // print "<pre>";
     	//print_r($request->all());
     	//print_r($imageName);
-    	return "Thank You!!!";
+    	return view('thank-you');
     }
 
 }

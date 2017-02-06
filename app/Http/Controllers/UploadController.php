@@ -18,7 +18,7 @@ class UploadController extends Controller
        
     	$doc = array('Identity_Proof','Income_Proof','Address_Proof');
         
-
+        $response=0;
         for( $i=0;$i<3;$i++){
             try{
                 $str=$doc[$i];
@@ -53,16 +53,16 @@ class UploadController extends Controller
 
                 if($obj->statusId==1){
                     
-                    return view('went-wrong');
+                    $response=1;
 
                 }
                 }catch(Exception $ee){
                     return $ee;
                 }
         }
-       // print "<pre>";
-    	//print_r($request->all());
-    	//print_r($imageName);
+      if($response){
+        return view('went-wrong');
+      }
     	return view('thank-you');
     }
 

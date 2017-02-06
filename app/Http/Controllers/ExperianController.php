@@ -133,5 +133,9 @@ class ExperianController extends Controller
         }  
     }
 
+    public function save_credit_score(Request $req){
+        
+    }
+
 
 }

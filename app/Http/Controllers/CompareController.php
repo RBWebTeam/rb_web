@@ -76,6 +76,8 @@ class CompareController extends Controller
         return view('emi/emi_cal')->with($data);
     }
     public function credit_report(){
+      $keywords='credit report free,credit score,free credit report and score,how to get free credit report ';
+      $data['title']='Credit score online on Rupeeboss.com';
       $data['telephone']=DB::table('experian_telephonetype')
       ->select('Telephone_Name','Telephone_Value')
       ->get();
@@ -93,7 +95,7 @@ class CompareController extends Controller
           }
 
       if($contact || $login){
-          return view('credit-report')->with($data);
+          return view('credit-report')->with($data)->with('keywords',$keywords);
         }else{
            return view('credit-report-otp');
         }

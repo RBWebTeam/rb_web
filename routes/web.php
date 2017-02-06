@@ -102,6 +102,8 @@ Route::post('doc-upload','UploadController@UploadPost');
 //something went wrong page
 Route::get('went-wrong','ErrorController@went_wrong');
 
+Route::get('thank-you',function (){return view('thank-you');});
+
 // Creditcardform
 Route::get('credit-card-form','CreditcardController@credit_card_form');
 Route::post('credit-submit','CreditcardController@credit_form_submit');

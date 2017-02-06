@@ -66,17 +66,17 @@
     <div class="form-group">
     <input type="hidden" name="brokerid" id="brokerid" value="<?php echo isset($_GET['brokerid'])?$_GET['brokerid']:'';?>">
        <!-- <label class="control-label" for="Loan Amount">Outstanding Principal:</label> -->
-       <input type="text" name="loanamount" class="form-control" id="loanamount" placeholder="Outstanding Principal" value="" onblur ="myfun()" onkeypress="return isNumberKey(event)" maxlength="9">
+       <input type="text" name="loanamount" class="form-control" id="loanamount" placeholder="Outstanding Principal" value="" onblur ="myfun()" onkeypress="return isNumberKey(event)" maxlength="9" title="Outstanding Principal">
 
     </div>
     <div class="form-group">
       <!-- <label class="control-label" for="Interest Rate"> Current Interest Rate:</label> -->
-      <input type="text" name="loaninterest" step="0.01" min="0" class="form-control" id="loaninterest" placeholder="Present Int.Rate"  value="" onblur="myfun()" onkeypress="return isNumberKey(event)">
+      <input type="text" name="loaninterest" step="0.01" min="0" class="form-control" id="loaninterest" placeholder="Present Int.Rate"  value="" onblur="myfun()" onkeypress="return isNumberKey(event)" title="Present Int.Rate">
     </div>
    
     <div class="form-group right-block">
        <!-- <label class="control-label" for="Loan Tenure">Remaining Tenure:</label> -->
-        <input type="text" name="loanterm" class="form-control" id="loanterm" placeholder="Remaining Tenure" value="" onblur="myfun()" onkeypress="return isNumberKey(event)">
+        <input type="text" name="loanterm" class="form-control" id="loanterm" placeholder="Remaining Tenure" value="" onblur="myfun()" onkeypress="return isNumberKey(event)" title="Remaining Tenure">
     <p id="err" style="display:none;"><span style="color:red; font-size:13px; position:absolute;">Please Fill All Inputs</span></p>
   
     <div class="col-md-12 pad pull-right">

@@ -1745,7 +1745,7 @@ input[type="radio"] {margin:0px;}
 .bankpg h3 {margin-top:15px;color:#666;}
 .tbl-clr th {padding:2px;}
 .bg-clr-tbl {text-align:center; color:#fff;}
-.has-error span{font-size:12px;color:#ff0000;display:block;}
+.has-error span{font-size:12px;color:#ff0000;display:block;padding-bottom: 20px;}
 .has-error .high {height:60px;}
 .tabs-left {border:1px solid #ddd; background:#fff;}
 

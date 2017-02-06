@@ -296,7 +296,7 @@
       if ($("#Year").prop("checked")) {
         var loanterm1 = $("#loanterm").val();
         var loanterm = loanterm1*12;
-        $('#loanterm_new').val(loanterm);
+        $('#loanterm_new').val(loanterm1);
       }else{
         var loanterm = $("#loanterm").val();
 

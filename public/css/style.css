@@ -1597,7 +1597,7 @@ top: -.25em;left: 20%;margin: 0 0 0 -.25em;}
 /*emi css*/
 
 
- .rw-hei {height:380px;border-right:none;border-left: 1px solid #eee;}
+ .rw-hei {height:380px;border-right:none;}
 
   body {color:#666;}
   .tbl-clr {color:#fff; }
@@ -1745,7 +1745,7 @@ input[type="radio"] {margin:0px;}
 .bankpg h3 {margin-top:15px;color:#666;}
 .tbl-clr th {padding:2px;}
 .bg-clr-tbl {text-align:center; color:#fff;}
-.has-error span{font-size:12px;color:#ff0000;display:block;}
+.has-error span{font-size:12px;color:#ff0000;display:block;padding-bottom: 20px;}
 .has-error .high {height:60px;}
 .tabs-left {border:1px solid #ddd; background:#fff;}
 
@@ -1953,6 +1953,7 @@ body {background:#eee;}
 }
 .slide-hm {width:100%;}
 .msg p {color:#fff;text-align:center;}
+.em8 {font-family:arial;}
 .bt-bg {background:url(../images/bt-bg.jpg) no-repeat;}
 .comp-pg .comp li {list-style-type:none;padding:10px;}
   .comp-pg .comp li img {margin:0 auto;}

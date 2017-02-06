@@ -9,16 +9,17 @@
 				</div>
 				<div class="col-md-12 white-bg">
 					<div class="row text-left comp-pg rate">
-						<p><b>Would like to know your credit score before applying 	for loan 	</b></p>
-						<p>Your personal information is required to retrieve your credit Report and Score. 
-							All of the information you provide will be transferred to us through a private secure connection</p>
-							<form class="" id="compareform" role="form" method="POST" action="show-credit-report">
+						<p><b>Would you like to know your credit score before applying 	for a loan?</b></p>
+						<p>Your personal information is required to retrieve your Credit Report and Score. 
+							All the information you provide will be transferred to us through a private secure connection.</p>
+							<form class="" id="compareform" role="form" method="POST" name="Experian_form"
+							action="show-credit-report" >
 							 {{ csrf_field() }}
 								<div class="row">
 									<div class="form-group">
-									<input type="text" name="clientName" value="RUPEEBOSS">
-									<input type="text" name="hitId" value="">
-									<input type="text" name="voucherCode" value="RB12HlwtQ">
+									<input type="hidden" name="clientName" value="RUPEEBOSS">
+									<input type="hidden" name="hitId" value="">
+									<input type="hidden" name="voucherCode" value="RB12HlwtQ">
 										<h4 class="hdr">&nbsp;&nbsp;&nbsp;&nbsp;Personal Details</h4>
 										<div class="col-md-4">
 											<input type="text" class="form-control" placeholder="First Name*" name="firstName" required="">
@@ -41,9 +42,9 @@
 								</div>
 								<div class="row sec">
 									<div class="form-group">
-										<h4 class="hdr">&nbsp;&nbsp;&nbsp;&nbsp;Current Addresses Details</h4>
+										<h4 class="hdr">&nbsp;&nbsp;&nbsp;&nbsp;Current Address Details</h4>
 										<div class="col-md-4">
-											<input type="text" class="form-control" placeholder="flat No / Plot No / House No*" name="flatPlotHouseNo" required="">
+											<input type="text" class="form-control" placeholder="Flat No / Plot No / House No*" name="flatPlotHouseNo" required="">
 										</div>
 										<div class="col-md-4">
 											<input type="text" class="form-control" placeholder="Building / Society Name" name="society">
@@ -53,7 +54,7 @@
 										</div>
 
 										<div class="col-md-4">
-										<input type="text" class="form-control" placeholder="city name" name="city" id="city">
+										<input type="text" class="form-control" placeholder="City Name" name="city" id="city">
 											
 										</div>
 										<div class="col-md-4">
@@ -84,7 +85,7 @@
 														<?php }?>
 											</div>
 											<div class="col-md-4">
-												<input type="text" class="form-control" id="telephoneNo" name="telephoneNo" placeholder="telephone No" required="" onkeypress="return fnAllowNumeric(event)" maxlength="10" minlength="10">
+												<input type="text" class="form-control" id="telephoneNo" name="telephoneNo" placeholder="Telephone No" required="" onkeypress="return fnAllowNumeric(event)" maxlength="10" minlength="10">
 											</div>
 											<div class="col-md-4">
 												<select required name="telephoneType">
@@ -134,21 +135,20 @@
 											<a href="#" data-toggle="modal" data-target="#Experian_terms_modal"> Rupeeboss Terms</a> and Conditions applicable to this service and that all the details furnished by me above are true and correct. I further provide consent to Rupeeboss and its affiliates to contact me with reference to financial products and this consent shall override any registration with DNC/NDNC.
 										<p></p>
 										<hr>
-										<p>You hereby consent to Rupeeboss Financial Services Private Limited being appointed as your authorized representative to receive your Credit Information from Experian for the purpose of processing the loan applications.</p>
-<p class="text-lowercase">BY EXECUTING THIS AGREEMENT / CONSENT FORM, YOU ARE EXPRESSLY 
-AGREEING TO ACCESS THE EXPERIAN CREDIT INFORMATION REPORT AND CREDIT SCORE, 
-AGGREGATE SCORES, INFERENCES, REFERENCES AND DETAILS (AS DEFINED BELOW) (TOGETHER REFERRED AS “CREDIT INFORMATION”). 
-YOU HEREBY ALSO IRREVOCABLY AND UNCONDITIONALLY CONSENT TO SUCH CREDIT INFORMATION BEING PROVIDED BY EXPERIAN TO 
-YOU AND RUPEEBOSS FINANCIAL SERVICES PRIVATE LIMITED BY USING EXPERIAN TOOLS, 
-ALGORITHMS AND DEVICES AND YOU HEREBY AGREE, ACKNOWLEDGE AND
- ACCEPT THE <a href="#" data-toggle="modal" data-target="#RB_Experian_terms_modal"><span class="text-capitalize">Terms and Condition</span></a> SET FORTH HEREIN.</p>
- <p><input type="checkbox" name="autorize" required>&nbsp; Accept &nbsp;&nbsp; <input type="checkbox" name="autorize" required>&nbsp; Decline</p>
+										<p>I hereby authorize RupeeBoss to retrieve my Credit information report on my behalf from
+ <a href="#" data-toggle="modal" data-target="#RB_Experian_terms_modal"><span class="text-capitalize"> Experian Credit Information Services Private Limited.</span></a></p>
+ <p><div>
+          <input type="radio" name="agreement1" value="accept" id="agreement1" required>&nbsp; Accept&nbsp;
+          <input type="radio" name="agreement1" value="decline" id="agreement2" required >&nbsp; Decline
+          
+    </div></p>
 
 										</div>
 
 										</div>
-										&nbsp;&nbsp;&nbsp;&nbsp;<button class="btn btn-primary btn-outline with-arrow animate-box fadeInUp animated" >Confirm & Continue<i class="icon-arrow-right"></i>
+										&nbsp;&nbsp;&nbsp;&nbsp;<button class="btn btn-primary btn-outline with-arrow animate-box fadeInUp animated" value="Get Checked" onclick ="return checkButton()" >Confirm & Continue<i class="icon-arrow-right"></i>
 									</button>
+									<p><b>All <mark style="color:red">*</mark>fields are mandatory.</b></p>
 								</div>
 							</form>
 					</div>
@@ -161,3 +161,18 @@ ALGORITHMS AND DEVICES AND YOU HEREBY AGREE, ACKNOWLEDGE AND
 @include('layout.footer')
 @include('layout.script')
 
+<script type="text/javascript">
+function checkButton(){
+	  //alert(document.Experian_form.agreement1.checked);
+	  
+if(document.Experian_form.agreement1.checked == true){
+ 	return false;	
+} 
+else if(document.Experian_form.agreement2.checked  == true){
+	alert("Please accept the terms before proceeding");
+	return false;
+}
+}
+
+
+</script>

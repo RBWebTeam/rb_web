@@ -34,13 +34,13 @@
 
 
 			</form>
-			<?php }else {
-				$x=($result);
+			<?php }else if($result->responseJson=='passedReport'){
 				
-				$post_data='"'.http_build_query($result).'"';
-				//print_r($post_data);
-				 $url = "http://api.rupeeboss.com/CreditAPI.svc/getfinalResponse";
-			   
+				$lead_id=Session::get('Lead_Id');
+                $post_data= '{"jsonResp":'.$raw.',"Lead_Id":'.$lead_id.'}';
+                //print_r($post_data);
+                 $url = "http://api.rupeeboss.com/CreditAPI.svc/getfinalResponse";
+               
                 $ch = curl_init();
                 curl_setopt($ch, CURLOPT_VERBOSE, 1);
                 curl_setopt( $ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
@@ -53,10 +53,25 @@
                 $http_result = curl_exec($ch);
                 $error = curl_error($ch);
                 $http_code = curl_getinfo($ch ,CURLINFO_HTTP_CODE);
-                //$obj = json_decode($http_result);
-                print_r("<h1>".$http_result."</h1>");
-                //print_r($error);
-				
+                //print_r("<h1>".$http_result."</h1>");
+
+
+               	$name= Session::get('name_cScore');
+	            $pan=Session::get('pan_cScore');
+	            $email=Session::get('email_cScore');
+
+	            $parse=explode('~',$http_result);
+	            $parse[0]=str_replace('"','',$parse[0]);	
+	            //print_r($parse);
+                $save_data = array('name' => $name,'pan'=>$pan,'email'=>$email,'lead_id'=>$lead_id,'credit_score'=>$parse[0],'raw_response'=>$parse[1]);
+                $id=DB::table('experian_response')
+                	->insertGetId(['name' => $name,'pan'=>$pan,'email'=>$email,'lead_id'=>$lead_id,'credit_score'=>$parse[0],'raw_response'=>$parse[1],'created_at'=>date("Y-m-d H:i:s"),'updated_at'=>date("Y-m-d H:i:s")]);
+
+		 		
+		 		print_r("Your Credit Score is ::".$parse[0] );
+		 		
+
+		 		
 			}
 
 			 ?>

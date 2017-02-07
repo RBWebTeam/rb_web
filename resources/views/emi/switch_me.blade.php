@@ -189,11 +189,13 @@
 
      </div>
     </div>
+	
+	<div class="col-md-12 pad"><h2 class="blue-bg">Would you like to borrow &nbsp;&nbsp;<span><b>Rs.0</b></span>&nbsp;&nbsp; Extra and pay the same EMI</h2> </div>
   
 </div>
 
 </div>
-<br>
+
 
 
 

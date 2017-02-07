@@ -1225,7 +1225,6 @@ rb-services-section{padding:0px;}
   -o-transition: 0.3s;
   transition: 0.3s;
 }
-#fh5co-pricing-section .price-box:hover {background:#b8dae8;}
 #fh5co-pricing-section .price-box.popular .btn-select-plan {
   background: #ec1b23;
 }
@@ -1950,7 +1949,6 @@ body {background:#eee;}
   @media only screen and (max-width:768px) {
  .txt-title {display:none;}
  .bdr-btm {border:1px solid #ddd; margin-bottom:10px;}
- .rw-hei {margin-bottom:20px;}
 }
 .slide-hm {width:100%;}
 .msg p {color:#fff;text-align:center;}

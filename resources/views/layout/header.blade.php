@@ -28,6 +28,11 @@
 	<link rel="stylesheet" href="{{URL::to('css/chatbox.css')}}">
 	<!-- Modernizr JS -->
 	<!-- <link rel="manifest" href="{{URL::to('extension/manifest.json')}}"> -->
+	@if( request()->url() == url('/') )
+     <link rel="canonical" href="https://www.rupeeboss.com/" />
+	@else
+	     <link rel="canonical" href="{!! request()->fullUrl() !!}"  />
+	@endif
 
 	
 

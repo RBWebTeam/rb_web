@@ -68,7 +68,7 @@
                 	->insertGetId(['name' => $name,'pan'=>$pan,'email'=>$email,'lead_id'=>$lead_id,'credit_score'=>$parse[0],'raw_response'=>$parse[1],'created_at'=>date("Y-m-d H:i:s"),'updated_at'=>date("Y-m-d H:i:s")]);
 
 		 		
-		 		print_r("Your Credit Score is ::".$parse[0] );
+		 		print_r($result->showHtmlReportForCreditReport);
 		 		
 
 		 		

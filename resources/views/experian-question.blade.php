@@ -3,9 +3,10 @@
 	<aside id="fh5co-hero">
 		<div class=""></div>
 		<div class="flexslider col-md-8">
-			<h3> Please answer the questions</h3>
+			
 
 			<div id="frst_qstn"> 
+			<h3> Please answer the questions</h3>
 			<?php if($result->questionToCustomer!=null){ ?> 
 			<form id="generate_question" name="generate_question"> 
 			{{ csrf_field()}}

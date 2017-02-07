@@ -1225,7 +1225,6 @@ rb-services-section{padding:0px;}
   -o-transition: 0.3s;
   transition: 0.3s;
 }
-#fh5co-pricing-section .price-box:hover {background:#b8dae8;}
 #fh5co-pricing-section .price-box.popular .btn-select-plan {
   background: #ec1b23;
 }
@@ -1597,7 +1596,7 @@ top: -.25em;left: 20%;margin: 0 0 0 -.25em;}
 /*emi css*/
 
 
- .rw-hei {height:380px;border-right:none;}
+ .rw-hei {height:300px;border-right:none;}
 
   body {color:#666;}
   .tbl-clr {color:#fff; }
@@ -1962,3 +1961,11 @@ body {background:#eee;}
   .hide-title ul li {list-style-type:none;}
   .txt-title1 {font-weight:bold; text-transform:uppercase; border-right:1px solid #ddd;}
   .error-template img {margin:auto; }
+  .heigh-bt {height:300px; box-shadow:1px 1px 1px 1px #ccc; border-radius:5px;-moz-border-radius:5px;-webkit-border-radius:5px;}
+  .box-shadow {box-shadow:1px 1px 1px 1px #ccc;}
+  .apply-btn:hover {color:#fff;background:#2882a6;}
+  .blue-bg {background:#5cd8f4; padding:15px; color:#fff; font-size:30px; text-align:center;}
+  .bnk-log {width:110px;}
+  
+  
+  

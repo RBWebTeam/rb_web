@@ -3,7 +3,7 @@
   body {color:#666;}
   .tbl-clr {color:#fff; }
   .tbl-clr td {text-align:center;}
-  .rw-hei{margin-bottom:20px; height:280px;}
+  .rw-hei{margin-bottom:20px;}
    .rw-hei p {font-size:16px;color:#666; margin-bottom:10px;}
    .em1 {color:#666;}
    .rw-hei h1 {margin-top:10px;}
@@ -54,13 +54,15 @@
   
 <div class="container">
   <div class="row">
-     <div class="col-sm-4 rw-hei" style="background-color: #ffcc99;"><h3 class="emi-cal">
+     <div class="col-sm-4 rw-hei">
+	 <div class="white-bg pad1 heigh-bt">
+	 <h3 class="emi-cal">
     <?php if($loan == "home-loan") {?>
-     Home Loan Transfer Savings  <i class="fa fa-exchange" aria-hidden="true"></i></h3>
+     Current Loan Status  <i class="fa fa-exchange" aria-hidden="true"></i></h3>
     <?php }elseif($loan == "personal-loan"){?>
-    Personal Loan Transfer Savings  <i class="fa fa-exchange" aria-hidden="true"></i></h3>
+    Current Loan Status  <i class="fa fa-exchange" aria-hidden="true"></i></h3>
     <?php }else{?>
-    Loan Against Property Transfer Savings  <i class="fa fa-exchange" aria-hidden="true"></i></h3>
+    Current Loan Status  <i class="fa fa-exchange" aria-hidden="true"></i></h3>
     <?php }?>
 
 
@@ -84,7 +86,7 @@
     <p id="err" style="display:none;"><span style="color:red; font-size:13px; position:absolute;">Please Fill All Inputs</span></p>
 
   
-    <div class="col-md-12 pad pull-right">
+    <div class="col-md-12 pad">
   <button class="btn btn-success pull-left ">Submit</button>
   <div class="pull-right">
           <label><input type="radio" name="Year" id="Year" value="" checked="checked"> Yr</label>
@@ -92,7 +94,7 @@
     </div>
     </div>
   
-  
+
 
     </div>
 
@@ -104,9 +106,11 @@
     <input type="hidden" name="product_id" id="product_id" value="7">
     <?php }?>
 
-     
+     </div>
     </div>
-    <div class="col-sm-4 rw-hei brd-rgt" style="background-color:#ccc"><h3 class="transfer-cal">
+    <div class="col-sm-4 rw-hei brd-rgt">
+	<div class="white-bg pad1 heigh-bt">
+	<h3 class="transfer-cal">
     My Savings <i class="fa fa-credit-card" aria-hidden="true"></i></h3>
     <!-- <i class="fa fa-cog fa-spin fa-2x fa-fw"></i>
     <span class="sr-only">Loading...</span></h3> -->
@@ -132,14 +136,17 @@
 
        <!-- <div id="b"></div> -->
       </center>
+	  </div>
   </div>
-  <div class="col-sm-4 rw-hei" style="background-color: #ffcc99;"><h3 class="emi-cal">
+  <div class="col-sm-4 rw-hei">
+  <div class="white-bg pad1 heigh-bt">
+  <h3 class="emi-cal">
     <?php if($loan == "home-loan") {?>
-     Home Loan After Transfer  <i class="fa fa-exchange" aria-hidden="true"></i></h3>
+     After Transfer  <i class="fa fa-exchange" aria-hidden="true"></i></h3>
     <?php }elseif($loan == "personal-loan"){?>
-    Personal Loan After Transfer  <i class="fa fa-exchange" aria-hidden="true"></i></h3>
+    After Transfer  <i class="fa fa-exchange" aria-hidden="true"></i></h3>
     <?php }else{?>
-    Loan Against Property After Transfer <i class="fa fa-exchange" aria-hidden="true"></i></h3>
+    After Transfer <i class="fa fa-exchange" aria-hidden="true"></i></h3>
     <?php }?>
 
 
@@ -153,15 +160,21 @@
     <div class="form-group">
       <!-- <label class="control-label" for="Interest Rate"> Current Interest Rate:</label> -->
       <input type="text" name="loaninterest" step="0.01" min="0" class="form-control" id="loaninterest_new" placeholder="Interest"  value="" onblur="myfun()" onkeypress="return isNumberKey(event)" title="Interest">
+
     </div>
-    
+	
     <div class="form-group right-block">
        <!-- <label class="control-label" for="Loan Tenure">Remaining Tenure:</label> -->
 
         <input type="text" name="loanterm" class="form-control" id="loanterm_new" placeholder="Loan Tenure(in months)" value="" onblur="myfun()" onkeypress="return isNumberKey(event)" title="Tenure" >
     <p id="err" style="display:none;"><span style="color:red; font-size:13px; position:absolute;">Please Fill All Inputs</span></p>
+
+	
+   <div class="col-md-12 pad"><button class="btn btn-success pull-left ">Revise & calculate</button></div>
+
   
   
+
     </div>
 
     <?php if($loan == "home-loan") {?>
@@ -172,10 +185,13 @@
     <input type="hidden" name="product_id" id="product_id" value="7">
     <?php }?>
 
-     
+     </div>
     </div>
+	
+	<div class="col-md-12 pad"><h2 class="blue-bg">Would you like to borrow &nbsp;&nbsp;<span><b>Rs.0</b></span>&nbsp;&nbsp; Extra and pay the same EMI</h2> </div>
   
 </div>
+
 </div>
 
 
@@ -296,7 +312,7 @@
       if ($("#Year").prop("checked")) {
         var loanterm1 = $("#loanterm").val();
         var loanterm = loanterm1*12;
-        $('#loanterm_new').val(loanterm);
+        $('#loanterm_new').val(loanterm1);
       }else{
         var loanterm = $("#loanterm").val();
 

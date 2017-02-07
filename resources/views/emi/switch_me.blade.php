@@ -128,8 +128,10 @@
    
         <p>Drop-in Interest Rate:<b class="em7"><span id="emi5">0</span>%</b></p>
     
-       <p><h6>Your <mark style="color:red">Savings</mark> through reduced Interest:</h6></p>
+       <p><h6>Your <mark style="color:red"><b>Savings</b></mark> through reduced Interest:</h6></p>
        <h2 class="em8">₹ <b><span id="emi6">0</span></b></h2>
+
+
        
        
 
@@ -171,7 +173,7 @@
     <p id="err" style="display:none;"><span style="color:red; font-size:13px; position:absolute;">Please Fill All Inputs</span></p>
 
 	
-   <div class="col-md-12 pad"><button class="btn btn-success pull-left" onclick="myfun()">Revise & calculate</button></div>
+   <div class="col-md-12 pad"><button class="btn btn-success pull-left" onclick="myfun_new()">Revise & calculate</button></div>
 
   
   
@@ -189,7 +191,9 @@
 
      </div>
     </div>
-	
+
+	<div class="col-md-12 pad"><h2 class="bg-primary"">Your EMI would be <b>₹<span id="after_emi">0</span></b> and your Savings would be <b>₹<span id="after_savings">0</span></b> according to <b>₹<span id="loaninterest_new">0</span></b>  </h2> </div>
+
 	<div class="col-md-12 pad"><h2 class="blue-bg">Would you like to borrow &nbsp;&nbsp;<span><b>Rs.0</b></span>&nbsp;&nbsp; Extra and pay the same EMI</h2> </div>
   
 </div>
@@ -389,3 +393,74 @@
 
 
 </script>
+
+<!-- After Transfer Script -->
+<script type="text/javascript">
+
+  function myfun_new(){
+      console.log("ok");
+      var lm = $("#loanamount_new").val().length;
+      var lin = $("#loaninterest_new").val().length;
+      var lt = $("#loanterm_new").val().length;
+       
+       
+       if(lm >0 && lin >0 && lt>0){
+      
+      var loanamount = $("#loanamount_new").val();
+      var loaninterest = $("#loaninterest_new").val();
+      var loanterm = $("#loanterm_new").val();
+       var old_loaninterest = $("#loaninterest").val();
+      console.log($("#loanterm_new").val());
+
+      
+      var v_token = "{{csrf_token()}}";
+      $.ajax({  
+               type: "POST",  
+               url: "{{URL::to('after-transfer-calculation')}}",
+               dataType:'json',
+               data : { 'loanamount': loanamount , 'loaninterest': loaninterest ,'loanterm' :loanterm,'_token': v_token,'old_loaninterest':old_loaninterest},
+               // 'bank':bank},
+               success: function(msg){
+                  console.log(msg.success);
+                  if(msg.success ==true){
+                    // console.log('ok');
+                    // console.log(msg.emi);
+                    // console.log(msg.after_savings);
+                    // return false;
+                  var after_numb = msg.emi.toFixed();
+                   $('#after_emi').empty().append(after_numb);
+                  
+                    var after_numb1 = msg.after_savings.toFixed();
+                  $('#after_savings').empty().append(after_numb1);
+
+                                   
+
+                    
+
+                        $("#e").show();
+                        $("#s").show();
+                        
+                        
+                  }
+
+                  
+              
+
+                        
+                        
+                        
+                         
+                     }  
+                  }); 
+        
+        
+        $("#err").hide();
+      }else{
+        $("#err").show();
+      }
+    
+  }
+
+
+</script>
+<!-- End -->

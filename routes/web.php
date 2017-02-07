@@ -67,6 +67,8 @@ Route::post('emi_cal','CompareController@emi_cal');
 Route::get('loan-details/{product}/{bank}','BankController@home_loanBank');
 Route::get('home-loan-transfer/{loan}','CompareController@switchme');
 Route::post('calculation','CompareController@calculation');
+Route::post('after-transfer-calculation','CompareController@after_transfer_calculation');
+
 Route::get('profile','ProfileController@my_profile');
 Route::get('about-us','HomeController@about_us');
 Route::get('disclaimer-page','HomeController@disclaimer');
@@ -76,6 +78,8 @@ Route::get('comfy-sales','HomeController@comfy_sales');
 Route::get('express-loan','HomeController@express_loan');
 Route::get('credit-card','HomeController@credit_card');
 Route::get('savings-account','HomeController@savings_account');
+Route::get('RBA-login','HomeController@RBA_login');
+Route::post('RBA-login','HomeController@RBA_register');
 Route::get('lead-status','HomeController@lead_status');
 Route::get('apply-lead-online','ProfileController@applyonline');
 //new loans test

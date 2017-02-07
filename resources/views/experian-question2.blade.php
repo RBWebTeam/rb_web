@@ -1,19 +1,20 @@
 <?php if($result->questionToCustomer!=null){ ?> 
 			<form id="generate_question2" name="generate_question1"> 
+			<h3> Please answer the questions</h3>
 			{{ csrf_field()}}
 				<label>
 					<?php echo $result->questionToCustomer->question;
 					?>
 
 				</label>
-				<select name="qs1">
+				<select name="qs1" class="drop-arr">
 					@foreach($result->questionToCustomer->optionsSet1 as $qs1)
 					<option>
 						<?php echo $qs1;	?>
 					</option>
 					@endforeach
 				</select>
-				<select name="qs2">
+				<select name="qs2" class="drop-arr">
 					@foreach($result->questionToCustomer->optionsSet2 as $qs2)
 					<option>
 						<?php echo $qs2;	?>
@@ -68,7 +69,7 @@
                 	->insertGetId(['name' => $name,'pan'=>$pan,'email'=>$email,'lead_id'=>$lead_id,'credit_score'=>$parse[0],'raw_response'=>$parse[1],'created_at'=>date("Y-m-d H:i:s"),'updated_at'=>date("Y-m-d H:i:s")]);
 
 		 		
-		 		print_r("Your Credit Score is ::".$parse[0] );
+		 		print_r($result->showHtmlReportForCreditReport);
 		 		
 
 		 		

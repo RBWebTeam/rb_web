@@ -58,7 +58,7 @@
 											
 										</div>
 										<div class="col-md-4">
-												<select required name="state">
+												<select required name="state" class="drop-arr">
 											  @foreach($state as $state_name)
 				      						 <option value="{{ $state_name->State_Code }}" >
 				      						 	<span style="font-family: bold; ">{{ $state_name->State_Name }}
@@ -88,7 +88,7 @@
 												<input type="text" class="form-control" id="telephoneNo" name="telephoneNo" placeholder="Telephone No" required="" onkeypress="return fnAllowNumeric(event)" maxlength="10" minlength="10">
 											</div>
 											<div class="col-md-4">
-												<select required name="telephoneType">
+												<select required name="telephoneType" class="drop-arr">
 												
 											  @foreach($telephone as $tele)
 				      						 <option value="{{ $tele->Telephone_Value }}" >

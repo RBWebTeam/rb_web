@@ -19,7 +19,7 @@
 									<div class="form-group">
 									<input type="hidden" name="clientName" value="RUPEEBOSS">
 									<input type="hidden" name="hitId" value="">
-									<input type="hidden" name="voucherCode" value="RB12T0zsD">
+									<input type="hidden" name="voucherCode" value="RB12u9Xo8">
 										<h4 class="hdr">&nbsp;&nbsp;&nbsp;&nbsp;Personal Details</h4>
 										<div class="col-md-4">
 											<input type="text" class="form-control" placeholder="First Name*" name="firstName" required="">
@@ -58,7 +58,7 @@
 											
 										</div>
 										<div class="col-md-4">
-												<select required name="state">
+												<select required name="state" class="drop-arr">
 											  @foreach($state as $state_name)
 				      						 <option value="{{ $state_name->State_Code }}" >
 				      						 	<span style="font-family: bold; ">{{ $state_name->State_Name }}
@@ -88,7 +88,7 @@
 												<input type="text" class="form-control" id="telephoneNo" name="telephoneNo" placeholder="Telephone No" required="" onkeypress="return fnAllowNumeric(event)" maxlength="10" minlength="10">
 											</div>
 											<div class="col-md-4">
-												<select required name="telephoneType">
+												<select required name="telephoneType" class="drop-arr">
 												
 											  @foreach($telephone as $tele)
 				      						 <option value="{{ $tele->Telephone_Value }}" >

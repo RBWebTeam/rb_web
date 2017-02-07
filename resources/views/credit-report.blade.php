@@ -19,7 +19,7 @@
 									<div class="form-group">
 									<input type="hidden" name="clientName" value="RUPEEBOSS">
 									<input type="hidden" name="hitId" value="">
-									<input type="hidden" name="voucherCode" value="RB12HlwtQ">
+									<input type="hidden" name="voucherCode" value="RB12u9Xo8">
 										<h4 class="hdr">&nbsp;&nbsp;&nbsp;&nbsp;Personal Details</h4>
 										<div class="col-md-4">
 											<input type="text" class="form-control" placeholder="First Name*" name="firstName" required="">
@@ -58,7 +58,7 @@
 											
 										</div>
 										<div class="col-md-4">
-												<select required name="state">
+												<select required name="state" class="drop-arr">
 											  @foreach($state as $state_name)
 				      						 <option value="{{ $state_name->State_Code }}" >
 				      						 	<span style="font-family: bold; ">{{ $state_name->State_Name }}
@@ -88,7 +88,7 @@
 												<input type="text" class="form-control" id="telephoneNo" name="telephoneNo" placeholder="Telephone No" required="" onkeypress="return fnAllowNumeric(event)" maxlength="10" minlength="10">
 											</div>
 											<div class="col-md-4">
-												<select required name="telephoneType">
+												<select required name="telephoneType" class="drop-arr">
 												
 											  @foreach($telephone as $tele)
 				      						 <option value="{{ $tele->Telephone_Value }}" >
@@ -135,8 +135,10 @@
 											<a href="#" data-toggle="modal" data-target="#Experian_terms_modal"> Rupeeboss Terms</a> and Conditions applicable to this service and that all the details furnished by me above are true and correct. I further provide consent to Rupeeboss and its affiliates to contact me with reference to financial products and this consent shall override any registration with DNC/NDNC.
 										<p></p>
 										<hr>
-										<p>I hereby authorize RupeeBoss to retrieve my Credit information report on my behalf from
- <a href="#" data-toggle="modal" data-target="#RB_Experian_terms_modal"><span class="text-capitalize"> Experian Credit Information Services Private Limited.</span></a></p>
+										<p>You hereby consent to Rupeeboss Financial Services Private Limited being appointed as your authorized representative to receive your Credit Information from Experian for the purpose of processing the loan applications.</p>
+<p class="text-lowercase"><span class="text-capitalize">By</span> EXECUTING THIS AGREEMENT / CONSENT FORM, YOU ARE EXPRESSLY AGREEING TO ACCESS THE EXPERIAN CREDIT INFORMATION REPORT AND CREDIT SCORE, AGGREGATE SCORES, INFERENCES, REFERENCES AND DETAILS (AS DEFINED BELOW) (TOGETHER REFERRED AS “CREDIT INFORMATION”). YOU HEREBY ALSO IRREVOCABLY AND UNCONDITIONALLY CONSENT TO SUCH CREDIT INFORMATION BEING PROVIDED BY EXPERIAN TO YOU AND RUPEEBOSS FINANCIAL SERVICES PRIVATE LIMITED BY USING EXPERIAN TOOLS, ALGORITHMS AND DEVICES AND YOU HEREBY AGREE,
+ ACKNOWLEDGE AND ACCEPT THE <a href="#" data-toggle="modal" data-target="#RB_Experian_terms_modal"><span class="text-capitalize">TERMS AND CONDITIONS</a> SET FORTH HEREIN.</p>
+  
  <p><div>
           <input type="radio" name="agreement1" value="accept" id="agreement1" required>&nbsp; Accept&nbsp;
           <input type="radio" name="agreement1" value="decline" id="agreement2" required >&nbsp; Decline
@@ -146,9 +148,11 @@
 										</div>
 
 										</div>
-										&nbsp;&nbsp;&nbsp;&nbsp;<button class="btn btn-primary btn-outline with-arrow animate-box fadeInUp animated" value="Get Checked" onclick ="return checkButton()" >Confirm & Continue<i class="icon-arrow-right"></i>
+										<div class="col-md-12">
+									<button class="btn btn-primary btn-outline with-arrow animate-box fadeInUp animated" value="Get Checked" onclick ="return checkButton()" >Confirm & Continue<i class="icon-arrow-right"></i>
 									</button>
 									<p><b>All <mark style="color:red">*</mark>fields are mandatory.</b></p>
+									</div>
 								</div>
 							</form>
 					</div>

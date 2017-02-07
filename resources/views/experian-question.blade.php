@@ -3,11 +3,13 @@
 	<aside id="fh5co-hero">
 		<div class=""></div>
 		<div class="flexslider col-md-8">
-			<h3> Please answer the questions</h3>
+			
 
 			<div id="frst_qstn"> 
+			
 			<?php if($result->questionToCustomer!=null){ ?> 
 			<form id="generate_question" name="generate_question"> 
+			<h3> Please answer the questions</h3>
 			{{ csrf_field()}}
 				<label>
 					<?php echo $result->questionToCustomer->question;
@@ -15,14 +17,14 @@
 					?>
 
 				</label>
-				<select name="qs1">
+				<select name="qs1" class="drop-arr">
 					@foreach($result->questionToCustomer->optionsSet1 as $qs1)
 					<option>
 						<?php echo $qs1;	?>
 					</option>
 					@endforeach
 				</select>
-				<select name="qs2">
+				<select name="qs2" class="drop-arr">
 					@foreach($result->questionToCustomer->optionsSet2 as $qs2)
 					<option>
 						<?php echo $qs2;	?>

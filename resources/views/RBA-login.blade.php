@@ -30,7 +30,7 @@
     <div class="form-group">
       <label class="control-label col-sm-2" for="contact"><b>Contact:</b></label>
       <div class="col-sm-10">          
-        <input type="tel" class="form-control" id="contact" placeholder="Enter number" name="contact">
+        <input type="tel" class="form-control" id="contact" placeholder="Enter number" name="contact" maxlength="10">
       </div>
     </div>
     
@@ -62,14 +62,14 @@
          url: "{{URL::to('RBA-login')}}",
          data : $('#rba_form').serialize(),
          success: function(msg){
-         //console.log(msg);
-          if(msg==1){
-
-            alert("Thank you for your interest in ICICI Bank Credit Cards. Our representative will get in touch with you within 3 working days subject to your application meeting the eligibility criteria");
+         console.log(msg);
+          if(msg){
+             window.location.href ="{{URL::to('thank-you')}}";
+            
+          }else{
+            window.location.href ="{{URL::to('went-wrong')}}";
           } 
-          else if(msg==2){
-            alert("Something Went Wrong");
-          }
+          
 
         }  
       }); 

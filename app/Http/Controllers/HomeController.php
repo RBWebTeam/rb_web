@@ -88,7 +88,7 @@ class HomeController extends Controller
 			    'created_at'=>date("Y-m-d H:i:s"),
    			    'updated_at'=>date("Y-m-d H:i:s")]);
 		if($query){
-			 	$data ="test";
+			 	$data ="Thank you for registering.";
                	$email = $req->email;
                 $mail = Mail::send('email_view',['data' => $data], function($message) use($email) {
 		                $message->from('wecare@rupeeboss.com', 'RupeeBoss');
@@ -96,7 +96,7 @@ class HomeController extends Controller
 		                ->subject('Thankyou');
                 	});
 
-                $post_data='{"mobNo":"'.$req->contact.'","msgData":"test  - RupeeBoss.com",
+                $post_data='{"mobNo":"'.$req->contact.'","msgData":"Thank you for registering.- RupeeBoss.com",
                     "source":"WEB"}';
                 $url = "http://beta.services.rupeeboss.com/LoginDtls.svc/xmlservice/sendSMS";
                 $ch = curl_init();
@@ -114,8 +114,9 @@ class HomeController extends Controller
                 $obj = json_decode($http_result);
                 // statusId response 0 for success, 1 for failure
                 curl_close($ch);
+                return true;
 		}
-		return view('thank-you');
+		return false;
 
 	}
 

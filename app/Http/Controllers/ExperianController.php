@@ -5,7 +5,9 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use DB;
 use Response;
+use Session;
 use App\experian_request_model;
+use App\experian_responseModel;
 class ExperianController extends Controller
 {
 
@@ -16,6 +18,10 @@ class ExperianController extends Controller
             // print "<pre>";
             // print_r($post_data);exit();
             //unsetting terms and condition as no need to save in DB
+            Session::put('name_cScore', $req['firstName']." ".$req['middleName']." ".$req['surName']);
+            Session::put('pan_cScore',$req['panNo']);
+            Session::put('email_cScore',$req['email']);
+
              unset($post_data['terms']);
              unset($post_data['authorize']);
             $data=json_encode($post_data);
@@ -40,15 +46,19 @@ class ExperianController extends Controller
             $http_code = curl_getinfo($ch ,CURLINFO_HTTP_CODE);
              
             curl_close($ch);
-            //print_r($http_result);exit();
+           // print_r($error);exit();
             if($error){
                 return "something went wrong";
             }else{
                 $x=str_replace('"','',$http_result);
                 $new_data=explode('~', $x);
+                
+                
                 if($x){
                    // print_r($http_result);exit();
+                    Session::put('Lead_Id',$new_data[6]);
                     return $this->gen_ques($new_data,0);
+
 
                 }else{
                  return view('went-wrong');
@@ -126,11 +136,20 @@ class ExperianController extends Controller
 
             $res1=json_decode($http_result);
             $res=json_decode($res1);
-            $returnHTML = view('experian-question2',['result'=>$res,'stage1hitid'=>$req->stage1hitid,'stage2hitid'=>$req->stage2hitid,'stage2sessionid'=>$req->stage2sessionid,'qs'=>$req->question_count])->render();
+            $returnHTML = view('experian-question2',['result'=>$res,'stage1hitid'=>$req->stage1hitid,'stage2hitid'=>$req->stage2hitid,'stage2sessionid'=>$req->stage2sessionid,'qs'=>$req->question_count,'raw'=>$http_result])->render();
+
+            //getting score and saving response from experian
+           
+
+
             return response()->json(array('success' => true,'html'=>$returnHTML)); 
         }catch(\Exception $e){
             return $e;
         }  
+    }
+
+    public function save_credit_score(Request $req){
+        
     }
 
 

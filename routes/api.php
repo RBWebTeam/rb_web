@@ -25,6 +25,8 @@ Route::post('compare-api','ApiController@compare');
 Route::post('compare-test','ApiController@compare_test');
 //for mobile app
 Route::post('mobile-api-compare','MobileApiController@mobile_api_compare');
+Route::post('personal-loan-mobile','MobileApiController@personal_loan_mobile');
+
 Route::post('getcustomer','ApiController@getCustomer');
 Route::post('getcity','ApiController@getCity');
 Route::post('getproduct','ApiController@getProduct');

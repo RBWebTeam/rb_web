@@ -152,7 +152,7 @@
 
       <!-- <i class="fa fa-exchange" aria-hidden="true"></i> -->
     <div class="form-group">
-      <input type="hidden" name="brokerid" id="brokerid" value="<?php echo isset($_GET['brokerid'])?$_GET['brokerid']:'';?>">
+     
       <!-- <label class="control-label" for="Loan Amount">Outstanding Principal:</label> -->
 
        <input type="text" name="loanamount" class="form-control" id="loanamount_new" placeholder="Loan Amount" value=""  onkeypress="return isNumberKey(event)" maxlength="9" title="Loanamount" >
@@ -167,7 +167,7 @@
        <!-- <label class="control-label" for="Loan Tenure">Remaining Tenure:</label> -->
 
 
-        <input type="text" name="loanterm" class="form-control" id="loanterm_new" placeholder="Loan Tenure(in months)" value="" onkeypress="return isNumberKey(event)" title="Tenure" >
+        <input type="text" name="loanterm" class="form-control" id="loanterm_new" placeholder="Loan Tenure" value="" onkeypress="return isNumberKey(event)" title="Tenure" >
     <p id="err" style="display:none;"><span style="color:red; font-size:13px; position:absolute;">Please Fill All Inputs</span></p>
 
 	

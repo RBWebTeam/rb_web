@@ -1429,7 +1429,8 @@ border-radius: 7px;padding: 1em;margin-top: 1em;}
  #fh5co-services-section .services .icon-line-chart:hover {color:#147456;}
  #fh5co-services-section .services .icon-car:hover {color:#1f386e;}   
  
- #fh5co-services-section .services i {color:#e6e6e6;font-size:60px;} 
+ #fh5co-services-section .services i {color:#e6e6e6;font-size:60px;display:block;} 
+
 
  
 @media only screen and (max-width:768px) {
@@ -1966,6 +1967,7 @@ body {background:#eee;}
   .apply-btn:hover {color:#fff;background:#2882a6;}
   .blue-bg {background:#5cd8f4; padding:15px; color:#fff; font-size:30px; text-align:center;}
   .bnk-log {width:110px;}
+  .drop-arr {background:url(../images/down_arrow.png) no-repeat center right; padding-right:10px;}
   
   
   

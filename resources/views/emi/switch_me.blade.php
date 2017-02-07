@@ -3,7 +3,7 @@
   body {color:#666;}
   .tbl-clr {color:#fff; }
   .tbl-clr td {text-align:center;}
-  .rw-hei{margin-bottom:20px; height:280px;}
+  .rw-hei{margin-bottom:20px;}
    .rw-hei p {font-size:16px;color:#666; margin-bottom:10px;}
    .em1 {color:#666;}
    .rw-hei h1 {margin-top:10px;}

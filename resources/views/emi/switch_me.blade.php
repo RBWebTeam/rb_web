@@ -54,13 +54,15 @@
   
 <div class="container">
   <div class="row">
-     <div class="col-sm-4 rw-hei" style="background-color: #ffcc99;"><h3 class="emi-cal">
+     <div class="col-sm-4 rw-hei">
+	 <div class="white-bg pad1 heigh-bt">
+	 <h3 class="emi-cal">
     <?php if($loan == "home-loan") {?>
-     Home Loan Transfer Savings  <i class="fa fa-exchange" aria-hidden="true"></i></h3>
+     Current Loan Status  <i class="fa fa-exchange" aria-hidden="true"></i></h3>
     <?php }elseif($loan == "personal-loan"){?>
-    Personal Loan Transfer Savings  <i class="fa fa-exchange" aria-hidden="true"></i></h3>
+    Current Loan Status  <i class="fa fa-exchange" aria-hidden="true"></i></h3>
     <?php }else{?>
-    Loan Against Property Transfer Savings  <i class="fa fa-exchange" aria-hidden="true"></i></h3>
+    Current Loan Status  <i class="fa fa-exchange" aria-hidden="true"></i></h3>
     <?php }?>
 
 
@@ -73,31 +75,18 @@
     </div>
     <div class="form-group">
       <!-- <label class="control-label" for="Interest Rate"> Current Interest Rate:</label> -->
-<<<<<<< HEAD
-      <input type="text" name="loaninterest" step="0.01" min="0" class="form-control" id="loaninterest" placeholder="Interest"  value="" onblur="myfun()" onkeypress="return isNumberKey(event)">
-=======
+
       <input type="text" name="loaninterest" step="0.01" min="0" class="form-control" id="loaninterest" placeholder="Present Int.Rate"  value="" onblur="myfun()" onkeypress="return isNumberKey(event)" title="Present Int.Rate">
->>>>>>> 9f280aa2bfc36791ca50ab422ea9cc374020f302
+
     </div>
    
     <div class="form-group right-block">
        <!-- <label class="control-label" for="Loan Tenure">Remaining Tenure:</label> -->
         <input type="text" name="loanterm" class="form-control" id="loanterm" placeholder="Remaining Tenure" value="" onblur="myfun()" onkeypress="return isNumberKey(event)" title="Remaining Tenure">
     <p id="err" style="display:none;"><span style="color:red; font-size:13px; position:absolute;">Please Fill All Inputs</span></p>
-<<<<<<< HEAD
-	
-    <div class="col-md-12 pad pull-right">
-	<button class="btn btn-success pull-left ">Submit</button>
-	<div class="pull-right">
-          <label><input type="radio" name="Year" id="Year" value="" checked="checked"> Yr</label>
-             <label><input type="radio" name="Year" id="Month" value=""> Mo</label>
-    </div>
-    </div>
-	
-	
-=======
+
   
-    <div class="col-md-12 pad pull-right">
+    <div class="col-md-12 pad">
   <button class="btn btn-success pull-left ">Submit</button>
   <div class="pull-right">
           <label><input type="radio" name="Year" id="Year" value="" checked="checked"> Yr</label>
@@ -105,8 +94,7 @@
     </div>
     </div>
   
-  
->>>>>>> 9f280aa2bfc36791ca50ab422ea9cc374020f302
+
     </div>
 
     <?php if($loan == "home-loan") {?>
@@ -117,9 +105,11 @@
     <input type="hidden" name="product_id" id="product_id" value="7">
     <?php }?>
 
-     
+     </div>
     </div>
-    <div class="col-sm-4 rw-hei brd-rgt" style="background-color:#ccc"><h3 class="transfer-cal">
+    <div class="col-sm-4 rw-hei brd-rgt">
+	<div class="white-bg pad1 heigh-bt">
+	<h3 class="transfer-cal">
     My Savings <i class="fa fa-credit-card" aria-hidden="true"></i></h3>
     <!-- <i class="fa fa-cog fa-spin fa-2x fa-fw"></i>
     <span class="sr-only">Loading...</span></h3> -->
@@ -145,14 +135,17 @@
 
        <!-- <div id="b"></div> -->
       </center>
+	  </div>
   </div>
-  <div class="col-sm-4 rw-hei" style="background-color: #ffcc99;"><h3 class="emi-cal">
+  <div class="col-sm-4 rw-hei">
+  <div class="white-bg pad1 heigh-bt">
+  <h3 class="emi-cal">
     <?php if($loan == "home-loan") {?>
-     Home Loan After Transfer  <i class="fa fa-exchange" aria-hidden="true"></i></h3>
+     After Transfer  <i class="fa fa-exchange" aria-hidden="true"></i></h3>
     <?php }elseif($loan == "personal-loan"){?>
-    Personal Loan After Transfer  <i class="fa fa-exchange" aria-hidden="true"></i></h3>
+    After Transfer  <i class="fa fa-exchange" aria-hidden="true"></i></h3>
     <?php }else{?>
-    Loan Against Property After Transfer <i class="fa fa-exchange" aria-hidden="true"></i></h3>
+    After Transfer <i class="fa fa-exchange" aria-hidden="true"></i></h3>
     <?php }?>
 
 
@@ -160,34 +153,22 @@
     <div class="form-group">
     <input type="hidden" name="brokerid" id="brokerid" value="<?php echo isset($_GET['brokerid'])?$_GET['brokerid']:'';?>">
        <!-- <label class="control-label" for="Loan Amount">Outstanding Principal:</label> -->
-<<<<<<< HEAD
-       <input type="text" name="loanamount" class="form-control" id="loanamount" placeholder="Loan Amount" value="" onblur ="myfun()" onkeypress="return isNumberKey(event)" maxlength="9" >
-    </div>
-    <div class="form-group">
-      <!-- <label class="control-label" for="Interest Rate"> Current Interest Rate:</label> -->
-      <input type="text" name="loaninterest" step="0.01" min="0" class="form-control" id="loaninterest" placeholder="Interest"  value="" onblur="myfun()" onkeypress="return isNumberKey(event)">
-=======
+
        <input type="text" name="loanamount" class="form-control" id="loanamount_new" placeholder="Loan Amount" value="" onblur ="myfun()" onkeypress="return isNumberKey(event)" maxlength="9" title="Loanamount" >
     </div>
     <div class="form-group">
       <!-- <label class="control-label" for="Interest Rate"> Current Interest Rate:</label> -->
       <input type="text" name="loaninterest" step="0.01" min="0" class="form-control" id="loaninterest_new" placeholder="Interest"  value="" onblur="myfun()" onkeypress="return isNumberKey(event)" title="Interest">
->>>>>>> 9f280aa2bfc36791ca50ab422ea9cc374020f302
+
     </div>
-    
+	
     <div class="form-group right-block">
        <!-- <label class="control-label" for="Loan Tenure">Remaining Tenure:</label> -->
-<<<<<<< HEAD
-        <input type="text" name="loanterm" class="form-control" id="loanterm" placeholder="Loan Tenure" value="" onblur="myfun()" onkeypress="return isNumberKey(event)">
-    <p id="err" style="display:none;"><span style="color:red; font-size:13px; position:absolute;">Please Fill All Inputs</span></p>
-	
-	
-=======
+
         <input type="text" name="loanterm" class="form-control" id="loanterm_new" placeholder="Loan Tenure(in months)" value="" onblur="myfun()" onkeypress="return isNumberKey(event)" title="Tenure" >
     <p id="err" style="display:none;"><span style="color:red; font-size:13px; position:absolute;">Please Fill All Inputs</span></p>
-  
-  
->>>>>>> 9f280aa2bfc36791ca50ab422ea9cc374020f302
+	
+   <div class="col-md-12 pad"><button class="btn btn-success pull-left ">Revise & calculate</button></div>
     </div>
 
     <?php if($loan == "home-loan") {?>
@@ -198,12 +179,13 @@
     <input type="hidden" name="product_id" id="product_id" value="7">
     <?php }?>
 
-     
+     </div>
     </div>
   
 </div>
-</div>
 
+</div>
+<br>
 
 
 

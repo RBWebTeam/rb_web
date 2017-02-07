@@ -158,7 +158,7 @@
     <div class="form-group right-block">
        <!-- <label class="control-label" for="Loan Tenure">Remaining Tenure:</label> -->
 
-        <input type="text" name="loanterm" class="form-control" id="loanterm_new" placeholder="Loan Tenure(in months)" value="" onblur="myfun()" onkeypress="return isNumberKey(event)" title="Tenure" >
+        <input type="text" name="loanterm" class="form-control" id="loanterm_new" placeholder="Loan Tenure" value="" onblur="myfun()" onkeypress="return isNumberKey(event)" title="Tenure" >
     <p id="err" style="display:none;"><span style="color:red; font-size:13px; position:absolute;">Please Fill All Inputs</span></p>
   
   
@@ -291,7 +291,7 @@
       $('#loanamount_new').val(loanamount);
       // console.log($("#loanamount").val());
       var loaninterest = $("#loaninterest").val();
-       // var bank = $("#bank").val();
+        // $('#loaninterest_new').val(loaninterest);
          
       if ($("#Year").prop("checked")) {
         var loanterm1 = $("#loanterm").val();
@@ -328,8 +328,8 @@
 
                   
                    $('#emi5').empty().append( msg.drop_in_int);
-                   var nrate=($('#loaninterest').val())-msg.drop_in_int;
-                  $('#loaninterest_new').val( nrate);
+                  //  var nrate=($('#loaninterest').val())-msg.drop_in_int;
+                  // $('#loaninterest_new').val( nrate);
                    var numb4 = msg.savings.toFixed();
                    $('#emi6').empty().append(numb4);
 

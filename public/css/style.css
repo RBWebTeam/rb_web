@@ -1597,7 +1597,7 @@ top: -.25em;left: 20%;margin: 0 0 0 -.25em;}
 /*emi css*/
 
 
- .rw-hei {height:380px;border-right:none;}
+ .rw-hei {height:300px;border-right:none;}
 
   body {color:#666;}
   .tbl-clr {color:#fff; }
@@ -1950,6 +1950,7 @@ body {background:#eee;}
   @media only screen and (max-width:768px) {
  .txt-title {display:none;}
  .bdr-btm {border:1px solid #ddd; margin-bottom:10px;}
+ .rw-hei {margin-bottom:20px;}
 }
 .slide-hm {width:100%;}
 .msg p {color:#fff;text-align:center;}
@@ -1966,6 +1967,7 @@ body {background:#eee;}
   .box-shadow {box-shadow:1px 1px 1px 1px #ccc;}
   .apply-btn:hover {color:#fff;background:#2882a6;}
   .blue-bg {background:#5cd8f4; padding:15px; color:#fff; font-size:30px; text-align:center;}
+  .bnk-log {width:110px;}
   
   
   

@@ -95,6 +95,7 @@
     </div>
   
 
+
     </div>
 
     <?php if($loan == "home-loan") {?>
@@ -167,8 +168,13 @@
 
         <input type="text" name="loanterm" class="form-control" id="loanterm_new" placeholder="Loan Tenure(in months)" value="" onblur="myfun()" onkeypress="return isNumberKey(event)" title="Tenure" >
     <p id="err" style="display:none;"><span style="color:red; font-size:13px; position:absolute;">Please Fill All Inputs</span></p>
+
 	
    <div class="col-md-12 pad"><button class="btn btn-success pull-left ">Revise & calculate</button></div>
+
+  
+  
+
     </div>
 
     <?php if($loan == "home-loan") {?>
@@ -304,7 +310,7 @@
       if ($("#Year").prop("checked")) {
         var loanterm1 = $("#loanterm").val();
         var loanterm = loanterm1*12;
-        $('#loanterm_new').val(loanterm);
+        $('#loanterm_new').val(loanterm1);
       }else{
         var loanterm = $("#loanterm").val();
 

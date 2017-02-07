@@ -23,6 +23,8 @@ class Handler extends ExceptionHandler
         \Illuminate\Validation\ValidationException::class,
     ];
 
+
+
     /**
      * Report or log an exception.
      *
@@ -43,13 +45,25 @@ class Handler extends ExceptionHandler
      * @param  \Exception  $exception
      * @return \Illuminate\Http\Response
      */
-    public function render($request, Exception $exception)
-        {   
-            if($exception instanceof NotFoundHttpException)
-        {
+    public function render($request, Exception $e){ 
+
+            if($e instanceof NotFoundHttpException){
             return response()->view('layout.missing', [], 404);
         }
-        return parent::render($request, $exception);
+        return parent::render($request, $e);
+
+
+// if ($this->isHttpException($e)) {
+//              //return $this->renderHttpExceptionView($e);
+//            return \Response::view('layout.missing',array(),404);
+//         }
+
+//         if (config('app.debug')) {
+//            // return $this->renderExceptionWithWhoops($e);
+//              return \Response::view('went-wrong',array(),500);  
+//         }
+
+
         }
 
     /**

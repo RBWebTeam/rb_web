@@ -1,19 +1,24 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Libraries\TestClass;
 use Illuminate\Http\Request;
-
+use App\SEOlibraries\Seo;
 use App\Http\Requests;
 use DB;
 class BankController extends Controller
 {
+
+
 	public function index(Request $req){
 		
 	    return view('bank-wise-product');
 	}
 
 	public function home_loanBank($product,$bank){
+    $keywords='';
+    $seo=new Seo();
+ 
    // print_r($product);exit();
 
 		      $getQuery=DB::select('call usp_bankwise_detail("'.$product.'","'.$bank.'")');
@@ -35,11 +40,29 @@ class BankController extends Controller
     $data['bank_id']=$bank;
     // print_r($data['product']);exit();
      // print_r($data);exit();
-      return view('bank-wise-product',['getQuery'=>$getQuery])->with($data);
 
+ // echo $bank_detail->Bank_Name;
+
+ //  exit;
+
+
+ if($product_detail->Product_Name=='Home Loan'){
+  $bank__name=$seo->home_loan_BankName_seo();
+       if(isset($bank__name[$bank_detail->Bank_Name])){
+        $keywords=$bank__name[$bank_detail->Bank_Name];
+       }
+
+ }
+
+  
+ 
+      return view('bank-wise-product',['getQuery'=>$getQuery])->with($data)->with('keywords',$keywords);;
 
 
 	}
+
+
+ 
 
 
 public function compareLoan($loan){

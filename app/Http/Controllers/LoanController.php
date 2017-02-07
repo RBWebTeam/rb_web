@@ -29,7 +29,7 @@ class LoanController extends Controller
     public function home_loan(){
       
       $keywords='Home Loan,Apply for Home Loan,Housing Loan,Home Loan at Low Rate of Interest,Get Home Loan,Need A Home Loan,Home Loan Eligibility,The Best Home, Compare Home Loan,Home Loan Finance Company,Home Loans In India,Home Loan Charges,Home Loan Credit,Best Housing Loans,Home Loan Emi Calculator';
-    	$data['title']='Home Loan';
+    	$data['title']='Home Loan- Apply online at low interest rate On Rupeeboss.com';
     	$data['description']='Apply for Home Loan';
 
         $data['id']=DB::table('product_master')
@@ -39,7 +39,7 @@ class LoanController extends Controller
     }
     public function lap(){
       $keywords='Loan Against Property Interest Rates, Property Loan, Procedure Of Loan Against Property, Apply For Property Loan, Mortgage Loan Rate, Getting Loan Against Property, Need Property Loan, Loan Against Property Eligibility Calculator,Features Of Loan Against Property,Comparison Of Loan Against Property,Calculate Emi Of Property Loan,Commercial Property Purchase Loan';
-    	$data['title']='Loan Against Propertry';
+    	$data['title']='Loan Against Propertry- Apply online at low interest rate On Rupeeboss.com';
     	$data['description']='Apply for Loan Against Propertry';
 
         $data['id']=DB::table('product_master')
@@ -49,7 +49,7 @@ class LoanController extends Controller
     }
     public function sme_loan(){
       $keywords='Sme Financing, Sme Bank Loan Small And Medium Size Enterprise Loan,Apply For Sme Loan,Sme Loan Scheme,Sme Loan Consultant,Sme Easy Loan,Sme Loan For New Business Or Startup,Working Capital,Unsecured Business Loan,Sme Loan Eligibility ,Small Business Loans, Small Business Loan Calculator ,Commercial Property Purchase ';
-    	$data['title']='SME Loan';
+    	$data['title']='SME Loan- Apply online at low interest rate On Rupeeboss.com';
     	$data['description']='Apply for SME Loan';
 
         // $data['id']=DB::table('product_master')
@@ -60,7 +60,7 @@ class LoanController extends Controller
   
     public function car_loan(){
       $keywords='Car Loans, Auto Loan,Car Loan Low Interest Rates, Best Car Loan Rates, Car Loan Calculator,Car Loan Eligibility,Vehicle Finance, Refinance A Car Loan, Online Car Loans ,Cheap Rate Car Loans ,Car Loans With Bad Credit ,Car Refinance ';
-    	$data['title']='Car Loan';
+    	$data['title']='Car Loan- Apply online at low interest rate On Rupeeboss.com';
     	$data['description']='Apply for Car Loan';
 
         $data['id']=DB::table('product_master')
@@ -71,7 +71,7 @@ class LoanController extends Controller
     }
     public function business_loan(){
         $keywords='Loan For Business ,Business Funding, Commercial Loan Rates ,Best Business Loans ,Quick Business Loans, Business Loan Interest Rate, Business Loan Emi Calculator,Business Loan Application,Business Loan Apply Online,Business Loan Details,Apply For Business Loan,Business Loan Lenders';
-        $data['title']='Business Loan';
+        $data['title']='Business Loan- Apply online at low interest rate On Rupeeboss.com';
         $data['description']='Apply for Business Loan';
 
         $data['id']=DB::table('product_master')
@@ -87,7 +87,7 @@ class LoanController extends Controller
     }
 
     public function smeLoan(request $request){
-        $data['title']='SME Loan';
+        $data['title']='SME Loan- Apply online at low interest rate On Rupeeboss.com';
         $data['description']='Apply for SME Loan';
         return view('sme-test',['sme'=>'sme'])->with($data);
     }

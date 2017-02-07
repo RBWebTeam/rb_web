@@ -171,7 +171,7 @@
     <p id="err" style="display:none;"><span style="color:red; font-size:13px; position:absolute;">Please Fill All Inputs</span></p>
 
 	
-   <div class="col-md-12 pad"><button class="btn btn-success pull-left ">Revise & calculate</button></div>
+   <div class="col-md-12 pad"><button class="btn btn-success pull-left" onclick="myfun()">Revise & calculate</button></div>
 
   
   
@@ -298,6 +298,8 @@
 <script type="text/javascript">
 
   function myfun(){
+    
+    // console.log("ok");
     var lm = $("#loanamount").val().length;
        var lin = $("#loaninterest").val().length;
        var lt = $("#loanterm").val().length;

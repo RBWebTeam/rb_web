@@ -218,15 +218,15 @@ class CompareController extends Controller
             $drop_emi= $amount-$new_amount;
             $drop_in_int=(($loaninterest*12*100)-($new_rate*12*100));
             $savings=$total-$new_total;
-            $aaa= $loanamount/100000;
-            $emiperlacs=($drop_emi/$aaa);
+            // $aaa= $loanamount/100000;
+            // $emiperlacs=($drop_emi/$aaa);
 
       $test =json_decode(json_encode($getQuery),true);
 
       $user =array('loanamount' => $loanamount, 'loaninterest' => $loaninterest , 'loanterm'=> $loanterm,
             'product_id'=>$req['product_id'],'brokerid'=>$brokerid);
             $returnHTML = view('emi/switch_cal')->with('data', $test)->with('sata', $user)->render();
-            return response()->json(array('success' => true, 'amount'=>$amount, 'new_amount'=>$new_amount, 'drop_emi'=>$drop_emi,'drop_in_int'=>$drop_in_int, 'savings'=>$savings, 'emiperlacs'=> $emiperlacs, 'html'=>$returnHTML));                            
+            return response()->json(array('success' => true, 'amount'=>$amount, 'new_amount'=>$new_amount, 'drop_emi'=>$drop_emi,'drop_in_int'=>$drop_in_int, 'savings'=>$savings,  'html'=>$returnHTML));                            
             }
               else{
    
@@ -246,7 +246,8 @@ class CompareController extends Controller
                 $loaninterest=$req['loaninterest']/12/100;
                 $loanterm=$req['loanterm']*12;
                 $old_loaninterest=$req['old_loaninterest']/12/100;
-                // print_r($loanamount."".$loaninterest."".$loanterm);exit();
+                $old_drop_emi=$req['old_drop_emi'];
+                 // print_r($loanamount."".$loaninterest."".$loanterm."".$old_drop_emi);exit();
          
 
                 $emi = $loanamount * $loaninterest * (pow(1 + $loaninterest, $loanterm) / (pow(1 + $loaninterest, $loanterm) - 1));
@@ -254,9 +255,12 @@ class CompareController extends Controller
                 $old_total=(($old_emi*$loanterm)-$loanamount);
                 $total_payable_interest=(($emi*$loanterm)-$loanamount);
                 $after_savings=$old_total- $total_payable_interest;
+                $per_lacs=100000 * $loaninterest * (pow(1 + $loaninterest, $loanterm) / (pow(1 + $loaninterest, $loanterm) - 1));
+                $borrow=$old_drop_emi/$per_lacs;
+                // print_r($old_drop_emi);exit();
        
                 return response()->json(array('success' => true,'emi' => $emi,
-                                          'after_savings'=>$after_savings,'loaninterest'=>$loaninterest*12*100));
+                                          'after_savings'=>$after_savings,'loaninterest'=>$loaninterest*12*100,'borrow'=>$borrow));
              
                 }
 

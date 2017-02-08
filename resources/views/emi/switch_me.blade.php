@@ -173,7 +173,8 @@
     <p id="err" style="display:none;"><span style="color:red; font-size:13px; position:absolute;">Please Fill All Inputs</span></p>
 
 	
-   <div class="col-md-12 pad"><button class="btn btn-success pull-left" onclick="myfun_new()">Revise & calculate</button></div>
+   <!-- <div class="col-md-12 pad"><button class="btn btn-success pull-left" onclick="myfun_new()" >Revise & calculate</button></div> -->
+   <div class="col-md-12 pad"><button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModaltest" onclick="myfun_new()">Revise & calculate</button></div>
 
   
   
@@ -192,7 +193,7 @@
      </div>
     </div>
 
-	<div class="col-md-12 pad"><h2 class="bg-primary"">Your EMI would be <b>₹<span id="after_emi">0</span></b> and your Savings would be <b>₹<span id="after_savings">0</span></b> according to <b><span id="new_int">0</span>%</b></h2></div>
+	
 
 	<div class="col-md-12 pad"><h2 class="blue-bg">Would you like to borrow &nbsp;&nbsp;<span><b>Rs.0</b></span>&nbsp;&nbsp; Extra and pay the same EMI</h2> </div>
   

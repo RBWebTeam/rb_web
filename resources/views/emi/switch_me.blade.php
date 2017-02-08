@@ -157,7 +157,7 @@
      
       <!-- <label class="control-label" for="Loan Amount">Outstanding Principal:</label> -->
 
-       <input type="text" name="loanamount" class="form-control" id="loanamount_new" placeholder="Loan Amount" value=""  onkeypress="return isNumberKey(event)" maxlength="9" title="Loanamount" >
+       <input type="text" name="loanamount" class="form-control" id="loanamount_new" placeholder="Loan Amount" value=""  onkeypress="return isNumberKey(event)" maxlength="9" title="Loanamount"  >
     </div>
     <div class="form-group">
       <!-- <label class="control-label" for="Interest Rate"> Current Interest Rate:</label> -->
@@ -169,7 +169,7 @@
        <!-- <label class="control-label" for="Loan Tenure">Remaining Tenure:</label> -->
 
 
-        <input type="text" name="loanterm" class="form-control" id="loanterm_new" placeholder="Loan Tenure" value="" onkeypress="return isNumberKey(event)" title="Tenure" >
+        <input type="text" name="loanterm" class="form-control" id="loanterm_new" placeholder="Loan Tenure" value="" onkeypress="return isNumberKey(event)" title="Tenure"  >
     <p id="err" style="display:none;"><span style="color:red; font-size:13px; position:absolute;">Please Fill All Inputs</span></p>
 
 	
@@ -192,7 +192,7 @@
      </div>
     </div>
 
-	<div class="col-md-12 pad"><h2 class="bg-primary"">Your EMI would be <b>₹<span id="after_emi">0</span></b> and your Savings would be <b>₹<span id="after_savings">0</span></b> according to <b>₹<span id="loaninterest_new">0</span></b>  </h2> </div>
+	<div class="col-md-12 pad"><h2 class="bg-primary"">Your EMI would be <b>₹<span id="after_emi">0</span></b> and your Savings would be <b>₹<span id="after_savings">0</span></b> according to <b><span id="new_int">0</span>%</b></h2></div>
 
 	<div class="col-md-12 pad"><h2 class="blue-bg">Would you like to borrow &nbsp;&nbsp;<span><b>Rs.0</b></span>&nbsp;&nbsp; Extra and pay the same EMI</h2> </div>
   
@@ -398,7 +398,7 @@
 <script type="text/javascript">
 
   function myfun_new(){
-      console.log("ok");
+      // console.log("ok");
       var lm = $("#loanamount_new").val().length;
       var lin = $("#loaninterest_new").val().length;
       var lt = $("#loanterm_new").val().length;
@@ -410,7 +410,7 @@
       var loaninterest = $("#loaninterest_new").val();
       var loanterm = $("#loanterm_new").val();
        var old_loaninterest = $("#loaninterest").val();
-      console.log($("#loanterm_new").val());
+      // console.log($("#loanterm_new").val());
 
       
       var v_token = "{{csrf_token()}}";
@@ -421,25 +421,28 @@
                data : { 'loanamount': loanamount , 'loaninterest': loaninterest ,'loanterm' :loanterm,'_token': v_token,'old_loaninterest':old_loaninterest},
                // 'bank':bank},
                success: function(msg){
-                  console.log(msg.success);
+                  // console.log(msg);
                   if(msg.success ==true){
                     // console.log('ok');
                     // console.log(msg.emi);
-                    // console.log(msg.after_savings);
+                    console.log(msg.loaninterest);
                     // return false;
                   var after_numb = msg.emi.toFixed();
                    $('#after_emi').empty().append(after_numb);
                   
                     var after_numb1 = msg.after_savings.toFixed();
                   $('#after_savings').empty().append(after_numb1);
-
-                                   
+                    
+                    var after_interest = msg.loaninterest.toFixed();
+                     console.log(after_interest);
+                    $('#new_int').empty().append(after_interest);
 
                     
 
                         $("#e").show();
                         $("#s").show();
-                        
+                        $("#l").show();
+                         
                         
                   }
 

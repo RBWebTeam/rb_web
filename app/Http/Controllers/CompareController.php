@@ -254,7 +254,7 @@ class CompareController extends Controller
                 $after_savings=$old_total- $total_payable_interest;
        
                 return response()->json(array('success' => true,'emi' => $emi,
-                                          'after_savings'=>$after_savings));
+                                          'after_savings'=>$after_savings,'loaninterest'=>$loaninterest*12*100));
              
                 }
 

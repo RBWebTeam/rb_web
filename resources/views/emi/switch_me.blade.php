@@ -161,7 +161,7 @@
     </div>
     <div class="form-group">
       <!-- <label class="control-label" for="Interest Rate"> Current Interest Rate:</label> -->
-      <input type="text" name="loaninterest" step="0.01" min="0" class="form-control" id="loaninterest_new" placeholder="Interest"  value=""  onkeypress="return isNumberKey(event)" title="Interest">
+      <input type="text" name="loaninterest" step="0.01" min="0" class="form-control" id="loaninterest_new" placeholder="Interest"  value=""  onkeypress="return isNumberKey(event)" title="Interest" >
 
     </div>
 	
@@ -174,7 +174,7 @@
 
 	
    <!-- <div class="col-md-12 pad"><button class="btn btn-success pull-left" onclick="myfun_new()" >Revise & calculate</button></div> -->
-   <div class="col-md-12 pad"><button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModaltest" onclick="myfun_new()">Revise & calculate</button></div>
+   <div class="col-md-12 pad"><button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModaltest" onclick="myfun_new()" id="revise" name="revise" style="display:none;">Revise & calculate</button></div>
 
   
   
@@ -194,9 +194,16 @@
     </div>
 
 	
-
-	<div class="col-md-12 pad"><h2 class="blue-bg">Would you like to borrow &nbsp;&nbsp;<span><b>Rs.0</b></span>&nbsp;&nbsp; Extra and pay the same EMI</h2> </div>
+<?php if($loan == "home-loan") {?>
+    <div class="col-md-12 pad"><h2 class="blue-bg">Would you like to borrow &nbsp;&nbsp;<b>₹<span id="drop">0</span></b>&nbsp;&nbsp;Extra and pay the same EMI</h2> </div>
   
+    <?php }elseif($loan == "personal-loan"){?>
+  
+    <?php }else{?>
+   <div class="col-md-12 pad"><h2 class="blue-bg">Would you like to borrow &nbsp;&nbsp;<b>₹<span id="drop">0</span></b>&nbsp;&nbsp; Extra and pay the same EMI</h2> </div>
+  
+    <?php }?>
+	
 </div>
 
 </div>
@@ -342,7 +349,7 @@
                data : { 'loanamount': loanamount , 'loaninterest': loaninterest ,'loanterm' :loanterm,'_token': v_token,'profession':profession,'product_id':product_id,'brokerid':brokerid},
                // 'bank':bank},
                success: function(msg){
-                  //console.log(msg.success);
+                  console.log(msg);
                   if(msg.success ==true){
                   var numb = msg.amount.toFixed();
                    $('#emi').empty().append(numb);
@@ -360,6 +367,10 @@
                    var numb4 = msg.savings.toFixed();
                    $('#emi6').empty().append(numb4);
 
+                    var drop_emi_per_lacs = msg.emiperlacs.toFixed();
+                   $('#drop').empty().append(drop_emi_per_lacs);
+
+                  $('#revise').show()
                         $("#1").show();
                         $("#4").show();
                         $("#5").show();

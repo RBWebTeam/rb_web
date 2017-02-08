@@ -218,13 +218,15 @@ class CompareController extends Controller
             $drop_emi= $amount-$new_amount;
             $drop_in_int=(($loaninterest*12*100)-($new_rate*12*100));
             $savings=$total-$new_total;
+            $aaa= $loanamount/100000;
+            $emiperlacs=($drop_emi/$aaa);
 
       $test =json_decode(json_encode($getQuery),true);
 
       $user =array('loanamount' => $loanamount, 'loaninterest' => $loaninterest , 'loanterm'=> $loanterm,
             'product_id'=>$req['product_id'],'brokerid'=>$brokerid);
             $returnHTML = view('emi/switch_cal')->with('data', $test)->with('sata', $user)->render();
-            return response()->json(array('success' => true, 'amount'=>$amount, 'new_amount'=>$new_amount, 'drop_emi'=>$drop_emi,'drop_in_int'=>$drop_in_int, 'savings'=>$savings,  'html'=>$returnHTML));                            
+            return response()->json(array('success' => true, 'amount'=>$amount, 'new_amount'=>$new_amount, 'drop_emi'=>$drop_emi,'drop_in_int'=>$drop_in_int, 'savings'=>$savings, 'emiperlacs'=> $emiperlacs, 'html'=>$returnHTML));                            
             }
               else{
    

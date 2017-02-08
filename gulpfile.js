@@ -1,4 +1,4 @@
-const elixir = require('laravel-elixir');
+var elixir = require('laravel-elixir');, 
 
 require('laravel-elixir-vue-2');
 
@@ -13,7 +13,23 @@ require('laravel-elixir-vue-2');
  |
  */
 
-elixir(mix => {
-    mix.sass('app.scss')
-       .webpack('app.js');
+// elixir(mix => {
+//     mix.sass('app.scss')
+//        .webpack('app.js');
+// });
+
+elixir(function(mix) {
+	    mix.styles([
+	    '../../../public/css/front_bootstrap.css',
+	    '../../../public/css/helper_styles.css',
+	    '../../../public/css/bootstrap.drawer.css',
+	]);
+	    // mix.imagemin("../../../public/images", "../../../public/images1");
+});
+
+elixir(function(mix) {
+    mix.styles([
+        '../../../style.old.css',
+        '../../../style-home-loan.css'
+    ], 'public/css/mysite.css');
 });

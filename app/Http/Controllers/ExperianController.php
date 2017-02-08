@@ -149,7 +149,8 @@ class ExperianController extends Controller
 
             return response()->json(array('success' => true,'html'=>$returnHTML)); 
         }catch(\Exception $e){
-            return $e;
+           $returnHTML = view('went-wrong');
+            return response()->json(array('success' => false,'html'=>$returnHTML));
         }  
     }
 

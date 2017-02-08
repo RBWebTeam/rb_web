@@ -19,17 +19,8 @@ require('laravel-elixir-vue-2');
 // });
 
 elixir(function(mix) {
-	    mix.styles([
-	    '../../../public/css/front_bootstrap.css',
-	    '../../../public/css/helper_styles.css',
-	    '../../../public/css/bootstrap.drawer.css',
-	]);
-	    // mix.imagemin("../../../public/images", "../../../public/images1");
-});
-
-elixir(function(mix) {
     mix.styles([
-        '../../../style.old.css',
-        '../../../style-home-loan.css'
+        '../../../public/css/style.old.css',
+        '../../../public/css/style-home-loan.css'
     ], 'public/css/mysite.css');
 });

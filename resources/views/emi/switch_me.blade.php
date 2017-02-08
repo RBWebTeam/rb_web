@@ -195,12 +195,12 @@
 
 	
 <?php if($loan == "home-loan") {?>
-    <div class="col-md-12 pad"><h2 class="blue-bg">Would you like to borrow &nbsp;&nbsp;<b>₹<span id="drop">0</span></b>&nbsp;&nbsp;Extra and pay the same EMI</h2> </div>
+    <div class="col-md-12 pad"><h2 class="blue-bg">Would you like to borrow &nbsp;&nbsp;<b>₹<span id="drop">0</span> (in lacs)</b>&nbsp;&nbsp;extra and pay the same EMI.</h2> </div>
   
     <?php }elseif($loan == "personal-loan"){?>
   
     <?php }else{?>
-   <div class="col-md-12 pad"><h2 class="blue-bg">Would you like to borrow &nbsp;&nbsp;<b>₹<span id="drop">0</span></b>&nbsp;&nbsp; Extra and pay the same EMI</h2> </div>
+   <div class="col-md-12 pad"><h2 class="blue-bg">Would you like to borrow &nbsp;&nbsp;<b>₹<span id="drop">0</span> (in lacs)</b>&nbsp;&nbsp; extra and pay the same EMI.</h2> </div>
   
     <?php }?>
 	
@@ -421,7 +421,7 @@
       var loanamount = $("#loanamount_new").val();
       var loaninterest = $("#loaninterest_new").val();
       var loanterm = $("#loanterm_new").val();
-       var old_loaninterest = $("#loaninterest").val();
+      var old_loaninterest = $("#loaninterest").val();
       // console.log($("#loanterm_new").val());
 
       
@@ -445,8 +445,8 @@
                     var after_numb1 = msg.after_savings.toFixed();
                   $('#after_savings').empty().append(after_numb1);
                     
-                    var after_interest = msg.loaninterest.toFixed();
-                     console.log(after_interest);
+                    var after_interest = msg.loaninterest;
+                     console.log(msg.loaninterest);
                     $('#new_int').empty().append(after_interest);
 
                     

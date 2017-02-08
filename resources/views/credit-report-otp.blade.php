@@ -22,7 +22,7 @@
 						   <form name="credit_report_verify_form" id="credit_report_verify_form" style="display:none" method="POST" onkeypress="return fnAllowNumeric(event)">
 						       {{ csrf_field() }}
 						   <h3>Enter your verification code sent on your number</h3>
-						   <input type="text" name="verify" id="verify" class="form-control" onkeypress="return fnAllowNumeric(event)" required maxlength="6" placeholder="Enter OTP Code">
+						   <input type="text" name="verify" id="verify" class="form-control" onkeypress="return fnAllowNumeric(event)" required maxlength="6" placeholder="Enter OTP jtfj">
 						   <hr class="hr-clr">
 
 						   <a class="btn btn-primary btn-lg btn-view" id="credit_report_verify_otp">VERIFY OTP</a>

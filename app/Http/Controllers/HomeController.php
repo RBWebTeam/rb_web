@@ -6,6 +6,12 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use DB;
+use Validator;
+use Redirect;
+use Session;
+use URL;
+use Mail;
+use Illuminate\Support\Facades\Hash;
 class HomeController extends Controller
 {
 	public function index(){
@@ -69,7 +75,50 @@ class HomeController extends Controller
 		
 	}
 
+	public function RBA_login(){
+		return view('RBA-login');
+	}
 
+   public function RBA_register(Request $req){
+		print_r($req->all()	);
+		$query=DB::table('rba_register')
+		->insert(['Name'=>$req->name,
+			     'Email'=>$req->email,
+			     'Contact'=>$req->contact,
+			    'created_at'=>date("Y-m-d H:i:s"),
+   			    'updated_at'=>date("Y-m-d H:i:s")]);
+		if($query){
+			 	$data ="Thank you for registering.";
+               	$email = $req->email;
+                $mail = Mail::send('email_view',['data' => $data], function($message) use($email) {
+		                $message->from('wecare@rupeeboss.com', 'RupeeBoss');
+		                $message->to($email)
+		                ->subject('Thankyou');
+                	});
+
+                $post_data='{"mobNo":"'.$req->contact.'","msgData":"Thank you for registering.- RupeeBoss.com",
+                    "source":"WEB"}';
+                $url = "http://beta.services.rupeeboss.com/LoginDtls.svc/xmlservice/sendSMS";
+                $ch = curl_init();
+                curl_setopt($ch, CURLOPT_VERBOSE, 1);
+                curl_setopt( $ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
+                curl_setopt($ch, CURLOPT_URL, $url);
+                curl_setopt($ch, CURLOPT_POST, 1);
+                curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+                curl_setopt($ch, CURLOPT_FAILONERROR, 0);
+                curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+                curl_setopt($ch, CURLOPT_POSTFIELDS,$post_data);
+                $http_result = curl_exec($ch);
+                $error = curl_error($ch);
+                $http_code = curl_getinfo($ch ,CURLINFO_HTTP_CODE);
+                $obj = json_decode($http_result);
+                // statusId response 0 for success, 1 for failure
+                curl_close($ch);
+                return true;
+		}
+		return false;
+
+	}
 
 	
 }

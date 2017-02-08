@@ -73,6 +73,8 @@
 		 		
 
 		 		
+			}else{
+				print_r("Ooops... Something went wrong.");
 			}
 
 			 ?>
@@ -90,7 +92,7 @@
                 $('#nxt_qstn').html("");
                 $('#nxt_qstn').html(msg.html);
                 }else{
-                  
+                  window.location.href ="{{URL::to('went-wrong')}}";
                 }
               
                }  

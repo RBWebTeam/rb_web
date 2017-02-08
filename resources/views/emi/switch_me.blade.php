@@ -174,7 +174,7 @@
 
 	
    <!-- <div class="col-md-12 pad"><button class="btn btn-success pull-left" onclick="myfun_new()" >Revise & calculate</button></div> -->
-   <div class="col-md-12 pad"><button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModaltest" onclick="myfun_new()" id="revise" name="revise" style="display:none;">Revise & calculate</button></div>
+   <div class="col-md-12 pad"><button type="button" class="btn btn-success"  onclick="myfun_new()" id="revise" name="revise" style="display:none;">Revise & calculate</button></div>
 
   
   
@@ -433,7 +433,7 @@
                data : { 'loanamount': loanamount , 'loaninterest': loaninterest ,'loanterm' :loanterm,'_token': v_token,'old_loaninterest':old_loaninterest,'old_drop_emi':old_drop_emi},
                // 'bank':bank},
                success: function(msg){
-                   console.log(msg);
+                   // console.log(msg);
                   if(msg.success ==true){
                     // console.log('ok');
                     // console.log(msg.emi);
@@ -451,7 +451,28 @@
 
                     var borrow_new = msg.borrow.toFixed(3);
                     $('#drop').empty().append(borrow_new);
-                    
+                       
+
+
+                  
+                  
+                   
+                  
+
+                   var drop_emi_here = msg.drop_emi_new.toFixed(3);
+                   $('#emi3').empty().append(drop_emi_here);
+
+                   $('#emi4').empty().append(after_numb);
+
+                   var drop_int_here = msg.drop_in_int_new.toFixed();
+                   $('#emi5').empty().append(drop_int_here);
+
+                   $('#emi6').empty().append(after_numb1);
+
+
+
+
+
                      
                         $("#e").show();
                         $("#s").show();

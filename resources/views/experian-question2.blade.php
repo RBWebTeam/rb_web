@@ -39,7 +39,7 @@
 			<div class="col-md-12 mrg-tp">
 					<a class="btn btn-primary btn-outline with-arrow centered next_qest1">Submit<i class="icon-arrow-right"></i></a>
 			 </div>
-			 <span id="err1" style="color: red;display: none;">Please answer Both question</span>
+			  <span id="err_1" style="color: red;display: none;">Please answer Both question</span>
 			</form>
 			<?php }else if($result->responseJson=='passedReport'){
 				
@@ -86,9 +86,10 @@
 			 ?>
 <script type="text/javascript">
   $('.next_qest1').click(function(){
-    //alert("new qstn1");
+   // alert("hiii"+document.getElementsByName("qs1")[0].value);
   if(!(document.getElementsByName("qs1")[0].value && document.getElementsByName("qs2")[0].value) ){
-			document.getElementById("err1").style.display='block';
+			document.getElementById("err_1").style.display='block';
+
 			return false;
 		}
     $.ajax({  
@@ -107,5 +108,10 @@
               
                }  
                }); 
+  });
+
+ $(document).ready(function (){
+  	document.getElementsByName("qs1")[0].value=0;
+  	document.getElementsByName("qs2")[0].value=0;
   });
 </script>

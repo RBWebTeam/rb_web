@@ -15,13 +15,13 @@ Please Upload below documents :
 				
 					<input type="file" name="Identity_Proof" required="" />
 				</div>
-			<div class="col-md-6">Income_Proof</div>
+			<div class="col-md-6">Income Proof</div>
 				<div class="col-md-6">
 				
 					<input type="file" name="Income_Proof" required/>
 				</div>
 				
-			<div class="col-md-6">Address_Proof</div>
+			<div class="col-md-6">Address Proof</div>
 				<div class="col-md-6">
 				
 					<input type="file" name="Address_Proof" required />

@@ -8,14 +8,16 @@
 
 				</label>
 				<div class="select1 offset5">
-					<select name="qs1" class="drop-arr  col-md-6">
+					<select name="qs1" class="drop-arr  col-md-6" >
+					<option disabled selected value>Select Answer 1</option>
 						@foreach($result->questionToCustomer->optionsSet1 as $qs1)
 						<option>
 							<?php echo $qs1;	?>
 						</option>
 						@endforeach
 					</select>
-					<select name="qs2" class="drop-arr  col-md-3">
+					<select name="qs2" class="drop-arr  col-md-3" >
+					<option disabled selected value>Select Answer 2</option>
 						@foreach($result->questionToCustomer->optionsSet2 as $qs2)
 						<option>
 							<?php echo $qs2;	?>
@@ -37,7 +39,7 @@
 			<div class="col-md-12 mrg-tp">
 					<a class="btn btn-primary btn-outline with-arrow centered next_qest1">Submit<i class="icon-arrow-right"></i></a>
 			 </div>
-
+			 <span id="err1" style="color: red;display: none;">Please answer Both question</span>
 			</form>
 			<?php }else if($result->responseJson=='passedReport'){
 				
@@ -85,6 +87,10 @@
 <script type="text/javascript">
   $('.next_qest1').click(function(){
     //alert("new qstn1");
+  if(!(document.getElementsByName("qs1")[0].value && document.getElementsByName("qs2")[0].value) ){
+			document.getElementById("err1").style.display='block';
+			return false;
+		}
     $.ajax({  
                type: "POST",  
                url: "{{URL::to('gen-qstn')}}",

@@ -11,6 +11,7 @@ use Response;
 class CompareController extends Controller
 {
     //
+ 
     public function compare(Request $req){
 
 
@@ -221,9 +222,9 @@ class CompareController extends Controller
       $test =json_decode(json_encode($getQuery),true);
 
       $user =array('loanamount' => $loanamount, 'loaninterest' => $loaninterest , 'loanterm'=> $loanterm,
-        'product_id'=>$req['product_id'],'brokerid'=>$brokerid);
-              $returnHTML = view('emi/switch_cal')->with('data', $test)->with('sata', $user)->render();
-              return response()->json(array('success' => true, 'amount'=>$amount, 'new_amount'=>$new_amount, 'drop_emi'=>$drop_emi,'drop_in_int'=>$drop_in_int, 'savings'=>$savings,  'html'=>$returnHTML));                            
+            'product_id'=>$req['product_id'],'brokerid'=>$brokerid);
+            $returnHTML = view('emi/switch_cal')->with('data', $test)->with('sata', $user)->render();
+            return response()->json(array('success' => true, 'amount'=>$amount, 'new_amount'=>$new_amount, 'drop_emi'=>$drop_emi,'drop_in_int'=>$drop_in_int, 'savings'=>$savings,  'html'=>$returnHTML));                            
             }
               else{
    
@@ -237,6 +238,29 @@ class CompareController extends Controller
                  }
 
 
+      public function after_transfer_calculation(Request $req){
+                $loanamount=$req['loanamount'];
+
+                $loaninterest=$req['loaninterest']/12/100;
+                $loanterm=$req['loanterm']*12;
+                $old_loaninterest=$req['old_loaninterest']/12/100;
+                // print_r($loanamount."".$loaninterest."".$loanterm);exit();
+         
+
+                $emi = $loanamount * $loaninterest * (pow(1 + $loaninterest, $loanterm) / (pow(1 + $loaninterest, $loanterm) - 1));
+                $old_emi = $loanamount * $old_loaninterest * (pow(1 + $old_loaninterest, $loanterm) / (pow(1 + $old_loaninterest, $loanterm) - 1));
+                $old_total=(($old_emi*$loanterm)-$loanamount);
+                $total_payable_interest=(($emi*$loanterm)-$loanamount);
+                $after_savings=$old_total- $total_payable_interest;
+       
+                return response()->json(array('success' => true,'emi' => $emi,
+                                          'after_savings'=>$after_savings));
+             
+                }
+
+
+
+
 
 
 
@@ -244,49 +268,47 @@ class CompareController extends Controller
       public function switchme_mobile(){
                  return view('emi/balance_transfer');
       }
+      
       public function calculationfordc(Request $req){
-
-
-
-      $getQuery=DB::select('call usp_get_balance_transfer_quot("'.$req['loanamount'].'","'.$req['loaninterest'].'","12")');
-     // print_r($getQuery);exit();
-    $resultArray = json_decode(json_encode($getQuery), true);
+                $getQuery=DB::select('call usp_get_balance_transfer_quot("'.$req['loanamount'].'","'.$req['loaninterest'].'","12")');
+                // print_r($getQuery);exit();
+                $resultArray = json_decode(json_encode($getQuery), true);
 
      
-        if (!empty($resultArray)) {
-            $loanamount=$req['loanamount'];
-            $loaninterest=$req['loaninterest']/12/100;
-            $loanterm=$req['loanterm'];
+                if (!empty($resultArray)) {
+                $loanamount=$req['loanamount'];
+                $loaninterest=$req['loaninterest']/12/100;
+                $loanterm=$req['loanterm'];
 
 
-            $amount = $loanamount * $loaninterest * (pow(1 + $loaninterest, $loanterm) / (pow(1 + $loaninterest, $loanterm) - 1));
-              $total =(($amount*$loanterm)-$loanamount);
+                $amount = $loanamount * $loaninterest * (pow(1 + $loaninterest, $loanterm) / (pow(1 + $loaninterest, $loanterm) - 1));
+                $total =(($amount*$loanterm)-$loanamount);
 
-              $ttl_payment = $loanamount+$total;
+                $ttl_payment = $loanamount+$total;
 
-         //savings//
-        if($getQuery[0]->roi==0){
-            $getQuery[0]->roi=1;
+                //savings//
+                if($getQuery[0]->roi==0){
+                $getQuery[0]->roi=1;
           }
-            $new_rate=$getQuery[0]->roi/12/100;
-            $new_amount = $loanamount * $new_rate * (pow(1 + $new_rate, $loanterm) / (pow(1 + $new_rate, $loanterm) - 1));
+                $new_rate=$getQuery[0]->roi/12/100;
+                $new_amount = $loanamount * $new_rate * (pow(1 + $new_rate, $loanterm) / (pow(1 + $new_rate, $loanterm) - 1));
 
-            $new_total =(($new_amount*$loanterm)-$loanamount);
-            $new_ttl_payment = $loanamount+$new_total;
-            $drop_emi= $amount-$new_amount;
-            $drop_in_int=(($loaninterest*12*100)-($new_rate*12*100));
-            $savings=$total-$new_total;
-            $emiperlacs=($new_amount/100000);
+                $new_total =(($new_amount*$loanterm)-$loanamount);
+                $new_ttl_payment = $loanamount+$new_total;
+                $drop_emi= $amount-$new_amount;
+                $drop_in_int=(($loaninterest*12*100)-($new_rate*12*100));
+                $savings=$total-$new_total;
+                $emiperlacs=($new_amount/100000);
 
-      $test =json_decode(json_encode($getQuery),true);
+                $test =json_decode(json_encode($getQuery),true);
 
-      $user =array('loanamount' => $loanamount, 'loaninterest' => $loaninterest , 'loanterm'=> $loanterm );
-              $returnHTML = view('emi/switch_cal2')->with('data', $test)->with('sata', $user)->render();
-              return response()->json(array('success' => true, 'amount'=>$amount, 'new_amount'=>$new_amount, 'drop_emi'=>$drop_emi,'drop_in_int'=>$drop_in_int, 'savings'=>$savings, 'emiperlacs'=> $emiperlacs, 'html'=>$returnHTML));                            
+                $user =array('loanamount' => $loanamount, 'loaninterest' => $loaninterest , 'loanterm'=> $loanterm );
+                $returnHTML = view('emi/switch_cal2')->with('data', $test)->with('sata', $user)->render();
+                return response()->json(array('success' => true, 'amount'=>$amount, 'new_amount'=>$new_amount, 'drop_emi'=>$drop_emi,'drop_in_int'=>$drop_in_int, 'savings'=>$savings, 'emiperlacs'=> $emiperlacs, 'html'=>$returnHTML));                            
             }
-              else{
+                else{
    
-              return response()->json(array('success' => false));
+                return response()->json(array('success' => false));
 
                  }
 

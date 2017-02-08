@@ -7,20 +7,22 @@
 					?>
 
 				</label>
-				<select name="qs1" class="drop-arr">
-					@foreach($result->questionToCustomer->optionsSet1 as $qs1)
-					<option>
-						<?php echo $qs1;	?>
-					</option>
-					@endforeach
-				</select>
-				<select name="qs2" class="drop-arr">
-					@foreach($result->questionToCustomer->optionsSet2 as $qs2)
-					<option>
-						<?php echo $qs2;	?>
-					</option>
-					@endforeach
-				</select>
+				<div class="select1 offset5">
+					<select name="qs1" class="drop-arr  col-md-6">
+						@foreach($result->questionToCustomer->optionsSet1 as $qs1)
+						<option>
+							<?php echo $qs1;	?>
+						</option>
+						@endforeach
+					</select>
+					<select name="qs2" class="drop-arr  col-md-3">
+						@foreach($result->questionToCustomer->optionsSet2 as $qs2)
+						<option>
+							<?php echo $qs2;	?>
+						</option>
+						@endforeach
+					</select>
+				</div>
 				<input type="hidden" name="stage1hitid" value={{$stage1hitid}}>
 				<input type="hidden" name="stage2hitid" value={{$stage2hitid}} >
 				<input type="hidden" name="stage2sessionid" value={{$stage2sessionid}}>
@@ -31,8 +33,10 @@
 				
 				?>
 				<br>
-				<a class="btn btn-primary btn-outline with-arrow next_qest1" >submit<i class="icon-arrow-right"></i></a>
-
+				
+			<div class="col-md-12 mrg-tp">
+					<a class="btn btn-primary btn-outline with-arrow centered next_qest1">Submit<i class="icon-arrow-right"></i></a>
+			 </div>
 
 			</form>
 			<?php }else if($result->responseJson=='passedReport'){

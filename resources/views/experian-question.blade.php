@@ -67,13 +67,13 @@
                url: "{{URL::to('gen-qstn')}}",
                data : $('#generate_question').serialize(),
                success: function(msg){
-               	console.log(msg);	
+               //	console.log(msg);	
                 if(msg.success==true){
-                $('#generate_question').hide();
-                $('#nxt_qstn').html("");
-                $('#nxt_qstn').html(msg.html);
+	                $('#generate_question').hide();
+	                $('#nxt_qstn').html("");
+	                $('#nxt_qstn').html(msg.html);
                 }else{
-                  
+                 window.location.href ="{{URL::to('went-wrong')}}";
                 }
               
                }  

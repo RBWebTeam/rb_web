@@ -136,7 +136,12 @@ class ExperianController extends Controller
 
             $res1=json_decode($http_result);
             $res=json_decode($res1);
-            $returnHTML = view('experian-question2',['result'=>$res,'stage1hitid'=>$req->stage1hitid,'stage2hitid'=>$req->stage2hitid,'stage2sessionid'=>$req->stage2sessionid,'qs'=>$req->question_count,'raw'=>$http_result])->render();
+            if($res->questionToCustomer!=null || $res->responseJson=='passedReport'){
+             $returnHTML = view('experian-question2',['result'=>$res,'stage1hitid'=>$req->stage1hitid,'stage2hitid'=>$req->stage2hitid,'stage2sessionid'=>$req->stage2sessionid,'qs'=>$req->question_count,'raw'=>$http_result])->render();
+            }else{
+                 $returnHTML = view('went-wrong');
+                 return response()->json(array('success' => false,'html'=>$returnHTML));
+            }
 
             //getting score and saving response from experian
            

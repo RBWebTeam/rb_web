@@ -92,6 +92,7 @@
 
 			return false;
 		}
+		document.getElementById("err_1").style.display='none';
     $.ajax({  
                type: "POST",  
                url: "{{URL::to('gen-qstn')}}",

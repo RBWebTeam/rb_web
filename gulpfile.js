@@ -1,4 +1,4 @@
-const elixir = require('laravel-elixir');
+var elixir = require('laravel-elixir');, 
 
 require('laravel-elixir-vue-2');
 
@@ -17,6 +17,7 @@ require('laravel-elixir-vue-2');
 //     mix.sass('app.scss')
 //        .webpack('app.js');
 // });
+
 elixir(function(mix) {
     mix.styles([
         
@@ -32,7 +33,6 @@ elixir(function(mix) {
     ], 'public/css/mysite.css');
 });
 
-
 // '../../../public/css/bootstrap.min.css',
 // 		'../../../public/css/component.css',
 // 		'../../../public/css/font-awesome.min.css',
@@ -41,6 +41,3 @@ elixir(function(mix) {
 // 		'../../../public/css/bootstrap-material-datetimepicker.css',
 // '../../../public/css/autocomp.css',
 // 		'../../../public/css/font-awesome.min.css'
-
-
-	

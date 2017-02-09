@@ -2,21 +2,21 @@
   <!-- jQuery -->
   <script src="{{URL::to('js/jquery.min.js')}}"></script>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="{{URL::to('js/ajaxlib.js')}}"></script>
   
 
-  <link href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" rel="Stylesheet"></link>
+  <link href="{{URL::to('js/smoothness.css')}}" rel="Stylesheet"></link>
   <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/themes/base/minified/jquery-ui.min.css" type="text/css" />
-  <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js" ></script>
+  <script src="{{URL::to('js/jquery-ui.js')}}" ></script>
   <script src="{{URL::to('emi/Chart.js')}}"></script>
-  <link href="http://demo.expertphp.in/css/jquery.ui.autocomplete.css" rel="stylesheet">
-  <script src="http://demo.expertphp.in/js/jquery.js"></script>
-  <script src="http://demo.expertphp.in/js/jquery-ui.min.js"></script>
-  <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
+  <link href="{{URL::to('css/autocomp.css')}}" rel="stylesheet">
+  <script src="{{URL::to('js/addonjquery.js')}}"></script>
+  <script src="{{URL::to('js/addonjquery-ui.min.js')}}"></script>
+  <script src="{{URL::to('js/jquery.validate.min.js')}}"></script>
 
 
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="{{URL::to('css/font-awesome.min.css')}}">
 
   <!-- <script src="https://apis.google.com/js/platform.js" async defer></script> -->
 
@@ -1034,7 +1034,7 @@ $(".change_password_form").click(function(event){
   xd='',
   tempDate = start, 
   monthCount = 1,
-  fdr='<table><h2 class="text-center" style="margin:0 auto;padding:20px ">Schedule showing payments:</h2><tr><th bgcolor="#c2da6b" class="mthy bg-clr-tbl">Month-Year</th><th bgcolor="4A9ACF" class="pa bg-clr-tbl">Principal(A)</th><th bgcolor="2DC6D1" class="int bg-clr-tbl">Interest(B)</th><th bgcolor="BF5850" class="tp bg-clr-tbl">Total Payment(A + B)</th><th bgcolor="D8BC31" class="tbal bg-clr-tbl">Balance</th></tr><tbody>';
+  fdr='<table><td colspan="6"><h2 class="text-center" style="margin:0 auto;padding:20px ">Schedule showing payments:</h2></td><tr><th bgcolor="#c2da6b" class="mthy bg-clr-tbl">Month-Year</th><th bgcolor="4A9ACF" class="pa bg-clr-tbl">Principal(A)</th><th bgcolor="2DC6D1" class="int bg-clr-tbl">Interest(B)</th><th bgcolor="BF5850" class="tp bg-clr-tbl">Total Payment(A + B)</th><th bgcolor="D8BC31" class="tbal bg-clr-tbl">Balance</th></tr><tbody>';
   
   var color='white';
   for(var i=0;i<n;i++)

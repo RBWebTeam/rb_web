@@ -27,8 +27,15 @@ class ExperianController extends Controller
              unset($post_data['authorize']);
             $data=json_encode($post_data);
             // print "<pre>";
-            // print_r($post_data);exit();
-            
+             print_r("call usp_get_credit_score ('".$req['panNo']."','".$req['mobileNo']."','".$req['email']."')");exit();
+             $quote_data=DB::select("call usp_get_credit_score ('".$req['panNo']."','".$req['mobileNo']."','".$req['email']."')");
+            // print_r($quote_data[0]->credit_score);exit();
+             if($quote_data[0]->credit_score >0){
+               // print_r($quote_data[0]->credit_score);exit();
+                $stored_score=$quote_data[0]->credit_score;
+                return $this->show_stored_record($stored_score);
+             }
+             print_r("hiii".$quote_data[0]->credit_score);exit();
             $save=new experian_request_model(); 
             $id=$save->store($req);
         	$url = "http://api.rupeeboss.com/CreditAPI.svc/LandingPageSubmit";    
@@ -66,6 +73,7 @@ class ExperianController extends Controller
                 }
             }
         }catch(\Exception $e){
+            return ($e);
             return view('went-wrong');
         }
 	}
@@ -155,7 +163,10 @@ class ExperianController extends Controller
             return response()->json(array('success' => false,'html'=>$returnHTML));
         }  
     }
-
+public function show_stored_record($data){
+    return view('stored-score')->with('data',$data);
+    
+}   
     
 
 

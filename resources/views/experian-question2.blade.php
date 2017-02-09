@@ -75,9 +75,10 @@
 	            //print_r($parse);
 	            $expiry_date=date('Y-m-d H:i:s', strtotime("+3 months"));
 	            
-                $save_data = array('f_name' => $f_name,'l_name' => $l_name,'contact'=>$contact,'pan'=>$pan,'email'=>$email,'lead_id'=>$lead_id,'credit_score'=>$parse[0],'raw_response'=>$parse[1],'expiry_date'=>$expiry_date);
+                // $save_data = array('f_name' => $f_name,'l_name' => $l_name,'contact'=>$contact,'pan'=>$pan,'email'=>$email,'lead_id'=>$lead_id,'credit_score'=>$parse[0],'raw_response'=>$parse[1],'expiry_date'=>$expiry_date);
+                
                 $id=DB::table('experian_response')
-                	->insertGetId(['name' => $name,'pan'=>$pan,'email'=>$email,'lead_id'=>$lead_id,'credit_score'=>$parse[0],'raw_response'=>$parse[1],'created_at'=>date("Y-m-d H:i:s"),'updated_at'=>date("Y-m-d H:i:s")]);
+                	->insertGetId(['f_name' => $f_name,'l_name' => $l_name,'contact'=>$contact,'pan'=>$pan,'email'=>$email,'lead_id'=>$lead_id,'credit_score'=>$parse[0],'raw_response'=>$parse[1],'expiry_date'=>$expiry_date,'created_at'=>date("Y-m-d H:i:s"),'updated_at'=>date("Y-m-d H:i:s")]);
 
 		 		
 		 		print_r($result->showHtmlReportForCreditReport);
@@ -106,8 +107,7 @@
                 $('#nxt_qstn').html("");
                 $('#nxt_qstn').html(msg.html);
                 }else{
-                	console.log('else');
-	//                  window.location.href ="{{URL::to('went-wrong')}}";
+                  window.location.href ="{{URL::to('went-wrong')}}";
                 }
               
                }  

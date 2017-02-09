@@ -18,10 +18,11 @@ class ExperianController extends Controller
             // print "<pre>";
             // print_r($post_data);exit();
             //unsetting terms and condition as no need to save in DB
-            Session::put('name_cScore', $req['firstName']." ".$req['middleName']." ".$req['surName']);
+            Session::put('f_name_cScore', $req['firstName']." ".$req['middleName']);
+            Session::put('l_name_cScore',$req['surName']);
             Session::put('pan_cScore',$req['panNo']);
             Session::put('email_cScore',$req['email']);
-
+             Session::put('contact_cScore',$req['mobileNo']);
              unset($post_data['terms']);
              unset($post_data['authorize']);
             $data=json_encode($post_data);
@@ -136,11 +137,13 @@ class ExperianController extends Controller
 
             $res1=json_decode($http_result);
             $res=json_decode($res1);
+
             if($res->questionToCustomer!=null || $res->responseJson=='passedReport'){
              $returnHTML = view('experian-question2',['result'=>$res,'stage1hitid'=>$req->stage1hitid,'stage2hitid'=>$req->stage2hitid,'stage2sessionid'=>$req->stage2sessionid,'qs'=>$req->question_count,'raw'=>$http_result])->render();
             }else{
-                 $returnHTML = view('went-wrong');
-                 return response()->json(array('success' => false,'html'=>$returnHTML));
+                 return ($http_result);
+                 // $returnHTML = view('went-wrong');
+                 // return response()->json(array('success' => false,'html'=>$returnHTML));
             }
 
             //getting score and saving response from experian
@@ -149,14 +152,13 @@ class ExperianController extends Controller
 
             return response()->json(array('success' => true,'html'=>$returnHTML)); 
         }catch(\Exception $e){
-           $returnHTML = view('went-wrong');
-            return response()->json(array('success' => false,'html'=>$returnHTML));
+            return $e;
+            // $returnHTML = view('went-wrong');
+            // return response()->json(array('success' => false,'html'=>$returnHTML));
         }  
     }
 
-    public function save_credit_score(Request $req){
-        
-    }
+    
 
 
 }

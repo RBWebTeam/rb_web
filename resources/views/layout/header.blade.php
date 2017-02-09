@@ -12,20 +12,8 @@
 	<link rel="shortcut icon" href="{{URL::to('images/rb_fav.png')}}">
 	<link rel="stylesheet" href="{{URL::to('fonts/Raleway.css')}}" type="text/css">
 	<!-- Animate.css -->
-	<link rel="stylesheet" href="{{URL::to('css/animate.css')}}">
-	<!-- Icomoon Icon Fonts-->
-	<link rel="stylesheet" href="{{URL::to('css/icomoon.css')}}">
-	<!-- Bootstrap  -->
-	<link rel="stylesheet" href="{{URL::to('css/bootstrap.css')}}">
-	<!-- Flexslider  -->
-	<link rel="stylesheet" href="{{URL::to('css/flexslider.css')}}">
-	<!-- Owl Carousel  -->
-	<link rel="stylesheet" href="{{URL::to('css/owl.carousel.min.css')}}">
-	<link rel="stylesheet" href="{{URL::to('css/owl.theme.default.min.css')}}">
-	<!-- Theme style  -->
-	<link rel="stylesheet" href="{{URL::to('css/style.css')}}"> 
-    <!-- Chatbox  -->
-	<link rel="stylesheet" href="{{URL::to('css/chatbox.css')}}">
+	<link href="{{URL::to('css/mysite.css')}}" rel="stylesheet" type="text/css" />
+	
 	<!-- Modernizr JS -->
 	<!-- <link rel="manifest" href="{{URL::to('extension/manifest.json')}}"> -->
 	@if( request()->url() == url('/') )

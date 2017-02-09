@@ -195,7 +195,7 @@
 
 	
 <?php if($loan == "home-loan") {?>
-    <div class="col-md-12 pad"><h2 class="blue-bg">Would you like to borrow &nbsp;&nbsp;<b>₹<span id="drop">0</span> (in lacs)</b>&nbsp;&nbsp;extra and pay the same EMI.</h2> </div>
+    <div class="col-md-12 pad"><h2 class="blue-bg">Would you like to borrow &nbsp;&nbsp;<b>₹<span id="drop">0</span> (in lacs)</b>&nbsp;&nbsp;extra and pay the same EMI.&nbsp;&nbsp;<button type="button" class="btn btn-success" id="revise_apply" name="revise_apply" data-toggle="modal" data-target="#myModaltest" style="display:none;">Apply Now</button></h2></div>
   
     <?php }elseif($loan == "personal-loan"){?>
   
@@ -370,6 +370,7 @@
                    
 
                   $('#revise').show()
+                  $('#revise_apply').show()
                         $("#1").show();
                         $("#4").show();
                         $("#5").show();

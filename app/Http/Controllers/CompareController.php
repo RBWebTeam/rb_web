@@ -277,15 +277,7 @@ class CompareController extends Controller
                                           'after_savings'=>$after_savings,'loaninterest'=>$loaninterest*12*100,'borrow'=>$borrow,'drop_emi_new'=>$drop_emi_new,'drop_in_int_new'=>$drop_in_int_new));
              
                 }
-
-
-
-
-
-
-
-
-      public function switchme_mobile(){
+    public function switchme_mobile(){
                  return view('emi/balance_transfer');
       }
       

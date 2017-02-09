@@ -154,7 +154,7 @@
   </div>
 
 
-  <!---Instant Call Back Start-->
+  <!---Borrow-->
 <div class="modal fade" id="myModaltest" role="dialog">
     <div class="modal-dialog">
     
@@ -162,18 +162,40 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title"><b>Revised EMI Calculation:</b></h4>
+          <h4 class="modal-title">Would Like To Borrow </h4>
         </div>
         <div class="modal-body">
-          <h2 class="bg-default"">Your EMI would be <b>₹<span id="after_emi">0</span></b> and your Savings would be <b>₹<span id="after_savings">0</span></b> according to <b><span id="new_int">0</span>% .</b></h2>
-            
+          <form name="borrow_form" id="borrow_form" method="post" >
+          {{ csrf_field() }}
+          
+                  <div>
+                    <fieldset>
+                      <input class="newsletter-name" name="name" placeholder="Name" required>
+                    </fieldset>
+                    </div>
+                     <div>
+                    <fieldset>
+                      <input type="email" class="newsletter-name" name="email"  required  placeholder="Email address">
+                    </fieldset>                 
+                    </div>
+                    <div>
+                    <fieldset>
+                      <input type="text" class="newsletter-name" name="contact" pattern="[789][0-9]{9}" required maxlength="10" placeholder="Mobile Number">
+                    </fieldset>                 
+                    </div>
+                  <div>
+                     <button class="btn btn-primary btn-outline with-arrow sidebar-submit">Submit<i class="icon-arrow-right"></i></button>
+                  </div>
+            </form>
+            <div class='msg' style="display: none;"><b>Thanks.We will reach you soon.</b></div>
+            <div class='msg_err' style="display: none;"><p>Ooops. Something went wrong.</p></div>
         </div>
         
       </div>
       
     </div>
   </div>
-<!---Instant Call Back End -->
+<!---Borrow end -->
 
 <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" id="Experian_terms_modal">
   <div class="modal-dialog modal-lg" role="document">

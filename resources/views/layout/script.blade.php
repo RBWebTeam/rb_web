@@ -1717,9 +1717,7 @@ function getFbUserData(){
     });
   </script>
   <!-- end -->
-<!-- loader -->
 
-<!-- loader ends -->
 
 <!-- post end -->
 <!-- Facebook Pixel Code -->
@@ -1747,6 +1745,8 @@ fbq('track', 'PageView');
   ga('send', 'pageview');
 
 </script>
+
+
 
 
 </body>

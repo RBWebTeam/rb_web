@@ -5,18 +5,14 @@
   <script src="{{URL::to('js/ajaxlib.js')}}"></script>
   
 
-  <link href="{{URL::to('js/smoothness.css')}}" rel="Stylesheet"></link>
+  <!-- <link href="{{URL::to('css/smoothness.css')}}" rel="Stylesheet"></link> -->
   <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/themes/base/minified/jquery-ui.min.css" type="text/css" />
   <script src="{{URL::to('js/jquery-ui.js')}}" ></script>
   <script src="{{URL::to('emi/Chart.js')}}"></script>
-  <link href="{{URL::to('css/autocomp.css')}}" rel="stylesheet">
+ <!--  <link href="{{URL::to('css/autocomp.css')}}" rel="stylesheet"> -->
   <script src="{{URL::to('js/addonjquery.js')}}"></script>
   <script src="{{URL::to('js/addonjquery-ui.min.js')}}"></script>
   <script src="{{URL::to('js/jquery.validate.min.js')}}"></script>
-
-
-
-  <link rel="stylesheet" href="{{URL::to('css/font-awesome.min.css')}}">
 
   <!-- <script src="https://apis.google.com/js/platform.js" async defer></script> -->
 
@@ -1738,6 +1734,17 @@ fbq('track', 'PageView');
 /></noscript>
 <!-- DO NOT MODIFY -->
 <!-- End Facebook Pixel Code -->
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-84383331-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
 
 
 

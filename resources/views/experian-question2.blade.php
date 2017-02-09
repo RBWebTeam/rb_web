@@ -35,7 +35,9 @@
 				
 				?>
 				<br>
-				
+				<div class="iframeloading" style= "display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
+				     <img src="images/ajaxloader.gif" alt="loading" style="top: 50%; position: relative; left: 50%;"  />
+				</div>  
 			<div class="col-md-12 mrg-tp">
 					<a class="btn btn-primary btn-outline with-arrow centered next_qest1">Submit<i class="icon-arrow-right"></i></a>
 					
@@ -96,11 +98,13 @@
 	   	return false;
 	   }
 		//document.getElementById("err_1").style.display='none';
+		$(".iframeloading").show();  
     $.ajax({  
                type: "POST",  
                url: "{{URL::to('gen-qstn')}}",
                data : $('#generate_question2').serialize(),
                success: function(msg){
+               	$(".iframeloading").hide();  
                 //console.log("2nd question"+msg);  
                 if(msg.success){
                 $('#generate_question').hide();

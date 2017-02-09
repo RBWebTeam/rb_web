@@ -30,7 +30,7 @@ class UploadController extends Controller
                 $byteArray = unpack("C*",$contents); 
                 $data=array_values(($byteArray));
                 $post="[".implode(',',$data)."]";
-                $post_data='{"docType":"Identity_Proof","docextension":"'.$extension.'",
+                $post_data='{"docType":"'.$doc[$i].'","docextension":"'.$extension.'",
                             "refFBAId":"'.$request->app_id.'","bytes":'.$post.'}';
                 $url = "http://beta.services.rupeeboss.com/LoginDtls.svc/xmlservice/uploadCustLoanDoc";
                 $ch = curl_init();

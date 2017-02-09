@@ -13,7 +13,6 @@
 			
 			<?php if($result->questionToCustomer!=null){ ?> 
 			<form id="generate_question" name="generate_question"> 
-
 			<h3> Please answer the questions</h3>
 			{{ csrf_field()}}
 			
@@ -92,7 +91,6 @@
 	                $('#nxt_qstn').html("");
 	                $('#nxt_qstn').html(msg.html);
                 }else{
-                	console.log(msg);
                  window.location.href ="{{URL::to('went-wrong')}}";
                 }
               

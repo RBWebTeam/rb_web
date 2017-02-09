@@ -1,5 +1,6 @@
 
-<div class="container white-bg">
+<div class="container">
+<div class="white-bg pad1 box-shadow">
 <div class="table-responsive">
 <div class="outer-border">
 <br>
@@ -40,7 +41,7 @@
 foreach ($data as $key => $value){?>
 <tr>
 
-	<td><img src="{{ $value['Bank_Logo']}}" class="img-responsive"></td>
+	<td><img src="{{ $value['Bank_Logo']}}" class="bnk-log"></td>
     <td>{{ $value['roi']}}</td>
     <td>{{ $value['pf']}} &nbsp; ({{ $value['pf_type']}})</td>
     
@@ -72,9 +73,9 @@ foreach ($data as $key => $value){?>
     <td><?php echo number_format((float)$drop_emi, 2, '.', ''); ?>  </td>
     <td><?php echo ($drop_in_int); ?>  </td>
     <td><?php echo round($savings); ?>  </td>
-    <td width="17%">
+    <td>
     
-    <a href="{{URL::to('apply-lead-online')}}?appid=0&qoutid=0&BankId={{$value['Bank_Id']}}&brokerid={{$broker_id}}&loanamount={{ $loanamount}}&loaninterest={{$loaninterest }}&loanterm={{$loanterm}}&product={{$product_id}}">Apply Online</a></td>
+    <a href="{{URL::to('apply-lead-online')}}?appid=0&qoutid=0&BankId={{$value['Bank_Id']}}&brokerid={{$broker_id}}&loanamount={{ $loanamount}}&loaninterest={{$loaninterest }}&loanterm={{$loanterm}}&product={{$product_id}}" class="apply-btn">Apply Online</a></td>
                            
 
     </tr>
@@ -83,7 +84,6 @@ foreach ($data as $key => $value){?>
 <?php }?>
 
 <style>
-.brd-rgt {border-right: 2px dashed #ccc;}
 table, th, td {
     border: 1px solid black;
     border-collapse: collapse;
@@ -98,3 +98,5 @@ th, td {
   </div>
   </div>
   </div>
+  </div>
+  <br>

@@ -152,6 +152,29 @@
       
     </div>
   </div>
+
+
+  <!---Instant Call Back Start-->
+<div class="modal fade" id="myModaltest" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title"><b>Revised EMI Calculation:</b></h4>
+        </div>
+        <div class="modal-body">
+          <h2 class="bg-default"">Your EMI would be <b>₹<span id="after_emi">0</span></b> and your Savings would be <b>₹<span id="after_savings">0</span></b> according to <b><span id="new_int">0</span>% .</b></h2>
+            
+        </div>
+        
+      </div>
+      
+    </div>
+  </div>
+<!---Instant Call Back End -->
+
 <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" id="Experian_terms_modal">
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content col-md-12 text-justify model-hig">

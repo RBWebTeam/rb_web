@@ -17,13 +17,13 @@
 									
 										<h4 class="hdr">&nbsp;&nbsp;&nbsp;&nbsp;Personal Details</h4>
 										<div class="col-md-4">
-											<input type="text" class="form-control" placeholder= "FirstName*" name="ApplicantFirstName" id="ApplicantFirstName" required="">
+											<input type="text" class="form-control" placeholder= "FirstName*" name="ApplicantFirstName" id="ApplicantFirstName" required>
 										</div>
 										<div class="col-md-4">
 											<input type="text" class="form-control" placeholder="Middle Name" name="ApplicantMiddleName" id="ApplicantMiddleName">
 										</div>
 										<div class="col-md-4">
-											<input type="text" class="form-control" placeholder="Last Name*" name="ApplicantLastName" id="ApplicantLastName" required="">
+											<input type="text" class="form-control" placeholder="Last Name*" name="ApplicantLastName" id="ApplicantLastName" required>
 										</div>
 
 										<div class="col-md-4">
@@ -62,7 +62,7 @@
 									<div class="form-group">
 										<h4 class="hdr">&nbsp;&nbsp;&nbsp;&nbsp;Current Addresses Details</h4>
 										<div class="col-md-4">
-											<input type="text" class="form-control" placeholder="flat No / Plot No / House No*" name="ResidenceAddress1" id="ResidenceAddress1" required="">
+											<input type="text" class="form-control" placeholder="flat No / Plot No / House No*" name="ResidenceAddress1" id="ResidenceAddress1" required>
 										</div>
 										<div class="col-md-4">
 											<input type="text" class="form-control" placeholder="Building / Society Name" name="ResidenceAddress2" id="ResidenceAddress2">
@@ -71,13 +71,13 @@
 											<input type="text" class="form-control" placeholder="Road No / Area / Locality" name="ResidenceAddress3" id="ResidenceAddress3">
 										</div>
 										<div class="col-md-4">
-											<input type="text" class="form-control" placeholder="City*" name="City" id="City" required="">
+											<input type="text" class="form-control" placeholder="City*" name="City" id="City" required>
 										</div>
 										<div class="col-md-4">
 												<input type="text" id="ResidencePincode" name="ResidencePincode" class="form-control" placeholder="Pincode*" onkeypress="return fnAllowNumeric(event)" maxlength="6" required>
 											</div>
 										<div class="col-md-4">
-											<input type="text" class="form-control" placeholder="State*" name="ResidenceState" id="ResidenceState" required="">
+											<input type="text" class="form-control" placeholder="State*" name="ResidenceState" id="ResidenceState" required>
 										</div>	
 										</div>
 									</div>
@@ -95,7 +95,7 @@
 												<input type="email" class="form-control" placeholder="Email Address*" name="email" required>
 											</div> -->
 											<div class="col-md-4">
-												<input type="text" class="form-control" id="STDCode" name="STDCode" placeholder="STD Code" required="" onkeypress="return fnAllowNumeric(event)" maxlength="6" minlength="6">
+												<input type="text" class="form-control" id="STDCode" name="STDCode" placeholder="STD Code" required="" onkeypress="return fnAllowNumeric(event)" maxlength="2" minlength="2">
 											</div>
 												
 										</div>
@@ -104,13 +104,13 @@
 										<div class="form-group">
 											<h4 class="hdr">&nbsp;&nbsp;&nbsp;&nbsp;Identity Details</h4>
 											<div class="col-md-4">
-												<input type="text" id="ApplicationNumber" name="ApplicationNumber" class="form-control" placeholder="Application Number*"  maxlength="13" minlength="13" required="">
+												<input type="text" id="ApplicationNumber" name="ApplicationNumber" class="form-control" placeholder="Application Number*"  maxlength="13" minlength="13" required>
 											</div>
 											<!-- <div class="col-md-4">
 												<input type="text" class="form-control" placeholder="Passport No*" name="passport"	>
 											</div> -->
 											<div class="col-md-4">
-												<input type="text" id="PanNo" name="PanNo" class="form-control" placeholder="Pancard*" required="">
+												<input type="text" id="PanNo" name="PanNo" class="form-control" placeholder="Pancard*" maxlength="10" minlength="10" required >
 											</div>
 											<div class="col-md-4">
 												<input type="text" class="form-control lastReporteddate" id="DSalaryAcOpenDate" name="SalaryAcOpenDate" placeholder="Salary Ac Open Date*" required>

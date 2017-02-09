@@ -3,7 +3,7 @@
   body {color:#666;}
   .tbl-clr {color:#fff; }
   .tbl-clr td {text-align:center;}
-  .rw-hei{margin-bottom:20px; height:280px;}
+  .rw-hei{margin-bottom:20px;}
    .rw-hei p {font-size:16px;color:#666; margin-bottom:10px;}
    .em1 {color:#666;}
    .rw-hei h1 {margin-top:10px;}
@@ -54,13 +54,15 @@
   
 <div class="container">
   <div class="row">
-     <div class="col-sm-4 rw-hei" style="background-color: #ffcc99;"><h3 class="emi-cal">
+     <div class="col-sm-4 rw-hei">
+	 <div class="white-bg pad1 heigh-bt">
+	 <h3 class="emi-cal">
     <?php if($loan == "home-loan") {?>
-     Home Loan Transfer Savings  <i class="fa fa-exchange" aria-hidden="true"></i></h3>
+     Current Loan Status  <i class="fa fa-exchange" aria-hidden="true"></i></h3>
     <?php }elseif($loan == "personal-loan"){?>
-    Personal Loan Transfer Savings  <i class="fa fa-exchange" aria-hidden="true"></i></h3>
+    Current Loan Status  <i class="fa fa-exchange" aria-hidden="true"></i></h3>
     <?php }else{?>
-    Loan Against Property Transfer Savings  <i class="fa fa-exchange" aria-hidden="true"></i></h3>
+    Current Loan Status  <i class="fa fa-exchange" aria-hidden="true"></i></h3>
     <?php }?>
 
 
@@ -84,7 +86,7 @@
     <p id="err" style="display:none;"><span style="color:red; font-size:13px; position:absolute;">Please Fill All Inputs</span></p>
 
   
-    <div class="col-md-12 pad pull-right">
+    <div class="col-md-12 pad">
   <button class="btn btn-success pull-left ">Submit</button>
   <div class="pull-right">
           <label><input type="radio" name="Year" id="Year" value="" checked="checked"> Yr</label>
@@ -92,7 +94,7 @@
     </div>
     </div>
   
-  
+
 
     </div>
 
@@ -104,9 +106,11 @@
     <input type="hidden" name="product_id" id="product_id" value="7">
     <?php }?>
 
-     
+     </div>
     </div>
-    <div class="col-sm-4 rw-hei brd-rgt" style="background-color:#ccc"><h3 class="transfer-cal">
+    <div class="col-sm-4 rw-hei brd-rgt">
+	<div class="white-bg pad1 heigh-bt">
+	<h3 class="transfer-cal">
     My Savings <i class="fa fa-credit-card" aria-hidden="true"></i></h3>
     <!-- <i class="fa fa-cog fa-spin fa-2x fa-fw"></i>
     <span class="sr-only">Loading...</span></h3> -->
@@ -124,45 +128,59 @@
    
         <p>Drop-in Interest Rate:<b class="em7"><span id="emi5">0</span>%</b></p>
     
-       <p><h6>Your <mark style="color:red">Savings</mark> through reduced Interest:</h6></p>
+       <p><h6>Your <mark style="color:red"><b>Savings</b></mark> through reduced Interest:</h6></p>
        <h2 class="em8">₹ <b><span id="emi6">0</span></b></h2>
+
+
        
        
 
 
        <!-- <div id="b"></div> -->
       </center>
+	  </div>
   </div>
-  <div class="col-sm-4 rw-hei" style="background-color: #ffcc99;"><h3 class="emi-cal">
+  <div class="col-sm-4 rw-hei">
+  <div class="white-bg pad1 heigh-bt">
+  <h3 class="emi-cal">
     <?php if($loan == "home-loan") {?>
-     Home Loan After Transfer  <i class="fa fa-exchange" aria-hidden="true"></i></h3>
+     After Transfer  <i class="fa fa-exchange" aria-hidden="true"></i></h3>
     <?php }elseif($loan == "personal-loan"){?>
-    Personal Loan After Transfer  <i class="fa fa-exchange" aria-hidden="true"></i></h3>
+    After Transfer  <i class="fa fa-exchange" aria-hidden="true"></i></h3>
     <?php }else{?>
-    Loan Against Property After Transfer <i class="fa fa-exchange" aria-hidden="true"></i></h3>
+    After Transfer <i class="fa fa-exchange" aria-hidden="true"></i></h3>
     <?php }?>
 
 
-     <!-- <i class="fa fa-exchange" aria-hidden="true"></i> -->
+      <!-- <i class="fa fa-exchange" aria-hidden="true"></i> -->
     <div class="form-group">
-    <input type="hidden" name="brokerid" id="brokerid" value="<?php echo isset($_GET['brokerid'])?$_GET['brokerid']:'';?>">
-       <!-- <label class="control-label" for="Loan Amount">Outstanding Principal:</label> -->
+     
+      <!-- <label class="control-label" for="Loan Amount">Outstanding Principal:</label> -->
 
-       <input type="text" name="loanamount" class="form-control" id="loanamount_new" placeholder="Loan Amount" value="" onblur ="myfun()" onkeypress="return isNumberKey(event)" maxlength="9" title="Loanamount" >
+       <input type="text" name="loanamount" class="form-control" id="loanamount_new" placeholder="Loan Amount" value=""  onkeypress="return isNumberKey(event)" maxlength="9" title="Loanamount"  >
     </div>
     <div class="form-group">
       <!-- <label class="control-label" for="Interest Rate"> Current Interest Rate:</label> -->
-      <input type="text" name="loaninterest" step="0.01" min="0" class="form-control" id="loaninterest_new" placeholder="Interest"  value="" onblur="myfun()" onkeypress="return isNumberKey(event)" title="Interest">
+      <input type="text" name="loaninterest" step="0.01" min="0" class="form-control" id="loaninterest_new" placeholder="Interest"  value=""  onkeypress="return isNumberKey(event)" title="Interest" >
+
     </div>
-    
+	
     <div class="form-group right-block">
        <!-- <label class="control-label" for="Loan Tenure">Remaining Tenure:</label> -->
 
-        <input type="text" name="loanterm" class="form-control" id="loanterm_new" placeholder="Loan Tenure(in months)" value="" onblur="myfun()" onkeypress="return isNumberKey(event)" title="Tenure" >
+
+        <input type="text" name="loanterm" class="form-control" id="loanterm_new" placeholder="Loan Tenure" value="" onkeypress="return isNumberKey(event)" title="Tenure"  >
     <p id="err" style="display:none;"><span style="color:red; font-size:13px; position:absolute;">Please Fill All Inputs</span></p>
+
+	
+   <!-- <div class="col-md-12 pad"><button class="btn btn-success pull-left" onclick="myfun_new()" >Revise & calculate</button></div> -->
+   <div class="col-md-12 pad"><button type="button" class="btn btn-success"  onclick="myfun_new()" id="revise" name="revise" style="display:none;">Revise & calculate</button></div>
+
   
   
+
     </div>
+
 
     <?php if($loan == "home-loan") {?>
     <input type="hidden" name="product_id" id="product_id" value="12">
@@ -172,10 +190,22 @@
     <input type="hidden" name="product_id" id="product_id" value="7">
     <?php }?>
 
-     
+     </div>
     </div>
+
+	
+<?php if($loan == "home-loan") {?>
+    <div class="col-md-12 pad"><h2 class="blue-bg">Would you like to borrow &nbsp;&nbsp;<b>₹<span id="drop">0</span> (in lacs)</b>&nbsp;&nbsp;extra and pay the same EMI.</h2> </div>
   
+    <?php }elseif($loan == "personal-loan"){?>
+  
+    <?php }else{?>
+   <div class="col-md-12 pad"><h2 class="blue-bg">Would you like to borrow &nbsp;&nbsp;<b>₹<span id="drop">0</span> (in lacs)</b>&nbsp;&nbsp; extra and pay the same EMI.</h2> </div>
+  
+    <?php }?>
+	
 </div>
+
 </div>
 
 
@@ -277,9 +307,13 @@
     });
 </script>
 
+
+
 <script type="text/javascript">
 
   function myfun(){
+    
+    // console.log("ok");
     var lm = $("#loanamount").val().length;
        var lin = $("#loaninterest").val().length;
        var lt = $("#loanterm").val().length;
@@ -291,12 +325,12 @@
       $('#loanamount_new').val(loanamount);
       // console.log($("#loanamount").val());
       var loaninterest = $("#loaninterest").val();
-       // var bank = $("#bank").val();
+        // $('#loaninterest_new').val(loaninterest);
          
       if ($("#Year").prop("checked")) {
         var loanterm1 = $("#loanterm").val();
         var loanterm = loanterm1*12;
-        $('#loanterm_new').val(loanterm);
+        $('#loanterm_new').val(loanterm1);
       }else{
         var loanterm = $("#loanterm").val();
 
@@ -315,7 +349,7 @@
                data : { 'loanamount': loanamount , 'loaninterest': loaninterest ,'loanterm' :loanterm,'_token': v_token,'profession':profession,'product_id':product_id,'brokerid':brokerid},
                // 'bank':bank},
                success: function(msg){
-                  //console.log(msg.success);
+                  // console.log(msg);
                   if(msg.success ==true){
                   var numb = msg.amount.toFixed();
                    $('#emi').empty().append(numb);
@@ -333,6 +367,9 @@
                    var numb4 = msg.savings.toFixed();
                    $('#emi6').empty().append(numb4);
 
+                   
+
+                  $('#revise').show()
                         $("#1").show();
                         $("#4").show();
                         $("#5").show();
@@ -367,3 +404,101 @@
 
 
 </script>
+
+<!-- After Transfer Script -->
+<script type="text/javascript">
+
+  function myfun_new(){
+      // console.log("ok");
+      var lm = $("#loanamount_new").val().length;
+      var lin = $("#loaninterest_new").val().length;
+      var lt = $("#loanterm_new").val().length;
+       
+       
+       if(lm >0 && lin >0 && lt>0){
+      
+      var loanamount = $("#loanamount_new").val();
+      var loaninterest = $("#loaninterest_new").val();
+      var loanterm = $("#loanterm_new").val();
+      var old_loaninterest = $("#loaninterest").val();
+      var old_drop_emi = $(".em5 span").text();
+       // console.log(old_drop_emi);
+
+      
+      var v_token = "{{csrf_token()}}";
+      $.ajax({  
+               type: "POST",  
+               url: "{{URL::to('after-transfer-calculation')}}",
+               dataType:'json',
+               data : { 'loanamount': loanamount , 'loaninterest': loaninterest ,'loanterm' :loanterm,'_token': v_token,'old_loaninterest':old_loaninterest,'old_drop_emi':old_drop_emi},
+               // 'bank':bank},
+               success: function(msg){
+                   // console.log(msg);
+                  if(msg.success ==true){
+                    // console.log('ok');
+                    // console.log(msg.emi);
+                    // console.log(msg.loaninterest);
+                    // return false;
+                  var after_numb = msg.emi.toFixed();
+                   $('#after_emi').empty().append(after_numb);
+                  
+                    var after_numb1 = msg.after_savings.toFixed();
+                  $('#after_savings').empty().append(after_numb1);
+                    
+                    var after_interest = msg.loaninterest;
+                     // console.log(msg.loaninterest);
+                    $('#new_int').empty().append(after_interest);
+
+                    var borrow_new = msg.borrow.toFixed(3);
+                    $('#drop').empty().append(borrow_new);
+                       
+
+
+                  
+                  
+                   
+                  
+
+                   var drop_emi_here = msg.drop_emi_new.toFixed(3);
+                   $('#emi3').empty().append(drop_emi_here);
+
+                   $('#emi4').empty().append(after_numb);
+
+                   var drop_int_here = msg.drop_in_int_new.toFixed();
+                   $('#emi5').empty().append(drop_int_here);
+
+                   $('#emi6').empty().append(after_numb1);
+
+
+
+
+
+                     
+                        $("#e").show();
+                        $("#s").show();
+                        $("#l").show();
+                         
+                        
+                  }
+
+                  
+              
+
+                        
+                        
+                        
+                         
+                     }  
+                  }); 
+        
+        
+        $("#err").hide();
+      }else{
+        $("#err").show();
+      }
+    
+  }
+
+
+</script>
+<!-- End -->

@@ -1736,8 +1736,7 @@ document,'script','https://connect.facebook.net/en_US/fbevents.js');
 fbq('init', '781224162028085'); // Insert your pixel ID here.
 fbq('track', 'PageView');
 </script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=781224162028085&ev=PageView&noscript=1"
+<noscript><img height="1" width="1" style="display:none" alt="fb-logo" src="https://www.facebook.com/tr?id=781224162028085&ev=PageView&noscript=1"
 /></noscript>
 <!-- DO NOT MODIFY -->
 <!-- End Facebook Pixel Code -->

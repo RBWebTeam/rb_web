@@ -2,7 +2,7 @@
 <div id="fh5co-hero">
 <div class="container">
 <div class="panel panel-primary">
-  <div class="panel-heading"><h2>Upload Your Proof document here</h2></div>
+  <div class="panel-heading"><h2>Upload Your Document Proof here</h2></div>
   <div class="panel-body">
 Please Upload below documents :
 
@@ -15,13 +15,13 @@ Please Upload below documents :
 				
 					<input type="file" name="Identity_Proof" required="" />
 				</div>
-			<div class="col-md-6">Income_Proof</div>
+			<div class="col-md-6">Income Proof</div>
 				<div class="col-md-6">
 				
 					<input type="file" name="Income_Proof" required/>
 				</div>
 				
-			<div class="col-md-6">Address_Proof</div>
+			<div class="col-md-6">Address Proof</div>
 				<div class="col-md-6">
 				
 					<input type="file" name="Address_Proof" required />

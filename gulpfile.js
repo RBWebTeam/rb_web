@@ -1,4 +1,4 @@
-var elixir = require('laravel-elixir');, 
+var elixir = require('laravel-elixir');
 
 require('laravel-elixir-vue-2');
 
@@ -28,7 +28,9 @@ elixir(function(mix) {
 		'../../../public/css/owl.carousel.min.css',
 		'../../../public/css/owl.theme.default.min.css',
 		'../../../public/css/style.css',
-		'../../../public/css/chatbox.css'
+		'../../../public/css/chatbox.css',
+		'../../../public/fonts/Raleway.css'
+
 		
     ], 'public/css/mysite.css');
 });

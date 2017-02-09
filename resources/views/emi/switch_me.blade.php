@@ -359,8 +359,13 @@
                    $('#emi5').empty().append( msg.drop_in_int);
                    var nrate=($('#loaninterest').val())-msg.drop_in_int;
                   $('#loaninterest_new').val( nrate);
+
                    var numb4 = msg.savings.toFixed();
                    $('#emi6').empty().append(numb4);
+
+                   var borrow = msg.borrow.toFixed(3);
+                   $('#drop').empty().append(borrow);
+
 
                    
 
@@ -442,19 +447,14 @@
                   
                    
                   
-                   
                    var drop_emi_here = msg.drop_emi_new.toFixed(3);
-                   $('#emi3').empty().append(drop_emi_here);
-                   if ($('#emi3').empty().append(drop_emi_here)>0) 
+                  
+                   if (drop_emi_here >0) 
                    {
-
-                   } 
-                   else 
-                   {
-
-                   }
-
-                   $('#emi4').empty().append(after_numb);
+                     
+                    
+                    $('#emi3').empty().append(drop_emi_here);
+                    $('#emi4').empty().append(after_numb);
 
                    var drop_int_here = msg.drop_in_int_new.toFixed();
                    $('#emi5').empty().append(drop_int_here);
@@ -470,6 +470,13 @@
                         $("#s").show();
                         $("#l").show();
                          
+                   } 
+                   else 
+                   {
+                    alert('Oops!!! Sorry,your EMI cannot be '+drop_emi_here+'')
+                   }
+
+                   
                         
                   }
 

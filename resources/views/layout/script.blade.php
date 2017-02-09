@@ -2,21 +2,21 @@
   <!-- jQuery -->
   <script src="{{URL::to('js/jquery.min.js')}}"></script>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="{{URL::to('js/ajaxlib.js')}}"></script>
   
 
-  <link href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" rel="Stylesheet"></link>
+  <link href="{{URL::to('js/smoothness.css')}}" rel="Stylesheet"></link>
   <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/themes/base/minified/jquery-ui.min.css" type="text/css" />
-  <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js" ></script>
+  <script src="{{URL::to('js/jquery-ui.js')}}" ></script>
   <script src="{{URL::to('emi/Chart.js')}}"></script>
-  <link href="http://demo.expertphp.in/css/jquery.ui.autocomplete.css" rel="stylesheet">
-  <script src="http://demo.expertphp.in/js/jquery.js"></script>
-  <script src="http://demo.expertphp.in/js/jquery-ui.min.js"></script>
-  <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
+  <link href="{{URL::to('css/autocomp.css')}}" rel="stylesheet">
+  <script src="{{URL::to('js/addonjquery.js')}}"></script>
+  <script src="{{URL::to('js/addonjquery-ui.min.js')}}"></script>
+  <script src="{{URL::to('js/jquery.validate.min.js')}}"></script>
 
 
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="{{URL::to('css/font-awesome.min.css')}}">
 
   <!-- <script src="https://apis.google.com/js/platform.js" async defer></script> -->
 
@@ -1736,8 +1736,7 @@ document,'script','https://connect.facebook.net/en_US/fbevents.js');
 fbq('init', '781224162028085'); // Insert your pixel ID here.
 fbq('track', 'PageView');
 </script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=781224162028085&ev=PageView&noscript=1"
+<noscript><img height="1" width="1" style="display:none" alt="fb-logo" src="https://www.facebook.com/tr?id=781224162028085&ev=PageView&noscript=1"
 /></noscript>
 <!-- DO NOT MODIFY -->
 <!-- End Facebook Pixel Code -->

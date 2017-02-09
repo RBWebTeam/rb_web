@@ -68,8 +68,7 @@
  </div>
 </div>
 </div>
-<br>
-<br>
+
 <div class="container mrg-top">
 <div class="table-responsive">
 <table class="table table-bordered table-striped" id="emipaymenttable"></table>

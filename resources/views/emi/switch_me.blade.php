@@ -207,11 +207,6 @@
 </div>
 
 </div>
-
-
-
-
-
 <div id="test"></div>
 
 
@@ -382,16 +377,7 @@
                       
 
                   }
-                    
-
-                  
-              
-
-                        
-                        
-                        
-                         
-                     }  
+                  }  
                   }); 
         
         
@@ -401,8 +387,6 @@
       }
     
   }
-
-
 </script>
 
 <!-- After Transfer Script -->
@@ -458,9 +442,17 @@
                   
                    
                   
-
+                   
                    var drop_emi_here = msg.drop_emi_new.toFixed(3);
                    $('#emi3').empty().append(drop_emi_here);
+                   if ($('#emi3').empty().append(drop_emi_here)>0) 
+                   {
+
+                   } 
+                   else 
+                   {
+
+                   }
 
                    $('#emi4').empty().append(after_numb);
 

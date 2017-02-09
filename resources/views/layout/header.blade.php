@@ -10,7 +10,7 @@
 	<meta name="keywords" content="<?php if(isset($keywords))echo $keywords; else echo "rupeeboss loans getloan expressloan"; ?>" />
 	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 	<link rel="shortcut icon" href="{{URL::to('images/rb_fav.png')}}">
-	<link rel="stylesheet" href="{{URL::to('fonts/Raleway.css')}}" type="text/css">
+	<!-- <link rel="stylesheet" href="{{URL::to('fonts/Raleway.css')}}" type="text/css"> -->
 	<!-- Animate.css -->
 	<link href="{{URL::to('css/mysite.css')}}" rel="stylesheet" type="text/css" />
 	

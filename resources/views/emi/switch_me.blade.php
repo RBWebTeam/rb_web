@@ -456,7 +456,7 @@
                     $('#emi3').empty().append(drop_emi_here);
                     $('#emi4').empty().append(after_numb);
 
-                   var drop_int_here = msg.drop_in_int_new.toFixed();
+                   var drop_int_here = msg.drop_in_int_new;
                    $('#emi5').empty().append(drop_int_here);
 
                    $('#emi6').empty().append(after_numb1);

@@ -207,11 +207,6 @@
 </div>
 
 </div>
-
-
-
-
-
 <div id="test"></div>
 
 
@@ -362,10 +357,15 @@
 
                   
                    $('#emi5').empty().append( msg.drop_in_int);
-                   var nrate=($('#loaninterest').val())-msg.drop_in_int;
+                   var nrate=(($('#loaninterest').val())-msg.drop_in_int).toFixed(2);
                   $('#loaninterest_new').val( nrate);
+
                    var numb4 = msg.savings.toFixed();
                    $('#emi6').empty().append(numb4);
+
+                   var borrow = msg.borrow.toFixed(2);
+                   $('#drop').empty().append(borrow);
+
 
                    
 
@@ -382,16 +382,7 @@
                       
 
                   }
-                    
-
-                  
-              
-
-                        
-                        
-                        
-                         
-                     }  
+                  }  
                   }); 
         
         
@@ -401,8 +392,6 @@
       }
     
   }
-
-
 </script>
 
 <!-- After Transfer Script -->
@@ -449,7 +438,7 @@
                      // console.log(msg.loaninterest);
                     $('#new_int').empty().append(after_interest);
 
-                    var borrow_new = msg.borrow.toFixed(3);
+                    var borrow_new = msg.borrow.toFixed(2);
                     $('#drop').empty().append(borrow_new);
                        
 
@@ -458,13 +447,16 @@
                   
                    
                   
+                   var drop_emi_here = msg.drop_emi_new.toFixed();
+                  
+                   if (drop_emi_here >0) 
+                   {
+                     
+                    
+                    $('#emi3').empty().append(drop_emi_here);
+                    $('#emi4').empty().append(after_numb);
 
-                   var drop_emi_here = msg.drop_emi_new.toFixed(3);
-                   $('#emi3').empty().append(drop_emi_here);
-
-                   $('#emi4').empty().append(after_numb);
-
-                   var drop_int_here = msg.drop_in_int_new.toFixed();
+                   var drop_int_here = msg.drop_in_int_new;
                    $('#emi5').empty().append(drop_int_here);
 
                    $('#emi6').empty().append(after_numb1);
@@ -478,6 +470,13 @@
                         $("#s").show();
                         $("#l").show();
                          
+                   } 
+                   else 
+                   {
+                    alert('Oops!!! Sorry,your EMI cannot be '+drop_emi_here+'')
+                   }
+
+                   
                         
                   }
 

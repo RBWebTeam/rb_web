@@ -1034,7 +1034,7 @@ $(".change_password_form").click(function(event){
   xd='',
   tempDate = start, 
   monthCount = 1,
-  fdr='<table><h2 class="text-center" style="margin:0 auto;padding:20px ">Schedule showing payments:</h2><tr><th bgcolor="#c2da6b" class="mthy bg-clr-tbl">Month-Year</th><th bgcolor="4A9ACF" class="pa bg-clr-tbl">Principal(A)</th><th bgcolor="2DC6D1" class="int bg-clr-tbl">Interest(B)</th><th bgcolor="BF5850" class="tp bg-clr-tbl">Total Payment(A + B)</th><th bgcolor="D8BC31" class="tbal bg-clr-tbl">Balance</th></tr><tbody>';
+  fdr='<table><td colspan="6"><h2 class="text-center" style="margin:0 auto;padding:20px ">Schedule showing payments:</h2></td><tr><th bgcolor="#c2da6b" class="mthy bg-clr-tbl">Month-Year</th><th bgcolor="4A9ACF" class="pa bg-clr-tbl">Principal(A)</th><th bgcolor="2DC6D1" class="int bg-clr-tbl">Interest(B)</th><th bgcolor="BF5850" class="tp bg-clr-tbl">Total Payment(A + B)</th><th bgcolor="D8BC31" class="tbal bg-clr-tbl">Balance</th></tr><tbody>';
   
   var color='white';
   for(var i=0;i<n;i++)

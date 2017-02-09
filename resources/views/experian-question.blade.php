@@ -13,6 +13,7 @@
 			
 			<?php if($result->questionToCustomer!=null){ ?> 
 			<form id="generate_question" name="generate_question"> 
+
 			<h3> Please answer the questions</h3>
 			{{ csrf_field()}}
 			

@@ -14,7 +14,7 @@
 <table width="100%" border="1" class="table-bordered">
   <tr>
     <td>&nbsp;</td>
-    <td><div class="img-c"><img src="images/axis.jpg"  src="{{URL::to('images/icon1.png')}}" width="100" height="30"></div></td>
+    <td><div class="img-c"><img src="images/axis.jpg"  src="{{URL::to('images/icon1.png')}}" alt="axis-img" width="100" height="30"></div></td>
     <td><div class="img-c"><img src="images/axis.jpg" width="100" height="30"></div></td>
     <td><div class="img-c"><img src="images/axis.jpg" width="100" height="30"></div></td>
   </tr>

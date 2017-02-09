@@ -59,6 +59,7 @@
 										</div>
 										<div class="col-md-4">
 												<select required name="state" class="drop-arr">
+												<option disabled selected value>Select State</option>
 											  @foreach($state as $state_name)
 				      						 <option value="{{ $state_name->State_Code }}" >
 				      						 	<span style="font-family: bold; ">{{ $state_name->State_Name }}
@@ -89,7 +90,7 @@
 											</div>
 											<div class="col-md-4">
 												<select required name="telephoneType" class="drop-arr">
-												
+												<option disabled selected value>Select Telephone Type</option>
 											  @foreach($telephone as $tele)
 				      						 <option value="{{ $tele->Telephone_Value }}" >
 				      						 	<span style="font-family: bold; ">{{ $tele->Telephone_Name }}

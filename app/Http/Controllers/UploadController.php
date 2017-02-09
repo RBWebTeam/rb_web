@@ -3,7 +3,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests;
-
+use Mail;
 class UploadController extends Controller
 {
 
@@ -55,6 +55,10 @@ class UploadController extends Controller
                     
                     $response=1;
 
+                }else{
+                     
+
+               // print_r($mail);exit();
                 }
                 }catch(Exception $ee){
                     return $ee;
@@ -63,6 +67,33 @@ class UploadController extends Controller
       if($response){
         return view('went-wrong');
       }
+      $data=nl2br("Dear Customer,
+
+                Thank you very much for choosing Rupeeboss Financial Services for your financial needs. Your loan
+
+                application has been successfully submitted. Your reference number is
+
+                '".$request->app_id."'. Please quote this in all your communication with us. Our credit team will now
+
+                review your documents take your application forward. We will get back to you within 24 hours.
+
+
+                Regards,
+
+                Help Desk Team
+                RupeeBoss Financial Services Pvt. Ltd.
+                Address : 2th Floor-The Centrium, Phoenix Marketcity Mall,
+                Kurla (West) Mumbai - 400 070
+                Contact : 9820030969");
+
+                //$headers="Content-Type: text/html; charset=ISO-8859-1\r";
+                $email ='kishorall.sagar@gmail.com';
+                $mail = Mail::send('email_view',['data' => $data], function($message) use($email) {
+                $message->from('software.support@rupeeboss.com', 'RupeeBoss');
+                $message->to($email)
+                ->subject('Loan application submitted');
+
+                });
     	return view('thank-you');
     }
 

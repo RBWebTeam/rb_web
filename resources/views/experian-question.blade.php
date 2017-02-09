@@ -1,9 +1,13 @@
 @include('layout.header')
-<div class="container">
-	<aside id="fh5co-hero">
-		<div class=""></div>
-		<div class="flexslider col-md-8">
-			
+<div class="fh5co-contact animate-box">
+		<div class="container" id="fh5co-hero">
+			<div class="row">
+								
+				<div class="col-md-12">
+					<div class="row pad11 white-bg comp-pg">
+               <h2>Online Authentication</h2>
+              <img src="{{URL::to('images/Experian_logo.png')}}" style="margin:0 auto;"/>
+            
 
 			<div id="frst_qstn"> 
 			
@@ -12,20 +16,24 @@
 
 			<h3> Please answer the questions</h3>
 			{{ csrf_field()}}
+			
 				<label>
 					<?php echo $result->questionToCustomer->question;
 
 					?>
 
 				</label>
-				<select name="qs1" class="drop-arr">
+				<div class="select1 offset5">
+				<select name="qs1" class="drop-arr col-md-6" >
+				<option disabled selected value>Select Answer 1</option>
 					@foreach($result->questionToCustomer->optionsSet1 as $qs1)
 					<option>
 						<?php echo $qs1;	?>
 					</option>
 					@endforeach
 				</select>
-				<select name="qs2" class="drop-arr">
+				<select name="qs2" class="drop-arr col-md-3" >
+				<option disabled selected value>Select Answer 2</option>
 					@foreach($result->questionToCustomer->optionsSet2 as $qs2)
 					<option>
 						<?php echo $qs2;	?>
@@ -42,26 +50,36 @@
 				
 				?>
 				<br>
-				<a class="btn btn-primary btn-outline with-arrow  next_qest" >submit<i class="icon-arrow-right"></i></a>
+				</div>
 
-
+			<div class="col-md-12 mrg-tp">
+			<a class="btn btn-primary btn-outline with-arrow centered next_qest">Submit<i class="icon-arrow-right"></i></a>
+			 </div>
+			 <span id="err" style="color: red;display: none;">Please answer Both question</span>
 			</form>
 			<?php }else{?>
 			<p>processed {{$result->responseJson}}</p>
 			<?php }?>
 			</div>
-			<div id="nxt_qstn"></div>
+					<div id="nxt_qstn"></div>
+			</div>
+
+			</aside>
 		</div>
 
-	</aside>
+		</div>
+		</div>
 </div>
-
 @include('layout.footer')
 @include('layout.script')
 <script type="text/javascript">
 	$('.next_qest').click(function(){
+		if(!(document.getElementsByName("qs1")[0].value && document.getElementsByName("qs2")[0].value) ){
+			document.getElementById("err").style.display='block';
+			return false;
+		}
 		if(<?php echo "'".$result->responseJson."'"; ?>=='passedReport'){
-			alert("report passed");
+			
 		}
 		$.ajax({  
                type: "POST",  

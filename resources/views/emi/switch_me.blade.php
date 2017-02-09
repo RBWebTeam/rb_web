@@ -174,7 +174,7 @@
 
 	
    <!-- <div class="col-md-12 pad"><button class="btn btn-success pull-left" onclick="myfun_new()" >Revise & calculate</button></div> -->
-   <div class="col-md-12 pad"><button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModaltest" onclick="myfun_new()" id="revise" name="revise" style="display:none;">Revise & calculate</button></div>
+   <div class="col-md-12 pad"><button type="button" class="btn btn-success"  onclick="myfun_new()" id="revise" name="revise" style="display:none;">Revise & calculate</button></div>
 
   
   
@@ -195,23 +195,18 @@
 
 	
 <?php if($loan == "home-loan") {?>
-    <div class="col-md-12 pad"><h2 class="blue-bg">Would you like to borrow &nbsp;&nbsp;<b>₹<span id="drop">0</span></b>&nbsp;&nbsp;Extra and pay the same EMI</h2> </div>
+    <div class="col-md-12 pad"><h2 class="blue-bg">Would you like to borrow &nbsp;&nbsp;<b>₹<span id="drop">0</span> (in lacs)</b>&nbsp;&nbsp;extra and pay the same EMI.</h2> </div>
   
     <?php }elseif($loan == "personal-loan"){?>
   
     <?php }else{?>
-   <div class="col-md-12 pad"><h2 class="blue-bg">Would you like to borrow &nbsp;&nbsp;<b>₹<span id="drop">0</span></b>&nbsp;&nbsp; Extra and pay the same EMI</h2> </div>
+   <div class="col-md-12 pad"><h2 class="blue-bg">Would you like to borrow &nbsp;&nbsp;<b>₹<span id="drop">0</span> (in lacs)</b>&nbsp;&nbsp; extra and pay the same EMI.</h2> </div>
   
     <?php }?>
 	
 </div>
 
 </div>
-
-
-
-
-
 <div id="test"></div>
 
 
@@ -349,7 +344,7 @@
                data : { 'loanamount': loanamount , 'loaninterest': loaninterest ,'loanterm' :loanterm,'_token': v_token,'profession':profession,'product_id':product_id,'brokerid':brokerid},
                // 'bank':bank},
                success: function(msg){
-                  console.log(msg);
+                  // console.log(msg);
                   if(msg.success ==true){
                   var numb = msg.amount.toFixed();
                    $('#emi').empty().append(numb);
@@ -362,13 +357,17 @@
 
                   
                    $('#emi5').empty().append( msg.drop_in_int);
-                   var nrate=($('#loaninterest').val())-msg.drop_in_int;
+                   var nrate=(($('#loaninterest').val())-msg.drop_in_int).toFixed(2);
                   $('#loaninterest_new').val( nrate);
+
                    var numb4 = msg.savings.toFixed();
                    $('#emi6').empty().append(numb4);
 
-                    var drop_emi_per_lacs = msg.emiperlacs.toFixed();
-                   $('#drop').empty().append(drop_emi_per_lacs);
+                   var borrow = msg.borrow.toFixed(2);
+                   $('#drop').empty().append(borrow);
+
+
+                   
 
                   $('#revise').show()
                         $("#1").show();
@@ -383,16 +382,7 @@
                       
 
                   }
-                    
-
-                  
-              
-
-                        
-                        
-                        
-                         
-                     }  
+                  }  
                   }); 
         
         
@@ -402,8 +392,6 @@
       }
     
   }
-
-
 </script>
 
 <!-- After Transfer Script -->
@@ -421,8 +409,9 @@
       var loanamount = $("#loanamount_new").val();
       var loaninterest = $("#loaninterest_new").val();
       var loanterm = $("#loanterm_new").val();
-       var old_loaninterest = $("#loaninterest").val();
-      // console.log($("#loanterm_new").val());
+      var old_loaninterest = $("#loaninterest").val();
+      var old_drop_emi = $(".em5 span").text();
+       // console.log(old_drop_emi);
 
       
       var v_token = "{{csrf_token()}}";
@@ -430,14 +419,14 @@
                type: "POST",  
                url: "{{URL::to('after-transfer-calculation')}}",
                dataType:'json',
-               data : { 'loanamount': loanamount , 'loaninterest': loaninterest ,'loanterm' :loanterm,'_token': v_token,'old_loaninterest':old_loaninterest},
+               data : { 'loanamount': loanamount , 'loaninterest': loaninterest ,'loanterm' :loanterm,'_token': v_token,'old_loaninterest':old_loaninterest,'old_drop_emi':old_drop_emi},
                // 'bank':bank},
                success: function(msg){
-                  // console.log(msg);
+                   // console.log(msg);
                   if(msg.success ==true){
                     // console.log('ok');
                     // console.log(msg.emi);
-                    console.log(msg.loaninterest);
+                    // console.log(msg.loaninterest);
                     // return false;
                   var after_numb = msg.emi.toFixed();
                    $('#after_emi').empty().append(after_numb);
@@ -445,16 +434,49 @@
                     var after_numb1 = msg.after_savings.toFixed();
                   $('#after_savings').empty().append(after_numb1);
                     
-                    var after_interest = msg.loaninterest.toFixed();
-                     console.log(after_interest);
+                    var after_interest = msg.loaninterest;
+                     // console.log(msg.loaninterest);
                     $('#new_int').empty().append(after_interest);
 
-                    
+                    var borrow_new = msg.borrow.toFixed(2);
+                    $('#drop').empty().append(borrow_new);
+                       
 
+
+                  
+                  
+                   
+                  
+                   var drop_emi_here = msg.drop_emi_new.toFixed();
+                  
+                   if (drop_emi_here >0) 
+                   {
+                     
+                    
+                    $('#emi3').empty().append(drop_emi_here);
+                    $('#emi4').empty().append(after_numb);
+
+                   var drop_int_here = msg.drop_in_int_new;
+                   $('#emi5').empty().append(drop_int_here);
+
+                   $('#emi6').empty().append(after_numb1);
+
+
+
+
+
+                     
                         $("#e").show();
                         $("#s").show();
                         $("#l").show();
                          
+                   } 
+                   else 
+                   {
+                    alert('Oops!!! Sorry,your EMI cannot be '+drop_emi_here+'')
+                   }
+
+                   
                         
                   }
 

@@ -29,7 +29,10 @@ elixir(function(mix) {
 		'../../../public/css/owl.theme.default.min.css',
 		'../../../public/css/style.css',
 		'../../../public/css/chatbox.css',
-		'../../../public/fonts/Raleway.css'
+		'../../../public/fonts/Raleway.css',
+		'../../../public/css/smoothness.css',
+		 '../../../public/css/autocomp.css',
+		 '../../../public/css/font-awesome.min.css'
 
 		
     ], 'public/css/mysite.css');
@@ -42,4 +45,5 @@ elixir(function(mix) {
 // 		'../../../public/css/responsive-home-loan.css',
 // 		'../../../public/css/bootstrap-material-datetimepicker.css',
 // '../../../public/css/autocomp.css',
-// 		'../../../public/css/font-awesome.min.css'
+// 		
+

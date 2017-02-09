@@ -357,13 +357,13 @@
 
                   
                    $('#emi5').empty().append( msg.drop_in_int);
-                   var nrate=($('#loaninterest').val())-msg.drop_in_int;
+                   var nrate=(($('#loaninterest').val())-msg.drop_in_int).toFixed(2);
                   $('#loaninterest_new').val( nrate);
 
                    var numb4 = msg.savings.toFixed();
                    $('#emi6').empty().append(numb4);
 
-                   var borrow = msg.borrow.toFixed(3);
+                   var borrow = msg.borrow.toFixed(2);
                    $('#drop').empty().append(borrow);
 
 
@@ -438,7 +438,7 @@
                      // console.log(msg.loaninterest);
                     $('#new_int').empty().append(after_interest);
 
-                    var borrow_new = msg.borrow.toFixed(3);
+                    var borrow_new = msg.borrow.toFixed(2);
                     $('#drop').empty().append(borrow_new);
                        
 
@@ -447,7 +447,7 @@
                   
                    
                   
-                   var drop_emi_here = msg.drop_emi_new.toFixed(3);
+                   var drop_emi_here = msg.drop_emi_new.toFixed();
                   
                    if (drop_emi_here >0) 
                    {

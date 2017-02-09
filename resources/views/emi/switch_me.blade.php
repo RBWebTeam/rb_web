@@ -174,7 +174,7 @@
 
 	
    <!-- <div class="col-md-12 pad"><button class="btn btn-success pull-left" onclick="myfun_new()" >Revise & calculate</button></div> -->
-   <div class="col-md-12 pad"><button type="button" class="btn btn-success"  onclick="myfun_new()" id="revise" name="revise" style="display:none;">Revise & calculate</button></div>
+   <div class="col-md-12 pad"><button type="button" class="btn btn-success" onclick="myfun_new()" id="revise" name="revise" style="display:none;">Revise & calculate</button></div>
 
   
   
@@ -223,8 +223,8 @@
         <h4 class="modal-title"></h4>
       </div>
       <div class="modal-body">
-        <h4><p>Amount should be greater than "5,00,000" and lesser than "10,00,000,000".</p></h4>
-        <h4><p>As well as Interest should be greater than  8.54%. If less you are already on Lower Rate.</p></h4>
+        <h4><p>Amount should be greater than <b>"5,00,000" and lesser than "1,00,000,000"</b>.</p></h4>
+        <h4><p>As well as Interest should be greater than <b>8.54%</b>. If less you are already on Lower Rate.</p></h4>
       </div>
       
       <div class="modal-footer">
@@ -244,8 +244,8 @@
         <h4 class="modal-title"></h4>
       </div>
       <div class="modal-body">
-        <h4><p>Amount should be greater than "1,00,000" and lesser than "10,00,000,000".</p></h4>
-        <h4><p>As well as Interest should be greater than (Or)equal to 11.49% If less you are already on Lower Rate.</p></h4>
+        <h4><p>Amount should be greater than <b>"1,00,000" and lesser than "1,00,000,000"</b>.</p></h4>
+        <h4><p>As well as Interest should be greater than (Or)equal to <b>11.49%</b> If less you are already on Lower Rate.</p></h4>
       </div>
       
       <div class="modal-footer">
@@ -265,8 +265,8 @@
         <h4 class="modal-title"></h4>
       </div>
       <div class="modal-body">
-        <h4><p>Amount should be greater than "5,00,000" and lesser than "10,00,000,000".</p></h4>
-        <h4><p>As well as Interest should be greater than (Or)equal to 10.25%. If less you are already on Lower Rate.</p></h4>
+        <h4><p>Amount should be greater than <b>"5,00,000" and lesser than "1,00,000,000"</b>.</p></h4>
+        <h4><p>As well as Interest should be greater than (Or)equal to <b>10.25%</b>. If less you are already on Lower Rate.</p></h4>
       </div>
       
       <div class="modal-footer">

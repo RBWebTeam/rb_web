@@ -11482,6 +11482,9 @@ body {background:#eee;}
 .block{
   display: block;
 }
+.backimg{
+  background-image: url(../images/slide_2.jpg);
+}
 @charset "utf-8";.col-md-2, .col-md-10{}
 .panel{margin-bottom:0px;}
 .chat-window{bottom:0;position:fixed;right:20px;float:right;z-index:1000;margin-left:10px;}

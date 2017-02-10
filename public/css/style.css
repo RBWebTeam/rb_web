@@ -1980,3 +1980,17 @@ body {background:#eee;}
    .select1 {margin-left:20%;}
    .mrg-tp {margin-top:25px;} 
  
+.displaynone{
+  display: none;
+}
+.displaynonemsg{
+  display: none;
+  color:red;
+  text-align:center;
+}
+.marginauto{
+  margin:0 auto;
+}
+.block{
+  display: block;
+}

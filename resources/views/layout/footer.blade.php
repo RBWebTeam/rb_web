@@ -107,7 +107,7 @@
 			</div>
 			
 		</div>
-        <a href="javascript:void(0);" id="scroll" title="Scroll to Top" style="display: none;">Top<span></span></a>
+        <a href="javascript:void(0);" id="scroll" title="Scroll to Top" class="displaynone">Top<span></span></a>
 	</footer>
 	</div>
 

@@ -149,7 +149,7 @@
 					<div class="services3 services">
 						<a class="anchor_decoration" href="{{URL::to('sme-loan')}}">
 						<div class="desc">
-						<span  ><img style="margin:0 auto;" src="{{URL::to('images/SME_icon.png')}}" alt="sme-loan-img"></span>
+						<span  ><img class="marginauto" src="{{URL::to('images/SME_icon.png')}}" alt="sme-loan-img"></span>
 							<h3>SME Loan</h3>
 						
 						</div>
@@ -276,8 +276,8 @@
 								<button class="btn btn-primary btn-outline with-arrow sidebar-submit">Call Me Now<i class="icon-arrow-right"></i></button>
 						</div>
 				</form>
-            <div class='msg' style="display: none;"><p>Thanks. We will reach you soon.</p></div>
-            <div class='msg_err' style="display: none;"><p>Ooops. Something went wrong.</p></div>
+            <div class='msg displaynone' ><p>Thanks. We will reach you soon.</p></div>
+            <div class='msg_err displaynone' ><p>Ooops. Something went wrong.</p></div>
 
 
 			</div>

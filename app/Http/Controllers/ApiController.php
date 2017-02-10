@@ -538,5 +538,66 @@ run_else:
 			));
 	}
 	
+	public function getPersonalLoanQuoteByBrokerId(Request $req){
+		//print_r($req['BrokerId']);exit();
+		$id=$req['BrokerId'];
+		 $data=DB::table('bank_quote_api_request')
+		 ->select('ID','ApplicantNme','LoanRequired','ApplicantIncome','Turnover','status','ProductId')
+        ->where('BrokerId','=',$id)
+        ->get();
+        //calling Erp api
+       
+        		$post_data='{"brokerId":'.$id.'}';
+        		//print_r($post_data);exit();
+                 $url="http://beta.services.rupeeboss.com/LoginDtls.svc/xmlservice/dsplyPersonalLoanAppDtls";
+                $ch = curl_init();
+                curl_setopt($ch, CURLOPT_VERBOSE, 1);
+                curl_setopt( $ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
+                curl_setopt($ch, CURLOPT_URL, $url);
+                curl_setopt($ch, CURLOPT_POST, 1);
+                curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+                curl_setopt($ch, CURLOPT_FAILONERROR, 0);
+                curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+                curl_setopt($ch, CURLOPT_POSTFIELDS,$post_data);
+                $http_result = curl_exec($ch);
+                $error = curl_error($ch);
+                $http_code = curl_getinfo($ch ,CURLINFO_HTTP_CODE);
+                $obj = json_decode($http_result);
+                // statusId response 0 for success, 1 for failure
+                curl_close($ch);
+       			//print_r(sizeof($obj->result->lstHomeLoanDtls));exit();
+       			//print_r($obj);exit();
+                if(sizeof($obj->result->lstHomeLoanDtls)>0){
+                	$application=$obj->result->lstHomeLoanDtls;
+                }else{
+                	$application=NULL;
+                }
+               
+		        if($data!='[]' ){
+					$new_data=$data;
+					for($i=0;$i<sizeof($new_data);$i++){
+						$new_data[$i]->url="http://beta.erp.rupeeboss.com/homeloan/home_loan_application_form.aspx?qoutid=".$new_data[$i]->ID;
+					}
+				}
+				else{
+					$new_data=NULL;
+					
+				}
+
+				if(sizeof($obj->result->lstHomeLoanDtls)==0 && $data=='[]'){
+					$status_Id=1;
+					$msg="Something went wrong";
+				}else{
+					$status_Id=0;
+					$msg="Data delievered";
+				}
+		return Response::json(array(
+			'data' => $new_data,
+			'application'=>$application,
+			'status_Id'=>$status_Id,
+			'msg'=>$msg,
+
+			));
+	}
 	
 }

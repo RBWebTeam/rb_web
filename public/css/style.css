@@ -1994,3 +1994,6 @@ body {background:#eee;}
 .block{
   display: block;
 }
+.backimg{
+  background-image: url(images/slide_2.jpg);
+}

@@ -251,7 +251,7 @@
 			</div>
 		</div>
 	</div>
- <div class="fh5co-cta" style="background-image: url(images/slide_2.jpg);">
+ <div class="fh5co-cta backimg" >
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="col-md-12 text-center animate-box wht-brd pad">

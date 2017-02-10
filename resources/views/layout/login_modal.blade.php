@@ -5,7 +5,7 @@
     
       <!-- Modal content-->
          <div class="modal-content">
-          <div style="display: block" id="login">
+          <div class="block" id="login">
              <!-- login-->
          
       <div class="modal-body login-modal">  

@@ -57,6 +57,7 @@ h5 {
 	display: -webkit-inline-box;
 	border-radius:5px;-moz-border-radius:5px;-webkit-border-radius:7px;
 	}
+
 .slider-text-inner h5 {color:#ffffff; display:block;font-weight: bold;text-shadow: 1px 1px 1px #000;}
 ::-webkit-selection {
   color: #fff;
@@ -1964,7 +1965,7 @@ body {background:#eee;}
   .txt-title1 {font-weight:bold; text-transform:uppercase; border-right:1px solid #ddd;}
   .error-template img {margin:auto; }
   .heigh-bt {height:300px; box-shadow:1px 1px 1px 1px #ccc; border-radius:5px;-moz-border-radius:5px;-webkit-border-radius:5px;}
-  .heigh-bt1 {height:390px; box-shadow:1px 1px 1px 1px #ccc;}
+   .heigh2 {height:390px; box-shadow:1px 1px 1px 1px #ccc;}
   .mrg-tp {margin-top:8px;}
   .box-shadow {box-shadow:1px 1px 1px 1px #ccc;}
   .apply-btn:hover {color:#fff;background:#2882a6;}
@@ -1979,4 +1980,5 @@ body {background:#eee;}
   .select1 select {padding:10px; margin-right:10px; border:1px solid #ccc; }
    .select1 {margin-left:20%;}
    .mrg-tp {margin-top:25px;} 
+
  

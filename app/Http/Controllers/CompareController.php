@@ -78,7 +78,8 @@ class CompareController extends Controller
     }
     public function credit_report(){
       $keywords='credit report free,credit score,free credit report and score,how to get free credit report ';
-      $data['title']='Credit score online on Rupeeboss.com';
+      $data['title']='Check your Credit Score online on Rupeeboss.com';
+      $data['description']='Check your free credit scores, reports and insights. Get the info you need to take control of your credit from Rupeeboss.com';
       $data['telephone']=DB::table('experian_telephonetype')
       ->select('Telephone_Name','Telephone_Value')
       ->get();
@@ -183,9 +184,19 @@ class CompareController extends Controller
  }
 
     public function switchme($loan){
-      //print"<pre>";print_r($loan);exit();
+        // print"<pre>";print_r($loan);exit();
+      if ($loan=="home-loan") {
+        $data['title']='Transfer Home Loan Balance Online';
+        $keywords='Home loan balance transfer,How to transfer home loan,Home loan transfer,Home loan refinance,Home Loan Balance Transfer Process ,Online Balance Transfer,Transferring Home Loan,Home Loan Balance Transfer Calculator';
+      }elseif ($loan=="personal-loan") {
+         $data['title']='Transfer Personal Loan Balance Online';
+        $keywords='How to Transfer Personal Loan Balance Online,Personal Loan Balance Transfer,Personal Loan Balance Transfer Eligibility Criteria,Personal Loan Balance Transfer Interest rates,Personal Loan Balance Transfer Calculator,Personal Loan Balance Transfer Process ';
+      }else{
+         $data['title']='Transfer Loan Against Property Online';
+        $keywords='Loan Against Property Transfer,Loan Against Property EMI Calculator,Loan Against Property Balance Transfer Process,Loan Against Property Balance Transfer Interest rates,Compare Loan Against Property Balance Transfer';
+      }
       $data['loan'] =$loan;
-      return view('emi/switch_me')->with($data);
+      return view('emi/switch_me')->with($data)->with('keywords',$keywords);
     }
 
     public function calculation(Request $req){

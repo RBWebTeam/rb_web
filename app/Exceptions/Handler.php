@@ -6,7 +6,8 @@ use Exception;
 use Illuminate\Auth\AuthenticationException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
-
+use Illuminate\Database\QueryException;
+use DB;
 class Handler extends ExceptionHandler
 {
     /**
@@ -46,9 +47,15 @@ class Handler extends ExceptionHandler
      * @return \Illuminate\Http\Response
      */
     public function render($request, Exception $e){ 
-
+        //print_r($e);exit();.
+        
             if($e instanceof NotFoundHttpException){
             return response()->view('layout.missing', [], 404);
+        }else  if($e instanceof QueryException){
+             return response()->view('went-wrong');
+        }else{
+            $log=DB::table('error_log')->insert(['message'=>$e->getMessage(), 'file'=>$e->getFile(), 'line_no'=>$e->getLine(),'code'=>$e->getCode(), 'created_at'=>date("Y-m-d H:i:s")]);
+            return response()->view('went-wrong');
         }
         return parent::render($request, $e);
 
@@ -58,10 +65,10 @@ class Handler extends ExceptionHandler
 //            return \Response::view('layout.missing',array(),404);
 //         }
 
-//         if (config('app.debug')) {
-//            // return $this->renderExceptionWithWhoops($e);
-//              return \Response::view('went-wrong',array(),500);  
-//         }
+        // if (config('app.debug')) {
+        //    // return $this->renderExceptionWithWhoops($e);
+        //      return \Response::view('went-wrong',array(),500);  
+        // }
 
 
         }

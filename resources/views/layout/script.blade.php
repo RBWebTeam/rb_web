@@ -1793,12 +1793,12 @@ fbq('track', 'PageView');
     <div class="form-group">
       
       <div class="col-sm-offset-3 col-sm-6">
-       <span id='msg_err' style="display: none;color:red;">oops something went wrong</span>
-       <span id='pls_wait' style="display: none;color: red;">Please wait .....</span>
+       <span id='msg_err displaynonemsg'>oops something went wrong</span>
+       <span id='pls_wait displaynonemsg'>Please wait .....</span>
        
-       <span id='pwd_match' style="display: none; color:red;">Password do not match.</span>
+       <span id='pwd_match displaynonemsg'>Password do not match.</span>
 
-       <span id="msg_err_email"  style="display: none; color:red;"><center>Email id already exists.</center></span>
+       <span id="msg_err_email displaynonemsg"><center>Email id already exists.</center></span>
      </div>
 
    </div>
@@ -1819,7 +1819,7 @@ fbq('track', 'PageView');
 </div>
 
 </div>
-<div id="otp_div" style="display: none;" role="dialog">
+<div id="otp_div displaynone" role="dialog">
   <div class="modal-dialog">
     <!-- Modal content-->
     <div class="modal-content">
@@ -1828,7 +1828,7 @@ fbq('track', 'PageView');
         <form id="otp_form" class="form-horizontal">
          {{ csrf_field() }}
          <input type="text" class="form-control" name="otp" id="otp" minlength="6" maxlength="6" required onkeypress="return fnAllowNumeric(event)">
-         <span id='otp_err' style="display: none; color: red">oops!! OTP is wrong</span><br>
+         <span id='otp_err displaynonemsg' >oops!! OTP is wrong</span><br>
          <button class="btn btn-default"  class="form-control" id="verify_otp" >Verify</button><br>
        </form>
      </div>

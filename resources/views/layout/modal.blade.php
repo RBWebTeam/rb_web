@@ -26,8 +26,8 @@
 											<a class="btn btn-primary btn-outline with-arrow sidebar-submit" id="instant_call_submit">Call Me Back<i class="icon-arrow-right"></i></a>
 									</div>
 						</form>
-            <div class='msg' style="display: none;"><p>Thanks. We will reach you soon.</p></div>
-            <div class='msg_err' style="display: none;"><p>Ooops. Something went wrong.</p></div>
+            <div class='msg displaynone' ><p>Thanks. We will reach you soon.</p></div>
+            <div class='msg_err displaynone' ><p>Ooops. Something went wrong.</p></div>
             
         </div>
         
@@ -64,8 +64,8 @@
 											<button class="btn btn-primary btn-outline with-arrow sidebar-submit">Submit<i class="icon-arrow-right"></i></button>
 									</div>
 						</form>
-            <div class='msg' style="display: none;"><p>Thanks. We will reach you soon.</p></div>
-            <div class='msg_err' style="display: none;"><p>Ooops. Something went wrong.</p></div>
+            <div class='msg displaynone' ><p>Thanks. We will reach you soon.</p></div>
+            <div class='msg_err displaynone' ><p>Ooops. Something went wrong.</p></div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default close1" data-dismiss="modal">Close</button>
@@ -103,8 +103,8 @@
 											<button class="btn btn-primary btn-outline with-arrow sidebar-submit">Submit<i class="icon-arrow-right"></i></button>
 									</div>
 						</form>
-            <div class='msg' style="display: none;"><p>Thanks. We will reach you soon.</p></div>
-            <div class='msg_err' style="display: none;"><p>Ooops. Something went wrong.</p></div>
+            <div class='msg displaynone'><p>Thanks. We will reach you soon.</p></div>
+            <div class='msg_err displaynone' ><p>Ooops. Something went wrong.</p></div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default close1" data-dismiss="modal">Close</button>
@@ -142,8 +142,8 @@
 											<button class="btn btn-primary btn-outline with-arrow sidebar-submit">Submit<i class="icon-arrow-right"></i></button>
 									</div>
 						</form>
-            <div class='msg' style="display: none;"><p>Thanks. We will reach you soon.</p></div>
-            <div class='msg_err' style="display: none;"><p>Ooops. Something went wrong.</p></div>
+            <div class='msg displaynone' ><p>Thanks. We will reach you soon.</p></div>
+            <div class='msg_err displaynone' ><p>Ooops. Something went wrong.</p></div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default close1" data-dismiss="modal">Close</button>
@@ -187,8 +187,8 @@
                      <button class="btn btn-primary btn-outline with-arrow sidebar-submit">Submit<i class="icon-arrow-right"></i></button>
                   </div>
             </form>
-            <div class='msg' style="display: none;"><b>Thanks.We will reach you soon.</b></div>
-            <div class='msg_err' style="display: none;"><p>Ooops. Something went wrong.</p></div>
+            <div class='msg displaynone' ><b>Thanks.We will reach you soon.</b></div>
+            <div class='msg_err displaynone' ><p>Ooops. Something went wrong.</p></div>
         </div>
         
       </div>
@@ -227,8 +227,8 @@
                      <button class="btn btn-primary btn-outline with-arrow sidebar-submit">Submit<i class="icon-arrow-right"></i></button>
                   </div>
             </form>
-            <div class='msg' style="display: none;"><b>Thanks.We will reach you soon.</b></div>
-            <div class='msg_err' style="display: none;"><p>Ooops. Something went wrong.</p></div>
+            <div class='msg displaynone'><b>Thanks.We will reach you soon.</b></div>
+            <div class='msg_err displaynone' ><p>Ooops. Something went wrong.</p></div>
         </div>
         
       </div>

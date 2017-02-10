@@ -1419,7 +1419,7 @@ border-radius: 7px;padding: 1em;margin-top: 1em;}
  .comp-pg {padding:20px;border: 10px solid #d9dada;}
  .rate input {margin-bottom:10px;}
  .hdr {margin-top:10px; display:block;display} 
- .sec select {width: 100%;padding: 6px;margin-bottom:15px;background:#fff;border:1px solid rgba(0, 0, 0, 0.1); border-radius:2px;-moz-border-radius:2px;-webkit-border-radius:2px;}
+ .sec select {width: 100%;padding: 6px;margin-bottom:15px;border:1px solid rgba(0, 0, 0, 0.1); border-radius:2px;-moz-border-radius:2px;-webkit-border-radius:2px;}
  .tab-content {padding:10px;}
  .dropdown-menu li a {font-size:12px;}
  #fh5co-services-section .services .icon-home:hover {color:#3aa6d3;}
@@ -1980,3 +1980,17 @@ body {background:#eee;}
    .select1 {margin-left:20%;}
    .mrg-tp {margin-top:25px;} 
  
+.displaynone{
+  display: none;
+}
+.displaynonemsg{
+  display: none;
+  color:red;
+  text-align:center;
+}
+.marginauto{
+  margin:0 auto;
+}
+.block{
+  display: block;
+}

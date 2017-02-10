@@ -155,6 +155,7 @@ class ExperianController extends Controller
             if($res->questionToCustomer!=null || $res->responseJson=='passedReport'){
              $returnHTML = view('experian-question2',['result'=>$res,'stage1hitid'=>$req->stage1hitid,'stage2hitid'=>$req->stage2hitid,'stage2sessionid'=>$req->stage2sessionid,'qs'=>$req->question_count,'raw'=>$http_result])->render();
             }else{
+                $log=DB::table('experian_response_failed_case')->insert(['contact'=>Session::get('contact_cScore'), 'email'=>Session::get('email_cScore'), 'pan'=>Session::get('pan_cScore'),'response'=>$res->responseJson, 'created_at'=>date("Y-m-d H:i:s")]);
                  $returnHTML = view('went-wrong');
                  return response()->json(array('success' => false,'html'=>$returnHTML));
             }

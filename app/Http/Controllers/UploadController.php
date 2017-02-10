@@ -9,14 +9,14 @@ class UploadController extends Controller
 
     public function Upload()
     {
-    	return view('doc_upload');
+        return view('doc_upload');
     }
 
     public function UploadPost(Request $request)
     {
         //print_r($request->app_id);exit;
        
-    	$doc = array('Identity_Proof','Income_Proof','Address_Proof');
+        $doc = array('Identity_Proof','Income_Proof','Address_Proof');
         
         $response=0;
         for( $i=0;$i<3;$i++){
@@ -30,7 +30,7 @@ class UploadController extends Controller
                 $byteArray = unpack("C*",$contents); 
                 $data=array_values(($byteArray));
                 $post="[".implode(',',$data)."]";
-                $post_data='{"docType":"Identity_Proof","docextension":"'.$extension.'",
+                $post_data='{"docType":"'.$doc[$i].'","docextension":"'.$extension.'",
                             "refFBAId":"'.$request->app_id.'","bytes":'.$post.'}';
                 $url = "http://beta.services.rupeeboss.com/LoginDtls.svc/xmlservice/uploadCustLoanDoc";
                 $ch = curl_init();
@@ -67,34 +67,17 @@ class UploadController extends Controller
       if($response){
         return view('went-wrong');
       }
-      $data=nl2br("Dear Customer,
-
-                Thank you very much for choosing Rupeeboss Financial Services for your financial needs. Your loan
-
-                application has been successfully submitted. Your reference number is
-
-                '".$request->app_id."'. Please quote this in all your communication with us. Our credit team will now
-
-                review your documents take your application forward. We will get back to you within 24 hours.
-
-
-                Regards,
-
-                Help Desk Team
-                RupeeBoss Financial Services Pvt. Ltd.
-                Address : 2th Floor-The Centrium, Phoenix Marketcity Mall,
-                Kurla (West) Mumbai - 400 070
-                Contact : 9820030969");
+      $data=$request->app_id;
 
                 //$headers="Content-Type: text/html; charset=ISO-8859-1\r";
                 $email ='kishorall.sagar@gmail.com';
-                $mail = Mail::send('email_view',['data' => $data], function($message) use($email) {
+                $mail = Mail::send('email_view_upload',['data' => $data], function($message) use($email) {
                 $message->from('software.support@rupeeboss.com', 'RupeeBoss');
                 $message->to($email)
                 ->subject('Loan application submitted');
 
                 });
-    	return view('thank-you');
+        return view('thank-you');
     }
 
 }

@@ -8,7 +8,7 @@
 
 				</label>
 				<div class="select1 offset5">
-					<select name="qs1" class="drop-arr  col-md-6" >
+					<select name="qs1" class="drop-arr  col-md-6 " required >
 					<option disabled selected value>Select Answer 1</option>
 						@foreach($result->questionToCustomer->optionsSet1 as $qs1)
 						<option>
@@ -16,7 +16,7 @@
 						</option>
 						@endforeach
 					</select>
-					<select name="qs2" class="drop-arr  col-md-3" >
+					<select name="qs2" class="drop-arr  col-md-3 "  required>
 					<option disabled selected value>Select Answer 2</option>
 						@foreach($result->questionToCustomer->optionsSet2 as $qs2)
 						<option>
@@ -35,11 +35,14 @@
 				
 				?>
 				<br>
-				
+				<div class="iframeloading" style= "display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
+				     <img src="images/ajaxloader.gif" alt="loading" style="top: 50%; position: relative; left: 50%;"  />
+				</div>  
 			<div class="col-md-12 mrg-tp">
 					<a class="btn btn-primary btn-outline with-arrow centered next_qest1">Submit<i class="icon-arrow-right"></i></a>
+					
 			 </div>
-			  <span id="err_1" style="color: red;display: none;">Please answer Both question</span>
+			  <div class="err_1">&nbsp;</div>
 			</form>
 			<?php }else if($result->responseJson=='passedReport'){
 				
@@ -63,16 +66,21 @@
                 //print_r("<h1>".$http_result."</h1>");
 
 
-               	$name= Session::get('name_cScore');
+               	$f_name= Session::get('f_name_cScore');
+               	$l_name= Session::get('l_name_cScore');
 	            $pan=Session::get('pan_cScore');
 	            $email=Session::get('email_cScore');
+	            $contact=Session::get('contact_cScore');
 
 	            $parse=explode('~',$http_result);
 	            $parse[0]=str_replace('"','',$parse[0]);	
 	            //print_r($parse);
-                $save_data = array('name' => $name,'pan'=>$pan,'email'=>$email,'lead_id'=>$lead_id,'credit_score'=>$parse[0],'raw_response'=>$parse[1]);
+	            $expiry_date=date('Y-m-d H:i:s', strtotime("+3 months"));
+	            
+                // $save_data = array('f_name' => $f_name,'l_name' => $l_name,'contact'=>$contact,'pan'=>$pan,'email'=>$email,'lead_id'=>$lead_id,'credit_score'=>$parse[0],'raw_response'=>$parse[1],'expiry_date'=>$expiry_date);
+                
                 $id=DB::table('experian_response')
-                	->insertGetId(['name' => $name,'pan'=>$pan,'email'=>$email,'lead_id'=>$lead_id,'credit_score'=>$parse[0],'raw_response'=>$parse[1],'created_at'=>date("Y-m-d H:i:s"),'updated_at'=>date("Y-m-d H:i:s")]);
+                	->insertGetId(['f_name' => $f_name,'l_name' => $l_name,'contact'=>$contact,'pan'=>$pan,'email'=>$email,'lead_id'=>$lead_id,'credit_score'=>$parse[0],'raw_response'=>$parse[1],'expiry_date'=>$expiry_date,'created_at'=>date("Y-m-d H:i:s"),'updated_at'=>date("Y-m-d H:i:s")]);
 
 		 		
 		 		print_r($result->showHtmlReportForCreditReport);
@@ -86,18 +94,17 @@
 			 ?>
 <script type="text/javascript">
   $('.next_qest1').click(function(){
-   // alert("hiii"+document.getElementsByName("qs1")[0].value);
-  if(!(document.getElementsByName("qs1")[0].value && document.getElementsByName("qs2")[0].value) ){
-			document.getElementById("err_1").style.display='block';
-
-			return false;
-		}
-		document.getElementById("err_1").style.display='none';
+	   if(!$('#generate_question2').valid()){
+	   	return false;
+	   }
+		//document.getElementById("err_1").style.display='none';
+		$(".iframeloading").show();  
     $.ajax({  
                type: "POST",  
                url: "{{URL::to('gen-qstn')}}",
                data : $('#generate_question2').serialize(),
                success: function(msg){
+               	$(".iframeloading").hide();  
                 //console.log("2nd question"+msg);  
                 if(msg.success){
                 $('#generate_question').hide();
@@ -111,8 +118,15 @@
                }); 
   });
 
- $(document).ready(function (){
-  	document.getElementsByName("qs1")[0].value=0;
-  	document.getElementsByName("qs2")[0].value=0;
-  });
+ $('#generate_question2').validate({
+     errorLabelContainer: '.err_1',
+       messages: {
+        qs1: "Answer the first question &nbsp ",
+        qs2: "&nbsp Answer the second question"
+
+    }
+});
+
+</script>
+
 </script>

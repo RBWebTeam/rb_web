@@ -174,7 +174,7 @@
 
 	
    <!-- <div class="col-md-12 pad"><button class="btn btn-success pull-left" onclick="myfun_new()" >Revise & calculate</button></div> -->
-   <div class="col-md-12 pad"><button type="button" class="btn btn-success"  onclick="myfun_new()" id="revise" name="revise" style="display:none;">Revise & calculate</button></div>
+   <div class="col-md-12 pad"><button type="button" class="btn btn-success" onclick="myfun_new()" id="revise" name="revise" style="display:none;">Revise & calculate</button></div>
 
   
   
@@ -195,23 +195,18 @@
 
 	
 <?php if($loan == "home-loan") {?>
-    <div class="col-md-12 pad"><h2 class="blue-bg">Would you like to borrow &nbsp;&nbsp;<b>₹<span id="drop">0</span> (in lacs)</b>&nbsp;&nbsp;extra and pay the same EMI.</h2> </div>
+    <div class="col-md-12 pad"><h2 class="blue-bg">Would you like to borrow &nbsp;&nbsp;<b>₹<span id="drop">0</span> (in lacs)</b>&nbsp;&nbsp;extra and pay the same EMI.&nbsp;&nbsp;<button type="button" class="btn btn-success" id="revise_apply" name="revise_apply" data-toggle="modal" data-target="#myModaltest" style="display:none;">Apply Now</button></h2></div>
   
     <?php }elseif($loan == "personal-loan"){?>
   
     <?php }else{?>
-   <div class="col-md-12 pad"><h2 class="blue-bg">Would you like to borrow &nbsp;&nbsp;<b>₹<span id="drop">0</span> (in lacs)</b>&nbsp;&nbsp; extra and pay the same EMI.</h2> </div>
+   <div class="col-md-12 pad"><h2 class="blue-bg">Would you like to borrow &nbsp;&nbsp;<b>₹<span id="drop">0</span> (in lacs)</b>&nbsp;&nbsp;extra and pay the same EMI.&nbsp;&nbsp;<button type="button" class="btn btn-success" id="revise_apply" name="revise_apply" data-toggle="modal" data-target="#borrow_lap" style="display:none;">Apply Now</button></h2></div>
   
     <?php }?>
 	
 </div>
 
 </div>
-
-
-
-
-
 <div id="test"></div>
 
 
@@ -228,8 +223,8 @@
         <h4 class="modal-title"></h4>
       </div>
       <div class="modal-body">
-        <h4><p>Amount should be greater than "5,00,000" and lesser than "10,00,000,000".</p></h4>
-        <h4><p>As well as Interest should be greater than  8.54%. If less you are already on Lower Rate.</p></h4>
+        <h4><p>Amount should be greater than <b>"5,00,000" and lesser than "1,00,000,000"</b>.</p></h4>
+        <h4><p>As well as Interest should be greater than <b>8.54%</b>. If less you are already on Lower Rate.</p></h4>
       </div>
       
       <div class="modal-footer">
@@ -249,8 +244,8 @@
         <h4 class="modal-title"></h4>
       </div>
       <div class="modal-body">
-        <h4><p>Amount should be greater than "1,00,000" and lesser than "10,00,000,000".</p></h4>
-        <h4><p>As well as Interest should be greater than (Or)equal to 11.49% If less you are already on Lower Rate.</p></h4>
+        <h4><p>Amount should be greater than <b>"1,00,000" and lesser than "1,00,000,000"</b>.</p></h4>
+        <h4><p>As well as Interest should be greater than (Or)equal to <b>11.49%</b> If less you are already on Lower Rate.</p></h4>
       </div>
       
       <div class="modal-footer">
@@ -270,8 +265,8 @@
         <h4 class="modal-title"></h4>
       </div>
       <div class="modal-body">
-        <h4><p>Amount should be greater than "5,00,000" and lesser than "10,00,000,000".</p></h4>
-        <h4><p>As well as Interest should be greater than (Or)equal to 10.25%. If less you are already on Lower Rate.</p></h4>
+        <h4><p>Amount should be greater than <b>"5,00,000" and lesser than "1,00,000,000"</b>.</p></h4>
+        <h4><p>As well as Interest should be greater than (Or)equal to <b>10.25%</b>. If less you are already on Lower Rate.</p></h4>
       </div>
       
       <div class="modal-footer">
@@ -362,14 +357,20 @@
 
                   
                    $('#emi5').empty().append( msg.drop_in_int);
-                   var nrate=($('#loaninterest').val())-msg.drop_in_int;
+                   var nrate=(($('#loaninterest').val())-msg.drop_in_int).toFixed(2);
                   $('#loaninterest_new').val( nrate);
+
                    var numb4 = msg.savings.toFixed();
                    $('#emi6').empty().append(numb4);
+
+                   var borrow = msg.borrow.toFixed(2);
+                   $('#drop').empty().append(borrow);
+
 
                    
 
                   $('#revise').show()
+                  $('#revise_apply').show()
                         $("#1").show();
                         $("#4").show();
                         $("#5").show();
@@ -382,16 +383,7 @@
                       
 
                   }
-                    
-
-                  
-              
-
-                        
-                        
-                        
-                         
-                     }  
+                  }  
                   }); 
         
         
@@ -401,8 +393,6 @@
       }
     
   }
-
-
 </script>
 
 <!-- After Transfer Script -->
@@ -449,7 +439,7 @@
                      // console.log(msg.loaninterest);
                     $('#new_int').empty().append(after_interest);
 
-                    var borrow_new = msg.borrow.toFixed(3);
+                    var borrow_new = msg.borrow.toFixed(2);
                     $('#drop').empty().append(borrow_new);
                        
 
@@ -458,13 +448,16 @@
                   
                    
                   
+                   var drop_emi_here = msg.drop_emi_new.toFixed();
+                  
+                   if (drop_emi_here >0) 
+                   {
+                     
+                    
+                    $('#emi3').empty().append(drop_emi_here);
+                    $('#emi4').empty().append(after_numb);
 
-                   var drop_emi_here = msg.drop_emi_new.toFixed(3);
-                   $('#emi3').empty().append(drop_emi_here);
-
-                   $('#emi4').empty().append(after_numb);
-
-                   var drop_int_here = msg.drop_in_int_new.toFixed();
+                   var drop_int_here = msg.drop_in_int_new;
                    $('#emi5').empty().append(drop_int_here);
 
                    $('#emi6').empty().append(after_numb1);
@@ -478,6 +471,13 @@
                         $("#s").show();
                         $("#l").show();
                          
+                   } 
+                   else 
+                   {
+                    alert('Oops!!! Sorry,your EMI cannot be '+drop_emi_here+'')
+                   }
+
+                   
                         
                   }
 

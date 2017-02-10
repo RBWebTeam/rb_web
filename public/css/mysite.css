@@ -11468,7 +11468,20 @@ body {background:#eee;}
    .select1 {margin-left:20%;}
    .mrg-tp {margin-top:25px;} 
  
-
+.displaynone{
+  display: none;
+}
+.displaynonemsg{
+  display: none;
+  color:red;
+  text-align:center;
+}
+.marginauto{
+  margin:0 auto;
+}
+.block{
+  display: block;
+}
 @charset "utf-8";.col-md-2, .col-md-10{}
 .panel{margin-bottom:0px;}
 .chat-window{bottom:0;position:fixed;right:20px;float:right;z-index:1000;margin-left:10px;}

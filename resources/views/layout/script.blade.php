@@ -1,18 +1,19 @@
-  <script src="{{URL::to('js/modernizr-2.6.2.min.js')}}" async="async"></script>
+   <!-- <link href="{{URL::to('css/smoothness.css')}}" rel="Stylesheet"></link> -->
+  <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/themes/base/minified/jquery-ui.min.css" type="text/css" />
+  <script src="{{URL::to('js/modernizr-2.6.2.min.js')}}"></script>
   <!-- jQuery -->
-  <script src="{{URL::to('js/jquery.min.js')}}" async="async"></script>
+  <script src="{{URL::to('js/jquery.min.js')}}"></script>
 
-  <script src="{{URL::to('js/ajaxlib.js')}}" async="async"></script>
+  <script src="{{URL::to('js/ajaxlib.js')}}"></script>
   
 
-  <!-- <link href="{{URL::to('css/smoothness.css')}}" rel="Stylesheet"></link> -->
-  <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/themes/base/minified/jquery-ui.min.css" type="text/css" />
-  <script src="{{URL::to('js/jquery-ui.js')}}" async="async"></script>
-  <script src="{{URL::to('emi/Chart.js')}}" async="async"></script>
+ 
+  <script src="{{URL::to('js/jquery-ui.js')}}" ></script>
+  <script src="{{URL::to('emi/Chart.js')}}"></script>
  <!--  <link href="{{URL::to('css/autocomp.css')}}" rel="stylesheet"> -->
-  <script src="{{URL::to('js/addonjquery.js')}}" async="async"></script>
-  <script src="{{URL::to('js/addonjquery-ui.min.js')}}" async="async"></script>
-  <script src="{{URL::to('js/jquery.validate.min.js')}}" async="async"></script>
+  <script src="{{URL::to('js/addonjquery.js')}}"></script>
+  <script src="{{URL::to('js/addonjquery-ui.min.js')}}"></script>
+  <script src="{{URL::to('js/jquery.validate.min.js')}}"></script>
 
   <!-- <script src="https://apis.google.com/js/platform.js" async defer></script> -->
 
@@ -371,19 +372,19 @@
   });
 </script>
 <!-- jQuery Easing -->
-<script src="{{URL::to('js/jquery.easing.1.3.js')}}" async="async"></script>
+<script src="{{URL::to('js/jquery.easing.1.3.js')}}"></script>
 <!-- Bootstrap -->
-<script src="{{URL::to('js/bootstrap.min.js')}}" async="async"></script>
+<script src="{{URL::to('js/bootstrap.min.js')}}"></script>
 <!-- Waypoints -->
-<script src="{{URL::to('js/jquery.waypoints.min.js')}}" async="async"></script>
+<script src="{{URL::to('js/jquery.waypoints.min.js')}}"></script>
 <!-- Owl Carousel -->
-<script src="{{URL::to('js/owl.carousel.min.js')}}" async="async"></script>
+<script src="{{URL::to('js/owl.carousel.min.js')}}"></script>
 <!-- Flexslider -->
-<script src="{{URL::to('js/jquery.flexslider-min.js')}}" async="async"></script>
-<script src="{{URL::to('js/chatbox.js')}}" async="async"></script>
+<script src="{{URL::to('js/jquery.flexslider-min.js')}}"></script>
+<script src="{{URL::to('js/chatbox.js')}}"></script>
 <!-- ChatBox -->
 <!-- MAIN JS -->
-<script src="{{URL::to('js/main.js')}}" async="async"></script>
+<script src="{{URL::to('js/main.js')}}"></script>
 
 <script type='text/javascript'>
   $.fn.bootstrapCarousel = $.fn.carousel;
@@ -1717,7 +1718,9 @@ function getFbUserData(){
     });
   </script>
   <!-- end -->
+<!-- loader -->
 
+<!-- loader ends -->
 
 <!-- post end -->
 <!-- Facebook Pixel Code -->
@@ -1734,19 +1737,6 @@ fbq('track', 'PageView');
 /></noscript>
 <!-- DO NOT MODIFY -->
 <!-- End Facebook Pixel Code -->
-
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-84383331-1', 'auto');
-  ga('send', 'pageview');
-
-</script>
-
-
 
 
 </body>

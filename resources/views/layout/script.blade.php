@@ -1,18 +1,18 @@
-  <script src="{{URL::to('js/modernizr-2.6.2.min.js')}}"></script>
+  <script src="{{URL::to('js/modernizr-2.6.2.min.js')}}" async="async"></script>
   <!-- jQuery -->
-  <script src="{{URL::to('js/jquery.min.js')}}"></script>
+  <script src="{{URL::to('js/jquery.min.js')}}" async="async"></script>
 
-  <script src="{{URL::to('js/ajaxlib.js')}}"></script>
+  <script src="{{URL::to('js/ajaxlib.js')}}" async="async"></script>
   
 
   <!-- <link href="{{URL::to('css/smoothness.css')}}" rel="Stylesheet"></link> -->
   <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/themes/base/minified/jquery-ui.min.css" type="text/css" />
-  <script src="{{URL::to('js/jquery-ui.js')}}" ></script>
-  <script src="{{URL::to('emi/Chart.js')}}"></script>
+  <script src="{{URL::to('js/jquery-ui.js')}}" async="async"></script>
+  <script src="{{URL::to('emi/Chart.js')}}" async="async"></script>
  <!--  <link href="{{URL::to('css/autocomp.css')}}" rel="stylesheet"> -->
-  <script src="{{URL::to('js/addonjquery.js')}}"></script>
-  <script src="{{URL::to('js/addonjquery-ui.min.js')}}"></script>
-  <script src="{{URL::to('js/jquery.validate.min.js')}}"></script>
+  <script src="{{URL::to('js/addonjquery.js')}}" async="async"></script>
+  <script src="{{URL::to('js/addonjquery-ui.min.js')}}" async="async"></script>
+  <script src="{{URL::to('js/jquery.validate.min.js')}}" async="async"></script>
 
   <!-- <script src="https://apis.google.com/js/platform.js" async defer></script> -->
 
@@ -371,19 +371,19 @@
   });
 </script>
 <!-- jQuery Easing -->
-<script src="{{URL::to('js/jquery.easing.1.3.js')}}"></script>
+<script src="{{URL::to('js/jquery.easing.1.3.js')}}" async="async"></script>
 <!-- Bootstrap -->
-<script src="{{URL::to('js/bootstrap.min.js')}}"></script>
+<script src="{{URL::to('js/bootstrap.min.js')}}" async="async"></script>
 <!-- Waypoints -->
-<script src="{{URL::to('js/jquery.waypoints.min.js')}}"></script>
+<script src="{{URL::to('js/jquery.waypoints.min.js')}}" async="async"></script>
 <!-- Owl Carousel -->
-<script src="{{URL::to('js/owl.carousel.min.js')}}"></script>
+<script src="{{URL::to('js/owl.carousel.min.js')}}" async="async"></script>
 <!-- Flexslider -->
-<script src="{{URL::to('js/jquery.flexslider-min.js')}}"></script>
-<script src="{{URL::to('js/chatbox.js')}}"></script>
+<script src="{{URL::to('js/jquery.flexslider-min.js')}}" async="async"></script>
+<script src="{{URL::to('js/chatbox.js')}}" async="async"></script>
 <!-- ChatBox -->
 <!-- MAIN JS -->
-<script src="{{URL::to('js/main.js')}}"></script>
+<script src="{{URL::to('js/main.js')}}" async="async"></script>
 
 <script type='text/javascript'>
   $.fn.bootstrapCarousel = $.fn.carousel;

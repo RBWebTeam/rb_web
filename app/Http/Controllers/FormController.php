@@ -18,12 +18,17 @@ class FormController extends Controller
         'name'   => $req['name'],
         'contact'=> $req['contact']?$req['contact']:'',
         'email'    => $req['email']?$req['email']:'',
+        'Principal_Amt'=>$req['Principal_Amt']?$req['Principal_Amt']:'',
+        'Interest_Rate'=>$req['Interest_Rate']?$req['Interest_Rate']:'',
+        'Remaining_Tenure'=>$req['Remaining_Tenure']?$req['Remaining_Tenure']:'',
+        'brokerid'=>$req['brokerid']?$req['brokerid']:'',
+        'empid'=>$req['empid']?$req['empid']:'',
         'form'    =>$req['form'] 
         );
     //put curl code here to save in DB
     $url = "http://erp.rupeeboss.com/CustomerWebRequest.aspx";
     //print "<pre>";
-    // print_r($post_data);
+    // print_r($req->all());exit();    
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_VERBOSE, 1);
     curl_setopt($ch, CURLOPT_URL, $url);

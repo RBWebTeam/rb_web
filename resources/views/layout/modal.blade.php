@@ -167,6 +167,12 @@
         <div class="modal-body">
           <form name="borrow_form" id="borrow_form" method="post" >
           {{ csrf_field() }}
+          <input type="hidden" name="form" value="balance_transfer_borrow_form">
+          <input type="hidden" name="Principal_Amt" class="Principal_Amt" value="">
+          <input type="hidden" name="Interest_Rate" class="Interest_Rate" value="">
+          <input type="hidden" name="Remaining_Tenure" class="Remaining_Tenure" value="">
+          <input type="hidden" name="brokerid" class="brokerid" value="<?php echo isset($_GET['brokerid'])?$_GET['brokerid']:'';?>">
+          <input type="hidden" name="empid" class="empid" value="<?php echo isset($_GET['empid'])?$_GET['empid']:'';?>">
           
                   <div>
                     <fieldset>
@@ -206,6 +212,12 @@
         </div>
         <div class="modal-body">
           <form name="borrow_form_lap" id="borrow_form_lap" method="post" >
+           <input type="hidden" name="form" value="balance_transfer_borrow_form_lap">
+           <input type="hidden" name="Principal_Amt" class="Principal_Amt" value="">
+          <input type="hidden" name="Interest_Rate" class="Interest_Rate" value="">
+          <input type="hidden" name="Remaining_Tenure" class="Remaining_Tenure" value="">
+          <input type="hidden" name="brokerid" class="brokerid" value="<?php echo isset($_GET['brokerid'])?$_GET['brokerid']:'';?>">
+          <input type="hidden" name="empid" class="empid" value="<?php echo isset($_GET['empid'])?$_GET['empid']:'';?>">
           {{ csrf_field() }}
           
                   <div>

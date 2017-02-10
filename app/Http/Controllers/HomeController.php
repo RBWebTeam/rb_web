@@ -41,11 +41,17 @@ class HomeController extends Controller
 	}
 
 	public function disclaimer(){
-		return view('disclaimer');
+		$keywords='Rupeeboss Disclaimer'; 
+		$data['title']=' Rupeeboss – Disclaimer';
+    	$data['description']='Disclaimer by Rupeeboss to provide discrepancy & transparency with customers.';
+		return view('disclaimer')->with($data)->with('keywords',$keywords);
 
 	}
 	public function privacy_policy(){
-		return view('privacy-policy-page');
+		$keywords='Privacy Policy,Rupeeboss Privacy Policy'; 
+        $data['title']='Rupeeboss – Privacy Policy.';
+    	$data['description']='Rupeeboss privacy policy demonstrates our commitment to your financial privacy. We can help you gain the confidence you need to make important financial decisions for you, your family or your business.';
+		return view('privacy-policy-page')->with($data)->with('keywords',$keywords);
 
 	}
 

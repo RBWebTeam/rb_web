@@ -70,7 +70,7 @@ class ExperianController extends Controller
                 
                 
                 if($x){
-                   // print_r($http_result);exit();
+                    //return ($new_data);exit();
                     Session::put('Lead_Id',$new_data[6]);
                     return $this->gen_ques($new_data,0);
 
@@ -80,7 +80,8 @@ class ExperianController extends Controller
                 }
             }
         }catch(\Exception $e){
-            return ($e);
+
+            //return ($e);
             return view('went-wrong');
         }
 	}

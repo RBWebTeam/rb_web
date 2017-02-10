@@ -96,7 +96,7 @@
                 <p class="mrg-btm1"><b>Appointment Now</b></p>
 				
             <p class="mrg-btm"><b>1800-267-629-6</b></p>
-			<span class="mrg-btm"><i class="icon-envelope"></i>&nbsp;wecare@rupeeboss.com</span>
+			<span class="mrg-btm"><i class="icon-envelope"></i>&nbsp;wecare(@)rupeeboss(.)com</span>
 			</div>
 			
 			

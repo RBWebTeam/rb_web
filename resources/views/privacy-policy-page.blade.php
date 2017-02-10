@@ -84,7 +84,7 @@ From time to time, we may make changes to this Privacy Policy at our sole discre
 
 <br><h3>Contact</h3>
 
-If you would like to review, change and/or delete the Personal Information submitted by you or discontinue our use of your personal information or generally would like to know more about our privacy policy, please write to us at wecare@rupeeboss.com. 
+If you would like to review, change and/or delete the Personal Information submitted by you or discontinue our use of your personal information or generally would like to know more about our privacy policy, please write to us at wecare(@)rupeeboss(.)com. 
 
 </p>
 							

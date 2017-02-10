@@ -57,7 +57,7 @@ class HomeController extends Controller
 		$keywords='Express Finance Loans, Cash Express Loan, Express Loan Aditya Birla Group, Express Loan Bank, Express Loan Corporation, Express Loan Tribe, Express Loan Eligibility, Apply Online For Express Loan, Emergency Loans , Advance Loans ,Quick And Easy Loans ,Instant Cash Loans'; 
 
 		$data['title']='Express Loan– Instant loan at Low interest rate on Rupeeboss.com';
-    	$data['description']='Apply for Express Loan';
+    	$data['description']='Get loans approved instantly. Express Loan provide quick loans at lowest interest apply Online on Rupeeboss.com';
 		return view('express-loan')->with($data)->with('keywords',$keywords);
 	}
 

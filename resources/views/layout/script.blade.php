@@ -1283,12 +1283,19 @@ $(".change_password_form").click(function(event){
       });
     });
   </script>
-  <script type="text/javascript">
 
+
+
+
+
+
+
+
+  <!--script type="text/javascript">
    var today = new Date();
    var expire = new Date();
    function SetCookie(cookieName,cookieValue,nDays) {
-  //console.log(cookieName);console.log(cookieValue);console.log(nDays); 
+  
   if (nDays==null || nDays==0) nDays=1;
   expire.setTime(today.getTime() + 3600000*24*nDays);
   document.cookie = cookieName+"="+escape(cookieValue)
@@ -1312,23 +1319,12 @@ $("#city_name").on("autocompletechange", function(event,ui) {
   expire.setTime(today.getTime() + 3600000*24*nDays);
   document.cookie ="city_name"+"="+escape(cookieValue)
   + ";expires="+expire.toGMTString();
-
-//$('#step_3_btn').show();
-           //  if(cookieValue.length>2){
-           //   $('#pop1').empty();
-           //   $('#pop1').append("<p>Get loan.");
-           //   $('#step_3_btn').show();
-           // }else{
-           //   $('#pop1').empty();
-           //   $('#pop1').append( "<p>The city name must be at least 5 characters" );
-           //    $('#step_3_btn').hide();
-           // }
          });
 
        </script>
        <script type="text/javascript">
         function SetCookie_pop(cookieName,cookieValue,nDays) {
-    //console.log(cookieName);console.log(cookieValue);console.log(nDays);
+   
     var today = new Date();
     var expire = new Date();
     if (nDays==null || nDays==0) nDays=1;
@@ -1347,7 +1343,7 @@ $("#city_name").on("autocompletechange", function(event,ui) {
     }
     
   }
-</script>
+</script-->
 
 <!--scroll up function  -->
 <script type='text/javascript'>

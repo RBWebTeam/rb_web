@@ -12,8 +12,8 @@
     <ul>
     <form id="emp_type_form">
 
-        <li><span><input type="radio" name="emp_type" data-value="1" id="salari_ed" value="salaried"  onclick="changeTest_new(this,'q2');" onchange="SetCookie_pop('emp_type',this.value,1);" /></span>&nbsp; <label for="salari_ed">Salaried</label></li>
-      <li><span><input type="radio" name="emp_type" data-value="2" id="sel_empid" value="self-employed"  onclick="changeTest_new(this,'q2_year');" onchange="SetCookie_pop('emp_type',this.value,1);"/></span>&nbsp; <label for="sel_empid">Self-employed </label></li>
+        <li><span><input type="radio" name="emp_type" data-value="1" id="salari_ed" value="salaried"  onclick="changeTest_new(this,'q2');" onchange="SetCookie_pop('emp_type',this.value);" /></span>&nbsp; <label for="salari_ed">Salaried</label></li>
+      <li><span><input type="radio" name="emp_type" data-value="2" id="sel_empid" value="self-employed"  onclick="changeTest_new(this,'q2_year');" onchange="SetCookie_pop('emp_type',this.value);"/></span>&nbsp; <label for="sel_empid">Self-employed </label></li>
       </form>
       </ul>
       

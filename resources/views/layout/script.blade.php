@@ -381,7 +381,6 @@
 <script src="{{URL::to('js/owl.carousel.min.js')}}"></script>
 <!-- Flexslider -->
 <script src="{{URL::to('js/jquery.flexslider-min.js')}}"></script>
-<script src="{{URL::to('js/chatbox.js')}}"></script>
 <!-- ChatBox -->
 <!-- MAIN JS -->
 <script src="{{URL::to('js/main.js')}}"></script>

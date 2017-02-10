@@ -30,7 +30,11 @@ class LoanController extends Controller
       
       $keywords='Home Loan,Apply for Home Loan,Housing Loan,Home Loan at Low Rate of Interest,Get Home Loan,Need A Home Loan,Home Loan Eligibility,The Best Home, Compare Home Loan,Home Loan Finance Company,Home Loans In India,Home Loan Charges,Home Loan Credit,Best Housing Loans,Home Loan Emi Calculator';
     	$data['title']='Home Loan- Apply online at low interest rate On Rupeeboss.com';
-    	$data['description']='Apply for Home Loan';
+    	$data['description']='When You Need A Loan, You are not Alone! 
+                           View, Compare & get Instant quotes matching 
+                           your requirements. Apply Online for all kind of
+                          Loan at Lower Interest Rates on 
+                          Rupeeboss.com';
 
         $data['id']=DB::table('product_master')
                       ->where('Product_Name','=','Home Loan')
@@ -61,7 +65,10 @@ class LoanController extends Controller
     public function car_loan(){
       $keywords='Car Loans, Auto Loan,Car Loan Low Interest Rates, Best Car Loan Rates, Car Loan Calculator,Car Loan Eligibility,Vehicle Finance, Refinance A Car Loan, Online Car Loans ,Cheap Rate Car Loans ,Car Loans With Bad Credit ,Car Refinance ';
     	$data['title']='Car Loan- Apply online at low interest rate On Rupeeboss.com';
-    	$data['description']='Apply for Car Loan';
+    	$data['description']='Buy your dream car by applying for car loan.
+                            Compare Car Loan Interest Rates, Check 
+                            Loan Eligibility & Calculate Car Loan EMI. 
+                            Apply now on Rupeeboss.com';
 
         $data['id']=DB::table('product_master')
                       ->where('Product_Name','=','Car Loan')

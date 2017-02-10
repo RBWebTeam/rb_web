@@ -165,7 +165,7 @@
           <h4 class="modal-title">Would Like To Borrow </h4>
         </div>
         <div class="modal-body">
-          <form name="borrow_form" id="borrow_form" method="post" >
+          <form name="borrow_form" id="borrow_form_home" method="post" >
           {{ csrf_field() }}
           <input type="hidden" name="form" value="balance_transfer_borrow_form">
           <input type="hidden" name="Principal_Amt" class="Principal_Amt" value="">

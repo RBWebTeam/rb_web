@@ -1,15 +1,5 @@
 @include('layout.header')
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>Bootstrap Example</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-</head>
-<body>
+
 
 <div class="container" id="fh5co-hero">
  
@@ -25,21 +15,21 @@
       
       <div class="col-sm-12">
 	  <label class="control-label" for="name"><b>Name:</b></label>
-        <input type="text" class="form-control" id="name" placeholder="Enter name" name="name">
+        <input type="text" class="form-control" id="name" placeholder="Enter name" name="name" required="">
       </div>
     </div>
     <div class="form-group">
       
       <div class="col-sm-12">
 	  <label class="control-label" for=""><b>Email:</b></label>
-        <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+        <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" required="">
       </div>
     </div>
     <div class="form-group">
       
       <div class="col-sm-12"> 
 <label class="control-label" for="contact"><b>Contact:</b></label>	  
-        <input type="tel" class="form-control" id="contact" placeholder="Enter number" name="contact" maxlength="10">
+        <input type="tel" class="form-control" id="contact" placeholder="Enter number" name="contact" maxlength="10" pattern="[789][0-9]{9}" required="">
       </div>
     </div>
     
@@ -65,8 +55,6 @@
   </div>
 </div>
 
-</body>
-</html>
 
 @include('layout.footer')
 @include('layout.script')

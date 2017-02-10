@@ -13,7 +13,6 @@
 			
 			<?php if($result->questionToCustomer!=null){ ?> 
 			<form id="generate_question" name="generate_question"> 
-
 			<h3> Please answer the questions</h3>
 			{{ csrf_field()}}
 			
@@ -51,7 +50,9 @@
 				?>
 				<br>
 				</div>
-
+				<div class="iframeloading" style= "display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
+				     <img src="images/ajaxloader.gif" alt="loading" style="top: 50%; position: relative; left: 50%;"  />
+				</div>
 			<div class="col-md-12 mrg-tp">
 			<a class="btn btn-primary btn-outline with-arrow centered next_qest">Submit<i class="icon-arrow-right"></i></a>
 			 </div>
@@ -81,18 +82,19 @@
 		if(<?php echo "'".$result->responseJson."'"; ?>=='passedReport'){
 			
 		}
+		$(".iframeloading").show();  
 		$.ajax({  
                type: "POST",  
                url: "{{URL::to('gen-qstn')}}",
                data : $('#generate_question').serialize(),
                success: function(msg){
+               	$(".iframeloading").hide();  
                //	console.log(msg);	
                 if(msg.success==true){
 	                $('#generate_question').hide();
 	                $('#nxt_qstn').html("");
 	                $('#nxt_qstn').html(msg.html);
                 }else{
-                	console.log(msg);
                  window.location.href ="{{URL::to('went-wrong')}}";
                 }
               

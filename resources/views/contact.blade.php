@@ -38,7 +38,7 @@
             <div class='msg_err displaynone'><p>Ooops. Something went wrong.</p></div>
            
 			</div>
-             <span id='err displaynonemsg'>Will reach you soon</span>
+             <span id='err' class='displaynonemsg'>Will reach you soon</span>
 		</div>
 	</div>
 

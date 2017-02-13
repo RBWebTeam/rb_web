@@ -70,8 +70,8 @@
 			  </div>
 			</form>
 		</div>	
-		<div class='msg' style="display: none; color: red"><p>Thanks. We will reach you soon.</p></div>
-            <div class='msg_err' style="display: none;color: red"><p>Ooops. Something went wrong.</p></div>
+		<div class='msg displaynonemsg'><p>Thanks. We will reach you soon.</p></div>
+            <div class='msg_err displaynonemsg'><p>Ooops. Something went wrong.</p></div>
 	</div>
 	</aside>
 	</div>

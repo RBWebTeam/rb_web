@@ -5,7 +5,7 @@
     
       <!-- Modal content-->
          <div class="modal-content">
-          <div style="display: block;" id="login">
+          <div class="block" id="login">
              <!-- login-->
          
       <div class="modal-body login-modal">  
@@ -21,7 +21,7 @@
                 <a href="#" id="register-form-link">Register</a>
               </div>
             </div>
-            <div class="row" id="forgot-password-show" style="display: none;">
+            <div class="row" id="forgot-password-show" class="displaynone">
               <div class="col-xs-6">
                 <h3>Forgot Password</h3>
               </div>
@@ -34,7 +34,7 @@
           <div class="panel-body">
             <div class="row">
               <div class="col-lg-6">
-            <form class="login-form" name="login_form" id="login_form"  method="post" style="display: block;">                   {{ csrf_field() }}
+            <form class="login-form block" name="login_form" id="login_form"  method="post" >                   {{ csrf_field() }}
                   <div class="form-group">
                     <input type="text" name="email_login" id="email_login" tabindex="1" class="form-control" placeholder="Email" value="">
                   </div>
@@ -70,7 +70,7 @@
                </div>
 
                 <div class="col-lg-12">
-                <form class="register-form" style="display: none;" name="registration_form" id="registration_form"   method="post" > 
+                <form class="register-form displaynone"  name="registration_form" id="registration_form"   method="post" > 
                  {{ csrf_field() }}
 
                   <div class="form-group">
@@ -110,7 +110,7 @@
               </div>
               
          <div class="col-lg-12">
-             <form class="forgot-form" style="display: none;" name="forgot_password_form" id="forgot_password_form"   method="post"  >
+             <form class="forgot-form displaynone"  name="forgot_password_form" id="forgot_password_form"   method="post"  >
               {{ csrf_field() }}
                  <div class="form-group">
                     <input type="text" name="email" id="email" tabindex="1" class="form-control" placeholder="Email ID" >

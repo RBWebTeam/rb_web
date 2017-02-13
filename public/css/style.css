@@ -1986,3 +1986,20 @@ body {background:#eee;}
  
 
  
+.displaynone{
+  display: none;
+}
+.displaynonemsg{
+  display: none;
+  color:red;
+  text-align:center;
+}
+.marginauto{
+  margin:0 auto;
+}
+.block{
+  display: block;
+}
+.backimg{
+  background-image: url(../images/slide_2.jpg);
+}

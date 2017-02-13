@@ -43,9 +43,9 @@
   
   <div class="col-md-6 rba_bg">
   <img src="images/rba_bg.jpg" class="img-responsive"/>
-  <div class="rba-log">
+  <div class="rba-log xyz">
   <input type="text" placeholder="Username" class="form-group"/> <input type="password" placeholder="password"/>
-  <button type="submit" class="btn btn-success">Submit</button>
+  <button type="submit" class="btn btn-success">Login</button>
   </div>
   </div>
 </div>

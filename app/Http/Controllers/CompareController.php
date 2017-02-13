@@ -70,7 +70,10 @@ class CompareController extends Controller
   //   	return view('emi');
   //   }
     public function emi2(){
-        return view('emi/emi');
+      $keywords='Check emi card status,Check emi for home loan,Check emi for Personal Loan,Check emi for business loan,Check emi for car loan,Check emi for SME loan,Check emi online,Check emi calculator';
+      $data['title']='EMI Calculator for All Kinds of Loans';
+      $data['description']='EMI Calculator - Calculate Equated Monthly Installment (EMI) for Home Loan / Housing Loan, Car Loan, Business Loan, Personal Loan withRupeeboss.com';
+        return view('emi/emi')->with($data)->with('keywords',$keywords);
     }
      public function emi_cal(Request $req){
         $data=$req->all();

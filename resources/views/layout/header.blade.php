@@ -13,6 +13,7 @@
 	<!-- <link rel="stylesheet" href="{{URL::to('fonts/Raleway.css')}}" type="text/css"> -->
 	<!-- Animate.css -->
 	<link href="{{URL::to('css/mysite.css')}}" rel="stylesheet" type="text/css" />
+	<!-- <link href="{{URL::to('css/style.css')}}" rel="stylesheet" type="text/css" /> -->
 	
 	<!-- Modernizr JS -->
 	<!-- <link rel="manifest" href="{{URL::to('extension/manifest.json')}}"> -->

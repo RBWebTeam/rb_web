@@ -1950,6 +1950,7 @@ body {background:#eee;}
  .txt-title {display:none;}
  .bdr-btm {border:1px solid #ddd; margin-bottom:10px;}
  .heigh-bt1 {margin-bottom:20px;}
+ .rba-log input {padding: 5px 2px; width:100%; margin-bottom:10px;}
 }
 .slide-hm {width:100%;}
 .msg p {color:#999;text-align:center;}
@@ -1963,7 +1964,7 @@ body {background:#eee;}
   .txt-title1 {font-weight:bold; text-transform:uppercase; border-right:1px solid #ddd;}
   .error-template img {margin:auto; }
   .heigh-bt {height:300px; box-shadow:1px 1px 1px 1px #ccc; border-radius:5px;-moz-border-radius:5px;-webkit-border-radius:5px;}
-   .heigh2 {height:390px; box-shadow:1px 1px 1px 1px #ccc;}
+   .heigh-bt2 {height:390px; box-shadow:1px 1px 1px 1px #ccc;}
   .mrg-tp {margin-top:8px;}
   .box-shadow {box-shadow:1px 1px 1px 1px #ccc;}
   .apply-btn:hover {color:#fff;background:#2882a6;}
@@ -1982,7 +1983,8 @@ body {background:#eee;}
    .rbabg {height:300px;} 
    .mrg-bt-rba {margin-bottom:5px;}
    .inp-hig {height:40px;}
-   .rba_bg {background:#ccc;}
+   .rba_bg {background:#2f88e2;}
+   .rba-dv-hei {height:266px;padding-top:20px;}
  
 
  
@@ -2000,6 +2002,14 @@ body {background:#eee;}
 .block{
   display: block;
 }
-.backimg{
+.backimg{ 
   background-image: url(../images/slide_2.jpg);
 }
+.xyz label {
+	font-size:11px;
+	position: absolute;
+    padding: 0px;
+	height:20px;
+}
+.rba-log {padding: 8px;margin: 5px;}
+.rba-log input {padding: 6px 0px; padding-left:5px; border-radius:5px; border:2px solid #ccc;}

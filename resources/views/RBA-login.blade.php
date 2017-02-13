@@ -9,25 +9,25 @@
   <br>
   </div>
 
-  <div class="col-md-6 white-bg box-shadow" style="height:261px;padding-top:20px;">
+  <div class="col-md-6 white-bg box-shadow rba-dv-hei">
   <form class="form-horizontal" id="rba_form">
     {{ csrf_field() }}
     <div>
       
-      <div class="col-sm-12 form-group">
+      <div class="col-sm-12 form-group xyz">
 	  
         <input type="text" class="form-control" id="name" placeholder="Enter name" name="name" required="">
       </div>
     </div>
     <div>
       
-      <div class="col-sm-12 form-group">
+      <div class="col-sm-12 form-group xyz">
 	
         <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" required="">
       </div>
     </div>
     <div>
-      <div class="col-sm-12 form-group"> 
+      <div class="col-sm-12 form-group xyz"> 
   
         <input type="tel" class="form-control" id="contact" placeholder="Enter number" name="contact" maxlength="10" pattern="[789][0-9]{9}" required="">
       </div>
@@ -41,7 +41,13 @@
   </form>
   </div>
   
-  <div class="col-md-6 rba_bg"><img src="images/rba_bg.jpg" class="img-responsive"/></div>
+  <div class="col-md-6 rba_bg">
+  <img src="images/rba_bg.jpg" class="img-responsive"/>
+  <div class="rba-log xyz">
+  <input type="text" placeholder="Username" class="form-group"/> <input type="password" placeholder="password"/>
+  <button type="submit" class="btn btn-success">Login</button>
+  </div>
+  </div>
 </div>
 <div class="col-md-12 pad1 text-center">
   <marquee><h2 class="yellow-clr">Immediate Vacancy for <b>RBA's</b></h2></marquee>

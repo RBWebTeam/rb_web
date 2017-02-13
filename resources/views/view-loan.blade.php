@@ -29,9 +29,9 @@
 
     <?php $Loans=strtolower(str_replace(' ','-',$home_loan)); ?>
      <?php if($Loans=='lap'){?>
-    <td width="17%" class="blue-bg"><h4><a href="{{url('apply-loan-against-property')}}" class="apply-btn">Apply Online</h4></a></td>
+    <td width="17%"><h4><a href="{{url('apply-loan-against-property')}}" class="apply-btn">Apply Online</h4></a></td>
     <?php }else{?>
-   <td width="17%" class="blue-bg"><h4><a href="{{url('apply-')}}<?php echo $Loans?>" class="apply-btn">Apply Online</a></h4></td>
+   <td width="17%"><h4><a href="{{url('apply-')}}<?php echo $Loans?>" class="apply-btn">Apply Online</a></h4></td>
     <?php }?>
   </tr>
 

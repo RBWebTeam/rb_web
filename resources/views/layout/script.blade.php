@@ -1803,12 +1803,12 @@ fbq('track', 'PageView');
     <div class="form-group">
       
       <div class="col-sm-offset-3 col-sm-6">
-       <span id='msg_err displaynonemsg'>oops something went wrong</span>
-       <span id='pls_wait displaynonemsg'>Please wait .....</span>
+       <span id='msg_err' class= 'displaynonemsg'>oops something went wrong</span>
+       <span id='pls_wait' class= ' displaynonemsg'>Please wait .....</span>
        
-       <span id='pwd_match displaynonemsg'>Password do not match.</span>
+       <span id='pwd_match' class= 'displaynonemsg'>Password do not match.</span>
 
-       <span id="msg_err_email displaynonemsg"><center>Email id already exists.</center></span>
+       <span id='msg_err_email' class ='displaynonemsg'><center>Email id already exists.</center></span>
      </div>
 
    </div>
@@ -1829,7 +1829,7 @@ fbq('track', 'PageView');
 </div>
 
 </div>
-<div id="otp_div displaynone" role="dialog">
+<div id="otp_div" class="displaynone" role="dialog">
   <div class="modal-dialog">
     <!-- Modal content-->
     <div class="modal-content">

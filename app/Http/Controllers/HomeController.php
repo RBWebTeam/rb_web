@@ -16,7 +16,7 @@ class HomeController extends Controller
 {
 	public function index(){
 		$keywords='Home Loan,Business Loan,Personal Loan,Car Loan,Express Loan,Savings Account,Loan Against Property,Small and Medium Size Enterprise Loan,SME Finance,Retail Loan';
-		$data['title']='RupeeBoss- Apply for a Loan';
+		$data['title']='RupeeBoss - Apply for all kind of Loan On Rupeeboss.com';
 		$data['description']='When You Need A Loan, You are not Alone! View, Compare & get Instant quotes matching your requirements. Apply Online for all kind ofLoan at Lower Interest Rates on Rupeeboss.com. ';
 		// $data['city'] = DB::table('city_master')->select('City_Name','state_id','City_Id')->get();
 		// $data['loan'] = DB::table('product_master')->select('Product_Name','Product_Id')->get();
@@ -41,11 +41,17 @@ class HomeController extends Controller
 	}
 
 	public function disclaimer(){
-		return view('disclaimer');
+		$keywords='Rupeeboss Disclaimer'; 
+		$data['title']=' Rupeeboss – Disclaimer';
+    	$data['description']='Disclaimer by Rupeeboss to provide discrepancy & transparency with customers.';
+		return view('disclaimer')->with($data)->with('keywords',$keywords);
 
 	}
 	public function privacy_policy(){
-		return view('privacy-policy-page');
+		$keywords='Privacy Policy,Rupeeboss Privacy Policy'; 
+        $data['title']='Rupeeboss – Privacy Policy.';
+    	$data['description']='Rupeeboss privacy policy demonstrates our commitment to your financial privacy. We can help you gain the confidence you need to make important financial decisions for you, your family or your business.';
+		return view('privacy-policy-page')->with($data)->with('keywords',$keywords);
 
 	}
 
@@ -82,7 +88,10 @@ class HomeController extends Controller
 	}
 
 	public function RBA_login(){
-		return view('RBA-login');
+		$keywords='Loan Agent,Become A Loan Agent,Be A Loan Agent';
+		$data['title']='Rupeeboss Agent Login';
+    	$data['description']='Become A High-Income Rupeeboss Agent With a Wide Variety Of Loans! Register Now with Rupeeboss.com ';
+		return view('RBA-login')->with($data)->with('keywords',$keywords);
 	}
 
    public function RBA_register(Request $req){

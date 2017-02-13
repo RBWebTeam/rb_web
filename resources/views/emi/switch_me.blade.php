@@ -130,7 +130,9 @@
     
        <p><h6>Your <mark style="color:red"><b>Savings</b></mark> through reduced Interest:</h6></p>
        <h2 class="em8">₹ <b><span id="emi6">0</span></b></h2>
-
+       
+      <button type="button" class="btn btn-success" id="revise_apply2" name="revise_apply" data-toggle="modal" data-target="#myModaltest" style="display:none;">Apply Now</button>
+   
 
        
        
@@ -318,14 +320,21 @@
       
       var loanamount = $("#loanamount").val();
       $('#loanamount_new').val(loanamount);
+      
       // console.log($("#loanamount").val());
       var loaninterest = $("#loaninterest").val();
+      
         // $('#loaninterest_new').val(loaninterest);
          
       if ($("#Year").prop("checked")) {
         var loanterm1 = $("#loanterm").val();
         var loanterm = loanterm1*12;
         $('#loanterm_new').val(loanterm1);
+        //appending inform to submit on erp
+         $('.Principal_Amt').val(loanamount);
+         $('.Interest_Rate').val( loaninterest);
+         $('.Remaining_Tenure').val(loanterm1);
+        
       }else{
         var loanterm = $("#loanterm").val();
 
@@ -359,7 +368,7 @@
                    $('#emi5').empty().append( msg.drop_in_int);
                    var nrate=(($('#loaninterest').val())-msg.drop_in_int).toFixed(2);
                   $('#loaninterest_new').val( nrate);
-
+                   
                    var numb4 = msg.savings.toFixed();
                    $('#emi6').empty().append(numb4);
 
@@ -369,8 +378,12 @@
 
                    
 
-                  $('#revise').show()
-                  $('#revise_apply').show()
+                  $('#revise').show();
+                  $('#revise_apply').show();
+                  <?php if($loan != "personal-loan"){?>
+      
+                  $('#revise_apply2').show();
+                  <?php }?>
                         $("#1").show();
                         $("#4").show();
                         $("#5").show();
@@ -408,8 +421,11 @@
        if(lm >0 && lin >0 && lt>0){
       
       var loanamount = $("#loanamount_new").val();
+    
       var loaninterest = $("#loaninterest_new").val();
       var loanterm = $("#loanterm_new").val();
+     
+
       var old_loaninterest = $("#loaninterest").val();
       var old_drop_emi = $(".em5 span").text();
        // console.log(old_drop_emi);

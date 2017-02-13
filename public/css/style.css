@@ -15,8 +15,6 @@
 
 body {
   font-family: "Raleway", .modal-body ul li input, sans-serif;
-  font-weight: 400;
-  font-size: 16px;
   line-height: 1.7;
   color: #7f7f7f;
   background: #fff;
@@ -1974,11 +1972,17 @@ body {background:#eee;}
   
   .drop-arr {background:url(../images/down_arrow.png) no-repeat center right; padding-right:10px;}
   .offset5 .btn input {width:25px;height:25px;}
-  .rba-bg {background:#2f88e2;}
+
   .mrg-top {margin-top:60px;}
   .yellow-clr {color:green;}
   .select1 select {padding:10px; margin-right:10px; border:1px solid #ccc; }
    .select1 {margin-left:20%;}
-   .mrg-tp {margin-top:25px;} 
+   .mrg-tp {margin-top:25px;}
+   .mrg-tpp {margin-top:5px; display:block;} 
+   .rbabg {height:300px;} 
+   .mrg-bt-rba {margin-bottom:5px;}
+   .inp-hig {height:40px;}
+   .rba_bg {background:#ccc;}
+ 
 
  

@@ -1,5 +1,5 @@
    <!-- <link href="{{URL::to('css/smoothness.css')}}" rel="Stylesheet"></link> -->
-  <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/themes/base/minified/jquery-ui.min.css" type="text/css" />
+  <link rel="stylesheet" href="{{URL::to('css/jquery-ui.min.css')}}" type="text/css" />
   <script src="{{URL::to('js/modernizr-2.6.2.min.js')}}"></script>
   <!-- jQuery -->
   <script src="{{URL::to('js/jquery.min.js')}}"></script>

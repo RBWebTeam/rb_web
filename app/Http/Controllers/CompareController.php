@@ -201,6 +201,7 @@ class CompareController extends Controller
             $getQuery[0]->roi=1;
           }
             $new_rate=$getQuery[0]->roi/12/100;
+            // print_r($new_rate);exit();
             $new_amount = $loanamount * $new_rate * (pow(1 + $new_rate, $loanterm) / (pow(1 + $new_rate, $loanterm) - 1));
 
             $new_total =(($new_amount*$loanterm)-$loanamount);

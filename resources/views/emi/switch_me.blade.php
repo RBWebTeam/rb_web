@@ -70,7 +70,7 @@
     <div class="form-group">
     <input type="hidden" name="brokerid" id="brokerid" value="<?php echo isset($_GET['brokerid'])?$_GET['brokerid']:'';?>">
        <!-- <label class="control-label" for="Loan Amount">Outstanding Principal:</label> -->
-       <input type="text" name="loanamount" class="form-control" id="loanamount" placeholder="Outstanding Principal" value="" onblur ="myfun()" onkeypress="return isNumberKey(event)" maxlength="9" title="Outstanding Principal">
+       <input type="text" name="loanamount" class="form-control" id="loanamount" placeholder="Outstanding Principal" value="" onblur ="myfun()" onkeypress="return isNumberKey(event)" maxlength="10" title="Outstanding Principal">
 
     </div>
     <div class="form-group">
@@ -355,7 +355,7 @@
                data : { 'loanamount': loanamount , 'loaninterest': loaninterest ,'loanterm' :loanterm,'_token': v_token,'profession':profession,'product_id':product_id,'brokerid':brokerid},
                // 'bank':bank},
                success: function(msg){
-                  // console.log(msg);
+                   console.log(msg);
                   if(msg.success ==true){
                   var numb = msg.amount.toFixed();
                    $('#emi').empty().append(numb);

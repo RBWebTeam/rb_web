@@ -32,7 +32,8 @@ class UploadController extends Controller
                 $post="[".implode(',',$data)."]";
                 $post_data='{"docType":"'.$doc[$i].'","docextension":"'.$extension.'",
                             "refFBAId":"'.$request->app_id.'","bytes":'.$post.'}';
-                $url = "http://beta.services.rupeeboss.com/LoginDtls.svc/xmlservice/uploadCustLoanDoc";
+                // $url = "http://beta.services.rupeeboss.com/LoginDtls.svc/xmlservice/uploadCustLoanDoc";
+                $url = "http://services.rupeeboss.com/LoginDtls.svc/xmlservice/uploadCustLoanDoc";            
                 $ch = curl_init();
                 curl_setopt($ch, CURLOPT_VERBOSE, 1);
                 curl_setopt( $ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));

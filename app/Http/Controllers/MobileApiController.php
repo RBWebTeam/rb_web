@@ -39,8 +39,8 @@ class MobileApiController extends ApiController
 		//return "hiiiii";
 		$data= $this->comapre_personal_loan($req);
 		//print_r($data);exit;
-		//print_r( $data->getData()->quote_id);exit();
-		if($data!='Failure occured'){
+		//		print_r( $data->getData()->data);exit();
+		if($data->getData()->data!=[]){
 			$status_Id=0;
 			$msg="data delievered";
 			$new_data=$data->getData()->data;

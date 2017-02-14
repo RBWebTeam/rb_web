@@ -487,7 +487,8 @@ run_else:
        
         		$post_data='{"brokerId":'.$id.'}';
         		//print_r($post_data);exit();
-                 $url="http://beta.services.rupeeboss.com/LoginDtls.svc/xmlservice/dsplyHomePersonalLoanAppDtls";
+                 // $url="http://beta.services.rupeeboss.com/LoginDtls.svc/xmlservice/dsplyHomePersonalLoanAppDtls";
+        		$url="http://services.rupeeboss.com/LoginDtls.svc/xmlservice/dsplyHomePersonalLoanAppDtls";
                 $ch = curl_init();
                 curl_setopt($ch, CURLOPT_VERBOSE, 1);
                 curl_setopt( $ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
@@ -549,7 +550,8 @@ run_else:
        
         		$post_data='{"brokerId":'.$id.'}';
         		//print_r($post_data);exit();
-                 $url="http://beta.services.rupeeboss.com/LoginDtls.svc/xmlservice/dsplyPersonalLoanAppDtls";
+                 // $url="http://beta.services.rupeeboss.com/LoginDtls.svc/xmlservice/dsplyPersonalLoanAppDtls";
+        		$url="http://services.rupeeboss.com/LoginDtls.svc/xmlservice/dsplyPersonalLoanAppDtls";
                 $ch = curl_init();
                 curl_setopt($ch, CURLOPT_VERBOSE, 1);
                 curl_setopt( $ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));

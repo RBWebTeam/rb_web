@@ -12,7 +12,7 @@ Route::get('apply-personal-loan','LoanController@apply_p_test');
 Route::post('compare','CompareController@compare');
 Route::get('view-loan','CompareController@view_loan');
 // Route::get('emi1','CompareController@emi');
-Route::get('credit-report','CompareController@credit_report');
+Route::get('credit-report','ExperianController@credit_report');
 Route::get('contact-us','ContactController@contact_us'); //not linked to index page till now
 //sidebar forms
 Route::post('sidebar','FormController@sidebar');

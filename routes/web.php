@@ -59,6 +59,11 @@ Route::post('google/login','SocialsiteController@googlelogin');
 Route::get('api','ApiController@GetLAPQuotes');
 Route::get('get-loan/{loan}','BankController@compareLoan');
 
+
+Route::get('refresh-csrf', function(){
+    return csrf_token();
+});
+
 // Route::get('api','LoanQuatesController@GetHomeLoanQuotes');
 
 /*emi test*/

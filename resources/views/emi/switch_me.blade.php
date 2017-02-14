@@ -109,7 +109,7 @@
      </div>
     </div>
     <div class="col-sm-4 rw-hei brd-rgt">
-	<div class="white-bg pad1 heigh-bt">
+	<div class="white-bg pad1 heigh-bt1">
 	<h3 class="transfer-cal">
     My Savings <i class="fa fa-credit-card" aria-hidden="true"></i></h3>
     <!-- <i class="fa fa-cog fa-spin fa-2x fa-fw"></i>
@@ -130,8 +130,9 @@
     
        <p><h6>Your <mark style="color:red"><b>Savings</b></mark> through reduced Interest:</h6></p>
        <h2 class="em8">₹ <b><span id="emi6">0</span></b></h2>
+	   <button type="button" class="btn btn-success" id="revise_apply2" name="revise_apply" data-toggle="modal" data-target="#myModaltest" style="display:none;">Apply Now</button>
        
-      <button type="button" class="btn btn-success" id="revise_apply2" name="revise_apply" data-toggle="modal" data-target="#myModaltest" style="display:none;">Apply Now</button>
+      
    
 
        
@@ -141,6 +142,7 @@
        <!-- <div id="b"></div> -->
       </center>
 	  </div>
+	  
   </div>
   <div class="col-sm-4 rw-hei">
   <div class="white-bg pad1 heigh-bt">

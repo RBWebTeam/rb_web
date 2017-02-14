@@ -68,7 +68,10 @@ class HomeController extends Controller
 	}
 
 	public function credit_card(){
-		return view('credit-card');
+		$keywords='Credit card apply,Credit card status,Credit card application,Free credit cards,Apply credit card online,Credit Card Offers & Eligibility';
+		$data['title']='Credit Card – Compare & Apply Online on Rupeeboss.com';
+    	$data['description']='Top Credit Card Offers 2017: Compare and apply online for best Offers & Eligibility on Rupeeboss.com ';
+		return view('credit-card')->with($data)->with('keywords',$keywords);
 	}
 
 	public function savings_account(){
@@ -113,7 +116,8 @@ class HomeController extends Controller
 
                 $post_data='{"mobNo":"'.$req->contact.'","msgData":"Thank you for registering.- RupeeBoss.com",
                     "source":"WEB"}';
-                $url = "http://beta.services.rupeeboss.com/LoginDtls.svc/xmlservice/sendSMS";
+                //$url = "http://beta.services.rupeeboss.com/LoginDtls.svc/xmlservice/sendSMS";
+                $url = "http://services.rupeeboss.com/LoginDtls.svc/xmlservice/sendSMS";
                 $ch = curl_init();
                 curl_setopt($ch, CURLOPT_VERBOSE, 1);
                 curl_setopt( $ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));

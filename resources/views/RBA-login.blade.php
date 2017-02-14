@@ -1,47 +1,53 @@
 @include('layout.header')
 
 
-<div class="container" id="fh5co-hero">
- 
+<div class="container " id="fh5co-hero">
+   <br>
   <div>
   <div class="col-md-12">
   <h2 class="text-center">RBA Registration</h2>
+  <br>
   </div>
 
-  <div class="col-md-6 white-bg box-shadow">
+  <div class="col-md-6 white-bg box-shadow rba-dv-hei">
   <form class="form-horizontal" id="rba_form">
     {{ csrf_field() }}
-    <div class="form-group">
+    <div>
       
-      <div class="col-sm-12">
-	  <label class="control-label" for="name"><b>Name:</b></label>
+      <div class="col-sm-12 form-group xyz">
+	  
         <input type="text" class="form-control" id="name" placeholder="Enter name" name="name" required="">
       </div>
     </div>
-    <div class="form-group">
+    <div>
       
-      <div class="col-sm-12">
-	  <label class="control-label" for=""><b>Email:</b></label>
+      <div class="col-sm-12 form-group xyz">
+	
         <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" required="">
       </div>
     </div>
-    <div class="form-group">
-      
-      <div class="col-sm-12"> 
-<label class="control-label" for="contact"><b>Contact:</b></label>	  
+    <div>
+      <div class="col-sm-12 form-group xyz"> 
+  
         <input type="tel" class="form-control" id="contact" placeholder="Enter number" name="contact" maxlength="10" pattern="[789][0-9]{9}" required="">
       </div>
     </div>
     
-    <div class="form-group">        
-      <div class="col-sm-4">
+    <div>        
+      <div class="col-sm-4 mrg-tpp" style="margin-top:5px;">
         <button type="submit" class="btn btn-success register">Register</button>
       </div>
     </div>
   </form>
   </div>
   
-  <div class="col-md-6 rba-bg"><img src="images/rba_bg.jpg" width=""/></div>
+  <div class="col-md-6 rba_bg">
+  <img src="images/rba_bg.jpg" class="img-responsive"/>
+  <div class="rba-log xyz">
+  <input type="text" placeholder="Username" class="form-group"/> <input type="password" placeholder="password"/>
+  <button type="submit" class="btn btn-success">Login</button>
+  </div>
+  </div>
 </div>
 <div class="col-md-12 pad1 text-center">
   <marquee><h2 class="yellow-clr">Immediate Vacancy for <b>RBA's</b></h2></marquee>

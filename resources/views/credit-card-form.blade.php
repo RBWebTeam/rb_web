@@ -113,7 +113,7 @@
 												<input type="text" id="PanNo" name="PanNo" class="form-control" placeholder="Pancard*" maxlength="10" minlength="10" required >
 											</div>
 											<div class="col-md-4">
-												<input type="text" class="form-control lastReporteddate" id="DSalaryAcOpenDate" name="SalaryAcOpenDate" placeholder="Salary Ac Open Date*" required>
+												<input type="text" class="form-control lastReporteddate" id="SalaryAcOpenDate" name="SalaryAcOpenDate" placeholder="Salary Ac Open Date*" required>
 											</div>
 										<div class="col-md-12">
 										<input type="checkbox" name="terms" required>

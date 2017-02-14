@@ -138,5 +138,12 @@ class HomeController extends Controller
 
 	}
 
+	public function RBA_employee(Request $req){
+
+
+		echo('ok..........');
+
+	}
+
 	
 }

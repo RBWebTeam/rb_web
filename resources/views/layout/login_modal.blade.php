@@ -21,7 +21,7 @@
                 <a href="#" id="register-form-link">Register</a>
               </div>
             </div>
-            <div class="row" id="forgot-password-show" class="display">
+            <div class="row" id="forgot-password-show" class="displaynone">
               <div class="col-xs-6">
                 <h3>Forgot Password</h3>
               </div>

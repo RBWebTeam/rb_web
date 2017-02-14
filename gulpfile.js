@@ -33,8 +33,8 @@ elixir(function(mix) {
 		'../../../public/css/smoothness.css',
 		 '../../../public/css/autocomp.css',
 		 '../../../public/css/font-awesome.min.css',
-		 '../../../public/css/jquery-ui.min.css'
-		
+		 '../../../public/css/jquery-ui.min.css',
+		'../../../public/css/stylesheet.css'
     ], 'public/css/mysite.css');
 });
 

@@ -70,7 +70,10 @@ class CompareController extends Controller
   //   	return view('emi');
   //   }
     public function emi2(){
-        return view('emi/emi');
+      $keywords='Check emi card status,Check emi for home loan,Check emi for Personal Loan,Check emi for business loan,Check emi for car loan,Check emi for SME loan,Check emi online,Check emi calculator';
+      $data['title']='EMI Calculator for All Kinds of Loans';
+      $data['description']='EMI Calculator - Calculate Equated Monthly Installment (EMI) for Home Loan / Housing Loan, Car Loan, Business Loan, Personal Loan withRupeeboss.com';
+        return view('emi/emi')->with($data)->with('keywords',$keywords);
     }
      public function emi_cal(Request $req){
         $data=$req->all();
@@ -78,7 +81,8 @@ class CompareController extends Controller
     }
     public function credit_report(){
       $keywords='credit report free,credit score,free credit report and score,how to get free credit report ';
-      $data['title']='Credit score online on Rupeeboss.com';
+      $data['title']='Check your Credit Score online on Rupeeboss.com';
+      $data['description']='Check your free credit scores, reports and insights. Get the info you need to take control of your credit from Rupeeboss.com';
       $data['telephone']=DB::table('experian_telephonetype')
       ->select('Telephone_Name','Telephone_Value')
       ->get();
@@ -183,9 +187,22 @@ class CompareController extends Controller
  }
 
     public function switchme($loan){
-      //print"<pre>";print_r($loan);exit();
+        // print"<pre>";print_r($loan);exit();
+      if ($loan=="home-loan") {
+        $data['title']='Transfer Home Loan Balance Online';
+        $keywords='Home loan balance transfer,How to transfer home loan,Home loan transfer,Home loan refinance,Home Loan Balance Transfer Process ,Online Balance Transfer,Transferring Home Loan,Home Loan Balance Transfer Calculator';
+        $data['description']='Lets find out how much you can save. Compare home loan transfer rates from one bank to another and Get low interest rate by applying for Home Loan Balance Transfer on Rupeeboss.com';
+      }elseif ($loan=="personal-loan") {
+         $data['title']='Transfer Personal Loan Balance Online';
+        $keywords='How to Transfer Personal Loan Balance Online,Personal Loan Balance Transfer,Personal Loan Balance Transfer Eligibility Criteria,Personal Loan Balance Transfer Interest rates,Personal Loan Balance Transfer Calculator,Personal Loan Balance Transfer Process ';
+        $data['description']='Lets find out how much you can save. Compare and Apply to multiple banks for the Best offers on personal loan balance transfer On Rupeeboss.com.';
+      }else{
+         $data['title']='Transfer Loan Against Property Online';
+        $keywords='Loan Against Property Transfer,Loan Against Property EMI Calculator,Loan Against Property Balance Transfer Process,Loan Against Property Balance Transfer Interest rates,Compare Loan Against Property Balance Transfer';
+        $data['description']='Lets find out how much you can save.Transfer your Loan Against Property at lowest interest Rate. Enter Details, Compare and Switch for balance Transfer on Rupeeboss.com';
+      }
       $data['loan'] =$loan;
-      return view('emi/switch_me')->with($data);
+      return view('emi/switch_me')->with($data)->with('keywords',$keywords);
     }
 
     public function calculation(Request $req){

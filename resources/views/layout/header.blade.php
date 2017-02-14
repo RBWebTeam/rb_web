@@ -13,6 +13,7 @@
 	<!-- <link rel="stylesheet" href="{{URL::to('fonts/Raleway.css')}}" type="text/css"> -->
 	<!-- Animate.css -->
 	<link href="{{URL::to('css/mysite.css')}}" rel="stylesheet" type="text/css" />
+	<!-- <link href="{{URL::to('css/style.css')}}" rel="stylesheet" type="text/css" /> -->
 	
 	<!-- Modernizr JS -->
 	<!-- <link rel="manifest" href="{{URL::to('extension/manifest.json')}}"> -->
@@ -29,7 +30,7 @@
 	<script src="https://app.tigerapi.com/rest/?i=MTQ4NTIzNzg2NA==" async="async" type="text/javascript"></script> -->
 	<!-- Side bar -->
 	<div class="arrow-don" title="Help Section"><i class="icon-phone"></i></div>
-    <div class="sidebar" style="display:none;">
+    <div class="sidebar displaynone">
     <ul>
         <li class="hide-dv"><a href="#"><i class="icon-arrow-left"></i>&nbsp;Hide</a></li>
          <li class="call-back callclass" data-toggle="modal" data-target="#myModal"><a href="#">Instant <br>Call Back</a></li>

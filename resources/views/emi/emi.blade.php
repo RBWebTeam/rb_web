@@ -9,7 +9,7 @@
   <div class="row">
 
     <div class="col-sm-4">
-	<div class="white-bg pad1 heigh-bt1">
+	<div class="heigh-bt2 white-bg pad1">
 	<h3 class="emi-cal"><b>EMI Calculator</b></h3>
 	
       <div class="form-group">
@@ -44,7 +44,7 @@
   </div>
   </div>
   <div class="col-sm-4">
-  <div style="background-color:lavenderblush;" class="pad1 heigh-bt1">
+  <div style="background-color:lavenderblush;" class="heigh-bt2 pad1">
    <h3 class="emi-cal"><b>Loan Details</b></h3>
    
    <center>
@@ -58,7 +58,7 @@
    </div>
  </div>
  <div class="col-sm-4 brd-rgt">
-  <div class="white-bg pad1 heigh-bt1">
+  <div class="heigh-bt2 white-bg pad1">
  <h3 class="emi-cal"><b>Break-up of Loan Details</b></h3>
    <div class="text-center"><i class="fa fa-cloud" style="font-size:18px;color:#c2da6b;"></i>&nbsp;<span>Loan EMI</span></div>
    <div class="text-center"><i class="fa fa-cloud" style="font-size:18px;color:#00B9B9;"></i>&nbsp;<span>Total Payable Interest</span></div>
@@ -68,7 +68,6 @@
  </div>
 </div>
 </div>
-<br>
 <br>
 <div class="container mrg-top">
 <div class="table-responsive">

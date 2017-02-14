@@ -191,7 +191,7 @@
 					</div>
 					<div class="col-md-4 padd">
 				
-					<img src="images/Report.png" alt="report-img" class="img-responsive hidden-sm pad crd-rpt">
+					<i class="sprite sprite-Report"></i>
 			
 					<a class="tp-margin" href="{{URL::to('credit-report-otp')}}">Apply For Credit Report</a>
 					</div>

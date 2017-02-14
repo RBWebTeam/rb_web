@@ -1,5 +1,7 @@
 <?php if($result->questionToCustomer!=null){ ?> 
 			<form id="generate_question2" name="generate_question1"> 
+			<h2>Online Authentication</h2>
+			<img src="{{URL::to('images/Experian_logo.png')}}" style="margin:0 auto;"/>
 			<h3> Please answer the questions</h3>
 			{{ csrf_field()}}
 				<label>

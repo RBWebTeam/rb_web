@@ -79,36 +79,7 @@ class CompareController extends Controller
         $data=$req->all();
         return view('emi/emi_cal')->with($data);
     }
-    public function credit_report(){
-      $keywords='credit report free,credit score,free credit report and score,how to get free credit report ';
-      $data['title']='Check your Credit Score online on Rupeeboss.com';
-      $data['description']='Check your free credit scores, reports and insights. Get the info you need to take control of your credit from Rupeeboss.com';
-      $data['telephone']=DB::table('experian_telephonetype')
-      ->select('Telephone_Name','Telephone_Value')
-      ->get();
-      $data['city'] = DB::table('city_master')
-      ->select('City_Name','state_id','City_Id')
-      ->get();
-      $data['state'] = DB::table('experian_state_master')
-      ->select('State_Id','State_Code','State_Name')
-      ->get();
-      $contact=Session::get('contact');
-      $login=Session::get('is_login');
-       if($login){
-          //if already login then remove contact from old seessions
-          Session::forget('contact');
-          }
-
-      if($contact || $login){
-          return view('credit-report')->with($data)->with('keywords',$keywords);
-        }else{
-           return view('credit-report-otp');
-        }
-     
-     //  print "<pre>";
-      //print_r($data['state']);exit();
-     
-    }
+    
 
     public function otp_page(){
       if(Session::get('is_login'))

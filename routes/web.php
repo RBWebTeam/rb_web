@@ -80,6 +80,7 @@ Route::get('credit-card','HomeController@credit_card');
 Route::get('savings-account','HomeController@savings_account');
 Route::get('RBA-login','HomeController@RBA_login');
 Route::post('RBA-login','HomeController@RBA_register');
+// Route::post('RBA-login','HomeController@RBA_employee');
 Route::get('lead-status','HomeController@lead_status');
 Route::get('apply-lead-online','ProfileController@applyonline');
 //new loans test

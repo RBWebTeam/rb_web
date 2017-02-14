@@ -32,8 +32,8 @@ elixir(function(mix) {
 		'../../../public/fonts/Raleway.css',
 		'../../../public/css/smoothness.css',
 		 '../../../public/css/autocomp.css',
-		 '../../../public/css/font-awesome.min.css'
-
+		 '../../../public/css/font-awesome.min.css',
+		 '../../../public/css/jquery-ui.min.css'
 		
     ], 'public/css/mysite.css');
 });

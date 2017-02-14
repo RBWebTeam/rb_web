@@ -63,7 +63,8 @@ class ExperianController extends Controller
             curl_close($ch);
            // print_r($error);exit();
             if($error){
-                return "something went wrong";
+                return view('went-wrong');
+               // return "something went wrong";
             }else{
                 $x=str_replace('"','',$http_result);
                 $new_data=explode('~', $x);

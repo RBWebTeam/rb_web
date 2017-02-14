@@ -5,14 +5,16 @@
 								
 				<div class="col-md-12">
 					<div class="row pad11 white-bg comp-pg">
-               <h2>Online Authentication</h2>
-              <img src="{{URL::to('images/Experian_logo.png')}}" style="margin:0 auto;"/>
+              
+              
             
 
 			<div id="frst_qstn"> 
 			
 			<?php if($result->questionToCustomer!=null){ ?> 
 			<form id="generate_question" name="generate_question"> 
+			 <h2>Online Authentication</h2>
+			 <img src="{{URL::to('images/Experian_logo.png')}}" style="margin:0 auto;"/>
 			<h3> Please answer the questions</h3>
 			{{ csrf_field()}}
 			

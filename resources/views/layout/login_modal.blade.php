@@ -22,9 +22,7 @@
               </div>
             </div>
             <div class="row" id="forgot-password-show" class="displaynone">
-              <div class="col-xs-6">
-                <h3>Forgot Password</h3>
-              </div>
+              
             </div>
             <hr>
           </div>

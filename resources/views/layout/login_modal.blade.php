@@ -5,7 +5,7 @@
     
       <!-- Modal content-->
          <div class="modal-content">
-          <div class="block" id="login">
+          <div s id="login">
              <!-- login-->
          
       <div class="modal-body login-modal">  
@@ -21,8 +21,10 @@
                 <a href="#" id="register-form-link">Register</a>
               </div>
             </div>
-            <div class="row" id="forgot-password-show" class="displaynone">
-              
+            <div class="row" id="forgot-password-show" class="displaynone" >
+              <div class="col-xs-6">
+                <h3>Forgot Password</h3>
+              </div>
             </div>
             <hr>
           </div>

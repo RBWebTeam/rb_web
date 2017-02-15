@@ -98,7 +98,7 @@ class HomeController extends Controller
 	}
 
    public function RBA_register(Request $req){
-		print_r($req->all()	);
+		// print_r($req->all()	);
 		$query=DB::table('rba_register')
 		->insert(['Name'=>$req->name,
 			     'Email'=>$req->email,
@@ -116,8 +116,7 @@ class HomeController extends Controller
 
                 $post_data='{"mobNo":"'.$req->contact.'","msgData":"Thank you for registering.- RupeeBoss.com",
                     "source":"WEB"}';
-                //$url = "http://beta.services.rupeeboss.com/LoginDtls.svc/xmlservice/sendSMS";
-                $url = "http://services.rupeeboss.com/LoginDtls.svc/xmlservice/sendSMS";
+                $url = "http://beta.services.rupeeboss.com/LoginDtls.svc/xmlservice/sendSMS";
                 $ch = curl_init();
                 curl_setopt($ch, CURLOPT_VERBOSE, 1);
                 curl_setopt( $ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
@@ -139,12 +138,12 @@ class HomeController extends Controller
 
 	}
 
-	public function RBA_employee(Request $req){
+	// public function RBA_employee(Request $req){
 
 
-		echo('ok..........');
+	// 	echo('ok..........');
 
-	}
+	// }
 
 	
 }

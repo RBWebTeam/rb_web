@@ -99,6 +99,7 @@ class ExperianController extends Controller
             curl_close($ch);
            // print_r($error);exit();
             if($error){
+              $log=DB::table('experian_response_failed_case')->insert(['contact'=>Session::get('contact_cScore'), 'email'=>Session::get('email_cScore'), 'pan'=>Session::get('pan_cScore'),'response'=>$error, 'created_at'=>date("Y-m-d H:i:s")]);
                 return view('went-wrong');
                // return "something went wrong";
             }else{
@@ -114,6 +115,7 @@ class ExperianController extends Controller
 
 
                 }else{
+                  $log=DB::table('experian_response_failed_case')->insert(['contact'=>Session::get('contact_cScore'), 'email'=>Session::get('email_cScore'), 'pan'=>Session::get('pan_cScore'),'response'=>$http_result, 'created_at'=>date("Y-m-d H:i:s")]);
                  return view('went-wrong');
                 }
             }

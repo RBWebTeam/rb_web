@@ -11,6 +11,7 @@ class ApiController extends Controller
 	
 	public function compare(Request $req){
 		//handling corner cases
+		//print_r($req->all());exit();
 		try{
 			if(!isset($req['quote_id']) && $req['quote_id']==0 && !$req['LoanTenure'] ){
 					return Response::json(array(

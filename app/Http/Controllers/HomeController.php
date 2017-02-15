@@ -98,7 +98,7 @@ class HomeController extends Controller
 	}
 
    public function RBA_register(Request $req){
-		print_r($req->all()	);
+		// print_r($req->all()	);
 		$query=DB::table('rba_register')
 		->insert(['Name'=>$req->name,
 			     'Email'=>$req->email,

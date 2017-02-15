@@ -162,19 +162,19 @@ class CompareController extends Controller
     public function switchme($loan){
         // print"<pre>";print_r($loan);exit();
       if ($loan=="home-loan") {
-        $data['title']='Transfer Home Loan Balance Online';
+        $data['title']='Transfer Home Loan Balance Online on Rupeeboss.com';
         $keywords='Home loan balance transfer,How to transfer home loan,Home loan transfer,Home loan refinance,Home Loan Balance Transfer Process ,Online Balance Transfer,Transferring Home Loan,Home Loan Balance Transfer Calculator';
-        $data['description']='Lets find out how much you can save. Compare home loan transfer rates from one bank to another and Get low interest rate by applying for Home Loan Balance Transfer on Rupeeboss.com';
+        $data['description']='Lets Find Out How Much You Can Save. Compare home loan transfer rate from onebank to another & apply at low rate for Home Loan Balance Transfer on Rupeeboss.com';
         $alert_rate=DB::select("SELECT MIN(roi) as roi FROM bank_product_web_intrest where product_id=12 and roi_type='Floating'");
       }elseif ($loan=="personal-loan") {
-         $data['title']='Transfer Personal Loan Balance Online';
+         $data['title']='Transfer Personal Loan Balance Online on Rupeeboss.com';
         $keywords='How to Transfer Personal Loan Balance Online,Personal Loan Balance Transfer,Personal Loan Balance Transfer Eligibility Criteria,Personal Loan Balance Transfer Interest rates,Personal Loan Balance Transfer Calculator,Personal Loan Balance Transfer Process ';
-        $data['description']='Lets find out how much you can save. Compare and Apply to multiple banks for the Best offers on personal loan balance transfer On Rupeeboss.com.';
+        $data['description']='Lets Find Out How Much You Can Save. Compare and Apply to multiple banks for theBest offers on personal loan balance transfer On Rupeeboss.com';
         $alert_rate=DB::select("SELECT MIN(roi) as roi FROM bank_product_web_intrest where product_id=9 " );
       }else{
-         $data['title']='Transfer Loan Against Property Online';
+         $data['title']='Transfer Loan Against Property Online on Rupeeboss.com';
         $keywords='Loan Against Property Transfer,Loan Against Property EMI Calculator,Loan Against Property Balance Transfer Process,Loan Against Property Balance Transfer Interest rates,Compare Loan Against Property Balance Transfer';
-        $data['description']='Lets find out how much you can save.Transfer your Loan Against Property at lowest interest Rate. Enter Details, Compare and Switch for balance Transfer on Rupeeboss.com';
+        $data['description']='Lets Find Out How Much You Can Save.Transfer your Loan Against Property at lowest interestRate. Compare and Switch for balance Transfer on Rupeeboss.com';
         $alert_rate=DB::select("SELECT MIN(roi) as roi FROM bank_product_web_intrest where product_id=7 and roi_type='Floating'");
       }
       $data['loan'] =$loan;

@@ -14,7 +14,7 @@ class ExperianController extends Controller
     public function credit_report(){
       $keywords='credit report free,credit score,free credit report and score,how to get free credit report ';
       $data['title']='Check your Credit Score online on Rupeeboss.com';
-      $data['description']='Check your free credit scores, reports and insights. Get the info you need to take control of your credit from Rupeeboss.com';
+      $data['description']='Check Your Free Credit Score, Report and Insights. Get the info you need to take control of your credit from Rupeeboss.com';
 
       $voucher=DB::table('experian_vouchers')
       ->select('voucher')

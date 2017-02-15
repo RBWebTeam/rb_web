@@ -165,16 +165,24 @@ class CompareController extends Controller
         $data['title']='Transfer Home Loan Balance Online';
         $keywords='Home loan balance transfer,How to transfer home loan,Home loan transfer,Home loan refinance,Home Loan Balance Transfer Process ,Online Balance Transfer,Transferring Home Loan,Home Loan Balance Transfer Calculator';
         $data['description']='Lets find out how much you can save. Compare home loan transfer rates from one bank to another and Get low interest rate by applying for Home Loan Balance Transfer on Rupeeboss.com';
+        $alert_rate=DB::select("SELECT MIN(roi) as roi FROM bank_product_web_intrest where product_id=12 and roi_type='Floating'");
       }elseif ($loan=="personal-loan") {
          $data['title']='Transfer Personal Loan Balance Online';
         $keywords='How to Transfer Personal Loan Balance Online,Personal Loan Balance Transfer,Personal Loan Balance Transfer Eligibility Criteria,Personal Loan Balance Transfer Interest rates,Personal Loan Balance Transfer Calculator,Personal Loan Balance Transfer Process ';
         $data['description']='Lets find out how much you can save. Compare and Apply to multiple banks for the Best offers on personal loan balance transfer On Rupeeboss.com.';
+        $alert_rate=DB::select("SELECT MIN(roi) as roi FROM bank_product_web_intrest where product_id=9 " );
       }else{
          $data['title']='Transfer Loan Against Property Online';
         $keywords='Loan Against Property Transfer,Loan Against Property EMI Calculator,Loan Against Property Balance Transfer Process,Loan Against Property Balance Transfer Interest rates,Compare Loan Against Property Balance Transfer';
         $data['description']='Lets find out how much you can save.Transfer your Loan Against Property at lowest interest Rate. Enter Details, Compare and Switch for balance Transfer on Rupeeboss.com';
+        $alert_rate=DB::select("SELECT MIN(roi) as roi FROM bank_product_web_intrest where product_id=7 and roi_type='Floating'");
       }
       $data['loan'] =$loan;
+      
+      $data['alert_rate']=$alert_rate[0]->roi;
+      //print_r($data['alert_rate']);exit();
+      //->get();
+      //print_r();exit();
       return view('emi/switch_me')->with($data)->with('keywords',$keywords);
     }
 
@@ -200,6 +208,7 @@ class CompareController extends Controller
         if($getQuery[0]->roi==0){
             $getQuery[0]->roi=1;
           }
+          
             $new_rate=$getQuery[0]->roi/12/100;
             // print_r($new_rate);exit();
             $new_amount = $loanamount * $new_rate * (pow(1 + $new_rate, $loanterm) / (pow(1 + $new_rate, $loanterm) - 1));

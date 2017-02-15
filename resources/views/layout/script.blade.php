@@ -1348,6 +1348,7 @@ $("#city_name").on("autocompletechange", function(event,ui) {
 <!--scroll up function  -->
 <script type='text/javascript'>
   $(document).ready(function(){ 
+   
     $('.close1').click(function(){
       location.reload();
     });

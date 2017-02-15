@@ -89,8 +89,8 @@
     <div class="col-md-12 pad">
   <button class="btn btn-success pull-left ">Submit</button>
   <div class="pull-right">
-          <label><input type="radio" name="Year" id="Year" value="" checked="checked"> Yr</label>
-             <label><input type="radio" name="Year" id="Month" value=""> Mo</label>
+          <label><input type="radio" name="Year" id="Year" value="" checked="checked"> Year</label>
+             <label><input type="radio" name="Year" id="Month" value=""> Month</label>
     </div>
     </div>
   

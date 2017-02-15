@@ -157,9 +157,17 @@ class ExperianController extends Controller
             $res1=json_decode($http_result);
             $res=json_decode($res1);
                // print_r($res->questionToCustomer->question);exit();
-                
+
+            //if record already in buero of experian
+            if( $res->responseJson=='passedReport'){
+            $returnHTML = view('experian-question2',['result'=>$res,'stage1hitid'=>$req->stage1hitid,'stage2hitid'=>$req->stage2hitid,'stage2sessionid'=>$req->stage2sessionid,'qs'=>$req->question_count,'raw'=>$http_result])->render();
+            }
+
             return view('experian-question',['result'=>$res,'stage1hitid'=>$new_data[0],'stage2hitid'=>$new_data[1],'stage2sessionid'=>$new_data[3],'qs'=>$qs]);
+
+
         }catch(\Exception $e){
+          $log=DB::table('experian_response_failed_case')->insert(['contact'=>Session::get('contact_cScore'), 'email'=>Session::get('email_cScore'), 'pan'=>Session::get('pan_cScore'),'response'=>$new_data, 'created_at'=>date("Y-m-d H:i:s")]);
             return $e;
         }
     }

@@ -41,7 +41,7 @@ class FormController extends Controller
     $http_result = curl_exec($ch);
     $error = curl_error($ch);
     $http_code = curl_getinfo($ch ,CURLINFO_HTTP_CODE);
-     //print_r($http_result);exit();
+     // print_r($http_result);exit();
     curl_close($ch);
     if($http_result==1){
         return 'true';

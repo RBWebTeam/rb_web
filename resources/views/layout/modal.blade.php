@@ -173,8 +173,12 @@
           if($myString){
             
             $myArray = explode('@', $_GET['referrer']);
-            $empid = $myArray[0];
-            $brokerid =$myArray[1];
+            if(isset($myArray[0])){
+              $empid = $myArray[0];
+            }
+            if(isset($myArray[1])){
+             $brokerid =$myArray[1];
+            }
             if(isset($myArray[2])){
               $source =$myArray[2];
             }
@@ -240,8 +244,14 @@
           if($myString){
             
             $myArray = explode('@', $_GET['referrer']);
-            $empid = $myArray[0];
-            $brokerid =$myArray[1];
+            if(isset($myArray[0])){
+              $empid = $myArray[0];
+            }
+            if(isset($myArray[1])){
+             $brokerid =$myArray[1];
+            }
+           
+            
             if(isset($myArray[2])){
               $source =$myArray[2];
             }

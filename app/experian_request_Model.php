@@ -11,6 +11,7 @@ class experian_request_model extends Model
     protected $fillable = ['clientName', 'hitId', 'voucherCode', 'firstName', 'middleName', 'surName', 'dob', 'gender', 'flatPlotHouseNo', 'society', 'locality', 'city', 'state', 'pincode', 'mobileNo', 'telephoneNo', 'telephoneType', 'email', 'panNo', 'passport', 'aadhaar', 'voterid', 'driverLicenseNo', 'rationcard', 'created_at', 'updated_at'];
     public function store(Request $request)
     {
+            //print_r($request->all());exit();
         $table = new experian_request_model();
         $input = $request->all();
          $id = $table::create($input)->id;

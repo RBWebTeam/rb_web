@@ -54,8 +54,12 @@ class ExperianController extends Controller
         try{
             $qs=0;
             $post_data=$req->all();
+            //print_r($post_data);exit();
             $voucher=$post_data['voucherCode'];
             $update_voucher=DB::select(" call usp_update_experian_voucher ('".$voucher."',1)");
+            // $post_data['voucherCode']=$update_voucher;
+            // $req['voucherCode']=$update_voucher;
+            
             // print "<pre>";
             // print_r($update_voucher);exit();
             //unsetting terms and condition as no need to save in DB
@@ -81,7 +85,7 @@ class ExperianController extends Controller
             
             $save=new experian_request_model(); 
             $id=$save->store($req);
-        	$url = "http://api.rupeeboss.com/CreditAPI.svc/LandingPageSubmit";    
+        	   $url = "http://api.rupeeboss.com/CreditAPI.svc/LandingPageSubmit";    
             $ch = curl_init();
             curl_setopt($ch, CURLOPT_VERBOSE, 1);
             curl_setopt($ch, CURLOPT_URL, $url);
@@ -97,10 +101,12 @@ class ExperianController extends Controller
             $http_code = curl_getinfo($ch ,CURLINFO_HTTP_CODE);
              
             curl_close($ch);
-           // print_r($error);exit();
+           
             if($error){
+
               $log=DB::table('experian_response_failed_case')->insert(['contact'=>Session::get('contact_cScore'), 'email'=>Session::get('email_cScore'), 'pan'=>Session::get('pan_cScore'),'response'=>$error, 'created_at'=>date("Y-m-d H:i:s")]);
-                return view('went-wrong');
+              return $error;
+              //  return view('went-wrong');
                // return "something went wrong";
             }else{
                 $x=str_replace('"','',$http_result);
@@ -108,7 +114,7 @@ class ExperianController extends Controller
                 
                 
                 if($x){
-                    //return ($new_data);exit();
+                    //return ($http_result);exit();
 
                     Session::put('Lead_Id',$new_data[6]);
                     return $this->gen_ques($new_data,0);
@@ -121,8 +127,8 @@ class ExperianController extends Controller
             }
         }catch(\Exception $e){
 
-            //return ($e);
             return view('went-wrong');
+            //return view('went-wrong');
         }
 	}
 
@@ -156,19 +162,24 @@ class ExperianController extends Controller
 
             $res1=json_decode($http_result);
             $res=json_decode($res1);
-               // print_r($res->questionToCustomer->question);exit();
+              // print_r($res);exit();
 
             //if record already in buero of experian
             if( $res->responseJson=='passedReport'){
-            $returnHTML = view('experian-question2',['result'=>$res,'stage1hitid'=>$req->stage1hitid,'stage2hitid'=>$req->stage2hitid,'stage2sessionid'=>$req->stage2sessionid,'qs'=>$req->question_count,'raw'=>$http_result])->render();
+
+             $result=$res->showHtmlReportForCreditReport;
+            $returnHTML = ['result'=>$res,'stage1hitid'=>$new_data[0],'stage2hitid'=>$new_data[1],'stage2sessionid'=>$new_data[3],'qs'=>$qs,'raw'=>$http_result];
+            return view('experian-question-bypassed')->with($returnHTML);
+//             return response()->json(array('success' => true,'html'=>$returnHTML)); 
+
+            }
+            else{
+              return view('experian-question',['result'=>$res,'stage1hitid'=>$new_data[0],'stage2hitid'=>$new_data[1],'stage2sessionid'=>$new_data[3],'qs'=>$qs]);
             }
 
-            return view('experian-question',['result'=>$res,'stage1hitid'=>$new_data[0],'stage2hitid'=>$new_data[1],'stage2sessionid'=>$new_data[3],'qs'=>$qs]);
-
-
         }catch(\Exception $e){
-          $log=DB::table('experian_response_failed_case')->insert(['contact'=>Session::get('contact_cScore'), 'email'=>Session::get('email_cScore'), 'pan'=>Session::get('pan_cScore'),'response'=>$new_data, 'created_at'=>date("Y-m-d H:i:s")]);
-            return $e;
+          $log=DB::table('experian_response_failed_case')->insert(['contact'=>Session::get('contact_cScore'), 'email'=>Session::get('email_cScore'), 'pan'=>Session::get('pan_cScore'),'response'=>$http_result, 'created_at'=>date("Y-m-d H:i:s")]);
+            return view('went-wrong');
         }
     }
 
@@ -202,7 +213,9 @@ class ExperianController extends Controller
             $res1=json_decode($http_result);
             $res=json_decode($res1);
             if($res->questionToCustomer!=null || $res->responseJson=='passedReport'){
+
              $returnHTML = view('experian-question2',['result'=>$res,'stage1hitid'=>$req->stage1hitid,'stage2hitid'=>$req->stage2hitid,'stage2sessionid'=>$req->stage2sessionid,'qs'=>$req->question_count,'raw'=>$http_result])->render();
+
             }else{
                 $log=DB::table('experian_response_failed_case')->insert(['contact'=>Session::get('contact_cScore'), 'email'=>Session::get('email_cScore'), 'pan'=>Session::get('pan_cScore'),'response'=>$res->responseJson, 'created_at'=>date("Y-m-d H:i:s")]);
                  $returnHTML = view('went-wrong');
@@ -220,6 +233,9 @@ class ExperianController extends Controller
             return response()->json(array('success' => false,'html'=>$returnHTML));
         }  
     }
+
+
+
 public function show_stored_record($data){
     return view('stored-score')->with('data',$data);
     

@@ -483,6 +483,7 @@ run_else:
 		 $data=DB::table('bank_quote_api_request')
 		 ->select('ID','ApplicantNme','LoanRequired','ApplicantIncome','Turnover','status','ProductId')
         ->where('BrokerId','=',$id)
+        ->where('ProductId','=','12')
         ->get();
         //calling Erp api
        
@@ -546,6 +547,7 @@ run_else:
 		 $data=DB::table('bank_quote_api_request')
 		 ->select('ID','ApplicantNme','LoanRequired','ApplicantIncome','Turnover','status','ProductId')
         ->where('BrokerId','=',$id)
+        ->where('ProductId','=','9')
         ->get();
         //calling Erp api
        

@@ -175,7 +175,7 @@
             $myArray = explode('@', $_GET['referrer']);
             $empid = $myArray[0];
             $brokerid =$myArray[1];
-            if($myArray[2]){
+            if(isset($myArray[2])){
               $source =$myArray[2];
             }
             
@@ -242,7 +242,7 @@
             $myArray = explode('@', $_GET['referrer']);
             $empid = $myArray[0];
             $brokerid =$myArray[1];
-            if($myArray[2]){
+            if(isset($myArray[2])){
               $source =$myArray[2];
             }
             //$a= str_replace('�', '', $brokerid);

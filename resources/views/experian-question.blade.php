@@ -96,6 +96,7 @@
 	                $('#generate_question').hide();
 	                $('#nxt_qstn').html("");
 	                $('#nxt_qstn').html(msg.html);
+	                
                 }else{
                  window.location.href ="{{URL::to('went-wrong')}}";
                 }

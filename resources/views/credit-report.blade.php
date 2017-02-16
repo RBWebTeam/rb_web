@@ -86,7 +86,7 @@
 														<?php }?>
 											</div>
 											<div class="col-md-4">
-												<input type="text" class="form-control" id="telephoneNo" name="telephoneNo" placeholder="Telephone No" required="" onkeypress="return fnAllowNumeric(event)" maxlength="10" minlength="10">
+												<input type="text" class="form-control" id="telephoneNo" name="telephoneNo" placeholder="Telephone No"  onkeypress="return fnAllowNumeric(event)" maxlength="10" minlength="10">
 											</div>
 											<div class="col-md-4">
 												<select required name="telephoneType" class="drop-arr">

@@ -93,7 +93,9 @@
 		 		
 		 		print_r($result->showHtmlReportForCreditReport);
 		 		
-
+		 		?>
+		 		<div><button id="print_report" class="btn btn-success">Print</button></div>
+		 		<?php
 		 		
 			}else{
 				print_r("Ooops... Something went wrong.");

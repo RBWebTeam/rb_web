@@ -1749,6 +1749,19 @@ fbq('track', 'PageView');
   ga('send', 'pageview');
 
 </script>
+<!-- print credit report -->
+<script type="text/javascript">
+        $("#print_report").click( function () {
+            var divContents = $("#fh5co-hero").html();
+            var printWindow = window.open('', '', '');
+            printWindow.document.write('<html><head><title>RupeeBoss Credit Report</title>');
+            printWindow.document.write('</head><body >');
+            printWindow.document.write(divContents);
+            printWindow.document.write('</body></html>');
+            printWindow.document.close();
+            printWindow.print();
+        });
+    </script>
 </body>
 </html>
 <!-- login Start-->

@@ -64,15 +64,16 @@
 			<p>processed {{$result->responseJson}}</p>
 			<?php }?>
 			</div>
-					<div id="nxt_qstn"></div>
+					
 			</div>
 
 			</aside>
+			<div id="nxt_qstn"></div>
 		</div>
 
 		</div>
 		</div>
-</div>
+	</div>
 @include('layout.footer')
 @include('layout.script')
 <script type="text/javascript">
@@ -96,6 +97,7 @@
 	                $('#generate_question').hide();
 	                $('#nxt_qstn').html("");
 	                $('#nxt_qstn').html(msg.html);
+	                
                 }else{
                  window.location.href ="{{URL::to('went-wrong')}}";
                 }

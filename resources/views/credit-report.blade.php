@@ -114,17 +114,17 @@
 												<input type="text" id="pan" name="panNo" class="form-control" placeholder="Pancard*" required="">
 											</div>
 											<div class="col-md-4">
-												<input type="text" class="form-control" placeholder="Passport No*" name="passport"	>
+												<input type="text" class="form-control" placeholder="Passport No" name="passport"	>
 											</div>
 											<div class="col-md-4">
-												<input type="text" class="form-control" placeholder="Aadhaar No*" name="aadhaar">
+												<input type="text" class="form-control" placeholder="Aadhaar No" name="aadhaar">
 											</div>
 
 											<div class="col-md-4">
-												<input type="text" class="form-control" placeholder="Voter Id*" name="voterid" >
+												<input type="text" class="form-control" placeholder="Voter Id" name="voterid" >
 											</div>
 											<div class="col-md-4">
-												<input type="text" class="form-control" placeholder="Driving License No*" name="driverLicenseNo" >
+												<input type="text" class="form-control" placeholder="Driving License No" name="driverLicenseNo" >
 											</div>
 											<div class="col-md-4">
 												<input type="text" class="form-control" placeholder="Ration card No" name="rationcard" >

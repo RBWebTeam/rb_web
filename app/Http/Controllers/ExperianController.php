@@ -105,13 +105,18 @@ class ExperianController extends Controller
             if($error){
 
               $log=DB::table('experian_response_failed_case')->insert(['contact'=>Session::get('contact_cScore'), 'email'=>Session::get('email_cScore'), 'pan'=>Session::get('pan_cScore'),'response'=>$error, 'created_at'=>date("Y-m-d H:i:s")]);
-              return $error;
-              //  return view('went-wrong');
-               // return "something went wrong";
+              //return $error;
+                return view('went-wrong');
             }else{
                 $x=str_replace('"','',$http_result);
                 $new_data=explode('~', $x);
-                
+                //print_r($new_data);exit();
+                if($new_data[0]){
+
+                  //$new_data=["empty","3412","eqweqwe","wrweriweruoi"];
+                  
+                  $saved_req=$this->update_req_with_hitId($new_data,$id);
+                }
                 
                 if($x){
                     //return ($http_result);exit();
@@ -236,11 +241,18 @@ class ExperianController extends Controller
 
 
 
-public function show_stored_record($data){
+  public function show_stored_record($data){
     return view('stored-score')->with('data',$data);
     
-}   
+  }   
     
+  public function update_req_with_hitId($parse,$id){
+   
+             $save=DB::table('experian_request')
+              ->where('id',$id)
+              ->update(['stage1hitid' => $parse[0],'stage2hitid' => $parse[1],'stage2sessionid' => $parse[3]]);  
+       
+  }   
 
 
 }

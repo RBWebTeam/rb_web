@@ -34,8 +34,8 @@
 										<div class="col-md-4">
 											<input type="text" class="form-control lastReporteddate" id="dob" name="dob" placeholder="Date of Birth*" required>
 										</div>
-										<div class="col-md-8">Male &nbsp;&nbsp;
-											<input type="radio" name="gender" class="radiob" required value="1">&nbsp;&nbsp; Female &nbsp;&nbsp;<input type="radio" name="gender" class="radiob" value="2">
+										<div class="col-md-8"><h4>Male &nbsp;&nbsp;
+											<input type="radio" name="gender" class="radiob" required value="1">&nbsp;&nbsp; Female &nbsp;&nbsp;<input type="radio" name="gender" class="radiob" value="2"></h4>
 										</div>
 
 									</div>
@@ -90,7 +90,7 @@
 											</div>
 											<div class="col-md-4">
 												<select required name="telephoneType" class="drop-arr">
-												<option disabled selected value>Select Telephone Type</option>
+												
 											  @foreach($telephone as $tele)
 				      						 <option value="{{ $tele->Telephone_Value }}" >
 				      						 	<span style="font-family: bold; ">{{ $tele->Telephone_Name }}
@@ -109,25 +109,25 @@
 									</div>
 									<div class="row">
 										<div class="form-group">
-											<h4 class="hdr">&nbsp;&nbsp;&nbsp;&nbsp;Identity Details</h4>
+											<h4 class="hdr">&nbsp;&nbsp;&nbsp;&nbsp;Identity Details<span>(Atleast One identity proof is required)</span></h4>
 											<div class="col-md-4">
 												<input type="text" id="pan" name="panNo" class="form-control" placeholder="Pancard*" required="">
 											</div>
 											<div class="col-md-4">
-												<input type="text" class="form-control" placeholder="Passport No" name="passport"	>
+												<input type="text" class="form-control" placeholder="Passport No" name="passport" id="passport"	>
 											</div>
 											<div class="col-md-4">
-												<input type="text" class="form-control" placeholder="Aadhaar No" name="aadhaar">
+												<input type="text" class="form-control" placeholder="Aadhaar No" name="aadhaar" id="aadhaar">
 											</div>
 
 											<div class="col-md-4">
-												<input type="text" class="form-control" placeholder="Voter Id" name="voterid" >
+												<input type="text" class="form-control" placeholder="Voter Id" name="voterid" id="voterid" >
 											</div>
 											<div class="col-md-4">
-												<input type="text" class="form-control" placeholder="Driving License No" name="driverLicenseNo" >
+												<input type="text" class="form-control" placeholder="Driving License No" name="driverLicenseNo" id="driverLicenseNo" >
 											</div>
 											<div class="col-md-4">
-												<input type="text" class="form-control" placeholder="Ration card No" name="rationcard" >
+												<input type="text" class="form-control" placeholder="Ration card No" name="rationcard" id="rationcard">
 											</div>
 										<div class="col-md-12">
 										<input type="checkbox" name="terms" required>
@@ -149,11 +149,15 @@
 										</div>
 
 										</div>
+										<div id="id_error" class="error" style="display: none;">Atleast one Identity Proof is required</div>
 										<div class="col-md-12">
 									<button class="btn btn-primary btn-outline with-arrow animate-box fadeInUp animated" value="Get Checked" onclick ="return checkButton()" >Confirm & Continue<i class="icon-arrow-right"></i>
 									</button>
 									<p><b>All <mark style="color:red">*</mark>fields are mandatory.</b></p>
 									</div>
+									<div class="iframeloading" style= "display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
+                     <img src="images/ajaxloader.gif" alt="loading" style="top: 50%; position: relative; left: 50%;"  />
+                                        </div>
 								</div>
 							</form>
 					</div>
@@ -176,7 +180,11 @@ if(document.Experian_form.agreement1.checked == true){
 else if(document.Experian_form.agreement2.checked  == true){
 	alert("Please accept the terms before proceeding");
 	return false;
-}
+}else if(!($("#pan").val() || $("#passport").val() || $("#aadhaar").val() || $("#voterid").val() ||$("#driverLicenseNo").val() || $("#rationcard").val() )){
+        $('#id_error').show();
+    return false;
+}       
+  $('#id_error').hide();
 }
 
 

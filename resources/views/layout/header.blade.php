@@ -22,7 +22,7 @@
 	@else
 	     <link rel="canonical" href="{!! request()->fullUrl() !!}"  />
 	@endif
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script>
+	
 	
 
 	</head>

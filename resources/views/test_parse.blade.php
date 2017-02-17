@@ -19,7 +19,7 @@
                                 
                                     <div class="row">
                                         <div class="form-group">
-                                            <h4 class="hdr">&nbsp;&nbsp;&nbsp;&nbsp;Identity Details</h4>
+                                            <h4 class="hdr">&nbsp;&nbsp;&nbsp;&nbsp;Identity Details(One of identity field is required)</h4>
                                             <div class="col-md-4">
                                                 <input type="text" id="pan" name="panNo" class="form-control" placeholder="Pancard*" required="required">
                                             </div>

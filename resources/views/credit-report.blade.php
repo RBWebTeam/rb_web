@@ -34,8 +34,8 @@
 										<div class="col-md-4">
 											<input type="text" class="form-control lastReporteddate" id="dob" name="dob" placeholder="Date of Birth*" required>
 										</div>
-										<div class="col-md-8">Male &nbsp;&nbsp;
-											<input type="radio" name="gender" class="radiob" required value="1">&nbsp;&nbsp; Female &nbsp;&nbsp;<input type="radio" name="gender" class="radiob" value="2">
+										<div class="col-md-8"><h4>Male &nbsp;&nbsp;
+											<input type="radio" name="gender" class="radiob" required value="1">&nbsp;&nbsp; Female &nbsp;&nbsp;<input type="radio" name="gender" class="radiob" value="2"></h4>
 										</div>
 
 									</div>
@@ -90,7 +90,7 @@
 											</div>
 											<div class="col-md-4">
 												<select required name="telephoneType" class="drop-arr">
-												<option disabled selected value>Select Telephone Type</option>
+												
 											  @foreach($telephone as $tele)
 				      						 <option value="{{ $tele->Telephone_Value }}" >
 				      						 	<span style="font-family: bold; ">{{ $tele->Telephone_Name }}
@@ -109,7 +109,7 @@
 									</div>
 									<div class="row">
 										<div class="form-group">
-											<h4 class="hdr">&nbsp;&nbsp;&nbsp;&nbsp;Identity Details</h4>
+											<h4 class="hdr">&nbsp;&nbsp;&nbsp;&nbsp;Identity Details<span>(Atleast One identity proof is required)</span></h4>
 											<div class="col-md-4">
 												<input type="text" id="pan" name="panNo" class="form-control" placeholder="Pancard*" required="">
 											</div>

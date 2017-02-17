@@ -32,6 +32,7 @@ class ExperianController extends Controller
       ->get();
       $data['state'] = DB::table('experian_state_master')
       ->select('State_Id','State_Code','State_Name')
+      ->orderBy('State_Name', 'asc')
       ->get();
       $contact=Session::get('contact');
       $login=Session::get('is_login');

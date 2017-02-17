@@ -55,14 +55,10 @@ class ExperianController extends Controller
         try{
             $qs=0;
             $post_data=$req->all();
-            //print_r($post_data);exit();
+            
             $voucher=$post_data['voucherCode'];
             $update_voucher=DB::select(" call usp_update_experian_voucher ('".$voucher."',1)");
-            // $post_data['voucherCode']=$update_voucher;
-            // $req['voucherCode']=$update_voucher;
             
-            // print "<pre>";
-            // print_r($update_voucher);exit();
             //unsetting terms and condition as no need to save in DB
             Session::put('f_name_cScore', $req['firstName']." ".$req['middleName']);
             Session::put('l_name_cScore',$req['surName']);

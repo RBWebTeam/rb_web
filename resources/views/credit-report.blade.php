@@ -114,20 +114,20 @@
 												<input type="text" id="pan" name="panNo" class="form-control" placeholder="Pancard*" required="">
 											</div>
 											<div class="col-md-4">
-												<input type="text" class="form-control" placeholder="Passport No" name="passport"	>
+												<input type="text" class="form-control" placeholder="Passport No" name="passport" id="passport"	>
 											</div>
 											<div class="col-md-4">
-												<input type="text" class="form-control" placeholder="Aadhaar No" name="aadhaar">
+												<input type="text" class="form-control" placeholder="Aadhaar No" name="aadhaar" id="aadhaar">
 											</div>
 
 											<div class="col-md-4">
-												<input type="text" class="form-control" placeholder="Voter Id" name="voterid" >
+												<input type="text" class="form-control" placeholder="Voter Id" name="voterid" id="voterid" >
 											</div>
 											<div class="col-md-4">
-												<input type="text" class="form-control" placeholder="Driving License No" name="driverLicenseNo" >
+												<input type="text" class="form-control" placeholder="Driving License No" name="driverLicenseNo" id="driverLicenseNo" >
 											</div>
 											<div class="col-md-4">
-												<input type="text" class="form-control" placeholder="Ration card No" name="rationcard" >
+												<input type="text" class="form-control" placeholder="Ration card No" name="rationcard" id="rationcard">
 											</div>
 										<div class="col-md-12">
 										<input type="checkbox" name="terms" required>
@@ -181,13 +181,9 @@ else if(document.Experian_form.agreement2.checked  == true){
 	alert("Please accept the terms before proceeding");
 	return false;
 }else if(!($("#pan").val() || $("#passport").val() || $("#aadhaar").val() || $("#voterid").val() ||$("#driverLicenseNo").val() || $("#rationcard").val() )){
-   
         $('#id_error').show();
-   
-    return ;
+    return false;
 }       
-
-
   $('#id_error').hide();
 }
 

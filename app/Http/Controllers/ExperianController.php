@@ -116,6 +116,10 @@ class ExperianController extends Controller
                   //$new_data=["empty","3412","eqweqwe","wrweriweruoi"];
                   
                   $saved_req=$this->update_req_with_hitId($new_data,$id);
+                }else{
+                   $log=DB::table('experian_response_failed_case')->insert(['contact'=>Session::get('contact_cScore'), 'email'=>Session::get('email_cScore'), 'pan'=>Session::get('pan_cScore'),'response'=>"Null Response", 'created_at'=>date("Y-m-d H:i:s")]);
+
+                   return view('no-record-found');
                 }
                 
                 if($x){
@@ -127,11 +131,13 @@ class ExperianController extends Controller
 
                 }else{
                   $log=DB::table('experian_response_failed_case')->insert(['contact'=>Session::get('contact_cScore'), 'email'=>Session::get('email_cScore'), 'pan'=>Session::get('pan_cScore'),'response'=>$http_result, 'created_at'=>date("Y-m-d H:i:s")]);
-                 return view('went-wrong');
+
+
+                 return view('no-record-found');
                 }
             }
         }catch(\Exception $e){
-
+            //return $e;
             return view('went-wrong');
             //return view('went-wrong');
         }

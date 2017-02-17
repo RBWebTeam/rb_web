@@ -149,11 +149,15 @@
 										</div>
 
 										</div>
+										<div id="id_error" class="error" style="display: none;">Atleast one Identity Proof is required</div>
 										<div class="col-md-12">
 									<button class="btn btn-primary btn-outline with-arrow animate-box fadeInUp animated" value="Get Checked" onclick ="return checkButton()" >Confirm & Continue<i class="icon-arrow-right"></i>
 									</button>
 									<p><b>All <mark style="color:red">*</mark>fields are mandatory.</b></p>
 									</div>
+									<div class="iframeloading" style= "display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
+                     <img src="images/ajaxloader.gif" alt="loading" style="top: 50%; position: relative; left: 50%;"  />
+                                        </div>
 								</div>
 							</form>
 					</div>
@@ -176,7 +180,15 @@ if(document.Experian_form.agreement1.checked == true){
 else if(document.Experian_form.agreement2.checked  == true){
 	alert("Please accept the terms before proceeding");
 	return false;
-}
+}else if(!($("#pan").val() || $("#passport").val() || $("#aadhaar").val() || $("#voterid").val() ||$("#driverLicenseNo").val() || $("#rationcard").val() )){
+   
+        $('#id_error').show();
+   
+    return ;
+}       
+
+
+  $('#id_error').hide();
 }
 
 

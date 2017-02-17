@@ -44,7 +44,7 @@
 				<input type="hidden" name="stage1hitid" value={{$stage1hitid}}>
 				<input type="hidden" name="stage2hitid" value={{$stage2hitid}} >
 				<input type="hidden" name="stage2sessionid" value={{$stage2sessionid}}>
-				<input type="hidden" name="question_count" value=<?php echo ($qs+1);?>>
+				<input type="hidden" name="question_count" value=<?php echo ($result->questionToCustomer->qid);?>>
 				
 				<?php 
 				$str= $result->responseJson;

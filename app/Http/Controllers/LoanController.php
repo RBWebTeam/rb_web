@@ -148,4 +148,11 @@ class LoanController extends Controller
         $data['description']='Avail Loan Against Property with benefits like lower interest rates & EMI payment. Apply online on Rupeeboss.com to get a Loan now.';
       return view('lap-test')->with($data)->with('keywords',$keywords);
     }
+
+    public function apply_express_loan(){
+      $keywords='Loan Against Property,Apply Online For Property Loan,Loan Against Property Guidelines,Loan Against Property Online,Commercial Property Loans';
+        $data['title']='Apply For Loan Against Property at Lowest Interest Rates with Rupeeboss.com';
+        $data['description']='Avail Loan Against Property with benefits like lower interest rates & EMI payment. Apply online on Rupeeboss.com to get a Loan now.';
+      return view('apply-express-loan')->with($data)->with('keywords',$keywords);
+    }
 }

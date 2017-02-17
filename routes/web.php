@@ -83,6 +83,8 @@ Route::post('RBA-login','HomeController@RBA_register');
 // Route::post('RBA-login','HomeController@RBA_employee');
 Route::get('lead-status','HomeController@lead_status');
 Route::get('apply-lead-online','ProfileController@applyonline');
+Route::get('apply-express-loan','LoanController@apply_express_loan');
+
 //new loans test
 
 Route::get('test-personal-loan','LoanController@apply_p_test');

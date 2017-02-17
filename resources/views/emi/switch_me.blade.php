@@ -131,7 +131,14 @@
     
        <p><h6>Your <mark style="color:red"><b>Savings</b></mark> through reduced Interest:</h6></p>
        <h2 class="em8">₹ <b><span id="emi6">0</span></b></h2>
-	   <button type="button" class="btn btn-success" id="revise_apply2" name="revise_apply" data-toggle="modal" data-target="#myModaltest" style="display:none;">Apply Now</button>
+       <?php if($loan == "home-loan") {?>
+       <button type="button" class="btn btn-success" id="revise_apply2" name="revise_apply" data-toggle="modal" data-target="#myModaltest" style="display:none;">Apply Now</button>
+       <?php }elseif($loan == "personal-loan"){?>
+       <button type="button" class="btn btn-success" id="revise_apply2" name="revise_apply" data-toggle="modal" data-target="#borrow_personal" style="display:none;">Apply Now</button>
+        <?php }else{?>
+        <button type="button" class="btn btn-success" id="revise_apply2" name="revise_apply" data-toggle="modal" data-target="#borrow_lap" style="display:none;">Apply Now</button>
+         <?php }?>
+	   
        
       
    
@@ -384,10 +391,10 @@
 
                   $('#revise').show();
                   $('#revise_apply').show();
-                  <?php if($loan != "personal-loan"){?>
+                  
       
                   $('#revise_apply2').show();
-                  <?php }?>
+                  
                         $("#1").show();
                         $("#4").show();
                         $("#5").show();

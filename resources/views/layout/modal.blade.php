@@ -142,7 +142,7 @@
                       <button class="btn btn-primary btn-outline with-arrow sidebar-submit">Submit<i class="icon-arrow-right"></i></button>
                   </div>
             </form>
-            <div class='msg displaynone' ><p>Thanks. We will reach you soon.</p></div>
+            <div class='msg displaynone'><p>Thanks. We will reach you soon.</p></div>
             <div class='msg_err displaynone' ><p>Ooops. Something went wrong.</p></div>
         </div>
         <div class="modal-footer">
@@ -174,13 +174,13 @@
             
             $myArray = explode('@', $_GET['referrer']);
             if(isset($myArray[0])){
-              $empid = $myArray[0];
+              $empid =Session::put('empid', $myArray[0]);
             }
             if(isset($myArray[1])){
-             $brokerid =$myArray[1];
+             $brokerid =Session::put('brokerid', $myArray[1]);
             }
             if(isset($myArray[2])){
-              $source =$myArray[2];
+              $source =Session::put('source', $myArray[2]);
             }
             
             //$a= str_replace('�', '', $brokerid);
@@ -197,10 +197,10 @@
           <input type="hidden" name="Principal_Amt" class="Principal_Amt" value="">
           <input type="hidden" name="Interest_Rate" class="Interest_Rate" value="">
           <input type="hidden" name="Remaining_Tenure" class="Remaining_Tenure" value="">
-          <input type="hidden" name="brokerid" class="brokerid" value="<?php echo isset($brokerid)?str_replace(' ', '', $brokerid):'';?>">
-          <input type="hidden" name="empid" class="empid" value="<?php echo isset($empid)?str_replace(' ', '', $empid):'';?>">
-          <input type="hidden" name="source" class="source" value="<?php echo isset($source)?str_replace(' ', '', $source):'';?>">
-                  <div>
+           <input type="hidden" name="brokerid" class="brokerid" value="<?php echo $empid?$empid:'';?>">
+          <input type="hidden" name="empid" class="empid" value="<?php echo $brokerid?$brokerid:'';?>">
+          <input type="hidden" name="source" class="source" value="<?php echo $source?$source:'';?>">                  
+          <div>
                     <fieldset>
                       <input class="newsletter-name" name="name" placeholder="Name" required>
                     </fieldset>
@@ -227,6 +227,7 @@
       
     </div>
   </div>
+
   <div class="modal fade" id="borrow_lap" role="dialog">
     <div class="modal-dialog">
     
@@ -245,15 +246,13 @@
             
             $myArray = explode('@', $_GET['referrer']);
             if(isset($myArray[0])){
-              $empid = $myArray[0];
+              $empid =Session::put('empid', $myArray[0]);
             }
             if(isset($myArray[1])){
-             $brokerid =$myArray[1];
+             $brokerid =Session::put('brokerid', $myArray[1]);
             }
-           
-            
             if(isset($myArray[2])){
-              $source =$myArray[2];
+              $source =Session::put('source', $myArray[2]);
             }
             //$a= str_replace('�', '', $brokerid);
             // echo $empid;
@@ -269,9 +268,9 @@
            <input type="hidden" name="Principal_Amt" class="Principal_Amt" value="">
           <input type="hidden" name="Interest_Rate" class="Interest_Rate" value="">
           <input type="hidden" name="Remaining_Tenure" class="Remaining_Tenure" value="">
-          <input type="hidden" name="brokerid" class="brokerid" value="<?php echo isset($brokerid)?str_replace(' ', '', $brokerid):'';?>">
-          <input type="hidden" name="empid" class="empid" value="<?php echo isset($empid)?str_replace(' ', '', $empid):'';?>">
-          <input type="hidden" name="source" class="source" value="<?php echo isset($source)?str_replace(' ', '', $source):'';?>">
+         <input type="hidden" name="brokerid" class="brokerid" value="<?php echo $empid?$empid:'';?>">
+          <input type="hidden" name="empid" class="empid" value="<?php echo $brokerid?$brokerid:'';?>">
+          <input type="hidden" name="source" class="source" value="<?php echo $source?$source:'';?>"> 
           
           {{ csrf_field() }}
           
@@ -302,6 +301,84 @@
       
     </div>
   </div>
+
+  <div class="modal fade" id="borrow_personal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Would Like To Borrow </h4>
+        </div>
+        <div class="modal-body">
+          <form name="borrow_form_personal" id="borrow_form_personal" method="post" >
+          <?php
+          $myString = isset($_GET['referrer']);
+          // 
+          if($myString){
+            
+            $myArray = explode('@', $_GET['referrer']);
+            if(isset($myArray[0])){
+              $empid =Session::put('empid', $myArray[0]);
+            }
+            if(isset($myArray[1])){
+             $brokerid =Session::put('brokerid', $myArray[1]);
+            }
+            if(isset($myArray[2])){
+              $source =Session::put('source', $myArray[2]);
+            }
+            //$a= str_replace('�', '', $brokerid);
+            // echo $empid;
+             //print_r($a);
+          }else{
+            $empid = "";
+            $brokerid ="";
+            $source ="";
+          }
+          
+          ?>
+           <input type="hidden" name="form" value="balance_transfer_borrow_form_personal">
+           <input type="hidden" name="Principal_Amt" class="Principal_Amt" value="">
+          <input type="hidden" name="Interest_Rate" class="Interest_Rate" value="">
+          <input type="hidden" name="Remaining_Tenure" class="Remaining_Tenure" value="">
+          <input type="hidden" name="brokerid" class="brokerid" value="<?php echo $empid?$empid:'';?>">
+          <input type="hidden" name="empid" class="empid" value="<?php echo $brokerid?$brokerid:'';?>">
+          <input type="hidden" name="source" class="source" value="<?php echo $source?$source:'';?>"> 
+          
+          {{ csrf_field() }}
+          
+                  <div>
+                    <fieldset>
+                      <input class="newsletter-name" name="name" placeholder="Name" required>
+                    </fieldset>
+                    </div>
+                     <div>
+                    <fieldset>
+                      <input type="email" class="newsletter-name" name="email"  required  placeholder="Email address">
+                    </fieldset>                 
+                    </div>
+                    <div>
+                    <fieldset>
+                      <input type="text" class="newsletter-name" name="contact" pattern="[789][0-9]{9}" required maxlength="10" placeholder="Mobile Number">
+                    </fieldset>                 
+                    </div>
+                  <div>
+                     <button class="btn btn-primary btn-outline with-arrow sidebar-submit">Submit<i class="icon-arrow-right"></i></button>
+                  </div>
+            </form>
+            <div class='msg displaynone'><b>Thanks.We will reach you soon.</b></div>
+            <div class='msg_err displaynone' ><p>Ooops. Something went wrong.</p></div>
+        </div>
+        
+      </div>
+      
+    </div>
+  </div>
+
+  
+
+  
 <!---Borrow end -->
 
 <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" id="Experian_terms_modal">

@@ -28,7 +28,7 @@ class FormController extends Controller
     //put curl code here to save in DB
     $url = "http://erp.rupeeboss.com/CustomerWebRequest.aspx";
     //print "<pre>";
-     print_r($post_data);exit();    
+     // print_r($post_data);exit();    
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_VERBOSE, 1);
     curl_setopt($ch, CURLOPT_URL, $url);
@@ -41,7 +41,7 @@ class FormController extends Controller
     $http_result = curl_exec($ch);
     $error = curl_error($ch);
     $http_code = curl_getinfo($ch ,CURLINFO_HTTP_CODE);
-     // print_r($http_result);exit();
+      // print_r($error);exit();
     curl_close($ch);
     if($http_result==1){
         return 'true';

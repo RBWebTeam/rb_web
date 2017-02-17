@@ -197,9 +197,10 @@
           <input type="hidden" name="Principal_Amt" class="Principal_Amt" value="">
           <input type="hidden" name="Interest_Rate" class="Interest_Rate" value="">
           <input type="hidden" name="Remaining_Tenure" class="Remaining_Tenure" value="">
-           <input type="hidden" name="brokerid" class="brokerid" value="<?php echo Session::get('empid')?str_replace(' ', '', Session::get('empid')):'';?>">
-          <input type="hidden" name="empid" class="empid" value="<?php echo Session::get('brokerid')?str_replace(' ', '', Session::get('brokerid')):'';?>">
-          <input type="hidden" name="source" class="source" value="<?php echo Session::get('source')?str_replace(' ', '', Session::get('source')):'';?>">                  <div>
+           <input type="hidden" name="brokerid" class="brokerid" value="<?php echo $empid?$empid:'';?>">
+          <input type="hidden" name="empid" class="empid" value="<?php echo $brokerid?$brokerid:'';?>">
+          <input type="hidden" name="source" class="source" value="<?php echo $source?$source:'';?>">                  
+          <div>
                     <fieldset>
                       <input class="newsletter-name" name="name" placeholder="Name" required>
                     </fieldset>
@@ -267,9 +268,9 @@
            <input type="hidden" name="Principal_Amt" class="Principal_Amt" value="">
           <input type="hidden" name="Interest_Rate" class="Interest_Rate" value="">
           <input type="hidden" name="Remaining_Tenure" class="Remaining_Tenure" value="">
-          <input type="hidden" name="brokerid" class="brokerid" value="<?php echo Session::get('empid')?str_replace(' ', '', Session::get('empid')):'';?>">
-          <input type="hidden" name="empid" class="empid" value="<?php echo Session::get('brokerid')?str_replace(' ', '', Session::get('brokerid')):'';?>">
-          <input type="hidden" name="source" class="source" value="<?php echo Session::get('source')?str_replace(' ', '', Session::get('source')):'';?>">
+         <input type="hidden" name="brokerid" class="brokerid" value="<?php echo $empid?$empid:'';?>">
+          <input type="hidden" name="empid" class="empid" value="<?php echo $brokerid?$brokerid:'';?>">
+          <input type="hidden" name="source" class="source" value="<?php echo $source?$source:'';?>"> 
           
           {{ csrf_field() }}
           
@@ -341,9 +342,9 @@
            <input type="hidden" name="Principal_Amt" class="Principal_Amt" value="">
           <input type="hidden" name="Interest_Rate" class="Interest_Rate" value="">
           <input type="hidden" name="Remaining_Tenure" class="Remaining_Tenure" value="">
-          <input type="hidden" name="brokerid" class="brokerid" value="<?php echo Session::get('empid')?str_replace(' ', '', Session::get('empid')):'';?>">
-          <input type="hidden" name="empid" class="empid" value="<?php echo Session::get('brokerid')?str_replace(' ', '', Session::get('brokerid')):'';?>">
-          <input type="hidden" name="source" class="source" value="<?php echo Session::get('source')?str_replace(' ', '', Session::get('source')):'';?>">
+          <input type="hidden" name="brokerid" class="brokerid" value="<?php echo $empid?$empid:'';?>">
+          <input type="hidden" name="empid" class="empid" value="<?php echo $brokerid?$brokerid:'';?>">
+          <input type="hidden" name="source" class="source" value="<?php echo $source?$source:'';?>"> 
           
           {{ csrf_field() }}
           

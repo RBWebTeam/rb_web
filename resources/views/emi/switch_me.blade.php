@@ -136,8 +136,9 @@
        <?php }elseif($loan == "personal-loan"){?>
        <button type="button" class="btn btn-success" id="revise_apply2" name="revise_apply" data-toggle="modal" data-target="#borrow_personal" style="display:none;">Apply Now</button>
         <?php }else{?>
+        <button type="button" class="btn btn-success" id="revise_apply2" name="revise_apply" data-toggle="modal" data-target="#borrow_lap" style="display:none;">Apply Now</button>
          <?php }?>
-	   <button type="button" class="btn btn-success" id="revise_apply2" name="revise_apply" data-toggle="modal" data-target="#borrow_lap" style="display:none;">Apply Now</button>
+	   
        
       
    

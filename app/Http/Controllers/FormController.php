@@ -69,7 +69,9 @@ class FormController extends Controller
             //adding city_id to post data
         } 
         $res_arr=array_merge($input,$new_array);
-        // print_r($res_arr);
+        // send empcode if its a refferal
+        $res_arr['empid']=Session::get('empid')?Session::get('empid'):'';
+         print_r($res_arr);exit();
             $url = "http://erp.rupeeboss.com/CustomerLaravelWebRequest.aspx";
             $ch = curl_init();
             curl_setopt($ch, CURLOPT_VERBOSE, 1);

@@ -142,7 +142,7 @@
                       <button class="btn btn-primary btn-outline with-arrow sidebar-submit">Submit<i class="icon-arrow-right"></i></button>
                   </div>
             </form>
-            <div class='msg displaynone' ><p>Thanks. We will reach you soon.</p></div>
+            <div class='msg displaynone'><p>Thanks. We will reach you soon.</p></div>
             <div class='msg_err displaynone' ><p>Ooops. Something went wrong.</p></div>
         </div>
         <div class="modal-footer">

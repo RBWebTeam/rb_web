@@ -60,6 +60,10 @@ class ProfileController extends Controller
 
 
 }
+public function directory()
+    {
+        return view('directory');
+    }
 
 
     public function extradetails(Request $req){

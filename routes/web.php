@@ -88,6 +88,7 @@ Route::get('apply-lead-online','ProfileController@applyonline');
 Route::get('test-personal-loan','LoanController@apply_p_test');
 Route::get('test-home-loan','LoanController@apply_h_test');
 Route::get('show-quotes','FormController@show_quotes');
+Route::get('directory','ProfileController@directory');
 
 
 //for dc

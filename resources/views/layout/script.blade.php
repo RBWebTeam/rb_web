@@ -14,6 +14,7 @@
   <script src="{{URL::to('js/addonjquery.js')}}"></script>
   <script src="{{URL::to('js/addonjquery-ui.min.js')}}"></script>
   <script src="{{URL::to('js/jquery.validate.min.js')}}"></script>
+  <script src="{{URL::to('js/jsPdf.js')}}"></script>
 
   <!-- <script src="https://apis.google.com/js/platform.js" async defer></script> -->
 

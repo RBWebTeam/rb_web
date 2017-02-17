@@ -75,13 +75,14 @@ class ExperianController extends Controller
             $data=json_encode($post_data);
             // print "<pre>";
             
-             $quote_data=DB::select("SELECT credit_score FROM experian_response  WHERE (pan='".$req['panNo']."' and ( contact='".$req['mobileNo']."' or email ='".$req['email']."') 
+             $quote_data=DB::select("SELECT credit_score,html_report FROM experian_response  WHERE (pan='".$req['panNo']."' and ( contact='".$req['mobileNo']."' or email ='".$req['email']."') 
                     and expiry_date >= '".$today."');");
               
              if($quote_data){
                
                 $stored_score=$quote_data[0]->credit_score;
-                return $this->show_stored_record($stored_score);
+                $html=$quote_data[0]->html_report;
+                return $this->show_stored_record($stored_score,$htm);
              }
             
             $save=new experian_request_model(); 
@@ -248,8 +249,8 @@ class ExperianController extends Controller
 
 
 
-  public function show_stored_record($data){
-    return view('stored-score')->with('data',$data);
+  public function show_stored_record($data,$html){
+    return view('stored-score')->with('data',$data)->with('html',$htm);
     
   }   
     

@@ -1,14 +1,14 @@
    <!-- <link href="{{URL::to('css/smoothness.css')}}" rel="Stylesheet"></link> -->
   <!-- <link rel="stylesheet" href="{{URL::to('css/jquery-ui.min.css')}}" type="text/css" /> -->
-  <script src="{{URL::to('js/modernizr-2.6.2.min.js')}}"></script>
+  
   <!-- jQuery -->
   <script src="{{URL::to('js/jquery.min.js')}}"></script>
 
   <script src="{{URL::to('js/ajaxlib.js')}}"></script>
-  
+  <script src="{{URL::to('js/modernizr-2.6.2.min.js')}}"></script>
 
  
-  <script src="{{URL::to('js/jquery-ui.js')}}" ></script>
+  <script src="{{URL::to('js/jquery-ui.js')}}"></script>
   <script src="{{URL::to('emi/Chart.js')}}"></script>
  <!--  <link href="{{URL::to('css/autocomp.css')}}" rel="stylesheet"> -->
   <script src="{{URL::to('js/addonjquery.js')}}"></script>
@@ -17,7 +17,20 @@
   <script src="{{URL::to('js/jsPdf.js')}}"></script>
 
   <!-- <script src="https://apis.google.com/js/platform.js" async defer></script> -->
+<script>
+ function registration(){
+         document.getElementById('login').style.display="none";
+        document.getElementById('registration1').style.display="block";
 
+ }
+
+ function backf(){
+
+document.getElementById('login').style.display="block";
+ document.getElementById('registration1').style.display="none";
+
+ }
+</script>
 
   
   <script>
@@ -1823,7 +1836,7 @@ fbq('track', 'PageView');
        
        <span id='pwd_match' class= 'displaynonemsg'>Password do not match.</span>
 
-       <span id='msg_err_email' class ='displaynonemsg'><center>Email id already exists.</center></span>
+       <span id='msg_err_email' class ='displaynonemsg'><p class="text-center">Email id already exists.</p></span>
      </div>
 
    </div>

@@ -6,56 +6,38 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use DB;
 use App\credit_card_form_req;
-class CreditcardController extends Controller
+class CreditcardController extends CallApiController
 {
 	 public function credit_card_form(){
 	 		return view('credit-card-form');
 	 }
 
 	 public function credit_form_submit(Request $req){
-	 	// $data=$req->all();
-
-     
-        $save=new credit_card_form_req(); 
-        $id=$save->store($req);
-        $newDob = date("d-m-Y",strtotime(str_replace('-','/', $req['DateOfBirth'])));
-        $newDate = date("d-m-Y",strtotime(str_replace('-','/', $req['SalaryAcOpenDate'])));
-
-        $req['DateOfBirth']=str_replace('-', '/',$newDob);
-        $req['SalaryAcOpenDate']=str_replace('-', '/',$newDate);
-        $data=$req->all();
-        // print_r($req->all());exit();
-	 	$data['UserID']='ICICI_CC_RupeeBoss';
-	 	$data['Password']='Password@123';
-	 	$data['ChannelType']='RupeeBoss';
-
-	 	$post_data=json_encode($data);
+    $save=new credit_card_form_req(); 
+    $id=$save->store($req);
+    $newDob = date("d-m-Y",strtotime(str_replace('-','/', $req['DateOfBirth'])));
+    $newDate = date("d-m-Y",strtotime(str_replace('-','/', $req['SalaryAcOpenDate'])));
+    $req['DateOfBirth']=str_replace('-', '/',$newDob);
+    $req['SalaryAcOpenDate']=str_replace('-', '/',$newDate);
+    $data=$req->all();
+    // print_r($req->all());exit();
+ 	$data['UserID']='ICICI_CC_RupeeBoss';
+ 	$data['Password']='Password@123';
+ 	$data['ChannelType']='RupeeBoss';
+ 	$post_data=json_encode($data);
 	 	  // print "<pre>";
 	 	  // print_r($post_data);exit();
-	 	$url = "http://api.rupeeboss.com/BankAPIService.svc/PostIciciBank";
-    //print "<pre>";
-    // print_r($post_data);
-    $ch = curl_init();
-    curl_setopt($ch, CURLOPT_VERBOSE, 1);
-    curl_setopt( $ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
-    curl_setopt($ch, CURLOPT_URL, $url);
-    curl_setopt($ch, CURLOPT_POST, 1);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-    curl_setopt($ch, CURLOPT_FAILONERROR, 0);
-    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
-    curl_setopt($ch, CURLOPT_POSTFIELDS,$post_data);
-    $http_result = curl_exec($ch);
-    $error = curl_error($ch);
-    $http_code = curl_getinfo($ch ,CURLINFO_HTTP_CODE);
+	$url = "http://api.rupeeboss.com/BankAPIService.svc/PostIciciBank";
+    $result=$this->call_json_data_api($url,$post_data);
+    $http_result=$result['http_result'];
+    $error=$result['error'];
     $st=str_replace('"{', "{", $http_result);
     $s=str_replace('}"', "}", $st);
     $m=$s=str_replace('\\', "", $s);
-
-  
    // print_r($id);exit();
-  $update_user='';
+    $update_user='';
     $obj = json_decode($m);
-  if ($http_result) 
+    if ($http_result) 
     {
         $update_user=DB::table('credit_card_form_req')
          ->where('id',$id)
@@ -65,13 +47,13 @@ class CreditcardController extends Controller
     if(!$update_user){
 
         $error=2;
-   echo $error;
+    echo $error;
 
     }else{
         
 
       $error=1;
-       echo $error;
+      echo $error;
 
     }
 

@@ -7,7 +7,6 @@
 					<div class="row pad11 white-bg comp-pg">
               
               
-            
 
 			<div id="frst_qstn"> 
 			

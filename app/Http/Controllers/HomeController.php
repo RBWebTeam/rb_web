@@ -12,7 +12,7 @@ use Session;
 use URL;
 use Mail;
 use Illuminate\Support\Facades\Hash;
-class HomeController extends Controller
+class HomeController extends CallApiController
 {
 	public function index(){
 		$keywords='Loans At Low Interest Rate, Best Loans, Loan Interest Rates, Best Credit Cards, Apply For Loan Online, Compare Loan, Check Loan Eligibility, Calculate EMI, Compare Credit Cards';
@@ -117,33 +117,13 @@ class HomeController extends Controller
                 $post_data='{"mobNo":"'.$req->contact.'","msgData":"Thank you for registering.- RupeeBoss.com",
                     "source":"WEB"}';
                 $url = "http://beta.services.rupeeboss.com/LoginDtls.svc/xmlservice/sendSMS";
-                $ch = curl_init();
-                curl_setopt($ch, CURLOPT_VERBOSE, 1);
-                curl_setopt( $ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
-                curl_setopt($ch, CURLOPT_URL, $url);
-                curl_setopt($ch, CURLOPT_POST, 1);
-                curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-                curl_setopt($ch, CURLOPT_FAILONERROR, 0);
-                curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
-                curl_setopt($ch, CURLOPT_POSTFIELDS,$post_data);
-                $http_result = curl_exec($ch);
-                $error = curl_error($ch);
-                $http_code = curl_getinfo($ch ,CURLINFO_HTTP_CODE);
+                $result=$this->call_json_data_api($url,$post_data);
+                $http_result=$result['http_result'];
+                $error=$result['error'];
                 $obj = json_decode($http_result);
-                // statusId response 0 for success, 1 for failure
-                curl_close($ch);
                 return true;
 		}
 		return false;
 
 	}
-
-	// public function RBA_employee(Request $req){
-
-
-	// 	echo('ok..........');
-
-	// }
-
-	
 }

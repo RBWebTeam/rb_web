@@ -59,20 +59,22 @@
                 //print_r($post_data);
                  $url = "http://api.rupeeboss.com/CreditAPI.svc/getfinalResponse";
                
-                $ch = curl_init();
-                curl_setopt($ch, CURLOPT_VERBOSE, 1);
-                curl_setopt( $ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
-                curl_setopt($ch, CURLOPT_URL, $url);
-                curl_setopt($ch, CURLOPT_POST, 1);
-                curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-                curl_setopt($ch, CURLOPT_FAILONERROR, 0);
-                curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
-                curl_setopt($ch, CURLOPT_POSTFIELDS,$post_data);
-                $http_result = curl_exec($ch);
-                $error = curl_error($ch);
-                $http_code = curl_getinfo($ch ,CURLINFO_HTTP_CODE);
+                // $ch = curl_init();
+                // curl_setopt($ch, CURLOPT_VERBOSE, 1);
+                // curl_setopt( $ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
+                // curl_setopt($ch, CURLOPT_URL, $url);
+                // curl_setopt($ch, CURLOPT_POST, 1);
+                // curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+                // curl_setopt($ch, CURLOPT_FAILONERROR, 0);
+                // curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+                // curl_setopt($ch, CURLOPT_POSTFIELDS,$post_data);
+                // $http_result = curl_exec($ch);
+                // $error = curl_error($ch);
+                // $http_code = curl_getinfo($ch ,CURLINFO_HTTP_CODE);
                 //print_r("<h1>".$http_result."</h1>");
-
+                $result=$this->call_json_data_api($url,$post_data);
+	            $http_result=$result['http_result'];
+	            $error=$result['error'];
 
                	$f_name= Session::get('f_name_cScore')?Session::get('f_name_cScore'):'';
                	$l_name= Session::get('l_name_cScore')?Session::get('l_name_cScore'):'';
@@ -87,10 +89,10 @@
 	            
                 // $save_data = array('f_name' => $f_name,'l_name' => $l_name,'contact'=>$contact,'pan'=>$pan,'email'=>$email,'lead_id'=>$lead_id,'credit_score'=>$parse[0],'raw_response'=>$parse[1],'expiry_date'=>$expiry_date);
                 
+                $user_id=Session::get('user_id');
                 $id=DB::table('experian_response')
-                	->insertGetId(['f_name' => $f_name,'l_name' => $l_name,'contact'=>$contact,'pan'=>$pan,'email'=>$email,'lead_id'=>$lead_id,'credit_score'=>$parse[0],'raw_response'=>$parse[1],'html_report'=>$result->showHtmlReportForCreditReport,'expiry_date'=>$expiry_date,'created_at'=>date("Y-m-d H:i:s"),'updated_at'=>date("Y-m-d H:i:s")]);
+                	->insertGetId(['f_name' => $f_name,'l_name' => $l_name,'contact'=>$contact,'pan'=>$pan,'email'=>$email,'lead_id'=>$lead_id,'credit_score'=>$parse[0],'raw_response'=>$parse[1],'html_report'=>$result->showHtmlReportForCreditReport,'user_id'=>$user_id,'expiry_date'=>$expiry_date,'created_at'=>date("Y-m-d H:i:s"),'updated_at'=>date("Y-m-d H:i:s")]);
                 	
-                	$user_id=Session::get('user_id');
                 	if($user_id){
                 		$update_score=DB::table('customer_details')
 						            ->where('user_id', $user_id)

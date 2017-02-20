@@ -8,7 +8,7 @@ use Response;
 use Session;
 use App\experian_request_model;
 use App\experian_responseModel;
-class ExperianController extends Controller
+class ExperianController extends CallApiController
 {
   
     public function credit_report(){
@@ -55,14 +55,10 @@ class ExperianController extends Controller
         try{
             $qs=0;
             $post_data=$req->all();
-            //print_r($post_data);exit();
+            
             $voucher=$post_data['voucherCode'];
             $update_voucher=DB::select(" call usp_update_experian_voucher ('".$voucher."',1)");
-            // $post_data['voucherCode']=$update_voucher;
-            // $req['voucherCode']=$update_voucher;
             
-            // print "<pre>";
-            // print_r($update_voucher);exit();
             //unsetting terms and condition as no need to save in DB
             Session::put('f_name_cScore', $req['firstName']." ".$req['middleName']);
             Session::put('l_name_cScore',$req['surName']);
@@ -88,22 +84,24 @@ class ExperianController extends Controller
             $save=new experian_request_model(); 
             $id=$save->store($req);
         	   $url = "http://api.rupeeboss.com/CreditAPI.svc/LandingPageSubmit";    
-            $ch = curl_init();
-            curl_setopt($ch, CURLOPT_VERBOSE, 1);
-            curl_setopt($ch, CURLOPT_URL, $url);
-            curl_setopt( $ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
-            curl_setopt($ch, CURLOPT_POST, 1);
-            curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-            curl_setopt($ch, CURLOPT_FAILONERROR, 0);
-            curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
-            curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+            // $ch = curl_init();
+            // curl_setopt($ch, CURLOPT_VERBOSE, 1);
+            // curl_setopt($ch, CURLOPT_URL, $url);
+            // curl_setopt( $ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
+            // curl_setopt($ch, CURLOPT_POST, 1);
+            // curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+            // curl_setopt($ch, CURLOPT_FAILONERROR, 0);
+            // curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+            // curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
              
-            $http_result = curl_exec($ch);
-            $error = curl_error($ch);
-            $http_code = curl_getinfo($ch ,CURLINFO_HTTP_CODE);
+            // $http_result = curl_exec($ch);
+            // $error = curl_error($ch);
+            // $http_code = curl_getinfo($ch ,CURLINFO_HTTP_CODE);
              
-            curl_close($ch);
-           
+            // curl_close($ch);
+           $result=$this->call_json_data_api($url,$data);
+           $http_result=$result['http_result'];
+           $error=$result['error'];
             if($error){
 
               $log=DB::table('experian_response_failed_case')->insert(['contact'=>Session::get('contact_cScore'), 'email'=>Session::get('email_cScore'), 'pan'=>Session::get('pan_cScore'),'response'=>$error, 'created_at'=>date("Y-m-d H:i:s")]);
@@ -154,20 +152,23 @@ class ExperianController extends Controller
             
             //generate question api
             $url = "http://api.rupeeboss.com/CreditAPI.svc/generateQuestionForConsumer";    
-            $ch = curl_init();
-            curl_setopt($ch, CURLOPT_VERBOSE, 1);
-            curl_setopt($ch, CURLOPT_URL, $url);
-            curl_setopt( $ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
-            curl_setopt($ch, CURLOPT_POST, 1);
-            curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-            curl_setopt($ch, CURLOPT_FAILONERROR, 0);
-            curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
-            curl_setopt($ch, CURLOPT_POSTFIELDS, $arr);
+            // $ch = curl_init();
+            // curl_setopt($ch, CURLOPT_VERBOSE, 1);
+            // curl_setopt($ch, CURLOPT_URL, $url);
+            // curl_setopt( $ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
+            // curl_setopt($ch, CURLOPT_POST, 1);
+            // curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+            // curl_setopt($ch, CURLOPT_FAILONERROR, 0);
+            // curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+            // curl_setopt($ch, CURLOPT_POSTFIELDS, $arr);
              
-            $http_result = curl_exec($ch);
-            $error = curl_error($ch);
-            $http_code = curl_getinfo($ch ,CURLINFO_HTTP_CODE);
-            curl_close($ch);
+            // $http_result = curl_exec($ch);
+            // $error = curl_error($ch);
+            // $http_code = curl_getinfo($ch ,CURLINFO_HTTP_CODE);
+            // curl_close($ch);
+            $result=$this->call_json_data_api($url,$arr);
+            $http_result=$result['http_result'];
+            $error=$result['error'];
             $s=str_replace('"','', $http_result);
             $str=str_replace('\\', '', $s);
             $str2=explode(',', $str);
@@ -204,20 +205,23 @@ class ExperianController extends Controller
             
             //generate question api
             $url = "http://api.rupeeboss.com/CreditAPI.svc/generateQuestionForConsumer";    
-            $ch = curl_init();
-            curl_setopt($ch, CURLOPT_VERBOSE, 1);
-            curl_setopt($ch, CURLOPT_URL, $url);
-            curl_setopt( $ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
-            curl_setopt($ch, CURLOPT_POST, 1);
-            curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-            curl_setopt($ch, CURLOPT_FAILONERROR, 0);
-            curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
-            curl_setopt($ch, CURLOPT_POSTFIELDS, $arr);
+            // $ch = curl_init();
+            // curl_setopt($ch, CURLOPT_VERBOSE, 1);
+            // curl_setopt($ch, CURLOPT_URL, $url);
+            // curl_setopt( $ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
+            // curl_setopt($ch, CURLOPT_POST, 1);
+            // curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+            // curl_setopt($ch, CURLOPT_FAILONERROR, 0);
+            // curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+            // curl_setopt($ch, CURLOPT_POSTFIELDS, $arr);
              
-            $http_result = curl_exec($ch);
-            $error = curl_error($ch);
-            $http_code = curl_getinfo($ch ,CURLINFO_HTTP_CODE);
-            curl_close($ch);
+            // $http_result = curl_exec($ch);
+            // $error = curl_error($ch);
+            // $http_code = curl_getinfo($ch ,CURLINFO_HTTP_CODE);
+            // curl_close($ch);
+             $result=$this->call_json_data_api($url,$arr);
+            $http_result=$result['http_result'];
+            $error=$result['error'];
             $s=str_replace('"','', $http_result);
             $str=str_replace('\\', '', $s);
             $str2=explode(',', $str);

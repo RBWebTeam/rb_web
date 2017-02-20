@@ -6,7 +6,7 @@ use App\Http\Requests;
 use DB;
 use Response;
 use App\bank_quote_api_request;
-class ApiController extends Controller
+class ApiController extends CallApiController
 {
 	
 	public function compare(Request $req){
@@ -491,22 +491,12 @@ run_else:
         		//print_r($post_data);exit();
                  // $url="http://beta.services.rupeeboss.com/LoginDtls.svc/xmlservice/dsplyHomePersonalLoanAppDtls";
         		$url="http://services.rupeeboss.com/LoginDtls.svc/xmlservice/dsplyHomePersonalLoanAppDtls";
-                $ch = curl_init();
-                curl_setopt($ch, CURLOPT_VERBOSE, 1);
-                curl_setopt( $ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
-                curl_setopt($ch, CURLOPT_URL, $url);
-                curl_setopt($ch, CURLOPT_POST, 1);
-                curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-                curl_setopt($ch, CURLOPT_FAILONERROR, 0);
-                curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
-                curl_setopt($ch, CURLOPT_POSTFIELDS,$post_data);
-                $http_result = curl_exec($ch);
-                $error = curl_error($ch);
-                $http_code = curl_getinfo($ch ,CURLINFO_HTTP_CODE);
+                $result=$this->call_json_data_api($url,$post_data);
+                $http_result=$result['http_result'];
+                $error=$result['error'];
                 $obj = json_decode($http_result);
                 // statusId response 0 for success, 1 for failure
-                curl_close($ch);
-       			//print_r(sizeof($obj->result->lstHomeLoanDtls));exit();
+                //print_r(sizeof($obj->result->lstHomeLoanDtls));exit();
        			//print_r($obj);exit();
                 if(sizeof($obj->result->lstHomeLoanDtls)>0){
                 	$application=$obj->result->lstHomeLoanDtls;
@@ -552,24 +542,15 @@ run_else:
         //calling Erp api
        
         		$post_data='{"brokerId":'.$id.'}';
-        		//print_r($post_data);exit();
+        		
                  // $url="http://beta.services.rupeeboss.com/LoginDtls.svc/xmlservice/dsplyPersonalLoanAppDtls";
         		$url="http://services.rupeeboss.com/LoginDtls.svc/xmlservice/dsplyPersonalLoanAppDtls";
-                $ch = curl_init();
-                curl_setopt($ch, CURLOPT_VERBOSE, 1);
-                curl_setopt( $ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
-                curl_setopt($ch, CURLOPT_URL, $url);
-                curl_setopt($ch, CURLOPT_POST, 1);
-                curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-                curl_setopt($ch, CURLOPT_FAILONERROR, 0);
-                curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
-                curl_setopt($ch, CURLOPT_POSTFIELDS,$post_data);
-                $http_result = curl_exec($ch);
-                $error = curl_error($ch);
-                $http_code = curl_getinfo($ch ,CURLINFO_HTTP_CODE);
+               // statusId response 0 for success, 1 for failure
+              
+                $result=$this->call_json_data_api($url,$post_data);
+                $http_result=$result['http_result'];
+                $error=$result['error'];
                 $obj = json_decode($http_result);
-                // statusId response 0 for success, 1 for failure
-                curl_close($ch);
        			//print_r(sizeof($obj->result->lstHomeLoanDtls));exit();
        			//print_r($obj);exit();
                 if(sizeof($obj->result->lstHomeLoanDtls)>0){

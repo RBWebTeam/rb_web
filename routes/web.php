@@ -20,7 +20,9 @@ Route::get('widget','LoanController@car_loan');
 
 //Route::get('search/autocomplete', 'SearchController@autocomplete');
 Route::get('autocomplete',array('as'=>'autocomplete','uses'=>'AutoCompleteController@index'));
-Route::get('searchajax',array('as'=>'searchajax','uses'=>'AutoCompleteController@autoComplete'));	
+Route::get('searchajax',array('as'=>'searchajax','uses'=>'AutoCompleteController@autoComplete'));
+Route::get('searchstateajax',array('as'=>'searchstateajax','uses'=>'AutoCompleteController@autoComplete_state'));	
+
 
 Route::post('loan-submit','FormController@p_loan_submit');
 

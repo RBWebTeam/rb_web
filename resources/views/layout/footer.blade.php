@@ -114,17 +114,3 @@
 
 
 @include('layout.login_modal')
-<script>
- function registration(){
-         document.getElementById('login').style.display="none";
-        document.getElementById('registration1').style.display="block";
-
- }
-
- function backf(){
-
-document.getElementById('login').style.display="block";
- document.getElementById('registration1').style.display="none";
-
- }
-</script>

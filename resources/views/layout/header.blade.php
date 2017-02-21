@@ -23,7 +23,7 @@
 	     <link rel="canonical" href="{!! request()->fullUrl() !!}"  />
 	@endif
 	
-	<script src="{{URL::to('js/Myapp.js')}}"></script>
+	
 
 	</head>
 	<body><!-- 

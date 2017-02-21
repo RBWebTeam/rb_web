@@ -10,7 +10,6 @@ use App\experian_request_model;
 use App\experian_responseModel;
 class ExperianController extends CallApiController
 {
-  
     public function credit_report(){
       $keywords='credit report free,credit score,free credit report and score,how to get free credit report ';
       $data['title']='Check your Credit Score online on Rupeeboss.com';

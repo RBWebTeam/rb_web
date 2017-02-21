@@ -15,9 +15,9 @@ use Illuminate\Support\Facades\Hash;
 class HomeController extends CallApiController
 {
 	public function index(){
-		$keywords='Home Loan,Business Loan,Personal Loan,Car Loan,Express Loan,Savings Account,Loan Against Property,Small and Medium Size Enterprise Loan,Compare loan & apply,Need A Loan,Apply Online For A Loan';
+		$keywords='Loans At Low Interest Rate, Best Loans, Loan Interest Rates, Best Credit Cards, Apply For Loan Online, Compare Loan, Check Loan Eligibility, Calculate EMI, Compare Credit Cards';
 		$data['title']='RupeeBoss - Apply for all kind of Loan On Rupeeboss.com';
-		$data['description']='When You Need A Loan, You Are not Alone! View, Compare & get Instant quotes matching your requirements. Apply Online for all kind of Loan on Rupeeboss.com. ';
+		$data['description']='Apply For All Kinds of Loans at Lowest Interest Rate. Use loan & EMI Calculator, Compare Loan & Credit Cards & get quotes instantly as per requirement on Rupeeboss.com ';
 		// $data['city'] = DB::table('city_master')->select('City_Name','state_id','City_Id')->get();
 		// $data['loan'] = DB::table('product_master')->select('Product_Name','Product_Id')->get();
 		//print "<pre>";

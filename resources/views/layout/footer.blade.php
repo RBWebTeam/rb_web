@@ -7,21 +7,13 @@
 				<ul class="float">
 					<li><a href="{{URL::to('loan-details/12/24')}}">ICICI Bank</a></li>
 					<li><a href="{{URL::to('loan-details/12/4')}}">Axis Bank</a></li>
-					<!-- <li><a href="{{URL::to('loan-details/home-loan/ADITYA-BIRLA-HOUSING-FINANCIAL-LIMITED')}}">Aditya Birla Finance Limited</a></li> -->
-					<!-- <li><a href="{{URL::to('loan-details/home-loan/AU-HOUSING-FINANCE-LIMITED')}}">Au Housing Finance Limited</a></li> -->
-                   
-                   <!--  <li><a href="{{URL::to('loan-details/home-loan/BAJAJ-FINANCE-LIMITED')}}">Bajaj Finance Limited</a></li> -->
-                    <!-- <li><a href="{{URL::to('loan-details/home-loan/CAPITAL-FIRST-LIMITED')}}">Capital First Limited</a></li> -->
-                    <li><a href="{{URL::to('loan-details/12/11')}}">DBS</a></li>
-                   <!--  <li><a href="{{URL::to('loan-details/home-loan/DHFL')}}">DHFL</a></li> -->
+					<li><a href="{{URL::to('loan-details/12/11')}}">DBS</a></li>
                     <li><a href="{{URL::to('loan-details/12/12')}}">DCB Bank</a></li>
                     <li><a href="{{URL::to('loan-details/12/21')}}">HDFC Ltd</a></li>
                     <li><a href="{{URL::to('loan-details/12/26')}}">IDFC Ltd</a></li>
                     <li><a href="{{URL::to('loan-details/12/27')}}">IIFL</a></li>
                     <li><a href="{{URL::to('loan-details/12/28')}}">Indiabulls</a></li>
                     <li><a href="{{URL::to('loan-details/12/33')}}">Kotak Mahindra Bank</a></li>
-                 <!--  <li><a href="{{URL::to('loan-details/home-loan/L-&-T')}}">L & T Finance</a></li> -->
-                    
                     <li><a href="{{URL::to('loan-details/12/42')}}">PNB Housing Finance  </a></li>
                     <li><a href="{{URL::to('loan-details/12/49')}}">Standard Chartered</a></li>
                     <li><a href="{{URL::to('loan-details/12/51')}}">Tata Capital </a></li> 
@@ -38,10 +30,8 @@
                     <li><a href="{{URL::to('loan-details/9/18')}}">Fullerton India</a></li>
 					<li><a href="{{URL::to('loan-details/9/24')}}">ICICI Bank</a></li>
 					<li><a href="{{URL::to('loan-details/9/33')}}">Kotak Mahindra</a></li>
-					<!-- <li><a href="{{URL::to('loan-details/personal-loan/reliance')}}">Reliance Capital</a></li> -->
-                    <li><a href="{{URL::to('loan-details/9/51')}}">Tata Capital</a></li>
-                    <!-- <li><a href="{{URL::to('loan-details/personal-loan/L-&-T')}}">L & T Finance</a></li> -->
-				</ul>
+					<li><a href="{{URL::to('loan-details/9/51')}}">Tata Capital</a></li>
+                 </ul>
 
 			</div>
             <div class="col-md-2 col-md-push-1 col-sm-12 col-sm-push-0 col-xs-12 col-xs-push-0">

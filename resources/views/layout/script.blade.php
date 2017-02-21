@@ -1,5 +1,3 @@
-   <!-- <link href="{{URL::to('css/smoothness.css')}}" rel="Stylesheet"></link> -->
-  <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/themes/base/minified/jquery-ui.min.css" type="text/css" />
   <script src="{{URL::to('js/modernizr-2.6.2.min.js')}}"></script>
   <!-- jQuery -->
   <script src="{{URL::to('js/jquery.min.js')}}"></script>
@@ -7,7 +5,8 @@
   <script src="{{URL::to('js/ajaxlib.js')}}"></script>
   
 
- 
+  <!-- <link href="{{URL::to('css/smoothness.css')}}" rel="Stylesheet"></link> -->
+  <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/themes/base/minified/jquery-ui.min.css" type="text/css" />
   <script src="{{URL::to('js/jquery-ui.js')}}" ></script>
   <script src="{{URL::to('emi/Chart.js')}}"></script>
  <!--  <link href="{{URL::to('css/autocomp.css')}}" rel="stylesheet"> -->
@@ -381,6 +380,7 @@
 <script src="{{URL::to('js/owl.carousel.min.js')}}"></script>
 <!-- Flexslider -->
 <script src="{{URL::to('js/jquery.flexslider-min.js')}}"></script>
+<script src="{{URL::to('js/chatbox.js')}}"></script>
 <!-- ChatBox -->
 <!-- MAIN JS -->
 <script src="{{URL::to('js/main.js')}}"></script>
@@ -1897,9 +1897,7 @@ function getFbUserData(){
     });
   </script>
   <!-- end -->
-<!-- loader -->
 
-<!-- loader ends -->
 
 <!-- post end -->
 <!-- Facebook Pixel Code -->
@@ -1912,11 +1910,10 @@ document,'script','https://connect.facebook.net/en_US/fbevents.js');
 fbq('init', '781224162028085'); // Insert your pixel ID here.
 fbq('track', 'PageView');
 </script>
-<noscript><img height="1" width="1" class="displaynone" alt="fb-logo" src="https://www.facebook.com/tr?id=781224162028085&ev=PageView&noscript=1"
+<noscript><img height="1" width="1" style="display:none" alt="fb-logo" src="https://www.facebook.com/tr?id=781224162028085&ev=PageView&noscript=1"
 /></noscript>
 <!-- DO NOT MODIFY -->
 <!-- End Facebook Pixel Code -->
-
 
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -1928,6 +1925,10 @@ fbq('track', 'PageView');
   ga('send', 'pageview');
 
 </script>
+
+
+
+
 </body>
 </html>
 <!-- login Start-->
@@ -1983,12 +1984,12 @@ fbq('track', 'PageView');
     <div class="form-group">
       
       <div class="col-sm-offset-3 col-sm-6">
-       <span id='msg_err' class= 'displaynonemsg'>oops something went wrong</span>
-       <span id='pls_wait' class= ' displaynonemsg'>Please wait .....</span>
+       <span id='msg_err' style="display: none;color:red;">oops something went wrong</span>
+       <span id='pls_wait' style="display: none;color: red;">Please wait .....</span>
        
-       <span id='pwd_match' class= 'displaynonemsg'>Password do not match.</span>
+       <span id='pwd_match' style="display: none; color:red;">Password do not match.</span>
 
-       <span id='msg_err_email' class ='displaynonemsg'><center>Email id already exists.</center></span>
+       <span id="msg_err_email"  style="display: none; color:red;"><center>Email id already exists.</center></span>
      </div>
 
    </div>
@@ -2009,7 +2010,7 @@ fbq('track', 'PageView');
 </div>
 
 </div>
-<div id="otp_div" class="displaynone" role="dialog">
+<div id="otp_div" style="display: none;" role="dialog">
   <div class="modal-dialog">
     <!-- Modal content-->
     <div class="modal-content">
@@ -2018,7 +2019,7 @@ fbq('track', 'PageView');
         <form id="otp_form" class="form-horizontal">
          {{ csrf_field() }}
          <input type="text" class="form-control" name="otp" id="otp" minlength="6" maxlength="6" required onkeypress="return fnAllowNumeric(event)">
-         <span id='otp_err displaynonemsg' >oops!! OTP is wrong</span><br>
+         <span id='otp_err' style="display: none; color: red">oops!! OTP is wrong</span><br>
          <button class="btn btn-default"  class="form-control" id="verify_otp" >Verify</button><br>
        </form>
      </div>

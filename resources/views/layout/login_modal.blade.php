@@ -5,12 +5,12 @@
     
       <!-- Modal content-->
          <div class="modal-content">
-          <div class="block" id="login">
+          <div id="login">
              <!-- login-->
          
       <div class="modal-body login-modal">  
     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-	<br>
+  <br>
        <div class="panel pan-log">
           <div class="panel-heading">
             <div class="row" id="forgot-password-hide">
@@ -21,15 +21,13 @@
                 <a href="#" id="register-form-link">Register</a>
               </div>
             </div>
-            <div class="row" id="forgot-password-show">
+            <div class="row displaynone" id="forgot-password-show">
               <div class="col-xs-6">
-                <h3  >Forgot Password</h3>
+                <h3>Forgot Password</h3>
               </div>
             </div>
             <hr>
           </div>
-
-
 
           <div class="panel-body">
             <div class="row">
@@ -101,7 +99,7 @@
                   <div class="form-group">
                     <div class="row">
                       <div class="col-sm-6 col-sm-offset-3">
-                        <button class="form-control btn btn-log registration-submit" id="registration_submit"> Register</i></button>
+                        <button class="form-control btn btn-log registration-submit" id="registration_submit"> Register</button>
                       </div>
                     </div>
                   </div>

@@ -49,9 +49,10 @@ class Handler extends ExceptionHandler
     public function render($request, Exception $e){ 
         //print_r($e);exit();.
         
-        //     if($e instanceof NotFoundHttpException){
-        //     return response()->view('layout.missing', [], 404);
-        // }else  if($e instanceof QueryException){
+            if($e instanceof NotFoundHttpException){
+            return response()->view('layout.missing', [], 404);
+        }
+        // else  if($e instanceof QueryException){
         //      return response()->view('went-wrong');
         // }else{
         //     $log=DB::table('error_log')->insert(['message'=>$e->getMessage(), 'file'=>$e->getFile(), 'line_no'=>$e->getLine(),'code'=>$e->getCode(), 'created_at'=>date("Y-m-d H:i:s")]);

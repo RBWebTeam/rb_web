@@ -12,7 +12,7 @@ Route::get('apply-personal-loan','LoanController@apply_p_test');
 Route::post('compare','CompareController@compare');
 Route::get('view-loan','CompareController@view_loan');
 // Route::get('emi1','CompareController@emi');
-Route::get('credit-report','CompareController@credit_report');
+Route::get('credit-report','ExperianController@credit_report');
 Route::get('contact-us','ContactController@contact_us'); //not linked to index page till now
 //sidebar forms
 Route::post('sidebar','FormController@sidebar');
@@ -85,13 +85,17 @@ Route::get('credit-card','HomeController@credit_card');
 Route::get('savings-account','HomeController@savings_account');
 Route::get('RBA-login','HomeController@RBA_login');
 Route::post('RBA-login','HomeController@RBA_register');
+// Route::post('RBA-login','HomeController@RBA_employee');
 Route::get('lead-status','HomeController@lead_status');
 Route::get('apply-lead-online','ProfileController@applyonline');
+Route::get('apply-express-loan','LoanController@apply_express_loan');
+
 //new loans test
 
 Route::get('test-personal-loan','LoanController@apply_p_test');
 Route::get('test-home-loan','LoanController@apply_h_test');
 Route::get('show-quotes','FormController@show_quotes');
+Route::get('directory','ProfileController@directory');
 
 
 //for dc
@@ -117,6 +121,7 @@ Route::get('thank-you',function (){return view('thank-you');});
 Route::get('credit-card-form','CreditcardController@credit_card_form');
 Route::post('credit-submit','CreditcardController@credit_form_submit');
 
+Route::get('no-record-found',function (){return view('no-record-found');});
 Route::get('test',function (){return view('test_parse');});
 
 

@@ -19,8 +19,8 @@ class LoanController extends Controller
 
     public function personal_loan(){
       $keywords='Personal Loans,Personal Loan At Low Interest Rates,Online Personal Loan,Personal Loan In India,Apply Online For Fast Personal Loan Approvals,Compare Personal Loan Interest Rates,Secured Personal Loan, Personal Loan Emi Calculator,Personal Loan Eligibility;';
-    	$data['title']='Personal Loan';
-    	$data['description']='Finance Your Dreams by Comparing Personal.Loan interest rates and apply online for quick approval of lowest EMI personal loan. Apply for Best Personal Loan on Rupeeboss.com';
+    	$data['title']='Personal Loan – Apply online at lowest interest rate on Rupeeboss.com';
+    	$data['description']='Finance Your Dreams by Comparing Personal Loan interest rates and apply online for quick approval of low EMI. Apply for Best Personal Loan on Rupeeboss.com';
         $data['id']=DB::table('product_master')
                       ->where('Product_Name','=','Personal Loan')
                       ->first();
@@ -30,10 +30,7 @@ class LoanController extends Controller
       
       $keywords='Home Loan,Apply for Home Loan,Housing Loan,Home Loan at Low Rate of Interest,Get Home Loan,Need A Home Loan,Home Loan Eligibility,The Best Home, Compare Home Loan,Home Loan Finance Company,Home Loans In India,Home Loan Charges,Home Loan Credit,Best Housing Loans,Home Loan Emi Calculator';
     	$data['title']='Home Loan- Apply online at low interest rate On Rupeeboss.com';
-    	$data['description']='Choose the right Home Loan for You. 
-                            Check & Compare loans from thousand of banks, 
-                            easily Calculate EMIs. Apply for best Home Loan 
-                            With Low Interest rate on Rupeeboss.com';
+    	$data['description']='Choose the right Home Loan for You. Check & Compare home loans from thousand of Banks and Apply for best Home Loan With Low Interest rate on Rupeeboss.com';
 
         $data['id']=DB::table('product_master')
                       ->where('Product_Name','=','Home Loan')
@@ -150,5 +147,12 @@ class LoanController extends Controller
         $data['title']='Apply For Loan Against Property at Lowest Interest Rates with Rupeeboss.com';
         $data['description']='Avail Loan Against Property with benefits like lower interest rates & EMI payment. Apply online on Rupeeboss.com to get a Loan now.';
       return view('lap-test')->with($data)->with('keywords',$keywords);
+    }
+
+    public function apply_express_loan(){
+      $keywords='Loan Against Property,Apply Online For Property Loan,Loan Against Property Guidelines,Loan Against Property Online,Commercial Property Loans';
+        $data['title']='Apply For Loan Against Property at Lowest Interest Rates with Rupeeboss.com';
+        $data['description']='Avail Loan Against Property with benefits like lower interest rates & EMI payment. Apply online on Rupeeboss.com to get a Loan now.';
+      return view('apply-express-loan')->with($data)->with('keywords',$keywords);
     }
 }

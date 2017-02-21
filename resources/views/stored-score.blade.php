@@ -8,10 +8,15 @@
     <img src="{{URL::to('images/Experian_logo.png')}}" style="margin:0 auto;"/>
 			<div class="row">
       <h2> Your credit Score is :: {{$data}}</h2>
+      <div class="row">
+      {{$html}}
   </div>
   </div>
   </div>
   </div>
+  
+  </div>
+  
   </div>
   </div>
   

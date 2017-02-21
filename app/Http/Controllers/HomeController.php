@@ -12,12 +12,12 @@ use Session;
 use URL;
 use Mail;
 use Illuminate\Support\Facades\Hash;
-class HomeController extends Controller
+class HomeController extends CallApiController
 {
 	public function index(){
-		$keywords='Home Loan,Business Loan,Personal Loan,Car Loan,Express Loan,Savings Account,Loan Against Property,Small and Medium Size Enterprise Loan,SME Finance,Retail Loan';
+		$keywords='Loans At Low Interest Rate, Best Loans, Loan Interest Rates, Best Credit Cards, Apply For Loan Online, Compare Loan, Check Loan Eligibility, Calculate EMI, Compare Credit Cards';
 		$data['title']='RupeeBoss - Apply for all kind of Loan On Rupeeboss.com';
-		$data['description']='When You Need A Loan, You are not Alone! View, Compare & get Instant quotes matching your requirements. Apply Online for all kind ofLoan at Lower Interest Rates on Rupeeboss.com. ';
+		$data['description']='Apply For All Kinds of Loans at Lowest Interest Rate. Use loan & EMI Calculator, Compare Loan & Credit Cards & get quotes instantly as per requirement on Rupeeboss.com ';
 		// $data['city'] = DB::table('city_master')->select('City_Name','state_id','City_Id')->get();
 		// $data['loan'] = DB::table('product_master')->select('Product_Name','Product_Id')->get();
 		//print "<pre>";
@@ -36,21 +36,21 @@ class HomeController extends Controller
 		$keywords='Need A Loan,Apply For Loan Online,Compare Loan Rates,Loan Interest Rates,Loan Emi Calculator,Loan Eligibility,Home Loan,Personal Loan,Business Loan,Car Loan,Express Loan,Sme Loan,Loan Against Property,Balance Transfer,Retail Loan'; 
 
 		$data['title']='About Us - RupeeBoss provides all kind of Loans.';
-    	$data['description']='To save money, compare and pick lowered interest rates and save thousands on your home loan, personal loan, business loanand car loan only on Rupeeboss.com';
+    	$data['description']='To Save Money, Compare and Pick LoweredInterest Rates and apply for all kinds of home loans, personal loans, car loans, Business loans only on Rupeeboss.com';
 		return view('about-us')->with($data)->with('keywords',$keywords);
 	}
 
 	public function disclaimer(){
 		$keywords='Rupeeboss Disclaimer'; 
 		$data['title']=' Rupeeboss – Disclaimer';
-    	$data['description']='Disclaimer by Rupeeboss to provide discrepancy & transparency with customers.';
+    	$data['description']='Disclaimer by Rupeeboss to Provide Discrepancy and Transparency with Customers.';
 		return view('disclaimer')->with($data)->with('keywords',$keywords);
 
 	}
 	public function privacy_policy(){
 		$keywords='Privacy Policy,Rupeeboss Privacy Policy'; 
         $data['title']='Rupeeboss – Privacy Policy.';
-    	$data['description']='Rupeeboss privacy policy demonstrates our commitment to your financial privacy. We can help you gain the confidence you need to make important financial decisions for you, your family or your business.';
+    	$data['description']='Rupeeboss Privacy Policy demonstrates our commitment to your financial privacy. We can help you gain the confidence you need to make important financial decisions.';
 		return view('privacy-policy-page')->with($data)->with('keywords',$keywords);
 
 	}
@@ -77,7 +77,7 @@ class HomeController extends Controller
 	public function savings_account(){
 		$keywords='Best Saving Rates,Savings Account Online,Highest Rate Savings Account ,Best Interest Savings Account,Savings Bank Account,Savings Account Interest Rate Calculator,Savings Account Benefits';
 		$data['title']='Savings Account- Apply online at low interest rate On Rupeeboss.com';
-    	$data['description']='Compare & open best savings account Online.Check Eligibility,Benefits & Reviews from top banks and apply at low Interest rate on Rupeeboss.com ';
+    	$data['description']='Compare & Open Best Savings Account Online. Check Eligibility, Benefits &Reviews from top banks and apply at low Interest rate on Rupeeboss.com ';
 		return view('savings-account')->with($data)->with('keywords',$keywords);
 	}
 
@@ -98,7 +98,7 @@ class HomeController extends Controller
 	}
 
    public function RBA_register(Request $req){
-		print_r($req->all()	);
+		// print_r($req->all()	);
 		$query=DB::table('rba_register')
 		->insert(['Name'=>$req->name,
 			     'Email'=>$req->email,
@@ -117,26 +117,13 @@ class HomeController extends Controller
                 $post_data='{"mobNo":"'.$req->contact.'","msgData":"Thank you for registering.- RupeeBoss.com",
                     "source":"WEB"}';
                 $url = "http://beta.services.rupeeboss.com/LoginDtls.svc/xmlservice/sendSMS";
-                $ch = curl_init();
-                curl_setopt($ch, CURLOPT_VERBOSE, 1);
-                curl_setopt( $ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
-                curl_setopt($ch, CURLOPT_URL, $url);
-                curl_setopt($ch, CURLOPT_POST, 1);
-                curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-                curl_setopt($ch, CURLOPT_FAILONERROR, 0);
-                curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
-                curl_setopt($ch, CURLOPT_POSTFIELDS,$post_data);
-                $http_result = curl_exec($ch);
-                $error = curl_error($ch);
-                $http_code = curl_getinfo($ch ,CURLINFO_HTTP_CODE);
+                $result=$this->call_json_data_api($url,$post_data);
+                $http_result=$result['http_result'];
+                $error=$result['error'];
                 $obj = json_decode($http_result);
-                // statusId response 0 for success, 1 for failure
-                curl_close($ch);
                 return true;
 		}
 		return false;
 
 	}
-
-	
 }

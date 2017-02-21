@@ -67,10 +67,11 @@
 
 
      <!-- <i class="fa fa-exchange" aria-hidden="true"></i> -->
+     
     <div class="form-group">
     <input type="hidden" name="brokerid" id="brokerid" value="<?php echo isset($_GET['brokerid'])?$_GET['brokerid']:'';?>">
        <!-- <label class="control-label" for="Loan Amount">Outstanding Principal:</label> -->
-       <input type="text" name="loanamount" class="form-control" id="loanamount" placeholder="Outstanding Principal" value="" onblur ="myfun()" onkeypress="return isNumberKey(event)" maxlength="9" title="Outstanding Principal">
+       <input type="text" name="loanamount" class="form-control" id="loanamount" placeholder="Outstanding Principal" value="" onblur ="myfun()" onkeypress="return isNumberKey(event)" maxlength="10" title="Outstanding Principal">
 
     </div>
     <div class="form-group">
@@ -89,8 +90,8 @@
     <div class="col-md-12 pad">
   <button class="btn btn-success pull-left ">Submit</button>
   <div class="pull-right">
-          <label><input type="radio" name="Year" id="Year" value="" checked="checked"> Yr</label>
-             <label><input type="radio" name="Year" id="Month" value=""> Mo</label>
+          <label><input type="radio" name="Year" id="Year" value="" checked="checked"> Year</label>
+             <label><input type="radio" name="Year" id="Month" value=""> Month</label>
     </div>
     </div>
   
@@ -130,7 +131,14 @@
     
        <p><h6>Your <mark style="color:red"><b>Savings</b></mark> through reduced Interest:</h6></p>
        <h2 class="em8">₹ <b><span id="emi6">0</span></b></h2>
-	   <button type="button" class="btn btn-success" id="revise_apply2" name="revise_apply" data-toggle="modal" data-target="#myModaltest" style="display:none;">Apply Now</button>
+       <?php if($loan == "home-loan") {?>
+       <button type="button" class="btn btn-success" id="revise_apply2" name="revise_apply" data-toggle="modal" data-target="#myModaltest" style="display:none;">Apply Now</button>
+       <?php }elseif($loan == "personal-loan"){?>
+       <button type="button" class="btn btn-success" id="revise_apply2" name="revise_apply" data-toggle="modal" data-target="#borrow_personal" style="display:none;">Apply Now</button>
+        <?php }else{?>
+        <button type="button" class="btn btn-success" id="revise_apply2" name="revise_apply" data-toggle="modal" data-target="#borrow_lap" style="display:none;">Apply Now</button>
+         <?php }?>
+	   
        
       
    
@@ -227,8 +235,8 @@
         <h4 class="modal-title"></h4>
       </div>
       <div class="modal-body">
-        <h4><p>Amount should be greater than <b>"5,00,000" and lesser than "1,00,000,000"</b>.</p></h4>
-        <h4><p>As well as Interest should be greater than <b>8.54%</b>. If less you are already on Lower Rate.</p></h4>
+        <h4><p>Amount should be greater than <b>"5,00,000" and lesser than "10,00,000,000"</b>.</p></h4>
+        <h4><p>As well as Interest should be greater than <b><?php echo $alert_rate;?></b>. If less you are already on Lower Rate.</p></h4>
       </div>
       
       <div class="modal-footer">
@@ -248,8 +256,8 @@
         <h4 class="modal-title"></h4>
       </div>
       <div class="modal-body">
-        <h4><p>Amount should be greater than <b>"1,00,000" and lesser than "1,00,000,000"</b>.</p></h4>
-        <h4><p>As well as Interest should be greater than (Or)equal to <b>11.49%</b> If less you are already on Lower Rate.</p></h4>
+        <h4><p>Amount should be greater than <b>"1,00,000" and lesser than "10,00,000,000"</b>.</p></h4>
+        <h4><p>As well as Interest should be greater than (Or)equal to <b><?php echo $alert_rate;?></b> If less you are already on Lower Rate.</p></h4>
       </div>
       
       <div class="modal-footer">
@@ -269,8 +277,8 @@
         <h4 class="modal-title"></h4>
       </div>
       <div class="modal-body">
-        <h4><p>Amount should be greater than <b>"5,00,000" and lesser than "1,00,000,000"</b>.</p></h4>
-        <h4><p>As well as Interest should be greater than (Or)equal to <b>10.25%</b>. If less you are already on Lower Rate.</p></h4>
+        <h4><p>Amount should be greater than <b>"5,00,000" and lesser than "10,00,000,000"</b>.</p></h4>
+        <h4><p>As well as Interest should be greater than (Or)equal to <b><?php echo $alert_rate;?></b>. If less you are already on Lower Rate.</p></h4>
       </div>
       
       <div class="modal-footer">
@@ -355,7 +363,7 @@
                data : { 'loanamount': loanamount , 'loaninterest': loaninterest ,'loanterm' :loanterm,'_token': v_token,'profession':profession,'product_id':product_id,'brokerid':brokerid},
                // 'bank':bank},
                success: function(msg){
-                  // console.log(msg);
+                    console.log(msg);
                   if(msg.success ==true){
                   var numb = msg.amount.toFixed();
                    $('#emi').empty().append(numb);
@@ -370,6 +378,7 @@
                    $('#emi5').empty().append( msg.drop_in_int);
                    var nrate=(($('#loaninterest').val())-msg.drop_in_int).toFixed(2);
                   $('#loaninterest_new').val( nrate);
+                  // console.log(nrate);
                    
                    var numb4 = msg.savings.toFixed();
                    $('#emi6').empty().append(numb4);
@@ -382,10 +391,10 @@
 
                   $('#revise').show();
                   $('#revise_apply').show();
-                  <?php if($loan != "personal-loan"){?>
+                  
       
                   $('#revise_apply2').show();
-                  <?php }?>
+                  
                         $("#1").show();
                         $("#4").show();
                         $("#5").show();

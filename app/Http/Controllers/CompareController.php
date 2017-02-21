@@ -8,7 +8,7 @@ use App\Http\Requests;
 use Session;
 use DB;
 use Response;
-class CompareController extends Controller
+class CompareController extends CallApiController
 {
     //
  
@@ -79,36 +79,7 @@ class CompareController extends Controller
         $data=$req->all();
         return view('emi/emi_cal')->with($data);
     }
-    public function credit_report(){
-      $keywords='credit report free,credit score,free credit report and score,how to get free credit report ';
-      $data['title']='Check your Credit Score online on Rupeeboss.com';
-      $data['description']='Check your free credit scores, reports and insights. Get the info you need to take control of your credit from Rupeeboss.com';
-      $data['telephone']=DB::table('experian_telephonetype')
-      ->select('Telephone_Name','Telephone_Value')
-      ->get();
-      $data['city'] = DB::table('city_master')
-      ->select('City_Name','state_id','City_Id')
-      ->get();
-      $data['state'] = DB::table('experian_state_master')
-      ->select('State_Id','State_Code','State_Name')
-      ->get();
-      $contact=Session::get('contact');
-      $login=Session::get('is_login');
-       if($login){
-          //if already login then remove contact from old seessions
-          Session::forget('contact');
-          }
-
-      if($contact || $login){
-          return view('credit-report')->with($data)->with('keywords',$keywords);
-        }else{
-           return view('credit-report-otp');
-        }
-     
-     //  print "<pre>";
-      //print_r($data['state']);exit();
-     
-    }
+    
 
     public function otp_page(){
       if(Session::get('is_login'))
@@ -134,22 +105,14 @@ class CompareController extends Controller
             //calling service to send sms 
             $post_data='{"mobNo":"'.$req['contact'].'","msgData":"your otp is '.$otp.' - RupeeBoss.com",
                 "source":"WEB"}';
-            $url = "http://beta.services.rupeeboss.com/LoginDtls.svc/xmlservice/sendSMS";
-            $ch = curl_init();
-            curl_setopt($ch, CURLOPT_VERBOSE, 1);
-            curl_setopt( $ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
-            curl_setopt($ch, CURLOPT_URL, $url);
-            curl_setopt($ch, CURLOPT_POST, 1);
-            curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-            curl_setopt($ch, CURLOPT_FAILONERROR, 0);
-            curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
-            curl_setopt($ch, CURLOPT_POSTFIELDS,$post_data);
-            $http_result = curl_exec($ch);
-            $error = curl_error($ch);
-            $http_code = curl_getinfo($ch ,CURLINFO_HTTP_CODE);
+            // $url = "http://beta.services.rupeeboss.com/LoginDtls.svc/xmlservice/sendSMS";
+               $url = "http://services.rupeeboss.com/LoginDtls.svc/xmlservice/sendSMS";
+            $result=$this->call_json_data_api($url,$post_data);
+            $http_result=$result['http_result'];
+            $error=$result['error'];
             $obj = json_decode($http_result);
             // statusId response 0 for success, 1 for failure
-            curl_close($ch);
+            
             if($obj->{'statusId'}==0){
                 return Response::json(array(
                             'data' => true,
@@ -189,19 +152,27 @@ class CompareController extends Controller
     public function switchme($loan){
         // print"<pre>";print_r($loan);exit();
       if ($loan=="home-loan") {
-        $data['title']='Transfer Home Loan Balance Online';
+        $data['title']='Transfer Home Loan Balance Online on Rupeeboss.com';
         $keywords='Home loan balance transfer,How to transfer home loan,Home loan transfer,Home loan refinance,Home Loan Balance Transfer Process ,Online Balance Transfer,Transferring Home Loan,Home Loan Balance Transfer Calculator';
-        $data['description']='Lets find out how much you can save. Compare home loan transfer rates from one bank to another and Get low interest rate by applying for Home Loan Balance Transfer on Rupeeboss.com';
+        $data['description']='Lets Find Out How Much You Can Save. Compare home loan transfer rate from onebank to another & apply at low rate for Home Loan Balance Transfer on Rupeeboss.com';
+        $alert_rate=DB::select("SELECT MIN(roi) as roi FROM bank_product_web_intrest where product_id=12 and roi_type='Floating'");
       }elseif ($loan=="personal-loan") {
-         $data['title']='Transfer Personal Loan Balance Online';
+         $data['title']='Transfer Personal Loan Balance Online on Rupeeboss.com';
         $keywords='How to Transfer Personal Loan Balance Online,Personal Loan Balance Transfer,Personal Loan Balance Transfer Eligibility Criteria,Personal Loan Balance Transfer Interest rates,Personal Loan Balance Transfer Calculator,Personal Loan Balance Transfer Process ';
-        $data['description']='Lets find out how much you can save. Compare and Apply to multiple banks for the Best offers on personal loan balance transfer On Rupeeboss.com.';
+        $data['description']='Lets Find Out How Much You Can Save. Compare and Apply to multiple banks for theBest offers on personal loan balance transfer On Rupeeboss.com';
+        $alert_rate=DB::select("SELECT MIN(roi) as roi FROM bank_product_web_intrest where product_id=9 " );
       }else{
-         $data['title']='Transfer Loan Against Property Online';
+         $data['title']='Transfer Loan Against Property Online on Rupeeboss.com';
         $keywords='Loan Against Property Transfer,Loan Against Property EMI Calculator,Loan Against Property Balance Transfer Process,Loan Against Property Balance Transfer Interest rates,Compare Loan Against Property Balance Transfer';
-        $data['description']='Lets find out how much you can save.Transfer your Loan Against Property at lowest interest Rate. Enter Details, Compare and Switch for balance Transfer on Rupeeboss.com';
+        $data['description']='Lets Find Out How Much You Can Save.Transfer your Loan Against Property at lowest interestRate. Compare and Switch for balance Transfer on Rupeeboss.com';
+        $alert_rate=DB::select("SELECT MIN(roi) as roi FROM bank_product_web_intrest where product_id=7 and roi_type='Floating'");
       }
       $data['loan'] =$loan;
+      
+      $data['alert_rate']=$alert_rate[0]->roi;
+      //print_r($data['alert_rate']);exit();
+      //->get();
+      //print_r();exit();
       return view('emi/switch_me')->with($data)->with('keywords',$keywords);
     }
 
@@ -227,7 +198,9 @@ class CompareController extends Controller
         if($getQuery[0]->roi==0){
             $getQuery[0]->roi=1;
           }
+          
             $new_rate=$getQuery[0]->roi/12/100;
+            // print_r($new_rate);exit();
             $new_amount = $loanamount * $new_rate * (pow(1 + $new_rate, $loanterm) / (pow(1 + $new_rate, $loanterm) - 1));
 
             $new_total =(($new_amount*$loanterm)-$loanamount);

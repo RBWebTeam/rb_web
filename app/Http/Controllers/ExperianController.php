@@ -105,6 +105,7 @@ class ExperianController extends CallApiController
 
     public function gen_ques($new_data,$qs){
         try{
+          //print_r($new_data);exit();
                 $arr = '{"stage1hitid":"'.$new_data[0].'","stage2hitid":"'.$new_data[1].'","stage2sessionid":"'.$new_data[3].'","answer":"","questionId":"'.$qs.'"}';
             //generate question api
             $url = "http://api.rupeeboss.com/CreditAPI.svc/generateQuestionForConsumer";    

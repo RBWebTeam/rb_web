@@ -38,21 +38,21 @@
          <li class="call-back2 callclass" data-toggle="modal" data-target="#myModal2"><a href="#">Email Us</a></li>
          <li class="call-back3 callclass" data-toggle="modal" data-target="#myModal3"><a href="#">Help</a></li>
 
-         <li class="chat"><a href="#">Live Chat</a></li> --->
+         <li class="chat"><a href="#">Live Chat</a></li> -->
 
     </ul>
     </div>
 	
 	
 	<!-- Sidebar Popup Div Start -->
-	<div id="fh5co-page"   >
+	<div itemscope itemtype="http://schema.org/LocalBusiness" id="fh5co-page"   >
 
-	<header id="fh5co-header" role="banner" class="navbar navbar-default navbar-fixed-top">
+	<header id="fh5co-header" class="navbar navbar-default navbar-fixed-top">
 	 <div class="container-fluid top-bg">
         <div class="container">
          <div class="col-md-8">
             <ul class="top-lnk">
-                <li class="hidden-xs"><a href="{{URL::to('/')}}">Home</a></li>
+                <li class="hidden-xs"><a itemprop="url" href="{{URL::to('/')}}">Home</a></li>
                 <li class="hidden-xs"><a href="{{URL::to('about-us')}}">About Us</a></li>
                 <li class="hidden-xs"><a href="{{URL::to('contact-us')}}">Contact Us</a></li>
 				<li class="hidden-xs"><a href="{{URL::to('http://erp.rupeeboss.com/')}}">Employee Login </a></li>
@@ -76,8 +76,8 @@
     </div>
 		<div class="container" id="refreshID">
 			<div class="header-inner">
-				<h1><a href="{{URL::to('/')}}"><img src="{{URL::to('images/logo.png')}}" alt="logo" width="160" height="47" /></a></h1>
-				<nav role="navigation">
+				<h1><a href="{{URL::to('/')}}"><img itemprop="image" src="{{URL::to('images/logo.png')}}" alt="logo" width="160" height="47" /></a></h1>
+				<nav>
 					<ul>
 						<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" data-target="#">SME Loan</a>
 						 
@@ -90,12 +90,6 @@
 							<li>
 							<a href="{{URL::to('sme-loan')}}">Lease Rent Discounting</a>
 							<a href="{{URL::to('sme-loan')}}">Working Capital</a>
-							<!-- <a href="{{URL::to('sme-loan')}}">Export/Import Finance</a> -->
-							</li>
-							<!-- <li><a href="{{URL::to('sme-loan')}}">Over Draft / Cash Credit</a> -->
-							
-							</li>
-							
 							</li>
 						</ul>
 						</li>

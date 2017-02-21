@@ -1,6 +1,6 @@
 <div class="container">
 </div>
-	<footer id="fh5co-footer" role="contentinfo">
+	<footer id="fh5co-footer">
 		<div class="container">
 			<div class="col-md-2 col-sm-12 col-sm-push-0 col-xs-12 col-xs-push-0">
 				<h3>Home Loan</h3>
@@ -81,11 +81,11 @@
 
 			<div class="col-md-3 col-md-push-1 col-sm-12 col-sm-push-0 col-xs-12 col-xs-push-0">
             <h3>Office Address</h3>
-            <span><a href="https://goo.gl/iCZ5nl" target="_blank"><i class="icon-map-marker"></i></a>&nbsp;  5C/5D, 1 st ﬂoor,
+            <span  itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"><a href="https://goo.gl/iCZ5nl" target="_blank"><i class="icon-map-marker"></i></a>&nbsp;  <span itemprop="addressLocality">5C/5D, 1 st ﬂoor,
             The Centrium, 
              Phoenix Marketcity, 
              Kurla West, 
-             Mumbai-400070, Maharashtra</span>
+             Mumbai</span>-<span itemprop="postalCode">400070</span>, Maharashtra</span>
 				<ul class="fh5co-social">
 					<li><a href="{{URL::to('https://twitter.com/rupeeboss')}}" target="_blank"><i class="icon-twitter"></i></a></li>
 					<li><a href="{{URL::to('https://www.facebook.com/rupeeboss')}}" target="_blank"><i class="icon-facebook"></i></a></li>

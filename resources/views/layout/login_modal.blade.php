@@ -5,7 +5,7 @@
     
       <!-- Modal content-->
          <div class="modal-content">
-          <div s id="login">
+          <div id="login">
              <!-- login-->
          
       <div class="modal-body login-modal">  
@@ -21,7 +21,7 @@
                 <a href="#" id="register-form-link">Register</a>
               </div>
             </div>
-            <div class="row" id="forgot-password-show" class="displaynone" >
+            <div class="row displaynone" id="forgot-password-show">
               <div class="col-xs-6">
                 <h3>Forgot Password</h3>
               </div>
@@ -99,7 +99,7 @@
                   <div class="form-group">
                     <div class="row">
                       <div class="col-sm-6 col-sm-offset-3">
-                        <button class="form-control btn btn-log registration-submit" id="registration_submit"> Register</i></button>
+                        <button class="form-control btn btn-log registration-submit" id="registration_submit"> Register</button>
                       </div>
                     </div>
                   </div>

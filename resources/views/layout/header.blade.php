@@ -11,12 +11,24 @@
 	<link rel="shortcut icon" href="{{URL::to('images/rb_fav.png')}}">
 	<link href="{{URL::to('css/mysite.css')}}" rel="stylesheet" type="text/css" />
 	<!-- <link href="{{URL::to('css/style.css')}}" rel="stylesheet" type="text/css" /> -->
+<<<<<<< HEAD
+=======
+	
+	<!-- Modernizr JS -->
+	<!-- <link rel="manifest" href="{{URL::to('extension/manifest.json')}}"> -->
+>>>>>>> 0cf3481216d89cff5513bc9c75141b5bda76b03e
 	@if( request()->url() == url('/') )
      <link rel="canonical" href="https://www.rupeeboss.com/" />
 	@else
 	     <link rel="canonical" href="{!! request()->fullUrl() !!}"  />
 	@endif
+<<<<<<< HEAD
 	 <script src="{{URL::to('js/Myapp.js')}}"></script>
+=======
+	
+	<script src="{{URL::to('js/Myapp.js')}}"></script>
+
+>>>>>>> 0cf3481216d89cff5513bc9c75141b5bda76b03e
 	</head>
 	<body>
 	<script src="https://app.tigerapi.com/rest/?i=MTQ4NTIzNzg2NA==" async="async" type="text/javascript"></script>
@@ -26,19 +38,28 @@
     <ul>
         <li class="hide-dv"><a href="#"><i class="icon-arrow-left"></i>&nbsp;Hide</a></li>
          <li class="call-back callclass" data-toggle="modal" data-target="#myModal"><a href="#">Instant <br>Call Back</a></li>
+<<<<<<< HEAD
+=======
+         <!-- <li class="call-back1 callclass" data-toggle="modal" data-target="#myModal1"><a href="#">Talk to us</a></li>
+         <li class="call-back2 callclass" data-toggle="modal" data-target="#myModal2"><a href="#">Email Us</a></li>
+         <li class="call-back3 callclass" data-toggle="modal" data-target="#myModal3"><a href="#">Help</a></li>
+
+         <li class="chat"><a href="#">Live Chat</a></li> -->
+
+>>>>>>> 0cf3481216d89cff5513bc9c75141b5bda76b03e
     </ul>
     </div>
 	
 	
 	<!-- Sidebar Popup Div Start -->
-	<div id="fh5co-page"   >
+	<div itemscope itemtype="http://schema.org/LocalBusiness" id="fh5co-page"   >
 
-	<header id="fh5co-header" role="banner" class="navbar navbar-default navbar-fixed-top">
+	<header id="fh5co-header" class="navbar navbar-default navbar-fixed-top">
 	 <div class="container-fluid top-bg">
         <div class="container">
          <div class="col-md-8">
             <ul class="top-lnk">
-                <li class="hidden-xs"><a href="{{URL::to('/')}}">Home</a></li>
+                <li class="hidden-xs"><a itemprop="url" href="{{URL::to('/')}}">Home</a></li>
                 <li class="hidden-xs"><a href="{{URL::to('about-us')}}">About Us</a></li>
                 <li class="hidden-xs"><a href="{{URL::to('contact-us')}}">Contact Us</a></li>
 				<li class="hidden-xs"><a href="{{URL::to('http://erp.rupeeboss.com/')}}">Employee Login </a></li>
@@ -60,8 +81,8 @@
     </div>
 		<div class="container" id="refreshID">
 			<div class="header-inner">
-				<h1><a href="{{URL::to('/')}}"><img src="{{URL::to('images/logo.png')}}" alt="logo" width="160" height="47" /></a></h1>
-				<nav role="navigation">
+				<h1><a href="{{URL::to('/')}}"><img itemprop="image" src="{{URL::to('images/logo.png')}}" alt="logo" width="160" height="47" /></a></h1>
+				<nav>
 					<ul>
 						<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" data-target="#">SME Loan</a>
 						 
@@ -74,8 +95,11 @@
 							<li>
 							<a href="{{URL::to('sme-loan')}}">Lease Rent Discounting</a>
 							<a href="{{URL::to('sme-loan')}}">Working Capital</a>
+<<<<<<< HEAD
 							</li>							
 							</li>							
+=======
+>>>>>>> 0cf3481216d89cff5513bc9c75141b5bda76b03e
 							</li>
 						</ul>
 						</li>

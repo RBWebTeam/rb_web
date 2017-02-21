@@ -386,7 +386,7 @@
 			<div class="row">
             
 				<div class="col-md-6 col-sm-6 animate-box">
-					<span class="item-grid">
+					<div class="item-grid">
 						<div class="v-align blu-clr">
 							<div class="v-align-middle">
 								<div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -425,11 +425,11 @@
 
 							</div>
 						</div>
-					</span>
+					</div>
 				</div>
                 
 				<div class="col-md-6 col-sm-6 animate-box">
-					<span class="item-grid">
+					<div class="item-grid">
 						
 						<div class="v-align blu-clr1">
 							<div class="v-align-middle">
@@ -437,7 +437,7 @@
 								<img src="{{URL::to('images/dsd.png')}}" class="img-responsive" alt="partners-img" />
 							</div>
 						</div>
-					</span>
+					</div>
 				</div>
 				
 			</div>

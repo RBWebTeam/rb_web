@@ -1,4 +1,4 @@
- 
+  <script src="{{URL::to('js/Myapp.js')}}"></script>
   <script>
        function registration(){
          document.getElementById('login').style.display="none";

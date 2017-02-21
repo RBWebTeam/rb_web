@@ -1,183 +1,3 @@
-<style>
-	.slider {
-  position: relative;
-  margin-top: 20px;
-  margin-bottom: 15px;
-  width: 90%;
-  background: #2A3137;
-  /* -moz-box-shadow: inset 0 0 10px #999;
-  -webkit-box-shadow: inset 0 0 10px #999;
-  box-shadow: inset 0 0 10px #999;*/
-  height: 15px;
-  border-radius: 10px;
-  border: 1px solid #DDDDDD;
-  margin-left: 15px;
-}
-
-.slider .ui-slider-handle {
-  position: absolute;
-  background: #10A447;
-  border-radius: 5px;
-  width: 20px;
-  height: 50px;
-  top: -16px;
-  left: 50px;
-  border-style: none;
-  box-shadow: none;
-
-}
-
-
-
-
-	 
-/*.price-box {
-	margin: 0 auto;
-	border-radius: 10px;
-	
-}*/
-
-.ui-widget-content {
-	border: 1px solid #bdc3c7;
-	background: #e1e1e1;
-	color: #222222;
-	margin-top: 4px;
-}
-
-.ui-slider .ui-slider-handle {
-	position: absolute !important;
-	z-index: 2 !important;
-	width: 4.0em !important;
-	height: 2.1em !important;
-	cursor: default !important;
-	margin: 0 -20px auto !important;
-	text-align: center !important;	
-	
-	color: #FFFFFF !important;
-	
-}
-
-.ui-corner-all {
-	/*border-radius: 20px;*/
-}
-
-.ui-slider-horizontal .ui-slider-handle {
-	top: -3em !important;
-}
-
-.ui-state-default,
-.ui-widget-content .ui-state-default {
-	background: #393a40 !important;
-}
-
-.ui-slider-horizontal .ui-slider-handle {
-	margin-left: -27px !important;
-}
-
-.ui-slider .ui-slider-handle {
-	cursor: pointer;
-}
-
-.ui-slider a,
-.ui-slider a:focus {
-	cursor: pointer;
-	outline: none;
-}
-
-.price, .lead p {
-	font-weight: 600;
-	font-size: 32px;
-	display: inline-block;
-	line-height: 60px;
-}
-
-h4.great {
-	background: #00ac98;
-	margin: 0 0 55px -60px;
-	padding: 7px 15px;
-	color: #ffffff;
-	font-size: 18px;
-	font-weight: 600;
-	border-radius: 5px;
-	display: inline-block;
-	-moz-box-shadow:    2px 4px 5px 0 #ccc;
-  	-webkit-box-shadow: 2px 4px 5px 0 #ccc;
-  	box-shadow:         2px 4px 5px 0 #ccc;
-}
-
-.price-slider {
-	margin-bottom: 70px;
-}
-
-.form-pricing {
-	background: #ffffff;
-	padding: 20px;
-	border-radius: 4px;
-}
-
-.price-form {
-	background: #ffffff;
-	margin-bottom: 10px;
-	padding: 20px;
-	border: 1px solid #eeeeee;
-	border-radius: 4px;
-}
-
-.form-group {
-	margin-bottom: 0;
-}
-
-.form-group span.price {
-	font-weight: 200;
-	display: inline-block;
-	color: #7f8c8d;
-	font-size: 14px;
-}
-
-.help-text {
-	display: block;
-	margin-top: 32px;
-	margin-bottom: 10px;
-	color: #737373;
-	position: absolute;
-	font-weight: 200;
-	text-align: right;
-	width: 188px;
-}
-
-.price-form label {
-	font-weight: 200;
-	font-size: 21px;
-}
-
-.ui-slider-range-min {
-	background: #2980b9;
-}
-
-.ui-slider-label-inner {
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
-    border-top: 10px solid #393a40;
-    display: block;
-    left: 50%;
-    margin-left: -10px;
-    position: absolute;
-    top: 100%;
-    z-index: 99;
-}
-
-label {
-    color: #fff;13px
-    font-size: ;
-    font-weight: normal;
-    position: absolute;
-    pointer-events: none;
-    left:10px;
-    top: 1px;
-    transition: all 0.2s ease;
-    font-weight: 500;
-}
-	</style>
 @include('layout.header')
 <div id="fh5co-hero">
   <div class="express-lon-ban"><img src="images/express-loan-image.jpg" class="img-responsive"/></div>
@@ -219,7 +39,8 @@ label {
 				</div>
 			</div>
 			<br>
-          
+            <form class="express_form" id="express_form" >
+            {{ csrf_field() }}
 			<div class="col-md-12 offset5 bg-white box-shadow">
 			<div class="pad border-all">
 			<div class="offset5">
@@ -233,40 +54,29 @@ label {
 		    <div class="col-md-12">
 			<h3 class="text-center mrg-btm hed-three"><b>Business Type</b></h3>
 			
-			 <div class="col-md-12"><div class="offset5"><button class="btn btn-primary bt-wt"><input type="radio" name="radio" checked/> Self Employed Professionsl (SEP)</button>
-<button class="btn btn-primary bt-wt"><input type="radio" name="radio" /> Self Employed Non-Professionsl (SENP)</button>
+			 <div class="col-md-12"><div class="offset5"><a class="btn btn-primary bt-wt"><input type="radio" name="radio" checked/> Self Employed Professionsl (SEP)</a>
+		<a class="btn btn-primary bt-wt"><input type="radio" name="radio" /> Self Employed Non-Professionsl (SENP)</a>
 			</div>
 		 </div>
 			<div class="col-md-12 mrg-btm-b">
 			<h3 class="text-center hed-three"><b>Tenure</b></h3>
 			
-			<div class="scaling-slider">
-											
-									<div class="price-box">
-									        <!-- <form class="form-horizontal form-pricing" role="form" > -->
-									            
-
-									                <div class="col-sm-12" style="margin-top:30px;">
-									                    <div id="slider1" onchange="myfun()"></div>
-									                    <span class="pull-left">0</span>
-									                    <span class="pull-right">30</span>
-									                    <a href="javascript:void(0);"><span id="minus1" class="glyphicon glyphicon-minus" style="float:left"></span></a><a href="javascript:void(0)"><span id="plus1" class="glyphicon glyphicon-plus" style="float:right"></span></a> 
-									                    
-									                </div>
-									           
-									           
-									       <!--  </form> -->
-									    </div>	
-    									
-											
-										</div>
-		  
+			<div class="col-md-12">
+			<div class="tenure border">
+			<span class="pull-left">0</span>
+			<input id="slider1" name="slider1" type="range" min="0" max="30"  value ="0" class="slider-price" style="color:red;"/>
+			<span class="pull-right">30</span>
+			</div>
+			</div>
 		  <div class="col-md-12">
 		   <div class="offset5">
-		   <input type="tel" class="center-dv input-typ" placeholder="98XXX XXXXX"  maxlength="10" pattern="[789][0-9]{9}" onkeypress="return isNumberKey(event)" required />
-		   <button class="btn btn-success">Get OTP</button>
+		   <input type="text" class="center-dv input-typ" placeholder="98XXX XXXXX"  maxlength="10" pattern="[789][0-9]{9}"onkeypress="return isNumberKey(event)"/>
+		   
+		   
 		   </div>
+
 		  </div>
+		  <button class="btn btn-success otp" >Get OTP</button>
 			</div>
 			
              </div>	
@@ -277,6 +87,7 @@ label {
 			
 		
 		</div>	
+		</form>
 
 		
 		
@@ -1035,80 +846,41 @@ label {
    });
 
 </script>
-<script>
-	       $(document).ready(function () 
-	       {
-        $("#slider1").slider({
-            range: "min",
-            animate: true,
-            value: 0,
-            min: 0,
-            max: 30,
+
+
+	<script type="text/javascript">
+  $(".otp").click(function(event){
+  	alert('okae');
+    event.preventDefault();
+      $form=$('#express_form');
+      if(! $form.valid()){
+      }else{
+        //var s=$('#'+form).serialize();
+
+   
+        $.ajax({  
+         type: "POST",  
+         url: "{{URL::to('apply-express-loan')}}",
+         data : $('#express_form').serialize(),
+         success: function(msg){
+         console.log(msg);
+          if(msg){
             
-            slide: function (event, ui)
+            
+            
+          }else{
+           
+          } 
+          
 
-            {
-                update(1, ui.value); //changed
+        }  
+      }); 
+      }
 
-            }
-
-        });
-    //     $("#plus1").click(function (event,ui) {
-    //     	//alert("ok");
-    // 			var value = $("#slider1").slider("value");
-
-			 //    var step = $("#slider1").slider("option", "step");
-			 //    $("#slider1").slider("value", value + step);
-			 //    var up = value + step;
-			 //    //update(value + step, ui.value);
-			 //    $('#slider1 a').html('<label>' + up + ' yrs  </label><div class="ui-slider-label-inner"></div>');
-		  // });
-
-		  // $("#minus1").click(function () {
-		  // 	var value = $("#slider1").slider("value");
-
-			 //    var step = $("#slider1").slider("option", "step");
-			 //    $("#slider1").slider("value", value - step);
-			 //    var down = value - step;
-			 //    $('#slider1 a').html('<label>' + down + ' yrs  </label><div class="ui-slider-label-inner"></div>');
-		  // });
-        
-        //Added, set initial value.
-        $("#amount").val(0);
-        $("#amount-label").text(0);
-
-
-
-        update(0,0);
     });
 
-    //changed. now with parameter
-    function update(slider1, val) {
-       
-        var $amount = val;
-         // console.log(val);
-         $("#amount").val($amount);
-        // console.log($("#amount").val($amount));
-        $("#amount-label").text($amount);
-        //console.log($("#amount-label").text($amount));
-        var yrs = "yrs";
 
-        $('#slider1 a').html('<label>' + $amount + ' yrs  </label><div class="ui-slider-label-inner"></div>');
-
-    }
-	</script>
-	<script type="text/javascript">
-		
-$('#slider1').slider({
-    change: function(event, ui) { 
-        //alert(ui.value); 
-        $("#loanterm").val(ui.value);
-        myfun();
-
-    } 
-
-}
-	</script>
+</script>
 
 
 

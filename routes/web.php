@@ -20,7 +20,9 @@ Route::get('widget','LoanController@car_loan');
 
 //Route::get('search/autocomplete', 'SearchController@autocomplete');
 Route::get('autocomplete',array('as'=>'autocomplete','uses'=>'AutoCompleteController@index'));
-Route::get('searchajax',array('as'=>'searchajax','uses'=>'AutoCompleteController@autoComplete'));	
+Route::get('searchajax',array('as'=>'searchajax','uses'=>'AutoCompleteController@autoComplete'));
+Route::get('searchstateajax',array('as'=>'searchstateajax','uses'=>'AutoCompleteController@autoComplete_state'));	
+
 
 Route::post('loan-submit','FormController@p_loan_submit');
 
@@ -37,7 +39,7 @@ Route::get('apply-home-loan','LoanController@apply_h_test');
 Route::get('apply-loan-against-property','LoanController@apply_lap_test');
 Route::post('login','LoginController@login');
 Route::post('registration','LoginController@register_form');
-
+Route::get('credit-card_compare/{id}','HomeController@credit_card_compare');
 Route::post('recording','recording\recordingController@recording');
 Route::get('recording/show','recording\recordingController@show');
 
@@ -58,6 +60,11 @@ Route::post('google/login','SocialsiteController@googlelogin');
 
 Route::get('api','ApiController@GetLAPQuotes');
 Route::get('get-loan/{loan}','BankController@compareLoan');
+
+
+Route::get('refresh-csrf', function(){
+    return csrf_token();
+});
 
 // Route::get('api','LoanQuatesController@GetHomeLoanQuotes');
 
@@ -84,6 +91,7 @@ Route::post('RBA-login','HomeController@RBA_register');
 Route::get('lead-status','HomeController@lead_status');
 Route::get('apply-lead-online','ProfileController@applyonline');
 Route::get('apply-express-loan','LoanController@apply_express_loan');
+Route::post('express-loan-send-otp','LoanController@express_send_otp');
 
 //new loans test
 
@@ -118,4 +126,62 @@ Route::post('credit-submit','CreditcardController@credit_form_submit');
 
 Route::get('no-record-found',function (){return view('no-record-found');});
 Route::get('test',function (){return view('test_parse');});
+
+
+
+
+
+/*      ...................................................................................................
+     |Durga Pratap
+     |Start Community forum 
+*/
+
+Route::group(['namespace' => 'Controller_community'], function() {
+Route::get('community','controller_index@index');
+Route::post('community/search','controller_index@search');
+Route::get('community/top_answer','controller_index@top_answer');
+
+Route::get('community/question_tags','controller_index@question_tags');
+
+
+// ................login
+Route::get('community/registration','Login_and_Reg_Controller@registration');
+Route::post('community/store_registration','Login_and_Reg_Controller@store_registration');
+Route::get('community/login/{id}','Login_and_Reg_Controller@login_regi');
+Route::post('community/getlogin','Login_and_Reg_Controller@getlogin');
+
+
+/*  middleware*/
+Route::group(['middleware'=>'user_community'], function(){
+
+    Route::get('community/question','controller_index@question');
+    Route::post('community/stor_answers','controller_index@stor_answers');
+    Route::get('community/answers/{id}','controller_index@answers');
+    Route::post('community/stor_question','controller_index@stor_question');
+    Route::get('community/details/{id}','controller_index@details');
+    Route::post('community/multi_answer','controller_index@multi_answer');
+    Route::post('community/comment','controller_index@comment');
+ 
+    Route::get('community/logout',function(){
+    	Session::flush();
+    	 return redirect('community');
+    });
+  
+
+ // Route::get('autocomplete',array('as'=>'autocomplete','uses'=>'AutoCompleteController@index'));
+Route::get('searchajaxqu',array('as'=>'searchajaxqu','uses'=>'Login_and_Reg_Controller@autoCompletetags'));	
+
+});
+
+
+
+
+  });   
+
+/**
+     |Durga Pratap
+     |End Community forum
+      ...........................................................................................................
+**/
+
 

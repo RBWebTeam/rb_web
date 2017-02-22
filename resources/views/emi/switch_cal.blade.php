@@ -3,7 +3,6 @@
 <div class="white-bg pad1 box-shadow">
 <div class="table-responsive">
 <div class="outer-border">
-<br>
 <center><h1>Savings Table:</center>
 <br>
 <table class="table table-bordered table-striped" id="emipaymenttable">

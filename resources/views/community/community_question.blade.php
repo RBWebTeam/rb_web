@@ -1,5 +1,4 @@
-
-@include('layout.community.header_community')
+@include('layout.header')
 <div class="container">
 	<aside id="fh5co-hero">
 <div style="height: 100px; width: 100%"></div>
@@ -22,12 +21,12 @@
                         <div class="form-group{{ $errors->has('description') ? ' has-error' : '' }}">
                             <label for="description" class="col-md-4 control-label">Question</label>
                             <div class="col-md-6">
-                         <!--      <textarea class="form-control" name="description" rows="3" id="description"></textarea> -->
+                              <textarea class="form-control" name="description" rows="3" id="description"></textarea>
 
 
 
-                      
-<trix-editor angular-trix ng-model="foo" trix-initialize="trixInitialize(e, editor);" placeholder="Write something.." ></trix-editor>
+<!--                       
+<trix-editor angular-trix ng-model="foo" trix-initialize="trixInitialize(e, editor);" placeholder="Write something.." ></trix-editor> -->
 
                                 @if ($errors->has('description'))
                                     <span class="help-block">

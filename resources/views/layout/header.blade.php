@@ -15,7 +15,7 @@
 
 	<link href="{{URL::to('css/mysite.css')}}" rel="stylesheet" type="text/css" />
 
-	<!--  <link href="{{URL::to('css/style.css')}}" rel="stylesheet" type="text/css" /> -->
+	 <link href="{{URL::to('css/style.css')}}" rel="stylesheet" type="text/css" /> 
 
 	<!-- Modernizr JS -->
 	<!-- <link rel="manifest" href="{{URL::to('extension/manifest.json')}}"> -->
@@ -80,97 +80,92 @@
 			<div class="header-inner">
 				<h1><a href="{{URL::to('/')}}"><img src="{{URL::to('images/logo.png')}}" alt="logo" width="160" height="47" /></a></h1>
 				<nav role="navigation">
-					<ul>
+				  <ul>
+                     @if(\Request::is('community/*') || \Request::is('community'))
+                             <li><a href="{{url('community/top_answer')}}">Top Answers</a></li>
+			         @if(Session::has('email'))
+                          	 <li><a href="{{url('community/question')}}">Ask Questions</a></li>
+                             <li><a href="{{url('community/logout')}}"> Log out</a></li>
+                     @else
+                             <li><a href="{{url('community/login/5001')}}">Ask Questions</a></li>
+                     @endif
+					         <li><form action="{{url('community/search')}}" method="post"> {{ csrf_field() }}
+                              <input type="text" name="search" id="tags12" class="search" placeholder="Search.."></form></li>
+                    @if (Session::has('email'))
+                          	 <li><?php echo Session::get('name');?></li>
+                    @endif
+                    @else
+
 						<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" data-target="#">SME Loan</a>
-						 
 						 <ul class="dropdown-menu">
-						    <li>
-							<a href="{{URL::to('sme-loan')}}">Unsecured Business Loan</a>
-							<a href="{{URL::to('loan-against-property')}}">Loan Against Property</a>
-							<a href="{{URL::to('sme-loan')}}">Commercial Property Purchase</a>
+						     <li>
+								<a href="{{URL::to('sme-loan')}}">Unsecured Business Loan</a>
+								<a href="{{URL::to('loan-against-property')}}">Loan Against Property</a>
+								<a href="{{URL::to('sme-loan')}}">Commercial Property Purchase</a>
 							</li>
 							<li>
-							<a href="{{URL::to('sme-loan')}}">Lease Rent Discounting</a>
-							<a href="{{URL::to('sme-loan')}}">Working Capital</a>
+								<a href="{{URL::to('sme-loan')}}">Lease Rent Discounting</a>
+								<a href="{{URL::to('sme-loan')}}">Working Capital</a>
 							<!-- <a href="{{URL::to('sme-loan')}}">Export/Import Finance</a> -->
 							</li>
 							<!-- <li><a href="{{URL::to('sme-loan')}}">Over Draft / Cash Credit</a> -->
-							
 							</li>
-							
 							</li>
 						</ul>
 						</li>
-
 						<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" data-target="#">Retail Loan</a>
-
 						<ul class="dropdown-menu">
-						<li>
-							<a href="{{URL::to('home-loan')}}">Home Loan</a>
-							<a href="{{URL::to('loan-against-property')}}">Loan Against Property</a>
-							<a href="{{URL::to('personal-loan')}}">Personal Loan</a>
-							<a href="{{URL::to('car-loan')}}">Car Loan</a>
+						   <li>
+								<a href="{{URL::to('home-loan')}}">Home Loan</a>
+								<a href="{{URL::to('loan-against-property')}}">Loan Against Property</a>
+								<a href="{{URL::to('personal-loan')}}">Personal Loan</a>
+								<a href="{{URL::to('car-loan')}}">Car Loan</a>
 
-						</li>
-							
-
+						   </li>
 						</ul>
-
-
-						
 						<li><a href="{{URL::to('credit-card')}}">Credit Card</a></li>
 						
 						 <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" data-target="#">Balance Transfer</a>
 						 
 						 <ul class="dropdown-menu">
 						    <li>
-							<a href="{{URL::to('home-loan-transfer',['id' => 'home-loan'])}}">Home Loan</a>
-							<a href="{{URL::to('home-loan-transfer',['id' => 'personal-loan'])}}">Personal Loan</a>
-							<a href="{{URL::to('home-loan-transfer',['id' => 'loan-against-property-loan'])}}">Loan Against Property</a>
+								<a href="{{URL::to('home-loan-transfer',['id' => 'home-loan'])}}">Home Loan</a>
+								<a href="{{URL::to('home-loan-transfer',['id' => 'personal-loan'])}}">Personal Loan</a>
+								<a href="{{URL::to('home-loan-transfer',['id' => 'loan-against-property-loan'])}}">Loan Against Property</a>
 							</li>
 							</ul>					   
 					        </li>
-							
-
-
 							<?php if(Session::get('is_login')){
 							?>
-							<li class="user-ic dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" data-target="#"><i class="icon-user uicon hidden-xs hidden-sm"></i><span class="hidden-lg hidden-md">My Account&nbsp;</span> <i class="icon-chevron-down"></i></a>
-							
-							<ul class="dropdown-menu"  >
-							    <li> 
-								<a id="googleLOG" href={{URL::to('logout')}}>Logout</a>
-								<a href="{{url('profile')}}">My Profile</a>
-								<a href="{{URL::to('profile')}}?credit-score">My Credit Score</a>
-								<a href="{{url('profile')}}?my-quotes">My Quotes</a>
-								</li>
-							</ul>
-							
+							<li class="user-ic dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown" data-target="#"><i class="icon-user uicon hidden-xs hidden-sm"></i><span class="hidden-lg hidden-md">My Account&nbsp;</span> <i class="icon-chevron-down"></i>
+								</a>
+									<ul class="dropdown-menu"  >
+									    <li> 
+										<a id="googleLOG" href={{URL::to('logout')}}>Logout</a>
+										<a href="{{url('profile')}}">My Profile</a>
+										<a href="{{URL::to('profile')}}?credit-score">My Credit Score</a>
+										<a href="{{url('profile')}}?my-quotes">My Quotes</a>
+										</li>
+									</ul>
 							</li>
-                          	 <li><?php echo Session::get('name');?></li> 
-                        
-						<?php }else{
-							?>
+                          	 <li><?php echo Session::get('name');?></li><?php }else{?>
 						<!-- 	<li class="user-ic dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle"><i class="icon-user uicon hidden-xs hidden-sm"></i><span class="hidden-lg hidden-md">Login</span></a>
 							</li> -->
-
-
-					<li class="user-ic dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" data-target="#"> <i class="icon-user uicon hidden-xs hidden-sm"></i><span class="hidden-lg hidden-md">Login</span></a>
-						 
-						   <ul class="dropdown-menu" >
-						    <li>
-							<a href="#" data-toggle="modal" data-target="#log_popup">Sign in</a>
-							</li>
+					<li class="user-ic dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" data-target="#"> <i class="icon-user uicon hidden-xs hidden-sm"></i><span class="hidden-lg hidden-md">Login</span></a>
+							 <ul class="dropdown-menu" >
+							    <li>
+								<a href="#" data-toggle="modal" data-target="#log_popup">Sign in</a>
+								</li>
 							</ul>
 					</li>
-                         <?php }	?>
-						
-                        <!--- <li class="con-no">1800-267-629-6</li> - -->
+                         <?php } ?>
+						 @endif
 					</ul>
 				</nav>
 			</div>
 		</div>
-		
 	</header>  
 	
 

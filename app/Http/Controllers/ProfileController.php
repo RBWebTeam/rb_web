@@ -155,7 +155,7 @@ public function  change_password(Request $req){
   public function applyonline(Request $req){
     $request = $req->all();
     //print_r($request);exit();
-    $app = $request['appid'];
+    // $app = $request['appid'];
     $quote = $request['qoutid'];
     $bank = $request['BankId'];
     

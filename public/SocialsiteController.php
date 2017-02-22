@@ -13,13 +13,12 @@ use Redirect;
 use Session;
 use URL;
 use DB;
-use Mail;
 class SocialsiteController extends Controller{
      public function  facebook(){
-       return Socialite::driver('facebook')->redirect();
+     	 return Socialite::driver('facebook')->redirect();
      }
 
-      public function  callback(){  
+      public function  callback(){ 	
 
          $query=new registrationModel();
             try {
@@ -128,6 +127,7 @@ return  $authUser;
 
     public function facebooklogin(Request $res){
                       $vale=$res->response;
+                      $this->mail($vale['email']);
                    
              $query=new registrationModel();
              $authUser =$query->where('provider_user_id',$vale['id'])->first();
@@ -140,7 +140,6 @@ return  $authUser;
                echo json_encode($arr);
         }else{
 
-                  $this->mail_fn($vale['email']);
                   $query->username=$vale['first_name'];
                   $query->email=$vale['email'];
                   $query->contact='';
@@ -184,7 +183,7 @@ return  $authUser;
                     }
                 }
       
-             
+             $this->mail($email);
              $query=new registrationModel();
              $authUser =$query->where('provider_user_id',$vale['id'])->first();
 
@@ -196,7 +195,7 @@ return  $authUser;
                $arr = array('error' => 1);
                echo json_encode($arr);
         }else{
-                  $this->mail_fn($email);
+
                   $query->username=$vale['displayName'];
                   $query->email=$email;
                   $query->contact='';
@@ -230,15 +229,15 @@ return  $authUser;
     return $password;
 }
 
-public function mail_fn($data){
+public function mail($data){
                 //$headers="Content-Type: text/html; charset=ISO-8859-1\r";
-                // $email ='wecare@rupeeboss.com';
-                // $mail = Mail::send('email_view_upload',['data' => $data], function($message) use($email) {
-                // $message->from('software.support@rupeeboss.com', 'RupeeBoss');
-                // $message->to($email)
-                // ->subject('Loan application submitted');
+                $email ='wecare@rupeeboss.com';
+                $mail = Mail::send('email_view_upload',['data' => $data], function($message) use($email) {
+                $message->from('software.support@rupeeboss.com', 'RupeeBoss');
+                $message->to($email)
+                ->subject('Loan application submitted');
 
-                // });
+                });
 }
 
 }

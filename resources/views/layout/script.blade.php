@@ -1263,7 +1263,6 @@
       <!--scroll up function  -->
       <script type='text/javascript'>
         $(document).ready(function(){ 
-
           $('.close1').click(function(){
             location.reload();
           });
@@ -1280,6 +1279,7 @@
             return false; 
           }); 
         });
+
   </script>
       <!-- scroll up ends -->
       <!-- co script ends -->

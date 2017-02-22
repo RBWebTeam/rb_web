@@ -98,7 +98,7 @@ class HomeController extends CallApiController
 	}
 
    public function RBA_register(Request $req){
-		// print_r($req->all()	);
+		 
 		$query=DB::table('rba_register')
 		->insert(['Name'=>$req->name,
 			     'Email'=>$req->email,
@@ -113,19 +113,28 @@ class HomeController extends CallApiController
 		                $message->to($email)
 		                ->subject('Thankyou');
                 	});
-
-                $post_data='{"City":"0","Email_Id":"'.$req->email.'","PAN_No":"","UserPassword":"","contact_No":"'.$req->contact.'","first_Name":"'.$req->name.'","last_Name":"","parentBrokerId":"","parentEmpCode":"","source":"web"}';
+                $web= base64_encode("web");
+                $post_data='{"City":"0","Email_Id":"'.$req->email.'","UserPassword":"","contact_No":"'.$req->contact.'","first_Name":"'.$req->name.'","last_Name":"","parentBrokerId":"","parentEmpCode":"","source":"'.$web.'"}';
+                //print_r($web);exit();
                 $url = "http://beta.services.rupeeboss.com/LoginDtls.svc/xmlservice/insBrokerDataForRBA";
+                // print_r($post_data);exit();
                 $result=$this->call_json_data_api($url,$post_data);
-
-                $post_data='{"mobNo":"'.$req->contact.'","msgData":"Thank you for registering.- RupeeBoss.com",
+                $http_result=json_decode($result['http_result']);
+               
+                $post_data_new='{"mobNo":"'.$req->contact.'","msgData":"Thank you for registering.- RupeeBoss.com",
                     "source":"WEB"}';
-                $url = "http://beta.services.rupeeboss.com/LoginDtls.svc/xmlservice/sendSMS";
-                $result=$this->call_json_data_api($url,$post_data);
-                $http_result=$result['http_result'];
-                $error=$result['error'];
-                $obj = json_decode($http_result);
-                return true;
+                $url_new = "http://beta.services.rupeeboss.com/LoginDtls.svc/xmlservice/sendSMS";
+                $result_new=$this->call_json_data_api($url_new,$post_data_new);
+                $http_result_new=$result_new['http_result'];
+                $error_new=$result_new['error'];
+                $obj = json_decode($http_result_new);
+               // print_r($obj);
+                 //print_r($http_result);exit();
+                if($obj->statusId==0 && $http_result->statusId==0){
+                	return 'true';
+                }else{
+                	return 'false';
+                }
 
 
 

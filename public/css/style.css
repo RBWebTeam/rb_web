@@ -1596,12 +1596,12 @@ top: -.25em;left: 20%;margin: 0 0 0 -.25em;}
 /*emi css*/
 
 
- .rw-hei {height:300px;border-right:none;}
+ .rw-hei {height:auto;border-right:none;}
 
   body {color:#666;}
   .tbl-clr {color:#fff; }
   .tbl-clr td {text-align:center;}
-  .transfer-cal {padding:10px;color:#666; text-align:center;margin-bottom: 15px;}
+  .transfer-cal {padding:10px;color:#666; text-align:center;margin-bottom:8px;}
    .rw-hei p {font-size:16px;color:#999;}
    .rw-hei h1 {margin-top:10px;}
    .sub-title {color:#999;}
@@ -1964,12 +1964,12 @@ body {background:#eee;}
   .txt-title1 {font-weight:bold; text-transform:uppercase; border-right:1px solid #ddd;}
   .error-template img {margin:auto; }
   .heigh-bt {height:300px; box-shadow:1px 1px 1px 1px #ccc; border-radius:5px;-moz-border-radius:5px;-webkit-border-radius:5px;}
-   .heigh-bt2 {height:390px; box-shadow:1px 1px 1px 1px #ccc;}
-   .heigh-bt1  {height:340px; box-shadow:1px 1px 1px 1px #ccc;}
+   .heigh-bt2 {height:auto; box-shadow:1px 1px 1px 1px #ccc;}
+   .heigh-bt1  {height:auto; box-shadow:1px 1px 1px 1px #ccc;}
   .mrg-tp {margin-top:8px;}
   .box-shadow {box-shadow:1px 1px 1px 1px #ccc;}
   .apply-btn:hover {color:#fff;background:#2882a6;}
-  .blue-bg {background:#5cd8f4; padding:15px; color:#fff; font-size:30px; text-align:center;}
+  .blue-bg {background:#5cd8f4; padding:15px; color:#fff; font-size:25px; text-align:center;}
   .bnk-log {width:110px;}
   
   .drop-arr {background:url(../images/down_arrow.png) no-repeat center right; padding-right:10px;}

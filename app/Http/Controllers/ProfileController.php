@@ -24,6 +24,12 @@ class ProfileController extends Controller
 
         $query=DB::table('user_registration')->where('id','=',$get_id)->first();
         $cquery=DB::table('customer_details')->where('user_id','=',$get_id)->first();
+        if($get_id){
+          $credit_report=DB::select('select html_report from experian_response where user_id ='.$get_id);
+        }else{
+          $contact=$contact=Session::get('contact');
+          $credit_report=DB::select('select html_report from experian_response where contact ='.$contact);
+        }
       //  $loan_history=DB::table('bank_quote_api_request')->where('Email','=',$email_id)->get();
               $loan_history = DB::table('bank_quote_api_request')
             ->leftjoin('product_master', 'product_master.Product_Id', '=', 'bank_quote_api_request.ProductId')
@@ -32,7 +38,7 @@ class ProfileController extends Controller
             ->where('bank_quote_api_request.bank_id','!=','NULL')
             ->orderBy('bank_quote_api_request.ID', 'DESC')
             ->get();
-          return view('my-profile',['query'=>$query,'cquery'=>$cquery,'loan_history'=>$loan_history]);
+          return view('my-profile',['query'=>$query,'cquery'=>$cquery,'loan_history'=>$loan_history,'credit_report'=>$credit_report[0]->html_report]);
       }else{
         return redirect('/');
       }

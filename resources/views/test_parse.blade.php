@@ -3,12 +3,14 @@
     td {padding:0px;}
 </style>
 <br>
+
+
 <div class="container" id="fh5co-hero">
+<div class=" text-center"><input type="button" class="btn btn-success" onclick="printDiv('fh5co-hero')" value="Print Report" /></div>
                <?php
                 print_r($result->html_report);
                 ?>
 </div>
-<div class=" text-center"><input type="button" class="btn btn-success" onclick="printDiv('fh5co-hero')" value="Print Report" /></div>
 
 
 @include('layout.footer')

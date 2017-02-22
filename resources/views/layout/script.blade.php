@@ -1570,8 +1570,8 @@
           });
 
     $("#credit_report_verify_otp").click(function(){
-      if($('#verify').val().length<6)
-        { $('#otp_val').show();
+      if($('#verify').val().length<6){
+       $('#otp_val').show();
       return false;
     }
     $('#otp_val').hide();
@@ -1584,9 +1584,9 @@
      data : $('#credit_report_verify_form').serialize(),
      success: function(data){
        var data_1=data['data'];
-       console.log(data_1);
+       //console.log(data_1);
        if(data_1){
-        console.log("data_1");
+        //console.log("data_1");
 
         window.location.href="{{URL::to('credit-report')}}";
       }else{

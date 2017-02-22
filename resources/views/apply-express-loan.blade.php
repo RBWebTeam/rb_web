@@ -889,7 +889,8 @@
                 $('#express_loan_verify_form').show();
                     //console.log("hah");
                   }else{
-                    window.location.href="{{URL::to('went-wrong')}}";
+                     window.location.href="{{URL::to('went-wrong')}}";
+                    // console.log(data_1);
                   }
           
 

@@ -83,8 +83,9 @@
          url: "{{URL::to('RBA-login')}}",
          data : $('#rba_form').serialize(),
          success: function(msg){
-         console.log(msg);
+         //console.log(msg);
           if(msg){
+             //console.log(msg);
              window.location.href ="{{URL::to('thank-you')}}";
             
           }else{

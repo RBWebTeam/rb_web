@@ -196,9 +196,20 @@ class LoanController extends CallApiController
             $http_result=$result['http_result'];
             $error=$result['error'];
             $obj = json_decode($http_result);
+
+            $post_data1='{"amount":"'.$req->amount.'","business_type":"'.$req->employment.'","tenure":"'.$req->tenure.'","mob_no":"'.$req->mob_no.'",
+                "source":"WEB"}';
+            // $url = "http://beta.services.rupeeboss.com/LoginDtls.svc/xmlservice/sendSMS";
+               $url1 = "http://erp.rupeeboss.com/CustomerWebRequest.aspx";
+            $result1=$this->call_json_data_api($url1,$post_data1);
+            $http_result1=$result['http_result'];
+            $error1=$result['error'];
+            $obj = json_decode($http_result);
+            $obj1 = ($http_result1);
+            // print_r($obj);exit();
             // statusId response 0 for success, 1 for failure
             
-            if($obj->{'statusId'}==0){
+            if($obj->{'statusId'}==0 && $obj1='true'){
                 return Response::json(array(
                             'data' => true,
                         ));

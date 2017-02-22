@@ -5,8 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use Session;
 use DB;
-class LoanController extends Controller
+use Response;
+class LoanController extends CallApiController
 {
 //     Route::get('personal-loan','LoanController@home_loan');
 // Route::get('personal-loan','LoanController@lap');
@@ -154,5 +156,62 @@ class LoanController extends Controller
         $data['title']='Apply For Loan Against Property at Lowest Interest Rates with Rupeeboss.com';
         $data['description']='Avail Loan Against Property with benefits like lower interest rates & EMI payment. Apply online on Rupeeboss.com to get a Loan now.';
       return view('apply-express-loan')->with($data)->with('keywords',$keywords);
+    }
+
+    public function apply_aditya(Request $req){
+      $query=DB::table('aditya_birla_express_loan')
+
+    ->insert(['amount'=>$req->amount,
+           'business_type'=>$req->employment,
+           'tenure'=>$req->tenure,
+           'mob_no'=>$req->mob_no,
+          'created_at'=>date("Y-m-d H:i:s"),
+            'updated_at'=>date("Y-m-d H:i:s")]);
+    $input = $req->all();
+     // print_r( $input );exit();
+     // $otp = mt_rand(100000, 999999);
+     // Session::put('mob_no', $req['mob_no']);
+    }
+
+    public function express_send_otp(Request $req){
+      $otp = mt_rand(100000, 999999);
+      Session::put('contact_exp', $req['mob_no']);
+     $query=DB::table('aditya_birla_express_loan')
+
+      ->insert(['amount'=>$req->amount,
+              'business_type'=>$req->employment,
+              'tenure'=>$req->tenure,
+              'mob_no'=>$req->mob_no,
+              'otp'=>$otp,
+              'status'=>0,
+              'created_at'=>date("Y-m-d H:i:s"),
+              'updated_at'=>date("Y-m-d H:i:s")]);
+       if($query>0){
+            //calling service to send sms 
+            $post_data='{"mobNo":"'.$req->mob_no.'","msgData":"your otp is '.$otp.' - RupeeBoss.com",
+                "source":"WEB"}';
+            // $url = "http://beta.services.rupeeboss.com/LoginDtls.svc/xmlservice/sendSMS";
+               $url = "http://services.rupeeboss.com/LoginDtls.svc/xmlservice/sendSMS";
+            $result=$this->call_json_data_api($url,$post_data);
+            $http_result=$result['http_result'];
+            $error=$result['error'];
+            $obj = json_decode($http_result);
+            // statusId response 0 for success, 1 for failure
+            
+            if($obj->{'statusId'}==0){
+                return Response::json(array(
+                            'data' => true,
+                        ));
+            }else{
+                return Response::json(array(
+                            'data' => false,
+                        ));
+            }
+        
+        }else{
+             return Response::json(array(
+                            'data' => false,
+                        ));
+        }
     }
 }

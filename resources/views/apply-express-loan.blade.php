@@ -39,6 +39,7 @@
 				</div>
 			</div>
 			<br>
+			<div>
             <form class="express_form" id="express_form" >
             {{ csrf_field() }}
 			<div class="col-md-12 offset5 bg-white box-shadow">
@@ -46,7 +47,7 @@
 			<div class="offset5">
 <h3 class="text-center hed-three"><b>Enter Amount</b></h3>
             <div class="col-md-12 mrg-btm">
-			<input type="text" class="center-dv input-typ" placeholder="5,00,000" maxlength="10"
+			<input type="text" name="amount" id="amount" class="center-dv input-typ" placeholder="5,00,000" maxlength="10"
 			onkeypress="return isNumberKey(event)"  required/>
 			</div>
 			
@@ -54,29 +55,29 @@
 		    <div class="col-md-12">
 			<h3 class="text-center mrg-btm hed-three"><b>Business Type</b></h3>
 			
-			 <div class="col-md-12"><div class="offset5"><a class="btn btn-primary bt-wt"><input type="radio" name="radio" checked/> Self Employed Professionsl (SEP)</a>
-		<a class="btn btn-primary bt-wt"><input type="radio" name="radio" /> Self Employed Non-Professionsl (SENP)</a>
+			 <div class="col-md-12"><div class="offset5"><a class="btn btn-primary bt-wt"><input type="radio" name="employment" value="Self_Employed_Professionsl" checked/> Self Employed Professionsl (SEP)</a>
+             <a class="btn btn-primary bt-wt"><input type="radio" name="employment" value="Self_Employed_Non_Professional " /> Self Employed Non-Professionsl (SENP)</a>
 			</div>
-		 </div>
+		    </div>
 			<div class="col-md-12 mrg-btm-b">
 			<h3 class="text-center hed-three"><b>Tenure</b></h3>
 			
 			<div class="col-md-12">
 			<div class="tenure border">
 			<span class="pull-left">0</span>
-			<input id="slider1" name="slider1" type="range" min="0" max="30"  value ="0" class="slider-price" style="color:red;"/>
+			<input id="tenure" name="tenure" type="range" min="0" max="30"  value ="0" class="slider-price" style="color:red;"/>
 			<span class="pull-right">30</span>
 			</div>
 			</div>
 		  <div class="col-md-12">
 		   <div class="offset5">
-		   <input type="text" class="center-dv input-typ" placeholder="98XXX XXXXX"  maxlength="10" pattern="[789][0-9]{9}"onkeypress="return isNumberKey(event)"/>
+		   <input type="tel" name="mob_no" id="mob_no" class="center-dv input-typ" placeholder="98XXX XXXXX"  maxlength="10" pattern="[789][0-9]{9}" onkeypress="return isNumberKey(event)" required />
 		   
-		   
-		   </div>
+		   <button class="btn btn-success" id="express_loan_send_otp"  >Get OTP</button>
+		    <div id="mobile_value" style="display: none;color: red;">Phone number should be of 10 digits.</div>
 
+		   </div>
 		  </div>
-		  <button class="btn btn-success otp" >Get OTP</button>
 			</div>
 			
              </div>	
@@ -88,6 +89,19 @@
 		
 		</div>	
 		</form>
+
+		<form name="express_loan_verify_form" id="express_loan_verify_form" style="display:none" method="POST" onkeypress="return fnAllowNumeric(event)">
+						       {{ csrf_field() }}
+						   <h3>Enter your verification code sent on your number</h3>
+						   <input type="text" name="verify" id="verify" class="form-control" onkeypress="return fnAllowNumeric(event)" required maxlength="6" placeholder="Enter OTP Code">
+						   <hr class="hr-clr">
+
+						   <a class="btn btn-primary btn-lg btn-view" id="express_loan_verify_otp">VERIFY OTP</a>
+						   <div id="otp_val" style="display: none;color: red;">Otp is of 6 digits.</div>
+						   <div id="wrong_otp" style="display: none;color: red;">Wrong Otp !!!</div>
+						   <div id="wait_div_otp" style="display: none;color: red;">Please wait ...</div>
+						   </form>
+		</div>
 
 		
 		
@@ -849,28 +863,35 @@
 
 
 	<script type="text/javascript">
-  $(".otp").click(function(event){
-  	alert('okae');
+  $("#express_loan_send_otp").click(function(event){
+  	
     event.preventDefault();
       $form=$('#express_form');
       if(! $form.valid()){
+      	
+      	
       }else{
         //var s=$('#'+form).serialize();
-
-   
+       
+        if(($('#mob_no').val().length)<10){
+              $('#mobile_value').show();
+              return false;
+            }
+             $('#mobile_value').hide();           
         $.ajax({  
          type: "POST",  
-         url: "{{URL::to('apply-express-loan')}}",
+         url: "{{URL::to('express-loan-send-otp')}}",
          data : $('#express_form').serialize(),
-         success: function(msg){
-         console.log(msg);
-          if(msg){
-            
-            
-            
-          }else{
-           
-          } 
+         success: function(data){
+         	console.log(data);
+               var data_1=data['data'];
+               if(data_1){
+                $('#express_form').hide();
+                $('#express_loan_verify_form').show();
+                    //console.log("hah");
+                  }else{
+                    window.location.href="{{URL::to('went-wrong')}}";
+                  }
           
 
         }  

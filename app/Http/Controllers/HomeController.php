@@ -114,6 +114,10 @@ class HomeController extends CallApiController
 		                ->subject('Thankyou');
                 	});
 
+                $post_data='{"City":"","Email_Id":"'.$req->email.'","PAN_No":"","UserPassword":"","contact_No":"'.$req->contact.'","first_Name":"'.$req->name.'","last_Name":"","parentBrokerId":"","parentEmpCode":"","source":""}';
+                $url = "http://beta.services.rupeeboss.com/LoginDtls.svc/xmlservice/insBrokerDataForRBA";
+                $result=$this->call_json_data_api($url,$post_data);
+
                 $post_data='{"mobNo":"'.$req->contact.'","msgData":"Thank you for registering.- RupeeBoss.com",
                     "source":"WEB"}';
                 $url = "http://beta.services.rupeeboss.com/LoginDtls.svc/xmlservice/sendSMS";
@@ -122,6 +126,11 @@ class HomeController extends CallApiController
                 $error=$result['error'];
                 $obj = json_decode($http_result);
                 return true;
+
+
+
+
+
 		}
 		return false;
 

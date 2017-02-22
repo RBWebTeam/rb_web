@@ -214,4 +214,26 @@ class LoanController extends CallApiController
                         ));
         }
     }
+
+    public function express_verify_otp(Request $req){
+    $phone = Session::get('contact_exp');
+    $express_otp=$req->verify_otp;
+    //print_r($express_otp);
+    //print_r($phone);
+        $query=DB::table('aditya_birla_express_loan')
+            ->where('otp', $express_otp)
+            ->where('mob_no',$phone)
+            ->update(['status' => 1]);
+           
+        if($query){
+          return Response::json(array(
+                            'data' => "true",
+                        ));
+        }else{
+         return Response::json(array(
+                            'data' => "false",
+                        ));
+        }
+ }
+
 }

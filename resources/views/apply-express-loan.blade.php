@@ -39,8 +39,8 @@
 				</div>
 			</div>
 			<br>
-			<div>
-            <form class="express_form" id="express_form" >
+			<div id ="otp_div">
+            <form class="express_form" id="express_form" method="POST" >
             {{ csrf_field() }}
 			<div class="col-md-12 offset5 bg-white box-shadow">
 			<div class="pad border-all">
@@ -73,7 +73,7 @@
 		   <div class="offset5">
 		   <input type="tel" name="mob_no" id="mob_no" class="center-dv input-typ" placeholder="98XXX XXXXX"  maxlength="10" pattern="[789][0-9]{9}" onkeypress="return isNumberKey(event)" required />
 		   
-		   <button class="btn btn-success" id="express_loan_send_otp"  >Get OTP</button>
+		   <a class="btn btn-success" type="submit" id="express_loan_send_otp"  >Get OTP</a>
 		    <div id="mobile_value" style="display: none;color: red;">Phone number should be of 10 digits.</div>
 
 		   </div>
@@ -90,16 +90,16 @@
 		</div>	
 		</form>
 
-		<form name="express_loan_verify_form" id="express_loan_verify_form" style="display:none" method="POST" onkeypress="return fnAllowNumeric(event)">
+		<form name="express_loan_verify_form" id="express_loan_verify_form" style="display:none" method="POST">
 						       {{ csrf_field() }}
 						   <h3>Enter your verification code sent on your number</h3>
-						   <input type="text" name="verify" id="verify" class="form-control" onkeypress="return fnAllowNumeric(event)" required maxlength="6" placeholder="Enter OTP Code">
+						   <input type="text" name="verify_otp" id="verify_otp1" class="form-control" onkeypress="return fnAllowNumeric(event)" required maxlength="6" placeholder="Enter OTP Code">
 						   <hr class="hr-clr">
 
 						   <a class="btn btn-primary btn-lg btn-view" id="express_loan_verify_otp">VERIFY OTP</a>
-						   <div id="otp_val" style="display: none;color: red;">Otp is of 6 digits.</div>
-						   <div id="wrong_otp" style="display: none;color: red;">Wrong Otp !!!</div>
-						   <div id="wait_div_otp" style="display: none;color: red;">Please wait ...</div>
+						   <div id="otp_value" style="display: none;color: red;">Otp is of 6 digits.</div>
+						   <div id="wrong_otp_value" style="display: none;color: red;">Wrong Otp !!!</div>
+						   <div id="waiting_div_otp" style="display: none;color: red;">Please wait ...</div>
 						   </form>
 		</div>
 
@@ -108,7 +108,7 @@
 	
 	</div>
 	<br>
-	<div class="animate-box" style="display: none">
+	<div class="animate-box" id ="generic" style="display: none">
 	<div class="row">
 			<div class="col-md-12 bg-white centered well pad1">
 			
@@ -864,7 +864,6 @@
 
 	<script type="text/javascript">
   $("#express_loan_send_otp").click(function(event){
-  	
     event.preventDefault();
       $form=$('#express_form');
       if(! $form.valid()){
@@ -883,7 +882,7 @@
          url: "{{URL::to('express-loan-send-otp')}}",
          data : $('#express_form').serialize(),
          success: function(data){
-         	console.log(data);
+         	//console.log(data);
                var data_1=data['data'];
                if(data_1){
                 $('#express_form').hide();
@@ -899,6 +898,46 @@
       }
 
     });
+
+  $("#express_loan_verify_otp").click(function(event){
+  	event.preventDefault();
+      $form=$('#express_loan_verify_form');
+      if(! $form.valid()){
+      	
+      	
+      }else{
+        //var s=$('#'+form).serialize();
+       
+        if(($('#verify_otp1').val().length)<6){
+              $('#otp_value').show();
+              return false;
+            }
+
+    $('#otp_value').hide();
+    $('#wrong_otp_value').hide();
+    $('#waiting_div_otp').show();
+    $.ajax({  
+     type: "POST",  
+     url: "{{URL::to('express-loan-verify')}}",
+     dataType:"json",
+     data : $('#express_loan_verify_form').serialize(),
+     success: function(data){
+     	var data_1=data['data'];
+       if(data_1=="true"){
+       	console.log("yes");
+        $('#generic').show();
+        $('#otp_div').hide();
+      }else{
+      	console.log("no");
+        $('#wrong_otp_value').show();
+        $('#waiting_div_otp').hide();
+      }
+    }
+  });
+}
+});
+
+
 
 
 </script>

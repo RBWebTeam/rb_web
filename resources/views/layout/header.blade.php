@@ -26,7 +26,7 @@
 	@endif
 	
 	
-
+<meta name="google-site-verification" content="GpnTKVcLtZQjKCKHXfeaOaQGDsxzCS3XLCkTwmd4STI" />
 	</head>
 	<body><!-- 
 	<script src="https://app.tigerapi.com/rest/?i=MTQ4NTIzNzg2NA==" async="async" type="text/javascript"></script> -->
@@ -40,7 +40,7 @@
          <li class="call-back2 callclass" data-toggle="modal" data-target="#myModal2"><a href="#">Email Us</a></li>
          <li class="call-back3 callclass" data-toggle="modal" data-target="#myModal3"><a href="#">Help</a></li>
 
-         <li class="chat"><a href="#">Live Chat</a></li> --->
+         <li class="chat"><a href="#">Live Chat</a></li> - -->
 
     </ul>
     </div>

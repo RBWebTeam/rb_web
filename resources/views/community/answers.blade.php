@@ -1,4 +1,4 @@
-@include('layout.community.header_community')
+@include('layout.header')
 
   
     <div class="container">
@@ -29,9 +29,12 @@
                                 <?php  $tags=explode(",",$result->tags);
                               foreach ($tags as  $tag_value) {?>
                                   <?php
-                                     $tag=$tags_query->where('id',$tag_value)->first();
+                                     $tag=$tags_query->where('id',$tag_value)->first(); if(isset($tag)){
                                      echo $tag->categories.",";?>
-                              <?php }?> 
+                              <?php } }?> 
+
+
+
                                 
                             </div>
                         </div>
@@ -39,11 +42,11 @@
                        <div class="form-group{{ $errors->has('description') ? ' has-error' : '' }}">
                             <label for="description" class="col-md-4 control-label">Answers</label>
                             <div class="col-md-6">
-                       <!--        <textarea class="form-control" name="description" rows="3" id="description"></textarea> -->
-
+                              <textarea class="form-control" name="description" rows="3" id="description"></textarea>
+<!-- 
                               <div ng-app="trixDemo" ng-controller="trixDemoCtrl">
 <trix-editor   value="ssssssssssss" ng-model-options="{ updateOn: 'blur' }" spellcheck="false" class="trix-content" ng-model="trix" angular-trix trix-initialize="trixInitialize(e, editor);" trix-change="trixChange(e, editor);" trix-selection-change="trixSelectionChange(e, editor);" trix-focus="trixFocus(e, editor);" trix-blur="trixBlur(e, editor);" trix-file-accept="trixFileAccept(e, editor);" trix-attachment-add="trixAttachmentAdd(e, editor);" trix-attachment-remove="trixAttachmentRemove(e, editor);" placeholder="Write something.."  ></trix-editor>
-</div >
+</div > -->
         
                               
                                 @if ($errors->has('description'))

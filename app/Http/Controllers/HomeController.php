@@ -135,4 +135,12 @@ class HomeController extends CallApiController
 		return false;
 
 	}
+
+
+
+	public function credit_card_compare(){
+
+         return view('credit_card_compare');
+
+	}
 }

@@ -1,5 +1,7 @@
 <?php if($result->questionToCustomer!=null){ ?> 
 			<form id="generate_question2" name="generate_question1"> 
+			<h2>Online Authentication</h2>
+			<img src="{{URL::to('images/Experian_logo.png')}}" style="margin:0 auto;"/>
 			<h3> Please answer the questions</h3>
 			{{ csrf_field()}}
 				<label>
@@ -28,7 +30,7 @@
 				<input type="hidden" name="stage1hitid" value={{$stage1hitid}}>
 				<input type="hidden" name="stage2hitid" value={{$stage2hitid}} >
 				<input type="hidden" name="stage2sessionid" value={{$stage2sessionid}}>
-				<input type="hidden" name="question_count" value=<?php echo ($qs+1);?>>
+				<input type="hidden" name="question_count" value=<?php echo ($result->questionToCustomer->qid);?>>
 				
 				<?php 
 				$str= $result->responseJson;
@@ -49,43 +51,35 @@
 				$lead_id=Session::get('Lead_Id');
                 $post_data= '{"jsonResp":'.$raw.',"Lead_Id":'.$lead_id.'}';
                 //print_r($post_data);
-                 $url = "http://api.rupeeboss.com/CreditAPI.svc/getfinalResponse";
-               
-                $ch = curl_init();
-                curl_setopt($ch, CURLOPT_VERBOSE, 1);
-                curl_setopt( $ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
-                curl_setopt($ch, CURLOPT_URL, $url);
-                curl_setopt($ch, CURLOPT_POST, 1);
-                curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-                curl_setopt($ch, CURLOPT_FAILONERROR, 0);
-                curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
-                curl_setopt($ch, CURLOPT_POSTFIELDS,$post_data);
-                $http_result = curl_exec($ch);
-                $error = curl_error($ch);
-                $http_code = curl_getinfo($ch ,CURLINFO_HTTP_CODE);
-                //print_r("<h1>".$http_result."</h1>");
+                $url = "http://api.rupeeboss.com/CreditAPI.svc/getfinalResponse";
+                $result=$this->call_json_data_api($url,$post_data);
+	            $http_result=$result['http_result'];
+	            $error=$result['error'];
 
-
-               	$f_name= Session::get('f_name_cScore');
-               	$l_name= Session::get('l_name_cScore');
-	            $pan=Session::get('pan_cScore');
-	            $email=Session::get('email_cScore');
-	            $contact=Session::get('contact_cScore');
+               	$f_name= Session::get('f_name_cScore')?Session::get('f_name_cScore'):'';
+               	$l_name= Session::get('l_name_cScore')?Session::get('l_name_cScore'):'';
+	            $pan=Session::get('pan_cScore')?Session::get('pan_cScore'):'';
+	            $email=Session::get('email_cScore')?Session::get('email_cScore'):'';
+	            $contact=Session::get('contact_cScore')?Session::get('contact_cScore'):'';
 
 	            $parse=explode('~',$http_result);
 	            $parse[0]=str_replace('"','',$parse[0]);	
 	            //print_r($parse);
 	            $expiry_date=date('Y-m-d H:i:s', strtotime("+3 months"));
-	            
-                // $save_data = array('f_name' => $f_name,'l_name' => $l_name,'contact'=>$contact,'pan'=>$pan,'email'=>$email,'lead_id'=>$lead_id,'credit_score'=>$parse[0],'raw_response'=>$parse[1],'expiry_date'=>$expiry_date);
-                
+                $user_id=Session::get('user_id');
                 $id=DB::table('experian_response')
-                	->insertGetId(['f_name' => $f_name,'l_name' => $l_name,'contact'=>$contact,'pan'=>$pan,'email'=>$email,'lead_id'=>$lead_id,'credit_score'=>$parse[0],'raw_response'=>$parse[1],'expiry_date'=>$expiry_date,'created_at'=>date("Y-m-d H:i:s"),'updated_at'=>date("Y-m-d H:i:s")]);
-
+                	->insertGetId(['f_name' => $f_name,'l_name' => $l_name,'contact'=>$contact,'pan'=>$pan,'email'=>$email,'lead_id'=>$lead_id,'credit_score'=>$parse[0],'raw_response'=>$parse[1],'html_report'=>$result->showHtmlReportForCreditReport,'user_id'=>$user_id,'expiry_date'=>$expiry_date,'created_at'=>date("Y-m-d H:i:s"),'updated_at'=>date("Y-m-d H:i:s")]);
+                	if($user_id){
+                		$update_score=DB::table('customer_details')
+						            ->where('user_id', $user_id)
+						            ->update(['credit_score' => $parse[0]]);	
+                	}
 		 		
 		 		print_r($result->showHtmlReportForCreditReport);
 		 		
-
+		 		?>
+		 		<button id="print_report" class="btn btn-success">Print</button>
+		 		<?php
 		 		
 			}else{
 				print_r("Ooops... Something went wrong.");
@@ -97,7 +91,6 @@
 	   if(!$('#generate_question2').valid()){
 	   	return false;
 	   }
-		//document.getElementById("err_1").style.display='none';
 		$(".iframeloading").show();  
     $.ajax({  
                type: "POST",  
@@ -117,7 +110,6 @@
                }  
                }); 
   });
-
  $('#generate_question2').validate({
      errorLabelContainer: '.err_1',
        messages: {
@@ -126,7 +118,5 @@
 
     }
 });
-
 </script>
-
 </script>

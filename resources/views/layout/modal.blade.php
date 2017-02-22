@@ -12,20 +12,20 @@
           <form name="instant_call_form" id="instant_call_form" method="post" >
           {{ csrf_field() }}
           <input type="hidden" name="form" value="instant_call">
-									<div>
-										<fieldset>
-											<input class="newsletter-name" name="name" placeholder="Name" required>
-										</fieldset>
-										</div>
-									<div>
-										<fieldset>
-											<input type="text" class="newsletter-name" name="contact" pattern="[789][0-9]{9}" required maxlength="10" placeholder="Mobile Number">
-										</fieldset>									
-										</div>
-									<div>
-											<a class="btn btn-primary btn-outline with-arrow sidebar-submit" id="instant_call_submit">Call Me Back<i class="icon-arrow-right"></i></a>
-									</div>
-						</form>
+                  <div>
+                    <fieldset>
+                      <input class="newsletter-name" name="name" placeholder="Name" required>
+                    </fieldset>
+                    </div>
+                  <div>
+                    <fieldset>
+                      <input type="text" class="newsletter-name" name="contact" pattern="[789][0-9]{9}" required maxlength="10" placeholder="Mobile Number">
+                    </fieldset>                 
+                    </div>
+                  <div>
+                      <a class="btn btn-primary btn-outline with-arrow sidebar-submit" id="instant_call_submit">Call Me Back<i class="icon-arrow-right"></i></a>
+                  </div>
+            </form>
             <div class='msg displaynone' ><p>Thanks. We will reach you soon.</p></div>
             <div class='msg_err displaynone' ><p>Ooops. Something went wrong.</p></div>
             
@@ -50,20 +50,20 @@
           <form name="talk_to_us_form" id="talk_to_us_form" method="post">
           {{ csrf_field() }}
           <input type="hidden" name="form" value="talk_to_us_form">
-									<div>
-										<fieldset>
-											<input class="newsletter-name" name="name" placeholder="Name" required>
-										</fieldset>
-										</div>
-									<div>
-										<fieldset>
-											<input type="text" class="newsletter-name" name="contact" pattern="[789][0-9]{9}" required maxlength="10" placeholder="Mobile Number">
-										</fieldset>									
-										</div>
-									<div>
-											<button class="btn btn-primary btn-outline with-arrow sidebar-submit">Submit<i class="icon-arrow-right"></i></button>
-									</div>
-						</form>
+                  <div>
+                    <fieldset>
+                      <input class="newsletter-name" name="name" placeholder="Name" required>
+                    </fieldset>
+                    </div>
+                  <div>
+                    <fieldset>
+                      <input type="text" class="newsletter-name" name="contact" pattern="[789][0-9]{9}" required maxlength="10" placeholder="Mobile Number">
+                    </fieldset>                 
+                    </div>
+                  <div>
+                      <button class="btn btn-primary btn-outline with-arrow sidebar-submit">Submit<i class="icon-arrow-right"></i></button>
+                  </div>
+            </form>
             <div class='msg displaynone' ><p>Thanks. We will reach you soon.</p></div>
             <div class='msg_err displaynone' ><p>Ooops. Something went wrong.</p></div>
         </div>
@@ -89,20 +89,20 @@
           <form name="email_us_form" id="email_us_form" method="post">
           {{ csrf_field() }}
           <input type="hidden" name="form" value="email_us_form">
-									<div>
-										<fieldset>
-											<input class="newsletter-name" name="name" placeholder="Name" required>
-										</fieldset>
-										</div>
-									<div>
-										<fieldset>
-											<input type="email" class="newsletter-name" name="email"  required  placeholder="Email address">
-										</fieldset>									
-										</div>
-									<div>
-											<button class="btn btn-primary btn-outline with-arrow sidebar-submit">Submit<i class="icon-arrow-right"></i></button>
-									</div>
-						</form>
+                  <div>
+                    <fieldset>
+                      <input class="newsletter-name" name="name" placeholder="Name" required>
+                    </fieldset>
+                    </div>
+                  <div>
+                    <fieldset>
+                      <input type="email" class="newsletter-name" name="email"  required  placeholder="Email address">
+                    </fieldset>                 
+                    </div>
+                  <div>
+                      <button class="btn btn-primary btn-outline with-arrow sidebar-submit">Submit<i class="icon-arrow-right"></i></button>
+                  </div>
+            </form>
             <div class='msg displaynone'><p>Thanks. We will reach you soon.</p></div>
             <div class='msg_err displaynone' ><p>Ooops. Something went wrong.</p></div>
         </div>
@@ -128,21 +128,21 @@
           <form name="help_form" id="help_form" method="post">
           {{ csrf_field() }}
           <input type="hidden" name="form" value="help_form">
-									<div>
-										<fieldset>
-											<input class="newsletter-name" name="name" placeholder="Name" required>
-										</fieldset>
-										</div>
-									<div>
-										<fieldset>
-											<input type="text" class="newsletter-name" name="contact" pattern="[789][0-9]{9}" required maxlength="10" placeholder="Mobile Number">
-										</fieldset>									
-										</div>
-									<div>
-											<button class="btn btn-primary btn-outline with-arrow sidebar-submit">Submit<i class="icon-arrow-right"></i></button>
-									</div>
-						</form>
-            <div class='msg displaynone' ><p>Thanks. We will reach you soon.</p></div>
+                  <div>
+                    <fieldset>
+                      <input class="newsletter-name" name="name" placeholder="Name" required>
+                    </fieldset>
+                    </div>
+                  <div>
+                    <fieldset>
+                      <input type="text" class="newsletter-name" name="contact" pattern="[789][0-9]{9}" required maxlength="10" placeholder="Mobile Number">
+                    </fieldset>                 
+                    </div>
+                  <div>
+                      <button class="btn btn-primary btn-outline with-arrow sidebar-submit">Submit<i class="icon-arrow-right"></i></button>
+                  </div>
+            </form>
+            <div class='msg displaynone'><p>Thanks. We will reach you soon.</p></div>
             <div class='msg_err displaynone' ><p>Ooops. Something went wrong.</p></div>
         </div>
         <div class="modal-footer">
@@ -167,14 +167,40 @@
         <div class="modal-body">
           <form name="borrow_form" id="borrow_form" method="post" >
           {{ csrf_field() }}
+          <?php
+          $myString = isset($_GET['referrer']);
+          // 
+          if($myString){
+            
+            $myArray = explode('@', $_GET['referrer']);
+            if(isset($myArray[0])){
+              $empid =Session::put('empid', $myArray[0]);
+            }
+            if(isset($myArray[1])){
+             $brokerid =Session::put('brokerid', $myArray[1]);
+            }
+            if(isset($myArray[2])){
+              $source =Session::put('source', $myArray[2]);
+            }
+            
+            //$a= str_replace('�', '', $brokerid);
+            // echo $empid;
+             //print_r($a);
+          }else{
+            $empid = "";
+            $brokerid ="";
+            $source ="";
+          }
+          
+          ?>
           <input type="hidden" name="form" value="balance_transfer_borrow_home_form">
           <input type="hidden" name="Principal_Amt" class="Principal_Amt" value="">
           <input type="hidden" name="Interest_Rate" class="Interest_Rate" value="">
           <input type="hidden" name="Remaining_Tenure" class="Remaining_Tenure" value="">
-          <input type="hidden" name="brokerid" class="brokerid" value="<?php echo isset($_GET['brokerid'])?$_GET['brokerid']:'';?>">
-          <input type="hidden" name="empid" class="empid" value="<?php echo isset($_GET['empid'])?$_GET['empid']:'';?>">
-          
-                  <div>
+           <input type="hidden" name="brokerid" class="brokerid" value="<?php echo $empid?$empid:'';?>">
+          <input type="hidden" name="empid" class="empid" value="<?php echo $brokerid?$brokerid:'';?>">
+          <input type="hidden" name="source" class="source" value="<?php echo $source?$source:'';?>">                  
+          <div>
                     <fieldset>
                       <input class="newsletter-name" name="name" placeholder="Name" required>
                     </fieldset>
@@ -201,6 +227,7 @@
       
     </div>
   </div>
+
   <div class="modal fade" id="borrow_lap" role="dialog">
     <div class="modal-dialog">
     
@@ -212,12 +239,39 @@
         </div>
         <div class="modal-body">
           <form name="borrow_form_lap" id="borrow_form_lap" method="post" >
+          <?php
+          $myString = isset($_GET['referrer']);
+          // 
+          if($myString){
+            
+            $myArray = explode('@', $_GET['referrer']);
+            if(isset($myArray[0])){
+              $empid =Session::put('empid', $myArray[0]);
+            }
+            if(isset($myArray[1])){
+             $brokerid =Session::put('brokerid', $myArray[1]);
+            }
+            if(isset($myArray[2])){
+              $source =Session::put('source', $myArray[2]);
+            }
+            //$a= str_replace('�', '', $brokerid);
+            // echo $empid;
+             //print_r($a);
+          }else{
+            $empid = "";
+            $brokerid ="";
+            $source ="";
+          }
+          
+          ?>
            <input type="hidden" name="form" value="balance_transfer_borrow_form_lap">
            <input type="hidden" name="Principal_Amt" class="Principal_Amt" value="">
           <input type="hidden" name="Interest_Rate" class="Interest_Rate" value="">
           <input type="hidden" name="Remaining_Tenure" class="Remaining_Tenure" value="">
-          <input type="hidden" name="brokerid" class="brokerid" value="<?php echo isset($_GET['brokerid'])?$_GET['brokerid']:'';?>">
-          <input type="hidden" name="empid" class="empid" value="<?php echo isset($_GET['empid'])?$_GET['empid']:'';?>">
+         <input type="hidden" name="brokerid" class="brokerid" value="<?php echo $empid?$empid:'';?>">
+          <input type="hidden" name="empid" class="empid" value="<?php echo $brokerid?$brokerid:'';?>">
+          <input type="hidden" name="source" class="source" value="<?php echo $source?$source:'';?>"> 
+          
           {{ csrf_field() }}
           
                   <div>
@@ -247,15 +301,93 @@
       
     </div>
   </div>
+
+  <div class="modal fade" id="borrow_personal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Would Like To Borrow </h4>
+        </div>
+        <div class="modal-body">
+          <form name="borrow_form_personal" id="borrow_form_personal" method="post" >
+          <?php
+          $myString = isset($_GET['referrer']);
+          // 
+          if($myString){
+            
+            $myArray = explode('@', $_GET['referrer']);
+            if(isset($myArray[0])){
+              $empid =Session::put('empid', $myArray[0]);
+            }
+            if(isset($myArray[1])){
+             $brokerid =Session::put('brokerid', $myArray[1]);
+            }
+            if(isset($myArray[2])){
+              $source =Session::put('source', $myArray[2]);
+            }
+            //$a= str_replace('�', '', $brokerid);
+            // echo $empid;
+             //print_r($a);
+          }else{
+            $empid = "";
+            $brokerid ="";
+            $source ="";
+          }
+          
+          ?>
+           <input type="hidden" name="form" value="balance_transfer_borrow_form_personal">
+           <input type="hidden" name="Principal_Amt" class="Principal_Amt" value="">
+          <input type="hidden" name="Interest_Rate" class="Interest_Rate" value="">
+          <input type="hidden" name="Remaining_Tenure" class="Remaining_Tenure" value="">
+          <input type="hidden" name="brokerid" class="brokerid" value="<?php echo $empid?$empid:'';?>">
+          <input type="hidden" name="empid" class="empid" value="<?php echo $brokerid?$brokerid:'';?>">
+          <input type="hidden" name="source" class="source" value="<?php echo $source?$source:'';?>"> 
+          
+          {{ csrf_field() }}
+          
+                  <div>
+                    <fieldset>
+                      <input class="newsletter-name" name="name" placeholder="Name" required>
+                    </fieldset>
+                    </div>
+                     <div>
+                    <fieldset>
+                      <input type="email" class="newsletter-name" name="email"  required  placeholder="Email address">
+                    </fieldset>                 
+                    </div>
+                    <div>
+                    <fieldset>
+                      <input type="text" class="newsletter-name" name="contact" pattern="[789][0-9]{9}" required maxlength="10" placeholder="Mobile Number">
+                    </fieldset>                 
+                    </div>
+                  <div>
+                     <button class="btn btn-primary btn-outline with-arrow sidebar-submit">Submit<i class="icon-arrow-right"></i></button>
+                  </div>
+            </form>
+            <div class='msg displaynone'><b>Thanks.We will reach you soon.</b></div>
+            <div class='msg_err displaynone' ><p>Ooops. Something went wrong.</p></div>
+        </div>
+        
+      </div>
+      
+    </div>
+  </div>
+
+  
+
+  
 <!---Borrow end -->
 
 <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" id="Experian_terms_modal">
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content col-md-12 text-justify model-hig">
-	<br>
-	<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+  <br>
+  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
      <h2 class="text-center"> Rupeeboss Terms</h2>
-	<br>
+  <br>
 <h3>TERMS OF USE</h3>
 <p>RupeeBoss Value Added-Credit Score Service, is an online service (“Credit Score Service” / “Service”) that enables you to access your Credit Score/Report, based on the data/information/report supplied by our third party data processing service provider, M/s Experian Credit Information Services Private Limited (the “Processing Service Provider”). The said Credit Score Service consists of receipt of your credit report/score. This information is for your personal use only and the said Service/report is subject to your agreement to the provisions set forth below.
 Please read the following provisions carefully before using this Service. If you do not agree with any of these provisions, you should not use this Service. By accessing or using this Service you agree to be bound by these Terms of Use.</p>
@@ -271,7 +403,7 @@ We will obtain your prior consent if we use your identifying information for any
 <h3>3. YOUR ACCOUNT</h3>
 <p>If you use the Service, you are responsible for maintaining the confidentiality of your account, login IDs and password, and for restricting access to your computer. It is your responsibility to protect your computer system from such items, viruses, and other harmful and destructive items. You agree to accept responsibility for all activities that occur under your account or password including any request from your account. We strongly recommend that you exit from your account at the end of each session. You agree to notify RupeeBoss immediately of any unauthorized use of your account or any other breach of security. RupeeBoss reserves the right to refuse service, terminate accounts, or remove in its sole discretion. Notwithstanding the above, we retain the right at our sole discretion to deny access to anyone to the Site and the Services we offer, at any time and for any reason, including, but not limited to, for violation of this Terms of Use or Privacy Policy. Additional Standard terms and conditions of the Processing Service Provider will apply to your use of this Service.</p>
 <h3>4. DISCLAIMER OF WARRANTIES AND LIABILITY</h3>
-<p class="text-lowercase">This Service is for informational purposes only, and is intended to provide helpful and informative material on the subjects addressed. RupeeBoss does not control your credit score, which is a statistical analysis of information contained in your credit file as maintained in the system and database of Processing Service Provider, and we cannot change that information for you. However, if information in your report is inaccurate and is affecting your score, you have the right to dispute it by contacting the Processing Service Provider at consumer.support@in.experian.com.
+<p class="text-lowercase">This Service is for informational purposes only, and is intended to provide helpful and informative material on the subjects addressed. RupeeBoss does not control your credit score, which is a statistical analysis of information contained in your credit file as maintained in the system and database of Processing Service Provider, and we cannot change that information for you. However, if information in your report is inaccurate and is affecting your score, you have the right to dispute it by contacting the Processing Service Provider at consumer(.)support(@)in(.)experian(.)com.
 INFORMATION AND/OR SERVICES OFFERED ON THIS WEB SITE ARE PROVIDED "AS IS" WITHOUT ANY EXPRESS OR IMPLIED WARRANTY OF ANY KIND, INCLUDING WARRANTIES OF CORRECTNESS, COMPLETENESS, ACCURACY MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, OR NON-INFRINGEMENT. IN NO EVENT WILL RUPEEBOSS OR THE PROCESSING SERVICE  PROVIDER BE LIABLE TO ANY PARTY FOR ANY DAMAGES OF ANY KIND, INCLUDING BUT NOT LIMITED TO DIRECT, INDIRECT, SPECIAL OR CONSEQUENTIAL DAMAGES ARISING OUT OF THE USE OR INABILITY TO USE THIS WEB SITE, OR ANY LINKED WEB SITE, INCLUDING WITHOUT LIMITATION, LOST PROFITS, LOSS OF USE, BUSINESS INTERRUPTION, OR OTHER ECONOMIC LOSSES, LOSS OF PROGRAMS OR OTHER DATA, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER ACTION, EVEN IF RUPEEBOSS IS ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.</p>
 
 <h3>5. RESTRICTIONS</h3>
@@ -288,33 +420,33 @@ We use all reasonable physical, administrative, technical and organizational mea
 <h3>10. OTHER TERMS AND CONDITIONS</h3>
 <p>(a)The terms and conditions mentioned herein may be modified/altered/revised by RupeeBoss in its sole discretion from time to time, without any prior notice. (b) The rights granted in this agreement/terms are personal. You may not assign, sub-license or otherwise transfer any of your rights under these conditions. (c) If a court finds any part of these conditions to be invalid, the remaining parts of these conditions shall continue unaffected. (d) If either of us fail to exercise any right or legal remedy available to either you or us any such failure shall not prevent you or us from relying on these at a later date. (e) Headings in these terms/conditions are for convenience only and will have no legal meaning or effect. (f) In case of any conflict between the terms and conditions of RupeeBoss as applicable to this service and those of the Processing Service Provider, the terms and conditions of RupeeBoss shall prevail. However, nothing contained herein shall override any provision of the applicable statute(s) in case of any express conflict. (g) In addition to these terms and conditions as applicable to this Service, you agree to be bound by the terms and conditions for the use and access of the Website.</p>
 <h3>11. CONTACT US </h3>
-<p>In case of any queries with respect the Services, please you can write us at wecare@rupeeboss.com or call our Toll Free No. 1800 267 629 6. We shall use our best efforts in resolving any such queries.</p>
+<p>In case of any queries with respect the Services, please you can write us at wecare(@)rupeeboss(.)com or call our Toll Free No. 1800 267 629 6. We shall use our best efforts in resolving any such queries.</p>
     </div>
-	</div>
+  </div>
   </div>
 </div>
 <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" id="RB_Experian_terms_modal">
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content col-md-12 text-justify model-hig ">
     <br>
-	<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
 
-	<h2 class="text-center">Experian Terms </h2>
+  <h2 class="text-center">Experian Terms </h2>
 
-	<br>
-	<h4 class="text-center ">CONSENT IN RELATION TO ACCESS TO CREDIT INFORMATION THROUGH EXPERIAN</h4>
+  <br>
+  <h4 class="text-center ">CONSENT IN RELATION TO ACCESS TO CREDIT INFORMATION THROUGH EXPERIAN</h4>
     <p>This End User Agreement (the <b>“Agreement”</b>) is made between you (the <b>“User” or “You”</b>) and Rupeeboss Financial Services Private Limited, a private limited company having its registered office at C-605, Titenium Square Nr. BMW Showroom, Thaltej Ahmedabad Ahmedabad GJ 380054 India 
-	(“Rupeeboss Financial Services Private Limited”, <b>“Us”</b> or <b>“We”</b>, which term shall include its successors and permitted assigns). The User and Rupeeboss Financial Services Private Limited shall be collectively referred to as the <b>“Parties”</b> and individually as a <b>“Party”</b>.</p>
+  (“Rupeeboss Financial Services Private Limited”, <b>“Us”</b> or <b>“We”</b>, which term shall include its successors and permitted assigns). The User and Rupeeboss Financial Services Private Limited shall be collectively referred to as the <b>“Parties”</b> and individually as a <b>“Party”</b>.</p>
 
-	
-	<p>You hereby consent to Rupeeboss Financial Services Private Limited being appointed as your authorized representative to receive your Credit Information from Experian for the purpose of processing the loan applications.</p>
+  
+  <p>You hereby consent to Rupeeboss Financial Services Private Limited being appointed as your authorized representative to receive your Credit Information from Experian for the purpose of processing the loan applications.</p>
 <p><b>BY EXECUTING THIS AGREEMENT / CONSENT FORM, YOU ARE EXPRESSLY AGREEING TO ACCESS THE EXPERIAN CREDIT INFORMATION REPORT AND CREDIT SCORE, AGGREGATE SCORES, INFERENCES, REFERENCES AND DETAILS (AS DEFINED BELOW) (TOGETHER REFERRED AS “CREDIT INFORMATION”). YOU HEREBY ALSO IRREVOCABLY AND UNCONDITIONALLY CONSENT TO SUCH CREDIT INFORMATION BEING PROVIDED BY EXPERIAN TO YOU AND RUPEEBOSS FINANCIAL SERVICES PRIVATE LIMITED BY USING EXPERIAN TOOLS, ALGORITHMS AND DEVICES AND YOU HEREBY AGREE, ACKNOWLEDGE AND ACCEPT THE TERMS AND CONDITIONS SET FORTH HEREIN.</b></p>
-	
-	
-	
-	<h3>Terms and Conditions: </h3>
-	<h4>Information Collection, Use, Confidentiality, No-Disclosure and Data Purging</h4>
-	<p>Information Collection, Use, Confidentiality, No-Disclosure and Data Purging
+  
+  
+  
+  <h3>Terms and Conditions: </h3>
+  <h4>Information Collection, Use, Confidentiality, No-Disclosure and Data Purging</h4>
+  <p>Information Collection, Use, Confidentiality, No-Disclosure and Data Purging
 Rupeeboss Financial Services Private Limited shall access your Credit Information as your authorized representative and Rupeeboss Financial Services Private Limited shall use the Credit Information for limited End Use Purpose consisting of and in relation to the services proposed to be availed by you from Rupeeboss Financial Services Private Limited. We shall not aggregate, retain, store, copy, reproduce, republish, upload, post, transmit, sell or rent the Credit Information to any other person and the same cannot be copied or reproduced other than as agreed herein and in furtherance to CICRA. </p>
 
 <p>The Parties agree to protect and keep confidential the Credit Information both online and offline.</p>

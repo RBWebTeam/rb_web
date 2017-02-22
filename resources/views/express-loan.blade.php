@@ -105,7 +105,7 @@
 								 <li>Minimum Documentation</li>
 								 <li>Express cash</li>
 							</ul>
-							<button class="btn btn-primary btn-outline with-arrow">Apply Now<i class="icon-arrow-right"></i></button>
+							<a class="btn btn-primary btn-outline with-arrow" href="{{URL::to('apply-express-loan')}}">Apply Now<i class="icon-arrow-right"></i></a>
 						</div>
 					</div>
 					

@@ -12,21 +12,21 @@ class MobileApiController extends ApiController
 	public function mobile_api_compare(Request $req){
 		//return "hiiiii";
 		$data= $this->compare($req);
-		//print_r($data);exit;
+		//print_r($data->getData()->data);exit;
 		//print_r( $data->getData()->quote_id);exit();
-		if($data!='Failure occured'){
-			$status_Id=0;
-			$msg="data delievered";
-			$new_data=$data->getData()->data;
-			$quote=$data->getData()->quote_id;
-			$url="http://beta.erp.rupeeboss.com/homeloan/home_loan_application_form.aspx";
-		}
-		else{
+		if($data=='Failure occured' || $data->getData()->data==[]){
 			$new_data=NULL;
 			$status_Id=1;
 			$msg=" Something went wrong.";
 			$quote=NULL;
 			$url=NULL;
+		}
+		else{
+			$status_Id=0;
+			$msg="data delievered";
+			$new_data=$data->getData()->data;
+			$quote=$data->getData()->quote_id;
+			$url="http://beta.erp.rupeeboss.com/homeloan/home_loan_application_form.aspx";
 		}
 		
 		//print_r($a);
@@ -39,8 +39,8 @@ class MobileApiController extends ApiController
 		//return "hiiiii";
 		$data= $this->comapre_personal_loan($req);
 		//print_r($data);exit;
-		//print_r( $data->getData()->quote_id);exit();
-		if($data!='Failure occured'){
+		//		print_r( $data->getData()->data);exit();
+		if($data->getData()->data!=[]){
 			$status_Id=0;
 			$msg="data delievered";
 			$new_data=$data->getData()->data;

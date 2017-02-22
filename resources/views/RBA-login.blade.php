@@ -44,10 +44,14 @@
   <div class="col-md-6 rba_bg">
   <img src="images/rba_bg.jpg" class="img-responsive"/>
   <div class="rba-log xyz">
-  <input type="text" placeholder="Username" class="form-group"/> <input type="password" placeholder="password"/>
-  <button type="submit" class="btn btn-success">Login</button>
+  <form   name="rba_emp_login" id="rba_emp_login"  method="post"  >
+
+  {{ csrf_field() }}
+  <input type="text" placeholder="Username" class="form-group" required="" /> <input type="password" placeholder="password" required="" />
+  <button type="submit" id="login_rba" class="btn btn-success  ">Login</button>
   </div>
   </div>
+  </form>
 </div>
 <div class="col-md-12 pad1 text-center">
   <marquee><h2 class="yellow-clr">Immediate Vacancy for <b>RBA's</b></h2></marquee>
@@ -96,6 +100,46 @@
 
 
 </script>
+<!-- <script type="text/javascript">
+
+
+
+
+$("#login_rba").click(function(event){
+
+
+
+  event.preventDefault();
+  var form=$(this).closest("form").attr('id');
+    //console.log(form);return false;
+    $form=$('#'+form);
+    if(! $form.valid()){
+    }else{
+      var s=$('#'+form).serialize();
+
+      alert(s);
+
+      $.ajax({  
+       type: "POST",  
+       url: "{{URL::to('RBA-login')}}",
+       data : $('#'+form).serialize(),
+       success: function(msg){
+        
+       
+
+                    }  
+                  }); 
+    }
+
+  });
+
+
+</script> -->
+
+
+
+
+
 
 
 

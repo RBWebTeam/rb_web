@@ -43,7 +43,7 @@
     <table width="100%" border="1" class="tbl pad1">
   <tr>
     <td>Your {{$product}} Search for <b>{{$loan_amount}} Lakhs</b> Loan</td>
-    <td><a class="default btn btn-primary" href="<?php echo $url;?>">Modify Details</a></td>
+    <td><a class="default btn btn-primary" href="<?php echo $url;?>" id="Modify_Details">Modify Details</a></td>
     <!-- <td>sort by 
     <select>
         <option>Interest Rate</option>
@@ -80,7 +80,7 @@
       $prod="12";
         }?>
     <td width="17%"><a class="btn btn-success" 
-    href="{{URL::to('apply-lead-online')}}?appid=0&qoutid={{$quote_id}}&BankId={{$q->Bank_Id}}&product={{$prod}}">Apply Online</a></td>
+    href="{{URL::to('apply-lead-online')}}?qoutid={{$quote_id}}&BankId={{$q->Bank_Id}}&product={{$prod}}">Apply Online</a></td>
   </tr>
   <tr>
     <td>
@@ -94,7 +94,7 @@
    <input type="hidden" name="product" class="product" value="{{$product}}">
 
     <input type="hidden" name="processingfee" class="processingfee" value="{{$q->processingfee }}">
-    <input type="hidden" name="url" class="url" value="{{URL::to('apply-lead-online')}}?appid=0&qoutid={{$quote_id}}&BankId={{$q->Bank_Id}}&product={{$prod}}">
+    <input type="hidden" name="url" class="url" value="{{URL::to('apply-lead-online')}}?qoutid={{$quote_id}}&BankId={{$q->Bank_Id}}&product={{$prod}}">
 
 
     <td >{{$product}}</td>

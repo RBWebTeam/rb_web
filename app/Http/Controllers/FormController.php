@@ -9,7 +9,7 @@ use DB;
 use Redirect;
 use App\registrationModel;
 use App\bank_quote_api_request;
-class FormController extends Controller
+class FormController extends CallApiController
 {
     function sidebar(Request $req){
 
@@ -25,29 +25,16 @@ class FormController extends Controller
         'empid'=>$req['empid']?$req['empid']:'',
         'form'    =>$req['form'] 
         );
-    //put curl code here to save in DB
+    //call API here to save in DB
     $url = "http://erp.rupeeboss.com/CustomerWebRequest.aspx";
-    //print "<pre>";
-    // print_r($req->all());exit();    
-    $ch = curl_init();
-    curl_setopt($ch, CURLOPT_VERBOSE, 1);
-    curl_setopt($ch, CURLOPT_URL, $url);
-    curl_setopt($ch, CURLOPT_POST, 1);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-    curl_setopt($ch, CURLOPT_FAILONERROR, 0);
-    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
-    curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($post_data));
-     
-    $http_result = curl_exec($ch);
-    $error = curl_error($ch);
-    $http_code = curl_getinfo($ch ,CURLINFO_HTTP_CODE);
-     //print_r($http_result);exit();
-    curl_close($ch);
+    $result=$this->call_array_data_api($url,$post_data);
+    $http_result=$result['http_result'];
+    $error=$result['error'];
     if($http_result==1){
         return 'true';
     }else
         return 'false';
-        //return 'true';
+      
     }
 
     public function p_loan_submit(Request $req){
@@ -69,22 +56,13 @@ class FormController extends Controller
             //adding city_id to post data
         } 
         $res_arr=array_merge($input,$new_array);
-        // print_r($res_arr);
+        // send empcode if its a refferal
+        $res_arr['empid']=Session::get('empid')?Session::get('empid'):'';
+         //print_r($res_arr);exit();
             $url = "http://erp.rupeeboss.com/CustomerLaravelWebRequest.aspx";
-            $ch = curl_init();
-            curl_setopt($ch, CURLOPT_VERBOSE, 1);
-            //curl_setopt( $ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
-            curl_setopt($ch, CURLOPT_URL, $url);
-            curl_setopt($ch, CURLOPT_POST, 1);
-            curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-            curl_setopt($ch, CURLOPT_FAILONERROR, 0);
-            curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
-            curl_setopt($ch, CURLOPT_POSTFIELDS,$res_arr);
-            $http_result = curl_exec($ch);
-            $error = curl_error($ch);
-            $http_code = curl_getinfo($ch ,CURLINFO_HTTP_CODE);
-          // print_r("\n hiiiiiiiiii");
-            //print_r($http_result);exit();
+            $result=$this->call_array_data_api($url,$res_arr);
+            $http_result=$result['http_result'];
+            $error=$result['error'];
             if($http_result==1){
                 if(isset($req['income'])){
                     $income=$req['income'];
@@ -102,10 +80,9 @@ class FormController extends Controller
              $save=new bank_quote_api_request();    
             $id=$save->save_liza($req);
             $data['quote_id']=$id;
-            }
-            else{
+            }else{
                 $quote_data =$req['product_name'];
-                return view("something-went-wrong");
+                return view("went-wrong");
                 //return "no quotes";
             }
             if($req['product_name'] == 9){
@@ -124,7 +101,7 @@ class FormController extends Controller
             //print"<pre>";print_r($data);exit();
             return view('show-quotes')->with($data);
         }catch(\Exception $ee){
-            return view('went-wrong');
+            return $ee;//view('went-wrong');
         }
     }
     
@@ -182,22 +159,13 @@ class FormController extends Controller
                 //calling service to send sms 
                 $post_data='{"mobNo":"'.$req['contact'].'","msgData":"your otp is '.$otp.' - RupeeBoss.com",
                     "source":"WEB"}';
-                $url = "http://beta.services.rupeeboss.com/LoginDtls.svc/xmlservice/sendSMS";
-                $ch = curl_init();
-                curl_setopt($ch, CURLOPT_VERBOSE, 1);
-                curl_setopt( $ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
-                curl_setopt($ch, CURLOPT_URL, $url);
-                curl_setopt($ch, CURLOPT_POST, 1);
-                curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-                curl_setopt($ch, CURLOPT_FAILONERROR, 0);
-                curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
-                curl_setopt($ch, CURLOPT_POSTFIELDS,$post_data);
-                $http_result = curl_exec($ch);
-                $error = curl_error($ch);
-                $http_code = curl_getinfo($ch ,CURLINFO_HTTP_CODE);
+                // $url = "http://beta.services.rupeeboss.com/LoginDtls.svc/xmlservice/sendSMS";
+                $url = "http://services.rupeeboss.com/LoginDtls.svc/xmlservice/sendSMS";
+                $result=$this->call_json_data_api($url,$post_data);
+                $http_result=$result['http_result'];
+                $error=$result['error'];
                 $obj = json_decode($http_result);
-                // statusId response 0 for success, 1 for failure
-                curl_close($ch);
+                //print_r($obj);exit();
                 if($obj->{'statusId'}==0){
                     return Response::json(array(
                                 'data' => true,
@@ -234,9 +202,8 @@ class FormController extends Controller
             ->update(['status' => 1]);
         if($query){
 
-            //p_loan_submit();
-             Session::put('user_id',Session::get('verify_id'));
-             Session::put('is_login',1);
+            Session::put('user_id',Session::get('verify_id'));
+            Session::put('is_login',1);
              //print_r(Session::get('user_id'));
             return Response::json(array(
                             'data' => true,

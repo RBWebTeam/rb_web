@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use Mail;
-class UploadController extends Controller
+class UploadController extends CallApiController
 {
 
     public function Upload()
@@ -32,22 +32,13 @@ class UploadController extends Controller
                 $post="[".implode(',',$data)."]";
                 $post_data='{"docType":"'.$doc[$i].'","docextension":"'.$extension.'",
                             "refFBAId":"'.$request->app_id.'","bytes":'.$post.'}';
-                $url = "http://beta.services.rupeeboss.com/LoginDtls.svc/xmlservice/uploadCustLoanDoc";
-                $ch = curl_init();
-                curl_setopt($ch, CURLOPT_VERBOSE, 1);
-                curl_setopt( $ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
-                curl_setopt($ch, CURLOPT_URL, $url);
-                curl_setopt($ch, CURLOPT_POST, 1);
-                curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-                curl_setopt($ch, CURLOPT_FAILONERROR, 0);
-                curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
-                curl_setopt($ch, CURLOPT_POSTFIELDS,$post_data);
-                $http_result = curl_exec($ch);
-                $error = curl_error($ch);
-                $http_code = curl_getinfo($ch ,CURLINFO_HTTP_CODE);
+                // $url = "http://beta.services.rupeeboss.com/LoginDtls.svc/xmlservice/uploadCustLoanDoc";
+                $url = "http://services.rupeeboss.com/LoginDtls.svc/xmlservice/uploadCustLoanDoc";
+                $result=$this->call_json_data_api($url,$post_data);
+                $http_result=$result['http_result'];
+                $error=$result['error'];
                 $obj = json_decode($http_result);
-                
-                curl_close($ch);
+              
                 //print_r($obj->statusId);exit();
                     // return ($http_result);
 
@@ -70,7 +61,7 @@ class UploadController extends Controller
       $data=$request->app_id;
 
                 //$headers="Content-Type: text/html; charset=ISO-8859-1\r";
-                $email ='kishorall.sagar@gmail.com';
+                $email ='wecare@rupeeboss.com';
                 $mail = Mail::send('email_view_upload',['data' => $data], function($message) use($email) {
                 $message->from('software.support@rupeeboss.com', 'RupeeBoss');
                 $message->to($email)

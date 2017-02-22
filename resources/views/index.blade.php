@@ -25,7 +25,7 @@
 		</div>
     <div class="item active">
 	<div class="slide-txt">
-	<img src="images/home-ic.png" class="center-img-align img-responsive hidden-sm" alt="home-ic" draggable="false">
+	<i class="sprite sprite-home-ic center-img-align img-responsive hidden-sm"></i>
 	<h2>Home Loan </h2>
    <h4>Choose the right Home Loan for you ...!!</h4>
    <a href="{{URL::to('home-loan')}}" class="btn btn-primary btn-lg btn-view">View More</a>
@@ -35,7 +35,7 @@
 
     <div class="item">
 	<div class="slide-txt">
-	<img src="images/personal-ic.png" class="center-img-align img-responsive hidden-sm" alt="personal-ic" draggable="false">
+	<i class="sprite sprite-personal-ic center-img-align img-responsive hidden-sm"></i>
 	<h2>Personal Loan </h2>
    <h4>Finance Your Dreams...!!</h4>
    <a href="{{URL::to('personal-loan')}}" class="btn btn-primary btn-lg btn-view">View More</a>
@@ -45,7 +45,7 @@
 
     <div class="item">
 	<div class="slide-txt">
-	<img src="images/lap-ic.png" class="center-img-align img-responsive hidden-sm" alt="lap-ic" draggable="false">
+	<i class="sprite sprite-lap-ic center-img-align img-responsive hidden-sm"></i>
 	<h2>Loan Against Property</h2>
    <h4>Finding you a better Deal...!!</h4>
    <a href="{{URL::to('loan-against-property')}}" class="btn btn-primary btn-lg btn-view">View More</a>
@@ -55,7 +55,7 @@
 
     <div class="item">
 	<div class="slide-txt">
-	<img src="images/sme-ic.png" class="center-img-align img-responsive hidden-sm" alt="sme-ic" draggable="false">
+	<i class="sprite sprite-sme-ic center-img-align img-responsive hidden-sm"></i>
 	<h2>SME Loan</h2>
 
    <h4>We Support Make in India..!!</h4>
@@ -65,7 +65,7 @@
     </div>
 	<div class="item">
 	<div class="slide-txt">
-	<img src="images/balance-ic.png" class="center-img-align img-responsive hidden-sm" alt="balance-ic" draggable="false">
+	<i class="sprite sprite-balance-ic center-img-align img-responsive hidden-sm"></i>
 	<h2>Business Loan</h2>
    <h4>Experience on your side...!!</h4>
    <a href="{{URL::to('business-loan')}}" class="btn btn-primary btn-lg btn-view">View More</a>
@@ -75,7 +75,7 @@
     </div>
 	<div class="item">
 	<div class="slide-txt">
-	<img src="images/car-ic.png" class="center-img-align img-responsive hidden-sm" alt="car-ic" draggable="false">
+	<i class="sprite sprite-car-ic center-img-align img-responsive hidden-sm"></i>
 	<h2>Car Loan</h2>
    <h4>Thinking of your comfort first !!</h4>
    <a href="{{URL::to('car-loan')}}" class="btn btn-primary btn-lg btn-view">View More</a>
@@ -149,7 +149,7 @@
 					<div class="services3 services">
 						<a class="anchor_decoration" href="{{URL::to('sme-loan')}}">
 						<div class="desc">
-						<span  ><img class="marginauto" src="{{URL::to('images/SME_icon.png')}}" alt="sme-loan-img"></span>
+						<span  ><i class="sprite sprite-SME_icon marginauto"></i></span>
 							<h3>SME Loan</h3>
 						
 						</div>
@@ -214,7 +214,7 @@
 					<div class="col-md-3 animate-box">
 						<div class="price-box popular">
 							
-							<div class="icon-style"><img src="{{URL::to('images/icon1.png')}}" alt="confidence-img" /></div>
+							<div class="icon-style"><i class="sprite sprite-icon1"></i></div>
 							<h4 class="mrg-btm">Buy With Confidence</h4>
 							<p>Our strong relationship with leading Banks means we can give you the confidence you need to make the right choice.</p>
 							
@@ -223,7 +223,7 @@
 
 					<div class="col-md-3 animate-box">
 						<div class="price-box popular">
-							<div class="icon-style"><img src="{{URL::to('images/icon2.png')}}" alt="expert-img" /></div>
+							<div class="icon-style"><i class="sprite sprite-icon2"></i></div>
 							<h4 class="mrg-btm">Experts in small stuff</h4>
 							<p>Our Experts take care of all the small & big Terms & conditions so that you enjoy what really matters to you.</p>
 							
@@ -232,7 +232,7 @@
 					
 					<div class="col-md-3 animate-box">
 						<div class="price-box popular">
-							<div class="icon-style"><img src="{{URL::to('images/icon3.png')}}" alt="handshake-img" /></div>
+							<div class="icon-style"><i class="sprite sprite-icon3"></i></div>
 							<h4 class="mrg-btm">Beyond the Bucks</h4>
 							<p>We don't sell a product, We make Relationship and We are together with you in this journey.</p>
 							
@@ -241,7 +241,7 @@
 
 					<div class="col-md-3 animate-box">
 						<div class="price-box popular">
-							<div class="icon-style"><img src="{{URL::to('images/icon4.png')}}" alt="highway-img" /></div>
+							<div class="icon-style"><i class="sprite sprite-icon4"></i></div>
 							<h4 class="mrg-btm">Your way or Highway</h4>
 							<p>We don't push, We give you plenty of options, solution & facts, its your call, your decision. We are only here to help you.</p>
 							
@@ -386,7 +386,7 @@
 			<div class="row">
             
 				<div class="col-md-6 col-sm-6 animate-box">
-					<span class="item-grid">
+					<div class="item-grid">
 						<div class="v-align blu-clr">
 							<div class="v-align-middle">
 								<div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -425,11 +425,11 @@
 
 							</div>
 						</div>
-					</span>
+					</div>
 				</div>
                 
 				<div class="col-md-6 col-sm-6 animate-box">
-					<span class="item-grid">
+					<div class="item-grid">
 						
 						<div class="v-align blu-clr1">
 							<div class="v-align-middle">
@@ -437,7 +437,7 @@
 								<img src="{{URL::to('images/dsd.png')}}" class="img-responsive" alt="partners-img" />
 							</div>
 						</div>
-					</span>
+					</div>
 				</div>
 				
 			</div>

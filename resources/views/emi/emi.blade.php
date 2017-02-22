@@ -31,8 +31,8 @@
 	  
       <div class="pull-right">
 	  	
-	  <label><input type="radio" name="Year" id="Year" value="" checked="checked"> Yr </label>
-       <label><input type="radio" name="Year" id="Month" value=""> Mo &nbsp;&nbsp;</label>
+	  <label><input type="radio" name="Year" id="Year" value="" checked="checked"> Year </label>
+       <label><input type="radio" name="Year" id="Month" value=""> Month &nbsp;&nbsp;</label>
 	   
 	   	  </div>
 	   <button class="btn btn-primary pull-left mrg-tp">Submit</button>

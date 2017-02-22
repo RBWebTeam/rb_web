@@ -344,6 +344,7 @@
            });
 
           $(".sidebar-submit").click(function(event){
+
             event.preventDefault();
             var form=$(this).closest("form").attr('id');
           //return false;
@@ -353,16 +354,17 @@
           if(! $form.valid()){
             return false;
           }else{
-
+          $(".iframeloading").show();  
             $.ajax({  
              type: "POST",  
              url: "{{URL::to('sidebar')}}",
              data : $('#'+form).serialize(),
              success: function(msg){
+                $(".iframeloading").hide();  
               if(msg=='true'){
                 $form.hide();
                 var a =$('#'+form).parent().find('.msg');
-                        //console.log(a);
+                        // console.log(a);
                         $(a).show();
                         $('.msg').show();
                       }else{

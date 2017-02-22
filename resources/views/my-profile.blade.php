@@ -111,17 +111,20 @@
                           <div class="tab-pane" id="credit-score">
                             @if(isset($cquery->credit_score))
                                
-                                      <?php if($cquery->credit_score!='' && $cquery->credit_score!='0'){ $credit_score=$cquery->credit_score;}else{
+                              <?php if($cquery->credit_score!='' && $cquery->credit_score!='0'){ 
+                                     $credit_score=$cquery->credit_score;
+                                     ?><div class="col-md-4" style="display: none;" id="print_rpt"><?php print_r($credit_report);?></div>
+                                     <?php 
+                                      }else{
                                             $credit_score='Not yet Evaluated.';}?>
                             @else
                                       <?php $credit_score='Not yet Evaluated.';?>
                             @endif
                           
-                          <div class="col-md-12"><h2> Your credit score :: {{$credit_score}}</h2>  </div>
-                           <div class="col-md-12">
-                           <p>Get Free Credit Report <a href="{{url('credit-report')}}"> click Here..</a></p>
-                           </div>
-
+                          <div class="col-md-12"><h2> Your credit score :: {{$credit_score}}</h2>
+                          <?php if(isset($cquery->credit_score)){?><div class=" text-center"><input type="button" class="btn btn-success" onclick="printDiv('print_rpt')" value="Print Report" />
+                        </div><?php }else{?><p>Get Free Credit Report <a href="{{url('credit-report')}}"> click Here..</a></p><?php }?>
+                            </div>
                           </div>
 
 

@@ -8,7 +8,7 @@ use App\Http\Requests;
 use Session;
 use DB;
 use Response;
-class CompareController extends CallApiController
+class CompareController extends ExperianController
 {
     //
  

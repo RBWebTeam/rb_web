@@ -122,7 +122,8 @@ Route::get('credit-card-form','CreditcardController@credit_card_form');
 Route::post('credit-submit','CreditcardController@credit_form_submit');
 
 Route::get('no-record-found',function (){return view('no-record-found');});
-Route::get('test',function (){return view('test_parse');});
+//Route::get('test',function (){return view('test_parse');});
+Route::get('test','ExperianController@test');
 
 
 

@@ -1,4 +1,5 @@
   <script src="{{URL::to('js/Myapp.js')}}"></script>
+    <script src="{{URL::to('js/jsPdf.js')}}"></script>
   <script>
        function registration(){
          document.getElementById('login').style.display="none";
@@ -1634,6 +1635,19 @@
           printWindow.print();
         });
   </script>
+   <script type="text/javascript">
+  function printDiv(divName) {
+     //var htm=document.getElementById(divName).innerHTML;
+     var printContents = '<html><head><title>RupeeBoss Credit Report</title></head><body >' +document.getElementById(divName).innerHTML+'</body></html>';
+     var originalContents = document.body.innerHTML;
+
+     document.body.innerHTML = printContents;
+
+     window.print();
+
+     document.body.innerHTML = originalContents;
+}
+</script>
     </body>
     </html>
     <!-- login Start-->

@@ -114,7 +114,7 @@ class HomeController extends CallApiController
 		                ->subject('Thankyou');
                 	});
 
-                $post_data='{"City":"","Email_Id":"'.$req->email.'","PAN_No":"","UserPassword":"","contact_No":"'.$req->contact.'","first_Name":"'.$req->name.'","last_Name":"","parentBrokerId":"","parentEmpCode":"","source":""}';
+                $post_data='{"City":"0","Email_Id":"'.$req->email.'","PAN_No":"","UserPassword":"","contact_No":"'.$req->contact.'","first_Name":"'.$req->name.'","last_Name":"","parentBrokerId":"","parentEmpCode":"","source":""}';
                 $url = "http://beta.services.rupeeboss.com/LoginDtls.svc/xmlservice/insBrokerDataForRBA";
                 $result=$this->call_json_data_api($url,$post_data);
 

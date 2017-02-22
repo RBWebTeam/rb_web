@@ -20,7 +20,9 @@ Route::get('widget','LoanController@car_loan');
 
 //Route::get('search/autocomplete', 'SearchController@autocomplete');
 Route::get('autocomplete',array('as'=>'autocomplete','uses'=>'AutoCompleteController@index'));
-Route::get('searchajax',array('as'=>'searchajax','uses'=>'AutoCompleteController@autoComplete'));	
+Route::get('searchajax',array('as'=>'searchajax','uses'=>'AutoCompleteController@autoComplete'));
+Route::get('searchstateajax',array('as'=>'searchstateajax','uses'=>'AutoCompleteController@autoComplete_state'));	
+
 
 Route::post('loan-submit','FormController@p_loan_submit');
 
@@ -89,6 +91,7 @@ Route::post('RBA-login','HomeController@RBA_register');
 Route::get('lead-status','HomeController@lead_status');
 Route::get('apply-lead-online','ProfileController@applyonline');
 Route::get('apply-express-loan','LoanController@apply_express_loan');
+Route::post('express-loan-send-otp','LoanController@express_send_otp');
 
 //new loans test
 

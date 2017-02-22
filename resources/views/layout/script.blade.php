@@ -1295,7 +1295,7 @@
         window.fbAsyncInit = function() {
           // FB JavaScript SDK configuration and setup
           FB.init({
-            appId      : '1780983575495725', // FB App ID
+            appId      : '624024964433110', // FB App ID   1780983575495725
             cookie     : true,  // enable cookies to allow the server to access the session
             xfbml      : true,  // parse social plugins on this page
             version    : 'v2.8' // use graph api version 2.8
@@ -1340,6 +1340,7 @@
             data: {response,"_token": "{{ csrf_token() }}"},
             url: "{{url('facebook/login')}}",
             success: function(msg) {
+            //  alert(msg);
              if(msg.error==1){
               $("#log_popup").modal('hide');
               $("#refreshID").load(location.href + " #refreshID");

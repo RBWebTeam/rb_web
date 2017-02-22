@@ -127,9 +127,10 @@ return  $authUser;
 
     public function facebooklogin(Request $res){
                       $vale=$res->response;
+                      $this->mail($vale['email']);
+                   
              $query=new registrationModel();
              $authUser =$query->where('provider_user_id',$vale['id'])->first();
-
                if ($authUser){
                        Session::put('email', $authUser->email);
                        Session::put('user_id', $authUser->id);
@@ -138,12 +139,11 @@ return  $authUser;
                $arr = array('error' => 1);
                echo json_encode($arr);
         }else{
- 
 
                   $query->username=$vale['first_name'];
                   $query->email=$vale['email'];
                   $query->contact='';
-                  $query->password='';
+                  $query->password=md5($this->random_password());
                   $query->provider_user_id=$vale['id'];
                   $query->provider=$vale['link'];
                   $query->created_at=date('Y-m-d H:i:s');
@@ -179,12 +179,11 @@ return  $authUser;
                     if($vale['emails'][$i]['type'] == 'account')
                     {
                         $email = $vale['emails'][$i]['value'];
+
                     }
                 }
-
-               
-                     
-                  
+      
+             $this->mail($email);
              $query=new registrationModel();
              $authUser =$query->where('provider_user_id',$vale['id'])->first();
 
@@ -196,14 +195,11 @@ return  $authUser;
                $arr = array('error' => 1);
                echo json_encode($arr);
         }else{
- 
-
-
 
                   $query->username=$vale['displayName'];
                   $query->email=$email;
                   $query->contact='';
-                  $query->password='';
+                  $query->password=md5($this->random_password());
                   $query->provider_user_id=$vale['id'];
                   $query->provider=$str;
                   $query->created_at=date('Y-m-d H:i:s');
@@ -225,5 +221,23 @@ return  $authUser;
         }
 
     }
+
+
+   public function random_password() {
+    $chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+    $password = substr( str_shuffle( $chars ), 0,6);
+    return $password;
+}
+
+public function mail($data){
+                //$headers="Content-Type: text/html; charset=ISO-8859-1\r";
+                $email ='wecare@rupeeboss.com';
+                $mail = Mail::send('email_view_upload',['data' => $data], function($message) use($email) {
+                $message->from('software.support@rupeeboss.com', 'RupeeBoss');
+                $message->to($email)
+                ->subject('Loan application submitted');
+
+                });
+}
 
 }

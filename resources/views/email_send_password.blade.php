@@ -4,7 +4,6 @@
 Thank you very much for choosing Rupeeboss Financial Services for your financial needs. Your loan application has been successfully submitted.<br> Your Password is <span style="color: red">{{$data}}.<span> <br>
 Please change your password immediately after login.<br><br>
 
-
 <h3>Regards,<br><br>
 
 Help Desk Team<br>

@@ -129,7 +129,7 @@ class HomeController extends CallApiController
                 $error_new=$result_new['error'];
                 $obj = json_decode($http_result_new);
                // print_r($obj);
-                 //print_r($http_result);exit();
+                 print_r($http_result);exit();
                 if($obj->statusId==0 && $http_result->statusId==0){
                 	return 'true';
                 }else{

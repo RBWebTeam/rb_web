@@ -242,7 +242,7 @@ class LoanController extends CallApiController
                         ));
         }else{
          return Response::json(array(
-                            'data' => "false",
+                            'data' => "f",
                         ));
         }
  }

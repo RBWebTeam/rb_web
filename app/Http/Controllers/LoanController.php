@@ -247,4 +247,9 @@ class LoanController extends CallApiController
         }
  }
 
+    public function express_form(Request $req){
+       print_r($req->all());exit();
+
+    }
+
 }

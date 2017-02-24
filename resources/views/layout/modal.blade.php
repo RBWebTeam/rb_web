@@ -27,7 +27,7 @@
                       </a>
                 </div>
                 <div class="iframeloading" style= "display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
-                <img src="images/ajaxloader.gif" alt="loading" style="top: 50%; position: relative; left: 50%;"  />
+                <img src="{{URL::to('images/ajaxloader.gif')}}" alt="loading" style="top: 50%; position: relative; left: 50%;"  />
                </div>
                   
 
@@ -69,6 +69,7 @@
                   <div>
                       <button class="btn btn-primary btn-outline with-arrow sidebar-submit">Submit<i class="icon-arrow-right"></i></button>
                   </div>
+                  
             </form>
             <div class='msg displaynone' ><p>Thanks. We will reach you soon.</p></div>
             <div class='msg_err displaynone' ><p>Ooops. Something went wrong.</p></div>
@@ -224,6 +225,9 @@
                   <div>
                      <button class="btn btn-primary btn-outline with-arrow sidebar-submit">Submit<i class="icon-arrow-right"></i></button>
                   </div>
+                  <div class="iframeloading" style= "display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
+                <img src="{{URL::to('images/ajaxloader.gif')}}" alt="loading" style="top: 50%; position: relative; left: 50%;"  />
+               </div>
             </form>
             <div class='msg displaynone' ><b>Thanks.We will reach you soon.</b></div>
             <div class='msg_err displaynone' ><p>Ooops. Something went wrong.</p></div>
@@ -298,6 +302,9 @@
                   <div>
                      <button class="btn btn-primary btn-outline with-arrow sidebar-submit">Submit<i class="icon-arrow-right"></i></button>
                   </div>
+                  <div class="iframeloading" style= "display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
+                <img src="{{URL::to('images/ajaxloader.gif')}}" alt="loading" style="top: 50%; position: relative; left: 50%;"  />
+               </div>
             </form>
             <div class='msg displaynone'><b>Thanks.We will reach you soon.</b></div>
             <div class='msg_err displaynone' ><p>Ooops. Something went wrong.</p></div>
@@ -372,6 +379,9 @@
                   <div>
                      <button class="btn btn-primary btn-outline with-arrow sidebar-submit">Submit<i class="icon-arrow-right"></i></button>
                   </div>
+                  <div class="iframeloading" style= "display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
+                <img src="{{URL::to('images/ajaxloader.gif')}}" alt="loading" style="top: 50%; position: relative; left: 50%;"  />
+               </div>
             </form>
 
             <div class='msg displaynone'><b>Thanks.We will reach you soon.</b></div>

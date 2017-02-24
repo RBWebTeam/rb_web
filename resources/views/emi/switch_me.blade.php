@@ -207,12 +207,12 @@
     </div>
 <?php if($loan == "home-loan") {?>
 
-    <div class="col-md-12"><h3 class="blue-bg">Would you like to borrow &nbsp;&nbsp;<b>₹<span id="drop">0</span> (in lacs)</b>&nbsp;&nbsp;extra and pay the same EMI.&nbsp;&nbsp;<a href="#" style="display:none;" id="revise_apply" name="revise_apply" data-toggle="modal" data-target="#myModaltest">Apply Now</a></h3></div>
+    <div class="col-md-12"><h3 class="blue-bg">Would you like to borrow &nbsp;&nbsp;<b>₹<span id="drop">0</span> (in lacs)</b>&nbsp;&nbsp;extra and pay the same EMI.&nbsp;&nbsp;<button type="button" class="btn btn-success" id="revise_apply" name="revise_apply" data-toggle="modal" data-target="#myModaltest" style="display: none">Apply Now</button></h3></div>
   
     <?php }elseif($loan == "personal-loan"){?>
   
     <?php }else{?>
-   <div class="col-md-12"><h3 class="blue-bg">Would you like to borrow &nbsp;&nbsp;<b>₹<span id="drop">0</span> (in lacs)</b>&nbsp;&nbsp;extra and pay the same EMI.&nbsp;&nbsp;<a href="#" id="revise_apply" name="revise_apply" data-toggle="modal" data-target="#borrow_lap" style="display:none;">Apply Now</a></h3></div>
+   <div class="col-md-12"><h3 class="blue-bg">Would you like to borrow &nbsp;&nbsp;<b>₹<span id="drop">0</span> (in lacs)</b>&nbsp;&nbsp;extra and pay the same EMI.&nbsp;&nbsp;<button type="button" class="btn btn-success" id="revise_apply" name="revise_apply" data-toggle="modal" data-target="#borrow_lap" style="display: none">Apply Now</button></h3></div>
   
     <?php }?>
 	

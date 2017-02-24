@@ -12,9 +12,13 @@ use Session;
 use URL;
 use Mail;
 use Illuminate\Support\Facades\Hash;
-class HomeController extends CallApiController
+class HomeController extends InitialController
 {
 	public function index(){
+		$first = new InitialController();
+		echo $first->pro_code;
+		//print_r(InitialController::$pro_code);
+		exit();
 		$keywords='Loans At Low Interest Rate, Best Loans, Loan Interest Rates, Best Credit Cards, Apply For Loan Online, Compare Loan, Check Loan Eligibility, Calculate EMI, Compare Credit Cards';
 		$data['title']='RupeeBoss - Apply for all kind of Loan On Rupeeboss.com';
 		$data['description']='Apply For All Kinds of Loans at Lowest Interest Rate. Use loan & EMI Calculator, Compare Loan & Credit Cards & get quotes instantly as per requirement on Rupeeboss.com ';

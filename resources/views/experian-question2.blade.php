@@ -52,9 +52,20 @@
                 $post_data= '{"jsonResp":'.$raw.',"Lead_Id":'.$lead_id.'}';
                 //print_r($post_data);
                 $url = "http://api.rupeeboss.com/CreditAPI.svc/getfinalResponse";
-                $result=$this->call_json_data_api($url,$post_data);
-	            $http_result=$result['http_result'];
-	            $error=$result['error'];
+                $ch = curl_init();
+		        curl_setopt($ch, CURLOPT_VERBOSE, 1);
+		        curl_setopt( $ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
+		        curl_setopt($ch, CURLOPT_URL, $url);
+		        curl_setopt($ch, CURLOPT_POST, 1);
+		        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+		        curl_setopt($ch, CURLOPT_FAILONERROR, 0);
+		        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+		        curl_setopt($ch, CURLOPT_POSTFIELDS,$post_data);
+		        $http_result = curl_exec($ch);
+		        $error = curl_error($ch);
+		        $http_code = curl_getinfo($ch ,CURLINFO_HTTP_CODE);
+        		curl_close($ch);
+             
 
                	$f_name= Session::get('f_name_cScore')?Session::get('f_name_cScore'):'';
                	$l_name= Session::get('l_name_cScore')?Session::get('l_name_cScore'):'';
@@ -78,7 +89,8 @@
 		 		print_r($result->showHtmlReportForCreditReport);
 		 		
 		 		?>
-		 		<button id="print_report" class="btn btn-success">Print</button>
+		 		<div class=" text-center"><input type="button" class="btn btn-success" onclick="printDiv('fh5co-hero')" value="Print Report" />
+				</div>
 		 		<?php
 		 		
 			}else{

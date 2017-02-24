@@ -1,4 +1,4 @@
-@include('layout.community.header_community')
+@include('layout.header')
 <div class="container bs-docs-container"> 
 <div class=col-md-8 role=main> 
 <div style="height: 150px;width: 100%;"></div>

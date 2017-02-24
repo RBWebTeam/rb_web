@@ -35,18 +35,20 @@ class ExperianController extends CallApiController
       ->get();
       $contact=Session::get('contact');
       $login=Session::get('is_login');
+      $user=Session::get('user_id');
        if($login){
           //if already login then remove contact from old seessions
           Session::forget('contact');
           }
 
-      if($contact || $login){
+      if($contact || $login || $user ){
           return view('credit-report')->with($data)->with('keywords',$keywords);
         }else{
            return view('credit-report-otp');
         }   
     }
 	public function call(Request $req){
+    //print_r($req->all());exit();
         try{
             $qs=0;
             $post_data=$req->all();
@@ -67,10 +69,12 @@ class ExperianController extends CallApiController
             // print "<pre>";
             
              $quote_data=DB::select("SELECT credit_score,html_report FROM experian_response  WHERE (pan='".$req['panNo']."' and ( contact='".$req['mobileNo']."' or email ='".$req['email']."')and expiry_date >= '".$today."');");
+
              if($quote_data){
                 $stored_score=$quote_data[0]->credit_score;
                 $html=$quote_data[0]->html_report;
-                return $this->show_stored_record($stored_score,$htm);
+
+                return $this->show_stored_record($stored_score,$html);
              }
             $save=new experian_request_model(); 
             $id=$save->store($req);
@@ -84,7 +88,7 @@ class ExperianController extends CallApiController
             }else{
                 $x=str_replace('"','',$http_result);
                 $new_data=explode('~', $x);
-                if($new_data[0]){
+                if($new_data[0] || $new_data[0]!=0 ){
                   $saved_req=$this->update_req_with_hitId($new_data,$id);
                 }else{
                   $this->saved_failed_log("Null Response");
@@ -166,7 +170,7 @@ class ExperianController extends CallApiController
 
 
   public function show_stored_record($data,$html){
-    return view('stored-score')->with('data',$data)->with('html',$htm);
+     return view('stored-score')->with('data',$data)->with('html',$html);
   }   
     
   public function update_req_with_hitId($parse,$id){
@@ -178,5 +182,78 @@ class ExperianController extends CallApiController
   public function saved_failed_log($response){
     $log=DB::table('experian_response_failed_case')->insert(['contact'=>Session::get('contact_cScore'), 'email'=>Session::get('email_cScore'), 'pan'=>Session::get('pan_cScore'),'response'=>$response, 'created_at'=>date("Y-m-d H:i:s")]);
   }
+  public function test(){
+     $save=DB::select('select * from experian_response where id =4');
+     //print_r(($save[0]->html_report));exit();
+     return view('test_parse')->with('result',$save[0]);
+  }
 
+  //by praveen code from compare controller 
+  public function otp_page(){
+      if(Session::get('is_login'))
+        return $this->credit_report();
+      else
+      return view('credit-report-otp');
+    }
+
+ public function send_otp(Request $req){
+   //$otp=123456;
+   $otp = mt_rand(100000, 999999);
+    Session::put('contact', $req['contact']);
+     $qu=DB::table('credit_req_lead')
+              ->insertGetId([
+                'contact'=> $req['contact'],
+                'otp'=>$otp,
+                'status'=>'Not Verified',
+                'created_at'=>date("Y-m-d H:i:s")
+
+      ]);
+       Session::put('otp_id', $qu);
+       if($qu>0){
+            //calling service to send sms 
+            $post_data='{"mobNo":"'.$req['contact'].'","msgData":"your otp is '.$otp.' - RupeeBoss.com",
+                "source":"WEB"}';
+            // $url = "http://beta.services.rupeeboss.com/LoginDtls.svc/xmlservice/sendSMS";
+               $url = "http://services.rupeeboss.com/LoginDtls.svc/xmlservice/sendSMS";
+            $result=$this->call_json_data_api($url,$post_data);
+            $http_result=$result['http_result'];
+            $error=$result['error'];
+            $obj = json_decode($http_result);
+            // statusId response 0 for success, 1 for failure
+            
+            if($obj->{'statusId'}==0){
+                return Response::json(array(
+                            'data' => true,
+                        ));
+            }else{
+                return Response::json(array(
+                            'data' => false,
+                        ));
+            }
+        
+        }else{
+             return Response::json(array(
+                            'data' => false,
+                        ));
+        }
+ }
+
+ public function verify_otp(Request $req){
+  $phone = Session::get('contact');
+    $id=Session::get('otp_id');
+        $query=DB::table('credit_req_lead')
+            ->where('id', $id)
+            ->where('otp',$req['verify'])
+            ->update(['status' => 'verified']);
+           
+        if($query){
+          return Response::json(array(
+                            'data' => true,
+                        ));
+        }else{
+         return Response::json(array(
+                            'data' => false,
+                        ));
+        }
+ }
 }

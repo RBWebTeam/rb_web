@@ -58,10 +58,7 @@ class controller_index extends Controller
      }
     public function stor_question(Request $request){
 
-
-
-      echo $request->description;
-      exit;
+ 
       $val=array();
       $tags=rtrim($request->tags_c,",");
       $array=explode(',', $tags);

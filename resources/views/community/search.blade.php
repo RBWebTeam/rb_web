@@ -1,4 +1,4 @@
-@include('layout.community.header_community')
+@include('layout.header')
 
 	
 

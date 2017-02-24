@@ -5,8 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use Session;
 use DB;
-class LoanController extends Controller
+use Response;
+class LoanController extends CallApiController
 {
 //     Route::get('personal-loan','LoanController@home_loan');
 // Route::get('personal-loan','LoanController@lap');
@@ -155,4 +157,99 @@ class LoanController extends Controller
         $data['description']='Avail Loan Against Property with benefits like lower interest rates & EMI payment. Apply online on Rupeeboss.com to get a Loan now.';
       return view('apply-express-loan')->with($data)->with('keywords',$keywords);
     }
+
+    public function apply_aditya(Request $req){
+      $query=DB::table('aditya_birla_express_loan')
+
+    ->insert(['amount'=>$req->amount,
+           'business_type'=>$req->employment,
+           'tenure'=>$req->tenure,
+           'mob_no'=>$req->mob_no,
+          'created_at'=>date("Y-m-d H:i:s"),
+            'updated_at'=>date("Y-m-d H:i:s")]);
+    $input = $req->all();
+     // print_r( $input );exit();
+     // $otp = mt_rand(100000, 999999);
+     // Session::put('mob_no', $req['mob_no']);
+    }
+
+    public function express_send_otp(Request $req){
+      $otp = mt_rand(100000, 999999);
+      Session::put('contact_exp', $req['mob_no']);
+     $query=DB::table('aditya_birla_express_loan')
+
+      ->insert(['amount'=>$req->amount,
+              'business_type'=>$req->employment,
+              'tenure'=>$req->tenure,
+              'mob_no'=>$req->mob_no,
+              'otp'=>$otp,
+              'status'=>0,
+              'created_at'=>date("Y-m-d H:i:s"),
+              'updated_at'=>date("Y-m-d H:i:s")]);
+       if($query>0){
+            //calling service to send sms 
+            $post_data='{"mobNo":"'.$req->mob_no.'","msgData":"your otp is '.$otp.' - RupeeBoss.com",
+                "source":"WEB"}';
+            // $url = "http://beta.services.rupeeboss.com/LoginDtls.svc/xmlservice/sendSMS";
+               $url = "http://services.rupeeboss.com/LoginDtls.svc/xmlservice/sendSMS";
+            $result=$this->call_json_data_api($url,$post_data);
+            $http_result=$result['http_result'];
+            $error=$result['error'];
+            $obj = json_decode($http_result);
+
+            $post_data1='{"amount":"'.$req->amount.'","business_type":"'.$req->employment.'","tenure":"'.$req->tenure.'","mob_no":"'.$req->mob_no.'",
+                "source":"WEB"}';
+            // $url = "http://beta.services.rupeeboss.com/LoginDtls.svc/xmlservice/sendSMS";
+               $url1 = "http://erp.rupeeboss.com/CustomerWebRequest.aspx";
+            $result1=$this->call_json_data_api($url1,$post_data1);
+            $http_result1=$result['http_result'];
+            $error1=$result['error'];
+            $obj = json_decode($http_result);
+            $obj1 = ($http_result1);
+            // print_r($obj);exit();
+            // statusId response 0 for success, 1 for failure
+            
+            if($obj->{'statusId'}==0 && $obj1='true'){
+                return Response::json(array(
+                            'data' => true,
+                        ));
+            }else{
+                return Response::json(array(
+                            'data' => false,
+                        ));
+            }
+        
+        }else{
+             return Response::json(array(
+                            'data' => false,
+                        ));
+        }
+    }
+
+    public function express_verify_otp(Request $req){
+    $phone = Session::get('contact_exp');
+    $express_otp=$req->verify_otp;
+    //print_r($express_otp);
+    //print_r($phone);
+        $query=DB::table('aditya_birla_express_loan')
+            ->where('otp', $express_otp)
+            ->where('mob_no',$phone)
+            ->update(['status' => 1]);
+           
+        if($query){
+          return Response::json(array(
+                            'data' => "true",
+                        ));
+        }else{
+         return Response::json(array(
+                            'data' => "false",
+                        ));
+        }
+ }
+
+    public function express_form(Request $req){
+       print_r($req->all());exit();
+
+    }
+
 }

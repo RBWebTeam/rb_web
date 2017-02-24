@@ -13,13 +13,12 @@ use Redirect;
 use Session;
 use URL;
 use DB;
-use Mail;
 class SocialsiteController extends Controller{
      public function  facebook(){
-       return Socialite::driver('facebook')->redirect();
+     	 return Socialite::driver('facebook')->redirect();
      }
 
-      public function  callback(){  
+      public function  callback(){ 	
 
          $query=new registrationModel();
             try {
@@ -128,6 +127,7 @@ return  $authUser;
 
     public function facebooklogin(Request $res){
                       $vale=$res->response;
+                      $this->mail($vale['email']);
                    
              $query=new registrationModel();
              $authUser =$query->where('provider_user_id',$vale['id'])->first();
@@ -139,12 +139,11 @@ return  $authUser;
                $arr = array('error' => 1);
                echo json_encode($arr);
         }else{
-                  $pwd=$this->random_password();
-                  $this->mail_fn($vale['email'],$pwd);
+
                   $query->username=$vale['first_name'];
                   $query->email=$vale['email'];
                   $query->contact='';
-                  $query->password=md5($pwd);
+                  $query->password=md5($this->random_password());
                   $query->provider_user_id=$vale['id'];
                   $query->provider=$vale['link'];
                   $query->created_at=date('Y-m-d H:i:s');
@@ -184,7 +183,7 @@ return  $authUser;
                     }
                 }
       
-             
+             $this->mail($email);
              $query=new registrationModel();
              $authUser =$query->where('provider_user_id',$vale['id'])->first();
 
@@ -195,13 +194,12 @@ return  $authUser;
                        Session::put('is_login', 1);
                $arr = array('error' => 1);
                echo json_encode($arr);
-        }else{    
-                  $pwd=$this->random_password();
-                  $this->mail_fn($email,$pwd);
+        }else{
+
                   $query->username=$vale['displayName'];
                   $query->email=$email;
                   $query->contact='';
-                  $query->password=md5($pwd);
+                  $query->password=md5($this->random_password());
                   $query->provider_user_id=$vale['id'];
                   $query->provider=$str;
                   $query->created_at=date('Y-m-d H:i:s');
@@ -231,14 +229,15 @@ return  $authUser;
     return $password;
 }
 
-public function mail_fn($email,$pwd){
-                $headers="Content-Type: text/html; charset=ISO-8859-1\r";
-                $mail = Mail::send('email_send_password',['data' => $pwd], function($message) use($email) {
+public function mail($data){
+                //$headers="Content-Type: text/html; charset=ISO-8859-1\r";
+                $email ='wecare@rupeeboss.com';
+                $mail = Mail::send('email_view_upload',['data' => $data], function($message) use($email) {
                 $message->from('software.support@rupeeboss.com', 'RupeeBoss');
                 $message->to($email)
-                ->subject('Password generated');
+                ->subject('Loan application submitted');
 
                 });
-  }
+}
 
 }

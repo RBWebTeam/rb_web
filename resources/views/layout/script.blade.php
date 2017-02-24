@@ -1,4 +1,5 @@
   <script src="{{URL::to('js/Myapp.js')}}"></script>
+    <script src="{{URL::to('js/jsPdf.js')}}"></script>
   <script>
        function registration(){
          document.getElementById('login').style.display="none";
@@ -343,6 +344,7 @@
            });
 
           $(".sidebar-submit").click(function(event){
+
             event.preventDefault();
             var form=$(this).closest("form").attr('id');
           //return false;
@@ -352,16 +354,17 @@
           if(! $form.valid()){
             return false;
           }else{
-
+          $(".iframeloading").show();  
             $.ajax({  
              type: "POST",  
              url: "{{URL::to('sidebar')}}",
              data : $('#'+form).serialize(),
              success: function(msg){
+                $(".iframeloading").hide();  
               if(msg=='true'){
                 $form.hide();
                 var a =$('#'+form).parent().find('.msg');
-                        //console.log(a);
+                        // console.log(a);
                         $(a).show();
                         $('.msg').show();
                       }else{
@@ -1263,7 +1266,6 @@
       <!--scroll up function  -->
       <script type='text/javascript'>
         $(document).ready(function(){ 
-
           $('.close1').click(function(){
             location.reload();
           });
@@ -1280,6 +1282,7 @@
             return false; 
           }); 
         });
+
   </script>
       <!-- scroll up ends -->
       <!-- co script ends -->
@@ -1295,7 +1298,7 @@
         window.fbAsyncInit = function() {
           // FB JavaScript SDK configuration and setup
           FB.init({
-            appId      : '1780983575495725', // FB App ID
+            appId      : '624024964433110', // FB App ID   1780983575495725
             cookie     : true,  // enable cookies to allow the server to access the session
             xfbml      : true,  // parse social plugins on this page
             version    : 'v2.8' // use graph api version 2.8
@@ -1340,6 +1343,7 @@
             data: {response,"_token": "{{ csrf_token() }}"},
             url: "{{url('facebook/login')}}",
             success: function(msg) {
+            //  alert(msg);
              if(msg.error==1){
               $("#log_popup").modal('hide');
               $("#refreshID").load(location.href + " #refreshID");
@@ -1569,8 +1573,8 @@
           });
 
     $("#credit_report_verify_otp").click(function(){
-      if($('#verify').val().length<6)
-        { $('#otp_val').show();
+      if($('#verify').val().length<6){
+       $('#otp_val').show();
       return false;
     }
     $('#otp_val').hide();
@@ -1583,9 +1587,9 @@
      data : $('#credit_report_verify_form').serialize(),
      success: function(data){
        var data_1=data['data'];
-       console.log(data_1);
+       //console.log(data_1);
        if(data_1){
-        console.log("data_1");
+        //console.log("data_1");
 
         window.location.href="{{URL::to('credit-report')}}";
       }else{
@@ -1634,6 +1638,19 @@
           printWindow.print();
         });
   </script>
+   <script type="text/javascript">
+  function printDiv(divName) {
+     //var htm=document.getElementById(divName).innerHTML;
+     var printContents = '<html><head><title>RupeeBoss Credit Report</title></head><body >' +document.getElementById(divName).innerHTML+'</body></html>';
+     var originalContents = document.body.innerHTML;
+
+     document.body.innerHTML = printContents;
+
+     window.print();
+
+     document.body.innerHTML = originalContents;
+}
+</script>
     </body>
     </html>
     <!-- login Start-->

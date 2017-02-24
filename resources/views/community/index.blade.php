@@ -1,21 +1,8 @@
-
-@include('layout.community.header_community')
-<div class="container" style="margin-top: 35px">
-  <div class="page-header page-heading">
-    <div class="clearfix"></div>
-  </div>
-  <p class="lead">This is the right place to discuss any ideas, critics, feature requests and all the ideas regarding our website. Please follow the forum rules and always check FAQ before posting to prevent duplicate posts.</p>
- 
-
-</div>
- 
-
-
-
-<div class="container bs-docs-container"> 
-<div class=col-md-8 role=main>
-
-<div id="qlist-wrapper">
+@include('layout.header')
+<div id="fh5co-hero">
+  <div class="container bs-docs-container"> 
+     <div class=col-md-8 role=main>
+   <div id="qlist-wrapper">
 <div id="question-mini-list">
 <?php
 function time_elapsed_string($datetime, $full = false) {
@@ -46,7 +33,6 @@ function time_elapsed_string($datetime, $full = false) {
 }
 
  foreach ($result as $key => $value) {  if($value->status==0){ ?>
- 
 <div class="question-summary narrow  head_v" id="question-summary-41727415" >
     <div  class="cp">
          <a href="#">
@@ -54,7 +40,6 @@ function time_elapsed_string($datetime, $full = false) {
                 <div class="mini-counts"><span title="196 votes"><?php  echo $value->que_id;?></span></div>
             <div>votes</div>
         </div>
-
           <?php  if (Session::has('email')){?>
          <a href="{{url('community/details')}}/<?php echo $value->que_id;?>">
          <div class="status answered-accepted" title="one of the answers was accepted as the correct answer">
@@ -108,14 +93,9 @@ function time_elapsed_string($datetime, $full = false) {
 </div>
 </div>
 
-</div></div>
-
-
-
-
-
-
-
+</div></div></div>
+@include('layout.footer')
+@include('layout.community.communityscript')
 
 <style type="text/css">
 
@@ -432,9 +412,3 @@ body {
   color:#6a737c
 }
 </style>
-
-
- 
-@include('layout.footer')
-@include('layout.community.communityscript')
-

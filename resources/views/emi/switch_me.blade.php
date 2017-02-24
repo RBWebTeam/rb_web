@@ -111,7 +111,7 @@
     </div>
     <div class="col-sm-4 rw-hei brd-rgt">
 	<div class="white-bg pad1 heigh-bt1">
-	<h3 class="transfer-cal">
+	<h3 class="text-center">
     My Savings <i class="fa fa-credit-card" aria-hidden="true"></i></h3>
     <!-- <i class="fa fa-cog fa-spin fa-2x fa-fw"></i>
     <span class="sr-only">Loading...</span></h3> -->

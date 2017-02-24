@@ -93,6 +93,7 @@ Route::get('apply-lead-online','ProfileController@applyonline');
 Route::get('apply-express-loan','LoanController@apply_express_loan');
 Route::post('express-loan-send-otp','LoanController@express_send_otp');
 Route::post('express-loan-verify','LoanController@express_verify_otp');
+Route::post('aditya-express-loan','LoanController@express_form');
 
 
 //new loans test

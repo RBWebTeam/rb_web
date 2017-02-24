@@ -113,9 +113,9 @@ class HomeController extends CallApiController
 		                $message->to($email)
 		                ->subject('Thankyou');
                 	});
-                $web= base64_encode("web");
-                $post_data='{"City":"0","Email_Id":"'.$req->email.'","UserPassword":"","contact_No":"'.$req->contact.'","first_Name":"'.$req->name.'","last_Name":"","parentBrokerId":"","parentEmpCode":"","source":"'.$web.'"}';
-                //print_r($web);exit();
+                
+                $post_data='{"City":"0","Email_Id":"'.$req->email.'","UserPassword":"","contact_No":"'.$req->contact.'","first_Name":"'.$req->name.'","last_Name":"","parentBrokerId":"","parentEmpCode":"","source":"dwBlAGIA"}';
+                // print_r($web);exit();
                 $url = "http://beta.services.rupeeboss.com/LoginDtls.svc/xmlservice/insBrokerDataForRBA";
                 // print_r($post_data);exit();
                 $result=$this->call_json_data_api($url,$post_data);
@@ -129,7 +129,7 @@ class HomeController extends CallApiController
                 $error_new=$result_new['error'];
                 $obj = json_decode($http_result_new);
                // print_r($obj);
-                 print_r($http_result);exit();
+                 // print_r($http_result);exit();
                 if($obj->statusId==0 && $http_result->statusId==0){
                 	return 'true';
                 }else{

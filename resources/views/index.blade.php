@@ -66,6 +66,7 @@
 	<div class="item">
 	<div class="slide-txt">
 	<i class="sprite sprite-balance-ic center-img-align img-responsive hidden-sm"></i>
+	<h4>Unsecured</h4>
 	<h2>Business Loan</h2>
    <h4>Experience on your side...!!</h4>
    <a href="{{URL::to('business-loan')}}" class="btn btn-primary btn-lg btn-view">View More</a>

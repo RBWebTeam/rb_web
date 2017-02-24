@@ -17,6 +17,7 @@ class ExperianController extends CallApiController
 
       $voucher=DB::table('experian_vouchers')
       ->select('voucher')
+      ->where('status',0)
       ->orderBy('last_used', 'ASC')
       ->limit(1)
       ->get();
@@ -52,40 +53,44 @@ class ExperianController extends CallApiController
         try{
             $qs=0;
             $post_data=$req->all();
-            
             $voucher=$post_data['voucherCode'];
-            $update_voucher=DB::select(" call usp_update_experian_voucher ('".$voucher."',1)");
-            
+            //adding constant values in post data as requested for api
+            $post_data['clientName']="RUPEEBOSS";
+            $post_data['hitId']="";
             //unsetting terms and condition as no need to save in DB
+             unset($post_data['terms']);
+             unset($post_data['authorize']);
+             unset($post_data['_token']);
+             //storing in session to store in DB later
             Session::put('f_name_cScore', $req['firstName']." ".$req['middleName']);
             Session::put('l_name_cScore',$req['surName']);
             Session::put('pan_cScore',$req['panNo']);
             Session::put('email_cScore',$req['email']);
-             Session::put('contact_cScore',$req['mobileNo']);
-             unset($post_data['terms']);
-             unset($post_data['authorize']);
-             $today=date("Y-m-d H:i:s");
+            Session::put('contact_cScore',$req['mobileNo']);
+            $today=date("Y-m-d H:i:s");
             $data=json_encode($post_data);
-            // print "<pre>";
-            
+            //checking if already has a credit record in DB
              $quote_data=DB::select("SELECT credit_score,html_report FROM experian_response  WHERE (pan='".$req['panNo']."' and ( contact='".$req['mobileNo']."' or email ='".$req['email']."')and expiry_date >= '".$today."');");
 
              if($quote_data){
                 $stored_score=$quote_data[0]->credit_score;
                 $html=$quote_data[0]->html_report;
-
                 return $this->show_stored_record($stored_score,$html);
              }
-            $save=new experian_request_model(); 
-            $id=$save->store($req);
-        	 $url = "http://api.rupeeboss.com/CreditAPI.svc/LandingPageSubmit";    
-           $result=$this->call_json_data_api($url,$data);
-           $http_result=$result['http_result'];
-           $error=$result['error'];
-            if($error){
-              $this->saved_failed_log($error);
-              return view('went-wrong');
-            }else{
+             //so its a fresh request for Report
+             $save=new experian_request_model(); 
+             $id=$save->store($req);
+          	 $url = "http://api.rupeeboss.com/CreditAPI.svc/LandingPageSubmit";    
+             $result=$this->call_json_data_api($url,$data);
+             $http_result=$result['http_result'];
+             $error=$result['error'];
+             if($error){
+                $this->saved_failed_log($error);
+                return view('went-wrong');
+              }else{
+                //Get desired reponse no error occured
+              //update voucher on response
+                $update_voucher=DB::select(" call usp_update_experian_voucher ('".$voucher."',1)");
                 $x=str_replace('"','',$http_result);
                 $new_data=explode('~', $x);
                 if($new_data[0] || $new_data[0]!=0 ){
@@ -111,7 +116,7 @@ class ExperianController extends CallApiController
         try{
           //print_r($new_data);exit();
                 $arr = '{"stage1hitid":"'.$new_data[0].'","stage2hitid":"'.$new_data[1].'","stage2sessionid":"'.$new_data[3].'","answer":"","questionId":"'.$qs.'"}';
-            //generate question api
+            //calling generate question api
             $url = "http://api.rupeeboss.com/CreditAPI.svc/generateQuestionForConsumer";    
             $result=$this->call_json_data_api($url,$arr);
             $http_result=$result['http_result'];
@@ -121,13 +126,14 @@ class ExperianController extends CallApiController
             $str2=explode(',', $str);
             $res1=json_decode($http_result);
             $res=json_decode($res1);
-            //if record already in buero of experian
+            //if record already in buero of experian then bypass questioning processs
             if( $res->responseJson=='passedReport'){
              $result=$res->showHtmlReportForCreditReport;
             $returnHTML = ['result'=>$res,'stage1hitid'=>$new_data[0],'stage2hitid'=>$new_data[1],'stage2sessionid'=>$new_data[3],'qs'=>$qs,'raw'=>$http_result];
             return view('experian-question-bypassed')->with($returnHTML);
             }
             else{
+              //record not from buero on server side so call for fresh report
               return view('experian-question',['result'=>$res,'stage1hitid'=>$new_data[0],'stage2hitid'=>$new_data[1],'stage2sessionid'=>$new_data[3],'qs'=>$qs]);
             }
 
@@ -188,7 +194,7 @@ class ExperianController extends CallApiController
      return view('test_parse')->with('result',$save[0]);
   }
 
-  //by praveen code from compare controller 
+  //by praveen--> code from compare controller for OTP module
   public function otp_page(){
       if(Session::get('is_login'))
         return $this->credit_report();

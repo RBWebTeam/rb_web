@@ -69,7 +69,7 @@
 			</div>
 
 			<div class="col-md-12 text-center animate-box cont" style="display: none" id="q9">
-             <h3>I want a Personal Loan of Rs.
+             <h3>I want a Business Loan of Rs.
 			 <input type="tel" id="loan_amount" name="loan_amount"  oninput="changeText_new('loan_amount','step_3_btn')"  onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="1,00,000" tabindex="1">.
 			 </h3> 
 			</div>

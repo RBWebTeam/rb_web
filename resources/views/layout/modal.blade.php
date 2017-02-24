@@ -191,7 +191,7 @@
             if(isset($myArray[2])){
               Session::put('source', $myArray[2]);
               $source = Session::get('source');
-              
+
 
             }
             
@@ -209,8 +209,8 @@
           <input type="hidden" name="Principal_Amt" class="Principal_Amt" value="">
           <input type="hidden" name="Interest_Rate" class="Interest_Rate" value="">
           <input type="hidden" name="Remaining_Tenure" class="Remaining_Tenure" value="">
-           <input type="hidden" name="brokerid" class="brokerid" value="<?php echo $empid?$empid:'';?>">
-          <input type="hidden" name="empid" class="empid" value="<?php echo $brokerid?$brokerid:'';?>">
+           <input type="hidden" name="empid" class="empid" value="<?php echo $empid?$empid:'';?>">
+          <input type="hidden" name="brokerid" class="brokerid" value="<?php echo $brokerid?$brokerid:'';?>">
           <input type="hidden" name="source" class="source" value="<?php echo $source?$source:'';?>">                  
           <div>
                     <fieldset>

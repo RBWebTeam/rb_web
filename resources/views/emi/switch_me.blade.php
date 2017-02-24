@@ -4,7 +4,8 @@
   .tbl-clr {color:#fff; }
   .tbl-clr td {text-align:center;}
   .rw-hei{margin-bottom:20px;}
-   .rw-hei p {font-size:16px;color:#666; margin-bottom:10px;}
+  .heigh-bt1 {min-height:300px;}
+   .rw-hei p {font-size:16px;color:#666; margin-bottom:2px;}
    .em1 {color:#666;}
    .rw-hei h1 {margin-top:10px;}
    .sub-title {color:#999;}
@@ -26,7 +27,7 @@
     <div class="overlay"></div>
     <?php if($loan == "home-loan") {?>
     <div class="container">
-      <div class="col-md-12 text-center animate-box wht-brd pad fadeInUp animated">
+      <div class="col-md-12 text-center animate-box wht-brd fadeInUp animated">
         <h1 class="h1-hd">Home Loan Balance Transfer</h1>
         <h3>Let's find out how much you can save!!</h3>
         <h3>To know,please enter your current home loan details.</h3>
@@ -85,7 +86,6 @@
        <!-- <label class="control-label" for="Loan Tenure">Remaining Tenure:</label> -->
         <input type="text" name="loanterm" class="form-control" id="loanterm" placeholder="Remaining Tenure" value="" onblur="myfun()" onkeypress="return isNumberKey(event)" title="Remaining Tenure">
     <p id="err" style="display:none;"><span style="color:red; font-size:13px; position:absolute;">Please Fill All Inputs</span></p>
-
   
     <div class="col-md-12 pad">
   <button class="btn btn-success pull-left ">Submit</button>
@@ -111,13 +111,13 @@
     </div>
     <div class="col-sm-4 rw-hei brd-rgt">
 	<div class="white-bg pad1 heigh-bt1">
-	<h3 class="transfer-cal">
+	<h3 class="text-center">
     My Savings <i class="fa fa-credit-card" aria-hidden="true"></i></h3>
     <!-- <i class="fa fa-cog fa-spin fa-2x fa-fw"></i>
     <span class="sr-only">Loading...</span></h3> -->
      <!-- <i class="fa fa-credit-card" aria-hidden="true"></i></h3> -->
      
-     <center>
+     <center class="my-saving">
        <p>Loan EMI :<b class="em1"> ₹ <span id="emi">0</span></b></p>
       
       <!--  <p>Total Payable Interest :</p>
@@ -138,13 +138,6 @@
         <?php }else{?>
         <button type="button" class="btn btn-success" id="revise_apply2" name="revise_apply" data-toggle="modal" data-target="#borrow_lap" style="display:none;">Apply Now</button>
          <?php }?>
-	   
-       
-      
-   
-
-       
-       
 
 
        <!-- <div id="b"></div> -->

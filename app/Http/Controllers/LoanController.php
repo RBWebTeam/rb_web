@@ -176,7 +176,7 @@ class LoanController extends CallApiController
     public function express_send_otp(Request $req){
       $otp = mt_rand(100000, 999999);
       Session::put('contact_exp', $req['mob_no']);
-     $query=DB::table('aditya_birla_express_loan')
+     $query=DB::table('express_loan_request')
 
       ->insert(['amount'=>$req->amount,
               'business_type'=>$req->employment,
@@ -231,7 +231,7 @@ class LoanController extends CallApiController
     $express_otp=$req->verify_otp;
     //print_r($express_otp);
     //print_r($phone);
-        $query=DB::table('aditya_birla_express_loan')
+        $query=DB::table('express_loan_request')
             ->where('otp', $express_otp)
             ->where('mob_no',$phone)
             ->update(['status' => 1]);

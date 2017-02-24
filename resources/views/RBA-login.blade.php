@@ -87,8 +87,8 @@
          success: function(msg){
          //console.log(msg);
           if(msg){
-             console.log(msg);
-             // window.location.href ="{{URL::to('thank-you')}}";
+             // console.log(msg);
+              window.location.href ="{{URL::to('thank-you')}}";
             
           }else{
             window.location.href ="{{URL::to('went-wrong')}}";

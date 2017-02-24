@@ -17,9 +17,6 @@
 							 {{ csrf_field() }}
 								<div class="row">
 									<div class="form-group">
-									<input type="hidden" name="clientName" value="RUPEEBOSS">
-									<input type="hidden" name="hitId" value="">
-									<input type="hidden" name="voucherCode" value="{{$voucher}}">
 										<h4 class="hdr">&nbsp;&nbsp;&nbsp;&nbsp;Personal Details</h4>
 										<div class="col-md-4">
 											<input type="text" class="form-control" placeholder="First Name*" name="firstName" required="">

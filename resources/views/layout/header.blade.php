@@ -15,7 +15,7 @@
 
 	<link href="{{URL::to('css/mysite.css')}}" rel="stylesheet" type="text/css" />
 
-	 <link href="{{URL::to('css/style.css')}}" rel="stylesheet" type="text/css" /> 
+<!-- 	 <link href="{{URL::to('css/style.css')}}" rel="stylesheet" type="text/css" />  -->
 
 	<!-- Modernizr JS -->
 	<!-- <link rel="manifest" href="{{URL::to('extension/manifest.json')}}"> -->
@@ -58,8 +58,8 @@
                 <li class="hidden-xs"><a href="{{URL::to('about-us')}}">About Us</a></li>
                 <li class="hidden-xs"><a href="{{URL::to('contact-us')}}">Contact Us</a></li>
 				<li class="hidden-xs"><a href="{{URL::to('http://erp.rupeeboss.com/')}}">Employee Login </a></li>
-				<li class="hidden-xs credit-score-btn"><a href="{{URL::to('credit-report')}}" class="btn btn-primary">My Credit Score</a></li>
 				<li><a href="{{URL::to('RBA-login')}}">RBA Login </a></li>
+				<li class="hidden-xs credit-score-btn"><a href="{{URL::to('credit-report')}}" class="btn btn-primary">My Credit Score</a></li>
 			<!-- 	<li><a href="{{URL::to('contact-us')}}">Media</a></li> -->
 	            </ul>
                </div>

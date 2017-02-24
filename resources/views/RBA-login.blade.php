@@ -42,13 +42,15 @@
   </div>
   
   <div class="col-md-6 rba_bg">
-  <img src="images/rba_bg.jpg" class="img-responsive"/>
+  <img src="images/rba_bg.png" class="img-responsive"/>
   <div class="rba-log xyz">
   <form   name="rba_emp_login" id="rba_emp_login"  method="post"  >
 
   {{ csrf_field() }}
-  <input type="text" placeholder="Username" class="form-group" required="" /> <input type="password" placeholder="password" required="" />
-  <button type="submit" id="login_rba" class="btn btn-success  ">Login</button>
+
+  <input type="text" placeholder="Username" class="form-group" required="" /> 
+  <input type="password" placeholder="password" required="" />
+  <button type="submit" id="login_rba" class="btn btn-primary  ">Login</button>
   </div>
   </div>
   </form>

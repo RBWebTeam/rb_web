@@ -14,16 +14,6 @@ class ExperianController extends CallApiController
       $keywords='credit report free,credit score,free credit report and score,how to get free credit report ';
       $data['title']='Check your Credit Score online on Rupeeboss.com';
       $data['description']='Check Your Free Credit Score, Report and Insights. Get the info you need to take control of your credit from Rupeeboss.com';
-
-      $voucher=DB::table('experian_vouchers')
-      ->select('voucher')
-      ->where('status',0)
-      ->orderBy('last_used', 'ASC')
-      ->limit(1)
-      ->get();
-      $data['voucher']=$voucher[0]->voucher;
-     // print_r($data['voucher']);exit();
-
       $data['telephone']=DB::table('experian_telephonetype')
       ->select('Telephone_Name','Telephone_Value')
       ->get();
@@ -53,8 +43,15 @@ class ExperianController extends CallApiController
         try{
             $qs=0;
             $post_data=$req->all();
-            $voucher=$post_data['voucherCode'];
+            //get the voucher for api 
+            $voucher=DB::table('experian_vouchers')
+            ->select('voucher')
+            ->where('status',0)
+            ->orderBy('last_used', 'ASC')
+            ->limit(1)
+            ->get();
             //adding constant values in post data as requested for api
+            $post_data['voucherCode']=$voucher[0]->voucher;
             $post_data['clientName']="RUPEEBOSS";
             $post_data['hitId']="";
             //unsetting terms and condition as no need to save in DB
@@ -88,7 +85,7 @@ class ExperianController extends CallApiController
                 $this->saved_failed_log($error);
                 return view('went-wrong');
               }else{
-                //Get desired reponse no error occured
+              //Get desired reponse no error occured then
               //update voucher on response
                 $update_voucher=DB::select(" call usp_update_experian_voucher ('".$voucher."',1)");
                 $x=str_replace('"','',$http_result);

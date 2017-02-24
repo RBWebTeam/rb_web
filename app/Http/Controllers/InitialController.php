@@ -9,8 +9,13 @@ class InitialController extends Controller
 	// public  $pro_code=function(){ return DB::table('product_master')
  //      ->select('Product_Id','Product_Name')      
  //      ->get();
-      $pro_code = function( ) {
-  		return ( "Good !" );
-		};
-}
+	public static $pro_code;
+	function __construct()
+        {
+	        $this->pro_code=DB::table('product_master')
+	      ->select('Product_Id','Product_Name')      
+	      ->get();
+	      return $pro_code;
+        }
+       
 }

@@ -16,7 +16,7 @@ class HomeController extends InitialController
 {
 	public function index(){
 		$first = new InitialController();
-		echo $first->pro_code;
+		print_r(InitialController::$pro_code);
 		//print_r(InitialController::$pro_code);
 		exit();
 		$keywords='Loans At Low Interest Rate, Best Loans, Loan Interest Rates, Best Credit Cards, Apply For Loan Online, Compare Loan, Check Loan Eligibility, Calculate EMI, Compare Credit Cards';

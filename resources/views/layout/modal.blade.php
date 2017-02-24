@@ -69,7 +69,7 @@
                   <div>
                       <button class="btn btn-primary btn-outline with-arrow sidebar-submit">Submit<i class="icon-arrow-right"></i></button>
                   </div>
-                  
+
             </form>
             <div class='msg displaynone' ><p>Thanks. We will reach you soon.</p></div>
             <div class='msg_err displaynone' ><p>Ooops. Something went wrong.</p></div>
@@ -176,23 +176,28 @@
           {{ csrf_field() }}
           <?php
           $myString = isset($_GET['referrer']);
-          // 
           if($myString){
             
             $myArray = explode('@', $_GET['referrer']);
             if(isset($myArray[0])){
-              $empid =Session::put('empid', $myArray[0]);
+              Session::put('empid', $myArray[0]);
+              $empid = Session::get('empid');
+             
             }
             if(isset($myArray[1])){
-             $brokerid =Session::put('brokerid', $myArray[1]);
+             Session::put('brokerid', $myArray[1]);
+              $brokerid = Session::get('brokerid');
             }
             if(isset($myArray[2])){
-              $source =Session::put('source', $myArray[2]);
+              Session::put('source', $myArray[2]);
+              $source = Session::get('source');
+              
+
             }
             
             //$a= str_replace('�', '', $brokerid);
             // echo $empid;
-             //print_r($a);
+             
           }else{
             $empid = "";
             $brokerid ="";

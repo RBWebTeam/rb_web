@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\SEOlibraries\Seo;
 use App\Http\Requests;
 use DB;
-class BankController extends Controller
+class BankController extends InitialController
 {
 
 

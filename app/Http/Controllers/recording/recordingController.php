@@ -10,7 +10,7 @@ use DB;
 use Response;
 use App\recording\recordingModel;
 
-class recordingController extends Controller
+class recordingController extends InitialController
 {
 
 

@@ -4,7 +4,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Input;
 use DB;
-class AutoCompleteController extends Controller {
+class AutoCompleteController extends InitialController {
     
     public function index(){
         return view('personal-loan-process');

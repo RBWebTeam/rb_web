@@ -354,7 +354,8 @@
           if(! $form.valid()){
             return false;
           }else{
-          $(".iframeloading").show();  
+          $(".iframeloading").show();
+          $(".sidebar-submit").hide();    
             $.ajax({  
              type: "POST",  
              url: "{{URL::to('sidebar')}}",

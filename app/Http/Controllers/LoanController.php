@@ -248,8 +248,27 @@ class LoanController extends CallApiController
  }
 
     public function express_form(Request $req){
-       print_r($req->all());exit();
+       // print_r($req->all());exit();
+      $post_data='{"loanamount":"'.$req->loanamount.'","tenure":"'.$req->tenure.'","min_income":"'.$req->min_income.'","constitution":"'.$req->constitution.'","nature_of_business":"'.$req->nature_of_business.'","type_of_industry":"'.$req->type_of_industry.'","experience":"'.$req->experience.'","residence_type":"'.$req->residence_type.'","office_type_generic":"'.$req->office_type_generic.'","turnover":"'.$req->turnover.'","net_worth":"'.$req->net_worth.'","gross_profit":"'.$req->gross_profit.'","net_profit":"'.$req->net_profit.'","first_name":"'.$req->first_name.'","middle_name":"'.$req->middle_name.'","last_name":"'.$req->last_name.'","gender":"'.$req->gender.'","dob":"'.$req->dob.'","education":"'.$req->education.'","marital_status":"'.$req->marital_status.'","share_holding":"'.$req->share_holding.'","pan_no":"'.$req->pan_no.'","mobile_no":"'.$req->mobile_no.'","residence_landline":"'.$req->residence_landline.'","aadhar_card":"'.$req->aadhar_card.'","address_line1":"'.$req->address_line1.'","address_line2":"'.$req->address_line2.'","address_line3":"'.$req->address_line3.'","city_applicant":"'.$req->city_applicant.'","state_applicant":"'.$req->state_applicant.'","pincode_applicant":"'.$req->pincode_applicant.'","net_profit_applicant":"'.$req->net_profit_applicant.'","company":"'.$req->company.'","bussiness_pan":"'.$req->bussiness_pan.'","date_formation":"'.$req->date_formation.'","ofc_landline":"'.$req->ofc_landline.'","ofc_add1":"'.$req->ofc_add1.'","ofc_add2":"'.$req->ofc_add2.'","ofc_add3":"'.$req->ofc_add3.'","city_applicant_entity":"'.$req->city_applicant_entity.'","state_applicant_entity":"'.$req->state_applicant_entity.'","pincode_applicant_entity":"'.$req->pincode_applicant_entity.'","office_type_applicant_entity":"'.$req->office_type_applicant_entity.'","name_co_app":"'.$req->name_co_app.'","middle_name_co_app":"'.$req->middle_name_co_app.'","last_name_co_app":"'.$req->last_name_co_app.'","gender_co_app":"'.$req->gender_co_app.'","dob_co_app":"'.$req->dob_co_app.'","occupation_co_app":"'.$req->occupation_co_app.'","income_co_app":"'.$req->income_co_app.'","relation":"'.$req->relation.'","pan_no_co_app":"'.$req->pan_no_co_app.'","mob_co_app":"'.$req->mob_co_app.'","residence_co_app":"'.$req->residence_co_app.'","aadhar_card_co_app":"'.$req->aadhar_card_co_app.'","address1_co_app":"'.$req->address1_co_app.'","address2_co_app":"'.$req->address2_co_app.'"}';
+    // print_r($post_data);exit();  
+    
+      $url = "http://beta.erp.rupeeboss.com/AdityaBirlaWebRequest.aspx";
+      $result=$this->call_json_data_api($url,$post_data);
+      $http_result=json_decode($result['http_result']);
+      $error=$result['error'];
+      print_r($http_result);exit();
 
-    }
+      if($http_result==1){
+                return Response::json(array(
+                            'data' => true,
+                        ));
+            }else{
+                return Response::json(array(
+                            'data' => false,
+                        ));
+            }
+        
+        }
+    
 
 }

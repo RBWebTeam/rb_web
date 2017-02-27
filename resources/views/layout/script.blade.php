@@ -355,7 +355,7 @@
             return false;
           }else{
           $(".iframeloading").show();
-          $(".sidebar-submit").hide(); yhtfh   
+          $(".sidebar-submit").hide(); 
             $.ajax({  
              type: "POST",  
              url: "{{URL::to('sidebar')}}",

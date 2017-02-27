@@ -46,8 +46,7 @@ class ExperianController extends CallApiController
             //get the voucher for api 
             $voucher=DB::table('experian_vouchers')
             ->select('voucher')
-            ->where('status',0)
-            ->where('id',300)           
+            ->where('status',0)        
             ->limit(1)
             ->get();
 

@@ -12,11 +12,13 @@
 	<link rel="shortcut icon" href="{{URL::to('images/rb_fav.png')}}">
 	<!-- <link rel="stylesheet" href="{{URL::to('fonts/Raleway.css')}}" type="text/css"> -->
 	<!-- Animate.css -->
+
 	<link href="{{URL::to('css/mysite.css')}}" rel="stylesheet" type="text/css" />
 
-	 <link href="{{URL::to('css/style.css')}}" rel="stylesheet" type="text/css" /> 
+ <!-- <link href="{{URL::to('css/style.css')}}" rel="stylesheet" type="text/css" /> -->  
+ 
+ <link href="{{URL::to('css/freshslider.min.css')}}" rel="stylesheet" type="text/css" /> 
 
-	
 	<!-- Modernizr JS -->
 	<!-- <link rel="manifest" href="{{URL::to('extension/manifest.json')}}"> -->
 	@if( request()->url() == url('/') )
@@ -26,7 +28,7 @@
 	@endif
 	
 	
-
+<meta name="google-site-verification" content="GpnTKVcLtZQjKCKHXfeaOaQGDsxzCS3XLCkTwmd4STI" />
 	</head>
 	<body><!-- 
 	<script src="https://app.tigerapi.com/rest/?i=MTQ4NTIzNzg2NA==" async="async" type="text/javascript"></script> -->
@@ -40,7 +42,7 @@
          <li class="call-back2 callclass" data-toggle="modal" data-target="#myModal2"><a href="#">Email Us</a></li>
          <li class="call-back3 callclass" data-toggle="modal" data-target="#myModal3"><a href="#">Help</a></li>
 
-         <li class="chat"><a href="#">Live Chat</a></li> --->
+         <li class="chat"><a href="#">Live Chat</a></li> - -->
 
     </ul>
     </div>
@@ -58,8 +60,8 @@
                 <li class="hidden-xs"><a href="{{URL::to('about-us')}}">About Us</a></li>
                 <li class="hidden-xs"><a href="{{URL::to('contact-us')}}">Contact Us</a></li>
 				<li class="hidden-xs"><a href="{{URL::to('http://erp.rupeeboss.com/')}}">Employee Login </a></li>
-				<li class="hidden-xs credit-score-btn"><a href="{{URL::to('credit-report')}}" class="btn btn-primary">My Credit Score</a></li>
 				<li><a href="{{URL::to('RBA-login')}}">RBA Login </a></li>
+				<li class="hidden-xs credit-score-btn"><a href="{{URL::to('credit-report')}}" class="btn btn-primary">My Credit Score</a></li>
 			<!-- 	<li><a href="{{URL::to('contact-us')}}">Media</a></li> -->
 	            </ul>
                </div>

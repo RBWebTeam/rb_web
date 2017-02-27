@@ -92,6 +92,9 @@ Route::get('lead-status','HomeController@lead_status');
 Route::get('apply-lead-online','ProfileController@applyonline');
 Route::get('apply-express-loan','LoanController@apply_express_loan');
 Route::post('express-loan-send-otp','LoanController@express_send_otp');
+Route::post('express-loan-verify','LoanController@express_verify_otp');
+Route::post('aditya-express-loan','LoanController@express_form');
+
 
 //new loans test
 
@@ -106,9 +109,9 @@ Route::post('calculationfordc','CompareController@calculationfordc');
 // Experian'
 Route::post('show-credit-report','ExperianController@call');
 Route::post('gen-qstn','ExperianController@gen_ques2');
-Route::get('credit-report-otp','CompareController@otp_page');
-Route::post('credit-report-send-otp','CompareController@send_otp');
-Route::post('credit-report-verify','CompareController@verify_otp');
+Route::get('credit-report-otp','ExperianController@otp_page');
+Route::post('credit-report-send-otp','ExperianController@send_otp');
+Route::post('credit-report-verify','ExperianController@verify_otp');
 
 
 //doc upload
@@ -125,7 +128,8 @@ Route::get('credit-card-form','CreditcardController@credit_card_form');
 Route::post('credit-submit','CreditcardController@credit_form_submit');
 
 Route::get('no-record-found',function (){return view('no-record-found');});
-Route::get('test',function (){return view('test_parse');});
+//Route::get('test',function (){return view('test_parse');});
+Route::get('test','ExperianController@test');
 
 
 

@@ -4,7 +4,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Input;
 use DB;
-class AutoCompleteController extends Controller {
+class AutoCompleteController extends InitialController {
     
     public function index(){
         return view('personal-loan-process');
@@ -24,17 +24,15 @@ class AutoCompleteController extends Controller {
                 $data[]=array('value'=>$product->city_name);
         }
         if(count($data)){
-           //    print_r($data);
+             // print_r($data);
              return $data;
          }
         else
             return ['value'=>'No Result Found'];
     }
+
+
     public function autoComplete_state(Request $request) {
-
-
-
-        
         $term = Input::get('term');
         $products=DB::table('state_master')->select('state_name')
         ->where('state_name', 'LIKE', '%'.$term.'%')

@@ -10,7 +10,7 @@ use App\registrationModel;
 use Validator;
 use Redirect;
 use URL;
-class ProfileController extends Controller
+class ProfileController extends InitialController
 {
     function my_profile(Request $req){
 
@@ -24,6 +24,24 @@ class ProfileController extends Controller
 
         $query=DB::table('user_registration')->where('id','=',$get_id)->first();
         $cquery=DB::table('customer_details')->where('user_id','=',$get_id)->first();
+        if($get_id){
+          $credit_report=DB::select('select html_report from experian_response where user_id ='.$get_id);
+          if($credit_report)
+            {
+                      $res=$credit_report[0]->html_report;}
+                      else{
+                        $res=NULL;
+                      }
+        }else{
+          $contact=$contact=Session::get('contact');
+          $credit_report=DB::select('select html_report from experian_response where contact ='.$contact);
+          if($credit_report)
+            {
+                      $res=$credit_report[0]->html_report;}
+                      else{
+                        $res=NULL;
+            }
+        }
       //  $loan_history=DB::table('bank_quote_api_request')->where('Email','=',$email_id)->get();
               $loan_history = DB::table('bank_quote_api_request')
             ->leftjoin('product_master', 'product_master.Product_Id', '=', 'bank_quote_api_request.ProductId')
@@ -32,7 +50,7 @@ class ProfileController extends Controller
             ->where('bank_quote_api_request.bank_id','!=','NULL')
             ->orderBy('bank_quote_api_request.ID', 'DESC')
             ->get();
-          return view('my-profile',['query'=>$query,'cquery'=>$cquery,'loan_history'=>$loan_history]);
+          return view('my-profile',['query'=>$query,'cquery'=>$cquery,'loan_history'=>$loan_history,'credit_report'=>$res]);
       }else{
         return redirect('/');
       }
@@ -179,20 +197,23 @@ public function  change_password(Request $req){
       $product = "";
     }
     //print_r($loanamount1);exit();
+    $loan_eligible=$request['loan_eligible'];
+    $roi_type=$request['roi_type'];
+    $processing_fee=$request['processingfee'];
 
     $email=Session::get('email');
-    $update = DB::table('bank_quote_api_request')->where('ID', $quote)->where('Email', $email)->update(array('bank_id' => $bank));
+    $update = DB::table('bank_quote_api_request')->where('ID', $quote)->where('Email', $email)->update(array('bank_id' => $bank,'roi_type'=>$roi_type,'loan_eligible'=>$loan_eligible,'processing_fee'=>$processing_fee));
     if($update){
       if ($product == '9') {
-       return redirect()->away('http://beta.erp.rupeeboss.com/personalloan/personalloan.aspx?qoutid='.$quote.'&BankId='.$bank.'');
+       return redirect()->away('http://beta.erp.rupeeboss.com/personalloan/personalloan.aspx?qoutid='.$quote);
       } else {
-        return redirect()->away('http://beta.erp.rupeeboss.com/homeloan/Home_Loan_Application_Form.aspx?qoutid='.$quote.'&BankId='.$bank.'');
+        return redirect()->away('http://beta.erp.rupeeboss.com/homeloan/Home_Loan_Application_Form.aspx?qoutid='.$quote);
       }
       }else{
         if ($product == '9') {
-        return redirect()->away('http://beta.erp.rupeeboss.com/personalloan/personalloan.aspx?qoutid='.$quote.'&BankId='.$bank.'&brokerid='.$brokerid.'&loanamount='.$loanamount.'&loaninterest='.$loaninterest.'&loanterm='.$loanterm.'');
+        return redirect()->away('http://beta.erp.rupeeboss.com/personalloan/personalloan.aspx?qoutid='.$quote.'&brokerid='.$brokerid.'&loanamount='.$loanamount.'&loaninterest='.$loaninterest.'&loanterm='.$loanterm);
         } else {
-          return redirect()->away('http://beta.erp.rupeeboss.com/homeloan/Home_Loan_Application_Form.aspx?qoutid='.$quote.'&BankId='.$bank.'&brokerid='.$brokerid.'&loanamount='.$loanamount.'&loaninterest='.$loaninterest.'&loanterm='.$loanterm.'');
+          return redirect()->away('http://beta.erp.rupeeboss.com/homeloan/Home_Loan_Application_Form.aspx?qoutid='.$quote.'&brokerid='.$brokerid.'&loanamount='.$loanamount.'&loaninterest='.$loaninterest.'&loanterm='.$loanterm);
         }
         
       

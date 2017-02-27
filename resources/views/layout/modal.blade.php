@@ -23,8 +23,14 @@
                     </fieldset>                 
                     </div>
                   <div>
-                      <a class="btn btn-primary btn-outline with-arrow sidebar-submit" id="instant_call_submit">Call Me Back<i class="icon-arrow-right"></i></a>
-                  </div>
+                      <button class="btn btn-primary btn-outline with-arrow sidebar-submit" id="instant_call_submit">Call Me Back<i class="icon-arrow-right"></i>
+                      </button>
+                </div>
+                <div class="iframeloading" style= "display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
+                <img src="{{URL::to('images/ajaxloader.gif')}}" alt="loading" style="top: 50%; position: relative; left: 50%;"  />
+               </div>
+                  
+
             </form>
             <div class='msg displaynone' ><p>Thanks. We will reach you soon.</p></div>
             <div class='msg_err displaynone' ><p>Ooops. Something went wrong.</p></div>
@@ -63,6 +69,7 @@
                   <div>
                       <button class="btn btn-primary btn-outline with-arrow sidebar-submit">Submit<i class="icon-arrow-right"></i></button>
                   </div>
+
             </form>
             <div class='msg displaynone' ><p>Thanks. We will reach you soon.</p></div>
             <div class='msg_err displaynone' ><p>Ooops. Something went wrong.</p></div>
@@ -160,32 +167,40 @@
     
       <!-- Modal content-->
       <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Would Like To Borrow </h4>
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
         </div>
         <div class="modal-body">
           <form name="borrow_form" id="borrow_form" method="post" >
+        <div class="modal-header">
+          
+          <h4 class="modal-title"><b>Would You Like To Borrow</b></h4>
+        </div>
           {{ csrf_field() }}
           <?php
           $myString = isset($_GET['referrer']);
-          // 
           if($myString){
             
             $myArray = explode('@', $_GET['referrer']);
             if(isset($myArray[0])){
-              $empid =Session::put('empid', $myArray[0]);
+              Session::put('empid', $myArray[0]);
+              $empid = Session::get('empid');
+             
             }
             if(isset($myArray[1])){
-             $brokerid =Session::put('brokerid', $myArray[1]);
+             Session::put('brokerid', $myArray[1]);
+              $brokerid = Session::get('brokerid');
             }
             if(isset($myArray[2])){
-              $source =Session::put('source', $myArray[2]);
+              Session::put('source', $myArray[2]);
+              $source = Session::get('source');
+
+
             }
             
             //$a= str_replace('�', '', $brokerid);
             // echo $empid;
-             //print_r($a);
+             
           }else{
             $empid = "";
             $brokerid ="";
@@ -197,8 +212,8 @@
           <input type="hidden" name="Principal_Amt" class="Principal_Amt" value="">
           <input type="hidden" name="Interest_Rate" class="Interest_Rate" value="">
           <input type="hidden" name="Remaining_Tenure" class="Remaining_Tenure" value="">
-           <input type="hidden" name="brokerid" class="brokerid" value="<?php echo $empid?$empid:'';?>">
-          <input type="hidden" name="empid" class="empid" value="<?php echo $brokerid?$brokerid:'';?>">
+           <input type="hidden" name="empid" class="empid" value="<?php echo $empid?$empid:'';?>">
+          <input type="hidden" name="brokerid" class="brokerid" value="<?php echo $brokerid?$brokerid:'';?>">
           <input type="hidden" name="source" class="source" value="<?php echo $source?$source:'';?>">                  
           <div>
                     <fieldset>
@@ -218,6 +233,9 @@
                   <div>
                      <button class="btn btn-primary btn-outline with-arrow sidebar-submit">Submit<i class="icon-arrow-right"></i></button>
                   </div>
+                  <div class="iframeloading" style= "display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
+                <img src="{{URL::to('images/ajaxloader.gif')}}" alt="loading" style="top: 50%; position: relative; left: 50%;"  />
+               </div>
             </form>
             <div class='msg displaynone' ><b>Thanks.We will reach you soon.</b></div>
             <div class='msg_err displaynone' ><p>Ooops. Something went wrong.</p></div>
@@ -234,11 +252,14 @@
       <!-- Modal content-->
       <div class="modal-content">
         <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Would Like To Borrow </h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
         </div>
         <div class="modal-body">
           <form name="borrow_form_lap" id="borrow_form_lap" method="post" >
+          <div class="modal-header">
+          
+          <h4 class="modal-title"><b>Would You Like To Borrow</b></h4>
+        </div>
           <?php
           $myString = isset($_GET['referrer']);
           // 
@@ -246,18 +267,22 @@
             
             $myArray = explode('@', $_GET['referrer']);
             if(isset($myArray[0])){
-              $empid =Session::put('empid', $myArray[0]);
+              Session::put('empid', $myArray[0]);
+              $empid = Session::get('empid');
+             
             }
             if(isset($myArray[1])){
-             $brokerid =Session::put('brokerid', $myArray[1]);
+             Session::put('brokerid', $myArray[1]);
+              $brokerid = Session::get('brokerid');
             }
             if(isset($myArray[2])){
-              $source =Session::put('source', $myArray[2]);
-            }
+              Session::put('source', $myArray[2]);
+              $source = Session::get('source');
             //$a= str_replace('�', '', $brokerid);
             // echo $empid;
              //print_r($a);
-          }else{
+          }
+        }else{
             $empid = "";
             $brokerid ="";
             $source ="";
@@ -268,8 +293,8 @@
            <input type="hidden" name="Principal_Amt" class="Principal_Amt" value="">
           <input type="hidden" name="Interest_Rate" class="Interest_Rate" value="">
           <input type="hidden" name="Remaining_Tenure" class="Remaining_Tenure" value="">
-         <input type="hidden" name="brokerid" class="brokerid" value="<?php echo $empid?$empid:'';?>">
-          <input type="hidden" name="empid" class="empid" value="<?php echo $brokerid?$brokerid:'';?>">
+         <input type="hidden" name="empid" class="empid" value="<?php echo $empid?$empid:'';?>">
+          <input type="hidden" name="brokerid" class="brokerid" value="<?php echo $brokerid?$brokerid:'';?>">
           <input type="hidden" name="source" class="source" value="<?php echo $source?$source:'';?>"> 
           
           {{ csrf_field() }}
@@ -292,6 +317,9 @@
                   <div>
                      <button class="btn btn-primary btn-outline with-arrow sidebar-submit">Submit<i class="icon-arrow-right"></i></button>
                   </div>
+                  <div class="iframeloading" style= "display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
+                <img src="{{URL::to('images/ajaxloader.gif')}}" alt="loading" style="top: 50%; position: relative; left: 50%;"  />
+               </div>
             </form>
             <div class='msg displaynone'><b>Thanks.We will reach you soon.</b></div>
             <div class='msg_err displaynone' ><p>Ooops. Something went wrong.</p></div>
@@ -308,11 +336,14 @@
       <!-- Modal content-->
       <div class="modal-content">
         <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Would Like To Borrow </h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
         </div>
         <div class="modal-body">
           <form name="borrow_form_personal" id="borrow_form_personal" method="post" >
+          <div class="modal-header">
+          
+          <h4 class="modal-title"><b>Would You Like To Borrow</b></h4>
+        </div>
           <?php
           $myString = isset($_GET['referrer']);
           // 
@@ -320,14 +351,21 @@
             
             $myArray = explode('@', $_GET['referrer']);
             if(isset($myArray[0])){
-              $empid =Session::put('empid', $myArray[0]);
+              Session::put('empid', $myArray[0]);
+              $empid = Session::get('empid');
+             
             }
             if(isset($myArray[1])){
-             $brokerid =Session::put('brokerid', $myArray[1]);
+             Session::put('brokerid', $myArray[1]);
+              $brokerid = Session::get('brokerid');
             }
             if(isset($myArray[2])){
-              $source =Session::put('source', $myArray[2]);
+              Session::put('source', $myArray[2]);
+              $source = Session::get('source');
+
+
             }
+            
             //$a= str_replace('�', '', $brokerid);
             // echo $empid;
              //print_r($a);
@@ -342,8 +380,8 @@
            <input type="hidden" name="Principal_Amt" class="Principal_Amt" value="">
           <input type="hidden" name="Interest_Rate" class="Interest_Rate" value="">
           <input type="hidden" name="Remaining_Tenure" class="Remaining_Tenure" value="">
-          <input type="hidden" name="brokerid" class="brokerid" value="<?php echo $empid?$empid:'';?>">
-          <input type="hidden" name="empid" class="empid" value="<?php echo $brokerid?$brokerid:'';?>">
+          <input type="hidden" name="empid" class="empid" value="<?php echo $empid?$empid:'';?>">
+          <input type="hidden" name="brokerid" class="brokerid" value="<?php echo $brokerid?$brokerid:'';?>">
           <input type="hidden" name="source" class="source" value="<?php echo $source?$source:'';?>"> 
           
           {{ csrf_field() }}
@@ -366,7 +404,11 @@
                   <div>
                      <button class="btn btn-primary btn-outline with-arrow sidebar-submit">Submit<i class="icon-arrow-right"></i></button>
                   </div>
+                  <div class="iframeloading" style= "display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
+                <img src="{{URL::to('images/ajaxloader.gif')}}" alt="loading" style="top: 50%; position: relative; left: 50%;"  />
+               </div>
             </form>
+
             <div class='msg displaynone'><b>Thanks.We will reach you soon.</b></div>
             <div class='msg_err displaynone' ><p>Ooops. Something went wrong.</p></div>
         </div>
@@ -464,3 +506,7 @@ Rupeeboss Financial Services Private Limited shall access your Credit Informatio
 
 
     </div></div></div>
+    <!-- <script type="text/javascript">
+      $(".iframeloading").show();  
+    </script>
+     -->

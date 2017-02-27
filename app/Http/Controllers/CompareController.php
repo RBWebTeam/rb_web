@@ -8,7 +8,7 @@ use App\Http\Requests;
 use Session;
 use DB;
 use Response;
-class CompareController extends CallApiController
+class CompareController extends ExperianController
 {
     //
  
@@ -81,73 +81,7 @@ class CompareController extends CallApiController
     }
     
 
-    public function otp_page(){
-      if(Session::get('is_login'))
-        return $this->credit_report();
-      else
-      return view('credit-report-otp');
-    }
-
- public function send_otp(Request $req){
-   //$otp=123456;
-   $otp = mt_rand(100000, 999999);
-    Session::put('contact', $req['contact']);
-     $qu=DB::table('credit_req_lead')
-              ->insertGetId([
-                'contact'=> $req['contact'],
-                'otp'=>$otp,
-                'status'=>'Not Verified',
-                'created_at'=>date("Y-m-d H:i:s")
-
-      ]);
-       Session::put('otp_id', $qu);
-       if($qu>0){
-            //calling service to send sms 
-            $post_data='{"mobNo":"'.$req['contact'].'","msgData":"your otp is '.$otp.' - RupeeBoss.com",
-                "source":"WEB"}';
-            // $url = "http://beta.services.rupeeboss.com/LoginDtls.svc/xmlservice/sendSMS";
-               $url = "http://services.rupeeboss.com/LoginDtls.svc/xmlservice/sendSMS";
-            $result=$this->call_json_data_api($url,$post_data);
-            $http_result=$result['http_result'];
-            $error=$result['error'];
-            $obj = json_decode($http_result);
-            // statusId response 0 for success, 1 for failure
-            
-            if($obj->{'statusId'}==0){
-                return Response::json(array(
-                            'data' => true,
-                        ));
-            }else{
-                return Response::json(array(
-                            'data' => false,
-                        ));
-            }
-        
-        }else{
-             return Response::json(array(
-                            'data' => false,
-                        ));
-        }
- }
-
- public function verify_otp(Request $req){
-  $phone = Session::get('contact');
-    $id=Session::get('otp_id');
-        $query=DB::table('credit_req_lead')
-            ->where('id', $id)
-            ->where('otp',$req['verify'])
-            ->update(['status' => 'verified']);
-           
-        if($query){
-          return Response::json(array(
-                            'data' => true,
-                        ));
-        }else{
-         return Response::json(array(
-                            'data' => false,
-                        ));
-        }
- }
+    
 
     public function switchme($loan){
         // print"<pre>";print_r($loan);exit();

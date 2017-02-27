@@ -174,7 +174,7 @@
           <form name="borrow_form" id="borrow_form" method="post" >
         <div class="modal-header">
           
-          <h4 class="modal-title"><b>Would Like To Borrow</b></h4>
+          <h4 class="modal-title"><b>Would You Like To Borrow</b></h4>
         </div>
           {{ csrf_field() }}
           <?php
@@ -258,7 +258,7 @@
           <form name="borrow_form_lap" id="borrow_form_lap" method="post" >
           <div class="modal-header">
           
-          <h4 class="modal-title"><b>Would Like To Borrow</b></h4>
+          <h4 class="modal-title"><b>Would You Like To Borrow</b></h4>
         </div>
           <?php
           $myString = isset($_GET['referrer']);
@@ -342,7 +342,7 @@
           <form name="borrow_form_personal" id="borrow_form_personal" method="post" >
           <div class="modal-header">
           
-          <h4 class="modal-title"><b>Would Like To Borrow</b></h4>
+          <h4 class="modal-title"><b>Would You Like To Borrow</b></h4>
         </div>
           <?php
           $myString = isset($_GET['referrer']);

@@ -1715,5 +1715,241 @@
    </div>
   </div>
   </div>
+
+
+<script>
+ $(document).ready(function(){
+ 
+    // var sessionfn=function(product_id,emp_typ){
+    //       this.product_id=product_id;
+    //       this.emp_typ=emp_typ;
+    // }
+ 
+ //sessionStorage.clear();
+var full_url = document.URL; // Get current url
+var url_array = full_url.split('/') // Split the string into an array with / as separator
+var last_segment = url_array[url_array.length-1];  // Get the last part of the array (-1)
+  //salaried
+ var product_id=sessionStorage.getItem('product_id');
+ var emp_type=sessionStorage.getItem('emp_typ');
+ var income=sessionStorage.getItem('income');
+ // self-employed
+ var income_year=sessionStorage.getItem('income_year');
+ var profit=sessionStorage.getItem('profit');
+ var depreciation=sessionStorage.getItem('depreciation');
+ var remuneration=sessionStorage.getItem('remuneration');
+//existing_loan_detail
+ var exst_loan_detail=sessionStorage.getItem('exst_loan_detail');
+ var obligation=sessionStorage.getItem('obligation');
+ var city_name=sessionStorage.getItem('city_name');
+ var  property_cost=sessionStorage.getItem('property_cost');
+ var  loan_tenure=sessionStorage.getItem('loan_tenure');
+ var  gender=sessionStorage.getItem('gender');
+ var  dob=sessionStorage.getItem('dob');
+ var loan_amount=sessionStorage.getItem('loan_amount');
+//co_emp_detail
+var co_emp_detail=sessionStorage.getItem('co_emp_detail');
+var co_income=sessionStorage.getItem('co_income');
+var co_income_year=sessionStorage.getItem('co_income_year');
+var co_profit=sessionStorage.getItem('co_profit');
+var co_depreciation=sessionStorage.getItem('co_depreciation');
+var co_remuneration=sessionStorage.getItem('co_remuneration');
+var co_obl_yes=sessionStorage.getItem('co_obl_yes');
+var co_obligation=sessionStorage.getItem('co_obligation');
+ //pan card
+ var card=sessionStorage.getItem('card');
+ // url session
+
+ 
+      //$('.product_name').click(function(){
+    if(last_segment=='apply-home-loan'){
+         if(property_cost!=null &&  property_cost!=""){
+     if(emp_type!=null && emp_type=='salaried' && income!=null){
+         document.getElementById("emp_detail").value=emp_type;
+         document.getElementById("income").value=income ;
+         document.getElementById("emp_detail_id").value=1 ;
+         //alert($('#emp_detail_id').val());
+         $('#q2').show();
+         $('#q2_year').hide();
+         $('#self_q').hide();
+         $('#self_q2').hide();
+         $('#self_q3').hide();
+    }
+
+
+    if(emp_type!=null && emp_type=='self-employed' && income_year!=null && profit!=null){
+         document.getElementById("emp_detail").value=emp_type ;
+         document.getElementById("income_year").value=income_year ;
+         document.getElementById("profit").value =profit ;
+         document.getElementById("depreciation").value=depreciation ;
+         document.getElementById("remuneration").value=remuneration ;
+          document.getElementById("emp_detail_id").value=0;
+         $('#q2_year').show();
+         $('#self_q').show();
+         $('#self_q2').show();
+         $('#self_q3').show();
+         $('#q2').hide();
+         }
+         
+    if(emp_type!=null && exst_loan_detail=='do'){
+       document.getElementById("exst_loan_detail").value=exst_loan_detail ;
+       document.getElementById("obligation").value=obligation ;
+       document.getElementById("city_name").value=city_name ;
+       $('#q3').show();
+       $('#q4').show();
+       $('#q5').show();
+       }
+    if(emp_type!=null && exst_loan_detail=="don't"){
+      document.getElementById("exst_loan_detail").value =exst_loan_detail ;
+      document.getElementById("city_name").value=city_name ;
+       $('#q3').show();
+       $('#q5').show();
+   }
+
+ if(emp_type!=null && property_cost!=null && loan_tenure!=null){
+document.getElementById("property_cost").value=property_cost;
+document.getElementById("loan_tenure").value=loan_tenure;
+$('#q_prop').show();
+$('#q6').show();
+}
+
+  if(emp_type!=null && exst_loan_detail!=null && gender!=null && dob!=null && loan_amount!=null){
+    document.getElementById("gender").value=gender;
+    document.getElementById("dob").value=dob;
+    document.getElementById("loan_amount").value=loan_amount;
+    $('#q7').show();
+    $('#date_birth').show();
+    $('#q9').show();
+    $('#step_2_btn').show();
+  }
+
+  if(co_emp_detail!=null && co_emp_detail=='salaried'){
+ document.getElementById("co_emp_detail").value=co_emp_detail;
+ document.getElementById("co_income").value=co_income;
+   $('#co_sal').show();
+   $('#co_self').hide();
+   $('#co_profit_all').hide();
+   $('#co_self_q2').hide();
+   $('#co_self_q3').hide();
+
+  }
+
+  if(co_emp_detail!=null && co_emp_detail=='self-employed'){
+    document.getElementById("co_emp_detail").value=co_emp_detail;
+    document.getElementById("co_income_year").value=co_income_year;
+    document.getElementById("co_profit").value=co_profit;
+    document.getElementById("co_depreciation").value=co_depreciation;
+    document.getElementById("co_remuneration").value=co_remuneration;
+   $('#co_self').show();
+   $('#co_profit_all').show();
+   $('#co_self_q2').show();
+   $('#co_self_q3').show();
+   $('#co_sal').hide();
+  }
+  if(co_obl_yes!=null && co_obl_yes=='YES'){
+    document.getElementById("co_obl_loan").value=co_obl_yes;
+    document.getElementById("co_obligation").value=co_obligation;
+     $('#co_obl_yes').show();
+     $('#co_obl_emi').show();
+  }
+
+   if(co_obl_yes!=null && co_obl_yes=='NO'){
+      document.getElementById("co_obl_loan").value=co_obl_yes;
+        $('#co_obl_yes').show();
+      }
+ 
+       
+  }else{
+     sessionStorage.clear();
+         
+  }
+}
+
+
+
+   // personal laon
+   if(last_segment=='apply-personal-loan'){
+     if(card==null && card==''){
+         
+           if(emp_type!=null && emp_type=='salaried' && income!=null){
+              document.getElementById("emp_detail").value=emp_type;
+              document.getElementById("income").value=income;
+              document.getElementById("emp_detail_id").value=1;
+              $('#q2').show();
+              $('#q3').show();
+              $('#q2_year').hide(); 
+          }else if(emp_type!=null && emp_type=='self-employed' && income_year!=null ){
+            document.getElementById("emp_detail").value=emp_type;
+            document.getElementById("emp_detail_id").value=0 ;
+           document.getElementById("income_year").value=income_year;
+            $('#q2_year').show();
+          } 
+          if(exst_loan_detail!=null && exst_loan_detail=='do' && obligation!=null && loan_tenure!=null && dob!=null && card!=null){
+            // document.getElementById("exst_loan_detail").value=exst_loan_detail;
+             document.getElementById("obligation").value=obligation;
+           //  document.getElementById("city_name").value=city_name;
+            // document.getElementById("loan_tenure").value=loan_tenure;
+           //  document.getElementById("dob").value=dob;
+           //  document.getElementById("card").value=card;
+           // document.getElementById("loan_amount").value=loan_amount;
+            common();
+             $('#q4').show();
+             $('#date_birth').show();
+           //  $('#q3').show();
+             //$('#q5').show();
+            // $('#q6').show();
+         
+            // $('#q8').show();
+            // $('#q9').show();
+           //  $('#step_3_btn').show();
+
+          }else if(exst_loan_detail!=null && exst_loan_detail=="don't" && loan_tenure!=null && dob!=null && card!=null){
+           // document.getElementById("exst_loan_detail").value=exst_loan_detail;
+          //  document.getElementById("city_name").value=city_name;
+           // document.getElementById("loan_tenure").value=loan_tenure;
+            //document.getElementById("dob").value=dob;
+           // document.getElementById("card").value=card;
+           // document.getElementById("loan_amount").value=loan_amount;
+          //  $('#q3').show();
+         //   $('#q5').show();
+          //  $('#q6').show();
+           // $('#q8').show();
+           // $('#q9').show();
+          //  $('#step_3_btn').show();
+            common();
+          } 
+     
+       
+        function common(){
+           document.getElementById("exst_loan_detail").value=exst_loan_detail;
+           document.getElementById("city_name").value=city_name;
+           document.getElementById("loan_tenure").value=loan_tenure;
+            document.getElementById("dob").value=dob;
+           document.getElementById("card").value=card;
+           document.getElementById("loan_amount").value=loan_amount;
+           $('#q3').show();
+           $('#q5').show();
+           $('#q6').show();
+           $('#q8').show();
+           $('#q9').show();
+           $('#step_3_btn').show();
+        }
+  }else{
+    sessionStorage.clear();
+         }
+
+}
+
+});
+   
+function SetSession_pop(cookieName,cookieValue){
+   var product_id=document.getElementById("product");
+   if(product_id.value){sessionStorage.setItem("product_id",product_id.value);}
+   if(cookieName){sessionStorage.setItem(cookieName,cookieValue);}
+   }
+    function setSesson(sessionName,sessionval){
+          if(sessionName){sessionStorage.setItem(sessionName,sessionval);}
+    }
+</script>
   <!-- login end-->
   @include('layout.modal')

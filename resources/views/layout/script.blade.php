@@ -747,7 +747,7 @@
             return false;
           }else{
             $('#send_otp_button').hide();
-            $('#pls_wait').show();
+             $(".iframeloading").show();
             $('#pwd_match').hide();
             $('#msg_err_email').hide();
 
@@ -1699,7 +1699,9 @@
         <div class="form-group">        
           <div class="col-sm-offset-3 col-sm-6">
            <span id='msg_err' class= 'displaynonemsg'>oops something went wrong</span>
-           <span id='pls_wait' class= ' displaynonemsg'>Please wait .....</span>
+         <span class="iframeloading" style= "display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
+                <img src="{{URL::to('images/ajaxloader.gif')}}" alt="loading" style="top: 50%; position: relative; left: 50%;"  />
+               </span>
            <span id='pwd_match' class= 'displaynonemsg'>Password do not match.</span>
            <span id='msg_err_email' class ='displaynonemsg'><p class="text-center">Email id already exists.</p></span>
          </div>
@@ -1724,7 +1726,7 @@
           <form id="otp_form" class="form-horizontal">
            {{ csrf_field() }}
            <input type="text" class="form-control" name="otp" id="otp" minlength="6" maxlength="6" required onkeypress="return fnAllowNumeric(event)">
-           <span id='otp_err displaynonemsg' >oops!! OTP is wrong</span><br>
+           <span id='otp_err' class= 'displaynonemsg' >oops!! OTP is wrong</span><br>
            <button class="btn btn-default"  class="form-control" id="verify_otp" >Verify</button><br>
          </form>
        </div>

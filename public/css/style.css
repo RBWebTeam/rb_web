@@ -1972,7 +1972,7 @@ body {background:#eee;}
   .bnk-log {width:110px;}
   
   .drop-arr {background:url(../images/down_arrow.png) no-repeat center right; padding-right:10px;}
-  .offset5 .btn input {width:25px;height:25px;}
+  .offset5 .btn input {width:15px;height:15px;}
 
   .mrg-top {margin-top:60px;}
   .yellow-clr {color:green;}
@@ -2047,7 +2047,7 @@ body {background:#eee;}
   .center-dv {margin:0 auto;}
   .mrg-btm {margin-bottom:30px;}
   .mrg-btm-b {margin:30px 0px;display:block;}
-  .input-typ {    padding: 10px;background: #f8f8f8;width: 50%;padding-left: 20px;margin: 10px 0px;font-size: 30px;margin-top: 10px;border: 1px solid #f5f5f5;}
+  .input-typ {padding: 7px;background: #f8f8f8;width: 50%;padding-left: 20px;margin: 10px 0px;font-size: 30px;margin-top: 10px;border: 5px solid #f1f1f1;}
    .mrg {margin:30px;}
   .bt-wt {width:344px;}
   .gray-bg-tbl {background:#fab6b9;}
@@ -2314,10 +2314,10 @@ body {background:#eee;}
 
 .input__field--nao {
     width: 100%;
-    padding-left: 5px;
+    padding-left:9px;
     color: #9da8b2;
     font-size: 1.25em;
-    background: #eee;
+    background: #f8f8f8;
     border: 1px solid #ddd;
 }
 
@@ -3109,6 +3109,17 @@ body {background:#eee;}
 }
 .rba_bg {background:url(../images/rba_bg_1.jpg) no-repeat; height:267px;}
 
+.get-otp {
+    background: #4cae4c;
+    border: 5px solid #4cae4c;
+    color: #fff;
+    position: absolute;
+    margin-top: 10px;
+    font-size: 20px;
+    padding: 15px 35px;
+    text-transform: uppercase;
+}
+.get-otp:hover {background:#44a644;}
 
 @media only screen and (max-width:480px) {
   

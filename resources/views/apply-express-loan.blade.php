@@ -111,7 +111,7 @@
 	
 	</div>
 	<br>
-	<div class="animate-box" id ="generic"  >
+	<div class="animate-box" id ="generic" >
 	<form name="generic_form" id="generic_form" method="POST">
 	{{ csrf_field() }}
 	<div class="row">
@@ -166,10 +166,14 @@
 					</svg>
 				</span>
 				<span class="input_exp input--nao">
-					<input class="input__field input__field--nao" type="text" id="nature_of_business" name="nature_of_business" required />
-					<label class="input__label input__label--nao" for="nature_of_business">
-						<span class="input__label-content input__label-content--nao">Nature of Business</span>
-					</label>
+					<select class="input__field input__field--nao fnt-clr" id="nature_of_business" name="nature_of_business" required>
+					<option>Nature Of Business</option>
+					<option value="Manufacturing">Manufacturing</option>
+					<option value="Traders">Traders</option>
+					<option value="Retailer">Retailer</option>
+					<option value="Services">Services</option>
+					<option value="Others">Others</option>
+					</select>
 					<svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
 						<path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
 					</svg>
@@ -180,18 +184,54 @@
 					
 					<select class="input__field input__field--nao fnt-clr" id="type_of_industry" name="type_of_industry" required>
 					<option>Type of Industry</option>
-					<option>Option1</option>
-					<option>Option2</option>
-					<option>Option3</option>
-					<option>Option4</option>
-					<option>Option5</option>
-					<option>Option6</option>
-					<option>Option7</option>
-					<option>Option8</option>
+					<option value="Agriculture">Agriculture</option>Agriculture
+ 
+					<option value="Auto_Components">Auto Components</option>
+					<option value="Automobiles">Automobiles</option>
+					<option value="Aviation">Aviation</option>
+					<option value="Banking">Banking</option>
+					<option value="Biotechnology">Biotechnology</option>
+					<option value="Cement">Cement</option>
+					<option value="Consumer_Markets">Consumer Markets</option>
+					<option value="Education_And_Training">Education And Training</option>
+					<option value="Engineering">Engineering</option>
+					<option value="Financial_Services">Financial Services</option>
+					<option value="Food_Industry">Food Industry</option>
+					<option value=" Gems_And_Jewellery"> Gems And Jewellery</option>
+					<option value="Healthcare">Healthcare</option>
+					<option value="Infrastructure">Infrastructure</option>
+					<option value="Insurance">Insurance</option>
+					<option value="IT_&_ITeS">IT & ITeS</option>
+					<option value="Manufacturing">Manufacturing</option>
+					<option value="Marketing_And_Strategy">Marketing And Strategy</option>
+					<option value="Media_And_Entertainment">Media And Entertainment</option>
+					<option value=" Oil_And_Gas"> Oil And Gas</option>
+					<option value="Pharmaceuticals">Pharmaceuticals</option>
+					<option value="Ports">Ports</option>
+					<option value="Power">Power</option>
+					<option value="Railways">Railways</option>
+					<option value=" Real_Estate"> Real Estate</option>
+					<option value="Research_And_Development">Research And Development</option>
+					<option value="Retail">Retail</option>
+					<option value="Roads">Roads</option>
+					<option value="Rural_Market"> Rural Market</option>
+
+					<option value="Science_And_Technology">Science_And_Technology</option>
+					<option value="Semiconductor">Semiconductor</option>
+					<option value="Services">Services</option>
+					<option value=" Steel"> Steel</option>
+					<option value="Telecommunications">Telecommunications</option>
+					<option value="Tourism_And_Hospitality">Tourism And Hospitality</option>
+					<option value="Textiles">Textiles</option>
+					<option value="Urban Market">Urban Market</option>
 					</select>
+<<<<<<< HEAD
 					<!--<label class="input__label input__label--nao" for="input-3">
 						<span class="input__label-content input__label-content--nao hid-txt">Type of Industry</span>
 					</label> -->
+=======
+					
+>>>>>>> 22c6906c6eac874279746784f4297100f115571c
 					<svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
 						<path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
 					</svg>
@@ -362,7 +402,7 @@
 					</svg>
 				</span>
 				<span class="input_exp input--nao">
-					<input class="input__field input__field--nao" type="text" id="pan_no" name="pan_no" minlength="10" maxlength="10" pattern="[A-Za-z]{5}\d{4}[A-Za-z]{1}"  onkeypress="return isNumberKey(event)" required />
+					<input class="input__field input__field--nao" type="text" id="pan_no" name="pan_no"   required />
 					<label class="input__label input__label--nao" for="pan_no">
 						<span class="input__label-content input__label-content--nao">Pan No.</span>
 					</label>
@@ -482,7 +522,7 @@
 					</svg>
 				</span>
 				<span class="input_exp input--nao">
-					<input class="input__field input__field--nao" type="text" id="bussiness_pan" name="bussiness_pan" onkeypress="return isNumberKey(event)" maxlength="10" required />
+					<input class="input__field input__field--nao" type="text" id="bussiness_pan" name="bussiness_pan" maxlength="10" pattern="[A-Za-z]{5}\d{4}[A-Za-z]{1}" required />
 					<label class="input__label input__label--nao" for="bussiness_pan">
 						<span class="input__label-content input__label-content--nao">Business PAN </span>
 					</label>
@@ -725,7 +765,7 @@
 			
 			</div>
 			<div class="col-md-12">
-			   <div class="jumbotron alert alert-success">
+			   <div class="jumbotron alert alert-success" style="display: none">
 			   <strong class="text-center"><h3><i class="icon-checkmark"></i> Your Loan is in Process. We will get back to you shortly</h3></strong>
 			   </div>
 			</div>
@@ -789,6 +829,7 @@
     });
 </script>
 <script type="text/javascript">
+
 	
 
  $(document).ready(function(){
@@ -834,12 +875,12 @@
 	
 
  $(document).ready(function(){
-    src = "{{ route('searchstateajax') }}";
+	  
     $(".search_state_name").autocomplete({
       source: function(request, response) {
         
         $.ajax({
-          url: src,
+          url: "{{ route('searchstateajax') }}",
           dataType: "json",
           data: {
             term : request.term
@@ -971,13 +1012,13 @@
 <script type="text/javascript">
 	
 	$("#express_loan_submit").click(function(event){
-		 alert('ok');
+		 alert('GJHG');
     event.preventDefault();
       $form=$('#generic_form');
       if(! $form.valid()){
       }else{
         //var s=$('#'+form).serialize();
-        alert('ok');
+        alert('HGGHF');
 
    
         $.ajax({  
@@ -985,13 +1026,13 @@
          url: "{{URL::to('aditya-express-loan')}}",
          data : $('#generic_form').serialize(),
          success: function(msg){
-         //console.log(msg);
+         console.log(msg);
           if(msg){
              console.log(msg);
              // window.location.href ="{{URL::to('thank-you')}}";
             
           }else{
-            window.location.href ="{{URL::to('went-wrong')}}";
+            // window.location.href ="{{URL::to('went-wrong')}}";
           } 
           
 
@@ -1036,7 +1077,12 @@
         }
     });
 </script>
-		
 
+<!-- <script type="text/javascript">
+	function pan_card(obj,val){
+		console.log(obj);
+	}
+</script>
+ -->
 
 

@@ -23,8 +23,8 @@
                     </fieldset>                 
                     </div>
                   <div>
-                      <a class="btn btn-primary btn-outline with-arrow sidebar-submit" id="instant_call_submit">Call Me Back<i class="icon-arrow-right"></i>
-                      </a>
+                      <button class="btn btn-primary btn-outline with-arrow sidebar-submit" id="instant_call_submit">Call Me Back<i class="icon-arrow-right"></i>
+                      </button>
                 </div>
                 <div class="iframeloading" style= "display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
                 <img src="{{URL::to('images/ajaxloader.gif')}}" alt="loading" style="top: 50%; position: relative; left: 50%;"  />
@@ -167,12 +167,15 @@
     
       <!-- Modal content-->
       <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Would Like To Borrow </h4>
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
         </div>
         <div class="modal-body">
           <form name="borrow_form" id="borrow_form" method="post" >
+        <div class="modal-header">
+          
+          <h4 class="modal-title"><b>Would You Like To Borrow</b></h4>
+        </div>
           {{ csrf_field() }}
           <?php
           $myString = isset($_GET['referrer']);
@@ -249,11 +252,14 @@
       <!-- Modal content-->
       <div class="modal-content">
         <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Would Like To Borrow </h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
         </div>
         <div class="modal-body">
           <form name="borrow_form_lap" id="borrow_form_lap" method="post" >
+          <div class="modal-header">
+          
+          <h4 class="modal-title"><b>Would You Like To Borrow</b></h4>
+        </div>
           <?php
           $myString = isset($_GET['referrer']);
           // 
@@ -330,11 +336,14 @@
       <!-- Modal content-->
       <div class="modal-content">
         <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Would Like To Borrow </h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
         </div>
         <div class="modal-body">
           <form name="borrow_form_personal" id="borrow_form_personal" method="post" >
+          <div class="modal-header">
+          
+          <h4 class="modal-title"><b>Would You Like To Borrow</b></h4>
+        </div>
           <?php
           $myString = isset($_GET['referrer']);
           // 

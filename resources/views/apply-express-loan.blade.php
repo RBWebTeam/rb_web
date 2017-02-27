@@ -393,7 +393,7 @@
 					</svg>
 				</span>
 				<span class="input_exp input--nao">
-					<input class="input__field input__field--nao" type="text" id="pan_no" name="pan_no" oninput="pan_card('pan_no')"    required />
+					<input class="input__field input__field--nao" type="text" id="pan_no" name="pan_no"   required />
 					<label class="input__label input__label--nao" for="pan_no">
 						<span class="input__label-content input__label-content--nao">Pan No.</span>
 					</label>

@@ -15,8 +15,8 @@
 
 	<link href="{{URL::to('css/mysite.css')}}" rel="stylesheet" type="text/css" />
 
- <!-- <link href="{{URL::to('css/style.css')}}" rel="stylesheet" type="text/css" /> -->  
- 
+ <!-- <link href="{{URL::to('css/style.css')}}" rel="stylesheet" type="text/css" />  
+  -->
  <link href="{{URL::to('css/freshslider.min.css')}}" rel="stylesheet" type="text/css" /> 
 
 	<!-- Modernizr JS -->

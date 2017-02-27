@@ -42,10 +42,14 @@
 			<div id ="otp_div">
             <form class="express_form" id="express_form" method="POST" >
             {{ csrf_field() }}
-			<div class="col-md-12 offset5 bg-white box-shadow">
+			
+		
+		
+		
+		<div class="col-md-12 offset5 bg-white box-shadow">
 			<div class="pad border-all">
 			<div class="offset5">
-<h3 class="text-center hed-three"><b>Enter Amount</b></h3>
+<h3 class="text-center hed-three">Enter Amount</h3>
             <div class="col-md-12 mrg-btm">
 			<input type="text" name="amount" id="amount" class="center-dv input-typ" placeholder="5,00,000" maxlength="10"
 			onkeypress="return isNumberKey(event)"  required/>
@@ -53,30 +57,29 @@
 			
 			
 		    <div class="col-md-12">
-			<h3 class="text-center mrg-btm hed-three"><b>Business Type</b></h3>
-			
-			 <div class="col-md-12"><div class="offset5"><a class="btn btn-primary bt-wt"><input type="radio" name="employment" value="Self_Employed_Professionsl" checked/> Self Employed Professionsl (SEP)</a>
-             <a class="btn btn-primary bt-wt"><input type="radio" name="employment" value="Self_Employed_Non_Professional " /> Self Employed Non-Professionsl (SENP)</a>
+			<h3 class="text-center mrg-btm hed-three">Business Type</h3>
+			<div class="col-md-12"><div class="offset5"><a class="btn bt-wt"><input type="radio" name="employment" value="Self_Employed_Professionsl" checked/> Self Employed Professionsl (SEP)</a>
+             <a class="btn bt-wt"><input type="radio" name="employment" value="Self_Employed_Non_Professional " /> Self Employed Non-Professionsl (SENP)</a>
 			</div>
 		    </div>
-			<div class="col-md-12 mrg-btm-b">
-			<h3 class="text-center hed-three"><b>Tenure</b></h3>
-			
 			<div class="col-md-12">
-			<div class="tenure border">
-			<span class="pull-left">0</span>
-			<input id="tenure1" name="tenure1" type="range" min="0" max="30"  value ="0" class="slider-price" style="color:red;"/>
-			<span class="pull-right">30</span>
+			
+			<div class="col-md-2"></div>
+			<div class="col-md-8">
+			<div class="tenure border offset5">
+			<h3 class="text-center hed-three">Tenure</h3>
+			
+			<div id="unranged-value" style="width:100%; height:10px;"></div>
 			</div>
+			
+			
 			</div>
-		  <div class="col-md-12">
-		   <div class="offset5">
+		  
+		  <div class="col-md-10 mrg-btm-b">
 		   <input type="tel" name="mob_no" id="mob_no" class="center-dv input-typ" placeholder="98XXX XXXXX"  maxlength="10" pattern="[789][0-9]{9}" onkeypress="return isNumberKey(event)" required />
-		   
-		   <a class="btn btn-success" type="submit" id="express_loan_send_otp"  >Get OTP</a>
-		    <div id="mobile_value" style="display: none;color: red;">Phone number should be of 10 digits.</div>
-
-		   </div>
+		   <span id="mobile_value" style="display: none;color: red;">Phone number should be of 10 digits.</span>
+		   <button class="get-otp" type="submit" id="express_loan_send_otp">Get OTP</button>
+		  
 		  </div>
 			</div>
 			
@@ -222,7 +225,13 @@
 					<option value="Textiles">Textiles</option>
 					<option value="Urban Market">Urban Market</option>
 					</select>
+<<<<<<< HEAD
+					<!--<label class="input__label input__label--nao" for="input-3">
+						<span class="input__label-content input__label-content--nao hid-txt">Type of Industry</span>
+					</label> -->
+=======
 					
+>>>>>>> 22c6906c6eac874279746784f4297100f115571c
 					<svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
 						<path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
 					</svg>
@@ -1035,10 +1044,45 @@
 
 </script>
 
+
+<script>
+    var s0 = $("#unranged").freshslider({
+        step: 10,
+		scale: [1,,100],
+        unit:'%',
+        enabled:false
+		
+    });
+
+    var s1 = $("#ranged").freshslider({
+        range:true,
+        step:0.1,
+        text:false,
+        onchange:function(low, high){
+            console.log(low, high);
+        }
+    });
+
+    var s2 = $("#unranged-value").freshslider({
+        step: 1,
+        value:10
+    });
+
+    var s3 = $("#ranged-value").freshslider({
+        range: true,
+        step:1,
+        value:[4, 60],
+        onchange:function(low, high){
+            console.log(low, high);
+        }
+    });
+</script>
+
 <!-- <script type="text/javascript">
 	function pan_card(obj,val){
 		console.log(obj);
 	}
 </script>
  -->
+
 

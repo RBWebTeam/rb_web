@@ -1,5 +1,7 @@
   <script src="{{URL::to('js/Myapp.js')}}"></script>
     <script src="{{URL::to('js/jsPdf.js')}}"></script>
+	 <script src="{{URL::to('js/freshslider.min.js')}}"></script>
+
   <script>
        function registration(){
          document.getElementById('login').style.display="none";

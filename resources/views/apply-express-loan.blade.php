@@ -69,7 +69,7 @@
 			<div class="tenure border offset5">
 			<h3 class="text-center hed-three">Tenure</h3>
 			
-			<div id="unranged-value" style="width:100%; height:10px;"></div>
+			<div  id="unranged-value" style="width:100%; height:10px;"></div>
 			</div>
 			
 			
@@ -111,7 +111,7 @@
 	
 	</div>
 	<br>
-	<div class="animate-box" id ="generic" >
+	<div class="animate-box" id ="generic" style="display: none;"  >
 	<form name="generic_form" id="generic_form" method="POST">
 	{{ csrf_field() }}
 	<div class="row">
@@ -396,7 +396,7 @@
 					</svg>
 				</span>
 				<span class="input_exp input--nao">
-					<input class="input__field input__field--nao" type="text" id="pan_no" name="pan_no"   required />
+					<input class="input__field input__field--nao" type="text" id="pan_no" name="pan_no" maxlength="10" minlength="10"  required />
 					<label class="input__label input__label--nao" for="pan_no">
 						<span class="input__label-content input__label-content--nao">Pan No.</span>
 					</label>
@@ -770,6 +770,44 @@
 	</div>
 @include('layout.footer')
 @include('layout.script')
+<div class="modal fade" tabindex="-1" role="dialog" id="express">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title"></h4>
+      </div>
+      <div class="modal-body">
+        <h4><p>Your Loan is in Process. We will get back to you shortly</b>.</p></h4>
+        
+      
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" tabindex="-1" role="dialog" id="express_1">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title"></h4>
+      </div>
+      <div class="modal-body">
+        <h4><p>Ooops. Something went wrong.</b>.</p></h4>
+        <
+      </div>
+      
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
 <script>
 			(function() {
 				
@@ -920,18 +958,13 @@
         var amount = $("#amount").val();
          $('#loanamount').val(amount);
 
-         var tenure1 = $("#tenure1").val();
-         $('#tenure').val(tenure1);
+         var slidr = $("#unranged-value").text();
+         $('#tenure').val(slidr);
+         console.log(slidr);
 
          var mob_no = $("#mob_no").val();
          $('#mobile_no').val(mob_no);
 
-
-        
-
-
-       
-       
         if(($('#mob_no').val().length)<10){
               $('#mobile_value').show();
               return false;
@@ -1024,9 +1057,11 @@
           if(msg){
              console.log(msg);
              // window.location.href ="{{URL::to('thank-you')}}";
+              $('#express').modal('show');  
             
           }else{
             // window.location.href ="{{URL::to('went-wrong')}}";
+             $('#express_1').modal('show');  
           } 
           
 
@@ -1053,7 +1088,7 @@
         step:0.1,
         text:false,
         onchange:function(low, high){
-            console.log(low, high);
+            // console.log(low, high);
         }
     });
 
@@ -1067,15 +1102,26 @@
         step:1,
         value:[4, 60],
         onchange:function(low, high){
-            console.log(low, high);
+            // console.log(low, high);
         }
     });
 </script>
 
 <!-- <script type="text/javascript">
 	function pan_card(obj,val){
-		console.log(obj);
+		if(obj=='pan_no' ){
+                   var str =$('#pan_no').val();
+                   var pancardPattern = /^([a-zA-Z]{5})(\d{4})([a-zA-Z]{1})$/;
+                   var res = str.match(pancardPattern);
+                   if(res){
+                     alert('OK');
+                  }else{
+                  	alert('NO');
+                  	return false;
+                  }
+                  
 	}
+}
 </script>
  -->
 

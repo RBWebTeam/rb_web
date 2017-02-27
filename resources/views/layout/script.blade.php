@@ -193,7 +193,7 @@
               return false;
             }
             
-            function changeText(obj,val){bj
+            function changeText(obj,val){
               $("#"+obj).keyup(function() {
                   //pan card validation code 
                   if(obj=='card'){

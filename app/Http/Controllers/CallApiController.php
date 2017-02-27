@@ -4,7 +4,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use DB;
 use Response;
-class CallApiController extends Controller
+class CallApiController extends InitialController
 {
 	public function call_json_data_api($url,$data){
 		$ch = curl_init();

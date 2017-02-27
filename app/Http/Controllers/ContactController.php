@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
-class ContactController extends Controller
+class ContactController extends InitialController
 {
     //
     public function contact_us(){

@@ -13,7 +13,7 @@ use Redirect;
 use Session;
 use URL;
 use DB;
-class SocialsiteController extends Controller{
+class SocialsiteController extends InitialController{
      public function  facebook(){
      	 return Socialite::driver('facebook')->redirect();
      }

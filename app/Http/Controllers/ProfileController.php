@@ -10,7 +10,7 @@ use App\registrationModel;
 use Validator;
 use Redirect;
 use URL;
-class ProfileController extends Controller
+class ProfileController extends InitialController
 {
     function my_profile(Request $req){
 

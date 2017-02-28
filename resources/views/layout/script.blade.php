@@ -1889,9 +1889,9 @@ $('#q6').show();
 
 
    // personal laon
-   if(last_segment=='apply-personal-loan'){
-     if(card==null && card==''){
-         
+   if(last_segment=='apply-personal-loan' || last_segment=='apply-car-loan'){
+     if(card!=null && card!=''){
+        
            if(emp_type!=null && emp_type=='salaried' && income!=null){
               document.getElementById("emp_detail").value=emp_type;
               document.getElementById("income").value=income;

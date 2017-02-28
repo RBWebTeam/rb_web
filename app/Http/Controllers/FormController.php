@@ -59,8 +59,10 @@ class FormController extends CallApiController
         // send empcode if its a refferal
         $res_arr['empid']=Session::get('empid')?Session::get('empid'):'';
         // print_r($res_arr);exit();
-            $url = "http://erp.rupeeboss.com/CustomerLaravelWebRequest.aspx";
-            $result=$this->call_array_data_api($url,$res_arr);
+            //$url = "http://erp.rupeeboss.com/CustomerLaravelWebRequest.aspx";
+        $json_data=json_encode($res_arr);
+            $url="http://api.rupeeboss.com/BankAPIService.svc/GetCustomerLizaWebReq";
+            $result=$this->call_json_data_api($url,$json_data);
             $http_result=$result['http_result'];
             $error=$result['error'];
             if($http_result==1){

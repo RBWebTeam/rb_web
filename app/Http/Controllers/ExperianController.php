@@ -31,8 +31,9 @@ class ExperianController extends CallApiController
           //if already login then remove contact from old seessions
           Session::forget('contact');
           }
-
-      if($contact || $login || $user ){
+        $verified=Session::get('otp_verified_credit_score');
+       // print_r($contact."  --".$verified);exit();
+      if(($contact!=Null &&$verified!=Null) || $login || $user ){
           return view('credit-report')->with($data)->with('keywords',$keywords);
         }else{
            return view('credit-report-otp');
@@ -250,12 +251,14 @@ class ExperianController extends CallApiController
             ->where('id', $id)
             ->where('otp',$req['verify'])
             ->update(['status' => 'verified']);
-           
+          
         if($query){
+          Session::put('otp_verified_credit_score',1);
           return Response::json(array(
                             'data' => true,
                         ));
         }else{
+          Session::put('otp_verified_credit_score',Null);
          return Response::json(array(
                             'data' => false,
                         ));

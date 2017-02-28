@@ -135,4 +135,9 @@ class LoginController extends InitialController
 
                 }
         }
+
+    public function emp_login(Request $req){
+      return 'true';
+      print_r($req->all());exit();
+    }
 }

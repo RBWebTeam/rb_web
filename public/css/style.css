@@ -1937,11 +1937,13 @@ body {background:#eee;}
 .bg-gray .tab-content {background:#fff;}
 .bg-gray .nav-tabs {margin-left: 35%;} 
 .view-btn-tp-mrg {margin-top:-5px;z-index: 1000; position: relative;}
+.slider-lnk {display:none;}
 @media only screen and (max-width:480px) {
 	 .bg-gray .nav-tabs {margin-left:0px;}
 	 .price-box ul li{margin-left:5px;}
 	.tp-margin {font-size:13px; padding:10px 10px;margin-top: 80px;display: block;}
 	.exp-pad h2 {font-size: 31px; padding: 17px 36px}
+	
 }
 
 /*   compare css */
@@ -1950,6 +1952,7 @@ body {background:#eee;}
  .bdr-btm {border:1px solid #ddd; margin-bottom:10px;}
  .heigh-bt1 {margin-bottom:20px;}
  .rba-log input {padding: 5px 2px; width:100%; margin-bottom:10px;}
+ .slider-lnk {display:block;}
 }
 .slide-hm {width:100%;}
 .msg p {color:#999;text-align:center;}
@@ -1968,7 +1971,7 @@ body {background:#eee;}
   .mrg-tp {margin-top:8px;}
   .box-shadow {box-shadow:1px 1px 1px 1px #ccc;}
   .apply-btn:hover {color:#fff;background:#2882a6;}
-  .blue-bg {background:#5cd8f4; padding:15px; color:#fff; font-size:25px; text-align:center;}
+  .blue-bg {padding:15px; color:#fff; font-size:25px; text-align:center;}
   .bnk-log {width:110px;}
   
   .drop-arr {background:url(../images/down_arrow.png) no-repeat center right; padding-right:10px;}
@@ -3127,6 +3130,9 @@ body {background:#eee;}
   margin-top:0px;
 }
 
+
+.slider-lnk h2{ border-bottom:1px solid #ddd; transition:all 0.3s linear;-moz-transition:all 0.3s linear;-webkit-transition:all 0.3s linear;}
+.slider-lnk h2:hover {font-weight:bold;transition:all 0.3s linear;-moz-transition:all 0.3s linear;-webkit-transition:all 0.3s linear;}
 
 
 

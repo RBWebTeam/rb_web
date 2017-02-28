@@ -26,8 +26,10 @@ class FormController extends CallApiController
         'form'    =>$req['form'] 
         );
     //call API here to save in DB
-    $url = "http://erp.rupeeboss.com/CustomerWebRequest.aspx";
-    $result=$this->call_array_data_api($url,$post_data);
+        $post=json_encode($post_data);
+        // print_r($post);exit();
+    $url = "http://api.rupeeboss.com/BankAPIService.svc/GetCustomerWebRequest";
+    $result=$this->call_json_data_api($url,$post);
     $http_result=$result['http_result'];
     $error=$result['error'];
     if($http_result==1){

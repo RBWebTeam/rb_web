@@ -164,7 +164,7 @@
 										</li>
 									</ul>
 							</li>
-                          	 <li><?php echo Session::get('name');?></li><?php }else{?>
+                          	 <li><?php echo Session::get('contact');?></li><?php }else{?>
 						<!-- 	<li class="user-ic dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle"><i class="icon-user uicon hidden-xs hidden-sm"></i><span class="hidden-lg hidden-md">Login</span></a>
 							</li> -->
 					<li class="user-ic dropdown">

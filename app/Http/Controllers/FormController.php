@@ -26,8 +26,10 @@ class FormController extends CallApiController
         'form'    =>$req['form'] 
         );
     //call API here to save in DB
-    $url = "http://erp.rupeeboss.com/CustomerWebRequest.aspx";
-    $result=$this->call_array_data_api($url,$post_data);
+        $post=json_encode($post_data);
+        // print_r($post);exit();
+    $url = "http://api.rupeeboss.com/BankAPIService.svc/GetCustomerWebRequest";
+    $result=$this->call_json_data_api($url,$post);
     $http_result=$result['http_result'];
     $error=$result['error'];
     if($http_result==1){
@@ -58,9 +60,11 @@ class FormController extends CallApiController
         $res_arr=array_merge($input,$new_array);
         // send empcode if its a refferal
         $res_arr['empid']=Session::get('empid')?Session::get('empid'):'';
-         //print_r($res_arr);exit();
-            $url = "http://erp.rupeeboss.com/CustomerLaravelWebRequest.aspx";
-            $result=$this->call_array_data_api($url,$res_arr);
+        // print_r($res_arr);exit();
+            //$url = "http://erp.rupeeboss.com/CustomerLaravelWebRequest.aspx";
+        $json_data=json_encode($res_arr);
+            $url="http://api.rupeeboss.com/BankAPIService.svc/GetCustomerLizaWebReq";
+            $result=$this->call_json_data_api($url,$json_data);
             $http_result=$result['http_result'];
             $error=$result['error'];
             if($http_result==1){

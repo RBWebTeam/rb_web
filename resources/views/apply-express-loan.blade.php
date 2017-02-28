@@ -58,8 +58,8 @@
 			
 		    <div class="col-md-12">
 			<h3 class="text-center mrg-btm hed-three">Business Type</h3>
-			<div class="col-md-12"><div class="offset5"><a class="btn bt-wt"><input type="radio" name="employment" value="Self_Employed_Professionsl" checked/> Self Employed Professionsl (SEP)</a>
-             <a class="btn bt-wt"><input type="radio" name="employment" value="Self_Employed_Non_Professional " /> Self Employed Non-Professionsl (SENP)</a>
+			<div class="col-md-12"><div class="offset5"><a class="btn bt-wt"><input type="radio" name="employment" id="employment" value="Self_Employed_Professionsl" checked/> Self Employed Professionsl (SEP)</a>
+             <a class="btn bt-wt"><input type="radio" name="employment" id="employment" value="Self_Employed_Non_Professional " /> Self Employed Non-Professionsl (SENP)</a>
 			</div>
 		    </div>
 			<div class="col-md-12">
@@ -111,7 +111,7 @@
 	
 	</div>
 	<br>
-	<div class="animate-box" id ="generic" style="display: none;"  >
+	<div class="animate-box" id ="generic" style="display: none;" >
 	<form name="generic_form" id="generic_form" method="POST">
 	{{ csrf_field() }}
 	<div class="row">
@@ -121,6 +121,9 @@
 		<h3 class="text-uppercase exp-hed">Generic Information</h3>
 			
 			 <section class="content">
+			
+				<input class="input__field input__field--nao" type="hidden" id="business" name="business"  value=""  required   />
+					
 				
 				<span class="input_exp input--nao">
 					<input class="input__field input__field--nao" type="text" id="loanamount" name="loanamount"  value="" onkeypress="return isNumberKey(event)" required   />
@@ -396,14 +399,16 @@
 					</svg>
 				</span>
 				<span class="input_exp input--nao">
-					<input class="input__field input__field--nao" type="text" id="pan_no" name="pan_no" maxlength="10" minlength="10"  required />
+					<input class="input__field input__field--nao" type="text" id="pan_no" name="pan_no" oninput="pan_card('pan_no')" maxlength="10" minlength="10"  required />
 					<label class="input__label input__label--nao" for="pan_no">
 						<span class="input__label-content input__label-content--nao">Pan No.</span>
 					</label>
 					<svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
 						<path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
 					</svg>
+					<div id="pan_number" style="display:none;color: red;">Oops.Please Enter Valid Pan Number.!!</div>
 				</span>
+
 				<span class="input_exp input--nao">
 					<input class="input__field input__field--nao" type="tel" id="mobile_no" name="mobile_no" maxlength="10" pattern="[789][0-9]{9}" onkeypress="return isNumberKey(event)" value="" required  />
 					<label class="input__label input__label--nao" for="mobile_no">
@@ -423,13 +428,14 @@
 					</svg>
 				</span>
 				<span class="input_exp input--nao">
-					<input class="input__field input__field--nao" type="text" id="aadhar_card" name="aadhar_card" maxlength="12" onkeypress="return isNumberKey(event)" required pattern="^\d{4}\s\d{4}\s\d{4}$" />
+					<input class="input__field input__field--nao" type="text" id="aadhar_card" name="aadhar_card" minlength="14" maxlength="14" oninput="aadhar('aadhar_card')" required  />
 					<label class="input__label input__label--nao" for="aadhar_card">
 						<span class="input__label-content input__label-content--nao">UID No. (Aadhar Card )</span>
 					</label>
 					<svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
 						<path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
 					</svg>
+					<div id="aadhar_number" style="display:none;color: red;">Oops.Please Enter Valid Aadhar Number.!!</div>
 				</span>
 				<span class="input_exp input--nao">
 					<input class="input__field input__field--nao" type="text" id="address_line1" name="address_line1" required/>
@@ -698,13 +704,14 @@
 					</svg>
 				</span>
 				<span class="input_exp input--nao">
-					<input class="input__field input__field--nao" type="text" id="pan_no_co_app" name="pan_no_co_app" minlength="10" maxlength="10" pattern="[A-Za-z]{5}\d{4}[A-Za-z]{1}"  onkeypress="return isNumberKey(event)" required/>
+					<input class="input__field input__field--nao" type="text" id="pan_no_co_app" name="pan_no_co_app" minlength="10" maxlength="10" oninput="pan_card('pan_no_co_app')"    required/>
 					<label class="input__label input__label--nao" for="pan_no_co_app">
 						<span class="input__label-content input__label-content--nao">PAN</span>
 					</label>
 					<svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
 						<path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
 					</svg>
+					<div id="pan_number_co_app" style="display:none;color: red;">Oops.Please Enter Valid Pan Number.!!</div>
 				</span>
 				<span class="input_exp input--nao">
 					<input class="input__field input__field--nao" type="tel" id="mob_co_app" name="mob_co_app" maxlength="10" pattern="[789][0-9]{9}" onkeypress="return isNumberKey(event)" required />
@@ -725,13 +732,15 @@
 					</svg>
 				</span>
 				<span class="input_exp input--nao">
-					<input class="input__field input__field--nao" type="text" id="aadhar_card_co_app" name="aadhar_card_co_app" maxlength="12" onkeypress="return isNumberKey(event)" required pattern="^\d{4}\s\d{4}\s\d{4}$" />
+					<input class="input__field input__field--nao" type="text" id="aadhar_card_co_app" name="aadhar_card_co_app" oninput="aadhar('aadhar_card_co_app')" minlength="14" maxlength="14" required  />
 					<label class="input__label input__label--nao" for="aadhar_card_co_app">
 						<span class="input__label-content input__label-content--nao">UID No. (Aadhar Card )</span>
 					</label>
 					<svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
 						<path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
 					</svg>
+					<div id="aadhar_number_co_app" style="display:none;color: red;">Oops.Please Enter Valid Aadhar Number.!!</div>
+					
 				</span>
 				<span class="input_exp input--nao">
 					<input class="input__field input__field--nao" type="text" id="address1_co_app" name="address1_co_app" required />
@@ -770,7 +779,7 @@
 	</div>
 @include('layout.footer')
 @include('layout.script')
-<div class="modal fade" tabindex="-1" role="dialog" id="express">
+<div class="modal fade" tabindex="-1" role="dialog" id="process">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -779,17 +788,15 @@
       </div>
       <div class="modal-body">
         <h4><p>Your Loan is in Process. We will get back to you shortly</b>.</p></h4>
-        
-      
-      <div class="modal-footer">
+        <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         
-      </div>
-    </div>
+      	</div>
+    	</div>
   </div>
 </div>
-
-<div class="modal fade" tabindex="-1" role="dialog" id="express_1">
+</div>
+<div class="modal fade" tabindex="-1" role="dialog" id="sorry">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -798,7 +805,7 @@
       </div>
       <div class="modal-body">
         <h4><p>Ooops. Something went wrong.</b>.</p></h4>
-        <
+        
       </div>
       
       <div class="modal-footer">
@@ -955,12 +962,16 @@
       	
       }else{
         //var s=$('#'+form).serialize();
+        var emp = $("#employment").val();
+         $('#business').val(emp);
+         // console.log(emp);
+
         var amount = $("#amount").val();
          $('#loanamount').val(amount);
 
          var slidr = $("#unranged-value").text();
          $('#tenure').val(slidr);
-         console.log(slidr);
+         // console.log(slidr);
 
          var mob_no = $("#mob_no").val();
          $('#mobile_no').val(mob_no);
@@ -1018,11 +1029,11 @@
      success: function(data){
      	var data_1=data['data'];
        if(data_1=="true"){
-       	console.log("yes");
+       	// console.log("yes");
         $('#generic').show();
         $('#otp_div').hide();
       }else{
-      	console.log("no");
+      	// console.log("no");
         $('#wrong_otp_value').show();
         $('#waiting_div_otp').hide();
       }
@@ -1039,13 +1050,13 @@
 <script type="text/javascript">
 	
 	$("#express_loan_submit").click(function(event){
-		 alert('GJHG');
+		// alert('GJHG');
     event.preventDefault();
       $form=$('#generic_form');
       if(! $form.valid()){
       }else{
         //var s=$('#'+form).serialize();
-        alert('HGGHF');
+        //alert('HGGHF');
 
    
         $.ajax({  
@@ -1053,15 +1064,12 @@
          url: "{{URL::to('aditya-express-loan')}}",
          data : $('#generic_form').serialize(),
          success: function(msg){
-         console.log(msg);
-          if(msg){
-             console.log(msg);
-             // window.location.href ="{{URL::to('thank-you')}}";
-              $('#express').modal('show');  
-            
+         // console.log(msg.data);
+          if(msg.data==true){          
+              $('#process').modal('show');                        
           }else{
-            // window.location.href ="{{URL::to('went-wrong')}}";
-             $('#express_1').modal('show');  
+             $('#sorry').modal('show');  
+           
           } 
           
 
@@ -1107,22 +1115,106 @@
     });
 </script>
 
-<!-- <script type="text/javascript">
+<script type="text/javascript">
 	function pan_card(obj,val){
 		if(obj=='pan_no' ){
                    var str =$('#pan_no').val();
                    var pancardPattern = /^([a-zA-Z]{5})(\d{4})([a-zA-Z]{1})$/;
                    var res = str.match(pancardPattern);
                    if(res){
-                     alert('OK');
+                     // console.log('Pancard is valid one.!!');
+                     	$('#pan_number').hide();
+
                   }else{
-                  	alert('NO');
+                  	// console.log('Oops.Please Enter Valid Pan Number.!!');
+                  	$('#pan_number').show();
+
                   	return false;
                   }
                   
 	}
 }
 </script>
- -->
+
+<script type="text/javascript">
+	function pan_card(obj,val){
+		// console.log(obj);
+		if(obj=='pan_no' ){
+                   var str =$('#pan_no').val();
+                   var pancardPattern = /^([a-zA-Z]{5})(\d{4})([a-zA-Z]{1})$/;
+                   var res = str.match(pancardPattern);
+                   if(res){
+                     // console.log('Pancard is valid one.!!');
+                     	$('#pan_number').hide();
+
+                  }else{
+                  	// console.log('Oops.Please Enter Valid Pan Number.!!');
+                  	$('#pan_number').show();
+
+                  	return false;
+                  }
+                  
+	}
+
+	if(obj=='pan_no_co_app' ){
+                   var str =$('#pan_no_co_app').val();
+                   var pancardPattern = /^([a-zA-Z]{5})(\d{4})([a-zA-Z]{1})$/;
+                   var res = str.match(pancardPattern);
+                   if(res){
+                     // console.log('Pancard is valid one.!!');
+                     	$('#pan_number_co_app').hide();
+
+                  }else{
+                  	// console.log('Oops.Please Enter Valid Pan Number.!!');
+                  	$('#pan_number_co_app').show();
+
+                  	return false;
+                  }
+                  
+	}
+
+}
+</script>
+
+<!-- Aadhar card Validation -->
+<script type="text/javascript">
+	function aadhar(obj,val){
+		// console.log(obj);
+		if(obj=='aadhar_card' ){
+                   var str =$('#aadhar_card').val();
+                   var aadharcardPattern = /^\d{4}\s\d{4}\s\d{4}$/;
+                   var res = str.match(aadharcardPattern);
+                   if(res){
+                     // console.log('Aadhar No. is valid one.!!');
+                     	$('#aadhar_number').hide();
+
+                  }else{
+                  	// console.log('Oops.Please Enter Valid Aadhar No..!!');
+                  	$('#aadhar_number').show();
+
+                  	return false;
+                  }
+                  
+	}
+
+	if(obj=='aadhar_card_co_app' ){
+                   var str =$('#aadhar_card_co_app').val();
+                   var aadharcardPattern = /^\d{4}\s\d{4}\s\d{4}$/;
+                   var res = str.match(aadharcardPattern);
+                   if(res){
+                      // console.log('Aadhar No. is valid one.!!');
+                     	$('#aadhar_number_co_app').hide();
+
+                  }else{
+                  	// console.log('Oops.Please Enter Valid Aadhar No..!!');
+                  	$('#aadhar_number_co_app').show();
+
+                  	return false;
+                  }
+                  
+	}
+
+}
+</script>
 
 

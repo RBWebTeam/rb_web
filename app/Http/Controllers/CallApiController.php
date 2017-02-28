@@ -21,10 +21,12 @@ class CallApiController extends InitialController
         $http_code = curl_getinfo($ch ,CURLINFO_HTTP_CODE);
         curl_close($ch);
         $result=array('http_result' =>$http_result ,'error'=>$error );
+
 		return $result;
 	}
 	
 	public function call_array_data_api($url,$data){
+
 		 $ch = curl_init();
 	    curl_setopt($ch, CURLOPT_VERBOSE, 1);
 	    curl_setopt($ch, CURLOPT_URL, $url);

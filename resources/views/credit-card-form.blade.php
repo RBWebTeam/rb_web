@@ -27,7 +27,7 @@
 										</div>
 
 										<div class="col-md-4">
-											<input type="text" class="form-control lastReporteddate" id="DateOfBirth" name="DateOfBirth" placeholder="Date of Birth*" required>
+											<input type="text" class="form-control lastReporteddob" id="DateOfBirth" name="DateOfBirth" placeholder="Date of Birth*" required>
 										</div>
 										<div class="col-md-4">Male &nbsp;&nbsp;
 											<input type="radio" name="Gender"  class="radiob" required value="Male">&nbsp;&nbsp; Female &nbsp;&nbsp;<input type="radio" name="Gender" class="radiob" value="Female">
@@ -71,13 +71,13 @@
 											<input type="text" class="form-control" placeholder="Road No / Area / Locality" name="ResidenceAddress3" id="ResidenceAddress3">
 										</div>
 										<div class="col-md-4">
-											<input type="text" class="form-control" placeholder="City*" name="City" id="City" required>
+											<input type="text" class="form-control search_city_nm" placeholder="City*" name="City" id="City" required>
 										</div>
 										<div class="col-md-4">
 												<input type="text" id="ResidencePincode" name="ResidencePincode" class="form-control" placeholder="Pincode*" onkeypress="return fnAllowNumeric(event)" maxlength="6" required>
 											</div>
 										<div class="col-md-4">
-											<input type="text" class="form-control" placeholder="State*" name="ResidenceState" id="ResidenceState" required>
+											<input type="text" class="form-control search_state_nm" placeholder="State*" name="ResidenceState" id="ResidenceState" required>
 										</div>	
 										</div>
 									</div>
@@ -113,7 +113,7 @@
 												<input type="text" id="PanNo" name="PanNo" class="form-control" placeholder="Pancard*" maxlength="10" minlength="10" required >
 											</div>
 											<div class="col-md-4">
-												<input type="text" class="form-control lastReporteddate" id="SalaryAcOpenDate" name="SalaryAcOpenDate" placeholder="Salary Ac Open Date*" required>
+												<input type="text" class="form-control lastReporteddob" id="SalaryAcOpenDate" name="SalaryAcOpenDate" placeholder="Salary Ac Open Date*" required>
 											</div>
 										<div class="col-md-12">
 										<input type="checkbox" name="terms" required>
@@ -171,4 +171,105 @@
 
 
 </script>
+
+<script type="text/javascript">
+
+	
+
+ $(document).ready(function(){
+    src = "{{ route('searchajax') }}";
+    $(".search_city_nm").autocomplete({
+      source: function(request, response) {
+        
+        $.ajax({
+          url: src,
+          dataType: "json",
+          data: {
+            term : request.term
+          },
+          success: function(data) {
+           
+
+            response(data);
+            
+          }
+        });
+      },
+      change: function (event, ui) {
+        if (ui.item == null || ui.item == undefined || ui.item.value=='No Result Found') {
+          $(".search_city_nm").val("");
+          $(".search_city_nm").attr("disabled", false);
+         
+        }else{
+
+         
+         $(".Q6").show();
+         
+          
+             }
+           }
+
+        
+      });
+   });
+
+</script>
+
+<script type="text/javascript">
+	
+
+ $(document).ready(function(){
+	  
+    $(".search_state_nm").autocomplete({
+      source: function(request, response) {
+        
+        $.ajax({
+          url: "{{ route('searchstateajax') }}",
+          dataType: "json",
+          data: {
+            term : request.term
+          },
+          success: function(data) {
+           
+
+            response(data);
+            
+          }
+        });
+      },
+      change: function (event, ui) {
+        if (ui.item == null || ui.item == undefined || ui.item.value=='No Result Found') {
+          $(".search_state_nm").val("");
+          $(".search_state_nm").attr("disabled", false);
+         
+        }else{
+
+         
+         $(".Q6").show();
+         
+          
+             }
+           }
+
+        
+      });
+   });
+
+</script>
+
+<script type="text/javascript">
+    var d = new Date();
+    var year = d.getFullYear() ;
+    d.setFullYear(year);
+
+    $(".lastReporteddob").datepicker({ dateFormat: "yy-mm-dd",
+      changeMonth: true,
+      changeYear: true,
+      maxDate: year,
+      minDate: "-100Y",
+      yearRange: '-100:' + year + '',
+      defaultDate: d
+    });
+</script>
+
 

@@ -43,6 +43,7 @@ class credit_card_form_req extends Model
         //  $table->brokerID    = $request->brokerID   ;
 
          $input = $request->all();
+         // print_r( $input);exit();
          $id = $table::create($input)->id;
 
          return $id;

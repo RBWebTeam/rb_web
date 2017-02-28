@@ -58,7 +58,7 @@ class FormController extends CallApiController
         $res_arr=array_merge($input,$new_array);
         // send empcode if its a refferal
         $res_arr['empid']=Session::get('empid')?Session::get('empid'):'';
-         print_r($res_arr);exit();
+        // print_r($res_arr);exit();
             $url = "http://erp.rupeeboss.com/CustomerLaravelWebRequest.aspx";
             $result=$this->call_array_data_api($url,$res_arr);
             $http_result=$result['http_result'];

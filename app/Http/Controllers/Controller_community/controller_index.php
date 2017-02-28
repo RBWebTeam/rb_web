@@ -1,7 +1,6 @@
 <?php
-
 namespace App\Http\Controllers\Controller_community;
-
+use App\Http\Controllers\Controller_community;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\community_model\community_Question_model;

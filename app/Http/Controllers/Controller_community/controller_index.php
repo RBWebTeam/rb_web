@@ -14,7 +14,7 @@ use Redirect;
 use Session;
 use Illuminate\Support\Facades\Hash;
 use DB; 
-class controller_index extends InitialController
+class controller_index extends Controller
 {
      public function index(){
           

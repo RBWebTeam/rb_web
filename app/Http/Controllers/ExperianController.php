@@ -11,9 +11,9 @@ use App\experian_responseModel;
 class ExperianController extends CallApiController
 {
     public function credit_report(){
-      $keywords='credit report free,credit score,free credit report and score,how to get free credit report ';
-      $data['title']='Check your Credit Score online on Rupeeboss.com';
-      $data['description']='Check Your Free Credit Score, Report and Insights. Get the info you need to take control of your credit from Rupeeboss.com';
+      $keywords='Free Credit Score,Credit Score,Free Credit Report,Check Credit Score Online ';
+      $data['title']='Know Your Credit Score Online for FREE on Rupeeboss.com';
+      $data['description']='Check your Credit Score Online and get its Equivalent FREE Credit Report. Track your Progress and get personalized advice to optimizeYour score. Get started now ';
       $data['telephone']=DB::table('experian_telephonetype')
       ->select('Telephone_Name','Telephone_Value')
       ->get();

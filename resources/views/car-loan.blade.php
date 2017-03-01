@@ -19,11 +19,11 @@
   <!-- Wrapper for slides -->
   <div class="carousel-inner" role="listbox">
     <div class="item active">
-      <img src="{{URL::to('images/01/car.jpg')}}" alt="">
+      <img src="{{URL::to('images/01/car.jpg')}}" alt="gear_pic">
     </div>
 
     <div class="item">
-      <img src="{{URL::to('images/01/car.jpg')}}" alt="">
+      <img src="{{URL::to('images/01/car.jpg')}}" alt="gear_pics">
     </div>
 
     
@@ -95,7 +95,7 @@
 					    <a href="{{URL::to('contact-us')}}" >
 						<div class="price-box popular">
 							
-							<div class="ic1"><img src="images/ic1.png" /></div>
+							<div class="ic1"><img src="images/ic1.png" alt="compare_pic" /></div>
 							<h4 class="mrg-btm">Compare Loan</h4>
 							<ul>
 							     <li>Check & compare loans from thousand of banks</li>
@@ -112,7 +112,7 @@
 					<div class="col-md-4 animate-box">
 					    <a href="{{URL::to('check_emi')}}">
 						<div class="price-box popular">
-							<div class="ic1"><img src="images/ic2.png" /></div>
+							<div class="ic1"><img src="images/ic2.png" alt="ic2_pic" /></div>
 							<h4 class="mrg-btm">Calculate EMI</h4>
 							<ul>
 							     <li>EMI Calculator is easy to use, intuitive to understand and is quick to perform.</li>
@@ -126,7 +126,7 @@
 					<div class="col-md-4 animate-box">
 					   <a  href="{{URL::to('apply-car-loan')}}">
 						<div class="price-box popular">
-							<div class="ic1 text-center"><img src="images/ic3.png" /></div>
+							<div class="ic1 text-center"><img src="images/ic3.png" alt="ic3_pic" /></div>
 							<h4 class="mrg-btm">Apply Online Loan</h4>
 							<ul>
 							     <li>Expert Assistance</li>

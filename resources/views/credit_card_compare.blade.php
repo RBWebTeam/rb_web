@@ -23,7 +23,7 @@
 
   <tr class="RBL-Card">
        <td><input type="checkbox" name="cehckbox"/> <button style="display:none;" data-toggle="collapse" data-target="#0" aria-expanded="true">Details </button></td>
-        <td><img src="{{url('images/rbl-credit-card.jpg')}}" width="150" height="96" style="margin:0 auto; margin-bottom:5px;">
+        <td><img src="{{url('images/rbl-credit-card.jpg')}}" alt="rbl_credit_crd_pic" width="150" height="96" style="margin:0 auto; margin-bottom:5px;">
         <span>RBL Titanium Delight Card</span>
         </td>
         <td>Annual Fees- Rs.1000/- plus applicable service tax ... <a data-toggle="popover" data-placement="bottom" data-trigger="hover" data-content="Annual Fees Reversal- On crossing Rs.1.5 lac annual spends in a year get annual fees reversal worth Rs.1000/" style="color:#39F; font-weight:bold;">More</a></td>
@@ -39,7 +39,7 @@
   <!-- card 1 End -->
   <tr class="RBL-Card">
     <td><input type="checkbox" name="cehckbox"/> <button style="display:none;" data-toggle="collapse" data-target="#1" aria-expanded="true">Details </button></td>
-    <td><img src="{{url('images/rbl-credit-card_1.jpg')}}" width="150" height="96" style="margin:0 auto; margin-bottom:5px;">
+    <td><img src="{{url('images/rbl-credit-card_1.jpg')}}" alt="rbl_credit_crd_pic_1" width="150" height="96" style="margin:0 auto; margin-bottom:5px;">
     <span>RBL Platinum Maxima Card</span>
     </td>
     <td>Annual Fees- Rs 750 Joining Fees --<a data-toggle="popover" data-placement="bottom" data-trigger="hover" data-content="Nil Renewal Fees* Rs 750 Renewal Fees is waived on usage of Rs 1 lakh or more in a year " style="color:#39F; font-weight:bold;">More</a></td>
@@ -57,7 +57,7 @@
   
   <tr class="RBL-Card">
     <td><input type="checkbox" name="cehckbox"/> <button style="display:none;" data-toggle="collapse" data-target="#2" aria-expanded="true">Details </button></td>
-    <td><img src="{{url('images/rbl-credit-card_1.jpg')}}" width="150" height="96" style="margin:0 auto; margin-bottom:5px;">
+    <td><img src="{{url('images/rbl-credit-card_1.jpg')}}" alt="rbl_credit_crd_pic_1" width="150" height="96" style="margin:0 auto; margin-bottom:5px;">
     <span>RBL Platinum Delight Card</span>
     </td>
     <td>Annual Fees Rs 1000 ... <a data-toggle="popover" data-placement="bottom" data-trigger="hover" data-content="Joining Fees - Nil Renewal Fees-Next year fee waived if spend is greater than Rs 1.5 lakh in previous year" style="color:#39F; font-weight:bold;">More</a></td>
@@ -76,7 +76,7 @@
   
   <tr class="ICICI-Card">
     <td><input type="checkbox" name="cehckbox"/> <button style="display:none;" data-toggle="collapse" data-target="#3" aria-expanded="true">Details </button></td>
-    <td><img src="{{url('images/icici-credit-card.jpg')}}" width="150" height="96" style="margin:0 auto; margin-bottom:5px;">
+    <td><img src="{{url('images/icici-credit-card.jpg')}}" alt="icici_credit_card_pic" width="150" height="96" style="margin:0 auto; margin-bottom:5px;">
     <span>ICICI Bank Coral Credit Card</span>
     </td>
     <td>Annual Fee: ₹ 500 + service tax ... <a data-toggle="popover" data-placement="bottom" data-trigger="hover" data-content="(NIL when card spends are greater than ₹ 1,25,000 in the previous year). Joining Fee: ₹ 1,000 + service tax" style="color:#39F; font-weight:bold;">More</a></td>
@@ -95,7 +95,7 @@
   
   <tr class="ICICI-Card">
     <td><input type="checkbox" name="cehckbox"/> <button style="display:none;" data-toggle="collapse" data-target="#4" aria-expanded="true">Details </button></td>
-    <td><img src="{{url('images/icici-credit-card.jpg')}}" width="150" height="96" style="margin:0 auto; margin-bottom:5px;">
+    <td><img src="{{url('images/icici-credit-card.jpg')}}" alt="icici_credit_card_pic" width="150" height="96" style="margin:0 auto; margin-bottom:5px;">
     <span>ICICI Bank HPCL Coral Visa/MasterCard Credit Cards</span>
     </td>
     <td>Joining Fee :₹ 199 + service tax ... <a data-toggle="popover" data-placement="bottom" data-trigger="hover" data-content="Annual Fee :₹ 199 + service tax (NIL when retail spends are greater than ₹ 50,000 in the previous year)" style="color:#39F; font-weight:bold;">More</a></td>
@@ -114,7 +114,7 @@
   
   <tr class="ICICI-Card">
     <td><input type="checkbox" name="cehckbox"/> <button style="display:none;" data-toggle="collapse" data-target="#5" aria-expanded="true">Details </button></td>
-    <td><img src="{{url('images/icici-credit-card-ruby.jpg')}}" width="150" height="96" style="margin:0 auto; margin-bottom:5px;">
+    <td><img src="{{url('images/icici-credit-card-ruby.jpg')}}" alt="icici_ruby_credit_card_pic" width="150" height="96" style="margin:0 auto; margin-bottom:5px;">
     <span>ICICI Bank Rubyx Credit Cards</span>
     </td>
     <td>Joining Fee: ₹ 3,000 + service tax ... <a data-toggle="popover" data-placement="bottom" data-trigger="hover" data-content="Annual Fee: ₹ 2,000 + service tax (NIL when card spends are greater than ₹ 2,50,000 in the previous year)" style="color:#39F; font-weight:bold;">More</a></td>
@@ -131,7 +131,7 @@
 
 <tr class="HDFC-Card">
     <td><input type="checkbox" name="cehckbox"/> <button style="display:none;" data-toggle="collapse" data-target="#6" aria-expanded="true">Details </button></td>
-    <td><img src="{{url('images/hdfc-credit-card.jpg')}}" width="150" height="96" style="margin:0 auto; margin-bottom:5px;">
+    <td><img src="{{url('images/hdfc-credit-card.jpg')}}" alt="hdfc_credit_crd_pic" width="150" height="96" style="margin:0 auto; margin-bottom:5px;">
     <span>JetPrivilege HDFC Bank World</span>
     </td>
     <td>First Year and Renewal Fee on ... <a data-toggle="popover" data-placement="bottom" data-trigger="hover" data-content="JetPrivilege HDFC Bank World Credit Card is Rs, 2,500/- (Service Tax as applicable)" style="color:#39F; font-weight:bold;">More</a></td>

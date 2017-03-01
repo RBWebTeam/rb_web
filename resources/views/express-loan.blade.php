@@ -19,11 +19,11 @@
   <!-- Wrapper for slides -->
   <div class="carousel-inner" role="listbox">
     <div class="item active">
-      <img src="{{URL::to('images/birla_ban.png')}}" alt="">
+      <img src="{{URL::to('images/birla_ban.png')}}" alt="birla_banner">
     </div>
 
     <div class="item">
-      <img src="{{URL::to('images/tribe_bann.png')}}" alt="">
+      <img src="{{URL::to('images/tribe_bann.png')}}" alt="tribe_banner">
     </div>
   </div>
 
@@ -84,7 +84,7 @@
 					<div class="col-md-4 animate-box">
 						<div class="price-box popular">
 							
-							<div class="center-blg"><img src="{{URL::to('images/tribe.png')}}" /></div>
+							<div class="center-blg"><img src="{{URL::to('images/tribe.png')}}" alt="tribe_pic" /></div>
 							<h4 class="mrg-btm">Tribe</h4>
 							<ul>
 							     <li>Online Sanction</li>
@@ -98,7 +98,7 @@
 
 					<div class="col-md-4 animate-box">
 						<div class="price-box popular">
-							<div class="center-blg"><img src="{{URL::to('images/birla.png')}}" /></div>
+							<div class="center-blg"><img src="{{URL::to('images/birla.png')}}" alt="birla_pic" /></div>
 							<h4 class="mrg-btm">Aditya Birla</h4>
 							<ul>
 							     <li>Online Sanction</li>
@@ -111,7 +111,7 @@
 					
 					<div class="col-md-4 animate-box">
 						<div class="price-box popular">
-							<div class="center-blg"><img src="{{URL::to('images/apply-online.png')}}" /></div>
+							<div class="center-blg"><img src="{{URL::to('images/apply-online.png')}}" alt="apply_online_pic" /></div>
 							<h4 class="mrg-btm">Apply Online Loan</h4>
 							<ul>
 							     <li>Online Sanction</li>

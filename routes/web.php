@@ -60,7 +60,8 @@ Route::post('google/login','SocialsiteController@googlelogin');
 
 Route::get('api','ApiController@GetLAPQuotes');
 Route::get('get-loan/{loan}','BankController@compareLoan');
-
+Route::post('contact_us','SocialsiteController@contact_us_otp');
+Route::post('contact_otp','SocialsiteController@contactOTP');
 
 Route::get('refresh-csrf', function(){
     return csrf_token();

@@ -1992,11 +1992,19 @@ function SetSession_pop(cookieName,cookieValue){
              type: "POST",  
              url: "{{URL::to('emp-login')}}",
              data : $('#emp_login_form').serialize(),
-             success: function(msg){
+             success: function(data){
+
                 $(".iframeloading").hide();  
-              if(msg=='true'){
+              var data_1=data['msg'];
+               var url=data['url'];
+               if(url!=""){
+                //console.log(url);return false;
                  $('#emp_login_form').hide();
-                  $('#emp_msg').show();
+                  //$('#emp_msg').show();
+                  window.open(
+  'www.google.com',
+  '_blank' // <- This is what makes it open in a new window.
+);
               }else{
                   $form.hide();
                   $('#emp_msg_err').show(); 

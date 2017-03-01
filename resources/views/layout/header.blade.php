@@ -15,7 +15,10 @@
 
 	<link  rel="stylesheet" type="text/css" href="{{URL::to('css/mysite.css')}}"/>
 
-<!-- 	 <link href="{{URL::to('css/style.css')}}" rel="stylesheet" type="text/css" />  -->
+ <!-- <link href="{{URL::to('css/style.css')}}" rel="stylesheet" type="text/css" />  
+  -->
+
+ <link href="{{URL::to('css/freshslider.min.css')}}" rel="stylesheet" type="text/css" /> 
 
 	<!-- Modernizr JS -->
 	<!-- <link rel="manifest" href="{{URL::to('extension/manifest.json')}}"> -->
@@ -57,7 +60,7 @@
                 <li class="hidden-xs"><a href="{{URL::to('/')}}">Home</a></li>
                 <li class="hidden-xs"><a href="{{URL::to('about-us')}}">About Us</a></li>
                 <li class="hidden-xs"><a href="{{URL::to('contact-us')}}">Contact Us</a></li>
-				<li class="hidden-xs"><a href="{{URL::to('http://erp.rupeeboss.com/')}}">Employee Login </a></li>
+				<li class="hidden-xs"><a href="#" data-toggle="modal" data-target="#emp_login">Employee Login </a></li>
 				<li><a href="{{URL::to('RBA-login')}}">RBA Login </a></li>
 				<li class="hidden-xs credit-score-btn"><a href="{{URL::to('credit-report')}}" class="btn btn-primary">My Credit Score</a></li>
 			<!-- 	<li><a href="{{URL::to('contact-us')}}">Media</a></li> -->
@@ -149,7 +152,19 @@
 										</li>
 									</ul>
 							</li>
-                          	 <li><?php echo Session::get('name');?></li><?php }else{?>
+                          	 <li><?php echo Session::get('name');?></li>
+                          	 <?php }else if(Session::get('otp_verified_credit_score')==1){
+							?>
+							<li class="user-ic dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown" data-target="#"><i class="icon-user uicon hidden-xs hidden-sm"></i><span class="hidden-lg hidden-md">My Account&nbsp;</span> <i class="icon-chevron-down"></i>
+								</a>
+									<ul class="dropdown-menu"  >
+									    <li> 
+										<a id="googleLOG" href={{URL::to('logout')}}>Logout</a>
+										</li>
+									</ul>
+							</li>
+                          	 <li><?php echo Session::get('contact');?></li><?php }else{?>
 						<!-- 	<li class="user-ic dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle"><i class="icon-user uicon hidden-xs hidden-sm"></i><span class="hidden-lg hidden-md">Login</span></a>
 							</li> -->
 					<li class="user-ic dropdown">

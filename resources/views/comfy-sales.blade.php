@@ -2,7 +2,7 @@
 
 	<div id="fh5co-page">
 	<div class="fh5co-contact animate-box">
-		<div class="container-fluid" id="fh5co-hero">
+		<div class="container" id="fh5co-hero">
 			<div class="row">
 						
 				<div class="col-md-12">

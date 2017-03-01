@@ -25,12 +25,12 @@
 			</div>
 			<div class="col-md-12 text-center animate-box cont" style="display: none;" id="q2">
              <h3>where my monthly takehome salary is Rs. 
-			 <input type="tel" id="income" name="income" oninput="changeText_new('income','q3')"  onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="1,00,000" tabindex="1">.
+			 <input type="tel" id="income" name="income" oninput="changeText_new('income','q3')"  onkeypress="return fnAllowNumeric(event)" onchange="setSesson('income',this.value);" class="input-pad" placeholder="1,00,000" tabindex="1" >.
 			 </h3> 
 			</div>
 			<div class="col-md-12 text-center animate-box cont" style="display: none;" id="q2_year">
              <h3>where my annual turnover is
-			 <input type="tel" id="income_year" name="turnover" oninput="changeText_new('income_year','q3')"  onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="1,00,000" tabindex="1">.
+			 <input type="tel" id="income_year" name="turnover" oninput="changeText_new('income_year','q3')"  onkeypress="return fnAllowNumeric(event)" onchange=" setSesson('income_year',this.value);" class="input-pad" placeholder="1,00,000" tabindex="1">.
 			 </h3> 
 			</div>
 			<div class="col-md-12 text-center animate-box cont" style="display: none;" id="q3">
@@ -41,39 +41,39 @@
 
 			<div class="col-md-12 text-center animate-box cont" style="display: none" id="q4">
              <h3>and my existing loan EMI is
-			 <input type="tel" id="obligation" name="obligation"  oninput="changeText_new('obligation','q5')"  onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="1,00,000" tabindex="1">.
+			 <input type="tel" id="obligation" name="obligation"  oninput="changeText_new('obligation','q5')"  onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="1,00,000" tabindex="1" onchange=" setSesson('obligation',this.value);" >.
 			 </h3> 
 			</div>
 			<div class="col-md-12 text-center animate-box cont" style="display:none;" id="q5" >
 				
 	             <h3>I have been living in
-				<input type="text" class="search_city input-pad" id='city_name' name='city_name' onblur="changeText_new('city_name','q6')" placeholder='your city'>city</h3>
+				<input type="text" class="search_city input-pad" id='city_name' name='city_name' onblur="changeText_new('city_name','q6')" placeholder='your city' onchange="setSesson('city_name',this.value);">city</h3>
 				
 			</div>
 			
 			<div class="col-md-12 text-center animate-box cont Q6" style="display: none" id="q6">
              <h3>and I require loan for
-			 <input type="tel" id="loan_tenure" name="loan_tenure"  oninput="changeText_new('loan_tenure','date_birth')"  onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="20" tabindex="1" maxlength="2" >
+			 <input type="tel" id="loan_tenure" name="loan_tenure"  oninput="changeText_new('loan_tenure','date_birth')"  onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="20" tabindex="1" maxlength="2" onchange="setSesson('loan_tenure',this.value);" >
 			 years.
 			 </h3> 
 			</div>
 
 			<div class="col-md-12 text-center animate-box cont1" style="display: none" id="date_birth"><h3>My date of birth is
 			
- 			<input type="text" class="datepicker minimumSize lastReporteddate" id="dob" readonly  name="dob" onchange="changeTest_new(this,'q8')"  />
+ 			<input type="text" class="datepicker minimumSize lastReporteddate" id="dob" readonly  name="dob" onchange="changeTest_new(this,'q8'),setSesson('dob',this.value);""  />
 
 
 			</h3>
 			</div>
 			<div class="col-md-12 text-center animate-box cont" style="display:none;" id="q8" >
 					<h3> and my Pan Card number is
-					<input type="text" id="card" name="pan_number"  oninput="changeText_new('card','q9')"   class="input-pad" placeholder="Pan Card" maxlength="10" minlength="10" tabindex="1">
+					<input type="text" id="card" name="pan_number"  oninput="changeText_new('card','q9')"   class="input-pad" placeholder="Pan Card" maxlength="10" minlength="10" tabindex="1" onchange="setSesson('card',this.value);">
 					.</h3>
 			</div>
 
 			<div class="col-md-12 text-center animate-box cont" style="display: none" id="q9">
              <h3>I want a Personal Loan of Rs.
-			 <input type="tel" id="loan_amount" name="loan_amount"  oninput="changeText_new('loan_amount','step_3_btn')"  onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="1,00,000" tabindex="1">.
+			 <input type="tel" id="loan_amount" name="loan_amount"  oninput="changeText_new('loan_amount','step_3_btn')"  onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="1,00,000" tabindex="1"  onchange="setSesson('loan_amount',this.value);">.
 			 </h3> 
 			</div>
 			<div class="text-center " style="display: none" id="step_3_btn">

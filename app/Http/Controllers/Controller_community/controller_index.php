@@ -1,7 +1,6 @@
 <?php
-
 namespace App\Http\Controllers\Controller_community;
-
+use App\Http\Controllers\Controller_community;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\community_model\community_Question_model;
@@ -15,7 +14,7 @@ use Redirect;
 use Session;
 use Illuminate\Support\Facades\Hash;
 use DB; 
-class controller_index extends InitialController
+class controller_index extends Controller
 {
      public function index(){
           

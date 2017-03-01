@@ -23,8 +23,8 @@
                     </fieldset>                 
                     </div>
                   <div>
-                      <a class="btn btn-primary btn-outline with-arrow sidebar-submit" id="instant_call_submit">Call Me Back<i class="icon-arrow-right"></i>
-                      </a>
+                      <button class="btn btn-primary btn-outline with-arrow sidebar-submit" id="instant_call_submit">Call Me Back<i class="icon-arrow-right"></i>
+                      </button>
                 </div>
                 <div class="iframeloading" style= "display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
                 <img src="{{URL::to('images/ajaxloader.gif')}}" alt="loading" style="top: 50%; position: relative; left: 50%;"  />
@@ -167,12 +167,15 @@
     
       <!-- Modal content-->
       <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Would Like To Borrow </h4>
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
         </div>
         <div class="modal-body">
           <form name="borrow_form" id="borrow_form" method="post" >
+        <div class="modal-header">
+          
+          <h4 class="modal-title"><b>Would You Like To Borrow</b></h4>
+        </div>
           {{ csrf_field() }}
           <?php
           $myString = isset($_GET['referrer']);
@@ -249,11 +252,14 @@
       <!-- Modal content-->
       <div class="modal-content">
         <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Would Like To Borrow </h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
         </div>
         <div class="modal-body">
           <form name="borrow_form_lap" id="borrow_form_lap" method="post" >
+          <div class="modal-header">
+          
+          <h4 class="modal-title"><b>Would You Like To Borrow</b></h4>
+        </div>
           <?php
           $myString = isset($_GET['referrer']);
           // 
@@ -330,11 +336,14 @@
       <!-- Modal content-->
       <div class="modal-content">
         <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Would Like To Borrow </h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
         </div>
         <div class="modal-body">
           <form name="borrow_form_personal" id="borrow_form_personal" method="post" >
+          <div class="modal-header">
+          
+          <h4 class="modal-title"><b>Would You Like To Borrow</b></h4>
+        </div>
           <?php
           $myString = isset($_GET['referrer']);
           // 
@@ -501,3 +510,44 @@ Rupeeboss Financial Services Private Limited shall access your Credit Informatio
       $(".iframeloading").show();  
     </script>
      -->
+
+<!-- emp_login modal -->
+<!-- 
+.modal-header {background:#ed1c24;color:#fff;}
+.modal-header h4 {color:#fff;font-weight:bold;}
+.modal{margin-top:100px;}
+.modal-content {border-radius:0px;}
+
+
+<a href="#" data-toggle="modal" data-target="#myModal6">Emplyee Login</a>
+ -->
+
+<div id="emp_login" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        
+      </div>
+      <div class="modal-body">
+        <form id="emp_login_form" name="emp_login_form">
+        <h4 class="modal-title">Emplyee Login</h4>
+        {{ csrf_field() }}
+        <label>Empployee Id</label>
+        <input type="text" name="emp_id" class="newsletter-name" required />
+        <br>
+        <label>Password</label>
+        <input type="password" name="password" class="newsletter-name" required />
+        
+        <a class="btn btn-primary btn-outline with-arrow" id="emp_login_button">Login</a>
+        </form>
+        <div class="error" style="display: none;" id="emp_msg" >Thanks, we will reach you soon.</div>
+        <div class="error" style="display: none;" id="emp_msg_err">Ooops! something went wrong.</div>
+      </div>
+    
+    </div>
+
+  </div>
+</div>

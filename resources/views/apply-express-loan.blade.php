@@ -42,10 +42,14 @@
 			<div id ="otp_div">
             <form class="express_form" id="express_form" method="POST" >
             {{ csrf_field() }}
-			<div class="col-md-12 offset5 bg-white box-shadow">
+			
+		
+		
+		
+		<div class="col-md-12 offset5 bg-white box-shadow">
 			<div class="pad border-all">
 			<div class="offset5">
-<h3 class="text-center hed-three"><b>Enter Amount</b></h3>
+<h3 class="text-center hed-three">Enter Amount</h3>
             <div class="col-md-12 mrg-btm">
 			<input type="text" name="amount" id="amount" class="center-dv input-typ" placeholder="5,00,000" maxlength="10"
 			onkeypress="return isNumberKey(event)"  required/>
@@ -53,30 +57,29 @@
 			
 			
 		    <div class="col-md-12">
-			<h3 class="text-center mrg-btm hed-three"><b>Business Type</b></h3>
-			
-			 <div class="col-md-12"><div class="offset5"><a class="btn btn-primary bt-wt"><input type="radio" name="employment" value="Self_Employed_Professionsl" checked/> Self Employed Professionsl (SEP)</a>
-             <a class="btn btn-primary bt-wt"><input type="radio" name="employment" value="Self_Employed_Non_Professional " /> Self Employed Non-Professionsl (SENP)</a>
+			<h3 class="text-center mrg-btm hed-three">Business Type</h3>
+			<div class="col-md-12"><div class="offset5"><a class="btn bt-wt"><input type="radio" name="employment" id="employment" value="Self_Employed_Professionsl" checked/> Self Employed Professionsl (SEP)</a>
+             <a class="btn bt-wt"><input type="radio" name="employment" id="employment" value="Self_Employed_Non_Professional " /> Self Employed Non-Professionsl (SENP)</a>
 			</div>
 		    </div>
-			<div class="col-md-12 mrg-btm-b">
-			<h3 class="text-center hed-three"><b>Tenure</b></h3>
-			
 			<div class="col-md-12">
-			<div class="tenure border">
-			<span class="pull-left">0</span>
-			<input id="tenure1" name="tenure1" type="range" min="0" max="30"  value ="0" class="slider-price" style="color:red;"/>
-			<span class="pull-right">30</span>
+			
+			<div class="col-md-2"></div>
+			<div class="col-md-8">
+			<div class="tenure border offset5">
+			<h3 class="text-center hed-three">Tenure</h3>
+			
+			<div  id="unranged-value" style="width:100%; height:10px;"></div>
 			</div>
+			
+			
 			</div>
-		  <div class="col-md-12">
-		   <div class="offset5">
+		  
+		  <div class="col-md-10 mrg-btm-b">
 		   <input type="tel" name="mob_no" id="mob_no" class="center-dv input-typ" placeholder="98XXX XXXXX"  maxlength="10" pattern="[789][0-9]{9}" onkeypress="return isNumberKey(event)" required />
-		   
-		   <a class="btn btn-success" type="submit" id="express_loan_send_otp"  >Get OTP</a>
-		    <div id="mobile_value" style="display: none;color: red;">Phone number should be of 10 digits.</div>
-
-		   </div>
+		   <span id="mobile_value" style="display: none;color: red;">Phone number should be of 10 digits.</span>
+		   <button class="get-otp" type="submit" id="express_loan_send_otp">Get OTP</button>
+		  
 		  </div>
 			</div>
 			
@@ -108,7 +111,7 @@
 	
 	</div>
 	<br>
-	<div class="animate-box" id ="generic"  >
+	<div class="animate-box" id ="generic" style="display: none;" >
 	<form name="generic_form" id="generic_form" method="POST">
 	{{ csrf_field() }}
 	<div class="row">
@@ -118,6 +121,9 @@
 		<h3 class="text-uppercase exp-hed">Generic Information</h3>
 			
 			 <section class="content">
+			
+				<input class="input__field input__field--nao" type="hidden" id="business" name="business"  value=""  required   />
+					
 				
 				<span class="input_exp input--nao">
 					<input class="input__field input__field--nao" type="text" id="loanamount" name="loanamount"  value="" onkeypress="return isNumberKey(event)" required   />
@@ -163,10 +169,14 @@
 					</svg>
 				</span>
 				<span class="input_exp input--nao">
-					<input class="input__field input__field--nao" type="text" id="nature_of_business" name="nature_of_business" required />
-					<label class="input__label input__label--nao" for="nature_of_business">
-						<span class="input__label-content input__label-content--nao">Nature of Business</span>
-					</label>
+					<select class="input__field input__field--nao fnt-clr" id="nature_of_business" name="nature_of_business" required>
+					<option>Nature Of Business</option>
+					<option value="Manufacturing">Manufacturing</option>
+					<option value="Traders">Traders</option>
+					<option value="Retailer">Retailer</option>
+					<option value="Services">Services</option>
+					<option value="Others">Others</option>
+					</select>
 					<svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
 						<path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
 					</svg>
@@ -177,18 +187,48 @@
 					
 					<select class="input__field input__field--nao fnt-clr" id="type_of_industry" name="type_of_industry" required>
 					<option>Type of Industry</option>
-					<option>Option1</option>
-					<option>Option2</option>
-					<option>Option3</option>
-					<option>Option4</option>
-					<option>Option5</option>
-					<option>Option6</option>
-					<option>Option7</option>
-					<option>Option8</option>
+					<option value="Agriculture">Agriculture</option>Agriculture
+ 
+					<option value="Auto_Components">Auto Components</option>
+					<option value="Automobiles">Automobiles</option>
+					<option value="Aviation">Aviation</option>
+					<option value="Banking">Banking</option>
+					<option value="Biotechnology">Biotechnology</option>
+					<option value="Cement">Cement</option>
+					<option value="Consumer_Markets">Consumer Markets</option>
+					<option value="Education_And_Training">Education And Training</option>
+					<option value="Engineering">Engineering</option>
+					<option value="Financial_Services">Financial Services</option>
+					<option value="Food_Industry">Food Industry</option>
+					<option value=" Gems_And_Jewellery"> Gems And Jewellery</option>
+					<option value="Healthcare">Healthcare</option>
+					<option value="Infrastructure">Infrastructure</option>
+					<option value="Insurance">Insurance</option>
+					<option value="IT_&_ITeS">IT & ITeS</option>
+					<option value="Manufacturing">Manufacturing</option>
+					<option value="Marketing_And_Strategy">Marketing And Strategy</option>
+					<option value="Media_And_Entertainment">Media And Entertainment</option>
+					<option value=" Oil_And_Gas"> Oil And Gas</option>
+					<option value="Pharmaceuticals">Pharmaceuticals</option>
+					<option value="Ports">Ports</option>
+					<option value="Power">Power</option>
+					<option value="Railways">Railways</option>
+					<option value=" Real_Estate"> Real Estate</option>
+					<option value="Research_And_Development">Research And Development</option>
+					<option value="Retail">Retail</option>
+					<option value="Roads">Roads</option>
+					<option value="Rural_Market"> Rural Market</option>
+
+					<option value="Science_And_Technology">Science_And_Technology</option>
+					<option value="Semiconductor">Semiconductor</option>
+					<option value="Services">Services</option>
+					<option value=" Steel"> Steel</option>
+					<option value="Telecommunications">Telecommunications</option>
+					<option value="Tourism_And_Hospitality">Tourism And Hospitality</option>
+					<option value="Textiles">Textiles</option>
+					<option value="Urban Market">Urban Market</option>
 					</select>
-					<label class="input__label input__label--nao" for="input-3">
-						<span class="input__label-content input__label-content--nao hid-txt">Type of Industry</span>
-					</label>
+
 					<svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
 						<path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
 					</svg>
@@ -359,14 +399,16 @@
 					</svg>
 				</span>
 				<span class="input_exp input--nao">
-					<input class="input__field input__field--nao" type="text" id="pan_no" name="pan_no" minlength="10" maxlength="10" pattern="[A-Za-z]{5}\d{4}[A-Za-z]{1}"  onkeypress="return isNumberKey(event)" required />
+					<input class="input__field input__field--nao" type="text" id="pan_no" name="pan_no" oninput="pan_card('pan_no')" maxlength="10" minlength="10"  required />
 					<label class="input__label input__label--nao" for="pan_no">
 						<span class="input__label-content input__label-content--nao">Pan No.</span>
 					</label>
 					<svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
 						<path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
 					</svg>
+					<div id="pan_number" style="display:none;color: red;">Oops.Please Enter Valid Pan Number.!!</div>
 				</span>
+
 				<span class="input_exp input--nao">
 					<input class="input__field input__field--nao" type="tel" id="mobile_no" name="mobile_no" maxlength="10" pattern="[789][0-9]{9}" onkeypress="return isNumberKey(event)" value="" required  />
 					<label class="input__label input__label--nao" for="mobile_no">
@@ -386,13 +428,14 @@
 					</svg>
 				</span>
 				<span class="input_exp input--nao">
-					<input class="input__field input__field--nao" type="text" id="aadhar_card" name="aadhar_card" maxlength="12" onkeypress="return isNumberKey(event)" required pattern="^\d{4}\s\d{4}\s\d{4}$" />
+					<input class="input__field input__field--nao" type="text" id="aadhar_card" name="aadhar_card" minlength="14" maxlength="14" oninput="aadhar('aadhar_card')" required  />
 					<label class="input__label input__label--nao" for="aadhar_card">
 						<span class="input__label-content input__label-content--nao">UID No. (Aadhar Card )</span>
 					</label>
 					<svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
 						<path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
 					</svg>
+					<div id="aadhar_number" style="display:none;color: red;">Oops.Please Enter Valid Aadhar Number.!!</div>
 				</span>
 				<span class="input_exp input--nao">
 					<input class="input__field input__field--nao" type="text" id="address_line1" name="address_line1" required/>
@@ -479,7 +522,7 @@
 					</svg>
 				</span>
 				<span class="input_exp input--nao">
-					<input class="input__field input__field--nao" type="text" id="bussiness_pan" name="bussiness_pan" onkeypress="return isNumberKey(event)" maxlength="10" required />
+					<input class="input__field input__field--nao" type="text" id="bussiness_pan" name="bussiness_pan" maxlength="10" pattern="[A-Za-z]{5}\d{4}[A-Za-z]{1}" required />
 					<label class="input__label input__label--nao" for="bussiness_pan">
 						<span class="input__label-content input__label-content--nao">Business PAN </span>
 					</label>
@@ -661,13 +704,14 @@
 					</svg>
 				</span>
 				<span class="input_exp input--nao">
-					<input class="input__field input__field--nao" type="text" id="pan_no_co_app" name="pan_no_co_app" minlength="10" maxlength="10" pattern="[A-Za-z]{5}\d{4}[A-Za-z]{1}"  onkeypress="return isNumberKey(event)" required/>
+					<input class="input__field input__field--nao" type="text" id="pan_no_co_app" name="pan_no_co_app" minlength="10" maxlength="10" oninput="pan_card('pan_no_co_app')"    required/>
 					<label class="input__label input__label--nao" for="pan_no_co_app">
 						<span class="input__label-content input__label-content--nao">PAN</span>
 					</label>
 					<svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
 						<path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
 					</svg>
+					<div id="pan_number_co_app" style="display:none;color: red;">Oops.Please Enter Valid Pan Number.!!</div>
 				</span>
 				<span class="input_exp input--nao">
 					<input class="input__field input__field--nao" type="tel" id="mob_co_app" name="mob_co_app" maxlength="10" pattern="[789][0-9]{9}" onkeypress="return isNumberKey(event)" required />
@@ -688,13 +732,15 @@
 					</svg>
 				</span>
 				<span class="input_exp input--nao">
-					<input class="input__field input__field--nao" type="text" id="aadhar_card_co_app" name="aadhar_card_co_app" maxlength="12" onkeypress="return isNumberKey(event)" required pattern="^\d{4}\s\d{4}\s\d{4}$" />
+					<input class="input__field input__field--nao" type="text" id="aadhar_card_co_app" name="aadhar_card_co_app" oninput="aadhar('aadhar_card_co_app')" minlength="14" maxlength="14" required  />
 					<label class="input__label input__label--nao" for="aadhar_card_co_app">
 						<span class="input__label-content input__label-content--nao">UID No. (Aadhar Card )</span>
 					</label>
 					<svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
 						<path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
 					</svg>
+					<div id="aadhar_number_co_app" style="display:none;color: red;">Oops.Please Enter Valid Aadhar Number.!!</div>
+					
 				</span>
 				<span class="input_exp input--nao">
 					<input class="input__field input__field--nao" type="text" id="address1_co_app" name="address1_co_app" required />
@@ -722,7 +768,7 @@
 			
 			</div>
 			<div class="col-md-12">
-			   <div class="jumbotron alert alert-success">
+			   <div class="jumbotron alert alert-success" style="display: none">
 			   <strong class="text-center"><h3><i class="icon-checkmark"></i> Your Loan is in Process. We will get back to you shortly</h3></strong>
 			   </div>
 			</div>
@@ -733,6 +779,42 @@
 	</div>
 @include('layout.footer')
 @include('layout.script')
+<div class="modal fade" tabindex="-1" role="dialog" id="process">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title"></h4>
+      </div>
+      <div class="modal-body">
+        <h4><p>Your Loan is in Process. We will get back to you shortly</b>.</p></h4>
+        <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        
+      	</div>
+    	</div>
+  </div>
+</div>
+</div>
+<div class="modal fade" tabindex="-1" role="dialog" id="sorry">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title"></h4>
+      </div>
+      <div class="modal-body">
+        <h4><p>Ooops. Something went wrong.</b>.</p></h4>
+        
+      </div>
+      
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
 <script>
 			(function() {
 				
@@ -786,6 +868,7 @@
     });
 </script>
 <script type="text/javascript">
+
 	
 
  $(document).ready(function(){
@@ -831,12 +914,12 @@
 	
 
  $(document).ready(function(){
-    src = "{{ route('searchstateajax') }}";
+	  
     $(".search_state_name").autocomplete({
       source: function(request, response) {
         
         $.ajax({
-          url: src,
+          url: "{{ route('searchstateajax') }}",
           dataType: "json",
           data: {
             term : request.term
@@ -879,21 +962,20 @@
       	
       }else{
         //var s=$('#'+form).serialize();
+        var emp = $("#employment").val();
+         $('#business').val(emp);
+         // console.log(emp);
+
         var amount = $("#amount").val();
          $('#loanamount').val(amount);
 
-         var tenure1 = $("#tenure1").val();
-         $('#tenure').val(tenure1);
+         var slidr = $("#unranged-value").text();
+         $('#tenure').val(slidr);
+         // console.log(slidr);
 
          var mob_no = $("#mob_no").val();
          $('#mobile_no').val(mob_no);
 
-
-        
-
-
-       
-       
         if(($('#mob_no').val().length)<10){
               $('#mobile_value').show();
               return false;
@@ -947,11 +1029,11 @@
      success: function(data){
      	var data_1=data['data'];
        if(data_1=="true"){
-       	console.log("yes");
+       	// console.log("yes");
         $('#generic').show();
         $('#otp_div').hide();
       }else{
-      	console.log("no");
+      	// console.log("no");
         $('#wrong_otp_value').show();
         $('#waiting_div_otp').hide();
       }
@@ -968,13 +1050,13 @@
 <script type="text/javascript">
 	
 	$("#express_loan_submit").click(function(event){
-		 alert('ok');
+		// alert('GJHG');
     event.preventDefault();
       $form=$('#generic_form');
       if(! $form.valid()){
       }else{
         //var s=$('#'+form).serialize();
-        alert('ok');
+        //alert('HGGHF');
 
    
         $.ajax({  
@@ -982,13 +1064,12 @@
          url: "{{URL::to('aditya-express-loan')}}",
          data : $('#generic_form').serialize(),
          success: function(msg){
-         //console.log(msg);
-          if(msg){
-             console.log(msg);
-             // window.location.href ="{{URL::to('thank-you')}}";
-            
+         // console.log(msg.data);
+          if(msg.data==true){          
+              $('#process').modal('show');                        
           }else{
-            window.location.href ="{{URL::to('went-wrong')}}";
+             $('#sorry').modal('show');  
+           
           } 
           
 
@@ -1000,5 +1081,140 @@
 
 </script>
 
+
+<script>
+    var s0 = $("#unranged").freshslider({
+        step: 10,
+		scale: [1,,100],
+        unit:'%',
+        enabled:false
+		
+    });
+
+    var s1 = $("#ranged").freshslider({
+        range:true,
+        step:0.1,
+        text:false,
+        onchange:function(low, high){
+            // console.log(low, high);
+        }
+    });
+
+    var s2 = $("#unranged-value").freshslider({
+        step: 1,
+        value:10
+    });
+
+    var s3 = $("#ranged-value").freshslider({
+        range: true,
+        step:1,
+        value:[4, 60],
+        onchange:function(low, high){
+            // console.log(low, high);
+        }
+    });
+</script>
+
+<script type="text/javascript">
+	function pan_card(obj,val){
+		if(obj=='pan_no' ){
+                   var str =$('#pan_no').val();
+                   var pancardPattern = /^([a-zA-Z]{5})(\d{4})([a-zA-Z]{1})$/;
+                   var res = str.match(pancardPattern);
+                   if(res){
+                     // console.log('Pancard is valid one.!!');
+                     	$('#pan_number').hide();
+
+                  }else{
+                  	// console.log('Oops.Please Enter Valid Pan Number.!!');
+                  	$('#pan_number').show();
+
+                  	return false;
+                  }
+                  
+	}
+}
+</script>
+
+<script type="text/javascript">
+	function pan_card(obj,val){
+		// console.log(obj);
+		if(obj=='pan_no' ){
+                   var str =$('#pan_no').val();
+                   var pancardPattern = /^([a-zA-Z]{5})(\d{4})([a-zA-Z]{1})$/;
+                   var res = str.match(pancardPattern);
+                   if(res){
+                     // console.log('Pancard is valid one.!!');
+                     	$('#pan_number').hide();
+
+                  }else{
+                  	// console.log('Oops.Please Enter Valid Pan Number.!!');
+                  	$('#pan_number').show();
+
+                  	return false;
+                  }
+                  
+	}
+
+	if(obj=='pan_no_co_app' ){
+                   var str =$('#pan_no_co_app').val();
+                   var pancardPattern = /^([a-zA-Z]{5})(\d{4})([a-zA-Z]{1})$/;
+                   var res = str.match(pancardPattern);
+                   if(res){
+                     // console.log('Pancard is valid one.!!');
+                     	$('#pan_number_co_app').hide();
+
+                  }else{
+                  	// console.log('Oops.Please Enter Valid Pan Number.!!');
+                  	$('#pan_number_co_app').show();
+
+                  	return false;
+                  }
+                  
+	}
+
+}
+</script>
+
+<!-- Aadhar card Validation -->
+<script type="text/javascript">
+	function aadhar(obj,val){
+		// console.log(obj);
+		if(obj=='aadhar_card' ){
+                   var str =$('#aadhar_card').val();
+                   var aadharcardPattern = /^\d{4}\s\d{4}\s\d{4}$/;
+                   var res = str.match(aadharcardPattern);
+                   if(res){
+                     // console.log('Aadhar No. is valid one.!!');
+                     	$('#aadhar_number').hide();
+
+                  }else{
+                  	// console.log('Oops.Please Enter Valid Aadhar No..!!');
+                  	$('#aadhar_number').show();
+
+                  	return false;
+                  }
+                  
+	}
+
+	if(obj=='aadhar_card_co_app' ){
+                   var str =$('#aadhar_card_co_app').val();
+                   var aadharcardPattern = /^\d{4}\s\d{4}\s\d{4}$/;
+                   var res = str.match(aadharcardPattern);
+                   if(res){
+                      // console.log('Aadhar No. is valid one.!!');
+                     	$('#aadhar_number_co_app').hide();
+
+                  }else{
+                  	// console.log('Oops.Please Enter Valid Aadhar No..!!');
+                  	$('#aadhar_number_co_app').show();
+
+                  	return false;
+                  }
+                  
+	}
+
+}
+</script>
 
 

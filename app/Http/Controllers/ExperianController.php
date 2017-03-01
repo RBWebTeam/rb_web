@@ -31,8 +31,9 @@ class ExperianController extends CallApiController
           //if already login then remove contact from old seessions
           Session::forget('contact');
           }
-
-      if($contact || $login || $user ){
+        $verified=Session::get('otp_verified_credit_score');
+       // print_r($contact."  --".$verified);exit();
+      if(($contact!=Null &&$verified!=Null) || $login || $user ){
           return view('credit-report')->with($data)->with('keywords',$keywords);
         }else{
            return view('credit-report-otp');
@@ -46,14 +47,15 @@ class ExperianController extends CallApiController
             //get the voucher for api 
             $voucher=DB::table('experian_vouchers')
             ->select('voucher')
-            ->where('status',0)
-            ->orderBy('last_used', 'ASC')
+            ->where('status',0)        
             ->limit(1)
             ->get();
+
             //adding constant values in post data as requested for api
             $post_data['voucherCode']=$voucher[0]->voucher;
             $post_data['clientName']="RUPEEBOSS";
             $post_data['hitId']="";
+            //print_r($post_data);exit();
             //unsetting terms and condition as no need to save in DB
              unset($post_data['terms']);
              unset($post_data['authorize']);
@@ -66,6 +68,8 @@ class ExperianController extends CallApiController
             Session::put('contact_cScore',$req['mobileNo']);
             $today=date("Y-m-d H:i:s");
             $data=json_encode($post_data);
+            //update voucher on response
+                $update_voucher=DB::select(" call usp_update_experian_voucher ('".$voucher[0]->voucher."',1)");
             //checking if already has a credit record in DB
              $quote_data=DB::select("SELECT credit_score,html_report FROM experian_response  WHERE (pan='".$req['panNo']."' and ( contact='".$req['mobileNo']."' or email ='".$req['email']."')and expiry_date >= '".$today."');");
 
@@ -86,12 +90,11 @@ class ExperianController extends CallApiController
                 return view('went-wrong');
               }else{
               //Get desired reponse no error occured then
-              //update voucher on response
-                $update_voucher=DB::select(" call usp_update_experian_voucher ('".$voucher."',1)");
+              
                 $x=str_replace('"','',$http_result);
                 $new_data=explode('~', $x);
                 if($new_data[0] || $new_data[0]!=0 ){
-                  $saved_req=$this->update_req_with_hitId($new_data,$id);
+                  $saved_req=$this->update_req_with_hitId($new_data,$id,$voucher[0]->voucher);
                 }else{
                   $this->saved_failed_log("Null Response");
                   return view('no-record-found');
@@ -176,10 +179,10 @@ class ExperianController extends CallApiController
      return view('stored-score')->with('data',$data)->with('html',$html);
   }   
     
-  public function update_req_with_hitId($parse,$id){
+  public function update_req_with_hitId($parse,$id,$voucher){
     $save=DB::table('experian_request')
         ->where('id',$id)
-        ->update(['stage1hitid' => $parse[0],'stage2hitid' => $parse[1],'stage2sessionid' => $parse[3]]);  
+        ->update(['stage1hitid' => $parse[0],'stage2hitid' => $parse[1],'stage2sessionid' => $parse[3],'voucherCode' =>$voucher]);  
   }   
 
   public function saved_failed_log($response){
@@ -248,12 +251,14 @@ class ExperianController extends CallApiController
             ->where('id', $id)
             ->where('otp',$req['verify'])
             ->update(['status' => 'verified']);
-           
+          
         if($query){
+          Session::put('otp_verified_credit_score',1);
           return Response::json(array(
                             'data' => true,
                         ));
         }else{
+          Session::put('otp_verified_credit_score',Null);
          return Response::json(array(
                             'data' => false,
                         ));

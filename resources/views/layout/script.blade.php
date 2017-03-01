@@ -1788,7 +1788,7 @@
           <form id="contactus_otp_form" class="form-horizontal">
            {{ csrf_field() }}
            <input type="text" class="form-control" name="otp" id="otp" minlength="6" maxlength="6" required onkeypress="return fnAllowNumeric(event)">
-           <span id='otp_err' class= 'displaynonemsg' >oops!! OTP is wrong</span><br>
+           <span id='otp_errs' class= 'displaynonemsg' >oops!! OTP is wrong</span><br>
            <button class="btn btn-default"  class="form-control" id="contactus_verify_otp" >Verify</button><br>
          </form>
        </div>
@@ -1839,7 +1839,10 @@ $("#contactus_verify_otp").click(function(event){
                if(data_1==true){
              $("#contact_id").modal('hide');
                  refreshfn();
-                  
+               }else{
+                          $('#otp_errs').show();
+                          
+ 
                }
               
                     }  

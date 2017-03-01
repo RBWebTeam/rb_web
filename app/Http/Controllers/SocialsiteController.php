@@ -285,7 +285,9 @@ function contactOTP(Request $req){
                             'data' => true,
                         ));
         }else{
-          echo "fffffffffff";
+           return Response::json(array(
+                                'data' => false,
+                            ));
         }
 }
 

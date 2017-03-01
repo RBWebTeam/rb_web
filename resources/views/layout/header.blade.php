@@ -13,7 +13,7 @@
 	<!-- <link rel="stylesheet" href="{{URL::to('fonts/Raleway.css')}}" type="text/css"> -->
 	<!-- Animate.css -->
 
-	<link href="{{URL::to('css/mysite.css')}}" rel="stylesheet" type="text/css" />
+	<link  rel="stylesheet" type="text/css" href="{{URL::to('css/mysite.css')}}"/>
 
 <!-- 	 <link href="{{URL::to('css/style.css')}}" rel="stylesheet" type="text/css" />  -->
 

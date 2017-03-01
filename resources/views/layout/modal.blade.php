@@ -510,3 +510,44 @@ Rupeeboss Financial Services Private Limited shall access your Credit Informatio
       $(".iframeloading").show();  
     </script>
      -->
+
+<!-- emp_login modal -->
+<!-- 
+.modal-header {background:#ed1c24;color:#fff;}
+.modal-header h4 {color:#fff;font-weight:bold;}
+.modal{margin-top:100px;}
+.modal-content {border-radius:0px;}
+
+
+<a href="#" data-toggle="modal" data-target="#myModal6">Emplyee Login</a>
+ -->
+
+<div id="emp_login" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        
+      </div>
+      <div class="modal-body">
+        <form id="emp_login_form" name="emp_login_form">
+        <h4 class="modal-title">Emplyee Login</h4>
+        {{ csrf_field() }}
+        <label>Empployee Id</label>
+        <input type="text" name="username" class="newsletter-name" required />
+        <br>
+        <label>Password</label>
+        <input type="password" name="password" class="newsletter-name" required />
+        
+        <a class="btn btn-primary btn-outline with-arrow" id="emp_login_button">Login</a>
+        </form>
+        <div class="error" style="display: none;" id="emp_msg" >Thanks, we will reach you soon.</div>
+        <div class="error" style="display: none;" id="emp_msg_err">Ooops! something went wrong.</div>
+      </div>
+    
+    </div>
+
+  </div>
+</div>

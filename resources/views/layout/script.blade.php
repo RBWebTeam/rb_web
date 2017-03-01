@@ -2063,4 +2063,40 @@ function SetSession_pop(cookieName,cookieValue){
     }
 </script>
   <!-- login end-->
+  <!-- emp login start -->
+  <script type="text/javascript">
+  $(document).ready(function(){
+      $("#emp_login_button").click(function(event){
+        //alert('fdfg');
+           // event.preventDefault();
+           
+         // $form=$('#emp_login_form');
+          //console.log($form);
+          if(! $('#emp_login_form').valid()){
+            return false;
+          }else{
+          $(".iframeloading").show();
+          $.ajax({  
+             type: "POST",  
+             url: "{{URL::to('emp-login')}}",
+             data : $('#emp_login_form').serialize(),
+             success: function(msg){
+                $(".iframeloading").hide();  
+              if(msg=='true'){
+                 $('#emp_login_form').hide();
+                  $('#emp_msg').show();
+              }else{
+                  $form.hide();
+                  $('#emp_msg_err').show(); 
+                }
+                      //console.log(msg);
+                    }  
+                  }); 
+          }
+
+
+        });
+    });
+  </script>
+   <!-- emp login end -->
   @include('layout.modal')

@@ -186,7 +186,9 @@ Route::get('searchajaxqu',array('as'=>'searchajaxqu','uses'=>'Login_and_Reg_Cont
 /**
      |Durga Pratap
      |End Community forum
-      ...........................................................................................................
+      ..............................................................................................
 **/
 
+// emp_login routes
 
+Route::post('emp-login','LoginController@emp_login');

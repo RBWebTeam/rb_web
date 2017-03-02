@@ -3,16 +3,12 @@
   <div class="express-lon-ban"><img src="images/express-loan-image.jpg" alt="express_loan_pic" class="img-responsive"/></div>
   <br>
 		<div class="container animate-box">
-			<div class="row white-bg">
+			<div class="row white-bg box-shadow">
 		
 			<div id ="otp_div">
             <form class="express_form" id="express_form" method="POST" >
             {{ csrf_field() }}
 			
-		
-		
-
-		
 			<div class="offset5">
             <div class="col-md-12">
 			<input type="text" name="amount" id="amount" class="center-dv input-typ" placeholder="5,00,000" maxlength="10"
@@ -21,8 +17,8 @@
 			<hr>
 			
 		    <div class="col-md-12">
-			<div class="col-md-12"><div class="offset5"><a class="btn border"><input type="radio" name="employment" id="employment" value="Self_Employed_Professionsl" checked/> Self Employed Professionsl (SEP)</a>
-             <a class="btn border"><input type="radio" name="employment" id="employment" value="Self_Employed_Non_Professional " /> Self Employed Non-Professionsl (SENP)</a>
+			<div class="col-md-12"><div class="offset5"><a class="btn"><input type="radio" name="employment" id="employment" value="Self_Employed_Professionsl" checked/> Self Employed Professionsl (SEP)</a>
+             <a class="btn"><input type="radio" name="employment" id="employment" value="Self_Employed_Non_Professional " /> Self Employed Non-Professionsl (SENP)</a>
 			</div>
 		    </div>
 			
@@ -39,7 +35,7 @@
 		   <input type="tel" name="mob_no" id="mob_no" class="center-dv input-typ" placeholder="98XXX XXXXX"  maxlength="10" pattern="[789][0-9]{9}" onkeypress="return isNumberKey(event)" required />
 		   <span id="mobile_value" style="display: none;color: red;">Phone number should be of 10 digits.</span>
 		   <button class="get-otp" type="submit" id="express_loan_send_otp">Get OTP</button>
-		  
+		 
 		  </div>
 			</div>
 			

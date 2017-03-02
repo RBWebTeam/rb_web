@@ -1409,7 +1409,7 @@ input[placeholder], [placeholder], *[placeholder] {color: #1f386e !important;}
 .tbl select option {text-align:center;}
 .img-c img {margin: 0 auto;}
 .comp-btn {margin-top:20px;}
-.white-bg {background:#fff;}
+.white-bg {background:#fff; padding-bottom:15px;}
 .table-responsive {margin-bottom:20px;}
 .nl-form-errors {position: relative;background: #15a9fa;-webkit-border-radius: 7px;-moz-border-radius: 7px;
 border-radius: 7px;padding: 1em;margin-top: 1em;}
@@ -3115,10 +3115,11 @@ body {background:#eee;}
 .input-typ {padding: 10px; 
 border:2px solid #eee;
 background: #f1f1f1;
-width:35%;
+width:40%;
 padding-left: 20px;
 margin: 10px 0px;
 font-size:20px;margin-top: 10px;
+
 }
 .get-otp {
     background: #4cae4c;

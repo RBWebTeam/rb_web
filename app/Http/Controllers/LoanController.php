@@ -171,8 +171,8 @@ class LoanController extends CallApiController
     }
 
     public function express_send_otp(Request $req){
-      // $otp = mt_rand(100000, 999999);
-      $otp=123456;
+      $otp = mt_rand(100000, 999999);
+      // $otp=123456;
       Session::put('contact_exp', $req['mob_no']);
      $query=DB::table('express_loan_request')
 

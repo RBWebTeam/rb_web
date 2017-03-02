@@ -125,7 +125,12 @@
 										
 										</div class="col-md-12">
 										&nbsp;&nbsp;&nbsp;&nbsp;<button class="btn btn-primary btn-outline with-arrow animate-box fadeInUp animated credit-submit" >Confirm & Continue<i class="icon-arrow-right"></i>
+
+
 									</button>
+									<div class="iframeloading" style= "display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
+                <img src="{{URL::to('images/ajaxloader.gif')}}" alt="loading" style="top: 50%; position: relative; left: 50%;"  />
+               </div>
 									<p><b>All <mark style="color:red">*</mark>fields are mandatory.</b></p>
 								</div>
 							</form>
@@ -185,13 +190,16 @@
       }else{
         //var s=$('#'+form).serialize();
 
-   
+        $(".iframeloading").show();
+        $(".credit-submit").hide(); 
         $.ajax({  
          type: "POST",  
          url: "{{URL::to('credit-submit')}}",
          data : $('#'+form).serialize(),
          dataType: 'json',
          success: function(msg){
+         $(".iframeloading").hide();  
+        
          //console.log(msg);
           if(msg==1){
 
@@ -323,12 +331,12 @@
                    if(res){
                      // console.log('Pancard is valid one.!!');
                      	$('#pannumber').hide();
-                     	$('.credit-submit').show();
+                     	// $('.credit-submit').show();
 
                   }else{
                   	// console.log('Oops.Please Enter Valid Pan Number.!!');
                   	$('#pannumber').show();
-                  	$('.credit-submit').hide();
+                  	// $('.credit-submit').hide();
 
                   	return false;
                   }

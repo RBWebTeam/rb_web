@@ -1529,7 +1529,7 @@ input[type=radio]:checked ~ .check {
 }
 .fltr h3 {text-align:center; padding-top:10px; font-weight:bold;}
 .fltr input {padding:5px;margin-right:5px;}
-.modal-body input {background:#eee;}
+.modal-body input {background:#eee;border:1px solid #ddd;}
 .modal-body li {color:#15a9fa;}
 .modal-body li span {padding:0px;  border-radius:50px; vertical-align: middle;padding-right: 5px;}     
 .flexslider li a:hover {text-decoration:none;}
@@ -2050,8 +2050,8 @@ body {background:#eee;}
   .center-dv {margin:0 auto;}
   .mrg-btm {margin-bottom:30px;}
   .mrg-btm-b {margin:30px 0px;display:block;}
-  .input-typ {padding: 7px;background: #f8f8f8;width: 50%;padding-left: 20px;margin: 10px 0px;font-size: 30px;margin-top: 10px;border: 5px solid #f1f1f1;}
-   .mrg {margin:30px;}
+  
+  .mrg {margin:30px;}
   .bt-wt {width:344px;}
   .gray-bg-tbl {background:#fab6b9;}
   .gray-bg-tbl h3 {color:#fff;}
@@ -3112,14 +3112,22 @@ body {background:#eee;}
 }
 .rba_bg {background:url(../images/rba_bg_1.jpg) no-repeat; height:267px;}
 
+.input-typ {padding: 10px; 
+border:2px solid #eee;
+background: #f1f1f1;
+width:35%;
+padding-left: 20px;
+margin: 10px 0px;
+font-size:20px;margin-top: 10px;
+}
 .get-otp {
     background: #4cae4c;
-    border: 5px solid #4cae4c;
+    border: 2px solid #4cae4c;
     color: #fff;
     position: absolute;
     margin-top: 10px;
     font-size: 20px;
-    padding: 15px 35px;
+    padding: 10px 35px;
     text-transform: uppercase;
 }
 .get-otp:hover {background:#44a644;}

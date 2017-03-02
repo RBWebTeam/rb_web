@@ -15,8 +15,8 @@
 
 	<link  rel="stylesheet" type="text/css" href="{{URL::to('css/mysite.css')}}"/>
 
- <!-- <link href="{{URL::to('css/style.css')}}" rel="stylesheet" type="text/css" />  
-  -->
+<link href="{{URL::to('css/style.css')}}" rel="stylesheet" type="text/css" />  
+
 
  <link href="{{URL::to('css/freshslider.min.css')}}" rel="stylesheet" type="text/css" /> 
 
@@ -81,7 +81,7 @@
     </div>
 		<div class="container" id="refreshID">
 			<div class="header-inner">
-				<h1><a href="{{URL::to('/')}}"><img src="{{URL::to('images/logo.png')}}" alt="logo" width="160" height="47" /></a></h1>
+	<a href="{{URL::to('/')}}" class="logo"><img src="{{URL::to('images/logo.png')}}" alt="logo" width="160" height="47" /></a>
 				<nav role="navigation">
 				  <ul>
                      @if(\Request::is('community/*') || \Request::is('community'))

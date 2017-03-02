@@ -196,10 +196,26 @@ public function  change_password(Request $req){
     }else{
       $product = "";
     }
+
+    if(isset($request['loan_eligible'])){
+      $loan_eligible = $request['loan_eligible'];
+    }else{
+      $loan_eligible = "";
+    }
+    if(isset($request['roi_type'])){
+      $roi_type = $request['roi_type'];
+    }else{
+      $roi_type = "";
+    }
+    if(isset($request['processingfee'])){
+      $processing_fee = $request['processingfee'];
+    }else{
+      $processing_fee = "";
+    }
     //print_r($loanamount1);exit();
-    $loan_eligible=$request['loan_eligible'];
-    $roi_type=$request['roi_type'];
-    $processing_fee=$request['processingfee'];
+    // $loan_eligible=$request['loan_eligible'];
+    // $roi_type=$request['roi_type'];
+    // $processing_fee=$request['processingfee'];
 
     $email=Session::get('email');
     $update = DB::table('bank_quote_api_request')->where('ID', $quote)->where('Email', $email)->update(array('bank_id' => $bank,'roi_type'=>$roi_type,'loan_eligible'=>$loan_eligible,'processing_fee'=>$processing_fee));

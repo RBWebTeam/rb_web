@@ -3,7 +3,7 @@
   <div class="express-lon-ban"><img src="images/express-loan-image.jpg" alt="express_loan_pic" class="img-responsive"/></div>
   <br>
 		<div class="container animate-box">
-			<div class="row">
+			<div class="row white-bg">
 		
 			<div id ="otp_div">
             <form class="express_form" id="express_form" method="POST" >
@@ -11,8 +11,7 @@
 			
 		
 		
-		
-		<div class="col-md-12 offset5 bg-white">
+
 		
 			<div class="offset5">
             <div class="col-md-12">
@@ -47,10 +46,7 @@
 			
 			
 			</div>
-			
-			
 		
-		</div>	
 		</form>
 
 		<form name="express_loan_verify_form" id="express_loan_verify_form" style="display:none" method="POST">

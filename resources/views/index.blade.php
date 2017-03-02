@@ -98,10 +98,12 @@
 
 </div>
 
-<div class="container slider-lnk">
-<div class="col-md-4"><h2 class="pad text-center"><a href="#">Rupeeboss Comfy</a></h2></div>
-<div class="col-md-4"><h2 class="pad text-center"><a href="#">Express Loan</a></h2></div>
-<div class="col-md-4"><h2 class="pad text-center"><a href="#">Savings Account</a></h2></div>
+<div class="container-fluid slider-lnk">
+<ul>
+<li><h2 class="pad text-center"><a href="#">Rupeeboss Comfy</a></h2></li>
+<li><h2 class="pad text-center"><a href="#">Express Loan</a></h2></li>
+<li><h2 class="pad text-center"><a href="#">Savings Account</a></h2></li>
+</ul>
 </div>
 
 

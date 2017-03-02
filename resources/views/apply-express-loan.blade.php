@@ -3,94 +3,46 @@
   <div class="express-lon-ban"><img src="images/express-loan-image.jpg" alt="express_loan_pic" class="img-responsive"/></div>
   <br>
 		<div class="container animate-box">
-			<div class="row">
-			
-	<div class="row">
-	  <div class="col-md-12">
-				<div class="col-md-4 animate-box h3-pd-btm fadeInUp animated">
-					<div class="exp-ico1 exp-dv">
-						<div class="desc">
-						 <img src="images/icon/0001.png" alt="icon_0001_pic" class="text-center"/>
-							<h4>All in Minutes</h4>
-							
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4 animate-box h3-pd-btm fadeInUp animated">
-					<div class="exp-ico-2 exp-dv">
-						<img src="images/icon/0002.png" alt="icon_0001_pic"  class="text-center"/>
-						<div class="desc">
-						
-							<h4>Your Information is Secure</h4>
-							
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4 animate-box h3-pd-btm fadeInUp animated">
-					<div class="exp-ico-3 exp-dv">
-						
-						<div class="desc">
-					    <img src="images/icon/0003.png" alt="icon_0003_pic" class="text-center"/>
-							<h4>No Collaterals</h4>
-						
-						</div>
-					</div>
-				</div>
-				</div>
-			</div>
-			<br>
+			<div class="row white-bg box-shadow">
+		
 			<div id ="otp_div">
             <form class="express_form" id="express_form" method="POST" >
             {{ csrf_field() }}
 			
-		
-		
-		
-		<div class="col-md-12 offset5 bg-white box-shadow">
-			<div class="pad border-all">
 			<div class="offset5">
-<h3 class="text-center hed-three">Enter Amount</h3>
-            <div class="col-md-12 mrg-btm">
+            <div class="col-md-12">
 			<input type="text" name="amount" id="amount" class="center-dv input-typ" placeholder="5,00,000" maxlength="10"
 			onkeypress="return isNumberKey(event)"  required/>
 			</div>
-			
+			<hr>
 			
 		    <div class="col-md-12">
-			<h3 class="text-center mrg-btm hed-three">Business Type</h3>
-			<div class="col-md-12"><div class="offset5"><a class="btn bt-wt"><input type="radio" name="employment" id="employment" value="Self_Employed_Professionsl" checked/> Self Employed Professionsl (SEP)</a>
-             <a class="btn bt-wt"><input type="radio" name="employment" id="employment" value="Self_Employed_Non_Professional " /> Self Employed Non-Professionsl (SENP)</a>
+			<div class="col-md-12"><div class="offset5"><a class="btn"><input type="radio" name="employment" id="employment" value="Self_Employed_Professionsl" checked/> Self Employed Professionsl (SEP)</a>
+             <a class="btn"><input type="radio" name="employment" id="employment" value="Self_Employed_Non_Professional " /> Self Employed Non-Professionsl (SENP)</a>
 			</div>
 		    </div>
-			<div class="col-md-12">
 			
 			<div class="col-md-2"></div>
 			<div class="col-md-8">
 			<div class="tenure border offset5">
-			<h3 class="text-center hed-three">Tenure</h3>
-			
 			<div  id="unranged-value" style="width:100%; height:10px;"></div>
 			</div>
 			
 			
 			</div>
-		  
-		  <div class="col-md-10 mrg-btm-b">
+		  <br>
+		  <div class="col-md-10">
 		   <input type="tel" name="mob_no" id="mob_no" class="center-dv input-typ" placeholder="98XXX XXXXX"  maxlength="10" pattern="[789][0-9]{9}" onkeypress="return isNumberKey(event)" required />
 		   <span id="mobile_value" style="display: none;color: red;">Phone number should be of 10 digits.</span>
 		   <button class="get-otp" type="submit" id="express_loan_send_otp">Get OTP</button>
-		  
+		 
 		  </div>
 			</div>
 			
-             </div>	
 			
 			
 			</div>
-			</div>
-			
 		
-		</div>	
 		</form>
 
 		<form name="express_loan_verify_form" id="express_loan_verify_form" style="display:none" method="POST">

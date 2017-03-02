@@ -20,8 +20,8 @@ class LoanController extends CallApiController
    
 
     public function personal_loan(){
-      $keywords='Personal Loans,Personal Loan At Low Interest Rates,Online Personal Loan,Personal Loan In India,Apply Online For Fast Personal Loan Approvals,Compare Personal Loan Interest Rates,Secured Personal Loan, Personal Loan Emi Calculator,Personal Loan Eligibility;';
-    	$data['title']='Personal Loan – Apply online at lowest interest rate on Rupeeboss.com';
+      $keywords='Personal Loan,Compare Personal Loan,Apply Online for Personal Loan,Best Personal Loans in India,Compare Personal Loan,Personal Loan EMI Calculator';
+    	$data['title']='Personal Loan | Apply online at Lowest Interest Rate on Rupeeboss.com';
     	$data['description']='Finance Your Dreams by Comparing Personal Loan interest rates and apply online for quick approval of low EMI. Apply for Best Personal Loan on Rupeeboss.com';
         $data['id']=DB::table('product_master')
                       ->where('Product_Name','=','Personal Loan')
@@ -30,8 +30,8 @@ class LoanController extends CallApiController
     }
     public function home_loan(){
       
-      $keywords='Home Loan,Apply for Home Loan,Housing Loan,Home Loan at Low Rate of Interest,Get Home Loan,Need A Home Loan,Home Loan Eligibility,The Best Home, Compare Home Loan,Home Loan Finance Company,Home Loans In India,Home Loan Charges,Home Loan Credit,Best Housing Loans,Home Loan Emi Calculator';
-    	$data['title']='Home Loan- Apply online at low interest rate On Rupeeboss.com';
+      $keywords='Home Loan,Compare Home Loan,Home Loan at Low Interest Rate,Apply Online for Home Loan,Check Home Loan Eligibility,Best Home Loans in India,Home Loan EMI Calculator';
+    	$data['title']='Home Loan | Apply online at Lowest Interest Rate on Rupeeboss.com';
     	$data['description']='Choose the right Home Loan for You. Check & Compare home loans from thousand of Banks and Apply for best Home Loan With Low Interest rate on Rupeeboss.com';
 
         $data['id']=DB::table('product_master')
@@ -40,9 +40,9 @@ class LoanController extends CallApiController
     	return view('home-loan')->with($data)->with('keywords',$keywords);
     }
     public function lap(){
-      $keywords='Loan Against Property Interest Rates, Property Loan, Procedure Of Loan Against Property, Apply For Property Loan, Mortgage Loan Rate, Getting Loan Against Property, Need Property Loan, Loan Against Property Eligibility Calculator,Features Of Loan Against Property,Comparison Of Loan Against Property,Calculate Emi Of Property Loan,Commercial Property Purchase Loan';
-    	$data['title']='Loan Against Propertry- Apply online at low interest rate On Rupeeboss.com';
-    	$data['description']='Finding Your Dreams. Compare loan against property interest rates,check eligibility and Lowest EMI. Apply for Loan Against Property On Rupeeboss.com';
+      $keywords='Loan against Property,Property Loan,Loan Against Property Interest Rates,Apply for Property Loan,Mortgage Loan Rate,Loan Against Property EMI Calculator';
+    	$data['title']='Loan Against Property | Mortgage Loan Rates | Rupeeboss.com';
+    	$data['description']='Finding Your Dreams. Compare loan against property interest rates, check eligibility and Lowest EMI. Apply for Loan Against Property On Rupeeboss.com';
 
         $data['id']=DB::table('product_master')
                       ->where('Product_Name','=','LAP')
@@ -50,9 +50,9 @@ class LoanController extends CallApiController
     	return view('loan-against-property')->with($data)->with('keywords',$keywords);
     }
     public function sme_loan(){
-      $keywords='Sme Financing, Sme Bank Loan Small And Medium Size Enterprise Loan,Apply For Sme Loan,Sme Loan Scheme,Sme Loan Consultant,Sme Easy Loan,Sme Loan For New Business Or Startup,Working Capital,Unsecured Business Loan,Sme Loan Eligibility ,Small Business Loans, Small Business Loan Calculator ,Commercial Property Purchase ';
-    	$data['title']='SME Loan- Apply online at low interest rate On Rupeeboss.com';
-    	$data['description']='Make your business dreams come true. Find SME Loans Eligiblity criteria, Interest rates, Documentation required and procedure for getting an SME (Small and Medium Enterprises) Loan online on Rupeeboss.com';
+      $keywords='SME Loans,SME Loan Application Form,SME Loan Apply Online,How to get a SME Loan,Business Startup Loan';
+    	$data['title']='Apply For SME Loan At Lowest Interest Rate With Rupeeboss.com';
+    	$data['description']='Get small business (SME) loans. Apply now online and avail end-to-end SME loan or finance by just filling up the formOn Rupeeboss.com';
 
         // $data['id']=DB::table('product_master')
         //               ->where('Product_Name','=','sem')
@@ -61,12 +61,9 @@ class LoanController extends CallApiController
     }
   
     public function car_loan(){
-      $keywords='Car Loans, Auto Loan,Car Loan Low Interest Rates, Best Car Loan Rates, Car Loan Calculator,Car Loan Eligibility,Vehicle Finance, Refinance A Car Loan, Online Car Loans ,Cheap Rate Car Loans ,Car Loans With Bad Credit ,Car Refinance ';
-    	$data['title']='Car Loan- Apply online at low interest rate On Rupeeboss.com';
-    	$data['description']='Buy your dream car by applying for car loan.
-                            Compare Car Loan Interest Rates, Check 
-                            Loan Eligibility & Calculate Car Loan EMI. 
-                            Apply now on Rupeeboss.com';
+      $keywords='Car Loan,Car Loan at Low Interest Rates,Best Car Loan in India,Apply Online for Car Loan,Online Car Loans,Car Loan Eligibility';
+    	$data['title']='Car Loan | Apply online at low interest rate On Rupeeboss.com';
+    	$data['description']='Buy Your Dream Car By Applying For Car Loan. Compare Car Loan Interest Rates, Check Loan Eligibility & Calculate Car Loan EMI. Apply now on Rupeeboss.com';
 
         $data['id']=DB::table('product_master')
                       ->where('Product_Name','=','Car Loan')
@@ -75,9 +72,9 @@ class LoanController extends CallApiController
     	return view('car-loan')->with($data)->with('keywords',$keywords);
     }
     public function business_loan(){
-        $keywords='Loan For Business ,Business Funding, Commercial Loan Rates ,Best Business Loans ,Quick Business Loans, Business Loan Interest Rate, Business Loan Emi Calculator,Business Loan Application,Business Loan Apply Online,Business Loan Details,Apply For Business Loan,Business Loan Lenders';
-        $data['title']='Business Loan- Apply online at low interest rate On Rupeeboss.com';
-        $data['description']='Fulfill your business needs with Quick Processing Business loans. Compare business loan interest rates and check you eligibility. Apply Online on Rupeeboss.com';
+        $keywords='Loan for Business,Best Business Loans in India,Business Loan Interest Rate,Apply Online for Business Loan,Compare Business Loan';
+        $data['title']='Business Loan | Apply online at low interest rateOn Rupeeboss.com';
+        $data['description']='Fulfill your business needs with Quick Processing Business loan. Compare business loan interest rates and check you eligibility. Apply Online on Rupeeboss.com';
 
         $data['id']=DB::table('product_master')
                       ->where('Product_Name','=','Business Loan')
@@ -250,9 +247,11 @@ class LoanController extends CallApiController
 
     public function express_form(Request $req){
          // print_r($req->all());exit();
-      $post_data='{"business_type":"'.$req->employment.'","loanamount":"'.$req->loanamount.'","tenure":"'.$req->tenure.'","min_income":"'.$req->min_income.'","constitution":"'.$req->constitution.'","nature_of_business":"'.$req->nature_of_business.'","type_of_industry":"'.$req->type_of_industry.'","experience":"'.$req->experience.'","residence_type":"'.$req->residence_type.'","office_type_generic":"'.$req->office_type_generic.'","turnover":"'.$req->turnover.'","net_worth":"'.$req->net_worth.'","gross_profit":"'.$req->gross_profit.'","net_profit":"'.$req->net_profit.'","first_name":"'.$req->first_name.'","middle_name":"'.$req->middle_name.'","last_name":"'.$req->last_name.'","gender":"'.$req->gender.'","dob":"'.$req->dob.'","education":"'.$req->education.'","marital_status":"'.$req->marital_status.'","share_holding":"'.$req->share_holding.'","pan_no":"'.$req->pan_no.'","mobile_no":"'.$req->mobile_no.'","residence_landline":"'.$req->residence_landline.'","aadhar_card":"'.$req->aadhar_card.'","address_line1":"'.$req->address_line1.'","address_line2":"'.$req->address_line2.'","address_line3":"'.$req->address_line3.'","city_applicant":"'.$req->city_applicant.'","state_applicant":"'.$req->state_applicant.'","pincode_applicant":"'.$req->pincode_applicant.'","net_profit_applicant":"'.$req->net_profit_applicant.'","company":"'.$req->company.'","bussiness_pan":"'.$req->bussiness_pan.'","date_formation":"'.$req->date_formation.'","ofc_landline":"'.$req->ofc_landline.'","ofc_add1":"'.$req->ofc_add1.'","ofc_add2":"'.$req->ofc_add2.'","ofc_add3":"'.$req->ofc_add3.'","city_applicant_entity":"'.$req->city_applicant_entity.'","state_applicant_entity":"'.$req->state_applicant_entity.'","pincode_applicant_entity":"'.$req->pincode_applicant_entity.'","office_type_applicant_entity":"'.$req->office_type_applicant_entity.'","name_co_app":"'.$req->name_co_app.'","middle_name_co_app":"'.$req->middle_name_co_app.'","last_name_co_app":"'.$req->last_name_co_app.'","gender_co_app":"'.$req->gender_co_app.'","dob_co_app":"'.$req->dob_co_app.'","occupation_co_app":"'.$req->occupation_co_app.'","income_co_app":"'.$req->income_co_app.'","relation":"'.$req->relation.'","pan_no_co_app":"'.$req->pan_no_co_app.'","mob_co_app":"'.$req->mob_co_app.'","residence_co_app":"'.$req->residence_co_app.'","aadhar_card_co_app":"'.$req->aadhar_card_co_app.'","address1_co_app":"'.$req->address1_co_app.'","address2_co_app":"'.$req->address2_co_app.'"}';
+     // $post_data='{"business_type":"'.$req->employment.'","loanamount":"'.$req->loanamount.'","tenure":"'.$req->tenure.'","min_income":"'.$req->min_income.'","constitution":"'.$req->constitution.'","nature_of_business":"'.$req->nature_of_business.'","type_of_industry":"'.$req->type_of_industry.'","experience":"'.$req->experience.'","residence_type":"'.$req->residence_type.'","office_type_generic":"'.$req->office_type_generic.'","turnover":"'.$req->turnover.'","net_worth":"'.$req->net_worth.'","gross_profit":"'.$req->gross_profit.'","net_profit":"'.$req->net_profit.'","first_name":"'.$req->first_name.'","middle_name":"'.$req->middle_name.'","last_name":"'.$req->last_name.'","gender":"'.$req->gender.'","dob":"'.$req->dob.'","education":"'.$req->education.'","marital_status":"'.$req->marital_status.'","share_holding":"'.$req->share_holding.'","pan_no":"'.$req->pan_no.'","mobile_no":"'.$req->mobile_no.'","residence_landline":"'.$req->residence_landline.'","aadhar_card":"'.$req->aadhar_card.'","address_line1":"'.$req->address_line1.'","address_line2":"'.$req->address_line2.'","address_line3":"'.$req->address_line3.'","city_applicant":"'.$req->city_applicant.'","state_applicant":"'.$req->state_applicant.'","pincode_applicant":"'.$req->pincode_applicant.'","net_profit_applicant":"'.$req->net_profit_applicant.'","company":"'.$req->company.'","bussiness_pan":"'.$req->bussiness_pan.'","date_formation":"'.$req->date_formation.'","ofc_landline":"'.$req->ofc_landline.'","ofc_add1":"'.$req->ofc_add1.'","ofc_add2":"'.$req->ofc_add2.'","ofc_add3":"'.$req->ofc_add3.'","city_applicant_entity":"'.$req->city_applicant_entity.'","state_applicant_entity":"'.$req->state_applicant_entity.'","pincode_applicant_entity":"'.$req->pincode_applicant_entity.'","office_type_applicant_entity":"'.$req->office_type_applicant_entity.'","name_co_app":"'.$req->name_co_app.'","middle_name_co_app":"'.$req->middle_name_co_app.'","last_name_co_app":"'.$req->last_name_co_app.'","gender_co_app":"'.$req->gender_co_app.'","dob_co_app":"'.$req->dob_co_app.'","occupation_co_app":"'.$req->occupation_co_app.'","income_co_app":"'.$req->income_co_app.'","relation":"'.$req->relation.'","pan_no_co_app":"'.$req->pan_no_co_app.'","mob_co_app":"'.$req->mob_co_app.'","residence_co_app":"'.$req->residence_co_app.'","aadhar_card_co_app":"'.$req->aadhar_card_co_app.'","address1_co_app":"'.$req->address1_co_app.'","address2_co_app":"'.$req->address2_co_app.'"}';
      // print_r($post_data);exit();  
-    
+    $post_data=json_encode($req->all());
+    // print_r($post_data);exit();
+    //print_r(json_encode($post_data));exit();
       $url = "http://api.rupeeboss.com/BankAPIService.svc/GetAdityaBirlaAPIReq";
       $result=$this->call_json_data_api($url,$post_data);
       $http_result=json_decode($result['http_result']);

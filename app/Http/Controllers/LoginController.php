@@ -12,7 +12,7 @@ use Session;
 use URL;
 use Mail;
 use Illuminate\Support\Facades\Hash;
-class LoginController extends InitialController
+class LoginController extends CallApiController
 {
       public function login(Request $request){
          
@@ -137,7 +137,22 @@ class LoginController extends InitialController
         }
 
     public function emp_login(Request $req){
-      return 'true';
-      print_r($req->all());exit();
+      // print_r($req->all());exit();
+      $url='http://api.rupeeboss.com/BankAPIService.svc/LoginERP';
+      $reqs=json_encode($req->all());
+      $result=$this->call_json_data_api($url,$reqs);
+      $http_result=$result['http_result'];
+      $error=$result['error'];
+      //print_r($http_result);exit();
+      $str1=str_replace('"', '', $http_result);
+      $str=explode('@',$str1);
+      //print_r($str);exit();
+      if($http_result!="0"){
+        $redirect_url='http://erp.rupeeboss.com/home.aspx?UserId='.$str[0].'&UserName='.$str[1].'&EmpCode='.$str[2].'&BrokerId='.$str[3].'';
+       // print_r($redirect_url);exit();
+       return Redirect::to($redirect_url);
+      }else
+      return false;
     }
+
 }

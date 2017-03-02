@@ -159,12 +159,11 @@ class ApiController extends CallApiController
 			unset($data[$i]->pf);
 			unset($data[$i]->pf_type);
 			for($j=0;$j<(sizeof($new_data));$j++){
-				
 				$time=$new_data[$j]->years_to*12;
 				$rate=$new_data[$j]->roi/12/100;
 				//print_r("time->".$time	." amount->".$req['LoanRequired']. " rate->".$rate ." ->");
-				$emi= ceil($req['LoanRequired'] * $rate / (1 - (pow(1/(1 + $rate),$time))));
-				$new_data[$j]->emi=$emi;
+				//$emi= ceil($req['LoanRequired'] * $rate / (1 - (pow(1/(1 + $rate),$time))));
+				$new_data[$j]->emi=$data[$i]->emi;
 			}
 			$data[$i]->fixed_roi=$new_data;
 

@@ -125,7 +125,7 @@
 	   <div class="col-md-4 liza1">
 		<div class="text-center guid nl-form-errors" id='pop1'>Select your type of car!</div>
 
-        <div class="text-center img1"><img src="images/photo.jpg"></div>
+        <div class="text-center img1"><img src="images/photo.jpg" alt="pop_up_pic"></div>
 		</div>
 		<!-- POP Up code end -->
 		</div>

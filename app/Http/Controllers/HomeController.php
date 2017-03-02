@@ -20,9 +20,9 @@ class HomeController extends InitialController
 		//print_r($product_list);
 		//print_r(InitialController::$pro_code);
 		//exit();
-		$keywords='Loans At Low Interest Rate, Best Loans, Loan Interest Rates, Best Credit Cards, Apply For Loan Online, Compare Loan, Check Loan Eligibility, Calculate EMI, Compare Credit Cards';
-		$data['title']='RupeeBoss - Apply for all kind of Loan On Rupeeboss.com';
-		$data['description']='Apply For All Kinds of Loans at Lowest Interest Rate. Use loan & EMI Calculator, Compare Loan & Credit Cards & get quotes instantly as per requirement on Rupeeboss.com ';
+		$keywords='Best Loans,Loans in India,Credit Cards,Loans Online,Apply for Loan online,Compare Loan,Loan at Low Interest Rate';
+		$data['title']='Compare & Apply Loans & Credit Cards In India- Rupeeboss.com';
+		$data['description']='Apply For All Kinds of Loans at Lowest Interest Rate. Use loan & EMI Calculator, Compare Loan & Credit Cards & get quotes instantly as Per requirement on Rupeeboss.com';
 		// $data['city'] = DB::table('city_master')->select('City_Name','state_id','City_Id')->get();
 		// $data['loan'] = DB::table('product_master')->select('Product_Name','Product_Id')->get();
 		//print "<pre>";
@@ -38,23 +38,23 @@ class HomeController extends InitialController
 	}
 
 	public function about_us(){
-		$keywords='Need A Loan,Apply For Loan Online,Compare Loan Rates,Loan Interest Rates,Loan Emi Calculator,Loan Eligibility,Home Loan,Personal Loan,Business Loan,Car Loan,Express Loan,Sme Loan,Loan Against Property,Balance Transfer,Retail Loan'; 
+		$keywords='Compare Loans,Apply for Loan,Credit Cards,Balance Transfer,Car Loan,Personal Loan,Home Loan,Loan against Property,Business Loan,SME Loan'; 
 
-		$data['title']='About Us - RupeeBoss provides all kind of Loans.';
-    	$data['description']='To Save Money, Compare and Pick LoweredInterest Rates and apply for all kinds of home loans, personal loans, car loans, Business loans only on Rupeeboss.com';
+		$data['title']='About Us | RupeeBoss Provide all kinds of Loans & Credit Cards';
+    	$data['description']='To Save Money, Compare and Pick Lowered Interest Rate, Apply for all kinds of Loans, Credit Cards, Transfer your balance instantly on Rupeeboss.com';
 		return view('about-us')->with($data)->with('keywords',$keywords);
 	}
 
 	public function disclaimer(){
-		$keywords='Rupeeboss Disclaimer'; 
-		$data['title']=' Rupeeboss – Disclaimer';
-    	$data['description']='Disclaimer by Rupeeboss to Provide Discrepancy and Transparency with Customers.';
+		$keywords='Rupeeboss Disclaimer,Apply for all Kinds of Loans'; 
+		$data['title']=' Rupeeboss | Disclaimer';
+    	$data['description']='Know the Disclaimer of Rupeeboss, where user can easily compare and apply for all kinds of Loans, Credit Cards. Compare & Switch for balance Transfer on Rupeeboss.com';
 		return view('disclaimer')->with($data)->with('keywords',$keywords);
 
 	}
 	public function privacy_policy(){
 		$keywords='Privacy Policy,Rupeeboss Privacy Policy'; 
-        $data['title']='Rupeeboss – Privacy Policy.';
+        $data['title']='Rupeeboss | Privacy Policy.';
     	$data['description']='Rupeeboss Privacy Policy demonstrates our commitment to your financial privacy. We can help you gain the confidence you need to make important financial decisions.';
 		return view('privacy-policy-page')->with($data)->with('keywords',$keywords);
 
@@ -73,9 +73,9 @@ class HomeController extends InitialController
 	}
 
 	public function credit_card(){
-		$keywords='Credit card apply,Credit card status,Credit card application,Free credit cards,Apply credit card online,Credit Card Offers & Eligibility';
-		$data['title']='Credit Card – Compare & Apply Online on Rupeeboss.com';
-    	$data['description']='Top Credit Card Offers 2017: Compare and apply online for best Offers & Eligibility on Rupeeboss.com ';
+		$keywords='Apply for Credit Card,Credit Card Status,Credit card application,Free credit cards,Apply credit card online,Credit Card Offers & Eligibility';
+		$data['title']='Credit Card | Compare & Apply Online on Rupeeboss.com';
+    	$data['description']='Top Credit Card Offers 2017: Compare and apply online for best Offers & Eligibility on Rupeeboss.com';
 		return view('credit-card')->with($data)->with('keywords',$keywords);
 	}
 
@@ -96,9 +96,9 @@ class HomeController extends InitialController
 	}
 
 	public function RBA_login(){
-		$keywords='Loan Agent,Become A Loan Agent,Be A Loan Agent';
-		$data['title']='Rupeeboss Agent Login';
-    	$data['description']='Become A High-Income Rupeeboss Agent With a Wide Variety Of Loans! Register Now with Rupeeboss.com ';
+		$keywords='Loan Agent,Become a Loan Agent,Be a Loan Agent,RBA Login';
+		$data['title']='RupeeBoss Agent Login';
+    	$data['description']='Become A High-Income Rupeeboss Agent With a Wide Variety Of Loans! Register Now on Rupeeboss.com';
 		return view('RBA-login')->with($data)->with('keywords',$keywords);
 	}
 
@@ -148,13 +148,29 @@ class HomeController extends InitialController
 		}
 		return false;
 
-	}
+	} 
 
 
 
-	public function credit_card_compare(){
+	public function credit_card_compare($id){
+		 // print_r($id);exit();
+		if ($id=="RBL-Card") {
+			$data['title']='RBL Bank Credit Cards  | Apply for Credit Card Online on Rupeeboss.com';
+        $keywords='RBL Titanium Delight Card,RBL Platinum Maxima Card,RBL Platinum Delight Card,RBL Card Offers,Best Credit Cards in India,Credit Card Deals & Offers';
+        $data['description']='RBL Bank Credit Cards with Exclusive Benefits and Offers on Various types of Cards including cards to suit your needs across Titanium and Platinum cards';
+		}
+		elseif ($id=="ICICI-Card") {
+			$data['title']='ICICI Bank Credit Cards  | Apply for Credit Card Online on Rupeeboss.com';
+        $keywords='Credit Cards,Compare Credit Cards,Credit Cards Online,Best Credit Cards in India,Credit Card Deals & Offers,ICICI Credit Card';
+        $data['description']='ICICI Credit Card - Use Rupeeboss Platform to Compare Credit Cards in India and Apply Online On Rupeeboss.com ';
+		}
+		else{
+			$data['title']='HDFC Bank Credit Card | Compare & Apply Online on Rupeeboss.com';
+        $keywords='HDFC Credit Cards,HDFC Bank Credit Card,HDFC Credit Card Online Apply,Best Credit Cards in India';
+        $data['description']='HDFC Bank Credit Card - Use Rupeeboss Platform To Compare Credit Cards in India and Apply Online On Rupeeboss.com ';
+		}
 
-         return view('credit_card_compare');
+         return view('credit_card_compare')->with($data)->with('keywords',$keywords);
 
 	}
 }

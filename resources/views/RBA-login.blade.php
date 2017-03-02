@@ -42,7 +42,7 @@
   </div>
   
   <div class="col-md-6 rba_bg">
-  <img src="images/rba_bg.png" class="img-responsive"/>
+  <img src="images/rba_bg.png" alt="rba_bg_pic" class="img-responsive"/>
   <div class="rba-log xyz">
   <form   name="rba_emp_login" id="rba_emp_login"  method="post"  >
 

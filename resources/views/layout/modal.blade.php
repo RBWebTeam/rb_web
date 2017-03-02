@@ -536,7 +536,7 @@ Rupeeboss Financial Services Private Limited shall access your Credit Informatio
        
         {{ csrf_field() }}
         <label>Empployee Id</label>
-        <input type="text" name="emp_id" class="newsletter-name" required />
+        <input type="text" name="username" class="newsletter-name" required />
         <br>
         <label>Password</label>
         <input type="password" name="password" class="newsletter-name" required />

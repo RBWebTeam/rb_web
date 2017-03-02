@@ -71,13 +71,13 @@
 											<input type="text" class="form-control" placeholder="Road No / Area / Locality" name="ResidenceAddress3" id="ResidenceAddress3">
 										</div>
 										<div class="col-md-4">
-											<input type="text" class="form-control search_city_nm" placeholder="City*" name="City" id="City" required>
+											<input type="text" class="form-control search_citynm" placeholder="City*" name="City" id="City" required>
 										</div>
 										<div class="col-md-4">
 												<input type="text" id="ResidencePincode" name="ResidencePincode" class="form-control" placeholder="Pincode*" onkeypress="return fnAllowNumeric(event)" maxlength="6" required>
 											</div>
 										<div class="col-md-4">
-											<input type="text" class="form-control search_state_nm" placeholder="State*" name="ResidenceState" id="ResidenceState" required>
+											<input type="text" class="form-control search_statenm" placeholder="State*" name="ResidenceState" id="ResidenceState" required>
 										</div>	
 										</div>
 									</div>
@@ -110,7 +110,8 @@
 												<input type="text" class="form-control" placeholder="Passport No*" name="passport"	>
 											</div> -->
 											<div class="col-md-4">
-												<input type="text" id="PanNo" name="PanNo" class="form-control" placeholder="Pancard*" maxlength="10" minlength="10" required >
+												<input type="text" id="PanNo" name="PanNo" class="form-control" placeholder="Pancard*" oninput="pancard('PanNo')" maxlength="10" minlength="10" required >
+												<div id="pannumber" style="display:none;color: red;">Oops.Please Enter Valid Pan Number.!!</div>
 											</div>
 											<div class="col-md-4">
 												<input type="text" class="form-control lastReporteddob" id="SalaryAcOpenDate" name="SalaryAcOpenDate" placeholder="Salary Ac Open Date*" required>
@@ -172,13 +173,30 @@
 
 </script>
 
+
+
+<script type="text/javascript">
+    var d = new Date();
+    var year = d.getFullYear() ;
+    d.setFullYear(year);
+
+    $(".lastReporteddob").datepicker({ dateFormat: "yy-mm-dd",
+      changeMonth: true,
+      changeYear: true,
+      maxDate: year,
+      minDate: "-100Y",
+      yearRange: '-100:' + year + '',
+      defaultDate: d
+    });
+</script>
+
 <script type="text/javascript">
 
 	
 
  $(document).ready(function(){
     src = "{{ route('searchajax') }}";
-    $(".search_city_nm").autocomplete({
+    $(".search_citynm").autocomplete({
       source: function(request, response) {
         
         $.ajax({
@@ -197,8 +215,8 @@
       },
       change: function (event, ui) {
         if (ui.item == null || ui.item == undefined || ui.item.value=='No Result Found') {
-          $(".search_city_nm").val("");
-          $(".search_city_nm").attr("disabled", false);
+          $(".search_citynm").val("");
+          $(".search_citynm").attr("disabled", false);
          
         }else{
 
@@ -214,13 +232,12 @@
    });
 
 </script>
-
 <script type="text/javascript">
 	
 
  $(document).ready(function(){
 	  
-    $(".search_state_nm").autocomplete({
+    $(".search_statenm").autocomplete({
       source: function(request, response) {
         
         $.ajax({
@@ -239,8 +256,8 @@
       },
       change: function (event, ui) {
         if (ui.item == null || ui.item == undefined || ui.item.value=='No Result Found') {
-          $(".search_state_nm").val("");
-          $(".search_state_nm").attr("disabled", false);
+          $(".search_statenm").val("");
+          $(".search_statenm").attr("disabled", false);
          
         }else{
 
@@ -258,18 +275,28 @@
 </script>
 
 <script type="text/javascript">
-    var d = new Date();
-    var year = d.getFullYear() ;
-    d.setFullYear(year);
+	function pancard(obj,val){
+		// console.log(obj);
+		if(obj=='PanNo' ){
+                   var str =$('#PanNo').val();
+                   var pancardPattern = /^([a-zA-Z]{5})(\d{4})([a-zA-Z]{1})$/;
+                   var res = str.match(pancardPattern);
+                   if(res){
+                     // console.log('Pancard is valid one.!!');
+                     	$('#pannumber').hide();
+                     	$('.credit-submit').show();
 
-    $(".lastReporteddob").datepicker({ dateFormat: "yy-mm-dd",
-      changeMonth: true,
-      changeYear: true,
-      maxDate: year,
-      minDate: "-100Y",
-      yearRange: '-100:' + year + '',
-      defaultDate: d
-    });
+                  }else{
+                  	// console.log('Oops.Please Enter Valid Pan Number.!!');
+                  	$('#pannumber').show();
+                  	$('.credit-submit').hide();
+
+                  	return false;
+                  }
+                  
+	}
+}
 </script>
+
 
 

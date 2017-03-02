@@ -9,7 +9,7 @@
 					<div class="row pad11 white-bg comp-pg">
 
                    <img src="{{URL::to('images/Comfy-Sales Leaflet-Front.jpg')}}" class="img-responsive"/>
-				   <img src="{{URL::to('images/Comfy-Sales Leaflet-Back.jpg')}}" class="img-responsive"/>
+				   <img src="{{URL::to('images/Comfy-Sales Leaflet-Back.jpg')}}" alt="comfy_sales_back_pic" class="img-responsive"/>
 					</div>
 				</div>
 			</div>

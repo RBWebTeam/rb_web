@@ -71,7 +71,7 @@
 	
 	</div>
 	<br>
-	<div class="animate-box" id ="generic" style="display: none;"  >
+	<div class="animate-box" id ="generic" style="display: none;" >
 	<form name="generic_form" id="generic_form" method="POST">
 	{{ csrf_field() }}
 	<div class="row">
@@ -755,18 +755,26 @@
 				</span> 
 				<div>
 				<a class="btn btn-success " id="express_loan_submit" type="submit">Submit</a>
+				
 				</div>
+				
 			</section>
 		
 			
 			</div>
-			<div class="col-md-12">
+			<!-- <div class="col-md-12">
 			   <div class="jumbotron alert alert-success" style="display: none">
 			   <strong class="text-center"><h3><i class="icon-checkmark"></i> Your Loan is in Process. We will get back to you shortly</h3></strong>
 			   </div>
+			</div> -->
 			</div>
-			</div>
+
+			<div class="iframeloading" style= "display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
+                <img src="{{URL::to('images/ajaxloader.gif')}}" alt="loading" style="top: 50%; position: relative; left: 50%;"  />
+               </div>
+                  
 			</form>
+
          </div>
 	</div>
 	</div>
@@ -1091,6 +1099,8 @@
       $form=$('#generic_form');
       if(! $form.valid()){
       }else{
+      	 $(".iframeloading").show();
+      	$("#express_loan_submit").hide();
         //var s=$('#'+form).serialize();
         //alert('HGGHF');
 
@@ -1101,6 +1111,7 @@
          data : $('#generic_form').serialize(),
          success: function(msg){
          // console.log(msg.data);
+         	$(".iframeloading").hide();
           if(msg.data==true){          
               $('#process').modal('show');                        
           }else{

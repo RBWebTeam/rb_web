@@ -540,11 +540,13 @@ Rupeeboss Financial Services Private Limited shall access your Credit Informatio
         <br>
         <label>Password</label>
         <input type="password" name="password" class="newsletter-name" required />
-        
+        <div class="iframeloading_emp" style= "display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
+             <img src="images/ajaxloader.gif" alt="loading" style="top: 50%; position: relative; left: 50%;"  />
+        </div>
         <a class="btn btn-primary btn-outline with-arrow" id="emp_login_button">Login</a>
         </form>
         <div class="error" style="display: none;" id="emp_msg" >Thanks, we will reach you soon.</div>
-        <div class="error" style="display: none;" id="emp_msg_err">Ooops! something went wrong.</div>
+        <div class="error" style="display: none;" id="emp_msg_err">Id/password did not matched.</div>
       </div>
     
     </div>

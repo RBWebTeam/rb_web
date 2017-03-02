@@ -68,8 +68,7 @@ class ExperianController extends CallApiController
             Session::put('contact_cScore',$req['mobileNo']);
             $today=date("Y-m-d H:i:s");
             $data=json_encode($post_data);
-            //update voucher on response
-                $update_voucher=DB::select(" call usp_update_experian_voucher ('".$voucher[0]->voucher."',1)");
+            
             //checking if already has a credit record in DB
              $quote_data=DB::select("SELECT credit_score,html_report FROM experian_response  WHERE (pan='".$req['panNo']."' and ( contact='".$req['mobileNo']."' or email ='".$req['email']."')and expiry_date >= '".$today."');");
 
@@ -90,7 +89,8 @@ class ExperianController extends CallApiController
                 return view('went-wrong');
               }else{
               //Get desired reponse no error occured then
-              
+              //update voucher on response
+                $update_voucher=DB::select("call usp_update_experian_voucher ('".$voucher[0]->voucher."',1)");
                 $x=str_replace('"','',$http_result);
                 $new_data=explode('~', $x);
                 if($new_data[0] || $new_data[0]!=0 ){

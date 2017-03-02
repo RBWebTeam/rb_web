@@ -529,13 +529,13 @@ Rupeeboss Financial Services Private Limited shall access your Credit Informatio
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-         <h4 class="modal-title">Emplyee Login</h4>
+         <h4 class="modal-title">Employee Login</h4>
       </div>
       <div class="modal-body">
         <form id="emp_login_form" name="emp_login_form">
        
         {{ csrf_field() }}
-        <label>Empployee Id</label>
+        <label>Employee Id</label>
         <input type="text" name="username" class="newsletter-name" required />
         <br>
         <label>Password</label>

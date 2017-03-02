@@ -3132,7 +3132,7 @@ body {background:#eee;}
 
 
 .slider-lnk h2{background:#28a0ff; margin:0px; border-bottom:1px solid #ddd; transition:all 0.3s linear;-moz-transition:all 0.3s linear;-webkit-transition:all 0.3s linear;}
-.slider-lnk h2 a {color:#fff;}
+.slider-lnk h2 a {color:#fff;font-size: 20px;}
 .slider-lnk li {list-style-type:none;}
 .slider-lnk ul {margin:10px; padding:0px;}
 .slider-lnk h2:hover {background:#ec1b23;transition:all 0.3s linear;-moz-transition:all 0.3s linear;-webkit-transition:all 0.3s linear;}

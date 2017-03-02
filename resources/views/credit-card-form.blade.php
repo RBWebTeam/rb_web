@@ -125,7 +125,12 @@
 										
 										</div class="col-md-12">
 										&nbsp;&nbsp;&nbsp;&nbsp;<button class="btn btn-primary btn-outline with-arrow animate-box fadeInUp animated credit-submit" >Confirm & Continue<i class="icon-arrow-right"></i>
+
+
 									</button>
+									<div class="iframeloading" style= "display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
+                <img src="{{URL::to('images/ajaxloader.gif')}}" alt="loading" style="top: 50%; position: relative; left: 50%;"  />
+               </div>
 									<p><b>All <mark style="color:red">*</mark>fields are mandatory.</b></p>
 								</div>
 							</form>
@@ -139,6 +144,43 @@
 @include('layout.footer')
 @include('layout.script')
 
+<div class="modal fade" tabindex="-1" role="dialog" id="credit_process">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title"></h4>
+      </div>
+      <div class="modal-body">
+        <h4><p>Thank you for your interest in ICICI Bank Credit Cards. Our representative will get in touch with you within 3 working days subject to your application meeting the eligibility criteria</b>.</p></h4>
+        <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        
+      	</div>
+    	</div>
+  </div>
+</div>
+</div>
+<div class="modal fade" tabindex="-1" role="dialog" id="credit_process_sorry">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title"></h4>
+      </div>
+      <div class="modal-body">
+        <h4><p>Ooops. Something went wrong.</b>.</p></h4>
+        
+      </div>
+      
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
 <script type="text/javascript">
 	$(".credit-submit").click(function(event){
 		event.preventDefault();
@@ -148,20 +190,25 @@
       }else{
         //var s=$('#'+form).serialize();
 
-   
+        $(".iframeloading").show();
+        $(".credit-submit").hide(); 
         $.ajax({  
          type: "POST",  
          url: "{{URL::to('credit-submit')}}",
          data : $('#'+form).serialize(),
          dataType: 'json',
          success: function(msg){
+         $(".iframeloading").hide();  
+        
          //console.log(msg);
           if(msg==1){
 
-            alert("Thank you for your interest in ICICI Bank Credit Cards. Our representative will get in touch with you within 3 working days subject to your application meeting the eligibility criteria");
+            // alert("Thank you for your interest in ICICI Bank Credit Cards. Our representative will get in touch with you within 3 working days subject to your application meeting the eligibility criteria");
+            $('#credit_process').modal('show');        
           } 
           else if(msg==2){
-            alert("Something Went Wrong");
+            // alert("Something Went Wrong");
+             $('#credit_process_sorry').modal('show');
           }
 
         }  
@@ -284,12 +331,12 @@
                    if(res){
                      // console.log('Pancard is valid one.!!');
                      	$('#pannumber').hide();
-                     	$('.credit-submit').show();
+                     	// $('.credit-submit').show();
 
                   }else{
                   	// console.log('Oops.Please Enter Valid Pan Number.!!');
                   	$('#pannumber').show();
-                  	$('.credit-submit').hide();
+                  	// $('.credit-submit').hide();
 
                   	return false;
                   }

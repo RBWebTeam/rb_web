@@ -125,7 +125,7 @@
 				<input class="input__field input__field--nao" type="hidden" id="business" name="business"  value=""  required   />
 					
 				
-				<span class="input_exp input--nao">
+				<span class="input_exp input--nao input--filled">
 					<input class="input__field input__field--nao" type="text" id="loanamount" name="loanamount"  value="" onkeypress="return isNumberKey(event)" required   />
 					<label class="input__label input__label--nao" for="loanamount">
 						<span class="input__label-content input__label-content--nao">Loan Amount</span>
@@ -134,7 +134,7 @@
 						<path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
 					</svg>
 				</span>
-				 <span class="input_exp input--nao">
+				 <span class="input_exp input--nao input--filled">
 					<input class="input__field input__field--nao" type="text" id="tenure" name="tenure" value="" onkeypress="return isNumberKey(event)" maxlength="3" required />
 					<label class="input__label input__label--nao" for="tenure">
 						<span class="input__label-content input__label-content--nao">Tenure</span>
@@ -433,7 +433,7 @@
 					<div id="pan_number" style="display:none;color: red;">Oops.Please Enter Valid Pan Number.!!</div>
 				</span>
 
-				<span class="input_exp input--nao">
+				<span class="input_exp input--nao input--filled">
 					<input class="input__field input__field--nao" type="tel" id="mobile_no" name="mobile_no" maxlength="10" pattern="[789][0-9]{9}" onkeypress="return isNumberKey(event)" value="" required  />
 					<label class="input__label input__label--nao" for="mobile_no">
 						<span class="input__label-content input__label-content--nao">Mobile No</span>
@@ -795,18 +795,26 @@
 				</span> 
 				<div>
 				<a class="btn btn-success " id="express_loan_submit" type="submit">Submit</a>
+				
 				</div>
+				
 			</section>
 		
 			
 			</div>
-			<div class="col-md-12">
+			<!-- <div class="col-md-12">
 			   <div class="jumbotron alert alert-success" style="display: none">
 			   <strong class="text-center"><h3><i class="icon-checkmark"></i> Your Loan is in Process. We will get back to you shortly</h3></strong>
 			   </div>
+			</div> -->
 			</div>
-			</div>
+
+			<div class="iframeloading" style= "display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
+                <img src="{{URL::to('images/ajaxloader.gif')}}" alt="loading" style="top: 50%; position: relative; left: 50%;"  />
+               </div>
+                  
 			</form>
+
          </div>
 	</div>
 	</div>
@@ -1045,6 +1053,7 @@
 
          var slidr = $("#unranged-value").text();
          $('#tenure').val(slidr);
+
          // console.log(slidr);
 
          var mob_no = $("#mob_no").val();
@@ -1130,6 +1139,8 @@
       $form=$('#generic_form');
       if(! $form.valid()){
       }else{
+      	 $(".iframeloading").show();
+      	$("#express_loan_submit").hide();
         //var s=$('#'+form).serialize();
         //alert('HGGHF');
 
@@ -1140,6 +1151,7 @@
          data : $('#generic_form').serialize(),
          success: function(msg){
          // console.log(msg.data);
+         	$(".iframeloading").hide();
           if(msg.data==true){          
               $('#process').modal('show');                        
           }else{

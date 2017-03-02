@@ -111,7 +111,7 @@
 	
 	</div>
 	<br>
-	<div class="animate-box" id ="generic" >
+	<div class="animate-box" id ="generic" style="display: none;" >
 	<form name="generic_form" id="generic_form" method="POST">
 	{{ csrf_field() }}
 	<div class="row">
@@ -808,11 +808,13 @@
 			   </div>
 			</div> -->
 			</div>
+
 			<div class="iframeloading" style= "display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
                 <img src="{{URL::to('images/ajaxloader.gif')}}" alt="loading" style="top: 50%; position: relative; left: 50%;"  />
                </div>
                   
 			</form>
+
          </div>
 	</div>
 	</div>

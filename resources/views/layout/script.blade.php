@@ -1029,6 +1029,8 @@
                 $('#pop1').append( "<p>Enter your net turnover</p>" );
                 $("#q2").hide();
                 $('#income').val('');
+
+
               }else if(val=='co_sal'){
                $('#co_self').hide();
                $('#co_self_q2').hide();
@@ -1051,7 +1053,8 @@
               
             }else if(val=='co_self'){
               $('#co_sal').hide();
-              $('#income').val('');
+             // $('#income').val('');
+
               $('#pop1').empty();
               $('#pop1').append( "<p>Turnover of your co-applicant</p>" );
             }
@@ -1907,6 +1910,7 @@ var co_obligation=sessionStorage.getItem('co_obligation');
 
          if(property_cost!=null &&  property_cost!=""){
      if(emp_type!=null && emp_type=='salaried' && income!=null){
+ 
 
 
          document.getElementById("emp_detail").value=emp_type;
@@ -1989,7 +1993,7 @@ $('#q6').show();
 
   }
 
-  if(co_emp_detail!=null && co_emp_detail=='self-employed'){
+  if(co_emp_detail!=null && co_emp_detail=="self-employed"){
 
     document.getElementById("co_emp_detail").value=co_emp_detail;
     document.getElementById("co_income_year").value=co_income_year;
@@ -2002,7 +2006,8 @@ $('#q6').show();
    $('#co_self_q3').show();
    $('#co_sal').hide();
    $('#co_q').show();
-   
+
+
   }
   if(co_obl_yes!=null && co_obl_yes=='YES'){
     document.getElementById("co_obl_loan").value=co_obl_yes;

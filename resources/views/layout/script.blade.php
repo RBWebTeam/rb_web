@@ -1316,7 +1316,7 @@
         window.fbAsyncInit = function() {
           // FB JavaScript SDK configuration and setup
           FB.init({
-            appId      : '624024964433110', // FB App ID    1780983575495725
+            appId      : '1780983575495725', // FB App ID    624024964433110
             cookie     : true,  // enable cookies to allow the server to access the session
             xfbml      : true,  // parse social plugins on this page
             version    : 'v2.8' // use graph api version 2.8
@@ -2071,26 +2071,22 @@ function SetSession_pop(cookieName,cookieValue){
   <script type="text/javascript">
   $(document).ready(function(){
       $("#emp_login_button").click(function(event){
-        //alert('fdfg');
-           // event.preventDefault();
-           
-         // $form=$('#emp_login_form');
-          //console.log($form);
+        $('#emp_msg_err').hide();
           if(! $('#emp_login_form').valid()){
             return false;
           }else{
-          $(".iframeloading").show();
+          $(".iframeloading_emp").show();
           $.ajax({  
              type: "POST",  
              url: "{{URL::to('emp-login')}}",
              data : $('#emp_login_form').serialize(),
              success: function(msg){
-                $(".iframeloading").hide();  
-              if(msg=='true'){
-                 $('#emp_login_form').hide();
-                  $('#emp_msg').show();
+                $(".iframeloading_emp").hide();  
+              //console.log(msg.url);
+              if(msg.url!=false){
+                window.location.replace(msg.url);
               }else{
-                  $form.hide();
+                  //$form.hide();
                   $('#emp_msg_err').show(); 
                 }
                       //console.log(msg);

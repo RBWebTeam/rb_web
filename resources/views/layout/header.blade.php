@@ -15,8 +15,8 @@
 
 	<link  rel="stylesheet" type="text/css" href="{{URL::to('css/mysite.css')}}"/>
 
- <!-- <link href="{{URL::to('css/style.css')}}" rel="stylesheet" type="text/css" />  
-  -->
+<!-- <link href="{{URL::to('css/style.css')}}" rel="stylesheet" type="text/css" />   -->
+
 
  <link href="{{URL::to('css/freshslider.min.css')}}" rel="stylesheet" type="text/css" /> 
 
@@ -71,7 +71,7 @@
 
                 <li><a href="{{URL::to('https://twitter.com/rupeeboss')}}" title="Twitter"><i class="icon-twitter"></i></a></li>
                 <li><a href="{{URL::to('https://www.facebook.com/rupeeboss')}}" title="Facebook"><i class="icon-facebook"></i></a></li>
-                <li><a href="{{URL::to('https://plus.google.com/112574970643410375765')}}" title="GooglePlus"><i class="icon-google-plus"></i></a></li>
+                <li><a href="{{URL::to('https://plus.google.com/u/0/113191059621763008376')}}" title="GooglePlus"><i class="icon-google-plus"></i></a></li>
                 <!-- <li><a href="#" title="instagram"><i class="icon-instagram"></i></a></li> -->
                 <li><a href="{{URL::to('contact-us')}}"><i class="icon-phone"></i> 1800-267-629-6	</a></li>
 
@@ -81,7 +81,7 @@
     </div>
 		<div class="container" id="refreshID">
 			<div class="header-inner">
-				<h1><a href="{{URL::to('/')}}"><img src="{{URL::to('images/logo.png')}}" alt="logo" width="160" height="47" /></a></h1>
+	<a href="{{URL::to('/')}}" class="logo"><img src="{{URL::to('images/logo.png')}}" alt="logo" width="160" height="47" /></a>
 				<nav role="navigation">
 				  <ul>
                      @if(\Request::is('community/*') || \Request::is('community'))

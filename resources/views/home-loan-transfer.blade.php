@@ -95,7 +95,7 @@
 					<div class="col-md-4 animate-box">
 						<div class="price-box popular">
 							
-							<div class="ic1"><img src="images/ic1.png" /></div>
+							<div class="ic1"><img src="images/ic1.png" alt="compare_pic" /></div>
 							<h4 class="mrg-btm">Compare Loan</h4>
 							<ul>
 							     <li>Check & compare loans from thousand of banks</li>
@@ -109,7 +109,7 @@
 
 					<div class="col-md-4 animate-box">
 						<div class="price-box popular">
-							<div class="ic1"><img src="images/ic2.png" /></div>
+							<div class="ic1"><img src="images/ic2.png" alt="ic2_pic" /></div>
 							<h4 class="mrg-btm">Check Eligibility & Calculate EMI</h4>
 							<ul>
 							     <li>Check your credit score</li>
@@ -122,7 +122,7 @@
 					
 					<div class="col-md-4 animate-box">
 						<div class="price-box popular">
-							<div class="ic1 text-center"><img src="images/ic3.png" /></div>
+							<div class="ic1 text-center"><img src="images/ic3.png" alt="ic3_pic" /></div>
 							<h4 class="mrg-btm">Apply Online Loan</h4>
 							<ul>
 							     <li>Expert Assistance</li>

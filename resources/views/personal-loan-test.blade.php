@@ -78,8 +78,6 @@
 			</div>
 			<div class="text-center " style="display: none" id="step_3_btn">
                
-                  <?php    ?>
-
 			<?php if(Session::get('is_login')) { ?>
 				  <?php if(Session::get('contact')!=''){ Session::get('contact'); ?>
 				<button class="btn btn-primary btn-outline with-arrow animate-box product_name " >Get me a Loan<i class="icon-arrow-right"></i></button>
@@ -94,6 +92,8 @@
 			<?php }?>
 
 			</div>
+
+
 	 </div>
 	 </form>
 	  <!-- POP Up code start -->

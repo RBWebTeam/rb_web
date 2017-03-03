@@ -1787,7 +1787,7 @@
           <h4 class="modal-title">Enter OTP</h4>
           <form id="contactus_otp_form" class="form-horizontal">
            {{ csrf_field() }}
-           <input type="text" class="form-control" name="otp" id="otp" minlength="6" maxlength="6" required onkeypress="return fnAllowNumeric(event)">
+           <input type="tel" class="form-control" name="otp" id="otp" minlength="6" maxlength="6" required onkeypress="return fnAllowNumeric(event)">
            <span id='otp_errs' class= 'displaynonemsg' >oops!! OTP is wrong</span><br>
            <button class="btn btn-default"  class="form-control" id="contactus_verify_otp" >Verify</button><br>
          </form>
@@ -1897,9 +1897,10 @@ var co_obligation=sessionStorage.getItem('co_obligation');
  var card=sessionStorage.getItem('card');
  // url session
 
-   
+ 
       //$('.product_name').click(function(){
-    if(last_segment=='apply-home-loan' || last_segment=='loan-against-property'){
+    if(last_segment=='apply-home-loan' || last_segment=='apply-loan-against-property'){
+
          if(property_cost!=null &&  property_cost!=""){
      if(emp_type!=null && emp_type=='salaried' && income!=null){
          document.getElementById("emp_detail").value=emp_type;

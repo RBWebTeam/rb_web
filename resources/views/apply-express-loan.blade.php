@@ -31,19 +31,21 @@
 			
 			</div>
 		  <br>
-		  <div class="col-md-10">
+		  
+		  <?php if(Session::get('is_login')) { ?>
+				  <?php if(Session::get('contact')!=''){ ?>
+				<button class="btn btn-primary btn-outline with-arrow animate-box next " >Next<i class="icon-arrow-right"></i></button>
+				<?php }else{?> 
+                 <a  class="btn btn-primary btn-outline with-arrow animate-box next" >Next<i class="icon-arrow-right"></i></a>
+				 <?php }?>
+
+			<?php }else{?>
+			<div class="col-md-10">
 		   <input type="tel" name="mob_no" id="mob_no" class="center-dv input-typ" placeholder="98XXX XXXXX"  maxlength="10" pattern="[789][0-9]{9}" onkeypress="return isNumberKey(event)" required />
 		   <span id="mobile_value" style="display: none;color: red;">Phone number should be of 10 digits.</span>
 		   <button class="get-otp" type="submit" id="express_loan_send_otp">Get OTP</button>
-
-		   @if (Session::has('contact'))
-                          	 <?php echo Session::get('contact');?>
-                    @endif
-		  
-
-		 
-
 		  </div>
+			<?php }?>  
 			</div>
 			
 			
@@ -1261,6 +1263,25 @@
 	}
 
 }
+</script>
+
+<script type="text/javascript">
+	$(".next").click(function(event){
+		// alert("okjjyj");
+
+    event.preventDefault();
+      $form=$('#express_form');
+      if(! $form.valid()){
+     // alert("okjhj");
+      	
+      }else{
+      	$('#express_form').hide();
+      	$('#generic').show();
+      	
+
+    }
+});
+
 </script>
 
 

@@ -17,19 +17,27 @@
 			<hr>
 			
 		    <div class="col-md-12">
-			<div class="col-md-12"><div class="offset5"><a class="btn"><input type="radio" name="employment" id="employment" value="Self_Employed_Professionsl" checked/> Self Employed Professionsl (SEP)</a>
-             <a class="btn"><input type="radio" name="employment" id="employment" value="Self_Employed_Non_Professional " /> Self Employed Non-Professionsl (SENP)</a>
+			<div class="col-md-12"><div class="offset5">
+			<a class="btn border"><input type="radio" name="employment" id="employment" value="Self_Employed_Professionsl" checked/> Self Employed Professionsl (SEP)</a>
+             <a class="btn border"><input type="radio" name="employment" id="employment" value="Self_Employed_Non_Professional " /> Self Employed Non-Professionsl (SENP)</a>
 			</div>
 		    </div>
 			
 			<div class="col-md-2"></div>
 			<div class="col-md-8">
-			<div class="tenure border offset5">
+			<div class="tenure offset5 pad">
+			<h3>Tenur</h3>
 			<div  id="unranged-value" style="width:100%; height:10px;"></div>
 			</div>
-			
-			
 			</div>
+			
+			<div class="col-md-12">
+			<div class="offset5">
+			<a class="btn border"><input type="radio" name="employment" id="employment" value="Self_Employed_Professionsl" checked/> Sole Proprietor</a>
+             <a class="btn border"><input type="radio" name="employment" id="employment" value="Self_Employed_Non_Professional " /> Partnership</a>
+			 <a class="btn border"><input type="radio" name="employment" id="employment" value="Self_Employed_Non_Professional " /> Company</a>
+			</div>
+		    </div>
 		  <br>
 		  <div class="col-md-10">
 		   <input type="tel" name="mob_no" id="mob_no" class="center-dv input-typ" placeholder="98XXX XXXXX"  maxlength="10" pattern="[789][0-9]{9}" onkeypress="return isNumberKey(event)" required />

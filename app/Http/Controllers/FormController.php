@@ -60,7 +60,7 @@ class FormController extends CallApiController
         $res_arr=array_merge($input,$new_array);
         // send empcode if its a refferal
         $res_arr['empid']=Session::get('empid')?Session::get('empid'):'';
-        // print_r($res_arr);exit();
+         
             //$url = "http://erp.rupeeboss.com/CustomerLaravelWebRequest.aspx";
         $json_data=json_encode($res_arr);
             $url="http://api.rupeeboss.com/BankAPIService.svc/GetCustomerLizaWebReq";
@@ -73,12 +73,18 @@ class FormController extends CallApiController
                 }else{
                     $income=$req['turnover'];
                 }
+                if($req['co_emp_detail']=='salaried'){
+                    $req['co_emp_detail']=1;
+                }elseif($req['co_emp_detail']){
+                    $req['co_emp_detail']=2;
+                }
             if($req['product_name']==9){
                 $quote_data=DB::select('call  usp_get_personal_loan_quot ("'.$req['dob'].'","'.$req['emp_detail_id'].'","'.$income.'","'.$req['obligation'].'","'.$req['loan_tenure'].'","'.$req['loan_amount'].'")');
             }else if(($req['product_name']==12) || ($req['product_name']==7)){
                 $product_id=$req['product_name'];
-
-                $quote_data=DB::select('call  usp_get_bank_quot ("'.$req['property_cost'].'","'.$req['loan_tenure'].'","'.$req['loan_amount'].'","'.$req['gender'].'","'.$req['income'].'","'.$req['obligation'].'","'.$req['dob'].'","'.$req['have_co_applicant'].'","'.$req['CoApplicantIncome'].'","'.$req['co_applicant_obligation'].'","'.$req['Turnover'].'","'.$req['profit_after_tax'].'","'.$req['depreciation'].'","'.$req['remuneration'].'","'.$req['co_applicant_turnover'].'","'.$req['co_applicant_profit_after_tax'].'","'.$req['co_applicant_depreciation'].'","'.$req['co_applicant_remuneration'].'","'.$req['emp_detail_id'].'","'.$product_id.'")');
+                //print_r($req->all());exit();
+                $quote_data=DB::select('call  usp_get_bank_quot_test("'.$req['property_cost'].'","'.$req['loan_tenure'].'","'.$req['loan_amount'].'","'.$req['gender'].'","'.$req['income'].'","'.$req['obligation'].'","'.$req['dob'].'","'.$req['have_co_applicant'].'","'.$req['co_applicant_income'].'","'.$req['co_applicant_obligation'].'","'.$req['turnover'].'","'.$req['profit_after_tax'].'","'.$req['depreciation'].'","'.$req['remuneration'].'","'.$req['co_applicant_turnover'].'","'.$req['co_applicant_profit_after_tax'].'","'.$req['co_applicant_depreciation'].'","'.$req['co_applicant_remuneration'].'","'.$req['emp_detail_id'].'","'.$req['co_dob'].'","'.$req['co_emp_detail'].'","'.$product_id.'")');
+              
             }
 
              $save=new bank_quote_api_request();    

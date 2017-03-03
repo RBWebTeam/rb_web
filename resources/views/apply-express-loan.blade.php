@@ -10,6 +10,8 @@
             {{ csrf_field() }}
 			
 			<div class="offset5">
+			<h3 class="text-center hed-three"><b>Enter Amount</b></h3>
+
             <div class="col-md-12">
 			<input type="text" name="amount" id="amount" class="center-dv input-typ" placeholder="5,00,000" maxlength="10"
 			onkeypress="return isNumberKey(event)"  required/>
@@ -17,26 +19,48 @@
 			<hr>
 			
 		    <div class="col-md-12">
-			<div class="col-md-12"><div class="offset5"><a class="btn"><input type="radio" name="employment" id="employment" value="Self_Employed_Professionsl" checked/> Self Employed Professionsl (SEP)</a>
-             <a class="btn"><input type="radio" name="employment" id="employment" value="Self_Employed_Non_Professional " /> Self Employed Non-Professionsl (SENP)</a>
+		    <h3 class="text-center mrg-btm hed-three"><b>Business Type</b></h3>
+			<div class="col-md-12"><div class="offset5">
+			<a class="btn border"><input type="radio" name="employment"  value="Self_Employed_Professionsl(SEP)" checked/> Self Employed Professionsl (SEP)</a>
+             <a class="btn border"><input type="radio" name="employment"  value="Self_Employed_Non_Professional (SENP)" /> Self Employed Non-Professionsl (SENP)</a>
 			</div>
 		    </div>
 			
 			<div class="col-md-2"></div>
 			<div class="col-md-8">
-			<div class="tenure border offset5">
+			<div class="tenure offset5 pad">
+			<h3><b>Tenure</b></h3>
 			<div  id="unranged-value" style="width:100%; height:10px;"></div>
 			</div>
-			
-			
 			</div>
+			
+			<div class="col-md-12">
+			<div class="offset5">
+			<br>
+			<h3 class="text-center mrg-btm hed-three"><b>Firm Holder</b></h3>
+			<a class="btn border"><input type="radio" name="firm_holder" 
+			value="Sole_Proprietor " checked/> Sole Proprietor</a>
+             <a class="btn border"><input type="radio" name="firm_holder"
+             value="Partnership " /> Partnership</a>
+			 <a class="btn border"><input type="radio" name="firm_holder"  value="Company" /> Company</a>
+			</div>
+		    </div>
 		  <br>
-		  <div class="col-md-10">
+		  
+		  <?php if(Session::get('is_login')) { ?>
+				  <?php if(Session::get('contact')!=''){ ?>
+				<button class="btn btn-primary btn-outline with-arrow animate-box next " >Next<i class="icon-arrow-right"></i></button>
+				<?php }else{?> 
+                 <a  class="btn btn-primary btn-outline with-arrow animate-box next" >Next<i class="icon-arrow-right"></i></a>
+				 <?php }?>
+
+			<?php }else{?>
+			<div class="col-md-10">
 		   <input type="tel" name="mob_no" id="mob_no" class="center-dv input-typ" placeholder="98XXX XXXXX"  maxlength="10" pattern="[789][0-9]{9}" onkeypress="return isNumberKey(event)" required />
 		   <span id="mobile_value" style="display: none;color: red;">Phone number should be of 10 digits.</span>
 		   <button class="get-otp" type="submit" id="express_loan_send_otp">Get OTP</button>
-		 
 		  </div>
+			<?php }?>  
 			</div>
 			
 			
@@ -73,6 +97,8 @@
 		<h3 class="text-uppercase exp-hed">Generic Information</h3>
 			
 			 <section class="content">
+
+			 <input class="input__field input__field--nao" type="hidden" id="holder" name="holder"  value=""  required   />
 			
 				<input class="input__field input__field--nao" type="hidden" id="business" name="business"  value=""  required   />
 					
@@ -996,10 +1022,15 @@
 
 
         //var s=$('#'+form).serialize();
-        var emp = $("#employment").val();
-         $('#business').val(emp);
-         // console.log(emp);
-
+        
+          var emp = $('input[name=employment]:checked').val();
+          $('#business').val(emp);
+           console.log(emp);
+         
+         var firm = $('input[name=firm_holder]:checked').val();
+          $('#holder').val(firm);
+           console.log(firm);
+         
         var amount = $("#amount").val();
          $('#loanamount').val(amount);
 
@@ -1254,6 +1285,25 @@
 	}
 
 }
+</script>
+
+<script type="text/javascript">
+	$(".next").click(function(event){
+		// alert("okjjyj");
+
+    event.preventDefault();
+      $form=$('#express_form');
+      if(! $form.valid()){
+     // alert("okjhj");
+      	
+      }else{
+      	$('#express_form').hide();
+      	$('#generic').show();
+      	
+
+    }
+});
+
 </script>
 
 

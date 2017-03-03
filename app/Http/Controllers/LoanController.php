@@ -10,15 +10,6 @@ use DB;
 use Response;
 class LoanController extends CallApiController
 {
-//     Route::get('personal-loan','LoanController@home_loan');
-// Route::get('personal-loan','LoanController@lap');
-// Route::get('personal-loan','LoanController@smi_loan');
-// Route::get('personal-loan','LoanController@home_loan_transfer');
-// Route::get('personal-loan','LoanController@car_loan');
-
-
-   
-
     public function personal_loan(){
       $keywords='Personal Loan,Compare Personal Loan,Apply Online for Personal Loan,Best Personal Loans in India,Compare Personal Loan,Personal Loan EMI Calculator';
     	$data['title']='Personal Loan | Apply online at Lowest Interest Rate on Rupeeboss.com';

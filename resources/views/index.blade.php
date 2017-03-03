@@ -100,20 +100,12 @@
 
 <div class="container-fluid slider-lnk">
 <ul>
-<li><h2 class="pad text-center"><a href="#">Rupeeboss Comfy</a></h2></li>
-<li><h2 class="pad text-center"><a href="#">Express Loan</a></h2></li>
-<li><h2 class="pad text-center"><a href="#">Savings Account</a></h2></li>
+<li><h2 class="pad text-center"><a href="{{URL::to('comfy-sales')}}">Rupeeboss Comfy</a></h2></li>
+<li><h2 class="pad text-center"><a href="{{URL::to('express-loan')}}">Express Loan</a></h2></li>
+<li><h2 class="pad text-center"><a href="{{URL::to('savings-account')}}">Savings Account</a></h2></li>
 </ul>
 </div>
-
-
-
-
-
-
-
-
-		
+	
 	</aside>
 	</div>
 	<div id="fh5co-services-section">

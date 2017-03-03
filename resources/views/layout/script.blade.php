@@ -1029,6 +1029,8 @@
                 $('#pop1').append( "<p>Enter your net turnover</p>" );
                 $("#q2").hide();
                 $('#income').val('');
+
+
               }else if(val=='co_sal'){
                $('#co_self').hide();
                $('#co_self_q2').hide();
@@ -1051,7 +1053,8 @@
               
             }else if(val=='co_self'){
               $('#co_sal').hide();
-              $('#income').val('');
+             // $('#income').val('');
+
               $('#pop1').empty();
               $('#pop1').append( "<p>Turnover of your co-applicant</p>" );
             }
@@ -1886,6 +1889,8 @@ var last_segment = url_array[url_array.length-1];  // Get the last part of the a
  var loan_amount=sessionStorage.getItem('loan_amount');
 //co_emp_detail
 var co_emp_detail=sessionStorage.getItem('co_emp_detail');
+var co_dob=sessionStorage.getItem('co_dob');
+
 var co_income=sessionStorage.getItem('co_income');
 var co_income_year=sessionStorage.getItem('co_income_year');
 var co_profit=sessionStorage.getItem('co_profit');
@@ -1897,12 +1902,17 @@ var co_obligation=sessionStorage.getItem('co_obligation');
  var card=sessionStorage.getItem('card');
  // url session
 
+
  
+
       //$('.product_name').click(function(){
     if(last_segment=='apply-home-loan' || last_segment=='apply-loan-against-property'){
 
          if(property_cost!=null &&  property_cost!=""){
      if(emp_type!=null && emp_type=='salaried' && income!=null){
+ 
+
+
          document.getElementById("emp_detail").value=emp_type;
          document.getElementById("income").value=income ;
          document.getElementById("emp_detail_id").value=1 ;
@@ -1915,7 +1925,10 @@ var co_obligation=sessionStorage.getItem('co_obligation');
     }
 
 
-    if(emp_type!=null && emp_type=='self-employed' && income_year!=null && profit!=null){
+    if(emp_type!=null && emp_type=="self-employed" && income_year!=null && profit!=null){
+
+  
+
          document.getElementById("emp_detail").value=emp_type ;
          document.getElementById("income_year").value=income_year ;
          document.getElementById("profit").value =profit ;
@@ -1960,8 +1973,15 @@ $('#q6').show();
     $('#q9').show();
     $('#step_2_btn').show();
   }
+ 
+  if(emp_type!=null && co_dob!=null){
+     document.getElementById("co_dob").value=co_dob;
+
+  }
+
 
   if(co_emp_detail!=null && co_emp_detail=='salaried'){
+ 
  document.getElementById("co_emp_detail").value=co_emp_detail;
  document.getElementById("co_income").value=co_income;
    $('#co_sal').show();
@@ -1969,10 +1989,12 @@ $('#q6').show();
    $('#co_profit_all').hide();
    $('#co_self_q2').hide();
    $('#co_self_q3').hide();
+   $('#co_q').show();
 
   }
 
-  if(co_emp_detail!=null && co_emp_detail=='self-employed'){
+  if(co_emp_detail!=null && co_emp_detail=="self-employed"){
+
     document.getElementById("co_emp_detail").value=co_emp_detail;
     document.getElementById("co_income_year").value=co_income_year;
     document.getElementById("co_profit").value=co_profit;
@@ -1983,6 +2005,9 @@ $('#q6').show();
    $('#co_self_q2').show();
    $('#co_self_q3').show();
    $('#co_sal').hide();
+   $('#co_q').show();
+
+
   }
   if(co_obl_yes!=null && co_obl_yes=='YES'){
     document.getElementById("co_obl_loan").value=co_obl_yes;
@@ -2058,6 +2083,13 @@ $('#q6').show();
 });
    
 function SetSession_pop(cookieName,cookieValue){
+
+ 
+           if(cookieName=='co_emp_detail'){
+              sessionStorage.setItem('co_emp_detail',cookieValue);
+
+           }
+
    var product_id=document.getElementById("product");
    if(product_id.value){sessionStorage.setItem("product_id",product_id.value);}
    if(cookieName){sessionStorage.setItem(cookieName,cookieValue);}
@@ -2072,10 +2104,9 @@ function SetSession_pop(cookieName,cookieValue){
   $(document).ready(function(){
       $("#emp_login_button").click(function(event){
  
-        var username=$('#username_rb').val();
-        var password=$('#password_rb').val();
-        var _token='{{csrf_token()}}';
- 
+        // var username=$('#username_rb').val();
+        // var password=$('#password_rb').val();
+        // var _token='{{csrf_token()}}';
 
         $('#emp_msg_err').hide();
           if(! $('#emp_login_form').valid()){
@@ -2085,14 +2116,14 @@ function SetSession_pop(cookieName,cookieValue){
           $.ajax({  
              type: "POST",  
              url: "{{URL::to('emp-login')}}",
-           //  data : $('#emp_login_form').serialize(),
-           data: {_token :_token,username:username,password:password},
+           data : $('#emp_login_form').serialize(),
+        //   data: {_token :_token,username:username,password:password},
              success: function(msg){
 
                 $(".iframeloading_emp").hide();  
               //console.log(msg.url);
               if(msg.url!=false){
-              window.location.replace(msg.url);
+             window.location.replace(msg.url);
               }else{
                   //$form.hide();
                   $('#emp_msg_err').show(); 

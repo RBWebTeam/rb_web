@@ -33,3 +33,5 @@ Route::post('getproduct','ApiController@getProduct');
 Route::post('getproperty','ApiController@getPropertyType');
 Route::post('get-broker-quote','ApiController@getQuoteByBrokerId');
 Route::post('get-personal-loan-broker-quote','ApiController@getPersonalLoanQuoteByBrokerId');
+Route::post('quote-selected','MobileApiController@quote_selected');
+

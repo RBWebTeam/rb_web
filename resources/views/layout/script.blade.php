@@ -1316,7 +1316,7 @@
         window.fbAsyncInit = function() {
           // FB JavaScript SDK configuration and setup
           FB.init({
-            appId      : '1780983575495725', // FB App ID    624024964433110
+            appId      : '624024964433110', //'1780983575495725', // FB App ID    624024964433110
             cookie     : true,  // enable cookies to allow the server to access the session
             xfbml      : true,  // parse social plugins on this page
             version    : 'v2.8' // use graph api version 2.8
@@ -1787,7 +1787,7 @@
           <h4 class="modal-title">Enter OTP</h4>
           <form id="contactus_otp_form" class="form-horizontal">
            {{ csrf_field() }}
-           <input type="text" class="form-control" name="otp" id="otp" minlength="6" maxlength="6" required onkeypress="return fnAllowNumeric(event)">
+           <input type="tel" class="form-control" name="otp" id="otp" minlength="6" maxlength="6" required onkeypress="return fnAllowNumeric(event)">
            <span id='otp_errs' class= 'displaynonemsg' >oops!! OTP is wrong</span><br>
            <button class="btn btn-default"  class="form-control" id="contactus_verify_otp" >Verify</button><br>
          </form>
@@ -1897,9 +1897,10 @@ var co_obligation=sessionStorage.getItem('co_obligation');
  var card=sessionStorage.getItem('card');
  // url session
 
-   
+ 
       //$('.product_name').click(function(){
-    if(last_segment=='apply-home-loan' || last_segment=='loan-against-property'){
+    if(last_segment=='apply-home-loan' || last_segment=='apply-loan-against-property'){
+
          if(property_cost!=null &&  property_cost!=""){
      if(emp_type!=null && emp_type=='salaried' && income!=null){
          document.getElementById("emp_detail").value=emp_type;
@@ -2070,6 +2071,12 @@ function SetSession_pop(cookieName,cookieValue){
   <script type="text/javascript">
   $(document).ready(function(){
       $("#emp_login_button").click(function(event){
+ 
+        var username=$('#username_rb').val();
+        var password=$('#password_rb').val();
+        var _token='{{csrf_token()}}';
+ 
+
         $('#emp_msg_err').hide();
           if(! $('#emp_login_form').valid()){
             return false;
@@ -2078,12 +2085,14 @@ function SetSession_pop(cookieName,cookieValue){
           $.ajax({  
              type: "POST",  
              url: "{{URL::to('emp-login')}}",
-             data : $('#emp_login_form').serialize(),
+           //  data : $('#emp_login_form').serialize(),
+           data: {_token :_token,username:username,password:password},
              success: function(msg){
+
                 $(".iframeloading_emp").hide();  
               //console.log(msg.url);
               if(msg.url!=false){
-                window.location.replace(msg.url);
+              window.location.replace(msg.url);
               }else{
                   //$form.hide();
                   $('#emp_msg_err').show(); 

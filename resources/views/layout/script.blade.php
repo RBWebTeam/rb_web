@@ -2072,10 +2072,9 @@ function SetSession_pop(cookieName,cookieValue){
   $(document).ready(function(){
       $("#emp_login_button").click(function(event){
  
-        var username=$('#username_rb').val();
-        var password=$('#password_rb').val();
-        var _token='{{csrf_token()}}';
- 
+        // var username=$('#username_rb').val();
+        // var password=$('#password_rb').val();
+        // var _token='{{csrf_token()}}';
 
         $('#emp_msg_err').hide();
           if(! $('#emp_login_form').valid()){
@@ -2085,14 +2084,14 @@ function SetSession_pop(cookieName,cookieValue){
           $.ajax({  
              type: "POST",  
              url: "{{URL::to('emp-login')}}",
-           //  data : $('#emp_login_form').serialize(),
-           data: {_token :_token,username:username,password:password},
+           data : $('#emp_login_form').serialize(),
+        //   data: {_token :_token,username:username,password:password},
              success: function(msg){
 
                 $(".iframeloading_emp").hide();  
               //console.log(msg.url);
               if(msg.url!=false){
-              window.location.replace(msg.url);
+             window.location.replace(msg.url);
               }else{
                   //$form.hide();
                   $('#emp_msg_err').show(); 

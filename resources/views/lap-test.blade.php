@@ -87,19 +87,27 @@
 						</div>
 						
 
-						<div class="text-center" style="display: none" id="step_2_btn">
+					<div class="text-center" style="display: none" id="step_2_btn">
 							<a class="btn btn-primary btn-outline with-arrow animate-box" id="co_button" onclick="changeDiv_new('step-1','step-2_co')">Have Co-Applicant<i class="icon-arrow-right"></i></a>
 							
 								<?php if(Session::get('is_login')) {?>
-									<button class="btn btn-primary btn-outline with-arrow animate-box product_name" >Get me a Loan<i class="icon-arrow-right"></i></button>
+									  <?php if(Session::get('contact')!=''){  Session::get('contact'); ?>
+									<button class="btn btn-primary btn-outline with-arrow animate-box product_name" >Get me a Loan<i class="icon-arrow-right"></i></button> 
+								   <?php }else{?> 
+					             <a  class="btn btn-primary btn-outline with-arrow animate-box product_name" data-toggle="modal" data-target="#contact_id">Get me a Loan<i class="icon-arrow-right"></i></a>
+								 <?php }?>
 								<?php }else{?>
-									<a class="btn btn-primary btn-outline with-arrow animate-box product_name" id="no_co_app" data-toggle="modal" data-target="#login_process">No Co-Applicant<i class="icon-arrow-right"></i></a>
+
+								   <button  style="display:none" class="btn btn-primary btn-outline with-arrow animate-box product_name " id="btn_refresh">Get me a Loan<i class="icon-arrow-right"></i></button>
+
+									<a class="btn btn-primary btn-outline with-arrow animate-box product_name btn_refresh1"              id="no_co_app" data-toggle="modal" data-target="#login_process">No Co-Applicant<i class="icon-arrow-right"></i></a>
 								
 								<?php } ?>
 								<input type="hidden" name="have_co_applicant" value="" id="have_co_applicant">
 							
 							
 						</div>
+						
 						
 
 						</div>
@@ -166,11 +174,20 @@
 					<div class="text-center">
 						<a class="btn btn-primary btn-outline with-arrow animate-box" id="back" onclick="changeDiv_new('step-2_co','step-1')"><center>Back</center></a>
 					</div>
+
+					 
+
 					<div class="text-center" style="display: none;" id="last_button">
 						<?php if(Session::get('is_login')) {?>
+							  <?php if(Session::get('contact')!=''){ Session::get('contact'); ?>
 							<button class="btn btn-primary btn-outline with-arrow animate-box product_name" >Get me a Loan<i class="icon-arrow-right"></i></button>
+							<?php }else{?> 
+							  <a  class="btn btn-primary btn-outline with-arrow animate-box product_name" data-toggle="modal" data-target="#contact_id">Get me a Loan<i class="icon-arrow-right"></i></a>
+				              <?php }?>
 						<?php }else{?>
-							<a class="btn btn-primary btn-outline with-arrow animate-box product_name" data-toggle="modal" data-target="#login_process">Submit<i class="icon-arrow-right"></i></a>
+						<button  style="display:none" class="btn btn-primary btn-outline with-arrow animate-box product_name " id="btn_refresh_co">Get me a Loan<i class="icon-arrow-right"></i></button>
+
+							<a class="btn btn-primary btn-outline with-arrow animate-box product_name" id="btn_refresh_co1" data-toggle="modal" data-target="#login_process">Submit<i class="icon-arrow-right"></i></a>
 						<?php } ?>
 					</div>
 					

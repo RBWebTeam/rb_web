@@ -91,7 +91,11 @@
 							<a class="btn btn-primary btn-outline with-arrow animate-box" id="co_button" onclick="changeDiv_new('step-1','step-2_co')">Have Co-Applicant<i class="icon-arrow-right"></i></a>
 							
 								<?php if(Session::get('is_login')) {?>
-									<button class="btn btn-primary btn-outline with-arrow animate-box product_name" >Get me a Loan<i class="icon-arrow-right"></i></button>
+									  <?php if(Session::get('contact')!=''){  Session::get('contact'); ?>
+									<button class="btn btn-primary btn-outline with-arrow animate-box product_name" >Get me a Loan<i class="icon-arrow-right"></i></button> 
+								   <?php }else{?> 
+					             <a  class="btn btn-primary btn-outline with-arrow animate-box product_name" data-toggle="modal" data-target="#contact_id">Get me a Loan<i class="icon-arrow-right"></i></a>
+								 <?php }?>
 								<?php }else{?>
 
 								   <button  style="display:none" class="btn btn-primary btn-outline with-arrow animate-box product_name " id="btn_refresh">Get me a Loan<i class="icon-arrow-right"></i></button>

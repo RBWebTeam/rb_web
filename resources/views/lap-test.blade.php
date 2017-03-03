@@ -108,7 +108,12 @@
 					<div class="liza col-md-8" style="display: none;" 	 id="step-2_co">
 					   
 					   <p class="text-center">Step 2 of 3</p>
-						<div class="col-md-12 text-center animate-box cont" id="co_q">
+					   <div class="col-md-12 text-center animate-box cont1" id="co_date_birth">
+							<h3>Co-Applicant date of birth is
+								<input type="text" id="co_dob" name="co_dob" class="input-pad company-nm1 lastReporteddate" readonly onchange="changeTest_new(this,'co_q'); setSesson('co_dob',this.value);" >
+							</h3>
+						</div>
+						<div class="col-md-12 text-center animate-box cont" style="display: none;" id="co_q">
 						<h3>My Co-Applicant is a
 							<a href="#" class="svalue clr-blue pop_up" data-toggle="modal" data-target="#co_emp_popup" ><input type="text" style="color:000;" class="clr-blue" id="co_emp_detail" name="co_emp_detail"  placeholder="Select" readonly>
 								</a>

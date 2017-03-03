@@ -60,6 +60,18 @@ class MobileApiController extends ApiController
 		return $new_data;
 			
 	}
-
+	public function quote_selected(Request $req){
+		//$id=$req['quote_id'];
+		$update=DB::table('bank_quote_api_request')
+		->where('id', $req['quote_id'])
+		->update(['bank_id'=>$req['bank_id'], 'roi_type'=>$req['roi_type'], 'loan_eligible'=>$req['loan_eligible'], 'processing_fee'=>$req['processing_fee']]);
+		if($update){
+			$status_Id=0;
+		}else{
+			$status_Id=1;
+		}
+		$new_data=array('status_Id'=>$status_Id);
+		return $new_data;
+	}
 	
 }

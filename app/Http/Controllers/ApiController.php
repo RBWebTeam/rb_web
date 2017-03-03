@@ -485,8 +485,8 @@ run_else:
         ->where('ProductId','=','12')
         ->get();
         //calling Erp api
-       
-        		$post_data='{"brokerId":'.$id.'}';
+       			$emp_code=$req['empCode'];
+        		$post_data='{"brokerId":'.$id.',"empCode":"'.$emp_code.'"}';
         		//print_r($post_data);exit();
                  // $url="http://beta.services.rupeeboss.com/LoginDtls.svc/xmlservice/dsplyHomePersonalLoanAppDtls";
         		$url="http://services.rupeeboss.com/LoginDtls.svc/xmlservice/dsplyHomePersonalLoanAppDtls";
@@ -540,7 +540,8 @@ run_else:
         ->get();
         //calling Erp api
        
-        		$post_data='{"brokerId":'.$id.'}';
+        		$emp_code=$req['empCode'];
+        		$post_data='{"brokerId":'.$id.',"empCode":"'.$emp_code.'"}';
         		
                  // $url="http://beta.services.rupeeboss.com/LoginDtls.svc/xmlservice/dsplyPersonalLoanAppDtls";
         		$url="http://services.rupeeboss.com/LoginDtls.svc/xmlservice/dsplyPersonalLoanAppDtls";

@@ -111,7 +111,7 @@ class ApiController extends CallApiController
 				            	]);
 				            //print_r($update);exit();	
 
-						$data=DB::select('call  usp_get_bank_quot_test("'.$propcost.'","'.$LoanTenure.'","'.$LoanRequired.'","'.$ApplicantGender .'","'.$ApplicantIncome .'","'.$ApplicantObligations .'","'.$ApplicantDOB .'","'.$CoApplicantYes .'","'.$CoApplicantIncome .'","'.$CoApplicantObligations .'","'.$Turnover.'","'.$ProfitAfterTax .'","'.$Depreciation .'","'.$DirectorRemuneration .'","'.$CoApplicantTurnover .'","'.$CoApplicantProfitAfterTax .'","'.$CoApplicantDepreciation .'","'.$CoApplicantDirectorRemuneration .'","'.$ApplicantSource .'","'.$CoApplicantDOB .'","'.$CoApplicantSource .'","'.$ProductId .'")');
+						$data=DB::select('call  usp_get_bank_quot("'.$propcost.'","'.$LoanTenure.'","'.$LoanRequired.'","'.$ApplicantGender .'","'.$ApplicantIncome .'","'.$ApplicantObligations .'","'.$ApplicantDOB .'","'.$CoApplicantYes .'","'.$CoApplicantIncome .'","'.$CoApplicantObligations .'","'.$Turnover.'","'.$ProfitAfterTax .'","'.$Depreciation .'","'.$DirectorRemuneration .'","'.$CoApplicantTurnover .'","'.$CoApplicantProfitAfterTax .'","'.$CoApplicantDepreciation .'","'.$CoApplicantDirectorRemuneration .'","'.$ApplicantSource .'","'.$ProductId .'")');
 						//print_r($data);exit();	
 					}else{
 						//quote dont exist in db
@@ -126,7 +126,8 @@ class ApiController extends CallApiController
 
 				}else{
 		run:
-					$data=DB::select('call  usp_get_bank_quot_test("'.$req['PropertyCost'].'","'.$req['LoanTenure'].'","'.$req['LoanRequired'].'","'.$req['ApplicantGender'].'","'.$req['ApplicantIncome'].'","'.$req['ApplicantObligations'].'","'.$req['ApplicantDOB'].'","'.$req['CoApplicantYes'].'","'.$req['CoApplicantIncome'].'","'.$req['CoApplicantObligations'].'","'.$req['Turnover'].'","'.$req['ProfitAfterTax'].'","'.$req['Depreciation'].'","'.$req['DirectorRemuneration'].'","'.$req['CoApplicantTurnover'].'","'.$req['CoApplicantProfitAfterTax'].'","'.$req['CoApplicantDepreciation'].'","'.$req['CoApplicantDirectorRemuneration'].'","'.$req['ApplicantSource'].'","'.$req['CoApplicantDOB'].'","'.$req['CoApplicantSource'].'","'.$req['ProductId'].'")');
+					//print_r('call  usp_get_bank_quot_test("'.$req['PropertyCost'].'","'.$req['LoanTenure'].'","'.$req['LoanRequired'].'","'.$req['ApplicantGender'].'","'.$req['ApplicantIncome'].'","'.$req['ApplicantObligations'].'","'.$req['ApplicantDOB'].'","'.$req['CoApplicantYes'].'","'.$req['CoApplicantIncome'].'","'.$req['CoApplicantObligations'].'","'.$req['Turnover'].'","'.$req['ProfitAfterTax'].'","'.$req['Depreciation'].'","'.$req['DirectorRemuneration'].'","'.$req['CoApplicantTurnover'].'","'.$req['CoApplicantProfitAfterTax'].'","'.$req['CoApplicantDepreciation'].'","'.$req['CoApplicantDirectorRemuneration'].'","'.$req['ApplicantSource'].'","'.$req['CoApplicantDOB'].'","'.$req['CoApplicantSource'].'","'.$req['ProductId'].'")');exit();
+					$data=DB::select('call  usp_get_bank_quot("'.$req['PropertyCost'].'","'.$req['LoanTenure'].'","'.$req['LoanRequired'].'","'.$req['ApplicantGender'].'","'.$req['ApplicantIncome'].'","'.$req['ApplicantObligations'].'","'.$req['ApplicantDOB'].'","'.$req['CoApplicantYes'].'","'.$req['CoApplicantIncome'].'","'.$req['CoApplicantObligations'].'","'.$req['Turnover'].'","'.$req['ProfitAfterTax'].'","'.$req['Depreciation'].'","'.$req['DirectorRemuneration'].'","'.$req['CoApplicantTurnover'].'","'.$req['CoApplicantProfitAfterTax'].'","'.$req['CoApplicantDepreciation'].'","'.$req['CoApplicantDirectorRemuneration'].'","'.$req['ApplicantSource'].'","'.$req['ProductId'].'")');
 					$save=new bank_quote_api_request();	
 		 			$id=$save->store($request);
 				}
@@ -220,7 +221,7 @@ class ApiController extends CallApiController
 			]);
 
 		
-			$data=DB::select('call  usp_get_bank_quot ("'.$req['PropertyCost'].'","'.$req['LoanTenure'].'","'.$req['LoanRequired'].'","'.$req['ApplicantGender'].'","'.$req['ApplicantIncome'].'","'.$req['ApplicantObligations'].'","'.$req['ApplicantDOB'].'","'.$req['CoApplicantYes'].'","'.$req['CoApplicantIncome'].'","'.$req['CoApplicantObligations'].'","'.$req['Turnover'].'","'.$req['ProfitAfterTax'].'","'.$req['Depreciation'].'","'.$req['DirectorRemuneration'].'","'.$req['CoApplicantTurnover'].'","'.$req['CoApplicantProfitAfterTax'].'","'.$req['CoApplicantDepreciation'].'","'.$req['CoApplicantDirectorRemuneration'].'","'.$req['ApplicantSource'].'","'.$req['ProductId'].'")');
+			$data=DB::select("call  usp_get_bank_quot ('".$req["PropertyCost"]."','".$req["LoanTenure"]."','".$req["LoanRequired"]."','".$req["ApplicantGender"]."','".$req["ApplicantIncome"]."','".$req["ApplicantObligations"]."','".$req["ApplicantDOB"]."','".$req["CoApplicantYes"]."','".$req["CoApplicantIncome"]."','".$req["CoApplicantObligations"]."','".$req["Turnover"]."','".$req["ProfitAfterTax"]."','".$req["Depreciation"]."','".$req["DirectorRemuneration"]."','".$req["CoApplicantTurnover"]."','".$req["CoApplicantProfitAfterTax"]."','".$req["CoApplicantDepreciation"]."','".$req["CoApplicantDirectorRemuneration"]."','".$req["ApplicantSource"]."','".$req["ProductId"]."')");
 		
 		
 		if($data){
@@ -539,10 +540,10 @@ run_else:
         ->where('ProductId','=','9')
         ->get();
         //calling Erp api
-       
+       			$flag=$req['flag'];
         		$emp_code=$req['empCode'];
-        		$post_data='{"brokerId":'.$id.',"empCode":"'.$emp_code.'"}';
-        		
+        		$post_data='{"brokerId":'.$id.',"empCode":"'.$emp_code.'","flag":"'.$flag.'"}';
+        		//print_r($post_data);exit();
                  // $url="http://beta.services.rupeeboss.com/LoginDtls.svc/xmlservice/dsplyPersonalLoanAppDtls";
         		$url="http://services.rupeeboss.com/LoginDtls.svc/xmlservice/dsplyPersonalLoanAppDtls";
                // statusId response 0 for success, 1 for failure
@@ -553,7 +554,7 @@ run_else:
                 $obj = json_decode($http_result);
        			//print_r(sizeof($obj->result->lstHomeLoanDtls));exit();
        			//print_r($obj);exit();
-                if(sizeof($obj->result->lstHomeLoanDtls)>0){
+                if($obj->statusId !=1){
                 	$application=$obj->result->lstHomeLoanDtls;
                 }else{
                 	$application=NULL;
@@ -570,7 +571,7 @@ run_else:
 					
 				}
 
-				if(sizeof($obj->result->lstHomeLoanDtls)==0 && $data=='[]'){
+				if($obj->statusId !=1 && $data=='[]'){
 					$status_Id=1;
 					$msg="Something went wrong";
 				}else{

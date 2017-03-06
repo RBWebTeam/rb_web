@@ -1207,10 +1207,10 @@
 
           $(document).ready(function(){
             $("#co_button").click(function(){
-              $("#have_co_applicant").val("yes");
+              $("#have_co_applicant").val("Y");
             });
             $("#no_co_app").click(function(){
-              $("#have_co_applicant").val("no");
+              $("#have_co_applicant").val("N");
             });
           });
   </script>

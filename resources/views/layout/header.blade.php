@@ -108,7 +108,7 @@
 							</li>
 							<li>
 								<a href="{{URL::to('sme-loan')}}">Lease Rent Discounting</a>
-								<a href="{{URL::to('sme-loan')}}">Working Capital</a>
+								<a href="{{URL::to('Working-Capital')}}">Working Capital</a>
 							<!-- <a href="{{URL::to('sme-loan')}}">Export/Import Finance</a> -->
 							</li>
 							<!-- <li><a href="{{URL::to('sme-loan')}}">Over Draft / Cash Credit</a> -->

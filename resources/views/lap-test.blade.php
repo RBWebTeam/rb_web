@@ -87,19 +87,27 @@
 						</div>
 						
 
-						<div class="text-center" style="display: none" id="step_2_btn">
+					<div class="text-center" style="display: none" id="step_2_btn">
 							<a class="btn btn-primary btn-outline with-arrow animate-box" id="co_button" onclick="changeDiv_new('step-1','step-2_co')">Have Co-Applicant<i class="icon-arrow-right"></i></a>
 							
 								<?php if(Session::get('is_login')) {?>
-									<button class="btn btn-primary btn-outline with-arrow animate-box product_name" >Get me a Loan<i class="icon-arrow-right"></i></button>
+									  <?php if(Session::get('contact')!=''){  Session::get('contact'); ?>
+									<button class="btn btn-primary btn-outline with-arrow animate-box product_name" >Get me a Loan<i class="icon-arrow-right"></i></button> 
+								   <?php }else{?> 
+					             <a  class="btn btn-primary btn-outline with-arrow animate-box product_name" data-toggle="modal" data-target="#contact_id">Get me a Loan<i class="icon-arrow-right"></i></a>
+								 <?php }?>
 								<?php }else{?>
-									<a class="btn btn-primary btn-outline with-arrow animate-box product_name" id="no_co_app" data-toggle="modal" data-target="#login_process">No Co-Applicant<i class="icon-arrow-right"></i></a>
+
+								   <button  style="display:none" class="btn btn-primary btn-outline with-arrow animate-box product_name " id="btn_refresh">Get me a Loan<i class="icon-arrow-right"></i></button>
+
+									<a class="btn btn-primary btn-outline with-arrow animate-box product_name btn_refresh1"              id="no_co_app" data-toggle="modal" data-target="#login_process">No Co-Applicant<i class="icon-arrow-right"></i></a>
 								
 								<?php } ?>
 								<input type="hidden" name="have_co_applicant" value="" id="have_co_applicant">
 							
 							
 						</div>
+						
 						
 
 						</div>
@@ -108,7 +116,12 @@
 					<div class="liza col-md-8" style="display: none;" 	 id="step-2_co">
 					   
 					   <p class="text-center">Step 2 of 3</p>
-						<div class="col-md-12 text-center animate-box cont" id="co_q">
+					   <div class="col-md-12 text-center animate-box cont1" id="co_date_birth">
+							<h3>Co-Applicant date of birth is
+								<input type="text" id="co_dob" name="co_dob" class="input-pad company-nm1 lastReporteddate" readonly onchange="changeTest_new(this,'co_q'); setSesson('co_dob',this.value);" >
+							</h3>
+						</div>
+						<div class="col-md-12 text-center animate-box cont" style="display: none;" id="co_q">
 						<h3>My Co-Applicant is a
 							<a href="#" class="svalue clr-blue pop_up" data-toggle="modal" data-target="#co_emp_popup" ><input type="text" style="color:000;" class="clr-blue" id="co_emp_detail" name="co_emp_detail"  placeholder="Select" readonly>
 								</a>
@@ -166,11 +179,20 @@
 					<div class="text-center">
 						<a class="btn btn-primary btn-outline with-arrow animate-box" id="back" onclick="changeDiv_new('step-2_co','step-1')"><center>Back</center></a>
 					</div>
+
+					 
+
 					<div class="text-center" style="display: none;" id="last_button">
 						<?php if(Session::get('is_login')) {?>
+							  <?php if(Session::get('contact')!=''){ Session::get('contact'); ?>
 							<button class="btn btn-primary btn-outline with-arrow animate-box product_name" >Get me a Loan<i class="icon-arrow-right"></i></button>
+							<?php }else{?> 
+							  <a  class="btn btn-primary btn-outline with-arrow animate-box product_name" data-toggle="modal" data-target="#contact_id">Get me a Loan<i class="icon-arrow-right"></i></a>
+				              <?php }?>
 						<?php }else{?>
-							<a class="btn btn-primary btn-outline with-arrow animate-box product_name" data-toggle="modal" data-target="#login_process">Submit<i class="icon-arrow-right"></i></a>
+						<button  style="display:none" class="btn btn-primary btn-outline with-arrow animate-box product_name " id="btn_refresh_co">Get me a Loan<i class="icon-arrow-right"></i></button>
+
+							<a class="btn btn-primary btn-outline with-arrow animate-box product_name" id="btn_refresh_co1" data-toggle="modal" data-target="#login_process">Submit<i class="icon-arrow-right"></i></a>
 						<?php } ?>
 					</div>
 					

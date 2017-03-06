@@ -2014,11 +2014,16 @@ $('#q6').show();
     document.getElementById("co_obligation").value=co_obligation;
      $('#co_obl_yes').show();
      $('#co_obl_emi').show();
+      $('#last_button').show();
+        
   }
 
    if(co_obl_yes!=null && co_obl_yes=='NO'){
       document.getElementById("co_obl_loan").value=co_obl_yes;
         $('#co_obl_yes').show();
+          $('#last_button').show();
+        
+
       }
  
        

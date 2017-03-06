@@ -100,7 +100,7 @@
 
 			 <input class="input__field input__field--nao" type="hidden" id="holder" name="holder"  value=""  required   />
 			
-				<input class="input__field input__field--nao" type="hidden" id="business" name="business"  value=""  required   />
+				<input class="input__field input__field--nao" type="hidden" id="business_type" name="business_type"  value=""  required   />
 					
 				
 				<span class="input_exp input--nao input--filled">
@@ -1024,7 +1024,7 @@
         //var s=$('#'+form).serialize();
         
           var emp = $('input[name=employment]:checked').val();
-          $('#business').val(emp);
+          $('#business_type').val(emp);
            console.log(emp);
          
          var firm = $('input[name=firm_holder]:checked').val();
@@ -1123,7 +1123,7 @@
       if(! $form.valid()){
       }else{
       	 $(".iframeloading").show();
-      	$("#express_loan_submit").hide();
+      	// $("#express_loan_submit").hide();
         //var s=$('#'+form).serialize();
         //alert('HGGHF');
 
@@ -1135,6 +1135,7 @@
          success: function(msg){
          // console.log(msg.data);
          	$(".iframeloading").hide();
+         	//console.log(msg.data);
           if(msg.data==true){          
               $('#process').modal('show');                        
           }else{

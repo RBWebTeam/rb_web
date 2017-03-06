@@ -80,7 +80,7 @@
       $prod="12";
         }?>
     <td width="17%"><a class="btn btn-success" 
-    href="{{URL::to('apply-lead-online')}}?qoutid={{$quote_id}}&BankId={{$q->Bank_Id}}&product={{$prod}}">Apply Online</a></td>
+    href="{{URL::to('apply-lead-online')}}?qoutid={{$quote_id}}&BankId={{$q->Bank_Id}}&product={{$prod}}&processing_fee={{$q->processingfee}}&loan_eligible={{$q->loan_eligible}}&roi_type={{$q->roi_type}}">Apply Online</a></td>
    
   </tr>
   <tr>

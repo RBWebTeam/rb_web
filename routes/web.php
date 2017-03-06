@@ -63,6 +63,11 @@ Route::get('get-loan/{loan}','BankController@compareLoan');
 Route::post('contact_us','SocialsiteController@contact_us_otp');
 Route::post('contact_otp','SocialsiteController@contactOTP');
 
+/* Working Capital */
+
+Route::get('Working-Capital','WorkingCapitalController@WorkingCapital');
+
+
 Route::get('refresh-csrf', function(){
     return csrf_token();
 });
@@ -192,3 +197,6 @@ Route::get('searchajaxqu',array('as'=>'searchajaxqu','uses'=>'Login_and_Reg_Cont
 // emp_login routes
 
 Route::post('emp-login','LoginController@emp_login');
+
+/**  comfy */
+Route::get('comfy','comfyController@comfy');

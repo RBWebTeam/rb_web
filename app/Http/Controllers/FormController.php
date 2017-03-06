@@ -110,7 +110,7 @@ class FormController extends CallApiController
             
             $data['loan_amount'] =$req['loan_amount'];
             $data['quote_data'] =$quote_data;
-            //print"<pre>";print_r($data);exit();
+              // print"<pre>";print_r($data);exit();
             return view('show-quotes')->with($data);
         }catch(\Exception $ee){
             return $ee;//view('went-wrong');

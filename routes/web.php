@@ -199,7 +199,7 @@ Route::get('searchajaxqu',array('as'=>'searchajaxqu','uses'=>'Login_and_Reg_Cont
 Route::post('emp-login','LoginController@emp_login');
 
 /**  comfy */
-Route::get('comfy','comfyController@comfy');
+Route::get('comfy','ComfyController@comfy');
 
 /**  idfc */
 Route::get('idfc','idfcController@idfc');

@@ -18,9 +18,9 @@
   <div class="carousel-inner" role="listbox">
   <div class="pull-right mar-tp ">
 
-		<a href="{{URL::to('comfy-sales')}}" class="img2"><img src="images/sliding-right-img-2.png" alt="comfy-sales" class="img-responsive"/></a>
+		<a href="{{URL::to('comfy')}}" class="img2"><img src="images/sliding-right-img-2.png" alt="comfy" class="img-responsive"/></a>
 		  <a href="{{URL::to('express-loan')}}" class="img3"><img src="images/sliding-right-img-1.png" alt="express-loan" class="img-responsive"/></a>
-		   <a href="{{URL::to('savings-account')}}" class="img4"><img src="images/sliding-right-img-3.png" alt="savings-account" class="img-responsive"/></a>
+		   <a href="{{URL::to('idfc')}}" class="img4"><img src="images/sliding-right-img-3.png" alt="idfc" class="img-responsive"/></a>
 
 		</div>
     <div class="item active">

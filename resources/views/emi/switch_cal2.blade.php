@@ -80,6 +80,11 @@ foreach ($data as $key => $value){?>
                       </div>
                     </td>
 
+                    </td>
+                    <td class="td-main">
+                     <a href="">Apply Now</a>
+                    </td>
+
 
                     <!-- <td class="td-main-1"> <img src="images/edit-home-icon.png" class="img-responsive"></a> -->
                     

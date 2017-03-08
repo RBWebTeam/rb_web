@@ -60,9 +60,7 @@ class HomeController extends InitialController
 
 	}
 
-	public function comfy_sales(){
-		return view('comfy-sales');
-	}
+	
 
 	public function express_loan(){
 		$keywords='Express Finance Loans, Cash Express Loan, Express Loan Aditya Birla Group, Express Loan Bank, Express Loan Corporation, Express Loan Tribe, Express Loan Eligibility, Apply Online For Express Loan, Emergency Loans , Advance Loans ,Quick And Easy Loans ,Instant Cash Loans'; 

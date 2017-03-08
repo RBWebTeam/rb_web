@@ -106,7 +106,7 @@ td {padding:5px; text-align:center;}
 .btn-primary.btn-outline {
   background:#fff;
   color: #3aa6d3;
-  border:2px solid #ed1c24;
+
 }
 .btn-primary.btn-outline:hover, .btn-primary.btn-outline:focus, .btn-primary.btn-outline:active {
   background: #ec1b23;

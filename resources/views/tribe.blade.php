@@ -42,7 +42,7 @@
   <div class="col-md-3"><p>Owner Email*</p></div>
   <div class="col-md-8">
   <input type="text" name="owner_email" id="owner_email" class="form-control form-group"/>
-   <a class="btn btn-primary btn-outline with-arrow sidebar-submit ">Next<i class="icon-arrow-right"></i></a>
+   <a class="btn btn-primary btn-outline with-arrow  ">Next<i class="icon-arrow-right"></i></a>
   </div>
   
 
@@ -70,8 +70,8 @@
 		 <option>Forthnightly</option>
 		 <option>Daily</option>
   </select>
-  <a class="btn btn-primary btn-outline with-arrow sidebar-submit ">Next<i class="icon-arrow-right"></i></a>
-  <a class="btn btn-primary btn-outline with-arrow sidebar-submit ">Back<i class="icon-arrow-right"></i></a>
+  <a class="btn btn-primary btn-outline with-arrow  ">Next<i class="icon-arrow-right"></i></a>
+  <a class="btn btn-primary btn-outline with-arrow  ">Back<i class="icon-arrow-right"></i></a>
   </div>
   </div>
   
@@ -130,8 +130,8 @@
 		 <option>divorced</option>
 		 <option>widowed</option>
   </select>
-  <a class="btn btn-primary btn-outline with-arrow sidebar-submit ">Next<i class="icon-arrow-right"></i></a>
-  <a class="btn btn-primary btn-outline with-arrow sidebar-submit ">Back<i class="icon-arrow-right"></i></a>
+  <a class="btn btn-primary btn-outline with-arrow  ">Next<i class="icon-arrow-right"></i></a>
+  <a class="btn btn-primary btn-outline with-arrow  ">Back<i class="icon-arrow-right"></i></a>
   </div>
   
   </div>
@@ -263,9 +263,10 @@
   </div>
   
   <div class="col-md-3"><p>How did you Know About Us?*</p></div>
-  <div class="col-md-8"><input type="text" name="txt" class="form-control form-group"/>
-  <a class="btn btn-primary btn-outline with-arrow sidebar-submit ">Next<i class="icon-arrow-right"></i></a>
-  <a class="btn btn-primary btn-outline with-arrow sidebar-submit ">Back<i class="icon-arrow-right"></i></a>
+  <div class="col-md-8">
+  <input type="text" name="reached_us_via" id="reached_us_via" class="form-control form-group" />
+  <a class="btn btn-primary btn-outline with-arrow  ">Next<i class="icon-arrow-right"></i></a>
+  <a class="btn btn-primary btn-outline with-arrow  ">Back<i class="icon-arrow-right"></i></a>
   </div>
   </div>
   <div id="main4" class="tab-pane fade">
@@ -273,67 +274,75 @@
 	<h3 class="mrg-top">KYC Identity Proof</h3>
 <hr>
   <div class="col-md-3">Pan</div>
-  <div class="col-md-8"><input type="file" class="form-control form-group no-border"/></div>
+  <div class="col-md-8"><input type="file" id="doc_pan" name="doc_pan" class="form-control form-group no-border"/></div>
   
   <div class="col-md-3">Aadhaar</div>
-  <div class="col-md-8"><input type="file" name="txt" class="form-control form-group no-border"/></div>
+  <div class="col-md-8"><input type="file" name="doc_aadhar" id="doc_aadhar" class="form-control form-group no-border"/></div>
   
-  <div class="col-md-3">Driving License</div>
+  <div class="col-md-3">Driving License </div>
   <div class="col-md-8">
-   <input type="file" class="form-control form-group no-border"/>
+   <input type="file" name="doc_dl" id="doc_dl" class="form-control form-group no-border"/>
   </div>
   
   <div class="col-md-3">Passport</div>
   <div class="col-md-8">
-   <input type="file" class="form-control form-group no-border"/>
+   <input type="file" name="doc_passport" id="doc_passport" class="form-control form-group no-border"/>
   </div>
   
   <div class="col-md-3">Voter ID</div>
   <div class="col-md-8">
-   <input type="file" class="form-control form-group no-border"/>
+   <input type="file" id="doc_voter" name="doc_voter" id="doc_voter" class="form-control form-group no-border"/>
   </div>
   <div class="col-md-12">
   <h3 class="mrg-top">Address Proof</h3><hr>
 </div>
 <div class="col-md-3">Electricity Bill</div>
   <div class="col-md-8">
-   <input type="file" class="form-control form-group no-border"/>
+   <input type="file" name="doc_electricity_bill" id="doc_electricity_bill" class="form-control form-group no-border"/>
   </div>
   
   <div class="col-md-3">Leave and License Agreement</div>
-  <div class="col-md-8"><input type="file" class="form-control form-group no-border"/></div>
+  <div class="col-md-8">
+  <input type="file" id="doc_leave_license" name="doc_leave_license" id="doc_leave_license" class="form-control form-group no-border"/></div>
   
   <div class="col-md-12">
   <h3 class="mrg-top">Business KYC</h3><hr>
 </div>
   <div class="col-md-3">Registration Certificate</div>
-  <div class="col-md-8"><input type="file" class="form-control form-group no-border"/></div>
+  <div class="col-md-8">
+  <input type="file" id="doc_reg_certification" name="doc_reg_certification" class="form-control form-group no-border"/></div>
   
   <div class="col-md-3">Tax Registration</div>
-  <div class="col-md-8"><input type="file" class="form-control form-group no-border"/></div>
+  <div class="col-md-8">
+  <input type="file" id="doc_tax_registration" name="doc_tax_registration" class="form-control form-group no-border"/></div>
   
   <div class="col-md-12">
   <h3 class="mrg-top">Business Documents</h3><hr>
 </div>
   <div class="col-md-3">Company IT Returns</div>
-  <div class="col-md-8"><input type="file" class="form-control form-group no-border"/></div>
+  <div class="col-md-8">
+  <input type="file" name="doc_comapny_it_returns" id="doc_comapny_it_returns" class="form-control form-group no-border"/></div>
   
   <div class="col-md-3">Company PAN</div>
-  <div class="col-md-8"><input type="file" class="form-control form-group no-border"/></div>
+  <div class="col-md-8">
+  <input type="file" id="doc_company_pan" name="doc_company_pan" class="form-control form-group no-border"/></div>
   
    <div class="col-md-3">ITR/VAT Returns/ST Returns</div>
-  <div class="col-md-8"><input type="file" class="form-control form-group no-border"/></div>
+  <div class="col-md-8">
+  <input type="file" id="doc_vat_return" name="doc_vat_return" class="form-control form-group no-border"/></div>
   
   <div class="col-md-12">
   <h3 class="mrg-top">Other Documents</h3><hr>
 </div>
   <div class="col-md-3">Personal IT Returns</div>
-  <div class="col-md-8"><input type="file" class="form-control form-group no-border"/></div>
+  <div class="col-md-8">
+  <input type="file" id="doc_it_returns" name="doc_it_returns" class="form-control form-group no-border"/></div>
   
   <div class="col-md-3">Other Documents</div>
-  <div class="col-md-8"><input type="file" class="form-control form-group no-border"/>
-   <a class="btn btn-primary btn-outline with-arrow sidebar-submit ">Next<i class="icon-arrow-right"></i></a>
-  <a class="btn btn-primary btn-outline with-arrow sidebar-submit ">Back<i class="icon-arrow-right"></i></a>
+  <div class="col-md-8">
+  <input type="file" name="doc_other" id="doc_other" class="form-control form-group no-border"/>
+   <a class="btn btn-primary btn-outline with-arrow  ">Next<i class="icon-arrow-right"></i></a>
+  <a class="btn btn-primary btn-outline with-arrow  ">Back<i class="icon-arrow-right"></i></a>
   </div>
   
   </div>
@@ -341,16 +350,16 @@
     <p>Providing Online Credentials of Platforms/Marketplaces/Software that you make use of in your business will help us understand your business better and make the most appropriate 
 	recommendations for Loans. This can also increase your chances of securing Loans at a lower interest rate. As a Business User, you gain free and complete access to all the insights that Tribe draws using your online credentials.</p>
 	<ul>
-	  <li class="pad"><input type="radio" name="rdo" /> Flipkart</li>
-	  <li class="pad"><input type="radio" name="rdo" /> Zomato</li>
-	  <li class="pad"><input type="radio" name="rdo" /> BrownTape</li>
-	  <li class="pad"><input type="radio" name="rdo" /> Amazon</li>
-	  <li class="pad"><input type="radio" name="rdo" /> Trip Advisor</li>
-	  <li class="pad"><input type="radio" name="rdo" /> Company Info</li>
+	  <li class="pad"><input type="radio" name="flipkart" /> Flipkart</li>
+	  <li class="pad"><input type="radio" name="zomato" /> Zomato</li>
+	  <li class="pad"><input type="radio" name="browntape" /> BrownTape</li>
+	  <li class="pad"><input type="radio" name="amazon" /> Amazon</li>
+	  <li class="pad"><input type="radio" name="trip_advisor" /> Trip Advisor</li>
+	  <li class="pad"><input type="radio" name="comapny_info" /> Company Info</li>
 	</ul>
 	
-	<a class="btn btn-primary btn-outline with-arrow sidebar-submit ">Next<i class="icon-arrow-right"></i></a>
-  <a class="btn btn-primary btn-outline with-arrow sidebar-submit ">Back<i class="icon-arrow-right"></i></a>
+	<a class="btn btn-primary btn-outline with-arrow ">Next<i class="icon-arrow-right"></i></a>
+  <a class="btn btn-primary btn-outline with-arrow ">Back<i class="icon-arrow-right"></i></a>
   </div>
   <div id="main6" class="tab-pane fade">
     
@@ -358,23 +367,28 @@
   <h3 class="mrg-top">Refrence</h3><hr>
 </div>
   <div class="col-md-3">First Name</div>
-  <div class="col-md-8"><input type="text" class="form-control form-group"/></div>
+  <div class="col-md-8">
+  <input type="text" id="ref_first_name" name="ref_first_name" class="form-control form-group" required="" /></div>
   
   <div class="col-md-3">Middle Name</div>
-  <div class="col-md-8"><input type="text" class="form-control form-group"/></div>
+  <div class="col-md-8">
+  <input type="text" class="form-control form-group" name="ref_middle_name" id="ref_middle_name"/></div>
   
   <div class="col-md-3">Last Name</div>
-  <div class="col-md-8"><input type="text" class="form-control form-group"/></div>
+  <div class="col-md-8">
+  <input type="text" id="ref_last_name" name="ref_last_name" class="form-control form-group" required="" /></div>
   
   <div class="col-md-3">Mobile Number</div>
-  <div class="col-md-8"><input type="text" class="form-control form-group"/></div>
+  <div class="col-md-8">
+  <input type="text" name="ref_mobile" id="ref_mobile" class="form-control form-group"/></div>
   
   <div class="col-md-3">Email</div>
-  <div class="col-md-8"><input type="text" class="form-control form-group"/></div>
+  <div class="col-md-8">
+  <input type="text" name="ref_email" id="ref_email" class="form-control form-group"/></div>
   
  <div class="col-md-3">
-  <a class="btn btn-primary btn-outline with-arrow sidebar-submit ">Next<i class="icon-arrow-right"></i></a>
-  <a class="btn btn-primary btn-outline with-arrow sidebar-submit ">Back<i class="icon-arrow-right"></i></a>
+  <a class="btn btn-primary btn-outline with-arrow  ">Next<i class="icon-arrow-right"></i></a>
+  <a class="btn btn-primary btn-outline with-arrow  ">Back<i class="icon-arrow-right"></i></a>
   </div>
    <div class="col-md-8"> <a class="btn btn-primary btn-outline with-arrow pull-left">Save Form<i class="icon-arrow-right"></i></a></div>
  
@@ -384,7 +398,7 @@
 
   <div class="col-md-3">UPLOAD COMPANY BANK STATEMENTS</div>
   <div class="col-md-8 sec">
-   <select class="drop-arr">
+   <select class="drop-arr" name="bank_statement" id="bank_statement">
          <option>-Select a Bank-</option>
 		 <option>Axis Bank</option>
 		 <option>Kotak Bank</option>
@@ -394,13 +408,16 @@
   </div>
   
   <div class="col-md-3">Start Date</div>
-  <div class="col-md-8"><input type="date" class="form-control form-group"/></div>
+  <div class="col-md-8"
+  ><input type="date" name="start_date" id="start_date" class="form-control form-group" /></div>
   
   <div class="col-md-3">End Date</div>
-  <div class="col-md-8"><input type="date" class="form-control form-group"/></div>
+  <div class="col-md-8">
+  <input type="date" id="end_date" name="end_date" class="form-control form-group"/></div>
   
   <div class="col-md-3">Upload Document</div>
-  <div class="col-md-8"><input type="file" multiple class="form-control form-group no-border"/></div>
+  <div class="col-md-8">
+  <input type="file" multiple id="upload_doc" name="upload_doc" class="form-control form-group no-border"/></div>
   <div class="col-md-3"></div>
   <div class="col-md-8 mrg-top"><a class="btn btn-primary btn-outline with-arrow">Submit Statment<i class="icon-arrow-right"></i></a></div>
   </div>

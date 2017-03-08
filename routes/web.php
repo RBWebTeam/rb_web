@@ -197,3 +197,6 @@ Route::get('searchajaxqu',array('as'=>'searchajaxqu','uses'=>'Login_and_Reg_Cont
 // emp_login routes
 
 Route::post('emp-login','LoginController@emp_login');
+
+/**  comfy */
+Route::get('comfy','comfyController@comfy');

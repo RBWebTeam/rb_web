@@ -200,3 +200,8 @@ Route::post('emp-login','LoginController@emp_login');
 
 /**  comfy */
 Route::get('comfy','comfyController@comfy');
+
+/**  idfc */
+Route::get('idfc','idfcController@idfc');
+/**  tribe */
+Route::get('tribe','tribeController@tribe');

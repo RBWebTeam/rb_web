@@ -23,7 +23,9 @@
   <h3 class="mrg-top">Partner Details</h3>
 <hr>
   <div class="col-md-3"><p>Are you a Tribe Partner?</p></div>
-  <div class="col-md-4"><p><input type="radio" name="radio" /> Yes&nbsp;&nbsp; <input type="radio" name="radio" /> No</p></div>
+  <div class="col-md-4">
+  <p><input type="radio" name="tribe_partner"/> Yes&nbsp;&nbsp;
+   <input type="radio" name="tribe_partner" /> No</p></div>
 </div>
 
 <div class="col-md-12 mrg-top">
@@ -31,14 +33,16 @@
   <h3>Company Details</h3>
 <hr>
   <div class="col-md-3"><p>Company Name*</p></div>
-  <div class="col-md-8"><input type="text" name="txt" class="form-control form-group"/></div>
+  <div class="col-md-8"><input type="text" name="company_name" id="company_name" class="form-control form-group" required /></div>
   
   <div class="col-md-3"><p>Owner Name*</p></div>
-  <div class="col-md-8"><input type="text" name="txt" class="form-control form-group"/></div>
+  <div class="col-md-8">
+  <input type="text" name="owner_name" id="owner_name" class="form-control form-group" required /></div>
   
   <div class="col-md-3"><p>Owner Email*</p></div>
-  <div class="col-md-8"><input type="text" name="txt" class="form-control form-group"/>
-   <button class="btn btn-primary btn-outline with-arrow sidebar-submit ">Next<i class="icon-arrow-right"></i></button>
+  <div class="col-md-8">
+  <input type="text" name="owner_email" id="owner_email" class="form-control form-group"/>
+   <a class="btn btn-primary btn-outline with-arrow sidebar-submit ">Next<i class="icon-arrow-right"></i></a>
   </div>
   
 
@@ -50,22 +54,24 @@
 	<h3 class="mrg-top">Loan Details</h3>
 <hr>
   <div class="col-md-3"><p>Loan Amount (Rs.)</p></div>
-  <div class="col-md-8"><p><input type="text" name="txt" class="form-control form-group"/></p></div>
+  <div class="col-md-8"><p>
+  <input type="text" name="loan_amount" id="loan_amount" class="form-control form-group" required /></p></div>
   
   <div class="col-md-3"><p>Loan Tenure (Months)</p></div>
-  <div class="col-md-8"><p><input type="text" name="txt" class="form-control form-group"/></p></div>
+  <div class="col-md-8"><p>
+  <input type="text" name="loan_tenure" id="loan_tenure" class="form-control form-group" required /></p></div>
   
   <div class="col-md-3"><p>Repayment Frequency</p></div>
   <div class="col-md-8 sec">
-  <select class="drop-arr">
-         <option>Select Repayment Frequency</option>
+  <select class="drop-arr" name="repayment_frequency" id="repayment_frequency" required>
+      <option>Select Repayment Frequency</option>
 		 <option>Monthly</option>
 		 <option>Weekly</option>
 		 <option>Forthnightly</option>
 		 <option>Daily</option>
   </select>
-  <button class="btn btn-primary btn-outline with-arrow sidebar-submit ">Next<i class="icon-arrow-right"></i></button>
-  <button class="btn btn-primary btn-outline with-arrow sidebar-submit ">Back<i class="icon-arrow-right"></i></button>
+  <a class="btn btn-primary btn-outline with-arrow sidebar-submit ">Next<i class="icon-arrow-right"></i></a>
+  <a class="btn btn-primary btn-outline with-arrow sidebar-submit ">Back<i class="icon-arrow-right"></i></a>
   </div>
   </div>
   
@@ -74,39 +80,41 @@
 	<h3 class="mrg-top">Personal Details</h3>
 <hr>
   <div class="col-md-3"><p>First Name*</p></div>
-  <div class="col-md-8"><input type="text" name="txt" class="form-control form-group"/></div>
+  <div class="col-md-8">
+  <input type="text" name="first_name" id="first_name" class="form-control form-group" required="" /></div>
   
   <div class="col-md-3"><p>Middle Name</p></div>
-  <div class="col-md-8"><input type="text" name="txt" class="form-control form-group"/></div>
+  <div class="col-md-8">
+  <input type="text" name="middle_name" id="middle_name" class="form-control form-group"/></div>
   
   <div class="col-md-3"><p>Last Name*</p></div>
-  <div class="col-md-8"><input type="text" name="txt" class="form-control form-group"/></div>
+  <div class="col-md-8"><input type="text" name="last_name" id="last_name" class="form-control form-group" required="" /></div>
   
   <div class="col-md-3"><p>Mobile No*</p></div>
- <div class="col-md-8"><input type="text" pattern="[789][0-9]{9}" required="" maxlength="10" name="txt" class="form-control form-group"/></div>
+ <div class="col-md-8"><input type="text" pattern="[789][0-9]{9}" required="" maxlength="10" name="mobile" id="mobile" class="form-control form-group" required /></div>
   
   <div class="col-md-3"><p>Email</p></div>
-  <div class="col-md-8"><input type="email" name="txt" class="form-control form-group"/></div>
+  <div class="col-md-8"><input type="email" name="email" id="email" class="form-control form-group" required="" /></div>
   
   <div class="col-md-3"><p>Address*</p></div>
-  <div class="col-md-8"><textarea class="form-control form-control mrg-btm" colspan="2"></textarea></div>
+  <div class="col-md-8"><textarea class="form-control form-control mrg-btm" colspan="2" name="address" id="address"></textarea></div>
   
   <div class="col-md-3"><p>Aadhaar Number*</p></div>
-  <div class="col-md-8"><input type="text" name="txt" class="form-control form-group"/></div>
+  <div class="col-md-8"><input type="text" name="aadhar_no" id="aadhar_no" class="form-control form-group" required="" /></div>
   
   <div class="col-md-3"><p>Owner Email*</p></div>
-  <div class="col-md-8"><input type="text" name="txt" class="form-control form-group"/></div>
+  <div class="col-md-8"><input type="text" name="owner_email_personal" id="owner_email_personal" class="form-control form-group" required="" /></div>
   
   <div class="col-md-3"><p>Date of Birth*</p></div>
-  <div class="col-md-8"><input type="date" name="txt" class="form-control form-group"/></div>
+  <div class="col-md-8"><input type="date" name="dob" id="dob" class="form-control form-group" required="" /></div>
   
   <div class="col-md-3"><p>Annual Income (INR)*</p></div>
-  <div class="col-md-8"><input type="number" name="txt" class="form-control form-group"/></div>
+  <div class="col-md-8"><input type="number" name="annual_income" id="annual_income" class="form-control form-group"/></div>
   
   <div class="col-md-3"><p>Education*</p></div>
   <div class="col-md-8 sec">
-    <select class="drop-arr">
-         <option>Select Education</option>
+    <select class="drop-arr" name="education" id="education">
+     <option>Select Education</option>
 		 <option>Graduate</option>
 		 <option>post graduate</option>
 		 <option>others</option>
@@ -115,15 +123,15 @@
   
   <div class="col-md-3"><p>Family Details*</p></div>
   <div class="col-md-8 sec">
-     <select class="drop-arr">
-         <option>-Select Family Details-</option>
+     <select class="drop-arr" name="family_detail" id="family_detail" >
+    <option>-Select Family Details-</option>
 		 <option>single</option>
 		 <option>married</option>
 		 <option>divorced</option>
 		 <option>widowed</option>
   </select>
-  <button class="btn btn-primary btn-outline with-arrow sidebar-submit ">Next<i class="icon-arrow-right"></i></button>
-  <button class="btn btn-primary btn-outline with-arrow sidebar-submit ">Back<i class="icon-arrow-right"></i></button>
+  <a class="btn btn-primary btn-outline with-arrow sidebar-submit ">Next<i class="icon-arrow-right"></i></a>
+  <a class="btn btn-primary btn-outline with-arrow sidebar-submit ">Back<i class="icon-arrow-right"></i></a>
   </div>
   
   </div>
@@ -131,11 +139,12 @@
     <h3 class="mrg-top">Business Details</h3>
 <hr>
   <div class="col-md-3"><p>Employees Count*</p></div>
-  <div class="col-md-8"><input type="text" name="txt" class="form-control form-group"/></div>
+  <div class="col-md-8">
+  <input type="text" name="txt" class="form-control form-group" name="employee_count" id="employee_count"/></div>
   
   <div class="col-md-3"><p>Registration Details*</p></div>
   <div class="col-md-8 sec">
-   <select class="drop-arr">
+   <select class="drop-arr" name="registration_detail" id="registration_detail">
          <option>-Select Registration Details-</option>
 		 <option>Private Limited Company</option>
 		 <option>LLP</option>
@@ -154,14 +163,16 @@
   </div>
   
   <div class="col-md-3"><p>Company Pan Number*</p></div>
-  <div class="col-md-8"><input type="text" name="txt" class="form-control form-group"/></div>
+  <div class="col-md-8">
+  <input type="text" name="company_pan_card" id="company_pan_card" class="form-control form-group" required="" /></div>
   
   <div class="col-md-3"><p>Address*</p></div>
-  <div class="col-md-8"><textarea class="form-control form-control mrg-btm" colspan="2"></textarea></div>
+  <div class="col-md-8">
+  <textarea class="form-control form-control mrg-btm" colspan="2" id="company_address" name="company_address"></textarea></div>
   
   <div class="col-md-3"><p>Business Type*</p></div>
   <div class="col-md-8 sec">
-    <select class="drop-arr">
+    <select class="drop-arr" id="business_type" name="business_type">
          <option>-Select Business Type-</option>
 		 <option>importer</option>
 		 <option>exporter</option>
@@ -176,15 +187,19 @@
   </div>
   
   <div class="col-md-3"><p>Do you carry out Online Sales?*</p></div>
-  <div class="col-md-8"><p><input type="radio" name="radio" /> Yes&nbsp;&nbsp; <input type="radio" name="radio" /> No</p></div>
+  <div class="col-md-8"><p>
+  <input type="radio" name="online_sale" /> Yes&nbsp;&nbsp; 
+  <input type="radio" name="online_sale" /> No</p></div>
   
   <div class="col-md-3"><p>Do you carry out Offline Sales?*</p></div>
-  <div class="col-md-8"><p><input type="radio" name="radio" /> Yes&nbsp;&nbsp; <input type="radio" name="radio" /> No</p></div>
+  <div class="col-md-8"><p>
+  <input type="radio" name="offline_sale" /> Yes&nbsp;&nbsp; 
+  <input type="radio" name="offline_sale" /> No</p></div>
   
   <div class="col-md-3"><p>Turnover*</p></div>
   <div class="col-md-8 sec">
-     <select class="drop-arr">
-         <option>-Select Turnover-</option>
+     <select class="drop-arr" name="turnover" id="turnover">
+      <option>-Select Turnover-</option>
 		 <option>0 to 15L</option>
 		 <option>15L to 50L</option>
 		 <option>50L to 1Cr</option>
@@ -194,7 +209,7 @@
   
   <div class="col-md-3"><p>Business Premises*</p></div>
   <div class="col-md-8 sec">
-    <select class="drop-arr">
+    <select class="drop-arr" name="business_premises" id="business_premises">
          <option>-Select Business Premise-</option>
 		 <option>owned</option>
 		 <option>rented</option>
@@ -204,7 +219,7 @@
   
   <div class="col-md-3"><p>Which products do you sell?*</p></div>
   <div class="col-md-8 sec">
-    <select class="drop-arr">
+    <select class="drop-arr" name="selling_product" id="selling_product">
          <option>-Select Sales Channel-</option>
 		 <option>Apparel</option>
 		 <option>Appliances</option>
@@ -236,7 +251,7 @@
   
   <div class="col-md-3"><p>Loan Purpose*</p></div>
   <div class="col-md-8 sec">
-   <select class="drop-arr">
+   <select class="drop-arr" name="loan_purpose" id="loan_purpose">
          <option>-Select Loan Purpose-</option>
 		 <option>inventory rotation</option>
 		 <option>product differentiation</option>
@@ -249,8 +264,8 @@
   
   <div class="col-md-3"><p>How did you Know About Us?*</p></div>
   <div class="col-md-8"><input type="text" name="txt" class="form-control form-group"/>
-  <button class="btn btn-primary btn-outline with-arrow sidebar-submit ">Next<i class="icon-arrow-right"></i></button>
-  <button class="btn btn-primary btn-outline with-arrow sidebar-submit ">Back<i class="icon-arrow-right"></i></button>
+  <a class="btn btn-primary btn-outline with-arrow sidebar-submit ">Next<i class="icon-arrow-right"></i></a>
+  <a class="btn btn-primary btn-outline with-arrow sidebar-submit ">Back<i class="icon-arrow-right"></i></a>
   </div>
   </div>
   <div id="main4" class="tab-pane fade">
@@ -317,8 +332,8 @@
   
   <div class="col-md-3">Other Documents</div>
   <div class="col-md-8"><input type="file" class="form-control form-group no-border"/>
-   <button class="btn btn-primary btn-outline with-arrow sidebar-submit ">Next<i class="icon-arrow-right"></i></button>
-  <button class="btn btn-primary btn-outline with-arrow sidebar-submit ">Back<i class="icon-arrow-right"></i></button>
+   <a class="btn btn-primary btn-outline with-arrow sidebar-submit ">Next<i class="icon-arrow-right"></i></a>
+  <a class="btn btn-primary btn-outline with-arrow sidebar-submit ">Back<i class="icon-arrow-right"></i></a>
   </div>
   
   </div>
@@ -334,8 +349,8 @@
 	  <li class="pad"><input type="radio" name="rdo" /> Company Info</li>
 	</ul>
 	
-	<button class="btn btn-primary btn-outline with-arrow sidebar-submit ">Next<i class="icon-arrow-right"></i></button>
-  <button class="btn btn-primary btn-outline with-arrow sidebar-submit ">Back<i class="icon-arrow-right"></i></button>
+	<a class="btn btn-primary btn-outline with-arrow sidebar-submit ">Next<i class="icon-arrow-right"></i></a>
+  <a class="btn btn-primary btn-outline with-arrow sidebar-submit ">Back<i class="icon-arrow-right"></i></a>
   </div>
   <div id="main6" class="tab-pane fade">
     
@@ -358,8 +373,8 @@
   <div class="col-md-8"><input type="text" class="form-control form-group"/></div>
   
  <div class="col-md-3">
-  <button class="btn btn-primary btn-outline with-arrow sidebar-submit ">Next<i class="icon-arrow-right"></i></button>
-  <button class="btn btn-primary btn-outline with-arrow sidebar-submit ">Back<i class="icon-arrow-right"></i></button>
+  <a class="btn btn-primary btn-outline with-arrow sidebar-submit ">Next<i class="icon-arrow-right"></i></a>
+  <a class="btn btn-primary btn-outline with-arrow sidebar-submit ">Back<i class="icon-arrow-right"></i></a>
   </div>
    <div class="col-md-8"> <a class="btn btn-primary btn-outline with-arrow pull-left">Save Form<i class="icon-arrow-right"></i></a></div>
  

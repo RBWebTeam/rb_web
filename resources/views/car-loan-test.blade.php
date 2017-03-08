@@ -62,7 +62,7 @@
 							
 						</div>
 						<div class="col-md-12 text-center animate-box cont" style="display: none" id="q_prop">
-							<h3>and my Car cost is
+							<h3>and on road car cost is
 								<input type="tel" id="property_cost" name="car_cost"  onkeyup="changeText_new('property_cost','q6')"  onkeypress="return fnAllowNumeric(event)" class="input-pad" placeholder="1,00,000" tabindex="1" onchange="setSesson('property_cost',this.value);">.
 							</h3> 
 						</div>

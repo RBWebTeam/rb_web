@@ -8,4 +8,7 @@ class ComfyController extends Controller
 		
 	      return view('comfy');	
 	}
+	public function comfy_sales(){
+		return view('comfy-sales');
+	}
 }

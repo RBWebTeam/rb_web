@@ -87,7 +87,7 @@ Route::get('about-us','HomeController@about_us');
 Route::get('disclaimer-page','HomeController@disclaimer');
 Route::get('privacy-policy-page','HomeController@privacy_policy');
 Route::get('balance-transfer','CompareController@switchme_mobile');
-Route::get('comfy-sales','HomeController@comfy_sales');
+Route::get('comfy-sales','ComfyController@comfy_sales');
 Route::get('express-loan','HomeController@express_loan');
 Route::get('credit-card','HomeController@credit_card');
 Route::get('savings-account','HomeController@savings_account');
@@ -202,6 +202,6 @@ Route::post('emp-login','LoginController@emp_login');
 Route::get('comfy','ComfyController@comfy');
 
 /**  idfc */
-Route::get('idfc','idfcController@idfc');
+Route::get('idfc','IdfcController@idfc');
 /**  tribe */
 Route::get('tribe','tribeController@tribe');

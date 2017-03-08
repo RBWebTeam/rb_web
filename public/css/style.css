@@ -1985,7 +1985,7 @@ body {background:#eee;}
    .mrg-tpp {margin-top:5px; display:block;} 
    .rbabg {height:300px;} 
    .mrg-bt-rba {margin-bottom:5px;}
-   .inp-hig {height:40px;}
+   .inp-hig {height:70px;}
    
    .rba-dv-hei {height:266px;padding-top:20px;}
  
@@ -3157,4 +3157,49 @@ margin-top: 10px;
 .wc-center {margin:0 auto; width:30%;}
 
 
+
+
+.input-typ {padding: 10px; 
+border:2px solid #eee;
+background: #f1f1f1;
+width:35%;
+padding-left: 20px;
+margin: 10px 0px;
+font-size:20px;margin-top: 10px;
+}
+
+.get-otp {
+    background: #4cae4c;
+    border: 2px solid #4cae4c;
+    color: #fff;
+    position: absolute;
+    margin-top: 10px;
+    font-size: 20px;
+    padding: 10px 35px;
+    text-transform: uppercase;
+}
+.get-otp:hover {background:#44a644;}
+.border{border:1px solid #eee;}
+
+.modal-header {background:#ed1c24;color:#fff;}
+.modal-header h4 {color:#fff;font-weight:bold;} 
+.modal{margin-top:100px;}
+.modal-content {border-radius:0px;}
+.tab-content {float:left;width:100%;}
+.heigh-bt {
+    min-height:300px;
+}
+.bnk-dv-r {float:left;width:100%;}
+.bnk-hdr {background:#D1EEEE;padding:10px;}
+.btn-submt {display:block; width:100%;font-size:20px;padding:5px; background:#28a0ff;color:#fff;}
+.btn-submt:hover {background:#ff0000;}
+.high-fiv {margin-bottom:5px;}
+.brd-for {border:2px solid #f1f1f1;background:#f8f8f8;}
+.mrg-top {margin-top:20px;}
+.nav > li > a {padding:10px 12px;}
+.nav-tabs > li.active > a {
+	background:#999;
+    color: #fff;
+}
+.no-border {border:none;outline:none; margin:0px;padding:2px;}
 

@@ -2,7 +2,7 @@
 
 <div id="fh5co-hero">
 	<div class="container">
-	<h2 class="align-center loan-head">tribe</h2>
+	<h2 class="align-center loan-head">Tribe</h2>
 	<div class="col-md-12 pad1 white-bg box-shadow">
 
  <ul class="nav nav-tabs">
@@ -12,7 +12,7 @@
   <li><a data-toggle="tab" href="#main3"><b>BUSNESS DETAILS</b></a></li>
   <li><a data-toggle="tab" href="#main4"><b>DOCUMENTS</b></a></li>
   <li><a data-toggle="tab" href="#main5"><b>ONLINE IDS</b></a></li>
-  <li><a data-toggle="tab" href="#main6"><b>REFRANCES</b></a></li>
+  <li><a data-toggle="tab" href="#main6"><b>REFRENCES</b></a></li>
   <li><a data-toggle="tab" href="#main7"><b>BANK STATMENTS</b></a></li>
 </ul>
 
@@ -325,7 +325,7 @@
   <div id="main6" class="tab-pane fade">
     
 	<div class="col-md-12">
-  <h3 class="mrg-top">Refrance</h3><hr>
+  <h3 class="mrg-top">Refrence</h3><hr>
 </div>
   <div class="col-md-3">First Name</div>
   <div class="col-md-8"><input type="text" class="form-control form-group"/></div>

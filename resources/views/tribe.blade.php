@@ -37,9 +37,11 @@
   <div class="col-md-8"><input type="text" name="txt" class="form-control form-group"/></div>
   
   <div class="col-md-3"><p>Owner Email*</p></div>
-  <div class="col-md-8">
-   <input type="text" name="txt" class="form-control form-group"/>
+  <div class="col-md-8"><input type="text" name="txt" class="form-control form-group"/>
+   <button class="btn btn-primary btn-outline with-arrow sidebar-submit ">Next<i class="icon-arrow-right"></i></button>
   </div>
+  
+
 </div>
 
   </div>
@@ -62,6 +64,8 @@
 		 <option>Forthnightly</option>
 		 <option>Daily</option>
   </select>
+  <button class="btn btn-primary btn-outline with-arrow sidebar-submit ">Next<i class="icon-arrow-right"></i></button>
+  <button class="btn btn-primary btn-outline with-arrow sidebar-submit ">Back<i class="icon-arrow-right"></i></button>
   </div>
   </div>
   
@@ -118,6 +122,8 @@
 		 <option>divorced</option>
 		 <option>widowed</option>
   </select>
+  <button class="btn btn-primary btn-outline with-arrow sidebar-submit ">Next<i class="icon-arrow-right"></i></button>
+  <button class="btn btn-primary btn-outline with-arrow sidebar-submit ">Back<i class="icon-arrow-right"></i></button>
   </div>
   
   </div>
@@ -242,7 +248,10 @@
   </div>
   
   <div class="col-md-3"><p>How did you Know About Us?*</p></div>
-  <div class="col-md-8"><input type="text" name="txt" class="form-control form-group"/></div>
+  <div class="col-md-8"><input type="text" name="txt" class="form-control form-group"/>
+  <button class="btn btn-primary btn-outline with-arrow sidebar-submit ">Next<i class="icon-arrow-right"></i></button>
+  <button class="btn btn-primary btn-outline with-arrow sidebar-submit ">Back<i class="icon-arrow-right"></i></button>
+  </div>
   </div>
   <div id="main4" class="tab-pane fade">
     
@@ -307,7 +316,10 @@
   <div class="col-md-8"><input type="file" class="form-control form-group no-border"/></div>
   
   <div class="col-md-3">Other Documents</div>
-  <div class="col-md-8"><input type="file" class="form-control form-group no-border"/></div>
+  <div class="col-md-8"><input type="file" class="form-control form-group no-border"/>
+   <button class="btn btn-primary btn-outline with-arrow sidebar-submit ">Next<i class="icon-arrow-right"></i></button>
+  <button class="btn btn-primary btn-outline with-arrow sidebar-submit ">Back<i class="icon-arrow-right"></i></button>
+  </div>
   
   </div>
   <div id="main5" class="tab-pane fade">
@@ -321,6 +333,9 @@
 	  <li class="pad"><input type="radio" name="rdo" /> Trip Advisor</li>
 	  <li class="pad"><input type="radio" name="rdo" /> Company Info</li>
 	</ul>
+	
+	<button class="btn btn-primary btn-outline with-arrow sidebar-submit ">Next<i class="icon-arrow-right"></i></button>
+  <button class="btn btn-primary btn-outline with-arrow sidebar-submit ">Back<i class="icon-arrow-right"></i></button>
   </div>
   <div id="main6" class="tab-pane fade">
     
@@ -342,7 +357,12 @@
   <div class="col-md-3">Email</div>
   <div class="col-md-8"><input type="text" class="form-control form-group"/></div>
   
- <div class="col-md-5"> <a class="btn btn-primary btn-outline with-arrow pull-right">Save Form<i class="icon-arrow-right"></i></a></div>
+ <div class="col-md-3">
+  <button class="btn btn-primary btn-outline with-arrow sidebar-submit ">Next<i class="icon-arrow-right"></i></button>
+  <button class="btn btn-primary btn-outline with-arrow sidebar-submit ">Back<i class="icon-arrow-right"></i></button>
+  </div>
+   <div class="col-md-8"> <a class="btn btn-primary btn-outline with-arrow pull-left">Save Form<i class="icon-arrow-right"></i></a></div>
+ 
   </div>
   <div id="main7" class="tab-pane fade">
     <h3 class="mrg-top">Refrance</h3><hr>

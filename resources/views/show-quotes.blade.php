@@ -72,11 +72,14 @@
     <td width="9%" class="upper">Compare</td>
     <td width="16%" class="upper"><span style="color:red;"><img src="{{$q->Bank_Logo}}" class="img-responsive"></span></td>
     <td width="16%" class="upper">Interest Rate</td>
-    <td width="16%" class="upper">Loan Amount</td>
+    <td width="16%" class="upper">Loan Amount (Eligible)</td>
     <td width="18%" class="upper">emi</td>
     <?php if($product == "Personal Loan"){
       $prod ="9";
-      }else{
+      }else if($product == "Loan Against Property"){
+        $prod="7";
+      }
+      else{
       $prod="12";
         }?>
     <td width="17%"><a class="btn btn-success" 
@@ -99,7 +102,7 @@
 
     <td >{{$product}}</td>
     <td >{{$q->roi }}%</td>
-    <td >{{$q->LoanRequired}}</td>
+    <td >{{$q->loan_eligible}}</td>
     <td >{{$q->emi}} (for {{$q->LoanTenure}} years)</td>
     <td   rowspan="2"><strong>Special Features:</strong>- Pre close Fee {{$q->Pre_Closer_Fixed}}%</td>
   </tr>

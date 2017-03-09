@@ -207,7 +207,7 @@ class CompareController extends ExperianController
       }
       
       public function calculationfordc(Request $req){
-        //lprint_r($req->all());exit();
+        // print_r($req->all());exit();
 
                 $getQuery=DB::select('call usp_get_balance_transfer_quot("'.$req['loanamount'].'","'.$req['loaninterest'].'","'.$req['product_id'].'")');
                 // print_r($getQuery);exit();
@@ -219,6 +219,7 @@ class CompareController extends ExperianController
                 $loaninterest=$req['loaninterest']/12/100;
                 $loanterm=$req['loanterm'];
                 $brokerid = $req['brokerid'];
+                 $app = $req['app'];
 
 
 
@@ -243,7 +244,7 @@ class CompareController extends ExperianController
 
                 $test =json_decode(json_encode($getQuery),true);
 
-                $user =array('loanamount' => $loanamount, 'loaninterest' => $loaninterest , 'loanterm'=> $loanterm,'product_id'=>$req['product_id'],'brokerid'=>$brokerid );
+                $user =array('loanamount' => $loanamount, 'loaninterest' => $loaninterest , 'loanterm'=> $loanterm,'product_id'=>$req['product_id'],'brokerid'=>$brokerid,'app'=>$app );
                 $returnHTML = view('emi/switch_cal2')->with('data', $test)->with('sata', $user)->render();
                 return response()->json(array('success' => true, 'amount'=>$amount, 'new_amount'=>$new_amount, 'drop_emi'=>$drop_emi,'drop_in_int'=>$drop_in_int, 'savings'=>$savings, 'emiperlacs'=> $emiperlacs, 'html'=>$returnHTML));                            
             }

@@ -237,13 +237,19 @@ label {
 								<?php if(isset($_GET['product'])){?>
 								<input type="hidden" name="product_id" id="product_ids" value="<?php echo $_GET['product'];?>">
 								<?php }else{?>
-								<input type="hidden" name="product_id" id="product_ids" value="">
+								<input type="hidden" name="product_id" id="product_ids" value="12">
 								<?php }?>
 
 								<?php if(isset($_GET['brokerid'])){?>
 								<input type="hidden" name="brokerid" id="brokerid" value="<?php echo isset($_GET['brokerid'])?$_GET['brokerid']:'';?>">
 								<?php }else{?>
-								<input type="hidden" name="brokerid" id="brokerid" value="">
+								<input type="hidden" name="brokerid" id="brokerid" value="0">
+								<?php }?>
+
+								<?php if(isset($_GET['app'])){?>
+								<input type="hidden" name="app" id="appid" value="<?php echo isset($_GET['app'])?$_GET['app']:'';?>">
+								<?php }else{?>
+								<input type="hidden" name="app" id="appid" value="0">
 								<?php }?>
 
 								
@@ -666,12 +672,12 @@ $('#slider').slider({
 
       var loaninterest = $("#loaninterest").val();
       var product_id = $("#product_ids").val();
+      var app_id = $("#appid").val();
       // if(loaninterest<9){
       // 	alert("Interest Rate should be greater than 9%. If less, you are already on lower rate");
       // }
       var a = $("#loanterm").val();
       var loanterm =a*12;
-     // console.log(loanterm);
        
 
       
@@ -680,7 +686,7 @@ $('#slider').slider({
                type: "POST",  
                url: "{{URL::to('calculationfordc')}}",
                dataType:'json',
-               data : { 'loanamount': loanamount , 'loaninterest': loaninterest ,'loanterm' :loanterm,'product_id': product_id ,'_token': v_token},
+               data : { 'loanamount': loanamount , 'loaninterest': loaninterest ,'loanterm' :loanterm,'product_id': product_id ,'app': app_id ,'_token': v_token},
                // 'bank':bank},
                success: function(msg){
                   // console.log(msg.success);

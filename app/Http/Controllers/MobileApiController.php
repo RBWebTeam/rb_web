@@ -26,7 +26,11 @@ class MobileApiController extends ApiController
 			$msg="data delievered";
 			$new_data=$data->getData()->data;
 			$quote=$data->getData()->quote_id;
-			$url="http://beta.erp.rupeeboss.com/homeloan/home_loan_application_form.aspx";
+			if($req['ProductId']==7){
+				$url="http://beta.erp.rupeeboss.com/LAP/LAP_Form.aspx";
+			}else{
+				$url="http://beta.erp.rupeeboss.com/homeloan/home_loan_application_form.aspx";
+			}
 		}
 		
 		//print_r($a);

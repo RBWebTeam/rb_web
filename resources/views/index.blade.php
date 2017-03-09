@@ -4,8 +4,8 @@
         <div class="modal-content">
             
             <div class="modal-body">
-			 <button type="button" class="close" data-dismiss="modal">×</button>
-				<a href="{{URL::to('home-loan-transfer/home-loan')}}"><img src="{{URL::to('images/popup.jpg')}}" /></a>
+			 <button type="button" class="close close-btn" data-dismiss="modal">×</button>
+				<a href="{{URL::to('home-loan-transfer/home-loan')}}"><img src="{{URL::to('images/popup.jpg')}}" class="img-responsive"/></a>
                 
             </div>
         </div>

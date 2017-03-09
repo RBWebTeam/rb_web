@@ -467,7 +467,7 @@ run_else:
 		else{
 			$new_data=NULL;
 			$status_Id=1;
-			$msg=" Something went wrong.";
+			$msg=" No Record Found.";
 			
 		}
 
@@ -520,7 +520,7 @@ run_else:
 
 				if($obj->statusId==1 && $data=='[]'){
 					$status_Id=1;
-					$msg="Something went wrong";
+					$msg="No Record Found";
 				}else{
 					$status_Id=0;
 					$msg="Data delievered";
@@ -578,7 +578,7 @@ run_else:
 
 				if($obj->statusId !=1 && $data=='[]'){
 					$status_Id=1;
-					$msg="Something went wrong";
+					$msg="No Record Found";
 				}else{
 					$status_Id=0;
 					$msg="Data delievered";

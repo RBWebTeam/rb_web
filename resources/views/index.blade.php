@@ -1,4 +1,18 @@
+<div id="popup" class="modal fade">
+    <div class="modal-dialog">
+	<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <div class="modal-content">
+            
+            <div class="modal-body">
+			 <button type="button" class="close" data-dismiss="modal">×</button>
+				<img src="{{URL::to('images/popup.jpg')}}" />
+                
+            </div>
+        </div>
+    </div>
+</div>
 @include('layout.header')
+
     <div class="container-fluid">
 	<aside id="fh5co-hero">
 

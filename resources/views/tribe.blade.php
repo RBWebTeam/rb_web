@@ -2,7 +2,8 @@
   @include('layout.header')
 
   <div id="fh5co-hero">
-  <form id="tribe_loan_form">
+  <form id="tribe_loan_form" method="POST">
+  {{ csrf_field() }}
   	<div class="container">
   	<h2 class="align-center loan-head">Tribe</h2>
   	<div class="col-md-12 pad1 white-bg box-shadow">
@@ -453,7 +454,7 @@
       $.ajax({  
                type: "POST",  
                url: "{{URL::to('save-tribe-form')}}",
-               data : $('#'+form).serialize(),
+               data : $('#tribe_loan_form').serialize(),
                success: function(msg){
                   if(msg=='true'){
                     console.log(msg);

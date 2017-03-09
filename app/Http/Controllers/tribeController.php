@@ -24,4 +24,7 @@ class tribeController extends CallApiController
 	    }
 	    
 	}
+	public function save_tribe_form(Request $req){
+		print_r($req->all());exit();
+	}
 }

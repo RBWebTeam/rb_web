@@ -1191,7 +1191,7 @@ rb-services-section{padding:0px;}
 @media screen and (max-width: 786px) {
   .fh5co-nav-toggle {
     display: block;
-    top:45px;
+    top:62px;
   }
   # nav ul li.cta {}}
 }
@@ -3202,4 +3202,17 @@ font-size:20px;margin-top: 10px;
     color: #fff;
 }
 .no-border {border:none;outline:none; margin:0px;padding:2px;}
+.close-btn {
+    position: absolute;
+    right: -18px;
+    top: -18px;
+	color:#fff;
+	box-shadow:none;
+    background:#ed1c25 !important;
+    width: 30px;
+    opacity: 1;
+    height: 30px;
+    border-radius: 50px;
+}
+
 

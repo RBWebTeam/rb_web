@@ -1,3 +1,4 @@
+<?php// print "<pre>";print_r($data->loan_details[0]->mapping);exit(); ?>
 @include('layout.header')
 
 <div id="fh5co-hero">
@@ -24,8 +25,9 @@
 <hr>
   <div class="col-md-3"><p>Are you a Tribe Partner?</p></div>
   <div class="col-md-4">
-  <p><input type="radio" name="tribe_partner"/> Yes&nbsp;&nbsp;
-   <input type="radio" name="tribe_partner" /> No</p></div>
+  <p><input type="radio" name="tribe_partner" onclick="showPartner(1)" /> Yes&nbsp;&nbsp;
+   <input type="radio" name="tribe_partner" onclick="showPartner(0) /> No</p></div>
+
 </div>
 
 <div class="col-md-12 mrg-top">
@@ -64,11 +66,11 @@
   <div class="col-md-3"><p>Repayment Frequency</p></div>
   <div class="col-md-8 sec">
   <select class="drop-arr" name="repayment_frequency" id="repayment_frequency" required>
-      <option>Select Repayment Frequency</option>
-		 <option>Monthly</option>
-		 <option>Weekly</option>
-		 <option>Forthnightly</option>
-		 <option>Daily</option>
+  <option disabled selected>Select</option>
+  @foreach($data->loan_details[0]->mapping as $key=>$value)
+    
+    <option value="{{$value}}"><?php echo $key;?></option>
+    @endforeach
   </select>
   <a class="btn btn-primary btn-outline with-arrow  ">Next<i class="icon-arrow-right"></i></a>
   <a class="btn btn-primary btn-outline with-arrow  ">Back<i class="icon-arrow-right"></i></a>
@@ -114,21 +116,23 @@
   <div class="col-md-3"><p>Education*</p></div>
   <div class="col-md-8 sec">
     <select class="drop-arr" name="education" id="education">
-     <option>Select Education</option>
-		 <option>Graduate</option>
-		 <option>post graduate</option>
-		 <option>others</option>
+   <option disabled selected>Select</option>
+    @foreach($data->personal_details[1]->mapping as $key=>$value)
+    
+    <option value="{{$value}}"><?php echo $key;?></option>
+    @endforeach
+  </select>
   </select>
   </div>
   
   <div class="col-md-3"><p>Family Details*</p></div>
   <div class="col-md-8 sec">
      <select class="drop-arr" name="family_detail" id="family_detail" >
-    <option>-Select Family Details-</option>
-		 <option>single</option>
-		 <option>married</option>
-		 <option>divorced</option>
-		 <option>widowed</option>
+    <option disabled selected>Select</option>
+    @foreach($data->personal_details[0]->mapping as $key=>$value)
+    
+    <option value="{{$value}}"><?php echo $key;?></option>
+    @endforeach
   </select>
   <a class="btn btn-primary btn-outline with-arrow  ">Next<i class="icon-arrow-right"></i></a>
   <a class="btn btn-primary btn-outline with-arrow  ">Back<i class="icon-arrow-right"></i></a>
@@ -145,20 +149,21 @@
   <div class="col-md-3"><p>Registration Details*</p></div>
   <div class="col-md-8 sec">
    <select class="drop-arr" name="registration_detail" id="registration_detail">
-         <option>-Select Registration Details-</option>
-		 <option>Private Limited Company</option>
-		 <option>LLP</option>
-		 <option>Section 8 Company</option>
-		 <option>Trust</option>
-		 <option>Society</option>
-		 <option>Other</option>
-		 <option>Limited Company</option>
-		 <option>Private</option>
-		 <option>Sole Proprietorship</option>
-		 <option>Partnership</option>
-		 <option>LLC</option>
-		 <option>INC.</option>
-		 <option>C Corp</option>
+     <option disabled selected>Select</option>
+    @foreach($data->business_details[5]->mapping as $key=>$value)
+    
+    <option value="{{$value}}"><?php echo $key;?></option>
+    @endforeach
+  </select>
+  </div>
+  <div class="col-md-3"><p>Number of Partners*</p></div>
+  <div class="col-md-8 sec">
+   <select class="drop-arr" name="partners_count" id="partners_count">
+     <option disabled selected>Select</option>
+    @foreach($data->business_details[8]->mapping as $key=>$value)
+    
+    <option value="{{$value}}"><?php echo $key;?></option>
+    @endforeach
   </select>
   </div>
   
@@ -173,16 +178,11 @@
   <div class="col-md-3"><p>Business Type*</p></div>
   <div class="col-md-8 sec">
     <select class="drop-arr" id="business_type" name="business_type">
-         <option>-Select Business Type-</option>
-		 <option>importer</option>
-		 <option>exporter</option>
-		 <option>manufacturer</option>
-		 <option>retailer</option>
-		 <option>distributor</option>
-		 <option>online seller</option>
-		 <option>offline seller</option>
-		 <option>csc or vle</option>
-		 
+    <option disabled selected>Select</option>
+    @foreach($data->business_details[6]->mapping as $key=>$value)
+    
+    <option value="{{$value}}"><?php echo $key;?></option>
+    @endforeach
   </select>
   </div>
   
@@ -199,53 +199,33 @@
   <div class="col-md-3"><p>Turnover*</p></div>
   <div class="col-md-8 sec">
      <select class="drop-arr" name="turnover" id="turnover">
-      <option>-Select Turnover-</option>
-		 <option>0 to 15L</option>
-		 <option>15L to 50L</option>
-		 <option>50L to 1Cr</option>
-		 <option>1Cr</option>
+     <option disabled selected>Select</option>
+    @foreach($data->business_details[2]->mapping as $key=>$value)
+    
+    <option value="{{$value}}"><?php echo $key;?></option>
+    @endforeach
   </select>
   </div>
   
   <div class="col-md-3"><p>Business Premises*</p></div>
   <div class="col-md-8 sec">
     <select class="drop-arr" name="business_premises" id="business_premises">
-         <option>-Select Business Premise-</option>
-		 <option>owned</option>
-		 <option>rented</option>
-		 <option>owned by parents or relatives</option>
+     <option disabled selected>Select</option>
+    @foreach($data->business_details[7]->mapping as $key=>$value)
+    
+    <option value="{{$value}}"><?php echo $key;?></option>
+    @endforeach
   </select>
   </div>
   
   <div class="col-md-3"><p>Which products do you sell?*</p></div>
   <div class="col-md-8 sec">
     <select class="drop-arr" name="selling_product" id="selling_product">
-         <option>-Select Sales Channel-</option>
-		 <option>Apparel</option>
-		 <option>Appliances</option>
-		 <option>Automotive</option>
-		 <option>BabyCare</option>
-		 <option>Bags and Luggage</option>
-		 <option>Beauty and Personal Care</option>
-		 <option>Books</option>
-		 <option>Cameras and Accessories</option>
-		 <option>Computers and Peripherals</option>
-		 <option>Eyewear</option>
-		 <option>Fashion Accessories</option>
-		 <option>Fragrances</option>
-		 <option>Furniture</option>
-		 <option>Hardware and Sanitary Fittings</option>
-		 <option>Health-Wellness and Medicine</option>
-		 <option>Home Decor</option>
-		 <option>Home Furnishings</option>
-		 <option>Jewellery</option>
-		 <option>KidsWear</option>
-		 <option>Kitchenware</option>
-		 <option>Mobiles and Tablets</option>
-		 <option>Movies and Music</option>
-		 <option>Musical Instruments</option>
-		 <option>Nutrition and Supplements</option>
-		 <option>Office Equipment</option>
+     <option disabled selected>Select</option>
+    @foreach($data->business_details[4]->mapping as $key=>$value)
+    
+    <option value="{{$value}}"><?php echo $key;?></option>
+    @endforeach
   </select>
   </div>
   
@@ -350,13 +330,16 @@
     <p>Providing Online Credentials of Platforms/Marketplaces/Software that you make use of in your business will help us understand your business better and make the most appropriate 
 	recommendations for Loans. This can also increase your chances of securing Loans at a lower interest rate. As a Business User, you gain free and complete access to all the insights that Tribe draws using your online credentials.</p>
 	<ul>
-	  <li class="pad"><input type="radio" name="flipkart" /> Flipkart</li>
-	  <li class="pad"><input type="radio" name="zomato" /> Zomato</li>
-	  <li class="pad"><input type="radio" name="browntape" /> BrownTape</li>
-	  <li class="pad"><input type="radio" name="amazon" /> Amazon</li>
-	  <li class="pad"><input type="radio" name="trip_advisor" /> Trip Advisor</li>
-	  <li class="pad"><input type="radio" name="comapny_info" /> Company Info</li>
-	</ul>
+   @foreach($data->aggregated_ids_details->mapping as $key=>$value)
+    <li class="pad"><input type="radio" name="online_ids" value="{{$value}}" onclick="showDiv({{$value}})" /> {{$key}}</li>
+      <div class="col-sm-12" id={{$value}} style="display: none;" class="extra">
+        @foreach($data->aggregated_ids_credential_details->mapping->$value as $key2=>$value2)
+         <label class="col-sm-2"> {{$value2}}:</label>
+         <input type="text" class="form-control form-group col-sm-10" name="{{$value2}}" required />
+        @endforeach
+         </div>
+   @endforeach
+	  </ul>
 	
 	<a class="btn btn-primary btn-outline with-arrow ">Next<i class="icon-arrow-right"></i></a>
   <a class="btn btn-primary btn-outline with-arrow ">Back<i class="icon-arrow-right"></i></a>
@@ -399,11 +382,11 @@
   <div class="col-md-3">UPLOAD COMPANY BANK STATEMENTS</div>
   <div class="col-md-8 sec">
    <select class="drop-arr" name="bank_statement" id="bank_statement">
-         <option>-Select a Bank-</option>
-		 <option>Axis Bank</option>
-		 <option>Kotak Bank</option>
-		 <option>HDFC Bank</option>
-		 <option>Canara Bank</option>
+     <option disabled selected>Select</option>
+    @foreach($data->institution_details->mapping as $key=>$value)
+    
+    <option value="{{$value}}"><?php echo $key;?></option>
+    @endforeach
   </select>
   </div>
   
@@ -431,4 +414,11 @@
 <br>
 @include('layout.footer')
 @include('layout.script')
+<script type="text/javascript">
+  function showDiv(name){
+    //alert('hoooo');
+     $('.extra').hide();
+    document.getElementById(name).style.display='block';
 
+  }
+</script>

@@ -25,8 +25,8 @@
 <hr>
   <div class="col-md-3"><p>Are you a Tribe Partner?</p></div>
   <div class="col-md-4">
-  <p><input type="radio" name="tribe_partner" onclick="showPartner(1)" /> Yes&nbsp;&nbsp;
-   <input type="radio" name="tribe_partner" onclick="showPartner(0)" /> No</p></div>
+  <p><input type="radio" name="tribe_partner" onclick="showHidden('tribe_partner_div',1)" /> Yes&nbsp;&nbsp;
+   <input type="radio" name="tribe_partner" onclick="showHidden('tribe_partner_div',0)" /> No</p></div>
 <div  id="tribe_partner_div" style="display: none;">
   <div class="col-md-6"><p>partnerID*</p></div>
   <div class="col-md-6"><input type="text" name="partner_id"  class="form-control form-group" required /></div>
@@ -193,14 +193,27 @@
   
   <div class="col-md-3"><p>Do you carry out Online Sales?*</p></div>
   <div class="col-md-8"><p>
-  <input type="radio" name="online_sale" /> Yes&nbsp;&nbsp; 
-  <input type="radio" name="online_sale" /> No</p></div>
+  <input type="radio" name="online_sale" onclick="showHidden('online_sale_channel_div',1);" /> Yes&nbsp;&nbsp; 
+  <input type="radio" name="online_sale" onclick="showHidden('online_sale_channel_div',0);" /> No</p></div>
   
   <div class="col-md-3"><p>Do you carry out Offline Sales?*</p></div>
   <div class="col-md-8"><p>
   <input type="radio" name="offline_sale" /> Yes&nbsp;&nbsp; 
   <input type="radio" name="offline_sale" /> No</p></div>
-  
+  <div style="display: none;" id="online_sale_channel_div" >
+  <div class="col-md-3 sec"><p>online_sale_channel</p></div>
+  <div class="col-md-8 sec">
+    <select class="drop-arr" id="online_sale_channel" name="online_sale_channel">
+    <option disabled selected>Select</option>
+    @foreach($data->business_details[0]->mapping as $key=>$value)
+    
+    <option value="{{$value}}"><?php echo $key;?></option>
+    @endforeach
+  </select>
+  </div>
+  </div>
+
+
   <div class="col-md-3"><p>Turnover*</p></div>
   <div class="col-md-8 sec">
      <select class="drop-arr" name="turnover" id="turnover">
@@ -336,8 +349,8 @@
 	recommendations for Loans. This can also increase your chances of securing Loans at a lower interest rate. As a Business User, you gain free and complete access to all the insights that Tribe draws using your online credentials.</p>
 	<ul>
    @foreach($data->aggregated_ids_details->mapping as $key=>$value)
-    <li class="pad"><input type="radio" name="online_ids" value="{{$value}}" onclick="showDiv({{$value}})" /> {{$key}}</li>
-      <div class="col-sm-12" id={{$value}} style="display: none;" class="extra">
+    <li class="pad"><input type="radio" name="online_ids" value="{{$value}}" onclick="showDiv('online_ids_{{$value}}')" /> {{$key}}</li>
+      <div class="col-sm-12" id="online_ids_{{$value}}" style="display: none;" class="extra">
         @foreach($data->aggregated_ids_credential_details->mapping->$value as $key2=>$value2)
          <label class="col-sm-2"> {{$value2}}:</label>
          <input type="text" class="form-control form-group col-sm-10" name="{{$value2}}" required />
@@ -420,17 +433,17 @@
 @include('layout.footer')
 @include('layout.script')
 <script type="text/javascript">
+var previousPartner;
   function showDiv(name){
-    //alert('hoooo');
-     $('.extra').hide();
-    document.getElementById(name).style.display='block';
-
+     $('#'+previousPartner).hide();
+     $('#'+name).show();
+     previousPartner=name;
   }
-  function showPartner(flag){
-    if(flag==0){
-      $('#tribe_partner_div').hide();
-    }else{
-      $('#tribe_partner_div').show();
-    }
+  function showHidden(div,flag){
+      if(flag==0){
+        $('#'+div).hide();
+      }else{
+       $('#'+div).show();
+      }
   }
 </script>

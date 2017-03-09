@@ -5,7 +5,7 @@
             
             <div class="modal-body">
 			 <button type="button" class="close" data-dismiss="modal">×</button>
-				<img src="{{URL::to('images/popup.jpg')}}" />
+				<a href="{{URL::to('home-loan-transfer/home-loan')}}"><img src="{{URL::to('images/popup.jpg')}}" /></a>
                 
             </div>
         </div>

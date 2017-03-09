@@ -26,8 +26,13 @@
   <div class="col-md-3"><p>Are you a Tribe Partner?</p></div>
   <div class="col-md-4">
   <p><input type="radio" name="tribe_partner" onclick="showPartner(1)" /> Yes&nbsp;&nbsp;
-   <input type="radio" name="tribe_partner" onclick="showPartner(0) /> No</p></div>
-
+   <input type="radio" name="tribe_partner" onclick="showPartner(0)" /> No</p></div>
+<div  id="tribe_partner_div" style="display: none;">
+  <div class="col-md-6"><p>partnerID*</p></div>
+  <div class="col-md-6"><input type="text" name="partner_id"  class="form-control form-group" required /></div>
+  <div class="col-md-6"><p>Agent Name*</p></div>
+  <div class="col-md-6"><input type="text" name="agent_name"  class="form-control form-group" required /></div>
+</div>
 </div>
 
 <div class="col-md-12 mrg-top">
@@ -420,5 +425,12 @@
      $('.extra').hide();
     document.getElementById(name).style.display='block';
 
+  }
+  function showPartner(flag){
+    if(flag==0){
+      $('#tribe_partner_div').hide();
+    }else{
+      $('#tribe_partner_div').show();
+    }
   }
 </script>

@@ -68,10 +68,10 @@ class bank_quote_api_request extends Model
          $table->ApplicantDOB   = $request->dob  ;
          $table->CoApplicantYes   = $request->have_co_applicant  ;
          $table->CoApplicantGender   = $request->CoApplicantGender  ;
-         $table->CoApplicantSource   = $request->CoApplicantSource  ;
-         $table->CoApplicantIncome   = $request->CoApplicantIncome  ;
+         $table->CoApplicantSource   = $request->co_emp_detail  ;
+         $table->CoApplicantIncome   = $request->co_applicant_income  ;
          $table->CoApplicantObligations   = $request->co_applicant_obligation  ;
-         $table->CoApplicantDOB   = $request->CoApplicantDOB  ;
+         $table->CoApplicantDOB   = $request->co_dob  ;
          $table->Turnover    = $request->Turnover   ;
          $table->ProfitAfterTax    = $request->profit_after_tax   ;
          $table->Depreciation    = $request->depreciation   ;
@@ -81,7 +81,8 @@ class bank_quote_api_request extends Model
          $table->CoApplicantDepreciation    = $request->co_applicant_depreciation   ;
          $table->CoApplicantDirectorRemuneration    = $request->co_applicant_remuneration;
          $table->brokerID    = 0;
-         $table->ProductId    = $request->product_name   ;
+         
+         $table->ProductId    = $request->product_name;
          $table->Email    = Session::get('email')?Session::get('email'):"";
          $table->Contact =Session::get('contact')?Session::get('contact'):"";
          // $input = $request->all();

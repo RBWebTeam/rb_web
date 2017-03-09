@@ -1,96 +1,72 @@
 @include('layout.header')
 <div id="fh5co-hero">
-  <div class="express-lon-ban"><img src="images/express-loan-image.jpg" class="img-responsive"/></div>
+  <div class="express-lon-ban"><img src="images/express-loan-image.jpg" alt="express_loan_pic" class="img-responsive"/></div>
   <br>
 		<div class="container animate-box">
-			<div class="row">
-			
-	<div class="row">
-	  <div class="col-md-12">
-				<div class="col-md-4 animate-box h3-pd-btm fadeInUp animated">
-					<div class="exp-ico1 exp-dv">
-						<div class="desc">
-						 <img src="images/icon/0001.png" class="text-center"/>
-							<h4>All in Minutes</h4>
-							
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4 animate-box h3-pd-btm fadeInUp animated">
-					<div class="exp-ico-2 exp-dv">
-						<img src="images/icon/0002.png" class="text-center"/>
-						<div class="desc">
-						
-							<h4>Your Information is Secure</h4>
-							
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4 animate-box h3-pd-btm fadeInUp animated">
-					<div class="exp-ico-3 exp-dv">
-						
-						<div class="desc">
-					    <img src="images/icon/0003.png" class="text-center"/>
-							<h4>No Collaterals</h4>
-						
-						</div>
-					</div>
-				</div>
-				</div>
-			</div>
-			<br>
+			<div class="row white-bg box-shadow">
+		
 			<div id ="otp_div">
             <form class="express_form" id="express_form" method="POST" >
             {{ csrf_field() }}
 			
-		
-		
-		
-		<div class="col-md-12 offset5 bg-white box-shadow">
-			<div class="pad border-all">
 			<div class="offset5">
-<h3 class="text-center hed-three">Enter Amount</h3>
-            <div class="col-md-12 mrg-btm">
+			<h3 class="text-center hed-three"><b>Enter Amount</b></h3>
+
+            <div class="col-md-12">
 			<input type="text" name="amount" id="amount" class="center-dv input-typ" placeholder="5,00,000" maxlength="10"
 			onkeypress="return isNumberKey(event)"  required/>
 			</div>
-			
+			<hr>
 			
 		    <div class="col-md-12">
-			<h3 class="text-center mrg-btm hed-three">Business Type</h3>
-			<div class="col-md-12"><div class="offset5"><a class="btn bt-wt"><input type="radio" name="employment" id="employment" value="Self_Employed_Professionsl" checked/> Self Employed Professionsl (SEP)</a>
-             <a class="btn bt-wt"><input type="radio" name="employment" id="employment" value="Self_Employed_Non_Professional " /> Self Employed Non-Professionsl (SENP)</a>
+		    <h3 class="text-center mrg-btm hed-three"><b>Business Type</b></h3>
+			<div class="col-md-12"><div class="offset5">
+			<a class="btn border"><input type="radio" name="employment"  value="Self_Employed_Professionsl(SEP)" checked/> Self Employed Professionsl (SEP)</a>
+             <a class="btn border"><input type="radio" name="employment"  value="Self_Employed_Non_Professional (SENP)" /> Self Employed Non-Professionsl (SENP)</a>
 			</div>
 		    </div>
-			<div class="col-md-12">
 			
 			<div class="col-md-2"></div>
 			<div class="col-md-8">
-			<div class="tenure border offset5">
-			<h3 class="text-center hed-three">Tenure</h3>
-			
+			<div class="tenure offset5 pad">
+			<h3><b>Tenure</b></h3>
 			<div  id="unranged-value" style="width:100%; height:10px;"></div>
 			</div>
-			
-			
 			</div>
+			
+			<div class="col-md-12">
+			<div class="offset5">
+			<br>
+			<h3 class="text-center mrg-btm hed-three"><b>Firm Holder</b></h3>
+			<a class="btn border"><input type="radio" name="firm_holder" 
+			value="Sole_Proprietor " checked/> Sole Proprietor</a>
+             <a class="btn border"><input type="radio" name="firm_holder"
+             value="Partnership " /> Partnership</a>
+			 <a class="btn border"><input type="radio" name="firm_holder"  value="Company" /> Company</a>
+			</div>
+		    </div>
+		  <br>
 		  
-		  <div class="col-md-10 mrg-btm-b">
+		  <?php if(Session::get('is_login')) { ?>
+				  <?php if(Session::get('contact')!=''){ ?>
+				<button class="btn btn-primary btn-outline with-arrow animate-box next " >Next<i class="icon-arrow-right"></i></button>
+				<?php }else{?> 
+                 <a  class="btn btn-primary btn-outline with-arrow animate-box next" >Next<i class="icon-arrow-right"></i></a>
+				 <?php }?>
+
+			<?php }else{?>
+			<div class="col-md-10">
 		   <input type="tel" name="mob_no" id="mob_no" class="center-dv input-typ" placeholder="98XXX XXXXX"  maxlength="10" pattern="[789][0-9]{9}" onkeypress="return isNumberKey(event)" required />
 		   <span id="mobile_value" style="display: none;color: red;">Phone number should be of 10 digits.</span>
 		   <button class="get-otp" type="submit" id="express_loan_send_otp">Get OTP</button>
-		  
 		  </div>
+			<?php }?>  
 			</div>
 			
-             </div>	
 			
 			
 			</div>
-			</div>
-			
 		
-		</div>	
 		</form>
 
 		<form name="express_loan_verify_form" id="express_loan_verify_form" style="display:none" method="POST">
@@ -121,11 +97,13 @@
 		<h3 class="text-uppercase exp-hed">Generic Information</h3>
 			
 			 <section class="content">
+
+			 <input class="input__field input__field--nao" type="hidden" id="holder" name="holder"  value=""  required   />
 			
-				<input class="input__field input__field--nao" type="hidden" id="business" name="business"  value=""  required   />
+				<input class="input__field input__field--nao" type="hidden" id="business_type" name="business_type"  value=""  required   />
 					
 				
-				<span class="input_exp input--nao">
+				<span class="input_exp input--nao input--filled">
 					<input class="input__field input__field--nao" type="text" id="loanamount" name="loanamount"  value="" onkeypress="return isNumberKey(event)" required   />
 					<label class="input__label input__label--nao" for="loanamount">
 						<span class="input__label-content input__label-content--nao">Loan Amount</span>
@@ -134,7 +112,7 @@
 						<path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
 					</svg>
 				</span>
-				 <span class="input_exp input--nao">
+				 <span class="input_exp input--nao input--filled">
 					<input class="input__field input__field--nao" type="text" id="tenure" name="tenure" value="" onkeypress="return isNumberKey(event)" maxlength="3" required />
 					<label class="input__label input__label--nao" for="tenure">
 						<span class="input__label-content input__label-content--nao">Tenure</span>
@@ -158,25 +136,31 @@
 				
 				<span class="input_exp input--nao">
 					<select class="input__field input__field--nao fnt-clr" id="constitution" name="constitution" required>
-					<option>Constitution</option>
+					<option></option>
 					<option value="Company">Company</option>
 					<option value="Partnership">Partnership(Registered/Unregistered)</option>
 					<option value="Sole_Proprietor">Sole Proprietor</option>
 					
 					</select>
+					<label class="input__label input__label--nao" for="constitution">
+						<span class="input__label-content input__label-content--nao">Constitution</span>
+					</label>
 					<svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
 						<path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
 					</svg>
 				</span>
 				<span class="input_exp input--nao">
 					<select class="input__field input__field--nao fnt-clr" id="nature_of_business" name="nature_of_business" required>
-					<option>Nature Of Business</option>
+					<option></option>
 					<option value="Manufacturing">Manufacturing</option>
 					<option value="Traders">Traders</option>
 					<option value="Retailer">Retailer</option>
 					<option value="Services">Services</option>
 					<option value="Others">Others</option>
 					</select>
+					<label class="input__label input__label--nao" for="nature_of_business">
+						<span class="input__label-content input__label-content--nao">Nature Of Business</span>
+					</label>
 					<svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
 						<path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
 					</svg>
@@ -186,7 +170,7 @@
 				<span class="input_exp input--nao">
 					
 					<select class="input__field input__field--nao fnt-clr" id="type_of_industry" name="type_of_industry" required>
-					<option>Type of Industry</option>
+					<option></option>
 					<option value="Agriculture">Agriculture</option>Agriculture
  
 					<option value="Auto_Components">Auto Components</option>
@@ -228,6 +212,9 @@
 					<option value="Textiles">Textiles</option>
 					<option value="Urban Market">Urban Market</option>
 					</select>
+					<label class="input__label input__label--nao" for="type_of_industry">
+						<span class="input__label-content input__label-content--nao">Type Of Industry</span>
+					</label>
 
 					<svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
 						<path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
@@ -244,23 +231,29 @@
 				</span>
 				<span class="input_exp input--nao">
 					<select class="input__field input__field--nao fnt-clr" id="residence_type" name="residence_type" required>
-					<option>Residence Type</option>
+					<option></option>
 					<option value="Self">Self</option>
 					<option value="Parental_Owned">Parental Owned</option>
 					<option value="Rented">Rented</option>
 					
 					</select>
+					<label class="input__label input__label--nao" for="residence_type">
+						<span class="input__label-content input__label-content--nao">Residence Type</span>
+					</label>
 					<svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
 						<path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
 					</svg>
 				</span>
 				<span class="input_exp input--nao">
 					<select class="input__field input__field--nao fnt-clr" id="office_type_generic" name="office_type_generic" required>
-					<option>Office Type</option>
+					<option></option>
 					<option value="Self_owned">Self-owned</option>
 					<option value="Rented">Rented</option>
 					
 					</select>
+					<label class="input__label input__label--nao" for="office_type_generic">
+						<span class="input__label-content input__label-content--nao">Office Type</span>
+					</label>
 					<svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
 						<path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
 					</svg>
@@ -348,11 +341,14 @@
 				</span>
 				<span class="input_exp input--nao">
 					<select class="input__field input__field--nao fnt-clr" id="gender" name="gender" required>
-					<option>Gender</option>
+					<option></option>
 					<option>Male</option>
 					<option>Female</option>
 					
 					</select>
+					<label class="input__label input__label--nao" for="gender">
+						<span class="input__label-content input__label-content--nao">Gender</span>
+					</label>
 					<svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
 						<path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
 					</svg>
@@ -368,22 +364,28 @@
 				</span>
 				<span class="input_exp input--nao">
 					<select class="input__field input__field--nao fnt-clr" id="education" name="education" required>
-					<option>Educational Qualifications</option>
+					<option></option>
 					<option value="Undergraduate">Undergraduate</option>
 					<option value="Graduate">Graduate</option>
 					<option value="Post_Graduate">Post-Graduate</option>
 					<option value="Professional">Professional</option>
 					</select>
+					<label class="input__label input__label--nao" for="education">
+						<span class="input__label-content input__label-content--nao">Educational Qualifications</span>
+					</label>
 					<svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
 						<path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
 					</svg>
 				</span>
 				<span class="input_exp input--nao">
 					<select class="input__field input__field--nao fnt-clr" id="marital_status" name="marital_status" required>
-					<option>Marital Status</option>
+					<option></option>
 					<option>Married</option>
 					<option>Unmarried</option>
 					</select>
+					<label class="input__label input__label--nao" for="marital_status">
+						<span class="input__label-content input__label-content--nao">Marital Status</span>
+					</label>
 					
 					<svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
 						<path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
@@ -409,7 +411,7 @@
 					<div id="pan_number" style="display:none;color: red;">Oops.Please Enter Valid Pan Number.!!</div>
 				</span>
 
-				<span class="input_exp input--nao">
+				<span class="input_exp input--nao input--filled">
 					<input class="input__field input__field--nao" type="tel" id="mobile_no" name="mobile_no" maxlength="10" pattern="[789][0-9]{9}" onkeypress="return isNumberKey(event)" value="" required  />
 					<label class="input__label input__label--nao" for="mobile_no">
 						<span class="input__label-content input__label-content--nao">Mobile No</span>
@@ -604,11 +606,14 @@
 				</span>
 				<span class="input_exp input--nao">
 					<select class="input__field input__field--nao fnt-clr" id="office_type_applicant_entity" name="office_type_applicant_entity" required>
-					<option>Office Type</option>
+					<option></option>
 					<option value="Self_owned">Self-Owned</option>
 					<option value="Rented">Rented</option>
 					
 					</select>
+					<label class="input__label input__label--nao" for="office_type_applicant_entity">
+						<span class="input__label-content input__label-content--nao">Office Type</span>
+					</label>
 					<svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
 						<path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
 					</svg>
@@ -654,11 +659,14 @@
 				</span>
 				<span class="input_exp input--nao">
 					<select class="input__field input__field--nao fnt-clr" id="gender_co_app" name="gender_co_app" required>
-					<option>Gender</option>
+					<option></option>
 					<option>Male</option>
 					<option>Female</option>
 					
 					</select>
+					<label class="input__label input__label--nao" for="gender_co_app">
+						<span class="input__label-content input__label-content--nao">Gender</span>
+					</label>
 					<svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
 						<path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
 					</svg>
@@ -692,13 +700,16 @@
 				</span>
 				<span class="input_exp input--nao">
 					<select class="input__field input__field--nao fnt-clr" id="relation" name="relation" required>
-					<option >Relation</option>
+					<option ></option>
 					<option value="Mother">Mother</option>
 					<option value="Father">Father</option>
 					<option value="Brother">Brother</option>
 					<option value="Sister">Sister</option>
 					
 					</select>
+					<label class="input__label input__label--nao" for="relation">
+						<span class="input__label-content input__label-content--nao">Relation</span>
+					</label>
 					<svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
 						<path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
 					</svg>
@@ -762,18 +773,26 @@
 				</span> 
 				<div>
 				<a class="btn btn-success " id="express_loan_submit" type="submit">Submit</a>
+				
 				</div>
+				
 			</section>
 		
 			
 			</div>
-			<div class="col-md-12">
+			<!-- <div class="col-md-12">
 			   <div class="jumbotron alert alert-success" style="display: none">
 			   <strong class="text-center"><h3><i class="icon-checkmark"></i> Your Loan is in Process. We will get back to you shortly</h3></strong>
 			   </div>
+			</div> -->
 			</div>
-			</div>
+
+			<div class="iframeloading" style= "display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
+                <img src="{{URL::to('images/ajaxloader.gif')}}" alt="loading" style="top: 50%; position: relative; left: 50%;"  />
+               </div>
+                  
 			</form>
+
          </div>
 	</div>
 	</div>
@@ -852,6 +871,45 @@
 			
 			
 		</script>
+
+		<script>
+			(function() {
+				
+				if (!String.prototype.trim) {
+					(function() {
+						// Make sure we trim BOM and NBSP
+						var rtrim = /^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g;
+						String.prototype.trim = function() {
+							return this.replace(rtrim, '');
+						};
+					})();
+				}
+
+				[].slice.call( document.querySelectorAll( 'select.input__field' ) ).forEach( function( inputEl ) {
+					// in case the input is already filled..
+					if( inputEl.value.trim() !== '' ) {
+						classie.add( inputEl.parentNode, 'input--filled' );
+					}
+
+					// events:
+					inputEl.addEventListener( 'focus', onInputFocus );
+					inputEl.addEventListener( 'blur', onInputBlur );
+				} );
+
+				function onInputFocus( ev ) {
+					classie.add( ev.target.parentNode, 'input--filled' );
+				}
+
+				function onInputBlur( ev ) {
+					if( ev.target.value.trim() === '' ) {
+						classie.remove( ev.target.parentNode, 'input--filled' );
+					}
+				}
+			})();
+			
+			
+		</script>
+
 
 		<script type="text/javascript">
     var d = new Date();
@@ -961,22 +1019,31 @@
       	
       	
       }else{
-        //var s=$('#'+form).serialize();
-        var emp = $("#employment").val();
-         $('#business').val(emp);
-         // console.log(emp);
 
+
+        //var s=$('#'+form).serialize();
+        
+          var emp = $('input[name=employment]:checked').val();
+          $('#business_type').val(emp);
+           console.log(emp);
+         
+         var firm = $('input[name=firm_holder]:checked').val();
+          $('#holder').val(firm);
+           console.log(firm);
+         
         var amount = $("#amount").val();
          $('#loanamount').val(amount);
 
          var slidr = $("#unranged-value").text();
          $('#tenure').val(slidr);
+
          // console.log(slidr);
 
          var mob_no = $("#mob_no").val();
          $('#mobile_no').val(mob_no);
 
-        if(($('#mob_no').val().length)<10){
+        if(($('#mob_no').val().length)<10)
+        {
               $('#mobile_value').show();
               return false;
             }
@@ -1055,6 +1122,8 @@
       $form=$('#generic_form');
       if(! $form.valid()){
       }else{
+      	 $(".iframeloading").show();
+      	// $("#express_loan_submit").hide();
         //var s=$('#'+form).serialize();
         //alert('HGGHF');
 
@@ -1065,6 +1134,8 @@
          data : $('#generic_form').serialize(),
          success: function(msg){
          // console.log(msg.data);
+         	$(".iframeloading").hide();
+         	//console.log(msg.data);
           if(msg.data==true){          
               $('#process').modal('show');                        
           }else{
@@ -1216,5 +1287,26 @@
 
 }
 </script>
+
+<script type="text/javascript">
+	$(".next").click(function(event){
+		// alert("okjjyj");
+
+    event.preventDefault();
+      $form=$('#express_form');
+      if(! $form.valid()){
+     // alert("okjhj");
+      	
+      }else{
+      	$('#express_form').hide();
+      	$('#generic').show();
+      	
+
+    }
+});
+
+</script>
+
+
 
 

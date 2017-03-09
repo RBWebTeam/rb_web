@@ -74,13 +74,27 @@
     <td width="16%" class="upper">Interest Rate</td>
     <td width="16%" class="upper">Loan Amount</td>
     <td width="18%" class="upper">emi</td>
+
     <?php if($product == "Personal Loan"){
       $prod ="9";
+      }elseif($product == "Car Loan"){
+        $prod="4";
+
       }else{
-      $prod="12";
+      $prod="12"; 
         }?>
-    <td width="17%"><a class="btn btn-success" 
-    href="{{URL::to('apply-lead-online')}}?qoutid={{$quote_id}}&BankId={{$q->Bank_Id}}&product={{$prod}}&loan_eligible={{$q->loan_eligible}}&roi_type={{$q->roi_type}}&processingfee={{$q->processingfee}}">Apply Online</a></td>
+
+     <?php if($product =="Car Loan") { ?>
+           <td width="17%"><a class="btn btn-success" 
+        href="{{URL::to('thank-you')}}">Apply Online</a></td>
+        
+        <?php }else {?> 
+        <td width="17%"><a class="btn btn-success" 
+    href="{{URL::to('apply-lead-online')}}?qoutid={{$quote_id}}&BankId={{$q->Bank_Id}}&product={{$prod}}&processing_fee={{$q->processingfee}}&loan_eligible={{$q->loan_eligible}}&roi_type={{$q->roi_type}}">Apply Online</a></td>
+                
+        <?php }?>
+         
+    
    
   </tr>
   <tr>

@@ -11,9 +11,9 @@ use App\experian_responseModel;
 class ExperianController extends CallApiController
 {
     public function credit_report(){
-      $keywords='credit report free,credit score,free credit report and score,how to get free credit report ';
-      $data['title']='Check your Credit Score online on Rupeeboss.com';
-      $data['description']='Check Your Free Credit Score, Report and Insights. Get the info you need to take control of your credit from Rupeeboss.com';
+      $keywords='Free Credit Score,Credit Score,Free Credit Report,Check Credit Score Online ';
+      $data['title']='Know Your Credit Score Online for FREE on Rupeeboss.com';
+      $data['description']='Check your Credit Score Online and get its Equivalent FREE Credit Report. Track your Progress and get personalized advice to optimizeYour score. Get started now ';
       $data['telephone']=DB::table('experian_telephonetype')
       ->select('Telephone_Name','Telephone_Value')
       ->get();
@@ -68,8 +68,7 @@ class ExperianController extends CallApiController
             Session::put('contact_cScore',$req['mobileNo']);
             $today=date("Y-m-d H:i:s");
             $data=json_encode($post_data);
-            //update voucher on response
-                $update_voucher=DB::select(" call usp_update_experian_voucher ('".$voucher[0]->voucher."',1)");
+            
             //checking if already has a credit record in DB
              $quote_data=DB::select("SELECT credit_score,html_report FROM experian_response  WHERE (pan='".$req['panNo']."' and ( contact='".$req['mobileNo']."' or email ='".$req['email']."')and expiry_date >= '".$today."');");
 
@@ -90,7 +89,8 @@ class ExperianController extends CallApiController
                 return view('went-wrong');
               }else{
               //Get desired reponse no error occured then
-              
+              //update voucher on response
+                $update_voucher=DB::select("call usp_update_experian_voucher ('".$voucher[0]->voucher."',1)");
                 $x=str_replace('"','',$http_result);
                 $new_data=explode('~', $x);
                 if($new_data[0] || $new_data[0]!=0 ){

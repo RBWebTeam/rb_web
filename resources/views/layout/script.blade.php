@@ -1029,6 +1029,8 @@
                 $('#pop1').append( "<p>Enter your net turnover</p>" );
                 $("#q2").hide();
                 $('#income').val('');
+
+
               }else if(val=='co_sal'){
                $('#co_self').hide();
                $('#co_self_q2').hide();
@@ -1051,7 +1053,8 @@
               
             }else if(val=='co_self'){
               $('#co_sal').hide();
-              $('#income').val('');
+             // $('#income').val('');
+
               $('#pop1').empty();
               $('#pop1').append( "<p>Turnover of your co-applicant</p>" );
             }
@@ -1204,10 +1207,10 @@
 
           $(document).ready(function(){
             $("#co_button").click(function(){
-              $("#have_co_applicant").val("yes");
+              $("#have_co_applicant").val("Y");
             });
             $("#no_co_app").click(function(){
-              $("#have_co_applicant").val("no");
+              $("#have_co_applicant").val("N");
             });
           });
   </script>
@@ -1298,10 +1301,25 @@
       <!-- credit card ends -->
       <!-- facebook and loagin function-->
   <script>
+
+
+  // common function 
+      function refreshfn(){
+             $("#log_popup").modal('hide');
+             $("#refreshID").load(location.href + " #refreshID");
+             $('#btn_refresh').show();
+             $('#btn_refresh1').hide();
+             $('.btn_refresh1').hide();
+             $('#no_co_app').hide();
+                    // Co-Applicant
+             $('#btn_refresh_co').show();
+             $('#btn_refresh_co1').hide()
+      }
+
         window.fbAsyncInit = function() {
           // FB JavaScript SDK configuration and setup
           FB.init({
-            appId      : '1780983575495725', // FB App ID   624024964433110
+            appId      : '624024964433110', //'1780983575495725', // FB App ID    624024964433110
             cookie     : true,  // enable cookies to allow the server to access the session
             xfbml      : true,  // parse social plugins on this page
             version    : 'v2.8' // use graph api version 2.8
@@ -1346,29 +1364,23 @@
             data: {response,"_token": "{{ csrf_token() }}"},
             url: "{{url('facebook/login')}}",
             success: function(msg) {
-            //  alert(msg);
              if(msg.error==1){
-              $("#log_popup").modal('hide');
-              $("#refreshID").load(location.href + " #refreshID");
-              $('#btn_refresh').show();
-              $('#btn_refresh1').hide();
-              $('.btn_refresh1').hide();
-              $('#no_co_app').hide();
-              // Co-Applicant
-              $('#btn_refresh_co').show();
-              $('#btn_refresh_co1').hide()
-            }                   
+                if(msg.contact==22){
+                    $("#log_popup").modal('hide');
+                    $("#contact_id").modal('show');
+                    $('#contact_id').show();
+                }else{
+               refreshfn();
+            }
+          }                   
             if(msg.error==2){
-             $("#log_popup").modal('hide');
-             $("#refreshID").load(location.href + " #refreshID");
-
-             $('#btn_refresh').show();
-             $('#btn_refresh1').hide();
-             $('.btn_refresh1').hide();
-             $('#no_co_app').hide();
-                    // Co-Applicant
-                    $('#btn_refresh_co').show();
-                    $('#btn_refresh_co1').hide()
+             if(msg.contact==22){
+                    $("#log_popup").modal('hide');
+                    $("#contact_id").modal('show');
+                    $('#contact_id').show();
+                }else{
+                  refreshfn();
+}
 
                   }
                 }
@@ -1376,6 +1388,8 @@
               });
          });
       }
+
+
   </script>
   <script>
       (adsbygoogle = window.adsbygoogle || []).push({});
@@ -1427,27 +1441,27 @@
               url: "{{url('google/login')}}",
               success: function(msg) {
                 if(msg.error==1){
-                 $("#log_popup").modal('hide');
-                 $("#refreshID").load(location.href + " #refreshID");
-                 $('#btn_refresh').show();
-                 $('#btn_refresh1').hide();
-                 $('.btn_refresh1').hide();
-                 $('#no_co_app').hide();
-               // Co-Applicant
-               $('#btn_refresh_co').show();
-               $('#btn_refresh_co1').hide()
+                     if(msg.contact==22){
+                      refreshfn();
+                    $("#log_popup").modal('hide');
+                    $("#contact_id").modal('show');
+                    $('#contact_id').show();
+                    
+                }else{
+                  refreshfn();
+                }
+
              }
              if(msg.error==2){
-               $("#log_popup").modal('hide');
-               $("#refreshID").load(location.href + " #refreshID");
+                   if(msg.contact==22){
+                      refreshfn();
+                    $("#log_popup").modal('hide');
+                    $("#contact_id").modal('show');
+                    $('#contact_id').show();
+                }else{
+                  refreshfn();
+                }
 
-               $('#btn_refresh').show();
-               $('#btn_refresh1').hide();
-               $('.btn_refresh1').hide();
-               $('#no_co_app').hide();
-                  // Co-Applicant
-                  $('#btn_refresh_co').show();
-                  $('#btn_refresh_co1').hide()
                 }
 
               }
@@ -1738,6 +1752,111 @@
   </div>
 
 
+<div id="contact_id" class="modal fade" role="dialog">
+      <div class="modal-dialog" id="login_first__">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">          
+            <h4 class="modal-title text-center"><b>Contact us</b></h4>
+          </div>
+          <br>        
+          <div id="send_otp">         
+            <form class="form-horizontal" id="contactusID" method="POST">           
+             {{ csrf_field() }}           
+             <div class="form-group">            
+              <label for="name" class="col-sm-3 control-label">contact us</label>
+              <div class="col-sm-6">
+                <input type="text" class="form-control" id="contact_name" name="contact_name" placeholder="Contact number" autofocus="autofocus" required>
+              </div>
+            </div>
+          
+       <div class="form-group ">
+        <div class="col-sm-offset-3 col-sm-6">
+         <!--  <input type="hidden" name="product" id="product_login" value=""> -->
+          <button class="btn btn-default"  id="send_productid"  >Send OTP</button>
+          <a class="btn btn-default"  id="already_user_" data-toggle="modal" data-target="#log_popup" data-dismiss="modal" >Already User</a>
+        </div>  
+      </div> 
+      
+    </form>
+  </div>
+  </div>
+  </div>
+
+  <div id="otp_div_contact" class="displaynone" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Enter OTP</h4>
+          <form id="contactus_otp_form" class="form-horizontal">
+           {{ csrf_field() }}
+           <input type="tel" class="form-control" name="otp" id="otp" minlength="6" maxlength="6" required onkeypress="return fnAllowNumeric(event)">
+           <span id='otp_errs' class= 'displaynonemsg' >oops!! OTP is wrong</span><br>
+           <button class="btn btn-default"  class="form-control" id="contactus_verify_otp" >Verify</button><br>
+         </form>
+       </div>
+     </div>
+   </div>
+  </div>
+  </div>
+
+<script type="text/javascript">
+
+     $("#send_productid").click(function(event){
+            event.preventDefault();
+            var form=$(this).closest("form").attr('id');
+          $form=$('#'+form);
+          if(! $form.valid()){
+            return false;
+          }else{
+            $.ajax({  
+             type: "POST",  
+             url: "{{URL::to('contact_us')}}",
+             dataType:"json",
+             data : $('#'+form).serialize(),
+             success: function(data){
+                $('#otp_div_contact').show();
+                $('#login_first__').hide(); 
+                    }  
+
+
+                  }); 
+          }
+        });
+
+$("#contactus_verify_otp").click(function(event){
+            event.preventDefault();
+            var form=$(this).closest("form").attr('id');
+          $form=$('#'+form);
+          if(! $form.valid()){
+            return false;
+          }else{
+            $.ajax({  
+             type: "POST",  
+             url: "{{URL::to('contact_otp')}}",
+             dataType:"json",
+             data : $('#'+form).serialize(),
+             success: function(data){
+               var data_1=data['data'];
+
+               if(data_1==true){
+             $("#contact_id").modal('hide');
+                 refreshfn();
+               }else{
+                          $('#otp_errs').show();
+                          
+ 
+               }
+              
+                    }  
+
+
+                  }); 
+          }
+        });
+
+</script>
+ 
 <script>
  $(document).ready(function(){
  
@@ -1770,6 +1889,8 @@ var last_segment = url_array[url_array.length-1];  // Get the last part of the a
  var loan_amount=sessionStorage.getItem('loan_amount');
 //co_emp_detail
 var co_emp_detail=sessionStorage.getItem('co_emp_detail');
+var co_dob=sessionStorage.getItem('co_dob');
+
 var co_income=sessionStorage.getItem('co_income');
 var co_income_year=sessionStorage.getItem('co_income_year');
 var co_profit=sessionStorage.getItem('co_profit');
@@ -1781,11 +1902,17 @@ var co_obligation=sessionStorage.getItem('co_obligation');
  var card=sessionStorage.getItem('card');
  // url session
 
+
  
+
       //$('.product_name').click(function(){
-    if(last_segment=='apply-home-loan'){
+    if(last_segment=='apply-home-loan' || last_segment=='apply-loan-against-property'){
+
          if(property_cost!=null &&  property_cost!=""){
      if(emp_type!=null && emp_type=='salaried' && income!=null){
+ 
+
+
          document.getElementById("emp_detail").value=emp_type;
          document.getElementById("income").value=income ;
          document.getElementById("emp_detail_id").value=1 ;
@@ -1798,7 +1925,10 @@ var co_obligation=sessionStorage.getItem('co_obligation');
     }
 
 
-    if(emp_type!=null && emp_type=='self-employed' && income_year!=null && profit!=null){
+    if(emp_type!=null && emp_type=="self-employed" && income_year!=null && profit!=null){
+
+  
+
          document.getElementById("emp_detail").value=emp_type ;
          document.getElementById("income_year").value=income_year ;
          document.getElementById("profit").value =profit ;
@@ -1843,8 +1973,15 @@ $('#q6').show();
     $('#q9').show();
     $('#step_2_btn').show();
   }
+ 
+  if(emp_type!=null && co_dob!=null){
+     document.getElementById("co_dob").value=co_dob;
+
+  }
+
 
   if(co_emp_detail!=null && co_emp_detail=='salaried'){
+ 
  document.getElementById("co_emp_detail").value=co_emp_detail;
  document.getElementById("co_income").value=co_income;
    $('#co_sal').show();
@@ -1852,10 +1989,12 @@ $('#q6').show();
    $('#co_profit_all').hide();
    $('#co_self_q2').hide();
    $('#co_self_q3').hide();
+   $('#co_q').show();
 
   }
 
-  if(co_emp_detail!=null && co_emp_detail=='self-employed'){
+  if(co_emp_detail!=null && co_emp_detail=="self-employed"){
+
     document.getElementById("co_emp_detail").value=co_emp_detail;
     document.getElementById("co_income_year").value=co_income_year;
     document.getElementById("co_profit").value=co_profit;
@@ -1866,17 +2005,25 @@ $('#q6').show();
    $('#co_self_q2').show();
    $('#co_self_q3').show();
    $('#co_sal').hide();
+   $('#co_q').show();
+
+
   }
   if(co_obl_yes!=null && co_obl_yes=='YES'){
     document.getElementById("co_obl_loan").value=co_obl_yes;
     document.getElementById("co_obligation").value=co_obligation;
      $('#co_obl_yes').show();
      $('#co_obl_emi').show();
+      $('#last_button').show();
+        
   }
 
    if(co_obl_yes!=null && co_obl_yes=='NO'){
       document.getElementById("co_obl_loan").value=co_obl_yes;
         $('#co_obl_yes').show();
+          $('#last_button').show();
+        
+
       }
  
        
@@ -1890,7 +2037,7 @@ $('#q6').show();
 
    // personal laon
  
-   if(last_segment=='apply-personal-loan'){
+   if(last_segment=='apply-personal-loan' ){
      if(card!=null && card!=''){
         
 
@@ -1908,37 +2055,12 @@ $('#q6').show();
             $('#q2_year').show();
           } 
           if(exst_loan_detail!=null && exst_loan_detail=='do' && obligation!=null && loan_tenure!=null && dob!=null && card!=null){
-            // document.getElementById("exst_loan_detail").value=exst_loan_detail;
              document.getElementById("obligation").value=obligation;
-           //  document.getElementById("city_name").value=city_name;
-            // document.getElementById("loan_tenure").value=loan_tenure;
-           //  document.getElementById("dob").value=dob;
-           //  document.getElementById("card").value=card;
-           // document.getElementById("loan_amount").value=loan_amount;
             common();
              $('#q4').show();
              $('#date_birth').show();
-           //  $('#q3').show();
-             //$('#q5').show();
-            // $('#q6').show();
-         
-            // $('#q8').show();
-            // $('#q9').show();
-           //  $('#step_3_btn').show();
-
+           
           }else if(exst_loan_detail!=null && exst_loan_detail=="don't" && loan_tenure!=null && dob!=null && card!=null){
-           // document.getElementById("exst_loan_detail").value=exst_loan_detail;
-          //  document.getElementById("city_name").value=city_name;
-           // document.getElementById("loan_tenure").value=loan_tenure;
-            //document.getElementById("dob").value=dob;
-           // document.getElementById("card").value=card;
-           // document.getElementById("loan_amount").value=loan_amount;
-          //  $('#q3').show();
-         //   $('#q5').show();
-          //  $('#q6').show();
-           // $('#q8').show();
-           // $('#q9').show();
-          //  $('#step_3_btn').show();
             common();
           } 
      
@@ -1966,6 +2088,13 @@ $('#q6').show();
 });
    
 function SetSession_pop(cookieName,cookieValue){
+
+ 
+           if(cookieName=='co_emp_detail'){
+              sessionStorage.setItem('co_emp_detail',cookieValue);
+
+           }
+
    var product_id=document.getElementById("product");
    if(product_id.value){sessionStorage.setItem("product_id",product_id.value);}
    if(cookieName){sessionStorage.setItem(cookieName,cookieValue);}
@@ -1979,34 +2108,29 @@ function SetSession_pop(cookieName,cookieValue){
   <script type="text/javascript">
   $(document).ready(function(){
       $("#emp_login_button").click(function(event){
-        //alert('fdfg');
-           // event.preventDefault();
-           
-         // $form=$('#emp_login_form');
-          //console.log($form);
+ 
+        // var username=$('#username_rb').val();
+        // var password=$('#password_rb').val();
+        // var _token='{{csrf_token()}}';
+
+        $('#emp_msg_err').hide();
           if(! $('#emp_login_form').valid()){
             return false;
           }else{
-          $(".iframeloading").show();
+          $(".iframeloading_emp").show();
           $.ajax({  
              type: "POST",  
              url: "{{URL::to('emp-login')}}",
-             data : $('#emp_login_form').serialize(),
-             success: function(data){
+           data : $('#emp_login_form').serialize(),
+        //   data: {_token :_token,username:username,password:password},
+             success: function(msg){
 
-                $(".iframeloading").hide();  
-              var data_1=data['msg'];
-               var url=data['url'];
-               if(url!=""){
-                //console.log(url);return false;
-                 $('#emp_login_form').hide();
-                  //$('#emp_msg').show();
-                  window.open(
-  'www.google.com',
-  '_blank' // <- This is what makes it open in a new window.
-);
+                $(".iframeloading_emp").hide();  
+              //console.log(msg.url);
+              if(msg.url!=false){
+             window.location.replace(msg.url);
               }else{
-                  $form.hide();
+                  //$form.hide();
                   $('#emp_msg_err').show(); 
                 }
                       //console.log(msg);
@@ -2018,5 +2142,11 @@ function SetSession_pop(cookieName,cookieValue){
         });
     });
   </script>
+  
+  <script type="text/javascript">
+	$(document).ready(function(){
+		$("#popup").modal('show');
+	});
+</script>
    <!-- emp login end -->
   @include('layout.modal')

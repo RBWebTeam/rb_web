@@ -271,17 +271,17 @@ if ($product_query->Product_Name=='Home Loan')
 {
  $data['title']='Home Loan- Check & Compare Home Loan from Thousand Of Banks';
       $keywords='Compare Home Loan Interest Rates,Compare Home Loan Interest Rates In India ,Compare Home Loan EMI ,Compare Home Loan Interest Rate Of Different Banks,Compare Home Loan Eligibility,Compare Home Loan Online,Comparison Of Home Loans';
-      $data['description']='Compare Home Loan Interest Rates,Compare Home Loan Interest Rates In India ,Compare Home Loan EMI ,Compare Home Loan Interest Rate Of Different Banks,Compare Home Loan Eligibility,Compare Home Loan Online,Comparison Of Home Loans'; 
+      $data['description']='Check & Compare Home Loan from Thousand of Banks. And Apply for Home Loan At Lowest Interest Rate On Rupeeboss.com'; 
 }
 elseif ($product_query->Product_Name=='Personal Loan') {
   $data['title']='Personal Loan- Check & Compare Personal Loan from Thousand Of Banks';
       $keywords='Compare Personal Loan Interest Rates,Compare Personal Loan Interest Rates India  ,Compare Personal Loan Offers,Compare Personal Loan Online,Compare Personal Loan Interest Rates Of Different Banks,Comparison Of Personal Loans';
-      $data['description']='Compare Personal Loan Interest Rates,Compare Personal Loan Interest Rates India  ,Compare Personal Loan Offers,Compare Personal Loan Online,Compare Personal Loan Interest Rates Of Different Banks,Comparison Of Personal Loans';
+      $data['description']='Check & Compare Personal Loan from Thousand of Banks. And Apply for PersonalLoan At Lowest Interest Rate On Rupeeboss.com';
 }
 else{
   $data['title']=' Loan Against Property – Check & Compare LoanAgainst Property From Thousand Of Banks';
       $keywords='Loan Against Property Interest Rate,Compare Loan Against Property Rates Online,Property Rates Compare online';
-      $data['description']='Loan Against Property Interest Rate,Compare Loan Against Property Rates Online,Property Rates Compare online';
+      $data['description']='Check & Compare Loan Against Property From Thousand of Banks. And Apply for Loan At Lowest Interest Rate On Rupeeboss.com';
 }
     
 

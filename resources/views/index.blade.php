@@ -1,4 +1,18 @@
+<div id="popup" class="modal fade">
+    <div class="modal-dialog">
+	<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <div class="modal-content">
+            
+            <div class="modal-body">
+			 <button type="button" class="close" data-dismiss="modal">×</button>
+				<a href="{{URL::to('home-loan-transfer/home-loan')}}"><img src="{{URL::to('images/popup.jpg')}}" /></a>
+                
+            </div>
+        </div>
+    </div>
+</div>
 @include('layout.header')
+
     <div class="container-fluid">
 	<aside id="fh5co-hero">
 
@@ -18,9 +32,9 @@
   <div class="carousel-inner" role="listbox">
   <div class="pull-right mar-tp ">
 
-		<a href="{{URL::to('comfy-sales')}}" class="img2"><img src="images/sliding-right-img-2.png" alt="comfy-sales" class="img-responsive"/></a>
+		<a href="{{URL::to('comfy')}}" class="img2"><img src="images/sliding-right-img-2.png" alt="comfy" class="img-responsive"/></a>
 		  <a href="{{URL::to('express-loan')}}" class="img3"><img src="images/sliding-right-img-1.png" alt="express-loan" class="img-responsive"/></a>
-		   <a href="{{URL::to('savings-account')}}" class="img4"><img src="images/sliding-right-img-3.png" alt="savings-account" class="img-responsive"/></a>
+		   <a href="{{URL::to('idfc')}}" class="img4"><img src="images/sliding-right-img-3.png" alt="idfc" class="img-responsive"/></a>
 
 		</div>
     <div class="item active">
@@ -95,18 +109,17 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
+
 </div>
 
-
-
-
-
-
-
-
-
-
-		
+<div class="container-fluid slider-lnk">
+<ul>
+<li><h2 class="pad text-center"><a href="{{URL::to('comfy-sales')}}">Rupeeboss Comfy</a></h2></li>
+<li><h2 class="pad text-center"><a href="{{URL::to('express-loan')}}">Express Loan</a></h2></li>
+<li><h2 class="pad text-center"><a href="{{URL::to('savings-account')}}">Savings Account</a></h2></li>
+</ul>
+</div>
+	
 	</aside>
 	</div>
 	<div id="fh5co-services-section">

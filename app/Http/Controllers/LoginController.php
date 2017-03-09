@@ -146,13 +146,21 @@ class LoginController extends CallApiController
       //print_r($http_result);exit();
       $str1=str_replace('"', '', $http_result);
       $str=explode('@',$str1);
-      //print_r($str);exit();
-      if($http_result!="0"){
+      //print_r($http_result);exit();
+      if(strlen($http_result)>5){
         $redirect_url='http://erp.rupeeboss.com/home.aspx?UserId='.$str[0].'&UserName='.$str[1].'&EmpCode='.$str[2].'&BrokerId='.$str[3].'';
+
+
+
        // print_r($redirect_url);exit();
-       //return Redirect::to($redirect_url);
-       return redirect(''.$redirect_url.'');
-      }else
-      return false;
+
+
+       return Response::json(array('url' => $redirect_url));
+      }else{
+      return Response::json(array(
+                                'url' => false,
+                            ));
+       }
     }
+
 }

@@ -15,8 +15,8 @@
 
 	<link  rel="stylesheet" type="text/css" href="{{URL::to('css/mysite.css')}}"/>
 
- <!-- <link href="{{URL::to('css/style.css')}}" rel="stylesheet" type="text/css" />  
-  -->
+ <link href="{{URL::to('css/style.css')}}" rel="stylesheet" type="text/css" /> 
+
 
  <link href="{{URL::to('css/freshslider.min.css')}}" rel="stylesheet" type="text/css" /> 
 
@@ -30,10 +30,12 @@
 	
 	
 <meta name="google-site-verification" content="GpnTKVcLtZQjKCKHXfeaOaQGDsxzCS3XLCkTwmd4STI" />
+
 	</head>
 	<body><!-- 
 	<script src="https://app.tigerapi.com/rest/?i=MTQ4NTIzNzg2NA==" async="async" type="text/javascript"></script> -->
 	<!-- Side bar -->
+	
 	<div class="arrow-don" title="Help Section"><i class="icon-phone"></i></div>
     <div class="sidebar displaynone">
     <ul>
@@ -71,7 +73,8 @@
 
                 <li><a href="{{URL::to('https://twitter.com/rupeeboss')}}" title="Twitter"><i class="icon-twitter"></i></a></li>
                 <li><a href="{{URL::to('https://www.facebook.com/rupeeboss')}}" title="Facebook"><i class="icon-facebook"></i></a></li>
-                <li><a href="{{URL::to('https://plus.google.com/112574970643410375765')}}" title="GooglePlus"><i class="icon-google-plus"></i></a></li>
+                <li><a href="{{URL::to('https://www.linkedin.com/company/rupeeboss.com')}}" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+                <li><a href="{{URL::to('https://plus.google.com/u/0/113191059621763008376')}}" title="GooglePlus"><i class="icon-google-plus"></i></a></li>
                 <!-- <li><a href="#" title="instagram"><i class="icon-instagram"></i></a></li> -->
                 <li><a href="{{URL::to('contact-us')}}"><i class="icon-phone"></i> 1800-267-629-6	</a></li>
 
@@ -81,7 +84,7 @@
     </div>
 		<div class="container" id="refreshID">
 			<div class="header-inner">
-				<h1><a href="{{URL::to('/')}}"><img src="{{URL::to('images/logo.png')}}" alt="logo" width="160" height="47" /></a></h1>
+	<a href="{{URL::to('/')}}" class="logo"><img src="{{URL::to('images/logo.png')}}" alt="logo" width="160" height="47" /></a>
 				<nav role="navigation">
 				  <ul>
                      @if(\Request::is('community/*') || \Request::is('community'))
@@ -108,7 +111,7 @@
 							</li>
 							<li>
 								<a href="{{URL::to('sme-loan')}}">Lease Rent Discounting</a>
-								<a href="{{URL::to('sme-loan')}}">Working Capital</a>
+								<a href="{{URL::to('Working-Capital')}}">Working Capital</a>
 							<!-- <a href="{{URL::to('sme-loan')}}">Export/Import Finance</a> -->
 							</li>
 							<!-- <li><a href="{{URL::to('sme-loan')}}">Over Draft / Cash Credit</a> -->

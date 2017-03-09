@@ -13,8 +13,9 @@ use Redirect;
 use Session;
 use URL;
 use DB;
+use Response;
 use Mail;
-class SocialsiteController extends InitialController{
+class SocialsiteController extends CallApiController{
      public function  facebook(){
        return Socialite::driver('facebook')->redirect();
      }
@@ -128,19 +129,31 @@ return  $authUser;
 
     public function facebooklogin(Request $res){
                       $vale=$res->response;
+
+
                    
              $query=new registrationModel();
              $authUser =$query->where('provider_user_id',$vale['id'])->first();
+
                if ($authUser){
                        Session::put('email', $authUser->email);
                        Session::put('user_id', $authUser->id);
                        Session::put('name', $authUser->username);
                        Session::put('is_login', 1);
-               $arr = array('error' => 1);
+
+                         if($authUser->contact!=''){
+                           Session::put('contact',$authUser->contact);
+                          $contact=11;
+                         }else{
+                          $contact=22;
+                         }
+               $arr = array('error' => 1,'contact'=>$contact,'user_id'=>$authUser->id);
                echo json_encode($arr);
+    
+
         }else{
                   $pwd=$this->random_password();
-                  $this->mail_fn($vale['email'],$pwd);
+                //  $this->mail_fn($vale['email'],$pwd);
                   $query->username=$vale['first_name'];
                   $query->email=$vale['email'];
                   $query->contact='';
@@ -148,7 +161,6 @@ return  $authUser;
                   $query->provider_user_id=$vale['id'];
                   $query->provider=$vale['link'];
                   $query->created_at=date('Y-m-d H:i:s');
-
                if($query->save()) {
                   Session::put('email',$query->email);
                   Session::put('contact',$query->contact);
@@ -159,7 +171,12 @@ return  $authUser;
                
         }
 
-                $arr = array('error' => 2);
+                if(Session::get('contact')==''){
+                          $contact=22;
+                         }else{
+                           $contact=0;
+                         }
+                $arr = array('error' => 2,'contact'=>$contact);
                echo json_encode($arr);
 
 
@@ -193,11 +210,19 @@ return  $authUser;
                        Session::put('user_id', $authUser->id);
                        Session::put('name', $authUser->username);
                        Session::put('is_login', 1);
-               $arr = array('error' => 1);
+
+                        if($authUser->contact!=''){
+                           Session::put('contact',$authUser->contact);
+                          $contact=11;
+                         }else{
+                          $contact=22;
+                         }
+
+               $arr = array('error' => 1,'contact'=>$contact);
                echo json_encode($arr);
         }else{    
                   $pwd=$this->random_password();
-                  $this->mail_fn($email,$pwd);
+                 // $this->mail_fn($email,$pwd);
                   $query->username=$vale['displayName'];
                   $query->email=$email;
                   $query->contact='';
@@ -215,8 +240,12 @@ return  $authUser;
                   DB::table('customer_details')->insert(['user_id' =>$query->id]);
                
         } 
-
-                $arr = array('error' => 2);
+                if(Session::get('contact')==''){
+                          $contact=22;
+                         }else{
+                           $contact=0;
+                         }  
+                $arr = array('error' => 2,'contact'=>$contact);
                  echo json_encode($arr);
 
 
@@ -232,13 +261,80 @@ return  $authUser;
 }
 
 public function mail_fn($email,$pwd){
-                $headers="Content-Type: text/html; charset=ISO-8859-1\r";
+
+                $headers='Content-Type: text/html; charset=ISO-8859-1';
                 $mail = Mail::send('email_send_password',['data' => $pwd], function($message) use($email) {
                 $message->from('software.support@rupeeboss.com', 'RupeeBoss');
-                $message->to($email)
-                ->subject('Password generated');
+                $message->to($email)->subject('Password generated');
 
                 });
   }
+
+
+function contactOTP(Request $req){
+  $phone = Session::get('contact');
+  $query=DB::table('otp')
+            ->where('otp', $req['otp'])
+            ->where('contact',$phone)
+            ->update(['status' => 1]);
+        if($query){
+                  $query=DB::table('user_registration')
+                              ->where('id',Session::get('user_id'))
+                              ->update(['contact' =>$phone]);
+            return Response::json(array(
+                            'data' => true,
+                        ));
+        }else{
+           return Response::json(array(
+                                'data' => false,
+                            ));
+        }
+}
+
+     public function contact_us_otp(Request $req){
+                $this->otp($req);
+                Session::put('contact',$req->contact_name);
+                $error=2;
+                echo $error;
+          // $query=DB::table('user_registration')
+          //                     ->where('id',Session::get('user_id'))
+          //                     ->update(['contact' =>$req->contact_name]);
+          //                      Session::put('contact',$req->contact_name);
+          //                    $error=2;
+          //                   echo $error;
+        }
+
+
+        function otp($req){
+               $otp = mt_rand(100000, 999999);
+               $query=DB::table('otp')->insertGetId(
+            ['name' => Session::get('user_id'),'contact'=>$req->contact_name,'email'=>Session::get('user_id')
+            ,'source'=>'web_user','product'=>12,'otp'=>$otp,'status'=>'0','created_at'=> date("Y-m-d H:i:s")]
+            );
+
+           
+            //calling service to send sms 
+                $post_data='{"mobNo":"'.$req->contact_name.'","msgData":"your otp is '.$otp.' - RupeeBoss.com",
+                    "source":"WEB"}';
+                // $url = "http://beta.services.rupeeboss.com/LoginDtls.svc/xmlservice/sendSMS";
+                $url ="http://services.rupeeboss.com/LoginDtls.svc/xmlservice/sendSMS";
+                $result=$this->call_json_data_api($url,$post_data);
+                $http_result=$result['http_result'];
+                $error=$result['error'];
+                $obj = json_decode($http_result);
+                //print_r($obj);exit();
+                // if($obj->{'statusId'}==0){
+                //     return Response::json(array(
+                //                 'data' => true,
+                //             ));
+                // }else{
+                //     return Response::json(array(
+                //                 'data' => false,
+                //             ));
+                // }
+            
+
+        }
+
 
 }

@@ -77,21 +77,30 @@
 			 </h3> 
 			</div>
 			<div class="text-center " style="display: none" id="step_3_btn">
-			<?php if(Session::get('is_login')) {?>
+               
+			<?php if(Session::get('is_login')) { ?>
+				  <?php if(Session::get('contact')!=''){ Session::get('contact'); ?>
 				<button class="btn btn-primary btn-outline with-arrow animate-box product_name " >Get me a Loan<i class="icon-arrow-right"></i></button>
+				<?php }else{?> 
+                 <a  class="btn btn-primary btn-outline with-arrow animate-box product_name" data-toggle="modal" data-target="#contact_id">Get me a Loan<i class="icon-arrow-right"></i></a>
+				 <?php }?>
+
 			<?php }else{?>
 			<button  style="display:none" class="btn btn-primary btn-outline with-arrow animate-box product_name " id="btn_refresh">Get me a Loan<i class="icon-arrow-right"></i></button>
 
 				<a id="btn_refresh1" class="btn btn-primary btn-outline with-arrow animate-box product_name" data-toggle="modal" data-target="#login_process">Get me a Loan<i class="icon-arrow-right"></i></a>
-			<?php } ?>
+			<?php }?>
+
 			</div>
+
+
 	 </div>
 	 </form>
 	  <!-- POP Up code start -->
 	   <div class="col-md-4 liza1">
 		<div class="text-center guid nl-form-errors" id='pop1'>Select your professional!</div>
 
-        <div class="text-center img1"><img src="{{URL::to('images/photo.jpg')}}"></div>
+        <div class="text-center img1"><img src="{{URL::to('images/photo.jpg')}}" alt="pop_up_pic"></div>
 		</div>
 		<!-- POP Up code end -->
 		</div>

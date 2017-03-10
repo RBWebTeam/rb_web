@@ -2142,5 +2142,11 @@ function SetSession_pop(cookieName,cookieValue){
         });
     });
   </script>
+  
+  <script type="text/javascript">
+	$(document).ready(function(){
+		$("#popup").modal('show');
+	});
+</script>
    <!-- emp login end -->
   @include('layout.modal')

@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Hash;
 
 use DB;
 
-class Login_and_Reg_Controller extends InitialController
+class Login_and_Reg_Controller extends Controller
 {
      public function login_regi(Request $request){
             

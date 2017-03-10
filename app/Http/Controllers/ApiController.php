@@ -467,7 +467,7 @@ run_else:
 		else{
 			$new_data=NULL;
 			$status_Id=1;
-			$msg=" Something went wrong.";
+			$msg=" No Record Found.";
 			
 		}
 
@@ -481,14 +481,16 @@ run_else:
 	public function getQuoteByBrokerId(Request $req){
 		//print_r($req['BrokerId']);exit();
 		$id=$req['BrokerId'];
+		$ProductId=$req['ProductId'];
+		$flag=$req['flag'];
 		 $data=DB::table('bank_quote_api_request')
 		 ->select('ID','ApplicantNme','LoanRequired','ApplicantIncome','Turnover','status','ProductId')
         ->where('BrokerId','=',$id)
-        ->where('ProductId','=','12')
+        ->where('ProductId','=',$ProductId)
         ->get();
         //calling Erp api
        			$emp_code=$req['empCode'];
-        		$post_data='{"brokerId":'.$id.',"empCode":"'.$emp_code.'"}';
+        		$post_data='{"brokerId":'.$id.',"empCode":"'.$emp_code.'","flag":"'.$flag.'","ProductId":"'.$ProductId.'"}';
         		//print_r($post_data);exit();
                  // $url="http://beta.services.rupeeboss.com/LoginDtls.svc/xmlservice/dsplyHomePersonalLoanAppDtls";
         		$url="http://services.rupeeboss.com/LoginDtls.svc/xmlservice/dsplyHomePersonalLoanAppDtls";
@@ -498,8 +500,8 @@ run_else:
                 $obj = json_decode($http_result);
                 // statusId response 0 for success, 1 for failure
                 //print_r(sizeof($obj->result->lstHomeLoanDtls));exit();
-       			//print_r($obj);exit();
-                if(sizeof($obj->result->lstHomeLoanDtls)>0){
+       			//print_r($obj->statusId);exit();
+                if($obj->statusId==0){
                 	$application=$obj->result->lstHomeLoanDtls;
                 }else{
                 	$application=NULL;
@@ -516,9 +518,9 @@ run_else:
 					
 				}
 
-				if(sizeof($obj->result->lstHomeLoanDtls)==0 && $data=='[]'){
+				if($obj->statusId==1 && $data=='[]'){
 					$status_Id=1;
-					$msg="Something went wrong";
+					$msg="No Record Found";
 				}else{
 					$status_Id=0;
 					$msg="Data delievered";
@@ -535,15 +537,17 @@ run_else:
 	public function getPersonalLoanQuoteByBrokerId(Request $req){
 		//print_r($req['BrokerId']);exit();
 		$id=$req['BrokerId'];
+		$ProductId=$req['ProductId'];
 		 $data=DB::table('bank_quote_api_request')
 		 ->select('ID','ApplicantNme','LoanRequired','ApplicantIncome','Turnover','status','ProductId')
         ->where('BrokerId','=',$id)
-        ->where('ProductId','=','9')
+        ->where('ProductId','=',$ProductId)
         ->get();
         //calling Erp api
        			$flag=$req['flag'];
         		$emp_code=$req['empCode'];
-        		$post_data='{"brokerId":'.$id.',"empCode":"'.$emp_code.'","flag":"'.$flag.'"}';
+
+        		$post_data='{"brokerId":'.$id.',"empCode":"'.$emp_code.'","flag":"'.$flag.'","ProductId":"'.$ProductId.'"}';
         		//print_r($post_data);exit();
                  // $url="http://beta.services.rupeeboss.com/LoginDtls.svc/xmlservice/dsplyPersonalLoanAppDtls";
         		$url="http://services.rupeeboss.com/LoginDtls.svc/xmlservice/dsplyPersonalLoanAppDtls";
@@ -574,7 +578,7 @@ run_else:
 
 				if($obj->statusId !=1 && $data=='[]'){
 					$status_Id=1;
-					$msg="Something went wrong";
+					$msg="No Record Found";
 				}else{
 					$status_Id=0;
 					$msg="Data delievered";

@@ -42,6 +42,24 @@ class CallApiController extends InitialController
 	    $result=array('http_result' =>$http_result ,'error'=>$error );
 	    return $result;
 	}
+	public function call_json_data_get_api($url,$data){
+		$ch = curl_init();
+        curl_setopt($ch, CURLOPT_VERBOSE, 1);
+        curl_setopt( $ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_POST, 0);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_FAILONERROR, 0);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+        $http_result = curl_exec($ch);
+        $error = curl_error($ch);
+        $http_code = curl_getinfo($ch ,CURLINFO_HTTP_CODE);
+        curl_close($ch);
+        $result=array('http_result' =>$http_result ,'error'=>$error );
+
+		return $result;
+	}
+	
 
 }
 ?>

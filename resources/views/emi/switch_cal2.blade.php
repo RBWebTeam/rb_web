@@ -10,6 +10,11 @@
   $loanamount =(float)$sata['loanamount'];
   $loaninterest =(float)$sata['loaninterest'];
   $loanterm =(float)$sata['loanterm'];
+  $brokerid =(float)$sata['brokerid'];
+    $product_id =(float)$sata['product_id'];
+     $app =(float)$sata['app'];
+      $empcode =(float)$sata['empcode'];
+     // print_r($app);exit();
   
 foreach ($data as $key => $value){?>
    
@@ -78,6 +83,15 @@ foreach ($data as $key => $value){?>
                         <p>TENURE(in months)</p>
                         <h6><?php echo $loanterm ?></h6>
                       </div>
+                    </td>
+
+                    </td>
+                    <td class="td-main">
+                    <?php if($app=="1"){?>
+                     <a class="btn btn-success btn-outline with-arrow" href="{{URL::to('apply-lead-online')}}?qoutid=0&BankId={{$value['Bank_Id']}}&brokerid={{$brokerid}}&loanamount={{ $loanamount}}&loaninterest={{$loaninterest }}&loanterm={{$loanterm}}&product={{$product_id}}&empcode={{$empcode}}"}}">Apply Now
+              <i class="icon-arrow-right"></i></a>
+              <?php }else{?>
+              <?php }?>
                     </td>
 
 

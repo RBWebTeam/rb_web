@@ -78,8 +78,7 @@ class ApiController extends CallApiController
 					
 					$update=DB::table('bank_quote_api_request')
 				            ->where('id', $req['quote_id'])
-				            ->where('ProductId',7)
-				            ->orwhere('ProductId',12)
+				            ->where('ProductId',$ProductId)
 				            ->update(['PropertyID' =>$PropertyID,
 				            		 'ApplicantNme'=>$ApplicantNme,
 				            		  'City'=>$City,
@@ -493,7 +492,7 @@ run_else:
         ->where('ProductId','=',$ProductId)
         ->get();
         //calling Erp api
-       			$emp_code=$req['empCode'];
+       			$emp_code=$req['empcode'];
         		$post_data='{"brokerId":'.$id.',"empCode":"'.$emp_code.'","flag":"'.$flag.'","ProductId":"'.$ProductId.'"}';
         		//print_r($post_data);exit();
                  // $url="http://beta.services.rupeeboss.com/LoginDtls.svc/xmlservice/dsplyHomePersonalLoanAppDtls";
@@ -549,7 +548,7 @@ run_else:
         ->get();
         //calling Erp api
        			$flag=$req['flag'];
-        		$emp_code=$req['empCode'];
+        		$emp_code=$req['empcode'];
 
         		$post_data='{"brokerId":'.$id.',"empCode":"'.$emp_code.'","flag":"'.$flag.'","ProductId":"'.$ProductId.'"}';
         		//print_r($post_data);exit();

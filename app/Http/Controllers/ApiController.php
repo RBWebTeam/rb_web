@@ -129,6 +129,7 @@ class ApiController extends CallApiController
 					//print_r('call  usp_get_bank_quot_test("'.$req['PropertyCost'].'","'.$req['LoanTenure'].'","'.$req['LoanRequired'].'","'.$req['ApplicantGender'].'","'.$req['ApplicantIncome'].'","'.$req['ApplicantObligations'].'","'.$req['ApplicantDOB'].'","'.$req['CoApplicantYes'].'","'.$req['CoApplicantIncome'].'","'.$req['CoApplicantObligations'].'","'.$req['Turnover'].'","'.$req['ProfitAfterTax'].'","'.$req['Depreciation'].'","'.$req['DirectorRemuneration'].'","'.$req['CoApplicantTurnover'].'","'.$req['CoApplicantProfitAfterTax'].'","'.$req['CoApplicantDepreciation'].'","'.$req['CoApplicantDirectorRemuneration'].'","'.$req['ApplicantSource'].'","'.$req['CoApplicantDOB'].'","'.$req['CoApplicantSource'].'","'.$req['ProductId'].'")');exit();
 					$data=DB::select('call  usp_get_bank_quot_test("'.$req['PropertyCost'].'","'.$req['LoanTenure'].'","'.$req['LoanRequired'].'","'.$req['ApplicantGender'].'","'.$req['ApplicantIncome'].'","'.$req['ApplicantObligations'].'","'.$req['ApplicantDOB'].'","'.$req['CoApplicantYes'].'","'.$req['CoApplicantIncome'].'","'.$req['CoApplicantObligations'].'","'.$req['Turnover'].'","'.$req['ProfitAfterTax'].'","'.$req['Depreciation'].'","'.$req['DirectorRemuneration'].'","'.$req['CoApplicantTurnover'].'","'.$req['CoApplicantProfitAfterTax'].'","'.$req['CoApplicantDepreciation'].'","'.$req['CoApplicantDirectorRemuneration'].'","'.$req['ApplicantSource'].'","'.$req['CoApplicantDOB'].'","'.$req['CoApplicantSource'].'","'.$req['ProductId'].'")');
 					//print_r($data);exit();
+					$req['empcode']=isset($req['empcode'])?$req['empcode']:0;
 					$save=new bank_quote_api_request();	
 		 			$id=$save->store($request);
 				}
@@ -314,6 +315,7 @@ run_else:
 				//		print_r($data);exit();
 				$save=new bank_quote_api_request();	
 				$req['ProductId']=9;//personal lona product id
+				$req['empcode']=isset($req['empcode'])?$req['empcode']:0;
 		 		$id=$save->store($req);
 			}
 		}catch (Exception $e) {
@@ -333,7 +335,9 @@ run_else:
 		$log_update=DB::table('api_log')
 		->where('id','=',$log)
 		->update(['status'=>$status,'updated_at'=>date("Y-m-d H:i:s")]);
-
+		$status_update=DB::table('bank_quote_api_request')
+		->where('ID','=',$id)
+		->update(['status'=>$status]);
 		return Response::json(array(
 			'data' => $data,
 			'quote_id'=>$id
@@ -575,8 +579,8 @@ run_else:
 					$new_data=NULL;
 					
 				}
-
-				if($obj->statusId !=1 && $data=='[]'){
+				//print_r($obj->statusId."--------------".$data);exit();
+				if($obj->statusId ==1 && $data=='[]'){
 					$status_Id=1;
 					$msg="No Record Found";
 				}else{

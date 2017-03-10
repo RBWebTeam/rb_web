@@ -9,7 +9,7 @@ class bank_quote_api_request extends Model
 {
     //
     protected $table='bank_quote_api_request';
-    protected $fillable = ['PropertyID', 'PropertyCost', 'LoanTenure', 'LoanRequired', 'City','ApplicantNme','ApplicantGender','ApplicantSource','ApplicantIncome','ApplicantObligations','ApplicantDOB','CoApplicantYes','CoApplicantGender','CoApplicantSource','CoApplicantIncome','CoApplicantObligations','CoApplicantDOB','Turnover','ProfitAfterTax','Depreciation','DirectorRemuneration','CoApplicantTurnover','CoApplicantProfitAfterTax','CoApplicantDepreciation','CoApplicantDirectorRemuneration','BrokerId','ProductId','created_at', 'updated_at'];
+    protected $fillable = ['PropertyID', 'PropertyCost', 'LoanTenure', 'LoanRequired', 'City','ApplicantNme','ApplicantGender','ApplicantSource','ApplicantIncome','ApplicantObligations','ApplicantDOB','CoApplicantYes','CoApplicantGender','CoApplicantSource','CoApplicantIncome','CoApplicantObligations','CoApplicantDOB','Turnover','ProfitAfterTax','Depreciation','DirectorRemuneration','CoApplicantTurnover','CoApplicantProfitAfterTax','CoApplicantDepreciation','CoApplicantDirectorRemuneration','BrokerId','empcode','ProductId','created_at', 'updated_at'];
     public function store(Request $request)
     {
         $table = new bank_quote_api_request();
@@ -81,7 +81,7 @@ class bank_quote_api_request extends Model
          $table->CoApplicantDepreciation    = $request->co_applicant_depreciation   ;
          $table->CoApplicantDirectorRemuneration    = $request->co_applicant_remuneration;
          $table->brokerID    = 0;
-         
+         $table->empcode =0;
          $table->ProductId    = $request->product_name;
          $table->Email    = Session::get('email')?Session::get('email'):"";
          $table->Contact =Session::get('contact')?Session::get('contact'):"";

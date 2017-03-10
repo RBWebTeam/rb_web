@@ -9594,7 +9594,7 @@ td {padding:5px; text-align:center;}
 .btn-primary.btn-outline {
   background:#fff;
   color: #3aa6d3;
-  border:2px solid #ed1c24;
+
 }
 .btn-primary.btn-outline:hover, .btn-primary.btn-outline:focus, .btn-primary.btn-outline:active {
   background: #ec1b23;
@@ -10679,7 +10679,7 @@ rb-services-section{padding:0px;}
 @media screen and (max-width: 786px) {
   .fh5co-nav-toggle {
     display: block;
-    top:45px;
+    top:62px;
   }
   # nav ul li.cta {}}
 }
@@ -10828,7 +10828,7 @@ border: #3px solid #999;background:#1f386e;margin: 10px;margin: 10px auto;text-a
 .sidebar ul li  {list-style-type:none;margin:0px; padding:8px; border-bottom:1px solid #2f4980;cursor:pointer;}
 .sidebar ul li a {color:#fff;font-size:12px;}
 .sidebar ul li:hover {background:#F60; text-decoration:none;}
-.arrow-don {top:150px;padding:10px;position:fixed; z-index:10000;cursor:pointer;background:#3699c1;color:#fff;}
+.arrow-don {top:150px;padding:10px;position:fixed; z-index:1000;cursor:pointer;background:#3699c1;color:#fff;}
 .bdy1, .bdy2, .bdy3, .bdy4 {z-index:10000; top:0px;margin-left:70px;padding:10px;position:absolute;width:500px;height:350px;background:#ddd;border:1px solid #ccc;}
 #fh5co-offcanvas ul li a {color:#88d0ed;}
 
@@ -12690,6 +12690,19 @@ font-size:20px;margin-top: 10px;
     color: #fff;
 }
 .no-border {border:none;outline:none; margin:0px;padding:2px;}
+.close-btn {
+    position: absolute;
+    right: -18px;
+    top: -18px;
+	color:#fff;
+	box-shadow:none;
+    background:#ed1c25 !important;
+    width: 30px;
+    opacity: 1;
+    height: 30px;
+    border-radius: 50px;
+}
+
 
 
 @charset "utf-8";.col-md-2, .col-md-10{}

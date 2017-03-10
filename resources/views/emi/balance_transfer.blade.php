@@ -252,6 +252,12 @@ label {
 								<input type="hidden" name="app" id="appid" value="0">
 								<?php }?>
 
+								<?php if(isset($_GET['empcode'])){?>
+								<input type="hidden" name="empcode" id="empcode" value="<?php echo isset($_GET['empcode'])?$_GET['empcode']:'';?>">
+								<?php }else{?>
+								<input type="hidden" name="empcode" id="empcode" value="0">
+								<?php }?>
+
 								
 										
 									<div class="col-xs-6 form-padding">
@@ -673,6 +679,7 @@ $('#slider').slider({
       var loaninterest = $("#loaninterest").val();
       var product_id = $("#product_ids").val();
       var app_id = $("#appid").val();
+      var empcode = $("#empcode").val();
       // if(loaninterest<9){
       // 	alert("Interest Rate should be greater than 9%. If less, you are already on lower rate");
       // }
@@ -686,7 +693,7 @@ $('#slider').slider({
                type: "POST",  
                url: "{{URL::to('calculationfordc')}}",
                dataType:'json',
-               data : { 'loanamount': loanamount , 'loaninterest': loaninterest ,'loanterm' :loanterm,'product_id': product_id ,'app': app_id ,'_token': v_token},
+               data : { 'loanamount': loanamount , 'loaninterest': loaninterest ,'loanterm' :loanterm,'product_id': product_id ,'app': app_id ,'empcode':empcode,'_token': v_token},
                // 'bank':bank},
                success: function(msg){
                   // console.log(msg.success);

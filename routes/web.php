@@ -66,7 +66,7 @@ Route::post('contact_otp','SocialsiteController@contactOTP');
 /* Working Capital */
 
 Route::get('Working-Capital','WorkingCapitalController@WorkingCapital');
-
+Route::post('Working-Capital/calculate','WorkingCapitalController@calculate');
 
 Route::get('refresh-csrf', function(){
     return csrf_token();
@@ -205,3 +205,5 @@ Route::get('comfy','ComfyController@comfy');
 Route::get('idfc','IdfcController@idfc');
 /**  tribe */
 Route::get('tribe','TribeController@tribe');
+Route::post('save-tribe-form','TribeController@save_tribe_form');
+

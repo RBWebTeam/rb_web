@@ -70,7 +70,9 @@
      <!-- <i class="fa fa-exchange" aria-hidden="true"></i> -->
      
     <div class="form-group">
-    <input type="hidden" name="brokerid" id="brokerid" value="<?php echo isset($_GET['brokerid'])?$_GET['brokerid']:'';?>">
+    <input type="hidden" name="brokerid" id="brokerid" value="<?php echo isset($_GET['brokerid'])?$_GET['brokerid']:'0';?>">
+
+    <input type="hidden" name="empcode" id="empcode" value="<?php echo isset($_GET['empcode'])?$_GET['empcode']:'0';?>">
        <!-- <label class="control-label" for="Loan Amount">Outstanding Principal:</label> -->
        <input type="text" name="loanamount" class="form-control" id="loanamount" placeholder="Outstanding Principal" value="" onblur ="myfun()" onKeyPress="return isNumberKey(event)" maxlength="10" title="Outstanding Principal">
 
@@ -348,6 +350,7 @@
       var profession=$("#profession").val();
       var product_id=$("#product_id").val();
       var brokerid =$("#brokerid").val();
+       var empcode =$("#empcode").val();
       //console.log(profession);
 
       
@@ -356,7 +359,7 @@
                type: "POST",  
                url: "{{URL::to('calculation')}}",
                dataType:'json',
-               data : { 'loanamount': loanamount , 'loaninterest': loaninterest ,'loanterm' :loanterm,'_token': v_token,'profession':profession,'product_id':product_id,'brokerid':brokerid},
+               data : { 'loanamount': loanamount , 'loaninterest': loaninterest ,'loanterm' :loanterm,'_token': v_token,'profession':profession,'product_id':product_id,'brokerid':brokerid,'empcode':empcode},
                // 'bank':bank},
                success: function(msg){
                     console.log(msg);

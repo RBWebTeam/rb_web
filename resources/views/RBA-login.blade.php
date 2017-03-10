@@ -6,7 +6,8 @@
   <div>
   <div class="col-md-12">
   <h2 class="text-center">RBA Registration</h2>
-  <br>
+  <p id="showerror" class="text-center displaynone">Broker already exist</p>
+    <br>
   </div>
 
   <div class="col-md-6 white-bg box-shadow rba-dv-hei">
@@ -85,13 +86,17 @@
          url: "{{URL::to('RBA-login')}}",
          data : $('#rba_form').serialize(),
          success: function(msg){
-         //console.log(msg);
-          if(msg){
+         
+          if(msg=='true'){
+            console.log("ok");
              // console.log(msg);
               window.location.href ="{{URL::to('thank-you')}}";
             
           }else{
-            window.location.href ="{{URL::to('went-wrong')}}";
+            $("#showerror").show();
+
+            //console.log("bye");
+            //window.location.href ="{{URL::to('went-wrong')}}";
           } 
           
 

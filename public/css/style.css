@@ -191,7 +191,7 @@ td {padding:5px; text-align:center;}
 
 .btn-outline {
   background: none;
-  border: 2px solid gray;
+  border: 2px solid #3aa6d3;
   font-size: 16px;
   -webkit-transition: 0.3s;
   -o-transition: 0.3s;
@@ -1353,7 +1353,22 @@ input[placeholder], [placeholder], *[placeholder] {color: #1f386e !important;}
 .icon-map-marker {font-size:25px; float:left;}
 .modal-body input, button {margin-bottom:10px; color:#396fbf;border:none;}
 .chat-win {display:none;} 
-.loan-head {padding:20px;display:block; text-align:center;padding-top:0px; margin-top:20px;}
+/* .loan-head {padding:20px;display:block; text-align:center;padding-top:0px; margin-top:20px;}*/
+
+.loan-head {
+    width:25%;
+    line-height: 35px;
+    margin-bottom: 15px;
+    height: 35px;
+    color: #fff;
+    font-size: 20px;
+    border-radius: 15px;
+    margin: 0 auto;
+    background: #ed1c24;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
  .slide-left {margin: 0px 30px;}
  .heading-bmar {padding-top: 0px; margin-bottom:1px;display:block;}
  .testimonials {float:right;}
@@ -2035,6 +2050,7 @@ body {background:#eee;}
 @media only screen and (max-width:768px) {
  .txt-title {display:none;}
  .bdr-btm {border:1px solid #ccc;}
+ .loan-head {margin-top:35px; width:80%;}
 }
 
 .comp-pg .comp li {list-style-type:none;padding:10px;}
@@ -3123,16 +3139,7 @@ font-size:20px;
 margin-top: 10px;
 
 }
-.get-otp {
-    background: #4cae4c;
-    border: 2px solid #4cae4c;
-    color: #fff;
-    position: absolute;
-    margin-top: 10px;
-    font-size: 20px;
-    padding: 10px 20px;
-    text-transform: uppercase;
-}
+
 .get-otp:hover {background:#44a644;}
 
 @media only screen and (max-width:480px) {
@@ -3140,6 +3147,7 @@ margin-top: 10px;
   .input_exp {width:100%;}
   .get-otp {right:35px;position: absolute;padding: 10px;}
   .input-typ {width:90%;}
+
 }
 
 

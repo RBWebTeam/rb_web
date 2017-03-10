@@ -6,17 +6,17 @@
 	
 	<h2 class="align-center loan-head">Express Loan</h2>
 	</div>
-	<div class=""></div>
-	<div class="flexslider col-md-8">
+
+	<!-- <div class="flexslider col-md-8">
 	<div id="myCarousel" class="carousel slide" data-ride="carousel">
-  <!-- Indicators -->
+  <!-- Indicators 
   <ol class="carousel-indicators">
     <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
     <li data-target="#myCarousel" data-slide-to="1"></li>
     
   </ol>
 
-  <!-- Wrapper for slides -->
+  <!-- Wrapper for slides 
   <div class="carousel-inner" role="listbox">
     <div class="item active">
       <img src="{{URL::to('images/birla_ban.png')}}" alt="birla_banner">
@@ -27,7 +27,7 @@
     </div>
   </div>
 
-  <!-- Left and right controls -->
+  <!-- Left and right controls 
   <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
     <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
     <span class="sr-only">Previous</span>
@@ -37,9 +37,9 @@
     <span class="sr-only">Next</span>
   </a>
 </div>	
-	  	</div>
+	  	</div> -->
 
-   <div class="col-md-4 red-bg1 ">
+   <!-- <div class="col-md-4 red-bg1 ">
 	   <div class="form-in">
               <span class="head-1 heading-bmar">Request A Call Back</span>
               <form  id="callback_form" role="form" method="POST">
@@ -72,9 +72,9 @@
 		</div>	
 		<div class='msg displaynonemsg'><p>Thanks. We will reach you soon.</p></div>
             <div class='msg_err displaynonemsg'><p>Ooops. Something went wrong.</p></div>
-	</div>
+	</div> -->
 	</aside>
-	</div>
+	</div> 
 
 	<div id="fh5co-pricing-section">
 		<div class="container">

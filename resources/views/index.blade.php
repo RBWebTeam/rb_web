@@ -1,6 +1,6 @@
 <div id="popup" class="modal fade">
     <div class="modal-dialog">
-	<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+	<button type="button" class="close"  data-dismiss="modal" aria-hidden="true">×</button>
         <div class="modal-content">
             
             <div class="modal-body">

@@ -205,3 +205,5 @@ Route::get('comfy','ComfyController@comfy');
 Route::get('idfc','IdfcController@idfc');
 /**  tribe */
 Route::get('tribe','TribeController@tribe');
+Route::post('save-tribe-form','TribeController@save_tribe_form');
+

@@ -141,6 +141,7 @@
 							</li>
 							</ul>					   
 					        </li>
+							<li><a href="{{URL::to('check_emi')}}">EMI Calculator</a></li>
 							<?php if(Session::get('is_login')){
 							?>
 							<li class="user-ic dropdown">

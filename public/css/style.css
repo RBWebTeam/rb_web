@@ -1356,7 +1356,7 @@ input[placeholder], [placeholder], *[placeholder] {color: #1f386e !important;}
 /* .loan-head {padding:20px;display:block; text-align:center;padding-top:0px; margin-top:20px;}*/
 
 .loan-head {
-    width:25%;
+    width:20%;
     line-height: 35px;
     margin-bottom: 15px;
     height: 35px;
@@ -1368,6 +1368,7 @@ input[placeholder], [placeholder], *[placeholder] {color: #1f386e !important;}
     text-align: center;
     margin-top: 20px;
     margin-bottom: 15px;
+	text-transform:uppercase;
 }
  .slide-left {margin: 0px 30px;}
  .heading-bmar {padding-top: 0px; margin-bottom:1px;display:block;}
@@ -2051,6 +2052,11 @@ body {background:#eee;}
  .txt-title {display:none;}
  .bdr-btm {border:1px solid #ccc;}
  .loan-head {margin-top:35px; width:80%;}
+ h1 {font-size:24px;}
+ h3 {font-size:14px;}
+ .fh5co-cta {
+    padding: 1em 0;
+}
 }
 
 .comp-pg .comp li {list-style-type:none;padding:10px;}

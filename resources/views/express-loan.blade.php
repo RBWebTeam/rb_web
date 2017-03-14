@@ -112,7 +112,49 @@
 					<div class="col-md-4 animate-box">
 						<div class="price-box popular">
 							<div class="center-blg"><img src="{{URL::to('images/apply-online.png')}}" alt="apply_online_pic" /></div>
-							<h4 class="mrg-btm">Apply Online Loan</h4>
+							<h4 class="mrg-btm">Edelweiss</h4>
+							<ul>
+							     <li>Online Sanction</li>
+								 <li>Minimum Documentation</li>
+								 <li>Express cash</li>
+							</ul>
+							
+							<button class="btn btn-primary btn-outline with-arrow">Apply Online<i class="icon-arrow-right"></i></button>
+						</div>
+					</div>
+					
+					<div class="col-md-4 animate-box">
+						<div class="price-box popular">
+							<div class="center-blg"><img src="{{URL::to('images/bank/hdfc.png')}}" width="160" alt="apply_online_pic" /></div>
+							<h4 class="mrg-btm">HDFC</h4>
+							<ul>
+							     <li>Online Sanction</li>
+								 <li>Minimum Documentation</li>
+								 <li>Express cash</li>
+							</ul>
+							
+							<button class="btn btn-primary btn-outline with-arrow">Apply Online<i class="icon-arrow-right"></i></button>
+						</div>
+					</div>
+					
+					<div class="col-md-4 animate-box">
+						<div class="price-box popular">
+							<div class="center-blg"><img src="{{URL::to('images/apply-idfc.png')}}" alt="apply_online_pic" /></div>
+							<h4 class="mrg-btm">IDFC</h4>
+							<ul>
+							     <li>Online Sanction</li>
+								 <li>Minimum Documentation</li>
+								 <li>Express cash</li>
+							</ul>
+							
+							<button class="btn btn-primary btn-outline with-arrow">Apply Online<i class="icon-arrow-right"></i></button>
+						</div>
+					</div>
+					
+					<div class="col-md-4 animate-box">
+						<div class="price-box popular">
+							<div class="center-blg"><img src="{{URL::to('images/personal.png')}}" alt="apply_online_pic" /></div>
+							<h4 class="mrg-btm">Personal Loan</h4>
 							<ul>
 							     <li>Online Sanction</li>
 								 <li>Minimum Documentation</li>
@@ -127,7 +169,7 @@
 			</div>
 		</div>
 	</div>
-<div id="fh5co-work-section" class="fh5co-light-grey-section">
+<!--  <div id="fh5co-work-section" class="fh5co-light-grey-section">
 		<div class="container">
 			<div class="col-md-12">
 				<ul class="nav nav-tabs">
@@ -159,10 +201,10 @@
 				
 			</div>
   </div>
+</div> 
 </div>
 </div>
-</div>
-</div>
+</div> -->
 
 @include('layout.footer')
 @include('layout.script')

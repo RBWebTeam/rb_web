@@ -1,17 +1,6 @@
-<div id="popup" class="modal fade">
-    <div class="modal-dialog">
-	<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-        <div class="modal-content">
-            
-            <div class="modal-body">
-			 <button type="button" class="close close-btn" data-dismiss="modal">×</button>
-				<a href="{{URL::to('home-loan-transfer/home-loan')}}"><img src="{{URL::to('images/popup.jpg')}}" class="img-responsive"/></a>
-                
-            </div>
-        </div>
-    </div>
-</div>
+
 @include('layout.header')
+
 
     <div class="container-fluid">
 	<aside id="fh5co-hero">
@@ -458,7 +447,18 @@
 		</div>
 	</div>
 	
-
-	
-@include('layout.footer')
 @include('layout.script')
+@include('layout.footer')
+<div id="popup" class="modal fade">
+    <div class="modal-dialog">
+	<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <div class="modal-content">
+            
+            <div class="modal-body">
+			 <button type="button" class="close close-btn" data-dismiss="modal">×</button>
+				<a href="{{URL::to('home-loan-transfer/home-loan')}}"><img src="{{URL::to('images/popup.jpg')}}" class="img-responsive"/></a>
+                
+            </div>
+        </div>
+    </div>
+</div>

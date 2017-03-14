@@ -67,6 +67,7 @@ Route::post('contact_otp','SocialsiteController@contactOTP');
 
 Route::get('Working-Capital','WorkingCapitalController@WorkingCapital');
 Route::post('Working-Capital/calculate','WorkingCapitalController@calculate');
+Route::post('term-loan/calculate','WorkingCapitalController@termcalculate');
 
 Route::get('refresh-csrf', function(){
     return csrf_token();

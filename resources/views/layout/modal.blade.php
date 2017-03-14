@@ -202,9 +202,9 @@
             // echo $empid;
              
           }else{
-            $empid = "";
-            $brokerid ="";
-            $source ="";
+            $empid = Session::get('empid')?Session::get('empid'):'';
+            $brokerid =Session::get('brokerid')?Session::get('brokerid'):'';
+            $source =Session::get('source')?Session::get('source'):'';
           }
           
           ?>
@@ -283,9 +283,9 @@
              //print_r($a);
           }
         }else{
-            $empid = "";
-            $brokerid ="";
-            $source ="";
+            $empid = Session::get('empid')?Session::get('empid'):'';
+            $brokerid =Session::get('brokerid')?Session::get('brokerid'):'';
+            $source =Session::get('source')?Session::get('source'):'';
           }
           
           ?>
@@ -370,9 +370,9 @@
             // echo $empid;
              //print_r($a);
           }else{
-            $empid = "";
-            $brokerid ="";
-            $source ="";
+            $empid = Session::get('empid')?Session::get('empid'):'';
+            $brokerid =Session::get('brokerid')?Session::get('brokerid'):'';
+            $source =Session::get('source')?Session::get('source'):'';
           }
           
           ?>
@@ -417,6 +417,8 @@
       
     </div>
   </div>
+
+
 
   
 

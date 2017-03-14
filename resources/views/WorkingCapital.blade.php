@@ -476,8 +476,9 @@ function ajax(_token,loanAmount_id,interest,loanTenurMonth,ID,paid){
                      $('.afterbtn').show();
                    
               }
-
+ 
                  if(msg.success0==true){  
+                  
                 var numb = msg.drop_interest.toFixed();
                 var month = msg.monthlyinterest.toFixed();
                 var totleMonthlysaving = msg.totleMonthlysaving.toFixed();

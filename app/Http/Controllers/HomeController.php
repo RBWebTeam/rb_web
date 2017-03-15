@@ -120,7 +120,7 @@ class HomeController extends InitialController
                 $post_data='{"City":"0","Email_Id":"'.$req->email.'","UserPassword":"","contact_No":"'.$req->contact.'","first_Name":"'.$req->name.'","last_Name":"","parentBrokerId":"","parentEmpCode":"","source":"dwBlAGIA"}';
                 // print_r($web);exit();
                 $url = "http://beta.services.rupeeboss.com/LoginDtls.svc/xmlservice/insBrokerDataForRBA";
-                // print_r($post_data);exit();
+                 // print_r($post_data);exit();
                 $result=$this->call_json_data_api($url,$post_data);
                 $http_result=json_decode($result['http_result']);
                

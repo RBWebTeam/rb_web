@@ -155,8 +155,6 @@
 						<div class="price-box popular">
 							<div class="center-blg"><img src="{{URL::to('images/personal.png')}}" alt="apply_online_pic" /></div>
 							<h4 class="mrg-btm">Personal Loan</h4>
-							<div class="center-blg"><img src="{{URL::to('images/apply-online.png')}}" alt="Apply Loan Online" title="Apply Loan Online" /></div>
-							<h4 class="mrg-btm">Apply Online Loan</h4>
 
 							<ul>
 							     <li>Online Sanction</li>

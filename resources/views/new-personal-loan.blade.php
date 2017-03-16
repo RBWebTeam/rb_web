@@ -19,7 +19,7 @@
 <center><div class="type-cover"><span>PURPOSE OF LOAN</span></div></center>
 <div class="text-center flt-lft">
 							<div class="scenario">
-								<div class="col-xs-6 pad-no"><a class="scenario-1">Marriage</a></div>
+								<div class="col-xs-6 pad-no scenario-active"><a class="scenario-1">Marriage</a></div>
 								<div class="col-xs-6 pad-no"><a class="scenario-1 scenario-border">Home Releted</a></div>
 								<div class="col-xs-6 pad-no"><a class="scenario-1 scenario-top-border">Business</a></div>
 								<div class="col-xs-6 pad-no"><a class="scenario-1 scenario-top-border scenario-border">Other</a></div>
@@ -58,8 +58,8 @@
 	
 	<div class="col-xs-4 form-padding">
 	 <div class="btn-grp form-control border-none" data-toggle="buttons">
-                                    <span class="btn btn-primary outer-brd1 active"><input type="radio" name="Status" id="option1"><img id="myImage" src="images/male.png" class=""></span><span class="hidden-xs">Male</span>
-                                   <span class="btn btn-primary outer-brd1 "><input type="radio" name="Status" id="option2"><img id="myImage1" src="images/female.png" class=""></span> <span class="hidden-xs">Female</span>
+                                    <span class="btn btn-primary outer-brd1 active"><input type="radio" name="Status" id="option1"><img id="myImage" src="images/male.png" class=""></span><span class="hidden-xs"> Male</span>
+                                   <span class="btn btn-primary outer-brd1 "><input type="radio" name="Status" id="option2"><img id="myImage1" src="images/female.png" class=""></span> <span class="hidden-xs"> Female</span>
            </div>		   
 	   </div>
 	   
@@ -69,8 +69,8 @@
 	
 	<div class="col-xs-6 form-padding">
      <div class="btn-grp form-control border-none" data-toggle="buttons">
-      <span class="btn btn-primary outer-brd btn-blu active"><input type="radio" name="Status" id="option1"> Salared</span>
-      <span class="btn btn-primary outer-brd btn-blu"><input type="radio" name="Status" id="option2">Self-Emp</span>
+      <span class="btn btn-primary outer-brd btn-blu active"><input type="radio" name="Status" id="option1"> Salaried</span>
+      <span class="btn btn-primary outer-brd btn-blu"><input type="radio" name="Status" id="option2"> Self-Emp</span>
          </div>
 	   </div>
 	   

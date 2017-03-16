@@ -65,8 +65,9 @@ Route::post('contact_otp','SocialsiteController@contactOTP');
 
 /* Working Capital */
 
-Route::get('Working-Capital','WorkingCapitalController@WorkingCapital');
+Route::get('working-capital','WorkingCapitalController@WorkingCapital');
 Route::post('Working-Capital/calculate','WorkingCapitalController@calculate');
+Route::post('term-loan/calculate','WorkingCapitalController@termcalculate');
 
 Route::get('refresh-csrf', function(){
     return csrf_token();
@@ -91,7 +92,7 @@ Route::get('comfy-sales','ComfyController@comfy_sales');
 Route::get('express-loan','HomeController@express_loan');
 Route::get('credit-card','HomeController@credit_card');
 Route::get('savings-account','HomeController@savings_account');
-Route::get('RBA-login','HomeController@RBA_login');
+Route::get('rba-login','HomeController@RBA_login');
 Route::post('RBA-login','HomeController@RBA_register');
 // Route::post('RBA-login','HomeController@RBA_employee');
 Route::get('lead-status','HomeController@lead_status');
@@ -100,6 +101,7 @@ Route::get('apply-express-loan','LoanController@apply_express_loan');
 Route::post('express-loan-send-otp','LoanController@express_send_otp');
 Route::post('express-loan-verify','LoanController@express_verify_otp');
 Route::post('aditya-express-loan','LoanController@express_form');
+Route::get('new-personal-loan','ContactController@new_personal_loan');
 
 
 //new loans test

@@ -16,5 +16,10 @@ class ContactController extends InitialController
     	$data['description']='Compare & Apply for Best Loans & Credit Cards. Rupeeboss Customer care Services are here to solve your banking related Queries. Reach us now on Rupeeboss.com';
     	return view('contact')->with($data)->with('keywords',$keywords);
     }
+
+    public function new_personal_loan(){
+    	return view('new-personal-loan');
+    }
+
  
 }

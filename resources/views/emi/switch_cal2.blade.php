@@ -13,8 +13,8 @@
   $brokerid =(float)$sata['brokerid'];
     $product_id =(float)$sata['product_id'];
      $app =(float)$sata['app'];
-      $empcode =(float)$sata['empcode'];
-     // print_r($app);exit();
+      $empcode =$sata['empcode'];
+         // print_r( $brokerid);exit();
   
 foreach ($data as $key => $value){?>
    

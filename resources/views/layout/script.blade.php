@@ -1628,7 +1628,7 @@
       fbq('init', '781224162028085'); // Insert your pixel ID here.
       fbq('track', 'PageView');
   </script>
-    <noscript><img height="1" width="1" class="displaynone" alt="fb-logo" src="https://www.facebook.com/tr?id=781224162028085&ev=PageView&noscript=1"
+    <noscript><img height="1" width="1" class="displaynone" alt="Facebook Logo" title="Facebook Logo" src="https://www.facebook.com/tr?id=781224162028085&ev=PageView&noscript=1"
       /></noscript>
       <!-- DO NOT MODIFY -->
       <!-- End Facebook Pixel Code -->
@@ -1716,7 +1716,7 @@
           <div class="col-sm-offset-3 col-sm-6">
            <span id='msg_err' class= 'displaynonemsg'>oops something went wrong</span>
          <span class="iframeloading" style= "display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
-                <img src="{{URL::to('images/ajaxloader.gif')}}" alt="loading" style="top: 50%; position: relative; left: 50%;"  />
+                <img src="{{URL::to('images/ajaxloader.gif')}}" alt="Loader" title="Loader" style="top: 50%; position: relative; left: 50%;"  />
                </span>
            <span id='pwd_match' class= 'displaynonemsg'>Password do not match.</span>
            <span id='msg_err_email' class ='displaynonemsg'><p class="text-center">Email id already exists.</p></span>

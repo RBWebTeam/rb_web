@@ -1,6 +1,6 @@
 @include('layout.header')
 <div id="fh5co-hero">
-  <div class="express-lon-ban"><img src="images/express-loan-image.jpg" alt="express_loan_pic" class="img-responsive"/></div>
+  <div class="express-lon-ban"><img src="images/express-loan-image.jpg" alt="Express-Loan Process" title="Express-Loan Process" class="img-responsive"/></div>
   <br>
 		<div class="container animate-box">
 			<div class="row white-bg box-shadow">
@@ -10,17 +10,17 @@
             {{ csrf_field() }}
 			
 			<div class="offset5">
-			<h3 class="text-center hed-three"><b>Enter Amount</b></h3>
 
             <div class="col-md-12">
+			<center><div class="type-cover"><span>ENTER AMOUNT</span></div></center>
 			<input type="text" name="amount" id="amount" class="center-dv input-typ" placeholder="5,00,000" maxlength="10"
 			onkeypress="return isNumberKey(event)"  required/>
 			</div>
 			<hr>
-			
-		    <div class="col-md-12">
-		    <h3 class="text-center mrg-btm hed-three"><b>Business Type</b></h3>
-			<div class="col-md-12"><div class="offset5">
+		    
+			<div class="col-md-12">
+			<div class="offset5">
+			<center><div class="type-cover"><span>BUSINESS TYPE</span></div></center>
 			<a class="btn border"><input type="radio" name="employment"  value="Self_Employed_Professionsl(SEP)" checked/> Self Employed Professionsl (SEP)</a>
              <a class="btn border"><input type="radio" name="employment"  value="Self_Employed_Non_Professional (SENP)" /> Self Employed Non-Professionsl (SENP)</a>
 			</div>
@@ -28,8 +28,8 @@
 			
 			<div class="col-md-2"></div>
 			<div class="col-md-8">
+			<center><div class="type-cover"><span>TENURE (Months)</span></div></center>
 			<div class="tenure offset5 pad">
-			<h3><b>Tenure</b></h3>
 			<div  id="unranged-value" style="width:100%; height:10px;"></div>
 			</div>
 			</div>
@@ -37,7 +37,7 @@
 			<div class="col-md-12">
 			<div class="offset5">
 			<br>
-			<h3 class="text-center mrg-btm hed-three"><b>Firm Holder</b></h3>
+			<center><div class="type-cover"><span>FIRM HOLDER</span></div></center>
 			<a class="btn border"><input type="radio" name="firm_holder" 
 			value="Sole_Proprietor " checked/> Sole Proprietor</a>
              <a class="btn border"><input type="radio" name="firm_holder"
@@ -61,7 +61,7 @@
 		   <button class="get-otp" type="submit" id="express_loan_send_otp">Get OTP</button>
 		  </div>
 			<?php }?>  
-			</div>
+			
 			
 			
 			
@@ -788,7 +788,7 @@
 			</div>
 
 			<div class="iframeloading" style= "display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
-                <img src="{{URL::to('images/ajaxloader.gif')}}" alt="loading" style="top: 50%; position: relative; left: 50%;"  />
+                <img src="{{URL::to('images/ajaxloader.gif')}}" alt="Loader" title="Loader" style="top: 50%; position: relative; left: 50%;"  />
                </div>
                   
 			</form>

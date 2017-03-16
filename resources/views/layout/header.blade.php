@@ -63,7 +63,7 @@
                 <li class="hidden-xs"><a href="{{URL::to('about-us')}}">About Us</a></li>
                 <li class="hidden-xs"><a href="{{URL::to('contact-us')}}">Contact Us</a></li>
 				<li class="hidden-xs"><a href="#" data-toggle="modal" data-target="#emp_login">Employee Login </a></li>
-				<li><a href="{{URL::to('RBA-login')}}">RBA Login </a></li>
+				<li><a href="{{URL::to('rba-login')}}">RBA Login </a></li>
 				<li class="hidden-xs credit-score-btn"><a href="{{URL::to('credit-report')}}" class="btn btn-primary">My Credit Score</a></li>
 			<!-- 	<li><a href="{{URL::to('contact-us')}}">Media</a></li> -->
 	            </ul>
@@ -84,7 +84,7 @@
     </div>
 		<div class="container" id="refreshID">
 			<div class="header-inner">
-	<a href="{{URL::to('/')}}" class="logo"><img src="{{URL::to('images/logo.png')}}" alt="logo" width="160" height="47" /></a>
+	<a href="{{URL::to('/')}}" class="logo"><img src="{{URL::to('images/logo.png')}}" alt="Rupeeboss.com " title="Rupeeboss.com " width="160" height="47" /></a>
 				<nav role="navigation">
 				  <ul>
                      @if(\Request::is('community/*') || \Request::is('community'))
@@ -111,7 +111,7 @@
 							</li>
 							<li>
 								<a href="{{URL::to('sme-loan')}}">Lease Rent Discounting</a>
-								<a href="{{URL::to('Working-Capital')}}">Working Capital</a>
+								<a href="{{URL::to('working-capital')}}">Working Capital</a>
 							<!-- <a href="{{URL::to('sme-loan')}}">Export/Import Finance</a> -->
 							</li>
 							<!-- <li><a href="{{URL::to('sme-loan')}}">Over Draft / Cash Credit</a> -->
@@ -141,6 +141,7 @@
 							</li>
 							</ul>					   
 					        </li>
+							<li><a href="{{URL::to('check_emi')}}">EMI Calculator</a></li>
 							<?php if(Session::get('is_login')){
 							?>
 							<li class="user-ic dropdown">

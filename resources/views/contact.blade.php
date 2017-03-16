@@ -4,7 +4,7 @@
 
 <div class="row">
 		<div class="col-sm-5">
-			<img src="{{URL::to('images/contact_img.jpg')}}" alt="contact_pic" class="img-responsive">
+			<img src="{{URL::to('images/contact_img.jpg')}}" alt="Contact Us" title="Contact Us" class="img-responsive">
 		</div>
 		<div align="center" class="col-sm-7">
 			<h1 class="">Have us call you now.</h1>
@@ -33,7 +33,7 @@
                     </div>
                     </div>
                     <div class="iframeloading" style= "display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
-                <img src="{{URL::to('images/ajaxloader.gif')}}" alt="loading" style="top: 50%; position: relative; left: 50%;"  />
+                <img src="{{URL::to('images/ajaxloader.gif')}}" alt="Loader" title="Loader" style="top: 50%; position: relative; left: 50%;"  />
                </div> 
             </form>
             

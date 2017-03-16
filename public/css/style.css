@@ -1356,7 +1356,7 @@ input[placeholder], [placeholder], *[placeholder] {color: #1f386e !important;}
 /* .loan-head {padding:20px;display:block; text-align:center;padding-top:0px; margin-top:20px;}*/
 
 .loan-head {
-    width:25%;
+    width:20%;
     line-height: 35px;
     margin-bottom: 15px;
     height: 35px;
@@ -1368,6 +1368,7 @@ input[placeholder], [placeholder], *[placeholder] {color: #1f386e !important;}
     text-align: center;
     margin-top: 20px;
     margin-bottom: 15px;
+	text-transform:uppercase;
 }
  .slide-left {margin: 0px 30px;}
  .heading-bmar {padding-top: 0px; margin-bottom:1px;display:block;}
@@ -1986,7 +1987,7 @@ body {background:#eee;}
   .mrg-tp {margin-top:8px;}
   .box-shadow {box-shadow:1px 1px 1px 1px #ccc;}
   .apply-btn:hover {color:#fff;background:#2882a6;}
-  .blue-bg {padding:15px; color:#fff; font-size:25px; text-align:center;}
+  .blue-bg {padding:15px; color:#262626; font-size:25px; text-align:center;}
   .bnk-log {width:110px;}
   
   .drop-arr {background:url(../images/down_arrow.png) no-repeat center right; padding-right:10px;}
@@ -2051,6 +2052,11 @@ body {background:#eee;}
  .txt-title {display:none;}
  .bdr-btm {border:1px solid #ccc;}
  .loan-head {margin-top:35px; width:80%;}
+ h1 {font-size:24px;}
+ h3 {font-size:14px;}
+ .fh5co-cta {
+    padding: 1em 0;
+}
 }
 
 .comp-pg .comp li {list-style-type:none;padding:10px;}
@@ -3170,7 +3176,7 @@ margin-top: 10px;
 .input-typ {padding: 10px; 
 border:2px solid #eee;
 background: #f1f1f1;
-width:35%;
+width:40%;
 padding-left: 20px;
 margin: 10px 0px;
 font-size:20px;margin-top: 10px;
@@ -3221,6 +3227,21 @@ font-size:20px;margin-top: 10px;
     opacity: 1;
     height: 30px;
     border-radius: 50px;
+}
+
+.type-cover {
+    background: #fff;
+    width: 25%;
+    height: auto;
+    position: relative;
+    border-radius: 5px 5px 0 0;
+    border-top: 1px dashed #d2d4d4;
+    border-left: 1px dashed #d2d4d4;
+    border-right: 1px dashed #d2d4d4;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    padding: 5px 0 0 0;
+    margin-top: 0px;
 }
 
 

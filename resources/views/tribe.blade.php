@@ -50,8 +50,8 @@
     
     <div class="col-md-3"><p>Owner Email*</p></div>
     <div class="col-md-8">
-    <input type="text" name="owner_email" id="owner_email" class="form-control form-group"/>
-     <a class="btn btn-primary btn-outline with-arrow  ">Next<i class="icon-arrow-right"></i></a>
+    <input type="text" name="owner_email" id="owner_email"  class="form-control form-group"/>
+     <a class="btn btn-primary btn-outline with-arrow">Next<i class="icon-arrow-right"></i></a>
     </div>
     
 
@@ -257,7 +257,7 @@
   		 <option>product differentiation</option>
   		 <option>expansion</option>
   		 <option>launch of new product</option>
-  		 <option>working capital/option>
+  		 <option>working capital</option>
   		 <option>others</option>
     </select>
     </div>

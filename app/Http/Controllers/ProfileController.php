@@ -166,7 +166,7 @@ public function  change_password(Request $req){
 }
   public function applyonline(Request $req){
     $request = $req->all();
-    // print_r($request);exit();
+     // print_r($request);exit();
     // $app = $request['appid'];
     $quote = $request['qoutid'];
     $bank = $request['BankId'];
@@ -242,12 +242,12 @@ public function  change_password(Request $req){
       }
       }else{
         if ($product == '9') {
-        return redirect()->away('http://beta.erp.rupeeboss.com/personalloan/personalloan.aspx?qoutid='.$quote.'&brokerid='.$brokerid.'&loanamount='.$loanamount.'&loaninterest='.$loaninterest.'&loanterm='.$loanterm.'&bankid='.$bank.'&product='.$product.'&idtype='.$roi_type.'&processingfee='.$processing_fee.'&empcode='.$empcode.'&coapp=0');
+        return redirect()->away('http://beta.erp.rupeeboss.com/BalanceTransfer/PL_BT_Form.aspx?qoutid='.$quote.'&brokerid='.$brokerid.'&loanamount='.$loanamount.'&loaninterest='.$loaninterest.'&loanterm='.$loanterm.'&bankid='.$bank.'&product='.$product.'&idtype='.$roi_type.'&processingfee='.$processing_fee.'&empcode='.$empcode.'&coapp=0');
 
         } else  if ($product == '7') {
-       return redirect()->away('http://beta.erp.rupeeboss.com/LAP/LAP_Form.aspx?qoutid='.$quote.'&brokerid='.$brokerid.'&loanamount='.$loanamount.'&loaninterest='.$loaninterest.'&bankid='.$bank.'&product='.$product.'&idtype='.$roi_type.'&processingfee='.$processing_fee.'&empcode='.$empcode.'&coapp=0');
+       return redirect()->away('http://beta.erp.rupeeboss.com/BalanceTransfer/LAP_BT_Form.aspx?qoutid='.$quote.'&brokerid='.$brokerid.'&loanamount='.$loanamount.'&loaninterest='.$loaninterest.'&bankid='.$bank.'&product='.$product.'&idtype='.$roi_type.'&processingfee='.$processing_fee.'&empcode='.$empcode.'&coapp=0');
         }else {
-          return redirect()->away('http://beta.erp.rupeeboss.com/homeloan/Home_Loan_Application_Form.aspx?qoutid='.$quote.'&brokerid='.$brokerid.'&loanamount='.$loanamount.'&loaninterest='.$loaninterest.'&loanterm='.$loanterm.'&bankid='.$bank.'&product='.$product.'&idtype='.$roi_type.'&processingfee='.$processing_fee.'&empcode='.$empcode.'&coapp=0');
+          return redirect()->away('http://beta.erp.rupeeboss.com/BalanceTransfer/HL_BT_Form.aspx?qoutid='.$quote.'&brokerid='.$brokerid.'&loanamount='.$loanamount.'&loaninterest='.$loaninterest.'&loanterm='.$loanterm.'&bankid='.$bank.'&product='.$product.'&idtype='.$roi_type.'&processingfee='.$processing_fee.'&empcode='.$empcode.'&coapp=0');
         }
         
       

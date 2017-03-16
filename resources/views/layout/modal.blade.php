@@ -27,7 +27,7 @@
                       </button>
                 </div>
                 <div class="iframeloading" style= "display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
-                <img src="{{URL::to('images/ajaxloader.gif')}}" alt="loading" style="top: 50%; position: relative; left: 50%;"  />
+                <img src="{{URL::to('images/ajaxloader.gif')}}" alt="Loader" title="Loader" style="top: 50%; position: relative; left: 50%;"  />
                </div>
                   
 
@@ -234,7 +234,7 @@
                      <button class="btn btn-primary btn-outline with-arrow sidebar-submit">Submit<i class="icon-arrow-right"></i></button>
                   </div>
                   <div class="iframeloading" style= "display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
-                <img src="{{URL::to('images/ajaxloader.gif')}}" alt="loading" style="top: 50%; position: relative; left: 50%;"  />
+                <img src="{{URL::to('images/ajaxloader.gif')}}" alt="Loader" title="Loader" style="top: 50%; position: relative; left: 50%;"  />
                </div>
             </form>
             <div class='msg displaynone' ><b>Thanks.We will reach you soon.</b></div>
@@ -318,7 +318,7 @@
                      <button class="btn btn-primary btn-outline with-arrow sidebar-submit">Submit<i class="icon-arrow-right"></i></button>
                   </div>
                   <div class="iframeloading" style= "display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
-                <img src="{{URL::to('images/ajaxloader.gif')}}" alt="loading" style="top: 50%; position: relative; left: 50%;"  />
+                <img src="{{URL::to('images/ajaxloader.gif')}}" alt="Loader" title="Loader" style="top: 50%; position: relative; left: 50%;"  />
                </div>
             </form>
             <div class='msg displaynone'><b>Thanks.We will reach you soon.</b></div>
@@ -405,7 +405,7 @@
                      <button class="btn btn-primary btn-outline with-arrow sidebar-submit">Submit<i class="icon-arrow-right"></i></button>
                   </div>
                   <div class="iframeloading" style= "display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
-                <img src="{{URL::to('images/ajaxloader.gif')}}" alt="loading" style="top: 50%; position: relative; left: 50%;"  />
+                <img src="{{URL::to('images/ajaxloader.gif')}}" alt="Loader" title="Loader" style="top: 50%; position: relative; left: 50%;"  />
                </div>
             </form>
 
@@ -543,7 +543,7 @@ Rupeeboss Financial Services Private Limited shall access your Credit Informatio
         <label>Password</label>
         <input type="password" name="password" id="password" class="newsletter-name" required />
         <div class="iframeloading_emp" style= "display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
-             <img src="images/ajaxloader.gif" alt="loading" style="top: 50%; position: relative; left: 50%;"  />
+             <img src="images/ajaxloader.gif" alt="Loader" title="Loader" style="top: 50%; position: relative; left: 50%;"  />
         </div>
         <a class="btn btn-primary btn-outline with-arrow" id="emp_login_button">Login</a>
         </form>

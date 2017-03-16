@@ -7,13 +7,13 @@ ssss
 	<h2 class="align-center loan-head">IDFC</h2>
 	</div>
 	<div class="col-md-12 white-bg pad1 mrg-btm box-shadow">
-<img src="{{URL::to('images/idfc-img.png')}}" class="img-responsive"/>
+<img src="{{URL::to('images/idfc-img.png')}}" alt="IDFC Process" title="IDFC Process" class="img-responsive"/>
 
  </div>
 	<div class="col-md-12 white-bg pad box-shadow fl-lft">
 	<div class="col-md-8">
 	<br>
-	<img src="{{URL::to('images/idfc_banner_left.png')}}" class="img-responsive"/>
+	<img src="{{URL::to('images/idfc_banner_left.png')}}" alt="IDFC Banner" title="IDFC Banner" class="img-responsive"/>
 
 	<a class="btn btn-success btn-outline with-arrow" href="{{URL::to('/savings-account')}}">View Brochure
 							<i class="icon-arrow-right"></i></a>

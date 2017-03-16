@@ -14,6 +14,7 @@
     $product_id =(float)$sata['product_id'];
      $app =(float)$sata['app'];
       $empcode =$sata['empcode'];
+  
          // print_r( $brokerid);exit();
   
 foreach ($data as $key => $value){?>
@@ -88,7 +89,7 @@ foreach ($data as $key => $value){?>
                     </td>
                     <td class="td-main">
                     <?php if($app=="1"){?>
-                     <a class="btn btn-success btn-outline with-arrow" href="{{URL::to('apply-lead-online')}}?qoutid=0&BankId={{$value['Bank_Id']}}&brokerid={{$brokerid}}&loanamount={{ $loanamount}}&loaninterest={{$loaninterest }}&loanterm={{$loanterm}}&product={{$product_id}}&empcode={{$empcode}}"}}">Apply Now
+                     <a class="btn btn-success btn-outline with-arrow" href="{{URL::to('apply-lead-online')}}?qoutid=0&BankId={{$value['Bank_Id']}}&brokerid={{$brokerid}}&loanamount={{ $loanamount}}&loaninterest={{$loaninterest }}&loanterm={{$loanterm}}&product={{$product_id}}&empcode={{$empcode}}&processingfee={{$value['processingfee']}}&roi_type={{$value['roi_type']}}"}}">Apply Now
               <i class="icon-arrow-right"></i></a>
               <?php }else{?>
               <?php }?>

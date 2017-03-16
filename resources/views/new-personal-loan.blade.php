@@ -11,7 +11,9 @@
 
  </div>
  <div class="col-md-12 white-bg pad box-shadow fl-lft">
-
+    
+    <form class="form-horizontal" id="personal_loan_form">
+      {{ csrf_field() }}
 	<div class="col-md-8">
 	<h3 class="main-header">Genral Information</h3>
 <center><div class="type-cover"><span>PURPOSE OF LOAN</span></div></center>
@@ -25,7 +27,7 @@
 						</div>
 						
 						<div class="col-xs-4 form-padding">
-     <input type="name" class="form-input-new form-control" placeholder="Existing Custom Id if Any" required="">
+     <input type="text" name="custom_id" id="custom_id" class="form-input-new form-control" placeholder="Existing Custom Id if Any" onkeypress="return isNumberKey(event)" required="">
 	</div>
 	<div class="col-xs-4 form-padding">
      <input type="name" class="form-input-new form-control" placeholder="Loan Required" required="">
@@ -81,9 +83,10 @@
 	</div>
 	
 	<div class="col-md-12">						
-	<button class="btn btn-primary btn-outline with-arrow top-mrg pull-left">Get Best Quotes<i class="icon-arrow-right"></i></button>
+	<button class="btn btn-primary btn-outline with-arrow top-mrg pull-left quotes">Get Best Quotes<i class="icon-arrow-right"></i></button>
 	</div>
      </div>
+     </form>
 
 	 
 	 <div class="col-md-4">
@@ -142,4 +145,42 @@
 	<br>
 @include('layout.footer')
 @include('layout.script')
+
+<script type="text/javascript">
+  $(".quotes").click(function(event){
+    event.preventDefault();
+      $form=$('#personal_loan_form');
+      if(! $form.valid()){
+         // alert("hiee");
+      }else{
+        //var s=$('#'+form).serialize();
+    // alert("hiee");
+   
+        $.ajax({  
+         type: "POST",  
+         url: "{{URL::to('RBA-login')}}",
+         data : $('#rba_form').serialize(),
+         success: function(msg){
+         
+          if(msg=='true'){
+            console.log("ok");
+             // console.log(msg);
+              window.location.href ="{{URL::to('thank-you')}}";
+            
+          }else{
+            $("#showerror").show();
+
+            //console.log("bye");
+            //window.location.href ="{{URL::to('went-wrong')}}";
+          } 
+          
+
+        }  
+      }); 
+      }
+
+    });
+
+
+</script>
 

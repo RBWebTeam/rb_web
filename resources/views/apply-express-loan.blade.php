@@ -1,6 +1,6 @@
 @include('layout.header')
 <div id="fh5co-hero">
-  <div class="express-lon-ban"><img src="images/express-loan-image.jpg" alt="express_loan_pic" class="img-responsive"/></div>
+  <div class="express-lon-ban"><img src="images/express-loan-image.jpg" alt="Express-Loan Process" title="Express-Loan Process" class="img-responsive"/></div>
   <br>
 		<div class="container animate-box">
 			<div class="row white-bg box-shadow">
@@ -788,7 +788,7 @@
 			</div>
 
 			<div class="iframeloading" style= "display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
-                <img src="{{URL::to('images/ajaxloader.gif')}}" alt="loading" style="top: 50%; position: relative; left: 50%;"  />
+                <img src="{{URL::to('images/ajaxloader.gif')}}" alt="Loader" title="Loader" style="top: 50%; position: relative; left: 50%;"  />
                </div>
                   
 			</form>

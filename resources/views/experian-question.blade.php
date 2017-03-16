@@ -52,7 +52,7 @@
 				<br>
 				</div>
 				<div class="iframeloading" style= "display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
-				     <img src="images/ajaxloader.gif" alt="loading" style="top: 50%; position: relative; left: 50%;"  />
+				     <img src="images/ajaxloader.gif" alt="Loader" title="Loader" style="top: 50%; position: relative; left: 50%;"  />
 				</div>
 			<div class="col-md-12 mrg-tp">
 			<a class="btn btn-primary btn-outline with-arrow centered next_qest">Submit<i class="icon-arrow-right"></i></a>

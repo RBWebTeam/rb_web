@@ -7,7 +7,7 @@
 	<h2 class="align-center loan-head">Comfy Card</h2>
 	</div>
 	<div class="col-md-12 white-bg pad1 mrg-btm box-shadow">
-<img src="{{URL::to('images/comfy_banner.png')}}" class="img-responsive"/>
+<img src="{{URL::to('images/comfy_banner.png')}}" alt="Comfy Process" title="Comfy Process" class="img-responsive"/>
 
  </div>
 	<div class="col-md-12 white-bg pad box-shadow fl-lft">

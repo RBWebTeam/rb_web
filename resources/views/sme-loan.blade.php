@@ -19,11 +19,11 @@
   <!-- Wrapper for slides -->
 <div class="carousel-inner" role="listbox">
     <div class="item active">
-      <img src="{{URL::to('images/01/sme.jpg')}}" alt="sme_pic">
+      <img src="{{URL::to('images/01/sme.jpg')}}" alt="Small And Medium Enterprises Banner" title="Small And Medium Enterprises Banner">
     </div>
 
     <div class="item">
-      <img src="{{URL::to('images/01/sme.jpg')}}" alt="sme_pic">
+      <img src="{{URL::to('images/01/sme.jpg')}}" alt="Small And Medium Enterprises Banner" title="Small And Medium Enterprises Banner">
     </div>
 
     
@@ -100,7 +100,7 @@
 					  <a href="{{URL::to('contact-us')}}" >
 						<div class="price-box popular">
 							
-							<div class="ic1"><img src="images/ic1.png" alt="compare_pic" /></div>
+							<div class="ic1"><img src="images/ic1.png" alt="Compare Loan" title="Compare Loan" /></div>
 							<h4 class="mrg-btm">Compare Loan</h4>
 							<ul>
 							     <li>Check & compare loans from thousand of banks</li>

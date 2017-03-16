@@ -84,7 +84,7 @@
 					<div class="col-md-4 animate-box">
 						<div class="price-box popular">
 							
-							<div class="center-blg"><img src="{{URL::to('images/tribe.png')}}" alt="tribe_pic" /></div>
+							<div class="center-blg"><img src="{{URL::to('images/tribe.png')}}" alt="Tribe Logo" title="Tribe Logo" /></div>
 							<h4 class="mrg-btm">Tribe</h4>
 							<ul>
 							     <li>Online Sanction</li>
@@ -98,7 +98,7 @@
 
 					<div class="col-md-4 animate-box">
 						<div class="price-box popular">
-							<div class="center-blg"><img src="{{URL::to('images/birla.png')}}" alt="birla_pic" /></div>
+							<div class="center-blg"><img src="{{URL::to('images/birla.png')}}" alt="Aditya Birla Group Logo" title="Aditya Birla Group Logo" /></div>
 							<h4 class="mrg-btm">Aditya Birla</h4>
 							<ul>
 							     <li>Online Sanction</li>
@@ -155,6 +155,9 @@
 						<div class="price-box popular">
 							<div class="center-blg"><img src="{{URL::to('images/personal.png')}}" alt="apply_online_pic" /></div>
 							<h4 class="mrg-btm">Personal Loan</h4>
+							<div class="center-blg"><img src="{{URL::to('images/apply-online.png')}}" alt="Apply Loan Online" title="Apply Loan Online" /></div>
+							<h4 class="mrg-btm">Apply Online Loan</h4>
+
 							<ul>
 							     <li>Online Sanction</li>
 								 <li>Minimum Documentation</li>

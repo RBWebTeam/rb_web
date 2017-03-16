@@ -84,7 +84,7 @@
     </div>
 		<div class="container" id="refreshID">
 			<div class="header-inner">
-	<a href="{{URL::to('/')}}" class="logo"><img src="{{URL::to('images/logo.png')}}" alt="logo" width="160" height="47" /></a>
+	<a href="{{URL::to('/')}}" class="logo"><img src="{{URL::to('images/logo.png')}}" alt="Rupeeboss.com " title="Rupeeboss.com " width="160" height="47" /></a>
 				<nav role="navigation">
 				  <ul>
                      @if(\Request::is('community/*') || \Request::is('community'))

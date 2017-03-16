@@ -1,4 +1,3 @@
-
 @include('layout.header')
 
 
@@ -21,9 +20,9 @@
   <div class="carousel-inner" role="listbox">
   <div class="pull-right mar-tp ">
 
-		<a href="{{URL::to('comfy')}}" class="img2"><img src="images/sliding-right-img-2.png" alt="comfy" class="img-responsive"/></a>
-		  <a href="{{URL::to('express-loan')}}" class="img3"><img src="images/sliding-right-img-1.png" alt="express-loan" class="img-responsive"/></a>
-		   <a href="{{URL::to('idfc')}}" class="img4"><img src="images/sliding-right-img-3.png" alt="idfc" class="img-responsive"/></a>
+		<a href="{{URL::to('comfy')}}" class="img2"><img src="images/sliding-right-img-2.png" alt="Rupeeboss Comfy" title="Rupeeboss Comfy" class="img-responsive"/></a>
+		  <a href="{{URL::to('express-loan')}}" class="img3"><img src="images/sliding-right-img-1.png" alt="Express Loan" title="Express Loan" class="img-responsive"/></a>
+		   <a href="{{URL::to('idfc')}}" class="img4"><img src="images/sliding-right-img-3.png" alt="Savings Account" title="Savings Account" class="img-responsive"/></a>
 
 		</div>
     <div class="item active">
@@ -33,7 +32,7 @@
    <h4>Choose the right Home Loan for you ...!!</h4>
    <a href="{{URL::to('home-loan')}}" class="btn btn-primary btn-lg btn-view">View More</a>
    </div>
-      <img src="{{URL::to('images/slide_1.jpg')}}" alt="home-slider-img" class="slide-hm"> 
+      <img src="{{URL::to('images/slide_1.jpg')}}" alt="Home Loan Banner" title="Home Loan Banner" class="slide-hm"> 
     </div>
 
     <div class="item">
@@ -43,7 +42,7 @@
    <h4>Finance Your Dreams...!!</h4>
    <a href="{{URL::to('personal-loan')}}" class="btn btn-primary btn-lg btn-view">View More</a>
    </div>
-      <img src="{{URL::to('images/slide_2.jpg')}}" alt="personal-slider-img" class="slide-hm">
+      <img src="{{URL::to('images/slide_2.jpg')}}" alt="Personal Loan Banner" title="Personal Loan Banner" class="slide-hm">
     </div>
 
     <div class="item">
@@ -53,7 +52,7 @@
    <h4>Finding you a better Deal...!!</h4>
    <a href="{{URL::to('loan-against-property')}}" class="btn btn-primary btn-lg btn-view">View More</a>
    </div>
-      <img src="{{URL::to('images/slide_3.jpg')}}" alt="lap-slider-img" class="slide-hm">
+      <img src="{{URL::to('images/slide_3.jpg')}}" alt="Loan-Against-Property Banner" title="Loan-Against-Property Banner" class="slide-hm">
     </div>
 
     <div class="item">
@@ -64,10 +63,10 @@
    <h4>We Support Make in India..!!</h4>
    <a href="{{URL::to('sme-loan')}}" class="btn btn-primary btn-lg btn-view">View More</a>
    </div>
-      <img src="{{URL::to('images/slide_4.jpg')}}" alt="sme-slider-img" class="slide-hm">
+      <img src="{{URL::to('images/slide_4.jpg')}}" alt="SME Loan Banner" title="SME Loan Banner" class="slide-hm">
     </div>
 	<div class="item">
-	<div class="slide-txt">
+	<div class="slide-txt" >
 	<i class="sprite sprite-balance-ic center-img-align img-responsive hidden-sm"></i>
 	<h4>Unsecured</h4>
 	<h2>Business Loan</h2>
@@ -75,7 +74,7 @@
    <a href="{{URL::to('business-loan')}}" class="btn btn-primary btn-lg btn-view">View More</a>
 
    </div>
-      <img src="{{URL::to('images/slide_5.jpg')}}" alt="business-slider-img" class="slide-hm">
+      <img src="{{URL::to('images/slide_5.jpg')}}" alt="Business Loan Banner" title="Business Loan Banner" class="slide-hm">
     </div>
 	<div class="item">
 	<div class="slide-txt">
@@ -194,7 +193,7 @@
 					</div>
 					<div class="col-md-4 padd">
 				
-					<img src="images/Report.png" alt="report-img" class="img-responsive hidden-sm pad crd-rpt">
+					<img src="images/Report.png" alt="Credit Report" title="Credit Report" class="img-responsive hidden-sm pad crd-rpt">
 			
 					<a class="tp-margin" href="{{URL::to('credit-report-otp')}}">Apply For Credit Report</a>
 					</div>
@@ -437,7 +436,7 @@
 						<div class="v-align blu-clr1">
 							<div class="v-align-middle">
 								<h3 class="title">Our Partners</h3>
-								<img src="{{URL::to('images/dsd.png')}}" class="img-responsive" alt="partners-img" />
+								<img src="{{URL::to('images/dsd.png')}}" class="img-responsive" alt=" Ours Partners" title="Ours Partners" />
 							</div>
 						</div>
 					</div>

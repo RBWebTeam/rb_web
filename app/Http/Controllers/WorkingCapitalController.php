@@ -15,7 +15,6 @@ class WorkingCapitalController extends Controller
 
       }
 
-
       public function calculate(Request $req){
          $paid=$req->paid;
          $loanamount=$req->loanAmount_id;
@@ -49,7 +48,6 @@ class WorkingCapitalController extends Controller
 		   
 		    $totleMonthlysaving=($totalcurrent-$totalafter)/$loanterm;
 		    $totalYearSaving=$totleMonthlysaving * 12;
-
 
         $arra= array('success0' =>true,'totalYearSaving'=>$totalYearSaving,'totleMonthlysaving'=>$totleMonthlysaving );
     }   
@@ -86,6 +84,63 @@ class WorkingCapitalController extends Controller
 }
 
 
+public  function termcalculate(Request $req){
+
+            if(10<$req->interest){
+            $loanamount=$req->loanAmount;
+            $loaninterest=$req->interest/12/100;
+            $loanterm=$req->loanTenure;
+            $afterTransfer=10/12/100;
+
+            $termCurrnet=$this->termloanFN($loanamount,$loaninterest, $loanterm);
+            $termofter=$this->termloanFN($loanamount,$afterTransfer,$loanterm);
+            $LoanEMI=$termCurrnet['amount'];
+            $LoanEMIafter=$termofter['amount'];
+            
+              $totalSaving=$termCurrnet['total'];
+              $totalSavingafter=$termofter['total'];
+
+            if($req->interest-10>0){
+            $drop_interest=$req->interest-10;
+          
+           }else{
+            $drop_interest= 0;
+           
+
+           }
+ 
+             $totalYearSaving=($totalSaving-$totalSavingafter);
+           
+          
+          
+            $array= array('successterm' =>true,'LoanEMI'=>$LoanEMI,'Drop_EMI'=>$LoanEMI-$LoanEMIafter,'NewLoanEMI'=>$LoanEMIafter,'drop_interest'=>$drop_interest,'totalYearSaving'=>$totalYearSaving );
+            return $array;
+
+          }else{
+
+                  $array= array('successterm' =>true,'LoanEMI'=>0,'Drop_EMI'=>0,'NewLoanEMI'=>0,'drop_interest'=>0,'totalYearSaving'=>0 );
+            return $array;
+          }
+}
+
+
+
+public function termloanFN($loanamount,$loaninterest,$loanterm){
+
+   $amount = $loanamount * $loaninterest * (pow(1 + $loaninterest, $loanterm) / (pow(1 + $loaninterest, $loanterm) - 1));
+             $total =(($amount*$loanterm)-$loanamount);
+             $ttl_payment = $loanamount+$total;
+
+              // echo $ttl_payment;
+              // echo "<br>";
+              // echo $total;
+              // echo "<br>";
+             // echo $amount;
+
+               $array=array('amount'=>$amount,'total'=>$total);
+               return $array;
+
+}
 
 
 

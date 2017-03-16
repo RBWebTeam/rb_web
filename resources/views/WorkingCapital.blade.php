@@ -41,10 +41,17 @@
    
     <div class="border heigh-bt">
     <h3 class="emi-cal text-center">Your Saving</h3>
-    <input type="text" class="form-control form-group" placeholder="Monthly Interest Paid" id="monthlyinterest" maxlength="10"  readonly/>
-   <input type="text" class="form-control form-group" placeholder="Drop in interest Paid" id="drop_interest"  maxlength="10" readonly/>
+       <center class="my-saving">
+       <p>Monthly Interest Paid :<b class="em1"> ₹ <span id="monthlyinterest">0</span></b></p>
+       <p>Drop in interest Paid:<b class="em1"> ₹ <span id="drop_interest">0</span></b></p>
+       <p>Monthly Saving :<b class="em1"> ₹ <span id="monthlysavinf">0</span></b></p>
+       <p>Total Yearly Saving :<b class="em1"> ₹ <span id="yearlysaving">0</span></b></p>
+       </center>
+    <!-- <input type="text" class="form-control form-group" placeholder="Monthly Interest Paid" id="monthlyinterest" maxlength="10"  readonly/> -->
+ <!--   <input type="text" class="form-control form-group" placeholder="Drop in interest Paid" id="drop_interest"  maxlength="10" readonly/>
      <input type="text" class="form-control form-group" placeholder="Monthly Saving"   maxlength="10" readonly id="monthlysavinf"/>
-   <input type="text" class="form-control form-group" placeholder="Total Yearly Saving"  maxlength="10" disabled readonly id="yearlysaving"/>
+   <input type="text" class="form-control form-group" placeholder="Total Yearly Saving"  maxlength="10" disabled readonly id="yearlysaving"/> -->
+
    </div>
    </div>
   </div>
@@ -56,7 +63,7 @@
   <h3 class="emi-cal text-center">After The Transfer</h3>
      <input type="text" class="form-control form-group loanAmountAfter" placeholder="Loan Amount" id="loanAmount_idAfter" maxlength="10"  onkeypress="return isNumberKey(event)">
    <input type="text" class="form-control form-group interestAfter" placeholder="10" value="10" id="interestAfter"  maxlength="2" onkeypress="return isNumberKey(event)"  readonly>
-   <input type="text" class="form-control form-group loanTenurAfter" placeholder=" Loan Tenure"  maxlength="2" id="loanTenurAfter" onkeypress="return isNumberKey(event)">
+   <input type="text" class="form-control form-group loanTenurAfter" placeholder=" Loan Tenure"  maxlength="2" id="loanTenurAfter" onkeypress="return isNumberKey(event)" >
 
    <div >
    <button   class="btn btn-success pull-left afterbtn"   id="working_capitalAfter">Submit</button>
@@ -78,7 +85,7 @@
   
   <div id="menu1" class="tab-pane fade">
   <div class="col-md-12">
-   <h4 class="wc-center"><input type="radio" name="bank" /> Bank 1 &nbsp; &nbsp; <input type="radio" name="bank" /> Bank 2 &nbsp; &nbsp;  <input type="radio" name="bank" /> Bank 3&nbsp;  &nbsp; </h4>
+   <h4 class="wc-center"><input type="radio" name="tbank1" onclick="TbankName('bank1')"  checked="checked" id="tbank1" value="bank1"/> Bank 1 &nbsp; &nbsp; <input type="radio" name="tbank2" id="tbank2"  onclick="TbankName('bank2')" /> Bank 2 &nbsp; &nbsp;  <input type="radio" name="tbank3" id="tbank3" onclick="TbankName('bank3')"/> Bank 3&nbsp;  &nbsp; </h4>
    </div>
   <div class="col-md-4">
   <div class="white-bg heigh-bt">
@@ -104,23 +111,42 @@
    
     <div class="border heigh-bt">
     <h3 class="emi-cal text-center">Your Saving</h3>
-    <input type="text" class="form-control form-group"placeholder="Monthly Interest Paid"  maxlength="10"  />
-   <input type="text" class="form-control form-group"placeholder="Drop in interest Paid"  maxlength="10" />
-     <input type="text" class="form-control form-group"placeholder="Monthly Saving"  maxlength="10" />
-   <input type="text" class="form-control form-group"placeholder="Total Yearly Saving"  maxlength="10" disabled />
+    <center class="my-saving">
+       <p>Loan EMI :<b class="em1"> ₹ <span id="LoanEMI">0</span></b></p>
+       <p>Drop EMI :<b class="em1"> ₹ <span id="Drop_EMI">0</span></b></p>
+        <p>New Loan EMI:<b class="em1"> ₹ <span id="NewLoanEMI">0</span></b></p>
+         <p>Drop-in Interest Rate:<b class="em1"> ₹ <span id="emidrop_interest">0</span></b></p>
+         <p>Your Savings:<b class="em1"> ₹ <span id="totalYearSaving">0</span></b></p>
+       </center>
+    
+   <!--  <input type="text" class="form-control form-group"placeholder="Monthly Interest Paid" id="LoanEMI"  maxlength="10"  /> -->
+  <!--   <input type="text" class="form-control form-group"placeholder="Drop in interest Paid" id="Drop_EMI"  maxlength="10" /> -->
+    <!-- <input type="text" class="form-control form-group"placeholder="Monthly Saving"  id="NewLoanEMI" maxlength="10" /> -->
+ <!--   <input type="text" class="form-control form-group"placeholder="Total Yearly Saving" id="emidrop_interest"  maxlength="10"  />
+   <input type="text" class="form-control form-group"placeholder="Monthly Saving"  id="totalYearSaving" maxlength="10" /> -->
    </div>
    </div>
   </div>
   
   <div class="col-md-4">
   <div class="white-bg heigh-bt">
-   
+   <form id=WorkingCapitalAfter>
   <div class="border heigh-bt">
   <h3 class="emi-cal text-center">After The Transfer</h3>
-    <input type="text" class="form-control form-group"placeholder="Loan Amount"  maxlength="10">
-    <input type="text" class="form-control form-group"placeholder="Current Rate of Interest"  maxlength="10">
-   <button class="btn btn-success pull-left " onclick="Working_capittal_fn(this.id)" id="term_loan">Submit</button>
+     <input type="text" class="form-control form-group tloanAmountAfter" placeholder="Loan Amount" id="tloanAmountAfter" maxlength="10"  onkeypress="return isNumberKey(event)" readonly>
+   <input type="text" class="form-control form-group tinterestAfter" placeholder="10" value="10" id="tinterestAfter"  maxlength="2" onkeypress="return isNumberKey(event)"  readonly>
+   <input type="text" class="form-control form-group tloanTenurAfter" placeholder=" Loan Tenure"  maxlength="2" id="tloanTenurAfter" onkeypress="return isNumberKey(event)" readonly>
+
+   <div >
+  <!--  <button   class="btn btn-success pull-left afterbtn"   id="working_capitalAfter">Submit</button> -->
+    <!-- <div class="pull-right">
+             <label><input type="radio" name="yearmonth1" id="Year"  value="Year" checked="checked"> Year</label>
+             <label><input type="radio" name="yearmonth1" id="Month" value="Month"> Month</label>
+    </div> -->
+    </div>
+
    </div>
+   </form>
    </div>
 
   </div>
@@ -135,9 +161,9 @@
   
   <div class="border heigh-bt">
   <h3 class="emi-cal text-center">Current Status of Loan</h3>
-    <input type="text" class="form-control form-group"placeholder="Loan Amount"  maxlength="10">
-   <input type="text" class="form-control form-group"placeholder="Current Rate of Interest"  maxlength="10">
-    <input type="text" class="form-control form-group"placeholder="Sundry Debtors Cycle"  maxlength="10">
+    <input type="text" class="form-control form-group" placeholder="Loan Amount"  maxlength="10">
+   <input type="text" class="form-control form-group" placeholder="Current Rate of Interest"  maxlength="10">
+    <input type="text" class="form-control form-group" placeholder="Sundry Debtors Cycle"  maxlength="10">
    <button class="btn btn-success pull-left " onclick="Working_capittal_fn(this.id)" id="credit_domestic">Submit</button>
    </div>
    </div>
@@ -148,10 +174,10 @@
    
     <div class="border heigh-bt">
     <h3 class="emi-cal text-center">Your Saving</h3>
-    <input type="text" class="form-control form-group"placeholder="Monthly Interest Paid"  maxlength="10"  />
-   <input type="text" class="form-control form-group"placeholder="Drop in interest Paid"  maxlength="10" />
-     <input type="text" class="form-control form-group"placeholder="Monthly Saving"  maxlength="10" />
-   <input type="text" class="form-control form-group"placeholder="Total Yearly Saving"  maxlength="10" disabled />
+    <input type="text" class="form-control form-group" placeholder="Monthly Interest Paid"  maxlength="10"  />
+   <input type="text" class="form-control form-group" placeholder="Drop in interest Paid"  maxlength="10" />
+     <input type="text" class="form-control form-group" placeholder="Monthly Saving"  maxlength="10" />
+   <input type="text" class="form-control form-group" placeholder="Total Yearly Saving"  maxlength="10" disabled />
    </div>
    </div>
   </div>
@@ -161,8 +187,8 @@
    
   <div class="border heigh-bt">
   <h3 class="emi-cal text-center">After The Transfer</h3>
-    <input type="text" class="form-control form-group"placeholder="Loan Amount"  maxlength="10">
-    <input type="text" class="form-control form-group"placeholder="Current Rate of Interest"  maxlength="10">
+    <input type="text" class="form-control form-group" placeholder="Loan Amount"  maxlength="10">
+    <input type="text" class="form-control form-group " placeholder="Current Rate of Interest"  maxlength="10">
    <button class="btn btn-success pull-left " onclick="Working_capittal_fn(this.id)" id="credit_domestic">Submit</button>
    </div>
    </div>
@@ -177,9 +203,9 @@
   
   <div class="border heigh-bt">
   <h3 class="emi-cal text-center">Current Status of Loan</h3>
-    <input type="text" class="form-control form-group"placeholder="Loan Amount"  maxlength="10">
-   <input type="text" class="form-control form-group"placeholder="Current Rate of Interest"  maxlength="10">
-   <input type="text" class="form-control form-group"placeholder="Sundry Debtors Cycle"  maxlength="10">
+    <input type="text" class="form-control form-group" placeholder="Loan Amount"  maxlength="10">
+   <input type="text" class="form-control form-group" placeholder="Current Rate of Interest"  maxlength="10">
+   <input type="text" class="form-control form-group" placeholder="Sundry Debtors Cycle"  maxlength="10">
    <button class="btn btn-success pull-left " onclick="Working_capittal_fn(this.id)" id="foreign_currency">Submit</button>
    </div>
    </div>
@@ -190,10 +216,10 @@
    
     <div class="border heigh-bt">
     <h3 class="emi-cal text-center">Your Saving</h3>
-    <input type="text" class="form-control form-group"placeholder="Monthly Interest Paid"  maxlength="10"  />
-   <input type="text" class="form-control form-group"placeholder="Drop in interest Paid"  maxlength="10" />
-     <input type="text" class="form-control form-group"placeholder="Monthly Saving"  maxlength="10" />
-   <input type="text" class="form-control form-group"placeholder="Total Yearly Saving"  maxlength="10" disabled />
+    <input type="text" class="form-control form-group" placeholder="Monthly Interest Paid"  maxlength="10"  />
+   <input type="text" class="form-control form-group" placeholder="Drop in interest Paid"  maxlength="10" />
+     <input type="text" class="form-control form-group" placeholder="Monthly Saving"  maxlength="10" />
+   <input type="text" class="form-control form-group" placeholder="Total Yearly Saving"  maxlength="10" disabled />
    </div>
    </div>
   </div>
@@ -203,8 +229,8 @@
    
   <div class="border heigh-bt">
   <h3 class="emi-cal text-center">After The Transfer</h3>
-    <input type="text" class="form-control form-group"placeholder="Loan Amount"  maxlength="10">
-    <input type="text" class="form-control form-group"placeholder="Current Rate of Interest"  maxlength="10">
+    <input type="text" class="form-control form-group" placeholder="Loan Amount"  maxlength="10">
+    <input type="text" class="form-control form-group" placeholder="Current Rate of Interest"  maxlength="10">
    <button class="btn btn-success pull-left "  onclick="Working_capittal_fn(this.id)" id="foreign_currency">Submit</button>
    </div>
    </div>
@@ -259,6 +285,7 @@
 var array=new Array;
 var bank = {};
 var sessionName='bank1';
+var TsessionName='bank1';
 var _token='{{csrf_token()}}';
 var loanTenurMonth='';
 var SessionBank = function() {
@@ -336,13 +363,47 @@ $("button").click(function(e){
 
 
       if(form=='term_loan_form'){
+        Tenure=loanTenure*12;
+      $.ajax({  
+             type: "POST",  
+             url: "{{URL::to('term-loan/calculate')}}",
+             dataType:"json",
+             data: {_token :_token,loanAmount:loanAmount,interest:interest,loanTenure:Tenure},
+             success: function(msg){
+             // console.log(msg);return false;
+                    
+                    var LoanEMI=msg.LoanEMI.toFixed();
+                    var Drop_EMI=msg.Drop_EMI.toFixed();
+                     var NewLoanEMI=msg.NewLoanEMI.toFixed();
+                      var drop_interest=msg.drop_interest.toFixed();
+                       var totalYearSaving=msg.totalYearSaving.toFixed();
 
-alert("term_loan_form");
+                  $('#LoanEMI').text(LoanEMI);
+                   $('#Drop_EMI').text(Drop_EMI);
+                    $('#NewLoanEMI').text(NewLoanEMI);
+                     $('#emidrop_interest').text(drop_interest);
+                      $('#totalYearSaving').text(totalYearSaving);
+                  //document.getElementById("LoanEMI").value= msg.LoanEMI.toFixed();
+                  // document.getElementById("Drop_EMI").value=msg.Drop_EMI.toFixed();
+                  // document.getElementById("NewLoanEMI").value=msg.NewLoanEMI.toFixed();
+                  // document.getElementById("emidrop_interest").value=msg.drop_interest.toFixed();
+                  // document.getElementById("totalYearSaving").value=msg.totalYearSaving.toFixed();
+
+                     bank.LoanEMI=LoanEMI;
+                     bank.Drop_EMI=Drop_EMI;
+                     bank.NewLoanEMI=NewLoanEMI;
+                     bank.drop_interest=drop_interest;
+                     bank.totalYearSaving=totalYearSaving;
+
+                    // sessionStorage.setItem(TsessionName, JSON.stringify(bank));
+                     //bankAppend(TsessionName,totalYearSaving);
+                 
+             }
 
 
-      }
+      });
 
-
+}
 
           
 });
@@ -401,10 +462,10 @@ function ajax(_token,loanAmount_id,interest,loanTenurMonth,ID,paid){
                   var month = msg.monthlyinterest.toFixed();
                   var totleMonthlysaving = msg.totleMonthlysaving.toFixed();
                   var totalYearSaving = msg.totalYearSaving.toFixed();
-                  document.getElementById("drop_interest").value=numb;
-                  document.getElementById("monthlyinterest").value=month;
-                  document.getElementById("monthlysavinf").value=totleMonthlysaving;
-                  document.getElementById("yearlysaving").value=totalYearSaving;
+                  document.getElementById("drop_interest").innerHTML=numb;
+                  document.getElementById("monthlyinterest").innerHTML=month;
+                  document.getElementById("monthlysavinf").innerHTML=totleMonthlysaving;
+                  document.getElementById("yearlysaving").innerHTML=totalYearSaving;
                      bank.monthlyinterest=numb;
                      bank.drop_interest=month;
                      bank.monthlysavinf=totleMonthlysaving;
@@ -415,14 +476,15 @@ function ajax(_token,loanAmount_id,interest,loanTenurMonth,ID,paid){
                      $('.afterbtn').show();
                    
               }
-
+ 
                  if(msg.success0==true){  
+                  
                 var numb = msg.drop_interest.toFixed();
                 var month = msg.monthlyinterest.toFixed();
                 var totleMonthlysaving = msg.totleMonthlysaving.toFixed();
                 var totalYearSaving = msg.totalYearSaving.toFixed();
-                document.getElementById("monthlysavinf").value=totleMonthlysaving;
-                document.getElementById("yearlysaving").value=totalYearSaving;
+                document.getElementById("monthlysavinf").innerHTML=totleMonthlysaving;
+                document.getElementById("yearlysaving").innerHTML=totalYearSaving;
                      bank.monthlysavinf=totleMonthlysaving;
                      bank.yearlysaving=totalYearSaving;
                      sessionStorage.setItem(sessionName, JSON.stringify(bank));
@@ -479,11 +541,29 @@ function moyear(yearmonth,loanTenur){     //     convert year to monthly
              $('#home input[type="text"]').val('');
              sessionName='bank1';
 
-          }
-            }
+          }         
+ }
 
 
-$( "#loanAmount_id" ).keyup(function() {
+    function TbankName(bank){   //  Term laon textbox clear function
+          if(bank=='bank2'){
+           $('#menu1 input[type="text"]').val('');
+           TsessionName='bank2';
+            document.getElementById("interestAfter").value=10;
+          }else if(bank=='bank3'){
+                $('#menu1 input[type="text"]').val('');
+               TsessionName='bank3';
+                document.getElementById("interestAfter").value=10;
+          }else{
+             $('#menu1 input[type="text"]').val('');
+             TsessionName='bank1';
+
+          }         
+ }
+
+
+
+$( "#loanAmount_id" ).keyup(function() {   //working capital 
     var value = $( this ).val();
      $('.loanAmountAfter').val(value);
   }) ;
@@ -505,10 +585,29 @@ $( "#loanTenur" ).keyup(function() {
  
      
     });
+
+
     $("#Year").change(function(){
       var amt1 = $("#loanTenur").val();
       var yr = amt1 / 12;
       $('#loanTenur').val(yr);
     });
     });
+
+
+  $( "#termloanAmount" ).keyup(function() {   //Term laon
+    var value = $( this ).val();
+     $('.tloanAmountAfter').val(value);
+  }) ;
+
+$( "#termloanTenur" ).keyup(function() {
+    var value = $( this ).val();
+      if(value!=''){
+      $('.tloanTenurAfter').val(value);
+  }else{
+    $('#afterbtn').hide();
+  }
+  }) ;
+
+ 
 </script>

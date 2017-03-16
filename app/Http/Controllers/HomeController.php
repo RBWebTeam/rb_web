@@ -12,7 +12,7 @@ use Session;
 use URL;
 use Mail;
 use Illuminate\Support\Facades\Hash;
-class HomeController extends InitialController
+class HomeController extends CallApiController
 {
 	public function index(){
 		
@@ -60,7 +60,9 @@ class HomeController extends InitialController
 
 	}
 
-	
+	public function comfy_sales(){
+		return view('comfy-sales');
+	}
 
 	public function express_loan(){
 		$keywords='Express Finance Loans, Cash Express Loan, Express Loan Aditya Birla Group, Express Loan Bank, Express Loan Corporation, Express Loan Tribe, Express Loan Eligibility, Apply Online For Express Loan, Emergency Loans , Advance Loans ,Quick And Easy Loans ,Instant Cash Loans'; 
@@ -109,13 +111,7 @@ class HomeController extends InitialController
 			    'created_at'=>date("Y-m-d H:i:s"),
    			    'updated_at'=>date("Y-m-d H:i:s")]);
 		if($query){
-			 	$data ="Thank you for registering.";
-               	$email = $req->email;
-                $mail = Mail::send('email_view',['data' => $data], function($message) use($email) {
-		                $message->from('wecare@rupeeboss.com', 'RupeeBoss');
-		                $message->to($email)
-		                ->subject('Thankyou');
-                	});
+			 	
                 
                 $post_data='{"City":"0","Email_Id":"'.$req->email.'","UserPassword":"","contact_No":"'.$req->contact.'","first_Name":"'.$req->name.'","last_Name":"","parentBrokerId":"","parentEmpCode":"","source":"dwBlAGIA"}';
                 // print_r($web);exit();
@@ -123,8 +119,17 @@ class HomeController extends InitialController
                 // print_r($post_data);exit();
                 $result=$this->call_json_data_api($url,$post_data);
                 $http_result=json_decode($result['http_result']);
-               
-                $post_data_new='{"mobNo":"'.$req->contact.'","msgData":"Thank you for registering.- RupeeBoss.com",
+               // print_r($http_result->status);exit();
+                if($http_result->status =="success"){
+                	$data ="Thank you for registering.";
+               	$email = $req->email;
+                $mail = Mail::send('email_view',['data' => $data], function($message) use($email) {
+		                $message->from('wecare@rupeeboss.com', 'RupeeBoss');
+		                $message->to($email)
+		                ->subject('Thankyou');
+                	});
+
+                	$post_data_new='{"mobNo":"'.$req->contact.'","msgData":"Thank you for registering.- RupeeBoss.com",
                     "source":"WEB"}';
                 $url_new = "http://beta.services.rupeeboss.com/LoginDtls.svc/xmlservice/sendSMS";
                 $result_new=$this->call_json_data_api($url_new,$post_data_new);
@@ -138,6 +143,11 @@ class HomeController extends InitialController
                 }else{
                 	return 'false';
                 }
+
+                }else{
+                	return 'false';
+                }
+                
 
 
 

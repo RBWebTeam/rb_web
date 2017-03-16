@@ -14,7 +14,7 @@
 	<div class="col-md-8">
 	<div class="pad border">
 	<h3 class="pad text-center">Comfy Card</h3>
-	<p>What if you were to unfortunatly with an accident & your car needs repairs at the garage fot few days? it is both frustrating and disappointing , not to have your prized in your sight & trying to figure out your travel.</p>
+	<p>What if you were to unfortunatly with an accident & your car needs repairs at the garage for few days? it is both frustrating and disappointing , not to have your prized in your sight & trying to figure out your travel.</p>
 
 <p>We are cognizant times that are getting uncertain by the day.Our lives hang in the balance of unpredictable situation. One minute you,re driving the road whisting a tune the next moment the car right in front of you spinsout of control and crashes. We Understand your pain & the need of a reliable partner who can share burden.</p>
 
@@ -38,22 +38,22 @@
 					  <label class="form-label-new">Name</label>
 				      <input type="text" class="form-control" id="name" placeholder="Enter name" name="name" required="">
 				   
-					</div>
+					</div><br>
 
 				    <div class="inp-hig">
 					<label class="form-label-new">Email</label>
 				        <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" required="">
-				    </div>
+				    </div><br>
 
 				    <div class="inp-hig">
 					<label class="form-label-new">Mobile</label>
 				      <input type="tel" class="form-control" id="contact" placeholder="Enter number" name="contact" maxlength="10" pattern="[789][0-9]{9}" required="">
-				    </div>
+				    </div><br>
 
 				    <div class="inp-hig">
 					<label class="form-label-new">City</label>
 				      <input type="text" class="form-control search_city_n" placeholder="City" name="City" id="City" required>
-				    </div>
+				    </div><br>
               
 			  <div class="mrg-top"> 
 			    

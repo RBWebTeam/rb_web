@@ -3479,10 +3479,11 @@ label {
     border: 1px solid #3f7cb3;
 }
 .outer-brd1 {
-    padding: 2px;
+    padding:0px;
     background: #fff;
     border-color: none;
     vertical-align: middle;
     border-radius: 21px;
 }
+.btn-default.active {background:#5b9bd5;}
 

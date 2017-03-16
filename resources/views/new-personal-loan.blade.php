@@ -37,13 +37,15 @@
 	<div class="loan-tenure">
 									<center>
 										<div class="type-cover">
-											<span>Loan Tenure</span>
+											<span>LOAN TENURE</span>
 										</div>
 									</center>
-									<div class="text-center">
-										<div class="scaling-slider">
-											<img src="images/slider.png" class="img-responsive">
-										</div>
+									<div class="scaling-slider">
+									
+										<div class="tenure offset5 pad">
+			                    <div  id="unranged-value" style="width:100%; height:10px;"></div>
+			                     
+									</div>
 									</div>
 								</div>
 								
@@ -56,8 +58,8 @@
 	
 	<div class="col-xs-4 form-padding">
 	 <div class="btn-grp form-control border-none" data-toggle="buttons">
-                                    <span class="btn btn-primary outer-brd1 active"><input type="radio" name="Status" id="option1"><img id="myImage" src="images/male.png" class=""></span><span class="hidden-xs"> Male</span>
-                                   <span class="btn btn-primary outer-brd1 "><input type="radio" name="Status" id="option2"><img id="myImage1" src="images/female.png" class=""></span> <span class="hidden-xs"> Female</span>
+                                    <span class="btn btn-default outer-brd1 active"><input type="radio" name="Status" id="option1"><img id="myImage" src="images/male.png" class=""></span><span class="hidden-xs"> Male</span>
+                                   <span class="btn btn-default outer-brd1 "><input type="radio" name="Status" id="option2"><img id="myImage1" src="images/female.png" class=""></span> <span class="hidden-xs"> Female</span>
            </div>		   
 	   </div>
 	   
@@ -140,6 +142,8 @@
 	</aside>
 	</div>
 	<br>
+	
+	
 @include('layout.footer')
 @include('layout.script')
 

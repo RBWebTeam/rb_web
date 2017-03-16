@@ -2149,4 +2149,52 @@ function SetSession_pop(cookieName,cookieValue){
 	});
 </script>
    <!-- emp login end -->
+   
+   <script>
+		$(document).ready( function(){
+		
+			$('.income-source > div').click(function(){
+				$('.income-source > div').removeClass('income-source-active');
+				$(this).toggleClass('income-source-active');
+			});
+			
+			$('.scenario > div').click(function(){
+				$('.scenario > div').removeClass('scenario-active');
+				$(this).toggleClass('scenario-active');
+			});
+		});
+			
+	</script>
+	<script>
+    var s0 = $("#unranged").freshslider({
+        step: 10,
+		scale: [1,,100],
+        unit:'%',
+        enabled:false
+		
+    });
+
+    var s1 = $("#ranged").freshslider({
+        range:true,
+        step:0.1,
+        text:false,
+        onchange:function(low, high){
+            // console.log(low, high);
+        }
+    });
+
+    var s2 = $("#unranged-value").freshslider({
+        step: 1,
+        value:10
+    });
+
+    var s3 = $("#ranged-value").freshslider({
+        range: true,
+        step:1,
+        value:[4, 60],
+        onchange:function(low, high){
+            // console.log(low, high);
+        }
+    });
+</script>
   @include('layout.modal')

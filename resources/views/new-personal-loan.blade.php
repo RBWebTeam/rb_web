@@ -6,7 +6,7 @@
 	<div class="col-md-12">
 	<h2 class="align-center loan-head">Personal Loan</h2>
 	</div>
- <div class="col-md-12 white-bg pad1 mrg-btm box-shadow">
+ <div class="col-md-12 white-bg mrg-btm box-shadow">
 <img src="{{URL::to('images/9.png')}}" alt="Tribe Logo" class="img-responsive" />
 
  </div>
@@ -30,22 +30,24 @@
      <input type="text" name="custom_id" id="custom_id" class="form-input-new form-control" placeholder="Existing Custom Id if Any" onkeypress="return isNumberKey(event)" required="">
 	</div>
 	<div class="col-xs-4 form-padding">
-     <input type="name" class="form-input-new form-control" placeholder="Loan Required" required="">
+     <input type="text" name="loanamount" id="loanamount" class="form-input-new form-control" placeholder="Loan Required" onkeypress="return isNumberKey(event)" maxlength="10" required="">
 	</div>
 	<div class="col-xs-4 form-padding">
-     <input type="name" class="form-input-new form-control" placeholder="City of Location" required="">
+     <input type="text" id="city" name="city" class="form-input-new form-control search_city" placeholder="City of Location" required="">
 	</div>
 	
 	<div class="loan-tenure">
 									<center>
 										<div class="type-cover">
-											<span>Loan Tenure</span>
+											<span>LOAN TENURE</span>
 										</div>
 									</center>
-									<div class="text-center">
-										<div class="scaling-slider">
-											<img src="images/slider.png" class="img-responsive">
-										</div>
+									<div class="scaling-slider">
+									
+										<div class="tenure offset5 pad">
+			                    <div  id="unranged-value" style="width:100%; height:10px;"></div>
+			                     
+									</div>
 									</div>
 								</div>
 								
@@ -53,33 +55,33 @@
 								
   
 	   <div class="col-xs-8 form-padding">
-     <input type="name" class="form-input-new form-control" placeholder="Applicant Name" required="">
+     <input type="text" name="name" id="name" class="form-input-new form-control" placeholder="Applicant Name" required="">
 	</div>
 	
 	<div class="col-xs-4 form-padding">
 	 <div class="btn-grp form-control border-none" data-toggle="buttons">
-                                    <span class="btn btn-primary outer-brd1 active"><input type="radio" name="Status" id="option1"><img id="myImage" src="images/male.png" class=""></span><span class="hidden-xs"> Male</span>
-                                   <span class="btn btn-primary outer-brd1 "><input type="radio" name="Status" id="option2"><img id="myImage1" src="images/female.png" class=""></span> <span class="hidden-xs"> Female</span>
+                                    <span class="btn btn-default outer-brd1 active"><input type="radio" name="Status" id="option1"><img id="myImage" src="images/male.png" class=""></span><span class="hidden-xs"> Male</span>
+                                   <span class="btn btn-default outer-brd1 "><input type="radio" name="Status" id="option2"><img id="myImage1" src="images/female.png" class=""></span> <span class="hidden-xs"> Female</span>
            </div>		   
 	   </div>
 	   
 	   <div class="col-xs-6 form-padding">
-     <input type="date" class="form-input-new form-control" placeholder="Date of Birth" required="">
+     <input type="text" id="dob" name="dob" class="form-input-new form-control lastReporteddate1" placeholder="Date of Birth" required="">
 	</div>
 	
 	<div class="col-xs-6 form-padding">
      <div class="btn-grp form-control border-none" data-toggle="buttons">
-      <span class="btn btn-primary outer-brd btn-blu active"><input type="radio" name="Status" id="option1"> Salaried</span>
-      <span class="btn btn-primary outer-brd btn-blu"><input type="radio" name="Status" id="option2"> Self-Emp</span>
+      <span class="btn btn-primary white-bg-border outer-brd btn-blu active"><input type="radio" name="employment"  value="Salaried" checked>Salaried</span>
+      <span class="btn btn-primary white-bg-border outer-brd btn-blu"><input type="radio" name="employment"  value="Self-Emp"> Self-Emp</span>
          </div>
 	   </div>
 	   
 	   <div class="col-xs-6 form-padding">
-     <input type="name" class="form-input-new form-control" placeholder="Monthly Income" required="">
+     <input type="text" name="monthly_income" id="monthly_income" class="form-input-new form-control"  onkeypress="return isNumberKey(event)"  placeholder="Monthly Income" required="">
 	</div>
 	
 	<div class="col-xs-6 form-padding">
-     <input type="name" class="form-input-new form-control" placeholder="Exsisting EMI (If Any)" required="">
+     <input type="text" name="existing_emi" id="existing_emi" class="form-input-new form-control" placeholder="Exsisting EMI (If Any)" onkeypress="return isNumberKey(event)" required="">
 	</div>
 	
 	<div class="col-md-12">						
@@ -143,6 +145,8 @@
 	</aside>
 	</div>
 	<br>
+	
+	
 @include('layout.footer')
 @include('layout.script')
 
@@ -182,5 +186,63 @@
     });
 
 
+</script>
+
+<script type="text/javascript">
+
+	
+
+ $(document).ready(function(){
+    src = "{{ route('searchajax') }}";
+    $(".search_city").autocomplete({
+      source: function(request, response) {
+        
+        $.ajax({
+          url: src,
+          dataType: "json",
+          data: {
+            term : request.term
+          },
+          success: function(data) {
+           
+
+            response(data);
+            
+          }
+        });
+      },
+      change: function (event, ui) {
+        if (ui.item == null || ui.item == undefined || ui.item.value=='No Result Found') {
+          $(".search_city").val("");
+          $(".search_city").attr("disabled", false);
+         
+        }else{
+
+         
+         $(".Q6").show();
+         
+          
+             }
+           }
+
+        
+      });
+   });
+
+</script>
+
+<script type="text/javascript">
+    var d = new Date();
+    var year = d.getFullYear() ;
+    d.setFullYear(year);
+
+    $(".lastReporteddate1").datepicker({ dateFormat: "yy-mm-dd",
+      changeMonth: true,
+      changeYear: true,
+      maxDate: year,
+      minDate: "-100Y",
+      yearRange: '-100:' + year + '',
+      defaultDate: d
+    });
 </script>
 

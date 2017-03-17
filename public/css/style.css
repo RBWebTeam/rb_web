@@ -1585,13 +1585,13 @@ top: -.25em;left: 20%;margin: 0 0 0 -.25em;}
 .top-bg {background:#28a0ff;padding-top:2px;}
 .top-lnk li  {float:left;padding:2px 10px;list-style-type:none;}
 
-.top-lnk li  {float:left;padding:2px 3px;list-style-type:none;}
+.top-lnk li  {float:left;padding:2px 0px;list-style-type:none;}
 .top-lnk li a {color:#fff;}
 .top-lnk li a:hover {color:#ec9fa1;}
 .social-icon li {list-style-type:none;}
 .social-icon {margin-right:40px;margin-top:3px;}
 .social-icon li a{color:#fff;padding:0px 5px;}
-.top-bg ul, ol {margin-bottom:2px;margin-left: -30px; font-size:12px;}
+.top-bg ul, ol {margin-bottom:2px;margin-left: -30px; font-size:14px;}
 
 .red-bg { height:auto;background:#1f386e url(../images/form_bg.png);right:20px;z-index:1000;position:absolute;}
 .trapezium1 {width:400px;margin-left: -93px;margin-bottom: 15px;border-bottom: 70px solid #396fbf;opacity:0.7;position: relative;z-index: 100;opacity: -22px;
@@ -1983,7 +1983,7 @@ body {background:#eee;}
   .error-template img {margin:auto; }
   .heigh-bt {height:300px; box-shadow:1px 1px 1px 1px #ccc; border-radius:5px;-moz-border-radius:5px;-webkit-border-radius:5px;}
    .heigh-bt2 {height:375px; box-shadow:1px 1px 1px 1px #ccc;}
-   .heigh-bt1  {height:auto; box-shadow:1px 1px 1px 1px #ccc;}
+   .heigh-bt1  {height:330px; box-shadow:1px 1px 1px 1px #ccc;}
   .mrg-tp {margin-top:8px;}
   .box-shadow {box-shadow:1px 1px 1px 1px #ccc;}
   .apply-btn:hover {color:#fff;background:#2882a6;}
@@ -3346,7 +3346,7 @@ font-size:20px;margin-top: 10px;
 .modal-content {border-radius:0px;}
 .tab-content {float:left;width:100%;}
 .heigh-bt {
-    min-height:300px;
+    min-height:330px;
 }
 .bnk-dv-r {float:left;width:100%;}
 .bnk-hdr {background:#D1EEEE;padding:10px;}
@@ -3479,10 +3479,26 @@ label {
     border: 1px solid #3f7cb3;
 }
 .outer-brd1 {
-    padding: 2px;
+    padding:0px;
     background: #fff;
     border-color: none;
     vertical-align: middle;
     border-radius: 21px;
 }
+.btn-default.active {background:#5b9bd5;}
 
+.mag-lnk {margin:0px; padding:0px;}
+.mag-lnk li {font-size: 16px; list-style-type:none;}
+.mag-lnk li a {border-radius:5px;-moz-border-radius:5px;-webkit-border-radius:5px;border-bottom:1px solid #ddd;padding: 10px;display: block;margin-bottom: 4px;color:#fff;}
+.mag-lnk li a:hover {background:#ec1b23;color:#fff;padding-left:25px;}
+.white-bg-border {background:#fff;border:1px solid #999;color:#666;}
+
+.mag-lnk li a {
+    background-image: url(../images/gold.gif);
+	opacity:0.8;
+	font-weight:bold;
+    /*background: -webkit-linear-gradient(#0192cb, #00ca98); /* For Safari 5.1 to 6.0 */
+    /*background: -o-linear-gradient(#0192cb, #00ca98); /* For Opera 11.1 to 12.0 */
+   /* background: -moz-linear-gradient(#0192cb, #00ca98); /* For Firefox 3.6 to 15 */
+   /* background: linear-gradient(#0192cb, #00ca98); /* Standard syntax */
+}

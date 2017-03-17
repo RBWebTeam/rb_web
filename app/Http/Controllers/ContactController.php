@@ -21,5 +21,9 @@ class ContactController extends InitialController
     	return view('new-personal-loan');
     }
 
+    public function magic_link(){
+        return view('magic-link');
+    }
+
  
 }

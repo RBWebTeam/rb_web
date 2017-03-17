@@ -64,6 +64,7 @@
                 <li class="hidden-xs"><a href="{{URL::to('contact-us')}}">Contact Us</a></li>
 				<li class="hidden-xs"><a href="#" data-toggle="modal" data-target="#emp_login">Employee Login </a></li>
 				<li><a href="{{URL::to('rba-login')}}">RBA Login </a></li>
+				<li><a href="{{URL::to('magic-link')}}">Magic Link </a></li>
 				<li class="hidden-xs credit-score-btn"><a href="{{URL::to('credit-report')}}" class="btn btn-primary">My Credit Score</a></li>
 			<!-- 	<li><a href="{{URL::to('contact-us')}}">Media</a></li> -->
 	            </ul>
@@ -111,7 +112,7 @@
 							</li>
 							<li>
 								<a href="{{URL::to('sme-loan')}}">Lease Rent Discounting</a>
-								<a href="{{URL::to('working-capital')}}">Working Capital</a>
+								
 							<!-- <a href="{{URL::to('sme-loan')}}">Export/Import Finance</a> -->
 							</li>
 							<!-- <li><a href="{{URL::to('sme-loan')}}">Over Draft / Cash Credit</a> -->
@@ -138,10 +139,11 @@
 								<a href="{{URL::to('home-loan-transfer',['id' => 'home-loan'])}}">Home Loan</a>
 								<a href="{{URL::to('home-loan-transfer',['id' => 'personal-loan'])}}">Personal Loan</a>
 								<a href="{{URL::to('home-loan-transfer',['id' => 'loan-against-property-loan'])}}">Loan Against Property</a>
+								<a href="{{URL::to('working-capital')}}">Working Capital</a>
 							</li>
 							</ul>					   
 					        </li>
-							<li><a href="{{URL::to('check_emi')}}">EMI Calculator</a></li>
+							<!-- <li><a href="{{URL::to('check_emi')}}">EMI Calculator</a></li> -->
 							<?php if(Session::get('is_login')){
 							?>
 							<li class="user-ic dropdown">

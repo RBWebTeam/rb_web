@@ -2197,4 +2197,26 @@ function SetSession_pop(cookieName,cookieValue){
         }
     });
 </script>
+
+
+<script>
+   function toggleIcon(e) {
+        $(e.target)
+            .prev('.panel-heading')
+            .find(".more-less")
+            .toggleClass('icon-plus icon-minus');
+    }
+    $('.panel-group').on('hidden.bs.collapse', toggleIcon);
+    $('.panel-group').on('shown.bs.collapse', toggleIcon);
+</script>
+
+<script>
+$(document).ready(function(){
+    $(".tog1").click(
+        function(){$(".col-tog1").toggle();},
+        function(){$(".col-tog2").toggle();},
+        function(){$(".col-tog3").toggle();
+    });
+});
+</script>
   @include('layout.modal')

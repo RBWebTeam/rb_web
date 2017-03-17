@@ -6,7 +6,7 @@
 	<div class="col-md-12">
 	<h2 class="align-center loan-head">Personal Loan</h2>
 	</div>
- <div class="col-md-12 white-bg pad1 mrg-btm box-shadow">
+ <div class="col-md-12 white-bg mrg-btm box-shadow">
 <img src="{{URL::to('images/9.png')}}" alt="Tribe Logo" class="img-responsive" />
 
  </div>
@@ -72,9 +72,10 @@
 	
 	<div class="col-xs-6 form-padding">
      <div class="btn-grp form-control border-none" data-toggle="buttons">
+
       <span class="btn btn-primary outer-brd btn-blu active"><input type="radio" name="employment"  value="Salaried">Salaried</span>
       <span class="btn btn-primary outer-brd btn-blu"><input type="radio" name="employment"  value="Self-Emp"> Self-Emp</span>
-         </div>
+
 	   </div>
 	   
 	   <div class="col-xs-6 form-padding">

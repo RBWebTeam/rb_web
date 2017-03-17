@@ -1591,7 +1591,7 @@ top: -.25em;left: 20%;margin: 0 0 0 -.25em;}
 .social-icon li {list-style-type:none;}
 .social-icon {margin-right:40px;margin-top:3px;}
 .social-icon li a{color:#fff;padding:0px 5px;}
-.top-bg ul, ol {margin-bottom:2px;margin-left: -30px; font-size:12px;}
+.top-bg ul, ol {margin-bottom:2px;margin-left: -30px; font-size:14px;}
 
 .red-bg { height:auto;background:#1f386e url(../images/form_bg.png);right:20px;z-index:1000;position:absolute;}
 .trapezium1 {width:400px;margin-left: -93px;margin-bottom: 15px;border-bottom: 70px solid #396fbf;opacity:0.7;position: relative;z-index: 100;opacity: -22px;
@@ -1983,7 +1983,7 @@ body {background:#eee;}
   .error-template img {margin:auto; }
   .heigh-bt {height:300px; box-shadow:1px 1px 1px 1px #ccc; border-radius:5px;-moz-border-radius:5px;-webkit-border-radius:5px;}
    .heigh-bt2 {height:375px; box-shadow:1px 1px 1px 1px #ccc;}
-   .heigh-bt1  {height:auto; box-shadow:1px 1px 1px 1px #ccc;}
+   .heigh-bt1  {height:330px; box-shadow:1px 1px 1px 1px #ccc;}
   .mrg-tp {margin-top:8px;}
   .box-shadow {box-shadow:1px 1px 1px 1px #ccc;}
   .apply-btn:hover {color:#fff;background:#2882a6;}
@@ -3346,7 +3346,7 @@ font-size:20px;margin-top: 10px;
 .modal-content {border-radius:0px;}
 .tab-content {float:left;width:100%;}
 .heigh-bt {
-    min-height:300px;
+    min-height:330px;
 }
 .bnk-dv-r {float:left;width:100%;}
 .bnk-hdr {background:#D1EEEE;padding:10px;}

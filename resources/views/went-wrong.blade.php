@@ -3,7 +3,7 @@
 <div id="fh5co-hero">
 	<div class="container">
 		<div class=" pad error-template">
-		  <img src="{{URL::to('images/went-wrong.png')}}"  class="pull-center"/>
+		  <img src="{{URL::to('images/went-wrong.png')}}" alt="Went Wrong" title="Went Wrong" class="pull-center"/>
 		    <h1 class="align-center loan-head">
 			 Something went wrong
 			</h1>

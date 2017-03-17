@@ -70,6 +70,7 @@
      <!-- <i class="fa fa-exchange" aria-hidden="true"></i> -->
      
     <div class="form-group">
+	
     <input type="hidden" name="brokerid" id="brokerid" value="<?php echo isset($_GET['brokerid'])?$_GET['brokerid']:'0';?>">
 
     <input type="hidden" name="empcode" id="empcode" value="<?php echo isset($_GET['empcode'])?$_GET['empcode']:'0';?>">

@@ -101,6 +101,8 @@ Route::get('apply-express-loan','LoanController@apply_express_loan');
 Route::post('express-loan-send-otp','LoanController@express_send_otp');
 Route::post('express-loan-verify','LoanController@express_verify_otp');
 Route::post('aditya-express-loan','LoanController@express_form');
+Route::get('new-personal-loan','ContactController@new_personal_loan');
+Route::get('magic-link','ContactController@magic_link');
 
 
 //new loans test
@@ -204,6 +206,7 @@ Route::get('comfy','ComfyController@comfy');
 
 /**  idfc */
 Route::get('idfc','IdfcController@idfc');
+
 /**  tribe */
 Route::get('tribe','TribeController@tribe');
 Route::post('save-tribe-form','TribeController@save_tribe_form');

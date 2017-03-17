@@ -166,7 +166,7 @@ public function  change_password(Request $req){
 }
   public function applyonline(Request $req){
     $request = $req->all();
-    // print_r($request);exit();
+     // print_r($request);exit();
     // $app = $request['appid'];
     $quote = $request['qoutid'];
     $bank = $request['BankId'];
@@ -232,22 +232,22 @@ public function  change_password(Request $req){
     $update = DB::table('bank_quote_api_request')->where('ID', $quote)->where('Email', $email)->update(array('bank_id' => $bank,'roi_type'=>$roi_type,'loan_eligible'=>$loan_eligible,'processing_fee'=>$processing_fee));
     if($update){
       if ($product == '9') {
-       return redirect()->away('http://beta.erp.rupeeboss.com/BalanceTransfer/PL_BT_Form.aspx?qoutid='.$quote.'&processingfee='.$processing_fee.'&bankid='.$bank.'&loanamout='.$loan_eligible.'&idtype='.$roi_type);
+       return redirect()->away('http://beta.erp.rupeeboss.com/personalloan/personalloan.aspx?qoutid='.$quote.'&processingfee='.$processing_fee.'&bankid='.$bank.'&loanamout='.$loan_eligible.'&idtype='.$roi_type);
 
       } else  if ($product == '7') {
-        return redirect()->away('http://beta.erp.rupeeboss.com/BalanceTransfer/LAP_BT_Form.aspx?qoutid='.$quote.'&processingfee='.$processing_fee.'&bankid='.$bank.'&loanamout='.$loan_eligible.'&idtype='.$roi_type);
+        return redirect()->away('http://beta.erp.rupeeboss.com/LAP/LAP_Form.aspx?qoutid='.$quote.'&processingfee='.$processing_fee.'&bankid='.$bank.'&loanamout='.$loan_eligible.'&idtype='.$roi_type);
       }else {
 
-        return redirect()->away('http://beta.erp.rupeeboss.com/BalanceTransfer/HL_BT_Form.aspx?qoutid='.$quote.'&processingfee='.$processing_fee.'&bankid='.$bank.'&loanamout='.$loan_eligible.'&idtype='.$roi_type);
+        return redirect()->away('http://beta.erp.rupeeboss.com/homeloan/Home_Loan_Application_Form.aspx?qoutid='.$quote.'&processingfee='.$processing_fee.'&bankid='.$bank.'&loanamout='.$loan_eligible.'&idtype='.$roi_type);
       }
       }else{
         if ($product == '9') {
-        return redirect()->away('http://beta.erp.rupeeboss.com/BalanceTransfer/PL_BT_Form.aspx?qoutid='.$quote.'&brokerid='.$brokerid.'&loanamount='.$loanamount.'&loaninterest='.$loaninterest.'&loanterm='.$loanterm.'&bankid='.$bank.'&product='.$product.'&idtype='.$roi_type.'&processingfee='.$processing_fee.'&empcode='.$empcode.'&coapp=0');
+        return redirect()->away('http://beta.erp.rupeeboss.com/BalanceTransfer/PL_BT_Form.aspx?qoutid='.$quote.'&brokerid='.$brokerid.'&loanamout='.$loanamount.'&loaninterest='.$loaninterest.'&loanterm='.$loanterm.'&bankid='.$bank.'&product='.$product.'&idtype='.$roi_type.'&processingfee='.$processing_fee.'&empcode='.$empcode.'&coapp=0');
 
         } else  if ($product == '7') {
-       return redirect()->away('http://beta.erp.rupeeboss.com/BalanceTransfer/LAP_BT_Form.aspx?qoutid='.$quote.'&brokerid='.$brokerid.'&loanamount='.$loanamount.'&loaninterest='.$loaninterest.'&bankid='.$bank.'&product='.$product.'&idtype='.$roi_type.'&processingfee='.$processing_fee.'&empcode='.$empcode.'&coapp=0');
+       return redirect()->away('http://beta.erp.rupeeboss.com/BalanceTransfer/LAP_BT_Form.aspx?qoutid='.$quote.'&brokerid='.$brokerid.'&loanamout='.$loanamount.'&loaninterest='.$loaninterest.'&bankid='.$bank.'&product='.$product.'&idtype='.$roi_type.'&processingfee='.$processing_fee.'&empcode='.$empcode.'&coapp=0');
         }else {
-          return redirect()->away('http://beta.erp.rupeeboss.com/BalanceTransfer/HL_BT_Form.aspx?qoutid='.$quote.'&brokerid='.$brokerid.'&loanamount='.$loanamount.'&loaninterest='.$loaninterest.'&loanterm='.$loanterm.'&bankid='.$bank.'&product='.$product.'&idtype='.$roi_type.'&processingfee='.$processing_fee.'&empcode='.$empcode.'&coapp=0');
+          return redirect()->away('http://beta.erp.rupeeboss.com/BalanceTransfer/HL_BT_Form.aspx?qoutid='.$quote.'&brokerid='.$brokerid.'&loanamout='.$loanamount.'&loaninterest='.$loaninterest.'&loanterm='.$loanterm.'&bankid='.$bank.'&product='.$product.'&idtype='.$roi_type.'&processingfee='.$processing_fee.'&empcode='.$empcode.'&coapp=0');
         }
         
       

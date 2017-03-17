@@ -95,7 +95,7 @@
 					<div class="col-md-4 animate-box">
 						<div class="price-box popular">
 							
-							<div class="ic1"><img src="images/ic1.png" alt="compare_pic" /></div>
+							<div class="ic1"><img src="images/ic1.png" alt="Compare Loan" title="Compare Loan" /></div>
 							<h4 class="mrg-btm">Compare Loan</h4>
 							<ul>
 							     <li>Check & compare loans from thousand of banks</li>

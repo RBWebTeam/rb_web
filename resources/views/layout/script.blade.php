@@ -1628,7 +1628,7 @@
       fbq('init', '781224162028085'); // Insert your pixel ID here.
       fbq('track', 'PageView');
   </script>
-    <noscript><img height="1" width="1" class="displaynone" alt="fb-logo" src="https://www.facebook.com/tr?id=781224162028085&ev=PageView&noscript=1"
+    <noscript><img height="1" width="1" class="displaynone" alt="Facebook Logo" title="Facebook Logo" src="https://www.facebook.com/tr?id=781224162028085&ev=PageView&noscript=1"
       /></noscript>
       <!-- DO NOT MODIFY -->
       <!-- End Facebook Pixel Code -->
@@ -1716,7 +1716,7 @@
           <div class="col-sm-offset-3 col-sm-6">
            <span id='msg_err' class= 'displaynonemsg'>oops something went wrong</span>
          <span class="iframeloading" style= "display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
-                <img src="{{URL::to('images/ajaxloader.gif')}}" alt="loading" style="top: 50%; position: relative; left: 50%;"  />
+                <img src="{{URL::to('images/ajaxloader.gif')}}" alt="Loader" title="Loader" style="top: 50%; position: relative; left: 50%;"  />
                </span>
            <span id='pwd_match' class= 'displaynonemsg'>Password do not match.</span>
            <span id='msg_err_email' class ='displaynonemsg'><p class="text-center">Email id already exists.</p></span>
@@ -2149,4 +2149,74 @@ function SetSession_pop(cookieName,cookieValue){
 	});
 </script>
    <!-- emp login end -->
+   
+   <script>
+		$(document).ready( function(){
+		
+			$('.income-source > div').click(function(){
+				$('.income-source > div').removeClass('income-source-active');
+				$(this).toggleClass('income-source-active');
+			});
+			
+			$('.scenario > div').click(function(){
+				$('.scenario > div').removeClass('scenario-active');
+				$(this).toggleClass('scenario-active');
+			});
+		});
+			
+	</script>
+	<script>
+    var s0 = $("#unranged").freshslider({
+        step: 10,
+		scale: [1,,100],
+        unit:'%',
+        enabled:false
+		
+    });
+
+    var s1 = $("#ranged").freshslider({
+        range:true,
+        step:0.1,
+        text:false,
+        onchange:function(low, high){
+            // console.log(low, high);
+        }
+    });
+
+    var s2 = $("#unranged-value").freshslider({
+        step: 1,
+        value:10
+    });
+
+    var s3 = $("#ranged-value").freshslider({
+        range: true,
+        step:1,
+        value:[4, 60],
+        onchange:function(low, high){
+            // console.log(low, high);
+        }
+    });
+</script>
+
+
+<script>
+   function toggleIcon(e) {
+        $(e.target)
+            .prev('.panel-heading')
+            .find(".more-less")
+            .toggleClass('icon-plus icon-minus');
+    }
+    $('.panel-group').on('hidden.bs.collapse', toggleIcon);
+    $('.panel-group').on('shown.bs.collapse', toggleIcon);
+</script>
+
+<script>
+$(document).ready(function(){
+    $(".tog1").click(
+        function(){$(".col-tog1").toggle();},
+        function(){$(".col-tog2").toggle();},
+        function(){$(".col-tog3").toggle();
+    });
+});
+</script>
   @include('layout.modal')

@@ -71,8 +71,8 @@
 	
 	<div class="col-xs-6 form-padding">
      <div class="btn-grp form-control border-none" data-toggle="buttons">
-      <span class="btn btn-primary outer-brd btn-blu active"><input type="radio" name="employment"  value="Salaried" checked>Salaried</span>
-      <span class="btn btn-primary outer-brd btn-blu"><input type="radio" name="employment"  value="Self-Emp"> Self-Emp</span>
+      <span class="btn btn-primary white-bg-border outer-brd btn-blu active"><input type="radio" name="employment"  value="Salaried" checked>Salaried</span>
+      <span class="btn btn-primary white-bg-border outer-brd btn-blu"><input type="radio" name="employment"  value="Self-Emp"> Self-Emp</span>
          </div>
 	   </div>
 	   

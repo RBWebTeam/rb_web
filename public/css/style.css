@@ -1585,7 +1585,7 @@ top: -.25em;left: 20%;margin: 0 0 0 -.25em;}
 .top-bg {background:#28a0ff;padding-top:2px;}
 .top-lnk li  {float:left;padding:2px 10px;list-style-type:none;}
 
-.top-lnk li  {float:left;padding:2px 3px;list-style-type:none;}
+.top-lnk li  {float:left;padding:2px 0px;list-style-type:none;}
 .top-lnk li a {color:#fff;}
 .top-lnk li a:hover {color:#ec9fa1;}
 .social-icon li {list-style-type:none;}
@@ -3487,3 +3487,18 @@ label {
 }
 .btn-default.active {background:#5b9bd5;}
 
+.mag-lnk {margin:0px; padding:0px;}
+.mag-lnk li {font-size: 16px; list-style-type:none;}
+.mag-lnk li a {border-radius:5px;-moz-border-radius:5px;-webkit-border-radius:5px;border-bottom:1px solid #ddd;padding: 10px;display: block;margin-bottom: 4px;color:#fff;}
+.mag-lnk li a:hover {background:#ec1b23;color:#fff;padding-left:25px;}
+.white-bg-border {background:#fff;border:1px solid #999;color:#666;}
+
+.mag-lnk li a {
+    background-image: url(../images/gold.gif);
+	opacity:0.8;
+	font-weight:bold;
+    /*background: -webkit-linear-gradient(#0192cb, #00ca98); /* For Safari 5.1 to 6.0 */
+    /*background: -o-linear-gradient(#0192cb, #00ca98); /* For Opera 11.1 to 12.0 */
+   /* background: -moz-linear-gradient(#0192cb, #00ca98); /* For Firefox 3.6 to 15 */
+   /* background: linear-gradient(#0192cb, #00ca98); /* Standard syntax */
+}

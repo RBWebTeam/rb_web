@@ -35,14 +35,20 @@ class BankController extends InitialController
                       ->where('Product_Id','=',$product)
                       ->first();      
                        // print_r($product_detail->Product_Name);exit();
-
-    $data['bank_name'] =$bank_detail->Bank_Name;
+    if($bank_detail && $product_detail){
+      $data['bank_name'] =$bank_detail->Bank_Name;
           // print_r($data['bank_name']);exit();
     $data['Bank_Logo'] =$bank_detail->Document1;
     $data['product']   =$product_detail->Product_Name;
     $data['product_id']=$product;
      // print_r( $data['product']);exit();
     $data['bank_id']=$bank;
+    }else{
+      // echo "hello";exit();
+      return view('went-wrong');
+    }                
+
+    
     // keywords,title and description
     if ($data['bank_name']=='ICICI BANK' && $data['product']=='Home Loan') {
       $data['title']='ICICI Bank | Home Loan Eligibility & Rate of Interest ';

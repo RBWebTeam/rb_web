@@ -6,7 +6,7 @@
 	<div class="col-md-12">
 	<h2 class="align-center loan-head">Personal Loan</h2>
 	</div>
- <div class="col-md-12 white-bg mrg-btm box-shadow">
+ <div class="col-md-12 white-bg pad1 mrg-btm box-shadow">
 <img src="{{URL::to('images/9.png')}}" alt="Tribe Logo" class="img-responsive" />
 
  </div>
@@ -19,12 +19,16 @@
 <center><div class="type-cover"><span>PURPOSE OF LOAN</span></div></center>
 <div class="text-center flt-lft">
 							<div class="scenario">
-								<div class="col-xs-6 pad-no scenario-active"><a class="scenario-1">Marriage</a></div>
-								<div class="col-xs-6 pad-no"><a class="scenario-1 scenario-border">Home Releted</a></div>
-								<div class="col-xs-6 pad-no"><a class="scenario-1 scenario-top-border">Business</a></div>
-								<div class="col-xs-6 pad-no"><a class="scenario-1 scenario-top-border scenario-border">Other</a></div>
+								<div class="col-xs-6 pad-no scenario-active" ><a   class="scenario-1" >Marriage</a></div>
+								<div class="col-xs-6 pad-no" ><a  class="scenario-1 scenario-border" >Home Releted</a></div>
+								<div class="col-xs-6 pad-no" ><a class="scenario-1 scenario-top-border" >Business</a></div>
+								<div class="col-xs-6 pad-no"  ><a class="scenario-1 scenario-top-border scenario-border" >Other</a></div>
 							</div>
 						</div>
+
+
+
+<input type="hidden" name="purpose" id="putID">
 						
 						<div class="col-xs-4 form-padding">
      <input type="text" name="custom_id" id="custom_id" class="form-input-new form-control" placeholder="Existing Custom Id if Any" onkeypress="return isNumberKey(event)" required="">
@@ -45,9 +49,8 @@
 									<div class="scaling-slider">
 									
 										<div class="tenure offset5 pad">
-			                    <div  id="unranged-value" style="width:100%; height:10px;"></div>
-			                     
-									</div>
+			                        <div  id="unranged-value" style="width:100%; height:10px;"></div>
+			                        </div>
 									</div>
 								</div>
 								
@@ -58,12 +61,14 @@
      <input type="text" name="name" id="name" class="form-input-new form-control" placeholder="Applicant Name" required="">
 	</div>
 	
-	<div class="col-xs-4 form-padding">
-	 <div class="btn-grp form-control border-none" data-toggle="buttons">
-                                    <span class="btn btn-default outer-brd1 active"><input type="radio" name="Status" id="option1"><img id="myImage" src="images/male.png" class=""></span><span class="hidden-xs"> Male</span>
-                                   <span class="btn btn-default outer-brd1 "><input type="radio" name="Status" id="option2"><img id="myImage1" src="images/female.png" class=""></span> <span class="hidden-xs"> Female</span>
-           </div>		   
+	<div class="col-xs-6 form-padding">
+     <div class="btn-grp form-control border-none" data-toggle="buttons">
+      <span class="btn btn-primary outer-brd btn-blu active"><input type="radio" name="gender"  value="Male">Male</span>
+      <span class="btn btn-primary outer-brd btn-blu"><input type="radio" name="gender"  value="Female">Female</span>
+         </div>
 	   </div>
+
+
 	   
 	   <div class="col-xs-6 form-padding">
      <input type="text" id="dob" name="dob" class="form-input-new form-control lastReporteddate1" placeholder="Date of Birth" required="">
@@ -71,8 +76,8 @@
 	
 	<div class="col-xs-6 form-padding">
      <div class="btn-grp form-control border-none" data-toggle="buttons">
-      <span class="btn btn-primary white-bg-border outer-brd btn-blu active"><input type="radio" name="employment"  value="Salaried" checked>Salaried</span>
-      <span class="btn btn-primary white-bg-border outer-brd btn-blu"><input type="radio" name="employment"  value="Self-Emp"> Self-Emp</span>
+      <span class="btn btn-primary outer-brd btn-blu active"><input type="radio" name="employment"  value="Salaried">Salaried</span>
+      <span class="btn btn-primary outer-brd btn-blu"><input type="radio" name="employment"  value="Self-Emp"> Self-Emp</span>
          </div>
 	   </div>
 	   
@@ -85,8 +90,21 @@
 	</div>
 	
 	<div class="col-md-12">						
-	<button class="btn btn-primary btn-outline with-arrow top-mrg pull-left quotes">Get Best Quotes<i class="icon-arrow-right"></i></button>
-	</div>
+	<!-- <button class="btn btn-primary btn-outline with-arrow top-mrg pull-left quotes">Get Me Loan<i class="icon-arrow-right"  ></i></button> -->
+	
+	<?php if(Session::get('is_login')) { ?>
+				  <?php if(Session::get('contact')!=''){ Session::get('contact'); ?>
+				<button class="btn btn-primary btn-outline with-arrow animate-box quotes " >Get me a Loan<i class="icon-arrow-right"></i></button>
+				<?php }else{?> 
+                 <a  class="btn btn-primary btn-outline with-arrow animate-box quotes" data-toggle="modal" data-target="#contact_id">Get me a Loan<i class="icon-arrow-right"></i></a>
+				 <?php }?>
+
+			<?php }else{?>
+			<button  style="display:none" class="btn btn-primary btn-outline with-arrow animate-box quotes " id="btn_refresh">Get me a Loan<i class="icon-arrow-right"></i></button>
+
+				<a id="btn_refresh1" class="btn btn-primary btn-outline with-arrow animate-box quotes" data-toggle="modal" data-target="#login_process">Get me a Loan<i class="icon-arrow-right"></i></a>
+			<?php }?>
+			</div>
      </div>
      </form>
 
@@ -151,8 +169,29 @@
 @include('layout.script')
 
 <script type="text/javascript">
+var text='others';
+     $(document).ready(function(){
+          
+             $(".scenario").click(function(event){
+                                 	// var a=$(this).find(".active").attr('id');
+                                 	 // var answers_id=$(this).attr("data-id");
+                                   //   var comment= $(answers_id).val();
+                                     text = $(event.target).text();
+                                  
+                                 });
+
+
+                           
+
+                                
+                        
+						        });
+
   $(".quotes").click(function(event){
     event.preventDefault();
+ 
+     $('#putID').val(text);
+
       $form=$('#personal_loan_form');
       if(! $form.valid()){
          // alert("hiee");
@@ -162,8 +201,8 @@
    
         $.ajax({  
          type: "POST",  
-         url: "{{URL::to('RBA-login')}}",
-         data : $('#rba_form').serialize(),
+         url: "{{URL::to('new-personal-loan')}}",
+         data : $('#personal_loan_form').serialize(),
          success: function(msg){
          
           if(msg=='true'){
@@ -246,3 +285,62 @@
     });
 </script>
 
+<script>
+    var s0 = $("#unranged").freshslider({
+        step: 10,
+		scale: [1,,100],
+        unit:'%',
+        enabled:false
+		
+    });
+
+    var s1 = $("#ranged").freshslider({
+        range:true,
+        step:0.1,
+        text:false,
+        onchange:function(low, high){
+            // console.log(low, high);
+        }
+    });
+
+    var s2 = $("#unranged-value").freshslider({
+        step: 1,
+        value:10
+    });
+
+    var s3 = $("#ranged-value").freshslider({
+        range: true,
+        step:1,
+        value:[4, 60],
+        onchange:function(low, high){
+            // console.log(low, high);
+        }
+    });
+</script>
+
+
+
+						<script type="text/javascript">
+							
+
+						       // $(document).ready(function(){
+
+             //                      var text='others';
+             //                       $(".scenario").click(function(event){
+             //                     	// var a=$(this).find(".active").attr('id');
+             //                     	 // var answers_id=$(this).attr("data-id");
+             //                       //   var comment= $(answers_id).val();
+             //                         text = $(event.target).text();
+             //                     	 alert(text);
+             //                     });
+
+
+             //                    $(".quotes").click(function(event){
+                                 	 
+             //                      alert(text);     //scenario
+             //                     });
+
+                                
+                        
+						       //  });
+						</script>

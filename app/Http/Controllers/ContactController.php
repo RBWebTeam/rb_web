@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
-
+use DB;
 class ContactController extends InitialController
 {
     //
@@ -22,7 +22,7 @@ class ContactController extends InitialController
     }
     
     public function new_personal_loan_register(Request $req){
-        print_r($req->purpose);exit();
+     
          
          $query=DB::table('new_personal')
         ->insert(['purpose'=>$req->purpose,

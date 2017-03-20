@@ -32,7 +32,7 @@
                   
 
             </form>
-            <div class='msg displaynone' ><p>Thanks. We will reach you soon.</p></div>
+            <div class='msg displaynone' ><p>Thanks. We will reach you soongjfgj.</p></div>
             <div class='msg_err displaynone' ><p>Ooops. Something went wrong.</p></div>
             
         </div>

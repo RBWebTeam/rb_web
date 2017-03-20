@@ -314,6 +314,7 @@ td {padding:5px; text-align:center;}
 #fh5co-header {
   width: 100%;
   margin: 0;
+  box-shadow: 1px 0px 3px 0px #ccc;
 }
 @media screen and (max-width: 768px) {
   #fh5co-header {
@@ -1926,6 +1927,7 @@ body {background:#eee;}
     font-size: 20px;
 	margin:0 auto;
 	color:#fff;
+	display:block;
     margin-top:10px;
     border: 3px solid #28a0ff;
     margin-top: 10px;}
@@ -3494,11 +3496,15 @@ label {
 .white-bg-border {background:#fff;border:1px solid #999;color:#666;}
 
 .mag-lnk li a {
-    background-image: url(../images/gold.gif);
+    /*background-image: url(../images/gold.gif);*/
 	opacity:0.8;
-	font-weight:bold;
+	font-size:15px;
+	background:#0192cb;
     /*background: -webkit-linear-gradient(#0192cb, #00ca98); /* For Safari 5.1 to 6.0 */
     /*background: -o-linear-gradient(#0192cb, #00ca98); /* For Opera 11.1 to 12.0 */
    /* background: -moz-linear-gradient(#0192cb, #00ca98); /* For Firefox 3.6 to 15 */
    /* background: linear-gradient(#0192cb, #00ca98); /* Standard syntax */
+}
+.star {
+    background:#fff url(../images/star.gif);
 }

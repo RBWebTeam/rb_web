@@ -26,13 +26,16 @@ class BankController extends InitialController
 
           //  print "<pre>";
           // print_r($getQuery);exit();
+
        $bank_detail=DB::table('bank_master')->select('Bank_Name','Document1')
                       ->where('Bank_Id','=',$bank)
                       ->first();
+                       // print_r($bank_detail->Bank_Name);
       $product_detail=DB::table('product_master')->select('Product_Name')
                       ->where('Product_Id','=',$product)
                       ->first();      
                        // print_r($product_detail->Product_Name);exit();
+
     $data['bank_name'] =$bank_detail->Bank_Name;
           // print_r($data['bank_name']);exit();
     $data['Bank_Logo'] =$bank_detail->Document1;

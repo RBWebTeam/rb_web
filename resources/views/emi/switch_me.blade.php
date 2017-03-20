@@ -95,16 +95,16 @@
             // echo $empid;
              
           }else{
-            $empid = Session::get('empid')?Session::get('empid'):'';
-            $brokerid =Session::get('brokerid')?Session::get('brokerid'):'';
-            $source =Session::get('source')?Session::get('source'):'';
+            $empid = Session::get('empid')?Session::get('empid'):0;
+            $brokerid =Session::get('brokerid')?Session::get('brokerid'):0;
+            $source =Session::get('source')?Session::get('source'):0;
           }
           
           ?>
 	
-    <input type="hidden" name="empid" class="empid" id="empid"  value="<?php echo $empid?$empid:'';?>">
-          <input type="hidden" name="brokerid" id="brokerid" class="brokerid" value="<?php echo $brokerid?$brokerid:'';?>">
-          <input type="hidden" name="source" id="source"  class="source" value="<?php echo $source?$source:'';?>">                  
+    <input type="hidden" name="empid" class="empid" id="empid"  value="<?php echo $empid;?>">
+          <input type="hidden" name="brokerid" id="brokerid" class="brokerid" value="<?php echo $brokerid;?>">
+          <input type="hidden" name="source" id="source"  class="source" value="<?php echo $source;?>">                  
        <!-- <label class="control-label" for="Loan Amount">Outstanding Principal:</label> -->
        <input type="text" name="loanamount" class="form-control" id="loanamount" placeholder="Outstanding Principal" value="" onblur ="myfun()" onKeyPress="return isNumberKey(event)" maxlength="10" title="Outstanding Principal">
 

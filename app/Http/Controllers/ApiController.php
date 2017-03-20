@@ -490,6 +490,7 @@ run_else:
 		 ->select('ID','ApplicantNme','LoanRequired','ApplicantIncome','Turnover','status','ProductId')
         ->where('BrokerId','=',$id)
         ->where('ProductId','=',$ProductId)
+        ->where('status','<>','Failure')
         ->get();
         //calling Erp api
        			$emp_code=$req['empcode'];
@@ -545,6 +546,7 @@ run_else:
 		 ->select('ID','ApplicantNme','LoanRequired','ApplicantIncome','Turnover','status','ProductId')
         ->where('BrokerId','=',$id)
         ->where('ProductId','=',$ProductId)
+        ->where('status','<>','Failure')
         ->get();
         //calling Erp api
        			$flag=$req['flag'];

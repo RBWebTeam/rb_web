@@ -30,7 +30,7 @@ class BankController extends InitialController
        $bank_detail=DB::table('bank_master')->select('Bank_Name','Document1')
                       ->where('Bank_Id','=',$bank)
                       ->first();
-                       // print_r($bank_detail->Bank_Name);exit();
+                       // print_r($bank_detail->Bank_Name);
       $product_detail=DB::table('product_master')->select('Product_Name')
                       ->where('Product_Id','=',$product)
                       ->first();      

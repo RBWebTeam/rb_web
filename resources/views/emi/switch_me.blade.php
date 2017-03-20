@@ -70,10 +70,41 @@
      <!-- <i class="fa fa-exchange" aria-hidden="true"></i> -->
      
     <div class="form-group">
-	
-    <input type="hidden" name="brokerid" id="brokerid" value="<?php echo isset($_GET['brokerid'])?$_GET['brokerid']:'0';?>">
+    <?php
+          $myString = isset($_GET['referrer']);
+          if($myString){
+            
+            $myArray = explode('@', $_GET['referrer']);
+            if(isset($myArray[0])){
+              Session::put('empid', $myArray[0]);
+              $empid = Session::get('empid');
+             
+            }
+            if(isset($myArray[1])){
+             Session::put('brokerid', $myArray[1]);
+              $brokerid = Session::get('brokerid');
+            }
+            if(isset($myArray[2])){
+              Session::put('source', $myArray[2]);
+              $source = Session::get('source');
 
-    <input type="hidden" name="empcode" id="empcode" value="<?php echo isset($_GET['empcode'])?$_GET['empcode']:'0';?>">
+
+            }
+            
+            //$a= str_replace('�', '', $brokerid);
+            // echo $empid;
+             
+          }else{
+            $empid = Session::get('empid')?Session::get('empid'):'';
+            $brokerid =Session::get('brokerid')?Session::get('brokerid'):'';
+            $source =Session::get('source')?Session::get('source'):'';
+          }
+          
+          ?>
+	
+    <input type="hidden" name="empid" class="empid" id="empid"  value="<?php echo $empid?$empid:'';?>">
+          <input type="hidden" name="brokerid" id="brokerid" class="brokerid" value="<?php echo $brokerid?$brokerid:'';?>">
+          <input type="hidden" name="source" id="source"  class="source" value="<?php echo $source?$source:'';?>">                  
        <!-- <label class="control-label" for="Loan Amount">Outstanding Principal:</label> -->
        <input type="text" name="loanamount" class="form-control" id="loanamount" placeholder="Outstanding Principal" value="" onblur ="myfun()" onKeyPress="return isNumberKey(event)" maxlength="10" title="Outstanding Principal">
 
@@ -352,7 +383,7 @@
       var product_id=$("#product_id").val();
       var brokerid =$("#brokerid").val();
        var empcode =$("#empcode").val();
-      //console.log(profession);
+      // console.log(brokerid);
 
       
        var v_token = "{{csrf_token()}}";

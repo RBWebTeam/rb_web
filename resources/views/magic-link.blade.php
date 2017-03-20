@@ -1,11 +1,9 @@
 @include('layout.header')
 
 <div id="fh5co-hero" class="star">
-
 <div class="container">
 <div class="col-md-3"></div>
-<div class="col-md-6">
-<br>
+<div class="col-md-7">
 	<ul class="mag-lnk">
 	    <li><a href="{{URL::to('home-loan-transfer/home-loan')}}">HOME LOAN BALANCE TRANSFER</a></li>
 		<li><a href="{{URL::to('home-loan-transfer/loan-against-property-loan')}}">LOAN AGAINST PROPERTY BALANCE TRANSFER</a></li>
@@ -25,7 +23,13 @@
 </div><!-- container -->
 
 </div>
-<br>
-@include('layout.script')
+<video id="my-video" class="video" autoplay="autoplay" loop="loop" muted="" width="300" height="150">
+  <source src="media/demo.mp4" type="video/mp4" />
+  <source src="media/demo.ogv" type="video/ogg" />
+  <source src="media/demo.webm" type="video/webm" />
+  </video>
 @include('layout.footer')
+
+@include('layout.script')
+
 

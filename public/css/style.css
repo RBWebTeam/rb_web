@@ -1584,7 +1584,7 @@ top: -.25em;left: 20%;margin: 0 0 0 -.25em;}
 .top-lnk > li > a {padding:0px 12px;font-size: 13px; }
 
 .top-bg {background:#28a0ff;padding-top:2px;}
-.top-lnk li  {float:left;padding:2px 10px;list-style-type:none;}
+
 
 .top-lnk li  {float:left;padding:2px 0px;list-style-type:none;}
 .top-lnk li a {color:#fff;}
@@ -3309,16 +3309,6 @@ font-size:20px;margin-top: 10px;
 .fl-lft {float:left;}
 .brd-for {border:2px solid #f1f1f1;background:#f8f8f8;}
 
-@media screen and (max-width:768px) {
-	.btn-blu {padding:8px 5px;}
-	.border { float: left;width: 100%;}
-	
-}
-
-
-
-
-
 
 .input-typ {padding: 10px; 
 border:2px solid #eee;
@@ -3491,7 +3481,7 @@ label {
 
 .mag-lnk {margin:0px; padding:0px;}
 .mag-lnk li {font-size: 16px; list-style-type:none;}
-.mag-lnk li a {border-radius:5px;-moz-border-radius:5px;-webkit-border-radius:5px;border-bottom:1px solid #ddd;padding: 10px;display: block;margin-bottom: 4px;color:#fff;}
+.mag-lnk li a {border-radius:5px;-moz-border-radius:5px;-webkit-border-radius:5px;border-bottom:1px solid #333;padding: 10px;display: block;margin-bottom: 4px;color:#fff;}
 .mag-lnk li a:hover {background:#ec1b23;color:#fff;padding-left:25px;}
 .white-bg-border {background:#fff;border:1px solid #999;color:#666;}
 
@@ -3499,12 +3489,32 @@ label {
     /*background-image: url(../images/gold.gif);*/
 	opacity:0.8;
 	font-size:15px;
-	background:#0192cb;
+	background:#000;
     /*background: -webkit-linear-gradient(#0192cb, #00ca98); /* For Safari 5.1 to 6.0 */
     /*background: -o-linear-gradient(#0192cb, #00ca98); /* For Opera 11.1 to 12.0 */
    /* background: -moz-linear-gradient(#0192cb, #00ca98); /* For Firefox 3.6 to 15 */
    /* background: linear-gradient(#0192cb, #00ca98); /* Standard syntax */
 }
-.star {
+/* .star {
     background:#fff url(../images/star.gif);
+} */
+.video {
+  top:0%; left: 50%;
+  z-index: 0;
+  max-height:100%;
+  max-width:100%;
+  width:100%;
+  height:100%;
+}
+.mag-lnk {position:absolute;z-index:2; margin-top:20px;width:75%;}
+
+@media screen and (max-width:768px) {
+	.btn-blu {padding:8px 5px;}
+	.border { float: left;width: 100%;}
+	.top-lnk li  {float:none;padding:2px 0px;list-style-type:none;width:120px;}
+	.top-lnk li:hover {visibility:visible;}
+	.top-lnk {position:absolute; background:#ccc;margin-left:-1px;}
+	.mag-lnk {width:100%; height:auto;position: relative;}
+	.star {background:#fff url(../images/star.gif);}
+	 #my-video {display:none;}
 }

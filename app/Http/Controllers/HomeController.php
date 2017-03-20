@@ -103,6 +103,7 @@ class HomeController extends CallApiController
 	}
 
    public function RBA_register(Request $req){
+   
 		 
 		$query=DB::table('rba_register')
 		->insert(['Name'=>$req->name,

@@ -252,7 +252,7 @@
     <div class="col-md-3"><p>Loan Purpose*</p></div>
     <div class="col-md-8 sec">
      <select class="drop-arr" name="loan_purpose" id="loan_purpose">
-           <option>-Select Loan Purpose-</option>
+       <option>-Select Loan Purpose</option>
   		 <option>inventory rotation</option>
   		 <option>product differentiation</option>
   		 <option>expansion</option>

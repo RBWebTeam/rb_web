@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
-
+use DB;
 class ContactController extends InitialController
 {
     //
@@ -20,6 +20,30 @@ class ContactController extends InitialController
     public function new_personal_loan(){
     	return view('new-personal-loan');
     }
+    
+    public function new_personal_loan_register(Request $req){
+     
+         
+         $query=DB::table('new_personal')
+        ->insert(['purpose'=>$req->purpose,
+                 'custom_id'=>$req->custom_id,
+                 'loanamount'=>$req->loanamount,
+                 'city'=>$req->city,
+                 'tenure'=>$req->tenure,
+                 'name'=>$req->name,
+                 'gender'=>$req->gender,
+                 'dob'=>$req->dob,
+                 'employment'=>$req->employment,
+                 'monthly_income'=>$req->monthly_income,
+                 'existing_emi'=>$req->existing_emi,
+                'created_at'=>date("Y-m-d H:i:s"),
+                'updated_at'=>date("Y-m-d H:i:s")]);
+
+      
+
+    } 
+
+
 
     public function magic_link(){
         return view('magic-link');

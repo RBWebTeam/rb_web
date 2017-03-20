@@ -16,12 +16,97 @@ class WorkingCapitalController extends Controller
       }
 
       public function calculate(Request $req){
-         $paid=$req->paid;
-         $loanamount=$req->loanAmount_id;
-         $loaninterest=$req->interest/12/100;
-         $loanterm=$req->loanTenur;
-         $afterTransfer=$paid/12/100;
+
+                  $loanTenur=$req->loanTenur;
+                  $paid=$req->paid;
+                  $loanamount=$req->loanAmount_id;
+        if($req->ID=="tlf"){
+
+              if(9.5<=$req->interest){
+
+            $totalinterest=($loanamount*$req->interest)/100;
+            $MonthlyInterest=$totalinterest/12;
+            $Dropinterest=$req->interest-$paid;
+            $totalpaid=($loanamount*$paid)/100;
+            $PaidInterest=$totalpaid/12;
+            $MonthlySaving=$MonthlyInterest - $PaidInterest;
+            $YearlySaving=$MonthlySaving*12;
+
+
+                  $array=array('success' =>true,'drop_interest'=>$Dropinterest,'monthlyinterest'=>$MonthlyInterest,'totleMonthlysaving'=>$MonthlySaving,'totalYearSaving'=>$YearlySaving,);
+           return $array;
          
+           
+   }else{
+
+      $array=array('success' =>true,'drop_interest'=>0,'monthlyinterest'=>0,'totleMonthlysaving'=>0,'totalYearSaving'=>0,);
+           return $array;
+   }
+ 
+     }else if($req->ID=="pcd"){
+
+
+    if(7<$req->interest){
+
+ 
+ 
+            $totalinterest=($loanamount*$req->interest)/100;
+            $MonthlyInterest=$totalinterest/$loanTenur;
+            $Dropinterest=$req->interest-$paid;
+            $totalpaid=($loanamount*$paid)/100;
+            $PaidInterest=$totalpaid/$loanTenur;
+            $MonthlySaving=$MonthlyInterest - $PaidInterest;
+            $YearlySaving=$MonthlySaving*$loanTenur;
+
+
+                  $array=array('success0' =>true,'drop_interest'=>$Dropinterest,'monthlyinterest'=>$MonthlyInterest,'totleMonthlysaving'=>$MonthlySaving,'totalYearSaving'=>$YearlySaving,);
+           return $array;
+         
+           
+   }else{
+
+      $array=array('success0' =>true,'drop_interest'=>0,'monthlyinterest'=>0,'totleMonthlysaving'=>0,'totalYearSaving'=>0,);
+           return $array;
+   }
+
+
+     }else if($req->ID=="pcfc"){
+
+
+    if(5<$req->interest){
+
+
+
+            $totalinterest=($loanamount*$req->interest)/100;
+            $MonthlyInterest=$totalinterest/$loanTenur;
+            $Dropinterest=$req->interest-$paid;
+            $totalpaid=($loanamount*$paid)/100;
+            $PaidInterest=$totalpaid/$loanTenur;
+            $MonthlySaving=$MonthlyInterest - $PaidInterest;
+            $YearlySaving=$MonthlySaving*$loanTenur;
+
+
+                  $array=array('success1' =>true,'drop_interest'=>$Dropinterest,'monthlyinterest'=>$MonthlyInterest,'totleMonthlysaving'=>$MonthlySaving,'totalYearSaving'=>$YearlySaving,);
+           return $array;
+         
+           
+   }else{
+
+      $array=array('success1' =>true,'drop_interest'=>0,'monthlyinterest'=>0,'totleMonthlysaving'=>0,'totalYearSaving'=>0,);
+           return $array;
+   }
+
+
+     }  
+
+       
+         // $loaninterest=$req->interest/12/100;
+         // $loanterm=$req->loanTenur;
+         // $afterTransfer=$paid/12/100;
+         
+
+          
+exit;
     
 
      if($req->ID==1){

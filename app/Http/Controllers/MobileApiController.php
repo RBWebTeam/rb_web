@@ -17,7 +17,7 @@ class MobileApiController extends ApiController
 		if($data=='Failure occured' || $data->getData()->data==[]){
 			$new_data=NULL;
 			$status_Id=1;
-			$msg=" Something went wrong.";
+			$msg="No record Found";
 			$quote=NULL;
 			$url=NULL;
 		}
@@ -54,7 +54,7 @@ class MobileApiController extends ApiController
 		else{
 			$new_data=NULL;
 			$status_Id=1;
-			$msg=" Something went wrong.";
+			$msg="No record Found";
 			$quote=NULL;
 			$url=NULL;
 		}

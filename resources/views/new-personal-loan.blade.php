@@ -62,11 +62,17 @@
 	</div>
 	
 	<div class="col-xs-6 form-padding">
+   <div class="btn-grp form-control border-none" data-toggle="buttons">
+                                    <span class="btn btn-primary outer-brd1 active"><input type="radio" name="gender"  value="Male"><img id="myImage" src="images/male.png" class=""></span><span class="hidden-xs">Male</span>
+                                   <span class="btn btn-primary outer-brd1 "><input type="radio"name="gender"  value="Female"><img id="myImage1" src="images/female.png" class=""></span> <span class="hidden-xs">Female</span>
+           </div>      
+     </div>
+     <!-- <div class="col-xs-6 form-padding">
      <div class="btn-grp form-control border-none" data-toggle="buttons">
       <span class="btn btn-primary outer-brd btn-blu active"><input type="radio" name="gender"  value="Male">Male</span>
       <span class="btn btn-primary outer-brd btn-blu"><input type="radio" name="gender"  value="Female">Female</span>
          </div>
-	   </div>
+     </div> -->
 
 
 	   

@@ -111,7 +111,7 @@ class CompareController extends ExperianController
     }
 
     public function calculation(Request $req){
-       // print_r($req->all());exit();
+       //print_r($req->all());exit();
 
      $getQuery=DB::select('call usp_get_balance_transfer_quot("'.$req['loanamount'].'","'.$req['loaninterest'].'","'.$req['product_id'].'")');
 
@@ -123,6 +123,8 @@ class CompareController extends ExperianController
             $loanterm=$req['loanterm'];
             $brokerid = $req['brokerid'];
             $empcode = $req['empcode'];
+            //print_r($brokerid);
+
 
 
 

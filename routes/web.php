@@ -101,9 +101,13 @@ Route::get('apply-express-loan','LoanController@apply_express_loan');
 Route::post('express-loan-send-otp','LoanController@express_send_otp');
 Route::post('express-loan-verify','LoanController@express_verify_otp');
 Route::post('aditya-express-loan','LoanController@express_form');
+
 Route::get('new-personal-loan','ContactController@new_personal_loan');
 Route::post('new-personal-loan','ContactController@new_personal_loan_register');
 Route::get('sitemap','ContactController@magic_link');
+
+
+
 
 
 //new loans test
@@ -212,3 +216,10 @@ Route::get('idfc','IdfcController@idfc');
 Route::get('tribe','TribeController@tribe');
 Route::post('save-tribe-form','TribeController@save_tribe_form');
 
+
+//  new loan process 
+Route::get('new-sme-loan','NewProcessController@newSmeLoan');
+Route::get('new-loan-against-property','NewProcessController@newLoanAgainstProperty');
+Route::get('new-home-loan','NewProcessController@newHomeLoan');
+Route::get('new-car-loan','NewProcessController@newCarLoan');
+Route::get('new-business-loan','NewProcessController@newBusinessLoan');

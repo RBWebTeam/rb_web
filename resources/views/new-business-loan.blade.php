@@ -3,6 +3,7 @@
 	
 	<aside id="fh5co-hero">
 	<div class="col-md-12">
+	<h2 class="align-center loan-head">Unsecured Business Loan</h2>
 	</div>
  <div class="col-md-12 white-bg mrg-btm">
 <img src="{{URL::to('images/9.png')}}" alt="Tribe Logo" class="img-responsive" />

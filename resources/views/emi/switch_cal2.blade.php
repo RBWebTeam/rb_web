@@ -48,10 +48,11 @@ foreach ($data as $key => $value){?>
 
    
     <table class="table table-bordered">
-                  <tbody><tr><td class="td-main-1" width="100">
-                  <div class="loan-amt">
-                        <p>LOGO</p>
-                        <img src="{{ $value['Bank_Logo']}}" class="img-responsive" width="100%">
+                  <tbody><tr>
+                  <td class="td-main-1" width="100" rowspan="2">
+                  <div class="loan-amt no-brd">
+                   
+                        <img src="{{ $value['Bank_Logo']}}" width="90" >
                       </div>
 
                       

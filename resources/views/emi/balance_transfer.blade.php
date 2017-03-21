@@ -59,8 +59,7 @@
 
 }
 
-
-
+.no-brd {border-bottom:none;}
 
 	 
 .price-box {
@@ -428,7 +427,7 @@ label {
         <h4 class="modal-title"></h4>
       </div>
       <div class="modal-body">
-        <h5><p>Interest should be <mark style="color:red">greater than 9.0%</mark>.If less..Congrats you are already on lowest rate.</p></h5>
+        <h5><p>Interest should be <mark style="color:red">greater than 8.0%</mark>.If less..Congrats you are already on lowest rate.</p></h5>
         
       </div>
       
@@ -789,7 +788,7 @@ $('#slider').slider({
 	function alert_him1(e){
 		
  	$("#loaninterest").change(function(){
-	if(parseInt(this.value) < 9 || this.value == 9){
+	if(parseInt(this.value) < 8 || this.value == 8){
         $('#homeTransfer1').modal('show');
      }
 })

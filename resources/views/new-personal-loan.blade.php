@@ -49,7 +49,7 @@
 									<div class="scaling-slider">
 									
 										<div class="tenure offset5 pad">
-			                        <div  id="unranged-value" style="width:100%; height:10px;"></div>
+			                        <div  id="unranged-value" value="" style="width:100%; height:10px;"></div>
 			                        </div>
 									</div>
 								</div>
@@ -69,12 +69,12 @@
                                    <span class="btn btn-default outer-brd1 outer-brd1 "><input type="radio"name="gender"  value="Female"><img id="myImage1" src="images/female.png" class=""></span> <span class="hidden-xs">Female</span>
            </div>      
      </div>
-     <!-- <div class="col-xs-6 form-padding">
+     <div class="col-xs-6 form-padding">
      <div class="btn-grp form-control border-none" data-toggle="buttons">
       <span class="btn btn-primary outer-brd btn-blu active"><input type="radio" name="gender"  value="Male">Male</span>
       <span class="btn btn-primary outer-brd btn-blu"><input type="radio" name="gender"  value="Female">Female</span>
          </div>
-     </div> -->
+     </div>
 	
 	<div class="col-xs-6 form-padding">
      <div class="btn-grp form-control border-none" data-toggle="buttons">
@@ -92,20 +92,9 @@
 	</div>
 	
 	<div class="col-md-12">						
-	<!-- <button class="btn btn-primary btn-outline with-arrow top-mrg pull-left quotes">Get Me Loan<i class="icon-arrow-right"  ></i></button> -->
+	<button class="btn btn-primary btn-outline with-arrow top-mrg pull-left quotes">Get Me Loan<i class="icon-arrow-right"  ></i></button>
 	
-	<?php if(Session::get('is_login')) { ?>
-				  <?php if(Session::get('contact')!=''){ Session::get('contact'); ?>
-				<button class="btn btn-primary btn-outline with-arrow animate-box quotes " >Get me a Loan<i class="icon-arrow-right"></i></button>
-				<?php }else{?> 
-                 <a  class="btn btn-primary btn-outline with-arrow animate-box quotes" data-toggle="modal" data-target="#contact_id">Get me a Loan<i class="icon-arrow-right"></i></a>
-				 <?php }?>
-
-			<?php }else{?>
-			<button  style="display:none" class="btn btn-primary btn-outline with-arrow animate-box quotes " id="btn_refresh">Get me a Loan<i class="icon-arrow-right"></i></button>
-
-				<a id="btn_refresh1" class="btn btn-primary btn-outline with-arrow animate-box quotes" data-toggle="modal" data-target="#login_process">Get me a Loan<i class="icon-arrow-right"></i></a>
-			<?php }?>
+	
 			</div>
      </div>
      </form>
@@ -194,8 +183,7 @@ var text='others';
 
  
      $('#putID').val(text);
-     var slidr = $("#unranged-value").val();
-    console.log(slidr);
+     
 
       $form=$('#personal_loan_form');
       if(! $form.valid()){
@@ -203,7 +191,10 @@ var text='others';
       }else{
         //var s=$('#'+form).serialize();
     // alert("hiee");
-    
+        var slidr = $("#unranged-value").text();
+         $('#tenure').val(slidr);
+         console.log(slidr);
+
         $.ajax({  
          type: "POST",  
          url: "{{URL::to('new-personal-loan')}}",

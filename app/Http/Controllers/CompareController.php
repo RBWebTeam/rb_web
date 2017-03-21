@@ -241,7 +241,7 @@ class CompareController extends ExperianController
                 //savings//
                 if($getQuery[0]->roi==0){
                 $getQuery[0]->roi=1;
-          }
+                 }
                 $new_rate=$getQuery[0]->roi/12/100;
                 $new_amount = $loanamount * $new_rate * (pow(1 + $new_rate, $loanterm) / (pow(1 + $new_rate, $loanterm) - 1));
 
@@ -258,7 +258,7 @@ class CompareController extends ExperianController
                 
                 $returnHTML = view('emi/switch_cal2')->with('data', $test)->with('sata', $user)->render();
                 return response()->json(array('success' => true, 'amount'=>$amount, 'new_amount'=>$new_amount, 'drop_emi'=>$drop_emi,'drop_in_int'=>$drop_in_int, 'savings'=>$savings, 'emiperlacs'=> $emiperlacs, 'html'=>$returnHTML));                            
-            }
+                 }
                 else{
    
                 return response()->json(array('success' => false));

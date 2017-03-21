@@ -92,7 +92,19 @@
 	</div>
 	
 	<div class="col-md-12">						
-	<button class="btn btn-primary btn-outline with-arrow top-mrg pull-left quotes">Get Me Loan<i class="icon-arrow-right"  ></i></button>
+	<!-- <button class="btn btn-primary btn-outline with-arrow top-mrg pull-left quotes">Get Me Loan<i class="icon-arrow-right"  ></i></button> -->
+  <?php if(Session::get('is_login')) { ?>
+          <?php if(Session::get('contact')!=''){ Session::get('contact'); ?>
+        <button class="btn btn-primary btn-outline with-arrow animate-box quotes " >Get me a Loan<i class="icon-arrow-right"></i></button>
+        <?php }else{?> 
+                 <a  class="btn btn-primary btn-outline with-arrow animate-box quotes" data-toggle="modal" data-target="#contact_id">Get me a Loan<i class="icon-arrow-right"></i></a>
+         <?php }?>
+
+      <?php }else{?>
+      <button  style="display:none" class="btn btn-primary btn-outline with-arrow animate-box quotes " id="btn_refresh">Get me a Loan<i class="icon-arrow-right"></i></button>
+
+        <a id="btn_refresh1" class="btn btn-primary btn-outline with-arrow animate-box quotes" data-toggle="modal" data-target="#login_process">Get me a Loan<i class="icon-arrow-right"></i></a>
+      <?php }?>
 
   
 	

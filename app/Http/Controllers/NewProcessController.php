@@ -36,4 +36,11 @@ class NewProcessController extends Controller
           return view('new-business-loan');
 
       }
+
+
+      public function edelweiss(){
+
+             return view('edelweiss');
+
+      }
 }

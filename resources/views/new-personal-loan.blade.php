@@ -12,7 +12,7 @@
  </div>
  <div class="col-md-12 white-bg pad box-shadow fl-lft">
     
-    <form class="form-horizontal" id="personal_loan_form">
+    <form name='personal_loan_process_form' id='personal_loan_process_form' action={{URL::to('loan-submit')}} method="POST">
       {{ csrf_field() }}
 	<div class="col-md-8">
 	<h3 class="main-header">Genral Information</h3>
@@ -34,10 +34,10 @@
      <input type="text" name="custom_id" id="custom_id" class="form-input-new form-control" placeholder="Existing Custom Id if Any" onkeypress="return isNumberKey(event)" required="">
 	</div>
 	<div class="col-xs-4 form-padding">
-     <input type="text" name="loanamount" id="loanamount" class="form-input-new form-control" placeholder="Loan Required" onkeypress="return isNumberKey(event)" maxlength="10" required="">
+     <input type="text" name="loan_amount" id="loan_amount" class="form-input-new form-control" placeholder="Loan Required" onkeypress="return isNumberKey(event)" maxlength="10" required="">
 	</div>
 	<div class="col-xs-4 form-padding">
-     <input type="text" id="city" name="city" class="form-input-new form-control search_city" placeholder="City of Location" required="">
+     <input type="text" id="city_name" name="city_name" class="form-input-new form-control search_city" placeholder="City of Location" required="">
 	</div>
 	
 	<div class="loan-tenure">
@@ -58,7 +58,7 @@
 								
   
 	   <div class="col-xs-8 form-padding">
-     <input type="text" name="name" id="name" class="form-input-new form-control" placeholder="Applicant Name" required="">
+     <input type="text" name="applicant_name" id="applicant_name" class="form-input-new form-control" placeholder="Applicant Name" required="">
 	</div>
 	<div class="col-xs-6 form-padding">
      <input type="text" id="dob" name="dob" class="form-input-new form-control lastReporteddate1" placeholder="Date of Birth" required="">
@@ -66,33 +66,47 @@
 	<div class="col-xs-6 form-padding">
    <div class="btn-grp form-control border-none" data-toggle="buttons">
                                     <span class="btn btn-default outer-brd1 outer-brd1 active"><input type="radio" name="gender"  value="Male"><img id="myImage" src="images/male.png" class=""></span><span class="hidden-xs">Male</span>
-                                   <span class="btn btn-default outer-brd1 outer-brd1 "><input type="radio"name="gender"  value="Female"><img id="myImage1" src="images/female.png" class=""></span> <span class="hidden-xs">Female</span>
+                                   <span class="btn btn-default outer-brd1 outer-brd1 "><input type="radio" name="gender"  value="Female"><img id="myImage1" src="images/female.png" class=""></span> <span class="hidden-xs">Female</span>
            </div>      
      </div>
-     <div class="col-xs-6 form-padding">
+     <!-- <div class="col-xs-6 form-padding">
      <div class="btn-grp form-control border-none" data-toggle="buttons">
       <span class="btn btn-primary outer-brd btn-blu active"><input type="radio" name="gender"  value="Male">Male</span>
       <span class="btn btn-primary outer-brd btn-blu"><input type="radio" name="gender"  value="Female">Female</span>
          </div>
-     </div>
+     </div> -->
 	
 	<div class="col-xs-6 form-padding">
      <div class="btn-grp form-control border-none" data-toggle="buttons">
-      <span class="btn btn-default outer-brd active"><input type="radio" name="employment"  value="Salaried">Salaried</span>
-      <span class="btn btn-default outer-brd "><input type="radio" name="employment"  value="Self-Emp"> Self-Emp</span>
+      <span class="btn btn-default outer-brd active"><input type="radio" name="emp_detail_id"   value="1">Salaried</span>
+      <span class="btn btn-default outer-brd "><input type="radio" name="emp_detail_id"  value="2"> Self-Emp</span>
          </div>
 	   </div>
 	   
 	   <div class="col-xs-6 form-padding">
-     <input type="text" name="monthly_income" id="monthly_income" class="form-input-new form-control"  onkeypress="return isNumberKey(event)"  placeholder="Monthly Income" required="">
+     <input type="text" name="income" id="income" class="form-input-new form-control"  onkeypress="return isNumberKey(event)"  placeholder="Monthly Income" required="">
 	</div>
 	
 	<div class="col-xs-6 form-padding">
-     <input type="text" name="existing_emi" id="existing_emi" class="form-input-new form-control" placeholder="Exsisting EMI (If Any)" onkeypress="return isNumberKey(event)" required="">
+     <input type="text" name="obligation" id="obligation" class="form-input-new form-control" placeholder="Exsisting EMI (If Any)" onkeypress="return isNumberKey(event)" required="">
 	</div>
 	
 	<div class="col-md-12">						
-	<button class="btn btn-primary btn-outline with-arrow top-mrg pull-left quotes">Get Me Loan<i class="icon-arrow-right"  ></i></button>
+	<!-- <button class="btn btn-primary btn-outline with-arrow top-mrg pull-left quotes">Get Me Loan<i class="icon-arrow-right"  ></i></button> -->
+  <?php if(Session::get('is_login')) { ?>
+          <?php if(Session::get('contact')!=''){ Session::get('contact'); ?>
+        <button class="btn btn-primary btn-outline with-arrow animate-box quotes " >Get me a Loan<i class="icon-arrow-right"></i></button>
+        <?php }else{?> 
+                 <a  class="btn btn-primary btn-outline with-arrow animate-box quotes" data-toggle="modal" data-target="#contact_id">Get me a Loan<i class="icon-arrow-right"></i></a>
+         <?php }?>
+
+      <?php }else{?>
+      <button  style="display:none" class="btn btn-primary btn-outline with-arrow animate-box quotes " id="btn_refresh">Get me a Loan<i class="icon-arrow-right"></i></button>
+
+        <a id="btn_refresh1" class="btn btn-primary btn-outline with-arrow animate-box quotes" data-toggle="modal" data-target="#login_process">Get me a Loan<i class="icon-arrow-right"></i></a>
+      <?php }?>
+
+  
 	
 	
 			</div>
@@ -100,7 +114,7 @@
      </form>
 
 	 
-	 <div class="col-md-4" style="display: none;">
+	 <div class="col-md-4" >
 	   <div class="border brd-for">
 
              <form class="" id="compareform" role="form" method="POST" action="">
@@ -160,32 +174,11 @@
 @include('layout.script')
 
 <script type="text/javascript">
-var text='others';
-     $(document).ready(function(){
-          
-             $(".scenario").click(function(event){
-                                 	// var a=$(this).find(".active").attr('id');
-                                 	 // var answers_id=$(this).attr("data-id");
-                                   //   var comment= $(answers_id).val();
-                                     text = $(event.target).text();
-                                  
-                                 });
 
-
-                           
-
-                                
-                        
-						        });
 
   $(".quotes").click(function(event){
     event.preventDefault();
-
- 
-     $('#putID').val(text);
-     
-
-      $form=$('#personal_loan_form');
+   $form=$('#personal_loan_process_form');
       if(! $form.valid()){
          // alert("hiee");
       }else{
@@ -198,7 +191,7 @@ var text='others';
         $.ajax({  
          type: "POST",  
          url: "{{URL::to('new-personal-loan')}}",
-         data : $('#personal_loan_form').serialize(),
+         data : $('#personal_loan_process_form').serialize(),
          success: function(msg){
          
           if(msg=='true'){
@@ -207,10 +200,10 @@ var text='others';
               window.location.href ="{{URL::to('thank-you')}}";
             
           }else{
-            $("#showerror").show();
+            // $("#showerror").show();
 
-            //console.log("bye");
-            //window.location.href ="{{URL::to('went-wrong')}}";
+            // console.log("bye");
+            window.location.href ="{{URL::to('went-wrong')}}";
           } 
           
 
@@ -281,62 +274,3 @@ var text='others';
     });
 </script>
 
-<!-- <script>
-    var s0 = $("#unranged").freshslider({
-        step: 10,
-		scale: [1,,100],
-        unit:'%',
-        enabled:false
-		
-    });
-
-    var s1 = $("#ranged").freshslider({
-        range:true,
-        step:0.1,
-        text:false,
-        onchange:function(low, high){
-            // console.log(low, high);
-        }
-    });
-
-    var s2 = $("#unranged-value").freshslider({
-        step: 1,
-        value:10
-    });
-
-    var s3 = $("#ranged-value").freshslider({
-        range: true,
-        step:1,
-        value:[4, 60],
-        onchange:function(low, high){
-            // console.log(low, high);
-        }
-    });
-</script>
-
- -->
-
-						<script type="text/javascript">
-							
-
-						       // $(document).ready(function(){
-
-             //                      var text='others';
-             //                       $(".scenario").click(function(event){
-             //                     	// var a=$(this).find(".active").attr('id');
-             //                     	 // var answers_id=$(this).attr("data-id");
-             //                       //   var comment= $(answers_id).val();
-             //                         text = $(event.target).text();
-             //                     	 alert(text);
-             //                     });
-
-
-             //                    $(".quotes").click(function(event){
-                                 	 
-             //                      alert(text);     //scenario
-             //                     });
-
-                                
-                        
-						       //  });
-						</script>

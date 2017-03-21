@@ -73,8 +73,8 @@
     <?php
           $myString = isset($_GET['referrer']);
           if($myString){
-            
-            $refapp =1;
+            Session::put('refid', '1');
+            $refapp =Session::get('refid');
 
             $myArray = explode('@', $_GET['referrer']);
             if(isset($myArray[0])){
@@ -100,7 +100,7 @@
             $empid = Session::get('empid')?Session::get('empid'):0;
             $brokerid =Session::get('brokerid')?Session::get('brokerid'):0;
             $source =Session::get('source')?Session::get('source'):0;
-            $refapp=0;
+            $refapp=Session::get('refid')?Session::get('refid'):0;
           }
           
           ?>

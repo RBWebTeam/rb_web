@@ -309,11 +309,11 @@
   </tr>
   <tr>
     <td class="text-left">Packing Credit Domestic</td>
-    <td>0</td>
+    <td id="domestic_ID"></td>
   </tr>
   <tr>
-    <td class="text-left">Packing credit foreign Currency</td>
-    <td>0</td>
+    <td class="text-left" >Packing credit foreign Currency</td>
+    <td id="currency_ID"></td>
   </tr>
 </table>
   </div>
@@ -638,7 +638,7 @@ function ajax(_token,loanAmount_id,interest,loanTenurMonth,ID,paid){
                   document.getElementById("dmonthlysavinf").innerHTML=totleMonthlysaving;
                   document.getElementById("dyearlysaving").innerHTML=totalYearSaving;
                       
-
+                    $('#domestic_ID').text(totalYearSaving);
                       
                      }
                   
@@ -654,7 +654,7 @@ function ajax(_token,loanAmount_id,interest,loanTenurMonth,ID,paid){
                   document.getElementById("fcmonthlysavinf").innerHTML=totleMonthlysaving;
                   document.getElementById("fcyearlysaving").innerHTML=totalYearSaving;
                       
-
+                   $('#currency_ID').text(totalYearSaving);
                       
                      }
 

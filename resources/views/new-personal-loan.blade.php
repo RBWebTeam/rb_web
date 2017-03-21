@@ -111,7 +111,7 @@
      </form>
 
 	 
-	 <div class="col-md-4">
+	 <div class="col-md-4" style="display: none;">
 	   <div class="border brd-for">
 
              <form class="" id="compareform" role="form" method="POST" action="">
@@ -191,8 +191,11 @@ var text='others';
 
   $(".quotes").click(function(event){
     event.preventDefault();
+
  
      $('#putID').val(text);
+     var slidr = $("#unranged-value").val();
+    console.log(slidr);
 
       $form=$('#personal_loan_form');
       if(! $form.valid()){
@@ -200,7 +203,7 @@ var text='others';
       }else{
         //var s=$('#'+form).serialize();
     // alert("hiee");
-   
+    
         $.ajax({  
          type: "POST",  
          url: "{{URL::to('new-personal-loan')}}",
@@ -287,7 +290,7 @@ var text='others';
     });
 </script>
 
-<script>
+<!-- <script>
     var s0 = $("#unranged").freshslider({
         step: 10,
 		scale: [1,,100],
@@ -320,7 +323,7 @@ var text='others';
     });
 </script>
 
-
+ -->
 
 						<script type="text/javascript">
 							

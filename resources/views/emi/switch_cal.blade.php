@@ -37,6 +37,7 @@
   $product_id=$sata['product_id'];
   $broker_id =$sata['brokerid'];
    $empcode =$sata['empcode'];
+   $refapp =$sata['refapp'];
     
   
   
@@ -77,7 +78,7 @@ foreach ($data as $key => $value){?>
     <td><?php echo round($savings); ?>  </td>
     <td>
     
-    <a href="{{URL::to('apply-lead-online')}}?qoutid=0&BankId={{$value['Bank_Id']}}&brokerid={{$broker_id}}&loanamount={{ $loanamount}}&loaninterest={{$loaninterest }}&loanterm={{$loanterm}}&product={{$product_id}}&roi_type={{$value['roi_type']}}&empcode={{$empcode}}&processingfee={{$value['processingfee']}}" class="apply-btn">Apply Online</a></td>
+    <a href="{{URL::to('apply-lead-online')}}?qoutid=0&BankId={{$value['Bank_Id']}}&brokerid={{$broker_id}}&loanamount={{ $loanamount}}&loaninterest={{$loaninterest }}&loanterm={{$loanterm}}&product={{$product_id}}&roi_type={{$value['roi_type']}}&empcode={{$empcode}}&processingfee={{$value['processingfee']}}&refapp={{$refapp}}" class="apply-btn">Apply Online</a></td>
                            
 
     </tr>

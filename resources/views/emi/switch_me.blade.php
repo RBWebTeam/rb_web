@@ -74,6 +74,8 @@
           $myString = isset($_GET['referrer']);
           if($myString){
             
+            $refapp =1;
+
             $myArray = explode('@', $_GET['referrer']);
             if(isset($myArray[0])){
               Session::put('empid', $myArray[0]);
@@ -98,13 +100,15 @@
             $empid = Session::get('empid')?Session::get('empid'):0;
             $brokerid =Session::get('brokerid')?Session::get('brokerid'):0;
             $source =Session::get('source')?Session::get('source'):0;
+            $refapp=0;
           }
           
           ?>
 	
     <input type="hidden" name="empid" class="empid" id="empid"  value="<?php echo $empid;?>">
           <input type="hidden" name="brokerid" id="brokerid" class="brokerid" value="<?php echo $brokerid;?>">
-          <input type="hidden" name="source" id="source"  class="source" value="<?php echo $source;?>">                  
+          <input type="hidden" name="source" id="source"  class="source" value="<?php echo $source;?>">
+          <input type="hidden" name="refapp" id="refapp"  class="source" value="<?php echo $refapp;?>">                  
        <!-- <label class="control-label" for="Loan Amount">Outstanding Principal:</label> -->
        <input type="text" name="loanamount" class="form-control" id="loanamount" placeholder="Outstanding Principal" value="" onblur ="myfun()" onKeyPress="return isNumberKey(event)" maxlength="10" title="Outstanding Principal">
 
@@ -383,7 +387,8 @@
       var product_id=$("#product_id").val();
       var brokerid =$("#brokerid").val();
        var empcode =$("#empcode").val();
-      // console.log(brokerid);
+       var refapp =$("#refapp").val();
+       // console.log(app);
 
       
        var v_token = "{{csrf_token()}}";
@@ -391,7 +396,7 @@
                type: "POST",  
                url: "{{URL::to('calculation')}}",
                dataType:'json',
-               data : { 'loanamount': loanamount , 'loaninterest': loaninterest ,'loanterm' :loanterm,'_token': v_token,'profession':profession,'product_id':product_id,'brokerid':brokerid,'empcode':empcode},
+               data : { 'loanamount': loanamount , 'loaninterest': loaninterest ,'loanterm' :loanterm,'_token': v_token,'profession':profession,'product_id':product_id,'brokerid':brokerid,'empcode':empcode,'refapp':refapp},
                // 'bank':bank},
                success: function(msg){
                     console.log(msg);

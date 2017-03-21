@@ -314,6 +314,7 @@ td {padding:5px; text-align:center;}
 #fh5co-header {
   width: 100%;
   margin: 0;
+  box-shadow: 1px 0px 3px 0px #ccc;
 }
 @media screen and (max-width: 768px) {
   #fh5co-header {
@@ -1583,7 +1584,7 @@ top: -.25em;left: 20%;margin: 0 0 0 -.25em;}
 .top-lnk > li > a {padding:0px 12px;font-size: 13px; }
 
 .top-bg {background:#28a0ff;padding-top:2px;}
-.top-lnk li  {float:left;padding:2px 10px;list-style-type:none;}
+
 
 .top-lnk li  {float:left;padding:2px 0px;list-style-type:none;}
 .top-lnk li a {color:#fff;}
@@ -1890,7 +1891,7 @@ body {background:#eee;}
 .error-template {padding: 40px 15px;text-align: center;}
 .error-actions {margin-top:15px;margin-bottom:15px;}
 .error-actions .btn { margin-right:10px; }
-/* .outer-brd {border: 5px solid #ffffff; box-shadow: 1px 1px 3px 1px #ccc;}*/
+.outer-brd {border: 0px; box-shadow: 1px 1px 3px 1px #ccc;}
 .gray-bg {background:#ddd;}
 .apply-btn {color:#fff;background: #3699c1; padding: 10px; margin:3px; display:block;}
 
@@ -1926,6 +1927,7 @@ body {background:#eee;}
     font-size: 20px;
 	margin:0 auto;
 	color:#fff;
+	display:block;
     margin-top:10px;
     border: 3px solid #28a0ff;
     margin-top: 10px;}
@@ -1982,7 +1984,7 @@ body {background:#eee;}
   .txt-title1 {font-weight:bold; text-transform:uppercase; border-right:1px solid #ddd;}
   .error-template img {margin:auto; }
   .heigh-bt {height:300px; box-shadow:1px 1px 1px 1px #ccc; border-radius:5px;-moz-border-radius:5px;-webkit-border-radius:5px;}
-   .heigh-bt2 {height:375px; box-shadow:1px 1px 1px 1px #ccc;}
+   .heigh-bt2 {height:416px; box-shadow:1px 1px 1px 1px #ccc;}
    .heigh-bt1  {height:330px; box-shadow:1px 1px 1px 1px #ccc;}
   .mrg-tp {margin-top:8px;}
   .box-shadow {box-shadow:1px 1px 1px 1px #ccc;}
@@ -3294,7 +3296,7 @@ font-size:20px;margin-top: 10px;
 
 .scaling-slider {
     width: 100%;
-    height: 75px;
+    height: 70px;
     border: 1px solid #d2d2d2;
 }
 .img-responsive {
@@ -3306,16 +3308,6 @@ font-size:20px;margin-top: 10px;
 
 .fl-lft {float:left;}
 .brd-for {border:2px solid #f1f1f1;background:#f8f8f8;}
-
-@media screen and (max-width:768px) {
-	.btn-blu {padding:8px 5px;}
-	.border { float: left;width: 100%;}
-	
-}
-
-
-
-
 
 
 .input-typ {padding: 10px; 
@@ -3431,7 +3423,7 @@ input:checked + .slider:before {
 
 .form-control {
 
-    height: 50px;
+    height:45px;
     padding: 6px 6px;
     font-size: 13px;
     color: #999;
@@ -3489,16 +3481,40 @@ label {
 
 .mag-lnk {margin:0px; padding:0px;}
 .mag-lnk li {font-size: 16px; list-style-type:none;}
-.mag-lnk li a {border-radius:5px;-moz-border-radius:5px;-webkit-border-radius:5px;border-bottom:1px solid #ddd;padding: 10px;display: block;margin-bottom: 4px;color:#fff;}
+.mag-lnk li a {text-align:center;border-radius:5px;-moz-border-radius:5px;-webkit-border-radius:5px;border-bottom:1px solid #333;padding: 10px;display: block;margin-bottom: 4px;color:#fff;}
 .mag-lnk li a:hover {background:#ec1b23;color:#fff;padding-left:25px;}
 .white-bg-border {background:#fff;border:1px solid #999;color:#666;}
 
 .mag-lnk li a {
-    background-image: url(../images/gold.gif);
+    /*background-image: url(../images/gold.gif);*/
 	opacity:0.8;
-	font-weight:bold;
+	font-size:15px;
+	background:#000;
     /*background: -webkit-linear-gradient(#0192cb, #00ca98); /* For Safari 5.1 to 6.0 */
     /*background: -o-linear-gradient(#0192cb, #00ca98); /* For Opera 11.1 to 12.0 */
    /* background: -moz-linear-gradient(#0192cb, #00ca98); /* For Firefox 3.6 to 15 */
    /* background: linear-gradient(#0192cb, #00ca98); /* Standard syntax */
+}
+/* .star {
+    background:#fff url(../images/star.gif);
+} */
+.video {
+  top:0%; left: 50%;
+  z-index: 0;
+  max-height:100%;
+  max-width:100%;
+  width:100%;
+  height:100%;
+}
+.mag-lnk {position:absolute;z-index:2; margin-top:20px;width:75%;}
+
+@media screen and (max-width:768px) {
+	.btn-blu {padding:8px 5px;}
+	.border { float: left;width: 100%;}
+	.top-lnk li  {float:none;padding:2px 0px;list-style-type:none;width:120px;}
+	.top-lnk li:hover {visibility:visible;}
+	.top-lnk {position:absolute; background:#ccc;margin-left:-1px;}
+	.mag-lnk {width:100%; height:auto;position: relative;}
+	.star {background:#fff url(../images/star.gif);}
+	 #my-video {display:none;}
 }

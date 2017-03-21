@@ -104,8 +104,10 @@ Route::post('aditya-express-loan','LoanController@express_form');
 
 Route::get('new-personal-loan','ContactController@new_personal_loan');
 Route::post('new-personal-loan','ContactController@new_personal_loan_register');
-
 Route::get('magic-link','ContactController@magic_link');
+
+
+
 
 
 //new loans test

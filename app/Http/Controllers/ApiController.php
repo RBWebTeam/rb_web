@@ -596,5 +596,11 @@ run_else:
 
 			));
 	}
-	
+	public function show_error(Request $req){
+		$data=DB::Select('SELECT * FROM error_log ORDER BY 1 DESC LIMIT 100');
+		print "<pre>";
+		print_r($data);
+		//return $data;
+		 
+	}
 }

@@ -43,7 +43,7 @@ class FormController extends CallApiController
         try{
         //call api to submit form data
         $input = $req->all();
-       
+        print_r($req->all());exit();
         $new_array = array('customer_contact' => Session::get('contact'), 'customer_name' => Session::get('name'),'customer_email' => Session::get('email'));
        $update_id=Session::get('verify_id');
          $update_user=DB::table('user_registration')
@@ -80,6 +80,7 @@ class FormController extends CallApiController
                 }
               //  $req['co_dob']=($req['co_dob'])?$req['co_dob']:NULL;
             if($req['product_name']==9){
+               // print_r('call  usp_get_personal_loan_quot ("'.$req['dob'].'","'.$req['emp_detail_id'].'","'.$income.'","'.$req['obligation'].'","'.$req['loan_tenure'].'","'.$req['loan_amount'].'")');exit();
                 $quote_data=DB::select('call  usp_get_personal_loan_quot ("'.$req['dob'].'","'.$req['emp_detail_id'].'","'.$income.'","'.$req['obligation'].'","'.$req['loan_tenure'].'","'.$req['loan_amount'].'")');
             }else if($req['product_name']==4){
                 //print_r('call  usp_get_car_loan_quot("'.$req['car_cost'].'","'.$req['loan_tenure'].'","'.$req['loan_amount'].'","'.$req['income'].'","'.$req['obligation'].'","'.$req['dob'].'","'.$req['turnover'].'","'.$req['profit_after_tax'].'","'.$req['depreciation'].'","'.$req['remuneration'].'","'.$req['emp_detail_id'].'")');exit();
@@ -99,7 +100,7 @@ class FormController extends CallApiController
                 $quote_data=DB::select('call  usp_get_bank_quot_test("'.$req['property_cost'].'","'.$req['loan_tenure'].'","'.$req['loan_amount'].'","'.$req['gender'].'","'.$req['income'].'","'.$req['obligation'].'","'.$req['dob'].'","'.$req['have_co_applicant'].'","'.$req['co_applicant_income'].'","'.$req['co_applicant_obligation'].'","'.$req['turnover'].'","'.$req['profit_after_tax'].'","'.$req['depreciation'].'","'.$req['remuneration'].'","'.$req['co_applicant_turnover'].'","'.$req['co_applicant_profit_after_tax'].'","'.$req['co_applicant_depreciation'].'","'.$req['co_applicant_remuneration'].'","'.$req['emp_detail_id'].'","'.$req['co_dob'].'","'.$req['co_emp_detail'].'","'.$product_id.'")');
                //print_r($quote_data);exit();
             }
-            //print_r($req->all());exit();
+           // print_r($req->all());exit();
              $save=new bank_quote_api_request();    
             $id=$save->save_liza($req);
             $data['quote_id']=$id;

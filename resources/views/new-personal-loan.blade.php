@@ -14,6 +14,8 @@
     
     <form name='personal_loan_process_form' id='personal_loan_process_form' action="{{URL::to('loan-submit')}}" method="POST">
       {{ csrf_field() }}
+      <input type="hidden" id="product" name="product_name" value=9>
+		
 	<div class="col-md-8">
 	<h3 class="main-header">Genral Information</h3>
 <center><div class="type-cover"><span>PURPOSE OF LOAN</span></div></center>
@@ -41,18 +43,19 @@
 	</div>
 	
 	<div class="loan-tenure">
-									<center>
-										<div class="type-cover">
-											<span>LOAN TENURE</span>
-										</div>
-									</center>
-									<div class="scaling-slider">
-									
-										<div class="tenure offset5 pad">
-			                        <div  id="unranged-value" value="" style="width:100%; height:10px;"></div>
-			                        </div>
-									</div>
-								</div>
+	<center>
+		<div class="type-cover">
+			<span>LOAN TENURE</span>
+		</div>
+	</center>
+	<div class="scaling-slider">
+	
+		<div class="tenure offset5 pad">
+    <div  id="unranged-value" value="" style="width:100%; height:10px;"></div>
+    <input type="hidden" id="tenure_value" name="tenure">
+    </div>
+	</div>
+</div>
 								
 								
 								
@@ -94,17 +97,10 @@
 	<div class="col-md-12">						
 	<!-- <button class="btn btn-primary btn-outline with-arrow top-mrg pull-left quotes">Get Me Loan<i class="icon-arrow-right"  ></i></button> -->
   <?php if(Session::get('is_login')) { ?>
-          <?php if(Session::get('contact')!=''){ Session::get('contact'); ?>
-        <button class="btn btn-primary btn-outline with-arrow animate-box product_name " >Get me a Loan<i class="icon-arrow-right"></i></button>
-        <?php }else{?> 
-                 <a  class="btn btn-primary btn-outline with-arrow animate-box product_name" data-toggle="modal" data-target="#contact_id">Get me a Loan<i class="icon-arrow-right"></i></a>
-         <?php }?>
-
-      <?php }else{?>
-      <button  style="display:none" class="btn btn-primary btn-outline with-arrow animate-box product_name " id="btn_refresh">Get me a Loan<i class="icon-arrow-right"></i></button>
-
-        <a id="btn_refresh1" class="btn btn-primary btn-outline with-arrow animate-box product_name" data-toggle="modal" data-target="#login_process">Get me a Loan<i class="icon-arrow-right"></i></a>
-      <?php }?>
+    	<button class="btn btn-primary btn-outline with-arrow top-mrg pull-left quotes">Get Me Loan<i class="icon-arrow-right"  ></i></button>
+  <?php }else{?>
+     	<a id="btn_refresh1" class="btn btn-primary btn-outline with-arrow animate-box product_name" onclick="get_quote_button()">Get me a Loan<i class="icon-arrow-right"></i></a>
+  <?php }?>
 
   
 	
@@ -228,5 +224,24 @@ $(document).ready(function(){
       yearRange: '-100:' + year + '',
       defaultDate: d
     });
+</script>
+
+
+<script type="text/javascript">
+function get_quote_button(){
+	event.preventDefault();
+	var form='personal_loan_process_form';
+  //console.log(form);return false;
+	  $form=$('#'+form);
+	  if(! $form.valid()){
+	  	return false;
+	  }else{
+	  	var slidr = $("#unranged-value").text();
+         $('#tenure_value').val(slidr);
+	  	$('#login_process').modal('show');
+	}
+}
+
+
 </script>
 

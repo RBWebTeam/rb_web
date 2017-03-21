@@ -50,7 +50,6 @@
 									
 										<div class="tenure offset5 pad">
 			                        <div  id="unranged-value" style="width:100%; height:10px;"></div>
-                              <input  type="text" id="tenure" name="tenure" value="" onkeypress="return isNumberKey(event)" maxlength="2" required />
 			                        </div>
 									</div>
 								</div>

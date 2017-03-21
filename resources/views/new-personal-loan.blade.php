@@ -12,7 +12,7 @@
  </div>
  <div class="col-md-12 white-bg pad box-shadow fl-lft">
     
-    <form name='personal_loan_process_form' id='personal_loan_process_form' action={{URL::to('loan-submit')}} method="POST">
+    <form name='personal_loan_process_form' id='personal_loan_process_form' action="{{URL::to('loan-submit')}}" method="POST">
       {{ csrf_field() }}
 	<div class="col-md-8">
 	<h3 class="main-header">Genral Information</h3>
@@ -95,15 +95,15 @@
 	<!-- <button class="btn btn-primary btn-outline with-arrow top-mrg pull-left quotes">Get Me Loan<i class="icon-arrow-right"  ></i></button> -->
   <?php if(Session::get('is_login')) { ?>
           <?php if(Session::get('contact')!=''){ Session::get('contact'); ?>
-        <button class="btn btn-primary btn-outline with-arrow animate-box quotes " >Get me a Loan<i class="icon-arrow-right"></i></button>
+        <button class="btn btn-primary btn-outline with-arrow animate-box product_name " >Get me a Loan<i class="icon-arrow-right"></i></button>
         <?php }else{?> 
-                 <a  class="btn btn-primary btn-outline with-arrow animate-box quotes" data-toggle="modal" data-target="#contact_id">Get me a Loan<i class="icon-arrow-right"></i></a>
+                 <a  class="btn btn-primary btn-outline with-arrow animate-box product_name" data-toggle="modal" data-target="#contact_id">Get me a Loan<i class="icon-arrow-right"></i></a>
          <?php }?>
 
       <?php }else{?>
-      <button  style="display:none" class="btn btn-primary btn-outline with-arrow animate-box quotes " id="btn_refresh">Get me a Loan<i class="icon-arrow-right"></i></button>
+      <button  style="display:none" class="btn btn-primary btn-outline with-arrow animate-box product_name " id="btn_refresh">Get me a Loan<i class="icon-arrow-right"></i></button>
 
-        <a id="btn_refresh1" class="btn btn-primary btn-outline with-arrow animate-box quotes" data-toggle="modal" data-target="#login_process">Get me a Loan<i class="icon-arrow-right"></i></a>
+        <a id="btn_refresh1" class="btn btn-primary btn-outline with-arrow animate-box product_name" data-toggle="modal" data-target="#login_process">Get me a Loan<i class="icon-arrow-right"></i></a>
       <?php }?>
 
   
@@ -173,54 +173,10 @@
 @include('layout.footer')
 @include('layout.script')
 
-<script type="text/javascript">
 
-
-  $(".quotes").click(function(event){
-    event.preventDefault();
-   $form=$('#personal_loan_process_form');
-      if(! $form.valid()){
-         // alert("hiee");
-      }else{
-        //var s=$('#'+form).serialize();
-    // alert("hiee");
-        var slidr = $("#unranged-value").text();
-         $('#tenure').val(slidr);
-         console.log(slidr);
-
-        $.ajax({  
-         type: "POST",  
-         url: "{{URL::to('new-personal-loan')}}",
-         data : $('#personal_loan_process_form').serialize(),
-         success: function(msg){
-         
-          if(msg=='true'){
-            console.log("ok");
-             // console.log(msg);
-              window.location.href ="{{URL::to('thank-you')}}";
-            
-          }else{
-            // $("#showerror").show();
-
-            // console.log("bye");
-            window.location.href ="{{URL::to('went-wrong')}}";
-          } 
-          
-
-        }  
-      }); 
-      }
-
-    });
-
-
-</script>
 
 <script type="text/javascript">
-
-	
-
- $(document).ready(function(){
+$(document).ready(function(){
     src = "{{ route('searchajax') }}";
     $(".search_city").autocomplete({
       source: function(request, response) {

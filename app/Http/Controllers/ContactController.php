@@ -22,6 +22,7 @@ class ContactController extends InitialController
     }
     
     public function new_personal_loan_register(Request $req){
+        print_r($req->all());exit();
      
          
          $query=DB::table('new_personal')

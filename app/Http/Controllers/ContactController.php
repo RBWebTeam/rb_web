@@ -46,6 +46,7 @@ class ContactController extends InitialController
 
 
     public function magic_link(){
+        //print_r("hello");exit();
         return view('magic-link');
     }
 

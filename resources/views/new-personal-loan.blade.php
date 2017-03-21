@@ -60,11 +60,13 @@
 	   <div class="col-xs-8 form-padding">
      <input type="text" name="name" id="name" class="form-input-new form-control" placeholder="Applicant Name" required="">
 	</div>
-	
+	<div class="col-xs-6 form-padding">
+     <input type="text" id="dob" name="dob" class="form-input-new form-control lastReporteddate1" placeholder="Date of Birth" required="">
+	</div>
 	<div class="col-xs-6 form-padding">
    <div class="btn-grp form-control border-none" data-toggle="buttons">
-                                    <span class="btn btn-primary outer-brd1 active"><input type="radio" name="gender"  value="Male"><img id="myImage" src="images/male.png" class=""></span><span class="hidden-xs">Male</span>
-                                   <span class="btn btn-primary outer-brd1 "><input type="radio"name="gender"  value="Female"><img id="myImage1" src="images/female.png" class=""></span> <span class="hidden-xs">Female</span>
+                                    <span class="btn btn-default outer-brd1 outer-brd1 active"><input type="radio" name="gender"  value="Male"><img id="myImage" src="images/male.png" class=""></span><span class="hidden-xs">Male</span>
+                                   <span class="btn btn-default outer-brd1 outer-brd1 "><input type="radio"name="gender"  value="Female"><img id="myImage1" src="images/female.png" class=""></span> <span class="hidden-xs">Female</span>
            </div>      
      </div>
      <!-- <div class="col-xs-6 form-padding">
@@ -73,17 +75,11 @@
       <span class="btn btn-primary outer-brd btn-blu"><input type="radio" name="gender"  value="Female">Female</span>
          </div>
      </div> -->
-
-
-	   
-	   <div class="col-xs-6 form-padding">
-     <input type="text" id="dob" name="dob" class="form-input-new form-control lastReporteddate1" placeholder="Date of Birth" required="">
-	</div>
 	
 	<div class="col-xs-6 form-padding">
      <div class="btn-grp form-control border-none" data-toggle="buttons">
-      <span class="btn btn-primary outer-brd btn-blu active"><input type="radio" name="employment"  value="Salaried">Salaried</span>
-      <span class="btn btn-primary outer-brd btn-blu"><input type="radio" name="employment"  value="Self-Emp"> Self-Emp</span>
+      <span class="btn btn-default outer-brd active"><input type="radio" name="employment"  value="Salaried">Salaried</span>
+      <span class="btn btn-default outer-brd "><input type="radio" name="employment"  value="Self-Emp"> Self-Emp</span>
          </div>
 	   </div>
 	   

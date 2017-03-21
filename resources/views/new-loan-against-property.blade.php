@@ -28,16 +28,17 @@
 
 	<div class="col-md-12">
 <center><div class="type-cover"><span>PROPERTY TYPE</span></div></center>
-<div class="text-center flt-lft">
+ <div class="text-center flt-lft btn-grp" data-toggle="buttons">
 							<div class="scenario">
-								<div class="col-xs-4 pad-no scenario-active"><a class="scenario-1"><input type="radio" name="Status" id="option1">RESIDENTIAL</a></div>
-								<div class="col-xs-4 pad-no"><a class="scenario-1"><input type="radio" name="Status" id="option1">COMMERCIAL</a></div>
-								<div class="col-xs-4 pad-no"><a class="scenario-1"><input type="radio" name="Status" id="option1">INDUSTRIAL</a></div>
-								<div class="col-xs-4 pad-no"><a class="scenario-1 scenario-border"><input type="radio" name="Status" id="option1">LAND</a></div>
-								<div class="col-xs-4 pad-no"><a class="scenario-1 scenario-top-border"><input type="radio" name="Status" id="option1">OTHERS</a></div>
+								<div class="col-xs-4 pad-no scenario-active"><a class="scenario-1 btn"><input type="radio" name="Status" id="option1"  class="radio1" checked >RESIDENTIAL</a></div>
+								<div class="col-xs-4 pad-no"><a class="scenario-1 btn"><input type="radio" name="Status" id="option1" class="radio1">COMMERCIAL</a></div>
+								<div class="col-xs-4 pad-no"><a class="scenario-1 btn"><input type="radio" name="Status" id="option1" class="radio1">INDUSTRIAL</a></div>
+								<div class="col-xs-4 pad-no"><a class="scenario-1 btn"><input type="radio" name="Status" id="option1" class="radio1">LAND</a></div>
+								<div class="col-xs-4 pad-no"><a class="scenario-1 btn"><input type="radio" name="Status" id="option1" class="radio1">OTHERS</a></div>
 								
 							</div>
-						</div>
+						</div> 
+
 						
 						<div class="col-xs-4 form-padding">
      <input type="name" class="form-input-new form-control" placeholder="Property Cost" required="">

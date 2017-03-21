@@ -19,14 +19,17 @@
 	<div class="col-md-8">
 	<h3 class="main-header">Genral Information</h3>
 <center><div class="type-cover"><span>PURPOSE OF LOAN</span></div></center>
-<div class="text-center flt-lft">
+
+<div class="text-center flt-lft btn-grp" data-toggle="buttons">
 							<div class="scenario">
-								<div class="col-xs-6 pad-no scenario-active" ><a   class="scenario-1" >Marriage</a></div>
-								<div class="col-xs-6 pad-no" ><a  class="scenario-1 scenario-border" >Home Releted</a></div>
-								<div class="col-xs-6 pad-no" ><a class="scenario-1 scenario-top-border" >Business</a></div>
-								<div class="col-xs-6 pad-no"  ><a class="scenario-1 scenario-top-border scenario-border" >Other</a></div>
+								<div class="col-xs-6 pad-no scenario-active"><a class="scenario-1 btn"><input type="radio" name="Status" id="option1"  class="radio1" checked >Marriage</a></div>
+								<div class="col-xs-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="Status" id="option1" class="radio1">Home Releted</a></div>
+								<div class="col-xs-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="Status" id="option1" class="radio1">Business</a></div>
+								<div class="col-xs-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="Status" id="option1" class="radio1">Other</a></div>
+							
+								
 							</div>
-						</div>
+						</div> 
 
 
 

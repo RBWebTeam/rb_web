@@ -123,6 +123,7 @@ class CompareController extends ExperianController
             $loanterm=$req['loanterm'];
             $brokerid = $req['brokerid'];
             $empcode = $req['empcode'];
+             $refapp = $req['refapp'];
             //print_r($brokerid);
 
 
@@ -159,7 +160,7 @@ class CompareController extends ExperianController
      // print_r($test);exit();
       $user =array('loanamount' => $loanamount, 'loaninterest' => $loaninterest , 'loanterm'=> $loanterm,
             'product_id'=>$req['product_id'],
-            'processingfee'=>$req['processingfee'],'brokerid'=>$brokerid,'empcode'=>$empcode);
+            'processingfee'=>$req['processingfee'],'brokerid'=>$brokerid,'empcode'=>$empcode,'refapp'=>$refapp);
             $returnHTML = view('emi/switch_cal')->with('data', $test)->with('sata', $user)->render();
             return response()->json(array('success' => true, 'amount'=>$amount, 'new_amount'=>$new_amount, 'drop_emi'=>$drop_emi,'drop_in_int'=>$drop_in_int, 'savings'=>$savings,'borrow'=>$borrow,  'html'=>$returnHTML));                            
             }

@@ -19,8 +19,8 @@ class NewProcessController extends Controller
       }
 
        public function newHomeLoan(){
-          
-           return view('new-home-loan');
+               $data=0;
+           return view('new-home-loan')->with($data);;
 
       }
 

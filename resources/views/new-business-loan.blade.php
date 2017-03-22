@@ -32,17 +32,22 @@
 		</div>
 		
 		<div class="loan-tenure">
-									<center>
-										<div class="type-cover">
-											<span>Loan Tenure</span>
-										</div>
-									</center>
-									<div class="text-center">
-										<div class="scaling-slider">
-											<img src="images/slider.png" class="img-responsive">
-										</div>
-									</div>
-								</div>
+  <center>
+    <div class="type-cover">
+      <span>LOAN TENURE</span>
+    </div>
+  </center>
+  <div class="scaling-slider">
+  
+    <div class="tenure offset5 pad">
+    
+                              <div  id="unranged-value" value="" style="width:100%; height:10px;"></div>
+    </div>
+    <input  type="hidden" id="loan_tenure" name="loan_tenure" value=""  />
+    </div>
+  </div>
+  
+  
      <div class="col-xs-6 form-padding">
      <input type="name" class="form-input-new form-control" placeholder="NAME OF THE COMPANY" required="">
 	</div>
@@ -78,19 +83,19 @@
 	<div class="col-xs-8 form-padding">
 	 <h4 class="mrg-top">Export/Import</h4>
 	</div>
-	<div class="col-xs-4 form-padding">
-     <div class="btn-grp form-control border-none" data-toggle="buttons">
-      <span class="btn btn-primary outer-brd btn-blu active"><input type="radio" name="Status" id="option1">Y</span>
-      <span class="btn btn-primary outer-brd btn-blu"><input type="radio" name="Status" id="option2">N</span>
+	<div class="col-xs-4 form-padding pad">
+     <div class="btn-grp border-none" data-toggle="buttons">
+      <span class="btn btn-default outer-brd btn-blu active"><input type="radio" name="Status" id="option1">Y</span>
+      <span class="btn btn-default outer-brd btn-blu"><input type="radio" name="Status" id="option2">N</span>
          </div>
 	</div>
 	<div class="col-xs-8 form-padding">
 	 <span>Has a Good Repayment track record in existing UBL / CC / OD ?</span>
 	</div>
-	<div class="col-xs-4 form-padding">
-     <div class="btn-grp form-control border-none" data-toggle="buttons">
-      <span class="btn btn-primary outer-brd btn-blu active"><input type="radio" name="Status" id="option1">Y</span>
-      <span class="btn btn-primary outer-brd btn-blu"><input type="radio" name="Status" id="option2">N</span>
+	<div class="col-xs-4 form-padding pad">
+     <div class="btn-grp  border-none" data-toggle="buttons">
+      <span class="btn btn-default outer-brd btn-blu active"><input type="radio" name="Status" id="option1">Y</span>
+      <span class="btn btn-default outer-brd btn-blu"><input type="radio" name="Status" id="option2">N</span>
          </div>
 	</div>
 		</div>

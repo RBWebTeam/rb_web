@@ -5,7 +5,7 @@
 			<div class="col-md-2 col-sm-12 col-sm-push-0 col-xs-12 col-xs-push-0">
 				<h3>Home Loan</h3>
 				<ul class="float">
-					<li><a href="{{URL::to('loan-details/12/24')}}">ICICI Bank</a></li>
+					<li><a href="{{URL::to('loan-details/12/25')}}">ICICI Bank</a></li>
 					<li><a href="{{URL::to('loan-details/12/4')}}">Axis Bank</a></li>
 					<li><a href="{{URL::to('loan-details/12/11')}}">DBS</a></li>
                     <li><a href="{{URL::to('loan-details/12/12')}}">DCB Bank</a></li>
@@ -28,7 +28,7 @@
 					<li><a href="{{URL::to('loan-details/9/5')}}">Bajaj Finance</a></li>
 					<li><a href="{{URL::to('loan-details/9/6')}}">Capital First </a></li>
                     <li><a href="{{URL::to('loan-details/9/18')}}">Fullerton India</a></li>
-					<li><a href="{{URL::to('loan-details/9/24')}}">ICICI Bank</a></li>
+					<li><a href="{{URL::to('loan-details/9/25')}}">ICICI Bank</a></li>
 					<li><a href="{{URL::to('loan-details/9/33')}}">Kotak Mahindra</a></li>
 					<li><a href="{{URL::to('loan-details/9/51')}}">Tata Capital</a></li>
                  </ul>
@@ -39,7 +39,7 @@
 				<ul class="float">
 					<li><a href="{{URL::to('loan-details/13/31')}}">Intellecash </a></li>
                     <li><a href="{{URL::to('loan-details/13/38')}}">Magma Fincorp</a></li>
-                    <li><a href="{{URL::to('loan-details/13/24')}}">ICICI Bank</a></li>
+                    <li><a href="{{URL::to('loan-details/13/25')}}">ICICI Bank</a></li>
                     <li><a href="{{URL::to('loan-details/13/21')}}">HDFC</a></li>
                     <li><a href="{{URL::to('loan-details/13/30')}}">Indusind Bank</a></li>
                     <li><a href="{{URL::to('loan-details/13/52')}}">UPF (Kapitaltech)</a></li>

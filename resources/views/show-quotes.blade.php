@@ -1,4 +1,4 @@
-@include('layout.header')
+
 
     <div id="fh5co-hero" class="fclass" style="display:block;">
   <div class="container" >
@@ -208,8 +208,6 @@
   </div>
 
 
-@include('layout.footer')
-@include('layout.script')
 
 <script type="text/javascript">
 var clicks = 0;

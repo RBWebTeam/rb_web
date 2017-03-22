@@ -16,7 +16,7 @@
 	<link  rel="stylesheet" type="text/css" href="{{URL::to('css/mysite.css')}}"/>
 
 
-<!-- <link href="{{URL::to('css/style.css')}}" rel="stylesheet" type="text/css" /> -->
+<link href="{{URL::to('css/style.css')}}" rel="stylesheet" type="text/css" />
 
 
  <link href="{{URL::to('css/freshslider.min.css')}}" rel="stylesheet" type="text/css" /> 
@@ -66,7 +66,7 @@
 				<li class="hidden-xs"><a href="#" data-toggle="modal" data-target="#emp_login">Employee Login </a></li>
 				<li class="hidden-xs"><a href="{{URL::to('rba-login')}}">RBA Login </a></li>
 
-				<li class="hidden-xs"><a href="{{URL::to('magic-link')}}">Magic Link </a></li>
+				<li class="hidden-lg"><a href="{{URL::to('magic-link')}}">Magic Link </a></li>
 				<li class="hidden-xs credit-score-btn"><a href="{{URL::to('credit-report')}}" class="btn btn-primary">My Credit Score</a></li>
 			<!-- 	<li><a href="{{URL::to('contact-us')}}">Media</a></li> -->
 	            </ul>

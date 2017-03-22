@@ -26,30 +26,44 @@ class tribeController extends CallApiController
 	    
 	}
 	public function save_tribe_form(Request $req){
-		print_r($req->all());exit();
+		//print_r($req->all());exit();
 		$data=$req->all();
 		//company_address
+
+
+$data['middle_name']=isset($data['middle_name'])?$data['middle_name']:'';
+$data['social']=isset($data['social'])?$data['social']:'';
+$data['partners_count']=isset($data['partners_count'])?$data['partners_count']:'';
+$data['directors_count']=isset($data['directors_count'])?$data['directors_count']:'';
+$data['proprietorship_type']=isset($data['proprietorship_type'])?$data['proprietorship_type']:'';
+$data['taxation_details']=isset($data['taxation_details'])?$data['taxation_details']:'';
+$data['online_sale_channel']=isset($data['online_sale_channel'])?$data['online_sale_channel']:'';
+$data['business_run_by']=isset($data['business_run_by'])?$data['business_run_by']:'';
+$data['business_run_by_pan_div']=isset($data['business_run_by_pan_div'])?$data['business_run_by_pan_div']:'';
+
+//print_r($data);exit();
+
 		$post_data='"agentname":"'.$data['agent_name'].'",
 	"business_details":{
 		"address":[{
 			"work":"'.$data['agent_name'].'"
 		}],
-		"director_count":'.$data['agent_name'].',
-		"employess_count":"'.$data['agent_name'].'",
-		"is_offline_sales":'.$data['agent_name'].',
-		"is_online_sales":'.$data['agent_name'].',
-		"know_about_us":"'.$data['agent_name'].'",
-		"loan_purpose":'.$data['agent_name'].',
-		"nature_of_business":'.$data['agent_name'].',
-		"online_sales_channels":['.$data['agent_name'].'],
-		"ownership":'.$data['agent_name'].',
-		"pan_number":"'.$data['agent_name'].'",
-		"partner_count":'.$data['agent_name'].',
-		"product_sell":['.$data['agent_name'].'],
-		"proprietorship_type":'.$data['agent_name'].',
-		"registration_details":'.$data['agent_name'].',
-		"taxation_details":["'.$data['agent_name'].'"],
-		"turnover":'.$data['agent_name'].'
+		"director_count":'.$data['directors_count'].',
+		"employess_count":"'.$data['employee_count'].'",
+		"is_offline_sales":'.$data['offline_sale'].',
+		"is_online_sales":'.$data['online_sale'].',
+		"know_about_us":"'.$data['reached_us_via'].'",
+		"loan_purpose":'.$data['loan_purpose'].',
+		"nature_of_business":'.$data['business_type'].',
+		"online_sales_channels":['.$data['online_sale_channel'].'],
+		"ownership":'.$data['owner_name'].',
+		"pan_number":"'.$data['business_run_by_pan_div'].'",
+		"partner_count":'.$data['partners_count'].',
+		"product_sell":['.$data['selling_product'].'],
+		"proprietorship_type":'.$data['business_run_by'].',
+		"registration_details":'.$data['registration_detail'].',
+		"taxation_details":[""],
+		"turnover":'.$data['turnover'].'
 	},
 	"documents":[{
 		"data":"'.$data['agent_name'].'",
@@ -57,46 +71,46 @@ class tribeController extends CallApiController
 		"type":"'.$data['agent_name'].'"
 	}],
 	"is_loan_distributor":'.$data['agent_name'].',
-	"loan_amount":"'.$data['agent_name'].'",
-	"loan_tenure":'.$data['agent_name'].',
+	"loan_amount":"'.$data['loan_amount'].'",
+	"loan_tenure":'.$data['loan_tenure'].',
 	"loan_type":'.$data['agent_name'].',
 	"loandistributorid":"'.$data['agent_name'].'",
 	"name":"'.$data['agent_name'].'",
 	"online_ids":[{
-		"aggregated_type":'.$data['agent_name'].',
+		"aggregated_type":'.$data['online_ids'].',
 		"credential":{
-			"access_key":"'.$data['agent_name'].'",
-			"secret_key":"'.$data['agent_name'].'",
-			"username":"'.$data['agent_name'].'",
-			"vendor_id":"'.$data['agent_name'].'"
+			"access_key":"'.$data['access_key'].'",
+			"secret_key":"'.$data['secret_key'].'",
+			"username":"'.$data['username'].'",
+			"vendor_id":"'.$data['vendor_id'].'"
 		}
 	}],
 	"owner_details":[{
-		"email":"'.$data['agent_name'].'",
-		"name":"'.$data['agent_name'].'"
+		"email":"'.$data['owner_email'].'",
+		"name":"'.$data['owner_name'].'"
 	}],
 	"personal_details":{
-		"DOB":"'.$data['agent_name'].'",
-		"aadhaar_number":"'.$data['agent_name'].'",
+		"DOB":"'.$data['dob'].'",
+		"aadhaar_number":"'.$data['aadhar_no'].'",
 		"address":[{
-			"work":"'.$data['agent_name'].'"
+			"work":"'.$data['address'].'"
 		}],
-		"education":'.$data['agent_name'].',
-		"email":"'.$data['agent_name'].'",
-		"family_details":'.$data['agent_name'].',
-		"first_name":"'.$data['agent_name'].'",
-		"income_details":"'.$data['agent_name'].'",
-		"last_name":"'.$data['agent_name'].'",
-		"mobile_number":'.$data['agent_name'].'
+		"education":'.$data['education'].',
+		"email":"'.$data['email'].'",
+		"family_details":'.$data['family_detail'].',
+		"first_name":"'.$data['first_name'].'",
+		"income_details":"'.$data['annual_income'].'",
+		"last_name":"'.$data['last_name'].'",
+		"mobile_number":'.$data['mobile'].'
 	},
 	"reference_details":{
-		"email":"'.$data['agent_name'].'",
-		"first_name":"'.$data['agent_name'].'",
-		"last_name":"'.$data['agent_name'].'",
-		"middle_name":"'.$data['agent_name'].'",
-		"mobile_number":'.$data['agent_name'].'
+		"email":"'.$data['ref_email'].'",
+		"first_name":"'.$data['ref_first_name'].'",
+		"last_name":"'.$data['ref_last_name'].'",
+		"middle_name":"'.$data['ref_middle_name'].'",
+		"mobile_number":'.$data['ref_mobile'].'
 	},
-	"repayment_frequency":'.$data['agent_name'].',
+	"repayment_frequency":'.$data['repayment_frequency'].',
 	"secret":"'.$data['agent_name'].'"';
 
 	print_r($post_data);exit();

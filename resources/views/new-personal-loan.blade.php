@@ -1,175 +1,180 @@
 @include('layout.header')
 
 <div class="container">
-	
-	<aside id="fh5co-hero">
-	<div class="col-md-12">
-	<h2 class="align-center loan-head">Personal Loan</h2>
-	</div>
+  
+  <aside id="fh5co-hero">
+  <div class="col-md-12">
+  <h2 class="align-center loan-head">Personal Loan</h2>
+  </div>
  <div class="col-md-12 white-bg pad1 mrg-btm box-shadow">
 <img src="{{URL::to('images/9.png')}}" alt="Tribe Logo" class="img-responsive" />
 
  </div>
  <div class="col-md-12 white-bg pad box-shadow fl-lft">
     
-    <form name='personal_loan_process_form' id='personal_loan_process_form' action="{{URL::to('loan-submit')}}" method="POST">
+    <form name='personal_loan_process_form' id='personal_loan_process_form'>
       {{ csrf_field() }}
-	<div class="col-md-8">
-	<h3 class="main-header">Genral Information</h3>
+      <input type="hidden" id="product" name="product_name" value=9>
+    
+  <div class="col-md-8">
+  <h3 class="main-header">Genral Information</h3>
 <center><div class="type-cover"><span>PURPOSE OF LOAN</span></div></center>
-<div class="text-center flt-lft">
-							<div class="scenario">
-								<div class="col-xs-6 pad-no scenario-active" ><a   class="scenario-1" >Marriage</a></div>
-								<div class="col-xs-6 pad-no" ><a  class="scenario-1 scenario-border" >Home Releted</a></div>
-								<div class="col-xs-6 pad-no" ><a class="scenario-1 scenario-top-border" >Business</a></div>
-								<div class="col-xs-6 pad-no"  ><a class="scenario-1 scenario-top-border scenario-border" >Other</a></div>
-							</div>
-						</div>
+
+<div class="text-center flt-lft btn-grp" data-toggle="buttons">
+              <div class="scenario">
+                <div class="col-xs-6 pad-no scenario-active"><a class="scenario-1 btn"><input type="radio" name="Status" id="option1"  class="radio1" checked >Marriage</a></div>
+                <div class="col-xs-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="Status" id="option1" class="radio1">Home Releted</a></div>
+                <div class="col-xs-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="Status" id="option1" class="radio1">Business</a></div>
+                <div class="col-xs-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="Status" id="option1" class="radio1">Other</a></div>
+              
+                
+              </div>
+            </div> 
 
 
 
-<input type="hidden" name="purpose" id="putID">
-						
-						<div class="col-xs-4 form-padding">
+
+            
+            <div class="col-xs-4 form-padding">
      <input type="text" name="custom_id" id="custom_id" class="form-input-new form-control" placeholder="Existing Custom Id if Any" onkeypress="return isNumberKey(event)" required="">
-	</div>
-	<div class="col-xs-4 form-padding">
+  </div>
+  <div class="col-xs-4 form-padding">
      <input type="text" name="loan_amount" id="loan_amount" class="form-input-new form-control" placeholder="Loan Required" onkeypress="return isNumberKey(event)" maxlength="10" required="">
-	</div>
-	<div class="col-xs-4 form-padding">
+  </div>
+  <div class="col-xs-4 form-padding">
      <input type="text" id="city_name" name="city_name" class="form-input-new form-control search_city" placeholder="City of Location" required="">
-	</div>
-	
-	<div class="loan-tenure">
-									<center>
-										<div class="type-cover">
-											<span>LOAN TENURE</span>
-										</div>
-									</center>
-									<div class="scaling-slider">
-									
-										<div class="tenure offset5 pad">
-			                        <div  id="unranged-value" value="" style="width:100%; height:10px;"></div>
-			                        </div>
-									</div>
-								</div>
-								
-								
-								
+  </div>
   
-	   <div class="col-xs-8 form-padding">
-     <input type="text" name="applicant_name" id="applicant_name" class="form-input-new form-control" placeholder="Applicant Name" required="">
-	</div>
-	<div class="col-xs-6 form-padding">
+  <div class="loan-tenure">
+  <center>
+    <div class="type-cover">
+      <span>LOAN TENURE</span>
+    </div>
+  </center>
+  <div class="scaling-slider">
+  
+    <div class="tenure offset5 pad">
+    
+                              <div  id="unranged-value" value="" style="width:100%; height:10px;"></div>
+    </div>
+    <input  type="hidden" id="loan_tenure" name="loan_tenure" value=""  />
+    </div>
+  </div>
+
+                
+                
+                
+  
+     <div class="col-xs-12 form-padding">
+     <input type="text" name="applicant_name" id="applicant_name" class="form-input-new form-control" placeholder="Applicant Name" onkeypress="return AllowAlphabet(event)" required="">
+  </div>
+  <div class="col-xs-6 form-padding">
      <input type="text" id="dob" name="dob" class="form-input-new form-control lastReporteddate1" placeholder="Date of Birth" required="">
-	</div>
-	<div class="col-xs-6 form-padding">
+  </div>
+  <div class="col-xs-6 form-padding">
    <div class="btn-grp form-control border-none" data-toggle="buttons">
-                                    <span class="btn btn-default outer-brd1 outer-brd1 active"><input type="radio" name="gender"  value="Male"><img id="myImage" src="images/male.png" class=""></span><span class="hidden-xs">Male</span>
-                                   <span class="btn btn-default outer-brd1 outer-brd1 "><input type="radio" name="gender"  value="Female"><img id="myImage1" src="images/female.png" class=""></span> <span class="hidden-xs">Female</span>
+                                    <span class="btn btn-default outer-brd1 outer-brd1 active"><input type="radio" name="gender"  value="M"><img id="myImage" src="images/male.png" class=""></span><span class="hidden-xs">Male</span>
+                                   <span class="btn btn-default outer-brd1 outer-brd1 "><input type="radio" name="gender"  value="F"><img id="myImage1" src="images/female.png" class=""></span> <span class="hidden-xs">Female</span>
            </div>      
      </div>
-     <!-- <div class="col-xs-6 form-padding">
+
+    <!--  <div class="col-xs-6 form-padding">
      <div class="btn-grp form-control border-none" data-toggle="buttons">
       <span class="btn btn-primary outer-brd btn-blu active"><input type="radio" name="gender"  value="Male">Male</span>
       <span class="btn btn-primary outer-brd btn-blu"><input type="radio" name="gender"  value="Female">Female</span>
          </div>
      </div> -->
-	
-	<div class="col-xs-6 form-padding">
+  
+  <div class="col-xs-6 form-padding">
      <div class="btn-grp form-control border-none" data-toggle="buttons">
       <span class="btn btn-default outer-brd active"><input type="radio" name="emp_detail_id"   value="1">Salaried</span>
       <span class="btn btn-default outer-brd "><input type="radio" name="emp_detail_id"  value="2"> Self-Emp</span>
          </div>
-	   </div>
-	   
-	   <div class="col-xs-6 form-padding">
-     <input type="text" name="income" id="income" class="form-input-new form-control"  onkeypress="return isNumberKey(event)"  placeholder="Monthly Income" required="">
-	</div>
-	
-	<div class="col-xs-6 form-padding">
-     <input type="text" name="obligation" id="obligation" class="form-input-new form-control" placeholder="Exsisting EMI (If Any)" onkeypress="return isNumberKey(event)" required="">
-	</div>
-	
-	<div class="col-md-12">						
-	<!-- <button class="btn btn-primary btn-outline with-arrow top-mrg pull-left quotes">Get Me Loan<i class="icon-arrow-right"  ></i></button> -->
-  <?php if(Session::get('is_login')) { ?>
-          <?php if(Session::get('contact')!=''){ Session::get('contact'); ?>
-        <button class="btn btn-primary btn-outline with-arrow animate-box product_name " >Get me a Loan<i class="icon-arrow-right"></i></button>
-        <?php }else{?> 
-                 <a  class="btn btn-primary btn-outline with-arrow animate-box product_name" data-toggle="modal" data-target="#contact_id">Get me a Loan<i class="icon-arrow-right"></i></a>
-         <?php }?>
-
-      <?php }else{?>
-      <button  style="display:none" class="btn btn-primary btn-outline with-arrow animate-box product_name " id="btn_refresh">Get me a Loan<i class="icon-arrow-right"></i></button>
-
-        <a id="btn_refresh1" class="btn btn-primary btn-outline with-arrow animate-box product_name" data-toggle="modal" data-target="#login_process">Get me a Loan<i class="icon-arrow-right"></i></a>
-      <?php }?>
-
-  
-	
-	
-			</div>
      </div>
-     </form>
+     
+     <div class="col-xs-6 form-padding">
+     <input type="text" name="income" id="income" class="form-input-new form-control"  onkeypress="return isNumberKey(event)"  placeholder="Monthly Income" required="">
+  </div>
+  
+  <div class="col-xs-6 form-padding">
+     <input type="text" name="obligation" id="obligation" class="form-input-new form-control" placeholder="Exsisting EMI (If Any)" onkeypress="return isNumberKey(event)" required="">
+  </div>
+  
+  <div class="col-md-12">
 
-	 
-	 <div class="col-md-4" >
-	   <div class="border brd-for">
+  <?php if(Session::get('is_login')) {?>
+                <?php if(Session::get('contact')!=''){ Session::get('contact'); ?>
+              <a type="button" class="btn btn-primary btn-outline with-arrow top-mrg product_name" id="quotes">Get Me Loan<i class="icon-arrow-right"></i></a>
+              <?php }else{?> 
+                <a  class="btn btn-primary btn-outline with-arrow top-mrg product_name" data-toggle="modal" data-target="#contact_id">Get Me Loan<i class="icon-arrow-right"></i></a>
+                      <?php }?>
+            <?php }else{?>
+            <a type="button" style="display:none" class="btn btn-primary btn-outline with-arrow top-mrg product_name " id="btn_refresh_co">Get Me Loan<i class="icon-arrow-right"></i></a>
+
+              <a id="btn_refresh1" class="btn btn-primary btn-outline with-arrow animate-box product_name" onclick="get_quote_button()">Get Me Loan<i class="icon-arrow-right"></i></a>
+            <?php } ?>
+  
+  
+      </div>
+      </form>
+     </div>
+     <div class="col-md-4" >
+     <div class="border brd-for">
 
              <form class="" id="compareform" role="form" method="POST" action="">
-				  
-				  
-				    <div class="inp-hig">
-					  <label class="form-label-new">Loan Amount</label>
-				      <input type="text" class="form-control" id="name" name="name" placeholder="5,00,000" required class="clr-ddd" />
-				    </div>
+          
+          
+            <div class="inp-hig">
+            <label class="form-label-new">Loan Amount</label>
+              <input type="text" class="form-control" id="name" name="name" placeholder="5,00,000" required class="clr-ddd" />
+            </div>
 
-				    <div class="inp-hig">
-					<label class="form-label-new">Best ROI</label>
-				      <input type="text" class="form-control" id="name" name="name" placeholder="Best ROI" required class="clr-ddd" />
-				    </div>
+            <div class="inp-hig">
+          <label class="form-label-new">Best ROI</label>
+              <input type="text" class="form-control" id="name" name="name" placeholder="Best ROI" required class="clr-ddd" />
+            </div>
 
-				    <div class="inp-hig">
+            <div class="inp-hig">
                  <label class="form-label-new">Tenure</label>
-					  <select class="form-control">
+            <select class="form-control">
 
-					  <option>5</option>
-					   <option>1</option>
-					  <option>3</option>
-					 
-					  <option>7</option>
-					  <option>10</option>
-					  <option>15</option>
-					  <option>20</option>
-					  <option>30</option>
-					  </select>
-				    </div>
+            <option>5</option>
+             <option>1</option>
+            <option>3</option>
+           
+            <option>7</option>
+            <option>10</option>
+            <option>15</option>
+            <option>20</option>
+            <option>30</option>
+            </select>
+            </div>
 
-				    <div class="inp-hig">
-					<label class="form-label-new">Processing Fee</label>
-				      <input type="text" class="form-control" id="name" name="name" placeholder="2,500" required class="clr-ddd" />
-				    </div>
+            <div class="inp-hig">
+          <label class="form-label-new">Processing Fee</label>
+              <input type="text" class="form-control" id="name" name="name" placeholder="2,500" required class="clr-ddd" />
+            </div>
 
-			  <div> 
-			    
-			     <button style="display:block; width:100%;font-size:20px;padding:5px; background:#28a0ff;color:#fff;">Apply Now</button>
-				 <button style="width:49%;font-size:20px;padding:5px; background:#28a0ff;color:#fff;">Eligibility</button>
-				 <button style="width:49%;font-size:20px;padding:5px; background:#28a0ff;color:#fff;">Call For RM</button>
-			   
-			  </div>
-			</form>
-		</div>	
-	</div> 
-	
-	
-	
-	</div>
-	</aside>
-	</div>
-	<br>
-	
-	
+        <div> 
+          
+           <button style="display:block; width:100%;font-size:20px;padding:5px; background:#28a0ff;color:#fff;">Apply Now</button>
+         <button style="width:49%;font-size:20px;padding:5px; background:#28a0ff;color:#fff;">Eligibility</button>
+         <button style="width:49%;font-size:20px;padding:5px; background:#28a0ff;color:#fff;">Call For RM</button>
+         
+        </div>
+      </form>
+    </div>  
+  </div> 
+   </aside>
+   
+  </div>
+  </div>
+      <div id ="test123"></div>
+  
+  
+   <br>
+  
+  
 @include('layout.footer')
 @include('layout.script')
 
@@ -230,3 +235,72 @@ $(document).ready(function(){
     });
 </script>
 
+
+<script type="text/javascript">
+function get_quote_button(){
+  event.preventDefault();
+  var form='personal_loan_process_form';
+  //console.log(form);return false;
+    $form=$('#'+form);
+    if(! $form.valid()){
+      return false;
+    }else{
+      var slidr = $("#unranged-value").text();
+         $('#loan_tenure').val(slidr);
+         console.log(slidr);
+      $('#login_process').modal('show');
+  }
+}
+
+
+</script>
+
+<script type="text/javascript">
+  $("#quotes").click(function(event){
+   
+        var slidr = $("#unranged-value").text();
+         $('#loan_tenure').val(slidr);
+         console.log(slidr);
+        alert('ok');
+        var v_token = "{{csrf_token()}}";
+      $.ajax({  
+               type: "POST",  
+               url: "{{URL::to('loan-submit')}}",
+               dataType:'json',
+                data : $('#personal_loan_process_form').serialize(),
+               success: function(msg){
+                    // console.log(msg);
+                  if(msg.success ==true){
+                    //console.log(msg.html);
+                    // $("#personal_loan_process_form").hide();
+                    $("#test123").append(msg.html);
+                  
+                  }else{
+                    //console.log(msg.success);
+                     
+                      
+
+                  }
+                  }  
+                  }); 
+        
+        // $('#express_form').hide();
+        // $('#generic').show();
+        
+  });
+</script>
+
+<script type="text/javascript">
+  function AllowAlphabet(e)
+{
+  isIE = document.all ? 1 : 0
+  keyEntry = !isIE ? e.which : event.keyCode;
+  if (((keyEntry >= '65') && (keyEntry <= '90')) || ((keyEntry >= '97') && (keyEntry <= '122')) || (keyEntry == '46') || (keyEntry == '32') || keyEntry == '45')
+     return true;
+  else
+{
+    // alert('Please Enter Only Character values.');
+    return false;
+      }
+}
+</script>

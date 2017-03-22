@@ -33,7 +33,7 @@
 
 
 
-<input type="hidden" name="purpose" id="putID">
+
 						
 						<div class="col-xs-4 form-padding">
      <input type="text" name="custom_id" id="custom_id" class="form-input-new form-control" placeholder="Existing Custom Id if Any" onkeypress="return isNumberKey(event)" required="">
@@ -54,8 +54,10 @@
 	<div class="scaling-slider">
 	
 		<div class="tenure offset5 pad">
-    <div  id="unranged-value" value="" style="width:100%; height:10px;"></div>
-    <input type="hidden" id="tenure_value" name="tenure">
+    
+                              <div  id="unranged-value" value="" style="width:100%; height:10px;"></div>
+    </div>
+    <input  type="hidden" id="loan_tenure" name="loan_tenure" value=""  />
     </div>
 	</div>
 </div>
@@ -64,15 +66,15 @@
 								
   
 	   <div class="col-xs-8 form-padding">
-     <input type="text" name="applicant_name" id="applicant_name" class="form-input-new form-control" placeholder="Applicant Name" required="">
+     <input type="text" name="applicant_name" id="applicant_name" class="form-input-new form-control" placeholder="Applicant Name"  required="">
 	</div>
 	<div class="col-xs-6 form-padding">
      <input type="text" id="dob" name="dob" class="form-input-new form-control lastReporteddate1" placeholder="Date of Birth" required="">
 	</div>
 	<div class="col-xs-6 form-padding">
    <div class="btn-grp form-control border-none" data-toggle="buttons">
-                                    <span class="btn btn-default outer-brd1 outer-brd1 active"><input type="radio" name="gender"  value="Male"><img id="myImage" src="images/male.png" class=""></span><span class="hidden-xs">Male</span>
-                                   <span class="btn btn-default outer-brd1 outer-brd1 "><input type="radio" name="gender"  value="Female"><img id="myImage1" src="images/female.png" class=""></span> <span class="hidden-xs">Female</span>
+                                    <span class="btn btn-default outer-brd1 outer-brd1 active"><input type="radio" name="gender"  value="M"><img id="myImage" src="images/male.png" class=""></span><span class="hidden-xs">Male</span>
+                                   <span class="btn btn-default outer-brd1 outer-brd1 "><input type="radio" name="gender"  value="F"><img id="myImage1" src="images/female.png" class=""></span> <span class="hidden-xs">Female</span>
            </div>      
      </div>
      <!-- <div class="col-xs-6 form-padding">
@@ -100,7 +102,7 @@
 	<div class="col-md-12">						
 	<!-- <button class="btn btn-primary btn-outline with-arrow top-mrg pull-left quotes">Get Me Loan<i class="icon-arrow-right"  ></i></button> -->
   <?php if(Session::get('is_login')) { ?>
-    	<button class="btn btn-primary btn-outline with-arrow top-mrg pull-left quotes">Get Me Loan<i class="icon-arrow-right"  ></i></button>
+    	<button class="btn btn-primary btn-outline with-arrow top-mrg pull-left product_name " id="quotes">Get Me Loan<i class="icon-arrow-right"  ></i></button>
   <?php }else{?>
      	<a id="btn_refresh1" class="btn btn-primary btn-outline with-arrow animate-box product_name" onclick="get_quote_button()">Get me a Loan<i class="icon-arrow-right"></i></a>
   <?php }?>
@@ -113,7 +115,7 @@
      </form>
 
 	 
-	 <div class="col-md-4" >
+	 <div class="col-md-4" style="display: none;" >
 	   <div class="border brd-for">
 
              <form class="" id="compareform" role="form" method="POST" action="">
@@ -240,7 +242,8 @@ function get_quote_button(){
 	  	return false;
 	  }else{
 	  	var slidr = $("#unranged-value").text();
-         $('#tenure_value').val(slidr);
+         $('#loan_tenure').val(slidr);
+         console.log(slidr);
 	  	$('#login_process').modal('show');
 	}
 }
@@ -248,3 +251,15 @@ function get_quote_button(){
 
 </script>
 
+<script type="text/javascript">
+  $("#quotes").click(function(event){
+   
+        var slidr = $("#unranged-value").text();
+         $('#loan_tenure').val(slidr);
+         console.log(slidr);
+        alert('ok');
+        // $('#express_form').hide();
+        // $('#generic').show();
+        
+  });
+</script>

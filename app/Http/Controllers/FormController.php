@@ -40,6 +40,8 @@ class FormController extends CallApiController
     }
 
     public function p_loan_submit(Request $req){
+
+ 
         try{
         //call api to submit form data
         $input = $req->all();

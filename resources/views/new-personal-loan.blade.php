@@ -12,7 +12,7 @@
  </div>
  <div class="col-md-12 white-bg pad box-shadow fl-lft">
     
-    <form name='personal_loan_process_form' id='personal_loan_process_form' action="{{URL::to('loan-submit')}}" method="POST">
+    <form name='personal_loan_process_form' id='personal_loan_process_form'>
       {{ csrf_field() }}
       <input type="hidden" id="product" name="product_name" value=9>
     
@@ -104,12 +104,12 @@
 
   <?php if(Session::get('is_login')) {?>
                 <?php if(Session::get('contact')!=''){ Session::get('contact'); ?>
-              <button class="btn btn-primary btn-outline with-arrow top-mrg product_name" id="quotes">Get Me Loan<i class="icon-arrow-right"></i></button>
+              <a type="button" class="btn btn-primary btn-outline with-arrow top-mrg product_name" id="quotes">Get Me Loan<i class="icon-arrow-right"></i></a>
               <?php }else{?> 
                 <a  class="btn btn-primary btn-outline with-arrow top-mrg product_name" data-toggle="modal" data-target="#contact_id">Get Me Loan<i class="icon-arrow-right"></i></a>
                       <?php }?>
             <?php }else{?>
-            <button  style="display:none" class="btn btn-primary btn-outline with-arrow top-mrg product_name " id="btn_refresh_co">Get Me Loan<i class="icon-arrow-right"></i></button>
+            <a type="button" style="display:none" class="btn btn-primary btn-outline with-arrow top-mrg product_name " id="btn_refresh_co">Get Me Loan<i class="icon-arrow-right"></i></a>
 
               <a id="btn_refresh1" class="btn btn-primary btn-outline with-arrow animate-box product_name" onclick="get_quote_button()">Get Me Loan<i class="icon-arrow-right"></i></a>
             <?php } ?>
@@ -166,9 +166,10 @@
     </div>  
   </div> 
    </aside>
+   
   </div>
   </div>
-      
+      <div id ="test123"></div>
   
   
    <br>
@@ -261,6 +262,27 @@ function get_quote_button(){
          $('#loan_tenure').val(slidr);
          console.log(slidr);
         alert('ok');
+        var v_token = "{{csrf_token()}}";
+      $.ajax({  
+               type: "POST",  
+               url: "{{URL::to('loan-submit')}}",
+               dataType:'json',
+                data : $('#personal_loan_process_form').serialize(),
+               success: function(msg){
+                    // console.log(msg);
+                  if(msg.success ==true){
+                    //console.log(msg.html);
+                    // $("#personal_loan_process_form").hide();
+                    $("#test123").append(msg.html);
+                  
+                  }else{
+                    //console.log(msg.success);
+                     
+                      
+
+                  }
+                  }  
+                  }); 
         
         // $('#express_form').hide();
         // $('#generic').show();

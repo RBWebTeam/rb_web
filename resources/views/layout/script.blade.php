@@ -802,8 +802,7 @@
              var data_1=data['data'];
              if(data_1==true){
                var form_name=$('#elem').parent().find('form').attr('id');
-                           //$.post('loan-submit', $('#'+form_name).serialize());
-                           $('#'+form_name).submit();
+                            $('#'+form_name).submit();
                            $('#otp_modal').modal('hide');
                             $('#login_process').modal('hide');
                              $("#refreshID").load(location.href + " #refreshID");
@@ -813,7 +812,8 @@
                             $('#no_co_app').hide();
                               // Co-Applicant
                               $('#btn_refresh_co').show();
-                              $('#btn_refresh_co1').hide()
+                              $('#btn_refresh_co1').hide();
+                             
                            
                          }else{
                           $('#otp_err').show();

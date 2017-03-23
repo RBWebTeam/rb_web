@@ -27,7 +27,7 @@
 <meta name="google-site-verification" content="GpnTKVcLtZQjKCKHXfeaOaQGDsxzCS3XLCkTwmd4STI" />
 </head>
 <body>
-<div>
+<div class="star">
 <div class="container">
 <div class="col-md-3"></div>
 <div class="col-md-7">
@@ -52,7 +52,7 @@
 </div><!-- container -->
 
 </div>
-<video id="my-video" class="video" autoplay="autoplay" loop="loop" controls>
+<video id="my-video" class="video" autoplay="autoplay" loop="loop" style="display:none;">
   <source src="media/demo.mp4" type="video/mp4" />
   <source src="media/demo.ogv" type="video/ogg" />
   </video>

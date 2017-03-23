@@ -418,6 +418,49 @@
     </div>
   </div>
 
+<!-- New-personal-loan-modal -->
+  <div class="modal fade" id="Modal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Call RM</h4>
+        </div>
+        <div class="modal-body">
+          <form name="talk_to_us_RM_form" id="talk_to_us_RM_form" method="post">
+          {{ csrf_field() }}
+          <input type="hidden" name="form" value="talk_to_us_RM_form">
+                  <div>
+                    <fieldset>
+                      <input class="newsletter-name" name="name" placeholder="Name" required>
+                    </fieldset>
+                    </div>
+                  <div>
+                    <fieldset>
+                      <input type="text" class="newsletter-name" name="contact" pattern="[789][0-9]{9}" required maxlength="10" placeholder="Mobile Number">
+                    </fieldset>                 
+                    </div>
+                    <div>
+                    <fieldset>
+                      <input type="email" class="newsletter-name" name="email"  required  placeholder="Email ">
+                    </fieldset>                 
+                    </div>
+                  <div>
+                      <button class="btn btn-primary btn-outline with-arrow sidebar-submit">Submit<i class="icon-arrow-right"></i></button>
+                  </div>
+
+            </form>
+            <div class='msg displaynone' ><p>Thanks. We will reach you soon.</p></div>
+            <div class='msg_err displaynone' ><p>Ooops. Something went wrong.</p></div>
+        </div>
+        
+      </div>
+      
+    </div>
+  </div>
+
 
 
   

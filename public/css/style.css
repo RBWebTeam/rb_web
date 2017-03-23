@@ -1388,7 +1388,8 @@ input[placeholder], [placeholder], *[placeholder] {color: #1f386e !important;}
  .testimonials .carousel-control.left {display:none;}
  .testimonials .carousel li {background:#ccc;}
  .testimonials {padding:15px;margin-top:30px; background: #eee;border: 1px solid #ddd;}
- .popular {height:200px;} 
+ .popular {height:300px;} 
+ .popular1 {height:auto;}
  .dropdown-menu {float:left: margin-left:10px; width:70%:}
  nav .dropdown .dropdown-menu li {float:left;}
  .liza {    margin-top: 90px;padding: 15px 8px;border-right:1px dashed #ccc;border-radius: 10px;margin-bottom: 20px;background:#fff;}

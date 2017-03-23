@@ -82,7 +82,7 @@
 			<div class="row">
 				<div class="pricing pad">
 					<div class="col-md-4 animate-box">
-						<div class="price-box popular">
+						<div class="price-box popular1">
 							
 							<div class="center-blg"><img src="{{URL::to('images/tribe.png')}}" alt="Tribe Logo" title="Tribe Logo" /></div>
 							<h4 class="mrg-btm">Tribe</h4>
@@ -93,7 +93,7 @@
 					</div>
 
 					<div class="col-md-4 animate-box">
-						<div class="price-box popular">
+						<div class="price-box popular1">
 							<div class="center-blg"><img src="{{URL::to('images/birla.png')}}" alt="Aditya Birla Group Logo" title="Aditya Birla Group Logo" /></div>
 							<h4 class="mrg-btm">Aditya Birla</h4>
 						
@@ -102,7 +102,7 @@
 					</div>
 					
 					<div class="col-md-4 animate-box">
-						<div class="price-box popular">
+						<div class="price-box popular1">
 							<div class="center-blg"><img src="{{URL::to('images/apply-online.png')}}" alt="apply_online_pic" /></div>
 							<h4 class="mrg-btm">Edelweiss</h4>
 							
@@ -112,7 +112,7 @@
 					</div>
 					
 					<div class="col-md-4 animate-box">
-						<div class="price-box popular">
+						<div class="price-box popular1">
 							<div class="center-blg"><img src="{{URL::to('images/bank/iifl.png')}}" width="140" alt="apply_online_pic" /></div>
 							<h4 class="mrg-btm">IIFL</h4>
 							
@@ -122,7 +122,7 @@
 					</div>
 					
 					<div class="col-md-4 animate-box">
-						<div class="price-box popular">
+						<div class="price-box popular1">
 							<div class="center-blg"><img src="{{URL::to('images/bank/hdfc.png')}}" width="160" alt="apply_online_pic" /></div>
 							<h4 class="mrg-btm">HDFC</h4>
 							
@@ -132,28 +132,28 @@
 					</div>
 					
 					<div class="col-md-4 animate-box">
-						<div class="price-box popular">
+						<div class="price-box popular1">
 							<div class="center-blg"><img src="{{URL::to('images/bank/icici.png')}}"width="160" alt="apply_online_pic" /></div>
 							<h4 class="mrg-btm">ICICI</h4>
 							<button class="btn btn-primary btn-outline with-arrow">Apply Online<i class="icon-arrow-right"></i></button>
 						</div>
 					</div>
 					<div class="col-md-4 animate-box">
-						<div class="price-box popular">
+						<div class="price-box popular1">
 							<div class="center-blg"><img src="{{URL::to('images/bank/yes.png')}}" width="150" alt="apply_online_pic" /></div>
 							<h4 class="mrg-btm">Yes Bank</h4>
 							<button class="btn btn-primary btn-outline with-arrow">Apply Online<i class="icon-arrow-right"></i></button>
 						</div>
 					</div>
 					<div class="col-md-4 animate-box">
-						<div class="price-box popular">
+						<div class="price-box popular1">
 							<div class="center-blg"><img src="{{URL::to('images/bank/idfc.png')}}" width="150" alt="apply_online_pic" /></div>
 							<h4 class="mrg-btm">IDFC</h4>
 							<button class="btn btn-primary btn-outline with-arrow">Apply Online<i class="icon-arrow-right"></i></button>
 						</div>
 					</div>
 					<div class="col-md-4 animate-box">
-						<div class="price-box popular">
+						<div class="price-box popular1">
 							<div class="center-blg"><img src="{{URL::to('images/bank/kotak.png')}}" width="150" alt="apply_online_pic" /></div>
 							<h4 class="mrg-btm">Kotak</h4>
 							<button class="btn btn-primary btn-outline with-arrow">Apply Online<i class="icon-arrow-right"></i></button>

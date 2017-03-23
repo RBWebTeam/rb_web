@@ -3522,14 +3522,8 @@ label {
 	.top-lnk {position:absolute; background:#ccc;margin-left:-1px; display:none;}
 	.mag-lnk {width:100%; height:auto;position: relative;}
 	/*.star {background:#fff url(../images/star.gif);}*/
-	 #my-video { display:inherit; position:absolute;width:auto;}
-	 .video {
-    top: 0%;
-    left:0%;
-    z-index: 0;
-	width:100%;
-	height:100%;
-}
+	 #my-video { display:inherit; position:fixed;width:auto;}
+	 .video {top: 0%;left:0%;z-index: 0;width:100%;height:100%;}
 }
 .radio1 {display:none;}
 .center {margin:0 auto;}

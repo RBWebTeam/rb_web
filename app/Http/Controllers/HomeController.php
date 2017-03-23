@@ -163,12 +163,12 @@ class HomeController extends CallApiController
 
 	public function credit_card_compare($id){
 		 // print_r($id);exit();
-		if ($id=="RBL-Card") {
+		if ($id=="rbl") {
 			$data['title']='RBL Bank Credit Cards  | Apply for Credit Card Online on Rupeeboss.com';
         $keywords='RBL Titanium Delight Card,RBL Platinum Maxima Card,RBL Platinum Delight Card,RBL Card Offers,Best Credit Cards in India,Credit Card Deals & Offers';
         $data['description']='RBL Bank Credit Cards with Exclusive Benefits and Offers on Various types of Cards including cards to suit your needs across Titanium and Platinum cards';
 		}
-		elseif ($id=="ICICI-Card") {
+		elseif ($id=="icici") {
 			$data['title']='ICICI Bank Credit Cards  | Apply for Credit Card Online on Rupeeboss.com';
         $keywords='Credit Cards,Compare Credit Cards,Credit Cards Online,Best Credit Cards in India,Credit Card Deals & Offers,ICICI Credit Card';
         $data['description']='ICICI Credit Card - Use Rupeeboss Platform to Compare Credit Cards in India and Apply Online On Rupeeboss.com ';

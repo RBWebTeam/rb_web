@@ -12,13 +12,16 @@
  <div class="col-md-12 white-bg pad">
  <div class="col-md-4">
   <div class="col-xs-12">
- 
+ <form name='personal_loan_process_form' id='personal_loan_process_form' action={{URL::to('loan-submit')}} method="POST">   
+	 <input type="hidden" id="product" name="product_name" value="9">
+
 	   <div class="btn-grp mrg-top pad status" data-toggle="buttons">
 	  
 		<center><div class="type-cover"><span>Proprietor Ship</span></div></center>
       <span class="btn btn-default outer-brd active"><input type="radio" name="Status" id="option1">Sole Proprietor</span>
-      <span class="btn btn-default outer-brd"><input type="radio" name="Status" id="option2">Partnership</span>
-      <span class="btn btn-default outer-brd"><input type="radio" name="Status" id="option3">Company</span>
+      <span class="btn btn-default outer-brd"><input type="radio" name="emp_detail" value="Self Employed Business"  >Partnership</span>
+      <span class="btn btn-default outer-brd"><input type="radio" name="emp_detail" value="Self Employed Professional"   >Company</span>
+       <input type="hidden" class="clr-blue"   name="emp_detail_id"  placeholder="Select" ></a>
 
       </div>
 		</div>
@@ -49,7 +52,7 @@
   
   
      <div class="col-xs-6 form-padding">
-     <input type="name" class="form-input-new form-control" placeholder="NAME OF THE COMPANY" required="">
+     <input type="name" class="form-input-new form-control" name="applicantname" placeholder="NAME OF THE COMPANY"  >
 	</div>
 	<div class="col-xs-6 form-padding">
      <input type="name" class="form-input-new form-control" placeholder="INCOME TAX PAID - FIRM" required="">
@@ -106,8 +109,8 @@
     <div class="panel panel-default">
       <div class="panel-heading">
         <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">NATURE OF BUSINESS</a>
-		 <i class="icon-plus pull-right more-less"></i>
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">NATURE OF BUSINESS <i class="icon-plus pull-right more-less"></i></a>
+		
         </h4>
       </div>
       <div id="collapse1" class="panel-collapse collapse">
@@ -129,8 +132,8 @@
     <div class="panel panel-default">
       <div class="panel-heading">
         <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">INDUSTRY</a>
-		  <i class="icon-plus pull-right more-less"></i>
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">INDUSTRY <i class="icon-plus pull-right more-less"></i></a>
+		 
         </h4>
       </div>
       <div id="collapse2" class="panel-collapse collapse">
@@ -148,8 +151,8 @@
     <div class="panel panel-default">
       <div class="panel-heading">
         <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">DATE OF INCORPORATION</a>
-		  <i class="icon-plus pull-right more-less"></i>
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">DATE OF INCORPORATION <i class="icon-plus pull-right more-less"></i></a>
+		 
         </h4>
       </div>
       <div id="collapse3" class="panel-collapse collapse">
@@ -163,8 +166,8 @@
 	<div class="panel panel-default">
       <div class="panel-heading">
         <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">RESIDENCE TYPE</a>
-		  <i class="icon-plus pull-right more-less"></i>
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">RESIDENCE TYPE <i class="icon-plus pull-right more-less"></i></a>
+		 
         </h4>
       </div>
       <div id="collapse4" class="panel-collapse collapse">
@@ -182,8 +185,8 @@
 	<div class="panel panel-default">
       <div class="panel-heading">
         <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse5">OFFICE TYPE</a>
-		  <i class="icon-plus pull-right more-less"></i>
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse5">OFFICE TYPE<i class="icon-plus pull-right more-less"></i></a>
+		  
         </h4>
       </div>
       <div id="collapse5" class="panel-collapse collapse">
@@ -202,6 +205,7 @@
   
 
    <button class="btn btn-primary btn-outline with-arrow top-mrg">Get Best Quotes<i class="icon-arrow-right"></i></button>
+   </form>
 	  	</div>
 
 		<div class="col-md-4">

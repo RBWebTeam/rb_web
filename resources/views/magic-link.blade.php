@@ -1,10 +1,39 @@
-@include('layout.header')
+<!DOCTYPE html>
+<html class="no-js"> 
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title><?php if(isset($title))echo $title; else echo "RupeeBoss-Apply for a Loan"; ?></title>
+	<!-- <meta name="google-signin-client_id" content="752185558821-9vlmac53np7bgdo3kn9d2e5ft39t7gud.apps.googleusercontent.com"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="<?php if(isset($description))echo $description; else echo "RupeeBoss provides all kind of loans."; ?>" />
+	<meta name="keywords" content="<?php if(isset($keywords))echo $keywords; else echo "rupeeboss loans getloan expressloan"; ?>" />
+	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+	<link rel="shortcut icon" href="{{URL::to('images/rb_fav.png')}}">
+	<!-- <link rel="stylesheet" href="{{URL::to('fonts/Raleway.css')}}" type="text/css"> -->
+	<!-- Animate.css -->
 
-<div id="fh5co-hero" class="star">
+	<link  rel="stylesheet" type="text/css" href="{{URL::to('css/mysite.css')}}"/>
+
+	<!-- Modernizr JS -->
+	<!-- <link rel="manifest" href="{{URL::to('extension/manifest.json')}}"> -->
+	@if( request()->url() == url('/') )
+     <link rel="canonical" href="https://www.rupeeboss.com/" />
+	@else
+	     <link rel="canonical" href="{!! request()->fullUrl() !!}"  />
+	@endif
+	
+	
+<meta name="google-site-verification" content="GpnTKVcLtZQjKCKHXfeaOaQGDsxzCS3XLCkTwmd4STI" />
+</head>
+<body>
+<div>
 <div class="container">
 <div class="col-md-3"></div>
 <div class="col-md-7">
+
 	<ul class="mag-lnk">
+	   <li class="bg-none white-bg"><a href="{{URL::to('/')}}"><img src="{{URL::to('images/logo.png')}}" class="center"  alt="Rupeeboss.com " title="Rupeeboss.com " /></a></li>
 	    <li><a href="{{URL::to('home-loan-transfer/home-loan')}}">HOME LOAN BALANCE TRANSFER</a></li>
 		<li><a href="{{URL::to('home-loan-transfer/loan-against-property-loan')}}">LOAN AGAINST PROPERTY BALANCE TRANSFER</a></li>
 		<li><a href="{{URL::to('home-loan-transfer/personal-loan')}}">PERSONAL LOAN BALANCE TRANSFER</a></li>
@@ -23,13 +52,12 @@
 </div><!-- container -->
 
 </div>
-<video id="my-video" class="video" autoplay="autoplay" loop="loop" muted="" width="300" height="150">
+<video id="my-video" class="video" autoplay="autoplay" loop="loop" controls>
   <source src="media/demo.mp4" type="video/mp4" />
   <source src="media/demo.ogv" type="video/ogg" />
-  <source src="media/demo.webm" type="video/webm" />
   </video>
-@include('layout.footer')
+</body>
+</html>
 
-@include('layout.script')
 
 

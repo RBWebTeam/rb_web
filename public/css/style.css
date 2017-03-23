@@ -3485,35 +3485,29 @@ label {
 
 .mag-lnk {margin:0px; padding:0px;}
 .mag-lnk li {font-size: 16px; list-style-type:none;}
-.mag-lnk li a {text-align:center;border-radius:5px;-moz-border-radius:5px;-webkit-border-radius:5px;border-bottom:1px solid #333;padding: 10px;display: block;margin-bottom: 4px;color:#fff;}
+.mag-lnk li a {text-align:center;border-radius:5px;-moz-border-radius:5px;-webkit-border-radius:5px;border-bottom:1px solid #333;padding:9px;display: block;margin-bottom: 4px;color:#fff;}
 .mag-lnk li a:hover {background:#ec1b23;color:#fff;padding-left:25px;}
 .white-bg-border {background:#fff;border:1px solid #999;color:#666;}
 
 .mag-lnk li a {
-    /*background-image: url(../images/gold.gif);*/
 	opacity:0.8;
-	font-size:15px;
+	font-size:13px;
 	background:#000;
-    /*background: -webkit-linear-gradient(#0192cb, #00ca98); /* For Safari 5.1 to 6.0 */
-    /*background: -o-linear-gradient(#0192cb, #00ca98); /* For Opera 11.1 to 12.0 */
-   /* background: -moz-linear-gradient(#0192cb, #00ca98); /* For Firefox 3.6 to 15 */
-   /* background: linear-gradient(#0192cb, #00ca98); /* Standard syntax */
+
 }
-/* .star {
-    background:#fff url(../images/star.gif);
-} */
+ .star {background:#000 url(../images/star.gif);height: 100%;width: 100%;position: fixed;} 
 
 .mag-lnk {position:absolute;z-index:2; margin-top:20px;width:75%;}
  .mag-lnk .bg-none a {background:transparent;padding-left:0px; border-bottom:none;padding-bottom:0px;}
   .mag-lnk .bg-none a:hover {background:transparent;padding-left:0px;}
   .mag-lnk .bg-none {opacity:0.6;}
-.video {
+/*.video {
     top: 0%;
     left:50%;
     z-index: 0;
 	width:100%;
 	height:100%;
-}
+}*/
 @media screen and (max-width:768px) {
 	.btn-blu {padding:8px 5px;}
 	.border { float: left;width: 100%;}
@@ -3521,9 +3515,9 @@ label {
 	.top-lnk li:hover {visibility:visible;}
 	.top-lnk {position:absolute; background:#ccc;margin-left:-1px; display:none;}
 	.mag-lnk {width:100%; height:auto;position: relative;}
-	/*.star {background:#fff url(../images/star.gif);}*/
-	 #my-video { display:inherit; position:fixed;width:auto;}
-	 .video {top: 0%;left:0%;z-index: 0;width:100%;height:100%;}
+	.star {background:#000 url(../images/star.gif);}
+	/* #my-video { display:inherit; position:fixed;width:auto;}
+	 .video {top: 0%;left:0%;z-index: 0;width:100%;height:100%;}*/
 }
 .radio1 {display:none;}
 .center {margin:0 auto;}

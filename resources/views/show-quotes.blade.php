@@ -1,6 +1,4 @@
-
-
-    <div id="fh5co-hero" class="fclass" style="display:block;">
+<div id="fh5co-hero" class="fclass" style="display:block;">
   <div class="container" >
   <div class="table-responsive">
 
@@ -206,6 +204,7 @@
 
   
   </div>
+
 
 
 

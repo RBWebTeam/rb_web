@@ -71,20 +71,19 @@
       </div>
       <div id="collapse2" class="panel-collapse collapse">
         <div class="panel-body">
-	
 		<div class="loan-tenure">
-									<center>
-										<div class="type-cover">
-											<span>Loan Tenure</span>
-										</div>
-									</center>
-									<div class="text-center">
-										<div class="scaling-slider">
-											<img src="images/slider.png" class="img-responsive">
-										</div>
+			<center>
+				<div class="type-cover">
+						  <span>LOAN TENURE</span>
+				</div>
+			</center>
+			<div class="scaling-slider">
+			 <div class="tenure offset5 pad">
+                  <div  id="unranged-value" value="" style="width:100%; height:10px;"></div>
+				</div>
+			<input  type="hidden" id="loan_tenure" name="loan_tenure" value="5" />
+		</div>
 
-										<input type="hidden"   name="loan_tenure" value="5">
-									</div>
 	 </div>
     <div class="col-xs-6 form-padding">
      <input type="text" class="form-input-new form-control" name="applicantname" placeholder="Applicant Name"  required>
@@ -181,7 +180,7 @@
 		</div>
       </div>
     </div>
-
+<br>
     <?php if(Session::get('is_login')) {?>
 							  <?php if(Session::get('contact')!=''){ Session::get('contact'); ?>
 							<button class="btn btn-primary btn-outline with-arrow top-mrg product_name " >Get Best Quotes<i class="icon-arrow-right"></i></button>

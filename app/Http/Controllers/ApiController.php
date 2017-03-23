@@ -603,4 +603,55 @@ run_else:
 		//return $data;
 		 
 	}
+	public function create_user_via_erp(Request $req){
+		//return ($req);exit();
+
+		$status=0;
+		$pwd = mt_rand(100000, 999999);
+		$data=DB::table('user_registration')
+		->select('id')
+		->where('email','=',$req['email'])
+		->where('contact','=',$req['contact'])
+		->limit('1')
+		->get();
+
+		if($data!='[]'){
+			$update=DB::table('user_registration')
+				     ->where('email','=',$req['email'])
+		              ->where('contact','=',$req['contact'])
+				     ->update([
+				     	'password'=>md5($pwd),
+				     	'contact'=>$req['contact']]);
+			$status=2;
+			
+			$data_new=str_replace('[{"id":','',$data);
+			$data_new=str_replace('}]','',$data_new);
+			//return($data_new);exit();
+			$id=$data_new;
+		}else{
+				$id=DB::table('user_registration')
+				->insertGetId([
+					'username'=>$req['name'],
+					'email'=>$req['email'],
+					'contact'=>$req['contact'],			 		   
+					'password'=>md5($pwd),
+					'provider_user_id'=>0,
+					'provider'=>'ERP',
+					'created_at'=>date("Y-m-d H:i:s")
+					]);
+
+				if($id){
+					$cstmr_detail_id=DB::table('customer_details')
+				      ->insertGetId(['user_id'=>$id]);
+					$status=1;
+				}else{
+					$pwd=NULL;
+				}
+		}
+		return Response::json(array(
+                      'user_id' => $id,
+                      'password'=>$pwd,
+                      'status'=>$status
+                ));
+	}
 }

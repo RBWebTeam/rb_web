@@ -2197,6 +2197,7 @@ function SetSession_pop(cookieName,cookieValue){
         step: 1,
         value:10,
         onchange:function(low, high){
+          
             $('#loan_tenure').val(low);
         }
 

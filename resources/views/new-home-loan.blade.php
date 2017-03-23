@@ -1,11 +1,6 @@
 @include('layout.header')
-<div class="container">
-<form name="home_loan_process_form" id="home_loan_process_form" action="{{URL::to('loan-submit')}}" method="POST" >
-<input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
-<input type="hidden" id="product" name="product_name" value=12>
-
-
-<aside id="fh5co-hero">
+<div class="container ">
+ <aside id="fh5co-hero">
 	<div class="col-md-12">
 	<h2 class="align-center loan-head">Home Loan</h2>
 	</div>
@@ -14,9 +9,10 @@
 
  </div>
  <div class="col-md-12 white-bg pad">
- 
-	<div class="col-md-8">
-
+<div class="col-md-8" id="form_ID">
+<form name="home_loan_process_form" id="home_loan_process_form" action="{{URL::to('loan-submit')}}" method="POST" >
+<input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
+<input type="hidden" id="product" name="product_name" value=12>
 	<div class="panel-group" id="accordion">
     <div class="panel panel-default">
       <div class="panel-heading">
@@ -181,30 +177,14 @@
 	<div class="col-xs-6 form-padding">
      <input type="text" class="form-input-new form-control"  name="co_applicant_obligation" placeholder="All Existing EMI"   onkeypress="return fnAllowNumeric(event)">
 	</div>
-	   
-	   
-	   
-	   
-	   
-	   
-	   
-	   
-	   
-	   
-	   
-	   
-	   
-		
+	   		 	
 		</div>
       </div>
     </div>
-  </div> 
-  
 
-
-						<?php if(Session::get('is_login')) {?>
+    <?php if(Session::get('is_login')) {?>
 							  <?php if(Session::get('contact')!=''){ Session::get('contact'); ?>
-							<button class="btn btn-primary btn-outline with-arrow top-mrg product_name" >Get Best Quotes<i class="icon-arrow-right"></i></button>
+							<button class="btn btn-primary btn-outline with-arrow top-mrg product_name " >Get Best Quotes<i class="icon-arrow-right"></i></button>
 							<?php }else{?> 
 							  <a  class="btn btn-primary btn-outline with-arrow top-mrg product_name" data-toggle="modal" data-target="#contact_id">Get Best Quotes<i class="icon-arrow-right"></i></a>
 				              <?php }?>
@@ -215,12 +195,14 @@
 						<?php } ?>
 
 						 
-						<button   class="btn btn-primary btn-outline with-arrow top-mrg " id="btn_smt">Get Best Quotes<i class="icon-arrow-right"></i></button>
-					     
-   <!-- <button class="btn btn-primary btn-outline with-arrow top-mrg">Get Best Quotes<i class="icon-arrow-right"></i></button> -->
-	  	</div>
+						 
+  </div> 
+  </form>
+</div>
 
-		<!--div class="col-md-4">
+
+
+		<div class="col-md-4">
 	   <div class="border">
 
              <form class="" id="compareform" role="form" method="POST" action="">
@@ -266,10 +248,13 @@
 			  </div>
 			</form>
 		</div>	
-	</div-->
+	</div>
+
+
+	 <div id ="test123" class="col-md-8" ></div>
 	</div>
 	</aside>
-	</form>
+ 
 	</div>
 
 @include('layout.footer')
@@ -287,7 +272,7 @@ $(document).ready(function(){
 
 
 
-$("#btn_smt").click(function(e){
+$(".btn-primary").click(function(e){
    e.preventDefault();
     if(!$('#home_loan_process_form').valid()){
 
@@ -302,10 +287,13 @@ $("#btn_smt").click(function(e){
         //   data: {_token :_token,username:username,password:password},
              success: function(msg){
                     
-                        if(msg==1){
+                           if(msg.success ==true){
+                           $("#form_ID").empty().append(msg.html);
+                  
+                  }
 
-                             $("#home_loan_process_form").hide();
-                        }
+                             
+                        
                     }  
                   });
 

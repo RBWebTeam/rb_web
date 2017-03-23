@@ -28,7 +28,7 @@
     <div class="col-md-3"><p>Are you a Tribe Partner?</p></div>
     <div class="col-md-4">
     <p><input type="radio" name="tribe_partner" onclick="showHidden('tribe_partner_div',1)" /> Yes&nbsp;&nbsp;
-     <input type="radio" name="tribe_partner" onclick="showHidden('tribe_partner_div',0)" /> No</p></div>
+     <input type="radio" name="tribe_partner" onclick="showHidden('tribe_partner_div',0)" checked /> No</p></div>
   <div  id="tribe_partner_div" style="display: none;">
     <div class="col-md-6"><p>partnerID*</p></div>
     <div class="col-md-6"><input type="text" name="partner_id"  class="form-control form-group" required /></div>
@@ -151,13 +151,14 @@
   <hr>
     <div class="col-md-3"><p>Employees Count*</p></div>
     <div class="col-md-8">
-    <input type="text" name="txt" class="form-control form-group" name="employee_count" id="employee_count"/></div>
+    <input type="text" class="form-control form-group" name="employee_count" id="employee_count"/>
+    </div>
     
     <div class="col-md-3"><p>Registration Details*</p></div>
     <div class="col-md-8 sec">
      <select class="drop-arr" name="registration_detail" id="registration_detail">
        <option disabled selected>Select</option>
-      @foreach($data->business_details[5]->mapping as $key=>$value)
+      @foreach($data->business_details[8]->mapping as $key=>$value)
       
       <option value="{{$value}}" ><?php echo $key;?></option>
       @endforeach
@@ -227,12 +228,12 @@
     <div class="col-md-3"><p>Do you carry out Online Sales?*</p></div>
     <div class="col-md-8"><p>
     <input type="radio" name="online_sale" onclick="showHidden('online_sale_channel_div',1);" /> Yes&nbsp;&nbsp; 
-    <input type="radio" name="online_sale" onclick="showHidden('online_sale_channel_div',0);" /> No</p></div>
+    <input type="radio" name="online_sale" onclick="showHidden('online_sale_channel_div',0);" checked/> No</p></div>
     
     <div class="col-md-3"><p>Do you carry out Offline Sales?*</p></div>
     <div class="col-md-8"><p>
-    <input type="radio" name="offline_sale" /> Yes&nbsp;&nbsp; 
-    <input type="radio" name="offline_sale" /> No</p></div>
+    <input type="radio" name="offline_sale" value="true"  /> Yes&nbsp;&nbsp; 
+    <input type="radio" name="offline_sale" value="false" checked /> No</p></div>
     <div style="display: none;" id="online_sale_channel_div" >
     <div class="col-md-3 sec"><p>online_sale_channel</p></div>
     <div class="col-md-8 sec">

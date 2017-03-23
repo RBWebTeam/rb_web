@@ -11,17 +11,17 @@
   <div class="col-md-12">
         <div class="col-md-4">
             <div class="desc">
-            <a href="{{url('credit-card_compare/RBL-Card')}}"> <img src="images/rbl_credit-crd.jpg" alt="RBL Credit Cards" title="RBL Credit Cards" class="img-responsive box-shadow"/></a>
+            <a href="{{url('credit-card-compare/rbl')}}"> <img src="images/rbl_credit-crd.jpg" alt="RBL Credit Cards" title="RBL Credit Cards" class="img-responsive box-shadow"/></a>
             </div>
         </div>
         <div class="col-md-4">
             <div class="desc">
-              <a href="{{url('credit-card_compare/ICICI-Card')}}"> <img src="images/icici_credit-crd.jpg" alt="ICICI Credit Cards" title="ICICI Credit Cards"  class="img-responsive box-shadow"/></a>
+              <a href="{{url('credit-card-compare/icici')}}"> <img src="images/icici_credit-crd.jpg" alt="ICICI Credit Cards" title="ICICI Credit Cards"  class="img-responsive box-shadow"/></a>
           </div>
         </div>
         <div class="col-md-4">
             <div class="desc">
-              <a href="{{url('credit-card_compare/HDFC-Card')}}">  <img src="images/hdfc_credit-crd.jpg" alt="HDFC Credit Cards" title="HDFC Credit Cards" class="img-responsive box-shadow"/></a>
+              <a href="{{url('credit-card-compare/hdfc')}}">  <img src="images/hdfc_credit-crd.jpg" alt="HDFC Credit Cards" title="HDFC Credit Cards" class="img-responsive box-shadow"/></a>
             </div>
         </div>
    </div>

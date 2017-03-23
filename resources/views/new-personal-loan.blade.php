@@ -1,6 +1,7 @@
 @include('layout.header')
 
 <div class="container">
+
   
   <aside id="fh5co-hero">
   <div class="col-md-12">
@@ -11,21 +12,21 @@
 
  </div>
  <div class="col-md-12 white-bg pad box-shadow fl-lft">
-    
+  <!--   <div id ="test123" class="col-md-8"></div> -->
     <form name='personal_loan_process_form' id='personal_loan_process_form'>
       {{ csrf_field() }}
       <input type="hidden" id="product" name="product_name" value=9>
-    
+   <!--  <div id ="test123" class="col-md-8"></div> -->
   <div class="col-md-8">
   <h3 class="main-header">Genral Information</h3>
 <center><div class="type-cover"><span>PURPOSE OF LOAN</span></div></center>
 
 <div class="text-center flt-lft btn-grp" data-toggle="buttons">
               <div class="scenario">
-                <div class="col-xs-6 pad-no scenario-active"><a class="scenario-1 btn"><input type="radio" name="Status" id="option1"  class="radio1" checked >Marriage</a></div>
-                <div class="col-xs-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="Status" id="option1" class="radio1">Home Releted</a></div>
-                <div class="col-xs-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="Status" id="option1" class="radio1">Business</a></div>
-                <div class="col-xs-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="Status" id="option1" class="radio1">Other</a></div>
+                <div class="col-xs-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="purpose"  value="Marriage" class="radio1">Marriage</a></div>
+                <div class="col-xs-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="purpose"  value="Home Releted" class="radio1">Home Releted</a></div>
+                <div class="col-xs-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="purpose"  value="Business" class="radio1">Business</a></div>
+                <div class="col-xs-6 pad-no scenario-active"><a class="scenario-1 btn"><input type="radio" name="purpose"  value="Other" class="radio1" checked >Other</a></div>
               
                 
               </div>
@@ -73,7 +74,7 @@
   </div>
   <div class="col-xs-6 form-padding">
    <div class="btn-grp form-control border-none" data-toggle="buttons">
-                                    <span class="btn btn-default outer-brd1 outer-brd1 active"><input type="radio" name="gender"  value="M"><img id="myImage" src="images/male.png" class=""></span><span class="hidden-xs">Male</span>
+                                    <span class="btn btn-default outer-brd1 outer-brd1 active"><input type="radio" name="gender"  value="M" checked><img id="myImage" src="images/male.png" class=""></span><span class="hidden-xs">Male</span>
                                    <span class="btn btn-default outer-brd1 outer-brd1 "><input type="radio" name="gender"  value="F"><img id="myImage1" src="images/female.png" class=""></span> <span class="hidden-xs">Female</span>
            </div>      
      </div>
@@ -87,7 +88,7 @@
   
   <div class="col-xs-6 form-padding">
      <div class="btn-grp form-control border-none" data-toggle="buttons">
-      <span class="btn btn-default outer-brd active"><input type="radio" name="emp_detail_id"   value="1">Salaried</span>
+      <span class="btn btn-default outer-brd active"><input type="radio" name="emp_detail_id"   value="1" checked>Salaried</span>
       <span class="btn btn-default outer-brd "><input type="radio" name="emp_detail_id"  value="2"> Self-Emp</span>
          </div>
      </div>
@@ -105,11 +106,17 @@
   <?php if(Session::get('is_login')) {?>
                 <?php if(Session::get('contact')!=''){ Session::get('contact'); ?>
               <a type="button" class="btn btn-primary btn-outline with-arrow top-mrg product_name" id="quotes">Get Me Loan<i class="icon-arrow-right"></i></a>
+              <div class="iframeloading" style= "display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
+                <img src="{{URL::to('images/ajaxloader.gif')}}" alt="Loader" title="Loader" style="top: 50%; position: relative; left: 50%;"  />
+               </div>
               <?php }else{?> 
                 <a  class="btn btn-primary btn-outline with-arrow top-mrg product_name" data-toggle="modal" data-target="#contact_id">Get Me Loan<i class="icon-arrow-right"></i></a>
                       <?php }?>
             <?php }else{?>
             <a type="button" style="display:none" class="btn btn-primary btn-outline with-arrow top-mrg product_name " id="btn_refresh_co">Get Me Loan<i class="icon-arrow-right"></i></a>
+            <div class="iframeloading" style= "display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
+                <img src="{{URL::to('images/ajaxloader.gif')}}" alt="Loader" title="Loader" style="top: 50%; position: relative; left: 50%;"  />
+               </div>
 
               <a id="btn_refresh1" class="btn btn-primary btn-outline with-arrow animate-box product_name" onclick="get_quote_button()">Get Me Loan<i class="icon-arrow-right"></i></a>
             <?php } ?>
@@ -121,55 +128,46 @@
      <div class="col-md-4" >
      <div class="border brd-for">
 
-             <form class="" id="compareform" role="form" method="POST" action="">
+             <!-- <form class="" id="compareform" role="form" method="POST" action=""> -->
           
           
             <div class="inp-hig">
             <label class="form-label-new">Loan Amount</label>
-              <input type="text" class="form-control" id="name" name="name" placeholder="5,00,000" required class="clr-ddd" />
+              <input type="text" class="form-control" id="loanamount" name="name" value="" placeholder="" required class="clr-ddd" />
             </div>
 
             <div class="inp-hig">
           <label class="form-label-new">Best ROI</label>
-              <input type="text" class="form-control" id="name" name="name" placeholder="Best ROI" required class="clr-ddd" />
+              <input type="text" class="form-control" id="rate" name="name" value="" placeholder="" required class="clr-ddd" />
             </div>
 
             <div class="inp-hig">
-                 <label class="form-label-new">Tenure</label>
-            <select class="form-control">
-
-            <option>5</option>
-             <option>1</option>
-            <option>3</option>
-           
-            <option>7</option>
-            <option>10</option>
-            <option>15</option>
-            <option>20</option>
-            <option>30</option>
-            </select>
+            <label class="form-label-new">Tenure</label>
+                 <input type="text" class="form-control" id="term" name="name" value="" placeholder="" required class="clr-ddd">
             </div>
 
             <div class="inp-hig">
           <label class="form-label-new">Processing Fee</label>
-              <input type="text" class="form-control" id="name" name="name" placeholder="2,500" required class="clr-ddd" />
+              <input type="text" class="form-control" id="processfee" name="name" placeholder="" required class="clr-ddd" />
             </div>
 
         <div> 
           
-           <button style="display:block; width:100%;font-size:20px;padding:5px; background:#28a0ff;color:#fff;">Apply Now</button>
-         <button style="width:49%;font-size:20px;padding:5px; background:#28a0ff;color:#fff;">Eligibility</button>
-         <button style="width:49%;font-size:20px;padding:5px; background:#28a0ff;color:#fff;">Call For RM</button>
+         <a id="apply_new" type="button" class="btn btn-info" title="Experience New Digital Era In Loans">Apply Now</a>
+         <button id="eligibility" class="btn btn-info" title="See Bankwise Eligibility And Apply Amongst Best Bank">Eligibility</button>
+         <button type="button" class="btn btn-info"  id="call_rm" name="call_rm" data-toggle="modal" data-target="#Modal" title="Call For RM(Single Day Process)">Call RM</button>
          
         </div>
-      </form>
+    <!--   </form> -->
     </div>  
   </div> 
    </aside>
    
   </div>
   </div>
-      <div id ="test123"></div>
+  <div id ="test123" class="col-md-8"></div>
+  
+      
   
   
    <br>
@@ -261,7 +259,8 @@ function get_quote_button(){
         var slidr = $("#unranged-value").text();
          $('#loan_tenure').val(slidr);
          console.log(slidr);
-        alert('ok');
+        // alert('ok');
+        $(".iframeloading").show();
         var v_token = "{{csrf_token()}}";
       $.ajax({  
                type: "POST",  
@@ -272,12 +271,34 @@ function get_quote_button(){
                     // console.log(msg);
                   if(msg.success ==true){
                     //console.log(msg.html);
+                     $(".iframeloading").hide();
                     // $("#personal_loan_process_form").hide();
                     $("#test123").append(msg.html);
+
+                    var loan_eligible = msg.loan_eligible;
+                    // console.log(loan_eligible);
+                   $('#loanamount').val(loan_eligible);
+
+                    var roi = msg.roi;
+                    $('#rate').val(roi);
+
+                      var LoanTenure = msg.LoanTenure;
+                    $('#term').val(LoanTenure);
+
+                    var processingfee = msg.processingfee;
+                    $('#processfee').val(processingfee);
+
+                    var Bank_id = msg.Bank_Id;
+                    $('#bank').val(Bank_id);
+                     var url = "apply-lead-online?qoutid=0&BankId="+Bank_id+"&product=9&processing_fee="+processingfee+"&loan_eligible="+loan_eligible+"&roi_type="+roi+"";
+                     $("#apply_new").attr("href", url);
                   
+
+                  $('#call_rm').show();
                   }else{
-                    //console.log(msg.success);
-                     
+                    
+                     // window.location.href ="{{URL::to('went-wrong')}}";
+                     $(".iframeloading").hide();
                       
 
                   }
@@ -303,4 +324,13 @@ function get_quote_button(){
     return false;
       }
 }
+</script>
+
+<script type="text/javascript">
+$("#eligibility").click(function() {
+  $(window).scrollTop($('#test123').offset().top-20);
+});
+
+
+
 </script>

@@ -31,19 +31,19 @@ class tribeController extends CallApiController
 		//company_address
 
 
-$data['middle_name']=isset($data['middle_name'])?$data['middle_name']:'';
-$data['social']=isset($data['social'])?$data['social']:'';
-$data['partners_count']=isset($data['partners_count'])?$data['partners_count']:'';
-$data['directors_count']=isset($data['directors_count'])?$data['directors_count']:'';
-$data['proprietorship_type']=isset($data['proprietorship_type'])?$data['proprietorship_type']:'';
-$data['taxation_details']=isset($data['taxation_details'])?$data['taxation_details']:'';
-$data['online_sale_channel']=isset($data['online_sale_channel'])?$data['online_sale_channel']:'';
-$data['business_run_by']=isset($data['business_run_by'])?$data['business_run_by']:'';
-$data['business_run_by_pan_div']=isset($data['business_run_by_pan_div'])?$data['business_run_by_pan_div']:'';
+$data['middle_name']=isset($data['middle_name'])?$data['middle_name']:"";
+$data['social']=isset($data['social'])?$data['social']:"";
+$data['partners_count']=isset($data['partners_count'])?$data['partners_count']:"";
+$data['directors_count']=isset($data['directors_count'])?$data['directors_count']:"";
+$data['proprietorship_type']=isset($data['proprietorship_type'])?$data['proprietorship_type']:"";
+$data['taxation_details']=isset($data['taxation_details'])?$data['taxation_details']:"";
+$data['online_sale_channel']=isset($data['online_sale_channel'])?$data['online_sale_channel']:"";
+$data['business_run_by']=isset($data['business_run_by'])?$data['business_run_by']:"";
+$data['business_run_by_pan_div']=isset($data['business_run_by_pan_div'])?$data['business_run_by_pan_div']:"";
 
 //print_r($data);exit();
 
-		$post_data='"agentname":"'.$data['agent_name'].'",
+		$post_data='{"agentname":"'.$data['agent_name'].'",
 	"business_details":{
 		"address":[{
 			"work":"'.$data['agent_name'].'"
@@ -62,7 +62,7 @@ $data['business_run_by_pan_div']=isset($data['business_run_by_pan_div'])?$data['
 		"product_sell":['.$data['selling_product'].'],
 		"proprietorship_type":'.$data['business_run_by'].',
 		"registration_details":'.$data['registration_detail'].',
-		"taxation_details":[""],
+		"taxation_details":['.$data['taxation_details'].'],
 		"turnover":'.$data['turnover'].'
 	},
 	"documents":[{
@@ -111,7 +111,7 @@ $data['business_run_by_pan_div']=isset($data['business_run_by_pan_div'])?$data['
 		"mobile_number":'.$data['ref_mobile'].'
 	},
 	"repayment_frequency":'.$data['repayment_frequency'].',
-	"secret":"'.$data['agent_name'].'"';
+	"secret":"'.$data['agent_name'].'"}';
 
 	print_r($post_data);exit();
 	}

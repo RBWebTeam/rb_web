@@ -2,7 +2,7 @@
 <div id="fh5co-hero">
   <div class="container">
   <h2 class="align-center loan-head">Working Capital</h2>
-  <div class="col-md-12 pad1 white-bg">
+  <div>
 
   <ul class="nav nav-tabs" id="userTabs">
   <li class="active"><a data-toggle="tab" href="#home"><b>WORKING CAPITAL</b></a></li>
@@ -15,13 +15,16 @@
 <div class="tab-content">
   <div id="home" class="tab-pane fade in active">
      <div class="col-md-12">
-   <h4 class="wc-center"><input type="radio" name="bank1" onclick="bankName('bank1')"  checked="checked" id="bank1" value="bank1"/> Bank 1 &nbsp; &nbsp; <input type="radio" name="bank2" id="bank2"  onclick="bankName('bank2')" /> Bank 2 &nbsp; &nbsp;  <input type="radio" name="bank3" id="bank3" onclick="bankName('bank3')"/> Bank 3&nbsp;  &nbsp; </h4>
+	 <div class="col-md-3"></div>
+   <h4 class="col-md-2"><input type="radio" name="bank1" onclick="bankName('bank1')"  checked="checked" id="bank1" value="bank1"/> Bank 1 </h4>
+   <h4 class="col-md-2"><input type="radio" name="bank2" id="bank2"  onclick="bankName('bank2')" /> Bank 2 </h4>
+   <h4 class="col-md-2"><input type="radio" name="bank3" id="bank3" onclick="bankName('bank3')"/> Bank 3 </h4>
    </div>
   <div class="col-md-4">
-  <div class="white-bg heigh-bt">
+  <div>
   
  <form id="WorkingCapitalCurrent">
-  <div class="border heigh-bt">
+  <div class="border heigh-bt white-bg">
   <h3 class="emi-cal text-center">Current Status of Loan</h3>
     <input type="text" class="form-control form-group" placeholder="Loan Amount" id="loanAmount_id" maxlength="10"  onkeypress="return isNumberKey(event)">
    <input type="text" class="form-control form-group" placeholder="Current Rate of Interest" id="interest"  maxlength="5" onkeypress="return isNumberKey(event)" >
@@ -37,9 +40,9 @@
   </div>
   
   <div class="col-md-4">
-  <div class="white-bg heigh-bt">
+  <div>
    
-    <div class="border heigh-bt">
+    <div class="border heigh-bt white-bg">
     <h3 class="emi-cal text-center">Your Saving</h3>
        <center class="my-saving">
        <p>Monthly Interest Paid :<b class="em1"> ₹ <span id="monthlyinterest">0</span></b></p>
@@ -57,9 +60,9 @@
   </div>
   
   <div class="col-md-4">
-  <div class="white-bg heigh-bt">
+  <div>
    <form id=WorkingCapitalAfter>
-  <div class="border heigh-bt">
+  <div class="border heigh-bt white-bg">
   <h3 class="emi-cal text-center">After The Transfer</h3>
      <input type="text" class="form-control form-group loanAmountAfter" placeholder="Loan Amount" id="loanAmount_idAfter" maxlength="10"  onkeypress="return isNumberKey(event)" readonly>
    <input type="text" class="form-control form-group interestAfter" placeholder="10" value="10" id="interestAfter"  maxlength="2" onkeypress="return isNumberKey(event)"  readonly>
@@ -85,13 +88,17 @@
   
   <div id="menu1" class="tab-pane fade">
   <div class="col-md-12">
-   <h4 class="wc-center"><input type="radio" name="Tbank1" onclick="TbankName('Tbank1')"  checked="checked" id="Tbank1" value="Tbank1"/> Bank 1 &nbsp; &nbsp; <input type="radio" name="Tbank2" id="Tbank2"  onclick="TbankName('Tbank2')" /> Bank 2 &nbsp; &nbsp;  <input type="radio" name="Tbank3" id="Tbank3" onclick="TbankName('Tbank3')"/> Bank 3&nbsp;  &nbsp; </h4>
+  <h4 class="col-md-3"></h4>
+   <h4 class="col-md-2"><input type="radio" name="Tbank1" onclick="TbankName('Tbank1')"  checked="checked" id="Tbank1" value="Tbank1"/> Bank 1</h4>
+   <h4 class="col-md-2"><input type="radio" name="Tbank2" id="Tbank2"  onclick="TbankName('Tbank2')" /> Bank 2</h4>
+   <h4 class="col-md-2"><input type="radio" name="Tbank3" id="Tbank3" onclick="TbankName('Tbank3')"/> Bank 3</h4>
+   
    </div>
   <div class="col-md-4">
-  <div class="white-bg heigh-bt">
+  <div>
   
   <form id="term_loan_form">
-  <div class="border heigh-bt">
+  <div class="border heigh-bt white-bg">
   <h3 class="emi-cal text-center">Current Status of Loan</h3>
    <input type="text" class="form-control form-group" placeholder="Loan Amount" id="termloanAmount" maxlength="10"  onkeypress="return isNumberKey(event)">
    <input type="text" class="form-control form-group" placeholder="Current Rate of Interest" id="terminterest"  maxlength="5" onkeypress="return isNumberKey(event)" >
@@ -107,9 +114,9 @@
   </div>
   
   <div class="col-md-4">
-  <div class="white-bg heigh-bt">
+  <div>
    
-    <div class="border heigh-bt">
+    <div class="border heigh-bt white-bg">
     <h3 class="emi-cal text-center">Your Saving</h3>
     <center class="my-saving">
        <p>Loan EMI :<b class="em1"> ₹ <span id="LoanEMI">0</span></b></p>
@@ -129,9 +136,9 @@
   </div>
   
   <div class="col-md-4">
-  <div class="white-bg heigh-bt">
+  <div>
    <form id=WorkingCapitalAfter>
-  <div class="border heigh-bt">
+  <div class="border heigh-bt white-bg">
   <h3 class="emi-cal text-center">After The Transfer</h3>
      <input type="text" class="form-control form-group tloanAmountAfter" placeholder="Loan Amount" id="tloanAmountAfter" maxlength="10"  onkeypress="return isNumberKey(event)" readonly>
    <input type="text" class="form-control form-group tinterestAfter" placeholder="10" value="10" id="tinterestAfter"  maxlength="5" onkeypress="return isNumberKey(event)"  readonly>
@@ -157,10 +164,10 @@
     
   
   <div class="col-md-4">
-  <div class="white-bg heigh-bt">
+  <div>
   
   <form id="packing_credit_domesti">
-  <div class="border heigh-bt">
+  <div class="border heigh-bt white-bg">
   <h3 class="emi-cal text-center">Current Status of Loan</h3>
     <input type="text" class="form-control form-group dloanAmount_id" placeholder="Loan Amount" id="loanAmount_id" maxlength="10"  onkeypress="return isNumberKey(event)">
    <input type="text" class="form-control form-group dinterest" placeholder="Current Rate of Interest" id="interest"  maxlength="5" onkeypress="return isNumberKey(event)" >
@@ -187,9 +194,9 @@
   </div>
   
   <div class="col-md-4">
-  <div class="white-bg heigh-bt">
+  <div>
    
-    <div class="border heigh-bt">
+    <div class="border heigh-bt white-bg">
     <h3 class="emi-cal text-center">Your Saving</h3>
 
         <center class="my-saving">
@@ -208,9 +215,9 @@
   </div>
   
   <div class="col-md-4">
-  <div class="white-bg heigh-bt">
+  <div>
    
-  <div class="border heigh-bt">
+  <div class="border heigh-bt white-bg">
   <h3 class="emi-cal text-center">After The Transfer</h3>
    <input type="text" class="form-control form-group dloanAmountAfter" placeholder="Loan Amount" id="dloanAmount_idAfter" maxlength="10"  onkeypress="return isNumberKey(event)" readonly>
    <input type="text" class="form-control form-group dinterestAfter" placeholder="10" value="7" id="dinterestAfter"  maxlength="2" onkeypress="return isNumberKey(event)"  readonly>
@@ -224,10 +231,10 @@
   <div id="menu3" class="tab-pane fade">
     
  <div class="col-md-4">
-  <div class="white-bg heigh-bt">
+  <div>
   
   <form id="packing_credit_foreign_currency">
-  <div class="border heigh-bt">
+  <div class="border heigh-bt white-bg">
   <h3 class="emi-cal text-center">Current Status of Loan</h3>
     <input type="text" class="form-control form-group fcloanAmount_id" placeholder="Loan Amount" id="loanAmount_id" maxlength="10"  onkeypress="return isNumberKey(event)">
    <input type="text" class="form-control form-group fcinterest" placeholder="Current Rate of Interest" id="interest"  maxlength="5" onkeypress="return isNumberKey(event)" >
@@ -256,9 +263,9 @@
   </div>
   
   <div class="col-md-4">
-  <div class="white-bg heigh-bt">
+  <div>
    
-    <div class="border heigh-bt">
+    <div class="border heigh-bt white-bg">
     <h3 class="emi-cal text-center">Your Saving</h3>
 
         <center class="my-saving">
@@ -277,9 +284,9 @@
   </div>
   
   <div class="col-md-4">
-  <div class="white-bg heigh-bt">
+  <div>
    
-  <div class="border heigh-bt">
+  <div class="border heigh-bt white-bg">
   <h3 class="emi-cal text-center">After The Transfer</h3>
    <input type="text" class="form-control form-group fcloanAmountAfter" placeholder="Loan Amount" id="fcloanAmount_idAfter" maxlength="10"  onkeypress="return isNumberKey(event)" readonly>
    <input type="text" class="form-control form-group fcinterestAfter" placeholder="10" value="5" id="fcinterestAfter"  maxlength="2" onkeypress="return isNumberKey(event)"  readonly>
@@ -328,7 +335,7 @@
 </div>
   </div>
 </div>
-
+</br>
 @include('layout.footer')
 @include('layout.script')
 

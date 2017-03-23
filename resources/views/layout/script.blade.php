@@ -805,16 +805,6 @@
                            //$.post('loan-submit', $('#'+form_name).serialize());
                            $('#'+form_name).submit();
                            $('#otp_modal').modal('hide');
-                            $('#login_process').modal('hide');
-                             $("#refreshID").load(location.href + " #refreshID");
-                              $('#btn_refresh').show();
-                            $('#btn_refresh1').hide();
-                            $('.btn_refresh1').hide();
-                            $('#no_co_app').hide();
-                              // Co-Applicant
-                              $('#btn_refresh_co').show();
-                              $('#btn_refresh_co1').hide()
-                           
                          }else{
                           $('#otp_err').show();
                           $('#wait').hide();

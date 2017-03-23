@@ -76,7 +76,7 @@ Route::get('refresh-csrf', function(){
 // Route::get('api','LoanQuatesController@GetHomeLoanQuotes');
 
 /*emi test*/
-Route::get('check_emi','CompareController@emi2');
+Route::get('check-emi','CompareController@emi2');
 Route::post('emi_cal','CompareController@emi_cal');
 Route::get('loan-details/{product}/{bank}','BankController@home_loanBank');
 Route::get('home-loan-transfer/{loan}','CompareController@switchme');

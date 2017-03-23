@@ -30,7 +30,7 @@
 	@endif
 	
 	
-<meta name="google-site-verification" content="GpnTKVcLtZQjKCKHXfeaOaQGDsxzCS3XLCkTwmd4STI" />
+<meta name="google-site-verification" content="WX6V_57BIW9ttEdt8-lFFx9AWksmU0OzrSB8CqEW084" />
 <script type="application/ld+json">
  { 
  "@context" : "http://schema.org",

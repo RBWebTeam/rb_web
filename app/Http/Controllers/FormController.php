@@ -99,12 +99,13 @@ class FormController extends CallApiController
               // print_r('call  usp_get_bank_quot_test("'.$req['property_cost'].'","'.$req['loan_tenure'].'","'.$req['loan_amount'].'","'.$req['gender'].'","'.$req['income'].'","'.$req['obligation'].'","'.$req['dob'].'","'.$req['have_co_applicant'].'","'.$req['co_applicant_income'].'","'.$req['co_applicant_obligation'].'","'.$req['turnover'].'","'.$req['profit_after_tax'].'","'.$req['depreciation'].'","'.$req['remuneration'].'","'.$req['co_applicant_turnover'].'","'.$req['co_applicant_profit_after_tax'].'","'.$req['co_applicant_depreciation'].'","'.$req['co_applicant_remuneration'].'","'.$req['emp_detail_id'].'","'.$req['co_dob'].'","'.$req['co_emp_detail'].'","'.$product_id.'")');exit();
                 //print_r($req['co_emp_detail']);exit();
                 $quote_data=DB::select('call  usp_get_bank_quot_test("'.$req['property_cost'].'","'.$req['loan_tenure'].'","'.$req['loan_amount'].'","'.$req['gender'].'","'.$req['income'].'","'.$req['obligation'].'","'.$req['dob'].'","'.$req['have_co_applicant'].'","'.$req['co_applicant_income'].'","'.$req['co_applicant_obligation'].'","'.$req['turnover'].'","'.$req['profit_after_tax'].'","'.$req['depreciation'].'","'.$req['remuneration'].'","'.$req['co_applicant_turnover'].'","'.$req['co_applicant_profit_after_tax'].'","'.$req['co_applicant_depreciation'].'","'.$req['co_applicant_remuneration'].'","'.$req['emp_detail_id'].'","'.$req['co_dob'].'","'.$req['co_emp_detail'].'","'.$product_id.'")');
-               //print_r($quote_data);exit();
+               // print_r($quote_data);exit();
             }
             //print_r($req->all());exit();
              $save=new bank_quote_api_request();    
             $id=$save->save_liza($req);
             $data['quote_id']=$id;
+
             }else{
                 $quote_data =$req['product_name'];
                 return view("went-wrong");
@@ -126,10 +127,28 @@ class FormController extends CallApiController
             
             $data['loan_amount'] =$req['loan_amount'];
             $data['quote_data'] =$quote_data;
-             //  print"<pre>";print_r($data);exit();
+              // print_r($quote_data);exit();
+            //print"<pre>";print_r($data['quote_data'][0]);exit();
             //return view('show-quotes')->with($data);
+            if ($quote_data) {
+               
+            
+               $Bank_Id=$data['quote_data'][0]->Bank_Id;
+               $loan_eligible=$data['quote_data'][0]->loan_eligible;
+               $roi=$data['quote_data'][0]->roi;
+               $LoanTenure=$data['quote_data'][0]->LoanTenure;
+               $processingfee=$data['quote_data'][0]->processingfee;
+           }
+           else{
+            $Bank_Id="";
+               $loan_eligible="";
+               $roi="";
+               $LoanTenure="";
+               $processingfee="";
+           }
             $returnHTML = view('show-quotes')->with($data)->render();
-            return response()->json(array('success' => true,'html'=>$returnHTML));
+            return response()->json(array('success' => true,'Bank_Id'=>$Bank_Id,'loan_eligible'=>$loan_eligible,'roi'=>$roi,'LoanTenure'=>$LoanTenure,'processingfee'=>$processingfee,'html'=>$returnHTML));
+        
         }catch(\Exception $ee){
             return $ee;//view('went-wrong');
         }

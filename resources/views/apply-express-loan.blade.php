@@ -12,7 +12,7 @@
 			<div class="offset5">
 
             <div class="col-md-12">
-			<center><div class="type-cover"><span>ENTER AMOUNT</span></div></center>
+			<center><div class="type-cover1"><span>ENTER AMOUNT</span></div></center>
 			<input type="text" name="amount" id="amount" class="center-dv input-typ" placeholder="5,00,000" maxlength="10"
 			onkeypress="return isNumberKey(event)"  required/>
 			</div>
@@ -20,7 +20,7 @@
 		    
 			<div class="col-md-12">
 			<div class="offset5">
-			<center><div class="type-cover"><span>BUSINESS TYPE</span></div></center>
+			<center><div class="type-cover1"><span>BUSINESS TYPE</span></div></center>
 			<a class="btn border"><input type="radio" name="employment"  value="Self_Employed_Professionsl(SEP)" checked/> Self Employed Professionsl (SEP)</a>
              <a class="btn border"><input type="radio" name="employment"  value="Self_Employed_Non_Professional (SENP)" /> Self Employed Non-Professionsl (SENP)</a>
 			</div>
@@ -28,7 +28,7 @@
 			
 			<div class="col-md-2"></div>
 			<div class="col-md-8">
-			<center><div class="type-cover"><span>TENURE (Months)</span></div></center>
+			<center><div class="type-cover1"><span>TENURE (Months)</span></div></center>
 			<div class="tenure offset5 pad">
 			<div  id="unranged-value" style="width:100%; height:10px;"></div>
 			</div>
@@ -37,7 +37,7 @@
 			<div class="col-md-12">
 			<div class="offset5">
 			<br>
-			<center><div class="type-cover"><span>FIRM HOLDER</span></div></center>
+			<center><div class="type-cover1"><span>FIRM HOLDER</span></div></center>
 			<a class="btn border"><input type="radio" name="firm_holder" 
 			value="Sole_Proprietor " checked/> Sole Proprietor</a>
              <a class="btn border"><input type="radio" name="firm_holder"

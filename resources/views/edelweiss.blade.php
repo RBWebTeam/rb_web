@@ -70,27 +70,27 @@
  </div>
 	<div class="col-md-4">
 	<div class="panel-group" id="accordion">
-	<div class="panel panel-default">
+	<div class="panel-default">
       <div id="collapse0" class="panel-collapse collapse in">
         <div class="panel-body">
 		
 	
-	<div class="col-xs-8 form-padding">
+	<div class="col-xs-8 form-padding pad">
 	 <h4 class="mrg-top">Export/Import</h4>
 	</div>
-	<div class="col-xs-4 form-padding">
-     <div class="btn-grp form-control border-none" data-toggle="buttons">
-      <span class="btn btn-primary outer-brd btn-blu active"><input type="radio" name="Status" id="option1">Y</span>
-      <span class="btn btn-primary outer-brd btn-blu"><input type="radio" name="Status" id="option2">N</span>
+	<div class="col-xs-4 form-padding pad">
+     <div class="btn-grp border-none" data-toggle="buttons">
+      <span class="btn btn-default outer-brd btn-blu active"><input type="radio" name="Status" id="option1">Y</span>
+      <span class="btn btn-default outer-brd btn-blu"><input type="radio" name="Status" id="option2">N</span>
          </div>
 	</div>
-	<div class="col-xs-8 form-padding">
+	<div class="col-xs-8 form-padding pad">
 	 <span>Has a Good Repayment track record in existing UBL / CC / OD ?</span>
 	</div>
-	<div class="col-xs-4 form-padding">
-     <div class="btn-grp form-control border-none" data-toggle="buttons">
-      <span class="btn btn-primary outer-brd btn-blu active"><input type="radio" name="Status" id="option1">Y</span>
-      <span class="btn btn-primary outer-brd btn-blu"><input type="radio" name="Status" id="option2">N</span>
+	<div class="col-xs-4 form-padding pad">
+     <div class="btn-grp border-none" data-toggle="buttons">
+      <span class="btn btn-default outer-brd btn-blu active"><input type="radio" name="Status" id="option1">Y</span>
+      <span class="btn btn-default outer-brd btn-blu"><input type="radio" name="Status" id="option2">N</span>
          </div>
 	</div>
 		</div>
@@ -107,14 +107,16 @@
       </div>
       <div id="collapse1" class="panel-collapse collapse">
         <div class="panel-body">
-	   
-	   <div class="scenario">
-								<div class="col-xs-12 pad-no scenario-active"><a class="scenario-1 text-center">MANUFACTURING</a></div>
-								<div class="col-xs-12 pad-no"><a class="scenario-1 text-center">TRADING</a></div>
-								<div class="col-xs-12 pad-no"><a class="scenario-1 text-center">SERVICES</a></div>
-								<div class="col-xs-12 pad-no"><a class="scenario-1 text-center scenario-border">RETAILER</a></div>
-								<div class="col-xs-12 pad-no"><a class="scenario-1 text-center scenario-top-border">OTHER</a></div>
+							
+	<div class="text-center flt-lft btn-grp" data-toggle="buttons">
+							<div class="scenario">
+								<div class="col-xs-12 pad-no scenario-active"><a class="scenario-1 btn"><input type="radio" name="Status" id="option1"  class="radio1" checked >MANUFACTURING</a></div>
+								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="Status" id="option1" class="radio1">TRADING</a></div>
+								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="Status" id="option1" class="radio1">SERVICES</a></div>
+								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="Status" id="option1" class="radio1">RETAILER</a></div>
+								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="Status" id="option1" class="radio1">OTHER</a></div>
 							</div>
+						</div>
 	   
 	   
 		
@@ -130,13 +132,15 @@
       </div>
       <div id="collapse2" class="panel-collapse collapse">
         <div class="panel-body">
-		   <div class="scenario">
-								<div class="col-xs-12 pad-no scenario-active"><a class="scenario-1 text-center">Selection 1</a></div>
-								<div class="col-xs-12 pad-no"><a class="scenario-1 text-center">Selection 2</a></div>
-								<div class="col-xs-12 pad-no"><a class="scenario-1 text-center">Selection 3</a></div>
-								<div class="col-xs-12 pad-no"><a class="scenario-1 text-center scenario-border">Selection 4</a></div>
-								<div class="col-xs-12 pad-no"><a class="scenario-1 text-center scenario-top-border">Selection 5</a></div>
+		<div class="text-center flt-lft btn-grp" data-toggle="buttons">
+							<div class="scenario">
+								<div class="col-xs-12 pad-no scenario-active"><a class="scenario-1 btn"><input type="radio" name="Status" id="option1"  class="radio1" checked >Selection 1</a></div>
+								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="Status" id="option1" class="radio1">Selection 2</a></div>
+								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="Status" id="option1" class="radio1">Selection 3</a></div>
+								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="Status" id="option1" class="radio1">Selection 4</a></div>
+								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="Status" id="option1" class="radio1">Selection 5</a></div>
 							</div>
+						</div>
 		</div>
       </div>
     </div>
@@ -171,6 +175,8 @@
 								<div class="col-xs-12 pad-no"><a class="scenario-1 text-center scenario-border">Others</a></div>
 
 							</div>
+	
+	
 		</div>
       </div>
     </div>
@@ -231,8 +237,9 @@
 				<br>
 				<div class="inp-hig">
 				      <input type="text" class="form-control" id="name" name="name" placeholder="ENTER OTP" required class="clr-ddd" />
-				    </div>
+				   
 				 <button style="width:100%;font-size:20px;padding:5px; background:#28a0ff;color:#fff;">SUBMIT</button>
+				  </div>
 			   
 			  </div>
 			</form>

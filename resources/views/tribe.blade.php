@@ -9,14 +9,14 @@
   	<div class="col-md-12 pad1 white-bg box-shadow">
 
    <ul class="nav nav-tabs">
-    <li class="active"><a data-toggle="tab" href="#main">BASIC DETAILS</b></a></li>
-    <li><a data-toggle="tab" href="#main1"><b>LOAN DETAILS</b></a></li>
-    <li><a data-toggle="tab" href="#main2"><b>PERSONAL DETAILS</b></a></li>
-    <li><a data-toggle="tab" href="#main3"><b>BUSNESS DETAILS</b></a></li>
-    <li><a data-toggle="tab" href="#main4"><b>DOCUMENTS</b></a></li>
-    <li><a data-toggle="tab" href="#main5"><b>ONLINE IDS</b></a></li>
-    <li><a data-toggle="tab" href="#main6"><b>REFRENCES</b></a></li>
-    <li><a data-toggle="tab" href="#main7"><b>BANK STATMENTS</b></a></li>
+    <li class="active"><a data-toggle="tab" href="#main">BASIC DETAIL</b></a></li>
+    <li><a data-toggle="tab" href="#main1"><b>LOAN DETAIL</b></a></li>
+    <li><a data-toggle="tab" href="#main2"><b>PERSONAL DETAIL</b></a></li>
+    <li><a data-toggle="tab" href="#main3"><b>BUSINESS DETAIL</b></a></li>
+    <li><a data-toggle="tab" href="#main4"><b>DOCUMENT</b></a></li>
+    <li><a data-toggle="tab" href="#main5"><b>ONLINE ID</b></a></li>
+    <li><a data-toggle="tab" href="#main6"><b>REFERENCE</b></a></li>
+    <li><a data-toggle="tab" href="#main7"><b>BANK STATEMENT</b></a></li>
   </ul>
 
   <div class="tab-content">
@@ -28,7 +28,7 @@
     <div class="col-md-3"><p>Are you a Tribe Partner?</p></div>
     <div class="col-md-4">
     <p><input type="radio" name="tribe_partner" onclick="showHidden('tribe_partner_div',1)" /> Yes&nbsp;&nbsp;
-     <input type="radio" name="tribe_partner" onclick="showHidden('tribe_partner_div',0)" /> No</p></div>
+     <input type="radio" name="tribe_partner" onclick="showHidden('tribe_partner_div',0)" checked /> No</p></div>
   <div  id="tribe_partner_div" style="display: none;">
     <div class="col-md-6"><p>partnerID*</p></div>
     <div class="col-md-6"><input type="text" name="partner_id"  class="form-control form-group" required /></div>
@@ -151,20 +151,22 @@
   <hr>
     <div class="col-md-3"><p>Employees Count*</p></div>
     <div class="col-md-8">
-    <input type="text" name="txt" class="form-control form-group" name="employee_count" id="employee_count"/></div>
+    <input type="text" class="form-control form-group" name="employee_count" id="employee_count"/>
+    </div>
     
     <div class="col-md-3"><p>Registration Details*</p></div>
     <div class="col-md-8 sec">
      <select class="drop-arr" name="registration_detail" id="registration_detail">
        <option disabled selected>Select</option>
-      @foreach($data->business_details[5]->mapping as $key=>$value)
+      @foreach($data->business_details[8]->mapping as $key=>$value)
       
-      <option value="{{$value}}"><?php echo $key;?></option>
+      <option value="{{$value}}" ><?php echo $key;?></option>
       @endforeach
     </select>
     </div>
+    <div id="partners_div" style="display: none;">
     <div class="col-md-3"><p>Number of Partners*</p></div>
-    <div class="col-md-8 sec">
+    <div class="col-md-8 sec"  >
      <select class="drop-arr" name="partners_count" id="partners_count">
        <option disabled selected>Select</option>
       @foreach($data->business_details[8]->mapping as $key=>$value)
@@ -173,11 +175,41 @@
       @endforeach
     </select>
     </div>
-    
+    </div>
+    <div id="director_div" style="display: none;">
+    <div class="col-md-3"><p>Number of Directors*</p></div>
+    <div class="col-md-8 sec"  >
+     <select class="drop-arr" name="directors_count" id="directors_count">
+       <option disabled selected>Select</option>
+      @foreach($data->business_details[1]->mapping as $key=>$value)
+      
+      <option value="{{$value}}"><?php echo $key;?></option>
+      @endforeach
+    </select>
+    </div>
+    </div>
+    <div id="business_run_by_div" style="display: none;">
+    <div class="col-md-3"><p>Business Run by:*</p></div>
+    <div class="col-md-8 sec"  >
+     <select class="drop-arr" name="business_run_by" id="business_run_by">
+       <option disabled selected>Select</option>
+      @foreach($data->business_details[3]->mapping as $key=>$value)
+      
+      <option value="{{$value}}"><?php echo $key;?></option>
+      @endforeach
+    </select>
+    </div>
+    </div>
+    <div id="company_pan_card_div">
     <div class="col-md-3"><p>Company Pan Number*</p></div>
     <div class="col-md-8">
     <input type="text" name="company_pan_card" id="company_pan_card" class="form-control form-group" required="" /></div>
-    
+    </div>
+    <div id="business_run_by_pan_div" style="display: none;">
+    <div class="col-md-3"><p>Pan Number*</p></div>
+    <div class="col-md-8">
+    <input type="text" name="business_run_by_pan" id="business_run_by_pan" class="form-control form-group" required="" /></div>
+    </div>
     <div class="col-md-3"><p>Address*</p></div>
     <div class="col-md-8">
     <textarea class="form-control form-control mrg-btm" colspan="2" id="company_address" name="company_address"></textarea></div>
@@ -196,12 +228,12 @@
     <div class="col-md-3"><p>Do you carry out Online Sales?*</p></div>
     <div class="col-md-8"><p>
     <input type="radio" name="online_sale" onclick="showHidden('online_sale_channel_div',1);" /> Yes&nbsp;&nbsp; 
-    <input type="radio" name="online_sale" onclick="showHidden('online_sale_channel_div',0);" /> No</p></div>
+    <input type="radio" name="online_sale" onclick="showHidden('online_sale_channel_div',0);" checked/> No</p></div>
     
     <div class="col-md-3"><p>Do you carry out Offline Sales?*</p></div>
     <div class="col-md-8"><p>
-    <input type="radio" name="offline_sale" /> Yes&nbsp;&nbsp; 
-    <input type="radio" name="offline_sale" /> No</p></div>
+    <input type="radio" name="offline_sale" value="true"  /> Yes&nbsp;&nbsp; 
+    <input type="radio" name="offline_sale" value="false" checked /> No</p></div>
     <div style="display: none;" id="online_sale_channel_div" >
     <div class="col-md-3 sec"><p>online_sale_channel</p></div>
     <div class="col-md-8 sec">
@@ -252,7 +284,7 @@
     <div class="col-md-3"><p>Loan Purpose*</p></div>
     <div class="col-md-8 sec">
      <select class="drop-arr" name="loan_purpose" id="loan_purpose">
-       <option>-Select Loan Purpose</option>
+       <option disabled selected>Select Loan Purpose</option>
   		 <option>inventory rotation</option>
   		 <option>product differentiation</option>
   		 <option>expansion</option>
@@ -321,7 +353,7 @@
   </div>
     <div class="col-md-3">Company IT Returns</div>
     <div class="col-md-8">
-    <input type="file" name="doc_comapny_it_returns" id="doc_comapny_it_returns" class="form-control form-group no-border"/></div>
+    <input type="file" name="doc_comapany_it_returns" id="doc_comapny_it_returns" class="form-control form-group no-border"/></div>
     
     <div class="col-md-3">Company PAN</div>
     <div class="col-md-8">
@@ -463,4 +495,28 @@
                 }  
         }); 
     });
+  </script>
+  <script type="text/javascript">
+  $('#registration_detail').change(function() {
+    //console.log($(this).val());
+    $('#director_div').hide();
+    $('#partners_div').hide();
+    $('#business_run_by_div').hide();
+    $('#company_pan_card_div').show();
+    $('#business_run_by_pan_div').hide();
+    if($(this).val()==1 || $(this).val() ==7){
+      //show directors
+      $('#director_div').show();
+    }else if($(this).val()==2 || $(this).val() ==10){
+      //no. of partners
+      $('#partners_div').show();
+    }else if($(this).val()==9){
+      //Business run by /PAN
+      $('#business_run_by_div').show();
+      $('#company_pan_card_div').hide();
+      $('#business_run_by_pan_div').show();
+    }
+        
+    
+  });
   </script>

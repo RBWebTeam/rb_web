@@ -16,7 +16,7 @@
 	<link  rel="stylesheet" type="text/css" href="{{URL::to('css/mysite.css')}}"/>
 
 
- <link href="{{URL::to('css/style.css')}}" rel="stylesheet" type="text/css" /> 
+
 
 
  <link href="{{URL::to('css/freshslider.min.css')}}" rel="stylesheet" type="text/css" /> 
@@ -31,7 +31,21 @@
 	
 	
 <meta name="google-site-verification" content="GpnTKVcLtZQjKCKHXfeaOaQGDsxzCS3XLCkTwmd4STI" />
-
+<script type="application/ld+json">
+ { 
+ "@context" : "http://schema.org",
+ "@type" : "Organization",
+ "name" : "Rupeeboss",
+ "url" : "http://www.rupeeboss.com/",
+ "logo": "http://www.rupeeboss.com/images/logo.png",
+ "sameAs" : [ 
+ "https://www.facebook.com/rupeeboss",
+ "https://www.linkedin.com/company/rupeeboss.com",
+ "https://plus.google.com/113191059621763008376",
+ "https://twitter.com/rupeeboss"
+ ]
+ }
+ </script>
 	</head>
 	<body><!-- 
 	<script src="https://app.tigerapi.com/rest/?i=MTQ4NTIzNzg2NA==" async="async" type="text/javascript"></script> -->
@@ -66,7 +80,7 @@
 				<li class="hidden-xs"><a href="#" data-toggle="modal" data-target="#emp_login">Employee Login </a></li>
 				<li class="hidden-xs"><a href="{{URL::to('rba-login')}}">RBA Login </a></li>
 
-				<li class="hidden-xs"><a href="{{URL::to('magic-link')}}">Magic Link </a></li>
+				<li class="hidden-lg"><a href="{{URL::to('magic-link')}}">Magic Link </a></li>
 				<li class="hidden-xs credit-score-btn"><a href="{{URL::to('credit-report')}}" class="btn btn-primary">My Credit Score</a></li>
 			<!-- 	<li><a href="{{URL::to('contact-us')}}">Media</a></li> -->
 	            </ul>

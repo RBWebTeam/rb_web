@@ -23,25 +23,34 @@ class ProfileController extends InitialController
 
 
         $query=DB::table('user_registration')->where('id','=',$get_id)->first();
-        $cquery=DB::table('customer_details')->where('user_id','=',$get_id)->first();
-        if($get_id){
+        $cquery=DB::table('experian_response')->where('user_id','=',$get_id)->first();
+
+        
           $credit_report=DB::select('select html_report from experian_response where user_id ='.$get_id);
           if($credit_report)
             {
-                      $res=$credit_report[0]->html_report;}
-                      else{
-                        $res=NULL;
-                      }
-        }else{
-          $contact=$contact=Session::get('contact');
-          $credit_report=DB::select('select html_report from experian_response where contact ='.$contact);
-          if($credit_report)
-            {
-                      $res=$credit_report[0]->html_report;}
-                      else{
-                        $res=NULL;
+                $res=$credit_report[0]->html_report;
             }
-        }
+            else{
+                  $contact=Session::get('contact');
+                  $cquery=DB::table('experian_response')
+                  ->where('email','=',$email_id)
+                  ->where('contact','=',$contact)
+                  ->first();
+                  $credit_report=DB::select("select html_report from experian_response where contact ='".$contact."' OR email ='".$email_id."'");
+                  if($credit_report)
+                  {
+                    $cquery=DB::table('experian_response')
+                    ->where('email','=',$email_id)
+                    ->orwhere('contact','=',$contact)
+                    ->first();
+                      $res=$credit_report[0]->html_report;
+                  }
+                  else{
+                      $res=NULL;
+                    }
+                }
+                //print_r($cquery);exit();
       //  $loan_history=DB::table('bank_quote_api_request')->where('Email','=',$email_id)->get();
               $loan_history = DB::table('bank_quote_api_request')
             ->leftjoin('product_master', 'product_master.Product_Id', '=', 'bank_quote_api_request.ProductId')

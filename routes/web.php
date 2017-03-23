@@ -39,7 +39,7 @@ Route::get('apply-home-loan','LoanController@apply_h_test');
 Route::get('apply-loan-against-property','LoanController@apply_lap_test');
 Route::post('login','LoginController@login');
 Route::post('registration','LoginController@register_form');
-Route::get('credit-card_compare/{id}','HomeController@credit_card_compare');
+Route::get('credit-card-compare/{id}','HomeController@credit_card_compare');
 Route::post('recording','recording\recordingController@recording');
 Route::get('recording/show','recording\recordingController@show');
 

@@ -227,8 +227,8 @@
     
     <div class="col-md-3"><p>Do you carry out Online Sales?*</p></div>
     <div class="col-md-8"><p>
-    <input type="radio" name="online_sale" onclick="showHidden('online_sale_channel_div',1);" /> Yes&nbsp;&nbsp; 
-    <input type="radio" name="online_sale" onclick="showHidden('online_sale_channel_div',0);" checked/> No</p></div>
+    <input type="radio" name="online_sale" onclick="showHidden('online_sale_channel_div',1);" value="true" /> Yes&nbsp;&nbsp; 
+    <input type="radio" name="online_sale" onclick="showHidden('online_sale_channel_div',0);" value="false" checked/> No</p></div>
     
     <div class="col-md-3"><p>Do you carry out Offline Sales?*</p></div>
     <div class="col-md-8"><p>
@@ -285,12 +285,12 @@
     <div class="col-md-8 sec">
      <select class="drop-arr" name="loan_purpose" id="loan_purpose">
        <option disabled selected>Select Loan Purpose</option>
-  		 <option>inventory rotation</option>
-  		 <option>product differentiation</option>
-  		 <option>expansion</option>
-  		 <option>launch of new product</option>
-  		 <option>working capital</option>
-  		 <option>others</option>
+  		 <option value="1">inventory rotation</option>
+  		 <option value="1">product differentiation</option>
+  		 <option value="1">expansion</option>
+  		 <option value="1">launch of new product</option>
+  		 <option value="1">working capital</option>
+  		 <option value="1">others</option>
     </select>
     </div>
     

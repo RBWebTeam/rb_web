@@ -9,7 +9,7 @@
 
  </div>
  <div class="col-md-12 white-bg pad">
-<div class="col-md-8" id="form_ID">
+<div class="col-md-8">
 <form name="home_loan_process_form" id="home_loan_process_form" action="{{URL::to('loan-submit')}}" method="POST" >
 <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
 <input type="hidden" id="product" name="product_name" value=12>
@@ -204,48 +204,37 @@
 		<div class="col-md-4">
 	   <div class="border">
 
-             <form class="" id="compareform" role="form" method="POST" action="">
+        <!--      <form class="" id="compareform" role="form" method="POST" action=""> -->
 				  
 				  
-				    <div class="inp-hig">
-					  <label class="form-label-new">Loan Amount</label>
-				      <input type="text" class="form-control" id="name" name="name" placeholder="5,00,000" required class="clr-ddd" />
-				    </div>
+				  <div class="inp-hig">
+            <label class="form-label-new">Loan Amount</label>
+              <input type="text" class="form-control" id="loanamount" name="name" value="" placeholder="" required class="clr-ddd" />
+            </div>
 
-				    <div class="inp-hig">
-					<label class="form-label-new">Best ROI</label>
-				      <input type="text" class="form-control" id="name" name="name" placeholder="Best ROI" required class="clr-ddd" />
-				    </div>
+            <div class="inp-hig">
+          <label class="form-label-new">Best ROI</label>
+              <input type="text" class="form-control" id="rate" name="name" value="" placeholder="" required class="clr-ddd" />
+            </div>
 
-				    <div class="inp-hig">
-                 <label class="form-label-new">Tenure</label>
-					  <select class="form-control">
+            <div class="inp-hig">
+            <label class="form-label-new">Tenure</label>
+                 <input type="text" class="form-control" id="term" name="name" value="" placeholder="" required class="clr-ddd">
+            </div>
 
-					  <option>5</option>
-					   <option>1</option>
-					  <option>3</option>
-					 
-					  <option>7</option>
-					  <option>10</option>
-					  <option>15</option>
-					  <option>20</option>
-					  <option>30</option>
-					  </select>
-				    </div>
+            <div class="inp-hig">
+          <label class="form-label-new">Processing Fee</label>
+              <input type="text" class="form-control" id="processfee" name="name" placeholder="" required class="clr-ddd" />
+            </div>
 
-				    <div class="inp-hig">
-					<label class="form-label-new">Processing Fee</label>
-				      <input type="text" class="form-control" id="name" name="name" placeholder="2,500" required class="clr-ddd" />
-				    </div>
-
-			  <div> 
-			    
-			     <button style="display:block; width:100%;font-size:20px;padding:5px; background:#28a0ff;color:#fff;" title="APPLY EXPERIENCE NEW DIGITAL ERA IN LOANS">Apply Now</button>
-				 <button style="width:49%;font-size:20px;padding:5px; background:#28a0ff;color:#fff;" title="SEE BANKWISE ELIGIBILITY AND APPLY">Eligibility</button>
-				 <button style="width:49%;font-size:20px;padding:5px; background:#28a0ff;color:#fff;" title="SINGLE DAY PROCESS">Call For RM</button>
-			   
-			  </div>
-			</form>
+        <div> 
+          
+         <a id="apply_new" type="button" class="btn btn-info" title="Experience New Digital Era In Loans">Apply Now</a>
+         <button id="eligibility" class="btn btn-info" title="See Bankwise Eligibility And Apply Amongst Best Bank">Eligibility</button>
+         <button type="button" class="btn btn-info"  id="call_rm" name="call_rm" data-toggle="modal" data-target="#Modal" title="Call For RM(Single Day Process)">Call RM</button>
+         
+        </div>
+			<!-- </form> -->
 		</div>	
 	</div>
 
@@ -255,6 +244,8 @@
 	</aside>
  
 	</div>
+
+	<div  id="form_ID"></div>
 
 @include('layout.footer')
 @include('layout.script')
@@ -288,6 +279,21 @@ $(".btn-primary").click(function(e){
                     
                            if(msg.success ==true){
                            $("#form_ID").empty().append(msg.html);
+
+
+   // console.log(loan_eligible);
+                            var loan_eligible = msg.loan_eligible;
+                             $('#loanamount').val(loan_eligible);
+                            var roi = msg.roi;
+                            $('#rate').val(roi);
+                          var LoanTenure = msg.LoanTenure;
+                            $('#term').val(LoanTenure);
+                    var processingfee = msg.processingfee;
+                    $('#processfee').val(processingfee);
+                    var Bank_id = msg.Bank_Id;
+                    $('#bank').val(Bank_id);
+                     var url = "apply-lead-online?qoutid=0&BankId="+Bank_id+"&product=9&processing_fee="+processingfee+"&loan_eligible="+loan_eligible+"&roi_type="+roi+"";
+                     $("#apply_new").attr("href", url);
                   
                   }
 

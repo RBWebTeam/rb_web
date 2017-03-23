@@ -13,7 +13,8 @@
  </div>
  <div class="col-md-12 white-bg pad box-shadow fl-lft">
   <!--   <div id ="test123" class="col-md-8"></div> -->
-    <form name='personal_loan_process_form' id='personal_loan_process_form'>
+ 
+    <form name="personal_loan_process_form" id="personal_loan_process_form" action="#" method="POST" >
       {{ csrf_field() }}
       <input type="hidden" id="product" name="product_name" value=9>
    <!--  <div id ="test123" class="col-md-8"></div> -->
@@ -58,7 +59,7 @@
     
                               <div  id="unranged-value" value="" style="width:100%; height:10px;"></div>
     </div>
-    <input  type="hidden" id="loan_tenure" name="loan_tenure" value=""  />
+    <input  type="hidden" id="loan_tenure" name="loan_tenure" value="5"  />
     </div>
   </div>
 
@@ -103,7 +104,7 @@
   
   <div class="col-md-12">
 
-  <?php if(Session::get('is_login')) {?>
+  <!-- <?php if(Session::get('is_login')) {?>
                 <?php if(Session::get('contact')!=''){ Session::get('contact'); ?>
               <a type="button" class="btn btn-primary btn-outline with-arrow top-mrg product_name" id="quotes">Get Me Loan<i class="icon-arrow-right"></i></a>
               <div class="iframeloading" style= "display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
@@ -120,7 +121,21 @@
 
               <a id="btn_refresh1" class="btn btn-primary btn-outline with-arrow animate-box product_name" onclick="get_quote_button()">Get Me Loan<i class="icon-arrow-right"></i></a>
             <?php } ?>
-  
+   -->
+
+<br>
+    <?php if(Session::get('is_login')) {?>
+                <?php if(Session::get('contact')!=''){ Session::get('contact'); ?>
+              <button class="btn btn-primary btn-outline with-arrow top-mrg product_name " >Get Best Quotes<i class="icon-arrow-right"></i></button>
+              <?php }else{?> 
+                <a  class="btn btn-primary btn-outline with-arrow top-mrg product_name" data-toggle="modal" data-target="#contact_id">Get Best Quotes<i class="icon-arrow-right"></i></a>
+                      <?php }?>
+            <?php }else{?>
+            <button  style="display:none" class="btn btn-primary btn-outline with-arrow top-mrg product_name " id="btn_refresh_co">Get Best Quotes<i class="icon-arrow-right"></i></button>
+
+              <a class="btn btn-primary btn-outline with-arrow top-mrg product_name" id="btn_refresh_co1" data-toggle="modal" data-target="#login_process">Get Best Quotes<i class="icon-arrow-right"></i></a>
+            <?php } ?>
+
   
       </div>
       </form>
@@ -234,7 +249,7 @@ $(document).ready(function(){
 </script>
 
 
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 function get_quote_button(){
   event.preventDefault();
   var form='personal_loan_process_form';
@@ -252,63 +267,112 @@ function get_quote_button(){
 
 
 </script>
-
+ -->
 <script type="text/javascript">
-  $("#quotes").click(function(event){
-   
-        var slidr = $("#unranged-value").text();
-         $('#loan_tenure').val(slidr);
-         console.log(slidr);
-        // alert('ok');
-        $(".iframeloading").show();
-        var v_token = "{{csrf_token()}}";
-      $.ajax({  
-               type: "POST",  
-               url: "{{URL::to('loan-submit')}}",
-               dataType:'json',
-                data : $('#personal_loan_process_form').serialize(),
-               success: function(msg){
-                    // console.log(msg);
-                  if(msg.success ==true){
-                    //console.log(msg.html);
-                     $(".iframeloading").hide();
-                    // $("#personal_loan_process_form").hide();
-                    $("#test123").append(msg.html);
+$(".btn-primary").click(function(e){
+   e.preventDefault();
+  //       var slidr = $("#unranged-value").text();
+  //        $('#loan_tenure').val(slidr);
+  //        console.log(slidr);
+  //       // alert('ok');
+  //       $(".iframeloading").show();
+  //       var v_token = "{{csrf_token()}}";
+  //     $.ajax({  
+  //              type: "POST",  
+  //              url: "{{URL::to('loan-submit')}}",
+  //              dataType:'json',
+  //               data : $('#personal_loan_process_form').serialize(),
+  //              success: function(msg){
+  //                   // console.log(msg);
+  //                 if(msg.success ==true){
+  //                   //console.log(msg.html);
+  //                  //  $(".iframeloading").hide();
+  //                   // $("#personal_loan_process_form").hide();
+  //                   $("#test123").empty().append(msg.html);
 
-                    var loan_eligible = msg.loan_eligible;
-                    // console.log(loan_eligible);
-                   $('#loanamount').val(loan_eligible);
+  //                   var loan_eligible = msg.loan_eligible;
+  //                   // console.log(loan_eligible);
+  //                  $('#loanamount').val(loan_eligible);
 
-                    var roi = msg.roi;
-                    $('#rate').val(roi);
+  //                   var roi = msg.roi;
+  //                   $('#rate').val(roi);
 
-                      var LoanTenure = msg.LoanTenure;
-                    $('#term').val(LoanTenure);
+  //                     var LoanTenure = msg.LoanTenure;
+  //                   $('#term').val(LoanTenure);
 
+  //                   var processingfee = msg.processingfee;
+  //                   $('#processfee').val(processingfee);
+
+  //                   var Bank_id = msg.Bank_Id;
+  //                   $('#bank').val(Bank_id);
+  //                    var url = "apply-lead-online?qoutid=0&BankId="+Bank_id+"&product=9&processing_fee="+processingfee+"&loan_eligible="+loan_eligible+"&roi_type="+roi+"";
+  //                    $("#apply_new").attr("href", url);
+                  
+
+  //                 $('#call_rm').show();
+  //                 }else{
+                    
+  //                    // window.location.href ="{{URL::to('went-wrong')}}";
+  //                    $(".iframeloading").hide();
+                      
+
+  //                 }
+  //                 }  
+  //                 }); 
+        
+  //       // $('#express_form').hide();
+  //       // $('#generic').show();
+        
+  // });
+
+
+
+
+    if(!$('#personal_loan_process_form').valid()){
+
+      $('#valid').empty().append('<span class="icon-remove text-danger" id="tt2"></span>');
+            return false;
+          }else{
+ 
+              $.ajax({  
+             type: "POST",  
+             url: "{{URL::to('loan-submit')}}",
+           data : $("#personal_loan_process_form").serialize(),
+        //   data: {_token :_token,username:username,password:password},
+             success: function(msg){
+                    
+                           if(msg.success ==true){
+                          $("#test123").empty().append(msg.html);
+
+
+   // console.log(loan_eligible);
+                            var loan_eligible = msg.loan_eligible;
+                             $('#loanamount').val(loan_eligible);
+                            var roi = msg.roi;
+                            $('#rate').val(roi);
+                          var LoanTenure = msg.LoanTenure;
+                            $('#term').val(LoanTenure);
                     var processingfee = msg.processingfee;
                     $('#processfee').val(processingfee);
-
                     var Bank_id = msg.Bank_Id;
                     $('#bank').val(Bank_id);
                      var url = "apply-lead-online?qoutid=0&BankId="+Bank_id+"&product=9&processing_fee="+processingfee+"&loan_eligible="+loan_eligible+"&roi_type="+roi+"";
                      $("#apply_new").attr("href", url);
                   
-
-                  $('#call_rm').show();
-                  }else{
-                    
-                     // window.location.href ="{{URL::to('went-wrong')}}";
-                     $(".iframeloading").hide();
-                      
-
                   }
-                  }  
-                  }); 
-        
-        // $('#express_form').hide();
-        // $('#generic').show();
-        
-  });
+
+                             
+                        
+                    }  
+                  });
+
+          }
+
+
+});
+
+
+
 </script>
 
 <script type="text/javascript">

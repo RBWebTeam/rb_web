@@ -137,16 +137,16 @@
               <a class="btn btn-primary btn-outline with-arrow top-mrg product_name" id="btn_refresh_co1" data-toggle="modal" data-target="#login_process">Get Best Quotes<i class="icon-arrow-right"></i></a>
             <?php } ?>
 
-  <div class="iframeloading" style= "display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
+ <!--  <div class="iframeloading" style= "display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
                 <img src="{{URL::to('images/ajaxloader.gif')}}" alt="Loader" title="Loader" style="top: 50%; position: relative; left: 50%;"  />
-               </div>
+               </div> -->
       </div>
       </form>
      </div>
      <div class="col-md-4" >
      <div class="border brd-for">
 
-             <form class="" id="compareform" role="form">
+             <!-- <form name="compareform" id="compareform" > -->
           
           
             <div class="inp-hig">
@@ -179,10 +179,10 @@
         <br>
         <!-- <p id="err" style="display:none;" ><span style="color:skyblue;position:absolute;font-size:13px;">No Quotes Found.</span></p> -->
    
-      </form>
+    <!--   </form> -->
 
     </div> 
-    <p id="err" style="display:none;" ><span style="color: red;font-size: 20px;display: block;margin-top: 200px;text-align: center;">No Quotes Found.</span></p> 
+    <p id="err" style="display:none;" ><span style="color: red;font-size: 20px;display: block;text-align: center;">No Quotes Found.</span></p> 
   </div> 
    </aside>
    
@@ -324,14 +324,14 @@ $(".btn-primary").click(function(e){
             return false;
            
           }else{
- $(".iframeloading").show();
+ // $(".iframeloading").show();
               $.ajax({  
              type: "POST",  
              url: "{{URL::to('loan-submit')}}",
            data : $("#personal_loan_process_form").serialize(),
         //   data: {_token :_token,username:username,password:password},
              success: function(msg){
-                    $(".iframeloading").hide();
+                    // $(".iframeloading").hide();
                            if(msg.success ==true){
 
                         var loan_eligible = msg.loan_eligible;
@@ -354,10 +354,11 @@ $(".btn-primary").click(function(e){
                      var url = "apply-lead-online?qoutid=0&BankId="+Bank_id+"&product=9&processing_fee="+processingfee+"&loan_eligible="+loan_eligible+"&roi_type="+roi+"";
                      $("#apply_new").attr("href", url);
                       $('#err').hide();
+                      $('#apply_new').show();
 
                    }else{
                      $('#err').show();
-                     $('#compareform').hide();
+                     $('#apply_new').hide();
 
                     }
                      // $(window).scrollTop($('#test123').offset().top-20);

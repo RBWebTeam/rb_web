@@ -2195,7 +2195,11 @@ function SetSession_pop(cookieName,cookieValue){
 
     var s2 = $("#unranged-value").freshslider({
         step: 1,
-        value:10
+        value:10,
+        onchange:function(low, high){
+            $('#loan_tenure').val(low);
+        }
+
     });
 
     var s3 = $("#ranged-value").freshslider({
@@ -2203,9 +2207,12 @@ function SetSession_pop(cookieName,cookieValue){
         step:1,
         value:[4, 60],
         onchange:function(low, high){
+
             // console.log(low, high);
+  
         }
     });
+    
 </script>
 
 

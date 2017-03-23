@@ -25,7 +25,7 @@
 <div class="text-center flt-lft btn-grp" data-toggle="buttons">
               <div class="scenario">
                 <div class="col-xs-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="purpose"  value="Marriage" class="radio1">Marriage</a></div>
-                <div class="col-xs-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="purpose"  value="Home Releted" class="radio1">Home Releted</a></div>
+                <div class="col-xs-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="purpose"  value="Home Releted" class="radio1">Home Related</a></div>
                 <div class="col-xs-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="purpose"  value="Business" class="radio1">Business</a></div>
                 <div class="col-xs-6 pad-no scenario-active"><a class="scenario-1 btn"><input type="radio" name="purpose"  value="Other" class="radio1" checked >Other</a></div>
               
@@ -99,7 +99,7 @@
   </div>
   
   <div class="col-xs-6 form-padding">
-     <input type="text" name="obligation" id="obligation" class="form-input-new form-control" placeholder="Exsisting EMI (If Any)" onkeypress="return isNumberKey(event)" required="">
+     <input type="text" name="obligation" id="obligation" class="form-input-new form-control" placeholder="Existing EMI (If Any)" onkeypress="return isNumberKey(event)" required="">
   </div>
   
   <div class="col-md-12">
@@ -133,37 +133,40 @@
             <?php }else{?>
             <button  style="display:none" class="btn btn-primary btn-outline with-arrow top-mrg product_name " id="btn_refresh_co">Get Best Quotes<i class="icon-arrow-right"></i></button>
 
+
               <a class="btn btn-primary btn-outline with-arrow top-mrg product_name" id="btn_refresh_co1" data-toggle="modal" data-target="#login_process">Get Best Quotes<i class="icon-arrow-right"></i></a>
             <?php } ?>
 
-  
+  <div class="iframeloading" style= "display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
+                <img src="{{URL::to('images/ajaxloader.gif')}}" alt="Loader" title="Loader" style="top: 50%; position: relative; left: 50%;"  />
+               </div>
       </div>
       </form>
      </div>
      <div class="col-md-4" >
      <div class="border brd-for">
 
-             <!-- <form class="" id="compareform" role="form" method="POST" action=""> -->
+             <form class="" id="compareform" role="form">
           
           
             <div class="inp-hig">
             <label class="form-label-new">Loan Amount</label>
-              <input type="text" class="form-control" id="loanamount" name="name" value="" placeholder="" required class="clr-ddd" />
+              <input type="text" class="form-control" id="loanamount" name="name" value="" placeholder="" required class="clr-ddd" readonly />
             </div>
 
             <div class="inp-hig">
           <label class="form-label-new">Best ROI</label>
-              <input type="text" class="form-control" id="rate" name="name" value="" placeholder="" required class="clr-ddd" />
+              <input type="text" class="form-control" id="rate" name="name" value="" placeholder="" required class="clr-ddd" readonly />
             </div>
 
             <div class="inp-hig">
             <label class="form-label-new">Tenure</label>
-                 <input type="text" class="form-control" id="term" name="name" value="" placeholder="" required class="clr-ddd">
+                 <input type="text" class="form-control" id="term" name="name" value="" placeholder="" required class="clr-ddd" readonly>
             </div>
 
             <div class="inp-hig">
           <label class="form-label-new">Processing Fee</label>
-              <input type="text" class="form-control" id="processfee" name="name" placeholder="" required class="clr-ddd" />
+              <input type="text" class="form-control" id="processfee" name="name" placeholder="" required class="clr-ddd" readonly />
             </div>
 
         <div> 
@@ -173,8 +176,13 @@
          <button type="button" class="btn btn-info"  id="call_rm" name="call_rm" data-toggle="modal" data-target="#Modal" title="Call For RM(Single Day Process)">Call RM</button>
          
         </div>
-    <!--   </form> -->
-    </div>  
+        <br>
+        <!-- <p id="err" style="display:none;" ><span style="color:skyblue;position:absolute;font-size:13px;">No Quotes Found.</span></p> -->
+   
+      </form>
+
+    </div> 
+    <p id="err" style="display:none;" ><span style="color: red;font-size: 20px;display: block;margin-top: 200px;text-align: center;">No Quotes Found.</span></p> 
   </div> 
    </aside>
    
@@ -249,25 +257,7 @@ $(document).ready(function(){
 </script>
 
 
-<!-- <script type="text/javascript">
-function get_quote_button(){
-  event.preventDefault();
-  var form='personal_loan_process_form';
-  //console.log(form);return false;
-    $form=$('#'+form);
-    if(! $form.valid()){
-      return false;
-    }else{
-      var slidr = $("#unranged-value").text();
-         $('#loan_tenure').val(slidr);
-         console.log(slidr);
-      $('#login_process').modal('show');
-  }
-}
 
-
-</script>
- -->
 <script type="text/javascript">
 $(".btn-primary").click(function(e){
    e.preventDefault();
@@ -330,23 +320,28 @@ $(".btn-primary").click(function(e){
 
     if(!$('#personal_loan_process_form').valid()){
 
-      $('#valid').empty().append('<span class="icon-remove text-danger" id="tt2"></span>');
+    
             return false;
+           
           }else{
- 
+ $(".iframeloading").show();
               $.ajax({  
              type: "POST",  
              url: "{{URL::to('loan-submit')}}",
            data : $("#personal_loan_process_form").serialize(),
         //   data: {_token :_token,username:username,password:password},
              success: function(msg){
-                    
+                    $(".iframeloading").hide();
                            if(msg.success ==true){
+
+                        var loan_eligible = msg.loan_eligible;
+
+
+                             if (loan_eligible>0) {
                           $("#test123").empty().append(msg.html);
 
 
-   // console.log(loan_eligible);
-                            var loan_eligible = msg.loan_eligible;
+                           
                              $('#loanamount').val(loan_eligible);
                             var roi = msg.roi;
                             $('#rate').val(roi);
@@ -358,6 +353,14 @@ $(".btn-primary").click(function(e){
                     $('#bank').val(Bank_id);
                      var url = "apply-lead-online?qoutid=0&BankId="+Bank_id+"&product=9&processing_fee="+processingfee+"&loan_eligible="+loan_eligible+"&roi_type="+roi+"";
                      $("#apply_new").attr("href", url);
+                      $('#err').hide();
+
+                   }else{
+                     $('#err').show();
+                     $('#compareform').hide();
+
+                    }
+                     // $(window).scrollTop($('#test123').offset().top-20);
                   
                   }
 

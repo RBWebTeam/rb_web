@@ -81,7 +81,7 @@
 			 <div class="tenure offset5 pad">
                   <div  id="unranged-value" value="" style="width:100%; height:10px;"></div>
 				</div>
-			<input  type="hidden" id="loan_tenure" name="loan_tenure" value="5" />
+			<input  type="hidden" id="loan_tenure" name="loan_tenure" value="0" />
 		</div>
 
 	 </div>
@@ -260,7 +260,7 @@ $(document).ready(function(){
     });
 
 
-
+ 
 
 $(".btn-primary").click(function(e){
    e.preventDefault();
@@ -308,4 +308,7 @@ $(".btn-primary").click(function(e){
 });
 
 });
+
+ 
+
 </script>

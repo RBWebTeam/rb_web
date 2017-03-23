@@ -56,10 +56,9 @@
 </div><!-- container -->
 
 </div>
-<video id="my-video" class="video" autoplay="autoplay" loop="loop">
+<video id="my-video" class="video" autoplay="autoplay" loop="loop" controls>
   <source src="media/demo.mp4" type="video/mp4" />
   <source src="media/demo.ogv" type="video/ogg" />
-  <source src="media/demo.webm" type="video/webm" />
   </video>
 </body>
 </html>

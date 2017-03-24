@@ -5,13 +5,11 @@
 	<div class="col-md-12">
 	<h2 class="align-center loan-head">Unsecured Business Loan</h2>
 	</div>
- <div class="col-md-12 white-bg mrg-btm">
- <img src="{{URL::to('images/9.png')}}" alt="Tribe Logo" class="img-responsive" />
-
- </div>
+ 
  <div class="col-md-12 white-bg pad">
-
- <div class="col-md-4">
+<div class="col-md-8">
+ <img src="{{URL::to('images/9.png')}}" alt="Tribe Logo" class="img-responsive" />
+ <div class="col-md-6">
   <div class="col-xs-12">
  <form name='business_loan_process_form' id='business_loan_process_form' action={{URL::to('loan-submit')}} method="POST">   
 	 <input type="hidden" id="product" name="product_name" value="13">
@@ -96,7 +94,7 @@
      <input type="name" class="form-input-new form-control" placeholder="Tenure" required="">
 	</div>
  </div>
-	<div class="col-md-4">
+	<div class="col-md-6">
 	<div class="panel-group" id="accordion">
 	<div class="panel-default">
       <div id="collapse0" class="panel-collapse collapse in">
@@ -231,7 +229,7 @@
    <button class="btn btn-primary btn-outline with-arrow top-mrg">Get Best Quotes<i class="icon-arrow-right"></i></button>
    </form>
 	  	</div>
-
+</div>
 		<div class="col-md-4">
 	   <div class="border">
 

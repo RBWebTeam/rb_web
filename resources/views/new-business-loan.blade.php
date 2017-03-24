@@ -65,13 +65,14 @@
      <input type="text" class="form-input-new form-control" name="depreciation" id="depreciation" placeholder="Depreciation" onkeypress="return isNumberKey(event)" required="">
 	</div>
 	<div class="col-xs-6 form-padding">
-     <input type="text" class="form-input-new form-control" name="partner_remuneration" id="partner_remuneration" placeholder="Partner Remuneration" onkeypress="return isNumberKey(event)"  required="">
+     <input type="text" class="form-input-new form-control" name="partner_remuneration" id="partner_remuneration" placeholder="Partner Remuneration" 
+     onkeypress="return isNumberKey(event)"  required="">
 	</div>
 	<div class="col-xs-6 form-padding"> 
-     <input type="text" class="form-input-new form-control" name="interest_paid" id="interest_paid" placeholder="Interest Paid On Bank Loans" required="">
+     <input type="text" class="form-input-new form-control" name="interest_paid" id="interest_paid" placeholder="Interest Paid On Bank Loans" onkeypress="return isNumberKey(event)" required="">
 	</div>
 	<div class="col-xs-6 form-padding"> 
-     <input type="name" class="form-input-new form-control" placeholder="Existing All EMI" required="">
+     <input type="text" class="form-input-new form-control" name="existing_emi" id="existing_emi" placeholder="Existing All EMI" onkeypress="return isNumberKey(event)" required="">
 	</div>
 	<div class="col-xs-6 form-padding"> 
      <input type="name" class="form-input-new form-control" placeholder="Bank" required="">
@@ -106,8 +107,8 @@
 	</div>
 	<div class="col-xs-4 form-padding pad">
      <div class="btn-grp border-none" data-toggle="buttons">
-      <span class="btn btn-default outer-brd btn-blu active"><input type="radio" name="Status" id="option1">Y</span>
-      <span class="btn btn-default outer-brd btn-blu"><input type="radio" name="Status" id="option2">N</span>
+      <span class="btn btn-default outer-brd btn-blu active"><input type="radio" name="exchange" value="Y">Y</span>
+      <span class="btn btn-default outer-brd btn-blu"><input type="radio" name="exchange" value="N">N</span>
          </div>
 	</div>
 	<div class="col-xs-8 form-padding pad">
@@ -115,8 +116,8 @@
 	</div>
 	<div class="col-xs-4 form-padding pad">
      <div class="btn-grp  border-none" data-toggle="buttons">
-      <span class="btn btn-default outer-brd btn-blu active"><input type="radio" name="Status" id="option1">Y</span>
-      <span class="btn btn-default outer-brd btn-blu"><input type="radio" name="Status" id="option2">N</span>
+      <span class="btn btn-default outer-brd btn-blu active"><input type="radio" name="repayment_track" value="Y">Y</span>
+      <span class="btn btn-default outer-brd btn-blu"><input type="radio" name="repayment_track" value="N">N</span>
          </div>
 	</div>
 		</div>
@@ -135,11 +136,12 @@
         <div class="panel-body">
 	  
 	<div class="scenario">
-								<div class="col-xs-12 pad-no scenario-active"><a class="scenario-1 btn"><input type="radio" name="Status" id="option1"  class="radio1" checked >MANUFACTURING</a></div>
-								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="Status" id="option1" class="radio1">TRADING</a></div>
-								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="Status" id="option1" class="radio1">SERVICES</a></div>
-								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="Status" id="option1" class="radio1">RETAILER</a></div>
-								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="Status" id="option1" class="radio1">OTHER</a></div>
+								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="natue_of_business" value="Manufacturing" class="radio1"  >MANUFACTURING</a></div>
+								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="natue_of_business" value="Trading" class="radio1">TRADING</a></div>
+								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="natue_of_business" value="Services" class="radio1">SERVICES</a></div>
+								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="natue_of_business" value="Retailer" class="radio1">RETAILER</a></div>
+								<div class="col-xs-12 pad-no scenario-active"><a class="scenario-1 btn"><input type="radio" name="natue_of_business" 
+								value="Others" class="radio1" checked>OTHER</a></div>
 								
 							</div>
 						
@@ -178,7 +180,7 @@
       <div id="collapse3" class="panel-collapse collapse">
         <div class="panel-body">
 		  <div class="col-xs-12 form-padding">
-     <input type="date" class="form-input-new form-control" placeholder="EXISTING ALL EMI" required="">
+     <input type="text" id="date" name="date" class="form-input-new form-control lastReporteddate1" placeholder="Date of Birth" required="">
 	</div>
 		</div>
       </div>
@@ -195,10 +197,10 @@
       <div id="collapse4" class="panel-collapse collapse">
         <div class="panel-body">
 		   <div class="scenario">
-								<div class="col-xs-12 pad-no scenario-active"><a class="scenario-1 btn"><input type="radio" name="Status" id="option1"  class="radio1" checked >Owned</a></div>
-								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="Status" id="option1" class="radio1">Rented</a></div>
-								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="Status" id="option1" class="radio1">Parental</a></div>
-								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="Status" id="option1" class="radio1">Others</a></div>
+								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="residence_type" value="Owned"  class="radio1" checked >Owned</a></div>
+								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="residence_type" value="Rented"  class="radio1">Rented</a></div>
+								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="residence_type" value="Parental"  class="radio1">Parental</a></div>
+								<div class="col-xs-12 pad-no scenario-active"><a class="scenario-1 btn"><input type="radio" name="residence_type" value="Others"  class="radio1">Others</a></div>
 								
 							</div>
 		</div>
@@ -213,11 +215,11 @@
       </div>
       <div id="collapse5" class="panel-collapse collapse">
         <div class="panel-body">
-		   <div class="scenario">
-								<div class="col-xs-12 pad-no scenario-active"><a class="scenario-1 btn"><input type="radio" name="Status" id="option1"  class="radio1" checked >Owned</a></div>
-								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="Status" id="option1" class="radio1">Rented</a></div>
-								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="Status" id="option1" class="radio1">Parental</a></div>
-								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="Status" id="option1" class="radio1">Others</a></div>
+		   <div class="scenario">col-xs-12 pad-no
+								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="office_type" value="Owned"  class="radio1" checked >Owned</a></div>
+								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="office_type" value="Rented" class="radio1">Rented</a></div>
+								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="office_type" value="Parental"class="radio1">Parental</a></div>
+								<div class="col-xs-12 pad-no scenario-active"><a class="scenario-1 btn"><input type="radio" name="office_type" value="Others" class="radio1">Others</a></div>
 								
 							</div>
 		</div>
@@ -288,4 +290,19 @@
     return false;
       }
 }
+</script>
+
+<script type="text/javascript">
+    var d = new Date();
+    var year = d.getFullYear() - 18 ;
+    d.setFullYear(year);
+
+    $(".lastReporteddate1").datepicker({ dateFormat: "yy-mm-dd",
+      changeMonth: true,
+      changeYear: true,
+      maxDate: year,
+      minDate: "-100Y",
+      yearRange: '-100:' + year + '',
+      defaultDate: d
+    });
 </script>

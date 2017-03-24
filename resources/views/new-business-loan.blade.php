@@ -6,10 +6,11 @@
 	<h2 class="align-center loan-head">Unsecured Business Loan</h2>
 	</div>
  <div class="col-md-12 white-bg mrg-btm">
-<img src="{{URL::to('images/9.png')}}" alt="Tribe Logo" class="img-responsive" />
+ <img src="{{URL::to('images/9.png')}}" alt="Tribe Logo" class="img-responsive" />
 
  </div>
  <div class="col-md-12 white-bg pad">
+
  <div class="col-md-4">
   <div class="col-xs-12">
  <form name='business_loan_process_form' id='business_loan_process_form' action={{URL::to('loan-submit')}} method="POST">   
@@ -54,28 +55,28 @@
      <input type="text" class="form-input-new form-control"  name="company_name" id="company_name"  placeholder="Company Name"  >
 	</div>
 	<div class="col-xs-6 form-padding">
-     <input type="name" class="form-input-new form-control" placeholder="INCOME TAX PAID - FIRM" required="">
+     <input type="name" class="form-input-new form-control" placeholder="Income Tax Paid - Firm " required="">
 	</div>
 	<div class="col-xs-6 form-padding">
-     <input type="name" class="form-input-new form-control" placeholder="TURNOVER/TOPLINE" required="">
+     <input type="name" class="form-input-new form-control" placeholder="Turnover/Topline" required="">
 	</div>
 	<div class="col-xs-6 form-padding">
-     <input type="name" class="form-input-new form-control" placeholder="PROFIT AFTER TAX" required="">
+     <input type="name" class="form-input-new form-control" placeholder="Profit After Tax" required="">
 	</div>
 	<div class="col-xs-6 form-padding">
-     <input type="name" class="form-input-new form-control" placeholder="DEPRECIATION" required="">
+     <input type="name" class="form-input-new form-control" placeholder="Depreciation" required="">
 	</div>
 	<div class="col-xs-6 form-padding">
-     <input type="name" class="form-input-new form-control" placeholder="PARTNER REMUNERATION" required="">
+     <input type="name" class="form-input-new form-control" placeholder="Partner Remuneration" required="">
 	</div>
-	<div class="col-xs-6 form-padding">
-     <input type="name" class="form-input-new form-control" placeholder="INTEREST PAID ON BANK LOANS" required="">
+	<div class="col-xs-6 form-padding"> 
+     <input type="name" class="form-input-new form-control" placeholder="Interest Paid On Bank Loans" required="">
 	</div>
-	<div class="col-xs-6 form-padding">
-     <input type="name" class="form-input-new form-control" placeholder="EXISTING ALL EMI" required="">
+	<div class="col-xs-6 form-padding"> 
+     <input type="name" class="form-input-new form-control" placeholder="Existing All EMI" required="">
 	</div>
-	<div class="col-xs-6 form-padding">
-     <input type="name" class="form-input-new form-control" placeholder="BANKS" required="">
+	<div class="col-xs-6 form-padding"> 
+     <input type="name" class="form-input-new form-control" placeholder="Bank" required="">
 	</div>
 	<div class="col-xs-6 form-padding">
      <input type="name" class="form-input-new form-control" placeholder="EMI" required="">
@@ -92,7 +93,7 @@
 	 </select>
 	</div>
 	<div class="col-xs-6 form-padding">
-     <input type="name" class="form-input-new form-control" placeholder="TENURE" required="">
+     <input type="name" class="form-input-new form-control" placeholder="Tenure" required="">
 	</div>
  </div>
 	<div class="col-md-4">

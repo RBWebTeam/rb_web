@@ -103,14 +103,33 @@
 	</div>
 		<div class="col-xs-6 form-padding">
      <div class="btn-grp form-control border-none" data-toggle="buttons">
-      <span class="btn btn-primary outer-brd btn-blu active"><input type="radio" value="salaried" name="emp_detail"  > Salared</span>
-      <span class="btn btn-primary outer-brd btn-blu"><input type="radio" value="self-employed" name="emp_detail"  >Self-Emp</span>
+      <span class="btn btn-primary outer-brd btn-blu active"><input type="radio" id="sala_DI" value="salaried" name="emp_detail"  > Salared</span>
+      <span class="btn btn-primary outer-brd btn-blu"><input type="radio" id="self_DI" value="self-employed" name="emp_detail"  >Self-Emp</span>
  
 
          </div>
 	   </div>
+
+     <div  style="display: none;" id="self-employed_ID">  <!-- self-employed-->
+       
+       <div class="col-xs-6 form-padding">
+          <input type="text" class="form-input-new form-control " name="turnover" placeholder="Annual turnover" required  onkeypress="return fnAllowNumeric(event)">
+      </div>
+
+       <div class="col-xs-6 form-padding">
+          <input type="text" class="form-input-new form-control " name="profit_after_tax" placeholder="Profit after tax" required  onkeypress="return fnAllowNumeric(event)">
+      </div>
+      <div class="col-xs-6 form-padding">
+          <input type="text" class="form-input-new form-control " name="depreciation" placeholder="Depreciation"  required onkeypress="return fnAllowNumeric(event)">
+      </div>
+       <div class="col-xs-6 form-padding">
+          <input type="text" class="form-input-new form-control " name="remuneration" placeholder="Director Remuneration"  required onkeypress="return fnAllowNumeric(event)">
+      </div>
+
+     </div>
+
 	   
-	   <div class="col-xs-6 form-padding">
+	   <div class="col-xs-6 form-padding" id="income_ID">
      <input type="text" class="form-input-new form-control"  name="income"  placeholder="Monthly Income" required onkeypress="return fnAllowNumeric(event)">
 	</div>
 	
@@ -153,10 +172,29 @@
 	</div>
 		<div class="col-xs-6 form-padding">
      <div class="btn-grp form-control border-none" data-toggle="buttons">
-      <span class="btn btn-primary outer-brd btn-blu active"><input type="radio" value="salaried"   name="co_emp_detail"  > Salared</span>
-      <span class="btn btn-primary outer-brd btn-blu"><input type="radio"  value="self-employed"  name="co_emp_detail"  >Self-Emp</span>
+      <span class="btn btn-primary outer-brd btn-blu active"><input type="radio" id="co_sala_DI" value="salaried"   name="co_emp_detail"  > Salared</span>
+      <span class="btn btn-primary outer-brd btn-blu"><input type="radio"  id="co_self_DI" value="self-employed"  name="co_emp_detail"  >Self-Emp</span>
          </div>
 	   </div>
+
+
+      <div  style="display: none;" id="co_self-employed_ID">  <!-- Co applicant self-employed-->
+       
+       <div class="col-xs-6 form-padding">
+          <input type="text" class="form-input-new form-control " name="co_applicant_turnover" placeholder="co-applicant annual turnover"  onkeypress="return fnAllowNumeric(event)">
+      </div>
+
+       <div class="col-xs-6 form-padding">
+          <input type="text" class="form-input-new form-control " name="co_applicant_profit_after_tax" placeholder="Co-Applicant profit after"  onkeypress="return fnAllowNumeric(event)">
+      </div>
+      <div class="col-xs-6 form-padding">
+          <input type="text" class="form-input-new form-control " name="co_applicant_depreciation" placeholder="his/her depreciation" onkeypress="return fnAllowNumeric(event)" >
+      </div>
+       <div class="col-xs-6 form-padding">
+          <input type="text" class="form-input-new form-control " name="co_applicant_remuneration" placeholder="director remuneration"  onkeypress="return fnAllowNumeric(event)">
+      </div>
+
+     </div>
 	   
 	   <div class="col-xs-6 form-padding">
      <input type="text" class="form-input-new form-control" name="co_applicant_turnover" placeholder="Turnover/Topline"  onkeypress="return fnAllowNumeric(event)">
@@ -170,7 +208,7 @@
 	<div class="col-xs-6 form-padding">
      <input type="text" class="form-input-new form-control" name="co_applicant_remuneration" placeholder="Partner Remuneration"  >
 	</div>
-	<div class="col-xs-6 form-padding">
+	<div class="col-xs-6 form-padding" id="co_income_ID">
      <input type="text" class="form-input-new form-control"  name="co_applicant_income"  placeholder="Monthly Income" onkeypress="return fnAllowNumeric(event)" >
 	</div>
 	<div class="col-xs-6 form-padding">
@@ -183,14 +221,14 @@
 <br>
     <?php if(Session::get('is_login')) {?>
 							  <?php if(Session::get('contact')!=''){ Session::get('contact'); ?>
-							<button class="btn btn-primary btn-outline with-arrow top-mrg product_name " >Get Best Quotes<i class="icon-arrow-right"></i></button>
+							<button class="btn btn-primary btn-outline with-arrow top-mrg product_name product_ID" >Get Best Quotes<i class="icon-arrow-right"></i></button>
 							<?php }else{?> 
-							  <a  class="btn btn-primary btn-outline with-arrow top-mrg product_name" data-toggle="modal" data-target="#contact_id">Get Best Quotes<i class="icon-arrow-right"></i></a>
+							  <a  class="btn btn-primary btn-outline with-arrow top-mrg product_name product_ID" data-toggle="modal" data-target="#contact_id">Get Best Quotes<i class="icon-arrow-right"></i></a>
 				              <?php }?>
 						<?php }else{?>
-						<button  style="display:none" class="btn btn-primary btn-outline with-arrow top-mrg product_name " id="btn_refresh_co">Get Best Quotes<i class="icon-arrow-right"></i></button>
+						<button  style="display:none" class="btn btn-primary btn-outline with-arrow top-mrg product_name product_ID" id="btn_refresh_co">Get Best Quotes<i class="icon-arrow-right"></i></button>
 
-							<a class="btn btn-primary btn-outline with-arrow top-mrg product_name" id="btn_refresh_co1" data-toggle="modal" data-target="#login_process">Get Best Quotes<i class="icon-arrow-right"></i></a>
+							<a class="btn btn-primary btn-outline with-arrow top-mrg product_name product_ID" id="btn_refresh_co1" data-toggle="modal" data-target="#login_process">Get Best Quotes<i class="icon-arrow-right"></i></a>
 						<?php } ?>
 
 						 
@@ -261,10 +299,34 @@ $(document).ready(function(){
          $('#coapplicant_display').hide();
     });
 
+//    applicacnt 
+  $('#sala_DI').change(function(){
+   $("#self-employed_ID").hide();
+    
+  });
+
+  $('#self_DI').change(function(){
+  $("#income_ID").hide();
+  $("#self-employed_ID").show();
+  });
+
+  // applicant end
+  // co applicant 
+ $('#co_sala_DI').change(function(){
+ $("#co_self-employed_ID").hide();
+    
+  });
+
+  $('#co_self_DI').change(function(){
+  $("#co_income_ID").hide();
+  $("#co_self-employed_ID").show();
+  });
+
+  
 
  
 
-$(".btn-primary").click(function(e){
+$(".product_ID").click(function(e){
    e.preventDefault();
     if(!$('#home_loan_process_form').valid()){
 

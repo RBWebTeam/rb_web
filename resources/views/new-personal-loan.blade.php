@@ -144,7 +144,7 @@
       </form>
      </div>
      <div class="col-md-4" >
-     <div class="border brd-for">
+     <div class="border brd-for" id="mi_id">
 
              <!-- <form name="compareform" id="compareform" > -->
           
@@ -338,15 +338,12 @@ $(".btn-primary").click(function(e){
 
 
                              if (loan_eligible>0) {
-                          $("#test123").empty().append(msg.html);
-
-
-                           
+                             $("#test123").empty().append(msg.html);  
                              $('#loanamount').val(loan_eligible);
                             var roi = msg.roi;
-                            $('#rate').val(roi);
+                             $('#rate').val(roi);
                           var LoanTenure = msg.LoanTenure;
-                            $('#term').val(LoanTenure);
+                             $('#term').val(LoanTenure);
                     var processingfee = msg.processingfee;
                     $('#processfee').val(processingfee);
                     var Bank_id = msg.Bank_Id;
@@ -355,11 +352,15 @@ $(".btn-primary").click(function(e){
                      $("#apply_new").attr("href", url);
                       $('#err').hide();
                       $('#apply_new').show();
+                      $('#mi_id').show();
+                      $(window).scrollTop($('#test123').offset().top-20);
 
                    }else{
                      $('#err').show();
                      $('#apply_new').hide();
-
+                      $("#test123").empty();
+                       $('#mi_id').hide();
+                      
                     }
                      // $(window).scrollTop($('#test123').offset().top-20);
                   

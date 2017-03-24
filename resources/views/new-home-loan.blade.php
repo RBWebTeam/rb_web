@@ -202,29 +202,29 @@
 
 
 		<div class="col-md-4">
-	   <div class="border">
+	   <div class="border" id="mi_ID">
 
         <!--      <form class="" id="compareform" role="form" method="POST" action=""> -->
 				  
 				  
 				  <div class="inp-hig">
             <label class="form-label-new">Loan Amount</label>
-              <input type="text" class="form-control" id="loanamount" name="name" value="" placeholder="" required class="clr-ddd" />
+              <input type="text" class="form-control" id="loanamount" name="name" value="" placeholder="" required class="clr-ddd" readonly />
             </div>
 
             <div class="inp-hig">
           <label class="form-label-new">Best ROI</label>
-              <input type="text" class="form-control" id="rate" name="name" value="" placeholder="" required class="clr-ddd" />
+              <input type="text" class="form-control" id="rate" name="name" value="" placeholder="" required class="clr-ddd" readonly />
             </div>
 
             <div class="inp-hig">
             <label class="form-label-new">Tenure</label>
-                 <input type="text" class="form-control" id="term" name="name" value="" placeholder="" required class="clr-ddd">
+                 <input type="text" class="form-control" id="term" name="name" value="" placeholder="" required class="clr-ddd" readonly>
             </div>
 
             <div class="inp-hig">
           <label class="form-label-new">Processing Fee</label>
-              <input type="text" class="form-control" id="processfee" name="name" placeholder="" required class="clr-ddd" />
+              <input type="text" class="form-control" id="processfee" name="name" placeholder="" required class="clr-ddd" readonly />
             </div>
 
         <div> 
@@ -236,10 +236,12 @@
         </div>
 			<!-- </form> -->
 		</div>	
+
+		<p id="err" style="display:none;" ><span style="color: red;font-size: 20px;display: block;text-align: center;">No Quotes Found.</span></p> 
 	</div>
 
 
-	 <div id ="test123" class="col-md-8" ></div>
+<!-- 	 <div id ="test123" class="col-md-8" ></div> -->
 	</div>
 	</aside>
  
@@ -275,38 +277,40 @@ $(".btn-primary").click(function(e){
              url: "{{URL::to('loan-submit')}}",
            data : $("#home_loan_process_form").serialize(),
         //   data: {_token :_token,username:username,password:password},
-             success: function(msg){
-                    
-                           if(msg.success ==true){
-                           $("#form_ID").empty().append(msg.html);
-
-
-   // console.log(loan_eligible);
+             success: function(msg){                   
+                             if(msg.success ==true){
                             var loan_eligible = msg.loan_eligible;
+                             if (loan_eligible>0) {
+                             $("#form_ID").empty().append(msg.html);
                              $('#loanamount').val(loan_eligible);
-                            var roi = msg.roi;
-                            $('#rate').val(roi);
-                          var LoanTenure = msg.LoanTenure;
-                            $('#term').val(LoanTenure);
-                    var processingfee = msg.processingfee;
-                    $('#processfee').val(processingfee);
-                    var Bank_id = msg.Bank_Id;
-                    $('#bank').val(Bank_id);
-                     var url = "apply-lead-online?qoutid=0&BankId="+Bank_id+"&product=9&processing_fee="+processingfee+"&loan_eligible="+loan_eligible+"&roi_type="+roi+"";
-                     $("#apply_new").attr("href", url);
+                           var roi = msg.roi;
+                             $('#rate').val(roi);
+                           var LoanTenure = msg.LoanTenure;
+                             $('#term').val(LoanTenure);
+                           var processingfee = msg.processingfee;
+                             $('#processfee').val(processingfee);
+                           var Bank_id = msg.Bank_Id;
+                             $('#bank').val(Bank_id);
+                           var url = "apply-lead-online?qoutid=0&BankId="+Bank_id+"&product=9&processing_fee="+processingfee+"&loan_eligible="+loan_eligible+"&roi_type="+roi+"";
+                             $("#apply_new").attr("href", url);
+                             $('#mi_ID').show();
+                             $('#err').hide();
+                             $(window).scrollTop($('#form_ID').offset().top-20);
+                         }else{
+
+                                $('#err').show();
+                                $('#apply_new').hide();
+                                $('#mi_ID').hide();
+                                $("#form_ID").empty();
+                                
+                                
+                         }
                   
-                  }
-
-                             
-                        
-                    }  
-                  });
-
-          }
-
-
-});
-
+               }                    
+           }  
+       });
+     }
+  });
 });
 
  

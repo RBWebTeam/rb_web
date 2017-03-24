@@ -52,25 +52,25 @@
   
   
      <div class="col-xs-6 form-padding">
-     <input type="text" class="form-input-new form-control"  name="company_name" id="company_name"  placeholder="Company Name"  >
+     <input type="text" class="form-input-new form-control"  name="company_name" id="company_name"  placeholder="Company Name"  onkeypress="return AllowAlphabet(event)" required=""  >
 	</div>
 	<div class="col-xs-6 form-padding">
-     <input type="name" class="form-input-new form-control" placeholder="Income Tax Paid - Firm " required="">
+     <input type="text" class="form-input-new form-control"  name="income_tax_paid" id="income_tax_paid" onkeypress="return isNumberKey(event)" required="">
 	</div>
 	<div class="col-xs-6 form-padding">
-     <input type="name" class="form-input-new form-control" placeholder="Turnover/Topline" required="">
+     <input type="text" class="form-input-new form-control" name="turnover" id="turnover" placeholder="Turnover/Topline" onkeypress="return isNumberKey(event)" required="">
 	</div>
 	<div class="col-xs-6 form-padding">
-     <input type="name" class="form-input-new form-control" placeholder="Profit After Tax" required="">
+     <input type="text" class="form-input-new form-control" name="profit_after_tax" id="profit_after_tax" placeholder="Profit After Tax"  onkeypress="return isNumberKey(event)" required="">
 	</div>
 	<div class="col-xs-6 form-padding">
-     <input type="name" class="form-input-new form-control" placeholder="Depreciation" required="">
+     <input type="text" class="form-input-new form-control" name="depreciation" id="depreciation" placeholder="Depreciation" onkeypress="return isNumberKey(event)" required="">
 	</div>
 	<div class="col-xs-6 form-padding">
-     <input type="name" class="form-input-new form-control" placeholder="Partner Remuneration" required="">
+     <input type="text" class="form-input-new form-control" name="partner_remuneration" id="partner_remuneration" placeholder="Partner Remuneration" onkeypress="return isNumberKey(event)"  required="">
 	</div>
 	<div class="col-xs-6 form-padding"> 
-     <input type="name" class="form-input-new form-control" placeholder="Interest Paid On Bank Loans" required="">
+     <input type="text" class="form-input-new form-control" name="interest_paid" id="interest_paid" placeholder="Interest Paid On Bank Loans" required="">
 	</div>
 	<div class="col-xs-6 form-padding"> 
      <input type="name" class="form-input-new form-control" placeholder="Existing All EMI" required="">
@@ -276,3 +276,18 @@
 	</div>
 @include('layout.footer')
 @include('layout.script')
+
+<script type="text/javascript">
+  function AllowAlphabet(e)
+{
+  isIE = document.all ? 1 : 0
+  keyEntry = !isIE ? e.which : event.keyCode;
+  if (((keyEntry >= '65') && (keyEntry <= '90')) || ((keyEntry >= '97') && (keyEntry <= '122')) || (keyEntry == '46') || (keyEntry == '32') || keyEntry == '45')
+     return true;
+  else
+{
+    // alert('Please Enter Only Character values.');
+    return false;
+      }
+}
+</script>

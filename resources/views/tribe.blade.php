@@ -2,7 +2,7 @@
   @include('layout.header')
 
   <div id="fh5co-hero">
-  <form id="tribe_loan_form" method="POST">
+  <form id="tribe_loan_form" method="POST" enctype="multipart/form-data">
   {{ csrf_field() }}
   	<div class="container">
   	<h2 class="align-center loan-head">Tribe</h2>
@@ -301,12 +301,15 @@
     <a class="btn btn-primary btn-outline with-arrow  ">Back<i class="icon-arrow-right"></i></a>
     </div>
     </div>
+    <form id="upload_form" name="upload_form" enctype="multipart/form-data">
     <div id="main4" class="tab-pane fade">
       
   	<h3 class="mrg-top">KYC Identity Proof</h3>
   <hr>
     <div class="col-md-3">Pan</div>
-    <div class="col-md-8"><input type="file" id="doc_pan" name="doc_pan" class="form-control form-group no-border"/></div>
+    <div class="col-md-8">
+    <input type="file" name="docpan" id="docpan" files="true" class="form-control form-group no-border"/>
+    </div>
     
     <div class="col-md-3">Aadhaar</div>
     <div class="col-md-8"><input type="file" name="doc_aadhar" id="doc_aadhar" class="form-control form-group no-border"/></div>

@@ -12,24 +12,23 @@
  <div class="col-md-12 white-bg pad">
  <div class="col-md-4">
   <div class="col-xs-12">
- <form name='personal_loan_process_form' id='personal_loan_process_form' action={{URL::to('loan-submit')}} method="POST">   
-	 <input type="hidden" id="product" name="product_name" value="9">
+ <form name='business_loan_process_form' id='business_loan_process_form' action={{URL::to('loan-submit')}} method="POST">   
+	 <input type="hidden" id="product" name="product_name" value="13">
 
 	   <div class="btn-grp mrg-top pad status" data-toggle="buttons">
 	  
 		<center><div class="type-cover"><span>Proprietor Ship</span></div></center>
-      <span class="btn btn-default outer-brd active"><input type="radio" name="Status" id="option1">Sole Proprietor</span>
-      <span class="btn btn-default outer-brd"><input type="radio" name="emp_detail" value="Self Employed Business"  >Partnership</span>
-      <span class="btn btn-default outer-brd"><input type="radio" name="emp_detail" value="Self Employed Professional"   >Company</span>
-       <input type="hidden" class="clr-blue"   name="emp_detail_id"  placeholder="Select" ></a>
-
+      <span class="btn btn-default outer-brd active"><input type="radio" name="proprietor"  value="Sole Proprietor">Sole Proprietor</span>
+      <span class="btn btn-default outer-brd"><input type="radio" name="proprietor"  value="Partnership">Partnership</span>
+      <span class="btn btn-default outer-brd"><input  type="radio" name="proprietor"  value="Company" >Company</span>
+      
       </div>
 		</div>
 		<div class="col-xs-12">
 	   <div class="btn-grp pad status" data-toggle="buttons">
 	   <center><div class="type-cover"><span>Business Type</span></div></center>
-      <span class="btn btn-default circle outer-brd active"><input type="radio" name="Status" id="option1">Self Employed Non-Professional (SENP)</span>
-      <span class="btn btn-default circle outer-brd"><input type="radio" name="Status" id="option2">Self Employed Professional (SEP)</span>
+      <span class="btn btn-default circle outer-brd active"><input type="radio" name="emp_detail" value="Self Employed Non-Professional (SENP)">Self Employed Non-Professional (SENP)</span>
+      <span class="btn btn-default circle outer-brd"><input type="radio" name="emp_detail" value="Self Employed Professional (SEP)">Self Employed Professional (SEP)</span>
 
       </div>
 		</div>
@@ -46,13 +45,13 @@
     
                               <div  id="unranged-value" value="" style="width:100%; height:10px;"></div>
     </div>
-    <input  type="hidden" id="loan_tenure" name="loan_tenure" value=""  />
+    <input  type="hidden" id="loan_tenure" name="loan_tenure" value="5"  />
     </div>
   </div>
   
   
      <div class="col-xs-6 form-padding">
-     <input type="name" class="form-input-new form-control" name="applicantname" placeholder="NAME OF THE COMPANY"  >
+     <input type="text" class="form-input-new form-control"  name="company_name" id="company_name"  placeholder="Company Name"  >
 	</div>
 	<div class="col-xs-6 form-padding">
      <input type="name" class="form-input-new form-control" placeholder="INCOME TAX PAID - FIRM" required="">

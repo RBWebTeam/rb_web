@@ -6,30 +6,30 @@
 	<h2 class="align-center loan-head">Unsecured Business Loan</h2>
 	</div>
  <div class="col-md-12 white-bg mrg-btm">
-<img src="{{URL::to('images/9.png')}}" alt="Tribe Logo" class="img-responsive" />
+ <img src="{{URL::to('images/9.png')}}" alt="Tribe Logo" class="img-responsive" />
 
  </div>
  <div class="col-md-12 white-bg pad">
+
  <div class="col-md-4">
   <div class="col-xs-12">
- <form name='personal_loan_process_form' id='personal_loan_process_form' action={{URL::to('loan-submit')}} method="POST">   
-	 <input type="hidden" id="product" name="product_name" value="9">
+ <form name='business_loan_process_form' id='business_loan_process_form' action={{URL::to('loan-submit')}} method="POST">   
+	 <input type="hidden" id="product" name="product_name" value="13">
 
 	   <div class="btn-grp mrg-top pad status" data-toggle="buttons">
 	  
 		<center><div class="type-cover"><span>Proprietor Ship</span></div></center>
-      <span class="btn btn-default outer-brd active"><input type="radio" name="Status" id="option1">Sole Proprietor</span>
-      <span class="btn btn-default outer-brd"><input type="radio" name="emp_detail" value="Self Employed Business"  >Partnership</span>
-      <span class="btn btn-default outer-brd"><input type="radio" name="emp_detail" value="Self Employed Professional"   >Company</span>
-       <input type="hidden" class="clr-blue"   name="emp_detail_id"  placeholder="Select" ></a>
-
+      <span class="btn btn-default outer-brd active"><input type="radio" name="proprietor"  value="Sole Proprietor">Sole Proprietor</span>
+      <span class="btn btn-default outer-brd"><input type="radio" name="proprietor"  value="Partnership">Partnership</span>
+      <span class="btn btn-default outer-brd"><input  type="radio" name="proprietor"  value="Company" >Company</span>
+      
       </div>
 		</div>
 		<div class="col-xs-12">
 	   <div class="btn-grp pad status" data-toggle="buttons">
 	   <center><div class="type-cover"><span>Business Type</span></div></center>
-      <span class="btn btn-default circle outer-brd active"><input type="radio" name="Status" id="option1">Self Employed Non-Professional (SENP)</span>
-      <span class="btn btn-default circle outer-brd"><input type="radio" name="Status" id="option2">Self Employed Professional (SEP)</span>
+      <span class="btn btn-default circle outer-brd active"><input type="radio" name="emp_detail" value="Self Employed Non-Professional (SENP)">Self Employed Non-Professional (SENP)</span>
+      <span class="btn btn-default circle outer-brd"><input type="radio" name="emp_detail" value="Self Employed Professional (SEP)">Self Employed Professional (SEP)</span>
 
       </div>
 		</div>
@@ -46,44 +46,64 @@
     
                               <div  id="unranged-value" value="" style="width:100%; height:10px;"></div>
     </div>
-    <input  type="hidden" id="loan_tenure" name="loan_tenure" value=""  />
+    <input  type="hidden" id="loan_tenure" name="loan_tenure" value="5"  />
     </div>
   </div>
   
   
      <div class="col-xs-6 form-padding">
-     <input type="name" class="form-input-new form-control" name="applicantname" placeholder="NAME OF THE COMPANY"  >
+     <input type="text" class="form-input-new form-control"  name="company_name" id="company_name"  placeholder="Company Name"  >
 	</div>
 	<div class="col-xs-6 form-padding">
-     <input type="name" class="form-input-new form-control" placeholder="INCOME TAX PAID - FIRM" required="">
+     <input type="name" class="form-input-new form-control" placeholder="Income Tax Paid - Firm " required="">
 	</div>
 	<div class="col-xs-6 form-padding">
-     <input type="name" class="form-input-new form-control" placeholder="TURNOVER/TOPLINE" required="">
+     <input type="name" class="form-input-new form-control" placeholder="Turnover/Topline" required="">
 	</div>
 	<div class="col-xs-6 form-padding">
-     <input type="name" class="form-input-new form-control" placeholder="PROFIT AFTER TAX" required="">
+     <input type="name" class="form-input-new form-control" placeholder="Profit After Tax" required="">
 	</div>
 	<div class="col-xs-6 form-padding">
-     <input type="name" class="form-input-new form-control" placeholder="DEPRECIATION" required="">
+     <input type="name" class="form-input-new form-control" placeholder="Depreciation" required="">
 	</div>
 	<div class="col-xs-6 form-padding">
-     <input type="name" class="form-input-new form-control" placeholder="PARTNER REMUNERATION" required="">
+     <input type="name" class="form-input-new form-control" placeholder="Partner Remuneration" required="">
+	</div>
+	<div class="col-xs-6 form-padding"> 
+     <input type="name" class="form-input-new form-control" placeholder="Interest Paid On Bank Loans" required="">
+	</div>
+	<div class="col-xs-6 form-padding"> 
+     <input type="name" class="form-input-new form-control" placeholder="Existing All EMI" required="">
+	</div>
+	<div class="col-xs-6 form-padding"> 
+     <input type="name" class="form-input-new form-control" placeholder="Bank" required="">
 	</div>
 	<div class="col-xs-6 form-padding">
-     <input type="name" class="form-input-new form-control" placeholder="INTEREST PAID ON BANK LOANS" required="">
+     <input type="name" class="form-input-new form-control" placeholder="EMI" required="">
 	</div>
 	<div class="col-xs-6 form-padding">
-     <input type="name" class="form-input-new form-control" placeholder="EXISTING EMI IF ANY" required="">
+	 <select class="form-input-new form-control">
+	     <option>Home Loan</option>
+		 <option>Property Loan</option>
+		 <option>Unsecured Business Loan</option>
+		 <option>Car Loan</option>
+		 <option>Term Loan</option>
+		 <option>OD/CC</option>
+		 <option>Others</option>
+	 </select>
+	</div>
+	<div class="col-xs-6 form-padding">
+     <input type="name" class="form-input-new form-control" placeholder="Tenure" required="">
 	</div>
  </div>
 	<div class="col-md-4">
 	<div class="panel-group" id="accordion">
-	<div class="panel panel-default">
+	<div class="panel-default">
       <div id="collapse0" class="panel-collapse collapse in">
         <div class="panel-body">
 		
 	
-	<div class="col-xs-8 form-padding">
+	<div class="col-xs-8 form-padding pad">
 	 <h4 class="mrg-top">Export/Import</h4>
 	</div>
 	<div class="col-xs-4 form-padding pad">
@@ -92,7 +112,7 @@
       <span class="btn btn-default outer-brd btn-blu"><input type="radio" name="Status" id="option2">N</span>
          </div>
 	</div>
-	<div class="col-xs-8 form-padding">
+	<div class="col-xs-8 form-padding pad">
 	 <span>Has a Good Repayment track record in existing UBL / CC / OD ?</span>
 	</div>
 	<div class="col-xs-4 form-padding pad">
@@ -113,16 +133,18 @@
 		
         </h4>
       </div>
-      <div id="collapse1" class="panel-collapse collapse">
+      <div id="collapse1" class="panel-collapse collapse in">
         <div class="panel-body">
-	   
-	   <div class="scenario">
-								<div class="col-xs-12 pad-no scenario-active"><a class="scenario-1 text-center">MANUFACTURING</a></div>
-								<div class="col-xs-12 pad-no"><a class="scenario-1 text-center">TRADING</a></div>
-								<div class="col-xs-12 pad-no"><a class="scenario-1 text-center">SERVICES</a></div>
-								<div class="col-xs-12 pad-no"><a class="scenario-1 text-center scenario-border">RETAILER</a></div>
-								<div class="col-xs-12 pad-no"><a class="scenario-1 text-center scenario-top-border">OTHER</a></div>
+	  
+	<div class="scenario">
+								<div class="col-xs-12 pad-no scenario-active"><a class="scenario-1 btn"><input type="radio" name="Status" id="option1"  class="radio1" checked >MANUFACTURING</a></div>
+								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="Status" id="option1" class="radio1">TRADING</a></div>
+								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="Status" id="option1" class="radio1">SERVICES</a></div>
+								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="Status" id="option1" class="radio1">RETAILER</a></div>
+								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="Status" id="option1" class="radio1">OTHER</a></div>
+								
 							</div>
+						
 	   
 	   
 		
@@ -139,11 +161,11 @@
       <div id="collapse2" class="panel-collapse collapse">
         <div class="panel-body">
 		   <div class="scenario">
-								<div class="col-xs-12 pad-no scenario-active"><a class="scenario-1 text-center">Selection 1</a></div>
-								<div class="col-xs-12 pad-no"><a class="scenario-1 text-center">Selection 2</a></div>
-								<div class="col-xs-12 pad-no"><a class="scenario-1 text-center">Selection 3</a></div>
-								<div class="col-xs-12 pad-no"><a class="scenario-1 text-center scenario-border">Selection 4</a></div>
-								<div class="col-xs-12 pad-no"><a class="scenario-1 text-center scenario-top-border">Selection 5</a></div>
+								<div class="col-xs-12 pad-no scenario-active"><a class="scenario-1 btn"><input type="radio" name="Status" id="option1"  class="radio1" checked >Type 1</a></div>
+								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="Status" id="option1" class="radio1">Type 2</a></div>
+								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="Status" id="option1" class="radio1">Type 3</a></div>
+								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="Status" id="option1" class="radio1">Type 4</a></div>
+								
 							</div>
 		</div>
       </div>
@@ -158,11 +180,13 @@
       <div id="collapse3" class="panel-collapse collapse">
         <div class="panel-body">
 		  <div class="col-xs-12 form-padding">
-     <input type="date" class="form-input-new form-control" placeholder="EXISTING EMI IF ANY" required="">
+     <input type="date" class="form-input-new form-control" placeholder="EXISTING ALL EMI" required="">
 	</div>
 		</div>
       </div>
     </div>
+	
+	
 	<div class="panel panel-default">
       <div class="panel-heading">
         <h4 class="panel-title">
@@ -173,11 +197,11 @@
       <div id="collapse4" class="panel-collapse collapse">
         <div class="panel-body">
 		   <div class="scenario">
-								<div class="col-xs-12 pad-no scenario-active"><a class="scenario-1 text-center">Owned</a></div>
-								<div class="col-xs-12 pad-no"><a class="scenario-1 text-center">Rented</a></div>
-								<div class="col-xs-12 pad-no"><a class="scenario-1 text-center">Parental</a></div>
-								<div class="col-xs-12 pad-no"><a class="scenario-1 text-center scenario-border">Others</a></div>
-
+								<div class="col-xs-12 pad-no scenario-active"><a class="scenario-1 btn"><input type="radio" name="Status" id="option1"  class="radio1" checked >Owned</a></div>
+								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="Status" id="option1" class="radio1">Rented</a></div>
+								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="Status" id="option1" class="radio1">Parental</a></div>
+								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="Status" id="option1" class="radio1">Others</a></div>
+								
 							</div>
 		</div>
       </div>
@@ -192,11 +216,11 @@
       <div id="collapse5" class="panel-collapse collapse">
         <div class="panel-body">
 		   <div class="scenario">
-								<div class="col-xs-12 pad-no scenario-active"><a class="scenario-1 text-center">Owned</a></div>
-								<div class="col-xs-12 pad-no"><a class="scenario-1 text-center">Rented</a></div>
-								<div class="col-xs-12 pad-no"><a class="scenario-1 text-center">Parental</a></div>
-								<div class="col-xs-12 pad-no"><a class="scenario-1 text-center scenario-border">Others</a></div>
-
+								<div class="col-xs-12 pad-no scenario-active"><a class="scenario-1 btn"><input type="radio" name="Status" id="option1"  class="radio1" checked >Owned</a></div>
+								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="Status" id="option1" class="radio1">Rented</a></div>
+								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="Status" id="option1" class="radio1">Parental</a></div>
+								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="Status" id="option1" class="radio1">Others</a></div>
+								
 							</div>
 		</div>
       </div>

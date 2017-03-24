@@ -105,7 +105,7 @@
 		 <i class="icon-plus pull-right more-less"></i>
         </h4>
       </div>
-      <div id="collapse1" class="panel-collapse collapse">
+      <div id="collapse1" class="panel-collapse collapse in">
         <div class="panel-body">
 							
 	<div class="text-center flt-lft btn-grp" data-toggle="buttons">
@@ -168,12 +168,13 @@
       </div>
       <div id="collapse4" class="panel-collapse collapse">
         <div class="panel-body">
-		   <div class="scenario">
-								<div class="col-xs-12 pad-no scenario-active"><a class="scenario-1 text-center">Owned</a></div>
-								<div class="col-xs-12 pad-no"><a class="scenario-1 text-center">Rented</a></div>
-								<div class="col-xs-12 pad-no"><a class="scenario-1 text-center">Parental</a></div>
-								<div class="col-xs-12 pad-no"><a class="scenario-1 text-center scenario-border">Others</a></div>
-
+							
+							<div class="scenario">
+								<div class="col-xs-12 pad-no scenario-active"><a class="scenario-1 btn"><input type="radio" name="Status" id="option1"  class="radio1" checked >Owned</a></div>
+								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="Status" id="option1" class="radio1">Rented</a></div>
+								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="Status" id="option1" class="radio1">Parental</a></div>
+								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="Status" id="option1" class="radio1">Others</a></div>
+								
 							</div>
 	
 	
@@ -190,11 +191,11 @@
       <div id="collapse5" class="panel-collapse collapse">
         <div class="panel-body">
 		   <div class="scenario">
-								<div class="col-xs-12 pad-no scenario-active"><a class="scenario-1 text-center">Owned</a></div>
-								<div class="col-xs-12 pad-no"><a class="scenario-1 text-center">Rented</a></div>
-								<div class="col-xs-12 pad-no"><a class="scenario-1 text-center">Parental</a></div>
-								<div class="col-xs-12 pad-no"><a class="scenario-1 text-center scenario-border">Others</a></div>
-
+								<div class="col-xs-12 pad-no scenario-active"><a class="scenario-1 btn"><input type="radio" name="Status" id="option1"  class="radio1" checked >Owned</a></div>
+								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="Status" id="option1" class="radio1">Rented</a></div>
+								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="Status" id="option1" class="radio1">Parental</a></div>
+								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="Status" id="option1" class="radio1">Others</a></div>
+								
 							</div>
 		</div>
       </div>

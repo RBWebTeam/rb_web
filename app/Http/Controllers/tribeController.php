@@ -26,11 +26,32 @@ class tribeController extends CallApiController
 	    
 	}
 	public function save_tribe_form(Request $req){
-	//print_r($req->all());exit();
+	
 	$data=$req->all();
 	//company_address
-
-
+	// doc_pan doc_aadhar doc_dl doc_passport doc_voter doc_electricity_bill doc_leave_license doc_reg_certification doc_tax_registration doc_comapny_it_returns doc_company_pan doc_vat_return doc_it_returns doc_other
+		
+		$doc = array('docpan','doc_aadhar','doc_dl');
+        $request=$req;
+        $response=0;
+        for( $i=0;$i<3;$i++){
+                $str=$doc[$i];               
+                $imageName = time().'.'.$req->$str->getClientOriginalExtension();
+                $extension=$req->$str->getClientOriginalExtension();
+                $filename = $req->$str->getpathName();//Image path
+                $file =fopen($filename, "rb");
+                $contents = fread($file, filesize($filename));
+                $byteArray = unpack("C*",$contents); 
+                $data=array_values(($byteArray));
+                $post="[".implode(',',$data)."]";
+                $post_data='{"docType":"'.$doc[$i].'","docextension":"'.$extension.'",
+                            "refFBAId":"'.$request->app_id.'","bytes":'.$post.'}';
+                // $url = "http://beta.services.rupeeboss.com/LoginDtls.svc/xmlservice/uploadCustLoanDoc";
+                            print_r($post_data);
+                            print_r($request->all()); exit();
+   
+				}
+							                      
 	$data['middle_name']=isset($data['middle_name'])?$data['middle_name']:'""';
 	$data['agent_name']=isset($data['agent_name'])?$data['agent_name']:'""';
 	$data['social']=isset($data['social'])?$data['social']:'""';
@@ -71,7 +92,7 @@ class tribeController extends CallApiController
 			"title":"'.$data['agent_name'].'",
 			"type":"'.$data['agent_name'].'"
 		}],
-		"is_loan_distributor":"'.$data['agent_name'].'",
+		"is_loan_distributor":true,
 		"loan_amount":"'.$data['loan_amount'].'",
 		"loan_tenure":'.$data['loan_tenure'].',
 		"loan_type":'.$data['agent_name'].',

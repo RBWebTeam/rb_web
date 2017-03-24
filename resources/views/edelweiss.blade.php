@@ -5,12 +5,11 @@
 	<div class="col-md-12">
 	<h2 class="align-center loan-head">Edelweiss</h2>
 	</div>
- <div class="col-md-12 white-bg mrg-btm">
-<img src="{{URL::to('images/9.png')}}" alt="Tribe Logo" class="img-responsive" />
 
- </div>
  <div class="col-md-12 white-bg pad">
- <div class="col-md-4">
+ <div class="col-md-8">
+ <img src="{{URL::to('images/9.png')}}" alt="Tribe Logo" class="img-responsive" />
+ <div class="col-md-6">
   <div class="col-xs-12">
  
 	   <div class="btn-grp mrg-top pad status" data-toggle="buttons">
@@ -44,31 +43,31 @@
 									</div>
 								</div>
      <div class="col-xs-6 form-padding">
-     <input type="name" class="form-input-new form-control" placeholder="NAME OF THE COMPANY" required="">
+     <input type="name" class="form-input-new form-control" placeholder="Name of The company" required="">
 	</div>
 	<div class="col-xs-6 form-padding">
-     <input type="name" class="form-input-new form-control" placeholder="INCOME TAX PAID - FIRM" required="">
+     <input type="name" class="form-input-new form-control" placeholder="Income Tax Paid - Firm" required="">
 	</div>
 	<div class="col-xs-6 form-padding">
-     <input type="name" class="form-input-new form-control" placeholder="TURNOVER/TOPLINE" required="">
+     <input type="name" class="form-input-new form-control" placeholder="Turnover/Topline" required="">
 	</div>
 	<div class="col-xs-6 form-padding">
-     <input type="name" class="form-input-new form-control" placeholder="PROFIT AFTER TAX" required="">
+     <input type="name" class="form-input-new form-control" placeholder="Profit After Tax" required="">
 	</div>
 	<div class="col-xs-6 form-padding">
-     <input type="name" class="form-input-new form-control" placeholder="DEPRECIATION" required="">
+     <input type="name" class="form-input-new form-control" placeholder="Depreciation" required="">
 	</div>
 	<div class="col-xs-6 form-padding">
-     <input type="name" class="form-input-new form-control" placeholder="PARTNER REMUNERATION" required="">
+     <input type="name" class="form-input-new form-control" placeholder="Partner Remuneration" required="">
 	</div>
 	<div class="col-xs-6 form-padding">
-     <input type="name" class="form-input-new form-control" placeholder="INTEREST PAID ON BANK LOANS" required="">
+     <input type="name" class="form-input-new form-control" placeholder="Interest Paid On Bank Loans" required="">
 	</div>
 	<div class="col-xs-6 form-padding">
-     <input type="name" class="form-input-new form-control" placeholder="EXISTING EMI IF ANY" required="">
+     <input type="name" class="form-input-new form-control" placeholder="Existing All EMI" required="">
 	</div>
  </div>
-	<div class="col-md-4">
+	<div class="col-md-6">
 	<div class="panel-group" id="accordion">
 	<div class="panel-default">
       <div id="collapse0" class="panel-collapse collapse in">
@@ -205,7 +204,7 @@
 
    <button class="btn btn-primary btn-outline with-arrow top-mrg">Get Best Quotes<i class="icon-arrow-right"></i></button>
 	  	</div>
-
+</div>
 		<div class="col-md-4">
 	   <div class="border">
 

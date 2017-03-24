@@ -108,6 +108,9 @@
             </div>
             <div id="collapse7" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading7">
                 <div class="panel-body">
+<!-- ROW 1 START--->
+<div>
+<h4 class="text-center">BANK 1</h4>
                     <div class="col-xs-6 form-padding"> 
      <input type="name" class="form-input-new form-control" placeholder="Bank" required="">
 	</div>
@@ -128,7 +131,9 @@
 	<div class="col-xs-6 form-padding">
      <input type="name" class="form-input-new form-control" placeholder="Tenure" required="">
 	</div>
-					
+	<button class="btn btn-primary btn-outline top-mrg">Add Other Bank Existing EMI</button>
+	</div>
+<!-- ROW 1 End--->		
 					
                 </div>
             </div>

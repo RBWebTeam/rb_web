@@ -65,9 +65,11 @@ class FormController extends CallApiController
          
             //$url = "http://erp.rupeeboss.com/CustomerLaravelWebRequest.aspx";
         $json_data=json_encode($res_arr);
-            $url="http://api.rupeeboss.com/BankAPIService.svc/GetCustomerLizaWebReq";
+            $url="http://api.rupeeboss.com/BankAPIService.svc/GetCustomerLizaWebReqTest";
             $result=$this->call_json_data_api($url,$json_data);
             $http_result=$result['http_result'];
+            // print_r($json_data);
+            // print_r( $http_result);exit();
             $error=$result['error'];
             if($http_result==1){
                 if(isset($req['income'])){

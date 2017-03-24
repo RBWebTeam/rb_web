@@ -3536,3 +3536,6 @@ label {
 .radio1 {display:none;}
 .center {margin:0 auto;}
 .no-pad {padding:0px;}
+.titl {padding: 10px;
+    margin: 5px 5px 8px 5px;
+    background: #eee;}

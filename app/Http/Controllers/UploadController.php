@@ -33,6 +33,8 @@ class UploadController extends CallApiController
                 $post_data='{"docType":"'.$doc[$i].'","docextension":"'.$extension.'",
                             "refFBAId":"'.$request->app_id.'","bytes":'.$post.'}';
                 // $url = "http://beta.services.rupeeboss.com/LoginDtls.svc/xmlservice/uploadCustLoanDoc";
+                            print_r($post_data);
+                            print_r($request->all()); exit();
                 $url = "http://services.rupeeboss.com/LoginDtls.svc/xmlservice/uploadCustLoanDoc";
                 $result=$this->call_json_data_api($url,$post_data);
                 $http_result=$result['http_result'];

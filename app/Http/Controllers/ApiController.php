@@ -486,12 +486,22 @@ run_else:
 		$id=$req['BrokerId'];
 		$ProductId=$req['ProductId'];
 		$flag=$req['flag'];
-		 $data=DB::table('bank_quote_api_request')
-		 ->select('ID','ApplicantNme','LoanRequired','ApplicantIncome','Turnover','status','ProductId')
-        ->where('BrokerId','=',$id)
-        ->where('ProductId','=',$ProductId)
-        ->where('status','<>','Failure')
-        ->get();
+		if($id > 0){
+			 $data=DB::table('bank_quote_api_request')
+			 ->select('ID','ApplicantNme','LoanRequired','ApplicantIncome','Turnover','status','ProductId')
+	        ->where('BrokerId','=',$id)
+	        ->where('ProductId','=',$ProductId)
+	        ->where('status','<>','Failure')
+	        ->get();
+    	}else{
+    		$data=DB::table('bank_quote_api_request')
+			 ->select('ID','ApplicantNme','LoanRequired','ApplicantIncome','Turnover','status','ProductId')
+	        ->where('empcode','=',$req['empcode'])
+	        ->where('ProductId','=',$ProductId)
+	        ->where('BrokerId','=',0)
+	        ->where('status','<>','Failure')
+	        ->get();
+    	}
         //calling Erp api
        			$emp_code=$req['empcode'];
         		$post_data='{"brokerId":'.$id.',"empCode":"'.$emp_code.'","flag":"'.$flag.'","ProductId":"'.$ProductId.'"}';
@@ -542,12 +552,22 @@ run_else:
 		//print_r($req['BrokerId']);exit();
 		$id=$req['BrokerId'];
 		$ProductId=$req['ProductId'];
-		 $data=DB::table('bank_quote_api_request')
-		 ->select('ID','ApplicantNme','LoanRequired','ApplicantIncome','Turnover','status','ProductId')
-        ->where('BrokerId','=',$id)
-        ->where('ProductId','=',$ProductId)
-        ->where('status','<>','Failure')
-        ->get();
+		if($id > 0){
+			 $data=DB::table('bank_quote_api_request')
+			 ->select('ID','ApplicantNme','LoanRequired','ApplicantIncome','Turnover','status','ProductId')
+	        ->where('BrokerId','=',$id)
+	        ->where('ProductId','=',$ProductId)
+	        ->where('status','<>','Failure')
+	        ->get();
+    	}else{
+    		$data=DB::table('bank_quote_api_request')
+			 ->select('ID','ApplicantNme','LoanRequired','ApplicantIncome','Turnover','status','ProductId')
+	        ->where('empcode','=',$req['empcode'])
+	        ->where('ProductId','=',$ProductId)
+	        ->where('BrokerId','=',0)
+	        ->where('status','<>','Failure')
+	        ->get();
+    	}
         //calling Erp api
        			$flag=$req['flag'];
         		$emp_code=$req['empcode'];

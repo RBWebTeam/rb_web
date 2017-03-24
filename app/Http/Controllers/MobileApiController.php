@@ -65,7 +65,7 @@ class MobileApiController extends ApiController
 			
 	}
 	public function quote_selected(Request $req){
-		print_r("Not allowed!!!!");exit
+		
 		//$id=$req['quote_id'];
 		$update=DB::table('bank_quote_api_request')
 		->where('id', $req['quote_id'])

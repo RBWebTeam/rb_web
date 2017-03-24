@@ -88,7 +88,7 @@
 							<h4 class="mrg-btm">Tribe</h4>
 							
 						
-							<a class="btn btn-primary btn-outline with-arrow" href="URL::to('contact-us')">Apply Now<i class="icon-arrow-right"></i></a>
+							<a class="btn btn-primary btn-outline with-arrow" href="{{URL::to('contact-us')}}">Apply Now<i class="icon-arrow-right"></i></a>
 						</div>
 					</div>
 
@@ -107,7 +107,7 @@
 							<h4 class="mrg-btm">Edelweiss</h4>
 							
 							
-							<button class="btn btn-primary btn-outline with-arrow">Apply Online<i class="icon-arrow-right"></i></button>
+							<a class="btn btn-primary btn-outline with-arrow" href="{{URL::to('contact-us')}}">Apply Now<i class="icon-arrow-right"></i></a>
 						</div>
 					</div>
 					
@@ -117,7 +117,7 @@
 							<h4 class="mrg-btm">IIFL</h4>
 							
 							
-							<button class="btn btn-primary btn-outline with-arrow">Apply Online<i class="icon-arrow-right"></i></button>
+							<a class="btn btn-primary btn-outline with-arrow" href="{{URL::to('contact-us')}}">Apply Now<i class="icon-arrow-right"></i></a>
 						</div>
 					</div>
 					
@@ -127,7 +127,7 @@
 							<h4 class="mrg-btm">HDFC</h4>
 							
 							
-							<button class="btn btn-primary btn-outline with-arrow">Apply Online<i class="icon-arrow-right"></i></button>
+							<a class="btn btn-primary btn-outline with-arrow" href="{{URL::to('contact-us')}}">Apply Now<i class="icon-arrow-right"></i></a>
 						</div>
 					</div>
 					
@@ -135,28 +135,28 @@
 						<div class="price-box popular1">
 							<div class="center-blg"><img src="{{URL::to('images/bank/icici.png')}}"width="160" alt="apply_online_pic" /></div>
 							<h4 class="mrg-btm">ICICI</h4>
-							<button class="btn btn-primary btn-outline with-arrow">Apply Online<i class="icon-arrow-right"></i></button>
+							<a class="btn btn-primary btn-outline with-arrow" href="{{URL::to('contact-us')}}">Apply Now<i class="icon-arrow-right"></i></a>
 						</div>
 					</div>
 					<div class="col-md-4 animate-box">
 						<div class="price-box popular1">
 							<div class="center-blg"><img src="{{URL::to('images/bank/yes.png')}}" width="150" alt="apply_online_pic" /></div>
 							<h4 class="mrg-btm">Yes Bank</h4>
-							<button class="btn btn-primary btn-outline with-arrow">Apply Online<i class="icon-arrow-right"></i></button>
+							<a class="btn btn-primary btn-outline with-arrow" href="{{URL::to('contact-us')}}">Apply Now<i class="icon-arrow-right"></i></a>
 						</div>
 					</div>
 					<div class="col-md-4 animate-box">
 						<div class="price-box popular1">
 							<div class="center-blg"><img src="{{URL::to('images/bank/idfc.png')}}" width="150" alt="apply_online_pic" /></div>
 							<h4 class="mrg-btm">IDFC</h4>
-							<button class="btn btn-primary btn-outline with-arrow">Apply Online<i class="icon-arrow-right"></i></button>
+							<a class="btn btn-primary btn-outline with-arrow" href="{{URL::to('contact-us')}}">Apply Now<i class="icon-arrow-right"></i></a>
 						</div>
 					</div>
 					<div class="col-md-4 animate-box">
 						<div class="price-box popular1">
 							<div class="center-blg"><img src="{{URL::to('images/bank/kotak.png')}}" width="150" alt="apply_online_pic" /></div>
 							<h4 class="mrg-btm">Kotak</h4>
-							<button class="btn btn-primary btn-outline with-arrow">Apply Online<i class="icon-arrow-right"></i></button>
+							<a class="btn btn-primary btn-outline with-arrow" href="{{URL::to('contact-us')}}">Apply Now<i class="icon-arrow-right"></i></a>
 						</div>
 					</div>
 

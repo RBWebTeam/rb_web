@@ -73,17 +73,37 @@
      <input type="name" class="form-input-new form-control" placeholder="INTEREST PAID ON BANK LOANS" required="">
 	</div>
 	<div class="col-xs-6 form-padding">
-     <input type="name" class="form-input-new form-control" placeholder="EXISTING EMI IF ANY" required="">
+     <input type="name" class="form-input-new form-control" placeholder="EXISTING ALL EMI" required="">
+	</div>
+	<div class="col-xs-6 form-padding">
+     <input type="name" class="form-input-new form-control" placeholder="BANKS" required="">
+	</div>
+	<div class="col-xs-6 form-padding">
+     <input type="name" class="form-input-new form-control" placeholder="EMI" required="">
+	</div>
+	<div class="col-xs-6 form-padding">
+	 <select class="form-input-new form-control">
+	     <option>Home Loan</option>
+		 <option>Property Loan</option>
+		 <option>Unsecured Business Loan</option>
+		 <option>Car Loan</option>
+		 <option>Term Loan</option>
+		 <option>OD/CC</option>
+		 <option>Others</option>
+	 </select>
+	</div>
+	<div class="col-xs-6 form-padding">
+     <input type="name" class="form-input-new form-control" placeholder="TENURE" required="">
 	</div>
  </div>
 	<div class="col-md-4">
 	<div class="panel-group" id="accordion">
-	<div class="panel panel-default">
+	<div class="panel-default">
       <div id="collapse0" class="panel-collapse collapse in">
         <div class="panel-body">
 		
 	
-	<div class="col-xs-8 form-padding">
+	<div class="col-xs-8 form-padding pad">
 	 <h4 class="mrg-top">Export/Import</h4>
 	</div>
 	<div class="col-xs-4 form-padding pad">
@@ -92,7 +112,7 @@
       <span class="btn btn-default outer-brd btn-blu"><input type="radio" name="Status" id="option2">N</span>
          </div>
 	</div>
-	<div class="col-xs-8 form-padding">
+	<div class="col-xs-8 form-padding pad">
 	 <span>Has a Good Repayment track record in existing UBL / CC / OD ?</span>
 	</div>
 	<div class="col-xs-4 form-padding pad">
@@ -113,16 +133,18 @@
 		
         </h4>
       </div>
-      <div id="collapse1" class="panel-collapse collapse">
+      <div id="collapse1" class="panel-collapse collapse in">
         <div class="panel-body">
-	   
-	   <div class="scenario">
-								<div class="col-xs-12 pad-no scenario-active"><a class="scenario-1 text-center">MANUFACTURING</a></div>
-								<div class="col-xs-12 pad-no"><a class="scenario-1 text-center">TRADING</a></div>
-								<div class="col-xs-12 pad-no"><a class="scenario-1 text-center">SERVICES</a></div>
-								<div class="col-xs-12 pad-no"><a class="scenario-1 text-center scenario-border">RETAILER</a></div>
-								<div class="col-xs-12 pad-no"><a class="scenario-1 text-center scenario-top-border">OTHER</a></div>
+	  
+	<div class="scenario">
+								<div class="col-xs-12 pad-no scenario-active"><a class="scenario-1 btn"><input type="radio" name="Status" id="option1"  class="radio1" checked >MANUFACTURING</a></div>
+								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="Status" id="option1" class="radio1">TRADING</a></div>
+								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="Status" id="option1" class="radio1">SERVICES</a></div>
+								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="Status" id="option1" class="radio1">RETAILER</a></div>
+								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="Status" id="option1" class="radio1">OTHER</a></div>
+								
 							</div>
+						
 	   
 	   
 		
@@ -139,11 +161,11 @@
       <div id="collapse2" class="panel-collapse collapse">
         <div class="panel-body">
 		   <div class="scenario">
-								<div class="col-xs-12 pad-no scenario-active"><a class="scenario-1 text-center">Selection 1</a></div>
-								<div class="col-xs-12 pad-no"><a class="scenario-1 text-center">Selection 2</a></div>
-								<div class="col-xs-12 pad-no"><a class="scenario-1 text-center">Selection 3</a></div>
-								<div class="col-xs-12 pad-no"><a class="scenario-1 text-center scenario-border">Selection 4</a></div>
-								<div class="col-xs-12 pad-no"><a class="scenario-1 text-center scenario-top-border">Selection 5</a></div>
+								<div class="col-xs-12 pad-no scenario-active"><a class="scenario-1 btn"><input type="radio" name="Status" id="option1"  class="radio1" checked >Type 1</a></div>
+								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="Status" id="option1" class="radio1">Type 2</a></div>
+								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="Status" id="option1" class="radio1">Type 3</a></div>
+								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="Status" id="option1" class="radio1">Type 4</a></div>
+								
 							</div>
 		</div>
       </div>
@@ -158,11 +180,13 @@
       <div id="collapse3" class="panel-collapse collapse">
         <div class="panel-body">
 		  <div class="col-xs-12 form-padding">
-     <input type="date" class="form-input-new form-control" placeholder="EXISTING EMI IF ANY" required="">
+     <input type="date" class="form-input-new form-control" placeholder="EXISTING ALL EMI" required="">
 	</div>
 		</div>
       </div>
     </div>
+	
+	
 	<div class="panel panel-default">
       <div class="panel-heading">
         <h4 class="panel-title">
@@ -173,11 +197,11 @@
       <div id="collapse4" class="panel-collapse collapse">
         <div class="panel-body">
 		   <div class="scenario">
-								<div class="col-xs-12 pad-no scenario-active"><a class="scenario-1 text-center">Owned</a></div>
-								<div class="col-xs-12 pad-no"><a class="scenario-1 text-center">Rented</a></div>
-								<div class="col-xs-12 pad-no"><a class="scenario-1 text-center">Parental</a></div>
-								<div class="col-xs-12 pad-no"><a class="scenario-1 text-center scenario-border">Others</a></div>
-
+								<div class="col-xs-12 pad-no scenario-active"><a class="scenario-1 btn"><input type="radio" name="Status" id="option1"  class="radio1" checked >Owned</a></div>
+								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="Status" id="option1" class="radio1">Rented</a></div>
+								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="Status" id="option1" class="radio1">Parental</a></div>
+								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="Status" id="option1" class="radio1">Others</a></div>
+								
 							</div>
 		</div>
       </div>
@@ -192,11 +216,11 @@
       <div id="collapse5" class="panel-collapse collapse">
         <div class="panel-body">
 		   <div class="scenario">
-								<div class="col-xs-12 pad-no scenario-active"><a class="scenario-1 text-center">Owned</a></div>
-								<div class="col-xs-12 pad-no"><a class="scenario-1 text-center">Rented</a></div>
-								<div class="col-xs-12 pad-no"><a class="scenario-1 text-center">Parental</a></div>
-								<div class="col-xs-12 pad-no"><a class="scenario-1 text-center scenario-border">Others</a></div>
-
+								<div class="col-xs-12 pad-no scenario-active"><a class="scenario-1 btn"><input type="radio" name="Status" id="option1"  class="radio1" checked >Owned</a></div>
+								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="Status" id="option1" class="radio1">Rented</a></div>
+								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="Status" id="option1" class="radio1">Parental</a></div>
+								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="Status" id="option1" class="radio1">Others</a></div>
+								
 							</div>
 		</div>
       </div>

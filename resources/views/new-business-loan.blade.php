@@ -33,10 +33,11 @@
 		</div>
 		
 		<div class="col-xs-6 form-padding">
-     <input type="name" class="form-input-new form-control" placeholder="Loan Amount" required="">
+     <input type="text" class="form-input-new form-control" name="loanamount" id="loanamount" placeholder="Loan Amount" onkeypress="return isNumberKey(event)" maxlength="9" minlength="9" required>
 	</div>
 	<div class="col-xs-6 form-padding">
-     <input type="name" class="form-input-new form-control" placeholder="Pan No" required="">
+     <input class="form-input-new form-control" type="text" id="pan_no" name="pan_no" oninput="pan_card('pan_no')" maxlength="10" minlength="10"  placeholder="Pan No" required>
+     <div id="pan_number" style="display:none;color: red;">Oops.Please Enter Valid Pan Number.!!</div>
 	</div>
 <div class="loan-tenure">
   <center>
@@ -74,32 +75,32 @@
                 <div class="panel-body">
                      
 					 <div class="col-xs-6 form-padding">
-     <input type="text" class="form-input-new form-control"  name="company_name" id="company_name"  placeholder="Company Name"  >
+     <input type="text" class="form-input-new form-control"  name="company_name" id="company_name"  placeholder="Company Name" onkeypress="return AllowAlphabet(event)" required  >
 
 	</div>
 	<div class="col-xs-6 form-padding">
      <input type="text" class="form-input-new form-control"  name="income_tax_paid" id="income_tax_paid" onkeypress="return isNumberKey(event)" required="" placeholder="Income Tax Paid - Firm">
 	</div>
 	<div class="col-xs-6 form-padding">
-     <input type="text" class="form-input-new form-control" name="turnover" id="turnover" placeholder="Turnover/Topline" onkeypress="return isNumberKey(event)" required="">
+     <input type="text" class="form-input-new form-control" name="turnover" id="turnover" placeholder="Turnover/Topline" onkeypress="return isNumberKey(event)" required>
 	</div>
 	<div class="col-xs-6 form-padding">
-     <input type="text" class="form-input-new form-control" name="profit_after_tax" id="profit_after_tax" placeholder="Profit After Tax"  onkeypress="return isNumberKey(event)" required="">
+     <input type="text" class="form-input-new form-control" name="profit_after_tax" id="profit_after_tax" placeholder="Profit After Tax"  onkeypress="return isNumberKey(event)" required>
 	</div>
 	<div class="col-xs-6 form-padding">
-     <input type="text" class="form-input-new form-control" name="depreciation" id="depreciation" placeholder="Depreciation" onkeypress="return isNumberKey(event)" required="">
+     <input type="text" class="form-input-new form-control" name="depreciation" id="depreciation" placeholder="Depreciation" onkeypress="return isNumberKey(event)" required>
 	</div>
 	<div class="col-xs-6 form-padding">
      <input type="text" class="form-input-new form-control" name="partner_remuneration" id="partner_remuneration" placeholder="Partner Remuneration" 
-     onkeypress="return isNumberKey(event)"  required="">
+     onkeypress="return isNumberKey(event)"  required>
 	</div>
 
 			
 <div class="col-xs-6 form-padding"> 
-     <input type="name" class="form-input-new form-control" placeholder="Interest Paid On Bank Loans" required="">
+     <input type="name" class="form-input-new form-control" placeholder="Interest Paid On Bank Loans" step="0.01" min="0" onkeypress="return isNumberKey(event)" required>
 	</div>
 	<div class="col-xs-6 form-padding"> 
-     <input type="name" class="form-input-new form-control" placeholder="Existing All EMI" required="">
+     <input type="text" class="form-input-new form-control" name="existing_emi" id="existing_emi" placeholder="Existing All EMI" onkeypress="return isNumberKey(event)"  required>
 	</div>			
 					 
                 </div>
@@ -117,7 +118,6 @@
             </div>
             <div id="collapse7" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading7">
                 <div class="panel-body">
-<!-- ROW 1 START--->
 <div>
 <h4 class="text-center">BANK 1</h4>
                     <div class="col-xs-6 form-padding"> 
@@ -142,7 +142,7 @@
 	</div>
 	<button class="btn btn-primary btn-outline top-mrg">Add Other Bank Existing EMI</button>
 	</div>
-<!-- ROW 1 End--->		
+	
 					
                 </div>
             </div>
@@ -240,7 +240,7 @@
       <div id="collapse3" class="panel-collapse collapse">
         <div class="panel-body">
 		  <div class="col-xs-12 form-padding">
-     <input type="text" id="date" name="date" class="form-input-new form-control lastReporteddate1" placeholder="Date of Birth" required="">
+     <input type="text" id="date" name="date" class="form-input-new form-control lastReporteddate1" placeholder="Date of Birth" required>
 	</div>
 		</div>
       </div>
@@ -373,4 +373,42 @@
       yearRange: '-100:' + year + '',
       defaultDate: d
     });
+</script>
+
+<script type="text/javascript">
+	function pan_card(obj,val){
+		console.log(obj);
+		if(obj=='pan_no' ){
+                   var str =$('#pan_no').val();
+                   var pancardPattern = /^([a-zA-Z]{5})(\d{4})([a-zA-Z]{1})$/;
+                   var res = str.match(pancardPattern);
+                   if(res){
+                     // console.log('Pancard is valid one.!!');
+                     	$('#pan_number').hide();
+
+                  }else{
+                  	// console.log('Oops.Please Enter Valid Pan Number.!!');
+                  	$('#pan_number').show();
+
+                  	return false;
+                  }
+                  
+	}
+}
+</script>
+
+<script type="text/javascript">
+	
+  function AllowAlphabet(e)
+{
+  isIE = document.all ? 1 : 0
+  keyEntry = !isIE ? e.which : event.keyCode;
+  if (((keyEntry >= '65') && (keyEntry <= '90')) || ((keyEntry >= '97') && (keyEntry <= '122')) || (keyEntry == '46') || (keyEntry == '32') || keyEntry == '45')
+     return true;
+  else
+{
+    // alert('Please Enter Only Character values.');
+    return false;
+      }
+}
 </script>

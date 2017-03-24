@@ -32,7 +32,13 @@
       </div>
 		</div>
 		
-		<div class="loan-tenure">
+		<div class="col-xs-6 form-padding">
+     <input type="name" class="form-input-new form-control" placeholder="Loan Amount" required="">
+	</div>
+	<div class="col-xs-6 form-padding">
+     <input type="name" class="form-input-new form-control" placeholder="Pan No" required="">
+	</div>
+<div class="loan-tenure">
   <center>
     <div class="type-cover">
       <span>LOAN TENURE</span>

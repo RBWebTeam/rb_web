@@ -2,7 +2,7 @@
   @include('layout.header')
 
   <div id="fh5co-hero">
-  <form id="tribe_loan_form" method="POST">
+  <form id="tribe_loan_form" method="POST" enctype="multipart/form-data">
   {{ csrf_field() }}
   	<div class="container">
   	<h2 class="align-center loan-head">Tribe</h2>
@@ -227,8 +227,8 @@
     
     <div class="col-md-3"><p>Do you carry out Online Sales?*</p></div>
     <div class="col-md-8"><p>
-    <input type="radio" name="online_sale" onclick="showHidden('online_sale_channel_div',1);" /> Yes&nbsp;&nbsp; 
-    <input type="radio" name="online_sale" onclick="showHidden('online_sale_channel_div',0);" checked/> No</p></div>
+    <input type="radio" name="online_sale" onclick="showHidden('online_sale_channel_div',1);" value="true" /> Yes&nbsp;&nbsp; 
+    <input type="radio" name="online_sale" onclick="showHidden('online_sale_channel_div',0);" value="false" checked/> No</p></div>
     
     <div class="col-md-3"><p>Do you carry out Offline Sales?*</p></div>
     <div class="col-md-8"><p>
@@ -285,12 +285,12 @@
     <div class="col-md-8 sec">
      <select class="drop-arr" name="loan_purpose" id="loan_purpose">
        <option disabled selected>Select Loan Purpose</option>
-  		 <option>inventory rotation</option>
-  		 <option>product differentiation</option>
-  		 <option>expansion</option>
-  		 <option>launch of new product</option>
-  		 <option>working capital</option>
-  		 <option>others</option>
+  		 <option value="1">inventory rotation</option>
+  		 <option value="1">product differentiation</option>
+  		 <option value="1">expansion</option>
+  		 <option value="1">launch of new product</option>
+  		 <option value="1">working capital</option>
+  		 <option value="1">others</option>
     </select>
     </div>
     
@@ -301,12 +301,15 @@
     <a class="btn btn-primary btn-outline with-arrow  ">Back<i class="icon-arrow-right"></i></a>
     </div>
     </div>
+    <form id="upload_form" name="upload_form" enctype="multipart/form-data">
     <div id="main4" class="tab-pane fade">
       
   	<h3 class="mrg-top">KYC Identity Proof</h3>
   <hr>
     <div class="col-md-3">Pan</div>
-    <div class="col-md-8"><input type="file" id="doc_pan" name="doc_pan" class="form-control form-group no-border"/></div>
+    <div class="col-md-8">
+    <input type="file" name="docpan" id="docpan" files="true" class="form-control form-group no-border"/>
+    </div>
     
     <div class="col-md-3">Aadhaar</div>
     <div class="col-md-8"><input type="file" name="doc_aadhar" id="doc_aadhar" class="form-control form-group no-border"/></div>

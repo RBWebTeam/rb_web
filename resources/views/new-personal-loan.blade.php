@@ -13,7 +13,8 @@
  </div>
  <div class="col-md-12 white-bg pad box-shadow fl-lft">
   <!--   <div id ="test123" class="col-md-8"></div> -->
-    <form name='personal_loan_process_form' id='personal_loan_process_form'>
+ 
+    <form name="personal_loan_process_form" id="personal_loan_process_form" action="#" method="POST" >
       {{ csrf_field() }}
       <input type="hidden" id="product" name="product_name" value=9>
    <!--  <div id ="test123" class="col-md-8"></div> -->
@@ -24,7 +25,7 @@
 <div class="text-center flt-lft btn-grp" data-toggle="buttons">
               <div class="scenario">
                 <div class="col-xs-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="purpose"  value="Marriage" class="radio1">Marriage</a></div>
-                <div class="col-xs-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="purpose"  value="Home Releted" class="radio1">Home Releted</a></div>
+                <div class="col-xs-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="purpose"  value="Home Releted" class="radio1">Home Related</a></div>
                 <div class="col-xs-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="purpose"  value="Business" class="radio1">Business</a></div>
                 <div class="col-xs-6 pad-no scenario-active"><a class="scenario-1 btn"><input type="radio" name="purpose"  value="Other" class="radio1" checked >Other</a></div>
               
@@ -58,7 +59,7 @@
     
                               <div  id="unranged-value" value="" style="width:100%; height:10px;"></div>
     </div>
-    <input  type="hidden" id="loan_tenure" name="loan_tenure" value=""  />
+    <input  type="hidden" id="loan_tenure" name="loan_tenure" value="5"  />
     </div>
   </div>
 
@@ -98,12 +99,12 @@
   </div>
   
   <div class="col-xs-6 form-padding">
-     <input type="text" name="obligation" id="obligation" class="form-input-new form-control" placeholder="Exsisting EMI (If Any)" onkeypress="return isNumberKey(event)" required="">
+     <input type="text" name="obligation" id="obligation" class="form-input-new form-control" placeholder="Existing EMI (If Any)" onkeypress="return isNumberKey(event)" required="">
   </div>
   
   <div class="col-md-12">
 
-  <?php if(Session::get('is_login')) {?>
+  <!-- <?php if(Session::get('is_login')) {?>
                 <?php if(Session::get('contact')!=''){ Session::get('contact'); ?>
               <a type="button" class="btn btn-primary btn-outline with-arrow top-mrg product_name" id="quotes">Get Me Loan<i class="icon-arrow-right"></i></a>
               <div class="iframeloading" style= "display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
@@ -120,35 +121,52 @@
 
               <a id="btn_refresh1" class="btn btn-primary btn-outline with-arrow animate-box product_name" onclick="get_quote_button()">Get Me Loan<i class="icon-arrow-right"></i></a>
             <?php } ?>
-  
-  
+   -->
+
+<br>
+    <?php if(Session::get('is_login')) {?>
+                <?php if(Session::get('contact')!=''){ Session::get('contact'); ?>
+              <button class="btn btn-primary btn-outline with-arrow top-mrg product_name " >Get Best Quotes<i class="icon-arrow-right"></i></button>
+              <?php }else{?> 
+                <a  class="btn btn-primary btn-outline with-arrow top-mrg product_name" data-toggle="modal" data-target="#contact_id">Get Best Quotes<i class="icon-arrow-right"></i></a>
+                      <?php }?>
+            <?php }else{?>
+            <button  style="display:none" class="btn btn-primary btn-outline with-arrow top-mrg product_name " id="btn_refresh_co">Get Best Quotes<i class="icon-arrow-right"></i></button>
+
+
+              <a class="btn btn-primary btn-outline with-arrow top-mrg product_name" id="btn_refresh_co1" data-toggle="modal" data-target="#login_process">Get Best Quotes<i class="icon-arrow-right"></i></a>
+            <?php } ?>
+
+ <!--  <div class="iframeloading" style= "display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
+                <img src="{{URL::to('images/ajaxloader.gif')}}" alt="Loader" title="Loader" style="top: 50%; position: relative; left: 50%;"  />
+               </div> -->
       </div>
       </form>
      </div>
      <div class="col-md-4" >
-     <div class="border brd-for">
+     <div class="border brd-for" id="mi_id">
 
-             <!-- <form class="" id="compareform" role="form" method="POST" action=""> -->
+             <!-- <form name="compareform" id="compareform" > -->
           
           
             <div class="inp-hig">
             <label class="form-label-new">Loan Amount</label>
-              <input type="text" class="form-control" id="loanamount" name="name" value="" placeholder="" required class="clr-ddd" />
+              <input type="text" class="form-control" id="loanamount" name="name" value="" placeholder="" required class="clr-ddd" readonly />
             </div>
 
             <div class="inp-hig">
           <label class="form-label-new">Best ROI</label>
-              <input type="text" class="form-control" id="rate" name="name" value="" placeholder="" required class="clr-ddd" />
+              <input type="text" class="form-control" id="rate" name="name" value="" placeholder="" required class="clr-ddd" readonly />
             </div>
 
             <div class="inp-hig">
             <label class="form-label-new">Tenure</label>
-                 <input type="text" class="form-control" id="term" name="name" value="" placeholder="" required class="clr-ddd">
+                 <input type="text" class="form-control" id="term" name="name" value="" placeholder="" required class="clr-ddd" readonly>
             </div>
 
             <div class="inp-hig">
           <label class="form-label-new">Processing Fee</label>
-              <input type="text" class="form-control" id="processfee" name="name" placeholder="" required class="clr-ddd" />
+              <input type="text" class="form-control" id="processfee" name="name" placeholder="" required class="clr-ddd" readonly />
             </div>
 
         <div> 
@@ -158,9 +176,20 @@
          <button type="button" class="btn btn-info"  id="call_rm" name="call_rm" data-toggle="modal" data-target="#Modal" title="Call For RM(Single Day Process)">Call RM</button>
          
         </div>
+        <br>
+        <!-- <p id="err" style="display:none;" ><span style="color:skyblue;position:absolute;font-size:13px;">No Quotes Found.</span></p> -->
+   
     <!--   </form> -->
-    </div>  
+
+    </div> 
+    <p id="err" style="display:none;" ><span style="color: red;font-size: 20px;display: block; text-align: center;">No Quotes Found.</span></p> 
   </div> 
+  
+  
+  
+  
+  
+  
    </aside>
    
   </div>
@@ -234,81 +263,127 @@ $(document).ready(function(){
 </script>
 
 
-<script type="text/javascript">
-function get_quote_button(){
-  event.preventDefault();
-  var form='personal_loan_process_form';
-  //console.log(form);return false;
-    $form=$('#'+form);
-    if(! $form.valid()){
-      return false;
-    }else{
-      var slidr = $("#unranged-value").text();
-         $('#loan_tenure').val(slidr);
-         console.log(slidr);
-      $('#login_process').modal('show');
-  }
-}
-
-
-</script>
 
 <script type="text/javascript">
-  $("#quotes").click(function(event){
-   
-        var slidr = $("#unranged-value").text();
-         $('#loan_tenure').val(slidr);
-         console.log(slidr);
-        // alert('ok');
-        $(".iframeloading").show();
-        var v_token = "{{csrf_token()}}";
-      $.ajax({  
-               type: "POST",  
-               url: "{{URL::to('loan-submit')}}",
-               dataType:'json',
-                data : $('#personal_loan_process_form').serialize(),
-               success: function(msg){
-                    // console.log(msg);
-                  if(msg.success ==true){
-                    //console.log(msg.html);
-                     $(".iframeloading").hide();
-                    // $("#personal_loan_process_form").hide();
-                    $("#test123").append(msg.html);
+$(".btn-primary").click(function(e){
+   e.preventDefault();
+  //       var slidr = $("#unranged-value").text();
+  //        $('#loan_tenure').val(slidr);
+  //        console.log(slidr);
+  //       // alert('ok');
+  //       $(".iframeloading").show();
+  //       var v_token = "{{csrf_token()}}";
+  //     $.ajax({  
+  //              type: "POST",  
+  //              url: "{{URL::to('loan-submit')}}",
+  //              dataType:'json',
+  //               data : $('#personal_loan_process_form').serialize(),
+  //              success: function(msg){
+  //                   // console.log(msg);
+  //                 if(msg.success ==true){
+  //                   //console.log(msg.html);
+  //                  //  $(".iframeloading").hide();
+  //                   // $("#personal_loan_process_form").hide();
+  //                   $("#test123").empty().append(msg.html);
 
-                    var loan_eligible = msg.loan_eligible;
-                    // console.log(loan_eligible);
-                   $('#loanamount').val(loan_eligible);
+  //                   var loan_eligible = msg.loan_eligible;
+  //                   // console.log(loan_eligible);
+  //                  $('#loanamount').val(loan_eligible);
 
-                    var roi = msg.roi;
-                    $('#rate').val(roi);
+  //                   var roi = msg.roi;
+  //                   $('#rate').val(roi);
 
-                      var LoanTenure = msg.LoanTenure;
-                    $('#term').val(LoanTenure);
+  //                     var LoanTenure = msg.LoanTenure;
+  //                   $('#term').val(LoanTenure);
 
+  //                   var processingfee = msg.processingfee;
+  //                   $('#processfee').val(processingfee);
+
+  //                   var Bank_id = msg.Bank_Id;
+  //                   $('#bank').val(Bank_id);
+  //                    var url = "apply-lead-online?qoutid=0&BankId="+Bank_id+"&product=9&processing_fee="+processingfee+"&loan_eligible="+loan_eligible+"&roi_type="+roi+"";
+  //                    $("#apply_new").attr("href", url);
+                  
+
+  //                 $('#call_rm').show();
+  //                 }else{
+                    
+  //                    // window.location.href ="{{URL::to('went-wrong')}}";
+  //                    $(".iframeloading").hide();
+                      
+
+  //                 }
+  //                 }  
+  //                 }); 
+        
+  //       // $('#express_form').hide();
+  //       // $('#generic').show();
+        
+  // });
+
+
+
+
+    if(!$('#personal_loan_process_form').valid()){
+
+    
+            return false;
+           
+          }else{
+ // $(".iframeloading").show();
+              $.ajax({  
+             type: "POST",  
+             url: "{{URL::to('loan-submit')}}",
+           data : $("#personal_loan_process_form").serialize(),
+        //   data: {_token :_token,username:username,password:password},
+             success: function(msg){
+                    // $(".iframeloading").hide();
+                           if(msg.success ==true){
+
+                        var loan_eligible = msg.loan_eligible;
+
+
+                             if (loan_eligible>0) {
+                             $("#test123").empty().append(msg.html);  
+                             $('#loanamount').val(loan_eligible);
+                            var roi = msg.roi;
+                             $('#rate').val(roi);
+                          var LoanTenure = msg.LoanTenure;
+                             $('#term').val(LoanTenure);
                     var processingfee = msg.processingfee;
                     $('#processfee').val(processingfee);
-
                     var Bank_id = msg.Bank_Id;
                     $('#bank').val(Bank_id);
                      var url = "apply-lead-online?qoutid=0&BankId="+Bank_id+"&product=9&processing_fee="+processingfee+"&loan_eligible="+loan_eligible+"&roi_type="+roi+"";
                      $("#apply_new").attr("href", url);
-                  
+                      $('#err').hide();
+                      $('#apply_new').show();
+                      $('#mi_id').show();
+                      $(window).scrollTop($('#test123').offset().top-20);
 
-                  $('#call_rm').show();
-                  }else{
-                    
-                     // window.location.href ="{{URL::to('went-wrong')}}";
-                     $(".iframeloading").hide();
+                   }else{
+                     $('#err').show();
+                     $('#apply_new').hide();
+                      $("#test123").empty();
+                       $('#mi_id').hide();
                       
-
+                    }
+                     // $(window).scrollTop($('#test123').offset().top-20);
+                  
                   }
-                  }  
-                  }); 
-        
-        // $('#express_form').hide();
-        // $('#generic').show();
-        
-  });
+
+                             
+                        
+                    }  
+                  });
+
+          }
+
+
+});
+
+
+
 </script>
 
 <script type="text/javascript">

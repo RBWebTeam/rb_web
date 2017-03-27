@@ -133,7 +133,7 @@
 								 <li>More convenient</li>
 							</ul>
 							
-							<a class="btn btn-primary btn-outline with-arrow" href="{{URL::to('/apply-personal-loan')}}">Apply Online
+							<a class="btn btn-primary btn-outline with-arrow" href="{{URL::to('/new-personal-loan')}}">Apply Online
 							<i class="icon-arrow-right"></i></a>
 						</div>
 						</a>

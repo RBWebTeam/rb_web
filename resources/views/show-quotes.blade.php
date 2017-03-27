@@ -41,7 +41,7 @@
     <table width="100%" border="1" class="tbl pad1">
   <tr>
     <td>Your {{$product}} Search for <b>{{$loan_amount}} Lakhs</b> Loan</td>
-    <td><a class="default btn btn-primary" href="<?php echo $url;?>" id="Modify_Details">Modify Details</a></td>
+    <td><a class="default btn btn-primary"  id="Modify_Details">Modify Details</a></td>
     <!-- <td>sort by 
     <select>
         <option>Interest Rate</option>
@@ -317,4 +317,10 @@ $('#compID').show();
 
 // });
 
+</script>
+
+<script type="text/javascript">
+$("#Modify_Details").click(function() {
+  $(window).scrollTop($('#personal_loan_process_form').offset().top-20);
+});
 </script>

@@ -15,7 +15,7 @@
 
 	<link  rel="stylesheet" type="text/css" href="{{URL::to('css/mysite.css')}}"/>
 
-	<link  rel="stylesheet" type="text/css" href="{{URL::to('css/style.css')}}"/>
+	<!-- <link  rel="stylesheet" type="text/css" href="{{URL::to('css/style.css')}}"/> -->
 
 
 
@@ -36,9 +36,11 @@
  { 
  "@context" : "http://schema.org",
  "@type" : "Organization",
- "name" : "Rupeeboss",
+ "name" : "Rupeeboss Financial Services Pvt Ltd",
  "url" : "http://www.rupeeboss.com/",
  "logo": "http://www.rupeeboss.com/images/logo.png",
+ "email": "wecare@rupeeboss.com",
+ "telephone": "1800-267-629-6",
  "sameAs" : [ 
  "https://www.facebook.com/rupeeboss",
  "https://www.linkedin.com/company/rupeeboss.com",
@@ -46,6 +48,7 @@
  "https://twitter.com/rupeeboss"
  ]
  }
+
  </script>
 	</head>
 	<body><!-- 

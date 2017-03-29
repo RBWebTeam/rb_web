@@ -153,7 +153,7 @@
 	
  </div>
 	<div class="col-md-6">
-	<div class="panel-group" id="accordion">
+	<div class="panel-group" id="accordion1">
 	<div class="panel-default">
       <div id="collapse0" class="panel-collapse collapse in">
         <div class="panel-body">
@@ -185,13 +185,12 @@
     <div class="panel panel-default">
       <div class="panel-heading">
         <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">NATURE OF BUSINESS <i class="icon-plus pull-right more-less"></i></a>
+          <a data-toggle="collapse" data-parent="#accordion1" href="#collapse1">NATURE OF BUSINESS <i class="icon-minus pull-right more-less"></i></a>
 		
         </h4>
       </div>
-      <div id="collapse1" class="panel-collapse collapse">
+      <div id="collapse1" class="panel-collapse collapse in">
         <div class="panel-body">
-	  
 	<div class="scenario">
 								<div class="col-xs-12 pad-no scenario-active"><a class="scenario-1 btn"><input type="radio" name="Status" id="option1"  class="radio1" checked >MANUFACTURING</a></div>
 								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="Status" id="option1" class="radio1">TRADING</a></div>
@@ -210,7 +209,7 @@
     <div class="panel panel-default">
       <div class="panel-heading">
         <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">INDUSTRY <i class="icon-plus pull-right more-less"></i></a>
+          <a data-toggle="collapse" data-parent="#accordion1" href="#collapse2">INDUSTRY <i class="icon-plus pull-right more-less"></i></a>
 		 
         </h4>
       </div>
@@ -229,7 +228,7 @@
     <div class="panel panel-default">
       <div class="panel-heading">
         <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">DATE OF INCORPORATION <i class="icon-plus pull-right more-less"></i></a>
+          <a data-toggle="collapse" data-parent="#accordion1" href="#collapse3">DATE OF INCORPORATION <i class="icon-plus pull-right more-less"></i></a>
 		 
         </h4>
       </div>
@@ -246,7 +245,7 @@
 	<div class="panel panel-default">
       <div class="panel-heading">
         <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">RESIDENCE TYPE <i class="icon-plus pull-right more-less"></i></a>
+          <a data-toggle="collapse" data-parent="#accordion1" href="#collapse4">RESIDENCE TYPE <i class="icon-plus pull-right more-less"></i></a>
 		 
         </h4>
       </div>
@@ -265,7 +264,7 @@
 	<div class="panel panel-default">
       <div class="panel-heading">
         <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse5">OFFICE TYPE<i class="icon-plus pull-right more-less"></i></a>
+          <a data-toggle="collapse" data-parent="#accordion1" href="#collapse5">OFFICE TYPE<i class="icon-plus pull-right more-less"></i></a>
 		  
         </h4>
       </div>

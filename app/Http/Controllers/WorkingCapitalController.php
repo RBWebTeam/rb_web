@@ -229,4 +229,12 @@ public function termloanFN($loanamount,$loaninterest,$loanterm){
 
 
 
+public function NewWorkingCapital(){
+
+
+         return view('new-working-capital');
+}
+
+
+
 }

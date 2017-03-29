@@ -30,18 +30,24 @@
       </div>
 		</div>
 		
+		
 		<div class="loan-tenure">
-									<center>
-										<div class="type-cover">
-											<span>Loan Tenure</span>
-										</div>
-									</center>
-									<div class="text-center">
-										<div class="scaling-slider">
-											<img src="images/slider.png" class="img-responsive">
-										</div>
-									</div>
-								</div>
+  <center>
+    <div class="type-cover">
+      <span>LOAN TENURE</span>
+    </div>
+  </center>
+  <div class="scaling-slider">
+  
+    <div class="tenure offset5 pad">
+    
+                              <div  id="unranged-value" value="" style="width:100%; height:10px;"></div>
+    </div>
+    <input  type="hidden" id="loan_tenure" name="loan_tenure" value="5"  />
+    </div>
+  </div>
+  
+  
      <div class="col-xs-6 form-padding">
      <input type="name" class="form-input-new form-control" placeholder="Name of The company" required="">
 	</div>
@@ -101,7 +107,7 @@
       <div class="panel-heading">
         <h4 class="panel-title">
           <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">NATURE OF BUSINESS</a>
-		 <i class="icon-plus pull-right more-less"></i>
+		 <i class="icon-minus pull-right more-less"></i>
         </h4>
       </div>
       <div id="collapse1" class="panel-collapse collapse in">

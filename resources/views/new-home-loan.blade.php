@@ -69,12 +69,12 @@
 		  <i class="icon-plus pull-right more-less"></i>
         </h4>
       </div>
-      <div id="collapse2" class="panel-collapse collapse">
+      <div id="collapse2" class="panel-collapse collapse applicant_add">
         <div class="panel-body">
 		<div class="loan-tenure">
 			<center>
 				<div class="type-cover">
-						  <span>LOAN TENURE</span>
+						  <span>LOAN TENURE (Years)</span>
 				</div>
 			</center>
 			<div class="scaling-slider">
@@ -329,11 +329,12 @@ $(document).ready(function(){
 $(".product_ID").click(function(e){
    e.preventDefault();
     if(!$('#home_loan_process_form').valid()){
-
     	$('#valid').empty().append('<span class="icon-remove text-danger" id="tt2"></span>');
             return false;
           }else{
- 
+
+
+
               $.ajax({  
              type: "POST",  
              url: "{{URL::to('loan-submit')}}",

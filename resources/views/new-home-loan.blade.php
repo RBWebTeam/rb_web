@@ -332,10 +332,11 @@ $(".product_ID").click(function(e){
     	$('#valid').empty().append('<span class="icon-remove text-danger" id="tt2"></span>');
             return false;
           }else{
-
                var property_cost=$('#property_cost').val();
                var income=$('#income').val();
       if(property_cost!='' && income!=''){
+         $('#login_process').attr( 'id', 'login_process');
+
               $.ajax({  
              type: "POST",  
              url: "{{URL::to('loan-submit')}}",
@@ -376,7 +377,8 @@ $(".product_ID").click(function(e){
 
 }else{
  $('#login_process').removeAttr('id');
-alert("This field is required.");
+  alert("This field is required.");
+
   
 }
 

@@ -3538,4 +3538,67 @@ label {
 .no-pad {padding:0px;}
 .titl {padding: 10px;
     margin: 5px 5px 8px 5px;
-    background: #eee;}
+    background: #eee;
+}
+
+
+
+
+
+
+select, input {
+    background-color:#FFFFFF;
+    width:160px;
+}
+
+select, input::-webkit-input-placeholder {
+   color: #CCCCCC;
+   position:relative;
+   padding-left:0;
+    -webkit-transition: padding 0.5s; /* For Safari 3.1 to 6.0 */
+    transition: padding 0.5s;
+}
+
+select, input:-moz-placeholder { /* Firefox 18- */
+    color: #CCCCCC;
+    position:relative;
+    padding-left:0;
+    -moz-transition: padding 0.5s; /* For Safari 3.1 to 6.0 */
+    transition: padding 0.5s;
+}
+
+select, input::-moz-placeholder {  /* Firefox 19+ */
+    color: #CCCCCC;
+    position:relative;
+    padding-left:0;
+    -moz-transition: padding 0.5s; /* For Safari 3.1 to 6.0 */
+    transition: padding 0.5s;
+}
+
+select, input:-ms-input-placeholder {  
+    color: #CCCCCC;
+    position:relative;
+    padding-left:0;
+    -ms-transition: padding 0.5s; /* For Safari 3.1 to 6.0 */
+    transition: padding 0.5s;
+}
+select, input:hover::-webkit-input-placeholder,
+select, input:focus::-webkit-input-placeholder {
+     padding-left:100px;
+}
+
+select, input:hover:-moz-placeholder,
+select, :focus:-moz-placeholder{ /* Firefox 18- */
+      padding-left:100px;
+}
+
+select, input:hover::-moz-placeholder,
+input:focus::-moz-placeholder{  /* Firefox 19+ */
+   padding-left:100px;
+}
+
+select, input:hover:-ms-input-placeholder,
+select, input:focus:-ms-input-placeholder{  
+      padding-left:100px;
+}
+	

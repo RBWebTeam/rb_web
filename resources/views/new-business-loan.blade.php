@@ -116,9 +116,9 @@
                 <div class="panel-body">
 <!-- ROW 1 START--->
 <div>
-<h4 class="text-center">BANK 1</h4>
+<h4 class="text-center">List of Loan EMI</h4>
                     <div class="col-xs-6 form-padding"> 
-     <input type="name" class="form-input-new form-control" placeholder="Bank" required="">
+     <input type="name" class="form-input-new form-control" placeholder="Bank 1" required="">
 	</div>
 	<div class="col-xs-6 form-padding">
      <input type="name" class="form-input-new form-control" placeholder="EMI" required="">

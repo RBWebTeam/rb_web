@@ -43,7 +43,7 @@
 						</div> 
 						
 						<div class="col-xs-4 form-padding">
-     <input type="text" class="form-input-new form-control" name="property_cost" placeholder="Property Cost" required onkeypress="return fnAllowNumeric(event)">
+     <input type="text" class="form-input-new form-control" id="property_cost" name="property_cost" placeholder="Property Cost" required onkeypress="return fnAllowNumeric(event)">
 	</div>
 	<div class="col-xs-4 form-padding">
      <input type="text" class="form-input-new form-control" name="loan_amount" placeholder="Loan Required" required onkeypress="return fnAllowNumeric(event)">
@@ -69,12 +69,12 @@
 		  <i class="icon-plus pull-right more-less"></i>
         </h4>
       </div>
-      <div id="collapse2" class="panel-collapse collapse">
+      <div id="collapse2" class="panel-collapse collapse applicant_add">
         <div class="panel-body">
 		<div class="loan-tenure">
 			<center>
 				<div class="type-cover">
-						  <span>LOAN TENURE</span>
+						  <span>LOAN TENURE (Years)</span>
 				</div>
 			</center>
 			<div class="scaling-slider">
@@ -130,7 +130,7 @@
 
 	   
 	   <div class="col-xs-6 form-padding" id="income_ID">
-     <input type="text" class="form-input-new form-control"  name="income"  placeholder="Monthly Income" required onkeypress="return fnAllowNumeric(event)">
+     <input type="text" class="form-input-new form-control"  id="income" name="income"  placeholder="Monthly Income" required onkeypress="return fnAllowNumeric(event)">
 	</div>
 	
 	<div class="col-xs-6 form-padding">
@@ -329,11 +329,13 @@ $(document).ready(function(){
 $(".product_ID").click(function(e){
    e.preventDefault();
     if(!$('#home_loan_process_form').valid()){
-
     	$('#valid').empty().append('<span class="icon-remove text-danger" id="tt2"></span>');
             return false;
           }else{
- 
+
+               var property_cost=$('#property_cost').val();
+               var income=$('#income').val();
+      if(property_cost!='' && income!=''){
               $.ajax({  
              type: "POST",  
              url: "{{URL::to('loan-submit')}}",
@@ -371,8 +373,18 @@ $(".product_ID").click(function(e){
                }                    
            }  
        });
+
+}else{
+ $('#login_process').removeAttr('id');
+alert("This field is required.");
+  
+}
+
      }
+  
+
   });
+
 });
 
  

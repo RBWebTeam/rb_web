@@ -1,28 +1,18 @@
 @include('layout.header')
-
 <div class="container">
-
-  
-  <aside id="fh5co-hero">
+ <aside id="fh5co-hero">
   <div class="col-md-12">
-  <h2 class="align-center loan-head">Personal Loan</h2>
+  <h2 class="align-center loan-head">Car Loan</h2>
   </div>
  <!-- <div class="col-md-12 white-bg pad1 mrg-btm box-shadow">
 <img src="{{URL::to('images/9.png')}}" alt="Tribe Logo" class="img-responsive" />
-
-
- </div>
- <div class="col-md-12 white-bg pad box-shadow fl-lft" id="lowest">
-
 </div> -->
  <div class="col-md-12 white-bg pad box-shadow fl-lft">
-
   <!--   <div id ="test123" class="col-md-8"></div> -->
  
-    <form name="personal_loan_process_form" id="personal_loan_process_form" action="#" method="POST" >
+   <form name="car_loan_process_form" id="car_loan_process_form" action="#" method="POST" >
       {{ csrf_field() }}
-      <input type="hidden" id="product" name="product_name" value=9>
-   <!--  <div id ="test123" class="col-md-8"></div> -->
+   <input type="hidden" id="product" name="product_name" value="1">
   <div class="col-md-8">
  <!--  <h3 class="main-header">Genral Information</h3> -->
 <center><div class="type-cover"><span>PURPOSE OF LOAN</span></div></center>
@@ -36,14 +26,9 @@
               
                 
               </div>
-            </div> 
-
-
-
-
-            
-            <div class="col-xs-4 form-padding">
-     <input type="text" name="custom_id" id="custom_id" class="form-input-new form-control" placeholder="Existing Custom Id if Any" onkeypress="return isNumberKey(event)" >
+            </div>       
+        <div class="col-xs-4 form-padding">
+     <input type="text" name="custom_id" id="custom_id" class="form-input-new form-control" placeholder="Existing Custom Id if Any" onkeypress="return isNumberKey(event)" required="">
   </div>
   <div class="col-xs-4 form-padding">
      <input type="text" name="loan_amount" id="loan_amount" class="form-input-new form-control" placeholder="Loan Required" onkeypress="return isNumberKey(event)" maxlength="10" required="">
@@ -84,13 +69,6 @@
                                    <span class="btn btn-default outer-brd1 outer-brd1 "><input type="radio" name="gender"  value="F"><img id="myImage1" src="images/female.png" class=""></span> <span class="hidden-xs">Female</span>
            </div>      
      </div>
-
-    <!--  <div class="col-xs-6 form-padding">
-     <div class="btn-grp form-control border-none" data-toggle="buttons">
-      <span class="btn btn-primary outer-brd btn-blu active"><input type="radio" name="gender"  value="Male">Male</span>
-      <span class="btn btn-primary outer-brd btn-blu"><input type="radio" name="gender"  value="Female">Female</span>
-         </div>
-     </div> -->
   
   <div class="col-xs-6 form-padding">
      <div class="btn-grp form-control border-none" data-toggle="buttons">
@@ -108,27 +86,6 @@
   </div>
   
   <div class="col-md-12">
-
-  <!-- <?php if(Session::get('is_login')) {?>
-                <?php if(Session::get('contact')!=''){ Session::get('contact'); ?>
-              <a type="button" class="btn btn-primary btn-outline with-arrow top-mrg product_name" id="quotes">Get Me Loan<i class="icon-arrow-right"></i></a>
-              <div class="iframeloading" style= "display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
-                <img src="{{URL::to('images/ajaxloader.gif')}}" alt="Loader" title="Loader" style="top: 50%; position: relative; left: 50%;"  />
-               </div>
-              <?php }else{?> 
-                <a  class="btn btn-primary btn-outline with-arrow top-mrg product_name" data-toggle="modal" data-target="#contact_id">Get Me Loan<i class="icon-arrow-right"></i></a>
-                      <?php }?>
-            <?php }else{?>
-            <a type="button" style="display:none" class="btn btn-primary btn-outline with-arrow top-mrg product_name " id="btn_refresh_co">Get Me Loan<i class="icon-arrow-right"></i></a>
-            <div class="iframeloading" style= "display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
-                <img src="{{URL::to('images/ajaxloader.gif')}}" alt="Loader" title="Loader" style="top: 50%; position: relative; left: 50%;"  />
-               </div>
-
-              <a id="btn_refresh1" class="btn btn-primary btn-outline with-arrow animate-box product_name" onclick="get_quote_button()">Get Me Loan<i class="icon-arrow-right"></i></a>
-            <?php } ?>
-   -->
-
-<br>
     <?php if(Session::get('is_login')) {?>
                 <?php if(Session::get('contact')!=''){ Session::get('contact'); ?>
               <button class="btn btn-primary btn-outline with-arrow top-mrg product_name " >Get Best Quotes<i class="icon-arrow-right"></i></button>
@@ -189,6 +146,12 @@
     </div> 
     <p id="err" style="display:none;" ><span style="color: red;font-size: 20px;display: block; text-align: center;">No Quotes Found.</span></p> 
   </div> 
+  
+  
+  
+  
+  
+  
    </aside>
    
   </div>
@@ -267,32 +230,19 @@ $(document).ready(function(){
 $(".btn-primary").click(function(e){
    e.preventDefault();
   
-
-
-
-
-    if(!$('#personal_loan_process_form').valid()){
+    if(!$('#car_loan_process_form').valid()){
 
     
             return false;
            
           }else{
- // $(".iframeloading").show();
               $.ajax({  
              type: "POST",  
              url: "{{URL::to('loan-submit')}}",
-           data : $("#personal_loan_process_form").serialize(),
-        //   data: {_token :_token,username:username,password:password},
+           data : $("#car_loan_process_form").serialize(),
              success: function(msg){
-              console.log(msg);
-                    // $(".iframeloading").hide();
                            if(msg.success ==true){
-
-                            var quote=msg.quote;
-
                         var loan_eligible = msg.loan_eligible;
-
-
                              if (loan_eligible>0) {
                              $("#test123").empty().append(msg.html);  
                              $('#loanamount').val(loan_eligible);
@@ -304,12 +254,12 @@ $(".btn-primary").click(function(e){
                     $('#processfee').val(processingfee);
                     var Bank_id = msg.Bank_Id;
                     $('#bank').val(Bank_id);
-                     var url = "apply-lead-online?appid=0&qoutid="+quote+"&BankId="+Bank_id+"&product=9&processing_fee="+processingfee+"&loanamout="+loan_eligible+"&roi_type="+roi+"";
+                     var url = "apply-lead-online?qoutid=0&BankId="+Bank_id+"&product=9&processing_fee="+processingfee+"&loan_eligible="+loan_eligible+"&roi_type="+roi+"";
                      $("#apply_new").attr("href", url);
                       $('#err').hide();
                       $('#apply_new').show();
                       $('#mi_id').show();
-                       $(window).scrollTop($('#lowest').offset().top-50);
+                      $(window).scrollTop($('#test123').offset().top-20);
 
                    }else{
                      $('#err').show();
@@ -318,7 +268,7 @@ $(".btn-primary").click(function(e){
                        $('#mi_id').hide();
                       
                     }
-                     // $(window).scrollTop($('#test123').offset().top-20);
+                    
                   
                   }
 
@@ -355,7 +305,15 @@ $(".btn-primary").click(function(e){
 $("#eligibility").click(function() {
   $(window).scrollTop($('#test123').offset().top-20);
 });
-
-
-
 </script>
+
+
+
+
+
+
+
+
+
+
+

@@ -1361,7 +1361,6 @@ input[placeholder], [placeholder], *[placeholder] {color: #1f386e !important;}
 /* .loan-head {padding:20px;display:block; text-align:center;padding-top:0px; margin-top:20px;}*/
 
 .loan-head {
-    width:22%;
     line-height: 35px;
     margin-bottom: 15px;
     height: 35px;
@@ -1371,7 +1370,7 @@ input[placeholder], [placeholder], *[placeholder] {color: #1f386e !important;}
     margin: 0 auto;
     background: #ed1c24;
     text-align: center;
-    margin-top: 20px;
+    margin-top: 10px;
     margin-bottom: 15px;
 	text-transform:uppercase;
 }
@@ -1409,7 +1408,7 @@ input[placeholder], [placeholder], *[placeholder] {color: #1f386e !important;}
  .btn1 {margin-top:30px;}
 .bg-white .animate-box {padding-top:0px;}
 #fh5co-work-section {padding-bottom:20px;}
- .pad {padding:20px 0px;}
+ .pad {padding:10px 0px;}
  .filter {background:#fff;}
  .pad1 {padding:20px;}
  .pad11 table {border:1px solid #eee; font-size:14px;color:#666;margin:0px;}
@@ -2000,7 +1999,6 @@ body {background:#eee;}
   .drop-arr {background:url(../images/down_arrow.png) no-repeat center right; padding-right:10px;}
   .offset5 .btn input {width:15px;height:15px;}
 
-  .mrg-top {margin-top:60px;}
   .yellow-clr {color:green;}
   .select1 select {padding:10px; margin-right:10px; border:1px solid #ccc; }
    .select1 {margin-left:20%;}
@@ -2008,7 +2006,7 @@ body {background:#eee;}
    .mrg-tpp {margin-top:5px; display:block;} 
    .rbabg {height:300px;} 
    .mrg-bt-rba {margin-bottom:5px;}
-   .inp-hig {height:84px;}
+   .inp-hig {height:69px;}
    
    .rba-dv-hei {height:266px;padding-top:20px;}
  
@@ -2078,7 +2076,6 @@ body {background:#eee;}
   .exp-dv {padding:10px 0px;}
   .center-dv {margin:0 auto;}
   .mrg-btm {margin-bottom:30px;}
-  .mrg-top {margin-top:30px;}
   .mrg-btm-b {margin:30px 0px;display:block;}
   
   .mrg {margin:30px;}
@@ -2098,7 +2095,7 @@ body {background:#eee;}
   .tenure {margin:0px 25px;}
   .fnt-clr {height:61px;}
 .box-shadow {box-shadow:1px 1px 3px 1px #ccc;}
-.border {padding:20px;border:1px solid #eee;margin:20px 0px;border-radius:10px; font-size:15px;}
+.border {padding:20px;border:1px solid #eee;margin:20px 0px;font-size:15px;}
 .hr-sty {height:20px;background:#eee;}
 .input_exp {
   position: relative;
@@ -3216,7 +3213,6 @@ font-size:20px;margin-top: 10px;
 .btn-submt:hover {background:#ff0000;}
 .high-fiv {margin-bottom:5px;}
 .brd-for {border:2px solid #f1f1f1;background:#f8f8f8;}
-.mrg-top {margin-top:20px;}
 .nav > li > a {padding:10px 12px;}
 .nav-tabs > li.active > a {
 	background:#999;
@@ -3309,12 +3305,12 @@ font-size:20px;margin-top: 10px;
 .loan-tenure {
     width: 100%;
     float: left;
-    margin: 0 0 15px 0;
+    margin: 0 0 5px 0;
 }
 
 .scaling-slider {
     width: 100%;
-    height: 70px;
+    height: 60px;
     border: 1px solid #d2d2d2;
 }
 .img-responsive {
@@ -3325,7 +3321,7 @@ font-size:20px;margin-top: 10px;
 .border-none {border:none; box-shadow:none;}
 
 .fl-lft {float:left;}
-.brd-for {border:2px solid #f1f1f1;background:#f8f8f8;}
+.brd-for {border:2px solid #f1f1f1;background:#ffffff;}
 
 
 .input-typ {padding: 10px; 
@@ -3437,11 +3433,11 @@ input:checked + .slider:before {
     font-size: 12px;
 	color:#fff;
 }
-.mrg-top{margin-top:12px;}
+.mrg-top{margin-top:5px;}
 
 .form-control {
 
-    height:45px;
+    height:35px;
     padding: 6px 6px;
     font-size: 13px;
     color: #999;
@@ -3465,7 +3461,7 @@ input:checked + .slider:before {
 }
 
 .inp-hig input {
-    height: 45px;
+    height: 35px;
     margin-bottom: 10px;
     font-size: 16px;
 }
@@ -3480,7 +3476,6 @@ label {
 .border {
     padding: 20px;
     margin: 20px 0px;
-    border-radius: 10px;
     font-size: 15px;
 }
 
@@ -3530,6 +3525,7 @@ label {
 	.top-lnk {position:absolute; background:#ccc;margin-left:-1px; display:none;}
 	.mag-lnk {width:100%; height:auto;position: relative;}
 	.star {background:#000 url(../images/star.gif);}
+	.totl-sav {display:none;}
 	/* #my-video { display:inherit; position:fixed;width:auto;}
 	 .video {top: 0%;left:0%;z-index: 0;width:100%;height:100%;}*/
 }
@@ -3541,7 +3537,7 @@ label {
     background: #eee;
 }
 .fix-pos {position:relative;z-index:1001;}
-
+.tot-sav-txt {color:#fff;font-weight:bold;}
 
 
 

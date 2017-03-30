@@ -43,4 +43,14 @@ class NewProcessController extends Controller
              return view('edelweiss');
 
       }
+
+   public function usedCarLoan(){
+
+         return view('used-car-loan');
+
+
+      }
+
+
+      
 }

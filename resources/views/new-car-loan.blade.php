@@ -1,19 +1,20 @@
 @include('layout.header')
 <div class="container">
-  <aside id="fh5co-hero">
+ <aside id="fh5co-hero">
   <div class="col-md-12">
   <h2 class="align-center loan-head">Car Loan</h2>
   </div>
- <div class="col-md-12 white-bg pad1 mrg-btm box-shadow">
+ <!-- <div class="col-md-12 white-bg pad1 mrg-btm box-shadow">
 <img src="{{URL::to('images/9.png')}}" alt="Tribe Logo" class="img-responsive" />
-
- </div>
+</div> -->
  <div class="col-md-12 white-bg pad box-shadow fl-lft">
-    <form name="car_loan_process_form" id="car_loan_process_form" action="#" method="POST" >
+  <!--   <div id ="test123" class="col-md-8"></div> -->
+ 
+   <form name="car_loan_process_form" id="car_loan_process_form" action="#" method="POST" >
       {{ csrf_field() }}
-   <input type="hidden" id="product" name="product_name" value=4>
+   <input type="hidden" id="product" name="product_name" value="4">
   <div class="col-md-8">
-  <h3 class="main-header">Genral Information</h3>
+ <!--  <h3 class="main-header">Genral Information</h3> -->
 <center><div class="type-cover"><span>PURPOSE OF LOAN</span></div></center>
 
 <div class="text-center flt-lft btn-grp" data-toggle="buttons">
@@ -25,20 +26,15 @@
               
                 
               </div>
-            </div> 
-
-
-
-
-            
-            <div class="col-xs-4 form-padding">
-     <input type="text" name="custom_id" id="custom_id" class="form-input-new form-control" placeholder="Existing Custom Id if Any" onkeypress="return isNumberKey(event)" >
+            </div>       
+        <div class="col-xs-4 form-padding">
+     <input type="text" name="custom_id" id="custom_id" class="form-input-new form-control" placeholder="Existing Custom Id if Any" onkeypress="return isNumberKey(event)" required="">
   </div>
   <div class="col-xs-4 form-padding">
      <input type="text" name="loan_amount" id="loan_amount" class="form-input-new form-control" placeholder="Loan Required" onkeypress="return isNumberKey(event)" maxlength="10" required="">
   </div>
   <div class="col-xs-4 form-padding">
-     <input type="text" id="city_name" name="city_name" class="form-input-new form-control search_city" placeholder="City of Location" required>
+     <input type="text" id="city_name" name="city_name" class="form-input-new form-control search_city" placeholder="City of Location" required="">
   </div>
   
   <div class="loan-tenure">
@@ -73,13 +69,6 @@
                                    <span class="btn btn-default outer-brd1 outer-brd1 "><input type="radio" name="gender"  value="F"><img id="myImage1" src="images/female.png" class=""></span> <span class="hidden-xs">Female</span>
            </div>      
      </div>
-
-    <!--  <div class="col-xs-6 form-padding">
-     <div class="btn-grp form-control border-none" data-toggle="buttons">
-      <span class="btn btn-primary outer-brd btn-blu active"><input type="radio" name="gender"  value="Male">Male</span>
-      <span class="btn btn-primary outer-brd btn-blu"><input type="radio" name="gender"  value="Female">Female</span>
-         </div>
-     </div> -->
   
   <div class="col-xs-6 form-padding">
      <div class="btn-grp form-control border-none" data-toggle="buttons">
@@ -95,17 +84,8 @@
   <div class="col-xs-6 form-padding">
      <input type="text" name="obligation" id="obligation" class="form-input-new form-control" placeholder="Existing EMI (If Any)" onkeypress="return isNumberKey(event)" required="">
   </div>
-
-  <div class="col-xs-6 form-padding">
-     <input type="text" name="car_cost"   class="form-input-new form-control" placeholder="On Road Car Cost" onkeypress="return isNumberKey(event)" required="">
-  </div>
-
- 
   
   <div class="col-md-12">
-
-
-<br>
     <?php if(Session::get('is_login')) {?>
                 <?php if(Session::get('contact')!=''){ Session::get('contact'); ?>
               <button class="btn btn-primary btn-outline with-arrow top-mrg product_name " >Get Best Quotes<i class="icon-arrow-right"></i></button>
@@ -164,8 +144,14 @@
     <!--   </form> -->
 
     </div> 
-    <p id="err" style="display:none;" ><span style="color: red;font-size: 20px;display: block;text-align: center;">No Quotes Found.</span></p> 
+    <p id="err" style="display:none;" ><span style="color: red;font-size: 20px;display: block; text-align: center;">No Quotes Found.</span></p> 
   </div> 
+  
+  
+  
+  
+  
+  
    </aside>
    
   </div>
@@ -239,26 +225,24 @@ $(document).ready(function(){
 </script>
 
 
+
 <script type="text/javascript">
 $(".btn-primary").click(function(e){
    e.preventDefault();
+  
     if(!$('#car_loan_process_form').valid()){
+
+    
             return false;
+           
           }else{
-              
-              
-         $.ajax({  
+              $.ajax({  
              type: "POST",  
              url: "{{URL::to('loan-submit')}}",
            data : $("#car_loan_process_form").serialize(),
-        //   data: {_token :_token,username:username,password:password},
              success: function(msg){
-                    // $(".iframeloading").hide();
                            if(msg.success ==true){
-
                         var loan_eligible = msg.loan_eligible;
-
-
                              if (loan_eligible>0) {
                              $("#test123").empty().append(msg.html);  
                              $('#loanamount').val(loan_eligible);
@@ -284,7 +268,7 @@ $(".btn-primary").click(function(e){
                        $('#mi_id').hide();
                       
                     }
-                     // $(window).scrollTop($('#test123').offset().top-20);
+                    
                   
                   }
 
@@ -293,7 +277,6 @@ $(".btn-primary").click(function(e){
                     }  
                   });
 
-              
           }
 
 
@@ -322,7 +305,15 @@ $(".btn-primary").click(function(e){
 $("#eligibility").click(function() {
   $(window).scrollTop($('#test123').offset().top-20);
 });
-
-
-
 </script>
+
+
+
+
+
+
+
+
+
+
+

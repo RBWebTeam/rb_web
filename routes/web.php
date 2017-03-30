@@ -226,3 +226,4 @@ Route::get('new-home-loan','NewProcessController@newHomeLoan');
 Route::get('new-car-loan','NewProcessController@newCarLoan');
 Route::get('new-business-loan','NewProcessController@newBusinessLoan');
 Route::get('edelweiss','NewProcessController@edelweiss');
+Route::get('used-car-loan','NewProcessController@usedCarLoan');

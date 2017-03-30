@@ -9,10 +9,11 @@
  <div class="col-md-12 white-bg pad">
  <h3 class="text-center loan-head">Unsecured Business Loan</h3>
 <div class="col-md-8">
+<form name='business_loan_process_form' id='business_loan_process_form' action={{URL::to('loan-submit')}} method="POST">  
  <!-- <img src="{{URL::to('images/9.png')}}" alt="Tribe Logo" class="img-responsive" /> -->
  <div class="col-md-6">
   <div class="col-xs-12">
- <form name='business_loan_process_form' id='business_loan_process_form' action={{URL::to('loan-submit')}} method="POST">   
+  
 	 <input type="hidden" id="product" name="product_name" value="13">
 
 	   <div class="btn-grp mrg-top pad status" data-toggle="buttons">
@@ -122,7 +123,9 @@
             <div id="collapse7" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading7">
                 <div class="panel-body">
 <div>
+
 <h4 class="text-center">List of Loan EMI</h4>
+<div id="emp_detail">
                     <div class="col-xs-6 form-padding"> 
 
      <input type="text" class="form-input-new form-control" name="bank_name" id="bank_name" placeholder="Bank" onkeypress="return AllowAlphabet(event)"   required="">
@@ -146,13 +149,22 @@
 	<div class="col-xs-6 form-padding">
      <input type="text" class="form-input-new form-control" name="tenure" id="tenure" placeholder="Tenure"  onkeypress="return isNumberKey(event)" minlength="2" maxlength="2" required>
 	</div>
-	<button class="btn btn-primary btn-outline top-mrg">Add Other Bank Existing EMI</button>
+  </div>
+	<!-- <button class="btn btn-primary btn-outline top-mrg">Add Other Bank Existing EMI</button> -->
+  <div id="new_div"></div>
+<a href="javascript:void(0)" class="btn btn-info" id="button" >Click me</a>
+<!-- <div id="duplicater"> 
+    duplicate EVERYTHING INSIDE THIS DIV
+</div> -->
+
 	</div>
 	
 					
                 </div>
             </div>
         </div>
+        
+        
     </div><!-- panel-group -->
   </div>
   
@@ -293,7 +305,18 @@
   </div> 
   
 
-   <button class="btn btn-primary btn-outline with-arrow top-mrg">Get Best Quotes<i class="icon-arrow-right"></i></button>
+   <?php if(Session::get('is_login')) {?>
+                <?php if(Session::get('contact')!=''){ Session::get('contact'); ?>
+              <button class="btn btn-primary btn-outline with-arrow top-mrg product_name " >Get Best Quotes<i class="icon-arrow-right"></i></button>
+              <?php }else{?> 
+                <a  class="btn btn-primary btn-outline with-arrow top-mrg product_name" data-toggle="modal" data-target="#contact_id">Get Best Quotes<i class="icon-arrow-right"></i></a>
+                      <?php }?>
+            <?php }else{?>
+            <button  style="display:none" class="btn btn-primary btn-outline with-arrow top-mrg product_name " id="btn_refresh_co">Get Best Quotes<i class="icon-arrow-right"></i></button>
+
+
+              <a class="btn btn-primary btn-outline with-arrow top-mrg product_name" id="btn_refresh_co1" data-toggle="modal" data-target="#login_process">Get Best Quotes<i class="icon-arrow-right"></i></a>
+            <?php } ?>
    </form>
 </div>
 </div>
@@ -416,4 +439,85 @@
     return false;
       }
 }
+</script>
+
+<script type="text/javascript">
+$(".btn-primary").click(function(e){
+   e.preventDefault();
+  
+
+
+
+
+    if(!$('#business_loan_process_form').valid()){
+
+    
+            return false;
+           
+          }else{
+ // $(".iframeloading").show();
+              $.ajax({  
+             type: "POST",  
+             url: "{{URL::to('loan-submit')}}",
+           data : $("#business_loan_process_form").serialize(),
+        //   data: {_token :_token,username:username,password:password},
+             success: function(msg){
+              console.log(msg);
+                    // $(".iframeloading").hide();
+                           if(msg.success ==true){
+
+                            var quote=msg.quote;
+
+                        var loan_eligible = msg.loan_eligible;
+
+
+                             if (loan_eligible>0) {
+                             $("#test123").empty().append(msg.html);  
+                             $('#loanamount').val(loan_eligible);
+                            var roi = msg.roi;
+                             $('#rate').val(roi);
+                          var LoanTenure = msg.LoanTenure;
+                             $('#term').val(LoanTenure);
+                    var processingfee = msg.processingfee;
+                    $('#processfee').val(processingfee);
+                    var Bank_id = msg.Bank_Id;
+                    $('#bank').val(Bank_id);
+                     var url = "apply-lead-online?appid=0&qoutid="+quote+"&BankId="+Bank_id+"&product=9&processing_fee="+processingfee+"&loanamout="+loan_eligible+"&roi_type="+roi+"";
+                     $("#apply_new").attr("href", url);
+                      $('#err').hide();
+                      $('#apply_new').show();
+                      $('#mi_id').show();
+                       $(window).scrollTop($('#lowest').offset().top-50);
+
+                   }else{
+                     $('#err').show();
+                     $('#apply_new').hide();
+                      $("#test123").empty();
+                       $('#mi_id').hide();
+                      
+                    }
+                     // $(window).scrollTop($('#test123').offset().top-20);
+                  
+                  }
+
+                             
+                        
+                    }  
+                  });
+
+          }
+
+
+});
+
+
+
+</script>
+
+<script>
+$(document).ready(function(){
+    $("#button").click(function(){
+        $("#emp_detail").clone().appendTo("#new_div");
+    });
+});
 </script>

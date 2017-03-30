@@ -279,7 +279,7 @@
       </div>
       <div id="collapse5" class="panel-collapse collapse">
         <div class="panel-body">
-		   <div class="scenario">col-xs-12 pad-no
+		   <div class="scenario">
 								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="office_type" value="Owned"  class="radio1" checked >Owned</a></div>
 								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="office_type" value="Rented" class="radio1">Rented</a></div>
 								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="office_type" value="Parental"class="radio1">Parental</a></div>

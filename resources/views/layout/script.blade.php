@@ -707,26 +707,34 @@
                 term : request.term
               },
               success: function(data) {
-
+        
 
                 response(data);
+                 $(".applicant_add" ).addClass( "in" ); 
 
               }
             });
           },
           change: function (event, ui) {
+
+         
             if (ui.item == null || ui.item == undefined || ui.item.value=='No Result Found') {
-              $(".search_city").val("");
-              $(".search_city").attr("disabled", false);
-              $("#q6").hide();
-              $("#q_prop").hide();
-              $('#pop1').empty();
-              $('#pop1').append("<p>please select your city</p>" );
+              // $(".search_city").val("");
+              // $(".search_city").attr("disabled", false);
+              // $("#q6").hide();
+              // $("#q_prop").hide();
+              // $('#pop1').empty();
+             // $('#pop1').append("<p>please select your city</p>" );
+
+                      $(".applicant_add" ).removeClass("in"); // home loan  remove collaps
             }else{
 
+        
+                 $(".applicant_add" ).addClass( "in" );   // home loan  add collaps
 
-             $(".Q6").show();
-             $("#q_prop").show();
+
+            // $(".Q6").show();
+            // $("#q_prop").show();
 
            }
          }
@@ -2188,14 +2196,16 @@ function SetSession_pop(cookieName,cookieValue){
         range:true,
         step:0.1,
         text:false,
+         
         onchange:function(low, high){
             // console.log(low, high);
         }
     });
 
     var s2 = $("#unranged-value").freshslider({
-        step: 1,
-        value:10,
+         step: 1,
+         value:2,
+         max: 20,
         onchange:function(low, high){
           
             $('#loan_tenure').val(low);

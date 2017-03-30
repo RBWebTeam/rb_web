@@ -32,7 +32,13 @@
       </div>
 		</div>
 		
-		<div class="loan-tenure">
+		<div class="col-xs-6 form-padding">
+     <input type="name" class="form-input-new form-control" placeholder="Loan Amount" required="">
+	</div>
+	<div class="col-xs-6 form-padding">
+     <input type="name" class="form-input-new form-control" placeholder="Pan No" required="">
+	</div>
+<div class="loan-tenure">
   <center>
     <div class="type-cover">
       <span>LOAN TENURE</span>
@@ -49,7 +55,25 @@
   </div>
   
   
-     <div class="col-xs-6 form-padding">
+  
+  
+  
+  <div class="col-md-12 no-pad">
+    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingOne">
+                <h4 class="panel-title">
+                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse6" aria-expanded="true" aria-controls="collapse6">
+                        <i class="icon-plus more-less pull-right"></i>
+                        COMPANY FINANCIALS
+                    </a>
+                </h4>
+            </div>
+            <div id="collapse6" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading6">
+                <div class="panel-body">
+                     
+					 <div class="col-xs-6 form-padding">
      <input type="text" class="form-input-new form-control"  name="company_name" id="company_name"  placeholder="Company Name"  >
 	</div>
 	<div class="col-xs-6 form-padding">
@@ -67,14 +91,34 @@
 	<div class="col-xs-6 form-padding">
      <input type="name" class="form-input-new form-control" placeholder="Partner Remuneration" required="">
 	</div>
-	<div class="col-xs-6 form-padding"> 
+			
+<div class="col-xs-6 form-padding"> 
      <input type="name" class="form-input-new form-control" placeholder="Interest Paid On Bank Loans" required="">
 	</div>
 	<div class="col-xs-6 form-padding"> 
      <input type="name" class="form-input-new form-control" placeholder="Existing All EMI" required="">
-	</div>
-	<div class="col-xs-6 form-padding"> 
-     <input type="name" class="form-input-new form-control" placeholder="Bank" required="">
+	</div>			
+					 
+                </div>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="heading7">
+                <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse7" aria-expanded="false" aria-controls="collapse7">
+                        <i class="icon-plus more-less pull-right"></i>
+                        EMI DETAILS BANKWISE
+                    </a>
+                </h4>
+            </div>
+            <div id="collapse7" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading7">
+                <div class="panel-body">
+<!-- ROW 1 START--->
+<div>
+<h4 class="text-center">List of Loan EMI</h4>
+                    <div class="col-xs-6 form-padding"> 
+     <input type="name" class="form-input-new form-control" placeholder="Bank 1" required="">
 	</div>
 	<div class="col-xs-6 form-padding">
      <input type="name" class="form-input-new form-control" placeholder="EMI" required="">
@@ -93,9 +137,23 @@
 	<div class="col-xs-6 form-padding">
      <input type="name" class="form-input-new form-control" placeholder="Tenure" required="">
 	</div>
+	<button class="btn btn-primary btn-outline top-mrg">Add Other Bank Existing EMI</button>
+	</div>
+<!-- ROW 1 End--->		
+					
+                </div>
+            </div>
+        </div>
+    </div><!-- panel-group -->
+  </div>
+  
+  
+
+	
+	
  </div>
 	<div class="col-md-6">
-	<div class="panel-group" id="accordion">
+	<div class="panel-group" id="accordion1">
 	<div class="panel-default">
       <div id="collapse0" class="panel-collapse collapse in">
         <div class="panel-body">
@@ -127,13 +185,12 @@
     <div class="panel panel-default">
       <div class="panel-heading">
         <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">NATURE OF BUSINESS <i class="icon-plus pull-right more-less"></i></a>
+          <a data-toggle="collapse" data-parent="#accordion1" href="#collapse1">NATURE OF BUSINESS <i class="icon-minus pull-right more-less"></i></a>
 		
         </h4>
       </div>
       <div id="collapse1" class="panel-collapse collapse in">
         <div class="panel-body">
-	  
 	<div class="scenario">
 								<div class="col-xs-12 pad-no scenario-active"><a class="scenario-1 btn"><input type="radio" name="Status" id="option1"  class="radio1" checked >MANUFACTURING</a></div>
 								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="Status" id="option1" class="radio1">TRADING</a></div>
@@ -152,7 +209,7 @@
     <div class="panel panel-default">
       <div class="panel-heading">
         <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">INDUSTRY <i class="icon-plus pull-right more-less"></i></a>
+          <a data-toggle="collapse" data-parent="#accordion1" href="#collapse2">INDUSTRY <i class="icon-plus pull-right more-less"></i></a>
 		 
         </h4>
       </div>
@@ -171,7 +228,7 @@
     <div class="panel panel-default">
       <div class="panel-heading">
         <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">DATE OF INCORPORATION <i class="icon-plus pull-right more-less"></i></a>
+          <a data-toggle="collapse" data-parent="#accordion1" href="#collapse3">DATE OF INCORPORATION <i class="icon-plus pull-right more-less"></i></a>
 		 
         </h4>
       </div>
@@ -188,7 +245,7 @@
 	<div class="panel panel-default">
       <div class="panel-heading">
         <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">RESIDENCE TYPE <i class="icon-plus pull-right more-less"></i></a>
+          <a data-toggle="collapse" data-parent="#accordion1" href="#collapse4">RESIDENCE TYPE <i class="icon-plus pull-right more-less"></i></a>
 		 
         </h4>
       </div>
@@ -207,7 +264,7 @@
 	<div class="panel panel-default">
       <div class="panel-heading">
         <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse5">OFFICE TYPE<i class="icon-plus pull-right more-less"></i></a>
+          <a data-toggle="collapse" data-parent="#accordion1" href="#collapse5">OFFICE TYPE<i class="icon-plus pull-right more-less"></i></a>
 		  
         </h4>
       </div>
@@ -228,47 +285,55 @@
 
    <button class="btn btn-primary btn-outline with-arrow top-mrg">Get Best Quotes<i class="icon-arrow-right"></i></button>
    </form>
-	  	</div>
 </div>
-		<div class="col-md-4">
-	   <div class="border">
+</div>
+		
+	
+	<div class="col-md-4" >
+     <div class="border brd-for" id="mi_id">
 
-             <form class="" id="compareform" role="form" method="POST" action="">
-				  
-				  
-				    <div class="inp-hig">
-					  <label class="form-label-new">Name</label>
-				      <input type="text" class="form-control" id="name" name="name" placeholder="enter Name" required class="clr-ddd" />
-				    </div>
+             <!-- <form name="compareform" id="compareform" > -->
+          
+          
+            <div class="inp-hig">
+            <label class="form-label-new">Loan Amount</label>
+              <input type="text" class="form-control" id="loanamount" name="name" value="" placeholder="" required class="clr-ddd" readonly />
+            </div>
 
-				    <div class="inp-hig">
-					<label class="form-label-new">Mobile No.</label>
-				      <input type="text" class="form-control" id="name" name="name" placeholder="Enter Mobile No." required class="clr-ddd" />
-				    </div>
+            <div class="inp-hig">
+          <label class="form-label-new">Best ROI</label>
+              <input type="text" class="form-control" id="rate" name="name" value="" placeholder="" required class="clr-ddd" readonly />
+            </div>
 
-				    <div class="inp-hig">
-					<label class="form-label-new">Pan No.</label>
-				      <input type="text" class="form-control" id="name" name="name" placeholder="Enter Pan No." required class="clr-ddd" />
-				    </div>
+            <div class="inp-hig">
+            <label class="form-label-new">Tenure</label>
+                 <input type="text" class="form-control" id="term" name="name" value="" placeholder="" required class="clr-ddd" readonly>
+            </div>
 
-				    <div class="inp-hig">
-					<label class="form-label-new">Loan Amount Required</label>
-				      <input type="text" class="form-control" id="name" name="name" placeholder="5,00,000" required class="clr-ddd" />
-				    </div>
+            <div class="inp-hig">
+          <label class="form-label-new">Processing Fee</label>
+              <input type="text" class="form-control" id="processfee" name="name" placeholder="" required class="clr-ddd" readonly />
+            </div>
 
-			  <div> 
-			    
-			     <button style="display:block; width:100%;font-size:20px;padding:5px; background:#28a0ff;color:#fff;">GET OTP</button>
-				<br>
-				<div class="inp-hig">
-				      <input type="text" class="form-control" id="name" name="name" placeholder="ENTER OTP" required class="clr-ddd" />
-				    </div>
-				 <button style="width:100%;font-size:20px;padding:5px; background:#28a0ff;color:#fff;">SUBMIT</button>
-			   
-			  </div>
-			</form>
-		</div>	
-	</div>
+        <div> 
+          <br>
+         <a id="apply_new" type="button" class="btn btn-info" title="Experience New Digital Era In Loans">Apply Now</a>
+         <button id="eligibility" class="btn btn-info" title="See Bankwise Eligibility And Apply Amongst Best Bank">Eligibility</button>
+         <button type="button" class="btn btn-info"  id="call_rm" name="call_rm" data-toggle="modal" data-target="#Modal" title="Call For RM(Single Day Process)">Call RM</button>
+         
+        </div>
+        
+        <!-- <p id="err" style="display:none;" ><span style="color:skyblue;position:absolute;font-size:13px;">No Quotes Found.</span></p> -->
+   
+    <!--   </form> -->
+
+    </div> 
+    <p id="err" style="display:none;" ><span style="color: red;font-size: 20px;display: block; text-align: center;">No Quotes Found.</span></p> 
+  </div> 
+	
+	
+	
+	
 	</div>
 	</aside>
 	</div>

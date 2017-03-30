@@ -42,7 +42,7 @@
 		<li><a href="{{URL::to('apply-personal-loan')}}">APPLY FOR PERSONAL LOAN</a></li>
 		<li><a href="{{URL::to('apply-loan-against-property')}}">APPLY FOR LOAN AGAINST PROPERTY</a></li>
 		<li><a href="{{URL::to('apply-car-loan')}}">APPLY FOR CAR LOAN</a></li>
-		<li><a href="{{URL::to('apply-business-loan')}}">APPLY UNSECURED BUSINESS LOAN</a></li>
+		<li><a href="{{URL::to('apply-business-loan')}}">APPLY FOR UNSECURED BUSINESS LOAN</a></li>
 		<li><a href="{{URL::to('credit-card')}}">APPLY FOR CREDIT CARD</a></li>
 		
 	</ul>

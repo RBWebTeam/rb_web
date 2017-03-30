@@ -43,7 +43,7 @@
 						</div> 
 						
 						<div class="col-xs-4 form-padding">
-     <input type="text" class="form-input-new form-control" name="property_cost" placeholder="Property Cost" required onkeypress="return fnAllowNumeric(event)">
+     <input type="text" class="form-input-new form-control" id="property_cost" name="property_cost" placeholder="Property Cost" required onkeypress="return fnAllowNumeric(event)">
 	</div>
 	<div class="col-xs-4 form-padding">
      <input type="text" class="form-input-new form-control" name="loan_amount" placeholder="Loan Required" required onkeypress="return fnAllowNumeric(event)">
@@ -69,12 +69,12 @@
 		  <i class="icon-plus pull-right more-less"></i>
         </h4>
       </div>
-      <div id="collapse2" class="panel-collapse collapse">
+      <div id="collapse2" class="panel-collapse collapse applicant_add">
         <div class="panel-body">
 		<div class="loan-tenure">
 			<center>
 				<div class="type-cover">
-						  <span>LOAN TENURE</span>
+						  <span>LOAN TENURE (Years)</span>
 				</div>
 			</center>
 			<div class="scaling-slider">
@@ -91,8 +91,8 @@
 	
 	<div class="col-xs-6 form-padding">
 	 <div class="btn-grp form-control border-none" data-toggle="buttons">
-                                    <span class="btn btn-primary outer-brd1 active"><input type="radio" value="M" name="gender"  ><img id="myImage" src="images/male.png" class=""></span><span class="hidden-xs">Male</span>
-                                   <span class="btn btn-primary outer-brd1 "><input type="radio" value="F" name="gender" ><img id="myImage1" src="images/female.png" class=""></span> <span class="hidden-xs">Female</span>
+                                    <span class="btn btn-default outer-brd1 active"><input type="radio" value="M" name="gender"  ><img id="myImage" src="images/male.png" class=""></span><span class="hidden-xs">Male</span>
+                                   <span class="btn btn-default outer-brd1 "><input type="radio" value="F" name="gender" ><img id="myImage1" src="images/female.png" class=""></span> <span class="hidden-xs">Female</span>
                         <input type="hidden" class="clr-blue"   name="emp_detail_id" value="1" >
                                     
            </div>		   
@@ -103,15 +103,34 @@
 	</div>
 		<div class="col-xs-6 form-padding">
      <div class="btn-grp form-control border-none" data-toggle="buttons">
-      <span class="btn btn-primary outer-brd btn-blu active"><input type="radio" value="salaried" name="emp_detail"  > Salared</span>
-      <span class="btn btn-primary outer-brd btn-blu"><input type="radio" value="self-employed" name="emp_detail"  >Self-Emp</span>
+      <span class="btn btn-default outer-brd btn-blu active"><input type="radio" id="sala_DI" value="salaried" name="emp_detail"  > Salared</span>
+      <span class="btn btn-default outer-brd btn-blu"><input type="radio" id="self_DI" value="self-employed" name="emp_detail"  >Self-Emp</span>
  
 
          </div>
 	   </div>
+
+     <div  style="display: none;" id="self-employed_ID">  <!-- self-employed-->
+       
+       <div class="col-xs-6 form-padding">
+          <input type="text" class="form-input-new form-control " name="turnover" placeholder="Annual turnover" required  onkeypress="return fnAllowNumeric(event)">
+      </div>
+
+       <div class="col-xs-6 form-padding">
+          <input type="text" class="form-input-new form-control " name="profit_after_tax" placeholder="Profit after tax" required  onkeypress="return fnAllowNumeric(event)">
+      </div>
+      <div class="col-xs-6 form-padding">
+          <input type="text" class="form-input-new form-control " name="depreciation" placeholder="Depreciation"  required onkeypress="return fnAllowNumeric(event)">
+      </div>
+       <div class="col-xs-6 form-padding">
+          <input type="text" class="form-input-new form-control " name="remuneration" placeholder="Director Remuneration"  required onkeypress="return fnAllowNumeric(event)">
+      </div>
+
+     </div>
+
 	   
-	   <div class="col-xs-6 form-padding">
-     <input type="text" class="form-input-new form-control"  name="income"  placeholder="Monthly Income" required onkeypress="return fnAllowNumeric(event)">
+	   <div class="col-xs-6 form-padding" id="income_ID">
+     <input type="text" class="form-input-new form-control"  id="income" name="income"  placeholder="Monthly Income" required onkeypress="return fnAllowNumeric(event)">
 	</div>
 	
 	<div class="col-xs-6 form-padding">
@@ -138,43 +157,62 @@
         <div class="panel-body">
 		
 		<div class="col-xs-6 form-padding">
-     <input type="text" class="form-input-new form-control" name="co_applicantname"  placeholder="Co-Applicant Name" >
+     <input type="text" class="form-input-new form-control" name="co_applicantname"  placeholder="Co-Applicant Name" required>
 	</div>
 	
 	<div class="col-xs-6 form-padding">
 	 <div class="btn-grp form-control border-none" data-toggle="buttons">
-                                    <span class="btn btn-primary outer-brd1 active"><input type="radio" name="cogender" value="M" ><img id="myImage" src="images/male.png" class=""></span><span class="hidden-xs">Male</span>
-                                   <span class="btn btn-primary outer-brd1 "><input type="radio" name="cogender" value="F"><img id="myImage1" src="images/female.png" class=""></span> <span class="hidden-xs">Female</span>
+                                    <span class="btn btn-default outer-brd1 active"><input type="radio" name="cogender" value="M" ><img id="myImage" src="images/male.png" class=""></span><span class="hidden-xs">Male</span>
+                                   <span class="btn btn-default outer-brd1 "><input type="radio" name="cogender" value="F"><img id="myImage1" src="images/female.png" class=""></span> <span class="hidden-xs">Female</span>
            </div>		   
 	   </div>
 	   
 	   <div class="col-xs-6 form-padding">
-     <input type="text" class="form-input-new form-control lastReporteddate" name="co_dob" placeholder="Date of Birth"  >
+     <input type="text" class="form-input-new form-control lastReporteddate" name="co_dob" placeholder="Date of Birth"  required>
 	</div>
 		<div class="col-xs-6 form-padding">
      <div class="btn-grp form-control border-none" data-toggle="buttons">
-      <span class="btn btn-primary outer-brd btn-blu active"><input type="radio" value="salaried"   name="co_emp_detail"  > Salared</span>
-      <span class="btn btn-primary outer-brd btn-blu"><input type="radio"  value="self-employed"  name="co_emp_detail"  >Self-Emp</span>
+      <span class="btn btn-default outer-brd btn-blu active"><input type="radio" id="co_sala_DI" value="salaried"   name="co_emp_detail"  > Salared</span>
+      <span class="btn btn-default outer-brd btn-blu"><input type="radio"  id="co_self_DI" value="self-employed"  name="co_emp_detail"  >Self-Emp</span>
          </div>
 	   </div>
+
+
+      <div  style="display: none;" id="co_self-employed_ID">  <!-- Co applicant self-employed-->
+       
+       <div class="col-xs-6 form-padding">
+          <input type="text" class="form-input-new form-control " name="co_applicant_turnover" placeholder="co-applicant annual turnover"  onkeypress="return fnAllowNumeric(event)" required>
+      </div>
+
+       <div class="col-xs-6 form-padding">
+          <input type="text" class="form-input-new form-control " name="co_applicant_profit_after_tax" placeholder="Co-Applicant profit after"  onkeypress="return fnAllowNumeric(event)" required>
+      </div>
+      <div class="col-xs-6 form-padding">
+          <input type="text" class="form-input-new form-control " name="co_applicant_depreciation" placeholder="his/her depreciation" onkeypress="return fnAllowNumeric(event)" required>
+      </div>
+       <div class="col-xs-6 form-padding">
+          <input type="text" class="form-input-new form-control " name="co_applicant_remuneration" placeholder="director remuneration"  onkeypress="return fnAllowNumeric(event)" required>
+      </div>
+
+     </div>
 	   
 	   <div class="col-xs-6 form-padding">
-     <input type="text" class="form-input-new form-control" name="co_applicant_turnover" placeholder="Turnover/Topline"  onkeypress="return fnAllowNumeric(event)">
+     <input type="text" class="form-input-new form-control" name="co_applicant_turnover" placeholder="Turnover/Topline"  onkeypress="return fnAllowNumeric(event)" required>
 	</div>
 	<div class="col-xs-6 form-padding">
-     <input type="text" class="form-input-new form-control" name="co_applicant_profit_after_tax" placeholder="Profit After Tax"  >
+     <input type="text" class="form-input-new form-control" name="co_applicant_profit_after_tax" placeholder="Profit After Tax"  required>
 	</div>
 	<div class="col-xs-6 form-padding">
-     <input type="text" class="form-input-new form-control" name="co_applicant_depreciation" placeholder="Deprication"  >
+     <input type="text" class="form-input-new form-control" name="co_applicant_depreciation" placeholder="Deprication"  required>
 	</div>
 	<div class="col-xs-6 form-padding">
-     <input type="text" class="form-input-new form-control" name="co_applicant_remuneration" placeholder="Partner Remuneration"  >
+     <input type="text" class="form-input-new form-control" name="co_applicant_remuneration" placeholder="Partner Remuneration"  required>
+	</div>
+	<div class="col-xs-6 form-padding" id="co_income_ID">
+     <input type="text" class="form-input-new form-control"  name="co_applicant_income"  placeholder="Monthly Income" onkeypress="return fnAllowNumeric(event)" required>
 	</div>
 	<div class="col-xs-6 form-padding">
-     <input type="text" class="form-input-new form-control"  name="co_applicant_income"  placeholder="Monthly Income" onkeypress="return fnAllowNumeric(event)" >
-	</div>
-	<div class="col-xs-6 form-padding">
-     <input type="text" class="form-input-new form-control"  name="co_applicant_obligation" placeholder="All Existing EMI"   onkeypress="return fnAllowNumeric(event)">
+     <input type="text" class="form-input-new form-control"  name="co_applicant_obligation" placeholder="All Existing EMI"   onkeypress="return fnAllowNumeric(event)" required>
 	</div>
 	   		 	
 		</div>
@@ -183,14 +221,14 @@
 <br>
     <?php if(Session::get('is_login')) {?>
 							  <?php if(Session::get('contact')!=''){ Session::get('contact'); ?>
-							<button class="btn btn-primary btn-outline with-arrow top-mrg product_name " >Get Best Quotes<i class="icon-arrow-right"></i></button>
+							<button class="btn btn-primary btn-outline with-arrow top-mrg product_name product_ID" >Get Best Quotes<i class="icon-arrow-right"></i></button>
 							<?php }else{?> 
-							  <a  class="btn btn-primary btn-outline with-arrow top-mrg product_name" data-toggle="modal" data-target="#contact_id">Get Best Quotes<i class="icon-arrow-right"></i></a>
+							  <a  class="btn btn-primary btn-outline with-arrow top-mrg product_name product_ID" data-toggle="modal" data-target="#contact_id">Get Best Quotes<i class="icon-arrow-right"></i></a>
 				              <?php }?>
 						<?php }else{?>
-						<button  style="display:none" class="btn btn-primary btn-outline with-arrow top-mrg product_name " id="btn_refresh_co">Get Best Quotes<i class="icon-arrow-right"></i></button>
+						<button  style="display:none" class="btn btn-primary btn-outline with-arrow top-mrg product_name product_ID" id="btn_refresh_co">Get Best Quotes<i class="icon-arrow-right"></i></button>
 
-							<a class="btn btn-primary btn-outline with-arrow top-mrg product_name" id="btn_refresh_co1" data-toggle="modal" data-target="#login_process">Get Best Quotes<i class="icon-arrow-right"></i></a>
+							<a class="btn btn-primary btn-outline with-arrow top-mrg product_name product_ID" id="btn_refresh_co1" data-toggle="modal" data-target="#login_process">Get Best Quotes<i class="icon-arrow-right"></i></a>
 						<?php } ?>
 
 						 
@@ -261,17 +299,44 @@ $(document).ready(function(){
          $('#coapplicant_display').hide();
     });
 
+//    applicacnt 
+  $('#sala_DI').change(function(){
+   $("#self-employed_ID").hide();
+   $("#income_ID").show();
+  });
+
+  $('#self_DI').change(function(){
+  $("#income_ID").hide();
+  $("#self-employed_ID").show();
+  });
+
+  // applicant end
+  // co applicant 
+ $('#co_sala_DI').change(function(){
+ $("#co_self-employed_ID").hide();
+     $("#co_income_ID").show();
+  });
+
+  $('#co_self_DI').change(function(){
+  $("#co_income_ID").hide();
+  $("#co_self-employed_ID").show();
+  });
+
+  
 
  
 
-$(".btn-primary").click(function(e){
+$(".product_ID").click(function(e){
    e.preventDefault();
     if(!$('#home_loan_process_form').valid()){
-
     	$('#valid').empty().append('<span class="icon-remove text-danger" id="tt2"></span>');
             return false;
           }else{
- 
+               var property_cost=$('#property_cost').val();
+               var income=$('#income').val();
+      if(property_cost!='' && income!=''){
+         $('#login_process').attr( 'id', 'login_process');
+
               $.ajax({  
              type: "POST",  
              url: "{{URL::to('loan-submit')}}",
@@ -309,8 +374,19 @@ $(".btn-primary").click(function(e){
                }                    
            }  
        });
+
+}else{
+ $('#login_process').removeAttr('id');
+  alert("This field is required.");
+
+  
+}
+
      }
+  
+
   });
+
 });
 
  

@@ -2,7 +2,7 @@
 <div id="fh5co-hero">
   <div class="container">
   <h2 class="align-center loan-head">Working Capital</h2>
-  <div>
+  <div class="col-md-10">
 
   <ul class="nav nav-tabs" id="userTabs">
   <li class="active"><a data-toggle="tab" href="#home"><b>WORKING CAPITAL</b></a></li>
@@ -19,6 +19,7 @@
    <h4 class="col-md-2"><input type="radio" name="bank1" onclick="bankName('bank1')"  checked="checked" id="bank1" value="bank1"/> Bank 1 </h4>
    <h4 class="col-md-2"><input type="radio" name="bank2" id="bank2"  onclick="bankName('bank2')" /> Bank 2 </h4>
    <h4 class="col-md-2"><input type="radio" name="bank3" id="bank3" onclick="bankName('bank3')"/> Bank 3 </h4>
+   <a href="#menu1" class="btn btn-success pull-right">NEXT</a>
    </div>
   <div class="col-md-4">
   <div>
@@ -334,6 +335,13 @@
   
 </div>
   </div>
+  <div class="col-md-2">
+  <div class="fix-pos">
+		<div class="text-center guid nl-form-errors" id='pop1'>Total Saving</div>
+
+        <div class="text-center img1"><img src="{{URL::to('images/photo.jpg')}}" alt="pop_up_pic"></div>
+		</div>
+ </div>
 </div>
 </br>
 @include('layout.footer')

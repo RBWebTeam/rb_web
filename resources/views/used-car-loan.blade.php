@@ -12,7 +12,7 @@
  
    <form name="car_loan_process_form" id="car_loan_process_form" action="#" method="POST" >
       {{ csrf_field() }}
-   <input type="hidden" id="product" name="product_name" value="4">
+   <input type="hidden" id="product" name="product_name" value="1">
   <div class="col-md-8">
  <!--  <h3 class="main-header">Genral Information</h3> -->
 <center><div class="type-cover"><span>PURPOSE OF LOAN</span></div></center>

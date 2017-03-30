@@ -11,7 +11,7 @@
 <img src="{{URL::to('images/9.png')}}" alt="Tribe Logo" class="img-responsive" />
 
  </div>
- <div class="col-md-12 white-bg pad box-shadow fl-lft">
+ <div class="col-md-12 white-bg pad box-shadow fl-lft" id="lowest">
   <!--   <div id ="test123" class="col-md-8"></div> -->
  
     <form name="personal_loan_process_form" id="personal_loan_process_form" action="#" method="POST" >
@@ -38,7 +38,7 @@
 
             
             <div class="col-xs-4 form-padding">
-     <input type="text" name="custom_id" id="custom_id" class="form-input-new form-control" placeholder="Existing Custom Id if Any" onkeypress="return isNumberKey(event)" required="">
+     <input type="text" name="custom_id" id="custom_id" class="form-input-new form-control" placeholder="Existing Custom Id if Any" onkeypress="return isNumberKey(event)" >
   </div>
   <div class="col-xs-4 form-padding">
      <input type="text" name="loan_amount" id="loan_amount" class="form-input-new form-control" placeholder="Loan Required" onkeypress="return isNumberKey(event)" maxlength="10" required="">
@@ -184,12 +184,6 @@
     </div> 
     <p id="err" style="display:none;" ><span style="color: red;font-size: 20px;display: block; text-align: center;">No Quotes Found.</span></p> 
   </div> 
-  
-  
-  
-  
-  
-  
    </aside>
    
   </div>
@@ -267,59 +261,7 @@ $(document).ready(function(){
 <script type="text/javascript">
 $(".btn-primary").click(function(e){
    e.preventDefault();
-  //       var slidr = $("#unranged-value").text();
-  //        $('#loan_tenure').val(slidr);
-  //        console.log(slidr);
-  //       // alert('ok');
-  //       $(".iframeloading").show();
-  //       var v_token = "{{csrf_token()}}";
-  //     $.ajax({  
-  //              type: "POST",  
-  //              url: "{{URL::to('loan-submit')}}",
-  //              dataType:'json',
-  //               data : $('#personal_loan_process_form').serialize(),
-  //              success: function(msg){
-  //                   // console.log(msg);
-  //                 if(msg.success ==true){
-  //                   //console.log(msg.html);
-  //                  //  $(".iframeloading").hide();
-  //                   // $("#personal_loan_process_form").hide();
-  //                   $("#test123").empty().append(msg.html);
-
-  //                   var loan_eligible = msg.loan_eligible;
-  //                   // console.log(loan_eligible);
-  //                  $('#loanamount').val(loan_eligible);
-
-  //                   var roi = msg.roi;
-  //                   $('#rate').val(roi);
-
-  //                     var LoanTenure = msg.LoanTenure;
-  //                   $('#term').val(LoanTenure);
-
-  //                   var processingfee = msg.processingfee;
-  //                   $('#processfee').val(processingfee);
-
-  //                   var Bank_id = msg.Bank_Id;
-  //                   $('#bank').val(Bank_id);
-  //                    var url = "apply-lead-online?qoutid=0&BankId="+Bank_id+"&product=9&processing_fee="+processingfee+"&loan_eligible="+loan_eligible+"&roi_type="+roi+"";
-  //                    $("#apply_new").attr("href", url);
-                  
-
-  //                 $('#call_rm').show();
-  //                 }else{
-                    
-  //                    // window.location.href ="{{URL::to('went-wrong')}}";
-  //                    $(".iframeloading").hide();
-                      
-
-  //                 }
-  //                 }  
-  //                 }); 
-        
-  //       // $('#express_form').hide();
-  //       // $('#generic').show();
-        
-  // });
+  
 
 
 
@@ -337,8 +279,11 @@ $(".btn-primary").click(function(e){
            data : $("#personal_loan_process_form").serialize(),
         //   data: {_token :_token,username:username,password:password},
              success: function(msg){
+              console.log(msg);
                     // $(".iframeloading").hide();
                            if(msg.success ==true){
+
+                            var quote=msg.quote;
 
                         var loan_eligible = msg.loan_eligible;
 
@@ -354,12 +299,12 @@ $(".btn-primary").click(function(e){
                     $('#processfee').val(processingfee);
                     var Bank_id = msg.Bank_Id;
                     $('#bank').val(Bank_id);
-                     var url = "apply-lead-online?qoutid=0&BankId="+Bank_id+"&product=9&processing_fee="+processingfee+"&loan_eligible="+loan_eligible+"&roi_type="+roi+"";
+                     var url = "apply-lead-online?appid=0&qoutid="+quote+"&BankId="+Bank_id+"&product=9&processing_fee="+processingfee+"&loanamout="+loan_eligible+"&roi_type="+roi+"";
                      $("#apply_new").attr("href", url);
                       $('#err').hide();
                       $('#apply_new').show();
                       $('#mi_id').show();
-                      $(window).scrollTop($('#test123').offset().top-20);
+                       $(window).scrollTop($('#lowest').offset().top-50);
 
                    }else{
                      $('#err').show();

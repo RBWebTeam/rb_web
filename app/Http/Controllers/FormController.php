@@ -130,7 +130,7 @@ class FormController extends CallApiController
             
             $data['loan_amount'] =$req['loan_amount'];
             $data['quote_data'] =$quote_data;
-              // print_r($quote_data);exit();
+               // print_r($quote_data);exit();
             //print"<pre>";print_r($data['quote_data'][0]);exit();
             //return view('show-quotes')->with($data);
             if ($quote_data) {
@@ -150,7 +150,7 @@ class FormController extends CallApiController
                $processingfee="";
            }
             $returnHTML = view('show-quotes')->with($data)->render();
-            return response()->json(array('success' => true,'Bank_Id'=>$Bank_Id,'loan_eligible'=>$loan_eligible,'roi'=>$roi,'LoanTenure'=>$LoanTenure,'processingfee'=>$processingfee,'html'=>$returnHTML));
+            return response()->json(array('success' => true,'quote'=>$data['quote_id'],'Bank_Id'=>$Bank_Id,'loan_eligible'=>$loan_eligible,'roi'=>$roi,'LoanTenure'=>$LoanTenure,'processingfee'=>$processingfee,'html'=>$returnHTML));
         
         }catch(\Exception $ee){
             return $ee;//view('went-wrong');

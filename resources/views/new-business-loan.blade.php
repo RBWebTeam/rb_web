@@ -121,10 +121,10 @@
 <div>
 <h4 class="text-center">BANK 1</h4>
                     <div class="col-xs-6 form-padding"> 
-     <input type="name" class="form-input-new form-control" placeholder="Bank" required="">
+     <input type="text" class="form-input-new form-control" name="bank_name" id="bank_name" placeholder="Bank" onkeypress="return AllowAlphabet(event)"   required="">
 	</div>
 	<div class="col-xs-6 form-padding">
-     <input type="name" class="form-input-new form-control" placeholder="EMI" required="">
+     <input type="text" class="form-input-new form-control" name="emi" id="emi" placeholder="EMI"  onkeypress="return isNumberKey(event)" required>
 	</div>
 	<div class="col-xs-6 form-padding">
 	 <select class="form-input-new form-control">
@@ -138,7 +138,7 @@
 	 </select>
 	</div>
 	<div class="col-xs-6 form-padding">
-     <input type="name" class="form-input-new form-control" placeholder="Tenure" required="">
+     <input type="text" class="form-input-new form-control" name="tenure" id="tenure" placeholder="Tenure"  onkeypress="return isNumberKey(event)" minlength="2" maxlength="2" required>
 	</div>
 	<button class="btn btn-primary btn-outline top-mrg">Add Other Bank Existing EMI</button>
 	</div>

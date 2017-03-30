@@ -8,12 +8,13 @@
 <img src="{{URL::to('images/9.png')}}" alt="Tribe Logo" class="img-responsive" />
  </div> -->
  <div class="col-md-12 white-bg pad">
+ <h3 class="text-center loan-head">LOAN AGAINST Property</h3>
 <div class="col-md-8">
 <form name="lap_process_form" id="lap_process_form" action="{{URL::to('loan-submit')}}" method="POST" >
 <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
 <input type="hidden" id="product" name="product_name" value=7>
 	<div class="panel-group" id="accordion">
-	<h2 class="align-center loan-head">LAP</h2>
+	
     <div class="panel panel-default">
 	
       <div class="panel-heading">

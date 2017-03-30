@@ -1,6 +1,6 @@
 @include('layout.header')
 <div id="fh5co-hero">
-  <div class="container">
+  <div class="container white-bg">
   <h2 class="align-center loan-head">Working Capital</h2>
   <div class="col-md-10">
 
@@ -25,7 +25,7 @@
   <div>
   
  <form id="WorkingCapitalCurrent">
-  <div class="border heigh-bt white-bg">
+  <div class="border heigh-bt">
   <h3 class="emi-cal text-center">Current Status of Loan</h3>
     <input type="text" class="form-control form-group" placeholder="Loan Amount" id="loanAmount_id" maxlength="10"  onkeypress="return isNumberKey(event)">
    <input type="text" class="form-control form-group" placeholder="Current Rate of Interest" id="interest"  maxlength="5" onkeypress="return isNumberKey(event)" >
@@ -43,7 +43,7 @@
   <div class="col-md-4">
   <div>
    
-    <div class="border heigh-bt white-bg">
+    <div class="border heigh-bt">
     <h3 class="emi-cal text-center">Your Saving</h3>
        <center class="my-saving">
        <p>Monthly Interest Paid :<b class="em1"> ₹ <span id="monthlyinterest">0</span></b></p>
@@ -63,7 +63,7 @@
   <div class="col-md-4">
   <div>
    <form id=WorkingCapitalAfter>
-  <div class="border heigh-bt white-bg">
+  <div class="border heigh-bt">
   <h3 class="emi-cal text-center">After The Transfer</h3>
      <input type="text" class="form-control form-group loanAmountAfter" placeholder="Loan Amount" id="loanAmount_idAfter" maxlength="10"  onkeypress="return isNumberKey(event)" readonly>
    <input type="text" class="form-control form-group interestAfter" placeholder="10" value="10" id="interestAfter"  maxlength="2" onkeypress="return isNumberKey(event)"  readonly>
@@ -93,13 +93,13 @@
    <h4 class="col-md-2"><input type="radio" name="Tbank1" onclick="TbankName('Tbank1')"  checked="checked" id="Tbank1" value="Tbank1"/> Bank 1</h4>
    <h4 class="col-md-2"><input type="radio" name="Tbank2" id="Tbank2"  onclick="TbankName('Tbank2')" /> Bank 2</h4>
    <h4 class="col-md-2"><input type="radio" name="Tbank3" id="Tbank3" onclick="TbankName('Tbank3')"/> Bank 3</h4>
-   
+   <a href="#menu1" class="btn btn-success pull-right">NEXT</a>
    </div>
   <div class="col-md-4">
   <div>
   
   <form id="term_loan_form">
-  <div class="border heigh-bt white-bg">
+  <div class="border heigh-bt">
   <h3 class="emi-cal text-center">Current Status of Loan</h3>
    <input type="text" class="form-control form-group" placeholder="Loan Amount" id="termloanAmount" maxlength="10"  onkeypress="return isNumberKey(event)">
    <input type="text" class="form-control form-group" placeholder="Current Rate of Interest" id="terminterest"  maxlength="5" onkeypress="return isNumberKey(event)" >
@@ -117,7 +117,7 @@
   <div class="col-md-4">
   <div>
    
-    <div class="border heigh-bt white-bg">
+    <div class="border heigh-bt">
     <h3 class="emi-cal text-center">Your Saving</h3>
     <center class="my-saving">
        <p>Loan EMI :<b class="em1"> ₹ <span id="LoanEMI">0</span></b></p>
@@ -139,7 +139,7 @@
   <div class="col-md-4">
   <div>
    <form id=WorkingCapitalAfter>
-  <div class="border heigh-bt white-bg">
+  <div class="border heigh-bt">
   <h3 class="emi-cal text-center">After The Transfer</h3>
      <input type="text" class="form-control form-group tloanAmountAfter" placeholder="Loan Amount" id="tloanAmountAfter" maxlength="10"  onkeypress="return isNumberKey(event)" readonly>
    <input type="text" class="form-control form-group tinterestAfter" placeholder="10" value="10" id="tinterestAfter"  maxlength="5" onkeypress="return isNumberKey(event)"  readonly>
@@ -162,13 +162,13 @@
   
   
   <div id="menu2" class="tab-pane fade">
-    
+      <div class="col-md-12"><a href="#menu1" class="btn btn-success pull-right">NEXT</a></div>
   
   <div class="col-md-4">
   <div>
-  
+
   <form id="packing_credit_domesti">
-  <div class="border heigh-bt white-bg">
+  <div class="border heigh-bt">
   <h3 class="emi-cal text-center">Current Status of Loan</h3>
     <input type="text" class="form-control form-group dloanAmount_id" placeholder="Loan Amount" id="loanAmount_id" maxlength="10"  onkeypress="return isNumberKey(event)">
    <input type="text" class="form-control form-group dinterest" placeholder="Current Rate of Interest" id="interest"  maxlength="5" onkeypress="return isNumberKey(event)" >
@@ -197,7 +197,7 @@
   <div class="col-md-4">
   <div>
    
-    <div class="border heigh-bt white-bg">
+    <div class="border heigh-bt">
     <h3 class="emi-cal text-center">Your Saving</h3>
 
         <center class="my-saving">
@@ -218,7 +218,7 @@
   <div class="col-md-4">
   <div>
    
-  <div class="border heigh-bt white-bg">
+  <div class="border heigh-bt">
   <h3 class="emi-cal text-center">After The Transfer</h3>
    <input type="text" class="form-control form-group dloanAmountAfter" placeholder="Loan Amount" id="dloanAmount_idAfter" maxlength="10"  onkeypress="return isNumberKey(event)" readonly>
    <input type="text" class="form-control form-group dinterestAfter" placeholder="10" value="7" id="dinterestAfter"  maxlength="2" onkeypress="return isNumberKey(event)"  readonly>
@@ -230,12 +230,12 @@
   </div>
 
   <div id="menu3" class="tab-pane fade">
-    
+     <div class="col-md-12"><a href="#menu1" class="btn btn-success pull-right">NEXT</a></div> 
  <div class="col-md-4">
   <div>
   
   <form id="packing_credit_foreign_currency">
-  <div class="border heigh-bt white-bg">
+  <div class="border heigh-bt">
   <h3 class="emi-cal text-center">Current Status of Loan</h3>
     <input type="text" class="form-control form-group fcloanAmount_id" placeholder="Loan Amount" id="loanAmount_id" maxlength="10"  onkeypress="return isNumberKey(event)">
    <input type="text" class="form-control form-group fcinterest" placeholder="Current Rate of Interest" id="interest"  maxlength="5" onkeypress="return isNumberKey(event)" >
@@ -266,7 +266,7 @@
   <div class="col-md-4">
   <div>
    
-    <div class="border heigh-bt white-bg">
+    <div class="border heigh-bt">
     <h3 class="emi-cal text-center">Your Saving</h3>
 
         <center class="my-saving">
@@ -287,7 +287,7 @@
   <div class="col-md-4">
   <div>
    
-  <div class="border heigh-bt white-bg">
+  <div class="border heigh-bt">
   <h3 class="emi-cal text-center">After The Transfer</h3>
    <input type="text" class="form-control form-group fcloanAmountAfter" placeholder="Loan Amount" id="fcloanAmount_idAfter" maxlength="10"  onkeypress="return isNumberKey(event)" readonly>
    <input type="text" class="form-control form-group fcinterestAfter" placeholder="10" value="5" id="fcinterestAfter"  maxlength="2" onkeypress="return isNumberKey(event)"  readonly>
@@ -299,7 +299,8 @@
 
   </div>
   <div id="menu4" class="tab-pane fade">
-  <div class="table-responsive white-bg pad1">
+  
+  <div class="table-responsive">
  <table width="100%" class="table-striped table-bordered">
   <tr>
     <td>&nbsp;</td>
@@ -308,24 +309,27 @@
       <td><h3>Total Saving</h3></td>
   </tr>
   <tr>
-    <td class="text-left"><h4 class="text-capitalize">Working Capital</h4></td>
-    <td >Bank1<p id="bankName0"></p></td><td>Bank2<p id="bankName1"></p></td><td>Bank3<p id="bankName2"></p></td></td>
+    <td class="text-left"><h3 class="text-capitalize">Working Capital</h3></td>
+    <td >Bank1 <h3><b>100</b></h3><p id="bankName0"></p></td><td>Bank2 <h3><b>100</b></h3><p id="bankName1"></p></td><td>Bank3 <h3><b>100</b></h3><p id="bankName2"></p></td></td>
   </tr>
   <tr>
-    <td class="text-left"><h4 class="text-capitalize">Term Loan</h4></b></</td>
- <td >Bank1<p id="TbankName0"></p><td>Bank2<p id="TbankName1"></p></td><td>Bank3<p id="TbankName2"></p></td></td>
+    <td class="text-left"><h3 class="text-capitalize">Term Loan</h3></b></</td>
+ <td >Bank1 <h3><b>100</b></h3>
+ <p id="TbankName0"></p><td>Bank2 <h3><b>100</b></h3>
+ <p id="TbankName1"></p></td><td>Bank3 <h3><b>100</b></h3>
+ <p id="TbankName2"></p></td></td>
   </tr>
   <tr>
-    <td class="text-left"><h4 class="text-capitalize">Packing Credit Domestic</h4></b></</td>
-    <td id="domestic_ID"></td>
-	<td id="domestic_ID"></td>
-	<td id="domestic_ID"></td>
+    <td class="text-left"><h3 class="text-capitalize">Packing Credit Domestic</h3></b></</td>
+    <td id="domestic_ID">Bank1 <h3><b>100</b></h3></td>
+	<td id="domestic_ID">Bank2<h3><b> 100</b></h3></td>
+	<td id="domestic_ID">Bank3<h3><b> 100</b></h3></td>
   </tr>
   <tr>
-    <td class="text-left" ><h4 class="text-capitalize">Packing credit foreign Currency</h4></</td>
-    <td id="currency_ID"></td>
-	<td id="domestic_ID"></td>
-	<td id="domestic_ID"></td>
+    <td class="text-left" ><h3 class="text-capitalize">Packing credit foreign Currency</h3></</td>
+    <td id="currency_ID">Bank1 <h3><b>100</b></h3></td>
+	<td id="domestic_ID">Bank2 <h3><b>100</b></h3></td>
+	<td id="domestic_ID">Bank3 <h3><b>100</b></h3></td>
   </tr>
 </table>
   </div>
@@ -339,9 +343,9 @@
   
 </div>
   </div>
-  <div class="col-md-2">
+  <div class="col-md-2 totl-sav">
   <div class="fix-pos">
-		<div class="text-center guid nl-form-errors" id='pop1'>Total Saving</div>
+		<div class="text-center guid nl-form-errors" id='pop1'>Total Saving<h1 class="tot-sav-txt">10000</h1></div>
 
         <div class="text-center img1"><img src="{{URL::to('images/photo.jpg')}}" alt="pop_up_pic"></div>
 		</div>

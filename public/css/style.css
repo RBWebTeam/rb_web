@@ -1361,7 +1361,6 @@ input[placeholder], [placeholder], *[placeholder] {color: #1f386e !important;}
 /* .loan-head {padding:20px;display:block; text-align:center;padding-top:0px; margin-top:20px;}*/
 
 .loan-head {
-    width:22%;
     line-height: 35px;
     margin-bottom: 15px;
     height: 35px;
@@ -1371,7 +1370,7 @@ input[placeholder], [placeholder], *[placeholder] {color: #1f386e !important;}
     margin: 0 auto;
     background: #ed1c24;
     text-align: center;
-    margin-top: 20px;
+    margin-top: 10px;
     margin-bottom: 15px;
 	text-transform:uppercase;
 }
@@ -2096,7 +2095,7 @@ body {background:#eee;}
   .tenure {margin:0px 25px;}
   .fnt-clr {height:61px;}
 .box-shadow {box-shadow:1px 1px 3px 1px #ccc;}
-.border {padding:20px;border:1px solid #eee;margin:20px 0px;border-radius:10px; font-size:15px;}
+.border {padding:20px;border:1px solid #eee;margin:20px 0px;font-size:15px;}
 .hr-sty {height:20px;background:#eee;}
 .input_exp {
   position: relative;
@@ -3477,7 +3476,6 @@ label {
 .border {
     padding: 20px;
     margin: 20px 0px;
-    border-radius: 10px;
     font-size: 15px;
 }
 
@@ -3527,6 +3525,7 @@ label {
 	.top-lnk {position:absolute; background:#ccc;margin-left:-1px; display:none;}
 	.mag-lnk {width:100%; height:auto;position: relative;}
 	.star {background:#000 url(../images/star.gif);}
+	.totl-sav {display:none;}
 	/* #my-video { display:inherit; position:fixed;width:auto;}
 	 .video {top: 0%;left:0%;z-index: 0;width:100%;height:100%;}*/
 }
@@ -3538,7 +3537,7 @@ label {
     background: #eee;
 }
 .fix-pos {position:relative;z-index:1001;}
-
+.tot-sav-txt {color:#fff;font-weight:bold;}
 
 
 

@@ -7,6 +7,7 @@
 	</div> -->
  
  <div class="col-md-12 white-bg pad">
+ <h3 class="text-center loan-head">Unsecured Business Loan</h3>
 <div class="col-md-8">
  <!-- <img src="{{URL::to('images/9.png')}}" alt="Tribe Logo" class="img-responsive" /> -->
  <div class="col-md-6">

@@ -123,11 +123,10 @@
 <div>
 <h4 class="text-center">List of Loan EMI</h4>
                     <div class="col-xs-6 form-padding"> 
-<<<<<<< HEAD
+
      <input type="text" class="form-input-new form-control" name="bank_name" id="bank_name" placeholder="Bank" onkeypress="return AllowAlphabet(event)"   required="">
-=======
-     <input type="name" class="form-input-new form-control" placeholder="Bank 1" required="">
->>>>>>> 4ab2e79f3aab48d4c82b93d2e474254b334ebc2d
+
+     
 	</div>
 	<div class="col-xs-6 form-padding">
      <input type="text" class="form-input-new form-control" name="emi" id="emi" placeholder="EMI"  onkeypress="return isNumberKey(event)" required>

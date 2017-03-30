@@ -2,18 +2,20 @@
 <div class="container ">
  <aside id="fh5co-hero">
 	<div class="col-md-12">
-	<h2 class="align-center loan-head">Home Loan</h2>
+	
 	</div>
- <div class="col-md-12 white-bg pad1 mrg-btm">
+ <!-- <div class="col-md-12 white-bg pad1 mrg-btm">
 <img src="{{URL::to('images/9.png')}}" alt="Tribe Logo" class="img-responsive" />
- </div>
+ </div> -->
  <div class="col-md-12 white-bg pad">
 <div class="col-md-8">
 <form name="lap_process_form" id="lap_process_form" action="{{URL::to('loan-submit')}}" method="POST" >
 <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
 <input type="hidden" id="product" name="product_name" value=7>
 	<div class="panel-group" id="accordion">
+	<h2 class="align-center loan-head">LAP</h2>
     <div class="panel panel-default">
+	
       <div class="panel-heading">
         <h4 class="panel-title">
           <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">Property Information</a>
@@ -102,7 +104,7 @@
 	</div>
 		<div class="col-xs-6 form-padding">
      <div class="btn-grp form-control border-none" data-toggle="buttons">
-      <span class="btn btn-default outer-brd btn-blu active"><input type="radio" value="salaried" name="emp_detail"  > Salared</span>
+      <span class="btn btn-default outer-brd btn-blu active"><input type="radio" value="salaried" name="emp_detail"  > Salaried</span>
       <span class="btn btn-default outer-brd btn-blu"><input type="radio" value="self-employed" name="emp_detail"  >Self-Emp</span>
  
 

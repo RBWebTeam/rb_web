@@ -4,10 +4,10 @@
 	<div class="col-md-12">
 	<h2 class="align-center loan-head">Home Loan</h2>
 	</div>
- <div class="col-md-12 white-bg pad1 mrg-btm">
+ <!-- <div class="col-md-12 white-bg pad1 mrg-btm">
 <img src="{{URL::to('images/9.png')}}" alt="Tribe Logo" class="img-responsive" />
 
- </div>
+ </div> -->
  <div class="col-md-12 white-bg pad">
 <div class="col-md-8">
 <form name="home_loan_process_form" id="home_loan_process_form" action="{{URL::to('loan-submit')}}" method="POST" >
@@ -103,7 +103,7 @@
 	</div>
 		<div class="col-xs-6 form-padding">
      <div class="btn-grp form-control border-none" data-toggle="buttons">
-      <span class="btn btn-default outer-brd btn-blu active"><input type="radio" id="sala_DI" value="salaried" name="emp_detail"  > Salared</span>
+      <span class="btn btn-default outer-brd btn-blu active"><input type="radio" id="sala_DI" value="salaried" name="emp_detail"  > Salaried</span>
       <span class="btn btn-default outer-brd btn-blu"><input type="radio" id="self_DI" value="self-employed" name="emp_detail"  >Self-Emp</span>
  
 

@@ -2,13 +2,13 @@
 <div class="container">
 	
 	<aside id="fh5co-hero">
-	<div class="col-md-12">
+	<!-- <div class="col-md-12">
 	<h2 class="align-center loan-head">Unsecured Business Loan</h2>
-	</div>
+	</div> -->
  
  <div class="col-md-12 white-bg pad">
 <div class="col-md-8">
- <img src="{{URL::to('images/9.png')}}" alt="Tribe Logo" class="img-responsive" />
+ <!-- <img src="{{URL::to('images/9.png')}}" alt="Tribe Logo" class="img-responsive" /> -->
  <div class="col-md-6">
   <div class="col-xs-12">
  <form name='business_loan_process_form' id='business_loan_process_form' action={{URL::to('loan-submit')}} method="POST">   
@@ -96,7 +96,7 @@
      <input type="name" class="form-input-new form-control" placeholder="Interest Paid On Bank Loans" required="">
 	</div>
 	<div class="col-xs-6 form-padding"> 
-     <input type="name" class="form-input-new form-control" placeholder="Existing All EMI" required="">
+     <input type="name" class="form-input-new form-control" placeholder="EXISTING All EMI" required="">
 	</div>			
 					 
                 </div>
@@ -185,11 +185,11 @@
     <div class="panel panel-default">
       <div class="panel-heading">
         <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion1" href="#collapse1">NATURE OF BUSINESS <i class="icon-minus pull-right more-less"></i></a>
+          <a data-toggle="collapse" data-parent="#accordion1" href="#collapse1">NATURE OF BUSINESS <i class="icon-plus pull-right more-less"></i></a>
 		
         </h4>
       </div>
-      <div id="collapse1" class="panel-collapse collapse in">
+      <div id="collapse1" class="panel-collapse collapse">
         <div class="panel-body">
 	<div class="scenario">
 								<div class="col-xs-12 pad-no scenario-active"><a class="scenario-1 btn"><input type="radio" name="Status" id="option1"  class="radio1" checked >MANUFACTURING</a></div>

@@ -300,7 +300,7 @@
   </div>
   <div id="menu4" class="tab-pane fade">
   <div class="table-responsive white-bg pad1">
- <table width="100%" class="table-striped">
+ <table width="100%" class="table-striped table-bordered">
   <tr>
     <td>&nbsp;</td>
     <td><h3>Total Saving</h3></td>
@@ -309,7 +309,7 @@
   </tr>
   <tr>
     <td class="text-left"><h4 class="text-capitalize">Working Capital</h4></td>
-    <td >Bank1<p id="bankName0"></p><td>Bank2<p id="bankName1"></p></td><td>Bank3<p id="bankName2"></p></td></td>
+    <td >Bank1<p id="bankName0"></p></td><td>Bank2<p id="bankName1"></p></td><td>Bank3<p id="bankName2"></p></td></td>
   </tr>
   <tr>
     <td class="text-left"><h4 class="text-capitalize">Term Loan</h4></b></</td>
@@ -318,10 +318,14 @@
   <tr>
     <td class="text-left"><h4 class="text-capitalize">Packing Credit Domestic</h4></b></</td>
     <td id="domestic_ID"></td>
+	<td id="domestic_ID"></td>
+	<td id="domestic_ID"></td>
   </tr>
   <tr>
     <td class="text-left" ><h4 class="text-capitalize">Packing credit foreign Currency</h4></</td>
     <td id="currency_ID"></td>
+	<td id="domestic_ID"></td>
+	<td id="domestic_ID"></td>
   </tr>
 </table>
   </div>

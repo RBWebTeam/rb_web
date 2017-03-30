@@ -7,11 +7,16 @@
   <div class="col-md-12">
   <h2 class="align-center loan-head">Personal Loan</h2>
   </div>
- <div class="col-md-12 white-bg pad1 mrg-btm box-shadow">
+ <!-- <div class="col-md-12 white-bg pad1 mrg-btm box-shadow">
 <img src="{{URL::to('images/9.png')}}" alt="Tribe Logo" class="img-responsive" />
+
 
  </div>
  <div class="col-md-12 white-bg pad box-shadow fl-lft" id="lowest">
+
+</div> -->
+ <div class="col-md-12 white-bg pad box-shadow fl-lft">
+
   <!--   <div id ="test123" class="col-md-8"></div> -->
  
     <form name="personal_loan_process_form" id="personal_loan_process_form" action="#" method="POST" >
@@ -19,7 +24,7 @@
       <input type="hidden" id="product" name="product_name" value=9>
    <!--  <div id ="test123" class="col-md-8"></div> -->
   <div class="col-md-8">
-  <h3 class="main-header">Genral Information</h3>
+ <!--  <h3 class="main-header">Genral Information</h3> -->
 <center><div class="type-cover"><span>PURPOSE OF LOAN</span></div></center>
 
 <div class="text-center flt-lft btn-grp" data-toggle="buttons">

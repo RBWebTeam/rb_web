@@ -2,22 +2,24 @@
 <div class="container ">
  <aside id="fh5co-hero">
 	<div class="col-md-12">
-	<h2 class="align-center loan-head">Home Loan</h2>
+	
 	</div>
- <div class="col-md-12 white-bg pad1 mrg-btm">
+ <!-- <div class="col-md-12 white-bg pad1 mrg-btm">
 <img src="{{URL::to('images/9.png')}}" alt="Tribe Logo" class="img-responsive" />
- </div>
+ </div> -->
  <div class="col-md-12 white-bg pad">
 <div class="col-md-8">
 <form name="lap_process_form" id="lap_process_form" action="{{URL::to('loan-submit')}}" method="POST" >
 <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
 <input type="hidden" id="product" name="product_name" value=7>
 	<div class="panel-group" id="accordion">
+	<h2 class="align-center loan-head">LAP</h2>
     <div class="panel panel-default">
+	
       <div class="panel-heading">
         <h4 class="panel-title">
           <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">Property Information</a>
-		 <i class="icon-plus pull-right more-less"></i>
+		 <i class="icon-minus pull-right more-less"></i>
         </h4>
       </div>
       <div id="collapse1" class="panel-collapse collapse in">
@@ -90,8 +92,8 @@
 	
 	<div class="col-xs-6 form-padding">
 	 <div class="btn-grp form-control border-none" data-toggle="buttons">
-                                    <span class="btn btn-primary outer-brd1 active"><input type="radio" value="M" name="gender"  ><img id="myImage" src="images/male.png" class=""></span><span class="hidden-xs">Male</span>
-                                   <span class="btn btn-primary outer-brd1 "><input type="radio" value="F" name="gender" ><img id="myImage1" src="images/female.png" class=""></span> <span class="hidden-xs">Female</span>
+                                    <span class="btn btn-default outer-brd1 active"><input type="radio" value="M" name="gender"  ><img id="myImage" src="images/male.png" class=""></span><span class="hidden-xs">Male</span>
+                                   <span class="btn btn-default outer-brd1 "><input type="radio" value="F" name="gender" ><img id="myImage1" src="images/female.png" class=""></span> <span class="hidden-xs">Female</span>
                         <input type="hidden" class="clr-blue"   name="emp_detail_id" value="1" >
                                     
            </div>		   
@@ -102,8 +104,8 @@
 	</div>
 		<div class="col-xs-6 form-padding">
      <div class="btn-grp form-control border-none" data-toggle="buttons">
-      <span class="btn btn-primary outer-brd btn-blu active"><input type="radio" value="salaried" name="emp_detail"  > Salared</span>
-      <span class="btn btn-primary outer-brd btn-blu"><input type="radio" value="self-employed" name="emp_detail"  >Self-Emp</span>
+      <span class="btn btn-default outer-brd btn-blu active"><input type="radio" value="salaried" name="emp_detail"  > Salaried</span>
+      <span class="btn btn-default outer-brd btn-blu"><input type="radio" value="self-employed" name="emp_detail"  >Self-Emp</span>
  
 
          </div>
@@ -142,8 +144,8 @@
 	
 	<div class="col-xs-6 form-padding">
 	 <div class="btn-grp form-control border-none" data-toggle="buttons">
-                                    <span class="btn btn-primary outer-brd1 active"><input type="radio" name="cogender" value="M" ><img id="myImage" src="images/male.png" class=""></span><span class="hidden-xs">Male</span>
-                                   <span class="btn btn-primary outer-brd1 "><input type="radio" name="cogender" value="F"><img id="myImage1" src="images/female.png" class=""></span> <span class="hidden-xs">Female</span>
+                                    <span class="btn btn-default outer-brd1 active"><input type="radio" name="cogender" value="M" ><img id="myImage" src="images/male.png" class=""></span><span class="hidden-xs">Male</span>
+                                   <span class="btn btn-default outer-brd1 "><input type="radio" name="cogender" value="F"><img id="myImage1" src="images/female.png" class=""></span> <span class="hidden-xs">Female</span>
            </div>		   
 	   </div>
 	   
@@ -152,8 +154,8 @@
 	</div>
 		<div class="col-xs-6 form-padding">
      <div class="btn-grp form-control border-none" data-toggle="buttons">
-      <span class="btn btn-primary outer-brd btn-blu active"><input type="radio" value="salaried"   name="co_emp_detail"  > Salared</span>
-      <span class="btn btn-primary outer-brd btn-blu"><input type="radio"  value="self-employed"  name="co_emp_detail"  >Self-Emp</span>
+      <span class="btn btn-default outer-brd btn-blu active"><input type="radio" value="salaried"   name="co_emp_detail"  > Salared</span>
+      <span class="btn btn-default outer-brd btn-blu"><input type="radio"  value="self-employed"  name="co_emp_detail"  >Self-Emp</span>
          </div>
 	   </div>
 	   

@@ -80,7 +80,7 @@
 					<li><a href="{{URL::to('https://twitter.com/rupeeboss')}}" target="_blank"><i class="icon-twitter"></i></a></li>
 					<li><a href="{{URL::to('https://www.facebook.com/rupeeboss')}}" target="_blank"><i class="icon-facebook"></i></a></li>
 					<li><a href="{{URL::to('https://www.linkedin.com/company/rupeeboss.com')}}" target="_blank"><i class="icon-linkedin"></i></a></li>
-					<li><a href="{{URL::to('https://plus.google.com/112574970643410375765')}}" target="_blank"><i class="icon-google-plus"></i></a></li>
+					<li><a href="{{URL::to('https://plus.google.com/u/0/113191059621763008376')}}" target="_blank"><i class="icon-google-plus"></i></a></li>
 					
 					<!-- <li><a href="#" target="_blank"><i class="icon-instagram"></i></a></li> -->
 				</ul>

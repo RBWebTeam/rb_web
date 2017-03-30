@@ -2,7 +2,7 @@
 <div id="fh5co-hero">
   <div class="container">
   <h2 class="align-center loan-head">Working Capital</h2>
-  <div class="col-md-10">
+  <div>
 
   <ul class="nav nav-tabs" id="userTabs">
   <li class="active"><a data-toggle="tab" href="#home"><b>WORKING CAPITAL</b></a></li>
@@ -19,7 +19,6 @@
    <h4 class="col-md-2"><input type="radio" name="bank1" onclick="bankName('bank1')"  checked="checked" id="bank1" value="bank1"/> Bank 1 </h4>
    <h4 class="col-md-2"><input type="radio" name="bank2" id="bank2"  onclick="bankName('bank2')" /> Bank 2 </h4>
    <h4 class="col-md-2"><input type="radio" name="bank3" id="bank3" onclick="bankName('bank3')"/> Bank 3 </h4>
-   <a href="#menu1" class="btn btn-success pull-right">NEXT</a>
    </div>
   <div class="col-md-4">
   <div>
@@ -300,7 +299,7 @@
   </div>
   <div id="menu4" class="tab-pane fade">
   <div class="table-responsive white-bg pad1">
- <table width="100%" class="table-striped table-bordered">
+ <table width="100%" class="table-striped">
   <tr>
     <td>&nbsp;</td>
     <td><h3>Total Saving</h3></td>
@@ -309,7 +308,7 @@
   </tr>
   <tr>
     <td class="text-left"><h4 class="text-capitalize">Working Capital</h4></td>
-    <td >Bank1<p id="bankName0"></p></td><td>Bank2<p id="bankName1"></p></td><td>Bank3<p id="bankName2"></p></td></td>
+    <td >Bank1<p id="bankName0"></p><td>Bank2<p id="bankName1"></p></td><td>Bank3<p id="bankName2"></p></td></td>
   </tr>
   <tr>
     <td class="text-left"><h4 class="text-capitalize">Term Loan</h4></b></</td>
@@ -318,14 +317,10 @@
   <tr>
     <td class="text-left"><h4 class="text-capitalize">Packing Credit Domestic</h4></b></</td>
     <td id="domestic_ID"></td>
-	<td id="domestic_ID"></td>
-	<td id="domestic_ID"></td>
   </tr>
   <tr>
     <td class="text-left" ><h4 class="text-capitalize">Packing credit foreign Currency</h4></</td>
     <td id="currency_ID"></td>
-	<td id="domestic_ID"></td>
-	<td id="domestic_ID"></td>
   </tr>
 </table>
   </div>
@@ -339,13 +334,6 @@
   
 </div>
   </div>
-  <div class="col-md-2">
-  <div class="fix-pos">
-		<div class="text-center guid nl-form-errors" id='pop1'>Total Saving</div>
-
-        <div class="text-center img1"><img src="{{URL::to('images/photo.jpg')}}" alt="pop_up_pic"></div>
-		</div>
- </div>
 </div>
 </br>
 @include('layout.footer')

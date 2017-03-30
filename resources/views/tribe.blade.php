@@ -1,8 +1,7 @@
-  <?php// print "<pre>";print_r($data->loan_details[0]->mapping);exit(); ?>
   @include('layout.header')
-
-  <div id="fh5co-hero">
-  <form id="tribe_loan_form" method="POST" enctype="multipart/form-data">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+  <div id="fh5co-hero" ng-app="">
+  <form id="tribe_loan_form" method="POST" name="tribe_loan_form" enctype="multipart/form-data">
   {{ csrf_field() }}
   	<div class="container">
   	<h2 class="align-center loan-head">Tribe</h2>
@@ -20,7 +19,7 @@
   </ul>
 
   <div class="tab-content">
-    <div id="main" class="tab-pane fade in active">
+    <div id="main" class="tab-pane fade in active" ng-app="First_tab">
       
   	<div class="col-md-12">
     <h3 class="mrg-top">Partner Details</h3>
@@ -50,15 +49,16 @@
     
     <div class="col-md-3"><p>Owner Email*</p></div>
     <div class="col-md-8">
-    <input type="text" name="owner_email" id="owner_email"  class="form-control form-group"/>
-     <a class="btn btn-primary btn-outline with-arrow">Next<i class="icon-arrow-right"></i></a>
+    <input type="email" name="owner_email" id="owner_email" ng-model="owner_email" class="form-control form-group" required />
+    <p ng-show="tribe_loan_form.owner_email.$error.email" class="error">Invalid Email address</p>
+     <a class="btn btn-primary btn-outline with-arrow" >Next<i class="icon-arrow-right"></i></a>
     </div>
     
 
   </div>
 
     </div>
-    <div id="main1" class="tab-pane fade">
+    <div id="main1" class="tab-pane fade" ng-app="second_tab">
       
   	<h3 class="mrg-top">Loan Details</h3>
   <hr>
@@ -100,7 +100,7 @@
     <div class="col-md-8"><input type="text" name="last_name" id="last_name" class="form-control form-group" required="" /></div>
     
     <div class="col-md-3"><p>Mobile No*</p></div>
-   <div class="col-md-8"><input type="text" pattern="[789][0-9]{9}" required="" maxlength="10" name="mobile" id="mobile" class="form-control form-group" required /></div>
+   <div class="col-md-8"><input type="text" pattern="[789][0-9]{9}" maxlength="10" name="mobile" id="mobile" class="form-control form-group" required /></div>
     
     <div class="col-md-3"><p>Email</p></div>
     <div class="col-md-8"><input type="email" name="email" id="email" class="form-control form-group" required="" /></div>
@@ -112,7 +112,7 @@
     <div class="col-md-8"><input type="text" name="aadhar_no" id="aadhar_no" class="form-control form-group" required="" /></div>
     
     <div class="col-md-3"><p>Owner Email*</p></div>
-    <div class="col-md-8"><input type="text" name="owner_email_personal" id="owner_email_personal" class="form-control form-group" required="" /></div>
+    <div class="col-md-8"><input type="email" name="owner_email_personal" id="owner_email_personal" class="form-control form-group" required="" /></div>
     
     <div class="col-md-3"><p>Date of Birth*</p></div>
     <div class="col-md-8"><input type="date" name="dob" id="dob" class="form-control form-group" required="" /></div>
@@ -301,14 +301,13 @@
     <a class="btn btn-primary btn-outline with-arrow  ">Back<i class="icon-arrow-right"></i></a>
     </div>
     </div>
-    <form id="upload_form" name="upload_form" enctype="multipart/form-data">
     <div id="main4" class="tab-pane fade">
       
   	<h3 class="mrg-top">KYC Identity Proof</h3>
   <hr>
     <div class="col-md-3">Pan</div>
     <div class="col-md-8">
-    <input type="file" name="docpan" id="docpan" files="true" class="form-control form-group no-border"/>
+    <input type="file" name="docpan" id="docpan"  class="form-control form-group no-border"/>
     </div>
     
     <div class="col-md-3">Aadhaar</div>
@@ -422,13 +421,13 @@
     
     <div class="col-md-3">Email</div>
     <div class="col-md-8">
-    <input type="text" name="ref_email" id="ref_email" class="form-control form-group"/></div>
+    <input type="email" name="ref_email" id="ref_email" class="form-control form-group"/></div>
     
    <div class="col-md-3">
     <a class="btn btn-primary btn-outline with-arrow  ">Next<i class="icon-arrow-right"></i></a>
     <a class="btn btn-primary btn-outline with-arrow  ">Back<i class="icon-arrow-right"></i></a>
     </div>
-     <div class="col-md-8"> <a class="btn btn-primary btn-outline with-arrow pull-left" id="save_form_button">Save Form<i class="icon-arrow-right"></i></a></div>
+     <div class="col-md-8"> <button class="btn btn-primary btn-outline with-arrow pull-left" id="save_form_button">Save Form<i class="icon-arrow-right"></i></button></div>
    
     </div>
     </form>
@@ -485,19 +484,41 @@
         }
     }
 
-    $('#save_form_button').click(function() {
-      $.ajax({  
-               type: "POST",  
-               url: "{{URL::to('save-tribe-form')}}",
-               data : $('#tribe_loan_form').serialize(),
-               success: function(msg){
-                  if(msg=='true'){
-                    console.log(msg);
-                  }
-                console.log(msg);
-                }  
-        }); 
+    // $('form').submit(function() {
+    //   var formData = new FormData(this);
+    //  // console.log(formData);
+    //  // return false;
+    //   $.ajax({  
+    //            type: "POST",  
+    //            url: "{{URL::to('save-tribe-form')}}",
+    //            data : formData,
+    //            mimeType: "multipart/form-data",
+    //            cache: false,
+    //             contentType: false,
+    //             processData: false,
+    //            success: function(msg){
+    //               if(msg=='true'){
+    //                 console.log(msg);
+    //               }
+    //             console.log(msg);
+    //             }  
+    //     }); 
+    // });
+    $("#save_form_button").click(function(){
+       event.preventDefault(); 
+    $.ajax({
+      url:"{{URL::to('save-tribe-form')}}",
+      data:new FormData($("#tribe_loan_form")[0]),
+      dataType:'json',
+      async:false,
+      type:'post',
+      processData: false,
+      contentType: false,
+      success:function(response){
+        console.log(response);
+      },
     });
+ });
   </script>
   <script type="text/javascript">
   $('#registration_detail').change(function() {
@@ -522,4 +543,11 @@
         
     
   });
+  </script>
+  <script type="text/javascript">
+  var mainApp = angular.module("First_tab", []);
+         
+         mainApp.controller('first_tab_controller', function($scope) {
+            
+         });
   </script>

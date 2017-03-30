@@ -2,13 +2,13 @@
 <div class="container">
 	
 	<aside id="fh5co-hero">
-	<div class="col-md-12">
+	<!-- <div class="col-md-12">
 	<h2 class="align-center loan-head">Unsecured Business Loan</h2>
-	</div>
+	</div> -->
  
  <div class="col-md-12 white-bg pad">
 <div class="col-md-8">
- <img src="{{URL::to('images/9.png')}}" alt="Tribe Logo" class="img-responsive" />
+ <!-- <img src="{{URL::to('images/9.png')}}" alt="Tribe Logo" class="img-responsive" /> -->
  <div class="col-md-6">
   <div class="col-xs-12">
  <form name='business_loan_process_form' id='business_loan_process_form' action={{URL::to('loan-submit')}} method="POST">   
@@ -100,7 +100,9 @@
      <input type="name" class="form-input-new form-control" placeholder="Interest Paid On Bank Loans" step="0.01" min="0" onkeypress="return isNumberKey(event)" required>
 	</div>
 	<div class="col-xs-6 form-padding"> 
+
      <input type="text" class="form-input-new form-control" name="existing_emi" id="existing_emi" placeholder="Existing All EMI" onkeypress="return isNumberKey(event)"  required>
+
 	</div>			
 					 
                 </div>
@@ -119,9 +121,13 @@
             <div id="collapse7" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading7">
                 <div class="panel-body">
 <div>
-<h4 class="text-center">BANK 1</h4>
+<h4 class="text-center">List of Loan EMI</h4>
                     <div class="col-xs-6 form-padding"> 
+<<<<<<< HEAD
      <input type="text" class="form-input-new form-control" name="bank_name" id="bank_name" placeholder="Bank" onkeypress="return AllowAlphabet(event)"   required="">
+=======
+     <input type="name" class="form-input-new form-control" placeholder="Bank 1" required="">
+>>>>>>> 4ab2e79f3aab48d4c82b93d2e474254b334ebc2d
 	</div>
 	<div class="col-xs-6 form-padding">
      <input type="text" class="form-input-new form-control" name="emi" id="emi" placeholder="EMI"  onkeypress="return isNumberKey(event)" required>
@@ -156,7 +162,7 @@
 	
  </div>
 	<div class="col-md-6">
-	<div class="panel-group" id="accordion">
+	<div class="panel-group" id="accordion1">
 	<div class="panel-default">
       <div id="collapse0" class="panel-collapse collapse in">
         <div class="panel-body">
@@ -188,13 +194,12 @@
     <div class="panel panel-default">
       <div class="panel-heading">
         <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">NATURE OF BUSINESS <i class="icon-plus pull-right more-less"></i></a>
+          <a data-toggle="collapse" data-parent="#accordion1" href="#collapse1">NATURE OF BUSINESS <i class="icon-plus pull-right more-less"></i></a>
 		
         </h4>
       </div>
       <div id="collapse1" class="panel-collapse collapse">
         <div class="panel-body">
-	  
 	<div class="scenario">
 								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="natue_of_business" value="Manufacturing" class="radio1"  >MANUFACTURING</a></div>
 								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="natue_of_business" value="Trading" class="radio1">TRADING</a></div>
@@ -214,7 +219,7 @@
     <div class="panel panel-default">
       <div class="panel-heading">
         <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">INDUSTRY <i class="icon-plus pull-right more-less"></i></a>
+          <a data-toggle="collapse" data-parent="#accordion1" href="#collapse2">INDUSTRY <i class="icon-plus pull-right more-less"></i></a>
 		 
         </h4>
       </div>
@@ -233,7 +238,7 @@
     <div class="panel panel-default">
       <div class="panel-heading">
         <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">DATE OF INCORPORATION <i class="icon-plus pull-right more-less"></i></a>
+          <a data-toggle="collapse" data-parent="#accordion1" href="#collapse3">DATE OF INCORPORATION <i class="icon-plus pull-right more-less"></i></a>
 		 
         </h4>
       </div>
@@ -250,7 +255,7 @@
 	<div class="panel panel-default">
       <div class="panel-heading">
         <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">RESIDENCE TYPE <i class="icon-plus pull-right more-less"></i></a>
+          <a data-toggle="collapse" data-parent="#accordion1" href="#collapse4">RESIDENCE TYPE <i class="icon-plus pull-right more-less"></i></a>
 		 
         </h4>
       </div>
@@ -269,7 +274,7 @@
 	<div class="panel panel-default">
       <div class="panel-heading">
         <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse5">OFFICE TYPE<i class="icon-plus pull-right more-less"></i></a>
+          <a data-toggle="collapse" data-parent="#accordion1" href="#collapse5">OFFICE TYPE<i class="icon-plus pull-right more-less"></i></a>
 		  
         </h4>
       </div>

@@ -1,27 +1,27 @@
-  @include('layout.header')
+@include('layout.header')
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
   <div id="fh5co-hero" ng-app="">
-  <form id="tribe_loan_form" method="POST" name="tribe_loan_form" enctype="multipart/form-data">
+  <form id="tribe_loan_form" method="POST" name="tribe_loan_form" >
   {{ csrf_field() }}
-  	<div class="container">
-  	<h2 class="align-center loan-head">Tribe</h2>
-  	<div class="col-md-12 pad1 white-bg box-shadow">
+    <div class="container">
+    <h2 class="align-center loan-head">Tribe</h2>
+    <div class="col-md-12 pad1 white-bg box-shadow">
 
    <ul class="nav nav-tabs">
     <li class="active"><a data-toggle="tab" href="#main">BASIC DETAIL</b></a></li>
     <li><a data-toggle="tab" href="#main1"><b>LOAN DETAIL</b></a></li>
     <li><a data-toggle="tab" href="#main2"><b>PERSONAL DETAIL</b></a></li>
     <li><a data-toggle="tab" href="#main3"><b>BUSINESS DETAIL</b></a></li>
-    <li><a data-toggle="tab" href="#main4"><b>DOCUMENT</b></a></li>
     <li><a data-toggle="tab" href="#main5"><b>ONLINE ID</b></a></li>
     <li><a data-toggle="tab" href="#main6"><b>REFERENCE</b></a></li>
+    <li><a data-toggle="tab" href="#main4"><b>DOCUMENT</b></a></li>
     <li><a data-toggle="tab" href="#main7"><b>BANK STATEMENT</b></a></li>
   </ul>
 
   <div class="tab-content">
     <div id="main" class="tab-pane fade in active" ng-app="First_tab">
       
-  	<div class="col-md-12">
+    <div class="col-md-12">
     <h3 class="mrg-top">Partner Details</h3>
   <hr>
     <div class="col-md-3"><p>Are you a Tribe Partner?</p></div>
@@ -51,7 +51,7 @@
     <div class="col-md-8">
     <input type="email" name="owner_email" id="owner_email" ng-model="owner_email" class="form-control form-group" required />
     <p ng-show="tribe_loan_form.owner_email.$error.email" class="error">Invalid Email address</p>
-     <a class="btn btn-primary btn-outline with-arrow" >Next<i class="icon-arrow-right"></i></a>
+     <a class="btn btn-primary btn-outline with-arrow go_to_next" >Next<i class="icon-arrow-right"></i></a>
     </div>
     
 
@@ -60,7 +60,7 @@
     </div>
     <div id="main1" class="tab-pane fade" ng-app="second_tab">
       
-  	<h3 class="mrg-top">Loan Details</h3>
+    <h3 class="mrg-top">Loan Details</h3>
   <hr>
     <div class="col-md-3"><p>Loan Amount (Rs.)</p></div>
     <div class="col-md-8"><p>
@@ -79,14 +79,14 @@
       <option value="{{$value}}"><?php echo $key;?></option>
       @endforeach
     </select>
-    <a class="btn btn-primary btn-outline with-arrow  ">Next<i class="icon-arrow-right"></i></a>
+    <a class="btn btn-primary btn-outline with-arrow go_to_next">Next<i class="icon-arrow-right"></i></a>
     <a class="btn btn-primary btn-outline with-arrow  ">Back<i class="icon-arrow-right"></i></a>
     </div>
     </div>
     
     <div id="main2" class="tab-pane fade">
       
-  	<h3 class="mrg-top">Personal Details</h3>
+    <h3 class="mrg-top">Personal Details</h3>
   <hr>
     <div class="col-md-3"><p>First Name*</p></div>
     <div class="col-md-8">
@@ -103,7 +103,10 @@
    <div class="col-md-8"><input type="text" pattern="[789][0-9]{9}" maxlength="10" name="mobile" id="mobile" class="form-control form-group" required /></div>
     
     <div class="col-md-3"><p>Email</p></div>
-    <div class="col-md-8"><input type="email" name="email" id="email" class="form-control form-group" required="" /></div>
+    <div class="col-md-8">
+    <input type="email" name="email" id="email" class="form-control form-group" required/>
+    <p ng-show="tribe_loan_form.email.$error.email" class="error">Invalid Email address</p>
+    </div>
     
     <div class="col-md-3"><p>Address*</p></div>
     <div class="col-md-8"><textarea class="form-control form-control mrg-btm" colspan="2" name="address" id="address"></textarea></div>
@@ -112,7 +115,10 @@
     <div class="col-md-8"><input type="text" name="aadhar_no" id="aadhar_no" class="form-control form-group" required="" /></div>
     
     <div class="col-md-3"><p>Owner Email*</p></div>
-    <div class="col-md-8"><input type="email" name="owner_email_personal" id="owner_email_personal" class="form-control form-group" required="" /></div>
+    <div class="col-md-8">
+    <input type="email" name="owner_email_personal" id="owner_email_personal" class="form-control form-group" required="" />
+    <p ng-show="tribe_loan_form.owner_email_personal.$error.email" class="error">Invalid Email address</p>
+    </div>
     
     <div class="col-md-3"><p>Date of Birth*</p></div>
     <div class="col-md-8"><input type="date" name="dob" id="dob" class="form-control form-group" required="" /></div>
@@ -141,7 +147,7 @@
       <option value="{{$value}}"><?php echo $key;?></option>
       @endforeach
     </select>
-    <a class="btn btn-primary btn-outline with-arrow  ">Next<i class="icon-arrow-right"></i></a>
+    <a class="btn btn-primary btn-outline with-arrow  go_to_next">Next<i class="icon-arrow-right"></i></a>
     <a class="btn btn-primary btn-outline with-arrow  ">Back<i class="icon-arrow-right"></i></a>
     </div>
     
@@ -285,25 +291,78 @@
     <div class="col-md-8 sec">
      <select class="drop-arr" name="loan_purpose" id="loan_purpose">
        <option disabled selected>Select Loan Purpose</option>
-  		 <option value="1">inventory rotation</option>
-  		 <option value="1">product differentiation</option>
-  		 <option value="1">expansion</option>
-  		 <option value="1">launch of new product</option>
-  		 <option value="1">working capital</option>
-  		 <option value="1">others</option>
+       <option value="1">inventory rotation</option>
+       <option value="1">product differentiation</option>
+       <option value="1">expansion</option>
+       <option value="1">launch of new product</option>
+       <option value="1">working capital</option>
+       <option value="1">others</option>
     </select>
     </div>
     
     <div class="col-md-3"><p>How did you Know About Us?*</p></div>
     <div class="col-md-8">
     <input type="text" name="reached_us_via" id="reached_us_via" class="form-control form-group" />
-    <a class="btn btn-primary btn-outline with-arrow  ">Next<i class="icon-arrow-right"></i></a>
+    <a class="btn btn-primary btn-outline with-arrow go_to_next ">Next<i class="icon-arrow-right"></i></a>
     <a class="btn btn-primary btn-outline with-arrow  ">Back<i class="icon-arrow-right"></i></a>
     </div>
     </div>
-    <div id="main4" class="tab-pane fade">
+    
+    <div id="main5" class="tab-pane fade">
+      <p>Providing Online Credentials of Platforms/Marketplaces/Software that you make use of in your business will help us understand your business better and make the most appropriate 
+    recommendations for Loans. This can also increase your chances of securing Loans at a lower interest rate. As a Business User, you gain free and complete access to all the insights that Tribe draws using your online credentials.</p>
+    <ul>
+     @foreach($data->aggregated_ids_details->mapping as $key=>$value)
+      <li class="pad"><input type="radio" name="online_ids" value="{{$value}}" onclick="showDiv('online_ids_{{$value}}')" /> {{$key}}</li>
+        <div class="col-sm-12" id="online_ids_{{$value}}" style="display: none;" class="extra">
+          @foreach($data->aggregated_ids_credential_details->mapping->$value as $key2=>$value2)
+           <label class="col-sm-2"> {{$value2}}:</label>
+           <input type="text" class="form-control form-group col-sm-10" name="{{$value2}}" required />
+          @endforeach
+           </div>
+     @endforeach
+      </ul>
+    
+    <a class="btn btn-primary btn-outline with-arrow go_to_next">Next<i class="icon-arrow-right"></i></a>
+    <a class="btn btn-primary btn-outline with-arrow ">Back<i class="icon-arrow-right"></i></a>
+    </div>
+    <div id="main6" class="tab-pane fade">
       
-  	<h3 class="mrg-top">KYC Identity Proof</h3>
+    <div class="col-md-12">
+    <h3 class="mrg-top">Refrence</h3><hr>
+  </div>
+    <div class="col-md-3">First Name</div>
+    <div class="col-md-8">
+    <input type="text" id="ref_first_name" name="ref_first_name" class="form-control form-group" required="" /></div>
+    
+    <div class="col-md-3">Middle Name</div>
+    <div class="col-md-8">
+    <input type="text" class="form-control form-group" name="ref_middle_name" id="ref_middle_name"/></div>
+    
+    <div class="col-md-3">Last Name</div>
+    <div class="col-md-8">
+    <input type="text" id="ref_last_name" name="ref_last_name" class="form-control form-group" required="" /></div>
+    
+    <div class="col-md-3">Mobile Number</div>
+    <div class="col-md-8">
+    <input type="text" name="ref_mobile" id="ref_mobile" class="form-control form-group"/></div>
+    
+    <div class="col-md-3">Email</div>
+    <div class="col-md-8">
+    <input type="email" name="ref_email" id="ref_email" class="form-control form-group"/></div>
+    <p ng-show="tribe_loan_form.ref_email.$error.email" class="error">Invalid Email address</p>
+   <div class="col-md-3">
+    <a class="btn btn-primary btn-outline with-arrow go_to_next ">Next<i class="icon-arrow-right"></i></a>
+    <a class="btn btn-primary btn-outline with-arrow  ">Back<i class="icon-arrow-right"></i></a>
+    </div>
+     <div class="col-md-8"> <button class="btn btn-primary btn-outline with-arrow pull-left" id="save_form_button">Save Form<i class="icon-arrow-right"></i></button></div>
+   
+    </div>
+    </form>
+    
+    <div id="main4" class="tab-pane fade">
+      <form id="kyc_form" name="kyc_form" enctype="multipart/form-data">
+    <h3 class="mrg-top">KYC Identity Proof</h3>
   <hr>
     <div class="col-md-3">Pan</div>
     <div class="col-md-8">
@@ -375,62 +434,12 @@
     <div class="col-md-3">Other Documents</div>
     <div class="col-md-8">
     <input type="file" name="doc_other" id="doc_other" class="form-control form-group no-border"/>
-     <a class="btn btn-primary btn-outline with-arrow  ">Next<i class="icon-arrow-right"></i></a>
+     <a class="btn btn-primary btn-outline with-arrow go_to_next ">Next<i class="icon-arrow-right"></i></a>
     <a class="btn btn-primary btn-outline with-arrow  ">Back<i class="icon-arrow-right"></i></a>
-    </div>
-    
-    </div>
-    <div id="main5" class="tab-pane fade">
-      <p>Providing Online Credentials of Platforms/Marketplaces/Software that you make use of in your business will help us understand your business better and make the most appropriate 
-  	recommendations for Loans. This can also increase your chances of securing Loans at a lower interest rate. As a Business User, you gain free and complete access to all the insights that Tribe draws using your online credentials.</p>
-  	<ul>
-     @foreach($data->aggregated_ids_details->mapping as $key=>$value)
-      <li class="pad"><input type="radio" name="online_ids" value="{{$value}}" onclick="showDiv('online_ids_{{$value}}')" /> {{$key}}</li>
-        <div class="col-sm-12" id="online_ids_{{$value}}" style="display: none;" class="extra">
-          @foreach($data->aggregated_ids_credential_details->mapping->$value as $key2=>$value2)
-           <label class="col-sm-2"> {{$value2}}:</label>
-           <input type="text" class="form-control form-group col-sm-10" name="{{$value2}}" required />
-          @endforeach
-           </div>
-     @endforeach
-  	  </ul>
-  	
-  	<a class="btn btn-primary btn-outline with-arrow ">Next<i class="icon-arrow-right"></i></a>
-    <a class="btn btn-primary btn-outline with-arrow ">Back<i class="icon-arrow-right"></i></a>
-    </div>
-    <div id="main6" class="tab-pane fade">
-      
-  	<div class="col-md-12">
-    <h3 class="mrg-top">Refrence</h3><hr>
-  </div>
-    <div class="col-md-3">First Name</div>
-    <div class="col-md-8">
-    <input type="text" id="ref_first_name" name="ref_first_name" class="form-control form-group" required="" /></div>
-    
-    <div class="col-md-3">Middle Name</div>
-    <div class="col-md-8">
-    <input type="text" class="form-control form-group" name="ref_middle_name" id="ref_middle_name"/></div>
-    
-    <div class="col-md-3">Last Name</div>
-    <div class="col-md-8">
-    <input type="text" id="ref_last_name" name="ref_last_name" class="form-control form-group" required="" /></div>
-    
-    <div class="col-md-3">Mobile Number</div>
-    <div class="col-md-8">
-    <input type="text" name="ref_mobile" id="ref_mobile" class="form-control form-group"/></div>
-    
-    <div class="col-md-3">Email</div>
-    <div class="col-md-8">
-    <input type="email" name="ref_email" id="ref_email" class="form-control form-group"/></div>
-    
-   <div class="col-md-3">
-    <a class="btn btn-primary btn-outline with-arrow  ">Next<i class="icon-arrow-right"></i></a>
-    <a class="btn btn-primary btn-outline with-arrow  ">Back<i class="icon-arrow-right"></i></a>
-    </div>
-     <div class="col-md-8"> <button class="btn btn-primary btn-outline with-arrow pull-left" id="save_form_button">Save Form<i class="icon-arrow-right"></i></button></div>
-   
     </div>
     </form>
+    </div>
+
     <div id="main7" class="tab-pane fade">
       <h3 class="mrg-top">Refrance</h3><hr>
 
@@ -464,7 +473,7 @@
 
   </div>
 
-  	</div>
+    </div>
   </div>
   <br>
   @include('layout.footer')
@@ -483,7 +492,6 @@
          $('#'+div).show();
         }
     }
-
     // $('form').submit(function() {
     //   var formData = new FormData(this);
     //  // console.log(formData);
@@ -544,10 +552,11 @@
     
   });
   </script>
-  <script type="text/javascript">
-  var mainApp = angular.module("First_tab", []);
-         
-         mainApp.controller('first_tab_controller', function($scope) {
-            
-         });
+ <script type="text/javascript">
+  $('.go_to_next').click(function(){
+    //console.log($(this).closest("form").attr('id'));
+    if($('#'+$(this).closest("form").attr('id')).valid()){
+      alert("valid");
+    }
+  });
   </script>

@@ -9,13 +9,13 @@
 
    <ul class="nav nav-tabs">
     <li class="active"><a data-toggle="tab" href="#main">BASIC DETAIL</b></a></li>
-    <li><a data-toggle="tab" href="#main1"><b>LOAN DETAIL</b></a></li>
-    <li><a data-toggle="tab" href="#main2"><b>PERSONAL DETAIL</b></a></li>
-    <li><a data-toggle="tab" href="#main3"><b>BUSINESS DETAIL</b></a></li>
-    <li><a data-toggle="tab" href="#main5"><b>ONLINE ID</b></a></li>
-    <li><a data-toggle="tab" href="#main6"><b>REFERENCE</b></a></li>
-    <li><a data-toggle="tab" href="#main4"><b>DOCUMENT</b></a></li>
-    <li><a data-toggle="tab" href="#main7"><b>BANK STATEMENT</b></a></li>
+    <li><a data-toggle="tab" href="#main1" class="go_to_next"><b>LOAN DETAIL</b></a></li>
+    <li><a data-toggle="tab" href="#main2" class="go_to_next"><b>PERSONAL DETAIL</b></a></li>
+    <li><a data-toggle="tab" href="#main3" class="go_to_next"><b>BUSINESS DETAIL</b></a></li>
+    <li><a data-toggle="tab" href="#main5" class="go_to_next"><b>ONLINE ID</b></a></li>
+    <li><a data-toggle="tab" href="#main6" class="go_to_next"><b>REFERENCE</b></a></li>
+    <li><a data-toggle="tab" href="#main4" class="go_to_next"><b>DOCUMENT</b></a></li>
+    <li><a data-toggle="tab" href="#main7" class="go_to_next"><b>BANK STATEMENT</b></a></li>
   </ul>
 
   <div class="tab-content">
@@ -51,7 +51,7 @@
     <div class="col-md-8">
     <input type="email" name="owner_email" id="owner_email" ng-model="owner_email" class="form-control form-group" required />
     <p ng-show="tribe_loan_form.owner_email.$error.email" class="error">Invalid Email address</p>
-     <a class="btn btn-primary btn-outline with-arrow go_to_next" >Next<i class="icon-arrow-right"></i></a>
+     <a class="btn btn-primary btn-outline with-arrow go_to_next" href="#main1" data-toggle="tab">Next<i class="icon-arrow-right"></i></a>
     </div>
     
 
@@ -64,11 +64,11 @@
   <hr>
     <div class="col-md-3"><p>Loan Amount (Rs.)</p></div>
     <div class="col-md-8"><p>
-    <input type="text" name="loan_amount" id="loan_amount" class="form-control form-group" required /></p></div>
+    <input type="text" name="loan_amount" id="loan_amount" class="form-control form-group" onkeypress="return fnAllowNumeric(event)" required /></p></div>
     
     <div class="col-md-3"><p>Loan Tenure (Months)</p></div>
     <div class="col-md-8"><p>
-    <input type="text" name="loan_tenure" id="loan_tenure" class="form-control form-group" required /></p></div>
+    <input type="text" name="loan_tenure" id="loan_tenure_tribe_loan" class="form-control form-group" required onkeypress="return fnAllowNumeric(event)" /></p></div>
     
     <div class="col-md-3"><p>Repayment Frequency</p></div>
     <div class="col-md-8 sec">
@@ -79,7 +79,7 @@
       <option value="{{$value}}"><?php echo $key;?></option>
       @endforeach
     </select>
-    <a class="btn btn-primary btn-outline with-arrow go_to_next">Next<i class="icon-arrow-right"></i></a>
+    <a class="btn btn-primary btn-outline with-arrow go_to_next" href="#main2" data-toggle="tab">Next<i class="icon-arrow-right"></i></a>
     <a class="btn btn-primary btn-outline with-arrow  ">Back<i class="icon-arrow-right"></i></a>
     </div>
     </div>
@@ -100,7 +100,7 @@
     <div class="col-md-8"><input type="text" name="last_name" id="last_name" class="form-control form-group" required="" /></div>
     
     <div class="col-md-3"><p>Mobile No*</p></div>
-   <div class="col-md-8"><input type="text" pattern="[789][0-9]{9}" maxlength="10" name="mobile" id="mobile" class="form-control form-group" required /></div>
+   <div class="col-md-8"><input type="text" pattern="[789][0-9]{9}" maxlength="10" name="mobile" id="mobile" class="form-control form-group" onkeypress="return fnAllowNumeric(event)" required /></div>
     
     <div class="col-md-3"><p>Email</p></div>
     <div class="col-md-8">
@@ -112,7 +112,7 @@
     <div class="col-md-8"><textarea class="form-control form-control mrg-btm" colspan="2" name="address" id="address"></textarea></div>
     
     <div class="col-md-3"><p>Aadhaar Number*</p></div>
-    <div class="col-md-8"><input type="text" name="aadhar_no" id="aadhar_no" class="form-control form-group" required="" /></div>
+    <div class="col-md-8"><input type="text" name="aadhar_no" id="aadhar_no" class="form-control form-group" onkeypress="return fnAllowNumeric(event)" required maxlength="12" minlength="12" /></div>
     
     <div class="col-md-3"><p>Owner Email*</p></div>
     <div class="col-md-8">
@@ -124,13 +124,14 @@
     <div class="col-md-8"><input type="date" name="dob" id="dob" class="form-control form-group" required="" /></div>
     
     <div class="col-md-3"><p>Annual Income (INR)*</p></div>
-    <div class="col-md-8"><input type="number" name="annual_income" id="annual_income" class="form-control form-group"/></div>
+    <div class="col-md-8">
+    <input type="number" name="annual_income" onkeypress="return fnAllowNumeric(event)" id="annual_income" class="form-control form-group"/></div>
     
     <div class="col-md-3"><p>Education*</p></div>
     <div class="col-md-8 sec">
       <select class="drop-arr" name="education" id="education">
      <option disabled selected>Select</option>
-      @foreach($data->personal_details[1]->mapping as $key=>$value)
+      @foreach($data->personal_details[0]->mapping as $key=>$value)
       
       <option value="{{$value}}"><?php echo $key;?></option>
       @endforeach
@@ -142,12 +143,12 @@
     <div class="col-md-8 sec">
        <select class="drop-arr" name="family_detail" id="family_detail" >
       <option disabled selected>Select</option>
-      @foreach($data->personal_details[0]->mapping as $key=>$value)
+      @foreach($data->personal_details[1]->mapping as $key=>$value)
       
       <option value="{{$value}}"><?php echo $key;?></option>
       @endforeach
     </select>
-    <a class="btn btn-primary btn-outline with-arrow  go_to_next">Next<i class="icon-arrow-right"></i></a>
+    <a class="btn btn-primary btn-outline with-arrow  go_to_next"  href="#main3" data-toggle="tab">Next<i class="icon-arrow-right"></i></a>
     <a class="btn btn-primary btn-outline with-arrow  ">Back<i class="icon-arrow-right"></i></a>
     </div>
     
@@ -157,7 +158,7 @@
   <hr>
     <div class="col-md-3"><p>Employees Count*</p></div>
     <div class="col-md-8">
-    <input type="text" class="form-control form-group" name="employee_count" id="employee_count"/>
+    <input type="text" class="form-control form-group" name="employee_count" id="employee_count" onkeypress="return fnAllowNumeric(event)" />
     </div>
     
     <div class="col-md-3"><p>Registration Details*</p></div>
@@ -303,7 +304,7 @@
     <div class="col-md-3"><p>How did you Know About Us?*</p></div>
     <div class="col-md-8">
     <input type="text" name="reached_us_via" id="reached_us_via" class="form-control form-group" />
-    <a class="btn btn-primary btn-outline with-arrow go_to_next ">Next<i class="icon-arrow-right"></i></a>
+    <a class="btn btn-primary btn-outline with-arrow go_to_next"  href="#main5" data-toggle="tab">Next<i class="icon-arrow-right"></i></a>
     <a class="btn btn-primary btn-outline with-arrow  ">Back<i class="icon-arrow-right"></i></a>
     </div>
     </div>
@@ -312,18 +313,20 @@
       <p>Providing Online Credentials of Platforms/Marketplaces/Software that you make use of in your business will help us understand your business better and make the most appropriate 
     recommendations for Loans. This can also increase your chances of securing Loans at a lower interest rate. As a Business User, you gain free and complete access to all the insights that Tribe draws using your online credentials.</p>
     <ul>
+   
      @foreach($data->aggregated_ids_details->mapping as $key=>$value)
       <li class="pad"><input type="radio" name="online_ids" value="{{$value}}" onclick="showDiv('online_ids_{{$value}}')" /> {{$key}}</li>
         <div class="col-sm-12" id="online_ids_{{$value}}" style="display: none;" class="extra">
           @foreach($data->aggregated_ids_credential_details->mapping->$value as $key2=>$value2)
            <label class="col-sm-2"> {{$value2}}:</label>
-           <input type="text" class="form-control form-group col-sm-10" name="{{$value2}}" required />
+           <input type="text" class="form-control form-group col-sm-10" name="online_ids_array[{{$value}}][<?php echo $value2?>]" required />
+           
           @endforeach
            </div>
      @endforeach
       </ul>
     
-    <a class="btn btn-primary btn-outline with-arrow go_to_next">Next<i class="icon-arrow-right"></i></a>
+    <a class="btn btn-primary btn-outline with-arrow go_to_next"  href="#main6" data-toggle="tab">Next<i class="icon-arrow-right"></i></a>
     <a class="btn btn-primary btn-outline with-arrow ">Back<i class="icon-arrow-right"></i></a>
     </div>
     <div id="main6" class="tab-pane fade">
@@ -345,14 +348,14 @@
     
     <div class="col-md-3">Mobile Number</div>
     <div class="col-md-8">
-    <input type="text" name="ref_mobile" id="ref_mobile" class="form-control form-group"/></div>
+    <input type="text" name="ref_mobile" id="ref_mobile" class="form-control form-group" maxlength="10" onkeypress="return fnAllowNumeric(event)"/></div>
     
     <div class="col-md-3">Email</div>
     <div class="col-md-8">
     <input type="email" name="ref_email" id="ref_email" class="form-control form-group"/></div>
     <p ng-show="tribe_loan_form.ref_email.$error.email" class="error">Invalid Email address</p>
    <div class="col-md-3">
-    <a class="btn btn-primary btn-outline with-arrow go_to_next ">Next<i class="icon-arrow-right"></i></a>
+    <a class="btn btn-primary btn-outline with-arrow go_to_next"  href="#main4" data-toggle="tab">Next<i class="icon-arrow-right"></i></a>
     <a class="btn btn-primary btn-outline with-arrow  ">Back<i class="icon-arrow-right"></i></a>
     </div>
      <div class="col-md-8"> <button class="btn btn-primary btn-outline with-arrow pull-left" id="save_form_button">Save Form<i class="icon-arrow-right"></i></button></div>
@@ -370,7 +373,8 @@
     </div>
     
     <div class="col-md-3">Aadhaar</div>
-    <div class="col-md-8"><input type="file" name="doc_aadhar" id="doc_aadhar" class="form-control form-group no-border"/></div>
+    <div class="col-md-8">
+    <input type="file" name="doc_aadhar"  id="doc_aadhar" class="form-control form-group no-border"/></div>
     
     <div class="col-md-3">Driving License </div>
     <div class="col-md-8">
@@ -514,19 +518,18 @@
     // });
     $("#save_form_button").click(function(){
        event.preventDefault(); 
-    $.ajax({
-      url:"{{URL::to('save-tribe-form')}}",
-      data:new FormData($("#tribe_loan_form")[0]),
-      dataType:'json',
-      async:false,
-      type:'post',
-      processData: false,
-      contentType: false,
-      success:function(response){
-        console.log(response);
-      },
+       if(! $('#tribe_loan_form').valid()){
+          return false;
+       }
+    $.ajax({  
+             type: "POST",  
+             url: "{{URL::to('save-tribe-form')}}",
+             data : $('#tribe_loan_form').serialize(),
+             success: function(msg){
+               console.log(msg);  
+                  } 
+          });
     });
- });
   </script>
   <script type="text/javascript">
   $('#registration_detail').change(function() {
@@ -556,7 +559,9 @@
   $('.go_to_next').click(function(){
     //console.log($(this).closest("form").attr('id'));
     if($('#'+$(this).closest("form").attr('id')).valid()){
-      alert("valid");
+      console.log("valid_tab");
+    }else{
+      //return false;
     }
   });
   </script>

@@ -28,7 +28,7 @@ class tribeController extends CallApiController
 	public function save_tribe_form(Request $req){
 	
 	$data=$req->all();
-
+	try{
 	//company_address
 	// doc_pan doc_aadhar doc_dl doc_passport doc_voter doc_electricity_bill doc_leave_license doc_reg_certification doc_tax_registration doc_comapny_it_returns doc_company_pan doc_vat_return doc_it_returns doc_other		
 			// $documents_array = array('docpan','doc_aadhar','doc_dl','doc_passport','doc_voter','doc_electricity_bill','doc_leave_license','doc_reg_certification','doc_tax_registration','doc_comapny_it_returns','doc_company_pan','doc_vat_return','doc_it_returns','doc_other');
@@ -54,8 +54,7 @@ class tribeController extends CallApiController
 				$business_pan=isset($data['company_pan_card'])?$data['company_pan_card']:$data['business_run_by_pan_div'];
 				$data['online_sale_channel']=isset($data['online_sale_channel'])?$data['online_sale_channel']:"";
 				$id=$data['online_ids'];
-				
-				print_r($data['online_ids_array']);exit();
+				$data['online_credential']=(json_encode($data['online_ids_array'][$id]));
 				$data['middle_name']=isset($data['middle_name'])?$data['middle_name']:'""';
 				$data['ownership']=isset($data['ownership'])?$data['ownership']:0;
 				$data['agent_name']=isset($data['agent_name'])?$data['agent_name']:'""';
@@ -67,7 +66,7 @@ class tribeController extends CallApiController
 				$data['online_sale_channel']=isset($data['online_sale_channel'])?$data['online_sale_channel']:'""';
 				$data['business_run_by']=isset($data['business_run_by'])?$data['business_run_by']:'""';
 				$data['business_run_by_pan_div']=isset($data['business_run_by_pan_div'])?$data['business_run_by_pan_div']:'""';
-				print_r($data);exit();
+				//print_r($data);exit();
 				$post_data='{"agentname":"'.$data['agent_name'].'",
 		"business_details":{
 			"address":{
@@ -98,12 +97,7 @@ class tribeController extends CallApiController
 		"name":"'.$data['name'].'",
 		"online_ids":[{
 			"aggregated_type":'.$data['online_ids'].',
-			"credential":{
-				"access_key":"'.$data['access_key'].'",
-				"secret_key":"'.$data['secret_key'].'",
-				"username":"'.$data['username'].'",
-				"vendor_id":"'.$data['vendor_id'].'"
-			}
+			"credential":'.$data['online_credential'].'
 		}],
 		"owner_details":[{
 			"email":"'.$data['owner_email'].'",
@@ -144,6 +138,9 @@ class tribeController extends CallApiController
 		        return 'false';
 		    }
 	      
+	    }catch(/Exception $ee){
+	    	print_r($ee);
 	    }
+	}
 	
 }

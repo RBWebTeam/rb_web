@@ -28,7 +28,7 @@ class tribeController extends CallApiController
 	public function save_tribe_form(Request $req){
 	
 	$data=$req->all();
-	try{
+
 	//company_address
 	// doc_pan doc_aadhar doc_dl doc_passport doc_voter doc_electricity_bill doc_leave_license doc_reg_certification doc_tax_registration doc_comapny_it_returns doc_company_pan doc_vat_return doc_it_returns doc_other		
 			// $documents_array = array('docpan','doc_aadhar','doc_dl','doc_passport','doc_voter','doc_electricity_bill','doc_leave_license','doc_reg_certification','doc_tax_registration','doc_comapny_it_returns','doc_company_pan','doc_vat_return','doc_it_returns','doc_other');
@@ -55,6 +55,7 @@ class tribeController extends CallApiController
 				$data['online_sale_channel']=isset($data['online_sale_channel'])?$data['online_sale_channel']:"";
 				$id=$data['online_ids'];
 				$data['online_credential']=(json_encode($data['online_ids_array'][$id]));
+
 				$data['middle_name']=isset($data['middle_name'])?$data['middle_name']:'""';
 				$data['ownership']=isset($data['ownership'])?$data['ownership']:0;
 				$data['agent_name']=isset($data['agent_name'])?$data['agent_name']:'""';
@@ -97,7 +98,12 @@ class tribeController extends CallApiController
 		"name":"'.$data['name'].'",
 		"online_ids":[{
 			"aggregated_type":'.$data['online_ids'].',
-			"credential":'.$data['online_credential'].'
+			"credential":{
+				"access_key":"'.$data['access_key'].'",
+				"secret_key":"'.$data['secret_key'].'",
+				"username":"'.$data['username'].'",
+				"vendor_id":"'.$data['vendor_id'].'"
+			}
 		}],
 		"owner_details":[{
 			"email":"'.$data['owner_email'].'",
@@ -127,8 +133,8 @@ class tribeController extends CallApiController
 		"repayment_frequency":'.$data['repayment_frequency'].',
 		"secret":"'.$data['agent_name'].'"}';
 
-			print_r($post_data);exit();
-			$url = "http://api.rupeeboss.com/BankAPIService.svc/createTribeLoan";
+		print_r($post_data);exit();
+		    $url = "http://api.rupeeboss.com/BankAPIService.svc/createTribeLoan";
 		    $result=$this->call_json_data_api($url,$post_data);
 		    $http_result=$result['http_result'];
 		    $error=$result['error'];
@@ -138,9 +144,6 @@ class tribeController extends CallApiController
 		        return 'false';
 		    }
 	      
-	    }catch(/Exception $ee){
-	    	print_r($ee);
 	    }
-	}
 	
 }

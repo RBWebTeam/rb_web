@@ -8,8 +8,9 @@
  
  <div class="col-md-12 white-bg pad">
  <h3 class="text-center loan-head">Unsecured Business Loan</h3>
-<div class="col-md-8">
-<form name='business_loan_process_form' id='business_loan_process_form' action={{URL::to('loan-submit')}} method="POST">  
+<div class="col-md-8" id="mod">
+<form name='business_loan_process_form' id='business_loan_process_form' action={{URL::to('loan-submit')}} method="POST">
+{{ csrf_field() }}  
  <!-- <img src="{{URL::to('images/9.png')}}" alt="Tribe Logo" class="img-responsive" /> -->
  <div class="col-md-6">
   <div class="col-xs-12">
@@ -28,19 +29,22 @@
 		<div class="col-xs-12">
 	   <div class="btn-grp pad status" data-toggle="buttons">
 	   <center><div class="type-cover"><span>Business Type</span></div></center>
-      <span class="btn btn-default circle outer-brd active"><input type="radio" name="emp_detail" value="Self Employed Non-Professional (SENP)">Self Employed Non-Professional (SENP)</span>
-      <span class="btn btn-default circle outer-brd"><input type="radio" name="emp_detail" value="Self Employed Professional (SEP)">Self Employed Professional (SEP)</span>
+      <span class="btn btn-default circle outer-brd active"><input type="radio" name="emp_detail" value="1">Self Employed Non-Professional (SENP)</span>
+      <span class="btn btn-default circle outer-brd"><input type="radio" name="emp_detail" value="2">Self Employed Professional (SEP)</span>
 
       </div>
 		</div>
 		
 		<div class="col-xs-6 form-padding">
-     <input type="text" class="form-input-new form-control" name="loanamount" id="loanamount" placeholder="Loan Amount" onkeypress="return isNumberKey(event)" maxlength="9" minlength="9" required>
+     <input type="text" class="form-input-new form-control" name="loan_amount" id="loan_amount" placeholder="Loan Amount" onkeypress="return isNumberKey(event)"  required>
 	</div>
 	<div class="col-xs-6 form-padding">
      <input class="form-input-new form-control" type="text" id="pan_no" name="pan_no" oninput="pan_card('pan_no')" maxlength="10" minlength="10"  placeholder="Pan No" required>
      <div id="pan_number" style="display:none;color: red;">Oops.Please Enter Valid Pan Number.!!</div>
 	</div>
+  <div class="col-xs-6 form-padding">
+     <input type="text" class="form-input-new form-control lastReporteddate1" name="applicant_dob" id="applicant_dob" placeholder="Date Of Birth"   required>
+  </div>
 <div class="loan-tenure">
   <center>
     <div class="type-cover">
@@ -53,7 +57,7 @@
     
                               <div  id="unranged-value" value="" style="width:100%; height:10px;"></div>
     </div>
-    <input  type="hidden" id="loan_tenure" name="loan_tenure" value="5"  />
+    <input  type="hidden" id="loan_tenure" name="loan_tenure" value="3"  />
     </div>
   </div>
   
@@ -99,7 +103,7 @@
 
 			
 <div class="col-xs-6 form-padding"> 
-     <input type="name" class="form-input-new form-control" placeholder="Interest Paid On Bank Loans" step="0.01" min="0" onkeypress="return isNumberKey(event)" required>
+     <input type="name" class="form-input-new form-control" placeholder="Interest Paid On Bank Loans" step="0.01" min="0" name="interest_paid" id="interest_paid" onkeypress="return isNumberKey(event)" required>
 	</div>
 	<div class="col-xs-6 form-padding"> 
 
@@ -147,7 +151,7 @@
 	 </select>
 	</div>
 	<div class="col-xs-6 form-padding">
-     <input type="text" class="form-input-new form-control" name="tenure" id="tenure" placeholder="Tenure"  onkeypress="return isNumberKey(event)" minlength="2" maxlength="2" required>
+     <input type="text" class="form-input-new form-control" name="no_of_emi_paid" id="no_of_emi_paid" placeholder="No Of EMI Paid"  onkeypress="return isNumberKey(event)" minlength="2" maxlength="2" required>
 	</div>
   </div>
 	<!-- <button class="btn btn-primary btn-outline top-mrg">Add Other Bank Existing EMI</button> -->
@@ -238,10 +242,10 @@
       <div id="collapse2" class="panel-collapse collapse">
         <div class="panel-body">
 		   <div class="scenario">
-								<div class="col-xs-12 pad-no scenario-active"><a class="scenario-1 btn"><input type="radio" name="Status" id="option1"  class="radio1" checked >Type 1</a></div>
-								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="Status" id="option1" class="radio1">Type 2</a></div>
-								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="Status" id="option1" class="radio1">Type 3</a></div>
-								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="Status" id="option1" class="radio1">Type 4</a></div>
+								<div class="col-xs-12 pad-no scenario-active"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_1"  class="radio1" checked >Type 1</a></div>
+								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_2" class="radio1">Type 2</a></div>
+								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_3" class="radio1">Type 3</a></div>
+								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Type 4</a></div>
 								
 							</div>
 		</div>
@@ -250,7 +254,7 @@
     <div class="panel panel-default">
       <div class="panel-heading">
         <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion1" href="#collapse3">DATE OF INCORPORATION <i class="icon-plus pull-right more-less"></i></a>
+          <a data-toggle="collapse" data-parent="#accordion1" href="#collapse3">COMPANY'S DATE OF INCORPORATION <i class="icon-plus pull-right more-less"></i></a>
 		 
         </h4>
       </div>
@@ -350,9 +354,9 @@
 
         <div> 
           <br>
-         <a id="apply_new" type="button" class="btn btn-info" title="Experience New Digital Era In Loans">Apply Now</a>
-         <button id="eligibility" class="btn btn-info" title="See Bankwise Eligibility And Apply Amongst Best Bank">Eligibility</button>
-         <button type="button" class="btn btn-info"  id="call_rm" name="call_rm" data-toggle="modal" data-target="#Modal" title="Call For RM(Single Day Process)">Call RM</button>
+         <a id="apply_new" type="button" class="btn btn-info" title="Experience New Digital Era In Loans">Apply Digitally</a>
+         <button id="eligibility" class="btn btn-info" title="See Bankwise Eligibility And Apply Amongst Best Bank">Check Bankwise Eligibility</button>
+         <button type="button" class="btn btn-info"  id="call_rm" name="call_rm" data-toggle="modal" data-target="#Modal" title="Call For RM(Single Day Process)">Call Manager</button>
          
         </div>
         
@@ -361,7 +365,7 @@
     <!--   </form> -->
 
     </div> 
-    <p id="err" style="display:none;" ><span style="color: red;font-size: 20px;display: block; text-align: center;">No Quotes Found.</span></p> 
+    <p id="err" style="display:none;" ><span style="color: red;font-size: 20px;display: block; text-align: center;">Sorry, We are unable to process your request. Will get back to you in future.</span></p> 
   </div> 
 	
 	
@@ -370,6 +374,8 @@
 	</div>
 	</aside>
 	</div>
+   <div id ="test123" class="col-md-8"></div>
+  
 @include('layout.footer')
 @include('layout.script')
 
@@ -390,7 +396,7 @@
 
 <script type="text/javascript">
     var d = new Date();
-    var year = d.getFullYear() - 18 ;
+    var year = d.getFullYear()  ;
     d.setFullYear(year);
 
     $(".lastReporteddate1").datepicker({ dateFormat: "yy-mm-dd",
@@ -482,7 +488,7 @@ $(".btn-primary").click(function(e){
                     $('#processfee').val(processingfee);
                     var Bank_id = msg.Bank_Id;
                     $('#bank').val(Bank_id);
-                     var url = "apply-lead-online?appid=0&qoutid="+quote+"&BankId="+Bank_id+"&product=9&processing_fee="+processingfee+"&loanamout="+loan_eligible+"&roi_type="+roi+"";
+                     var url = "apply-lead-online?appid=0&qoutid="+quote+"&BankId="+Bank_id+"&product=13&processing_fee="+processingfee+"&loanamout="+loan_eligible+"&roi_type="+roi+"";
                      $("#apply_new").attr("href", url);
                       $('#err').hide();
                       $('#apply_new').show();
@@ -520,4 +526,13 @@ $(document).ready(function(){
         $("#emp_detail").clone().appendTo("#new_div");
     });
 });
+</script>
+
+<script type="text/javascript">
+$("#eligibility").click(function() {
+  $(window).scrollTop($('#test123').offset().top-20);
+});
+
+
+
 </script>

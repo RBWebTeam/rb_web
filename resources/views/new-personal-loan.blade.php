@@ -23,7 +23,7 @@
       {{ csrf_field() }}
       <input type="hidden" id="product" name="product_name" value=9>
    <!--  <div id ="test123" class="col-md-8"></div> -->
-  <div class="col-md-8">
+  <div class="col-md-8"  id="mod">
  <!--  <h3 class="main-header">Genral Information</h3> -->
 <center><div class="type-cover"><span>PURPOSE OF LOAN</span></div></center>
 
@@ -42,9 +42,9 @@
 
 
             
-            <div class="col-xs-4 form-padding">
+            <!-- <div class="col-xs-4 form-padding">
      <input type="text" name="custom_id" id="custom_id" class="form-input-new form-control" placeholder="Existing Custom Id if Any" onkeypress="return isNumberKey(event)" >
-  </div>
+  </div> -->
   <div class="col-xs-4 form-padding">
      <input type="text" name="loan_amount" id="loan_amount" class="form-input-new form-control" placeholder="Loan Required" onkeypress="return isNumberKey(event)" maxlength="10" required="">
   </div>
@@ -176,9 +176,9 @@
 
         <div> 
           
-         <a id="apply_new" type="button" class="btn btn-info" title="Experience New Digital Era In Loans">Apply Now</a>
-         <button id="eligibility" class="btn btn-info" title="See Bankwise Eligibility And Apply Amongst Best Bank">Eligibility</button>
-         <button type="button" class="btn btn-info"  id="call_rm" name="call_rm" data-toggle="modal" data-target="#Modal" title="Call For RM(Single Day Process)">Call RM</button>
+         <a id="apply_new" type="button" class="btn btn-info" title="Experience New Digital Era In Loans">Apply Digitally</a>
+         <button id="eligibility" class="btn btn-info" title="See Bankwise Eligibility And Apply Amongst Best Bank">Check Bankwise Eligibility</button>
+         <button type="button" class="btn btn-info"  id="call_rm" name="call_rm" data-toggle="modal" data-target="#Modal" title="Call For RM(Single Day Process)">Call Manager</button>
          
         </div>
         <br>
@@ -187,7 +187,7 @@
     <!--   </form> -->
 
     </div> 
-    <p id="err" style="display:none;" ><span style="color: red;font-size: 20px;display: block; text-align: center;">No Quotes Found.</span></p> 
+    <p id="err" style="display:none;" ><span style="color: red;font-size: 20px;display: block; text-align: center;">Sorry, We are unable to process your request. Will get back to you in future.</span></p> 
   </div> 
    </aside>
    

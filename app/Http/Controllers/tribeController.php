@@ -19,15 +19,15 @@ class tribeController extends CallApiController
 	    $temp_data=json_decode(json_decode($http_result))->response;
 	    $temp=json_decode(json_encode($temp_data));
 	     print "<pre>";
-	    print_r($temp);exit();
+	    // print_r($temp);exit();
 	    foreach ($temp as $key => $value) {
 
 	    	$sata[$key]=$value;
 	    	$length=sizeof($sata[$key]);
+	    	print_r($length);
 	    	if($length>1){
     		    	//print_r($sata[$key]);exit();
     		    	for($i=0;$i<$length;$i++){
-    		    		print_r("i is ".$i);
     		    		print_r($sata[$key][$i]);
     		    	}
 	    	}else{

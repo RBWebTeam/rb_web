@@ -1,3 +1,9 @@
+
+
+
+ <?php print "<pre>"; print_r($data['aggregated_ids_credentials']);?>
+
+<?php exit();?>
 @include('layout.header')
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
   <div id="fh5co-hero" ng-app="">
@@ -74,7 +80,7 @@
     <div class="col-md-8 sec">
     <select class="drop-arr" name="repayment_frequency" id="repayment_frequency" required>
     <option disabled selected>Select</option>
-    @foreach($data->loan_details[0]->mapping as $key=>$value)
+    @foreach($data['repayment_frequency'] as $key=>$value)
       
       <option value="{{$value}}"><?php echo $key;?></option>
       @endforeach
@@ -131,7 +137,7 @@
     <div class="col-md-8 sec">
       <select class="drop-arr" name="education" id="education">
      <option disabled selected>Select</option>
-      @foreach($data->personal_details[0]->mapping as $key=>$value)
+      @foreach($data['education'] as $key=>$value)
       
       <option value="{{$value}}"><?php echo $key;?></option>
       @endforeach
@@ -143,7 +149,7 @@
     <div class="col-md-8 sec">
        <select class="drop-arr" name="family_detail" id="family_detail" >
       <option disabled selected>Select</option>
-      @foreach($data->personal_details[1]->mapping as $key=>$value)
+      @foreach($data['family_details'] as $key=>$value)
       
       <option value="{{$value}}"><?php echo $key;?></option>
       @endforeach
@@ -165,7 +171,7 @@
     <div class="col-md-8 sec">
      <select class="drop-arr" name="registration_detail" id="registration_detail">
        <option disabled selected>Select</option>
-      @foreach($data->business_details[8]->mapping as $key=>$value)
+      @foreach($data['registration_details'] as $key=>$value)
       
       <option value="{{$value}}" ><?php echo $key;?></option>
       @endforeach
@@ -176,7 +182,7 @@
     <div class="col-md-8 sec"  >
      <select class="drop-arr" name="partners_count" id="partners_count">
        <option disabled selected>Select</option>
-      @foreach($data->business_details[8]->mapping as $key=>$value)
+      @foreach($data['partner_count'] as $key=>$value)
       
       <option value="{{$value}}"><?php echo $key;?></option>
       @endforeach
@@ -188,7 +194,7 @@
     <div class="col-md-8 sec"  >
      <select class="drop-arr" name="directors_count" id="directors_count">
        <option disabled selected>Select</option>
-      @foreach($data->business_details[1]->mapping as $key=>$value)
+      @foreach($data['director_count'] as $key=>$value)
       
       <option value="{{$value}}"><?php echo $key;?></option>
       @endforeach
@@ -200,7 +206,7 @@
     <div class="col-md-8 sec"  >
      <select class="drop-arr" name="business_run_by" id="business_run_by">
        <option disabled selected>Select</option>
-      @foreach($data->business_details[3]->mapping as $key=>$value)
+      @foreach($data['proprietorship_type'] as $key=>$value)
       
       <option value="{{$value}}"><?php echo $key;?></option>
       @endforeach
@@ -225,7 +231,7 @@
     <div class="col-md-8 sec">
       <select class="drop-arr" id="business_type" name="business_type">
       <option disabled selected>Select</option>
-      @foreach($data->business_details[6]->mapping as $key=>$value)
+      @foreach($data['nature_of_business'] as $key=>$value)
       
       <option value="{{$value}}"><?php echo $key;?></option>
       @endforeach
@@ -246,7 +252,7 @@
     <div class="col-md-8 sec">
       <select class="drop-arr" id="online_sale_channel" name="online_sale_channel">
       <option disabled selected>Select</option>
-      @foreach($data->business_details[0]->mapping as $key=>$value)
+      @foreach($data['online_sales_channels'] as $key=>$value)
       
       <option value="{{$value}}"><?php echo $key;?></option>
       @endforeach
@@ -259,7 +265,7 @@
     <div class="col-md-8 sec">
        <select class="drop-arr" name="turnover" id="turnover">
        <option disabled selected>Select</option>
-      @foreach($data->business_details[2]->mapping as $key=>$value)
+      @foreach($data['turnover'] as $key=>$value)
       
       <option value="{{$value}}"><?php echo $key;?></option>
       @endforeach
@@ -270,7 +276,7 @@
     <div class="col-md-8 sec">
       <select class="drop-arr" name="business_premises" id="business_premises">
        <option disabled selected>Select</option>
-      @foreach($data->business_details[7]->mapping as $key=>$value)
+      @foreach($data['ownership'] as $key=>$value)
       
       <option value="{{$value}}"><?php echo $key;?></option>
       @endforeach
@@ -281,7 +287,7 @@
     <div class="col-md-8 sec">
       <select class="drop-arr" name="selling_product" id="selling_product">
        <option disabled selected>Select</option>
-      @foreach($data->business_details[4]->mapping as $key=>$value)
+      @foreach($data['product_sell'] as $key=>$value)
       
       <option value="{{$value}}"><?php echo $key;?></option>
       @endforeach
@@ -314,10 +320,11 @@
     recommendations for Loans. This can also increase your chances of securing Loans at a lower interest rate. As a Business User, you gain free and complete access to all the insights that Tribe draws using your online credentials.</p>
     <ul>
    
-     @foreach($data->aggregated_ids_details->mapping as $key=>$value)
+     @foreach($data['aggregated_ids'] as $key=>$value)
       <li class="pad"><input type="radio" name="online_ids" value="{{$value}}" onclick="showDiv('online_ids_{{$value}}')" /> {{$key}}</li>
         <div class="col-sm-12" id="online_ids_{{$value}}" style="display: none;" class="extra">
-          @foreach($data->aggregated_ids_credential_details->mapping->$value as $key2=>$value2)
+
+          @foreach($data['aggregated_ids_credentials']->$value as $key2=>$value2)
            <label class="col-sm-2"> {{$value2}}:</label>
            <input type="text" class="form-control form-group col-sm-10" name="online_ids_array[{{$value}}][<?php echo $value2?>]" required />
            
@@ -445,13 +452,13 @@
     </div>
 
     <div id="main7" class="tab-pane fade">
-      <h3 class="mrg-top">Refrance</h3><hr>
+      <h3 class="mrg-top">Refrence</h3><hr>
 
     <div class="col-md-3">UPLOAD COMPANY BANK STATEMENTS</div>
     <div class="col-md-8 sec">
      <select class="drop-arr" name="bank_statement" id="bank_statement">
        <option disabled selected>Select</option>
-      @foreach($data->institution_details->mapping as $key=>$value)
+      @foreach($data['institution'] as $key=>$value)
       
       <option value="{{$value}}"><?php echo $key;?></option>
       @endforeach

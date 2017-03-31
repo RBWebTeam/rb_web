@@ -9,7 +9,7 @@
   <li><a data-toggle="tab" href="#menu1"><b>TERM LOAN</b></a></li>
   <li><a data-toggle="tab" href="#menu2"><b>PACKING CREDIT DOMESTIC</b></a></li>
   <li><a data-toggle="tab" href="#menu3"><b>PACKING CREDIT FOREIGN CURRENCY</b></a></li>
-  <li><a data-toggle="tab" href="#menu4"><b>PROPOSAL</b></a></li>
+  <li><a data-toggle="tab" href="#menu4" id="proposel_ID"><b>PROPOSAL</b></a></li>
 </ul>
 
 <div class="tab-content">
@@ -30,7 +30,7 @@
     <input type="text" class="form-control form-group" placeholder="Loan Amount" id="loanAmount_id" maxlength="10"  onkeypress="return isNumberKey(event)">
    <input type="text" class="form-control form-group" placeholder="Current Rate of Interest" id="interest"  maxlength="5" onkeypress="return isNumberKey(event)" >
    <input type="text" class="form-control form-group" placeholder=" Loan Tenure" value="1"  maxlength="1" id="loanTenur" onkeypress="return isNumberKey(event)" readonly>
-   <button class="btn btn-success pull-left"  id="working_capital">Submit</button>
+   <button class="btn btn-success pull-left btn_id"  id="working_capital">Submit</button>
    <div class="pull-right">
              <label><input type="radio" name="yearmonth" id="Year"  value="Year" checked="checked"> Year</label>
              <label><input type="radio" name="yearmonth" id="Month" value="Month"> Month</label>
@@ -51,10 +51,7 @@
        <p>Monthly Saving :<b class="em1"> ₹ <span id="monthlysavinf">0</span></b></p>
        <p>Total Yearly Saving :<b class="em1"> ₹ <span id="yearlysaving">0</span></b></p>
        </center>
-    <!-- <input type="text" class="form-control form-group" placeholder="Monthly Interest Paid" id="monthlyinterest" maxlength="10"  readonly/> -->
- <!--   <input type="text" class="form-control form-group" placeholder="Drop in interest Paid" id="drop_interest"  maxlength="10" readonly/>
-     <input type="text" class="form-control form-group" placeholder="Monthly Saving"   maxlength="10" readonly id="monthlysavinf"/>
-   <input type="text" class="form-control form-group" placeholder="Total Yearly Saving"  maxlength="10" disabled readonly id="yearlysaving"/> -->
+
 
    </div>
    </div>
@@ -70,11 +67,7 @@
    <input type="text" class="form-control form-group loanTenurAfter"   value="1"     maxlength="2" id="loanTenurAfter" onkeypress="return isNumberKey(event)" readonly>
 
    <div >
-  <!--  <button   class="btn btn-success pull-left afterbtn"   id="working_capitalAfter">Submit</button> -->
-    <!-- <div class="pull-right">
-             <label><input type="radio" name="yearmonth1" id="Year"  value="Year" checked="checked"> Year</label>
-             <label><input type="radio" name="yearmonth1" id="Month" value="Month"> Month</label>
-    </div> -->
+
     </div>
 
    </div>
@@ -104,7 +97,7 @@
    <input type="text" class="form-control form-group" placeholder="Loan Amount" id="termloanAmount" maxlength="10"  onkeypress="return isNumberKey(event)">
    <input type="text" class="form-control form-group" placeholder="Current Rate of Interest" id="terminterest"  maxlength="5" onkeypress="return isNumberKey(event)" >
    <input type="text" class="form-control form-group" placeholder=" Loan Tenure"  maxlength="5" id="termloanTenur" onkeypress="return isNumberKey(event)">
-   <button class="btn btn-success pull-left"  id="termloanid">Submit</button>
+   <button class="btn btn-success pull-left btn_id"  id="termloanid">Submit</button>
    <div class="pull-right">
              <label><input type="radio" name="yearmonth" id="Year"  value="Year" checked="checked"> Year</label>
              <label><input type="radio" name="yearmonth" id="Month" value="Month"> Month</label>
@@ -120,18 +113,14 @@
     <div class="border heigh-bt">
     <h3 class="emi-cal text-center">Your Saving</h3>
     <center class="my-saving">
-       <p>Loan EMI :<b class="em1"> ₹ <span id="LoanEMI">0</span></b></p>
+       <p> Old Loan EMI :<b class="em1"> ₹ <span id="LoanEMI">0</span></b></p>
        <p>Drop EMI :<b class="em1"> ₹ <span id="Drop_EMI">0</span></b></p>
         <p>New Loan EMI:<b class="em1"> ₹ <span id="NewLoanEMI">0</span></b></p>
          <p>Drop-in Interest Rate:<b class="em1">  <span id="emidrop_interest">0</span>%</b></p>
          <p>Your Savings:<b class="em1"> ₹ <span id="totalYearSaving">0</span></b></p>
        </center>
     
-   <!--  <input type="text" class="form-control form-group"placeholder="Monthly Interest Paid" id="LoanEMI"  maxlength="10"  /> -->
-  <!--   <input type="text" class="form-control form-group"placeholder="Drop in interest Paid" id="Drop_EMI"  maxlength="10" /> -->
-    <!-- <input type="text" class="form-control form-group"placeholder="Monthly Saving"  id="NewLoanEMI" maxlength="10" /> -->
- <!--   <input type="text" class="form-control form-group"placeholder="Total Yearly Saving" id="emidrop_interest"  maxlength="10"  />
-   <input type="text" class="form-control form-group"placeholder="Monthly Saving"  id="totalYearSaving" maxlength="10" /> -->
+ 
    </div>
    </div>
   </div>
@@ -146,11 +135,6 @@
    <input type="text" class="form-control form-group tloanTenurAfter" placeholder=" Loan Tenure"  maxlength="5" id="tloanTenurAfter" onkeypress="return isNumberKey(event)" readonly>
 
    <div >
-  <!--  <button   class="btn btn-success pull-left afterbtn"   id="working_capitalAfter">Submit</button> -->
-    <!-- <div class="pull-right">
-             <label><input type="radio" name="yearmonth1" id="Year"  value="Year" checked="checked"> Year</label>
-             <label><input type="radio" name="yearmonth1" id="Month" value="Month"> Month</label>
-    </div> -->
     </div>
 
    </div>
@@ -173,10 +157,7 @@
     <input type="text" class="form-control form-group dloanAmount_id" placeholder="Loan Amount" id="loanAmount_id" maxlength="10"  onkeypress="return isNumberKey(event)">
    <input type="text" class="form-control form-group dinterest" placeholder="Current Rate of Interest" id="interest"  maxlength="5" onkeypress="return isNumberKey(event)" >
 
-   <!-- <input type="text" class="form-control form-group dloanTenur" placeholder=" Loan Tenure" value="1"  maxlength="1" id="loanTenur" onkeypress="return isNumberKey(event)" readonly> -->
-
 <select id="loanTenur" class="form-control form-group dloanTenur" name="loanTenur">
-
 <option value="30">30 days</option>
 <option value="60">60 days</option>
 <option value="90">90 days</option>
@@ -184,7 +165,7 @@
  
 </select>
 
-   <button class="btn btn-success pull-left"  id="packingcreditdomesti">Submit</button>
+   <button class="btn btn-success pull-left btn_id"  id="packingcreditdomesti">Submit</button>
    <div class="pull-right">
              <label><input type="radio" name="yearmonth" id="Year"  value="Year" checked="checked"> Year</label>
              <label><input type="radio" name="yearmonth" id="Month" value="Month"> Month</label>
@@ -206,10 +187,6 @@
        <p>Saving As Per Debtor Cycle :<b class="em1"> ₹ <span id="dmonthlysavinf">0</span></b></p>
        <p>Total Yearly Saving :<b class="em1"> ₹ <span id="dyearlysaving">0</span></b></p>
        </center>
-    <!-- <input type="text" class="form-control form-group" placeholder="Monthly Interest Paid"  maxlength="10"  />
-   <input type="text" class="form-control form-group" placeholder="Drop in interest Paid"  maxlength="10" />
-     <input type="text" class="form-control form-group" placeholder="Monthly Saving"  maxlength="10" />
-   <input type="text" class="form-control form-group" placeholder="Total Yearly Saving"  maxlength="10" disabled /> -->
 
    </div>
    </div>
@@ -239,19 +216,13 @@
   <h3 class="emi-cal text-center">Current Status of Loan</h3>
     <input type="text" class="form-control form-group fcloanAmount_id" placeholder="Loan Amount" id="loanAmount_id" maxlength="10"  onkeypress="return isNumberKey(event)">
    <input type="text" class="form-control form-group fcinterest" placeholder="Current Rate of Interest" id="interest"  maxlength="5" onkeypress="return isNumberKey(event)" >
-
-<!--    <input type="text" class="form-control form-group fcloanTenur" placeholder=" Loan Tenure" value="1"  maxlength="1" id="loanTenur" onkeypress="return isNumberKey(event)" readonly>
- -->
  <select id="loanTenur" class="form-control form-group fcloanTenur" name="loanTenur">
-
 <option value="30">30 days</option>
 <option value="60">60 days</option>
 <option value="90">90 days</option>
 <option value="180">180 days</option>
- 
 </select>
-
-   <button class="btn btn-success pull-left"  id="packingcreditforeignCurr">Submit</button>
+   <button class="btn btn-success pull-left btn_id"  id="packingcreditforeignCurr">Submit</button>
 
 
    <div class="pull-right">
@@ -275,10 +246,6 @@
        <p>Saving As Per Debtor Cycle  :<b class="em1"> ₹ <span id="fcmonthlysavinf">0</span></b></p>
        <p>Total Yearly Saving :<b class="em1"> ₹ <span id="fcyearlysaving">0</span></b></p>
        </center>
-    <!-- <input type="text" class="form-control form-group" placeholder="Monthly Interest Paid"  maxlength="10"  />
-   <input type="text" class="form-control form-group" placeholder="Drop in interest Paid"  maxlength="10" />
-     <input type="text" class="form-control form-group" placeholder="Monthly Saving"  maxlength="10" />
-   <input type="text" class="form-control form-group" placeholder="Total Yearly Saving"  maxlength="10" disabled /> -->
 
    </div>
    </div>
@@ -301,35 +268,52 @@
   <div id="menu4" class="tab-pane fade">
   
   <div class="table-responsive">
- <table width="100%" class="table-striped table-bordered">
+ <table width="100%" class="table-striped table-bordered" id="table_total">
   <tr>
-    <td>&nbsp;</td>
-    <td><h3>Total Saving</h3></td>
+    <td><h3>Type Of Loan</h3></td>
+    <td><h3>Bank 1 Saving</h3></td>
+     <td><h3>Bank 2 Saving</h3></td>
+     <td><h3>Bank 3 Saving</h3></td>
      <td><h3>Total Saving</h3></td>
-      <td><h3>Total Saving</h3></td>
+
   </tr>
   <tr>
     <td class="text-left"><h3 class="text-capitalize">Working Capital</h3></td>
-    <td >Bank1 <h3><b>100</b></h3><p id="bankName0"></p></td><td>Bank2 <h3><b>100</b></h3><p id="bankName1"></p></td><td>Bank3 <h3><b>100</b></h3><p id="bankName2"></p></td></td>
+    <td id="bankName0"> </td>
+    <td id="bankName1"> </td>
+    <td id="bankName2"> </td>
+    <td id="banktotal">  </td>
+    
   </tr>
   <tr>
-    <td class="text-left"><h3 class="text-capitalize">Term Loan</h3></b></</td>
- <td >Bank1 <h3><b>100</b></h3>
- <p id="TbankName0"></p><td>Bank2 <h3><b>100</b></h3>
- <p id="TbankName1"></p></td><td>Bank3 <h3><b>100</b></h3>
- <p id="TbankName2"></p></td></td>
+   <td class="text-left"><h3 class="text-capitalize">Term Loan</h3></b> </td>
+   <td id="TbankName0">  </td>
+   <td id="TbankName1">  </td>
+   <td id="TbankName2">  </td>
+   <td id="Tbanktotal">  </td>
   </tr>
   <tr>
-    <td class="text-left"><h3 class="text-capitalize">Packing Credit Domestic</h3></b></</td>
-    <td id="domestic_ID">Bank1 <h3><b>100</b></h3></td>
-	<td id="domestic_ID">Bank2<h3><b> 100</b></h3></td>
-	<td id="domestic_ID">Bank3<h3><b> 100</b></h3></td>
+  <td class="text-left"><h3 class="text-capitalize">Packing Credit Domestic</h3></b></</td>
+  <td  id="domestic_ID">  </td>
+	<td  ></td>
+	<td  ></td>
+  <td  id="tdomestic_ID"> </td>
   </tr>
   <tr>
-    <td class="text-left" ><h3 class="text-capitalize">Packing credit foreign Currency</h3></</td>
-    <td id="currency_ID">Bank1 <h3><b>100</b></h3></td>
-	<td id="domestic_ID">Bank2 <h3><b>100</b></h3></td>
-	<td id="domestic_ID">Bank3 <h3><b>100</b></h3></td>
+  <td class="text-left" ><h3 class="text-capitalize">Packing Credit Foreign Currency</h3></</td>
+  <td id="currency_ID"> </td>
+	<td ></td>
+	<td ></td>
+  <td id="tcurrency_ID"> </td>
+  </tr>
+
+  <tr>
+    <td class="text-left"><h3 class="text-capitalize">Total:</h3></td>
+    <td id="bank1_saving"> </td>
+    <td id="bank2_saving">  </td>
+    <td id="bank3_saving"> </td>
+    <td id="bank4_saving">   </td>
+    </td>
   </tr>
 </table>
   </div>
@@ -345,7 +329,7 @@
   </div>
   <div class="col-md-2 totl-sav">
   <div class="fix-pos">
-		<div class="text-center guid nl-form-errors" id='pop1'>Total Saving<h1 class="tot-sav-txt">10000</h1></div>
+		<div class="text-center guid nl-form-errors" id='bank_ID'>Total Saving 0</div>
 
         <div class="text-center img1"><img src="{{URL::to('images/photo.jpg')}}" alt="pop_up_pic"></div>
 		</div>
@@ -357,7 +341,7 @@
 
 <script type="text/javascript">
 //var restoredSession = JSON.parse(localStorage.getItem('session'));
-//sessionStorage.clear();
+   //sessionStorage.clear();
 var array=new Array;
 var bank = {};
 var termbank = {};
@@ -379,30 +363,60 @@ var TSessionBank = function() {
  $(document).ready(function(){
     var obj= new SessionBank();
     var Tobj=new TSessionBank();
-    if( obj.bank1!=null){
-      $('#bankName0').append(obj.bank1.yearlysaving);
+    
+    var total=0,ttotal=0;
+    var bankone=0,tbankone=0;
+    var banktwo=0,tbanktwo=0;
+    var bankthree=0,tbankthree=0;
+    var session_pcd=0;
+    var session_pcfc=0;
+    if(obj.bank1!=null){
+      bankone=parseInt(obj.bank1.monthlysavinf);
+      $('#bankName0').append(bankone);
     }if(obj.bank2!=null){
-      $('#bankName1').append(obj.bank2.yearlysaving);
-
+       banktwo=parseInt(obj.bank2.monthlysavinf);
+      $('#bankName1').append(banktwo);
+     
     }if(obj.bank3!=null){
-      $('#bankName2').append(obj.bank3.yearlysaving);
-    }else{
-      
-         // $.each(bank1, function(k, v) {
-         //      $('#bankName0').append(k + " "+v);
-         //      });
+      bankthree=parseInt(obj.bank3.monthlysavinf);
+      $('#bankName2').append(bankthree);
     }
 
+       total=bankone+banktwo+bankthree;  // Working Capital total 
+        $('#banktotal').append(total);
+ 
     if(Tobj.Tbank1!=null){
-      $('#TbankName0').append(Tobj.Tbank1.totalYearSaving);
+         tbankone=parseInt(Tobj.Tbank1.Drop_EMI);
+      $('#TbankName0').append(tbankone);
     }if(Tobj.Tbank2!=null){
-      $('#TbankName1').append(Tobj.Tbank2.totalYearSaving);
+       tbanktwo=parseInt(Tobj.Tbank2.Drop_EMI);
+      $('#TbankName1').append(tbanktwo);
 
     }if(Tobj.Tbank3!=null){
-      $('#TbankName2').append(Tobj.Tbank3.totalYearSaving);
+       tbankthree=parseInt(Tobj.Tbank3.Drop_EMI);
+      $('#TbankName2').append(tbankthree);
     }
     
+
+       ttotal=tbankone+tbanktwo+tbankthree;  // Term Loan total
+      $('#Tbanktotal').append(ttotal);
  
+  session_pcd=sessionStorage.getItem('pcd');
+  session_pcfc=sessionStorage.getItem('pcfc');
+
+ 
+
+if( session_pcd!=null){
+ $('#domestic_ID').text(session_pcd);
+ $('#tdomestic_ID').text(session_pcd);
+}
+ 
+ 
+
+if( session_pcfc!=null){
+   $('#currency_ID').text(session_pcfc);
+   $('#tcurrency_ID').text(session_pcfc);
+} 
 
 
  });
@@ -517,17 +531,6 @@ $("button").click(function(e){
 }
 
        }
-      //  else if(form=='WorkingCapitalAfter'){
-      //   if(validation==1){
-      //        alert("Please Fill All Inputs");
-      //     }else{
-      //          var ID=0;
-      //          var paid=10;
-      //          var interestT1=$('#interest').val();
-      //      ajax(_token,loanAmount,interestT1,loanTenure*12,ID,paid);
-      //     }
-          
-      // }
 
 
       if(form=='term_loan_form'){
@@ -542,32 +545,28 @@ $("button").click(function(e){
              dataType:"json",
              data: {_token :_token,loanAmount:loanAmount,interest:interest,loanTenure:Tenure},
              success: function(msg){
-             // console.log(msg);return false;
-                    
+
                     var LoanEMI=msg.LoanEMI.toFixed();
                     var Drop_EMI=msg.Drop_EMI.toFixed();
-                     var NewLoanEMI=msg.NewLoanEMI.toFixed();
-                      var drop_interest=msg.drop_interest;
-                       var totalYearSaving=msg.totalYearSaving.toFixed();
+                    var NewLoanEMI=msg.NewLoanEMI.toFixed();
+                    var drop_interest=msg.drop_interest;
+                    var totalYearSaving=msg.totalYearSaving.toFixed();
 
-                  $('#LoanEMI').text(LoanEMI);
-                   $('#Drop_EMI').text(Drop_EMI);
-                    $('#NewLoanEMI').text(NewLoanEMI);
-                     $('#emidrop_interest').text(drop_interest);
-                      $('#totalYearSaving').text(totalYearSaving);
-                  //document.getElementById("LoanEMI").value= msg.LoanEMI.toFixed();
-                  // document.getElementById("Drop_EMI").value=msg.Drop_EMI.toFixed();
-                  // document.getElementById("NewLoanEMI").value=msg.NewLoanEMI.toFixed();
-                  // document.getElementById("emidrop_interest").value=msg.drop_interest.toFixed();
-                  // document.getElementById("totalYearSaving").value=msg.totalYearSaving.toFixed();
- 
-                     termbank.LoanEMI=LoanEMI;
-                     termbank.Drop_EMI=Drop_EMI;
-                     termbank.NewLoanEMI=NewLoanEMI;
-                     termbank.drop_interest=drop_interest;
-                     termbank.totalYearSaving=totalYearSaving;
-                     sessionStorage.setItem(TsessionName, JSON.stringify(termbank));
-                     TbankAppend(TsessionName,totalYearSaving);
+                       $('#LoanEMI').text(LoanEMI);
+                       $('#Drop_EMI').text(Drop_EMI);
+                       $('#NewLoanEMI').text(NewLoanEMI);
+                       $('#emidrop_interest').text(drop_interest);
+                       $('#totalYearSaving').text(totalYearSaving);
+          
+                       termbank.LoanEMI=LoanEMI;
+                       termbank.Drop_EMI=Drop_EMI;
+                       termbank.NewLoanEMI=NewLoanEMI;
+                       termbank.drop_interest=drop_interest;
+                       termbank.totalYearSaving=totalYearSaving;
+                       sessionStorage.setItem(TsessionName, JSON.stringify(termbank));
+                       TbankAppend(TsessionName,Drop_EMI); 
+
+                    
                  
              }
 
@@ -579,47 +578,6 @@ $("button").click(function(e){
 }
           
 });
-
-// function Working_capittal_fn(clicked_id){
-//         if(clicked_id=="working_capital"){
-//            var loanAmount_id=$('#loanAmount_id').val();
-//            var interest=$('#interest').val();
-//            var loanTenur=$('#loanTenur').val();
-//            var yearmonth=$('input[name=yearmonth]:checked').val();
-//            var ID=1;    
-//              if(loanAmount_id!='' && interest!=''&& loanTenur!=''){
-//                 loanTenurMonth=moyear(yearmonth,loanTenur);
-//            ajax(_token,loanAmount_id,interest,loanTenurMonth,ID);
-//        }else{
-//         alert("Please Fill All Inputs");
-
-//        }
-        
-//         }else if(clicked_id=="working_capitalAfter"){
-//            var loanAmount_id=$('#loanAmount_idAfter').val();
-//            var interest=$('#interest').val();
-//            var loanTenur=$('#loanTenurAfter').val();
-//            var yearmonth=$('input[name=yearmonth1]:checked').val();
-//            var ID=0;
-               
-//             if(loanAmount_id!='' && interest!=''&& loanTenur!=''){
-//                loanTenurMonth=moyear(yearmonth,loanTenur);
-//           ajax(_token,loanAmount_id,interest,loanTenur*12);
-//          }else{
-//                 alert("Please Fill All Inputs");
-//              }
-           
-//         }else if(clicked_id=="credit_domestic"){
-//          alert(clicked_id);
-//         }else if(clicked_id=="foreign_currency"){
-//          alert(clicked_id);
-//         }else{
-
-
-//         }
-// }
-
- 
 
 function ajax(_token,loanAmount_id,interest,loanTenurMonth,ID,paid){
     $.ajax({  
@@ -644,8 +602,10 @@ function ajax(_token,loanAmount_id,interest,loanTenurMonth,ID,paid){
                      bank.yearlysaving=totalYearSaving;
                  //  localStorage.setItem(sessionName, JSON.stringify(bank));
                      sessionStorage.setItem(sessionName, JSON.stringify(bank));
-                    bankAppend(sessionName,totalYearSaving);
+                    bankAppend(sessionName,totleMonthlysaving);
                      $('.afterbtn').show();
+
+
                    
               }
 
@@ -661,8 +621,28 @@ function ajax(_token,loanAmount_id,interest,loanTenurMonth,ID,paid){
                   document.getElementById("dmonthlysavinf").innerHTML=totleMonthlysaving;
                   document.getElementById("dyearlysaving").innerHTML=totalYearSaving;
                       
-                    $('#domestic_ID').text(totalYearSaving);
+                              var convertMonth=totleMonthlysaving;
+                            if(loanTenurMonth==6){
+                               convertMonth=(totleMonthlysaving/2).toFixed();
+                               $('#domestic_ID').text(convertMonth);
+                               $('#tdomestic_ID').text(convertMonth);
+                            }else if(loanTenurMonth==4){
+                             convertMonth=(totleMonthlysaving/3).toFixed();
+                               $('#domestic_ID').text(convertMonth);
+                               $('#tdomestic_ID').text(convertMonth);
+                            }else  if(loanTenurMonth==2){
+                              convertMonth=(totleMonthlysaving/6).toFixed();
+                               $('#domestic_ID').text(convertMonth);
+                               $('#tdomestic_ID').text(convertMonth);
+                            }
+                 //   $('#domestic_ID').text(totleMonthlysaving);
+                 //   $('#tdomestic_ID').text(totleMonthlysaving);
+                    
+
+                   // $('#bank_ID').empty().append('Total Saving'+totleMonthlysaving);
+                     sessionStorage.setItem("pcd",convertMonth);
                       
+
                      }
                   
 
@@ -677,28 +657,31 @@ function ajax(_token,loanAmount_id,interest,loanTenurMonth,ID,paid){
                   document.getElementById("fcmonthlysavinf").innerHTML=totleMonthlysaving;
                   document.getElementById("fcyearlysaving").innerHTML=totalYearSaving;
                       
-                   $('#currency_ID').text(totalYearSaving);
+                   // $('#currency_ID').text(totleMonthlysaving);
+                   // $('#tcurrency_ID').text(totleMonthlysaving);
+                    var convertMonth=totleMonthlysaving;
+                            if(loanTenurMonth==6){
+                               convertMonth=(totleMonthlysaving/2).toFixed();
+                               $('#currency_ID').text(convertMonth);
+                               $('#tcurrency_ID').text(convertMonth);
+                            }else if(loanTenurMonth==4){
+                             convertMonth=(totleMonthlysaving/3).toFixed();
+                               $('#currency_ID').text(convertMonth);
+                               $('#tcurrency_ID').text(convertMonth);
+                            }else  if(loanTenurMonth==2){
+                              convertMonth=(totleMonthlysaving/6).toFixed();
+                               $('#currency_ID').text(convertMonth);
+                               $('#tcurrency_ID').text(convertMonth);
+                            }
+
+
+                  //  $('#bank_ID').empty().append('Total Saving'+totleMonthlysaving);
+                    sessionStorage.setItem("pcfc",convertMonth);
                       
                      }
 
  
-                //  if(msg.success0==true){  
-                  
-                // var numb = msg.drop_interest.toFixed();
-                // var month = msg.monthlyinterest.toFixed();
-                // var totleMonthlysaving = msg.totleMonthlysaving.toFixed();
-                // var totalYearSaving = msg.totalYearSaving.toFixed();
-                // document.getElementById("monthlysavinf").innerHTML=totleMonthlysaving;
-                // document.getElementById("yearlysaving").innerHTML=totalYearSaving;
-                //      bank.monthlysavinf=totleMonthlysaving;
-                //      bank.yearlysaving=totalYearSaving;
-                //      sessionStorage.setItem(sessionName, JSON.stringify(bank));
-                //    bankAppend(sessionName,totalYearSaving);
-                //   $('.afterbtn').show();
-
-
-                
-                // }
+               
                 
           }         
 
@@ -707,33 +690,46 @@ function ajax(_token,loanAmount_id,interest,loanTenurMonth,ID,paid){
 }
 
 
-
+  var  totalb=0, total1=0,total2=0,total3=0;
  function bankAppend(sessionName,totalYearSaving){    //    append value on proposal
-
-                if(sessionName=='bank1'){
-                  $('#bankName0').empty();
-                    $('#bankName0').append(totalYearSaving);
+            if(sessionName=='bank1'){
+              total1=parseInt(totalYearSaving); 
+              $('#bankName0').empty().append(total1);
+             // $('#bank_ID').empty().append('Total Saving<h3 class="tot-sav-txt">'+total1+'</h3>');
+               
                 }else if(sessionName=='bank2'){
-                  $('#bankName1').empty();
-                   $('#bankName1').append(totalYearSaving);
+                    total2=parseInt(totalYearSaving);
+                   $('#bankName1').empty().append(total2);
+            // $('#bank_ID').empty().append('Total Saving<h3 class="tot-sav-txt">'+total2+'</h3>');
+             
                 }else if(sessionName=='bank3'){
-                  $('#bankName2').empty();
-                  $('#bankName2').append(totalYearSaving);
+                    total3=parseInt(totalYearSaving);
+                  $('#bankName2').empty().append(total3);
+               // $('#bank_ID').empty().append('Total Saving<h3 class="tot-sav-txt">'+total3+'</h3>');
+           
                 }
- }
+                $('#banktotal').empty().append(totalb=total1+total2+total3);     //parseInt
 
+ }        
+ 
+ var  totalb1=0, total11=0,total21=0,total31=0;
  function TbankAppend(sessionName,totalYearSaving){    //    append value on proposal
-
                 if(TsessionName=='Tbank1'){
-                  $('#TbankName0').empty();
-                    $('#TbankName0').append(totalYearSaving);
+                      total11=parseInt(totalYearSaving); 
+                    $('#TbankName0').empty().append(total11);
+                  //  $('#bank_ID').empty().append('Total Saving<h3 class="tot-sav-txt">'+total11+'</h3>');
                 }else if(TsessionName=='Tbank2'){
-                  $('#TbankName1').empty();
-                   $('#TbankName1').append(totalYearSaving);
+                   total21=parseInt(totalYearSaving);
+                   $('#TbankName1').empty().append(total21);
+                 //  $('#bank_ID').empty().append('Total Saving<h3 class="tot-sav-txt">'+total21+'</h3>');
                 }else if(TsessionName=='Tbank3'){
-                  $('#TbankName2').empty();
-                  $('#TbankName2').append(totalYearSaving);
+                  total31=parseInt(totalYearSaving);
+                  $('#TbankName2').empty().append(total31);
+                 // $('#bank_ID').empty().append('Total Saving<h3 class="tot-sav-txt">'+total31+'</h3>');
                 }
+                $('#Tbanktotal').empty().append(totalb1=total11+total21+total31);
+
+               
  }
 
 
@@ -861,6 +857,8 @@ $('.fcloanTenur').on('change', function() {   //pcfc
       var yr = amt1 / 12;
       $('#loanTenur').val(yr);
     });
+
+
     });
 
 
@@ -879,6 +877,60 @@ $( "#termloanTenur" ).keyup(function() {
   }) ;
 
 
+ $(document).ready(function(){
+  
+ $("#proposel_ID").click(function ( event ) {
+  function nancheck(rows) {
+              rows=parseInt(rows);
+           return a= isNaN(rows)==true ? 0 : rows;
+  }
+  var table=document.getElementById("table_total");
+   var  rows1=table.rows[1].cells[1].innerHTML;
+   var  rows2=table.rows[2].cells[1].innerHTML;
+   var  rows3=table.rows[3].cells[1].innerHTML;
+   var  rows4=table.rows[4].cells[1].innerHTML;
+   var total1=nancheck(rows1)+nancheck(rows2)+nancheck(rows3)+nancheck(rows4);
+   $("#bank1_saving").text(total1);
  
+    var  rows12=table.rows[1].cells[2].innerHTML;
+    var  rows22=table.rows[2].cells[2].innerHTML;
+    var  rows32=table.rows[3].cells[2].innerHTML;
+    var  rows42=table.rows[4].cells[2].innerHTML;
+    var total2=nancheck(rows12)+nancheck(rows22)+nancheck(rows32)+nancheck(rows42);
+    $("#bank2_saving").text(total2);
+  
+    var  rows13=table.rows[1].cells[3].innerHTML;
+    var  rows23=table.rows[2].cells[3].innerHTML;
+    var  rows33=table.rows[3].cells[3].innerHTML;
+    var  rows43=table.rows[4].cells[3].innerHTML;
+    var total3=nancheck(rows13)+nancheck(rows23)+nancheck(rows33)+nancheck(rows43);
+    $("#bank3_saving").text(total3);
+
+    var  rows14=table.rows[1].cells[4].innerHTML;
+    var  rows24=table.rows[2].cells[4].innerHTML;
+    var  rows34=table.rows[3].cells[4].innerHTML;
+    var  rows44=table.rows[4].cells[4].innerHTML;
+    var total4=nancheck(rows14)+nancheck(rows24)+nancheck(rows34)+nancheck(rows44);
+
+
+   // var  rows5=table.rows[5].cells[1].innerHTML;
+   // var  rows15=table.rows[5].cells[2].innerHTML;
+   // var  rows25=table.rows[5].cells[3].innerHTML;
+   // var total5=nancheck(rows5)+nancheck(rows15)+nancheck(rows25);
+
+    $("#bank4_saving").text(total4);
+    
+    
+
+     
+
+ });
+
  
+ $('.btn_id').click(function(){
+ //alert($("#bank4_saving").text());
+ 
+ });
+
+ }); 
 </script>

@@ -91,20 +91,24 @@ class FormController extends CallApiController
                 $product_id=$req['product_name'];
                 $quote_data=DB::select('call  usp_get_bank_quot_test("'.$req['property_cost'].'","'.$req['loan_tenure'].'","'.$req['loan_amount'].'","'.$req['gender'].'","'.$req['income'].'","'.$req['obligation'].'","'.$req['dob'].'","'.$req['have_co_applicant'].'","'.$req['co_applicant_income'].'","'.$req['co_applicant_obligation'].'","'.$req['turnover'].'","'.$req['profit_after_tax'].'","'.$req['depreciation'].'","'.$req['remuneration'].'","'.$req['co_applicant_turnover'].'","'.$req['co_applicant_profit_after_tax'].'","'.$req['co_applicant_depreciation'].'","'.$req['co_applicant_remuneration'].'","'.$req['emp_detail_id'].'","'.$req['co_dob'].'","'.$req['co_emp_detail'].'","'.$product_id.'")');
             }else if($req['product_name']==13){
-                // usp_get_business_loan_quot('1980-12-12',"2",20000000,1500000,200000,200000,67000,100000,18, 3,20000000)
+                // print_r($req['product_name']);exit();
+                //print_r('"'.$req['date'].'","'.$req['emp_detail'].'","'.$req['turnover'].'","'.$req['profit_after_tax'].'","'.$req['depreciation'].'","'.$req['partner_remuneration'].'","'.$req['interest_paid'].'","'.$req['emi'].'","'.$req['no_of_emi_paid'].'","'.$req['loan_tenure'].'","'.$req['loan_amount'].'"');exit();
+                // // usp_get_business_loan_quot('1980-12-12',"2",20000000,1500000,200000,200000,67000,100000,18, 3,20000000)
                 // CREATE DEFINER=`rbonline`@`%`  PROCEDURE usp_get_business_loan_quot
                 // (IN ApplicantDOB datetime,ApplicantSource int, Turnover long, ProfitAfterTax long, 
                 // Depreciation long, DirectorRemuneration long, InterestPaidToBank long, 
                 // ApplicantObligations long, NoOfEMIPaid int, LoanTenure int, LoanRequired long)
-                // $quote_data=DB::select('call  usp_get_business_loan_quot ("'.$req['dob'].'","'.$req['emp_detail_id'].'","'.$income.'"')');
+                $quote_data=DB::select('call  usp_get_business_loan_quot ("'.$req['applicant_dob'].'","'.$req['emp_detail'].'","'.$req['turnover'].'","'.$req['profit_after_tax'].'","'.$req['depreciation'].'","'.$req['partner_remuneration'].'","'.$req['interest_paid'].'","'.$req['emi'].'","'.$req['no_of_emi_paid'].'","'.$req['loan_tenure'].'","'.$req['loan_amount'].'","'.$req['date'].'")');
             }
-            //print_r($req->all());exit();
+            // print_r($quote_data);exit();
+            // print_r($req->all());exit();
              $save=new bank_quote_api_request();    
             $id=$save->save_liza($req);
             $data['quote_id']=$id;
 
             }else{
                 $quote_data =$req['product_name'];
+                // print_r($quote_data);exit();
                 return view("went-wrong");
                 //return "no quotes";
             }
@@ -124,7 +128,13 @@ class FormController extends CallApiController
                $data['product'] ="Used Car Loan";
                $data['url'] ="apply-used-car-loan";
 
+            }elseif($req['product_name'] == 13){
+                // print_r($req['product_name']);exit();
+               $data['product'] ="Business Loan";
+               $data['url'] ="new-business-loan";
+
             }
+
             
             $data['loan_amount'] =$req['loan_amount'];
             $data['quote_data'] =$quote_data;

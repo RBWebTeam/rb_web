@@ -23,7 +23,7 @@
       {{ csrf_field() }}
       <input type="hidden" id="product" name="product_name" value=9>
    <!--  <div id ="test123" class="col-md-8"></div> -->
-  <div class="col-md-8">
+  <div class="col-md-8"  id="mod">
  <!--  <h3 class="main-header">Genral Information</h3> -->
 <center><div class="type-cover"><span>PURPOSE OF LOAN</span></div></center>
 

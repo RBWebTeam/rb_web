@@ -321,6 +321,6 @@ $('#compID').show();
 
 <script type="text/javascript">
 $("#Modify_Details").click(function() {
-  $(window).scrollTop($('#personal_loan_process_form').offset().top-20);
+  $(window).scrollTop($('#mod').offset().top-20);
 });
 </script>

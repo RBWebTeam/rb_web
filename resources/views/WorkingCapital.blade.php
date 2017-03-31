@@ -312,7 +312,7 @@
     <td id="bank1_saving"> </td>
     <td id="bank2_saving">  </td>
     <td id="bank3_saving"> </td>
-    <td id="bank4_saving">   </td>
+    <td id="bank4_saving" class="tbank4_saving">   </td>
     </td>
   </tr>
 </table>
@@ -341,7 +341,7 @@
 
 <script type="text/javascript">
 //var restoredSession = JSON.parse(localStorage.getItem('session'));
-   //sessionStorage.clear();
+  //sessionStorage.clear();
 var array=new Array;
 var bank = {};
 var termbank = {};
@@ -498,6 +498,7 @@ $("button").click(function(e){
            ajax(_token,loanAmount,interest,loanTenure,ID,paid);
 }
 
+
        }else if(form=='packing_credit_foreign_currency'){
 
                if(validation==1){
@@ -576,7 +577,46 @@ $("button").click(function(e){
 }
 
 }
-          
+
+//    get row 
+// function nancheck(rows) {
+//               rows=parseInt(rows);
+//            return a= isNaN(rows)==true ? 0 : rows;
+//   }
+//   var table=document.getElementById("table_total");
+//    var  rows1=table.rows[1].cells[1].innerHTML;
+//    var  rows2=table.rows[2].cells[1].innerHTML;
+//    var  rows3=table.rows[3].cells[1].innerHTML;
+//    var  rows4=table.rows[4].cells[1].innerHTML;
+//    var total1=nancheck(rows1)+nancheck(rows2)+nancheck(rows3)+nancheck(rows4);
+//    $("#bank1_saving").text(total1);
+ 
+//     var  rows12=table.rows[1].cells[2].innerHTML;
+//     var  rows22=table.rows[2].cells[2].innerHTML;
+//     var  rows32=table.rows[3].cells[2].innerHTML;
+//     var  rows42=table.rows[4].cells[2].innerHTML;
+//     var total2=nancheck(rows12)+nancheck(rows22)+nancheck(rows32)+nancheck(rows42);
+//     $("#bank2_saving").text(total2);
+  
+//     var  rows13=table.rows[1].cells[3].innerHTML;
+//     var  rows23=table.rows[2].cells[3].innerHTML;
+//     var  rows33=table.rows[3].cells[3].innerHTML;
+//     var  rows43=table.rows[4].cells[3].innerHTML;
+//     var total3=nancheck(rows13)+nancheck(rows23)+nancheck(rows33)+nancheck(rows43);
+//     $("#bank3_saving").text(total3);
+
+//     var  rows14=table.rows[1].cells[4].innerHTML;
+//     var  rows24=table.rows[2].cells[4].innerHTML;
+//     var  rows34=table.rows[3].cells[4].innerHTML;
+//     var  rows44=table.rows[4].cells[4].innerHTML;
+//     var total4=nancheck(rows14)+nancheck(rows24)+nancheck(rows34)+nancheck(rows44);
+//     $("#bank4_saving").text(total4);
+    
+//     $('#bank_ID').empty().append('Total Saving '+$(".tbank4_saving").text());
+  
+// get row end
+      
+      
 });
 
 function ajax(_token,loanAmount_id,interest,loanTenurMonth,ID,paid){
@@ -634,14 +674,16 @@ function ajax(_token,loanAmount_id,interest,loanTenurMonth,ID,paid){
                               convertMonth=(totleMonthlysaving/6).toFixed();
                                $('#domestic_ID').text(convertMonth);
                                $('#tdomestic_ID').text(convertMonth);
+                            }else{
+                           $('#domestic_ID').text(convertMonth);
+                           $('#tdomestic_ID').text(convertMonth);
                             }
-                 //   $('#domestic_ID').text(totleMonthlysaving);
-                 //   $('#tdomestic_ID').text(totleMonthlysaving);
+                
                     
 
                    // $('#bank_ID').empty().append('Total Saving'+totleMonthlysaving);
                      sessionStorage.setItem("pcd",convertMonth);
-                      
+                         
 
                      }
                   
@@ -659,25 +701,29 @@ function ajax(_token,loanAmount_id,interest,loanTenurMonth,ID,paid){
                       
                    // $('#currency_ID').text(totleMonthlysaving);
                    // $('#tcurrency_ID').text(totleMonthlysaving);
-                    var convertMonth=totleMonthlysaving;
+                    var convertMonth1=totleMonthlysaving;
                             if(loanTenurMonth==6){
-                               convertMonth=(totleMonthlysaving/2).toFixed();
-                               $('#currency_ID').text(convertMonth);
-                               $('#tcurrency_ID').text(convertMonth);
+                               convertMonth1=(totleMonthlysaving/2).toFixed();
+                               $('#currency_ID').text(convertMonth1);
+                               $('#tcurrency_ID').text(convertMonth1);
                             }else if(loanTenurMonth==4){
-                             convertMonth=(totleMonthlysaving/3).toFixed();
-                               $('#currency_ID').text(convertMonth);
-                               $('#tcurrency_ID').text(convertMonth);
+                             convertMonth1=(totleMonthlysaving/3).toFixed();
+                               $('#currency_ID').text(convertMonth1);
+                               $('#tcurrency_ID').text(convertMonth1);
                             }else  if(loanTenurMonth==2){
-                              convertMonth=(totleMonthlysaving/6).toFixed();
-                               $('#currency_ID').text(convertMonth);
-                               $('#tcurrency_ID').text(convertMonth);
+                              convertMonth1=(totleMonthlysaving/6).toFixed();
+                               $('#currency_ID').text(convertMonth1);
+                               $('#tcurrency_ID').text(convertMonth1);
+                            }else{
+
+                              $('#currency_ID').text(convertMonth1);
+                               $('#tcurrency_ID').text(convertMonth1);
                             }
 
 
                   //  $('#bank_ID').empty().append('Total Saving'+totleMonthlysaving);
-                    sessionStorage.setItem("pcfc",convertMonth);
-                      
+                    sessionStorage.setItem("pcfc",convertMonth1);
+                   
                      }
 
  
@@ -880,6 +926,7 @@ $( "#termloanTenur" ).keyup(function() {
  $(document).ready(function(){
   
  $("#proposel_ID").click(function ( event ) {
+
   function nancheck(rows) {
               rows=parseInt(rows);
            return a= isNaN(rows)==true ? 0 : rows;
@@ -911,25 +958,11 @@ $( "#termloanTenur" ).keyup(function() {
     var  rows34=table.rows[3].cells[4].innerHTML;
     var  rows44=table.rows[4].cells[4].innerHTML;
     var total4=nancheck(rows14)+nancheck(rows24)+nancheck(rows34)+nancheck(rows44);
-
-
-   // var  rows5=table.rows[5].cells[1].innerHTML;
-   // var  rows15=table.rows[5].cells[2].innerHTML;
-   // var  rows25=table.rows[5].cells[3].innerHTML;
-   // var total5=nancheck(rows5)+nancheck(rows15)+nancheck(rows25);
-
     $("#bank4_saving").text(total4);
     
     
-
-     
-
- });
-
  
- $('.btn_id').click(function(){
- //alert($("#bank4_saving").text());
- 
+
  });
 
  }); 

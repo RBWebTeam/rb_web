@@ -18,27 +18,32 @@ class tribeController extends CallApiController
 	    }else{
 	    $temp_data=json_decode(json_decode($http_result))->response;
 	    $temp=json_decode(json_encode($temp_data));
-	     print "<pre>";
-	    // print_r($temp);exit();
+	   // print "<pre>";
+	   //	print_r($temp);exit();
 	    foreach ($temp as $key => $value) {
 
 	    	$sata[$key]=$value;
 	    	$length=sizeof($sata[$key]);
-	    	print_r($length);
+	    	
 	    	if($length>1){
     		    	//print_r($sata[$key]);exit();
     		    	for($i=0;$i<$length;$i++){
-    		    		print_r($sata[$key][$i]);
+    		    		//print_r($length);
+    		    		$test[$sata[$key][$i]->key]=$sata[$key][$i]->mapping;
+
     		    	}
 	    	}else{
-	    		print_r($sata[$key]);
+	    		//print_r($sata[$key]->key);
+	    		$test[$sata[$key]->key]=$sata[$key]->mapping;
 	    		   
 	    	}
+	    	
 	    }
-	    print "<pre>";
-	    print_r($data);exit();
-	     
-	    return view('tribe')->with($data);		
+	    //print_r($test);
+	   // exit();
+	     //$data=$test;
+	    // print_r($data);exit();
+	    return view('tribe')->with('data',$test);		
 	    }
 	    
 	}

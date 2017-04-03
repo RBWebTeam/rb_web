@@ -264,7 +264,7 @@
             </div>
 
             <div class="inp-hig">
-          <label class="form-label-new">Processing Fee</label>
+          <label class="form-label-new">Processing Fee </label>
               <input type="text" class="form-control" id="processfee" name="name" placeholder="" required class="clr-ddd" readonly />
             </div>
          <br>

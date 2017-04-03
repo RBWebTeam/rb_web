@@ -1,24 +1,7 @@
 @include('layout.header')
 <div class="container ">
  <aside id="fh5co-hero">
-<<<<<<< HEAD
- 
- <!-- <div class="col-md-12 white-bg pad1 mrg-btm box-shadow">
-<img src="{{URL::to('images/9.png')}}" alt="Tribe Logo" class="img-responsive" />
-</div> -->
- <div class="col-md-12 white-bg pad box-shadow fl-lft">
-  <!--   <div id ="test123" class="col-md-8"></div> -->
- <h2 class="align-center loan-head">Car Loan</h2>
-   <form name="car_loan_process_form" id="car_loan_process_form" action="#" method="POST" >
-      {{ csrf_field() }}
-   <input type="hidden" id="product" name="product_name" value="4">
-  <div class="col-md-8">
-  <br>
- <!--  <h3 class="main-header">Genral Information</h3> -->
-<center><div class="type-cover"><span>PURPOSE OF LOAN</span></div></center>
 
-<div class="text-center flt-lft btn-grp" data-toggle="buttons">
-=======
   
  <!-- <div class="col-md-12 white-bg pad1 mrg-btm">
 <img src="{{URL::to('images/9.png')}}" alt="Tribe Logo" class="img-responsive" />
@@ -48,7 +31,7 @@
 <center><div class="type-cover"><span>PROPERTY TYPE</span></div></center>
             
             <div class="text-center flt-lft btn-grp" data-toggle="buttons">
->>>>>>> a8d6749977b6b44ac03b8fa96ec8a550f9c9bd55
+
               <div class="scenario">
                 <div class="col-xs-4 pad-no scenario-active"><a class="scenario-1 btn"><input type="radio" name="propery_types" value="ready"  class="radio1"  checked >READY</a></div>
                 <div class="col-xs-4 pad-no"><a class="scenario-1 btn"><input type="radio" name="propery_types" value="searching" class="radio1">SEARCHING</a></div>
@@ -69,8 +52,6 @@
   <div class="col-xs-4 form-padding">
      <input type="text" class="form-input-new form-control search_city" name='city_name' placeholder="Enter City" required >
   </div>
-  
-<<<<<<< HEAD
  
  <div class="col-xs-6 form-padding">
   
@@ -84,7 +65,6 @@
 
 	</select>
   </div>
-=======
      </div>
 
    

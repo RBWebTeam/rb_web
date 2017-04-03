@@ -280,7 +280,7 @@
           <label class="form-label-new">Processing Fee</label>
               <input type="text" class="form-control" id="processfee" name="name" placeholder="" required class="clr-ddd" readonly />
             </div>
-
+      <br>
         <div> 
           
          <a id="apply_new" type="button" class="btn btn-info" title="Experience New Digital Era In Loans">Apply Now</a>

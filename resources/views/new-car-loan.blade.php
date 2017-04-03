@@ -1,19 +1,18 @@
 @include('layout.header')
 <div class="container">
  <aside id="fh5co-hero">
-  <div class="col-md-12">
-  <h2 class="align-center loan-head">Car Loan</h2>
-  </div>
+ 
  <!-- <div class="col-md-12 white-bg pad1 mrg-btm box-shadow">
 <img src="{{URL::to('images/9.png')}}" alt="Tribe Logo" class="img-responsive" />
 </div> -->
  <div class="col-md-12 white-bg pad box-shadow fl-lft">
   <!--   <div id ="test123" class="col-md-8"></div> -->
- 
+ <h2 class="align-center loan-head">Car Loan</h2>
    <form name="car_loan_process_form" id="car_loan_process_form" action="#" method="POST" >
       {{ csrf_field() }}
    <input type="hidden" id="product" name="product_name" value="4">
   <div class="col-md-8">
+  <br>
  <!--  <h3 class="main-header">Genral Information</h3> -->
 <center><div class="type-cover"><span>PURPOSE OF LOAN</span></div></center>
 
@@ -37,41 +36,39 @@
      <input type="text" id="city_name" name="city_name" class="form-input-new form-control search_city" placeholder="City of Location" required="">
   </div>
   
-  <div class="loan-tenure">
-  <center>
-    <div class="type-cover">
-      <span>LOAN TENURE</span>
-    </div>
-  </center>
-  <div class="scaling-slider">
+ 
+ <div class="col-xs-6 form-padding">
   
-    <div class="tenure offset5 pad">
-    
-                              <div  id="unranged-value" value="" style="width:100%; height:10px;"></div>
-    </div>
-    <input  type="hidden" id="loan_tenure" name="loan_tenure" value="5"  />
-    </div>
+     <select class="block drop-arr select-sty">
+	  <option>LOAN TENURE</option>
+	    <option>1 Year</option>
+		<option>2 Year</option>
+		<option>3 Year</option>
+		<option>4 Year</option>
+		<option>5 Year</option>
+
+	</select>
   </div>
 
                 
                 
                 
   
-     <div class="col-xs-12 form-padding">
+     <div class="col-xs-6 form-padding">
      <input type="text" name="applicant_name" id="applicant_name" class="form-input-new form-control" placeholder="Applicant Name" onkeypress="return AllowAlphabet(event)" required="">
   </div>
   <div class="col-xs-6 form-padding">
      <input type="text" id="dob" name="dob" class="form-input-new form-control lastReporteddate1" placeholder="Date of Birth" required="">
   </div>
   <div class="col-xs-6 form-padding">
-   <div class="btn-grp form-control border-none" data-toggle="buttons">
+   <div class="btn-grp form-control pad-no border-none" data-toggle="buttons">
                                     <span class="btn btn-default outer-brd1 outer-brd1 active"><input type="radio" name="gender"  value="M" checked><img id="myImage" src="images/male.png" class=""></span><span class="hidden-xs">Male</span>
                                    <span class="btn btn-default outer-brd1 outer-brd1 "><input type="radio" name="gender"  value="F"><img id="myImage1" src="images/female.png" class=""></span> <span class="hidden-xs">Female</span>
            </div>      
      </div>
   
   <div class="col-xs-6 form-padding">
-     <div class="btn-grp form-control border-none" data-toggle="buttons">
+     <div class="btn-grp form-control pad-no border-none" data-toggle="buttons">
       <span class="btn btn-default outer-brd active"><input type="radio" name="emp_detail_id"   value="1" checked>Salaried</span>
       <span class="btn btn-default outer-brd "><input type="radio" name="emp_detail_id"  value="2"> Self-Emp</span>
          </div>
@@ -130,12 +127,12 @@
           <label class="form-label-new">Processing Fee</label>
               <input type="text" class="form-control" id="processfee" name="name" placeholder="" required class="clr-ddd" readonly />
             </div>
-
+        <br>
         <div> 
           
          <a id="apply_new" type="button" class="btn btn-info" title="Experience New Digital Era In Loans">Apply Now</a>
-         <button id="eligibility" class="btn btn-info" title="See Bankwise Eligibility And Apply Amongst Best Bank">Eligibility</button>
-         <button type="button" class="btn btn-info"  id="call_rm" name="call_rm" data-toggle="modal" data-target="#Modal" title="Call For RM(Single Day Process)">Call RM</button>
+         <button id="eligibility" class="btn btn-info" title="See Bankwise Eligibility And Apply Amongst Best Bank">Check Bankwise Eligibility</button>
+         <button type="button" class="btn btn-info block"  id="call_rm" name="call_rm" data-toggle="modal" data-target="#Modal" title="Call For RM(Single Day Process)">Call RM</button>
          
         </div>
         <br>

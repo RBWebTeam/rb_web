@@ -52,12 +52,12 @@ class Handler extends ExceptionHandler
             if($e instanceof NotFoundHttpException){
             return response()->view('layout.missing', [], 404);
         }
-        else  if($e instanceof QueryException){
-             return $e;
-        }else{
-            $log=DB::table('error_log')->insert(['message'=>$e->getMessage(), 'file'=>$e->getFile(), 'line_no'=>$e->getLine(),'code'=>$e->getCode(), 'created_at'=>date("Y-m-d H:i:s")]);
-            return $e;
-        }
+        // else  if($e instanceof QueryException){
+        //      return $e;
+        // }else{
+        //     $log=DB::table('error_log')->insert(['message'=>$e->getMessage(), 'file'=>$e->getFile(), 'line_no'=>$e->getLine(),'code'=>$e->getCode(), 'created_at'=>date("Y-m-d H:i:s")]);
+        //     return $e;
+        // }
         return parent::render($request, $e);
 
 

@@ -4,49 +4,28 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
-class tribeController extends CallApiController
+class TribeController extends CallApiController
 {
     public function tribe(){
-		$post='';
-        
+		// $post='';
+       // $temp="kuch to error h";
 	    $url = "http://api.rupeeboss.com/BankAPIService.svc/GetTribeLoan";
-	    $result=$this->call_json_data_get_api($url,$post);
+	    $result=$this->call_json_data_get_api($url,'');
 	    $http_result=$result['http_result'];
 	    $error=$result['error'];
 	    if($error){
 	    	return view('went-wrong');
-	    }else{
-	    $temp_data=json_decode(json_decode($http_result))->response;
-	    $temp=json_decode(json_encode($temp_data));
-	   // print "<pre>";
-	   //	print_r($temp);exit();
-	    foreach ($temp as $key => $value) {
-
-	    	$sata[$key]=$value;
-	    	$length=sizeof($sata[$key]);
-	    	
-	    	if($length>1){
-    		    	//print_r($sata[$key]);exit();
-    		    	for($i=0;$i<$length;$i++){
-    		    		//print_r($length);
-    		    		$test[$sata[$key][$i]->key]=$sata[$key][$i]->mapping;
-
-    		    	}
-	    	}else{
-	    		//print_r($sata[$key]->key);
-	    		$test[$sata[$key]->key]=$sata[$key]->mapping;
-	    		   
-	    	}
-	    	
 	    }
-	    //print_r($test);
-	   // exit();
-	     //$data=$test;
-	    // print_r($data);exit();
-	    return view('tribe')->with('data',$test);		
+		    $temp_data=json_decode(json_decode($http_result))->response;
+		    $data=json_decode(json_encode($temp_data));
+		    // print "<pre>";
+		    // print_r($data);exit();
+		    // $data="hii";
+		    return view('tribe')->with('data',$data);
+		   		
 	    }
 	    
-	}
+	
 	public function save_tribe_form(Request $req){
 	
 	$data=$req->all();

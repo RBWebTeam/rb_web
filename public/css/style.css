@@ -2095,7 +2095,7 @@ body {background:#eee;}
   .tenure {margin:0px 25px;}
   .fnt-clr {height:61px;}
 .box-shadow {box-shadow:1px 1px 3px 1px #ccc;}
-.border {padding:20px;border:1px solid #eee;margin:20px 0px;font-size:15px;}
+.border {padding:20px;border:1px solid #eee;margin:20px 0px;font-size:15px; float:left;}
 .hr-sty {height:20px;background:#eee;}
 .input_exp {
   position: relative;
@@ -3439,7 +3439,7 @@ input:checked + .slider:before {
 
     height:35px;
     padding: 6px 6px;
-    font-size: 13px;
+    font-size: 14px;
     color: #999;
 	margin-bottom:10px;
     font-weight: 500;

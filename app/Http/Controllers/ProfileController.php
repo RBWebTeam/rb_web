@@ -10,7 +10,7 @@ use App\registrationModel;
 use Validator;
 use Redirect;
 use URL;
-class ProfileController extends InitialController
+class ProfileController extends CallApiController
 {
     function my_profile(Request $req){
 
@@ -18,10 +18,23 @@ class ProfileController extends InitialController
       if(Session::get('is_login'))
       { 
 
+
+         
         $get_id=Session::get('user_id');
         $email_id=Session::get('email');
+        //   Get Customer Lead
+        $service_url = "http://api.rupeeboss.com/BankAPIService.svc/GetCustomerLeadDetail?Cust_Id=231";
+        $GetCustomerLead=$this->call_json_data_get_api($service_url,'');
+        $http_result=$GetCustomerLead['http_result'];
+        $error=$GetCustomerLead['error'];
+        $objLead = json_decode($http_result);
 
+         // foreach ($objLead as $key => $value) {
+         //     echo   $value->Bank_Name;
+         // }
+         // exit;
 
+        //   Get Customer Lead end                          
         $query=DB::table('user_registration')->where('id','=',$get_id)->first();
         $cquery=DB::table('experian_response')->where('user_id','=',$get_id)->first();
 
@@ -59,11 +72,14 @@ class ProfileController extends InitialController
             ->where('bank_quote_api_request.bank_id','!=','NULL')
             ->orderBy('bank_quote_api_request.ID', 'DESC')
             ->get();
-          return view('my-profile',['query'=>$query,'cquery'=>$cquery,'loan_history'=>$loan_history,'credit_report'=>$res]);
+          return view('my-profile',['query'=>$query,'cquery'=>$cquery,'loan_history'=>$loan_history,'credit_report'=>$res,'objLead'=>$objLead]);
       }else{
         return redirect('/');
       }
     }
+
+
+ 
 
     public function profileupdate(Request $req){
 

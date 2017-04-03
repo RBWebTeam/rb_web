@@ -120,7 +120,7 @@
                 <h4 class="panel-title">
                     <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse7" aria-expanded="false" aria-controls="collapse7">
                         <i class="icon-plus more-less pull-right"></i>
-                        EMI DETAILS BANKWISE
+                        BANKWISE EMI DETAILS 
                     </a>
                 </h4>
             </div>
@@ -156,7 +156,11 @@
   </div>
 	<!-- <button class="btn btn-primary btn-outline top-mrg">Add Other Bank Existing EMI</button> -->
   <div id="new_div"></div>
-<a href="javascript:void(0)" class="btn btn-info" id="button" >Click me</a>
+  
+<a href="javascript:void(0)" class="btn btn-info" id="button" >Add Bank</a>
+ <a href="javascript:void(0)" class="btn btn-info" id="button_remove" >Remove</a>
+
+
 <!-- <div id="duplicater"> 
     duplicate EVERYTHING INSIDE THIS DIV
 </div> -->
@@ -261,7 +265,7 @@
       <div id="collapse3" class="panel-collapse collapse">
         <div class="panel-body">
 		  <div class="col-xs-12 form-padding">
-     <input type="text" id="date" name="date" class="form-input-new form-control lastReporteddate1" placeholder="Date of Birth" required>
+     <input type="text" id="date" name="date" class="form-input-new form-control lastReporteddate1" placeholder="Date of incorporation" required>
 	</div>
 		</div>
       </div>
@@ -525,6 +529,18 @@ $(document).ready(function(){
     $("#button").click(function(){
         $("#emp_detail").clone().appendTo("#new_div");
     });
+
+    
+});
+</script>
+
+<script>
+$(document).ready(function(){
+    $('#button_remove').click(function(){
+        $('#new_div').css('display','none');
+});
+
+    
 });
 </script>
 

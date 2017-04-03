@@ -53,16 +53,16 @@
   
   <div class="col-xs-6 form-padding">
   
-     <select class="block drop-arr select-sty">
-	  <option>LOAN TENURE</option>
-	    <option>1 Year</option>
-		<option>2 Year</option>
-		<option>3 Year</option>
-		<option>4 Year</option>
-		<option>5 Year</option>
-		<option>6 Year</option>
-		<option>7 Year</option>
-	</select>
+     <select class="block drop-arr select-sty" id="loan_tenure" name="loan_tenure">
+    <option >LOAN TENURE</option>
+      <option value="1">1 Year</option>
+    <option value="2">2 Year</option>
+    <option value="3">3 Year</option>
+    <option value="4">4 Year</option>
+    <option selected value="5">5 Year</option>
+    <option value="6">6 Year</option>
+    <option value="7">7 Year</option>
+  </select>
   </div>
 
                 
@@ -85,12 +85,19 @@
   
   <div class="col-xs-6 form-padding">
      <div class="btn-grp form-control border-none pad-no" data-toggle="buttons">
-      <span class="btn btn-default outer-brd active"><input type="radio" name="emp_detail_id"   value="1" checked>Salaried</span>
-      <span class="btn btn-default outer-brd "><input type="radio" name="emp_detail_id"  value="2"> Self-Emp</span>
+      <span class="btn btn-default outer-brd active"><input type="radio" name="emp_detail_id" id="sala_DI"    value="1" checked>Salaried</span>
+      <span class="btn btn-default outer-brd "><input type="radio" name="emp_detail_id" id="self_DI"  value="2"> Self-Emp</span>
          </div>
      </div>
+
+     <div  style="display: none;" id="self-employed_ID">  <!-- self-employed-->
+       
+       <div class="col-xs-6 form-padding">
+          <input type="text" class="form-input-new form-control " name="turnover" placeholder="Annual turnover" required  onkeypress="return fnAllowNumeric(event)">
+      </div>
+      </div>
      
-     <div class="col-xs-6 form-padding">
+     <div class="col-xs-6 form-padding"  id="income_ID">
      <input type="text" name="income" id="income" class="form-input-new form-control"  onkeypress="return isNumberKey(event)"  placeholder="Monthly Income" required="">
   </div>
   
@@ -303,6 +310,7 @@ $(".btn-primary").click(function(e){
                        $(window).scrollTop($('#lowest').offset().top-50);
 
                    }else{
+                    alert("ok");
                      $('#err').show();
                      $('#apply_new').hide();
                       $("#test123").empty();
@@ -349,4 +357,19 @@ $("#eligibility").click(function() {
 
 
 
+</script>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+  $('#sala_DI').change(function(){
+   $("#self-employed_ID").hide();
+   $("#income_ID").show();
+  });
+
+  $('#self_DI').change(function(){
+  $("#income_ID").hide();
+  $("#self-employed_ID").show();
+  });
+
+  });
 </script>

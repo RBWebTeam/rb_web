@@ -32,12 +32,12 @@
             
             <div class="text-center flt-lft btn-grp" data-toggle="buttons">
               <div class="scenario">
-                <div class="col-xs-4 pad-no scenario-active"><a class="scenario-1 btn"><input type="radio" name="propery_types" value="ready"  class="radio1"  checked >READY</a></div>
-                <div class="col-xs-4 pad-no"><a class="scenario-1 btn"><input type="radio" name="propery_types" value="searching" class="radio1">SEARCHING</a></div>
-                <div class="col-xs-4 pad-no"><a class="scenario-1 btn"><input type="radio" name="propery_types" value="underconst" class="radio1">UNDERCONST</a></div>
-                <div class="col-xs-4 pad-no"><a class="scenario-1 btn"><input type="radio" name="propery_types" value="resale" class="radio1">RESALE</a></div>
-                <div class="col-xs-4 pad-no"><a class="scenario-1 btn"><input type="radio" name="propery_types" value="constuction" class="radio1">CONSTRUCTION</a></div>
-                <div class="col-xs-4 pad-no"><a class="scenario-1 btn"><input type="radio" name="propery_types" id="others" class="radio1">OTHER</a></div>
+                <div class="col-xs-4 pad-no scenario-active"><a class="scenario-1 btn"><input type="radio" name="propery_types" value="residential"  class="radio1"  checked >RESIDENTIAL</a></div>
+                <div class="col-xs-4 pad-no"><a class="scenario-1 btn"><input type="radio" name="propery_types" value="commercial" class="radio1">COMMERCIAL</a></div>
+                <div class="col-xs-4 pad-no"><a class="scenario-1 btn"><input type="radio" name="propery_types" value="industrial" class="radio1">INDUSTRIAL</a></div>
+                <div class="col-xs-4 pad-no"><a class="scenario-1 btn"><input type="radio" name="propery_types" value="land" class="radio1">LAND</a></div>
+                <div class="col-xs-4 pad-no"><a class="scenario-1 btn"><input type="radio" name="propery_types" value="others" class="radio1">OTHERS</a></div>
+                
                 
               </div>
             </div> 
@@ -74,15 +74,15 @@
    
     <div class="col-xs-6 form-padding">
   
-     <select class="block drop-arr select-sty">
-	  <option>LOAN TENURE</option>
-	    <option>1 Year</option>
-		<option>2 Year</option>
-		<option>3 Year</option>
-		<option>4 Year</option>
-		<option>5 Year</option>
-		<option>6 Year</option>
-		<option>7 Year</option>
+     <select class="block drop-arr select-sty" id="loan_tenure" name="loan_tenure">
+    <option>LOAN TENURE</option>
+      <option value="1">1 Year</option>
+    <option value="2">2 Year</option>
+    <option value="3">3 Year</option>
+    <option value="4">4 Year</option>
+    <option selected value="5">5 Year</option>
+    <option value="6">6 Year</option>
+    <option value="7">7 Year</option>
 	</select>
   </div>
    
@@ -264,7 +264,7 @@
             </div>
 
             <div class="inp-hig">
-          <label class="form-label-new">Processing Fee</label>
+          <label class="form-label-new">Processing Fee </label>
               <input type="text" class="form-control" id="processfee" name="name" placeholder="" required class="clr-ddd" readonly />
             </div>
          <br>
@@ -336,8 +336,8 @@ $(".product_ID").click(function(e){
             return false;
           }else{
                var property_cost=$('#property_cost').val();
-               var income=$('#income').val();
-      if(property_cost!='' && income!=''){
+               var obligation=$('#obligation').val();
+      if(property_cost!='' && obligation!=''){
          $('#login_process').attr( 'id', 'login_process');
 
               $.ajax({  

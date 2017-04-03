@@ -42,10 +42,10 @@
 						</div> 
 						
 						<div class="col-xs-4 form-padding">
-     <input type="text" class="form-input-new form-control" id="property_cost" name="property_cost" placeholder="Property Cost" required onkeypress="return fnAllowNumeric(event)">
+     <input type="text" class="form-input-new form-control" id="property_cost" name="property_cost" placeholder="Property Cost" required onkeypress="return fnAllowNumeric(event)"  maxlength="10">
 	</div>
 	<div class="col-xs-4 form-padding">
-     <input type="text" class="form-input-new form-control" name="loan_amount" placeholder="Loan Required" required onkeypress="return fnAllowNumeric(event)">
+     <input type="text" class="form-input-new form-control" name="loan_amount" id="loan_amount" placeholder="Loan Required" required onkeypress="return fnAllowNumeric(event)"  value="">
 	</div>
 	<div class="col-xs-4 form-padding">
      <input type="text" class="form-input-new form-control search_city" name='city_name' placeholder="Enter City" required >
@@ -73,28 +73,28 @@
 		
 		<div class="col-xs-6 form-padding">
   
-     <select class="block drop-arr select-sty">
+     <select class="block drop-arr select-sty" id="loan_tenure" name="loan_tenure">
 	  <option>LOAN TENURE</option>
-	    <option>1 Year</option>
-		<option>2 Year</option>
-		<option>3 Year</option>
-		<option>4 Year</option>
-		<option>5 Year</option>
-		<option>6 Year</option>
-		<option>7 Year</option>
-		<option>8 Year</option>
-		<option>9 Year</option>
-		<option>10 Year</option>
-		<option>11 Year</option>
-		<option>12 Year</option>
-		<option>13 Year</option>
-		<option>14 Year</option>
-		<option>15 Year</option>
-		<option>16 Year</option>
-		<option>17 Year</option>
-		<option>18 Year</option>
-		<option>19 Year</option>
-		<option>20 Year</option>
+	    <option value="1">1 Year</option>
+		<option value="2">2 Year</option>
+		<option value="3">3 Year</option>
+		<option value="4">4 Year</option>
+		<option selected value="5">5 Year</option>
+		<option value="6">6 Year</option>
+		<option value="7">7 Year</option>
+		<option value="8">8 Year</option>
+		<option value="9">9 Year</option>
+		<option value="10">10 Year</option>
+		<option value="11">11 Year</option>
+		<option value="12">12 Year</option>
+		<option value="13">13 Year</option>
+		<option value="14">14 Year</option>
+		<option value="15">15 Year</option>
+		<option value="16">16 Year</option>
+		<option value="17">17 Year</option>
+		<option value="18">18 Year</option>
+		<option value="19">19 Year</option>
+		<option value="20">20 Year</option>
 	</select>
   </div>
 		
@@ -125,7 +125,7 @@
          </div>
 	   </div>
 
-     <div  style="display: none;" id="self-employed_ID">  <!-- self-employed-->
+     <div  style="display: none;" id="self-employed_ID"> 
        
        <div class="col-xs-6 form-padding">
           <input type="text" class="form-input-new form-control " name="turnover" placeholder="Annual turnover" required  onkeypress="return fnAllowNumeric(event)">
@@ -153,8 +153,11 @@
 	</div>
 		
 		
+
+		
 		<!-- Rounded switch -->
 		<div class="col-xs-12 form-padding">
+
 		<label class="switch"> <input type="checkbox" id="co_applicant_DI"><div class="slider round"><span class="co-applicant"> ADD CO-APPLICANT</span></div></label>
 		</div>
 		
@@ -162,6 +165,7 @@
 		</div>
       </div>
     </div>
+
     <div class="panel panel-default" id="coapplicant_display" style="display: none;">
       <div class="panel-heading">
         <h4 class="panel-title">
@@ -194,7 +198,7 @@
 	   </div>
 
 
-      <div  style="display: none;" id="co_self-employed_ID">  <!-- Co applicant self-employed-->
+      <div  style="display: none;" id="co_self-employed_ID"> 
        
        <div class="col-xs-6 form-padding">
           <input type="text" class="form-input-new form-control " name="co_applicant_turnover" placeholder="co-applicant annual turnover"  onkeypress="return fnAllowNumeric(event)" required>
@@ -256,12 +260,12 @@
 
 
 		<div class="col-md-4">
-	   <div class="border" id="mi_ID">
+     <div class="border" id="mi_ID">
 
         <!--      <form class="" id="compareform" role="form" method="POST" action=""> -->
-				  
-				  
-				  <div class="inp-hig">
+          
+          
+          <div class="inp-hig">
             <label class="form-label-new">Loan Amount</label>
               <input type="text" class="form-control" id="loanamount" name="name" value="" placeholder="" required class="clr-ddd" readonly />
             </div>
@@ -277,22 +281,24 @@
             </div>
 
             <div class="inp-hig">
-          <label class="form-label-new">Processing Fee</label>
+          <label class="form-label-new">Processing Fee </label>
               <input type="text" class="form-control" id="processfee" name="name" placeholder="" required class="clr-ddd" readonly />
             </div>
-      <br>
+
+         <br>
+
         <div> 
           
-         <a id="apply_new" type="button" class="btn btn-info" title="Experience New Digital Era In Loans">Apply Now</a>
+         <a id="apply_new" type="button" class="btn btn-info" title="Experience New Digital Era In Loans">Apply Digitally</a>
          <button id="eligibility" class="btn btn-info" title="See Bankwise Eligibility And Apply Amongst Best Bank">Check Bankwise Eligibility</button>
-         <button type="button" class="btn btn-info block"  id="call_rm" name="call_rm" data-toggle="modal" data-target="#Modal" title="Call For RM(Single Day Process)"> Call RM</button>
+         <button type="button" class="btn btn-info block"  id="call_rm" name="call_rm" data-toggle="modal" data-target="#Modal" title="Call For RM(Single Day Process)">Call Manager</button>
          
         </div>
-			<!-- </form> -->
-		</div>	
+      <!-- </form> -->
+    </div>  
 
-		<p id="err" style="display:none;" ><span style="color: red;font-size: 20px;display: block;text-align: center;">No Quotes Found.</span></p> 
-	</div>
+    <p id="err" style="display:none;" ><span style="color: red;font-size: 20px;display: block;text-align: center;">Sorry, we are unable to process your request. Will get back to you in future.</span></p> 
+  </div>
 
 
 <!-- 	 <div id ="test123" class="col-md-8" ></div> -->
@@ -417,4 +423,21 @@ $("#eligibility").click(function() {
 
 
 
+</script>
+
+<script type="text/javascript">
+  $(document).ready(function()
+{
+    function update()
+    {
+        var cost = parseFloat($("#property_cost").val());
+        // console.log(cost);
+        var total = (cost)*80/100;
+        // var total = total.toFixed(2);
+        // console.log(total);
+        $("#loan_amount").val(total);
+
+    }
+    $(document).on("change, keyup", "#property_cost", update);
+});
 </script>

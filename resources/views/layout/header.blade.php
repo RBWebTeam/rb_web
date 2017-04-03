@@ -15,7 +15,7 @@
 
 	<link  rel="stylesheet" type="text/css" href="{{URL::to('css/mysite.css')}}"/>
 
-	<link  rel="stylesheet" type="text/css" href="{{URL::to('css/style.css')}}"/>
+	<!-- <link  rel="stylesheet" type="text/css" href="{{URL::to('css/style.css')}}"/> -->
 
 
 
@@ -126,12 +126,12 @@
 						<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" data-target="#">SME Loan</a>
 						 <ul class="dropdown-menu">
 						     <li>
-								<a href="{{URL::to('sme-loan')}}">Unsecured Business Loan</a>
+								<a href="{{URL::to('business-loan')}}">Unsecured Business Loan</a>
 								<a href="{{URL::to('loan-against-property')}}">Loan Against Property</a>
-								<a href="{{URL::to('sme-loan')}}">Commercial Property Purchase</a>
+								<a href="{{URL::to('new-loan-against-property')}}">Commercial Property Purchase</a>
 							</li>
 							<li>
-								<a href="{{URL::to('sme-loan')}}">Lease Rent Discounting</a>
+								<a href="{{URL::to('loan-against-property')}}">Lease Rent Discounting</a>
 								<a href="{{URL::to('contact-us')}}">Working Capital</a>
 								
 							<!-- <a href="{{URL::to('sme-loan')}}">Export/Import Finance</a> -->
@@ -145,10 +145,13 @@
 						<ul class="dropdown-menu">
 						   <li>
 								<a href="{{URL::to('home-loan')}}">Home Loan</a>
-								<a href="{{URL::to('contact-us')}}">Smart Home Loan</a>
+								
 								<a href="{{URL::to('loan-against-property')}}">Loan Against Property</a>
 								<a href="{{URL::to('personal-loan')}}">Personal Loan</a>
 								<a href="{{URL::to('car-loan')}}">Car Loan</a>
+
+								<a href="{{URL::to('home-loan')}}">Smart Home Loan</a>
+
 								<a href="{{URL::to('used-car-loan')}}">Used Car Loan </a>
 
 						   </li>

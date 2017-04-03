@@ -318,9 +318,10 @@
       <li class="pad"><input type="radio" name="online_ids" value="{{$value}}" onclick="showDiv('online_ids_{{$value}}')" /> {{$key}}</li>
         <div class="col-sm-12" id="online_ids_{{$value}}" style="display: none;" class="extra">
 
-          <?php for($i=0;$i<sizeof($data['aggregated_ids_credentials']->$value);$i++){ ?>
+          <?php $length=sizeof($data['aggregated_ids_credentials']->$value);
+           for($i=0;$i<$length;$i++){ ?>
            <label class="col-sm-2"> {{$data['aggregated_ids_credentials']->$value[$i]}}:</label>
-           <input type="text" class="form-control form-group col-sm-10" name="online_ids_array[{{$value}}][<?php echo $value2?>]" required />
+           <input type="text" class="form-control form-group col-sm-10" name="online_ids_array[{{$value}}][<?php echo $data['aggregated_ids_credentials']->$value[$i]; ?>]" required />
            
           <?php }?>
            </div>

@@ -23,6 +23,7 @@
    <!--  <div id ="test123" class="col-md-8"></div> -->
   <div class="col-md-8"  id="mod">
  <!--  <h3 class="main-header">Genral Information</h3> -->
+ <br>
 <center><div class="type-cover"><span>PURPOSE OF LOAN</span></div></center>
 
 <div class="text-center flt-lft btn-grp" data-toggle="buttons">
@@ -75,15 +76,15 @@
      <input type="text" id="dob" name="dob" class="form-input-new form-control lastReporteddate1" placeholder="Date of Birth" required="">
   </div>
   <div class="col-xs-6 form-padding">
-   <div class="btn-grp border-none pad-no form-control" data-toggle="buttons" style="border:none;">
-                                    <span class="btn btn-default outer-brd1 outer-brd1 active"><input type="radio" name="gender"  value="M" checked><img id="myImage" src="images/male.png" cla></span><span class="hidden-xs">Male</span>
+   <div class="btn-grp border-none pad-no form-control" data-toggle="buttons">
+                                    <span class="btn btn-default outer-brd1 outer-brd1 active"><input type="radio" name="gender"  value="M" checked><img id="myImage" src="images/male.png" cla></span><span class="hidden-xs"> Male</span>
                                    <span class="btn btn-default outer-brd1 outer-brd1 "><input type="radio" name="gender"  value="F"><img id="myImage1" src="images/female.png" class=""></span> <span class="hidden-xs">Female</span>
            </div>      
      </div>
 
   
   <div class="col-xs-6 form-padding">
-     <div class="btn-grp form-control border-none pad-no" data-toggle="buttons" style="border:none;">
+     <div class="btn-grp form-control border-none pad-no" data-toggle="buttons">
       <span class="btn btn-default outer-brd active"><input type="radio" name="emp_detail_id"   value="1" checked>Salaried</span>
       <span class="btn btn-default outer-brd "><input type="radio" name="emp_detail_id"  value="2"> Self-Emp</span>
          </div>

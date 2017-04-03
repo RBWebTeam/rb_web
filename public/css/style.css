@@ -1638,7 +1638,7 @@ top: -.25em;left: 20%;margin: 0 0 0 -.25em;}
 input[type="radio"] {margin:0px;}
 .pad11 textarea {width:100%;padding:10px;background:#fff;border:1px solid #ddd;margin-top:15px;}
 .pdd {padding:20px 0px;}
-.pad-no {padding:0px;}
+.pad-no {padding:0px !important;}
 .nav-tabs > li.active > a {background:#337ab7;color:#fff;}
 
 /*fb login css by DP*/
@@ -3318,7 +3318,7 @@ font-size:20px;margin-top: 10px;
     height: auto;
     display: inline;
 }
-.border-none {border:none; box-shadow:none;}
+.border-none {border:none; box-shadow:none !important;}
 
 .fl-lft {float:left;}
 .brd-for {border:2px solid #f1f1f1;background:#ffffff;}
@@ -3540,6 +3540,11 @@ label {
 .tot-sav-txt {color:#fff;font-weight:bold;}
 .block {display:block;width:100%; padding:10px;}
 .txt-alig-midd {height:35px;line-height:35px;}
+.select-sty {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #d4d4d4;
+    border-radius: 5px;}
 
 
 

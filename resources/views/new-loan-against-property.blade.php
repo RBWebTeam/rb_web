@@ -32,12 +32,12 @@
             
             <div class="text-center flt-lft btn-grp" data-toggle="buttons">
               <div class="scenario">
-                <div class="col-xs-4 pad-no scenario-active"><a class="scenario-1 btn"><input type="radio" name="propery_types" value="ready"  class="radio1"  checked >READY</a></div>
-                <div class="col-xs-4 pad-no"><a class="scenario-1 btn"><input type="radio" name="propery_types" value="searching" class="radio1">SEARCHING</a></div>
-                <div class="col-xs-4 pad-no"><a class="scenario-1 btn"><input type="radio" name="propery_types" value="underconst" class="radio1">UNDERCONST</a></div>
-                <div class="col-xs-4 pad-no"><a class="scenario-1 btn"><input type="radio" name="propery_types" value="resale" class="radio1">RESALE</a></div>
-                <div class="col-xs-4 pad-no"><a class="scenario-1 btn"><input type="radio" name="propery_types" value="constuction" class="radio1">CONSTRUCTION</a></div>
-                <div class="col-xs-4 pad-no"><a class="scenario-1 btn"><input type="radio" name="propery_types" id="others" class="radio1">OTHER</a></div>
+                <div class="col-xs-4 pad-no scenario-active"><a class="scenario-1 btn"><input type="radio" name="propery_types" value="residential"  class="radio1"  checked >RESIDENTIAL</a></div>
+                <div class="col-xs-4 pad-no"><a class="scenario-1 btn"><input type="radio" name="propery_types" value="commercial" class="radio1">COMMERCIAL</a></div>
+                <div class="col-xs-4 pad-no"><a class="scenario-1 btn"><input type="radio" name="propery_types" value="industrial" class="radio1">INDUSTRIAL</a></div>
+                <div class="col-xs-4 pad-no"><a class="scenario-1 btn"><input type="radio" name="propery_types" value="land" class="radio1">LAND</a></div>
+                <div class="col-xs-4 pad-no"><a class="scenario-1 btn"><input type="radio" name="propery_types" value="others" class="radio1">OTHERS</a></div>
+                
                 
               </div>
             </div> 
@@ -267,7 +267,7 @@
 
         <div> 
           
-         <a id="apply_new" type="button" class="btn btn-info" title="Experience New Digital Era In Loans">Apply Digitally/a>
+         <a id="apply_new" type="button" class="btn btn-info" title="Experience New Digital Era In Loans">Apply Digitally</a>
          <button id="eligibility" class="btn btn-info" title="See Bankwise Eligibility And Apply Amongst Best Bank">Check Bankwise Eligibility</button>
          <button type="button" class="btn btn-info"  id="call_rm" name="call_rm" data-toggle="modal" data-target="#Modal" title="Call For RM(Single Day Process)">Call Manager</button>
          
@@ -333,8 +333,8 @@ $(".product_ID").click(function(e){
             return false;
           }else{
                var property_cost=$('#property_cost').val();
-               var income=$('#income').val();
-      if(property_cost!='' && income!=''){
+               var obligation=$('#obligation').val();
+      if(property_cost!='' && obligation!=''){
          $('#login_process').attr( 'id', 'login_process');
 
               $.ajax({  

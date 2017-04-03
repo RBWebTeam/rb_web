@@ -49,7 +49,7 @@
      <input type="text" name="loan_amount" id="loan_amount" class="form-input-new form-control" placeholder="Loan Required" onkeypress="return isNumberKey(event)" maxlength="10" required="">
   </div>
   <div class="col-xs-4 form-padding">
-     <input type="text" id="city_name" name="city_name" class="form-input-new form-control search_city" placeholder="City of Location" required="">
+     <input type="text" id=_name" name="city_name" class="form-input-new form-control search_city" placeholder="City of Location" required="">
   </div>
   
   <div class="loan-tenure">
@@ -94,12 +94,19 @@
   
   <div class="col-xs-6 form-padding">
      <div class="btn-grp form-control border-none" data-toggle="buttons">
-      <span class="btn btn-default outer-brd active"><input type="radio" name="emp_detail_id"   value="1" checked>Salaried</span>
-      <span class="btn btn-default outer-brd "><input type="radio" name="emp_detail_id"  value="2"> Self-Emp</span>
+      <span class="btn btn-default outer-brd active"><input type="radio" name="emp_detail_id" id="sala_DI"   value="1" checked>Salaried</span>
+      <span class="btn btn-default outer-brd "><input type="radio" name="emp_detail_id" id="self_DI"  value="2"> Self-Emp</span>
          </div>
      </div>
+
+     <div  style="display: none;" id="self-employed_ID">  <!-- self-employed-->
+       
+       <div class="col-xs-6 form-padding">
+          <input type="text" class="form-input-new form-control " name="turnover" placeholder="Annual turnover" required  onkeypress="return fnAllowNumeric(event)">
+      </div>
+      </div>
      
-     <div class="col-xs-6 form-padding">
+     <div class="col-xs-6 form-padding" id="income_ID">
      <input type="text" name="income" id="income" class="form-input-new form-control"  onkeypress="return isNumberKey(event)"  placeholder="Monthly Income" required="">
   </div>
   
@@ -358,4 +365,19 @@ $("#eligibility").click(function() {
 
 
 
+</script>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+  $('#sala_DI').change(function(){
+   $("#self-employed_ID").hide();
+   $("#income_ID").show();
+  });
+
+  $('#self_DI').change(function(){
+  $("#income_ID").hide();
+  $("#self-employed_ID").show();
+  });
+
+  });
 </script>

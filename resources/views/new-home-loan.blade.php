@@ -45,7 +45,7 @@
      <input type="text" class="form-input-new form-control" id="property_cost" name="property_cost" placeholder="Property Cost" required onkeypress="return fnAllowNumeric(event)">
 	</div>
 	<div class="col-xs-4 form-padding">
-     <input type="text" class="form-input-new form-control" name="loan_amount" placeholder="Loan Required" required onkeypress="return fnAllowNumeric(event)">
+     <input type="text" class="form-input-new form-control" name="loan_amount" id="loan_amount" placeholder="Loan Required" required onkeypress="return fnAllowNumeric(event)" value="">
 	</div>
 	<div class="col-xs-4 form-padding">
      <input type="text" class="form-input-new form-control search_city" name='city_name' placeholder="Enter City" required >
@@ -109,7 +109,7 @@
          </div>
 	   </div>
 
-     <div  style="display: none;" id="self-employed_ID">  <!-- self-employed-->
+     <div  style="display: none;" id="self-employed_ID"> 
        
        <div class="col-xs-6 form-padding">
           <input type="text" class="form-input-new form-control " name="turnover" placeholder="Annual turnover" required  onkeypress="return fnAllowNumeric(event)">
@@ -137,7 +137,7 @@
 	</div>
 		
 		
-		<!-- Rounded switch -->
+		
 		<label class="switch"> <input type="checkbox" id="co_applicant_DI"><div class="slider round"><span class="co-applicant"> ADD CO-APPLICANT</span></div></label>
 		
 		
@@ -145,6 +145,7 @@
 		</div>
       </div>
     </div>
+
     <div class="panel panel-default" id="coapplicant_display" style="display: none;">
       <div class="panel-heading">
         <h4 class="panel-title">
@@ -177,7 +178,7 @@
 	   </div>
 
 
-      <div  style="display: none;" id="co_self-employed_ID">  <!-- Co applicant self-employed-->
+      <div  style="display: none;" id="co_self-employed_ID"> 
        
        <div class="col-xs-6 form-padding">
           <input type="text" class="form-input-new form-control " name="co_applicant_turnover" placeholder="co-applicant annual turnover"  onkeypress="return fnAllowNumeric(event)" required>
@@ -266,9 +267,9 @@
 
         <div> 
           
-         <a id="apply_new" type="button" class="btn btn-info" title="Experience New Digital Era In Loans">Apply Now</a>
-         <button id="eligibility" class="btn btn-info" title="See Bankwise Eligibility And Apply Amongst Best Bank">Eligibility</button>
-         <button type="button" class="btn btn-info"  id="call_rm" name="call_rm" data-toggle="modal" data-target="#Modal" title="Call For RM(Single Day Process)">Call RM</button>
+         <a id="apply_new" type="button" class="btn btn-info" title="Experience New Digital Era In Loans">Apply Digitally</a>
+         <button id="eligibility" class="btn btn-info" title="See Bankwise Eligibility And Apply Amongst Best Bank">Check Bankwise Eligibility</button>
+         <button type="button" class="btn btn-info"  id="call_rm" name="call_rm" data-toggle="modal" data-target="#Modal" title="Call For RM(Single Day Process)">Call Manager</button>
          
         </div>
 			<!-- </form> -->
@@ -400,4 +401,21 @@ $("#eligibility").click(function() {
 
 
 
+</script>
+
+<script type="text/javascript">
+  $(document).ready(function()
+{
+    function update()
+    {
+        var cost = parseFloat($("#property_cost").val());
+        // console.log(cost);
+        var total = (cost)*80/100;
+        // var total = total.toFixed(2);
+        // console.log(total);
+        $("#loan_amount").val(total);
+
+    }
+    $(document).on("change, keyup", "#property_cost", update);
+});
 </script>

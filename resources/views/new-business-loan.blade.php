@@ -45,20 +45,17 @@
   <div class="col-xs-6 form-padding">
      <input type="text" class="form-input-new form-control lastReporteddate1" name="applicant_dob" id="applicant_dob" placeholder="Date Of Birth"   required>
   </div>
-<div class="loan-tenure">
-  <center>
-    <div class="type-cover">
-      <span>LOAN TENURE</span>
-    </div>
-  </center>
-  <div class="scaling-slider">
+
+  <div class="col-xs-6 form-padding">
   
-    <div class="tenure offset5 pad">
-    
-                              <div  id="unranged-value" value="" style="width:100%; height:10px;"></div>
-    </div>
-    <input  type="hidden" id="loan_tenure" name="loan_tenure" value="3"  />
-    </div>
+     <select class="block drop-arr select-sty">
+	  <option>LOAN TENURE</option>
+	    <option>1 Year</option>
+		<option>2 Year</option>
+		<option>3 Year</option>
+		<option>4 Year</option>
+		<option>5 Year</option>
+	</select>
   </div>
   
   
@@ -153,13 +150,14 @@
 	<div class="col-xs-6 form-padding">
      <input type="text" class="form-input-new form-control" name="no_of_emi_paid" id="no_of_emi_paid" placeholder="No Of EMI Paid"  onkeypress="return isNumberKey(event)" minlength="2" maxlength="2" required>
 	</div>
+	
   </div>
 	<!-- <button class="btn btn-primary btn-outline top-mrg">Add Other Bank Existing EMI</button> -->
   <div id="new_div"></div>
+
   
 <a href="javascript:void(0)" class="btn btn-info" id="button" >Add Bank</a>
  <a href="javascript:void(0)" class="btn btn-info" id="button_remove" >Remove</a>
-
 
 <!-- <div id="duplicater"> 
     duplicate EVERYTHING INSIDE THIS DIV
@@ -181,14 +179,14 @@
 	
 	
  </div>
-	<div class="col-md-6">
+	<div class="col-md-6 no-pad">
 	<div class="panel-group" id="accordion1">
 	<div class="panel-default">
       <div id="collapse0" class="panel-collapse collapse in">
         <div class="panel-body">
 		
 	
-	<div class="col-xs-8 form-padding pad">
+	<div class="col-xs-8 form-padding pad-no">
 	 <h4 class="mrg-top">Export/Import</h4>
 	</div>
 	<div class="col-xs-4 form-padding pad">
@@ -197,7 +195,7 @@
       <span class="btn btn-default outer-brd btn-blu"><input type="radio" name="exchange" value="N">N</span>
          </div>
 	</div>
-	<div class="col-xs-8 form-padding pad">
+	<div class="col-xs-8 form-padding">
 	 <span>Has a Good Repayment track record in existing UBL / CC / OD ?</span>
 	</div>
 	<div class="col-xs-4 form-padding pad">
@@ -360,7 +358,7 @@
           <br>
          <a id="apply_new" type="button" class="btn btn-info" title="Experience New Digital Era In Loans">Apply Digitally</a>
          <button id="eligibility" class="btn btn-info" title="See Bankwise Eligibility And Apply Amongst Best Bank">Check Bankwise Eligibility</button>
-         <button type="button" class="btn btn-info"  id="call_rm" name="call_rm" data-toggle="modal" data-target="#Modal" title="Call For RM(Single Day Process)">Call Manager</button>
+         <button type="button" class="btn btn-info block"  id="call_rm" name="call_rm" data-toggle="modal" data-target="#Modal" title="Call For RM(Single Day Process)">Call Manager</button>
          
         </div>
         
@@ -378,6 +376,7 @@
 	</div>
 	</aside>
 	</div>
+	<br>
    <div id ="test123" class="col-md-8"></div>
   
 @include('layout.footer')

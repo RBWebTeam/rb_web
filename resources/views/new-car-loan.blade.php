@@ -11,7 +11,7 @@
 <div class="col-md-8" id="mod">
 <form name="car_loan_process_form" id="car_loan_process_form" action="{{URL::to('loan-submit')}}" method="POST" >
 <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
-<input type="hidden" id="product" name="product_name" value=4>
+<input type="hidden" id="product" name="product_name" value="4">
   <div class="panel-group" id="accordion">
     <div class="panel panel-default">
       <div class="panel-heading">
@@ -28,19 +28,7 @@
 
   <div class="col-md-12">
 <center><div class="type-cover"><span>Car Type</span></div></center>
-            
-           <!--  <div class="text-center flt-lft btn-grp" data-toggle="buttons">
-              <div class="scenario">
-                <div class="col-xs-4 pad-no scenario-active"><a class="scenario-1 btn"><input type="radio" name="propery_types" value="ready"  class="radio1"  checked >READY</a></div>
-                <div class="col-xs-4 pad-no"><a class="scenario-1 btn"><input type="radio" name="propery_types" value="searching" class="radio1">SEARCHING</a></div>
-                <div class="col-xs-4 pad-no"><a class="scenario-1 btn"><input type="radio" name="propery_types" value="underconst" class="radio1">UNDERCONST</a></div>
-                <div class="col-xs-4 pad-no"><a class="scenario-1 btn"><input type="radio" name="propery_types" value="resale" class="radio1">RESALE</a></div>
-                <div class="col-xs-4 pad-no"><a class="scenario-1 btn"><input type="radio" name="propery_types" value="constuction" class="radio1">CONSTRUCTION</a></div>
-                <div class="col-xs-4 pad-no"><a class="scenario-1 btn"><input type="radio" name="propery_types" id="others" class="radio1">OTHER</a></div>
-                
-              </div>
-            </div>  -->
-            
+     
             <div class="col-xs-4 form-padding">
      <input type="text" class="form-input-new form-control" id="car_cost" name="car_cost" placeholder="Car Cost" required onkeypress="return fnAllowNumeric(event)"  maxlength="10">
   </div>
@@ -80,21 +68,7 @@
     <option value="3">3 Year</option>
     <option value="4">4 Year</option>
     <option selected value="5">5 Year</option>
- <!--    <option value="6">6 Year</option>
-    <option value="7">7 Year</option>
-    <option value="8">8 Year</option>
-    <option value="9">9 Year</option>
-    <option value="10">10 Year</option>
-    <option value="11">11 Year</option>
-    <option value="12">12 Year</option>
-    <option value="13">13 Year</option>
-    <option value="14">14 Year</option>
-    <option value="15">15 Year</option>
-    <option value="16">16 Year</option>
-    <option value="17">17 Year</option>
-    <option value="18">18 Year</option>
-    <option value="19">19 Year</option>
-    <option value="20">20 Year</option> -->
+ 
   </select>
   </div>
     
@@ -152,93 +126,14 @@
      <input type="text" class="form-input-new form-control"   name="obligation" placeholder="Existing EMI (If Any)" required onkeypress="return fnAllowNumeric(event)"> 
   </div>
     
-    
 
-    
-    <!-- Rounded switch -->
-    <!-- <div class="col-xs-12 form-padding">
-
-    <label class="switch"> <input type="checkbox" id="co_applicant_DI"><div class="slider round"><span class="co-applicant"> ADD CO-APPLICANT</span></div></label>
-    </div> -->
     
     
     </div>
       </div>
     </div>
 
-    <!-- <div class="panel panel-default" id="coapplicant_display" style="display: none;">
-      <div class="panel-heading">
-        <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">Co-Applicant Details</a>
-      <i class="icon-plus pull-right more-less"></i>
-        </h4>
-      </div>
-      <div id="collapse3" class="panel-collapse collapse">
-        <div class="panel-body">
-    
-    <div class="col-xs-6 form-padding">
-     <input type="text" class="form-input-new form-control" name="co_applicantname"  placeholder="Co-Applicant Name" required>
-  </div>
-  
-  <div class="col-xs-6 form-padding">
-   <div class="btn-grp form-control pad-no border-none" data-toggle="buttons">
-                                    <span class="btn btn-default outer-brd1 active"><input type="radio" name="cogender" value="M" ><img id="myImage" src="images/male.png" class=""></span><span class="hidden-xs">Male</span>
-                                   <span class="btn btn-default outer-brd1 "><input type="radio" name="cogender" value="F"><img id="myImage1" src="images/female.png" class=""></span> <span class="hidden-xs">Female</span>
-           </div>      
-     </div>
-     
-     <div class="col-xs-6 form-padding">
-     <input type="text" class="form-input-new form-control lastReporteddate" name="co_dob" placeholder="Date of Birth"  required>
-  </div>
-    <div class="col-xs-6 form-padding">
-     <div class="btn-grp form-control pad-no border-none" data-toggle="buttons">
-      <span class="btn btn-default outer-brd btn-blu active"><input type="radio" id="co_sala_DI" value="salaried"   name="co_emp_detail"  > Salared</span>
-      <span class="btn btn-default outer-brd btn-blu"><input type="radio"  id="co_self_DI" value="self-employed"  name="co_emp_detail"  >Self-Emp</span>
-         </div>
-     </div>
-
-
-      <div  style="display: none;" id="co_self-employed_ID"> 
-       
-       <div class="col-xs-6 form-padding">
-          <input type="text" class="form-input-new form-control " name="co_applicant_turnover" placeholder="co-applicant annual turnover"  onkeypress="return fnAllowNumeric(event)" required>
-      </div>
-
-       <div class="col-xs-6 form-padding">
-          <input type="text" class="form-input-new form-control " name="co_applicant_profit_after_tax" placeholder="Co-Applicant profit after"  onkeypress="return fnAllowNumeric(event)" required>
-      </div>
-      <div class="col-xs-6 form-padding">
-          <input type="text" class="form-input-new form-control " name="co_applicant_depreciation" placeholder="his/her depreciation" onkeypress="return fnAllowNumeric(event)" required>
-      </div>
-       <div class="col-xs-6 form-padding">
-          <input type="text" class="form-input-new form-control " name="co_applicant_remuneration" placeholder="director remuneration"  onkeypress="return fnAllowNumeric(event)" required>
-      </div>
-
-     </div>
-     
-     <div class="col-xs-6 form-padding">
-     <input type="text" class="form-input-new form-control" name="co_applicant_turnover" placeholder="Turnover/Topline"  onkeypress="return fnAllowNumeric(event)" required>
-  </div>
-  <div class="col-xs-6 form-padding">
-     <input type="text" class="form-input-new form-control" name="co_applicant_profit_after_tax" placeholder="Profit After Tax"  required>
-  </div>
-  <div class="col-xs-6 form-padding">
-     <input type="text" class="form-input-new form-control" name="co_applicant_depreciation" placeholder="Deprication"  required>
-  </div>
-  <div class="col-xs-6 form-padding">
-     <input type="text" class="form-input-new form-control" name="co_applicant_remuneration" placeholder="Partner Remuneration"  required>
-  </div>
-  <div class="col-xs-6 form-padding" id="co_income_ID">
-     <input type="text" class="form-input-new form-control"  name="co_applicant_income"  placeholder="Monthly Income" onkeypress="return fnAllowNumeric(event)" required>
-  </div>
-  <div class="col-xs-6 form-padding">
-     <input type="text" class="form-input-new form-control"  name="co_applicant_obligation" placeholder="All Existing EMI"   onkeypress="return fnAllowNumeric(event)" required>
-  </div>
-          
-    </div>
-      </div>
-    </div>
-<br> -->
+   
     <?php if(Session::get('is_login')) {?>
                 <?php if(Session::get('contact')!=''){ Session::get('contact'); ?>
               <button class="btn btn-primary btn-outline with-arrow top-mrg product_name product_ID" >Get Best Quotes<i class="icon-arrow-right"></i></button>
@@ -441,6 +336,3 @@ $("#eligibility").click(function() {
 </script>
 
  
-
-
-

@@ -295,15 +295,15 @@
   <tr>
   <td class="text-left"><h3 class="text-capitalize">Packing Credit Domestic</h3></b></</td>
   <td  id="domestic_ID">  </td>
-	<td  ></td>
-	<td  ></td>
+	<td  >0</td>
+	<td  >0</td>
   <td  id="tdomestic_ID"> </td>
   </tr>
   <tr>
   <td class="text-left" ><h3 class="text-capitalize">Packing Credit Foreign Currency</h3></</td>
   <td id="currency_ID"> </td>
-	<td ></td>
-	<td ></td>
+	<td >0</td>
+	<td >0</td>
   <td id="tcurrency_ID"> </td>
   </tr>
 
@@ -341,7 +341,7 @@
 
 <script type="text/javascript">
 //var restoredSession = JSON.parse(localStorage.getItem('session'));
-  //sessionStorage.clear();
+   //sessionStorage.clear();
 var array=new Array;
 var bank = {};
 var termbank = {};
@@ -616,9 +616,7 @@ $("button").click(function(e){
   
 // get row end
       
-      $('#bank_ID').empty().append('Total Saving '+$(".tbank4_saving").text());
-
-      alert($(".tbank4_saving").text());
+      
 });
 
 function ajax(_token,loanAmount_id,interest,loanTenurMonth,ID,paid){
@@ -683,7 +681,7 @@ function ajax(_token,loanAmount_id,interest,loanTenurMonth,ID,paid){
                 
                     
 
-                   // $('#bank_ID').empty().append('Total Saving'+totleMonthlysaving);
+                   $('#bank_ID').empty().append('Total Saving'+totleMonthlysaving);
                      sessionStorage.setItem("pcd",convertMonth);
                          
 
@@ -723,7 +721,7 @@ function ajax(_token,loanAmount_id,interest,loanTenurMonth,ID,paid){
                             }
 
 
-                  //  $('#bank_ID').empty().append('Total Saving'+totleMonthlysaving);
+                   $('#bank_ID').empty().append('Total Saving'+totleMonthlysaving);
                     sessionStorage.setItem("pcfc",convertMonth1);
                    
                      }
@@ -743,17 +741,17 @@ function ajax(_token,loanAmount_id,interest,loanTenurMonth,ID,paid){
             if(sessionName=='bank1'){
               total1=parseInt(totalYearSaving); 
               $('#bankName0').empty().append(total1);
-             // $('#bank_ID').empty().append('Total Saving<h3 class="tot-sav-txt">'+total1+'</h3>');
+             $('#bank_ID').empty().append('Total Saving<h3 class="tot-sav-txt">'+total1+'</h3>');
                
                 }else if(sessionName=='bank2'){
                     total2=parseInt(totalYearSaving);
                    $('#bankName1').empty().append(total2);
-            // $('#bank_ID').empty().append('Total Saving<h3 class="tot-sav-txt">'+total2+'</h3>');
+            $('#bank_ID').empty().append('Total Saving<h3 class="tot-sav-txt">'+total2+'</h3>');
              
                 }else if(sessionName=='bank3'){
                     total3=parseInt(totalYearSaving);
                   $('#bankName2').empty().append(total3);
-               // $('#bank_ID').empty().append('Total Saving<h3 class="tot-sav-txt">'+total3+'</h3>');
+               $('#bank_ID').empty().append('Total Saving<h3 class="tot-sav-txt">'+total3+'</h3>');
            
                 }
                 $('#banktotal').empty().append(totalb=total1+total2+total3);     //parseInt
@@ -765,15 +763,15 @@ function ajax(_token,loanAmount_id,interest,loanTenurMonth,ID,paid){
                 if(TsessionName=='Tbank1'){
                       total11=parseInt(totalYearSaving); 
                     $('#TbankName0').empty().append(total11);
-                  //  $('#bank_ID').empty().append('Total Saving<h3 class="tot-sav-txt">'+total11+'</h3>');
+                   $('#bank_ID').empty().append('Total Saving<h3 class="tot-sav-txt">'+total11+'</h3>');
                 }else if(TsessionName=='Tbank2'){
                    total21=parseInt(totalYearSaving);
                    $('#TbankName1').empty().append(total21);
-                 //  $('#bank_ID').empty().append('Total Saving<h3 class="tot-sav-txt">'+total21+'</h3>');
+                  $('#bank_ID').empty().append('Total Saving<h3 class="tot-sav-txt">'+total21+'</h3>');
                 }else if(TsessionName=='Tbank3'){
                   total31=parseInt(totalYearSaving);
                   $('#TbankName2').empty().append(total31);
-                 // $('#bank_ID').empty().append('Total Saving<h3 class="tot-sav-txt">'+total31+'</h3>');
+                 $('#bank_ID').empty().append('Total Saving<h3 class="tot-sav-txt">'+total31+'</h3>');
                 }
                 $('#Tbanktotal').empty().append(totalb1=total11+total21+total31);
 
@@ -962,8 +960,8 @@ $( "#termloanTenur" ).keyup(function() {
     var total4=nancheck(rows14)+nancheck(rows24)+nancheck(rows34)+nancheck(rows44);
     $("#bank4_saving").text(total4);
     
-    
- 
+     $('#bank_ID').empty().append('Total Saving<h3 class="tot-sav-txt">'+total4+'</h3>');
+ alert(total4);
 
  });
 

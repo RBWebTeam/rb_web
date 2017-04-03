@@ -8,7 +8,7 @@
  </div> -->
  <div class="col-md-12 white-bg pad">
  <h3 class="text-center loan-head">Home Loan</h3>
-<div class="col-md-8">
+<div class="col-md-8" id="mod">
 <form name="home_loan_process_form" id="home_loan_process_form" action="{{URL::to('loan-submit')}}" method="POST" >
 <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
 <input type="hidden" id="product" name="product_name" value=12>
@@ -343,6 +343,7 @@ $(".product_ID").click(function(e){
         //   data: {_token :_token,username:username,password:password},
              success: function(msg){                   
                              if(msg.success ==true){
+                              var quote=msg.quote;
                             var loan_eligible = msg.loan_eligible;
                              if (loan_eligible>0) {
                              $("#form_ID").empty().append(msg.html);
@@ -355,11 +356,11 @@ $(".product_ID").click(function(e){
                              $('#processfee').val(processingfee);
                            var Bank_id = msg.Bank_Id;
                              $('#bank').val(Bank_id);
-                           var url = "apply-lead-online?qoutid=0&BankId="+Bank_id+"&product=9&processing_fee="+processingfee+"&loan_eligible="+loan_eligible+"&roi_type="+roi+"";
+                           var url = "apply-lead-online?qoutid="+quote+"&BankId="+Bank_id+"&product=12&processing_fee="+processingfee+"&loan_eligible="+loan_eligible+"&roi_type="+roi+"";
                              $("#apply_new").attr("href", url);
                              $('#mi_ID').show();
                              $('#err').hide();
-                             $(window).scrollTop($('#form_ID').offset().top-20);
+                             // $(window).scrollTop($('#form_ID').offset().top-20);
                          }else{
 
                                 $('#err').show();
@@ -389,5 +390,14 @@ $(".product_ID").click(function(e){
 });
 
  
+
+</script>
+
+<script type="text/javascript">
+$("#eligibility").click(function() {
+  $(window).scrollTop($('#form_ID').offset().top-20);
+});
+
+
 
 </script>

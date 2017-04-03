@@ -132,6 +132,7 @@
 							</li>
 							<li>
 								<a href="{{URL::to('sme-loan')}}">Lease Rent Discounting</a>
+								<a href="{{URL::to('contact-us')}}">Working Capital</a>
 								
 							<!-- <a href="{{URL::to('sme-loan')}}">Export/Import Finance</a> -->
 							</li>
@@ -144,9 +145,11 @@
 						<ul class="dropdown-menu">
 						   <li>
 								<a href="{{URL::to('home-loan')}}">Home Loan</a>
+								<a href="{{URL::to('contact-us')}}">Smart Home Loan</a>
 								<a href="{{URL::to('loan-against-property')}}">Loan Against Property</a>
 								<a href="{{URL::to('personal-loan')}}">Personal Loan</a>
 								<a href="{{URL::to('car-loan')}}">Car Loan</a>
+								<a href="{{URL::to('used-car-loan')}}">Used Car Loan </a>
 
 						   </li>
 						</ul>

@@ -4,9 +4,7 @@
 
   
   <aside id="fh5co-hero">
-  <div class="col-md-12">
-  <h2 class="align-center loan-head">Personal Loan</h2>
-  </div>
+
  <!-- <div class="col-md-12 white-bg pad1 mrg-btm box-shadow">
 <img src="{{URL::to('images/9.png')}}" alt="Tribe Logo" class="img-responsive" />
 
@@ -16,7 +14,7 @@
 
 </div> -->
  <div class="col-md-12 white-bg pad box-shadow fl-lft">
-
+<h2 class="align-center loan-head">Personal Loan</h2>
   <!--   <div id ="test123" class="col-md-8"></div> -->
  
     <form name="personal_loan_process_form" id="personal_loan_process_form" action="#" method="POST" >
@@ -25,6 +23,7 @@
    <!--  <div id ="test123" class="col-md-8"></div> -->
   <div class="col-md-8"  id="mod">
  <!--  <h3 class="main-header">Genral Information</h3> -->
+ <br>
 <center><div class="type-cover"><span>PURPOSE OF LOAN</span></div></center>
 
 <div class="text-center flt-lft btn-grp" data-toggle="buttons">
@@ -45,55 +44,47 @@
             <!-- <div class="col-xs-4 form-padding">
      <input type="text" name="custom_id" id="custom_id" class="form-input-new form-control" placeholder="Existing Custom Id if Any" onkeypress="return isNumberKey(event)" >
   </div> -->
-  <div class="col-xs-4 form-padding">
+  <div class="col-xs-6 form-padding">
      <input type="text" name="loan_amount" id="loan_amount" class="form-input-new form-control" placeholder="Loan Required" onkeypress="return isNumberKey(event)" maxlength="10" required="">
   </div>
-  <div class="col-xs-4 form-padding">
+  <div class="col-xs-6 form-padding">
      <input type="text" id="city_name" name="city_name" class="form-input-new form-control search_city" placeholder="City of Location" required="">
   </div>
   
-  <div class="loan-tenure">
-  <center>
-    <div class="type-cover">
-      <span>LOAN TENURE</span>
-    </div>
-  </center>
-  <div class="scaling-slider">
+  <div class="col-xs-6 form-padding">
   
-    <div class="tenure offset5 pad">
-    
-                              <div  id="unranged-value" value="" style="width:100%; height:10px;"></div>
-    </div>
-    <input  type="hidden" id="loan_tenure" name="loan_tenure" value="5"  />
-    </div>
+     <select class="block drop-arr select-sty">
+	  <option>LOAN TENURE</option>
+	    <option>1 Year</option>
+		<option>2 Year</option>
+		<option>3 Year</option>
+		<option>4 Year</option>
+		<option>5 Year</option>
+		<option>6 Year</option>
+		<option>7 Year</option>
+	</select>
   </div>
 
                 
                 
                 
   
-     <div class="col-xs-12 form-padding">
+     <div class="col-xs-6 form-padding">
      <input type="text" name="applicant_name" id="applicant_name" class="form-input-new form-control" placeholder="Applicant Name" onkeypress="return AllowAlphabet(event)" required="">
   </div>
   <div class="col-xs-6 form-padding">
      <input type="text" id="dob" name="dob" class="form-input-new form-control lastReporteddate1" placeholder="Date of Birth" required="">
   </div>
   <div class="col-xs-6 form-padding">
-   <div class="btn-grp form-control border-none" data-toggle="buttons">
-                                    <span class="btn btn-default outer-brd1 outer-brd1 active"><input type="radio" name="gender"  value="M" checked><img id="myImage" src="images/male.png" class=""></span><span class="hidden-xs">Male</span>
+   <div class="btn-grp border-none pad-no form-control" data-toggle="buttons">
+                                    <span class="btn btn-default outer-brd1 outer-brd1 active"><input type="radio" name="gender"  value="M" checked><img id="myImage" src="images/male.png" cla></span><span class="hidden-xs"> Male</span>
                                    <span class="btn btn-default outer-brd1 outer-brd1 "><input type="radio" name="gender"  value="F"><img id="myImage1" src="images/female.png" class=""></span> <span class="hidden-xs">Female</span>
            </div>      
      </div>
 
-    <!--  <div class="col-xs-6 form-padding">
-     <div class="btn-grp form-control border-none" data-toggle="buttons">
-      <span class="btn btn-primary outer-brd btn-blu active"><input type="radio" name="gender"  value="Male">Male</span>
-      <span class="btn btn-primary outer-brd btn-blu"><input type="radio" name="gender"  value="Female">Female</span>
-         </div>
-     </div> -->
   
   <div class="col-xs-6 form-padding">
-     <div class="btn-grp form-control border-none" data-toggle="buttons">
+     <div class="btn-grp form-control border-none pad-no" data-toggle="buttons">
       <span class="btn btn-default outer-brd active"><input type="radio" name="emp_detail_id"   value="1" checked>Salaried</span>
       <span class="btn btn-default outer-brd "><input type="radio" name="emp_detail_id"  value="2"> Self-Emp</span>
          </div>
@@ -177,7 +168,7 @@
         <div> 
           
          <a id="apply_new" type="button" class="btn btn-info" title="Experience New Digital Era In Loans">Apply Digitally</a>
-         <button id="eligibility" class="btn btn-info" title="See Bankwise Eligibility And Apply Amongst Best Bank">Check Bankwise Eligibility</button>
+         <button id="eligibility" class="btn btn-info" title="See Bankwise Eligibility And Apply Amongst Best Bank">Check Eligibility</button>
          <button type="button" class="btn btn-info"  id="call_rm" name="call_rm" data-toggle="modal" data-target="#Modal" title="Call For RM(Single Day Process)">Call Manager</button>
          
         </div>

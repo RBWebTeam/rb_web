@@ -616,7 +616,9 @@ $("button").click(function(e){
   
 // get row end
       
-      
+      $('#bank_ID').empty().append('Total Saving '+$(".tbank4_saving").text());
+
+      alert($(".tbank4_saving").text());
 });
 
 function ajax(_token,loanAmount_id,interest,loanTenurMonth,ID,paid){

@@ -17,7 +17,7 @@
       <div class="panel-heading">
         <h4 class="panel-title">
           <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">Property Information</a>
-		 <i class="icon-plus pull-right more-less"></i>
+		 <i class="icon-minus pull-right more-less"></i>
         </h4>
       </div>
       <div id="collapse1" class="panel-collapse collapse in">
@@ -70,26 +70,42 @@
       </div>
       <div id="collapse2" class="panel-collapse collapse applicant_add">
         <div class="panel-body">
-		<div class="loan-tenure">
-			<center>
-				<div class="type-cover">
-						  <span>LOAN TENURE (Years)</span>
-				</div>
-			</center>
-			<div class="scaling-slider">
-			 <div class="tenure offset5 pad">
-                  <div  id="unranged-value" value="" style="width:100%; height:10px;"></div>
-				</div>
-			<input  type="hidden" id="loan_tenure" name="loan_tenure" value="0" />
-		</div>
-
-	 </div>
+		
+		<div class="col-xs-6 form-padding">
+  
+     <select class="block drop-arr select-sty">
+	  <option>LOAN TENURE</option>
+	    <option>1 Year</option>
+		<option>2 Year</option>
+		<option>3 Year</option>
+		<option>4 Year</option>
+		<option>5 Year</option>
+		<option>6 Year</option>
+		<option>7 Year</option>
+		<option>8 Year</option>
+		<option>9 Year</option>
+		<option>10 Year</option>
+		<option>11 Year</option>
+		<option>12 Year</option>
+		<option>13 Year</option>
+		<option>14 Year</option>
+		<option>15 Year</option>
+		<option>16 Year</option>
+		<option>17 Year</option>
+		<option>18 Year</option>
+		<option>19 Year</option>
+		<option>20 Year</option>
+	</select>
+  </div>
+		
+		
+		
     <div class="col-xs-6 form-padding">
      <input type="text" class="form-input-new form-control" name="applicantname" placeholder="Applicant Name"  required>
 	</div>
 	
 	<div class="col-xs-6 form-padding">
-	 <div class="btn-grp form-control border-none" data-toggle="buttons">
+	 <div class="btn-grp form-control pad-no border-none" data-toggle="buttons">
                                     <span class="btn btn-default outer-brd1 active"><input type="radio" value="M" name="gender"  ><img id="myImage" src="images/male.png" class=""></span><span class="hidden-xs">Male</span>
                                    <span class="btn btn-default outer-brd1 "><input type="radio" value="F" name="gender" ><img id="myImage1" src="images/female.png" class=""></span> <span class="hidden-xs">Female</span>
                         <input type="hidden" class="clr-blue"   name="emp_detail_id" value="1" >
@@ -101,7 +117,7 @@
      <input type="text" class="form-input-new form-control lastReporteddate"  name="dob"  placeholder="Date of Birth" required>
 	</div>
 		<div class="col-xs-6 form-padding">
-     <div class="btn-grp form-control border-none" data-toggle="buttons">
+     <div class="btn-grp form-control border-none pad-no" data-toggle="buttons">
       <span class="btn btn-default outer-brd btn-blu active"><input type="radio" id="sala_DI" value="salaried" name="emp_detail"  > Salaried</span>
       <span class="btn btn-default outer-brd btn-blu"><input type="radio" id="self_DI" value="self-employed" name="emp_detail"  >Self-Emp</span>
  
@@ -133,13 +149,14 @@
 	</div>
 	
 	<div class="col-xs-6 form-padding">
-     <input type="text" class="form-input-new form-control"   name="obligation" placeholder="Exsisting EMI (If Any)" required onkeypress="return fnAllowNumeric(event)">
+     <input type="text" class="form-input-new form-control"   name="obligation" placeholder="Existing EMI (If Any)" required onkeypress="return fnAllowNumeric(event)"> 
 	</div>
 		
 		
 		<!-- Rounded switch -->
+		<div class="col-xs-12 form-padding">
 		<label class="switch"> <input type="checkbox" id="co_applicant_DI"><div class="slider round"><span class="co-applicant"> ADD CO-APPLICANT</span></div></label>
-		
+		</div>
 		
 		
 		</div>
@@ -160,7 +177,7 @@
 	</div>
 	
 	<div class="col-xs-6 form-padding">
-	 <div class="btn-grp form-control border-none" data-toggle="buttons">
+	 <div class="btn-grp form-control pad-no border-none" data-toggle="buttons">
                                     <span class="btn btn-default outer-brd1 active"><input type="radio" name="cogender" value="M" ><img id="myImage" src="images/male.png" class=""></span><span class="hidden-xs">Male</span>
                                    <span class="btn btn-default outer-brd1 "><input type="radio" name="cogender" value="F"><img id="myImage1" src="images/female.png" class=""></span> <span class="hidden-xs">Female</span>
            </div>		   
@@ -170,7 +187,7 @@
      <input type="text" class="form-input-new form-control lastReporteddate" name="co_dob" placeholder="Date of Birth"  required>
 	</div>
 		<div class="col-xs-6 form-padding">
-     <div class="btn-grp form-control border-none" data-toggle="buttons">
+     <div class="btn-grp form-control pad-no border-none" data-toggle="buttons">
       <span class="btn btn-default outer-brd btn-blu active"><input type="radio" id="co_sala_DI" value="salaried"   name="co_emp_detail"  > Salared</span>
       <span class="btn btn-default outer-brd btn-blu"><input type="radio"  id="co_self_DI" value="self-employed"  name="co_emp_detail"  >Self-Emp</span>
          </div>
@@ -267,8 +284,8 @@
         <div> 
           
          <a id="apply_new" type="button" class="btn btn-info" title="Experience New Digital Era In Loans">Apply Now</a>
-         <button id="eligibility" class="btn btn-info" title="See Bankwise Eligibility And Apply Amongst Best Bank">Eligibility</button>
-         <button type="button" class="btn btn-info"  id="call_rm" name="call_rm" data-toggle="modal" data-target="#Modal" title="Call For RM(Single Day Process)">Call RM</button>
+         <button id="eligibility" class="btn btn-info" title="See Bankwise Eligibility And Apply Amongst Best Bank">Check Bankwise Eligibility</button>
+         <button type="button" class="btn btn-info block"  id="call_rm" name="call_rm" data-toggle="modal" data-target="#Modal" title="Call For RM(Single Day Process)"> Call RM</button>
          
         </div>
 			<!-- </form> -->

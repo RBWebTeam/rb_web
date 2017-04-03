@@ -195,7 +195,7 @@
 				
 					<img src="images/Report.png" alt="Credit Report" title="Credit Report" class="img-responsive hidden-sm pad crd-rpt">
 			
-					<a class="tp-margin" href="{{URL::to('credit-report-otp')}}">Apply For Credit Report</a>
+					<a class="tp-margin" href="{{URL::to('credit-report-otp')}}">Apply For FREE Credit Report</a>
 					</div>
 					<br>
                    <div class="col-md-1"></div>

@@ -47,26 +47,22 @@
   <div class="col-xs-6 form-padding">
      <input type="text" name="loan_amount" id="loan_amount" class="form-input-new form-control" placeholder="Loan Required" onkeypress="return isNumberKey(event)" maxlength="10" required="">
   </div>
-
-  
-
   <div class="col-xs-6 form-padding">
      <input type="text" id="city_name" name="city_name" class="form-input-new form-control search_city" placeholder="City of Location" required="">
-
   </div>
   
   <div class="col-xs-6 form-padding">
   
-     <select class="block drop-arr select-sty">
-	  <option>LOAN TENURE</option>
-	    <option>1 Year</option>
-		<option>2 Year</option>
-		<option>3 Year</option>
-		<option>4 Year</option>
-		<option selected>5 Year</option>
-		<option>6 Year</option>
-		<option>7 Year</option>
-	</select>
+     <select class="block drop-arr select-sty" id="loan_tenure" name="loan_tenure">
+    <option >LOAN TENURE</option>
+      <option value="1">1 Year</option>
+    <option value="2">2 Year</option>
+    <option value="3">3 Year</option>
+    <option value="4">4 Year</option>
+    <option selected value="5">5 Year</option>
+    <option value="6">6 Year</option>
+    <option value="7">7 Year</option>
+  </select>
   </div>
 
                 
@@ -88,12 +84,10 @@
 
   
   <div class="col-xs-6 form-padding">
-
-     <div class="btn-grp form-control border-none" data-toggle="buttons">
-      <span class="btn btn-default outer-brd active"><input type="radio" name="emp_detail_id" id="sala_DI"   value="1" checked>Salaried</span>
+     <div class="btn-grp form-control border-none pad-no" data-toggle="buttons">
+      <span class="btn btn-default outer-brd active"><input type="radio" name="emp_detail_id" id="sala_DI"    value="1" checked>Salaried</span>
       <span class="btn btn-default outer-brd "><input type="radio" name="emp_detail_id" id="self_DI"  value="2"> Self-Emp</span>
-
-     
+         </div>
      </div>
 
      <div  style="display: none;" id="self-employed_ID">  <!-- self-employed-->
@@ -103,7 +97,7 @@
       </div>
       </div>
      
-     <div class="col-xs-6 form-padding" id="income_ID">
+     <div class="col-xs-6 form-padding"  id="income_ID">
      <input type="text" name="income" id="income" class="form-input-new form-control"  onkeypress="return isNumberKey(event)"  placeholder="Monthly Income" required="">
   </div>
   
@@ -152,7 +146,6 @@
       </div>
       </form>
      </div>
-
      <div class="col-md-4" >
      <div class="border brd-for" id="mi_id">
 
@@ -192,15 +185,20 @@
     <!--   </form> -->
 
     </div> 
-
     <p id="err" style="display:none;" ><span style="color: red;font-size: 20px;display: block; text-align: center;">Sorry, We are unable to process your request. Will get back to you in future.</span></p> 
-  
-  </div>
+  </div> 
    </aside>
    
   </div>
-  
+  </div>
   <div id ="test123" class="col-md-8"></div>
+  
+      
+  
+  
+   <br>
+  
+  
 @include('layout.footer')
 @include('layout.script')
 
@@ -312,6 +310,7 @@ $(".btn-primary").click(function(e){
                        $(window).scrollTop($('#lowest').offset().top-50);
 
                    }else{
+                    alert("ok");
                      $('#err').show();
                      $('#apply_new').hide();
                       $("#test123").empty();

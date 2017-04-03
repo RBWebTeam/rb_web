@@ -74,15 +74,15 @@
    
     <div class="col-xs-6 form-padding">
   
-     <select class="block drop-arr select-sty">
-	  <option>LOAN TENURE</option>
-	    <option>1 Year</option>
-		<option>2 Year</option>
-		<option>3 Year</option>
-		<option>4 Year</option>
-		<option>5 Year</option>
-		<option>6 Year</option>
-		<option>7 Year</option>
+     <select class="block drop-arr select-sty" id="loan_tenure" name="loan_tenure">
+    <option>LOAN TENURE</option>
+      <option value="1">1 Year</option>
+    <option value="2">2 Year</option>
+    <option value="3">3 Year</option>
+    <option value="4">4 Year</option>
+    <option selected value="5">5 Year</option>
+    <option value="6">6 Year</option>
+    <option value="7">7 Year</option>
 	</select>
   </div>
    

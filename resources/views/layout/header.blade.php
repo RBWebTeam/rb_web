@@ -128,7 +128,7 @@
 						     <li>
 								<a href="{{URL::to('business-loan')}}">Unsecured Business Loan</a>
 								<a href="{{URL::to('loan-against-property')}}">Loan Against Property</a>
-								<a href="{{URL::to('loan-against-property')}}">Commercial Property Purchase</a>
+								<a href="{{URL::to('new-loan-against-property')}}">Commercial Property Purchase</a>
 							</li>
 							<li>
 								<a href="{{URL::to('loan-against-property')}}">Lease Rent Discounting</a>

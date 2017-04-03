@@ -19,7 +19,7 @@
 
 	   <div class="btn-grp mrg-top pad status" data-toggle="buttons">
 	  
-		<center><div class="type-cover"><span>Proprietor Ship</span></div></center>
+		<center><div class="type-cover"><span>Proprietorship</span></div></center>
       <span class="btn btn-default outer-brd active"><input type="radio" name="proprietor"  value="Sole Proprietor">Sole Proprietor</span>
       <span class="btn btn-default outer-brd"><input type="radio" name="proprietor"  value="Partnership">Partnership</span>
       <span class="btn btn-default outer-brd"><input  type="radio" name="proprietor"  value="Company" >Company</span>

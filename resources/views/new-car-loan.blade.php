@@ -1,6 +1,7 @@
 @include('layout.header')
 <div class="container ">
  <aside id="fh5co-hero">
+
   
  <!-- <div class="col-md-12 white-bg pad1 mrg-btm">
 <img src="{{URL::to('images/9.png')}}" alt="Tribe Logo" class="img-responsive" />
@@ -30,6 +31,7 @@
 <center><div class="type-cover"><span>PROPERTY TYPE</span></div></center>
             
             <div class="text-center flt-lft btn-grp" data-toggle="buttons">
+
               <div class="scenario">
                 <div class="col-xs-4 pad-no scenario-active"><a class="scenario-1 btn"><input type="radio" name="propery_types" value="ready"  class="radio1"  checked >READY</a></div>
                 <div class="col-xs-4 pad-no"><a class="scenario-1 btn"><input type="radio" name="propery_types" value="searching" class="radio1">SEARCHING</a></div>
@@ -50,7 +52,19 @@
   <div class="col-xs-4 form-padding">
      <input type="text" class="form-input-new form-control search_city" name='city_name' placeholder="Enter City" required >
   </div>
+ 
+ <div class="col-xs-6 form-padding">
   
+     <select class="block drop-arr select-sty">
+	  <option>LOAN TENURE</option>
+	    <option>1 Year</option>
+		<option>2 Year</option>
+		<option>3 Year</option>
+		<option>4 Year</option>
+		<option>5 Year</option>
+
+	</select>
+  </div>
      </div>
 
    
@@ -88,6 +102,7 @@
      <input type="text" class="form-input-new form-control" name="applicantname" placeholder="Applicant Name"  required>
   </div>
   
+
   <div class="col-xs-6 form-padding">
    <div class="btn-grp form-control border-none" data-toggle="buttons">
                                     <span class="btn btn-default outer-brd1 active"><input type="radio" value="M" name="gender"  ><img id="myImage" src="images/male.png" class=""></span><span class="hidden-xs">Male</span>
@@ -99,6 +114,7 @@
      
      <div class="col-xs-6 form-padding">
      <input type="text" class="form-input-new form-control lastReporteddate"  name="dob"  placeholder="Date of Birth" required>
+
   </div>
     <div class="col-xs-6 form-padding">
      <div class="btn-grp form-control border-none" data-toggle="buttons">
@@ -160,6 +176,18 @@
   </div>
   
   <div class="col-xs-6 form-padding">
+<<<<<<< HEAD
+   <div class="btn-grp form-control pad-no border-none" data-toggle="buttons">
+                                    <span class="btn btn-default outer-brd1 outer-brd1 active"><input type="radio" name="gender"  value="M" checked><img id="myImage" src="images/male.png" class=""></span><span class="hidden-xs">Male</span>
+                                   <span class="btn btn-default outer-brd1 outer-brd1 "><input type="radio" name="gender"  value="F"><img id="myImage1" src="images/female.png" class=""></span> <span class="hidden-xs">Female</span>
+           </div>      
+     </div>
+  
+  <div class="col-xs-6 form-padding">
+     <div class="btn-grp form-control pad-no border-none" data-toggle="buttons">
+      <span class="btn btn-default outer-brd active"><input type="radio" name="emp_detail_id"   value="1" checked>Salaried</span>
+      <span class="btn btn-default outer-brd "><input type="radio" name="emp_detail_id"  value="2"> Self-Emp</span>
+=======
    <div class="btn-grp form-control border-none" data-toggle="buttons">
                                     <span class="btn btn-default outer-brd1 active"><input type="radio" name="cogender" value="M" ><img id="myImage" src="images/male.png" class=""></span><span class="hidden-xs">Male</span>
                                    <span class="btn btn-default outer-brd1 "><input type="radio" name="cogender" value="F"><img id="myImage1" src="images/female.png" class=""></span> <span class="hidden-xs">Female</span>
@@ -173,6 +201,7 @@
      <div class="btn-grp form-control border-none" data-toggle="buttons">
       <span class="btn btn-default outer-brd btn-blu active"><input type="radio" id="co_sala_DI" value="salaried"   name="co_emp_detail"  > Salared</span>
       <span class="btn btn-default outer-brd btn-blu"><input type="radio"  id="co_self_DI" value="self-employed"  name="co_emp_detail"  >Self-Emp</span>
+>>>>>>> a8d6749977b6b44ac03b8fa96ec8a550f9c9bd55
          </div>
      </div>
 
@@ -263,12 +292,12 @@
           <label class="form-label-new">Processing Fee</label>
               <input type="text" class="form-control" id="processfee" name="name" placeholder="" required class="clr-ddd" readonly />
             </div>
-
+        <br>
         <div> 
           
          <a id="apply_new" type="button" class="btn btn-info" title="Experience New Digital Era In Loans">Apply Now</a>
-         <button id="eligibility" class="btn btn-info" title="See Bankwise Eligibility And Apply Amongst Best Bank">Eligibility</button>
-         <button type="button" class="btn btn-info"  id="call_rm" name="call_rm" data-toggle="modal" data-target="#Modal" title="Call For RM(Single Day Process)">Call RM</button>
+         <button id="eligibility" class="btn btn-info" title="See Bankwise Eligibility And Apply Amongst Best Bank">Check Bankwise Eligibility</button>
+         <button type="button" class="btn btn-info block"  id="call_rm" name="call_rm" data-toggle="modal" data-target="#Modal" title="Call For RM(Single Day Process)">Call RM</button>
          
         </div>
       <!-- </form> -->

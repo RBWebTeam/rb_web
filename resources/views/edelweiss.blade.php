@@ -29,45 +29,42 @@
 		</div>
 		
 		
-		<div class="loan-tenure">
-  <center>
-    <div class="type-cover">
-      <span>LOAN TENURE</span>
-    </div>
-  </center>
-  <div class="scaling-slider">
+		<div class="col-xs-12 form-padding mrg-btm">
   
-    <div class="tenure offset5 pad">
-    
-                              <div  id="unranged-value" value="" style="width:100%; height:10px;"></div>
-    </div>
-    <input  type="hidden" id="loan_tenure" name="loan_tenure" value="5"  />
-    </div>
+     <select class="block drop-arr select-sty">
+	  <option>LOAN TENURE</option>
+	    <option>1 Year</option>
+		<option>2 Year</option>
+		<option>3 Year</option>
+		<option>4 Year</option>
+		<option selected>5 Year</option>
+		<option>6 Year</option>
+		<option>7 Year</option>
+	</select>
   </div>
   
-  
-     <div class="col-xs-6 form-padding">
+     <div class="col-xs-12 col-md-6 form-padding">
      <input type="name" class="form-input-new form-control" placeholder="Name of The company" required="">
 	</div>
-	<div class="col-xs-6 form-padding">
+	<div class="col-xs-12 col-md-6 form-padding">
      <input type="name" class="form-input-new form-control" placeholder="Income Tax Paid - Firm" required="">
 	</div>
-	<div class="col-xs-6 form-padding">
+	<div class="col-xs-12 col-md-6 form-padding">
      <input type="name" class="form-input-new form-control" placeholder="Turnover/Topline" required="">
 	</div>
-	<div class="col-xs-6 form-padding">
+	<div class="col-xs-12 col-md-6 form-padding">
      <input type="name" class="form-input-new form-control" placeholder="Profit After Tax" required="">
 	</div>
-	<div class="col-xs-6 form-padding">
+	<div class="col-xs-12 col-md-6 form-padding">
      <input type="name" class="form-input-new form-control" placeholder="Depreciation" required="">
 	</div>
-	<div class="col-xs-6 form-padding">
+	<div class="col-xs-12 col-md-6 form-padding">
      <input type="name" class="form-input-new form-control" placeholder="Partner Remuneration" required="">
 	</div>
-	<div class="col-xs-6 form-padding">
+	<div class="col-xs-12 col-md-6 form-padding">
      <input type="name" class="form-input-new form-control" placeholder="Interest Paid On Bank Loans" required="">
 	</div>
-	<div class="col-xs-6 form-padding">
+	<div class="col-xs-12 col-md-6 form-padding">
      <input type="name" class="form-input-new form-control" placeholder="Existing All EMI" required="">
 	</div>
  </div>
@@ -105,10 +102,10 @@
       <div class="panel-heading">
         <h4 class="panel-title">
           <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">NATURE OF BUSINESS</a>
-		 <i class="icon-minus pull-right more-less"></i>
+		 <i class="icon-plus pull-right more-less"></i>
         </h4>
       </div>
-      <div id="collapse1" class="panel-collapse collapse in">
+      <div id="collapse1" class="panel-collapse collapse">
         <div class="panel-body">
 							
 	<div class="text-center flt-lft btn-grp" data-toggle="buttons">
@@ -234,16 +231,16 @@
 					<label class="form-label-new">Loan Amount Required</label>
 				      <input type="text" class="form-control" id="name" name="name" placeholder="5,00,000" required class="clr-ddd" />
 				    </div>
-
+                <br>
 			  <div> 
 			    
 			     <button style="display:block; width:100%;font-size:20px;padding:5px; background:#28a0ff;color:#fff;">GET OTP</button>
 				<br>
-				<div class="inp-hig">
+				<!-- <div class="inp-hig">
 				      <input type="text" class="form-control" id="name" name="name" placeholder="ENTER OTP" required class="clr-ddd" />
 				   
 				 <button style="width:100%;font-size:20px;padding:5px; background:#28a0ff;color:#fff;">SUBMIT</button>
-				  </div>
+				  </div> -->
 			   
 			  </div>
 			</form>

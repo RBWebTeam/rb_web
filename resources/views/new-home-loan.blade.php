@@ -332,8 +332,8 @@ $(".product_ID").click(function(e){
             return false;
           }else{
                var property_cost=$('#property_cost').val();
-               var income=$('#income').val();
-      if(property_cost!='' && income!=''){
+               var obligation=$('#obligation').val();
+      if(property_cost!='' && obligation!=''){
          $('#login_process').attr( 'id', 'login_process');
 
               $.ajax({  

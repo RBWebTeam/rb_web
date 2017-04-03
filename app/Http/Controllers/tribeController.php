@@ -4,31 +4,32 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
-class tribeController extends CallApiController
+class TribeController extends CallApiController
 {
     public function tribe(){
-		$post='';
-        
+		// $post='';
+       // $temp="kuch to error h";
 	    $url = "http://api.rupeeboss.com/BankAPIService.svc/GetTribeLoan";
-	    $result=$this->call_json_data_get_api($url,$post);
+	    $result=$this->call_json_data_get_api($url,'');
 	    $http_result=$result['http_result'];
 	    $error=$result['error'];
 	    if($error){
 	    	return view('went-wrong');
-	    }else{
-	    $temp_data=json_decode(json_decode($http_result))->response;
-	    $data['data']=json_decode(json_encode($temp_data));
-	    //  print "<pre>";
-	    // print_r($data);exit();
-	     
-	    return view('tribe')->with($data);		
+	    }
+		    $temp_data=json_decode(json_decode($http_result))->response;
+		    $data=json_decode(json_encode($temp_data));
+		    // print "<pre>";
+		    // print_r($data);exit();
+		    // $data="hii";
+		    return view('tribe')->with('data',$data);
+		   		
 	    }
 	    
-	}
+	
 	public function save_tribe_form(Request $req){
 	
 	$data=$req->all();
-	try{
+	//print_r($data);exit();
 	//company_address
 	// doc_pan doc_aadhar doc_dl doc_passport doc_voter doc_electricity_bill doc_leave_license doc_reg_certification doc_tax_registration doc_comapny_it_returns doc_company_pan doc_vat_return doc_it_returns doc_other		
 			// $documents_array = array('docpan','doc_aadhar','doc_dl','doc_passport','doc_voter','doc_electricity_bill','doc_leave_license','doc_reg_certification','doc_tax_registration','doc_comapny_it_returns','doc_company_pan','doc_vat_return','doc_it_returns','doc_other');
@@ -48,25 +49,26 @@ class tribeController extends CallApiController
 	  //              	break;
 	  //               // $url = "http://beta.services.rupeeboss.com/LoginDtls.svc/xmlservice/uploadCustLoanDoc";
 			// 	}				
-				$data["name"]="SampleTribe";
-				$data["loan_type"]=0;		    
-				//remove above hard coded parameter later
-				$business_pan=isset($data['company_pan_card'])?$data['company_pan_card']:$data['business_run_by_pan_div'];
-				$data['online_sale_channel']=isset($data['online_sale_channel'])?$data['online_sale_channel']:"";
-				$id=$data['online_ids'];
-				$data['online_credential']=(json_encode($data['online_ids_array'][$id]));
-				$data['middle_name']=isset($data['middle_name'])?$data['middle_name']:'""';
-				$data['ownership']=isset($data['ownership'])?$data['ownership']:0;
-				$data['agent_name']=isset($data['agent_name'])?$data['agent_name']:'""';
-				$data['social']=isset($data['social'])?$data['social']:'""';
-				$data['partners_count']=isset($data['partners_count'])?$data['partners_count']:'""';
-				$data['directors_count']=isset($data['directors_count'])?$data['directors_count']:'""';
-				//$data['proprietorship_type']=isset($data['proprietorship_type'])?$data['proprietorship_type']:'""';
-				$data['taxation_details']=isset($data['taxation_details'])?$data['taxation_details']:'';
-				$data['online_sale_channel']=isset($data['online_sale_channel'])?$data['online_sale_channel']:'""';
-				$data['business_run_by']=isset($data['business_run_by'])?$data['business_run_by']:'""';
-				$data['business_run_by_pan_div']=isset($data['business_run_by_pan_div'])?$data['business_run_by_pan_div']:'""';
-				//print_r($data);exit();
+	$data["name"]="SampleTribe";
+	$data["loan_type"]=0;		    
+	//remove above hard coded parameter later
+	$business_pan=isset($data['company_pan_card'])?$data['company_pan_card']:$data['business_run_by_pan_div'];
+	$data['online_sale_channel']=isset($data['online_sale_channel'])?$data['online_sale_channel']:"";
+	$x=$data['online_ids'];
+	$data['online_credential']=(json_encode($data['online_ids_array'][$x]));
+	//print_r(json_encode($data['online_ids_array'][$x]));exit();
+	$data['middle_name']=isset($data['middle_name'])?$data['middle_name']:'""';
+	$data['ownership']=isset($data['ownership'])?$data['ownership']:0;
+	$data['agent_name']=isset($data['agent_name'])?$data['agent_name']:'""';
+	$data['social']=isset($data['social'])?$data['social']:'""';
+	$data['partners_count']=isset($data['partners_count'])?$data['partners_count']:'""';
+	$data['directors_count']=isset($data['directors_count'])?$data['directors_count']:'""';
+	
+	$data['taxation_details']=isset($data['taxation_details'])?$data['taxation_details']:'';
+	$data['online_sale_channel']=isset($data['online_sale_channel'])?$data['online_sale_channel']:'""';
+	$data['business_run_by']=isset($data['business_run_by'])?$data['business_run_by']:'""';
+	$data['business_run_by_pan_div']=isset($data['business_run_by_pan_div'])?$data['business_run_by_pan_div']:'""';
+	//print_r($data);exit();
 				$post_data='{"agentname":"'.$data['agent_name'].'",
 		"business_details":{
 			"address":{
@@ -127,8 +129,8 @@ class tribeController extends CallApiController
 		"repayment_frequency":'.$data['repayment_frequency'].',
 		"secret":"'.$data['agent_name'].'"}';
 
-			print_r($post_data);exit();
-			$url = "http://api.rupeeboss.com/BankAPIService.svc/createTribeLoan";
+		print_r($post_data);exit();
+		    $url = "http://api.rupeeboss.com/BankAPIService.svc/createTribeLoan";
 		    $result=$this->call_json_data_api($url,$post_data);
 		    $http_result=$result['http_result'];
 		    $error=$result['error'];
@@ -138,9 +140,6 @@ class tribeController extends CallApiController
 		        return 'false';
 		    }
 	      
-	    }catch(/Exception $ee){
-	    	print_r($ee);
 	    }
-	}
 	
 }

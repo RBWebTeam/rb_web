@@ -18,7 +18,7 @@ class TribeController extends CallApiController
 	    }else{
 	    $temp_data=json_decode(json_decode($http_result))->response;
 	    $temp=json_decode(json_encode($temp_data));
-	   	print "<pre>";
+	   	//print "<pre>";
 	   	// print_r($temp);exit();
 	    foreach ($temp as $key => $value) {
 

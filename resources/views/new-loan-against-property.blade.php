@@ -15,6 +15,7 @@
 <input type="hidden" id="product" name="product_name" value=7>
 	<div class="panel-group" id="accordion">
     <div class="panel panel-default">
+    
       <div class="panel-heading">
         <h4 class="panel-title">
           <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">Property Information</a>
@@ -29,8 +30,11 @@
 
   <div class="col-md-12">
 <center><div class="type-cover"><span>PROPERTY TYPE</span></div></center>
-            
-            <div class="text-center flt-lft btn-grp" data-toggle="buttons">
+<?php
+    if(isset($_GET['commercial'])){ ?>
+      
+    <?php }else{ ?>
+      <div class="text-center flt-lft btn-grp" data-toggle="buttons">
               <div class="scenario">
                 <div class="col-xs-4 pad-no scenario-active"><a class="scenario-1 btn"><input type="radio" name="propery_types" value="residential"  class="radio1"  checked >RESIDENTIAL</a></div>
                 <div class="col-xs-4 pad-no"><a class="scenario-1 btn"><input type="radio" name="propery_types" value="commercial" class="radio1">COMMERCIAL</a></div>
@@ -41,6 +45,11 @@
                 
               </div>
             </div> 
+    <?php }
+
+    ?>
+            
+            
             
             <div class="col-xs-4 form-padding">
      <input type="text" class="form-input-new form-control" id="property_cost" name="property_cost" placeholder="Property Cost" required onkeypress="return fnAllowNumeric(event)">

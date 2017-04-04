@@ -6,10 +6,13 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 class TribeController extends CallApiController
 {
+	public static $secret="i1fndpWYkU9fgBhqWmKU1Uwt7ogk9q";
+	
     public function tribe(){
 		$post='';
         
-	    $url = "http://api.rupeeboss.com/BankAPIService.svc/GetTribeLoan";
+	    $url = TribeController::$url_static."GetTribeLoan";
+	    //print_r($url);exit();
 	    $result=$this->call_json_data_get_api($url,$post);
 	    $http_result=$result['http_result'];
 	    $error=$result['error'];
@@ -50,7 +53,7 @@ class TribeController extends CallApiController
 	public function save_tribe_form(Request $req){
 	
 	$data=$req->all();
-	return 1;
+	
 	//print_r($data);exit();
 	//company_address
 	// doc_pan doc_aadhar doc_dl doc_passport doc_voter doc_electricity_bill doc_leave_license doc_reg_certification doc_tax_registration doc_comapny_it_returns doc_company_pan doc_vat_return doc_it_returns doc_other		
@@ -149,10 +152,10 @@ class TribeController extends CallApiController
 			"mobile_number":'.$data['ref_mobile'].'
 		},
 		"repayment_frequency":'.$data['repayment_frequency'].',
-		"secret":"i1fndpWYkU9fgBhqWmKU1Uwt7ogk9q"}';
+		"secret":"'.TribeController::$secret.'"}';
 
 		print_r($post_data);exit();
-		    $url = "http://api.rupeeboss.com/BankAPIService.svc/createTribeLoan";
+		    $url = TribeController::$url_static."createTribeLoan";
 		    $result=$this->call_json_data_api($url,$post_data);
 		    $http_result=$result['http_result'];
 		    $error=$result['error'];
@@ -162,6 +165,64 @@ class TribeController extends CallApiController
 		        return 'false';
 		    }
 	      
+	    }
+	    public function UploadTribeDocuments(Request $req){
+			    	// $str='docpan';
+			    	// $imageName = time().'.'.$req->$str->getClientOriginalExtension();
+					
+			    	// print_r($imageName);exit();
+			//     	 {
+		 // 'pan'​: 1,
+		 // 'aadhaar'​: 2,
+		 // 'driving license'​: 3,
+		 // 'passport'​: 4,
+		 // 'voter id'​: 5,
+		 // 'personal_it_returns'​: 6,
+		 // 'company_it_returns'​: 7,
+		 // 'company_pan'​: 8,
+		 // 'vat_returns'​:9,
+		 // 'financier_term_condition'​: 10,
+		 // 'other'​: 11,
+		 // 'electricity_bill'​: 12,
+		 // 'leave_license_agreement'​: 13,
+		 // 'registration_certificate'​: 14,
+		 // 'tax_registration'​: 15,
+		 // 'certificate_of_incorporation'​: 16,
+		 // 'audited_financial_documents'​: 17
+		 // }
+
+	    	 $documents_name_array = array('docpan','doc_aadhar','doc_dl','doc_passport','doc_voter','doc_electricity_bill','doc_leave_license','doc_reg_certification','doc_tax_registration','doc_comapny_it_returns','doc_company_pan','doc_vat_return','doc_it_returns','doc_other');
+	    	$documents_array = array('1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17');
+	        $request=$req;
+	        $response=0;$i=0;
+	        for( $i=0;$i<sizeof($documents_array);$i++){
+                $str=$documents_array[$i];
+                if(! $req->$str){
+                	continue;
+                }               
+	                $imageName = time().'.'.$req->$str->getClientOriginalExtension();
+	                $extension=$req->$str->getClientOriginalExtension();
+	                $filename = $req->$str->getpathName();//Image path
+	                $file =fopen($filename, "rb");
+	                $contents = fread($file, filesize($filename));
+	                $base64=base64_encode($contents);
+	                $post_data='{"document_category": '.$documents_array[$i].', "title": "'.$documents_name_array[$i].'", "document":"'.$base64.'", "tribe": "100", "secret": "'.TribeController::$secret.'"}';
+	               	break;
+	                // $url = "http://beta.services.rupeeboss.com/LoginDtls.svc/xmlservice/uploadCustLoanDoc";
+				}
+				
+				
+				print_r($post_data);exit();
+
+				$url = TribeController::$url_static."uploadDocumentsTribeLoan";
+				$result=$this->call_json_data_api($url,$post_data);
+			    $http_result=$result['http_result'];
+			    $error=$result['error'];
+			    if($http_result){
+			        return $http_result;
+			    }else{
+			        return false;
+			    }
 	    }
 	
 }

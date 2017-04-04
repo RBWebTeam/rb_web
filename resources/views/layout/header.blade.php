@@ -126,12 +126,12 @@
 						<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" data-target="#">SME Loan</a>
 						 <ul class="dropdown-menu">
 						     <li>
-								<a href="{{URL::to('business-loan')}}">Unsecured Business Loan</a>
-								<a href="{{URL::to('loan-against-property')}}">Loan Against Property</a>
+								<a href="{{URL::to('new-business-loan')}}">Unsecured Business Loan</a>
+								<a href="{{URL::to('new-loan-against-property')}}">Loan Against Property</a>
 								<a href="{{URL::to('new-loan-against-property?commercial')}}">Commercial Property Purchase</a>
 							</li>
 							<li>
-								<a href="{{URL::to('loan-against-property')}}">Lease Rent Discounting</a>
+								<a href="{{URL::to('new-loan-against-property')}}">Lease Rent Discounting</a>
 								<a href="{{URL::to('contact-us')}}">Working Capital</a>
 								
 							<!-- <a href="{{URL::to('sme-loan')}}">Export/Import Finance</a> -->
@@ -144,19 +144,18 @@
 						<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" data-target="#">Retail Loan</a>
 						<ul class="dropdown-menu">
 						   <li>
-								<a href="{{URL::to('home-loan')}}">Home Loan</a>
+								<a href="{{URL::to('new-home-loan')}}">Home Loan</a>
+								<a href="{{URL::to('new-home-loan')}}">Smart Home Loan</a>
 								
-								<a href="{{URL::to('loan-against-property')}}">Loan Against Property</a>
-								<a href="{{URL::to('personal-loan')}}">Personal Loan</a>
-								<a href="{{URL::to('car-loan')}}">Car Loan</a>
-
-								<a href="{{URL::to('home-loan')}}">Smart Home Loan</a>
-
+								<a href="{{URL::to('new-loan-against-property')}}">Loan Against Property</a>
+								<a href="{{URL::to('new-personal-loan')}}">Personal Loan</a>
+								<a href="{{URL::to('new-car-loan')}}">Car Loan</a>
 								<a href="{{URL::to('used-car-loan')}}">Used Car Loan </a>
 
 						   </li>
 						</ul>
 						<li><a href="{{URL::to('credit-card')}}">Credit Card</a></li>
+						<li><a href="{{URL::to('check_emi')}}">EMI Calculator</a></li>
 						
 						 <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" data-target="#">Balance Transfer</a>
 						 

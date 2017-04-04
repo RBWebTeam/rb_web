@@ -20,9 +20,9 @@
   <div class="carousel-inner" role="listbox">
   <div class="pull-right mar-tp ">
          <ul>
-		    <li><a href="{{URL::to('comfy')}}">Rupeeboss Comfy</a></li>
+		    <li><a href="{{URL::to('comfy')}}"><b>Rupeeboss Comfy</b></a></li>
 			<li><a href="{{URL::to('express-loan')}}"><b>Express Loan</b></a></li>
-			<li><a href="{{URL::to('idfc')}}">Savings Account</a></li>
+			<li><a href="{{URL::to('idfc')}}"><b>Savings Account</b></a></li>
 			
 		 </ul>
 		
@@ -121,7 +121,7 @@
 			<div class="dv-hr">
 				<div class="col-md-2 animate-box no-padding">
 					<div class="services">
-						<a class="anchor_decoration" href="{{URL::to('home-loan')}}">
+						<a class="anchor_decoration" href="{{URL::to('new-home-loan')}}">
 						<div class="desc">
 						<i class="icon-home"></i>
 							<h3>Home Loan</h3>
@@ -132,7 +132,7 @@
 				</div>
 				<div class="col-md-2 animate-box no-padding">
 					<div class="services1 services">
-						<a class="anchor_decoration" href="{{URL::to('personal-loan')}}">
+						<a class="anchor_decoration" href="{{URL::to('new-personal-loan')}}">
 						<div class="desc">
 						<i class="icon-user"></i>
 							<h3>Personal Loan</h3>
@@ -143,7 +143,7 @@
 				</div>
 				<div class="col-md-2 animate-box no-padding">
 					<div class="services2 services">
-						<a class="anchor_decoration" href="{{URL::to('loan-against-property')}}">
+						<a class="anchor_decoration" href="{{URL::to('new-loan-against-property')}}">
 						<div class="desc">
 						<i class="icon-money"></i>
 							<h3>Loan against <br>Property</h3>
@@ -165,7 +165,7 @@
 				</div>
 				<div class="col-md-2 animate-box no-padding">
 					<div class="services4 services">
-						<a class="anchor_decoration" href="{{URL::to('business-loan')}}">
+						<a class="anchor_decoration" href="{{URL::to('new-business-loan')}}">
 						<div class="desc">
 						<i class="icon-line-chart"></i>
 							<h3>Business <br> Loan </h3>
@@ -176,7 +176,7 @@
 				</div>
 				<div class="col-md-2 animate-box no-padding">
 					<div class="services5 services">
-						<a class="anchor_decoration" href="{{URL::to('car-loan')}}">
+						<a class="anchor_decoration" href="{{URL::to('new-car-loan')}}">
 						<div class="desc">
 						<i class="icon-car"></i>
 							<h3>Car Loan</h3>

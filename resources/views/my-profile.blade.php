@@ -214,17 +214,37 @@
 
 
                            <div class="tab-pane" id="GetCustomerLead">
-                                     
-                                @foreach($objLead as $val)
-                                <div  class="col-md-12">Bank Name : {{$val->Bank_Name}}</div>
-                                 <!--   <div  class="col-md-12">Bank_RM_NO :{{$objLead[0]->Bank_RM_NO}}</div> -->
-                                <!--    <div  class="col-md-12"> Bank_RM_Name: {{$objLead[0]->Bank_RM_Name}}</div> -->
-                                   <div  class="col-md-12">Lead Date : {{$val->Lead_Date}}</div>
-                                   <div  class="col-md-12">Lead Id: {{$val->Lead_Id}}</div>
-                                   <div  class="col-md-12">Lead Status: {{$val->Lead_Status}}</div>
-                                   <div  class="col-md-12">Loan Amt :{{$val->Loan_Amt}}</div>
-                                   <div  class="col-md-12"> Remark : {{$val->Remark}}</div>
-                                @endforeach
+                                 <table>
+                                   <tbody>
+                                     <tr>
+                                       <th>Lead Id</th>
+                                        <th>Lead Date</th>                                     
+                                       <th>Lead Status</th>
+                                       <th>Loan Amt</th>
+                                       <th>Remark</th>
+                                       <th>Bank Name</th>
+                                       <th>Bank RM NO</th>
+                                       <th>Bank RM Name</th>
+                                                                           
+                                     </tr>
+                                   </tbody>
+
+                                
+                                 <tbody>
+                                 @foreach($objLead as $val)
+                                     <tr>
+                                        <td>{{$val->Lead_Id}}</td>                                     
+                                       <td>{{$val->Lead_Date}}</td>                                    
+                                       <td>{{$val->Lead_Status}}</td>
+                                       <td>{{$val->Loan_Amt}}</td>
+                                       <td>{{$val->Remark}}</td>
+                                       <td>{{$val->Bank_Name}}</td>
+                                       <td>{{$val->Bank_RM_NO}}</td>
+                                       <td>{{$val->Bank_RM_Name}}</td>
+                                     </tr>
+                                      @endforeach
+                                   </tbody>
+ </table>
                           </div>
                         
                     </div>

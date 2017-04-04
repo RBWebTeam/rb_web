@@ -355,12 +355,12 @@ $(".product_ID").click(function(e){
       $('#valid').empty().append('<span class="icon-remove text-danger" id="tt2"></span>');
             return false;
           }else{
-            $(".iframeloading").show();
+            // $(".iframeloading").show();
                var property_cost=$('#car_cost').val();
                var obligation=$('#obligation').val();
       if(property_cost!='' && obligation!=''){
          $('#login_process').attr( 'id', 'login_process');
-
+              $(".iframeloading").show();
               $.ajax({  
              type: "POST",  
              url: "{{URL::to('loan-submit')}}",

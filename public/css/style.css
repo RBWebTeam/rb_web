@@ -3558,5 +3558,6 @@ label {
     border-radius: 5px;}
 
 #emp_detail {    border-bottom: 2px dashed #bbadad;float: left;margin-bottom: 5px;}
+.panel-title > a {font-size:15px;}
 
 	

@@ -506,6 +506,7 @@ $(".btn-primary").click(function(e){
              url: "{{URL::to('loan-submit')}}",
            data : $("#business_loan_process_form").serialize(),
         //   data: {_token :_token,username:username,password:password},
+        
              success: function(msg){
               console.log(msg);
                     $(".iframeloading").hide();

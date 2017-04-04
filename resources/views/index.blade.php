@@ -413,14 +413,14 @@
     <div class="item active">
       <h3 class="title">Customers Speak</h3>
 							
-<p>" I found them professional, straightforward, and since they don’t push you to apply for a specific bank, they are impartial. On a long term basis one needs an intermediary as a one stop shop and these guys seems to be in the business for long term. Their experts follow up on time, give a frank advise, clarify everything so that one does not feel cheated and make a wise decision to save money. </p>
+<p> I found them professional, straightforward, and since they don’t push you to apply for a specific bank, they are impartial. On a long term basis one needs an intermediary as a one stop shop and these guys seems to be in the business for long term. Their experts follow up on time, give a frank advise, clarify everything so that one does not feel cheated and make a wise decision to save money. </p>
 <p class="align-right">Ashish Sharma</p>
     </div>
 
     <div class="item">
       <h3 class="title">Customers Speak</h3>
 							
-<p>"I'm thankful of the services I have been offered by your staff.Looking forward for 
+<p>I'm thankful of the services I have been offered by your staff.Looking forward for 
 more business.I would like to recommend about your services to my family and friends.  
  </p>
 <p class="align-right">Rahil Farooqui</p>
@@ -429,7 +429,7 @@ more business.I would like to recommend about your services to my family and fri
     <div class="item">
     <h3 class="title">Customers Speak</h3>
 							
-<p>" Thanks a lot for processing my personal loan in time. I would like to give you 
+<p> Thanks a lot for processing my personal loan in time. I would like to give you 
 special thanks for the service given by you. Your personal visits to my office 
 for all documentation and other queries saved my personal as well as official
 time a lot. I appreciate your positive approach towards customer needs and satisfaction.  Special thanks. 
@@ -440,7 +440,7 @@ time a lot. I appreciate your positive approach towards customer needs and satis
     <div class="item">
     <h3 class="title">Customers Speak</h3>
 							
-<p>" Great Work. I appreciate your efforts for disbursement of my loan in time. Your strong followup and deep subject 
+<p> Great Work. I appreciate your efforts for disbursement of my loan in time. Your strong followup and deep subject 
 knowledge helped me to get loan amount in time. Keep up the good work,expecting the same support from 
 you in future.
  
@@ -451,7 +451,7 @@ you in future.
     <div class="item">
     <h3 class="title">Customers Speak</h3>
 							
-<p>" I would like to thank the team for the outstanding service provided in disbursing my loan. It was a smooth process. Thank You. Keep the good work going .
+<p> I would like to thank the team for the outstanding service provided in disbursing my loan. It was a smooth process. Thank You. Keep the good work going .
  
  </p>
 <p class="align-right">Joel Jangam</p>

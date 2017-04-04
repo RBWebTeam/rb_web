@@ -54,7 +54,7 @@
 		<option value="2">2 Year</option>
 		<option value="3">3 Year</option>
 		<option value="4">4 Year</option>
-		<option selected="5" value="5" >5 Year</option>
+		<option selected="5" value="5">5 Year</option>
 	</select>
   </div>
   

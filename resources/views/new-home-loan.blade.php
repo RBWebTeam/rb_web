@@ -33,7 +33,7 @@
 							<div class="scenario">
 								<div class="col-xs-4 pad-no scenario-active"><a class="scenario-1 btn"><input type="radio" name="propery_types" value="ready"  class="radio1"  checked >READY</a></div>
 								<div class="col-xs-4 pad-no"><a class="scenario-1 btn"><input type="radio" name="propery_types" value="searching" class="radio1">SEARCHING</a></div>
-								<div class="col-xs-4 pad-no"><a class="scenario-1 btn"><input type="radio" name="propery_types" value="underconst" class="radio1">UNDERCONST</a></div>
+								<div class="col-xs-4 pad-no"><a class="scenario-1 btn"><input type="radio" name="propery_types" value="underconst" class="radio1">UNDER-CONSTRUCTION</a></div>
 								<div class="col-xs-4 pad-no"><a class="scenario-1 btn"><input type="radio" name="propery_types" value="resale" class="radio1">RESALE</a></div>
 								<div class="col-xs-4 pad-no"><a class="scenario-1 btn"><input type="radio" name="propery_types" value="constuction" class="radio1">CONSTRUCTION</a></div>
 								<div class="col-xs-4 pad-no"><a class="scenario-1 btn"><input type="radio" name="propery_types" id="others" class="radio1">OTHER</a></div>

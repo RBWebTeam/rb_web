@@ -166,15 +166,15 @@ var rbl = document.getElementsByClassName("RBL-Card");
 var ICICI = document.getElementsByClassName("ICICI-Card"); 
 var HDFC = document.getElementsByClassName("HDFC-Card");
 
-   if(last_segment=='RBL-Card'){
+   if(last_segment=='rbl'){
      $(".RBL-Card").show();
      $(".ICICI-Card").hide();
      $(".HDFC-Card").hide();
-   }else if(last_segment=='ICICI-Card'){
+   }else if(last_segment=='icici'){
      $(".RBL-Card").hide();
      $(".ICICI-Card").show();
      $(".HDFC-Card").hide();
-   }else if(last_segment=='HDFC-Card'){
+   }else if(last_segment=='hdfc'){
      $(".RBL-Card").hide();
      $(".ICICI-Card").hide();
      $(".HDFC-Card").show();

@@ -62,7 +62,7 @@
 
   
   
-  <div class="col-md-12 no-pad">
+  <div class="col-md-12 no-pad comp-fin">
     <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
 
         <div class="panel panel-default">

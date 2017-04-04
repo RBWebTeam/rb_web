@@ -23,6 +23,7 @@
 		    <li><a href="{{URL::to('comfy')}}">Rupeeboss Comfy</a></li>
 			<li><a href="{{URL::to('express-loan')}}"><b>Express Loan</b></a></li>
 			<li><a href="{{URL::to('idfc')}}">Savings Account</a></li>
+			<li><a href="{{URL::to('contact-us')}}">Pradhan Mantri Yojana</a></li>
 			
 		 </ul>
 		
@@ -453,7 +454,7 @@
 	
 @include('layout.script')
 @include('layout.footer')
-<div id="popup" class="modal fade">
+<!-- <div id="popup" class="modal fade">
     <div class="modal-dialog">
 	<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
         <div class="modal-content">
@@ -465,4 +466,4 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->

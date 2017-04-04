@@ -10,8 +10,7 @@ class TribeController extends CallApiController
 	
     public function tribe(){
 		$post='';
-        
-	    $url = TribeController::$url_static."GetTribeLoan";
+	    $url = $this::$url_static."BankAPIService.svc/GetTribeLoan";
 	    //print_r($url);exit();
 	    $result=$this->call_json_data_get_api($url,$post);
 	    $http_result=$result['http_result'];
@@ -51,31 +50,8 @@ class TribeController extends CallApiController
 	    
 	}
 	public function save_tribe_form(Request $req){
-	
-	$data=$req->all();
-	
-	//print_r($data);exit();
-	//company_address
-	// doc_pan doc_aadhar doc_dl doc_passport doc_voter doc_electricity_bill doc_leave_license doc_reg_certification doc_tax_registration doc_comapny_it_returns doc_company_pan doc_vat_return doc_it_returns doc_other		
-			// $documents_array = array('docpan','doc_aadhar','doc_dl','doc_passport','doc_voter','doc_electricity_bill','doc_leave_license','doc_reg_certification','doc_tax_registration','doc_comapny_it_returns','doc_company_pan','doc_vat_return','doc_it_returns','doc_other');
-	  //       $request=$req;
-	  //       $response=0;$i=0;
-	  //       for( $i=0;$i<sizeof($documents_array);$i++){
-   //              $str=$documents_array[$i];
-   //              if(! $req->$str){
-   //              	continue;
-   //              }               
-	  //               $imageName = time().'.'.$req->$str->getClientOriginalExtension();
-	  //               $extension=$req->$str->getClientOriginalExtension();
-	  //               $filename = $req->$str->getpathName();//Image path
-	  //               $file =fopen($filename, "rb");
-	  //               $contents = fread($file, filesize($filename));
-	  //               $base64=base64_encode($contents);
-	  //              	break;
-	  //               // $url = "http://beta.services.rupeeboss.com/LoginDtls.svc/xmlservice/uploadCustLoanDoc";
-			// 	}				
+	$data=$req->all();			
 	$data["name"]="SampleTribe";
-		    
 	//remove above hard coded parameter later
 	$business_pan=isset($data['company_pan_card'])?$data['company_pan_card']:$data['business_run_by_pan_div'];
 	$data['online_sale_channel']=isset($data['online_sale_channel'])?$data['online_sale_channel']:"";
@@ -94,7 +70,7 @@ class TribeController extends CallApiController
 	$data['business_run_by']=isset($data['business_run_by'])?$data['business_run_by']:'""';
 	$data['business_run_by_pan_div']=isset($data['business_run_by_pan_div'])?$data['business_run_by_pan_div']:'""';
 	//print_r($data);exit();
-				$post_data='{"agentname":"'.$data['agent_name'].'",
+	$post_data='{"agentname":"'.$data['agent_name'].'",
 		"business_details":{
 			"address":{
 				"work":"'.$data['work_address'].'"
@@ -152,26 +128,23 @@ class TribeController extends CallApiController
 			"mobile_number":'.$data['ref_mobile'].'
 		},
 		"repayment_frequency":'.$data['repayment_frequency'].',
-		"secret":"'.TribeController::$secret.'"}';
-
-		print_r($post_data);exit();
-		    $url = TribeController::$url_static."createTribeLoan";
+		"secret":"'.$this::$secret.'"}';
+		    $url = $this::$url_static."BankAPIService.svc/createTribeLoan";
 		    $result=$this->call_json_data_api($url,$post_data);
 		    $http_result=$result['http_result'];
 		    $error=$result['error'];
 		    if($http_result){
-		        return $http_result;
+		        $data=json_decode(($http_result));
+		        $temp=json_decode($data)->response->tribe;
+		     return $temp;
 		    }else{
 		        return 'false';
 		    }
+
 	      
 	    }
 	    public function UploadTribeDocuments(Request $req){
-			    	// $str='docpan';
-			    	// $imageName = time().'.'.$req->$str->getClientOriginalExtension();
-					
-			    	// print_r($imageName);exit();
-			//     	 {
+	    	//print_r();exit();
 		 // 'pan'​: 1,
 		 // 'aadhaar'​: 2,
 		 // 'driving license'​: 3,
@@ -190,7 +163,6 @@ class TribeController extends CallApiController
 		 // 'certificate_of_incorporation'​: 16,
 		 // 'audited_financial_documents'​: 17
 		 // }
-
 	    	 $documents_name_array = array('docpan','doc_aadhar','doc_dl','doc_passport','doc_voter','doc_electricity_bill','doc_leave_license','doc_reg_certification','doc_tax_registration','doc_comapny_it_returns','doc_company_pan','doc_vat_return','doc_it_returns','doc_other');
 	    	$documents_array = array('1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17');
 	        $request=$req;
@@ -206,7 +178,7 @@ class TribeController extends CallApiController
 	                $file =fopen($filename, "rb");
 	                $contents = fread($file, filesize($filename));
 	                $base64=base64_encode($contents);
-	                $post_data='{"document_category": '.$documents_array[$i].', "title": "'.$documents_name_array[$i].'", "document":"'.$base64.'", "tribe": "100", "secret": "'.TribeController::$secret.'"}';
+	                $post_data='{"document_category": '.$documents_array[$i].', "title": "'.$documents_name_array[$i].'", "document":"data:application/pdf;base64,'.$base64.'", "tribe": "'.$req['app_id'].'", "secret": "'.TribeController::$secret.'"}';
 	               	break;
 	                // $url = "http://beta.services.rupeeboss.com/LoginDtls.svc/xmlservice/uploadCustLoanDoc";
 				}
@@ -214,7 +186,7 @@ class TribeController extends CallApiController
 				
 				print_r($post_data);exit();
 
-				$url = TribeController::$url_static."uploadDocumentsTribeLoan";
+				$url = $this::$url_static."BankAPIService.svc/uploadDocumentsTribeLoan";
 				$result=$this->call_json_data_api($url,$post_data);
 			    $http_result=$result['http_result'];
 			    $error=$result['error'];

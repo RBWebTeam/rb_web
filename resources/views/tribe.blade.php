@@ -380,6 +380,7 @@
     <div id="main4" class="tab-pane fade">
       <form id="kyc_form" name="kyc_form" enctype="multipart/form-data" >
         {{ csrf_field() }}
+        <input type="hidden" name="app_id" id="app_id">
     <h3 class="mrg-top">KYC Identity Proof(Atleast one document is required)</h3>
   <hr>
     <div class="col-md-3">Pan</div>
@@ -542,7 +543,7 @@
              url: "{{URL::to('save-tribe-form')}}",
              data : $('#tribe_loan_form').serialize(),
              success: function(msg){
-              console.log(msg);
+             $('#app_id').val(msg);
                
 
             } 

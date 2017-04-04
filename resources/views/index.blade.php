@@ -19,10 +19,15 @@
   <!-- Wrapper for slides -->
   <div class="carousel-inner" role="listbox">
   <div class="pull-right mar-tp ">
-
-		<a href="{{URL::to('comfy')}}" class="img2"><img src="images/sliding-right-img-2.png" alt="Rupeeboss Comfy" title="Rupeeboss Comfy" class="img-responsive"/></a>
-		  <a href="{{URL::to('express-loan')}}" class="img3"><img src="images/sliding-right-img-1.png" alt="Express Loan" title="Express Loan" class="img-responsive"/></a>
-		   <a href="{{URL::to('idfc')}}" class="img4"><img src="images/sliding-right-img-3.png" alt="Savings Account" title="Savings Account" class="img-responsive"/></a>
+         <ul>
+		    <li><a href="{{URL::to('comfy')}}">Rupeeboss Comfy</a></li>
+			<li><a href="{{URL::to('express-loan')}}"><b>Express Loan</b></a></li>
+			<li><a href="{{URL::to('idfc')}}">Savings Account</a></li>
+			
+		 </ul>
+		
+		  
+		   
 
 		</div>
     <div class="item active">

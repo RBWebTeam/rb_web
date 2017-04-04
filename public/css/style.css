@@ -115,6 +115,7 @@ td {padding:5px; text-align:center;}
 .btn-primary.btn-outline:hover, .btn-primary.btn-outline:focus, .btn-primary.btn-outline:active {
   background: #ec1b23;
   color: #fff;
+  
 }
 
 .btn-success {
@@ -1364,11 +1365,14 @@ input[placeholder], [placeholder], *[placeholder] {color: #1f386e !important;}
     line-height: 35px;
     margin-bottom: 15px;
     height: 35px;
-    color: #fff;
-    font-size: 16px;
+    color: #666;
+    font-size: 18px;
+	font-weight:bold;
     border-radius: 15px;
+	border-bottom:1px solid #ddd;
     margin: 0 auto;
-    background: #ed1c24;
+    width:50%;
+	background:transparent;
     text-align: center;
     margin-top: 10px;
     margin-bottom: 15px;
@@ -1477,7 +1481,7 @@ border-radius: 7px;padding: 1em;margin-top: 1em;}
 	.nav-tabs > li > a {text-align:center;}
 	.btn-primary.btn-outline {
     background: transparent;
-    color: #3aa6d3; border:none;}
+    color: #3aa6d3;border:2px solid #3aa6d3;}
 	.liza1 {margin-top:20px;}
 	.btncent {margin-top:10px;}
 	#fh5co-blog-section {padding-bottom:10px;}
@@ -1688,7 +1692,11 @@ input[type="radio"] {margin:0px;}
 
 .tp-dwn:hover {background:#0c3878;}
 .tp-dwn {top:198px;padding: 10px 16px 10px 17px;position:fixed; z-index:10000;cursor:pointer;background:#fff;color:#fff;}
-.mar-tp {    margin-top: 15px;position: absolute;right: 0px; z-index: 100; height:357px;}
+.mar-tp {margin-top:50px;position: absolute;right: 0px; z-index: 100;}
+.mar-tp ul {padding:0px;margin:-5px;}
+.mar-tp ul li {list-style-type:none;}
+.mar-tp ul li a {opacity:0.6;padding:10px 20px;font-size:17px; background:#fff; display:block;margin-bottom:2px; text-align:left;}
+.mar-tp ul li a:hover {opacity:1;margin-left:-40px;background:#28a0ff;color:#fff;}
 .img2 img {    margin-top: 8px;
     margin-right:0px;
     right: 0px;
@@ -2095,7 +2103,7 @@ body {background:#eee;}
   .tenure {margin:0px 25px;}
   .fnt-clr {height:61px;}
 .box-shadow {box-shadow:1px 1px 3px 1px #ccc;}
-.border {padding:20px;border:1px solid #eee;margin:20px 0px;font-size:15px; float:left;}
+.border {padding:20px;border:1px solid #eee;margin:20px 0px;font-size:15px;}
 .hr-sty {height:20px;background:#eee;}
 .input_exp {
   position: relative;
@@ -3478,6 +3486,7 @@ label {
     margin: 20px 0px;
     font-size: 15px;
 	background:#f8f8f8;
+	width:100%;
 }
 
 .btn-primary.active {
@@ -3489,6 +3498,7 @@ label {
     background: #fff;
     border-color: none;
     vertical-align: middle;
+	border:none;
     border-radius: 21px;
 }
 .btn-default.active {background:#5b9bd5; border-radius:none; color:#fff;}
@@ -3547,8 +3557,6 @@ label {
     border: 1px solid #d4d4d4;
     border-radius: 5px;}
 
-
-
-
+#emp_detail {    border-bottom: 2px dashed #bbadad;float: left;margin-bottom: 5px;}
 
 	

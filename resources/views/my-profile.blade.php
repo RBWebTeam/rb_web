@@ -4,7 +4,7 @@
     <aside id="fh5co-hero">
       
         <div class="row">
-		<h3 class="text-center" style="padding:20px;"><i class="icon-user"></i> My Profile</h3>
+		<h3 class="text-center" style="padding:20px;"><i class="icon-user"></i> My Profile</h3> 
 		 <div class="white-bg pad mrg-btm">
             
             
@@ -21,6 +21,7 @@
                      <li><a href="#credit-score" data-toggle="tab">My Credit Score </a></li>
                      <li><a href="#Loan-history" data-toggle="tab">My Quotes </a></li>
                          <!-- <li><a href="#Track-Apllication" data-toggle="tab">Track Application </a></li> -->
+                         <li><a href="#GetCustomerLead" data-toggle="tab">Get Customer Lead </a></li>
                             
                                @if($query->password!='0')
                                       <li><a href="#change-password" data-toggle="tab">Change password </a></li>
@@ -206,12 +207,24 @@
                   <div> 
                     <button class="btn btn-primary btn-outline with-arrow change_password_form" >Submit<i class="icon-arrow-right"></i></button>
                   </div>
-
-      </form>
-
+                    </form>
                         </div>
+                          </div>
 
 
+
+                           <div class="tab-pane" id="GetCustomerLead">
+                                     
+                                @foreach($objLead as $val)
+                                <div  class="col-md-12">Bank Name : {{$val->Bank_Name}}</div>
+                                 <!--   <div  class="col-md-12">Bank_RM_NO :{{$objLead[0]->Bank_RM_NO}}</div> -->
+                                <!--    <div  class="col-md-12"> Bank_RM_Name: {{$objLead[0]->Bank_RM_Name}}</div> -->
+                                   <div  class="col-md-12">Lead Date : {{$val->Lead_Date}}</div>
+                                   <div  class="col-md-12">Lead Id: {{$val->Lead_Id}}</div>
+                                   <div  class="col-md-12">Lead Status: {{$val->Lead_Status}}</div>
+                                   <div  class="col-md-12">Loan Amt :{{$val->Loan_Amt}}</div>
+                                   <div  class="col-md-12"> Remark : {{$val->Remark}}</div>
+                                @endforeach
                           </div>
                         
                     </div>

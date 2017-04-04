@@ -15,6 +15,7 @@
 <input type="hidden" id="product" name="product_name" value=7>
 	<div class="panel-group" id="accordion">
     <div class="panel panel-default">
+    
       <div class="panel-heading">
         <h4 class="panel-title">
           <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">Property Information</a>
@@ -29,8 +30,11 @@
 
   <div class="col-md-12">
 <center><div class="type-cover"><span>PROPERTY TYPE</span></div></center>
-            
-            <div class="text-center flt-lft btn-grp" data-toggle="buttons">
+<?php
+    if(isset($_GET['commercial'])){ ?>
+      
+    <?php }else{ ?>
+      <div class="text-center flt-lft btn-grp" data-toggle="buttons">
               <div class="scenario">
                 <div class="col-xs-4 pad-no scenario-active"><a class="scenario-1 btn"><input type="radio" name="propery_types" value="residential"  class="radio1"  checked >RESIDENTIAL</a></div>
                 <div class="col-xs-4 pad-no"><a class="scenario-1 btn"><input type="radio" name="propery_types" value="commercial" class="radio1">COMMERCIAL</a></div>
@@ -41,6 +45,11 @@
                 
               </div>
             </div> 
+    <?php }
+
+    ?>
+            
+            
             
             <div class="col-xs-4 form-padding">
      <input type="text" class="form-input-new form-control" id="property_cost" name="property_cost" placeholder="Property Cost" required onkeypress="return fnAllowNumeric(event)">
@@ -237,6 +246,9 @@
              
              
   </div> 
+  <div class="iframeloading" style= "display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
+                <img src="{{URL::to('images/ajaxloader.gif')}}" alt="Loader" title="Loader" style="top: 50%; position: relative; left: 50%;"  />
+               </div>
   </form>
 </div>
 
@@ -335,17 +347,19 @@ $(".product_ID").click(function(e){
       $('#valid').empty().append('<span class="icon-remove text-danger" id="tt2"></span>');
             return false;
           }else{
+             
                var property_cost=$('#property_cost').val();
                var obligation=$('#obligation').val();
       if(property_cost!='' && obligation!=''){
          $('#login_process').attr( 'id', 'login_process');
-
+            $(".iframeloading").show();
               $.ajax({  
              type: "POST",  
              url: "{{URL::to('loan-submit')}}",
            data : $("#lap_process_form").serialize(),
         //   data: {_token :_token,username:username,password:password},
-             success: function(msg){                   
+             success: function(msg){ 
+                            $(".iframeloading").hide();                  
                              if(msg.success ==true){
                               var quote=msg.quote;
                             var loan_eligible = msg.loan_eligible;

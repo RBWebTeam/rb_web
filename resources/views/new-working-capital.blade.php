@@ -2,21 +2,28 @@
 <div class="container">
 	
 	<aside id="fh5co-hero">
-	
-
+	<!-- <div class="col-md-12">
+	<h2 class="align-center loan-head">Unsecured Business Loan</h2>
+	</div> -->
+ 
  <div class="col-md-12 white-bg pad">
- <h2 class="align-center loan-head">Working Capital</h2>
- <div class="col-md-9">
+ <h3 class="text-center loan-head">Working Capital</h3>
+<div class="col-md-8" id="mod">
+<form name='business_loan_process_form' id='business_loan_process_form' action={{URL::to('loan-submit')}} method="POST">
+{{ csrf_field() }}  
+ <!-- <img src="{{URL::to('images/9.png')}}" alt="Tribe Logo" class="img-responsive" /> -->
  <div class="col-md-6">
   <div class="col-xs-12">
- 
+  
+	 <input type="hidden" id="product" name="product_name" value="13">
+
 	   <div class="btn-grp mrg-top pad status" data-toggle="buttons">
 	  
-		<!-- <center><div class="type-cover"><span>Proprietor Ship</span></div></center> -->
-      <span class="btn btn-default outer-brd active"><input type="radio" name="Status" id="option1">Proprietorship</span>
-      <span class="btn btn-default outer-brd"><input type="radio" name="Status" id="option2">Partnership</span>
-      <span class="btn btn-default outer-brd"><input type="radio" name="Status" id="option3">Company</span>
-
+		<center><div class="type-cover"><span>Proprietorship</span></div></center>
+      <span class="btn btn-default outer-brd active"><input type="radio" name="proprietor"  value="Sole Proprietor">Sole Proprietor</span>
+      <span class="btn btn-default outer-brd"><input type="radio" name="proprietor"  value="Partnership">Partnership</span>
+      <span class="btn btn-default outer-brd"><input  type="radio" name="proprietor"  value="Company" >Company</span>
+      
       </div>
 		</div>
 		
@@ -29,293 +36,191 @@
       <span class="btn btn-default outer-brd btn-blu"><input type="radio" name="Status" id="option2">N</span>
          </div>
 	</div>
-	
-	
-		<div class="col-xs-12">
-	   <div class="btn-grp pad status" data-toggle="buttons">
-	   
-	   <center><div class="type-cover"><span>Name of The Company</div><span></center>
-      
-      <input type="date" name="date" id="date" class="block">
+		
+		
+		<div class="col-xs-12 form-padding mrg-top">
+		<center><div class="type-cover"><span>Name of The Company</span></div></center>
+     <input type="text" class="form-input-new form-control" placeholder="" >
+	</div>
+	<div class="col-xs-12 form-padding">
+	<center><div class="type-cover"><span>Date of Incorporation</span></div></center>
+     <input class="form-input-new form-control" type="date"  placeholder="Date">
+	</div>
 
-      </div>
-		</div>
- 
-  <center class="col-md-12"><div class="type-cover"><span>Loan Required in Crores</div><span></center>
-  <div class="col-md-12 pad-no">
-    <div class="col-xs-6">
-     <p class="txt-alig-midd">Inventory</p>
-	</div>
-     <div class="col-xs-2 form-padding">
-     <input type="name" class="form-input-new form-control" placeholder="1 Yrs " required="">
-	</div>
-	<div class="col-xs-2 form-padding">
-     <input type="name" class="form-input-new form-control" placeholder="2 Yrs" required="">
-	</div>
-	<div class="col-xs-2 form-padding">
-     <input type="name" class="form-input-new form-control" placeholder="3 Yrs" required="">
-	</div>
-	
-</div>
- <div class="col-md-12 pad-no">
-    <div class="col-xs-6">
-     <p class="txt-alig-midd">Debtor</p>
-	</div>
-     <div class="col-xs-2 form-padding">
-     <input type="name" class="form-input-new form-control" placeholder="1 Yrs " required="">
-	</div>
-	<div class="col-xs-2 form-padding">
-     <input type="name" class="form-input-new form-control" placeholder="2 Yrs" required="">
-	</div>
-	<div class="col-xs-2 form-padding">
-     <input type="name" class="form-input-new form-control" placeholder="3 Yrs" required="">
-	</div>
-	
-</div>
 <div class="col-md-12 pad-no">
-    <div class="col-xs-6">
-     <p class="txt-alig-midd">Creditors</p>
-	</div>
-     <div class="col-xs-2 form-padding">
-     <input type="name" class="form-input-new form-control" placeholder="1 Yrs " required="">
-	</div>
-	<div class="col-xs-2 form-padding">
-     <input type="name" class="form-input-new form-control" placeholder="2 Yrs" required="">
-	</div>
-	<div class="col-xs-2 form-padding">
-     <input type="name" class="form-input-new form-control" placeholder="3 Yrs" required="">
-	</div>
-	
+<span class="block"><b>LOAN AMOUNT REQUIRED IN CRORES</b></span>
+<div>
+   <div class="col-md-12 pad-no">
+   <span class="text-left">Inventory</span>
+   </div>
+   <div class="col-md-4 form-padding"><input type="text"class="form-input-new form-control" placeholder="1 Year"></div>
+   <div class="col-md-4 form-padding"><input type="text"class="form-input-new form-control" placeholder="2 Year"></div>
+   <div class="col-md-4 form-padding"><input type="text"class="form-input-new form-control" placeholder="3 Year"></div>
+ </div>
+ <div>
+   <div class="col-md-12 pad-no">
+   <span class="text-left">Debtors</span>
+   </div>
+   <div class="col-md-4 form-padding"><input type="text"class="form-input-new form-control" placeholder="1 Year"></div>
+   <div class="col-md-4 form-padding"><input type="text"class="form-input-new form-control" placeholder="2 Year"></div>
+   <div class="col-md-4 form-padding"><input type="text"class="form-input-new form-control" placeholder="3 Year"></div>
+ </div>
+ <div>
+   <div class="col-md-12 pad-no">
+   <span class="text-left">Creditors</span>
+   </div>
+   <div class="col-md-4 form-padding"><input type="text"class="form-input-new form-control" placeholder="1 Year"></div>
+   <div class="col-md-4 form-padding"><input type="text"class="form-input-new form-control" placeholder="2 Year"></div>
+   <div class="col-md-4 form-padding"><input type="text"class="form-input-new form-control" placeholder="3 Year"></div>
+ </div>
+ <div>
+   <div class="col-md-12 pad-no">
+   <span class="text-left">Share</span>
+   </div>
+   <div class="col-md-4 form-padding"><input type="text"class="form-input-new form-control" placeholder="1 Year"></div>
+   <div class="col-md-4 form-padding"><input type="text"class="form-input-new form-control" placeholder="2 Year"></div>
+   <div class="col-md-4 form-padding"><input type="text"class="form-input-new form-control" placeholder="3 Year"></div>
+ </div>
+ <div>
+   <div class="col-md-12 pad-no">
+   <span class="text-left">Reserves</span>
+   </div>
+   <div class="col-md-4 form-padding"><input type="text"class="form-input-new form-control" placeholder="1 Year"></div>
+   <div class="col-md-4 form-padding"><input type="text"class="form-input-new form-control" placeholder="2 Year"></div>
+   <div class="col-md-4 form-padding"><input type="text"class="form-input-new form-control" placeholder="3 Year"></div>
+ </div>
 </div>
-<div class="col-md-12 pad-no">
-    <div class="col-xs-6">
-     <p class="txt-alig-midd">Share Capital</p>
-	</div>
-     <div class="col-xs-2 form-padding">
-     <input type="name" class="form-input-new form-control" placeholder="1 Yrs " required="">
-	</div>
-	<div class="col-xs-2 form-padding">
-     <input type="name" class="form-input-new form-control" placeholder="2 Yrs" required="">
-	</div>
-	<div class="col-xs-2 form-padding">
-     <input type="name" class="form-input-new form-control" placeholder="3 Yrs" required="">
-	</div>
-	
-</div>
-<div class="col-md-12 pad-no">
-    <div class="col-xs-6">
-     <p class="txt-alig-midd">Reserves & Surplus</p>
-	</div>
-     <div class="col-xs-2 form-padding">
-     <input type="name" class="form-input-new form-control" placeholder="1 Yrs " required="">
-	</div>
-	<div class="col-xs-2 form-padding">
-     <input type="name" class="form-input-new form-control" placeholder="2 Yrs" required="">
-	</div>
-	<div class="col-xs-2 form-padding">
-     <input type="name" class="form-input-new form-control" placeholder="3 Yrs" required="">
-	</div>
-	
-</div>
-</div>
+  
+   </div>
 
+  
+  
+  <div class="col-md-6 no-pad comp-fin">
+    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
 
-<div class="col-md-6">
-	<div class="panel-group" id="accordion">
-	
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingOne">
+                <h4 class="panel-title">
+                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse6" aria-expanded="true" aria-controls="collapse6">
+                        <i class="icon-minus more-less pull-right"></i>
+                        COMPANY FINANCIALS
+                    </a>
+                </h4>
+            </div>
+            <div id="collapse6" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading6">
+                <div class="panel-body">
+                     
+					 <div>
+   <div class="col-md-12 pad-no">
+   <span class="text-left">Turnover/Topline</span>
+   </div>
+   <div class="col-md-4 form-padding"><input type="text"class="form-input-new form-control" placeholder="1 Year"></div>
+   <div class="col-md-4 form-padding"><input type="text"class="form-input-new form-control" placeholder="2 Year"></div>
+   <div class="col-md-4 form-padding"><input type="text"class="form-input-new form-control" placeholder="3 Year"></div>
+ </div>
+ <div>
+   <div class="col-md-12 pad-no">
+   <span class="text-left">Ebidta</span>
+   </div>
+   <div class="col-md-4 form-padding"><input type="text"class="form-input-new form-control" placeholder="1 Year"></div>
+   <div class="col-md-4 form-padding"><input type="text"class="form-input-new form-control" placeholder="2 Year"></div>
+   <div class="col-md-4 form-padding"><input type="text"class="form-input-new form-control" placeholder="3 Year"></div>
+ </div>
+ <div>
+   <div class="col-md-12 pad-no">
+   <span class="text-left">Profit Before Tax</span>
+   </div>
+   <div class="col-md-4 form-padding"><input type="text"class="form-input-new form-control" placeholder="1 Year"></div>
+   <div class="col-md-4 form-padding"><input type="text"class="form-input-new form-control" placeholder="2 Year"></div>
+   <div class="col-md-4 form-padding"><input type="text"class="form-input-new form-control" placeholder="3 Year"></div>
+ </div>
+ <div>
+   <div class="col-md-12 pad-no">
+   <span class="text-left">Profit After Tax</span>
+   </div>
+   <div class="col-md-4 form-padding"><input type="text"class="form-input-new form-control" placeholder="1 Year"></div>
+   <div class="col-md-4 form-padding"><input type="text"class="form-input-new form-control" placeholder="2 Year"></div>
+   <div class="col-md-4 form-padding"><input type="text"class="form-input-new form-control" placeholder="3 Year"></div>
+ </div>
+ <div>
+   <div class="col-md-12 pad-no">
+   <span class="text-left">Depreciation</span>
+   </div>
+   <div class="col-md-4 form-padding"><input type="text"class="form-input-new form-control" placeholder="1 Year"></div>
+   <div class="col-md-4 form-padding"><input type="text"class="form-input-new form-control" placeholder="2 Year"></div>
+   <div class="col-md-4 form-padding"><input type="text"class="form-input-new form-control" placeholder="3 Year"></div>
+ </div>
+ <div>
+   <div class="col-md-12 pad-no">
+   <span class="text-left">Existing Term Loan</span>
+   </div>
+   <div class="col-md-4 form-padding"><input type="text"class="form-input-new form-control" placeholder="1 Year"></div>
+   <div class="col-md-4 form-padding"><input type="text"class="form-input-new form-control" placeholder="2 Year"></div>
+   <div class="col-md-4 form-padding"><input type="text"class="form-input-new form-control" placeholder="3 Year"></div>
+ </div>
+ <div>
+   <div class="col-md-12 pad-no">
+   <span class="text-left">Existing OD/CC</span>
+   </div>
+   <div class="col-md-4 form-padding"><input type="text"class="form-input-new form-control" placeholder="1 Year"></div>
+   <div class="col-md-4 form-padding"><input type="text"class="form-input-new form-control" placeholder="2 Year"></div>
+   <div class="col-md-4 form-padding"><input type="text"class="form-input-new form-control" placeholder="3 Year"></div>
+ </div>
+ <div>
+   <div class="col-md-12 pad-no">
+   <span class="text-left">Interest Paid</span>
+   </div>
+   <div class="col-md-4 form-padding"><input type="text"class="form-input-new form-control" placeholder="1 Year"></div>
+   <div class="col-md-4 form-padding"><input type="text"class="form-input-new form-control" placeholder="2 Year"></div>
+   <div class="col-md-4 form-padding"><input type="text"class="form-input-new form-control" placeholder="3 Year"></div>
+ </div>
+ <div>
+   <div class="col-md-12 pad-no">
+   <span class="text-left">Current Rate of Interest</span>
+   </div>
+   <div class="col-md-4 form-padding"><input type="text"class="form-input-new form-control" placeholder="1 Year"></div>
+   <div class="col-md-4 form-padding"><input type="text"class="form-input-new form-control" placeholder="2 Year"></div>
+   <div class="col-md-4 form-padding"><input type="text"class="form-input-new form-control" placeholder="3 Year"></div>
+ </div>
+					
+		
+					 
+                </div>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="heading7">
+                <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse7" aria-expanded="false" aria-controls="collapse7">
+                        <i class="icon-plus more-less pull-right"></i>
+                        BANKWISE EMI DETAILS 
+                    </a>
+                </h4>
+            </div>
+            <div id="collapse7" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading7">
+                <div class="panel-body">
+
+	             <div class="panel-group" id="accordion1">
     <div class="panel panel-default">
       <div class="panel-heading">
         <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">COMPANY FINANCIALS</a>
-		 <i class="icon-minus pull-right more-less"></i>
-        </h4>
-      </div>
-      <div id="collapse1" class="panel-collapse collapse in">
-        <div class="panel-body">
-	
-	<div class="panel-group" id="accordion">
-	<div class="panel-default">
-      <div id="collapse0" class="panel-collapse collapse in">
-        <div class="panel-body pad-no">
+          <a data-toggle="collapse" data-parent="#accordion1" href="#collapse1">NATURE OF BUSINESS <i class="icon-plus pull-right more-less"></i></a>
 		
-		<div class="col-md-12 pad-no">
-    <div class="col-xs-6">
-     <p class="txt-alig-midd">Turnover / Topline</p>
-	</div>
-     <div class="col-xs-2 form-padding">
-     <input type="name" class="form-input-new form-control" placeholder="1 Yrs " required="">
-	</div>
-	<div class="col-xs-2 form-padding">
-     <input type="name" class="form-input-new form-control" placeholder="2 Yrs" required="">
-	</div>
-	<div class="col-xs-2 form-padding">
-     <input type="name" class="form-input-new form-control" placeholder="3 Yrs" required="">
-	</div>
-    </div>
-	<div class="col-md-12 pad-no">
-    <div class="col-xs-6">
-     <p class="txt-alig-midd">Ebidta</p>
-	</div>
-     <div class="col-xs-2 form-padding">
-     <input type="name" class="form-input-new form-control" placeholder="1 Yrs " required="">
-	</div>
-	<div class="col-xs-2 form-padding">
-     <input type="name" class="form-input-new form-control" placeholder="2 Yrs" required="">
-	</div>
-	<div class="col-xs-2 form-padding">
-     <input type="name" class="form-input-new form-control" placeholder="3 Yrs" required="">
-	</div>
-    </div>
-	<div class="col-md-12 pad-no">
-    <div class="col-xs-6">
-     <p class="txt-alig-midd">Profit Before Tax</p>
-	</div>
-     <div class="col-xs-2 form-padding">
-     <input type="name" class="form-input-new form-control" placeholder="1 Yrs " required="">
-	</div>
-	<div class="col-xs-2 form-padding">
-     <input type="name" class="form-input-new form-control" placeholder="2 Yrs" required="">
-	</div>
-	<div class="col-xs-2 form-padding">
-     <input type="name" class="form-input-new form-control" placeholder="3 Yrs" required="">
-	</div>
-    </div>
-	<div class="col-md-12 pad-no">
-    <div class="col-xs-6">
-     <p class="txt-alig-midd">Profit After Tax</p>
-	</div>
-     <div class="col-xs-2 form-padding">
-     <input type="name" class="form-input-new form-control" placeholder="1 Yrs " required="">
-	</div>
-	<div class="col-xs-2 form-padding">
-     <input type="name" class="form-input-new form-control" placeholder="2 Yrs" required="">
-	</div>
-	<div class="col-xs-2 form-padding">
-     <input type="name" class="form-input-new form-control" placeholder="3 Yrs" required="">
-	</div>
-    </div>
-	<div class="col-md-12 pad-no">
-    <div class="col-xs-6">
-     <p class="txt-alig-midd">Depreciation</p>
-	</div>
-     <div class="col-xs-2 form-padding">
-     <input type="name" class="form-input-new form-control" placeholder="1 Yrs " required="">
-	</div>
-	<div class="col-xs-2 form-padding">
-     <input type="name" class="form-input-new form-control" placeholder="2 Yrs" required="">
-	</div>
-	<div class="col-xs-2 form-padding">
-     <input type="name" class="form-input-new form-control" placeholder="3 Yrs" required="">
-	</div>
-    </div>
-	<div class="col-md-12 pad-no">
-    <div class="col-xs-6">
-     <p class="txt-alig-midd">Existing Term Loan</p>
-	</div>
-     <div class="col-xs-2 form-padding">
-     <input type="name" class="form-input-new form-control" placeholder="1 Yrs " required="">
-	</div>
-	<div class="col-xs-2 form-padding">
-     <input type="name" class="form-input-new form-control" placeholder="2 Yrs" required="">
-	</div>
-	<div class="col-xs-2 form-padding">
-     <input type="name" class="form-input-new form-control" placeholder="3 Yrs" required="">
-	</div>
-    </div>
-	<div class="col-md-12 pad-no">
-    <div class="col-xs-6">
-     <p class="txt-alig-midd">Existing OD/CC</p>
-	</div>
-     <div class="col-xs-2 form-padding">
-     <input type="name" class="form-input-new form-control" placeholder="1 Yrs " required="">
-	</div>
-	<div class="col-xs-2 form-padding">
-     <input type="name" class="form-input-new form-control" placeholder="2 Yrs" required="">
-	</div>
-	<div class="col-xs-2 form-padding">
-     <input type="name" class="form-input-new form-control" placeholder="3 Yrs" required="">
-	</div>
-    </div>
-	<div class="col-md-12 pad-no">
-    <div class="col-xs-6">
-     <p class="txt-alig-midd">Interest Paid</p>
-	</div>
-     <div class="col-xs-2 form-padding">
-     <input type="name" class="form-input-new form-control" placeholder="1 Yrs " required="">
-	</div>
-	<div class="col-xs-2 form-padding">
-     <input type="name" class="form-input-new form-control" placeholder="2 Yrs" required="">
-	</div>
-	<div class="col-xs-2 form-padding">
-     <input type="name" class="form-input-new form-control" placeholder="3 Yrs" required="">
-	</div>
-    </div>
-	<div class="col-md-12 pad-no">
-    <div class="col-xs-6">
-     <p class="txt-alig-midd">Current Rate Of Interest</p>
-	</div>
-     <div class="col-xs-2 form-padding">
-     <input type="name" class="form-input-new form-control" placeholder="1 Yrs " required="">
-	</div>
-	<div class="col-xs-2 form-padding">
-     <input type="name" class="form-input-new form-control" placeholder="2 Yrs" required="">
-	</div>
-	<div class="col-xs-2 form-padding">
-     <input type="name" class="form-input-new form-control" placeholder="3 Yrs" required="">
-	</div>
-    </div>
-	
-		
-		
-		</div>
-      </div>
-    </div>
-	
-	
-	
-    
-	
-	
-	
-	
-  </div> 
-  
-
- <!--  <button class="btn btn-primary btn-outline with-arrow top-mrg">Get Best Quotes<i class="icon-arrow-right"></i></button> -->
- </div>
-</div>
-
-
-
-<div class="panel-heading">
-        <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse111">TURNOVER ACHIEVED TILL DATE</a>
-		 <i class="icon-plus pull-right more-less"></i>
-        </h4>
-      </div>
-      <div id="collapse111" class="panel-collapse collapse">
-        <div class="panel-body">
-		
-		
-		<div class="panel panel-default">
-      <div class="panel-heading">
-        <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">NATURE OF BUSINESS</a>
-		 <i class="icon-plus pull-right more-less"></i>
         </h4>
       </div>
       <div id="collapse1" class="panel-collapse collapse">
         <div class="panel-body">
-							
-	<div class="text-center flt-lft btn-grp" data-toggle="buttons">
-							<div class="scenario">
-								<div class="col-xs-12 pad-no scenario-active"><a class="scenario-1 btn"><input type="radio" name="Status" id="option1"  class="radio1" checked >MANUFACTURING</a></div>
-								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="Status" id="option1" class="radio1">TRADING</a></div>
-								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="Status" id="option1" class="radio1">SERVICES</a></div>
-								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="Status" id="option1" class="radio1">RETAILER</a></div>
-								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="Status" id="option1" class="radio1">OTHER</a></div>
+	<div class="scenario">
+								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="natue_of_business" value="Manufacturing" class="radio1"  >MANUFACTURING</a></div>
+								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="natue_of_business" value="Trading" class="radio1">TRADING</a></div>
+								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="natue_of_business" value="Services" class="radio1">SERVICES</a></div>
+								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="natue_of_business" value="Retailer" class="radio1">RETAILER</a></div>
+								<div class="col-xs-12 pad-no scenario-active"><a class="scenario-1 btn"><input type="radio" name="natue_of_business" 
+								value="Others" class="radio1" checked>OTHER</a></div>
+								
 							</div>
-						</div>
+						
 	   
 	   
 		
@@ -325,127 +230,144 @@
     <div class="panel panel-default">
       <div class="panel-heading">
         <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">INDUSTRY</a>
-		  <i class="icon-plus pull-right more-less"></i>
+          <a data-toggle="collapse" data-parent="#accordion1" href="#collapse2">INDUSTRY <i class="icon-plus pull-right more-less"></i></a>
+		 
         </h4>
       </div>
       <div id="collapse2" class="panel-collapse collapse">
         <div class="panel-body">
-		<div class="text-center flt-lft btn-grp" data-toggle="buttons">
-							<div class="scenario">
-								<div class="col-xs-12 pad-no scenario-active"><a class="scenario-1 btn"><input type="radio" name="Status" id="option1"  class="radio1" checked >Selection 1</a></div>
-								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="Status" id="option1" class="radio1">Selection 2</a></div>
-								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="Status" id="option1" class="radio1">Selection 3</a></div>
-								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="Status" id="option1" class="radio1">Selection 4</a></div>
-								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="Status" id="option1" class="radio1">Selection 5</a></div>
+		   <div class="scenario">
+								<div class="col-xs-12 pad-no scenario-active"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_1"  class="radio1" checked >Type 1</a></div>
+								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_2" class="radio1">Type 2</a></div>
+								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_3" class="radio1">Type 3</a></div>
+								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Type 4</a></div>
+								
 							</div>
-						</div>
 		</div>
       </div>
     </div>
     <div class="panel panel-default">
       <div class="panel-heading">
         <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">DATE OF INCORPORATION</a>
-		  <i class="icon-plus pull-right more-less"></i>
+          <a data-toggle="collapse" data-parent="#accordion1" href="#collapse3">COMPANY'S DATE OF INCORPORATION <i class="icon-plus pull-right more-less"></i></a>
+		 
         </h4>
       </div>
       <div id="collapse3" class="panel-collapse collapse">
         <div class="panel-body">
 		  <div class="col-xs-12 form-padding">
-     <input type="date" class="form-input-new form-control" placeholder="EXISTING EMI IF ANY" required="">
+     <input type="text" id="date" name="date" class="form-input-new form-control lastReporteddate1" placeholder="Date of incorporation" required>
 	</div>
 		</div>
       </div>
     </div>
+	
+	
 	<div class="panel panel-default">
       <div class="panel-heading">
         <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">RESIDENCE TYPE</a>
-		  <i class="icon-plus pull-right more-less"></i>
+          <a data-toggle="collapse" data-parent="#accordion1" href="#collapse4">RESIDENCE TYPE <i class="icon-plus pull-right more-less"></i></a>
+		 
         </h4>
       </div>
       <div id="collapse4" class="panel-collapse collapse">
         <div class="panel-body">
-							
-							<div class="scenario">
-								<div class="col-xs-12 pad-no scenario-active"><a class="scenario-1 btn"><input type="radio" name="Status" id="option1"  class="radio1" checked >Owned</a></div>
-								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="Status" id="option1" class="radio1">Rented</a></div>
-								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="Status" id="option1" class="radio1">Parental</a></div>
-								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="Status" id="option1" class="radio1">Others</a></div>
+		   <div class="scenario">
+								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="residence_type" value="Owned"  class="radio1" checked >Owned</a></div>
+								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="residence_type" value="Rented"  class="radio1">Rented</a></div>
+								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="residence_type" value="Parental"  class="radio1">Parental</a></div>
+								<div class="col-xs-12 pad-no scenario-active"><a class="scenario-1 btn"><input type="radio" name="residence_type" value="Others"  class="radio1">Others</a></div>
 								
 							</div>
-	
-	
 		</div>
       </div>
     </div>
 	<div class="panel panel-default">
       <div class="panel-heading">
         <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse5">OFFICE TYPE</a>
-		  <i class="icon-plus pull-right more-less"></i>
+          <a data-toggle="collapse" data-parent="#accordion1" href="#collapse5">OFFICE TYPE<i class="icon-plus pull-right more-less"></i></a>
+		  
         </h4>
       </div>
       <div id="collapse5" class="panel-collapse collapse">
         <div class="panel-body">
 		   <div class="scenario">
-								<div class="col-xs-12 pad-no scenario-active"><a class="scenario-1 btn"><input type="radio" name="Status" id="option1"  class="radio1" checked >Owned</a></div>
-								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="Status" id="option1" class="radio1">Rented</a></div>
-								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="Status" id="option1" class="radio1">Parental</a></div>
-								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="Status" id="option1" class="radio1">Others</a></div>
+								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="office_type" value="Owned"  class="radio1" checked >Owned</a></div>
+								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="office_type" value="Rented" class="radio1">Rented</a></div>
+								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="office_type" value="Parental"class="radio1">Parental</a></div>
+								<div class="col-xs-12 pad-no scenario-active"><a class="scenario-1 btn"><input type="radio" name="office_type" value="Others" class="radio1">Others</a></div>
 								
 							</div>
 		</div>
       </div>
     </div>
-		</div>
-		</div>
+  </div> 
+					
+                </div>
+            </div>
+        </div>
+        
+        
+    </div><!-- panel-group -->
+  </div>
+  
+  
+
+
+</div>
 		
-		
-</div>
-</div>
-</div>
- </div>
-		<div class="col-md-3">
-	   <div class="border">
+	
+	<div class="col-md-4" >
+     <div class="border brd-for" id="mi_id">
 
-             <form class="" id="compareform" role="form" method="POST" action="">
-				  
-				  
-				    <div class="inp-hig">
-					  <label class="form-label-new">Name</label>
-				      <input type="text" class="form-control" id="name" name="name" placeholder="enter Name" required class="clr-ddd" />
-				    </div>
+             <!-- <form name="compareform" id="compareform" > -->
+          
+          
+            <div class="inp-hig">
+            <label class="form-label-new">Loan Amount</label>
+              <input type="text" class="form-control" id="loanamount" name="name" value="" placeholder="" required class="clr-ddd" readonly />
+            </div>
 
-				    <div class="inp-hig">
-					<label class="form-label-new">Mobile No.</label>
-				      <input type="text" class="form-control" id="name" name="name" placeholder="Enter Mobile No." required class="clr-ddd" />
-				    </div>
+            <div class="inp-hig">
+          <label class="form-label-new">Best ROI</label>
+              <input type="text" class="form-control" id="rate" name="name" value="" placeholder="" required class="clr-ddd" readonly />
+            </div>
 
-				    <div class="inp-hig">
-					<label class="form-label-new">Pan No.</label>
-				      <input type="text" class="form-control" id="name" name="name" placeholder="Enter Pan No." required class="clr-ddd" />
-				    </div>
+            <div class="inp-hig">
+            <label class="form-label-new">Tenure</label>
+                 <input type="text" class="form-control" id="term" name="name" value="" placeholder="" required class="clr-ddd" readonly>
+            </div>
 
-				  
+            <div class="inp-hig">
+          <label class="form-label-new">Processing Fee</label>
+              <input type="text" class="form-control" id="processfee" name="name" placeholder="" required class="clr-ddd" readonly />
+            </div>
 
-			  <div> 
-			    <br>
-			     <button style="display:block; width:100%;font-size:20px;padding:5px; background:#28a0ff;color:#fff;">GET OTP</button>
-				<br>
-				<div class="inp-hig hidden-lg">
-				      <input type="text" class="form-control" id="name" name="name" placeholder="ENTER OTP" required class="clr-ddd" />
-				   
-				 <button style="width:100%;font-size:20px;padding:5px; background:#28a0ff;color:#fff;">SUBMIT</button>
-				  </div>
-			   
-			  </div>
-			</form>
-		</div>	
-	</div>
+        <div> 
+          <br>
+         <a id="apply_new" type="button" class="btn btn-info" title="Experience New Digital Era In Loans">Apply Digitally</a>
+         <button id="eligibility" class="btn btn-info" title="See Bankwise Eligibility And Apply Amongst Best Bank">Check Bankwise Eligibility</button>
+         <button type="button" class="btn btn-info block"  id="call_rm" name="call_rm" data-toggle="modal" data-target="#Modal" title="Call For RM(Single Day Process)">Call Manager</button>
+         
+        </div>
+        
+        <!-- <p id="err" style="display:none;" ><span style="color:skyblue;position:absolute;font-size:13px;">No Quotes Found.</span></p> -->
+   
+    <!--   </form> -->
+
+    </div> 
+    <p id="err" style="display:none;" ><span style="color: red;font-size: 20px;display: block; text-align: center;">Sorry, We are unable to process your request. Will get back to you in future.</span></p> 
+  </div> 
+	
+	
+	
+	
 	</div>
 	</aside>
 	</div>
+	<br>
+   <div id ="test123" class="col-md-8"></div>
+  
 @include('layout.footer')
 @include('layout.script')
+

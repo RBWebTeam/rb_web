@@ -48,13 +48,13 @@
 
   <div class="col-xs-6 form-padding">
   
-     <select class="block drop-arr select-sty">
+     <select class="block drop-arr select-sty" id="loan_tenure" name="loan_tenure">
 	  <option>LOAN TENURE</option>
-	    <option>1 Year</option>
-		<option>2 Year</option>
-		<option>3 Year</option>
-		<option>4 Year</option>
-		<option>5 Year</option>
+	  <option value="1">1 Year</option>
+		<option value="2">2 Year</option>
+		<option value="3">3 Year</option>
+		<option value="4">4 Year</option>
+		<option selected="5" value="5">5 Year</option>
 	</select>
   </div>
   
@@ -62,7 +62,7 @@
 
   
   
-  <div class="col-md-12 no-pad">
+  <div class="col-md-12 no-pad comp-fin">
     <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
 
         <div class="panel panel-default">
@@ -244,10 +244,43 @@
       <div id="collapse2" class="panel-collapse collapse">
         <div class="panel-body">
 		   <div class="scenario">
-								<div class="col-xs-12 pad-no scenario-active"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_1"  class="radio1" checked >Type 1</a></div>
-								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_2" class="radio1">Type 2</a></div>
-								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_3" class="radio1">Type 3</a></div>
-								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Type 4</a></div>
+								<div class="col-xs-12 pad-no scenario-active"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_1"  class="radio1" checked >Agriculture </a></div>
+								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_2" class="radio1">Auto Components </a></div>
+								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_3" class="radio1">Automobiles</a></div>
+								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Aviation</a></div>
+								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Banking</a></div>
+								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Biotechnology </a></div>
+								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Cement</a></div>
+								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Consumer Markets</a></div>
+								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Education And Training </a></div>
+								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Engineering</a></div>
+								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Financial Services</a></div>
+								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Food Industry</a></div>
+								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Gems And Jewellery </a></div>
+								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Healthcare</a></div>
+								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Infrastructure</a></div>
+								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Insurance </a></div>
+								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">IT & ITeS</a></div>
+								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Manufacturing</a></div>
+								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Marketing And Strategy</a></div>
+								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Media And Entertainment </a></div>
+								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Oil And Gas</a></div>
+								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Pharmaceuticals</a></div>
+								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Ports</a></div>
+								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Power</a></div>
+								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Railways</a></div>
+								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Real Estate</a></div>
+								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Research And Development</a></div>
+								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Retail</a></div>
+								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Roads</a></div>
+								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Rural Market </a></div>
+								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Science And Technology </a></div>
+								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Semiconductor</a></div>
+								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Services</a></div>
+								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Steel </a></div>
+								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Telecommunications </a></div>
+								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Textiles</a></div>
+								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Tourism And Hospitality </a></div>
 								
 							</div>
 		</div>
@@ -324,6 +357,9 @@
               <a class="btn btn-primary btn-outline with-arrow top-mrg product_name" id="btn_refresh_co1" data-toggle="modal" data-target="#login_process">Get Best Quotes<i class="icon-arrow-right"></i></a>
             <?php } ?>
    </form>
+   <div class="iframeloading" style= "display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
+                <img src="{{URL::to('images/ajaxloader.gif')}}" alt="Loader" title="Loader" style="top: 50%; position: relative; left: 50%;"  />
+               </div>
 </div>
 </div>
 		
@@ -464,7 +500,7 @@ $(".btn-primary").click(function(e){
             return false;
            
           }else{
- // $(".iframeloading").show();
+ $(".iframeloading").show();
               $.ajax({  
              type: "POST",  
              url: "{{URL::to('loan-submit')}}",
@@ -472,7 +508,7 @@ $(".btn-primary").click(function(e){
         //   data: {_token :_token,username:username,password:password},
              success: function(msg){
               console.log(msg);
-                    // $(".iframeloading").hide();
+                    $(".iframeloading").hide();
                            if(msg.success ==true){
 
                             var quote=msg.quote;

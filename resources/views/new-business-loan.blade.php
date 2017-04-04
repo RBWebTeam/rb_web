@@ -127,6 +127,7 @@
 
 <h4 class="text-center">List of Loan EMI</h4>
 <div id="emp_detail">
+<div class="emp_detail">
                     <div class="col-xs-6 form-padding"> 
 
      <input type="text" class="form-input-new form-control" name="bank_name" id="bank_name" placeholder="Bank" onkeypress="return AllowAlphabet(event)"   required="">
@@ -150,18 +151,22 @@
 	<div class="col-xs-6 form-padding">
      <input type="text" class="form-input-new form-control" name="no_of_emi_paid" id="no_of_emi_paid" placeholder="No Of EMI Paid"  onkeypress="return isNumberKey(event)" minlength="2" maxlength="2" required>
 	</div>
-	
+	</div>
   </div>
 	<!-- <button class="btn btn-primary btn-outline top-mrg">Add Other Bank Existing EMI</button> -->
-  <div id="new_div"></div>
+  <!-- <div id="new_div"></div> -->
 
   
-<a href="javascript:void(0)" class="btn btn-info" id="button" >Add Bank</a>
- <a href="javascript:void(0)" class="btn btn-info" id="button_remove" >Remove</a>
+<!-- <a href="javascript:void(0)" class="btn btn-info" id="button" va >Add Bank</a>
+ <a href="javascript:void(0)" class="btn btn-info" id="button_remove" >Remove</a> -->
+  <div id="addChild" class="input">
+                    <input type="button" class="btn btn-info" value="Add Bank"> 
+                </div>
+                    <div id="deleteChild" class="questionanswers">
+                        <input type="button"  class="btn btn-info" value="Remove">
+                    </div>
 
-<!-- <div id="duplicater"> 
-    duplicate EVERYTHING INSIDE THIS DIV
-</div> -->
+
 
 	</div>
 	
@@ -506,7 +511,6 @@ $(".btn-primary").click(function(e){
              url: "{{URL::to('loan-submit')}}",
            data : $("#business_loan_process_form").serialize(),
         //   data: {_token :_token,username:username,password:password},
-        
              success: function(msg){
               console.log(msg);
                     $(".iframeloading").hide();
@@ -562,9 +566,14 @@ $(".btn-primary").click(function(e){
 
 <script>
 $(document).ready(function(){
-    $("#button").click(function(){
-        $("#emp_detail").clone().appendTo("#new_div");
-    });
+    // $("#button").click(function(){
+    //     $("#emp_detail").clone().appendTo("#new_div");
+    // });
+
+    $("#addChild").click(function(){
+    $(".emp_detail:last").after($(".emp_detail:first").clone(true));
+});
+
 
     
 });
@@ -572,12 +581,16 @@ $(document).ready(function(){
 
 <script>
 $(document).ready(function(){
-    $('#button_remove').click(function(){
-        $('#new_div').css('display','none');
+    // $('#button_remove').click(function(){
+    //     $('#new_div').css('display','none');
+    $("#deleteChild").click(function() {
+    if($(".emp_detail").length!=1)
+    $(".emp_detail:last").remove();
+    });
 });
 
     
-});
+// });
 </script>
 
 <script type="text/javascript">

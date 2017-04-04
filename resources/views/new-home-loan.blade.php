@@ -16,8 +16,8 @@
     <div class="panel panel-default">
       <div class="panel-heading">
         <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">Property Information</a>
-		 <i class="icon-minus pull-right more-less"></i>
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">Property Information <i class="icon-minus pull-right more-less"></i></a>
+		
         </h4>
       </div>
       <div id="collapse1" class="panel-collapse collapse in">
@@ -64,8 +64,8 @@
     <div class="panel panel-default">
       <div class="panel-heading" >
         <h4 class="panel-title"> 
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse2"><span id="valid"></span> Applicant Details</a>
-		  <i class="icon-plus pull-right more-less"></i>
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse2"><span id="valid"></span> Applicant Details<i class="icon-plus pull-right more-less"></i></a>
+		 
         </h4>
       </div>
       <div id="collapse2" class="panel-collapse collapse applicant_add">
@@ -169,8 +169,8 @@
     <div class="panel panel-default" id="coapplicant_display" style="display: none;">
       <div class="panel-heading">
         <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">Co-Applicant Details</a>
-		  <i class="icon-plus pull-right more-less"></i>
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">Co-Applicant Details<i class="icon-plus pull-right more-less"></i></a>
+		  
         </h4>
       </div>
       <div id="collapse3" class="panel-collapse collapse">
@@ -254,6 +254,9 @@
 						 
 						 
   </div> 
+  <div class="iframeloading" style= "display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
+                <img src="{{URL::to('images/ajaxloader.gif')}}" alt="Loader" title="Loader" style="top: 50%; position: relative; left: 50%;"  />
+               </div>
   </form>
 </div>
 
@@ -354,17 +357,19 @@ $(".product_ID").click(function(e){
     	$('#valid').empty().append('<span class="icon-remove text-danger" id="tt2"></span>');
             return false;
           }else{
+            // $(".iframeloading").show();
                var property_cost=$('#property_cost').val();
                var obligation=$('#obligation').val();
       if(property_cost!='' && obligation!=''){
          $('#login_process').attr( 'id', 'login_process');
-
+            $(".iframeloading").show();
               $.ajax({  
              type: "POST",  
              url: "{{URL::to('loan-submit')}}",
            data : $("#home_loan_process_form").serialize(),
         //   data: {_token :_token,username:username,password:password},
-             success: function(msg){                   
+             success: function(msg){ 
+                            $(".iframeloading").hide();                  
                              if(msg.success ==true){
                               var quote=msg.quote;
                             var loan_eligible = msg.loan_eligible;
@@ -398,7 +403,8 @@ $(".product_ID").click(function(e){
            }  
        });
 
-}else{
+}
+else{
  $('#login_process').removeAttr('id');
   alert("This field is required.");
 

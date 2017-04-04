@@ -19,10 +19,17 @@
   <!-- Wrapper for slides -->
   <div class="carousel-inner" role="listbox">
   <div class="pull-right mar-tp ">
+         <ul>
+		    <li><a href="{{URL::to('comfy')}}"><b>Rupeeboss Comfy</b></a></li>
+			<li><a href="{{URL::to('express-loan')}}"><b>Express Loan</b></a></li>
+			<li><a href="{{URL::to('idfc')}}"><b>Savings Account</b></a></li>
+			<li><a href="{{URL::to('contact-us')}}"><b>Pradhan Mantri Yojana</b></a></li>
 
-		<a href="{{URL::to('comfy')}}" class="img2"><img src="images/sliding-right-img-2.png" alt="Rupeeboss Comfy" title="Rupeeboss Comfy" class="img-responsive"/></a>
-		  <a href="{{URL::to('express-loan')}}" class="img3"><img src="images/sliding-right-img-1.png" alt="Express Loan" title="Express Loan" class="img-responsive"/></a>
-		   <a href="{{URL::to('idfc')}}" class="img4"><img src="images/sliding-right-img-3.png" alt="Savings Account" title="Savings Account" class="img-responsive"/></a>
+			
+		 </ul>
+		
+		  
+		   
 
 		</div>
     <div class="item active">
@@ -116,7 +123,7 @@
 			<div class="dv-hr">
 				<div class="col-md-2 animate-box no-padding">
 					<div class="services">
-						<a class="anchor_decoration" href="{{URL::to('home-loan')}}">
+						<a class="anchor_decoration" href="{{URL::to('new-home-loan')}}">
 						<div class="desc">
 						<i class="icon-home"></i>
 							<h3>Home Loan</h3>
@@ -127,7 +134,7 @@
 				</div>
 				<div class="col-md-2 animate-box no-padding">
 					<div class="services1 services">
-						<a class="anchor_decoration" href="{{URL::to('personal-loan')}}">
+						<a class="anchor_decoration" href="{{URL::to('new-personal-loan')}}">
 						<div class="desc">
 						<i class="icon-user"></i>
 							<h3>Personal Loan</h3>
@@ -138,7 +145,7 @@
 				</div>
 				<div class="col-md-2 animate-box no-padding">
 					<div class="services2 services">
-						<a class="anchor_decoration" href="{{URL::to('loan-against-property')}}">
+						<a class="anchor_decoration" href="{{URL::to('new-loan-against-property')}}">
 						<div class="desc">
 						<i class="icon-money"></i>
 							<h3>Loan against <br>Property</h3>
@@ -160,7 +167,7 @@
 				</div>
 				<div class="col-md-2 animate-box no-padding">
 					<div class="services4 services">
-						<a class="anchor_decoration" href="{{URL::to('business-loan')}}">
+						<a class="anchor_decoration" href="{{URL::to('new-business-loan')}}">
 						<div class="desc">
 						<i class="icon-line-chart"></i>
 							<h3>Business <br> Loan </h3>
@@ -171,7 +178,7 @@
 				</div>
 				<div class="col-md-2 animate-box no-padding">
 					<div class="services5 services">
-						<a class="anchor_decoration" href="{{URL::to('car-loan')}}">
+						<a class="anchor_decoration" href="{{URL::to('new-car-loan')}}">
 						<div class="desc">
 						<i class="icon-car"></i>
 							<h3>Car Loan</h3>
@@ -397,6 +404,8 @@
     <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
     <li data-target="#myCarousel" data-slide-to="1"></li>
     <li data-target="#myCarousel" data-slide-to="2"></li>
+    <li data-target="#myCarousel" data-slide-to="3"></li>
+    <li data-target="#myCarousel" data-slide-to="4"></li>
   </ol>
 
   <!-- Wrapper for slides -->
@@ -404,22 +413,48 @@
     <div class="item active">
       <h3 class="title">Customers Speak</h3>
 							
-<p>" I found them professional, straightforward, and since they don’t push you to apply for a specific bank, they are impartial. On a long term basis one needs an intermediary as a one stop shop and these guys seems to be in the business for long term. Their experts follow up on time, give a frank advise, clarify everything so that one does not feel cheated and make a wise decision to save money. </p>
+<p> I found them professional, straightforward, and since they don’t push you to apply for a specific bank, they are impartial. On a long term basis one needs an intermediary as a one stop shop and these guys seems to be in the business for long term. Their experts follow up on time, give a frank advise, clarify everything so that one does not feel cheated and make a wise decision to save money. </p>
 <p class="align-right">Ashish Sharma</p>
     </div>
 
     <div class="item">
       <h3 class="title">Customers Speak</h3>
 							
-<p>" I found them professional, straightforward, and since they don’t push you to apply for a specific bank, they are impartial. On a long term basis one needs an intermediary as a one stop shop and these guys seems to be in the business for long term. Their experts follow up on time, give a frank advise, clarify everything so that one does not feel cheated and make a wise decision to save money. </p>
-<p class="align-right">Ashish Sharma</p>
+<p>I'm thankful of the services I have been offered by your staff.Looking forward for 
+more business.I would like to recommend about your services to my family and friends.  
+ </p>
+<p class="align-right">Rahil Farooqui</p>
     </div>
 
     <div class="item">
     <h3 class="title">Customers Speak</h3>
 							
-<p>" I found them professional, straightforward, and since they don’t push you to apply for a specific bank, they are impartial. On a long term basis one needs an intermediary as a one stop shop and these guys seems to be in the business for long term. Their experts follow up on time, give a frank advise, clarify everything so that one does not feel cheated and make a wise decision to save money. </p>
-<p class="align-right">Ashish Sharma</p>
+<p> Thanks a lot for processing my personal loan in time. I would like to give you 
+special thanks for the service given by you. Your personal visits to my office 
+for all documentation and other queries saved my personal as well as official
+time a lot. I appreciate your positive approach towards customer needs and satisfaction.  Special thanks. 
+ </p>
+<p class="align-right">Milind Bedekar</p>
+    </div>
+
+    <div class="item">
+    <h3 class="title">Customers Speak</h3>
+							
+<p> Great Work. I appreciate your efforts for disbursement of my loan in time. Your strong followup and deep subject 
+knowledge helped me to get loan amount in time. Keep up the good work,expecting the same support from 
+you in future.
+ 
+ </p>
+<p class="align-right">Satyen Pattarkine</p>
+    </div>
+
+    <div class="item">
+    <h3 class="title">Customers Speak</h3>
+							
+<p> I would like to thank the team for the outstanding service provided in disbursing my loan. It was a smooth process. Thank You. Keep the good work going .
+ 
+ </p>
+<p class="align-right">Joel Jangam</p>
     </div>
 
   </div>
@@ -448,7 +483,7 @@
 	
 @include('layout.script')
 @include('layout.footer')
-<div id="popup" class="modal fade">
+<!-- <div id="popup" class="modal fade">
     <div class="modal-dialog">
 	<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
         <div class="modal-content">
@@ -460,4 +495,4 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->

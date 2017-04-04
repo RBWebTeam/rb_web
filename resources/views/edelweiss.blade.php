@@ -5,14 +5,15 @@
 
  <div class="col-md-12 white-bg pad">
  <h2 class="align-center loan-head">Edelweiss</h2>
+ <img src="{{URL::to('images/Loan-Image-Sliding.gif')}}" alt="Tribe Logo" class="pull-left img-responsive" />
  <div class="col-md-8">
- <img src="{{URL::to('images/9.png')}}" alt="Tribe Logo" class="img-responsive" />
+ 
  <div class="col-md-6">
   <div class="col-xs-12">
  
 	   <div class="btn-grp mrg-top pad status" data-toggle="buttons">
 	  
-		<center><div class="type-cover"><span>Proprietor Ship</span></div></center>
+		<center><div class="type-cover"><span>Proprietorship</span></div></center>
       <span class="btn btn-default outer-brd active"><input type="radio" name="Status" id="option1">Sole Proprietor</span>
       <span class="btn btn-default outer-brd"><input type="radio" name="Status" id="option2">Partnership</span>
       <span class="btn btn-default outer-brd"><input type="radio" name="Status" id="option3">Company</span>

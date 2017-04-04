@@ -26,8 +26,8 @@
   <hr>
     <div class="col-md-3"><p>Are you a Tribe Partner?</p></div>
     <div class="col-md-4">
-    <p><input type="radio" name="tribe_partner" onclick="showHidden('tribe_partner_div',1)" /> Yes&nbsp;&nbsp;
-     <input type="radio" name="tribe_partner" onclick="showHidden('tribe_partner_div',0)" checked /> No</p></div>
+    <p><input type="radio" name="is_loan_distributor" onclick="showHidden('tribe_partner_div',1)" value="true" /> Yes&nbsp;&nbsp;
+     <input type="radio" name="is_loan_distributor" onclick="showHidden('tribe_partner_div',0)" value="false" checked /> No</p></div>
   <div  id="tribe_partner_div" style="display: none;">
     <div class="col-md-6"><p>partnerID*</p></div>
     <div class="col-md-6"><input type="text" name="partner_id"  class="form-control form-group" required /></div>
@@ -70,6 +70,18 @@
     <div class="col-md-8"><p>
     <input type="text" name="loan_tenure" id="loan_tenure_tribe_loan" class="form-control form-group" required onkeypress="return fnAllowNumeric(event)" /></p></div>
     
+    <div class="col-md-3"><p>Loan Type</p></div>
+    <div class="col-md-8 sec">
+    <select class="drop-arr" name="loan_type" id="loan_type" required>
+    <option disabled selected>Select</option>
+    @foreach($data['loan_type'] as $key=>$value)
+      
+      <option value="{{$value}}"><?php echo $key;?></option>
+      @endforeach
+    </select>
+   
+    </div>
+
     <div class="col-md-3"><p>Repayment Frequency</p></div>
     <div class="col-md-8 sec">
     <select class="drop-arr" name="repayment_frequency" id="repayment_frequency" required>
@@ -219,7 +231,7 @@
     </div>
     <div class="col-md-3"><p>Address*</p></div>
     <div class="col-md-8">
-    <textarea class="form-control form-control mrg-btm" colspan="2" id="company_address" name="company_address"></textarea></div>
+    <textarea class="form-control form-control mrg-btm" colspan="2" id="work_address" name="work_address"></textarea></div>
     
     <div class="col-md-3"><p>Business Type*</p></div>
     <div class="col-md-8 sec">
@@ -367,7 +379,7 @@
     
     <div id="main4" class="tab-pane fade">
       <form id="kyc_form" name="kyc_form" enctype="multipart/form-data">
-    <h3 class="mrg-top">KYC Identity Proof</h3>
+    <h3 class="mrg-top">KYC Identity Proof(Atleast one document is required)</h3>
   <hr>
     <div class="col-md-3">Pan</div>
     <div class="col-md-8">
@@ -528,8 +540,11 @@
              url: "{{URL::to('save-tribe-form')}}",
              data : $('#tribe_loan_form').serialize(),
              success: function(msg){
-               console.log(msg);  
-                  } 
+              console.log(msg);
+                $('#main5').hide();
+                $('#main4').show();
+
+            } 
           });
     });
   </script>

@@ -50,6 +50,7 @@ class TribeController extends CallApiController
 	public function save_tribe_form(Request $req){
 	
 	$data=$req->all();
+	return 1;
 	//print_r($data);exit();
 	//company_address
 	// doc_pan doc_aadhar doc_dl doc_passport doc_voter doc_electricity_bill doc_leave_license doc_reg_certification doc_tax_registration doc_comapny_it_returns doc_company_pan doc_vat_return doc_it_returns doc_other		
@@ -71,7 +72,7 @@ class TribeController extends CallApiController
 	  //               // $url = "http://beta.services.rupeeboss.com/LoginDtls.svc/xmlservice/uploadCustLoanDoc";
 			// 	}				
 	$data["name"]="SampleTribe";
-	$data["loan_type"]=0;		    
+		    
 	//remove above hard coded parameter later
 	$business_pan=isset($data['company_pan_card'])?$data['company_pan_card']:$data['business_run_by_pan_div'];
 	$data['online_sale_channel']=isset($data['online_sale_channel'])?$data['online_sale_channel']:"";
@@ -93,7 +94,7 @@ class TribeController extends CallApiController
 				$post_data='{"agentname":"'.$data['agent_name'].'",
 		"business_details":{
 			"address":{
-				"work":"'.$data['agent_name'].'"
+				"work":"'.$data['work_address'].'"
 			},
 			"director_count":'.$data['directors_count'].',
 			"employess_count":"'.$data['employee_count'].'",
@@ -112,7 +113,7 @@ class TribeController extends CallApiController
 			"taxation_details":{'.$data['taxation_details'].'},
 			"turnover":'.$data['turnover'].'
 		},
-		"is_loan_distributor":true,
+		"is_loan_distributor":'.$data['is_loan_distributor'].',
 		"loan_amount":"'.$data['loan_amount'].'",
 		"loan_tenure":'.$data['loan_tenure'].',
 		"loan_type":'.$data['loan_type'].',
@@ -148,7 +149,7 @@ class TribeController extends CallApiController
 			"mobile_number":'.$data['ref_mobile'].'
 		},
 		"repayment_frequency":'.$data['repayment_frequency'].',
-		"secret":"'.$data['agent_name'].'"}';
+		"secret":"i1fndpWYkU9fgBhqWmKU1Uwt7ogk9q"}';
 
 		print_r($post_data);exit();
 		    $url = "http://api.rupeeboss.com/BankAPIService.svc/createTribeLoan";

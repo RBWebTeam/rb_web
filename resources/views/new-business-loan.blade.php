@@ -159,10 +159,10 @@
   
 <!-- <a href="javascript:void(0)" class="btn btn-info" id="button" va >Add Bank</a>
  <a href="javascript:void(0)" class="btn btn-info" id="button_remove" >Remove</a> -->
-  <div id="addChild" class="input">
+  <div id="addChild" >
                     <input type="button" class="btn btn-info" value="Add Bank"> 
                 </div>
-                    <div id="deleteChild" class="questionanswers">
+                    <div id="deleteChild" >
                         <input type="button"  class="btn btn-info" value="Remove">
                     </div>
 

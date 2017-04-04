@@ -23,7 +23,7 @@
 		    <li><a href="{{URL::to('comfy')}}"><b>Rupeeboss Comfy</b></a></li>
 			<li><a href="{{URL::to('express-loan')}}"><b>Express Loan</b></a></li>
 			<li><a href="{{URL::to('idfc')}}">Savings Account</a></li>
-			<li><a href="{{URL::to('contact-us')}}">Pradhan Mantri Yojana</a></li>
+			<li><a href="{{URL::to('contact-us')}}">Pradhan Mantri Yojana</a></li>hgfg
 
 			
 		 </ul>

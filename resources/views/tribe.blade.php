@@ -378,80 +378,82 @@
     </form>
     
     <div id="main4" class="tab-pane fade">
-      <form id="kyc_form" name="kyc_form" enctype="multipart/form-data">
+      <form id="kyc_form" name="kyc_form" enctype="multipart/form-data" >
+        {{ csrf_field() }}
     <h3 class="mrg-top">KYC Identity Proof(Atleast one document is required)</h3>
   <hr>
     <div class="col-md-3">Pan</div>
     <div class="col-md-8">
-    <input type="file" name="docpan" id="docpan"  class="form-control form-group no-border"/>
+    <input type="file" name="1" id="docpan"  class="form-control form-group no-border"/>
     </div>
     
     <div class="col-md-3">Aadhaar</div>
     <div class="col-md-8">
-    <input type="file" name="doc_aadhar"  id="doc_aadhar" class="form-control form-group no-border"/></div>
+    <input type="file" name="2"  id="doc_aadhar" class="form-control form-group no-border"/></div>
     
     <div class="col-md-3">Driving License </div>
     <div class="col-md-8">
-     <input type="file" name="doc_dl" id="doc_dl" class="form-control form-group no-border"/>
+     <input type="file" name="3" id="doc_dl" class="form-control form-group no-border"/>
     </div>
     
     <div class="col-md-3">Passport</div>
     <div class="col-md-8">
-     <input type="file" name="doc_passport" id="doc_passport" class="form-control form-group no-border"/>
+     <input type="file" name="4" id="doc_passport" class="form-control form-group no-border"/>
     </div>
     
     <div class="col-md-3">Voter ID</div>
     <div class="col-md-8">
-     <input type="file" id="doc_voter" name="doc_voter" id="doc_voter" class="form-control form-group no-border"/>
+     <input type="file" id="5" name="doc_voter" id="doc_voter" class="form-control form-group no-border"/>
     </div>
     <div class="col-md-12">
     <h3 class="mrg-top">Address Proof</h3><hr>
   </div>
   <div class="col-md-3">Electricity Bill</div>
     <div class="col-md-8">
-     <input type="file" name="doc_electricity_bill" id="doc_electricity_bill" class="form-control form-group no-border"/>
+     <input type="file" name="12" id="doc_electricity_bill" class="form-control form-group no-border"/>
     </div>
     
     <div class="col-md-3">Leave and License Agreement</div>
     <div class="col-md-8">
-    <input type="file" id="doc_leave_license" name="doc_leave_license" id="doc_leave_license" class="form-control form-group no-border"/></div>
+    <input type="file" id="13" name="doc_leave_license" id="doc_leave_license" class="form-control form-group no-border"/></div>
     
     <div class="col-md-12">
     <h3 class="mrg-top">Business KYC</h3><hr>
   </div>
     <div class="col-md-3">Registration Certificate</div>
     <div class="col-md-8">
-    <input type="file" id="doc_reg_certification" name="doc_reg_certification" class="form-control form-group no-border"/></div>
+    <input type="file" id="14" name="doc_reg_certification" class="form-control form-group no-border"/></div>
     
     <div class="col-md-3">Tax Registration</div>
     <div class="col-md-8">
-    <input type="file" id="doc_tax_registration" name="doc_tax_registration" class="form-control form-group no-border"/></div>
+    <input type="file" id="15" name="doc_tax_registration" class="form-control form-group no-border"/></div>
     
     <div class="col-md-12">
     <h3 class="mrg-top">Business Documents</h3><hr>
   </div>
     <div class="col-md-3">Company IT Returns</div>
     <div class="col-md-8">
-    <input type="file" name="doc_comapany_it_returns" id="doc_comapny_it_returns" class="form-control form-group no-border"/></div>
+    <input type="file" name="7" id="doc_comapny_it_returns" class="form-control form-group no-border"/></div>
     
     <div class="col-md-3">Company PAN</div>
     <div class="col-md-8">
-    <input type="file" id="doc_company_pan" name="doc_company_pan" class="form-control form-group no-border"/></div>
+    <input type="file" id="8" name="doc_company_pan" class="form-control form-group no-border"/></div>
     
      <div class="col-md-3">ITR/VAT Returns/ST Returns</div>
     <div class="col-md-8">
-    <input type="file" id="doc_vat_return" name="doc_vat_return" class="form-control form-group no-border"/></div>
+    <input type="file" id="7" name="doc_vat_return" class="form-control form-group no-border"/></div>
     
     <div class="col-md-12">
     <h3 class="mrg-top">Other Documents</h3><hr>
   </div>
     <div class="col-md-3">Personal IT Returns</div>
     <div class="col-md-8">
-    <input type="file" id="doc_it_returns" name="doc_it_returns" class="form-control form-group no-border"/></div>
+    <input type="file" id="doc_it_returns" name="6" class="form-control form-group no-border"/></div>
     
     <div class="col-md-3">Other Documents</div>
     <div class="col-md-8">
-    <input type="file" name="doc_other" id="doc_other" class="form-control form-group no-border"/>
+    <input type="file" name="11" id="doc_other" class="form-control form-group no-border"/>
+    <a class="btn btn-primary btn-outline with-arrow " id="upload_doc_submit">Upload<i class="icon-arrow-right"></i></a>
      <a class="btn btn-primary btn-outline with-arrow go_to_next ">Next<i class="icon-arrow-right"></i></a>
     <a class="btn btn-primary btn-outline with-arrow  ">Back<i class="icon-arrow-right"></i></a>
     </div>
@@ -541,8 +543,7 @@
              data : $('#tribe_loan_form').serialize(),
              success: function(msg){
               console.log(msg);
-                $('#main5').hide();
-                $('#main4').show();
+               
 
             } 
           });
@@ -581,4 +582,43 @@
       //return false;
     }
   });
+
+  
+    // $('#upload_doc_submit').click(function() {
+    //   var formData = $('#kyc_form').serialize();
+    //  // console.log(formData);
+    //  // return false;
+    //  var CSRF_TOKEN = $('input[name="_token"]').val();                    
+    // var form_url="{{URL::to('upload-tribe-doc')}}";
+    //   $.ajax({  
+    //            type: "POST",  
+    //            url: form_url + '?_token=' + CSRF_TOKEN,
+    //            data : formData,
+    //            mimeType: "multipart/form-data",
+    //            cache: false,
+    //             contentType: false,
+    //             processData: false,
+    //            success: function(msg){
+    //             console.log(msg);
+    //             }  
+    //     }); 
+    // });
+
+$("#upload_doc_submit").click(function(){
+    var CSRF_TOKEN = $('input[name="_token"]').val();                    
+    var form_url="{{URL::to('upload-tribe-doc')}}";
+$.ajax({
+      url:form_url + '?_token=' + CSRF_TOKEN,
+      data:new FormData($("#kyc_form")[0]),
+      dataType:'json',
+      async:false,
+      type:'post',
+      processData: false,
+      contentType: false,
+      success:function(response){
+        console.log(response);
+      },
+    });
+ });
+  
   </script>

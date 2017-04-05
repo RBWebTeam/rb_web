@@ -51,6 +51,13 @@ class NewProcessController extends Controller
 
       }
 
+      public function newSmartHomeLoan(){
+
+         return view('new-smart-home-loan');
+
+
+      }
+
 
       
 }

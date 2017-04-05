@@ -7,7 +7,7 @@
 
  </div> -->
  <div class="col-md-12 white-bg pad">
- <h3 class="text-center loan-head">Home Loan</h3>
+ <h3 class="text-center loan-head">Smart Home Loan</h3>
 <div class="col-md-8" id="mod">
 <form name="home_loan_process_form" id="home_loan_process_form" action="{{URL::to('loan-submit')}}" method="POST" >
 <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
@@ -128,17 +128,17 @@
      <div  style="display: none;" id="self-employed_ID"> 
        
        <div class="col-xs-6 form-padding">
-          <input type="text" class="form-input-new form-control " name="turnover" placeholder="Annual Turnover" required  onkeypress="return fnAllowNumeric(event)">
+          <input type="text" class="form-input-new form-control " name="turnover" placeholder="Annual turnover" required  onkeypress="return fnAllowNumeric(event)">
       </div>
 
        <div class="col-xs-6 form-padding">
-          <input type="text" class="form-input-new form-control " name="profit_after_tax" placeholder="Profit After Tax" required  onkeypress="return fnAllowNumeric(event)">
+          <input type="text" class="form-input-new form-control " name="profit_after_tax" placeholder="Profit after tax" required  onkeypress="return fnAllowNumeric(event)">
       </div>
       <div class="col-xs-6 form-padding">
           <input type="text" class="form-input-new form-control " name="depreciation" placeholder="Depreciation"  required onkeypress="return fnAllowNumeric(event)">
       </div>
        <div class="col-xs-6 form-padding">
-          <input type="text" class="form-input-new form-control " name="remuneration" placeholder="Partner/Director Remuneration"  required onkeypress="return fnAllowNumeric(event)">
+          <input type="text" class="form-input-new form-control " name="remuneration" placeholder="Director Remuneration"  required onkeypress="return fnAllowNumeric(event)">
       </div>
 
      </div>
@@ -201,17 +201,17 @@
       <div  style="display: none;" id="co_self-employed_ID"> 
        
        <div class="col-xs-6 form-padding">
-          <input type="text" class="form-input-new form-control " name="co_applicant_turnover" placeholder="Turnover"  onkeypress="return fnAllowNumeric(event)" required>
+          <input type="text" class="form-input-new form-control " name="co_applicant_turnover" placeholder="Co-Applicant Turnover"  onkeypress="return fnAllowNumeric(event)" required>
       </div>
 
        <div class="col-xs-6 form-padding">
-          <input type="text" class="form-input-new form-control " name="co_applicant_profit_after_tax" placeholder="Profit After Tax"  onkeypress="return fnAllowNumeric(event)" required>
+          <input type="text" class="form-input-new form-control " name="co_applicant_profit_after_tax" placeholder="Co-Applicant Profit After Tax"  onkeypress="return fnAllowNumeric(event)" required>
       </div>
       <div class="col-xs-6 form-padding">
-          <input type="text" class="form-input-new form-control " name="co_applicant_depreciation" placeholder="Depreciation" onkeypress="return fnAllowNumeric(event)" required>
+          <input type="text" class="form-input-new form-control " name="co_applicant_depreciation" placeholder="His /Her Depreciation" onkeypress="return fnAllowNumeric(event)" required>
       </div>
        <div class="col-xs-6 form-padding">
-          <input type="text" class="form-input-new form-control " name="co_applicant_remuneration" placeholder="Partner/Director Remuneration"  onkeypress="return fnAllowNumeric(event)" required>
+          <input type="text" class="form-input-new form-control " name="co_applicant_remuneration" placeholder="Director Remuneration"  onkeypress="return fnAllowNumeric(event)" required>
       </div>
 
      </div>

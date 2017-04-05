@@ -19,7 +19,7 @@
 
 	   <div class="btn-grp mrg-top pad status" data-toggle="buttons">
 	  
-		<center><div class="type-cover"><span>Proprietorship</span></div></center>
+		<center><div class="type-cover"><span>Company Type</span></div></center>
       <span class="btn btn-default outer-brd active"><input type="radio" name="proprietor"  value="Sole Proprietor">Sole Proprietor</span>
       <span class="btn btn-default outer-brd"><input type="radio" name="proprietor"  value="Partnership">Partnership</span>
       <span class="btn btn-default outer-brd"><input  type="radio" name="proprietor"  value="Company" >Company</span>
@@ -48,13 +48,13 @@
 
   <div class="col-xs-6 form-padding">
   
-     <select class="block drop-arr select-sty" id="loan_tenure" name="loan_tenure">
+     <select class="block drop-arr select-sty"  name="loan_tenure">
 	  <option>LOAN TENURE</option>
 	  <option value="1">1 Year</option>
 		<option value="2">2 Year</option>
 		<option value="3">3 Year</option>
 		<option value="4">4 Year</option>
-		<option selected="5" value="5">5 Year</option>
+		<option value="5">5 Year</option>
 	</select>
   </div>
   

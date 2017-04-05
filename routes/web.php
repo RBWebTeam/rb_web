@@ -224,6 +224,7 @@ Route::post('upload-tribe-doc','TribeController@UploadTribeDocuments');
 Route::get('new-sme-loan','NewProcessController@newSmeLoan');
 Route::get('new-loan-against-property','NewProcessController@newLoanAgainstProperty');
 Route::get('new-home-loan','NewProcessController@newHomeLoan');
+Route::get('new-smart-home-loan','NewProcessController@newSmartHomeLoan');
 Route::get('new-car-loan','NewProcessController@newCarLoan');
 Route::get('new-business-loan','NewProcessController@newBusinessLoan');
 Route::get('edelweiss','NewProcessController@edelweiss');

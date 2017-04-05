@@ -61,7 +61,7 @@
     
     <div class="col-xs-6 form-padding">
   
-     <select class="block drop-arr select-sty"  name="loan_tenure">
+     <select class="block drop-arr select-sty" id="loan_tenure" name="loan_tenure">
     <option>LOAN TENURE</option>
       <option value="1">1 Year</option>
     <option value="2">2 Year</option>
@@ -112,7 +112,7 @@
           <input type="text" class="form-input-new form-control " name="depreciation" placeholder="Depreciation"  required onkeypress="return fnAllowNumeric(event)">
       </div>
        <div class="col-xs-6 form-padding">
-          <input type="text" class="form-input-new form-control " name="remuneration" placeholder="Partner/Director Remuneration"  required onkeypress="return fnAllowNumeric(event)">
+          <input type="text" class="form-input-new form-control " name="remuneration" placeholder="Director Remuneration"  required onkeypress="return fnAllowNumeric(event)">
       </div>
 
      </div>
@@ -133,7 +133,7 @@
       </div>
     </div>
 
-   
+   <br>
     <?php if(Session::get('is_login')) {?>
                 <?php if(Session::get('contact')!=''){ Session::get('contact'); ?>
               <button class="btn btn-primary btn-outline with-arrow top-mrg product_name product_ID" >Get Best Quotes<i class="icon-arrow-right"></i></button>

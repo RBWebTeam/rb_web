@@ -278,7 +278,7 @@
 
   </tr>
   <tr>
-    <td class="text-left"><h3 class="text-capitalize">Working Capital</h3></td>
+    <td class="text-left"><h4 class="text-center">Working Capital</h4></td>
     <td id="bankName0"> </td>
     <td id="bankName1"> </td>
     <td id="bankName2"> </td>
@@ -286,21 +286,21 @@
     
   </tr>
   <tr>
-   <td class="text-left"><h3 class="text-capitalize">Term Loan</h3></b> </td>
+   <td class="text-left"><h4 class="text-center">Term Loan</h4></b> </td>
    <td id="TbankName0">  </td>
    <td id="TbankName1">  </td>
    <td id="TbankName2">  </td>
    <td id="Tbanktotal">  </td>
   </tr>
   <tr>
-  <td class="text-left"><h3 class="text-capitalize">Packing Credit Domestic</h3></b></</td>
+  <td class="text-left"><h4 class="text-center">Packing Credit Domestic</h4></b></</td>
   <td  id="domestic_ID">  </td>
 	<td  >0</td>
 	<td  >0</td>
   <td  id="tdomestic_ID"> </td>
   </tr>
   <tr>
-  <td class="text-left" ><h3 class="text-capitalize">Packing Credit Foreign Currency</h3></</td>
+  <td class="text-left" ><h4 class="text-center">Packing Credit Foreign Currency</h4></</td>
   <td id="currency_ID"> </td>
 	<td >0</td>
 	<td >0</td>
@@ -308,7 +308,7 @@
   </tr>
 
   <tr>
-    <td class="text-left"><h3 class="text-capitalize">Total:</h3></td>
+    <td class="text-left"><h3 class="text-center">Total:</h3></td>
     <td id="bank1_saving"> </td>
     <td id="bank2_saving">  </td>
     <td id="bank3_saving"> </td>

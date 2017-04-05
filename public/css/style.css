@@ -3283,6 +3283,9 @@ font-size:20px;margin-top: 10px;
     display: table-cell;
     vertical-align: middle;
     border: 1px solid #ddd;
+	border-radius:0px;
+	-moz-border-radius:0px;
+	-webkit-border-radius:0px;
     font-size: 13px;
 	background:#eee;
 }

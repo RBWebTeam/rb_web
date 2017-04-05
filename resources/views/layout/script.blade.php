@@ -757,7 +757,7 @@
             return false;
           }else{
             $('#send_otp_button').hide();
-             $(".iframeloading").show();
+             // $(".iframeloading").show();
             $('#pwd_match').hide();
             $('#msg_err_email').hide();
 
@@ -807,6 +807,7 @@
            dataType:"json",
            data : $('#'+form).serialize(),
            success: function(data){
+            $(".iframeloading").hide();
              var data_1=data['data'];
              if(data_1==true){
                var form_name=$('#elem').parent().find('form').attr('id');

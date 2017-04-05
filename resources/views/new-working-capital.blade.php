@@ -51,7 +51,8 @@
 <span class="block"><b>LOAN AMOUNT REQUIRED IN CRORES</b></span>
 <div>
    <div class="col-md-12 pad-no">
-   <span class="text-left">Inventory</span>
+
+   <center><div class="type-cover"><span>Inventory</span></div></center>
    </div>
    <div class="col-md-4 form-padding"><input type="text"class="form-input-new form-control" placeholder="1 Year"></div>
    <div class="col-md-4 form-padding"><input type="text"class="form-input-new form-control" placeholder="2 Year"></div>
@@ -59,7 +60,7 @@
  </div>
  <div>
    <div class="col-md-12 pad-no">
-   <span class="text-left">Debtors</span>
+   <center><div class="type-cover"><span>Debtors</span></div></center>
    </div>
    <div class="col-md-4 form-padding"><input type="text"class="form-input-new form-control" placeholder="1 Year"></div>
    <div class="col-md-4 form-padding"><input type="text"class="form-input-new form-control" placeholder="2 Year"></div>
@@ -67,7 +68,7 @@
  </div>
  <div>
    <div class="col-md-12 pad-no">
-   <span class="text-left">Creditors</span>
+   <center><div class="type-cover"><span>Creditors</span></div></center>
    </div>
    <div class="col-md-4 form-padding"><input type="text"class="form-input-new form-control" placeholder="1 Year"></div>
    <div class="col-md-4 form-padding"><input type="text"class="form-input-new form-control" placeholder="2 Year"></div>
@@ -75,7 +76,7 @@
  </div>
  <div>
    <div class="col-md-12 pad-no">
-   <span class="text-left">Share</span>
+   <center><div class="type-cover"><span>Share</span></div></center>
    </div>
    <div class="col-md-4 form-padding"><input type="text"class="form-input-new form-control" placeholder="1 Year"></div>
    <div class="col-md-4 form-padding"><input type="text"class="form-input-new form-control" placeholder="2 Year"></div>
@@ -83,7 +84,7 @@
  </div>
  <div>
    <div class="col-md-12 pad-no">
-   <span class="text-left">Reserves</span>
+   <center><div class="type-cover"><span>Reserves</span></div></center>
    </div>
    <div class="col-md-4 form-padding"><input type="text"class="form-input-new form-control" placeholder="1 Year"></div>
    <div class="col-md-4 form-padding"><input type="text"class="form-input-new form-control" placeholder="2 Year"></div>
@@ -112,7 +113,7 @@
                      
 					 <div>
    <div class="col-md-12 pad-no">
-   <span class="text-left">Turnover/Topline</span>
+   <center><div class="type-cover"><span>Turnover/Topline</span></div></center>
    </div>
    <div class="col-md-4 form-padding"><input type="text"class="form-input-new form-control" placeholder="1 Year"></div>
    <div class="col-md-4 form-padding"><input type="text"class="form-input-new form-control" placeholder="2 Year"></div>
@@ -120,7 +121,7 @@
  </div>
  <div>
    <div class="col-md-12 pad-no">
-   <span class="text-left">Ebidta</span>
+   <center><div class="type-cover"><span>Ebidta</span></div></center>
    </div>
    <div class="col-md-4 form-padding"><input type="text"class="form-input-new form-control" placeholder="1 Year"></div>
    <div class="col-md-4 form-padding"><input type="text"class="form-input-new form-control" placeholder="2 Year"></div>
@@ -128,7 +129,7 @@
  </div>
  <div>
    <div class="col-md-12 pad-no">
-   <span class="text-left">Profit Before Tax</span>
+   <center><div class="type-cover"><span>Profit Before Tax</span></div></center>
    </div>
    <div class="col-md-4 form-padding"><input type="text"class="form-input-new form-control" placeholder="1 Year"></div>
    <div class="col-md-4 form-padding"><input type="text"class="form-input-new form-control" placeholder="2 Year"></div>
@@ -136,7 +137,7 @@
  </div>
  <div>
    <div class="col-md-12 pad-no">
-   <span class="text-left">Profit After Tax</span>
+   <center><div class="type-cover"><span>Profit After Tax</span></div></center>
    </div>
    <div class="col-md-4 form-padding"><input type="text"class="form-input-new form-control" placeholder="1 Year"></div>
    <div class="col-md-4 form-padding"><input type="text"class="form-input-new form-control" placeholder="2 Year"></div>
@@ -144,7 +145,7 @@
  </div>
  <div>
    <div class="col-md-12 pad-no">
-   <span class="text-left">Depreciation</span>
+   <center><div class="type-cover"><span>Depreciation</span></div></center>
    </div>
    <div class="col-md-4 form-padding"><input type="text"class="form-input-new form-control" placeholder="1 Year"></div>
    <div class="col-md-4 form-padding"><input type="text"class="form-input-new form-control" placeholder="2 Year"></div>
@@ -152,7 +153,7 @@
  </div>
  <div>
    <div class="col-md-12 pad-no">
-   <span class="text-left">Existing Term Loan</span>
+   <center><div class="type-cover"><span>Existing Term Loan</span></div></center>
    </div>
    <div class="col-md-4 form-padding"><input type="text"class="form-input-new form-control" placeholder="1 Year"></div>
    <div class="col-md-4 form-padding"><input type="text"class="form-input-new form-control" placeholder="2 Year"></div>
@@ -160,7 +161,7 @@
  </div>
  <div>
    <div class="col-md-12 pad-no">
-   <span class="text-left">Existing OD/CC</span>
+   <center><div class="type-cover"><span>Existing OD/CC</span></div></center>
    </div>
    <div class="col-md-4 form-padding"><input type="text"class="form-input-new form-control" placeholder="1 Year"></div>
    <div class="col-md-4 form-padding"><input type="text"class="form-input-new form-control" placeholder="2 Year"></div>
@@ -168,7 +169,7 @@
  </div>
  <div>
    <div class="col-md-12 pad-no">
-   <span class="text-left">Interest Paid</span>
+   <center><div class="type-cover"><span>Interest Paid</span></div></center>
    </div>
    <div class="col-md-4 form-padding"><input type="text"class="form-input-new form-control" placeholder="1 Year"></div>
    <div class="col-md-4 form-padding"><input type="text"class="form-input-new form-control" placeholder="2 Year"></div>
@@ -176,7 +177,7 @@
  </div>
  <div>
    <div class="col-md-12 pad-no">
-   <span class="text-left">Current Rate of Interest</span>
+   <center><div class="type-cover"><span>Current Rate of Interest</span></div></center>
    </div>
    <div class="col-md-4 form-padding"><input type="text"class="form-input-new form-control" placeholder="1 Year"></div>
    <div class="col-md-4 form-padding"><input type="text"class="form-input-new form-control" placeholder="2 Year"></div>

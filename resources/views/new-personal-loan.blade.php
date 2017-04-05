@@ -59,7 +59,7 @@
     <option value="2">2 Year</option>
     <option value="3">3 Year</option>
     <option value="4">4 Year</option>
-    <option selected value="5">5 Year</option>
+    <option value="5">5 Year</option>
     <option value="6">6 Year</option>
     <option value="7">7 Year</option>
   </select>

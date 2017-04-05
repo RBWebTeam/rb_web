@@ -757,7 +757,7 @@
             return false;
           }else{
             $('#send_otp_button').hide();
-             $(".iframeloading").show();
+             // $(".iframeloading").show();
             $('#pwd_match').hide();
             $('#msg_err_email').hide();
 

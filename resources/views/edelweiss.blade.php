@@ -5,7 +5,7 @@
 
  <div class="col-md-12 white-bg pad">
  <h2 class="align-center loan-head">Edelweiss</h2>
- <img src="{{URL::to('images/Loan-Image-Sliding.gif')}}" alt="Tribe Logo" class="pull-left img-responsive" />
+ <!-- <img src="{{URL::to('images/Loan-Image-Sliding.gif')}}" alt="Tribe Logo" class="pull-left img-responsive" /> -->
  <div class="col-md-8">
  
  <div class="col-md-6">
@@ -38,7 +38,7 @@
 		<option>2 Year</option>
 		<option>3 Year</option>
 		<option>4 Year</option>
-		<option selected>5 Year</option>
+		<option>5 Year</option>
 		<option>6 Year</option>
 		<option>7 Year</option>
 	</select>
@@ -76,19 +76,22 @@
         <div class="panel-body">
 		
 	
-	<div class="col-xs-8 form-padding pad">
+	<div class="col-xs-7 form-padding pad">
 	 <h4 class="mrg-top">Export/Import</h4>
 	</div>
-	<div class="col-xs-4 form-padding pad">
+	<div class="col-xs-5 form-padding pad">
      <div class="btn-grp border-none" data-toggle="buttons">
+	
       <span class="btn btn-default outer-brd btn-blu active"><input type="radio" name="Status" id="option1">Y</span>
       <span class="btn btn-default outer-brd btn-blu"><input type="radio" name="Status" id="option2">N</span>
+	   <span><h3 class="pull-right">60%</h3></span>
          </div>
+		 
 	</div>
-	<div class="col-xs-8 form-padding pad">
+	<div class="col-xs-7 form-padding pad">
 	 <span>Has a Good Repayment track record in existing UBL / CC / OD ?</span>
 	</div>
-	<div class="col-xs-4 form-padding pad">
+	<div class="col-xs-5 form-padding pad">
      <div class="btn-grp border-none" data-toggle="buttons">
       <span class="btn btn-default outer-brd btn-blu active"><input type="radio" name="Status" id="option1">Y</span>
       <span class="btn btn-default outer-brd btn-blu"><input type="radio" name="Status" id="option2">N</span>

@@ -23,7 +23,11 @@
 		    <li><a href="{{URL::to('comfy')}}"><b>Rupeeboss Comfy</b></a></li>
 			<li><a href="{{URL::to('express-loan')}}"style="background:red;"><b>Express Loan</b></a></li>
 			<li><a href="{{URL::to('idfc')}}"><b>Savings Account</b></a></li>
-			<li><a href="{{URL::to('contact-us')}}"><b>Pradhan Mantri Yojana</b></a></li>
+
+			<li><a href="{{URL::to('contact-us')}}"><b>Pradhan Mantri Awas Yojana</b></a></li>
+			<li><a href="{{URL::to('contact-us')}}"><b>SME Car Lasing</b></a></li>
+
+			
 
 			
 		 </ul>

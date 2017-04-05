@@ -53,13 +53,13 @@
   
   <div class="col-xs-6 form-padding">
   
-     <select class="block drop-arr select-sty" id="loan_tenure" name="loan_tenure">
+     <select class="block drop-arr select-sty"  name="loan_tenure">
     <option >LOAN TENURE</option>
       <option value="1">1 Year</option>
     <option value="2">2 Year</option>
     <option value="3">3 Year</option>
     <option value="4">4 Year</option>
-    <option selected value="5">5 Year</option>
+    <option value="5">5 Year</option>
     <option value="6">6 Year</option>
     <option value="7">7 Year</option>
   </select>
@@ -150,7 +150,7 @@
       </form>
      </div>
      <div class="col-md-4" >
-     <div class="border brd-for" id="mi_id">
+     <div class="border brd-for hei-frtrt" id="mi_id">
 
              <!-- <form name="compareform" id="compareform" > -->
           
@@ -177,15 +177,13 @@
          <br>
         <div class="col-md-12 pad-no"> 
           
-         <a id="apply_new" type="button" class="btn btn-info" title="Experience New Digital Era In Loans">Apply Digitally</a>
-         <button id="eligibility" class="btn btn-info" title="See Bankwise Eligibility And Apply Amongst Best Bank">Check Bankwise Eligibility</button>
+         <a id="apply_new" type="button" class="btn btn-info disblk" title="Experience New Digital Era In Loans">Apply Digitally</a>
+         <button id="eligibility" class="btn btn-info disblk" title="See Bankwise Eligibility And Apply Amongst Best Bank">Check Bankwise Eligibility</button>
          <button type="button" class="btn btn-info block"  id="call_rm" name="call_rm" data-toggle="modal" data-target="#Modal" title="Call For RM(Single Day Process)">Call Manager</button>
          
         </div>
        
-        <!-- <p id="err" style="display:none;" ><span style="color:skyblue;position:absolute;font-size:13px;">No Quotes Found.</span></p> -->
-   
-    <!--   </form> -->
+       
 
     </div> 
     <p id="err" style="display:none;" ><span style="color: red;font-size: 20px;display: block; text-align: center;">Sorry, We are unable to process your request. Will get back to you in future.</span></p> 
@@ -194,12 +192,8 @@
    
   </div>
   </div>
-  <div id ="test123" class="col-md-8"></div>
-  
-      
-  
-  
-   <br>
+  </div>
+<br>
   
   
 @include('layout.footer')

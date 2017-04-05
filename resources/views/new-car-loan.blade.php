@@ -67,7 +67,7 @@
     <option value="2">2 Year</option>
     <option value="3">3 Year</option>
     <option value="4">4 Year</option>
-    <option selected value="5">5 Year</option>
+    <option value="5">5 Year</option>
  
   </select>
   </div>
@@ -133,7 +133,7 @@
       </div>
     </div>
 
-   
+   <br>
     <?php if(Session::get('is_login')) {?>
                 <?php if(Session::get('contact')!=''){ Session::get('contact'); ?>
               <button class="btn btn-primary btn-outline with-arrow top-mrg product_name product_ID" >Get Best Quotes<i class="icon-arrow-right"></i></button>

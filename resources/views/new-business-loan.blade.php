@@ -19,7 +19,7 @@
 
 	   <div class="btn-grp mrg-top pad status" data-toggle="buttons">
 	  
-		<center><div class="type-cover"><span>Proprietorship</span></div></center>
+		<center><div class="type-cover"><span>Company Type</span></div></center>
       <span class="btn btn-default outer-brd active"><input type="radio" name="proprietor"  value="Sole Proprietor">Sole Proprietor</span>
       <span class="btn btn-default outer-brd"><input type="radio" name="proprietor"  value="Partnership">Partnership</span>
       <span class="btn btn-default outer-brd"><input  type="radio" name="proprietor"  value="Company" >Company</span>
@@ -48,13 +48,13 @@
 
   <div class="col-xs-6 form-padding">
   
-     <select class="block drop-arr select-sty" id="loan_tenure" name="loan_tenure">
+     <select class="block drop-arr select-sty"  name="loan_tenure">
 	  <option>LOAN TENURE</option>
 	  <option value="1">1 Year</option>
 		<option value="2">2 Year</option>
 		<option value="3">3 Year</option>
 		<option value="4">4 Year</option>
-		<option selected="5" value="5">5 Year</option>
+		<option value="5">5 Year</option>
 	</select>
   </div>
   
@@ -198,6 +198,18 @@
      <div class="btn-grp border-none" data-toggle="buttons">
       <span class="btn btn-default outer-brd btn-blu active"><input type="radio" name="exchange" value="Y">Y</span>
       <span class="btn btn-default outer-brd btn-blu"><input type="radio" name="exchange" value="N">N</span>
+	  <select class="pull-right btn-default outer-brd btn-blu pad-ten">
+	       <option>10%</option>
+		   <option>20%</option>
+		   <option>30%</option>
+		   <option>40%</option>
+		   <option>50%</option>
+		   <option>60%</option>
+		   <option>70%</option>
+		   <option>80%</option>
+		   <option>90%</option>
+		   <option>100%</option>
+	  </select>
          </div>
 	</div>
 	<div class="col-xs-8 form-padding">
@@ -397,8 +409,8 @@
 
         <div> 
           <br>
-         <a id="apply_new" type="button" class="btn btn-info" title="Experience New Digital Era In Loans">Apply Digitally</a>
-         <button id="eligibility" class="btn btn-info" title="See Bankwise Eligibility And Apply Amongst Best Bank">Check Bankwise Eligibility</button>
+         <a id="apply_new" type="button" class="btn btn-info disblk" title="Experience New Digital Era In Loans">Apply Digitally</a>
+         <button id="eligibility" class="btn btn-info disblk" title="See Bankwise Eligibility And Apply Amongst Best Bank">Check Bankwise Eligibility</button>
          <button type="button" class="btn btn-info block"  id="call_rm" name="call_rm" data-toggle="modal" data-target="#Modal" title="Call For RM(Single Day Process)">Call Manager</button>
          
         </div>

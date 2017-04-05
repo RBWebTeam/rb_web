@@ -79,7 +79,7 @@
 		<option value="2">2 Year</option>
 		<option value="3">3 Year</option>
 		<option value="4">4 Year</option>
-		<option  value="5">5 Year</option>
+		<option value="5">5 Year</option>
 		<option value="6">6 Year</option>
 		<option value="7">7 Year</option>
 		<option value="8">8 Year</option>
@@ -128,17 +128,17 @@
      <div  style="display: none;" id="self-employed_ID"> 
        
        <div class="col-xs-6 form-padding">
-          <input type="text" class="form-input-new form-control " name="turnover" placeholder="Annual turnover" required  onkeypress="return fnAllowNumeric(event)">
+          <input type="text" class="form-input-new form-control " name="turnover" placeholder="Annual Turnover" required  onkeypress="return fnAllowNumeric(event)">
       </div>
 
        <div class="col-xs-6 form-padding">
-          <input type="text" class="form-input-new form-control " name="profit_after_tax" placeholder="Profit after tax" required  onkeypress="return fnAllowNumeric(event)">
+          <input type="text" class="form-input-new form-control " name="profit_after_tax" placeholder="Profit After Tax" required  onkeypress="return fnAllowNumeric(event)">
       </div>
       <div class="col-xs-6 form-padding">
           <input type="text" class="form-input-new form-control " name="depreciation" placeholder="Depreciation"  required onkeypress="return fnAllowNumeric(event)">
       </div>
        <div class="col-xs-6 form-padding">
-          <input type="text" class="form-input-new form-control " name="remuneration" placeholder="Director Remuneration"  required onkeypress="return fnAllowNumeric(event)">
+          <input type="text" class="form-input-new form-control " name="remuneration" placeholder="Partner/Director Remuneration"  required onkeypress="return fnAllowNumeric(event)">
       </div>
 
      </div>
@@ -201,17 +201,17 @@
       <div  style="display: none;" id="co_self-employed_ID"> 
        
        <div class="col-xs-6 form-padding">
-          <input type="text" class="form-input-new form-control " name="co_applicant_turnover" placeholder="Co-Applicant Turnover"  onkeypress="return fnAllowNumeric(event)" required>
+          <input type="text" class="form-input-new form-control " name="co_applicant_turnover" placeholder="Turnover"  onkeypress="return fnAllowNumeric(event)" required>
       </div>
 
        <div class="col-xs-6 form-padding">
-          <input type="text" class="form-input-new form-control " name="co_applicant_profit_after_tax" placeholder="Co-Applicant Profit After Tax"  onkeypress="return fnAllowNumeric(event)" required>
+          <input type="text" class="form-input-new form-control " name="co_applicant_profit_after_tax" placeholder="Profit After Tax"  onkeypress="return fnAllowNumeric(event)" required>
       </div>
       <div class="col-xs-6 form-padding">
-          <input type="text" class="form-input-new form-control " name="co_applicant_depreciation" placeholder="His /Her Depreciation" onkeypress="return fnAllowNumeric(event)" required>
+          <input type="text" class="form-input-new form-control " name="co_applicant_depreciation" placeholder="Depreciation" onkeypress="return fnAllowNumeric(event)" required>
       </div>
        <div class="col-xs-6 form-padding">
-          <input type="text" class="form-input-new form-control " name="co_applicant_remuneration" placeholder="Director Remuneration"  onkeypress="return fnAllowNumeric(event)" required>
+          <input type="text" class="form-input-new form-control " name="co_applicant_remuneration" placeholder="Partner/Director Remuneration"  onkeypress="return fnAllowNumeric(event)" required>
       </div>
 
      </div>
@@ -292,8 +292,8 @@
 
         <div> 
           
-         <a id="apply_new" type="button" class="btn btn-info" title="Experience New Digital Era In Loans">Apply Digitally</a>
-         <button id="eligibility" class="btn btn-info" title="See Bankwise Eligibility And Apply Amongst Best Bank">Check Bankwise Eligibility</button>
+         <a id="apply_new" type="button" class="btn btn-info disblk" title="Experience New Digital Era In Loans">Apply Digitally</a>
+         <button id="eligibility" class="btn btn-info disblk" title="See Bankwise Eligibility And Apply Amongst Best Bank">Check Bankwise Eligibility</button>
          <button type="button" class="btn btn-info block"  id="call_rm" name="call_rm" data-toggle="modal" data-target="#Modal" title="Call For RM(Single Day Process)">Call Manager</button>
          
         </div>

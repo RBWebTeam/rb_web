@@ -34,6 +34,7 @@
      <div class="btn-grp border-none" data-toggle="buttons">
       <span class="btn btn-default outer-brd btn-blu active"><input type="radio" name="Status" id="option1">Y</span>
       <span class="btn btn-default outer-brd btn-blu"><input type="radio" name="Status" id="option2">N</span>
+	  <h3 class="pull-right">60%</h3>
          </div>
 	</div>
 		

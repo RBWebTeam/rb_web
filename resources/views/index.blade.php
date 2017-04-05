@@ -22,7 +22,7 @@
          <ul>
 		    <li><a href="{{URL::to('comfy')}}"><b>Rupeeboss Comfy</b></a></li>
 			<li><a href="{{URL::to('express-loan')}}"style="background:red;"><b>Express Loan</b></a></li>
-			<li><a href="{{URL::to('idfc')}}"><b>Savings Account</b></a></li>
+			<li><a href="{{URL::to('idfc')}}">Savings Account</a></li>
 
 			<li><a href="{{URL::to('contact-us')}}"><b>Pradhan Mantri Awas Yojana</b></a></li>
 			<li><a href="{{URL::to('contact-us')}}"><b>SME Car Leasing</b></a></li>

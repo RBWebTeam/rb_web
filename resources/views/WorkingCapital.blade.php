@@ -333,6 +333,7 @@
 
         <div class="text-center img1"><img src="{{URL::to('images/photo.jpg')}}" alt="pop_up_pic"></div>
 		</div>
+		<button class="btn btn-success aply-btn">Apply Now</button>
  </div>
 </div>
 </br>

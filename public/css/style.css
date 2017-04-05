@@ -933,7 +933,7 @@ rb-services-section{padding:0px;}
   width: 100%;
   position: relative;
   background: #888;
-  border-top:5px solid #999;
+  border-top:10px solid #808080;
 }
 @media screen and (max-width: 768px) {
   #fh5co-footer {
@@ -3569,4 +3569,5 @@ label.error {color:red;display: inherit; font-weight: bold;font-size:11px;top: 3
 .pad-ten {padding: 5px 3px;}
 .fh5co-copyright, .white-txt {color:#ccc8c2;}
 .blk-txt a {color:#404040;}
+.hei-frtrt {height:430px;}
 	

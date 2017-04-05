@@ -138,11 +138,44 @@
         <div class="panel-body">
 		<div class="text-center flt-lft btn-grp" data-toggle="buttons">
 							<div class="scenario">
-								<div class="col-xs-12 pad-no scenario-active"><a class="scenario-1 btn"><input type="radio" name="Status" id="option1"  class="radio1" checked >Selection 1</a></div>
-								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="Status" id="option1" class="radio1">Selection 2</a></div>
-								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="Status" id="option1" class="radio1">Selection 3</a></div>
-								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="Status" id="option1" class="radio1">Selection 4</a></div>
-								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="Status" id="option1" class="radio1">Selection 5</a></div>
+								
+								<div class="col-xs-6 pad-no scenario-active"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_1"  class="radio1" checked >Agriculture </a></div>
+								<div class="col-xs-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_2" class="radio1">Auto Components </a></div>
+								<div class="col-xs-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_3" class="radio1">Automobiles</a></div>
+								<div class="col-xs-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Aviation</a></div>
+								<div class="col-xs-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Banking</a></div>
+								<div class="col-xs-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Biotechnology </a></div>
+								<div class="col-xs-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Cement</a></div>
+								<div class="col-xs-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Consumer Markets</a></div>
+								<div class="col-xs-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Education And Training </a></div>
+								<div class="col-xs-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Engineering</a></div>
+								<div class="col-xs-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Financial Services</a></div>
+								<div class="col-xs-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Food Industry</a></div>
+								<div class="col-xs-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Gems And Jewellery </a></div>
+								<div class="col-xs-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Healthcare</a></div>
+								<div class="col-xs-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Infrastructure</a></div>
+								<div class="col-xs-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Insurance </a></div>
+								<div class="col-xs-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">IT & ITeS</a></div>
+								<div class="col-xs-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Manufacturing</a></div>
+								<div class="col-xs-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Marketing And Strategy</a></div>
+								<div class="col-xs-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Media And Entertainment </a></div>
+								<div class="col-xs-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Oil And Gas</a></div>
+								<div class="col-xs-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Pharmaceuticals</a></div>
+								<div class="col-xs-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Ports</a></div>
+								<div class="col-xs-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Power</a></div>
+								<div class="col-xs-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Railways</a></div>
+								<div class="col-xs-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Real Estate</a></div>
+								<div class="col-xs-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Research And Development</a></div>
+								<div class="col-xs-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Retail</a></div>
+								<div class="col-xs-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Roads</a></div>
+								<div class="col-xs-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Rural Market </a></div>
+								<div class="col-xs-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Science And Technology </a></div>
+								<div class="col-xs-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Semiconductor</a></div>
+								<div class="col-xs-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Services</a></div>
+								<div class="col-xs-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Steel </a></div>
+								<div class="col-xs-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Telecommunications </a></div>
+								<div class="col-xs-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Textiles</a></div>
+								<div class="col-xs-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Tourism And Hospitality </a></div>
 							</div>
 						</div>
 		</div>

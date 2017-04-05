@@ -527,20 +527,8 @@
        if(! $('#tribe_loan_form').valid()){
           return false;
        }
-    $.ajax({  
-             type: "POST",  
-             url: "{{URL::to('save-tribe-form')}}",
-             data : $('#tribe_loan_form').serialize(),
-             success: function(msg){
-              if(msg){
-                  $('.app_id').val(msg);
-                 $( "#nav4").trigger( "click" );
-                }else{
-                  console.log("error"+msg);
-                 // window.location.href="{{URL::to('went-wrong')}}";
-                }
-               }
-          });
+          $('#freeze_form_modal').modal('show');
+      
     });
  
 
@@ -629,4 +617,28 @@ $("#submit_statement").click(function(){
     return false;
   }
  });
+
+$('#freeze_form').click(function(){
+     $('#tribe_loan_form').find('input, radio,textarea, button, select').attr('disabled','disabled');
+     $('#freeze_form_modal').modal('hide');
+    $.ajax({  
+             type: "POST",  
+             url: "{{URL::to('save-tribe-form')}}",
+             data : $('#tribe_loan_form').serialize(),
+             success: function(msg){
+              if(msg){
+                  $('.app_id').val(msg);
+
+                 $( "#nav4").trigger( "click" );
+                }else{
+                  console.log("error"+msg);
+                 // window.location.href="{{URL::to('went-wrong')}}";
+                }
+               }
+          });
+});
+
+$('#decline_freeze').click(function(){
+     $('#freeze_form_modal').modal('hide');
+});
   </script>

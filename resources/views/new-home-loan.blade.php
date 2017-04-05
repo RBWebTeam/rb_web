@@ -311,7 +311,7 @@
 	</div>
 
 	<div  id="form_ID"></div>
-
+<br>
 @include('layout.footer')
 @include('layout.script')
 

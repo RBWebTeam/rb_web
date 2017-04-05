@@ -30,7 +30,7 @@
 <center><div class="type-cover"><span>Car Type</span></div></center>
      
             <div class="col-xs-4 form-padding">
-     <input type="text" class="form-input-new form-control" id="car_cost" name="car_cost" placeholder="Car Cost" required onkeypress="return fnAllowNumeric(event)"  maxlength="10">
+     <input type="text" class="form-input-new form-control" id="car_cost" name="car_cost" placeholder="On Road Price" required onkeypress="return fnAllowNumeric(event)"  maxlength="10">
   </div>
   <div class="col-xs-4 form-padding">
      <input type="text" class="form-input-new form-control" name="loan_amount" id="loan_amount" placeholder="Loan Required" required onkeypress="return fnAllowNumeric(event)"  value="">
@@ -328,15 +328,15 @@ $("#eligibility").click(function() {
 {
     function update()
     {
-        var cost = parseFloat($("#property_cost").val());
+        var cost = parseFloat($("#car_cost").val());
         // console.log(cost);
-        var total = (cost)*80/100;
+        var total = (cost)*90/100;
         // var total = total.toFixed(2);
         // console.log(total);
         $("#loan_amount").val(total);
 
     }
-    $(document).on("change, keyup", "#property_cost", update);
+    $(document).on("change, keyup", "#car_cost", update);
 });
 </script>
 

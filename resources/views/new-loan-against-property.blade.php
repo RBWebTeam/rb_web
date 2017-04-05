@@ -92,6 +92,14 @@
     <option value="5">5 Year</option>
     <option value="6">6 Year</option>
     <option value="7">7 Year</option>
+    <option value="8">8 Year</option>
+    <option value="9">9 Year</option>
+    <option value="10">10 Year</option>
+    <option value="11">11 Year</option>
+    <option value="12">12 Year</option>
+    <option value="13">13 Year</option>
+    <option value="14">14 Year</option>
+    <option value="15">15 Year</option>
 	</select>
   </div>
    
@@ -184,7 +192,7 @@
   </div>
     <div class="col-xs-6 form-padding">
      <div class="btn-grp form-control pad-no border-none" data-toggle="buttons">
-      <span class="btn btn-default outer-brd btn-blu active"><input type="radio" id="co_sala_DI" value="salaried"   name="co_emp_detail"  > Salared</span>
+      <span class="btn btn-default outer-brd btn-blu active"><input type="radio" id="co_sala_DI" value="salaried"   name="co_emp_detail"  > Salaried</span>
       <span class="btn btn-default outer-brd btn-blu"><input type="radio"  id="co_self_DI" value="self-employed"  name="co_emp_detail"  >Self-Emp</span>
          </div>
      </div>
@@ -208,7 +216,7 @@
 
      </div>
      
-     <div class="col-xs-6 form-padding">
+     <!-- <div class="col-xs-6 form-padding">
      <input type="text" class="form-input-new form-control" name="co_applicant_turnover" placeholder="Turnover/Topline"  onkeypress="return fnAllowNumeric(event)" required>
   </div>
   <div class="col-xs-6 form-padding">
@@ -219,10 +227,10 @@
   </div>
   <div class="col-xs-6 form-padding">
      <input type="text" class="form-input-new form-control" name="co_applicant_remuneration" placeholder="Partner/Director Remuneration"  required>
-  </div>
-  <!-- <div class="col-xs-6 form-padding" id="co_income_ID">
-     <input type="text" class="form-input-new form-control"  name="co_applicant_income"  placeholder="Monthly Income" onkeypress="return fnAllowNumeric(event)" required>
   </div> -->
+  <div class="col-xs-6 form-padding" id="co_income_ID">
+     <input type="text" class="form-input-new form-control"  name="co_applicant_income"  placeholder="Monthly Income" onkeypress="return fnAllowNumeric(event)" required>
+  </div>
   <div class="col-xs-6 form-padding">
      <input type="text" class="form-input-new form-control"  name="co_applicant_obligation" placeholder="All Existing EMI"   onkeypress="return fnAllowNumeric(event)" required>
   </div>

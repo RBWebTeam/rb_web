@@ -113,7 +113,7 @@ class TribeController extends CallApiController
 				"work":"'.$data['address'].'"
 			},
 			"education":'.$data['education'].',
-			"email":"'.$data['email'].'",
+			"email":"'.$data['owner_email'].'",
 			"family_details":'.$data['family_detail'].',
 			"first_name":"'.$data['first_name'].'",
 			"income_details":"'.$data['annual_income'].'",
@@ -150,8 +150,9 @@ class TribeController extends CallApiController
 	      
 	    }
 	    public function UploadTribeDocuments(Request $req){
-	      	 $documents_name_array = array('docpan','doc_aadhar','doc_dl','doc_passport','doc_voter','doc_electricity_bill','doc_leave_license','doc_reg_certification','doc_tax_registration','doc_comapny_it_returns','doc_company_pan','doc_vat_return','doc_it_returns','doc_other');
-	    	$documents_array = array('1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17');
+	    	//print_r($req->all());exit();
+	      	 $documents_name_array = array('Pan Card','Aadhar Card','Driving License','Passport','Voter ID','Electricity_bill','Leave and License Agreement','Registration Certificate','Tax Registration','Comapny IT Returns','Company Pan Card','Vat Return','IT Returns','Other');
+	    	$documents_array = array('1','2','3','4','5','6','7','8','9','10','11','12','13','14');
 	        $request=$req;
 	        $response=0;$i=0;
 	        for( $i=0;$i<sizeof($documents_array);$i++){
@@ -159,12 +160,7 @@ class TribeController extends CallApiController
                 if(! $req->$str){
                 	continue;
                 }               
-	                $imageName = time().'.'.$req->$str->getClientOriginalExtension();
-	                $extension=$req->$str->getClientOriginalExtension();
-	                $filename = $req->$str->getpathName();//Image path
-	                $file =fopen($filename, "rb");
-	                $contents = fread($file, filesize($filename));
-	                $base64=base64_encode($contents);
+	                $base64=$this->FileToString($str,$req);
 	                $post_data='{"document_category": '.$documents_array[$i].', "title": "'.$documents_name_array[$i].'", "document":"data:application/pdf;base64,'.$base64.'", "tribe": "'.$req['app_id'].'", "secret": "'.TribeController::$secret.'"}';
 	               	break;
 	                // $url = "http://beta.services.rupeeboss.com/LoginDtls.svc/xmlservice/uploadCustLoanDoc";
@@ -183,5 +179,22 @@ class TribeController extends CallApiController
 			        return false;
 			    }
 	    }
-	
+	    public function UploadBankStatement(Request $req){
+	    	
+	    	$str='upload_statement';
+	    	$base64=$this->FileToString($str,$req);
+            $post_data='{"secret":"'.TribeController::$secret.'","loan_application_id": 2,"from_date": "'.$req['start_date'].'","to_date":"'.$req['end_date'].'","Statement_file":"data:application/pdf;base64,'.$base64.'","Institution":"'.$req['institution'].'" }';
+	    
+			print_r($post_data);exit();
+		}
+
+		public function FileToString($str,$req){
+			$imageName = time().'.'.$req->$str->getClientOriginalExtension();
+            $extension=$req->$str->getClientOriginalExtension();
+            $filename = $req->$str->getpathName();//Image path
+            $file =fopen($filename, "rb");
+            $contents = fread($file, filesize($filename));
+            $base64=base64_encode($contents);
+            return $base64;
+		}
 }

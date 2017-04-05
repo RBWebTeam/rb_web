@@ -19,7 +19,7 @@
    <h4 class="col-md-2"><input type="radio" name="bank1" onclick="bankName('bank1')"  checked="checked" id="bank1" value="bank1"/> Bank 1 </h4>
    <h4 class="col-md-2"><input type="radio" name="bank2" id="bank2"  onclick="bankName('bank2')" /> Bank 2 </h4>
    <h4 class="col-md-2"><input type="radio" name="bank3" id="bank3" onclick="bankName('bank3')"/> Bank 3 </h4>
-   <a href="#menu1" class="btn btn-success pull-right">NEXT</a>
+   <a data-toggle="tab" href="#menu1" class="btn btn-success pull-right">NEXT</a>
    </div>
   <div class="col-md-4">
   <div>
@@ -86,7 +86,7 @@
    <h4 class="col-md-2"><input type="radio" name="Tbank1" onclick="TbankName('Tbank1')"  checked="checked" id="Tbank1" value="Tbank1"/> Bank 1</h4>
    <h4 class="col-md-2"><input type="radio" name="Tbank2" id="Tbank2"  onclick="TbankName('Tbank2')" /> Bank 2</h4>
    <h4 class="col-md-2"><input type="radio" name="Tbank3" id="Tbank3" onclick="TbankName('Tbank3')"/> Bank 3</h4>
-   <a href="#menu1" class="btn btn-success pull-right">NEXT</a>
+   <a data-toggle="tab" href="#menu2" class="btn btn-success pull-right">NEXT</a>
    </div>
   <div class="col-md-4">
   <div>
@@ -146,7 +146,7 @@
   
   
   <div id="menu2" class="tab-pane fade">
-      <div class="col-md-12"><a href="#menu1" class="btn btn-success pull-right">NEXT</a></div>
+      <div class="col-md-12"><a data-toggle="tab" href="#menu3" class="btn btn-success pull-right">NEXT</a></div>
   
   <div class="col-md-4">
   <div>
@@ -207,7 +207,7 @@
   </div>
 
   <div id="menu3" class="tab-pane fade">
-     <div class="col-md-12"><a href="#menu1" class="btn btn-success pull-right">NEXT</a></div> 
+     <div class="col-md-12"><a data-toggle="tab" href="#menu4" id="proposel_ID" class="btn btn-success pull-right proposel_ID">NEXT</a></div> 
  <div class="col-md-4">
   <div>
   
@@ -925,13 +925,22 @@ $( "#termloanTenur" ).keyup(function() {
 
  $(document).ready(function(){
   
- $("#proposel_ID").click(function ( event ) {
-
   function nancheck(rows) {
               rows=parseInt(rows);
            return a= isNaN(rows)==true ? 0 : rows;
   }
-  var table=document.getElementById("table_total");
+ $("#proposel_ID").click(function ( event ){
+ proposal();
+ });
+
+$(".proposel_ID").click(function ( event ){
+
+ proposal();
+ });
+
+
+ function proposal(){
+   var table=document.getElementById("table_total");
    var  rows1=table.rows[1].cells[1].innerHTML;
    var  rows2=table.rows[2].cells[1].innerHTML;
    var  rows3=table.rows[3].cells[1].innerHTML;
@@ -961,9 +970,8 @@ $( "#termloanTenur" ).keyup(function() {
     $("#bank4_saving").text(total4);
     
      $('#bank_ID').empty().append('Total Saving<h3 class="tot-sav-txt">'+total4+'</h3>');
- alert(total4);
 
- });
+ }
 
  }); 
 </script>

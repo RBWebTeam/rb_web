@@ -22,10 +22,10 @@
          <ul>
 		    <li><a href="{{URL::to('comfy')}}"><b>Rupeeboss Comfy</b></a></li>
 			<li><a href="{{URL::to('express-loan')}}"style="background:red;"><b>Express Loan</b></a></li>
-			<li><a href="{{URL::to('idfc')}}"><b>Savings Account</b></a></li>
+			<li><a href="{{URL::to('idfc')}}">Savings Account</a></li>
 
 			<li><a href="{{URL::to('contact-us')}}"><b>Pradhan Mantri Awas Yojana</b></a></li>
-			<li><a href="{{URL::to('contact-us')}}"><b>SME Car Lasing</b></a></li>
+			<li><a href="{{URL::to('contact-us')}}"><b>SME Car Leasing</b></a></li>
 
 			
 
@@ -268,7 +268,7 @@
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="col-md-12 text-center animate-box wht-brd pad">
-				<h1 class="h1-hd">Confused About Loans ?</h1>
+				<h1 class="h1-hd">Need Expert Assistance ?</h1>
 				<h3>Talk to our experts to have all your questions answered</h3>
 				<br>
 				 <form name="talk_us_form" id="talk_us_form" method="post">

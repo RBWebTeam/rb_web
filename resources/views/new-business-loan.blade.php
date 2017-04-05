@@ -39,8 +39,10 @@
      <input type="text" class="form-input-new form-control" name="loan_amount" id="loan_amount" placeholder="Loan Amount" onkeypress="return isNumberKey(event)"  required>
 	</div>
 	<div class="col-xs-6 form-padding">
+	
      <input class="form-input-new form-control" type="text" id="pan_no" name="pan_no" oninput="pan_card('pan_no')" maxlength="10" minlength="10"  placeholder="Pan No" required>
-     <div id="pan_number" style="display:none;color: red;">Oops.Please Enter Valid Pan Number.!!</div>
+	 <span id="pan_number" class="pan-error">Enter Valid Pan No.</span>
+     
 	</div>
   <div class="col-xs-6 form-padding">
      <input type="text" class="form-input-new form-control lastReporteddate1" name="applicant_dob" id="applicant_dob" placeholder="Date Of Birth"   required>
@@ -213,7 +215,7 @@
          </div>
 	</div>
 	<div class="col-xs-8 form-padding">
-	 <span>Has a Good Repayment track record in existing UBL / CC / OD ?</span>
+	 <span>Has a Good Repayment track record in existing UBL /CC/OD?</span>
 	</div>
 	<div class="col-xs-4 form-padding pad">
      <div class="btn-grp  border-none" data-toggle="buttons">
@@ -409,8 +411,8 @@
 
         <div> 
           <br>
-         <a id="apply_new" type="button" class="btn btn-info" title="Experience New Digital Era In Loans">Apply Digitally</a>
-         <button id="eligibility" class="btn btn-info" title="See Bankwise Eligibility And Apply Amongst Best Bank">Check Bankwise Eligibility</button>
+         <a id="apply_new" type="button" class="btn btn-info disblk" title="Experience New Digital Era In Loans">Apply Digitally</a>
+         <button id="eligibility" class="btn btn-info disblk" title="See Bankwise Eligibility And Apply Amongst Best Bank">Check Bankwise Eligibility</button>
          <button type="button" class="btn btn-info block"  id="call_rm" name="call_rm" data-toggle="modal" data-target="#Modal" title="Call For RM(Single Day Process)">Call Manager</button>
          
         </div>

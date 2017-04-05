@@ -150,7 +150,7 @@
       </form>
      </div>
      <div class="col-md-4" >
-     <div class="border brd-for" id="mi_id">
+     <div class="border brd-for hei-frtrt" id="mi_id">
 
              <!-- <form name="compareform" id="compareform" > -->
           
@@ -183,9 +183,7 @@
          
         </div>
        
-        <!-- <p id="err" style="display:none;" ><span style="color:skyblue;position:absolute;font-size:13px;">No Quotes Found.</span></p> -->
-   
-    <!--   </form> -->
+       
 
     </div> 
     <p id="err" style="display:none;" ><span style="color: red;font-size: 20px;display: block; text-align: center;">Sorry, We are unable to process your request. Will get back to you in future.</span></p> 
@@ -195,7 +193,7 @@
   </div>
   </div>
   </div>
-
+<br>
   
   
 @include('layout.footer')

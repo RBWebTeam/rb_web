@@ -112,12 +112,12 @@
     <div class="col-md-8"><input type="text" name="last_name" id="last_name" class="form-control form-group" required="" /></div>
     
     <div class="col-md-3"><p>Mobile No*</p></div>
-   <div class="col-md-8"><input type="text" pattern="[789][0-9]{9}" maxlength="10" name="mobile" id="mobile" class="form-control form-group" onkeypress="return fnAllowNumeric(event)" required /></div>
+   <div class="col-md-8"><input type="text" pattern="[789][0-9]{9}" maxlength="10" minlength="10"  name="mobile" id="mobile" class="form-control form-group" onkeypress="return fnAllowNumeric(event)" required /></div>
     
     <div class="col-md-3"><p>Email</p></div>
     <div class="col-md-8">
-    <input type="email" name="email" id="email" class="form-control form-group" required/>
-    <p ng-show="tribe_loan_form.email.$error.email" class="error">Invalid Email address</p>
+    <input type="email" name="email" id="email" class="form-control form-group" value="@{{owner_email}}" disabled />
+    
     </div>
     
     <div class="col-md-3"><p>Address*</p></div>
@@ -126,11 +126,11 @@
     <div class="col-md-3"><p>Aadhaar Number*</p></div>
     <div class="col-md-8"><input type="text" name="aadhar_no" id="aadhar_no" class="form-control form-group" onkeypress="return fnAllowNumeric(event)" required maxlength="12" minlength="12" /></div>
     
-    <div class="col-md-3"><p>Owner Email*</p></div>
+    <!-- <div class="col-md-3"><p>Owner Email*</p></div>
     <div class="col-md-8">
     <input type="email" name="owner_email_personal" id="owner_email_personal" class="form-control form-group" required="" />
     <p ng-show="tribe_loan_form.owner_email_personal.$error.email" class="error">Invalid Email address</p>
-    </div>
+    </div> -->
     
     <div class="col-md-3"><p>Date of Birth*</p></div>
     <div class="col-md-8"><input type="date" name="dob" id="dob" class="form-control form-group" required="" /></div>
@@ -141,7 +141,7 @@
     
     <div class="col-md-3"><p>Education*</p></div>
     <div class="col-md-8 sec">
-      <select class="drop-arr" name="education" id="education">
+      <select class="drop-arr" name="education" id="education" required>
      <option disabled selected>Select</option>
       @foreach($data['education'] as $key=>$value)
       
@@ -153,7 +153,7 @@
     
     <div class="col-md-3"><p>Family Details*</p></div>
     <div class="col-md-8 sec">
-       <select class="drop-arr" name="family_detail" id="family_detail" >
+       <select class="drop-arr" name="family_detail" id="family_detail" required>
       <option disabled selected>Select</option>
       @foreach($data['family_details'] as $key=>$value)
       
@@ -175,7 +175,7 @@
     
     <div class="col-md-3"><p>Registration Details*</p></div>
     <div class="col-md-8 sec">
-     <select class="drop-arr" name="registration_detail" id="registration_detail">
+     <select class="drop-arr" name="registration_detail" id="registration_detail" required>
        <option disabled selected>Select</option>
       @foreach($data['registration_details'] as $key=>$value)
       
@@ -186,7 +186,7 @@
     <div id="partners_div" style="display: none;">
     <div class="col-md-3"><p>Number of Partners*</p></div>
     <div class="col-md-8 sec"  >
-     <select class="drop-arr" name="partners_count" id="partners_count">
+     <select class="drop-arr" name="partners_count" id="partners_count" required>
        <option disabled selected>Select</option>
       @foreach($data['partner_count'] as $key=>$value)
       
@@ -198,7 +198,7 @@
     <div id="director_div" style="display: none;">
     <div class="col-md-3"><p>Number of Directors*</p></div>
     <div class="col-md-8 sec"  >
-     <select class="drop-arr" name="directors_count" id="directors_count">
+     <select class="drop-arr" name="directors_count" id="directors_count" required>
        <option disabled selected>Select</option>
       @foreach($data['director_count'] as $key=>$value)
       
@@ -210,7 +210,7 @@
     <div id="business_run_by_div" style="display: none;">
     <div class="col-md-3"><p>Business Run by:*</p></div>
     <div class="col-md-8 sec"  >
-     <select class="drop-arr" name="business_run_by" id="business_run_by">
+     <select class="drop-arr" name="business_run_by" id="business_run_by" required>
        <option disabled selected>Select</option>
       @foreach($data['proprietorship_type'] as $key=>$value)
       
@@ -235,7 +235,7 @@
     
     <div class="col-md-3"><p>Business Type*</p></div>
     <div class="col-md-8 sec">
-      <select class="drop-arr" id="business_type" name="business_type">
+      <select class="drop-arr" id="business_type" name="business_type" required>
       <option disabled selected>Select</option>
       @foreach($data['nature_of_business'] as $key=>$value)
       
@@ -256,7 +256,7 @@
     <div style="display: none;" id="online_sale_channel_div" >
     <div class="col-md-3 sec"><p>online_sale_channel</p></div>
     <div class="col-md-8 sec">
-      <select class="drop-arr" id="online_sale_channel" name="online_sale_channel">
+      <select class="drop-arr" id="online_sale_channel" name="online_sale_channel" required>
       <option disabled selected>Select</option>
       @foreach($data['online_sales_channels'] as $key=>$value)
       
@@ -269,7 +269,7 @@
 
     <div class="col-md-3"><p>Turnover*</p></div>
     <div class="col-md-8 sec">
-       <select class="drop-arr" name="turnover" id="turnover">
+       <select class="drop-arr" name="turnover" id="turnover" required>
        <option disabled selected>Select</option>
       @foreach($data['turnover'] as $key=>$value)
       
@@ -280,7 +280,7 @@
     
     <div class="col-md-3"><p>Business Premises*</p></div>
     <div class="col-md-8 sec">
-      <select class="drop-arr" name="business_premises" id="business_premises">
+      <select class="drop-arr" name="business_premises" id="business_premises" required>
        <option disabled selected>Select</option>
       @foreach($data['ownership'] as $key=>$value)
       
@@ -291,7 +291,7 @@
     
     <div class="col-md-3"><p>Which products do you sell?*</p></div>
     <div class="col-md-8 sec">
-      <select class="drop-arr" name="selling_product" id="selling_product">
+      <select class="drop-arr" name="selling_product" id="selling_product" required>
        <option disabled selected>Select</option>
       @foreach($data['product_sell'] as $key=>$value)
       
@@ -302,7 +302,7 @@
     
     <div class="col-md-3"><p>Loan Purpose*</p></div>
     <div class="col-md-8 sec">
-     <select class="drop-arr" name="loan_purpose" id="loan_purpose">
+     <select class="drop-arr" name="loan_purpose" id="loan_purpose" required>
        <option disabled selected>Select Loan Purpose</option>
        <option value="1">inventory rotation</option>
        <option value="1">product differentiation</option>
@@ -346,7 +346,7 @@
     <div id="main6" class="tab-pane fade">
       
     <div class="col-md-12">
-    <h3 class="mrg-top">Refrence</h3><hr>
+    <h3 class="mrg-top">Reference</h3><hr>
   </div>
     <div class="col-md-3">First Name</div>
     <div class="col-md-8">
@@ -362,7 +362,7 @@
     
     <div class="col-md-3">Mobile Number</div>
     <div class="col-md-8">
-    <input type="text" name="ref_mobile" id="ref_mobile" class="form-control form-group" maxlength="10" onkeypress="return fnAllowNumeric(event)"/></div>
+    <input type="text" name="ref_mobile" id="ref_mobile" class="form-control form-group" maxlength="10" minlength="10"  onkeypress="return fnAllowNumeric(event)"/></div>
     
     <div class="col-md-3">Email</div>
     <div class="col-md-8">
@@ -379,7 +379,7 @@
     <div id="main4" class="tab-pane fade">
       <form id="kyc_form" name="kyc_form" enctype="multipart/form-data" >
         {{ csrf_field() }}
-        <input type="hidden" name="app_id" id="app_id">
+        <input type="hidden" name="app_id" class="app_id">
     <h3 class="mrg-top">KYC Identity Proof(Atleast one document is required)</h3>
   <hr>
     <div class="col-md-3">Pan</div>
@@ -403,58 +403,58 @@
     
     <div class="col-md-3">Voter ID</div>
     <div class="col-md-8">
-     <input type="file" id="5" name="doc_voter" id="doc_voter" class="form-control form-group no-border"/>
+     <input type="file" name="5"  id="doc_voter" class="form-control form-group no-border"/>
     </div>
     <div class="col-md-12">
     <h3 class="mrg-top">Address Proof</h3><hr>
   </div>
   <div class="col-md-3">Electricity Bill</div>
     <div class="col-md-8">
-     <input type="file" name="12" id="doc_electricity_bill" class="form-control form-group no-border"/>
+     <input type="file" name="6" id="doc_electricity_bill" class="form-control form-group no-border"/>
     </div>
     
     <div class="col-md-3">Leave and License Agreement</div>
     <div class="col-md-8">
-    <input type="file" id="13" name="doc_leave_license" id="doc_leave_license" class="form-control form-group no-border"/></div>
+    <input type="file" name="7" id="doc_leave_license" class="form-control form-group no-border"/></div>
     
     <div class="col-md-12">
     <h3 class="mrg-top">Business KYC</h3><hr>
   </div>
     <div class="col-md-3">Registration Certificate</div>
     <div class="col-md-8">
-    <input type="file" id="14" name="doc_reg_certification" class="form-control form-group no-border"/></div>
+    <input type="file" id="doc_reg_certification" name="8" class="form-control form-group no-border"/></div>
     
     <div class="col-md-3">Tax Registration</div>
     <div class="col-md-8">
-    <input type="file" id="15" name="doc_tax_registration" class="form-control form-group no-border"/></div>
+    <input type="file" id="doc_tax_registration" name="9" class="form-control form-group no-border"/></div>
     
     <div class="col-md-12">
     <h3 class="mrg-top">Business Documents</h3><hr>
   </div>
     <div class="col-md-3">Company IT Returns</div>
     <div class="col-md-8">
-    <input type="file" name="7" id="doc_comapny_it_returns" class="form-control form-group no-border"/></div>
+    <input type="file" name="10" id="doc_comapny_it_returns" class="form-control form-group no-border"/></div>
     
     <div class="col-md-3">Company PAN</div>
     <div class="col-md-8">
-    <input type="file" id="8" name="doc_company_pan" class="form-control form-group no-border"/></div>
+    <input type="file" name="11" id="doc_company_pan" class="form-control form-group no-border"/></div>
     
      <div class="col-md-3">ITR/VAT Returns/ST Returns</div>
     <div class="col-md-8">
-    <input type="file" id="7" name="doc_vat_return" class="form-control form-group no-border"/></div>
+    <input type="file" name="12" id="doc_vat_return" class="form-control form-group no-border"/></div>
     
     <div class="col-md-12">
     <h3 class="mrg-top">Other Documents</h3><hr>
   </div>
     <div class="col-md-3">Personal IT Returns</div>
     <div class="col-md-8">
-    <input type="file" id="doc_it_returns" name="6" class="form-control form-group no-border"/></div>
+    <input type="file"  name="13" class="form-control form-group no-border"/></div>
     
     <div class="col-md-3">Other Documents</div>
     <div class="col-md-8">
-    <input type="file" name="11" id="doc_other" class="form-control form-group no-border"/>
+    <input type="file" name="14"  class="form-control form-group no-border"/>
     <a class="btn btn-primary btn-outline with-arrow " id="upload_doc_submit">Upload<i class="icon-arrow-right"></i></a>
-    <a class="btn btn-primary btn-outline with-arrow " onclick="go_back('main6')">Back<i class="icon-arrow-right"></i></a>
+    <a class="btn btn-primary btn-outline with-arrow"  onclick="go_back('main6')">Back<i class="icon-arrow-right"></i></a>
     </div>
     </form>
     </div>
@@ -462,9 +462,12 @@
     <div id="main7" class="tab-pane fade">
       <h3 class="mrg-top">Refrence</h3><hr>
 
+ <form id="bank_statement_form" name="bank_statement_form" enctype="multipart/form-data" >
+        {{ csrf_field() }}
+        <input type="hidden" name="app_id" class="app_id">
     <div class="col-md-3">UPLOAD COMPANY BANK STATEMENTS</div>
     <div class="col-md-8 sec">
-     <select class="drop-arr" name="bank_statement" id="bank_statement">
+     <select class="drop-arr" name="institution" id="institution" required>
        <option disabled selected>Select</option>
       @foreach($data['institution'] as $key=>$value)
       
@@ -483,9 +486,14 @@
     
     <div class="col-md-3">Upload Document</div>
     <div class="col-md-8">
-    <input type="file" multiple id="upload_doc" name="upload_doc" class="form-control form-group no-border"/></div>
+    <input type="file"  id="upload_statement" name="upload_statement" class="form-control form-group no-border"/></div>
     <div class="col-md-3"></div>
-    <div class="col-md-8 mrg-top"><a class="btn btn-primary btn-outline with-arrow">Submit Statment<i class="icon-arrow-right"></i></a></div>
+    <div class="col-md-8 mrg-top">
+    <a class="btn btn-primary btn-outline with-arrow" id="submit_statement">Submit Statment
+    <i class="icon-arrow-right"></i>
+    </a>
+    </div>
+    </form>
     </div>
     
   </div>
@@ -519,19 +527,8 @@
        if(! $('#tribe_loan_form').valid()){
           return false;
        }
-    $.ajax({  
-             type: "POST",  
-             url: "{{URL::to('save-tribe-form')}}",
-             data : $('#tribe_loan_form').serialize(),
-             success: function(msg){
-              if(msg){
-                 $( "#nav4").trigger( "click" );
-                }else{
-                  console.log("error"+msg);
-                 // window.location.href="{{URL::to('went-wrong')}}";
-                }
-               }
-          });
+          $('#freeze_form_modal').modal('show');
+      
     });
  
 
@@ -567,15 +564,18 @@ function go_to_next(next){
     // }
 }
  function go_back(next){
+
     var nav_number=next.split('main');
+    // console.log("#nav"+nav_number[1] );
       $( "#nav"+nav_number[1] ).trigger( "click" );
+      return false;
       window.scrollTo(0,0);
  }
 $('.go_to_next').click(function(){
 if($('#tribe_loan_form').valid()){
      // console.log("valid_tab");
    }else{
-    //return false;
+   // return false;
    }
 });
 $("#upload_doc_submit").click(function(){
@@ -595,4 +595,50 @@ $.ajax({
       },
     });
  });
+
+$("#submit_statement").click(function(){
+  if($('#bank_statement_form').valid()){
+    var CSRF_TOKEN = $('input[name="_token"]').val();                    
+    var form_url="{{URL::to('upload-tribe-bank-statement')}}";
+    $.ajax({
+          url:form_url + '?_token=' + CSRF_TOKEN,
+          data:new FormData($("#bank_statement_form")[0]),
+          dataType:'json',
+          async:false,
+          type:'post',
+          processData: false,
+          contentType: false,
+          success:function(response){
+            console.log(response);
+            
+          },
+        });
+  }else{
+    return false;
+  }
+ });
+
+$('#freeze_form').click(function(){
+     $('#tribe_loan_form').find('input, radio,textarea, button, select').attr('disabled','disabled');
+     $('#freeze_form_modal').modal('hide');
+    $.ajax({  
+             type: "POST",  
+             url: "{{URL::to('save-tribe-form')}}",
+             data : $('#tribe_loan_form').serialize(),
+             success: function(msg){
+              if(msg){
+                  $('.app_id').val(msg);
+
+                 $( "#nav4").trigger( "click" );
+                }else{
+                  console.log("error"+msg);
+                 // window.location.href="{{URL::to('went-wrong')}}";
+                }
+               }
+          });
+});
+
+$('#decline_freeze').click(function(){
+     $('#freeze_form_modal').modal('hide');
+});
   </script>

@@ -335,7 +335,9 @@
 
 
 		</div>
-<!--     <a href="{{url('contact-us')}}">apply</a> -->
+
+		<button class="btn btn-success aply-btn">Apply Now</button>
+
  </div>
 </div>
 </br>

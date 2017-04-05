@@ -93,7 +93,7 @@
      <div  style="display: none;" id="self-employed_ID">  <!-- self-employed-->
        
        <div class="col-xs-6 form-padding">
-          <input type="text" class="form-input-new form-control " name="turnover" placeholder="Annual turnover" required  onkeypress="return fnAllowNumeric(event)">
+          <input type="text" class="form-input-new form-control " name="turnover" placeholder="Annual income" required  onkeypress="return fnAllowNumeric(event)">
       </div>
       </div>
      

@@ -3565,9 +3565,11 @@ label {
 #emp_detail {    border-bottom: 2px dashed #bbadad;float: left;margin-bottom: 5px;}
 .panel-title > a {font-size:15px;}
 
-label.error {color:red;display: inherit; font-weight: bold;font-size:11px;top: 32px;position: absolute;}
+label.error {color:red;display: inherit; font-weight: bold;font-size:11px;top: 33px;position: absolute;}
 .pad-ten {padding: 5px 3px;}
 .fh5co-copyright, .white-txt {color:#ccc8c2;}
 .blk-txt a {color:#404040;}
 .hei-frtrt {height:430px;}
+.pan-error {color:red;font-size:12px;display:none;padding:0px; margin:2px;}
+.aply-btn {margin: 30px;margin-top: 50px;}
 	

@@ -19,7 +19,6 @@
   </ul>
 
   <div class="tab-content">
-  <fieldset ng-disabled="true";>
     <div id="main" class="tab-pane fade in active" ng-app="First_tab">
       
     <div class="col-md-12">
@@ -376,7 +375,7 @@
    
     </div>
     </form>
-    </fieldset>
+    
     <div id="main4" class="tab-pane fade">
       <form id="kyc_form" name="kyc_form" enctype="multipart/form-data" >
         {{ csrf_field() }}
@@ -528,20 +527,8 @@
        if(! $('#tribe_loan_form').valid()){
           return false;
        }
-    $.ajax({  
-             type: "POST",  
-             url: "{{URL::to('save-tribe-form')}}",
-             data : $('#tribe_loan_form').serialize(),
-             success: function(msg){
-              if(msg){
-                  $('.app_id').val(msg);
-                 $( "#nav4").trigger( "click" );
-                }else{
-                  console.log("error"+msg);
-                 // window.location.href="{{URL::to('went-wrong')}}";
-                }
-               }
-          });
+          $('#freeze_form_modal').modal('show');
+      
     });
  
 
@@ -630,4 +617,28 @@ $("#submit_statement").click(function(){
     return false;
   }
  });
+
+$('#freeze_form').click(function(){
+     $('#tribe_loan_form').find('input, radio,textarea, button, select').attr('disabled','disabled');
+     $('#freeze_form_modal').modal('hide');
+    $.ajax({  
+             type: "POST",  
+             url: "{{URL::to('save-tribe-form')}}",
+             data : $('#tribe_loan_form').serialize(),
+             success: function(msg){
+              if(msg){
+                  $('.app_id').val(msg);
+
+                 $( "#nav4").trigger( "click" );
+                }else{
+                  console.log("error"+msg);
+                 // window.location.href="{{URL::to('went-wrong')}}";
+                }
+               }
+          });
+});
+
+$('#decline_freeze').click(function(){
+     $('#freeze_form_modal').modal('hide');
+});
   </script>

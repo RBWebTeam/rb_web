@@ -259,7 +259,7 @@
 		</div>
       </div>
     </div>
-    <div class="panel panel-default">
+    <!--<div class="panel panel-default">
       <div class="panel-heading">
         <h4 class="panel-title">
           <a data-toggle="collapse" data-parent="#accordion1" href="#collapse3">COMPANY'S DATE OF INCORPORATION <i class="icon-plus pull-right more-less"></i></a>
@@ -273,7 +273,7 @@
 	</div>
 		</div>
       </div>
-    </div>
+    </div> -->
 	
 	
 	<div class="panel panel-default">

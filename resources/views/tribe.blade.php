@@ -379,7 +379,7 @@
     <div id="main4" class="tab-pane fade">
       <form id="kyc_form" name="kyc_form" enctype="multipart/form-data" >
         {{ csrf_field() }}
-        <input type="hidden" name="app_id" id="app_id">
+        <input type="hidden" name="app_id" class="app_id">
     <h3 class="mrg-top">KYC Identity Proof(Atleast one document is required)</h3>
   <hr>
     <div class="col-md-3">Pan</div>
@@ -464,6 +464,7 @@
 
  <form id="bank_statement_form" name="bank_statement_form" enctype="multipart/form-data" >
         {{ csrf_field() }}
+        <input type="hidden" name="app_id" class="app_id">
     <div class="col-md-3">UPLOAD COMPANY BANK STATEMENTS</div>
     <div class="col-md-8 sec">
      <select class="drop-arr" name="institution" id="institution" required>
@@ -532,6 +533,7 @@
              data : $('#tribe_loan_form').serialize(),
              success: function(msg){
               if(msg){
+                  $('.app_id').val(msg);
                  $( "#nav4").trigger( "click" );
                 }else{
                   console.log("error"+msg);

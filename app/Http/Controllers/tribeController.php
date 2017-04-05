@@ -142,7 +142,7 @@ class TribeController extends CallApiController
 		        	return false;
 		        }
 		        $temp=json_decode($data)->response->tribe;
-		     return $temp;
+		     	return $temp;
 		    }else{
 		        return 'false';
 		    }
@@ -179,13 +179,23 @@ class TribeController extends CallApiController
 			        return false;
 			    }
 	    }
+
 	    public function UploadBankStatement(Request $req){
 	    	
 	    	$str='upload_statement';
 	    	$base64=$this->FileToString($str,$req);
-            $post_data='{"secret":"'.TribeController::$secret.'","loan_application_id": 2,"from_date": "'.$req['start_date'].'","to_date":"'.$req['end_date'].'","Statement_file":"data:application/pdf;base64,'.$base64.'","Institution":"'.$req['institution'].'" }';
+            $post_data='{"secret":"'.TribeController::$secret.'","loan_application_id":'.$req['app_id'].',"from_date": "'.$req['start_date'].'","to_date":"'.$req['end_date'].'","Statement_file":"data:application/pdf;base64,'.$base64.'","Institution":"'.$req['institution'].'" }';
 	    
 			print_r($post_data);exit();
+			$url = $this::$url_static."BankAPIService.svc/uploadStatmentTribeLoan";
+				$result=$this->call_json_data_api($url,$post_data);
+			    $http_result=$result['http_result'];
+			    $error=$result['error'];
+			    if($http_result){
+			        return $http_result;
+			    }else{
+			        return false;
+			    }
 		}
 
 		public function FileToString($str,$req){

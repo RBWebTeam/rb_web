@@ -73,7 +73,7 @@
 		
 		<div class="col-xs-6 form-padding">
   
-     <select class="block drop-arr select-sty" id="loan_tenure" name="loan_tenure">
+     <select class="block drop-arr select-sty" name="loan_tenure">
 	  <option>LOAN TENURE</option>
 	    <option value="1">1 Year</option>
 		<option value="2">2 Year</option>
@@ -192,7 +192,7 @@
 	</div>
 		<div class="col-xs-6 form-padding">
      <div class="btn-grp form-control pad-no border-none" data-toggle="buttons">
-      <span class="btn btn-default outer-brd btn-blu active"><input type="radio" id="co_sala_DI" value="salaried"   name="co_emp_detail"  > Salared</span>
+      <span class="btn btn-default outer-brd btn-blu active"><input type="radio" id="co_sala_DI" value="salaried"   name="co_emp_detail"  > Salaried</span>
       <span class="btn btn-default outer-brd btn-blu"><input type="radio"  id="co_self_DI" value="self-employed"  name="co_emp_detail"  >Self-Emp</span>
          </div>
 	   </div>
@@ -201,22 +201,22 @@
       <div  style="display: none;" id="co_self-employed_ID"> 
        
        <div class="col-xs-6 form-padding">
-          <input type="text" class="form-input-new form-control " name="co_applicant_turnover" placeholder="co-applicant annual turnover"  onkeypress="return fnAllowNumeric(event)" required>
+          <input type="text" class="form-input-new form-control " name="co_applicant_turnover" placeholder="Co-Applicant Turnover"  onkeypress="return fnAllowNumeric(event)" required>
       </div>
 
        <div class="col-xs-6 form-padding">
-          <input type="text" class="form-input-new form-control " name="co_applicant_profit_after_tax" placeholder="Co-Applicant profit after"  onkeypress="return fnAllowNumeric(event)" required>
+          <input type="text" class="form-input-new form-control " name="co_applicant_profit_after_tax" placeholder="Co-Applicant Profit After Tax"  onkeypress="return fnAllowNumeric(event)" required>
       </div>
       <div class="col-xs-6 form-padding">
-          <input type="text" class="form-input-new form-control " name="co_applicant_depreciation" placeholder="his/her depreciation" onkeypress="return fnAllowNumeric(event)" required>
+          <input type="text" class="form-input-new form-control " name="co_applicant_depreciation" placeholder="His /Her Depreciation" onkeypress="return fnAllowNumeric(event)" required>
       </div>
        <div class="col-xs-6 form-padding">
-          <input type="text" class="form-input-new form-control " name="co_applicant_remuneration" placeholder="director remuneration"  onkeypress="return fnAllowNumeric(event)" required>
+          <input type="text" class="form-input-new form-control " name="co_applicant_remuneration" placeholder="Director Remuneration"  onkeypress="return fnAllowNumeric(event)" required>
       </div>
 
      </div>
 	   
-	   <div class="col-xs-6 form-padding">
+	   <!-- <div class="col-xs-6 form-padding">
      <input type="text" class="form-input-new form-control" name="co_applicant_turnover" placeholder="Turnover/Topline"  onkeypress="return fnAllowNumeric(event)" required>
 	</div>
 	<div class="col-xs-6 form-padding">
@@ -227,12 +227,12 @@
 	</div>
 	<div class="col-xs-6 form-padding">
      <input type="text" class="form-input-new form-control" name="co_applicant_remuneration" placeholder="Partner Remuneration"  required>
-	</div>
+	</div> -->
 	<div class="col-xs-6 form-padding" id="co_income_ID">
      <input type="text" class="form-input-new form-control"  name="co_applicant_income"  placeholder="Monthly Income" onkeypress="return fnAllowNumeric(event)" required>
 	</div>
 	<div class="col-xs-6 form-padding">
-     <input type="text" class="form-input-new form-control"  name="co_applicant_obligation" placeholder="All Existing EMI"   onkeypress="return fnAllowNumeric(event)" required>
+     <input type="text" class="form-input-new form-control"  name="co_applicant_obligation" placeholder=" Existing EMI"   onkeypress="return fnAllowNumeric(event)" required>
 	</div>
 	   		 	
 		</div>

@@ -8,14 +8,14 @@
     <div class="col-md-12 pad1 white-bg box-shadow">
 
    <ul class="nav nav-tabs">
-    <li class="active"><a data-toggle="tab" href="#main">BASIC DETAIL</b></a></li>
-    <li><a data-toggle="tab" href="#main1" class="go_to_next"><b>LOAN DETAIL</b></a></li>
-    <li><a data-toggle="tab" href="#main2" class="go_to_next"><b>PERSONAL DETAIL</b></a></li>
-    <li><a data-toggle="tab" href="#main3" class="go_to_next"><b>BUSINESS DETAIL</b></a></li>
-    <li><a data-toggle="tab" href="#main5" class="go_to_next"><b>ONLINE ID</b></a></li>
-    <li><a data-toggle="tab" href="#main6" class="go_to_next"><b>REFERENCE</b></a></li>
-    <li><a data-toggle="tab" href="#main4" class="go_to_next"><b>DOCUMENT</b></a></li>
-    <li><a data-toggle="tab" href="#main7" class="go_to_next"><b>BANK STATEMENT</b></a></li>
+    <li class="active"><a data-toggle="tab" id="nav0" href="#main">BASIC DETAIL</b></a></li>
+    <li><a data-toggle="tab" href="#main1" id="nav1" class="go_to_next"><b>LOAN DETAIL</b></a></li>
+    <li><a data-toggle="tab" href="#main2" id="nav2" class="go_to_next"><b>PERSONAL DETAIL</b></a></li>
+    <li><a data-toggle="tab" href="#main3" id="nav3" class="go_to_next"><b>BUSINESS DETAIL</b></a></li>
+    <li><a data-toggle="tab" href="#main5" id="nav5" class="go_to_next"><b>ONLINE ID</b></a></li>
+    <li><a data-toggle="tab" href="#main6" id="nav6" class="go_to_next"><b>REFERENCE</b></a></li>
+    <li><a data-toggle="tab" href="#main4" id="nav4" class="go_to_next"><b>DOCUMENT</b></a></li>
+    <li><a data-toggle="tab" href="#main7" id="nav7" class="go_to_next"><b>BANK STATEMENT</b></a></li>
   </ul>
 
   <div class="tab-content">
@@ -51,7 +51,7 @@
     <div class="col-md-8">
     <input type="email" name="owner_email" id="owner_email" ng-model="owner_email" class="form-control form-group" required />
     <p ng-show="tribe_loan_form.owner_email.$error.email" class="error">Invalid Email address</p>
-     <a class="btn btn-primary btn-outline with-arrow go_to_next" href="#main1" data-toggle="tab">Next<i class="icon-arrow-right"></i></a>
+     <a class="btn btn-primary btn-outline with-arrow " onclick="go_to_next('main1')">Next<i class="icon-arrow-right"></i></a>
     </div>
     
 
@@ -91,8 +91,8 @@
       <option value="{{$value}}"><?php echo $key;?></option>
       @endforeach
     </select>
-    <a class="btn btn-primary btn-outline with-arrow go_to_next" href="#main2" data-toggle="tab">Next<i class="icon-arrow-right"></i></a>
-    <a class="btn btn-primary btn-outline with-arrow  ">Back<i class="icon-arrow-right"></i></a>
+    <a class="btn btn-primary btn-outline with-arrow " onclick="go_to_next('main2')">Next<i class="icon-arrow-right"></i></a>
+    <a class="btn btn-primary btn-outline with-arrow"  onclick="go_back('main0')">Back<i class="icon-arrow-right"></i></a>
     </div>
     </div>
     
@@ -160,8 +160,8 @@
       <option value="{{$value}}"><?php echo $key;?></option>
       @endforeach
     </select>
-    <a class="btn btn-primary btn-outline with-arrow  go_to_next"  href="#main3" data-toggle="tab">Next<i class="icon-arrow-right"></i></a>
-    <a class="btn btn-primary btn-outline with-arrow  ">Back<i class="icon-arrow-right"></i></a>
+    <a class="btn btn-primary btn-outline with-arrow " onclick="go_to_next('main3')">Next<i class="icon-arrow-right"></i></a>
+    <a class="btn btn-primary btn-outline with-arrow" onclick="go_back('main1')">Back<i class="icon-arrow-right"></i></a>
     </div>
     
     </div>
@@ -316,8 +316,8 @@
     <div class="col-md-3"><p>How did you Know About Us?*</p></div>
     <div class="col-md-8">
     <input type="text" name="reached_us_via" id="reached_us_via" class="form-control form-group" />
-    <a class="btn btn-primary btn-outline with-arrow go_to_next"  href="#main5" data-toggle="tab">Next<i class="icon-arrow-right"></i></a>
-    <a class="btn btn-primary btn-outline with-arrow  ">Back<i class="icon-arrow-right"></i></a>
+    <a class="btn btn-primary btn-outline with-arrow" onclick="go_to_next('main5')">Next<i class="icon-arrow-right"></i></a>
+    <a class="btn btn-primary btn-outline with-arrow " onclick="go_back('main2')">Back<i class="icon-arrow-right"></i></a>
     </div>
     </div>
     
@@ -340,8 +340,8 @@
      @endforeach
       </ul>
     
-    <a class="btn btn-primary btn-outline with-arrow go_to_next"  href="#main6" data-toggle="tab">Next<i class="icon-arrow-right"></i></a>
-    <a class="btn btn-primary btn-outline with-arrow ">Back<i class="icon-arrow-right"></i></a>
+    <a class="btn btn-primary btn-outline with-arrow" onclick="go_to_next('main6')">Next<i class="icon-arrow-right"></i></a>
+    <a class="btn btn-primary btn-outline with-arrow" onclick="go_back('main3')">Back<i class="icon-arrow-right"></i></a>
     </div>
     <div id="main6" class="tab-pane fade">
       
@@ -369,8 +369,7 @@
     <input type="email" name="ref_email" id="ref_email" class="form-control form-group"/></div>
     <p ng-show="tribe_loan_form.ref_email.$error.email" class="error">Invalid Email address</p>
    <div class="col-md-3">
-    <a class="btn btn-primary btn-outline with-arrow go_to_next"  href="#main4" data-toggle="tab">Next<i class="icon-arrow-right"></i></a>
-    <a class="btn btn-primary btn-outline with-arrow  ">Back<i class="icon-arrow-right"></i></a>
+    <a class="btn btn-primary btn-outline with-arrow" onclick="go_back('main5')">Back<i class="icon-arrow-right"></i></a>
     </div>
      <div class="col-md-8"> <button class="btn btn-primary btn-outline with-arrow pull-left" id="save_form_button">Save Form<i class="icon-arrow-right"></i></button></div>
    
@@ -455,8 +454,7 @@
     <div class="col-md-8">
     <input type="file" name="11" id="doc_other" class="form-control form-group no-border"/>
     <a class="btn btn-primary btn-outline with-arrow " id="upload_doc_submit">Upload<i class="icon-arrow-right"></i></a>
-     <a class="btn btn-primary btn-outline with-arrow go_to_next ">Next<i class="icon-arrow-right"></i></a>
-    <a class="btn btn-primary btn-outline with-arrow  ">Back<i class="icon-arrow-right"></i></a>
+    <a class="btn btn-primary btn-outline with-arrow " onclick="go_back('main6')">Back<i class="icon-arrow-right"></i></a>
     </div>
     </form>
     </div>
@@ -499,13 +497,15 @@
   <br>
   @include('layout.footer')
   @include('layout.script')
-  <script type="text/javascript">
+
+<script type="text/javascript">
   var previousPartner;
     function showDiv(name){
        $('#'+previousPartner).hide();
        $('#'+name).show();
        previousPartner=name;
     }
+
     function showHidden(div,flag){
         if(flag==0){
           $('#'+div).hide();
@@ -513,26 +513,7 @@
          $('#'+div).show();
         }
     }
-    // $('form').submit(function() {
-    //   var formData = new FormData(this);
-    //  // console.log(formData);
-    //  // return false;
-    //   $.ajax({  
-    //            type: "POST",  
-    //            url: "{{URL::to('save-tribe-form')}}",
-    //            data : formData,
-    //            mimeType: "multipart/form-data",
-    //            cache: false,
-    //             contentType: false,
-    //             processData: false,
-    //            success: function(msg){
-    //               if(msg=='true'){
-    //                 console.log(msg);
-    //               }
-    //             console.log(msg);
-    //             }  
-    //     }); 
-    // });
+
     $("#save_form_button").click(function(){
        event.preventDefault(); 
        if(! $('#tribe_loan_form').valid()){
@@ -543,14 +524,17 @@
              url: "{{URL::to('save-tribe-form')}}",
              data : $('#tribe_loan_form').serialize(),
              success: function(msg){
-             $('#app_id').val(msg);
-               
-
-            } 
+              if(msg){
+                 $( "#nav4").trigger( "click" );
+                }else{
+                  console.log("error"+msg);
+                 // window.location.href="{{URL::to('went-wrong')}}";
+                }
+               }
           });
     });
-  </script>
-  <script type="text/javascript">
+ 
+
   $('#registration_detail').change(function() {
     //console.log($(this).val());
     $('#director_div').hide();
@@ -569,42 +553,31 @@
       $('#business_run_by_div').show();
       $('#company_pan_card_div').hide();
       $('#business_run_by_pan_div').show();
-    }
-        
-    
+    }     
   });
-  </script>
- <script type="text/javascript">
-  $('.go_to_next').click(function(){
-    //console.log($(this).closest("form").attr('id'));
-    if($('#'+$(this).closest("form").attr('id')).valid()){
-      console.log("valid_tab");
-    }else{
-      //return false;
-    }
-  });
-
   
-    // $('#upload_doc_submit').click(function() {
-    //   var formData = $('#kyc_form').serialize();
-    //  // console.log(formData);
-    //  // return false;
-    //  var CSRF_TOKEN = $('input[name="_token"]').val();                    
-    // var form_url="{{URL::to('upload-tribe-doc')}}";
-    //   $.ajax({  
-    //            type: "POST",  
-    //            url: form_url + '?_token=' + CSRF_TOKEN,
-    //            data : formData,
-    //            mimeType: "multipart/form-data",
-    //            cache: false,
-    //             contentType: false,
-    //             processData: false,
-    //            success: function(msg){
-    //             console.log(msg);
-    //             }  
-    //     }); 
-    // });
-
+function go_to_next(next){
+    var nav_number=next.split('main');
+   // if($('#tribe_loan_form').valid()){
+     // console.log("valid_tab");
+      $( "#nav"+nav_number[1] ).trigger( "click" );
+      window.scrollTo(0,0);
+    // }else{
+    //   //return false;
+    // }
+}
+ function go_back(next){
+    var nav_number=next.split('main');
+      $( "#nav"+nav_number[1] ).trigger( "click" );
+      window.scrollTo(0,0);
+ }
+$('.go_to_next').click(function(){
+if($('#tribe_loan_form').valid()){
+     // console.log("valid_tab");
+   }else{
+    //return false;
+   }
+});
 $("#upload_doc_submit").click(function(){
     var CSRF_TOKEN = $('input[name="_token"]').val();                    
     var form_url="{{URL::to('upload-tribe-doc')}}";
@@ -618,8 +591,8 @@ $.ajax({
       contentType: false,
       success:function(response){
         console.log(response);
+        $( "#nav7").trigger( "click" );
       },
     });
  });
-  
   </script>

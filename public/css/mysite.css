@@ -12941,7 +12941,7 @@ input:checked + .slider:before {
     padding: 6px 6px;
     font-size: 14px;
     color: #999;
-	margin-bottom:10px;
+	margin-bottom:15px;
     font-weight: 500;
     background-image: none;
     border: 1px solid #ccc;
@@ -13053,7 +13053,7 @@ label {
 #emp_detail {    border-bottom: 2px dashed #bbadad;float: left;margin-bottom: 5px;}
 .panel-title > a {font-size:15px;}
 
-label.error {color:red;display: inherit; font-weight: bold;font-size:11px;top: 35px;position: absolute;}
+label.error {color:red;display: inherit; font-weight: bold;font-size:11px;top: 32px;position: absolute;}
 .pad-ten {padding: 5px 3px;}
 .fh5co-copyright, .white-txt {color:#ccc8c2;}
 .blk-txt a {color:#404040;}

@@ -19,6 +19,7 @@
   </ul>
 
   <div class="tab-content">
+  <fieldset ng-disabled="true";>
     <div id="main" class="tab-pane fade in active" ng-app="First_tab">
       
     <div class="col-md-12">
@@ -375,7 +376,7 @@
    
     </div>
     </form>
-    
+    </fieldset>
     <div id="main4" class="tab-pane fade">
       <form id="kyc_form" name="kyc_form" enctype="multipart/form-data" >
         {{ csrf_field() }}

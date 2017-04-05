@@ -133,8 +133,14 @@ class TribeController extends CallApiController
 		    $result=$this->call_json_data_api($url,$post_data);
 		    $http_result=$result['http_result'];
 		    $error=$result['error'];
+		   //print_r(json_decode(($http_result)));exit();
 		    if($http_result){
+
 		        $data=json_decode(($http_result));
+		      // print_r( json_decode($data)->error);exit();
+		        if(json_decode($data)->error ==1){
+		        	return false;
+		        }
 		        $temp=json_decode($data)->response->tribe;
 		     return $temp;
 		    }else{
@@ -144,26 +150,7 @@ class TribeController extends CallApiController
 	      
 	    }
 	    public function UploadTribeDocuments(Request $req){
-	    	//print_r();exit();
-		 // 'pan'​: 1,
-		 // 'aadhaar'​: 2,
-		 // 'driving license'​: 3,
-		 // 'passport'​: 4,
-		 // 'voter id'​: 5,
-		 // 'personal_it_returns'​: 6,
-		 // 'company_it_returns'​: 7,
-		 // 'company_pan'​: 8,
-		 // 'vat_returns'​:9,
-		 // 'financier_term_condition'​: 10,
-		 // 'other'​: 11,
-		 // 'electricity_bill'​: 12,
-		 // 'leave_license_agreement'​: 13,
-		 // 'registration_certificate'​: 14,
-		 // 'tax_registration'​: 15,
-		 // 'certificate_of_incorporation'​: 16,
-		 // 'audited_financial_documents'​: 17
-		 // }
-	    	 $documents_name_array = array('docpan','doc_aadhar','doc_dl','doc_passport','doc_voter','doc_electricity_bill','doc_leave_license','doc_reg_certification','doc_tax_registration','doc_comapny_it_returns','doc_company_pan','doc_vat_return','doc_it_returns','doc_other');
+	      	 $documents_name_array = array('docpan','doc_aadhar','doc_dl','doc_passport','doc_voter','doc_electricity_bill','doc_leave_license','doc_reg_certification','doc_tax_registration','doc_comapny_it_returns','doc_company_pan','doc_vat_return','doc_it_returns','doc_other');
 	    	$documents_array = array('1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17');
 	        $request=$req;
 	        $response=0;$i=0;

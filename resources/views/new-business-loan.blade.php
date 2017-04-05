@@ -198,7 +198,18 @@
      <div class="btn-grp border-none" data-toggle="buttons">
       <span class="btn btn-default outer-brd btn-blu active"><input type="radio" name="exchange" value="Y">Y</span>
       <span class="btn btn-default outer-brd btn-blu"><input type="radio" name="exchange" value="N">N</span>
-	  <h3 class="pull-right">60%</h3>
+	  <select class="pull-right btn-default outer-brd btn-blu pad-ten">
+	       <option>10%</option>
+		   <option>20%</option>
+		   <option>30%</option>
+		   <option>40%</option>
+		   <option>50%</option>
+		   <option>60%</option>
+		   <option>70%</option>
+		   <option>80%</option>
+		   <option>90%</option>
+		   <option>100%</option>
+	  </select>
          </div>
 	</div>
 	<div class="col-xs-8 form-padding">

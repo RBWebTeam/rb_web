@@ -332,7 +332,10 @@
 		<div class="text-center guid nl-form-errors" id='bank_ID'>Total Saving 0</div>
 
         <div class="text-center img1"><img src="{{URL::to('images/photo.jpg')}}" alt="pop_up_pic"></div>
+
+
 		</div>
+<!--     <a href="{{url('contact-us')}}">apply</a> -->
  </div>
 </div>
 </br>
@@ -977,7 +980,7 @@ $(".proposel_ID").click(function ( event ){
 
 
 $('.menu1act').click(function(e){
-          e.preventDefault();
+     e.preventDefault();
           var act=$(this).attr('href');
            if(act=="#menu1"){
            $(".active").removeClass("active");

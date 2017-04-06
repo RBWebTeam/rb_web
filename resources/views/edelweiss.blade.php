@@ -14,9 +14,9 @@
 	   <div class="btn-grp mrg-top pad status" data-toggle="buttons">
 	  
 		<center><div class="type-cover"><span>Proprietorship</span></div></center>
-      <span class="btn btn-default outer-brd active"><input type="radio" name="Status" id="option1">Sole Proprietor</span>
-      <span class="btn btn-default outer-brd"><input type="radio" name="Status" id="option2">Partnership</span>
-      <span class="btn btn-default outer-brd"><input type="radio" name="Status" id="option3">Company</span>
+      <span class="btn btn-default outer-brd mob-blk-dv active"><input type="radio" name="Status" id="option1">Sole Proprietor</span>
+      <span class="btn btn-default mob-blk-dv outer-brd"><input type="radio" name="Status" id="option2">Partnership</span>
+      <span class="btn btn-default mob-blk-dv outer-brd"><input type="radio" name="Status" id="option3">Company</span>
 
       </div>
 		</div>

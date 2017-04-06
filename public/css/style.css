@@ -3549,6 +3549,7 @@ label {
 	.white-bg {float:left;}
 	.flt-lft {float:left; margin-bottom:20px;}
 	.status .btn {padding: 7px 4px;}
+	.mob-blk-dv {display:block;width:100%;}
 	/* #my-video { display:inherit; position:fixed;width:auto;}
 	 .video {top: 0%;left:0%;z-index: 0;width:100%;height:100%;}*/
 }

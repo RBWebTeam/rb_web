@@ -132,7 +132,16 @@
             </div>
             <div id="collapse71" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading7">
                 <div class="panel-body">
-
+             <div class="col-md-12 form-padding">
+     <input type="text" class="form-input-new form-control" name="" id="" placeholder="Total Current Asset">
+	         </div>
+			 <div class="col-md-12 form-padding">
+     <input type="text" class="form-input-new form-control" name="" id="" placeholder="Total Current Liability">
+	         </div>
+			 <div class="col-md-12 form-padding">
+     <input type="text" class="form-input-new form-control" name="" id="" placeholder="Total Non-Current Liability">
+	         </div>
+			
 					
                 </div>
             </div>

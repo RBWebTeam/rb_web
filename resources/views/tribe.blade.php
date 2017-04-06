@@ -384,6 +384,7 @@
   <hr>
     <div class="col-md-3">Pan</div>
     <div class="col-md-8">
+    
     <input type="file" name="1" id="docpan"  class="form-control form-group no-border"/>
     </div>
     

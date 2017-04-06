@@ -48,10 +48,10 @@
      <input type="text" class="form-input-new form-control lastReporteddate1" name="applicant_dob" id="applicant_dob" placeholder="Date Of Birth"   required>
   </div>
 
-  <div class="col-xs-6 form-padding">
+  <div class="col-xs-6 form-padding" >
   
-     <select class="block drop-arr select-sty"  name="loan_tenure">
-	  <option>LOAN TENURE</option>
+     <select class="block drop-arr select-sty"  name="loan_tenure" id="loan_tenure" required>
+	  <option value="">LOAN TENURE</option>
 	  <option value="1">1 Year</option>
 		<option value="2">2 Year</option>
 		<option value="3">3 Year</option>
@@ -615,3 +615,14 @@ $("#eligibility").click(function() {
 
 
 </script>
+
+<!-- <script type="text/javascript">
+	
+	$("#everything").validate({
+    messages: {
+     loan_tenure: {
+      required: "Please select an option from the list, if none are appropriate please select 'Other'",
+     },
+    }
+});
+</script> -->

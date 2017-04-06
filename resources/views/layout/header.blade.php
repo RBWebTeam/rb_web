@@ -132,9 +132,10 @@
 							</li>
 							<li>
 								<a href="{{URL::to('new-loan-against-property')}}">Lease Rent Discounting</a>
-								<a href="{{URL::to('contact-us')}}">Working Capital</a>
+								<a href="{{URL::to('new-working-capital')}}">Working Capital</a>
 								<a href="{{URL::to('contact-us')}}">FCNR Loans</a>
 								<a href="{{URL::to('contact-us')}}">Debt Restructuring </a>
+								<a href="{{URL::to('contact-us')}}">Debt Syndication </a>
 								<a href="{{URL::to('contact-us')}}">Project Finance </a>
 								
 							<!-- <a href="{{URL::to('sme-loan')}}">Export/Import Finance</a> -->

@@ -324,11 +324,11 @@ run_else:
 		}
 		
 
-		if($data){
-			$status="Success";
+		if(!($data) || $data==[]){
+			$status="Failure";
 
 		}else{
-			$status="Failure";
+			$status="Success";
 		}
 
 		$log_update=DB::table('api_log')
@@ -338,7 +338,7 @@ run_else:
 		->where('ID','=',$id)
 		->update(['status'=>$status]);
 		return Response::json(array(
-			'data' => $data,
+			'data' => $status,
 			'quote_id'=>$id
 			));
 	

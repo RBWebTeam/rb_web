@@ -183,8 +183,9 @@ class TribeController extends CallApiController
 	    public function UploadBankStatement(Request $req){
 	    	
 	    	$str='upload_statement';
+	    	$pdf_pwd=$req['pdf_password']?'"'.$req['pdf_password'].'"':'null';
 	    	$base64=$this->FileToString($str,$req);
-            $post_data='{"secret":"'.TribeController::$secret.'","loan_application_id":'.$req['app_id'].',"from_date": "'.$req['start_date'].'","to_date":"'.$req['end_date'].'","Statement_file":"data:application/pdf;base64,'.$base64.'","Institution":"'.$req['institution'].'" }';
+            $post_data='{"secret":"'.TribeController::$secret.'","document_password":'.$pdf_pwd.',"loan_application_id":'.$req['app_id'].',"from_date": "'.$req['start_date'].'","to_date":"'.$req['end_date'].'","Statement_file":"data:application/pdf;base64,'.$base64.'","Institution":"'.$req['institution'].'" }';
 	    
 			print_r($post_data);exit();
 			$url = $this::$url_static."BankAPIService.svc/uploadStatmentTribeLoan";

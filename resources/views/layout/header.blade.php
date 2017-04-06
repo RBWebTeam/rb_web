@@ -15,7 +15,7 @@
 
 	<link  rel="stylesheet" type="text/css" href="{{URL::to('css/mysite.css')}}"/>
 
-	<link  rel="stylesheet" type="text/css" href="{{URL::to('css/style.css')}}"/>
+	<!-- <link  rel="stylesheet" type="text/css" href="{{URL::to('css/style.css')}}"/> -->
 
 
 
@@ -96,7 +96,7 @@
                 <li><a href="{{URL::to('https://www.facebook.com/rupeeboss')}}" title="Facebook"><i class="icon-facebook"></i></a></li>
                 <li><a href="{{URL::to('https://www.linkedin.com/company/rupeeboss.com')}}" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
                 <li><a href="{{URL::to('https://plus.google.com/u/0/113191059621763008376')}}" title="GooglePlus"><i class="icon-google-plus"></i></a></li>
-                <!-- <li><a href="#" title="instagram"><i class="icon-instagram"></i></a></li> -->
+                <li><a href="{{URL::to('https://www.instagram.com/rupeeboss/')}}" title="instagram"><i class="icon-instagram"></i></a></li>
                 <li><a href="{{URL::to('contact-us')}}"><i class="icon-phone"></i> 1800-267-629-6	</a></li>
 
             </ul>
@@ -132,9 +132,11 @@
 							</li>
 							<li>
 								<a href="{{URL::to('new-loan-against-property')}}">Lease Rent Discounting</a>
-								<a href="{{URL::to('contact-us')}}">Working Capital</a>
+								<a href="{{URL::to('new-working-capital')}}">Working Capital</a>
 								<a href="{{URL::to('contact-us')}}">FCNR Loans</a>
 								<a href="{{URL::to('contact-us')}}">Debt Restructuring </a>
+								<a href="{{URL::to('contact-us')}}">Debt Syndication </a>
+								<a href="{{URL::to('contact-us')}}">Project Finance </a>
 								
 							<!-- <a href="{{URL::to('sme-loan')}}">Export/Import Finance</a> -->
 							</li>

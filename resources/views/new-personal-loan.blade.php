@@ -53,8 +53,8 @@
   
   <div class="col-xs-6 form-padding">
   
-     <select class="block drop-arr select-sty"  name="loan_tenure">
-    <option >LOAN TENURE</option>
+     <select class="block drop-arr select-sty"  name="loan_tenure" id="loan_tenure" required>
+    <option value="" >LOAN TENURE</option>
       <option value="1">1 Year</option>
     <option value="2">2 Year</option>
     <option value="3">3 Year</option>
@@ -93,7 +93,7 @@
      <div  style="display: none;" id="self-employed_ID">  <!-- self-employed-->
        
        <div class="col-xs-6 form-padding">
-          <input type="text" class="form-input-new form-control " name="turnover" placeholder="Annual turnover" required  onkeypress="return fnAllowNumeric(event)">
+          <input type="text" class="form-input-new form-control " name="turnover" placeholder="Annual income" required  onkeypress="return fnAllowNumeric(event)">
       </div>
       </div>
      
@@ -102,7 +102,7 @@
   </div>
   
   <div class="col-xs-6 form-padding">
-     <input type="text" name="obligation" id="obligation" class="form-input-new form-control" placeholder="Existing EMI (If Any)" onkeypress="return isNumberKey(event)" required="">
+     <input type="text" name="obligation" id="obligation" class="form-input-new form-control" placeholder="Existing EMI (If Any)" onkeypress="return isNumberKey(event)" >
   </div>
   
   <div class="col-md-12 fl-lft">
@@ -194,6 +194,8 @@
   </div>
   </div>
 <br>
+
+  <div id ="test123" class="col-md-8" ></div>
   
   
 @include('layout.footer')

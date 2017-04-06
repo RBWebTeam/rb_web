@@ -2184,7 +2184,7 @@ function SetSession_pop(cookieName,cookieValue){
 		});
 			
 	</script>
-	<script>
+	<!-- <script>
     var s0 = $("#unranged").freshslider({
         step: 10,
 		scale: [1,,100],
@@ -2225,7 +2225,7 @@ function SetSession_pop(cookieName,cookieValue){
         }
     });
     
-</script>
+</script> -->
 
 
 <script>

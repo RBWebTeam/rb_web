@@ -30,7 +30,7 @@
 <center><div class="type-cover"><span>Car Type</span></div></center>
      
             <div class="col-xs-4 form-padding">
-     <input type="text" class="form-input-new form-control" id="car_cost" name="car_cost" placeholder="Car Cost" required onkeypress="return fnAllowNumeric(event)"  maxlength="10">
+     <input type="text" class="form-input-new form-control" id="car_cost" name="car_cost" placeholder="On Road Price" required onkeypress="return fnAllowNumeric(event)"  maxlength="10">
   </div>
   <div class="col-xs-4 form-padding">
      <input type="text" class="form-input-new form-control" name="loan_amount" id="loan_amount" placeholder="Loan Required" required onkeypress="return fnAllowNumeric(event)"  value="">
@@ -61,8 +61,8 @@
     
     <div class="col-xs-6 form-padding">
   
-     <select class="block drop-arr select-sty" id="loan_tenure" name="loan_tenure">
-    <option>LOAN TENURE</option>
+     <select class="block drop-arr select-sty"  name="loan_tenure" id="loan_tenure" required>
+    <option value="">LOAN TENURE</option>
       <option value="1">1 Year</option>
     <option value="2">2 Year</option>
     <option value="3">3 Year</option>
@@ -328,15 +328,15 @@ $("#eligibility").click(function() {
 {
     function update()
     {
-        var cost = parseFloat($("#property_cost").val());
+        var cost = parseFloat($("#car_cost").val());
         // console.log(cost);
-        var total = (cost)*80/100;
+        var total = (cost)*90/100;
         // var total = total.toFixed(2);
         // console.log(total);
         $("#loan_amount").val(total);
 
     }
-    $(document).on("change, keyup", "#property_cost", update);
+    $(document).on("change, keyup", "#car_cost", update);
 });
 </script>
 

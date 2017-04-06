@@ -10843,7 +10843,7 @@ border: #3px solid #999;background:#1f386e;margin: 10px;margin: 10px auto;text-a
 .#fh5co-header nav ul li a ul {margin-top:10px;}
 #fh5co-header nav ul li a .icon-chevron-down {top:0px; font-size:12px;}
 
-input[placeholder], [placeholder], *[placeholder] {color: #1f386e !important;}
+input[placeholder], [placeholder], *[placeholder] {color: #1f386e !important; font-size:12px;}
 .mrg-btm1 {margin-bottom:0px;}
 .icon-map-marker {font-size:25px; float:left;}
 .modal-body input, button {margin-bottom:10px; color:#396fbf;border:none;}

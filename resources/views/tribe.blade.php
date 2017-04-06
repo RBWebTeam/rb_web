@@ -384,7 +384,7 @@
   <hr>
     <div class="col-md-3">Pan</div>
     <div class="col-md-8">
-    
+
     <input type="file" name="1" id="docpan"  class="form-control form-group no-border"/>
     </div>
     
@@ -487,7 +487,13 @@
     
     <div class="col-md-3">Upload Document</div>
     <div class="col-md-8">
-    <input type="file"  id="upload_statement" name="upload_statement" class="form-control form-group no-border"/></div>
+    <input type="file"  id="upload_statement" name="upload_statement" class="form-control form-group no-border"/>
+    </div>
+   <div class="col-md-3">PDF Password(if any)</div>
+    <div class="col-md-8"  >
+    <input type="checkbox" name="pdf_has_pwd" id="pdf_has_pwd">
+    <input type="password" name="pdf_password" id="pdf_password" class="form-control form-group" style="display: none;" required /></div>
+    
     <div class="col-md-3"></div>
     <div class="col-md-8 mrg-top">
     <a class="btn btn-primary btn-outline with-arrow" id="submit_statement">Submit Statment
@@ -598,7 +604,10 @@ $.ajax({
  });
 
 $("#submit_statement").click(function(){
-  if($('#bank_statement_form').valid()){
+  if(!$('#bank_statement_form').valid()){
+    return false;
+  }
+    else{
     var CSRF_TOKEN = $('input[name="_token"]').val();                    
     var form_url="{{URL::to('upload-tribe-bank-statement')}}";
     $.ajax({
@@ -614,8 +623,6 @@ $("#submit_statement").click(function(){
             
           },
         });
-  }else{
-    return false;
   }
  });
 
@@ -641,5 +648,14 @@ $('#freeze_form').click(function(){
 
 $('#decline_freeze').click(function(){
      $('#freeze_form_modal').modal('hide');
+});
+$('#pdf_has_pwd').change(function(){
+     if(this.checked == true){
+        $('#pdf_password').show();
+    }else{
+
+        $('#pdf_password').hide();
+        $('#pdf_password').val('');
+   }
 });
   </script>

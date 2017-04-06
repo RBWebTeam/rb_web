@@ -101,7 +101,7 @@
  </div>
  <div>
    <div class="col-md-12 pad-no">
-   <center><div class="type-cover"><span>Share</span></div></center>
+   <center><div class="type-cover"><span>Share Capital</span></div></center>
    </div>
    <div class="col-md-4 form-padding"><input type="text"class="form-input-new form-control" placeholder="1 Year"></div>
    <div class="col-md-4 form-padding"><input type="text"class="form-input-new form-control" placeholder="2 Year"></div>
@@ -109,7 +109,7 @@
  </div>
  <div>
    <div class="col-md-12 pad-no">
-   <center><div class="type-cover"><span>Reserves</span></div></center>
+   <center><div class="type-cover"><span>Reserve Surplus</span></div></center>
    </div>
    <div class="col-md-4 form-padding"><input type="text"class="form-input-new form-control" placeholder="1 Year"></div>
    <div class="col-md-4 form-padding"><input type="text"class="form-input-new form-control" placeholder="2 Year"></div>
@@ -317,7 +317,7 @@
 								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">IT & ITeS</a></div>
 								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Manufacturing</a></div>
 								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Marketing And Strategy</a></div>
-								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Media And Entertainment </a></div>
+								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Media & Entertainment </a></div>
 								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Oil And Gas</a></div>
 								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Pharmaceuticals</a></div>
 								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Ports</a></div>
@@ -403,6 +403,7 @@
         
         
     </div><!-- panel-group -->
+	<a class="btn btn-primary btn-outline with-arrow" id="" data-toggle="modal">Apply Now<i class="icon-arrow-right"></i></a>
   </div>
   
   

@@ -1950,7 +1950,7 @@ body {background:#eee;}
 
 .model-hig {max-height:450px;overflow:scroll;}
 .crd-rpt {    width: 300px;margin: 0 auto;}
-.credit-report-bg {background: url("../images/Credit-Report_bg.png") no-repeat; padding-bottom:60px;border-bottom:1px solid #eee;}
+.credit-report-bg {background: url("../images/Credit-Report_bg.png") no-repeat; padding-bottom:30px;border-bottom:1px solid #e1e1e1;}
 .exp-bg {background:url(../images/exp_bg.jpg) no-repeat;padding: 20px 0px;}
 
 .exp-form {
@@ -3580,4 +3580,4 @@ label.error {color:red;display: inherit; font-weight: bold;font-size:11px;top: 3
 .hei-frtrt {height:430px;}
 .pan-error {color:red;font-size:12px;display:none;padding:0px; margin:2px;}
 .aply-btn {margin: 30px;margin-top: 50px;}
-	
+.btn-blu  {font-size:12px;}	

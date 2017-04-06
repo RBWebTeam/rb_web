@@ -931,9 +931,9 @@ rb-services-section{padding:0px;}
   padding: 2em 0;
   float: left;
   width: 100%;
+  z-index:1;
   position: relative;
   background: #888;
-  border-top:10px solid #808080;
 }
 @media screen and (max-width: 768px) {
   #fh5co-footer {
@@ -3532,7 +3532,7 @@ label {
 	height:100%;
 }*/
 @media screen and (max-width:768px) {
-	.btn-blu {padding:8px 5px;}
+	.btn-blu {padding:8px 3px;}
 	.border { float: left;width: 100%;}
 	.top-lnk li  {float:none;padding:2px 0px;list-style-type:none;width:120px;}
 	.top-lnk li:hover {visibility:visible;}
@@ -3542,6 +3542,13 @@ label {
 	.totl-sav {display:none;}
 	.comp-fin {float: left;width: 100%;}
 	.disblk {display:block; width:100%;}
+	.sprite {display:none;}
+	.tp-margin {font-size:18px;}
+	.credit-report-bg {padding-bottom:4px;}
+	.flt-lft {height:auto;}
+	.white-bg {float:left;}
+	.flt-lft {float:left; margin-bottom:20px;}
+	.status .btn {padding: 7px 4px;}
 	/* #my-video { display:inherit; position:fixed;width:auto;}
 	 .video {top: 0%;left:0%;z-index: 0;width:100%;height:100%;}*/
 }

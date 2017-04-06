@@ -69,7 +69,7 @@
      <input type="name" class="form-input-new form-control" placeholder="Existing All EMI" required="">
 	</div>
  </div>
-	<div class="col-md-6">
+	<div class="col-md-6 flt-lft">
 	<div class="panel-group" id="accordion">
 	<div class="panel-default">
       <div id="collapse0" class="panel-collapse collapse in">

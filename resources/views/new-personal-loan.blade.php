@@ -105,7 +105,7 @@
      <input type="text" name="obligation" id="obligation" class="form-input-new form-control" placeholder="Existing EMI (If Any)" onkeypress="return isNumberKey(event)" required="">
   </div>
   
-  <div class="col-md-12">
+  <div class="col-md-12 fl-lft">
 
   <!-- <?php if(Session::get('is_login')) {?>
                 <?php if(Session::get('contact')!=''){ Session::get('contact'); ?>

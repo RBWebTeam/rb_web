@@ -124,7 +124,7 @@
                 </h4>
             </div>
             <div id="collapse7" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading7">
-                <div class="panel-body">
+<div class="panel-body">
 <div>
 
 <h4 class="text-center">List of Loan EMI</h4>
@@ -171,26 +171,20 @@
 
 
 	</div>
+	</div>
 	
-					
-                </div>
-            </div>
+     </div>
         </div>
-        
-        
     </div><!-- panel-group -->
   </div>
-  
-  
-
-	
-	
  </div>
-	<div class="col-md-6 no-pad">
+ 
+ 
+	<div class="col-md-6 no-pad flt-lft">
 	<div class="panel-group" id="accordion1">
-	<div class="panel-default">
+	<div class="panel panel-default">
       <div id="collapse0" class="panel-collapse collapse in">
-        <div class="panel-body">
+  <div class="panel-body">
 		
 	
 	<div class="col-xs-8 form-padding pad-no">
@@ -214,6 +208,7 @@
 	  </select>
          </div>
 	</div>
+
 	<div class="col-xs-8 form-padding">
 	 <span>Has a Good Repayment track record in existing UBL /CC/OD?</span>
 	</div>
@@ -223,7 +218,9 @@
       <span class="btn btn-default outer-brd btn-blu"><input type="radio" name="repayment_track" value="N">N</span>
          </div>
 	</div>
-		</div>
+</div>
+		
+		
       </div>
     </div>
 	

@@ -32,8 +32,8 @@
 	</div>
 	<div class="col-xs-4 form-padding pad">
      <div class="btn-grp border-none" data-toggle="buttons">
-      <span class="btn btn-default outer-brd btn-blu active"><input type="radio" name="Status" id="option1">Y</span>
-      <span class="btn btn-default outer-brd btn-blu"><input type="radio" name="Status" id="option2">N</span>
+      <span class="btn btn-default outer-brd btn-blu active"><input type="radio" name="exchange" value="Y">Y</span>
+      <span class="btn btn-default outer-brd btn-blu"><input type="radio" name="exchange" value="N">N</span>
 	  <select class="pull-right btn-default outer-brd btn-blu pad-ten">
 	       <option>10%</option>
 		   <option>20%</option>
@@ -52,11 +52,11 @@
 		
 		<div class="col-xs-12 form-padding mrg-top">
 		<center><div class="type-cover"><span>Name of The Company</span></div></center>
-     <input type="text" class="form-input-new form-control" placeholder="" >
+     <input type="text" class="form-input-new form-control" name="company" id="company" placeholder="Company Name" onkeypress="return AllowAlphabet(event)" required >
 	</div>
 	<div class="col-xs-12 form-padding">
 	<center><div class="type-cover"><span>Date of Incorporation</span></div></center>
-     <input class="form-input-new form-control" type="date"  placeholder="Date">
+     <input class="form-input-new form-control lastReporteddate1" type="text" name="date" id="date" placeholder="Date Of Incorporation">
 	</div>
 
 <div class="col-md-12 pad-no">
@@ -383,4 +383,35 @@
   
 @include('layout.footer')
 @include('layout.script')
+
+<script type="text/javascript">
+  
+  function AllowAlphabet(e)
+{
+  isIE = document.all ? 1 : 0
+  keyEntry = !isIE ? e.which : event.keyCode;
+  if (((keyEntry >= '65') && (keyEntry <= '90')) || ((keyEntry >= '97') && (keyEntry <= '122')) || (keyEntry == '46') || (keyEntry == '32') || keyEntry == '45')
+     return true;
+  else
+{
+    // alert('Please Enter Only Character values.');
+    return false;
+      }
+}
+</script>
+
+<script type="text/javascript">
+    var d = new Date();
+    var year = d.getFullYear()  ;
+    d.setFullYear(year);
+
+    $(".lastReporteddate1").datepicker({ dateFormat: "yy-mm-dd",
+      changeMonth: true,
+      changeYear: true,
+      maxDate: year,
+      minDate: "-100Y",
+      yearRange: '-100:' + year + '',
+      defaultDate: d
+    });
+</script>
 

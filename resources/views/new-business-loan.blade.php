@@ -48,10 +48,10 @@
      <input type="text" class="form-input-new form-control lastReporteddate1" name="applicant_dob" id="applicant_dob" placeholder="Date Of Birth"   required>
   </div>
 
-  <div class="col-xs-6 form-padding">
+  <div class="col-xs-6 form-padding" >
   
-     <select class="block drop-arr select-sty"  name="loan_tenure">
-	  <option>LOAN TENURE</option>
+     <select class="block drop-arr select-sty"  name="loan_tenure" id="loan_tenure" required>
+	  <option value="">LOAN TENURE</option>
 	  <option value="1">1 Year</option>
 		<option value="2">2 Year</option>
 		<option value="3">3 Year</option>
@@ -124,7 +124,7 @@
                 </h4>
             </div>
             <div id="collapse7" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading7">
-                <div class="panel-body">
+<div class="panel-body">
 <div>
 
 <h4 class="text-center">List of Loan EMI</h4>
@@ -171,26 +171,20 @@
 
 
 	</div>
+	</div>
 	
-					
-                </div>
-            </div>
+     </div>
         </div>
-        
-        
     </div><!-- panel-group -->
   </div>
-  
-  
-
-	
-	
  </div>
-	<div class="col-md-6 no-pad">
+ 
+ 
+	<div class="col-md-6 no-pad flt-lft">
 	<div class="panel-group" id="accordion1">
-	<div class="panel-default">
+	<div class="panel panel-default">
       <div id="collapse0" class="panel-collapse collapse in">
-        <div class="panel-body">
+  <div class="panel-body">
 		
 	
 	<div class="col-xs-8 form-padding pad-no">
@@ -214,6 +208,7 @@
 	  </select>
          </div>
 	</div>
+
 	<div class="col-xs-8 form-padding">
 	 <span>Has a Good Repayment track record in existing UBL /CC/OD?</span>
 	</div>
@@ -223,7 +218,9 @@
       <span class="btn btn-default outer-brd btn-blu"><input type="radio" name="repayment_track" value="N">N</span>
          </div>
 	</div>
-		</div>
+</div>
+		
+		
       </div>
     </div>
 	
@@ -615,3 +612,14 @@ $("#eligibility").click(function() {
 
 
 </script>
+
+<!-- <script type="text/javascript">
+	
+	$("#everything").validate({
+    messages: {
+     loan_tenure: {
+      required: "Please select an option from the list, if none are appropriate please select 'Other'",
+     },
+    }
+});
+</script> -->

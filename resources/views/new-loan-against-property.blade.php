@@ -36,8 +36,8 @@
     <?php }else{ ?>
       <div class="text-center flt-lft btn-grp" data-toggle="buttons">
               <div class="scenario">
-                <div class="col-xs-4 pad-no scenario-active"><a class="scenario-1 btn"><input type="radio" name="propery_types" value="residential"  class="radio1"  checked >RESIDENTIAL</a></div>
-                <div class="col-xs-4 pad-no"><a class="scenario-1 btn"><input type="radio" name="propery_types" value="commercial" class="radio1">COMMERCIAL</a></div>
+                <div class="col-xs-6 col-md-4 pad-no scenario-active"><a class="scenario-1 btn"><input type="radio" name="propery_types" value="residential"  class="radio1"  checked >RESIDENTIAL</a></div>
+                <div class="col-xs-6 col-md-4 pad-no"><a class="scenario-1 btn"><input type="radio" name="propery_types" value="commercial" class="radio1">COMMERCIAL</a></div>
                 <div class="col-xs-4 pad-no"><a class="scenario-1 btn"><input type="radio" name="propery_types" value="industrial" class="radio1">INDUSTRIAL</a></div>
                 <div class="col-xs-4 pad-no"><a class="scenario-1 btn"><input type="radio" name="propery_types" value="land" class="radio1">LAND</a></div>
                 <div class="col-xs-4 pad-no"><a class="scenario-1 btn"><input type="radio" name="propery_types" value="others" class="radio1">OTHERS</a></div>
@@ -83,8 +83,8 @@
    
     <div class="col-xs-6 form-padding">
   
-     <select class="block drop-arr select-sty"  name="loan_tenure">
-    <option>LOAN TENURE</option>
+     <select class="block drop-arr select-sty"  name="loan_tenure" id="loan_tenure" required>
+    <option value="">LOAN TENURE</option>
       <option value="1">1 Year</option>
     <option value="2">2 Year</option>
     <option value="3">3 Year</option>
@@ -158,7 +158,7 @@
     
     
     <!-- Rounded switch -->
-	<div class="col-md-12 pad-no">
+	<div class="col-md-12 pad-no flt-lft">
     <label class="switch"> <input type="checkbox" id="co_applicant_DI"><div class="slider round"><span class="co-applicant"> ADD CO-APPLICANT</span></div></label>
     </div>
     

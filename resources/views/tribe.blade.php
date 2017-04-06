@@ -384,96 +384,76 @@
   <hr>
     <div class="col-md-3">Pan</div>
     <div class="col-md-8">
-    <a  class="btn btn-primary btn-outline with-arrow pull-right">Add Document</a>
-    <!-- <input type="file" name="1" id="docpan"  class="form-control form-group no-border"/> -->
+    
+    <input type="file" name="1" id="docpan"  class="form-control form-group no-border"/>
     </div>
     
     <div class="col-md-3">Aadhaar</div>
     <div class="col-md-8">
-    <a  class="btn btn-primary btn-outline with-arrow pull-right">Add Document</a>
-    <!-- <input type="file" name="2"  id="doc_aadhar" class="form-control form-group no-border"/> -->
-    </div>
+    <input type="file" name="2"  id="doc_aadhar" class="form-control form-group no-border"/></div>
     
     <div class="col-md-3">Driving License </div>
     <div class="col-md-8">
-    <a  class="btn btn-primary btn-outline with-arrow pull-right">Add Document</a>
-<!--      <input type="file" name="3" id="doc_dl" class="form-control form-group no-border"/> -->
+     <input type="file" name="3" id="doc_dl" class="form-control form-group no-border"/>
     </div>
     
     <div class="col-md-3">Passport</div>
     <div class="col-md-8">
-    <a  class="btn btn-primary btn-outline with-arrow pull-right">Add Document</a>
-    <!--  <input type="file" name="4" id="doc_passport" class="form-control form-group no-border"/> -->
+     <input type="file" name="4" id="doc_passport" class="form-control form-group no-border"/>
     </div>
     
     <div class="col-md-3">Voter ID</div>
     <div class="col-md-8">
-    <a  class="btn btn-primary btn-outline with-arrow pull-right">Add Document</a>
-     <!-- <input type="file" name="5"  id="doc_voter" class="form-control form-group no-border"/> -->
+     <input type="file" name="5"  id="doc_voter" class="form-control form-group no-border"/>
     </div>
     <div class="col-md-12">
     <h3 class="mrg-top">Address Proof</h3><hr>
   </div>
   <div class="col-md-3">Electricity Bill</div>
     <div class="col-md-8">
-    <a  class="btn btn-primary btn-outline with-arrow pull-right">Add Document</a>
-     <!-- <input type="file" name="6" id="doc_electricity_bill" class="form-control form-group no-border"/> -->
+     <input type="file" name="6" id="doc_electricity_bill" class="form-control form-group no-border"/>
     </div>
     
     <div class="col-md-3">Leave and License Agreement</div>
     <div class="col-md-8">
-    <a  class="btn btn-primary btn-outline with-arrow pull-right">Add Document</a>
-    <!-- <input type="file" name="7" id="doc_leave_license" class="form-control form-group no-border"/> -->
-    </div>
+    <input type="file" name="7" id="doc_leave_license" class="form-control form-group no-border"/></div>
     
     <div class="col-md-12">
     <h3 class="mrg-top">Business KYC</h3><hr>
   </div>
     <div class="col-md-3">Registration Certificate</div>
     <div class="col-md-8">
-    <a  class="btn btn-primary btn-outline with-arrow pull-right">Add Document</a>
-    <!-- <input type="file" id="doc_reg_certification" name="8" class="form-control form-group no-border"/> -->
-    </div>
+    <input type="file" id="doc_reg_certification" name="8" class="form-control form-group no-border"/></div>
     
     <div class="col-md-3">Tax Registration</div>
     <div class="col-md-8">
-    <a  class="btn btn-primary btn-outline with-arrow pull-right">Add Document</a>
-    <!-- <input type="file" id="doc_tax_registration" name="9" class="form-control form-group no-border"/></div> -->
+    <input type="file" id="doc_tax_registration" name="9" class="form-control form-group no-border"/></div>
     
     <div class="col-md-12">
     <h3 class="mrg-top">Business Documents</h3><hr>
   </div>
     <div class="col-md-3">Company IT Returns</div>
     <div class="col-md-8">
-    <a  class="btn btn-primary btn-outline with-arrow pull-right">Add Document</a>
-    <!-- <input type="file" name="10" id="doc_comapny_it_returns" class="form-control form-group no-border"/> -->
-    </div>
+    <input type="file" name="10" id="doc_comapny_it_returns" class="form-control form-group no-border"/></div>
     
     <div class="col-md-3">Company PAN</div>
     <div class="col-md-8">
-    <a  class="btn btn-primary btn-outline with-arrow pull-right">Add Document</a>
-    <!-- <input type="file" name="11" id="doc_company_pan" class="form-control form-group no-border"/> -->
-    </div>
+    <input type="file" name="11" id="doc_company_pan" class="form-control form-group no-border"/></div>
     
      <div class="col-md-3">ITR/VAT Returns/ST Returns</div>
     <div class="col-md-8">
-    <a  class="btn btn-primary btn-outline with-arrow pull-right">Add Document</a>
-    <!-- <input type="file" name="12" id="doc_vat_return" class="form-control form-group no-border"/> -->
-    </div>
+    <input type="file" name="12" id="doc_vat_return" class="form-control form-group no-border"/></div>
     
     <div class="col-md-12">
     <h3 class="mrg-top">Other Documents</h3><hr>
   </div>
     <div class="col-md-3">Personal IT Returns</div>
     <div class="col-md-8">
-    <a  class="btn btn-primary btn-outline with-arrow pull-right">Add Document</a>
-    <!-- <input type="file"  name="13" class="form-control form-group no-border"/> -->
-    </div>
+    <input type="file"  name="13" class="form-control form-group no-border"/></div>
     
     <div class="col-md-3">Other Documents</div>
     <div class="col-md-8">
-    <a  class="btn btn-primary btn-outline with-arrow pull-right">Add Document</a>
-   <!--  <input type="file" name="14"  class="form-control form-group no-border"/> -->
+    <input type="file" name="14"  class="form-control form-group no-border"/>
     <a class="btn btn-primary btn-outline with-arrow " id="upload_doc_submit">Upload<i class="icon-arrow-right"></i></a>
     <a class="btn btn-primary btn-outline with-arrow"  onclick="go_back('main6')">Back<i class="icon-arrow-right"></i></a>
     </div>

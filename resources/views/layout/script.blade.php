@@ -2175,6 +2175,7 @@ function SetSession_pop(cookieName,cookieValue){
 			$('.income-source > div').click(function(){
 				$('.income-source > div').removeClass('income-source-active');
 				$(this).toggleClass('income-source-active');
+				
 			});
 			
 			$('.scenario > div').click(function(){

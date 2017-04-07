@@ -26,7 +26,7 @@ class CreditcardController extends CallApiController
  	$data['ChannelType']='RupeeBoss';
  	$post_data=json_encode($data);
 	 	  // print "<pre>";
-	 	  // print_r($post_data);exit();
+	 	 // print_r($post_data);exit();
 	$url = "http://api.rupeeboss.com/BankAPIService.svc/PostIciciBank";
     $result=$this->call_json_data_api($url,$post_data);
     $http_result=$result['http_result'];
@@ -37,28 +37,23 @@ class CreditcardController extends CallApiController
    // print_r($id);exit();
     $update_user='';
     $obj = json_decode($m);
-    // print_r($http_result);exit();
-    if ($http_result) 
+    //print_r($obj);exit();
+    if ($obj->ApplicationId) 
     {
+        // print_r($http_result);exit();
         $update_user=DB::table('credit_card_form_req')
          ->where('id',$id)
          ->update(['ApplicationId'=>$obj->ApplicationId]);
-    }
-    
-    if(!$update_user){
-
-        $error=2;
-    echo $error;
-
+         //print_r($update_user);exit();
+         if($update_user<0){
+            $error=2;  
+        }else{  
+            $error=1;
+          }
     }else{
-        
-
-      $error=1;
-      echo $error;
-
+        $error=2;
     }
-
-   
+    return $error; 
 	
-}
+    }
 }

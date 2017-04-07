@@ -19,4 +19,13 @@ class InitialController extends Controller
       //use as
       //$product_list=InitialController::prod();
 	}
+	public function FileToString($str,$req){
+			$imageName = time().'.'.$req->$str->getClientOriginalExtension();
+            $extension=$req->$str->getClientOriginalExtension();
+            $filename = $req->$str->getpathName();//Image path
+            $file =fopen($filename, "rb");
+            $contents = fread($file, filesize($filename));
+            $base64=base64_encode($contents);
+            return $base64;
+		}
 }

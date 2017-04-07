@@ -453,6 +453,36 @@
                 </div>
             </div>
         </div>
+		
+<div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingFour">
+                <h4 class="panel-title">
+                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse711" aria-expanded="true" aria-controls="collapse711">
+                        <i class="icon-plus more-less pull-right"></i>
+                        APPLICANT DETAILS
+                    </a>
+                </h4>
+            </div>
+            <div id="collapse711" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading71">
+                <div class="panel-body">
+                    
+					<div class="col-xs-6 form-padding">
+     <input type="text" id="" name="" class="form-input-new form-control" placeholder="Applicant Name" required="">
+                  </div>
+				  <div class="col-xs-6 form-padding">
+     <input type="text" id="" name="" class="form-input-new form-control" placeholder="Email Id" required="">
+                  </div>
+				  <div class="col-xs-6 form-padding">
+     <input type="text" id="" name="" class="form-input-new form-control" placeholder="Contact No." required="">
+                  </div>
+				  
+
+					
+		
+					 
+                </div>
+            </div>
+        </div>
         
         
     </div><!-- panel-group -->

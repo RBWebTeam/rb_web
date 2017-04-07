@@ -70,6 +70,8 @@ Route::post('Working-Capital/calculate','WorkingCapitalController@calculate');
 Route::post('term-loan/calculate','WorkingCapitalController@termcalculate');
 
 Route::get('new-working-capital','WorkingCapitalController@NewWorkingCapital');
+Route::post('working-capital-submit','WorkingCapitalController@working_capital_submit');
+
 
 Route::get('refresh-csrf', function(){
     return csrf_token();

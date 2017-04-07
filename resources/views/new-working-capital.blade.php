@@ -588,3 +588,44 @@
 }
 </script>
 
+<script type="text/javascript">
+  $(".apply_now").click(function(event){
+    event.preventDefault();
+      var form=$(this).closest("form").attr('id');
+      $form=$('#'+form);
+      if(! $form.valid()){
+      }else{
+        //var s=$('#'+form).serialize();
+
+        // $(".iframeloading").show();
+        // $(".credit-submit").hide(); 
+        $.ajax({  
+         type: "POST",  
+         url: "{{URL::to('working-capital-submit')}}",
+         data : $('#'+form).serialize(),
+         dataType: 'json',
+         success: function(msg){
+         // $(".iframeloading").hide();  
+        
+         console.log(msg);
+          if(msg==1){
+            console.log(msg);
+
+            // alert("Thank you for your interest in ICICI Bank Credit Cards. Our representative will get in touch with you within 3 working days subject to your application meeting the eligibility criteria");
+            $('#credit_process').modal('show');        
+          } 
+          else if(msg==2){
+            console.log(msg);
+            // alert("Something Went Wrong");
+             $('#credit_process_sorry').modal('show');
+          }
+
+        }  
+      }); 
+      }
+
+    });
+
+
+</script>
+

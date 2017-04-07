@@ -45,7 +45,7 @@ class CreditcardController extends CallApiController
          ->where('id',$id)
          ->update(['ApplicationId'=>$obj->ApplicationId]);
          //print_r($update_user);exit();
-         if($update_user<0){
+         if(!$update_user){
             $error=2;  
         }else{  
             $error=1;

@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Response;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 class TribeController extends CallApiController
@@ -141,10 +141,18 @@ class TribeController extends CallApiController
 		        if(json_decode($data)->error ==1){
 		        	return false;
 		        }
-		        $temp=json_decode($data)->response->tribe;
-		     	return $temp;
+		        $tribe_id=json_decode($data)->response->tribe;
+		        $loan_application_id=json_decode($data)->response->loan_application_id;
+
+		     	return Response::json(array(
+		     					'status'=>true,
+                                'tribe' => $tribe_id,
+                                'loan_id'=>$loan_application_id
+                            ));
 		    }else{
-		        return 'false';
+		        return Response::json(array(
+		        		'status'=>false
+		        	));
 		    }
 
 	      
@@ -185,7 +193,7 @@ class TribeController extends CallApiController
 	    	$str='upload_statement';
 	    	$pdf_pwd=$req['pdf_password']?'"'.$req['pdf_password'].'"':'null';
 	    	$base64=$this->FileToString($str,$req);
-            $post_data='{"secret":"'.TribeController::$secret.'","document_password":'.$pdf_pwd.',"loan_application_id":'.$req['app_id'].',"from_date": "'.$req['start_date'].'","to_date":"'.$req['end_date'].'","Statement_file":"data:application/pdf;base64,'.$base64.'","Institution":"'.$req['institution'].'" }';
+            $post_data='{"secret":"'.TribeController::$secret.'","document_password":'.$pdf_pwd.',"loan_application_id":'.$req['loan_id'].',"from_date": "'.$req['start_date'].'","to_date":"'.$req['end_date'].'","statement_file":"data:application/pdf;base64,'.$base64.'","institution":"'.$req['institution'].'" }';
 	    
 			print_r($post_data);exit();
 			$url = $this::$url_static."BankAPIService.svc/uploadStatmentTribeLoan";

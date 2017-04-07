@@ -465,7 +465,7 @@
 
  <form id="bank_statement_form" name="bank_statement_form" enctype="multipart/form-data" >
         {{ csrf_field() }}
-        <input type="hidden" name="app_id" class="app_id">
+        <input type="hidden" name="loan_id" class="loan_id">
     <div class="col-md-3">UPLOAD COMPANY BANK STATEMENTS</div>
     <div class="col-md-8 sec">
      <select class="drop-arr" name="institution" id="institution" required>
@@ -627,15 +627,19 @@ $("#submit_statement").click(function(){
  });
 
 $('#freeze_form').click(function(){
+      //alert($('#tribe_loan_form input[name="_token"]').val());
+      var CSRF_TOKEN = $('input[name="_token"]').val();
      $('#tribe_loan_form').find('input, radio,textarea, button, select').attr('disabled','disabled');
      $('#freeze_form_modal').modal('hide');
     $.ajax({  
              type: "POST",  
-             url: "{{URL::to('save-tribe-form')}}",
+             url: "{{URL::to('save-tribe-form')}}"+ '?_token=' + CSRF_TOKEN,
              data : $('#tribe_loan_form').serialize(),
              success: function(msg){
-              if(msg){
-                  $('.app_id').val(msg);
+
+              if(msg.status){
+                  $('.app_id').val(msg.tribe);
+                  $('#loan_id').val(mag.loan_id);
 
                  $( "#nav4").trigger( "click" );
                 }else{

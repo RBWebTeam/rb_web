@@ -20,9 +20,9 @@
 	   <div class="btn-grp mrg-top pad status" data-toggle="buttons">
 	  
 		<center><div class="type-cover"><span>Company type</span></div></center>
-      <span class="btn btn-default outer-brd active"><input type="radio" name="proprietor"  value="Sole Proprietor">Sole Proprietor</span>
-      <span class="btn btn-default outer-brd"><input type="radio" name="proprietor"  value="Partnership">Partnership</span>
-      <span class="btn btn-default outer-brd"><input  type="radio" name="proprietor"  value="Company" >Company</span>
+      <span class="btn btn-default outer-brd active mob-blk-dv"><input type="radio" name="proprietor"  value="Sole Proprietor">Sole Proprietor</span>
+      <span class="btn btn-default outer-brd mob-blk-dv"><input type="radio" name="proprietor"  value="Partnership">Partnership</span>
+      <span class="btn btn-default outer-brd mob-blk-dv"><input  type="radio" name="proprietor"  value="Company" >Company</span>
       
       </div>
 		</div>
@@ -58,9 +58,22 @@
 	<center><div class="type-cover"><span>Date of Incorporation</span></div></center>
      <input class="form-input-new form-control lastReporteddate1" type="text" name="date" id="date" placeholder="Date Of Incorporation">
 	</div>
-
-<div class="col-md-12 pad-no">
-<span class="block"><b>LOAN AMOUNT REQUIRED IN CRORES</b></span>
+ <div class="col-md-12 form-padding"><input type="text"class="form-input-new form-control" placeholder="Loan Amount Required in Crores"></div>
+ 
+    <div class="col-md-12 pad-no">
+<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingOne">
+                <h4 class="panel-title">
+                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse61" aria-expanded="true" aria-controls="collapse61">
+                        <i class="icon-plus more-less pull-right"></i>
+                        Tab 1 
+                    </a>
+                </h4>
+            </div>
+            <div id="collapse61" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading61">
+                <div class="panel-body">
+                  <div class="col-md-12 pad-no">
 <div>
    <div class="col-md-12 pad-no">
 
@@ -88,7 +101,7 @@
  </div>
  <div>
    <div class="col-md-12 pad-no">
-   <center><div class="type-cover"><span>Share</span></div></center>
+   <center><div class="type-cover"><span>Share Capital</span></div></center>
    </div>
    <div class="col-md-4 form-padding"><input type="text"class="form-input-new form-control" placeholder="1 Year"></div>
    <div class="col-md-4 form-padding"><input type="text"class="form-input-new form-control" placeholder="2 Year"></div>
@@ -96,13 +109,47 @@
  </div>
  <div>
    <div class="col-md-12 pad-no">
-   <center><div class="type-cover"><span>Reserves</span></div></center>
+   <center><div class="type-cover"><span>Reserve Surplus</span></div></center>
    </div>
    <div class="col-md-4 form-padding"><input type="text"class="form-input-new form-control" placeholder="1 Year"></div>
    <div class="col-md-4 form-padding"><input type="text"class="form-input-new form-control" placeholder="2 Year"></div>
    <div class="col-md-4 form-padding"><input type="text"class="form-input-new form-control" placeholder="3 Year"></div>
  </div>
 </div>
+				
+                </div>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="heading71">
+                <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse71" aria-expanded="false" aria-controls="collapse71">
+                        <i class="icon-plus more-less pull-right"></i>
+                        Tab 2
+                    </a>
+                </h4>
+            </div>
+            <div id="collapse71" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading7">
+                <div class="panel-body">
+             <div class="col-md-12 form-padding">
+     <input type="text" class="form-input-new form-control" name="" id="" placeholder="Total Current Asset">
+	         </div>
+			 <div class="col-md-12 form-padding">
+     <input type="text" class="form-input-new form-control" name="" id="" placeholder="Total Current Liability">
+	         </div>
+			 <div class="col-md-12 form-padding">
+     <input type="text" class="form-input-new form-control" name="" id="" placeholder="Total Non-Current Liability">
+	         </div>
+			
+					
+                </div>
+            </div>
+        </div>
+        
+        
+    </div><!-- panel-group -->
+	</div>
   
    </div>
 
@@ -249,11 +296,45 @@
       </div>
       <div id="collapse2" class="panel-collapse collapse">
         <div class="panel-body">
+		   
 		   <div class="scenario">
-								<div class="col-xs-12 pad-no scenario-active"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_1"  class="radio1" checked >Type 1</a></div>
-								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_2" class="radio1">Type 2</a></div>
-								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_3" class="radio1">Type 3</a></div>
-								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Type 4</a></div>
+								<div class="col-xs-12 col-md-6 pad-no scenario-active"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_1"  class="radio1" checked >Agriculture </a></div>
+								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_2" class="radio1">Auto Components </a></div>
+								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_3" class="radio1">Automobiles</a></div>
+								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Aviation</a></div>
+								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Banking</a></div>
+								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Biotechnology </a></div>
+								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Cement</a></div>
+								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Consumer Markets</a></div>
+								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Education And Training </a></div>
+								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Engineering</a></div>
+								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Financial Services</a></div>
+								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Food Industry</a></div>
+								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Gems And Jewellery </a></div>
+								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Healthcare</a></div>
+								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Infrastructure</a></div>
+								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Insurance </a></div>
+								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">IT & ITeS</a></div>
+								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Manufacturing</a></div>
+								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Marketing And Strategy</a></div>
+								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Media & Entertainment </a></div>
+								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Oil And Gas</a></div>
+								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Pharmaceuticals</a></div>
+								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Ports</a></div>
+								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Power</a></div>
+								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Railways</a></div>
+								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Real Estate</a></div>
+								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Research And Development</a></div>
+								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Retail</a></div>
+								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Roads</a></div>
+								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Rural Market </a></div>
+								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Science And Technology </a></div>
+								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Semiconductor</a></div>
+								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Services</a></div>
+								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Steel </a></div>
+								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Telecommunications </a></div>
+								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Textiles</a></div>
+								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Tourism And Hospitality </a></div>
 								
 							</div>
 		</div>
@@ -322,6 +403,7 @@
         
         
     </div><!-- panel-group -->
+	<a class="btn btn-primary btn-outline with-arrow" id="" data-toggle="modal">Apply Now<i class="icon-arrow-right"></i></a>
   </div>
   
   

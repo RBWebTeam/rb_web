@@ -615,4 +615,35 @@ Rupeeboss Financial Services Private Limited shall access your Credit Informatio
 
   </div>
 </div>
+<div id="tribe_doc_upload_modal" class="modal fade" role="dialog">
+<form id="kyc_form" name="kyc_form" enctype="multipart/form-data" >
+        {{ csrf_field() }}
+    <input type="hidden" name="app_id" class="app_id">
+    <input type="hidden" name="uplaoding_doc_name" id="uplaoding_doc_name">
+  <div class="modal-dialog">
+ <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+         <h4 class="modal-title">Add Document</h4>
+      </div>
+    <!-- Modal content-->
+    <div class="modal-content pad1">
+
+     <label >Document title</label>
+      <input type="text" name="document_title" required >
+      <label >Upload File</label>
+      <input type="file" name="document_itself" required>
+        <div style="display: none;" id="doc_special_fields">
+            <label >Document Year</label>
+            <input type="file" name="document_year" required>
+            <label >Document Type</label>
+            <input type="file" name="document_type" required>
+        </div>
+       <a class="btn btn-primary btn-outline with-arrow " >cancel</a>
+      <a class="btn btn-primary btn-outline with-arrow " id="upload_doc_submit">Save</a>
+      
+    </div>
+
+  </div>
+  </form>
+</div>
 

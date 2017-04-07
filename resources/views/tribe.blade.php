@@ -377,87 +377,105 @@
     </form>
     
     <div id="main4" class="tab-pane fade">
-      <form id="kyc_form" name="kyc_form" enctype="multipart/form-data" >
-        {{ csrf_field() }}
-        <input type="hidden" name="app_id" class="app_id">
+     
     <h3 class="mrg-top">KYC Identity Proof(Atleast one document is required)</h3>
   <hr>
-    <div class="col-md-3">Pan</div>
+    <div class="col-md-4">Pan</div>
     <div class="col-md-8">
-
-    <input type="file" name="1" id="docpan"  class="form-control form-group no-border"/>
+     <a class="btn btn-primary btn-outline with-arrow pull-right" onclick="tribe_doc_upload(1)">Add Document<i class="icon-arrow-right"></i></a>
+   
     </div>
     
-    <div class="col-md-3">Aadhaar</div>
+    <div class="col-md-4">Aadhaar</div>
     <div class="col-md-8">
-    <input type="file" name="2"  id="doc_aadhar" class="form-control form-group no-border"/></div>
+    <a class="btn btn-primary btn-outline with-arrow pull-right" onclick="tribe_doc_upload(2)">Add Document<i class="icon-arrow-right"></i></a>
     
-    <div class="col-md-3">Driving License </div>
-    <div class="col-md-8">
-     <input type="file" name="3" id="doc_dl" class="form-control form-group no-border"/>
     </div>
     
-    <div class="col-md-3">Passport</div>
+    <div class="col-md-4">Driving License </div>
     <div class="col-md-8">
-     <input type="file" name="4" id="doc_passport" class="form-control form-group no-border"/>
+    <a class="btn btn-primary btn-outline with-arrow pull-right" onclick="tribe_doc_upload(3)">Add Document<i class="icon-arrow-right"></i></a>
+    
     </div>
     
-    <div class="col-md-3">Voter ID</div>
+    <div class="col-md-4">Passport</div>
     <div class="col-md-8">
-     <input type="file" name="5"  id="doc_voter" class="form-control form-group no-border"/>
+    <a class="btn btn-primary btn-outline with-arrow pull-right" onclick="tribe_doc_upload(4)">Add Document<i class="icon-arrow-right"></i></a>
+    
+    </div>
+    
+    <div class="col-md-4">Voter ID</div>
+    <div class="col-md-8">
+    <a class="btn btn-primary btn-outline with-arrow pull-right" onclick="tribe_doc_upload(5)">Add Document<i class="icon-arrow-right"></i></a>
+    
     </div>
     <div class="col-md-12">
     <h3 class="mrg-top">Address Proof</h3><hr>
   </div>
-  <div class="col-md-3">Electricity Bill</div>
+  <div class="col-md-4">Electricity Bill</div>
     <div class="col-md-8">
-     <input type="file" name="6" id="doc_electricity_bill" class="form-control form-group no-border"/>
+    <a class="btn btn-primary btn-outline with-arrow pull-right" onclick="tribe_doc_upload(6)">Add Document<i class="icon-arrow-right"></i></a>
+     
     </div>
     
-    <div class="col-md-3">Leave and License Agreement</div>
+    <div class="col-md-4">Leave and License Agreement</div>
     <div class="col-md-8">
-    <input type="file" name="7" id="doc_leave_license" class="form-control form-group no-border"/></div>
+    <a class="btn btn-primary btn-outline with-arrow pull-right" onclick="tribe_doc_upload(7)">Add Document<i class="icon-arrow-right"></i></a>
+   
+    </div>
     
     <div class="col-md-12">
     <h3 class="mrg-top">Business KYC</h3><hr>
   </div>
-    <div class="col-md-3">Registration Certificate</div>
+    <div class="col-md-4">Registration Certificate</div>
     <div class="col-md-8">
-    <input type="file" id="doc_reg_certification" name="8" class="form-control form-group no-border"/></div>
+    <a class="btn btn-primary btn-outline with-arrow pull-right" onclick="tribe_doc_upload(8)">Add Document<i class="icon-arrow-right"></i></a>
     
-    <div class="col-md-3">Tax Registration</div>
+    </div>
+    
+    <div class="col-md-4">Tax Registration</div>
     <div class="col-md-8">
-    <input type="file" id="doc_tax_registration" name="9" class="form-control form-group no-border"/></div>
+    <a class="btn btn-primary btn-outline with-arrow pull-right" onclick="tribe_doc_upload(9)">Add Document<i class="icon-arrow-right"></i></a>
     
+    </div>
+
+    <div class="col-md-4">Company PAN</div>
+    <div class="col-md-8">
+    <a class="btn btn-primary btn-outline with-arrow pull-right" onclick="tribe_doc_upload(11)">Add Document<i class="icon-arrow-right"></i></a>
+   
+    </div>
+
     <div class="col-md-12">
     <h3 class="mrg-top">Business Documents</h3><hr>
   </div>
-    <div class="col-md-3">Company IT Returns</div>
+    <div class="col-md-4">Company IT Returns</div>
     <div class="col-md-8">
-    <input type="file" name="10" id="doc_comapny_it_returns" class="form-control form-group no-border"/></div>
+    <a class="btn btn-primary btn-outline with-arrow pull-right" onclick="tribe_doc_upload(10)">Add Document<i class="icon-arrow-right"></i></a>
+  
+    </div>
     
-    <div class="col-md-3">Company PAN</div>
-    <div class="col-md-8">
-    <input type="file" name="11" id="doc_company_pan" class="form-control form-group no-border"/></div>
     
-     <div class="col-md-3">ITR/VAT Returns/ST Returns</div>
+    
+     <div class="col-md-4">ITR/VAT Returns/ST Returns</div>
     <div class="col-md-8">
-    <input type="file" name="12" id="doc_vat_return" class="form-control form-group no-border"/></div>
+    <a class="btn btn-primary btn-outline with-arrow pull-right" onclick="tribe_doc_upload(12)">Add Document<i class="icon-arrow-right"></i></a>
+    
+    </div>
     
     <div class="col-md-12">
     <h3 class="mrg-top">Other Documents</h3><hr>
   </div>
-    <div class="col-md-3">Personal IT Returns</div>
+    <div class="col-md-4">Personal IT Returns</div>
     <div class="col-md-8">
-    <input type="file"  name="13" class="form-control form-group no-border"/></div>
-    
-    <div class="col-md-3">Other Documents</div>
-    <div class="col-md-8">
-    <input type="file" name="14"  class="form-control form-group no-border"/>
-    <a class="btn btn-primary btn-outline with-arrow " id="upload_doc_submit">Upload<i class="icon-arrow-right"></i></a>
-    <a class="btn btn-primary btn-outline with-arrow"  onclick="go_back('main6')">Back<i class="icon-arrow-right"></i></a>
+    <a class="btn btn-primary btn-outline with-arrow pull-right" onclick="tribe_doc_upload(13)">Add Document<i class="icon-arrow-right"></i></a>
+  
     </div>
-    </form>
+    
+    <div class="col-md-4">Other Documents</div>
+    <div class="col-md-8">
+    <a class="btn btn-primary btn-outline with-arrow pull-right" onclick="tribe_doc_upload(14)">Add Document<i class="icon-arrow-right"></i></a>
+    </div>
+    
     </div>
 
     <div id="main7" class="tab-pane fade">
@@ -586,6 +604,10 @@ if($('#tribe_loan_form').valid()){
    }
 });
 $("#upload_doc_submit").click(function(){
+  //console.log($(this).closest("form").attr('id'));
+    if(!$('#kyc_form').valid()){
+      return false;
+    }
     var CSRF_TOKEN = $('input[name="_token"]').val();                    
     var form_url="{{URL::to('upload-tribe-doc')}}";
 $.ajax({
@@ -598,7 +620,7 @@ $.ajax({
       contentType: false,
       success:function(response){
         console.log(response);
-        $( "#nav7").trigger( "click" );
+        $('#tribe_doc_upload_modal').modal('hide');   
       },
     });
  });
@@ -640,10 +662,9 @@ $('#freeze_form').click(function(){
               if(msg.status){
                   $('.app_id').val(msg.tribe);
                   $('#loan_id').val(mag.loan_id);
-
-                 $( "#nav4").trigger( "click" );
+                  $( "#nav4").trigger( "click" );
                 }else{
-                  console.log("error"+msg);
+                  console.log("error "+msg);
                  // window.location.href="{{URL::to('went-wrong')}}";
                 }
                }
@@ -662,4 +683,16 @@ $('#pdf_has_pwd').change(function(){
         $('#pdf_password').val('');
    }
 });
+
+function tribe_doc_upload(id){
+    $('#tribe_doc_upload_modal').modal('show');
+
+    $('#uplaoding_doc_name').val(id);
+    if(id==10 || id==13){
+      $('#doc_special_fields').show();
+    }else{
+       $('#doc_special_fields').hide();
+    }
+}
   </script>
+

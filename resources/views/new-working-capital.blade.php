@@ -58,7 +58,9 @@
 	<center><div class="type-cover"><span>Date of Incorporation</span></div></center>
      <input class="form-input-new form-control lastReporteddate1" type="text" name="date" id="date" placeholder="Date Of Incorporation">
 	</div>
- <div class="col-md-12 form-padding"><input type="text"class="form-input-new form-control" placeholder="Loan Amount Required in Crores"></div>
+ <div class="col-md-12 form-padding">
+ <input type="text" class="form-input-new form-control" name="loan_amount" id="loan_amount" placeholder="Loan Amount Required in Crores" onkeypress="return isNumberKey(event)" required>
+ </div>
  
     <div class="col-md-12 pad-no">
 <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
@@ -79,41 +81,69 @@
 
    <center><div class="type-cover"><span>Inventory</span></div></center>
    </div>
-   <div class="col-md-4 form-padding"><input type="text"class="form-input-new form-control" placeholder="1 Year"></div>
-   <div class="col-md-4 form-padding"><input type="text"class="form-input-new form-control" placeholder="2 Year"></div>
-   <div class="col-md-4 form-padding"><input type="text"class="form-input-new form-control" placeholder="3 Year"></div>
+   <div class="col-md-4 form-padding">
+   <input type="text" class="form-input-new form-control" name="inventory_1" id="inventory_1" onkeypress="return isNumberKey(event)" required  placeholder="1 Year">
+   </div>
+   <div class="col-md-4 form-padding">
+   <input type="text" class="form-input-new form-control" name="inventory_2" id="inventory_2" onkeypress="return isNumberKey(event)" required placeholder="2 Year">
+   </div>
+   <div class="col-md-4 form-padding">
+   <input type="text" class="form-input-new form-control" name="inventory_3" id="inventory_3" onkeypress="return isNumberKey(event)" required placeholder="3 Year">
+   </div>
  </div>
+
  <div>
    <div class="col-md-12 pad-no">
    <center><div class="type-cover"><span>Debtors</span></div></center>
    </div>
-   <div class="col-md-4 form-padding"><input type="text"class="form-input-new form-control" placeholder="1 Year"></div>
-   <div class="col-md-4 form-padding"><input type="text"class="form-input-new form-control" placeholder="2 Year"></div>
-   <div class="col-md-4 form-padding"><input type="text"class="form-input-new form-control" placeholder="3 Year"></div>
+   <div class="col-md-4 form-padding">
+   <input type="text" class="form-input-new form-control" name="debtors_1" id="debtors_1" onkeypress="return isNumberKey(event)" required placeholder="1 Year">
+   </div>
+   <div class="col-md-4 form-padding">
+   <input type="text" class="form-input-new form-control" name="debtors_2" id="debtors_2" onkeypress="return isNumberKey(event)" required placeholder="2 Year">
+   </div>
+   <div class="col-md-4 form-padding">
+   <input type="text" class="form-input-new form-control" name="debtors_3" id="debtors_3" onkeypress="return isNumberKey(event)" required placeholder="3 Year">
+   </div>
  </div>
+
  <div>
    <div class="col-md-12 pad-no">
    <center><div class="type-cover"><span>Creditors</span></div></center>
    </div>
-   <div class="col-md-4 form-padding"><input type="text"class="form-input-new form-control" placeholder="1 Year"></div>
-   <div class="col-md-4 form-padding"><input type="text"class="form-input-new form-control" placeholder="2 Year"></div>
-   <div class="col-md-4 form-padding"><input type="text"class="form-input-new form-control" placeholder="3 Year"></div>
+   <div class="col-md-4 form-padding">
+   <input type="text" class="form-input-new form-control" name="creditors_1" id="creditors_1" onkeypress="return isNumberKey(event)" required placeholder="1 Year">
+   </div>
+   <div class="col-md-4 form-padding">
+   <input type="text" class="form-input-new form-control" name="creditors_2" id="creditors_2" onkeypress="return isNumberKey(event)" required placeholder="2 Year">
+   </div>
+   <div class="col-md-4 form-padding">
+   <input type="text" class="form-input-new form-control" name="creditors_3" id="creditors_3" onkeypress="return isNumberKey(event)" required placeholder="3 Year">
+   </div>
  </div>
+
  <div>
    <div class="col-md-12 pad-no">
    <center><div class="type-cover"><span>Share Capital</span></div></center>
    </div>
-   <div class="col-md-4 form-padding"><input type="text"class="form-input-new form-control" placeholder="1 Year"></div>
-   <div class="col-md-4 form-padding"><input type="text"class="form-input-new form-control" placeholder="2 Year"></div>
-   <div class="col-md-4 form-padding"><input type="text"class="form-input-new form-control" placeholder="3 Year"></div>
+   <div class="col-md-4 form-padding">
+   <input type="text" class="form-input-new form-control" name="share_capital_1" id="share_capital_1" onkeypress="return isNumberKey(event)" required placeholder="1 Year">
+   </div>
+   <div class="col-md-4 form-padding">
+   <input type="text" class="form-input-new form-control" name="share_capital_2" id="share_capital_2" onkeypress="return isNumberKey(event)" required placeholder="2 Year">
+   </div>
+   <div class="col-md-4 form-padding">
+   <input type="text" class="form-input-new form-control" name="share_capital_3" id="share_capital_3" onkeypress="return isNumberKey(event)" required placeholder="3 Year">
+   </div>
  </div>
+
  <div>
    <div class="col-md-12 pad-no">
    <center><div class="type-cover"><span>Reserve Surplus</span></div></center>
    </div>
-   <div class="col-md-4 form-padding"><input type="text"class="form-input-new form-control" placeholder="1 Year"></div>
-   <div class="col-md-4 form-padding"><input type="text"class="form-input-new form-control" placeholder="2 Year"></div>
-   <div class="col-md-4 form-padding"><input type="text"class="form-input-new form-control" placeholder="3 Year"></div>
+   <div class="col-md-4 form-padding"><input type="text" class="form-input-new form-control" name="reserve_surplus_1" id="reserve_surplus_1" onkeypress="return isNumberKey(event)" required  placeholder="1 Year"></div>
+   <div class="col-md-4 form-padding"><input type="text" class="form-input-new form-control" name="reserve_surplus_2" id="reserve_surplus_2" onkeypress="return isNumberKey(event)" required  placeholder="2 Year"></div>
+   <div class="col-md-4 form-padding"><input type="text" class="form-input-new form-control" name="reserve_surplus_3" id="reserve_surplus_3" onkeypress="return isNumberKey(event)" required  placeholder="3 Year"></div>
  </div>
 </div>
 				
@@ -133,13 +163,13 @@
             <div id="collapse71" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading7">
                 <div class="panel-body">
              <div class="col-md-12 form-padding">
-     <input type="text" class="form-input-new form-control" name="" id="" placeholder="Total Current Asset">
+     <input type="text" class="form-input-new form-control" name="total_current_assest" id="total_current_assest" onkeypress="return isNumberKey(event)" required placeholder="Total Current Asset">
 	         </div>
 			 <div class="col-md-12 form-padding">
-     <input type="text" class="form-input-new form-control" name="" id="" placeholder="Total Current Liability">
+     <input type="text" class="form-input-new form-control" name="total_current_liability" id="total_current_liability" onkeypress="return isNumberKey(event)" required placeholder="Total Current Liability">
 	         </div>
 			 <div class="col-md-12 form-padding">
-     <input type="text" class="form-input-new form-control" name="" id="" placeholder="Total Non-Current Liability">
+     <input type="text" class="form-input-new form-control" name="total_non_current_liability" id="total_non_current_liability" onkeypress="return isNumberKey(event)" required placeholder="Total Non-Current Liability">
 	         </div>
 			
 					
@@ -174,25 +204,25 @@
    <div class="col-md-12 pad-no">
    <center><div class="type-cover"><span>Turnover/Topline</span></div></center>
    </div>
-   <div class="col-md-4 form-padding"><input type="text"class="form-input-new form-control" placeholder="1 Year"></div>
-   <div class="col-md-4 form-padding"><input type="text"class="form-input-new form-control" placeholder="2 Year"></div>
-   <div class="col-md-4 form-padding"><input type="text"class="form-input-new form-control" placeholder="3 Year"></div>
+   <div class="col-md-4 form-padding"><input type="text" name="turnover_1" id="turnover_1" onkeypress="return isNumberKey(event)" required class="form-input-new form-control" placeholder="1 Year"></div>
+   <div class="col-md-4 form-padding"><input type="text" name="turnover_2" id="turnover_2" onkeypress="return isNumberKey(event)" required class="form-input-new form-control" placeholder="2 Year"></div>
+   <div class="col-md-4 form-padding"><input type="text" name="turnover_3" id="turnover_3" onkeypress="return isNumberKey(event)" required class="form-input-new form-control" placeholder="3 Year"></div>
  </div>
  <div>
    <div class="col-md-12 pad-no">
-   <center><div class="type-cover"><span>Ebidta</span></div></center>
+   <center><div class="type-cover"><span>EBIT</span></div></center>
    </div>
-   <div class="col-md-4 form-padding"><input type="text"class="form-input-new form-control" placeholder="1 Year"></div>
-   <div class="col-md-4 form-padding"><input type="text"class="form-input-new form-control" placeholder="2 Year"></div>
-   <div class="col-md-4 form-padding"><input type="text"class="form-input-new form-control" placeholder="3 Year"></div>
+   <div class="col-md-4 form-padding"><input type="text" name="ebit_1" id="ebit_1" onkeypress="return isNumberKey(event)" required class="form-input-new form-control" placeholder="1 Year"></div>
+   <div class="col-md-4 form-padding"><input type="text" name="ebit_2" id="ebit_2" onkeypress="return isNumberKey(event)" required class="form-input-new form-control" placeholder="2 Year"></div>
+   <div class="col-md-4 form-padding"><input type="text" name="ebit_3" id="ebit_3" onkeypress="return isNumberKey(event)" required class="form-input-new form-control" placeholder="3 Year"></div>
  </div>
  <div>
    <div class="col-md-12 pad-no">
    <center><div class="type-cover"><span>Profit Before Tax</span></div></center>
    </div>
-   <div class="col-md-4 form-padding"><input type="text"class="form-input-new form-control" placeholder="1 Year"></div>
-   <div class="col-md-4 form-padding"><input type="text"class="form-input-new form-control" placeholder="2 Year"></div>
-   <div class="col-md-4 form-padding"><input type="text"class="form-input-new form-control" placeholder="3 Year"></div>
+   <div class="col-md-4 form-padding"><input type="text" class="form-input-new form-control" name="profit_before_tax_1" id="profit_before_tax_1" onkeypress="return isNumberKey(event)" placeholder="1 Year"></div>
+   <div class="col-md-4 form-padding"><input type="text" class="form-input-new form-control" name="profit_before_tax_2" id="profit_before_tax_2" onkeypress="return isNumberKey(event)" placeholder="2 Year"></div>
+   <div class="col-md-4 form-padding"><input type="text" class="form-input-new form-control" name="profit_before_tax_3" id="profit_before_tax_3" onkeypress="return isNumberKey(event)" placeholder="3 Year"></div>
  </div>
  <div>
    <div class="col-md-12 pad-no">

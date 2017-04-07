@@ -20,9 +20,9 @@
 	   <div class="btn-grp mrg-top pad status" data-toggle="buttons">
 	  
 		<center><div class="type-cover"><span>Company Type</span></div></center>
-      <span class="btn btn-default outer-brd active"><input type="radio" name="proprietor"  value="Sole Proprietor">Sole Proprietor</span>
-      <span class="btn btn-default outer-brd"><input type="radio" name="proprietor"  value="Partnership">Partnership</span>
-      <span class="btn btn-default outer-brd"><input  type="radio" name="proprietor"  value="Company" >Company</span>
+      <span class="btn btn-default outer-brd mob-blk-dv active"><input type="radio" name="proprietor"  value="Sole Proprietor">Sole Proprietor</span>
+      <span class="btn btn-default outer-brd mob-blk-dv"><input type="radio" name="proprietor"  value="Partnership">Partnership</span>
+      <span class="btn btn-default outer-brd mob-blk-dv"><input  type="radio" name="proprietor"  value="Company" >Company</span>
       
       </div>
 		</div>
@@ -235,18 +235,15 @@
       <div id="collapse1" class="panel-collapse collapse">
         <div class="panel-body">
 	<div class="scenario">
-								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="natue_of_business" value="Manufacturing" class="radio1"  >MANUFACTURING</a></div>
+								<div class="col-xs-12 pad-no scenario-active"><a class="scenario-1 btn"><input type="radio" name="natue_of_business" value="Manufacturing" class="radio1"  >MANUFACTURING</a></div>
 								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="natue_of_business" value="Trading" class="radio1">TRADING</a></div>
 								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="natue_of_business" value="Services" class="radio1">SERVICES</a></div>
 								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="natue_of_business" value="Retailer" class="radio1">RETAILER</a></div>
-								<div class="col-xs-12 pad-no scenario-active"><a class="scenario-1 btn"><input type="radio" name="natue_of_business" 
+								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="natue_of_business" 
 								value="Others" class="radio1" checked>OTHER</a></div>
 								
 							</div>
-						
-	   
-	   
-		
+
 		</div>
       </div>
     </div>
@@ -279,7 +276,7 @@
 								<div class="col-xs-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">IT & ITeS</a></div>
 								<div class="col-xs-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Manufacturing</a></div>
 								<div class="col-xs-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Marketing And Strategy</a></div>
-								<div class="col-xs-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Media And Entertainment </a></div>
+								<div class="col-xs-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Media & Entertainment </a></div>
 								<div class="col-xs-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Oil And Gas</a></div>
 								<div class="col-xs-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Pharmaceuticals</a></div>
 								<div class="col-xs-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Ports</a></div>

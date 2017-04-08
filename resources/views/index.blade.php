@@ -403,14 +403,14 @@
 					<div class="item-grid">
 						<div class="v-align blu-clr">
 							<div class="v-align-middle">
-	<div id="myCarousel" class="carousel slide" data-ride="carousel1">
+	<div id="myCarousel1" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
   <ol class="carousel-indicators car-gl">
-    <li data-target="#myCarousel" data-slide-to="6" class="active"></li>
-    <li data-target="#myCarousel" data-slide-to="7"></li>
-    <li data-target="#myCarousel" data-slide-to="8"></li>
-    <li data-target="#myCarousel" data-slide-to="9"></li>
-    <li data-target="#myCarousel" data-slide-to="10"></li>
+    <li data-target="#myCarousel1" data-slide-to="6" class="active"></li>
+    <li data-target="#myCarousel1" data-slide-to="7"></li>
+    <li data-target="#myCarousel1" data-slide-to="8"></li>
+    <li data-target="#myCarousel1" data-slide-to="9"></li>
+    <li data-target="#myCarousel1" data-slide-to="10"></li>
   </ol>
 
   <!-- Wrapper for slides -->
@@ -457,7 +457,7 @@ you in future.
 
     <div class="item">
     <h3 class="title">Customers Speak</h3>
-<img src="{{URL::to('images/user-icon.png')}}" alt="Tribe Logo" class="img-responsive user-ico" />							
+<img src="{{URL::to('images/jangam.png')}}" alt="Tribe Logo" class="img-responsive user-ico" />							
 <p> I would like to thank the team for the outstanding service provided in disbursing my loan. It was a smooth process. Thank You. Keep the good work going .
  
  </p>

@@ -20,7 +20,7 @@ class InitialController extends Controller
       //$product_list=InitialController::prod();
 	}
 	public function FileToString($str,$req){
-            print_r($str);exit();
+           // print_r($str);exit();
 		$imageName = time().'.'.$req->$str->getClientOriginalExtension();
             $extension=$req->$str->getClientOriginalExtension();
             $filename = $req->$str->getpathName();//Image path

@@ -620,7 +620,9 @@ $.ajax({
       contentType: false,
       success:function(response){
         console.log(response);
-        $('#tribe_doc_upload_modal').modal('hide');   
+        $('#tribe_doc_upload_modal').modal('hide'); 
+        $('#kyc_form')[0].reset();
+        
       },
     });
  });
@@ -686,7 +688,6 @@ $('#pdf_has_pwd').change(function(){
 
 function tribe_doc_upload(id){
     $('#tribe_doc_upload_modal').modal('show');
-
     $('#uplaoding_doc_name').val(id);
     if(id==10 || id==13){
       $('#doc_special_fields').show();

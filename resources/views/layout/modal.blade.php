@@ -1,4 +1,46 @@
+<!---Instant Call Back Start-->
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Instant Call Back</h4>
+        </div>
+        <div class="modal-body">
+          <form name="instant_call_form" id="instant_call_form" method="post" >
+          {{ csrf_field() }}
+          <input type="hidden" name="form" value="instant_call">
+                  <div>
+                    <fieldset>
+                      <input class="newsletter-name" name="name" placeholder="Name" required>
+                    </fieldset>
+                    </div>
+                  <div>
+                    <fieldset>
+                      <input type="text" class="newsletter-name" name="contact" pattern="[789][0-9]{9}" required maxlength="10" placeholder="Mobile Number">
+                    </fieldset>                 
+                    </div>
+                  <div>
+                      <button class="btn btn-primary btn-outline with-arrow sidebar-submit" id="instant_call_submit">Call Me Back<i class="icon-arrow-right"></i>
+                      </button>
+                </div>
+                <div class="iframeloading" style= "display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
+                <img src="{{URL::to('images/ajaxloader.gif')}}" alt="Loader" title="Loader" style="top: 50%; position: relative; left: 50%;"  />
+               </div>
+                  
 
+            </form>
+            <div class='msg displaynone' ><p>Thanks. We will reach you soon.</p></div>
+            <div class='msg_err displaynone' ><p>Ooops. Something went wrong.</p></div>
+            
+        </div>
+        
+      </div>
+      
+    </div>
+  </div>
 <!---Instant Call Back End -->
 <!---Talk to us Start -->
 <div class="modal fade" id="myModal1" role="dialog">
@@ -587,16 +629,30 @@ Rupeeboss Financial Services Private Limited shall access your Credit Informatio
     <div class="modal-content pad1">
 
      <label >Document title</label>
-      <input type="text" name="document_title" required >
+      <input type="text" name="document_title" id="tribe_document_title" required >
       <label >Upload File</label>
-      <input type="file" name="document_itself" required>
+      <input type="file" name="document_itself" id="tribe_document_itself" required>
         <div style="display: none;" id="doc_special_fields">
             <label >Document Year</label>
-            <input type="file" name="document_year" required>
+            <select name="document_year" class="drop-arr">
+            <option disabled selected>Select Year</option>
+              <option>2013-2014</option>
+              <option>2014-2015</option>
+              <option>2015-2016</option>
+              <option>2016-2017</option>
+              <option>2017-2018</option>
+              <option>2018-2019</option>
+              <option>2019-2020</option>
+            </select>
             <label >Document Type</label>
-            <input type="file" name="document_type" required>
+             <select name="document_type" class="drop-arr">
+             <option disabled selected>Select</option>
+              <option>IT Returns</option>
+              <option>IT Acknowledgement</option>
+              
+            </select>
         </div>
-       <a class="btn btn-primary btn-outline with-arrow " >cancel</a>
+       <a class="btn btn-primary btn-outline with-arrow" data-dismiss="modal" >cancel</a>
       <a class="btn btn-primary btn-outline with-arrow " id="upload_doc_submit">Save</a>
       
     </div>
@@ -605,48 +661,3 @@ Rupeeboss Financial Services Private Limited shall access your Credit Informatio
   </form>
 </div>
 
-
-
-<!---Instant Call Back Start-->
-<div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog">
-    
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Instant Call Back dsgregdfg</h4>
-        </div>
-        <div class="modal-body">
-          <form name="instant_call_form" id="instant_call_form" method="post" >
-          {{ csrf_field() }}
-          <input type="hidden" name="form" value="instant_call">
-                  <div>
-                    <fieldset>
-                      <input class="newsletter-name" name="name" placeholder="Name" required>
-                    </fieldset>
-                    </div>
-                  <div>
-                    <fieldset>
-                      <input type="text" class="newsletter-name" name="contact" pattern="[789][0-9]{9}" required maxlength="10" placeholder="Mobile Number">
-                    </fieldset>                 
-                    </div>
-                  <div>
-                      <button class="btn btn-primary btn-outline with-arrow sidebar-submit" id="instant_call_submit">Call Me Back<i class="icon-arrow-right"></i>
-                      </button>
-                </div>
-                <div class="iframeloading" style= "display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
-                <img src="{{URL::to('images/ajaxloader.gif')}}" alt="Loader" title="Loader" style="top: 50%; position: relative; left: 50%;"  />
-               </div>
-                  
-
-            </form>
-            <div class='msg displaynone' ><p>Thanks. We will reach you soon.</p></div>
-            <div class='msg_err displaynone' ><p>Ooops. Something went wrong.</p></div>
-            
-        </div>
-        
-      </div>
-      
-    </div>
-  </div>

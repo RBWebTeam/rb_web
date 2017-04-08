@@ -162,9 +162,9 @@ class TribeController extends CallApiController
 	      	$documents_name_array = array('Pan Card','Aadhar Card','Driving License','Passport','Voter ID','Electricity_bill','Leave and License Agreement','Registration Certificate','Tax Registration','Comapny IT Returns','Company Pan Card','Vat Return','IT Returns','Other');
 	    	
 	        $i=$req['uplaoding_doc_name'];
-            $str=$req['document_itself'];         
+            $str='document_itself';         
             $base64=$this->FileToString($str,$req);
-            $post_data='{"document_category": '.$str.', "title": "'.$req['document_title'].'", "document":"data:application/pdf;base64,'.$base64.'", "tribe": "'.$req['app_id'].'", "secret": "'.TribeController::$secret.'"}';
+            $post_data='{"document_category": "'.$i.'", "title": "'.$req['document_title'].'", "document":"data:application/pdf;base64,'.$base64.'", "tribe": "'.$req['app_id'].'", "secret": "'.TribeController::$secret.'"}';
 			print_r($post_data);exit();
 
 				$url = $this::$url_static."BankAPIService.svc/uploadDocumentsTribeLoan";

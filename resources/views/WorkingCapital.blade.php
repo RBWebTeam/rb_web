@@ -336,7 +336,7 @@
 
 		</div>
 
-		<button class="btn btn-success aply-btn">Apply Now</button>
+		<a href="{{url('new-working-capital')}}" class="btn btn-success aply-btn">Apply Now</a>
 
  </div>
 </div>

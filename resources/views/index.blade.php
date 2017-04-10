@@ -414,10 +414,10 @@
   </ol>
 
   <!-- Wrapper for slides -->
-  <div class="carousel-inner" role="listbox">
+  <div class="carousel-inner carousel1" role="listbox">
   <div class="item active">
       <h3 class="title">Customers Speak</h3>
-<img src="{{URL::to('images/rahil.png')}}" alt="Tribe Logo" class="img-responsive user-ico" />							
+<img src="{{URL::to('images/rahil.png')}}" alt="Tribe Logo" class="img-responsive user-ico" width="60px;" height="60px;" />							
 <p>I'm thankful of the services I have been offered by your staff.Looking forward for 
 more business.I would like to recommend about your services to my family and friends.  
  </p>
@@ -425,7 +425,7 @@ more business.I would like to recommend about your services to my family and fri
     </div>
     <div class="item">
       <h3 class="title">Customers Speak</h3>
-	<img src="{{URL::to('images/user-icon.png')}}" alt="Tribe Logo" class="img-responsive user-ico" />				
+	<img src="{{URL::to('images/user-icon.png')}}" alt="Tribe Logo" class="img-responsive user-ico" width="60px;" height="60px;"/>				
 <p> I found them professional, straightforward, and since they don’t push you to apply for a specific bank, they are impartial. On a long term basis one needs an intermediary as a one stop shop and these guys seems to be in the business for long term. Their experts follow up on time, give a frank advise, clarify everything so that one does not feel cheated and make a wise decision to save money. </p>
 
 <p class="align-right">Ashish Sharma</p>
@@ -435,7 +435,7 @@ more business.I would like to recommend about your services to my family and fri
 
     <div class="item">
     <h3 class="title">Customers Speak</h3>
-<img src="{{URL::to('images/user-icon.png')}}" alt="Tribe Logo" class="img-responsive user-ico" />							
+<img src="{{URL::to('images/user-icon.png')}}" alt="Tribe Logo" class="img-responsive user-ico" width="60px;" height="60px;"/>							
 <p> Thanks a lot for processing my personal loan in time. I would like to give you 
 special thanks for the service given by you. Your personal visits to my office 
 for all documentation and other queries saved my personal as well as official
@@ -446,7 +446,7 @@ time a lot. I appreciate your positive approach towards customer needs and satis
 
     <div class="item">
     <h3 class="title">Customers Speak</h3>
-<img src="{{URL::to('images/user-icon.png')}}" alt="Tribe Logo" class="img-responsive user-ico" />							
+<img src="{{URL::to('images/user-icon.png')}}" alt="Tribe Logo" class="img-responsive user-ico" width="60px;" height="60px;"/>							
 <p> Great Work. I appreciate your efforts for disbursement of my loan in time. Your strong followup and deep subject 
 knowledge helped me to get loan amount in time. Keep up the good work,expecting the same support from 
 you in future.
@@ -457,7 +457,7 @@ you in future.
 
     <div class="item">
     <h3 class="title">Customers Speak</h3>
-<img src="{{URL::to('images/jangam.png')}}" alt="Tribe Logo" class="img-responsive user-ico" />							
+<img src="{{URL::to('images/jangam.png')}}" alt="Tribe Logo" class="img-responsive user-ico" width="60px;" height="60px;"/>							
 <p> I would like to thank the team for the outstanding service provided in disbursing my loan. It was a smooth process. Thank You. Keep the good work going .
  
  </p>

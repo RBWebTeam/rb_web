@@ -7,7 +7,7 @@ use App\Http\Requests;
 use Session;
 use DB;
 use Response;
-class WorkingCapitalController extends Controller
+class WorkingCapitalController extends CallApiController
 {
       public function WorkingCapital(){
 
@@ -235,6 +235,12 @@ public function NewWorkingCapital(){
          return view('new-working-capital');
 }
 
+public function working_capital_submit(Request $req){
+  print_r($req->all());exit();
+  $post_data='{"company_type":"'.$req->proprietor.'"," exportimport":"'.$req->exchange.'","company_name":"'.$req->company.'","date_of_incorp ":"'.$req->date.'","loan_required ":"'.$req->loan_amount.'","total_current_asset":"'.$req->total_current_assest.'","total_current_liable":"'.$req->total_current_liability.'","total_noncurrent_liable":"'.$req->total_non_current_liability.'","inventory_oneyr_amt":"'.$req->inventory_1.'","inventory_twoyr_amt":"'.$req->inventory_2.'","inventory_threeyr_amt":"'.$req->inventory_3.'","debtor_oneyr_amt":"'.$req->debtors_1.'","debtor_twoyr_amt":"'.$req->debtors_2.'","debtor_threeyr_amt":"'.$req->debtors_3.'","creditor_oneyr_amt":"'.$req->creditors_1.'","creditor_twoyr_amt":"'.$req->creditors_2.'","creditor_threeyr_amt":"'.$req->creditors_3.'","sharecap_oneyr_amt":"'.$req->share_capital_1.'","sharecap_twoyr_amt":"'.$req->share_capital_2.'","sharecap_threeyr_amt":"'.$req->share_capital_3.'","reserve_oneyr_amt":"'.$req->reserve_surplus_1.'","reserve_twoyr_amt":"'.$req->reserve_surplus_2.'","reserve_threeyr_amt":"'.$req->reserve_surplus_3.'","turnover_oneyr_amt":"'.$req->turnover_1.'","turnover_twoyr_amt":"'.$req->turnover_2.'","turnover_threeyr_amt":"'.$req->turnover_3.'","ebit_oneyr_amt":"'.$req->ebit_1.'","ebit_twoyr_amt":"'.$req->ebit_2.'","ebit_threeyr_am":"'.$req->ebit_3.'","pbt_oneyr_amt":"'.$req->profit_before_tax_1.'"," pbt_twoyr_amt":"'.$req->profit_before_tax_2.'","pbt_threeyr_amt":"'.$req->profit_before_tax_3.'","pat_oneyr_amt":"'.$req->profit_after_tax_1.'","pat_twoyr_amt":"'.$req->profit_after_tax_2.'","pat_threeyr_amt":"'.$req->profit_after_tax_3.'","depre_oneyr_amt":"'.$req->depreciation_1.'","depre_twoyr_amt":"'.$req->depreciation_2.'","depre_threeyr_amt":"'.$req->depreciation_3.'","termloan_oneyr_amt":"'.$req->existing_term_1.'","termloan_twoyr_amt":"'.$req->existing_term_2.'","termloan_threeyr_amt":"'.$req->existing_term_3.'","odcc_oneyr_amt":"'.$req->existing_OD_1.'","odcc_twoyr_amt":"'.$req->existing_OD_2.'","odcc_threeyr_amt":"'.$req->existing_OD_3.'","interestpaid_oneyr_amt":"'.$req->interest_paid_1.'","interestpaid_twoyr_amt":"'.$req->interest_paid_2.'","interestpaid_threeyr_amt":"'.$req->interest_paid_3.'","currentroi_oneyr_amt":"'.$req->current_rate_1.'","currentroi_twoyr_amt":"'.$req->current_rate_2.'","currentroi_threeyr_amt":"'.$req->current_rate_3.'","nature_of_business":"'.$req->nature_of_business.'","industry_type":"'.$req->industry_name.'","residence_type":"'.$req->residence_type.'","office_type":"'.$req->office_type.'","customer_name ":"'.$req->customer_name .'","customer_contact":"'.$req->customer_contact.'","customer_email":"'.$req->customer_email.'"}';
+  $post_data=json_encode($req->all());
+  print_r($post_data);
 
+}
 
 }

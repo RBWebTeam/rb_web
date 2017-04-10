@@ -39,7 +39,7 @@
 		</div>
     <div class="item active">
 	<div class="slide-txt">
-	<i class="sprite sprite-home-ic center-img-align img-responsive hidden-sm"></i>
+	<i class="sprite sprite-home-ic center-img-align img-responsive hidden-xs"></i>
 	<h2>Home Loan </h2>
    <h4>Choose the right Home Loan for you ...!!</h4>
    <a href="{{URL::to('home-loan')}}" class="btn btn-primary btn-lg btn-view">View More</a>
@@ -49,7 +49,7 @@
 
     <div class="item">
 	<div class="slide-txt">
-	<i class="sprite sprite-personal-ic center-img-align img-responsive hidden-sm"></i>
+	<i class="sprite sprite-personal-ic center-img-align img-responsive hidden-xs"></i>
 	<h2>Personal Loan </h2>
    <h4>Finance Your Dreams...!!</h4>
    <a href="{{URL::to('personal-loan')}}" class="btn btn-primary btn-lg btn-view">View More</a>
@@ -59,7 +59,7 @@
 
     <div class="item">
 	<div class="slide-txt">
-	<i class="sprite sprite-lap-ic center-img-align img-responsive hidden-sm"></i>
+	<i class="sprite sprite-lap-ic center-img-align img-responsive hidden-xs"></i>
 	<h2>Loan Against Property</h2>
    <h4>Finding you a better Deal...!!</h4>
    <a href="{{URL::to('loan-against-property')}}" class="btn btn-primary btn-lg btn-view">View More</a>
@@ -69,7 +69,7 @@
 
     <div class="item">
 	<div class="slide-txt">
-	<i class="sprite sprite-sme-ic center-img-align img-responsive hidden-sm"></i>
+	<i class="sprite sprite-sme-ic center-img-align img-responsive hidden-xs"></i>
 	<h2>SME Loan</h2>
 
    <h4>We Support Make in India..!!</h4>
@@ -79,7 +79,7 @@
     </div>
 	<div class="item">
 	<div class="slide-txt" >
-	<i class="sprite sprite-balance-ic center-img-align img-responsive hidden-sm"></i>
+	<i class="sprite sprite-balance-ic center-img-align img-responsive hidden-xs"></i>
 	<h4>Unsecured</h4>
 	<h2>Business Loan</h2>
    <h4>Experience on your side...!!</h4>
@@ -90,7 +90,7 @@
     </div>
 	<div class="item">
 	<div class="slide-txt">
-	<i class="sprite sprite-car-ic center-img-align img-responsive hidden-sm"></i>
+	<i class="sprite sprite-car-ic center-img-align img-responsive hidden-xs"></i>
 	<h2>Car Loan</h2>
    <h4>Thinking of your comfort first !!</h4>
    <a href="{{URL::to('car-loan')}}" class="btn btn-primary btn-lg btn-view">View More</a>
@@ -403,18 +403,10 @@
             
 				<div class="col-md-6 col-sm-6 animate-box">
 					<div class="item-grid">
-						<div class="v-align blu-clr">
+						<div class="v-align blu-clr cs-blu-bg">
 							<div class="v-align-middle">
 	<div id="myCarousel1" class="carousel slide" data-ride="carousel">
-  <!-- Indicators -->
-  <ol class="carousel-indicators car-gl">
-    <li data-target="#myCarousel1" data-slide-to="6" class="active"></li>
-    <li data-target="#myCarousel1" data-slide-to="7"></li>
-    <li data-target="#myCarousel1" data-slide-to="8"></li>
-    <li data-target="#myCarousel1" data-slide-to="9"></li>
-    <li data-target="#myCarousel1" data-slide-to="10"></li>
-  </ol>
-
+ 
   <!-- Wrapper for slides -->
   <div class="carousel-inner carousel1" role="listbox">
   <div class="item active">

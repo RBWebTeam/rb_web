@@ -1,5 +1,4 @@
 
-<!---Instant Call Back End -->
 <!---Talk to us Start -->
 <div class="modal fade" id="myModal1" role="dialog">
     <div class="modal-dialog">
@@ -619,6 +618,7 @@ Rupeeboss Financial Services Private Limited shall access your Credit Informatio
   </form>
 </div>
 
+
 <!---Instant Call Back Start-->
 <div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog">
@@ -662,3 +662,5 @@ Rupeeboss Financial Services Private Limited shall access your Credit Informatio
       
     </div>
   </div>
+<!---Instant Call Back End -->
+

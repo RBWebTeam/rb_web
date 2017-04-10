@@ -2,7 +2,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
   <div id="fh5co-hero" ng-app="">
   <form id="tribe_loan_form" method="POST" name="tribe_loan_form" >
-  {{ csrf_field() }}
+  {!! csrf_field() !!}
     <div class="container">
     <h2 class="align-center loan-head">Tribe</h2>
     <div class="col-md-12 pad1 white-bg box-shadow">
@@ -497,8 +497,8 @@
   <!-- modal for bank statement -->
   <div id="tribe_bank_statement_form" class="modal fade" role="dialog" ng-app="bank">
  <form id="bank_statement_form" name="bank_statement_form" enctype="multipart/form-data" method="POST" >
-    {{ csrf_field() }}
-    <input type="hidden" name="loan_id" id="loan_id">
+    {!! csrf_field() !!}
+    <input type="hidden" name="loan_id" class="loan_id">
     <input type="hidden" name="transaction_id" id="transaction_id">
     
         <div class="col-md-3">UPLOAD COMPANY BANK STATEMENTS</div>
@@ -526,8 +526,8 @@
         </div>
        <div class="col-md-3">PDF Password(if any)</div>
         <div class="col-md-8"  >
-        <input type="checkbox" name="pdf_has_pwd" id="pdf_has_pwd" ng-model="pdf_has_pwd">
-        <input type="password" name="pdf_password" id="pdf_password" class="form-control form-group" ng-checked="pdf_has_pwd" /></div>
+        <input type="checkbox" name="pdf_has_pwd" id="pdf_has_pwd" >
+        <input type="password" name="pdf_password" id="pdf_password" class="form-control form-group" style="display: none;" /></div>
         
         <div class="col-md-3"></div>
         <div class="col-md-8 mrg-top">
@@ -619,10 +619,10 @@ $("#upload_doc_submit").click(function(){
     if(!$('#kyc_form').valid()){
       return false;
     }
-    var CSRF_TOKEN = $('input[name="_token"]').val();                    
+   // var CSRF_TOKEN = $('input[name="_token"]').val();                    
     var form_url="{{URL::to('upload-tribe-doc')}}";
 $.ajax({
-      url:form_url + '?_token=' + CSRF_TOKEN,
+      url:form_url ,  
       data:new FormData($("#kyc_form")[0]),
       dataType:'json',
       async:false,
@@ -631,8 +631,13 @@ $.ajax({
       contentType: false,
       success:function(response){
         console.log(response);
-        $('#tribe_doc_upload_modal').modal('hide'); 
-        $('#kyc_form')[0].reset();
+        if(!response.error){
+              
+            $('#kyc_form')[0].reset();
+        }else{
+          console.log("error => "+response.error);
+        }
+        
         
       },
     });
@@ -643,10 +648,10 @@ $("#submit_statement").click(function(){
     return false;
   }
     else{
-    var CSRF_TOKEN = $('input[name="_token"]').val();                    
+   // var CSRF_TOKEN = $('input[name="_token"]').val();                    
     var form_url="{{URL::to('upload-tribe-bank-statement')}}";
     $.ajax({
-          url:form_url + '?_token=' + CSRF_TOKEN,
+          url:form_url ,
           data:new FormData($("#bank_statement_form")[0]),
           dataType:'json',
           async:false,
@@ -656,6 +661,7 @@ $("#submit_statement").click(function(){
           success:function(response){
             console.log(response);
             $('#transaction_id').val(response.transaction_id);
+            //$('.loan_id').val(response.loan_id);
             
           },
         });
@@ -665,11 +671,11 @@ $("#submit_statement").click(function(){
 $('#freeze_form').click(function(){
       //alert($('#tribe_loan_form input[name="_token"]').val());
       var CSRF_TOKEN = $('input[name="_token"]').val();
-     $('#tribe_loan_form').find('input, radio,textarea, button, select').attr('disabled','disabled');
+    // $('#tribe_loan_form').find('input, radio,textarea, button, select').attr('disabled','disabled');
      $('#freeze_form_modal').modal('hide');
     $.ajax({  
              type: "POST",  
-             url: "{{URL::to('save-tribe-form')}}"+ '?_token=' + CSRF_TOKEN,
+             url: "{{URL::to('save-tribe-form')}}",
              data : $('#tribe_loan_form').serialize(),
              success: function(msg){
 
@@ -693,15 +699,15 @@ $('#freeze_form').click(function(){
 $('#decline_freeze').click(function(){
      $('#freeze_form_modal').modal('hide');
 });
-// $('#pdf_has_pwd').change(function(){
-//      if(this.checked == true){
-//         $('#pdf_password').show();
-//     }else{
+$('#pdf_has_pwd').change(function(){
+     if(this.checked == true){
+        $('#pdf_password').show();
+    }else{
 
-//         $('#pdf_password').hide();
-//         $('#pdf_password').val('');
-//    }
-// });
+        $('#pdf_password').hide();
+        $('#pdf_password').val('');
+   }
+});
 
 function tribe_doc_upload(id){
     $('#tribe_doc_upload_modal').modal('show');

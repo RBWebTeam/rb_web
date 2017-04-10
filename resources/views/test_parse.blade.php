@@ -46,7 +46,7 @@
     <div ng-show="checkActive('BASIC DETAIL')">
       <span>Into the basic</span>
     </div>
-    <div ng-show="checkActive('REFERENCE')">
+    <div ng-hide="checkActive('@{{active}}')">
       <span>Into the REFERENCE</span>
     </div>
     <!-- Include AngularJS from Google's CDN -->
@@ -62,7 +62,7 @@
             console.log($scope.active);
           }
           $scope.checkActive=function(check){
-            console.log($scope.active);
+            console.log($scope.active+"asd");
             if($scope.active=='BASIC DETAIL'){
               return true;
             }else{

@@ -153,12 +153,13 @@
 	</div>
 		
 		
-
-		
+    <input type="hidden" class="co_applicant_DI" name="have_co_app_loan" value="No">
 		<!-- Rounded switch -->
 		<div class="col-xs-12 form-padding">
 
-		<label class="switch"> <input type="checkbox" id="co_applicant_DI"><div class="slider round"><span class="co-applicant"> ADD CO-APPLICANT</span></div></label>
+		<label class="switch"> 
+    <input type="checkbox"   id="co_applicant_DI"><div class="slider round">
+    <span class="co-applicant"> ADD CO-APPLICANT</span></div></label>
 		</div>
 		
 		
@@ -238,6 +239,8 @@
 		</div>
       </div>
     </div>
+
+    <div class="valid_ID"></div>
 <br>
     <?php if(Session::get('is_login')) {?>
 							  <?php if(Session::get('contact')!=''){ Session::get('contact'); ?>
@@ -318,10 +321,17 @@
 <script type="text/javascript">
 $(document).ready(function(){
     $('#co_applicant_DI').change(function(){
+
+      $('.co_applicant_DI').val('YES');
+     
         if(this.checked)
            $('#coapplicant_display').show();
-        else
+         // $('#co_applicant_DI').val('YES');
+         else
          $('#coapplicant_display').hide();
+         // $('#co_applicant_DI').val('YES');
+           
+
     });
 
 //    applicacnt 
@@ -406,8 +416,9 @@ $(".product_ID").click(function(e){
 }
 else{
  $('#login_process').removeAttr('id');
-  alert("This field is required.");
+  //alert("This field is required.");
 
+ $('.valid_ID').empty().append('<div style=" color: red" >Please Fill All Inputs</div>');
   
 }
 

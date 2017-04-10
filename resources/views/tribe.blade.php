@@ -622,7 +622,7 @@ $("#upload_doc_submit").click(function(){
    // var CSRF_TOKEN = $('input[name="_token"]').val();                    
     var form_url="{{URL::to('upload-tribe-doc')}}";
 $.ajax({
-      url:form_url ,
+      url:form_url ,  
       data:new FormData($("#kyc_form")[0]),
       dataType:'json',
       async:false,
@@ -631,8 +631,13 @@ $.ajax({
       contentType: false,
       success:function(response){
         console.log(response);
-        $('#tribe_doc_upload_modal').modal('hide'); 
-        $('#kyc_form')[0].reset();
+        if(!response.error){
+              
+            $('#kyc_form')[0].reset();
+        }else{
+          console.log("error => "+response.error);
+        }
+        
         
       },
     });
@@ -656,7 +661,7 @@ $("#submit_statement").click(function(){
           success:function(response){
             console.log(response);
             $('#transaction_id').val(response.transaction_id);
-            $('.loan_id').val(response.loan_id);
+            //$('.loan_id').val(response.loan_id);
             
           },
         });

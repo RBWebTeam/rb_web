@@ -305,7 +305,7 @@
 								<div class="col-xs-6 pad-no scenario-active"><a class="scenario-1 btn"  onclick="alertme('Manufacturing')">
                 Manufacturing</a></div>
 
-                <div class="col-xs-6 pad-no"><a class="scenario-1 btn" onclick="alertme('Auto Trading')">Trading </a></div>
+                <div class="col-xs-6 pad-no"><a class="scenario-1 btn" onclick="alertme('Trading')">Trading </a></div>
                 <div class="col-xs-6 pad-no"><a class="scenario-1 btn" onclick="alertme('Services')">Services</a></div>
                 <div class="col-xs-6 pad-no"><a class="scenario-1 btn" onclick="alertme('Retailer')">Retailer</a></div>
                 <div class="col-xs-6 pad-no"><a class="scenario-1 btn" onclick="alertme('Others')">Others</a></div>
@@ -453,6 +453,39 @@
                 </div>
             </div>
         </div>
+		
+<div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingFour">
+                <h4 class="panel-title">
+                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse711" aria-expanded="true" aria-controls="collapse711">
+                        <i class="icon-plus more-less pull-right"></i>
+                        APPLICANT DETAILS
+                    </a>
+                </h4>
+            </div>
+            <div id="collapse711" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading71">
+                <div class="panel-body">
+                    
+					<div class="col-xs-6 form-padding">
+     <input type="text" id="customer_name" name="customer_name" class="form-input-new form-control" placeholder="Applicant Name" onkeypress="return AllowAlphabet(event)" required >
+                  </div>
+				  <div class="col-xs-6 form-padding">
+     <input type="text" id="customer_email" name="customer_email" class="form-input-new form-control" placeholder="Email Id" oninput="email('customer_email')" required>
+     <span id="email_id" class="pan-error">Enter Valid Email Id.</span>
+                  </div>
+				  <div class="col-xs-6 form-padding">
+     <input type="text" id="customer_contact " name="customer_contact " class="form-input-new form-control" placeholder="Contact No." pattern="[789][0-9]{9}" maxlength="10" onkeypress="return isNumberKey(event)" required>
+                  </div>
+				  
+
+					
+		
+					 
+                </div>
+            </div>
+        </div>
+
+
         
         
     </div><!-- panel-group -->
@@ -474,7 +507,7 @@
           
             <div class="inp-hig">
             <label class="form-label-new">Loan Amount</label>
-              <input type="text" class="form-control" id="loanamount" name="name" value="" placeholder="" required class="clr-ddd" readonly />
+              <input type="text" class="form-control" id="loanamount_new" name="name" value="" placeholder="" required class="clr-ddd" readonly />
             </div>
 
             <div class="inp-hig">
@@ -595,6 +628,11 @@
       $form=$('#'+form);
       if(! $form.valid()){
       }else{
+        var amount = ($("#inventory_3").val()-$("#creditors_3").val())
+        var amt=amount+$("#debtors_3").val()
+        console.log(amt);
+         $('#loanamount').val(amount);
+
         //var s=$('#'+form).serialize();
 
         // $(".iframeloading").show();
@@ -628,4 +666,29 @@
 
 
 </script>
+
+<script type="text/javascript">
+  function email(obj,val){
+    console.log(obj);
+    if(obj=='customer_email' ){
+                   var str =$('#customer_email').val();
+                   var emailPattern = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/; 
+                   var res = str.match(emailPattern);
+                   if(res){
+                     // console.log('Pancard is valid one.!!');
+                      $('#email_id').hide();
+
+                  }else{
+                    // console.log('Oops.Please Enter Valid Pan Number.!!');
+                    $('#email_id').show();
+
+                    return false;
+                  }
+                  
+  }
+}
+</script>
+
+
+
 

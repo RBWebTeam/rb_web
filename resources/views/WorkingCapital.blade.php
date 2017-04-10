@@ -30,6 +30,7 @@
     <input type="text" class="form-control form-group" placeholder="Loan Amount" id="loanAmount_id" maxlength="10"  onkeypress="return isNumberKey(event)">
    <input type="text" class="form-control form-group" placeholder="Current Rate of Interest" id="interest"  maxlength="5" onkeypress="return isNumberKey(event)" >
    <input type="text" class="form-control form-group" placeholder=" Loan Tenure" value="1"  maxlength="1" id="loanTenur" onkeypress="return isNumberKey(event)" readonly>
+      <div class="form-padding validate_id" style="display: none; color: red" >Please Fill All Inputs</div>
    <button class="btn btn-success pull-left btn_id"  id="working_capital">Submit</button>
    <div class="pull-right">
              <label><input type="radio" name="yearmonth" id="Year"  value="Year" checked="checked"> Year</label>
@@ -97,6 +98,7 @@
    <input type="text" class="form-control form-group" placeholder="Loan Amount" id="termloanAmount" maxlength="10"  onkeypress="return isNumberKey(event)">
    <input type="text" class="form-control form-group" placeholder="Current Rate of Interest" id="terminterest"  maxlength="5" onkeypress="return isNumberKey(event)" >
    <input type="text" class="form-control form-group" placeholder=" Loan Tenure"  maxlength="5" id="termloanTenur" onkeypress="return isNumberKey(event)">
+   <div class="form-padding validate_id" style="display: none; color: red" >Please Fill All Inputs</div>
    <button class="btn btn-success pull-left btn_id"  id="termloanid">Submit</button>
    <div class="pull-right">
              <label><input type="radio" name="yearmonth" id="Year"  value="Year" checked="checked"> Year</label>
@@ -164,7 +166,7 @@
 <option value="180">180 days</option>
  
 </select>
-
+<div class="form-padding validate_id" style="display: none; color: red" >Please Fill All Inputs</div>
    <button class="btn btn-success pull-left btn_id"  id="packingcreditdomesti">Submit</button>
    <div class="pull-right">
              <label><input type="radio" name="yearmonth" id="Year"  value="Year" checked="checked"> Year</label>
@@ -222,6 +224,7 @@
 <option value="90">90 days</option>
 <option value="180">180 days</option>
 </select>
+<div class="form-padding validate_id" style="display: none; color: red" >Please Fill All Inputs</div>
    <button class="btn btn-success pull-left btn_id"  id="packingcreditforeignCurr">Submit</button>
 
 
@@ -332,8 +335,12 @@
 		<div class="text-center guid nl-form-errors" id='bank_ID'>Total Saving 0</div>
 
         <div class="text-center img1"><img src="{{URL::to('images/photo.jpg')}}" alt="pop_up_pic"></div>
+
+
 		</div>
-		<button class="btn btn-success aply-btn">Apply Now</button>
+
+		<a href="{{url('new-working-capital')}}" class="btn btn-success aply-btn">Apply Now</a>
+
  </div>
 </div>
 </br>
@@ -453,7 +460,7 @@ $("button").click(function(e){
 
        if(form=='WorkingCapitalCurrent'){
           if(validation==1){
-             alert("Please Fill All Inputs");
+             $('.validate_id').show();
           }else{
                ID='tlf';
                     if(9.5<=interest && 10>=interest){
@@ -470,7 +477,7 @@ $("button").click(function(e){
        }else if(form=='packing_credit_domesti'){
 
           if(validation==1){
-             alert("Please Fill All Inputs");
+             $('.validate_id').show();
           }else{
            if(7<=interest){
                     paid=7;
@@ -503,7 +510,7 @@ $("button").click(function(e){
        }else if(form=='packing_credit_foreign_currency'){
 
                if(validation==1){
-             alert("Please Fill All Inputs");
+             $('.validate_id').show();
           }else{
            if(5<=interest){
                     paid=5;
@@ -539,7 +546,7 @@ $("button").click(function(e){
         Tenure=loanTenure*12;
 
         if(validation==1){
-             alert("Please Fill All Inputs");
+              $('.validate_id').show();
           }else{
       $.ajax({  
              type: "POST",  
@@ -978,7 +985,7 @@ $(".proposel_ID").click(function ( event ){
 
 
 $('.menu1act').click(function(e){
-          e.preventDefault();
+     e.preventDefault();
           var act=$(this).attr('href');
            if(act=="#menu1"){
            $(".active").removeClass("active");

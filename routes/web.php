@@ -221,6 +221,8 @@ Route::get('tribe','TribeController@tribe');
 Route::post('save-tribe-form','TribeController@save_tribe_form');
 Route::post('upload-tribe-doc','TribeController@UploadTribeDocuments');
 Route::post('upload-tribe-bank-statement','TribeController@UploadBankStatement');
+Route::post('tribe-close-transaction','TribeController@CloseTransaction');
+Route::post('abandon-tribe-application','TribeController@AbandonTransaction');
 
 
 //  new loan process 

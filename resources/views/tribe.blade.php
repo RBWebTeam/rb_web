@@ -481,7 +481,10 @@
     <div id="main7" class="tab-pane fade">
       <h3 class="mrg-top">BANK STATEMENTS</h3><hr>
           <a class="btn btn-primary btn-outline with-arrow " data-toggle="modal" data-target="#tribe_bank_statement_form" >Upload Bank Document<i class="icon-arrow-right"></i></a>  
+          <a class="btn btn-primary btn-outline with-arrow " id="tribe_final_submit" style="display: none;">Submit Application<i class="icon-arrow-right"></i></a> 
+          <a class="btn btn-primary btn-outline with-arrow " id="abandon_tribe_application"> Abandon<i class="icon-arrow-right"></i></a>   
     </div>
+    
     
   </div>
 
@@ -634,6 +637,7 @@ $.ajax({
         if(!response.error){
               
             $('#kyc_form')[0].reset();
+            $('#tribe_doc_upload_modal').modal('hide');
         }else{
           console.log("error => "+response.error);
         }
@@ -661,6 +665,7 @@ $("#submit_statement").click(function(){
           success:function(response){
             console.log(response);
             $('#transaction_id').val(response.transaction_id);
+            $('#close_tribe_transaction').show();
             //$('.loan_id').val(response.loan_id);
             
           },
@@ -718,5 +723,42 @@ function tribe_doc_upload(id){
        $('#doc_special_fields').hide();
     }
 }
+
+  $('#close_tribe_transaction').click(function(){
+       var form_url="{{URL::to('tribe-close-transaction')}}";
+    $.ajax({
+          url:form_url ,
+          data:new FormData($("#bank_statement_form")[0]),
+          dataType:'json',
+          async:false,
+          type:'post',
+          processData: false,
+          contentType: false,
+          success:function(response){
+            console.log(response);
+           $('#tribe_bank_statement_form').hide();
+            $('#tribe_final_submit').show();
+            //$('.loan_id').val(response.loan_id);
+            
+          },
+        });
+  });
+    $('#abandon_tribe_application').click(function(){
+       
+   $.ajax({  
+             type: "POST",  
+             url: "{{URL::to('abandon-tribe-application')}}",
+             data : $('#tribe_loan_form').serialize(),
+             success: function(msg){
+
+              if(msg.status){
+                 
+
+                }else{
+                  console.log("error "+msg);
+                 // window.location.href="{{URL::to('went-wrong')}}";
+                }
+               }
+          });
   </script>
 

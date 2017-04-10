@@ -39,7 +39,7 @@
 		</div>
     <div class="item active">
 	<div class="slide-txt">
-	<i class="sprite sprite-home-ic center-img-align img-responsive hidden-sm"></i>
+	<i class="sprite sprite-home-ic center-img-align img-responsive hidden-xs"></i>
 	<h2>Home Loan </h2>
    <h4>Choose the right Home Loan for you ...!!</h4>
    <a href="{{URL::to('home-loan')}}" class="btn btn-primary btn-lg btn-view">View More</a>
@@ -49,7 +49,7 @@
 
     <div class="item">
 	<div class="slide-txt">
-	<i class="sprite sprite-personal-ic center-img-align img-responsive hidden-sm"></i>
+	<i class="sprite sprite-personal-ic center-img-align img-responsive hidden-xs"></i>
 	<h2>Personal Loan </h2>
    <h4>Finance Your Dreams...!!</h4>
    <a href="{{URL::to('personal-loan')}}" class="btn btn-primary btn-lg btn-view">View More</a>
@@ -59,7 +59,7 @@
 
     <div class="item">
 	<div class="slide-txt">
-	<i class="sprite sprite-lap-ic center-img-align img-responsive hidden-sm"></i>
+	<i class="sprite sprite-lap-ic center-img-align img-responsive hidden-xs"></i>
 	<h2>Loan Against Property</h2>
    <h4>Finding you a better Deal...!!</h4>
    <a href="{{URL::to('loan-against-property')}}" class="btn btn-primary btn-lg btn-view">View More</a>
@@ -69,7 +69,7 @@
 
     <div class="item">
 	<div class="slide-txt">
-	<i class="sprite sprite-sme-ic center-img-align img-responsive hidden-sm"></i>
+	<i class="sprite sprite-sme-ic center-img-align img-responsive hidden-xs"></i>
 	<h2>SME Loan</h2>
 
    <h4>We Support Make in India..!!</h4>
@@ -79,7 +79,7 @@
     </div>
 	<div class="item">
 	<div class="slide-txt" >
-	<i class="sprite sprite-balance-ic center-img-align img-responsive hidden-sm"></i>
+	<i class="sprite sprite-balance-ic center-img-align img-responsive hidden-xs"></i>
 	<h4>Unsecured</h4>
 	<h2>Business Loan</h2>
    <h4>Experience on your side...!!</h4>
@@ -90,7 +90,7 @@
     </div>
 	<div class="item">
 	<div class="slide-txt">
-	<i class="sprite sprite-car-ic center-img-align img-responsive hidden-sm"></i>
+	<i class="sprite sprite-car-ic center-img-align img-responsive hidden-xs"></i>
 	<h2>Car Loan</h2>
    <h4>Thinking of your comfort first !!</h4>
    <a href="{{URL::to('car-loan')}}" class="btn btn-primary btn-lg btn-view">View More</a>
@@ -117,6 +117,8 @@
 <li><h2 class="pad text-center"><a href="{{URL::to('comfy-sales')}}">Rupeeboss Comfy</a></h2></li>
 <li><h2 class="pad text-center"><a href="{{URL::to('express-loan')}}">Express Loan</a></h2></li>
 <li><h2 class="pad text-center"><a href="{{URL::to('savings-account')}}">Savings Account</a></h2></li>
+<li><h2 class="pad text-center"><a href="{{URL::to('new-home-loan')}}">Pradhan Mantri Awas Yojana</a></h2></li>
+<li><h2 class="pad text-center"><a href="{{URL::to('contact-us')}}">SME Car Leasing</a></h2></li>
 </ul>
 </div>
 	
@@ -196,7 +198,7 @@
 		</div>
 	</div>
 	
-		<div class="container-fluid white-bg credit-report-bg">
+		<div class="container-fluid white-bg credit-report-bg flt-non">
 			
 			<div class="animate-box">
                     <div class="col-md-1"></div>
@@ -401,23 +403,15 @@
             
 				<div class="col-md-6 col-sm-6 animate-box">
 					<div class="item-grid">
-						<div class="v-align blu-clr">
+						<div class="v-align blu-clr cs-blu-bg">
 							<div class="v-align-middle">
 	<div id="myCarousel1" class="carousel slide" data-ride="carousel">
-  <!-- Indicators -->
-  <ol class="carousel-indicators car-gl">
-    <li data-target="#myCarousel1" data-slide-to="6" class="active"></li>
-    <li data-target="#myCarousel1" data-slide-to="7"></li>
-    <li data-target="#myCarousel1" data-slide-to="8"></li>
-    <li data-target="#myCarousel1" data-slide-to="9"></li>
-    <li data-target="#myCarousel1" data-slide-to="10"></li>
-  </ol>
-
+ 
   <!-- Wrapper for slides -->
-  <div class="carousel-inner" role="listbox">
+  <div class="carousel-inner carousel1" role="listbox">
   <div class="item active">
       <h3 class="title">Customers Speak</h3>
-<img src="{{URL::to('images/rahil.png')}}" alt="Tribe Logo" class="img-responsive user-ico" />							
+<img src="{{URL::to('images/rahil.png')}}" alt="Tribe Logo" class="img-responsive user-ico" width="60px;" height="60px;" />							
 <p>I'm thankful of the services I have been offered by your staff.Looking forward for 
 more business.I would like to recommend about your services to my family and friends.  
  </p>
@@ -425,7 +419,7 @@ more business.I would like to recommend about your services to my family and fri
     </div>
     <div class="item">
       <h3 class="title">Customers Speak</h3>
-	<img src="{{URL::to('images/user-icon.png')}}" alt="Tribe Logo" class="img-responsive user-ico" />				
+	<img src="{{URL::to('images/user-icon.png')}}" alt="Tribe Logo" class="img-responsive user-ico" width="60px;" height="60px;"/>				
 <p> I found them professional, straightforward, and since they don’t push you to apply for a specific bank, they are impartial. On a long term basis one needs an intermediary as a one stop shop and these guys seems to be in the business for long term. Their experts follow up on time, give a frank advise, clarify everything so that one does not feel cheated and make a wise decision to save money. </p>
 
 <p class="align-right">Ashish Sharma</p>
@@ -435,7 +429,7 @@ more business.I would like to recommend about your services to my family and fri
 
     <div class="item">
     <h3 class="title">Customers Speak</h3>
-<img src="{{URL::to('images/user-icon.png')}}" alt="Tribe Logo" class="img-responsive user-ico" />							
+<img src="{{URL::to('images/user-icon.png')}}" alt="Tribe Logo" class="img-responsive user-ico" width="60px;" height="60px;"/>							
 <p> Thanks a lot for processing my personal loan in time. I would like to give you 
 special thanks for the service given by you. Your personal visits to my office 
 for all documentation and other queries saved my personal as well as official
@@ -446,7 +440,7 @@ time a lot. I appreciate your positive approach towards customer needs and satis
 
     <div class="item">
     <h3 class="title">Customers Speak</h3>
-<img src="{{URL::to('images/user-icon.png')}}" alt="Tribe Logo" class="img-responsive user-ico" />							
+<img src="{{URL::to('images/user-icon.png')}}" alt="Tribe Logo" class="img-responsive user-ico" width="60px;" height="60px;"/>							
 <p> Great Work. I appreciate your efforts for disbursement of my loan in time. Your strong followup and deep subject 
 knowledge helped me to get loan amount in time. Keep up the good work,expecting the same support from 
 you in future.
@@ -457,7 +451,7 @@ you in future.
 
     <div class="item">
     <h3 class="title">Customers Speak</h3>
-<img src="{{URL::to('images/jangam.png')}}" alt="Tribe Logo" class="img-responsive user-ico" />							
+<img src="{{URL::to('images/jangam.png')}}" alt="Tribe Logo" class="img-responsive user-ico" width="60px;" height="60px;"/>							
 <p> I would like to thank the team for the outstanding service provided in disbursing my loan. It was a smooth process. Thank You. Keep the good work going .
  
  </p>

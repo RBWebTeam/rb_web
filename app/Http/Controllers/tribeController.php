@@ -51,8 +51,10 @@ class TribeController extends CallApiController
 	public function save_tribe_form(Request $req){
 	$data=$req->all();			
 	$data["name"]="SampleTribe";
+	//print_r($req->all());exit();
 	//remove above hard coded parameter later
-	$business_pan=isset($data['company_pan_card'])?$data['company_pan_card']:$data['business_run_by_pan_div'];
+	$business_run_by_pan=isset($data['business_run_by_pan'])?$data['business_run_by_pan']:"";
+	$business_pan=isset($data['company_pan_card'])?$data['company_pan_card']:$business_run_by_pan;
 	$data['online_sale_channel']=isset($data['online_sale_channel'])?$data['online_sale_channel']:"";
 	$x=$data['online_ids'];
 	$data['online_credential']=(json_encode($data['online_ids_array'][$x]));
@@ -67,7 +69,7 @@ class TribeController extends CallApiController
 	$data['taxation_details']=isset($data['taxation_details'])?$data['taxation_details']:'';
 	$data['online_sale_channel']=isset($data['online_sale_channel'])?$data['online_sale_channel']:'""';
 	$data['business_run_by']=isset($data['business_run_by'])?$data['business_run_by']:'""';
-	$data['business_run_by_pan_div']=isset($data['business_run_by_pan_div'])?$data['business_run_by_pan_div']:'""';
+	
 	//print_r($data);exit();
 	$post_data='{"agentname":"'.$data['agent_name'].'",
 		"business_details":{
@@ -164,7 +166,7 @@ class TribeController extends CallApiController
             $str='document_itself';         
             $base64=$this->FileToString($str,$req);
             $post_data='{"document_category": "'.$i.'", "title": "'.$req['document_title'].'", "document":"data:application/pdf;base64,'.$base64.'", "tribe": "'.$req['app_id'].'", "secret": "'.TribeController::$secret.'"}';
-			print_r($post_data);exit();
+			//print_r($post_data);exit();
 
 				$url = $this::$url_static."BankAPIService.svc/uploadDocumentsTribeLoan";
 				$result=$this->call_json_data_api($url,$post_data);
@@ -183,29 +185,37 @@ class TribeController extends CallApiController
 	    	$str='upload_statement';
 	    	$pdf_pwd=$req['pdf_password']?'"'.$req['pdf_password'].'"':'null';
 	    	$base64=$this->FileToString($str,$req);
-            $post_data='{"secret":"'.TribeController::$secret.'","document_password":'.$pdf_pwd.',"loan_application_id":'.$req['loan_id'].',"from_date": "'.$req['start_date'].'","to_date":"'.$req['end_date'].'","statement_file":"data:application/pdf;base64,'.$base64.'","institution":"'.$req['institution'].'" }';
-	    
-			//print_r($post_data);exit();
-			$url = $this::$url_static."BankAPIService.svc/uploadStatmentTribeLoan";
+	    	if(isset($req->transaction_id) && $req->transaction_id){
+				$post_data='{"secret":"'.TribeController::$secret.'","document_password":'.$pdf_pwd.',"loan_application_id":'.$req['loan_id'].',"statement_file":"data:application/pdf;base64,'.$base64.'","transaction_id": "'.$req['transaction_id'].'"}';
+			    print_r($post_data);exit();
+
+	    	}else
+	    	{
+
+	            $post_data='{"secret":"'.TribeController::$secret.'","document_password":'.$pdf_pwd.',"loan_application_id":'.$req['loan_id'].',"from_date": "'.$req['start_date'].'","to_date":"'.$req['end_date'].'","statement_file":"data:application/pdf;base64,'.$base64.'","institution":"'.$req['institution'].'" }';
+		    
+					print_r($post_data);exit();
+				$url = $this::$url_static."BankAPIService.svc/uploadStatmentTribeLoan";
 				$result=$this->call_json_data_api($url,$post_data);
 			    $http_result=$result['http_result'];
 			    $error=$result['error'];
 			    $data=json_decode($http_result);
 			    print_r($http_result);exit();
-			    if(!($data->$error)){
-			    return Response::json(array(
-		     					'status'=>true,
-                                'transaction_id' => $data->$transaction_id,
-                                'loan_id'=>$data->loan_application_id
+			}
+		    if(!($data->$error)){
+		    	return Response::json(array(
+	     					'status'=>true,
+                            'transaction_id' => $data->$transaction_id,
+                            'loan_id'=>$data->loan_application_id
+                    ));
+		    	
+		        
+		    }else{
+		    	return Response::json(array(
+	     					'status'=>false,
+                           	'error'=>$data->$error
                         ));
-			    	
-			        
-			    }else{
-			    return Response::json(array(
-		     					'status'=>false,
-                               	'error'=>$data->$error
-                            ));
-			    }
+		    }
 		}
 
 		

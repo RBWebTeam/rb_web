@@ -2,7 +2,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
   <div id="fh5co-hero" ng-app="">
   <form id="tribe_loan_form" method="POST" name="tribe_loan_form" >
-  {{ csrf_field() }}
+  {!! csrf_field() !!}
     <div class="container">
     <h2 class="align-center loan-head">Tribe</h2>
     <div class="col-md-12 pad1 white-bg box-shadow">
@@ -490,8 +490,57 @@
     </div>
   </div>
   <br>
+
+
   @include('layout.footer')
   @include('layout.script')
+  <!-- modal for bank statement -->
+  <div id="tribe_bank_statement_form" class="modal fade" role="dialog" ng-app="bank">
+ <form id="bank_statement_form" name="bank_statement_form" enctype="multipart/form-data" method="POST" >
+    {!! csrf_field() !!}
+    <input type="hidden" name="loan_id" class="loan_id">
+    <input type="hidden" name="transaction_id" id="transaction_id">
+    
+        <div class="col-md-3">UPLOAD COMPANY BANK STATEMENTS</div>
+        <div class="col-md-8 sec">
+         <select class="drop-arr" name="institution" id="institution" required>
+           <option disabled selected>Select</option>
+          @foreach($data['institution'] as $key=>$value)
+          
+          <option value="{{$value}}"><?php echo $key;?></option>
+          @endforeach
+        </select>
+        </div>
+        
+        <div class="col-md-3">Start Date</div>
+        <div class="col-md-8"
+        ><input type="date" name="start_date" id="start_date" class="form-control form-group" /></div>
+        
+        <div class="col-md-3">End Date</div>
+        <div class="col-md-8">
+        <input type="date" id="end_date" name="end_date" class="form-control form-group"/></div>
+        
+        <div class="col-md-3">Upload Document</div>
+        <div class="col-md-8">
+        <input type="file"  id="upload_statement" name="upload_statement" class="form-control form-group no-border"/>
+        </div>
+       <div class="col-md-3">PDF Password(if any)</div>
+        <div class="col-md-8"  >
+        <input type="checkbox" name="pdf_has_pwd" id="pdf_has_pwd" >
+        <input type="password" name="pdf_password" id="pdf_password" class="form-control form-group" style="display: none;" /></div>
+        
+        <div class="col-md-3"></div>
+        <div class="col-md-8 mrg-top">
+        <a class="btn btn-primary btn-outline with-arrow pull-left" id="submit_statement">Submit Statment
+        <i class="icon-arrow-right"></i>
+        </a>
+        <a class="btn btn-primary btn-outline with-arrow pull-right" id="close_tribe_transaction">Close Transaction
+        <i class="icon-arrow-right"></i>
+        </a>
+        </div>
+    </form>
+</div>
+<!-- end modal -->
 
 <script type="text/javascript">
   var previousPartner;
@@ -570,10 +619,10 @@ $("#upload_doc_submit").click(function(){
     if(!$('#kyc_form').valid()){
       return false;
     }
-    var CSRF_TOKEN = $('input[name="_token"]').val();                    
+   // var CSRF_TOKEN = $('input[name="_token"]').val();                    
     var form_url="{{URL::to('upload-tribe-doc')}}";
 $.ajax({
-      url:form_url + '?_token=' + CSRF_TOKEN,
+      url:form_url ,  
       data:new FormData($("#kyc_form")[0]),
       dataType:'json',
       async:false,
@@ -582,8 +631,13 @@ $.ajax({
       contentType: false,
       success:function(response){
         console.log(response);
-        $('#tribe_doc_upload_modal').modal('hide'); 
-        $('#kyc_form')[0].reset();
+        if(!response.error){
+              
+            $('#kyc_form')[0].reset();
+        }else{
+          console.log("error => "+response.error);
+        }
+        
         
       },
     });
@@ -594,10 +648,10 @@ $("#submit_statement").click(function(){
     return false;
   }
     else{
-    var CSRF_TOKEN = $('input[name="_token"]').val();                    
+   // var CSRF_TOKEN = $('input[name="_token"]').val();                    
     var form_url="{{URL::to('upload-tribe-bank-statement')}}";
     $.ajax({
-          url:form_url + '?_token=' + CSRF_TOKEN,
+          url:form_url ,
           data:new FormData($("#bank_statement_form")[0]),
           dataType:'json',
           async:false,
@@ -606,6 +660,8 @@ $("#submit_statement").click(function(){
           contentType: false,
           success:function(response){
             console.log(response);
+            $('#transaction_id').val(response.transaction_id);
+            //$('.loan_id').val(response.loan_id);
             
           },
         });
@@ -615,17 +671,18 @@ $("#submit_statement").click(function(){
 $('#freeze_form').click(function(){
       //alert($('#tribe_loan_form input[name="_token"]').val());
       var CSRF_TOKEN = $('input[name="_token"]').val();
-     $('#tribe_loan_form').find('input, radio,textarea, button, select').attr('disabled','disabled');
+    // $('#tribe_loan_form').find('input, radio,textarea, button, select').attr('disabled','disabled');
      $('#freeze_form_modal').modal('hide');
     $.ajax({  
              type: "POST",  
-             url: "{{URL::to('save-tribe-form')}}"+ '?_token=' + CSRF_TOKEN,
+             url: "{{URL::to('save-tribe-form')}}",
              data : $('#tribe_loan_form').serialize(),
              success: function(msg){
 
               if(msg.status){
                   $('.app_id').val(msg.tribe);
-                  $('#loan_id').val(mag.loan_id);
+                  $('.loan_id').val(msg.loan_id);
+
                   //enable further links
                   $( "#nav4").attr( "href","#main4" );
                   $( "#nav7").attr( "href","#main7" );
@@ -663,46 +720,3 @@ function tribe_doc_upload(id){
 }
   </script>
 
-<div id="tribe_bank_statement_form" class="modal fade" role="dialog">
- <form id="bank_statement_form" name="bank_statement_form" enctype="multipart/form-data" >
-    {{ csrf_field() }}
-    <input type="hidden" name="loan_id" class="loan_id">
-        <div class="col-md-3">UPLOAD COMPANY BANK STATEMENTS</div>
-        <div class="col-md-8 sec">
-         <select class="drop-arr" name="institution" id="institution" required>
-           <option disabled selected>Select</option>
-          @foreach($data['institution'] as $key=>$value)
-          
-          <option value="{{$value}}"><?php echo $key;?></option>
-          @endforeach
-        </select>
-        </div>
-        
-        <div class="col-md-3">Start Date</div>
-        <div class="col-md-8"
-        ><input type="date" name="start_date" id="start_date" class="form-control form-group" /></div>
-        
-        <div class="col-md-3">End Date</div>
-        <div class="col-md-8">
-        <input type="date" id="end_date" name="end_date" class="form-control form-group"/></div>
-        
-        <div class="col-md-3">Upload Document</div>
-        <div class="col-md-8">
-        <input type="file"  id="upload_statement" name="upload_statement" class="form-control form-group no-border"/>
-        </div>
-       <div class="col-md-3">PDF Password(if any)</div>
-        <div class="col-md-8"  >
-        <input type="checkbox" name="pdf_has_pwd" id="pdf_has_pwd">
-        <input type="password" name="pdf_password" id="pdf_password" class="form-control form-group" style="display: none;" required /></div>
-        
-        <div class="col-md-3"></div>
-        <div class="col-md-8 mrg-top">
-        <a class="btn btn-primary btn-outline with-arrow pull-left" id="submit_statement">Submit Statment
-        <i class="icon-arrow-right"></i>
-        </a>
-        <a class="btn btn-primary btn-outline with-arrow pull-right" id="close_tribe_transaction">Close Transaction
-        <i class="icon-arrow-right"></i>
-        </a>
-        </div>
-    </form>
-</div>

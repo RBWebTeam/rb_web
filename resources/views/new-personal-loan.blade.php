@@ -309,7 +309,7 @@ $(".btn-primary").click(function(e){
                        $(window).scrollTop($('#lowest').offset().top-50);
 
                    }else{
-                    alert("ok");
+                    // alert("ok");
                      $('#err').show();
                      $('#apply_new').hide();
                       $("#test123").empty();

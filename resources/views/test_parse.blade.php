@@ -52,7 +52,7 @@
          var mainApp = angular.module("mainApp", []);
          
          mainApp.controller('NavController', function($scope) {
-            console.log($active);
+            console.log();
          });
       </script>
 <style type="text/css">

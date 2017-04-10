@@ -10419,8 +10419,9 @@ rb-services-section{padding:0px;}
   padding: 2em 0;
   float: left;
   width: 100%;
+  z-index:1;
   position: relative;
-  background: #262626;
+  background: #777777;
 }
 @media screen and (max-width: 768px) {
   #fh5co-footer {
@@ -10834,7 +10835,17 @@ border: #3px solid #999;background:#1f386e;margin: 10px;margin: 10px auto;text-a
 .sidebar ul li  {list-style-type:none;margin:0px; padding:8px; border-bottom:1px solid #2f4980;cursor:pointer;}
 .sidebar ul li a {color:#fff;font-size:12px;}
 .sidebar ul li:hover {background:#F60; text-decoration:none;}
-.arrow-don {top:150px;padding:10px;position:fixed; z-index:1000;cursor:pointer;background:#3699c1;color:#fff;}
+.arrow-don {top:200px;position:fixed; z-index:1000;padding:0px; background:none !important;}
+.arrow-don li {margin-bottom:2px;cursor:pointer;}
+.arrow-don li:hover {opacity:0.7;}
+.arrow-don li i {font-size:16px; padding-left:5px; color:#fff;}
+.soc-ic-0 {background:#333333;padding:6px;}
+.soc-ic-1 {background:#3b5997;padding:6px;}
+.soc-ic-2 {background:#dc4a38;padding:6px;}
+.soc-ic-3 {background:#53a6ea;padding:6px;}
+.soc-ic-4 {background:#d6368c;padding:6px;}
+.soc-ic-5 {background:#0177b5;padding:6px;}
+
 .bdy1, .bdy2, .bdy3, .bdy4 {z-index:10000; top:0px;margin-left:70px;padding:10px;position:absolute;width:500px;height:350px;background:#ddd;border:1px solid #ccc;}
 #fh5co-offcanvas ul li a {color:#88d0ed;}
 
@@ -11012,6 +11023,7 @@ border-radius: 7px;padding: 1em;margin-top: 1em;}
 }
 .carousel-inner > .item > img, .carousel-inner > .item > a > img {display: block;height: 218px;line-height: 1;}
 }
+.carousel1 > .item > img, .carousel-inner > .item > a > img {display: block;height:auto;line-height: 1;}
 
 /* Media Querry End  */
 
@@ -11183,7 +11195,7 @@ input[type="radio"] {margin:0px;}
 .mar-tp {margin-top:50px;position: absolute;right: 0px; z-index: 100;}
 .mar-tp ul {padding:0px;margin:-5px;}
 .mar-tp ul li {list-style-type:none;}
-.mar-tp ul li a {opacity:0.6;padding:10px 20px;font-size:17px; background:#fff; display:block;margin-bottom:2px; text-align:left;}
+.mar-tp ul li a {color:#fff;opacity:0.6;padding:10px 20px;font-size:17px;background: #000; display:block;margin-bottom:2px; text-align:left;}
 .mar-tp ul li a:hover {opacity:1;margin-left:-40px;background:#28a0ff;color:#fff;}
 .img2 img {    margin-top: 8px;
     margin-right:0px;
@@ -13046,6 +13058,10 @@ label {
     border-radius: 5px;}
 
 #emp_detail {    border-bottom: 2px dashed #bbadad;float: left;margin-bottom: 5px;}
+.white-txt {color:rgba(255, 255, 255, 0.5);}
+.fh5co-copyright p {color:rgba(255, 255, 255, 0.5);}
+.blk-txt a {color:rgba(255, 255, 255, 0.5); font-weight:bold;}
+.blk-txt a:hover {color:#fff;}
 
 	
 

@@ -414,7 +414,7 @@
   </ol>
 
   <!-- Wrapper for slides -->
-  <div class="carousel-inner" role="listbox">
+  <div class="carousel-inner carousel1" role="listbox">
   <div class="item active">
       <h3 class="title">Customers Speak</h3>
 <img src="{{URL::to('images/rahil.png')}}" alt="Tribe Logo" class="img-responsive user-ico" width="60px;" height="60px;" />							

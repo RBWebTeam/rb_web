@@ -14,9 +14,9 @@
 	   <div class="btn-grp mrg-top pad status" data-toggle="buttons">
 	  
 		<center><div class="type-cover"><span>Proprietorship</span></div></center>
-      <span class="btn btn-default outer-brd active"><input type="radio" name="Status" id="option1">Sole Proprietor</span>
-      <span class="btn btn-default outer-brd"><input type="radio" name="Status" id="option2">Partnership</span>
-      <span class="btn btn-default outer-brd"><input type="radio" name="Status" id="option3">Company</span>
+      <span class="btn btn-default outer-brd mob-blk-dv active"><input type="radio" name="Status" id="option1">Sole Proprietor</span>
+      <span class="btn btn-default mob-blk-dv outer-brd"><input type="radio" name="Status" id="option2">Partnership</span>
+      <span class="btn btn-default mob-blk-dv outer-brd"><input type="radio" name="Status" id="option3">Company</span>
 
       </div>
 		</div>
@@ -69,7 +69,7 @@
      <input type="name" class="form-input-new form-control" placeholder="Existing All EMI" required="">
 	</div>
  </div>
-	<div class="col-md-6">
+	<div class="col-md-6 flt-lft">
 	<div class="panel-group" id="accordion">
 	<div class="panel-default">
       <div id="collapse0" class="panel-collapse collapse in">
@@ -169,7 +169,7 @@
 								<div class="col-xs-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">IT & ITeS</a></div>
 								<div class="col-xs-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Manufacturing</a></div>
 								<div class="col-xs-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Marketing And Strategy</a></div>
-								<div class="col-xs-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Media And Entertainment </a></div>
+								<div class="col-xs-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Media & Entertainment </a></div>
 								<div class="col-xs-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Oil And Gas</a></div>
 								<div class="col-xs-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Pharmaceuticals</a></div>
 								<div class="col-xs-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Ports</a></div>

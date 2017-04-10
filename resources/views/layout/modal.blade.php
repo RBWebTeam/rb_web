@@ -615,4 +615,50 @@ Rupeeboss Financial Services Private Limited shall access your Credit Informatio
 
   </div>
 </div>
+<div id="tribe_doc_upload_modal" class="modal fade" role="dialog">
+<form id="kyc_form" name="kyc_form" enctype="multipart/form-data" >
+        {{ csrf_field() }}
+    <input type="hidden" name="app_id" class="app_id">
+    <input type="hidden" name="uplaoding_doc_name" id="uplaoding_doc_name">
+  <div class="modal-dialog">
+ <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+         <h4 class="modal-title">Add Document</h4>
+      </div>
+    <!-- Modal content-->
+    <div class="modal-content pad1">
+
+     <label >Document title</label>
+      <input type="text" name="document_title" id="tribe_document_title" required >
+      <label >Upload File</label>
+      <input type="file" name="document_itself" id="tribe_document_itself" required>
+        <div style="display: none;" id="doc_special_fields">
+            <label >Document Year</label>
+            <select name="document_year" class="drop-arr" required>
+            <option disabled selected>Select Year</option>
+              <option>2013-2014</option>
+              <option>2014-2015</option>
+              <option>2015-2016</option>
+              <option>2016-2017</option>
+              <option>2017-2018</option>
+              <option>2018-2019</option>
+              <option>2019-2020</option>
+            </select>
+            <label >Document Type</label>
+             <select name="document_type" class="drop-arr" required>
+             <option disabled selected>Select</option>
+              <option>IT Returns</option>
+              <option>IT Acknowledgement</option>
+              
+            </select>
+        </div>
+       <a class="btn btn-primary btn-outline with-arrow" data-dismiss="modal" >cancel</a>
+      <a class="btn btn-primary btn-outline with-arrow " id="upload_doc_submit">Save</a>
+      
+    </div>
+
+  </div>
+  </form>
+</div>
+
 

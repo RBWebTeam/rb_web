@@ -3,8 +3,10 @@
 	<head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" rel="stylesheet" type="text/css">
 	<title><?php if(isset($title))echo $title; else echo "RupeeBoss-Apply for a Loan"; ?></title>
 	<!-- <meta name="google-signin-client_id" content="752185558821-9vlmac53np7bgdo3kn9d2e5ft39t7gud.apps.googleusercontent.com"> -->
+	<meta name="msvalidate.01" content="3744048BDD61F7FE6837BD664522C8F9" />
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="<?php if(isset($description))echo $description; else echo "RupeeBoss provides all kind of loans."; ?>" />
 	<meta name="keywords" content="<?php if(isset($keywords))echo $keywords; else echo "rupeeboss loans getloan expressloan"; ?>" />
@@ -15,7 +17,7 @@
 
 	<link  rel="stylesheet" type="text/css" href="{{URL::to('css/mysite.css')}}"/>
 
-	<link  rel="stylesheet" type="text/css" href="{{URL::to('css/style.css')}}"/>
+	<!-- <link  rel="stylesheet" type="text/css" href="{{URL::to('css/style.css')}}"/> -->
 
 
 
@@ -54,8 +56,16 @@
 	<body><!-- 
 	<script src="https://app.tigerapi.com/rest/?i=MTQ4NTIzNzg2NA==" async="async" type="text/javascript"></script> -->
 	<!-- Side bar -->
+	<ul class="arrow-don">
+	<li class="soc-ic-0"><div  title="Help Section"><i class="icon-phone"></i></div></li>
+	<li class="soc-ic-1"><a href="https://www.facebook.com/rupeeboss" target="_blank"><div  title="Faceboddok"><i class="icon-facebook"></i></div></a></li>
+	<li class="soc-ic-2"><a href="https://plus.google.com/113191059621763008376"target="_blank"><div  title="Google Plus"><i class="icon-google-plus"></i></div></a></li>
+	<li class="soc-ic-3"><a href="https://twitter.com/rupeeboss" target="_blank"><div  title="Twitter"><i class="icon-twitter"></i></div></a></li>
+	<li class="soc-ic-4"><a href="https://www.instagram.com/rupeeboss/"target="_blank"><div  title="Instagram"><i class="icon-instagram"></i></div></a></li>
+	<li class="soc-ic-5"><a href="https://www.linkedin.com/company/rupeeboss.com"target="_blank"><div  title="Linkedin"><i class="icon-linkedin"></i></div></a></li>
+	</ul>
 	
-	<div class="arrow-don" title="Help Section"><i class="icon-phone"></i></div>
+	
     <div class="sidebar displaynone">
     <ul>
         <li class="hide-dv"><a href="#"><i class="icon-arrow-left"></i>&nbsp;Hide</a></li>
@@ -96,7 +106,7 @@
                 <li><a href="{{URL::to('https://www.facebook.com/rupeeboss')}}" title="Facebook"><i class="icon-facebook"></i></a></li>
                 <li><a href="{{URL::to('https://www.linkedin.com/company/rupeeboss.com')}}" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
                 <li><a href="{{URL::to('https://plus.google.com/u/0/113191059621763008376')}}" title="GooglePlus"><i class="icon-google-plus"></i></a></li>
-                <!-- <li><a href="#" title="instagram"><i class="icon-instagram"></i></a></li> -->
+                <li><a href="{{URL::to('https://www.instagram.com/rupeeboss/')}}" title="instagram"><i class="icon-instagram"></i></a></li>
                 <li><a href="{{URL::to('contact-us')}}"><i class="icon-phone"></i> 1800-267-629-6	</a></li>
 
             </ul>
@@ -132,9 +142,11 @@
 							</li>
 							<li>
 								<a href="{{URL::to('new-loan-against-property')}}">Lease Rent Discounting</a>
-								<a href="{{URL::to('contact-us')}}">Working Capital</a>
+								<a href="{{URL::to('new-working-capital')}}">Working Capital</a>
 								<a href="{{URL::to('contact-us')}}">FCNR Loans</a>
 								<a href="{{URL::to('contact-us')}}">Debt Restructuring </a>
+								<a href="{{URL::to('contact-us')}}">Debt Syndication </a>
+								<a href="{{URL::to('contact-us')}}">Project Finance </a>
 								
 							<!-- <a href="{{URL::to('sme-loan')}}">Export/Import Finance</a> -->
 							</li>

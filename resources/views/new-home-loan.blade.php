@@ -31,23 +31,23 @@
 						
 						<div class="text-center flt-lft btn-grp" data-toggle="buttons">
 							<div class="scenario">
-								<div class="col-xs-4 pad-no scenario-active"><a class="scenario-1 btn"><input type="radio" name="propery_types" value="ready"  class="radio1"  checked >READY</a></div>
-								<div class="col-xs-4 pad-no"><a class="scenario-1 btn"><input type="radio" name="propery_types" value="searching" class="radio1">SEARCHING</a></div>
-								<div class="col-xs-4 pad-no"><a class="scenario-1 btn"><input type="radio" name="propery_types" value="underconst" class="radio1">UNDER-CONSTRUCTION</a></div>
-								<div class="col-xs-4 pad-no"><a class="scenario-1 btn"><input type="radio" name="propery_types" value="resale" class="radio1">RESALE</a></div>
-								<div class="col-xs-4 pad-no"><a class="scenario-1 btn"><input type="radio" name="propery_types" value="constuction" class="radio1">CONSTRUCTION</a></div>
-								<div class="col-xs-4 pad-no"><a class="scenario-1 btn"><input type="radio" name="propery_types" id="others" class="radio1">OTHER</a></div>
+								<div class="col-xs-6 col-md-4 pad-no scenario-active"><a class="scenario-1 btn"><input type="radio" name="propery_types" value="ready"  class="radio1"  checked >READY</a></div>
+								<div class="col-xs-6 col-md-4 pad-no"><a class="scenario-1 btn"><input type="radio" name="propery_types" value="searching" class="radio1">SEARCHING</a></div>
+								<div class="col-xs-7 col-md-4 pad-no"><a class="scenario-1 btn"><input type="radio" name="propery_types" value="underconst" class="radio1">UNDER-CONSTRUCTION</a></div>
+								<div class="col-xs-5 col-md-4 pad-no"><a class="scenario-1 btn"><input type="radio" name="propery_types" value="resale" class="radio1">RESALE</a></div>
+								<div class="col-xs-6 col-md-4 pad-no"><a class="scenario-1 btn"><input type="radio" name="propery_types" value="constuction" class="radio1">CONSTRUCTION</a></div>
+								<div class="col-xs-6 col-md-4 pad-no"><a class="scenario-1 btn"><input type="radio" name="propery_types" id="others" class="radio1">OTHER</a></div>
 								
 							</div>
 						</div> 
 						
-						<div class="col-xs-4 form-padding">
+						<div class="col-xs-6 col-md-4 form-padding">
      <input type="text" class="form-input-new form-control" id="property_cost" name="property_cost" placeholder="Property Cost" required onkeypress="return fnAllowNumeric(event)"  maxlength="10">
 	</div>
-	<div class="col-xs-4 form-padding">
+	<div class="col-xs-6 col-md-4 form-padding">
      <input type="text" class="form-input-new form-control" name="loan_amount" id="loan_amount" placeholder="Loan Required" required onkeypress="return fnAllowNumeric(event)"  value="">
 	</div>
-	<div class="col-xs-4 form-padding">
+	<div class="col-xs-6 col-md-4 form-padding">
      <input type="text" class="form-input-new form-control search_city" name='city_name' placeholder="Enter City" required >
 	</div>
 	
@@ -73,8 +73,8 @@
 		
 		<div class="col-xs-6 form-padding">
   
-     <select class="block drop-arr select-sty" name="loan_tenure">
-	  <option>LOAN TENURE</option>
+     <select class="block drop-arr select-sty" name="loan_tenure" id="loan_tenure" required>
+	  <option value="">Loan Tenure</option>
 	    <option value="1">1 Year</option>
 		<option value="2">2 Year</option>
 		<option value="3">3 Year</option>

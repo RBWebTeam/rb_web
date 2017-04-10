@@ -2175,6 +2175,7 @@ function SetSession_pop(cookieName,cookieValue){
 			$('.income-source > div').click(function(){
 				$('.income-source > div').removeClass('income-source-active');
 				$(this).toggleClass('income-source-active');
+				
 			});
 			
 			$('.scenario > div').click(function(){
@@ -2184,7 +2185,7 @@ function SetSession_pop(cookieName,cookieValue){
 		});
 			
 	</script>
-	<script>
+	<!-- <script>
     var s0 = $("#unranged").freshslider({
         step: 10,
 		scale: [1,,100],
@@ -2225,7 +2226,7 @@ function SetSession_pop(cookieName,cookieValue){
         }
     });
     
-</script>
+</script> -->
 
 
 <script>

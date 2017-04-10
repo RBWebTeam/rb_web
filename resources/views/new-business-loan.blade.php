@@ -20,16 +20,16 @@
 	   <div class="btn-grp mrg-top pad status" data-toggle="buttons">
 	  
 		<center><div class="type-cover"><span>Company Type</span></div></center>
-      <span class="btn btn-default outer-brd active"><input type="radio" name="proprietor"  value="Sole Proprietor">Sole Proprietor</span>
-      <span class="btn btn-default outer-brd"><input type="radio" name="proprietor"  value="Partnership">Partnership</span>
-      <span class="btn btn-default outer-brd"><input  type="radio" name="proprietor"  value="Company" >Company</span>
+      <span class="btn btn-default outer-brd mob-blk-dv active"><input type="radio" name="proprietor"  value="Sole Proprietor">Sole Proprietor</span>
+      <span class="btn btn-default outer-brd mob-blk-dv"><input type="radio" name="proprietor"  value="Partnership">Partnership</span>
+      <span class="btn btn-default outer-brd mob-blk-dv"><input  type="radio" name="proprietor"  value="Company" >Company</span>
       
       </div>
 		</div>
 		<div class="col-xs-12">
 	   <div class="btn-grp pad status" data-toggle="buttons">
 	   <center><div class="type-cover"><span>Business Type</span></div></center>
-      <span class="btn btn-default circle outer-brd active"><input type="radio" name="emp_detail" value="1">Self Employed Non-Professional (SENP)</span>
+      <span class="btn btn-default circle outer-brd active"><input type="radio" name="emp_detail" value="2">Self Employed Non-Professional (SENP)</span>
       <span class="btn btn-default circle outer-brd"><input type="radio" name="emp_detail" value="2">Self Employed Professional (SEP)</span>
 
       </div>
@@ -48,10 +48,10 @@
      <input type="text" class="form-input-new form-control lastReporteddate1" name="applicant_dob" id="applicant_dob" placeholder="Date Of Birth"   required>
   </div>
 
-  <div class="col-xs-6 form-padding">
+  <div class="col-xs-6 form-padding" >
   
-     <select class="block drop-arr select-sty"  name="loan_tenure">
-	  <option>LOAN TENURE</option>
+     <select class="block drop-arr select-sty"  name="loan_tenure" id="loan_tenure" required>
+	  <option value="">LOAN TENURE</option>
 	  <option value="1">1 Year</option>
 		<option value="2">2 Year</option>
 		<option value="3">3 Year</option>
@@ -124,7 +124,7 @@
                 </h4>
             </div>
             <div id="collapse7" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading7">
-                <div class="panel-body">
+<div class="panel-body">
 <div>
 
 <h4 class="text-center">List of Loan EMI</h4>
@@ -171,26 +171,20 @@
 
 
 	</div>
+	</div>
 	
-					
-                </div>
-            </div>
+     </div>
         </div>
-        
-        
     </div><!-- panel-group -->
   </div>
-  
-  
-
-	
-	
  </div>
-	<div class="col-md-6 no-pad">
+ 
+ 
+	<div class="col-md-6 no-pad flt-lft">
 	<div class="panel-group" id="accordion1">
 	<div class="panel-default">
       <div id="collapse0" class="panel-collapse collapse in">
-        <div class="panel-body">
+  <div class="panel-body">
 		
 	
 	<div class="col-xs-8 form-padding pad-no">
@@ -214,6 +208,7 @@
 	  </select>
          </div>
 	</div>
+
 	<div class="col-xs-8 form-padding">
 	 <span>Has a Good Repayment track record in existing UBL /CC/OD?</span>
 	</div>
@@ -223,7 +218,9 @@
       <span class="btn btn-default outer-brd btn-blu"><input type="radio" name="repayment_track" value="N">N</span>
          </div>
 	</div>
-		</div>
+</div>
+		
+		
       </div>
     </div>
 	
@@ -238,18 +235,15 @@
       <div id="collapse1" class="panel-collapse collapse">
         <div class="panel-body">
 	<div class="scenario">
-								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="natue_of_business" value="Manufacturing" class="radio1"  >MANUFACTURING</a></div>
+								<div class="col-xs-12 pad-no scenario-active"><a class="scenario-1 btn"><input type="radio" name="natue_of_business" value="Manufacturing" class="radio1"  >MANUFACTURING</a></div>
 								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="natue_of_business" value="Trading" class="radio1">TRADING</a></div>
 								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="natue_of_business" value="Services" class="radio1">SERVICES</a></div>
 								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="natue_of_business" value="Retailer" class="radio1">RETAILER</a></div>
-								<div class="col-xs-12 pad-no scenario-active"><a class="scenario-1 btn"><input type="radio" name="natue_of_business" 
+								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="natue_of_business" 
 								value="Others" class="radio1" checked>OTHER</a></div>
 								
 							</div>
-						
-	   
-	   
-		
+
 		</div>
       </div>
     </div>
@@ -282,7 +276,7 @@
 								<div class="col-xs-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">IT & ITeS</a></div>
 								<div class="col-xs-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Manufacturing</a></div>
 								<div class="col-xs-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Marketing And Strategy</a></div>
-								<div class="col-xs-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Media And Entertainment </a></div>
+								<div class="col-xs-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Media & Entertainment </a></div>
 								<div class="col-xs-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Oil And Gas</a></div>
 								<div class="col-xs-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Pharmaceuticals</a></div>
 								<div class="col-xs-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_4" class="radio1">Ports</a></div>
@@ -315,7 +309,7 @@
       <div id="collapse3" class="panel-collapse collapse">
         <div class="panel-body">
 		  <div class="col-xs-12 form-padding">
-     <input type="text" id="date" name="date" class="form-input-new form-control lastReporteddate1" placeholder="Date of incorporation" required>
+     <input type="text" id="date" name="date" class="form-input-new form-control lastReporteddate1" placeholder="Date Of Incorporation" required>
 	</div>
 		</div>
       </div>
@@ -615,3 +609,14 @@ $("#eligibility").click(function() {
 
 
 </script>
+
+<!-- <script type="text/javascript">
+	
+	$("#everything").validate({
+    messages: {
+     loan_tenure: {
+      required: "Please select an option from the list, if none are appropriate please select 'Other'",
+     },
+    }
+});
+</script> -->

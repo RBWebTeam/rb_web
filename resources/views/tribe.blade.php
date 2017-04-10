@@ -590,6 +590,7 @@ $.ajax({
  });
 
 $("#submit_statement").click(function(){
+  console.log("gasdfas");
   if(!$('#bank_statement_form').valid()){
     return false;
   }
@@ -606,6 +607,7 @@ $("#submit_statement").click(function(){
           contentType: false,
           success:function(response){
             console.log(response);
+            $('#transaction_id').val(response.transaction_id);
             
           },
         });
@@ -626,6 +628,7 @@ $('#freeze_form').click(function(){
               if(msg.status){
                   $('.app_id').val(msg.tribe);
                   $('#loan_id').val(mag.loan_id);
+
                   //enable further links
                   $( "#nav4").attr( "href","#main4" );
                   $( "#nav7").attr( "href","#main7" );
@@ -667,6 +670,8 @@ function tribe_doc_upload(id){
  <form id="bank_statement_form" name="bank_statement_form" enctype="multipart/form-data" >
     {{ csrf_field() }}
     <input type="hidden" name="loan_id" class="loan_id">
+    <input type="hidden" name="transaction_id" id="transaction_id">
+    
         <div class="col-md-3">UPLOAD COMPANY BANK STATEMENTS</div>
         <div class="col-md-8 sec">
          <select class="drop-arr" name="institution" id="institution" required>

@@ -10980,7 +10980,7 @@ border-radius: 7px;padding: 1em;margin-top: 1em;}
 	.nav-tabs > li > a {text-align:center;}
 	.btn-primary.btn-outline {
     background: transparent;
-    color: #3aa6d3;border:2px solid #3aa6d3;}
+    color: #3aa6d3;background:#fff;border:2px solid #3aa6d3;}
 	.liza1 {margin-top:20px;}
 	.btncent {margin-top:10px;}
 	#fh5co-blog-section {padding-bottom:10px;}
@@ -13029,7 +13029,7 @@ label {
 	height:100%;
 }*/
 @media screen and (max-width:768px) {
-	.btn-blu {padding:8px 5px;}
+	.btn-blu {padding:8px 3px;}
 	.border { float: left;width: 100%;}
 	.top-lnk li  {float:none;padding:2px 0px;list-style-type:none;width:120px;}
 	.top-lnk li:hover {visibility:visible;}
@@ -13050,6 +13050,7 @@ label {
 	.arrow-don li i {font-size:13px; padding-left:2px;}
 	.arrow-don li {padding: 2px;}
 	.arrow-don {top:130px;}
+
 	/* #my-video { display:inherit; position:fixed;width:auto;}
 	 .video {top: 0%;left:0%;z-index: 0;width:100%;height:100%;}*/
 }
@@ -13075,6 +13076,9 @@ label {
 .fh5co-copyright p {color:rgba(255, 255, 255, 0.5);}
 .blk-txt a {color:rgba(255, 255, 255, 0.5); font-weight:bold;}
 .blk-txt a:hover {color:#fff;}
+.flt-non {float:none;}
+.icon-map-marker {color: #bbb;}
+.hei-frtrt {float:left;}
 
 	
 

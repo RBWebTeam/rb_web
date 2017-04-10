@@ -51,7 +51,7 @@ class TribeController extends CallApiController
 	public function save_tribe_form(Request $req){
 	$data=$req->all();			
 	$data["name"]="SampleTribe";
-	print_r($req->all());exit();
+	//print_r($req->all());exit();
 	//remove above hard coded parameter later
 	$business_run_by_pan=isset($data['business_run_by_pan'])?$data['business_run_by_pan']:"";
 	$business_pan=isset($data['company_pan_card'])?$data['company_pan_card']:$business_run_by_pan;
@@ -191,9 +191,10 @@ class TribeController extends CallApiController
 
 	    	}else
 	    	{
+
 	            $post_data='{"secret":"'.TribeController::$secret.'","document_password":'.$pdf_pwd.',"loan_application_id":'.$req['loan_id'].',"from_date": "'.$req['start_date'].'","to_date":"'.$req['end_date'].'","statement_file":"data:application/pdf;base64,'.$base64.'","institution":"'.$req['institution'].'" }';
 		    
-					//print_r($post_data);exit();
+					print_r($post_data);exit();
 				$url = $this::$url_static."BankAPIService.svc/uploadStatmentTribeLoan";
 				$result=$this->call_json_data_api($url,$post_data);
 			    $http_result=$result['http_result'];

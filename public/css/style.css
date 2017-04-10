@@ -1983,7 +1983,7 @@ body {background:#eee;}
 @media only screen and (max-width:480px) {
 	 .bg-gray .nav-tabs {margin-left:0px;}
 	 .price-box ul li{margin-left:5px;}
-	.tp-margin {font-size:13px; padding:10px 10px;margin-top: 80px;display: block;}
+	.tp-margin {font-size:13px; padding:10px 10px;margin-top:2px;display: block;}
 	.exp-pad h2 {font-size: 31px; padding: 17px 36px}
 	
 }

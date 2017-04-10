@@ -634,7 +634,7 @@ Rupeeboss Financial Services Private Limited shall access your Credit Informatio
       <input type="file" name="document_itself" id="tribe_document_itself" required>
         <div style="display: none;" id="doc_special_fields">
             <label >Document Year</label>
-            <select name="document_year" class="drop-arr">
+            <select name="document_year" class="drop-arr" required>
             <option disabled selected>Select Year</option>
               <option>2013-2014</option>
               <option>2014-2015</option>
@@ -645,7 +645,7 @@ Rupeeboss Financial Services Private Limited shall access your Credit Informatio
               <option>2019-2020</option>
             </select>
             <label >Document Type</label>
-             <select name="document_type" class="drop-arr">
+             <select name="document_type" class="drop-arr" required>
              <option disabled selected>Select</option>
               <option>IT Returns</option>
               <option>IT Acknowledgement</option>
@@ -660,4 +660,5 @@ Rupeeboss Financial Services Private Limited shall access your Credit Informatio
   </div>
   </form>
 </div>
+
 

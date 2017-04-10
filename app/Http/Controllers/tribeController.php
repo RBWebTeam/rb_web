@@ -7,7 +7,6 @@ use Illuminate\Support\Facades\Input;
 class TribeController extends CallApiController
 {
 	public static $secret="i1fndpWYkU9fgBhqWmKU1Uwt7ogk9q";
-	
     public function tribe(){
 		$post='';
 	    $url = $this::$url_static."BankAPIService.svc/GetTribeLoan";
@@ -134,6 +133,7 @@ class TribeController extends CallApiController
 		    $http_result=$result['http_result'];
 		    $error=$result['error'];
 		   //print_r(json_decode(($http_result)));exit();
+
 		    if($http_result){
 
 		        $data=json_decode(($http_result));
@@ -158,7 +158,6 @@ class TribeController extends CallApiController
 	      
 	    }
 	    public function UploadTribeDocuments(Request $req){
-	    	//print_r($req->all());exit();
 	      	$documents_name_array = array('Pan Card','Aadhar Card','Driving License','Passport','Voter ID','Electricity_bill','Leave and License Agreement','Registration Certificate','Tax Registration','Comapny IT Returns','Company Pan Card','Vat Return','IT Returns','Other');
 	    	
 	        $i=$req['uplaoding_doc_name'];
@@ -172,6 +171,7 @@ class TribeController extends CallApiController
 			    $http_result=$result['http_result'];
 			    $error=$result['error'];
 			    if($http_result){
+
 			        return $http_result;
 			    }else{
 			        return false;
@@ -185,15 +185,26 @@ class TribeController extends CallApiController
 	    	$base64=$this->FileToString($str,$req);
             $post_data='{"secret":"'.TribeController::$secret.'","document_password":'.$pdf_pwd.',"loan_application_id":'.$req['loan_id'].',"from_date": "'.$req['start_date'].'","to_date":"'.$req['end_date'].'","statement_file":"data:application/pdf;base64,'.$base64.'","institution":"'.$req['institution'].'" }';
 	    
-			print_r($post_data);exit();
+			//print_r($post_data);exit();
 			$url = $this::$url_static."BankAPIService.svc/uploadStatmentTribeLoan";
 				$result=$this->call_json_data_api($url,$post_data);
 			    $http_result=$result['http_result'];
 			    $error=$result['error'];
-			    if($http_result){
-			        return $http_result;
+			    $data=json_decode($http_result);
+			    print_r($http_result);exit();
+			    if(!($data->$error)){
+			    return Response::json(array(
+		     					'status'=>true,
+                                'transaction_id' => $data->$transaction_id,
+                                'loan_id'=>$data->loan_application_id
+                        ));
+			    	
+			        
 			    }else{
-			        return false;
+			    return Response::json(array(
+		     					'status'=>false,
+                               	'error'=>$data->$error
+                            ));
 			    }
 		}
 

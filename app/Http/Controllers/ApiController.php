@@ -514,11 +514,17 @@ run_else:
                 $obj = json_decode($http_result);
                 // statusId response 0 for success, 1 for failure
                 //print_r(sizeof($obj->result->lstHomeLoanDtls));exit();
-       			//print_r($obj->statusId);exit();
+                $application=NULL;
+                $new_data=NULL;
+                $status_Id=1;
+                $msg="No Record Found";
+       			if(!$obj){
+       				goto failed;
+       			}
                 if($obj->statusId==0){
                 	$application=$obj->result->lstHomeLoanDtls;
                 }else{
-                	$application=NULL;
+       				$application=NULL;
                 }
                
 		        if($data!='[]' ){
@@ -539,7 +545,7 @@ run_else:
 					$status_Id=0;
 					$msg="Data delievered";
 				}
-		return Response::json(array(
+	failed:	return Response::json(array(
 			'data' => $new_data,
 			'application'=>$application,
 			'status_Id'=>$status_Id,

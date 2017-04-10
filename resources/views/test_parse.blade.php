@@ -22,17 +22,17 @@
     <!-- The navigation menu will get the value of the "active" variable as a class.
        The $event.preventDefault() stops the page from jumping when a link is clicked. -->
 
-    <nav class="@{{active}}" ng-click="$event.preventDefault()" ng-init="active='BASIC DETAIL'">
+    <nav class="@{{active}}" ng-click="$event.preventDefault()" ng-init="setActive('BASIC DETAIL')">
 
       <!-- When a link in the menu is clicked, we set the active variable -->
-    <a href="#" id="nav0" ng-click="active='BASIC DETAIL'" >BASIC DETAIL</a>
-    <a href="#" ng-click="active='LOAN DETAIL'" id="nav1" class="go_to_next"><b>LOAN DETAIL</a>
-    <a href="#" ng-click="active='PERSONAL DETAIL'" id="nav2" class="go_to_next"><b>PERSONAL DETAIL</a>
-    <a href="#" ng-click="active='BUSINESS DETAIL'" id="nav3" class="go_to_next"><b>BUSINESS DETAIL</a>
-    <a href="#" ng-click="active='ONLINE ID'" id="nav5" class="go_to_next"><b>ONLINE ID</a>
-    <a href="#" ng-click="active='REFERENCE'" id="nav6" class="go_to_next"><b>REFERENCE</a>
-    <a href="#"  id="nav4" ng-click="active='DOCUMENT'" class="go_to_next"><b>DOCUMENT</a>
-    <a href="#"  id="nav7" ng-click="active='BANK STATEMENT'" class="go_to_next"><b>BANK STATEMENT</a>
+    <a href="#" id="nav0" ng-click="setActive('BASIC DETAIL')" >BASIC DETAIL</a>
+    <a href="#" ng-click="setActive('LOAN DETAIL')" id="nav1" class="go_to_next"><b>LOAN DETAIL</a>
+    <a href="#" ng-click="setActive('PERSONAL DETAIL')" id="nav2" class="go_to_next"><b>PERSONAL DETAIL</a>
+    <a href="#" ng-click="setActive('BUSINESS DETAIL')" id="nav3" class="go_to_next"><b>BUSINESS DETAIL</a>
+    <a href="#" ng-click="setActive('ONLINE ID')" id="nav5" class="go_to_next"><b>ONLINE ID</a>
+    <a href="#" ng-click="setActive('REFERENCE')" id="nav6" class="go_to_next"><b>REFERENCE</a>
+    <a href="#"  id="nav4" ng-click="setActive('DOCUMENT')" class="go_to_next"><b>DOCUMENT</a>
+    <a href="#"  id="nav7" ng-click="setActive('BANK STATEMENT')" class="go_to_next"><b>BANK STATEMENT</a>
 
 
     </nav>
@@ -43,16 +43,34 @@
 
 
     <p ng-show="active">You chose <b>@{{active}}</p>
-
+    <div ng-show="checkActive('BASIC DETAIL')">
+      <span>Into the basic</span>
+    </div>
+    <div ng-show="checkActive('REFERENCE')">
+      <span>Into the REFERENCE</span>
+    </div>
     <!-- Include AngularJS from Google's CDN -->
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.min.js"></script>
   </body>
 </html>
   <script>
          var mainApp = angular.module("mainApp", []);
          
          mainApp.controller('NavController', function($scope) {
-            console.log();
+          $scope.setActive = function(activeDiv){
+            $scope.active=activeDiv;
+            console.log($scope.active);
+          }
+          $scope.checkActive=function(check){
+            console.log($scope.active);
+            if($scope.active=='BASIC DETAIL'){
+              return true;
+            }else{
+              return false;
+            }
+          }
+          
+          
          });
       </script>
 <style type="text/css">

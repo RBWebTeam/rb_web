@@ -490,8 +490,57 @@
     </div>
   </div>
   <br>
+
+
   @include('layout.footer')
   @include('layout.script')
+  <!-- modal for bank statement -->
+  <div id="tribe_bank_statement_form" class="modal fade" role="dialog" ng-app="bank">
+ <form id="bank_statement_form" name="bank_statement_form" enctype="multipart/form-data" method="POST" >
+    {{ csrf_field() }}
+    <input type="hidden" name="loan_id" id="loan_id">
+    <input type="hidden" name="transaction_id" id="transaction_id">
+    
+        <div class="col-md-3">UPLOAD COMPANY BANK STATEMENTS</div>
+        <div class="col-md-8 sec">
+         <select class="drop-arr" name="institution" id="institution" required>
+           <option disabled selected>Select</option>
+          @foreach($data['institution'] as $key=>$value)
+          
+          <option value="{{$value}}"><?php echo $key;?></option>
+          @endforeach
+        </select>
+        </div>
+        
+        <div class="col-md-3">Start Date</div>
+        <div class="col-md-8"
+        ><input type="date" name="start_date" id="start_date" class="form-control form-group" /></div>
+        
+        <div class="col-md-3">End Date</div>
+        <div class="col-md-8">
+        <input type="date" id="end_date" name="end_date" class="form-control form-group"/></div>
+        
+        <div class="col-md-3">Upload Document</div>
+        <div class="col-md-8">
+        <input type="file"  id="upload_statement" name="upload_statement" class="form-control form-group no-border"/>
+        </div>
+       <div class="col-md-3">PDF Password(if any)</div>
+        <div class="col-md-8"  >
+        <input type="checkbox" name="pdf_has_pwd" id="pdf_has_pwd" ng-model="pdf_has_pwd">
+        <input type="password" name="pdf_password" id="pdf_password" class="form-control form-group" ng-checked="pdf_has_pwd" /></div>
+        
+        <div class="col-md-3"></div>
+        <div class="col-md-8 mrg-top">
+        <a class="btn btn-primary btn-outline with-arrow pull-left" id="submit_statement">Submit Statment
+        <i class="icon-arrow-right"></i>
+        </a>
+        <a class="btn btn-primary btn-outline with-arrow pull-right" id="close_tribe_transaction">Close Transaction
+        <i class="icon-arrow-right"></i>
+        </a>
+        </div>
+    </form>
+</div>
+<!-- end modal -->
 
 <script type="text/javascript">
   var previousPartner;
@@ -606,6 +655,7 @@ $("#submit_statement").click(function(){
           contentType: false,
           success:function(response){
             console.log(response);
+            $('#transaction_id').val(response.transaction_id);
             
           },
         });
@@ -625,7 +675,8 @@ $('#freeze_form').click(function(){
 
               if(msg.status){
                   $('.app_id').val(msg.tribe);
-                  $('#loan_id').val(mag.loan_id);
+                  $('.loan_id').val(msg.loan_id);
+
                   //enable further links
                   $( "#nav4").attr( "href","#main4" );
                   $( "#nav7").attr( "href","#main7" );
@@ -642,15 +693,15 @@ $('#freeze_form').click(function(){
 $('#decline_freeze').click(function(){
      $('#freeze_form_modal').modal('hide');
 });
-$('#pdf_has_pwd').change(function(){
-     if(this.checked == true){
-        $('#pdf_password').show();
-    }else{
+// $('#pdf_has_pwd').change(function(){
+//      if(this.checked == true){
+//         $('#pdf_password').show();
+//     }else{
 
-        $('#pdf_password').hide();
-        $('#pdf_password').val('');
-   }
-});
+//         $('#pdf_password').hide();
+//         $('#pdf_password').val('');
+//    }
+// });
 
 function tribe_doc_upload(id){
     $('#tribe_doc_upload_modal').modal('show');
@@ -663,46 +714,3 @@ function tribe_doc_upload(id){
 }
   </script>
 
-<div id="tribe_bank_statement_form" class="modal fade" role="dialog">
- <form id="bank_statement_form" name="bank_statement_form" enctype="multipart/form-data" >
-    {{ csrf_field() }}
-    <input type="hidden" name="loan_id" class="loan_id">
-        <div class="col-md-3">UPLOAD COMPANY BANK STATEMENTS</div>
-        <div class="col-md-8 sec">
-         <select class="drop-arr" name="institution" id="institution" required>
-           <option disabled selected>Select</option>
-          @foreach($data['institution'] as $key=>$value)
-          
-          <option value="{{$value}}"><?php echo $key;?></option>
-          @endforeach
-        </select>
-        </div>
-        
-        <div class="col-md-3">Start Date</div>
-        <div class="col-md-8"
-        ><input type="date" name="start_date" id="start_date" class="form-control form-group" /></div>
-        
-        <div class="col-md-3">End Date</div>
-        <div class="col-md-8">
-        <input type="date" id="end_date" name="end_date" class="form-control form-group"/></div>
-        
-        <div class="col-md-3">Upload Document</div>
-        <div class="col-md-8">
-        <input type="file"  id="upload_statement" name="upload_statement" class="form-control form-group no-border"/>
-        </div>
-       <div class="col-md-3">PDF Password(if any)</div>
-        <div class="col-md-8"  >
-        <input type="checkbox" name="pdf_has_pwd" id="pdf_has_pwd">
-        <input type="password" name="pdf_password" id="pdf_password" class="form-control form-group" style="display: none;" required /></div>
-        
-        <div class="col-md-3"></div>
-        <div class="col-md-8 mrg-top">
-        <a class="btn btn-primary btn-outline with-arrow pull-left" id="submit_statement">Submit Statment
-        <i class="icon-arrow-right"></i>
-        </a>
-        <a class="btn btn-primary btn-outline with-arrow pull-right" id="close_tribe_transaction">Close Transaction
-        <i class="icon-arrow-right"></i>
-        </a>
-        </div>
-    </form>
-</div>

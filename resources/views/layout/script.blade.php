@@ -277,15 +277,15 @@
           $(document).ready(function(){
             $(".callclass").click(function(){
               $(".sidebar").hide("fast");
-              $(".arrow-don").show("fast");
+              $(".soc-ic-0").show("fast");
             });
             $(".hide-dv").click(function(){
               $(".sidebar").hide("fast");
-              $(".arrow-don").show("fast");
+              $(".soc-ic-0").show("fast");
             });
-            $(".arrow-don").click(function(){
+            $(".soc-ic-0").click(function(){
               $(".sidebar").show("fast");
-              $(".arrow-don").hide("fast");
+              $(".soc-ic-0").hide("fast");
               $(".sidebar1").hide("fast");
             });
           });

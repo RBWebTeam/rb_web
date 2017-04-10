@@ -294,7 +294,7 @@
 								<div class="col-xs-6 pad-no"><a class="scenario-1 btn" onclick="callme('Consumer Markets')">Consumer Markets</a></div>
 								<div class="col-xs-6 pad-no"><a class="scenario-1 btn" onclick="callme('Education And Training')">Education And Training </a></div>
 
-								<div class="col-xs-6 pad-no scenario-active"><a class="scenario-1 btn"  onclick="callme('Engineering')">
+								<div class="col-xs-6 pad-no "><a class="scenario-1 btn"  onclick="callme('Engineering')">
 								Engineering</a></div>
 
 								<div class="col-xs-6 pad-no"><a class="scenario-1 btn" onclick="callme('Financial Services')">Financial Services </a></div>

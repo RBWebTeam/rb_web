@@ -494,7 +494,7 @@
   
   
 
-</form>
+
 </div>
 
 		
@@ -502,28 +502,28 @@
 	<div class="col-md-4" >
      <div class="border brd-for" id="mi_id">
 
-             <!-- <form name="compareform" id="compareform" > -->
+             
           
           
             <div class="inp-hig">
             <label class="form-label-new">Loan Amount</label>
-              <input type="text" class="form-control" id="loanamount_new" name="name" value="" placeholder="" required class="clr-ddd" readonly />
+              <input type="text" class="form-control" id="loanamount_new" name="loanamount_new" value="" placeholder="" required class="clr-ddd" readonly />
             </div>
 
             <div class="inp-hig">
           <label class="form-label-new">Best ROI</label>
-              <input type="text" class="form-control" id="rate" name="name" value="10" placeholder="" required class="clr-ddd" readonly />
+              <input type="text" class="form-control" id="rate" name="rate" value="10" placeholder="" required class="clr-ddd" readonly />
             </div>
 
-            <div class="inp-hig">
+            <!-- <div class="inp-hig">
             <label class="form-label-new">Tenure</label>
-                 <input type="text" class="form-control" id="term" name="name" value="" placeholder="" required class="clr-ddd" readonly>
+                 <input type="text" class="form-control" id="term" name="term" value="" placeholder="" required class="clr-ddd" readonly>
             </div>
 
             <div class="inp-hig">
           <label class="form-label-new">Processing Fee</label>
-              <input type="text" class="form-control" id="processfee" name="name" placeholder="" required class="clr-ddd" readonly />
-            </div>
+              <input type="text" class="form-control" id="processfee" name="processfee" placeholder="" required class="clr-ddd" readonly />
+            </div> -->
 
         <div> 
           <br>
@@ -535,7 +535,7 @@
         
         <!-- <p id="err" style="display:none;" ><span style="color:skyblue;position:absolute;font-size:13px;">No Quotes Found.</span></p> -->
    
-    <!--   </form> -->
+      </form>
 
     </div> 
     <p id="err" style="display:none;" ><span style="color: red;font-size: 20px;display: block; text-align: center;">Sorry, We are unable to process your request. Will get back to you in future.</span></p> 
@@ -633,11 +633,11 @@
         var amt= (parseFloat(amount)+ parseFloat($("#debtors_3").val()));
         // console.log(amt);
         var drawing_power=0.25*parseFloat(amt);
-        console.log(drawing_power);
-         $('#loanamount_new').val(drawing_power);
+        // console.log(drawing_power);
+         // $('#loanamount_new').val(drawing_power);
 
          var turnover=$("#turnover_3").val()*0.2;
-         console.log(turnover);
+         // console.log(turnover);
 
          if (drawing_power>turnover) 
          {
@@ -648,6 +648,12 @@
            $('#loanamount_new').val(drawing_power);
          }
 
+         var assets= (parseFloat($("#total_current_liability").val())+parseFloat($("#total_non_current_liability").val()));
+         // console.log(assets);
+
+         var quantity= (parseFloat($("#share_capital_3").val())+parseFloat($("#reserve_surplus_3").val()));
+         var ratio= parseFloat(assets)/parseFloat(quantity);
+         // console.log(ratio);
         //var s=$('#'+form).serialize();
 
         // $(".iframeloading").show();
@@ -660,15 +666,15 @@
          success: function(msg){
          // $(".iframeloading").hide();  
         
-         console.log(msg);
+         // console.log(msg);
           if(msg==1){
-            console.log(msg);
+            // console.log(msg);
 
             // alert("Thank you for your interest in ICICI Bank Credit Cards. Our representative will get in touch with you within 3 working days subject to your application meeting the eligibility criteria");
             $('#credit_process').modal('show');        
           } 
           else if(msg==2){
-            console.log(msg);
+            // console.log(msg);
             // alert("Something Went Wrong");
              $('#credit_process_sorry').modal('show');
           }
@@ -684,7 +690,7 @@
 
 <script type="text/javascript">
   function email(obj,val){
-    console.log(obj);
+    // console.log(obj);
     if(obj=='customer_email' ){
                    var str =$('#customer_email').val();
                    var emailPattern = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/; 

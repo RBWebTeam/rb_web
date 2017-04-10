@@ -17,7 +17,7 @@
 
   <!-- The ng-app directive tells angular that the code below should be evaluated -->
 
-  <body ng-app>
+  <body ng-app="mainApp" ng-controller="NavController">
 
     <!-- The navigation menu will get the value of the "active" variable as a class.
        The $event.preventDefault() stops the page from jumping when a link is clicked. -->
@@ -48,6 +48,13 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
   </body>
 </html>
+  <script>
+         var mainApp = angular.module("mainApp", []);
+         
+         mainApp.controller('NavController', function($scope) {
+            console.log($active);
+         });
+      </script>
 <style type="text/css">
   *{
   margin:0;
@@ -88,7 +95,7 @@ section, footer, header, aside, nav{
 nav{
   display:inline-block;
   margin:60px auto 45px;
-  background-color:#ec1b23;
+  background-color:#55B460;
   box-shadow:0 1px 1px #ccc;
   border-radius:2px;
 }

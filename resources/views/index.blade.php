@@ -117,6 +117,8 @@
 <li><h2 class="pad text-center"><a href="{{URL::to('comfy-sales')}}">Rupeeboss Comfy</a></h2></li>
 <li><h2 class="pad text-center"><a href="{{URL::to('express-loan')}}">Express Loan</a></h2></li>
 <li><h2 class="pad text-center"><a href="{{URL::to('savings-account')}}">Savings Account</a></h2></li>
+<li><h2 class="pad text-center"><a href="{{URL::to('new-home-loan')}}">Pradhan Mantri Awas Yojana</a></h2></li>
+<li><h2 class="pad text-center"><a href="{{URL::to('contact-us')}}">SME Car Leasing</a></h2></li>
 </ul>
 </div>
 	
@@ -196,7 +198,7 @@
 		</div>
 	</div>
 	
-		<div class="container-fluid white-bg credit-report-bg">
+		<div class="container-fluid white-bg credit-report-bg flt-non">
 			
 			<div class="animate-box">
                     <div class="col-md-1"></div>

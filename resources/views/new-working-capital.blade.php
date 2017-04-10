@@ -210,7 +210,7 @@
  </div>
  <div>
    <div class="col-md-12 pad-no">
-   <center><div class="type-cover"><span>EBIT</span></div></center>
+   <center><div class="type-cover"><span>EBIT/Net Operating Income</span></div></center>
    </div>
    <div class="col-md-4 form-padding"><input type="text" name="ebit_1" id="ebit_1" onkeypress="return isNumberKey(event)" required class="form-input-new form-control" placeholder="1 Year"></div>
    <div class="col-md-4 form-padding"><input type="text" name="ebit_2" id="ebit_2" onkeypress="return isNumberKey(event)" required class="form-input-new form-control" placeholder="2 Year"></div>
@@ -471,7 +471,7 @@
                   </div>
 				  <div class="col-xs-6 form-padding">
      <input type="text" id="customer_email" name="customer_email" class="form-input-new form-control" placeholder="Email Id" oninput="email('customer_email')" required>
-     <span id="email_id" class="pan-error">Enter Valid Email Id.</span>
+    <span id="email_id" style="display:none;color: red;">Please Enter Valid Email Id.</span>
                   </div>
 				  <div class="col-xs-6 form-padding">
      <input type="text" id="customer_contact " name="customer_contact " class="form-input-new form-control" placeholder="Contact No." pattern="[789][0-9]{9}" maxlength="10" onkeypress="return isNumberKey(event)" required>
@@ -512,7 +512,7 @@
 
             <div class="inp-hig">
           <label class="form-label-new">Best ROI</label>
-              <input type="text" class="form-control" id="rate" name="name" value="" placeholder="" required class="clr-ddd" readonly />
+              <input type="text" class="form-control" id="rate" name="name" value="10" placeholder="" required class="clr-ddd" readonly />
             </div>
 
             <div class="inp-hig">
@@ -628,10 +628,25 @@
       $form=$('#'+form);
       if(! $form.valid()){
       }else{
-        var amount = ($("#inventory_3").val()-$("#creditors_3").val())
-        var amt=amount+$("#debtors_3").val()
-        console.log(amt);
-         $('#loanamount').val(amount);
+        var amount = ($("#inventory_3").val()-$("#creditors_3").val());
+        // console.log(amount);
+        var amt= (parseFloat(amount)+ parseFloat($("#debtors_3").val()));
+        // console.log(amt);
+        var drawing_power=0.25*parseFloat(amt);
+        console.log(drawing_power);
+         $('#loanamount_new').val(drawing_power);
+
+         var turnover=$("#turnover_3").val()*0.2;
+         console.log(turnover);
+
+         if (drawing_power>turnover) 
+         {
+             $('#loanamount_new').val(turnover);
+         } 
+         else if(drawing_power<turnover) 
+         {
+           $('#loanamount_new').val(drawing_power);
+         }
 
         //var s=$('#'+form).serialize();
 

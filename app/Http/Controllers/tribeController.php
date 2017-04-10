@@ -178,20 +178,31 @@ class TribeController extends CallApiController
 			    }
 	    }
 
-	    public function UploadBankStatement(Request $req){    	
+	    public function UploadBankStatement(Request $req){  
+	    	if(isset($req->transaction_id) && $req->transaction_id){
+
+	    		
+			    print_r($req->all());exit();
+
+	    	}
+	     return Response::json(array(
+		     					'status'=>true,
+                                'transaction_id' => 123,
+                                'loan_id'=>135
+                        ));  	
 	    	$str='upload_statement';
 	    	$pdf_pwd=$req['pdf_password']?'"'.$req['pdf_password'].'"':'null';
 	    	$base64=$this->FileToString($str,$req);
 			//print_r($post_data);exit();
 
 			//if traction is already opened i.e. its another bank statement
-	    	if(isset($req->transaction_id)){
+	    	if(isset($req->transaction_id) && $req->transaction_id){
 
 	    		
 			    print_r($req->all());exit();
 
 	    	}else{
-		    	$post_data='{"secret":"'.TribeController::$secret.'","document_password":'.$pdf_pwd.',"loan_application_id":'.$req['loan_id'].',"from_date": "'.$req['start_date'].'","to_date":"'.$req['end_date'].'","statement_file":"data:application/pdf;base64,'.$base64.'","institution":"'.$req['institution'].'" }';
+		    	$post_data='{"secret":"'.TribeController::$secret.'","document_password":'.$pdf_pwd.',"loan_application_id":130,"from_date": "'.$req['start_date'].'","to_date":"'.$req['end_date'].'","statement_file":"data:application/pdf;base64,'.$base64.'","institution":"'.$req['institution'].'" }';
 				$url = $this::$url_static."BankAPIService.svc/uploadStatmentTribeLoan";
 					$result=$this->call_json_data_api($url,$post_data);
 				    $http_result=$result['http_result'];

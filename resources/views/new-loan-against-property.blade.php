@@ -55,7 +55,7 @@
      <input type="text" class="form-input-new form-control" id="property_cost" name="property_cost" placeholder="Property Cost" required onkeypress="return fnAllowNumeric(event)">
   </div>
   <div class="col-xs-4 form-padding">
-     <input type="text" class="form-input-new form-control" name="loan_amount" placeholder="Loan Required" required onkeypress="return fnAllowNumeric(event)">
+     <input type="text" class="form-input-new form-control" name="loan_amount" id="loan_amount" placeholder="Loan Required" required onkeypress="return fnAllowNumeric(event)">
   </div>
   <div class="col-xs-4 form-padding">
      <input type="text" class="form-input-new form-control search_city" name='city_name' placeholder="Enter City" required >
@@ -110,7 +110,7 @@
   
   <div class="col-xs-6 form-padding">
    <div class="btn-grp form-control pad-no border-none" data-toggle="buttons">
-                                    <span class="btn btn-default outer-brd1 active"><input type="radio" value="M" name="gender"  ><img id="myImage" src="images/male.png" class=""></span><span class="hidden-xs">Male</span>
+                                    <span class="btn btn-default outer-brd1 active"><input type="radio" value="M" name="gender"  ><img id="myImage" src="images/male.png" class=""></span><span class="hidden-xs"> Male</span>
                                    <span class="btn btn-default outer-brd1 "><input type="radio" value="F" name="gender" ><img id="myImage1" src="images/female.png" class=""></span> <span class="hidden-xs">Female</span>
                         <input type="hidden" class="clr-blue"   name="emp_detail_id" value="1" >
                                     
@@ -182,7 +182,7 @@
   
   <div class="col-xs-6 form-padding">
    <div class="btn-grp form-control pad-no border-none" data-toggle="buttons">
-                                    <span class="btn btn-default outer-brd1 active"><input type="radio" name="cogender" value="M" ><img id="myImage" src="images/male.png" class=""></span><span class="hidden-xs">Male</span>
+                                    <span class="btn btn-default outer-brd1 active"><input type="radio" name="cogender" value="M" ><img id="myImage" src="images/male.png" class=""></span><span class="hidden-xs"> Male</span>
                                    <span class="btn btn-default outer-brd1 "><input type="radio" name="cogender" value="F"><img id="myImage1" src="images/female.png" class=""></span> <span class="hidden-xs">Female</span>
            </div>      
      </div>
@@ -426,4 +426,21 @@ $("#eligibility").click(function() {
 
 
 
+</script>
+
+<script type="text/javascript">
+  $(document).ready(function()
+{
+    function update()
+    {
+        var cost = parseFloat($("#property_cost").val());
+        // console.log(cost);
+        var total = (cost)*60/100;
+        // var total = total.toFixed(2);
+        // console.log(total);
+        $("#loan_amount").val(total);
+
+    }
+    $(document).on("change, keyup", "#property_cost", update);
+});
 </script>

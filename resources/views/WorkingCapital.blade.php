@@ -1004,5 +1004,10 @@ $('.menu1act').click(function(e){
 });
 
 
+
+$('input[type=radio]').on('change', function(){
+    $('input[type=radio]').not(this).prop('checked', false);
+});
+
  }); 
 </script>

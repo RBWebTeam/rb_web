@@ -47,13 +47,27 @@
     <div class="border heigh-bt">
     <h3 class="emi-cal text-center">Your Saving</h3>
        <center class="my-saving">
-       <p>Monthly Interest Paid :<b class="em1"> ₹ <span id="monthlyinterest">0</span></b></p>
-       <p>Drop in interest Paid:<b class="em1">  <span id="drop_interest">0</span>%</b></p>
-       <p>Monthly Saving :<b class="em1"> ₹ <span id="monthlysavinf">0</span></b></p>
-       <p>Total Yearly Saving :<b class="em1"> ₹ <span id="yearlysaving">0</span></b></p>
-       </center>
 
-
+ <table class="table text-left">
+ 
+ <tr>
+    <td>Monthly Interest Paid:</td>
+    <td><b class="em1"> ₹ <span id="monthlyinterest">0</span></b></td>
+  </tr>
+  <tr>
+    <td>Drop in interest Paid:</td>
+    <td><b class="em1">  <span id="drop_interest">0</span>%</b></td>
+  </tr>
+  <tr>
+    <td>Monthly Saving:</td>
+    <td><b class="em1"> ₹ <span id="monthlysavinf">0</span></b></td>
+  </tr>
+  <tr>
+    <td>Total Yearly Saving:</td>
+    <td><b class="em1"> ₹ <span id="yearlysaving">0</span></b></td>
+  </tr>
+ </table>
+ </center>
    </div>
    </div>
   </div>
@@ -115,11 +129,30 @@
     <div class="border heigh-bt">
     <h3 class="emi-cal text-center">Your Saving</h3>
     <center class="my-saving">
-       <p> Old Loan EMI :<b class="em1"> ₹ <span id="LoanEMI">0</span></b></p>
-       <p>Drop EMI :<b class="em1"> ₹ <span id="Drop_EMI">0</span></b></p>
-        <p>New Loan EMI:<b class="em1"> ₹ <span id="NewLoanEMI">0</span></b></p>
-         <p>Drop-in Interest Rate:<b class="em1">  <span id="emidrop_interest">0</span>%</b></p>
-         <p>Your Savings:<b class="em1"> ₹ <span id="totalYearSaving">0</span></b></p>
+      
+	  <table class="table text-left">
+ 
+ <tr>
+    <td>Old Loan EMI :</td>
+    <td><b class="em1"> ₹ <span id="LoanEMI">0</span></b></td>
+  </tr>
+  <tr>
+    <td>Drop EMI :</td>
+    <td><b class="em1"> ₹ <span id="Drop_EMI">0</span></b></td>
+  </tr>
+  <tr>
+    <td>New Loan EMI:</td>
+    <td><b class="em1"> ₹ <span id="NewLoanEMI">0</span></b></td>
+  </tr>
+  <tr>
+    <td>Drop-in Interest Rate:</td>
+    <td><b class="em1">  <span id="emidrop_interest">0</span>%</b></td>
+  </tr>
+<tr>
+    <td>Your Savings:</td>
+    <td><b class="em1"> ₹ <span id="totalYearSaving">0</span></b></td>
+  </tr>
+ </table>
        </center>
     
  
@@ -184,10 +217,26 @@
     <h3 class="emi-cal text-center">Your Saving</h3>
 
         <center class="my-saving">
-       <p>Interest Paid As Per Debtor Cycle :<b class="em1"> ₹ <span id="dmonthlyinterest">0</span></b></p>
-       <p>Drop In Interest Paid:<b class="em1">  <span id="ddrop_interest">0</span>%</b></p>
-       <p>Saving As Per Debtor Cycle :<b class="em1"> ₹ <span id="dmonthlysavinf">0</span></b></p>
-       <p>Total Yearly Saving :<b class="em1"> ₹ <span id="dyearlysaving">0</span></b></p>
+       <table class="table text-left">
+ 
+ <tr>
+    <td>Interest Paid As Per Debtor Cycle :</td>
+    <td><b class="em1"> ₹ <span id="dmonthlyinterest">0</span></b></td>
+  </tr>
+  <tr>
+    <td>Drop In Interest Paid:</td>
+    <td><b class="em1">  <span id="ddrop_interest">0</span>%</b></td>
+  </tr>
+  <tr>
+    <td>Saving As Per Debtor Cycle:</td>
+    <td><b class="em1"> ₹ <span id="dmonthlysavinf">0</span></b></td>
+  </tr>
+  <tr>
+    <td>Total Yearly Saving:</td>
+    <td><b class="em1"> ₹ <span id="dyearlysaving">0</span></b></td>
+  </tr>
+
+ </table>
        </center>
 
    </div>
@@ -244,10 +293,26 @@
     <h3 class="emi-cal text-center">Your Saving</h3>
 
         <center class="my-saving">
-       <p>Interest Paid As Per Debtor Cycle:<b class="em1"> ₹ <span id="fcmonthlyinterest">0</span></b></p>
-       <p>Drop in interest Paid:<b class="em1">  <span id="fcdrop_interest">0</span>%</b></p>
-       <p>Saving As Per Debtor Cycle  :<b class="em1"> ₹ <span id="fcmonthlysavinf">0</span></b></p>
-       <p>Total Yearly Saving :<b class="em1"> ₹ <span id="fcyearlysaving">0</span></b></p>
+       <table class="table text-left">
+ 
+ <tr>
+    <td>Interest Paid As Per Debtor Cycle:</td>
+    <td><b class="em1"> ₹ <span id="fcmonthlyinterest">0</span></b></td>
+  </tr>
+  <tr>
+    <td>Drop in interest Paid:</td>
+    <td><b class="em1">  <span id="fcdrop_interest">0</span>%</b></td>
+  </tr>
+  <tr>
+    <td>Saving As Per Debtor Cycle:</td>
+    <td><b class="em1"> ₹ <span id="fcmonthlysavinf">0</span></b></td>
+  </tr>
+  <tr>
+    <td>Total Yearly Saving:</td>
+    <td><b class="em1"> ₹ <span id="fcyearlysaving">0</span></b></td>
+  </tr>
+
+ </table>
        </center>
 
    </div>

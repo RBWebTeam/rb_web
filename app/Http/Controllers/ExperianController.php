@@ -55,6 +55,8 @@ class ExperianController extends CallApiController
             $post_data['voucherCode']=$voucher[0]->voucher;
             $post_data['clientName']="RUPEEBOSS";
             $post_data['hitId']="";
+            //added later on 11 april
+            $post_data['Emp_Code']=Session::get('empid')?Session::get('empid'):'';
             //print_r($post_data);exit();
             //unsetting terms and condition as no need to save in DB
              unset($post_data['terms']);

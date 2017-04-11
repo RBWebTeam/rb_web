@@ -130,7 +130,7 @@
 <h4 class="text-center">List of Loan EMI</h4>
 <div id="emp_detail">
 <div class="emp_detail">
-                    <div class="col-xs-6 form-padding"> 
+        <div class="col-xs-6 form-padding"> 
 
      <input type="text" class="form-input-new form-control" name="bank_name" id="bank_name" placeholder="Bank" onkeypress="return AllowAlphabet(event)"   required="">
 
@@ -161,14 +161,8 @@
   
 <!-- <a href="javascript:void(0)" class="btn btn-info" id="button" va >Add Bank</a>
  <a href="javascript:void(0)" class="btn btn-info" id="button_remove" >Remove</a> -->
-  <div id="addChild" >
-                    <input type="button" class="btn btn-info" value="Add Bank"> 
-                </div>
-                    <div id="deleteChild" >
-                        <input type="button"  class="btn btn-info" value="Remove">
-                    </div>
-
-
+  <div id="addChild" ><input type="button" class="btn btn-info" value="Add Bank"></div>
+ <div id="deleteChild" ><input type="button"  class="btn btn-info" value="Remove"></div>
 
 	</div>
 	</div>
@@ -176,6 +170,8 @@
      </div>
         </div>
     </div><!-- panel-group -->
+
+
   </div>
  </div>
  

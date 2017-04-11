@@ -38,7 +38,7 @@ class CreditcardController extends CallApiController
    // print_r($id);exit();
     $update_user='';
     $obj = json_decode($m);
-    // print_r($obj);exit();
+    print_r($obj);exit();
     if ($obj->ApplicationId) 
     {
         // print_r($http_result);exit();
@@ -47,12 +47,12 @@ class CreditcardController extends CallApiController
          ->update(['ApplicationId'=>$obj->ApplicationId]);
          //print_r($update_user);exit();
          if(!$update_user){
-            $error='2';  
+            $error=2;  
         }else{  
-            $error='1';
+            $error=1;
           }
     }else{
-        $error='2';
+        $error=2;
     }
     return $error; 
 	

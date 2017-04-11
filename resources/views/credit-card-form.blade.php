@@ -29,11 +29,11 @@
 										<div class="col-md-4">
 											<input type="text" class="form-control lastReporteddob" id="DateOfBirth" name="DateOfBirth" placeholder="Date of Birth*" required>
 										</div>
-										<div class="col-md-4">Male &nbsp;&nbsp;
-											<input type="radio" name="Gender"  class="radiob" required value="Male">&nbsp;&nbsp; Female &nbsp;&nbsp;<input type="radio" name="Gender" class="radiob" value="Female">
+										<div class="col-md-4">Male &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+											<input type="radio" name="Gender"  class="radiob" required value="Male">&nbsp;&nbsp;<br> Female &nbsp;&nbsp;<input type="radio" name="Gender" class="radiob" value="Female">
 										</div>
-										<div class="col-md-4">Salaried &nbsp;&nbsp;
-											<input type="radio" name="CustomerProfile"  class="radiob" required value="Salaried">&nbsp;&nbsp; Selfemployed &nbsp;&nbsp;<input type="radio" name="CustomerProfile" class="radiob" value="Selfemployed">
+										<div class="col-md-4">Salaried &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+											<input type="radio" name="CustomerProfile"  class="radiob"  value="Salaried">&nbsp;&nbsp; <br> Selfemployed &nbsp;&nbsp;<input type="radio" name="CustomerProfile" class="radiob"  value="Selfemployed" required="">
 										</div>
 
 									</div>
@@ -123,12 +123,24 @@
 												<input type="text" class="form-control" placeholder="Passport No*" name="passport"	>
 											</div> -->
 											<div class="col-md-4">
+  
+										     <select class="block drop-arr select-sty" name="ICICIBankRelationship" id="ICICIBankRelationship" required>
+											  <option value="">ICICIBankRelationship</option>
+											    <option value="Salary">Salary</option>
+												<option value="Saving">Saving</option>
+												<option value="Loan">Loan</option>
+												<option value="Norelationship">Norelationship</option>
+												
+											</select>
+  											</div>
+											<div class="col-md-4">
 												<input type="text" id="PanNo" name="PanNo" class="form-control" placeholder="Pancard*" oninput="pancard('PanNo')" maxlength="10" minlength="10" required >
 												<div id="pannumber" style="display:none;color: red;">Oops.Please Enter Valid Pan Number.!!</div>
 											</div>
-											<div class="col-md-4">
+											&nbsp;&nbsp;&nbsp;&nbsp;
+											<!-- <div class="col-md-4">
 												<input type="text" class="form-control lastReporteddob" id="SalaryAcOpenDate" name="SalaryAcOpenDate" placeholder="Salary Ac Open Date*" required>
-											</div>
+											</div> -->
 										<div class="col-md-12">
 										<input type="checkbox" name="terms" required>
 											I hereby confirm that I have read and understood the

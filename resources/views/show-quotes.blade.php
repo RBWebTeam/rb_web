@@ -78,6 +78,10 @@
       }elseif($product == "Car Loan"){
         $prod="4";
 
+      }elseif($product == "Loan Against Property"){
+         $prod="7";
+
+
       }else{
       $prod="12"; 
         }?>

@@ -71,7 +71,7 @@
       <div id="collapse2" class="panel-collapse collapse applicant_add">
         <div class="panel-body">
 		
-		<div class="col-xs-6 form-padding">
+		<div class="col-xs-6 form-padding err">
   
      <select class="block drop-arr select-sty" name="loan_tenure" id="loan_tenure" required>
 	  <option value="">Loan Tenure</option>

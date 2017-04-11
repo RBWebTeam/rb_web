@@ -3461,7 +3461,7 @@ input:checked + .slider:before {
     padding: 6px 6px;
     font-size: 14px;
     color: #999;
-	margin-bottom:10px;
+	margin-bottom:0px;
     font-weight: 500;
     background-image: none;
     border: 1px solid #ccc;
@@ -3478,6 +3478,7 @@ input:checked + .slider:before {
     padding-left: 5px;
     padding-right: 5px;
     padding-bottom: 0px;
+	height:50px;
 }
 
 .inp-hig input {
@@ -3592,6 +3593,7 @@ label {
 .flt-non {float:none;}
 .icon-map-marker {color: #bbb;}
 .hei-frtrt {float:left;}
+label.error {font-size: 10px;position:absolute;}
 
 
 	

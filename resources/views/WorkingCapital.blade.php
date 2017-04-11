@@ -100,10 +100,10 @@
    <input type="text" class="form-control form-group" placeholder=" Loan Tenure"  maxlength="5" id="termloanTenur" onkeypress="return isNumberKey(event)">
    <div class="form-padding validate_id" style="display: none; color: red" >Please Fill All Inputs</div>
    <button class="btn btn-success pull-left btn_id"  id="termloanid">Submit</button>
-   <div class="pull-right">
+   <!-- <div class="pull-right">
              <label><input type="radio" name="yearmonth" id="Year"  value="Year" checked="checked"> Year</label>
              <label><input type="radio" name="yearmonth" id="Month" value="Month"> Month</label>
-    </div>
+    </div> -->
    </div>
    </form>
    </div>
@@ -168,10 +168,10 @@
 </select>
 <div class="form-padding validate_id" style="display: none; color: red" >Please Fill All Inputs</div>
    <button class="btn btn-success pull-left btn_id"  id="packingcreditdomesti">Submit</button>
-   <div class="pull-right">
+   <!-- <div class="pull-right">
              <label><input type="radio" name="yearmonth" id="Year"  value="Year" checked="checked"> Year</label>
              <label><input type="radio" name="yearmonth" id="Month" value="Month"> Month</label>
-    </div>
+    </div> -->
    </div>
    </form>
    </div>
@@ -228,10 +228,10 @@
    <button class="btn btn-success pull-left btn_id"  id="packingcreditforeignCurr">Submit</button>
 
 
-   <div class="pull-right">
+  <!--  <div class="pull-right">
              <label><input type="radio" name="yearmonth" id="Year"  value="Year" checked="checked"> Year</label>
              <label><input type="radio" name="yearmonth" id="Month" value="Month"> Month</label>
-    </div>
+    </div> -->
    </div>
    </form>
    </div>

@@ -13,12 +13,13 @@ class CreditcardController extends CallApiController
 	 }
 
 	 public function credit_form_submit(Request $req){
+        // print_r($req->all());exit();
     $save=new credit_card_form_req(); 
     $id=$save->store($req);
     $newDob = date("d-m-Y",strtotime(str_replace('-','/', $req['DateOfBirth'])));
-    $newDate = date("d-m-Y",strtotime(str_replace('-','/', $req['SalaryAcOpenDate'])));
+    // $newDate = date("d-m-Y",strtotime(str_replace('-','/', $req['SalaryAcOpenDate'])));
     $req['DateOfBirth']=str_replace('-', '/',$newDob);
-    $req['SalaryAcOpenDate']=str_replace('-', '/',$newDate);
+    // $req['SalaryAcOpenDate']=str_replace('-', '/',$newDate);
     $data=$req->all();
     // print_r($req->all());exit();
  	$data['UserID']='ICICI_CC_RupeeBoss';
@@ -37,7 +38,7 @@ class CreditcardController extends CallApiController
    // print_r($id);exit();
     $update_user='';
     $obj = json_decode($m);
-    //print_r($obj);exit();
+    print_r($obj);exit();
     if ($obj->ApplicationId) 
     {
         // print_r($http_result);exit();

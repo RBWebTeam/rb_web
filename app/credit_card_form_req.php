@@ -9,7 +9,7 @@ class credit_card_form_req extends Model
 {
     //
     protected $table='credit_card_form_req';
-    protected $fillable = ['ApplicantFirstName', 'ApplicantMiddleName', 'ApplicantLastName', 'Gender', 'DateOfBirth','CustomerProfile','CompanyName','Income','ICICIBankRelationship','SalaryAccountWithOtherBank','ResidenceAddress1','ResidenceAddress2','ResidenceAddress3','City','ResidencePincode','ResidenceState','ApplicationNumber','SalaryAcOpenDate','PanNo','ResidencePhoneNumber','ResidenceMobileNo','STDCode','created_at', 'updated_at','ApplicationId'];
+    protected $fillable = ['ApplicantFirstName', 'ApplicantMiddleName', 'ApplicantLastName', 'Gender', 'DateOfBirth','CustomerProfile','CompanyName','Income','ICICIBankRelationship','Total_Exp','ICICIRelationshipNumber','SalaryAccountWithOtherBank','ResidenceAddress1','ResidenceAddress2','ResidenceAddress3','City','ResidencePincode','ResidenceState','ApplicationNumber','SalaryAccountOpened','PanNo','ResidencePhoneNumber','ResidenceMobileNo','STDCode','created_at', 'updated_at','ApplicationId'];
     public function store(Request $request)
     {
         //print_r($request->all());exit();

@@ -47,10 +47,23 @@
 										<div class="col-md-4">
 											<input type="text" id="Income" name="Income" class="form-control" placeholder="Income*" onkeypress="return fnAllowNumeric(event)"  required>
 										</div>
-										<div class="col-md-4">ICICI Bank Relationship<b>:</b> Yes &nbsp;&nbsp;
+										<!-- <div class="col-md-4">ICICI Bank Relationship<b>:</b> Yes &nbsp;&nbsp;
 											<input type="radio" name="ICICIBankRelationship" id="ICICIBankRelationship"  class="radiob" required value="Yesrelationship">&nbsp;&nbsp;  No&nbsp;&nbsp;<input type="radio" name="ICICIBankRelationship" id="ICICIBankRelationship" class="radiob" value="Norelationship">
 										</div>
 
+ -->
+ 									       <div class="col-md-4">
+  
+										     <select class="block drop-arr select-sty" name="ICICIBankRelationship" id="ICICIBankRelationship" required>
+											  <option value="">ICICIBankRelationship</option>
+											    <option value="Salary">Salary</option>
+												<option value="Saving">Saving</option>
+												<option value="Loan">Loan</option>
+												<option value="Norelationship">Norelationship</option>
+												
+											</select>
+  											</div>
+		
 										
 										
 											<div class="col-md-8">Salary Account With Other Bank<b>:</b> Yes &nbsp;&nbsp;

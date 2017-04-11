@@ -1,6 +1,6 @@
 @include('layout.header')
 <div id="fh5co-hero">
-  <div class="container white-bg">
+  <div class="container white">
   <h2 class="align-center loan-head">Working Capital</h2>
   <div class="col-md-10">
 
@@ -15,10 +15,10 @@
 <div class="tab-content">
   <div id="home" class="tab-pane fade in active">
      <div class="col-md-12">
-	 <div class="col-md-3"></div>
-   <h4 class="col-md-2"><input type="radio" name="bank1" onclick="bankName('bank1')"  checked="checked" id="bank1" value="bank1"/> Bank 1 </h4>
-   <h4 class="col-md-2"><input type="radio" name="bank2" id="bank2"  onclick="bankName('bank2')" /> Bank 2 </h4>
-   <h4 class="col-md-2"><input type="radio" name="bank3" id="bank3" onclick="bankName('bank3')"/> Bank 3 </h4>
+	 <div class="col-md-3 col-xs-12"></div>
+   <h4 class="col-md-2 col-xs-4"><input type="radio" name="bank1" onclick="bankName('bank1')"  checked="checked" id="bank1" value="bank1"/> Bank 1 </h4>
+   <h4 class="col-md-2 col-xs-4"><input type="radio" name="bank2" id="bank2"  onclick="bankName('bank2')" /> Bank 2 </h4>
+   <h4 class="col-md-2 col-xs-4"><input type="radio" name="bank3" id="bank3" onclick="bankName('bank3')"/> Bank 3 </h4>
    <a data-toggle="tab" href="#menu1" class="btn btn-success pull-right menu1act">NEXT</a>
    </div>
   <div class="col-md-4">
@@ -83,10 +83,10 @@
   
   <div id="menu1" class="tab-pane fade">
   <div class="col-md-12">
-  <h4 class="col-md-3"></h4>
-   <h4 class="col-md-2"><input type="radio" name="Tbank1" onclick="TbankName('Tbank1')"  checked="checked" id="Tbank1" value="Tbank1"/> Bank 1</h4>
-   <h4 class="col-md-2"><input type="radio" name="Tbank2" id="Tbank2"  onclick="TbankName('Tbank2')" /> Bank 2</h4>
-   <h4 class="col-md-2"><input type="radio" name="Tbank3" id="Tbank3" onclick="TbankName('Tbank3')"/> Bank 3</h4>
+  <h4 class="col-md-3 col-xs-12""></h4>
+   <h4 class="col-md-2 col-xs-4"><input type="radio" name="Tbank1" onclick="TbankName('Tbank1')"  checked="checked" id="Tbank1" value="Tbank1"/> Bank 1</h4>
+   <h4 class="col-md-2 col-xs-4""><input type="radio" name="Tbank2" id="Tbank2"  onclick="TbankName('Tbank2')" /> Bank 2</h4>
+   <h4 class="col-md-2 col-xs-4""><input type="radio" name="Tbank3" id="Tbank3" onclick="TbankName('Tbank3')"/> Bank 3</h4>
    <a data-toggle="tab" href="#menu2" class="btn btn-success pull-right menu1act">NEXT</a>
    </div>
   <div class="col-md-4">
@@ -330,7 +330,7 @@
   
 </div>
   </div>
-  <div class="col-md-2 totl-sav">
+  <div class="col-md-2 col-xs-12 totl-sav">
   <div class="fix-pos">
 		<div class="text-center guid nl-form-errors" id='bank_ID'>Total Saving 0</div>
 
@@ -339,7 +339,7 @@
 
 		</div>
 
-		<a href="{{url('new-working-capital')}}" class="btn btn-success aply-btn">Apply Now</a>
+		<a href="{{url('new-working-capital')}}" class="btn btn-success aply-btn disblk ">Apply Now</a>
 
  </div>
 </div>

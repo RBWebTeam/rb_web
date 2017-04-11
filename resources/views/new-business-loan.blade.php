@@ -41,7 +41,7 @@
 	<div class="col-xs-6 form-padding">
 	
      <input class="form-input-new form-control" type="text" id="pan_no" name="pan_no" oninput="pan_card('pan_no')" maxlength="10" minlength="10"  placeholder="Pan No" required>
-	 <span id="pan_number"  style="display:none;color: red;">Enter Valid Pan No.</span>
+	 <span id="pan_number"  style="display:none;color: red;font-size:12px;">Enter Valid Pan No.</span>
      
 	</div>
   <div class="col-xs-6 form-padding">

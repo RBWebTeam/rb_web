@@ -297,16 +297,18 @@
   </tr>
   <tr>
   <td class="text-left"><h4 class="text-center">Packing Credit Domestic</h4></b></</td>
-  <td  id="domestic_ID">  </td>
-	<td  >0</td>
-	<td  >0</td>
+ <!--  <td  id="domestic_ID">  </td> -->
+   <td ></td>
+	<td  ></td>
+	<td  ></td>
   <td  id="tdomestic_ID"> </td>
   </tr>
   <tr>
   <td class="text-left" ><h4 class="text-center">Packing Credit Foreign Currency</h4></</td>
-  <td id="currency_ID"> </td>
-	<td >0</td>
-	<td >0</td>
+ <!--  <td id="currency_ID"> </td> -->
+ <td ></td>
+	<td ></td>
+	<td ></td>
   <td id="tcurrency_ID"> </td>
   </tr>
 
@@ -744,7 +746,8 @@ function ajax(_token,loanAmount_id,interest,loanTenurMonth,ID,paid){
 }
 
 
-  var  totalb=0, total1=0,total2=0,total3=0;
+  var  totalb=0, total1=0,total2=0,total3=0,cutotal=0;
+
  function bankAppend(sessionName,totalYearSaving){    //    append value on proposal
             if(sessionName=='bank1'){
               total1=parseInt(totalYearSaving); 
@@ -763,6 +766,10 @@ function ajax(_token,loanAmount_id,interest,loanTenurMonth,ID,paid){
            
                 }
                 $('#banktotal').empty().append(totalb=total1+total2+total3);     //parseInt
+
+              
+                
+               //  $('#bank_ID').empty().append(totalb);
 
  }        
  

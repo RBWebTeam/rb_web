@@ -35,20 +35,20 @@
       </div>
 		</div>
 		
-		<div class="col-xs-6 form-padding">
+		<div class="col-xs-12 col-md-6 form-padding">
      <input type="text" class="form-input-new form-control" name="loan_amount" id="loan_amount" placeholder="Loan Amount" onkeypress="return isNumberKey(event)"  required>
 	</div>
-	<div class="col-xs-6 form-padding">
+	<div class="col-xs-12 col-md-6 form-padding">
 	
      <input class="form-input-new form-control" type="text" id="pan_no" name="pan_no" oninput="pan_card('pan_no')" maxlength="10" minlength="10"  placeholder="Pan No" required>
 	 <span id="pan_number"  style="display:none;color: red;font-size:12px;">Enter Valid Pan No.</span>
      
 	</div>
-  <div class="col-xs-6 form-padding">
+  <div class="col-xs-12 col-md-6 form-padding">
      <input type="text" class="form-input-new form-control lastReporteddate1" name="applicant_dob" id="applicant_dob" placeholder="Date Of Birth"   required>
   </div>
 
-  <div class="col-xs-6 form-padding" >
+  <div class="col-xs-12 col-md-6 form-padding" >
   
      <select class="block drop-arr select-sty"  name="loan_tenure" id="loan_tenure" required>
 	  <option value="">LOAN TENURE</option>
@@ -79,32 +79,32 @@
             <div id="collapse6" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading6">
                 <div class="panel-body">
                      
-					 <div class="col-xs-6 form-padding">
+					 <div class="col-xs-12 col-md-6 form-padding">
      <input type="text" class="form-input-new form-control"  name="company_name" id="company_name"  placeholder="Company Name" onkeypress="return AllowAlphabet(event)" required  >
 
 	</div>
-	<div class="col-xs-6 form-padding">
+	<div class="col-xs-12 col-md-6 form-padding">
      <input type="text" class="form-input-new form-control"  name="income_tax_paid" id="income_tax_paid" onkeypress="return isNumberKey(event)" required="" placeholder="Income Tax Paid - Firm">
 	</div>
-	<div class="col-xs-6 form-padding">
+	<div class="col-xs-12 col-md-6 form-padding">
      <input type="text" class="form-input-new form-control" name="turnover" id="turnover" placeholder="Turnover/Topline" onkeypress="return isNumberKey(event)" required>
 	</div>
-	<div class="col-xs-6 form-padding">
+	<div class="col-xs-12 col-md-6 form-padding">
      <input type="text" class="form-input-new form-control" name="profit_after_tax" id="profit_after_tax" placeholder="Profit After Tax"  onkeypress="return isNumberKey(event)" required>
 	</div>
-	<div class="col-xs-6 form-padding">
+	<div class="col-xs-12 col-md-6 form-padding">
      <input type="text" class="form-input-new form-control" name="depreciation" id="depreciation" placeholder="Depreciation" onkeypress="return isNumberKey(event)" required>
 	</div>
-	<div class="col-xs-6 form-padding">
+	<div class="col-xs-12 col-md-6 form-padding">
      <input type="text" class="form-input-new form-control" name="partner_remuneration" id="partner_remuneration" placeholder="Partner Remuneration" 
      onkeypress="return isNumberKey(event)"  required>
 	</div>
 
 			
-<div class="col-xs-6 form-padding"> 
+<div class="col-xs-12 col-md-6 form-padding"> 
      <input type="name" class="form-input-new form-control" placeholder="Interest Paid On Bank Loans" step="0.01" min="0" name="interest_paid" id="interest_paid" onkeypress="return isNumberKey(event)" required>
 	</div>
-	<div class="col-xs-6 form-padding"> 
+	<div class="col-xs-12 col-md-6 form-padding"> 
 
      <input type="text" class="form-input-new form-control" name="existing_emi" id="existing_emi" placeholder="Existing All EMI" onkeypress="return isNumberKey(event)"  required>
 
@@ -130,16 +130,16 @@
 <h4 class="text-center">List of Loan EMI</h4>
 <div id="emp_detail">
 <div class="emp_detail">
-        <div class="col-xs-6 form-padding"> 
+        <div class="col-xs-12 col-md-6 form-padding"> 
 
      <input type="text" class="form-input-new form-control" name="bank_name" id="bank_name" placeholder="Bank" onkeypress="return AllowAlphabet(event)"   required="">
 
      
 	</div>
-	<div class="col-xs-6 form-padding">
+	<div class="col-xs-12 col-md-6 form-padding">
      <input type="text" class="form-input-new form-control" name="emi" id="emi" placeholder="EMI"  onkeypress="return isNumberKey(event)" required>
 	</div>
-	<div class="col-xs-6 form-padding">
+	<div class="col-xs-12 col-md-6 form-padding">
 	 <select class="form-input-new form-control">
 	     <option>Home Loan</option>
 		 <option>Property Loan</option>
@@ -150,7 +150,7 @@
 		 <option>Others</option>
 	 </select>
 	</div>
-	<div class="col-xs-6 form-padding">
+	<div class="col-xs-12 col-md-6 form-padding">
      <input type="text" class="form-input-new form-control" name="no_of_emi_paid" id="no_of_emi_paid" placeholder="No Of EMI Paid"  onkeypress="return isNumberKey(event)" minlength="2" maxlength="2" required>
 	</div>
 	</div>
@@ -239,13 +239,13 @@
 								<div class="col-xs-12 pad-no scenario-active"><a class="scenario-1 btn"><input type="radio" name="natue_of_business" 
 								value="Others" class="radio1" checked>OTHER</a></div> -->
                                 
-                                <div class="col-xs-6 pad-no scenario-active"><a class="scenario-1 btn"  onclick="alertme('Manufacturing')">
+                                <div class="col-xs-12 col-md-6 pad-no scenario-active"><a class="scenario-1 btn"  onclick="alertme('Manufacturing')">
 								Manufacturing</a></div>
 
-								<div class="col-xs-6 pad-no"><a class="scenario-1 btn" onclick="alertme('Auto Trading')">Trading </a></div>
-								<div class="col-xs-6 pad-no"><a class="scenario-1 btn" onclick="alertme('Services')">Services</a></div>
-								<div class="col-xs-6 pad-no"><a class="scenario-1 btn" onclick="alertme('Retailer')">Retailer</a></div>
-								<div class="col-xs-6 pad-no"><a class="scenario-1 btn" onclick="alertme('Others')">Others</a></div>
+								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn" onclick="alertme('Auto Trading')">Trading </a></div>
+								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn" onclick="alertme('Services')">Services</a></div>
+								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn" onclick="alertme('Retailer')">Retailer</a></div>
+								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn" onclick="alertme('Others')">Others</a></div>
 
 								<input type="hidden" name="nature_of_business" id="nature_of_business">
 
@@ -278,50 +278,50 @@
         <div class="panel-body">
 		   <div class="scenario">
 
-								<div class="col-xs-6 pad-no scenario-active"><a class="scenario-1 btn"  onclick="callme('Agriculture')">
+								<div class="col-xs-12 col-md-6 pad-no scenario-active"><a class="scenario-1 btn"  onclick="callme('Agriculture')">
 								Agriculture</a></div>
 
-								<div class="col-xs-6 pad-no"><a class="scenario-1 btn" onclick="callme('Auto Components')">Auto Components </a></div>
-								<div class="col-xs-6 pad-no"><a class="scenario-1 btn" onclick="callme('Automobiles')">Automobiles</a></div>
-								<div class="col-xs-6 pad-no"><a class="scenario-1 btn" onclick="callme('Aviation')">Aviation</a></div>
-								<div class="col-xs-6 pad-no"><a class="scenario-1 btn" onclick="callme('Banking')">Banking</a></div>
-								<div class="col-xs-6 pad-no"><a class="scenario-1 btn" onclick="callme('Biotechnology')">Biotechnology </a></div>
-								<div class="col-xs-6 pad-no"><a class="scenario-1 btn" onclick="callme('Cement')">Cement</a></div>
-								<div class="col-xs-6 pad-no"><a class="scenario-1 btn" onclick="callme('Consumer Markets')">Consumer Markets</a></div>
-								<div class="col-xs-6 pad-no"><a class="scenario-1 btn" onclick="callme('Education And Training')">Education And Training </a></div>
+								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn" onclick="callme('Auto Components')">Auto Components </a></div>
+								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn" onclick="callme('Automobiles')">Automobiles</a></div>
+								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn" onclick="callme('Aviation')">Aviation</a></div>
+								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn" onclick="callme('Banking')">Banking</a></div>
+								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn" onclick="callme('Biotechnology')">Biotechnology </a></div>
+								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn" onclick="callme('Cement')">Cement</a></div>
+								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn" onclick="callme('Consumer Markets')">Consumer Markets</a></div>
+								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn" onclick="callme('Education And Training')">Education And Training </a></div>
 
-								<div class="col-xs-6 pad-no "><a class="scenario-1 btn"  onclick="callme('Engineering')">
+								<div class="col-xs-12 col-md-6 pad-no "><a class="scenario-1 btn"  onclick="callme('Engineering')">
 								Engineering</a></div>
 
-								<div class="col-xs-6 pad-no"><a class="scenario-1 btn" onclick="callme('Financial Services')">Financial Services </a></div>
-								<div class="col-xs-6 pad-no"><a class="scenario-1 btn" onclick="callme('Food Industry')">Food Industry</a></div>
-								<div class="col-xs-6 pad-no"><a class="scenario-1 btn" onclick="callme('Gems And Jewellery')">Gems And Jewellery</a></div>
-								<div class="col-xs-6 pad-no"><a class="scenario-1 btn" onclick="callme('Healthcare')">Healthcare</a></div>
-								<div class="col-xs-6 pad-no"><a class="scenario-1 btn" onclick="callme('Infrastructure')">Infrastructure </a></div>
-								<div class="col-xs-6 pad-no"><a class="scenario-1 btn" onclick="callme('Insurance')">Insurance</a></div>
-								<div class="col-xs-6 pad-no"><a class="scenario-1 btn" onclick="callme('IT & ITeS')">IT & ITeS</a></div>
-								<div class="col-xs-6 pad-no"><a class="scenario-1 btn" onclick="callme('Manufacturing')">Manufacturing</a></div>
+								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn" onclick="callme('Financial Services')">Financial Services </a></div>
+								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn" onclick="callme('Food Industry')">Food Industry</a></div>
+								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn" onclick="callme('Gems And Jewellery')">Gems And Jewellery</a></div>
+								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn" onclick="callme('Healthcare')">Healthcare</a></div>
+								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn" onclick="callme('Infrastructure')">Infrastructure </a></div>
+								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn" onclick="callme('Insurance')">Insurance</a></div>
+								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn" onclick="callme('IT & ITeS')">IT & ITeS</a></div>
+								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn" onclick="callme('Manufacturing')">Manufacturing</a></div>
 
-								<div class="col-xs-6 pad-no"><a class="scenario-1 btn" onclick="callme('Marketing And Strategy')">Marketing And Strategy </a></div>
-								<div class="col-xs-6 pad-no"><a class="scenario-1 btn" onclick="callme('Media And Entertainment')">Media And Entertainment</a></div>
-								<div class="col-xs-6 pad-no"><a class="scenario-1 btn" onclick="callme('Oil And Gas')">Oil And Gas</a></div>
-								<div class="col-xs-6 pad-no"><a class="scenario-1 btn" onclick="callme('Pharmaceuticals')">Pharmaceuticals</a></div>
-								<div class="col-xs-6 pad-no"><a class="scenario-1 btn" onclick="callme('Ports')">Ports </a></div>
-								<div class="col-xs-6 pad-no"><a class="scenario-1 btn" onclick="callme('Power')">Power</a></div>
-								<div class="col-xs-6 pad-no"><a class="scenario-1 btn" onclick="callme('Railways')">Railways</a></div>
-								<div class="col-xs-6 pad-no"><a class="scenario-1 btn" onclick="callme('Real Estate')">Real Estate</a></div>
+								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn" onclick="callme('Marketing And Strategy')">Marketing And Strategy </a></div>
+								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn" onclick="callme('Media And Entertainment')">Media And Entertainment</a></div>
+								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn" onclick="callme('Oil And Gas')">Oil And Gas</a></div>
+								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn" onclick="callme('Pharmaceuticals')">Pharmaceuticals</a></div>
+								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn" onclick="callme('Ports')">Ports </a></div>
+								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn" onclick="callme('Power')">Power</a></div>
+								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn" onclick="callme('Railways')">Railways</a></div>
+								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn" onclick="callme('Real Estate')">Real Estate</a></div>
 
-								<div class="col-xs-6 pad-no"><a class="scenario-1 btn" onclick="callme('Research And Development')">Research And Development </a></div>
-								<div class="col-xs-6 pad-no"><a class="scenario-1 btn" onclick="callme('Retail')">Retail</a></div>
-								<div class="col-xs-6 pad-no"><a class="scenario-1 btn" onclick="callme('Roads')">Roads</a></div>
-								<div class="col-xs-6 pad-no"><a class="scenario-1 btn" onclick="callme('Rural Market')">Rural Market</a></div>
-								<div class="col-xs-6 pad-no"><a class="scenario-1 btn" onclick="callme('Science And Technology')">Science And Technology </a></div>
-								<div class="col-xs-6 pad-no"><a class="scenario-1 btn" onclick="callme('Semiconductor')">Semiconductor</a></div>
-								<div class="col-xs-6 pad-no"><a class="scenario-1 btn" onclick="callme('Services')">Services</a></div>
-								<div class="col-xs-6 pad-no"><a class="scenario-1 btn" onclick="callme('Steel')">Steel</a></div>
-								<div class="col-xs-6 pad-no"><a class="scenario-1 btn" onclick="callme('Telecommunications')">Telecommunications</a></div>
-								<div class="col-xs-6 pad-no"><a class="scenario-1 btn" onclick="callme('Textiles')">Textiles</a></div>
-								<div class="col-xs-6 pad-no"><a class="scenario-1 btn" onclick="callme('Tourism And Hospitality')">Tourism And Hospitality</a></div>
+								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn" onclick="callme('Research And Development')">Research And Development </a></div>
+								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn" onclick="callme('Retail')">Retail</a></div>
+								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn" onclick="callme('Roads')">Roads</a></div>
+								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn" onclick="callme('Rural Market')">Rural Market</a></div>
+								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn" onclick="callme('Science And Technology')">Science And Technology </a></div>
+								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn" onclick="callme('Semiconductor')">Semiconductor</a></div>
+								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn" onclick="callme('Services')">Services</a></div>
+								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn" onclick="callme('Steel')">Steel</a></div>
+								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn" onclick="callme('Telecommunications')">Telecommunications</a></div>
+								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn" onclick="callme('Textiles')">Textiles</a></div>
+								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn" onclick="callme('Tourism And Hospitality')">Tourism And Hospitality</a></div>
 								<input type="hidden" name="industry_name" id="industry_name">
 								 
 
@@ -361,12 +361,12 @@
 		   <div class="scenario">
 								
 
-								<div class="col-xs-6 pad-no scenario-active"><a class="scenario-1 btn"  onclick="alert('Owned')">
+								<div class="col-xs-12 col-md-6 pad-no scenario-active"><a class="scenario-1 btn"  onclick="alert('Owned')">
 								Owned</a></div>
 
-								<div class="col-xs-6 pad-no"><a class="scenario-1 btn" onclick="alert('Rented')">Rented </a></div>
-								<div class="col-xs-6 pad-no"><a class="scenario-1 btn" onclick="alert('Parental')">Parental</a></div>
-								<div class="col-xs-6 pad-no"><a class="scenario-1 btn" onclick="alert('Others')">Others</a></div>
+								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn" onclick="alert('Rented')">Rented </a></div>
+								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn" onclick="alert('Parental')">Parental</a></div>
+								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn" onclick="alert('Others')">Others</a></div>
 								
 								<input type="hidden" name="residence_type" id="residence_type">
 								
@@ -385,12 +385,12 @@
       <div id="collapse5" class="panel-collapse collapse">
         <div class="panel-body">
 		   <div class="scenario">
-								<div class="col-xs-6 pad-no scenario-active"><a class="scenario-1 btn"  onclick="call('Owned')">
+								<div class="col-xs-12 col-md-6 pad-no scenario-active"><a class="scenario-1 btn"  onclick="call('Owned')">
 								Owned</a></div>
 
-								<div class="col-xs-6 pad-no"><a class="scenario-1 btn" onclick="call('Rented')">Rented </a></div>
-								<div class="col-xs-6 pad-no"><a class="scenario-1 btn" onclick="call('Parental')">Parental</a></div>
-								<div class="col-xs-6 pad-no"><a class="scenario-1 btn" onclick="call('Others')">Others</a></div>
+								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn" onclick="call('Rented')">Rented </a></div>
+								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn" onclick="call('Parental')">Parental</a></div>
+								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn" onclick="call('Others')">Others</a></div>
 								
 								<input type="hidden" name="office_type" id="office_type">
 								

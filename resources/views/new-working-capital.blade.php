@@ -31,7 +31,7 @@
 	 <h4 class="mrg-top text-center">Export/Import -</h4>
 	</div>
 	<div class="col-xs-4 form-padding pad">
-     <div class="btn-grp border-none" data-toggle="buttons">
+     <!-- <div class="btn-grp border-none" data-toggle="buttons">
       <span class="btn btn-default outer-brd btn-blu active"><input type="radio" name="exchange" value="Y">Y</span>
       <span class="btn btn-default outer-brd btn-blu"><input type="radio" name="exchange" value="N">N</span>
 	  <select class="pull-right btn-default outer-brd btn-blu pad-ten">
@@ -46,7 +46,24 @@
 		   <option>90%</option>
 		   <option>100%</option>
 	  </select>
-         </div>
+         </div> -->
+         Yes <input type="radio" onclick="javascript:yesnoCheck();" name="yesno" id="yesCheck"> No <input type="radio" onclick="javascript:yesnoCheck();" name="yesno" id="noCheck"><br>
+    <div id="ifYes" style="visibility:hidden">
+        
+        <select class="pull-right btn-default outer-brd btn-blu pad-ten" id='yes'>
+        <option>10%</option>
+       <option>20%</option>
+       <option>30%</option>
+       <option>40%</option>
+       <option>50%</option>
+       <option>60%</option>
+       <option>70%</option>
+       <option>80%</option>
+       <option>90%</option>
+       <option>100%</option>
+    </select>
+    </div>
+        
 	</div>
 		
 		
@@ -711,6 +728,18 @@
                   
   }
 }
+</script>
+
+<script type="text/javascript">
+
+function yesnoCheck() {
+    if (document.getElementById('yesCheck').checked) {
+        document.getElementById('ifYes').style.visibility = 'visible';
+    }
+    else document.getElementById('ifYes').style.visibility = 'hidden';
+
+}
+
 </script>
 
 

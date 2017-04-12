@@ -153,7 +153,7 @@
 	</div>
 		
 		
-    <input type="hidden" class="co_applicant_DI" name="have_co_app_loan" value="No">
+    <input type="hidden" class="co_applicant_DI" name="have_co_applicant" value="No">
 		<!-- Rounded switch -->
 		<div class="col-xs-12 form-padding">
 

@@ -10,7 +10,7 @@
 			<h2 class="">Have us call you now.</h2>
 			<h3>Your contact details:</h3>
 			<div class="row">
-			<form name="contact_back_now" id="subscribe-form" method="post">
+			<form name="contact_back_now" id="subscribe-form" method="post"> 
                    {{ csrf_field() }}
                 <input type="hidden" name="form" value="contact-back-form">
                         
@@ -26,7 +26,7 @@
                         <input type="tel" class="newsletter-name" name="contact" onkeypress="return fnAllowNumeric(event)" placeholder="Number" minlength="10" maxlength="10" required />
                     </div>
 					<br>
-					 <button class="btn btn-primary btn-outline with-arrow pull-left" >Call Me Back<i class="icon-arrow-right"></i></button>
+					 <button class="btn btn-primary btn-outline with-arrow pull-left sidebar-submit" >Call Me Back<i class="icon-arrow-right"></i></button>
                     </div>
                           
                    

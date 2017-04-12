@@ -237,7 +237,7 @@ class TribeController extends CallApiController
 		$loan_id=Session::get('loan_id');
 		$post_data='{"secret":"'.TribeController::$secret.'","name":"'.TribeController::$name.'","loan_application_id":"'.$req['loan_id'].'","transaction_id": "'.$req['transaction_id'].'"}';
 		
-		// print_r($post_data);exit();
+		print_r($post_data);exit();
 		$url = $this::$url_static."BankAPIService.svc/completeTransctionTribeLoan";
 		$result=$this->call_json_data_api($url,$post_data);
 	    $http_result=$result['http_result'];

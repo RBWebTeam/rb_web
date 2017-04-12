@@ -50,20 +50,23 @@
 	</div>
 		
 		
-		<div class="col-xs-12 form-padding mrg-top">
+		<div class="col-xs-12">
 		<center><div class="type-cover"><span>Name of The Company</span></div></center>
-     <input type="text" class="form-input-new form-control" name="company" id="company" placeholder="Company Name" onkeypress="return AllowAlphabet(event)" required >
+     <input type="text" class="form-input-new  form-control" name="company" id="company" placeholder="Company Name" onkeypress="return AllowAlphabet(event)" required >
+	 <br>
 	</div>
-	<div class="col-xs-12 form-padding">
+	
+	<div class="col-xs-12">
 	<center><div class="type-cover"><span>Date of Incorporation</span></div></center>
      <input class="form-input-new form-control lastReporteddate1" type="text" name="date" id="date" placeholder="Date Of Incorporation">
+	 <br>
 	</div>
- <div class="col-md-12 form-padding">
+ <div class="col-md-12">
  <input type="text" class="form-input-new form-control" name="loan_amount" id="loan_amount" placeholder="Loan Amount Required in Crores" onkeypress="return isNumberKey(event)" required>
  </div>
  
     <div class="col-md-12 pad-no">
-<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+<div class="panel-group flt-lft" id="accordion" role="tablist" aria-multiselectable="true">
         <div class="panel panel-default">
             <div class="panel-heading" role="tab" id="headingOne">
                 <h4 class="panel-title">

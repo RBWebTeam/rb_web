@@ -3556,7 +3556,8 @@ label {
 	.credit-report-bg {padding-bottom:4px;}
 	.flt-lft {height:auto;}
 	.white-bg1 {float:left;}
-	.flt-lft {float:left; margin-bottom:20px;}
+	.white-bg {display:grid;}
+	.flt-lft {float:left; margin-bottom:20px; width:100%;}
 	.status .btn {padding: 7px 4px;}
 	.mob-blk-dv {display:block;width:100%;}
 	.arrow-don li i {font-size:13px; padding-left:2px;}

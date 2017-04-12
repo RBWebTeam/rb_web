@@ -9,13 +9,13 @@
  <div class="col-md-12 white-bg pad">
  <h3 class="text-center loan-head">Working Capital</h3>
 <div class="col-md-8" id="mod">
-<form name='business_loan_process_form' id='business_loan_process_form' action={{URL::to('loan-submit')}} method="POST">
+<form name='working_capital_process_form' id='working_capital_process_form' action={{URL::to('loan-submit')}} method="POST">
 {{ csrf_field() }}  
  <!-- <img src="{{URL::to('images/9.png')}}" alt="Tribe Logo" class="img-responsive" /> -->
  <div class="col-md-6">
   <div class="col-xs-12">
   
-	 <input type="hidden" id="product" name="product_name" value="13">
+	 <input type="hidden" id="product" name="product_name" value="11">
 
 	   <div class="btn-grp mrg-top pad status" data-toggle="buttons">
 	  

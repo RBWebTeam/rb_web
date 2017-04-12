@@ -41,13 +41,13 @@
 							</div>
 						</div> 
 						
-						<div class="col-xs-6 col-md-4 form-padding">
+						<div class="col-xs-12 col-md-4 form-padding">
      <input type="text" class="form-input-new form-control" id="property_cost" name="property_cost" placeholder="Property Cost" required onkeypress="return fnAllowNumeric(event)"  maxlength="10">
 	</div>
-	<div class="col-xs-6 col-md-4 form-padding">
+	<div class="col-xs-12 col-md-4 form-padding">
      <input type="text" class="form-input-new form-control" name="loan_amount" id="loan_amount" placeholder="Loan Required" required onkeypress="return fnAllowNumeric(event)"  value="">
 	</div>
-	<div class="col-xs-6 col-md-4 form-padding">
+	<div class="col-xs-12 col-md-4 form-padding">
      <input type="text" class="form-input-new form-control search_city" name='city_name' placeholder="Enter City" required >
 	</div>
 	
@@ -71,7 +71,7 @@
       <div id="collapse2" class="panel-collapse collapse applicant_add">
         <div class="panel-body">
 		
-		<div class="col-xs-6 form-padding err">
+		<div class="col-xs-12 col-md-6 form-padding">
   
      <select class="block drop-arr select-sty" name="loan_tenure" id="loan_tenure" required>
 	  <option value="">Loan Tenure</option>
@@ -100,11 +100,11 @@
 		
 		
 		
-    <div class="col-xs-6 form-padding">
+    <div class="col-xs-12 col-md-6 form-padding">
      <input type="text" class="form-input-new form-control" name="applicantname" placeholder="Applicant Name"  required>
 	</div>
 	
-	<div class="col-xs-6 form-padding">
+	<div class="col-xs-12 col-md-6 form-padding">
 	 <div class="btn-grp form-control pad-no border-none" data-toggle="buttons">
                                     <span class="btn btn-default outer-brd1 active"><input type="radio" value="M" name="gender"  ><img id="myImage" src="images/male.png" class=""></span><span class="hidden-xs">Male</span>
                                    <span class="btn btn-default outer-brd1 "><input type="radio" value="F" name="gender" ><img id="myImage1" src="images/female.png" class=""></span> <span class="hidden-xs">Female</span>
@@ -113,10 +113,10 @@
            </div>		   
 	   </div>
 	   
-	   <div class="col-xs-6 form-padding">
+	   <div class="col-xs-12 col-md-6 form-padding">
      <input type="text" class="form-input-new form-control lastReporteddate"  name="dob"  placeholder="Date of Birth" required>
 	</div>
-		<div class="col-xs-6 form-padding">
+		<div class="col-xs-12 col-md-6 form-padding">
      <div class="btn-grp form-control border-none pad-no" data-toggle="buttons">
       <span class="btn btn-default outer-brd btn-blu active"><input type="radio" id="sala_DI" value="salaried" name="emp_detail"  > Salaried</span>
       <span class="btn btn-default outer-brd btn-blu"><input type="radio" id="self_DI" value="self-employed" name="emp_detail"  >Self-Emp</span>
@@ -127,28 +127,28 @@
 
      <div  style="display: none;" id="self-employed_ID"> 
        
-       <div class="col-xs-6 form-padding">
+       <div class="col-xs-12 col-md-6 form-padding">
           <input type="text" class="form-input-new form-control " name="turnover" placeholder="Annual Turnover" required  onkeypress="return fnAllowNumeric(event)">
       </div>
 
-       <div class="col-xs-6 form-padding">
+       <div class="col-xs-12 col-md-6 form-padding">
           <input type="text" class="form-input-new form-control " name="profit_after_tax" placeholder="Profit After Tax" required  onkeypress="return fnAllowNumeric(event)">
       </div>
-      <div class="col-xs-6 form-padding">
+      <div class="col-xs-12 col-md-6 form-padding">
           <input type="text" class="form-input-new form-control " name="depreciation" placeholder="Depreciation"  required onkeypress="return fnAllowNumeric(event)">
       </div>
-       <div class="col-xs-6 form-padding">
+       <div class="col-xs-12 col-md-6 form-padding">
           <input type="text" class="form-input-new form-control " name="remuneration" placeholder="Partner/Director Remuneration"  required onkeypress="return fnAllowNumeric(event)">
       </div>
 
      </div>
 
 	   
-	   <div class="col-xs-6 form-padding" id="income_ID">
+	   <div class="col-xs-12 col-md-6 form-padding" id="income_ID">
      <input type="text" class="form-input-new form-control"  id="income" name="income"  placeholder="Monthly Income" required onkeypress="return fnAllowNumeric(event)">
 	</div>
 	
-	<div class="col-xs-6 form-padding">
+	<div class="col-xs-12 col-md-6 form-padding">
      <input type="text" class="form-input-new form-control"   name="obligation" placeholder="Existing EMI (If Any)" required onkeypress="return fnAllowNumeric(event)"> 
 	</div>
 		
@@ -177,21 +177,21 @@
       <div id="collapse3" class="panel-collapse collapse">
         <div class="panel-body">
 		
-		<div class="col-xs-6 form-padding">
+		<div class="col-xs-12 col-md-6 form-padding">
      <input type="text" class="form-input-new form-control" name="co_applicantname"  placeholder="Co-Applicant Name" required>
 	</div>
 	
-	<div class="col-xs-6 form-padding">
+	<div class="col-xs-12 col-md-6 form-padding">
 	 <div class="btn-grp form-control pad-no border-none" data-toggle="buttons">
                                     <span class="btn btn-default outer-brd1 active"><input type="radio" name="cogender" value="M" ><img id="myImage" src="images/male.png" class=""></span><span class="hidden-xs">Male</span>
                                    <span class="btn btn-default outer-brd1 "><input type="radio" name="cogender" value="F"><img id="myImage1" src="images/female.png" class=""></span> <span class="hidden-xs">Female</span>
            </div>		   
 	   </div>
 	   
-	   <div class="col-xs-6 form-padding">
+	   <div class="col-xs-12 col-md-6 form-padding">
      <input type="text" class="form-input-new form-control lastReporteddate" name="co_dob" placeholder="Date of Birth"  required>
 	</div>
-		<div class="col-xs-6 form-padding">
+		<div class="col-xs-12 col-md-6 form-padding">
      <div class="btn-grp form-control pad-no border-none" data-toggle="buttons">
       <span class="btn btn-default outer-brd btn-blu active"><input type="radio" id="co_sala_DI" value="salaried"   name="co_emp_detail"  > Salaried</span>
       <span class="btn btn-default outer-brd btn-blu"><input type="radio"  id="co_self_DI" value="self-employed"  name="co_emp_detail"  >Self-Emp</span>
@@ -201,17 +201,17 @@
 
       <div  style="display: none;" id="co_self-employed_ID"> 
        
-       <div class="col-xs-6 form-padding">
+       <div class="col-xs-12 col-md-6 form-padding">
           <input type="text" class="form-input-new form-control " name="co_applicant_turnover" placeholder="Turnover"  onkeypress="return fnAllowNumeric(event)" required>
       </div>
 
-       <div class="col-xs-6 form-padding">
+       <div class="col-xs-12 col-md-6 form-padding">
           <input type="text" class="form-input-new form-control " name="co_applicant_profit_after_tax" placeholder="Profit After Tax"  onkeypress="return fnAllowNumeric(event)" required>
       </div>
-      <div class="col-xs-6 form-padding">
+      <div class="col-xs-12 col-md-6 form-padding">
           <input type="text" class="form-input-new form-control " name="co_applicant_depreciation" placeholder="Depreciation" onkeypress="return fnAllowNumeric(event)" required>
       </div>
-       <div class="col-xs-6 form-padding">
+       <div class="col-xs-12 col-md-6 form-padding">
           <input type="text" class="form-input-new form-control " name="co_applicant_remuneration" placeholder="Partner/Director Remuneration"  onkeypress="return fnAllowNumeric(event)" required>
       </div>
 
@@ -229,10 +229,10 @@
 	<div class="col-xs-6 form-padding">
      <input type="text" class="form-input-new form-control" name="co_applicant_remuneration" placeholder="Partner Remuneration"  required>
 	</div> -->
-	<div class="col-xs-6 form-padding" id="co_income_ID">
+	<div class="col-xs-12 col-md-6 form-padding" id="co_income_ID">
      <input type="text" class="form-input-new form-control"  name="co_applicant_income"  placeholder="Monthly Income" onkeypress="return fnAllowNumeric(event)" required>
 	</div>
-	<div class="col-xs-6 form-padding">
+	<div class="col-xs-12 col-md-6 form-padding">
      <input type="text" class="form-input-new form-control"  name="co_applicant_obligation" placeholder=" Existing EMI"   onkeypress="return fnAllowNumeric(event)" required>
 	</div>
 	   		 	
@@ -265,7 +265,7 @@
 
 
 
-		<div class="col-md-4">
+		<div class="col-md-4 pad-no-res">
      <div class="border" id="mi_ID">
 
         <!--      <form class="" id="compareform" role="form" method="POST" action=""> -->

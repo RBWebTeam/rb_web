@@ -28,10 +28,10 @@
 
 <div class="text-center flt-lft btn-grp" data-toggle="buttons">
               <div class="scenario">
-                <div class="col-xs-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="purpose"  value="Marriage" class="radio1">Marriage</a></div>
-                <div class="col-xs-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="purpose"  value="Home Releted" class="radio1">Home Related</a></div>
-                <div class="col-xs-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="purpose"  value="Business" class="radio1">Business</a></div>
-                <div class="col-xs-6 pad-no scenario-active"><a class="scenario-1 btn"><input type="radio" name="purpose"  value="Other" class="radio1" checked >Other</a></div>
+                <div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="purpose"  value="Marriage" class="radio1">Marriage</a></div>
+                <div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="purpose"  value="Home Releted" class="radio1">Home Related</a></div>
+                <div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="purpose"  value="Business" class="radio1">Business</a></div>
+                <div class="col-xs-12 col-md-6 pad-no scenario-active"><a class="scenario-1 btn"><input type="radio" name="purpose"  value="Other" class="radio1" checked >Other</a></div>
               
                 
               </div>
@@ -44,14 +44,14 @@
             <!-- <div class="col-xs-4 form-padding">
      <input type="text" name="custom_id" id="custom_id" class="form-input-new form-control" placeholder="Existing Custom Id if Any" onkeypress="return isNumberKey(event)" >
   </div> -->
-  <div class="col-xs-6 form-padding">
+  <div class="col-xs-12 col-md-6 form-padding">
      <input type="text" name="loan_amount" id="loan_amount" class="form-input-new form-control" placeholder="Loan Required" onkeypress="return isNumberKey(event)" maxlength="10" required="">
   </div>
-  <div class="col-xs-6 form-padding">
+  <div class="col-xs-12 col-md-6 form-padding">
      <input type="text" id="city_name" name="city_name" class="form-input-new form-control search_city" placeholder="City of Location" required="">
   </div>
   
-  <div class="col-xs-6 form-padding">
+  <div class="col-xs-12 col-md-6 form-padding">
   
      <select class="block drop-arr select-sty"  name="loan_tenure" id="loan_tenure" required>
     <option value="" >LOAN TENURE</option>
@@ -69,13 +69,13 @@
                 
                 
   
-     <div class="col-xs-6 form-padding">
+     <div class="col-xs-12 col-md-6 form-padding">
      <input type="text" name="applicant_name" id="applicant_name" class="form-input-new form-control" placeholder="Applicant Name" onkeypress="return AllowAlphabet(event)" required="">
   </div>
-  <div class="col-xs-6 form-padding">
+  <div class="col-xs-12 col-md-6 form-padding">
      <input type="text" id="dob" name="dob" class="form-input-new form-control lastReporteddate1" placeholder="Date of Birth" required="">
   </div>
-  <div class="col-xs-6 form-padding">
+  <div class="col-xs-12 col-md-6 form-padding">
    <div class="btn-grp border-none pad-no form-control" data-toggle="buttons">
                                     <span class="btn btn-default outer-brd1 outer-brd1 active"><input type="radio" name="gender"  value="M" checked><img id="myImage" src="images/male.png" cla></span><span class="hidden-xs"> Male</span>
                                    <span class="btn btn-default outer-brd1 outer-brd1 "><input type="radio" name="gender"  value="F"><img id="myImage1" src="images/female.png" class=""></span> <span class="hidden-xs">Female</span>
@@ -83,7 +83,7 @@
      </div>
 
   
-  <div class="col-xs-6 form-padding">
+  <div class="col-xs-12 col-md-6 form-padding">
      <div class="btn-grp form-control border-none pad-no" data-toggle="buttons">
       <span class="btn btn-default outer-brd active"><input type="radio" name="emp_detail_id" id="sala_DI"    value="1" checked>Salaried</span>
       <span class="btn btn-default outer-brd "><input type="radio" name="emp_detail_id" id="self_DI"  value="2"> Self-Emp</span>
@@ -92,16 +92,16 @@
 
      <div  style="display: none;" id="self-employed_ID">  <!-- self-employed-->
        
-       <div class="col-xs-6 form-padding">
+       <div class="col-xs-12 col-md-6 form-padding">
           <input type="text" class="form-input-new form-control " name="turnover" placeholder="Annual income" required  onkeypress="return fnAllowNumeric(event)">
       </div>
       </div>
      
-     <div class="col-xs-6 form-padding"  id="income_ID">
+     <div class="col-xs-12 col-md-6 form-padding"  id="income_ID">
      <input type="text" name="income" id="income" class="form-input-new form-control"  onkeypress="return isNumberKey(event)"  placeholder="Monthly Income" required="">
   </div>
   
-  <div class="col-xs-6 form-padding">
+  <div class="col-xs-12 col-md-6 form-padding">
      <input type="text" name="obligation" id="obligation" class="form-input-new form-control" placeholder="Existing EMI (If Any)" onkeypress="return isNumberKey(event)" >
   </div>
   
@@ -193,7 +193,6 @@
   </div>
   </div>
   </div>
-<br>
 
   <div id ="test123" class="col-md-8" ></div>
   

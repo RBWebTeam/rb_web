@@ -13,12 +13,12 @@
 	<div class="col-md-12 white-bg pad box-shadow fl-lft">
 	<div class="col-md-8">
 	<div class="pad border">
-	<h3 class="pad text-center">Comfy Card</h3>
-	<p>What if you were to unfortunatly with an accident & your car needs repairs at the garage for few days? it is both frustrating and disappointing , not to have your prized in your sight & trying to figure out your travel.</p>
+	<h3 class="pad text-center">COMFY Card</h3>
+	<p>What if you were to unfortunately meet with an accident & your car need repairs at the garage for few days? &nbsp;It is both frustating and disappointing, not to have your prized ride in your sight & trying to figure out your travel.</p>
 
-<p>We are cognizant times that are getting uncertain by the day.Our lives hang in the balance of unpredictable situation. One minute you,re driving the road whisting a tune the next moment the car right in front of you spinsout of control and crashes. We Understand your pain & the need of a reliable partner who can share burden.</p>
+<p>We are cognizant of changing times that are getting uncertain by the day. Our lives hang in the balance of unpredictable situations. One minute  you're driving down the road whistling a tune, the next moment the car right in front of you spins out of control and crashes. We understand your pain & the need of a reliable partner who share your burden.</p>
 
-<p>While we cannot control what happens, we can keep you better prepared with comfy at your recue.</p>
+<p>While we cannot control what happens, we can keep you better prepared with Comfy at your rescue.</p>
  <a class="btn btn-success btn-outline with-arrow" href="{{URL::to('/comfy-sales')}}">View Brochure
 							<i class="icon-arrow-right"></i></a>
  </div>
@@ -34,23 +34,23 @@
 
 				  
 				  
-				    <div class="inp-hig">
+				    <div>
 					  <label class="form-label-new">Name</label>
 				      <input type="text" class="form-control" id="name" placeholder="Enter name" name="name" required="">
 				   
-					</div><br>
+					</div>
 
-				    <div class="inp-hig">
+				    <div>
 					<label class="form-label-new">Email</label>
 				        <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" required="">
-				    </div><br>
+				    </div>
 
-				    <div class="inp-hig">
+				    <div>
 					<label class="form-label-new">Mobile</label>
 				      <input type="tel" class="form-control" id="contact" placeholder="Enter number" name="contact" maxlength="10" pattern="[789][0-9]{9}" required="">
-				    </div><br>
+				    </div>
 
-				    <div class="inp-hig">
+				    <div>
 					<label class="form-label-new">City</label>
 				      <input type="text" class="form-control search_city_n" placeholder="City" name="City" id="City" required>
 				    </div><br>

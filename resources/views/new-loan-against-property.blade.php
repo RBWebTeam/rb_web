@@ -306,10 +306,11 @@
 
 <!--   <div id ="test123" class="col-md-8" ></div> -->
   </div>
+  
   </aside>
  
   </div>
-
+<br>
   <div  id="form_ID"></div>
 
 @include('layout.footer')

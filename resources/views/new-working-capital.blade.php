@@ -27,8 +27,8 @@
       </div>
 		</div>
 		
-		<div class="col-xs-8 form-padding pad">
-	 <h4 class="mrg-top text-center">Export/Import -</h4>
+		<div class="col-xs-6 form-padding pad text-right">
+	 <span class="mrg-top">Export/Import - </span>
 	</div>
 	<div class="col-xs-4 form-padding pad">
      <!-- <div class="btn-grp border-none" data-toggle="buttons">

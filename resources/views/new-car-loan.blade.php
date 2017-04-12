@@ -123,7 +123,7 @@
   </div>
   
   <div class="col-xs-6 form-padding">
-     <input type="text" class="form-input-new form-control"   name="obligation" placeholder="Existing EMI (If Any)" required onkeypress="return fnAllowNumeric(event)"> 
+     <input type="text" class="form-input-new form-control"   name="obligation" placeholder="Existing EMI (If Any)"  onkeypress="return fnAllowNumeric(event)"> 
   </div>
     
 

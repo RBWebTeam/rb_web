@@ -143,20 +143,25 @@
               Session::put('empid', $myArray[0]);
               $empid = Session::get('empid');
              
+            }else{
+              $empid="";
             }
             if(isset($myArray[1])){
              Session::put('brokerid', $myArray[1]);
               $brokerid = Session::get('brokerid');
+            }else{
+              $brokerid="";
             }
             if(isset($myArray[2])){
               Session::put('source', $myArray[2]);
               $source = Session::get('source');
 
 
+            }else{
+              $source="";
             }
             
-            //$a= str_replace('�', '', $brokerid);
-            // echo $empid;
+            
              
           }else{
             $empid = Session::get('empid')?Session::get('empid'):'';
@@ -227,10 +232,14 @@
               Session::put('empid', $myArray[0]);
               $empid = Session::get('empid');
              
+            }else{
+              $empid="";
             }
             if(isset($myArray[1])){
              Session::put('brokerid', $myArray[1]);
               $brokerid = Session::get('brokerid');
+            }else{
+              $brokerid="";
             }
             if(isset($myArray[2])){
               Session::put('source', $myArray[2]);
@@ -238,7 +247,9 @@
             //$a= str_replace('�', '', $brokerid);
             // echo $empid;
              //print_r($a);
-          }
+          }else{
+              $source="";
+            }
         }else{
             $empid = Session::get('empid')?Session::get('empid'):'';
             $brokerid =Session::get('brokerid')?Session::get('brokerid'):'';
@@ -311,16 +322,22 @@
               Session::put('empid', $myArray[0]);
               $empid = Session::get('empid');
              
+            }else{
+              $empid="";
             }
             if(isset($myArray[1])){
              Session::put('brokerid', $myArray[1]);
               $brokerid = Session::get('brokerid');
+            }else{
+              $brokerid="";
             }
             if(isset($myArray[2])){
               Session::put('source', $myArray[2]);
               $source = Session::get('source');
 
 
+            }else{
+              $source="";
             }
             
             //$a= str_replace('�', '', $brokerid);

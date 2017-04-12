@@ -149,11 +149,11 @@
 	</div>
 	
 	<div class="col-xs-12 col-md-6 form-padding">
-     <input type="text" class="form-input-new form-control"   name="obligation" placeholder="Existing EMI (If Any)" required onkeypress="return fnAllowNumeric(event)"> 
+     <input type="text" class="form-input-new form-control"   name="obligation" placeholder="Existing EMI (If Any)"  onkeypress="return fnAllowNumeric(event)"> 
 	</div>
 		
 		
-    <input type="hidden" class="co_applicant_DI" name="have_co_app_loan" value="No">
+    <input type="hidden" class="co_applicant_DI" name="have_co_applicant" value="No">
 		<!-- Rounded switch -->
 		<div class="col-xs-12 form-padding">
 
@@ -233,7 +233,7 @@
      <input type="text" class="form-input-new form-control"  name="co_applicant_income"  placeholder="Monthly Income" onkeypress="return fnAllowNumeric(event)" required>
 	</div>
 	<div class="col-xs-12 col-md-6 form-padding">
-     <input type="text" class="form-input-new form-control"  name="co_applicant_obligation" placeholder=" Existing EMI"   onkeypress="return fnAllowNumeric(event)" required>
+     <input type="text" class="form-input-new form-control"  name="co_applicant_obligation" placeholder=" Existing EMI"   onkeypress="return fnAllowNumeric(event)">
 	</div>
 	   		 	
 		</div>

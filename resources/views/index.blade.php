@@ -42,7 +42,7 @@
 	<i class="sprite sprite-home-ic center-img-align img-responsive hidden-xs"></i>
 	<h2>Home Loan </h2>
    <h4>Choose the right Home Loan for you ...!!</h4>
-   <a href="{{URL::to('home-loan')}}" class="btn btn-primary btn-lg btn-view">View More</a>
+   <a href="{{URL::to('new-home-loan')}}" class="btn btn-primary btn-lg btn-view">View More</a>
    </div>
       <img src="{{URL::to('images/slide_1.jpg')}}" alt="Home Loan Banner" title="Home Loan Banner" class="slide-hm"> 
     </div>
@@ -52,7 +52,7 @@
 	<i class="sprite sprite-personal-ic center-img-align img-responsive hidden-xs"></i>
 	<h2>Personal Loan </h2>
    <h4>Finance Your Dreams...!!</h4>
-   <a href="{{URL::to('personal-loan')}}" class="btn btn-primary btn-lg btn-view">View More</a>
+   <a href="{{URL::to('new-personal-loan')}}" class="btn btn-primary btn-lg btn-view">View More</a>
    </div>
       <img src="{{URL::to('images/slide_2.jpg')}}" alt="Personal Loan Banner" title="Personal Loan Banner" class="slide-hm">
     </div>
@@ -62,7 +62,7 @@
 	<i class="sprite sprite-lap-ic center-img-align img-responsive hidden-xs"></i>
 	<h2>Loan Against Property</h2>
    <h4>Finding you a better Deal...!!</h4>
-   <a href="{{URL::to('loan-against-property')}}" class="btn btn-primary btn-lg btn-view">View More</a>
+   <a href="{{URL::to('new-loan-against-property')}}" class="btn btn-primary btn-lg btn-view">View More</a>
    </div>
       <img src="{{URL::to('images/slide_3.jpg')}}" alt="Loan-Against-Property Banner" title="Loan-Against-Property Banner" class="slide-hm">
     </div>
@@ -83,7 +83,7 @@
 	<h4>Unsecured</h4>
 	<h2>Business Loan</h2>
    <h4>Experience on your side...!!</h4>
-   <a href="{{URL::to('business-loan')}}" class="btn btn-primary btn-lg btn-view">View More</a>
+   <a href="{{URL::to('new-business-loan')}}" class="btn btn-primary btn-lg btn-view">View More</a>
 
    </div>
       <img src="{{URL::to('images/slide_5.jpg')}}" alt="Business Loan Banner" title="Business Loan Banner" class="slide-hm">
@@ -93,7 +93,7 @@
 	<i class="sprite sprite-car-ic center-img-align img-responsive hidden-xs"></i>
 	<h2>Car Loan</h2>
    <h4>Thinking of your comfort first !!</h4>
-   <a href="{{URL::to('car-loan')}}" class="btn btn-primary btn-lg btn-view">View More</a>
+   <a href="{{URL::to('new-car-loan')}}" class="btn btn-primary btn-lg btn-view">View More</a>
    </div>
       <img src="{{URL::to('images/slide_6.jpg')}}" alt="car-slider-img" class="slide-hm">
     </div>

@@ -480,7 +480,7 @@
 
     <div id="main7" class="tab-pane fade">
       <h3 class="mrg-top">BANK STATEMENTS</h3><hr>
-          <a class="btn btn-primary btn-outline with-arrow " data-toggle="modal" data-target="#tribe_bank_statement_form" >Upload Bank Document<i class="icon-arrow-right"></i></a>  
+          <a class="btn btn-primary btn-outline with-arrow " data-toggle="modal" data-target="#tribe_bank_statement_form" id="upload_bank_statement_submit">Upload Bank Document<i class="icon-arrow-right"></i></a>  
           <a class="btn btn-primary btn-outline with-arrow " id="tribe_final_submit" style="display: none;">Submit Application<i class="icon-arrow-right"></i></a> 
           <a class="btn btn-primary btn-outline with-arrow " id="abandon_tribe_application"> Abandon<i class="icon-arrow-right"></i></a>   
     </div>
@@ -592,7 +592,7 @@ $("#upload_doc_submit").click(function(){
     });
  });
 
-$("#submit_statement").click(function(){
+$("#submit_tribe_statement").click(function(){
   if(!$('#bank_statement_form').valid()){
     return false;
   }
@@ -609,7 +609,7 @@ $("#submit_statement").click(function(){
           contentType: false,
           success:function(response){
             console.log(response);
-            $('#transaction_id').val(response.transaction_id);
+            $('.transaction_id').val(response.transaction_id);
             $('#close_tribe_transaction').show();
             //$('.loan_id').val(response.loan_id);
             
@@ -671,7 +671,7 @@ function tribe_doc_upload(id){
 
   $('#close_tribe_transaction').click(function(){
        var form_url="{{URL::to('tribe-close-transaction')}}";
-       $('#tribe_bank_statement_form').hide();
+      
     $.ajax({
           url:form_url ,
           data:new FormData($("#bank_statement_form")[0]),
@@ -683,7 +683,7 @@ function tribe_doc_upload(id){
           success:function(response){
            // console.log(response);
            $('#tribe_final_submit').show();
-           
+            $('#tribe_bank_statement_form').modal('hide');
             
             //$('.loan_id').val(response.loan_id);
             

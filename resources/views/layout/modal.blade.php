@@ -618,15 +618,15 @@ Rupeeboss Financial Services Private Limited shall access your Credit Informatio
   </form>
 </div>
   <!-- modal for bank statement -->
-  <div id="tribe_bank_statement_form" class="modal fade" role="dialog" ng-app="bank">
+<div id="tribe_bank_statement_form" class="modal fade" role="dialog">
  <form id="bank_statement_form" name="bank_statement_form" enctype="multipart/form-data" method="POST" >
     {!! csrf_field() !!}
     <input type="hidden" name="loan_id" class="loan_id">
-    <input type="hidden" name="transaction_id" id="transaction_id">
+    <input type="hidden" name="transaction_id" class="transaction_id">
     
         <div class="col-md-3">UPLOAD COMPANY BANK STATEMENTS</div>
         <div class="col-md-8 sec">
-         <select class="drop-arr" name="institution" id="institution" required>
+         <select class="drop-arr" name="institution"  required>
            <option disabled selected>Select</option>
           @foreach($data['institution'] as $key=>$value)
           
@@ -637,24 +637,27 @@ Rupeeboss Financial Services Private Limited shall access your Credit Informatio
         
         <div class="col-md-3">Start Date</div>
         <div class="col-md-8"
-        ><input type="date" name="start_date" id="start_date" class="form-control form-group" /></div>
+        ><input type="date" name="start_date"  class="form-control form-group" />
+        </div>
         
         <div class="col-md-3">End Date</div>
         <div class="col-md-8">
-        <input type="date" id="end_date" name="end_date" class="form-control form-group"/></div>
+        <input type="date"  name="end_date" class="form-control form-group"/>
+        </div>
         
         <div class="col-md-3">Upload Document</div>
         <div class="col-md-8">
-        <input type="file"  id="upload_statement" name="upload_statement" class="form-control form-group no-border"/>
+        <input type="file"  name="upload_statement" class="form-control form-group no-border"/>
         </div>
        <div class="col-md-3">PDF Password(if any)</div>
         <div class="col-md-8"  >
         <input type="checkbox" name="pdf_has_pwd" id="pdf_has_pwd" >
-        <input type="password" name="pdf_password" id="pdf_password" class="form-control form-group" style="display: none;" /></div>
+        <input type="password" name="pdf_password" id="pdf_password" class="form-control form-group" style="display: none;" />
+        </div>
         
         <div class="col-md-3"></div>
         <div class="col-md-8 mrg-top">
-        <a class="btn btn-primary btn-outline with-arrow pull-left" id="submit_statement">Submit Statment
+        <a class="btn btn-primary btn-outline with-arrow pull-left" id="submit_tribe_statement">Submit Statment
         <i class="icon-arrow-right"></i>
         </a>
         <a class="btn btn-primary btn-outline with-arrow pull-right" id="close_tribe_transaction">Close Transaction

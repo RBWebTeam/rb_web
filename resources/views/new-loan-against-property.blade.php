@@ -157,7 +157,7 @@
      <input type="text" class="form-input-new form-control"   name="obligation" placeholder="Existing EMI (If Any)"  onkeypress="return fnAllowNumeric(event)">
   </div>
     
-     <input type="hidden" class="co_applicant_DI" name="have_co_applicant" value="No">
+     <input type="hidden" class="co_applicant_DI" name="have_co_applicant" value="N">
     
     <!-- Rounded switch -->
 	<div class="col-md-12 pad-no flt-lft">
@@ -319,7 +319,7 @@
 $(document).ready(function(){
     $('#co_applicant_DI').change(function(){
 
-      $('.co_applicant_DI').val('YES');
+      $('.co_applicant_DI').val('Y');
      
         if(this.checked)
            $('#coapplicant_display').show();

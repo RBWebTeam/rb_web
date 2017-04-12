@@ -234,7 +234,7 @@
          success: function(msg){
          // $(".iframeloading").hide();  
         
-         // console.log(msg);
+          console.log(msg);
           if(msg==1){
           	// alert("OKAE");
 

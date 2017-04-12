@@ -153,7 +153,7 @@
 	</div>
 		
 		
-    <input type="hidden" class="co_applicant_DI" name="have_co_applicant" value="No">
+    <input type="hidden" class="co_applicant_DI" name="have_co_applicant" value="N">
 		<!-- Rounded switch -->
 		<div class="col-xs-12 form-padding">
 
@@ -322,7 +322,7 @@
 $(document).ready(function(){
     $('#co_applicant_DI').change(function(){
 
-      $('.co_applicant_DI').val('YES');
+      $('.co_applicant_DI').val('Y');
      
         if(this.checked)
            $('#coapplicant_display').show();

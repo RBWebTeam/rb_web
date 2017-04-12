@@ -47,27 +47,13 @@
     <div class="border heigh-bt">
     <h3 class="emi-cal text-center">Your Saving</h3>
        <center class="my-saving">
+       <p>Monthly Interest Paid :<b class="em1"> ₹ <span id="monthlyinterest">0</span></b></p>
+       <p>Drop in interest Paid:<b class="em1">  <span id="drop_interest">0</span>%</b></p>
+       <p>Monthly Saving :<b class="em1"> ₹ <span id="monthlysavinf">0</span></b></p>
+       <p>Total Yearly Saving :<b class="em1"> ₹ <span id="yearlysaving">0</span></b></p>
+       </center>
 
- <table class="table text-left">
- 
- <tr>
-    <td>Monthly Interest Paid:</td>
-    <td><b class="em1"> ₹ <span id="monthlyinterest">0</span></b></td>
-  </tr>
-  <tr>
-    <td>Drop in interest Paid:</td>
-    <td><b class="em1">  <span id="drop_interest">0</span>%</b></td>
-  </tr>
-  <tr>
-    <td>Monthly Saving:</td>
-    <td><b class="em1"> ₹ <span id="monthlysavinf">0</span></b></td>
-  </tr>
-  <tr>
-    <td>Total Yearly Saving:</td>
-    <td><b class="em1"> ₹ <span id="yearlysaving">0</span></b></td>
-  </tr>
- </table>
- </center>
+
    </div>
    </div>
   </div>
@@ -118,6 +104,10 @@
              <label><input type="radio" name="yearmonth" id="Year"  value="Year" checked="checked"> Year</label>
              <label><input type="radio" name="yearmonth" id="Month" value="Month"> Month</label>
     </div> -->
+    <div class="pull-right">
+             <label><input type="radio" name="yearmonth" id="tYear"  value="Year" checked="checked"> Year</label>
+             <label><input type="radio" name="yearmonth" id="tMonth" value="Month"> Month</label>
+    </div>
    </div>
    </form>
    </div>
@@ -129,30 +119,11 @@
     <div class="border heigh-bt">
     <h3 class="emi-cal text-center">Your Saving</h3>
     <center class="my-saving">
-      
-	  <table class="table text-left">
- 
- <tr>
-    <td>Old Loan EMI :</td>
-    <td><b class="em1"> ₹ <span id="LoanEMI">0</span></b></td>
-  </tr>
-  <tr>
-    <td>Drop EMI :</td>
-    <td><b class="em1"> ₹ <span id="Drop_EMI">0</span></b></td>
-  </tr>
-  <tr>
-    <td>New Loan EMI:</td>
-    <td><b class="em1"> ₹ <span id="NewLoanEMI">0</span></b></td>
-  </tr>
-  <tr>
-    <td>Drop-in Interest Rate:</td>
-    <td><b class="em1">  <span id="emidrop_interest">0</span>%</b></td>
-  </tr>
-<tr>
-    <td>Your Savings:</td>
-    <td><b class="em1"> ₹ <span id="totalYearSaving">0</span></b></td>
-  </tr>
- </table>
+       <p> Old Loan EMI :<b class="em1"> ₹ <span id="LoanEMI">0</span></b></p>
+       <p>Drop EMI :<b class="em1"> ₹ <span id="Drop_EMI">0</span></b></p>
+        <p>New Loan EMI:<b class="em1"> ₹ <span id="NewLoanEMI">0</span></b></p>
+         <p>Drop-in Interest Rate:<b class="em1">  <span id="emidrop_interest">0</span>%</b></p>
+         <p>Your Savings:<b class="em1"> ₹ <span id="totalYearSaving">0</span></b></p>
        </center>
     
  
@@ -217,26 +188,10 @@
     <h3 class="emi-cal text-center">Your Saving</h3>
 
         <center class="my-saving">
-       <table class="table text-left">
- 
- <tr>
-    <td>Interest Paid As Per Debtor Cycle :</td>
-    <td><b class="em1"> ₹ <span id="dmonthlyinterest">0</span></b></td>
-  </tr>
-  <tr>
-    <td>Drop In Interest Paid:</td>
-    <td><b class="em1">  <span id="ddrop_interest">0</span>%</b></td>
-  </tr>
-  <tr>
-    <td>Saving As Per Debtor Cycle:</td>
-    <td><b class="em1"> ₹ <span id="dmonthlysavinf">0</span></b></td>
-  </tr>
-  <tr>
-    <td>Total Yearly Saving:</td>
-    <td><b class="em1"> ₹ <span id="dyearlysaving">0</span></b></td>
-  </tr>
-
- </table>
+       <p>Interest Paid As Per Debtor Cycle :<b class="em1"> ₹ <span id="dmonthlyinterest">0</span></b></p>
+       <p>Drop In Interest Paid:<b class="em1">  <span id="ddrop_interest">0</span>%</b></p>
+       <p>Saving As Per Debtor Cycle :<b class="em1"> ₹ <span id="dmonthlysavinf">0</span></b></p>
+       <p>Total Yearly Saving :<b class="em1"> ₹ <span id="dyearlysaving">0</span></b></p>
        </center>
 
    </div>
@@ -293,26 +248,10 @@
     <h3 class="emi-cal text-center">Your Saving</h3>
 
         <center class="my-saving">
-       <table class="table text-left">
- 
- <tr>
-    <td>Interest Paid As Per Debtor Cycle:</td>
-    <td><b class="em1"> ₹ <span id="fcmonthlyinterest">0</span></b></td>
-  </tr>
-  <tr>
-    <td>Drop in interest Paid:</td>
-    <td><b class="em1">  <span id="fcdrop_interest">0</span>%</b></td>
-  </tr>
-  <tr>
-    <td>Saving As Per Debtor Cycle:</td>
-    <td><b class="em1"> ₹ <span id="fcmonthlysavinf">0</span></b></td>
-  </tr>
-  <tr>
-    <td>Total Yearly Saving:</td>
-    <td><b class="em1"> ₹ <span id="fcyearlysaving">0</span></b></td>
-  </tr>
-
- </table>
+       <p>Interest Paid As Per Debtor Cycle:<b class="em1"> ₹ <span id="fcmonthlyinterest">0</span></b></p>
+       <p>Drop in interest Paid:<b class="em1">  <span id="fcdrop_interest">0</span>%</b></p>
+       <p>Saving As Per Debtor Cycle  :<b class="em1"> ₹ <span id="fcmonthlysavinf">0</span></b></p>
+       <p>Total Yearly Saving :<b class="em1"> ₹ <span id="fcyearlysaving">0</span></b></p>
        </center>
 
    </div>
@@ -362,19 +301,19 @@
   </tr>
   <tr>
   <td class="text-left"><h4 class="text-center">Packing Credit Domestic</h4></b></</td>
- <!--  <td  id="domestic_ID">  </td> -->
-   <td ></td>
-	<td  ></td>
-	<td  ></td>
+  <td  id="domestic_ID">  </td>
+   
+	<td  >-</td>
+	<td  >-</td>
   <td  id="tdomestic_ID"> </td>
   </tr>
   <tr>
   <td class="text-left" ><h4 class="text-center">Packing Credit Foreign Currency</h4></</td>
- <!--  <td id="currency_ID"> </td> -->
- <td ></td>
-	<td ></td>
-	<td ></td>
-  <td id="tcurrency_ID"> </td>
+  <td id="currency_ID" > </td>
+ 
+	<td >-</td>
+	<td >-</td>
+  <td id="tcurrency_ID" > </td>
   </tr>
 
   <tr>
@@ -756,7 +695,7 @@ function ajax(_token,loanAmount_id,interest,loanTenurMonth,ID,paid){
                 
                     
 
-                   $('#bank_ID').empty().append('Total Saving'+totleMonthlysaving);
+                //   $('#bank_ID').empty().append('Total Saving'+totleMonthlysaving);
                      sessionStorage.setItem("pcd",convertMonth);
                          
 
@@ -796,7 +735,7 @@ function ajax(_token,loanAmount_id,interest,loanTenurMonth,ID,paid){
                             }
 
 
-                   $('#bank_ID').empty().append('Total Saving'+totleMonthlysaving);
+               //    $('#bank_ID').empty().append('Total Saving'+totleMonthlysaving);
                     sessionStorage.setItem("pcfc",convertMonth1);
                    
                      }
@@ -833,11 +772,11 @@ function ajax(_token,loanAmount_id,interest,loanTenurMonth,ID,paid){
                 $('#banktotal').empty().append(totalb=total1+total2+total3);     //parseInt
 
               
-                
+                 $('#bank_ID').empty().append(totalb=total1+total2+total3); 
                //  $('#bank_ID').empty().append(totalb);
 
  }        
- 
+   //sessionStorage.clear();
  var  totalb1=0, total11=0,total21=0,total31=0;
  function TbankAppend(sessionName,totalYearSaving){    //    append value on proposal
                 if(TsessionName=='Tbank1'){
@@ -854,7 +793,8 @@ function ajax(_token,loanAmount_id,interest,loanTenurMonth,ID,paid){
                  $('#bank_ID').empty().append('Total Saving<h3 class="tot-sav-txt">'+total31+'</h3>');
                 }
                 $('#Tbanktotal').empty().append(totalb1=total11+total21+total31);
-
+             
+               $('#bank_ID').empty().append(totalb1=total11+total21+total31); 
                
  }
 
@@ -982,6 +922,22 @@ $('.fcloanTenur').on('change', function() {   //pcfc
       var amt1 = $("#loanTenur").val();
       var yr = amt1 / 12;
       $('#loanTenur').val(yr);
+    });
+
+
+   $("#tMonth").change(function(){
+      var amt = $("#termloanTenur").val();
+      var month = amt*12;
+      $('#termloanTenur').val(month);
+ 
+     
+    });
+
+
+    $("#tYear").change(function(){
+      var amt1 = $("#termloanTenur").val();
+      var yr = amt1 / 12;
+      $('#termloanTenur').val(yr);
     });
 
 

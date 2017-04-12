@@ -480,7 +480,7 @@
 
     <div id="main7" class="tab-pane fade">
       <h3 class="mrg-top">BANK STATEMENTS</h3><hr>
-          <a class="btn btn-primary btn-outline with-arrow " data-toggle="modal" data-target="#tribe_bank_statement_form" >Upload Bank Document<i class="icon-arrow-right"></i></a>  
+          <a class="btn btn-primary btn-outline with-arrow " data-toggle="modal" data-target="#tribe_bank_statement_form" id="upload_bank_statement_submit">Upload Bank Document<i class="icon-arrow-right"></i></a>  
           <a class="btn btn-primary btn-outline with-arrow " id="tribe_final_submit" style="display: none;">Submit Application<i class="icon-arrow-right"></i></a> 
           <a class="btn btn-primary btn-outline with-arrow " id="abandon_tribe_application"> Abandon<i class="icon-arrow-right"></i></a>   
     </div>
@@ -493,16 +493,16 @@
 
   @include('layout.footer')
   @include('layout.script')
-  <!-- modal for bank statement -->
-  <div id="tribe_bank_statement_form" class="modal fade" role="dialog" ng-app="bank">
+ <!-- modal for bank statement -->
+<div id="tribe_bank_statement_form" class="modal fade" role="dialog">
  <form id="bank_statement_form" name="bank_statement_form" enctype="multipart/form-data" method="POST" >
     {!! csrf_field() !!}
     <input type="hidden" name="loan_id" class="loan_id">
-    <input type="hidden" name="transaction_id" id="transaction_id">
+    <input type="hidden" name="transaction_id" class="transaction_id">
     
         <div class="col-md-3">UPLOAD COMPANY BANK STATEMENTS</div>
         <div class="col-md-8 sec">
-         <select class="drop-arr" name="institution" id="institution" required>
+         <select class="drop-arr" name="institution"  required>
            <option disabled selected>Select</option>
           @foreach($data['institution'] as $key=>$value)
           
@@ -513,24 +513,27 @@
         
         <div class="col-md-3">Start Date</div>
         <div class="col-md-8"
-        ><input type="date" name="start_date" id="start_date" class="form-control form-group" /></div>
+        ><input type="date" name="start_date"  class="form-control form-group" />
+        </div>
         
         <div class="col-md-3">End Date</div>
         <div class="col-md-8">
-        <input type="date" id="end_date" name="end_date" class="form-control form-group"/></div>
+        <input type="date"  name="end_date" class="form-control form-group"/>
+        </div>
         
         <div class="col-md-3">Upload Document</div>
         <div class="col-md-8">
-        <input type="file"  id="upload_statement" name="upload_statement" class="form-control form-group no-border"/>
+        <input type="file"  name="upload_statement" class="form-control form-group no-border"/>
         </div>
        <div class="col-md-3">PDF Password(if any)</div>
         <div class="col-md-8"  >
         <input type="checkbox" name="pdf_has_pwd" id="pdf_has_pwd" >
-        <input type="password" name="pdf_password" id="pdf_password" class="form-control form-group" style="display: none;" /></div>
+        <input type="password" name="pdf_password" id="pdf_password" class="form-control form-group" style="display: none;" />
+        </div>
         
         <div class="col-md-3"></div>
         <div class="col-md-8 mrg-top">
-        <a class="btn btn-primary btn-outline with-arrow pull-left" id="submit_statement">Submit Statment
+        <a class="btn btn-primary btn-outline with-arrow pull-left" id="submit_tribe_statement">Submit Statment
         <i class="icon-arrow-right"></i>
         </a>
         <a class="btn btn-primary btn-outline with-arrow pull-right" id="close_tribe_transaction">Close Transaction
@@ -638,7 +641,7 @@ $("#upload_doc_submit").click(function(){
     });
  });
 
-$("#submit_statement").click(function(){
+$("#submit_tribe_statement").click(function(){
   if(!$('#bank_statement_form').valid()){
     return false;
   }
@@ -655,7 +658,7 @@ $("#submit_statement").click(function(){
           contentType: false,
           success:function(response){
             console.log(response);
-            $('#transaction_id').val(response.transaction_id);
+            $('.transaction_id').val(response.transaction_id);
             $('#close_tribe_transaction').show();
             //$('.loan_id').val(response.loan_id);
             
@@ -717,6 +720,7 @@ function tribe_doc_upload(id){
 
   $('#close_tribe_transaction').click(function(){
        var form_url="{{URL::to('tribe-close-transaction')}}";
+      
     $.ajax({
           url:form_url ,
           data:new FormData($("#bank_statement_form")[0]),
@@ -728,7 +732,9 @@ function tribe_doc_upload(id){
           success:function(response){
            // console.log(response);
            $('#tribe_final_submit').show();
-           $('#tribe_bank_statement_form').hide();
+           $('#upload_bank_statement_submit').hide();
+           
+            $('#tribe_bank_statement_form').modal('hide');
             
             //$('.loan_id').val(response.loan_id);
             

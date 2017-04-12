@@ -73,6 +73,7 @@
     <?php
           $myString = isset($_GET['referrer']);
           if($myString){
+
             Session::put('refid', '1');
             $refapp =Session::get('refid');
 
@@ -80,23 +81,30 @@
             if(isset($myArray[0])){
               Session::put('empid', $myArray[0]);
               $empid = Session::get('empid');
-             
+            }else{
+              $empid="";
             }
             if(isset($myArray[1])){
              Session::put('brokerid', $myArray[1]);
               $brokerid = Session::get('brokerid');
+            }else{
+              $brokerid ="";
             }
             if(isset($myArray[2])){
               Session::put('source', $myArray[2]);
               $source = Session::get('source');
 
 
+            }else{
+               $source="";
             }
             
             //$a= str_replace('�', '', $brokerid);
             // echo $empid;
              
           }else{
+
+
             $empid = Session::get('empid')?Session::get('empid'):0;
             $brokerid =Session::get('brokerid')?Session::get('brokerid'):0;
             $source =Session::get('source')?Session::get('source'):0;

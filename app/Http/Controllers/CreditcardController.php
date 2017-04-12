@@ -13,6 +13,7 @@ class CreditcardController extends CallApiController
 	 }
 
 	 public function credit_form_submit(Request $req){
+        try{
         // print_r($req->all());exit();
     $save=new credit_card_form_req(); 
     $id=$save->store($req);
@@ -38,7 +39,7 @@ class CreditcardController extends CallApiController
    // print_r($id);exit();
     $update_user='';
     $obj = json_decode($m);
-    print_r($obj);exit();
+    // print_r($obj);exit();
     if ($obj->ApplicationId) 
     {
         // print_r($http_result);exit();
@@ -55,6 +56,8 @@ class CreditcardController extends CallApiController
         $error=2;
     }
     return $error; 
-	
+	}catch(\Exception $ee){
+        print_r("Exception");
+    }
     }
 }

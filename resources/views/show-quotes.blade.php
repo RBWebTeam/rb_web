@@ -63,7 +63,7 @@
 </table>
 </div><?php $key=0; ?>
 @if(count($quote_data) > "")
-@foreach($quote_data as $q) <?php $key++; ?>
+@foreach($quote_data as $q) <?php $key++;  ?>
  <div class="table-responsive outer-brd">
 <table width="100%" border="1" class="tbl">
   <tr>

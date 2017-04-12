@@ -717,6 +717,7 @@ function tribe_doc_upload(id){
 
   $('#close_tribe_transaction').click(function(){
        var form_url="{{URL::to('tribe-close-transaction')}}";
+       $('#tribe_bank_statement_form').hide();
     $.ajax({
           url:form_url ,
           data:new FormData($("#bank_statement_form")[0]),
@@ -728,7 +729,7 @@ function tribe_doc_upload(id){
           success:function(response){
            // console.log(response);
            $('#tribe_final_submit').show();
-           $('#tribe_bank_statement_form').hide();
+           
             
             //$('.loan_id').val(response.loan_id);
             

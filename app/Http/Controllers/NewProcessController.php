@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Session;
 class NewProcessController extends Controller
 {
       public function  newSmeLoan(){
@@ -20,6 +20,7 @@ class NewProcessController extends Controller
 
        public function newHomeLoan(){
                $data=0;
+              // print_r(Session::get('empid'));exit();
            return view('new-home-loan')->with($data);;
 
       }

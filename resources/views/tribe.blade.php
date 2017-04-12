@@ -493,7 +493,56 @@
 
   @include('layout.footer')
   @include('layout.script')
-
+ <!-- modal for bank statement -->
+<div id="tribe_bank_statement_form" class="modal fade" role="dialog">
+ <form id="bank_statement_form" name="bank_statement_form" enctype="multipart/form-data" method="POST" >
+    {!! csrf_field() !!}
+    <input type="hidden" name="loan_id" class="loan_id">
+    <input type="hidden" name="transaction_id" class="transaction_id">
+    
+        <div class="col-md-3">UPLOAD COMPANY BANK STATEMENTS</div>
+        <div class="col-md-8 sec">
+         <select class="drop-arr" name="institution"  required>
+           <option disabled selected>Select</option>
+          @foreach($data['institution'] as $key=>$value)
+          
+          <option value="{{$value}}"><?php echo $key;?></option>
+          @endforeach
+        </select>
+        </div>
+        
+        <div class="col-md-3">Start Date</div>
+        <div class="col-md-8"
+        ><input type="date" name="start_date"  class="form-control form-group" />
+        </div>
+        
+        <div class="col-md-3">End Date</div>
+        <div class="col-md-8">
+        <input type="date"  name="end_date" class="form-control form-group"/>
+        </div>
+        
+        <div class="col-md-3">Upload Document</div>
+        <div class="col-md-8">
+        <input type="file"  name="upload_statement" class="form-control form-group no-border"/>
+        </div>
+       <div class="col-md-3">PDF Password(if any)</div>
+        <div class="col-md-8"  >
+        <input type="checkbox" name="pdf_has_pwd" id="pdf_has_pwd" >
+        <input type="password" name="pdf_password" id="pdf_password" class="form-control form-group" style="display: none;" />
+        </div>
+        
+        <div class="col-md-3"></div>
+        <div class="col-md-8 mrg-top">
+        <a class="btn btn-primary btn-outline with-arrow pull-left" id="submit_tribe_statement">Submit Statment
+        <i class="icon-arrow-right"></i>
+        </a>
+        <a class="btn btn-primary btn-outline with-arrow pull-right" id="close_tribe_transaction">Close Transaction
+        <i class="icon-arrow-right"></i>
+        </a>
+        </div>
+    </form>
+</div>
+<!-- end modal -->
 
 <script type="text/javascript">
   var previousPartner;
@@ -683,6 +732,8 @@ function tribe_doc_upload(id){
           success:function(response){
            // console.log(response);
            $('#tribe_final_submit').show();
+           $('#upload_bank_statement_submit').hide();
+           
             $('#tribe_bank_statement_form').modal('hide');
             
             //$('.loan_id').val(response.loan_id);

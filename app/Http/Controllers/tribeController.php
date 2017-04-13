@@ -13,6 +13,11 @@ class TribeController extends CallApiController
     	Session::forget('loan_id');
     	Session::forget('transaction_id');
     	Session::forget('tribe_id');
+    	Session::forget('company_name');
+    	Session::forget('loan_id');
+    	Session::forget('submission_status');
+    	Session::forget('tribe_abandon');
+    	  	
     	//print_r("dsfsdf". Session::get('loan_id'));exit();
 		$post='';
 	    $url = $this::$url_static."BankAPIService.svc/GetTribeLoan";
@@ -47,6 +52,8 @@ class TribeController extends CallApiController
 	    	
 	    }
 	     Session::put('tribe_abandon',$test['status']->abandoned); 
+	     Session::put('submission_status',$test['status']->submitted); 
+	     
 	    //exit();
 	   //   $data=$test;
 	   //  print_r($data);exit();
@@ -139,7 +146,7 @@ class TribeController extends CallApiController
 		},
 		"repayment_frequency":'.$data['repayment_frequency'].',
 		"secret":"'.$this::$secret.'"}';
-		//print_r($post_data);exit();
+		
 		    $url = $this::$url_static."BankAPIService.svc/createTribeLoan";
 		    $result=$this->call_json_data_api($url,$post_data);
 		    $http_result=$result['http_result'];
@@ -149,7 +156,8 @@ class TribeController extends CallApiController
 		    if($http_result){
 
 		        $data=json_decode(($http_result));
-		       //print_r( json_decode($data)->error);exit();
+
+		      // print_r( $http_result);exit();
 		        if(json_decode($data)->error ==1){
 		        	return Response::json(array(
 		        		'status'=>false
@@ -176,7 +184,7 @@ class TribeController extends CallApiController
 	    public function UploadTribeDocuments(Request $req){
 	    	$tribe_id=Session::get('tribe_id');
 	    	$loan_id=Session::get('loan_id');
-
+	    	//print_r($tribe_id."dsfd ".$loan_id);exit();
 	      	$documents_name_array = array('Pan Card','Aadhar Card','Driving License','Passport','Voter ID','Electricity_bill','Leave and License Agreement','Registration Certificate','Tax Registration','Comapny IT Returns','Company Pan Card','Vat Return','IT Returns','Other');
 	    	
 	        $i=$req['uplaoding_doc_name'];
@@ -189,12 +197,21 @@ class TribeController extends CallApiController
 				$result=$this->call_json_data_api($url,$post_data);
 			    $http_result=$result['http_result'];
 			    $error=$result['error'];
-			    if($http_result){
-
-			        return $http_result;
-			    }else{
-			        return false;
-			    }
+			    $data=json_decode( json_decode($http_result));
+			    
+			
+		    if(($data->error!=1)){
+		    	 return Response::json(array(
+	     					'status'=>true,
+                            'document_id' => $data->response->document_id,
+                            'message'=>$data->response->message
+                    ));
+		    }else{
+		    	return Response::json(array(
+	     					'status'=>false,
+                           	'error'=>$data->error
+                        ));
+		    }
 	    }
 
 	    public function UploadBankStatement(Request $req){
@@ -205,7 +222,9 @@ class TribeController extends CallApiController
 	    	$base64=$this->FileToString($str,$req);
 	    	//if transaction is already opened
 	    	if(isset($req->transaction_id) && $req->transaction_id){
-				$post_data='{"secret":"'.TribeController::$secret.'","document_password":'.$pdf_pwd.',"loan_application_id":'.$loan_id.',"statement_file":"data:application/pdf;base64,'.$base64.'","transaction_id": "'.$req['transaction_id'].'"}';
+	    		$transaction_id=Session::get('transaction_id');
+				$post_data='{"secret":"'.TribeController::$secret.'","document_password":'.$pdf_pwd.',"loan_application_id":'.$loan_id.',"statement_file":"data:application/pdf;base64,'.$base64.'","transaction_id": "'.$transaction_id.'","institution":"'.$req['institution'].'" }';
+				//print_r($post_data);exit();
 				//upload next bank statement
 				$url = $this::$url_static."BankAPIService.svc/uploadnextStatmentTribeLoan";
 				$result=$this->call_json_data_api($url,$post_data);
@@ -215,7 +234,7 @@ class TribeController extends CallApiController
 
 			    //print_r($http_result);exit();
 			    $data=json_decode( json_decode($http_result));
-			    print_r($data);exit();
+			    goto result;
 
 	    	}else
 	    		{
@@ -230,7 +249,7 @@ class TribeController extends CallApiController
 			    $data=json_decode( json_decode($http_result));
 			    //print_r($data->response->loan_application_id);exit();
 			}
-		    if(($data->error!=1)){
+	result:    if(($data->error!=1)){
 
 		    	 Session::put('loan_id',$data->response->loan_application_id);
 		    	 Session::put('transaction_id',$data->response->transaction_id);
@@ -266,7 +285,6 @@ class TribeController extends CallApiController
 	    if(($data->error!=1)){
 	    	 return Response::json(array(
 	     					'status'=>true,
-                            'document_url' => $data->response->document_url,
                             'message'=>$data->response->message
                     ));
 	    }else{
@@ -309,7 +327,7 @@ class TribeController extends CallApiController
 		$loan_id=Session::get('loan_id');
 		$name=Session::get('company_name');
 		$post_data='{"secret":"'.TribeController::$secret.'","name":"'.$name.'","loan_application_id":"'.$loan_id.'","status":'.$submission_status.'}';
-		 print_r($post_data);exit();
+		 //print_r($post_data);exit();
 
 		$url = $this::$url_static."BankAPIService.svc/submitTribeLoan";
 		$result=$this->call_json_data_api($url,$post_data);
@@ -320,7 +338,63 @@ class TribeController extends CallApiController
 	    if(($data->error!=1)){
 	    	 return Response::json(array(
 	     					'status'=>true,
-                            'loan_application_id' => $data->response->loan_application_id,
+                            'message'=>$data->response->message
+                    ));
+	    }else{
+	    	return Response::json(array(
+	     					'status'=>false,
+                           	'error'=>$data->error
+                        ));
+	    }
+	}
+	public function get_tribe_doc(Request $req){
+		//print_r($req->all());exit();
+		$tribe_id=Session::get('tribe_id');
+		$post_data='';
+		$doc_id=$req['id'];
+		$url = $this::$url_static."BankAPIService.svc/getDocumentsTribeLoan?tribe_id=".$tribe_id."&secret=".$this::$secret."";
+
+		$result=$this->call_json_data_get_api($url,$post_data);
+	    $http_result=$result['http_result'];
+	    $error=$result['error'];
+	    $data=json_decode(json_decode($http_result));
+	    foreach ($data->response->data as $key => $value) {
+
+	    	if($value[0]->id==$doc_id){
+	    		$url=$value[0]->document_url;
+	    		
+
+	    		$title=$value[0]->title;
+	    		break;
+	    	}
+	    	
+	    }
+	   
+	    if(($data->error!=1)){
+	    	 return Response::json(array(
+	     					'status'=>true,
+                            'url' => $url,
+                            'message'=>$title
+                    ));
+	    }else{
+	    	return Response::json(array(
+	     					'status'=>false,
+                           	'error'=>$data->error
+                        ));
+	    }	
+	}
+	public function delete_tribe_doc(Request $req){
+		$post_data='{"document_id": '.$req['id'].', "secret": "'.$this::$secret.'"}';
+		$url = $this::$url_static."BankAPIService.svc/deleteDocumentsTribeLoan";
+		$result=$this->call_json_data_api($url,$post_data);
+	    $http_result=$result['http_result'];
+	    $error=$result['error'];
+	     $data=json_decode(json_decode($http_result));
+	    //print_r($data);exit();
+	    if(($data->error!=1)){
+	    	 return Response::json(array(
+	     					'status'=>true,
+                            'document_id' => $data->response->document_id,
                             'message'=>$data->response->message
                     ));
 	    }else{

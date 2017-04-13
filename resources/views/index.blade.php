@@ -24,7 +24,7 @@
 			<li><a href="{{URL::to('express-loan')}}"style="background:red;"><b>Express Loan</b></a></li>
 			<li><a href="{{URL::to('idfc')}}">Savings Account</a></li>
 
-			<li><a href="{{URL::to('new-home-loan')}}"><b>Pradhan Mantri Awas Yojana</b></a></li>
+			<li><a href="{{URL::to('home-loan')}}"><b>Pradhan Mantri Awas Yojana</b></a></li>
 			<li><a href="{{URL::to('contact-us')}}"><b>SME Car Leasing</b></a></li>
 			
 
@@ -42,7 +42,7 @@
 	<i class="sprite sprite-home-ic center-img-align img-responsive hidden-xs"></i>
 	<h2>Home Loan </h2>
    <h4>Choose the right Home Loan for you ...!!</h4>
-   <a href="{{URL::to('new-home-loan')}}" class="btn btn-primary btn-lg btn-view">View More</a>
+   <a href="{{URL::to('home-loan')}}" class="btn btn-primary btn-lg btn-view">View More</a>
    </div>
       <img src="{{URL::to('images/slide_1.jpg')}}" alt="Home Loan Banner" title="Home Loan Banner" class="slide-hm"> 
     </div>

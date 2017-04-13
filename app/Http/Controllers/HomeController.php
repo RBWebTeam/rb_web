@@ -76,6 +76,7 @@ class HomeController extends CallApiController
 		$keywords='Apply for Credit Card,Credit Card Status,Credit card application,Free credit cards,Apply credit card online,Credit Card Offers & Eligibility';
 		$data['title']='Credit Card | Compare & Apply Online on Rupeeboss.com';
     	$data['description']='Top Credit Card Offers 2017: Compare and apply online for best Offers & Eligibility on Rupeeboss.com';
+
 		return view('credit-card')->with($data)->with('keywords',$keywords);
 	}
 
@@ -163,6 +164,7 @@ class HomeController extends CallApiController
 
 	public function credit_card_compare($id){
 		 // print_r($id);exit();
+		// print_r(Session::get('brokerid'));exit();
 		if ($id=="rbl") {
 			$data['title']='RBL Bank Credit Cards  | Apply for Credit Card Online on Rupeeboss.com';
         $keywords='RBL Titanium Delight Card,RBL Platinum Maxima Card,RBL Platinum Delight Card,RBL Card Offers,Best Credit Cards in India,Credit Card Deals & Offers';

@@ -85,7 +85,7 @@
 					<!-- <li><a href="#" target="_blank"><i class="icon-instagram"></i></a></li> -->
 				</ul>
                 
-                <p class="mrg-btm1 white-txt"><b>Appointment Now</b></p>
+                <p class="white-txt"><b>Appointment Now</b></p>
 				
             <p class="mrg-btm white-txt"><b>1800-267-629-6</b></p>
 			<span class="mrg-btm white-txt"><i class="icon-envelope"></i>&nbsp;wecare(@)rupeeboss(.)com</span>
@@ -94,7 +94,7 @@
 			
 			<div class="col-md-12 fh5co-copyright text-center">
 				<p>Disclaimer : Please note that the interest rates given here are based on the market research. To enable the comparisons certain set of data has been reorganized / restructured / tabulated. Users are advised to recheck the same with the individual companies / organizations. This site does not take any responsibility for any sudden / uninformed changes in interest rates.</p>
-                <p>All Right Reserved © 2016 rupeeboss.com</p>	
+                <p>All Right Reserved © 2017 rupeeboss.com</p>	
                 <p class="blk-txt"><a href="{{URL::to('disclaimer-page')}}">Disclaimer</a> | <a href="{{URL::to('privacy-policy-page')}}">Privacy Policy</a></p>
 			</div>
 			

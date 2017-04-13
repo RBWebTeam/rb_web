@@ -78,6 +78,10 @@
       }elseif($product == "Car Loan"){
         $prod="4";
 
+      }elseif($product == "Loan Against Property"){
+         $prod="7";
+
+
       }else{
       $prod="12"; 
         }?>
@@ -100,7 +104,7 @@
     <input type="checkbox" name="checkbox" value="{{$q->Bank_Name}}"  class="{{$q->Bank_Id}}"  data-id="{{$q->Bank_Id}}"/></td>
     <input type="hidden" name="logo" class="logo" value="{{$q->Bank_Logo }}">
     <input type="hidden" name="interst" class="interst" value="{{$q->roi }}">
-    <input type="hidden" name="LoanRequired" class="LoanRequired" value="{{$q->LoanRequired }}">
+    <input type="hidden" name="LoanRequired" class="LoanRequired" value="{{$q->loan_eligible }}">
     <input type="hidden" name="emi" class="emi" value="{{$q->emi }}">
     <input type="hidden" name="LoanTenure" class="LoanTenure" value="{{$q->LoanTenure }}">
    <input type="hidden" name="Pre_Closer_Fixed" class="Pre_Closer_Fixed" value="{{$q->Pre_Closer_Fixed }}">
@@ -111,7 +115,7 @@
 
     <td >{{$product}}</td>
     <td >{{$q->roi }}%</td>
-    <td >{{$q->LoanRequired}}</td>
+    <td >{{$q->loan_eligible}}</td>
     <td >{{$q->emi}} (for {{$q->LoanTenure}} years)</td>
     <td   rowspan="2"><strong>Special Features:</strong>- Pre close Fee {{$q->Pre_Closer_Fixed}}%</td>
   </tr>

@@ -30,10 +30,10 @@
 											<input type="text" class="form-control lastReporteddob" id="DateOfBirth" name="DateOfBirth" placeholder="Date of Birth*" required>
 										</div>
 										<div class="col-md-4">Male &nbsp;&nbsp;
-											<input type="radio" name="Gender"  class="radiob" required value="Male">&nbsp;&nbsp; Female &nbsp;&nbsp;<input type="radio" name="Gender" class="radiob" value="Female">
+											<input type="radio" name="Gender"  class="radiob" checked value="Male"> Female &nbsp;&nbsp;<input type="radio" name="Gender" class="radiob" value="Female" required>
 										</div>
 										<div class="col-md-4">Salaried &nbsp;&nbsp;
-											<input type="radio" name="CustomerProfile"  class="radiob" required value="Salaried">&nbsp;&nbsp; Selfemployed &nbsp;&nbsp;<input type="radio" name="CustomerProfile" class="radiob" value="Selfemployed">
+											<input type="radio" name="CustomerProfile"  class="radiob" checked  value="Salaried"> Selfemployed &nbsp;&nbsp;<input type="radio" name="CustomerProfile" class="radiob"  value="Selfemployed" required>
 										</div>
 
 									</div>
@@ -47,14 +47,36 @@
 										<div class="col-md-4">
 											<input type="text" id="Income" name="Income" class="form-control" placeholder="Income*" onkeypress="return fnAllowNumeric(event)"  required>
 										</div>
-										<div class="col-md-4">ICICI Bank Relationship<b>:</b> Yes &nbsp;&nbsp;
+										<!-- <div class="col-md-4">ICICI Bank Relationship<b>:</b> Yes &nbsp;&nbsp;
 											<input type="radio" name="ICICIBankRelationship" id="ICICIBankRelationship"  class="radiob" required value="Yesrelationship">&nbsp;&nbsp;  No&nbsp;&nbsp;<input type="radio" name="ICICIBankRelationship" id="ICICIBankRelationship" class="radiob" value="Norelationship">
 										</div>
 
+ -->
+ 									       <div class="col-md-4">
+  
+										     <select class="block drop-arr select-sty" name="ICICIBankRelationship" id="ICICIBankRelationship" required>
+											  <option value="">ICICIBankRelationship</option>
+											    <option value="Salary">Salary</option>
+												<option value="Saving">Saving</option>
+												<option value="Loan">Loan</option>
+												<option value="Norelationship">Norelationship</option>
+												
+											</select>
+  											</div>
+
+  											<div class="col-md-4">
+										     <input type="text" class="form-input-new form-control" name="ICICIRelationshipNumber" id="ICICIRelationshipNumber" placeholder="ICICI Relationship Number" maxlength="15" onkeypress="return isNumberKey(event)"  required>
+											</div>
+
+											<div class="col-md-4">
+										     <input style='display:none;' type="text" class="form-input-new form-control" name="Total_Exp" id="Total_Exp" placeholder="Total Experience" onkeypress="return isNumberKey(event)"  required>
+											</div>
+		
+		
 										
 										
 											<div class="col-md-8">Salary Account With Other Bank<b>:</b> Yes &nbsp;&nbsp;
-											<input type="radio" name="SalaryAccountWithOtherBank" id="SalaryAccountWithOtherBank"  class="radiob" required value="Yes">&nbsp;&nbsp; No &nbsp;&nbsp;<input type="radio" name="SalaryAccountWithOtherBank" id="SalaryAccountWithOtherBank" class="radiob" value=" No">
+											<input type="radio" name="SalaryAccountWithOtherBank" id="SalaryAccountWithOtherBank"  class="radiob" checked value="Yes"> No &nbsp;&nbsp;<input type="radio" name="SalaryAccountWithOtherBank" id="SalaryAccountWithOtherBank" class="radiob" value=" No">
 										</div>
 										</div>
 									</div>
@@ -110,12 +132,24 @@
 												<input type="text" class="form-control" placeholder="Passport No*" name="passport"	>
 											</div> -->
 											<div class="col-md-4">
+  
+										     <select class="block drop-arr select-sty" name="SalaryAccountOpened" id="SalaryAccountOpened" required>
+											  <option value="">SalaryAccountOpened</option>
+											    <option value="Above2Months"> > 2 Months</option>
+												<option value="Below2Months"><=2 Months</option>
+												
+												
+											</select>
+  											</div>
+  											
+											<div class="col-md-4">
 												<input type="text" id="PanNo" name="PanNo" class="form-control" placeholder="Pancard*" oninput="pancard('PanNo')" maxlength="10" minlength="10" required >
 												<div id="pannumber" style="display:none;color: red;">Oops.Please Enter Valid Pan Number.!!</div>
 											</div>
-											<div class="col-md-4">
+											
+											<!-- <div class="col-md-4">
 												<input type="text" class="form-control lastReporteddob" id="SalaryAcOpenDate" name="SalaryAcOpenDate" placeholder="Salary Ac Open Date*" required>
-											</div>
+											</div> -->
 										<div class="col-md-12">
 										<input type="checkbox" name="terms" required>
 											I hereby confirm that I have read and understood the
@@ -200,17 +234,17 @@
          success: function(msg){
          // $(".iframeloading").hide();  
         
-         console.log(msg);
+         // console.log(msg);
           if(msg==1){
-          	console.log(msg);
+          	// alert("OKAE");
 
-            // alert("Thank you for your interest in ICICI Bank Credit Cards. Our representative will get in touch with you within 3 working days subject to your application meeting the eligibility criteria");
-            $('#credit_process').modal('show');        
+            alert("Thank you for your interest in ICICI Bank Credit Cards. Our representative will get in touch with you within 3 working days subject to your application meeting the eligibility criteria");
+            // $('#credit_process').modal('show');        
           } 
           else if(msg==2){
-          	console.log(msg);
-            // alert("Something Went Wrong");
-             $('#credit_process_sorry').modal('show');
+          	// console.log(msg);
+            alert("Something Went Wrong");
+             // $('#credit_process_sorry').modal('show');
           }
 
         }  
@@ -345,6 +379,21 @@
                   
 	}
 }
+</script>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+    $('#ICICIBankRelationship').on('change', function() {
+      if ( this.value == '1')
+      {
+        $("#Total_Exp").show();
+      }
+      else
+      {
+        $("#Total_Exp").hide();
+      }
+    });
+});
 </script>
 
 

@@ -9,13 +9,13 @@
  <div class="col-md-12 white-bg pad">
  <h3 class="text-center loan-head">Working Capital</h3>
 <div class="col-md-8" id="mod">
-<form name='business_loan_process_form' id='business_loan_process_form' action={{URL::to('loan-submit')}} method="POST">
+<form name='working_capital_process_form' id='working_capital_process_form' action={{URL::to('loan-submit')}} method="POST">
 {{ csrf_field() }}  
  <!-- <img src="{{URL::to('images/9.png')}}" alt="Tribe Logo" class="img-responsive" /> -->
  <div class="col-md-6">
   <div class="col-xs-12">
   
-	 <input type="hidden" id="product" name="product_name" value="13">
+	 <input type="hidden" id="product" name="product_name" value="11">
 
 	   <div class="btn-grp mrg-top pad status" data-toggle="buttons">
 	  
@@ -27,11 +27,11 @@
       </div>
 		</div>
 		
-		<div class="col-xs-8 form-padding pad">
-	 <h4 class="mrg-top text-center">Export/Import -</h4>
+		<div class="col-xs-6 form-padding pad text-right">
+	 <span class="mrg-top">Export/Import - </span>
 	</div>
 	<div class="col-xs-4 form-padding pad">
-     <div class="btn-grp border-none" data-toggle="buttons">
+     <!-- <div class="btn-grp border-none" data-toggle="buttons">
       <span class="btn btn-default outer-brd btn-blu active"><input type="radio" name="exchange" value="Y">Y</span>
       <span class="btn btn-default outer-brd btn-blu"><input type="radio" name="exchange" value="N">N</span>
 	  <select class="pull-right btn-default outer-brd btn-blu pad-ten">
@@ -46,24 +46,44 @@
 		   <option>90%</option>
 		   <option>100%</option>
 	  </select>
-         </div>
+         </div> -->
+         Yes <input type="radio" onclick="javascript:yesnoCheck();" name="yesno" id="yesCheck"> No <input type="radio" onclick="javascript:yesnoCheck();" name="yesno" id="noCheck"><br>
+    <div id="ifYes" style="visibility:hidden">
+        
+        <select class="pull-right btn-default outer-brd btn-blu pad-ten" id='yes'>
+        <option>10%</option>
+       <option>20%</option>
+       <option>30%</option>
+       <option>40%</option>
+       <option>50%</option>
+       <option>60%</option>
+       <option>70%</option>
+       <option>80%</option>
+       <option>90%</option>
+       <option>100%</option>
+    </select>
+    </div>
+        
 	</div>
 		
 		
-		<div class="col-xs-12 form-padding mrg-top">
+		<div class="col-xs-12">
 		<center><div class="type-cover"><span>Name of The Company</span></div></center>
-     <input type="text" class="form-input-new form-control" name="company" id="company" placeholder="Company Name" onkeypress="return AllowAlphabet(event)" required >
+     <input type="text" class="form-input-new  form-control" name="company" id="company" placeholder="Company Name" onkeypress="return AllowAlphabet(event)" required >
+	 <br>
 	</div>
-	<div class="col-xs-12 form-padding">
+	
+	<div class="col-xs-12">
 	<center><div class="type-cover"><span>Date of Incorporation</span></div></center>
      <input class="form-input-new form-control lastReporteddate1" type="text" name="date" id="date" placeholder="Date Of Incorporation">
+	 <br>
 	</div>
- <div class="col-md-12 form-padding">
+ <div class="col-md-12">
  <input type="text" class="form-input-new form-control" name="loan_amount" id="loan_amount" placeholder="Loan Amount Required in Crores" onkeypress="return isNumberKey(event)" required>
  </div>
  
     <div class="col-md-12 pad-no">
-<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+<div class="panel-group flt-lft" id="accordion" role="tablist" aria-multiselectable="true">
         <div class="panel panel-default">
             <div class="panel-heading" role="tab" id="headingOne">
                 <h4 class="panel-title">
@@ -494,7 +514,7 @@
   
   
 
-</form>
+
 </div>
 
 		
@@ -502,28 +522,28 @@
 	<div class="col-md-4" >
      <div class="border brd-for" id="mi_id">
 
-             <!-- <form name="compareform" id="compareform" > -->
+             
           
           
             <div class="inp-hig">
             <label class="form-label-new">Loan Amount</label>
-              <input type="text" class="form-control" id="loanamount_new" name="name" value="" placeholder="" required class="clr-ddd" readonly />
+              <input type="text" class="form-control" id="loanamount_new" name="loanamount_new" value="" placeholder="" required class="clr-ddd" readonly />
             </div>
 
             <div class="inp-hig">
           <label class="form-label-new">Best ROI</label>
-              <input type="text" class="form-control" id="rate" name="name" value="10" placeholder="" required class="clr-ddd" readonly />
+              <input type="text" class="form-control" id="rate" name="rate" value="10" placeholder="" required class="clr-ddd" readonly />
             </div>
 
-            <div class="inp-hig">
+            <!-- <div class="inp-hig">
             <label class="form-label-new">Tenure</label>
-                 <input type="text" class="form-control" id="term" name="name" value="" placeholder="" required class="clr-ddd" readonly>
+                 <input type="text" class="form-control" id="term" name="term" value="" placeholder="" required class="clr-ddd" readonly>
             </div>
 
             <div class="inp-hig">
           <label class="form-label-new">Processing Fee</label>
-              <input type="text" class="form-control" id="processfee" name="name" placeholder="" required class="clr-ddd" readonly />
-            </div>
+              <input type="text" class="form-control" id="processfee" name="processfee" placeholder="" required class="clr-ddd" readonly />
+            </div> -->
 
         <div> 
           <br>
@@ -535,7 +555,7 @@
         
         <!-- <p id="err" style="display:none;" ><span style="color:skyblue;position:absolute;font-size:13px;">No Quotes Found.</span></p> -->
    
-    <!--   </form> -->
+      </form>
 
     </div> 
     <p id="err" style="display:none;" ><span style="color: red;font-size: 20px;display: block; text-align: center;">Sorry, We are unable to process your request. Will get back to you in future.</span></p> 
@@ -633,11 +653,11 @@
         var amt= (parseFloat(amount)+ parseFloat($("#debtors_3").val()));
         // console.log(amt);
         var drawing_power=0.25*parseFloat(amt);
-        console.log(drawing_power);
-         $('#loanamount_new').val(drawing_power);
+        // console.log(drawing_power);
+         // $('#loanamount_new').val(drawing_power);
 
          var turnover=$("#turnover_3").val()*0.2;
-         console.log(turnover);
+         // console.log(turnover);
 
          if (drawing_power>turnover) 
          {
@@ -648,6 +668,12 @@
            $('#loanamount_new').val(drawing_power);
          }
 
+         var assets= (parseFloat($("#total_current_liability").val())+parseFloat($("#total_non_current_liability").val()));
+         // console.log(assets);
+
+         var quantity= (parseFloat($("#share_capital_3").val())+parseFloat($("#reserve_surplus_3").val()));
+         var ratio= parseFloat(assets)/parseFloat(quantity);
+         // console.log(ratio);
         //var s=$('#'+form).serialize();
 
         // $(".iframeloading").show();
@@ -660,15 +686,15 @@
          success: function(msg){
          // $(".iframeloading").hide();  
         
-         console.log(msg);
+         // console.log(msg);
           if(msg==1){
-            console.log(msg);
+            // console.log(msg);
 
             // alert("Thank you for your interest in ICICI Bank Credit Cards. Our representative will get in touch with you within 3 working days subject to your application meeting the eligibility criteria");
             $('#credit_process').modal('show');        
           } 
           else if(msg==2){
-            console.log(msg);
+            // console.log(msg);
             // alert("Something Went Wrong");
              $('#credit_process_sorry').modal('show');
           }
@@ -684,7 +710,7 @@
 
 <script type="text/javascript">
   function email(obj,val){
-    console.log(obj);
+    // console.log(obj);
     if(obj=='customer_email' ){
                    var str =$('#customer_email').val();
                    var emailPattern = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/; 
@@ -702,6 +728,18 @@
                   
   }
 }
+</script>
+
+<script type="text/javascript">
+
+function yesnoCheck() {
+    if (document.getElementById('yesCheck').checked) {
+        document.getElementById('ifYes').style.visibility = 'visible';
+    }
+    else document.getElementById('ifYes').style.visibility = 'hidden';
+
+}
+
 </script>
 
 

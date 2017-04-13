@@ -17,7 +17,7 @@
 
 	<link  rel="stylesheet" type="text/css" href="{{URL::to('css/mysite.css')}}"/>
 
-   <link  rel="stylesheet" type="text/css" href="{{URL::to('css/style.css')}}"/> 
+   <link  rel="stylesheet" type="text/css" href="{{URL::to('css/style.css')}}"/>
 
 
 
@@ -58,11 +58,12 @@
 	<!-- Side bar -->
 	<ul class="arrow-don">
 	<li class="soc-ic-0"><div  title="Help Section"><i class="icon-phone"></i></div></li>
-	<li class="soc-ic-1"><a href="https://www.facebook.com/rupeeboss" target="_blank"><div  title="Facebook"><i class="icon-facebook"></i></div></a></li>
-	<li class="soc-ic-2"><a href="https://plus.google.com/113191059621763008376"target="_blank"><div  title="Google +"><i class="icon-google-plus"></i></div></a></li>
-	<li class="soc-ic-3"><a href="https://twitter.com/rupeeboss" class="twitter-follow-button" data-size="large" data-show-screen-name="false" data-show-count="false">Follow @rupeeboss</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script></li>
-	<li class="soc-ic-4"><a href="https://www.instagram.com/rupeeboss/"target="_blank"><div  title="Instagram"><i class="icon-instagram"></i></div></a></li>
-	<li class="soc-ic-5"><a href="https://www.linkedin.com/company/rupeeboss.com"target="_blank"><div  title="Linkedin"><i class="icon-linkedin"></i></div></a></li>
+
+	<li class="soc-ic-1 soc"><a href="https://www.facebook.com/rupeeboss" target="_blank"><div  title="Facebook"><i class="icon-facebook"></i></div></a></li>
+	<li class="soc-ic-2 soc"><a href="https://plus.google.com/113191059621763008376"target="_blank"><div  title="Google +"><i class="icon-google-plus"></i></div></a></li>
+	<li class="soc-ic-3 soc"><a href="https://twitter.com/rupeeboss" target="_blank"><div  title="Twitter"><i class="icon-twitter"></i></div></a></li>
+	<li class="soc-ic-4 soc"><a href="https://www.instagram.com/rupeeboss/"target="_blank"><div  title="Instagram"><i class="icon-instagram"></i></div></a></li>
+	<li class="soc-ic-5 soc"><a href="https://www.linkedin.com/company/rupeeboss.com"target="_blank"><div  title="Linkedin"><i class="icon-linkedin"></i></div></a></li>
 	</ul>
 	
 	

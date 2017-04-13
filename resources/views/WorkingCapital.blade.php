@@ -1,6 +1,6 @@
 @include('layout.header')
 <div id="fh5co-hero">
-  <div class="container white-bg">
+  <div class="container white">
   <h2 class="align-center loan-head">Working Capital</h2>
   <div class="col-md-10">
 
@@ -15,10 +15,10 @@
 <div class="tab-content">
   <div id="home" class="tab-pane fade in active">
      <div class="col-md-12">
-	 <div class="col-md-3"></div>
-   <h4 class="col-md-2"><input type="radio" name="bank1" onclick="bankName('bank1')"  checked="checked" id="bank1" value="bank1"/> Bank 1 </h4>
-   <h4 class="col-md-2"><input type="radio" name="bank2" id="bank2"  onclick="bankName('bank2')" /> Bank 2 </h4>
-   <h4 class="col-md-2"><input type="radio" name="bank3" id="bank3" onclick="bankName('bank3')"/> Bank 3 </h4>
+	 <div class="col-md-3 col-xs-12"></div>
+   <h4 class="col-md-2 col-xs-4"><input type="radio" name="bank1" onclick="bankName('bank1')"  checked="checked" id="bank1" value="bank1"/> Bank 1 </h4>
+   <h4 class="col-md-2 col-xs-4"><input type="radio" name="bank2" id="bank2"  onclick="bankName('bank2')" /> Bank 2 </h4>
+   <h4 class="col-md-2 col-xs-4"><input type="radio" name="bank3" id="bank3" onclick="bankName('bank3')"/> Bank 3 </h4>
    <a data-toggle="tab" href="#menu1" class="btn btn-success pull-right menu1act">NEXT</a>
    </div>
   <div class="col-md-4">
@@ -30,6 +30,7 @@
     <input type="text" class="form-control form-group" placeholder="Loan Amount" id="loanAmount_id" maxlength="10"  onkeypress="return isNumberKey(event)">
    <input type="text" class="form-control form-group" placeholder="Current Rate of Interest" id="interest"  maxlength="5" onkeypress="return isNumberKey(event)" >
    <input type="text" class="form-control form-group" placeholder=" Loan Tenure" value="1"  maxlength="1" id="loanTenur" onkeypress="return isNumberKey(event)" readonly>
+      <div class="form-padding validate_id" style="display: none; color: red" >Please Fill All Inputs</div>
    <button class="btn btn-success pull-left btn_id"  id="working_capital">Submit</button>
    <div class="pull-right">
              <label><input type="radio" name="yearmonth" id="Year"  value="Year" checked="checked"> Year</label>
@@ -46,13 +47,27 @@
     <div class="border heigh-bt">
     <h3 class="emi-cal text-center">Your Saving</h3>
        <center class="my-saving">
-       <p>Monthly Interest Paid :<b class="em1"> ₹ <span id="monthlyinterest">0</span></b></p>
-       <p>Drop in interest Paid:<b class="em1">  <span id="drop_interest">0</span>%</b></p>
-       <p>Monthly Saving :<b class="em1"> ₹ <span id="monthlysavinf">0</span></b></p>
-       <p>Total Yearly Saving :<b class="em1"> ₹ <span id="yearlysaving">0</span></b></p>
-       </center>
 
-
+ <table class="table text-left">
+ 
+ <tr>
+    <td>Monthly Interest Paid:</td>
+    <td><b class="em1"> ₹ <span id="monthlyinterest">0</span></b></td>
+  </tr>
+  <tr>
+    <td>Drop in interest Paid:</td>
+    <td><b class="em1">  <span id="drop_interest">0</span>%</b></td>
+  </tr>
+  <tr>
+    <td>Monthly Saving:</td>
+    <td><b class="em1"> ₹ <span id="monthlysavinf">0</span></b></td>
+  </tr>
+  <tr>
+    <td>Total Yearly Saving:</td>
+    <td><b class="em1"> ₹ <span id="yearlysaving">0</span></b></td>
+  </tr>
+ </table>
+ </center>
    </div>
    </div>
   </div>
@@ -82,10 +97,10 @@
   
   <div id="menu1" class="tab-pane fade">
   <div class="col-md-12">
-  <h4 class="col-md-3"></h4>
-   <h4 class="col-md-2"><input type="radio" name="Tbank1" onclick="TbankName('Tbank1')"  checked="checked" id="Tbank1" value="Tbank1"/> Bank 1</h4>
-   <h4 class="col-md-2"><input type="radio" name="Tbank2" id="Tbank2"  onclick="TbankName('Tbank2')" /> Bank 2</h4>
-   <h4 class="col-md-2"><input type="radio" name="Tbank3" id="Tbank3" onclick="TbankName('Tbank3')"/> Bank 3</h4>
+  <h4 class="col-md-3 col-xs-12""></h4>
+   <h4 class="col-md-2 col-xs-4"><input type="radio" name="Tbank1" onclick="TbankName('Tbank1')"  checked="checked" id="Tbank1" value="Tbank1"/> Bank 1</h4>
+   <h4 class="col-md-2 col-xs-4""><input type="radio" name="Tbank2" id="Tbank2"  onclick="TbankName('Tbank2')" /> Bank 2</h4>
+   <h4 class="col-md-2 col-xs-4""><input type="radio" name="Tbank3" id="Tbank3" onclick="TbankName('Tbank3')"/> Bank 3</h4>
    <a data-toggle="tab" href="#menu2" class="btn btn-success pull-right menu1act">NEXT</a>
    </div>
   <div class="col-md-4">
@@ -97,11 +112,12 @@
    <input type="text" class="form-control form-group" placeholder="Loan Amount" id="termloanAmount" maxlength="10"  onkeypress="return isNumberKey(event)">
    <input type="text" class="form-control form-group" placeholder="Current Rate of Interest" id="terminterest"  maxlength="5" onkeypress="return isNumberKey(event)" >
    <input type="text" class="form-control form-group" placeholder=" Loan Tenure"  maxlength="5" id="termloanTenur" onkeypress="return isNumberKey(event)">
+   <div class="form-padding validate_id" style="display: none; color: red" >Please Fill All Inputs</div>
    <button class="btn btn-success pull-left btn_id"  id="termloanid">Submit</button>
-   <div class="pull-right">
+   <!-- <div class="pull-right">
              <label><input type="radio" name="yearmonth" id="Year"  value="Year" checked="checked"> Year</label>
              <label><input type="radio" name="yearmonth" id="Month" value="Month"> Month</label>
-    </div>
+    </div> -->
    </div>
    </form>
    </div>
@@ -113,11 +129,30 @@
     <div class="border heigh-bt">
     <h3 class="emi-cal text-center">Your Saving</h3>
     <center class="my-saving">
-       <p> Old Loan EMI :<b class="em1"> ₹ <span id="LoanEMI">0</span></b></p>
-       <p>Drop EMI :<b class="em1"> ₹ <span id="Drop_EMI">0</span></b></p>
-        <p>New Loan EMI:<b class="em1"> ₹ <span id="NewLoanEMI">0</span></b></p>
-         <p>Drop-in Interest Rate:<b class="em1">  <span id="emidrop_interest">0</span>%</b></p>
-         <p>Your Savings:<b class="em1"> ₹ <span id="totalYearSaving">0</span></b></p>
+      
+	  <table class="table text-left">
+ 
+ <tr>
+    <td>Old Loan EMI :</td>
+    <td><b class="em1"> ₹ <span id="LoanEMI">0</span></b></td>
+  </tr>
+  <tr>
+    <td>Drop EMI :</td>
+    <td><b class="em1"> ₹ <span id="Drop_EMI">0</span></b></td>
+  </tr>
+  <tr>
+    <td>New Loan EMI:</td>
+    <td><b class="em1"> ₹ <span id="NewLoanEMI">0</span></b></td>
+  </tr>
+  <tr>
+    <td>Drop-in Interest Rate:</td>
+    <td><b class="em1">  <span id="emidrop_interest">0</span>%</b></td>
+  </tr>
+<tr>
+    <td>Your Savings:</td>
+    <td><b class="em1"> ₹ <span id="totalYearSaving">0</span></b></td>
+  </tr>
+ </table>
        </center>
     
  
@@ -164,12 +199,12 @@
 <option value="180">180 days</option>
  
 </select>
-
+<div class="form-padding validate_id" style="display: none; color: red" >Please Fill All Inputs</div>
    <button class="btn btn-success pull-left btn_id"  id="packingcreditdomesti">Submit</button>
-   <div class="pull-right">
+   <!-- <div class="pull-right">
              <label><input type="radio" name="yearmonth" id="Year"  value="Year" checked="checked"> Year</label>
              <label><input type="radio" name="yearmonth" id="Month" value="Month"> Month</label>
-    </div>
+    </div> -->
    </div>
    </form>
    </div>
@@ -182,10 +217,26 @@
     <h3 class="emi-cal text-center">Your Saving</h3>
 
         <center class="my-saving">
-       <p>Interest Paid As Per Debtor Cycle :<b class="em1"> ₹ <span id="dmonthlyinterest">0</span></b></p>
-       <p>Drop In Interest Paid:<b class="em1">  <span id="ddrop_interest">0</span>%</b></p>
-       <p>Saving As Per Debtor Cycle :<b class="em1"> ₹ <span id="dmonthlysavinf">0</span></b></p>
-       <p>Total Yearly Saving :<b class="em1"> ₹ <span id="dyearlysaving">0</span></b></p>
+       <table class="table text-left">
+ 
+ <tr>
+    <td>Interest Paid As Per Debtor Cycle :</td>
+    <td><b class="em1"> ₹ <span id="dmonthlyinterest">0</span></b></td>
+  </tr>
+  <tr>
+    <td>Drop In Interest Paid:</td>
+    <td><b class="em1">  <span id="ddrop_interest">0</span>%</b></td>
+  </tr>
+  <tr>
+    <td>Saving As Per Debtor Cycle:</td>
+    <td><b class="em1"> ₹ <span id="dmonthlysavinf">0</span></b></td>
+  </tr>
+  <tr>
+    <td>Total Yearly Saving:</td>
+    <td><b class="em1"> ₹ <span id="dyearlysaving">0</span></b></td>
+  </tr>
+
+ </table>
        </center>
 
    </div>
@@ -222,13 +273,14 @@
 <option value="90">90 days</option>
 <option value="180">180 days</option>
 </select>
+<div class="form-padding validate_id" style="display: none; color: red" >Please Fill All Inputs</div>
    <button class="btn btn-success pull-left btn_id"  id="packingcreditforeignCurr">Submit</button>
 
 
-   <div class="pull-right">
+  <!--  <div class="pull-right">
              <label><input type="radio" name="yearmonth" id="Year"  value="Year" checked="checked"> Year</label>
              <label><input type="radio" name="yearmonth" id="Month" value="Month"> Month</label>
-    </div>
+    </div> -->
    </div>
    </form>
    </div>
@@ -241,10 +293,26 @@
     <h3 class="emi-cal text-center">Your Saving</h3>
 
         <center class="my-saving">
-       <p>Interest Paid As Per Debtor Cycle:<b class="em1"> ₹ <span id="fcmonthlyinterest">0</span></b></p>
-       <p>Drop in interest Paid:<b class="em1">  <span id="fcdrop_interest">0</span>%</b></p>
-       <p>Saving As Per Debtor Cycle  :<b class="em1"> ₹ <span id="fcmonthlysavinf">0</span></b></p>
-       <p>Total Yearly Saving :<b class="em1"> ₹ <span id="fcyearlysaving">0</span></b></p>
+       <table class="table text-left">
+ 
+ <tr>
+    <td>Interest Paid As Per Debtor Cycle:</td>
+    <td><b class="em1"> ₹ <span id="fcmonthlyinterest">0</span></b></td>
+  </tr>
+  <tr>
+    <td>Drop in interest Paid:</td>
+    <td><b class="em1">  <span id="fcdrop_interest">0</span>%</b></td>
+  </tr>
+  <tr>
+    <td>Saving As Per Debtor Cycle:</td>
+    <td><b class="em1"> ₹ <span id="fcmonthlysavinf">0</span></b></td>
+  </tr>
+  <tr>
+    <td>Total Yearly Saving:</td>
+    <td><b class="em1"> ₹ <span id="fcyearlysaving">0</span></b></td>
+  </tr>
+
+ </table>
        </center>
 
    </div>
@@ -294,16 +362,18 @@
   </tr>
   <tr>
   <td class="text-left"><h4 class="text-center">Packing Credit Domestic</h4></b></</td>
-  <td  id="domestic_ID">  </td>
-	<td  >0</td>
-	<td  >0</td>
+ <!--  <td  id="domestic_ID">  </td> -->
+   <td ></td>
+	<td  ></td>
+	<td  ></td>
   <td  id="tdomestic_ID"> </td>
   </tr>
   <tr>
   <td class="text-left" ><h4 class="text-center">Packing Credit Foreign Currency</h4></</td>
-  <td id="currency_ID"> </td>
-	<td >0</td>
-	<td >0</td>
+ <!--  <td id="currency_ID"> </td> -->
+ <td ></td>
+	<td ></td>
+	<td ></td>
   <td id="tcurrency_ID"> </td>
   </tr>
 
@@ -327,13 +397,17 @@
   
 </div>
   </div>
-  <div class="col-md-2 totl-sav">
+  <div class="col-md-2 col-xs-12 totl-sav">
   <div class="fix-pos">
 		<div class="text-center guid nl-form-errors" id='bank_ID'>Total Saving 0</div>
 
         <div class="text-center img1"><img src="{{URL::to('images/photo.jpg')}}" alt="pop_up_pic"></div>
+
+
 		</div>
-		<button class="btn btn-success aply-btn">Apply Now</button>
+
+		<a href="{{url('new-working-capital')}}" class="btn btn-success aply-btn disblk ">Apply Now</a>
+
  </div>
 </div>
 </br>
@@ -453,7 +527,7 @@ $("button").click(function(e){
 
        if(form=='WorkingCapitalCurrent'){
           if(validation==1){
-             alert("Please Fill All Inputs");
+             $('.validate_id').show();
           }else{
                ID='tlf';
                     if(9.5<=interest && 10>=interest){
@@ -470,7 +544,7 @@ $("button").click(function(e){
        }else if(form=='packing_credit_domesti'){
 
           if(validation==1){
-             alert("Please Fill All Inputs");
+             $('.validate_id').show();
           }else{
            if(7<=interest){
                     paid=7;
@@ -503,7 +577,7 @@ $("button").click(function(e){
        }else if(form=='packing_credit_foreign_currency'){
 
                if(validation==1){
-             alert("Please Fill All Inputs");
+             $('.validate_id').show();
           }else{
            if(5<=interest){
                     paid=5;
@@ -539,7 +613,7 @@ $("button").click(function(e){
         Tenure=loanTenure*12;
 
         if(validation==1){
-             alert("Please Fill All Inputs");
+              $('.validate_id').show();
           }else{
       $.ajax({  
              type: "POST",  
@@ -737,7 +811,8 @@ function ajax(_token,loanAmount_id,interest,loanTenurMonth,ID,paid){
 }
 
 
-  var  totalb=0, total1=0,total2=0,total3=0;
+  var  totalb=0, total1=0,total2=0,total3=0,cutotal=0;
+
  function bankAppend(sessionName,totalYearSaving){    //    append value on proposal
             if(sessionName=='bank1'){
               total1=parseInt(totalYearSaving); 
@@ -756,6 +831,10 @@ function ajax(_token,loanAmount_id,interest,loanTenurMonth,ID,paid){
            
                 }
                 $('#banktotal').empty().append(totalb=total1+total2+total3);     //parseInt
+
+              
+                
+               //  $('#bank_ID').empty().append(totalb);
 
  }        
  
@@ -978,7 +1057,7 @@ $(".proposel_ID").click(function ( event ){
 
 
 $('.menu1act').click(function(e){
-          e.preventDefault();
+     e.preventDefault();
           var act=$(this).attr('href');
            if(act=="#menu1"){
            $(".active").removeClass("active");
@@ -996,6 +1075,11 @@ $('.menu1act').click(function(e){
 
 });
 
+
+
+$('input[type=radio]').on('change', function(){
+    $('input[type=radio]').not(this).prop('checked', false);
+});
 
  }); 
 </script>

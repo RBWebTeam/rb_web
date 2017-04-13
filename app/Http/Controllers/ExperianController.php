@@ -11,6 +11,30 @@ use App\experian_responseModel;
 class ExperianController extends CallApiController
 {
     public function credit_report(){
+
+
+
+          $myString = isset($_GET['referrer']);
+          if($myString){
+            
+            $myArray = explode('@', $_GET['referrer']);
+            if(isset($myArray[0])){
+              Session::put('empid', $myArray[0]);
+              $empid = Session::get('empid');
+             
+            }
+            if(isset($myArray[1])){
+             Session::put('brokerid', $myArray[1]);
+              $brokerid = Session::get('brokerid');
+            }
+            if(isset($myArray[2])){
+              Session::put('source', $myArray[2]);
+              $source = Session::get('source');
+
+
+            }
+          }
+          //print_r($empid);exit();
       $keywords='Free Credit Score,Credit Score,Free Credit Report,Check Credit Score Online ';
       $data['title']='Know Your Credit Score Online for FREE on Rupeeboss.com';
       $data['description']='Check your Credit Score Online and get its Equivalent FREE Credit Report. Track your Progress and get personalized advice to optimizeYour score. Get started now ';
@@ -55,6 +79,11 @@ class ExperianController extends CallApiController
             $post_data['voucherCode']=$voucher[0]->voucher;
             $post_data['clientName']="RUPEEBOSS";
             $post_data['hitId']="";
+            //added later on 11 april
+            
+            $post_data['Emp_Code']=Session::get('empid')?Session::get('empid'):'';
+            $post_data['brokerid'] =Session::get('brokerid')?Session::get('brokerid'):'';
+            $post_data['source'] =Session::get('source')?Session::get('source'):'';
             //print_r($post_data);exit();
             //unsetting terms and condition as no need to save in DB
              unset($post_data['terms']);

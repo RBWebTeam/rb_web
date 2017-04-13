@@ -278,15 +278,26 @@
             $(".callclass").click(function(){
               $(".sidebar").hide("fast");
               $(".soc-ic-0").show("fast");
+			  $(".soc-ic-0").hide("fast");
             });
             $(".hide-dv").click(function(){
               $(".sidebar").hide("fast");
               $(".soc-ic-0").show("fast");
+			  $(".soc").show("fast");
             });
             $(".soc-ic-0").click(function(){
               $(".sidebar").show("fast");
-              $(".soc-ic-0").hide("fast");
+              $(".soc").hide("fast");
               $(".sidebar1").hide("fast");
+            });
+			$(".call-back").click(function(){
+              $(".soc").show("fast");
+			  $(".soc-ic-0").show(1000);
+            });
+			$(".soc").click(function(){
+              $(".sidebar").hide("fast");
+			 
+          
             });
           });
   </script>

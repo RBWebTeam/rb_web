@@ -59,5 +59,45 @@
 </body>
 </html>
 
+<?php
+          $myString = isset($_GET['referrer']);
+          // 
+          if($myString){
+            
+            $myArray = explode('@', $_GET['referrer']);
+            if(isset($myArray[0])){
+              Session::put('empid', $myArray[0]);
+              $empid = Session::get('empid');
+             
+            }else{
+              $empid="";
+            }
+            if(isset($myArray[1])){
+             Session::put('brokerid', $myArray[1]);
+              $brokerid = Session::get('brokerid');
+            }else{
+              $brokerid="";
+            }
+            if(isset($myArray[2])){
+              Session::put('source', $myArray[2]);
+              $source = Session::get('source');
+            //$a= str_replace('�', '', $brokerid);
+            // echo $empid;
+             //print_r($a);
+          }else{
+              $source="";
+            }
+        }else{
+            $empid = Session::get('empid')?Session::get('empid'):'';
+            $brokerid =Session::get('brokerid')?Session::get('brokerid'):'';
+            $source =Session::get('source')?Session::get('source'):'';
+          }
+          
+          ?>
+
+          <input type="hidden" name="empid" class="empid" value="<?php echo $empid?$empid:'';?>">
+          <input type="hidden" name="brokerid" class="brokerid" value="<?php echo $brokerid?$brokerid:'';?>">
+          <input type="hidden" name="source" class="source" value="<?php echo $source?$source:'';?>"> 
+
 
 

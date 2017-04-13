@@ -2,36 +2,37 @@
 <br>
 <div class="container" id="fh5co-hero">
 
-<div class="row">
+<div class="row white-bg pad1">
 		<div class="col-sm-5">
 			<img src="{{URL::to('images/contact_img.jpg')}}" alt="Contact Us" title="Contact Us" class="img-responsive">
 		</div>
-		<div align="center" class="col-sm-7">
-			<h1 class="">Have us call you now.</h1>
-			<h2>Your contact details:</h2>
+		<div  class="col-sm-6">
+			<h2 class="">Have us call you now.</h2>
+			<h3>Your contact details:</h3>
 			<div class="row">
-			<form name="contact_back_now" id="subscribe-form" method="post">
+			<form name="contact_back_now" id="subscribe-form" method="post"> 
                    {{ csrf_field() }}
                 <input type="hidden" name="form" value="contact-back-form">
                         
-                    <div class="form-group col-sm-6">
+                    <div class="form-group col-sm-12">
                         <label class="control-label col-sm-2" for="name">Name:</label>
                     <div class="">
-                        <input class="newsletter-name" id="name" name="name" placeholder="Name" required>
+                        <input class="newsletter-name" id="name" name="name" placeholder="Name" required />
                     </div>
                     </div>
-                    <div class="form-group col-sm-6">
+                    <div class="form-group col-sm-12">
                         <label class="control-label col-sm-2" for="contact">Contact:</label>
-                    <div class="">
-                        <input type="tel" class="newsletter-name" name="contact" onkeypress="return fnAllowNumeric(event)" placeholder="Number" minlength="10" maxlength="10" required>
+                    <div>
+                        <input type="tel" class="newsletter-name" name="contact" onkeypress="return fnAllowNumeric(event)" placeholder="Number" minlength="10" maxlength="10" required />
                     </div>
+					<br>
+					 <button class="btn btn-primary btn-outline with-arrow pull-left sidebar-submit" >Call Me Back<i class="icon-arrow-right"></i></button>
                     </div>
-                    <div class="form-group">        
-                    <div class="col-sm-offset-2 col-sm-8"><br>
-                            <button class="btn btn-primary btn-outline with-arrow sidebar-submit" >Call Me Back<i class="icon-arrow-right"></i></button>
+                          
+                   
+                           
 
-                    </div>
-                    </div>
+                  
                     <div class="iframeloading" style= "display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
                 <img src="{{URL::to('images/ajaxloader.gif')}}" alt="Loader" title="Loader" style="top: 50%; position: relative; left: 50%;"  />
                </div> 

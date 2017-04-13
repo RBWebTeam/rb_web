@@ -4,9 +4,11 @@ namespace App\Http\Controllers;
 use Response;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
+use Session;
 class TribeController extends CallApiController
 {
 	public static $secret="i1fndpWYkU9fgBhqWmKU1Uwt7ogk9q";
+	public static $name="SampleTribe";
     public function tribe(){
 		$post='';
 	    $url = $this::$url_static."BankAPIService.svc/GetTribeLoan";
@@ -40,8 +42,8 @@ class TribeController extends CallApiController
 	    	}
 	    	
 	    }
-	   //  print_r($test);
-	   // exit();
+	     Session::put('tribe_abandon',$test['status']->abandoned); 
+	    //exit();
 	   //   $data=$test;
 	   //  print_r($data);exit();
 	    return view('tribe')->with('data',$test);		
@@ -50,7 +52,8 @@ class TribeController extends CallApiController
 	}
 	public function save_tribe_form(Request $req){
 	$data=$req->all();			
-	$data["name"]="SampleTribe";
+	// $data["name"]="SampleTribe";
+
 	//print_r($req->all());exit();
 	//remove above hard coded parameter later
 	$business_run_by_pan=isset($data['business_run_by_pan'])?$data['business_run_by_pan']:"";
@@ -98,7 +101,7 @@ class TribeController extends CallApiController
 		"loan_tenure":'.$data['loan_tenure'].',
 		"loan_type":'.$data['loan_type'].',
 		"loandistributorid":"'.$data['agent_name'].'",
-		"name":"'.$data['name'].'",
+		"name":"'.TribeController::$name.'",
 		"online_ids":[{
 			"aggregated_type":'.$data['online_ids'].',
 			"credential":'.$data['online_credential'].'
@@ -159,6 +162,7 @@ class TribeController extends CallApiController
 
 	      
 	    }
+
 	    public function UploadTribeDocuments(Request $req){
 	      	$documents_name_array = array('Pan Card','Aadhar Card','Driving License','Passport','Voter ID','Electricity_bill','Leave and License Agreement','Registration Certificate','Tax Registration','Comapny IT Returns','Company Pan Card','Vat Return','IT Returns','Other');
 	    	
@@ -185,16 +189,24 @@ class TribeController extends CallApiController
 	    	$str='upload_statement';
 	    	$pdf_pwd=$req['pdf_password']?'"'.$req['pdf_password'].'"':'null';
 	    	$base64=$this->FileToString($str,$req);
+	    	//if transaction is already opened
 	    	if(isset($req->transaction_id) && $req->transaction_id){
 				$post_data='{"secret":"'.TribeController::$secret.'","document_password":'.$pdf_pwd.',"loan_application_id":'.$req['loan_id'].',"statement_file":"data:application/pdf;base64,'.$base64.'","transaction_id": "'.$req['transaction_id'].'"}';
+				//upload next bank statement
+				$url = $this::$url_static."BankAPIService.svc/uploadnextStatmentTribeLoan";
+				$result=$this->call_json_data_api($url,$post_data);
+			    $http_result=$result['http_result'];
+			    $error=$result['error'];
+			    $data=json_decode($http_result);
+			    print_r($http_result);exit();
 			    print_r($post_data);exit();
 
 	    	}else
-	    	{
+	    		{
 
 	            $post_data='{"secret":"'.TribeController::$secret.'","document_password":'.$pdf_pwd.',"loan_application_id":'.$req['loan_id'].',"from_date": "'.$req['start_date'].'","to_date":"'.$req['end_date'].'","statement_file":"data:application/pdf;base64,'.$base64.'","institution":"'.$req['institution'].'" }';
 		    
-					print_r($post_data);exit();
+					//print_r($post_data);exit();
 				$url = $this::$url_static."BankAPIService.svc/uploadStatmentTribeLoan";
 				$result=$this->call_json_data_api($url,$post_data);
 			    $http_result=$result['http_result'];
@@ -203,6 +215,7 @@ class TribeController extends CallApiController
 			    print_r($http_result);exit();
 			}
 		    if(!($data->$error)){
+		    	 Session::put('loan_id',$data->loan_application_id);
 		    	return Response::json(array(
 	     					'status'=>true,
                             'transaction_id' => $data->$transaction_id,
@@ -218,9 +231,34 @@ class TribeController extends CallApiController
 		    }
 		}
 
+	public function CloseTransaction(Request $req){
+		//print_r($req->all());exit();
+		$abandon_status=Session::get('tribe_abandon');
+		$loan_id=Session::get('loan_id');
+		$post_data='{"secret":"'.TribeController::$secret.'","name":"'.TribeController::$name.'","loan_application_id":"'.$req['loan_id'].'","transaction_id": "'.$req['transaction_id'].'"}';
 		
- public function test(){
-  		
-     return view('test_parse');
-  }
+		print_r($post_data);exit();
+		$url = $this::$url_static."BankAPIService.svc/completeTransctionTribeLoan";
+		$result=$this->call_json_data_api($url,$post_data);
+	    $http_result=$result['http_result'];
+	    $error=$result['error'];
+	    $data=json_decode($http_result);
+	    print_r($http_result);exit();
+
+	}	
+	public function AbandonTransaction(Request $req){
+		$abandon_status=Session::get('tribe_abandon');
+		$loan_id=Session::get('loan_id');
+		$post_data='{"secret":"'.TribeController::$secret.'","loan_application_id":"'.$loan_id.'","status":'.$abandon_status.'}';
+		$url = $this::$url_static."BankAPIService.svc/abandonTribeLoan";
+		$result=$this->call_json_data_api($url,$post_data);
+	    $http_result=$result['http_result'];
+	    $error=$result['error'];
+	    $data=json_decode($http_result);
+	    print_r($http_result);exit();
+	}
+	 public function test(){
+	  		
+	     return view('test_parse');
+	  }
 }

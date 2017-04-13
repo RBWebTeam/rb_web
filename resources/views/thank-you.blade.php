@@ -1,8 +1,8 @@
 @include('layout.header')
 <div id="fh5co-hero">
 	<div class="container" id="elem">
-	<div class="col-md-12 pad">
-<img src="{{URL::to('images/thank-you.jpg')}}" class="center-img-align img-responsive" >
+	<div class="col-md-12 pad centeralign">
+<img src="{{URL::to('images/thank-you.jpg')}}" class="img-responsive" >
 </div>
 </div>
 </div>

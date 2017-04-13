@@ -13,7 +13,7 @@
 {{ csrf_field() }}  
  <!-- <img src="{{URL::to('images/9.png')}}" alt="Tribe Logo" class="img-responsive" /> -->
  <div class="col-md-6">
-  <div class="col-xs-12">
+  <div class="col-xs-12 pad-no">
   
 	 <input type="hidden" id="product" name="product_name" value="13">
 
@@ -26,7 +26,7 @@
       
       </div>
 		</div>
-		<div class="col-xs-12">
+		<div class="col-xs-12 pad-no">
 	   <div class="btn-grp pad status" data-toggle="buttons">
 	   <center><div class="type-cover"><span>Business Type</span></div></center>
       <span class="btn btn-default circle outer-brd active"><input type="radio" name="emp_detail" value="2">Self Employed Non-Professional (SENP)</span>
@@ -64,7 +64,7 @@
 
   
   
-  <div class="col-md-12 no-pad comp-fin">
+  <div class="col-md-12 pad-no comp-fin">
     <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
 
         <div class="panel panel-default">

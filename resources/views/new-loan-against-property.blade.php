@@ -36,11 +36,11 @@
     <?php }else{ ?>
       <div class="text-center flt-lft btn-grp" data-toggle="buttons">
               <div class="scenario">
-                <div class="col-xs-12col-md-4 pad-no scenario-active"><a class="scenario-1 btn"><input type="radio" name="propery_types" value="residential"  class="radio1"  checked >RESIDENTIAL</a></div>
+                <div class="col-xs-12 col-md-4 pad-no scenario-active"><a class="scenario-1 btn"><input type="radio" name="propery_types" value="residential"  class="radio1"  checked >RESIDENTIAL</a></div>
                 <div class="col-xs-12 col-md-4 pad-no"><a class="scenario-1 btn"><input type="radio" name="propery_types" value="commercial" class="radio1">COMMERCIAL</a></div>
-                <div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="propery_types" value="industrial" class="radio1">INDUSTRIAL</a></div>
-                <div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="propery_types" value="land" class="radio1">LAND</a></div>
-                <div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="propery_types" value="others" class="radio1">OTHERS</a></div>
+                <div class="col-xs-12 col-md-4 pad-no"><a class="scenario-1 btn"><input type="radio" name="propery_types" value="industrial" class="radio1">INDUSTRIAL</a></div>
+                <div class="col-xs-12 col-md-4 pad-no"><a class="scenario-1 btn"><input type="radio" name="propery_types" value="land" class="radio1">LAND</a></div>
+                <div class="col-xs-12 col-md-4 pad-no"><a class="scenario-1 btn"><input type="radio" name="propery_types" value="others" class="radio1">OTHERS</a></div>
                 
                 
               </div>

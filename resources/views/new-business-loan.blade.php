@@ -179,7 +179,7 @@
 	<div class="col-md-6 no-pad flt-lft">
 	<div class="panel-group" id="accordion1">
 	<div class="panel panel-default">
-      <div id="collapse0" class="panel-collapse collapse">
+      <div id="collapse0" class="panel-collapse collapse in">
   <div class="panel-body">
 		
 	

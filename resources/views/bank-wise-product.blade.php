@@ -94,9 +94,9 @@
     ?>
 
     <?php $product=strtolower(str_replace(' ','-',$product)); ?>
-    <td class="upper"><a href="{{URL::to('new-')}}{{$product}}" class="apply-btn">Apply Online</a></td>
+    <td class="upper"><a href="{{URL::to('')}}/{{$product}}" class="apply-btn">Apply Online</a></td>
 	<?php }else{ ?>
-	<td class="upper"><a href="{{URL::to('new-business-loan')}}" class="apply-btn">Apply Online</a></td>
+	<td class="upper"><a href="{{URL::to('business-loan')}}" class="apply-btn">Apply Online</a></td>
 
 	<?php } ?>
 

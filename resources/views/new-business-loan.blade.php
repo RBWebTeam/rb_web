@@ -51,7 +51,7 @@
   <div class="col-xs-12 col-md-6 form-padding" >
   
      <select class="block drop-arr select-sty"  name="loan_tenure" id="loan_tenure" required>
-	  <option value="">LOAN TENURE</option>
+	  <option value="">Loan Tenure</option>
 	  <option value="1">1 Year</option>
 		<option value="2">2 Year</option>
 		<option value="3">3 Year</option>
@@ -176,9 +176,9 @@
  </div>
  
  
-	<div class="col-md-6 no-pad">
+	<div class="col-md-6 no-pad flt-lft">
 	<div class="panel-group" id="accordion1">
-	<div class="panel-default">
+	<div class="panel panel-default">
       <div id="collapse0" class="panel-collapse collapse in">
   <div class="panel-body">
 		

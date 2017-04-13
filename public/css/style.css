@@ -3610,5 +3610,9 @@ label.error {font-size: 10px;display:block;margin-top: -2px;}
 .heigh-bt td {text-align:left; }
 .lin-heig {line-height: 45px;}
 
+.scenario-1:active, .scenario-1:visited {
+  background-color: red;
+}
+
 
 	

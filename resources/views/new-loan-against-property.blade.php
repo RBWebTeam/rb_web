@@ -13,6 +13,9 @@
 <form name="lap_process_form" id="lap_process_form" action="{{URL::to('loan-submit')}}" method="POST" >
 <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
 <input type="hidden" id="product" name="product_name" value=7>
+<input type="hidden" name="empid" class="empid" value=" <?php echo Session::get('empid')?Session::get('empid'):'';?>">
+          <input type="hidden" name="brokerid" class="brokerid" value="<?php echo Session::get('brokerid')?Session::get('brokerid'):'';?>">
+          <input type="hidden" name="source" class="source" value="<?php echo Session::get('source')?Session::get('source'):'';?>"> 
 	<div class="panel-group" id="accordion">
     <div class="panel panel-default">
     

@@ -18,8 +18,10 @@ class CreditcardController extends CallApiController
     $save=new credit_card_form_req(); 
     $id=$save->store($req);
     $newDob = date("d-m-Y",strtotime(str_replace('-','/', $req['DateOfBirth'])));
+
     // $newDate = date("d-m-Y",strtotime(str_replace('-','/', $req['SalaryAcOpenDate'])));
     $req['DateOfBirth']=str_replace('-', '/',$newDob);
+    //print_r( $req['DateOfBirth']);exit();
     // $req['SalaryAcOpenDate']=str_replace('-', '/',$newDate);
     $data=$req->all();
     // print_r($req->all());exit();
@@ -39,10 +41,10 @@ class CreditcardController extends CallApiController
    // print_r($id);exit();
     $update_user='';
     $obj = json_decode($m);
-    // print_r($obj);exit();
+     // print_r($http_result);exit();
     if ($obj->ApplicationId) 
     {
-        // print_r($http_result);exit();
+        // print_r($obj);exit();
         $update_user=DB::table('credit_card_form_req')
          ->where('id',$id)
          ->update(['ApplicationId'=>$obj->ApplicationId]);
@@ -57,7 +59,7 @@ class CreditcardController extends CallApiController
     }
     return $error; 
 	}catch(\Exception $ee){
-        print_r("Exception ");
+        print_r($ee->getTraceAsString());
     }
     }
 }

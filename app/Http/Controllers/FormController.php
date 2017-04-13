@@ -47,6 +47,7 @@ class FormController extends CallApiController
         $input = $req->all();
        
         $new_array = array('customer_contact' => Session::get('contact'), 'customer_name' => Session::get('name'),'customer_email' => Session::get('email'));
+        // print_r($new_array);exit();
        $update_id=Session::get('verify_id');
          $update_user=DB::table('user_registration')
          ->where('id',$update_id)

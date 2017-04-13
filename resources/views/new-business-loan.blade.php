@@ -40,7 +40,7 @@
 	</div>
 	<div class="col-xs-12 col-md-6 form-padding">
 	
-     <input class="form-input-new form-control" type="text" id="pan_no" name="pan_no" oninput="pan_card('pan_no')" maxlength="10" minlength="10"  placeholder="Pan No" required>
+     <input class="form-input-new form-control" type="text" id="pan_no" name="pan_no" oninput="pan_card('pan_no')"  placeholder="Pan No" required>
 	 <span id="pan_number"  style="display:none;color: red;font-size:12px;">Enter Valid Pan No.</span>
      
 	</div>
@@ -399,19 +399,20 @@
       </div>
     </div>
   </div> 
-  
+   
+   <div class="valid_ID"></div>
 
    <?php if(Session::get('is_login')) {?>
                 <?php if(Session::get('contact')!=''){ Session::get('contact'); ?>
-              <button class="btn btn-primary btn-outline with-arrow top-mrg product_name " >Get Best Quotes<i class="icon-arrow-right"></i></button>
+              <button class="btn btn-primary btn-outline with-arrow top-mrg product_name product_ID " >Get Best Quotes<i class="icon-arrow-right"></i></button>
               <?php }else{?> 
-                <a  class="btn btn-primary btn-outline with-arrow top-mrg product_name" data-toggle="modal" data-target="#contact_id">Get Best Quotes<i class="icon-arrow-right"></i></a>
+                <a  class="btn btn-primary btn-outline with-arrow top-mrg product_name product_ID" data-toggle="modal" data-target="#contact_id">Get Best Quotes<i class="icon-arrow-right"></i></a>
                       <?php }?>
             <?php }else{?>
-            <button  style="display:none" class="btn btn-primary btn-outline with-arrow top-mrg product_name " id="btn_refresh_co">Get Best Quotes<i class="icon-arrow-right"></i></button>
+            <button  style="display:none" class="btn btn-primary btn-outline with-arrow top-mrg product_name product_ID " id="btn_refresh_co">Get Best Quotes<i class="icon-arrow-right"></i></button>
 
 
-              <a class="btn btn-primary btn-outline with-arrow top-mrg product_name" id="btn_refresh_co1" data-toggle="modal" data-target="#login_process">Get Best Quotes<i class="icon-arrow-right"></i></a>
+              <a class="btn btn-primary btn-outline with-arrow top-mrg product_name product_ID" id="btn_refresh_co1" data-toggle="modal" data-target="#login_process">Get Best Quotes<i class="icon-arrow-right"></i></a>
             <?php } ?>
    </form>
    <div class="iframeloading" style= "display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
@@ -554,10 +555,9 @@ function callme(test){
 </script>
 
 <script type="text/javascript">
-$(".btn-primary").click(function(e){
+$(".product_ID").click(function(e){
    e.preventDefault();
-  
-
+ 
 
 
 
@@ -567,6 +567,10 @@ $(".btn-primary").click(function(e){
             return false;
            
           }else{
+          	var company_name=$('#company_name').val();
+               var bank_name=$('#bank_name').val();
+      if(company_name!='' && bank_name!=''){
+         $('#login_process').attr( 'id', 'login_process');
  $(".iframeloading").show();
               $.ajax({  
              type: "POST",  
@@ -618,6 +622,14 @@ $(".btn-primary").click(function(e){
                   });
 
           }
+          else{
+ $('#login_process').removeAttr('id');
+  //alert("This field is required.");
+
+ $('.valid_ID').empty().append('<div style=" color: red" >Please Fill All Inputs</div>');
+  
+}
+}
 
 
 });

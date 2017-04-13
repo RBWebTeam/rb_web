@@ -1,11 +1,11 @@
 <?php
 Route::get('/','HomeController@index');
-Route::get('personal-loan','LoanController@personal_loan');
-Route::get('home-loan','LoanController@home_loan');
-Route::get('loan-against-property','LoanController@lap');
+// Route::get('personal-loan','LoanController@personal_loan');
+// Route::get('home-loan','LoanController@home_loan');
+// Route::get('loan-against-property','LoanController@lap');
 Route::get('sme-loan','LoanController@sme_loan');
-Route::get('car-loan','LoanController@car_loan');
-Route::get('business-loan','LoanController@business_loan');
+// Route::get('car-loan','LoanController@car_loan');
+// Route::get('business-loan','LoanController@business_loan');
 
 
 Route::get('apply-personal-loan','LoanController@apply_p_test');
@@ -226,13 +226,13 @@ Route::post('abandon-tribe-application','TribeController@AbandonTransaction');
 
 //  new loan process 
 Route::get('new-sme-loan','NewProcessController@newSmeLoan');
-Route::get('new-loan-against-property','NewProcessController@newLoanAgainstProperty');
-Route::get('new-home-loan','NewProcessController@newHomeLoan');
-Route::get('new-smart-home-loan','NewProcessController@newSmartHomeLoan');
-Route::get('new-car-loan','NewProcessController@newCarLoan');
-Route::get('new-business-loan','NewProcessController@newBusinessLoan');
+Route::get('loan-against-property','NewProcessController@newLoanAgainstProperty');
+Route::get('home-loan','NewProcessController@newHomeLoan');
+Route::get('smart-home-loan','NewProcessController@newSmartHomeLoan');
+Route::get('car-loan','NewProcessController@newCarLoan');
+Route::get('business-loan','NewProcessController@newBusinessLoan');
 Route::get('new-working-capital','WorkingCapitalController@NewWorkingCapital');
-Route::get('new-personal-loan','ContactController@new_personal_loan');
-Route::post('new-personal-loan','ContactController@new_personal_loan_register');
+Route::get('personal-loan','ContactController@new_personal_loan');
+// Route::post('new-personal-loan','ContactController@new_personal_loan_register');
 Route::get('edelweiss','NewProcessController@edelweiss');
 Route::get('used-car-loan','NewProcessController@usedCarLoan');

@@ -69,7 +69,7 @@ Route::get('working-capital','WorkingCapitalController@WorkingCapital');
 Route::post('Working-Capital/calculate','WorkingCapitalController@calculate');
 Route::post('term-loan/calculate','WorkingCapitalController@termcalculate');
 
-Route::get('new-working-capital','WorkingCapitalController@NewWorkingCapital');
+
 Route::post('working-capital-submit','WorkingCapitalController@working_capital_submit');
 
 
@@ -106,8 +106,7 @@ Route::post('express-loan-send-otp','LoanController@express_send_otp');
 Route::post('express-loan-verify','LoanController@express_verify_otp');
 Route::post('aditya-express-loan','LoanController@express_form');
 
-Route::get('new-personal-loan','ContactController@new_personal_loan');
-Route::post('new-personal-loan','ContactController@new_personal_loan_register');
+
 Route::get('magic-link','ContactController@magic_link');
 
 
@@ -232,5 +231,8 @@ Route::get('new-home-loan','NewProcessController@newHomeLoan');
 Route::get('new-smart-home-loan','NewProcessController@newSmartHomeLoan');
 Route::get('new-car-loan','NewProcessController@newCarLoan');
 Route::get('new-business-loan','NewProcessController@newBusinessLoan');
+Route::get('new-working-capital','WorkingCapitalController@NewWorkingCapital');
+Route::get('new-personal-loan','ContactController@new_personal_loan');
+Route::post('new-personal-loan','ContactController@new_personal_loan_register');
 Route::get('edelweiss','NewProcessController@edelweiss');
 Route::get('used-car-loan','NewProcessController@usedCarLoan');

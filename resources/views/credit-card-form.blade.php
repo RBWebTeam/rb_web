@@ -1,3 +1,4 @@
+
 @include('layout.header')
 <div id="fh5co-hero">
 	<div class="fh5co-contact animate-box">
@@ -12,6 +13,9 @@
 						
 							<form class="" id="compareform" role="form" method="POST" >
 							 {{ csrf_field() }}
+							 <input type="hidden" name="empid" class="empid" value=" <?php echo Session::get('empid')?Session::get('empid'):'';?>">
+						          <input type="hidden" name="brokerid" class="brokerid" value="<?php echo Session::get('brokerid')?Session::get('brokerid'):'';?>">
+						          <input type="hidden" name="source" class="source" value="<?php echo Session::get('source')?Session::get('source'):'';?>"> 
 								<div class="row">
 									<div class="form-group">
 									

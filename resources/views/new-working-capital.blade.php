@@ -9,13 +9,13 @@
  <div class="col-md-12 white-bg pad">
  <h3 class="text-center loan-head">Working Capital</h3>
 <div class="col-md-8" id="mod">
-<form name='business_loan_process_form' id='business_loan_process_form' action={{URL::to('loan-submit')}} method="POST">
+<form name='working_capital_process_form' id='working_capital_process_form' action={{URL::to('loan-submit')}} method="POST">
 {{ csrf_field() }}  
  <!-- <img src="{{URL::to('images/9.png')}}" alt="Tribe Logo" class="img-responsive" /> -->
  <div class="col-md-6">
   <div class="col-xs-12">
   
-	 <input type="hidden" id="product" name="product_name" value="13">
+	 <input type="hidden" id="product" name="product_name" value="11">
 
 	   <div class="btn-grp mrg-top pad status" data-toggle="buttons">
 	  
@@ -27,11 +27,11 @@
       </div>
 		</div>
 		
-		<div class="col-xs-8 form-padding pad">
-	 <h4 class="mrg-top text-center">Export/Import -</h4>
+		<div class="col-xs-6 form-padding pad text-right">
+	 <span class="mrg-top">Export/Import - </span>
 	</div>
 	<div class="col-xs-4 form-padding pad">
-     <div class="btn-grp border-none" data-toggle="buttons">
+     <!-- <div class="btn-grp border-none" data-toggle="buttons">
       <span class="btn btn-default outer-brd btn-blu active"><input type="radio" name="exchange" value="Y">Y</span>
       <span class="btn btn-default outer-brd btn-blu"><input type="radio" name="exchange" value="N">N</span>
 	  <select class="pull-right btn-default outer-brd btn-blu pad-ten">
@@ -46,7 +46,24 @@
 		   <option>90%</option>
 		   <option>100%</option>
 	  </select>
-         </div>
+         </div> -->
+         Yes <input type="radio" onclick="javascript:yesnoCheck();" name="yesno" id="yesCheck"> No <input type="radio" onclick="javascript:yesnoCheck();" name="yesno" id="noCheck"><br>
+    <div id="ifYes" style="visibility:hidden">
+        
+        <select class="pull-right btn-default outer-brd btn-blu pad-ten" id='yes'>
+        <option>10%</option>
+       <option>20%</option>
+       <option>30%</option>
+       <option>40%</option>
+       <option>50%</option>
+       <option>60%</option>
+       <option>70%</option>
+       <option>80%</option>
+       <option>90%</option>
+       <option>100%</option>
+    </select>
+    </div>
+        
 	</div>
 		
 		
@@ -711,6 +728,18 @@
                   
   }
 }
+</script>
+
+<script type="text/javascript">
+
+function yesnoCheck() {
+    if (document.getElementById('yesCheck').checked) {
+        document.getElementById('ifYes').style.visibility = 'visible';
+    }
+    else document.getElementById('ifYes').style.visibility = 'hidden';
+
+}
+
 </script>
 
 

@@ -30,25 +30,25 @@ ssss
               <input type="hidden" name="form" value="idfc_form">
 
 				  
-				    <div class="inp-hig">
-					  <label class="form-label-new">Name</label>
+				    <div>
+					  <label>Name</label>
 				      <input type="text" class="form-control" id="name" placeholder="Enter name" name="name" required="">
-				    </div><br>
+				    </div>
 
-				    <div class="inp-hig">
-					<label class="form-label-new">Email</label>
+				    <div>
+					<label>Email</label>
 				      <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" required="">
-				    </div><br>
+				    </div>
 
-				    <div class="inp-hig">
-					<label class="form-label-new">Mobile</label>
+				    <div>
+					<label>Mobile</label>
 				      <input type="tel" class="form-control" id="contact" placeholder="Enter number" name="contact" maxlength="10" pattern="[789][0-9]{9}" required="">
-				    </div><br>
+				    </div>
 
-				    <div class="inp-hig">
-					<label class="form-label-new">City</label>
+				    <div>
+					<label>City</label>
 				      <input type="text" class="form-control search_city_n" placeholder="City" name="City" id="City" required>
-				    </div><br>
+				    </div>
               
 			  <div class="mrg-top"> 
 			    

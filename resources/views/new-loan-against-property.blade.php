@@ -56,7 +56,7 @@
   </div>
 
   <div class="col-xs-4 form-padding">
-     <input type="text" class="form-input-new form-control" name="loan_amount" placeholder="Loan Required" required onkeypress="return fnAllowNumeric(event)">
+     <input type="text" class="form-input-new form-control" name="loan_amount" id="loan_amount" placeholder="Loan Required" required onkeypress="return fnAllowNumeric(event)">
   </div>
   <div class="col-xs-12 col-md-4 form-padding">
      <input type="text" class="form-input-new form-control search_city" name='city_name' placeholder="Enter City" required >
@@ -154,9 +154,10 @@
   </div>
   
   <div class="col-xs-12 col-md-6 form-padding">
-     <input type="text" class="form-input-new form-control"   name="obligation" placeholder="Existing EMI (If Any)" required onkeypress="return fnAllowNumeric(event)">
+     <input type="text" class="form-input-new form-control"   name="obligation" placeholder="Existing EMI (If Any)"  onkeypress="return fnAllowNumeric(event)">
   </div>
     
+     <input type="hidden" class="co_applicant_DI" name="have_co_applicant" value="N">
     
     <!-- Rounded switch -->
 	<div class="col-md-12 pad-no flt-lft">
@@ -233,7 +234,7 @@
      <input type="text" class="form-input-new form-control"  name="co_applicant_income"  placeholder="Monthly Income" onkeypress="return fnAllowNumeric(event)" required>
   </div>
   <div class="col-xs-12 col-md-6 form-padding">
-     <input type="text" class="form-input-new form-control"  name="co_applicant_obligation" placeholder="All Existing EMI"   onkeypress="return fnAllowNumeric(event)" required>
+     <input type="text" class="form-input-new form-control"  name="co_applicant_obligation" placeholder="All Existing EMI"   onkeypress="return fnAllowNumeric(event)" >
   </div>
           
     </div>
@@ -305,10 +306,11 @@
 
 <!--   <div id ="test123" class="col-md-8" ></div> -->
   </div>
+  
   </aside>
  
   </div>
-
+<br>
   <div  id="form_ID"></div>
 
 @include('layout.footer')
@@ -317,10 +319,17 @@
 <script type="text/javascript">
 $(document).ready(function(){
     $('#co_applicant_DI').change(function(){
+
+      $('.co_applicant_DI').val('Y');
+     
         if(this.checked)
            $('#coapplicant_display').show();
-        else
+         // $('#co_applicant_DI').val('YES');
+         else
          $('#coapplicant_display').hide();
+         // $('#co_applicant_DI').val('YES');
+           
+
     });
 
 //    applicacnt 
@@ -427,5 +436,23 @@ $("#eligibility").click(function() {
 
 
 
+</script>
+
+<script type="text/javascript">
+ 
+  $(document).ready(function()
+{
+    function update()
+    {
+        var cost = parseFloat($("#property_cost").val());
+        // console.log(cost);
+        var total = (cost)*60/100;
+        // var total = total.toFixed(2);
+        // console.log(total);
+        $("#loan_amount").val(total);
+
+    }
+    $(document).on("change, keyup", "#property_cost", update);
+});
 </script>
 

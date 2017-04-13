@@ -69,7 +69,7 @@
 											</div>
 
 											<div class="col-md-4">
-										     <input type="text" class="form-input-new form-control" name="Total_Exp" id="Total_Exp" placeholder="Total Experience" onkeypress="return isNumberKey(event)"  required>
+										     <input style='display:none;' type="text" class="form-input-new form-control" name="Total_Exp" id="Total_Exp" placeholder="Total Experience" onkeypress="return isNumberKey(event)"  required>
 											</div>
 		
 		
@@ -379,6 +379,21 @@
                   
 	}
 }
+</script>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+    $('#ICICIBankRelationship').on('change', function() {
+      if ( this.value == '1')
+      {
+        $("#Total_Exp").show();
+      }
+      else
+      {
+        $("#Total_Exp").hide();
+      }
+    });
+});
 </script>
 
 

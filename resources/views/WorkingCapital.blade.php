@@ -114,10 +114,10 @@
    <input type="text" class="form-control form-group" placeholder=" Loan Tenure"  maxlength="5" id="termloanTenur" onkeypress="return isNumberKey(event)">
    <div class="form-padding validate_id" style="display: none; color: red" >Please Fill All Inputs</div>
    <button class="btn btn-success pull-left btn_id"  id="termloanid">Submit</button>
-   <!-- <div class="pull-right">
-             <label><input type="radio" name="yearmonth" id="Year"  value="Year" checked="checked"> Year</label>
-             <label><input type="radio" name="yearmonth" id="Month" value="Month"> Month</label>
-    </div> -->
+  <div class="pull-right">
+             <label><input type="radio" name="yearmonth" id="tYear"  value="Year" checked="checked"> Year</label>
+             <label><input type="radio" name="yearmonth" id="tMonth" value="Month"> Month</label>
+    </div>
    </div>
    </form>
    </div>
@@ -362,18 +362,16 @@
   </tr>
   <tr>
   <td class="text-left"><h4 class="text-center">Packing Credit Domestic</h4></b></</td>
- <!--  <td  id="domestic_ID">  </td> -->
-   <td ></td>
-	<td  ></td>
-	<td  ></td>
+  <td  id="domestic_ID">  </td>
+	<td  >-</td>
+	<td  >-</td>
   <td  id="tdomestic_ID"> </td>
   </tr>
   <tr>
   <td class="text-left" ><h4 class="text-center">Packing Credit Foreign Currency</h4></</td>
- <!--  <td id="currency_ID"> </td> -->
- <td ></td>
-	<td ></td>
-	<td ></td>
+  <td id="currency_ID"> </td>
+	<td >-</td>
+	<td >-</td>
   <td id="tcurrency_ID"> </td>
   </tr>
 
@@ -832,7 +830,7 @@ function ajax(_token,loanAmount_id,interest,loanTenurMonth,ID,paid){
                 }
                 $('#banktotal').empty().append(totalb=total1+total2+total3);     //parseInt
 
-              
+                 $('#bank_ID').empty().append(totalb=total1+total2+total3); 
                 
                //  $('#bank_ID').empty().append(totalb);
 
@@ -854,6 +852,7 @@ function ajax(_token,loanAmount_id,interest,loanTenurMonth,ID,paid){
                  $('#bank_ID').empty().append('Total Saving<h3 class="tot-sav-txt">'+total31+'</h3>');
                 }
                 $('#Tbanktotal').empty().append(totalb1=total11+total21+total31);
+                $('#bank_ID').empty().append(totalb1=total11+total21+total31); 
 
                
  }
@@ -1081,5 +1080,31 @@ $('input[type=radio]').on('change', function(){
     $('input[type=radio]').not(this).prop('checked', false);
 });
 
+
+
+
+
+
+  $("#tMonth").change(function(){
+      var amt = $("#termloanTenur").val();
+      var month = amt*12;
+      $('#termloanTenur').val(month);
+ 
+     
+    });
+
+
+    $("#tYear").change(function(){
+      var amt1 = $("#termloanTenur").val();
+      var yr = amt1 / 12;
+      $('#termloanTenur').val(yr);
+    });
+
+
  }); 
+
+
+
+
+ 
 </script>

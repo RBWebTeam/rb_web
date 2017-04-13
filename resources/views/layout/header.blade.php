@@ -58,6 +58,7 @@
 	<!-- Side bar -->
 	<ul class="arrow-don">
 	<li class="soc-ic-0"><div  title="Help Section"><i class="icon-phone"></i></div></li>
+
 	<li class="soc-ic-1 soc"><a href="https://www.facebook.com/rupeeboss" target="_blank"><div  title="Facebook"><i class="icon-facebook"></i></div></a></li>
 	<li class="soc-ic-2 soc"><a href="https://plus.google.com/113191059621763008376"target="_blank"><div  title="Google +"><i class="icon-google-plus"></i></div></a></li>
 	<li class="soc-ic-3 soc"><a href="https://twitter.com/rupeeboss" target="_blank"><div  title="Twitter"><i class="icon-twitter"></i></div></a></li>

@@ -575,7 +575,7 @@ Rupeeboss Financial Services Private Limited shall access your Credit Informatio
 <div id="tribe_doc_upload_modal" class="modal fade" role="dialog">
 <form id="kyc_form" name="kyc_form" enctype="multipart/form-data" >
         {{ csrf_field() }}
-    <input type="hidden" name="app_id" class="app_id">
+    <input type="hidden" name="tribe_id" class="tribe_id">
     <input type="hidden" name="uplaoding_doc_name" id="uplaoding_doc_name">
   <div class="modal-dialog">
  <div class="modal-header">

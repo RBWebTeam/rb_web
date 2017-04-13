@@ -484,6 +484,11 @@
           <a class="btn btn-primary btn-outline with-arrow " id="tribe_final_submit" style="display: none;">Submit Application<i class="icon-arrow-right"></i></a> 
           <a class="btn btn-primary btn-outline with-arrow " id="abandon_tribe_application"> Abandon<i class="icon-arrow-right"></i></a>   
     </div>
+    <div id="thank_you_div" class="tab-pane fade" style="display: none;">
+    <br>
+      <h3 class="mrg-top">Thank You</h3><hr>
+            
+    </div>
   </div>
   </div>
   </div>
@@ -657,11 +662,14 @@ $("#submit_tribe_statement").click(function(){
           processData: false,
           contentType: false,
           success:function(response){
-            console.log(response);
-            $('.transaction_id').val(response.transaction_id);
-            $('#close_tribe_transaction').show();
-            //$('.loan_id').val(response.loan_id);
-            
+            console.log(response.status);
+            if(response.status){
+              $('.transaction_id').val(response.transaction_id);
+              $('#close_tribe_transaction').show();
+              //$('.loan_id').val(response.loan_id);
+            }else{
+              console.log("something went wrong in ");
+            }
           },
         });
   }
@@ -719,11 +727,11 @@ function tribe_doc_upload(id){
 }
 
   $('#close_tribe_transaction').click(function(){
-       var form_url="{{URL::to('tribe-close-transaction')}}";
+       var form_url="{{URL::to('tribe-final-submission')}}";
       
     $.ajax({
           url:form_url ,
-          data:new FormData($("#bank_statement_form")[0]),
+          data:'',
           dataType:'json',
           async:false,
           type:'POST',
@@ -731,19 +739,21 @@ function tribe_doc_upload(id){
           contentType: false,
           success:function(response){
            // console.log(response);
-           $('#tribe_final_submit').show();
-           $('#upload_bank_statement_submit').hide();
-           
-            $('#tribe_bank_statement_form').modal('hide');
-            
-            //$('.loan_id').val(response.loan_id);
-            
+           if(response.status)
+           {
+              $('#tribe_final_submit').show();
+              $('#upload_bank_statement_submit').hide();
+                        
+              $('#tribe_bank_statement_form').modal('hide');
+            }else{
+              console.log("No such transaction / error");
+            }
           },
         });
   });
+    
     $('#abandon_tribe_application').click(function(){
-       
-     $.ajax({  
+        $.ajax({  
                type: "POST",  
                url: "{{URL::to('abandon-tribe-application')}}",
                data : $('#tribe_loan_form').serialize(),
@@ -751,6 +761,26 @@ function tribe_doc_upload(id){
 
                 if(msg.status){
                    
+
+                  }else{
+                    console.log("error "+msg);
+                   // window.location.href="{{URL::to('went-wrong')}}";
+                  }
+                 }
+            });
+    });
+
+    $('#tribe_final_submit').click(function(){
+       
+     $.ajax({  
+               type: "POST",  
+               url: "{{URL::to('tribe-final-submission')}}",
+               data : $('#tribe_loan_form').serialize(),
+               success: function(msg){
+
+                if(msg.status){
+                   
+
 
                   }else{
                     console.log("error "+msg);

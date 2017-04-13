@@ -38,7 +38,7 @@ class CreditcardController extends CallApiController
    // print_r($id);exit();
     $update_user='';
     $obj = json_decode($m);
-    print_r($obj);exit();
+    // print_r($obj);exit();
     if ($obj->ApplicationId) 
     {
         // print_r($http_result);exit();

@@ -21,8 +21,8 @@
 			<div class="col-md-12">
 			<div class="offset5">
 			<center><div class="type-cover1"><span>BUSINESS TYPE</span></div></center>
-			<a class="btn"><input type="radio" name="employment"  value="Self_Employed_Professionsl(SEP)" checked/> Self Employed Professionsl (SEP)</a>
-             <a class="btn"><input type="radio" name="employment"  value="Self_Employed_Non_Professional (SENP)" /> Self Employed Non-Professionsl (SENP)</a>
+			<a class="btn"><input type="radio" name="employment"  value="Self_Employed_Professionsl(SEP)" checked/> Self Employed Professional (SEP)</a>
+             <a class="btn"><input type="radio" name="employment"  value="Self_Employed_Non_Professional (SENP)" /> Self Employed Non-Professional (SENP)</a>
 			</div>
 		    </div>
 			

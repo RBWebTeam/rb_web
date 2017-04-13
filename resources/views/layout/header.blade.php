@@ -17,7 +17,7 @@
 
 	<link  rel="stylesheet" type="text/css" href="{{URL::to('css/mysite.css')}}"/>
 
-   <link  rel="stylesheet" type="text/css" href="{{URL::to('css/style.css')}}"/>
+   <!-- <link  rel="stylesheet" type="text/css" href="{{URL::to('css/style.css')}}"/> -->
 
 
 
@@ -58,6 +58,7 @@
 	<!-- Side bar -->
 	<ul class="arrow-don">
 	<li class="soc-ic-0"><div  title="Help Section"><i class="icon-phone"></i></div></li>
+
 	<li class="soc-ic-1 soc"><a href="https://www.facebook.com/rupeeboss" target="_blank"><div  title="Facebook"><i class="icon-facebook"></i></div></a></li>
 	<li class="soc-ic-2 soc"><a href="https://plus.google.com/113191059621763008376"target="_blank"><div  title="Google +"><i class="icon-google-plus"></i></div></a></li>
 	<li class="soc-ic-3 soc"><a href="https://twitter.com/rupeeboss" target="_blank"><div  title="Twitter"><i class="icon-twitter"></i></div></a></li>
@@ -136,12 +137,12 @@
 						<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" data-target="#">SME Loan</a>
 						 <ul class="dropdown-menu">
 						     <li>
-								<a href="{{URL::to('new-business-loan')}}">Unsecured Business Loan</a>
-								<a href="{{URL::to('new-loan-against-property')}}">Loan Against Property</a>
-								<a href="{{URL::to('new-loan-against-property?commercial')}}">Commercial Property Purchase</a>
+								<a href="{{URL::to('business-loan')}}">Unsecured Business Loan</a>
+								<a href="{{URL::to('loan-against-property')}}">Loan Against Property</a>
+								<a href="{{URL::to('loan-against-property?commercial')}}">Commercial Property Purchase</a>
 							</li>
 							<li>
-								<a href="{{URL::to('new-loan-against-property')}}">Lease Rent Discounting</a>
+								<a href="{{URL::to('loan-against-property')}}">Lease Rent Discounting</a>
 								<a href="{{URL::to('new-working-capital')}}">Working Capital</a>
 								<a href="{{URL::to('contact-us')}}">FCNR Loans</a>
 								<a href="{{URL::to('contact-us')}}">Debt Restructuring </a>
@@ -158,12 +159,12 @@
 						<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" data-target="#">Retail Loan</a>
 						<ul class="dropdown-menu">
 						   <li>
-								<a href="{{URL::to('new-home-loan')}}">Home Loan</a>
-								<a href="{{URL::to('new-smart-home-loan')}}">Smart Home Loan</a>
+								<a href="{{URL::to('home-loan')}}">Home Loan</a>
+								<a href="{{URL::to('smart-home-loan')}}">Smart Home Loan</a>
 								
-								<a href="{{URL::to('new-loan-against-property')}}">Loan Against Property</a>
-								<a href="{{URL::to('new-personal-loan')}}">Personal Loan</a>
-								<a href="{{URL::to('new-car-loan')}}">Car Loan</a>
+								<a href="{{URL::to('loan-against-property')}}">Loan Against Property</a>
+								<a href="{{URL::to('personal-loan')}}">Personal Loan</a>
+								<a href="{{URL::to('car-loan')}}">Car Loan</a>
 								<a href="{{URL::to('used-car-loan')}}">Used Car Loan </a>
 
 						   </li>

@@ -41,13 +41,13 @@
               </div>
             </div>  -->
             
-            <div class="col-xs-4 form-padding">
+            <div class="col-xs-12 col-md-4 form-padding">
      <input type="text" class="form-input-new form-control" id="car_cost" name="car_cost" placeholder="Car Cost" required onkeypress="return fnAllowNumeric(event)"  maxlength="10">
   </div>
-  <div class="col-xs-4 form-padding">
+  <div class="col-xs-12 col-md-4 form-padding">
      <input type="text" class="form-input-new form-control" name="loan_amount" id="loan_amount" placeholder="Loan Required" required onkeypress="return fnAllowNumeric(event)"  value="">
   </div>
-  <div class="col-xs-4 form-padding">
+  <div class="col-xs-12 col-md-4 form-padding">
      <input type="text" class="form-input-new form-control search_city" name='city_name' placeholder="Enter City" required >
   </div>
   
@@ -71,7 +71,7 @@
       <div id="collapse2" class="panel-collapse collapse applicant_add">
         <div class="panel-body">
     
-    <div class="col-xs-6 form-padding">
+    <div class="col-xs-12 col-md-6 form-padding">
   
      <select class="block drop-arr select-sty"  name="loan_tenure" id="loan_tenure" required>
     <option value="">LOAN TENURE</option>
@@ -100,11 +100,11 @@
     
     
     
-    <div class="col-xs-6 form-padding">
+    <div class="col-xs-12 col-md-6 form-padding">
      <input type="text" class="form-input-new form-control" name="applicantname" placeholder="Applicant Name"  required>
   </div>
   
-  <div class="col-xs-6 form-padding">
+  <div class="col-xs-12 col-md-6 form-padding">
    <div class="btn-grp form-control pad-no border-none" data-toggle="buttons">
                                     <span class="btn btn-default outer-brd1 active"><input type="radio" value="M" name="gender"  ><img id="myImage" src="images/male.png" class=""></span><span class="hidden-xs">Male</span>
                                    <span class="btn btn-default outer-brd1 "><input type="radio" value="F" name="gender" ><img id="myImage1" src="images/female.png" class=""></span> <span class="hidden-xs">Female</span>
@@ -113,10 +113,10 @@
            </div>      
      </div>
      
-     <div class="col-xs-6 form-padding">
+     <div class="col-xs-12 col-md-6 form-padding">
      <input type="text" class="form-input-new form-control lastReporteddate"  name="dob"  placeholder="Date of Birth" required>
   </div>
-    <div class="col-xs-6 form-padding">
+    <div class="col-xs-12 col-md-6 form-padding">
      <div class="btn-grp form-control border-none pad-no" data-toggle="buttons">
       <span class="btn btn-default outer-brd btn-blu active"><input type="radio" id="sala_DI" value="salaried" name="emp_detail"  > Salaried</span>
       <span class="btn btn-default outer-brd btn-blu"><input type="radio" id="self_DI" value="self-employed" name="emp_detail"  >Self-Emp</span>
@@ -127,28 +127,28 @@
 
      <div  style="display: none;" id="self-employed_ID"> 
        
-       <div class="col-xs-6 form-padding">
+       <div class="col-xs-12 col-md-6 form-padding">
           <input type="text" class="form-input-new form-control " name="turnover" placeholder="Annual turnover" required  onkeypress="return fnAllowNumeric(event)">
       </div>
 
-       <div class="col-xs-6 form-padding">
+       <div class="col-xs-12 col-md-6 form-padding">
           <input type="text" class="form-input-new form-control " name="profit_after_tax" placeholder="Profit after tax" required  onkeypress="return fnAllowNumeric(event)">
       </div>
-      <div class="col-xs-6 form-padding">
+      <div class="col-xs-12 col-md-6 form-padding">
           <input type="text" class="form-input-new form-control " name="depreciation" placeholder="Depreciation"  required onkeypress="return fnAllowNumeric(event)">
       </div>
-       <div class="col-xs-6 form-padding">
+       <div class="col-xs-12 col-md-6 form-padding">
           <input type="text" class="form-input-new form-control " name="remuneration" placeholder="Partner/Director Remuneration"  required onkeypress="return fnAllowNumeric(event)">
       </div>
 
      </div>
 
      
-     <div class="col-xs-6 form-padding" id="income_ID">
+     <div class="col-xs-12 col-md-6 form-padding" id="income_ID">
      <input type="text" class="form-input-new form-control"  id="income" name="income"  placeholder="Monthly Income" required onkeypress="return fnAllowNumeric(event)">
   </div>
   
-  <div class="col-xs-6 form-padding">
+  <div class="col-xs-12 col-md-6 form-padding">
      <input type="text" class="form-input-new form-control"   name="obligation" placeholder="Existing EMI (If Any)" required onkeypress="return fnAllowNumeric(event)"> 
   </div>
     
@@ -239,6 +239,7 @@
       </div>
     </div>
 <br> -->
+<br>
     <?php if(Session::get('is_login')) {?>
                 <?php if(Session::get('contact')!=''){ Session::get('contact'); ?>
               <button class="btn btn-primary btn-outline with-arrow top-mrg product_name product_ID" >Get Best Quotes<i class="icon-arrow-right"></i></button>
@@ -290,8 +291,8 @@
          <br>
         <div> 
           
-         <a id="apply_new" type="button" class="btn btn-info" title="Experience New Digital Era In Loans">Apply Digitally</a>
-         <button id="eligibility" class="btn btn-info" title="See Bankwise Eligibility And Apply Amongst Best Bank">Check Bankwise Eligibility</button>
+         <a id="apply_new" type="button" class="btn btn-info disblk" title="Experience New Digital Era In Loans">Apply Digitally</a>
+         <button id="eligibility" class="btn btn-info disblk" title="See Bankwise Eligibility And Apply Amongst Best Bank">Check Bankwise Eligibility</button>
          <button type="button" class="btn btn-info block"  id="call_rm" name="call_rm" data-toggle="modal" data-target="#Modal" title="Call For RM(Single Day Process)">Call Manager</button>
          
         </div>

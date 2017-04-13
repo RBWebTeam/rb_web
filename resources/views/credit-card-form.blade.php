@@ -1,3 +1,4 @@
+
 @include('layout.header')
 <div id="fh5co-hero">
 	<div class="fh5co-contact animate-box">
@@ -12,18 +13,21 @@
 						
 							<form class="" id="compareform" role="form" method="POST" >
 							 {{ csrf_field() }}
+							 <input type="hidden" name="empid" class="empid" value=" <?php echo Session::get('empid')?Session::get('empid'):'';?>">
+						          <input type="hidden" name="brokerid" class="brokerid" value="<?php echo Session::get('brokerid')?Session::get('brokerid'):'';?>">
+						          <input type="hidden" name="source" class="source" value="<?php echo Session::get('source')?Session::get('source'):'';?>"> 
 								<div class="row">
 									<div class="form-group">
 									
 										<h4 class="hdr">&nbsp;&nbsp;&nbsp;&nbsp;Personal Details</h4>
 										<div class="col-md-4">
-											<input type="text" class="form-control" placeholder= "FirstName*" name="ApplicantFirstName" id="ApplicantFirstName" required>
+											<input type="text" class="form-control" placeholder= "FirstName*" name="ApplicantFirstName" id="ApplicantFirstName" onkeypress="return AllowAlphabet(event)" required>
 										</div>
 										<div class="col-md-4">
 											<input type="text" class="form-control" placeholder="Middle Name" name="ApplicantMiddleName" id="ApplicantMiddleName">
 										</div>
 										<div class="col-md-4">
-											<input type="text" class="form-control" placeholder="Last Name*" name="ApplicantLastName" id="ApplicantLastName" required>
+											<input type="text" class="form-control" placeholder="Last Name*" name="ApplicantLastName" id="ApplicantLastName" onkeypress="return AllowAlphabet(event)" required>
 										</div>
 
 										<div class="col-md-4">
@@ -65,11 +69,13 @@
   											</div>
 
   											<div class="col-md-4">
-										     <input type="text" class="form-input-new form-control" name="ICICIRelationshipNumber" id="ICICIRelationshipNumber" placeholder="ICICI Relationship Number" maxlength="15" onkeypress="return isNumberKey(event)"  required>
+										     <input  type="text" class="form-input-new form-control" name="Total_Exp" id="Total_Exp" placeholder="Total Experience" onkeypress="return isNumberKey(event)"  required>
 											</div>
 
+											
+
 											<div class="col-md-4">
-										     <input style='display:none;' type="text" class="form-input-new form-control" name="Total_Exp" id="Total_Exp" placeholder="Total Experience" onkeypress="return isNumberKey(event)"  required>
+										     <input  style='display:none;' type="text" class="form-input-new form-control" name="ICICIRelationshipNumber" id="ICICIRelationshipNumber" placeholder="ICICI Relationship Number" maxlength="15" onkeypress="return isNumberKey(event)"  required>
 											</div>
 		
 		
@@ -384,16 +390,33 @@
 <script type="text/javascript">
 	$(document).ready(function(){
     $('#ICICIBankRelationship').on('change', function() {
-      if ( this.value == '1')
+    	console.log(this.value);
+      if ( this.value == 'Salary')
       {
-        $("#Total_Exp").show();
+        $("#ICICIRelationshipNumber").show();
       }
       else
       {
-        $("#Total_Exp").hide();
+        $("#ICICIRelationshipNumber").hide();
       }
     });
 });
+</script>
+
+
+<script type="text/javascript">
+  function AllowAlphabet(e)
+{
+  isIE = document.all ? 1 : 0
+  keyEntry = !isIE ? e.which : event.keyCode;
+  if (((keyEntry >= '65') && (keyEntry <= '90')) || ((keyEntry >= '97') && (keyEntry <= '122')) || (keyEntry == '46') || (keyEntry == '32') || keyEntry == '45')
+     return true;
+  else
+{
+    // alert('Please Enter Only Character values.');
+    return false;
+      }
+}
 </script>
 
 

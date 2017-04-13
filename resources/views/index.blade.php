@@ -24,7 +24,7 @@
 			<li><a href="{{URL::to('express-loan')}}"style="background:red;"><b>Express Loan</b></a></li>
 			<li><a href="{{URL::to('idfc')}}">Savings Account</a></li>
 
-			<li><a href="{{URL::to('new-home-loan')}}"><b>Pradhan Mantri Awas Yojana</b></a></li>
+			<li><a href="{{URL::to('home-loan')}}"><b>Pradhan Mantri Awas Yojana</b></a></li>
 			<li><a href="{{URL::to('contact-us')}}"><b>SME Car Leasing</b></a></li>
 			
 
@@ -42,7 +42,7 @@
 	<i class="sprite sprite-home-ic center-img-align img-responsive hidden-xs"></i>
 	<h2>Home Loan </h2>
    <h4>Choose the right Home Loan for you ...!!</h4>
-   <a href="{{URL::to('new-home-loan')}}" class="btn btn-primary btn-lg btn-view">View More</a>
+   <a href="{{URL::to('home-loan')}}" class="btn btn-primary btn-lg btn-view">View More</a>
    </div>
       <img src="{{URL::to('images/slide_1.jpg')}}" alt="Home Loan Banner" title="Home Loan Banner" class="slide-hm"> 
     </div>
@@ -52,7 +52,7 @@
 	<i class="sprite sprite-personal-ic center-img-align img-responsive hidden-xs"></i>
 	<h2>Personal Loan </h2>
    <h4>Finance Your Dreams...!!</h4>
-   <a href="{{URL::to('new-personal-loan')}}" class="btn btn-primary btn-lg btn-view">View More</a>
+   <a href="{{URL::to('personal-loan')}}" class="btn btn-primary btn-lg btn-view">View More</a>
    </div>
       <img src="{{URL::to('images/slide_2.jpg')}}" alt="Personal Loan Banner" title="Personal Loan Banner" class="slide-hm">
     </div>
@@ -62,7 +62,7 @@
 	<i class="sprite sprite-lap-ic center-img-align img-responsive hidden-xs"></i>
 	<h2>Loan Against Property</h2>
    <h4>Finding you a better Deal...!!</h4>
-   <a href="{{URL::to('new-loan-against-property')}}" class="btn btn-primary btn-lg btn-view">View More</a>
+   <a href="{{URL::to('loan-against-property')}}" class="btn btn-primary btn-lg btn-view">View More</a>
    </div>
       <img src="{{URL::to('images/slide_3.jpg')}}" alt="Loan-Against-Property Banner" title="Loan-Against-Property Banner" class="slide-hm">
     </div>
@@ -83,7 +83,7 @@
 	<h4>Unsecured</h4>
 	<h2>Business Loan</h2>
    <h4>Experience on your side...!!</h4>
-   <a href="{{URL::to('new-business-loan')}}" class="btn btn-primary btn-lg btn-view">View More</a>
+   <a href="{{URL::to('business-loan')}}" class="btn btn-primary btn-lg btn-view">View More</a>
 
    </div>
       <img src="{{URL::to('images/slide_5.jpg')}}" alt="Business Loan Banner" title="Business Loan Banner" class="slide-hm">
@@ -93,7 +93,7 @@
 	<i class="sprite sprite-car-ic center-img-align img-responsive hidden-xs"></i>
 	<h2>Car Loan</h2>
    <h4>Thinking of your comfort first !!</h4>
-   <a href="{{URL::to('new-car-loan')}}" class="btn btn-primary btn-lg btn-view">View More</a>
+   <a href="{{URL::to('car-loan')}}" class="btn btn-primary btn-lg btn-view">View More</a>
    </div>
       <img src="{{URL::to('images/slide_6.jpg')}}" alt="car-slider-img" class="slide-hm">
     </div>
@@ -117,7 +117,7 @@
 <li><h2 class="pad text-center"><a href="{{URL::to('comfy-sales')}}">Rupeeboss Comfy</a></h2></li>
 <li><h2 class="pad text-center"><a href="{{URL::to('express-loan')}}">Express Loan</a></h2></li>
 <li><h2 class="pad text-center"><a href="{{URL::to('savings-account')}}">Savings Account</a></h2></li>
-<li><h2 class="pad text-center"><a href="{{URL::to('new-home-loan')}}">Pradhan Mantri Awas Yojana</a></h2></li>
+<li><h2 class="pad text-center"><a href="{{URL::to('home-loan')}}">Pradhan Mantri Awas Yojana</a></h2></li>
 <li><h2 class="pad text-center"><a href="{{URL::to('contact-us')}}">SME Car Leasing</a></h2></li>
 </ul>
 </div>
@@ -130,7 +130,7 @@
 			<div class="dv-hr">
 				<div class="col-md-2 animate-box no-padding">
 					<div class="services">
-						<a class="anchor_decoration" href="{{URL::to('new-home-loan')}}">
+						<a class="anchor_decoration" href="{{URL::to('home-loan')}}">
 						<div class="desc">
 						<i class="icon-home"></i>
 							<h3>Home Loan</h3>
@@ -141,7 +141,7 @@
 				</div>
 				<div class="col-md-2 animate-box no-padding">
 					<div class="services1 services">
-						<a class="anchor_decoration" href="{{URL::to('new-personal-loan')}}">
+						<a class="anchor_decoration" href="{{URL::to('personal-loan')}}">
 						<div class="desc">
 						<i class="icon-user"></i>
 							<h3>Personal Loan</h3>
@@ -152,7 +152,7 @@
 				</div>
 				<div class="col-md-2 animate-box no-padding">
 					<div class="services2 services">
-						<a class="anchor_decoration" href="{{URL::to('new-loan-against-property')}}">
+						<a class="anchor_decoration" href="{{URL::to('loan-against-property')}}">
 						<div class="desc">
 						<i class="icon-money"></i>
 							<h3>Loan against <br>Property</h3>
@@ -174,7 +174,7 @@
 				</div>
 				<div class="col-md-2 animate-box no-padding">
 					<div class="services4 services">
-						<a class="anchor_decoration" href="{{URL::to('new-business-loan')}}">
+						<a class="anchor_decoration" href="{{URL::to('business-loan')}}">
 						<div class="desc">
 						<i class="icon-line-chart"></i>
 							<h3>Business <br> Loan </h3>
@@ -185,7 +185,7 @@
 				</div>
 				<div class="col-md-2 animate-box no-padding">
 					<div class="services5 services">
-						<a class="anchor_decoration" href="{{URL::to('new-car-loan')}}">
+						<a class="anchor_decoration" href="{{URL::to('car-loan')}}">
 						<div class="desc">
 						<i class="icon-car"></i>
 							<h3>Car Loan</h3>

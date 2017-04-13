@@ -13,7 +13,7 @@
 {{ csrf_field() }}  
  <!-- <img src="{{URL::to('images/9.png')}}" alt="Tribe Logo" class="img-responsive" /> -->
  <div class="col-md-6">
-  <div class="col-xs-12">
+  <div class="col-xs-12 pad-no">
   
 	 <input type="hidden" id="product" name="product_name" value="13">
 
@@ -26,7 +26,7 @@
       
       </div>
 		</div>
-		<div class="col-xs-12">
+		<div class="col-xs-12 pad-no">
 	   <div class="btn-grp pad status" data-toggle="buttons">
 	   <center><div class="type-cover"><span>Business Type</span></div></center>
       <span class="btn btn-default circle outer-brd active"><input type="radio" name="emp_detail" value="2">Self Employed Non-Professional (SENP)</span>
@@ -40,7 +40,7 @@
 	</div>
 	<div class="col-xs-12 col-md-6 form-padding">
 	
-     <input class="form-input-new form-control" type="text" id="pan_no" name="pan_no" oninput="pan_card('pan_no')" maxlength="10" minlength="10"  placeholder="Pan No" required>
+     <input class="form-input-new form-control" type="text" id="pan_no" name="pan_no" oninput="pan_card('pan_no')"  placeholder="Pan No" required>
 	 <span id="pan_number"  style="display:none;color: red;font-size:12px;">Enter Valid Pan No.</span>
      
 	</div>
@@ -51,7 +51,7 @@
   <div class="col-xs-12 col-md-6 form-padding" >
   
      <select class="block drop-arr select-sty"  name="loan_tenure" id="loan_tenure" required>
-	  <option value="">LOAN TENURE</option>
+	  <option value="">Loan Tenure</option>
 	  <option value="1">1 Year</option>
 		<option value="2">2 Year</option>
 		<option value="3">3 Year</option>
@@ -64,7 +64,7 @@
 
   
   
-  <div class="col-md-12 no-pad comp-fin">
+  <div class="col-md-12 pad-no comp-fin">
     <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
 
         <div class="panel panel-default">
@@ -176,15 +176,15 @@
  </div>
  
  
-	<div class="col-md-6 no-pad">
+	<div class="col-md-6 no-pad flt-lft">
 	<div class="panel-group" id="accordion1">
 	<div class="panel-default">
       <div id="collapse0" class="panel-collapse collapse in">
   <div class="panel-body">
 		
 	
-	<div class="col-xs-8">
-	 <span class="lin-heig">Export/Import</span>
+	<div class="col-xs-8 form-padding pad-no">
+	 <h4 class="mrg-top">Export/Import</h4>
 	</div>
 	<div class="col-xs-4 form-padding pad">
      <div class="btn-grp border-none" data-toggle="buttons">
@@ -399,19 +399,20 @@
       </div>
     </div>
   </div> 
-  
+   
+   <div class="valid_ID"></div>
 
    <?php if(Session::get('is_login')) {?>
                 <?php if(Session::get('contact')!=''){ Session::get('contact'); ?>
-              <button class="btn btn-primary btn-outline with-arrow top-mrg product_name " >Get Best Quotes<i class="icon-arrow-right"></i></button>
+              <button class="btn btn-primary btn-outline with-arrow top-mrg product_name product_ID " >Get Best Quotes<i class="icon-arrow-right"></i></button>
               <?php }else{?> 
-                <a  class="btn btn-primary btn-outline with-arrow top-mrg product_name" data-toggle="modal" data-target="#contact_id">Get Best Quotes<i class="icon-arrow-right"></i></a>
+                <a  class="btn btn-primary btn-outline with-arrow top-mrg product_name product_ID" data-toggle="modal" data-target="#contact_id">Get Best Quotes<i class="icon-arrow-right"></i></a>
                       <?php }?>
             <?php }else{?>
-            <button  style="display:none" class="btn btn-primary btn-outline with-arrow top-mrg product_name " id="btn_refresh_co">Get Best Quotes<i class="icon-arrow-right"></i></button>
+            <button  style="display:none" class="btn btn-primary btn-outline with-arrow top-mrg product_name product_ID " id="btn_refresh_co">Get Best Quotes<i class="icon-arrow-right"></i></button>
 
 
-              <a class="btn btn-primary btn-outline with-arrow top-mrg product_name" id="btn_refresh_co1" data-toggle="modal" data-target="#login_process">Get Best Quotes<i class="icon-arrow-right"></i></a>
+              <a class="btn btn-primary btn-outline with-arrow top-mrg product_name product_ID" id="btn_refresh_co1" data-toggle="modal" data-target="#login_process">Get Best Quotes<i class="icon-arrow-right"></i></a>
             <?php } ?>
    </form>
    <div class="iframeloading" style= "display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
@@ -554,10 +555,9 @@ function callme(test){
 </script>
 
 <script type="text/javascript">
-$(".btn-primary").click(function(e){
+$(".product_ID").click(function(e){
    e.preventDefault();
-  
-
+ 
 
 
 
@@ -567,6 +567,10 @@ $(".btn-primary").click(function(e){
             return false;
            
           }else{
+          	var company_name=$('#company_name').val();
+               var bank_name=$('#bank_name').val();
+      if(company_name!='' && bank_name!=''){
+         $('#login_process').attr( 'id', 'login_process');
  $(".iframeloading").show();
               $.ajax({  
              type: "POST",  
@@ -618,6 +622,14 @@ $(".btn-primary").click(function(e){
                   });
 
           }
+          else{
+ $('#login_process').removeAttr('id');
+  //alert("This field is required.");
+
+ $('.valid_ID').empty().append('<div style=" color: red" >Please Fill All Inputs</div>');
+  
+}
+}
 
 
 });

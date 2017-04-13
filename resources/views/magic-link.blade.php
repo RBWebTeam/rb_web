@@ -38,11 +38,11 @@
 		<li><a href="{{URL::to('home-loan-transfer/loan-against-property-loan')}}">LOAN AGAINST PROPERTY BALANCE TRANSFER</a></li>
 		<li><a href="{{URL::to('home-loan-transfer/personal-loan')}}">PERSONAL LOAN BALANCE TRANSFER</a></li>
 		<li><a href="{{URL::to('working-capital')}}">WORKING CAPITAL BALANCE TRANSFER</a></li>
-		<li><a href="{{URL::to('new-home-loan')}}">APPLY FOR HOME LOAN</a></li>
-		<li><a href="{{URL::to('new-personal-loan')}}">APPLY FOR PERSONAL LOAN</a></li>
-		<li><a href="{{URL::to('new-loan-against-property')}}">APPLY FOR LOAN AGAINST PROPERTY</a></li>
-		<li><a href="{{URL::to('new-car-loan')}}">APPLY FOR CAR LOAN</a></li>
-		<li><a href="{{URL::to('new-business-loan')}}">APPLY FOR UNSECURED BUSINESS LOAN</a></li>
+		<li><a href="{{URL::to('home-loan')}}">APPLY FOR HOME LOAN</a></li>
+		<li><a href="{{URL::to('personal-loan')}}">APPLY FOR PERSONAL LOAN</a></li>
+		<li><a href="{{URL::to('loan-against-property')}}">APPLY FOR LOAN AGAINST PROPERTY</a></li>
+		<li><a href="{{URL::to('car-loan')}}">APPLY FOR CAR LOAN</a></li>
+		<li><a href="{{URL::to('business-loan')}}">APPLY FOR UNSECURED BUSINESS LOAN</a></li>
 		<li><a href="{{URL::to('credit-card')}}">APPLY FOR CREDIT CARD</a></li>
 		
 	</ul>

@@ -66,9 +66,7 @@
           
           ?>
 
-          <input type="hidden" name="empid" class="empid" value="<?php echo $empid?$empid:'';?>">
-          <input type="hidden" name="brokerid" class="brokerid" value="<?php echo $brokerid?$brokerid:'';?>">
-          <input type="hidden" name="source" class="source" value="<?php echo $source?$source:'';?>"> 
+         
 	
 
 @include('layout.footer')

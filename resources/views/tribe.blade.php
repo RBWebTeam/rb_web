@@ -383,30 +383,53 @@
         <div class="col-md-4">Pan</div>
         <div class="col-md-8">
          <a class="btn btn-primary btn-outline with-arrow pull-right" onclick="tribe_doc_upload(1)">Add Document<i class="icon-arrow-right"></i></a>
-       
+           <div style="display: none;" id="after_upload_div_1">
+              <a class="btn btn-primary btn-outline with-arrow pull-right" id="get_doc_1" >Show Document<i class="icon-arrow-right"></i></a>
+              <a class="btn btn-primary btn-outline with-arrow pull-right" id="del_doc_1">Delete Document<i class="icon-arrow-right"></i></a>
+          </div>
+           <div style="display: none;" id="after_upload_div_1">
+              <a class="btn btn-primary btn-outline with-arrow pull-right" id="get_doc_1" >Show Document<i class="icon-arrow-right"></i></a>
+              <a class="btn btn-primary btn-outline with-arrow pull-right" id="del_doc_1">Delete Document<i class="icon-arrow-right"></i></a>
+          </div>
         </div>
         
         <div class="col-md-4">Aadhaar</div>
         <div class="col-md-8">
         <a class="btn btn-primary btn-outline with-arrow pull-right" onclick="tribe_doc_upload(2)">Add Document<i class="icon-arrow-right"></i></a>
+           <div style="display: none;" id="after_upload_div_2">
+              <a class="btn btn-primary btn-outline with-arrow pull-right" id="get_doc_2" >Show Document<i class="icon-arrow-right"></i></a>
+              <a class="btn btn-primary btn-outline with-arrow pull-right" id="del_doc_2">Delete Document<i class="icon-arrow-right"></i></a>
+          </div>
         
         </div>
         
         <div class="col-md-4">Driving License </div>
         <div class="col-md-8">
         <a class="btn btn-primary btn-outline with-arrow pull-right" onclick="tribe_doc_upload(3)">Add Document<i class="icon-arrow-right"></i></a>
+           <div style="display: none;" id="after_upload_div_3">
+              <a class="btn btn-primary btn-outline with-arrow pull-right" id="get_doc_3" >Show Document<i class="icon-arrow-right"></i></a>
+              <a class="btn btn-primary btn-outline with-arrow pull-right" id="del_doc_3">Delete Document<i class="icon-arrow-right"></i></a>
+          </div>
         
         </div>
         
         <div class="col-md-4">Passport</div>
         <div class="col-md-8">
         <a class="btn btn-primary btn-outline with-arrow pull-right" onclick="tribe_doc_upload(4)">Add Document<i class="icon-arrow-right"></i></a>
+           <div style="display: none;" id="after_upload_div_4">
+              <a class="btn btn-primary btn-outline with-arrow pull-right" id="get_doc_4" >Show Document<i class="icon-arrow-right"></i></a>
+              <a class="btn btn-primary btn-outline with-arrow pull-right" id="del_doc_4">Delete Document<i class="icon-arrow-right"></i></a>
+          </div>
         
         </div>
         
         <div class="col-md-4">Voter ID</div>
         <div class="col-md-8">
         <a class="btn btn-primary btn-outline with-arrow pull-right" onclick="tribe_doc_upload(5)">Add Document<i class="icon-arrow-right"></i></a>
+           <div style="display: none;" id="after_upload_div_5">
+              <a class="btn btn-primary btn-outline with-arrow pull-right" id="get_doc_5" >Show Document<i class="icon-arrow-right"></i></a>
+              <a class="btn btn-primary btn-outline with-arrow pull-right" id="del_doc_5">Delete Document<i class="icon-arrow-right"></i></a>
+          </div>
         
         </div>
         <div class="col-md-12">
@@ -415,12 +438,20 @@
       <div class="col-md-4">Electricity Bill</div>
         <div class="col-md-8">
         <a class="btn btn-primary btn-outline with-arrow pull-right" onclick="tribe_doc_upload(6)">Add Document<i class="icon-arrow-right"></i></a>
+           <div style="display: none;" id="after_upload_div_6">
+              <a class="btn btn-primary btn-outline with-arrow pull-right" id="get_doc_6" >Show Document<i class="icon-arrow-right"></i></a>
+              <a class="btn btn-primary btn-outline with-arrow pull-right" id="del_doc_6">Delete Document<i class="icon-arrow-right"></i></a>
+          </div>
          
         </div>
         
         <div class="col-md-4">Leave and License Agreement</div>
         <div class="col-md-8">
         <a class="btn btn-primary btn-outline with-arrow pull-right" onclick="tribe_doc_upload(7)">Add Document<i class="icon-arrow-right"></i></a>
+           <div style="display: none;" id="after_upload_div_7">
+              <a class="btn btn-primary btn-outline with-arrow pull-right" id="get_doc_7" >Show Document<i class="icon-arrow-right"></i></a>
+              <a class="btn btn-primary btn-outline with-arrow pull-right" id="del_doc_7">Delete Document<i class="icon-arrow-right"></i></a>
+          </div>
        
         </div>
         
@@ -430,18 +461,30 @@
         <div class="col-md-4">Registration Certificate</div>
         <div class="col-md-8">
         <a class="btn btn-primary btn-outline with-arrow pull-right" onclick="tribe_doc_upload(8)">Add Document<i class="icon-arrow-right"></i></a>
+           <div style="display: none;" id="after_upload_div_8">
+              <a class="btn btn-primary btn-outline with-arrow pull-right" id="get_doc_8" >Show Document<i class="icon-arrow-right"></i></a>
+              <a class="btn btn-primary btn-outline with-arrow pull-right" id="del_doc_8">Delete Document<i class="icon-arrow-right"></i></a>
+          </div>
         
         </div>
         
         <div class="col-md-4">Tax Registration</div>
         <div class="col-md-8">
         <a class="btn btn-primary btn-outline with-arrow pull-right" onclick="tribe_doc_upload(9)">Add Document<i class="icon-arrow-right"></i></a>
+           <div style="display: none;" id="after_upload_div_9">
+              <a class="btn btn-primary btn-outline with-arrow pull-right" id="get_doc_9" >Show Document<i class="icon-arrow-right"></i></a>
+              <a class="btn btn-primary btn-outline with-arrow pull-right" id="del_doc_9">Delete Document<i class="icon-arrow-right"></i></a>
+          </div>
         
         </div>
 
         <div class="col-md-4">Company PAN</div>
         <div class="col-md-8">
         <a class="btn btn-primary btn-outline with-arrow pull-right" onclick="tribe_doc_upload(11)">Add Document<i class="icon-arrow-right"></i></a>
+           <div style="display: none;" id="after_upload_div_11">
+              <a class="btn btn-primary btn-outline with-arrow pull-right" id="get_doc_11" >Show Document<i class="icon-arrow-right"></i></a>
+              <a class="btn btn-primary btn-outline with-arrow pull-right" id="del_doc_11">Delete Document<i class="icon-arrow-right"></i></a>
+          </div>
        
         </div>
 
@@ -451,6 +494,10 @@
         <div class="col-md-4">Company IT Returns</div>
         <div class="col-md-8">
         <a class="btn btn-primary btn-outline with-arrow pull-right" onclick="tribe_doc_upload(10)">Add Document<i class="icon-arrow-right"></i></a>
+           <div style="display: none;" id="after_upload_div_10">
+              <a class="btn btn-primary btn-outline with-arrow pull-right" id="get_doc_10" >Show Document<i class="icon-arrow-right"></i></a>
+              <a class="btn btn-primary btn-outline with-arrow pull-right" id="del_doc_10">Delete Document<i class="icon-arrow-right"></i></a>
+          </div>
       
         </div>
         
@@ -459,6 +506,10 @@
          <div class="col-md-4">ITR/VAT Returns/ST Returns</div>
         <div class="col-md-8">
         <a class="btn btn-primary btn-outline with-arrow pull-right" onclick="tribe_doc_upload(12)">Add Document<i class="icon-arrow-right"></i></a>
+           <div style="display: none;" id="after_upload_div_12">
+              <a class="btn btn-primary btn-outline with-arrow pull-right" id="get_doc_12" >Show Document<i class="icon-arrow-right"></i></a>
+              <a class="btn btn-primary btn-outline with-arrow pull-right" id="del_doc_12">Delete Document<i class="icon-arrow-right"></i></a>
+          </div>
         
         </div>
         
@@ -468,12 +519,20 @@
         <div class="col-md-4">Personal IT Returns</div>
         <div class="col-md-8">
         <a class="btn btn-primary btn-outline with-arrow pull-right" onclick="tribe_doc_upload(13)">Add Document<i class="icon-arrow-right"></i></a>
+           <div style="display: none;" id="after_upload_div_13">
+              <a class="btn btn-primary btn-outline with-arrow pull-right" id="get_doc_13" >Show Document<i class="icon-arrow-right"></i></a>
+              <a class="btn btn-primary btn-outline with-arrow pull-right" id="del_doc_13">Delete Document<i class="icon-arrow-right"></i></a>
+          </div>
       
         </div>
         
         <div class="col-md-4">Other Documents</div>
         <div class="col-md-8">
         <a class="btn btn-primary btn-outline with-arrow pull-right" onclick="tribe_doc_upload(14)">Add Document<i class="icon-arrow-right"></i></a>
+           <div style="display: none;" id="after_upload_div_14">
+              <a class="btn btn-primary btn-outline with-arrow pull-right" id="get_doc_14" >Show Document<i class="icon-arrow-right"></i></a>
+              <a class="btn btn-primary btn-outline with-arrow pull-right" id="del_doc_14">Delete Document<i class="icon-arrow-right"></i></a>
+          </div>
         </div>
         
     </div>
@@ -483,6 +542,11 @@
           <a class="btn btn-primary btn-outline with-arrow " data-toggle="modal" data-target="#tribe_bank_statement_form" id="upload_bank_statement_submit">Upload Bank Document<i class="icon-arrow-right"></i></a>  
           <a class="btn btn-primary btn-outline with-arrow " id="tribe_final_submit" style="display: none;">Submit Application<i class="icon-arrow-right"></i></a> 
           <a class="btn btn-primary btn-outline with-arrow " id="abandon_tribe_application"> Abandon<i class="icon-arrow-right"></i></a>   
+    </div>
+    <div id="thank_you_div" class="tab-pane fade" style="display: none;">
+    <br>
+      <h3 class="mrg-top">Thank You</h3><hr>
+            
     </div>
   </div>
   </div>
@@ -536,9 +600,11 @@
         <a class="btn btn-primary btn-outline with-arrow pull-left" id="submit_tribe_statement">Submit Statment
         <i class="icon-arrow-right"></i>
         </a>
-        <a class="btn btn-primary btn-outline with-arrow pull-right" id="close_tribe_transaction">Close Transaction
-        <i class="icon-arrow-right"></i>
-        </a>
+        <div id="close_tribe_transaction_div" style="display: none;">
+          <a class="btn btn-primary btn-outline with-arrow pull-right" id="close_tribe_transaction">Close Transaction
+          <i class="icon-arrow-right"></i>
+          </a>
+        </div>
         </div>
     </form>
 </div>
@@ -546,6 +612,7 @@
 
 <script type="text/javascript">
   var previousPartner;
+  var doc_id;
     function showDiv(name){
        $('#'+previousPartner).hide();
        $('#'+name).show();
@@ -592,13 +659,13 @@
   
 function go_to_next(next){
     var nav_number=next.split('main');
-   // if($('#tribe_loan_form').valid()){
-     // console.log("valid_tab");
+   if($('#tribe_loan_form').valid()){
+     console.log("valid_tab");
       $( "#nav"+nav_number[1] ).trigger( "click" );
       window.scrollTo(0,0);
-    // }else{
-    //   //return false;
-    // }
+    }else{
+      //return false;
+    }
 }
  function go_back(next){
     var nav_number=next.split('main');
@@ -627,11 +694,14 @@ $("#upload_doc_submit").click(function(){
       processData: false,
       contentType: false,
       success:function(response){
-        console.log(response);
-        if(!response.error){
+       // console.log(response);
+        if(response.status){
               
             $('#kyc_form')[0].reset();
             $('#tribe_doc_upload_modal').modal('hide');
+            $('#after_upload_div_'+doc_id).show();
+            $('#get_doc_'+doc_id).attr('onclick','get_doc_fun('+response.document_id+')');
+            $('#del_doc_'+doc_id).attr('onclick','del_doc_fun('+response.document_id+','+doc_id+')');
         }else{
           console.log("error => "+response.error);
         }
@@ -657,11 +727,14 @@ $("#submit_tribe_statement").click(function(){
           processData: false,
           contentType: false,
           success:function(response){
-            console.log(response);
-            $('.transaction_id').val(response.transaction_id);
-            $('#close_tribe_transaction').show();
-            //$('.loan_id').val(response.loan_id);
-            
+            //console.log(response.status);
+            if(response.status){
+              $('.transaction_id').val(response.transaction_id);
+              $('#close_tribe_transaction_div').show();
+              //$('.loan_id').val(response.loan_id);
+            }else{
+              console.log("something went wrong in ");
+            }
           },
         });
   }
@@ -670,7 +743,7 @@ $("#submit_tribe_statement").click(function(){
 $('#freeze_form').click(function(){
       //alert($('#tribe_loan_form input[name="_token"]').val());
       var CSRF_TOKEN = $('input[name="_token"]').val();
-    // $('#tribe_loan_form').find('input, radio,textarea, button, select').attr('disabled','disabled');
+    
      $('#freeze_form_modal').modal('hide');
     $.ajax({  
              type: "POST",  
@@ -679,6 +752,7 @@ $('#freeze_form').click(function(){
              success: function(msg){
 
               if(msg.status){
+                $('#tribe_loan_form').find('input, radio,textarea, button, select').attr('disabled','disabled');
                   $('.app_id').val(msg.tribe);
                   $('.loan_id').val(msg.loan_id);
 
@@ -711,6 +785,7 @@ $('#pdf_has_pwd').change(function(){
 function tribe_doc_upload(id){
     $('#tribe_doc_upload_modal').modal('show');
     $('#uplaoding_doc_name').val(id);
+    doc_id=id;
     if(id==10 || id==13){
       $('#doc_special_fields').show();
     }else{
@@ -723,7 +798,7 @@ function tribe_doc_upload(id){
       
     $.ajax({
           url:form_url ,
-          data:new FormData($("#bank_statement_form")[0]),
+          data:"_token={!! csrf_token() !!}",
           dataType:'json',
           async:false,
           type:'POST',
@@ -731,22 +806,25 @@ function tribe_doc_upload(id){
           contentType: false,
           success:function(response){
            // console.log(response);
-           $('#tribe_final_submit').show();
-           $('#upload_bank_statement_submit').hide();
-           
-            $('#tribe_bank_statement_form').modal('hide');
-            
-            //$('.loan_id').val(response.loan_id);
-            
+           if(response.status)
+           {  
+
+              $('#tribe_final_submit').show();
+              $('#upload_bank_statement_submit').hide();
+                        
+              $('#tribe_bank_statement_form').modal('hide');
+            }else{
+              console.log("No such transaction / error");
+            }
           },
         });
   });
+    
     $('#abandon_tribe_application').click(function(){
-       
-     $.ajax({  
+        $.ajax({  
                type: "POST",  
                url: "{{URL::to('abandon-tribe-application')}}",
-               data : $('#tribe_loan_form').serialize(),
+               data : "_token={!! csrf_token() !!}",
                success: function(msg){
 
                 if(msg.status){
@@ -759,5 +837,66 @@ function tribe_doc_upload(id){
                  }
             });
     });
+
+    $('#tribe_final_submit').click(function(){
+       
+     $.ajax({  
+               type: "POST",  
+               url: "{{URL::to('tribe-final-submission')}}",
+               data : $('#tribe_loan_form').serialize(),
+               success: function(msg){
+
+                if(msg.status){
+                   $('#main7').hide();
+                  $('#thank_you_div').show();
+
+                  }else{
+                    console.log("error "+msg);
+                   // window.location.href="{{URL::to('went-wrong')}}";
+                  }
+                 }
+            });
+    });
+
+//get and delete doc function
+function get_doc_fun(id){
+  var new_id=id;
+    $.ajax({  
+               type: "POST",  
+               url: "{{URL::to('get-tribe-doc')}}",
+               data : "id="+new_id+"&_token={!! csrf_token() !!}",
+               success: function(msg){
+               // console.log(msg);
+                if(msg.status){
+                    window.open(msg.url,'_blank');
+                    
+
+                  }else{
+                    console.log("error "+msg);
+                   // window.location.href="{{URL::to('went-wrong')}}";
+                  }
+                 }
+            });
+}
+function del_doc_fun(id,doc){
+  var new_id=id;
+    $.ajax({  
+               type: "POST",  
+               url: "{{URL::to('del-tribe-doc')}}",
+               data : "id="+new_id+"&_token={!! csrf_token() !!}",
+               success: function(msg){
+               // console.log(msg);
+                if(msg.status){
+                   console.log(msg.document_id);
+                    $('#after_upload_div_'+doc).hide();
+
+                  }else{
+                    console.log("error "+msg);
+                   // window.location.href="{{URL::to('went-wrong')}}";
+                  }
+                 }
+            });
+}
   </script>
+
 

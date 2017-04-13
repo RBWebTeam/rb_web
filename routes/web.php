@@ -222,6 +222,9 @@ Route::post('upload-tribe-doc','TribeController@UploadTribeDocuments');
 Route::post('upload-tribe-bank-statement','TribeController@UploadBankStatement');
 Route::post('tribe-close-transaction','TribeController@CloseTransaction');
 Route::post('abandon-tribe-application','TribeController@AbandonTransaction');
+Route::post('tribe-final-submission','TribeController@FinalSubmission');
+Route::post('get-tribe-doc','TribeController@get_tribe_doc');
+Route::post('del-tribe-doc','TribeController@delete_tribe_doc');
 
 
 //  new loan process 

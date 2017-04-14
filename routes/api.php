@@ -36,4 +36,4 @@ Route::post('get-personal-loan-broker-quote','ApiController@getPersonalLoanQuote
 Route::post('quote-selected','MobileApiController@quote_selected');
 Route::get('show-error','ApiController@show_error');
 Route::post('erp-user','ApiController@create_user_via_erp');
-Route::get('test-city','TribeController@getCity')
+

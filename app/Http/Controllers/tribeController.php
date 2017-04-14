@@ -456,31 +456,4 @@ class TribeController extends CallApiController
 	   		
 	     return view('test_parse')->with('data',$test);
 	  }
-
-
-
-	  public function getCity(){
-	  	 $data=DB::table('city_master')
-        ->select('City_Id','City_Name','state_id')
-        ->where('Is_Active','=','True')
-		->get();
-          if($data){
-			$status_Id=0;
-			$msg="data delievered";
-			$new_data=$data;
-		}
-		else{
-			
-			$status_Id=1;
-			$msg=" Something went wrong.";
-			$new_data=NULL;
-		}
-
-         return Response::json(array(
-			'data' => $new_data,
-			'status_Id'=>$status_Id,
-			'msg'=>$msg
-			));
-         
-	  }
 }

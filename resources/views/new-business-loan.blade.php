@@ -176,7 +176,7 @@
  </div>
  
  
-	<div class="col-md-6 no-pad flt-lft">
+	<div class="col-md-6 no-pad flt-lft" style="display:inline-table;">
 	<div class="panel-group" id="accordion1">
 	<div class="panel-default">
       <div id="collapse0" class="panel-collapse collapse in">
@@ -228,7 +228,7 @@
 		
         </h4>
       </div>
-      <div id="collapse1" class="panel-collapse collapse">
+      <div id="collapse1" class="panel-collapse collapse in">
         <div class="panel-body">
 	<div class="scenario">
 

@@ -274,7 +274,7 @@
 		 
         </h4>
       </div>
-      <div id="collapse2" class="panel-collapse collapse">
+      <div id="collapse2" class="panel-collapse collapse in">
         <div class="panel-body">
 		   <div class="scenario">
 

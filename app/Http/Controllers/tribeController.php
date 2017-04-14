@@ -405,7 +405,82 @@ class TribeController extends CallApiController
 	    }
 	}
 	 public function test(){
-	  		
-	     return view('test_parse');
+	  	
+    	Session::forget('loan_id');
+    	Session::forget('transaction_id');
+    	Session::forget('tribe_id');
+    	Session::forget('company_name');
+    	Session::forget('loan_id');
+    	Session::forget('submission_status');
+    	Session::forget('tribe_abandon');
+    	  	
+    	//print_r("dsfsdf". Session::get('loan_id'));exit();
+		$post='';
+	    $url = $this::$url_static."BankAPIService.svc/GetTribeLoan";
+	    //print_r($url);exit();
+	    $result=$this->call_json_data_get_api($url,$post);
+	    $http_result=$result['http_result'];
+	    $error=$result['error'];
+	    if($error){
+	    	return view('went-wrong');
+	    }else{
+	    $temp_data=json_decode(json_decode($http_result))->response;
+	    $temp=json_decode(json_encode($temp_data));
+	   	//print "<pre>";
+	   	// print_r($temp);exit();
+	    foreach ($temp as $key => $value) {
+
+	    	$sata[$key]=$value;
+	    	$length=sizeof($sata[$key]);
+	    	
+	    	if($length>1){
+    		    	//print_r($sata[$key]);exit();
+    		    	for($i=0;$i<$length;$i++){
+    		    		//print_r($length);
+    		    		$test[$sata[$key][$i]->key]=$sata[$key][$i]->mapping;
+
+    		    	}
+	    	}else{
+	    		//print_r($sata[$key]->key);
+	    		$test[$sata[$key]->key]=$sata[$key]->mapping;
+	    		   
+	    	}
+	    	
+	    }
+	     Session::put('tribe_abandon',$test['status']->abandoned); 
+	     Session::put('submission_status',$test['status']->submitted); 
+	     
+	    //exit();
+	   //   $data=$test;
+	   //  print_r($data);exit();
+	   		
+	     return view('test_parse')->with('data',$test);
+	  }
+
+
+
+	  public function getCity(){
+	  	 $data=DB::table('city_master')
+        ->select('City_Id','City_Name','state_id')
+        ->where('Is_Active','=','True')
+		->get();
+          if($data){
+			$status_Id=0;
+			$msg="data delievered";
+			$new_data=$data;
+		}
+		else{
+			
+			$status_Id=1;
+			$msg=" Something went wrong.";
+			$new_data=NULL;
+		}
+
+         return Response::json(array(
+			'data' => $new_data,
+			'status_Id'=>$status_Id,
+			'msg'=>$msg
+			));
+         
 	  }
 }

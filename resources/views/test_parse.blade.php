@@ -1,38 +1,21 @@
-<!DOCTYPE html>
-<html>
-
-  <head>
-    <meta charset="utf-8"/>
-  
-
-    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet" />
-
-    <!-- The main CSS file -->
-    <!-- <link href="style.css" rel="stylesheet" /> -->
-
-    <!--[if lt IE 9]>
-      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-  </head>
-
-  <!-- The ng-app directive tells angular that the code below should be evaluated -->
-
-  <body ng-app="mainApp" ng-controller="NavController">
+@include('layout.header')
+ <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet" />
+  <div ng-app="mainApp" ng-controller="NavController" id="fh5co-hero">
 
     <!-- The navigation menu will get the value of the "active" variable as a class.
        The $event.preventDefault() stops the page from jumping when a link is clicked. -->
 
-    <nav class="@{{active}}" ng-click="$event.preventDefault()" ng-init="setActive('BASIC DETAIL')">
+    <nav class="@{{active}}" ng-click="$event.originalEvent.defaultPrevented" ng-init="active ='BASIC DETAIL'">
 
       <!-- When a link in the menu is clicked, we set the active variable -->
-    <a href="#" id="nav0" ng-click="setActive('BASIC DETAIL')" >BASIC DETAIL</a>
-    <a href="#" ng-click="setActive('LOAN DETAIL')" id="nav1" class="go_to_next"><b>LOAN DETAIL</a>
-    <a href="#" ng-click="setActive('PERSONAL DETAIL')" id="nav2" class="go_to_next"><b>PERSONAL DETAIL</a>
-    <a href="#" ng-click="setActive('BUSINESS DETAIL')" id="nav3" class="go_to_next"><b>BUSINESS DETAIL</a>
-    <a href="#" ng-click="setActive('ONLINE ID')" id="nav5" class="go_to_next"><b>ONLINE ID</a>
-    <a href="#" ng-click="setActive('REFERENCE')" id="nav6" class="go_to_next"><b>REFERENCE</a>
-    <a href="#"  id="nav4" ng-click="setActive('DOCUMENT')" class="go_to_next"><b>DOCUMENT</a>
-    <a href="#"  id="nav7" ng-click="setActive('BANK STATEMENT')" class="go_to_next"><b>BANK STATEMENT</a>
+    <a href="#" id="nav0" ng-click="active ='BASIC DETAIL'" >BASIC DETAIL</a>
+    <a href="#" ng-click="active='LOAN DETAIL'" id="nav1" class="go_to_next"><b>LOAN DETAIL</a>
+    <a href="#" ng-click="active='PERSONAL DETAIL'" id="nav2" class="go_to_next"><b>PERSONAL DETAIL</a>
+    <a href="#" ng-click="active='BUSINESS DETAIL'" id="nav3" class="go_to_next"><b>BUSINESS DETAIL</a>
+    <a href="#" ng-click="active='ONLINE ID'" id="nav5" class="go_to_next"><b>ONLINE ID</a>
+    <a href="#" ng-click="active='REFERENCE'" id="nav6" class="go_to_next"><b>REFERENCE</a>
+    <a href="#"  id="nav4" ng-click="active='DOCUMENT'" class="go_to_next"><b>DOCUMENT</a>
+    <a href="#"  id="nav7" ng-click="active='BANK STATEMENT'" class="go_to_next"><b>BANK STATEMENT</a>
 
 
     </nav>
@@ -42,33 +25,85 @@
        initially, this will cause the first paragraph to be visible. -->
 
 
-    <p ng-show="active">You chose <b>@{{active}}</p>
-    <div ng-show="checkActive('BASIC DETAIL')">
-      <span>Into the basic</span>
+    <div ng-show="active">
+    <span>
+    You chose <b>@{{active}}
+    </span>
     </div>
-    <div ng-hide="checkActive('@{{active}}')">
-      <span>Into the REFERENCE</span>
+    <form id="tribe_form" name="tribe_form">
+    <div id="basic_detail" ng-show="active=='BASIC DETAIL'">
+       <div class="col-md-12">
+      <h3 class="mrg-top">Partner Details</h3>
+    <hr>
+      <div class="col-md-3"><p>Are you a Tribe Partner?</p></div>
+      <div class="col-md-4">
+      <p><input type="radio" name="is_loan_distributor" value="true" ng-model="is_tribe_dist"/> Yes&nbsp;&nbsp;
+       <input type="radio" name="is_loan_distributor" value="false" ng-model="is_tribe_dist" checked /> No</p></div>
+    <div  id="tribe_partner_div"  ng-if="is_tribe_dist === 'true'">
+      <div class="col-md-6"><p>partnerID*</p></div>
+      <div class="col-md-6"><input type="text" name="partner_id" class="form-control form-group" required /></div>
+      <div class="col-md-6"><p>Agent Name*</p></div>
+      <div class="col-md-6"><input type="text" name="agent_name"  class="form-control form-group" required /></div>
+    </div>
+    </div>
+    <div class="col-md-12 mrg-top">
+
+    <h3>Company Details</h3>
+  <hr>
+    <div class="col-md-3"><p>Company Name*</p></div>
+    <div class="col-md-8"><input type="text" name="company_name" id="company_name" class="form-control form-group" required /></div>
+    
+    <div class="col-md-3"><p>Owner Name*</p></div>
+    <div class="col-md-8">
+    <input type="text" name="owner_name" id="owner_name" class="form-control form-group" required /></div>
+    
+    <div class="col-md-3"><p>Owner Email*</p></div>
+    <div class="col-md-8">
+    <input type="email" name="owner_email" id="owner_email" ng-model="owner_email" class="form-control form-group" required />
+    <p ng-show="tribe_loan_form.owner_email.$error.email" class="error">Invalid Email address</p>
+     <a class="btn btn-primary btn-outline with-arrow " onclick="go_to_next('main1')">Next<i class="icon-arrow-right"></i></a>
+    </div>
+    
+
+  </div>
+    </div>
+    <div id="loan_detail" ng-show="active=='LOAN DETAIL'">
+      <span>LOAN DETAIL</span>
+       <a class="btn btn-primary btn-outline with-arrow" data-toggle="collapse" data-target="#demo">Collapsible</a>
+
+      <div id="demo" class="collapse">
+      Lorem ipsum dolor text....
+      </div>
+    </div>
+    <div id="loan_detail" ng-show="active=='PERSONAL DETAIL'">
+      <span>PERSONAL DETAIL</span>
+    </div>
+    <div id="loan_detail" ng-show="active=='BUSINESS DETAIL'">
+      <span>BUSINESS DETAIL</span>
+    </div>
+    <div id="loan_detail" ng-show="active=='ONLINE ID'">
+      <span>ONLINE ID</span>
+    </div>
+    <div id="loan_detail" ng-show="active=='REFERENCE'">
+      <span>REFERENCE</span>
+    </div>
+    <div id="loan_detail" ng-show="active=='DOCUMENT'">
+      <span>DOCUMENT</span>
+    </div>
+    <div id="loan_detail" ng-show="active=='BANK STATEMENT'">
+      <span>BANK STATEMENT</span>
     </div>
     <!-- Include AngularJS from Google's CDN -->
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.min.js"></script>
-  </body>
-</html>
+    </form>
+  </div>
+  @include('layout.footer')
+  @include('layout.script')
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.min.js"></script>
   <script>
          var mainApp = angular.module("mainApp", []);
          
          mainApp.controller('NavController', function($scope) {
-          $scope.setActive = function(activeDiv){
-            $scope.active=activeDiv;
-            console.log($scope.active);
-          }
-          $scope.checkActive=function(check){
-            console.log($scope.active+"asd");
-            if($scope.active=='BASIC DETAIL'){
-              return true;
-            }else{
-              return false;
-            }
-          }
+         // console.log($scope);
           
           
          });

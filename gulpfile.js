@@ -49,7 +49,7 @@ elixir(function(mix) {
 
 // elixir(function(mix) {
 // 		    mix.scripts([ 		
-// 		'../../../public/js/jquery.min.js',
+// 		'../../../public/js/jquery-3.1.1.min.js',
 // 		'../../../public/js/ajaxlib.js', 
 // 		'../../../public/js/jquery-ui.js',
 // 		'../../../public/js/addonjquery.js',
@@ -68,4 +68,4 @@ elixir(function(mix) {
 //     	],'public/js/Myapp.js');
 // });
 
-//
+

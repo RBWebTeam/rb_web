@@ -17,9 +17,9 @@ class CreditcardController extends CallApiController
         // print_r($req->all());exit();
     $save=new credit_card_form_req(); 
     $id=$save->store($req);
-    $newDob = date("d-m-Y",strtotime(str_replace('-','/', $req['DateOfBirth'])));
+    //$newDob = date("d-m-Y",strtotime(str_replace('-','/', $req['DateOfBirth'])));
     // $newDate = date("d-m-Y",strtotime(str_replace('-','/', $req['SalaryAcOpenDate'])));
-    $req['DateOfBirth']=str_replace('-', '/',$newDob);
+    //$req['DateOfBirth']=str_replace('-', '/',$newDob);
     // $req['SalaryAcOpenDate']=str_replace('-', '/',$newDate);
     $data=$req->all();
     // print_r($req->all());exit();

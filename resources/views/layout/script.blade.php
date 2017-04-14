@@ -2192,6 +2192,7 @@ function SetSession_pop(cookieName,cookieValue){
 			$('.scenario > div').click(function(){
 				$('.scenario > div').removeClass('scenario-active');
 				$(this).toggleClass('scenario-active');
+				
 			});
 		});
 			

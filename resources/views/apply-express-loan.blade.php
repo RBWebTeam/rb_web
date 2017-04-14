@@ -21,28 +21,29 @@
 			<div class="col-md-12">
 			<div class="offset5">
 			<center><div class="type-cover1"><span>BUSINESS TYPE</span></div></center>
-			<a class="btn border"><input type="radio" name="employment"  value="Self_Employed_Professionsl(SEP)" checked/> Self Employed Professionsl (SEP)</a>
-             <a class="btn border"><input type="radio" name="employment"  value="Self_Employed_Non_Professional (SENP)" /> Self Employed Non-Professionsl (SENP)</a>
+			<a class="btn"><input type="radio" name="employment"  value="Self_Employed_Professionsl(SEP)" checked/> Self Employed Professional (SEP)</a>
+             <a class="btn"><input type="radio" name="employment"  value="Self_Employed_Non_Professional (SENP)" /> Self Employed Non-Professional (SENP)</a>
 			</div>
 		    </div>
 			
 			<div class="col-md-2"></div>
-			<div class="col-md-8">
+			<div class="col-md-8 mrg-btm">
 			<center><div class="type-cover1"><span>TENURE (Months)</span></div></center>
 			<div class="tenure offset5 pad">
 			<div  id="unranged-value" style="width:100%; height:10px;"></div>
 			</div>
+			
 			</div>
 			
 			<div class="col-md-12">
 			<div class="offset5">
-			<br>
+			
 			<center><div class="type-cover1"><span>FIRM HOLDER</span></div></center>
-			<a class="btn border"><input type="radio" name="firm_holder" 
+			<a class="btn"><input type="radio" name="firm_holder" 
 			value="Sole_Proprietor " checked/> Sole Proprietor</a>
-             <a class="btn border"><input type="radio" name="firm_holder"
+             <a class="btn"><input type="radio" name="firm_holder"
              value="Partnership " /> Partnership</a>
-			 <a class="btn border"><input type="radio" name="firm_holder"  value="Company" /> Company</a>
+			 <a class="btn"><input type="radio" name="firm_holder"  value="Company" /> Company</a>
 			</div>
 		    </div>
 		  <br>
@@ -56,7 +57,7 @@
 
 			<?php }else{?>
 			<div class="col-md-10">
-		   <input type="tel" name="mob_no" id="mob_no" class="center-dv input-typ" placeholder="98XXX XXXXX"  maxlength="10" pattern="[789][0-9]{9}" onkeypress="return isNumberKey(event)" required />
+		   <input type="tel" name="mob_no" id="mob_no" class="center-dv input-typ" placeholder="98XXX XXXXX"  maxlength="10" pattern="[789][0-9]{9}" onkeypress="return isNumberKey(event)" />
 		   <span id="mobile_value" style="display: none;color: red;">Phone number should be of 10 digits.</span>
 		   <button class="get-otp" type="submit" id="express_loan_send_otp">Get OTP</button>
 		  </div>

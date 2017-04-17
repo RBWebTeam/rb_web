@@ -457,3 +457,4 @@ class TribeController extends CallApiController
 	     return view('test_parse')->with('data',$test);
 	  }
 }
+}

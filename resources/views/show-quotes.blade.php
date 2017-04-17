@@ -355,15 +355,19 @@ var last_segment = url_array[url_array.length-1];  // Get the last part of the a
        id='#home_loan_process_form';
  }else if(last_segment=='personal-loan'){
 
-         //id='#personal-loan';
+        id='#personal_loan_process_form';
  }else if(last_segment=='loan-against-property'){
 
-       //  id='#home_loan_process_form';
+       id='#lap_process_form';
  }else if(last_segment=='business-loan'){
 
-        // id='#home_loan_process_form';
+         id='#business_loan_process_form';
+ }else if(last_segment=='car-loan'){
+
+          id='#car_loan_process_form';
  }
 
+ 
  
 
       
@@ -375,10 +379,10 @@ var last_segment = url_array[url_array.length-1];  // Get the last part of the a
                 data : $(id).serialize()+$('#quote_form').serialize(),
              success: function(msg){
                 if(msg.status==true){
-                    window.location.href=(msg.url);
+                  //  window.location.href=(msg.url);
                 }else{
                     
-                    window.location.href=("{{url('went-wrong')}}");
+                   // window.location.href=("{{url('went-wrong')}}");
                 }
              }
 

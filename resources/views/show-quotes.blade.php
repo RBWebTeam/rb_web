@@ -78,6 +78,9 @@
       }elseif($product == "Car Loan"){
         $prod="4";
 
+      }elseif($product == "Business Loan"){
+         $prod="13";
+
       }elseif($product == "Loan Against Property"){
          $prod="7";
 
@@ -88,6 +91,10 @@
 
      <?php if($product =="Car Loan") { ?>
            <td width="17%"><a class="btn btn-success" 
+        href="{{URL::to('thank-you')}}">Apply Online</a></td>
+        
+        <?php }elseif($product =="Business Loan") {?>
+        <td width="17%"><a class="btn btn-success" 
         href="{{URL::to('thank-you')}}">Apply Online</a></td>
         
         <?php }else {?> 

@@ -30,7 +30,7 @@
 		</div>
 		
 		
-		<div class="col-xs-12 form-padding mrg-btm">
+		<div class="col-xs-12 form-padding">
   
      <select class="block drop-arr select-sty">
 	  <option>LOAN TENURE</option>
@@ -109,6 +109,7 @@
          </div>
 	</div>
 		</div>
+		<br>
       </div>
     </div>
 	
@@ -148,7 +149,7 @@
       <div id="collapse2" class="panel-collapse collapse">
         <div class="panel-body">
 		<div class="text-center flt-lft btn-grp" data-toggle="buttons">
-							<div class="scenario">
+							<div class="scenario1">
 								
 								<div class="col-xs-6 pad-no scenario-active"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_1"  class="radio1" checked >Agriculture </a></div>
 								<div class="col-xs-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="industry" value="Type_2" class="radio1">Auto Components </a></div>
@@ -217,7 +218,7 @@
       <div id="collapse4" class="panel-collapse collapse">
         <div class="panel-body">
 							
-							<div class="scenario">
+							<div class="scenario2">
 								<div class="col-xs-12 pad-no scenario-active"><a class="scenario-1 btn"><input type="radio" name="Status" id="option1"  class="radio1" checked >Owned</a></div>
 								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="Status" id="option1" class="radio1">Rented</a></div>
 								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="Status" id="option1" class="radio1">Parental</a></div>
@@ -238,7 +239,7 @@
       </div>
       <div id="collapse5" class="panel-collapse collapse">
         <div class="panel-body">
-		   <div class="scenario">
+		   <div class="scenario3">
 								<div class="col-xs-12 pad-no scenario-active"><a class="scenario-1 btn"><input type="radio" name="Status" id="option1"  class="radio1" checked >Owned</a></div>
 								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="Status" id="option1" class="radio1">Rented</a></div>
 								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="Status" id="option1" class="radio1">Parental</a></div>

@@ -1198,7 +1198,7 @@ rb-services-section{padding:0px;}
 @media screen and (max-width: 786px) {
   .fh5co-nav-toggle {
     display: block;
-    top:62px;
+    top:55px;
   }
   # nav ul li.cta {}}
 }
@@ -3232,7 +3232,7 @@ font-size:20px;margin-top: 10px;
 .btn-submt:hover {background:#ff0000;}
 .high-fiv {margin-bottom:5px;}
 .brd-for {border:2px solid #f1f1f1;background:#f8f8f8;}
-.nav > li > a {padding:10px 12px;}
+.nav > li > a {padding:10px 12px;background:#f1f1f1;}
 .nav-tabs > li.active > a {
 	background:#999;
     color: #fff;
@@ -3613,6 +3613,7 @@ label.error {font-size: 10px;display:block;margin-top: -2px;text-align:left;}
 .btn-log {color:#fff;}
 .heigh-bt td {text-align:left; }
 .lin-heig {line-height: 45px;}
+
 
 
 

@@ -63,6 +63,10 @@
           $myString = isset($_GET['referrer']);
           // 
           if($myString){
+
+            Session::put('refid', '1');
+            $refapp =Session::get('refid');
+
             
             $myArray = explode('@', $_GET['referrer']);
             if(isset($myArray[0])){
@@ -91,13 +95,10 @@
             $empid = Session::get('empid')?Session::get('empid'):'';
             $brokerid =Session::get('brokerid')?Session::get('brokerid'):'';
             $source =Session::get('source')?Session::get('source'):'';
+            $refapp=Session::get('refid')?Session::get('refid'):0;
           }
-          
+          //print_r($refapp);exit();
           ?>
-
-          <input type="hidden" name="empid" class="empid" value="<?php echo $empid?$empid:'';?>">
-          <input type="hidden" name="brokerid" class="brokerid" value="<?php echo $brokerid?$brokerid:'';?>">
-          <input type="hidden" name="source" class="source" value="<?php echo $source?$source:'';?>"> 
 
 
 

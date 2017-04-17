@@ -128,16 +128,15 @@
 <div>
 
 <h4 class="text-center">List of Loan EMI</h4>
-<div id="emp_detail">
-<div class="emp_detail">
+<div class="add_new_content">
         <div class="col-xs-12 col-md-6 form-padding"> 
 
-     <input type="text" class="form-input-new form-control" name="bank_name" id="bank_name" placeholder="Bank" onkeypress="return AllowAlphabet(event)"   required="">
+     <input type="text" class="form-input-new form-control" name="bank_name" id="bank_name" placeholder="Bank" onkeypress="return AllowAlphabet(event)" value=""   required="">
 
      
 	</div>
 	<div class="col-xs-12 col-md-6 form-padding">
-     <input type="text" class="form-input-new form-control" name="emi" id="emi" placeholder="EMI"  onkeypress="return isNumberKey(event)" required>
+     <input type="text" class="form-input-new form-control" name="emi" id="emi" placeholder="EMI"  onkeypress="return isNumberKey(event)" value="" required>
 	</div>
 	<div class="col-xs-12 col-md-6 form-padding">
 	 <select class="form-input-new form-control">
@@ -152,18 +151,23 @@
 	 </select>
 	</div>
 	<div class="col-xs-12 col-md-6 form-padding">
-     <input type="text" class="form-input-new form-control" name="no_of_emi_paid" id="no_of_emi_paid" placeholder="No Of EMI Paid"  onkeypress="return isNumberKey(event)" minlength="2" maxlength="2" required>
+     <input type="text" class="form-input-new form-control" name="no_of_emi_paid" id="no_of_emi_paid" placeholder="No Of EMI Paid"  onkeypress="return isNumberKey(event)" minlength="2" maxlength="2" required value="">
 	</div>
-	</div>
+	
   </div>
-	<!-- <button class="btn btn-primary btn-outline top-mrg">Add Other Bank Existing EMI</button> -->
-  <!-- <div id="new_div"></div> -->
+  
+
+  <div><input type="button" class=" btn btn-info add_new_box" value="Add Bank" 
+  > &nbsp;<input type="button"  class="btn btn-info remove_new_box" value="Remove" >
+  </div>
+
+
+	
 
   
 <!-- <a href="javascript:void(0)" class="btn btn-info" id="button" va >Add Bank</a>
  <a href="javascript:void(0)" class="btn btn-info" id="button_remove" >Remove</a> -->
-  <div><input type="button" class="btn btn-info" value="Add Bank" id="addChild"> &nbsp;<input type="button"  class="btn btn-info" value="Remove" id="deleteChild">
-  </div>
+  
 
 	</div>
 	</div>
@@ -570,6 +574,7 @@ $(".product_ID").click(function(e){
           }else{
           	var company_name=$('#company_name').val();
                var bank_name=$('#bank_name').val();
+              
       if(company_name!='' && bank_name!=''){
          $('#login_process').attr( 'id', 'login_process');
  $(".iframeloading").show();
@@ -640,7 +645,7 @@ $(".product_ID").click(function(e){
 
 </script>
 
-<script>
+<!-- <script>
 $(document).ready(function(){
     // $("#button").click(function(){
     //     $("#emp_detail").clone().appendTo("#new_div");
@@ -667,7 +672,7 @@ $(document).ready(function(){
 
     
 // });
-</script>
+</script> -->
 
 <script type="text/javascript">
 $("#eligibility").click(function() {
@@ -715,4 +720,32 @@ $("#eligibility").click(function() {
 	
 //		alert(test);
 }
+</script>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+    
+     $(".add_new_box").click(function(){
+    
+     $('.add_new_content:last').clone()
+                          .find("input:text").val("").end()
+                          .appendTo('.add_new_content:last');
+    
+    });
+    
+    });
+</script>
+
+<script>
+$(document).ready(function(){
+    // $('#button_remove').click(function(){
+    //     $('#new_div').css('display','none');
+    $(".remove_new_box").click(function() {
+    if($(".add_new_content").length!=1)
+    $(".add_new_content:last").remove();
+    });
+});
+
+    
+// });
 </script>

@@ -112,27 +112,9 @@
   
   <div class="col-md-12 fl-lft">
 
-  <!-- <?php if(Session::get('is_login')) {?>
-                <?php if(Session::get('contact')!=''){ Session::get('contact'); ?>
-              <a type="button" class="btn btn-primary btn-outline with-arrow top-mrg product_name" id="quotes">Get Me Loan<i class="icon-arrow-right"></i></a>
-              <div class="iframeloading" style= "display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
-                <img src="{{URL::to('images/ajaxloader.gif')}}" alt="Loader" title="Loader" style="top: 50%; position: relative; left: 50%;"  />
-               </div>
-              <?php }else{?> 
-                <a  class="btn btn-primary btn-outline with-arrow top-mrg product_name" data-toggle="modal" data-target="#contact_id">Get Me Loan<i class="icon-arrow-right"></i></a>
-                      <?php }?>
-            <?php }else{?>
-            <a type="button" style="display:none" class="btn btn-primary btn-outline with-arrow top-mrg product_name " id="btn_refresh_co">Get Me Loan<i class="icon-arrow-right"></i></a>
-            <div class="iframeloading" style= "display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
-                <img src="{{URL::to('images/ajaxloader.gif')}}" alt="Loader" title="Loader" style="top: 50%; position: relative; left: 50%;"  />
-               </div>
-
-              <a id="btn_refresh1" class="btn btn-primary btn-outline with-arrow animate-box product_name" onclick="get_quote_button()">Get Me Loan<i class="icon-arrow-right"></i></a>
-            <?php } ?>
-   -->
-
+ 
 <br>
-    <?php if(Session::get('is_login')) {?>
+    <!-- <?php if(Session::get('is_login')) {?>
                 <?php if(Session::get('contact')!=''){ Session::get('contact'); ?>
               <button class="btn btn-primary btn-outline with-arrow top-mrg product_name " >Get Best Quotes<i class="icon-arrow-right"></i></button>
               <?php }else{?> 
@@ -143,11 +125,12 @@
 
 
               <a class="btn btn-primary btn-outline with-arrow top-mrg product_name" id="btn_refresh_co1" data-toggle="modal" data-target="#login_process">Get Best Quotes<i class="icon-arrow-right"></i></a>
-            <?php } ?>
+            <?php } ?> -->
 
- <!--  <div class="iframeloading" style= "display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
-                <img src="{{URL::to('images/ajaxloader.gif')}}" alt="Loader" title="Loader" style="top: 50%; position: relative; left: 50%;"  />
-               </div> -->
+
+             <a class="btn btn-primary btn-outline with-arrow top-mrg product_name product_ID" id="btn_refresh_co1" >Get Best Quotes<i class="icon-arrow-right"></i></a> 
+
+ 
       </div>
       <div class="iframeloading" style= "display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
                 <img src="{{URL::to('images/ajaxloader.gif')}}" alt="Loader" title="Loader" style="top: 50%; position: relative; left: 50%;"  />

@@ -21,8 +21,8 @@
     
       <div class="panel-heading">
         <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">Property Information</a>
-     <i class="icon-minus pull-right more-less"></i>
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse1"><i class="icon-minus pull-right more-less"></i>Property Information</a>
+     
         </h4>
       </div>
       <div id="collapse1" class="panel-collapse collapse in">
@@ -78,8 +78,8 @@
     <div class="panel panel-default">
       <div class="panel-heading" >
         <h4 class="panel-title"> 
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse2"><span id="valid"></span> Applicant Details</a>
-      <i class="icon-plus pull-right more-less"></i>
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse2"><span id="valid"></span> <i class="icon-plus pull-right more-less"></i>Applicant Details</a>
+      
         </h4>
       </div>
       <div id="collapse2" class="panel-collapse collapse applicant_add">
@@ -174,8 +174,8 @@
     <div class="panel panel-default" id="coapplicant_display" style="display: none;">
       <div class="panel-heading">
         <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">Co-Applicant Details</a>
-      <i class="icon-plus pull-right more-less"></i>
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse3"><i class="icon-plus pull-right more-less"></i>Co-Applicant Details</a>
+      
         </h4>
       </div>
       <div id="collapse3" class="panel-collapse collapse">

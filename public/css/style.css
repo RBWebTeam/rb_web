@@ -3616,7 +3616,7 @@ label.error {font-size: 10px;display:block;margin-top: -2px;text-align:left;}
 
 
 select.error, textarea.error, input.error {
-     border: 2px solid #f00 !important;
+     border: 1px solid #f00 !important;
 }
 
 

@@ -114,7 +114,7 @@
 											<h4 class="hdr">&nbsp;&nbsp;&nbsp;&nbsp;Contact Details</h4>
 										
 											<div class="col-md-4">
-												<input type="text" class="form-control" id="ResidencePhoneNumber" name="ResidencePhoneNumber" placeholder="Telephone No" required="" onkeypress="return fnAllowNumeric(event)" maxlength="10" minlength="10">
+												<input type="text" class="form-control" id="ResidencePhoneNumber" name="ResidencePhoneNumber" placeholder="Telephone No" required="" onkeypress="return fnAllowNumeric(event)" maxlength="15" minlength="6">
 											</div>
 											<div class="col-md-4">
 												<input type="text" class="form-control" id="ResidenceMobileNo" name="ResidenceMobileNo" placeholder="Mobile No" required="" onkeypress="return fnAllowNumeric(event)" maxlength="10" minlength="10">
@@ -123,7 +123,7 @@
 												<input type="email" class="form-control" placeholder="Email Address*" name="email" required>
 											</div> -->
 											<div class="col-md-4">
-												<input type="text" class="form-control" id="STDCode" name="STDCode" placeholder="STD Code" required="" onkeypress="return fnAllowNumeric(event)" maxlength="2" minlength="2">
+												<input type="text" class="form-control" id="STDCode" name="STDCode" placeholder="STD Code" required  onkeypress="return fnAllowNumeric(event)" maxlength="10"  >
 											</div>
 												
 										</div>

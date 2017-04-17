@@ -61,10 +61,15 @@
     </select></td> -->
   </tr>
 </table>
-</div><?php $key=0; ?>
+</div>
+
+
+ 
+<?php $key=0; $countQuotes=0; ?>
 @if(count($quote_data) > "")
 @foreach($quote_data as $q) <?php $key++; ?>
  <div class="table-responsive outer-brd">
+ <form id="quote_form">
 <table width="100%" border="1" class="tbl">
   <tr>
     <td width="9%" class="upper">Compare</td>
@@ -89,19 +94,21 @@
       $prod="12"; 
         }?>
 
-     <?php if($product =="Car Loan") { ?>
-           <td width="17%"><a class="btn btn-success" 
-        href="{{URL::to('thank-you')}}">Apply Online</a></td>
-        
-        <?php }elseif($product =="Business Loan") {?>
-        <td width="17%"><a class="btn btn-success" 
-        href="{{URL::to('thank-you')}}">Apply Online</a></td>
-        
-        <?php }else {?> 
-        <td width="17%"><a class="btn btn-success" 
-    href="{{URL::to('apply-lead-online')}}?qoutid={{$quote_id}}&BankId={{$q->Bank_Id}}&product={{$prod}}&processing_fee={{$q->processingfee}}&loan_eligible={{$q->loan_eligible}}&roi_type={{$q->roi_type}}">Apply Online</a></td>
-                
-        <?php }?>
+ 
+
+ 
+
+
+    @if(Session::get('is_login'))
+            <td width="17%"><a class="btn btn-success myClass" >Apply Online</a></td> 
+    @else
+   <td width="17%"><a class="btn btn-success quote_ID"   data-toggle="modal" data-target="#login_process"
+        >Apply Online </a> 
+    </td> 
+
+    @endif    
+ 
+     
          
     
    
@@ -118,7 +125,7 @@
    <input type="hidden" name="product" class="product" value="{{$product}}">
 
     <input type="hidden" name="processingfee" class="processingfee" value="{{$q->processingfee }}">
-    <input type="hidden" name="url" class="url" value="{{URL::to('apply-lead-online')}}?qoutid={{$quote_id}}&BankId={{$q->Bank_Id}}&product={{$prod}}">
+    <input type="hidden" name="url" class="url" value="{{URL::to('apply-lead-online')}}?qoutid={{$quote_id}}&BankId={{$q->Bank_Id}}&product={{$prod}}&processing_fee={{$q->processingfee}}&loan_eligible={{$q->loan_eligible}}&roi_type={{$q->roi_type}}">
 
     <td >{{$product}}</td>
     <td >{{$q->roi }}%</td>
@@ -144,11 +151,8 @@
            <li class="list-group-item"><i class="fa fa-dot-circle-o" aria-hidden="true"></i> Salaried / Self - Employed with regular income,Earn more than the minimum income required</li>
 
    </div></table>
-
-
- 
-
 </table>
+</form>
 </div>
 @endforeach
 @else
@@ -333,5 +337,55 @@ $('#compID').show();
 <script type="text/javascript">
 $("#Modify_Details").click(function() {
   $(window).scrollTop($('#mod').offset().top-20);
+});
+
+
+$(document).ready(function () {
+$(document).on('click','.myClass',function(e){ 
+
+ e.preventDefault();
+ var id=0;
+
+var full_url = document.URL; // Get current url
+var url_array = full_url.split('/') // Split the string into an array with / as separator
+var last_segment = url_array[url_array.length-1];  // Get the last part of the array (-1)
+
+ if(last_segment=='home-loan'){
+       id='#home_loan_process_form';
+ }else if(last_segment=='personal-loan'){
+
+         //id='#personal-loan';
+ }else if(last_segment=='loan-against-property'){
+
+       //  id='#home_loan_process_form';
+ }else if(last_segment=='business-loan'){
+
+        // id='#home_loan_process_form';
+ }
+
+ 
+
+      
+    $.ajax({  
+             type: "POST",  
+          
+             url: "{{URL::to('quotes-head')}}",
+           //  data : $('#home_loan_process_form').serialize(),
+                data : $(id).serialize()+$('#quote_form').serialize(),
+             success: function(msg){
+                if(msg.status==true){
+                  
+                    window.location.href=(msg.url);
+                }else{
+                    
+                    window.location.href=("{{url('went-wrong')}}");
+                }
+             }
+
+           });
+ 
+ 
+});
+
 });
 </script>

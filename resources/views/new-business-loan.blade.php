@@ -229,20 +229,14 @@
     <div class="panel panel-default">
       <div class="panel-heading">
         <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion1" href="#collapse1">NATURE OF BUSINESS <i class="icon-minus pull-right more-less"></i></a>
+          <a data-toggle="collapse" data-parent="#accordion1" href="#collapse1">NATURE OF BUSINESS <i class="icon-plus pull-right more-less"></i></a>
 		
         </h4>
       </div>
-      <div id="collapse1" class="panel-collapse collapse in">
+      <div id="collapse1" class="panel-collapse collapse">
         <div class="panel-body">
 	<div class="scenario">
 
-								<!-- <div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="natue_of_business" value="Manufacturing" class="radio1"  >MANUFACTURING</a></div>
-								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="natue_of_business" value="Trading" class="radio1">TRADING</a></div>
-								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="natue_of_business" value="Services" class="radio1">SERVICES</a></div>
-								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="natue_of_business" value="Retailer" class="radio1">RETAILER</a></div>
-								<div class="col-xs-12 pad-no scenario-active"><a class="scenario-1 btn"><input type="radio" name="natue_of_business" 
-								value="Others" class="radio1" checked>OTHER</a></div> -->
                                 
                                 <div class="col-xs-12 col-md-6 pad-no scenario-active"><a class="scenario-1 btn"  onclick="alertme('Manufacturing')">
 								Manufacturing</a></div>
@@ -255,18 +249,7 @@
 								<input type="hidden" name="nature_of_business" id="nature_of_business">
 
 								
-								
-
-
-								<!-- <select class="block drop-arr select-sty"  name="natue_of_business" >
-									
-									<option value="Manufacturing">Manufacturing</option>
-								    <option value="Trading">Trading</option>
-									<option value="Services">Services</option>
-									<option value="Retailer">Retailer</option>
-									<option value="Others">Others</option>
-								    
-	                            </select> -->
+							
 							</div>
 
 		</div>
@@ -281,7 +264,7 @@
       </div>
       <div id="collapse2" class="panel-collapse collapse">
         <div class="panel-body">
-		   <div class="scenario">
+		   <div class="scenario1">
 
 								<div class="col-xs-12 col-md-6 pad-no scenario-active"><a class="scenario-1 btn"  onclick="callme('Agriculture')">
 								Agriculture</a></div>
@@ -363,7 +346,7 @@
       </div>
       <div id="collapse4" class="panel-collapse collapse">
         <div class="panel-body">
-		   <div class="scenario">
+		   <div class="scenario2">
 								
 
 								<div class="col-xs-12 col-md-6 pad-no scenario-active"><a class="scenario-1 btn"  onclick="alert('Owned')">
@@ -389,7 +372,7 @@
       </div>
       <div id="collapse5" class="panel-collapse collapse">
         <div class="panel-body">
-		   <div class="scenario">
+		   <div class="scenario3">
 								<div class="col-xs-12 col-md-6 pad-no scenario-active"><a class="scenario-1 btn"  onclick="call('Owned')">
 								Owned</a></div>
 

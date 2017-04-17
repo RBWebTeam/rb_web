@@ -249,29 +249,22 @@ public function  change_password(Request $req){
     }else{
       $refapp = 0;
     }
-    // if(isset($request['pf_type'])){
-    //   $idtype = $request['pf_type'];
-    // }else{
-    //   $idtype = "";
-    // }
-   // print_r($processing_fee);exit();
-    // $loan_eligible=$request['loan_eligible'];
-    // $roi_type=$request['roi_type'];
-    // $processing_fee=$request['processingfee'];
-
     $email=Session::get('email');
-    print_r($email);
+     $empid=Session::get('empid')?Session::get('empid'):0;
+     $brokerid_session=Session::get('brokerid')?Session::get('brokerid'):0;
+
     $update = DB::table('bank_quote_api_request')->where('ID', $quote)->where('Email', $email)->update(array('bank_id' => $bank,'roi_type'=>$roi_type,'loan_eligible'=>$loan_eligible,'processing_fee'=>$processing_fee));
-    if($update){
+
+    if(isset($req['is_liza'])){
 
       if ($product == '9') {
-       return redirect()->away('http://beta.erp.rupeeboss.com/personalloan/personalloan.aspx?qoutid='.$quote.'&processingfee='.$processing_fee.'&bankid='.$bank.'&loanamout='.$loan_eligible.'&idtype='.$roi_type);
+       return redirect()->away('http://beta.erp.rupeeboss.com/personalloan/personalloan.aspx?qoutid='.$quote.'&processingfee='.$processing_fee.'&bankid='.$bank.'&loanamout='.$loan_eligible.'&idtype='.$roi_type.'&empcode='.$empid.'&brokerid='.$brokerid_session);
 
       } else  if ($product == '7') {
-        return redirect()->away('http://beta.erp.rupeeboss.com/LAP/LAP_Form.aspx?qoutid='.$quote.'&processingfee='.$processing_fee.'&bankid='.$bank.'&loanamout='.$loan_eligible.'&idtype='.$roi_type);
+        return redirect()->away('http://beta.erp.rupeeboss.com/LAP/LAP_Form.aspx?qoutid='.$quote.'&processingfee='.$processing_fee.'&bankid='.$bank.'&loanamout='.$loan_eligible.'&idtype='.$roi_type.'&empcode='.$empid.'&brokerid='.$brokerid_session);
       }else {
 
-        return redirect()->away('http://beta.erp.rupeeboss.com/homeloan/Home_Loan_Application_Form.aspx?qoutid='.$quote.'&processingfee='.$processing_fee.'&bankid='.$bank.'&loanamout='.$loan_eligible.'&idtype='.$roi_type);
+        return redirect()->away('http://beta.erp.rupeeboss.com/homeloan/Home_Loan_Application_Form.aspx?qoutid='.$quote.'&processingfee='.$processing_fee.'&bankid='.$bank.'&loanamout='.$loan_eligible.'&idtype='.$roi_type.'&empcode='.$empid.'&brokerid='.$brokerid_session);
       }
       }else{
         if ($product == '9') {

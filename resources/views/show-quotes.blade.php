@@ -83,6 +83,9 @@
       }elseif($product == "Car Loan"){
         $prod="4";
 
+      }elseif($product == "Business Loan"){
+         $prod="13";
+
       }elseif($product == "Loan Against Property"){
          $prod="7";
 
@@ -91,22 +94,21 @@
       $prod="12"; 
         }?>
 
+ 
 
  
 
 
     @if(Session::get('is_login'))
             <td width="17%"><a class="btn btn-success myClass" >Apply Online</a></td> 
-       
     @else
- 
    <td width="17%"><a class="btn btn-success quote_ID"   data-toggle="modal" data-target="#login_process"
-        >Apply Online 
-  </a>   </td> 
+        >Apply Online </a> 
+    </td> 
 
-     <!--  <td width="17%" ><a class="btn btn-success product_name product_ID get_quotes"  data-toggle="modal" data-target="#login_process"
-         >Apply Online2</a></td> -->
     @endif    
+ 
+     
          
     
    

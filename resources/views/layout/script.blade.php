@@ -2212,20 +2212,31 @@ function SetSession_pop(cookieName,cookieValue){
    <script>
 		$(document).ready( function(){
 		
-			$('.income-source > div').click(function(){
-				$('.income-source > div').removeClass('income-source-active');
-				$(this).toggleClass('income-source-active');
-				
-			});
 			
 			$('.scenario > div').click(function(){
 				$('.scenario > div').removeClass('scenario-active');
 				$(this).toggleClass('scenario-active');
 				
 			});
+			$('.scenario1 > div').click(function(){
+				$('.scenario1 > div').removeClass('scenario-active');
+				$(this).toggleClass('scenario-active');
+				
+			});
+			$('.scenario2 > div').click(function(){
+				$('.scenario2 > div').removeClass('scenario-active');
+				$(this).toggleClass('scenario-active');
+				
+			});
+			$('.scenario3 > div').click(function(){
+				$('.scenario3 > div').removeClass('scenario-active');
+				$(this).toggleClass('scenario-active');
+				
+			});
 		});
 			
-	</script>
+	</script> 
+	
 	<!-- <script>
     var s0 = $("#unranged").freshslider({
         step: 10,

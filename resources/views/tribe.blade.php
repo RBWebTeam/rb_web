@@ -40,14 +40,14 @@
 
     <h3>Company Details</h3>
   <hr>
-    <div class="col-md-3"><p>Company Name*</p></div>
+    <div class="col-md-3"><span>Company Name*</span></div>
     <div class="col-md-8"><input type="text" name="company_name" id="company_name" class="form-control form-group" required /></div>
     
-    <div class="col-md-3"><p>Owner Name*</p></div>
+    <div class="col-md-3"><span>Owner Name*</span></div>
     <div class="col-md-8">
     <input type="text" name="owner_name" id="owner_name" class="form-control form-group" required /></div>
     
-    <div class="col-md-3"><p>Owner Email*</p></div>
+    <div class="col-md-3"><span>Owner Email*</span></div>
     <div class="col-md-8">
     <input type="email" name="owner_email" id="owner_email" ng-model="owner_email" class="form-control form-group" required />
     <p ng-show="tribe_loan_form.owner_email.$error.email" class="error">Invalid Email address</p>
@@ -100,30 +100,30 @@
       
     <h3 class="mrg-top">Personal Details</h3>
   <hr>
-    <div class="col-md-3"><p>First Name*</p></div>
+    <div class="col-md-3"><span>First Name*</span></div>
     <div class="col-md-8">
     <input type="text" name="first_name" id="first_name" class="form-control form-group" required="" /></div>
     
-    <div class="col-md-3"><p>Middle Name</p></div>
+    <div class="col-md-3"><span>Middle Name</span></div>
     <div class="col-md-8">
     <input type="text" name="middle_name" id="middle_name" class="form-control form-group"/></div>
     
-    <div class="col-md-3"><p>Last Name*</p></div>
+    <div class="col-md-3"><span>Last Name*</span></div>
     <div class="col-md-8"><input type="text" name="last_name" id="last_name" class="form-control form-group" required="" /></div>
     
-    <div class="col-md-3"><p>Mobile No*</p></div>
+    <div class="col-md-3"><span>Mobile No*</span></div>
    <div class="col-md-8"><input type="text" pattern="[789][0-9]{9}" maxlength="10" minlength="10"  name="mobile" id="mobile" class="form-control form-group" onkeypress="return fnAllowNumeric(event)" required /></div>
     
-    <div class="col-md-3"><p>Email</p></div>
+    <div class="col-md-3"><span>Email</span></div>
     <div class="col-md-8">
     <input type="email" name="email" id="email" class="form-control form-group" value="@{{owner_email}}" disabled />
     
     </div>
     
-    <div class="col-md-3"><p>Address*</p></div>
+    <div class="col-md-3"><span>Address*</span></div>
     <div class="col-md-8"><textarea class="form-control form-control mrg-btm" colspan="2" name="address" id="address"></textarea></div>
     
-    <div class="col-md-3"><p>Aadhaar Number*</p></div>
+    <div class="col-md-3"><span>Aadhaar Number*</span></div>
     <div class="col-md-8"><input type="text" name="aadhar_no" id="aadhar_no" class="form-control form-group" onkeypress="return fnAllowNumeric(event)" required maxlength="12" minlength="12" /></div>
     
     <!-- <div class="col-md-3"><p>Owner Email*</p></div>
@@ -132,14 +132,14 @@
     <p ng-show="tribe_loan_form.owner_email_personal.$error.email" class="error">Invalid Email address</p>
     </div> -->
     
-    <div class="col-md-3"><p>Date of Birth*</p></div>
+    <div class="col-md-3"><span>Date of Birth*</span></div>
     <div class="col-md-8"><input type="date" name="dob" id="dob" class="form-control form-group" required="" /></div>
     
-    <div class="col-md-3"><p>Annual Income (INR)*</p></div>
+    <div class="col-md-3"><span>Annual Income (INR)*</span></div>
     <div class="col-md-8">
     <input type="number" name="annual_income" onkeypress="return fnAllowNumeric(event)" id="annual_income" class="form-control form-group"/></div>
     
-    <div class="col-md-3"><p>Education*</p></div>
+    <div class="col-md-3"><span>Education*</span></div>
     <div class="col-md-8 sec">
       <select class="drop-arr" name="education" id="education" required>
      <option disabled selected>Select</option>
@@ -151,7 +151,7 @@
     </select>
     </div>
     
-    <div class="col-md-3"><p>Family Details*</p></div>
+    <div class="col-md-3"><span>Family Details*</span></div>
     <div class="col-md-8 sec">
        <select class="drop-arr" name="family_detail" id="family_detail" required>
       <option disabled selected>Select</option>
@@ -168,12 +168,12 @@
     <div id="main3" class="tab-pane fade">
       <h3 class="mrg-top">Business Details</h3>
   <hr>
-    <div class="col-md-3"><p>Employees Count*</p></div>
+    <div class="col-md-3"><span>Employees Count*</span></div>
     <div class="col-md-8">
     <input type="text" class="form-control form-group" name="employee_count" id="employee_count" onkeypress="return fnAllowNumeric(event)" />
     </div>
     
-    <div class="col-md-3"><p>Registration Details*</p></div>
+    <div class="col-md-3"><span>Registration Details*</span></div>
     <div class="col-md-8 sec">
      <select class="drop-arr" name="registration_detail" id="registration_detail" required>
        <option disabled selected>Select</option>
@@ -196,7 +196,7 @@
     </div>
     </div>
     <div id="director_div" style="display: none;">
-    <div class="col-md-3"><p>Number of Directors*</p></div>
+    <div class="col-md-3"><span>Number of Directors*</span></div>
     <div class="col-md-8 sec"  >
      <select class="drop-arr" name="directors_count" id="directors_count" required>
        <option disabled selected>Select</option>
@@ -208,7 +208,7 @@
     </div>
     </div>
     <div id="business_run_by_div" style="display: none;">
-    <div class="col-md-3"><p>Business Run by:*</p></div>
+    <div class="col-md-3"><span>Business Run by:*</span></div>
     <div class="col-md-8 sec"  >
      <select class="drop-arr" name="business_run_by" id="business_run_by" required>
        <option disabled selected>Select</option>
@@ -220,20 +220,20 @@
     </div>
     </div>
     <div id="company_pan_card_div">
-    <div class="col-md-3"><p>Company Pan Number*</p></div>
+    <div class="col-md-3"><span>Company Pan Number*</span></div>
     <div class="col-md-8">
     <input type="text" name="company_pan_card" id="company_pan_card" class="form-control form-group" required="" /></div>
     </div>
     <div id="business_run_by_pan_div" style="display: none;">
-    <div class="col-md-3"><p>Pan Number*</p></div>
+    <div class="col-md-3"><span>Pan Number*</span></div>
     <div class="col-md-8">
     <input type="text" name="business_run_by_pan" id="business_run_by_pan" class="form-control form-group" required="" /></div>
     </div>
-    <div class="col-md-3"><p>Address*</p></div>
+    <div class="col-md-3"><span>Address*</span></div>
     <div class="col-md-8">
     <textarea class="form-control form-control mrg-btm" colspan="2" id="work_address" name="work_address"></textarea></div>
     
-    <div class="col-md-3"><p>Business Type*</p></div>
+    <div class="col-md-3"><span>Business Type*</span></div>
     <div class="col-md-8 sec">
       <select class="drop-arr" id="business_type" name="business_type" required>
       <option disabled selected>Select</option>
@@ -244,17 +244,17 @@
     </select>
     </div>
     
-    <div class="col-md-3"><p>Do you carry out Online Sales?*</p></div>
+    <div class="col-md-3"><span>Do you carry out Online Sales?*</span></div>
     <div class="col-md-8"><p>
     <input type="radio" name="online_sale" onclick="showHidden('online_sale_channel_div',1);" value="true" /> Yes&nbsp;&nbsp; 
     <input type="radio" name="online_sale" onclick="showHidden('online_sale_channel_div',0);" value="false" checked/> No</p></div>
     
-    <div class="col-md-3"><p>Do you carry out Offline Sales?*</p></div>
-    <div class="col-md-8"><p>
+    <div class="col-md-3"><span>Do you carry out Offline Sales?*</span></div>
+    <div class="col-md-8"><span>
     <input type="radio" name="offline_sale" value="true"  /> Yes&nbsp;&nbsp; 
-    <input type="radio" name="offline_sale" value="false" checked /> No</p></div>
+    <input type="radio" name="offline_sale" value="false" checked /> No</span></div>
     <div style="display: none;" id="online_sale_channel_div" >
-    <div class="col-md-3 sec"><p>online_sale_channel</p></div>
+    <div class="col-md-3 sec"><span>online_sale_channel</span></div>
     <div class="col-md-8 sec">
       <select class="drop-arr" id="online_sale_channel" name="online_sale_channel" required>
       <option disabled selected>Select</option>
@@ -267,7 +267,7 @@
     </div>
 
 
-    <div class="col-md-3"><p>Turnover*</p></div>
+    <div class="col-md-3"><span>Turnover*</span></div>
     <div class="col-md-8 sec">
        <select class="drop-arr" name="turnover" id="turnover" required>
        <option disabled selected>Select</option>
@@ -278,7 +278,7 @@
     </select>
     </div>
     
-    <div class="col-md-3"><p>Business Premises*</p></div>
+    <div class="col-md-3"><span>Business Premises*</span></div>
     <div class="col-md-8 sec">
       <select class="drop-arr" name="business_premises" id="business_premises" required>
        <option disabled selected>Select</option>
@@ -289,7 +289,7 @@
     </select>
     </div>
     
-    <div class="col-md-3"><p>Which products do you sell?*</p></div>
+    <div class="col-md-3"><span>Which products do you sell?*</span></div>
     <div class="col-md-8 sec">
       <select class="drop-arr" name="selling_product" id="selling_product" required>
        <option disabled selected>Select</option>
@@ -300,7 +300,7 @@
     </select>
     </div>
     
-    <div class="col-md-3"><p>Loan Purpose*</p></div>
+    <div class="col-md-3"><span>Loan Purpose*</span></div>
     <div class="col-md-8 sec">
      <select class="drop-arr" name="loan_purpose" id="loan_purpose" required>
        <option disabled selected>Select Loan Purpose</option>
@@ -313,7 +313,7 @@
     </select>
     </div>
     
-    <div class="col-md-3"><p>How did you Know About Us?*</p></div>
+    <div class="col-md-3"><span>How did you Know About Us?*</span></div>
     <div class="col-md-8">
     <input type="text" name="reached_us_via" id="reached_us_via" class="form-control form-group" />
     <a class="btn btn-primary btn-outline with-arrow" onclick="go_to_next('main5')">Next<i class="icon-arrow-right"></i></a>

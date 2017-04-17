@@ -102,7 +102,7 @@
 
 			
 <div class="col-xs-12 col-md-6 form-padding"> 
-     <input type="name" class="form-input-new form-control" placeholder="Interest Paid On Bank Loans" step="0.01" min="0" name="interest_paid" id="interest_paid" onkeypress="return isNumberKey(event)" required>
+     <input type="name" class="form-input-new form-control" placeholder="Interest Paid On Loan" step="0.01" min="0" name="interest_paid" id="interest_paid" onkeypress="return isNumberKey(event)" required>
 	</div>
 	<div class="col-xs-12 col-md-6 form-padding"> 
 
@@ -141,6 +141,7 @@
 	</div>
 	<div class="col-xs-12 col-md-6 form-padding">
 	 <select class="form-input-new form-control">
+	 <option>Select Loan</option>
 	     <option>Home Loan</option>
 		 <option>Property Loan</option>
 		 <option>Unsecured Business Loan</option>
@@ -161,8 +162,8 @@
   
 <!-- <a href="javascript:void(0)" class="btn btn-info" id="button" va >Add Bank</a>
  <a href="javascript:void(0)" class="btn btn-info" id="button_remove" >Remove</a> -->
-  <div id="addChild" ><input type="button" class="btn btn-info" value="Add Bank"></div>
- <div id="deleteChild" ><input type="button"  class="btn btn-info" value="Remove"></div>
+  <div><input type="button" class="btn btn-info" value="Add Bank" id="addChild"> &nbsp;<input type="button"  class="btn btn-info" value="Remove" id="deleteChild">
+  </div>
 
 	</div>
 	</div>
@@ -228,16 +229,10 @@
 		
         </h4>
       </div>
-      <div id="collapse1" class="panel-collapse collapse in">
+      <div id="collapse1" class="panel-collapse collapse">
         <div class="panel-body">
 	<div class="scenario">
 
-								<!-- <div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="natue_of_business" value="Manufacturing" class="radio1"  >MANUFACTURING</a></div>
-								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="natue_of_business" value="Trading" class="radio1">TRADING</a></div>
-								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="natue_of_business" value="Services" class="radio1">SERVICES</a></div>
-								<div class="col-xs-12 pad-no"><a class="scenario-1 btn"><input type="radio" name="natue_of_business" value="Retailer" class="radio1">RETAILER</a></div>
-								<div class="col-xs-12 pad-no scenario-active"><a class="scenario-1 btn"><input type="radio" name="natue_of_business" 
-								value="Others" class="radio1" checked>OTHER</a></div> -->
                                 
                                 <div class="col-xs-12 col-md-6 pad-no scenario-active"><a class="scenario-1 btn"  onclick="alertme('Manufacturing')">
 								Manufacturing</a></div>
@@ -250,18 +245,7 @@
 								<input type="hidden" name="nature_of_business" id="nature_of_business">
 
 								
-								
-
-
-								<!-- <select class="block drop-arr select-sty"  name="natue_of_business" >
-									
-									<option value="Manufacturing">Manufacturing</option>
-								    <option value="Trading">Trading</option>
-									<option value="Services">Services</option>
-									<option value="Retailer">Retailer</option>
-									<option value="Others">Others</option>
-								    
-	                            </select> -->
+							
 							</div>
 
 		</div>
@@ -276,7 +260,7 @@
       </div>
       <div id="collapse2" class="panel-collapse collapse">
         <div class="panel-body">
-		   <div class="scenario">
+		   <div class="scenario1">
 
 								<div class="col-xs-12 col-md-6 pad-no scenario-active"><a class="scenario-1 btn"  onclick="callme('Agriculture')">
 								Agriculture</a></div>
@@ -358,7 +342,7 @@
       </div>
       <div id="collapse4" class="panel-collapse collapse">
         <div class="panel-body">
-		   <div class="scenario">
+		   <div class="scenario2">
 								
 
 								<div class="col-xs-12 col-md-6 pad-no scenario-active"><a class="scenario-1 btn"  onclick="alert('Owned')">
@@ -384,7 +368,7 @@
       </div>
       <div id="collapse5" class="panel-collapse collapse">
         <div class="panel-body">
-		   <div class="scenario">
+		   <div class="scenario3">
 								<div class="col-xs-12 col-md-6 pad-no scenario-active"><a class="scenario-1 btn"  onclick="call('Owned')">
 								Owned</a></div>
 
@@ -598,7 +582,8 @@ $(".product_ID").click(function(e){
                     $('#processfee').val(processingfee);
                     var Bank_id = msg.Bank_Id;
                     $('#bank').val(Bank_id);
-                     var url = "apply-lead-online?appid=0&qoutid="+quote+"&BankId="+Bank_id+"&product=13&processing_fee="+processingfee+"&loanamout="+loan_eligible+"&roi_type="+roi+"";
+                     // var url = "apply-lead-online?appid=0&qoutid="+quote+"&BankId="+Bank_id+"&product=13&processing_fee="+processingfee+"&loanamout="+loan_eligible+"&roi_type="+roi+"";
+                     var url="thank-you";
                      $("#apply_new").attr("href", url);
                       $('#err').hide();
                       $('#apply_new').show();

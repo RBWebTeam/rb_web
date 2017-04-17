@@ -312,7 +312,7 @@ class FormController extends CallApiController
             if($http_result==1){
                 return Response::json(array(
                                 'status'=>true,
-                                'url' =>$input['url'].'&'.'empid='.$res_arr1.'&'.'brokerid='.$res_arr2,
+                                'url' =>$input['url'].'&'.'empid='.$res_arr1.'&'.'brokerid='.$res_arr2.'&is_liza=1',
                                  
                             ));
                    

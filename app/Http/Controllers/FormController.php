@@ -257,11 +257,6 @@ class FormController extends CallApiController
 
  
                 $input = $req->all();
-
-
-
-
-
               if (Session::has('email')){
 
 

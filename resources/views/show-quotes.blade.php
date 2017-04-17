@@ -70,6 +70,7 @@
 @foreach($quote_data as $q) <?php $key++; ?>
  <div class="table-responsive outer-brd">
  <form id="quote_form">
+ {{ csrf_field() }}
 <table width="100%" border="1" class="tbl">
   <tr>
     <td width="9%" class="upper">Compare</td>
@@ -374,7 +375,6 @@ var last_segment = url_array[url_array.length-1];  // Get the last part of the a
                 data : $(id).serialize()+$('#quote_form').serialize(),
              success: function(msg){
                 if(msg.status==true){
-                  
                     window.location.href=(msg.url);
                 }else{
                     

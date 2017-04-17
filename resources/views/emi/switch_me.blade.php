@@ -131,7 +131,7 @@
     <div class="form-group right-block">
        <!-- <label class="control-label" for="Loan Tenure">Remaining Tenure:</label> -->
         <input type="text" name="loanterm" class="form-control" id="loanterm" placeholder="Remaining Tenure" value="" onBlur="myfun()" onKeyPress="return isNumberKey(event)" title="Remaining Tenure">
-    <p id="err" style="display:none;"><span style="color:red; font-size:13px; position:absolute;">Please Fill All Inputs</span></p>
+    <span style="color:red; font-size:13px;display:none" id="err">Please Fill All Inputs</span>
   
     <div class="col-md-12 pad">
   <button class="btn btn-success pull-left ">Submit</button>

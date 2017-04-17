@@ -379,10 +379,10 @@ var last_segment = url_array[url_array.length-1];  // Get the last part of the a
                 data : $(id).serialize()+$('#quote_form').serialize(),
              success: function(msg){
                 if(msg.status==true){
-                  //  window.location.href=(msg.url);
+                   window.location.href=(msg.url);
                 }else{
                     
-                   // window.location.href=("{{url('went-wrong')}}");
+                    window.location.href=("{{url('went-wrong')}}");
                 }
              }
 

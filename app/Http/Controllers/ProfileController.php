@@ -260,7 +260,7 @@ public function  change_password(Request $req){
     // $processing_fee=$request['processingfee'];
 
     $email=Session::get('email');
-    print_r($email);
+   // print_r($email);
     $update = DB::table('bank_quote_api_request')->where('ID', $quote)->where('Email', $email)->update(array('bank_id' => $bank,'roi_type'=>$roi_type,'loan_eligible'=>$loan_eligible,'processing_fee'=>$processing_fee));
     if($update){
 

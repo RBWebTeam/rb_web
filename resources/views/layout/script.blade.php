@@ -435,7 +435,12 @@
                               $('#btn_refresh_co').show();
                               $('#btn_refresh_co1').hide();
                               
-
+                              $(".quote_ID").removeAttr('data-target');
+                              $(".quote_ID").removeAttr('data-toggle');
+                              $( ".quote_ID" ).addClass( "myClass");
+                            //  $( ".quote_IDform" ).val(form);
+                             // $(".quote_ID").attr("href", form);
+                             // $(".quote_ID").load(location.href + ".quote_ID");
                             }
 
 
@@ -504,8 +509,16 @@
                       $('#no_co_app').hide();
                               // Co-Applicant
                               $('#btn_refresh_co').show();
-                              $('#btn_refresh_co1').hide()
-
+                              $('#btn_refresh_co1').hide();
+                             
+                             
+                             $(".quote_ID").removeAttr('data-target');
+                              $(".quote_ID").removeAttr('data-toggle');
+                              $( ".quote_ID" ).addClass( "myClass");
+                            //  $( ".quote_IDform" ).val(form);
+                             // $(".quote_ID").attr("href", form);
+                                 
+                             // $(".quote_ID").load(location.href + "quote_ID");
 
                             }
                           }  
@@ -833,7 +846,16 @@
                             $('#no_co_app').hide();
                               // Co-Applicant
                               $('#btn_refresh_co').show();
-                              $('#btn_refresh_co1').hide()
+                              $('#btn_refresh_co1').hide();
+
+
+                             // $(".quote_ID").removeAttr('data-target');
+                              $(".quote_ID").removeAttr('data-target');
+                              $(".quote_ID").removeAttr('data-toggle');
+                              $( ".quote_ID" ).addClass( "myClass");
+                            //  $( ".quote_IDform" ).val(form);
+                           //   $(".quote_ID").attr("href", form);
+
                            
                          }else{
                           $('#otp_err').show();
@@ -1343,7 +1365,14 @@
              $('#no_co_app').hide();
                     // Co-Applicant
              $('#btn_refresh_co').show();
-             $('#btn_refresh_co1').hide()
+             $('#btn_refresh_co1').hide();
+            // $(".quote_ID").removeAttr('data-target');
+
+                              $(".quote_ID").removeAttr('data-target');
+                              $(".quote_ID").removeAttr('data-toggle');
+                              $( ".quote_ID" ).addClass( "myClass");
+                            //  $( ".quote_IDform" ).val(form);
+                            //  $(".quote_ID").attr("href", form);
       }
 
         window.fbAsyncInit = function() {

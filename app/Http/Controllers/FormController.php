@@ -40,6 +40,7 @@ class FormController extends CallApiController
     public function p_loan_submit(Request $req){
         try{
         //call api to submit form data
+            $inputquotes = $req->all();
             $input = $req->all();
             $new_array = array('customer_contact' => Session::get('contact'), 'customer_name' => Session::get('name'),'customer_email' => Session::get('email'));
            $update_id=Session::get('verify_id');
@@ -60,24 +61,24 @@ class FormController extends CallApiController
              $res_arr['brokerid']=Session::get('brokerid')?Session::get('brokerid'):'';
             $json_data=json_encode($res_arr);
             $prod_id=$req['product_name'];
-            if($prod_id==7 || $prod_id==9 || $prod_id==12){
-                    $url="http://api.rupeeboss.com/BankAPIService.svc/GetCustomerLizaWebReqTest";
-            }else{
-                    $url="http://api.rupeeboss.com/BankAPIService.svc/GetCustomerLizaWebReqTest";
-            }
-            $result=$this->call_json_data_api($url,$json_data);
-            $http_result=$result['http_result'];
+            // if($prod_id==7 || $prod_id==9 || $prod_id==12){
+            //         $url="http://api.rupeeboss.com/BankAPIService.svc/GetCustomerLizaWebReqTest";
+            // }else{
+            //         $url="http://api.rupeeboss.com/BankAPIService.svc/GetCustomerLizaWebReqTest";
+            // }
+            // $result=$this->call_json_data_api($url,$json_data);
+            // $http_result=$result['http_result'];
                
-            $error=$result['error'];
-            if($http_result==1){                
+            // $error=$result['error'];
+            // if($http_result==1){                
                 $quote_data=$this::get_quotes($req);
                 $save=new bank_quote_api_request();    
                 $id=$save->save_liza($req);
                 $data['quote_id']=$id;
-            }else{
-                $quote_data =$req['product_name'];
-                return view("went-wrong");
-            }
+            // }else{
+            //     $quote_data =$req['product_name'];
+            //     return view("went-wrong");
+            // }
             if($req['product_name'] == 9){
                 $data['product'] ="Personal Loan";
                 $data['url'] ="apply-personal-loan";
@@ -249,4 +250,89 @@ class FormController extends CallApiController
         function show_quotes(Request $req){
        return view('show-quotes')->with($req);
     }
+
+
+
+       function quoteshead(Request $req){
+
+ 
+                $input = $req->all();
+
+
+
+
+
+              if (Session::has('email')){
+
+
+            
+            
+            $new_array = array('customer_contact' => Session::get('contact'), 'customer_name' => Session::get('name'),'customer_email' => Session::get('email'));
+           $update_id=Session::get('verify_id');
+             $update_user=DB::table('user_registration')
+             ->where('id',$update_id)
+             ->update(['provider'=>'WEBSITE-VERIFIED']);
+            //replacing city name with id
+            if($req['city_name']){
+                $city_id=DB::table('city_master')->select('city_id')
+                ->where('city_name', 'LIKE', '%'.$req['city_name'].'%')
+                ->get();
+                $input['city_name']=(string)$city_id[0]->city_id;
+                //adding city_id to post data
+            } 
+            $res_arr=array_merge($input,$new_array);
+            // send empcode if its a refferal
+            $res_arr['empid']=Session::get('empid')?Session::get('empid'):'';
+             $res_arr['brokerid']=Session::get('brokerid')?Session::get('brokerid'):'';
+            $json_data=json_encode($res_arr);
+            $prod_id=$req['product_name'];
+            if($prod_id==7 || $prod_id==9 || $prod_id==12){
+                    $url="http://api.rupeeboss.com/BankAPIService.svc/GetCustLizaWebReq";
+            }else{
+                    $url="http://api.rupeeboss.com/BankAPIService.svc/GetCustomerLizaWebReq";
+            }
+            $result=$this->call_json_data_api($url,$json_data);
+            $http_result=$result['http_result'];
+            $error=$result['error'];
+ 
+             // return $input;
+          //  $merge=array('empid' => Session::get('empid'), 'brokerid' => Session::get('brokerid'),);
+
+
+
+            // $res_arr1['empid']=Session::get('empid')?Session::get('empid'):'';
+            // $res_arr1['brokerid']=Session::get('brokerid')?Session::get('brokerid'):'';
+            // $merge=substr(json_encode($res_arr1),1, -1) ;
+
+            $res_arr1=Session::get('empid')?Session::get('empid'):'';
+            $res_arr2=Session::get('brokerid')?Session::get('brokerid'):'';
+
+//echo 'empid='.$res_arr1.'&'.'brokerid='.$res_arr2;exit;
+
+            if($http_result==1){
+                return Response::json(array(
+                                'status'=>true,
+                                'url' =>$input['url'].'&'.'empid='.$res_arr1.'&'.'brokerid='.$res_arr2,
+                                 
+                            ));
+                   
+                   
+            }else{
+
+                     return Response::json(array(
+                                'status'=>false,
+                               
+                                
+                            ));
+                  
+            }
+
+            }
+
+
+             
+          
+
+       }
+
 }

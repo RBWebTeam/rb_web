@@ -245,7 +245,7 @@
 
     <div class="valid_ID"></div>
 <br>
-    <?php if(Session::get('is_login')) {?>
+    <!-- <?php if(Session::get('is_login')) {?>
 							  <?php if(Session::get('contact')!=''){ Session::get('contact'); ?>
 							<button class="btn btn-primary btn-outline with-arrow top-mrg product_name product_ID" >Get Best Quotes<i class="icon-arrow-right"></i></button>
 							<?php }else{?> 
@@ -255,9 +255,9 @@
 						<button  style="display:none" class="btn btn-primary btn-outline with-arrow top-mrg product_name product_ID" id="btn_refresh_co">Get Best Quotes<i class="icon-arrow-right"></i></button>
 
 							<a class="btn btn-primary btn-outline with-arrow top-mrg product_name product_ID" id="btn_refresh_co1" data-toggle="modal" data-target="#login_process">Get Best Quotes<i class="icon-arrow-right"></i></a>
-						<?php } ?>
+						<?php } ?> -->
 
-						 
+						  <a class="btn btn-primary btn-outline with-arrow top-mrg product_name product_ID" id="btn_refresh_co1" >Get Best Quotes<i class="icon-arrow-right"></i></a> 
 						 
   </div> 
   <div class="iframeloading" style= "display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">

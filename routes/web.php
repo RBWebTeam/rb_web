@@ -239,3 +239,5 @@ Route::get('personal-loan','ContactController@new_personal_loan');
 // Route::post('new-personal-loan','ContactController@new_personal_loan_register');
 Route::get('edelweiss','NewProcessController@edelweiss');
 Route::get('used-car-loan','NewProcessController@usedCarLoan');
+
+Route::post('quotes-head','FormController@quoteshead');

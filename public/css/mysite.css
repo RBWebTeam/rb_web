@@ -11403,7 +11403,7 @@ body {background:#eee;}
 .error-template {padding: 40px 15px;text-align: center;}
 .error-actions {margin-top:15px;margin-bottom:15px;}
 .error-actions .btn { margin-right:10px; }
-.outer-brd {border: 0px; box-shadow: 1px 1px 3px 1px #ccc;}
+.outer-brd {border: 0px; border-radius:5px; padding:5px; box-shadow: 1px 1px 3px 1px #ccc;}
 .gray-bg {background:#ddd;}
 .apply-btn {color:#fff;background: #3699c1; padding: 10px; margin:3px; display:block;}
 
@@ -13058,6 +13058,8 @@ label {
 	.aply-btn {margin:30px 0px 30px 0px !important;}
 	.pad-no-res {padding:0px;}
 	.modal-dialog {margin-top: 108px;}
+	.input-typ {width:80%;}
+	.type-cover1 {width:40%;margin-top:10px;}
 	
 
 	/* #my-video { display:inherit; position:fixed;width:auto;}
@@ -13082,7 +13084,8 @@ label {
 	color:#999;
 	}
 
-#emp_detail {    border-bottom: 2px dashed #bbadad;float: left;margin-bottom: 5px;}
+#emp_detail {margin-bottom: 5px;border:none;}
+.emp_detail {border-bottom: 1px dashed #bbadad;float: left;margin-bottom: 10px;}
 .white-txt {color:rgba(255, 255, 255, 0.5);}
 .fh5co-copyright p {color:rgba(255, 255, 255, 0.5);}
 .blk-txt a {color:rgba(255, 255, 255, 0.5); font-weight:bold;}
@@ -13090,7 +13093,7 @@ label {
 .flt-non {float:none;}
 .icon-map-marker {color: #bbb;}
 .hei-frtrt {float:left;}
-label.error {font-size: 10px;display:block;margin-top: -2px;}
+label.error {font-size: 10px;display:block;margin-top: -2px;text-align:left;}
 .centeralign img {margin-left:30%;}
 .heigh-bt input {margin-bottom:15px;}
 .aply-btn {margin:30px;}

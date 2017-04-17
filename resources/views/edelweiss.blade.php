@@ -30,7 +30,7 @@
 		</div>
 		
 		
-		<div class="col-xs-12 form-padding mrg-btm">
+		<div class="col-xs-12 form-padding">
   
      <select class="block drop-arr select-sty">
 	  <option>LOAN TENURE</option>
@@ -109,6 +109,7 @@
          </div>
 	</div>
 		</div>
+		<br>
       </div>
     </div>
 	

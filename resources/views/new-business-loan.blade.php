@@ -102,7 +102,7 @@
 
 			
 <div class="col-xs-12 col-md-6 form-padding"> 
-     <input type="name" class="form-input-new form-control" placeholder="Interest Paid On Bank Loans" step="0.01" min="0" name="interest_paid" id="interest_paid" onkeypress="return isNumberKey(event)" required>
+     <input type="name" class="form-input-new form-control" placeholder="Interest Paid On Loan" step="0.01" min="0" name="interest_paid" id="interest_paid" onkeypress="return isNumberKey(event)" required>
 	</div>
 	<div class="col-xs-12 col-md-6 form-padding"> 
 
@@ -141,6 +141,7 @@
 	</div>
 	<div class="col-xs-12 col-md-6 form-padding">
 	 <select class="form-input-new form-control">
+	 <option>Select Loan</option>
 	     <option>Home Loan</option>
 		 <option>Property Loan</option>
 		 <option>Unsecured Business Loan</option>
@@ -161,8 +162,8 @@
   
 <!-- <a href="javascript:void(0)" class="btn btn-info" id="button" va >Add Bank</a>
  <a href="javascript:void(0)" class="btn btn-info" id="button_remove" >Remove</a> -->
-  <div id="addChild" ><input type="button" class="btn btn-info" value="Add Bank"></div>
- <div id="deleteChild" ><input type="button"  class="btn btn-info" value="Remove"></div>
+  <div><input type="button" class="btn btn-info" value="Add Bank" id="addChild"> &nbsp;<input type="button"  class="btn btn-info" value="Remove" id="deleteChild">
+  </div>
 
 	</div>
 	</div>
@@ -224,7 +225,7 @@
     <div class="panel panel-default">
       <div class="panel-heading">
         <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion1" href="#collapse1">NATURE OF BUSINESS <i class="icon-plus pull-right more-less"></i></a>
+          <a data-toggle="collapse" data-parent="#accordion1" href="#collapse1">NATURE OF BUSINESS <i class="icon-minus pull-right more-less"></i></a>
 		
         </h4>
       </div>

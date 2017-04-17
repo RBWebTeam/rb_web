@@ -182,7 +182,7 @@
 								<a href="{{URL::to('working-capital')}}">Working Capital</a>
 							</li>
 							</ul>	
-							<li><a href="{{URL::to('check_emi')}}">EMI Calculator</a></li>				   
+							<li><a href="{{URL::to('check-emi')}}">EMI Calculator</a></li>				   
 					        </li>
 							<!-- <li><a href="{{URL::to('check_emi')}}">EMI Calculator</a></li> -->
 							<?php if(Session::get('is_login')){

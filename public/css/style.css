@@ -3612,6 +3612,11 @@ label.error {font-size: 10px;display:block;margin-top: -2px;}
 .lin-heig {line-height: 45px;}
 
 
+select.error, textarea.error, input.error {
+     border: 2px solid #f00 !important;
+}
+
+
 
 
 	

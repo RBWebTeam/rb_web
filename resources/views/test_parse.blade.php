@@ -552,7 +552,7 @@
           
 
          mainApp.controller('NavController', function($scope) {
-         // console.log($scope);
+         console.log($scope);
          $scope.application_freezed=false;
           $scope.freeze=function(){
              $scope.application_freezed=true;

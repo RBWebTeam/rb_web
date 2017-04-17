@@ -12,7 +12,7 @@
 <form name='working_capital_process_form' id='working_capital_process_form' action={{URL::to('loan-submit')}} method="POST">
 {{ csrf_field() }}  
  <!-- <img src="{{URL::to('images/9.png')}}" alt="Tribe Logo" class="img-responsive" /> -->
- <div class="col-md-6">
+ <div class="col-md-6 pad-no">
   <div class="col-xs-12">
   
 	 <input type="hidden" id="product" name="product_name" value="11">
@@ -30,26 +30,9 @@
 		<div class="col-xs-6 form-padding pad text-right">
 	 <span class="mrg-top">Export/Import - </span>
 	</div>
-	<div class="col-xs-4 form-padding pad">
-     <!-- <div class="btn-grp border-none" data-toggle="buttons">
-      <span class="btn btn-default outer-brd btn-blu active"><input type="radio" name="exchange" value="Y">Y</span>
-      <span class="btn btn-default outer-brd btn-blu"><input type="radio" name="exchange" value="N">N</span>
-	  <select class="pull-right btn-default outer-brd btn-blu pad-ten">
-	       <option>10%</option>
-		   <option>20%</option>
-		   <option>30%</option>
-		   <option>40%</option>
-		   <option>50%</option>
-		   <option>60%</option>
-		   <option>70%</option>
-		   <option>80%</option>
-		   <option>90%</option>
-		   <option>100%</option>
-	  </select>
-         </div> -->
-         Yes <input type="radio" onclick="javascript:yesnoCheck();" name="yesno" id="yesCheck"> No <input type="radio" onclick="javascript:yesnoCheck();" name="yesno" id="noCheck"><br>
-    <div id="ifYes" style="visibility:hidden">
-        
+	<div class="col-xs-6 form-padding pad">
+    
+		 <div id="ifYes" style="visibility:hidden">
         <select class="pull-right btn-default outer-brd btn-blu pad-ten" id='yes'>
         <option>10%</option>
        <option>20%</option>
@@ -63,31 +46,33 @@
        <option>100%</option>
     </select>
     </div>
+         <input type="radio" onclick="javascript:yesnoCheck();" name="yesno" id="yesCheck"> Yes <input type="radio" onclick="javascript:yesnoCheck();" name="yesno" id="noCheck"> No&nbsp;&nbsp;
+    
         
 	</div>
 		
 		
-		<div class="col-xs-12">
+		<div class="col-xs-12 mrg-top">
 		<center><div class="type-cover"><span>Name of The Company</span></div></center>
      <input type="text" class="form-input-new  form-control" name="company" id="company" placeholder="Company Name" onkeypress="return AllowAlphabet(event)" required >
-	 <br>
+	
 	</div>
 	
-	<div class="col-xs-12">
+	<div class="col-xs-12 mrg-top">
 	<center><div class="type-cover"><span>Date of Incorporation</span></div></center>
      <input class="form-input-new form-control lastReporteddate1" type="text" name="date" id="date" placeholder="Date Of Incorporation">
-	 <br>
+	 
 	</div>
- <div class="col-md-12">
+ <div class="col-md-12 pos-ins mrg-top">
  <input type="text" class="form-input-new form-control" name="loan_amount" id="loan_amount" placeholder="Loan Amount Required in Crores" onkeypress="return isNumberKey(event)" required>
  </div>
- 
-    <div class="col-md-12 pad-no">
-<div class="panel-group flt-lft" id="accordion" role="tablist" aria-multiselectable="true">
+
+    <div class="col-md-12 mrg-top">
+<div class="panel-group" id="accordion2" role="tablist" aria-multiselectable="true">
         <div class="panel panel-default">
             <div class="panel-heading" role="tab" id="headingOne">
                 <h4 class="panel-title">
-                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse61" aria-expanded="true" aria-controls="collapse61">
+                    <a role="button" data-toggle="collapse" data-parent="#accordion2" href="#collapse61" aria-expanded="true" aria-controls="collapse61">
                         <i class="icon-plus more-less pull-right"></i>
                         Tab 1 
                     </a>
@@ -174,7 +159,7 @@
         <div class="panel panel-default">
             <div class="panel-heading" role="tab" id="heading71">
                 <h4 class="panel-title">
-                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse71" aria-expanded="false" aria-controls="collapse71">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion2" href="#collapse71" aria-expanded="false" aria-controls="collapse71">
                         <i class="icon-plus more-less pull-right"></i>
                         Tab 2
                     </a>
@@ -206,12 +191,12 @@
   
   
   <div class="col-md-6 no-pad comp-fin">
-    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+    <div class="panel-group" id="accordion1">
 
         <div class="panel panel-default">
             <div class="panel-heading" role="tab" id="headingOne">
                 <h4 class="panel-title">
-                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse6" aria-expanded="true" aria-controls="collapse6">
+                    <a role="button" data-toggle="collapse" data-parent="#accordion1" href="#collapse6" aria-expanded="true" aria-controls="collapse6">
                         <i class="icon-minus more-less pull-right"></i>
                         COMPANY FINANCIALS
                     </a>
@@ -302,7 +287,7 @@
         <div class="panel panel-default">
             <div class="panel-heading" role="tab" id="heading7">
                 <h4 class="panel-title">
-                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse7" aria-expanded="false" aria-controls="collapse7">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion1" href="#collapse7" aria-expanded="false" aria-controls="collapse7">
                         <i class="icon-plus more-less pull-right"></i>
                         BANKWISE EMI DETAILS 
                     </a>
@@ -477,7 +462,7 @@
 <div class="panel panel-default">
             <div class="panel-heading" role="tab" id="headingFour">
                 <h4 class="panel-title">
-                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse711" aria-expanded="true" aria-controls="collapse711">
+                    <a role="button" data-toggle="collapse" data-parent="#accordion1" href="#collapse711" aria-expanded="true" aria-controls="collapse711">
                         <i class="icon-plus more-less pull-right"></i>
                         APPLICANT DETAILS
                     </a>
@@ -489,12 +474,13 @@
 					<div class="col-xs-6 form-padding">
      <input type="text" id="customer_name" name="customer_name" class="form-input-new form-control" placeholder="Applicant Name" onkeypress="return AllowAlphabet(event)" required >
                   </div>
-				  <div class="col-xs-6 form-padding">
-     <input type="text" id="customer_email" name="customer_email" class="form-input-new form-control" placeholder="Email Id" oninput="email('customer_email')" required>
-    <span id="email_id" style="display:none;color: red;">Please Enter Valid Email Id.</span>
-                  </div>
+				  
 				  <div class="col-xs-6 form-padding">
      <input type="text" id="customer_contact " name="customer_contact " class="form-input-new form-control" placeholder="Contact No." pattern="[789][0-9]{9}" maxlength="10" onkeypress="return isNumberKey(event)" required>
+                  </div>
+				  <div class="col-xs-12 form-padding">
+     <input type="text" id="customer_email" name="customer_email" class="form-input-new form-control" placeholder="Email Id" oninput="email('customer_email')" required>
+    <span id="email_id" style="display:none;color: red;">Please Enter Valid Email Id.</span>
                   </div>
 				  
 

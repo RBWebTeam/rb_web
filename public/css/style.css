@@ -3453,7 +3453,7 @@ input:checked + .slider:before {
     font-size: 12px;
 	color:#fff;
 }
-.mrg-top{margin-top:5px;}
+.mrg-top{margin-top:10px;}
 
 .form-control {
 
@@ -3618,6 +3618,7 @@ label.error {font-size: 10px;display:block;margin-top: -2px;text-align:left;}
 select.error, textarea.error, input.error {
      border: 1px solid #f00 !important;
 }
+.pos-ins {position: initial;}
 
 
 

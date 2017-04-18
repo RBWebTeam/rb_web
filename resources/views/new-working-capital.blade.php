@@ -30,7 +30,7 @@
 		<div class="col-xs-6 form-padding pad text-right">
 	 <span class="mrg-top">Export/Import - </span>
 	</div>
-	<div class="col-xs-6 form-padding pad">
+	<div class="col-xs-5 form-padding pad">
     
 		 <div id="ifYes" style="visibility:hidden">
         <select class="pull-right btn-default outer-brd btn-blu pad-ten" id='yes'>

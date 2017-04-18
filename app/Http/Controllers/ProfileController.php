@@ -190,6 +190,7 @@ public function  change_password(Request $req){
                 
 }
   public function applyonline(Request $req){
+    
     $request = $req->all();
       //print_r($request);exit();
     // $app = $request['appid'];
@@ -262,7 +263,10 @@ public function  change_password(Request $req){
 
       } else  if ($product == '7') {
         return redirect()->away('http://beta.erp.rupeeboss.com/LAP/LAP_Form.aspx?qoutid='.$quote.'&processingfee='.$processing_fee.'&bankid='.$bank.'&loanamout='.$loan_eligible.'&idtype='.$roi_type.'&empcode='.$empid.'&brokerid='.$brokerid_session);
-      }else {
+      }else if ($product == '13') {
+          return redirect('thank-you');
+      }
+      else{
 
         return redirect()->away('http://beta.erp.rupeeboss.com/homeloan/Home_Loan_Application_Form.aspx?qoutid='.$quote.'&processingfee='.$processing_fee.'&bankid='.$bank.'&loanamout='.$loan_eligible.'&idtype='.$roi_type.'&empcode='.$empid.'&brokerid='.$brokerid_session);
       }

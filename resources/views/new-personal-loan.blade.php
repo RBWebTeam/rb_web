@@ -24,6 +24,7 @@
       <input type="hidden" name="empid" class="empid" value=" <?php echo Session::get('empid')?Session::get('empid'):'';?>">
           <input type="hidden" name="brokerid" class="brokerid" value="<?php echo Session::get('brokerid')?Session::get('brokerid'):'';?>">
           <input type="hidden" name="source" class="source" value="<?php echo Session::get('source')?Session::get('source'):'';?>"> 
+          <input type="hidden" name="refapp" class="refapp" value="<?php echo Session::get('refid')?Session::get('refid'):'';?>"> 
    <!--  <div id ="test123" class="col-md-8"></div> -->
   <div class="col-md-8"  id="mod">
  <!--  <h3 class="main-header">Genral Information</h3> -->
@@ -74,7 +75,7 @@
                 
   
      <div class="col-xs-12 col-md-6 form-padding">
-     <input type="text" name="customer_name" id="customer_name" class="form-input-new form-control" placeholder="Applicant Name" onkeypress="return AllowAlphabet(event)" required="">
+     <input type="text" name="applicant_name" id="applicant_name" class="form-input-new form-control" placeholder="Applicant Name" onkeypress="return AllowAlphabet(event)" required="">
   </div>
   <div class="col-xs-12 col-md-6 form-padding">
      <input type="text" id="dob" name="dob" class="form-input-new form-control lastReporteddate1" placeholder="Date of Birth" required="">

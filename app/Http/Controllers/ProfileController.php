@@ -190,6 +190,7 @@ public function  change_password(Request $req){
                 
 }
   public function applyonline(Request $req){
+    
     $request = $req->all();
      // print_r($request);exit();
     // $app = $request['appid'];
@@ -262,11 +263,15 @@ public function  change_password(Request $req){
        return redirect()->away('http://beta.erp.rupeeboss.com/personalloan/personalloan.aspx?qoutid='.$quote.'&processingfee='.$processing_fee.'&bankid='.$bank.'&loanamout='.$loan_eligible.'&idtype='.$roi_type.'&empcode='.$empid.'&brokerid='.$brokerid_session.'&refapp='.$ref);
 
       } else  if ($product == '7') {
-        return redirect()->away('http://beta.erp.rupeeboss.com/LAP/LAP_Form.aspx?qoutid='.$quote.'&processingfee='.$processing_fee.'&bankid='.$bank.'&loanamout='.$loan_eligible.'&idtype='.$roi_type.'&empcode='.$empid.'&brokerid='.$brokerid_session.'&refapp='.$ref);
-      }else {
 
+        return redirect()->away('http://beta.erp.rupeeboss.com/LAP/LAP_Form.aspx?qoutid='.$quote.'&processingfee='.$processing_fee.'&bankid='.$bank.'&loanamout='.$loan_eligible.'&idtype='.$roi_type.'&empcode='.$empid.'&brokerid='.$brokerid_session.'&refapp='.$ref);
+      }else if ($product == '13') {
+          return redirect('thank-you');
+      }
+      else{
         return redirect()->away('http://beta.erp.rupeeboss.com/homeloan/Home_Loan_Application_Form.aspx?qoutid='.$quote.'&processingfee='.$processing_fee.'&bankid='.$bank.'&loanamout='.$loan_eligible.'&idtype='.$roi_type.'&empcode='.$empid.'&brokerid='.$brokerid_session.'&refapp='.$ref);
       }
+      
       }else{
         if ($product == '9') {
         return redirect()->away('http://beta.erp.rupeeboss.com/BalanceTransfer/PL_BT_Form.aspx?qoutid='.$quote.'&brokerid='.$brokerid.'&loanamout='.$loanamount.'&loaninterest='.$loaninterest.'&loanterm='.$loanterm.'&bankid='.$bank.'&productid='.$product.'&idtype='.$roi_type.'&processingfee='.$processing_fee.'&empcode='.$empcode.'&refapp='.$refapp.'&coapp=0');

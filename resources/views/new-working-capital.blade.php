@@ -296,15 +296,15 @@
             <div id="collapse7" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading7">
                 <div class="panel-body">
 
-	             <div class="panel-group" id="accordion1">
+	             <div class="panel-group" id="accordion5">
     <div class="panel panel-default">
       <div class="panel-heading">
         <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion1" href="#collapse1">NATURE OF BUSINESS <i class="icon-plus pull-right more-less"></i></a>
+          <a data-toggle="collapse" data-parent="#accordion5" href="#collapse111">NATURE OF BUSINESS <i class="icon-plus pull-right more-less"></i></a>
 		
         </h4>
       </div>
-      <div id="collapse1" class="panel-collapse collapse">
+      <div id="collapse111" class="panel-collapse collapse">
         <div class="panel-body">
 	<div class="scenario">
 								<div class="col-xs-6 pad-no scenario-active"><a class="scenario-1 btn"  onclick="alertme('Manufacturing')">
@@ -329,11 +329,11 @@
     <div class="panel panel-default">
       <div class="panel-heading">
         <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion1" href="#collapse2">INDUSTRY <i class="icon-plus pull-right more-less"></i></a>
+          <a data-toggle="collapse" data-parent="#accordion5" href="#collapse112">INDUSTRY <i class="icon-plus pull-right more-less"></i></a>
 		 
         </h4>
       </div>
-      <div id="collapse2" class="panel-collapse collapse">
+      <div id="collapse112" class="panel-collapse collapse">
         <div class="panel-body">
 		   
 		   <div class="scenario">
@@ -410,11 +410,11 @@
 	<div class="panel panel-default">
       <div class="panel-heading">
         <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion1" href="#collapse4">RESIDENCE TYPE <i class="icon-plus pull-right more-less"></i></a>
+          <a data-toggle="collapse" data-parent="#accordion5" href="#collapse114">RESIDENCE TYPE <i class="icon-plus pull-right more-less"></i></a>
 		 
         </h4>
       </div>
-      <div id="collapse4" class="panel-collapse collapse">
+      <div id="collapse114" class="panel-collapse collapse">
         <div class="panel-body">
 		   <div class="scenario">
 								<div class="col-xs-6 pad-no scenario-active"><a class="scenario-1 btn"  onclick="alert('Owned')">
@@ -433,11 +433,11 @@
 	<div class="panel panel-default">
       <div class="panel-heading">
         <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion1" href="#collapse5">OFFICE TYPE<i class="icon-plus pull-right more-less"></i></a>
+          <a data-toggle="collapse" data-parent="#accordion5" href="#collapse115">OFFICE TYPE<i class="icon-plus pull-right more-less"></i></a>
 		  
         </h4>
       </div>
-      <div id="collapse5" class="panel-collapse collapse">
+      <div id="collapse115" class="panel-collapse collapse">
         <div class="panel-body">
 		   <div class="scenario">
 								<div class="col-xs-6 pad-no scenario-active"><a class="scenario-1 btn"  onclick="call('Owned')">

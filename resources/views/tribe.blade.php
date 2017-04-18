@@ -28,11 +28,11 @@
     <div class="col-md-4">
     <p><input type="radio" name="is_loan_distributor" onclick="showHidden('tribe_partner_div',1)" value="true" /> Yes&nbsp;&nbsp;
      <input type="radio" name="is_loan_distributor" onclick="showHidden('tribe_partner_div',0)" value="false" checked /> No</p></div>
-  <div  id="tribe_partner_div" style="display: none;">
+  <div  id="tribe_partner_div" class="col-md-12" style="display: none;">
     <div class="col-md-3"><p>partnerID*</p></div>
-    <div class="col-md-8"><input type="text" name="partner_id"  class="form-control form-group" required /></div>
+    <div class="col-md-8 form-padding"><input type="text" name="partner_id"  class="form-control form-group" required /></div>
     <div class="col-md-3"><p>Agent Name*</p></div>
-    <div class="col-md-8"><input type="text" name="agent_name"  class="form-control form-group" required /></div>
+    <div class="col-md-8 form-padding"><input type="text" name="agent_name"  class="form-control form-group" required /></div>
   </div>
   </div>
 

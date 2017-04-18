@@ -29,10 +29,10 @@
     <p><input type="radio" name="is_loan_distributor" onclick="showHidden('tribe_partner_div',1)" value="true" /> Yes&nbsp;&nbsp;
      <input type="radio" name="is_loan_distributor" onclick="showHidden('tribe_partner_div',0)" value="false" checked /> No</p></div>
   <div  id="tribe_partner_div" style="display: none;">
-    <div class="col-md-6"><p>partnerID*</p></div>
-    <div class="col-md-6"><input type="text" name="partner_id"  class="form-control form-group" required /></div>
-    <div class="col-md-6"><p>Agent Name*</p></div>
-    <div class="col-md-6"><input type="text" name="agent_name"  class="form-control form-group" required /></div>
+    <div class="col-md-3"><p>partnerID*</p></div>
+    <div class="col-md-8"><input type="text" name="partner_id"  class="form-control form-group" required /></div>
+    <div class="col-md-3"><p>Agent Name*</p></div>
+    <div class="col-md-8"><input type="text" name="agent_name"  class="form-control form-group" required /></div>
   </div>
   </div>
 
@@ -51,11 +51,14 @@
     <div class="col-md-8 form-padding">
     <input type="email" name="owner_email" id="owner_email" ng-model="owner_email" class="form-control form-group" required />
 	
-    <p ng-show="tribe_loan_form.owner_email.$error.email" class="error">Invalid Email address</p>
-     <a class="btn btn-primary btn-outline with-arrow " onclick="go_to_next('main1')">Next<i class="icon-arrow-right"></i></a>
+    
 	
     </div>
-    
+	<div class="col-md-3"></div>
+	<div class="col-md-8 pad-no">
+    <p ng-show="tribe_loan_form.owner_email.$error.email" class="error flt-lft">Invalid Email address</p>
+     <a class="btn btn-primary btn-outline with-arrow " onclick="go_to_next('main1')">Next<i class="icon-arrow-right"></i></a>
+	 </div>
 
   </div>
 
@@ -162,10 +165,11 @@
       <option value="{{$value}}"><?php echo $key;?></option>
       @endforeach
     </select>
-    <a class="btn btn-primary btn-outline with-arrow " onclick="go_to_next('main3')">Next<i class="icon-arrow-right"></i></a>
-    <a class="btn btn-primary btn-outline with-arrow" onclick="go_back('main1')">Back<i class="icon-arrow-right"></i></a>
-    </div>
     
+    </div>
+    <div class="col-md-3"></div>
+	<div class="col-md-8 pad-no"><a class="btn btn-primary btn-outline with-arrow " onclick="go_to_next('main3')">Next<i class="icon-arrow-right"></i></a>
+    <a class="btn btn-primary btn-outline with-arrow" onclick="go_back('main1')">Back<i class="icon-arrow-right"></i></a></div>
     </div>
     <div id="main3" class="tab-pane fade">
       <h3 class="mrg-top">Business Details</h3>
@@ -318,9 +322,11 @@
     <div class="col-md-3"><span>How did you Know About Us?*</span></div>
     <div class="col-md-8 form-padding">
     <input type="text" name="reached_us_via" id="reached_us_via" class="form-control form-group" />
-    <a class="btn btn-primary btn-outline with-arrow" onclick="go_to_next('main5')">Next<i class="icon-arrow-right"></i></a>
-    <a class="btn btn-primary btn-outline with-arrow " onclick="go_back('main2')">Back<i class="icon-arrow-right"></i></a>
+    
     </div>
+	<div class="col-md-3"></div>
+	<div class="col-md-8 pad-no"><a class="btn btn-primary btn-outline with-arrow" onclick="go_to_next('main5')">Next<i class="icon-arrow-right"></i></a>
+    <a class="btn btn-primary btn-outline with-arrow " onclick="go_back('main2')">Back<i class="icon-arrow-right"></i></a></div>
     </div>
     
     <div id="main5" class="tab-pane fade">
@@ -560,8 +566,15 @@
   @include('layout.footer')
   @include('layout.script')
  <!-- modal for bank statement -->
+
 <div id="tribe_bank_statement_form" class="modal fade" role="dialog">
- <form id="bank_statement_form" name="bank_statement_form" enctype="multipart/form-data" method="POST" >
+ <div class="modal-dialog">
+ <div class="modal-content" style="float:left;">
+ <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">×</button>
+         <h4 class="modal-title">Upload Bank Document</h4>
+      </div>
+ <form id="bank_statement_form" class="pad1" name="bank_statement_form" enctype="multipart/form-data" method="POST" >
     {!! csrf_field() !!}
     <input type="hidden" name="loan_id" class="loan_id">
     <input type="hidden" name="transaction_id" class="transaction_id">
@@ -609,6 +622,8 @@
         </div>
         </div>
     </form>
+	</div>
+	</div>
 </div>
 <!-- end modal -->
 

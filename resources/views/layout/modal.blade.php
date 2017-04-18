@@ -602,8 +602,8 @@ Rupeeboss Financial Services Private Limited shall access your Credit Informatio
     <!-- Modal content-->
     <div class="modal-content pad1">
 
-     <label >Document title</label>
-      <input type="text" name="document_title" id="tribe_document_title" required >
+     <label >Document title</label><br>
+      <input type="text" name="document_title" id="tribe_document_title" required ><br>
       <label >Upload File</label>
       <input type="file" name="document_itself" id="tribe_document_itself" required>
         <div style="display: none;" id="doc_special_fields">
@@ -626,9 +626,11 @@ Rupeeboss Financial Services Private Limited shall access your Credit Informatio
               
             </select>
         </div>
-       <a class="btn btn-primary btn-outline with-arrow" data-dismiss="modal" >cancel</a>
+		<br>
+		<div class="mrg-top">
+       <a class="btn btn-primary btn-outline with-arrow" data-dismiss="modal" >Cancel</a>
       <a class="btn btn-primary btn-outline with-arrow " id="upload_doc_submit">Save</a>
-      
+      </div>
     </div>
 
   </div>

@@ -52,8 +52,8 @@ class bank_quote_api_request extends Model
     {
              $fillable = ['property_cost','loan_tenure','loan_amount','gender','income','obligation','dob','have_co_applicant','CoApplicantIncome','co_applicant_obligation','Turnover','profit_after_tax','depreciation','remuneration','co_applicant_turnover','co_applicant_profit_after_tax','co_applicant_depreciation','co_applicant_remuneration','emp_detail_id','product_id','created_at', 'updated_at'];
         $name=Session::get('name')?Session::get('name'):"";
-
-
+        //print_r($request->all());exit();
+       // unset($request['_token']);
         $table = new bank_quote_api_request();
         //print_r($request->BrokerId);exit();   
         $table->PropertyID = $request->PropertyID;

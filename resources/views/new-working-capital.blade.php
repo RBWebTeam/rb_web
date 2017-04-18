@@ -12,7 +12,7 @@
 <form name='working_capital_process_form' id='working_capital_process_form' action={{URL::to('loan-submit')}} method="POST">
 {{ csrf_field() }}  
  <!-- <img src="{{URL::to('images/9.png')}}" alt="Tribe Logo" class="img-responsive" /> -->
- <div class="col-md-6 pad-no">
+ <div class="col-md-6">
   <div class="col-xs-12">
   
 	 <input type="hidden" id="product" name="product_name" value="11">
@@ -30,7 +30,7 @@
 		<div class="col-xs-6 form-padding pad text-right">
 	 <span class="mrg-top">Export/Import - </span>
 	</div>
-	<div class="col-xs-6 form-padding pad">
+	<div class="col-xs-5 form-padding pad">
     
 		 <div id="ifYes" style="visibility:hidden">
         <select class="pull-right btn-default outer-brd btn-blu pad-ten" id='yes'>

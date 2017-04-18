@@ -126,7 +126,7 @@
    <input type="hidden" name="product" class="product" value="{{$product}}">
 
     <input type="hidden" name="processingfee" class="processingfee" value="{{$q->processingfee }}">
-    <input type="hidden" name="url" class="url" value="{{URL::to('apply-lead-online')}}?qoutid={{$quote_id}}&BankId={{$q->Bank_Id}}&product={{$prod}}&processing_fee={{$q->processingfee}}&loan_eligible={{$q->loan_eligible}}&roi_type={{$q->roi_type}}">
+    <input type="hidden" name="url" class="url" value="{{URL::to('apply-lead-online')}}?&BankId={{$q->Bank_Id}}&product={{$prod}}&processing_fee={{$q->processingfee}}&loan_eligible={{$q->loan_eligible}}&roi_type={{$q->roi_type}}">
 
     <td >{{$product}}</td>
     <td >{{$q->roi }}%</td>
@@ -376,13 +376,13 @@ var last_segment = url_array[url_array.length-1];  // Get the last part of the a
           
              url: "{{URL::to('quotes-head')}}",
            //  data : $('#home_loan_process_form').serialize(),
-                data : $(id).serialize()+$('#quote_form').serialize(),
+                data :$(id+', #quote_form').serialize(),
              success: function(msg){
                 if(msg.status==true){
                    window.location.href=(msg.url);
                 }else{
-                    
-                    window.location.href=("{{url('went-wrong')}}");
+                   console.log(msg); 
+                   window.location.href=("{{url('went-wrong')}}");
                 }
              }
 

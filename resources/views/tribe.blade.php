@@ -29,10 +29,10 @@
     <p><input type="radio" name="is_loan_distributor" onclick="showHidden('tribe_partner_div',1)" value="true" /> Yes&nbsp;&nbsp;
      <input type="radio" name="is_loan_distributor" onclick="showHidden('tribe_partner_div',0)" value="false" checked /> No</p></div>
   <div  id="tribe_partner_div" style="display: none;">
-    <div class="col-md-6"><p>partnerID*</p></div>
-    <div class="col-md-6"><input type="text" name="partner_id"  class="form-control form-group" required /></div>
-    <div class="col-md-6"><p>Agent Name*</p></div>
-    <div class="col-md-6"><input type="text" name="agent_name"  class="form-control form-group" required /></div>
+    <div class="col-md-3"><p>partnerID*</p></div>
+    <div class="col-md-8"><input type="text" name="partner_id"  class="form-control form-group" required /></div>
+    <div class="col-md-3"><p>Agent Name*</p></div>
+    <div class="col-md-8"><input type="text" name="agent_name"  class="form-control form-group" required /></div>
   </div>
   </div>
 
@@ -41,19 +41,24 @@
     <h3>Company Details</h3>
   <hr>
     <div class="col-md-3"><span>Company Name*</span></div>
-    <div class="col-md-8"><input type="text" name="company_name" id="company_name" class="form-control form-group" required /></div>
+    <div class="col-md-8 form-padding"><input type="text" name="company_name" id="company_name" class="form-control form-group " required /></div>
     
     <div class="col-md-3"><span>Owner Name*</span></div>
-    <div class="col-md-8">
+    <div class="col-md-8 form-padding">
     <input type="text" name="owner_name" id="owner_name" class="form-control form-group" required /></div>
     
     <div class="col-md-3"><span>Owner Email*</span></div>
-    <div class="col-md-8">
+    <div class="col-md-8 form-padding">
     <input type="email" name="owner_email" id="owner_email" ng-model="owner_email" class="form-control form-group" required />
-    <p ng-show="tribe_loan_form.owner_email.$error.email" class="error">Invalid Email address</p>
-     <a class="btn btn-primary btn-outline with-arrow " onclick="go_to_next('main1')">Next<i class="icon-arrow-right"></i></a>
-    </div>
+	
     
+	
+    </div>
+	<div class="col-md-3"></div>
+	<div class="col-md-8 pad-no">
+    <p ng-show="tribe_loan_form.owner_email.$error.email" class="error flt-lft">Invalid Email address</p>
+     <a class="btn btn-primary btn-outline with-arrow " onclick="go_to_next('main1')">Next<i class="icon-arrow-right"></i></a>
+	 </div>
 
   </div>
 
@@ -101,30 +106,30 @@
     <h3 class="mrg-top">Personal Details</h3>
   <hr>
     <div class="col-md-3"><span>First Name*</span></div>
-    <div class="col-md-8">
+    <div class="col-md-8 form-padding">
     <input type="text" name="first_name" id="first_name" class="form-control form-group" required="" /></div>
     
     <div class="col-md-3"><span>Middle Name</span></div>
-    <div class="col-md-8">
+    <div class="col-md-8 form-padding">
     <input type="text" name="middle_name" id="middle_name" class="form-control form-group"/></div>
     
     <div class="col-md-3"><span>Last Name*</span></div>
-    <div class="col-md-8"><input type="text" name="last_name" id="last_name" class="form-control form-group" required="" /></div>
+    <div class="col-md-8 form-padding"><input type="text" name="last_name" id="last_name" class="form-control form-group" required="" /></div>
     
     <div class="col-md-3"><span>Mobile No*</span></div>
-   <div class="col-md-8"><input type="text" pattern="[789][0-9]{9}" maxlength="10" minlength="10"  name="mobile" id="mobile" class="form-control form-group" onkeypress="return fnAllowNumeric(event)" required /></div>
+   <div class="col-md-8 form-padding"><input type="text" pattern="[789][0-9]{9}" maxlength="10" minlength="10"  name="mobile" id="mobile" class="form-control form-group" onkeypress="return fnAllowNumeric(event)" required /></div>
     
     <div class="col-md-3"><span>Email</span></div>
-    <div class="col-md-8">
+    <div class="col-md-8 form-padding">
     <input type="email" name="email" id="email" class="form-control form-group" value="@{{owner_email}}" disabled />
     
     </div>
     
     <div class="col-md-3"><span>Address*</span></div>
-    <div class="col-md-8"><textarea class="form-control form-control mrg-btm" colspan="2" name="address" id="address"></textarea></div>
+    <div class="col-md-8 form-padding mrg-btm"><textarea class="form-control form-control mrg-btm" colspan="2" name="address" id="address"></textarea></div>
     
-    <div class="col-md-3"><span>Aadhaar Number*</span></div>
-    <div class="col-md-8"><input type="text" name="aadhar_no" id="aadhar_no" class="form-control form-group" onkeypress="return fnAllowNumeric(event)" required maxlength="12" minlength="12" /></div>
+    <div class="col-md-3"><span>Aadhaar Number*</Numberspan></div>
+    <div class="col-md-8 form-padding"><input type="text" name="aadhar_no" id="aadhar_no" class="form-control form-group" onkeypress="return fnAllowNumeric(event)" required maxlength="12" minlength="12" /></div>
     
     <!-- <div class="col-md-3"><p>Owner Email*</p></div>
     <div class="col-md-8">
@@ -133,14 +138,14 @@
     </div> -->
     
     <div class="col-md-3"><span>Date of Birth*</span></div>
-    <div class="col-md-8"><input type="date" name="dob" id="dob" class="form-control form-group" required="" /></div>
+    <div class="col-md-8 form-padding"><input type="date" name="dob" id="dob" class="form-control form-group" required="" /></div>
     
     <div class="col-md-3"><span>Annual Income (INR)*</span></div>
-    <div class="col-md-8">
+    <div class="col-md-8 form-padding">
     <input type="number" name="annual_income" onkeypress="return fnAllowNumeric(event)" id="annual_income" class="form-control form-group"/></div>
     
     <div class="col-md-3"><span>Education*</span></div>
-    <div class="col-md-8 sec">
+    <div class="col-md-8 form-padding sec">
       <select class="drop-arr" name="education" id="education" required>
      <option disabled selected>Select</option>
       @foreach($data['education'] as $key=>$value)
@@ -152,7 +157,7 @@
     </div>
     
     <div class="col-md-3"><span>Family Details*</span></div>
-    <div class="col-md-8 sec">
+    <div class="col-md-8 form-padding sec">
        <select class="drop-arr" name="family_detail" id="family_detail" required>
       <option disabled selected>Select</option>
       @foreach($data['family_details'] as $key=>$value)
@@ -160,21 +165,22 @@
       <option value="{{$value}}"><?php echo $key;?></option>
       @endforeach
     </select>
-    <a class="btn btn-primary btn-outline with-arrow " onclick="go_to_next('main3')">Next<i class="icon-arrow-right"></i></a>
-    <a class="btn btn-primary btn-outline with-arrow" onclick="go_back('main1')">Back<i class="icon-arrow-right"></i></a>
-    </div>
     
+    </div>
+    <div class="col-md-3"></div>
+	<div class="col-md-8 pad-no"><a class="btn btn-primary btn-outline with-arrow " onclick="go_to_next('main3')">Next<i class="icon-arrow-right"></i></a>
+    <a class="btn btn-primary btn-outline with-arrow" onclick="go_back('main1')">Back<i class="icon-arrow-right"></i></a></div>
     </div>
     <div id="main3" class="tab-pane fade">
       <h3 class="mrg-top">Business Details</h3>
   <hr>
     <div class="col-md-3"><span>Employees Count*</span></div>
-    <div class="col-md-8">
+    <div class="col-md-8 form-padding">
     <input type="text" class="form-control form-group" name="employee_count" id="employee_count" onkeypress="return fnAllowNumeric(event)" />
     </div>
     
     <div class="col-md-3"><span>Registration Details*</span></div>
-    <div class="col-md-8 sec">
+    <div class="col-md-8 form-padding sec">
      <select class="drop-arr" name="registration_detail" id="registration_detail" required>
        <option disabled selected>Select</option>
       @foreach($data['registration_details'] as $key=>$value)
@@ -185,7 +191,7 @@
     </div>
     <div id="partners_div" style="display: none;">
     <div class="col-md-3"><p>Number of Partners*</p></div>
-    <div class="col-md-8 sec"  >
+    <div class="col-md-8 form-padding sec"  >
      <select class="drop-arr" name="partners_count" id="partners_count" required>
        <option disabled selected>Select</option>
       @foreach($data['partner_count'] as $key=>$value)
@@ -197,7 +203,7 @@
     </div>
     <div id="director_div" style="display: none;">
     <div class="col-md-3"><span>Number of Directors*</span></div>
-    <div class="col-md-8 sec"  >
+    <div class="col-md-8 form-padding sec"  >
      <select class="drop-arr" name="directors_count" id="directors_count" required>
        <option disabled selected>Select</option>
       @foreach($data['director_count'] as $key=>$value)
@@ -209,7 +215,7 @@
     </div>
     <div id="business_run_by_div" style="display: none;">
     <div class="col-md-3"><span>Business Run by:*</span></div>
-    <div class="col-md-8 sec"  >
+    <div class="col-md-8 form-padding sec"  >
      <select class="drop-arr" name="business_run_by" id="business_run_by" required>
        <option disabled selected>Select</option>
       @foreach($data['proprietorship_type'] as $key=>$value)
@@ -221,20 +227,20 @@
     </div>
     <div id="company_pan_card_div">
     <div class="col-md-3"><span>Company Pan Number*</span></div>
-    <div class="col-md-8">
+    <div class="col-md-8 form-padding">
     <input type="text" name="company_pan_card" id="company_pan_card" class="form-control form-group" required="" /></div>
     </div>
     <div id="business_run_by_pan_div" style="display: none;">
     <div class="col-md-3"><span>Pan Number*</span></div>
-    <div class="col-md-8">
+    <div class="col-md-8 form-padding">
     <input type="text" name="business_run_by_pan" id="business_run_by_pan" class="form-control form-group" required="" /></div>
     </div>
     <div class="col-md-3"><span>Address*</span></div>
-    <div class="col-md-8">
+    <div class="col-md-8 form-padding">
     <textarea class="form-control form-control mrg-btm" colspan="2" id="work_address" name="work_address"></textarea></div>
     
     <div class="col-md-3"><span>Business Type*</span></div>
-    <div class="col-md-8 sec">
+    <div class="col-md-8 form-padding sec">
       <select class="drop-arr" id="business_type" name="business_type" required>
       <option disabled selected>Select</option>
       @foreach($data['nature_of_business'] as $key=>$value)
@@ -245,17 +251,17 @@
     </div>
     
     <div class="col-md-3"><span>Do you carry out Online Sales?*</span></div>
-    <div class="col-md-8"><p>
+    <div class="col-md-8 form-padding"><p>
     <input type="radio" name="online_sale" onclick="showHidden('online_sale_channel_div',1);" value="true" /> Yes&nbsp;&nbsp; 
     <input type="radio" name="online_sale" onclick="showHidden('online_sale_channel_div',0);" value="false" checked/> No</p></div>
     
     <div class="col-md-3"><span>Do you carry out Offline Sales?*</span></div>
-    <div class="col-md-8"><span>
+    <div class="col-md-8 form-padding"><span>
     <input type="radio" name="offline_sale" value="true"  /> Yes&nbsp;&nbsp; 
     <input type="radio" name="offline_sale" value="false" checked /> No</span></div>
     <div style="display: none;" id="online_sale_channel_div" >
     <div class="col-md-3 sec"><span>online_sale_channel</span></div>
-    <div class="col-md-8 sec">
+    <div class="col-md-8 form-padding sec">
       <select class="drop-arr" id="online_sale_channel" name="online_sale_channel" required>
       <option disabled selected>Select</option>
       @foreach($data['online_sales_channels'] as $key=>$value)
@@ -268,7 +274,7 @@
 
 
     <div class="col-md-3"><span>Turnover*</span></div>
-    <div class="col-md-8 sec">
+    <div class="col-md-8 form-padding sec">
        <select class="drop-arr" name="turnover" id="turnover" required>
        <option disabled selected>Select</option>
       @foreach($data['turnover'] as $key=>$value)
@@ -279,7 +285,7 @@
     </div>
     
     <div class="col-md-3"><span>Business Premises*</span></div>
-    <div class="col-md-8 sec">
+    <div class="col-md-8 form-padding sec">
       <select class="drop-arr" name="business_premises" id="business_premises" required>
        <option disabled selected>Select</option>
       @foreach($data['ownership'] as $key=>$value)
@@ -290,7 +296,7 @@
     </div>
     
     <div class="col-md-3"><span>Which products do you sell?*</span></div>
-    <div class="col-md-8 sec">
+    <div class="col-md-8 form-padding sec">
       <select class="drop-arr" name="selling_product" id="selling_product" required>
        <option disabled selected>Select</option>
       @foreach($data['product_sell'] as $key=>$value)
@@ -301,7 +307,7 @@
     </div>
     
     <div class="col-md-3"><span>Loan Purpose*</span></div>
-    <div class="col-md-8 sec">
+    <div class="col-md-8 form-padding sec">
      <select class="drop-arr" name="loan_purpose" id="loan_purpose" required>
        <option disabled selected>Select Loan Purpose</option>
        <option value="1">inventory rotation</option>
@@ -314,11 +320,13 @@
     </div>
     
     <div class="col-md-3"><span>How did you Know About Us?*</span></div>
-    <div class="col-md-8">
+    <div class="col-md-8 form-padding">
     <input type="text" name="reached_us_via" id="reached_us_via" class="form-control form-group" />
-    <a class="btn btn-primary btn-outline with-arrow" onclick="go_to_next('main5')">Next<i class="icon-arrow-right"></i></a>
-    <a class="btn btn-primary btn-outline with-arrow " onclick="go_back('main2')">Back<i class="icon-arrow-right"></i></a>
+    
     </div>
+	<div class="col-md-3"></div>
+	<div class="col-md-8 pad-no"><a class="btn btn-primary btn-outline with-arrow" onclick="go_to_next('main5')">Next<i class="icon-arrow-right"></i></a>
+    <a class="btn btn-primary btn-outline with-arrow " onclick="go_back('main2')">Back<i class="icon-arrow-right"></i></a></div>
     </div>
     
     <div id="main5" class="tab-pane fade">
@@ -349,29 +357,29 @@
     <h3 class="mrg-top">Reference</h3><hr>
   </div>
     <div class="col-md-3">First Name</div>
-    <div class="col-md-8">
+    <div class="col-md-8 form-padding">
     <input type="text" id="ref_first_name" name="ref_first_name" class="form-control form-group" required="" /></div>
     
     <div class="col-md-3">Middle Name</div>
-    <div class="col-md-8">
+    <div class="col-md-8 form-padding">
     <input type="text" class="form-control form-group" name="ref_middle_name" id="ref_middle_name"/></div>
     
     <div class="col-md-3">Last Name</div>
-    <div class="col-md-8">
+    <div class="col-md-8 form-padding">
     <input type="text" id="ref_last_name" name="ref_last_name" class="form-control form-group" required="" /></div>
     
     <div class="col-md-3">Mobile Number</div>
-    <div class="col-md-8">
+    <div class="col-md-8 form-padding">
     <input type="text" name="ref_mobile" id="ref_mobile" class="form-control form-group" maxlength="10" minlength="10"  onkeypress="return fnAllowNumeric(event)"/></div>
     
     <div class="col-md-3">Email</div>
-    <div class="col-md-8">
+    <div class="col-md-8 form-padding">
     <input type="email" name="ref_email" id="ref_email" class="form-control form-group"/></div>
     <p ng-show="tribe_loan_form.ref_email.$error.email" class="error">Invalid Email address</p>
    <div class="col-md-3">
     <a class="btn btn-primary btn-outline with-arrow" onclick="go_back('main5')">Back<i class="icon-arrow-right"></i></a>
     </div>
-     <div class="col-md-8"> <button class="btn btn-primary btn-outline with-arrow pull-left" id="save_form_button">Save Form<i class="icon-arrow-right"></i></button></div>
+     <div class="col-md-8 form-padding"> <button class="btn btn-primary btn-outline with-arrow pull-left" id="save_form_button">Save Form<i class="icon-arrow-right"></i></button></div>
    
     </div>
     </form>
@@ -381,7 +389,7 @@
         <h3 class="mrg-top">KYC Identity Proof(Atleast one document is required)</h3>
       <hr>
         <div class="col-md-4">Pan</div>
-        <div class="col-md-8">
+        <div class="col-md-8 form-padding">
          <a class="btn btn-primary btn-outline with-arrow pull-right" onclick="tribe_doc_upload(1)">Add Document<i class="icon-arrow-right"></i></a>
            <div style="display: none;" id="after_upload_div_1">
               <a class="btn btn-primary btn-outline with-arrow pull-right" id="get_doc_1" >Show Document<i class="icon-arrow-right"></i></a>
@@ -394,7 +402,7 @@
         </div>
         
         <div class="col-md-4">Aadhaar</div>
-        <div class="col-md-8">
+        <div class="col-md-8 form-padding">
         <a class="btn btn-primary btn-outline with-arrow pull-right" onclick="tribe_doc_upload(2)">Add Document<i class="icon-arrow-right"></i></a>
            <div style="display: none;" id="after_upload_div_2">
               <a class="btn btn-primary btn-outline with-arrow pull-right" id="get_doc_2" >Show Document<i class="icon-arrow-right"></i></a>
@@ -404,7 +412,7 @@
         </div>
         
         <div class="col-md-4">Driving License </div>
-        <div class="col-md-8">
+        <div class="col-md-8 form-padding">
         <a class="btn btn-primary btn-outline with-arrow pull-right" onclick="tribe_doc_upload(3)">Add Document<i class="icon-arrow-right"></i></a>
            <div style="display: none;" id="after_upload_div_3">
               <a class="btn btn-primary btn-outline with-arrow pull-right" id="get_doc_3" >Show Document<i class="icon-arrow-right"></i></a>
@@ -414,7 +422,7 @@
         </div>
         
         <div class="col-md-4">Passport</div>
-        <div class="col-md-8">
+        <div class="col-md-8 form-padding">
         <a class="btn btn-primary btn-outline with-arrow pull-right" onclick="tribe_doc_upload(4)">Add Document<i class="icon-arrow-right"></i></a>
            <div style="display: none;" id="after_upload_div_4">
               <a class="btn btn-primary btn-outline with-arrow pull-right" id="get_doc_4" >Show Document<i class="icon-arrow-right"></i></a>
@@ -424,7 +432,7 @@
         </div>
         
         <div class="col-md-4">Voter ID</div>
-        <div class="col-md-8">
+        <div class="col-md-8 form-padding">
         <a class="btn btn-primary btn-outline with-arrow pull-right" onclick="tribe_doc_upload(5)">Add Document<i class="icon-arrow-right"></i></a>
            <div style="display: none;" id="after_upload_div_5">
               <a class="btn btn-primary btn-outline with-arrow pull-right" id="get_doc_5" >Show Document<i class="icon-arrow-right"></i></a>
@@ -436,7 +444,7 @@
         <h3 class="mrg-top">Address Proof</h3><hr>
       </div>
       <div class="col-md-4">Electricity Bill</div>
-        <div class="col-md-8">
+        <div class="col-md-8 form-padding">
         <a class="btn btn-primary btn-outline with-arrow pull-right" onclick="tribe_doc_upload(6)">Add Document<i class="icon-arrow-right"></i></a>
            <div style="display: none;" id="after_upload_div_6">
               <a class="btn btn-primary btn-outline with-arrow pull-right" id="get_doc_6" >Show Document<i class="icon-arrow-right"></i></a>
@@ -446,7 +454,7 @@
         </div>
         
         <div class="col-md-4">Leave and License Agreement</div>
-        <div class="col-md-8">
+        <div class="col-md-8 form-padding">
         <a class="btn btn-primary btn-outline with-arrow pull-right" onclick="tribe_doc_upload(7)">Add Document<i class="icon-arrow-right"></i></a>
            <div style="display: none;" id="after_upload_div_7">
               <a class="btn btn-primary btn-outline with-arrow pull-right" id="get_doc_7" >Show Document<i class="icon-arrow-right"></i></a>
@@ -459,7 +467,7 @@
         <h3 class="mrg-top">Business KYC</h3><hr>
       </div>
         <div class="col-md-4">Registration Certificate</div>
-        <div class="col-md-8">
+        <div class="col-md-8 form-padding">
         <a class="btn btn-primary btn-outline with-arrow pull-right" onclick="tribe_doc_upload(8)">Add Document<i class="icon-arrow-right"></i></a>
            <div style="display: none;" id="after_upload_div_8">
               <a class="btn btn-primary btn-outline with-arrow pull-right" id="get_doc_8" >Show Document<i class="icon-arrow-right"></i></a>
@@ -469,7 +477,7 @@
         </div>
         
         <div class="col-md-4">Tax Registration</div>
-        <div class="col-md-8">
+        <div class="col-md-8 form-padding">
         <a class="btn btn-primary btn-outline with-arrow pull-right" onclick="tribe_doc_upload(9)">Add Document<i class="icon-arrow-right"></i></a>
            <div style="display: none;" id="after_upload_div_9">
               <a class="btn btn-primary btn-outline with-arrow pull-right" id="get_doc_9" >Show Document<i class="icon-arrow-right"></i></a>
@@ -479,7 +487,7 @@
         </div>
 
         <div class="col-md-4">Company PAN</div>
-        <div class="col-md-8">
+        <div class="col-md-8 form-padding">
         <a class="btn btn-primary btn-outline with-arrow pull-right" onclick="tribe_doc_upload(11)">Add Document<i class="icon-arrow-right"></i></a>
            <div style="display: none;" id="after_upload_div_11">
               <a class="btn btn-primary btn-outline with-arrow pull-right" id="get_doc_11" >Show Document<i class="icon-arrow-right"></i></a>
@@ -492,7 +500,7 @@
         <h3 class="mrg-top">Business Documents</h3><hr>
       </div>
         <div class="col-md-4">Company IT Returns</div>
-        <div class="col-md-8">
+        <div class="col-md-8 form-padding">
         <a class="btn btn-primary btn-outline with-arrow pull-right" onclick="tribe_doc_upload(10)">Add Document<i class="icon-arrow-right"></i></a>
            <div style="display: none;" id="after_upload_div_10">
               <a class="btn btn-primary btn-outline with-arrow pull-right" id="get_doc_10" >Show Document<i class="icon-arrow-right"></i></a>
@@ -504,7 +512,7 @@
         
         
          <div class="col-md-4">ITR/VAT Returns/ST Returns</div>
-        <div class="col-md-8">
+        <div class="col-md-8 form-padding">
         <a class="btn btn-primary btn-outline with-arrow pull-right" onclick="tribe_doc_upload(12)">Add Document<i class="icon-arrow-right"></i></a>
            <div style="display: none;" id="after_upload_div_12">
               <a class="btn btn-primary btn-outline with-arrow pull-right" id="get_doc_12" >Show Document<i class="icon-arrow-right"></i></a>
@@ -517,7 +525,7 @@
         <h3 class="mrg-top">Other Documents</h3><hr>
       </div>
         <div class="col-md-4">Personal IT Returns</div>
-        <div class="col-md-8">
+        <div class="col-md-8 form-padding">
         <a class="btn btn-primary btn-outline with-arrow pull-right" onclick="tribe_doc_upload(13)">Add Document<i class="icon-arrow-right"></i></a>
            <div style="display: none;" id="after_upload_div_13">
               <a class="btn btn-primary btn-outline with-arrow pull-right" id="get_doc_13" >Show Document<i class="icon-arrow-right"></i></a>
@@ -527,7 +535,7 @@
         </div>
         
         <div class="col-md-4">Other Documents</div>
-        <div class="col-md-8">
+        <div class="col-md-8 form-padding">
         <a class="btn btn-primary btn-outline with-arrow pull-right" onclick="tribe_doc_upload(14)">Add Document<i class="icon-arrow-right"></i></a>
            <div style="display: none;" id="after_upload_div_14">
               <a class="btn btn-primary btn-outline with-arrow pull-right" id="get_doc_14" >Show Document<i class="icon-arrow-right"></i></a>
@@ -558,14 +566,21 @@
   @include('layout.footer')
   @include('layout.script')
  <!-- modal for bank statement -->
+
 <div id="tribe_bank_statement_form" class="modal fade" role="dialog">
- <form id="bank_statement_form" name="bank_statement_form" enctype="multipart/form-data" method="POST" >
+ <div class="modal-dialog">
+ <div class="modal-content" style="float:left;">
+ <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">×</button>
+         <h4 class="modal-title">Upload Bank Document</h4>
+      </div>
+ <form id="bank_statement_form" class="pad1" name="bank_statement_form" enctype="multipart/form-data" method="POST" >
     {!! csrf_field() !!}
     <input type="hidden" name="loan_id" class="loan_id">
     <input type="hidden" name="transaction_id" class="transaction_id">
     
         <div class="col-md-3">UPLOAD COMPANY BANK STATEMENTS</div>
-        <div class="col-md-8 sec">
+        <div class="col-md-8 form-padding sec">
          <select class="drop-arr" name="institution"  required>
            <option disabled selected>Select</option>
           @foreach($data['institution'] as $key=>$value)
@@ -576,27 +591,27 @@
         </div>
         
         <div class="col-md-3">Start Date</div>
-        <div class="col-md-8"
+        <div class="col-md-8 form-padding"
         ><input type="date" name="start_date"  class="form-control form-group" />
         </div>
         
         <div class="col-md-3">End Date</div>
-        <div class="col-md-8">
+        <div class="col-md-8 form-padding">
         <input type="date"  name="end_date" class="form-control form-group"/>
         </div>
         
         <div class="col-md-3">Upload Document</div>
-        <div class="col-md-8">
+        <div class="col-md-8 form-padding">
         <input type="file"  name="upload_statement" class="form-control form-group no-border"/>
         </div>
        <div class="col-md-3">PDF Password(if any)</div>
-        <div class="col-md-8"  >
+        <div class="col-md-8 form-padding"  >
         <input type="checkbox" name="pdf_has_pwd" id="pdf_has_pwd" >
         <input type="password" name="pdf_password" id="pdf_password" class="form-control form-group" style="display: none;" />
         </div>
         
         <div class="col-md-3"></div>
-        <div class="col-md-8 mrg-top">
+        <div class="col-md-8 form-padding mrg-top">
         <a class="btn btn-primary btn-outline with-arrow pull-left" id="submit_tribe_statement">Submit Statment
         <i class="icon-arrow-right"></i>
         </a>
@@ -607,6 +622,8 @@
         </div>
         </div>
     </form>
+	</div>
+	</div>
 </div>
 <!-- end modal -->
 

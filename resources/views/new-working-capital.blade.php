@@ -12,7 +12,7 @@
 <form name='working_capital_process_form' id='working_capital_process_form' action={{URL::to('loan-submit')}} method="POST">
 {{ csrf_field() }}  
  <!-- <img src="{{URL::to('images/9.png')}}" alt="Tribe Logo" class="img-responsive" /> -->
- <div class="col-md-6 pad-no">
+ <div class="col-md-6">
   <div class="col-xs-12">
   
 	 <input type="hidden" id="product" name="product_name" value="11">

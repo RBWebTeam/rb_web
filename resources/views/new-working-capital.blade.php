@@ -30,7 +30,7 @@
 		<div class="col-xs-6 form-padding pad text-right">
 	 <span class="mrg-top">Export/Import - </span>
 	</div>
-	<div class="col-xs-5 form-padding pad">
+	<div class="col-xs-6 form-padding pad">
     
 		 <div id="ifYes" style="visibility:hidden">
         <select class="pull-right btn-default outer-brd btn-blu pad-ten" id='yes'>
@@ -336,7 +336,7 @@
       <div id="collapse112" class="panel-collapse collapse">
         <div class="panel-body">
 		   
-		   <div class="scenario">
+		   <div class="scenario1">
 								<div class="col-xs-6 pad-no scenario-active"><a class="scenario-1 btn"  onclick="callme('Agriculture')">
                 Agriculture</a></div>
 
@@ -416,7 +416,7 @@
       </div>
       <div id="collapse114" class="panel-collapse collapse">
         <div class="panel-body">
-		   <div class="scenario">
+		   <div class="scenario2">
 								<div class="col-xs-6 pad-no scenario-active"><a class="scenario-1 btn"  onclick="alert('Owned')">
                 Owned</a></div>
 
@@ -439,7 +439,7 @@
       </div>
       <div id="collapse115" class="panel-collapse collapse">
         <div class="panel-body">
-		   <div class="scenario">
+		   <div class="scenario3">
 								<div class="col-xs-6 pad-no scenario-active"><a class="scenario-1 btn"  onclick="call('Owned')">
                 Owned</a></div>
 

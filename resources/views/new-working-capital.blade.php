@@ -631,7 +631,7 @@
 
 <script type="text/javascript">
   $(".apply_now").click(function(event){
-    console.log("ok");
+    // console.log("ok");
 
     event.preventDefault();
       var form=$(this).closest("form").attr('id');
@@ -643,11 +643,11 @@
         var amt= (parseFloat(amount)+ parseFloat($("#debtor_threeyr_amt").val()));
         // console.log(amt);
         var drawing_power=0.25*parseFloat(amt);
-        console.log(drawing_power);
+        // console.log(drawing_power);
          // $('#loanamount_new').val(drawing_power);
 
          var turnover=$("#turnover_threeyr_amt").val()*0.2;
-         console.log(turnover);
+         // console.log(turnover);
 
          if (drawing_power>turnover) 
          {
@@ -659,7 +659,7 @@
          }
 
          var assets= (parseFloat($("#total_current_liable").val())+parseFloat($("#total_noncurrent_liable").val()));
-         console.log(assets);
+         // console.log(assets);
 
          var quantity= (parseFloat($("#sharecap_threeyr_amt").val())+parseFloat($("#reserve_threeyr_amt").val()));
          var ratio= parseFloat(assets)/parseFloat(quantity);
@@ -680,7 +680,7 @@
          // $(".iframeloading").hide();  
         
          // console.log(msg);
-          if(msg==true){
+          if(msg.data==true){
             // console.log(msg);
 
             alert("Thank you for your interest in ICICI Bank Credit Cards. Our representative will get in touch with you within 3 working days subject to your application meeting the eligibility criteria");

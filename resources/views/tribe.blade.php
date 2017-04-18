@@ -395,10 +395,7 @@
               <a class="btn btn-primary btn-outline with-arrow pull-right" id="get_doc_1" >Show Document<i class="icon-arrow-right"></i></a>
               <a class="btn btn-primary btn-outline with-arrow pull-right" id="del_doc_1">Delete Document<i class="icon-arrow-right"></i></a>
           </div>
-           <div style="display: none;" id="after_upload_div_1">
-              <a class="btn btn-primary btn-outline with-arrow pull-right" id="get_doc_1" >Show Document<i class="icon-arrow-right"></i></a>
-              <a class="btn btn-primary btn-outline with-arrow pull-right" id="del_doc_1">Delete Document<i class="icon-arrow-right"></i></a>
-          </div>
+         
         </div>
         
         <div class="col-md-4">Aadhaar</div>
@@ -579,7 +576,7 @@
     <input type="hidden" name="loan_id" class="loan_id">
     <input type="hidden" name="transaction_id" class="transaction_id">
     
-        <div class="col-md-3">UPLOAD COMPANY BANK STATEMENTS</div>
+        <div class="col-md-3">Institue Name</div>
         <div class="col-md-8 form-padding sec">
          <select class="drop-arr" name="institution"  required>
            <option disabled selected>Select</option>
@@ -681,7 +678,7 @@ function go_to_next(next){
       $( "#nav"+nav_number[1] ).trigger( "click" );
       window.scrollTo(0,0);
     }else{
-      //return false;
+      return false;
     }
 }
  function go_back(next){
@@ -692,9 +689,9 @@ function go_to_next(next){
  }
 $('.go_to_next').click(function(){
 if($('#tribe_loan_form').valid()){
-     // console.log("valid_tab");
+      //console.log("valid_tab");
    }else{
-   // return false;
+    return false;
    }
 });
 $("#upload_doc_submit").click(function(){

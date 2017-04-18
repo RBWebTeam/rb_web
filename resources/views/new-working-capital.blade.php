@@ -561,6 +561,48 @@
 @include('layout.footer')
 @include('layout.script')
 
+<div class="modal fade" tabindex="-1" role="dialog" id="working_capital_process">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title"></h4>
+      </div>
+      <div class="modal-body">
+        <p><b>Thank You. Our representative will get in touch with you.</b></p>
+      </div>
+      
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" tabindex="-1" role="dialog" id="working_capital_process_oops">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title"></h4>
+      </div>
+      <div class="modal-body">
+        <p>Oops.!!<br>
+        Something went wrong.</p>
+      </div>
+      
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
 <script type="text/javascript">
   
   function AllowAlphabet(e)
@@ -639,7 +681,7 @@
       if(! $form.valid()){
       }else{
         var amount = ($("#inventory_threeyr_amt").val()-$("#creditor_threeyr_amt").val());
-        console.log(amount);
+        // console.log(amount);
         var amt= (parseFloat(amount)+ parseFloat($("#debtor_threeyr_amt").val()));
         // console.log(amt);
         var drawing_power=0.25*parseFloat(amt);
@@ -683,13 +725,13 @@
           if(msg.data==true){
             // console.log(msg);
 
-            alert("Thank you for your interest in ICICI Bank Credit Cards. Our representative will get in touch with you within 3 working days subject to your application meeting the eligibility criteria");
-            // $('#credit_process').modal('show');        
-          } 
-          else if(msg==false){
+             // alert("Thank you for your interest in ICICI Bank Credit Cards. Our representative will get in touch with you within 3 working days subject to your application meeting the eligibility criteria");
+            $('#working_capital_process').modal('show');        
+           } 
+          else if(msg.data==false){
             // console.log(msg);
             // alert("Something Went Wrong");
-             $('#credit_process_sorry').modal('show');
+             $('#working_capital_process_oops').modal('show');
           }
 
         }  

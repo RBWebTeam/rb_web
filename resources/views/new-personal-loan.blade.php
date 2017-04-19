@@ -180,15 +180,12 @@
    
   </div>
   <br>
-  </div>
-  </div>
-
   <div id ="test123"></div>
-  
-  
-@include('layout.footer')
+  @include('layout.footer')
 @include('layout.script')
-
+  </div>
+ 
+  </div>
 
 
 <script type="text/javascript">

@@ -40,7 +40,7 @@
 		</div>
 		
 		<div class="col-xs-12 col-md-6 form-padding">
-     <input type="text" class="form-input-new form-control" name="loan_amount" id="loan_amount" placeholder="Loan Amount" onkeypress="return isNumberKey(event)"  required>
+     <input type="text" class="form-input-new form-control" name="loan_amount" id="loan_amount" minlength="6" maxlength="9" placeholder="Loan Amount" onkeypress="return isNumberKey(event)"  required>
 	</div>
 	<div class="col-xs-12 col-md-6 form-padding">
 	
@@ -467,7 +467,7 @@
 	</aside>
 	</div>
 	<br>
-   <div id ="test123" class="col-md-8"></div>
+   <div id ="test123"></div>
   
 @include('layout.footer')
 @include('layout.script')

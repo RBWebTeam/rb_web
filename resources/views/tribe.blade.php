@@ -813,11 +813,7 @@ function tribe_doc_upload(id){
     $.ajax({
           url:form_url ,
           data:"_token={!! csrf_token() !!}",
-          dataType:'json',
-          async:false,
           type:'POST',
-          processData: false,
-          contentType: false,
           success:function(response){
            // console.log(response);
            if(response.status)
@@ -857,12 +853,12 @@ function tribe_doc_upload(id){
      $.ajax({  
                type: "POST",  
                url: "{{URL::to('tribe-final-submission')}}",
-               data : $('#tribe_loan_form').serialize(),
+               data :"_token={!! csrf_token() !!}",
                success: function(msg){
 
                 if(msg.status){
                    $('#main7').hide();
-                  $('#thank_you_div').show();
+                   window.location.href="{{URL::to('thank-you')}}";
 
                   }else{
                     console.log("error "+msg);

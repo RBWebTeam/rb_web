@@ -122,7 +122,7 @@
 </ul>
 </div>
 	
-	</aside>
+	
 	</div>
 	<div id="fh5co-services-section">
 		<div class="container-fluid">
@@ -481,10 +481,12 @@ you in future.
 				
 			</div>
 		</div>
+		@include('layout.script')
+@include('layout.footer')
+		</aside>
 	</div>
 	
-@include('layout.script')
-@include('layout.footer')
+
 <!-- <div id="popup" class="modal fade">
     <div class="modal-dialog">
 	<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>

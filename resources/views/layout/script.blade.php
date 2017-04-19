@@ -441,6 +441,10 @@
                             //  $( ".quote_IDform" ).val(form);
                              // $(".quote_ID").attr("href", form);
                              // $(".quote_ID").load(location.href + ".quote_ID");
+                                $(".apply_digitally").removeAttr('data-target');
+                                $(".apply_digitally").removeAttr('data-toggle');
+                               $(".apply_digitally").addClass("apply_new");
+                                
                             }
 
 
@@ -519,6 +523,9 @@
                              // $(".quote_ID").attr("href", form);
                                  
                              // $(".quote_ID").load(location.href + "quote_ID");
+                              $(".apply_digitally").removeAttr('data-target');
+                              $(".apply_digitally").removeAttr('data-toggle');
+                              $(".apply_digitally").addClass("apply_new");
 
                             }
                           }  
@@ -855,7 +862,9 @@
                               $( ".quote_ID" ).addClass( "myClass");
                             //  $( ".quote_IDform" ).val(form);
                            //   $(".quote_ID").attr("href", form);
-
+                                  $(".apply_digitally").removeAttr('data-target');
+                                  $(".apply_digitally").removeAttr('data-toggle');
+                                  $(".apply_digitally").addClass("apply_new");
                            
                          }else{
                           $('#otp_err').show();
@@ -1373,6 +1382,9 @@
                               $( ".quote_ID" ).addClass( "myClass");
                             //  $( ".quote_IDform" ).val(form);
                             //  $(".quote_ID").attr("href", form);
+                                $(".apply_digitally").removeAttr('data-target');
+                                $(".apply_digitally").removeAttr('data-toggle');
+                                $(".apply_digitally").addClass("apply_new");
       }
 
         window.fbAsyncInit = function() {
@@ -1832,7 +1844,7 @@
        <div class="form-group ">
         <div class="col-sm-offset-3 col-sm-6">
          <!--  <input type="hidden" name="product" id="product_login" value=""> -->
-          <button class="btn btn-default"  id="send_productid"  >Send OTP</button>
+          <button class="btn btn-default"  id="send_productid"  >sent otp </button>
           <a class="btn btn-default"  id="already_user_" data-toggle="modal" data-target="#log_popup" data-dismiss="modal" >Already User</a>
         </div>  
       </div> 

@@ -47,7 +47,8 @@
  "https://www.facebook.com/rupeeboss",
  "https://www.linkedin.com/company/rupeeboss.com",
  "https://plus.google.com/113191059621763008376",
- "https://twitter.com/rupeeboss"
+ "https://twitter.com/rupeeboss",
+ "https://www.instagram.com/rupeeboss/"
  ]
  }
 

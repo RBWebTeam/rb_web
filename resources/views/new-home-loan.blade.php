@@ -258,7 +258,7 @@
 							<a class="btn btn-primary btn-outline with-arrow top-mrg product_name product_ID" id="btn_refresh_co1" data-toggle="modal" data-target="#login_process">Get Best Quotes<i class="icon-arrow-right"></i></a>
 						<?php } ?> -->
 
-						  <a class="btn btn-primary btn-outline with-arrow top-mrg product_name product_ID" id="btn_refresh_co1" >Get Best Quotes<i class="icon-arrow-right"></i></a> 
+						  <a class="btn btn-primary btn-outline with-arrow top-mrg product_name product_ID"   >Get Best Quotes<i class="icon-arrow-right"></i></a> 
 						 
   </div> 
   <div class="iframeloading" style= "display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
@@ -299,10 +299,20 @@
 
         <div> 
           
-         <a id="apply_new" type="button" class="btn btn-info disblk" title="Experience New Digital Era In Loans">Apply Digitally</a>
+         
+
+
+           @if(Session::get('is_login'))
+           <a   type="button" class="btn btn-info disblk apply_new" title="Experience New Digital Era In Loans">Apply Digitally</a>
+           @else
+           <a   data-toggle="modal" data-target="#login_process" class="btn btn-info disblk apply_digitally " title="Experience New Digital Era In Loans">Apply Digitally</a>
+           @endif    
+ 
+
+
          <button id="eligibility" class="btn btn-info disblk" title="See Bankwise Eligibility And Apply Amongst Best Bank">Check Bankwise Eligibility</button>
          <button type="button" class="btn btn-info block"  id="call_rm" name="call_rm" data-toggle="modal" data-target="#Modal" title="Call For RM(Single Day Process)">Call Manager</button>
-         
+         <div id="log_digital_text" style=" color: red"></div>
         </div>
       <!-- </form> -->
     </div>  
@@ -323,6 +333,10 @@
 @include('layout.script')
 
 <script type="text/javascript">
+
+var getUrl=0;
+
+
 $(document).ready(function(){
     $('#co_applicant_DI').change(function(){
 
@@ -399,16 +413,20 @@ $(".product_ID").click(function(e){
                              $('#processfee').val(processingfee);
                            var Bank_id = msg.Bank_Id;
                              $('#bank').val(Bank_id);
-                           var url = "apply-lead-online?qoutid="+quote+"&BankId="+Bank_id+"&product=12&processing_fee="+processingfee+"&loan_eligible="+loan_eligible+"&roi_type="+roi+"";
+                           var url = "apply-lead-online?qoutid="+quote+"&is_liza=1&BankId="+Bank_id+"&product=12&processing_fee="+processingfee+"&loan_eligible="+loan_eligible+"&roi_type="+roi+"";
                              $("#apply_new").attr("href", url+'&is_liza=1');
                              $('#mi_ID').show();
                              $('#err').hide();
                             
                              // $(window).scrollTop($('#form_ID').offset().top-20);
+
+                               
+                                 getUrl=url;
+
                          }else{
 
                                 $('#err').show();
-                                $('#apply_new').hide();
+                              //  $('#apply_new').hide();
                                 $('#mi_ID').hide();
                                 $("#form_ID").empty();
                                 
@@ -433,8 +451,26 @@ else{
 
   });
 
+
+// $('.log_digital').click(function(){
+//   $('#log_digital_text').empty().append(" please login and get quotes.");
+// });
+
+
+
 });
 
+
+$(document).on('click','.apply_new',function(e){
+     if(getUrl!=0 || getUrl!=''){
+         $(".iframeloading").show();
+          location.href =getUrl;
+     }else{
+       $('#log_digital_text').empty().append("please  show quotes.");
+      
+     }
+     
+});
  
 
 </script>

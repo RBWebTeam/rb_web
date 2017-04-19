@@ -13,7 +13,7 @@
 
             <div class="col-md-12">
 			<center><div class="type-cover1"><span>ENTER AMOUNT</span></div></center>
-			<input type="text" name="amount" id="amount" class="center-dv input-typ" placeholder="5,00,000" maxlength="10"
+			<input type="text" name="amount" id="amount" class="center-dv input-typ"  maxlength="10"
 			onkeypress="return isNumberKey(event)"  required/>
 			</div>
 			<hr>
@@ -70,11 +70,11 @@
 			</div>
 		
 		</form>
-
+          <div class="col-md-12 pad1">
 		<form name="express_loan_verify_form" id="express_loan_verify_form" style="display:none" method="POST">
 						       {{ csrf_field() }}
 						   <h3>Enter your verification code sent on your number</h3>
-						   <input type="text" name="verify_otp" id="verify_otp1" class="form-control" onkeypress="return fnAllowNumeric(event)" required maxlength="6" placeholder="Enter OTP Code">
+						   <input type="text" name="verify_otp" id="verify_otp1" class="form-control input-typ mrg-aut" onkeypress="return fnAllowNumeric(event)" required maxlength="6" placeholder="Enter OTP Code">
 						   <hr class="hr-clr">
 
 						   <a class="btn btn-primary btn-lg btn-view" id="express_loan_verify_otp">VERIFY OTP</a>
@@ -82,6 +82,7 @@
 						   <div id="wrong_otp_value" style="display: none;color: red;">Wrong Otp !!!</div>
 						   <div id="waiting_div_otp" style="display: none;color: red;">Please wait ...</div>
 						   </form>
+				</div>
 		</div>
 
 		
@@ -324,7 +325,7 @@
 					</svg>
 				</span>
 				<span class="input_exp input--nao">
-					<input class="input__field input__field--nao" type="text" id="middle_name" name="middle_name" required />
+					<input class="input__field input__field--nao" type="text" id="middle_name" name="middle_name"/>
 					<label class="input__label input__label--nao" for="middle_name">
 						<span class="input__label-content input__label-content--nao">Middle Name </span>
 					</label>
@@ -423,7 +424,7 @@
 					</svg>
 				</span>
 				<span class="input_exp input--nao">
-					<input class="input__field input__field--nao" type="tel" id="residence_landline" name="residence_landline" maxlength="10" pattern="[789][0-9]{9}" onkeypress="return isNumberKey(event)" required  />
+					<input class="input__field input__field--nao" type="tel" id="residence_landline" name="residence_landline" maxlength="10" pattern="[789][0-9]{9}" onkeypress="return isNumberKey(event)" />
 					<label class="input__label input__label--nao" for="residence_landline">
 						<span class="input__label-content input__label-content--nao">Residence Landline </span>
 					</label>
@@ -451,7 +452,7 @@
 					</svg>
 				</span>
 				<span class="input_exp input--nao">
-					<input class="input__field input__field--nao" type="text" id="address_line2" name="address_line2" required/>
+					<input class="input__field input__field--nao" type="text" id="address_line2" name="address_line2" />
 					<label class="input__label input__label--nao" for="address_line2">
 						<span class="input__label-content input__label-content--nao">Address Line 2</span>
 					</label>
@@ -460,7 +461,7 @@
 					</svg>
 				</span>
 				<span class="input_exp input--nao">
-					<input class="input__field input__field--nao" type="text" id="address_line3" name="address_line3" required/>
+					<input class="input__field input__field--nao" type="text" id="address_line3" name="address_line3" />
 					<label class="input__label input__label--nao" for="address_line3">
 						<span class="input__label-content input__label-content--nao">Address Line 3</span>
 					</label>
@@ -495,7 +496,7 @@
 						<path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
 					</svg>
 				</span>
-				<span class="input_exp input--nao">
+				<!-- <span class="input_exp input--nao">
 					<input class="input__field input__field--nao" type="text" id="net_profit_applicant"
 					name="net_profit_applicant"  onkeypress="return isNumberKey(event)" required />
 					<label class="input__label input__label--nao" for="net_profit_applicant">
@@ -504,7 +505,7 @@
 					<svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
 						<path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
 					</svg>
-				</span>
+				</span> --->
 
 			</section>
 			
@@ -562,7 +563,7 @@
 					</svg>
 				</span>
 				<span class="input_exp input--nao">
-					<input class="input__field input__field--nao" type="text" id="ofc_add2" name="ofc_add2" required />
+					<input class="input__field input__field--nao" type="text" id="ofc_add2" name="ofc_add2"/>
 					<label class="input__label input__label--nao" for="ofc_add1">
 						<span class="input__label-content input__label-content--nao">Office Address Line 2</span>
 					</label>
@@ -571,7 +572,7 @@
 					</svg>
 				</span>
 				<span class="input_exp input--nao">
-					<input class="input__field input__field--nao" type="text" id="ofc_add3" name="ofc_add3" required />
+					<input class="input__field input__field--nao" type="text" id="ofc_add3" name="ofc_add3"/>
 					<label class="input__label input__label--nao" for="ofc_add3">
 						<span class="input__label-content input__label-content--nao">Office Address Line 3</span>
 					</label>
@@ -642,7 +643,7 @@
 					</svg>
 				</span>
 				<span class="input_exp input--nao">
-					<input class="input__field input__field--nao" type="text" id="middle_name_co_app" name="middle_name_co_app" required />
+					<input class="input__field input__field--nao" type="text" id="middle_name_co_app" name="middle_name_co_app"/>
 					<label class="input__label input__label--nao" for="middle_name_co_app">
 						<span class="input__label-content input__label-content--nao">Middle Name</span>
 					</label>
@@ -736,7 +737,7 @@
 					</svg>
 				</span>
 				<span class="input_exp input--nao">
-					<input class="input__field input__field--nao" type="tel" id="residence_co_app" name="residence_co_app" maxlength="10" onkeypress="return isNumberKey(event)""  required/>
+					<input class="input__field input__field--nao" type="tel" id="residence_co_app" name="residence_co_app" maxlength="10" onkeypress="return isNumberKey(event)""/>
 					<label class="input__label input__label--nao" for="residence_co_app">
 						<span class="input__label-content input__label-content--nao">Residence Landline</span>
 					</label>
@@ -765,7 +766,7 @@
 					</svg>
 				</span>
 				<span class="input_exp input--nao">
-					<input class="input__field input__field--nao" type="text" id="address2_co_app" name="address2_co_app" required />
+					<input class="input__field input__field--nao" type="text" id="address2_co_app" name="address2_co_app"/>
 					<label class="input__label input__label--nao" for="address2_co_app">
 						<span class="input__label-content input__label-content--nao">Address Line 2</span>
 					</label>

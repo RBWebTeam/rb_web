@@ -39,6 +39,7 @@ class FormController extends CallApiController
     }
     public function p_loan_submit(Request $req){
         // print_r($req->all());exit();
+      Session::forget('quote_id');
         try{
         //call api to submit form data
             $inputquotes = $req->all();
@@ -73,9 +74,10 @@ class FormController extends CallApiController
             // $error=$result['error'];
             // if($http_result==1){                
                 $quote_data=$this::get_quotes($req);
-                // $save=new bank_quote_api_request();    
-                // $id=$save->save_liza($req);
-                // $data['quote_id']=$id;
+                $save=new bank_quote_api_request();    
+                $id=$save->save_liza($req);
+                Session::put('quote_id',$id);
+                $data['quote_id']=$id;
             // }else{
             //     $quote_data =$req['product_name'];
             //     return view("went-wrong");
@@ -115,8 +117,9 @@ class FormController extends CallApiController
                $LoanTenure="";
                $processingfee="";
            }
+           
             $returnHTML = view('show-quotes')->with($data)->render();
-            return response()->json(array('success' => true,'Bank_Id'=>$Bank_Id,'loan_eligible'=>$loan_eligible,'roi'=>$roi,'LoanTenure'=>$LoanTenure,'processingfee'=>$processingfee,'html'=>$returnHTML));
+            return response()->json(array('success' => true,'quote_id'=>$id,'Bank_Id'=>$Bank_Id,'loan_eligible'=>$loan_eligible,'roi'=>$roi,'LoanTenure'=>$LoanTenure,'processingfee'=>$processingfee,'html'=>$returnHTML));
         
         }catch(\Exception $ee){
             return $ee;//view('went-wrong');
@@ -289,10 +292,16 @@ class FormController extends CallApiController
              $res_arr['brokerid']=Session::get('brokerid')?Session::get('brokerid'):'';
             $json_data=json_encode($res_arr);
            // print_r($req->all());exit();
+
+             $quote_id=Session::get('quote_id');
+              // $update=new bank_quote_api_request();    
+              // $update_quote=$update->update_liza_quote($quote_id);
+              
             
-            $save=new bank_quote_api_request();    
-            $id=$save->save_liza($req);
-            $data['quote_id']=$id;
+
+           // if(!$update_quote){
+           //  // return view('went-wrong');
+           // }
 
             $prod_id=$req['product_name'];
             if($prod_id==7 || $prod_id==9 || $prod_id==12){
@@ -321,7 +330,7 @@ class FormController extends CallApiController
             if($http_result==1){
                 return Response::json(array(
                                 'status'=>true,
-                                'url' =>$input['url'].'&is_liza=1&qoutid='.$data['quote_id'],
+                                'url' =>$input['url'].'&is_liza=1&qoutid='.$quote_id,
                                  
                             ));
                    

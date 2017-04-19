@@ -10,6 +10,7 @@ use App\registrationModel;
 use Validator;
 use Redirect;
 use URL;
+use App\bank_quote_api_request;
 class ProfileController extends CallApiController
 {
     function my_profile(Request $req){
@@ -255,8 +256,11 @@ public function  change_password(Request $req){
      $brokerid_session=Session::get('brokerid')?Session::get('brokerid'):0;
      $ref=Session::get('refid')?Session::get('refid'):0;
 
-    $update = DB::table('bank_quote_api_request')->where('ID', $quote)->where('Email', $email)->update(array('bank_id' => $bank,'roi_type'=>$roi_type,'loan_eligible'=>$loan_eligible,'processing_fee'=>$processing_fee));
-
+    //$update = DB::table('bank_quote_api_request')->where('ID', $quote)->where('Email', $email)->update(array('bank_id' => $bank,'roi_type'=>$roi_type,'loan_eligible'=>$loan_eligible,'processing_fee'=>$processing_fee));
+    $quote_id=Session::get('quote_id');
+    $update=new bank_quote_api_request();    
+    $update_quote=$update->update_liza_quote($quote_id);
+    
     if(isset($req['is_liza'])){
 
       if ($product == '9') {

@@ -28,11 +28,11 @@
     <div class="col-md-4">
     <p><input type="radio" name="is_loan_distributor" onclick="showHidden('tribe_partner_div',1)" value="true" /> Yes&nbsp;&nbsp;
      <input type="radio" name="is_loan_distributor" onclick="showHidden('tribe_partner_div',0)" value="false" checked /> No</p></div>
-  <div  id="tribe_partner_div" style="display: none;">
-    <div class="col-md-6"><p>partnerID*</p></div>
-    <div class="col-md-6"><input type="text" name="partner_id"  class="form-control form-group" required /></div>
-    <div class="col-md-6"><p>Agent Name*</p></div>
-    <div class="col-md-6"><input type="text" name="agent_name"  class="form-control form-group" required /></div>
+  <div  id="tribe_partner_div" class="col-md-12" style="display: none;">
+    <div class="col-md-3"><p>partnerID*</p></div>
+    <div class="col-md-8 form-padding"><input type="text" name="partner_id"  class="form-control form-group" required /></div>
+    <div class="col-md-3"><p>Agent Name*</p></div>
+    <div class="col-md-8 form-padding"><input type="text" name="agent_name"  class="form-control form-group" required /></div>
   </div>
   </div>
 
@@ -51,11 +51,14 @@
     <div class="col-md-8 form-padding">
     <input type="email" name="owner_email" id="owner_email" ng-model="owner_email" class="form-control form-group" required />
 	
-    <p ng-show="tribe_loan_form.owner_email.$error.email" class="error">Invalid Email address</p>
-     <a class="btn btn-primary btn-outline with-arrow " onclick="go_to_next('main1')">Next<i class="icon-arrow-right"></i></a>
+    
 	
     </div>
-    
+	<div class="col-md-3"></div>
+	<div class="col-md-8 pad-no">
+    <p ng-show="tribe_loan_form.owner_email.$error.email" class="error flt-lft">Invalid Email address</p>
+     <a class="btn btn-primary btn-outline with-arrow " onclick="go_to_next('main1')">Next<i class="icon-arrow-right"></i></a>
+	 </div>
 
   </div>
 
@@ -162,10 +165,11 @@
       <option value="{{$value}}"><?php echo $key;?></option>
       @endforeach
     </select>
-    <a class="btn btn-primary btn-outline with-arrow " onclick="go_to_next('main3')">Next<i class="icon-arrow-right"></i></a>
-    <a class="btn btn-primary btn-outline with-arrow" onclick="go_back('main1')">Back<i class="icon-arrow-right"></i></a>
-    </div>
     
+    </div>
+    <div class="col-md-3"></div>
+	<div class="col-md-8 pad-no"><a class="btn btn-primary btn-outline with-arrow " onclick="go_to_next('main3')">Next<i class="icon-arrow-right"></i></a>
+    <a class="btn btn-primary btn-outline with-arrow" onclick="go_back('main1')">Back<i class="icon-arrow-right"></i></a></div>
     </div>
     <div id="main3" class="tab-pane fade">
       <h3 class="mrg-top">Business Details</h3>
@@ -318,9 +322,11 @@
     <div class="col-md-3"><span>How did you Know About Us?*</span></div>
     <div class="col-md-8 form-padding">
     <input type="text" name="reached_us_via" id="reached_us_via" class="form-control form-group" />
-    <a class="btn btn-primary btn-outline with-arrow" onclick="go_to_next('main5')">Next<i class="icon-arrow-right"></i></a>
-    <a class="btn btn-primary btn-outline with-arrow " onclick="go_back('main2')">Back<i class="icon-arrow-right"></i></a>
+    
     </div>
+	<div class="col-md-3"></div>
+	<div class="col-md-8 pad-no"><a class="btn btn-primary btn-outline with-arrow" onclick="go_to_next('main5')">Next<i class="icon-arrow-right"></i></a>
+    <a class="btn btn-primary btn-outline with-arrow " onclick="go_back('main2')">Back<i class="icon-arrow-right"></i></a></div>
     </div>
     
     <div id="main5" class="tab-pane fade">
@@ -389,10 +395,7 @@
               <a class="btn btn-primary btn-outline with-arrow pull-right" id="get_doc_1" >Show Document<i class="icon-arrow-right"></i></a>
               <a class="btn btn-primary btn-outline with-arrow pull-right" id="del_doc_1">Delete Document<i class="icon-arrow-right"></i></a>
           </div>
-           <div style="display: none;" id="after_upload_div_1">
-              <a class="btn btn-primary btn-outline with-arrow pull-right" id="get_doc_1" >Show Document<i class="icon-arrow-right"></i></a>
-              <a class="btn btn-primary btn-outline with-arrow pull-right" id="del_doc_1">Delete Document<i class="icon-arrow-right"></i></a>
-          </div>
+         
         </div>
         
         <div class="col-md-4">Aadhaar</div>
@@ -560,13 +563,20 @@
   @include('layout.footer')
   @include('layout.script')
  <!-- modal for bank statement -->
+
 <div id="tribe_bank_statement_form" class="modal fade" role="dialog">
- <form id="bank_statement_form" name="bank_statement_form" enctype="multipart/form-data" method="POST" >
+ <div class="modal-dialog">
+ <div class="modal-content" style="float:left;">
+ <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">×</button>
+         <h4 class="modal-title">Upload Bank Document</h4>
+      </div>
+ <form id="bank_statement_form" class="pad1" name="bank_statement_form" enctype="multipart/form-data" method="POST" >
     {!! csrf_field() !!}
     <input type="hidden" name="loan_id" class="loan_id">
     <input type="hidden" name="transaction_id" class="transaction_id">
     
-        <div class="col-md-3">UPLOAD COMPANY BANK STATEMENTS</div>
+        <div class="col-md-3">Institue Name</div>
         <div class="col-md-8 form-padding sec">
          <select class="drop-arr" name="institution"  required>
            <option disabled selected>Select</option>
@@ -609,6 +619,8 @@
         </div>
         </div>
     </form>
+	</div>
+	</div>
 </div>
 <!-- end modal -->
 
@@ -666,7 +678,7 @@ function go_to_next(next){
       $( "#nav"+nav_number[1] ).trigger( "click" );
       window.scrollTo(0,0);
     }else{
-      //return false;
+      return false;
     }
 }
  function go_back(next){
@@ -677,9 +689,9 @@ function go_to_next(next){
  }
 $('.go_to_next').click(function(){
 if($('#tribe_loan_form').valid()){
-     // console.log("valid_tab");
+      //console.log("valid_tab");
    }else{
-   // return false;
+    return false;
    }
 });
 $("#upload_doc_submit").click(function(){
@@ -801,11 +813,7 @@ function tribe_doc_upload(id){
     $.ajax({
           url:form_url ,
           data:"_token={!! csrf_token() !!}",
-          dataType:'json',
-          async:false,
           type:'POST',
-          processData: false,
-          contentType: false,
           success:function(response){
            // console.log(response);
            if(response.status)
@@ -845,12 +853,12 @@ function tribe_doc_upload(id){
      $.ajax({  
                type: "POST",  
                url: "{{URL::to('tribe-final-submission')}}",
-               data : $('#tribe_loan_form').serialize(),
+               data :"_token={!! csrf_token() !!}",
                success: function(msg){
 
                 if(msg.status){
                    $('#main7').hide();
-                  $('#thank_you_div').show();
+                   window.location.href="{{URL::to('thank-you')}}";
 
                   }else{
                     console.log("error "+msg);

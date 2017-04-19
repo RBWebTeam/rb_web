@@ -50,12 +50,13 @@ class bank_quote_api_request extends Model
     
     public function save_liza(Request $request)
     {
-             $fillable = ['property_cost','loan_tenure','loan_amount','gender','income','obligation','dob','have_co_applicant','CoApplicantIncome','co_applicant_obligation','Turnover','profit_after_tax','depreciation','remuneration','co_applicant_turnover','co_applicant_profit_after_tax','co_applicant_depreciation','co_applicant_remuneration','emp_detail_id','product_id','created_at', 'updated_at'];
+             $fillable = ['status','property_cost','loan_tenure','loan_amount','gender','income','obligation','dob','have_co_applicant','CoApplicantIncome','co_applicant_obligation','Turnover','profit_after_tax','depreciation','remuneration','co_applicant_turnover','co_applicant_profit_after_tax','co_applicant_depreciation','co_applicant_remuneration','emp_detail_id','product_id','created_at', 'updated_at'];
         $name=Session::get('name')?Session::get('name'):"";
         //print_r($request->all());exit();
        // unset($request['_token']);
         $table = new bank_quote_api_request();
         //print_r($request->BrokerId);exit();   
+        $table->status ='pending';
         $table->PropertyID = $request->PropertyID;
         $table->PropertyCost = $request->property_cost;
          $table->LoanTenure = $request->loan_tenure;
@@ -207,4 +208,13 @@ class bank_quote_api_request extends Model
     //      $table->brokerID    = $request->brokerID   ;
     // }
 
+
+
+
+public function update_liza_quote($quote_id){
+    $update_quote=DB::table('bank_quote_api_request')
+            ->where('id', $quote_id)
+            ->update(['Contact' => Session::get('contact'), 'ApplicantNme' => Session::get('name'),'Email' => Session::get('email')]);
+            return $update_quote;
+}
 }

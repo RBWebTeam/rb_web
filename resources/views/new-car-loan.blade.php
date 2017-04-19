@@ -12,6 +12,10 @@
 <form name="car_loan_process_form" id="car_loan_process_form" action="{{URL::to('loan-submit')}}" method="POST" >
 <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
 <input type="hidden" id="product" name="product_name" value="4">
+ <input type="hidden" name="empid" class="empid" value=" <?php echo Session::get('empid')?Session::get('empid'):'';?>">
+          <input type="hidden" name="brokerid" class="brokerid" value="<?php echo Session::get('brokerid')?Session::get('brokerid'):'';?>">
+          <input type="hidden" name="source" class="source" value="<?php echo Session::get('source')?Session::get('source'):'';?>"> 
+          <input type="hidden" name="refapp" class="refapp" value="<?php echo Session::get('refid')?Session::get('refid'):'';?>"> 
   <div class="panel-group" id="accordion">
     <div class="panel panel-default">
       <div class="panel-heading">
@@ -30,7 +34,7 @@
 <center><div class="type-cover"><span>Car Type</span></div></center>
      
             <div class="col-xs-12 col-md-4 form-padding">
-     <input type="text" class="form-input-new form-control" id="car_cost" name="car_cost" placeholder="On Road Price" required onkeypress="return fnAllowNumeric(event)"  maxlength="10">
+     <input type="text" class="form-input-new form-control" id="car_cost" name="car_cost" placeholder="On Road Price" required onkeypress="return fnAllowNumeric(event)" minlength="6"  maxlength="9">
   </div>
   <div class="col-xs-12 col-md-4 form-padding">
      <input type="text" class="form-input-new form-control" name="loan_amount" id="loan_amount" placeholder="Loan Required" required onkeypress="return fnAllowNumeric(event)"  value="">

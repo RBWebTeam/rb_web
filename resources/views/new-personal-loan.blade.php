@@ -24,6 +24,7 @@
       <input type="hidden" name="empid" class="empid" value=" <?php echo Session::get('empid')?Session::get('empid'):'';?>">
           <input type="hidden" name="brokerid" class="brokerid" value="<?php echo Session::get('brokerid')?Session::get('brokerid'):'';?>">
           <input type="hidden" name="source" class="source" value="<?php echo Session::get('source')?Session::get('source'):'';?>"> 
+          <input type="hidden" name="refapp" class="refapp" value="<?php echo Session::get('refid')?Session::get('refid'):'';?>"> 
    <!--  <div id ="test123" class="col-md-8"></div> -->
   <div class="col-md-8"  id="mod">
  <!--  <h3 class="main-header">Genral Information</h3> -->
@@ -49,7 +50,7 @@
      <input type="text" name="custom_id" id="custom_id" class="form-input-new form-control" placeholder="Existing Custom Id if Any" onkeypress="return isNumberKey(event)" >
   </div> -->
   <div class="col-xs-12 col-md-6 form-padding">
-     <input type="text" name="loan_amount" id="loan_amount" class="form-input-new form-control" placeholder="Loan Required" onkeypress="return isNumberKey(event)" maxlength="10" required="">
+     <input type="text" name="loan_amount" id="loan_amount" class="form-input-new form-control" placeholder="Loan Required" onkeypress="return isNumberKey(event)" minlength="6" maxlength="9" required="">
   </div>
   <div class="col-xs-12 col-md-6 form-padding">
      <input type="text" id="city_name" name="city_name" class="form-input-new form-control search_city" placeholder="City of Location" required="">
@@ -74,7 +75,7 @@
                 
   
      <div class="col-xs-12 col-md-6 form-padding">
-     <input type="text" name="customer_name" id="customer_name" class="form-input-new form-control" placeholder="Applicant Name" onkeypress="return AllowAlphabet(event)" required="">
+     <input type="text" name="applicant_name" id="applicant_name" class="form-input-new form-control" placeholder="Applicant Name" onkeypress="return AllowAlphabet(event)" required="">
   </div>
   <div class="col-xs-12 col-md-6 form-padding">
      <input type="text" id="dob" name="dob" class="form-input-new form-control lastReporteddate1" placeholder="Date of Birth" required="">
@@ -179,15 +180,12 @@
    
   </div>
   <br>
-  </div>
-  </div>
-
-  <div id ="test123" class="col-md-8" ></div>
-  
-  
-@include('layout.footer')
+  <div id ="test123"></div>
+  @include('layout.footer')
 @include('layout.script')
-
+  </div>
+ 
+  </div>
 
 
 <script type="text/javascript">

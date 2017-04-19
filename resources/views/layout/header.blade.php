@@ -47,7 +47,8 @@
  "https://www.facebook.com/rupeeboss",
  "https://www.linkedin.com/company/rupeeboss.com",
  "https://plus.google.com/113191059621763008376",
- "https://twitter.com/rupeeboss"
+ "https://twitter.com/rupeeboss",
+ "https://www.instagram.com/rupeeboss/"
  ]
  }
 
@@ -94,7 +95,7 @@
                 <li class="hidden-xs"><a href="{{URL::to('contact-us')}}">Contact Us</a></li>
 				<li class="hidden-xs"><a href="#" data-toggle="modal" data-target="#emp_login">Employee Login </a></li>
 				<li class="hidden-xs"><a href="{{URL::to('rba-login')}}">RBA Login </a></li>
-
+                <li class="hidden-xs"><a href="{{URL::to('http://staging.rupeeboss.com/rblife-style/index.html')}}">RB Life Style</a></li>
 				<li class="hidden-lg"><a href="{{URL::to('magic-link')}}">Magic Link </a></li>
 				<li class="hidden-xs credit-score-btn"><a href="{{URL::to('credit-report')}}" class="btn btn-primary">My Credit Score</a></li>
 			<!-- 	<li><a href="{{URL::to('contact-us')}}">Media</a></li> -->

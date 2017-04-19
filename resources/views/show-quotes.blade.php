@@ -1,4 +1,4 @@
-<div id="fh5co-hero" class="fclass" style="display:block;">
+<div class="fclass" style="display:block;">
   <div class="container" >
   <div class="table-responsive">
 
@@ -35,7 +35,7 @@
   <hr>
     </div>
     
-  <div class="col-md-12 pad11">
+  <div class="col-md-12 pad11 pad-no">
     
     <div class="">
     <table width="100%" border="1" class="tbl pad1">
@@ -126,7 +126,7 @@
    <input type="hidden" name="product" class="product" value="{{$product}}">
 
     <input type="hidden" name="processingfee" class="processingfee" value="{{$q->processingfee }}">
-    <input type="hidden" name="url" class="url" value="{{URL::to('apply-lead-online')}}?&BankId={{$q->Bank_Id}}&product={{$prod}}&processing_fee={{$q->processingfee}}&loan_eligible={{$q->loan_eligible}}&roi_type={{$q->roi_type}}">
+    <input type="hidden" name="url" class="url" value="{{URL::to('apply-lead-online')}}?&BankId={{$q->Bank_Id}}&quote_id={{$quote_id}}&product={{$prod}}&processing_fee={{$q->processingfee}}&loan_eligible={{$q->loan_eligible}}&roi_type={{$q->roi_type}}">
 
     <td >{{$product}}</td>
     <td >{{$q->roi }}%</td>
@@ -137,7 +137,7 @@
 
     <tr>
     <td><i class="icon-thumbs-up"></i></td>
-    <td class="upper"><!-- <a href="#">Know More</a>  --><button type="button" data-toggle="collapse" data-target="#{{$key}}">Know More</button></td>
+    <td class="upper"><!-- <a href="#">Know More</a>  --><button type="button" data-toggle="collapse" data-target="#{{$key}}"><span class="hidden-xs">Know</span> More</button></td>
     <td>Processing Fee - INR {{$q->processingfee}} + ST</td>
     <td>Guarantor Required - {{$q->guarantor_required}}</td>
     <td>Instant Approval - {{$q->eApproval}}</td>
@@ -379,6 +379,7 @@ var last_segment = url_array[url_array.length-1];  // Get the last part of the a
                 data :$(id+', #quote_form').serialize(),
              success: function(msg){
                 if(msg.status==true){
+                 $("#apply_new").attr("href", msg.url);
                    window.location.href=(msg.url);
                 }else{
                    console.log(msg); 

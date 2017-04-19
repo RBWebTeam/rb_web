@@ -15,6 +15,7 @@
 <input type="hidden" name="empid" class="empid" value=" <?php echo Session::get('empid')?Session::get('empid'):'';?>">
           <input type="hidden" name="brokerid" class="brokerid" value="<?php echo Session::get('brokerid')?Session::get('brokerid'):'';?>">
           <input type="hidden" name="source" class="source" value="<?php echo Session::get('source')?Session::get('source'):'';?>"> 
+          <input type="hidden" name="refapp" class="refapp" value="<?php echo Session::get('refid')?Session::get('refid'):'';?>"> 
 	<div class="panel-group" id="accordion">
     <div class="panel panel-default">
       <div class="panel-heading">
@@ -45,7 +46,7 @@
 						</div> 
 						
 						<div class="col-xs-12 col-md-4 form-padding">
-     <input type="text" class="form-input-new form-control" id="property_cost" name="property_cost" placeholder="Property Cost" required onkeypress="return fnAllowNumeric(event)"  maxlength="10">
+     <input type="text" class="form-input-new form-control" id="property_cost" name="property_cost" placeholder="Property Cost" required onkeypress="return fnAllowNumeric(event)" minlength="6"  maxlength="9">
 	</div>
 	<div class="col-xs-12 col-md-4 form-padding">
      <input type="text" class="form-input-new form-control" name="loan_amount" id="loan_amount" placeholder="Loan Required" required onkeypress="return fnAllowNumeric(event)"  value="">
@@ -399,7 +400,7 @@ $(".product_ID").click(function(e){
              success: function(msg){ 
                             $(".iframeloading").hide();                  
                              if(msg.success ==true){
-                              var quote=msg.quote;
+                              var quote=msg.quote_id;
                             var loan_eligible = msg.loan_eligible;
                              if (loan_eligible>0) {
                              $("#form_ID").empty().append(msg.html);
@@ -412,10 +413,11 @@ $(".product_ID").click(function(e){
                              $('#processfee').val(processingfee);
                            var Bank_id = msg.Bank_Id;
                              $('#bank').val(Bank_id);
-                           var url = "apply-lead-online?qoutid="+quote+"&BankId="+Bank_id+"&product=12&processing_fee="+processingfee+"&loan_eligible="+loan_eligible+"&roi_type="+roi+"";
-                            // $("#apply_new").attr("href", url);
+                           var url = "apply-lead-online?qoutid="+quote+"&is_liza=1&BankId="+Bank_id+"&product=12&processing_fee="+processingfee+"&loan_eligible="+loan_eligible+"&roi_type="+roi+"";
+                             $("#apply_new").attr("href", url+'&is_liza=1');
                              $('#mi_ID').show();
                              $('#err').hide();
+                            
                              // $(window).scrollTop($('#form_ID').offset().top-20);
 
                                

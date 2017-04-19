@@ -14,8 +14,8 @@
     <a href="#" ng-click="active='BUSINESS DETAIL'" id="nav3" class="go_to_next"><b>BUSINESS DETAIL</a>
     <a href="#" ng-click="active='ONLINE ID'" id="nav5" class="go_to_next"><b>ONLINE ID</a>
     <a href="#" ng-click="active='REFERENCE'" id="nav6" class="go_to_next"><b>REFERENCE</a>
-    <a href="#"  id="nav4" ng-click="active='DOCUMENT'" class="go_to_next"><b>DOCUMENT</a>
-    <a href="#"  id="nav7" ng-click="active='BANK STATEMENT'" class="go_to_next"><b>BANK STATEMENT</a>
+    <a href="#"  id="nav4" ng-click="isFreeze('DOCUMENT')" class="go_to_next"><b>DOCUMENT</a>
+    <a href="#"  id="nav7" ng-click="isFreeze('BANK STATEMENT')" class="go_to_next"><b>BANK STATEMENT</a>
 
 
     </nav>
@@ -57,7 +57,7 @@
     <div class="col-md-8">
     <input type="email" name="owner_email" id="owner_email" ng-model="owner_email" class="form-control form-group" required />
     <p ng-show="tribe_loan_form.owner_email.$error.email" class="error">Invalid Email address</p>
-     <a class="btn btn-primary btn-outline with-arrow " onclick="go_to_next('main1')">Next<i class="icon-arrow-right"></i></a>
+     <a class="btn btn-primary btn-outline with-arrow " ng-click="active='LOAN DETAIL'">Next<i class="icon-arrow-right"></i></a>
     </div>
     
 
@@ -97,11 +97,12 @@
       <option value="{{$value}}"><?php echo $key;?></option>
       @endforeach
     </select>
-    <a class="btn btn-primary btn-outline with-arrow " onclick="go_to_next('main2')">Next<i class="icon-arrow-right"></i></a>
-    <a class="btn btn-primary btn-outline with-arrow"  onclick="go_back('main0')">Back<i class="icon-arrow-right"></i></a>
+    <a class="btn btn-primary btn-outline with-arrow"  ng-click="active='PERSONAL DETAIL'">Next<i class="icon-arrow-right"></i></a>
+    <a class="btn btn-primary btn-outline with-arrow " ng-click="active='BASIC DETAIL'">Back<i class="icon-arrow-right"></i></a>
+    
     </div>
     </div>
-    <div id="loan_detail" ng-show="active=='PERSONAL DETAIL'">
+    <div id="personal_detail" ng-show="active=='PERSONAL DETAIL'">
       <h3 class="mrg-top">Personal Details</h3>
   <hr>
     <div class="col-md-3"><p>First Name*</p></div>
@@ -164,12 +165,13 @@
       <option value="{{$value}}"><?php echo $key;?></option>
       @endforeach
     </select>
-    <a class="btn btn-primary btn-outline with-arrow " onclick="go_to_next('main3')">Next<i class="icon-arrow-right"></i></a>
-    <a class="btn btn-primary btn-outline with-arrow" onclick="go_back('main1')">Back<i class="icon-arrow-right"></i></a>
+   
+    <a class="btn btn-primary btn-outline with-arrow" ng-click="active='LOAN DETAIL'">Back<i class="icon-arrow-right"></i></a>
+     <a class="btn btn-primary btn-outline with-arrow " ng-click="active='BUSINESS DETAIL'" >Next<i class="icon-arrow-right"></i></a>
     </div>
     
     </div>
-    <div id="loan_detail" ng-show="active=='BUSINESS DETAIL'">
+    <div id="business_detail" ng-show="active=='BUSINESS DETAIL'">
        <h3 class="mrg-top">Business Details</h3>
   <hr>
     <div class="col-md-3"><p>Employees Count*</p></div>
@@ -320,11 +322,12 @@
     <div class="col-md-3"><p>How did you Know About Us?*</p></div>
     <div class="col-md-8">
     <input type="text" name="reached_us_via" id="reached_us_via" class="form-control form-group" />
-    <a class="btn btn-primary btn-outline with-arrow" onclick="go_to_next('main5')">Next<i class="icon-arrow-right"></i></a>
-    <a class="btn btn-primary btn-outline with-arrow " onclick="go_back('main2')">Back<i class="icon-arrow-right"></i></a>
+     <a class="btn btn-primary btn-outline with-arrow " ng-click="active='PERSONAL DETAIL'">Back<i class="icon-arrow-right"></i></a>
+    <a class="btn btn-primary btn-outline with-arrow" ng-click="active='ONLINE ID'">Next<i class="icon-arrow-right"></i></a>
+   
     </div>
     </div>
-    <div id="loan_detail" ng-show="active=='ONLINE ID'">
+    <div id="online_id_detail" ng-show="active=='ONLINE ID'">
       <p>Providing Online Credentials of Platforms/Marketplaces/Software that you make use of in your business will help us understand your business better and make the most appropriate 
     recommendations for Loans. This can also increase your chances of securing Loans at a lower interest rate. As a Business User, you gain free and complete access to all the insights that Tribe draws using your online credentials.</p>
     <ul>
@@ -343,10 +346,10 @@
      @endforeach
       </ul>
     
-    <a class="btn btn-primary btn-outline with-arrow" onclick="go_to_next('main6')">Next<i class="icon-arrow-right"></i></a>
-    <a class="btn btn-primary btn-outline with-arrow" onclick="go_back('main3')">Back<i class="icon-arrow-right"></i></a>
+    <a class="btn btn-primary btn-outline with-arrow" ng-show="active=='BUSINESS DETAIL'">Back<i class="icon-arrow-right"></i></a>
+    <a class="btn btn-primary btn-outline with-arrow" ng-show="active=='REFERENCE'">Next<i class="icon-arrow-right"></i></a>
     </div>
-    <div id="loan_detail" ng-show="active=='REFERENCE'">
+    <div id="refrence_detail" ng-show="active=='REFERENCE'">
       <div class="col-md-12">
     <h3 class="mrg-top">Reference</h3><hr>
   </div>
@@ -371,12 +374,12 @@
     <input type="email" name="ref_email" id="ref_email" class="form-control form-group"/></div>
     <p ng-show="tribe_loan_form.ref_email.$error.email" class="error">Invalid Email address</p>
    <div class="col-md-3">
-    <a class="btn btn-primary btn-outline with-arrow" onclick="go_back('main5')">Back<i class="icon-arrow-right"></i></a>
+    <a class="btn btn-primary btn-outline with-arrow" ng-show="active=='ONLINE ID'">Back<i class="icon-arrow-right"></i></a>
     </div>
      <div class="col-md-8"> <button class="btn btn-primary btn-outline with-arrow pull-left" id="save_form_button" ng-click="freeze()">Save Form<i class="icon-arrow-right"></i></button></div>
    
     </div>
-    <div id="loan_detail" ng-show="active=='DOCUMENT'" ng-if="application_freezed==true">
+    <div id="document_upload_detail" ng-show="active=='DOCUMENT'" ng-if="application_freezed==true">
       <h3 class="mrg-top">KYC Identity Proof(Atleast one document is required)</h3>
       <hr>
         <div class="col-md-4">Pan</div>
@@ -557,7 +560,10 @@
           $scope.freeze=function(){
              $scope.application_freezed=true;
           }
-         
+         $scope.isFreeze=function(showdiv){
+            if($scope.application_freezed==true)
+              $scope.active=showdiv;
+            }
          });
       </script>
 <style type="text/css">

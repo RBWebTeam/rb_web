@@ -78,6 +78,7 @@ class FormController extends CallApiController
                 $id=$save->save_liza($req);
                 Session::put('quote_id',$id);
                 $data['quote_id']=$id;
+                // print_r( $data);exit();
             // }else{
             //     $quote_data =$req['product_name'];
             //     return view("went-wrong");

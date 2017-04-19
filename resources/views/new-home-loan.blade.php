@@ -386,7 +386,7 @@ $(".product_ID").click(function(e){
              success: function(msg){ 
                             $(".iframeloading").hide();                  
                              if(msg.success ==true){
-                              var quote=msg.quote;
+                              var quote=msg.quote_id;
                             var loan_eligible = msg.loan_eligible;
                              if (loan_eligible>0) {
                              $("#form_ID").empty().append(msg.html);
@@ -400,7 +400,7 @@ $(".product_ID").click(function(e){
                            var Bank_id = msg.Bank_Id;
                              $('#bank').val(Bank_id);
                            var url = "apply-lead-online?qoutid="+quote+"&BankId="+Bank_id+"&product=12&processing_fee="+processingfee+"&loan_eligible="+loan_eligible+"&roi_type="+roi+"";
-                             $("#apply_new").attr("href", url);
+                             $("#apply_new").attr("href", url+'&is_liza=1');
                              $('#mi_ID').show();
                              $('#err').hide();
                             

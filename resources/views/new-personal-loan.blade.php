@@ -128,7 +128,7 @@
             <?php } ?> -->
 
 
-             <a class="btn btn-primary btn-outline with-arrow top-mrg product_name product_ID" id="btn_refresh_co1" >Get Best Quotes<i class="icon-arrow-right"></i></a> 
+             <a class="btn btn-primary btn-outline with-arrow top-mrg product_name product_ID"   >Get Best Quotes<i class="icon-arrow-right"></i></a> 
 
  
       </div>
@@ -165,10 +165,18 @@
          <br>
         <div class="col-md-12 pad-no"> 
           
-         <a id="apply_new" type="button" class="btn btn-info disblk" title="Experience New Digital Era In Loans">Apply Digitally</a>
+      <!--    <a id="apply_new" type="button" class="btn btn-info disblk" title="Experience New Digital Era In Loans">Apply Digitally</a> -->
+
+          @if(Session::get('is_login'))
+           <a   type="button" class="btn btn-info disblk apply_new" title="Experience New Digital Era In Loans">Apply Digitally</a>
+           @else
+           <a   data-toggle="modal" data-target="#login_process" class="btn btn-info disblk apply_digitally " title="Experience New Digital Era In Loans">Apply Digitally</a>
+           @endif    
+ 
+
          <button id="eligibility" class="btn btn-info disblk" title="See Bankwise Eligibility And Apply Amongst Best Bank">Check Bankwise Eligibility</button>
          <button type="button" class="btn btn-info block"  id="call_rm" name="call_rm" data-toggle="modal" data-target="#Modal" title="Call For RM(Single Day Process)">Call Manager</button>
-         
+         <div id="log_digital_text" style=" color: red"></div>
         </div>
        
        
@@ -246,6 +254,8 @@ $(document).ready(function(){
 
 
 <script type="text/javascript">
+var getUrl=0;
+
 $(".btn-primary").click(function(e){
    e.preventDefault();
   
@@ -286,12 +296,14 @@ $(".btn-primary").click(function(e){
                     $('#processfee').val(processingfee);
                     var Bank_id = msg.Bank_Id;
                     $('#bank').val(Bank_id);
-                     var url = "apply-lead-online?appid=0&qoutid="+quote+"&BankId="+Bank_id+"&product=9&processing_fee="+processingfee+"&loanamout="+loan_eligible+"&roi_type="+roi+"";
+                     var url = "apply-lead-online?appid=0&qoutid="+quote+"&is_liza=1&BankId="+Bank_id+"&product=9&processing_fee="+processingfee+"&loanamout="+loan_eligible+"&roi_type="+roi+"";
                      $("#apply_new").attr("href", url);
                       $('#err').hide();
                       $('#apply_new').show();
                       $('#mi_id').show();
-                       $(window).scrollTop($('#lowest').offset().top-50);
+                    //   $(window).scrollTop($('#lowest').offset().top-50);
+
+                         getUrl=url;
 
                    }else{
                     // alert("ok");
@@ -315,6 +327,18 @@ $(".btn-primary").click(function(e){
 
 });
 
+
+
+$(document).on('click','.apply_new',function(e){
+     if(getUrl!=0 || getUrl!=''){
+         $(".iframeloading").show();
+          location.href =getUrl;
+     }else{
+       $('#log_digital_text').empty().append("please  show quotes.");
+      
+     }
+     
+});
 
 
 </script>

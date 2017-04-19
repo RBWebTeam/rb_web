@@ -117,6 +117,7 @@ class FormController extends CallApiController
                $LoanTenure="";
                $processingfee="";
            }
+           
             $returnHTML = view('show-quotes')->with($data)->render();
             return response()->json(array('success' => true,'quote_id'=>$id,'Bank_Id'=>$Bank_Id,'loan_eligible'=>$loan_eligible,'roi'=>$roi,'LoanTenure'=>$LoanTenure,'processingfee'=>$processingfee,'html'=>$returnHTML));
         

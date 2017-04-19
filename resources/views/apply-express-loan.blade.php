@@ -13,7 +13,7 @@
 
             <div class="col-md-12">
 			<center><div class="type-cover1"><span>ENTER AMOUNT</span></div></center>
-			<input type="text" name="amount" id="amount" class="center-dv input-typ" placeholder="5,00,000" maxlength="10"
+			<input type="text" name="amount" id="amount" class="center-dv input-typ"  maxlength="10"
 			onkeypress="return isNumberKey(event)"  required/>
 			</div>
 			<hr>
@@ -70,11 +70,11 @@
 			</div>
 		
 		</form>
-
+          <div class="col-md-12 pad1">
 		<form name="express_loan_verify_form" id="express_loan_verify_form" style="display:none" method="POST">
 						       {{ csrf_field() }}
 						   <h3>Enter your verification code sent on your number</h3>
-						   <input type="text" name="verify_otp" id="verify_otp1" class="form-control" onkeypress="return fnAllowNumeric(event)" required maxlength="6" placeholder="Enter OTP Code">
+						   <input type="text" name="verify_otp" id="verify_otp1" class="form-control input-typ mrg-aut" onkeypress="return fnAllowNumeric(event)" required maxlength="6" placeholder="Enter OTP Code">
 						   <hr class="hr-clr">
 
 						   <a class="btn btn-primary btn-lg btn-view" id="express_loan_verify_otp">VERIFY OTP</a>
@@ -82,6 +82,7 @@
 						   <div id="wrong_otp_value" style="display: none;color: red;">Wrong Otp !!!</div>
 						   <div id="waiting_div_otp" style="display: none;color: red;">Please wait ...</div>
 						   </form>
+				</div>
 		</div>
 
 		

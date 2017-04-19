@@ -3620,6 +3620,7 @@ select.error, textarea.error, input.error {
 }
 .pos-ins {position: initial;}
 .brdr {border:1px solid #ddd;float: left;}
+.mrg-aut {margin:0 auto;}
 
 
 

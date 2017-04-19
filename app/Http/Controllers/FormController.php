@@ -293,14 +293,14 @@ class FormController extends CallApiController
            // print_r($req->all());exit();
 
              $quote_id=Session::get('quote_id');
-              $update=new bank_quote_api_request();    
-              $update_quote=$update->update_liza_quote($quote_id);
+              // $update=new bank_quote_api_request();    
+              // $update_quote=$update->update_liza_quote($quote_id);
               
             
 
-           if(!$update_quote){
-            // return view('went-wrong');
-           }
+           // if(!$update_quote){
+           //  // return view('went-wrong');
+           // }
 
             $prod_id=$req['product_name'];
             if($prod_id==7 || $prod_id==9 || $prod_id==12){

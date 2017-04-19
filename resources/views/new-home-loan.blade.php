@@ -403,6 +403,7 @@ $(".product_ID").click(function(e){
                              $("#apply_new").attr("href", url);
                              $('#mi_ID').show();
                              $('#err').hide();
+                            
                              // $(window).scrollTop($('#form_ID').offset().top-20);
                          }else{
 

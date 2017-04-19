@@ -13,7 +13,7 @@
     <div class="table-responsive">
 	<table width="100%" border="1" class="tbl">
     <tr style="background:#666; color:#fff; border-bottom:1px solid #999;">
-        <td width="9%" class="upper">Select</td>
+        <td width="9%" class="upper dis-non">Select</td>
         <td class="upper">Credit Card</td>
         <td width="16%" class="upper">Fee</td>
         <td width="16%" class="upper">Reward</td>
@@ -22,7 +22,7 @@
     </tr>
 
   <tr class="RBL-Card">
-       <td><input type="checkbox" name="cehckbox"/> <button style="display:none;" data-toggle="collapse" data-target="#0" aria-expanded="true">Details </button></td>
+       <td class="dis-non"><input type="checkbox" name="cehckbox"/> <button style="display:none;" data-toggle="collapse" data-target="#0" aria-expanded="true">Details </button></td>
         <td><img src="{{url('images/rbl-credit-card.jpg')}}" alt="RBL Titanium Delight Card" title="RBL Titanium Delight Card" width="150" height="96" style="margin:0 auto; margin-bottom:5px;">
         <span>RBL Titanium Delight Card</span>
         </td>
@@ -38,7 +38,7 @@
   </tr> -->
   <!-- card 1 End -->
   <tr class="RBL-Card">
-    <td><input type="checkbox" name="cehckbox"/> <button style="display:none;" data-toggle="collapse" data-target="#1" aria-expanded="true">Details </button></td>
+    <td class="dis-non"><input type="checkbox" name="cehckbox"/> <button style="display:none;" data-toggle="collapse" data-target="#1" aria-expanded="true">Details </button></td>
     <td><img src="{{url('images/rbl-credit-card_1.jpg')}}" alt="RBL Platinum Maxima Card" title="RBL Platinum Maxima Card" width="150" height="96" style="margin:0 auto; margin-bottom:5px;">
     <span>RBL Platinum Maxima Card</span>
     </td>
@@ -56,7 +56,7 @@
   
   
   <tr class="RBL-Card">
-    <td><input type="checkbox" name="cehckbox"/> <button style="display:none;" data-toggle="collapse" data-target="#2" aria-expanded="true">Details </button></td>
+    <td class="dis-non"><input type="checkbox" name="cehckbox"/> <button style="display:none;" data-toggle="collapse" data-target="#2" aria-expanded="true">Details </button></td>
     <td><img src="{{url('images/rbl-credit-card_1.jpg')}}" alt="RBL Platinum Delight Card" title="RBL Platinum Delight Card" width="150" height="96" style="margin:0 auto; margin-bottom:5px;">
     <span>RBL Platinum Delight Card</span>
     </td>
@@ -75,7 +75,7 @@
   
   
   <tr class="ICICI-Card">
-    <td><input type="checkbox" name="cehckbox"/> <button style="display:none;" data-toggle="collapse" data-target="#3" aria-expanded="true">Details </button></td>
+    <td class="dis-non"><input type="checkbox" name="cehckbox"/> <button style="display:none;" data-toggle="collapse" data-target="#3" aria-expanded="true">Details </button></td>
     <td><img src="{{url('images/icici-credit-card.jpg')}}" alt="ICICI Bank Coral Credit Card" title="ICICI Bank Coral Credit Card" width="150" height="96" style="margin:0 auto; margin-bottom:5px;">
     <span>ICICI Bank Coral Credit Card</span>
     </td>
@@ -94,7 +94,7 @@
   
   
   <tr class="ICICI-Card">
-    <td><input type="checkbox" name="cehckbox"/> <button style="display:none;" data-toggle="collapse" data-target="#4" aria-expanded="true">Details </button></td>
+    <td class="dis-non"><input type="checkbox" name="cehckbox"/> <button style="display:none;" data-toggle="collapse" data-target="#4" aria-expanded="true">Details </button></td>
     <td><img src="{{url('images/icici-credit-card.jpg')}}" alt="ICICI Bank HPCL Coral Visa/MasterCard Credit Cards" title="ICICI Bank HPCL Coral Visa/MasterCard Credit Cards" width="150" height="96" style="margin:0 auto; margin-bottom:5px;">
     <span>ICICI Bank HPCL Coral Visa/MasterCard Credit Cards</span>
     </td>
@@ -113,7 +113,7 @@
   
   
   <tr class="ICICI-Card">
-    <td><input type="checkbox" name="cehckbox"/> <button style="display:none;" data-toggle="collapse" data-target="#5" aria-expanded="true">Details </button></td>
+    <td class="dis-non"><input type="checkbox" name="cehckbox"/> <button style="display:none;" data-toggle="collapse" data-target="#5" aria-expanded="true">Details </button></td>
     <td><img src="{{url('images/icici-credit-card-ruby.jpg')}}" alt="ICICI Ruby Credit Card" title="ICICI Ruby Credit Card" width="150" height="96" style="margin:0 auto; margin-bottom:5px;">
     <span>ICICI Bank Rubyx Credit Cards</span>
     </td>
@@ -130,7 +130,7 @@
   
 
 <tr class="HDFC-Card">
-    <td><input type="checkbox" name="cehckbox"/> <button style="display:none;" data-toggle="collapse" data-target="#6" aria-expanded="true">Details </button></td>
+    <td class="dis-non"><input type="checkbox" name="cehckbox"/> <button style="display:none;" data-toggle="collapse" data-target="#6" aria-expanded="true">Details </button></td>
     <td><img src="{{url('images/hdfc-credit-card.jpg')}}" alt="HDFC JetPrivilege Credit Card" title="HDFC JetPrivilege Credit Card" width="150" height="96" style="margin:0 auto; margin-bottom:5px;">
     <span>JetPrivilege HDFC Bank World</span>
     </td>

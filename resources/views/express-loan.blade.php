@@ -97,7 +97,7 @@
 							<div class="center-blg"><img src="{{URL::to('images/birla.png')}}" alt="Aditya Birla Group Logo" title="Aditya Birla Group Logo" /></div>
 							<h4 class="mrg-btm">Aditya Birla</h4>
 						
-							<a class="btn btn-primary btn-outline with-arrow" href="{{URL::to('contact-us')}}">Apply Now<i class="icon-arrow-right"></i></a>
+							<a class="btn btn-primary btn-outline with-arrow" href="{{URL::to('apply-express-loan')}}">Apply Now<i class="icon-arrow-right"></i></a>
 						</div>
 					</div>
 					

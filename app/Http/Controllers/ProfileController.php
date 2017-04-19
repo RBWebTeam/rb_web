@@ -233,8 +233,8 @@ public function  change_password(Request $req){
     }else{
       $roi_type = "";
     }
-    if(isset($request['processingfee'])){
-      $processing_fee = $request['processingfee'];
+    if(isset($request['processing_fee'])){
+      $processing_fee = $request['processing_fee'];
     }else{
       $processing_fee = "";
     }

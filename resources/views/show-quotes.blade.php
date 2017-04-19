@@ -137,7 +137,7 @@
 
     <tr>
     <td><i class="icon-thumbs-up"></i></td>
-    <td class="upper"><!-- <a href="#">Know More</a>  --><button type="button" data-toggle="collapse" data-target="#{{$key}}">Know More</button></td>
+    <td class="upper"><!-- <a href="#">Know More</a>  --><button type="button" data-toggle="collapse" data-target="#{{$key}}"><span class="hidden-xs">Know</span> More</button></td>
     <td>Processing Fee - INR {{$q->processingfee}} + ST</td>
     <td>Guarantor Required - {{$q->guarantor_required}}</td>
     <td>Instant Approval - {{$q->eApproval}}</td>

@@ -11403,7 +11403,7 @@ body {background:#eee;}
 .error-template {padding: 40px 15px;text-align: center;}
 .error-actions {margin-top:15px;margin-bottom:15px;}
 .error-actions .btn { margin-right:10px; }
-.outer-brd {border: 0px; border-radius:5px; padding:5px; box-shadow: 1px 1px 3px 1px #ccc;}
+.outer-brd {border: 0px; border-radius:5px; background:#fff; padding:5px; box-shadow: 1px 1px 3px 1px #ccc; }
 .gray-bg {background:#ddd;}
 .apply-btn {color:#fff;background: #3699c1; padding: 10px; margin:3px; display:block;}
 

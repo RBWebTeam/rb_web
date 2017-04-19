@@ -1,4 +1,4 @@
-<div id="fh5co-hero" class="fclass" style="display:block;">
+<div class="fclass" style="display:block;">
   <div class="container" >
   <div class="table-responsive">
 
@@ -35,7 +35,7 @@
   <hr>
     </div>
     
-  <div class="col-md-12 pad11">
+  <div class="col-md-12 pad11 pad-no">
     
     <div class="">
     <table width="100%" border="1" class="tbl pad1">

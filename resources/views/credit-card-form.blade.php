@@ -123,7 +123,7 @@
 												<input type="email" class="form-control" placeholder="Email Address*" name="email" required>
 											</div> -->
 											<div class="col-md-4">
-												<input type="text" class="form-control" id="STDCode" name="STDCode" placeholder="STD Code" required  onkeypress="return fnAllowNumeric(event)" maxlength="10"  >
+												<input type="text" class="form-control" id="STDCode" name="STDCode" placeholder="STD Code" required  onkeypress="return fnAllowNumeric(event)" maxlength="4"  >
 											</div>
 												
 										</div>

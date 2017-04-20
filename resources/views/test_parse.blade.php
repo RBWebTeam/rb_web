@@ -538,8 +538,9 @@
         </div>
         
     </div>
-    <div id="loan_detail" ng-show="active=='BANK STATEMENT'" ng-if="application_freezed==true">
+    <div id="loan_detail" ng-show="active=='BANK STATEMENT'" ng-if="application_freezed==true" ng-app="student" ng-controller="studentController">
     <h3 class="mrg-top">BANK STATEMENTS</h3><hr>
+
           <a class="btn btn-primary btn-outline with-arrow " data-toggle="modal" data-target="#tribe_bank_statement_form" id="upload_bank_statement_submit">Upload Bank Document<i class="icon-arrow-right"></i></a>  
           <a class="btn btn-primary btn-outline with-arrow " id="tribe_final_submit" style="display: none;">Submit Application<i class="icon-arrow-right"></i></a> 
           <a class="btn btn-primary btn-outline with-arrow " id="abandon_tribe_application"> Abandon<i class="icon-arrow-right"></i></a>   
@@ -555,7 +556,7 @@
           
 
          mainApp.controller('NavController', function($scope) {
-         console.log($scope);
+         //console.log($scope);
          $scope.application_freezed=false;
           $scope.freeze=function(){
              $scope.application_freezed=true;
@@ -565,7 +566,15 @@
               $scope.active=showdiv;
             }
          });
+          function studentController($scope,$http) {
+            var url = "http://api.rupeeboss.com/BankAPIService.svc/help/operations/GetTribeLoan";
+
+            $http.get(url).then( function(response) {
+               $scope.students = response.response;
+               console.log($scope.students);
+            });
       </script>
+     
 <style type="text/css">
   *{
   margin:0;

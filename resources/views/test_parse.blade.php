@@ -566,13 +566,7 @@
               $scope.active=showdiv;
             }
          });
-          function studentController($scope,$http) {
-            var url = "http://api.rupeeboss.com/BankAPIService.svc/help/operations/GetTribeLoan";
-
-            $http.get(url).then( function(response) {
-               $scope.students = response.response;
-               console.log($scope.students);
-            });
+         
       </script>
      
 <style type="text/css">

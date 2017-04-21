@@ -78,5 +78,7 @@ class MobileApiController extends ApiController
 		$new_data=array('status_Id'=>$status_Id);
 		return $new_data;
 	}
-	
+	public function user_profile_picture(Request $req){
+		print_r($req->all());
+	}
 }

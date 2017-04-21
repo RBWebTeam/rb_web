@@ -241,3 +241,4 @@ Route::get('edelweiss','NewProcessController@edelweiss');
 Route::get('used-car-loan','NewProcessController@usedCarLoan');
 
 Route::post('quotes-head','FormController@quoteshead');
+

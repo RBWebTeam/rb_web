@@ -392,7 +392,7 @@ $(".product_ID").click(function(e){
              success: function(msg){ 
                             $(".iframeloading").hide();                  
                              if(msg.success ==true){
-                              var quote=msg.quote;
+                              var quote=msg.quote_id;
                             var loan_eligible = msg.loan_eligible;
                              if (loan_eligible>0) {
                              $("#form_ID").empty().append(msg.html);

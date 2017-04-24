@@ -164,7 +164,7 @@
 										</div>
 										
 										</div class="col-md-12">
-										&nbsp;&nbsp;&nbsp;&nbsp;<button class="btn btn-primary btn-outline with-arrow animate-box fadeInUp animated credit-submit" >Confirm & Continue<i class="icon-arrow-right"></i>
+										&nbsp;&nbsp;&nbsp;&nbsp;<button class="btn btn-primary btn-outline with-arrow animate-box fadeInUp animated credit-submit dis-tbl" >Confirm & Continue<i class="icon-arrow-right"></i>
 
 
 									</button>

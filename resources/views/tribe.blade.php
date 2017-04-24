@@ -674,7 +674,7 @@
 function go_to_next(next){
     var nav_number=next.split('main');
    if($('#tribe_loan_form').valid()){
-     console.log("valid_tab");
+     //console.log("valid_tab");
       $( "#nav"+nav_number[1] ).trigger( "click" );
       window.scrollTo(0,0);
     }else{
@@ -718,6 +718,7 @@ $("#upload_doc_submit").click(function(){
             $('#get_doc_'+doc_id).attr('onclick','get_doc_fun('+response.document_id+')');
             $('#del_doc_'+doc_id).attr('onclick','del_doc_fun('+response.document_id+','+doc_id+')');
         }else{
+           $('#tribe_doc_upload_modal').modal('hide');
           $('#went_wrong_modal').modal('show');
           //console.log("error => "+response.error);
         }
@@ -750,6 +751,7 @@ $("#submit_tribe_statement").click(function(){
               $('#close_tribe_transaction_div').show();
               //$('.loan_id').val(response.loan_id);
             }else{
+              $('#tribe_bank_statement_form').modal('hide');
               $('#went_wrong_modal').modal('show');
              // console.log("something went wrong in ");
             }
@@ -771,6 +773,7 @@ $('#freeze_form').click(function(){
              success: function(msg){
 
               if(msg.status){
+
                 $('#tribe_loan_form').find('input, radio,textarea, button, select').attr('disabled','disabled');
                   $('.app_id').val(msg.tribe);
                   $('.loan_id').val(msg.loan_id);
@@ -830,6 +833,7 @@ function tribe_doc_upload(id){
                         
               $('#tribe_bank_statement_form').modal('hide');
             }else{
+              $('#tribe_bank_statement_form').modal('hide');
               $('#went_wrong_modal').modal('show');
               //console.log("No such transaction / error");
             }
@@ -910,7 +914,7 @@ function del_doc_fun(id,doc){
                success: function(msg){
                // console.log(msg);
                 if(msg.status){
-                   console.log(msg.document_id);
+                   //console.log(msg.document_id);
                     $('#after_upload_div_'+doc).hide();
 
                   }else{

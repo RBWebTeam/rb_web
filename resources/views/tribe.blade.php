@@ -695,6 +695,7 @@ if($('#tribe_loan_form').valid()){
    }
 });
 $("#upload_doc_submit").click(function(){
+  $('#went_wrong_modal').modal('hide');
     if(!$('#kyc_form').valid()){
       return false;
     }               
@@ -717,7 +718,8 @@ $("#upload_doc_submit").click(function(){
             $('#get_doc_'+doc_id).attr('onclick','get_doc_fun('+response.document_id+')');
             $('#del_doc_'+doc_id).attr('onclick','del_doc_fun('+response.document_id+','+doc_id+')');
         }else{
-          console.log("error => "+response.error);
+          $('#went_wrong_modal').modal('show');
+          //console.log("error => "+response.error);
         }
         
         
@@ -726,6 +728,7 @@ $("#upload_doc_submit").click(function(){
  });
 
 $("#submit_tribe_statement").click(function(){
+  $('#went_wrong_modal').modal('hide');
   if(!$('#bank_statement_form').valid()){
     return false;
   }
@@ -747,7 +750,8 @@ $("#submit_tribe_statement").click(function(){
               $('#close_tribe_transaction_div').show();
               //$('.loan_id').val(response.loan_id);
             }else{
-              console.log("something went wrong in ");
+              $('#went_wrong_modal').modal('show');
+             // console.log("something went wrong in ");
             }
           },
         });
@@ -759,6 +763,7 @@ $('#freeze_form').click(function(){
       var CSRF_TOKEN = $('input[name="_token"]').val();
     
      $('#freeze_form_modal').modal('hide');
+     $('#went_wrong_modal').modal('hide');
     $.ajax({  
              type: "POST",  
              url: "{{URL::to('save-tribe-form')}}",
@@ -776,7 +781,8 @@ $('#freeze_form').click(function(){
                   $( "#nav4").trigger( "click" );
 
                 }else{
-                  console.log("error "+msg);
+                  $('#went_wrong_modal').modal('show');
+                 // console.log("error "+msg);
                  // window.location.href="{{URL::to('went-wrong')}}";
                 }
                }
@@ -809,7 +815,7 @@ function tribe_doc_upload(id){
 
   $('#close_tribe_transaction').click(function(){
        var form_url="{{URL::to('tribe-close-transaction')}}";
-      
+      $('#went_wrong_modal').modal('hide');
     $.ajax({
           url:form_url ,
           data:"_token={!! csrf_token() !!}",
@@ -824,13 +830,15 @@ function tribe_doc_upload(id){
                         
               $('#tribe_bank_statement_form').modal('hide');
             }else{
-              console.log("No such transaction / error");
+              $('#went_wrong_modal').modal('show');
+              //console.log("No such transaction / error");
             }
           },
         });
   });
     
     $('#abandon_tribe_application').click(function(){
+      $('#went_wrong_modal').modal('hide');
         $.ajax({  
                type: "POST",  
                url: "{{URL::to('abandon-tribe-application')}}",
@@ -841,7 +849,8 @@ function tribe_doc_upload(id){
                    
 
                   }else{
-                    console.log("error "+msg);
+                    $('#went_wrong_modal').modal('show');
+                   // console.log("error "+msg);
                    // window.location.href="{{URL::to('went-wrong')}}";
                   }
                  }
@@ -849,7 +858,7 @@ function tribe_doc_upload(id){
     });
 
     $('#tribe_final_submit').click(function(){
-       
+       $('#went_wrong_modal').modal('hide');
      $.ajax({  
                type: "POST",  
                url: "{{URL::to('tribe-final-submission')}}",
@@ -861,7 +870,8 @@ function tribe_doc_upload(id){
                    window.location.href="{{URL::to('thank-you')}}";
 
                   }else{
-                    console.log("error "+msg);
+                    $('#went_wrong_modal').modal('show');
+                    //console.log("error "+msg);
                    // window.location.href="{{URL::to('went-wrong')}}";
                   }
                  }
@@ -871,6 +881,7 @@ function tribe_doc_upload(id){
 //get and delete doc function
 function get_doc_fun(id){
   var new_id=id;
+  $('#went_wrong_modal').modal('hide');
     $.ajax({  
                type: "POST",  
                url: "{{URL::to('get-tribe-doc')}}",
@@ -882,7 +893,8 @@ function get_doc_fun(id){
                     
 
                   }else{
-                    console.log("error "+msg);
+                    $('#went_wrong_modal').modal('show');
+                   // console.log("error "+msg);
                    // window.location.href="{{URL::to('went-wrong')}}";
                   }
                  }
@@ -890,6 +902,7 @@ function get_doc_fun(id){
 }
 function del_doc_fun(id,doc){
   var new_id=id;
+  $('#went_wrong_modal').modal('hide');
     $.ajax({  
                type: "POST",  
                url: "{{URL::to('del-tribe-doc')}}",
@@ -901,7 +914,8 @@ function del_doc_fun(id,doc){
                     $('#after_upload_div_'+doc).hide();
 
                   }else{
-                    console.log("error "+msg);
+                    $('#went_wrong_modal').modal('show');
+                   // console.log("error "+msg);
                    // window.location.href="{{URL::to('went-wrong')}}";
                   }
                  }

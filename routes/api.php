@@ -37,3 +37,5 @@ Route::post('quote-selected','MobileApiController@quote_selected');
 Route::get('show-error','ApiController@show_error');
 Route::post('erp-user','ApiController@create_user_via_erp');
 
+Route::post('save-profile-pic','MobileApiController@user_profile_picture');
+// Route::get('get-profile-pic','MobileApiController@get_profile_pic');

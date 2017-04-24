@@ -16,38 +16,42 @@ class BankController extends InitialController
 	}
 
 	public function home_loanBank($product,$bank){
-    // $keywords='';
-    // $seo=new Seo();
  
-   // print_r($product);exit();
 
-		      $getQuery=DB::select('call usp_bankwise_detail("'.$product.'","'.$bank.'")');
+  $product=ucwords(str_replace('-',' ',$product));
+  $bank= strtoupper(str_replace('-',' ',$bank));
+
+          $getQuery=DB::select('call usp_bankwise_detail("'.$product.'","'.$bank.'")');
           $product_query=json_decode(json_encode($getQuery));
 
           //  print "<pre>";
           // print_r($getQuery);exit();
 
-       $bank_detail=DB::table('bank_master')->select('Bank_Name','Document1')
-                      ->where('Bank_Id','=',$bank)
+       $bank_detail=DB::table('bank_master')->select('Bank_Name','Document1','bank_id')
+                      ->where('Bank_Code','=',$bank)
                       ->first();
                        // print_r($bank_detail->Bank_Name);
-      $product_detail=DB::table('product_master')->select('Product_Name')
-                      ->where('Product_Id','=',$product)
+      $product_detail=DB::table('product_master')->select('Product_Name','product_id')
+                      ->where('Product_Name','=',$product)
                       ->first();      
-                       // print_r($product_detail->Product_Name);exit();
+                     //  print_r($product_detail->Product_Name);exit();
+
+
     if($bank_detail && $product_detail){
       $data['bank_name'] =$bank_detail->Bank_Name;
           // print_r($data['bank_name']);exit();
     $data['Bank_Logo'] =$bank_detail->Document1;
     $data['product']   =$product_detail->Product_Name;
-    $data['product_id']=$product;
+  //  $data['product_id']=$product;
+     $data['product_id']=$product_detail->product_id;
      // print_r( $data['product']);exit();
-    $data['bank_id']=$bank;
+    $data['bank_id']=$bank_detail->bank_id;
     }else{
       // echo "hello";exit();
       return view('went-wrong');
     }                
 
+ 
     
     // keywords,title and description
     if ($data['bank_name']=='ICICI BANK' && $data['product']=='Home Loan') {

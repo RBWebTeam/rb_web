@@ -69,7 +69,7 @@
 @if(count($quote_data) > "")
 @foreach($quote_data as $q) <?php $key++; ?>
  <div class="table-responsive outer-brd">
- <form id="quote_form">
+ <form id="quote_form_{{$key}}">
  {{ csrf_field() }}
 <table width="100%" border="1" class="tbl">
   <tr>
@@ -370,14 +370,15 @@ var last_segment = url_array[url_array.length-1];  // Get the last part of the a
  
  
 
-      
+     var quote_selected_form=($(this).closest("form").attr('id'));
     $.ajax({  
              type: "POST",  
           
              url: "{{URL::to('quotes-head')}}",
            //  data : $('#home_loan_process_form').serialize(),
-                data :$(id+', #quote_form').serialize(),
+                data :$(id+', #'+quote_selected_form).serialize(),
              success: function(msg){
+              console.log(msg); 
                 if(msg.status==true){
                  $("#apply_new").attr("href", msg.url);
                    window.location.href=(msg.url);

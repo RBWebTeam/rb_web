@@ -54,8 +54,9 @@
 
  </script>
 	</head>
-	<body><!-- 
-	<script src="https://app.tigerapi.com/rest/?i=MTQ4NTIzNzg2NA==" async="async" type="text/javascript"></script> -->
+	<body>
+<!-- 	
+<script async="async" type="text/javascript" src="https://app.tigerapi.com/rest/?i=MTQ5MjY4MDA2OA=="></script> -->
 	<!-- Side bar -->
 	<ul class="arrow-don">
 	<li class="soc-ic-0"><div  title="Help Section"><i class="icon-phone"></i></div></li>
@@ -95,7 +96,7 @@
                 <li class="hidden-xs"><a href="{{URL::to('contact-us')}}">Contact Us</a></li>
 				<li class="hidden-xs"><a href="#" data-toggle="modal" data-target="#emp_login">Employee Login </a></li>
 				<li class="hidden-xs"><a href="{{URL::to('rba-login')}}">RBA Login </a></li>
-                <li class="hidden-xs"><a href="{{URL::to('http://staging.rupeeboss.com/rblife-style/index.html')}}">RB Life Style</a></li>
+                <li class="hidden-xs"><a href="{{URL::to('http://staging.rupeeboss.com/rblife-style/')}}">RB Life Style</a></li>
 				<li class="hidden-lg"><a href="{{URL::to('magic-link')}}">Magic Link </a></li>
 				<li class="hidden-xs credit-score-btn"><a href="{{URL::to('credit-report')}}" class="btn btn-primary">My Credit Score</a></li>
 			<!-- 	<li><a href="{{URL::to('contact-us')}}">Media</a></li> -->

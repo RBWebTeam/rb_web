@@ -280,7 +280,8 @@ $(".btn-primary").click(function(e){
                     $(".iframeloading").hide();
                            if(msg.success ==true){
 
-                            var quote=msg.quote;
+                            var quote=msg.quote_id;
+                            // console.log(quote);
 
                         var loan_eligible = msg.loan_eligible;
 

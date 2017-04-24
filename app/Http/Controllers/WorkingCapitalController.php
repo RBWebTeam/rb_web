@@ -39,7 +39,7 @@ class WorkingCapitalController extends CallApiController
            
    }else{
 
-      $array=array('success' =>true,'drop_interest'=>0,'monthlyinterest'=>0,'totleMonthlysaving'=>0,'totalYearSaving'=>0,);
+      $array=array('success' =>true,'wtlf'=>303,'drop_interest'=>0,'monthlyinterest'=>0,'totleMonthlysaving'=>0,'totalYearSaving'=>0,);
            return $array;
    }
  
@@ -65,7 +65,7 @@ class WorkingCapitalController extends CallApiController
            
    }else{
 
-      $array=array('success0' =>true,'drop_interest'=>0,'monthlyinterest'=>0,'totleMonthlysaving'=>0,'totalYearSaving'=>0,);
+      $array=array('success0' =>true, 'ptlf'=>303,'drop_interest'=>0,'monthlyinterest'=>0,'totleMonthlysaving'=>0,'totalYearSaving'=>0,);
            return $array;
    }
 
@@ -92,7 +92,7 @@ class WorkingCapitalController extends CallApiController
            
    }else{
 
-      $array=array('success1' =>true,'drop_interest'=>0,'monthlyinterest'=>0,'totleMonthlysaving'=>0,'totalYearSaving'=>0,);
+      $array=array('success1' =>true,'pctlf'=>303,'drop_interest'=>0,'monthlyinterest'=>0,'totleMonthlysaving'=>0,'totalYearSaving'=>0,);
            return $array;
    }
 
@@ -203,7 +203,7 @@ public  function termcalculate(Request $req){
 
           }else{
 
-                  $array= array('successterm' =>true,'LoanEMI'=>0,'Drop_EMI'=>0,'NewLoanEMI'=>0,'drop_interest'=>0,'totalYearSaving'=>0 );
+                  $array= array('successterm' =>true,'ttlf'=>303,'LoanEMI'=>0,'Drop_EMI'=>0,'NewLoanEMI'=>0,'drop_interest'=>0,'totalYearSaving'=>0 );
             return $array;
           }
 }

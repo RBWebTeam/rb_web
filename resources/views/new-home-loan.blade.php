@@ -398,6 +398,7 @@ $(".product_ID").click(function(e){
            data : $("#home_loan_process_form").serialize(),
         //   data: {_token :_token,username:username,password:password},
              success: function(msg){ 
+              console.log(msg);
                             $(".iframeloading").hide();                  
                              if(msg.success ==true){
                               var quote=msg.quote_id;

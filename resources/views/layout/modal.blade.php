@@ -607,6 +607,21 @@ Rupeeboss Financial Services Private Limited shall access your Credit Informatio
   </form>
 </div>
  
+<div id="went_wrong_modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+ <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+         <h4 class="modal-title">Something is not right!!!</h4>
+      </div>
+    <!-- Modal content-->
+    <div class="modal-content pad1">
+     
+      <span class="mrg-btm">Ooops, something went wrong</span>
 
+     
+    </div>
+
+  </div>
+</div>
 
 

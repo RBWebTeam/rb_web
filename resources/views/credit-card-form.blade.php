@@ -241,15 +241,16 @@
          $(".iframeloading").hide();  
         
          // console.log(msg);
-          if(msg==1){
+          if(msg==2){
           	// alert("OKAE");
+          	 alert("Something Went Wrong");
 
-            alert("Thank you for your interest in ICICI Bank Credit Cards. Our representative will get in touch with you within 3 working days subject to your application meeting the eligibility criteria");
+           
             // $('#credit_process').modal('show');        
           } 
-          else if(msg==2){
+          else{
           	// console.log(msg);
-            alert("Something Went Wrong");
+            alert(" Your Application id is "+msg+" Thank you for your interest in ICICI Bank Credit Cards. Our representative will get in touch with you within 3 working days subject to your application meeting the eligibility criteria");
              // $('#credit_process_sorry').modal('show');
           }
 

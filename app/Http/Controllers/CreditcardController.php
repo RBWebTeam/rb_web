@@ -54,7 +54,7 @@ class CreditcardController extends CallApiController
          if(!$update_user){
             $error=2;  
         }else{  
-            $error=1;
+            $error=$obj->ApplicationId;
           }
     }else{
         $error=2;

@@ -317,7 +317,7 @@
   <div id="home" class="tab-pane fade in active">
     <div class="row">
 				<div class="col-md-4 animate-box">
-					<a href="#" class="item-grid text-center">
+					<span class="item-grid text-center">
 					
 						<div class="v-align md-higt">
 							<div class="v-align-middle">
@@ -325,10 +325,10 @@
 								<p class="p-clr">Our Trained Experts have the right knowledge & ability to get you the Best Deal.</p>
 							</div>
 						</div>
-					</a>
+					</span>
 				</div>
 				<div class="col-md-4 animate-box">
-					<a href="#" class="item-grid text-center">
+					<span class="item-grid text-center">
 						
 						<div class="v-align md-higt">
 							<div class="v-align-middle">
@@ -337,10 +337,10 @@
                                 <br>
 							</div>
 						</div>
-					</a>
+					</span>
 				</div>
 				<div class="col-md-4 animate-box">
-					<a href="#" class="item-grid text-center">
+					<span class="item-grid text-center">
 						
 						<div class="v-align md-higt">
 							<div class="v-align-middle">
@@ -348,7 +348,7 @@
 								<P class="p-clr">Our Experts know the pain of getting a Loan. They put your Interest First & work to achieve it.</P>
 							</div>
 						</div>
-					</a>
+					</span>
 				</div>
 				
 			</div>
@@ -356,7 +356,7 @@
   <div id="menu1" class="tab-pane fade">
     <div class="row">
 				<div class="col-md-4 animate-box">
-					<a href="#" class="item-grid text-center">
+					<span class="item-grid text-center">
 					
 						<div class="v-align md-higt">
 							<div class="v-align-middle">
@@ -364,10 +364,10 @@
 								<p class="p-clr">Tell us what you need by answering few simple questions.</p>
 							</div>
 						</div>
-					</a>
+					</span>
 				</div>
 				<div class="col-md-4 animate-box">
-					<a href="#" class="item-grid text-center">
+					<span class="item-grid text-center">
 						
 						<div class="v-align md-higt">
 							<div class="v-align-middle">
@@ -376,10 +376,10 @@
                                 <br>
 							</div>
 						</div>
-					</a>
+					</span>
 				</div>
 				<div class="col-md-4 animate-box">
-					<a href="#" class="item-grid text-center">
+					<span class="item-grid text-center">
 						
 						<div class="v-align md-higt">
 							<div class="v-align-middle">
@@ -387,7 +387,7 @@
 								<P class="p-clr">Applying is as simple as reading this. The process will be completed before your coffee gets cold!</P>
 							</div>
 						</div>
-					</a>
+					</span>
 				</div>
 				
 			</div>

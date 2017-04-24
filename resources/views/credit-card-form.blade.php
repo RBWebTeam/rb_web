@@ -250,7 +250,7 @@
           } 
           else{
           	// console.log(msg);
-            alert(" Your Application id is "+msg+" Thank you for your interest in ICICI Bank Credit Cards. Our representative will get in touch with you within 3 working days subject to your application meeting the eligibility criteria");
+            alert(" Your Application id is "+msg+".Thank you for your interest in ICICI Bank Credit Cards. Our representative will get in touch with you within 3 working days subject to your application meeting the eligibility criteria");
              // $('#credit_process_sorry').modal('show');
           }
 

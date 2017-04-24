@@ -114,7 +114,7 @@
 											<h4 class="hdr">&nbsp;&nbsp;&nbsp;&nbsp;Contact Details</h4>
 										
 											<div class="col-md-4">
-												<input type="text" class="form-control" id="ResidencePhoneNumber" name="ResidencePhoneNumber" placeholder="Telephone No" required="" onkeypress="return fnAllowNumeric(event)" maxlength="15" minlength="6">
+												<input type="text" class="form-control" id="ResidencePhoneNumber" name="ResidencePhoneNumber" placeholder="Telephone No" required="" onkeypress="return fnAllowNumeric(event)" maxlength="10" >
 											</div>
 											<div class="col-md-4">
 												<input type="text" class="form-control" id="ResidenceMobileNo" name="ResidenceMobileNo" placeholder="Mobile No" required="" onkeypress="return fnAllowNumeric(event)" maxlength="10" minlength="10">
@@ -230,15 +230,15 @@
       }else{
         //var s=$('#'+form).serialize();
 
-        // $(".iframeloading").show();
-        // $(".credit-submit").hide(); 
+        $(".iframeloading").show();
+        $(".credit-submit").hide(); 
         $.ajax({  
          type: "POST",  
          url: "{{URL::to('credit-submit')}}",
          data : $('#'+form).serialize(),
          dataType: 'json',
          success: function(msg){
-         // $(".iframeloading").hide();  
+         $(".iframeloading").hide();  
         
          // console.log(msg);
           if(msg==1){

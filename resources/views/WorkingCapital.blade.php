@@ -51,6 +51,7 @@
        <p>Drop in interest Paid:<b class="em1">  <span id="drop_interest">0</span>%</b></p>
        <p>Monthly Saving :<b class="em1"> ₹ <span id="monthlysavinf">0</span></b></p>
        <p>Total Yearly Saving :<b class="em1"> ₹ <span id="yearlysaving">0</span></b></p>
+        
        </center>
 
 
@@ -339,23 +340,29 @@
   <div class="col-md-2 col-xs-12 totl-sav">
   <div class="fix-pos">
     <div class="text-center guid nl-form-errors" id='bank_ID'>Total Saving 0</div>
-
         <div class="text-center img1"><img src="{{URL::to('images/photo.jpg')}}" alt="pop_up_pic"></div>
-
-
     </div>
-
     <a href="{{url('new-working-capital')}}" class="btn btn-success aply-btn disblk ">Apply Now</a>
-
  </div>
 </div>
 </br>
 @include('layout.footer')
 @include('layout.script')
 
+<div id="working_model" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+       <a type="button" class="close" data-dismiss="modal" aria-hidden="true">×</a>
+        <div class="modal-header">
+       </div>
+        <h4 class="modal-title text-center" id="working_i_d"></h4>
+     </div>
+   </div>
+  </div>
+
 <script type="text/javascript">
 //var restoredSession = JSON.parse(localStorage.getItem('session'));
-   //sessionStorage.clear();
+   sessionStorage.clear();
 var array=new Array;
 var bank = {};
 var termbank = {};
@@ -581,7 +588,10 @@ $("button").click(function(e){
                        sessionStorage.setItem(TsessionName, JSON.stringify(termbank));
                        TbankAppend(TsessionName,Drop_EMI); 
 
-                    
+                    if(msg.ttlf==303){
+                      $('#working_i_d').empty().append('Current interest rate should be greater than 10');
+                      $('#working_model').modal('show');
+                     }
                  
              }
 
@@ -742,8 +752,18 @@ function ajax(_token,loanAmount_id,interest,loanTenurMonth,ID,paid){
                    
                      }
 
- 
-               
+              
+                     if(msg.wtlf==303){   
+                       $('#working_i_d').empty().append('Current interest rate should be greater than 9.5');
+                       $('#working_model').modal('show'); 
+                     }if(msg.ptlf==303){
+                      $('#working_i_d').empty().append('Current interest rate should be greater than 7');
+                      $('#working_model').modal('show');
+                     }if(msg.pctlf==303){
+                      $('#working_i_d').empty().append('Current interest rate should be greater than 5');
+                      $('#working_model').modal('show');
+                     } 
+
                 
           }         
 
@@ -916,7 +936,7 @@ $('.fcloanTenur').on('change', function() {   //pcfc
       var month = amt*12;
       $('#loanTenur').val(month);
  
-     
+     $('#.checked').removeClass('checked').prop('checked',false);
     });
 
 
@@ -931,7 +951,7 @@ $('.fcloanTenur').on('change', function() {   //pcfc
       var amt = $("#termloanTenur").val();
       var month = amt*12;
       $('#termloanTenur').val(month);
- 
+     $('#.checked').removeClass('checked').prop('checked',false);
      
     });
 
@@ -1037,7 +1057,13 @@ $('.menu1act').click(function(e){
 
 $('input[type=radio]').on('change', function(){
     $('input[type=radio]').not(this).prop('checked', false);
+
+    $('#tYear').addClass('checked').prop('checked', true);
+    $('#Year').addClass('checked').prop('checked', true);
 });
 
  }); 
 </script>
+
+
+

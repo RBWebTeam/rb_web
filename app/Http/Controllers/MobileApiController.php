@@ -7,6 +7,7 @@ use DB;
 use Response;
 use App\bank_quote_api_request;
 use stdClass;
+use Intervention\Image\Facades\Image as Image;
 class MobileApiController extends ApiController
 {
 	public function mobile_api_compare(Request $req){
@@ -78,5 +79,25 @@ class MobileApiController extends ApiController
 		$new_data=array('status_Id'=>$status_Id);
 		return $new_data;
 	}
-	
+	public function user_profile_picture(Request $req){
+
+		try{
+		     	$data = $req;
+		     	$user_id=$data['user_id'];
+		        $base64_str = substr($data->base64_image, strpos($data->base64_image, ",")+1);
+		        $image = base64_decode($base64_str);
+		        $png_url = $user_id.".png";
+		        $path = public_path() . "/Upload/" . $png_url;
+
+		        \Image::make($image)->save($path);
+		        $response = array(
+		            'status' => 'success',
+		            'url'=>"staging.rupeeboss.com/upload/".$user_id.".png"
+		        );
+		    }catch(Exception $ee){
+		    	return $ee->getMessage();
+		    }
+        return Response::json( $response  );
+	}
+
 }

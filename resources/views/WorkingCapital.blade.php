@@ -21,7 +21,7 @@
    <h4 class="col-md-2 col-xs-4"><input type="radio" name="bank3" id="bank3" onclick="bankName('bank3')"/> Bank 3 </h4>
    <a data-toggle="tab" href="#menu1" class="btn btn-success pull-right menu1act">NEXT</a>
    </div>
-  <div class="col-md-4">
+  <div class="col-md-4 pad-no">
   <div>
   
  <form id="WorkingCapitalCurrent">
@@ -41,7 +41,7 @@
    </div>
   </div>
   
-  <div class="col-md-4">
+  <div class="col-md-4 pad-no">
   <div>
    
     <div class="border heigh-bt">
@@ -59,7 +59,7 @@
    </div>
   </div>
   
-  <div class="col-md-4">
+  <div class="col-md-4 pad-no">
   <div>
    <form id=WorkingCapitalAfter>
   <div class="border heigh-bt">
@@ -90,7 +90,7 @@
    <h4 class="col-md-2 col-xs-4""><input type="radio" name="Tbank3" id="Tbank3" onclick="TbankName('Tbank3')"/> Bank 3</h4>
    <a data-toggle="tab" href="#menu2" class="btn btn-success pull-right menu1act">NEXT</a>
    </div>
-  <div class="col-md-4">
+  <div class="col-md-4 pad-no">
   <div>
   
   <form id="term_loan_form">
@@ -114,7 +114,7 @@
    </div>
   </div>
   
-  <div class="col-md-4">
+  <div class="col-md-4 pad-no">
   <div>
    
     <div class="border heigh-bt">
@@ -132,7 +132,7 @@
    </div>
   </div>
   
-  <div class="col-md-4">
+  <div class="col-md-4 pad-no">
   <div>
    <form id=WorkingCapitalAfter>
   <div class="border heigh-bt">
@@ -155,7 +155,7 @@
   <div id="menu2" class="tab-pane fade">
       <div class="col-md-12"><a data-toggle="tab" href="#menu3" class="btn btn-success pull-right menu1act">NEXT</a></div>
   
-  <div class="col-md-4">
+  <div class="col-md-4 pad-no">
   <div>
 
   <form id="packing_credit_domesti">
@@ -164,13 +164,14 @@
     <input type="text" class="form-control form-group dloanAmount_id" placeholder="Loan Amount" id="loanAmount_id" maxlength="10"  onkeypress="return isNumberKey(event)">
    <input type="text" class="form-control form-group dinterest" placeholder="Current Rate of Interest" id="interest"  maxlength="5" onkeypress="return isNumberKey(event)" >
 
-<select id="loanTenur" class="form-control form-group dloanTenur" name="loanTenur">
+<select id="loanTenur" class="form-group dloanTenur block drop-arr select-sty" name="loanTenur">
 <option value="30">30 days</option>
 <option value="60">60 days</option>
 <option value="90">90 days</option>
 <option value="180">180 days</option>
  
 </select>
+<br>
 <div class="form-padding validate_id" style="display: none; color: red" >Please Fill All Inputs</div>
    <button class="btn btn-success pull-left btn_id"  id="packingcreditdomesti">Submit</button>
    <!-- <div class="pull-right">
@@ -182,7 +183,7 @@
    </div>
   </div>
   
-  <div class="col-md-4">
+  <div class="col-md-4 pad-no">
   <div>
    
     <div class="border heigh-bt">
@@ -199,7 +200,7 @@
    </div>
   </div>
   
-  <div class="col-md-4">
+  <div class="col-md-4 pad-no">
   <div>
    
   <div class="border heigh-bt">
@@ -215,7 +216,7 @@
 
   <div id="menu3" class="tab-pane fade">
      <div class="col-md-12"><a data-toggle="tab" href="#menu4" id="proposel_ID" class="btn btn-success pull-right proposel_ID menu1act">NEXT</a></div> 
- <div class="col-md-4">
+ <div class="col-md-4 pad-no">
   <div>
   
   <form id="packing_credit_foreign_currency">
@@ -223,12 +224,13 @@
   <h3 class="emi-cal text-center">Current Status of Loan</h3>
     <input type="text" class="form-control form-group fcloanAmount_id" placeholder="Loan Amount" id="loanAmount_id" maxlength="10"  onkeypress="return isNumberKey(event)">
    <input type="text" class="form-control form-group fcinterest" placeholder="Current Rate of Interest" id="interest"  maxlength="5" onkeypress="return isNumberKey(event)" >
- <select id="loanTenur" class="form-control form-group fcloanTenur" name="loanTenur">
+ <select id="loanTenur" class="form-group fcloanTenur block drop-arr select-sty" name="loanTenur">
 <option value="30">30 days</option>
 <option value="60">60 days</option>
 <option value="90">90 days</option>
 <option value="180">180 days</option>
 </select>
+<br>
 <div class="form-padding validate_id" style="display: none; color: red" >Please Fill All Inputs</div>
    <button class="btn btn-success pull-left btn_id"  id="packingcreditforeignCurr">Submit</button>
 
@@ -242,7 +244,7 @@
    </div>
   </div>
   
-  <div class="col-md-4">
+  <div class="col-md-4 pad-no">
   <div>
    
     <div class="border heigh-bt">
@@ -259,7 +261,7 @@
    </div>
   </div>
   
-  <div class="col-md-4">
+  <div class="col-md-4 pad-no">
   <div>
    
   <div class="border heigh-bt">

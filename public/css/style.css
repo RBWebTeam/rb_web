@@ -3613,7 +3613,7 @@ label.error {font-size: 10px;display:block;margin-top: -2px;text-align:left;}
 .btn-log {color:#fff;}
 .heigh-bt td {text-align:left; }
 .lin-heig {line-height: 45px;}
-
+.dis-tbl {display:block;}
 
 select.error, textarea.error, input.error {
      border: 1px solid #f00 !important;

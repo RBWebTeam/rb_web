@@ -4,8 +4,10 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "fd1f6a6b77fee127bfb4489b2df8a82f",
-    "content-hash": "79c2ced13a2c10d75513aa4f24d6b97e",
+
+    "hash": "27a2e96107234a3e8075dbe899e249c0",
+    "content-hash": "8fcf0a2ef069cc89ccca84e61677e922",
+
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -433,6 +435,31 @@
             "time": "2017-03-20 17:10:46"
         },
         {
+<<<<<<< HEAD
+            "name": "illuminate/html",
+            "version": "v5.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/illuminate/html.git",
+                "reference": "3d1009bb8e0f25720c914af5c1f4015dd373c9ef"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/illuminate/html/zipball/3d1009bb8e0f25720c914af5c1f4015dd373c9ef",
+                "reference": "3d1009bb8e0f25720c914af5c1f4015dd373c9ef",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/http": "~5.0",
+                "illuminate/session": "~5.0",
+                "illuminate/support": "~5.0",
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "5.0-dev"
+=======
             "name": "intervention/image",
             "version": "dev-master",
             "source": {
@@ -464,12 +491,21 @@
             "extra": {
                 "branch-alias": {
                     "dev-master": "2.3-dev"
+>>>>>>> a6d231188dffbc33d0720637bb6d8bc10140adf4
                 }
             },
             "autoload": {
                 "psr-4": {
+<<<<<<< HEAD
+                    "Illuminate\\Html\\": ""
+                },
+                "files": [
+                    "helpers.php"
+                ]
+=======
                     "Intervention\\Image\\": "src/Intervention/Image"
                 }
+>>>>>>> a6d231188dffbc33d0720637bb6d8bc10140adf4
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -477,6 +513,14 @@
             ],
             "authors": [
                 {
+<<<<<<< HEAD
+                    "name": "Taylor Otwell",
+                    "email": "taylorotwell@gmail.com"
+                }
+            ],
+            "abandoned": "laravelcollective/html",
+            "time": "2015-01-01 16:31:18"
+=======
                     "name": "Oliver Vogel",
                     "email": "oliver@olivervogel.net",
                     "homepage": "http://olivervogel.net/"
@@ -493,6 +537,7 @@
                 "watermark"
             ],
             "time": "2017-02-23 16:15:05"
+>>>>>>> a6d231188dffbc33d0720637bb6d8bc10140adf4
         },
         {
             "name": "jakub-onderka/php-console-color",

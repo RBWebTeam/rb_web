@@ -268,8 +268,8 @@
       </div>
       <div id="collapse2" class="panel-collapse collapse">
         <div class="panel-body sec">
-		<select class="drop-arr">
-		<option>-- Select --</option>
+		<select class="drop-arr" name="industry_name" id="industry_name">
+		<option>-- Select Industry Type --</option>
 		   <option>Agriculture</option>
 		   <option>Auto Components</option>
 		   <option>Automobiles</option>

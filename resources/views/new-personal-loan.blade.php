@@ -127,7 +127,7 @@
               <a class="btn btn-primary btn-outline with-arrow top-mrg product_name" id="btn_refresh_co1" data-toggle="modal" data-target="#login_process">Get Best Quotes<i class="icon-arrow-right"></i></a>
             <?php } ?> -->
 
-
+<p id="err" style="display:none;" ><span style="color: red;font-size: 16px;display: block; text-align: center;">Sorry, no quotes found for your given requirements.</span></p>
              <a class="btn btn-primary btn-outline with-arrow top-mrg product_name product_ID"   >Get Best Quotes<i class="icon-arrow-right"></i></a> 
 
  
@@ -182,7 +182,7 @@
        
 
     </div> 
-    <p id="err" style="display:none;" ><span style="color: red;font-size: 20px;display: block; text-align: center;">Sorry, no quotes found for your given requirements.</span></p> 
+     
   </div> 
    </aside>
    

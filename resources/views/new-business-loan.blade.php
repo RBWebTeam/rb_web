@@ -267,8 +267,49 @@
         </h4>
       </div>
       <div id="collapse2" class="panel-collapse collapse">
-        <div class="panel-body">
-		   <div class="scenario1">
+        <div class="panel-body sec">
+		<select class="drop-arr">
+		<option>-- Select --</option>
+		   <option>Agriculture</option>
+		   <option>Auto Components</option>
+		   <option>Automobiles</option>
+		   <option>Aviation</option>
+		   <option>Banking</option>
+		   <option>Biotechnology </option>
+		  <option>Cement</option>
+		<option>Consumer Markets</option>
+		<option>Education And Training</option>
+         <option>Engineering</option>
+           <option>Financial Services</option>
+		<option>Food Industry</option>
+		<option>Gems And Jewellery</option>
+		<option>Healthcare</option>
+		<option>Infrastructure</option>
+		<option>Insurance</option>
+		<option>IT & ITeS</option>
+		<option>Manufacturing</option>
+		<option>Marketing And Strategy</option>
+		<option>Media And Entertainment</option>
+		<option>Oil And Gas</option>
+        <option>Pharmaceuticals</option>
+		<option>Ports </option>
+		<option>Power</option>
+		<option>Railways</option>
+		<option>Real Estate</option>
+		<option>Research And Development</option>
+		<option>Retail</option>
+		<option>Roads</option>
+		<option>Rural Market</option>
+		<option>Science And Technology</option>
+		<option>Semiconductor</option>
+		<option>Services</option>
+		<option>Steel</option>
+		<option>Telecommunications</option>
+		<option>Textiles</option>
+		<option>Tourism And Hospitality</option>
+
+		</select>
+		   <!-- <div class="scenario1">
 
 								<div class="col-xs-12 col-md-6 pad-no scenario-active"><a class="scenario-1 btn"  onclick="callme('Agriculture')">
 								Agriculture</a></div>
@@ -315,12 +356,7 @@
 								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn" onclick="callme('Textiles')">Textiles</a></div>
 								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn" onclick="callme('Tourism And Hospitality')">Tourism And Hospitality</a></div>
 								<input type="hidden" name="industry_name" id="industry_name">
-								 
-
-								
-
-								
-							</div>
+							</div> -->
 		</div>
       </div>
     </div>

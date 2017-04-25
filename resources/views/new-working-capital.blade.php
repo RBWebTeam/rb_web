@@ -74,7 +74,7 @@
                 <h4 class="panel-title">
                     <a role="button" data-toggle="collapse" data-parent="#accordion2" href="#collapse61" aria-expanded="true" aria-controls="collapse61">
                         <i class="icon-plus more-less pull-right"></i>
-                        Tab 1 
+                        Details 1
                     </a>
                 </h4>
             </div>
@@ -161,7 +161,7 @@
                 <h4 class="panel-title">
                     <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion2" href="#collapse71" aria-expanded="false" aria-controls="collapse71">
                         <i class="icon-plus more-less pull-right"></i>
-                        Tab 2
+                        Details 2
                     </a>
                 </h4>
             </div>
@@ -277,6 +277,14 @@
    <div class="col-md-4 form-padding"><input type="text" class="form-input-new form-control" name="currentroi_twoyr_amt" id="currentroi_twoyr_amt" onkeypress="return isNumberKey(event)" required placeholder="2 Year"></div>
    <div class="col-md-4 form-padding"><input type="text" class="form-input-new form-control" name="currentroi_threeyr_amt" id="currentroi_threeyr_amt" onkeypress="return isNumberKey(event)" required placeholder="3 Year"></div>
  </div>
+ <div>
+   <div class="col-md-12 pad-no">
+   <center><div class="type-cover"><span>Total EMI</span></div></center>
+   </div>
+   <div class="col-md-4 form-padding"><input type="text" class="form-input-new form-control" name="totalemi_oneyr_amt" id="totalemi_oneyr_amt" onkeypress="return isNumberKey(event)" required placeholder="1 Year"></div>
+   <div class="col-md-4 form-padding"><input type="text" class="form-input-new form-control" name="totalemi_twoyr_amt" id="totalemi_twoyr_amt" onkeypress="return isNumberKey(event)" required placeholder="2 Year"></div>
+   <div class="col-md-4 form-padding"><input type="text" class="form-input-new form-control" name="totalemi_threeyr_amt" id="totalemi_threeyr_amt" onkeypress="return isNumberKey(event)" required placeholder="3 Year"></div>
+ </div>
 					
 		
 					 
@@ -289,7 +297,7 @@
                 <h4 class="panel-title">
                     <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion1" href="#collapse7" aria-expanded="false" aria-controls="collapse7">
                         <i class="icon-plus more-less pull-right"></i>
-                        BANKWISE EMI DETAILS 
+                       OTHER DETAILS 
                     </a>
                 </h4>
             </div>
@@ -523,7 +531,9 @@
 
              <input type="hidden" class="form-control" id="ratio_liability" name="ratio_liability" value="" placeholder="" required class="clr-ddd"  />
 
-            <div class="inp-hig">
+             <input type="hidden" class="form-control" id="debt_service_coverage_ratio" name="debt_service_coverage_ratio" value="" placeholder="" required class="clr-ddd"  />
+
+            <!-- <div class="inp-hig">
             <label class="form-label-new">Tenure</label>
                  <input type="text" class="form-control" id="term" name="term" value="" placeholder="" required class="clr-ddd" readonly>
             </div>
@@ -531,7 +541,7 @@
             <div class="inp-hig">
           <label class="form-label-new">Processing Fee</label>
               <input type="text" class="form-control" id="processfee" name="processfee" placeholder="" required class="clr-ddd" readonly />
-            </div>
+            </div> -->
 
         <div> 
           <br>
@@ -706,6 +716,14 @@
          var quantity= (parseFloat($("#sharecap_threeyr_amt").val())+parseFloat($("#reserve_threeyr_amt").val()));
          var ratio= parseFloat(assets)/parseFloat(quantity);
          $('#ratio_liability').val(ratio);
+
+         var net=(parseFloat($("#pat_threeyr_amt").val())+parseFloat($("#depre_threeyr_amt").val())+parseFloat($("#interestpaid_threeyr_amt").val()));
+        
+         var emi=parseFloat($("#totalemi_threeyr_amt").val());
+         
+         var dscr=parseFloat(net)/parseFloat(emi);
+        
+          $('#debt_service_coverage_ratio').val(dscr);
         
         var roi=10;
          $('#rate').val(roi);
@@ -776,6 +794,14 @@ function yesnoCheck() {
 }
 
 </script>
+
+
+  <script type="text/javascript">
+$("#apply_new").click(function() {
+   window.location.href ="{{URL::to('thank-you')}}";
+});
+</script>
+
 
 
 

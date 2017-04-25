@@ -132,7 +132,7 @@
 										<div class="form-group">
 											<h4 class="hdr">&nbsp;&nbsp;&nbsp;&nbsp;Identity Details</h4>
 											<div class="col-md-4">
-												<input type="text" id="ApplicationNumber" name="ApplicationNumber" class="form-control" placeholder="Application Number*"  maxlength="13" minlength="13" required>
+												<input type="text" id="ApplicationNumber" name="ApplicationNumber" class="form-control" placeholder="Application Number*"   maxlength="13" minlength="13" required>
 											</div>
 											<!-- <div class="col-md-4">
 												<input type="text" class="form-control" placeholder="Passport No*" name="passport"	>
@@ -159,7 +159,7 @@
 										<div class="col-md-12">
 										<input type="checkbox" name="terms" required>
 											I hereby confirm that I have read and understood the
-			<a href="#" data-toggle="modal" data-target="#Experian_terms_modal"> Rupeeboss Terms</a> and Conditions applicable to this service and that all the details furnished by me above are true and correct. I further provide consent to Rupeeboss and its affiliates to contact me with reference to financial products and this consent shall override any registration with DNC/NDNC.
+									<a href="#" data-toggle="modal" data-target="#Experian_terms_modal"> Rupeeboss Terms</a> and Conditions applicable to this service and that all the details furnished by me above are true and correct. I further provide consent to Rupeeboss and its affiliates to contact me with reference to financial products and this consent shall override any registration with DNC/NDNC.
 
 										</div>
 										
@@ -241,15 +241,16 @@
          $(".iframeloading").hide();  
         
          // console.log(msg);
-          if(msg==1){
+          if(msg==2){
           	// alert("OKAE");
+          	 alert("Something Went Wrong");
 
-            alert("Thank you for your interest in ICICI Bank Credit Cards. Our representative will get in touch with you within 3 working days subject to your application meeting the eligibility criteria");
+           
             // $('#credit_process').modal('show');        
           } 
-          else if(msg==2){
+          else{
           	// console.log(msg);
-            alert("Something Went Wrong");
+            alert(" Your Application id is "+msg+".Thank you for your interest in ICICI Bank Credit Cards. Our representative will get in touch with you within 3 working days subject to your application meeting the eligibility criteria");
              // $('#credit_process_sorry').modal('show');
           }
 

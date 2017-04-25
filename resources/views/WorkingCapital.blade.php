@@ -1,7 +1,7 @@
 @include('layout.header')
 <div id="fh5co-hero">
   <div class="container white">
-  <h2 class="align-center loan-head">Working Capital</h2>
+  <h2 class="loan-head">Working Capital</h2>
   <div class="col-md-10">
 
   <ul class="nav nav-tabs" id="userTabs">
@@ -21,7 +21,7 @@
    <h4 class="col-md-2 col-xs-4"><input type="radio" name="bank3" id="bank3" onclick="bankName('bank3')"/> Bank 3 </h4>
    <a data-toggle="tab" href="#menu1" class="btn btn-success pull-right menu1act">NEXT</a>
    </div>
-  <div class="col-md-4">
+  <div class="col-md-4 pad-no">
   <div>
   
  <form id="WorkingCapitalCurrent">
@@ -30,7 +30,7 @@
     <input type="text" class="form-control form-group" placeholder="Loan Amount" id="loanAmount_id" maxlength="10"  onkeypress="return isNumberKey(event)">
    <input type="text" class="form-control form-group" placeholder="Current Rate of Interest" id="interest"  maxlength="5" onkeypress="return isNumberKey(event)" >
    <input type="text" class="form-control form-group" placeholder=" Loan Tenure" value="1"  maxlength="1" id="loanTenur" onkeypress="return isNumberKey(event)" readonly>
-      <div class="form-padding validate_id" style="display: none; color: red" >Please Fill All Inputs</div>
+      <div class="validate_id" style="display: none; color: red" >Please Fill All Inputs</div>
    <button class="btn btn-success pull-left btn_id"  id="working_capital">Submit</button>
    <div class="pull-right">
              <label><input type="radio" name="yearmonth" id="Year"  value="Year" checked="checked"> Year</label>
@@ -41,7 +41,7 @@
    </div>
   </div>
   
-  <div class="col-md-4">
+  <div class="col-md-4 pad-no">
   <div>
    
     <div class="border heigh-bt">
@@ -59,7 +59,7 @@
    </div>
   </div>
   
-  <div class="col-md-4">
+  <div class="col-md-4 pad-no">
   <div>
    <form id=WorkingCapitalAfter>
   <div class="border heigh-bt">
@@ -90,7 +90,7 @@
    <h4 class="col-md-2 col-xs-4""><input type="radio" name="Tbank3" id="Tbank3" onclick="TbankName('Tbank3')"/> Bank 3</h4>
    <a data-toggle="tab" href="#menu2" class="btn btn-success pull-right menu1act">NEXT</a>
    </div>
-  <div class="col-md-4">
+  <div class="col-md-4 pad-no">
   <div>
   
   <form id="term_loan_form">
@@ -99,7 +99,7 @@
    <input type="text" class="form-control form-group" placeholder="Loan Amount" id="termloanAmount" maxlength="10"  onkeypress="return isNumberKey(event)">
    <input type="text" class="form-control form-group" placeholder="Current Rate of Interest" id="terminterest"  maxlength="5" onkeypress="return isNumberKey(event)" >
    <input type="text" class="form-control form-group" placeholder=" Loan Tenure"  maxlength="5" id="termloanTenur" onkeypress="return isNumberKey(event)">
-   <div class="form-padding validate_id" style="display: none; color: red" >Please Fill All Inputs</div>
+   <div class="validate_id" style="display: none; color: red" >Please Fill All Inputs</div>
    <button class="btn btn-success pull-left btn_id"  id="termloanid">Submit</button>
    <!-- <div class="pull-right">
              <label><input type="radio" name="yearmonth" id="Year"  value="Year" checked="checked"> Year</label>
@@ -114,7 +114,7 @@
    </div>
   </div>
   
-  <div class="col-md-4">
+  <div class="col-md-4 pad-no">
   <div>
    
     <div class="border heigh-bt">
@@ -132,7 +132,7 @@
    </div>
   </div>
   
-  <div class="col-md-4">
+  <div class="col-md-4 pad-no">
   <div>
    <form id=WorkingCapitalAfter>
   <div class="border heigh-bt">
@@ -155,7 +155,7 @@
   <div id="menu2" class="tab-pane fade">
       <div class="col-md-12"><a data-toggle="tab" href="#menu3" class="btn btn-success pull-right menu1act">NEXT</a></div>
   
-  <div class="col-md-4">
+  <div class="col-md-4 pad-no">
   <div>
 
   <form id="packing_credit_domesti">
@@ -164,14 +164,14 @@
     <input type="text" class="form-control form-group dloanAmount_id" placeholder="Loan Amount" id="loanAmount_id" maxlength="10"  onkeypress="return isNumberKey(event)">
    <input type="text" class="form-control form-group dinterest" placeholder="Current Rate of Interest" id="interest"  maxlength="5" onkeypress="return isNumberKey(event)" >
 
-<select id="loanTenur" class="form-control form-group dloanTenur" name="loanTenur">
+<select id="loanTenur" class="form-group dloanTenur block drop-arr select-sty" name="loanTenur">
 <option value="30">30 days</option>
 <option value="60">60 days</option>
 <option value="90">90 days</option>
 <option value="180">180 days</option>
  
 </select>
-<div class="form-padding validate_id" style="display: none; color: red" >Please Fill All Inputs</div>
+<div class="validate_id" style="display: none; color: red" >Please Fill All Inputs</div>
    <button class="btn btn-success pull-left btn_id"  id="packingcreditdomesti">Submit</button>
    <!-- <div class="pull-right">
              <label><input type="radio" name="yearmonth" id="Year"  value="Year" checked="checked"> Year</label>
@@ -182,7 +182,7 @@
    </div>
   </div>
   
-  <div class="col-md-4">
+  <div class="col-md-4 pad-no">
   <div>
    
     <div class="border heigh-bt">
@@ -199,7 +199,7 @@
    </div>
   </div>
   
-  <div class="col-md-4">
+  <div class="col-md-4 pad-no">
   <div>
    
   <div class="border heigh-bt">
@@ -215,7 +215,7 @@
 
   <div id="menu3" class="tab-pane fade">
      <div class="col-md-12"><a data-toggle="tab" href="#menu4" id="proposel_ID" class="btn btn-success pull-right proposel_ID menu1act">NEXT</a></div> 
- <div class="col-md-4">
+ <div class="col-md-4 pad-no">
   <div>
   
   <form id="packing_credit_foreign_currency">
@@ -223,13 +223,13 @@
   <h3 class="emi-cal text-center">Current Status of Loan</h3>
     <input type="text" class="form-control form-group fcloanAmount_id" placeholder="Loan Amount" id="loanAmount_id" maxlength="10"  onkeypress="return isNumberKey(event)">
    <input type="text" class="form-control form-group fcinterest" placeholder="Current Rate of Interest" id="interest"  maxlength="5" onkeypress="return isNumberKey(event)" >
- <select id="loanTenur" class="form-control form-group fcloanTenur" name="loanTenur">
+ <select id="loanTenur" class="form-group fcloanTenur block drop-arr select-sty" name="loanTenur">
 <option value="30">30 days</option>
 <option value="60">60 days</option>
 <option value="90">90 days</option>
 <option value="180">180 days</option>
 </select>
-<div class="form-padding validate_id" style="display: none; color: red" >Please Fill All Inputs</div>
+<div class="validate_id" style="display: none; color: red" >Please Fill All Inputs</div>
    <button class="btn btn-success pull-left btn_id"  id="packingcreditforeignCurr">Submit</button>
 
 
@@ -242,7 +242,7 @@
    </div>
   </div>
   
-  <div class="col-md-4">
+  <div class="col-md-4 pad-no">
   <div>
    
     <div class="border heigh-bt">
@@ -259,7 +259,7 @@
    </div>
   </div>
   
-  <div class="col-md-4">
+  <div class="col-md-4 pad-no">
   <div>
    
   <div class="border heigh-bt">
@@ -278,15 +278,15 @@
   <div class="table-responsive">
  <table width="100%" class="table-striped table-bordered" id="table_total">
   <tr>
-    <td><h3>Type Of Loan</h3></td>
-    <td><h3>Bank 1 Saving</h3></td>
-     <td><h3>Bank 2 Saving</h3></td>
-     <td><h3>Bank 3 Saving</h3></td>
-     <td><h3>Total Saving</h3></td>
+    <td>Type Of Loan</td>
+    <td>Bank 1 Saving</td>
+     <td>Bank 2 Saving</td>
+     <td>Bank 3 Saving</td>
+     <td>Total Saving</td>
 
   </tr>
   <tr>
-    <td class="text-left"><h4 class="text-center">Working Capital</h4></td>
+    <td class="text-left">Working Capital</td>
     <td id="bankName0"> </td>
     <td id="bankName1"> </td>
     <td id="bankName2"> </td>
@@ -294,14 +294,14 @@
     
   </tr>
   <tr>
-   <td class="text-left"><h4 class="text-center">Term Loan</h4></b> </td>
+   <td class="text-left">Term Loan</td>
    <td id="TbankName0">  </td>
    <td id="TbankName1">  </td>
    <td id="TbankName2">  </td>
    <td id="Tbanktotal">  </td>
   </tr>
   <tr>
-  <td class="text-left"><h4 class="text-center">Packing Credit Domestic</h4></b></</td>
+  <td class="text-left">Packing Credit Domestic</</td>
   <td  id="domestic_ID">  </td>
    
   <td  >-</td>
@@ -309,7 +309,7 @@
   <td  id="tdomestic_ID"> </td>
   </tr>
   <tr>
-  <td class="text-left" ><h4 class="text-center">Packing Credit Foreign Currency</h4></</td>
+  <td class="text-left" >Packing Credit Foreign Currency</</td>
   <td id="currency_ID" > </td>
  
   <td >-</td>
@@ -318,7 +318,7 @@
   </tr>
 
   <tr>
-    <td class="text-left"><h3 class="text-center">Total:</h3></td>
+    <td class="text-left"><h3 class="text-left">Total:</h3></td>
     <td id="bank1_saving"> </td>
     <td id="bank2_saving">  </td>
     <td id="bank3_saving"> </td>

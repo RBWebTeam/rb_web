@@ -1960,7 +1960,7 @@ body {background:#eee;}
 .top-lnk .credit-score-btn:hover {background:transparent;}
 
 .model-hig {max-height:450px;overflow:scroll;}
-.crd-rpt {    width: 300px;margin: 0 auto;}
+.crd-rpt {    width: 300px;margin: 0 auto; margin-top: 25px !important;}
 .credit-report-bg {background: url("../images/Credit-Report_bg.png") no-repeat; padding-bottom:60px;border-bottom:1px solid #eee;}
 .exp-bg {background:url(../images/exp_bg.jpg) no-repeat;padding: 20px 0px;}
 
@@ -2007,7 +2007,7 @@ body {background:#eee;}
   .hide-title ul li {list-style-type:none;}
   .txt-title1 {font-weight:bold; text-transform:uppercase; border-right:1px solid #ddd;}
   .error-template img {margin:auto; }
-  .heigh-bt {height:300px;}
+  .heigh-bt {height:300px;border-radius:0px;}
    .heigh-bt2 {height:416px; box-shadow:1px 1px 1px 1px #ccc; background:#fff; }
    .heigh-bt1  {height:330px; box-shadow:1px 1px 1px 1px #ccc;}
   .mrg-tp {margin-top:8px;}

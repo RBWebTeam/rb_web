@@ -457,7 +457,7 @@
     <!--   </form> -->
 
     </div> 
-    <p id="err" style="display:none;" ><span style="color: red;font-size: 20px;display: block; text-align: center;">Sorry, We are unable to process your request. Will get back to you in future.</span></p> 
+    <p id="err" style="display:none;" ><span style="color: red;font-size: 20px;display: block; text-align: center;">Sorry, No quotes found for your given requirements.</span></p> 
   </div> 
 	
 	
@@ -605,9 +605,14 @@ $(".product_ID").click(function(e){
 
                    }else{
                      $('#err').show();
+                     $('#loanamount').val("");
+                     $('#rate').val("");
+                     $('#term').val("");
+                     $('#processfee').val("");
+                     $('#bank').val("");
                      $('#apply_new').hide();
                       $("#test123").empty();
-                       $('#mi_id').hide();
+                       // $('#mi_id').hide();
                       
                     }
                      // $(window).scrollTop($('#test123').offset().top-20);

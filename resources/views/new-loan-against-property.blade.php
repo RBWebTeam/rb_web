@@ -414,8 +414,13 @@ $(".product_ID").click(function(e){
                          }else{
 
                                 $('#err').show();
+                                 $('#loanamount').val("");
+                                $('#rate').val("");
+                                $('#term').val("");
+                                $('#processfee').val("");
+                                $('#bank').val("");
                                 $('#apply_new').hide();
-                                $('#mi_ID').hide();
+                                // $('#mi_ID').hide();
                                 $("#form_ID").empty();
                                 
                                 

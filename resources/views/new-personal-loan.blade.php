@@ -309,9 +309,14 @@ $(".btn-primary").click(function(e){
                    }else{
                     // alert("ok");
                      $('#err').show();
+                      $('#loanamount').val("");
+                      $('#rate').val("");
+                      $('#term').val("");
+                      $('#processfee').val("");
+                      $('#bank').val("");
                      $('#apply_new').hide();
-                      $("#test123").empty();
-                       $('#mi_id').hide();
+                     $("#test123").empty();
+                     // $('#mi_id').hide();
                       
                     }
                      // $(window).scrollTop($('#test123').offset().top-20);

@@ -809,7 +809,7 @@ function tribe_doc_upload(id){
     $('#tribe_doc_upload_modal').modal('show');
     $('#uplaoding_doc_name').val(id);
     doc_id=id;
-    if(id==10 || id==13){
+    if(id==6 || id==7){
       $('#doc_special_fields').show();
     }else{
        $('#doc_special_fields').hide();

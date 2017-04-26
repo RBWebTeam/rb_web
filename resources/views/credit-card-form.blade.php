@@ -114,7 +114,7 @@
 											<h4 class="hdr">&nbsp;&nbsp;&nbsp;&nbsp;Contact Details</h4>
 										
 											<div class="col-md-4">
-												<input type="text" class="form-control" id="ResidencePhoneNumber" name="ResidencePhoneNumber" placeholder="Telephone No" required="" onkeypress="return fnAllowNumeric(event)" maxlength="15" minlength="6">
+												<input type="text" class="form-control" id="ResidencePhoneNumber" name="ResidencePhoneNumber" placeholder="Telephone No" required="" onkeypress="return fnAllowNumeric(event)" maxlength="10" >
 											</div>
 											<div class="col-md-4">
 												<input type="text" class="form-control" id="ResidenceMobileNo" name="ResidenceMobileNo" placeholder="Mobile No" required="" onkeypress="return fnAllowNumeric(event)" maxlength="10" minlength="10">
@@ -132,7 +132,7 @@
 										<div class="form-group">
 											<h4 class="hdr">&nbsp;&nbsp;&nbsp;&nbsp;Identity Details</h4>
 											<div class="col-md-4">
-												<input type="text" id="ApplicationNumber" name="ApplicationNumber" class="form-control" placeholder="Application Number*"  maxlength="13" minlength="13" required>
+												<input type="text" id="ApplicationNumber" name="ApplicationNumber" class="form-control" placeholder="Application Number*"   maxlength="13" minlength="13" required>
 											</div>
 											<!-- <div class="col-md-4">
 												<input type="text" class="form-control" placeholder="Passport No*" name="passport"	>
@@ -159,12 +159,12 @@
 										<div class="col-md-12">
 										<input type="checkbox" name="terms" required>
 											I hereby confirm that I have read and understood the
-			<a href="#" data-toggle="modal" data-target="#Experian_terms_modal"> Rupeeboss Terms</a> and Conditions applicable to this service and that all the details furnished by me above are true and correct. I further provide consent to Rupeeboss and its affiliates to contact me with reference to financial products and this consent shall override any registration with DNC/NDNC.
+									<a href="#" data-toggle="modal" data-target="#Experian_terms_modal"> Rupeeboss Terms</a> and Conditions applicable to this service and that all the details furnished by me above are true and correct. I further provide consent to Rupeeboss and its affiliates to contact me with reference to financial products and this consent shall override any registration with DNC/NDNC.
 
 										</div>
 										
 										</div class="col-md-12">
-										&nbsp;&nbsp;&nbsp;&nbsp;<button class="btn btn-primary btn-outline with-arrow animate-box fadeInUp animated credit-submit" >Confirm & Continue<i class="icon-arrow-right"></i>
+										&nbsp;&nbsp;&nbsp;&nbsp;<button class="btn btn-primary btn-outline with-arrow animate-box fadeInUp animated credit-submit dis-tbl" >Confirm & Continue<i class="icon-arrow-right"></i>
 
 
 									</button>
@@ -230,26 +230,27 @@
       }else{
         //var s=$('#'+form).serialize();
 
-        // $(".iframeloading").show();
-        // $(".credit-submit").hide(); 
+        $(".iframeloading").show();
+        $(".credit-submit").hide(); 
         $.ajax({  
          type: "POST",  
          url: "{{URL::to('credit-submit')}}",
          data : $('#'+form).serialize(),
          dataType: 'json',
          success: function(msg){
-         // $(".iframeloading").hide();  
+         $(".iframeloading").hide();  
         
          // console.log(msg);
-          if(msg==1){
+          if(msg==2){
           	// alert("OKAE");
+          	 alert("Something Went Wrong");
 
-            alert("Thank you for your interest in ICICI Bank Credit Cards. Our representative will get in touch with you within 3 working days subject to your application meeting the eligibility criteria");
+           
             // $('#credit_process').modal('show');        
           } 
-          else if(msg==2){
+          else{
           	// console.log(msg);
-            alert("Something Went Wrong");
+            alert(" Your Application id is "+msg+".Thank you for your interest in ICICI Bank Credit Cards. Our representative will get in touch with you within 3 working days subject to your application meeting the eligibility criteria");
              // $('#credit_process_sorry').modal('show');
           }
 

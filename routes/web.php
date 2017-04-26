@@ -147,7 +147,7 @@ Route::post('credit-submit','CreditcardController@credit_form_submit');
 Route::get('no-record-found',function (){return view('no-record-found');});
 //Route::get('test',function (){return view('test_parse');});
 Route::get('test','TribeController@test');
-
+Route::get('test-push',function (){return view('test');});
 
 
 

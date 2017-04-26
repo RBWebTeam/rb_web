@@ -634,7 +634,7 @@
 			<section class="content">
 				
 				<span class="input_exp input--nao">
-					<input class="input__field input__field--nao" type="text" id="name_co_app" name="name_co_app" required/>
+					<input class="input__field input__field--nao" type="text" id="name_co_app" name="name_co_app"/>
 					<label class="input__label input__label--nao" for="name_co_app">
 						<span class="input__label-content input__label-content--nao">First Name </span>
 					</label>
@@ -652,7 +652,7 @@
 					</svg>
 				</span>
 				<span class="input_exp input--nao">
-					<input class="input__field input__field--nao" type="text" id="last_name_co_app" name="last_name_co_app" required/>
+					<input class="input__field input__field--nao" type="text" id="last_name_co_app" name="last_name_co_app"/>
 					<label class="input__label input__label--nao" for="last_name_co_app">
 						<span class="input__label-content input__label-content--nao">Last Name</span>
 					</label>
@@ -661,7 +661,7 @@
 					</svg>
 				</span>
 				<span class="input_exp input--nao">
-					<select class="input__field input__field--nao fnt-clr" id="gender_co_app" name="gender_co_app" required>
+					<select class="input__field input__field--nao fnt-clr" id="gender_co_app" name="gender_co_app" />
 					<option></option>
 					<option>Male</option>
 					<option>Female</option>
@@ -675,7 +675,7 @@
 					</svg>
 				</span>
 				<span class="input_exp input--nao">
-					<input class="input__field input__field--nao lastReporteddate1" type="text" id="dob_co_app" name="dob_co_app" required />
+					<input class="input__field input__field--nao lastReporteddate1" type="text" id="dob_co_app" name="dob_co_app"/>
 					<label class="input__label input__label--nao" for="dob_co_app">
 						<span class="input__label-content input__label-content--nao">DOB / AGE</span>
 					</label>
@@ -684,7 +684,7 @@
 					</svg>
 				</span>
 				<span class="input_exp input--nao">
-					<input class="input__field input__field--nao" type="text" id="occupation_co_app" name="occupation_co_app" required />
+					<input class="input__field input__field--nao" type="text" id="occupation_co_app" name="occupation_co_app"/>
 					<label class="input__label input__label--nao" for="occupation_co_app">
 						<span class="input__label-content input__label-content--nao">Occupation</span>
 					</label>
@@ -693,7 +693,7 @@
 					</svg>
 				</span>
 				<span class="input_exp input--nao">
-					<input class="input__field input__field--nao" type="text" id="income_co_app"  name="income_co_app" onkeypress="return isNumberKey(event)" required />
+					<input class="input__field input__field--nao" type="text" id="income_co_app"  name="income_co_app" onkeypress="return isNumberKey(event)"/>
 					<label class="input__label input__label--nao" for="income_co_app">
 						<span class="input__label-content input__label-content--nao">Income (Monthly)</span>
 					</label>
@@ -702,7 +702,7 @@
 					</svg>
 				</span>
 				<span class="input_exp input--nao">
-					<select class="input__field input__field--nao fnt-clr" id="relation" name="relation" required>
+					<select class="input__field input__field--nao fnt-clr" id="relation" name="relation">
 					<option ></option>
 					<option value="Mother">Mother</option>
 					<option value="Father">Father</option>
@@ -718,7 +718,7 @@
 					</svg>
 				</span>
 				<span class="input_exp input--nao">
-					<input class="input__field input__field--nao" type="text" id="pan_no_co_app" name="pan_no_co_app" minlength="10" maxlength="10" oninput="pan_card('pan_no_co_app')"    required/>
+					<input class="input__field input__field--nao" type="text" id="pan_no_co_app" name="pan_no_co_app" minlength="10" maxlength="10" oninput="pan_card('pan_no_co_app')"   />
 					<label class="input__label input__label--nao" for="pan_no_co_app">
 						<span class="input__label-content input__label-content--nao">PAN</span>
 					</label>
@@ -728,7 +728,7 @@
 					<div id="pan_number_co_app" style="display:none;color: red;">Oops.Please Enter Valid Pan Number.!!</div>
 				</span>
 				<span class="input_exp input--nao">
-					<input class="input__field input__field--nao" type="tel" id="mob_co_app" name="mob_co_app" maxlength="10" pattern="[789][0-9]{9}" onkeypress="return isNumberKey(event)" required />
+					<input class="input__field input__field--nao" type="tel" id="mob_co_app" name="mob_co_app" maxlength="10" pattern="[789][0-9]{9}" onkeypress="return isNumberKey(event)"/>
 					<label class="input__label input__label--nao" for="mob_co_app">
 						<span class="input__label-content input__label-content--nao">Mobile No.</span>
 					</label>
@@ -746,7 +746,7 @@
 					</svg>
 				</span>
 				<span class="input_exp input--nao">
-					<input class="input__field input__field--nao" type="text" id="aadhar_card_co_app" name="aadhar_card_co_app" oninput="aadhar('aadhar_card_co_app')" minlength="14" maxlength="14" required  />
+					<input class="input__field input__field--nao" type="text" id="aadhar_card_co_app" name="aadhar_card_co_app" oninput="aadhar('aadhar_card_co_app')" minlength="14" maxlength="14"/>
 					<label class="input__label input__label--nao" for="aadhar_card_co_app">
 						<span class="input__label-content input__label-content--nao">UID No. (Aadhar Card )</span>
 					</label>
@@ -757,7 +757,7 @@
 					
 				</span>
 				<span class="input_exp input--nao">
-					<input class="input__field input__field--nao" type="text" id="address1_co_app" name="address1_co_app" required />
+					<input class="input__field input__field--nao" type="text" id="address1_co_app" name="address1_co_app"/>
 					<label class="input__label input__label--nao" for="address1_co_app">
 						<span class="input__label-content input__label-content--nao">Address Line 1</span>
 					</label>

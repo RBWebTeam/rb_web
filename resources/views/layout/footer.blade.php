@@ -87,7 +87,7 @@
                 
                 <p class="white-txt"><b>Appointment Now</b></p>
 				
-            <p class="mrg-btm white-txt"><b>1800-267-629-6</b></p>
+            <p class="mrg-btm"><a href="{{URL::to('contact-us')}}" class="white-txt"><b>1800-267-629-6</b></a></p>
 			<span class="mrg-btm white-txt"><i class="icon-envelope"></i>&nbsp;wecare(@)rupeeboss(.)com</span>
 			</div>
 			

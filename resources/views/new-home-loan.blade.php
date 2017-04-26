@@ -310,14 +310,14 @@
  
 
 
-         <button id="eligibility" class="btn btn-info disblk" title="See Bankwise Eligibility And Apply Amongst Best Bank">Check Bankwise Eligibility</button>
+         <button id="eligibility"  class="btn btn-info disblk" title="See Bankwise Eligibility And Apply Amongst Best Bank">Check Bankwise Eligibility </button>
          <button type="button" class="btn btn-info block"  id="call_rm" name="call_rm" data-toggle="modal" data-target="#Modal" title="Call For RM(Single Day Process)">Call Manager</button>
          <div id="log_digital_text" style=" color: red"></div>
         </div>
       <!-- </form> -->
     </div>  
 
-    <p id="err" style="display:none;" ><span style="color: red;font-size: 20px;display: block;text-align: center;">Sorry, we are unable to process your request. Will get back to you in future.</span></p> 
+    <p id="err" style="display:none;" ><span style="color: red;font-size: 20px;display: block;text-align: center;">Sorry, No quotes found for your given requirements.</span></p> 
   </div>
 
 
@@ -418,6 +418,7 @@ $(".product_ID").click(function(e){
                              $("#apply_new").attr("href", url+'&is_liza=1');
                              $('#mi_ID').show();
                              $('#err').hide();
+                           
                             
                              // $(window).scrollTop($('#form_ID').offset().top-20);
 
@@ -427,9 +428,15 @@ $(".product_ID").click(function(e){
                          }else{
 
                                 $('#err').show();
+                                $('#loanamount').val("");
+                                $('#rate').val("");
+                                $('#term').val("");
+                                $('#processfee').val("");
+                                $('#bank').val("");
                               //  $('#apply_new').hide();
-                                $('#mi_ID').hide();
+                                // $('#mi_ID').hide();
                                 $("#form_ID").empty();
+
                                 
                                 
                          }

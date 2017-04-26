@@ -21,13 +21,14 @@ class FormController extends CallApiController
         'Principal_Amt'=>$req['Principal_Amt']?$req['Principal_Amt']:'',
         'Interest_Rate'=>$req['Interest_Rate']?$req['Interest_Rate']:'',
         'Remaining_Tenure'=>$req['Remaining_Tenure']?$req['Remaining_Tenure']:'',
-        'brokerid'=>Session::get('brokerid')?Session::get('brokerid'):'';,
-        'empid'=>Session::get('empid')?Session::get('empid'):'';,
-        'source'=>Session::get('source')?Session::get('source'):'';,
+        'brokerid'=>Session::get('brokerid')?Session::get('brokerid'):'',
+        'empid'=>Session::get('empid')?Session::get('empid'):'',
+        'source'=>Session::get('source')?Session::get('source'):'',
         'form'    =>$req['form'] 
         );
     //call API here to save in DB
         $post=json_encode($post_data);
+       // print_r($post);exit();
     $url = "http://api.rupeeboss.com/BankAPIService.svc/GetCustomerWebRequest";
     $result=$this->call_json_data_api($url,$post);
     $http_result=$result['http_result'];

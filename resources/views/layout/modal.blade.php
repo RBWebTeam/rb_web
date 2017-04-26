@@ -580,19 +580,19 @@ Rupeeboss Financial Services Private Limited shall access your Credit Informatio
             <label >Document Year</label>
             <select name="document_year" class="drop-arr" required>
             <option disabled selected>Select Year</option>
-              <option>2013-2014</option>
-              <option>2014-2015</option>
-              <option>2015-2016</option>
-              <option>2016-2017</option>
-              <option>2017-2018</option>
-              <option>2018-2019</option>
-              <option>2019-2020</option>
+              <option value="2013 - 2014">2013-2014</option>
+              <option value="2014 - 2015">2014-2015</option>
+              <option value="2015 - 2016">2015-2016</option>
+              <option value="2016 - 2017">2016-2017</option>
+              <option value="2017 - 2018">2017-2018</option>
+              <option value="2018 - 2019">2018-2019</option>
+              <option value="2019 - 2020">2019-2020</option>
             </select>
             <label >Document Type</label>
              <select name="document_type" class="drop-arr" required>
              <option disabled selected>Select</option>
-              <option>IT Returns</option>
-              <option>IT Acknowledgement</option>
+              <option value="1">IT Returns</option>
+              <option value="2">IT Acknowledgement</option>
               
             </select>
         </div>
@@ -624,4 +624,53 @@ Rupeeboss Financial Services Private Limited shall access your Credit Informatio
   </div>
 </div>
 
+
+    <div class="modal fade" id="working_capital_model_id" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Talk To Us</h4>
+        </div>
+        <div class="modal-body">
+          <form name="working_capital_form" id="working_capital_form" method="post">
+          {{ csrf_field() }}
+          <input type="hidden" name="form" value="working_capital">
+                  <div>
+                    <fieldset>
+                      <input type="text" class="newsletter-name" name="name" placeholder="Name" required>
+                    </fieldset>
+                    </div>
+                  <div>
+                    <fieldset>
+                      <input type="text" class="newsletter-name" name="contact" pattern="[789][0-9]{9}" required maxlength="10" placeholder="Mobile Number">
+                    </fieldset>                 
+                    </div>
+                    <div>
+                    <fieldset>
+                      <input type="email" class="newsletter-name" name="email"  required  placeholder="Email ">
+                    </fieldset>                 
+                    </div>
+                  <div>
+                      <a class="btn btn-primary btn-outline with-arrow sidebar-submit" id="work_id">Submit<i class="icon-arrow-right"></i></a>
+                  </div>
+            </form>
+            <div class='msg displaynone' ><p>Thanks. We will reach you soon.</p></div>
+            <div class='msg_err displaynone' ><p>Ooops. Something went wrong.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div id="working_model" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+       <a type="button" class="close" data-dismiss="modal" aria-hidden="true">×</a>
+        <div class="modal-header">
+       </div>
+        <h4 class="modal-title text-center" id="working_i_d"></h4>
+     </div>
+   </div>
+  </div>
+ 
 

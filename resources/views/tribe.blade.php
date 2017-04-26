@@ -442,7 +442,7 @@
       </div>
       <div class="col-md-4">Electricity Bill</div>
         <div class="col-md-8 form-padding">
-        <a class="btn btn-primary btn-outline with-arrow pull-right" onclick="tribe_doc_upload(6)">Add Document<i class="icon-arrow-right"></i></a>
+        <a class="btn btn-primary btn-outline with-arrow pull-right" onclick="tribe_doc_upload(12)">Add Document<i class="icon-arrow-right"></i></a>
            <div style="display: none;" id="after_upload_div_6">
               <a class="btn btn-primary btn-outline with-arrow pull-right" id="get_doc_6" >Show Document<i class="icon-arrow-right"></i></a>
               <a class="btn btn-primary btn-outline with-arrow pull-right" id="del_doc_6">Delete Document<i class="icon-arrow-right"></i></a>
@@ -452,7 +452,7 @@
         
         <div class="col-md-4">Leave and License Agreement</div>
         <div class="col-md-8 form-padding">
-        <a class="btn btn-primary btn-outline with-arrow pull-right" onclick="tribe_doc_upload(7)">Add Document<i class="icon-arrow-right"></i></a>
+        <a class="btn btn-primary btn-outline with-arrow pull-right" onclick="tribe_doc_upload(13)">Add Document<i class="icon-arrow-right"></i></a>
            <div style="display: none;" id="after_upload_div_7">
               <a class="btn btn-primary btn-outline with-arrow pull-right" id="get_doc_7" >Show Document<i class="icon-arrow-right"></i></a>
               <a class="btn btn-primary btn-outline with-arrow pull-right" id="del_doc_7">Delete Document<i class="icon-arrow-right"></i></a>
@@ -465,7 +465,7 @@
       </div>
         <div class="col-md-4">Registration Certificate</div>
         <div class="col-md-8 form-padding">
-        <a class="btn btn-primary btn-outline with-arrow pull-right" onclick="tribe_doc_upload(8)">Add Document<i class="icon-arrow-right"></i></a>
+        <a class="btn btn-primary btn-outline with-arrow pull-right" onclick="tribe_doc_upload(14)">Add Document<i class="icon-arrow-right"></i></a>
            <div style="display: none;" id="after_upload_div_8">
               <a class="btn btn-primary btn-outline with-arrow pull-right" id="get_doc_8" >Show Document<i class="icon-arrow-right"></i></a>
               <a class="btn btn-primary btn-outline with-arrow pull-right" id="del_doc_8">Delete Document<i class="icon-arrow-right"></i></a>
@@ -475,7 +475,7 @@
         
         <div class="col-md-4">Tax Registration</div>
         <div class="col-md-8 form-padding">
-        <a class="btn btn-primary btn-outline with-arrow pull-right" onclick="tribe_doc_upload(9)">Add Document<i class="icon-arrow-right"></i></a>
+        <a class="btn btn-primary btn-outline with-arrow pull-right" onclick="tribe_doc_upload(15)">Add Document<i class="icon-arrow-right"></i></a>
            <div style="display: none;" id="after_upload_div_9">
               <a class="btn btn-primary btn-outline with-arrow pull-right" id="get_doc_9" >Show Document<i class="icon-arrow-right"></i></a>
               <a class="btn btn-primary btn-outline with-arrow pull-right" id="del_doc_9">Delete Document<i class="icon-arrow-right"></i></a>
@@ -485,7 +485,7 @@
 
         <div class="col-md-4">Company PAN</div>
         <div class="col-md-8 form-padding">
-        <a class="btn btn-primary btn-outline with-arrow pull-right" onclick="tribe_doc_upload(11)">Add Document<i class="icon-arrow-right"></i></a>
+        <a class="btn btn-primary btn-outline with-arrow pull-right" onclick="tribe_doc_upload(8)">Add Document<i class="icon-arrow-right"></i></a>
            <div style="display: none;" id="after_upload_div_11">
               <a class="btn btn-primary btn-outline with-arrow pull-right" id="get_doc_11" >Show Document<i class="icon-arrow-right"></i></a>
               <a class="btn btn-primary btn-outline with-arrow pull-right" id="del_doc_11">Delete Document<i class="icon-arrow-right"></i></a>
@@ -498,7 +498,7 @@
       </div>
         <div class="col-md-4">Company IT Returns</div>
         <div class="col-md-8 form-padding">
-        <a class="btn btn-primary btn-outline with-arrow pull-right" onclick="tribe_doc_upload(10)">Add Document<i class="icon-arrow-right"></i></a>
+        <a class="btn btn-primary btn-outline with-arrow pull-right" onclick="tribe_doc_upload(7)">Add Document<i class="icon-arrow-right"></i></a>
            <div style="display: none;" id="after_upload_div_10">
               <a class="btn btn-primary btn-outline with-arrow pull-right" id="get_doc_10" >Show Document<i class="icon-arrow-right"></i></a>
               <a class="btn btn-primary btn-outline with-arrow pull-right" id="del_doc_10">Delete Document<i class="icon-arrow-right"></i></a>
@@ -510,7 +510,7 @@
         
          <div class="col-md-4">ITR/VAT Returns/ST Returns</div>
         <div class="col-md-8 form-padding">
-        <a class="btn btn-primary btn-outline with-arrow pull-right" onclick="tribe_doc_upload(12)">Add Document<i class="icon-arrow-right"></i></a>
+        <a class="btn btn-primary btn-outline with-arrow pull-right" onclick="tribe_doc_upload(9)">Add Document<i class="icon-arrow-right"></i></a>
            <div style="display: none;" id="after_upload_div_12">
               <a class="btn btn-primary btn-outline with-arrow pull-right" id="get_doc_12" >Show Document<i class="icon-arrow-right"></i></a>
               <a class="btn btn-primary btn-outline with-arrow pull-right" id="del_doc_12">Delete Document<i class="icon-arrow-right"></i></a>
@@ -523,7 +523,7 @@
       </div>
         <div class="col-md-4">Personal IT Returns</div>
         <div class="col-md-8 form-padding">
-        <a class="btn btn-primary btn-outline with-arrow pull-right" onclick="tribe_doc_upload(13)">Add Document<i class="icon-arrow-right"></i></a>
+        <a class="btn btn-primary btn-outline with-arrow pull-right" onclick="tribe_doc_upload(6)">Add Document<i class="icon-arrow-right"></i></a>
            <div style="display: none;" id="after_upload_div_13">
               <a class="btn btn-primary btn-outline with-arrow pull-right" id="get_doc_13" >Show Document<i class="icon-arrow-right"></i></a>
               <a class="btn btn-primary btn-outline with-arrow pull-right" id="del_doc_13">Delete Document<i class="icon-arrow-right"></i></a>
@@ -533,7 +533,7 @@
         
         <div class="col-md-4">Other Documents</div>
         <div class="col-md-8 form-padding">
-        <a class="btn btn-primary btn-outline with-arrow pull-right" onclick="tribe_doc_upload(14)">Add Document<i class="icon-arrow-right"></i></a>
+        <a class="btn btn-primary btn-outline with-arrow pull-right" onclick="tribe_doc_upload(11)">Add Document<i class="icon-arrow-right"></i></a>
            <div style="display: none;" id="after_upload_div_14">
               <a class="btn btn-primary btn-outline with-arrow pull-right" id="get_doc_14" >Show Document<i class="icon-arrow-right"></i></a>
               <a class="btn btn-primary btn-outline with-arrow pull-right" id="del_doc_14">Delete Document<i class="icon-arrow-right"></i></a>
@@ -809,7 +809,7 @@ function tribe_doc_upload(id){
     $('#tribe_doc_upload_modal').modal('show');
     $('#uplaoding_doc_name').val(id);
     doc_id=id;
-    if(id==10 || id==13){
+    if(id==6 || id==7){
       $('#doc_special_fields').show();
     }else{
        $('#doc_special_fields').hide();

@@ -27,6 +27,21 @@ class CreditcardController extends CallApiController
     // $req['SalaryAcOpenDate']=str_replace('-', '/',$newDate);
     $data=$req->all();
     // print_r($req->all());exit();
+    if(isset($request['brokerid'])){
+      $brokerid = $request['brokerid'];
+    }else{
+      $brokerid = 0;
+    }
+    if(isset($request['empid'])){
+      $empid = $request['empid'];
+    }else{
+      $empid = 0;
+    }
+    if(isset($request['source'])){
+      $source = $request['source'];
+    }else{
+      $source = 0;
+    }
  	$data['UserID']='ICICI_CC_RupeeBoss';
  	$data['Password']='Password@123';
  	$data['ChannelType']='RupeeBoss';

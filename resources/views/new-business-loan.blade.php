@@ -459,7 +459,8 @@
 
              <!-- <form name="compareform" id="compareform" > -->
           
-          
+           <p id="err" style="display:none;" ><span style="color: red;font-size: 20px;display: block; text-align: center;">Sorry, No quotes found for your given requirements.</span></p> 
+           
             <div class="inp-hig">
             <label class="form-label-new">Loan Amount</label>
               <input type="text" class="form-control" id="loanamount" name="name" value="" placeholder="" required class="clr-ddd" readonly />
@@ -493,7 +494,7 @@
     <!--   </form> -->
 
     </div> 
-    <p id="err" style="display:none;" ><span style="color: red;font-size: 20px;display: block; text-align: center;">Sorry, No quotes found for your given requirements.</span></p> 
+   <!--  <p id="err" style="display:none;" ><span style="color: red;font-size: 20px;display: block; text-align: center;">Sorry, No quotes found for your given requirements.</span></p>  -->
   </div> 
 	
 	

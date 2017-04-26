@@ -141,7 +141,7 @@
      <div class="border brd-for hei-frtrt" id="mi_id">
 
              <!-- <form name="compareform" id="compareform" > -->
-          
+          <p id="err" style="display:none;" ><span style="color: red;font-size: 20px;display: block;text-align: center;">Sorry, No quotes found for your given requirements.</span></p> 
           
             <div class="inp-hig">
             <label class="form-label-new">Loan Amount</label>
@@ -182,7 +182,7 @@
        
 
     </div> 
-    <p id="err" style="display:none;" ><span style="color: red;font-size: 20px;display: block; text-align: center;">Sorry, no quotes found for your given requirements.</span></p> 
+    <!-- <p id="err" style="display:none;" ><span style="color: red;font-size: 20px;display: block; text-align: center;">Sorry, no quotes found for your given requirements.</span></p>  -->
   </div> 
    </aside>
    

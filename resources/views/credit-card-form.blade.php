@@ -13,9 +13,9 @@
 						
 							<form class="" id="compareform" role="form" method="POST" >
 							 {{ csrf_field() }}
-							 <input type="hidden" name="empid" class="empid" value=" <?php echo Session::get('empid')?Session::get('empid'):'';?>">
-						          <input type="hidden" name="brokerid" class="brokerid" value="<?php echo Session::get('brokerid')?Session::get('brokerid'):'';?>">
-						          <input type="hidden" name="source" class="source" value="<?php echo Session::get('source')?Session::get('source'):'';?>"> 
+							 <input type="hidden" name="empid" class="empid" value=" <?php echo Session::get('empid')?Session::get('empid'):'0';?>">
+						          <input type="hidden" name="brokerid" class="brokerid" value="<?php echo Session::get('brokerid')?Session::get('brokerid'):'0';?>">
+						          <input type="hidden" name="source" class="source" value="<?php echo Session::get('source')?Session::get('source'):'0';?>"> 
 								<div class="row">
 									<div class="form-group">
 									

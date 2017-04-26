@@ -416,7 +416,8 @@
 
 @include('layout.footer')
 @include('layout.script')
-
+</div>
+</div>
 
 <script type="text/javascript">
 //var restoredSession = JSON.parse(localStorage.getItem('session'));

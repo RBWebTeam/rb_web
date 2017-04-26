@@ -1,8 +1,5 @@
 <?php
 namespace App\Http\Controllers;
-use Illuminate\Http\Request;
-use App\Http\Requests;
-use DB;
 use Response;
 class CallApiController extends InitialController
 {

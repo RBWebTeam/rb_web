@@ -11,29 +11,6 @@ use App\experian_responseModel;
 class ExperianController extends CallApiController
 {
     public function credit_report(){
-
-
-
-          $myString = isset($_GET['referrer']);
-          if($myString){
-            
-            $myArray = explode('@', $_GET['referrer']);
-            if(isset($myArray[0])){
-              Session::put('empid', $myArray[0]);
-              $empid = Session::get('empid');
-             
-            }
-            if(isset($myArray[1])){
-             Session::put('brokerid', $myArray[1]);
-              $brokerid = Session::get('brokerid');
-            }
-            if(isset($myArray[2])){
-              Session::put('source', $myArray[2]);
-              $source = Session::get('source');
-
-
-            }
-          }
           //print_r($empid);exit();
       $keywords='Free Credit Score,Credit Score,Free Credit Report,Check Credit Score Online ';
       $data['title']='Know Your Credit Score Online for FREE on Rupeeboss.com';

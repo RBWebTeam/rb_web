@@ -127,7 +127,7 @@
               <a class="btn btn-primary btn-outline with-arrow top-mrg product_name" id="btn_refresh_co1" data-toggle="modal" data-target="#login_process">Get Best Quotes<i class="icon-arrow-right"></i></a>
             <?php } ?> -->
 
-<p id="err" style="display:none;" ><span style="color: red;font-size: 16px;display: block; text-align: center;">Sorry, no quotes found for your given requirements.</span></p>
+
              <a class="btn btn-primary btn-outline with-arrow top-mrg product_name product_ID"   >Get Best Quotes<i class="icon-arrow-right"></i></a> 
 
  
@@ -174,7 +174,7 @@
            @endif    
  
 
-         <button id="eligibility" class="btn btn-info disblk" title="See Bankwise Eligibility And Apply Amongst Best Bank">Check Bankwise Eligibility</button>
+         <button id="eligibility" class="btn btn-info disblk" title="See Bankwise Eligibility And Apply Amongst Best Bank" style="display: none;">Check Bankwise Eligibility</button>
          <button type="button" class="btn btn-info block"  id="call_rm" name="call_rm" data-toggle="modal" data-target="#Modal" title="Call For RM(Single Day Process)">Call Manager</button>
          <div id="log_digital_text" style=" color: red"></div>
         </div>
@@ -305,6 +305,7 @@ $(".btn-primary").click(function(e){
                       $('#err').hide();
                       $('#apply_new').show();
                       $('#mi_id').show();
+                       $('#eligibility').show();
                     //   $(window).scrollTop($('#lowest').offset().top-50);
 
                          getUrl=url;

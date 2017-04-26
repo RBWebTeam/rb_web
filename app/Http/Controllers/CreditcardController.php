@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use DB;
+use Session;
 use App\credit_card_form_req;
 class CreditcardController extends CallApiController
 {
@@ -27,21 +28,9 @@ class CreditcardController extends CallApiController
     // $req['SalaryAcOpenDate']=str_replace('-', '/',$newDate);
     $data=$req->all();
     // print_r($req->all());exit();
-    if(isset($request['brokerid'])){
-      $brokerid = $request['brokerid'];
-    }else{
-      $brokerid = 0;
-    }
-    if(isset($request['empid'])){
-      $empid = $request['empid'];
-    }else{
-      $empid = 0;
-    }
-    if(isset($request['source'])){
-      $source = $request['source'];
-    }else{
-      $source = 0;
-    }
+    $data['brokerid']=Session::get('brokerid')?Session::get('brokerid'):'0';
+    $data['empid']=Session::get('empid')?Session::get('empid'):'0';
+    $data['source']=Session::get('source')?Session::get('source'):'0';
  	$data['UserID']='ICICI_CC_RupeeBoss';
  	$data['Password']='Password@123';
  	$data['ChannelType']='RupeeBoss';

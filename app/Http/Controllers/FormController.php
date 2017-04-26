@@ -21,8 +21,9 @@ class FormController extends CallApiController
         'Principal_Amt'=>$req['Principal_Amt']?$req['Principal_Amt']:'',
         'Interest_Rate'=>$req['Interest_Rate']?$req['Interest_Rate']:'',
         'Remaining_Tenure'=>$req['Remaining_Tenure']?$req['Remaining_Tenure']:'',
-        'brokerid'=>$req['brokerid']?$req['brokerid']:'',
-        'empid'=>$req['empid']?$req['empid']:'',
+        'brokerid'=>Session::get('brokerid')?Session::get('brokerid'):'';,
+        'empid'=>Session::get('empid')?Session::get('empid'):'';,
+        'source'=>Session::get('source')?Session::get('source'):'';,
         'form'    =>$req['form'] 
         );
     //call API here to save in DB
@@ -324,8 +325,8 @@ class FormController extends CallApiController
             // $res_arr1['brokerid']=Session::get('brokerid')?Session::get('brokerid'):'';
             // $merge=substr(json_encode($res_arr1),1, -1) ;
 
-            $res_arr1=Session::get('empid')?Session::get('empid'):'';
-            $res_arr2=Session::get('brokerid')?Session::get('brokerid'):'';
+            // $res_arr1=Session::get('empid')?Session::get('empid'):'';
+            // $res_arr2=Session::get('brokerid')?Session::get('brokerid'):'';
 
 //echo 'empid='.$res_arr1.'&'.'brokerid='.$res_arr2;exit;
 

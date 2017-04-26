@@ -547,13 +547,15 @@ Rupeeboss Financial Services Private Limited shall access your Credit Informatio
     </div>
   </div>
   
-  <div id="working_model" class="modal fade" tabindex="-1" role="dialog">
+  <div id="working_model" class="modal fade mod-mar-tp" tabindex="-1" role="dialog">
     <div class="modal-dialog">
       <div class="modal-content">
-       <a type="button" class="close" data-dismiss="modal" aria-hidden="true">×</a>
+       
         <div class="modal-header">
+		<a type="button" class="close" data-dismiss="modal" aria-hidden="true">×</a>
+		<h4 class="modal-title text-center" id="working_i_d"></h4>
        </div>
-        <h4 class="modal-title text-center" id="working_i_d"></h4>
+        
      </div>
    </div>
   </div>

@@ -128,7 +128,7 @@
             <?php } ?> -->
 
 
-             <a class="btn btn-primary btn-outline with-arrow top-mrg product_name product_ID"   >Get Best Quotes<i class="icon-arrow-right"></i></a> 
+             <a class="btn btn-primary btn-outline with-arrow top-mrg product_name product_ID"   >Get Best Quotes<i class="icon-arrow-right mrg-btm"></i></a> 
 
  
       </div>
@@ -136,7 +136,41 @@
                 <img src="{{URL::to('images/ajaxloader.gif')}}" alt="Loader" title="Loader" style="top: 50%; position: relative; left: 50%;"  />
                </div>
       </form>
+	  
+	 <div class="col-md-12 mrg-top">
+	 <hr>
+	 <p>Dreaming to Enjoy <b>Vacation</b> in foreign country, A <b>Royal Wedding</b> plan, <b>Renovation of your house....</b> Here we have <b>Personal Loan</b> to make your dreams true. A Personal Loan is a Short Term Unsecured Loan for 1 to 5 years which helps individual to make their dream true by fulfilling their needs. Personal Loan can be disburse within 48 hours as well.</p>
+	    <div class="panel-group">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" href="#collapse1">Documents Required  </a>
+      </h4>
+    </div>
+    <div id="collapse1" class="panel-collapse collapse">
+      <div class="panel-body">
+	  
+	  
+	  <ul>
+	     <li>A Copy of Latest Salary Slips or Salary Certificate.</li>
+		 <li>Form 16 and Copy of ITR for the last two years.</li>
+		 <li>Last 6 months bank statements, S.O.A (Statements of Accounts)</li>
+		 <li>Appointment Letter </li>
+		 <li>Other Loan/ Obligation / Existing Specified Expenses (last 1 year)</li>
+		 <li>CIBIL Score / Credit Rating</li>
+		 <li>Government Recognize ID and Address Proof </li>
+	  </ul>
+	  </div>
+      
+    </div>
+    </div>
+   </div>
+	 </div>
      </div>
+	 
+	 
+	 
+	 
      <div class="col-md-4" >
      <div class="border brd-for hei-frtrt" id="mi_id">
 
@@ -187,9 +221,12 @@
 
      
   </div> 
+ 
    </aside>
    
   </div>
+  
+  
   <br>
   <div id ="test123"></div>
   @include('layout.footer')

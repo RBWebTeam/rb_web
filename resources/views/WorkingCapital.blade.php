@@ -1,5 +1,6 @@
-@include('layout.header')
+
 <div id="fh5co-hero">
+@include('layout.header')
   <div class="container white">
   <h2 class="loan-head">Working Capital</h2>
   <div class="col-md-10">
@@ -354,29 +355,17 @@
 </div>
 </br>
 
-
+ 
  
  <input type="hidden" name="empid" class="empid" value=" <?php echo Session::get('empid')?Session::get('empid'):'';?>">
 <input type="hidden" name="brokerid" class="brokerid" value="<?php echo Session::get('brokerid')?Session::get('brokerid'):'';?>">
 <input type="hidden" name="source" class="source" value="<?php echo Session::get('source')?Session::get('source'):'';?>"> 
 
-
+ 
 @include('layout.footer')
 @include('layout.script')
-<!--   <div id="working_model" class="modal fade" tabindex="-1" role="dialog">
-    <div class="modal-dialog">
-      <div class="modal-content">
-       <a type="button" class="close" data-dismiss="modal" aria-hidden="true">×</a>
-        <div class="modal-header">
-       </div>
-        <h4 class="modal-title text-center" id="working_i_d"></h4>
-     </div>
-   </div>
-  </div> -->
 
 
-
- 
 
 
 <script type="text/javascript">

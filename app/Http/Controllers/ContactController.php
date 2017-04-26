@@ -47,29 +47,6 @@ class ContactController extends InitialController
 
 
     public function magic_link(){
-        //print_r("hello");exit();
-        $myString = isset($_GET['referrer']);
-          if($myString){
-            
-            $myArray = explode('@', $_GET['referrer']);
-            if(isset($myArray[0])){
-              Session::put('empid', $myArray[0]);
-              $empid = Session::get('empid');
-             
-            }
-            if(isset($myArray[1])){
-             Session::put('brokerid', $myArray[1]);
-              $brokerid = Session::get('brokerid');
-            }
-            if(isset($myArray[2])){
-              Session::put('source', $myArray[2]);
-              $source = Session::get('source');
-
-
-            }
-            
-        }
-
         return view('magic-link');
     }
 

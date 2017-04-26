@@ -337,13 +337,16 @@ $("#eligibility").click(function() {
 {
     function update()
     {
+      if(! $("#car_cost").val()){
+          $("#loan_amount").val('');
+      }else{
         var cost = parseFloat($("#car_cost").val());
         // console.log(cost);
         var total = (cost)*90/100;
         // var total = total.toFixed(2);
         // console.log(total);
         $("#loan_amount").val(total);
-
+      }
     }
     $(document).on("change, keyup", "#car_cost", update);
 });

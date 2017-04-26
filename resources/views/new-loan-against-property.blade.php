@@ -474,13 +474,16 @@ $("#eligibility").click(function() {
 {
     function update()
     {
+      if(! $("#property_cost").val()){
+          $("#loan_amount").val('');
+      }else{
         var cost = parseFloat($("#property_cost").val());
         // console.log(cost);
         var total = (cost)*60/100;
         // var total = total.toFixed(2);
         // console.log(total);
         $("#loan_amount").val(total);
-
+      }
     }
     $(document).on("change, keyup", "#property_cost", update);
 });

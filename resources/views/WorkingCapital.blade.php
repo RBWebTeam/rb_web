@@ -1,5 +1,6 @@
-@include('layout.header')
+
 <div id="fh5co-hero">
+@include('layout.header')
   <div class="container white">
   <h2 class="loan-head">Working Capital</h2>
   <div class="col-md-10">
@@ -331,14 +332,11 @@
     <td id="bank2_saving">  </td>
     <td id="bank3_saving"> </td>
     <td id="bank4_saving" class="tbank4_saving">   </td>
-    </td>
+    
   </tr>
 </table>
   </div>
- 
-    
-  
-  </div>
+ </div>
   
   
   
@@ -358,66 +356,11 @@
 </br>
 
 
-<div class="modal fade" id="working_capital_model_id" role="dialog">
-    <div class="modal-dialog">
-    
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Talk To Us</h4>
-        </div>
-        <div class="modal-body">
-          <form name="working_capital" id="working_capital" method="post">
-          {{ csrf_field() }}
-          <input type="hidden" name="form" value="working_capital">
-                  <div>
-                    <fieldset>
-                      <input class="newsletter-name" name="name" placeholder="Name" required>
-                    </fieldset>
-                    </div>
-
-                     <div>
-                    <fieldset>
-                    <input type="email" class="newsletter-name" name="email"  required  placeholder="Email address">
-                    </fieldset>
-                    </div>
-                  <div>
-                    <fieldset>
-                      <input type="text" class="newsletter-name" name="contact" pattern="[789][0-9]{9}" required maxlength="10" placeholder="Mobile Number">
-                    </fieldset>                 
-                    </div>
-                  <div>
-                      <button class="btn btn-primary btn-outline with-arrow sidebar-submit">Submit<i class="icon-arrow-right"></i></button>
-                  </div>
-
-            </form>
-            <div class='msg displaynone' ><p>Thanks. We will reach you soon.</p></div>
-            <div class='msg_err displaynone' ><p>Ooops. Something went wrong.</p></div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default close1" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-      
-    </div>
-  </div>
-
-  <div id="working_model" class="modal fade" tabindex="-1" role="dialog">
-    <div class="modal-dialog">
-      <div class="modal-content">
-       <a type="button" class="close" data-dismiss="modal" aria-hidden="true">×</a>
-        <div class="modal-header">
-       </div>
-        <h4 class="modal-title text-center" id="working_i_d"></h4>
-     </div>
-   </div>
-  </div>
-
 @include('layout.footer')
 @include('layout.script')
-</div>
-</div>
+
+
+
 
 <script type="text/javascript">
 //var restoredSession = JSON.parse(localStorage.getItem('session'));

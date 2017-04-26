@@ -510,3 +510,52 @@ Rupeeboss Financial Services Private Limited shall access your Credit Informatio
 </div>
 
 
+    <div class="modal fade" id="working_capital_model_id" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Talk To Us</h4>
+        </div>
+        <div class="modal-body">
+          <form name="working_capital_form" id="working_capital_form" method="post">
+          {{ csrf_field() }}
+          <input type="hidden" name="form" value="working_capital">
+                  <div>
+                    <fieldset>
+                      <input type="text" class="newsletter-name" name="name" placeholder="Name" required>
+                    </fieldset>
+                    </div>
+                  <div>
+                    <fieldset>
+                      <input type="text" class="newsletter-name" name="contact" pattern="[789][0-9]{9}" required maxlength="10" placeholder="Mobile Number">
+                    </fieldset>                 
+                    </div>
+                    <div>
+                    <fieldset>
+                      <input type="email" class="newsletter-name" name="email"  required  placeholder="Email ">
+                    </fieldset>                 
+                    </div>
+                  <div>
+                      <a class="btn btn-primary btn-outline with-arrow sidebar-submit" id="work_id">Submit<i class="icon-arrow-right"></i></a>
+                  </div>
+            </form>
+            <div class='msg displaynone' ><p>Thanks. We will reach you soon.</p></div>
+            <div class='msg_err displaynone' ><p>Ooops. Something went wrong.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div id="working_model" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+       <a type="button" class="close" data-dismiss="modal" aria-hidden="true">×</a>
+        <div class="modal-header">
+       </div>
+        <h4 class="modal-title text-center" id="working_i_d"></h4>
+     </div>
+   </div>
+  </div>
+ 
+

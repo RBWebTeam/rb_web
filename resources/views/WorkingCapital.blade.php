@@ -17,8 +17,8 @@
      <div class="col-md-12">
    <div class="col-md-3 col-xs-12"></div>
    <h4 class="col-md-2 col-xs-4"><input type="radio" name="bank1" onclick="bankName('bank1')"  checked="checked" id="bank1" value="bank1"/> Bank 1 </h4>
-   <h4 class="col-md-2 col-xs-4"><input type="radio" name="bank2" id="bank2"  onclick="bankName('bank2')" /> Bank 2 </h4>
-   <h4 class="col-md-2 col-xs-4"><input type="radio" name="bank3" id="bank3" onclick="bankName('bank3')"/> Bank 3 </h4>
+   <h4 class="col-md-2 col-xs-4"><input type="radio" name="bank1" id="bank2"  onclick="bankName('bank2')" /> Bank 2 </h4>
+   <h4 class="col-md-2 col-xs-4"><input type="radio" name="bank1" id="bank3" onclick="bankName('bank3')"/> Bank 3 </h4>
    <a data-toggle="tab" href="#menu1" class="btn btn-success pull-right menu1act">NEXT</a>
    </div>
   <div class="col-md-4 pad-no">
@@ -30,7 +30,9 @@
     <input type="text" class="form-control form-group" placeholder="Loan Amount" id="loanAmount_id" maxlength="10"  onkeypress="return isNumberKey(event)">
    <input type="text" class="form-control form-group" placeholder="Current Rate of Interest" id="interest"  maxlength="5" onkeypress="return isNumberKey(event)" >
    <input type="text" class="form-control form-group" placeholder=" Loan Tenure" value="1"  maxlength="1" id="loanTenur" onkeypress="return isNumberKey(event)" readonly>
-      <div class="validate_id" style="display: none; color: red" >Please Fill All Inputs</div>
+      <div class="form-padding validate_id"  style="color: red"></div>
+ 
+ 
    <button class="btn btn-success pull-left btn_id"  id="working_capital">Submit</button>
    <div class="pull-right">
              <label><input type="radio" name="yearmonth" id="Year"  value="Year" checked="checked"> Year</label>
@@ -86,8 +88,8 @@
   <div class="col-md-12">
   <h4 class="col-md-3 col-xs-12""></h4>
    <h4 class="col-md-2 col-xs-4"><input type="radio" name="Tbank1" onclick="TbankName('Tbank1')"  checked="checked" id="Tbank1" value="Tbank1"/> Bank 1</h4>
-   <h4 class="col-md-2 col-xs-4""><input type="radio" name="Tbank2" id="Tbank2"  onclick="TbankName('Tbank2')" /> Bank 2</h4>
-   <h4 class="col-md-2 col-xs-4""><input type="radio" name="Tbank3" id="Tbank3" onclick="TbankName('Tbank3')"/> Bank 3</h4>
+   <h4 class="col-md-2 col-xs-4""><input type="radio" name="Tbank1" id="Tbank2"  onclick="TbankName('Tbank2')" /> Bank 2</h4>
+   <h4 class="col-md-2 col-xs-4""><input type="radio" name="Tbank1" id="Tbank3" onclick="TbankName('Tbank3')"/> Bank 3</h4>
    <a data-toggle="tab" href="#menu2" class="btn btn-success pull-right menu1act">NEXT</a>
    </div>
   <div class="col-md-4 pad-no">
@@ -98,8 +100,10 @@
   <h3 class="emi-cal text-center">Current Status of Loan</h3>
    <input type="text" class="form-control form-group" placeholder="Loan Amount" id="termloanAmount" maxlength="10"  onkeypress="return isNumberKey(event)">
    <input type="text" class="form-control form-group" placeholder="Current Rate of Interest" id="terminterest"  maxlength="5" onkeypress="return isNumberKey(event)" >
+ 
    <input type="text" class="form-control form-group" placeholder=" Loan Tenure"  maxlength="5" id="termloanTenur" onkeypress="return isNumberKey(event)">
-   <div class="validate_id" style="display: none; color: red" >Please Fill All Inputs</div>
+   <div  class="validate_id" style="color: red" ></div>
+ 
    <button class="btn btn-success pull-left btn_id"  id="termloanid">Submit</button>
    <!-- <div class="pull-right">
              <label><input type="radio" name="yearmonth" id="Year"  value="Year" checked="checked"> Year</label>
@@ -171,8 +175,9 @@
 <option value="180">180 days</option>
  
 </select>
-<div class="validate_id" style="display: none; color: red" >Please Fill All Inputs</div>
-   <button class="btn btn-success pull-left btn_id"  id="packingcreditdomesti">Submit</button>
+
+<div class=" validate_id"  style="color: red"></div>
+<button class="btn btn-success pull-left btn_id"  id="packingcreditdomesti">Submit</button>
    <!-- <div class="pull-right">
              <label><input type="radio" name="yearmonth" id="Year"  value="Year" checked="checked"> Year</label>
              <label><input type="radio" name="yearmonth" id="Month" value="Month"> Month</label>
@@ -229,7 +234,10 @@
 <option value="90">90 days</option>
 <option value="180">180 days</option>
 </select>
-<div class="validate_id" style="display: none; color: red" >Please Fill All Inputs</div>
+ 
+<div class=" validate_id" style="color: red" >Please Fill All Inputs</div>
+ 
+ 
    <button class="btn btn-success pull-left btn_id"  id="packingcreditforeignCurr">Submit</button>
 
 
@@ -342,14 +350,60 @@
     <div class="text-center guid nl-form-errors" id='bank_ID'>Total Saving 0</div>
         <div class="text-center img1"><img src="{{URL::to('images/photo.jpg')}}" alt="pop_up_pic"></div>
     </div>
-    <a href="{{url('new-working-capital')}}" class="btn btn-success aply-btn disblk ">Apply Now</a>
+    <!-- <a href="{{url('new-working-capital')}}" class="btn btn-success aply-btn disblk ">Apply Now</a> -->
+
+    <a data-toggle="modal" data-target="#working_capital_model_id" class="btn btn-success aply-btn disblk ">Apply Now</a>
  </div>
 </div>
 </br>
-@include('layout.footer')
-@include('layout.script')
 
-<div id="working_model" class="modal fade" tabindex="-1" role="dialog">
+
+<div class="modal fade" id="working_capital_model_id" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Talk To Us</h4>
+        </div>
+        <div class="modal-body">
+          <form name="working_capital" id="working_capital" method="post">
+          {{ csrf_field() }}
+          <input type="hidden" name="form" value="working_capital">
+                  <div>
+                    <fieldset>
+                      <input class="newsletter-name" name="name" placeholder="Name" required>
+                    </fieldset>
+                    </div>
+
+                     <div>
+                    <fieldset>
+                    <input type="email" class="newsletter-name" name="email"  required  placeholder="Email address">
+                    </fieldset>
+                    </div>
+                  <div>
+                    <fieldset>
+                      <input type="text" class="newsletter-name" name="contact" pattern="[789][0-9]{9}" required maxlength="10" placeholder="Mobile Number">
+                    </fieldset>                 
+                    </div>
+                  <div>
+                      <button class="btn btn-primary btn-outline with-arrow sidebar-submit">Submit<i class="icon-arrow-right"></i></button>
+                  </div>
+
+            </form>
+            <div class='msg displaynone' ><p>Thanks. We will reach you soon.</p></div>
+            <div class='msg_err displaynone' ><p>Ooops. Something went wrong.</p></div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default close1" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+  <div id="working_model" class="modal fade" tabindex="-1" role="dialog">
     <div class="modal-dialog">
       <div class="modal-content">
        <a type="button" class="close" data-dismiss="modal" aria-hidden="true">×</a>
@@ -359,6 +413,10 @@
      </div>
    </div>
   </div>
+
+@include('layout.footer')
+@include('layout.script')
+
 
 <script type="text/javascript">
 //var restoredSession = JSON.parse(localStorage.getItem('session'));
@@ -473,7 +531,9 @@ $("button").click(function(e){
 
        if(form=='WorkingCapitalCurrent'){
           if(validation==1){
-             $('.validate_id').show();
+           //  $('.validate_id').show();
+             $('.validate_id').empty().append('Please Fill All Inputs');
+             
           }else{
                ID='tlf';
                     if(9.5<=interest && 10>=interest){
@@ -490,7 +550,8 @@ $("button").click(function(e){
        }else if(form=='packing_credit_domesti'){
 
           if(validation==1){
-             $('.validate_id').show();
+            // $('.validate_id').show();
+             $('.validate_id').empty().append('Please Fill All Inputs');
           }else{
            if(7<=interest){
                     paid=7;
@@ -523,7 +584,8 @@ $("button").click(function(e){
        }else if(form=='packing_credit_foreign_currency'){
 
                if(validation==1){
-             $('.validate_id').show();
+             //$('.validate_id').show();
+              $('.validate_id').empty().append('Please Fill All Inputs');
           }else{
            if(5<=interest){
                     paid=5;
@@ -559,7 +621,8 @@ $("button").click(function(e){
         Tenure=loanTenure*12;
 
         if(validation==1){
-              $('.validate_id').show();
+           //   $('.validate_id').show();
+            $('.validate_id').empty().append('Please Fill All Inputs');
           }else{
       $.ajax({  
              type: "POST",  
@@ -833,23 +896,26 @@ function moyear(yearmonth,loanTenur){     //     convert year to monthly
 
      function bankName(bank){   //   textbox clear function
           if(bank=='bank2'){
+
            $('#home input[type="text"]').val('');
            sessionName='bank2';
             document.getElementById("interestAfter").value=10;
             document.getElementById("loanTenur").value=1;   // working capital loanTenur
              document.getElementById("loanTenurAfter").value=1;   // working capital loanTenur after transfer
+             $('.validate_id').empty();
           }else if(bank=='bank3'){
                 $('#home input[type="text"]').val('');
                sessionName='bank3';
                 document.getElementById("interestAfter").value=10;
                 document.getElementById("loanTenur").value=1;   // working capital loanTenur
                  document.getElementById("loanTenurAfter").value=1;   // working capital loanTenur after transfer
+                 $('.validate_id').empty()
           }else{
              $('#home input[type="text"]').val('');
              sessionName='bank1';
              document.getElementById("loanTenur").value=1;   // working capital loanTenur
              document.getElementById("loanTenurAfter").value=1;   // working capital loanTenur after transfer
-
+             $('.validate_id').empty()
           }         
  }
 
@@ -859,14 +925,16 @@ function moyear(yearmonth,loanTenur){     //     convert year to monthly
            $('#menu1 input[type="text"]').val('');
            TsessionName='Tbank2';
             document.getElementById("interestAfter").value=10;
+            $('.validate_id').empty()
           }else if(bank=='Tbank3'){
                 $('#menu1 input[type="text"]').val('');
                TsessionName='Tbank3';
                 document.getElementById("interestAfter").value=10;
+                $('.validate_id').empty()
           }else{
              $('#menu1 input[type="text"]').val('');
              TsessionName='Tbank1';
-
+            $('.validate_id').empty();
           }         
  }
 
@@ -932,11 +1000,13 @@ $('.fcloanTenur').on('change', function() {   //pcfc
    
 
     $("#Month").change(function(){
+
       var amt = $("#loanTenur").val();
       var month = amt*12;
       $('#loanTenur').val(month);
  
-     $('#.checked').removeClass('checked').prop('checked',false);
+    // $('#.checked').removeClass('checked').prop('checked',false);
+
     });
 
 
@@ -951,7 +1021,7 @@ $('.fcloanTenur').on('change', function() {   //pcfc
       var amt = $("#termloanTenur").val();
       var month = amt*12;
       $('#termloanTenur').val(month);
-     $('#.checked').removeClass('checked').prop('checked',false);
+  //   $('#.checked').removeClass('checked').prop('checked',false);
      
     });
 
@@ -1055,12 +1125,19 @@ $('.menu1act').click(function(e){
 
 
 
-$('input[type=radio]').on('change', function(){
-    $('input[type=radio]').not(this).prop('checked', false);
+// $('input[type=radio]').on('change', function(){
 
-    $('#tYear').addClass('checked').prop('checked', true);
-    $('#Year').addClass('checked').prop('checked', true);
-});
+
+//     $('input[type=radio]').not(this).prop('checked', false);
+//     $('#tYear').addClass('checked').prop('checked', true);
+//     $('#Year').addClass('checked').prop('checked', true);
+// });
+
+
+
+ $('a').click(function(){
+      $('.validate_id').empty();
+    });
 
  }); 
 </script>

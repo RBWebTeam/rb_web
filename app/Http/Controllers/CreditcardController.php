@@ -37,7 +37,7 @@ class CreditcardController extends CallApiController
  	$post_data=json_encode($data);
 	 	  // print "<pre>";
 	 	 // print_r($post_data);exit();
-	$url = "http://api.rupeeboss.com/BankAPIService.svc/PostIciciBank";
+	$url = $this::$url_static."BankAPIService.svc/PostIciciBank";
     $result=$this->call_json_data_api($url,$post_data);
     $http_result=$result['http_result'];
     $error=$result['error'];

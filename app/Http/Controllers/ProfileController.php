@@ -24,7 +24,7 @@ class ProfileController extends CallApiController
         $get_id=Session::get('user_id');
         $email_id=Session::get('email');
         //   Get Customer Lead
-        $service_url = "http://api.rupeeboss.com/BankAPIService.svc/GetCustomerLeadDetail?Cust_Id=231";
+        $service_url = $this::$url_static."BankAPIService.svc/GetCustomerLeadDetail?Cust_Id=231";
         $GetCustomerLead=$this->call_json_data_get_api($service_url,'');
         $http_result=$GetCustomerLead['http_result'];
         $error=$GetCustomerLead['error'];

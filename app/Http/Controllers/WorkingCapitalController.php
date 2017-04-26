@@ -241,7 +241,7 @@ public function working_capital_submit(Request $req){
   $post_data=json_encode($req->all());
   // print_r($post_data);exit();
   
-  $url = "http://api.rupeeboss.com/BankAPIService.svc/GetCustomerWorkingCapitalReq";
+  $url = $this::$url_static."BankAPIService.svc/GetCustomerWorkingCapitalReq";
       $result=$this->call_json_data_api($url,$post_data);
       $http_result=json_decode($result['http_result']);
       $error=$result['error'];

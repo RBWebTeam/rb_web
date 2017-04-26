@@ -29,7 +29,7 @@ class FormController extends CallApiController
     //call API here to save in DB
         $post=json_encode($post_data);
        // print_r($post);exit();
-    $url = "http://api.rupeeboss.com/BankAPIService.svc/GetCustomerWebRequest";
+    $url = $this::$url_static."BankAPIService.svc/GetCustomerWebRequest";
     $result=$this->call_json_data_api($url,$post);
     $http_result=$result['http_result'];
     $error=$result['error'];
@@ -177,7 +177,7 @@ class FormController extends CallApiController
                 //calling service to send sms 
                 $post_data='{"mobNo":"'.$req['contact'].'","msgData":"your otp is '.$otp.' - RupeeBoss.com",
                     "source":"WEB"}';
-                $url = "http://services.rupeeboss.com/LoginDtls.svc/xmlservice/sendSMS";
+                $url = $this::$service_url_static."LoginDtls.svc/xmlservice/sendSMS";
                 $result=$this->call_json_data_api($url,$post_data);
                 $http_result=$result['http_result'];
                 $error=$result['error'];
@@ -272,10 +272,6 @@ class FormController extends CallApiController
 
 
               if (Session::has('email')){
-
-
-            
-            
             $new_array = array('customer_contact' => Session::get('contact'), 'customer_name' => Session::get('name'),'customer_email' => Session::get('email'));
            $update_id=Session::get('verify_id');
              $update_user=DB::table('user_registration')
@@ -295,42 +291,17 @@ class FormController extends CallApiController
              $res_arr['brokerid']=Session::get('brokerid')?Session::get('brokerid'):'';
              $res_arr['source']=Session::get('source')?Session::get('source'):'';
             $json_data=json_encode($res_arr);
-           // print_r($req->all());exit();
-
              $quote_id=Session::get('quote_id');
-              // $update=new bank_quote_api_request();    
-              // $update_quote=$update->update_liza_quote($quote_id);
-              
-            
-
-           // if(!$update_quote){
-           //  // return view('went-wrong');
-           // }
-
             $prod_id=$req['product_name'];
             if($prod_id==7 || $prod_id==9 || $prod_id==12){
-                    $url="http://api.rupeeboss.com/BankAPIService.svc/GetCustLizaWebReq";
+                    $url=$this::$url_static."BankAPIService.svc/GetCustLizaWebReq";
             }else{
-                    $url="http://api.rupeeboss.com/BankAPIService.svc/GetCustomerLizaWebReq";
+                    $url=$this::$url_static."BankAPIService.svc/GetCustomerLizaWebReq";
             }
             $result=$this->call_json_data_api($url,$json_data);
             $http_result=$result['http_result'];
             $error=$result['error'];
  
-             // return $input;
-          //  $merge=array('empid' => Session::get('empid'), 'brokerid' => Session::get('brokerid'),);
-
-
-
-            // $res_arr1['empid']=Session::get('empid')?Session::get('empid'):'';
-            // $res_arr1['brokerid']=Session::get('brokerid')?Session::get('brokerid'):'';
-            // $merge=substr(json_encode($res_arr1),1, -1) ;
-
-            // $res_arr1=Session::get('empid')?Session::get('empid'):'';
-            // $res_arr2=Session::get('brokerid')?Session::get('brokerid'):'';
-
-//echo 'empid='.$res_arr1.'&'.'brokerid='.$res_arr2;exit;
-
             if($http_result==1){
                 return Response::json(array(
                                 'status'=>true,

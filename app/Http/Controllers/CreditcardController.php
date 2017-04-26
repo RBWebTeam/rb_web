@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use DB;
+use Session;
 use App\credit_card_form_req;
 class CreditcardController extends CallApiController
 {
@@ -27,13 +28,16 @@ class CreditcardController extends CallApiController
     // $req['SalaryAcOpenDate']=str_replace('-', '/',$newDate);
     $data=$req->all();
     // print_r($req->all());exit();
+    $data['brokerid']=Session::get('brokerid')?Session::get('brokerid'):'0';
+    $data['empid']=Session::get('empid')?Session::get('empid'):'0';
+    $data['source']=Session::get('source')?Session::get('source'):'0';
  	$data['UserID']='ICICI_CC_RupeeBoss';
  	$data['Password']='Password@123';
  	$data['ChannelType']='RupeeBoss';
  	$post_data=json_encode($data);
 	 	  // print "<pre>";
 	 	 // print_r($post_data);exit();
-	$url = "http://api.rupeeboss.com/BankAPIService.svc/PostIciciBank";
+	$url = $this::$url_static."BankAPIService.svc/PostIciciBank";
     $result=$this->call_json_data_api($url,$post_data);
     $http_result=$result['http_result'];
     $error=$result['error'];

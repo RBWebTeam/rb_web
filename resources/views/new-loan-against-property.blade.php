@@ -273,7 +273,7 @@
      <div class="border" id="mi_ID">
 
         <!--      <form class="" id="compareform" role="form" method="POST" action=""> -->
-          
+          <p id="err" style="display:none;" ><span style="color: red;font-size: 20px;display: block;text-align: center;">Sorry, No quotes found for your given requirements.</span></p> 
           
           <div class="inp-hig">
             <label class="form-label-new">Loan Amount</label>
@@ -305,14 +305,14 @@
            <a   data-toggle="modal" data-target="#login_process" class="btn btn-info disblk apply_digitally " title="Experience New Digital Era In Loans">Apply Digitally</a>
            @endif    
  
-         <button id="eligibility" class="btn btn-info disblk" title="See Bankwise Eligibility And Apply Amongst Best Bank">Check Bankwise Eligibility</button>
+         <button id="eligibility" class="btn btn-info disblk" title="See Bankwise Eligibility And Apply Amongst Best Bank" style="display: none;">Check Bankwise Eligibility</button>
          <button type="button" class="btn btn-info block"  id="call_rm" name="call_rm" data-toggle="modal" data-target="#Modal" title="Call For RM(Single Day Process)">Call Manager</button>
          <div id="log_digital_text" style=" color: red"></div>
         </div>
       <!-- </form> -->
     </div>  
 
-    <p id="err" style="display:none;" ><span style="color: red;font-size: 20px;display: block;text-align: center;">Sorry, no quotes found for your given requirements.</span></p> 
+    <!-- <p id="err" style="display:none;" ><span style="color: red;font-size: 20px;display: block;text-align: center;">Sorry, no quotes found for your given requirements.</span></p>  -->
   </div>
 
 
@@ -409,6 +409,7 @@ $(".product_ID").click(function(e){
                              $("#apply_new").attr("href", url);
                              $('#mi_ID').show();
                              $('#err').hide();
+                              $('#eligibility').show();
                              // $(window).scrollTop($('#form_ID').offset().top-20);
                              getUrl=url;
                          }else{
@@ -473,13 +474,16 @@ $("#eligibility").click(function() {
 {
     function update()
     {
+      if(! $("#property_cost").val()){
+          $("#loan_amount").val('');
+      }else{
         var cost = parseFloat($("#property_cost").val());
         // console.log(cost);
         var total = (cost)*60/100;
         // var total = total.toFixed(2);
         // console.log(total);
         $("#loan_amount").val(total);
-
+      }
     }
     $(document).on("change, keyup", "#property_cost", update);
 });

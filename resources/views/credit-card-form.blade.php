@@ -13,9 +13,9 @@
 						
 							<form class="" id="compareform" role="form" method="POST" >
 							 {{ csrf_field() }}
-							 <input type="hidden" name="empid" class="empid" value=" <?php echo Session::get('empid')?Session::get('empid'):'';?>">
-						          <input type="hidden" name="brokerid" class="brokerid" value="<?php echo Session::get('brokerid')?Session::get('brokerid'):'';?>">
-						          <input type="hidden" name="source" class="source" value="<?php echo Session::get('source')?Session::get('source'):'';?>"> 
+							 <input type="hidden" name="empid" class="empid" value=" <?php echo Session::get('empid')?Session::get('empid'):'0';?>">
+						          <input type="hidden" name="brokerid" class="brokerid" value="<?php echo Session::get('brokerid')?Session::get('brokerid'):'0';?>">
+						          <input type="hidden" name="source" class="source" value="<?php echo Session::get('source')?Session::get('source'):'0';?>"> 
 								<div class="row">
 									<div class="form-group">
 									
@@ -157,7 +157,7 @@
 												<input type="text" class="form-control lastReporteddob" id="SalaryAcOpenDate" name="SalaryAcOpenDate" placeholder="Salary Ac Open Date*" required>
 											</div> -->
 										<div class="col-md-12">
-										<input type="checkbox" name="terms" required>
+										<input type="checkbox"  name="terms" required>
 											I hereby confirm that I have read and understood the
 									<a href="#" data-toggle="modal" data-target="#Experian_terms_modal"> Rupeeboss Terms</a> and Conditions applicable to this service and that all the details furnished by me above are true and correct. I further provide consent to Rupeeboss and its affiliates to contact me with reference to financial products and this consent shall override any registration with DNC/NDNC.
 
@@ -419,6 +419,18 @@
       }
 }
 </script>
+
+<!-- <script type="text/javascript">
+	$(function() {
+  var chk = $('#terms');
+  var btn = $('.credit-submit');
+
+  chk.on('change', function() {
+    btn.prop("disabled", !this.checked);//true: disabled, false: enabled
+  }).trigger('change'); //page load trigger event
+  // alert("ok");
+});
+</script> -->
 
 
 

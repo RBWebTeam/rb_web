@@ -138,7 +138,7 @@ class LoginController extends CallApiController
 
     public function emp_login(Request $req){
       // print_r($req->all());exit();
-      $url='http://api.rupeeboss.com/BankAPIService.svc/LoginERP';
+      $url=$this::$url_static.'BankAPIService.svc/LoginERP';
       $reqs=json_encode($req->all());
       $result=$this->call_json_data_api($url,$reqs);
       $http_result=$result['http_result'];

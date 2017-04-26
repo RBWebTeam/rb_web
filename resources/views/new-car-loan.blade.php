@@ -165,7 +165,7 @@
      <div class="border" id="mi_ID">
 
         <!--      <form class="" id="compareform" role="form" method="POST" action=""> -->
-          
+         <p id="err" style="display:none;" ><span style="color: red;font-size: 20px;display: block;text-align: center;">Sorry, No quotes found for your given requirements.</span></p>  
           
           <div class="inp-hig">
             <label class="form-label-new">Loan Amount</label>
@@ -197,7 +197,7 @@
       <!-- </form> -->
     </div>  
 
-    <p id="err" style="display:none;" ><span style="color: red;font-size: 20px;display: block;text-align: center;">Sorry, No quotes found for your given requirements.</span></p> 
+    <!-- <p id="err" style="display:none;" ><span style="color: red;font-size: 20px;display: block;text-align: center;">Sorry, No quotes found for your given requirements.</span></p>  -->
   </div>
 
 
@@ -337,13 +337,16 @@ $("#eligibility").click(function() {
 {
     function update()
     {
+      if(! $("#car_cost").val()){
+          $("#loan_amount").val('');
+      }else{
         var cost = parseFloat($("#car_cost").val());
         // console.log(cost);
         var total = (cost)*90/100;
         // var total = total.toFixed(2);
         // console.log(total);
         $("#loan_amount").val(total);
-
+      }
     }
     $(document).on("change, keyup", "#car_cost", update);
 });

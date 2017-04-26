@@ -46,10 +46,10 @@
 						</div> 
 						
 						<div class="col-xs-12 col-md-4 form-padding">
-     <input type="text" class="form-input-new form-control" id="property_cost" name="property_cost" placeholder="Property Cost" required onkeypress="return fnAllowNumeric(event)" minlength="6"  maxlength="9">
+     <input type="text" class="form-input-new form-control" id="property_cost" name="property_cost" placeholder="Property Cost" required onkeypress="return fnAllowNumeric(event)" minlength="6"   maxlength="9">
 	</div>
 	<div class="col-xs-12 col-md-4 form-padding">
-     <input type="text" class="form-input-new form-control" name="loan_amount" id="loan_amount" placeholder="Loan Required" required onkeypress="return fnAllowNumeric(event)"  value="">
+     <input type="text" class="form-input-new form-control" name="loan_amount" id="loan_amount" placeholder="Loan Required" required onkeypress="return fnAllowNumeric(event)"   >
 	</div>
 	<div class="col-xs-12 col-md-4 form-padding">
      <input type="text" class="form-input-new form-control search_city" name='city_name' placeholder="Enter City" required >
@@ -274,6 +274,7 @@
 
         <!--      <form class="" id="compareform" role="form" method="POST" action=""> -->
           
+          <p id="err" style="display:none;" ><span style="color: red;font-size: 20px;display: block;text-align: center;">Sorry, No quotes found for your given requirements.</span></p> 
           
           <div class="inp-hig">
             <label class="form-label-new">Loan Amount</label>
@@ -310,14 +311,14 @@
  
 
 
-         <button id="eligibility"  class="btn btn-info disblk" title="See Bankwise Eligibility And Apply Amongst Best Bank">Check Bankwise Eligibility </button>
+         <button id="eligibility"  class="btn btn-info disblk" title="See Bankwise Eligibility And Apply Amongst Best Bank" style="display: none;">Check Bankwise Eligibility </button>
          <button type="button" class="btn btn-info block"  id="call_rm" name="call_rm" data-toggle="modal" data-target="#Modal" title="Call For RM(Single Day Process)">Call Manager</button>
          <div id="log_digital_text" style=" color: red"></div>
         </div>
       <!-- </form> -->
     </div>  
 
-    <p id="err" style="display:none;" ><span style="color: red;font-size: 20px;display: block;text-align: center;">Sorry, No quotes found for your given requirements.</span></p> 
+    <!-- <p id="err" style="display:none;" ><span style="color: red;font-size: 20px;display: block;text-align: center;">Sorry, No quotes found for your given requirements.</span></p>  -->
   </div>
 
 
@@ -418,6 +419,7 @@ $(".product_ID").click(function(e){
                              $("#apply_new").attr("href", url+'&is_liza=1');
                              $('#mi_ID').show();
                              $('#err').hide();
+                              $('#eligibility').show();
                            
                             
                              // $(window).scrollTop($('#form_ID').offset().top-20);
@@ -496,14 +498,17 @@ $("#eligibility").click(function() {
   $(document).ready(function()
 {
     function update()
-    {
+    { 
+      if(! $("#property_cost").val()){
+          $("#loan_amount").val('');
+      }else{
         var cost = parseFloat($("#property_cost").val());
         // console.log(cost);
         var total = (cost)*80/100;
         // var total = total.toFixed(2);
         // console.log(total);
         $("#loan_amount").val(total);
-
+      }
     }
     $(document).on("change, keyup", "#property_cost", update);
 });

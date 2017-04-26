@@ -193,7 +193,7 @@ public function  change_password(Request $req){
   public function applyonline(Request $req){
     
     $request = $req->all();
-      //print_r($request);exit();
+     // print_r($request);exit();
     // $app = $request['appid'];
     $quote = $request['qoutid'];
     $bank = $request['BankId'];
@@ -234,8 +234,8 @@ public function  change_password(Request $req){
     }else{
       $roi_type = "";
     }
-    if(isset($request['processing_fee'])){
-      $processing_fee = $request['processing_fee'];
+    if(isset($request['processingfee'])){
+      $processing_fee = $request['processingfee'];
     }else{
       $processing_fee = "";
     }

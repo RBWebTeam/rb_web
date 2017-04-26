@@ -31,7 +31,7 @@
     <input type="text" class="form-control form-group" placeholder="Loan Amount" id="loanAmount_id" maxlength="10"  onkeypress="return isNumberKey(event)">
    <input type="text" class="form-control form-group" placeholder="Current Rate of Interest" id="interest"  maxlength="5" onkeypress="return isNumberKey(event)" >
    <input type="text" class="form-control form-group" placeholder=" Loan Tenure" value="1"  maxlength="1" id="loanTenur" onkeypress="return isNumberKey(event)" readonly>
-      <div class="form-padding validate_id"  style="color: red"></div>
+      <div class="validate_id"  style="color: red"></div>
  
  
    <button class="btn btn-success pull-left btn_id"  id="working_capital">Submit</button>
@@ -238,7 +238,7 @@
  
 <div class=" validate_id" style="color: red" >Please Fill All Inputs</div>
  
- 
+
    <button class="btn btn-success pull-left btn_id"  id="packingcreditforeignCurr">Submit</button>
 
 

@@ -6,7 +6,8 @@
 <img src="{{URL::to('images/9.png')}}" alt="Tribe Logo" class="img-responsive" />
 
  </div> -->
- <div class="col-md-12 white-bg pad">
+ <br>
+ <div class="col-md-12 white-bg pad box-shadow">
  <h3 class="text-center loan-head">Car Loan</h3>
 <div class="col-md-8" id="mod">
 <form name="car_loan_process_form" id="car_loan_process_form" action="{{URL::to('loan-submit')}}" method="POST" >
@@ -209,6 +210,45 @@
 
   <div  id="form_ID"></div>
 
+  
+    <div class="container">
+  <div class="col-md-12 mrg-top white-bg pad1 box-shadow">
+	 <hr>
+	 <p>car loan is a short term loan for 3 to 5 years of tenure which all banks and non banking financial institution offer to the clients . Interest rates varies for personal and commercial use of car .</p>
+	    <div class="panel-group">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" href="#collapse106">Documents Required  </a>
+      </h4>
+    </div>
+    <div id="collapse106" class="panel-collapse collapse">
+      <div class="panel-body">
+	  
+	  
+	  <ul>
+	     <li>salaried individual </li>
+		 <li>minimum 21 years of age </li>
+		 <li>minimum net annual salary of 240000 p.a </li>
+		 <li>latest 3 month salary slips and Form 16</li>
+		 <li>credit score </li>
+		 <li>bank statement for last 6 month </li>
+	  </ul>
+	  <h3>self -employed </h3>
+	  <ul>
+	      <li>Proof of continuation: Trade license /Establishment /Sales Tax certificate </li>
+		  <li>ITR for latest 3 year along with balance sheet ,P&L account,computation of income.</li>
+		  <li>Current account statement for last 6 month </li>
+	  </ul>
+	  <p><b>ID Proof & Address proof for both the above given category </b></p>
+	  </div>
+      
+    </div>
+    </div>
+   </div>
+	 </div>
+	 </div>
+	 <br>
 @include('layout.footer')
 @include('layout.script')
 

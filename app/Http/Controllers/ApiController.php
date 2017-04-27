@@ -507,7 +507,7 @@ run_else:
         		$post_data='{"brokerId":'.$id.',"empCode":"'.$emp_code.'","flag":"'.$flag.'","ProductId":"'.$ProductId.'"}';
         		//print_r($post_data);exit();
                  // $url="http://beta.services.rupeeboss.com/LoginDtls.svc/xmlservice/dsplyHomePersonalLoanAppDtls";
-        		$url="http://services.rupeeboss.com/LoginDtls.svc/xmlservice/dsplyHomePersonalLoanAppDtls";
+        		$url=$this::$service_url_static."LoginDtls.svc/xmlservice/dsplyHomePersonalLoanAppDtls";
                 $result=$this->call_json_data_api($url,$post_data);
                 $http_result=$result['http_result'];
                 $error=$result['error'];
@@ -530,7 +530,7 @@ run_else:
 		        if($data!='[]' ){
 					$new_data=$data;
 					for($i=0;$i<sizeof($new_data);$i++){
-						$new_data[$i]->url="http://beta.erp.rupeeboss.com/homeloan/home_loan_application_form.aspx?qoutid=".$new_data[$i]->ID;
+						$new_data[$i]->url=$this::$erp_url_static."homeloan/home_loan_application_form.aspx?qoutid=".$new_data[$i]->ID;
 					}
 				}
 				else{
@@ -581,7 +581,7 @@ run_else:
         		$post_data='{"brokerId":'.$id.',"empCode":"'.$emp_code.'","flag":"'.$flag.'","ProductId":"'.$ProductId.'"}';
         		//print_r($post_data);exit();
                  // $url="http://beta.services.rupeeboss.com/LoginDtls.svc/xmlservice/dsplyPersonalLoanAppDtls";
-        		$url="http://services.rupeeboss.com/LoginDtls.svc/xmlservice/dsplyPersonalLoanAppDtls";
+        		$url=$this::$service_url_static."LoginDtls.svc/xmlservice/dsplyPersonalLoanAppDtls";
                // statusId response 0 for success, 1 for failure
               
                 $result=$this->call_json_data_api($url,$post_data);
@@ -599,7 +599,7 @@ run_else:
 		        if($data!='[]' ){
 					$new_data=$data;
 					for($i=0;$i<sizeof($new_data);$i++){
-						$new_data[$i]->url="http://beta.erp.rupeeboss.com/homeloan/home_loan_application_form.aspx?qoutid=".$new_data[$i]->ID;
+						$new_data[$i]->url=$this::$erp_url_static."homeloan/home_loan_application_form.aspx?qoutid=".$new_data[$i]->ID;
 					}
 				}
 				else{

@@ -182,7 +182,7 @@ class LoanController extends CallApiController
                 "source":"WEB"}';
 
             // $url = "http://beta.services.rupeeboss.com/LoginDtls.svc/xmlservice/sendSMS";
-               $url = "http://services.rupeeboss.com/LoginDtls.svc/xmlservice/sendSMS";
+               $url = $this::$service_url_static."LoginDtls.svc/xmlservice/sendSMS";
             $result=$this->call_json_data_api($url,$post_data);
             $http_result=$result['http_result'];
             $error=$result['error'];
@@ -191,7 +191,7 @@ class LoanController extends CallApiController
             $post_data1='{"amount":"'.$req->amount.'","business_type":"'.$req->employment.'","tenure":"'.$req->tenure.'","mob_no":"'.$req->mob_no.'","firm":"'.$req->firm_holder.'"
                 "source":"WEB"}';
             // $url = "http://beta.services.rupeeboss.com/LoginDtls.svc/xmlservice/sendSMS";
-               $url1 = "http://api.rupeeboss.com/BankAPIService.svc/GetCustomerWebRequest";
+               $url1 = $this::$url_static."BankAPIService.svc/GetCustomerWebRequest";
             $result1=$this->call_json_data_api($url1,$post_data1);
             $http_result1=$result['http_result'];
             $error1=$result['error'];
@@ -249,7 +249,7 @@ class LoanController extends CallApiController
 
     
     //print_r(json_encode($post_data));exit();
-      $url = "http://api.rupeeboss.com/BankAPIService.svc/GetAdityaBirlaAPIReq";
+      $url = $this::$url_static."BankAPIService.svc/GetAdityaBirlaAPIReq";
       $result=$this->call_json_data_api($url,$post_data);
       $http_result=json_decode($result['http_result']);
       $error=$result['error'];

@@ -14,6 +14,7 @@
  <div class="col-md-12 white-bg pad box-shadow fl-lft" id="lowest">
 
 </div> -->
+<br>
  <div class="col-md-12 white-bg pad box-shadow fl-lft">
 <h2 class="align-center loan-head">Personal Loan</h2>
   <!--   <div id ="test123" class="col-md-8"></div> -->
@@ -128,7 +129,7 @@
             <?php } ?> -->
 
 
-             <a class="btn btn-primary btn-outline with-arrow top-mrg product_name product_ID"   >Get Best Quotes<i class="icon-arrow-right"></i></a> 
+             <a class="btn btn-primary btn-outline with-arrow top-mrg product_name product_ID"   >Get Best Quotes<i class="icon-arrow-right mrg-btm"></i></a> 
 
  
       </div>
@@ -136,7 +137,13 @@
                 <img src="{{URL::to('images/ajaxloader.gif')}}" alt="Loader" title="Loader" style="top: 50%; position: relative; left: 50%;"  />
                </div>
       </form>
+	  
+	 
      </div>
+	 
+	 
+	 
+	 
      <div class="col-md-4" >
      <div class="border brd-for hei-frtrt" id="mi_id">
 
@@ -174,7 +181,7 @@
            @endif    
  
 
-         <button id="eligibility" class="btn btn-info disblk" title="See Bankwise Eligibility And Apply Amongst Best Bank" style="display: none;">Check Bankwise Eligibility</button>
+         <button id="eligibility" class="btn btn-info disblk" title="See Bankwise Eligibility And Apply Amongst Best Bank">Check Bankwise Eligibility</button>
          <button type="button" class="btn btn-info block"  id="call_rm" name="call_rm" data-toggle="modal" data-target="#Modal" title="Call For RM(Single Day Process)">Call Manager</button>
          <div id="log_digital_text" style=" color: red"></div>
         </div>
@@ -187,11 +194,46 @@
 
      
   </div> 
+ 
    </aside>
    
   </div>
+  
+  
   <br>
   <div id ="test123"></div>
+  <div class="container">
+  <div class="col-md-12 mrg-top white-bg pad1 box-shadow">
+	 <hr>
+	 <p>Dreaming to Enjoy Vacation in foreign country, A Royal Wedding plan, Renovation of your house.... Here we have Personal Loan to make your dreams true. A Personal Loan is a Short Term Unsecured Loan for 1 to 5 years which helps individual to make their dream true by fulfilling their needs. Personal Loan can be disburse within 48 hours as well.</p>
+	    <div class="panel-group">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" href="#collapse1">Documents Required  </a>
+      </h4>
+    </div>
+    <div id="collapse1" class="panel-collapse collapse">
+      <div class="panel-body">
+	  
+	  
+	  <ul>
+	     <li>A Copy of Latest Salary Slips or Salary Certificate.</li>
+		 <li>Form 16 and Copy of ITR for the last two years.</li>
+		 <li>Last 6 months bank statements, S.O.A (Statements of Accounts)</li>
+		 <li>Appointment Letter </li>
+		 <li>Other Loan/ Obligation / Existing Specified Expenses (last 1 year)</li>
+		 <li>CIBIL Score / Credit Rating</li>
+		 <li>Government Recognize ID and Address Proof </li>
+	  </ul>
+	  </div>
+      
+    </div>
+    </div>
+   </div>
+	 </div>
+	 </div>
+	 <br>
   @include('layout.footer')
 @include('layout.script')
   </div>

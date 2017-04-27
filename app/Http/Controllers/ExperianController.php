@@ -123,7 +123,7 @@ class ExperianController extends CallApiController
           //print_r($new_data);exit();
                 $arr = '{"stage1hitid":"'.$new_data[0].'","stage2hitid":"'.$new_data[1].'","stage2sessionid":"'.$new_data[3].'","answer":"","questionId":"'.$qs.'"}';
             //calling generate question api
-            $url = "http://api.rupeeboss.com/CreditAPI.svc/generateQuestionForConsumer";    
+            $url = $this::$url_static."CreditAPI.svc/generateQuestionForConsumer";    
             $result=$this->call_json_data_api($url,$arr);
             $http_result=$result['http_result'];
             $error=$result['error'];
@@ -154,7 +154,7 @@ class ExperianController extends CallApiController
         try{
             $arr = '{"stage1hitid":"'.$req->stage1hitid.'","stage2hitid":"'.$req->stage2hitid.'","stage2sessionid":"'.$req->stage2sessionid.'","answer":"'.$req->qs1.':'.$req->qs2.'","questionId":"'.$req->question_count.'"}';
             //generate question api
-            $url = "http://api.rupeeboss.com/CreditAPI.svc/generateQuestionForConsumer";    
+            $url = $this::$url_static."CreditAPI.svc/generateQuestionForConsumer";    
             $result=$this->call_json_data_api($url,$arr);
             $http_result=$result['http_result'];
             $error=$result['error'];
@@ -226,7 +226,7 @@ class ExperianController extends CallApiController
             $post_data='{"mobNo":"'.$req['contact'].'","msgData":"your otp is '.$otp.' - RupeeBoss.com",
                 "source":"WEB"}';
             // $url = "http://beta.services.rupeeboss.com/LoginDtls.svc/xmlservice/sendSMS";
-               $url = "http://services.rupeeboss.com/LoginDtls.svc/xmlservice/sendSMS";
+               $url = $this::$service_url_static."LoginDtls.svc/xmlservice/sendSMS";
             $result=$this->call_json_data_api($url,$post_data);
             $http_result=$result['http_result'];
             $error=$result['error'];

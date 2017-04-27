@@ -1,13 +1,12 @@
 @include('layout.header')
 <div class="container ">
  <aside id="fh5co-hero">
-	<div class="col-md-12">
 	
-	</div>
  <!-- <div class="col-md-12 white-bg pad1 mrg-btm">
 <img src="{{URL::to('images/9.png')}}" alt="Tribe Logo" class="img-responsive" />
  </div> -->
- <div class="col-md-12 white-bg pad">
+ <br>
+ <div class="col-md-12 white-bg pad box-shadow">
  <h3 class="text-center loan-head">LOAN AGAINST Property</h3>
 <div class="col-md-8"  id="mod">
 <form name="lap_process_form" id="lap_process_form" action="{{URL::to('loan-submit')}}" method="POST" >

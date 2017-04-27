@@ -6,7 +6,7 @@
 	<h2 class="align-center loan-head">Unsecured Business Loan</h2>
 	</div> -->
  
- <div class="col-md-12 white-bg pad">
+ <div class="col-md-12 white-bg pad box-shadow">
  <h3 class="text-center loan-head">Working Capital</h3>
 <div class="col-md-8" id="mod">
 <form name='working_capital_process_form' id='working_capital_process_form' action={{URL::to('loan-submit')}} method="POST">
@@ -567,6 +567,37 @@
 	</div>
 	<br>
    <div id ="test123" class="col-md-8"></div>
+   
+     <div class="container">
+  <div class="col-md-12 mrg-top white-bg pad1 box-shadow">
+	 <hr>
+	 <p>working capital loan is basically meant to meet all financing needs for everyday operations and activity of a company. companies that have high seasonality sales cycles usually rely on working capital loans to manage and cover their accounts payable ,wages ,etc. Working capital loan is a secured loan usually duration of a working capital loan from 6 to 12 months .whereas the interest rates lies between 11 % to 16%</p>
+	    <div class="panel-group">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" href="#collapse1">Documents Required  </a>
+      </h4>
+    </div>
+    <div id="collapse1" class="panel-collapse collapse">
+      <div class="panel-body">
+	  
+	  
+	  <ul>
+	     <li>Proof of Identity / address proof.(business as well as All directors).</li>
+		 <li>2 years ITR with computation of income,balance sheet ,profit & loss account .</li>
+		 <li>Bank statements</li>
+		 <li>Business should be in operation from last 3 years </li>
+
+	  </ul>
+	  </div>
+      
+    </div>
+    </div>
+   </div>
+	 </div>
+	 </div>
+	 <br>
   
 @include('layout.footer')
 @include('layout.script')

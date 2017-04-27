@@ -6,7 +6,8 @@
 <img src="{{URL::to('images/9.png')}}" alt="Tribe Logo" class="img-responsive" />
 
  </div> -->
- <div class="col-md-12 white-bg pad">
+ <br>
+ <div class="col-md-12 white-bg pad box-shadow">
  <h3 class="text-center loan-head">Smart Home Loan</h3>
 <div class="col-md-8" id="mod">
 <form name="home_loan_process_form" id="home_loan_process_form" action="{{URL::to('loan-submit')}}" method="POST" >
@@ -312,7 +313,36 @@
 	</div>
 
 	<div  id="form_ID"></div>
+	
+	
+	  <div class="container">
+  <div class="col-md-12 mrg-top white-bg pad1 box-shadow">
+	 <hr>
+	 <p>Home loan liked with bank account either current account or saving bank account with the same bank . Borrower can deposit their surplus funds or savings into bank account and bank will subtract it from the principal amount of your home loan and calculate interest on the remaining amount and not the entire .Smart home loan offers repayment tenure up to 20 years </p>
+	    <div class="panel-group">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" href="#collapse104">Benefits for a borrower</a>
+      </h4>
+    </div>
+    <div id="collapse104" class="panel-collapse collapse">
+      <div class="panel-body">
+	  
+	  
+	  <ul>
+	     <li>End up paying less EMI :- As bank consider and subtract surplus funds from the principal outstanding ,your principal get reduce while EMI calculation done by bank and you will end up paying less EMI than usual </li>
+		 <li>Borrower can withdraw the funds fully or partially when needed </li>
 
+	  </ul>
+	  </div>
+      
+    </div>
+    </div>
+   </div>
+	 </div>
+	 </div>
+     <br>
 @include('layout.footer')
 @include('layout.script')
 

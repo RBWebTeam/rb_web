@@ -14,6 +14,7 @@
  <div class="col-md-12 white-bg pad box-shadow fl-lft" id="lowest">
 
 </div> -->
+<br>
  <div class="col-md-12 white-bg pad box-shadow fl-lft">
 <h2 class="align-center loan-head">Personal Loan</h2>
   <!--   <div id ="test123" class="col-md-8"></div> -->

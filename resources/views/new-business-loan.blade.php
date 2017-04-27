@@ -5,8 +5,8 @@
 	<!-- <div class="col-md-12">
 	<h2 class="align-center loan-head">Unsecured Business Loan</h2>
 	</div> -->
- 
- <div class="col-md-12 white-bg pad">
+ <br>
+ <div class="col-md-12 white-bg pad box-shadow">
  <h3 class="text-center loan-head">Unsecured Business Loan</h3>
 <div class="col-md-8" id="mod">
 <form name='business_loan_process_form' id='business_loan_process_form' action={{URL::to('loan-submit')}} method="POST">
@@ -505,6 +505,38 @@
 	</div>
 	<br>
    <div id ="test123"></div>
+   
+     <div class="container">
+  <div class="col-md-12 mrg-top white-bg pad1 box-shadow">
+	 <hr>
+	 <p>Funds require to manage day to day operations of your business???......funds require to expand your business?? …...fund requirement is a most important factor for any business to run smoothly.....here is a Rupeeboss to understand your needs deeply,and make funds available for you to your doorstep.</p>
+	 <p>Business loan fulfills any kind of  business needs. It is a type of short term unsecured loan for 3 to 5 year of repayment period. Business loan can be easily sanction in minimum 7 working days.</p>
+	    <div class="panel-group">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" href="#collapse102">Documents Required  </a>
+      </h4>
+    </div>
+    <div id="collapse102" class="panel-collapse collapse">
+      <div class="panel-body">
+	  
+	  
+	  <ul>
+	     <li>Proof of Identity / address proof.(business as well as All directors)</li>
+		 <li>Memorandum of association & article of association ,certificate of commencement of business</li>
+		 <li>Bank statements (business as well as Director)</li>
+		 <li>Require Income tax return file (ITR) along with Computation of income ,B/S&P/L accounts for last 3 year. It should be audited and certified by CA</li>
+		 <li>Proof of continuation: Trade license /Establishment /Sales Tax certificate </li>
+	  </ul>
+	  </div>
+      
+    </div>
+    </div>
+   </div>
+	 </div>
+	 </div>
+	 <br>
   
 @include('layout.footer')
 @include('layout.script')

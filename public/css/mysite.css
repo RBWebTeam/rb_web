@@ -13063,6 +13063,8 @@ select.error, textarea.error, input.error {
 .brdr {border:1px solid #ddd;float: left;}
 .mrg-aut {margin:0 auto;}
 .dis-non {display:none;}
+#table_total td {padding:10px;}
+.mod-mar-tp {margin-top:200px;}
 
 
 

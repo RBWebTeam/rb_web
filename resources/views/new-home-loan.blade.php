@@ -311,7 +311,7 @@
  
 
 
-         <button id="eligibility"  class="btn btn-info disblk" title="See Bankwise Eligibility And Apply Amongst Best Bank" style="display: none;">Check Bankwise Eligibility </button>
+         <button id="eligibility"  class="btn btn-info disblk" title="See Bankwise Eligibility And Apply Amongst Best Bank" ">Check Bankwise Eligibility </button>
          <button type="button" class="btn btn-info block"  id="call_rm" name="call_rm" data-toggle="modal" data-target="#Modal" title="Call For RM(Single Day Process)">Call Manager</button>
          <div id="log_digital_text" style=" color: red"></div>
         </div>
@@ -329,6 +329,45 @@
 	</div>
 
 	<div  id="form_ID"></div>
+	  <div class="container">
+  <div class="col-md-12 mrg-top white-bg pad1 box-shadow">
+	 <hr>
+	 <p>It will be a proud movement for you to buy your own home at your dream location, so don't wait just click and apply for a home loan. </p>
+	 <p>Home loan is a type of secured loan which is offered by Banks and Non banking Financial Companies (NBFC) with lowest interest rates possible.
+Bank or NBCF will have possession on all property paper and all type of presale documentation between buyer and seller till the successful completion of loan tenure.</p>
+
+<h3>Who can apply for a Home loan ??</h3>
+    <ul>
+	   <li>Individual (salaried )</li>
+	   <li>Self employed professionals (Doctors,Lawyers,Teachers,etc)</li>
+	   <li>Businessman</li>
+	</ul>
+	<h3>Type of property bank and NBFC fund for ??</h3>
+    <p>It should be registered and clearly identifiable whether the property is in under construction, fully constructed or Re-sale </p>
+
+	    <div class="panel-group">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" href="#collapse100">Documents Required  </a>
+      </h4>
+    </div>
+    <div id="collapse100" class="panel-collapse collapse">
+      <div class="panel-body">
+	  
+	  <h3>Important parameters Banks look for :</h3>
+	  <ul>
+	     <li>Employment status.</li>
+		 <li>Duration of current employment .</li>
+		 <li>Credit history and credit score.</li>
+	  </ul>
+	  </div>
+      
+    </div>
+    </div>
+   </div>
+	 </div>
+	 </div>
 <br>
 @include('layout.footer')
 @include('layout.script')

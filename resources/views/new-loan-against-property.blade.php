@@ -305,7 +305,7 @@
            <a   data-toggle="modal" data-target="#login_process" class="btn btn-info disblk apply_digitally " title="Experience New Digital Era In Loans">Apply Digitally</a>
            @endif    
  
-         <button id="eligibility" class="btn btn-info disblk" title="See Bankwise Eligibility And Apply Amongst Best Bank" style="display: none;">Check Bankwise Eligibility</button>
+         <button id="eligibility" class="btn btn-info disblk" title="See Bankwise Eligibility And Apply Amongst Best Bank" ">Check Bankwise Eligibility</button>
          <button type="button" class="btn btn-info block"  id="call_rm" name="call_rm" data-toggle="modal" data-target="#Modal" title="Call For RM(Single Day Process)">Call Manager</button>
          <div id="log_digital_text" style=" color: red"></div>
         </div>
@@ -324,6 +324,45 @@
   </div>
 <br>
   <div  id="form_ID"></div>
+  
+    <div class="container">
+  <div class="col-md-12 mrg-top white-bg pad1 box-shadow">
+	 <hr>
+	 <p>What if, you are not salaried person???......what if ,your salary is not enough to fulfill your fund requirement ??  if you fall in same situation now make optimum utilization of your property.........here we have loan  against property to deal with your fund requirement.</p>
+	 <p>Loan against property is available with any bank and all Non Banking Financial Companies(NBFC). It is a type of secured loan  which fund you for a long time .Borrower  should mortgage his property to the bank till the successful repayment of loan. The loan is given as a certain percentage of the property's market value, usually around 40 per cent to 60 percent.</p>
+	    <div class="panel-group">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" href="#collapse101">Loan against Property can be taken for following purposes</a>
+      </h4>
+    </div>
+    <div id="collapse101" class="panel-collapse collapse">
+      <div class="panel-body">
+	  
+	  
+	  <ul>
+	     <li>Expanding your business</li>
+		 <li>Getting your son/daughter married</li>
+		 <li>Sending your son/daughter for higher studies abroad</li>
+		 <li>Funding your dream vacation</li>
+		 <li>Funding medical treatments</li>
+	  </ul>
+	  
+	  <h3>Criteria for property</h3>
+	  <ul>
+	     <li>Residence self-occupied</li>
+		 <li>Residence vacant/on rent </li>
+		 <li>Commercial property</li>
+		 <li>Factory /warehouse </li>
+	  </ul>
+	  </div>
+      
+    </div>
+    </div>
+   </div>
+	 </div>
+	 </div>
 
 @include('layout.footer')
 @include('layout.script')

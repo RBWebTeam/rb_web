@@ -137,35 +137,7 @@
                </div>
       </form>
 	  
-	 <div class="col-md-12 mrg-top">
-	 <hr>
-	 <p>Dreaming to Enjoy <b>Vacation</b> in foreign country, A <b>Royal Wedding</b> plan, <b>Renovation of your house....</b> Here we have <b>Personal Loan</b> to make your dreams true. A Personal Loan is a Short Term Unsecured Loan for 1 to 5 years which helps individual to make their dream true by fulfilling their needs. Personal Loan can be disburse within 48 hours as well.</p>
-	    <div class="panel-group">
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h4 class="panel-title">
-        <a data-toggle="collapse" href="#collapse1">Documents Required  </a>
-      </h4>
-    </div>
-    <div id="collapse1" class="panel-collapse collapse">
-      <div class="panel-body">
-	  
-	  
-	  <ul>
-	     <li>A Copy of Latest Salary Slips or Salary Certificate.</li>
-		 <li>Form 16 and Copy of ITR for the last two years.</li>
-		 <li>Last 6 months bank statements, S.O.A (Statements of Accounts)</li>
-		 <li>Appointment Letter </li>
-		 <li>Other Loan/ Obligation / Existing Specified Expenses (last 1 year)</li>
-		 <li>CIBIL Score / Credit Rating</li>
-		 <li>Government Recognize ID and Address Proof </li>
-	  </ul>
-	  </div>
-      
-    </div>
-    </div>
-   </div>
-	 </div>
+	 
      </div>
 	 
 	 
@@ -229,6 +201,38 @@
   
   <br>
   <div id ="test123"></div>
+  <div class="container">
+  <div class="col-md-12 mrg-top white-bg pad1 box-shadow">
+	 <hr>
+	 <p>Dreaming to Enjoy Vacation in foreign country, A Royal Wedding plan, Renovation of your house.... Here we have Personal Loan to make your dreams true. A Personal Loan is a Short Term Unsecured Loan for 1 to 5 years which helps individual to make their dream true by fulfilling their needs. Personal Loan can be disburse within 48 hours as well.</p>
+	    <div class="panel-group">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" href="#collapse1">Documents Required  </a>
+      </h4>
+    </div>
+    <div id="collapse1" class="panel-collapse collapse">
+      <div class="panel-body">
+	  
+	  
+	  <ul>
+	     <li>A Copy of Latest Salary Slips or Salary Certificate.</li>
+		 <li>Form 16 and Copy of ITR for the last two years.</li>
+		 <li>Last 6 months bank statements, S.O.A (Statements of Accounts)</li>
+		 <li>Appointment Letter </li>
+		 <li>Other Loan/ Obligation / Existing Specified Expenses (last 1 year)</li>
+		 <li>CIBIL Score / Credit Rating</li>
+		 <li>Government Recognize ID and Address Proof </li>
+	  </ul>
+	  </div>
+      
+    </div>
+    </div>
+   </div>
+	 </div>
+	 </div>
+	 <br>
   @include('layout.footer')
 @include('layout.script')
   </div>

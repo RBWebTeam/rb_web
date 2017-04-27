@@ -63,10 +63,8 @@
 					<!-- <li><a href="{{URL::to('loan-details/business-loan/YES-BANK')}}">Yes Bank</a></li> -->
 					<li><a href="{{URL::to('loan-details/business-loan/bajaj-finance')}}">Bajaj Finance</a></li>
                     <li><a href="{{URL::to('loan-details/business-loan/lendingkart')}}">Lendingkart</a></li>
-                    <li><a href="{{URL::to('loan-details/business-loan/fullerton')}}">Fullerton India </a></li>
-                                                                       
+                    <li><a href="{{URL::to('loan-details/business-loan/fullerton')}}">Fullerton India </a></li>                                                              
 				</ul>
-
 			</div>
 
 			<div class="col-md-3 col-md-push-1 col-sm-12 col-sm-push-0 col-xs-12 col-xs-push-0">

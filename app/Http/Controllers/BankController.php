@@ -52,7 +52,6 @@ class BankController extends InitialController
     }                
 
  
-    
     // keywords,title and description
     if ($data['bank_name']=='ICICI BANK' && $data['product']=='Home Loan') {
       $data['title']='ICICI Bank | Home Loan Eligibility & Rate of Interest ';

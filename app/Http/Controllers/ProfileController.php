@@ -261,30 +261,33 @@ public function  change_password(Request $req){
     $quote_id=Session::get('quote_id');
     $update=new bank_quote_api_request();    
     $update_quote=$update->update_liza_quote($quote_id);
-    //print_r('http://beta.erp.rupeeboss.com/personalloan/personalloan.aspx?qoutid='.$quote.'&processingfee='.$processing_fee.'&bankid='.$bank.'&loanamout='.$loan_eligible.'&idtype='.$roi_type.'&empcode='.$empid.'&brokerid='.$brokerid_session.'&source='.$source.'&refapp='.$ref);exit();
     if(isset($req['is_liza'])){
+      
+      $loan_parameters='qoutid='.$quote.'&processingfee='.$processing_fee.'&bankid='.$bank.'&loanamout='.$loan_eligible.'&idtype='.$roi_type.'&empcode='.$empid.'&brokerid='.$brokerid_session.'&source='.$source.'&refapp='.$ref;
+
+      $balance_transfer_parameter='qoutid='.$quote.'&brokerid='.$brokerid_session.'&loanamout='.$loanamount.'&loaninterest='.$loaninterest.'&loanterm='.$loanterm.'&bankid='.$bank.'&productid='.$product.'&idtype='.$roi_type.'&processingfee='.$processing_fee.'&empcode='.$empid.'&refapp='.$refapp.'&source='.$source.'&coapp=0';
 
       if ($product == '9') {
-       return redirect()->away('http://beta.erp.rupeeboss.com/personalloan/personalloan.aspx?qoutid='.$quote.'&processingfee='.$processing_fee.'&bankid='.$bank.'&loanamout='.$loan_eligible.'&idtype='.$roi_type.'&empcode='.$empid.'&brokerid='.$brokerid_session.'&source='.$source.'&refapp='.$ref);
+       return redirect()->away($this::$erp_url_static.'personalloan/personalloan.aspx?'.$loan_parameters);
 
       } else  if ($product == '7') {
 
-        return redirect()->away('http://beta.erp.rupeeboss.com/LAP/LAP_Form.aspx?qoutid='.$quote.'&processingfee='.$processing_fee.'&bankid='.$bank.'&loanamout='.$loan_eligible.'&idtype='.$roi_type.'&empcode='.$empid.'&brokerid='.$brokerid_session.'&source='.$source.'&refapp='.$ref);
+        return redirect()->away($this::$erp_url_static.'LAP/LAP_Form.aspx?'.$loan_parameters);
       }else if ($product == '13') {
           return redirect('thank-you');
       }
       else{
-        return redirect()->away('http://beta.erp.rupeeboss.com/homeloan/Home_Loan_Application_Form.aspx?qoutid='.$quote.'&processingfee='.$processing_fee.'&bankid='.$bank.'&loanamout='.$loan_eligible.'&idtype='.$roi_type.'&empcode='.$empid.'&brokerid='.$brokerid_session.'&source='.$source.'&refapp='.$ref);
+        return redirect()->away($this::$erp_url_static.'homeloan/Home_Loan_Application_Form.aspx?'.$loan_parameters);
       }
       
       }else{
         if ($product == '9') {
-        return redirect()->away('http://beta.erp.rupeeboss.com/BalanceTransfer/PL_BT_Form.aspx?qoutid='.$quote.'&brokerid='.$brokerid_session.'&loanamout='.$loanamount.'&loaninterest='.$loaninterest.'&loanterm='.$loanterm.'&bankid='.$bank.'&productid='.$product.'&idtype='.$roi_type.'&processingfee='.$processing_fee.'&empcode='.$empid.'&refapp='.$refapp.'&source='.$source.'&coapp=0');
+        return redirect()->away($this::$erp_url_static.'BalanceTransfer/PL_BT_Form.aspx?'.$balance_transfer_parameter);
 
         } else  if ($product == '7') {
-       return redirect()->away('http://beta.erp.rupeeboss.com/BalanceTransfer/LAP_BT_Form.aspx?qoutid='.$quote.'&brokerid='.$brokerid_session.'&loanamout='.$loanamount.'&loaninterest='.$loaninterest.'&bankid='.$bank.'&productid='.$product.'&idtype='.$roi_type.'&processingfee='.$processing_fee.'&empcode='.$empid.'&source='.$source.'&refapp='.$refapp.'&coapp=0');
+       return redirect()->away($this::$erp_url_static.'BalanceTransfer/LAP_BT_Form.aspx?'.$balance_transfer_parameter);
         }else {
-          return redirect()->away('http://beta.erp.rupeeboss.com/BalanceTransfer/HL_BT_Form.aspx?qoutid='.$quote.'&brokerid='.$brokerid_session.'&loanamout='.$loanamount.'&loaninterest='.$loaninterest.'&loanterm='.$loanterm.'&bankid='.$bank.'&productid='.$product.'&idtype='.$roi_type.'&processingfee='.$processing_fee.'&empcode='.$empid.'&source='.$source.'&refapp='.$refapp.'&coapp=0');
+          return redirect()->away($this::$erp_url_static.'BalanceTransfer/HL_BT_Form.aspx?'.$balance_transfer_parameter);
         }
         
       

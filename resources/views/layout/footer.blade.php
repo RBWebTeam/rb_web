@@ -21,16 +21,19 @@
 				</ul>
 			</div>
 			<div class="col-md-2 col-md-push-1 col-sm-12 col-sm-push-0 col-xs-12 col-xs-push-0">
+      
 				<h3>Personal Loan</h3>
 				<ul class="float">
+
 					<li><a href="{{URL::to('loan-details/personal-loan/axis')}}">Axis Bank</a></li>
 					<li><a href="{{URL::to('loan-details/personal-loan/hdfc-ltd')}}">HDFC</a></li>
 					<li><a href="{{URL::to('loan-details/personal-loan/bajaj-finance')}}">Bajaj Finance</a></li>
 					<li><a href="{{URL::to('loan-details/personal-loan/capital-first')}}">Capital First </a></li>
           <li><a href="{{URL::to('loan-details/personal-loan/fullerton')}}">Fullerton India</a></li>
 					<li><a href="{{URL::to('loan-details/personal-loan/icici')}}">ICICI Bank</a></li>
-					<li><a href="{{URL::to('loan-details/personal-loan/kotak-mahindra')}}">Kotak Mahindra</a></li>
+					<li><a href="{{URL::to('loan-details/personal-loan/kotak-mahindra')}}">Kotak Mahindra</a> </li>
 					<li><a href="{{URL::to('loan-details/personal-loan/tata-capital')}}">Tata Capital</a></li>
+
                  </ul>
 
 			</div>

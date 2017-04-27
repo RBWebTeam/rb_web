@@ -767,13 +767,13 @@ function ajax(_token,loanAmount_id,interest,loanTenurMonth,ID,paid){
 
               
                      if(msg.wtlf==303){   
-                       $('#working_i_d').empty().append('Current interest rate should be greater than 9.5');
+                       $('#working_i_d').empty().append('Current Interest Rate Should Be Greater Than 9.5%');
                        $('#working_model').modal('show'); 
                      }if(msg.ptlf==303){
-                      $('#working_i_d').empty().append('Current interest rate should be greater than 7');
+                      $('#working_i_d').empty().append('Current Interest Rate Should Be Greater Than 7%');
                       $('#working_model').modal('show');
                      }if(msg.pctlf==303){
-                      $('#working_i_d').empty().append('Current interest rate should be greater than 5');
+                      $('#working_i_d').empty().append('Current Interest Rate Should Be Greater Than 5%');
                       $('#working_model').modal('show');
                      } 
 

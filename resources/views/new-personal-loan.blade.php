@@ -306,6 +306,7 @@ $(".btn-primary").click(function(e){
                       $('#apply_new').show();
                       $('#mi_id').show();
                        $('#eligibility').show();
+                       $('#log_digital_text').hide();
                     //   $(window).scrollTop($('#lowest').offset().top-50);
 
                          getUrl=url;

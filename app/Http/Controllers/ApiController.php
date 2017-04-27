@@ -530,7 +530,7 @@ run_else:
 		        if($data!='[]' ){
 					$new_data=$data;
 					for($i=0;$i<sizeof($new_data);$i++){
-						$new_data[$i]->url="http://beta.erp.rupeeboss.com/homeloan/home_loan_application_form.aspx?qoutid=".$new_data[$i]->ID;
+						$new_data[$i]->url=$this::$erp_url_static."homeloan/home_loan_application_form.aspx?qoutid=".$new_data[$i]->ID;
 					}
 				}
 				else{
@@ -599,7 +599,7 @@ run_else:
 		        if($data!='[]' ){
 					$new_data=$data;
 					for($i=0;$i<sizeof($new_data);$i++){
-						$new_data[$i]->url="http://beta.erp.rupeeboss.com/homeloan/home_loan_application_form.aspx?qoutid=".$new_data[$i]->ID;
+						$new_data[$i]->url=$this::$erp_url_static."homeloan/home_loan_application_form.aspx?qoutid=".$new_data[$i]->ID;
 					}
 				}
 				else{

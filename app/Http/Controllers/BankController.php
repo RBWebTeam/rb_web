@@ -19,6 +19,7 @@ class BankController extends InitialController
  
 
   $product=ucwords(str_replace('-',' ',$product));
+  
   $bank= strtoupper(str_replace('-',' ',$bank));
 
           $getQuery=DB::select('call usp_bankwise_detail("'.$product.'","'.$bank.'")');

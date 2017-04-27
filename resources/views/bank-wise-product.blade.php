@@ -110,8 +110,8 @@
     <td>{{(int)$value->Min_Loan_Amt/100000}}Lacs-{{(int)$value->Max_Loan_Amt/10000000}}Cr</td> 
    <td>{{(int)$value->Min_Income}}</td>
    <td><span>{{(int)$value->Min_Age}}-{{(int)$value->Max_Age}}</span></td>
-     @if($value->roi!='')
-        <td>{{$value->roi}}%</td> 
+     @if($value->women_roi!='')
+        <td>{{$value->women_roi}}%</td> 
      @else
       <td>-</td> 
      @endif

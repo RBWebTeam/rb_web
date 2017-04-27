@@ -259,7 +259,7 @@ public function  change_password(Request $req){
 
       $loan_parameters='qoutid='.$quote.'&processingfee='.$processing_fee.'&bankid='.$bank.'&loanamout='.$loan_eligible.'&idtype='.$roi_type.'&empcode='.$empid.'&brokerid='.$brokerid_session.'&source='.$source.'&refapp='.$refapp.'&refid='.$ref;
 
-      $balance_transfer_parameter='qoutid='.$quote.'&brokerid='.$brokerid_session.'&loanamout='.$loanamount.'&loaninterest='.$loaninterest.'&loanterm='.$loanterm.'&bankid='.$bank.'&productid='.$product.'&idtype='.$roi_type.'&processingfee='.$processing_fee.'&empcode='.$empid.'&refapp='.$refapp.'&source='.$source.'&coapp=0'.'&refid='.$ref;
+     
 
       if ($product == '9') {
        return redirect()->away($this::$erp_url_static.'personalloan/personalloan.aspx?'.$loan_parameters);
@@ -275,6 +275,7 @@ public function  change_password(Request $req){
       }
       
       }else{
+         $balance_transfer_parameter='qoutid='.$quote.'&brokerid='.$brokerid_session.'&loanamout='.$loanamount.'&loaninterest='.$loaninterest.'&loanterm='.$loanterm.'&bankid='.$bank.'&productid='.$product.'&idtype='.$roi_type.'&processingfee='.$processing_fee.'&empcode='.$empid.'&refapp='.$refapp.'&source='.$source.'&coapp=0'.'&refid='.$ref;
         if ($product == '9') {
         return redirect()->away($this::$erp_url_static.'BalanceTransfer/PL_BT_Form.aspx?'.$balance_transfer_parameter);
 

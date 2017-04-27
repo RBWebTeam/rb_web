@@ -304,7 +304,7 @@
            <a   data-toggle="modal" data-target="#login_process" class="btn btn-info disblk apply_digitally " title="Experience New Digital Era In Loans">Apply Digitally</a>
            @endif    
  
-         <button id="eligibility" class="btn btn-info disblk" title="See Bankwise Eligibility And Apply Amongst Best Bank" ">Check Bankwise Eligibility</button>
+         <button id="eligibility" class="btn btn-info disblk" title="See Bankwise Eligibility And Apply Amongst Best Bank" disabled>Check Bankwise Eligibility</button>
          <button type="button" class="btn btn-info block"  id="call_rm" name="call_rm" data-toggle="modal" data-target="#Modal" title="Call For RM(Single Day Process)">Call Manager</button>
          <div id="log_digital_text" style=" color: red"></div>
         </div>
@@ -447,11 +447,12 @@ $(".product_ID").click(function(e){
                              $("#apply_new").attr("href", url);
                              $('#mi_ID').show();
                              $('#err').hide();
-                              $('#eligibility').show();
+                              $('#eligibility').prop('disabled', false);
                              // $(window).scrollTop($('#form_ID').offset().top-20);
                              getUrl=url;
                          }else{
-
+                               $('#eligibility').prop('disabled', true);
+                                getUrl='';
                                 $('#err').show();
                                  $('#loanamount').val("");
                                 $('#rate').val("");

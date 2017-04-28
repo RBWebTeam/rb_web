@@ -1,6 +1,7 @@
 @include('layout.header')
 
     <div class="container">
+	 
 	<aside class="pad-tp">
 	<div class="col-md-12">
 	<!-- <p class="text-left"><a href="{{url('/')}}">home</a>/{{$bank_name}}</p> -->
@@ -106,7 +107,7 @@
 <!--     <td><input type="checkbox" name="cehckbox"/></td> -->
    <!--  <td>{{$value->Bank_Id}}</td>  -->
     <td>{{$value->roi}}%</td> 
-    <td>{{(int)$value->Max_Loan_Amt}}-{{(int)$value->Min_Loan_Amt}}</td> 
+    <td>{{(int)$value->Min_Loan_Amt/100000}}Lacs-{{(int)$value->Max_Loan_Amt/10000000}}Cr</td> 
    <td>{{(int)$value->Min_Income}}</td>
    <td><span>{{(int)$value->Min_Age}}-{{(int)$value->Max_Age}}</span></td>
      @if($value->women_roi!='')

@@ -99,7 +99,17 @@
 		<option value="17">17 Year</option>
 		<option value="18">18 Year</option>
 		<option value="19">19 Year</option>
-		<option value="20">20 Year</option>
+		<option selected value="20">20 Year</option>
+    <option value="21">21 Year</option>
+    <option value="22">22 Year</option>
+    <option value="23">23 Year</option>
+    <option value="24">24 Year</option>
+    <option value="25">25 Year</option>
+    <option value="26">26 Year</option>
+    <option value="27">27 Year</option>
+    <option value="28">28 Year</option>
+    <option value="29">29 Year</option>
+    <option value="30">30 Year</option>
 	</select>
   </div>
 		
@@ -312,7 +322,9 @@
  
 
 
+
          <button id="eligibility"  class="btn btn-info disblk" title="See Bankwise Eligibility And Apply Amongst Best Bank" disabled>Check Bankwise Eligibility </button>
+
          <button type="button" class="btn btn-info block"  id="call_rm" name="call_rm" data-toggle="modal" data-target="#Modal" title="Call For RM(Single Day Process)">Call Manager</button>
          <div id="log_digital_text" style=" color: red"></div>
         </div>

@@ -14,8 +14,8 @@
     <li><a data-toggle="tab" href="#main3" id="nav3" class="go_to_next"><b>BUSINESS DETAIL</b></a></li>
     <li><a data-toggle="tab" href="#main5" id="nav5" class="go_to_next"><b>ONLINE ID</b></a></li>
     <li><a data-toggle="tab" href="#main6" id="nav6" class="go_to_next"><b>REFERENCE</b></a></li>
-    <li><a data-toggle="tab"  id="nav4" href="#main4" class="go_to_next"><b>DOCUMENT</b></a></li>
-    <li><a data-toggle="tab"  id="nav7" href="#main7" class="go_to_next"><b>BANK STATEMENT</b></a></li>
+    <li><a data-toggle="tab"  id="nav4" class="go_to_next"><b>DOCUMENT</b></a></li>
+    <li><a data-toggle="tab"  id="nav7"  class="go_to_next"><b>BANK STATEMENT</b></a></li>
   </ul>
 
   <div class="tab-content">

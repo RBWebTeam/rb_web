@@ -240,15 +240,11 @@ public function  change_password(Request $req){
       $empcode = 0;
     }
 
-    if(isset($request['refapp'])){
-      $refapp = $request['refapp'];
-    }else{
-      $refapp = 0;
-    }
+   
      $email=Session::get('email');
      $empid=Session::get('empid')?Session::get('empid'):0;
      $brokerid_session=Session::get('brokerid')?Session::get('brokerid'):0;
-     $ref=Session::get('refid')?Session::get('refid'):0;
+     $refapp=Session::get('refapp')?Session::get('refapp'):0;
      $source=Session::get('source')?Session::get('source'):0;
 
     $update = DB::table('bank_quote_api_request')->where('ID', $quote)->where('Email', $email)->update(array('bank_id' => $bank,'roi_type'=>$roi_type,'loan_eligible'=>$loan_eligible,'processing_fee'=>$processing_fee));
@@ -257,7 +253,7 @@ public function  change_password(Request $req){
     $update_quote=$update->update_liza_quote($quote_id);
     if(isset($req['is_liza'])){
 
-      $loan_parameters='qoutid='.$quote.'&processingfee='.$processing_fee.'&bankid='.$bank.'&loanamout='.$loan_eligible.'&idtype='.$roi_type.'&empcode='.$empid.'&brokerid='.$brokerid_session.'&source='.$source.'&refapp='.$refapp.'&refid='.$ref;
+      $loan_parameters='qoutid='.$quote.'&processingfee='.$processing_fee.'&bankid='.$bank.'&loanamout='.$loan_eligible.'&idtype='.$roi_type.'&empcode='.$empid.'&brokerid='.$brokerid_session.'&source='.$source.'&refapp='.$refapp;
 
      
 
@@ -275,7 +271,7 @@ public function  change_password(Request $req){
       }
       
       }else{
-         $balance_transfer_parameter='qoutid='.$quote.'&brokerid='.$brokerid_session.'&loanamout='.$loanamount.'&loaninterest='.$loaninterest.'&loanterm='.$loanterm.'&bankid='.$bank.'&productid='.$product.'&idtype='.$roi_type.'&processingfee='.$processing_fee.'&empcode='.$empid.'&refapp='.$refapp.'&source='.$source.'&coapp=0'.'&refid='.$ref;
+         $balance_transfer_parameter='qoutid='.$quote.'&brokerid='.$brokerid_session.'&loanamout='.$loanamount.'&loaninterest='.$loaninterest.'&loanterm='.$loanterm.'&bankid='.$bank.'&productid='.$product.'&idtype='.$roi_type.'&processingfee='.$processing_fee.'&empcode='.$empid.'&refapp='.$refapp.'&source='.$source.'&coapp=0';
         if ($product == '9') {
         return redirect()->away($this::$erp_url_static.'BalanceTransfer/PL_BT_Form.aspx?'.$balance_transfer_parameter);
 

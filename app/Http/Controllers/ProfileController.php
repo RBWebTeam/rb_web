@@ -240,7 +240,7 @@ public function  change_password(Request $req){
      if(isset($request['empcode'])){
       $empcode = $request['empcode'];
     }else{
-      $empcode = 0;
+      $empcode = '';
     }
 
     if(isset($request['refapp'])){
@@ -249,10 +249,10 @@ public function  change_password(Request $req){
       $refapp = 0;
     }
      $email=Session::get('email');
-     $empid=Session::get('empid')?Session::get('empid'):0;
-     $brokerid_session=Session::get('brokerid')?Session::get('brokerid'):0;
+     $empid=Session::get('empid')?Session::get('empid'):'';
+     $brokerid_session=Session::get('brokerid')?Session::get('brokerid'):'';
      $ref=Session::get('refapp')?Session::get('refapp'):0;
-     $source=Session::get('source')?Session::get('source'):0;
+     $source=Session::get('source')?Session::get('source'):'';
 
     $update = DB::table('bank_quote_api_request')->where('ID', $quote)->where('Email', $email)->update(array('bank_id' => $bank,'roi_type'=>$roi_type,'loan_eligible'=>$loan_eligible,'processing_fee'=>$processing_fee));
     $quote_id=Session::get('quote_id');

@@ -193,7 +193,7 @@ public function  change_password(Request $req){
   public function applyonline(Request $req){
     
     $request = $req->all();
-     // print_r($request);exit();
+      //print_r($request);exit();
     // $app = $request['appid'];
     $quote = $request['qoutid'];
     $bank = $request['BankId'];
@@ -228,9 +228,12 @@ public function  change_password(Request $req){
     }else{
       $roi_type = "";
     }
-    if(isset($request['processingfee'])){
-      $processing_fee = $request['processingfee'];
-    }else{
+    if(isset($request['processing_fee'])){
+      $processing_fee = $request['processing_fee'];
+    }elseif ($request['processingfee']) {
+      $processing_fee=$request['processingfee'];
+    }
+    else{
       $processing_fee = "";
     }
 
@@ -248,7 +251,7 @@ public function  change_password(Request $req){
      $email=Session::get('email');
      $empid=Session::get('empid')?Session::get('empid'):0;
      $brokerid_session=Session::get('brokerid')?Session::get('brokerid'):0;
-     $ref=Session::get('refid')?Session::get('refid'):0;
+     $ref=Session::get('refapp')?Session::get('refapp'):0;
      $source=Session::get('source')?Session::get('source'):0;
 
     $update = DB::table('bank_quote_api_request')->where('ID', $quote)->where('Email', $email)->update(array('bank_id' => $bank,'roi_type'=>$roi_type,'loan_eligible'=>$loan_eligible,'processing_fee'=>$processing_fee));
@@ -266,7 +269,7 @@ public function  change_password(Request $req){
 
       } else  if ($product == '7') {
 
-        return redirect()->away($this::$erp_url_static.'LAP/LAP_Form.aspx?'.$loan_parameters);
+        return redirect()->away($this::$erp_url_static.'LAP/LAP_Form.asxp?'.$loan_parameters);
       }else if ($product == '13') {
           return redirect('thank-you');
       }

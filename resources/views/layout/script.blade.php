@@ -382,13 +382,18 @@
                         // console.log(a);
                         $(a).show();
                         $('.msg').show();
+
+                      
+                         setTimeout(function() {
+                          location.reload();
+                        }, 1000);
+
                       }else{
                         $form.hide();
                         var b =$('#'+form).parent().find('.msg_err');
                         //console.log(a);
                         $(b).show();
                         $('msg_err').show();
-                        
                         
                       }
                       //console.log(msg);

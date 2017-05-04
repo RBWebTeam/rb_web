@@ -250,7 +250,7 @@ public function  change_password(Request $req){
     }
      $email=Session::get('email');
      $empid=Session::get('empid')?Session::get('empid'):'';
-     $brokerid_session=Session::get('brokerid')?Session::get('brokerid'):'';
+     $brokerid_session=Session::get('brokerid')?Session::get('brokerid'):0;
      $ref=Session::get('refapp')?Session::get('refapp'):0;
      $source=Session::get('source')?Session::get('source'):'';
 

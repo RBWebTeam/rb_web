@@ -362,7 +362,7 @@
    </div>
 	 </div>
 	 </div>
-
+     <br>
 @include('layout.footer')
 @include('layout.script')
 

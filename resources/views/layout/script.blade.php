@@ -382,13 +382,18 @@
                         // console.log(a);
                         $(a).show();
                         $('.msg').show();
+
+                      
+                         setTimeout(function() {
+                          location.reload();
+                        }, 1000);
+
                       }else{
                         $form.hide();
                         var b =$('#'+form).parent().find('.msg_err');
                         //console.log(a);
                         $(b).show();
                         $('msg_err').show();
-                        
                         
                       }
                       //console.log(msg);
@@ -1747,7 +1752,8 @@
       <div class="modal-dialog" id="login_first">
         <!-- Modal content-->
         <div class="modal-content">
-          <div class="modal-header">          
+          <div class="modal-header"> 
+           <button type="button" class="close" data-dismiss="modal">&times;</button>         
             <h4 class="modal-title text-center"><b>Registration Form</b></h4>
           </div>
           <br>        

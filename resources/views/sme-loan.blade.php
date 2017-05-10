@@ -114,7 +114,7 @@
 					</div>
 
 					<div class="col-md-4 animate-box">
-					    <a href="{{URL::to('check_emi')}}" >
+					    <a href="{{URL::to('check-emi')}}" >
 						<div class="price-box popular">
 							<div class="ic1"><img src="images/ic2.png" alt="ic2_pic" /></div>
 							<h4 class="mrg-btm">Calculate EMI</h4>
@@ -122,7 +122,7 @@
 							     <li>EMI Calculator is easy to use, intuitive to understand and is quick to perform.</li>
 								 <li>Calculate your EMIs.</li>
 							</ul>
-							<a class="btn btn-primary btn-outline with-arrow" href="{{URL::to('check_emi')}}">Calculate EMI<i class="icon-arrow-right"></i></a>
+							<a class="btn btn-primary btn-outline with-arrow" href="{{URL::to('check-emi')}}">Calculate EMI<i class="icon-arrow-right"></i></a>
 						</div>
 						</a>
 					</div>

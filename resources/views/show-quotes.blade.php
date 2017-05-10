@@ -338,6 +338,7 @@ $('#compID').show();
 <script type="text/javascript">
 $("#Modify_Details").click(function() {
   $(window).scrollTop($('#mod').offset().top-20);
+ 
 });
 
 

@@ -91,7 +91,7 @@
 	
 	</div>
 	<br>
-	<div class="animate-box" id ="generic" style="display: none;" >
+	<div class="animate-box" id ="generic"  >
 	<form name="generic_form" id="generic_form" method="POST">
 	{{ csrf_field() }}
 	<div class="row">
@@ -269,13 +269,14 @@
 			<section class="content">
 				
 				<span class="input_exp input--nao">
-					<input class="input__field input__field--nao" type="text" id="turnover" name="turnover" onkeypress="return isNumberKey(event)" required minlength="6" maxlength="9"  />
+					<input class="input__field input__field--nao" type="text" id="turnover" name="turnover" onkeypress="return isNumberKey(event)" oninput="business_turnover('turnover')" required  />
 					<label class="input__label input__label--nao" for="turnover">
 						<span class="input__label-content input__label-content--nao">Business Turnover ( Total Sales) - YOY  </span>
 					</label>
 					<svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
 						<path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
 					</svg>
+					<div id="turn_over" style="display:none;color: red;">Amount should be 500000 or greater than 500000.</div>
 				</span>
 				<span class="input_exp input--nao">
 					<input class="input__field input__field--nao" type="text" id="net_worth" name="net_worth" onkeypress="return isNumberKey(event)" required />
@@ -1343,7 +1344,34 @@
       	
       }else{
       	$('#express_form').hide();
+      	 var emp = $('input[name=employment]:checked').val();
+          $('#business_type').val(emp);
+           // console.log(emp);
+         
+         var firm = $('input[name=firm_holder]:checked').val();
+          $('#holder').val(firm);
+           // console.log(firm);
+      	var amount = $("#amount").val();
+         $('#loanamount').val(amount);
+         var slidr = $("#unranged-value").text();
+         $('#tenure').val(slidr);
+         if (amount<500000) {
+         	$('#modalerr').html("");
+         	$('#modalerr').html("Amount should be greater than <b>5,00,000</b>.");
+          	$('#homeTransfer').modal('show');
+         	$('#express_form').show();
+
+         }else if(slidr<24){
+          	$('#modalerr').html("");
+         	$('#modalerr').html("Tenure(in months) should be <b>24 or greater than 24</b>.");
+          $('#homeTransfer').modal('show'); 
+         	$('#express_form').show();
+         }
+
+         else {
+        $('#homeTransfer').modal('hide');
       	$('#generic').show();
+      }
       	
 
     }
@@ -1366,5 +1394,20 @@
 }
 </script>
 
+<script type="text/javascript">
+	function business_turnover(obj,val){
+		console.log(obj);
+		if(obj=='turnover' ){
+                   var str =$('#turnover').val();
+                   if (str<500000) {
+
+                   	$('#turn_over').show();
+                   } else {
+                    	$('#turn_over').hide();
+                   }
+                  
+        }
+	}
+</script>
 
 

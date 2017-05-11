@@ -1294,7 +1294,7 @@
 <script type="text/javascript">
 	$(".next").click(function(event){
 		// alert("okjjyj");
-
+		
     event.preventDefault();
       $form=$('#express_form');
       if(! $form.valid()){

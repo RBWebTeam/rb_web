@@ -91,7 +91,7 @@
 	
 	</div>
 	<br>
-	<div class="animate-box" id ="generic"  >
+	<div class="animate-box" id ="generic" style="display: none;"  >
 	<form name="generic_form" id="generic_form" method="POST">
 	{{ csrf_field() }}
 	<div class="row">

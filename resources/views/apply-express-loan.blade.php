@@ -1176,7 +1176,7 @@
 
     var s2 = $("#unranged-value").freshslider({
         step: 1,
-        value:10
+        value:24
     });
 
     var s3 = $("#ranged-value").freshslider({

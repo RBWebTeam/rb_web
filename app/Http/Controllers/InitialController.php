@@ -18,7 +18,7 @@ class InitialController extends Controller
                     Session::put('empid', $myArray[0]);
                     Session::put('brokerid', $myArray[1]);
                     Session::put('source', $myArray[2]);
-                    Session::put('refid', '1');
+                    Session::put('refapp', '1');
                  }
             }
       }

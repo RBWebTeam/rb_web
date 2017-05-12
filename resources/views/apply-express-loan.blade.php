@@ -13,7 +13,7 @@
 
             <div class="col-md-12">
 			<center><div class="type-cover1"><span>ENTER AMOUNT</span></div></center>
-			<input type="text" name="amount" id="amount" class="center-dv input-typ"  maxlength="10"
+			<input type="text" name="amount" id="amount" class="center-dv input-typ" 
 			onkeypress="return isNumberKey(event)"  required/>
 			</div>
 			<hr>
@@ -58,9 +58,10 @@
 			<?php }else{?>
 			<div class="col-md-10">
 		   <input type="tel" name="mob_no" id="mob_no" class="center-dv input-typ" placeholder="98XXX XXXXX"  maxlength="10" pattern="[789][0-9]{9}" onkeypress="return isNumberKey(event)" />
-		   <span id="mobile_value" style="display: none;color: red;">Phone number should be of 10 digits.</span>
+		   
 	
 		   <button class="get-otp" type="submit" id="express_loan_send_otp">Get OTP</button>
+		  <br> <span id="mobile_value" style="display: none;color: red;">Phone number should be of 10 digits.</span>
 		  </div>
 			<?php }?>  
 			
@@ -90,7 +91,7 @@
 	
 	</div>
 	<br>
-	<div class="animate-box" id ="generic" style="display: none;" >
+	<div class="animate-box" id ="generic" style="display: none;"  >
 	<form name="generic_form" id="generic_form" method="POST">
 	{{ csrf_field() }}
 	<div class="row">
@@ -268,13 +269,14 @@
 			<section class="content">
 				
 				<span class="input_exp input--nao">
-					<input class="input__field input__field--nao" type="text" id="turnover" name="turnover" onkeypress="return isNumberKey(event)" required  />
+					<input class="input__field input__field--nao" type="text" id="turnover" name="turnover" onkeypress="return isNumberKey(event)" oninput="business_turnover('turnover')" required  />
 					<label class="input__label input__label--nao" for="turnover">
-						<span class="input__label-content input__label-content--nao">Business Turnover ( Total Sales) - YOY </span>
+						<span class="input__label-content input__label-content--nao">Business Turnover ( Total Sales) - YOY  </span>
 					</label>
 					<svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
 						<path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
 					</svg>
+					<div id="turn_over" style="display:none;color: red;">Amount should be 500000 or greater than 500000.</div>
 				</span>
 				<span class="input_exp input--nao">
 					<input class="input__field input__field--nao" type="text" id="net_worth" name="net_worth" onkeypress="return isNumberKey(event)" required />
@@ -316,7 +318,7 @@
 			<section class="content">
 				
 				<span class="input_exp input--nao">
-					<input class="input__field input__field--nao" type="text" id="first_name" name="first_name" required />
+					<input class="input__field input__field--nao" type="text" id="first_name" name="first_name" required onkeypress="return AllowAlphabet(event)" />
 					<label class="input__label input__label--nao" for="first_name">
 						<span class="input__label-content input__label-content--nao">First Name</span>
 					</label>
@@ -325,7 +327,7 @@
 					</svg>
 				</span>
 				<span class="input_exp input--nao">
-					<input class="input__field input__field--nao" type="text" id="middle_name" name="middle_name"/>
+					<input class="input__field input__field--nao" type="text" id="middle_name" name="middle_name" onkeypress="return AllowAlphabet(event)"/>
 					<label class="input__label input__label--nao" for="middle_name">
 						<span class="input__label-content input__label-content--nao">Middle Name </span>
 					</label>
@@ -334,7 +336,7 @@
 					</svg>
 				</span>
 				<span class="input_exp input--nao">
-					<input class="input__field input__field--nao" type="text" id="last_name" name="last_name" required />
+					<input class="input__field input__field--nao" type="text" id="last_name" name="last_name" required onkeypress="return AllowAlphabet(event)" />
 					<label class="input__label input__label--nao" for="last_name">
 						<span class="input__label-content input__label-content--nao">Last Name</span>
 					</label>
@@ -433,7 +435,7 @@
 					</svg>
 				</span>
 				<span class="input_exp input--nao">
-					<input class="input__field input__field--nao" type="text" id="aadhar_card" name="aadhar_card" minlength="14" maxlength="14" oninput="aadhar('aadhar_card')" required  />
+					<input class="input__field input__field--nao" type="text" id="aadhar_card" name="aadhar_card" oninput="aadhar('aadhar_card')" required minlength="12" maxlength="12"  />
 					<label class="input__label input__label--nao" for="aadhar_card">
 						<span class="input__label-content input__label-content--nao">UID No. (Aadhar Card )</span>
 					</label>
@@ -505,7 +507,7 @@
 					<svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
 						<path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
 					</svg>
-				</span> --->
+				</span> -->
 
 			</section>
 			
@@ -746,7 +748,7 @@
 					</svg>
 				</span>
 				<span class="input_exp input--nao">
-					<input class="input__field input__field--nao" type="text" id="aadhar_card_co_app" name="aadhar_card_co_app" oninput="aadhar('aadhar_card_co_app')" minlength="14" maxlength="14"/>
+					<input class="input__field input__field--nao" type="text" id="aadhar_card_co_app" name="aadhar_card_co_app" oninput="aadhar('aadhar_card_co_app')" minlength="12" maxlength="12" />
 					<label class="input__label input__label--nao" for="aadhar_card_co_app">
 						<span class="input__label-content input__label-content--nao">UID No. (Aadhar Card )</span>
 					</label>
@@ -837,6 +839,28 @@
     </div>
   </div>
 </div>
+
+<div class="modal fade" tabindex="-1" role="dialog" id="homeTransfer">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title"></h4>
+      </div>
+      <div class="modal-body">
+        <h4><p id="modalerr">Amount should be greater than <b>"5,00,000"</b>.</p></h4>
+        
+      </div>
+      
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
 <script>
 			(function() {
 				
@@ -1028,19 +1052,32 @@
         
           var emp = $('input[name=employment]:checked').val();
           $('#business_type').val(emp);
-           console.log(emp);
+           // console.log(emp);
          
          var firm = $('input[name=firm_holder]:checked').val();
           $('#holder').val(firm);
-           console.log(firm);
+           // console.log(firm);
          
         var amount = $("#amount").val();
          $('#loanamount').val(amount);
-
-         var slidr = $("#unranged-value").text();
+         if (amount<500000) {
+         	$('#modalerr').html("");
+         	$('#modalerr').html("Amount should be greater than <b>5,00,000</b>.");
+          	$('#homeTransfer').modal('show'); 
+         } else {
+           $('#homeTransfer').modal('hide'); 
+           var slidr = $("#unranged-value").text();
          $('#tenure').val(slidr);
+         if (slidr<24) {
+         	$('#modalerr').html("");
+         	$('#modalerr').html("Tenure(in months) should be <b>24 or greater than 24</b>.");
+          $('#homeTransfer').modal('show'); 
+         } else { 
+         	 $('#slidervalue').modal('hide'); 
+         
+         
 
-         // console.log(slidr);
+         console.log(slidr);
 
          var mob_no = $("#mob_no").val();
          $('#mobile_no').val(mob_no);
@@ -1069,7 +1106,11 @@
           
 
         }  
-      }); 
+      });
+         }
+     }
+
+          
       }
 
     });
@@ -1176,7 +1217,8 @@
 
     var s2 = $("#unranged-value").freshslider({
         step: 1,
-        value:10
+        value:24
+
     });
 
     var s3 = $("#ranged-value").freshslider({
@@ -1256,7 +1298,7 @@
 		// console.log(obj);
 		if(obj=='aadhar_card' ){
                    var str =$('#aadhar_card').val();
-                   var aadharcardPattern = /^\d{4}\s\d{4}\s\d{4}$/;
+                   var aadharcardPattern = /^\d{4}\d{4}\d{4}$/;
                    var res = str.match(aadharcardPattern);
                    if(res){
                      // console.log('Aadhar No. is valid one.!!');
@@ -1273,7 +1315,7 @@
 
 	if(obj=='aadhar_card_co_app' ){
                    var str =$('#aadhar_card_co_app').val();
-                   var aadharcardPattern = /^\d{4}\s\d{4}\s\d{4}$/;
+                   var aadharcardPattern = /^\d{4}\d{4}\d{4}$/;
                    var res = str.match(aadharcardPattern);
                    if(res){
                       // console.log('Aadhar No. is valid one.!!');
@@ -1302,7 +1344,34 @@
       	
       }else{
       	$('#express_form').hide();
+      	 var emp = $('input[name=employment]:checked').val();
+          $('#business_type').val(emp);
+           // console.log(emp);
+         
+         var firm = $('input[name=firm_holder]:checked').val();
+          $('#holder').val(firm);
+           // console.log(firm);
+      	var amount = $("#amount").val();
+         $('#loanamount').val(amount);
+         var slidr = $("#unranged-value").text();
+         $('#tenure').val(slidr);
+         if (amount<500000) {
+         	$('#modalerr').html("");
+         	$('#modalerr').html("Amount should be greater than <b>5,00,000</b>.");
+          	$('#homeTransfer').modal('show');
+         	$('#express_form').show();
+
+         }else if(slidr<24){
+          	$('#modalerr').html("");
+         	$('#modalerr').html("Tenure(in months) should be <b>24 or greater than 24</b>.");
+          $('#homeTransfer').modal('show'); 
+         	$('#express_form').show();
+         }
+
+         else {
+        $('#homeTransfer').modal('hide');
       	$('#generic').show();
+      }
       	
 
     }
@@ -1310,6 +1379,35 @@
 
 </script>
 
+<script type="text/javascript">
+	function AllowAlphabet(e)
+{
+  isIE = document.all ? 1 : 0
+  keyEntry = !isIE ? e.which : event.keyCode;
+  if (((keyEntry >= '65') && (keyEntry <= '90')) || ((keyEntry >= '97') && (keyEntry <= '122')) || (keyEntry == '46') || (keyEntry == '32') || keyEntry == '45')
+     return true;
+  else
+{
+    // alert('Please Enter Only Character values.');
+    return false;
+      }
+}
+</script>
 
+<script type="text/javascript">
+	function business_turnover(obj,val){
+		console.log(obj);
+		if(obj=='turnover' ){
+                   var str =$('#turnover').val();
+                   if (str<500000) {
+
+                   	$('#turn_over').show();
+                   } else {
+                    	$('#turn_over').hide();
+                   }
+                  
+        }
+	}
+</script>
 
 

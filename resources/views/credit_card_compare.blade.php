@@ -10,20 +10,20 @@
  
 
 
-    <div class="table-responsive">
-	<table width="100%" border="1" class="tbl">
+    <div class="table-responsive box-shadow">
+	<table width="100%" border="1" class="tbl table table-striped">
     <tr style="background:#666; color:#fff; border-bottom:1px solid #999;">
         <td width="9%" class="upper dis-non">Select</td>
         <td class="upper">Credit Card</td>
-        <td width="16%" class="upper">Fee</td>
-        <td width="16%" class="upper">Reward</td>
-        <td width="18%" class="upper">Joining Benefits</td>
+        <td width="16%" class="upper">Features/ Benefits</td>
+        <td width="16%" class="upper">Joining Fee</td>
+        <td width="18%" class="upper">Annual Fee</td>
         <td width="17%" class="upper">Apply Now</td>
     </tr>
-
+     <!-- RBL Credit Card  --->
   <tr class="RBL-Card">
        <td class="dis-non"><input type="checkbox" name="cehckbox"/> <button style="display:none;" data-toggle="collapse" data-target="#0" aria-expanded="true">Details </button></td>
-        <td><img src="{{url('images/rbl-credit-card.jpg')}}" alt="RBL Titanium Delight Card" title="RBL Titanium Delight Card" width="150" height="96" style="margin:0 auto; margin-bottom:5px;">
+        <td><img src="{{url('images/rbl-credit-card.jpgg')}}" alt="RBL Titanium Delight Card" title="RBL Titanium Delight Card" width="150" height="96" style="margin:0 auto; margin-bottom:5px;">
         <span>RBL Titanium Delight Card</span>
         </td>
         <td>Annual Fees- Rs.1000/- plus applicable service tax ... <a data-toggle="popover" data-placement="bottom" data-trigger="hover" data-content="Annual Fees Reversal- On crossing Rs.1.5 lac annual spends in a year get annual fees reversal worth Rs.1000/" style="color:#39F; font-weight:bold;">More</a></td>
@@ -72,8 +72,10 @@
   <!-- card 3 End -->
   
   
-  
-  
+    <!-- ICICI Credit Card  --->
+  <tr>
+     <td colspan="5">GEMSTONE</td>
+  </tr>
   <tr class="ICICI-Card">
     <td class="dis-non"><input type="checkbox" name="cehckbox"/> <button style="display:none;" data-toggle="collapse" data-target="#3" aria-expanded="true">Details </button></td>
     <td><img src="{{url('images/icici-credit-card.jpg')}}" alt="ICICI Bank Coral Credit Card" title="ICICI Bank Coral Credit Card" width="150" height="96" style="margin:0 auto; margin-bottom:5px;">
@@ -91,7 +93,7 @@
   <!-- card 4 End -->
   
   
-  
+
   
   <tr class="ICICI-Card">
     <td class="dis-non"><input type="checkbox" name="cehckbox"/> <button style="display:none;" data-toggle="collapse" data-target="#4" aria-expanded="true">Details </button></td>
@@ -123,12 +125,24 @@
     <td>Complimentary gift of ...<a data-toggle="popover" data-placement="bottom" data-trigger="hover" data-content="Sennheiser HD219 Headphones on the payment of Joining Fee" style="color:#39F; font-weight:bold;">More</a> </td>
     <td><a href="{{URL::to('credit-card-form')}}"><button>Apply Online</button></a></td>
   </tr>
-    <!-- <tr id="5" class="collapse" aria-expanded="true">
-    <td colspan="6"><p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p></td>
-  </tr> -->
-  <!-- card 6 End -->
+  
+  
+  <tr class="ICICI-Card">
+    <td class="dis-non"><input type="checkbox" name="cehckbox"/> <button style="display:none;" data-toggle="collapse" data-target="#5" aria-expanded="true">Details </button></td>
+    <td><img src="{{url('images/icici-credit-card-ruby.jpg')}}" alt="ICICI Ruby Credit Card" title="ICICI Ruby Credit Card" width="150" height="96" style="margin:0 auto; margin-bottom:5px;">
+    <span>ICICI Bank Rubyx Credit Cards</span>
+    </td>
+    <td>Joining Fee: ₹ 3,000 + service tax ... <a data-toggle="popover" data-placement="bottom" data-trigger="hover" data-content="Annual Fee: ₹ 2,000 + service tax (NIL when card spends are greater than ₹ 2,50,000 in the previous year)" style="color:#39F; font-weight:bold;">More</a></td>
+    <td>India's first dual Platinum Credit Card...
+      <a data-toggle="popover" data-placement="bottom" data-trigger="hover" data-content=" Benefits from American Express and MasterCard Flexible reward plans Exclusive privileges across entertainment, dining, wellness and golf`." style="color:#39F; font-weight:bold;">More</a></td>
+    <td>Complimentary gift of ...<a data-toggle="popover" data-placement="bottom" data-trigger="hover" data-content="Sennheiser HD219 Headphones on the payment of Joining Fee" style="color:#39F; font-weight:bold;">More</a> </td>
+    <td><a href="{{URL::to('credit-card-form')}}"><button>Apply Online</button></a></td>
+  </tr>
+   
   
 
+    <!-- HDFC Credit Card  --->
+  
 <tr class="HDFC-Card">
     <td class="dis-non"><input type="checkbox" name="cehckbox"/> <button style="display:none;" data-toggle="collapse" data-target="#6" aria-expanded="true">Details </button></td>
     <td><img src="{{url('images/hdfc-credit-card.jpg')}}" alt="HDFC JetPrivilege Credit Card" title="HDFC JetPrivilege Credit Card" width="150" height="96" style="margin:0 auto; margin-bottom:5px;">

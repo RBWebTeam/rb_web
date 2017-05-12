@@ -6,6 +6,10 @@
     <h2 class="align-center loan-head">Credit Card</h2>
 	</div>
 	<div class="col-md-12 pad11">
+  
+ 
+
+
     <div class="table-responsive box-shadow">
 	<table width="100%" border="1" class="tbl table table-striped">
     <tr>
@@ -29,6 +33,10 @@
         <td class="v-align"><a href="{{URL::to('contact-us')}}"><button>Apply Online</button></a></td>
   </tr>
   
+ <!--  <tr id="0" class="collapse" aria-expanded="true"> 
+    <td colspan="6"><p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p></td>
+  </tr> -->
+  <!-- card 1 End -->
   <tr class="RBL-Card">
     <td class="dis-non"><input type="checkbox" name="cehckbox"/> <button style="display:none;" data-toggle="collapse" data-target="#1" aria-expanded="true">Details </button></td>
     <td><img src="{{url('images/rbl-credit-card_1.jpg')}}" alt="RBL Platinum Maxima Card" title="RBL Platinum Maxima Card" width="150" height="110" style="margin:0 auto; margin-bottom:5px;">
@@ -40,7 +48,13 @@
     <td>Use your card for purchases of Rs1.2 ...<a data-toggle="popover" data-placement="bottom" data-trigger="hover" data-content="Lakhs or more in a year and get a gift voucher of Rs1000.Fuel Surcharge waiver of 2.5%*.*Fuel Transactions between Rs 500 to Rs 4,000 will be eligible for waiver of fuel surcharge." style="color:#39F; font-weight:bold;">More</a> </td>
     <td class="v-align"><a href="{{URL::to('contact-us')}}"><button>Apply Online</button></a></td>
   </tr>
-
+  <!--   <tr id="1" class="collapse" aria-expanded="true">
+    <td colspan="6"><p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p></td>
+  </tr> -->
+  <!-- card 2 End -->
+  
+  
+  
   <tr class="RBL-Card">
     <td class="dis-non"><input type="checkbox" name="cehckbox"/> <button style="display:none;" data-toggle="collapse" data-target="#2" aria-expanded="true">Details </button></td>
     <td><img src="{{url('images/rbl-credit-card_1.jpg')}}" alt="RBL Platinum Delight Card" title="RBL Platinum Delight Card" width="150" height="110" style="margin:0 auto; margin-bottom:5px;">
@@ -52,7 +66,12 @@
     <td>Fuel Transaction between Rs 500...<a data-toggle="popover" data-placement="bottom" data-trigger="hover" data-content="to Rs 4,000 will be eligible for waiver of fuel surcharge" style="color:#39F; font-weight:bold;">More</a> </td>
     <td class="v-align"><a href="{{URL::to('contact-us')}}"><button>Apply Online</button></a></td>
   </tr>
-
+   <!--  <tr id="2" class="collapse" aria-expanded="true">
+    <td colspan="6"><p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p></td>
+  </tr> -->
+  <!-- card 3 End -->
+  
+  
     <!-- ICICI Credit Card  --->
   <tr class="ICICI-Card">
      <td colspan="5" class="blue-bg-tbl"><h4>GEMSTONE</h4></td>
@@ -67,6 +86,12 @@
     <td class="v-align">NIL</td>
     <td class="v-align"><a href="{{URL::to('credit-card-form')}}"><button>Apply Online</button></a></td>
   </tr>
+  <!--   <tr id="3" class="collapse" aria-expanded="true">
+    <td colspan="6"><p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p></td>
+  </tr> -->
+  <!-- card 4 End -->
+  
+  
 
   
   <tr class="ICICI-Card">
@@ -79,7 +104,14 @@
       <a data-toggle="popover" data-placement="bottom" data-trigger="hover" data-content=" This will be directly delivered to you within 30 days of payment of the Joining Fee." style="color:#39F; font-weight:bold;"> More</a></td>
     <td>You pay an Annual Fee of Rs.500 + service tax from 2nd year onwards - waived off if you spend more than Rs. 1,50,000 in the previous year</td>
     <td class="v-align"><a href="{{URL::to('credit-card-form')}}"><button>Apply Online</button></a></td>
-  </tr> 
+  </tr>
+   <!--  <tr id="4" class="collapse" aria-expanded="true">
+    <td colspan="6"><p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p></td>
+  </tr> -->
+  <!-- card 5 End -->
+  
+  
+  
   
   <tr class="ICICI-Card">
     <td class="dis-non"><input type="checkbox" name="cehckbox"/> <button style="display:none;" data-toggle="collapse" data-target="#5" aria-expanded="true">Details </button></td>
@@ -182,6 +214,9 @@
     <td>Dedicated Check-in with additional baggage allowance....<a data-toggle="popover" data-placement="bottom" data-trigger="hover" data-content="Lounge access through Priority Pass and MasterCard Lounge Program.Get 1 JP Tier Point on every 2 lac spends. Faster way to move to higher JP Tier.Enjoy Lounge access at airport in India or overseas.Get Renewal Fee waived if you spend Rs. 3 lac in 12 months prior to renewal.Get extended validity of JP Miles for 5 years" style="color:#39F; font-weight:bold;">More</a> </td>
     <td class="v-align"><a href="{{URL::to('contact-us')}}"><button>Apply Online</button></a></td>
   </tr>
+   <!--  <tr id="6" class="collapse" aria-expanded="true">
+    <td colspan="6"><p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p></td>
+  </tr> -->
   <!-- card 7 End -->
 </table>
 
@@ -190,6 +225,8 @@
 	</div>
 	</div>
 </div>
+	
+ 
 @include('layout.footer')
 @include('layout.script')
  <script type="text/javascript">

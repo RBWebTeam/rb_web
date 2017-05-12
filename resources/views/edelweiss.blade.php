@@ -7,7 +7,7 @@
 	</div> -->
  <br>
  <div class="col-md-12 white-bg pad box-shadow">
- <h3 class="text-center loan-head">Unsecured Edelweiss Loan</h3>
+ <h3 class="text-center loan-head">Unsecured Business Loan</h3>
 <div class="col-md-8" id="mod">
 <form name='edelweiss_process_form' id='edelweiss_process_form' action={{URL::to('loan-submit')}} method="POST">
 {{ csrf_field() }}  
@@ -16,6 +16,8 @@
   <div class="col-xs-12 pad-no">
   
 	 <input type="hidden" id="product" name="product_name" value="13">
+    <input type="hidden" id="Bank_Id" name="Bank_Id" value="15">
+	 
 	 <input type="hidden" name="empid" class="empid" value=" <?php echo Session::get('empid')?Session::get('empid'):'';?>">
           <input type="hidden" name="brokerid" class="brokerid" value="<?php echo Session::get('brokerid')?Session::get('brokerid'):'';?>">
           <input type="hidden" name="source" class="source" value="<?php echo Session::get('source')?Session::get('source'):'';?>"> 
@@ -39,59 +41,149 @@
       </div>
 		</div>
 		
+		<div class="col-xs-12 col-md-6 form-padding">
+     <input type="text" class="form-input-new form-control" name="loan_amount" id="loan_amount" minlength="6" maxlength="9" placeholder="Loan Amount" onkeypress="return isNumberKey(event)"  required>
+	</div>
+	<div class="col-xs-12 col-md-6 form-padding">
 	
+     <input class="form-input-new form-control" type="text" id="pan_no" name="pan_no" oninput="pan_card('pan_no')"  placeholder="Pan No" required>
+	 <span id="pan_number"  style="display:none;color: red;font-size:12px;">Enter Valid Pan No.</span>
+     
+	</div>
+  <div class="col-xs-12 col-md-6 form-padding">
+     <input type="text" class="form-input-new form-control lastReporteddate1" name="applicant_dob" id="applicant_dob" placeholder="Date Of Birth"   required>
+  </div>
 
-
-
-	
+  <div class="col-xs-12 col-md-6 form-padding" >
   
-  
-		<div class="col-xs-12 form-padding">
-  
-     <select class="block drop-arr select-sty" name="loan_tenure" id="loan_tenure" required>
-	  <option>LOAN TENURE</option>
-	    <option>1 Year</option>
-		<option>2 Year</option>
-		<option>3 Year</option>
-		<option>4 Year</option>
-		<option>5 Year</option>
-		<option>6 Year</option>
-		<option>7 Year</option>
+     <select class="block drop-arr select-sty"  name="loan_tenure" id="loan_tenure" required>
+	  <option value="">Loan Tenure</option>
+	  <option value="1">1 Year</option>
+		<option value="2">2 Year</option>
+		<option value="3">3 Year</option>
+		<option value="4">4 Year</option>
+		<option value="5">5 Year</option>
 	</select>
   </div>
   
-     <div class="col-xs-12 col-md-6 form-padding">
-     <input type="name" class="form-input-new form-control"  name="company_name" id="company_name" placeholder="Name of The company" required="" onkeypress="return AllowAlphabet(event)">
-	</div>
-	<div class="col-xs-12 col-md-6 form-padding">
-     <input type="name" class="form-input-new form-control" name="income_tax_paid" id="income_tax_paid"  placeholder="Income Tax Paid - Firm" required="" onkeypress="return isNumberKey(event)">
-	</div>
-	<div class="col-xs-12 col-md-6 form-padding">
-     <input type="name" class="form-input-new form-control" name="turnover" id="turnover" placeholder="Turnover/Topline" required="" onkeypress="return isNumberKey(event)" >
-	</div>
-	<div class="col-xs-12 col-md-6 form-padding">
-     <input type="name" class="form-input-new form-control" name="profit_after_tax" id="profit_after_tax"  placeholder="Profit After Tax" required=""  onkeypress="return isNumberKey(event)" >
-	</div>
-	<div class="col-xs-12 col-md-6 form-padding">
-     <input type="name" class="form-input-new form-control" placeholder="Depreciation" required="">
-	</div>
-	<div class="col-xs-12 col-md-6 form-padding">
-     <input type="name" class="form-input-new form-control" name="depreciation" id="depreciation" placeholder="Partner Remuneration" required="" onkeypress="return isNumberKey(event)">
-	</div>
-	<div class="col-xs-12 col-md-6 form-padding">
-     <input type="name" class="form-input-new form-control"  name="interest_paid" id="interest_paid" onkeypress="return isNumberKey(event)"  placeholder="Interest Paid On Bank Loans" required="">
-	</div>
-	<div class="col-xs-12 col-md-6 form-padding">
-     <input type="name" class="form-input-new form-control" name="existing_emi" id="existing_emi" placeholder="Existing All EMI" required=""  onkeypress="return isNumberKey(event)">
-	</div>
+  
 
   
   
+  <div class="col-md-12 pad-no comp-fin">
+    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingOne">
+                <h4 class="panel-title">
+                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse6" aria-expanded="true" aria-controls="collapse6">
+                        <i class="icon-plus more-less pull-right"></i>
+                        COMPANY FINANCIALS
+                    </a>
+                </h4>
+            </div>
+            <div id="collapse6" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading6">
+                <div class="panel-body">
+                     
+					 <div class="col-xs-12 col-md-6 form-padding">
+     <input type="text" class="form-input-new form-control"  name="company_name" id="company_name"  placeholder="Company Name" onkeypress="return AllowAlphabet(event)" required  >
+
+	</div>
+	<div class="col-xs-12 col-md-6 form-padding">
+     <input type="text" class="form-input-new form-control"  name="income_tax_paid" id="income_tax_paid" onkeypress="return isNumberKey(event)" required="" placeholder="Income Tax Paid - Firm">
+	</div>
+	<div class="col-xs-12 col-md-6 form-padding">
+     <input type="text" class="form-input-new form-control" name="turnover" id="turnover" placeholder="Turnover/Topline" onkeypress="return isNumberKey(event)" required>
+	</div>
+	<div class="col-xs-12 col-md-6 form-padding">
+     <input type="text" class="form-input-new form-control" name="profit_after_tax" id="profit_after_tax" placeholder="Profit After Tax"  onkeypress="return isNumberKey(event)" required>
+	</div>
+	<div class="col-xs-12 col-md-6 form-padding">
+     <input type="text" class="form-input-new form-control" name="depreciation" id="depreciation" placeholder="Depreciation" onkeypress="return isNumberKey(event)" required>
+	</div>
+	<div class="col-xs-12 col-md-6 form-padding">
+     <input type="text" class="form-input-new form-control" name="partner_remuneration" id="partner_remuneration" placeholder="Partner Remuneration" 
+     onkeypress="return isNumberKey(event)"  required>
+	</div>
+
+			
+<div class="col-xs-12 col-md-6 form-padding"> 
+     <input type="name" class="form-input-new form-control" placeholder="Interest Paid On Loan" step="0.01" min="0" name="interest_paid" id="interest_paid" onkeypress="return isNumberKey(event)" required>
+	</div>
+	<div class="col-xs-12 col-md-6 form-padding"> 
+
+     <input type="text" class="form-input-new form-control" name="existing_emi" id="existing_emi" placeholder="Existing All EMI" onkeypress="return isNumberKey(event)"  required>
+
+	</div>			
+					 
+                </div>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="heading7">
+                <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse7" aria-expanded="false" aria-controls="collapse7">
+                        <i class="icon-plus more-less pull-right"></i>
+                        BANKWISE EMI DETAILS 
+                    </a>
+                </h4>
+            </div>
+            <div id="collapse7" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading7">
+<div class="panel-body">
+<div>
+
+<h4 class="text-center">List of Loan EMI</h4>
+<div class="add_new_content">
+        <div class="col-xs-12 col-md-6 form-padding"> 
+
+     <input type="text" class="form-input-new form-control" name="bank_name" id="bank_name" placeholder="Bank" onkeypress="return AllowAlphabet(event)" value=""   required="">
+
+     
+	</div>
+	<div class="col-xs-12 col-md-6 form-padding">
+     <input type="text" class="form-input-new form-control" name="emi" id="emi" placeholder="EMI"  onkeypress="return isNumberKey(event)" value="" required>
+	</div>
+	<div class="col-xs-12 col-md-6 form-padding">
+	 <select class="form-input-new form-control">
+	 <option>Select Loan</option>
+	     <option>Home Loan</option>
+		 <option>Property Loan</option>
+		 <option>Unsecured Business Loan</option>
+		 <option>Car Loan</option>
+		 <option>Term Loan</option>
+		 <option>OD/CC</option>
+		 <option>Others</option>
+	 </select>
+	</div>
+	<div class="col-xs-12 col-md-6 form-padding">
+     <input type="text" class="form-input-new form-control" name="no_of_emi_paid" id="no_of_emi_paid" placeholder="No Of EMI Paid"  onkeypress="return isNumberKey(event)" minlength="2" maxlength="2" required value="">
+	</div>
+	
+  </div>
   
 
+  <div><input type="button" class=" btn btn-info add_new_box" value="Add Bank" 
+  > &nbsp;<input type="button"  class="btn btn-info remove_new_box" value="Remove" >
+  </div>
 
 
+	
 
+  
+<!-- <a href="javascript:void(0)" class="btn btn-info" id="button" va >Add Bank</a>
+ <a href="javascript:void(0)" class="btn btn-info" id="button_remove" >Remove</a> -->
+  
+
+	</div>
+	</div>
+	
+     </div>
+        </div>
+    </div><!-- panel-group -->
+
+
+  </div>
  </div>
  
  
@@ -109,7 +201,7 @@
      <div class="btn-grp border-none" data-toggle="buttons">
       <span class="btn btn-default outer-brd btn-blu active"><input type="radio" name="exchange" value="Y">Y</span>
       <span class="btn btn-default outer-brd btn-blu"><input type="radio" name="exchange" value="N">N</span>
-	  <select class="pull-right btn-default outer-brd btn-blu pad-ten" required>
+	  <select class="pull-right btn-default outer-brd btn-blu pad-ten">
 	       <option>10%</option>
 		   <option>20%</option>
 		   <option>30%</option>
@@ -160,7 +252,7 @@
 								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn" onclick="alertme('Retailer')">Retailer</a></div>
 								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn" onclick="alertme('Others')">Others</a></div>
 
-								<input type="hidden" name="nature_of_business" id="nature_of_business" value="Manufacturing">
+								<input type="hidden" name="nature_of_business" id="nature_of_business">
 
 								
 							
@@ -178,8 +270,8 @@
       </div>
       <div id="collapse2" class="panel-collapse collapse">
         <div class="panel-body sec">
-		<select class="drop-arr" name="industry_name" id="industry_name" required>
-		<option>Select Industry Type</option>
+		<select class="drop-arr" name="industry_name" id="industry_name">
+		<option>-- Select Industry Type --</option>
 		   <option>Agriculture</option>
 		   <option>Auto Components</option>
 		   <option>Automobiles</option>
@@ -219,7 +311,7 @@
 		<option>Tourism And Hospitality</option>
 
 		</select>
-		  
+		    
 		</div>
       </div>
     </div>
@@ -259,7 +351,7 @@
 								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn" onclick="alert('Parental')">Parental</a></div>
 								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn" onclick="alert('Others')">Others</a></div>
 								
-								<input type="hidden" name="residence_type" id="residence_type" value="Owned">
+								<input type="hidden" name="residence_type" id="residence_type">
 								
 								
 							</div>
@@ -283,7 +375,7 @@
 								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn" onclick="call('Parental')">Parental</a></div>
 								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn" onclick="call('Others')">Others</a></div>
 								
-								<input type="hidden" name="office_type" id="office_type" value="Owned">
+								<input type="hidden" name="office_type" id="office_type">
 								
 							</div>
 		</div>
@@ -292,10 +384,9 @@
   </div> 
    
    <div class="valid_ID"></div>
+ 
 
-  
-
- <a class="btn btn-primary btn-outline with-arrow top-mrg product_name product_edel" id="btn_refresh_co1" >Get Best Quotes<i class="icon-arrow-right"></i></a>  
+ <a class="btn btn-primary btn-outline with-arrow top-mrg product_name product_ID" id="btn_refresh_co1" >Get Best Quotes<i class="icon-arrow-right"></i></a>  
 
 
    </form>
@@ -309,8 +400,7 @@
 	<div class="col-md-4" >
      <div class="border brd-for" id="mi_id">
 
-             <!-- <form name="compareform" id="compareform" > -->
-          
+            
            <p id="err" style="display:none;" ><span style="color: red;font-size: 20px;display: block; text-align: center;">Sorry, No quotes found for your given requirements.</span></p> 
            
             <div class="inp-hig">
@@ -341,12 +431,8 @@
          
         </div>
         
-        <!-- <p id="err" style="display:none;" ><span style="color:skyblue;position:absolute;font-size:13px;">No Quotes Found.</span></p> -->
-   
-    <!--   </form> -->
-
+     
     </div> 
-   <!--  <p id="err" style="display:none;" ><span style="color: red;font-size: 20px;display: block; text-align: center;">Sorry, No quotes found for your given requirements.</span></p>  -->
   </div> 
 	
 	
@@ -393,49 +479,67 @@
 @include('layout.footer')
 @include('layout.script')
 
-<script type="text/javascript"> 
- 
-  function AllowAlphabet(e){
+<script type="text/javascript">
+  function AllowAlphabet(e)
+{
   isIE = document.all ? 1 : 0
   keyEntry = !isIE ? e.which : event.keyCode;
   if (((keyEntry >= '65') && (keyEntry <= '90')) || ((keyEntry >= '97') && (keyEntry <= '122')) || (keyEntry == '46') || (keyEntry == '32') || keyEntry == '45')
      return true;
   else
 {
-    
+    // alert('Please Enter Only Character values.');
     return false;
       }
 }
 
- 	
+
+function callme(test){
+	//alert($(this).closest("radio").attr('value'));
+	$('#industry_name').val(test);
+	
+//		alert(test);
+}
 
 
-$(".product_edel").click(function(e){
+</script>
+
+
+
+ 
+
+<script type="text/javascript">
+$(".product_ID").click(function(e){
    e.preventDefault();
  
-    if(!$('#edelweiss_process_form').valid()){
-            return false;
-          }else{
-          	var company_name=$('#company_name').val();
-            var date=$('#date').val();
-            var industry_name=   $('#industry_name').val();   
-            var var_name='';
-               if("Select Industry Type"==industry_name){}else{var_name='1';}
 
-      if(company_name!='' && date!='' && var_name!=''){
-             $('#login_process').attr( 'id', 'login_process');
-             $(".iframeloading").show();
-             $.ajax({  
+    if(!$('#edelweiss_process_form').valid()){
+
+  
+            return false;
+           
+          }else{
+          	   var company_name=$('#company_name').val();
+               var bank_name=$('#bank_name').val();
+              
+      if(company_name!='' && bank_name!=''){
+         $('#login_process').attr( 'id', 'login_process');
+         $(".iframeloading").show();
+              $.ajax({  
              type: "POST",  
              url: "{{URL::to('loan-submit')}}",
-             data : $("#edelweiss_process_form").serialize(),
+           data : $("#edelweiss_process_form").serialize(),
+        
              success: function(msg){
-         	   	
-                           $(".iframeloading").hide();
+            //  console.log(msg);
+                    $(".iframeloading").hide();
                            if(msg.success ==true){
 
                             var quote=msg.quote;
-                            var loan_eligible = msg.loan_eligible;
+
+                        var loan_eligible = msg.loan_eligible;
+
+
                              if (loan_eligible>0) {
                              $("#test123").empty().append(msg.html);  
                              $('#loanamount').val(loan_eligible);
@@ -447,7 +551,7 @@ $(".product_edel").click(function(e){
                     $('#processfee').val(processingfee);
                     var Bank_id = msg.Bank_Id;
                     $('#bank').val(Bank_id);
-                      
+                     // var url = "apply-lead-online?appid=0&qoutid="+quote+"&BankId="+Bank_id+"&product=13&processing_fee="+processingfee+"&loanamout="+loan_eligible+"&roi_type="+roi+"";
                      var url="thank-you";
                      $("#apply_new").attr("href", url);
                       $('#err').hide();
@@ -455,10 +559,11 @@ $(".product_edel").click(function(e){
                       $('#mi_id').show();
                        $('#eligibility').prop('disabled',false);
                               
-                       
+                       // $(window).scrollTop($('#lowest').offset().top-50);
+
                    }else{
                    	$('#eligibility').prop('disabled', true);
-                     getUrl='';
+                                getUrl='';
                      $('#err').show();
                      $('#loanamount').val("");
                      $('#rate').val("");
@@ -467,10 +572,10 @@ $(".product_edel").click(function(e){
                      $('#bank').val("");
                      $('#apply_new').hide();
                       $("#test123").empty();
-                     
+                       // $('#mi_id').hide();
                       
                     }
-                   
+                     // $(window).scrollTop($('#test123').offset().top-20);
                   
                   }
 
@@ -489,8 +594,38 @@ $(".product_edel").click(function(e){
 
 
 });
+</script>
 
 
+
+<script type="text/javascript">
+$("#eligibility").click(function() {
+  $(window).scrollTop($('#test123').offset().top-20);
+});
+</script>
+
+
+
+
+
+<script type="text/javascript">
+    var d = new Date();
+    var year = d.getFullYear()  ;
+    d.setFullYear(year);
+
+    $(".lastReporteddate1").datepicker({ dateFormat: "yy-mm-dd",
+      changeMonth: true,
+      changeYear: true,
+      maxDate: year,
+      minDate: "-100Y",
+      yearRange: '-100:' + year + '',
+      defaultDate: d
+    });
+</script>
+
+ 
+
+<script type="text/javascript">
 
 	function alertme(test){
 	$('#nature_of_business').val(test);}
@@ -504,11 +639,36 @@ function alert(test){
 	function call(test){
 	$('#office_type').val(test);
 }
+
+
 </script>
+ 
+
+<!-- <script type="text/javascript">
+	$(document).ready(function(){
+    
+     $(".add_new_box").click(function(){
+    
+     $('.add_new_content:last').clone()
+                          .find("input:text").val("").end()
+                          .appendTo('.add_new_content:last');
+    
+    });
+    
+    });
+</script>
+ -->
 
 
 
- 
- 
- 
- 
+<!-- <script>
+$(document).ready(function(){
+     
+    $(".remove_new_box").click(function() {
+    if($(".add_new_content").length!=1)
+    $(".add_new_content:last").remove();
+    });
+});
+
+</script>
+ -->

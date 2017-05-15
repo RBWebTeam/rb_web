@@ -1429,10 +1429,20 @@ input[placeholder], [placeholder], *[placeholder] {color: #1f386e !important;fon
  .pad11 table {border:1px solid #eee; font-size:14px;color:#666;margin:0px;}
  .pad11 checkbox {width:50px; height:50px; border:2px solid #ddd;}
  .pad11 .icon-file {padding:5px;}
- .upper .icon-star {color:#39F; padding:5px;}
+ .upper .icon-star {color:#39F; padding:12px 5px;}
+ .upper h4 {font-size:15px;}
+ .blue-bg-tbl {background:#053c6d;}
+ .blue-bg-tbl h4 {font-size:16px; color:#fff; font-weight:bold;line-height:20px;}
+ 
+ .brown-bg-tbl {background:#97291e;}
+ .brown-bg-tbl h4 {font-size:16px; color:#fff; font-weight:bold;line-height:20px;}
+ 
+ .yellow-bg-tbl {background:#e77817;}
+ .yellow-bg-tbl h4 {font-size:16px; color:#fff; font-weight:bold;line-height:20px;}
+ 
+ 
  .pad11 button {padding:2px 10px; height:30px;background:#39F;color:#fff;margin:0px;border-radius:10px;}
  .pad11 button:hover {background:#333;}
- .upper {text-transform:uppercase;font-weight:bold;font-size: 12px;}
  .tbl .icon-thumbs-up {font-size:25px;}
  .pad11 input[type="checkbox"] {height:20px; width:20px;}
  .compare {text-align:center;}
@@ -3624,6 +3634,7 @@ select.error, textarea.error, input.error {
 .dis-non {display:none;}
 #table_total td {padding:10px;}
 .mod-mar-tp {margin-top:200px;}
+.table .v-align {vertical-align:middle;}
 
 
 

@@ -98,7 +98,7 @@
   
   <tr class="ICICI-Card">
     <td class="dis-non"><input type="checkbox" name="cehckbox"/> <button style="display:none;" data-toggle="collapse" data-target="#5" aria-expanded="true">Details </button></td>
-    <td><img src="{{url('images/CS/RD/JET-SAPPHIRO-VISA.jpg')}}" alt="ICICI Ruby Credit Card" title="ICICI Ruby Credit Card" width="150" height="110" style="margin:0 auto; margin-bottom:5px;">
+    <td><img src="{{url('images/CS/RD/ICICI-BANK-SAPPHIRO-AMEX-CHIP-01.jpg')}}" alt="ICICI Ruby Credit Card" title="ICICI Ruby Credit Card" width="150" height="110" style="margin:0 auto; margin-bottom:5px;">
     <span>Sapphiro</span>
     </td>
     <td>Get complimentary All New Kindle on payment of the Joining fee. Complimentary membership to the Priority Pass lounge access programme <a data-toggle="popover" data-placement="bottom" data-trigger="hover" data-content="Unlimited Complimentary access to select airport lounges in India, courtesy of MasterCard and American Express. Complimentary round of golf every month at the golf course of your choice based on eligible spends on your card. 2 Complimentary movie tickets every month under the Buy One Get One Offer through www.bookmyshow.com" style="color:#39F; font-weight:bold;">More</a></td>

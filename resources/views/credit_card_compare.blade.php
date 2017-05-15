@@ -79,7 +79,8 @@
       <a data-toggle="popover" data-placement="bottom" data-trigger="hover" data-content=" This will be directly delivered to you within 30 days of payment of the Joining Fee." style="color:#39F; font-weight:bold;"> More</a></td>
     <td>You pay an Annual Fee of Rs.500 + service tax from 2nd year onwards - waived off if you spend more than Rs. 1,50,000 in the previous year</td>
     <td class="v-align"><a href="{{URL::to('credit-card-form')}}"><button>Apply Online</button></a></td>
-  </tr> 
+  </tr>
+  
   
   <tr class="ICICI-Card">
     <td class="dis-non"><input type="checkbox" name="cehckbox"/> <button style="display:none;" data-toggle="collapse" data-target="#5" aria-expanded="true">Details </button></td>
@@ -113,7 +114,7 @@
   </tr>
    <tr class="ICICI-Card">
     <td class="dis-non"><input type="checkbox" name="cehckbox"/> <button style="display:none;" data-toggle="collapse" data-target="#5" aria-expanded="true">Details </button></td>
-    <td><img src="{{url('images/CS/RD/JET-CORAL-AMEX.jpg')}}" alt="ICICI Ruby Credit Card" title="ICICI Ruby Credit Card" width="150" height="110" style="margin:0 auto; margin-bottom:5px;">
+    <td><img src="{{url('images/CS/RD/JET-CORAL-VISA.jpg')}}" alt="ICICI Ruby Credit Card" title="ICICI Ruby Credit Card" width="150" height="110" style="margin:0 auto; margin-bottom:5px;">
     <span>Coral</span>
     </td>
     <td>2,500 welcome bonus JPMiles on joining. 1,250 renewal bonus JPMiles every year. Complimentary airport lounge access<a data-toggle="popover" data-placement="bottom" data-trigger="hover" data-content="Buy one get one free movie ticket through the week at www.bookmyshow.com, Minimum 15% savings on dining bill at over 2,500+ restaurants across India courtesy our Culinary Treats program." style="color:#39F; font-weight:bold;"> More</a></td>
@@ -124,7 +125,7 @@
   
   <tr class="ICICI-Card">
     <td class="dis-non"><input type="checkbox" name="cehckbox"/> <button style="display:none;" data-toggle="collapse" data-target="#5" aria-expanded="true">Details </button></td>
-    <td><img src="{{url('images/CS/RD/JET-CORAL-VISA.jpg')}}" alt="ICICI Ruby Credit Card" title="ICICI Ruby Credit Card" width="150" height="110" style="margin:0 auto; margin-bottom:5px;">
+    <td><img src="{{url('images/CS/RD/JET-CORAL-AMEX.jpg')}}" alt="ICICI Ruby Credit Card" title="ICICI Ruby Credit Card" width="150" height="110" style="margin:0 auto; margin-bottom:5px;">
     <span>Rubyx</span>
     </td>
     <td>5,000 welcome bonus JPMiles on joining. 2,500 renewal bonus JPMiles every year. Complimentary airport lounge access.<a data-toggle="popover" data-placement="bottom" data-trigger="hover" data-content="Earn upto 5 JPMiles for every `100 spent on the card. Buy one get one free movie ticket through the week at www.bookmyshow.com, Minimum 15% savings on dining bill at over 2,500+ restaurants across India courtesy our Culinary Treats program." style="color:#39F; font-weight:bold;"> More</a></td>
@@ -182,6 +183,9 @@
     <td>Dedicated Check-in with additional baggage allowance....<a data-toggle="popover" data-placement="bottom" data-trigger="hover" data-content="Lounge access through Priority Pass and MasterCard Lounge Program.Get 1 JP Tier Point on every 2 lac spends. Faster way to move to higher JP Tier.Enjoy Lounge access at airport in India or overseas.Get Renewal Fee waived if you spend Rs. 3 lac in 12 months prior to renewal.Get extended validity of JP Miles for 5 years" style="color:#39F; font-weight:bold;">More</a> </td>
     <td class="v-align"><a href="{{URL::to('contact-us')}}"><button>Apply Online</button></a></td>
   </tr>
+   <!--  <tr id="6" class="collapse" aria-expanded="true">
+    <td colspan="6"><p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p></td>
+  </tr> -->
   <!-- card 7 End -->
 </table>
 
@@ -190,6 +194,8 @@
 	</div>
 	</div>
 </div>
+	
+ 
 @include('layout.footer')
 @include('layout.script')
  <script type="text/javascript">

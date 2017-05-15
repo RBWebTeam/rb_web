@@ -250,7 +250,25 @@ class FormController extends CallApiController
             $product_id=$req['product_name'];
             $quote_data=DB::select('call  usp_get_bank_quot_test("'.$req['property_cost'].'","'.$req['loan_tenure'].'","'.$req['loan_amount'].'","'.$req['gender'].'","'.$req['income'].'","'.$req['obligation'].'","'.$req['dob'].'","'.$req['have_co_applicant'].'","'.$req['co_applicant_income'].'","'.$req['co_applicant_obligation'].'","'.$req['turnover'].'","'.$req['profit_after_tax'].'","'.$req['depreciation'].'","'.$req['remuneration'].'","'.$req['co_applicant_turnover'].'","'.$req['co_applicant_profit_after_tax'].'","'.$req['co_applicant_depreciation'].'","'.$req['co_applicant_remuneration'].'","'.$req['emp_detail_id'].'","'.$req['co_dob'].'","'.$req['co_emp_detail'].'","'.$product_id.'")');
         }else if($req['product_name']==13){
+
+
+              if(isset($req->Bank_Id)){
+
+
+                    // usp_get_bankwise_business_loan_quot
+                      // $quote_data=DB::select('call  usp_get_bankwise_business_loan_quot ("'.$req['applicant_dob'].'","'.$req['emp_detail'].'","'.$req['turnover'].'","'.$req['profit_after_tax'].'","'.$req['depreciation'].'","'.$req['partner_remuneration'].'","'.$req['interest_paid'].'","'.$req['emi'].'","'.$req['no_of_emi_paid'].'","'.$req['loan_tenure'].'","'.$req['loan_amount'].'","'.$req['date'].'","'.$req->Bank_Id.'")');
+
+                  $quote_data=DB::select(' call usp_get_bankwise_business_loan_quot ("'.$req['applicant_dob'].'","'.$req['emp_detail'].'","'.$req['turnover'].'","'.$req['profit_after_tax'].'","'.$req['depreciation'].'","'.$req['partner_remuneration'].'","'.$req['interest_paid'].'","'.$req['emi'].'","'.$req['no_of_emi_paid'].'","'.$req['loan_tenure'].'","'.$req['loan_amount'].'","'.$req['date'].'","'.$req->Bank_Id.'")');
+
+                 
+                             
+
+              }else{
+
+              
             $quote_data=DB::select('call  usp_get_business_loan_quot ("'.$req['applicant_dob'].'","'.$req['emp_detail'].'","'.$req['turnover'].'","'.$req['profit_after_tax'].'","'.$req['depreciation'].'","'.$req['partner_remuneration'].'","'.$req['interest_paid'].'","'.$req['emi'].'","'.$req['no_of_emi_paid'].'","'.$req['loan_tenure'].'","'.$req['loan_amount'].'","'.$req['date'].'")');
+
+          }
         }
         return $quote_data;
     }

@@ -2320,4 +2320,29 @@ $(document).ready(function(){
     });
 });
 </script>
+
+
+
+<script type="text/javascript">
+  function pan_card(obj,val){
+    console.log(obj);
+    if(obj=='pan_no' ){
+                   var str =$('#pan_no').val();
+                   var pancardPattern = /^([a-zA-Z]{5})(\d{4})([a-zA-Z]{1})$/;
+                   var res = str.match(pancardPattern);
+                   if(res){
+                     // console.log('Pancard is valid one.!!');
+                      $('#pan_number').hide();
+
+                  }else{
+                    // console.log('Oops.Please Enter Valid Pan Number.!!');
+                    $('#pan_number').show();
+
+                    return false;
+                  }
+                  
+  }
+}
+</script>
+
   @include('layout.modal')

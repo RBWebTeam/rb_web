@@ -46,7 +46,7 @@
 			 <a class="btn"><input type="radio" name="firm_holder"  value="Company" /> Company</a>
 			</div>
 		    </div>
-		  <br>
+		  
 		  
 		  <?php if(Session::get('is_login')) { ?>
 				  <?php if(Session::get('contact')!=''){ ?>
@@ -359,9 +359,9 @@
 					</svg>
 				</span>
 				<span class="input_exp input--nao">
-					<input class="input__field input__field--nao lastReporteddate1" type="text" id="dob" name="dob" required />
+					<input class="input__field input__field--nao lastReporteddate1 input__label-content input__label-content--nao dob" type="text" id="dob" placeholder="DOB / AGE" name="dob" required />
 					<label class="input__label input__label--nao" for="dob">
-						<span class="input__label-content input__label-content--nao">DOB / AGE </span>
+					
 					</label>
 					<svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
 						<path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>

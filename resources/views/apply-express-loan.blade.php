@@ -3,7 +3,7 @@
   <div class="express-lon-ban"><img src="images/express-loan-image.jpg" alt="Express-Loan Process" title="Express-Loan Process" class="img-responsive"/></div>
   <br>
 		<div class="container animate-box">
-			<div class="row white-bg box-shadow">
+			<div class="row white-bg box-shadow amount_id_hide" >
 		
 			<div id ="otp_div">
             <form class="express_form" id="express_form" method="POST" >
@@ -13,7 +13,7 @@
 
             <div class="col-md-12">
 			<center><div class="type-cover1"><span>ENTER AMOUNT</span></div></center>
-			<input type="text" name="amount" id="amount" class="center-dv input-typ" 
+			<input type="text" maxlength="10" name="amount" id="amount"  onkeyup = "javascript:this.value=Comma_f(this.value);" class="center-dv input-typ" 
 			onkeypress="return isNumberKey(event)"  required/>
 			</div>
 			<hr>
@@ -1337,13 +1337,15 @@
 	$(".next").click(function(event){
 		// alert("okjjyj");
 		
+ 
+
     event.preventDefault();
       $form=$('#express_form');
       if(! $form.valid()){
      // alert("okjhj");
       	
       }else{
-      	$('#express_form').hide();
+      	$('.amount_id_hide').hide();
       	 var emp = $('input[name=employment]:checked').val();
           $('#business_type').val(emp);
            // console.log(emp);
@@ -1359,13 +1361,13 @@
          	$('#modalerr').html("");
          	$('#modalerr').html("Amount should be greater than <b>5,00,000</b>.");
           	$('#homeTransfer').modal('show');
-         	$('#express_form').show();
+         	$('.amount_id_hide').show();
 
          }else if(slidr<24){
           	$('#modalerr').html("");
          	$('#modalerr').html("Tenure(in months) should be <b>24 or greater than 24</b>.");
           $('#homeTransfer').modal('show'); 
-         	$('#express_form').show();
+         	$('.amount_id_hide').show();
          }
 
          else {
@@ -1408,6 +1410,26 @@
                   
         }
 	}
+
+
+
+
+
+
+	function Comma_f(x){
+		
+  return  x.toString().replace(/,/g, "").replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        // Num += '';
+        // Num = Num.replace(',', ''); Num = Num.replace(',', ''); Num = Num.replace(',', '');
+        // Num = Num.replace(',', ''); Num = Num.replace(',', ''); Num = Num.replace(',', '');
+        // x = Num.split('.');
+        // x1 = x[0];
+        // x2 = x.length > 1 ? '.' + x[1] : '';
+        // var rgx = /(\d+)(\d{3})/;
+        // while (rgx.test(x1))
+        //     x1 = x1.replace(rgx, '$1' + ',' + '$2');
+        // return x1 + x2;
+      }
 </script>
 
 

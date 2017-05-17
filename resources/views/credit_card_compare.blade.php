@@ -22,10 +22,11 @@
         <td><img src="{{url('images/rbl-credit-card.jpg')}}" alt="RBL Titanium Delight Card" title="RBL Titanium Delight Card" width="150" height="96" style="margin:0 auto; margin-bottom:5px;">
         <span>RBL Titanium Delight Card</span>
         </td>
-        <td>Annual Fees- Rs.1000/- plus applicable service tax ... <a data-toggle="popover" data-placement="bottom" data-trigger="hover" data-content="Annual Fees Reversal- On crossing Rs.1.5 lac annual spends in a year get annual fees reversal worth Rs.1000/" style="color:#39F; font-weight:bold;">More</a></td>
-        <td>Blockbuster Benefits Rs. 1000 ...
-          <a data-toggle="popover" data-placement="bottom" data-trigger="hover" data-content=" BookMyShow voucher as a welcome gift free movie ticket per month on crossing spends of Rs. 10,000 and 1 Additional free movie ticket every month on crossing spends of Rs. 15,000 10 Reward Points / Rs. 100 spent at BookMyShow and select dining partners." style="color:#39F; font-weight:bold;">More</a></td>
-        <td>Waiver of Convenience fee at BookMyShow...<a data-toggle="popover" data-placement="bottom" data-trigger="hover" data-content="for first 15 transactions every year. Accelerated Rewards Earn accelerated 20 reward points per Rs. 100 spent on all dining spends on Wednesdays Earn accelerated 10 reward points per Rs 100 spent on BookMyShow and select dining partners years)" style="color:#39F; font-weight:bold;">More</a> </td>
+		<td>Blockbuster Benefits Rs. 1000 BookMyShow voucher as a welcome gift free movie ticket per month on crossing spends of Rs. 10,000 and 1 Additional free movie ticket every month 
+          <a data-toggle="popover" data-placement="bottom" data-trigger="hover" data-content=" on crossing spends of Rs. 15,000 10 Reward Points / Rs. 100 spent at BookMyShow and select dining partners. Waiver of Convenience fee at BookMyShow for first 15 transactions every year. Accelerated Rewards Earn accelerated 20 reward points per Rs. 100 spent on all dining spends on Wednesdays Earn accelerated 10 reward points per Rs 100 spent on BookMyShow and select dining partners years." style="color:#39F; font-weight:bold;">More</a></td>
+        <td class="v-align">NIL</td>
+        
+        <td>Annual Fees- Rs.1000/- plus applicable service tax Annual Fees Reversal- On crossing Rs.1.5 lac annual spends in a year get annual fees reversal worth Rs.1000</td>
         <td class="v-align"><a href="{{URL::to('contact-us')}}"><button>Apply Online</button></a></td>
   </tr>
   
@@ -34,10 +35,11 @@
     <td><img src="{{url('images/rbl-credit-card_1.jpg')}}" alt="RBL Platinum Maxima Card" title="RBL Platinum Maxima Card" width="150" height="110" style="margin:0 auto; margin-bottom:5px;">
     <span>RBL Platinum Maxima Card</span>
     </td>
-    <td>Annual Fees- Rs 750 Joining Fees --<a data-toggle="popover" data-placement="bottom" data-trigger="hover" data-content="Nil Renewal Fees* Rs 750 Renewal Fees is waived on usage of Rs 1 lakh or more in a year " style="color:#39F; font-weight:bold;">More</a></td>
-    <td>Earn 1 reward point for every Rs 100  ...
-      <a data-toggle="popover" data-placement="bottom" data-trigger="hover" data-content=" spent on all purchases.Swipe within 60 days and get 2000 reward points. Spend Rs 10,000 and get additional 1000 reward points." style="color:#39F; font-weight:bold;">More</a></td>
-    <td>Use your card for purchases of Rs1.2 ...<a data-toggle="popover" data-placement="bottom" data-trigger="hover" data-content="Lakhs or more in a year and get a gift voucher of Rs1000.Fuel Surcharge waiver of 2.5%*.*Fuel Transactions between Rs 500 to Rs 4,000 will be eligible for waiver of fuel surcharge." style="color:#39F; font-weight:bold;">More</a> </td>
+    
+    <td>Earn 1 reward point for every Rs 100 spent on all purchases.Swipe within 60 days and get 2000 reward points. Spend Rs 10,000 and get additional 1000 reward points.
+      <a data-toggle="popover" data-placement="bottom" data-trigger="hover" data-content="Use your card for purchases of Rs1.2 Lakhs or more in a year and get a gift voucher of Rs1000.Fuel Surcharge waiver of 2.5%*.*Fuel Transactions between Rs 500 to Rs 4,000 will be eligible for waiver of fuel surcharge." style="color:#39F; font-weight:bold;">More</a></td>
+     <td class="v-align">NIL</td>
+	<td>Annual Fees- Rs 750 Joining Fees Nil Renewal Fees* Rs 750 Renewal Fees is waived on usage of Rs 1 lakh or more in a year.</td>
     <td class="v-align"><a href="{{URL::to('contact-us')}}"><button>Apply Online</button></a></td>
   </tr>
 
@@ -46,10 +48,12 @@
     <td><img src="{{url('images/rbl-credit-card_1.jpg')}}" alt="RBL Platinum Delight Card" title="RBL Platinum Delight Card" width="150" height="110" style="margin:0 auto; margin-bottom:5px;">
     <span>RBL Platinum Delight Card</span>
     </td>
-    <td>Annual Fees Rs 1000 ... <a data-toggle="popover" data-placement="bottom" data-trigger="hover" data-content="Joining Fees - Nil Renewal Fees-Next year fee waived if spend is greater than Rs 1.5 lakh in previous year" style="color:#39F; font-weight:bold;">More</a></td>
-    <td>Double reward points on all  ...
-      <a data-toggle="popover" data-placement="bottom" data-trigger="hover" data-content=" your spends during the weekends .2 reward points for every Rs 100 on all purchases during weekdays.Reward Points worth Rs 10,650 + Fuel waiver Rs 1,80." style="color:#39F; font-weight:bold;">More</a></td>
-    <td>Fuel Transaction between Rs 500...<a data-toggle="popover" data-placement="bottom" data-trigger="hover" data-content="to Rs 4,000 will be eligible for waiver of fuel surcharge" style="color:#39F; font-weight:bold;">More</a> </td>
+    
+    <td>Double reward points on all your spends during the weekends .2 reward points for every Rs 100 on all purchases during weekdays.
+      <a data-toggle="popover" data-placement="bottom" data-trigger="hover" data-content="Reward Points worth Rs 10,650 + Fuel waiver Rs 1,80. Fuel Transaction between Rs 500 to Rs 4,000 will be eligible for waiver of fuel surcharge " style="color:#39F; font-weight:bold;">More</a></td>
+     <td class="v-align">NIL</td>
+	
+	<td>Annual Fees Rs 1000 Joining Fees - Nil Renewal Fees-Next year fee waived if spend is greater than Rs 1.5 lakh in previous year</td>
     <td class="v-align"><a href="{{URL::to('contact-us')}}"><button>Apply Online</button></a></td>
   </tr>
 
@@ -177,10 +181,11 @@
     <td><img src="{{url('images/hdfc-credit-card.jpg')}}" alt="HDFC JetPrivilege Credit Card" title="HDFC JetPrivilege Credit Card" width="150" height="110" style="margin:0 auto; margin-bottom:5px;">
     <span>JetPrivilege HDFC Bank World</span>
     </td>
-    <td>First Year and Renewal Fee on ... <a data-toggle="popover" data-placement="bottom" data-trigger="hover" data-content="JetPrivilege HDFC Bank World Credit Card is Rs, 2,500/- (Service Tax as applicable)" style="color:#39F; font-weight:bold;">More</a></td>
-    <td>Welcome Benefit of up to 10,000 Bonus  ...
-      <a data-toggle="popover" data-placement="bottom" data-trigger="hover" data-content=" JP Miles and one way (base fare waived) Jet Airways ticket. Earn 6 JP Miles for every Rs. 150 spent and 18 JP Miles on every flight booked on www.jetairways.com." style="color:#39F; font-weight:bold;">More</a></td>
-    <td>Dedicated Check-in with additional baggage allowance....<a data-toggle="popover" data-placement="bottom" data-trigger="hover" data-content="Lounge access through Priority Pass and MasterCard Lounge Program.Get 1 JP Tier Point on every 2 lac spends. Faster way to move to higher JP Tier.Enjoy Lounge access at airport in India or overseas.Get Renewal Fee waived if you spend Rs. 3 lac in 12 months prior to renewal.Get extended validity of JP Miles for 5 years" style="color:#39F; font-weight:bold;">More</a> </td>
+    
+    <td>Welcome Benefit of up to 10,000 Bonus JP Miles and one way (base fare waived) Jet Airways ticket. Earn 6 JP Miles for every Rs. 150 spent and 18 JP Miles on every flight booked on www.jetairways.com.
+      <a data-toggle="popover" data-placement="bottom" data-trigger="hover" data-content="Dedicated Check-in with additional baggage allowance Lounge access through Priority Pass and MasterCard Lounge Program.Get 1 JP Tier Point on every 2 lac spends. Faster way to move to higher JP Tier.Enjoy Lounge access at airport in India or overseas.Get Renewal Fee waived if you spend Rs. 3 lac in 12 months prior to renewal.Get extended validity of JP Miles for 5 years" style="color:#39F; font-weight:bold;">More</a></td>
+    <td class="v-align">NIL</td>
+	<td>First Year and Renewal Fee on JetPrivilege HDFC Bank World Credit Card is Rs, 2,500/- (Service Tax as applicable)</td>
     <td class="v-align"><a href="{{URL::to('contact-us')}}"><button>Apply Online</button></a></td>
   </tr>
    <!--  <tr id="6" class="collapse" aria-expanded="true">

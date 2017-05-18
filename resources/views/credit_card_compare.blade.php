@@ -24,7 +24,7 @@
         </td>
 		<td>Blockbuster Benefits Rs. 1000 BookMyShow voucher as a welcome gift free movie ticket per month on crossing spends of Rs. 10,000 and 1 Additional free movie ticket every month 
           <a data-toggle="popover" data-placement="bottom" data-trigger="hover" data-content=" on crossing spends of Rs. 15,000 10 Reward Points / Rs. 100 spent at BookMyShow and select dining partners. Waiver of Convenience fee at BookMyShow for first 15 transactions every year. Accelerated Rewards Earn accelerated 20 reward points per Rs. 100 spent on all dining spends on Wednesdays Earn accelerated 10 reward points per Rs 100 spent on BookMyShow and select dining partners years." style="color:#39F; font-weight:bold;">More</a></td>
-        <td class="v-align">NIL</td>
+        <td class="v-align"></td>
         
         <td>Annual Fees- Rs.1000/- plus applicable service tax Annual Fees Reversal- On crossing Rs.1.5 lac annual spends in a year get annual fees reversal worth Rs.1000</td>
         <td class="v-align"><a href="{{URL::to('contact-us')}}"><button>Apply Online</button></a></td>
@@ -38,7 +38,7 @@
     
     <td>Earn 1 reward point for every Rs 100 spent on all purchases.Swipe within 60 days and get 2000 reward points. Spend Rs 10,000 and get additional 1000 reward points.
       <a data-toggle="popover" data-placement="bottom" data-trigger="hover" data-content="Use your card for purchases of Rs1.2 Lakhs or more in a year and get a gift voucher of Rs1000.Fuel Surcharge waiver of 2.5%*.*Fuel Transactions between Rs 500 to Rs 4,000 will be eligible for waiver of fuel surcharge." style="color:#39F; font-weight:bold;">More</a></td>
-     <td class="v-align">NIL</td>
+     <td class="v-align"></td>
 	<td>Annual Fees- Rs 750 Joining Fees Nil Renewal Fees* Rs 750 Renewal Fees is waived on usage of Rs 1 lakh or more in a year.</td>
     <td class="v-align"><a href="{{URL::to('contact-us')}}"><button>Apply Online</button></a></td>
   </tr>
@@ -51,7 +51,7 @@
     
     <td>Double reward points on all your spends during the weekends .2 reward points for every Rs 100 on all purchases during weekdays.
       <a data-toggle="popover" data-placement="bottom" data-trigger="hover" data-content="Reward Points worth Rs 10,650 + Fuel waiver Rs 1,80. Fuel Transaction between Rs 500 to Rs 4,000 will be eligible for waiver of fuel surcharge " style="color:#39F; font-weight:bold;">More</a></td>
-     <td class="v-align">NIL</td>
+     <td class="v-align"></td>
 	
 	<td>Annual Fees Rs 1000 Joining Fees - Nil Renewal Fees-Next year fee waived if spend is greater than Rs 1.5 lakh in previous year</td>
     <td class="v-align"><a href="{{URL::to('contact-us')}}"><button>Apply Online</button></a></td>
@@ -67,8 +67,8 @@
     <span>Platinum Chip</span>
     </td>
     <td>No Joining Fee. No Annual Fee, Earn 2 PAYBACK points on every Rs.100 spent <a data-toggle="popover" data-placement="bottom" data-trigger="hover" data-content="Minimum 15% savings on dining bill at over 2,500+ restaurants across India courtesy our Culinary Treats program. Save on 1% fuel surcharge, waived off at HPCL petrol pumps" style="color:#39F; font-weight:bold;">More</a></td>
-    <td  class="v-align">NIL</td>
-    <td class="v-align">NIL</td>
+    <td  class="v-align"></td>
+    <td class="v-align"></td>
     <td class="v-align"><a href="{{URL::to('credit-card-form')}}"><button>Apply Online</button></a></td>
   </tr>
 
@@ -182,9 +182,9 @@
     <span>JetPrivilege HDFC Bank World</span>
     </td>
     
-    <td>Welcome Benefit of up to 10,000 Bonus JP Miles and one way (base fare waived) Jet Airways ticket. Earn 6 JP Miles for every Rs. 150 spent and 18 JP Miles on every flight booked on www.jetairways.com.
-      <a data-toggle="popover" data-placement="bottom" data-trigger="hover" data-content="Dedicated Check-in with additional baggage allowance Lounge access through Priority Pass and MasterCard Lounge Program.Get 1 JP Tier Point on every 2 lac spends. Faster way to move to higher JP Tier.Enjoy Lounge access at airport in India or overseas.Get Renewal Fee waived if you spend Rs. 3 lac in 12 months prior to renewal.Get extended validity of JP Miles for 5 years" style="color:#39F; font-weight:bold;">More</a></td>
-    <td class="v-align">NIL</td>
+    <td>Welcome Benefit of up to 10,000 Bonus JP Miles and one way (base fare waived) Jet Airways ticket. Earn 6 JP Miles .
+      <a data-toggle="popover" data-placement="bottom" data-trigger="hover" data-content="for every Rs. 150 spent and 18 JP Miles on every flight booked on www.jetairways.com Dedicated Check-in with additional baggage allowance Lounge access through Priority Pass and MasterCard Lounge Program.Get 1 JP Tier Point on every 2 lac spends. Faster way to move to higher JP Tier.Enjoy Lounge access at airport in India or overseas.Get Renewal Fee waived if you spend Rs. 3 lac in 12 months prior to renewal.Get extended validity of JP Miles for 5 years" style="color:#39F; font-weight:bold;">More</a></td>
+    <td class="v-align"></td>
 	<td>First Year and Renewal Fee on JetPrivilege HDFC Bank World Credit Card is Rs, 2,500/- (Service Tax as applicable)</td>
     <td class="v-align"><a href="{{URL::to('contact-us')}}"><button>Apply Online</button></a></td>
   </tr>

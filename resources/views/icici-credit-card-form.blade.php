@@ -385,7 +385,7 @@ $(".top").click(function() {
             <p class="p-padding"><input type="checkbox" name="terms"  class="redio-lft"/>&nbsp; I hereby confirm that I have read and understood the Rupeeboss Terms and Conditions applicable to this service and that all the details furnished by me above are true and correct. I further provide consent to Rupeeboss and its affiliates to contact me with reference to financial products and this consent shall override any registration with DNC/NDNC.</p>
             
             <!-- <button class="sbmt-btn credit-submit dis-tbl">Confirm &amp; Continue</button> -->
-            &nbsp;&nbsp;&nbsp;&nbsp;<button class="btn btn-primary btn-outline with-arrow animate-box fadeInUp animated icici-credit-submit dis-tbl " >Confirm & Continue<i class="icon-arrow-right"></i>
+            &nbsp;&nbsp;&nbsp;&nbsp;<button class="sbmt-btn icici-credit-submit dis-tbl " >Confirm & Continue<i class="icon-arrow-right"></i>
 
 
                   </button>

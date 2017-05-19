@@ -412,7 +412,7 @@ $(".top").click(function() {
       </div>
       
       <div class="modal-footer">
-        <a type="button" id="upload" name="upload" class="btn btn-primary" >Proceed to Document Upload</a>
+        <a href="http://erp.rupeeboss.com/Credit_Card_Upload_Docs.aspx?App_Id=drop&CardType=ICICI" type="button" id="upload" name="upload" class="btn btn-primary" >Proceed to Document Upload</a>
         
       </div>
     </div>

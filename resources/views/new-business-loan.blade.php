@@ -135,15 +135,15 @@
 <div class="add_new_content">
         <div class="col-xs-12 col-md-6 form-padding"> 
 
-     <input type="text" class="form-input-new form-control" name="bank_name" id="bank_name" placeholder="Bank" onkeypress="return AllowAlphabet(event)" value=""   required="">
+     <input type="text" class="form-input-new form-control" name="bank_name[]" id="bank_name" placeholder="Bank" onkeypress="return AllowAlphabet(event)" value=""   required="">
 
      
 	</div>
 	<div class="col-xs-12 col-md-6 form-padding">
-     <input type="text" class="form-input-new form-control" name="emi" id="emi" placeholder="EMI"  onkeypress="return isNumberKey(event)" value="" required>
+     <input type="text" class="form-input-new form-control" name="emi[]" id="emi" placeholder="EMI"  onkeypress="return isNumberKey(event)" value="" required>
 	</div>
 	<div class="col-xs-12 col-md-6 form-padding">
-	 <select class="form-input-new form-control">
+	 <select class="form-input-new form-control" name="loan[]">
 	 <option>Select Loan</option>
 	     <option>Home Loan</option>
 		 <option>Property Loan</option>
@@ -155,7 +155,7 @@
 	 </select>
 	</div>
 	<div class="col-xs-12 col-md-6 form-padding">
-     <input type="text" class="form-input-new form-control" name="no_of_emi_paid" id="no_of_emi_paid" placeholder="No Of EMI Paid"  onkeypress="return isNumberKey(event)" minlength="2" maxlength="2" required value="">
+     <input type="text" class="form-input-new form-control" name="no_of_emi_paid[]" id="no_of_emi_paid" placeholder="No Of EMI Paid"  onkeypress="return isNumberKey(event)" minlength="2" maxlength="2" required value="">
 	</div>
 	
   </div>
@@ -626,10 +626,13 @@ $(".product_ID").click(function(e){
           }else{
           	var company_name=$('#company_name').val();
                var bank_name=$('#bank_name').val();
+               var emi=$('#emi1').val();
+               console.log(emi);
+
               
       if(company_name!='' && bank_name!=''){
          $('#login_process').attr( 'id', 'login_process');
- $(".iframeloading").show();
+ //$(".iframeloading").show();
               $.ajax({  
              type: "POST",  
              url: "{{URL::to('loan-submit')}}",
@@ -637,7 +640,7 @@ $(".product_ID").click(function(e){
         //   data: {_token :_token,username:username,password:password},
              success: function(msg){
               console.log(msg);
-                    $(".iframeloading").hide();
+                   //$(".iframeloading").hide();
                            if(msg.success ==true){
 
                             var quote=msg.quote;
@@ -810,3 +813,4 @@ $(document).ready(function(){
     
 // });
 </script>
+

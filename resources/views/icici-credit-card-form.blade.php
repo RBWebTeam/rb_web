@@ -6,23 +6,23 @@
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
 
   <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />    
-  <link href="css/component.css" rel="stylesheet" type="text/css"  />
+  <link href="css/icici_css/component.css" rel="stylesheet" type="text/css"  />
   <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-  <link href="css/style-home-loan.css" rel="stylesheet" type="text/css" />
-  <link href="css/responsive-home-loan.css" rel="stylesheet" type="text/css" />
+  <link href="css/icici_css/style-home-loan.css" rel="stylesheet" type="text/css" />
+  <link href="css/icici_css/responsive-home-loan.css" rel="stylesheet" type="text/css" />
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-  <link rel="stylesheet" href="css/jquery.datepicker.css">
-  <link rel="stylesheet" href="css/bootstrap-material-datetimepicker.css"/>
+  <link rel="stylesheet" href="css/icici_css/jquery.datepicker.css">
+  <link rel="stylesheet" href="css/icici_css/bootstrap-material-datetimepicker.css"/>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-  <script src="js/jquery.min.js"></script>
-  <script type="text/javascript" src="js/material.min.js"></script>
-  <script type="text/javascript" src="js/moment-with-locales.min.js"></script>
-  <script type="text/javascript" src="js/bootstrap-material-datetimepicker.js"></script>
+  <script src="js/icici_js/jquery.min.js"></script>
+  <script type="text/javascript" src="js/icici_js/material.min.js"></script>
+  <script type="text/javascript" src="js/icici_js/moment-with-locales.min.js"></script>
+  <script type="text/javascript" src="js/icici_js/bootstrap-material-datetimepicker.js"></script>
    
 </script>
-<script type="text/javascript" src="js/jquery.datepicker.js"></script>
-<script src="js/classie.js"></script>
+<script type="text/javascript" src="js/icici_js/jquery.datepicker.js"></script>
+<script src="js/icici_js/classie.js"></script>
 <script src="js/bootstrap.min.js" type="text/javascript"></script>  
 <link href="css/jquery-ui.min.css" rel="Stylesheet"></link>
 <script src="js/jquery-ui.js" ></script>
@@ -67,7 +67,7 @@ $(".top").click(function() {
       
     <?php }
     ?> -->
-      <h3 class="text-center pg-titl">Apply For Credit Card</h3>
+      <h3 class="text-center pg-titl">Apply For ICICI Credit Card</h3>
           <div class="col-xs-6 form-padding">
                     <div class="form-control inp-fld">
                       <input type="text" name="ApplicantFirstName" id="ApplicantFirstName" class="form-input-new" onkeypress="return AllowAlphabet(event)" required >
@@ -79,7 +79,7 @@ $(".top").click(function() {
              
              <div class="col-xs-6 form-padding">
                     <div class="form-control inp-fld">
-                      <input type="text" name="ApplicantMiddleName" id="ApplicantMiddleName" class="form-input-new" onkeypress="return AllowAlphabet(event)" required >
+                      <input type="text" name="ApplicantMiddleName" id="ApplicantMiddleName" class="form-input-new" onkeypress="return AllowAlphabet(event)"  >
                       <span class="highlight"></span><span class="bar"></span>
                       <label class="form-label-new">Middle Name</label>
                       <div class="clear"></div>
@@ -107,6 +107,25 @@ $(".top").click(function() {
                       <input type="text" class="form-control lastReporteddob" id="DateOfBirth" name="DateOfBirth" placeholder="Date of Birth*" required>
                     </div>
                   </div>
+                  
+                  <div class="col-xs-6 form-padding">
+                    <div class="form-control inp-fld">
+                      <input type="text" name="NameOnCard" id="NameOnCard" class="form-input-new" onkeypress="return AllowAlphabet(event)" required >
+                      <span class="highlight"></span><span class="bar"></span>
+                      <label class="form-label-new">Name to be printed on the card</label>
+                      <div class="clear"></div>
+                    </div>  
+                             </div>
+
+                             <div class="col-xs-6 form-padding">
+                    <div class="form-control inp-fld">
+                      <input type="text" name="MotherName" id="MotherName" class="form-input-new" onkeypress="return AllowAlphabet(event)" required >
+                      <span class="highlight"></span><span class="bar"></span>
+                      <label class="form-label-new">Mother's Maiden Name</label>
+                      <div class="clear"></div>
+                    </div>  
+                             </div>
+
         <div class="col-xs-6 form-padding">
                     <div class="form-control" style="height:50px;position: relative; padding: 0px 0px; margin-bottom:10px;">
                       <div class="padd-lef gender">
@@ -118,6 +137,27 @@ $(".top").click(function() {
                         </div>
                      </div>
                   </div>
+                 
+                <div class="col-xs-6 form-padding">
+                <div class="form-control inp-fld">
+                      <div class="btn-grp mrg-top m-status emp-nat" data-toggle="buttons">
+                      <span class="btn btn-primary outer-brd active"><input type="radio" name="marital_status" checked value="Single">Single</span>
+                      <span class="btn btn-primary outer-brd"><input type="radio" name="marital_status" value="Married" >Married</span>
+                </div>
+                    </div>  
+                </div>
+
+                
+                <div class="col-xs-6 form-padding">
+                    <div class="form-control" style="height:50px; position: relative; padding: 0px 0px;">
+                      <span style="position: absolute; z-index: 999; margin: 1px 0 0 8px; font-size: 10px; color: #bababa;">Resident Status</span>
+                      <div class="btn-grp mrg-top m-status emp-nat" data-toggle="buttons">
+                      <span class="btn btn-primary outer-brd active"><input type="radio" name="resident_status" checked value="Indian">Indian</span>
+                      <span class="btn btn-primary outer-brd"><input type="radio" name="resident_status" value="NRI/Foreign_National" >NRI/Foreign National</span>
+                </div>
+                    </div>  
+                </div>
+
           <div class="col-xs-6 form-padding">
                     <div class="form-control" style="height:50px; position: relative; padding: 0px 0px;">
                       <span style="position: absolute; z-index: 999; margin: 1px 0 0 8px; font-size: 10px; color: #bababa;">Employment Nature</span>
@@ -179,7 +219,7 @@ $(".top").click(function() {
          </div>
                     </div>
                   </div>
-              <h4 class="txt-tlt pull-left">Current Addresses Details</h4> 
+              <h4 class="txt-tlt pull-left">Current Address Details</h4> 
           <div class="col-xs-6 form-padding">
                     <div class="form-control inp-fld">
                       <input type="text" name="ResidenceAddress1" id="ResidenceAddress1" class="form-input-new" required >
@@ -225,6 +265,66 @@ $(".top").click(function() {
                       <input type="text" name="ResidenceState" id="ResidenceState" class="form-input-new search_statenm" required>
                       <span class="highlight"></span><span class="bar"></span>
                       <label class="form-label-new">State*</label>
+                      <div class="clear"></div>
+                    </div>  
+                  </div>
+
+                  <h4 class="txt-tlt pull-left">Permanent Address Details</h4> 
+          <div class="col-xs-6 form-padding">
+                    <div class="form-control inp-fld">
+                      <input type="text" name="PerResidenceAddress1" id="PerResidenceAddress1" class="form-input-new" required >
+                      <span class="highlight"></span><span class="bar"></span>
+                      <label class="form-label-new">flat No / Plot No / House No*</label>
+                      <div class="clear"></div>
+                    </div>  
+                  </div>
+          <div class="col-xs-6 form-padding">
+                    <div class="form-control inp-fld">
+                      <input type="text"  name="PerResidenceAddress2" id="PerResidenceAddress2" class="form-input-new" required>
+                      <span class="highlight"></span><span class="bar"></span>
+                      <label class="form-label-new">Building / Society Name</label>
+                      <div class="clear"></div>
+                    </div>  
+                  </div>
+          <div class="col-xs-6 form-padding">
+                    <div class="form-control inp-fld">
+                      <input type="text"  name="PerResidenceAddress3" id="PerResidenceAddress3" class="form-input-new" required>
+                      <span class="highlight"></span><span class="bar"></span>
+                      <label class="form-label-new">Road No / Area / Locality</label>
+                      <div class="clear"></div>
+                    </div>  
+                  </div>
+          <div class="col-xs-6 form-padding">
+                    <div class="form-control inp-fld">
+                      <input type="text" name="PerCity" id="PerCity" class="form-input-new search_citynm" required dis>
+                      <span class="highlight"></span><span class="bar"></span>
+                      <label class="form-label-new">City*</label>
+                      <div class="clear"></div>
+                    </div>  
+                  </div>
+          <div class="col-xs-6 form-padding">
+                    <div class="form-control inp-fld">
+                      <input type="text" id="PerResidencePincode" name="PerResidencePincode" class="form-input-new" required onkeypress="return fnAllowNumeric(event)" maxlength="6"  >
+                      <span class="highlight"></span><span class="bar"></span>
+                      <label class="form-label-new">Pincode*</label>
+                      <div class="clear"></div>
+                    </div>  
+                  </div>
+          <div class="col-xs-6 form-padding">
+                    <div class="form-control inp-fld">
+                      <input type="text" name="PerResidenceState" id="PerResidenceState" class="form-input-new search_statenm" required>
+                      <span class="highlight"></span><span class="bar"></span>
+                      <label class="form-label-new">State*</label>
+                      <div class="clear"></div>
+                    </div>  
+                  </div>
+
+                   <div class="col-xs-6 form-padding">
+                    <div class="form-control inp-fld">
+                      <input type="text" id="email_id" name="email_id" class="form-input-new" oninput="email('email_id')"  required >
+                       <span id="mail_id" style="display:none;color: red;">Please Enter Valid Email Id.</span>
+                      <span class="highlight"></span><span class="bar"></span>
+                      <label class="form-label-new">Email ID(Personal)*</label>
                       <div class="clear"></div>
                     </div>  
                   </div>
@@ -297,6 +397,26 @@ $(".top").click(function() {
       </section>    
     </div>
     </form>
+
+    <div class="modal fade" tabindex="-1" role="dialog" id="credit_process_sorry">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title"></h4>
+      </div>
+      <div class="modal-body">
+        <h4><p id="modalerr"><h5>Your Application id is <b><span id="drop"></span></b>.<br>You have been <b><span id="drop1"></span></b>.<br>Thank you for your interest in ICICI Bank Credit Cards. Our representative will get in touch with you within 3 working days subject to your application meeting the eligibility criteria.<h5></p></h4>
+        
+      </div>
+      
+      <div class="modal-footer">
+        <a type="button" id="upload" name="upload" class="btn btn-primary" >Proceed to Document Upload</a>
+        
+      </div>
+    </div>
+  </div>
+</div>
 
 
 
@@ -662,14 +782,15 @@ $(document).ready(function(){
     //alert("okae");
     event.preventDefault();
       //var form=$(this).closest("form").attr('id');
-      //alert(form);
+      //console.log($('#compareform'));
       //var form=$('#compareform');
       if(!  $('#compareform').valid()){
+        return false;
       }else{
         //var s=$('#'+form).serialize();
-
+        //console.log($('#compareform'));
         $(".iframeloading").show();
-        $(".icici-credit-submit").hide(); 
+        // $(".icici-credit-submit").hide(); 
         $.ajax({  
          type: "POST",  
          url: "{{URL::to('icici-credit-submit')}}",
@@ -678,7 +799,7 @@ $(document).ready(function(){
          success: function(msg){
          $(".iframeloading").hide();  
         
-         // console.log(msg);
+         //console.log(.id);
           if(msg==2){
             // alert("OKAE");
              alert("Something Went Wrong");
@@ -687,9 +808,15 @@ $(document).ready(function(){
             // $('#credit_process').modal('show');        
           } 
           else{
-            // console.log(msg);
-            alert(" Your Application id is "+msg+".Thank you for your interest in ICICI Bank Credit Cards. Our representative will get in touch with you within 3 working days subject to your application meeting the eligibility criteria");
-             // $('#credit_process_sorry').modal('show');
+            //console.log(msg);
+            // alert(" Your Application id is "+msg.id+".Decision is "+msg.Decision+"Thank you for your interest in ICICI Bank Credit Cards. Our representative will get in touch with you within 3 working days subject to your application meeting the eligibility criteria");
+            if (msg.Decision =='Declined') {
+              $('#upload').hide();
+
+            }
+             $('#drop').empty().append(msg.id);
+               $('#drop1').empty().append(msg.Decision);
+             $('#credit_process_sorry').modal('show');
           }
 
         }  
@@ -714,4 +841,26 @@ $(document).ready(function(){
       yearRange: '-100:' + year + '',
       defaultDate: d
     });
+</script>
+
+<script type="text/javascript">
+  function email(obj,val){
+    // console.log(obj);
+    if(obj=='email_id' ){
+                   var str =$('#email_id').val();
+                   var emailPattern = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/; 
+                   var res = str.match(emailPattern);
+                   if(res){
+                     // console.log('Pancard is valid one.!!');
+                      $('#mail_id').hide();
+
+                  }else{
+                    // console.log('Oops.Please Enter Valid Pan Number.!!');
+                    $('#mail_id').show();
+
+                    return false;
+                  }
+                  
+  }
+}
 </script>

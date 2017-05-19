@@ -139,7 +139,8 @@ $(".top").click(function() {
                   </div>
                  
                 <div class="col-xs-6 form-padding">
-                <div class="form-control inp-fld">
+                <div class="form-control" style="height:50px; position: relative; padding: 0px 0px;">
+                      <span style="position: absolute; z-index: 999; margin: 1px 0 0 8px; font-size: 10px; color: #bababa;">Marital Status</span>
                       <div class="btn-grp mrg-top m-status emp-nat" data-toggle="buttons">
                       <span class="btn btn-primary outer-brd active"><input type="radio" name="marital_status" checked value="Single">Single</span>
                       <span class="btn btn-primary outer-brd"><input type="radio" name="marital_status" value="Married" >Married</span>

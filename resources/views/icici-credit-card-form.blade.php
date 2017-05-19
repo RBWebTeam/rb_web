@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>HOME LOAN</title>
+    <title>ICICI Credit Card :: RupeeBoss</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
 
   <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />    
@@ -57,7 +57,7 @@ $(".top").click(function() {
                       <input type="hidden" name="source" class="source" value="<?php echo Session::get('source')?Session::get('source'):'0';?>"> 
                       <input type="hidden" name="type" class="type" value="DC"> 
 
-<div class="wrapper-1">
+<div>
        <!-- Main content -->
         <section class="out-dv">
       <div class="row">

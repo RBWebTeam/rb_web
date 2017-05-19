@@ -407,7 +407,7 @@ $(".top").click(function() {
         <h4 class="modal-title"></h4>
       </div>
       <div class="modal-body">
-        <h4><p id="modalerr"><h5>Your Application id is <b><span id="drop"></span></b>.<br>You have been <b><span id="drop1"></span></b>.<br>Thank you for your interest in ICICI Bank Credit Cards. Our representative will get in touch with you within 3 working days subject to your application meeting the eligibility criteria.<h5></p></h4>
+        <h4><p id="modalerr"><h5>Your Application id is <b><span id="drop"></span></b>.<br>You have been <b><span id="drop1"></span></b>.<br><b><span id="drop2"></span></b><h5></p></h4>
         
       </div>
       
@@ -816,7 +816,8 @@ $(document).ready(function(){
 
             }
              $('#drop').empty().append(msg.id);
-               $('#drop1').empty().append(msg.Decision);
+              $('#drop1').empty().append(msg.Decision);
+              $('#drop2').empty().append(msg.Reason);
              $('#credit_process_sorry').modal('show');
           }
 

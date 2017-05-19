@@ -61,7 +61,7 @@ class CreditcardController extends CallApiController
          if(!$update_user){
             $error=2;  
         }else{  
-            $error =json_encode( array('id' =>$obj->ApplicationId,'Decision'=>$obj->Decision ));
+            $error =json_encode( array('id' =>$obj->ApplicationId,'Decision'=>$obj->Decision,'Reason'=>$obj->Reason ));
           }
     }else{
         $error=2;

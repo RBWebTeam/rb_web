@@ -1,21 +1,17 @@
 {
-  "private": true,
-  "scripts": {
-    "prod": "gulp --production",
-    "dev": "gulp watch"
-  },
-  "devDependencies": {
-    "bootstrap-sass": "^3.3.7",
-    "gulp": "^3.9.1",
-    "jquery": "^3.1.0",
-    "laravel-elixir": "*",
-    "laravel-elixir-vue-2": "^0.2.0",
-    "laravel-elixir-webpack-official": "^1.0.2",
-    "lodash": "^4.16.2",
-    "vue": "^2.0.1",
-    "vue-resource": "^1.0.3"
-  },
+  "name": "myapp",
+  "version": "1.0.0",
+  "description": "{\"express\":4.0.0}",
+  "main": "node.js",
   "dependencies": {
-    "@angular/forms": "^4.0.3"
-  }
+    "express": "^4.14.0",
+    "gulp-install": "^1.1.0",
+    "minimatch":"^3.0.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "console.log()\u001b[D\"\"\u001b[Dhi\u001b[C\")"
+  },
+  "author": "",
+  "license": "ISC"
 }

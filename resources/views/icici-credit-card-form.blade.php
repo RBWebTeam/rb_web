@@ -1154,7 +1154,7 @@ $(document).ready(function(){
       $('#cards').get(0).selectedIndex = 0;
       var net_annual_income=$('#net_annual_income').find(":selected").val();
       var your_interests=$('#your_interests').find(":selected").val();
-      console.log(net_annual_income);
+     // console.log(net_annual_income);
       $("#credit_card_name").show();
       $("#cards option[value='Platinum Chip Credit Card']").hide();
       $("#cards option[value='Coral Credit Card']").hide();

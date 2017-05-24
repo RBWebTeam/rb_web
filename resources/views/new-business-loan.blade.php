@@ -135,15 +135,15 @@
 <div class="add_new_content">
         <div class="col-xs-12 col-md-6 form-padding"> 
 
-     <input type="text" class="form-input-new form-control" name="bank_name" id="bank_name" placeholder="Bank" onkeypress="return AllowAlphabet(event)" value=""   required="">
+     <input type="text" class="form-input-new form-control" name="bank_name[]" id="bank_name" placeholder="Bank" onkeypress="return AllowAlphabet(event)" value=""   required="">
 
      
 	</div>
 	<div class="col-xs-12 col-md-6 form-padding">
-     <input type="text" class="form-input-new form-control" name="emi" id="emi" placeholder="EMI"  onkeypress="return isNumberKey(event)" value="" required>
+     <input type="text" class="form-input-new form-control" name="emi[]" id="emi" placeholder="EMI"  onkeypress="return isNumberKey(event)" value="" required>
 	</div>
 	<div class="col-xs-12 col-md-6 form-padding">
-	 <select class="form-input-new form-control">
+	 <select class="form-input-new form-control" name="loan[]">
 	 <option>Select Loan</option>
 	     <option>Home Loan</option>
 		 <option>Property Loan</option>
@@ -155,7 +155,7 @@
 	 </select>
 	</div>
 	<div class="col-xs-12 col-md-6 form-padding">
-     <input type="text" class="form-input-new form-control" name="no_of_emi_paid" id="no_of_emi_paid" placeholder="No Of EMI Paid"  onkeypress="return isNumberKey(event)" minlength="2" maxlength="2" required value="">
+     <input type="text" class="form-input-new form-control" name="no_of_emi_paid[]" id="no_of_emi_paid" placeholder="No Of EMI Paid"  onkeypress="return isNumberKey(event)" minlength="2" maxlength="2" required value="">
 	</div>
 	
   </div>
@@ -480,13 +480,25 @@
           <label class="form-label-new">Processing Fee</label>
               <input type="text" class="form-control" id="processfee" name="name" placeholder="" required class="clr-ddd" readonly />
             </div>
-
-        <div> 
           <br>
-         <a id="apply_new" type="button" class="btn btn-info disblk" title="Experience New Digital Era In Loans">Apply Digitally</a>
-         <button id="eligibility" class="btn btn-info disblk" title="See Bankwise Eligibility And Apply Amongst Best Bank" disabled>Check Bankwise Eligibility</button>
-         <button type="button" class="btn btn-info block call_rm"  id="call_rm" name="call_rm" data-toggle="modal" data-target="#Modal" title="Call For RM(Single Day Process)">Call Manager</button>
+        <div> 
+          
          
+
+
+           @if(Session::get('is_login'))
+           <a   type="button" class="btn btn-info disblk apply_new" title="Experience New Digital Era In Loans">Apply Digitally</a>
+           @else
+           <a   data-toggle="modal" data-target="#login_process" class="btn btn-info disblk apply_digitally " title="Experience New Digital Era In Loans">Apply Digitally</a>
+           @endif    
+ 
+
+
+
+         <button id="eligibility"  class="btn btn-info disblk" title="See Bankwise Eligibility And Apply Amongst Best Bank" disabled>Check Bankwise Eligibility </button>
+
+         <button type="button" class="btn btn-info block"  id="call_rm" name="call_rm" data-toggle="modal" data-target="#Modal" title="Call For RM(Single Day Process)">Call Manager</button>
+         <div id="log_digital_text" style=" color: red"></div>
         </div>
         
         <!-- <p id="err" style="display:none;" ><span style="color:skyblue;position:absolute;font-size:13px;">No Quotes Found.</span></p> -->
@@ -581,27 +593,7 @@ function callme(test){
     });
 </script>
 
-<script type="text/javascript">
-	function pan_card(obj,val){
-		console.log(obj);
-		if(obj=='pan_no' ){
-                   var str =$('#pan_no').val();
-                   var pancardPattern = /^([a-zA-Z]{5})(\d{4})([a-zA-Z]{1})$/;
-                   var res = str.match(pancardPattern);
-                   if(res){
-                     // console.log('Pancard is valid one.!!');
-                     	$('#pan_number').hide();
 
-                  }else{
-                  	// console.log('Oops.Please Enter Valid Pan Number.!!');
-                  	$('#pan_number').show();
-
-                  	return false;
-                  }
-                  
-	}
-}
-</script>
 
 <script type="text/javascript">
 	
@@ -634,10 +626,13 @@ $(".product_ID").click(function(e){
           }else{
           	var company_name=$('#company_name').val();
                var bank_name=$('#bank_name').val();
+               var emi=$('#emi1').val();
+               console.log(emi);
+
               
       if(company_name!='' && bank_name!=''){
          $('#login_process').attr( 'id', 'login_process');
- $(".iframeloading").show();
+ //$(".iframeloading").show();
               $.ajax({  
              type: "POST",  
              url: "{{URL::to('loan-submit')}}",
@@ -645,7 +640,7 @@ $(".product_ID").click(function(e){
         //   data: {_token :_token,username:username,password:password},
              success: function(msg){
               console.log(msg);
-                    $(".iframeloading").hide();
+                   //$(".iframeloading").hide();
                            if(msg.success ==true){
 
                             var quote=msg.quote;
@@ -818,3 +813,4 @@ $(document).ready(function(){
     
 // });
 </script>
+

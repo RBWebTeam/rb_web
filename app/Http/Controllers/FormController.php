@@ -40,7 +40,7 @@ class FormController extends CallApiController
       
     }
     public function p_loan_submit(Request $req){
-        // print_r($req->all());exit();
+         // print_r($req->all());exit();
       Session::forget('quote_id');
         try{
         //call api to submit form data
@@ -107,6 +107,7 @@ class FormController extends CallApiController
             $data['loan_amount'] =$req['loan_amount'];
             $data['quote_data'] =$quote_data;
             if ($quote_data) {
+              print_r($data['quote_data'] );exit();
                $Bank_Id=$data['quote_data'][0]->Bank_Id;
                $loan_eligible=$data['quote_data'][0]->loan_eligible;
                $roi=$data['quote_data'][0]->roi;
@@ -231,30 +232,57 @@ class FormController extends CallApiController
         }
     }
     function get_quotes($req){
-        if(isset($req['income'])){
-                    $income=$req['income'];
-        }else{
-            $income=$req['turnover'];
-        }
-        if($req['co_emp_detail']=='salaried'){
-            $req['co_emp_detail']=1;
-        }elseif($req['co_emp_detail']){
-            $req['co_emp_detail']=2;
-        }
-              //  $req['co_dob']=($req['co_dob'])?$req['co_dob']:NULL;
-        if($req['product_name']==9){
-            $quote_data=DB::select('call  usp_get_personal_loan_quot ("'.$req['dob'].'","'.$req['emp_detail_id'].'","'.$income.'","'.$req['obligation'].'","'.$req['loan_tenure'].'","'.$req['loan_amount'].'")');
-        }else if($req['product_name']==4 || $req['product_name']==1){
-           $quote_data=DB::select('call  usp_get_car_loan_quot("'.$req['car_cost'].'","'.$req['loan_tenure'].'","'.$req['loan_amount'].'","'.$req['income'].'","'.$req['obligation'].'","'.$req['dob'].'","'.$req['turnover'].'","'.$req['profit_after_tax'].'","'.$req['depreciation'].'","'.$req['remuneration'].'","'.$req['emp_detail_id'].'","'.$req['product_name'].'")');
-        }else if(($req['product_name']==12) || ($req['product_name']==7)){
-            $product_id=$req['product_name'];
-            $quote_data=DB::select('call  usp_get_bank_quot_test("'.$req['property_cost'].'","'.$req['loan_tenure'].'","'.$req['loan_amount'].'","'.$req['gender'].'","'.$req['income'].'","'.$req['obligation'].'","'.$req['dob'].'","'.$req['have_co_applicant'].'","'.$req['co_applicant_income'].'","'.$req['co_applicant_obligation'].'","'.$req['turnover'].'","'.$req['profit_after_tax'].'","'.$req['depreciation'].'","'.$req['remuneration'].'","'.$req['co_applicant_turnover'].'","'.$req['co_applicant_profit_after_tax'].'","'.$req['co_applicant_depreciation'].'","'.$req['co_applicant_remuneration'].'","'.$req['emp_detail_id'].'","'.$req['co_dob'].'","'.$req['co_emp_detail'].'","'.$product_id.'")');
-        }else if($req['product_name']==13){
-            $quote_data=DB::select('call  usp_get_business_loan_quot ("'.$req['applicant_dob'].'","'.$req['emp_detail'].'","'.$req['turnover'].'","'.$req['profit_after_tax'].'","'.$req['depreciation'].'","'.$req['partner_remuneration'].'","'.$req['interest_paid'].'","'.$req['emi'].'","'.$req['no_of_emi_paid'].'","'.$req['loan_tenure'].'","'.$req['loan_amount'].'","'.$req['date'].'")');
-        }
-        return $quote_data;
+        try{
+          if(isset($req['income'])){
+                            $income=$req['income'];
+                }else{
+                    $income=$req['turnover'];
+                }
+                if($req['co_emp_detail']=='salaried'){
+                    $req['co_emp_detail']=1;
+                }elseif($req['co_emp_detail']){
+                    $req['co_emp_detail']=2;
+                }
+                      //  $req['co_dob']=($req['co_dob'])?$req['co_dob']:NULL;
+                if($req['product_name']==9){
+                    $quote_data=DB::select('call  usp_get_personal_loan_quot ("'.$req['dob'].'","'.$req['emp_detail_id'].'","'.$income.'","'.$req['obligation'].'","'.$req['loan_tenure'].'","'.$req['loan_amount'].'")');
+                }else if($req['product_name']==4 || $req['product_name']==1){
+                   $quote_data=DB::select('call  usp_get_car_loan_quot("'.$req['car_cost'].'","'.$req['loan_tenure'].'","'.$req['loan_amount'].'","'.$req['income'].'","'.$req['obligation'].'","'.$req['dob'].'","'.$req['turnover'].'","'.$req['profit_after_tax'].'","'.$req['depreciation'].'","'.$req['remuneration'].'","'.$req['emp_detail_id'].'","'.$req['product_name'].'")');
+                }else if(($req['product_name']==12) || ($req['product_name']==7)){
+                    $product_id=$req['product_name'];
+                    $quote_data=DB::select('call  usp_get_bank_quot_test("'.$req['property_cost'].'","'.$req['loan_tenure'].'","'.$req['loan_amount'].'","'.$req['gender'].'","'.$req['income'].'","'.$req['obligation'].'","'.$req['dob'].'","'.$req['have_co_applicant'].'","'.$req['co_applicant_income'].'","'.$req['co_applicant_obligation'].'","'.$req['turnover'].'","'.$req['profit_after_tax'].'","'.$req['depreciation'].'","'.$req['remuneration'].'","'.$req['co_applicant_turnover'].'","'.$req['co_applicant_profit_after_tax'].'","'.$req['co_applicant_depreciation'].'","'.$req['co_applicant_remuneration'].'","'.$req['emp_detail_id'].'","'.$req['co_dob'].'","'.$req['co_emp_detail'].'","'.$product_id.'")');
+                }else if($req['product_name']==13){
+                  
+                  $emi_arr=$req['emi'];
+                  $max=0;
+                 // print_r(sizeof($emi_arr));exit();
+                  for($index=0;$index<sizeof($emi_arr);$index++){
+                      if($emi_arr[$index]>$max)
+                      { 
+                        $max=$emi_arr[$index];
+                      }
+                  }
+                  print_r($index);exit();
+                      if(isset($req->Bank_Id)){
+                          $quote_data=DB::select(' call usp_get_bankwise_business_loan_quot ("'.$req['applicant_dob'].'","'.$req['emp_detail'].'","'.$req['turnover'].'","'.$req['profit_after_tax'].'","'.$req['depreciation'].'","'.$req['partner_remuneration'].'","'.$req['interest_paid'].'","'.$req['emi'][$index].'","'.$req['no_of_emi_paid'][$index].'","'.$req['loan_tenure'].'","'.$req['loan_amount'].'","'.$req['date'].'","'.$req->Bank_Id.'")');
+        
+                         
+                                     
+        
+                      }else{
+        
+                      
+                    $quote_data=DB::select('call  usp_get_business_loan_quot ("'.$req['applicant_dob'].'","'.$req['emp_detail'].'","'.$req['turnover'].'","'.$req['profit_after_tax'].'","'.$req['depreciation'].'","'.$req['partner_remuneration'].'","'.$req['interest_paid'].'","'.$req['emi'][$index].'","'.$req['no_of_emi_paid'][$index].'","'.$req['loan_tenure'].'","'.$req['loan_amount'].'","'.$req['date'].'")');
+        
+                  }
+                }
+                return $quote_data;
+                }catch(\Exception $ee){
+                  return $ee->getTraceAsString();
+                }
     }
         function show_quotes(Request $req){
+          // print_r($req->all());exit();
        return view('show-quotes')->with($req);
     }
 

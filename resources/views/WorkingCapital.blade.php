@@ -6,8 +6,8 @@
   <div class="col-md-10">
 
   <ul class="nav nav-tabs" id="userTabs">
-  <li class="active"><a data-toggle="tab" href="#home"><b>WORKING CAPITAL</b></a></li>
-  <li class="menu1"><a data-toggle="tab" href="#menu1" ><b>TERM LOAN</b></a></li>
+  <li class="active"  id="trmloan1"><a data-toggle="tab" href="#home"><b>WORKING CAPITAL</b></a></li>
+  <li class="menu1" id="trmloan"><a data-toggle="tab" href="#menu1" ><b>TERM LOAN</b></a></li>
   <li class="menu2"><a data-toggle="tab" href="#menu2"><b>PACKING CREDIT DOMESTIC</b></a></li>
   <li class="menu3"><a data-toggle="tab" href="#menu3"><b>PACKING CREDIT FOREIGN CURRENCY</b></a></li>
   <li class="menu4"><a data-toggle="tab" href="#menu4" id="proposel_ID"><b>PROPOSAL</b></a></li>
@@ -17,9 +17,9 @@
   <div id="home" class="tab-pane fade in active">
      <div class="col-md-12">
    <div class="col-md-3 col-xs-12"></div>
-   <h4 class="col-md-2 col-xs-4"><input type="radio" name="bank1" onclick="bankName('bank1')"  checked="checked" id="bank1" value="bank1"/> Bank 1 </h4>
-   <h4 class="col-md-2 col-xs-4"><input type="radio" name="bank1" id="bank2"  onclick="bankName('bank2')" /> Bank 2 </h4>
-   <h4 class="col-md-2 col-xs-4"><input type="radio" name="bank1" id="bank3" onclick="bankName('bank3')"/> Bank 3 </h4>
+   <h4 class="col-md-2 col-xs-4"><input type="radio" name="bank1" onclick="bankName('bank1'),bn_f(1);"  checked="checked" id="bank1" value="bank1"/> Bank 1 </h4>
+   <h4 class="col-md-2 col-xs-4"><input type="radio" name="bank1" id="bank2"  onclick="bankName('bank2'),bn_f(2);" /> Bank 2 </h4>
+   <h4 class="col-md-2 col-xs-4"><input type="radio" name="bank1" id="bank3" onclick="bankName('bank3'),bn_f(3);"/> Bank 3 </h4>
    <a data-toggle="tab" href="#menu1" class="btn btn-success pull-right menu1act">NEXT</a>
    </div>
   <div class="col-md-4 pad-no">
@@ -88,9 +88,9 @@
   <div id="menu1" class="tab-pane fade">
   <div class="col-md-12">
   <h4 class="col-md-3 col-xs-12""></h4>
-   <h4 class="col-md-2 col-xs-4"><input type="radio" name="Tbank1" onclick="TbankName('Tbank1')"  checked="checked" id="Tbank1" value="Tbank1"/> Bank 1</h4>
-   <h4 class="col-md-2 col-xs-4""><input type="radio" name="Tbank1" id="Tbank2"  onclick="TbankName('Tbank2')" /> Bank 2</h4>
-   <h4 class="col-md-2 col-xs-4""><input type="radio" name="Tbank1" id="Tbank3" onclick="TbankName('Tbank3')"/> Bank 3</h4>
+   <h4 class="col-md-2 col-xs-4"><input type="radio" name="Tbank1" onclick="TbankName('Tbank1'),bn_f(4);"  checked="checked" id="Tbank1" value="Tbank1"/> Bank 1</h4>
+   <h4 class="col-md-2 col-xs-4""><input type="radio" name="Tbank1" id="Tbank2"  onclick="TbankName('Tbank2'),bn_f(5);" /> Bank 2</h4>
+   <h4 class="col-md-2 col-xs-4""><input type="radio" name="Tbank1" id="Tbank3" onclick="TbankName('Tbank3'),bn_f(6);"/> Bank 3</h4>
    <a data-toggle="tab" href="#menu2" class="btn btn-success pull-right menu1act">NEXT</a>
    </div>
   <div class="col-md-4 pad-no">
@@ -600,6 +600,10 @@ $("button").click(function(e){
                        termbank.totalYearSaving=totalYearSaving;
                        sessionStorage.setItem(TsessionName, JSON.stringify(termbank));
                        TbankAppend(TsessionName,Drop_EMI); 
+                       
+                         work_vice(Drop_EMI);
+
+
 
                     if(msg.ttlf==303){
                       $('#working_i_d').empty().append('Current interest rate should be greater than 10');
@@ -653,6 +657,9 @@ $("button").click(function(e){
   
 // get row end
       
+
+
+
       
 });
 
@@ -683,6 +690,7 @@ function ajax(_token,loanAmount_id,interest,loanTenurMonth,ID,paid){
                      $('.afterbtn').show();
 
 
+                      work_vice(totleMonthlysaving);
                    
               }
 
@@ -722,7 +730,7 @@ function ajax(_token,loanAmount_id,interest,loanTenurMonth,ID,paid){
                 //   $('#bank_ID').empty().append('Total Saving'+totleMonthlysaving);
                      sessionStorage.setItem("pcd",convertMonth);
                          
-
+                                work_vice(convertMonth,7);
                      }
                   
 
@@ -762,7 +770,7 @@ function ajax(_token,loanAmount_id,interest,loanTenurMonth,ID,paid){
 
                //    $('#bank_ID').empty().append('Total Saving'+totleMonthlysaving);
                     sessionStorage.setItem("pcfc",convertMonth1);
-                   
+                     work_vice(convertMonth1,8);
                      }
 
               
@@ -791,23 +799,23 @@ function ajax(_token,loanAmount_id,interest,loanTenurMonth,ID,paid){
             if(sessionName=='bank1'){
               total1=parseInt(totalYearSaving); 
               $('#bankName0').empty().append(total1);
-             $('#bank_ID').empty().append('Total Saving<h3 class="tot-sav-txt">'+total1+'</h3>');
+             //$('#bank_ID').empty().append('Total Saving<h3 class="tot-sav-txt">'+total1+'</h3>');
                
                 }else if(sessionName=='bank2'){
                     total2=parseInt(totalYearSaving);
                    $('#bankName1').empty().append(total2);
-            $('#bank_ID').empty().append('Total Saving<h3 class="tot-sav-txt">'+total2+'</h3>');
+            //$('#bank_ID').empty().append('Total Saving<h3 class="tot-sav-txt">'+total2+'</h3>');
              
                 }else if(sessionName=='bank3'){
                     total3=parseInt(totalYearSaving);
                   $('#bankName2').empty().append(total3);
-               $('#bank_ID').empty().append('Total Saving<h3 class="tot-sav-txt">'+total3+'</h3>');
+             //  $('#bank_ID').empty().append('Total Saving<h3 class="tot-sav-txt">'+total3+'</h3>');
            
                 }
                 $('#banktotal').empty().append(totalb=total1+total2+total3);     //parseInt
 
               
-                 $('#bank_ID').empty().append(totalb=total1+total2+total3); 
+               //  $('#bank_ID').empty().append(totalb=total1+total2+total3); 
                //  $('#bank_ID').empty().append(totalb);
 
  }        
@@ -817,19 +825,19 @@ function ajax(_token,loanAmount_id,interest,loanTenurMonth,ID,paid){
                 if(TsessionName=='Tbank1'){
                       total11=parseInt(totalYearSaving); 
                     $('#TbankName0').empty().append(total11);
-                   $('#bank_ID').empty().append('Total Saving<h3 class="tot-sav-txt">'+total11+'</h3>');
+                  // $('#bank_ID').empty().append('Total Saving<h3 class="tot-sav-txt">'+total11+'</h3>');
                 }else if(TsessionName=='Tbank2'){
                    total21=parseInt(totalYearSaving);
                    $('#TbankName1').empty().append(total21);
-                  $('#bank_ID').empty().append('Total Saving<h3 class="tot-sav-txt">'+total21+'</h3>');
+                 // $('#bank_ID').empty().append('Total Saving<h3 class="tot-sav-txt">'+total21+'</h3>');
                 }else if(TsessionName=='Tbank3'){
                   total31=parseInt(totalYearSaving);
                   $('#TbankName2').empty().append(total31);
-                 $('#bank_ID').empty().append('Total Saving<h3 class="tot-sav-txt">'+total31+'</h3>');
+               //  $('#bank_ID').empty().append('Total Saving<h3 class="tot-sav-txt">'+total31+'</h3>');
                 }
                 $('#Tbanktotal').empty().append(totalb1=total11+total21+total31);
              
-               $('#bank_ID').empty().append(totalb1=total11+total21+total31); 
+              // $('#bank_ID').empty().append(totalb1=total11+total21+total31); 
                
  }
 
@@ -866,7 +874,10 @@ function moyear(yearmonth,loanTenur){     //     convert year to monthly
              document.getElementById("loanTenur").value=1;   // working capital loanTenur
              document.getElementById("loanTenurAfter").value=1;   // working capital loanTenur after transfer
              $('.validate_id').empty()
-          }         
+          }    
+
+          
+            
  }
 
 
@@ -1085,11 +1096,73 @@ $('.menu1act').click(function(e){
 
 
 
+
+
  $('a').click(function(){
       $('.validate_id').empty();
     });
 
- }); 
+ });
+
+
+  var bn = [];
+  var go1=0;go2=0;go3=0;go4=0;go5=0;go6=0;go7=0;go8=0;
+  var ba1=1;
+ 
+   $('#trmloan1').click(function(){
+   $('#bank1').is(':checked')
+
+   ba1=1;
+  })
+  
+ $('#trmloan').click(function(){
+   $('#Tbank1').attr("checked", "checked");
+  ba1=4;
+ });
+
+
+
+
+function bn_f(v){
+      ba1=v;
+
+     
+
+}
+ var id=0;
+ function work_vice(val,id) {
+                  
+                   if(id!=undefined){
+                     ba1=id;
+                   } 
+                  
+                 if(ba1==1){
+                   go1=parseInt(val);
+                 }else if(ba1==2){
+                   go2=parseInt(val);
+                 }else if(ba1==3){
+                   go3=parseInt(val);
+                 }else if(ba1==4){
+                   go4=parseInt(val);
+                 }else if(ba1==5){
+                   go5=parseInt(val);
+                 }else if(ba1==6){
+                   go6=parseInt(val);
+                 }else if(ba1==7){
+                   go7=parseInt(val);
+                 }else if(ba1==8){
+                   go8=parseInt(val);
+                 }
+ 
+ 
+                   
+            goTotal=go1+go2+go3+go4+go5+go6+go7+go8;
+            $('#bank_ID').empty().append('Total Saving<h3 class="tot-sav-txt">'+goTotal+'</h3>');
+} 
+
+ 
+
+ 
 </script>
 
 

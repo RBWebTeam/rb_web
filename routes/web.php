@@ -143,6 +143,8 @@ Route::get('thank-you',function (){return view('thank-you');});
 // Creditcardform
 Route::get('credit-card-form','CreditcardController@credit_card_form');
 Route::post('credit-submit','CreditcardController@credit_form_submit');
+Route::get('icici-credit-card-form','CreditcardController@icici_credit_card_form');
+Route::post('icici-credit-submit','CreditcardController@credit_form_submit');
 
 Route::get('no-record-found',function (){return view('no-record-found');});
 //Route::get('test',function (){return view('test_parse');});

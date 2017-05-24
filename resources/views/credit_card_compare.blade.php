@@ -6,139 +6,187 @@
     <h2 class="align-center loan-head">Credit Card</h2>
 	</div>
 	<div class="col-md-12 pad11">
-  
- 
-
-
-    <div class="table-responsive">
-	<table width="100%" border="1" class="tbl">
-    <tr style="background:#666; color:#fff; border-bottom:1px solid #999;">
+    <div class="table-responsive box-shadow">
+	<table width="100%" border="1" class="tbl table table-striped">
+    <tr>
         <td width="9%" class="upper dis-non">Select</td>
-        <td class="upper">Credit Card</td>
-        <td width="16%" class="upper">Fee</td>
-        <td width="16%" class="upper">Reward</td>
-        <td width="18%" class="upper">Joining Benefits</td>
-        <td width="17%" class="upper">Apply Now</td>
+        <td class="upper"><h4><b>Credit Card</b></h4></td>
+        <td width="16%" class="upper"><h4><b>Benefits</b></h4></td>
+        <td width="16%" class="upper"><h4><b>Joining Fee</b></h4></td>
+        <td width="18%" class="upper"><h4><b>Annual Fee</b></h4></td>
+        <td width="17%" class="upper"><h4><b>Apply Now</b></h4></td>
     </tr>
-
+     <!-- RBL Credit Card  --->
   <tr class="RBL-Card">
        <td class="dis-non"><input type="checkbox" name="cehckbox"/> <button style="display:none;" data-toggle="collapse" data-target="#0" aria-expanded="true">Details </button></td>
         <td><img src="{{url('images/rbl-credit-card.jpg')}}" alt="RBL Titanium Delight Card" title="RBL Titanium Delight Card" width="150" height="96" style="margin:0 auto; margin-bottom:5px;">
         <span>RBL Titanium Delight Card</span>
         </td>
-        <td>Annual Fees- Rs.1000/- plus applicable service tax ... <a data-toggle="popover" data-placement="bottom" data-trigger="hover" data-content="Annual Fees Reversal- On crossing Rs.1.5 lac annual spends in a year get annual fees reversal worth Rs.1000/" style="color:#39F; font-weight:bold;">More</a></td>
-        <td>Blockbuster Benefits Rs. 1000 ...
-          <a data-toggle="popover" data-placement="bottom" data-trigger="hover" data-content=" BookMyShow voucher as a welcome gift free movie ticket per month on crossing spends of Rs. 10,000 and 1 Additional free movie ticket every month on crossing spends of Rs. 15,000 10 Reward Points / Rs. 100 spent at BookMyShow and select dining partners." style="color:#39F; font-weight:bold;">More</a></td>
-        <td>Waiver of Convenience fee at BookMyShow...<a data-toggle="popover" data-placement="bottom" data-trigger="hover" data-content="for first 15 transactions every year. Accelerated Rewards Earn accelerated 20 reward points per Rs. 100 spent on all dining spends on Wednesdays Earn accelerated 10 reward points per Rs 100 spent on BookMyShow and select dining partners years)" style="color:#39F; font-weight:bold;">More</a> </td>
-        <td><a href="{{URL::to('contact-us')}}"><button>Apply Online</button></a></td>
+		<td>Blockbuster Benefits Rs. 1000 BookMyShow voucher as a welcome gift free movie ticket per month on crossing spends of Rs. 10,000 and 1 Additional free movie ticket every month 
+          <a data-toggle="popover" data-placement="bottom" data-trigger="hover" data-content=" on crossing spends of Rs. 15,000 10 Reward Points / Rs. 100 spent at BookMyShow and select dining partners. Waiver of Convenience fee at BookMyShow for first 15 transactions every year. Accelerated Rewards Earn accelerated 20 reward points per Rs. 100 spent on all dining spends on Wednesdays Earn accelerated 10 reward points per Rs 100 spent on BookMyShow and select dining partners years." style="color:#39F; font-weight:bold;">More</a></td>
+        <td class="v-align"></td>
+        
+        <td>Annual Fees- Rs.1000/- plus applicable service tax Annual Fees Reversal- On crossing Rs.1.5 lac annual spends in a year get annual fees reversal worth Rs.1000</td>
+        <td class="v-align"><a href="{{URL::to('contact-us')}}"><button>Apply Online</button></a></td>
   </tr>
   
- <!--  <tr id="0" class="collapse" aria-expanded="true"> 
-    <td colspan="6"><p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p></td>
-  </tr> -->
-  <!-- card 1 End -->
   <tr class="RBL-Card">
     <td class="dis-non"><input type="checkbox" name="cehckbox"/> <button style="display:none;" data-toggle="collapse" data-target="#1" aria-expanded="true">Details </button></td>
-    <td><img src="{{url('images/rbl-credit-card_1.jpg')}}" alt="RBL Platinum Maxima Card" title="RBL Platinum Maxima Card" width="150" height="96" style="margin:0 auto; margin-bottom:5px;">
+    <td><img src="{{url('images/rbl-credit-card_1.jpg')}}" alt="RBL Platinum Maxima Card" title="RBL Platinum Maxima Card" width="150" height="110" style="margin:0 auto; margin-bottom:5px;">
     <span>RBL Platinum Maxima Card</span>
     </td>
-    <td>Annual Fees- Rs 750 Joining Fees --<a data-toggle="popover" data-placement="bottom" data-trigger="hover" data-content="Nil Renewal Fees* Rs 750 Renewal Fees is waived on usage of Rs 1 lakh or more in a year " style="color:#39F; font-weight:bold;">More</a></td>
-    <td>Earn 1 reward point for every Rs 100  ...
-      <a data-toggle="popover" data-placement="bottom" data-trigger="hover" data-content=" spent on all purchases.Swipe within 60 days and get 2000 reward points. Spend Rs 10,000 and get additional 1000 reward points." style="color:#39F; font-weight:bold;">More</a></td>
-    <td>Use your card for purchases of Rs1.2 ...<a data-toggle="popover" data-placement="bottom" data-trigger="hover" data-content="Lakhs or more in a year and get a gift voucher of Rs1000.Fuel Surcharge waiver of 2.5%*.*Fuel Transactions between Rs 500 to Rs 4,000 will be eligible for waiver of fuel surcharge." style="color:#39F; font-weight:bold;">More</a> </td>
-    <td><a href="{{URL::to('contact-us')}}"><button>Apply Online</button></a></td>
+    
+    <td>Earn 1 reward point for every Rs 100 spent on all purchases.Swipe within 60 days and get 2000 reward points. Spend Rs 10,000 and get additional 1000 reward points.
+      <a data-toggle="popover" data-placement="bottom" data-trigger="hover" data-content="Use your card for purchases of Rs1.2 Lakhs or more in a year and get a gift voucher of Rs1000.Fuel Surcharge waiver of 2.5%*.*Fuel Transactions between Rs 500 to Rs 4,000 will be eligible for waiver of fuel surcharge." style="color:#39F; font-weight:bold;">More</a></td>
+     <td class="v-align"></td>
+	<td>Annual Fees- Rs 750 Joining Fees Nil Renewal Fees* Rs 750 Renewal Fees is waived on usage of Rs 1 lakh or more in a year.</td>
+    <td class="v-align"><a href="{{URL::to('contact-us')}}"><button>Apply Online</button></a></td>
   </tr>
-  <!--   <tr id="1" class="collapse" aria-expanded="true">
-    <td colspan="6"><p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p></td>
-  </tr> -->
-  <!-- card 2 End -->
-  
-  
-  
+
   <tr class="RBL-Card">
     <td class="dis-non"><input type="checkbox" name="cehckbox"/> <button style="display:none;" data-toggle="collapse" data-target="#2" aria-expanded="true">Details </button></td>
-    <td><img src="{{url('images/rbl-credit-card_1.jpg')}}" alt="RBL Platinum Delight Card" title="RBL Platinum Delight Card" width="150" height="96" style="margin:0 auto; margin-bottom:5px;">
+    <td><img src="{{url('images/rbl-credit-card_1.jpg')}}" alt="RBL Platinum Delight Card" title="RBL Platinum Delight Card" width="150" height="110" style="margin:0 auto; margin-bottom:5px;">
     <span>RBL Platinum Delight Card</span>
     </td>
-    <td>Annual Fees Rs 1000 ... <a data-toggle="popover" data-placement="bottom" data-trigger="hover" data-content="Joining Fees - Nil Renewal Fees-Next year fee waived if spend is greater than Rs 1.5 lakh in previous year" style="color:#39F; font-weight:bold;">More</a></td>
-    <td>Double reward points on all  ...
-      <a data-toggle="popover" data-placement="bottom" data-trigger="hover" data-content=" your spends during the weekends .2 reward points for every Rs 100 on all purchases during weekdays.Reward Points worth Rs 10,650 + Fuel waiver Rs 1,80." style="color:#39F; font-weight:bold;">More</a></td>
-    <td>Fuel Transaction between Rs 500...<a data-toggle="popover" data-placement="bottom" data-trigger="hover" data-content="to Rs 4,000 will be eligible for waiver of fuel surcharge" style="color:#39F; font-weight:bold;">More</a> </td>
-    <td><a href="{{URL::to('contact-us')}}"><button>Apply Online</button></a></td>
+    
+    <td>Double reward points on all your spends during the weekends .2 reward points for every Rs 100 on all purchases during weekdays.
+      <a data-toggle="popover" data-placement="bottom" data-trigger="hover" data-content="Reward Points worth Rs 10,650 + Fuel waiver Rs 1,80. Fuel Transaction between Rs 500 to Rs 4,000 will be eligible for waiver of fuel surcharge " style="color:#39F; font-weight:bold;">More</a></td>
+     <td class="v-align"></td>
+	
+	<td>Annual Fees Rs 1000 Joining Fees - Nil Renewal Fees-Next year fee waived if spend is greater than Rs 1.5 lakh in previous year</td>
+    <td class="v-align"><a href="{{URL::to('contact-us')}}"><button>Apply Online</button></a></td>
   </tr>
-   <!--  <tr id="2" class="collapse" aria-expanded="true">
-    <td colspan="6"><p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p></td>
-  </tr> -->
-  <!-- card 3 End -->
-  
-  
-  
-  
+
+    <!-- ICICI Credit Card  --->
   <tr class="ICICI-Card">
-    <td class="dis-non"><input type="checkbox" name="cehckbox"/> <button style="display:none;" data-toggle="collapse" data-target="#3" aria-expanded="true">Details </button></td>
-    <td><img src="{{url('images/icici-credit-card.jpg')}}" alt="ICICI Bank Coral Credit Card" title="ICICI Bank Coral Credit Card" width="150" height="96" style="margin:0 auto; margin-bottom:5px;">
-    <span>ICICI Bank Coral Credit Card</span>
-    </td>
-    <td>Annual Fee: ₹ 500 + service tax ... <a data-toggle="popover" data-placement="bottom" data-trigger="hover" data-content="(NIL when card spends are greater than ₹ 1,25,000 in the previous year). Joining Fee: ₹ 1,000 + service tax" style="color:#39F; font-weight:bold;">More</a></td>
-    <td>X cash rewards on dining, gro...
-      <a data-toggle="popover" data-placement="bottom" data-trigger="hover" data-content=" ceries and at supermarkets. Buy 1, get 1 movie ticket free, through the week on first come first serve basis." style="color:#39F; font-weight:bold;">More</a></td>
-    <td>Minimum 15% savings at ...<a data-toggle="popover" data-placement="bottom" data-trigger="hover" data-content="participating restaurants.Complimentary Provogue tie on joining" style="color:#39F; font-weight:bold;">More</a> </td>
-    <td><a href="{{URL::to('credit-card-form')}}"><button>Apply Online</button></a></td>
+     <td colspan="5" class="blue-bg-tbl"><h4>GEMSTONE</h4></td>
   </tr>
-  <!--   <tr id="3" class="collapse" aria-expanded="true">
-    <td colspan="6"><p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p></td>
-  </tr> -->
-  <!-- card 4 End -->
-  
-  
-  
+  <tr class="ICICI-Card">
+    <td class="dis-non" width="20%"><input type="checkbox" name="cehckbox"/> <button style="display:none;" data-toggle="collapse" data-target="#3" aria-expanded="true">Details </button></td>
+    <td><img src="{{url('images/CS/RD_1/SD_ICIC_Rohit_Khanna_Platinum_VISA_Card.jpg')}}" alt="ICICI Bank Coral Credit Card" title="ICICI Bank Coral Credit Card" width="150" height="100" style="margin:0 auto; margin-bottom:5px;">
+    <span>Platinum Chip</span>
+    </td>
+    <td>No Joining Fee. No Annual Fee, Earn 2 PAYBACK points on every Rs.100 spent <a data-toggle="popover" data-placement="bottom" data-trigger="hover" data-content="Minimum 15% savings on dining bill at over 2,500+ restaurants across India courtesy our Culinary Treats program. Save on 1% fuel surcharge, waived off at HPCL petrol pumps" style="color:#39F; font-weight:bold;">More</a></td>
+    <td  class="v-align"></td>
+    <td class="v-align"></td>
+    <td class="v-align"><a href="{{URL::to('credit-card-form')}}"><button>Apply Online</button></a></td>
+  </tr>
+
   
   <tr class="ICICI-Card">
     <td class="dis-non"><input type="checkbox" name="cehckbox"/> <button style="display:none;" data-toggle="collapse" data-target="#4" aria-expanded="true">Details </button></td>
-    <td><img src="{{url('images/icici-credit-card.jpg')}}" alt="ICICI Bank HPCL Coral Visa/MasterCard Credit Cards" title="ICICI Bank HPCL Coral Visa/MasterCard Credit Cards" width="150" height="96" style="margin:0 auto; margin-bottom:5px;">
-    <span>ICICI Bank HPCL Coral Visa/MasterCard Credit Cards</span>
+    <td><img src="{{url('images/CS/RD/DA_Coral-Mastercard-MasterCard_1.jpg')}}" alt="ICICI Bank HPCL Coral Visa/MasterCard Credit Cards" title="ICICI Bank HPCL Coral Visa/MasterCard Credit Cards" width="150" height="96" style="margin:0 auto; margin-bottom:5px;">
+    <span>Coral Contactless</span>
     </td>
-    <td>Joining Fee :₹ 199 + service tax ... <a data-toggle="popover" data-placement="bottom" data-trigger="hover" data-content="Annual Fee :₹ 199 + service tax (NIL when retail spends are greater than ₹ 50,000 in the previous year)" style="color:#39F; font-weight:bold;">More</a></td>
-    <td>Reduce fuel bills with 2.5% cashback and ...
-      <a data-toggle="popover" data-placement="bottom" data-trigger="hover" data-content=" 2.5% fuel surcharge waiver.Earn free fuel with 2.5X rewards on fuel purchases.Up to ₹ 200 off every month on movie tickets." style="color:#39F; font-weight:bold;">More</a></td>
-    <td> Complimentary airport lounge...<a data-toggle="popover" data-placement="bottom" data-trigger="hover" data-content="access.Minimum 15% savings at leading restaurants" style="color:#39F; font-weight:bold;">More</a> </td>
-    <td><a href="{{URL::to('credit-card-form')}}"><button>Apply Online</button></a></td>
+    <td>Built-in MasterCard contactless technology to make quick and secure payments at retail outlets<a data-toggle="popover" data-placement="bottom" data-trigger="hover" data-content="2X Cash rewards on dining, groceries and at supermarkets. Complimentary Provogue tie on joining. 1 complimentary domestic airport lounge visits per quarter. 2 complimentary movies every month under the Buy One Get One Offer through www.bookmyshow.com, Minimum 15% savings on dining bill at over 2,500+ restaurants across India courtesy our Culinary Treats program. " style="color:#39F; font-weight:bold;"> More</a></td>
+    <td>You pay a Joining Fee of Rs. 1,000 + service tax and get a complimentary tie worth Rs. 999 from Provogue.
+      <a data-toggle="popover" data-placement="bottom" data-trigger="hover" data-content=" This will be directly delivered to you within 30 days of payment of the Joining Fee." style="color:#39F; font-weight:bold;"> More</a></td>
+    <td>You pay an Annual Fee of Rs.500 + service tax from 2nd year onwards - waived off if you spend more than Rs. 1,50,000 in the previous year</td>
+    <td class="v-align"><a href="{{URL::to('credit-card-form')}}"><button>Apply Online</button></a></td>
   </tr>
-   <!--  <tr id="4" class="collapse" aria-expanded="true">
-    <td colspan="6"><p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p></td>
-  </tr> -->
-  <!-- card 5 End -->
-  
-  
   
   
   <tr class="ICICI-Card">
     <td class="dis-non"><input type="checkbox" name="cehckbox"/> <button style="display:none;" data-toggle="collapse" data-target="#5" aria-expanded="true">Details </button></td>
-    <td><img src="{{url('images/icici-credit-card-ruby.jpg')}}" alt="ICICI Ruby Credit Card" title="ICICI Ruby Credit Card" width="150" height="96" style="margin:0 auto; margin-bottom:5px;">
-    <span>ICICI Bank Rubyx Credit Cards</span>
+    <td><img src="{{url('images/CS/RD/Rubyx-MasterCard-02.jpg')}}" alt="ICICI Ruby Credit Card" title="ICICI Ruby Credit Card" width="150" height="96" style="margin:0 auto; margin-bottom:5px;">
+    <span>Rubyx</span>
     </td>
-    <td>Joining Fee: ₹ 3,000 + service tax ... <a data-toggle="popover" data-placement="bottom" data-trigger="hover" data-content="Annual Fee: ₹ 2,000 + service tax (NIL when card spends are greater than ₹ 2,50,000 in the previous year)" style="color:#39F; font-weight:bold;">More</a></td>
-    <td>India's first dual Platinum Credit Card...
-      <a data-toggle="popover" data-placement="bottom" data-trigger="hover" data-content=" Benefits from American Express and MasterCard Flexible reward plans Exclusive privileges across entertainment, dining, wellness and golf`." style="color:#39F; font-weight:bold;">More</a></td>
-    <td>Complimentary gift of ...<a data-toggle="popover" data-placement="bottom" data-trigger="hover" data-content="Sennheiser HD219 Headphones on the payment of Joining Fee" style="color:#39F; font-weight:bold;">More</a> </td>
-    <td><a href="{{URL::to('credit-card-form')}}"><button>Apply Online</button></a></td>
+    <td>Complimentary set of Sennheiser HD221 Headphones upon joining. Complimentary round of golf every month at the golf course of your choice based on eligible spends on your card<a data-toggle="popover" data-placement="bottom" data-trigger="hover" data-content="2 complimentary movies every month under the Buy One Get One Offer through www.bookmyshow.com, 2 complimentary domestic airport lounge visits per quarter courtesy of MasterCard and 10 domestic airport lounge visits per year courtesy of American Express. Minimum 15% savings on dining bill at over 2,500+ restaurants across India courtesy our Culinary Treats program." style="color:#39F; font-weight:bold;"> More..</a></td>
+	
+    <td>You pay a Joining Fee of Rs.3,000 + service tax and get a complimentary set of Sennheiser HD221 Headphones directly delivered to you within 30 days of payment</td>
+    <td>You Pay an Annual Fee of Rs.2,000 + service tax from 2nd year onwards. This fee is waived off if you spend more than Rs. 3,00,000 in the previous year.</td>
+	
+    <td class="v-align"><a href="{{URL::to('credit-card-form')}}"><button>Apply Online</button></a></td>
   </tr>
-    <!-- <tr id="5" class="collapse" aria-expanded="true">
-    <td colspan="6"><p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p></td>
-  </tr> -->
-  <!-- card 6 End -->
+  
+  
+  <tr class="ICICI-Card">
+    <td class="dis-non"><input type="checkbox" name="cehckbox"/> <button style="display:none;" data-toggle="collapse" data-target="#5" aria-expanded="true">Details </button></td>
+    <td><img src="{{url('images/CS/RD/ICICI-BANK-SAPPHIRO-AMEX-CHIP-01.jpg')}}" alt="ICICI Ruby Credit Card" title="ICICI Ruby Credit Card" width="150" height="110" style="margin:0 auto; margin-bottom:5px;">
+    <span>Sapphiro</span>
+    </td>
+    <td>Get complimentary All New Kindle on payment of the Joining fee. Complimentary membership to the Priority Pass lounge access programme <a data-toggle="popover" data-placement="bottom" data-trigger="hover" data-content="Unlimited Complimentary access to select airport lounges in India, courtesy of MasterCard and American Express. Complimentary round of golf every month at the golf course of your choice based on eligible spends on your card. 2 Complimentary movie tickets every month under the Buy One Get One Offer through www.bookmyshow.com" style="color:#39F; font-weight:bold;">More</a></td>
+    <td>You pay a Joining Fee of Rs. 6,500 + service tax and get a complimentary All New Kindle delivered to you within 30 days of payment of the Joining Fee
+      </td>
+    <td>You pay an Annual Fee of Rs. 3,500 + service tax from 2nd year onwards - waived off if you spend more than Rs. 6,00,000 in the previous year.</td>
+	
+    <td class="v-align"><a href="{{URL::to('credit-card-form')}}"><button>Apply Online</button></a></td>
+  </tr>
+   
+    <tr class="ICICI-Card">
+     <td colspan="5" class="brown-bg-tbl"><h4>JET</h4></td>
+  </tr>
+   <tr class="ICICI-Card">
+    <td class="dis-non"><input type="checkbox" name="cehckbox"/> <button style="display:none;" data-toggle="collapse" data-target="#5" aria-expanded="true">Details </button></td>
+    <td><img src="{{url('images/CS/RD/JET-CORAL-VISA.jpg')}}" alt="ICICI Ruby Credit Card" title="ICICI Ruby Credit Card" width="150" height="110" style="margin:0 auto; margin-bottom:5px;">
+    <span>Coral</span>
+    </td>
+    <td>2,500 welcome bonus JPMiles on joining. 1,250 renewal bonus JPMiles every year. Complimentary airport lounge access<a data-toggle="popover" data-placement="bottom" data-trigger="hover" data-content="Buy one get one free movie ticket through the week at www.bookmyshow.com, Minimum 15% savings on dining bill at over 2,500+ restaurants across India courtesy our Culinary Treats program." style="color:#39F; font-weight:bold;"> More</a></td>
+    <td class="v-align">Rs.1250 + ST</td>
+    <td class="v-align">Rs.1250 + ST</td>
+    <td class="v-align"><a href="{{URL::to('credit-card-form')}}"><button>Apply Online</button></a></td>
+  </tr>
+  
+  <tr class="ICICI-Card">
+    <td class="dis-non"><input type="checkbox" name="cehckbox"/> <button style="display:none;" data-toggle="collapse" data-target="#5" aria-expanded="true">Details </button></td>
+    <td><img src="{{url('images/CS/RD/JET-CORAL-AMEX.jpg')}}" alt="ICICI Ruby Credit Card" title="ICICI Ruby Credit Card" width="150" height="110" style="margin:0 auto; margin-bottom:5px;">
+    <span>Rubyx</span>
+    </td>
+    <td>5,000 welcome bonus JPMiles on joining. 2,500 renewal bonus JPMiles every year. Complimentary airport lounge access.<a data-toggle="popover" data-placement="bottom" data-trigger="hover" data-content="Earn upto 5 JPMiles for every `100 spent on the card. Buy one get one free movie ticket through the week at www.bookmyshow.com, Minimum 15% savings on dining bill at over 2,500+ restaurants across India courtesy our Culinary Treats program." style="color:#39F; font-weight:bold;"> More</a></td>
+    <td class="v-align">Rs.2500 + ST</td>
+    <td class="v-align">Rs. 2500 + ST</td>
+    <td class="v-align"><a href="{{URL::to('credit-card-form')}}"><button>Apply Online</button></a></td>
+  </tr>
+  <tr class="ICICI-Card">
+    <td class="dis-non"><input type="checkbox" name="cehckbox"/> <button style="display:none;" data-toggle="collapse" data-target="#5" aria-expanded="true">Details </button></td>
+    <td><img src="{{url('images/CS/RD/JET-SAPPHIRO-VISA.jpg')}}" alt="ICICI Ruby Credit Card" title="ICICI Ruby Credit Card" width="150" height="110" style="margin:0 auto; margin-bottom:5px;">
+    <span>Sapphiro</span>
+    </td>
+    <td>10,000 welcome bonus JPMiles on joining. 5,000 renewal bonus JPMiles every year. Complimentary airport lounge access.<a data-toggle="popover" data-placement="bottom" data-trigger="hover" data-content="Earn upto 7 JPMiles for every `100 spent on the card. Complimentary golf rounds, movie tickets, discounts on dining and more!" style="color:#39F; font-weight:bold;"> More</a></td>
+    <td class="v-align">Rs.5000 + ST</td>
+    <td class="v-align">Rs.5000 + ST</td>
+    <td class="v-align"><a href="{{URL::to('credit-card-form')}}"><button>Apply Online</button></a></td>
+  </tr>
+  
+  
+  <tr class="ICICI-Card">
+     <td colspan="5" class="yellow-bg-tbl"><h4>FERRARI</h4></td>
+  </tr>
+   <tr class="ICICI-Card">
+    <td class="dis-non"><input type="checkbox" name="cehckbox"/> <button style="display:none;" data-toggle="collapse" data-target="#5" aria-expanded="true">Details </button></td>
+    <td><img src="{{url('images/CS/RD_1/SS_ICICI-RED-STRAIGHT-CARD-MERGED_DateChange.jpg')}}" alt="ICICI Ruby Credit Card" title="ICICI Ruby Credit Card" width="150" height="110" style="margin:0 auto; margin-bottom:5px;">
+    <span>Platinum</span>
+    </td>
+    <td>Discounts on Ferrari merchandise at the Online Ferrari Store. 1 complimentary domestic Airport Lounge visit per quarter.<a data-toggle="popover" data-placement="bottom" data-trigger="hover" data-content="2 complimentary movie tickets every month under the Buy 1, Get 1 offer from BookMyShow. Minimum 15% savings on dining bill at over 2,500+ restaurants across India courtesy our Culinary Treats program. Waiver of 1% on fuel surcharge valid on a maximum spend of ` 4000 per transaction at all HPCL pumps." style="color:#39F; font-weight:bold;"> More</a></td>
+    <td>You pay a Joining Fee of Rs. 499 + Service Tax </td>
+    <td>You pay an Annual Fee of Rs. 499 + Service Tax from the second year onwards. The Annual Fee is waived off, if you spend more than Rs.1,25,000 in the previous year.</td>
+    <td class="v-align"><a href="{{URL::to('credit-card-form')}}"><button>Apply Online</button></a></td>
+  </tr>
+  <tr class="ICICI-Card">
+    <td class="dis-non"><input type="checkbox" name="cehckbox"/> <button style="display:none;" data-toggle="collapse" data-target="#5" aria-expanded="true">Details </button></td>
+    <td><img src="{{url('images/CS/RD_1/SS_ICICI-BLACK-STRAIGHT-CARD_R1_EX.jpg')}}" alt="ICICI Ruby Credit Card" title="ICICI Ruby Credit Card" width="150" height="110" style="margin:0 auto; margin-bottom:5px;">
+    <span>Signature</span>
+    </td>
+    <td>Complimentary Access to domestic airport lounges in India. Buy One Get One’ offer on www.bookmyshow.com<a data-toggle="popover" data-placement="bottom" data-trigger="hover" data-content="Minimum 15% savings on dining bill at over 2,500+ restaurants across India courtesy our Culinary Treats program. Waiver of 1% on fuel surcharge valid on a maximum spend of ` 4000 per transaction at all HPCL pumps" style="color:#39F; font-weight:bold;"> More</a></td>
+    <td>You pay a Joining Fee of Rs.3,999 + Service Tax and get a complimentary Scuderia Ferrari watch. This will be directly delivered to you within 30 days of payment of the Joining Fee.</td>
+    <td>You pay an Annual Fee of Rs. 999 + Service Tax from the second year onwards. The Annual Fee is waived off, if you spend more than Rs. 2,50,000 in the previous year.</td>
+    <td class="v-align"><a href="{{URL::to('credit-card-form')}}"><button>Apply Online</button></a></td>
+  </tr>
   
 
+    <!-- HDFC Credit Card  --->
+  
 <tr class="HDFC-Card">
     <td class="dis-non"><input type="checkbox" name="cehckbox"/> <button style="display:none;" data-toggle="collapse" data-target="#6" aria-expanded="true">Details </button></td>
-    <td><img src="{{url('images/hdfc-credit-card.jpg')}}" alt="HDFC JetPrivilege Credit Card" title="HDFC JetPrivilege Credit Card" width="150" height="96" style="margin:0 auto; margin-bottom:5px;">
+    <td><img src="{{url('images/hdfc-credit-card.jpg')}}" alt="HDFC JetPrivilege Credit Card" title="HDFC JetPrivilege Credit Card" width="150" height="110" style="margin:0 auto; margin-bottom:5px;">
     <span>JetPrivilege HDFC Bank World</span>
     </td>
-    <td>First Year and Renewal Fee on ... <a data-toggle="popover" data-placement="bottom" data-trigger="hover" data-content="JetPrivilege HDFC Bank World Credit Card is Rs, 2,500/- (Service Tax as applicable)" style="color:#39F; font-weight:bold;">More</a></td>
-    <td>Welcome Benefit of up to 10,000 Bonus  ...
-      <a data-toggle="popover" data-placement="bottom" data-trigger="hover" data-content=" JP Miles and one way (base fare waived) Jet Airways ticket. Earn 6 JP Miles for every Rs. 150 spent and 18 JP Miles on every flight booked on www.jetairways.com." style="color:#39F; font-weight:bold;">More</a></td>
-    <td>Dedicated Check-in with additional baggage allowance....<a data-toggle="popover" data-placement="bottom" data-trigger="hover" data-content="Lounge access through Priority Pass and MasterCard Lounge Program.Get 1 JP Tier Point on every 2 lac spends. Faster way to move to higher JP Tier.Enjoy Lounge access at airport in India or overseas.Get Renewal Fee waived if you spend Rs. 3 lac in 12 months prior to renewal.Get extended validity of JP Miles for 5 years" style="color:#39F; font-weight:bold;">More</a> </td>
-    <td><a href="{{URL::to('contact-us')}}"><button>Apply Online</button></a></td>
+    
+    <td>Welcome Benefit of up to 10,000 Bonus JP Miles and one way (base fare waived) Jet Airways ticket. Earn 6 JP Miles .
+      <a data-toggle="popover" data-placement="bottom" data-trigger="hover" data-content="for every Rs. 150 spent and 18 JP Miles on every flight booked on www.jetairways.com Dedicated Check-in with additional baggage allowance Lounge access through Priority Pass and MasterCard Lounge Program.Get 1 JP Tier Point on every 2 lac spends. Faster way to move to higher JP Tier.Enjoy Lounge access at airport in India or overseas.Get Renewal Fee waived if you spend Rs. 3 lac in 12 months prior to renewal.Get extended validity of JP Miles for 5 years" style="color:#39F; font-weight:bold;">More</a></td>
+    <td class="v-align"></td>
+	<td>First Year and Renewal Fee on JetPrivilege HDFC Bank World Credit Card is Rs, 2,500/- (Service Tax as applicable)</td>
+    <td class="v-align"><a href="{{URL::to('contact-us')}}"><button>Apply Online</button></a></td>
   </tr>
    <!--  <tr id="6" class="collapse" aria-expanded="true">
     <td colspan="6"><p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p></td>

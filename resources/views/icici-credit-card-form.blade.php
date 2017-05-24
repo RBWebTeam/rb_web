@@ -28,7 +28,7 @@
 <script src="js/jquery-ui.js" ></script>
     
 <script src="js/jquery.mask.js"></script>
-<script src="js/jquery.validate.min.js"></script>
+<script src="js/icici_js/jquery.validate.min.js"></script>
   <style>
   .inp-fld {margin-bottom:10px; height:50px; position:relative;}
   .emp-nat span {padding:3px 5px;}
@@ -62,12 +62,46 @@ $(".top").click(function() {
         <section class="out-dv">
       <div class="row">
       <div class="col-md-12">
-      <!-- <?php
-    if(isset($_GET['datacom'])){ ?>
       
-    <?php }
-    ?> -->
       <h3 class="text-center pg-titl">Apply For ICICI Credit Card</h3>
+          <div class="col-xs-6 form-padding">
+                    <select class="form-control inp-fld" name="net_annual_income" id="net_annual_income" required required>
+                      <option value="">NET ANNUAL INCOME</option>
+                        <option value=">2.5Lacs">2.5Lacs</option>
+                        <option value=">5.0Lacs">5.0Lacs</option>
+                        <option value=">10Lacs">10Lacs</option>
+                        <option value=">15Lacs">15Lacs</option>
+                    </select> 
+          </div>
+
+          <div class="col-xs-6 form-padding" style='display:none;' id="credit_card_type">
+                    <select class="form-control inp-fld" name="your_interests" id="your_interests" required>
+                      <option value="">YOUR INTERESTS</option>
+                        <option  value="Lifestyle">Lifestyle</option>
+                        <option  value="Travel">Travel</option>
+                        <option  value="Motorsports">Motorsports</option>
+                      
+                    </select> 
+          </div>
+
+          <div class="col-xs-6 form-padding" style='display:none;' id="credit_card_name">
+                    <select class="form-control inp-fld" name="cards" id="cards" required>Ferrari Platinum Credit Card
+                    Ferrari Signature Credit Card
+                      <option value="">CREDIT CARDS</option>
+                      <option  value="Platinum Chip Credit Card">Platinum Chip Credit Card</option>
+                      <option  value="Coral Credit Card">Coral Credit Card</option>
+                      <option  value="Jet Coral Credit Card">Jet Coral Credit Card</option>
+                      <option  value="Ferrari Platinum Credit Card">Ferrari Platinum Credit Card</option>
+                       <option value="Rubyx Credit Card">Rubyx Credit Card</option>
+                       <option value="Sapphiro Credit Card">Sapphiro Credit Card</option>
+                       <option value="Jet Rubyx Credit Card">Jet Rubyx Credit Card</option>
+                       <option value="Jet Sapphiro Credit Card">Jet Sapphiro Credit Card</option>
+                       <option value="Ferrari Platinum Credit Card">Ferrari Platinum Credit Card</option>
+                       <option value=" Ferrari Signature Credit Card"> Ferrari Signature Credit Card</option>
+                      
+                    </select> 
+          </div>
+
           <div class="col-xs-6 form-padding">
                     <div class="form-control inp-fld">
                       <input type="text" name="ApplicantFirstName" id="ApplicantFirstName" class="form-input-new" onkeypress="return AllowAlphabet(event)" required >
@@ -126,6 +160,20 @@ $(".top").click(function() {
                     </div>  
                              </div>
 
+                    <div class="col-xs-6 form-padding">
+                    <select class="form-control inp-fld" name="no_of_dependents" id="no_of_dependents" required>
+                      <option value="">NO OF DEPENDENTS</option>
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="5+">5+</option>
+                    </select> 
+                  </div>
+         
+
         <div class="col-xs-6 form-padding">
                     <div class="form-control" style="height:50px;position: relative; padding: 0px 0px; margin-bottom:10px;">
                       <div class="padd-lef gender">
@@ -147,7 +195,6 @@ $(".top").click(function() {
                 </div>
                     </div>  
                 </div>
-
                 
                 <div class="col-xs-6 form-padding">
                     <div class="form-control" style="height:50px; position: relative; padding: 0px 0px;">
@@ -159,16 +206,36 @@ $(".top").click(function() {
                     </div>  
                 </div>
 
-          <div class="col-xs-6 form-padding">
-                    <div class="form-control" style="height:50px; position: relative; padding: 0px 0px;">
-                      <span style="position: absolute; z-index: 999; margin: 1px 0 0 8px; font-size: 10px; color: #bababa;">Employment Nature</span>
+              <div class="col-xs-6 form-padding">
+                        <div class="form-control" style="height:50px; position: relative; padding: 0px 0px;">
+                          <span style="position: absolute; z-index: 999; margin: 1px 0 0 8px; font-size: 10px; color: #bababa;">Employment Nature</span>
                       
                       <div class="btn-grp mrg-top m-status emp-nat" data-toggle="buttons">
-      <span class="btn btn-primary outer-brd active"><input type="radio" name="CustomerProfile" checked value="Salaried">Salaried</span>
-      <span class="btn btn-primary outer-brd"><input type="radio" name="CustomerProfile" value="Selfemployed" >Self-Emp</span>
-         </div>
+                      <span class="btn btn-primary outer-brd active"><input type="radio" name="CustomerProfile" checked value="Salaried">Salaried</span>
+                      <span class="btn btn-primary outer-brd"><input type="radio" name="CustomerProfile" value="Selfemployed" >Self-Emp</span>
+                         </div>
                     </div>
                   </div>
+
+            <div class="col-xs-6 form-padding">
+                    <select class="form-control inp-fld" name="preferred_address" id="preferred_address" required>
+                      <option value="">PREFERRED MAILING ADDRESS</option>
+                      <option value="Residence">Residence</option>
+                      <option value="Office">Office</option>
+                    </select> 
+            </div>
+
+            <div class="col-xs-6 form-padding">
+                        <div class="form-control" style="height:50px; position: relative; padding: 0px 0px;">
+                        <span style="position: absolute; z-index: 999; margin: 1px 0 0 8px; font-size: 10px; color: #bababa;">I want to apply for a Supplementary Card</span>
+                      
+                      <div class="btn-grp mrg-top m-status emp-nat" data-toggle="buttons">
+                      <span class="btn btn-primary outer-brd active"><input type="radio" name="supplementary_card" checked value="Yes">Yes</span>
+                      <span class="btn btn-primary outer-brd"><input type="radio" name="supplementary_card" value="No" >No</span>
+                      </div>
+                      </div>
+            </div>
+      
         
             <h4 class="txt-tlt pull-left">Company Name</h4> 
             
@@ -179,8 +246,71 @@ $(".top").click(function() {
                       <label class="form-label-new">Company Name</label>
                       <div class="clear"></div>
                     </div>  
+            </div>
+             
+             <div class="col-xs-6 form-padding">
+                    <div class="form-control inp-fld">
+                      <input type="text" name="designation" id="designation" class="form-input-new" onkeypress="return AllowAlphabet(event)" required >
+                      <span class="highlight"></span><span class="bar"></span>
+                      <label class="form-label-new">Designation</label>
+                      <div class="clear"></div>
+                    </div>  
+             </div>
+
+             <div class="col-xs-6 form-padding">
+                    <div class="form-control inp-fld">
+                      <input type="text" id="work_email" name="work_email" class="form-input-new" oninput="mail('work_email')"  required >
+                       <span id="email" style="display:none;color: red;">Please Enter Valid Email Id.</span>
+                      <span class="highlight"></span><span class="bar"></span>
+                      <label class="form-label-new">Work Email</label>
+                      <div class="clear"></div>
+                    </div>  
                   </div>
-          <div class="col-xs-6 form-padding">
+
+                  <div class="col-xs-6 form-padding">
+                    <div class="form-control inp-fld">
+                      <input type="text" class="form-input-new" id="work_STDCode" name="work_STDCode"  required  onkeypress="return fnAllowNumeric(event)" maxlength="5" >
+                      <span class="highlight"></span><span class="bar"></span>
+                      <label class="form-label-new">Work Area STD Code</label>
+                      <div class="clear"></div>
+                    </div>  
+                  </div>
+
+                  <div class="col-xs-6 form-padding">
+                    <div class="form-control inp-fld">
+                      <input type="text" class="form-input-new" id="work_number" name="work_number"  required  onkeypress="return fnAllowNumeric(event)" maxlength="10" >
+                      <span class="highlight"></span><span class="bar"></span>
+                      <label class="form-label-new">Phone Number</label>
+                      <div class="clear"></div>
+                    </div>  
+                  </div>
+
+                  <div class="col-xs-6 form-padding">
+                    <select class="form-control inp-fld" name="type_of_company" id="type_of_company" required>
+                      <option value="">TYPE OF COMPANY</option>
+                      <option value="Central Government">Central Government</option>
+                      <option value="MNC">MNC</option>
+                      <option value="Partnership">Partnership</option>
+                      <option value="Private Limited">Private Limited</option>
+                      <option value="Proprietorship">Proprietorship</option>
+                      <option value="PSU">PSU</option>
+                      <option value="Public Limited">Public Limited</option>
+                      <option value="State Government">State Government</option>
+                    </select> 
+            </div>
+                  
+                  <div class="col-xs-6 form-padding">
+                    <select class="form-control inp-fld" name="highest_education" id="highest_education" required>
+                      <option value="">HIGHEST EDUCATIONAL QUALIFICATIONS</option>
+                      <option value="Under Graduate">Under Graduate</option>
+                      <option value="Graduate/Diploma">Graduate/Diploma</option>
+                      <option value="Post Graduate">Post Graduate</option>
+                      <option value="Professional">Professional</option>
+                      
+                    </select> 
+            </div>
+             
+              <div class="col-xs-6 form-padding">
                     <div class="form-control inp-fld">
                       <input type="text" id="Income" name="Income" class="form-input-new" onkeypress="return fnAllowNumeric(event)"  required >
                       <span class="highlight"></span><span class="bar"></span>
@@ -190,13 +320,15 @@ $(".top").click(function() {
                   </div>
           <div class="col-xs-6 form-padding">
                     <select class="form-control inp-fld" name="ICICIBankRelationship" id="ICICIBankRelationship" required required>
-                      <option value="">ICICIBankRelationship</option>
-                          <option value="Salary">Salary</option>
+                      <option value="">ICICI BANK RELATIONSHIP</option>
+                        <option value="Salary">Salary</option>
                         <option value="Saving">Saving</option>
                         <option value="Loan">Loan</option>
                         <option value="Norelationship">Norelationship</option>
                     </select> 
-                               </div>
+          </div>
+
+
           <div class="col-xs-6 form-padding">
                     <div class="form-control inp-fld">
                       <input type="text" name="Total_Exp" id="Total_Exp" class="form-input-new" onkeypress="return fnAllowNumeric(event)" required >
@@ -225,7 +357,7 @@ $(".top").click(function() {
                     <div class="form-control inp-fld">
                       <input type="text" name="ResidenceAddress1" id="ResidenceAddress1" class="form-input-new" required >
                       <span class="highlight"></span><span class="bar"></span>
-                      <label class="form-label-new">flat No / Plot No / House No*</label>
+                      <label class="form-label-new">Flat No / Plot No / House No*</label>
                       <div class="clear"></div>
                     </div>  
                   </div>
@@ -269,6 +401,19 @@ $(".top").click(function() {
                       <div class="clear"></div>
                     </div>  
                   </div>
+
+          <div class="col-xs-6 form-padding">
+                    <select class="form-control inp-fld" name="type_current" id="type_current" required>
+                      <option value="">RESIDENCE TYPE</option>
+                     <option value="Owned_by_self/spouse">Owned by self/spouse</option>
+                      <option value="Owned_by_parents/siblings">Owned by parents/siblings</option>
+                      <option value="Rented_with_Family">Rented with Family</option>
+                      <option value="Rented_with_Friends">Rented with Friends</option>
+                      <option value="Rented_staying_alone">Rented staying alone</option>
+                      <option value="Paying_guest/Hostel">Paying guest/Hostel</option>
+                      <option value="Company_Provided">Company Provided</option>
+                    </select> 
+            </div>
 
                   <h4 class="txt-tlt pull-left">Permanent Address Details</h4> 
           <div class="col-xs-6 form-padding">
@@ -320,6 +465,21 @@ $(".top").click(function() {
                     </div>  
                   </div>
 
+          
+
+            <div class="col-xs-6 form-padding">
+                    <select class="form-control inp-fld" name="per_res_type" id="per_res_type" required>
+                      <option value="">RESIDENCE TYPE</option>
+                      <option value="Owned_by_self/spouse">Owned by self/spouse</option>
+                      <option value="Owned_by_parents/siblings">Owned by parents/siblings</option>
+                      <option value="Rented_with_Family">Rented with Family</option>
+                      <option value="Rented_with_Friends">Rented with Friends</option>
+                      <option value="Rented_staying_alone">Rented staying alone</option>
+                      <option value="Paying_guest/Hostel">Paying guest/Hostel</option>
+                      <option value="Company_Provided">Company Provided</option>
+                    </select> 
+            </div> 
+
                    <div class="col-xs-6 form-padding">
                     <div class="form-control inp-fld">
                       <input type="text" id="email_id" name="email_id" class="form-input-new" oninput="email('email_id')"  required >
@@ -349,7 +509,7 @@ $(".top").click(function() {
                   </div>
           <div class="col-xs-6 form-padding">
                     <div class="form-control inp-fld">
-                      <input type="text" class="form-input-new" id="STDCode" name="STDCode"  required  onkeypress="return fnAllowNumeric(event)" maxlength="4" >
+                      <input type="text" class="form-input-new" id="STDCode" name="STDCode"  required  onkeypress="return fnAllowNumeric(event)" maxlength="5" >
                       <span class="highlight"></span><span class="bar"></span>
                       <label class="form-label-new">STD Code</label>
                       <div class="clear"></div>
@@ -382,6 +542,46 @@ $(".top").click(function() {
                       <div id="pannumber" style="display:none;color: red;">Oops.Please Enter Valid Pan Number.!!</div>
                     </div>  
                   </div>
+
+                  <div class="col-xs-6 form-padding">
+                        <div class="form-control" style="height:50px; position: relative; padding: 0px 0px;">
+                        <span style="position: absolute; z-index: 999; margin: 1px 0 0 8px; font-size: 10px; color: #bababa;">Do You Have A Credit Card</span>
+                      
+                      <div class="btn-grp mrg-top m-status emp-nat" data-toggle="buttons">
+                      <span class="btn btn-primary outer-brd active"><input type="radio" id="have" name="have_credit_card" checked value="Yes">Yes</span>
+                      <span class="btn btn-primary outer-brd"><input type="radio" name="have_credit_card" id="not_have" value="No" >No</span>
+                      </div>
+                      </div>
+            </div>
+            <div style="display: none;" id="credit_details" >
+            <h4 class="txt-tlt pull-left">Please input details of your Credit Card having Maximum Credit Limit </h4>
+           
+            <div class="col-xs-6 form-padding" >
+                    <div class="form-control inp-fld">
+                      <input type="text" name="previous_bank" id="previous_bank" class="form-input-new" onkeypress="return AllowAlphabet(event)" required >
+                      <span class="highlight"></span><span class="bar"></span>
+                      <label class="form-label-new">Select Bank</label>
+                      <div class="clear"></div>
+                    </div>  
+                   </div>
+
+                   <div class="col-xs-6 form-padding" >
+                    <div class="form-control" style="margin-bottom:10px; height:50px; position:relative; padding: 0;">
+                      
+                      <input type="text" class="form-control lastReportedsince" id="credit_date" name="credit_date" placeholder="Member Since*" required>
+                    </div>
+                  </div>
+
+                  <div class="col-xs-6 form-padding">
+                    <div class="form-control inp-fld">
+                      <input type="text" id="credit_limit" name="credit_limit" class="form-input-new" onkeypress="return fnAllowNumeric(event)"  required >
+                      <span class="highlight"></span><span class="bar"></span>
+                      <label class="form-label-new">Credit Limit*</label>
+                      <div class="clear"></div>
+                    </div>  
+                  </div>
+                  </div>
+
           <div class="col-md-12 pull-left text-justify">
             <p class="p-padding"><input type="checkbox" name="terms"  class="redio-lft"/>&nbsp; I hereby confirm that I have read and understood the Rupeeboss Terms and Conditions applicable to this service and that all the details furnished by me above are true and correct. I further provide consent to Rupeeboss and its affiliates to contact me with reference to financial products and this consent shall override any registration with DNC/NDNC.</p>
             
@@ -412,7 +612,7 @@ $(".top").click(function() {
       </div>
       
       <div class="modal-footer">
-        <a href="http://erp.rupeeboss.com/Credit_Card_Upload_Docs.aspx?App_Id=drop&CardType=ICICI" type="button" id="upload" name="upload" class="btn btn-primary" >Proceed to Document Upload</a>
+        <a type="button" id="upload" name="upload" class="btn btn-primary" onclick="Redirect();" >Proceed to Document Upload</a>
         
       </div>
     </div>
@@ -866,3 +1066,243 @@ $(document).ready(function(){
   }
 }
 </script>
+
+<script type="text/javascript">
+  function mail(obj,val){
+    // console.log(obj);
+    if(obj=='work_email' ){
+                   var str =$('#work_email').val();
+                   var emailPattern = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/; 
+                   var res = str.match(emailPattern);
+                   if(res){
+                     // console.log('Pancard is valid one.!!');
+                      $('#email').hide();
+
+                  }else{
+                    // console.log('Oops.Please Enter Valid Pan Number.!!');
+                    $('#emai').show();
+
+                    return false;
+                  }
+                  
+  }
+}
+</script>
+
+
+<script type="text/javascript">
+          function Redirect() 
+          {
+          window.location="http://erp.rupeeboss.com/Credit_Card_Upload_Docs.aspx?App_Id=drop&CardType=ICICI";
+          }
+</script>
+
+<script type="text/javascript">
+    var d = new Date();
+    var year = d.getFullYear() ;
+    d.setFullYear(year);
+
+    $(".lastReportedsince").datepicker({ dateFormat: "yy-mm-dd",
+      changeMonth: true,
+      changeYear: true,
+      maxDate: year,
+      minDate: "-100Y",
+      yearRange: '-100:' + year + '',
+      defaultDate: d
+    });
+</script>
+
+<script type="text/javascript">
+  $('#have').change(function(){
+ 
+  $("#credit_details").show();
+  });
+</script>
+
+<script type="text/javascript">
+  $('#not_have').change(function(){
+ 
+  $("#credit_details").hide();
+  });
+</script>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('#net_annual_income').on('change', function() {
+      console.log(this.value);
+
+      if ( this.value == '>2.5Lacs')
+      {
+        $("#credit_card_type").show();
+        $("#your_interests option[value='Travel']").hide();
+        $("#your_interests option[value='Motorsports']").hide();
+       
+      }
+      else if(this.value == '>5.0Lacs' || this.value == '>10Lacs' || this.value == '>15Lacs')
+      {
+        $("#credit_card_type").show();
+        $("#your_interests option[value='Travel']").show();
+        $("#your_interests option[value='Motorsports']").show();
+      }
+    });
+});
+
+  $(document).ready(function(){
+    $('#your_interests').on('change', function() {
+      var net_annual_income=$('#net_annual_income').find(":selected").val();
+      var your_interests=$('#your_interests').find(":selected").val();
+      console.log(net_annual_income);
+      if ( your_interests == 'Lifestyle')
+      {
+
+        $("#credit_card_name").show();
+        $("#cards option[value='Platinum Chip Credit Card']").show();
+        $("#cards option[value='Coral Credit Card']").hide();
+       $("#cards option[value='Jet Coral Credit Card']").hide();
+       $("#cards option[value='Ferrari Platinum Credit Card']").hide();
+        $("#cards option[value='Rubyx Credit Card']").hide();
+         $("#cards option[value='Sapphiro Credit Card']").hide();
+         $("#cards option[value='Jet Rubyx Credit Card']").hide();
+          $("#cards option[value='Jet Sapphiro Credit Card']").hide();
+            $("#cards option[value=' Ferrari Signature Credit Card']").hide();
+      }
+      if (( your_interests == 'Lifestyle' && net_annual_income == '>5.0Lacs'))
+      {
+
+        $("#credit_card_name").show();
+        $("#cards option[value='Platinum Chip Credit Card']").hide();
+        $("#cards option[value='Coral Credit Card']").show();
+       $("#cards option[value='Jet Coral Credit Card']").hide();
+       $("#cards option[value='Ferrari Platinum Credit Card']").hide();
+        $("#cards option[value='Rubyx Credit Card']").hide();
+         $("#cards option[value='Sapphiro Credit Card']").hide();
+         $("#cards option[value='Jet Rubyx Credit Card']").hide();
+          $("#cards option[value='Jet Sapphiro Credit Card']").hide();
+            $("#cards option[value=' Ferrari Signature Credit Card']").hide();
+      }
+      if (( your_interests == 'Lifestyle' && net_annual_income == '>10Lacs'))
+      {
+
+        $("#credit_card_name").show();
+        $("#cards option[value='Platinum Chip Credit Card']").hide();
+         $("#cards option[value='Coral Credit Card']").hide();
+        $("#cards option[value='Rubyx Credit Card']").show();
+       $("#cards option[value='Jet Coral Credit Card']").hide();
+       $("#cards option[value='Ferrari Platinum Credit Card']").hide();
+        $("#cards option[value='Sapphiro Credit Card']").hide();
+        $("#cards option[value='Jet Rubyx Credit Card']").hide(); 
+         $("#cards option[value='Jet Sapphiro Credit Card']").hide();
+           $("#cards option[value=' Ferrari Signature Credit Card']").hide();
+      }
+      if (( your_interests == 'Lifestyle' && net_annual_income == '>15Lacs'))
+      {
+
+        $("#credit_card_name").show();
+        $("#cards option[value='Platinum Chip Credit Card']").hide();
+         $("#cards option[value='Coral Credit Card']").hide();
+        $("#cards option[value='Rubyx Credit Card']").hide();
+       $("#cards option[value='Jet Coral Credit Card']").hide();
+       $("#cards option[value='Ferrari Platinum Credit Card']").hide();
+        $("#cards option[value='Sapphiro Credit Card']").show();
+        $("#cards option[value='Jet Rubyx Credit Card']").hide();
+         $("#cards option[value='Jet Sapphiro Credit Card']").hide();
+
+      }
+      if (( your_interests == 'Travel' && net_annual_income == '>5.0Lacs'))
+      {
+
+        $("#credit_card_name").show();
+        $("#cards option[value='Platinum Chip Credit Card']").hide();
+        $("#cards option[value='Coral Credit Card']").hide();
+       $("#cards option[value='Jet Coral Credit Card']").show();
+       $("#cards option[value='Ferrari Platinum Credit Card']").hide();
+        $("#cards option[value='Rubyx Credit Card']").hide();
+         $("#cards option[value='Sapphiro Credit Card']").hide();
+         $("#cards option[value='Jet Sapphiro Credit Card']").hide();
+            $("#cards option[value='Jet Rubyx Credit Card']").hide();
+              $("#cards option[value=' Ferrari Signature Credit Card']").hide();
+      }
+      if (( your_interests == 'Travel' && net_annual_income == '>10Lacs'))
+      {
+
+        $("#credit_card_name").show();
+        $("#cards option[value='Platinum Chip Credit Card']").hide();
+         $("#cards option[value='Coral Credit Card']").hide();
+        $("#cards option[value='Rubyx Credit Card']").hide();
+       $("#cards option[value='Jet Coral Credit Card']").hide();
+       $("#cards option[value='Ferrari Platinum Credit Card']").hide();
+        $("#cards option[value='Sapphiro Credit Card']").hide();
+         $("#cards option[value='Jet Rubyx Credit Card']").show();
+         $("#cards option[value='Jet Sapphiro Credit Card']").hide();
+           $("#cards option[value=' Ferrari Signature Credit Card']").hide();
+      }
+      if (( your_interests == 'Travel' && net_annual_income == '>15Lacs'))
+      {
+
+        $("#credit_card_name").show();
+        $("#cards option[value='Platinum Chip Credit Card']").hide();
+         $("#cards option[value='Coral Credit Card']").hide();
+        $("#cards option[value='Rubyx Credit Card']").hide();
+       $("#cards option[value='Jet Coral Credit Card']").hide();
+       $("#cards option[value='Ferrari Platinum Credit Card']").hide();
+        $("#cards option[value='Sapphiro Credit Card']").hide();
+        $("#cards option[value='Jet Sapphiro Credit Card']").show();
+         $("#cards option[value='Jet Rubyx Credit Card']").hide();
+           $("#cards option[value=' Ferrari Signature Credit Card']").hide();
+
+
+      }
+      if (( your_interests == 'Motorsports' && net_annual_income == '>5.0Lacs'))
+      {
+
+        $("#credit_card_name").show();
+        $("#cards option[value='Platinum Chip Credit Card']").hide();
+        $("#cards option[value='Coral Credit Card']").hide();
+       $("#cards option[value='Jet Coral Credit Card']").hide();
+     
+        $("#cards option[value='Rubyx Credit Card']").hide();
+         $("#cards option[value='Sapphiro Credit Card']").hide();
+         $("#cards option[value='Jet Sapphiro Credit Card']").hide();
+          $("#cards option[value='Jet Rubyx Credit Card']").hide();
+           $("#cards option[value='Ferrari Platinum Credit Card']").show();
+             $("#cards option[value=' Ferrari Signature Credit Card']").hide();
+      }
+      if (( your_interests == 'Motorsports' && net_annual_income == '>10Lacs'))
+      {
+
+        $("#credit_card_name").show();
+        $("#cards option[value='Platinum Chip Credit Card']").hide();
+         $("#cards option[value='Coral Credit Card']").hide();
+        $("#cards option[value='Rubyx Credit Card']").hide();
+       $("#cards option[value='Jet Coral Credit Card']").hide();
+       $("#cards option[value='Ferrari Platinum Credit Card']").hide();
+        $("#cards option[value='Sapphiro Credit Card']").hide();
+         $("#cards option[value='Jet Rubyx Credit Card']").hide();
+         $("#cards option[value='Jet Sapphiro Credit Card']").hide();
+         $("#cards option[value=' Ferrari Signature Credit Card']").show();
+          $("#cards option[value='Ferrari Platinum Credit Card']").hide();
+      }
+      if (( your_interests == 'Motorsports' && net_annual_income == '>15Lacs'))
+      {
+
+        $("#credit_card_name").show();
+        $("#cards option[value='Platinum Chip Credit Card']").hide();
+         $("#cards option[value='Coral Credit Card']").hide();
+        $("#cards option[value='Rubyx Credit Card']").hide();
+       $("#cards option[value='Jet Coral Credit Card']").hide();
+       $("#cards option[value='Ferrari Platinum Credit Card']").hide();
+        $("#cards option[value='Sapphiro Credit Card']").hide();
+        $("#cards option[value='Jet Sapphiro Credit Card']").hide();
+         $("#cards option[value='Jet Rubyx Credit Card']").hide();
+         $("#cards option[value=' Ferrari Signature Credit Card']").show();
+          $("#cards option[value='Ferrari Platinum Credit Card']").hide();
+
+
+      }
+    });
+});
+</script>
+
+
+
+

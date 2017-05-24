@@ -14,6 +14,7 @@ class FormController extends CallApiController
     function sidebar(Request $req){
 
         $input = $req->all();
+
         $post_data = array(
         'name'   => $req['name'],
         'contact'=> $req['contact']?$req['contact']:'',
@@ -28,7 +29,7 @@ class FormController extends CallApiController
         );
     //call API here to save in DB
         $post=json_encode($post_data);
-       // print_r($post);exit();
+        // print_r($post);exit();
     $url = $this::$url_static."BankAPIService.svc/GetCustomerWebRequest";
     $result=$this->call_json_data_api($url,$post);
     $http_result=$result['http_result'];

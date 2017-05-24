@@ -1128,9 +1128,12 @@ $(document).ready(function(){
 
 <script type="text/javascript">
   $(document).ready(function(){
-    $('#net_annual_income').on('change', function() {
-      console.log(this.value);
 
+    $('#net_annual_income').on('change', function() {
+      //console.log(this.value);
+      //resetting dropdown as all dropdown based on first one
+      $('#your_interests').get(0).selectedIndex = 0;
+      $('#cards').get(0).selectedIndex = 0;
       if ( this.value == '>2.5Lacs')
       {
         $("#credit_card_type").show();
@@ -1145,159 +1148,64 @@ $(document).ready(function(){
         $("#your_interests option[value='Motorsports']").show();
       }
     });
-});
 
-  $(document).ready(function(){
     $('#your_interests').on('change', function() {
+       //resetting cards dropdown as changing intrest changs cards
+      $('#cards').get(0).selectedIndex = 0;
       var net_annual_income=$('#net_annual_income').find(":selected").val();
       var your_interests=$('#your_interests').find(":selected").val();
       console.log(net_annual_income);
+      $("#credit_card_name").show();
+      $("#cards option[value='Platinum Chip Credit Card']").hide();
+      $("#cards option[value='Coral Credit Card']").hide();
+      $("#cards option[value='Jet Coral Credit Card']").hide();
+      $("#cards option[value='Ferrari Platinum Credit Card']").hide();
+      $("#cards option[value='Rubyx Credit Card']").hide();
+      $("#cards option[value='Sapphiro Credit Card']").hide();
+      $("#cards option[value='Jet Rubyx Credit Card']").hide();
+      $("#cards option[value='Jet Sapphiro Credit Card']").hide();
+      $("#cards option[value=' Ferrari Signature Credit Card']").hide();
       if ( your_interests == 'Lifestyle')
       {
-
-        $("#credit_card_name").show();
+       
         $("#cards option[value='Platinum Chip Credit Card']").show();
-        $("#cards option[value='Coral Credit Card']").hide();
-       $("#cards option[value='Jet Coral Credit Card']").hide();
-       $("#cards option[value='Ferrari Platinum Credit Card']").hide();
-        $("#cards option[value='Rubyx Credit Card']").hide();
-         $("#cards option[value='Sapphiro Credit Card']").hide();
-         $("#cards option[value='Jet Rubyx Credit Card']").hide();
-          $("#cards option[value='Jet Sapphiro Credit Card']").hide();
-            $("#cards option[value=' Ferrari Signature Credit Card']").hide();
       }
       if (( your_interests == 'Lifestyle' && net_annual_income == '>5.0Lacs'))
       {
-
-        $("#credit_card_name").show();
-        $("#cards option[value='Platinum Chip Credit Card']").hide();
+       
         $("#cards option[value='Coral Credit Card']").show();
-       $("#cards option[value='Jet Coral Credit Card']").hide();
-       $("#cards option[value='Ferrari Platinum Credit Card']").hide();
-        $("#cards option[value='Rubyx Credit Card']").hide();
-         $("#cards option[value='Sapphiro Credit Card']").hide();
-         $("#cards option[value='Jet Rubyx Credit Card']").hide();
-          $("#cards option[value='Jet Sapphiro Credit Card']").hide();
-            $("#cards option[value=' Ferrari Signature Credit Card']").hide();
       }
       if (( your_interests == 'Lifestyle' && net_annual_income == '>10Lacs'))
       {
-
-        $("#credit_card_name").show();
-        $("#cards option[value='Platinum Chip Credit Card']").hide();
-         $("#cards option[value='Coral Credit Card']").hide();
         $("#cards option[value='Rubyx Credit Card']").show();
-       $("#cards option[value='Jet Coral Credit Card']").hide();
-       $("#cards option[value='Ferrari Platinum Credit Card']").hide();
-        $("#cards option[value='Sapphiro Credit Card']").hide();
-        $("#cards option[value='Jet Rubyx Credit Card']").hide(); 
-         $("#cards option[value='Jet Sapphiro Credit Card']").hide();
-           $("#cards option[value=' Ferrari Signature Credit Card']").hide();
       }
       if (( your_interests == 'Lifestyle' && net_annual_income == '>15Lacs'))
       {
-
-        $("#credit_card_name").show();
-        $("#cards option[value='Platinum Chip Credit Card']").hide();
-         $("#cards option[value='Coral Credit Card']").hide();
-        $("#cards option[value='Rubyx Credit Card']").hide();
-       $("#cards option[value='Jet Coral Credit Card']").hide();
-       $("#cards option[value='Ferrari Platinum Credit Card']").hide();
         $("#cards option[value='Sapphiro Credit Card']").show();
-        $("#cards option[value='Jet Rubyx Credit Card']").hide();
-         $("#cards option[value='Jet Sapphiro Credit Card']").hide();
-
       }
       if (( your_interests == 'Travel' && net_annual_income == '>5.0Lacs'))
       {
-
-        $("#credit_card_name").show();
-        $("#cards option[value='Platinum Chip Credit Card']").hide();
-        $("#cards option[value='Coral Credit Card']").hide();
        $("#cards option[value='Jet Coral Credit Card']").show();
-       $("#cards option[value='Ferrari Platinum Credit Card']").hide();
-        $("#cards option[value='Rubyx Credit Card']").hide();
-         $("#cards option[value='Sapphiro Credit Card']").hide();
-         $("#cards option[value='Jet Sapphiro Credit Card']").hide();
-            $("#cards option[value='Jet Rubyx Credit Card']").hide();
-              $("#cards option[value=' Ferrari Signature Credit Card']").hide();
       }
       if (( your_interests == 'Travel' && net_annual_income == '>10Lacs'))
       {
-
-        $("#credit_card_name").show();
-        $("#cards option[value='Platinum Chip Credit Card']").hide();
-         $("#cards option[value='Coral Credit Card']").hide();
-        $("#cards option[value='Rubyx Credit Card']").hide();
-       $("#cards option[value='Jet Coral Credit Card']").hide();
-       $("#cards option[value='Ferrari Platinum Credit Card']").hide();
-        $("#cards option[value='Sapphiro Credit Card']").hide();
          $("#cards option[value='Jet Rubyx Credit Card']").show();
-         $("#cards option[value='Jet Sapphiro Credit Card']").hide();
-           $("#cards option[value=' Ferrari Signature Credit Card']").hide();
       }
       if (( your_interests == 'Travel' && net_annual_income == '>15Lacs'))
       {
-
-        $("#credit_card_name").show();
-        $("#cards option[value='Platinum Chip Credit Card']").hide();
-         $("#cards option[value='Coral Credit Card']").hide();
-        $("#cards option[value='Rubyx Credit Card']").hide();
-       $("#cards option[value='Jet Coral Credit Card']").hide();
-       $("#cards option[value='Ferrari Platinum Credit Card']").hide();
-        $("#cards option[value='Sapphiro Credit Card']").hide();
         $("#cards option[value='Jet Sapphiro Credit Card']").show();
-         $("#cards option[value='Jet Rubyx Credit Card']").hide();
-           $("#cards option[value=' Ferrari Signature Credit Card']").hide();
-
-
       }
       if (( your_interests == 'Motorsports' && net_annual_income == '>5.0Lacs'))
       {
-
-        $("#credit_card_name").show();
-        $("#cards option[value='Platinum Chip Credit Card']").hide();
-        $("#cards option[value='Coral Credit Card']").hide();
-       $("#cards option[value='Jet Coral Credit Card']").hide();
-     
-        $("#cards option[value='Rubyx Credit Card']").hide();
-         $("#cards option[value='Sapphiro Credit Card']").hide();
-         $("#cards option[value='Jet Sapphiro Credit Card']").hide();
-          $("#cards option[value='Jet Rubyx Credit Card']").hide();
            $("#cards option[value='Ferrari Platinum Credit Card']").show();
-             $("#cards option[value=' Ferrari Signature Credit Card']").hide();
       }
       if (( your_interests == 'Motorsports' && net_annual_income == '>10Lacs'))
       {
-
-        $("#credit_card_name").show();
-        $("#cards option[value='Platinum Chip Credit Card']").hide();
-         $("#cards option[value='Coral Credit Card']").hide();
-        $("#cards option[value='Rubyx Credit Card']").hide();
-       $("#cards option[value='Jet Coral Credit Card']").hide();
-       $("#cards option[value='Ferrari Platinum Credit Card']").hide();
-        $("#cards option[value='Sapphiro Credit Card']").hide();
-         $("#cards option[value='Jet Rubyx Credit Card']").hide();
-         $("#cards option[value='Jet Sapphiro Credit Card']").hide();
          $("#cards option[value=' Ferrari Signature Credit Card']").show();
-          $("#cards option[value='Ferrari Platinum Credit Card']").hide();
       }
       if (( your_interests == 'Motorsports' && net_annual_income == '>15Lacs'))
       {
-
-        $("#credit_card_name").show();
-        $("#cards option[value='Platinum Chip Credit Card']").hide();
-         $("#cards option[value='Coral Credit Card']").hide();
-        $("#cards option[value='Rubyx Credit Card']").hide();
-       $("#cards option[value='Jet Coral Credit Card']").hide();
-       $("#cards option[value='Ferrari Platinum Credit Card']").hide();
-        $("#cards option[value='Sapphiro Credit Card']").hide();
-        $("#cards option[value='Jet Sapphiro Credit Card']").hide();
-         $("#cards option[value='Jet Rubyx Credit Card']").hide();
          $("#cards option[value=' Ferrari Signature Credit Card']").show();
-          $("#cards option[value='Ferrari Platinum Credit Card']").hide();
-
-
       }
     });
 });

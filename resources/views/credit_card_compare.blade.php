@@ -16,7 +16,7 @@
         <td width="18%" class="upper"><h4><b>Annual Fee</b></h4></td>
         <td width="17%" class="upper"><h4><b>Apply Now</b></h4></td>
     </tr>
-     <!-- RBL Credit Card  --->
+     <!-- RBL Credit Card  - -->
   <tr class="RBL-Card">
        <td class="dis-non"><input type="checkbox" name="cehckbox"/> <button style="display:none;" data-toggle="collapse" data-target="#0" aria-expanded="true">Details </button></td>
         <td><img src="{{url('images/rbl-credit-card.jpg')}}" alt="RBL Titanium Delight Card" title="RBL Titanium Delight Card" width="150" height="96" style="margin:0 auto; margin-bottom:5px;">
@@ -57,7 +57,7 @@
     <td class="v-align"><a href="{{URL::to('contact-us')}}"><button>Apply Online</button></a></td>
   </tr>
 
-    <!-- ICICI Credit Card  --->
+    <!-- ICICI Credit Card  - -->
   <tr class="ICICI-Card">
      <td colspan="5" class="blue-bg-tbl"><h4>GEMSTONE</h4></td>
   </tr>
@@ -174,7 +174,7 @@
   </tr>
   
 
-    <!-- HDFC Credit Card  --->
+    <!-- HDFC Credit Card  - -->
   
 <tr class="HDFC-Card">
     <td class="dis-non"><input type="checkbox" name="cehckbox"/> <button style="display:none;" data-toggle="collapse" data-target="#6" aria-expanded="true">Details </button></td>

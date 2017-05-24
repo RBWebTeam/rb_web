@@ -3595,5 +3595,13 @@ label {
 .icon-map-marker {color: #bbb;}
 .hei-frtrt {float:left;}
 
+.income-tab li {list-style-type:none; margin:0px;padding:5px;margin-bottom:5px;}
+    .income-tab .btn-info:hover {background:#ff000;}
+    .income-tab {margin:0px; padding:0px;margin-top:20px; border:1px dashed #ccc;padding:15px; }
+       .tab-content {padding-left:0px; padding-top:20px;}
+       .card-img {padding-right:30px; font-size:13px;} 
+        .btn-grp {width:70%; margin:auto; margin-top:15px;}
+    .pad-lft {margin:0px; padding:10px;}
+
 
 	

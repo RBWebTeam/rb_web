@@ -37,7 +37,7 @@
 </ul>
 
 <div class="tab-content text-left">
-  <div id="home"  class="tab-pane fade in active">
+  <div id="Lifestyle_>2.5Lacs"  class="tab-pane fade in active hide_cards">
   <div class="col-md-4">
 	<img src="images/CS/RD_1/SD_ICIC_Rohit_Khanna_Platinum_VISA_Card.jpg" width="230" class="pull-left card-img"/>
 	</div>
@@ -52,7 +52,8 @@
 	</div>
 	<div class="col-md-8 pull-right"><a href="#" class="btn btn-primary">Apply Now</a></div>
   </div>
-  <div id="coral" style="display: none;" class="tab-pane fade">
+
+  <div id="Travel_>2.5Lacs" style="display: none;" class="tab-pane fade hide_cards">
   <div class="col-md-4">
     <img src="images/CS/RD/JET-CORAL-VISA.jpg" width="230" class="pull-left card-img"/>
 	</div>
@@ -67,7 +68,8 @@
 	</div>
 	<div class="col-md-8 pull-right"><a href="#" class="btn btn-primary">Apply Now</a></div>
   </div>
-  <div id="o" style="display: none;" class="tab-pane fade">
+
+  <div id="Motorsports_>2.5Lacs" style="display: none;" class="tab-pane fade hide_cards">
   <div class="col-md-4">
     <img src="images/CS/RD_1/SD_ICIC_Rohit_Khanna_Platinum_VISA_Card.jpg" width="230" class="pull-left card-img"/>
 	</div>
@@ -86,7 +88,7 @@
 
 <!-- 5.0 -->
 <div class="tab-content text-left">
-  <div id="home1" style="display: none;" class="tab-pane fade in active">
+  <div id="Lifestyle_>5.0Lacs" style="display: none;" class="tab-pane fade in active hide_cards">
   <div class="col-md-4">
 	<img src="images/CS/RD/DA_Coral-Mastercard-MasterCard_1.jpg" width="230" class="pull-left card-img"/>
 	</div>
@@ -101,7 +103,8 @@
 	</div>
 	<div class="col-md-8 pull-right"><a href="#" class="btn btn-primary">Apply Now</a></div>
   </div>
-  <div id="menu1" style="display: none;" class="tab-pane fade">
+
+  <div id="Travel_>5.0Lacs" style="display: none;" class="tab-pane fade hide_cards">
   <div class="col-md-4">
     <img src="images/CS/RD/JET-CORAL-VISA.jpg" width="230" class="pull-left card-img"/>
 	</div>
@@ -116,7 +119,8 @@
 	</div>
 	<div class="col-md-8 pull-right"><a href="#" class="btn btn-primary">Apply Now</a></div>
   </div>
-  <div id="menu2" style="display: none;" class="tab-pane fade">
+
+  <div id="Motorsports_>5.0Lacs" style="display: none;" class="tab-pane fade hide_cards">
   <div class="col-md-4">
     <img src="images/CS/RD_1/SS_ICICI-RED-STRAIGHT-CARD-MERGED_DateChange.jpg" width="230" class="pull-left card-img"/>
 	</div>
@@ -135,7 +139,7 @@
 
 <!-- 10 -->
 <div class="tab-content text-left">
-  <div id="home2" style="display: none;" class="tab-pane fade in active">
+  <div id="Lifestyle_>10Lacs" style="display: none;" class="tab-pane fade in active hide_cards">
   <div class="col-md-4">
 	<img src="images/CS/RD/Rubyx-MasterCard-02.jpg" width="230" class="pull-left card-img"/>
 	</div>
@@ -150,7 +154,8 @@
 	</div>
 	<div class="col-md-8 pull-right"><a href="#" class="btn btn-primary">Apply Now</a></div>
   </div>
-  <div id="menu1" style="display: none;" class="tab-pane fade">
+
+  <div id="Travel_>10Lacs" style="display: none;" class="tab-pane fade hide_cards">
   <div class="col-md-4">
     <img src="images/CS/RD/JET-RUBYX-VISA.jpg" width="230" class="pull-left card-img"/>
 	</div>
@@ -165,7 +170,8 @@
 	</div>
 	<div class="col-md-8 pull-right"><a href="#" class="btn btn-primary">Apply Now</a></div>
   </div>
-  <div id="menu" style="display: none;" class="tab-pane fade"> Signature
+
+  <div id="Motorsports_>10Lacs" style="display: none;" class="tab-pane fade hide_cards"> 
   <div class="col-md-4">
     <img src="images/CS/RD_1/SS_ICICI-BLACK-STRAIGHT-CARD_R1_EX.jpg" width="230" class="pull-left card-img"/>
 	</div>
@@ -184,7 +190,7 @@
 
 <!-- 15 -->
 <div class="tab-content text-left">
-  <div id="home3" style="display: none;" class="tab-pane fade in active">
+  <div id="Lifestyle_>15Lacs" style="display: none;" class="tab-pane fade in active hide_cards">
   <div class="col-md-4">
 	<img src="images/CS/RD/JET-SAPPHIRO-AMEX.jpg" width="230" class="pull-left card-img"/>
 	</div>
@@ -199,7 +205,8 @@
 	</div>
 	<div class="col-md-8 pull-right"><a href="#" class="btn btn-primary">Apply Now</a></div>
   </div>
-  <div id="menu" style="display: none;" class="tab-pane fade">
+
+  <div id="Travel_>15Lacs" style="display: none;" class="tab-pane fade hide_cards">
   <div class="col-md-4">
     <img src="images/icici-credit-card.jpg" width="230" class="pull-left card-img"/>
 	</div>
@@ -214,7 +221,8 @@
 	</div>
 	<div class="col-md-8 pull-right"><a href="#" class="btn btn-primary">Apply Now</a></div>
   </div>
-  <div id="menu" style="display: none;" class="tab-pane fade">
+
+  <div id="Motorsports_>15Lacs" style="display: none;" class="tab-pane fade hide_cards">
   <div class="col-md-4">
     <img src="images/CS/RD_1/SD_ICIC_Rohit_Khanna_Platinum_VISA_Card.jpg" width="230" class="pull-left card-img"/>
 	</div>
@@ -273,87 +281,11 @@
    		 show_card();
 	}
 	function show_card(){
-		console.log(interest + ""+income);
-		if (( interest == 'Lifestyle' && income == '>2.5Lacs'))
-      {
-       
-        $("#home1").hide();
-        $("#home").show();
-        $("#home2").hide();
-         $("#home3").hide();
-          $('#menu2').hide();
-      }
-		if (( interest == 'Lifestyle' && income == '>5.0Lacs'))
-      {
-       
-        $("#home1").show();
-        $("#home").hide();
-        $("#home2").hide();
-         $("#home3").hide();
-      }
-      if (( interest == 'Lifestyle' && income == '>10Lacs'))
-      {
-       
-        $("#home2").show();
-        $("#home").hide();
-        $("#home1").hide();
-        $("#home3").hide();
-        $('#menu2').hide();
-      }
-      if (( interest == 'Lifestyle' && income == '>15Lacs'))
-      {
-       
-        $("#home2").hide();
-        $("#home").hide();
-        $("#home1").hide();
-        $("#home3").show();
-      }
-      if (( interest == 'Travel' && income == '>5.0Lacs'))
-      {
-       
-        $("#home2").hide();
-        $("#home").hide();
-        $("#home1").hide();
-        $("#home3").hide();
-        $('#menu1').show();
-        $('#menu3').hide();
-         $('#menu2').hide();
-      }
-      if (( interest == 'Travel' && income == '>10Lacs'))
-      {
-       
-        $("#home2").hide();
-        $("#home").hide();
-        $("#home1").hide();
-        $("#home3").hide();
-        $('#menu1').hide();
-        $('#menu3').show();
-         $('#menu2').hide();
-      }
-      if (( interest == 'Motorsports' && income == '>5.0Lacs'))
-      {
-       
-        // $("#home2").hide();
-        $("#home").hide();
-        // $("#home1").hide();
-        $("#home3").hide();
-        $('#menu1').hide();
-        // $('#menu3').show();
-         $('#menu2').show();
-      }
-      if (( interest == 'Motorsports' && income == '>10Lacs'))
-      {
-       
-        $("#home2").hide();
-        $("#home").hide();
-        $("#home1").hide();
-        $("#home3").hide();
-        $('#menu1').hide();
-        $('#menu3').hide();
-        $('#menu').show();
-      }
+		//$('.hide_cards').hide();
+		var show=interest+'_'+income;
+		console.log(show);
+		$(show).show();
       
-
 	}
 </script>
 

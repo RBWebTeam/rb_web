@@ -16,17 +16,19 @@
 <div class="col-md-4">
 <h3>Net Annual Income</h3>
    <div class="btn-grp mrg-top income-tab" data-toggle="buttons">
-      <span class="btn btn-primary outer-brd btn-block active"><input type="radio" name="Status" id="option1">> 2.5 Lacs</span>
-      <span class="btn btn-primary outer-brd btn-block"><input type="radio" name="Status" id="option2">> 5 Lacs</span>
-	  <span class="btn btn-primary outer-brd btn-block"><input type="radio" name="Status" id="option2">> 10 Lacs</span>
-	  <span class="btn btn-primary outer-brd btn-block"><input type="radio" name="Status" id="option2">> 15 Lacs</span>
+      <span class="btn btn-primary outer-brd btn-block active">
+     <a onclick="set_annual_income('>2.5Lacs')" name="net_income" value=">2.5Lacs">> 2.5 Lacs</a>
+      </span>
+      <span class="btn btn-primary outer-brd btn-block"><a onclick="set_annual_income('>5.0Lacs')" name="net_income" value=">5.0Lacs">> 5 Lacs</a></span>
+	  <span class="btn btn-primary outer-brd btn-block"><a type="radio" onclick="set_annual_income('>10Lacs')" name="net_income" value=">10Lacs">> 10 Lacs</a></span>
+	  <span class="btn btn-primary outer-brd btn-block"><a type="radio" onclick="set_annual_income('>15Lacs')" name="net_income" value=">15lacs">> 15 Lacs</a>
          </div>
 </div>
 <div class="col-md-8">
 <ul class="nav nav-tabs nav-justified">
-  <li class="active"><a data-toggle="tab" href="#home">Lifestyle</a></li>
-  <li><a data-toggle="tab" href="#menu1">Travel</a></li>
-  <li><a data-toggle="tab" href="#menu2">Motorsports</a></li>
+  <li class="active"><a data-toggle="tab" href="#" onclick="set_interest('Lifestyle')">Lifestyle</a></li>
+  <li><a data-toggle="tab" href="#" onclick="set_interest('Travel')">Travel</a></li>
+  <li><a data-toggle="tab" href="#" onclick="set_interest('Motorsports')">Motorsports</a></li>
 </ul>
 
 <div class="tab-content text-left">
@@ -102,4 +104,23 @@
 </div>
 @include('layout.footer')
 @include('layout.script')
+
+<script type="text/javascript">
+ var income= '>2.5Lacs';
+ var interest='Lifestyle';
+	function set_annual_income(value)
+	{ 
+   		 income=value;
+   		 show_card();
+	}
+	function set_interest(value)
+	{ 
+   		 interest=value;
+   		 show_card();
+	}
+	function show_card(){
+		console.log(interest + ""+income);
+
+	}
+</script>
 

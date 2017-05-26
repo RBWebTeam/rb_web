@@ -45,7 +45,7 @@
 
   <form name="talk_to_us_RM_form" id="talk_to_us_RM_form" method="post">
           {{ csrf_field() }}
-             <h4 class="text-center modal-header">Call RM</h4>
+             <h4 class="text-center modal-header">SUBMIT QUICK ENQUIRY</h4>
                   <div>
                     <fieldset>
                       <input class="newsletter-name" name="name" placeholder="Name" required>

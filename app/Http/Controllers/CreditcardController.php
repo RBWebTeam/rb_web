@@ -9,7 +9,8 @@ use Session;
 use App\credit_card_form_req;
 class CreditcardController extends CallApiController
 {
-	 public function credit_card_form(){
+	 public function credit_card_form(Request $req){
+
 	 		return view('credit-card-form');
 	 }
 

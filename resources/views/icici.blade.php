@@ -50,9 +50,9 @@
        <li>Save on 1% fuel surcharge, waived off at HPCL petrol pumps</li>
   </ul>
   </div>
-  <div class="col-md-8 pull-right"><a href="#" class="btn btn-primary">Apply Now</a></div>
+  <div class="col-md-8 pull-right"><a  name="Platinum_Chip_Credit_Card" class="btn btn-primary apply apply">Apply Now</a></div>
   </div>
-  <div id="menu1" style="display: none;" class="tab-pane fade">
+  <div id="menu1" style="display: none;" >
   <div class="col-md-4">
     <img src="images/CS/RD/JET-CORAL-VISA.jpg" width="230" class="pull-left card-img"/>
   </div>
@@ -65,7 +65,7 @@
         <li>1,250 bonus JPMiles every year on renewal each year</li>
   </ul>
   </div>
-  <div class="col-md-8 pull-right"><a href="#" class="btn btn-primary">Apply Now</a></div>
+  <div class="col-md-8 pull-right"><a  class="btn btn-primary apply">Apply Now</a></div>
   </div>
   <div id="o" style="display: none;" class="tab-pane fade">
   <div class="col-md-4">
@@ -80,7 +80,7 @@
        <li>Get a complimentary tie from Provogue on joining</li>
   </ul>
   </div>
-  <div class="col-md-8 pull-right"><a href="#" class="btn btn-primary">Apply Now</a></div>
+  <div class="col-md-8 pull-right"><a  class="btn btn-primary apply">Apply Now</a></div>
   </div>
 </div>
 
@@ -99,7 +99,7 @@
        <li>Save on 1% fuel surcharge, waived off at HPCL petrol pumps</li>
   </ul>
   </div>
-  <div class="col-md-8 pull-right"><a href="#" class="btn btn-primary">Apply Now</a></div>
+  <div class="col-md-8 pull-right"><a name="Coral_Credit_Card"  class="btn btn-primary apply">Apply Now</a></div>
   </div>
   <div id="menu1" style="display: none;" class="tab-pane fade">
   <div class="col-md-4">
@@ -114,7 +114,7 @@
         <li>1,250 bonus JPMiles every year on renewal each year</li>
   </ul>
   </div>
-  <div class="col-md-8 pull-right"><a href="#" class="btn btn-primary">Apply Now</a></div>
+  <div class="col-md-8 pull-right"><a name="Jet_Coral_Credit_Card"  class="btn btn-primary apply">Apply Now</a></div>
   </div>
   <div id="menu2_motorsports_5" style="display: none;" >
   <div class="col-md-4">
@@ -129,7 +129,7 @@
        <li>Get a complimentary tie from Provogue on joining</li>
   </ul>
   </div>
-  <div class="col-md-8 pull-right"><a href="#" class="btn btn-primary">Apply Now</a></div>
+  <div class="col-md-8 pull-right"><a name="Ferrari_Platinum_Credit_Card" class="btn btn-primary apply">Apply Now</a></div>
   </div>
 </div>
 
@@ -148,7 +148,7 @@
        <li>A set of complimentary Sennheiser HD 221 headphones on joining</li>
   </ul>
   </div>
-  <div class="col-md-8 pull-right"><a href="#" class="btn btn-primary">Apply Now</a></div>
+  <div class="col-md-8 pull-right"><a name="Rubyx_Credit_Card" class="btn btn-primary apply">Apply Now</a></div>
   </div>
   <div id="menu1_10" style="display: none;" >
   <div class="col-md-4">
@@ -163,22 +163,22 @@
        <li>Renewal: 2,500 JPMiles + Complimentary Jet Airways Ticket</li>
   </ul>
   </div>
-  <div class="col-md-8 pull-right"><a href="#" class="btn btn-primary">Apply Now</a></div>
+  <div class="col-md-8 pull-right"><a name="Jet_Rubyx_Credit_Card" class="btn btn-primary apply">Apply Now</a></div>
   </div>
   <div id="menu_motorsports_10" style="display: none;" > 
   <div class="col-md-4">
-    <img src="images/CS/RD_1/SD_ICIC_Rohit_Khanna_Platinum_VISA_Card.jpg" width="230" class="pull-left card-img"/>
+    <img src="images/CS/RD_1/SS_ICICI-BLACK-STRAIGHT-CARD_R1_EX.jpg" width="230" class="pull-left card-img"/>
   </div>
   <div class="col-md-8">
-  <h3>Ferrari Signature Credit Card</h3>
+  <h3><b>Ferrari Signature Credit Card</b></h3>
     <ul class="pad-lft">
-    <li>Limited period offer: Joining fee Rs.500</li>
-        <li>2X cash rewards on dining, groceries and at supermarkets</li>
+    <li>Complimentary Scuderia Ferrari watch on joining</li>
+        <li>Discounts on Ferrari merchandise at Ferrari Online Store</li>
+        <li>2 complimentary domestic airport lounge visits/ quarter</li>
         <li>Buy 1, get 1 movie ticket free at BookMyShow</li>
-       <li>Get a complimentary tie from Provogue on joining</li>
   </ul>
   </div>
-  <div class="col-md-8 pull-right"><a href="#" class="btn btn-primary">Apply Now</a></div>
+  <div class="col-md-8 pull-right"><a name="Ferrari_Signature_Credit_Card"  class="btn btn-primary apply">Apply Now</a></div>
   </div>
 </div>
 
@@ -197,7 +197,7 @@
         <li>Complimentary All New Kindle on joining</li>
   </ul>
   </div>
-  <div class="col-md-8 pull-right"><a href="#" class="btn btn-primary">Apply Now</a></div>
+  <div class="col-md-8 pull-right"><a name="Sapphiro_Credit_Card"  class="btn btn-primary apply">Apply Now</a></div>
   </div>
   <div id="menu_travel_15" style="display: none;">
   <div class="col-md-4">
@@ -212,22 +212,22 @@
        <li>Renewal: 5,000 JPMiles + Complimentary Jet Airways Ticket</li>
   </ul>
   </div>
-  <div class="col-md-8 pull-right"><a href="#" class="btn btn-primary">Apply Now</a></div>
+  <div class="col-md-8 pull-right"><a name="Jet_Sapphiro_Credit_Card" class="btn btn-primary apply">Apply Now</a></div>
   </div>
   <div id="menu_motorsports_15" style="display: none;" >
   <div class="col-md-4">
-    <img src="images/CS/RD_1/SD_ICIC_Rohit_Khanna_Platinum_VISA_Card.jpg" width="230" class="pull-left card-img"/>
+    <img src="images/CS/RD_1/SS_ICICI-BLACK-STRAIGHT-CARD_R1_EX.jpg" width="230" class="pull-left card-img"/>
   </div>
   <div class="col-md-8">
-  <h3>Coral Credit Card</h3>
+  <h3><b>Ferrari Signature Credit Card</b></h3>
     <ul class="pad-lft">
-    <li>Limited period offer: Joining fee Rs.500</li>
-        <li>2X cash rewards on dining, groceries and at supermarkets</li>
+    <li>Complimentary Scuderia Ferrari watch on joining</li>
+        <li>Discounts on Ferrari merchandise at Ferrari Online Store</li>
+        <li>2 complimentary domestic airport lounge visits/ quarter</li>
         <li>Buy 1, get 1 movie ticket free at BookMyShow</li>
-       <li>Get a complimentary tie from Provogue on joining</li>
   </ul>
   </div>
-  <div class="col-md-8 pull-right"><a href="#" class="btn btn-primary">Apply Now</a></div>
+  <div class="col-md-8 pull-right"><a name="Ferrari_Signature_Credit_Card"  class="btn btn-primary apply">Apply Now</a></div>
   </div>
 </div>
 
@@ -277,95 +277,163 @@
     if (( interest == 'Lifestyle' && income == '>2.5Lacs'))
       {
        
-        $("#home1_lifestyle_5").hide();
+        
         $("#home_lifestyle_2").show();
+        $("#home1_lifestyle_5").hide();
         $("#home2_lifestyle_10").hide();
-         $("#home3_lifestyle_15").hide();
-          $('#menu2').hide();
+        $("#home3_lifestyle_15").hide();
+        $('#menu1').hide();
+        $('#menu1_10').hide();
+        $('#menu_travel_15').hide();
+        $('#menu2_motorsports_5').hide();
+        $('#menu_motorsports_10').hide();
+        $('#menu_motorsports_15').hide();
+
+         
       }
-    if (( interest == 'Lifestyle' && income == '>5.0Lacs'))
+    if (( interest == 'Lifestyle' && income == '>5.0Lacs'))menu2_motorsports_5
       {
        
-        $("#home1_lifestyle_5").show();
         $("#home_lifestyle_2").hide();
+        $("#home1_lifestyle_5").show();
         $("#home2_lifestyle_10").hide();
-         $("#home3_lifestyle_15").hide();
+        $("#home3_lifestyle_15").hide();
+        $('#menu1').hide();
+        $('#menu1_10').hide();
+        $('#menu_travel_15').hide();
+        $('#menu2_motorsports_5').hide();
+        $('#menu_motorsports_10').hide();
+        $('#menu_motorsports_15').hide();
       }
       if (( interest == 'Lifestyle' && income == '>10Lacs'))
       {
        
-        $("#home2_lifestyle_10").show();
         $("#home_lifestyle_2").hide();
         $("#home1_lifestyle_5").hide();
+        $("#home2_lifestyle_10").show();
         $("#home3_lifestyle_15").hide();
-        $('#menu2').hide();
+        $('#menu1').hide();
+        $('#menu1_10').hide();
+        $('#menu_travel_15').hide();
+        $('#menu2_motorsports_5').hide();
+        $('#menu_motorsports_10').hide();
+        $('#menu_motorsports_15').hide();
       }
       if (( interest == 'Lifestyle' && income == '>15Lacs'))
       {
        
-        $("#home2_lifestyle_10").hide();
         $("#home_lifestyle_2").hide();
         $("#home1_lifestyle_5").hide();
+        $("#home2_lifestyle_10").hide();
         $("#home3_lifestyle_15").show();
-        $("#menu1").hide();
+        $('#menu1').hide();
+        $('#menu1_10').hide();
+        $('#menu_travel_15').hide();
+        $('#menu2_motorsports_5').hide();
+        $('#menu_motorsports_10').hide();
+        $('#menu_motorsports_15').hide();
+
        
       }
       if (( interest == 'Travel' && income == '>5.0Lacs'))
       {
        
         
-        $('#menu1').show();
-         $('#menu1_10').hide();
-         $("#home2_lifestyle_10").hide();
         $("#home_lifestyle_2").hide();
         $("#home1_lifestyle_5").hide();
+        $("#home2_lifestyle_10").hide();
         $("#home3_lifestyle_15").hide();
+        $('#menu1').show();
+        $('#menu1_10').hide();
         $('#menu_travel_15').hide();
+        $('#menu2_motorsports_5').hide();
+        $('#menu_motorsports_10').hide();
+        $('#menu_motorsports_15').hide();
         
       }
       if (( interest == 'Travel' && income == '>10Lacs'))
       {
        
-        $('#menu1_10').show();
-        $('#menu1').hide();
-        $("#home2_lifestyle_10").hide();
         $("#home_lifestyle_2").hide();
         $("#home1_lifestyle_5").hide();
+        $("#home2_lifestyle_10").hide();
         $("#home3_lifestyle_15").hide();
+        $('#menu1').hide();
+        $('#menu1_10').show();
         $('#menu_travel_15').hide();
+        $('#menu2_motorsports_5').hide();
+        $('#menu_motorsports_10').hide();
+        $('#menu_motorsports_15').hide();
       }
       if (( interest == 'Travel' && income == '>15Lacs'))
       {
-       $('#menu_travel_15').show();
-       $('#menu1').hide();
-        $("#home2_lifestyle_10").hide();
-        $("#home_lifestyle_2").hide();
+       $("#home_lifestyle_2").hide();
         $("#home1_lifestyle_5").hide();
+        $("#home2_lifestyle_10").hide();
         $("#home3_lifestyle_15").hide();
-         $('#menu1_10').hide();
+        $('#menu1').hide();
+        $('#menu1_10').hide();
+        $('#menu_travel_15').show();
+        $('#menu2_motorsports_5').hide();
+        $('#menu_motorsports_10').hide();
+        $('#menu_motorsports_15').hide();
         
       }
       if (( interest == 'Motorsports' && income == '>5.0Lacs'))
       {
+        $("#home_lifestyle_2").hide();
+        $("#home1_lifestyle_5").hide();
+        $("#home2_lifestyle_10").hide();
+        $("#home3_lifestyle_15").hide();
+        $('#menu1').hide();
+        $('#menu1_10').hide();
+        $('#menu_travel_15').hide();
         $('#menu2_motorsports_5').show();
-         $("#home_lifestyle_2").hide();
+        $('#menu_motorsports_10').hide();
+        $('#menu_motorsports_15').hide();
         
         
       }
       if (( interest == 'Motorsports' && income == '>10Lacs'))
       {
-       $('#menu_motorsports_10').show();
-        $("#home_lifestyle_2").hide();
+       $("#home_lifestyle_2").hide();
+        $("#home1_lifestyle_5").hide();
+        $("#home2_lifestyle_10").hide();
+        $("#home3_lifestyle_15").hide();
+        $('#menu1').hide();
+        $('#menu1_10').hide();
+        $('#menu_travel_15').hide();
+        $('#menu2_motorsports_5').hide();
+        $('#menu_motorsports_10').show();
+        $('#menu_motorsports_15').hide();
+       
         
       }
       if (( interest == 'Motorsports' && income == '>15Lacs'))
       {
-       $('#menu_motorsports_15').show();
-        $("#home_lifestyle_2").hide();
-        
-      }
+       $("#home_lifestyle_2").hide();
+        $("#home1_lifestyle_5").hide();
+        $("#home2_lifestyle_10").hide();
+        $("#home3_lifestyle_15").hide();
+        $('#menu1').hide();
+        $('#menu1_10').hide();
+        $('#menu_travel_15').hide();
+        $('#menu2_motorsports_5').hide();
+        $('#menu_motorsports_10').hide();
+        $('#menu_motorsports_15').show();
+       }
       
 
   }
 </script>
+
+<script type="text/javascript">
+  $('.apply').click(function(){
+    var name=$(this).closest("a").attr('name');
+    var url="{{URL::to('credit-card-form')}}?prod="+name;
+    window.location.href=url;
+  });
+</script>
+
+
 

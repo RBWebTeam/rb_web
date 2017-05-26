@@ -465,13 +465,13 @@ Rupeeboss Financial Services Private Limited shall access your Credit Informatio
             <label >Document Year</label>
             <select name="document_year" class="drop-arr" required>
             <option disabled selected>Select Year</option>
-              <option value="2013 - 2014">2013-2014</option>
-              <option value="2014 - 2015">2014-2015</option>
-              <option value="2015 - 2016">2015-2016</option>
-              <option value="2016 - 2017">2016-2017</option>
-              <option value="2017 - 2018">2017-2018</option>
-              <option value="2018 - 2019">2018-2019</option>
-              <option value="2019 - 2020">2019-2020</option>
+              <option value="2013-2014">2013-2014</option>
+              <option value="2014-2015">2014-2015</option>
+              <option value="2015-2016">2015-2016</option>
+              <option value="2016-2017">2016-2017</option>
+              <option value="2017-2018">2017-2018</option>
+              <option value="2018-2019">2018-2019</option>
+              <option value="2019-2020">2019-2020</option>
             </select>
             <label >Document Type</label>
              <select name="document_type" class="drop-arr" required>
@@ -480,6 +480,10 @@ Rupeeboss Financial Services Private Limited shall access your Credit Informatio
               <option value="2">IT Acknowledgement</option>
               
             </select>
+        </div>
+        <div id="doc_special_fields_ITR" style="display: none;">
+          <label for="datefilter_itr"> Date Range</label>
+          <input type="text" id="datefilter_itr" name="datefilter_itr" value="" required />
         </div>
 		<br>
 		<div class="mrg-top">

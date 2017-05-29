@@ -1,5 +1,6 @@
 @include('layout.header')
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<style src="css/jquery-ui.min.css"></style>
   <div id="fh5co-hero" ng-app="">
   <form id="tribe_loan_form" method="POST" name="tribe_loan_form" >
   {!! csrf_field() !!}
@@ -928,14 +929,24 @@ function del_doc_fun(id,doc){
             });
 }
   </script>
-<script type="text/javascript">
-    // When the document is ready
-    $(document).ready(function () {
-        
-        $('.input-daterange').datepicker({
-            todayBtn: "linked"
-        });
-    
+ <script>
+ jQuery(function() {
+    jQuery( "#datepicker1" ).datepicker({
+        minDate: 1,
+        dateFormat: "yy-mm-dd",
+        onSelect: function(date){
+        //alert("none");
+        var date1 = jQuery('#datepicker1').datepicker('getDate');           
+        var date = new Date( Date.parse( date1 ) ); 
+        date.setDate( date.getDate() + 1 );        
+        var newDate = date.toDateString(); 
+        newDate = new Date( Date.parse( newDate ) );                      
+        jQuery('#datepicker2').datepicker("option","minDate",newDate);            
+    } 
     });
+    jQuery( "#datepicker2" ).datepicker({
+        minDate: '+1d',
+        dateFormat: "yy-mm-dd"
+       });
+ });
 </script>
-

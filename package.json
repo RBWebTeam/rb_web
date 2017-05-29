@@ -6,9 +6,12 @@
   "dependencies": {
     "express": "^4.14.0",
     "gulp-install": "^1.1.0",
-    "minimatch":"^3.0.2"
+    "minimatch": "^3.0.2"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "laravel-elixir": "^6.0.0-15",
+    "laravel-elixir-vue-2":"latest"
+  },
   "scripts": {
     "test": "console.log()\u001b[D\"\"\u001b[Dhi\u001b[C\")"
   },

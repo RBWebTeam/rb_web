@@ -241,7 +241,7 @@ $(".top").click(function() {
             
             <div class="col-xs-6 form-padding">
                     <div class="form-control inp-fld">
-                      <input type="text" class="form-input-new" name="CompanyName" id="CompanyName" onkeypress="return AllowAlphabet(event)" required >
+                      <input type="text" class="form-input-new search_company" name="CompanyName" id="CompanyName" onkeypress="return AllowAlphabet(event)" required >
                       <span class="highlight"></span><span class="bar"></span>
                       <label class="form-label-new">Company Name</label>
                       <div class="clear"></div>
@@ -938,6 +938,48 @@ $(document).ready(function(){
         if (ui.item == null || ui.item == undefined || ui.item.value=='No Result Found') {
           $(".search_statenm").val("");
           $(".search_statenm").attr("disabled", false);
+         
+        }else{
+
+         
+         $(".Q6").show();
+         
+          
+             }
+           }
+
+        
+      });
+   });
+
+</script>
+
+<script type="text/javascript">
+  
+
+ $(document).ready(function(){
+    
+    $(".search_company").autocomplete({
+      source: function(request, response) {
+        
+        $.ajax({
+          url: "{{ route('searchcompanyajax') }}",
+          dataType: "json",
+          data: {
+            term : request.term
+          },
+          success: function(data) {
+           
+
+            response(data);
+            
+          }
+        });
+      },
+      change: function (event, ui) {
+        if (ui.item == null || ui.item == undefined || ui.item.value=='No Result Found') {
+          $(".search_company").val("");
+          $(".search_company").attr("disabled", false);
          
         }else{
 

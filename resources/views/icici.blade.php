@@ -50,9 +50,9 @@
        <li>Save on 1% fuel surcharge, waived off at HPCL petrol pumps</li>
 	</ul>
 	</div>
-	<div class="col-md-8 pull-right"><a  name="Platinum_Chip_Credit_Card" class="btn btn-primary apply apply">Apply Now</a></div>
+	<div class="col-md-8 pull-right"><a  name="Platinum-Chip-Credit-Card&&amount>2.5Lacs&&interest=Lifestyle" class="btn btn-primary apply apply">Apply Now</a></div>
   </div>
-  <div id="menu1" style="display: none;" >
+  <div id="menu12" style="display: none;" >
   <div class="col-md-4">
     <img src="images/CS/RD/JET-CORAL-VISA.jpg" width="230" class="pull-left card-img"/>
 	</div>
@@ -99,9 +99,9 @@
        <li>Save on 1% fuel surcharge, waived off at HPCL petrol pumps</li>
 	</ul>
 	</div>
-	<div class="col-md-8 pull-right"><a name="Coral_Credit_Card"  class="btn btn-primary apply">Apply Now</a></div>
+	<div class="col-md-8 pull-right"><a name="Coral-Credit-Card&&amount=>5.0Lacs&&interest=Lifestyle"  class="btn btn-primary apply">Apply Now</a></div>
   </div>
-  <div id="menu1" style="display: none;" class="tab-pane fade">
+  <div id="menu1" style="display: none;">
   <div class="col-md-4">
     <img src="images/CS/RD/JET-CORAL-VISA.jpg" width="230" class="pull-left card-img"/>
 	</div>
@@ -114,7 +114,7 @@
         <li>1,250 bonus JPMiles every year on renewal each year</li>
 	</ul>
 	</div>
-	<div class="col-md-8 pull-right"><a name="Jet_Coral_Credit_Card"  class="btn btn-primary apply">Apply Now</a></div>
+	<div class="col-md-8 pull-right"><a name="Jet-Coral-Credit-Card&&amount=>5.0Lacs&&interest=Travel"  class="btn btn-primary apply">Apply Now</a></div>
   </div>
   <div id="menu2_motorsports_5" style="display: none;" >
   <div class="col-md-4">
@@ -129,7 +129,7 @@
        <li>Get a complimentary tie from Provogue on joining</li>
 	</ul>
 	</div>
-	<div class="col-md-8 pull-right"><a name="Ferrari_Platinum_Credit_Card" class="btn btn-primary apply">Apply Now</a></div>
+	<div class="col-md-8 pull-right"><a name="Ferrari-Platinum-Credit-Card&&amount=>15Lacs&&interest=Motorsports" class="btn btn-primary apply">Apply Now</a></div>
   </div>
 </div>
 
@@ -148,7 +148,7 @@
        <li>A set of complimentary Sennheiser HD 221 headphones on joining</li>
 	</ul>
 	</div>
-	<div class="col-md-8 pull-right"><a name="Rubyx_Credit_Card" class="btn btn-primary apply">Apply Now</a></div>
+	<div class="col-md-8 pull-right"><a name="Rubyx-Credit-Card&&amount=>10Lacs&&interest=Lifestyle" class="btn btn-primary apply">Apply Now</a></div>
   </div>
   <div id="menu1_10" style="display: none;" >
   <div class="col-md-4">
@@ -163,7 +163,7 @@
        <li>Renewal: 2,500 JPMiles + Complimentary Jet Airways Ticket</li>
 	</ul>
 	</div>
-	<div class="col-md-8 pull-right"><a name="Jet_Rubyx_Credit_Card" class="btn btn-primary apply">Apply Now</a></div>
+	<div class="col-md-8 pull-right"><a name="Jet-Rubyx-Credit-Card&&amount=>10Lacs&&interest=Travel" class="btn btn-primary apply">Apply Now</a></div>
   </div>
   <div id="menu_motorsports_10" style="display: none;" > 
   <div class="col-md-4">
@@ -178,7 +178,7 @@
         <li>Buy 1, get 1 movie ticket free at BookMyShow</li>
 	</ul>
 	</div>
-	<div class="col-md-8 pull-right"><a name="Ferrari_Signature_Credit_Card"  class="btn btn-primary apply">Apply Now</a></div>
+	<div class="col-md-8 pull-right"><a name="Ferrari-Signature-Credit-Card&&amount=>10Lacs&&interest=Motorsports"  class="btn btn-primary apply">Apply Now</a></div>
   </div>
 </div>
 
@@ -197,7 +197,7 @@
         <li>Complimentary All New Kindle on joining</li>
 	</ul>
 	</div>
-	<div class="col-md-8 pull-right"><a name="Sapphiro_Credit_Card"  class="btn btn-primary apply">Apply Now</a></div>
+	<div class="col-md-8 pull-right"><a name="Sapphiro-Credit-Card&&amount=>15Lacs&&interest=Lifestyle"  class="btn btn-primary apply">Apply Now</a></div>
   </div>
   <div id="menu_travel_15" style="display: none;">
   <div class="col-md-4">
@@ -212,7 +212,7 @@
        <li>Renewal: 5,000 JPMiles + Complimentary Jet Airways Ticket</li>
 	</ul>
 	</div>
-	<div class="col-md-8 pull-right"><a name="Jet_Sapphiro_Credit_Card" class="btn btn-primary apply">Apply Now</a></div>
+	<div class="col-md-8 pull-right"><a name="Jet-Sapphiro-Credit-Card&&amount=>15Lacs&&interest=Travel" class="btn btn-primary apply">Apply Now</a></div>
   </div>
   <div id="menu_motorsports_15" style="display: none;" >
   <div class="col-md-4">
@@ -227,7 +227,7 @@
         <li>Buy 1, get 1 movie ticket free at BookMyShow</li>
 	</ul>
 	</div>
-	<div class="col-md-8 pull-right"><a name="Ferrari_Signature_Credit_Card"  class="btn btn-primary apply">Apply Now</a></div>
+	<div class="col-md-8 pull-right"><a name="Ferrari-Signature-Credit-Card&&amount=>15Lacs&&interest=Motorsports"  class="btn btn-primary apply">Apply Now</a></div>
   </div>
 </div>
 

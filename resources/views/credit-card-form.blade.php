@@ -17,12 +17,25 @@
 							 <input type="hidden" name="empid" class="empid" value=" <?php echo Session::get('empid')?Session::get('empid'):'0';?>">
 						          <input type="hidden" name="brokerid" class="brokerid" value="<?php echo Session::get('brokerid')?Session::get('brokerid'):'0';?>">
 						          <input type="hidden" name="source" class="source" value="<?php echo Session::get('source')?Session::get('source'):'0';?>"> 
-						          <input type="hidden" name="prod" class="prod" 
+						          <input type="hidden" name="cards" class="prod" 
 						          value="<?php if(isset($_GET['prod'])){
-						          	echo $_GET["prod"];
+						          	echo str_replace("_"," ",$_GET["prod"]);
 						          	}else{
 						          		echo "0";
 						          		}?>"> 
+						          <input type="hidden" name="net_annual_income" class="amount" 
+						          value="<?php if(isset($_GET['amount'])){
+						          	echo str_replace("_"," ",$_GET["amount"]);
+						          	}else{
+						          		echo "0";
+						          		}?>"> 
+						          <input type="hidden" name="your_interests" class="interest" 
+						          value="<?php if(isset($_GET['interest'])){
+						          	echo str_replace("_"," ",$_GET["interest"]);
+						          	}else{
+						          		echo "0";
+						          		}?>"> 
+
 								<div class="row">
 									<div class="form-group">
 									
@@ -63,21 +76,40 @@
 						                    </select> 
 						                    </div>
 
-										<div class="col-md-4">Male &nbsp;&nbsp;
+										<!-- <div class="col-md-4">Male &nbsp;&nbsp;
 											<input type="radio" name="Gender"  class="radiob" checked value="Male"> Female &nbsp;&nbsp;<input type="radio" name="Gender" class="radiob" value="Female" required>
-										</div>
+										</div> -->
+
+										<div class="col-md-4"><b>Gender :</b>
+										<input type="radio"  name="Gender"  class="radiob" checked value="Male">Male
+                                        <input type="radio" name="Gender"  class="radiob" value="Female" >Female
+					                    </div><br>
                                        
-                                       <div class="col-md-4">Single &nbsp;&nbsp;
+                                       <div class="col-md-4"><b>Marital Status :</b>
+										<input type="radio"  name="marital_status"  class="radiob" checked value="Single">Single
+                                        <input type="radio" name="marital_status"  class="radiob" value="Married" >Married
+					                    </div><br>
+                                       <!-- <div class="col-md-4">Single &nbsp;&nbsp;
 											<input type="radio" name="marital_status"  class="radiob" checked value="Single"> Married &nbsp;&nbsp;<input type="radio" name="marital_status" class="radiob" value="Married" required>
-										</div>
+										</div> -->
 
-										<div class="col-md-4">Indian &nbsp;&nbsp;
+										<!-- <div class="col-md-4">Indian &nbsp;&nbsp;
 											<input type="radio" name="resident_status"  class="radiob" checked value="Indian"> NRI/Foreign National &nbsp;&nbsp;<input type="radio" name="resident_status" class="radiob" value="NRI/Foreign National" required>
-										</div>
+										</div> -->
 
-										<div class="col-md-4">Salaried &nbsp;&nbsp;
+										<div class="col-md-4"><b>Nationality :</b>
+										<input type="radio"  name="resident_status"  class="radiob" checked value="Indian">Indian
+                                        <input type="radio" name="resident_status"  class="radiob" value="NRI/Foreign National" >NRI/Foreign National
+					                    </div><br>
+
+										<!-- <div class="col-md-4">Salaried &nbsp;&nbsp;
 											<input type="radio" name="CustomerProfile"  class="radiob" checked  value="Salaried"> Selfemployed &nbsp;&nbsp;<input type="radio" name="CustomerProfile" class="radiob"  value="Selfemployed" required>
-										</div>
+										</div> -->
+
+										<div class="col-md-4"><b>Employment :</b>
+										<input type="radio"  name="CustomerProfile"  class="radiob" checked value="Salaried">Salaried
+                                        <input type="radio" name="CustomerProfile"  class="radiob" value="Selfemployed" >Selfemployed
+					                    </div><br>
                                         
                                         <div class="col-md-4">
 										<select class="form-control inp-fld" name="preferred_address" id="preferred_address" required>
@@ -101,7 +133,7 @@
 									<div class="form-group">
 										<h4 class="hdr">&nbsp;&nbsp;&nbsp;&nbsp;Company Name</h4>
 										<div class="col-md-4">
-											<input type="text" class="form-control" placeholder="Company Name*" name="CompanyName" id="CompanyName" required="">
+											<input type="text" class="form-control search_company" placeholder="Company Name*" name="CompanyName" id="CompanyName" required="">
 										</div>
 										<div class="col-md-4">
 											<input type="text" id="Income" name="Income" class="form-control" placeholder="Income*" onkeypress="return fnAllowNumeric(event)"  required>
@@ -282,12 +314,14 @@
 										</div>
 									</div>
 
-									<div class="col-md-4">
-										<select class="form-control inp-fld" name="have" id="have" required>
-					                      <option disabled selected value="">DO YOU HAVEA A CREDIT CARD</option>
+									<div class="col-md-4">Do You Have A Credit Card :
+										<!-- <select class="form-control inp-fld" name="have" id="have" required>
+					                      <option disabled selected value="">DO YOU HAVE A CREDIT CARD</option>
 					                      <option value="Yes">Yes</option>
 					                      <option value="No">No</option>
-					                    </select> 
+					                    </select>  -->
+					                    <input type="radio" id="have" name="have_credit_card" checked value="Yes">Yes
+                                        <input type="radio" name="have_credit_card" id="not_have" value="No" >No
 					                    </div><br>
 
 
@@ -581,6 +615,48 @@
 </script>
 
 <script type="text/javascript">
+	
+
+ $(document).ready(function(){
+	  
+    $(".search_company").autocomplete({
+      source: function(request, response) {
+        
+        $.ajax({
+          url: "{{ route('searchcompanyajax') }}",
+          dataType: "json",
+          data: {
+            term : request.term
+          },
+          success: function(data) {
+           
+
+            response(data);
+            
+          }
+        });
+      },
+      change: function (event, ui) {
+        if (ui.item == null || ui.item == undefined || ui.item.value=='No Result Found') {
+          $(".search_company").val("");
+          $(".search_company").attr("disabled", false);
+         
+        }else{
+
+         
+         $(".Q6").show();
+         
+          
+             }
+           }
+
+        
+      });
+   });
+
+</script>
+
+<script type="text/javascript">
 	function pancard(obj,val){
 		// console.log(obj);
 		if(obj=='PanNo' ){
@@ -673,7 +749,7 @@
     });
 </script>
 
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 	$(document).ready(function(){
     $('#have').on('change', function() {
     	console.log(this.value);
@@ -687,6 +763,20 @@
       }
     });
 });
+</script> -->
+
+<script type="text/javascript">
+  $('#have').change(function(){
+ 
+  $("#credit_details").show();
+  });
+</script>
+
+<script type="text/javascript">
+  $('#not_have').change(function(){
+ 
+  $("#credit_details").hide();
+  });
 </script>
 
 <script type="text/javascript">

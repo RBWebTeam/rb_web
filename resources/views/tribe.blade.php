@@ -14,7 +14,7 @@
     <li><a data-toggle="tab" href="#main3" id="nav3" class="go_to_next"><b>BUSINESS DETAIL</b></a></li>
     <li><a data-toggle="tab" href="#main5" id="nav5" class="go_to_next"><b>ONLINE ID</b></a></li>
     <li><a data-toggle="tab" href="#main6" id="nav6" class="go_to_next"><b>REFERENCE</b></a></li>
-    <li><a data-toggle="tab"  id="nav4" class="go_to_next"><b>DOCUMENT</b></a></li>
+    <li><a data-toggle="tab"  id="nav4" href="#main4" class="go_to_next"><b>DOCUMENT</b></a></li>
     <li><a data-toggle="tab"  id="nav7"  class="go_to_next"><b>BANK STATEMENT</b></a></li>
   </ul>
 
@@ -678,26 +678,26 @@ function go_to_next(next){
       $( "#nav"+nav_number[1] ).trigger( "click" );
       window.scrollTo(0,0);
     }else{
-      return false;
+     // return false;
     }
 }
  function go_back(next){
     var nav_number=next.split('main');
       $( "#nav"+nav_number[1] ).trigger( "click" );
-      return false;
+      //return false;
       window.scrollTo(0,0);
  }
 $('.go_to_next').click(function(){
 if($('#tribe_loan_form').valid()){
       //console.log("valid_tab");
    }else{
-    return false;
+    //return false;
    }
 });
 $("#upload_doc_submit").click(function(){
   $('#went_wrong_modal').modal('hide');
     if(!$('#kyc_form').valid()){
-      return false;
+     // return false;
     }               
   var form_url="{{URL::to('upload-tribe-doc')}}";
   $.ajax({
@@ -731,7 +731,7 @@ $("#upload_doc_submit").click(function(){
 $("#submit_tribe_statement").click(function(){
   $('#went_wrong_modal').modal('hide');
   if(!$('#bank_statement_form').valid()){
-    return false;
+    //return false;
   }
     else{
    // var CSRF_TOKEN = $('input[name="_token"]').val();                    
@@ -809,10 +809,12 @@ function tribe_doc_upload(id){
     $('#tribe_doc_upload_modal').modal('show');
     $('#uplaoding_doc_name').val(id);
     doc_id=id;
+     $('#doc_special_fields_ITR').hide();
+     $('#doc_special_fields').hide();
     if(id==6 || id==7){
       $('#doc_special_fields').show();
-    }else{
-       $('#doc_special_fields').hide();
+    }else if(id==9){
+      $('#doc_special_fields_ITR').show();
     }
 }
 
@@ -926,5 +928,14 @@ function del_doc_fun(id,doc){
             });
 }
   </script>
-
+<script type="text/javascript">
+    // When the document is ready
+    $(document).ready(function () {
+        
+        $('.input-daterange').datepicker({
+            todayBtn: "linked"
+        });
+    
+    });
+</script>
 

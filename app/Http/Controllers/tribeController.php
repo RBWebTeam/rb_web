@@ -184,7 +184,7 @@ class TribeController extends CallApiController
 	   public function UploadTribeDocuments(Request $req){
 	    	$tribe_id=Session::get('tribe_id');
 	    	$loan_id=Session::get('loan_id');
-	    	print_r($req->all());exit();
+	    	//print_r($req->all());exit();
 	      	$documents_name_array = array('Pan Card','Aadhar Card','Driving License','Passport','Voter ID','Electricity_bill','Leave and License Agreement','Registration Certificate','Tax Registration','Comapny IT Returns','Company Pan Card','Vat Return','IT Returns','Other');
 	    	
 	        $id=$req['uplaoding_doc_name'];
@@ -194,12 +194,12 @@ class TribeController extends CallApiController
             if(isset($req['document_type'])){
             	$post_data='{"document_category": '.$id.',"year":"'.$req['document_year'].'","type":"'.$req['document_type'].'", "title": "'.$req['document_title'].'", "document":"data:application/pdf;base64,'.$base64.'", "tribe": "'.$tribe_id.'", "secret": "'.TribeController::$secret.'"}';
             }else if(isset($req['document_category'])==9){
-            $post_data='{"document_category": '.$id.',"tribe": "'.$tribe_id.'","input_from":"1993-04-20","input_to":"1993-04-20", "title": "'.$req['document_title'].'", "document":"data:application/pdf;base64,'.$base64.'","secret": "'.TribeController::$secret.'"}';
+            $post_data='{"document_category": '.$id.',"tribe": "'.$tribe_id.'","input_from":'.$req['input_from'].',"input_to":'.$req['input_to'].', "title": "'.$req['document_title'].'", "document":"data:application/pdf;base64,'.$base64.'","secret": "'.TribeController::$secret.'"}';
             }
             else{
             $post_data='{"document_category": '.$id.', "title": "'.$req['document_title'].'", "document":"data:application/pdf;base64,'.$base64.'", "tribe": "'.$tribe_id.'", "secret": "'.TribeController::$secret.'"}';
         	}
-			//print_r($post_data);exit();
+			print_r($post_data);exit();
 
 				$url = $this::$url_static."BankAPIService.svc/uploadDocumentsTribeLoan";
 				$result=$this->call_json_data_api($url,$post_data);

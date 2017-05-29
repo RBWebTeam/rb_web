@@ -680,4 +680,34 @@ run_else:
                       'status'=>$status
                 ));
 	}
+	  public function emi_cal_app(Request $req){
+	  	try{
+	  	          $loanamount=$req['loanamount'];
+	  	          $loaninterest=$req['loaninterest']/12/100;
+	  	          $loanterm=$req['loanterm']; 
+	  	          $data['amount'] = $loanamount * $loaninterest * (pow(1 + $loaninterest, $loanterm) / (pow(1 + $loaninterest, $loanterm) - 1));
+	  	          $data['total'] =(($data['amount']*$loanterm)-$loanamount);
+	  	          $data['ttl_payment'] = $loanamount+$data['total'];
+	  	
+	  	          return response()->json(array('status' => 1,'data'=>$data,'err'=>''));
+	  	}catch (\Exception $e) {
+			return response()->json(array('status' => 0,'data'=>'','err'=>$e->getMessage()));
+		}
+      }
+      public function productwise_emi_cal_app(Request $req){
+	  	try{
+	  	    $data=DB::table('bank_master')
+    ->join('bank_product_web_intrest','bank_product_web_intrest.Bank_Id',
+     '=', 'bank_master.Bank_Id')
+    ->select(   
+       'bank_master.Bank_Name')
+    ->where('bank_product_web_intrest.Product_Id', '=',9)
+    ->whereIn('bank_master.Bank_Id', array($val,$val1,$val2))
+    ->get();
+	  	          return response()->json(array('status' => 1,'data'=>$data,'err'=>''));
+	  	}catch (\Exception $e) {
+			return response()->json(array('status' => 0,'data'=>'','err'=>$e->getMessage()));
+		}
+      }
+      
 }

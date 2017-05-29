@@ -932,7 +932,7 @@ function del_doc_fun(id,doc){
  <script>
  jQuery(function() {
     jQuery( "#datepicker1" ).datepicker({
-        minDate: 1,
+        minDate:"2016-05-05",
         dateFormat: "yy-mm-dd",
         onSelect: function(date){
         //alert("none");

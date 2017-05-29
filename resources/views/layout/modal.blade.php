@@ -483,8 +483,8 @@ Rupeeboss Financial Services Private Limited shall access your Credit Informatio
         </div>
         <div id="doc_special_fields_ITR" style="display: none;">
           <label for="datefilter_itr"> Date Range</label>
-          <input type="date" id="datepicker1" name="datepicker1" value="" required />
-           <input type="date" id="datepicker2" name="datepicker2" value="" required />
+          <input type="text" id="datepicker1" name="input_from" value="" required />
+           <input type="text" id="datepicker2" name="input_to" value="" required />
           
         </div>
 		<br>

@@ -68,16 +68,16 @@
                     <div>
                     <select class="form-control inp-fld" name="form" id="form_product" required>
                       <option disabled selected value="">Select Product</option>
-                      <option value="Car Loan">Car Loan</option>
-                      <option value="Credit Card">Credit Card</option>
-                      <option value="Home Loan">Home Loan</option>
-                      <option value="Home Loan Balance Transfer">Home Loan Balance Transfer</option>
-                      <option value="Loan Against Property">Loan Against Property</option>
-                      <option value="Loan Against Property Balance Transfer">Loan Against Property Balance Transfer</option>
-                      <option value="Personal Loan">Personal Loan</option>
-                      <option value="Personal Loan Balance Transfer">Personal Loan Balance Transfer</option>
-                      <option value="Working Capital Balance Transfer">Working Capital Balance Transfer</option>
-                      <option value="Unsecured Business Loan">Unsecured Business Loan</option>
+                      <option value="Magic-Link-Car Loan">Car Loan</option>
+                      <option value="Magic-Link-Credit Card">Credit Card</option>
+                      <option value="Magic-Link-Home Loan">Home Loan</option>
+                      <option value="Magic-Link-Home Loan Balance Transfer">Home Loan Balance Transfer</option>
+                      <option value="Magic-Link-Loan Against Property">Loan Against Property</option>
+                      <option value="Magic-Link-Loan Against Property Balance Transfer">Loan Against Property Balance Transfer</option>
+                      <option value="Magic-Link-Personal Loan">Personal Loan</option>
+                      <option value="Magic-Link-Personal Loan Balance Transfer">Personal Loan Balance Transfer</option>
+                      <option value="Magic-Link-Working Capital Balance Transfer">Working Capital Balance Transfer</option>
+                      <option value="Magic-Link-Unsecured Business Loan">Unsecured Business Loan</option>
           </select> 
                   </div><br>
                   <div>

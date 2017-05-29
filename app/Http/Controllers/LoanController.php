@@ -267,6 +267,10 @@ class LoanController extends CallApiController
             }
         
         }
+
+   public function apply_iifl_loan(){
+    return view('apply-iifl-loan');
+   }     
     
 
 }

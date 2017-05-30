@@ -700,7 +700,12 @@ run_else:
 	  		$err="";
 	  		$status=0;
 	  		//return $req->all();
-	  	    $data=DB::select('call  usp_get_bank_quot_test("'.$req['PropertyCost'].'","'.$req['LoanTenure'].'","'.$req['LoanRequired'].'","'.$req['ApplicantGender'].'","'.$req['ApplicantIncome'].'","'.$req['ApplicantObligations'].'","'.$req['ApplicantDOB'].'","'.$req['CoApplicantYes'].'","'.$req['CoApplicantIncome'].'","'.$req['CoApplicantObligations'].'","'.$req['Turnover'].'","'.$req['ProfitAfterTax'].'","'.$req['Depreciation'].'","'.$req['DirectorRemuneration'].'","'.$req['CoApplicantTurnover'].'","'.$req['CoApplicantProfitAfterTax'].'","'.$req['CoApplicantDepreciation'].'","'.$req['CoApplicantDirectorRemuneration'].'","'.$req['ApplicantSource'].'","'.$req['CoApplicantDOB'].'","'.$req['CoApplicantSource'].'","'.$req['ProductId'].'")');
+
+	  		if($req['ProductId']==12){
+			  	 $data=DB::select('call  usp_get_bank_quot_test("'.$req['PropertyCost'].'","'.$req['LoanTenure'].'","'.$req['LoanRequired'].'","'.$req['ApplicantGender'].'","'.$req['ApplicantIncome'].'","'.$req['ApplicantObligations'].'","1985-12-12","N","","","'.$req['Turnover'].'","'.$req['ProfitAfterTax'].'","'.$req['Depreciation'].'","'.$req['DirectorRemuneration'].'","","","","","'.$req['ApplicantSource'].'","","","'.$req['ProductId'].'")');
+	  			}elseif($req['ProductId']==9){
+	  			 $data=DB::select('call  usp_get_personal_loan_quot ("1985-12-12","'.$req['ApplicantSource'].'","'.$req['ApplicantIncome'].'","'.$req['ApplicantObligations'].'","'.$req['LoanTenure'].'","'.$req['LoanRequired'].'")');
+	  			}
 	  	    	if($data){
 	  	    		$return_data=$data[0];
 	  	    		$status=1;
@@ -709,13 +714,7 @@ run_else:
 	  	    	}
 	  	}catch (\Exception $e) {
 	  			$error=$e->getCode();
-	  		if($error==2002){
-	  			$err="DB Connection Problem";
-	  		}else if($error==22007){
-	  			$err="Invalid values Passed/Essential parameter missing";
-	  		}else{
-	  			$err="Something went wrong";
-	  		}
+	  			$err=$this->getErrorMsg($error);
 		}
 		return response()->json(array('status' => $status,'data'=>$return_data,'err_code'=>$err));
       }

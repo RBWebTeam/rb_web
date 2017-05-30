@@ -444,9 +444,9 @@
       <div class="col-md-4">Electricity Bill</div>
         <div class="col-md-8 form-padding">
         <a class="btn btn-primary btn-outline with-arrow pull-right" onclick="tribe_doc_upload(12)">Add Document<i class="icon-arrow-right"></i></a>
-           <div style="display: none;" id="after_upload_div_6">
-              <a class="btn btn-primary btn-outline with-arrow pull-right" id="get_doc_6" >Show Document<i class="icon-arrow-right"></i></a>
-              <a class="btn btn-primary btn-outline with-arrow pull-right" id="del_doc_6">Delete Document<i class="icon-arrow-right"></i></a>
+           <div style="display: none;" id="after_upload_div_12">
+              <a class="btn btn-primary btn-outline with-arrow pull-right" id="get_doc_12" >Show Document<i class="icon-arrow-right"></i></a>
+              <a class="btn btn-primary btn-outline with-arrow pull-right" id="del_doc_12">Delete Document<i class="icon-arrow-right"></i></a>
           </div>
          
         </div>
@@ -454,9 +454,9 @@
         <div class="col-md-4">Leave and License Agreement</div>
         <div class="col-md-8 form-padding">
         <a class="btn btn-primary btn-outline with-arrow pull-right" onclick="tribe_doc_upload(13)">Add Document<i class="icon-arrow-right"></i></a>
-           <div style="display: none;" id="after_upload_div_7">
-              <a class="btn btn-primary btn-outline with-arrow pull-right" id="get_doc_7" >Show Document<i class="icon-arrow-right"></i></a>
-              <a class="btn btn-primary btn-outline with-arrow pull-right" id="del_doc_7">Delete Document<i class="icon-arrow-right"></i></a>
+           <div style="display: none;" id="after_upload_div_13">
+              <a class="btn btn-primary btn-outline with-arrow pull-right" id="get_doc_13" >Show Document<i class="icon-arrow-right"></i></a>
+              <a class="btn btn-primary btn-outline with-arrow pull-right" id="del_doc_13">Delete Document<i class="icon-arrow-right"></i></a>
           </div>
        
         </div>
@@ -467,9 +467,9 @@
         <div class="col-md-4">Registration Certificate</div>
         <div class="col-md-8 form-padding">
         <a class="btn btn-primary btn-outline with-arrow pull-right" onclick="tribe_doc_upload(14)">Add Document<i class="icon-arrow-right"></i></a>
-           <div style="display: none;" id="after_upload_div_8">
-              <a class="btn btn-primary btn-outline with-arrow pull-right" id="get_doc_8" >Show Document<i class="icon-arrow-right"></i></a>
-              <a class="btn btn-primary btn-outline with-arrow pull-right" id="del_doc_8">Delete Document<i class="icon-arrow-right"></i></a>
+           <div style="display: none;" id="after_upload_div_14">
+              <a class="btn btn-primary btn-outline with-arrow pull-right" id="get_doc_14" >Show Document<i class="icon-arrow-right"></i></a>
+              <a class="btn btn-primary btn-outline with-arrow pull-right" id="del_doc_14">Delete Document<i class="icon-arrow-right"></i></a>
           </div>
         
         </div>
@@ -477,9 +477,9 @@
         <div class="col-md-4">Tax Registration</div>
         <div class="col-md-8 form-padding">
         <a class="btn btn-primary btn-outline with-arrow pull-right" onclick="tribe_doc_upload(15)">Add Document<i class="icon-arrow-right"></i></a>
-           <div style="display: none;" id="after_upload_div_9">
-              <a class="btn btn-primary btn-outline with-arrow pull-right" id="get_doc_9" >Show Document<i class="icon-arrow-right"></i></a>
-              <a class="btn btn-primary btn-outline with-arrow pull-right" id="del_doc_9">Delete Document<i class="icon-arrow-right"></i></a>
+           <div style="display: none;" id="after_upload_div_15">
+              <a class="btn btn-primary btn-outline with-arrow pull-right" id="get_doc_15" >Show Document<i class="icon-arrow-right"></i></a>
+              <a class="btn btn-primary btn-outline with-arrow pull-right" id="del_doc_15">Delete Document<i class="icon-arrow-right"></i></a>
           </div>
         
         </div>
@@ -487,9 +487,9 @@
         <div class="col-md-4">Company PAN</div>
         <div class="col-md-8 form-padding">
         <a class="btn btn-primary btn-outline with-arrow pull-right" onclick="tribe_doc_upload(8)">Add Document<i class="icon-arrow-right"></i></a>
-           <div style="display: none;" id="after_upload_div_11">
-              <a class="btn btn-primary btn-outline with-arrow pull-right" id="get_doc_11" >Show Document<i class="icon-arrow-right"></i></a>
-              <a class="btn btn-primary btn-outline with-arrow pull-right" id="del_doc_11">Delete Document<i class="icon-arrow-right"></i></a>
+           <div style="display: none;" id="after_upload_div_8">
+              <a class="btn btn-primary btn-outline with-arrow pull-right" id="get_doc_8" >Show Document<i class="icon-arrow-right"></i></a>
+              <a class="btn btn-primary btn-outline with-arrow pull-right" id="del_doc_8">Delete Document<i class="icon-arrow-right"></i></a>
           </div>
        
         </div>
@@ -500,9 +500,9 @@
         <div class="col-md-4">Company IT Returns</div>
         <div class="col-md-8 form-padding">
         <a class="btn btn-primary btn-outline with-arrow pull-right" onclick="tribe_doc_upload(7)">Add Document<i class="icon-arrow-right"></i></a>
-           <div style="display: none;" id="after_upload_div_10">
-              <a class="btn btn-primary btn-outline with-arrow pull-right" id="get_doc_10" >Show Document<i class="icon-arrow-right"></i></a>
-              <a class="btn btn-primary btn-outline with-arrow pull-right" id="del_doc_10">Delete Document<i class="icon-arrow-right"></i></a>
+           <div style="display: none;" id="after_upload_div_7">
+              <a class="btn btn-primary btn-outline with-arrow pull-right" id="get_doc_7" >Show Document<i class="icon-arrow-right"></i></a>
+              <a class="btn btn-primary btn-outline with-arrow pull-right" id="del_doc_7">Delete Document<i class="icon-arrow-right"></i></a>
           </div>
       
         </div>
@@ -512,9 +512,9 @@
          <div class="col-md-4">ITR/VAT Returns/ST Returns</div>
         <div class="col-md-8 form-padding">
         <a class="btn btn-primary btn-outline with-arrow pull-right" onclick="tribe_doc_upload(9)">Add Document<i class="icon-arrow-right"></i></a>
-           <div style="display: none;" id="after_upload_div_12">
-              <a class="btn btn-primary btn-outline with-arrow pull-right" id="get_doc_12" >Show Document<i class="icon-arrow-right"></i></a>
-              <a class="btn btn-primary btn-outline with-arrow pull-right" id="del_doc_12">Delete Document<i class="icon-arrow-right"></i></a>
+           <div style="display: none;" id="after_upload_div_9">
+              <a class="btn btn-primary btn-outline with-arrow pull-right" id="get_doc_9" >Show Document<i class="icon-arrow-right"></i></a>
+              <a class="btn btn-primary btn-outline with-arrow pull-right" id="del_doc_9">Delete Document<i class="icon-arrow-right"></i></a>
           </div>
         
         </div>
@@ -525,9 +525,9 @@
         <div class="col-md-4">Personal IT Returns</div>
         <div class="col-md-8 form-padding">
         <a class="btn btn-primary btn-outline with-arrow pull-right" onclick="tribe_doc_upload(6)">Add Document<i class="icon-arrow-right"></i></a>
-           <div style="display: none;" id="after_upload_div_13">
-              <a class="btn btn-primary btn-outline with-arrow pull-right" id="get_doc_13" >Show Document<i class="icon-arrow-right"></i></a>
-              <a class="btn btn-primary btn-outline with-arrow pull-right" id="del_doc_13">Delete Document<i class="icon-arrow-right"></i></a>
+           <div style="display: none;" id="after_upload_div_6">
+              <a class="btn btn-primary btn-outline with-arrow pull-right" id="get_doc_6" >Show Document<i class="icon-arrow-right"></i></a>
+              <a class="btn btn-primary btn-outline with-arrow pull-right" id="del_doc_6">Delete Document<i class="icon-arrow-right"></i></a>
           </div>
       
         </div>
@@ -535,9 +535,9 @@
         <div class="col-md-4">Other Documents</div>
         <div class="col-md-8 form-padding">
         <a class="btn btn-primary btn-outline with-arrow pull-right" onclick="tribe_doc_upload(11)">Add Document<i class="icon-arrow-right"></i></a>
-           <div style="display: none;" id="after_upload_div_14">
-              <a class="btn btn-primary btn-outline with-arrow pull-right" id="get_doc_14" >Show Document<i class="icon-arrow-right"></i></a>
-              <a class="btn btn-primary btn-outline with-arrow pull-right" id="del_doc_14">Delete Document<i class="icon-arrow-right"></i></a>
+           <div style="display: none;" id="after_upload_div_11">
+              <a class="btn btn-primary btn-outline with-arrow pull-right" id="get_doc_11" >Show Document<i class="icon-arrow-right"></i></a>
+              <a class="btn btn-primary btn-outline with-arrow pull-right" id="del_doc_11">Delete Document<i class="icon-arrow-right"></i></a>
           </div>
         </div>
         
@@ -679,26 +679,26 @@ function go_to_next(next){
       $( "#nav"+nav_number[1] ).trigger( "click" );
       window.scrollTo(0,0);
     }else{
-     // return false;
+      return false;
     }
 }
  function go_back(next){
     var nav_number=next.split('main');
       $( "#nav"+nav_number[1] ).trigger( "click" );
-      //return false;
+      return false;
       window.scrollTo(0,0);
  }
 $('.go_to_next').click(function(){
 if($('#tribe_loan_form').valid()){
       //console.log("valid_tab");
    }else{
-    //return false;
+    return false;
    }
 });
 $("#upload_doc_submit").click(function(){
   $('#went_wrong_modal').modal('hide');
     if(!$('#kyc_form').valid()){
-     // return false;
+      return false;
     }               
   var form_url="{{URL::to('upload-tribe-doc')}}";
   $.ajax({
@@ -732,7 +732,7 @@ $("#upload_doc_submit").click(function(){
 $("#submit_tribe_statement").click(function(){
   $('#went_wrong_modal').modal('hide');
   if(!$('#bank_statement_form').valid()){
-    //return false;
+    return false;
   }
     else{
    // var CSRF_TOKEN = $('input[name="_token"]').val();                    
@@ -762,7 +762,7 @@ $("#submit_tribe_statement").click(function(){
  });
 
 $('#freeze_form').click(function(){
-      //alert($('#tribe_loan_form input[name="_token"]').val());
+     
       var CSRF_TOKEN = $('input[name="_token"]').val();
     
      $('#freeze_form_modal').modal('hide');
@@ -897,8 +897,6 @@ function get_doc_fun(id){
                // console.log(msg);
                 if(msg.status){
                     window.open(msg.url,'_blank');
-                    
-
                   }else{
                     $('#went_wrong_modal').modal('show');
                    // console.log("error "+msg);
@@ -932,7 +930,7 @@ function del_doc_fun(id,doc){
  <script>
  jQuery(function() {
     jQuery( "#datepicker1" ).datepicker({
-        minDate:"2016-05-05",
+        minDate:"2017-05-05",
         dateFormat: "yy-mm-dd",
         onSelect: function(date){
         //alert("none");

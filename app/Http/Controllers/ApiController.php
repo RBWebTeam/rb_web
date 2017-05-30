@@ -696,18 +696,28 @@ run_else:
       }
       public function productwise_emi_cal_app(Request $req){
 	  	try{
-	  	    $data=DB::table('bank_master')
-    ->join('bank_product_web_intrest','bank_product_web_intrest.Bank_Id',
-     '=', 'bank_master.Bank_Id')
-    ->select(   
-       'bank_master.Bank_Name')
-    ->where('bank_product_web_intrest.Product_Id', '=',9)
-    ->whereIn('bank_master.Bank_Id', array($val,$val1,$val2))
-    ->get();
-	  	          return response()->json(array('status' => 1,'data'=>$data,'err'=>''));
+	  		$return_data=NULL;
+	  		$err="";
+	  		$status=0;
+	  		//return $req->all();
+	  	    $data=DB::select('call  usp_get_bank_quot_test("'.$req['PropertyCost'].'","'.$req['LoanTenure'].'","'.$req['LoanRequired'].'","'.$req['ApplicantGender'].'","'.$req['ApplicantIncome'].'","'.$req['ApplicantObligations'].'","'.$req['ApplicantDOB'].'","'.$req['CoApplicantYes'].'","'.$req['CoApplicantIncome'].'","'.$req['CoApplicantObligations'].'","'.$req['Turnover'].'","'.$req['ProfitAfterTax'].'","'.$req['Depreciation'].'","'.$req['DirectorRemuneration'].'","'.$req['CoApplicantTurnover'].'","'.$req['CoApplicantProfitAfterTax'].'","'.$req['CoApplicantDepreciation'].'","'.$req['CoApplicantDirectorRemuneration'].'","'.$req['ApplicantSource'].'","'.$req['CoApplicantDOB'].'","'.$req['CoApplicantSource'].'","'.$req['ProductId'].'")');
+	  	    	if($data){
+	  	    		$return_data=$data[0];
+	  	    		$status=1;
+	  	    	}else{
+	  	    		$err="You are not eligible for loan";
+	  	    	}
 	  	}catch (\Exception $e) {
-			return response()->json(array('status' => 0,'data'=>'','err'=>$e->getMessage()));
+	  			$error=$e->getCode();
+	  		if($error==2002){
+	  			$err="DB Connection Problem";
+	  		}else if($error==22007){
+	  			$err="Invalid values Passed/Essential parameter missing";
+	  		}else{
+	  			$err="Something went wrong";
+	  		}
 		}
+		return response()->json(array('status' => $status,'data'=>$return_data,'err_code'=>$err));
       }
       
 }

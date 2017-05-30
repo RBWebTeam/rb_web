@@ -366,18 +366,17 @@ class TribeController extends CallApiController
 	    $http_result=$result['http_result'];
 	    $error=$result['error'];
 	    $data=json_decode(json_decode($http_result));
-	    foreach ($data->response->data as $key => $value) {
 
+	    foreach ($data->response->data as $key => $value) {
+	    	//print_r($value[0]->id . " == ".$doc_id);
 	    	if($value[0]->id==$doc_id){
 	    		$url=$value[0]->document_url;
-	    		
-
 	    		$title=$value[0]->title;
 	    		break;
 	    	}
 	    	
 	    }
-	   
+	  // print_r($doc_id);exit();
 	    if(($data->error!=1)){
 	    	 return Response::json(array(
 	     					'status'=>true,

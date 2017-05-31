@@ -89,7 +89,7 @@
 
 <!-- 5.0 -->
 <div class="tab-content text-left">
-  <div id="home1_lifestyle_5" style="display: none;" class="tab-pane fade in active">
+  <div id="home1_lifestyle_5" style="display: none;" >
   <div class="col-md-4">
   <img src="images/CS/RD/DA_Coral-Mastercard-MasterCard_1.jpg" width="230" class="pull-left card-img"/>
   </div>

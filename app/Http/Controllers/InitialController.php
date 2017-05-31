@@ -5,7 +5,6 @@ use App\Http\Requests;
 use Session;
 class InitialController extends Controller
 {
-	//public static $pro_code = array('huii' =>213 );
 	public static $url_static = "http://api.rupeeboss.com/";
 	public static $service_url_static = "http://services.rupeeboss.com/";
   public static $erp_url_static = "http://beta.erp.rupeeboss.com/";
@@ -31,6 +30,7 @@ class InitialController extends Controller
       //use as
       //$product_list=InitialController::prod();
 	}
+  //for file upload ,file to base 64 conversion
 	public function FileToString($str,$req){
            // print_r($str);exit();
 		$imageName = time().'.'.$req->$str->getClientOriginalExtension();
@@ -41,4 +41,15 @@ class InitialController extends Controller
             $base64=base64_encode($contents);
             return $base64;
 		}
+    //for custom error message 
+    public function getErrorMsg($error_code){
+        if($error_code==2002){
+          $err="DB Connection Problem";
+        }else if($error_code==22007){
+          $err="Invalid values Passed/Essential parameter missing";
+        }else{
+          $err="Something went wrong";
+        }
+        return $err;
+    }
 }

@@ -184,20 +184,20 @@ class TribeController extends CallApiController
 	   public function UploadTribeDocuments(Request $req){
 	    	$tribe_id=Session::get('tribe_id');
 	    	$loan_id=Session::get('loan_id');
-	    	print_r($req->all());exit();
+	    	//print_r(Session::all());exit();
 	      	$documents_name_array = array('Pan Card','Aadhar Card','Driving License','Passport','Voter ID','Electricity_bill','Leave and License Agreement','Registration Certificate','Tax Registration','Comapny IT Returns','Company Pan Card','Vat Return','IT Returns','Other');
 	    	
 	        $id=$req['uplaoding_doc_name'];
             $str='document_itself';         
             $base64=$this->FileToString($str,$req);
             //if document is Personal/Company IT Return
-            if(isset($req['document_type'])){
-            	$post_data='{"document_category": '.$id.',"year":"'.$req['document_year'].'","type":"'.$req['document_type'].'", "title": "'.$req['document_title'].'", "document":"data:application/pdf;base64,'.$base64.'", "tribe": "'.$tribe_id.'", "secret": "'.TribeController::$secret.'"}';
-            }else if(isset($req['document_category'])==9){
-            $post_data='{"document_category": '.$id.',"tribe": "'.$tribe_id.'","input_from":"1993-04-20","input_to":"1993-04-20", "title": "'.$req['document_title'].'", "document":"data:application/pdf;base64,'.$base64.'","secret": "'.TribeController::$secret.'"}';
+            if($id==6 || $id==7){
+            	$post_data='{"document_category": '.$id.',"year":"'.$req['document_year'].'","type":"'.$req['document_type'].'", "title": "'.$req['document_title'].'", "document":"data:application/pdf;base64,'.$base64.'", "tribe": '.$tribe_id.'}';
+            }else if($id==9){
+            $post_data='{"document_category": '.$id.',"tribe": '.$tribe_id.',"input_from":'.$req['input_from'].',"input_to":'.$req['input_to'].', "title": "'.$req['document_title'].'", "document":"data:application/pdf;base64,'.$base64.'"}';
             }
             else{
-            $post_data='{"document_category": '.$id.', "title": "'.$req['document_title'].'", "document":"data:application/pdf;base64,'.$base64.'", "tribe": "'.$tribe_id.'", "secret": "'.TribeController::$secret.'"}';
+            $post_data='{"document_category": '.$id.', "title": "'.$req['document_title'].'", "document":"data:application/pdf;base64,'.$base64.'", "tribe": '.$tribe_id.'}';
         	}
 			//print_r($post_data);exit();
 
@@ -366,18 +366,17 @@ class TribeController extends CallApiController
 	    $http_result=$result['http_result'];
 	    $error=$result['error'];
 	    $data=json_decode(json_decode($http_result));
-	    foreach ($data->response->data as $key => $value) {
 
+	    foreach ($data->response->data as $key => $value) {
+	    	//print_r($value[0]->id . " == ".$doc_id);
 	    	if($value[0]->id==$doc_id){
 	    		$url=$value[0]->document_url;
-	    		
-
 	    		$title=$value[0]->title;
 	    		break;
 	    	}
 	    	
 	    }
-	   
+	  // print_r($doc_id);exit();
 	    if(($data->error!=1)){
 	    	 return Response::json(array(
 	     					'status'=>true,

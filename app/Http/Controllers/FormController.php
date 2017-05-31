@@ -263,7 +263,6 @@ class FormController extends CallApiController
                         $max=$emi_arr[$index];
                       }
                   }
-                  // print_r($index);exit();
                       if(isset($req->Bank_Id)){
                           $quote_data=DB::select(' call usp_get_bankwise_business_loan_quot ("'.$req['applicant_dob'].'","'.$req['emp_detail'].'","'.$req['turnover'].'","'.$req['profit_after_tax'].'","'.$req['depreciation'].'","'.$req['partner_remuneration'].'","'.$req['interest_paid'].'","'.$req['emi'][$index].'","'.$req['no_of_emi_paid'][$index].'","'.$req['loan_tenure'].'","'.$req['loan_amount'].'","'.$req['date'].'","'.$req->Bank_Id.'")');
         

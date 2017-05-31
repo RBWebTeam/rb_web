@@ -270,6 +270,28 @@ class LoanController extends CallApiController
 
    public function apply_iifl_loan(){
     return view('apply-iifl-loan');
+   }
+
+   public function aadhar_card(Request $req){
+    // print_r($req->all());
+    $data['AadhaarNumber']=$req['AadhaarNumber'];
+    $post_data=json_encode($data);
+    // print_r($post_data);exit();
+
+    $url = $this::$url_static."BankAPIService.svc/createIIFLAadharOTP";
+    $result=$this->call_json_data_api($url,$post_data);
+    $http_result=$result['http_result'];
+    $error=$result['error'];
+    $st=str_replace('"{', "{", $http_result);
+    $s=str_replace('}"', "}", $st);
+    $m=$s=str_replace('\\', "", $s);
+
+    $obj = json_decode($m);
+    print_r( $obj );exit();
+    // if ($obj->ApplicationId) {
+    //   # code...
+    // }
+
    }     
     
 

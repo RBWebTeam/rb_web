@@ -48,15 +48,12 @@
         <li>Earn 2 PAYBACK points on every Rs.100 spent</li>
         <li>Min. 15% savings on dining at participating restaurants</li>
        <li>Save on 1% fuel surcharge, waived off at HPCL petrol pumps</li>
-<<<<<<< HEAD
+
 	</ul>
 	</div>
 	<div class="col-md-8 pull-right"><a  name="Platinum-Chip-Credit-Card&&amount>2.5Lacs&&interest=Lifestyle" class="btn btn-primary apply apply">Apply Now</a></div>
-=======
-  </ul>
-  </div>
-  <div class="col-md-8 pull-right"><a  name="Platinum_Chip_Credit_Card" class="btn btn-primary apply apply">Apply Now</a></div>
->>>>>>> f327e61a223841275b8ae4c6c855844eabe1726b
+
+  
   </div>
   <div id="menu12" style="display: none;" >
   <div class="col-md-4">
@@ -162,9 +159,10 @@
 	</ul>
 	</div>
 	<div class="col-md-8 pull-right"><a name="Rubyx-Credit-Card&&amount=>10Lacs&&interest=Lifestyle" class="btn btn-primary apply">Apply Now</a></div>
+  </div>
 
   
-  <div id="menu1_10" style="display: none;" >
+  <div id="menu1_10" style="display:none;" >
   <div class="col-md-4">
     <img src="images/CS/RD/JET-RUBYX-VISA.jpg" width="230" class="pull-left card-img"/>
   </div>
@@ -172,9 +170,9 @@
   <h3><b>Jet Rubyx Credit Card</b></h3>
     <ul class="pad-lft">
     <li>Joining Fee - ₹.2,500 + ST</li>
-        <li>Welcome: 5,000 JPMiles + Complimentary Jet Airways Ticket</li>
-        <li>5,000 activation bonus JPMiles on achieving spends threshold of ₹75,000</li>
-       <li>Renewal: 2,500 JPMiles + Complimentary Jet Airways Ticket</li>
+    <li>Welcome: 5,000 JPMiles + Complimentary Jet Airways Ticket</li>
+    <li>5,000 activation bonus JPMiles on achieving spends threshold of ₹75,000</li>
+    <li>Renewal: 2,500 JPMiles + Complimentary Jet Airways Ticket</li>
 
 	</ul>
 	</div>
@@ -314,7 +312,7 @@
 
          
       }
-    if (( interest == 'Lifestyle' && income == '>5.0Lacs'))menu2_motorsports_5
+    if (( interest == 'Lifestyle' && income == '>5.0Lacs'))
       {
        
         $("#home_lifestyle_2").hide();
@@ -445,6 +443,8 @@
         $('#menu_motorsports_10').hide();
         $('#menu_motorsports_15').show();
        }
+
+       
       
 
   }

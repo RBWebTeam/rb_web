@@ -17,7 +17,7 @@
 <h3>Net Annual Income</h3>
    <div class="btn-grp mrg-top income-tab" data-toggle="buttons" id="income">
       <span class="btn btn-default outer-brd btn-block active">
-     <input type="radio"><a onclick="set_annual_income('>2.5Lacs')">> 2.5 Lacs</a>
+     <input type="radio"><a id="hide" onclick="set_annual_income('>2.5Lacs')">> 2.5 Lacs</a>
       </span>
       <span class="btn btn-default outer-brd btn-block ">
      <input type="radio"><a onclick="set_annual_income('>5.0Lacs')">>5.0 Lacs</a></span>
@@ -32,8 +32,8 @@
 <div class="col-md-8">
 <ul class="nav nav-tabs nav-justified" id="interest">
   <li class="active"><a data-toggle="tab" href="#home" onclick="set_interest('Lifestyle')">Lifestyle</a></li>
-  <li><a data-toggle="tab" href="#menu1" onclick="set_interest('Travel')">Travel</a></li>
-  <li><a data-toggle="tab" href="#menu2" onclick="set_interest('Motorsports')">Motorsports</a></li>
+  <li><a style="display: none;" data-toggle="tab" id="travel" href="#menu1" onclick="set_interest('Travel')">Travel</a></li>
+  <li><a style="display: none;" data-toggle="tab" id="motorsports" href="#menu2" onclick="set_interest('Motorsports')">Motorsports</a></li>
 </ul>
 
 <div class="tab-content text-left">
@@ -287,6 +287,18 @@
   { 
        income=value;
        show_card();
+        if ( income == '>2.5Lacs')
+      {
+        
+        $("#travel").hide();
+        $("#motorsports").hide();
+       
+      }else if(income == '>5.0Lacs' || income == '>10Lacs' || income == '>15Lacs')
+      {
+        
+        $("#travel").show();
+        $("#motorsports").show();
+      }
   }
   function set_interest(value)
   { 
@@ -443,8 +455,6 @@
         $('#menu_motorsports_10').hide();
         $('#menu_motorsports_15').show();
        }
-
-       
       
 
   }

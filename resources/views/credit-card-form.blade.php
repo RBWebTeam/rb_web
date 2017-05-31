@@ -320,8 +320,8 @@
 					                      <option value="Yes">Yes</option>
 					                      <option value="No">No</option>
 					                    </select>  -->
-					                    <input type="radio" id="have" name="have_credit_card" checked value="Yes">Yes
-                                        <input type="radio" name="have_credit_card" id="not_have" value="No" >No
+					                    <input type="radio" id="have" name="have_credit_card"  value="Yes">Yes
+                                        <input type="radio" name="have_credit_card" id="not_have" checked value="No" >No
 					                    </div><br>
 
 

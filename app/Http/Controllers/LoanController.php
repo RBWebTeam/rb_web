@@ -273,12 +273,24 @@ class LoanController extends CallApiController
    }
 
    public function aadhar_card(Request $req){
-    // print_r($req->all());
-    $data['AadhaarNumber']=$req['AadhaarNumber'];
-    $post_data=json_encode($data);
-    // print_r($post_data);exit();
+    // print_r($req->all());exit();
+    $post_data = '{
+   "head": {
+    "requestCode": "PLRQSTDD01",
+    "key": "ae94e5857582d97cd9a8669d51c164c8",
+    "appVer": "1.0",
+    "osName": "WebAPI",
+    "appName": "ALLIANCE",
+    "source":"RupeeBoss"
+  },
+  
+  "body": {"SrchParam":"StateMaster" }
+}';
+    //call API here to save in DB
+        //$post=json_encode($post_data);
+     // print_r($post_data);exit();
 
-    $url = $this::$url_static."BankAPIService.svc/createIIFLAadharOTP";
+    $url = $this::$url_static."BankAPIService.svc/getIIFLStateMaster";
     $result=$this->call_json_data_api($url,$post_data);
     $http_result=$result['http_result'];
     $error=$result['error'];
@@ -286,11 +298,12 @@ class LoanController extends CallApiController
     $s=str_replace('}"', "}", $st);
     $m=$s=str_replace('\\', "", $s);
 
-    $obj = json_decode($m);
-    print_r( $obj );exit();
-    // if ($obj->ApplicationId) {
-    //   # code...
-    // }
+     $obj = json_decode($m);
+     $a=$obj->body;
+     $b=$a->StateMasterValues;
+    return response()->json($b);
+
+
 
    }     
     

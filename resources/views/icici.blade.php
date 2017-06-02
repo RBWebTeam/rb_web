@@ -49,9 +49,9 @@
         <li>Min. 15% savings on dining at participating restaurants</li>
        <li>Save on 1% fuel surcharge, waived off at HPCL petrol pumps</li>
 
-	</ul>
-	</div>
-	<div class="col-md-8 pull-right"><a  name="Platinum-Chip-Credit-Card&&amount>2.5Lacs&&interest=Lifestyle" class="btn btn-primary apply apply">Apply Now</a></div>
+  </ul>
+  </div>
+  <div class="col-md-8 pull-right"><a  name="Platinum-Chip-Credit-Card&&amount>2.5Lacs&&interest=Lifestyle" class="btn btn-primary apply apply">Apply Now</a></div>
 
   
   </div>
@@ -101,9 +101,9 @@
         <li>Min. 15% savings on dining at participating restaurants</li>
        <li>Save on 1% fuel surcharge, waived off at HPCL petrol pumps</li>
 
-	</ul>
-	</div>
-	<div class="col-md-8 pull-right"><a name="Coral-Credit-Card&&amount=>5.0Lacs&&interest=Lifestyle"  class="btn btn-primary apply">Apply Now</a></div>
+  </ul>
+  </div>
+  <div class="col-md-8 pull-right"><a name="Coral-Credit-Card&&amount=>5.0Lacs&&interest=Lifestyle"  class="btn btn-primary apply">Apply Now</a></div>
 
   </div>
   <div id="menu1" style="display: none;">
@@ -118,9 +118,9 @@
         <li>2,500 activation bonus JPMiles on achieving spends threshold of ₹50,000</li>
         <li>1,250 bonus JPMiles every year on renewal each year</li>
 
-	</ul>
-	</div>
-	<div class="col-md-8 pull-right"><a name="Jet-Coral-Credit-Card&&amount=>5.0Lacs&&interest=Travel"  class="btn btn-primary apply">Apply Now</a></div>
+  </ul>
+  </div>
+  <div class="col-md-8 pull-right"><a name="Jet-Coral-Credit-Card&&amount=>5.0Lacs&&interest=Travel"  class="btn btn-primary apply">Apply Now</a></div>
   
   </div>
   <div id="menu2_motorsports_5" style="display: none;" >
@@ -135,9 +135,9 @@
         <li>Buy 1, get 1 movie ticket free at BookMyShow</li>
        <li>Get a complimentary tie from Provogue on joining</li>
 
-	</ul>
-	</div>
-	<div class="col-md-8 pull-right"><a name="Ferrari-Platinum-Credit-Card&&amount=>15Lacs&&interest=Motorsports" class="btn btn-primary apply">Apply Now</a></div>
+  </ul>
+  </div>
+  <div class="col-md-8 pull-right"><a name="Ferrari-Platinum-Credit-Card&&amount=>15Lacs&&interest=Motorsports" class="btn btn-primary apply">Apply Now</a></div>
 
   </div>
 </div>
@@ -156,9 +156,9 @@
         <li>Buy 1, get 1 movie ticket free at BookMyShows</li>
        <li>A set of complimentary Sennheiser HD 221 headphones on joining</li>
 
-	</ul>
-	</div>
-	<div class="col-md-8 pull-right"><a name="Rubyx-Credit-Card&&amount=>10Lacs&&interest=Lifestyle" class="btn btn-primary apply">Apply Now</a></div>
+  </ul>
+  </div>
+  <div class="col-md-8 pull-right"><a name="Rubyx-Credit-Card&&amount=>10Lacs&&interest=Lifestyle" class="btn btn-primary apply">Apply Now</a></div>
   </div>
 
   
@@ -174,9 +174,9 @@
     <li>5,000 activation bonus JPMiles on achieving spends threshold of ₹75,000</li>
     <li>Renewal: 2,500 JPMiles + Complimentary Jet Airways Ticket</li>
 
-	</ul>
-	</div>
-	<div class="col-md-8 pull-right"><a name="Jet-Rubyx-Credit-Card&&amount=>10Lacs&&interest=Travel" class="btn btn-primary apply">Apply Now</a></div>
+  </ul>
+  </div>
+  <div class="col-md-8 pull-right"><a name="Jet-Rubyx-Credit-Card&&amount=>10Lacs&&interest=Travel" class="btn btn-primary apply">Apply Now</a></div>
 
   </div>
   <div id="menu_motorsports_10" style="display: none;" > 
@@ -191,9 +191,9 @@
         <li>2 complimentary domestic airport lounge visits/ quarter</li>
         <li>Buy 1, get 1 movie ticket free at BookMyShow</li>
 
-	</ul>
-	</div>
-	<div class="col-md-8 pull-right"><a name="Ferrari-Signature-Credit-Card&&amount=>10Lacs&&interest=Motorsports"  class="btn btn-primary apply">Apply Now</a></div>
+  </ul>
+  </div>
+  <div class="col-md-8 pull-right"><a name="Ferrari-Signature-Credit-Card&&amount=>10Lacs&&interest=Motorsports"  class="btn btn-primary apply">Apply Now</a></div>
 
   </div>
 </div>
@@ -212,9 +212,9 @@
         <li>Buy 1, get 1 movie ticket free at BookMyShow</li>
         <li>Complimentary All New Kindle on joining</li>
 
-	</ul>
-	</div>
-	<div class="col-md-8 pull-right"><a name="Sapphiro-Credit-Card&&amount=>15Lacs&&interest=Lifestyle"  class="btn btn-primary apply">Apply Now</a></div>
+  </ul>
+  </div>
+  <div class="col-md-8 pull-right"><a name="Sapphiro-Credit-Card&&amount=>15Lacs&&interest=Lifestyle"  class="btn btn-primary apply">Apply Now</a></div>
 
   </div>
   <div id="menu_travel_15" style="display: none;">
@@ -229,9 +229,9 @@
         <li>10,000 activation bonus JPMiles on achieving spends threshold of ₹1,00,000</li>
        <li>Renewal: 5,000 JPMiles + Complimentary Jet Airways Ticket</li>
 
-	</ul>
-	</div>
-	<div class="col-md-8 pull-right"><a name="Jet-Sapphiro-Credit-Card&&amount=>15Lacs&&interest=Travel" class="btn btn-primary apply">Apply Now</a></div>
+  </ul>
+  </div>
+  <div class="col-md-8 pull-right"><a name="Jet-Sapphiro-Credit-Card&&amount=>15Lacs&&interest=Travel" class="btn btn-primary apply">Apply Now</a></div>
 
   </div>
   <div id="menu_motorsports_15" style="display: none;" >
@@ -245,9 +245,9 @@
         <li>Discounts on Ferrari merchandise at Ferrari Online Store</li>
         <li>2 complimentary domestic airport lounge visits/ quarter</li>
         <li>Buy 1, get 1 movie ticket free at BookMyShow</li>
-	</ul>
-	</div>
-	<div class="col-md-8 pull-right"><a name="Ferrari-Signature-Credit-Card&&amount=>15Lacs&&interest=Motorsports"  class="btn btn-primary apply">Apply Now</a></div>
+  </ul>
+  </div>
+  <div class="col-md-8 pull-right"><a name="Ferrari-Signature-Credit-Card&&amount=>15Lacs&&interest=Motorsports"  class="btn btn-primary apply">Apply Now</a></div>
 
   </div>
 </div>

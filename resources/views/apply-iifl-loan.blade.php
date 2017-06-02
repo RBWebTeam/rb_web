@@ -62,8 +62,8 @@
              <section class="content">
                 <h3 class="text-uppercase exp-hed">IIFL Express Loan</h3>
                 <span class="input input--nao">
-                    <input class="input__field input__field--nao" type="text" name="company_name" id="company_name"  onkeypress="return AllowAlphabet(event)"/>
-                    <label class="input__label input__label--nao" for="company_name">
+                    <input class="input__field input__field--nao" type="text" name="CompanyName" id="CompanyName"  onkeypress="return AllowAlphabet(event)"/>
+                    <label class="input__label input__label--nao" for="CompanyName">
                         <span class="input__label-content input__label-content--nao">Where Do You Work</span>
                     </label>
                     <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
@@ -71,8 +71,8 @@
                     </svg>
                 </span>
                 <span class="input input--nao">
-                    <input class="input__field input__field--nao" type="text" name="net_monthly_salary"  id="net_monthly_salary"  onkeypress="return fnAllowNumeric(event)"   />
-                    <label class="input__label input__label--nao" for="net_monthly_salary">
+                    <input class="input__field input__field--nao" type="text" name="MonthlySalary"  id="MonthlySalary"  onkeypress="return fnAllowNumeric(event)"   />
+                    <label class="input__label input__label--nao" for="MonthlySalary">
                         <span class="input__label-content input__label-content--nao">Your Net Monthly Salary</span>
                     </label>
                     <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
@@ -80,7 +80,7 @@
                     </svg>
                 </span>
                 <span class="input input--nao">
-                    <input class="input__field input__field--nao" type="text" name="existing_emi" id="existing_emi" onkeypress="return fnAllowNumeric(event)"  />
+                    <input class="input__field input__field--nao" type="text" name="MonthlyObligation" id="MonthlyObligation" onkeypress="return fnAllowNumeric(event)"  />
                     <label class="input__label input__label--nao" for="existing_emi">
                         <span class="input__label-content input__label-content--nao">Total Existing EMI if Any</span>
                     </label>
@@ -98,8 +98,8 @@
             <section class="content">
                 
                 <span class="input input--nao">
-                    <input class="input__field input__field--nao" type="text" name="mob_no" id="mob_no" onkeypress="return fnAllowNumeric(event)" maxlength="10" minlength="10" />
-                    <label class="input__label input__label--nao" for="mob_no">
+                    <input class="input__field input__field--nao" type="text" name="MobileNo" id="MobileNo" onkeypress="return fnAllowNumeric(event)" maxlength="10" minlength="10" />
+                    <label class="input__label input__label--nao" for="MobileNo">
                         <span class="input__label-content input__label-content--nao">Mobile No. </span>
                     </label>
                     <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
@@ -107,8 +107,8 @@
                     </svg>
                 </span>
                 <span class="input input--nao">
-                    <input class="input__field input__field--nao" type="text" name="email_id" id="email_id" oninput="mail('email_id')" />
-                    <label class="input__label input__label--nao" for="email_id">
+                    <input class="input__field input__field--nao" type="text" name="PersonalEmailID" id="PersonalEmailID" oninput="mail('email_id')" />
+                    <label class="input__label input__label--nao" for="PersonalEmailID">
                         <span class="input__label-content input__label-content--nao">Email Id</span>
                     </label>
                     <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
@@ -117,7 +117,7 @@
                     <div id="email" style="display:none;color: red;">Please Enter Valid Email Id.</div>
                 </span>
                 <span class="input_exp input--nao">
-                    <input class="input__field input__field--nao search_city_name" type="text" id="city" name="city" required/>
+                    <input class="input__field input__field--nao search_city_name" type="text" id="City" name="City" required/>
                     <label class="input__label input__label--nao" for="city">
                         <span class="input__label-content input__label-content--nao">City</span>
                     </label>
@@ -134,10 +134,10 @@
             
             
             
-            <br>
+            <!-- <br>
             <hr class="hr-sty">
             
-            <!-- <div class="col-md-12">
+            <div class="col-md-12">
              <table class="table table-bordered" width="70%">
                 <tr>
                     <td class="bg-info">Company Name: <b>Rupeeboss</b></td>
@@ -145,14 +145,14 @@
                     <td class="bg-info">Current EMI: <b>14000</b></td>
                 </tr>
              </table>
-             <h3><i><b class="text-primary">Hurry</b></i>&nbsp;You are eligible for a loan of <b>25,00,000</b> <a class="bg-primary" href="#">Apply Now</i></a></h3>
+             <h3><i><b class="text-primary">Hurry !!</b></i>&nbsp;You are eligible for a loan of <b>25,00,000</b> <a class="bg-primary" href="#">Apply Now</i></a></h3>
              <br>
             </div>
             <section class="content">
                 
                 <span class="input input--nao">
-                    <input class="input__field input__field--nao" type="text" name="loanamount" id="loanamount" onkeypress="return fnAllowNumeric(event)" minlength="6" maxlength="9" />
-                    <label class="input__label input__label--nao" for="loanamount">
+                    <input class="input__field input__field--nao" type="text" name="Loanamount" id="Loanamount" onkeypress="return fnAllowNumeric(event)" minlength="6" maxlength="9" />
+                    <label class="input__label input__label--nao" for="Loanamount">
                         <span class="input__label-content input__label-content--nao">Loan Amount</span>
                     </label>
                     <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
@@ -160,24 +160,17 @@
                     </svg>
                 </span>
                 <span class="input input--nao">
-                    <input class="input__field input__field--nao" type="text" name="tenure" id="tenure" onkeypress="return fnAllowNumeric(event)" maxlength="2" />
-                    <label class="input__label input__label--nao" for="tenure">
+                    <input class="input__field input__field--nao" type="text" name="Tenure" id="Tenure" onkeypress="return fnAllowNumeric(event)" maxlength="2" />
+                    <label class="input__label input__label--nao" for="Tenure">
                         <span class="input__label-content input__label-content--nao">Loan Tenure</span>
                     </label>
                     <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
                         <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
                     </svg>
                 </span>
-                <span class="input input--nao"> 
-                    <select class="input__field input__field--nao" name="emi" id="emi" required="">
-                    <option disabled selected value="">Years</option>
-                       <option>1 Year</option>
-                       <option>2 Years</option>
-                       <option>3 Years</option>
-                       <option>4 Years</option>
-                       <option>5 Years</option>
-                    </select>
-                    <label class="input__label input__label--nao" for="input-3">
+                <span class="input input--nao">
+                    <input class="input__field input__field--nao" type="text" name="EMI" id="EMI" onkeypress="return fnAllowNumeric(event)"  />
+                    <label class="input__label input__label--nao" for="EMI">
                         <span class="input__label-content input__label-content--nao">EMI</span>
                     </label>
                     <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
@@ -205,8 +198,8 @@
             
             
             <br>
-            <hr class="hr-sty">
-            <section class="content">
+            <hr class="hr-sty"> -->
+            <!-- <section class="content">
             
             <div class="col-md-12">
             <table class="table table-bordered" width="100%">
@@ -232,7 +225,7 @@
                   <div class="col-md-3">
                   <p>EMI:- <b>Rs.8,000</b></p>
                   </div>
-                </div> -->
+                </div>
                 <div class="col-md-1"></div>
                 
                 <h3 class="col-md-12 mrg-tpp">Autofill Your Application Using Your Aadhar Number:</h3>
@@ -272,11 +265,11 @@
             <br>
             <hr class="hr-sty">
             
-            <section class="content">
+            <section class="content"> -->
                 <h3 class="col-md-12 mrg-tpp">Tell Us a Bit About YourSelf</h3>
                 <span class="input input--nao">
-                    <input class="input__field input__field--nao" type="text" name="first_name" required id="first_name" onkeypress="return AllowAlphabet(event)" />
-                    <label class="input__label input__label--nao" for="first_name">
+                    <input class="input__field input__field--nao" type="text" name="FName" required id="FName" onkeypress="return AllowAlphabet(event)" />
+                    <label class="input__label input__label--nao" for="FName">
                         <span class="input__label-content input__label-content--nao">First Name </span>
                     </label>
                     <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
@@ -284,8 +277,8 @@
                     </svg>
                 </span>
                 <span class="input input--nao">
-                    <input class="input__field input__field--nao" type="text" name="middle_name" id="middle_name" required onkeypress="return AllowAlphabet(event)" />
-                    <label class="input__label input__label--nao" for="middle_name">
+                    <input class="input__field input__field--nao" type="text" name="MName" id="MName" required onkeypress="return AllowAlphabet(event)" />
+                    <label class="input__label input__label--nao" for="MName">
                         <span class="input__label-content input__label-content--nao">Middle Name</span>
                     </label>
                     <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
@@ -293,8 +286,8 @@
                     </svg>
                 </span>
                 <span class="input input--nao">
-                    <input class="input__field input__field--nao" type="text" name="last_name" id="last_name" required onkeypress="return AllowAlphabet(event)" />
-                    <label class="input__label input__label--nao" for="last_name">
+                    <input class="input__field input__field--nao" type="text" name="LName" id="LName" required onkeypress="return AllowAlphabet(event)" />
+                    <label class="input__label input__label--nao" for="LName">
                         <span class="input__label-content input__label-content--nao">Last Name</span>
                     </label>
                     <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
@@ -302,8 +295,8 @@
                     </svg>
                 </span>
                 <span class="input input--nao">
-                    <input class="input__field input__field--nao" type="text" name="pan_no" id="pan_no" oninput="pan_card('pan_no')" required minlength="10" maxlength="10" />
-                    <label class="input__label input__label--nao" for="pan_number">
+                    <input class="input__field input__field--nao" type="text" name="PAN" id="PAN" oninput="pan_card('PAN')" required minlength="10" maxlength="10" />
+                    <label class="input__label input__label--nao" for="PAN">
                         <span class="input__label-content input__label-content--nao">Pan Card No*</span>
                     </label>
                     <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
@@ -312,7 +305,7 @@
                   <div id="pan_number" style="display:none;color: red;">Oops.Please Enter Valid Pan Number.!!</div>
                 </span>
                 <span class="input input--nao">
-                    <input class="input__field input__field--nao lastReporteddate1" type="text" placeholder="Date Of Birth" id="born_on" name="born_on" required />
+                    <input class="input__field input__field--nao lastReporteddate1" type="text" placeholder="Date Of Birth" id="DOB" name="DOB" required />
                     <label class="input__label input__label--nao" for="input-3">
                         <!-- <span class="input__label-content input__label-content--nao">Date of Birth</span> -->
                     </label>
@@ -321,12 +314,12 @@
                     </svg>
                 </span>
                 <span class="input input--nao">
-                    <select class="input__field input__field--nao" name="gender" id="gender">
+                    <select class="input__field input__field--nao" name="Gender" id="Gender">
                     <option disabled selected value=""></option>
                       <option>Male</option>
                       <option>Female</option>
                     </select>
-                    <label class="input__label input__label--nao" for="gender">
+                    <label class="input__label input__label--nao" for="Gender">
                         <span class="input__label-content input__label-content--nao">Gender</span>
                     </label>
                     <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
@@ -337,8 +330,8 @@
                 <h3 class="col-md-12 mrg-tpp">Where Can We Reach you</h3>
                 
                 <span class="input input--nao">
-                    <input class="input__field input__field--nao" type="text" name="mob_num" id="mob_num" onkeypress="return fnAllowNumeric(event)" maxlength="10" minlength="10" required />
-                    <label class="input__label input__label--nao" for="mob_num">
+                    <input class="input__field input__field--nao" type="text" name="Mob_Num" id="Mob_Num" onkeypress="return fnAllowNumeric(event)" maxlength="10" minlength="10" required />
+                    <label class="input__label input__label--nao" for="Mob_Num">
                         <span class="input__label-content input__label-content--nao">Mobile No.</span>
                     </label>
                     <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
@@ -346,8 +339,8 @@
                     </svg>
                 </span>
                 <span class="input input--nao">
-                    <input class="input__field input__field--nao" type="text" name="residence_landline" id="residence_landline" required onkeypress="return fnAllowNumeric(event)" maxlength="10" minlength="10"/>
-                    <label class="input__label input__label--nao" for="residence_landline">
+                    <input class="input__field input__field--nao" type="text" name="AlternateMobileNo" id="AlternateMobileNo" required onkeypress="return fnAllowNumeric(event)" maxlength="10" minlength="10"/>
+                    <label class="input__label input__label--nao" for="AlternateMobileNo">
                         <span class="input__label-content input__label-content--nao">Residence Landline</span>
                     </label>
                     <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
@@ -355,8 +348,8 @@
                     </svg>
                 </span>
                 <span class="input input--nao">
-                    <input class="input__field input__field--nao" type="text" name="email" id="email" required/>
-                    <label class="input__label input__label--nao" for="email">
+                    <input class="input__field input__field--nao" type="text" name="Email" id="Email" required/>
+                    <label class="input__label input__label--nao" for="Email">
                         <span class="input__label-content input__label-content--nao">Email Id</span>
                     </label>
                     <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
@@ -381,8 +374,8 @@
             <div class="col-md-12"><h3 class="mrg-tpp">Where Do You Stay</h3></div>
                 
                 <span class="input input--nao">
-                    <input class="input__field input__field--nao" type="text" name="address1" id="address1" required />
-                    <label class="input__label input__label--nao" for="address1">
+                    <input class="input__field input__field--nao" type="text" name="CurrentAddress1" id="CurrentAddress1" required />
+                    <label class="input__label input__label--nao" for="CurrentAddress1">
                         <span class="input__label-content input__label-content--nao">Address Line 1</span>
                     </label>
                     <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
@@ -390,8 +383,8 @@
                     </svg>
                 </span>
                 <span class="input input--nao">
-                    <input class="input__field input__field--nao" type="text" name="address2" id="address2" required" />
-                    <label class="input__label input__label--nao" for="address2">
+                    <input class="input__field input__field--nao" type="text" name="CurrentAddress2" id="CurrentAddress2" required" />
+                    <label class="input__label input__label--nao" for="CurrentAddress2">
                         <span class="input__label-content input__label-content--nao">Address Line 2</span>
                     </label>
                     <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
@@ -399,8 +392,17 @@
                     </svg>
                 </span>
                 <span class="input input--nao">
-                    <input class="input__field input__field--nao" type="text" name="pincode" id="pincode" required minlength="5" maxlength="5" />
-                    <label class="input__label input__label--nao" for="input-3">
+                    <input class="input__field input__field--nao" type="text" name="CurrentAddress3" id="CurrentAddress3" />
+                    <label class="input__label input__label--nao" for="CurrentAddress3">
+                        <span class="input__label-content input__label-content--nao">Address Line 3</span>
+                    </label>
+                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
+                        <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
+                    </svg>
+                </span>
+                <span class="input input--nao">
+                    <input class="input__field input__field--nao" type="text" name="CurrentPin" id="CurrentPin" required minlength="5" maxlength="5" />
+                    <label class="input__label input__label--nao" for="CurrentPin-3">
                         <span class="input__label-content input__label-content--nao">Pincode</span>
                     </label>
                     <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
@@ -408,8 +410,72 @@
                     </svg>
                 </span>
                 <span class="input input--nao">
-                    <input class="input__field input__field--nao" type="text" name="state" id="state" required />
-                    <label class="input__label input__label--nao" for="state">
+                    <select class="input__field input__field--nao" name="CurrentState" id="CurrentState">
+                    
+                    </select>
+                    <label class="input__label input__label--nao" for="CurrentState">
+                        <span class="input__label-content input__label-content--nao">CurrentState</span>
+                    </label>
+                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
+                        <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
+                    </svg>
+                </span>
+                <span class="input input--nao">
+                    <input class="input__field input__field--nao" type="text" name="CurrentCity" id="CurrentCity" />
+                    <label class="input__label input__label--nao" for="CurrentCity">
+                        <span class="input__label-content input__label-content--nao">City</span>
+                    </label>
+                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
+                        <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
+                    </svg>
+                </span>
+                
+                <!-- <div class="col-md-12 text-danger mar-top"><input type="checkbox" name="check"> I Agree to all the terms and conditions.</div> -->
+                </section>
+
+                <section class="content">
+            <div class="col-md-12"><h3 class="mrg-tpp">Permanent Address</h3></div>
+                
+                <span class="input input--nao">
+                    <input class="input__field input__field--nao" type="text" name="PermanentAddress1" id="PermanentAddress1" required />
+                    <label class="input__label input__label--nao" for="PermanentAddress1">
+                        <span class="input__label-content input__label-content--nao">Address Line 1</span>
+                    </label>
+                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
+                        <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
+                    </svg>
+                </span>
+                <span class="input input--nao">
+                    <input class="input__field input__field--nao" type="text" name="PermanentAddress2" id="PermanentAddress2" required" />
+                    <label class="input__label input__label--nao" for="PermanentAddress2">
+                        <span class="input__label-content input__label-content--nao">Address Line 2</span>
+                    </label>
+                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
+                        <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
+                    </svg>
+                </span>
+                <span class="input input--nao">
+                    <input class="input__field input__field--nao" type="text" name="PermanentAddress3" id="PermanentAddress3" />
+                    <label class="input__label input__label--nao" for="PermanentAddress3">
+                        <span class="input__label-content input__label-content--nao">Address Line 3</span>
+                    </label>
+                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
+                        <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
+                    </svg>
+                </span>
+                <span class="input input--nao">
+                    <input class="input__field input__field--nao" type="text" name="PermanentPin
+                          " id="PermanentPin" required minlength="5" maxlength="5" />
+                    <label class="input__label input__label--nao" for="PermanentPin">
+                        <span class="input__label-content input__label-content--nao">Pincode</span>
+                    </label>
+                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
+                        <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
+                    </svg>
+                </span>
+                <span class="input input--nao">
+                    <input class="input__field input__field--nao" type="text" name="PermanentState" id="PermanentState" required />
+                    <label class="input__label input__label--nao" for="PermanentState">
                         <span class="input__label-content input__label-content--nao">State</span>
                     </label>
                     <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
@@ -417,8 +483,8 @@
                     </svg>
                 </span>
                 <span class="input input--nao">
-                    <input class="input__field input__field--nao" type="text" name="city" id="city" />
-                    <label class="input__label input__label--nao" for="city">
+                    <input class="input__field input__field--nao" type="text" name="PermanentCity" id="PermanentCity" />
+                    <label class="input__label input__label--nao" for="PermanentCity">
                         <span class="input__label-content input__label-content--nao">City</span>
                     </label>
                     <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
@@ -437,19 +503,25 @@
             <section class="content">
             <div class="col-md-12"><h3 class="mrg-tpp">Residence Information</h3></div>
                 
-                <span class="input input--nao">
-                    <input class="input__field input__field--nao" type="text" id="input-3" />
-                    <label class="input__label input__label--nao" for="input-3">
-                        <span class="input__label-content input__label-content--nao">Owned by Self</span>
+                <span class="input_exp input--nao">
+                    <select class="input__field input__field--nao fnt-clr" id="ResidenceType" name="ResidenceType" required>
+                    <option selected disabled value="">ResidenceType</option>
+                    <option value="Rented">Rented</option>
+                    <option value="Owned ">Owned</option>
+                    
+                    
+                    </select>
+                    <label class="input__label input__label--nao" for="constitution">
+                        <span class="input__label-content input__label-content--nao">ResidenceType</span>
                     </label>
                     <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
                         <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
                     </svg>
                 </span>
                 <span class="input input--nao">
-                    <input class="input__field input__field--nao" type="text" id="input-3" />
-                    <label class="input__label input__label--nao" for="input-3">
-                        <span class="input__label-content input__label-content--nao">Period of Residence</span>
+                    <input class="input__field input__field--nao" name="ResidenceStability " id="ResidenceStability" onkeypress="return fnAllowNumeric(event)" type="text" id="ResidenceStability" minlength="2" maxlength="2" />
+                    <label class="input__label input__label--nao" for="ResidenceStability">
+                        <span class="input__label-content input__label-content--nao">Period of Residence(In Months)</span>
                     </label>
                     <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
                         <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
@@ -462,13 +534,13 @@
             <div class="col-md-12"><h3 class="mrg-tpp">Personal Information</h3></div>
                 
                 <span class="input input--nao">
-                    <select class="input__field input__field--nao">
-                       <option></option>
+                    <select class="input__field input__field--nao" name="Education" id="Education">
+                       <option disabled selected value="">Select</option>
                        <option>Graduate</option>
                        <option>Post Graduate</option>
                        <option>Under Graduate</option>
                     </select>
-                    <label class="input__label input__label--nao" for="input-3">
+                    <label class="input__label input__label--nao" for="Education">
                         <span class="input__label-content input__label-content--nao">Education*</span>
                     </label>
                     <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
@@ -476,10 +548,10 @@
                     </svg>
                 </span>
                 <span class="input input--nao">
-                    <select class="input__field input__field--nao">
-                       <option></option>
-                       <option>Single</option>
-                       <option>Married</option>
+                    <select class="input__field input__field--nao" name="MaritalStatus" id="MaritalStatus">
+                       <option disabled selected value="">Select</option>
+                       <option value="N">Single</option>
+                       <option value="Y">Married</option>
                     </select>
                     <label class="input__label input__label--nao" for="input-3">
                         <span class="input__label-content input__label-content--nao">Marital Status*</span>
@@ -706,8 +778,8 @@
 </script><script type="text/javascript">
     function pan_card(obj,val){
         // console.log(obj);
-        if(obj=='pan_no' ){
-                   var str =$('#pan_no').val();
+        if(obj=='PAN' ){
+                   var str =$('#PAN').val();
                    var pancardPattern = /^([a-zA-Z]{5})(\d{4})([a-zA-Z]{1})$/;
                    var res = str.match(pancardPattern);
                    if(res){
@@ -740,27 +812,57 @@
 </script>
 
 <script type="text/javascript">
-    $('.otp').click(function(){
-        alert('ok');
+    // $('.otp').click(function(){
+    //     alert('ok');
         
 
-        var aadhar= $('#aadhar_num').val();
+    //     var aadhar= $('#aadhar_num').val();
+    //     var v_token = "{{csrf_token()}}";
+    //     $.ajax({  
+    //      type: "POST",  
+    //      url: "{{URL::to('apply-iifl-loan-otp')}}",
+    //      data: {
+    //      "AadhaarNumber":aadhar,'_token': v_token},
+    //      success: function(msg){
+    //     console.log(msg);
+            
+          
+
+    //     }  
+    //   }); 
+
+
+
+    // });
+    $('#CurrentState').click(function(){
+        // alert('ok');
         var v_token = "{{csrf_token()}}";
         $.ajax({  
          type: "POST",  
          url: "{{URL::to('apply-iifl-loan-otp')}}",
          data: {
-         "AadhaarNumber":aadhar,'_token': v_token},
+         '_token': v_token},
          success: function(msg){
-        console.log(msg);
-            
-          
+             //console.log(msg);
+           var mySelect = $('#CurrentState');
+            $.each(msg, function(id,state) {
+               
+                //console.log(state.state_Name +"  " +state.state_id);
+                mySelect.append(
+                    $('<option></option>').val(state.state_id).html(state.state_Name)
+                );
+            });
 
-        }  
-      }); 
+            //$('#CurrentState').append(mySelect.html());
 
-
+    }
 
     });
+        
+});
+
+    
 </script>
+
+
 

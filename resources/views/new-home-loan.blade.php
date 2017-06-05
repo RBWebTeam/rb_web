@@ -2,13 +2,11 @@
 <div class="container ">
  <aside id="fh5co-hero">
 	
- <!-- <div class="col-md-12 white-bg pad1 mrg-btm">
-<img src="{{URL::to('images/9.png')}}" alt="Tribe Logo" class="img-responsive" />
 
- </div> -->
  <br>
  <div class="col-md-12 white-bg pad box-shadow">
  <h3 class="text-center loan-head">Home Loan</h3>
+ <img src="{{URL::to('images/info-g-ban.png')}}" alt="Tribe Logo" class="img-responsive" />
 <div class="col-md-8" id="mod">
 <form name="home_loan_process_form" id="home_loan_process_form" action="{{URL::to('loan-submit')}}" method="POST" >
 <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">

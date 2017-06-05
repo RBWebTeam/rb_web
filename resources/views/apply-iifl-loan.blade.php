@@ -411,7 +411,8 @@
                 </span>
                 <span class="input input--nao">
                     <select class="input__field input__field--nao" name="CurrentState" id="CurrentState">
-                    
+                    <option disabled selected value="">Select</option>
+                      
                     </select>
                     <label class="input__label input__label--nao" for="CurrentState">
                         <span class="input__label-content input__label-content--nao">CurrentState</span>
@@ -421,9 +422,12 @@
                     </svg>
                 </span>
                 <span class="input input--nao">
-                    <input class="input__field input__field--nao" type="text" name="CurrentCity" id="CurrentCity" />
+                    <select class="input__field input__field--nao" name="CurrentCity" id="CurrentCity">
+                    <option disabled selected value="">Select</option>
+                      
+                    </select>
                     <label class="input__label input__label--nao" for="CurrentCity">
-                        <span class="input__label-content input__label-content--nao">City</span>
+                        <span class="input__label-content input__label-content--nao">CurrentCity</span>
                     </label>
                     <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
                         <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
@@ -474,7 +478,10 @@
                     </svg>
                 </span>
                 <span class="input input--nao">
-                    <input class="input__field input__field--nao" type="text" name="PermanentState" id="PermanentState" required />
+                     <select class="input__field input__field--nao" name="PermanentState" id="PermanentState">
+                    <option disabled selected value="">Select</option>
+                      
+                    </select>
                     <label class="input__label input__label--nao" for="PermanentState">
                         <span class="input__label-content input__label-content--nao">State</span>
                     </label>
@@ -483,7 +490,10 @@
                     </svg>
                 </span>
                 <span class="input input--nao">
-                    <input class="input__field input__field--nao" type="text" name="PermanentCity" id="PermanentCity" />
+                    <select class="input__field input__field--nao" name="PermanentCity" id="PermanentCity">
+                    <option disabled selected value="">Select</option>
+                      
+                    </select>
                     <label class="input__label input__label--nao" for="PermanentCity">
                         <span class="input__label-content input__label-content--nao">City</span>
                     </label>
@@ -536,9 +546,7 @@
                 <span class="input input--nao">
                     <select class="input__field input__field--nao" name="Education" id="Education">
                        <option disabled selected value="">Select</option>
-                       <option>Graduate</option>
-                       <option>Post Graduate</option>
-                       <option>Under Graduate</option>
+                      
                     </select>
                     <label class="input__label input__label--nao" for="Education">
                         <span class="input__label-content input__label-content--nao">Education*</span>
@@ -812,6 +820,7 @@
 </script>
 
 <script type="text/javascript">
+    var global_state='';
     // $('.otp').click(function(){
     //     alert('ok');
         
@@ -834,7 +843,8 @@
 
 
     // });
-    $('#CurrentState').click(function(){
+
+    $(document).ready(function(){
         // alert('ok');
         var v_token = "{{csrf_token()}}";
         $.ajax({  
@@ -842,26 +852,58 @@
          url: "{{URL::to('apply-iifl-loan-otp')}}",
          data: {
          '_token': v_token},
-         success: function(msg){
-             //console.log(msg);
-           var mySelect = $('#CurrentState');
+         success: function(msg){       
+            populate_state(msg,'CurrentState');
+            populate_state(msg,'PermanentState');
+    }
+
+    })
+        function populate_state(msg,id){
+            //console.log(msg+" "+id);
+             var mySelect = $('#'+id);
             $.each(msg, function(id,state) {
                
-                //console.log(state.state_Name +"  " +state.state_id);
+                // console.log(state.state_Name +"  " +state.state_id);
                 mySelect.append(
                     $('<option></option>').val(state.state_id).html(state.state_Name)
                 );
             });
-
-            //$('#CurrentState').append(mySelect.html());
-
+        }
+});
+</script>
+<script type="text/javascript">
+   $(document).ready(function(){
+    dropdown_populate_api_call('CityMaster');
+    dropdown_populate_api_call('EducationMaster');
+    });
+   function dropdown_populate_api_call(param){
+     var v_token = "{{csrf_token()}}";
+        $.ajax({  
+         type: "POST",  
+         url: "{{URL::to('apply-iifl-loan-dropdown')}}?param="+param,
+         data: {
+         '_token': v_token},
+         success: function(msg){
+            if(param=='CityMaster'){
+                populate_city_education(msg,'CurrentCity');
+                populate_city_education(msg,'PermanentCity');
+            }else{
+                populate_city_education(msg,'Education');
+            }
     }
+   
 
     });
-        
-});
-
-    
+         function populate_city_education(msg,id){
+            console.log(id);
+             var mySelect = $('#'+id);
+            $.each(msg, function(id,city) {
+                mySelect.append(
+                    $('<option></option>').val(city.id).html(city.value)
+                );
+            });
+        }
+   }
 </script>
 
 

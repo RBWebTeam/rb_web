@@ -272,7 +272,7 @@ class LoanController extends CallApiController
     return view('apply-iifl-loan');
    }
 
-   public function aadhar_card(Request $req){
+   public function state(Request $req){
     // print_r($req->all());exit();
     $post_data = '{
    "head": {
@@ -299,13 +299,79 @@ class LoanController extends CallApiController
     $m=$s=str_replace('\\', "", $s);
 
      $obj = json_decode($m);
+     // print_r($obj);exit();
      $a=$obj->body;
      $b=$a->StateMasterValues;
     return response()->json($b);
+}   
+
+public function dropdown(Request $req){
+    // print_r($req->all());exit();
+    $post_data = '{
+   "head": {
+    "requestCode": "PLRQDD01",
+    "key": "ae94e5857582d97cd9a8669d51c164c8",
+    "appVer": "1.0",
+    "osName": "WebAPI",
+    "appName": "ALLIANCE",
+    "source":"RupeeBoss"
+  },
+  
+  "body": {"SrchParam":"'.$req['param'].'" }
+}';
+    //call API here to save in DB
+        //$post=json_encode($post_data);
+     // print_r($post_data);exit();
+
+    $url = $this::$url_static."/BankAPIService.svc/getIIFLDropdownMasters";
+    $result=$this->call_json_data_api($url,$post_data);
+    $http_result=$result['http_result'];
+    $error=$result['error'];
+    $st=str_replace('"{', "{", $http_result);
+    $s=str_replace('}"', "}", $st);
+    $m=$s=str_replace('\\', "", $s);
 
 
+     $obj = json_decode($m);
+      // print_r($obj);exit();
+     $a=$obj->body;
+     $b=$a->Values;
+    return response()->json($b);
+}     
 
-   }     
+// public function education(Request $req){
+//     // print_r($req->all());exit();
+//     $post_data = '{
+//    "head": {
+//     "requestCode": "PLRQDD01",
+//     "key": "ae94e5857582d97cd9a8669d51c164c8",
+//     "appVer": "1.0",
+//     "osName": "WebAPI",
+//     "appName": "ALLIANCE",
+//     "source":"RupeeBoss"
+//   },
+  
+//   "body": {"SrchParam":"EducationMaster" }
+// }';
+//     //call API here to save in DB
+//         //$post=json_encode($post_data);
+//      // print_r($post_data);exit();
+
+//     $url = $this::$url_static."/BankAPIService.svc/getIIFLDropdownMasters";
+//     $result=$this->call_json_data_api($url,$post_data);
+//     $http_result=$result['http_result'];
+//     $error=$result['error'];
+//     $st=str_replace('"{', "{", $http_result);
+//     $s=str_replace('}"', "}", $st);
+//     $m=$s=str_replace('\\', "", $s);
+
+
+//      $obj = json_decode($m);
+//       // print_r($obj);exit();
+//      $a=$obj->body;
+//      $b=$a->Values;
+//     return response()->json($b);
+// }     
     
 
 }

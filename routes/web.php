@@ -107,7 +107,9 @@ Route::post('express-loan-send-otp','LoanController@express_send_otp');
 Route::post('express-loan-verify','LoanController@express_verify_otp');
 Route::post('aditya-express-loan','LoanController@express_form');
 Route::get('apply-iifl-loan','LoanController@apply_iifl_loan');
-Route::post('apply-iifl-loan-otp','LoanController@aadhar_card');
+Route::post('apply-iifl-loan-otp','LoanController@state');
+Route::post('apply-iifl-loan-dropdown','LoanController@dropdown');
+// Route::post('apply-iifl-loan-education','LoanController@education');
 
 
 

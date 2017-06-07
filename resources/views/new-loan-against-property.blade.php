@@ -7,7 +7,13 @@
  </div> -->
  <br>
  <div class="col-md-12 white-bg pad box-shadow">
- <h3 class="text-center loan-head">LOAN AGAINST Property</h3>
+ <?php
+    if(isset($_GET['commercial'])){ ?>
+      <h3 class="text-center loan-head">COMMERCIAL PROPERTY PURCHASE</h3>
+    <?php }else{ ?>
+
+ <h3 class="text-center loan-head">LOAN AGAINST PROPERTY</h3>
+ <?php }?>
 <div class="col-md-8"  id="mod">
 <form name="lap_process_form" id="lap_process_form" action="{{URL::to('loan-submit')}}" method="POST" >
 <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">

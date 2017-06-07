@@ -1184,10 +1184,10 @@ $(document).ready(function(){
         // console.log(obligation);
 
         var foir_calc = (salary)*foir/100;
-        // console.log(foir_calc);
+        console.log(foir_calc);
         var max_emi = foir_calc-obligation;
         // console.log(max_emi);
-        var eligible_amount =max_emi/rate * (Math.pow(1 + rate,period) / (Math.pow(1 + rate,period) - 1));
+        var eligible_amount =max_emi/rate*(Math.pow(1 + rate,period) / (Math.pow(1 + rate,period) - 1));
         console.log(eligible_amount);
 
     }

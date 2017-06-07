@@ -23,6 +23,7 @@ Route::get('autocomplete',array('as'=>'autocomplete','uses'=>'AutoCompleteContro
 Route::get('searchajax',array('as'=>'searchajax','uses'=>'AutoCompleteController@autoComplete'));
 Route::get('searchstateajax',array('as'=>'searchstateajax','uses'=>'AutoCompleteController@autoComplete_state'));
 Route::get('searchcompanyajax',array('as'=>'searchcompanyajax','uses'=>'AutoCompleteController@autoComplete_company'));	
+Route::get('searchiiflcompanyajax',array('as'=>'searchiiflcompanyajax','uses'=>'AutoCompleteController@autoComplete_iiflcompany')); 
 
 
 Route::post('loan-submit','FormController@p_loan_submit');
@@ -109,7 +110,8 @@ Route::post('aditya-express-loan','LoanController@express_form');
 Route::get('apply-iifl-loan','LoanController@apply_iifl_loan');
 Route::post('apply-iifl-loan-otp','LoanController@state');
 Route::post('apply-iifl-loan-dropdown','LoanController@dropdown');
-// Route::post('apply-iifl-loan-education','LoanController@education');
+Route::post('apply-iifl-loan-applicant1','LoanController@applicant');
+Route::post('iifl-eligibility','LoanController@iifl_eligibility');
 
 
 

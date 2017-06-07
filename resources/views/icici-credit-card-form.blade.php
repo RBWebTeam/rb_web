@@ -1135,7 +1135,7 @@ $(document).ready(function(){
 <script type="text/javascript">
           function Redirect() 
           {
-          window.location="http://erp.rupeeboss.com/Credit_Card_Upload_Docs.aspx?App_Id=drop&CardType=ICICI";
+          window.location="http://beta.erp.rupeeboss.com/Credit_Card_Upload_Docs.aspx?App_Id=drop&CardType=ICICI";
           }
 </script>
 

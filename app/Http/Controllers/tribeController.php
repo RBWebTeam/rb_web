@@ -30,23 +30,28 @@ class TribeController extends CallApiController
 	    }else{
 	    $temp_data=json_decode(json_decode($http_result))->response;
 	    $temp=json_decode(json_encode($temp_data));
-	   	//print "<pre>";
+	   //	print "<pre>";
 	   	// print_r($temp);exit();
 	    foreach ($temp as $key => $value) {
 
 	    	$sata[$key]=$value;
 	    	$length=sizeof($sata[$key]);
-	    	
+	    	//sorting array according to key value
 	    	if($length>1){
     		    	//print_r($sata[$key]);exit();
     		    	for($i=0;$i<$length;$i++){
     		    		//print_r($length);
-    		    		$test[$sata[$key][$i]->key]=$sata[$key][$i]->mapping;
-
+    		    		$temp=(array)($sata[$key][$i]->mapping);
+    		    		ksort($temp);
+    		    		$test[$sata[$key][$i]->key]=(object)$temp;
+    		    		
+    		    		//print_r($test[$sata[$key][$i]->key]);
     		    	}
 	    	}else{
 	    		//print_r($sata[$key]->key);
-	    		$test[$sata[$key]->key]=$sata[$key]->mapping;
+	    		$temp=(array)($sata[$key]->mapping);
+    		    ksort($temp);
+	    		$test[$sata[$key]->key]=(object)$temp;
 	    		   
 	    	}
 	    	

@@ -685,9 +685,9 @@ run_else:
 	  	          $loanamount=$req['loanamount'];
 	  	          $loaninterest=$req['loaninterest']/12/100;
 	  	          $loanterm=$req['loanterm']; 
-	  	          $data['amount'] = $loanamount * $loaninterest * (pow(1 + $loaninterest, $loanterm) / (pow(1 + $loaninterest, $loanterm) - 1));
-	  	          $data['total'] =(($data['amount']*$loanterm)-$loanamount);
-	  	          $data['ttl_payment'] = $loanamount+$data['total'];
+	  	          $data['amount'] = round($loanamount * $loaninterest * (pow(1 + $loaninterest, $loanterm) / (pow(1 + $loaninterest, $loanterm) - 1)));
+	  	          $data['total'] =round(($data['amount']*$loanterm)-$loanamount);
+	  	          $data['ttl_payment'] = round($loanamount+$data['total']);
 	  	
 	  	          return response()->json(array('status' => 1,'data'=>$data,'err'=>''));
 	  	}catch (\Exception $e) {

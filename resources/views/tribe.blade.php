@@ -1,6 +1,9 @@
 @include('layout.header')
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 <style src="css/jquery-ui.min.css"></style>
+<style type="text/css">
+  .drop-arr {text-transform: uppercase;}
+</style>
   <div id="fh5co-hero" ng-app="">
   <form id="tribe_loan_form" method="POST" name="tribe_loan_form" >
   {!! csrf_field() !!}
@@ -82,7 +85,7 @@
     <option disabled selected>Select</option>
     @foreach($data['loan_type'] as $key=>$value)
       
-      <option value="{{$value}}"><?php echo $key;?></option>
+      <option value="{{$value}}"><?php echo str_replace("_"," ",$key);?></option>
       @endforeach
     </select>
    
@@ -94,7 +97,7 @@
     <option disabled selected>Select</option>
     @foreach($data['repayment_frequency'] as $key=>$value)
       
-      <option value="{{$value}}"><?php echo $key;?></option>
+      <option value="{{$value}}"><?php echo str_replace("_"," ",$key);?></option>
       @endforeach
     </select>
     <a class="btn btn-primary btn-outline with-arrow " onclick="go_to_next('main2')">Next<i class="icon-arrow-right"></i></a>
@@ -151,7 +154,7 @@
      <option disabled selected>Select</option>
       @foreach($data['education'] as $key=>$value)
       
-      <option value="{{$value}}"><?php echo $key;?></option>
+      <option value="{{$value}}"><?php echo str_replace("_"," ",$key);?></option>
       @endforeach
     </select>
     </select>
@@ -163,7 +166,7 @@
       <option disabled selected>Select</option>
       @foreach($data['family_details'] as $key=>$value)
       
-      <option value="{{$value}}"><?php echo $key;?></option>
+      <option value="{{$value}}"><?php echo str_replace("_"," ",$key);?></option>
       @endforeach
     </select>
     
@@ -186,7 +189,7 @@
        <option disabled selected>Select</option>
       @foreach($data['registration_details'] as $key=>$value)
       
-      <option value="{{$value}}" ><?php echo $key;?></option>
+      <option value="{{$value}}" ><?php echo str_replace("_"," ",$key);?></option>
       @endforeach
     </select>
     </div>
@@ -197,7 +200,7 @@
        <option disabled selected>Select</option>
       @foreach($data['partner_count'] as $key=>$value)
       
-      <option value="{{$value}}"><?php echo $key;?></option>
+      <option value="{{$value}}"><?php echo str_replace("_"," ",$key);?></option>
       @endforeach
     </select>
     </div>
@@ -209,7 +212,7 @@
        <option disabled selected>Select</option>
       @foreach($data['director_count'] as $key=>$value)
       
-      <option value="{{$value}}"><?php echo $key;?></option>
+      <option value="{{$value}}"><?php echo str_replace("_"," ",$key);?></option>
       @endforeach
     </select>
     </div>
@@ -221,7 +224,7 @@
        <option disabled selected>Select</option>
       @foreach($data['proprietorship_type'] as $key=>$value)
       
-      <option value="{{$value}}"><?php echo $key;?></option>
+      <option value="{{$value}}"><?php echo str_replace("_"," ",$key);?></option>
       @endforeach
     </select>
     </div>
@@ -246,7 +249,7 @@
       <option disabled selected>Select</option>
       @foreach($data['nature_of_business'] as $key=>$value)
       
-      <option value="{{$value}}"><?php echo $key;?></option>
+      <option value="{{$value}}"><?php echo str_replace("_"," ",$key);?></option>
       @endforeach
     </select>
     </div>
@@ -267,7 +270,7 @@
       <option disabled selected>Select</option>
       @foreach($data['online_sales_channels'] as $key=>$value)
       
-      <option value="{{$value}}"><?php echo $key;?></option>
+      <option value="{{$value}}"><?php echo str_replace("_"," ",$key);?></option>
       @endforeach
     </select>
     </div>
@@ -280,7 +283,7 @@
        <option disabled selected>Select</option>
       @foreach($data['turnover'] as $key=>$value)
       
-      <option value="{{$value}}"><?php echo $key;?></option>
+      <option value="{{$value}}"><?php echo str_replace("_"," ",$key);?></option>
       @endforeach
     </select>
     </div>
@@ -291,7 +294,7 @@
        <option disabled selected>Select</option>
       @foreach($data['ownership'] as $key=>$value)
       
-      <option value="{{$value}}"><?php echo $key;?></option>
+      <option value="{{$value}}"><?php echo str_replace("_"," ",$key);?></option>
       @endforeach
     </select>
     </div>
@@ -302,7 +305,7 @@
        <option disabled selected>Select</option>
       @foreach($data['product_sell'] as $key=>$value)
       
-      <option value="{{$value}}"><?php echo $key;?></option>
+      <option value="{{$value}}"><?php echo str_replace("_"," ",$key);?></option>
       @endforeach
     </select>
     </div>
@@ -330,18 +333,18 @@
     <a class="btn btn-primary btn-outline with-arrow " onclick="go_back('main2')">Back<i class="icon-arrow-right"></i></a></div>
     </div>
     
-    <div id="main5" class="tab-pane fade">
+    <div id="main5" class="tab-pane fade drop-arr">
       <p>Providing Online Credentials of Platforms/Marketplaces/Software that you make use of in your business will help us understand your business better and make the most appropriate 
     recommendations for Loans. This can also increase your chances of securing Loans at a lower interest rate. As a Business User, you gain free and complete access to all the insights that Tribe draws using your online credentials.</p>
     <ul>
    
      @foreach($data['aggregated_ids'] as $key=>$value)
-      <li class="pad"><input type="radio" name="online_ids" value="{{$value}}" onclick="showDiv('online_ids_{{$value}}')" /> {{$key}}</li>
+      <li class="pad"><input type="radio" name="online_ids" value="{{$value}}" onclick="showDiv('online_ids_{{$value}}')" /> {{ str_replace("_"," ",$key)}}</li>
         <div class="col-sm-12" id="online_ids_{{$value}}" style="display: none;" class="extra">
 
           <?php $length=sizeof($data['aggregated_ids_credentials']->$value);
            for($i=0;$i<$length;$i++){ ?>
-           <label class="col-sm-2"> {{$data['aggregated_ids_credentials']->$value[$i]}}:</label>
+           <label class="col-sm-2"> {{ str_replace("_"," ",$data['aggregated_ids_credentials']->$value[$i])}}:</label>
            <input type="text" class="form-control form-group col-sm-10" name="online_ids_array[{{$value}}][<?php echo $data['aggregated_ids_credentials']->$value[$i]; ?>]" required />
            
           <?php }?>
@@ -583,7 +586,7 @@
            <option disabled selected>Select</option>
           @foreach($data['institution'] as $key=>$value)
           
-          <option value="{{$value}}"><?php echo $key;?></option>
+          <option value="{{$value}}"><?php echo str_replace("_"," ",$key);?></option>
           @endforeach
         </select>
         </div>

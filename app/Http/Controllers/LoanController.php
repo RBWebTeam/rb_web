@@ -267,6 +267,126 @@ class LoanController extends CallApiController
             }
         
         }
+
+   public function apply_iifl_loan(){
+    return view('apply-iifl-loan');
+   }
+
+   public function state(Request $req){
+    // print_r($req->all());exit();
+    $post_data = '{
+   "head": {
+    "requestCode": "PLRQSTDD01",
+    "key": "ae94e5857582d97cd9a8669d51c164c8",
+    "appVer": "1.0",
+    "osName": "WebAPI",
+    "appName": "ALLIANCE",
+    "source":"RupeeBoss"
+  },
+  
+  "body": {"SrchParam":"StateMaster" }
+}';
+    //call API here to save in DB
+        //$post=json_encode($post_data);
+     // print_r($post_data);exit();
+
+    $url = $this::$url_static."BankAPIService.svc/getIIFLStateMaster";
+    $result=$this->call_json_data_api($url,$post_data);
+    $http_result=$result['http_result'];
+    $error=$result['error'];
+    $st=str_replace('"{', "{", $http_result);
+    $s=str_replace('}"', "}", $st);
+    $m=$s=str_replace('\\', "", $s);
+
+     $obj = json_decode($m);
+     // print_r($obj);exit();
+     $a=$obj->body;
+     $b=$a->StateMasterValues;
+    return response()->json($b);
+}   
+
+public function dropdown(Request $req){
+    // print_r($req->all());exit();
+    $post_data = '{
+   "head": {
+    "requestCode": "PLRQDD01",
+    "key": "ae94e5857582d97cd9a8669d51c164c8",
+    "appVer": "1.0",
+    "osName": "WebAPI",
+    "appName": "ALLIANCE",
+    "source":"RupeeBoss"
+  },
+  
+  "body": {"SrchParam":"'.$req['param'].'" }
+}';
+    //call API here to save in DB
+        //$post=json_encode($post_data);
+     // print_r($post_data);exit();
+
+    $url = $this::$url_static."/BankAPIService.svc/getIIFLDropdownMasters";
+    $result=$this->call_json_data_api($url,$post_data);
+    $http_result=$result['http_result'];
+    $error=$result['error'];
+    $st=str_replace('"{', "{", $http_result);
+    $s=str_replace('}"', "}", $st);
+    $m=$s=str_replace('\\', "", $s);
+
+
+     $obj = json_decode($m);
+      // print_r($obj);exit();
+     $a=$obj->body;
+     $b=$a->Values;
+    return response()->json($b);
+}     
+
+// public function education(Request $req){
+//     // print_r($req->all());exit();
+//     $post_data = '{
+//    "head": {
+//     "requestCode": "PLRQDD01",
+//     "key": "ae94e5857582d97cd9a8669d51c164c8",
+//     "appVer": "1.0",
+//     "osName": "WebAPI",
+//     "appName": "ALLIANCE",
+//     "source":"RupeeBoss"
+//   },
+  
+//   "body": {"SrchParam":"EducationMaster" }
+// }';
+//     //call API here to save in DB
+//         //$post=json_encode($post_data);
+//      // print_r($post_data);exit();
+
+//     $url = $this::$url_static."/BankAPIService.svc/getIIFLDropdownMasters";
+//     $result=$this->call_json_data_api($url,$post_data);
+//     $http_result=$result['http_result'];
+//     $error=$result['error'];
+//     $st=str_replace('"{', "{", $http_result);
+//     $s=str_replace('}"', "}", $st);
+//     $m=$s=str_replace('\\', "", $s);
+
+
+//      $obj = json_decode($m);
+//       // print_r($obj);exit();
+//      $a=$obj->body;
+//      $b=$a->Values;
+//     return response()->json($b);
+// }   
+
+    public function applicant(Request $req){
+       $data=$req->all();
+       $post_data=json_encode($data);
+       print_r($post_data);
+    }  
     
+    public function iifl_eligibility(Request $req){
+      // print_r($req->all());
+      $quote_data=DB::select('call usp_iifl_pl_eligibility ("'.$req['Company_Cat'].'","'.$req['Monthly_Salary'].'")');
+       // print_r($quote_data);
+      return $quote_data;
+       // $data=$req->all();
+       // $post_data=json_encode($data);
+       // print_r($post_data);
+    }  
 
 }

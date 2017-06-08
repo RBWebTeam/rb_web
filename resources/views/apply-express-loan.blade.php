@@ -13,8 +13,8 @@
 
             <div class="col-md-12">
 			<center><div class="type-cover1"><span>ENTER AMOUNT</span></div></center>
-			<input type="text" name="amount" id="amount" class="center-dv input-typ" 
-			onkeypress="return isNumberKey(event)"  required/>
+			<input type="text"  name="amount" id="amount" class="center-dv input-typ amount" 
+			onkeypress="return isNumberKey(event)" maxlength="9"  required/>
 			</div>
 			<hr>
 		    
@@ -1408,6 +1408,22 @@
                   
         }
 	}
+</script>
+<script type="text/javascript">
+	$('input.amount').keyup(function(event) {
+
+  // skip for arrow keys
+  if(event.which >= 37 && event.which <= 40) return;
+
+  // format number
+  $(this).val(function(index, value) {
+    return value
+    .replace(/\D/g, "")
+    .replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+    ;
+  });
+});
+
 </script>
 
 

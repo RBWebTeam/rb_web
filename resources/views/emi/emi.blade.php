@@ -23,7 +23,7 @@
     </div>
     <div class="form-group right-block">
      <label class="control-label" for="Loan Tenure">Loan Tenure:</label>
-     <input type="text" name="loanterm" class="form-control" id="loanterm" placeholder="Loan Tenure" onkeypress="return isNumberKey(event)" value="" onblur="myfun()" >
+     <input type="text" name="loanterm" class="form-control" id="loanterm" placeholder="Loan Tenure" onkeypress="return isNumberKey(event)" minlength="2" maxlength="2" value="" onblur="myfun()" >
      <p id="err" style="display:none;"><span style="color:red;position:absolute;font-size:13px;">Please Fill All Inputs</span></p>
 	 
      <div>

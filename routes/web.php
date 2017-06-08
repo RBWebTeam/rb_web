@@ -21,7 +21,9 @@ Route::get('widget','LoanController@car_loan');
 //Route::get('search/autocomplete', 'SearchController@autocomplete');
 Route::get('autocomplete',array('as'=>'autocomplete','uses'=>'AutoCompleteController@index'));
 Route::get('searchajax',array('as'=>'searchajax','uses'=>'AutoCompleteController@autoComplete'));
-Route::get('searchstateajax',array('as'=>'searchstateajax','uses'=>'AutoCompleteController@autoComplete_state'));	
+Route::get('searchstateajax',array('as'=>'searchstateajax','uses'=>'AutoCompleteController@autoComplete_state'));
+Route::get('searchcompanyajax',array('as'=>'searchcompanyajax','uses'=>'AutoCompleteController@autoComplete_company'));	
+Route::get('searchiiflcompanyajax',array('as'=>'searchiiflcompanyajax','uses'=>'AutoCompleteController@autoComplete_iiflcompany')); 
 
 
 Route::post('loan-submit','FormController@p_loan_submit');
@@ -105,6 +107,12 @@ Route::get('apply-express-loan','LoanController@apply_express_loan');
 Route::post('express-loan-send-otp','LoanController@express_send_otp');
 Route::post('express-loan-verify','LoanController@express_verify_otp');
 Route::post('aditya-express-loan','LoanController@express_form');
+Route::get('apply-iifl-loan','LoanController@apply_iifl_loan');
+Route::post('apply-iifl-loan-otp','LoanController@state');
+Route::post('apply-iifl-loan-dropdown','LoanController@dropdown');
+Route::post('apply-iifl-loan-applicant1','LoanController@applicant');
+Route::post('iifl-eligibility','LoanController@iifl_eligibility');
+
 
 
 Route::get('magic-link','ContactController@magic_link');
@@ -145,6 +153,7 @@ Route::get('credit-card-form','CreditcardController@credit_card_form');
 Route::post('credit-submit','CreditcardController@credit_form_submit');
 Route::get('icici-credit-card-form','CreditcardController@icici_credit_card_form');
 Route::post('icici-credit-submit','CreditcardController@credit_form_submit');
+Route::get('icici','CreditcardController@icici_form');
 
 Route::get('no-record-found',function (){return view('no-record-found');});
 //Route::get('test',function (){return view('test_parse');});
@@ -243,4 +252,6 @@ Route::get('edelweiss','NewProcessController@edelweiss');
 Route::get('used-car-loan','NewProcessController@usedCarLoan');
 
 Route::post('quotes-head','FormController@quoteshead');
+Route::post('chatPost','ChatController@post');
+
 

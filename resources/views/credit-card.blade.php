@@ -14,7 +14,7 @@
         </div>
         <div class="col-md-4">
             <div class="desc">
-              <a href="{{url('credit-card-compare/icici')}}"> <img src="images/icici_credit-crd.jpg" alt="ICICI Credit Cards" title="ICICI Credit Cards"  class="img-responsive box-shadow"/></a>
+              <a href="{{url('icici')}}"> <img src="images/icici_credit-crd.jpg" alt="ICICI Credit Cards" title="ICICI Credit Cards"  class="img-responsive box-shadow"/></a>
           </div>
         </div>
         <div class="col-md-4">

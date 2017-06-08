@@ -1,39 +1,39 @@
 
 @include('layout.header')
 <div id="fh5co-hero">
-  <div class="fh5co-contact animate-box">
-    <div id="fh5co-page">
+
 
   <div class="fh5co-contact animate-box">
     <div class="container">
       <div class="row">
         <div class="col-md-12 text-left fh5co-heading animate-box fadeInUp animated">
-          <h3>ICICI Credit Card</h3>
+          <h3 class="text-center loan-head">ICICI Credit Card</h3>
           </div>        
         <div class="col-md-12">
           <div class="row pad white-bg box-shadow">
-
-<div class="col-md-4">
-<h3>Net Annual Income</h3>
-   <div class="btn-grp mrg-top income-tab" data-toggle="buttons" id="income">
-      <span class="btn btn-default outer-brd btn-block active">
-     <input type="radio"><a onclick="set_annual_income('>2.5Lacs')">> 2.5 Lacs</a>
+  <br>
+<div class="col-md-3">
+     
+   <div class="btn-grp  income-tab" data-toggle="buttons" id="income">
+     <h3 class="gray-bg pad">Net Annual Income</h3>
+      <span class="btn btn-default btn-block active" onclick="set_annual_income('>2.5Lacs')">
+     <input type="radio">> 2.5 LACS
       </span>
-      <span class="btn btn-default outer-brd btn-block ">
-     <input type="radio"><a onclick="set_annual_income('>5.0Lacs')">>5.0 Lacs</a></span>
+      <span class="btn btn-default btn-block " onclick="set_annual_income('>5.0Lacs')">
+     <input type="radio">> 5.0 LACS</span>
       
-    <span class="btn btn-default outer-brd btn-block ">
-     <input type="radio"><a onclick="set_annual_income('>10Lacs')">>10 Lacs</a></span>
+    <span class="btn btn-default  btn-block " onclick="set_annual_income('>10Lacs')">
+     <input type="radio">> 10 LACS</span>
 
-    <span class="btn btn-default outer-brd btn-block ">
-     <input type="radio"><a onclick="set_annual_income('>15Lacs')">>15 Lacs</a></span>
+    <span class="btn btn-default btn-block " onclick="set_annual_income('>15Lacs')">
+     <input type="radio">> 15 LACS</span>
          </div>
 </div>
-<div class="col-md-8">
-<ul class="nav nav-tabs nav-justified" id="interest">
-  <li class="active"><a data-toggle="tab" href="#home" onclick="set_interest('Lifestyle')">Lifestyle</a></li>
-  <li><a data-toggle="tab" href="#menu1" onclick="set_interest('Travel')">Travel</a></li>
-  <li><a data-toggle="tab" href="#menu2" onclick="set_interest('Motorsports')">Motorsports</a></li>
+<div class="col-md-9">
+<ul class="nav nav-tabs nav-justified nav-bar" id="interest">
+  <li class="active"><a data-toggle="tab" href="#home" onclick="set_interest('Lifestyle')">LIFESTYLE</a></li>
+  <li><a data-toggle="tab" href="#menu1" onclick="set_interest('Travel')">TRAVEL</a></li>
+  <li><a data-toggle="tab" href="#menu2" onclick="set_interest('Motorsports')">MOTORSPORTS</a></li>
 </ul>
 
 <div class="tab-content text-left">
@@ -42,7 +42,7 @@
   <img src="images/CS/RD_1/SD_ICIC_Rohit_Khanna_Platinum_VISA_Card.jpg" width="230" class="pull-left card-img"/>
   </div>
   <div class="col-md-8">
-  <h2><b>Platinum Chip Credit Card</b></h2>
+  <h2>Platinum Chip Credit Card</h2>
     <ul class="pad-lft">
     <li>No Joining Fee. No Annual Fee</li>
         <li>Earn 2 PAYBACK points on every Rs.100 spent</li>
@@ -52,7 +52,6 @@
   </ul>
   </div>
   <div class="col-md-8 pull-right"><a  name="Platinum-Chip-Credit-Card&&amount>2.5Lacs&&interest=Lifestyle" class="btn btn-primary apply apply">Apply Now</a></div>
-
   
   </div>
   <div id="menu12" style="display: none;" >
@@ -60,7 +59,7 @@
     <img src="images/CS/RD/JET-CORAL-VISA.jpg" width="230" class="pull-left card-img"/>
   </div>
   <div class="col-md-8">
-  <h3><b>Jet Coral Credit Card</b></h3>
+  <h2>Jet Coral Credit Card</h2>
     <ul class="pad-lft">
     <li>Joining Fee - ₹.1,250 + ST</li>
         <li>2,500 Welcome Bonus JPMiles on joining</li>
@@ -75,7 +74,7 @@
     <img src="images/CS/RD_1/SD_ICIC_Rohit_Khanna_Platinum_VISA_Card.jpg" width="230" class="pull-left card-img"/>
   </div>
   <div class="col-md-8">
-  <h3>Coral Credit Card</h3>
+  <h2>Coral Credit Card</h2>
     <ul class="pad-lft">
     <li>Limited period offer: Joining fee Rs.500</li>
         <li>2X cash rewards on dining, groceries and at supermarkets</li>
@@ -85,16 +84,16 @@
   </div>
   <div class="col-md-8 pull-right"><a  class="btn btn-primary apply">Apply Now</a></div>
   </div>
-</div>
+
 
 <!-- 5.0 -->
-<div class="tab-content text-left">
-  <div id="home1_lifestyle_5" style="display: none;" class="tab-pane fade in active">
+
+  <div id="home1_lifestyle_5" style="display: none;">
   <div class="col-md-4">
   <img src="images/CS/RD/DA_Coral-Mastercard-MasterCard_1.jpg" width="230" class="pull-left card-img"/>
   </div>
   <div class="col-md-8">
-  <h2><b>Coral Credit Card</b></h2>
+  <h2>Coral Credit Card</h2>
     <ul class="pad-lft">
     <li>No Joining Fee. No Annual Fee</li>
         <li>Earn 2 PAYBACK points on every Rs.100 spent</li>
@@ -111,7 +110,7 @@
     <img src="images/CS/RD/JET-CORAL-VISA.jpg" width="230" class="pull-left card-img"/>
   </div>
   <div class="col-md-8">
-  <h3><b>Jet Coral Credit Card</b></h3>
+  <h2>Jet Coral Credit Card</h2>
     <ul class="pad-lft">
     <li>Joining Fee - ₹.1,250 + ST</li>
         <li>2,500 Welcome Bonus JPMiles on joining</li>
@@ -128,7 +127,7 @@
     <img src="images/CS/RD_1/SS_ICICI-RED-STRAIGHT-CARD-MERGED_DateChange.jpg" width="230" class="pull-left card-img"/>
   </div>
   <div class="col-md-8">
-  <h3><b>Ferrari Platinum Credit Card</b></h3>
+  <h2>Ferrari Platinum Credit Card</h2>
     <ul class="pad-lft">
     <li>Limited period offer: Joining fee Rs.500</li>
         <li>2X cash rewards on dining, groceries and at supermarkets</li>
@@ -140,16 +139,16 @@
   <div class="col-md-8 pull-right"><a name="Ferrari-Platinum-Credit-Card&&amount=>15Lacs&&interest=Motorsports" class="btn btn-primary apply">Apply Now</a></div>
 
   </div>
-</div>
+
 
 <!-- 10 -->
-<div class="tab-content text-left">
-  <div id="home2_lifestyle_10" style="display: none;" class="tab-pane fade in active">
+
+  <div id="home2_lifestyle_10" style="display: none;">
   <div class="col-md-4">
   <img src="images/CS/RD/Rubyx-MasterCard-02.jpg" width="230" class="pull-left card-img"/>
   </div>
   <div class="col-md-8">
-  <h2><b>Rubyx Credit Card</b></h2>
+  <h2>Rubyx Credit Card</h2>
     <ul class="pad-lft">
     <li>Exclusive privileges - entertainment, dining, wellness and golf</li>
         <li>Complimentary airport lounge access</li>
@@ -167,7 +166,7 @@
     <img src="images/CS/RD/JET-RUBYX-VISA.jpg" width="230" class="pull-left card-img"/>
   </div>
   <div class="col-md-8">
-  <h3><b>Jet Rubyx Credit Card</b></h3>
+  <h2>Jet Rubyx Credit Card</h2>
     <ul class="pad-lft">
     <li>Joining Fee - ₹.2,500 + ST</li>
     <li>Welcome: 5,000 JPMiles + Complimentary Jet Airways Ticket</li>
@@ -184,7 +183,7 @@
     <img src="images/CS/RD_1/SS_ICICI-BLACK-STRAIGHT-CARD_R1_EX.jpg" width="230" class="pull-left card-img"/>
   </div>
   <div class="col-md-8">
-  <h3><b>Ferrari Signature Credit Card</b></h3>
+  <h2>Ferrari Signature Credit Card</h2>
     <ul class="pad-lft">
     <li>Complimentary Scuderia Ferrari watch on joining</li>
         <li>Discounts on Ferrari merchandise at Ferrari Online Store</li>
@@ -196,16 +195,16 @@
   <div class="col-md-8 pull-right"><a name="Ferrari-Signature-Credit-Card&&amount=>10Lacs&&interest=Motorsports"  class="btn btn-primary apply">Apply Now</a></div>
 
   </div>
-</div>
+
 
 <!-- 15 -->
-<div class="tab-content text-left">
-  <div id="home3_lifestyle_15" style="display: none;" class="tab-pane fade in active">
+
+  <div id="home3_lifestyle_15" style="display: none;">
   <div class="col-md-4">
   <img src="images/CS/RD/JET-SAPPHIRO-AMEX.jpg" width="230" class="pull-left card-img"/>
   </div>
   <div class="col-md-8">
-  <h2><b>Sapphiro Credit Card</b></h2>
+  <h2>Sapphiro Credit Card</h2>
     <ul class="pad-lft">
     <li>Exclusive privileges - entertainment, dining, wellness and golf</li>
         <li>Complimentary membership to the Priority Pass programme</li>
@@ -222,7 +221,7 @@
     <img src="images/CS/RD/JET-SAPPHIRO-VISA.jpg" width="230" class="pull-left card-img"/>
   </div>
   <div class="col-md-8">
-  <h2><b>Jet Sapphiro Credit Card</b></h2>
+  <h2>Jet Sapphiro Credit Card</h2>
     <ul class="pad-lft">
     <li>Joining Fee - ₹.5,000 + ST</li>
         <li>Welcome: 10,000 JPMiles + Complimentary Jet Airways Ticket</li>
@@ -239,7 +238,7 @@
     <img src="images/CS/RD_1/SS_ICICI-BLACK-STRAIGHT-CARD_R1_EX.jpg" width="230" class="pull-left card-img"/>
   </div>
   <div class="col-md-8">
-  <h3><b>Ferrari Signature Credit Card</b></h3>
+  <h2>Ferrari Signature Credit Card</h2>
     <ul class="pad-lft">
     <li>Complimentary Scuderia Ferrari watch on joining</li>
         <li>Discounts on Ferrari merchandise at Ferrari Online Store</li>
@@ -275,8 +274,7 @@
   
   
   </div>
-  </div>
-</div>
+
 @include('layout.footer')
 @include('layout.script')
 

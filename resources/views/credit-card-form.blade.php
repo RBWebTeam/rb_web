@@ -7,6 +7,11 @@
 				<div class="col-md-12 text-left fh5co-heading animate-box fadeInUp animated">
 					<h2>Apply For Credit Card</h2>
 					
+					{{$credit_name}}
+                    {{$credit_card}}
+
+                     
+					 
 				</div>
 				<div class="col-md-12 white-bg">
 					<div class="row text-left comp-pg rate">

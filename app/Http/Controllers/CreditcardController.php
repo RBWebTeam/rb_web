@@ -9,8 +9,12 @@ use Session;
 use App\credit_card_form_req;
 class CreditcardController extends CallApiController
 {
-	 public function credit_card_form(){
-	 		return view('credit-card-form');
+	 public function credit_card_form(Request $req){
+
+       
+            $credit_name=str_replace('-',' ',$req->name); 
+            $credit_card=str_replace('-',' ',$req->card);
+	 	  return view('credit-card-form',['credit_name'=>$credit_name,'credit_card'=>$credit_card]);
 	 }
 
 	 public function credit_form_submit(Request $req){

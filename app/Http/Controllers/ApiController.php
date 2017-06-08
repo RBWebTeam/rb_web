@@ -680,4 +680,43 @@ run_else:
                       'status'=>$status
                 ));
 	}
+	  public function emi_cal_app(Request $req){
+	  	try{
+	  	          $loanamount=$req['loanamount'];
+	  	          $loaninterest=$req['loaninterest']/12/100;
+	  	          $loanterm=$req['loanterm']; 
+	  	          $data['amount'] = round($loanamount * $loaninterest * (pow(1 + $loaninterest, $loanterm) / (pow(1 + $loaninterest, $loanterm) - 1)));
+	  	          $data['total'] =round(($data['amount']*$loanterm)-$loanamount);
+	  	          $data['ttl_payment'] = round($loanamount+$data['total']);
+	  	
+	  	          return response()->json(array('status' => 1,'data'=>$data,'err'=>''));
+	  	}catch (\Exception $e) {
+			return response()->json(array('status' => 0,'data'=>'','err'=>$e->getMessage()));
+		}
+      }
+      public function productwise_emi_cal_app(Request $req){
+	  	try{
+	  		$return_data=NULL;
+	  		$err="";
+	  		$status=0;
+	  		//return $req->all();
+
+	  		if($req['ProductId']==12){
+			  	 $data=DB::select('call  usp_get_bank_quot_test("'.$req['PropertyCost'].'","'.$req['LoanTenure'].'","'.$req['LoanRequired'].'","'.$req['ApplicantGender'].'","'.$req['ApplicantIncome'].'","'.$req['ApplicantObligations'].'","1985-12-12","N","","","'.$req['Turnover'].'","'.$req['ProfitAfterTax'].'","'.$req['Depreciation'].'","'.$req['DirectorRemuneration'].'","","","","","'.$req['ApplicantSource'].'","","","'.$req['ProductId'].'")');
+	  			}elseif($req['ProductId']==9){
+	  			 $data=DB::select('call  usp_get_personal_loan_quot ("1985-12-12","'.$req['ApplicantSource'].'","'.$req['ApplicantIncome'].'","'.$req['ApplicantObligations'].'","'.$req['LoanTenure'].'","'.$req['LoanRequired'].'")');
+	  			}
+	  	    	if($data){
+	  	    		$return_data=$data[0];
+	  	    		$status=1;
+	  	    	}else{
+	  	    		$err="You are not eligible for loan";
+	  	    	}
+	  	}catch (\Exception $e) {
+	  			$error=$e->getCode();
+	  			$err=$this->getErrorMsg($error);
+		}
+		return response()->json(array('status' => $status,'data'=>$return_data,'err_code'=>$err));
+      }
+      
 }

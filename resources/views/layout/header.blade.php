@@ -10,6 +10,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="<?php if(isset($description))echo $description; else echo "RupeeBoss provides all kind of loans."; ?>" />
 	<meta name="keywords" content="<?php if(isset($keywords))echo $keywords; else echo "rupeeboss loans getloan expressloan"; ?>" />
+	<meta name="p:domain_verify" content="05d8ec5b6a704fa5b78abd5f636fdc24"/>
 	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 	<link rel="shortcut icon" href="{{URL::to('images/rb_fav.png')}}">
 	<!-- <link rel="stylesheet" href="{{URL::to('fonts/Raleway.css')}}" type="text/css"> -->
@@ -64,8 +65,8 @@
 	<li class="soc-ic-1 soc"><a href="https://www.facebook.com/rupeeboss" target="_blank"><div  title="Facebook"><i class="icon-facebook"></i></div></a></li>
 	<li class="soc-ic-2 soc"><a href="https://plus.google.com/113191059621763008376"target="_blank"><div  title="Google +"><i class="icon-google-plus"></i></div></a></li>
 	<li class="soc-ic-3 soc"><a href="https://twitter.com/rupeeboss" target="_blank"><div  title="Twitter"><i class="icon-twitter"></i></div></a></li>
-	<li class="soc-ic-4 soc"><a href="https://www.instagram.com/rupeeboss/"target="_blank"><div  title="Instagram"><i class="icon-instagram"></i></div></a></li>
-	<li class="soc-ic-5 soc"><a href="https://www.linkedin.com/company/rupeeboss.com"target="_blank"><div  title="Linkedin"><i class="icon-linkedin"></i></div></a></li>
+	<li class="soc-ic-4 soc"><a href="https://www.instagram.com/rupeeboss/" target="_blank"><div  title="Instagram"><i class="icon-instagram"></i></div></a></li>
+	<li class="soc-ic-5 soc"><a href="https://www.linkedin.com/company/rupeeboss.com" target="_blank"><div  title="Linkedin"><i class="icon-linkedin"></i></div></a></li>
 	</ul>
 	
 	

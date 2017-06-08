@@ -6,29 +6,29 @@
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
 
   <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />    
-  <link href="css/component.css" rel="stylesheet" type="text/css"  />
+  <link href="css/icici_css/component.css" rel="stylesheet" type="text/css"  />
   <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-  <link href="css/style-home-loan.css" rel="stylesheet" type="text/css" />
-  <link href="css/responsive-home-loan.css" rel="stylesheet" type="text/css" />
+  <link href="css/icici_css/style-home-loan.css" rel="stylesheet" type="text/css" />
+  <link href="css/icici_css/responsive-home-loan.css" rel="stylesheet" type="text/css" />
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-  <link rel="stylesheet" href="css/jquery.datepicker.css">
-  <link rel="stylesheet" href="css/bootstrap-material-datetimepicker.css"/>
+  <link rel="stylesheet" href="css/icici_css/jquery.datepicker.css">
+  <link rel="stylesheet" href="css/icici_css/bootstrap-material-datetimepicker.css"/>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-  <script src="js/jquery.min.js"></script>
-  <script type="text/javascript" src="js/material.min.js"></script>
-  <script type="text/javascript" src="js/moment-with-locales.min.js"></script>
-  <script type="text/javascript" src="js/bootstrap-material-datetimepicker.js"></script>
+  <script src="js/icici_js/jquery.min.js"></script>
+  <script type="text/javascript" src="js/icici_js/material.min.js"></script>
+  <script type="text/javascript" src="js/icici_js/moment-with-locales.min.js"></script>
+  <script type="text/javascript" src="js/icici_js/bootstrap-material-datetimepicker.js"></script>
    
 </script>
-<script type="text/javascript" src="js/jquery.datepicker.js"></script>
-<script src="js/classie.js"></script>
+<script type="text/javascript" src="js/icici_js/jquery.datepicker.js"></script>
+<script src="js/icici_js/classie.js"></script>
 <script src="js/bootstrap.min.js" type="text/javascript"></script>  
 <link href="css/jquery-ui.min.css" rel="Stylesheet"></link>
 <script src="js/jquery-ui.js" ></script>
     
 <script src="js/jquery.mask.js"></script>
-<script src="js/jquery.validate.min.js"></script>
+<script src="js/icici_js/jquery.validate.min.js"></script>
   <style>
   .inp-fld {margin-bottom:10px; height:50px; position:relative;}
   .emp-nat span {padding:3px 5px;}
@@ -62,12 +62,46 @@ $(".top").click(function() {
         <section class="out-dv">
       <div class="row">
       <div class="col-md-12">
-      <!-- <?php
-    if(isset($_GET['datacom'])){ ?>
       
-    <?php }
-    ?> -->
-      <h3 class="text-center pg-titl">Apply For Credit Card</h3>
+      <h3 class="text-center pg-titl">Apply For ICICI Credit Card</h3>
+          <div class="col-xs-6 form-padding">
+                    <select class="form-control inp-fld" name="net_annual_income" id="net_annual_income" required required>
+                      <option value="">NET ANNUAL INCOME</option>
+                        <option value=">2.5Lacs">2.5Lacs</option>
+                        <option value=">5.0Lacs">5.0Lacs</option>
+                        <option value=">10Lacs">10Lacs</option>
+                        <option value=">15Lacs">15Lacs</option>
+                    </select> 
+          </div>
+
+          <div class="col-xs-6 form-padding" style='display:none;' id="credit_card_type">
+                    <select class="form-control inp-fld" name="your_interests" id="your_interests" required>
+                      <option value="">YOUR INTERESTS</option>
+                        <option  value="Lifestyle">Lifestyle</option>
+                        <option  value="Travel">Travel</option>
+                        <option  value="Motorsports">Motorsports</option>
+                      
+                    </select> 
+          </div>
+
+          <div class="col-xs-6 form-padding" style='display:none;' id="credit_card_name">
+                    <select class="form-control inp-fld" name="cards" id="cards" required>Ferrari Platinum Credit Card
+                    Ferrari Signature Credit Card
+                      <option value="">CREDIT CARDS</option>
+                      <option  value="Platinum Chip Credit Card">Platinum Chip Credit Card</option>
+                      <option  value="Coral Credit Card">Coral Credit Card</option>
+                      <option  value="Jet Coral Credit Card">Jet Coral Credit Card</option>
+                      <option  value="Ferrari Platinum Credit Card">Ferrari Platinum Credit Card</option>
+                       <option value="Rubyx Credit Card">Rubyx Credit Card</option>
+                       <option value="Sapphiro Credit Card">Sapphiro Credit Card</option>
+                       <option value="Jet Rubyx Credit Card">Jet Rubyx Credit Card</option>
+                       <option value="Jet Sapphiro Credit Card">Jet Sapphiro Credit Card</option>
+                       <option value="Ferrari Platinum Credit Card">Ferrari Platinum Credit Card</option>
+                       <option value=" Ferrari Signature Credit Card"> Ferrari Signature Credit Card</option>
+                      
+                    </select> 
+          </div>
+
           <div class="col-xs-6 form-padding">
                     <div class="form-control inp-fld">
                       <input type="text" name="ApplicantFirstName" id="ApplicantFirstName" class="form-input-new" onkeypress="return AllowAlphabet(event)" required >
@@ -79,7 +113,7 @@ $(".top").click(function() {
              
              <div class="col-xs-6 form-padding">
                     <div class="form-control inp-fld">
-                      <input type="text" name="ApplicantMiddleName" id="ApplicantMiddleName" class="form-input-new" onkeypress="return AllowAlphabet(event)" required >
+                      <input type="text" name="ApplicantMiddleName" id="ApplicantMiddleName" class="form-input-new" onkeypress="return AllowAlphabet(event)"  >
                       <span class="highlight"></span><span class="bar"></span>
                       <label class="form-label-new">Middle Name</label>
                       <div class="clear"></div>
@@ -107,6 +141,39 @@ $(".top").click(function() {
                       <input type="text" class="form-control lastReporteddob" id="DateOfBirth" name="DateOfBirth" placeholder="Date of Birth*" required>
                     </div>
                   </div>
+                  
+                  <div class="col-xs-6 form-padding">
+                    <div class="form-control inp-fld">
+                      <input type="text" name="NameOnCard" id="NameOnCard" class="form-input-new" onkeypress="return AllowAlphabet(event)" required >
+                      <span class="highlight"></span><span class="bar"></span>
+                      <label class="form-label-new">Name to be printed on the card</label>
+                      <div class="clear"></div>
+                    </div>  
+                             </div>
+
+                             <div class="col-xs-6 form-padding">
+                    <div class="form-control inp-fld">
+                      <input type="text" name="MotherName" id="MotherName" class="form-input-new" onkeypress="return AllowAlphabet(event)" required >
+                      <span class="highlight"></span><span class="bar"></span>
+                      <label class="form-label-new">Mother's Maiden Name</label>
+                      <div class="clear"></div>
+                    </div>  
+                             </div>
+
+                    <div class="col-xs-6 form-padding">
+                    <select class="form-control inp-fld" name="no_of_dependents" id="no_of_dependents" required>
+                      <option value="">NO OF DEPENDENTS</option>
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="5+">5+</option>
+                    </select> 
+                  </div>
+         
+
         <div class="col-xs-6 form-padding">
                     <div class="form-control" style="height:50px;position: relative; padding: 0px 0px; margin-bottom:10px;">
                       <div class="padd-lef gender">
@@ -118,28 +185,132 @@ $(".top").click(function() {
                         </div>
                      </div>
                   </div>
-          <div class="col-xs-6 form-padding">
+                 
+                <div class="col-xs-6 form-padding">
+                <div class="form-control" style="height:50px; position: relative; padding: 0px 0px;">
+                      <span style="position: absolute; z-index: 999; margin: 1px 0 0 8px; font-size: 10px; color: #bababa;">Marital Status</span>
+                      <div class="btn-grp mrg-top m-status emp-nat" data-toggle="buttons">
+                      <span class="btn btn-primary outer-brd active"><input type="radio" name="marital_status" checked value="Single">Single</span>
+                      <span class="btn btn-primary outer-brd"><input type="radio" name="marital_status" value="Married" >Married</span>
+                </div>
+                    </div>  
+                </div>
+                
+                <div class="col-xs-6 form-padding">
                     <div class="form-control" style="height:50px; position: relative; padding: 0px 0px;">
-                      <span style="position: absolute; z-index: 999; margin: 1px 0 0 8px; font-size: 10px; color: #bababa;">Employment Nature</span>
+                      <span style="position: absolute; z-index: 999; margin: 1px 0 0 8px; font-size: 10px; color: #bababa;">Resident Status</span>
+                      <div class="btn-grp mrg-top m-status emp-nat" data-toggle="buttons">
+                      <span class="btn btn-primary outer-brd active"><input type="radio" name="resident_status" checked value="Indian">Indian</span>
+                      <span class="btn btn-primary outer-brd"><input type="radio" name="resident_status" value="NRI/Foreign_National" >NRI/Foreign National</span>
+                </div>
+                    </div>  
+                </div>
+
+              <div class="col-xs-6 form-padding">
+                        <div class="form-control" style="height:50px; position: relative; padding: 0px 0px;">
+                          <span style="position: absolute; z-index: 999; margin: 1px 0 0 8px; font-size: 10px; color: #bababa;">Employment Nature</span>
                       
                       <div class="btn-grp mrg-top m-status emp-nat" data-toggle="buttons">
-      <span class="btn btn-primary outer-brd active"><input type="radio" name="CustomerProfile" checked value="Salaried">Salaried</span>
-      <span class="btn btn-primary outer-brd"><input type="radio" name="CustomerProfile" value="Selfemployed" >Self-Emp</span>
-         </div>
+                      <span class="btn btn-primary outer-brd active"><input type="radio" name="CustomerProfile" checked value="Salaried">Salaried</span>
+                      <span class="btn btn-primary outer-brd"><input type="radio" name="CustomerProfile" value="Selfemployed" >Self-Emp</span>
+                         </div>
                     </div>
                   </div>
+
+            <div class="col-xs-6 form-padding">
+                    <select class="form-control inp-fld" name="preferred_address" id="preferred_address" required>
+                      <option value="">PREFERRED MAILING ADDRESS</option>
+                      <option value="Residence">Residence</option>
+                      <option value="Office">Office</option>
+                    </select> 
+            </div>
+
+            <div class="col-xs-6 form-padding">
+                        <div class="form-control" style="height:50px; position: relative; padding: 0px 0px;">
+                        <span style="position: absolute; z-index: 999; margin: 1px 0 0 8px; font-size: 10px; color: #bababa;">I want to apply for a Supplementary Card</span>
+                      
+                      <div class="btn-grp mrg-top m-status emp-nat" data-toggle="buttons">
+                      <span class="btn btn-primary outer-brd active"><input type="radio" name="supplementary_card" checked value="Yes">Yes</span>
+                      <span class="btn btn-primary outer-brd"><input type="radio" name="supplementary_card" value="No" >No</span>
+                      </div>
+                      </div>
+            </div>
+      
         
             <h4 class="txt-tlt pull-left">Company Name</h4> 
             
             <div class="col-xs-6 form-padding">
                     <div class="form-control inp-fld">
-                      <input type="text" class="form-input-new" name="CompanyName" id="CompanyName" onkeypress="return AllowAlphabet(event)" required >
+                      <input type="text" class="form-input-new search_company" name="CompanyName" id="CompanyName" onkeypress="return AllowAlphabet(event)" required >
                       <span class="highlight"></span><span class="bar"></span>
                       <label class="form-label-new">Company Name</label>
                       <div class="clear"></div>
                     </div>  
+            </div>
+             
+             <div class="col-xs-6 form-padding">
+                    <div class="form-control inp-fld">
+                      <input type="text" name="designation" id="designation" class="form-input-new" onkeypress="return AllowAlphabet(event)" required >
+                      <span class="highlight"></span><span class="bar"></span>
+                      <label class="form-label-new">Designation</label>
+                      <div class="clear"></div>
+                    </div>  
+             </div>
+
+             <div class="col-xs-6 form-padding">
+                    <div class="form-control inp-fld">
+                      <input type="text" id="work_email" name="work_email" class="form-input-new" oninput="mail('work_email')"  required >
+                       <span id="email" style="display:none;color: red;">Please Enter Valid Email Id.</span>
+                      <span class="highlight"></span><span class="bar"></span>
+                      <label class="form-label-new">Work Email</label>
+                      <div class="clear"></div>
+                    </div>  
                   </div>
-          <div class="col-xs-6 form-padding">
+
+                  <div class="col-xs-6 form-padding">
+                    <div class="form-control inp-fld">
+                      <input type="text" class="form-input-new" id="work_STDCode" name="work_STDCode"  required  onkeypress="return fnAllowNumeric(event)" maxlength="5" >
+                      <span class="highlight"></span><span class="bar"></span>
+                      <label class="form-label-new">Work Area STD Code</label>
+                      <div class="clear"></div>
+                    </div>  
+                  </div>
+
+                  <div class="col-xs-6 form-padding">
+                    <div class="form-control inp-fld">
+                      <input type="text" class="form-input-new" id="work_number" name="work_number"  required  onkeypress="return fnAllowNumeric(event)" maxlength="10" >
+                      <span class="highlight"></span><span class="bar"></span>
+                      <label class="form-label-new">Phone Number</label>
+                      <div class="clear"></div>
+                    </div>  
+                  </div>
+
+                  <div class="col-xs-6 form-padding">
+                    <select class="form-control inp-fld" name="type_of_company" id="type_of_company" required>
+                      <option value="">TYPE OF COMPANY</option>
+                      <option value="Central Government">Central Government</option>
+                      <option value="MNC">MNC</option>
+                      <option value="Partnership">Partnership</option>
+                      <option value="Private Limited">Private Limited</option>
+                      <option value="Proprietorship">Proprietorship</option>
+                      <option value="PSU">PSU</option>
+                      <option value="Public Limited">Public Limited</option>
+                      <option value="State Government">State Government</option>
+                    </select> 
+            </div>
+                  
+                  <div class="col-xs-6 form-padding">
+                    <select class="form-control inp-fld" name="highest_education" id="highest_education" required>
+                      <option value="">HIGHEST EDUCATIONAL QUALIFICATIONS</option>
+                      <option value="Under Graduate">Under Graduate</option>
+                      <option value="Graduate/Diploma">Graduate/Diploma</option>
+                      <option value="Post Graduate">Post Graduate</option>
+                      <option value="Professional">Professional</option>
+                      
+                    </select> 
+            </div>
+             
+              <div class="col-xs-6 form-padding">
                     <div class="form-control inp-fld">
                       <input type="text" id="Income" name="Income" class="form-input-new" onkeypress="return fnAllowNumeric(event)"  required >
                       <span class="highlight"></span><span class="bar"></span>
@@ -149,13 +320,15 @@ $(".top").click(function() {
                   </div>
           <div class="col-xs-6 form-padding">
                     <select class="form-control inp-fld" name="ICICIBankRelationship" id="ICICIBankRelationship" required required>
-                      <option value="">ICICIBankRelationship</option>
-                          <option value="Salary">Salary</option>
+                      <option value="">ICICI BANK RELATIONSHIP</option>
+                        <option value="Salary">Salary</option>
                         <option value="Saving">Saving</option>
                         <option value="Loan">Loan</option>
                         <option value="Norelationship">Norelationship</option>
                     </select> 
-                               </div>
+          </div>
+
+
           <div class="col-xs-6 form-padding">
                     <div class="form-control inp-fld">
                       <input type="text" name="Total_Exp" id="Total_Exp" class="form-input-new" onkeypress="return fnAllowNumeric(event)" required >
@@ -179,12 +352,12 @@ $(".top").click(function() {
          </div>
                     </div>
                   </div>
-              <h4 class="txt-tlt pull-left">Current Addresses Details</h4> 
+              <h4 class="txt-tlt pull-left">Current Address Details</h4> 
           <div class="col-xs-6 form-padding">
                     <div class="form-control inp-fld">
                       <input type="text" name="ResidenceAddress1" id="ResidenceAddress1" class="form-input-new" required >
                       <span class="highlight"></span><span class="bar"></span>
-                      <label class="form-label-new">flat No / Plot No / House No*</label>
+                      <label class="form-label-new">Flat No / Plot No / House No*</label>
                       <div class="clear"></div>
                     </div>  
                   </div>
@@ -228,6 +401,94 @@ $(".top").click(function() {
                       <div class="clear"></div>
                     </div>  
                   </div>
+
+          <div class="col-xs-6 form-padding">
+                    <select class="form-control inp-fld" name="type_current" id="type_current" required>
+                      <option value="">RESIDENCE TYPE</option>
+                     <option value="Owned_by_self/spouse">Owned by self/spouse</option>
+                      <option value="Owned_by_parents/siblings">Owned by parents/siblings</option>
+                      <option value="Rented_with_Family">Rented with Family</option>
+                      <option value="Rented_with_Friends">Rented with Friends</option>
+                      <option value="Rented_staying_alone">Rented staying alone</option>
+                      <option value="Paying_guest/Hostel">Paying guest/Hostel</option>
+                      <option value="Company_Provided">Company Provided</option>
+                    </select> 
+            </div>
+
+                  <h4 class="txt-tlt pull-left">Permanent Address Details</h4> 
+          <div class="col-xs-6 form-padding">
+                    <div class="form-control inp-fld">
+                      <input type="text" name="PerResidenceAddress1" id="PerResidenceAddress1" class="form-input-new" required >
+                      <span class="highlight"></span><span class="bar"></span>
+                      <label class="form-label-new">flat No / Plot No / House No*</label>
+                      <div class="clear"></div>
+                    </div>  
+                  </div>
+          <div class="col-xs-6 form-padding">
+                    <div class="form-control inp-fld">
+                      <input type="text"  name="PerResidenceAddress2" id="PerResidenceAddress2" class="form-input-new" required>
+                      <span class="highlight"></span><span class="bar"></span>
+                      <label class="form-label-new">Building / Society Name</label>
+                      <div class="clear"></div>
+                    </div>  
+                  </div>
+          <div class="col-xs-6 form-padding">
+                    <div class="form-control inp-fld">
+                      <input type="text"  name="PerResidenceAddress3" id="PerResidenceAddress3" class="form-input-new" required>
+                      <span class="highlight"></span><span class="bar"></span>
+                      <label class="form-label-new">Road No / Area / Locality</label>
+                      <div class="clear"></div>
+                    </div>  
+                  </div>
+          <div class="col-xs-6 form-padding">
+                    <div class="form-control inp-fld">
+                      <input type="text" name="PerCity" id="PerCity" class="form-input-new search_citynm" required dis>
+                      <span class="highlight"></span><span class="bar"></span>
+                      <label class="form-label-new">City*</label>
+                      <div class="clear"></div>
+                    </div>  
+                  </div>
+          <div class="col-xs-6 form-padding">
+                    <div class="form-control inp-fld">
+                      <input type="text" id="PerResidencePincode" name="PerResidencePincode" class="form-input-new" required onkeypress="return fnAllowNumeric(event)" maxlength="6"  >
+                      <span class="highlight"></span><span class="bar"></span>
+                      <label class="form-label-new">Pincode*</label>
+                      <div class="clear"></div>
+                    </div>  
+                  </div>
+          <div class="col-xs-6 form-padding">
+                    <div class="form-control inp-fld">
+                      <input type="text" name="PerResidenceState" id="PerResidenceState" class="form-input-new search_statenm" required>
+                      <span class="highlight"></span><span class="bar"></span>
+                      <label class="form-label-new">State*</label>
+                      <div class="clear"></div>
+                    </div>  
+                  </div>
+
+          
+
+            <div class="col-xs-6 form-padding">
+                    <select class="form-control inp-fld" name="per_res_type" id="per_res_type" required>
+                      <option value="">RESIDENCE TYPE</option>
+                      <option value="Owned_by_self/spouse">Owned by self/spouse</option>
+                      <option value="Owned_by_parents/siblings">Owned by parents/siblings</option>
+                      <option value="Rented_with_Family">Rented with Family</option>
+                      <option value="Rented_with_Friends">Rented with Friends</option>
+                      <option value="Rented_staying_alone">Rented staying alone</option>
+                      <option value="Paying_guest/Hostel">Paying guest/Hostel</option>
+                      <option value="Company_Provided">Company Provided</option>
+                    </select> 
+            </div> 
+
+                   <div class="col-xs-6 form-padding">
+                    <div class="form-control inp-fld">
+                      <input type="text" id="email_id" name="email_id" class="form-input-new" oninput="email('email_id')"  required >
+                       <span id="mail_id" style="display:none;color: red;">Please Enter Valid Email Id.</span>
+                      <span class="highlight"></span><span class="bar"></span>
+                      <label class="form-label-new">Email ID(Personal)*</label>
+                      <div class="clear"></div>
+                    </div>  
+                  </div>
                   
           <h4 class="txt-tlt pull-left">Contact Details</h4> 
           <div class="col-xs-6 form-padding">
@@ -248,7 +509,7 @@ $(".top").click(function() {
                   </div>
           <div class="col-xs-6 form-padding">
                     <div class="form-control inp-fld">
-                      <input type="text" class="form-input-new" id="STDCode" name="STDCode"  required  onkeypress="return fnAllowNumeric(event)" maxlength="4" >
+                      <input type="text" class="form-input-new" id="STDCode" name="STDCode"  required  onkeypress="return fnAllowNumeric(event)" maxlength="5" >
                       <span class="highlight"></span><span class="bar"></span>
                       <label class="form-label-new">STD Code</label>
                       <div class="clear"></div>
@@ -281,11 +542,51 @@ $(".top").click(function() {
                       <div id="pannumber" style="display:none;color: red;">Oops.Please Enter Valid Pan Number.!!</div>
                     </div>  
                   </div>
+
+                  <div class="col-xs-6 form-padding">
+                        <div class="form-control" style="height:50px; position: relative; padding: 0px 0px;">
+                        <span style="position: absolute; z-index: 999; margin: 1px 0 0 8px; font-size: 10px; color: #bababa;">Do You Have A Credit Card</span>
+                      
+                      <div class="btn-grp mrg-top m-status emp-nat" data-toggle="buttons">
+                      <span class="btn btn-primary outer-brd active"><input type="radio" id="have" name="have_credit_card" checked value="Yes">Yes</span>
+                      <span class="btn btn-primary outer-brd"><input type="radio" name="have_credit_card" id="not_have" value="No" >No</span>
+                      </div>
+                      </div>
+            </div>
+            <div style="display: none;" id="credit_details" >
+            <h4 class="txt-tlt pull-left">Please input details of your Credit Card having Maximum Credit Limit </h4>
+           
+            <div class="col-xs-6 form-padding" >
+                    <div class="form-control inp-fld">
+                      <input type="text" name="previous_bank" id="previous_bank" class="form-input-new" onkeypress="return AllowAlphabet(event)" required >
+                      <span class="highlight"></span><span class="bar"></span>
+                      <label class="form-label-new">Select Bank</label>
+                      <div class="clear"></div>
+                    </div>  
+                   </div>
+
+                   <div class="col-xs-6 form-padding" >
+                    <div class="form-control" style="margin-bottom:10px; height:50px; position:relative; padding: 0;">
+                      
+                      <input type="text" class="form-control lastReportedsince" id="credit_date" name="credit_date" placeholder="Member Since*" required>
+                    </div>
+                  </div>
+
+                  <div class="col-xs-6 form-padding">
+                    <div class="form-control inp-fld">
+                      <input type="text" id="credit_limit" name="credit_limit" class="form-input-new" onkeypress="return fnAllowNumeric(event)"  required >
+                      <span class="highlight"></span><span class="bar"></span>
+                      <label class="form-label-new">Credit Limit*</label>
+                      <div class="clear"></div>
+                    </div>  
+                  </div>
+                  </div>
+
           <div class="col-md-12 pull-left text-justify">
             <p class="p-padding"><input type="checkbox" name="terms"  class="redio-lft"/>&nbsp; I hereby confirm that I have read and understood the Rupeeboss Terms and Conditions applicable to this service and that all the details furnished by me above are true and correct. I further provide consent to Rupeeboss and its affiliates to contact me with reference to financial products and this consent shall override any registration with DNC/NDNC.</p>
             
             <!-- <button class="sbmt-btn credit-submit dis-tbl">Confirm &amp; Continue</button> -->
-            &nbsp;&nbsp;&nbsp;&nbsp;<button class="btn btn-primary btn-outline with-arrow animate-box fadeInUp animated icici-credit-submit dis-tbl " >Confirm & Continue<i class="icon-arrow-right"></i>
+            &nbsp;&nbsp;&nbsp;&nbsp;<button class="sbmt-btn icici-credit-submit dis-tbl " >Confirm & Continue<i class="icon-arrow-right"></i>
 
 
                   </button>
@@ -297,6 +598,26 @@ $(".top").click(function() {
       </section>    
     </div>
     </form>
+
+    <div class="modal fade" tabindex="-1" role="dialog" id="credit_process_sorry">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title"></h4>
+      </div>
+      <div class="modal-body">
+        <h4><p id="modalerr"><h5>Your Application id is <b><span id="drop"></span></b>.<br>You have been <b><span id="drop1"></span></b>.<br><b><span id="drop2"></span></b><h5></p></h4>
+        
+      </div>
+      
+      <div class="modal-footer">
+        <a type="button" id="upload" name="upload" class="btn btn-primary" onclick="Redirect();" >Proceed to Document Upload</a>
+        
+      </div>
+    </div>
+  </div>
+</div>
 
 
 
@@ -634,6 +955,48 @@ $(document).ready(function(){
 </script>
 
 <script type="text/javascript">
+  
+
+ $(document).ready(function(){
+    
+    $(".search_company").autocomplete({
+      source: function(request, response) {
+        
+        $.ajax({
+          url: "{{ route('searchcompanyajax') }}",
+          dataType: "json",
+          data: {
+            term : request.term
+          },
+          success: function(data) {
+           
+
+            response(data);
+            
+          }
+        });
+      },
+      change: function (event, ui) {
+        if (ui.item == null || ui.item == undefined || ui.item.value=='No Result Found') {
+          $(".search_company").val("");
+          $(".search_company").attr("disabled", false);
+         
+        }else{
+
+         
+         $(".Q6").show();
+         
+          
+             }
+           }
+
+        
+      });
+   });
+
+</script>
+
+<script type="text/javascript">
   function pancard(obj,val){
     // console.log(obj);
     if(obj=='PanNo' ){
@@ -662,14 +1025,15 @@ $(document).ready(function(){
     //alert("okae");
     event.preventDefault();
       //var form=$(this).closest("form").attr('id');
-      //alert(form);
+      //console.log($('#compareform'));
       //var form=$('#compareform');
       if(!  $('#compareform').valid()){
+        return false;
       }else{
         //var s=$('#'+form).serialize();
-
+        //console.log($('#compareform'));
         $(".iframeloading").show();
-        $(".icici-credit-submit").hide(); 
+        // $(".icici-credit-submit").hide(); 
         $.ajax({  
          type: "POST",  
          url: "{{URL::to('icici-credit-submit')}}",
@@ -678,7 +1042,7 @@ $(document).ready(function(){
          success: function(msg){
          $(".iframeloading").hide();  
         
-         // console.log(msg);
+         //console.log(.id);
           if(msg==2){
             // alert("OKAE");
              alert("Something Went Wrong");
@@ -687,9 +1051,16 @@ $(document).ready(function(){
             // $('#credit_process').modal('show');        
           } 
           else{
-            // console.log(msg);
-            alert(" Your Application id is "+msg+".Thank you for your interest in ICICI Bank Credit Cards. Our representative will get in touch with you within 3 working days subject to your application meeting the eligibility criteria");
-             // $('#credit_process_sorry').modal('show');
+            //console.log(msg);
+            // alert(" Your Application id is "+msg.id+".Decision is "+msg.Decision+"Thank you for your interest in ICICI Bank Credit Cards. Our representative will get in touch with you within 3 working days subject to your application meeting the eligibility criteria");
+            if (msg.Decision =='Declined') {
+              $('#upload').hide();
+
+            }
+             $('#drop').empty().append(msg.id);
+              $('#drop1').empty().append(msg.Decision);
+              $('#drop2').empty().append(msg.Reason);
+             $('#credit_process_sorry').modal('show');
           }
 
         }  
@@ -715,3 +1086,173 @@ $(document).ready(function(){
       defaultDate: d
     });
 </script>
+
+<script type="text/javascript">
+  function email(obj,val){
+    // console.log(obj);
+    if(obj=='email_id' ){
+                   var str =$('#email_id').val();
+                   var emailPattern = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/; 
+                   var res = str.match(emailPattern);
+                   if(res){
+                     // console.log('Pancard is valid one.!!');
+                      $('#mail_id').hide();
+
+                  }else{
+                    // console.log('Oops.Please Enter Valid Pan Number.!!');
+                    $('#mail_id').show();
+
+                    return false;
+                  }
+                  
+  }
+}
+</script>
+
+<script type="text/javascript">
+  function mail(obj,val){
+    // console.log(obj);
+    if(obj=='work_email' ){
+                   var str =$('#work_email').val();
+                   var emailPattern = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/; 
+                   var res = str.match(emailPattern);
+                   if(res){
+                     // console.log('Pancard is valid one.!!');
+                      $('#email').hide();
+
+                  }else{
+                    // console.log('Oops.Please Enter Valid Pan Number.!!');
+                    $('#emai').show();
+
+                    return false;
+                  }
+                  
+  }
+}
+</script>
+
+
+<script type="text/javascript">
+          function Redirect() 
+          {
+          window.location="http://beta.erp.rupeeboss.com/Credit_Card_Upload_Docs.aspx?App_Id=drop&CardType=ICICI";
+          }
+</script>
+
+<script type="text/javascript">
+    var d = new Date();
+    var year = d.getFullYear() ;
+    d.setFullYear(year);
+
+    $(".lastReportedsince").datepicker({ dateFormat: "yy-mm-dd",
+      changeMonth: true,
+      changeYear: true,
+      maxDate: year,
+      minDate: "-100Y",
+      yearRange: '-100:' + year + '',
+      defaultDate: d
+    });
+</script>
+
+<script type="text/javascript">
+  $('#have').change(function(){
+ 
+  $("#credit_details").show();
+  });
+</script>
+
+<script type="text/javascript">
+  $('#not_have').change(function(){
+ 
+  $("#credit_details").hide();
+  });
+</script>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+
+    $('#net_annual_income').on('change', function() {
+      //console.log(this.value);
+      //resetting dropdown as all dropdown based on first one
+      $('#your_interests').get(0).selectedIndex = 0;
+      $('#cards').get(0).selectedIndex = 0;
+      if ( this.value == '>2.5Lacs')
+      {
+        $("#credit_card_type").show();
+        $("#your_interests option[value='Travel']").hide();
+        $("#your_interests option[value='Motorsports']").hide();
+       
+      }
+      else if(this.value == '>5.0Lacs' || this.value == '>10Lacs' || this.value == '>15Lacs')
+      {
+        $("#credit_card_type").show();
+        $("#your_interests option[value='Travel']").show();
+        $("#your_interests option[value='Motorsports']").show();
+      }
+    });
+
+    $('#your_interests').on('change', function() {
+       //resetting cards dropdown as changing intrest changs cards
+      $('#cards').get(0).selectedIndex = 0;
+      var net_annual_income=$('#net_annual_income').find(":selected").val();
+      var your_interests=$('#your_interests').find(":selected").val();
+     // console.log(net_annual_income);
+      $("#credit_card_name").show();
+      $("#cards option[value='Platinum Chip Credit Card']").hide();
+      $("#cards option[value='Coral Credit Card']").hide();
+      $("#cards option[value='Jet Coral Credit Card']").hide();
+      $("#cards option[value='Ferrari Platinum Credit Card']").hide();
+      $("#cards option[value='Rubyx Credit Card']").hide();
+      $("#cards option[value='Sapphiro Credit Card']").hide();
+      $("#cards option[value='Jet Rubyx Credit Card']").hide();
+      $("#cards option[value='Jet Sapphiro Credit Card']").hide();
+      $("#cards option[value=' Ferrari Signature Credit Card']").hide();
+      if ( your_interests == 'Lifestyle')
+      {
+       
+        $("#cards option[value='Platinum Chip Credit Card']").show();
+      }
+      if (( your_interests == 'Lifestyle' && net_annual_income == '>5.0Lacs'))
+      {
+       
+        $("#cards option[value='Coral Credit Card']").show();
+      }
+      if (( your_interests == 'Lifestyle' && net_annual_income == '>10Lacs'))
+      {
+        $("#cards option[value='Rubyx Credit Card']").show();
+      }
+      if (( your_interests == 'Lifestyle' && net_annual_income == '>15Lacs'))
+      {
+        $("#cards option[value='Sapphiro Credit Card']").show();
+      }
+      if (( your_interests == 'Travel' && net_annual_income == '>5.0Lacs'))
+      {
+       $("#cards option[value='Jet Coral Credit Card']").show();
+      }
+      if (( your_interests == 'Travel' && net_annual_income == '>10Lacs'))
+      {
+         $("#cards option[value='Jet Rubyx Credit Card']").show();
+      }
+      if (( your_interests == 'Travel' && net_annual_income == '>15Lacs'))
+      {
+        $("#cards option[value='Jet Sapphiro Credit Card']").show();
+      }
+      if (( your_interests == 'Motorsports' && net_annual_income == '>5.0Lacs'))
+      {
+           $("#cards option[value='Ferrari Platinum Credit Card']").show();
+      }
+      if (( your_interests == 'Motorsports' && net_annual_income == '>10Lacs'))
+      {
+         $("#cards option[value=' Ferrari Signature Credit Card']").show();
+      }
+      if (( your_interests == 'Motorsports' && net_annual_income == '>15Lacs'))
+      {
+         $("#cards option[value=' Ferrari Signature Credit Card']").show();
+      }
+    });
+});
+</script>
+
+
+
+

@@ -1,5 +1,9 @@
 @include('layout.header')
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<style src="css/jquery-ui.min.css"></style>
+<style type="text/css">
+  .drop-arr {text-transform: uppercase;}
+</style>
   <div id="fh5co-hero" ng-app="">
   <form id="tribe_loan_form" method="POST" name="tribe_loan_form" >
   {!! csrf_field() !!}
@@ -14,7 +18,7 @@
     <li><a data-toggle="tab" href="#main3" id="nav3" class="go_to_next"><b>BUSINESS DETAIL</b></a></li>
     <li><a data-toggle="tab" href="#main5" id="nav5" class="go_to_next"><b>ONLINE ID</b></a></li>
     <li><a data-toggle="tab" href="#main6" id="nav6" class="go_to_next"><b>REFERENCE</b></a></li>
-    <li><a data-toggle="tab"  id="nav4" class="go_to_next"><b>DOCUMENT</b></a></li>
+    <li><a data-toggle="tab"  id="nav4" href="#main4" class="go_to_next"><b>DOCUMENT</b></a></li>
     <li><a data-toggle="tab"  id="nav7"  class="go_to_next"><b>BANK STATEMENT</b></a></li>
   </ul>
 
@@ -81,7 +85,7 @@
     <option disabled selected>Select</option>
     @foreach($data['loan_type'] as $key=>$value)
       
-      <option value="{{$value}}"><?php echo $key;?></option>
+      <option value="{{$value}}"><?php echo str_replace("_"," ",$key);?></option>
       @endforeach
     </select>
    
@@ -93,7 +97,7 @@
     <option disabled selected>Select</option>
     @foreach($data['repayment_frequency'] as $key=>$value)
       
-      <option value="{{$value}}"><?php echo $key;?></option>
+      <option value="{{$value}}"><?php echo str_replace("_"," ",$key);?></option>
       @endforeach
     </select>
     <a class="btn btn-primary btn-outline with-arrow " onclick="go_to_next('main2')">Next<i class="icon-arrow-right"></i></a>
@@ -150,7 +154,7 @@
      <option disabled selected>Select</option>
       @foreach($data['education'] as $key=>$value)
       
-      <option value="{{$value}}"><?php echo $key;?></option>
+      <option value="{{$value}}"><?php echo str_replace("_"," ",$key);?></option>
       @endforeach
     </select>
     </select>
@@ -162,7 +166,7 @@
       <option disabled selected>Select</option>
       @foreach($data['family_details'] as $key=>$value)
       
-      <option value="{{$value}}"><?php echo $key;?></option>
+      <option value="{{$value}}"><?php echo str_replace("_"," ",$key);?></option>
       @endforeach
     </select>
     
@@ -185,7 +189,7 @@
        <option disabled selected>Select</option>
       @foreach($data['registration_details'] as $key=>$value)
       
-      <option value="{{$value}}" ><?php echo $key;?></option>
+      <option value="{{$value}}" ><?php echo str_replace("_"," ",$key);?></option>
       @endforeach
     </select>
     </div>
@@ -196,7 +200,7 @@
        <option disabled selected>Select</option>
       @foreach($data['partner_count'] as $key=>$value)
       
-      <option value="{{$value}}"><?php echo $key;?></option>
+      <option value="{{$value}}"><?php echo str_replace("_"," ",$key);?></option>
       @endforeach
     </select>
     </div>
@@ -208,7 +212,7 @@
        <option disabled selected>Select</option>
       @foreach($data['director_count'] as $key=>$value)
       
-      <option value="{{$value}}"><?php echo $key;?></option>
+      <option value="{{$value}}"><?php echo str_replace("_"," ",$key);?></option>
       @endforeach
     </select>
     </div>
@@ -220,7 +224,7 @@
        <option disabled selected>Select</option>
       @foreach($data['proprietorship_type'] as $key=>$value)
       
-      <option value="{{$value}}"><?php echo $key;?></option>
+      <option value="{{$value}}"><?php echo str_replace("_"," ",$key);?></option>
       @endforeach
     </select>
     </div>
@@ -245,7 +249,7 @@
       <option disabled selected>Select</option>
       @foreach($data['nature_of_business'] as $key=>$value)
       
-      <option value="{{$value}}"><?php echo $key;?></option>
+      <option value="{{$value}}"><?php echo str_replace("_"," ",$key);?></option>
       @endforeach
     </select>
     </div>
@@ -266,7 +270,7 @@
       <option disabled selected>Select</option>
       @foreach($data['online_sales_channels'] as $key=>$value)
       
-      <option value="{{$value}}"><?php echo $key;?></option>
+      <option value="{{$value}}"><?php echo str_replace("_"," ",$key);?></option>
       @endforeach
     </select>
     </div>
@@ -279,7 +283,7 @@
        <option disabled selected>Select</option>
       @foreach($data['turnover'] as $key=>$value)
       
-      <option value="{{$value}}"><?php echo $key;?></option>
+      <option value="{{$value}}"><?php echo str_replace("_"," ",$key);?></option>
       @endforeach
     </select>
     </div>
@@ -290,7 +294,7 @@
        <option disabled selected>Select</option>
       @foreach($data['ownership'] as $key=>$value)
       
-      <option value="{{$value}}"><?php echo $key;?></option>
+      <option value="{{$value}}"><?php echo str_replace("_"," ",$key);?></option>
       @endforeach
     </select>
     </div>
@@ -301,7 +305,7 @@
        <option disabled selected>Select</option>
       @foreach($data['product_sell'] as $key=>$value)
       
-      <option value="{{$value}}"><?php echo $key;?></option>
+      <option value="{{$value}}"><?php echo str_replace("_"," ",$key);?></option>
       @endforeach
     </select>
     </div>
@@ -329,18 +333,18 @@
     <a class="btn btn-primary btn-outline with-arrow " onclick="go_back('main2')">Back<i class="icon-arrow-right"></i></a></div>
     </div>
     
-    <div id="main5" class="tab-pane fade">
+    <div id="main5" class="tab-pane fade drop-arr">
       <p>Providing Online Credentials of Platforms/Marketplaces/Software that you make use of in your business will help us understand your business better and make the most appropriate 
     recommendations for Loans. This can also increase your chances of securing Loans at a lower interest rate. As a Business User, you gain free and complete access to all the insights that Tribe draws using your online credentials.</p>
     <ul>
    
      @foreach($data['aggregated_ids'] as $key=>$value)
-      <li class="pad"><input type="radio" name="online_ids" value="{{$value}}" onclick="showDiv('online_ids_{{$value}}')" /> {{$key}}</li>
+      <li class="pad"><input type="radio" name="online_ids" value="{{$value}}" onclick="showDiv('online_ids_{{$value}}')" /> {{ str_replace("_"," ",$key)}}</li>
         <div class="col-sm-12" id="online_ids_{{$value}}" style="display: none;" class="extra">
 
           <?php $length=sizeof($data['aggregated_ids_credentials']->$value);
            for($i=0;$i<$length;$i++){ ?>
-           <label class="col-sm-2"> {{$data['aggregated_ids_credentials']->$value[$i]}}:</label>
+           <label class="col-sm-2"> {{ str_replace("_"," ",$data['aggregated_ids_credentials']->$value[$i])}}:</label>
            <input type="text" class="form-control form-group col-sm-10" name="online_ids_array[{{$value}}][<?php echo $data['aggregated_ids_credentials']->$value[$i]; ?>]" required />
            
           <?php }?>
@@ -443,9 +447,9 @@
       <div class="col-md-4">Electricity Bill</div>
         <div class="col-md-8 form-padding">
         <a class="btn btn-primary btn-outline with-arrow pull-right" onclick="tribe_doc_upload(12)">Add Document<i class="icon-arrow-right"></i></a>
-           <div style="display: none;" id="after_upload_div_6">
-              <a class="btn btn-primary btn-outline with-arrow pull-right" id="get_doc_6" >Show Document<i class="icon-arrow-right"></i></a>
-              <a class="btn btn-primary btn-outline with-arrow pull-right" id="del_doc_6">Delete Document<i class="icon-arrow-right"></i></a>
+           <div style="display: none;" id="after_upload_div_12">
+              <a class="btn btn-primary btn-outline with-arrow pull-right" id="get_doc_12" >Show Document<i class="icon-arrow-right"></i></a>
+              <a class="btn btn-primary btn-outline with-arrow pull-right" id="del_doc_12">Delete Document<i class="icon-arrow-right"></i></a>
           </div>
          
         </div>
@@ -453,9 +457,9 @@
         <div class="col-md-4">Leave and License Agreement</div>
         <div class="col-md-8 form-padding">
         <a class="btn btn-primary btn-outline with-arrow pull-right" onclick="tribe_doc_upload(13)">Add Document<i class="icon-arrow-right"></i></a>
-           <div style="display: none;" id="after_upload_div_7">
-              <a class="btn btn-primary btn-outline with-arrow pull-right" id="get_doc_7" >Show Document<i class="icon-arrow-right"></i></a>
-              <a class="btn btn-primary btn-outline with-arrow pull-right" id="del_doc_7">Delete Document<i class="icon-arrow-right"></i></a>
+           <div style="display: none;" id="after_upload_div_13">
+              <a class="btn btn-primary btn-outline with-arrow pull-right" id="get_doc_13" >Show Document<i class="icon-arrow-right"></i></a>
+              <a class="btn btn-primary btn-outline with-arrow pull-right" id="del_doc_13">Delete Document<i class="icon-arrow-right"></i></a>
           </div>
        
         </div>
@@ -466,9 +470,9 @@
         <div class="col-md-4">Registration Certificate</div>
         <div class="col-md-8 form-padding">
         <a class="btn btn-primary btn-outline with-arrow pull-right" onclick="tribe_doc_upload(14)">Add Document<i class="icon-arrow-right"></i></a>
-           <div style="display: none;" id="after_upload_div_8">
-              <a class="btn btn-primary btn-outline with-arrow pull-right" id="get_doc_8" >Show Document<i class="icon-arrow-right"></i></a>
-              <a class="btn btn-primary btn-outline with-arrow pull-right" id="del_doc_8">Delete Document<i class="icon-arrow-right"></i></a>
+           <div style="display: none;" id="after_upload_div_14">
+              <a class="btn btn-primary btn-outline with-arrow pull-right" id="get_doc_14" >Show Document<i class="icon-arrow-right"></i></a>
+              <a class="btn btn-primary btn-outline with-arrow pull-right" id="del_doc_14">Delete Document<i class="icon-arrow-right"></i></a>
           </div>
         
         </div>
@@ -476,9 +480,9 @@
         <div class="col-md-4">Tax Registration</div>
         <div class="col-md-8 form-padding">
         <a class="btn btn-primary btn-outline with-arrow pull-right" onclick="tribe_doc_upload(15)">Add Document<i class="icon-arrow-right"></i></a>
-           <div style="display: none;" id="after_upload_div_9">
-              <a class="btn btn-primary btn-outline with-arrow pull-right" id="get_doc_9" >Show Document<i class="icon-arrow-right"></i></a>
-              <a class="btn btn-primary btn-outline with-arrow pull-right" id="del_doc_9">Delete Document<i class="icon-arrow-right"></i></a>
+           <div style="display: none;" id="after_upload_div_15">
+              <a class="btn btn-primary btn-outline with-arrow pull-right" id="get_doc_15" >Show Document<i class="icon-arrow-right"></i></a>
+              <a class="btn btn-primary btn-outline with-arrow pull-right" id="del_doc_15">Delete Document<i class="icon-arrow-right"></i></a>
           </div>
         
         </div>
@@ -486,9 +490,9 @@
         <div class="col-md-4">Company PAN</div>
         <div class="col-md-8 form-padding">
         <a class="btn btn-primary btn-outline with-arrow pull-right" onclick="tribe_doc_upload(8)">Add Document<i class="icon-arrow-right"></i></a>
-           <div style="display: none;" id="after_upload_div_11">
-              <a class="btn btn-primary btn-outline with-arrow pull-right" id="get_doc_11" >Show Document<i class="icon-arrow-right"></i></a>
-              <a class="btn btn-primary btn-outline with-arrow pull-right" id="del_doc_11">Delete Document<i class="icon-arrow-right"></i></a>
+           <div style="display: none;" id="after_upload_div_8">
+              <a class="btn btn-primary btn-outline with-arrow pull-right" id="get_doc_8" >Show Document<i class="icon-arrow-right"></i></a>
+              <a class="btn btn-primary btn-outline with-arrow pull-right" id="del_doc_8">Delete Document<i class="icon-arrow-right"></i></a>
           </div>
        
         </div>
@@ -499,9 +503,9 @@
         <div class="col-md-4">Company IT Returns</div>
         <div class="col-md-8 form-padding">
         <a class="btn btn-primary btn-outline with-arrow pull-right" onclick="tribe_doc_upload(7)">Add Document<i class="icon-arrow-right"></i></a>
-           <div style="display: none;" id="after_upload_div_10">
-              <a class="btn btn-primary btn-outline with-arrow pull-right" id="get_doc_10" >Show Document<i class="icon-arrow-right"></i></a>
-              <a class="btn btn-primary btn-outline with-arrow pull-right" id="del_doc_10">Delete Document<i class="icon-arrow-right"></i></a>
+           <div style="display: none;" id="after_upload_div_7">
+              <a class="btn btn-primary btn-outline with-arrow pull-right" id="get_doc_7" >Show Document<i class="icon-arrow-right"></i></a>
+              <a class="btn btn-primary btn-outline with-arrow pull-right" id="del_doc_7">Delete Document<i class="icon-arrow-right"></i></a>
           </div>
       
         </div>
@@ -511,9 +515,9 @@
          <div class="col-md-4">ITR/VAT Returns/ST Returns</div>
         <div class="col-md-8 form-padding">
         <a class="btn btn-primary btn-outline with-arrow pull-right" onclick="tribe_doc_upload(9)">Add Document<i class="icon-arrow-right"></i></a>
-           <div style="display: none;" id="after_upload_div_12">
-              <a class="btn btn-primary btn-outline with-arrow pull-right" id="get_doc_12" >Show Document<i class="icon-arrow-right"></i></a>
-              <a class="btn btn-primary btn-outline with-arrow pull-right" id="del_doc_12">Delete Document<i class="icon-arrow-right"></i></a>
+           <div style="display: none;" id="after_upload_div_9">
+              <a class="btn btn-primary btn-outline with-arrow pull-right" id="get_doc_9" >Show Document<i class="icon-arrow-right"></i></a>
+              <a class="btn btn-primary btn-outline with-arrow pull-right" id="del_doc_9">Delete Document<i class="icon-arrow-right"></i></a>
           </div>
         
         </div>
@@ -524,9 +528,9 @@
         <div class="col-md-4">Personal IT Returns</div>
         <div class="col-md-8 form-padding">
         <a class="btn btn-primary btn-outline with-arrow pull-right" onclick="tribe_doc_upload(6)">Add Document<i class="icon-arrow-right"></i></a>
-           <div style="display: none;" id="after_upload_div_13">
-              <a class="btn btn-primary btn-outline with-arrow pull-right" id="get_doc_13" >Show Document<i class="icon-arrow-right"></i></a>
-              <a class="btn btn-primary btn-outline with-arrow pull-right" id="del_doc_13">Delete Document<i class="icon-arrow-right"></i></a>
+           <div style="display: none;" id="after_upload_div_6">
+              <a class="btn btn-primary btn-outline with-arrow pull-right" id="get_doc_6" >Show Document<i class="icon-arrow-right"></i></a>
+              <a class="btn btn-primary btn-outline with-arrow pull-right" id="del_doc_6">Delete Document<i class="icon-arrow-right"></i></a>
           </div>
       
         </div>
@@ -534,9 +538,9 @@
         <div class="col-md-4">Other Documents</div>
         <div class="col-md-8 form-padding">
         <a class="btn btn-primary btn-outline with-arrow pull-right" onclick="tribe_doc_upload(11)">Add Document<i class="icon-arrow-right"></i></a>
-           <div style="display: none;" id="after_upload_div_14">
-              <a class="btn btn-primary btn-outline with-arrow pull-right" id="get_doc_14" >Show Document<i class="icon-arrow-right"></i></a>
-              <a class="btn btn-primary btn-outline with-arrow pull-right" id="del_doc_14">Delete Document<i class="icon-arrow-right"></i></a>
+           <div style="display: none;" id="after_upload_div_11">
+              <a class="btn btn-primary btn-outline with-arrow pull-right" id="get_doc_11" >Show Document<i class="icon-arrow-right"></i></a>
+              <a class="btn btn-primary btn-outline with-arrow pull-right" id="del_doc_11">Delete Document<i class="icon-arrow-right"></i></a>
           </div>
         </div>
         
@@ -582,7 +586,7 @@
            <option disabled selected>Select</option>
           @foreach($data['institution'] as $key=>$value)
           
-          <option value="{{$value}}"><?php echo $key;?></option>
+          <option value="{{$value}}"><?php echo str_replace("_"," ",$key);?></option>
           @endforeach
         </select>
         </div>
@@ -761,7 +765,7 @@ $("#submit_tribe_statement").click(function(){
  });
 
 $('#freeze_form').click(function(){
-      //alert($('#tribe_loan_form input[name="_token"]').val());
+     
       var CSRF_TOKEN = $('input[name="_token"]').val();
     
      $('#freeze_form_modal').modal('hide');
@@ -809,10 +813,12 @@ function tribe_doc_upload(id){
     $('#tribe_doc_upload_modal').modal('show');
     $('#uplaoding_doc_name').val(id);
     doc_id=id;
+     $('#doc_special_fields_ITR').hide();
+     $('#doc_special_fields').hide();
     if(id==6 || id==7){
       $('#doc_special_fields').show();
-    }else{
-       $('#doc_special_fields').hide();
+    }else if(id==9){
+      $('#doc_special_fields_ITR').show();
     }
 }
 
@@ -894,8 +900,6 @@ function get_doc_fun(id){
                // console.log(msg);
                 if(msg.status){
                     window.open(msg.url,'_blank');
-                    
-
                   }else{
                     $('#went_wrong_modal').modal('show');
                    // console.log("error "+msg);
@@ -926,5 +930,24 @@ function del_doc_fun(id,doc){
             });
 }
   </script>
-
-
+ <script>
+ jQuery(function() {
+    jQuery( "#datepicker1" ).datepicker({
+        minDate:"2017-05-05",
+        dateFormat: "yy-mm-dd",
+        onSelect: function(date){
+        //alert("none");
+        var date1 = jQuery('#datepicker1').datepicker('getDate');           
+        var date = new Date( Date.parse( date1 ) ); 
+        date.setDate( date.getDate() + 1 );        
+        var newDate = date.toDateString(); 
+        newDate = new Date( Date.parse( newDate ) );                      
+        jQuery('#datepicker2').datepicker("option","minDate",newDate);            
+    } 
+    });
+    jQuery( "#datepicker2" ).datepicker({
+        minDate: '+1d',
+        dateFormat: "yy-mm-dd"
+       });
+ });
+</script>

@@ -144,18 +144,18 @@
             
             <!-- <br>
             <hr class="hr-sty"> -->
-            <div id="Eligibility_details" style="display: none;">
+            <div id="Eligibility_details">
             <form name="eligibility_form" id="eligibility_form" method="POST">
                       {{ csrf_field() }}
             <div class="col-md-12">
              <table class="table table-bordered" width="70%">
                 <tr>
                     <td class="bg-info">Company Name: <b><span id="Name"></span></b></td>
-                    <td class="bg-danger">Monthly Salary: <b><span id="Salary"></span></b></td>
-                    <td class="bg-info">Current EMI: <b><span id="Current"></span></b></td>
+                    <td class="bg-danger">Monthly Salary: <b>₹<span id="Salary"></span></b></td>
+                    <td class="bg-info">Current EMI: <b>₹<span id="Current"></span></b></td>
                 </tr>
              </table>
-             <h3><i><b class="text-primary">Hurray !!</b></i>&nbsp;You are eligible for a loan of <b><span></span></b> <a class="bg-primary" href="javascript:void(0);">Apply Now</i></a></h3>
+             <h3><i><b class="text-primary">Hurray !!</b></i>&nbsp;You are eligible for a loan of <b>₹<span id="eligible"></span></b> <a class="bg-primary" href="javascript:void(0);">Apply Now</i></a></h3>
              <br>
             </div>
 
@@ -190,13 +190,11 @@
                 </span>
                 <span class="input input--nao">
                 <div>Rate Of Interest</div>
-                <span>Standard Rate 18% / </span>
-                <span><b class="text-success">Your Offer 16%</b></span>
+                <b><span id="interest"></span>%</b>
                 </span>
                 <span class="input input--nao">
                 <div>Proccesing Fee</div>
-                <span>Standard Rate 3% / </span>
-                <span><b class="text-success">Your Offer 1.5%</b></span>
+                <b><span id="fee"></span>%</b>
                 </span>
                  <hr>
                 <div class="col-md-12 text-danger mar-top"><input type="checkbox" name="check"/> I Agree to all the terms and conditions.</div>
@@ -1175,8 +1173,12 @@ $(document).ready(function(){
     function loan_eligibility_calc(tenure,pf,roi,foir){
         // console.log(foir);
         // console.log(tenure+"  " +pf+ "  "+roi);
+        var processing_fee =pf;
+        $('#fee').empty().append(processing_fee);
         var period =tenure*12;
         var rate =roi/12/100;
+        var int =roi;
+        $('#interest').empty().append(int);
         // console.log(period);
         var salary=$('#Monthly_Salary').val();
         var obligation=$('#Monthly_Obligation').val();
@@ -1187,8 +1189,14 @@ $(document).ready(function(){
         console.log(foir_calc);
         var max_emi = foir_calc-obligation;
         // console.log(max_emi);
-        var eligible_amount =max_emi/rate*(Math.pow(1 + rate,period) / (Math.pow(1 + rate,period) - 1));
+        $('#EMI').val(max_emi);
+        var a =(rate*(Math.pow(1 + rate,period) / (Math.pow(1 + rate,period) - 1)));
+         console.log(a);
+        var amount =max_emi/a;
+         var eligible_amount=Math.round(amount);
         console.log(eligible_amount);
+          $('#eligible').empty().append(eligible_amount);
+         
 
     }
 </script>

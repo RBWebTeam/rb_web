@@ -1,4 +1,3 @@
-
 @include('layout.header')
 <div id="fh5co-hero">
 	<div class="fh5co-contact animate-box">

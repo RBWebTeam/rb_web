@@ -1365,13 +1365,13 @@ border: #3px solid #999;background:#1f386e;margin: 10px;margin: 10px auto;text-a
 .#fh5co-header nav ul li a ul {margin-top:10px;}
 #fh5co-header nav ul li a .icon-chevron-down {top:0px; font-size:12px;}
 
-input[placeholder], [placeholder], *[placeholder] {color: #1f386e !important;}
+input[placeholder], [placeholder], *[placeholder] {color: #1f386e !important; font-size:14px;}
 .mrg-btm1 {margin-bottom:0px;}
 .icon-map-marker {font-size:25px; float:left;}
 .modal-body input, button {margin-bottom:10px; color:#396fbf;border:none;}
 .chat-win {display:none;} 
 /* .loan-head {padding:20px;display:block; text-align:center;padding-top:0px; margin-top:20px;}*/
-
+.lst-nam label {display:none;}
 .loan-head {
     line-height: 35px;
     margin-bottom: 15px;
@@ -1453,7 +1453,8 @@ border-radius: 7px;padding: 1em;margin-top: 1em;}
  display: block;width: 0;z-index: 1;top: 100%;left: 46%;}
  .comp-pg {padding:20px;border: 10px solid #d9dada;}
  .rate input {margin-bottom:10px;}
- .hdr {margin-top:10px; display:block;display} 
+ .hdr {display:block;display; padding:15px;}
+.border-none {border:none !important;box-shadow:none;} 
  .sec select {width: 100%;padding: 6px;margin-bottom:15px;border:1px solid rgba(0, 0, 0, 0.1); border-radius:2px;-moz-border-radius:2px;-webkit-border-radius:2px;}
  .tab-content {padding:10px;}
  .dropdown-menu li a {font-size:12px;}
@@ -3582,7 +3583,9 @@ label {
     width: 100%;
     padding: 5px;
     border: 1px solid #d4d4d4;
-    border-radius: 5px;}
+    border-radius: 5px;
+	color:#999;
+	}
 
 #emp_detail {    border-bottom: 2px dashed #bbadad;float: left;margin-bottom: 5px;}
 .white-txt {color:rgba(255, 255, 255, 0.5);}
@@ -3599,5 +3602,6 @@ label {
     border: 1px solid #eee;
 }
 
+ul, ol {padding-left: 13px;}
 
 	

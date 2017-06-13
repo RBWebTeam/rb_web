@@ -27,14 +27,14 @@ elixir(function(mix) {
 		'../../../public/css/flexslider.css',
 		'../../../public/css/owl.carousel.min.css',
 		'../../../public/css/owl.theme.default.min.css',
-		'../../../public/css/style.css',
 		'../../../public/css/chatbox.css',
 		'../../../public/fonts/Raleway.css',
 		'../../../public/css/smoothness.css',
 		 '../../../public/css/autocomp.css',
 		 '../../../public/css/font-awesome.min.css',
 		 '../../../public/css/jquery-ui.min.css',
-		'../../../public/css/stylesheet.css'
+		'../../../public/css/stylesheet.css',
+		'../../../public/css/style.css'
     ], 'public/css/mysite.css');
 });
 

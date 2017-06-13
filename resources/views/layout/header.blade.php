@@ -3,7 +3,7 @@
 	<head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<link href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" rel="stylesheet" type="text/css">
+	<!-- <link href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" rel="stylesheet" type="text/css"> -->
 	<title><?php if(isset($title))echo $title; else echo "RupeeBoss-Apply for a Loan";  ?></title>
 	<!-- <meta name="google-signin-client_id" content="752185558821-9vlmac53np7bgdo3kn9d2e5ft39t7gud.apps.googleusercontent.com"> -->
 	<meta name="msvalidate.01" content="3744048BDD61F7FE6837BD664522C8F9" />
@@ -18,7 +18,7 @@
 
 	<link  rel="stylesheet" type="text/css" href="{{URL::to('css/mysite.css')}}"/>
 
-  <link  rel="stylesheet" type="text/css" href="{{URL::to('css/style.css')}}"/>
+<!--   <link  rel="stylesheet" type="text/css" href="{{URL::to('css/style.css')}}"/> -->
 
 
 

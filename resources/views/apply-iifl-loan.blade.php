@@ -1176,7 +1176,7 @@
                 </span>
                 <span class="input input--nao">
                     <input class="input__field input__field--nao" type="text" name="Emi" id="Emi" onkeypress="return fnAllowNumeric(event)" value=""  />
-                    <label class="input__label input__label--nao" for="maxEmi">
+                    <label class="input__label input__label--nao" for="Emi">
                         <span class="input__label-content input__label-content--nao">EMI</span>
                     </label>
                     <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
@@ -1184,12 +1184,22 @@
                     </svg>
                 </span>
                 <span class="input input--nao">
-                <div>Rate of Intrest</div>
-                <b><span id="rateofint"></span></b>
+                <input class="input__field input__field--nao" type="text" name="ROI" onkeypress="return fnAllowNumeric(event)" value=""  />
+                    <label class="input__label input__label--nao" for="ROI">
+                        <span class="input__label-content input__label-content--nao">ROI</span>
+                    </label>
+                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
+                        <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
+                    </svg>
                 </span>
                 <span class="input input--nao">
-                <div>Proccesing Fee</div>
-                <b><span id="processfee"></span></b>
+                <input class="input__field input__field--nao" type="text" name="Processingfee" onkeypress="return fnAllowNumeric(event)" value=""  />
+                    <label class="input__label input__label--nao" for="Processingfee">
+                        <span class="input__label-content input__label-content--nao">Processing fee</span>
+                    </label>
+                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
+                        <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
+                    </svg>
                 </span>
                  <hr>
                 <div class="col-md-12 text-danger mar-top"><input type="checkbox" name="check"/> I Agree to all the terms and conditions.</div>
@@ -1904,6 +1914,8 @@ $(document).ready(function(){
         $('#AppliedLoanamount').val(applied_loan);
         $('#Tenure').val(days);
         $('#ROI').val(a);
+        $("#input[name='ROI']").val(a);
+
         $('#Emi').val(installment);
         $("#input[name='Emi']").val(installment);
 
@@ -1974,8 +1986,8 @@ var g_minTenure=0;
       $('#rateofint').empty().append(ROI);
       var processfee=processingfee;
       $('#processfee').empty().append(processingfee);
-      var max_installment=maxEmi;
-       $('#maxEmi').empty().append(max_installment);
+      // var max_installment=maxEmi;
+      //  $('#maxEmi').empty().append(max_installment);
       g_maxloanamt=maxloanamt;
       if (g_maxloanamt>maxloanamt) {
         console.log("Loanamount should be less than maximum loanamount");

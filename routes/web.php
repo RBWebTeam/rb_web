@@ -111,7 +111,12 @@ Route::get('apply-iifl-loan','LoanController@apply_iifl_loan');
 Route::post('apply-iifl-loan-otp','LoanController@state');
 Route::post('apply-iifl-loan-dropdown','LoanController@dropdown');
 Route::post('apply-iifl-loan-applicant1','LoanController@applicant');
+Route::post('iifl-coapplicant','LoanController@co_applicant');
 Route::post('iifl-eligibility','LoanController@iifl_eligibility');
+Route::post('iifl-instant-eligibility','LoanController@iifl_instant_eligibility');
+Route::post('iifl-aadhar-otp','LoanController@iifl_adhar_otp');
+Route::post('iifl-aadhar-confirm-otp','LoanController@iifl_adhar_confirm_otp');
+
 
 
 

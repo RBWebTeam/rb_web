@@ -375,18 +375,188 @@ public function dropdown(Request $req){
 
     public function applicant(Request $req){
        $data=$req->all();
-       $post_data=json_encode($data);
-       print_r($post_data);
-    }  
+       $json_data=json_encode($data);
+      // print_r($post_data);
+       $post_data = '{
+   "head": {
+    "requestCode": "PLRQCL01",
+    "key": "ae94e5857582d97cd9a8669d51c164c8",
+    "appVer": "1.0",
+    "osName": "WebAPI",
+    "appName": "ALLIANCE",
+    "source":"RupeeBoss"
+  },
+  
+  "body": '.$json_data.'
+}';
+    //call API here to save in DB
+        //$post=json_encode($post_data);
+     //print_r($post_data);exit();
+
+    $url = $this::$url_static."/BankAPIService.svc/createIIFLAppDtls";
+    $result=$this->call_json_data_api($url,$post_data);
+    $http_result=$result['http_result'];
+    $error=$result['error'];
+    $st=str_replace('"{', "{", $http_result);
+    $s=str_replace('}"', "}", $st);
+    $m=$s=str_replace('\\', "", $s);
+    // print_r( $http_result);exit();
+
+
+     $obj = json_decode($m);
+     if($obj->head->status==0){
+      Session::put('prospectno',$obj->body->prospectno);
+      Session::put('aadhar',$data['AadhaarNumber']);
+      Session::put('leadno',$obj->body->leadno);
+
+     //print_r($obj->body->prospectno);exit();
+     }
+     print_r($obj);
+      
+    //  $a=$obj->body;
+    // return $http_result;
+
+    }
+
+    //co-applicant
+    public function co_applicant(Request $req){
+       $data=$req->all();
+       $data['ProspectNumber']=Session::get('prospectno');
+       $data['leadno']=Session::get('leadno');
+       $data['ApplicantType']="COBORROWER";
+       $json_data=json_encode($data);
+       
+       $post_data = '{
+   "head": {
+    "requestCode": "PLRQCOAPP01",
+    "key": "ae94e5857582d97cd9a8669d51c164c8",
+    "appVer": "1.0",
+    "osName": "WebAPI",
+    "appName": "ALLIANCE",
+    "source":"RupeeBoss"
+  },
+  
+  "body": '.$json_data.'
+}';
+//print_r($post_data);
+$url = $this::$url_static."/BankAPIService.svc/createIIFLCoAppDtls";
+    $result=$this->call_json_data_api($url,$post_data);
+    $http_result=$result['http_result'];
+    $error=$result['error'];
+    $st=str_replace('"{', "{", $http_result);
+    $s=str_replace('}"', "}", $st);
+    $m=$s=str_replace('\\', "", $s);
+    $obj = json_decode($m);
+    // print_r($obj);exit();
+    $offer=$this::offer_status();
+   return Response::json($offer);
+   // $uid=$this::uid();
+   // return Response::json($uid);
+    } 
     
     public function iifl_eligibility(Request $req){
       // print_r($req->all());
       $quote_data=DB::select('call usp_iifl_pl_eligibility ("'.$req['Company_Cat'].'","'.$req['Monthly_Salary'].'")');
        // print_r($quote_data);
       return $quote_data;
-       // $data=$req->all();
-       // $post_data=json_encode($data);
-       // print_r($post_data);
+      }
+
+    public function iifl_adhar_otp(){
+      $data['Aadharno']=Session::get('aadhar');
+      $data['ApplicantType']='Applicant';
+      $data['CRMLeadID']=Session::get('leadno');
+
+      $json_data=json_encode($data);
+      $post_data = '{
+   "head": {
+    "requestCode": "PLRQCOAPP01",
+    "key": "ae94e5857582d97cd9a8669d51c164c8",
+    "appVer": "1.0",
+    "osName": "WebAPI",
+    "appName": "ALLIANCE",
+    "source":"RupeeBoss"
+  },
+  
+  "body": '.$json_data.'
+}';
+      print_r($json_data);
+    $url = $this::$url_static."/BankAPIService.svc/createIIFLAadharOTP";
+    $result=$this->call_json_data_api($url,$post_data);
+    $http_result=$result['http_result'];
+    $error=$result['error'];
+    $st=str_replace('"{', "{", $http_result);
+    $s=str_replace('}"', "}", $st);
+    $m=$s=str_replace('\\', "", $s);
+     $obj = json_decode($m);
+     print_r($obj);exit();
     }  
+    
+    public function offer_status(){
+    $data['prospectNo']=Session::get('prospectno');
+    $json_data=json_encode( $data);
+    // print_r($post_data);
+       $json_data=json_encode($data);
+       
+       $post_data = '{
+   "head": {
+    "requestCode": "PLRQOF01",
+    "key": "ae94e5857582d97cd9a8669d51c164c8",
+    "appVer": "1.0",
+    "osName": "WebAPI",
+    "appName": "ALLIANCE",
+    "source":"RupeeBoss"
+
+  },
+  
+  "body": '.$json_data.'
+}';
+// print_r($post_data);
+    $url = $this::$url_static."/BankAPIService.svc/getIIFLofferstatus";
+    $result=$this->call_json_data_api($url,$post_data);
+    $http_result=$result['http_result'];
+    $error=$result['error'];
+    $st=str_replace('"{', "{", $http_result);
+    $s=str_replace('}"', "}", $st);
+    $m=$s=str_replace('\\', "", $s);
+     $obj = json_decode($m);
+     return $obj;
+
+    }
+
+    public function iifl_adhar_confirm_otp(Request $req){
+      $data['Aadharno']=Session::get('aadhar');
+      $data['ApplicantType']='Applicant';
+      $data['CRMLeadID']=Session::get('leadno');
+      $data['Otp']=$req->otp;
+      $json_data=json_encode($data);
+       
+       $post_data = '{
+   "head": {
+    "requestCode": "PLRQVER01",
+   "key": "ae94e5857582d97cd9a8669d51c164c8",
+   "appVer": "1.0",
+   "osName": "WebAPI",
+   "appName": "ALLIANCE",
+   "source":"RupeeBoss"
+
+
+  },
+  
+  "body": '.$json_data.'
+}';
+$url = $this::$url_static."/BankAPIService.svc/verifyIIFLAPIAadharOTP";
+    $result=$this->call_json_data_api($url,$post_data);
+    $http_result=$result['http_result'];
+    $error=$result['error'];
+    $st=str_replace('"{', "{", $http_result);
+    $s=str_replace('}"', "}", $st);
+    $m=$s=str_replace('\\', "", $s);
+     $obj = json_decode($m);
+     return $obj;
+    }
+
+    public function iifl_instant_eligibility(Request $req){
+      print_r($req->all());
+    }
 
 }

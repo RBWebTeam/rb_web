@@ -19,9 +19,7 @@
     "redis": "^0.12.1",
     "socket.io": "^1.3.5"
   },
-  "scripts": {
-    "test": "console.log()\u001b[D\"\"\u001b[Dhi\u001b[C\")"
-  },
+  
   "author": "",
   "license": "ISC"
 }

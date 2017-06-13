@@ -16,7 +16,7 @@
 </div> -->
 <br>
  <div class="col-md-12 white-bg pad box-shadow fl-lft">
-<h2 class="align-center loan-head">Personal Loan</h2>
+<h1 class="align-center loan-head">Personal Loan</h1>
   <!--   <div id ="test123" class="col-md-8"></div> -->
  
     <form name="personal_loan_process_form" id="personal_loan_process_form" action="#" method="POST" >

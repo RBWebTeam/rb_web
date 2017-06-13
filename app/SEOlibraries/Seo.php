@@ -37,11 +37,8 @@ icici home loan eligibility,icici bank home loan emi calculator';
      public function  Unsecured_Business(){
 
             $title='Unsecured Business Loan | Check Bankwise Eligibility & Apply Online';
-            $description='Get the Best Unsecured Business Loan. Check Bankwise Eligibility & Apply online at lowest interestRate with easy processing & minimal documentation.';
-            $keywords='Unsecured Business Loan Interest rates,Unsecured Business Loan ,
-            Apply for Unsecured Business Loan,Business Loan in Mumbai,
-            Unsecured Business Loan Eligibility Criteria,Unsecured Business Loan Lenders,
-            Unsecured Business Loan Application,';
+            $description='Get the Best Unsecured Business Loan. Check Bankwise Eligibility & Apply online at lowest interest Rate with easy processing & minimal documentation.';
+            $keywords='Unsecured Business Loan Interest rates, Unsecured Business Loan, Apply for Unsecured Business Loan,Business Loan in Mumbai, Unsecured Business Loan Eligibility Criteria,Unsecured Business Loan Lenders, Unsecured Business Loan Application,';
            $Unsecured_Business = array('title'=>$title,'description'=>$description,'keywords'=>$keywords);
     return $Unsecured_Business;
 
@@ -54,9 +51,7 @@ icici home loan eligibility,icici bank home loan emi calculator';
 
             $description='Finding you a better deal. Compare loan against property interest rates, check eligibility and Lowest EMI. Apply for Loan Against Property On Rupeeboss.com';
 
-            $keywords='Loan Against Property Interest Rates,Apply for Property Loan,
-            Mortgage Loan Rate,Property Loan,Loan Against Property Eligibility,
-            Loan Against Residential Plot,Loan Against House';
+            $keywords='Loan Against Property Interest Rates, Apply for Property Loan, Mortgage Loan Rate,Property Loan, Loan Against Property Eligibility, Loan Against Residential Plot, Loan Against House, Lease Rental Discounting';
 
            $Unsecured_Business = array('title'=>$title,'description'=>$description,'keywords'=>$keywords);
     return $Unsecured_Business;
@@ -84,12 +79,11 @@ icici home loan eligibility,icici bank home loan emi calculator';
   public function HomeLoan_(){
 
 
-            $title='Home Loan | Apply online at Low Interest Rate On Rupeeboss.com';
+            $title='Home Loan | Apply Online at Low Interest Rate On Rupeeboss.com';
 
-            $description='Choose the right Home Loan for You. Check & Compare home loans from thousand of Banks and Apply for best Home Loan With Low Interest rate on Rupeeboss.com';
+            $description='Choose the right Home Loan for You. Check & Compare home loan rates across the Bank and Apply for best Home Loan at Low Interest rate on Rupeeboss.com';
 
-            $keywords='Home Loan,Housing Loan,Apply Online for Home Loan,Mortgage Loan Rate,
-              Home Loan Rates,Home Loan Eligibility Criteria';
+            $keywords='Home Loan, Housing Loan, Apply Online for Home Loan, Mortgage Loan Rate, Home Loan Rates, Home Loan Eligibility Criteria';
 
            $Unsecured_Business = array('title'=>$title,'description'=>$description,'keywords'=>$keywords);
     return $Unsecured_Business;
@@ -105,8 +99,7 @@ icici home loan eligibility,icici bank home loan emi calculator';
 
             $description='Finance Your Dreams by Comparing Personal Loan interest rates and apply online for quick approval of low EMI. Apply for Best Personal Loan on Rupeeboss.com';
 
-            $keywords='Personal Loan at Low Interest Rate,Best Personal Loans,Personal Loan Application,
-               Apply for Personal Loan Online,Personal Loan Eligibility,Compare Personal Loan';
+            $keywords='Personal Loan at Low Interest Rate, Best Personal Loans, Personal Loan Application, Apply for Personal Loan Online, Personal Loan Eligibility, Compare Personal Loan';
 
            $Unsecured_Business = array('title'=>$title,'description'=>$description,'keywords'=>$keywords);
     return $Unsecured_Business;
@@ -121,10 +114,9 @@ icici home loan eligibility,icici bank home loan emi calculator';
 
             $title='Smart Home Loan | Apply at Lowest Interest Rate on Rupeeboss.com';
 
-            $description='Reduce Your Interest Outgo and Save Your Loan Interest Amount by Applying for Smart Home Loan. Get the Best Quotes Matching Your Requirements & Apply Now.';
+            $description='Reduce Your Interest flow and Save Your Loan Interest by Applying for Smart Home Loan. Get the Best Quotes Matching Your Requirements & Apply Now.';
 
-            $keywords='Interest Saver Home Loan,Smart Home Loan,Smart Home Loan Interest Rate,
-            Apply Online for Smart Home Loan,Smart Home Loan Scheme,Smart Home Loan Criteria';
+            $keywords='Interest Saver Home Loan, Smart Home Loan, Smart Home Loan Interest Rate, Apply Online for Smart Home Loan, Smart Home Loan Scheme, Smart Home Loan Criteria';
 
            $Unsecured_Business = array('title'=>$title,'description'=>$description,'keywords'=>$keywords);
     return $Unsecured_Business;
@@ -156,8 +148,7 @@ icici home loan eligibility,icici bank home loan emi calculator';
 
             $description='Buy Your Dream Car By Applying For Car Loan. Compare Car Loan Interest Rates, Check Loan Eligibility & Calculate Car Loan EMI. Apply now on Rupeeboss.com';
 
-            $keywords='Apply for Car Loan Online,Car Loan Interest Rate,Car Loan Eligibility,
-            Car Finance,Best Car Loan rates,Car Loan Finance,New Car Loan Rates';
+            $keywords='Apply for Car Loan Online, Car Loan Interest Rate, Car Loan Eligibility, Car Finance, Best Car Loan rates, Car Loan Finance, New Car Loan Rates';
 
            $Unsecured_Business = array('title'=>$title,'description'=>$description,'keywords'=>$keywords);
     return $Unsecured_Business;
@@ -172,8 +163,7 @@ icici home loan eligibility,icici bank home loan emi calculator';
 
             $description='Buy a Used Car Loan With Attractive Interest Rate & Hassle Free Documentation To Ease Your Dream Purchase. Apply now for Quick Disbursal of Loan on Rupeeboss.com';
 
-            $keywords='Best Interest Rates for Used Car,Used Car Loan Rates,Best Used Car Loan Rates,
-            Used Car Finance Rates,Second Hand Car Loan,Apply for Used Car Loan';
+            $keywords='Best Interest Rates for Used Car, Used Car Loan Rates, Best Used Car Loan Rates, Used Car Finance Rates, Second Hand Car Loan, Apply for Used Car Loan';
 
            $Unsecured_Business = array('title'=>$title,'description'=>$description,'keywords'=>$keywords);
     return $Unsecured_Business;
@@ -187,7 +177,7 @@ public function Working_Capital_2(){
 
             $description='Finance the short-term operational needs of a company with working capital financing offered by Rupeeboss. Find Out Your Savings & Transfer Loan at low interest rate';
 
-            $keywords='Working Capital Funding,Packing Credit Domestic,Packing Credit Foreign Currency,Term Loan,Working Capital Balance Transfer';
+            $keywords='Working Capital Funding, Packing Credit Domestic, Packing Credit Foreign currency, Term Loan, Working Capital Balance Transfer';
 
            $Unsecured_Business = array('title'=>$title,'description'=>$description,'keywords'=>$keywords);
     return $Unsecured_Business;
@@ -202,7 +192,7 @@ public function Rupeeboss_Comfy(){
 
             $description='Comfort On Demand Made for You - Complementary Self-Drive Car Replacement Service. Availed When Your Car has Met With an Accident & is Under Repair at Workshop';
 
-            $keywords='Car Replacement Service,Accident Replacement Vehicles,Replacement Vehicle Service';
+            $keywords='Car Replacement Service, Accident Replacement Vehicles, Replacement Vehicle Service';
 
            $Unsecured_Business = array('title'=>$title,'description'=>$description,'keywords'=>$keywords);
     return $Unsecured_Business;
@@ -215,7 +205,7 @@ public function Rupeeboss_Comfy(){
 
             $description='Apply for all kind of Loan at Lowest Interest Rate. Compare Loan & Credit Cards, transfer your outstandingBalance, Use EMI Calculator & get quotes instantly.';
 
-            $keywords='Best Loan Offers,Loan at Lowest Interest rates,Apply Online for Loan,Corporate DSA for Loans,Apply for Bank Loan,Loan at Low Interest Rate,Apply Online for fast Loan Approvals';
+            $keywords='Best Loan Offers, Loan at Lowest Interest rates, Apply Online for Loan, Corporate DSA for Loans, Apply for Bank Loan, Loan at Low Interest Rate, Apply Online for fast Loan Approvals';
 
            $Unsecured_Business = array('title'=>$title,'description'=>$description,'keywords'=>$keywords);
     return $Unsecured_Business;

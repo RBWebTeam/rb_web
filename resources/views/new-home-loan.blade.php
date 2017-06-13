@@ -5,7 +5,7 @@
 
  <br>
  <div class="col-md-12 white-bg pad box-shadow">
- <h3 class="text-center loan-head">Home Loan</h3>
+ <h1 class="text-center loan-head">Home Loan</h1>
  <img src="{{URL::to('images/info-g-ban.png')}}" alt="Tribe Logo" class="img-responsive" />
 <div class="col-md-8" id="mod">
 <form name="home_loan_process_form" id="home_loan_process_form" action="{{URL::to('loan-submit')}}" method="POST" >

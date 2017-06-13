@@ -145,7 +145,7 @@
 								<a href="{{URL::to('loan-against-property?commercial')}}">Commercial Property Purchase</a>
 							</li>
 							<li>
-								<a href="{{URL::to('loan-against-property')}}">Lease Rent Discounting</a>
+								<a href="{{URL::to('loan-against-property?lease')}}">Lease Rent Discounting</a>
 								<a href="{{URL::to('new-working-capital')}}">Working Capital</a>
 								<a href="{{URL::to('contact-us')}}">FCNR Loans</a>
 								<a href="{{URL::to('contact-us')}}">Debt Restructuring </a>

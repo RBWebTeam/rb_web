@@ -7,12 +7,13 @@
  </div> -->
  <br>
  <div class="col-md-12 white-bg pad box-shadow">
- <?php
+ <?php   
     if(isset($_GET['commercial'])){ ?>
-      <h3 class="text-center loan-head">COMMERCIAL PROPERTY PURCHASE</h3>
-    <?php }else{ ?>
-
- <h3 class="text-center loan-head">LOAN AGAINST PROPERTY</h3>
+      <h1 class="text-center loan-head">COMMERCIAL PROPERTY PURCHASE</h1>
+      <?php }else if(isset($_GET['lease'])){?> 
+           <h1 class="text-center loan-head">Lease Rent Discounting</h1>
+        <?php }else{ ?>
+  <h1 class="text-center loan-head">LOAN AGAINST PROPERTY</h1>
  <?php }?>
 <div class="col-md-8"  id="mod">
 <form name="lap_process_form" id="lap_process_form" action="{{URL::to('loan-submit')}}" method="POST" >

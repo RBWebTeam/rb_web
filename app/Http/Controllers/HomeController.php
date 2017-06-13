@@ -20,9 +20,9 @@ class HomeController extends CallApiController
 		//print_r($product_list);
 		//print_r(InitialController::$pro_code);
 		//exit();
-		$keywords='Best Loans,Loans in India,Credit Cards,Loans Online,Apply for Loan online,Compare Loan,Loan at Low Interest Rate';
-		$data['title']='Compare & Apply Loans & Credit Cards In India- Rupeeboss.com';
-		$data['description']='Apply For All Kinds of Loans at Lowest Interest Rate. Use loan & EMI Calculator, Compare Loan & Credit Cards & get quotes instantly as Per requirement on Rupeeboss.com';
+		$keywords='Best Loan Offers, Loan at Lowest Interest rates, Apply Online for Loan, Corporate DSA for Loans, Apply for Bank Loan, Loan at Low Interest Rate, Apply Online for fast Loan Approvals';
+		$data['title']='Compare & Apply for all kind of Loan & Credit Cards | Rupeeboss.com';
+		$data['description']='Apply for all kind of Loan at Lowest Interest Rate. Compare Loan & Credit Cards, transfer your outstanding Balance, Use EMI Calculator & get quotes instantly.';
 		// $data['city'] = DB::table('city_master')->select('City_Name','state_id','City_Id')->get();
 		// $data['loan'] = DB::table('product_master')->select('Product_Name','Product_Id')->get();
 		//print "<pre>";

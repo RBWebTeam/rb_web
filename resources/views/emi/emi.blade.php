@@ -3,7 +3,7 @@
 <div class="container" id="fh5co-hero">
 
   <center>
-    <div class="section-title"><h1>Loan EMI Calculator</h1></div>
+    <h1 class="loan-head">Loan EMI Calculator</h1>
     <p class="sub-title">Recalculate your Loan EMI and Total Interest Due in a snap!</p>
   </center>
   <div class="row">

@@ -9,12 +9,12 @@ use Session;
 use App\credit_card_form_req;
 class CreditcardController extends CallApiController
 {
-	 public function credit_card_form(Request $req){
+     public function credit_card_form(Request $req){
 
-	 		return view('credit-card-form');
-	 }
+            return view('credit-card-form');
+     }
 
-	 public function credit_form_submit(Request $req){
+     public function credit_form_submit(Request $req){
         try{
         // print "<pre>"; print_r($req->all());exit();
     $save=new credit_card_form_req(); 
@@ -34,14 +34,14 @@ class CreditcardController extends CallApiController
     $data['empid']=Session::get('empid')?Session::get('empid'):'0';
     $data['source']=Session::get('source')?Session::get('source'):'0';
     $data['type']='DC';
- 	$data['UserID']='ICICI_CC_RupeeBoss';
- 	$data['Password']='Password@123';
- 	$data['ChannelType']='RupeeBoss';
+    $data['UserID']='ICICI_CC_RupeeBoss';
+    $data['Password']='Password@123';
+    $data['ChannelType']='RupeeBoss';
 
- 	$post_data=json_encode($data);
-	 	  // print "<pre>";
-	 	 // print_r($post_data);exit();
-	$url = $this::$url_static."BankAPIService.svc/PostIciciBank";
+    $post_data=json_encode($data);
+          // print "<pre>";
+         // print_r($post_data);exit();
+    $url = $this::$url_static."BankAPIService.svc/PostIciciBank";
     $result=$this->call_json_data_api($url,$post_data);
     $http_result=$result['http_result'];
     $error=$result['error'];
@@ -68,7 +68,7 @@ class CreditcardController extends CallApiController
         $error=2;
     }
     return $error; 
-	}catch(\Exception $ee){
+    }catch(\Exception $ee){
         print_r($ee->getMessage());
     }
     }

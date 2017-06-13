@@ -44,7 +44,7 @@
    <h4>Choose the right Home Loan for you ...!!</h4>
    <a href="{{URL::to('home-loan')}}" class="btn btn-primary btn-lg btn-view">View More</a>
    </div>
-      <img src="{{URL::to('images/slide_1.jpg')}}" alt="Home Loan Banner" title="Home Loan Banner" class="slide-hm"> 
+      <img src="{{URL::to('images/slide_1.jpg')}}" alt="Home Loan Banner" title="Home Loan " class="slide-hm"> 
     </div>
 
     <div class="item">
@@ -54,7 +54,7 @@
    <h4>Finance Your Dreams...!!</h4>
    <a href="{{URL::to('personal-loan')}}" class="btn btn-primary btn-lg btn-view">View More</a>
    </div>
-      <img src="{{URL::to('images/slide_2.jpg')}}" alt="Personal Loan Banner" title="Personal Loan Banner" class="slide-hm">
+      <img src="{{URL::to('images/slide_2.jpg')}}" alt="Personal Loan Banner" title="Personal Loan " class="slide-hm">
     </div>
 
     <div class="item">
@@ -64,7 +64,7 @@
    <h4>Finding you a better Deal...!!</h4>
    <a href="{{URL::to('loan-against-property')}}" class="btn btn-primary btn-lg btn-view">View More</a>
    </div>
-      <img src="{{URL::to('images/slide_3.jpg')}}" alt="Loan-Against-Property Banner" title="Loan-Against-Property Banner" class="slide-hm">
+      <img src="{{URL::to('images/slide_3.jpg')}}" alt="Loan Against Property " title="Loan Against Property " class="slide-hm">
     </div>
 
     <div class="item">
@@ -75,7 +75,7 @@
    <h4>We Support Make in India..!!</h4>
    <a href="{{URL::to('new-working-capital')}}" class="btn btn-primary btn-lg btn-view">View More</a>
    </div>
-      <img src="{{URL::to('images/slide_4.jpg')}}" alt="SME Loan Banner" title="SME Loan Banner" class="slide-hm">
+      <img src="{{URL::to('images/slide_4.jpg')}}" alt="SME Loan Banner" title="SME Loan " class="slide-hm">
     </div>
 	<div class="item">
 	<div class="slide-txt" >
@@ -86,7 +86,7 @@
    <a href="{{URL::to('business-loan')}}" class="btn btn-primary btn-lg btn-view">View More</a>
 
    </div>
-      <img src="{{URL::to('images/slide_5.jpg')}}" alt="Business Loan Banner" title="Business Loan Banner" class="slide-hm">
+      <img src="{{URL::to('images/slide_5.jpg')}}" alt="Business Loan Banner" title="Business Loan " class="slide-hm">
     </div>
 	<div class="item">
 	<div class="slide-txt">
@@ -95,7 +95,7 @@
    <h4>Thinking of your comfort first !!</h4>
    <a href="{{URL::to('car-loan')}}" class="btn btn-primary btn-lg btn-view">View More</a>
    </div>
-      <img src="{{URL::to('images/slide_6.jpg')}}" alt="car-slider-img" class="slide-hm">
+      <img src="{{URL::to('images/slide_6.jpg')}}" alt="car-slider-img" title="car Loan " class="slide-hm">
     </div>
   </div>
 

@@ -8,7 +8,7 @@
  </div> -->
  <br>
  <div class="col-md-12 white-bg pad box-shadow">
- <h3 class="text-center loan-head">Smart Home Loan</h3>
+ <h1 class="text-center loan-head">Smart Home Loan</h1>
 <div class="col-md-8" id="mod">
 <form name="home_loan_process_form" id="home_loan_process_form" action="{{URL::to('loan-submit')}}" method="POST" >
 <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">

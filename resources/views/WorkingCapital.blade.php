@@ -2,7 +2,7 @@
 <div id="fh5co-hero">
 @include('layout.header')
   <div class="container white">
-  <h2 class="loan-head">Working Capital</h2>
+  <h1 class="loan-head">Working Capital</h1>
   <div class="col-md-10">
 
   <ul class="nav nav-tabs" id="userTabs">

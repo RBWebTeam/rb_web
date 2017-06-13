@@ -7,7 +7,7 @@
 	</div> -->
  
  <div class="col-md-12 white-bg pad box-shadow">
- <h3 class="text-center loan-head">Working Capital</h3>
+ <h1 class="text-center loan-head">Working Capital</h1>
 <div class="col-md-8" id="mod">
 <form name='working_capital_process_form' id='working_capital_process_form' action={{URL::to('loan-submit')}} method="POST">
 {{ csrf_field() }}  

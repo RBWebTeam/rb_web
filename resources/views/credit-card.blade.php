@@ -3,7 +3,7 @@
     <div class="container animate-box" id="fh5co-services-section">
        <div class="row">
           <div class="col-md-12">
-         <h2 class="align-center loan-head">Credit Cards</h2>
+         <h1 class="align-center loan-head">Credit Cards</h1>
     </div>
   <div class="row">
   <div class="col-md-12">

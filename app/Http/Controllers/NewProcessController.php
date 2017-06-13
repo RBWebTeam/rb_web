@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Session;
+ 
+use App\SEOlibraries\Seo;
 class NewProcessController extends Controller
 {
       public function  newSmeLoan(){
@@ -14,27 +16,30 @@ class NewProcessController extends Controller
 
 
       public function newLoanAgainstProperty(){
-
-           return view('new-loan-against-property');
+                $un=new Seo();
+              $data=$un->Loan_A_Property();
+           return view('new-loan-against-property')->with($data);
       }
 
        public function newHomeLoan(){
-               $data=0;
-              // print_r(Session::get('empid'));exit();
-           return view('new-home-loan')->with($data);;
+                  $un=new Seo();
+                  $data=$un->HomeLoan_();
+           return view('new-home-loan')->with($data);
 
       }
 
        public function newCarLoan(){
-
-       	 return view('new-car-loan');
+                     $un=new Seo();
+                   $data=$un->Car_Loan();
+       	 return view('new-car-loan')->with($data);
 
 
       }
 
        public function newBusinessLoan(){
-         
-          return view('new-business-loan');
+              $un=new Seo();
+              $data=$un->Unsecured_Business();
+       return view('new-business-loan')->with($data);
 
       }
 
@@ -46,15 +51,19 @@ class NewProcessController extends Controller
       }
 
    public function usedCarLoan(){
-
-         return view('used-car-loan');
+            
+              $un=new Seo();
+              $data=$un->Used_Car();
+         return view('used-car-loan')->with($data);
 
 
       }
 
       public function newSmartHomeLoan(){
 
-         return view('new-smart-home-loan');
+                   $un=new Seo();
+                  $data=$un->Smart_Home_Loan();
+         return view('new-smart-home-loan')->with($data);
 
 
       }

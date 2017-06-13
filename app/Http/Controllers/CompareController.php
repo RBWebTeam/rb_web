@@ -84,6 +84,8 @@ class CompareController extends ExperianController
     
 
     public function switchme($loan){
+
+
         // print"<pre>";print_r($loan);exit();
       if ($loan=="home-loan") {
         $data['title']='Home Loan Balance Transfer – Compare Savings & Apply Online on Rupeeboss.com';

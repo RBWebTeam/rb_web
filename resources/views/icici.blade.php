@@ -15,7 +15,7 @@
 <div class="col-md-3">
      
    <div class="btn-grp  income-tab" data-toggle="buttons" id="income">
-     <h3 class="gray-bg pad">Net Annual Income</h3>
+     <h3 class="pad" style="border:1px dashed #ccc;">Net Annual Income</h3>
       <span class="btn btn-default btn-block active" onclick="set_annual_income('>2.5Lacs')">
      <input type="radio">> 2.5 LACS
       </span>
@@ -42,7 +42,7 @@
   <img src="images/CS/RD_1/SD_ICIC_Rohit_Khanna_Platinum_VISA_Card.jpg" width="230" class="pull-left card-img"/>
   </div>
   <div class="col-md-8">
-  <h2>Platinum Chip Credit Card</h2>
+  <h3>Platinum Chip Credit Card</h3>
     <ul class="pad-lft">
     <li>No Joining Fee. No Annual Fee</li>
         <li>Earn 2 PAYBACK points on every Rs.100 spent</li>
@@ -59,7 +59,7 @@
     <img src="images/CS/RD/JET-CORAL-VISA.jpg" width="230" class="pull-left card-img"/>
   </div>
   <div class="col-md-8">
-  <h2>Jet Coral Credit Card</h2>
+  <h3>Jet Coral Credit Card</h3>
     <ul class="pad-lft">
     <li>Joining Fee - ₹.1,250 + ST</li>
         <li>2,500 Welcome Bonus JPMiles on joining</li>
@@ -74,7 +74,7 @@
     <img src="images/CS/RD_1/SD_ICIC_Rohit_Khanna_Platinum_VISA_Card.jpg" width="230" class="pull-left card-img"/>
   </div>
   <div class="col-md-8">
-  <h2>Coral Credit Card</h2>
+  <h3>Coral Credit Card</h3>
     <ul class="pad-lft">
     <li>Limited period offer: Joining fee Rs.500</li>
         <li>2X cash rewards on dining, groceries and at supermarkets</li>
@@ -93,7 +93,7 @@
   <img src="images/CS/RD/DA_Coral-Mastercard-MasterCard_1.jpg" width="230" class="pull-left card-img"/>
   </div>
   <div class="col-md-8">
-  <h2>Coral Credit Card</h2>
+  <h3>Coral Credit Card</h3>
     <ul class="pad-lft">
     <li>No Joining Fee. No Annual Fee</li>
         <li>Earn 2 PAYBACK points on every Rs.100 spent</li>
@@ -110,7 +110,7 @@
     <img src="images/CS/RD/JET-CORAL-VISA.jpg" width="230" class="pull-left card-img"/>
   </div>
   <div class="col-md-8">
-  <h2>Jet Coral Credit Card</h2>
+  <h3>Jet Coral Credit Card</h3>
     <ul class="pad-lft">
     <li>Joining Fee - ₹.1,250 + ST</li>
         <li>2,500 Welcome Bonus JPMiles on joining</li>
@@ -127,7 +127,7 @@
     <img src="images/CS/RD_1/SS_ICICI-RED-STRAIGHT-CARD-MERGED_DateChange.jpg" width="230" class="pull-left card-img"/>
   </div>
   <div class="col-md-8">
-  <h2>Ferrari Platinum Credit Card</h2>
+  <h3>Ferrari Platinum Credit Card</h3>
     <ul class="pad-lft">
     <li>Limited period offer: Joining fee Rs.500</li>
         <li>2X cash rewards on dining, groceries and at supermarkets</li>
@@ -148,7 +148,7 @@
   <img src="images/CS/RD/Rubyx-MasterCard-02.jpg" width="230" class="pull-left card-img"/>
   </div>
   <div class="col-md-8">
-  <h2>Rubyx Credit Card</h2>
+  <h3>Rubyx Credit Card</h3>
     <ul class="pad-lft">
     <li>Exclusive privileges - entertainment, dining, wellness and golf</li>
         <li>Complimentary airport lounge access</li>
@@ -166,7 +166,7 @@
     <img src="images/CS/RD/JET-RUBYX-VISA.jpg" width="230" class="pull-left card-img"/>
   </div>
   <div class="col-md-8">
-  <h2>Jet Rubyx Credit Card</h2>
+  <h3>Jet Rubyx Credit Card</h3>
     <ul class="pad-lft">
     <li>Joining Fee - ₹.2,500 + ST</li>
     <li>Welcome: 5,000 JPMiles + Complimentary Jet Airways Ticket</li>
@@ -183,7 +183,7 @@
     <img src="images/CS/RD_1/SS_ICICI-BLACK-STRAIGHT-CARD_R1_EX.jpg" width="230" class="pull-left card-img"/>
   </div>
   <div class="col-md-8">
-  <h2>Ferrari Signature Credit Card</h2>
+  <h3>Ferrari Signature Credit Card</h3>
     <ul class="pad-lft">
     <li>Complimentary Scuderia Ferrari watch on joining</li>
         <li>Discounts on Ferrari merchandise at Ferrari Online Store</li>
@@ -204,7 +204,7 @@
   <img src="images/CS/RD/JET-SAPPHIRO-AMEX.jpg" width="230" class="pull-left card-img"/>
   </div>
   <div class="col-md-8">
-  <h2>Sapphiro Credit Card</h2>
+  <h3>Sapphiro Credit Card</h3>
     <ul class="pad-lft">
     <li>Exclusive privileges - entertainment, dining, wellness and golf</li>
         <li>Complimentary membership to the Priority Pass programme</li>
@@ -221,7 +221,7 @@
     <img src="images/CS/RD/JET-SAPPHIRO-VISA.jpg" width="230" class="pull-left card-img"/>
   </div>
   <div class="col-md-8">
-  <h2>Jet Sapphiro Credit Card</h2>
+  <h3>Jet Sapphiro Credit Card</h3>
     <ul class="pad-lft">
     <li>Joining Fee - ₹.5,000 + ST</li>
         <li>Welcome: 10,000 JPMiles + Complimentary Jet Airways Ticket</li>
@@ -238,7 +238,7 @@
     <img src="images/CS/RD_1/SS_ICICI-BLACK-STRAIGHT-CARD_R1_EX.jpg" width="230" class="pull-left card-img"/>
   </div>
   <div class="col-md-8">
-  <h2>Ferrari Signature Credit Card</h2>
+  <h3>Ferrari Signature Credit Card</h3>
     <ul class="pad-lft">
     <li>Complimentary Scuderia Ferrari watch on joining</li>
         <li>Discounts on Ferrari merchandise at Ferrari Online Store</li>

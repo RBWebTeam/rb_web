@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Session;
 use App\Http\Requests;
 use DB;
+use App\SEOlibraries\Seo;
 class ContactController extends InitialController
 {
     //
@@ -18,7 +19,11 @@ class ContactController extends InitialController
     }
 
     public function new_personal_loan(){
-    	return view('new-personal-loan');
+           
+                   $un=new Seo();
+                   $data=$un->Personal_loan_();
+
+    	return view('new-personal-loan')->with($data);
     }
     
     public function new_personal_loan_register(Request $req){

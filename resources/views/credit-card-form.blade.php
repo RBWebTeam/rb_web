@@ -79,6 +79,7 @@
 
 										<div class="col-md-4">
 										<div class="form-control border-none">
+										<lable>
 										<input type="radio"  name="Gender"  class="radiob" checked value="Male"> Male
                                         <input type="radio" name="Gender"  class="radiob" value="Female" > Female
 					                    </div>
@@ -91,16 +92,7 @@
                                         <input type="radio" name="marital_status"  class="radiob" value="Married" > Married
 					                    </div>
 										</div>
-                                       
-
-										<div class="col-md-4">
-										<div class="form-control border-none">
-										<input type="radio"  name="resident_status"  class="radiob" checked value="Indian"> Indian
-                                        <input type="radio" name="resident_status"  class="radiob" value="NRI/Foreign National" > NRI/Foreign National
-					                    </div>
-										</div>
-
-									
+										
                                          <div class="col-md-4">
 										<select class="drop-arr select-sty" name="preferred_address" id="preferred_address"  required>
 					                      <option value="" disabled selected>Preferred Mailing Address</option>
@@ -108,6 +100,13 @@
 					                      <option value="Office">Office</option>
 					                    </select> 
 					                    </div>
+
+										<div class="col-md-4">
+										<div class="form-control border-none">
+										<input type="radio"  name="resident_status"  class="radiob" checked value="Indian"> Indian
+                                        <input type="radio" name="resident_status"  class="radiob" value="NRI/Foreign National" > NRI/Foreign National
+					                    </div>
+										</div>
 										
 										<div class="col-md-4">
 										<div class="form-control border-none">

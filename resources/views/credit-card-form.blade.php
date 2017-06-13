@@ -79,17 +79,18 @@
 
 										<div class="col-md-4">
 										<div class="form-control border-none">
-										<lable>
-										<input type="radio"  name="Gender"  class="radiob" checked value="Male"> Male
-                                        <input type="radio" name="Gender"  class="radiob" value="Female" > Female
+									   
+										<input type="radio"  name="Gender" id="150"  class="radiob" checked value="Male"><label for="150">&nbsp;Male</label>
+                                        <input type="radio" name="Gender" id="151"  class="radiob" value="Female" ><label for="151">&nbsp;Female </label>
+										
 					                    </div>
 										</div>
 									
                                        
                                        <div class="col-md-4">
 									   <div class="form-control border-none">
-										<input type="radio"  name="marital_status"  class="radiob" checked value="Single">   Single
-                                        <input type="radio" name="marital_status"  class="radiob" value="Married" > Married
+										<input type="radio"  name="marital_status" id="152" class="radiob" checked value="Single">   <label for="152">Single</label>
+                                        <input type="radio" name="marital_status" id="153"  class="radiob" value="Married" > <label for="153">Married</label>
 					                    </div>
 										</div>
 										
@@ -103,15 +104,15 @@
 
 										<div class="col-md-4">
 										<div class="form-control border-none">
-										<input type="radio"  name="resident_status"  class="radiob" checked value="Indian"> Indian
-                                        <input type="radio" name="resident_status"  class="radiob" value="NRI/Foreign National" > NRI/Foreign National
+										<input type="radio"  name="resident_status" id="154"  class="radiob" checked value="Indian"> <label for="154"> Indian</label>
+                                        <input type="radio" name="resident_status" id="155"  class="radiob" value="NRI/Foreign National" > <label for="155">NRI/Foreign National</label>
 					                    </div>
 										</div>
 										
 										<div class="col-md-4">
 										<div class="form-control border-none">
-										<input type="radio"  name="CustomerProfile"  class="radiob" checked value="Salaried">  Salaried
-                                        <input type="radio" name="CustomerProfile"  class="radiob" value="Selfemployed" >   Selfemployed
+										<input type="radio"  name="CustomerProfile" id="156"  class="radiob" checked value="Salaried">  <label for="156">Salaried </label>
+                                        <input type="radio" name="CustomerProfile" id="157"  class="radiob" value="Selfemployed" >  <label for="157"> Selfemployed </label>
 					                    </div>
 										</div>
                                         
@@ -212,8 +213,8 @@
 		
 										
 										
-											<div class="col-md-8">Salary Account With Other Bank<b>:</b> Yes &nbsp;&nbsp;
-											<input type="radio" name="SalaryAccountWithOtherBank" id="SalaryAccountWithOtherBank"  class="radiob" checked value="Yes"> No &nbsp;&nbsp;<input type="radio" name="SalaryAccountWithOtherBank" id="SalaryAccountWithOtherBank" class="radiob" value=" No">
+											<div class="col-md-8">Salary Account With Other Bank<b>:</b> <label for="160">Yes</label>
+											<input type="radio" id="160" name="SalaryAccountWithOtherBank" id="SalaryAccountWithOtherBank"  class="radiob" checked value="Yes"> <label for="161"> &nbsp;&nbsp; No</label> <input type="radio" id="161" name="SalaryAccountWithOtherBank" id="SalaryAccountWithOtherBank" class="radiob" value=" No">
 										</div>
 										</div>
 									</div>
@@ -222,7 +223,7 @@
 									<div class="form-group">
 										<h4 class="hdr">Current Address Details:</h4>
 										<div class="col-md-4">
-											<input type="text" class="form-control" placeholder="flat No / Plot No / House No*" name="ResidenceAddress1" id="ResidenceAddress1" required>
+											<input type="text" class="form-control" placeholder="Flat No / Plot No / House No*" name="ResidenceAddress1" id="ResidenceAddress1" required>
 										</div>
 										<div class="col-md-4">
 											<input type="text" class="form-control" placeholder="Building / Society Name" name="ResidenceAddress2" id="ResidenceAddress2">
@@ -360,7 +361,7 @@
 										<div class="col-md-12">
 										<input type="checkbox"  name="terms" required>
 											I hereby confirm that I have read and understood the
-									<a href="#" data-toggle="modal" data-target="#Experian_terms_modal"> Rupeeboss Terms</a> and Conditions applicable to this service and that all the details furnished by me above are true and correct. I further provide consent to Rupeeboss and its affiliates to contact me with reference to financial products and this consent shall override any registration with DNC/NDNC.
+									<!-- <a href="#" data-toggle="modal" data-target="#Experian_terms_modal"></a>--> Rupeeboss Terms and Conditions applicable to this service and that all the details furnished by me above are true and correct. I further provide consent to Rupeeboss and its affiliates to contact me with reference to financial products and this consent shall override any registration with DNC/NDNC.
 
 										</div>
 										

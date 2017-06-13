@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<link href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" rel="stylesheet" type="text/css">
-	<title><?php if(isset($title))echo $title; else echo "RupeeBoss-Apply for a Loan"; ?></title>
+	<title><?php if(isset($title))echo $title; else echo "RupeeBoss-Apply for a Loan";  ?></title>
 	<!-- <meta name="google-signin-client_id" content="752185558821-9vlmac53np7bgdo3kn9d2e5ft39t7gud.apps.googleusercontent.com"> -->
 	<meta name="msvalidate.01" content="3744048BDD61F7FE6837BD664522C8F9" />
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -179,10 +179,10 @@
 						 
 						 <ul class="dropdown-menu">
 						    <li>
-								<a href="{{URL::to('home-loan-transfer',['id' => 'home-loan'])}}">Home Loan</a>
-								<a href="{{URL::to('home-loan-transfer',['id' => 'personal-loan'])}}">Personal Loan</a>
-								<a href="{{URL::to('home-loan-transfer',['id' => 'loan-against-property-loan'])}}">Loan Against Property</a>
-								<a href="{{URL::to('working-capital')}}">Working Capital</a>
+								<a href="{{URL::to('balance-transfer',['id' => 'home-loan'])}}">Home Loan</a>
+								<a href="{{URL::to('balance-transfer',['id' => 'personal-loan'])}}">Personal Loan</a>
+								<a href="{{URL::to('balance-transfer',['id' => 'loan-against-property-loan'])}}">Loan Against Property</a>
+								<a href="{{URL::to('balance-transfer/working-capital')}}">Working Capital</a>
 							</li>
 							</ul>	
 							<li><a href="{{URL::to('check-emi')}}">EMI Calculator</a></li>				   

@@ -5,13 +5,17 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use Session;
+use App\SEOlibraries\Seo;
 use DB;
 use Response;
 class WorkingCapitalController extends CallApiController
 {
       public function WorkingCapital(){
 
-         return view('WorkingCapital');
+                     $un=new Seo();
+                   $data=$un->Working_Capital_2();
+
+         return view('WorkingCapital')->with($data);
 
       }
 
@@ -231,8 +235,9 @@ public function termloanFN($loanamount,$loaninterest,$loanterm){
 
 public function NewWorkingCapital(){
 
-
-         return view('new-working-capital');
+               $un=new Seo();
+              $data=$un->Working_C_Loan();
+         return view('new-working-capital')->with($data);
 }
 
 public function working_capital_submit(Request $req){

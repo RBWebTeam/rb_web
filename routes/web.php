@@ -67,7 +67,7 @@ Route::post('contact_otp','SocialsiteController@contactOTP');
 
 /* Working Capital */
 
-Route::get('working-capital','WorkingCapitalController@WorkingCapital');
+Route::get('balance-transfer/working-capital','WorkingCapitalController@WorkingCapital');
 Route::post('Working-Capital/calculate','WorkingCapitalController@calculate');
 Route::post('term-loan/calculate','WorkingCapitalController@termcalculate');
 
@@ -85,7 +85,7 @@ Route::get('refresh-csrf', function(){
 Route::get('check-emi','CompareController@emi2');
 Route::post('emi_cal','CompareController@emi_cal');
 Route::get('loan-details/{product}/{bank}','BankController@home_loanBank');
-Route::get('home-loan-transfer/{loan}','CompareController@switchme');
+Route::get('balance-transfer/{loan}','CompareController@switchme');
 Route::post('calculation','CompareController@calculation');
 Route::post('after-transfer-calculation','CompareController@after_transfer_calculation');
 

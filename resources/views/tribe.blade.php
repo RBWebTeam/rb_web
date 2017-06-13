@@ -18,8 +18,8 @@
     <li><a data-toggle="tab" href="#main3" id="nav3" class="go_to_next"><b>BUSINESS DETAIL</b></a></li>
     <li><a data-toggle="tab" href="#main5" id="nav5" class="go_to_next"><b>ONLINE ID</b></a></li>
     <li><a data-toggle="tab" href="#main6" id="nav6" class="go_to_next"><b>REFERENCE</b></a></li>
-    <li><a data-toggle="tab"  id="nav4" href="#main4" class="go_to_next"><b>DOCUMENT</b></a></li>
-    <li><a data-toggle="tab"  id="nav7"  class="go_to_next"><b>BANK STATEMENT</b></a></li>
+    <li><a data-toggle="tab"  id="nav4" class="go_to_next"><b>DOCUMENT</b></a></li>
+    <li><a data-toggle="tab"  id="nav7" class="go_to_next"><b>BANK STATEMENT</b></a></li>
   </ul>
 
   <div class="tab-content">
@@ -180,7 +180,7 @@
   <hr>
     <div class="col-md-3"><span>Employees Count*</span></div>
     <div class="col-md-8 form-padding">
-    <input type="text" class="form-control form-group" name="employee_count" id="employee_count" onkeypress="return fnAllowNumeric(event)" />
+    <input type="text" class="form-control form-group" name="employee_count" id="employee_count" onkeypress="return fnAllowNumeric(event)" required="" />
     </div>
     
     <div class="col-md-3"><span>Registration Details*</span></div>
@@ -232,16 +232,16 @@
     <div id="company_pan_card_div">
     <div class="col-md-3"><span>Company Pan Number*</span></div>
     <div class="col-md-8 form-padding">
-    <input type="text" name="company_pan_card" id="company_pan_card" class="form-control form-group" required="" /></div>
+    <input type="text" pattern="/^([a-zA-Z]{5})(\d{4})([a-zA-Z]{1})$/" name="company_pan_card" id="company_pan_card" class="form-control form-group pan_valid" required="" /></div>
     </div>
     <div id="business_run_by_pan_div" style="display: none;">
     <div class="col-md-3"><span>Pan Number*</span></div>
     <div class="col-md-8 form-padding">
-    <input type="text" name="business_run_by_pan" id="business_run_by_pan" class="form-control form-group" required="" /></div>
+    <input type="text" pattern="/^([a-zA-Z]{5})(\d{4})([a-zA-Z]{1})$/" name="business_run_by_pan" id="business_run_by_pan" class="form-control form-group pan_valid" required="" /></div>
     </div>
     <div class="col-md-3"><span>Address*</span></div>
     <div class="col-md-8 form-padding">
-    <textarea class="form-control form-control mrg-btm" colspan="2" id="work_address" name="work_address"></textarea></div>
+    <textarea class="form-control form-control mrg-btm" colspan="2" id="work_address" name="work_address" required=""></textarea></div>
     
     <div class="col-md-3"><span>Business Type*</span></div>
     <div class="col-md-8 form-padding sec">
@@ -325,7 +325,7 @@
     
     <div class="col-md-3"><span>How did you Know About Us?*</span></div>
     <div class="col-md-8 form-padding">
-    <input type="text" name="reached_us_via" id="reached_us_via" class="form-control form-group" />
+    <input type="text" name="reached_us_via" id="reached_us_via" class="form-control form-group" required="" />
     
     </div>
 	<div class="col-md-3"></div>
@@ -360,7 +360,7 @@
     <div class="col-md-12">
     <h3 class="mrg-top">Reference</h3><hr>
   </div>
-    <div class="col-md-3">First Name</div>
+    <div class="col-md-3">First Name*</div>
     <div class="col-md-8 form-padding">
     <input type="text" id="ref_first_name" name="ref_first_name" class="form-control form-group" required="" /></div>
     
@@ -368,17 +368,17 @@
     <div class="col-md-8 form-padding">
     <input type="text" class="form-control form-group" name="ref_middle_name" id="ref_middle_name"/></div>
     
-    <div class="col-md-3">Last Name</div>
+    <div class="col-md-3">Last Name*</div>
     <div class="col-md-8 form-padding">
     <input type="text" id="ref_last_name" name="ref_last_name" class="form-control form-group" required="" /></div>
     
-    <div class="col-md-3">Mobile Number</div>
+    <div class="col-md-3">Mobile Number*</div>
     <div class="col-md-8 form-padding">
-    <input type="text" name="ref_mobile" id="ref_mobile" class="form-control form-group" maxlength="10" minlength="10"  onkeypress="return fnAllowNumeric(event)"/></div>
+    <input type="text" name="ref_mobile" id="ref_mobile" class="form-control form-group" maxlength="10" minlength="10"  onkeypress="return fnAllowNumeric(event)" required="" /></div>
     
-    <div class="col-md-3">Email</div>
+    <div class="col-md-3">Email*</div>
     <div class="col-md-8 form-padding">
-    <input type="email" name="ref_email" id="ref_email" class="form-control form-group"/></div>
+    <input type="email" name="ref_email" id="ref_email" class="form-control form-group" required="" /></div>
     <p ng-show="tribe_loan_form.ref_email.$error.email" class="error">Invalid Email address</p>
    <div class="col-md-3">
     <a class="btn btn-primary btn-outline with-arrow" onclick="go_back('main5')">Back<i class="icon-arrow-right"></i></a>
@@ -603,8 +603,10 @@
         
         <div class="col-md-3">Upload Document</div>
         <div class="col-md-8 form-padding">
-        <input type="file"  name="upload_statement" class="form-control form-group no-border"/>
+        <input type="file"  name="upload_statement" class="files" id="statement_file" class="form-control form-group no-border" accept="application/pdf"/>
+        <div style="display: none;" class="error file_ext_error">Only Pdf files are allowed</div>
         </div>
+        
        <div class="col-md-3">PDF Password(if any)</div>
         <div class="col-md-8 form-padding"  >
         <input type="checkbox" name="pdf_has_pwd" id="pdf_has_pwd" >
@@ -631,6 +633,21 @@
 <script type="text/javascript">
   var previousPartner;
   var doc_id;
+  $('.pan_valid').blur(function(){
+    //console.log($(this));
+    var str =$(this).val();
+    var pancardPattern = /^([a-zA-Z]{5})(\d{4})([a-zA-Z]{1})$/;
+    var res = str.match(pancardPattern);
+    if(res){
+      $(this).removeClass('error');
+     
+    }else{
+     
+       $(this).addClass('error');
+       $(this).removeClass('valid');
+       return false;
+    }
+  });
     function showDiv(name){
        $('#'+previousPartner).hide();
        $('#'+name).show();
@@ -674,7 +691,13 @@
       $('#business_run_by_pan_div').show();
     }     
   });
-  
+  $('.go_to_next').click(function(){
+if($('#tribe_loan_form').valid()){
+      //console.log("valid_tab");
+   }else{
+    return false;
+   }
+});
 function go_to_next(next){
     var nav_number=next.split('main');
    if($('#tribe_loan_form').valid()){
@@ -688,21 +711,21 @@ function go_to_next(next){
  function go_back(next){
     var nav_number=next.split('main');
       $( "#nav"+nav_number[1] ).trigger( "click" );
-      return false;
+      //return false;
       window.scrollTo(0,0);
  }
-$('.go_to_next').click(function(){
-if($('#tribe_loan_form').valid()){
-      //console.log("valid_tab");
-   }else{
-    return false;
-   }
-});
+
 $("#upload_doc_submit").click(function(){
   $('#went_wrong_modal').modal('hide');
     if(!$('#kyc_form').valid()){
       return false;
-    }               
+    }
+    //console.log($('#tribe_document_itself'));
+  if(!check_file_ext('tribe_document_itself')){
+   
+    return false;
+  }
+  
   var form_url="{{URL::to('upload-tribe-doc')}}";
   $.ajax({
       url:form_url ,  
@@ -738,7 +761,11 @@ $("#submit_tribe_statement").click(function(){
     return false;
   }
     else{
-   // var CSRF_TOKEN = $('input[name="_token"]').val();                    
+   // var CSRF_TOKEN = $('input[name="_token"]').val();    
+
+   if(!check_file_ext('statement_file')){
+    return false;
+  }              
     var form_url="{{URL::to('upload-tribe-bank-statement')}}";
     $.ajax({
           url:form_url ,
@@ -950,4 +977,20 @@ function del_doc_fun(id,doc){
         dateFormat: "yy-mm-dd"
        });
  });
+ function check_file_ext(id){
+    var ext = $('#'+id).val().split('.').pop().toLowerCase();
+    if(ext!='pdf'){
+      $('#'+id).val('');
+      $('.file_ext_error').show();
+      return false;
+    }else{
+      return true;
+    }
+ }
+ $('.files').click(function(){
+   $('.file_ext_error').hide();
+ });
+
+
 </script>
+ 

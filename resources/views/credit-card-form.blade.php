@@ -133,7 +133,7 @@
 								
 								
 								
-								<div class="row sec" style="display:none;">
+								<div class="row sec" style="display:none;" id="section1">
 									<div class="form-group">
 										<h4 class="hdr text-center">Company Name</h4>
 										<div class="col-md-4">
@@ -226,7 +226,7 @@
 									
 									
 									
-								<div class="row sec" style="display:none;">
+								<div class="row sec" style="display:none;" id="section2">
 									<div class="form-group">
 										<h4 class="hdr text-center">Current Address Details:</h4>
 										<div class="col-md-4">
@@ -267,7 +267,7 @@
                                     
 									
 									
-                                    <div class="row sec" style="display:none;">
+                                    <div class="row sec" style="display:none;" id="section3">
 									<div class="form-group">
 									    &nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="same"/> Same As Above
 										<h4 class="hdr text-center">Permanent Address Details:</h4>
@@ -309,7 +309,7 @@
   
 									
 									
-									<div class="row sec" style="display:none;">
+									<div class="row sec" style="display:none;" id="section4">
 										<div class="form-group">
 											<h4 class="hdr text-center">Contact Details</h4>
 										
@@ -393,7 +393,7 @@
 					</div>
 					<hr>
 					</div>
-					<button class="btn btn-primary btn-outline with-arrow mrg-top center-block" >NEXT<i class="icon-arrow-right"></i></button>
+					<button class="btn btn-primary btn-outline with-arrow mrg-top center-block" id="credit_id">NEXT<i class="icon-arrow-right" ></i></button>
 
 				</div>
 			</div>
@@ -468,6 +468,33 @@
 </script> -->
 
 <script type="text/javascript">
+
+ $("#credit_id").click(function(event){
+         event.preventDefault();
+      if(!  $('#compareform').valid()){
+        return false;
+      }else{$('#section1').show();
+            if(!  $('#compareform').valid()){return false;
+            }else{ $('#section2').show();
+                if(! $('#compareform').valid()){
+                       return false;
+                }else{$('#section3').show();
+                ('#credit_id').hide();
+                	     if(! $('#compareform').valid()){return false;
+                	     }else{$('#section4').show();
+                               
+                	     }
+                }
+      }
+
+      }
+});
+
+ 
+
+ ////////////////////
+
+
   $(".credit-submit").click(function(event){
     //alert("okae");
     event.preventDefault();

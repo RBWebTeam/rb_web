@@ -3598,4 +3598,7 @@ label {
 ul, ol {padding-left: 13px;}
 .lst-nam .label .error {display:none; !important;display:-webkit-box;}
 	
-label.simpleValidationError {display: none !important; }
+label.error {display: none !important; }
+.error {
+            border:2px solid red;
+        }

@@ -1184,7 +1184,7 @@
                     </svg>
                 </span>
                 <span class="input input--nao">
-                <input class="input__field input__field--nao" type="text" name="ROI" onkeypress="return fnAllowNumeric(event)" value=""  />
+                <input class="input__field input__field--nao" type="text" name="ROI"  onkeypress="return fnAllowNumeric(event)" value=""  />
                     <label class="input__label input__label--nao" for="ROI">
                         <span class="input__label-content input__label-content--nao">ROI</span>
                     </label>
@@ -1193,7 +1193,7 @@
                     </svg>
                 </span>
                 <span class="input input--nao">
-                <input class="input__field input__field--nao" type="text" name="Processingfee" onkeypress="return fnAllowNumeric(event)" value=""  />
+                <input class="input__field input__field--nao" type="text" name="Processingfee"  onkeypress="return fnAllowNumeric(event)" value=""  />
                     <label class="input__label input__label--nao" for="Processingfee">
                         <span class="input__label-content input__label-content--nao">Processing fee</span>
                     </label>
@@ -1211,6 +1211,9 @@
             </form>
             </div>
             
+            <div id="upload">
+            <form name="upload_details" id="upload_details" enctype="multipart/form-data" method="POST">
+            {{ csrf_field() }}
             <div>
             <section class="mrg-top">
               <h1 class="text-center"><i>Congratulation</i></h1>
@@ -1229,7 +1232,7 @@
              </tbody>
              </table>
              
-             <h4>Our representive will get in touch with you. Please proceed to upload the necessary document for quick disbursal to learn more about IIFL Express loan <a href="#"><b class="text-sucsess">Click here</b></a></h4>
+             <h4>Our representive will get in touch with you. Please proceed to upload the necessary document for quick disbursal to learn more about IIFL Express loan <a href="javascript:void(0)"><b class="text-sucsess">Click here</b></a></h4>
                 </div>
                 </section>
                 </div>
@@ -1265,13 +1268,15 @@
                 <div class="col-md-8 col-md-offset-2">
                 <h3 class="text-center pad">Non Financial Documents</h3>
                 <ul class="ull">
-                   <li>Identity Proof <input type="file" class="pull-right" /></li>
-                   <li>Address Proof <input type="file"class="pull-right" /></li>
-                   <li>Property Ownership Proof <input type="file" class="pull-right"/></li>
+                   <li>Identity Proof <input type="file" name="identity_proof" id="identity_proof" class="pull-right" /></li>
+                   
+                 </select>
+                   <li>Address Proof <input type="file" name="address_proof" id="address_proof" class="pull-right" /></li>
+                   <li>Property Ownership Proof <input type="file" name="ownership_proof" id="ownership_proof" class="pull-right"/></li>
                   
                 </ul>
                 <div class="col-md-12">
-<a class="btn btn-primary btn-outline with-arrow mrg-top" href="#">Proceed<i class="icon-arrow-right"></i></a>
+<a class="btn btn-primary btn-outline with-arrow mrg-top" id="proceed_upload" href="javascript:void(0)">Proceed<i class="icon-arrow-right"></i></a>
             </div>
                 </div>
                 
@@ -1282,11 +1287,11 @@
                 <hr>
                 <h3 class="text-center pad">Non Financial Documents</h3>
                 <ul class="ull center-block">
-                   <li>Identity Proof <input type="file" class="pull-right" /></li>       
+                   <li>Identity Proof <input type="file" name="identityproof" class="pull-right" /></li>       
                 </ul>
                  <div class="jumbotron">
                  <select class="col-md-6 block drop-arr select-sty">
-                     <option>Pan</option>
+                     <option value="">Pan</option>
                      <option>Pan</option>
                      <option>Pan</option>
                  </select>
@@ -1393,9 +1398,10 @@
             </div>
                         
             </section>
+            </form>
             </div>
             
-              </form>
+              
    
               
             </div>
@@ -1875,7 +1881,7 @@ $(document).ready(function(){
         var eligible_amount=Math.round(amount);
         // console.log(eligible_amount);
         $('#eligible').empty().append(eligible_amount);
-        $('#maxloan').empty().append(eligible_amount);
+      
 
          
 
@@ -1884,40 +1890,38 @@ $(document).ready(function(){
 
 <script type="text/javascript">
     $('#next_form').click(function(){
-        // alert('okae');
+       
         if(! $('#eligibility_form').valid()){
     alert('okae');
-    //      return false;
+    //      
       }else{
         $('#Eligibility_details').hide();
         $('#Applicant_Details').show();
         var applied_loan=$('#AppliedLoan').val();
         $('#Amount').empty().append(applied_loan);
-        $("input[name='AppliedLoanamount']").val(applied_loan);
+        // $("input[name='AppliedLoanamount']").val(applied_loan);
         var days =$('#tenure').val();
         var no_of_days= days*12;
         $('#LoanTenure').empty().append(days);
-        $("input[name='Tenure']").val(days);
+        // $("input[name='Tenure']").val(days);
         var a = $('#int span').html();
          $('#RateOfInt').empty().append(a);
         var Rate = a/12/100;
         var installment_iifl=applied_loan * Rate * (Math.pow(1 + Rate, no_of_days) / (Math.pow(1 + Rate, no_of_days) - 1));
-        // console.log(installment);
+      
         var installment =Math.round(installment_iifl);
         $('#EquatedMonthly').empty().append(installment);
         $('#EMI').val(installment);
          var total =((installment*no_of_days)-applied_loan);
-         // console.log(total);
+        
         var ttl_payment = parseInt(applied_loan) + parseInt(total);;
-        // console.log(ttl_payment);
+        
         // appending into applicant_details
         $('#AppliedLoanamount').val(applied_loan);
         $('#Tenure').val(days);
         $('#ROI').val(a);
-        $("#input[name='ROI']").val(a);
-
         $('#Emi').val(installment);
-        $("#input[name='Emi']").val(installment);
+        // $("#input[name='Emi']").val(installment);
 
         $('#TotalPayableAmount').val(ttl_payment);
 
@@ -1981,11 +1985,11 @@ var g_minTenure=0;
         var maxloan=maxloanamt;
 
       //   console.log(maxloanamt);
-      // $('#maxloan').empty().append(maxloan);
+      $('#maxloan').empty().append(maxloan);
       var rateofint=ROI;
-      $('#rateofint').empty().append(ROI);
+      $("#input[name='ROI']").val(ROI);
       var processfee=processingfee;
-      $('#processfee').empty().append(processingfee);
+      $("#input[name='Processingfee']").val(processingfee);
       // var max_installment=maxEmi;
       //  $('#maxEmi').empty().append(max_installment);
       g_maxloanamt=maxloanamt;
@@ -2059,6 +2063,25 @@ var g_minTenure=0;
         alert('ok');
 
     });
+</script>
+
+<!-- Document upload -->
+<script type="text/javascript">
+    $('#proceed_upload').click(function(){
+        alert('ok');
+       if(! $('#upload_details').valid()){
+             alert('not valid');
+
+        }else{
+            $.ajax({
+            type: "POST",  
+                     url: "{{URL::to('iifl-doc-upload')}}",
+                     data : $('#upload_details').serialize(),
+                     success: function(msg){
+                        console.log(msg);
+            });
+        } 
+    })
 </script>
 
 

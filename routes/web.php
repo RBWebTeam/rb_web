@@ -147,6 +147,7 @@ Route::post('credit-report-verify','ExperianController@verify_otp');
 //doc upload
 Route::get('doc-upload','UploadController@Upload');
 Route::post('doc-upload','UploadController@UploadPost');
+Route::post('iifl-doc-upload','LoanController@iifl_doc_upload');
  
 //something went wrong page
 Route::get('went-wrong','ErrorController@went_wrong');

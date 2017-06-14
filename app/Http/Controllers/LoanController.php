@@ -579,15 +579,15 @@ $url = $this::$url_static."/BankAPIService.svc/verifyIIFLAPIAadharOTP";
               "body": {"ProspectNumber":"'.$prospectno.'","ApplicantType":"Applicant",
              "CatID":"1","SubCatID":"1",,"ImageName":"'.$imageName.'","Extension":"'.$extension.'","Base64string":"'.$base64[$i].'"}}';
              print_r($post_data);
-    // $url = $this::$url_static."/BankAPIService.svc/getIIFLofferstatus";
-    // $result=$this->call_json_data_api($url,$post_data);
-    // $http_result=$result['http_result'];
-    // $error=$result['error'];
-    // $st=str_replace('"{', "{", $http_result);
-    // $s=str_replace('}"', "}", $st);
-    // $m=$s=str_replace('\\', "", $s);
-    // $obj = json_decode($m);
-    // $response[$i]=$obj;
+    $url = $this::$url_static."/BankAPIService.svc/getIIFLofferstatus";
+    $result=$this->call_json_data_api($url,$post_data);
+    $http_result=$result['http_result'];
+    $error=$result['error'];
+    $st=str_replace('"{', "{", $http_result);
+    $s=str_replace('}"', "}", $st);
+    $m=$s=str_replace('\\', "", $s);
+    $obj = json_decode($m);
+    $response[$i]=$obj;
     }
     //print_r($response);
   }

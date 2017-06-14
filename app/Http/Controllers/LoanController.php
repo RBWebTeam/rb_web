@@ -559,4 +559,9 @@ $url = $this::$url_static."/BankAPIService.svc/verifyIIFLAPIAadharOTP";
       print_r($req->all());
     }
 
+    public function iifl_doc_upload(Request $req){
+      print_r($req->all());
+        
+
+    }
 }

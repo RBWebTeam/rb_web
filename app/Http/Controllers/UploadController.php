@@ -72,5 +72,9 @@ class UploadController extends CallApiController
                 });
         return view('thank-you');
     }
+    
+    public function iifl_upload(Request $req){
+        
 
+    }
 }

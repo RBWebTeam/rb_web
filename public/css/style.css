@@ -3466,7 +3466,7 @@ input:checked + .slider:before {
     transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
 	transition:all 0.3s linear;-moz-transition:all 0.3s linear;-webkit-transition:all 0.3s linear;
 }
-.form-control:hover { padding-left:6px; transition:all 0.3s linear;-moz-transition:all 0.3s linear;-webkit-transition:all 0.3s linear;}
+.form-control:hover { transition:all 0.3s linear;-moz-transition:all 0.3s linear;-webkit-transition:all 0.3s linear;}
 .form-padding {
     padding-left: 5px;
     padding-right: 5px;
@@ -3598,4 +3598,7 @@ label {
 ul, ol {padding-left: 13px;}
 .lst-nam .label .error {display:none; !important;display:-webkit-box;}
 	
-label.simpleValidationError {display: none !important; }
+label.error {display: none !important; }
+.error {
+            border:1px solid red;
+        }

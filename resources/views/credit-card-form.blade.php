@@ -38,7 +38,7 @@
 								<div class="row">
 									<div class="form-group">
 									
-										<h4 class="hdr col-md-12">Personal Details</h4>
+										<h4 class="hdr col-md-12 text-center">Personal Details</h4>
 										<div class="col-md-4">
 											<input type="text" class="form-control" placeholder= "First Name*" name="ApplicantFirstName" id="ApplicantFirstName" onkeypress="return AllowAlphabet(event)" required>
 										</div>
@@ -127,11 +127,15 @@
 					                    </div>
 
 									</div>
+									<hr>
 								</div>
-								<hr>
-								<div class="row sec">
+								
+								
+								
+								
+								<div class="row sec" style="display:none;">
 									<div class="form-group">
-										<h4 class="hdr">Company Name</h4>
+										<h4 class="hdr text-center">Company Name</h4>
 										<div class="col-md-4">
 											<input type="text" class="form-control search_company" placeholder="Company Name*" name="CompanyName" id="CompanyName" required="">
 										</div>
@@ -217,11 +221,14 @@
 											<input type="radio" id="160" name="SalaryAccountWithOtherBank" id="SalaryAccountWithOtherBank"  class="radiob" checked value="Yes"> <label for="161"> &nbsp;&nbsp; No</label> <input type="radio" id="161" name="SalaryAccountWithOtherBank" id="SalaryAccountWithOtherBank" class="radiob" value=" No">
 										</div>
 										</div>
+										<hr>
 									</div>
-									<hr>
-								<div class="row sec">
+									
+									
+									
+								<div class="row sec" style="display:none;">
 									<div class="form-group">
-										<h4 class="hdr">Current Address Details:</h4>
+										<h4 class="hdr text-center">Current Address Details:</h4>
 										<div class="col-md-4">
 											<input type="text" class="form-control" placeholder="Flat No / Plot No / House No*" name="ResidenceAddress1" id="ResidenceAddress1" required>
 										</div>
@@ -255,12 +262,15 @@
 						            </div>
 
 										</div>
+										<hr>
 									</div>
-                                    <hr>
-                                    <div class="row sec">
+                                    
+									
+									
+                                    <div class="row sec" style="display:none;">
 									<div class="form-group">
 									    &nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="same"/> Same As Above
-										<h4 class="hdr">Permanent Address Details:</h4>
+										<h4 class="hdr text-center">Permanent Address Details:</h4>
 										<div class="col-md-4">
 											<input type="text" class="form-control" placeholder="flat No / Plot No / House No*" name="PerResidenceAddress1" id="PerResidenceAddress1" required>
 										</div>
@@ -294,11 +304,14 @@
 						            </div>
 
 										</div>
+										 <hr>
 									</div>
-                                    <hr>
-									<div class="row sec">
+  
+									
+									
+									<div class="row sec" style="display:none;">
 										<div class="form-group">
-											<h4 class="hdr">Contact Details</h4>
+											<h4 class="hdr text-center">Contact Details</h4>
 										
 											<div class="col-md-4">
 												<input type="text" class="form-control" id="ResidencePhoneNumber" name="ResidencePhoneNumber" placeholder="Telephone No" required="" onkeypress="return fnAllowNumeric(event)" maxlength="10" >
@@ -312,7 +325,7 @@
 											</div>
 												
 										</div>
-									</div>
+									
 
 									<div class="col-md-4">Do You Have A Credit Card :
 					                    <input type="radio" id="have" name="have_credit_card"  value="Yes"> Yes
@@ -336,7 +349,10 @@
 					                    </div>  
 						                  </div>
 						                  </div>
-                                        <hr>
+										  
+                                        
+										
+										
 										<div class="form-group">
 											<h4 class="hdr">Identity Details</h4>
 											<div class="col-md-4">
@@ -354,6 +370,7 @@
 												<input type="text" id="PanNo" name="PanNo" class="form-control" placeholder="Pancard*" oninput="pancard('PanNo')" maxlength="10" minlength="10" required >
 												<div id="pannumber" style="display:none;color: red;">Oops.Please Enter Valid Pan Number.!!</div>
 											</div>
+											</div>
 											
 											<!-- <div class="col-md-4">
 												<input type="text" class="form-control lastReporteddob" id="SalaryAcOpenDate" name="SalaryAcOpenDate" placeholder="Salary Ac Open Date*" required>
@@ -365,18 +382,18 @@
 
 										</div>
 										
-										</div class="col-md-12">
-										&nbsp;&nbsp;&nbsp;&nbsp;<button class="btn btn-primary btn-outline with-arrow animate-box fadeInUp animated credit-submit dis-tbl" >Confirm & Continue<i class="icon-arrow-right"></i>
-
-
-									</button>
+										<div class="col-md-12">
+										&nbsp;&nbsp;&nbsp;&nbsp;<button class="btn btn-primary btn-outline with-arrow animate-box fadeInUp animated credit-submit dis-tbl" >Confirm & Continue<i class="icon-arrow-right"></i></button>
 									<div class="iframeloading" style= "display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
                 <img src="{{URL::to('images/ajaxloader.gif')}}" alt="Loader" title="Loader" style="top: 50%; position: relative; left: 50%;"  />
                </div>
 									<p><b>All <span class="text-danger">* </span>fields are mandatory.</b></p>
-								</div>
+								
 							</form>
 					</div>
+					<hr>
+					</div>
+					<button class="btn btn-primary btn-outline with-arrow mrg-top center-block" >NEXT<i class="icon-arrow-right"></i></button>
 
 				</div>
 			</div>

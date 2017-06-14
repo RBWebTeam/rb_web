@@ -560,8 +560,35 @@ $url = $this::$url_static."/BankAPIService.svc/verifyIIFLAPIAadharOTP";
     }
 
     public function iifl_doc_upload(Request $req){
-      print_r($req->all());
-        
-
+     $prospectno=Session::get('prospectno');
+      $str = array('identity_proof','address_proof','ownership_proof');
+      for($i=0;$i<3;$i++){
+      $base64[$i]=$this->FileToString($str[$i],$req);
+         //print_r($base64[$i]);
+      $file=$str[$i];
+      $imageName = time().'.'.$req->$file->getClientOriginalExtension();
+      $extension=$req->$file->getClientOriginalExtension();
+      $post_data='{"head": {
+                 "requestCode": "PLRQDOCKYC01",
+                 "key": "ae94e5857582d97cd9a8669d51c164c8",
+                 "appVer": "1.0",
+                 "osName": "WebAPI",
+                 "appName": "ALLIANCE",
+                 "source":"RupeeBoss"
+               },               
+              "body": {"ProspectNumber":"'.$prospectno.'","ApplicantType":"Applicant",
+             "CatID":"1","SubCatID":"1",,"ImageName":"'.$imageName.'","Extension":"'.$extension.'","Base64string":"'.$base64[$i].'"}}';
+             print_r($post_data);
+    // $url = $this::$url_static."/BankAPIService.svc/getIIFLofferstatus";
+    // $result=$this->call_json_data_api($url,$post_data);
+    // $http_result=$result['http_result'];
+    // $error=$result['error'];
+    // $st=str_replace('"{', "{", $http_result);
+    // $s=str_replace('}"', "}", $st);
+    // $m=$s=str_replace('\\', "", $s);
+    // $obj = json_decode($m);
+    // $response[$i]=$obj;
     }
+    //print_r($response);
+  }
 }

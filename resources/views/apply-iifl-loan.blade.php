@@ -1268,16 +1268,31 @@
                 <div class="col-md-8 col-md-offset-2">
                 <h3 class="text-center pad">Non Financial Documents</h3>
                 <ul class="ull">
-                   <li>Identity Proof <input type="file" name="identity_proof" id="identity_proof" class="pull-right" /></li>
+                   <li>Identity Proof <input type="file" name="identity_proof" id="identity_proof" class="pull-right" data-category="1" />
+                   <select name="sub_catg[]">
+                       <option value="1.1" >Pan</option>
+                       <option value="1.2">Aadhar</option>
+                   </select>
+                   </li>
                    
-                 </select>
-                   <li>Address Proof <input type="file" name="address_proof" id="address_proof" class="pull-right" /></li>
-                   <li>Property Ownership Proof <input type="file" name="ownership_proof" id="ownership_proof" class="pull-right"/></li>
+                 
+                   <li>Address Proof <input type="file" name="address_proof" id="address_proof" class="pull-right" data-category="2"/>
+                    <select name="sub_catg[]">
+                       <option value="2.1">Pan</option>
+                       <option value="2.2">Aadhar</option>
+                   </select>
+                   </li>
+                   <li>Property Ownership Proof <input type="file" name="ownership_proof" id="ownership_proof" class="pull-right" data-category="3" />
+                    <select name="sub_catg[]">
+                       <option value="3.1">Pan</option>
+                       <option value="3.2">Aadhar</option>
+                   </select>
+                   </li>
                   
                 </ul>
                 <div class="col-md-12">
-<a class="btn btn-primary btn-outline with-arrow mrg-top" id="proceed_upload" href="javascript:void(0)">Proceed<i class="icon-arrow-right"></i></a>
-            </div>
+                    <a class="btn btn-primary btn-outline with-arrow mrg-top" id="proceed_upload">Proceed<i class="icon-arrow-right"></i></a>
+                </div>
                 </div>
                 
                 
@@ -2073,15 +2088,20 @@ var g_minTenure=0;
              alert('not valid');
 
         }else{
-            $.ajax({
-            type: "POST",  
-                     url: "{{URL::to('iifl-doc-upload')}}",
-                     data : $('#upload_details').serialize(),
-                     success: function(msg){
-                        console.log(msg);
-            });
-        } 
-    })
+        $.ajax({
+          url:"{{URL::to('iifl-doc-upload')}}" ,  
+          data:new FormData($("#upload_details")[0]),
+          dataType:'json',
+          async:false,
+          type:'POST',
+          processData: false,
+          contentType: false,
+          success: function(msg){
+                 console.log(msg);
+            }
+        });
+     } 
+    });
 </script>
 
 

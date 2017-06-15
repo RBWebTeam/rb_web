@@ -116,6 +116,9 @@ Route::post('iifl-eligibility','LoanController@iifl_eligibility');
 Route::post('iifl-instant-eligibility','LoanController@iifl_instant_eligibility');
 Route::post('iifl-aadhar-otp','LoanController@iifl_adhar_otp');
 Route::post('iifl-aadhar-confirm-otp','LoanController@iifl_adhar_confirm_otp');
+Route::post('iifl-offer-status','LoanController@offer_status');
+Route::post('iifl-doc-upload','LoanController@iifl_doc_upload');
+Route::post('iifl-finanacial-doc-upload','LoanController@iifl_financial_doc_upload');
 
 
 
@@ -147,7 +150,7 @@ Route::post('credit-report-verify','ExperianController@verify_otp');
 //doc upload
 Route::get('doc-upload','UploadController@Upload');
 Route::post('doc-upload','UploadController@UploadPost');
-Route::post('iifl-doc-upload','LoanController@iifl_doc_upload');
+
  
 //something went wrong page
 Route::get('went-wrong','ErrorController@went_wrong');

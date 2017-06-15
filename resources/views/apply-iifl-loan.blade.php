@@ -40,7 +40,11 @@
       .small-txt {font-size:10px;}
       .input__field {border-radius:0px;}
       .input__label--nao {top:15px;}
-      .input__field {border: 1px solid #dfdfdf;height:60px;}
+      .input__field {border: 2px solid #dfdfdf;height:60px;}
+      label.error {display: none !important; }
+        .error {
+                    border:2px solid red;
+                }
       h1 {font-size:40px;color:#75a8de;padding:20px; padding-bottom:0px;margin-bottom:5px;}
 
   </style>
@@ -64,7 +68,7 @@
                 <span class="input input--nao">
                    <input type="hidden" name="Company_Cat" id="Company_Cat" value="">
 
-                    <input type="text" class="input__field input__field--nao search_company"  name="Company_Name" id="Company_Name" required="">
+                    <input type="text" class="input__field input__field--nao search_company"  name="Company_Name" id="Company_Name" required>
                     <label class="input__label input__label--nao" for="Company_Name">
                         <span class="input__label-content input__label-content--nao">Where Do You Work</span>
                     </label>
@@ -144,7 +148,7 @@
             
             <!-- <br>
             <hr class="hr-sty"> -->
-            <div id="Eligibility_details">
+            <div id="Eligibility_details" style="display: none;">
             <form name="eligibility_form" id="eligibility_form" method="POST">
                       {{ csrf_field() }}
             <div class="col-md-12">
@@ -206,75 +210,7 @@
             </form>
             </div>
             
-            <!-- <br>
-            <hr class="hr-sty">
-             <section class="content">
-            
-            <div class="col-md-12">
-            <table class="table table-bordered" width="100%">
-                <tr>
-                    <td class="bg-info">Company Name: <b>Rupeeboss</b></td>
-                    <td class="bg-danger">Monthly Salary: <b>Rs. 100000</b></td>
-                    <td class="bg-info">Current EMI: <b>Rs. 14000</b></td>
-                </tr>
-             </table>
-                </div>
-                <div class="col-md-1"></div>
-                <div class="col-md-10 bg-primary pad mrg-btm">
-                   
-                  <div class="col-md-3 bdr-rigt">Loan Details</div>
-                  <div class="col-md-3 bdr-rigt">
-                  <p>Loan Amount:- <b>2,00,000</b></p>
-                  <p>Loan Amount:- <b>2,00,000</b></p>
-                  </div>
-                  <div class="col-md-3 bdr-rigt">
-                  <p>Rate of Intrest:- <b>15%</b></p>
-                  <p>Processing Fees:- <b>Rs.3000</b></p>
-                  </div>
-                  <div class="col-md-3">
-                  <p>EMI:- <b>Rs.8,000</b></p>
-                  </div>
-                </div>
-                <div class="col-md-1"></div>
-                
-                <h3 class="col-md-12 mrg-tpp">Autofill Your Application Using Your Aadhar Number:</h3>
-                <span class="input input--nao">
-                    <input class="input__field input__field--nao" type="text" name="aadhar_num" id="aadhar_num" oninput="aadhar('aadhar_num')" required minlength="12" maxlength="12"  />
-                    <label class="input__label input__label--nao" for="input-1">
-                        <span class="input__label-content input__label-content--nao">Enter Your Aadhar No.</span>
-                    </label>
-                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
-                        <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
-                    </svg>
-                    <div id="aadhar_number" style="display:none;color: red;">Oops.Please Enter Valid Aadhar Number.!!</div>
-                </span>
-                 
-                
-                <h4 class="text-danger small-txt">OTP has been sent to your Registred Mobile No.</h4>
-                <div class="col-md-12"><a class="btn btn-primary btn-outline with-arrow mrg-btm otp" href="#">Get OTP<i class="icon-arrow-right"></i></a></div>
-                
-                <div style="display:none;">
-                <span class="input input--nao">
-                    <input class="input__field input__field--nao" type="text" id="input-1" />
-                    <label class="input__label input__label--nao" for="input-1">
-                        <span class="input__label-content input__label-content--nao">Enter OTP</span>
-                    </label>
-                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
-                        <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
-                    </svg>
-                </span>
-                <div class="col-md-12 mrg-btm"><a class="btn btn-primary btn-outline with-arrow mrg-top" href="#">Confirm<i class="icon-arrow-right"></i></a> <a href="#" class="small-txt">Resend OTP</a></div>
-                </div>
-            </section>
-             -->
-            
-            <!-- <h3 class="mrg-tpp">Proceed Without aadhar Number</h3>
-            <a class="btn btn-primary btn-outline with-arrow mrg-top" href="#">Click Here<i class="icon-arrow-right"></i></a>
-            
-            <br>
-            <hr class="hr-sty"> -->
-
-            <div id="Applicant_Details">
+            <div id="Applicant_Details" style="display: none;">
             <form name="applicant_deatils" id="applicant_deatils" method="POST">
                       {{ csrf_field() }}
              <div class="col-md-12">
@@ -755,7 +691,7 @@
             </form>
             </div>
 
-            <div id="co_applicant">
+            <div id="co_applicant" style="display: none;">
                 <form id="co_applicant_details" name="co_applicant_details" method="POST">
                  {{ csrf_field() }}
                 <section class="content">
@@ -1079,8 +1015,9 @@
 
             <br>
             <!-- <hr class="hr-sty"> -->
-            <div id="otp">
+            <div id="otp" style="display: none;">
             <form name="aadharotp" id="aadharotp" method="POST">
+             {{ csrf_field() }}
              <section class="content">
             
             <div class="col-md-12">
@@ -1111,41 +1048,54 @@
                 <div class="col-md-1"></div>
                 
                 <h3 class="col-md-12 mrg-tpp">OTP to verify your Aadhar Details:</h3>
-                <!-- <span class="input input--nao">
-                    <input class="input__field input__field--nao" type="text" name="aadhar_num" id="aadhar_num" oninput="aadhar('aadhar_num')" required minlength="12" maxlength="12"  />
+                <span class="input input--nao">
+                    <input class="input__field input__field--nao" type="text" name="Aadharno" id="Aadharno" oninput="aadharnum('Aadharno')" required minlength="12" maxlength="12"  />
                     <label class="input__label input__label--nao" for="input-1">
                         <span class="input__label-content input__label-content--nao">Enter Your Aadhar No.</span>
                     </label>
                     <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
                         <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
                     </svg>
-                    <div id="aadhar_number" style="display:none;color: red;">Oops.Please Enter Valid Aadhar Number.!!</div>
-                </span> -->
+                    <div id="aadhar_no" style="display:none;color: red;">Oops.Please Enter Valid Aadhar Number.!!</div>
+                </span>
                  
                 
                 <h4 class="text-danger small-txt">OTP has been sent to your Registred Mobile No.</h4>
                 <div class="col-md-12"><a class="btn btn-primary btn-outline with-arrow mrg-btm otp" id="aadhar_otp" href="javascript:void(0)">Get OTP<i class="icon-arrow-right"></i></a></div>
+                </section>
+                </form>
+                </div>
                 
+
+                <div id="confirm_otp" style="display: none;">
+                <form name="confirm_aadharotp" id="confirm_aadharotp" method="POST">
+                {{ csrf_field() }}
+                <section>
                 <div>
                 <span class="input input--nao">
-                    <input class="input__field input__field--nao" type="text" id="input-1" />
-                    <label class="input__label input__label--nao" for="input-1">
+                    <input class="input__field input__field--nao" name="otp" id="otp" type="text" onkeypress="return fnAllowNumeric(event)" required/>
+                    <label class="input__label input__label--nao" for="otp">
                         <span class="input__label-content input__label-content--nao">Enter OTP</span>
                     </label>
                     <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
                         <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
                     </svg>
                 </span>
-                <div class="col-md-12 mrg-btm"><a class="btn btn-primary btn-outline with-arrow mrg-top" id="confirm" href="javascript:void(0)">Confirm<i class="icon-arrow-right"></i></a> <a href="#" class="small-txt">Resend OTP</a></div>
+                <div class="col-md-12 mrg-btm"><a class="btn btn-primary btn-outline with-arrow mrg-top" id="confirm" href="javascript:void(0)">Confirm<i class="icon-arrow-right"></i></a></div>
                 </div>
+                
+                
             </section>
-
-            <h3 class="mrg-tpp">Proceed Without aadhar Number</h3>
-            <a class="btn btn-primary btn-outline with-arrow mrg-top" href="#">Click Here<i class="icon-arrow-right"></i></a>
             </form>
             </div>
+            <div style="display: none;" >
+            <h3 class="mrg-tpp">Proceed Without aadhar Number</h3>
+
+            <a class="btn btn-primary btn-outline with-arrow mrg-top" id="proceed_without_aadhar" href="javascript:void(0)">Click Here<i class="icon-arrow-right"></i></a></div>
+            
+            
             <br>
-            <div id="Instant_Approve">
+            <div id="Instant_Approve" style="display: none;">
             <form name="instant_form" id="instant_form" method="POST">
                       {{ csrf_field() }}
             <section class="content">
@@ -1157,6 +1107,7 @@
             </div>
                 
                 <span class="input input--nao">
+                <input class="input__field input__field--nao" type="hidden" name="TotalPayableAmount" required  value="" />
                     <input class="input__field input__field--nao" type="text" name="AppliedLoanamount"  onkeypress="return fnAllowNumeric(event)" required />
                     <label class="input__label input__label--nao" for="AppliedLoanamount">
                         <span class="input__label-content input__label-content--nao">Loan Amount</span>
@@ -1211,7 +1162,7 @@
             </form>
             </div>
             
-            <div id="upload">
+            <div id="upload" style="display: none;">
             <form name="upload_details" id="upload_details" enctype="multipart/form-data" method="POST">
             {{ csrf_field() }}
             <div>
@@ -1239,7 +1190,7 @@
                 
              <section class="content">
             <div class="col-md-2"></div>
-            <div class="col-md-8">
+            <!-- <div class="col-md-8">
             <table class="table table-bordered" width="100%">
                 <tr>
                     <td class="bg-info">Company Name: <b>Rupeeboss</b></td>
@@ -1247,9 +1198,9 @@
                     <td class="bg-info">Current EMI: <b>Rs. 14000</b></td>
                 </tr>
              </table>
-                </div>
+                </div> -->
             
-                <div class="col-md-12 bg-primary pad mrg-btm">
+                <!-- <div class="col-md-12 bg-primary pad mrg-btm">
                    
                   <div class="col-md-3 bdr-rigt">Loan Details</div>
                   <div class="col-md-3 bdr-rigt">
@@ -1263,30 +1214,30 @@
                   <div class="col-md-3">
                   <p>EMI:- <b>Rs.8,000</b></p>
                   </div>
-                </div>
+                </div> -->
             
                 <div class="col-md-8 col-md-offset-2">
                 <h3 class="text-center pad">Non Financial Documents</h3>
                 <ul class="ull">
                    <li>Identity Proof <input type="file" name="identity_proof" id="identity_proof" class="pull-right" data-category="1" />
-                   <select name="sub_catg[]">
-                       <option value="1.1" >Pan</option>
-                       <option value="1.2">Aadhar</option>
-                   </select>
+                   <select  name="sub_catg[1]"  required id="identity_proof_select" class="drop-arr ">
+                    <option disabled selected value="">Select</option>
+                      
+                    </select>
                    </li>
                    
                  
                    <li>Address Proof <input type="file" name="address_proof" id="address_proof" class="pull-right" data-category="2"/>
-                    <select name="sub_catg[]">
-                       <option value="2.1">Pan</option>
-                       <option value="2.2">Aadhar</option>
-                   </select>
+                    <select  name="sub_catg[2]"  required id="address_proof_select" class="drop-arr ">
+                    <option disabled selected value="">Select</option>
+                      
+                    </select>
                    </li>
-                   <li>Property Ownership Proof <input type="file" name="ownership_proof" id="ownership_proof" class="pull-right" data-category="3" />
-                    <select name="sub_catg[]">
-                       <option value="3.1">Pan</option>
-                       <option value="3.2">Aadhar</option>
-                   </select>
+                   <li>Property Ownership Proof <input type="file" name="ownership_proof" id="ownership_proof" class="pull-right" data-category="3"/>
+                    <select  name="sub_catg[3]"  required id="ownership_proof_select" class="drop-arr ">
+                    <option disabled selected value="">Select</option>
+                      
+                    </select>
                    </li>
                   
                 </ul>
@@ -1294,112 +1245,68 @@
                     <a class="btn btn-primary btn-outline with-arrow mrg-top" id="proceed_upload">Proceed<i class="icon-arrow-right"></i></a>
                 </div>
                 </div>
-                
-                
-                
-                <div class="row">
-                <div class="col-md-10 col-md-offset-1">
-                <hr>
-                <h3 class="text-center pad">Non Financial Documents</h3>
-                <ul class="ull center-block">
-                   <li>Identity Proof <input type="file" name="identityproof" class="pull-right" /></li>       
-                </ul>
-                 <div class="jumbotron">
-                 <select class="col-md-6 block drop-arr select-sty">
-                     <option value="">Pan</option>
-                     <option>Pan</option>
-                     <option>Pan</option>
-                 </select>
-                 
-                 <div class="col-md-3">
-                 <input type="file" class="filestyle" data-buttonName="btn-primary">
-                
-                </div>
-                <div class="col-md-2">
-                     <a class="btn btn-primary" href="#">Upload</a>
-                </div>
-                </div>
-
-
-
-                <div class="row">
-                <div class="col-md-10 col-md-offset-1">
-                <hr>
-                <h3 class="text-center pad">Financial Documents</h3>
-                <div class="col-md-4 text-left"><input type="radio" name="rdo1"/> E-verify</div><div class="col-md-4 text-left"><input type="radio" name="rdo1"/> Upload Statement</div><div name="col-md-4 text-left"><input type="radio" name="rdo1"/> Upload Scanned Document</div>
-                
-            
-                <select class="col-md-8 drop-arr select-sty mrg-top">
-                     <option>Bank Name</option>             
-                 </select>
-                <select class="col-md-8 drop-arr select-sty mrg-top">
-                     <option>Account Type</option>              
-                 </select>
-                <div class="col-md-12 mrg-top">
-                     
-                     <button class="btn btn-primary pull-left" >Verify</button>
-                     
-                </div>
-        
+                </section>
+            </form>
             </div>
-            </div>  
-
-            
-<div class="row">
+                
+                <div id="financial_doc" style="display: none;" >
+                <form name="financial_details" id="financial_details" enctype="multipart/form-data" method="POST">
+                 {{ csrf_field() }}
+                <div class="row">
                 <div class="col-md-10 col-md-offset-1">
                 <hr>
                 <h3 class="text-center pad">Financial Documents</h3>
-                <div class="col-md-4 text-left"><input type="radio" name="rdo1"/> E-verify</div><div class="col-md-4 text-left"><input type="radio" name="rdo1"/> Upload Statement</div><div name="col-md-4 text-left"><input type="radio" name="rdo1"/> Upload Scanned Document</div>
                 
-              <h3 class="text-left mrg-top pad1">Bank Statement</h3>
-              
-                <select class="col-md-8 drop-arr select-sty mrg-top">
-                     <option>Consolidated 3 Month Bank</option>             
+                <input type="text" name="BankName" id="BankName"  Placeholder="Name Of The Bank" class="col-md-8" required />
+                <select class="col-md-8 drop-arr select-sty mrg-top" name="Accounttype" id="Accounttype" required>
+                    <option disabled selected value="">Account Type</option>
+                              
                  </select>
+                 <div>
+              <h3 class="text-left mrg-top pad1">Bank Statement</h3>
+                <select class="col-md-8 drop-arr select-sty mrg-top" name="sub_catg[]" id="BankStatement" required="">
+                    <option disabled selected value="">Bank Statement</option>          
+                 </select>
+
+                <div class="col-md-4 no-pad"><input type="file" name="BankStatement" /></div>
+                 </div>
             
-                <div class="col-md-12 mrg-top"> 
+                <!-- <div class="col-md-12 mrg-top"> 
                 <div class="col-md-4 no-pad"><input type="file" /></div><div class="col-md-4"><button class="btn btn-primary pull-left" >Upload</button></div> 
-                </div>
+                </div> -->
                 
                 <div class="col-md-12 mrg-top">
                  <h3 class="text-left pad1">Enter The Disbursement Amount</h3>
-                 <input type="text"  Placeholder="IFSC" class="col-md-8"/>
+                 <input type="text" name="IFSC" id="IFSC"  Placeholder="IFSC" class="col-md-8"/>
                  
-                 <input type="text"  Placeholder="Salary Slip" class="col-md-8 mrg-top"/>
+                <!--  <input type="text"  Placeholder="Salary Slip" class="col-md-8 mrg-top"/> -->
                  
-                 <select class="col-md-8 drop-arr select-sty mrg-top">
-                     <option>Consolidated 3 Month Bank</option>             
+                 <select class="col-md-8 drop-arr select-sty mrg-top" name="sub_catg[]" id="SalarySatement" required>
+                     <option disabled selected value="">Salary Statement</option>                
                  </select>
+                 <div class="col-md-4 no-pad"><input type="file" name="SalarySatement" /></div>
                 </div>
-                <div class="col-md-12 mrg-top"> 
-                <div class="col-md-4 no-pad"><input type="file" /></div><div class="col-md-4"><button class="btn btn-primary pull-left" >Upload</button></div> 
-                </div>
-        
-            </div>
-            </div>
-            
-            
-            
-            <!-- <div class="row">
-                <div class="col-md-10 col-md-offset-1">
-                <hr>
-                <h3 class="text-center pad">Workplace Verification</h3>             
-                <input type="text"  Placeholder="Address 1*" class="col-md-8 mrg-top"/>
-                <input type="text"  Placeholder="Address 2*" class="col-md-8 mrg-top"/>
-                <input type="text"  Placeholder="Address 3*" class="col-md-8 mrg-top"/>
-                <input type="text"  Placeholder="Pincode*" class="col-md-8 mrg-top"/>
-                <input type="text"  Placeholder="City*" class="col-md-8 mrg-top"/>
-                <input type="text"  Placeholder="State" class="col-md-8 mrg-top"/>
-                <div class="col-md-6 text-left">Work Email*<input type="text"  Placeholder="Work Email Id" class="mrg-top"/></div>
-                
                 <div class="col-md-12 mrg-top">
-                     
-                     <button class="btn btn-primary pull-left" >Submit</button>
-                     
+                <select class="col-md-8 drop-arr select-sty mrg-top" name="Statementtype" id="Statementtype" required>
+                     <option disabled selected value="">Statement Type</option> 
+                     <option value="E-Verify">E-Verify</option> 
+                     <option value="Manual">Manual</option>                
+                 </select>
+                 </div>
+
+                <div class="col-md-12 mrg-top"> 
+                <div class="col-md-12">
+                    <a class="btn btn-primary btn-outline with-arrow mrg-top" id="proceed">Proceed<i class="icon-arrow-right"></i></a>
                 </div>
         
             </div>
-            </div> -->
+            </div>
+            </form>
+            </div>
+            
+            
+            
+            
    
    
    <div class="row">
@@ -1412,25 +1319,43 @@
             </div>
             </div>
                         
-            </section>
+            <!-- </section>
             </form>
-            </div>
+            </div> -->
             
               
    
               
-            </div>
-        
+           
             
-         </div>
+         
         
         
-    </div>
-    </div></div></div>
+   
 
 <br>
 @include('layout.footer')
 @include('layout.script')
+
+<div class="modal fade" tabindex="-1" role="dialog" id="iifl_process">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Confirmation Status</h4>
+      </div>
+      <div class="modal-body">
+         <h4><p><b>Thank You For Choosing IIFL. Our Representative Will Get Back To You Soon.</b></p></h4>
+        
+      </div>
+      
+      <div class="modal-footer">
+        
+        
+      </div>
+    </div>
+  </div>
+</div>
 
 <script type="text/javascript">
   function AllowAlphabet(e)
@@ -1764,6 +1689,12 @@ $(document).ready(function(){
     dropdown_populate_api_call('EducationMaster');
     
     dropdown_populate_api_call('PurposeofLoan');
+    dropdown_populate_api_call('IDProof');
+    dropdown_populate_api_call('AddressProof');
+    dropdown_populate_api_call('OwnershipType');
+    dropdown_populate_api_call('AccountType');
+    dropdown_populate_api_call('BankStatement');
+    dropdown_populate_api_call('SalarySatement');
     });
    function dropdown_populate_api_call(param){
      var v_token = "{{csrf_token()}}";
@@ -1784,8 +1715,26 @@ $(document).ready(function(){
             }else if(param=='EducationMaster'){
                 populate_city_education(msg,'Education');
             }
-            else{
+            else if(param=='PurposeofLoan'){
                 populate_city_education(msg,'PurposeofLoan');
+            }
+            else if(param=='IDProof'){
+                populate_city_education(msg,'identity_proof_select');
+            }
+            else if(param=='AddressProof'){
+                populate_city_education(msg,'address_proof_select');
+            }
+            else if(param=='OwnershipType'){
+                populate_city_education(msg,'ownership_proof_select');
+            }
+            else if(param=='AccountType'){
+                populate_city_education(msg,'Accounttype');
+            }
+            else if(param=='BankStatement'){
+                populate_city_education(msg,'BankStatement');
+            }
+            else if(param=='SalarySatement'){
+                populate_city_education(msg,'SalarySatement');
             }
     }
    
@@ -1988,34 +1937,13 @@ var g_minTenure=0;
          url: "{{URL::to('iifl-coapplicant')}}",
          data : $('#co_applicant_details').serialize(),
          success: function(msg){
-            var result=loan_eligibility(msg.body.ROI,msg.body.maxEmi,msg.body.maxTenure,msg.body.maxloanamt,msg.body.minTenure,msg.body.minloanamt,msg.body.processingfee,msg.body.offerstatus);
-            // console.log(msg);
-            console.log(msg.body);
+            
          }  
       }); 
         }
 
     });
-    function loan_eligibility(ROI,maxEmi,maxTenure,maxloanamt,minTenure,minloanamt,processingfee,offerstatus,){
-        var maxloan=maxloanamt;
-
-      //   console.log(maxloanamt);
-      $('#maxloan').empty().append(maxloan);
-      var rateofint=ROI;
-      $("#input[name='ROI']").val(ROI);
-      var processfee=processingfee;
-      $("#input[name='Processingfee']").val(processingfee);
-      // var max_installment=maxEmi;
-      //  $('#maxEmi').empty().append(max_installment);
-      g_maxloanamt=maxloanamt;
-      if (g_maxloanamt>maxloanamt) {
-        console.log("Loanamount should be less than maximum loanamount");
-      } if(g_maxTenure>maxTenure) {
-       console.log("Loanamount should be less than maximum tenure");
-      }
-     
-
-    }
+    
 </script>
 <!-- Instant Approve -->
 <script type="text/javascript">
@@ -2025,6 +1953,15 @@ var g_minTenure=0;
              alert('not valid');
 
         }else{
+            var amt= $("#input[name='AppliedLoanamount']").val();
+            var tenure =$("#input[name='Tenure']").val();
+            var days =tenure*12;
+            var roi =$('#input[name=ROI]').val();
+            var rate=roi/12/100;
+            var emi =amt * rate * (Math.pow(1 + rate, days) / (pow(1 + rate, days) - 1));
+            var total =((emi*days)-amt);
+            var ttl_payment = parseInt(amt)+parseInt(total);
+            $("#input[name='#TotalPayableAmount']").val(ttl_payment);
            $.ajax({  
          type: "POST",  
          url: "{{URL::to('iifl-instant-eligibility')}}",
@@ -2061,7 +1998,7 @@ var g_minTenure=0;
              alert('not valid');
 
         }else{
-            $('#instant_form').show();
+            $('#confirm_otp').show();
            $.ajax({  
          type: "POST",  
          url: "{{URL::to('iifl-aadhar-otp')}}",
@@ -2076,8 +2013,63 @@ var g_minTenure=0;
 <script type="text/javascript">
     $('#confirm').click(function(){
         alert('ok');
+     if(! $('#confirm_aadharotp').valid()){
+             alert('not valid');
 
+        }else{
+           $('#Instant_Approve').show();
+           $.ajax({  
+         type: "POST",  
+         url: "{{URL::to('iifl-aadhar-confirm-otp')}}",
+         data : $('#confirm_aadharotp').serialize(),
+         success: function(msg){
+              console.log(msg);
+           
+            
+         }  
+      });   
+        }
     });
+    </script>
+<script type="text/javascript">
+    $('#proceed_without_aadhar').click(function(){
+         $('#Instant_Approve').show();
+        $.ajax({  
+         type: "POST",  
+         url: "{{URL::to('iifl-offer-status')}}?_token="+"{{ csrf_token() }}",
+         data : $('').serialize(),
+         success: function(msg){
+
+             var result=loan_eligibility(msg.body.ROI,msg.body.maxEmi,msg.body.maxTenure,msg.body.maxloanamt,msg.body.minTenure,msg.body.minloanamt,msg.body.processingfee,msg.body.offerstatus);
+            // console.log(msg);
+            console.log(msg);
+            
+         }  
+      });   
+       
+    });
+    function loan_eligibility(ROI,maxEmi,maxTenure,maxloanamt,minTenure,minloanamt,processingfee,offerstatus,){
+          var offer=offerstatus;
+          // console.log(offer);
+          if(offer=="Rejected"){
+          $('#iifl_process').modal('show');
+          }
+      var maxloan=maxloanamt;
+       //   console.log(maxloanamt);
+      $('#maxloan').empty().append(maxloan);
+      var rateofint=ROI;
+      $("#input[name='ROI']").val(ROI);
+      var processfee=processingfee;
+      $("#input[name='Processingfee']").val(processingfee);
+      // var max_installment=maxEmi;
+      //  $('#maxEmi').empty().append(max_installment);
+      g_maxloanamt=maxloanamt;
+      if (g_maxloanamt>maxloanamt) {
+        console.log("Loanamount should be less than maximum loanamount");
+      } if(g_maxTenure>maxTenure) {
+       console.log("Loanamount should be less than maximum tenure");
+      }
+     }
 </script>
 
 <!-- Document upload -->
@@ -2088,6 +2080,7 @@ var g_minTenure=0;
              alert('not valid');
 
         }else{
+            $('#financial_doc').show();
         $.ajax({
           url:"{{URL::to('iifl-doc-upload')}}" ,  
           data:new FormData($("#upload_details")[0]),
@@ -2103,5 +2096,34 @@ var g_minTenure=0;
      } 
     });
 </script>
+<script type="text/javascript">
+    $('#proceed').click(function(){
+        alert('ok');
+       if(! $('#financial_details').valid()){
+             alert('not valid');
+
+        }else{
+           
+        $.ajax({
+          url:"{{URL::to('iifl-finanacial-doc-upload')}}" ,  
+          data:new FormData($("#financial_details")[0]),
+          dataType:'json',
+          async:false,
+          type:'POST',
+          processData: false,
+          contentType: false,
+          success: function(msg){
+                 console.log(msg);
+            }
+        });
+     } 
+    });
+</script>
+
+
+
+
+
+
 
 

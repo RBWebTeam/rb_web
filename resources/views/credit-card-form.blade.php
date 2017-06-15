@@ -476,6 +476,7 @@
      $('#PerResidenceAddress1').val($('#ResidenceAddress1').val());
      $('#PerResidenceAddress2').val($('#ResidenceAddress2').val());
      $('#PerResidenceAddress3').val($('#ResidenceAddress3').val());
+     $('#PerResidenceState').val($('#ResidenceState').val());
 
      $('#PerCity').val($('#City').val());
      $('#PerResidencePincode').val($('#ResidencePincode').val());

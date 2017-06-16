@@ -224,7 +224,7 @@
 									
 									
 									
-								<div class="row sec" style="display:none;" id="section2">
+								<div class="row sec" style="display:none;" id="section2">   
 									<div class="form-group">
 										<h4 class="hdr text-center">Current Address Details:</h4>
 										<div class="col-md-4">
@@ -265,9 +265,9 @@
                                     
 									
 									
-                                    <div class="row sec" style="display:none;" id="section3">
+                                    <div class="row sec" style="display:none;" id="section3" >  
 									<div class="form-group">
-									    &nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="same"/> Same As Above
+									    &nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="same" id="same_id" onclick="same_fn();" /> Same As Above
 										<h4 class="hdr text-center">Permanent Address Details:</h4>
 										<div class="col-md-4">
 											<input type="text" class="form-control" placeholder="flat No / Plot No / House No*" name="PerResidenceAddress1" id="PerResidenceAddress1" required>
@@ -391,7 +391,7 @@
 					</div>
 					<hr>
 					</div>
-					<button class="btn btn-primary btn-outline with-arrow mrg-top center-block" id="credit_id">NEXT<i class="icon-arrow-right" ></i></button>
+					<button class="btn btn-primary btn-outline with-arrow mrg-top center-block crd_id"  id="credit_id">NEXT<i class="icon-arrow-right" ></i></button>
 
 				</div>
 			</div>
@@ -464,6 +464,43 @@
 
 
 </script> -->
+<script type="text/javascript">
+
+ function same_fn(checked){
+
+       var id=  document.getElementById("same_id");
+         // document.getElementById("same_id").checked = false;
+     
+     if(id.checked){
+
+     $('#PerResidenceAddress1').val($('#ResidenceAddress1').val());
+     $('#PerResidenceAddress2').val($('#ResidenceAddress2').val());
+     $('#PerResidenceAddress3').val($('#ResidenceAddress3').val());
+     $('#PerResidenceState').val($('#ResidenceState').val());
+
+     $('#PerCity').val($('#City').val());
+     $('#PerResidencePincode').val($('#ResidencePincode').val());
+     $('#Persearch_statenm').val($('#search_statenm').val());
+     $('#per_res_type').val($('#type_current').val());
+     }else{
+
+     $('#PerResidenceAddress1').val('');
+     $('#PerResidenceAddress2').val(''); 
+     $('#PerResidenceAddress3').val('');
+
+     $('#PerCity').val('');
+     $('#PerResidencePincode').val('');
+     $('#Persearch_statenm').val('');
+     $('#per_res_type').val('');
+     	 
+     }
+    
+    
+    
+
+ }
+
+</script>
 
 <script type="text/javascript">
 
@@ -477,9 +514,13 @@
                 if(! $('#compareform').valid()){
                        return false;
                 }else{$('#section3').show();
-                ('#credit_id').hide();
+               
                 	     if(! $('#compareform').valid()){return false;
-                	     }else{$('#section4').show();
+                	     }else{      
+                               $('.crd_id').hide();
+                	     	   $('#section4').show();
+
+
                                
                 	     }
                 }

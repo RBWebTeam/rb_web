@@ -1902,24 +1902,14 @@ var global_tenure=0;
         $('#Emi').val(installment);
         // $("#input[name='Emi']").val(installment);
         $('#TotalPayableAmount').val(ttl_payment);
-
-        // if (applied_loan > eligible_amount) 
-        // {
-        //     console.log("Please Enter Less Amount");
-        // }
-
-        
-
-
-
-      }
+         }
 
     });
 </script>
 
 <script type="text/javascript">
     $('#applicant_form').click(function(){
-        // alert('ok');
+       
         if(! $('#applicant_deatils').valid()){
             // alert('not valid');
 
@@ -1945,11 +1935,6 @@ var global_tenure=0;
 
 <!-- Co-applicant Ajax -->
 <script type="text/javascript">
-var g_maxloanamt=0;
-var g_minloanamt=0;
-var g_maxTenure=0;
-var g_minTenure=0;
-
     $('#co_applicant_form').click(function(){
         alert('ok');
         if(! $('#co_applicant_details').valid()){

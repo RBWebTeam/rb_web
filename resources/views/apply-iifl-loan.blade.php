@@ -427,10 +427,10 @@
                 
                 <!-- <div class="col-md-12 text-danger mar-top"><input type="checkbox" name="check"> I Agree to all the terms and conditions.</div> -->
                 </section>
-
-                <section class="content">
-            <div class="col-md-12"><h3 class="mrg-tpp">Permanent Address</h3></div>
                 
+                <input type="checkbox" name="same_id" id="same_id"/> Same As Above
+                <section class="content">
+                <div class="col-md-12"><h3 class="mrg-tpp">Permanent Address</h3></div>
                 <span class="input input--nao">
                     <input class="input__field input__field--nao" type="text" name="PermanentAddress1" id="PermanentAddress1" required />
                     <label class="input__label input__label--nao" for="PermanentAddress1">
@@ -1105,7 +1105,7 @@
             <hr class="hr-sty">
             
             <div class="col-md-12">
-             <h3>Congratulation<i><b class="text-primary"><span id="name"></span></b></i>&nbsp;You are eligible for a loan of <b><span id="maxloan"></span></b> <a class="bg-primary" href="javascript:void(0)">Apply Now</i></a></h3>
+             <h3>Congratulation<i><b class="text-primary"><span id="first_name"></span></b></i>&nbsp;You are eligible for a loan of <b><span id="maxloan"></span></b> <a class="bg-primary" href="javascript:void(0)">Apply Now</i></a></h3>
              <br>
             </div>
                 
@@ -1915,7 +1915,8 @@ var global_tenure=0;
 
         }else{
             var person_name =$('#FName').val();
-            $('#name').val(person_name);
+            // console.log(person_name);
+            $('#first_name').val(person_name);
             var aadhar=$('#AadhaarNumber').val();
             $('#Aadharno').val(aadhar);
              $('#Applicant_Details').hide();
@@ -2063,6 +2064,7 @@ var global_tenure=0;
           var offer=offerstatus;
           // console.log(offer);
           if(offer=="Rejected"){
+            $('#Instant_Approve').hide();
          alert("Thank You For Choosing IIFL. Our Representative Will Get In Contact With You");
           }
       var maxloan=maxloanamt;
@@ -2128,6 +2130,17 @@ var global_tenure=0;
             }
         });
      } 
+    });
+</script>
+<script type="text/javascript">PermanentState
+    $('#same_id').click(function(){
+        $('#PermanentAddress1').val($('#CurrentAddress1').val());
+        $('#PermanentAddress2').val($('#CurrentAddress2').val());
+        $('#PermanentAddress3').val($('#CurrentAddress3').val());
+        $('#PermanentPin').val($('#CurrentPin').val());
+        $('#PermanentState').val($('#CurrentState').val());
+
+   
     });
 </script>
 

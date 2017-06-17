@@ -1016,7 +1016,7 @@
 
             <br>
             <!-- <hr class="hr-sty"> -->
-            <div id="otp">
+            <div id="otp" style="display: none;">
             <form name="aadharotp" id="aadharotp" method="POST">
              {{ csrf_field() }}
              <section class="content">

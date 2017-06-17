@@ -329,7 +329,7 @@
                     </svg>
                 </span>
                 <span class="input input--nao">
-                    <input class="input__field input__field--nao" type="text" name="AlternateMobileNo" id="AlternateMobileNo" onkeypress="return fnAllowNumeric(event)" maxlength="10" minlength="10"/>
+                    <input class="input__field input__field--nao" type="text" name="AlternateMobileNo" id="AlternateMobileNo" onkeypress="return fnAllowNumeric(event)" maxlength="12" minlength="10"/>
                     <label class="input__label input__label--nao" for="AlternateMobileNo">
                         <span class="input__label-content input__label-content--nao">Residence Landline</span>
                     </label>
@@ -1016,7 +1016,7 @@
 
             <br>
             <!-- <hr class="hr-sty"> -->
-            <div id="otp" style="display: none;">
+            <div id="otp">
             <form name="aadharotp" id="aadharotp" method="POST">
              {{ csrf_field() }}
              <section class="content">
@@ -1024,9 +1024,9 @@
             <div class="col-md-12">
             <table class="table table-bordered" width="100%">
                 <tr>
-                    <td class="bg-info">Company Name: <b>Rupeeboss</b></td>
-                    <td class="bg-danger">Monthly Salary: <b>Rs. 100000</b></td>
-                    <td class="bg-info">Current EMI: <b>Rs. 14000</b></td>
+                    <td class="bg-info">Company Name: <b><span id="comp_name"></span></b></td>
+                    <td class="bg-danger">Monthly Salary: <b><span id="salary"></span></b></td>
+                    <td class="bg-info">Current EMI: <b><span id="paying_emi"></span></b></td>
                 </tr>
              </table>
                 </div>
@@ -1035,15 +1035,15 @@
                    
                   <div class="col-md-3 bdr-rigt">Loan Details</div>
                   <div class="col-md-3 bdr-rigt">
-                  <p>Loan Amount:- <b>2,00,000</b></p>
-                  <p>Loan Amount:- <b>2,00,000</b></p>
+                  <p>Loan Amount:- <b><span id="loanamt"></span></b></p>
+                  <p>Loan Tenure:- <b><span id="loantenure"></span></b></p>
                   </div>
                   <div class="col-md-3 bdr-rigt">
-                  <p>Rate of Intrest:- <b>15%</b></p>
-                  <p>Processing Fees:- <b>Rs.3000</b></p>
+                  <p>Rate of Intrest:- <b><span id="intrest"></span></b></p>
+                  <p>Processing Fees:- <b><span id="process_fee"></span></b></p>
                   </div>
                   <div class="col-md-3">
-                  <p>EMI:- <b>Rs.8,000</b></p>
+                  <p>EMI:- <b><span id="e_m_i"></span></b></p>
                   </div>
                 </div>
                 <div class="col-md-1"></div>
@@ -1782,17 +1782,21 @@ var global_tenure=0;
         var company =$('#Company_Name').attr('data-value');
         $('#CompanyNm').html(name);
         $('#CompanyName').val(name);
-         $('#Name').html(name);
+        $('#Name').html(name);
+         $('#comp_name').html(name);
 
         var income = $('#Monthly_Salary').val();
         $('#Income').empty().append(income);
         $('#Salary').empty().append(income);
         $('#MonthlySalary').val(income);
+         $('#salary').empty().append(income);
 
         var emi= $('#Monthly_Obligation').val();
          $('#Current_EMI').empty().append(emi);
-          $('#Current').empty().append(emi);
+         $('#Current').empty().append(emi);
          $('#MonthlyObligation').val(emi);
+         $('#paying_emi').empty().append(emi);
+
          $.ajax({  
          type: "POST",  
          url: "{{URL::to('iifl-eligibility')}}",
@@ -1847,7 +1851,7 @@ var global_tenure=0;
          // console.log(a);
         var amount =max_emi/a;
         var eligible_amount=Math.round(amount);
-        console.log(eligible_amount);
+        // console.log(eligible_amount);
         $('#eligible').empty().append(eligible_amount);
         global_eligible_amount=eligible_amount;
         $('#AppliedLoan').val(eligible_amount);
@@ -1868,7 +1872,7 @@ var global_tenure=0;
         alert('Enter amount less than or equal to required tenure');
         return false;
         }
-       console.log(amount +" " +global_eligible_amount);
+       // console.log(amount +" " +global_eligible_amount);
         if(! $('#eligibility_form').valid() ){
              alert('okae');
     //      
@@ -1877,20 +1881,25 @@ var global_tenure=0;
         $('#Applicant_Details').show();
 
         var applied_loan=$('#AppliedLoan').val();
+        console.log(applied_loan);
         $('#Amount').empty().append(applied_loan);
+        $('#loanamt').empty().append(applied_loan);
         // $("input[name='AppliedLoanamount']").val(applied_loan);
         var days =$('#tenure').val();
         var no_of_days= days*12;
         $('#LoanTenure').empty().append(days);
+        $('#loantenure').empty().append(days);
         // $("input[name='Tenure']").val(days);
         var a = $('#int span').html();
          $('#RateOfInt').empty().append(a);
+         $('#intrest').empty().append(applied_loan);
         var Rate = a/12/100;
         var installment_iifl=applied_loan * Rate * (Math.pow(1 + Rate, no_of_days) / (Math.pow(1 + Rate, no_of_days) - 1));
       
         var installment =Math.round(installment_iifl);
         $('#EquatedMonthly').empty().append(installment);
         $('#EMI').val(installment);
+        $('#e_m_i').empty().append(installment);
          var total =((installment*no_of_days)-applied_loan);
         
         var ttl_payment = parseInt(applied_loan) + parseInt(total);;

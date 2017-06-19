@@ -40,7 +40,7 @@
       .small-txt {font-size:10px;}
       .input__field {border-radius:0px;}
       .input__label--nao {top:15px;}
-      .input__field {border: 2px solid #dfdfdf;height:60px;}
+      .input__field {border:1px solid #dfdfdf;height:60px;}
       label.error {display: none !important; }
         .error {
                     border:2px solid red;

@@ -2238,19 +2238,7 @@ var global_tenure=0;
 			
 			
 		</script>
-        <script type="text/javascript">
-        function getAge(dateString) {
-            var today = new Date();
-            var date_of_joining = new Date(dateString);
-            var experience = today.getFullYear() - date_of_joining.getFullYear();
-            var m = today.getMonth() - date_of_joining.getMonth();
-            if (m < 0 || (m === 0 && today.getDate() < date_of_joining.getDate())) {
-               experience--;
-            }
-            return experience;
-            }
-          console.log('experience: ' + getAge("2016/10/13"));
-        </script>
+        
 
 
 

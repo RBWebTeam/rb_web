@@ -457,7 +457,7 @@ $url = $this::$url_static."/BankAPIService.svc/createIIFLCoAppDtls";
     public function iifl_eligibility(Request $req){
       // print_r($req->all());
       $quote_data=DB::select('call usp_iifl_pl_eligibility ("'.$req['Company_Cat'].'","'.$req['Monthly_Salary'].'")');
-       // print_r($quote_data);
+       print_r($quote_data);
       return $quote_data;
       }
 

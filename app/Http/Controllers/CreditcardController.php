@@ -19,7 +19,7 @@ class CreditcardController extends CallApiController
         // print "<pre>"; print_r($req->all());exit();
     $save=new credit_card_form_req(); 
     $id=$save->store($req);
- print_r($req->all());exit();
+ // print_r($req->all());exit();
     $newDob = date("d-m-Y",strtotime(str_replace('-','/', $req['DateOfBirth'])));
     // print_r($newDob);exit();
 
@@ -40,7 +40,7 @@ class CreditcardController extends CallApiController
 
     $post_data=json_encode($data);
           // print "<pre>";
-         print_r($post_data);exit();
+         // print_r($post_data);exit();
     $url = $this::$url_static."BankAPIService.svc/PostIciciBank";
     $result=$this->call_json_data_api($url,$post_data);
     $http_result=$result['http_result'];

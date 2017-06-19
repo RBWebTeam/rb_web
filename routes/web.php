@@ -81,6 +81,7 @@ Route::get('refresh-csrf', function(){
 
 // Route::get('api','LoanQuatesController@GetHomeLoanQuotes');
 
+// joel jangam
 /*emi test*/
 Route::get('check-emi','CompareController@emi2');
 Route::post('emi_cal','CompareController@emi_cal');
@@ -116,6 +117,15 @@ Route::post('iifl-eligibility','LoanController@iifl_eligibility');
 Route::post('iifl-instant-eligibility','LoanController@iifl_instant_eligibility');
 Route::post('iifl-aadhar-otp','LoanController@iifl_adhar_otp');
 Route::post('iifl-aadhar-confirm-otp','LoanController@iifl_adhar_confirm_otp');
+Route::post('iifl-offer-status','LoanController@offer_status');
+Route::post('iifl-doc-upload','LoanController@iifl_doc_upload');
+Route::post('iifl-finanacial-doc-upload','LoanController@iifl_financial_doc_upload');
+// Creditcardform
+Route::get('credit-card-form','CreditcardController@credit_card_form');
+Route::post('credit-submit','CreditcardController@credit_form_submit');
+Route::get('icici-credit-card-form','CreditcardController@icici_credit_card_form');
+Route::post('icici-credit-submit','CreditcardController@credit_form_submit');
+Route::get('icici','CreditcardController@icici_form');
 
 
 
@@ -147,19 +157,14 @@ Route::post('credit-report-verify','ExperianController@verify_otp');
 //doc upload
 Route::get('doc-upload','UploadController@Upload');
 Route::post('doc-upload','UploadController@UploadPost');
-Route::post('iifl-doc-upload','LoanController@iifl_doc_upload');
+
  
 //something went wrong page
 Route::get('went-wrong','ErrorController@went_wrong');
 
 Route::get('thank-you',function (){return view('thank-you');});
 
-// Creditcardform
-Route::get('credit-card-form','CreditcardController@credit_card_form');
-Route::post('credit-submit','CreditcardController@credit_form_submit');
-Route::get('icici-credit-card-form','CreditcardController@icici_credit_card_form');
-Route::post('icici-credit-submit','CreditcardController@credit_form_submit');
-Route::get('icici','CreditcardController@icici_form');
+
 
 Route::get('no-record-found',function (){return view('no-record-found');});
 //Route::get('test',function (){return view('test_parse');});

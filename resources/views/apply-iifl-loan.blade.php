@@ -1824,7 +1824,7 @@ var global_tenure=0;
 
     });
     function loan_eligibility_calc(tenure,pf,roi,foir){
-        // console.log(foir);
+        console.log(foir);
         // console.log(tenure+"  " +pf+ "  "+roi);
         var processing_fee =pf;
         $('#fee').empty().append(processing_fee);

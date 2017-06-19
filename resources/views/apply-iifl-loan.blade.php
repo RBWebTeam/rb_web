@@ -1496,6 +1496,7 @@ $(document).ready(function(){
         if (ui.item == null || ui.item == undefined || ui.item.value=='No Result Found') {
             
           $(".search_company").attr("data-value","Non CAT"); 
+          $("#Company_Cat").val("Non CAT");
           // $(".search_company").attr("disabled", false);
 
          
@@ -1803,6 +1804,7 @@ var global_tenure=0;
          data : $('#iifl_express_loan').serialize(),
          success: function(msg){
             var data=msg[0];
+            console.log(msg);
             var result=loan_eligibility_calc(data.Max_Tenure,data.pf,data.roi,data.foir);
             console.log(msg);
 

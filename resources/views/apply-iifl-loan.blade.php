@@ -687,7 +687,7 @@
                 
             <br>
             <div class="col-md-12">
-             <a class="btn btn-primary btn-outline with-arrow mrg-top applicant" id="applicant_form" href="javascript:void(0);">CHECK ELIGIBILITY<i class="icon-arrow-right"></i></a>
+             <a class="btn btn-primary btn-outline with-arrow mrg-top applicant" id="applicant_form" href="javascript:void(0);">NEXT<i class="icon-arrow-right"></i></a>
             </div>
             </form>
             </div>
@@ -1009,7 +1009,7 @@
                 <!-- <div class="col-md-12 text-danger mar-top"><input type="checkbox" name="check"> I Agree to all the terms and conditions.</div> -->
                 </section>
                 <div class="col-md-12">
-             <a class="btn btn-primary btn-outline with-arrow mrg-top applicant" id="co_applicant_form" href="javascript:void(0);">CHECK ELIGIBILITY<i class="icon-arrow-right"></i></a>
+             <a class="btn btn-primary btn-outline with-arrow mrg-top applicant" id="co_applicant_form" href="javascript:void(0);">NEXT<i class="icon-arrow-right"></i></a>
             </div>
                 </form>
             </div>
@@ -2152,6 +2152,9 @@ var global_tenure=0;
    
     });
 </script>
+
+
+
 
 
 

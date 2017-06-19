@@ -165,7 +165,7 @@
             </div>
 
             <section class="content">
-             <span class="input input--nao">
+             <span class="input input--nao input--filled">
                      <input class="input__field input__field--nao" type="text" name="AppliedLoan" id="AppliedLoan" onkeypress="return fnAllowNumeric(event)" minlength="6" maxlength="9" />
                         <label class="input__label input__label--nao" for="AppliedLoan">
                             <span class="input__label-content input__label-content--nao">Loan Amount</span>
@@ -174,7 +174,7 @@
                             <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
                     </svg>
                 </span>
-                <span class="input input--nao">
+                <span class="input input--nao input--filled">
                     <input class="input__field input__field--nao" type="text" name="tenure" id="tenure" onkeypress="return fnAllowNumeric(event)" maxlength="3" />
                     <label class="input__label input__label--nao" for="tenure">
                         <span class="input__label-content input__label-content--nao">Loan Tenure</span>
@@ -183,7 +183,7 @@
                         <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
                     </svg>
                 </span>
-                <span class="input input--nao">
+                <span class="input input--nao input--filled">
                     <input class="input__field input__field--nao" type="text" name="EMI" id="EMI" onkeypress="return fnAllowNumeric(event)"  />
                     <label class="input__label input__label--nao" for="EMI">
                         <span class="input__label-content input__label-content--nao">EMI</span>
@@ -211,7 +211,7 @@
             </form>
             </div>
             
-            <div id="Applicant_Details" style="display: none;">
+            <div id="Applicant_Details">
             <form name="applicant_deatils" id="applicant_deatils" method="POST">
                       {{ csrf_field() }}
              <div class="col-md-12">
@@ -400,7 +400,7 @@
                         <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
                     </svg>
                 </span>
-                <span class="input input--nao">
+                <span class="input input--nao input--filled">
                     <select class="input__field input__field--nao" name="CurrentState" id="CurrentState" required>
                     <option disabled selected value="">Select</option>
                       
@@ -412,7 +412,7 @@
                         <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
                     </svg>
                 </span>
-                <span class="input input--nao">
+                <span class="input input--nao input--filled">
                     <select class="input__field input__field--nao" name="CurrentCity" id="CurrentCity" required>
                     <option disabled selected value="">Select</option>
                       
@@ -467,7 +467,7 @@
                         <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
                     </svg>
                 </span>
-                <span class="input input--nao">
+                <span class="input input--nao input--filled">
                      <select class="input__field input__field--nao" name="PermanentState" id="PermanentState" required>
                     <option disabled selected value="">Select</option>
                       
@@ -479,7 +479,7 @@
                         <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
                     </svg>
                 </span>
-                <span class="input input--nao">
+                <span class="input input--nao input--filled">
                     <select class="input__field input__field--nao" name="PermanentCity" id="PermanentCity" required>
                     <option disabled selected value="">Select</option>
                       
@@ -503,7 +503,7 @@
             <section class="content">
             <div class="col-md-12"><h3 class="mrg-tpp">Residence Information</h3></div>
                 
-                <span class="input_exp input--nao">
+                <span class="input input--nao input--filled">
                     <select class="input__field input__field--nao fnt-clr" id="Residencetype" name="Residencetype" required>
                     <option selected disabled value="">ResidenceType</option>
                     <option value="Rented">Rented</option>
@@ -533,7 +533,7 @@
         <section class="content">
             <div class="col-md-12"><h3 class="mrg-tpp">Personal Information</h3></div>
                 
-                <span class="input input--nao">
+                <span class="input input--nao input--filled">
                     <select class="input__field input__field--nao" name="Education" id="Education" required>
                        <option disabled selected value="">Select</option>
                       
@@ -546,7 +546,7 @@
                     </svg>
                 </span>
 
-                <span class="input input--nao">
+                <span class="input input--nao input--filled">
                     <select class="input__field input__field--nao" name="PurposeofLoan" id="PurposeofLoan" required>
                        <option disabled selected value="">Select</option>
                       
@@ -558,7 +558,7 @@
                         <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
                     </svg>
                 </span>
-                <span class="input input--nao">
+                <span class="input input--nao input--filled">
                     <select class="input__field input__field--nao" name="MaritalStatus" id="MaritalStatus" required>
                        <option disabled selected value="">Select</option>
                        <option value="N">Single</option>
@@ -577,7 +577,7 @@
                     <h3 class="col-md-12 mrg-tpp">Employment Details.</h3>
                 
                 <span class="input input--nao">
-                    <input class="input__field input__field--nao lastReporteddate1" placeholder="Joining Date" type="text" name="joining_date" id="joining_date" required />
+                    <input class="input__field input__field--nao lastReporteddate1" placeholder="Joining Date" type="text" name="joining_date" id="joining_date" oninput="getAge()" required />
                     <label class="input__label input__label--nao" for="joining_date">
                         <!-- <span class="input__label-content input__label-content--nao">When did You Join (Company Name)</span> -->
                     </label>
@@ -652,7 +652,7 @@
                     </svg>
                     <div id="office_email" style="display:none;color: red;">Please Enter Valid Email Id.</div>
                 </span>
-                <span class="input input--nao">
+                <span class="input input--nao input--filled">
                     <select class="input__field input__field--nao" name="CompanyState" id="CompanyState" required>
                     <option disabled selected value="">Select</option>
                       
@@ -664,7 +664,7 @@
                         <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
                     </svg>
                 </span>
-                <span class="input input--nao">
+                <span class="input input--nao input--filled">
                     <select class="input__field input__field--nao" name="CompanyCity" id="CompanyCity" required>
                     <option disabled selected value="">Select</option>
                       
@@ -687,7 +687,7 @@
                 
             <br>
             <div class="col-md-12">
-             <a class="btn btn-primary btn-outline with-arrow mrg-top applicant" id="applicant_form" href="javascript:void(0);">CHECK ELIGIBILITY<i class="icon-arrow-right"></i></a>
+             <a class="btn btn-primary btn-outline with-arrow mrg-top applicant" id="applicant_form" href="javascript:void(0);">NEXT<i class="icon-arrow-right"></i></a>
             </div>
             </form>
             </div>
@@ -1009,7 +1009,7 @@
                 <!-- <div class="col-md-12 text-danger mar-top"><input type="checkbox" name="check"> I Agree to all the terms and conditions.</div> -->
                 </section>
                 <div class="col-md-12">
-             <a class="btn btn-primary btn-outline with-arrow mrg-top applicant" id="co_applicant_form" href="javascript:void(0);">CHECK ELIGIBILITY<i class="icon-arrow-right"></i></a>
+             <a class="btn btn-primary btn-outline with-arrow mrg-top applicant" id="co_applicant_form" href="javascript:void(0);">NEXT<i class="icon-arrow-right"></i></a>
             </div>
                 </form>
             </div>
@@ -1495,7 +1495,7 @@ $(document).ready(function(){
       change: function (event, ui) {
         if (ui.item == null || ui.item == undefined || ui.item.value=='No Result Found') {
             
-          $(".search_company").attr("data-value","Non Cat"); 
+          $(".search_company").attr("data-value","Non CAT"); 
           // $(".search_company").attr("disabled", false);
 
          
@@ -2238,6 +2238,10 @@ var global_tenure=0;
 			
 			
 		</script>
+        
+
+
+
 
 
 

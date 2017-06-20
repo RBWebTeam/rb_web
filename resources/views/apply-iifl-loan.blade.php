@@ -99,8 +99,8 @@
             
             <!-- <br>
             <hr class="hr-sty"> -->
-            <h3 class="text-uppercase exp-hed">Almost Done!</h3>
-            <span>Enter your contact information to receive a copy of your loan eligibility.</span>
+           <!--  <h3 class="text-uppercase exp-hed">Almost Done!</h3> -->
+            <h3 class="text-uppercase exp-hed">Enter your contact information to receive a copy of your loan eligibility.</h3>
             <section class="content">
                 
                 <span class="input input--nao">
@@ -1874,10 +1874,10 @@ var global_tenure=0;
         alert('Enter tenure less than or equal to required tenure');
         return false;
         }
-        alert("You must agree to the terms first.");
+        
        // console.log(amount +" " +global_eligible_amount);
         if(! $('#eligibility_form').valid() ){
-             // alert('okae');
+            alert("You must agree to the terms first.");
     //      
       }else{
         $('#Eligibility_details').hide();

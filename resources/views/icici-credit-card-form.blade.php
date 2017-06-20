@@ -413,7 +413,9 @@ $(".top").click(function() {
                       <option value="Company_Provided">Company Provided</option>
                     </select> 
             </div>
-
+			
+			<div class="col-xs-12"><P style="padding:10px; display:-webkit-inline-box;" class="pull-left"><input type="checkbox" name="check"/> &nbsp;&nbsp;Demo Text</p></div>
+              
                   <h4 class="txt-tlt pull-left hdn5">Permanent Address Details</h4> 
           <div class="col-xs-6 form-padding">
                     <div class="form-control inp-fld">

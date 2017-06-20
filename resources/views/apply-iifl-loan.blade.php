@@ -160,7 +160,7 @@
                     <td class="bg-info">Current EMI: <b>₹<span id="Current"></span></b></td>
                 </tr>
              </table>
-             <h3><i><b class="text-primary">Hurray !!</b></i>&nbsp;You are eligible for a loan of <b>₹<span id="eligible"></span></b > & tenure for <b><span id="period"></span></b> <a class="bg-primary" href="javascript:void(0);">Apply Now</i></a></h3>
+             <h3><i><b class="text-primary">Hurray !!</b></i>&nbsp;You are eligible for a loan of <b>₹<span id="eligible"></span></b > & tenure for <b><span id="period"></span> years.</b></h3>
              <br>
             </div>
 
@@ -202,7 +202,7 @@
                 <b><span id="fee"></span>%</b>
                 </span>
                  <hr>
-                <div class="col-md-12 text-danger mar-top"><input type="checkbox" name="check"/> I Agree to all the terms and conditions.</div>
+                <div class="col-md-12 text-danger mar-top"><input type="checkbox" name="check" required /> I Agree to all the terms and conditions.</div>
             
             
             
@@ -1863,20 +1863,21 @@ var global_tenure=0;
 <script type="text/javascript">
      
     $('#next_form').click(function(){
-
-       var amount=$('#AppliedLoan').val();
+     
+        var amount=$('#AppliedLoan').val();
        if(amount> global_eligible_amount){
         alert('Enter amount less than or equal to eligible amount');
         return false;
         }
         var divas =$('#tenure').val();
         if(divas> global_tenure){
-        alert('Enter amount less than or equal to required tenure');
+        alert('Enter tenure less than or equal to required tenure');
         return false;
         }
+        alert("You must agree to the terms first.");
        // console.log(amount +" " +global_eligible_amount);
         if(! $('#eligibility_form').valid() ){
-             alert('okae');
+             // alert('okae');
     //      
       }else{
         $('#Eligibility_details').hide();
@@ -2076,7 +2077,7 @@ var global_tenure=0;
           // console.log(offer);
           if(offer=="Rejected"){
             $('#Instant_Approve').hide();
-         alert("Thank You For Choosing IIFL. Our Representative Will Get In Contact With You");
+         alert("Thank You For Choosing IIFL. Your application has been rejected due to internal credit policy.");
           }
       var maxloan=maxloanamt;
        //   console.log(maxloanamt);
@@ -2099,9 +2100,9 @@ var global_tenure=0;
 <!-- Document upload -->
 <script type="text/javascript">
     $('#proceed_upload').click(function(){
-        alert('ok');
+        // alert('ok');
        if(! $('#upload_details').valid()){
-             alert('not valid');
+             // alert('not valid');
 
         }else{
             $('#financial_doc').show();
@@ -2122,9 +2123,9 @@ var global_tenure=0;
 </script>
 <script type="text/javascript">
     $('#proceed').click(function(){
-        alert('ok');
+        // alert('ok');
        if(! $('#financial_details').valid()){
-             alert('not valid');
+             // alert('not valid');
 
         }else{
            
@@ -2279,6 +2280,7 @@ var global_tenure=0;
             });
           
         </script>
+        
 
 
 

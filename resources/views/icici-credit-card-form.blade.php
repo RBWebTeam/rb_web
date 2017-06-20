@@ -37,6 +37,10 @@
   .redio-lft {float:left;}
   .p-padding {padding:10px;}
   .mand-fld { display:block;}
+  label.error {display: none !important; }
+        .error {
+                    border:2px solid red;
+                }
   
   </style>
   </head>

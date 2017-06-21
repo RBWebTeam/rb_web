@@ -1699,6 +1699,8 @@ $(document).ready(function(){
          data: {
          '_token': v_token},
          success: function(msg){
+
+            console.log(msg);
             if(param=='CityMaster'){
                 populate_city_education(msg,'CurrentCity');
                 populate_city_education(msg,'PermanentCity');

@@ -40,7 +40,7 @@
       .small-txt {font-size:10px;}
       .input__field {border-radius:0px;}
       .input__label--nao {top:15px;}
-      .input__field {border: 2px solid #dfdfdf;height:60px;}
+      .input__field {border:1px solid #dfdfdf;height:60px;}
       label.error {display: none !important; }
         .error {
                     border:2px solid red;
@@ -111,6 +111,7 @@
                     <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
                         <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
                     </svg>
+                    <div id="mobile_value" style="display: none;color: red;">Phone number should be of 10 digits.</div>
                 </span>
                 <span class="input input--nao">
                     <input class="input__field input__field--nao" type="text" name="EmailID" id="EmailID" oninput="mail('EmailID')" required />
@@ -124,7 +125,7 @@
                 </span>
                 <span class="input_exp input--nao">
                     <select class="input__field input__field--nao" name="city" id="city" required>
-                    <option disabled selected value="">Select</option>
+                    <option disabled selected value=""></option>
                       
                     </select>
                     <label class="input__label input__label--nao" for="city">
@@ -139,7 +140,7 @@
                 
                 
             </section>
-            <a class="btn btn-primary btn-outline with-arrow mrg-top next" href="#">NEXT<i class="icon-arrow-right"></i></a>
+            <a class="btn btn-primary btn-outline with-arrow mrg-top next" href="javascript:void(0)">NEXT<i class="icon-arrow-right"></i></a>
             </form>
             </div>
             <!-- <a class="btn btn-primary btn-outline with-arrow mrg-top" href="#">NEXT<i class="icon-arrow-right"></i></a> -->
@@ -159,21 +160,21 @@
                     <td class="bg-info">Current EMI: <b>₹<span id="Current"></span></b></td>
                 </tr>
              </table>
-             <h3><i><b class="text-primary">Hurray !!</b></i>&nbsp;You are eligible for a loan of <b>₹<span id="eligible"></span></b> <a class="bg-primary" href="javascript:void(0);">Apply Now</i></a></h3>
+             <h3><i><b class="text-primary">Hurray !!</b></i>&nbsp;You are eligible for a loan of <b>₹<span id="eligible"></span></b > & tenure for <b><span id="period"></span></b> <a class="bg-primary" href="javascript:void(0);">Apply Now</i></a></h3>
              <br>
             </div>
 
             <section class="content">
-                <span class="input input--nao">
-                  <input class="input__field input__field--nao" type="text" name="AppliedLoan" id="AppliedLoan" onkeypress="return fnAllowNumeric(event)" minlength="6" maxlength="9" />
-                    <label class="input__label input__label--nao" for="AppliedLoan">
-                        <span class="input__label-content input__label-content--nao">Loan Amount</span>
-                    </label>
-                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
-                        <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
+             <span class="input input--nao input--filled">
+                     <input class="input__field input__field--nao" type="text" name="AppliedLoan" id="AppliedLoan" onkeypress="return fnAllowNumeric(event)" minlength="6" maxlength="9" />
+                        <label class="input__label input__label--nao" for="AppliedLoan">
+                            <span class="input__label-content input__label-content--nao">Loan Amount</span>
+                        </label>
+                        <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
+                            <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
                     </svg>
                 </span>
-                <span class="input input--nao">
+                <span class="input input--nao input--filled">
                     <input class="input__field input__field--nao" type="text" name="tenure" id="tenure" onkeypress="return fnAllowNumeric(event)" maxlength="3" />
                     <label class="input__label input__label--nao" for="tenure">
                         <span class="input__label-content input__label-content--nao">Loan Tenure</span>
@@ -182,7 +183,7 @@
                         <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
                     </svg>
                 </span>
-                <span class="input input--nao">
+                <span class="input input--nao input--filled">
                     <input class="input__field input__field--nao" type="text" name="EMI" id="EMI" onkeypress="return fnAllowNumeric(event)"  />
                     <label class="input__label input__label--nao" for="EMI">
                         <span class="input__label-content input__label-content--nao">EMI</span>
@@ -206,7 +207,7 @@
             
             
             </section>
-            <a class="btn btn-primary btn-outline with-arrow mrg-top next_form" id="next_form" href="#">NEXT<i class="icon-arrow-right"></i></a>
+            <a class="btn btn-primary btn-outline with-arrow mrg-top next_form" id="next_form" href="javascript:void(0)">NEXT<i class="icon-arrow-right"></i></a>
             </form>
             </div>
             
@@ -328,7 +329,7 @@
                     </svg>
                 </span>
                 <span class="input input--nao">
-                    <input class="input__field input__field--nao" type="text" name="AlternateMobileNo" id="AlternateMobileNo" onkeypress="return fnAllowNumeric(event)" maxlength="10" minlength="10"/>
+                    <input class="input__field input__field--nao" type="text" name="AlternateMobileNo" id="AlternateMobileNo" onkeypress="return fnAllowNumeric(event)" maxlength="12" minlength="10"/>
                     <label class="input__label input__label--nao" for="AlternateMobileNo">
                         <span class="input__label-content input__label-content--nao">Residence Landline</span>
                     </label>
@@ -391,8 +392,8 @@
                     </svg>
                 </span>
                 <span class="input input--nao">
-                    <input class="input__field input__field--nao" type="text" name="CurrentPin" id="CurrentPin" required minlength="6" maxlength="6" />
-                    <label class="input__label input__label--nao" for="CurrentPin-3">
+                    <input class="input__field input__field--nao" type="text" name="CurrentPin" id="CurrentPin" required minlength="6" maxlength="6" onkeypress="return fnAllowNumeric(event)" />
+                    <label class="input__label input__label--nao" for="CurrentPin">
                         <span class="input__label-content input__label-content--nao">Pincode</span>
                     </label>
                     <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
@@ -401,7 +402,7 @@
                 </span>
                 <span class="input input--nao">
                     <select class="input__field input__field--nao" name="CurrentState" id="CurrentState" required>
-                    <option disabled selected value="">Select</option>
+                    <option disabled selected value=""></option>
                       
                     </select>
                     <label class="input__label input__label--nao" for="CurrentState">
@@ -411,9 +412,9 @@
                         <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
                     </svg>
                 </span>
-                <span class="input input--nao">
+                <span class="input input--nao input--filled">
                     <select class="input__field input__field--nao" name="CurrentCity" id="CurrentCity" required>
-                    <option disabled selected value="">Select</option>
+                    <option disabled selected value=""></option>
                       
                     </select>
                     <label class="input__label input__label--nao" for="CurrentCity">
@@ -426,10 +427,10 @@
                 
                 <!-- <div class="col-md-12 text-danger mar-top"><input type="checkbox" name="check"> I Agree to all the terms and conditions.</div> -->
                 </section>
-
-                <section class="content">
-            <div class="col-md-12"><h3 class="mrg-tpp">Permanent Address</h3></div>
                 
+                <input type="checkbox" name="same_id" id="same_id"/> Same As Above
+                <section class="content">
+                <div class="col-md-12"><h3 class="mrg-tpp">Permanent Address</h3></div>
                 <span class="input input--nao">
                     <input class="input__field input__field--nao" type="text" name="PermanentAddress1" id="PermanentAddress1" required />
                     <label class="input__label input__label--nao" for="PermanentAddress1">
@@ -468,7 +469,7 @@
                 </span>
                 <span class="input input--nao">
                      <select class="input__field input__field--nao" name="PermanentState" id="PermanentState" required>
-                    <option disabled selected value="">Select</option>
+                    <option disabled selected value=""></option>
                       
                     </select>
                     <label class="input__label input__label--nao" for="PermanentState">
@@ -478,9 +479,9 @@
                         <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
                     </svg>
                 </span>
-                <span class="input input--nao">
+                <span class="input input--nao input--filled">
                     <select class="input__field input__field--nao" name="PermanentCity" id="PermanentCity" required>
-                    <option disabled selected value="">Select</option>
+                    <option disabled selected value=""></option>
                       
                     </select>
                     <label class="input__label input__label--nao" for="PermanentCity">
@@ -502,9 +503,9 @@
             <section class="content">
             <div class="col-md-12"><h3 class="mrg-tpp">Residence Information</h3></div>
                 
-                <span class="input_exp input--nao">
+                <span class="input input--nao">
                     <select class="input__field input__field--nao fnt-clr" id="Residencetype" name="Residencetype" required>
-                    <option selected disabled value="">ResidenceType</option>
+                    <option selected disabled value=""></option>
                     <option value="Rented">Rented</option>
                     <option value="Owned ">Owned</option>
                     
@@ -518,7 +519,7 @@
                     </svg>
                 </span>
                 <span class="input input--nao">
-                    <input class="input__field input__field--nao" name="ResidenceStability" id="ResidenceStability" onkeypress="return fnAllowNumeric(event)" type="text"  minlength="3" maxlength="3" required />
+                    <input class="input__field input__field--nao" name="ResidenceStability" id="ResidenceStability" onkeypress="return fnAllowNumeric(event)" type="text"  minlength="2" maxlength="3" required />
                     <label class="input__label input__label--nao" for="ResidenceStability">
                         <span class="input__label-content input__label-content--nao">Period of Residence(In Months)</span>
                     </label>
@@ -534,7 +535,7 @@
                 
                 <span class="input input--nao">
                     <select class="input__field input__field--nao" name="Education" id="Education" required>
-                       <option disabled selected value="">Select</option>
+                       <option disabled selected value=""></option>
                       
                     </select>
                     <label class="input__label input__label--nao" for="Education">
@@ -547,7 +548,7 @@
 
                 <span class="input input--nao">
                     <select class="input__field input__field--nao" name="PurposeofLoan" id="PurposeofLoan" required>
-                       <option disabled selected value="">Select</option>
+                       <option disabled selected value=""></option>
                       
                     </select>
                     <label class="input__label input__label--nao" for="PurposeofLoan">
@@ -559,7 +560,7 @@
                 </span>
                 <span class="input input--nao">
                     <select class="input__field input__field--nao" name="MaritalStatus" id="MaritalStatus" required>
-                       <option disabled selected value="">Select</option>
+                       <option disabled selected value=""></option>
                        <option value="N">Single</option>
                        <option value="Y">Married</option>
                     </select>
@@ -586,7 +587,7 @@
                 </span>
 
                 <span class="input input--nao">
-                    <input class="input__field input__field--nao" type="text" name="CurrentWorkExp" id="CurrentWorkExp" required />
+                    <input class="input__field input__field--nao" type="text" name="CurrentWorkExp" id="CurrentWorkExp" onkeypress="return fnAllowNumeric(event)" required />
                     <label class="input__label input__label--nao" for="CurrentWorkExp">
                         <span class="input__label-content input__label-content--nao">Current Work Experience (In Months)</span>
                     </label>
@@ -596,7 +597,7 @@
                 </span>
 
                 <span class="input input--nao">
-                    <input class="input__field input__field--nao" type="text" name="TotalWorkExp" id="TotalWorkExp" required />
+                    <input class="input__field input__field--nao" type="text" name="TotalWorkExp" id="TotalWorkExp" onkeypress="return fnAllowNumeric(event)" required />
                     <label class="input__label input__label--nao" for="TotalWorkExp">
                         <span class="input__label-content input__label-content--nao">Total Work Experience  (In Months)</span>
                     </label>
@@ -607,7 +608,7 @@
                 <span class="input input--nao">
                     <input class="input__field input__field--nao" type="text" name="CompanyAddress1" id="CompanyAddress1" required />
                     <label class="input__label input__label--nao" for="CompanyAddress1">
-                        <span class="input__label-content input__label-content--nao">CompanyAddress1</span>
+                        <span class="input__label-content input__label-content--nao">Company Address1</span>
                     </label>
                     <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
                         <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
@@ -616,7 +617,7 @@
                 <span class="input input--nao">
                     <input class="input__field input__field--nao" type="text" name="CompanyAddress2" id="CompanyAddress2" required />
                     <label class="input__label input__label--nao" for="CompanyAddress2">
-                        <span class="input__label-content input__label-content--nao">CompanyAddress2</span>
+                        <span class="input__label-content input__label-content--nao">Company Address2</span>
                     </label>
                     <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
                         <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
@@ -625,7 +626,7 @@
                 <span class="input input--nao">
                     <input class="input__field input__field--nao" type="text" name="CompanyAddress3" id="CompanyAddress3" required />
                     <label class="input__label input__label--nao" for="CompanyAddress3">
-                        <span class="input__label-content input__label-content--nao">CompanyAddress3</span>
+                        <span class="input__label-content input__label-content--nao">Company Address3</span>
                     </label>
                     <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
                         <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
@@ -642,7 +643,7 @@
                     <div id="office_email" style="display:none;color: red;">Please Enter Valid Email Id.</div>
                 </span>
                 <span class="input input--nao">
-                    <input class="input__field input__field--nao" type="text" name="CompanyPin" id="CompanyPin" minlength="6" maxlength="6" required />
+                    <input class="input__field input__field--nao" type="text" name="CompanyPin" id="CompanyPin" minlength="6" maxlength="6" required onkeypress="return fnAllowNumeric(event)" />
                     <label class="input__label input__label--nao" for="CompanyPin">
                         <span class="input__label-content input__label-content--nao">Company PinCode</span>
                     </label>
@@ -653,7 +654,7 @@
                 </span>
                 <span class="input input--nao">
                     <select class="input__field input__field--nao" name="CompanyState" id="CompanyState" required>
-                    <option disabled selected value="">Select</option>
+                    <option disabled selected value=""></option>
                       
                     </select>
                     <label class="input__label input__label--nao" for="CompanyState">
@@ -665,7 +666,7 @@
                 </span>
                 <span class="input input--nao">
                     <select class="input__field input__field--nao" name="CompanyCity" id="CompanyCity" required>
-                    <option disabled selected value="">Select</option>
+                    <option disabled selected value=""></option>
                       
                     </select>
                     <label class="input__label input__label--nao" for="CompanyCity">
@@ -686,7 +687,7 @@
                 
             <br>
             <div class="col-md-12">
-             <a class="btn btn-primary btn-outline with-arrow mrg-top applicant" id="applicant_form" href="javascript:void(0);">CHECK ELIGIBILITY<i class="icon-arrow-right"></i></a>
+             <a class="btn btn-primary btn-outline with-arrow mrg-top applicant" id="applicant_form" href="javascript:void(0);">NEXT<i class="icon-arrow-right"></i></a>
             </div>
             </form>
             </div>
@@ -905,7 +906,7 @@
                     </svg>
                 </span>
                 <span class="input input--nao">
-                    <input class="input__field input__field--nao" type="text" name="CoCurrentPin" id="CoCurrentPin" required minlength="6" maxlength="6" />
+                    <input class="input__field input__field--nao" type="text" name="CoCurrentPin" id="CoCurrentPin" required minlength="6" maxlength="6" onkeypress="return fnAllowNumeric(event)" />
                     <label class="input__label input__label--nao" for="CoCurrentPin">
                         <span class="input__label-content input__label-content--nao">Pincode</span>
                     </label>
@@ -972,7 +973,7 @@
                     </svg>
                 </span>
                 <span class="input input--nao">
-                    <input class="input__field input__field--nao" type="text" name="CoPermanentPin" id="CoPermanentPin" required minlength="6" maxlength="6" />
+                    <input class="input__field input__field--nao" type="text" name="CoPermanentPin" id="CoPermanentPin" required minlength="6" maxlength="6" onkeypress="return fnAllowNumeric(event)" />
                     <label class="input__label input__label--nao" for="CoPermanentPin">
                         <span class="input__label-content input__label-content--nao">Pincode</span>
                     </label>
@@ -1008,7 +1009,7 @@
                 <!-- <div class="col-md-12 text-danger mar-top"><input type="checkbox" name="check"> I Agree to all the terms and conditions.</div> -->
                 </section>
                 <div class="col-md-12">
-             <a class="btn btn-primary btn-outline with-arrow mrg-top applicant" id="co_applicant_form" href="javascript:void(0);">CHECK ELIGIBILITY<i class="icon-arrow-right"></i></a>
+             <a class="btn btn-primary btn-outline with-arrow mrg-top applicant" id="co_applicant_form" href="javascript:void(0);">NEXT<i class="icon-arrow-right"></i></a>
             </div>
                 </form>
             </div>
@@ -1023,9 +1024,9 @@
             <div class="col-md-12">
             <table class="table table-bordered" width="100%">
                 <tr>
-                    <td class="bg-info">Company Name: <b>Rupeeboss</b></td>
-                    <td class="bg-danger">Monthly Salary: <b>Rs. 100000</b></td>
-                    <td class="bg-info">Current EMI: <b>Rs. 14000</b></td>
+                    <td class="bg-info">Company Name: <b><span id="comp_name"></span></b></td>
+                    <td class="bg-danger">Monthly Salary: <b><span id="salary"></span></b></td>
+                    <td class="bg-info">Current EMI: <b><span id="paying_emi"></span></b></td>
                 </tr>
              </table>
                 </div>
@@ -1034,15 +1035,15 @@
                    
                   <div class="col-md-3 bdr-rigt">Loan Details</div>
                   <div class="col-md-3 bdr-rigt">
-                  <p>Loan Amount:- <b>2,00,000</b></p>
-                  <p>Loan Amount:- <b>2,00,000</b></p>
+                  <p>Loan Amount:- <b><span id="loanamt"></span></b></p>
+                  <p>Loan Tenure:- <b><span id="loantenure"></span></b></p>
                   </div>
                   <div class="col-md-3 bdr-rigt">
-                  <p>Rate of Intrest:- <b>15%</b></p>
-                  <p>Processing Fees:- <b>Rs.3000</b></p>
+                  <p>Rate of Intrest:- <b><span id="intrest"></span></b></p>
+                  <p>Processing Fees:- <b><span id="process_fee"></span></b></p>
                   </div>
                   <div class="col-md-3">
-                  <p>EMI:- <b>Rs.8,000</b></p>
+                  <p>EMI:- <b><span id="e_m_i"></span></b></p>
                   </div>
                 </div>
                 <div class="col-md-1"></div>
@@ -1063,6 +1064,8 @@
                 <h4 class="text-danger small-txt">OTP has been sent to your Registred Mobile No.</h4>
                 <div class="col-md-12"><a class="btn btn-primary btn-outline with-arrow mrg-btm otp" id="aadhar_otp" href="javascript:void(0)">Get OTP<i class="icon-arrow-right"></i></a></div>
                 </section>
+                <h3 class="mrg-tpp">Proceed Without aadhar Number</h3>
+                <a class="btn btn-primary btn-outline with-arrow mrg-top" id="proceed_without_aadhar" href="javascript:void(0)">Click  Here<i class="icon-arrow-right"></i></a>
                 </form>
                 </div>
                 
@@ -1088,10 +1091,10 @@
             </section>
             </form>
             </div>
-            <div style="display: none;" >
+            <!-- <div style="display: none;" >
             <h3 class="mrg-tpp">Proceed Without aadhar Number</h3>
 
-            <a class="btn btn-primary btn-outline with-arrow mrg-top" id="proceed_without_aadhar" href="javascript:void(0)">Click Here<i class="icon-arrow-right"></i></a></div>
+            <a class="btn btn-primary btn-outline with-arrow mrg-top" id="proceed_without_aadhar" href="javascript:void(0)">Click Here<i class="icon-arrow-right"></i></a></div> -->
             
             
             <br>
@@ -1102,7 +1105,7 @@
             <hr class="hr-sty">
             
             <div class="col-md-12">
-             <h3>Congratulation<i><b class="text-primary">Nikhil</b></i>&nbsp;You are eligible for a loan of <b><span id="maxloan"></span></b> <a class="bg-primary" href="#">Apply Now</i></a></h3>
+             <h3>Congratulation<i><b class="text-primary"><span id="first_name"></span></b></i>&nbsp;You are eligible for a loan of <b><span id="maxloan"></span></b> <a class="bg-primary" href="javascript:void(0)">Apply Now</i></a></h3>
              <br>
             </div>
                 
@@ -1316,7 +1319,7 @@
                 <hr>
                 <h1 class="text-center pad">Thank You</h1>
                 <h4 class="text-center">Your application is under process our representative will get in touch with to you shortly</h4>
-                <p class="text-center">To learn more about IIFL Express Personal Loan <a href="#">Click Here</a></p>
+                <p class="text-center">To learn more about IIFL Express Personal Loan <a href="javascript:void(0)">Click Here</a></p>
         
             </div>
             </div>
@@ -1324,22 +1327,11 @@
             <!-- </section>
             </form>
             </div> -->
-            
-              
-   
-              
-           
-            
-         
-        
-        
-   
-
-<br>
+            <br>
 @include('layout.footer')
 @include('layout.script')
 
-<div class="modal fade" tabindex="-1" role="dialog" id="iifl_process">
+<!-- <div class="modal fade" tabindex="-1" role="dialog" id="iifl_process">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -1357,7 +1349,7 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
 
 <script type="text/javascript">
   function AllowAlphabet(e)
@@ -1503,7 +1495,8 @@ $(document).ready(function(){
       change: function (event, ui) {
         if (ui.item == null || ui.item == undefined || ui.item.value=='No Result Found') {
             
-          $(".search_company").attr("data-value","Non Cat"); 
+          $(".search_company").attr("data-value","Non CAT"); 
+          $("#Company_Cat").val("Non CAT");
           // $(".search_company").attr("disabled", false);
 
          
@@ -1755,6 +1748,8 @@ $(document).ready(function(){
 </script>
 
 <script type="text/javascript">
+var global_eligible_amount=0;
+var global_tenure=0;
     $('.next').click(function(event){
     //event.preventDefault();
     if(! $('#iifl_express_loan').valid()){
@@ -1763,6 +1758,11 @@ $(document).ready(function(){
       }else{
         $('#iifl_express_loan').hide();
         $('#Eligibility_details').show();
+        if(($('#Mob_Num').val().length)<10)
+        {
+              $('#mobile_value').show();
+              return false;
+            }
         var email_address = $('#EmailID').val();
         // console.log(email_address);
         $('#PersonalEmailID').val(email_address);
@@ -1783,23 +1783,28 @@ $(document).ready(function(){
         var company =$('#Company_Name').attr('data-value');
         $('#CompanyNm').html(name);
         $('#CompanyName').val(name);
-         $('#Name').html(name);
+        $('#Name').html(name);
+         $('#comp_name').html(name);
 
         var income = $('#Monthly_Salary').val();
         $('#Income').empty().append(income);
         $('#Salary').empty().append(income);
         $('#MonthlySalary').val(income);
+         $('#salary').empty().append(income);
 
         var emi= $('#Monthly_Obligation').val();
          $('#Current_EMI').empty().append(emi);
-          $('#Current').empty().append(emi);
+         $('#Current').empty().append(emi);
          $('#MonthlyObligation').val(emi);
+         $('#paying_emi').empty().append(emi);
+
          $.ajax({  
          type: "POST",  
          url: "{{URL::to('iifl-eligibility')}}",
          data : $('#iifl_express_loan').serialize(),
          success: function(msg){
             var data=msg[0];
+            console.log(msg);
             var result=loan_eligibility_calc(data.Max_Tenure,data.pf,data.roi,data.foir);
             console.log(msg);
 
@@ -1821,12 +1826,13 @@ $(document).ready(function(){
 
     });
     function loan_eligibility_calc(tenure,pf,roi,foir){
-        // console.log(foir);
+        console.log(foir);
         // console.log(tenure+"  " +pf+ "  "+roi);
         var processing_fee =pf;
         $('#fee').empty().append(processing_fee);
         $('#Processingfee').val(processing_fee);
         var period =tenure*12;
+        $('#period').empty().append(tenure);
         var rate =roi/12/100;
         var int =roi;
         $('#interest').empty().append(int);
@@ -1841,43 +1847,61 @@ $(document).ready(function(){
         var max_emi = foir_calc-obligation;
         // console.log(max_emi);
         $('#EMI').val(max_emi);
+         global_tenure=tenure;
+        $('#tenure').val(tenure);
         var a =(rate*(Math.pow(1 + rate,period) / (Math.pow(1 + rate,period) - 1)));
          // console.log(a);
         var amount =max_emi/a;
         var eligible_amount=Math.round(amount);
         // console.log(eligible_amount);
         $('#eligible').empty().append(eligible_amount);
-      
-
-         
-
-    }
+        global_eligible_amount=eligible_amount;
+        $('#AppliedLoan').val(eligible_amount);
+      }
 </script>
 
 <script type="text/javascript">
+     
     $('#next_form').click(function(){
-       
-        if(! $('#eligibility_form').valid()){
-    alert('okae');
+
+       var amount=$('#AppliedLoan').val();
+       if(amount> global_eligible_amount){
+        alert('Enter amount less than or equal to eligible amount');
+        return false;
+        }
+        var divas =$('#tenure').val();
+        if(divas> global_tenure){
+        alert('Enter amount less than or equal to required tenure');
+        return false;
+        }
+       // console.log(amount +" " +global_eligible_amount);
+        if(! $('#eligibility_form').valid() ){
+             alert('okae');
     //      
       }else{
         $('#Eligibility_details').hide();
         $('#Applicant_Details').show();
+
         var applied_loan=$('#AppliedLoan').val();
+        console.log(applied_loan);
         $('#Amount').empty().append(applied_loan);
+        $('#loanamt').empty().append(applied_loan);
         // $("input[name='AppliedLoanamount']").val(applied_loan);
         var days =$('#tenure').val();
         var no_of_days= days*12;
         $('#LoanTenure').empty().append(days);
+        $('#loantenure').empty().append(days);
         // $("input[name='Tenure']").val(days);
         var a = $('#int span').html();
          $('#RateOfInt').empty().append(a);
+         $('#intrest').empty().append(applied_loan);
         var Rate = a/12/100;
         var installment_iifl=applied_loan * Rate * (Math.pow(1 + Rate, no_of_days) / (Math.pow(1 + Rate, no_of_days) - 1));
       
         var installment =Math.round(installment_iifl);
         $('#EquatedMonthly').empty().append(installment);
         $('#EMI').val(installment);
+        $('#e_m_i').empty().append(installment);
          var total =((installment*no_of_days)-applied_loan);
         
         var ttl_payment = parseInt(applied_loan) + parseInt(total);;
@@ -1888,24 +1912,25 @@ $(document).ready(function(){
         $('#ROI').val(a);
         $('#Emi').val(installment);
         // $("#input[name='Emi']").val(installment);
-
         $('#TotalPayableAmount').val(ttl_payment);
-
-
-
-
-      }
+         }
 
     });
 </script>
 
 <script type="text/javascript">
     $('#applicant_form').click(function(){
-        // alert('ok');
+       
         if(! $('#applicant_deatils').valid()){
             // alert('not valid');
 
         }else{
+            var person_name =$('#FName').val();
+            // console.log(person_name);
+            $('#first_name').val(person_name);
+            var aadhar=$('#AadhaarNumber').val();
+            $('#Aadharno').val(aadhar);
+             $('#Applicant_Details').hide();
             $('#otp').show();
             $.ajax({  
          type: "POST",  
@@ -1922,11 +1947,6 @@ $(document).ready(function(){
 
 <!-- Co-applicant Ajax -->
 <script type="text/javascript">
-var g_maxloanamt=0;
-var g_minloanamt=0;
-var g_maxTenure=0;
-var g_minTenure=0;
-
     $('#co_applicant_form').click(function(){
         alert('ok');
         if(! $('#co_applicant_details').valid()){
@@ -2000,7 +2020,8 @@ var g_minTenure=0;
              alert('not valid');
 
         }else{
-            $('#confirm_otp').show();
+           
+           $('#confirm_otp').show();
            $.ajax({  
          type: "POST",  
          url: "{{URL::to('iifl-aadhar-otp')}}",
@@ -2054,7 +2075,8 @@ var g_minTenure=0;
           var offer=offerstatus;
           // console.log(offer);
           if(offer=="Rejected"){
-          $('#iifl_process').modal('show');
+            $('#Instant_Approve').hide();
+         alert("Thank You For Choosing IIFL. Our Representative Will Get In Contact With You");
           }
       var maxloan=maxloanamt;
        //   console.log(maxloanamt);
@@ -2121,6 +2143,142 @@ var g_minTenure=0;
      } 
     });
 </script>
+<script type="text/javascript">PermanentState
+    $('#same_id').click(function(){
+        $('#PermanentAddress1').val($('#CurrentAddress1').val());
+        $('#PermanentAddress2').val($('#CurrentAddress2').val());
+        $('#PermanentAddress3').val($('#CurrentAddress3').val());
+        $('#PermanentPin').val($('#CurrentPin').val());
+        $('#PermanentState').val($('#CurrentState').val());
+
+   
+    });
+</script>
+
+
+
+
+<script>
+			(function() {
+				
+				if (!String.prototype.trim) {
+					(function() {
+						// Make sure we trim BOM and NBSP
+						var rtrim = /^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g;
+						String.prototype.trim = function() {
+							return this.replace(rtrim, '');
+						};
+					})();
+				}
+
+				[].slice.call( document.querySelectorAll( 'input.input__field' ) ).forEach( function( inputEl ) {
+					// in case the input is already filled..
+					if( inputEl.value.trim() !== '' ) {
+						classie.add( inputEl.parentNode, 'input--filled' );
+					}
+		        
+
+					// events:
+					inputEl.addEventListener( 'focus', onInputFocus );
+					inputEl.addEventListener( 'blur', onInputBlur );
+				} );
+
+				function onInputFocus( ev ) {
+					classie.add( ev.target.parentNode, 'input--filled' );
+				}
+
+				function onInputBlur( ev ) {
+					if( ev.target.value.trim() === '' ) {
+						classie.remove( ev.target.parentNode, 'input--filled' );
+					}
+				}
+			})();
+			
+			
+			
+			
+			
+		</script>
+		<script>
+			(function() {
+				
+				if (!String.prototype.trim) {
+					(function() {
+						// Make sure we trim BOM and NBSP
+						var rtrim = /^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g;
+						String.prototype.trim = function() {
+							return this.replace(rtrim, '');
+						};
+					})();
+				}
+
+				[].slice.call( document.querySelectorAll( 'select.input__field' ) ).forEach( function( inputEl ) {
+					// in case the input is already filled..
+					if( inputEl.value.trim() !== '' ) {
+						classie.add( inputEl.parentNode, 'input--filled' );
+					}
+		        
+
+					// events:
+					inputEl.addEventListener( 'focus', onInputFocus );
+					inputEl.addEventListener( 'blur', onInputBlur );
+				} );
+
+				function onInputFocus( ev ) {
+					classie.add( ev.target.parentNode, 'input--filled' );
+				}
+
+				function onInputBlur( ev ) {
+					if( ev.target.value.trim() === '' ) {
+						classie.remove( ev.target.parentNode, 'input--filled' );
+					}
+				}
+			})();
+			
+			
+			
+			
+			
+		</script>
+        <script type="text/javascript">
+        function getAge(dateString) {
+            var day=dateString.slice(0,2);
+            var mon=dateString.slice(2,4);
+            var yr=dateString.slice(4,8);
+            var today = new Date();
+            var new_dateString=mon+"/"+day+"/"+yr;
+            var date_of_joining = new Date(new_dateString);
+            console.log(new_dateString+" "+date_of_joining+" "+today);
+            if(date_of_joining > today || date_of_joining=='Invalid Date'){
+                 $('#CurrentWorkExp').val('');
+                 $('#CurrentWorkExp').closest( "span" )
+                    .removeClass( "input--filled" );
+                return false;
+            }
+            var experience = today.getFullYear() - yr;
+            console.log(today.getDay());
+            //as month start from 0 in js
+            var m = today.getMonth()+1 - mon;
+            var exp=[experience,m];
+            if (m < 0 || (m === 0 && today.getDate() < date_of_joining.getDate())) {
+               exp[0]--;
+               exp[1]+=12;
+            }
+
+            return exp;
+            }
+            $('#joining_date').change(function(){
+
+                var exp= getAge($('#joining_date').val());
+                console.log(exp);
+                if(exp){
+
+                    $('#CurrentWorkExp').val((exp[0]*12)+exp[1]);
+                     $('#CurrentWorkExp').closest( "span" ).addClass( "input--filled" );
+                 }
+            });
+          
+        </script>
 
 
 

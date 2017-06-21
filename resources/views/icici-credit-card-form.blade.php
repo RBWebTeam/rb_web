@@ -37,6 +37,10 @@
   .redio-lft {float:left;}
   .p-padding {padding:10px;}
   .mand-fld { display:block;}
+  label.error {display: none !important; }
+       .error {
+                    border:1px solid red;
+                }
   
   </style>
   </head>
@@ -45,7 +49,6 @@
   <script>
 $(".top").click(function() {
   $("html, body").animate({ scrollTop: 0 }, "slow");
-  alert("Test Msg");
   return false;
 });
 </script>
@@ -135,6 +138,7 @@ $(".top").click(function() {
                         <div class="clear"></div>
                       </div>   -->
                       <input type="text" class="form-control lastReporteddob" id="DateOfBirth" name="DateOfBirth" placeholder="Date of Birth*" required>
+					  <i class="fa fa-calendar" style="font-size: 25px;position: absolute;top: 15px;right: 11px;color: #3f7cb3;"></i>
                     </div>
                   </div>
                   
@@ -170,30 +174,19 @@ $(".top").click(function() {
                   </div>
          
 
-        <div class="col-xs-6 form-padding">
-                    <div class="form-control" style="height:50px;position: relative; padding: 0px 0px; margin-bottom:10px;">
+        <div class="col-xs-4 col-md-6 form-padding">
+                    <div class="form-control inp-fld" style="height:50px;position: relative; padding: 0px 0px; margin-bottom:10px;">
                       <div class="padd-lef gender">
                        <div class="btn-grp" data-toggle="buttons">
                                     <span class="btn btn-primary outer-brd1 active"><input type="radio" name="Gender" checked value="Male"><img id="myImage"  src="images/male.png" class=""/></span>
                                     <span class="btn btn-primary outer-brd1"><input type="radio" name="Gender" value="Female"><img id="myImage1"  src="images/female.png" class="" ></span>
-                               
-                                        </div>
+                             </div>
                         </div>
                      </div>
                   </div>
-                 
-                <div class="col-xs-6 form-padding">
-                <div class="form-control" style="height:50px; position: relative; padding: 0px 0px;">
-                      <span style="position: absolute; z-index: 999; margin: 1px 0 0 8px; font-size: 10px; color: #bababa;">Marital Status</span>
-                      <div class="btn-grp mrg-top m-status emp-nat" data-toggle="buttons">
-                      <span class="btn btn-primary outer-brd active"><input type="radio" name="marital_status" checked value="Single">Single</span>
-                      <span class="btn btn-primary outer-brd"><input type="radio" name="marital_status" value="Married" >Married</span>
-                </div>
-                    </div>  
-                </div>
                 
-                <div class="col-xs-6 form-padding">
-                    <div class="form-control" style="height:50px; position: relative; padding: 0px 0px;">
+                <div class="col-xs-8 col-md-6 form-padding">
+                    <div class="form-control inp-fld" style="height:50px; position: relative; padding: 0px 0px;">
                       <span style="position: absolute; z-index: 999; margin: 1px 0 0 8px; font-size: 10px; color: #bababa;">Resident Status</span>
                       <div class="btn-grp mrg-top m-status emp-nat" data-toggle="buttons">
                       <span class="btn btn-primary outer-brd active"><input type="radio" name="resident_status" checked value="Indian">Indian</span>
@@ -201,9 +194,19 @@ $(".top").click(function() {
                 </div>
                     </div>  
                 </div>
+				
+				<div class="col-xs-6 form-padding">
+                <div class="form-control inp-fld" style="height:50px; position: relative; padding: 0px 0px;">
+                      <span style="position: absolute; z-index: 999; margin: 1px 0 0 8px; font-size: 10px; color: #bababa;">Marital Status</span>
+                      <div class="btn-grp mrg-top m-status emp-nat" data-toggle="buttons">
+                      <span class="btn btn-primary outer-brd active"><input type="radio" name="marital_status" checked value="Single">Single</span>
+                      <span class="btn btn-primary outer-brd"><input type="radio" name="marital_status" value="Married" >Married</span>
+                </div>
+                    </div>  
+                </div>
 
               <div class="col-xs-6 form-padding">
-                        <div class="form-control" style="height:50px; position: relative; padding: 0px 0px;">
+                        <div class="form-control inp-fld" style="height:50px; position: relative; padding: 0px 0px;">
                           <span style="position: absolute; z-index: 999; margin: 1px 0 0 8px; font-size: 10px; color: #bababa;">Employment Nature</span>
                       
                       <div class="btn-grp mrg-top m-status emp-nat" data-toggle="buttons">
@@ -233,7 +236,7 @@ $(".top").click(function() {
             </div>
       
         
-            <h4 class="txt-tlt pull-left">Company Name</h4> 
+            <h4 class="txt-tlt pull-left hdn5">Company Details</h4> 
             
             <div class="col-xs-6 form-padding">
                     <div class="form-control inp-fld">
@@ -339,7 +342,7 @@ $(".top").click(function() {
                     <input  style='display:none;' type="text" class="form-input-new form-control" name="ICICIRelationshipNumber" id="ICICIRelationshipNumber" placeholder="ICICI Relationship Number" maxlength="15" onkeypress="return fnAllowNumeric(event)"  required>
                     </div>
           <div class="col-xs-6 form-padding">
-                    <div class="form-control" style="height:50px; position: relative; padding: 0px 0px;">
+                    <div class="form-control inp-fld" style="height:50px; position: relative; padding: 0px 0px;">
                       <span style="position: absolute; z-index: 999; margin: 1px 0 0 8px; font-size: 10px; color: #bababa;">Salary Account With Other Bank:</span>
                       
                       <div class="btn-grp mrg-top m-status emp-nat" data-toggle="buttons">
@@ -348,7 +351,7 @@ $(".top").click(function() {
          </div>
                     </div>
                   </div>
-              <h4 class="txt-tlt pull-left">Current Address Details</h4> 
+              <h4 class="txt-tlt pull-left hdn5">Current Address Details</h4> 
           <div class="col-xs-6 form-padding">
                     <div class="form-control inp-fld">
                       <input type="text" name="ResidenceAddress1" id="ResidenceAddress1" class="form-input-new" required >
@@ -410,8 +413,10 @@ $(".top").click(function() {
                       <option value="Company_Provided">Company Provided</option>
                     </select> 
             </div>
-
-                  <h4 class="txt-tlt pull-left">Permanent Address Details</h4> 
+			
+			<div class="col-xs-12"><P style="padding:10px; display:-webkit-inline-box;" class="pull-left"><input type="checkbox" name="check"/> &nbsp;&nbsp;Demo Text</p></div>
+              
+                  <h4 class="txt-tlt pull-left hdn5">Permanent Address Details</h4> 
           <div class="col-xs-6 form-padding">
                     <div class="form-control inp-fld">
                       <input type="text" name="PerResidenceAddress1" id="PerResidenceAddress1" class="form-input-new" required >
@@ -486,7 +491,7 @@ $(".top").click(function() {
                     </div>  
                   </div>
                   
-          <h4 class="txt-tlt pull-left">Contact Details</h4> 
+          <h4 class="txt-tlt pull-left hdn5">Contact Details</h4> 
           <div class="col-xs-6 form-padding">
                     <div class="form-control inp-fld">
                       <input type="text" class="form-input-new" id="ResidencePhoneNumber" name="ResidencePhoneNumber" onkeypress="return fnAllowNumeric(event)" maxlength="10" required>
@@ -512,7 +517,7 @@ $(".top").click(function() {
                     </div>  
                   </div>
                   
-          <h4 class="txt-tlt pull-left">Identity Details</h4> 
+          <h4 class="txt-tlt pull-left hdn5">Identity Details</h4> 
           <div class="col-xs-6 form-padding">
                     <div class="form-control inp-fld">
                       <input type="text" id="ApplicationNumber" name="ApplicationNumber" class="form-input-new" required="" maxlength="13" minlength="13" >

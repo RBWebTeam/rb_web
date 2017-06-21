@@ -480,7 +480,7 @@ $url = $this::$url_static."/BankAPIService.svc/createIIFLCoAppDtls";
   
   "body": '.$json_data.'
 }';
-      print_r($post_data);
+      // print_r($post_data);
     $url = $this::$url_static."/BankAPIService.svc/createIIFLAadharOTP";
     $result=$this->call_json_data_api($url,$post_data);
     $http_result=$result['http_result'];
@@ -520,7 +520,7 @@ $url = $this::$url_static."/BankAPIService.svc/createIIFLCoAppDtls";
     $s=str_replace('}"', "}", $st);
     $m=$s=str_replace('\\', "", $s);
      $obj = json_decode($m);
-    return response()->json($a);
+    return response()->json( $obj);
   }
 
     public function iifl_adhar_confirm_otp(Request $req){

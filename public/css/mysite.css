@@ -14447,7 +14447,6 @@ label {
 	.tp-margin {font-size:18px;}
 	.credit-report-bg {padding-bottom:4px;}
 	.flt-lft {height:auto;}
-	.white-bg {float:left;}
 	.flt-lft {float:left; margin-bottom:20px;}
 	.status .btn {padding: 7px 4px;}
 	.mob-blk-dv {display:block;width:100%;}
@@ -14499,6 +14498,6 @@ ul, ol {padding-left: 13px;}
 	
 label.error {display: none !important; }
 .error {
-            border:1px solid red !important;
+            border:1px solid red  !important;
         }
 /*# sourceMappingURL=mysite.css.map */

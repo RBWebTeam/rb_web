@@ -414,7 +414,7 @@ $(".top").click(function() {
                     </select> 
             </div>
 			
-			<div class="col-xs-12"><P style="padding:10px; display:-webkit-inline-box;" class="pull-left"><input type="checkbox" name="check"/> &nbsp;&nbsp;Demo Text</p></div>
+			<div class="col-xs-12"><P style="padding:10px; display:-webkit-inline-box;" class="pull-left"><input type="checkbox" name="same" id="same_id" onclick="same_as_above('same_id');"/> &nbsp;&nbsp;Same As Above</p></div>
               
                   <h4 class="txt-tlt pull-left hdn5">Permanent Address Details</h4> 
           <div class="col-xs-6 form-padding">
@@ -1252,6 +1252,39 @@ $(document).ready(function(){
       }
     });
 });
+</script>
+
+<script type="text/javascript">
+  function same_as_above(obj,val){
+
+     // console.log(obj);
+     var atLeastOneIsChecked = $('#same_id:checkbox:checked').length > 0;
+     // console.log(atLeastOneIsChecked);
+    if (atLeastOneIsChecked == true) {
+      // alert("ok");
+
+    $('#PerResidenceAddress1').val($('#ResidenceAddress1').val());
+     $('#PerResidenceAddress2').val($('#ResidenceAddress2').val());
+     $('#PerResidenceAddress3').val($('#ResidenceAddress3').val());
+     $('#PerResidenceState').val($('#ResidenceState').val());
+
+     $('#PerCity').val($('#City').val());
+     $('#PerResidencePincode').val($('#ResidencePincode').val());
+     $('#Persearch_statenm').val($('#search_statenm').val());
+     $('#per_res_type').val($('#type_current').val());
+     }else{
+
+     $('#PerResidenceAddress1').val('');
+     $('#PerResidenceAddress2').val(''); 
+     $('#PerResidenceAddress3').val('');
+      $('#PerResidenceState').val('');
+
+     $('#PerCity').val('');
+     $('#PerResidencePincode').val('');
+     $('#Persearch_statenm').val('');
+     $('#per_res_type').val('');
+  }
+}
 </script>
 
 

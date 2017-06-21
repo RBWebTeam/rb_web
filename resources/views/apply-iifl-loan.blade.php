@@ -1874,7 +1874,7 @@ var global_tenure=0;
         alert('Enter tenure less than or equal to required tenure');
         return false;
         }
-        
+
        // console.log(amount +" " +global_eligible_amount);
         if(! $('#eligibility_form').valid() ){
             alert("You must agree to the terms first.");
@@ -1938,7 +1938,18 @@ var global_tenure=0;
          url: "{{URL::to('apply-iifl-loan-applicant1')}}",
          data : $('#applicant_deatils').serialize(),
          success: function(msg){
-            // console.log(msg);
+            console.log(msg);
+            // console.log(msg.head);
+            console.log(msg.head.status);
+            if (msg.head.status == 1) {
+                 $('#otp').hide();
+             alert('Your application are in process, our RM will get in touch with you.');
+            
+            } 
+            else 
+            {
+              $('#otp').hide();
+            }
          }  
       }); 
         }
@@ -1949,9 +1960,9 @@ var global_tenure=0;
 <!-- Co-applicant Ajax -->
 <script type="text/javascript">
     $('#co_applicant_form').click(function(){
-        alert('ok');
+        // alert('ok');
         if(! $('#co_applicant_details').valid()){
-             alert('not valid');
+             // alert('not valid');
 
         }else{
             $('#otp').show();
@@ -1971,9 +1982,9 @@ var global_tenure=0;
 <!-- Instant Approve -->
 <script type="text/javascript">
     $('#instant_approve').click(function(){
-        alert('ok');
+        // alert('ok');
         if(! $('#instant_form').valid()){
-             alert('not valid');
+             // alert('not valid');
 
         }else{
             var amt= $("#input[name='AppliedLoanamount']").val();
@@ -2016,9 +2027,9 @@ var global_tenure=0;
 <!-- aadhar oyp &verify otp -->
 <script type="text/javascript">
     $('#aadhar_otp').click(function(){
-     alert('okae');
+     // alert('okae');
      if(! $('#aadharotp').valid()){
-             alert('not valid');
+             // alert('not valid');
 
         }else{
            
@@ -2036,9 +2047,9 @@ var global_tenure=0;
 </script>
 <script type="text/javascript">
     $('#confirm').click(function(){
-        alert('ok');
+        // alert('ok');
      if(! $('#confirm_aadharotp').valid()){
-             alert('not valid');
+             // alert('not valid');
 
         }else{
            $('#Instant_Approve').show();
@@ -2144,7 +2155,7 @@ var global_tenure=0;
      } 
     });
 </script>
-<script type="text/javascript">PermanentState
+<script type="text/javascript">
     $('#same_id').click(function(){
         $('#PermanentAddress1').val($('#CurrentAddress1').val());
         $('#PermanentAddress2').val($('#CurrentAddress2').val());

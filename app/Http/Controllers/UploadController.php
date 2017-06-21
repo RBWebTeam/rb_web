@@ -77,4 +77,32 @@ class UploadController extends CallApiController
         
 
     }
+
+    public function smemailersender(Request $req){
+          
+          return view('smemailer');
+    }
+
+
+     public function smemailer(Request $req){
+          
+                  $data1=$req->all(); 
+
+                  $data=$data1['fullname'];
+
+                  // print_r($data);exit();
+                $email ='scriptdp@gmail.com';
+                $mail = Mail::send('email_view_sme',['data' => $data], function($message) use($email) {
+                $message->from('scriptdp@gmail.com', 'RupeeBoss');
+                $message->to($email)
+                ->subject('Loan application submitted');
+
+                });
+ 
+
+          //return view('smemailer');
+ 
+
+}
+
 }

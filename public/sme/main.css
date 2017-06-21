@@ -1,0 +1,99 @@
+@font-face {
+    font-family: Swis721;
+    src: url(font/Swis721CnBTRoman.ttf);
+}
+@font-face {
+    font-family: Swis721-Bold;
+    src: url(font/Swis721CnBTBold.ttf);
+}
+  body{margin:0px; padding:0px;height: 100%; font-family: Swis721;}
+  html{height: 100%;}
+  img{border-width: 0px;}
+    .carTable{background:#0bb7cc url(img/img-car.png) no-repeat center center; color:#fff;}
+    .carList {padding:10px; padding-bottom:30px;}
+    .carList ul{margin:0px;}
+    .box{float: left;}
+    .clear{clear: both;}
+    .logo{padding: 10px;}
+    .carList li{list-style: disc; font-size:24px; font-family: Swis721; color:#fff; line-height: 36px;}
+    .clickEvent{background:#008293; font-size:30px; font-family: Swis721; color:#fff; text-align: center;}
+    .footer{background:#3a3a39; color:#fff; text-align: center; padding:20px; font-size:11px; font-family: Arial, Helvetica, sans-serif; }
+    a,a:visited,a:hover{color:#fff;text-decoration: none;}
+    a:hover{color:#fff;text-decoration: underline;}
+
+
+
+
+#mask {
+  position:absolute;
+  left:0;
+  top:0;
+  z-index:9000;
+  background-color:#000;
+  display:none;
+}  
+#boxes .window {
+  position:absolute;
+  left:0;
+  top:0;
+  width:480px;
+  height:200px;
+  display:none;
+  z-index:9999;
+  text-align: center;
+}
+#boxes #dialog {
+  width:470px;
+  height:auto;
+  background-color:#ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10pt;
+}
+.maintext{
+	text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  text-decoration: none;
+}
+
+.ContentBody{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12pt;
+  text-align: left;
+  padding:20px;
+}
+#popupfoot{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16pt;
+  padding: 10px 20px;
+}
+#popupfoot a{
+	text-decoration: none;
+}
+.agree:hover{
+  background-color: #D1D1D1;
+}
+.popupoption:hover{
+	background-color:#D1D1D1;
+	color: green;
+}
+.popupoption2:hover{
+	color: red;
+}
+
+.window h2{
+    background: #ff0000;
+    margin:0px;
+    line-height: 56px;
+    color:#fff;
+
+}
+
+.poptbl td{padding:10px; font-size:14px;}
+.poptbl input{border:solid 1px #c0c0c0;padding:10px;}
+.poptbl #popupfoot {text-align:center;}
+.poptbl #popupfoot a.close{background:#000 !important; padding:5px 30px; font-size:14px; font-weight: bold;}
+.poptbl #popupfoot a.close:hover{background:#ff0000 !important;}
+
+.dis{
+    display: none;
+}

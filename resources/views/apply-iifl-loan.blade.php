@@ -248,13 +248,31 @@
                 <input class="input__field input__field--nao" type="hidden" name="MonthlyObligation" required id="MonthlyObligation" onkeypress="return AllowAlphabet(event)" />
                 <input class="input__field input__field--nao" type="hidden" name="AppliedLoanamount" required id="AppliedLoanamount" value="" />
                 <input class="input__field input__field--nao" type="hidden" name="Tenure" required id="Tenure" value="" />
-                <input class="input__field input__field--nao" type="hidden" name="Emi" required id="Emi" value="" />
+                <!-- <input class="input__field input__field--nao" type="text" name="Emi" required id="Emi" value="" /> -->
                 <input class="input__field input__field--nao" type="hidden" name="ROI" required id="ROI" value="" />
-                <input class="input__field input__field--nao" type="hidden" name="TotalPayableAmount" required id="TotalPayableAmount" value="" />
+                <!-- <input class="input__field input__field--nao" type="text" name="TotalPayableAmount" required id="TotalPayableAmount" value="" /> -->
                 <input class="input__field input__field--nao" type="hidden" name="ApplicantType" required id="ApplicantType" value="Applicant" />
                 <input class="input__field input__field--nao" type="hidden" name="City" required id="City" value="" />
                 <input class="input__field input__field--nao" type="hidden" name="EKYCFlag" required id="EKYCFlag" value="0"/>
                 <input class="input__field input__field--nao" type="hidden" name="Processingfee" required id="Processingfee" value="" />
+                <span class="input input--nao">
+                    <input class="input__field input__field--nao" type="text" name="TotalPayableAmount" required id="TotalPayableAmount"/>
+                    <label class="input__label input__label--nao" for="TotalPayableAmount">
+                        <span class="input__label-content input__label-content--nao">Total Payable Amount</span>
+                    </label>
+                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
+                        <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
+                    </svg>
+                </span>
+                <span class="input input--nao">
+                    <input class="input__field input__field--nao" type="text" name="Emi" required id="Emi"/>
+                    <label class="input__label input__label--nao" for="Emi">
+                        <span class="input__label-content input__label-content--nao">Emi</span>
+                    </label>
+                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
+                        <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
+                    </svg>
+                </span>
                 <span class="input input--nao">
                     <input class="input__field input__field--nao" type="text" name="FName" required id="FName" onkeypress="return AllowAlphabet(event)" />
                     <label class="input__label input__label--nao" for="FName">
@@ -1323,8 +1341,7 @@
         
             </div>
             </div>
-                        
-            <!-- </section>
+        <!-- </section>
             </form>
             </div> -->
             <br>
@@ -1916,9 +1933,9 @@ var global_tenure=0;
     var Rate = a/12/100;
      var installment_iifl=applied_loan * Rate * (Math.pow(1 + Rate, no_of_days) / (Math.pow(1 + Rate, no_of_days) - 1));
         var installment =Math.round(installment_iifl);
-        if(isNaN( installment) || installment=='Infinity'){
-          installment=0;
-        }
+        // if(isNaN( installment) || installment=='Infinity'){
+        //   installment=0;
+        // }
         $('#EquatedMonthly').empty().append(installment);
         $('#EMI').val(installment);
         $('#e_m_i').empty().append(installment);
@@ -1955,12 +1972,14 @@ var global_tenure=0;
             console.log(msg.head.status);
             if (msg.head.status == 1) {
                  $('#otp').hide();
-             alert('Your application are in process, our RM will get in touch with you.');
+                 $('#confirm_otp').hide();
+                 
+             alert('Your application are in process, Our RM will get in touch with you.');
             
             } 
             else 
             {
-              $('#otp').hide();
+              $('#otp').show();
             }
          }  
       }); 

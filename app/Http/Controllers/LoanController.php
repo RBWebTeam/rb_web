@@ -140,9 +140,9 @@ class LoanController extends CallApiController
     }
 
     public function apply_express_loan(){
-      $keywords='Loan Against Property,Apply Online For Property Loan,Loan Against Property Guidelines,Loan Against Property Online,Commercial Property Loans';
-        $data['title']='Apply For Loan Against Property at Lowest Interest Rates with Rupeeboss.com';
-        $data['description']='Avail Loan Against Property with benefits like lower interest rates & EMI payment. Apply online on Rupeeboss.com to get a Loan now.';
+      $keywords='Express Finance Loans ,Cash Express Loan,Express Loan Aditya Birla Group,Express Loan Bank,Express Loan Corporation,Apply Online For Express Loan,Emergency Loans ,Advance Loans ,Quick And Easy Loans ,Instant Cash Loans ';
+        $data['title']='Express Loan – Instant loan at Low interest rate on Rupeeboss.com';
+        $data['description']='Get loans approved instantly. Express Loan Provide quick loans at lowest interest applyOnline on Rupeeboss.com';
       return view('apply-express-loan')->with($data)->with('keywords',$keywords);
     }
 
@@ -376,7 +376,7 @@ public function dropdown(Request $req){
     public function applicant(Request $req){
        $data=$req->all();
        $json_data=json_encode($data);
-      // print_r($post_data);
+      // print_r($data);
        $post_data = '{
    "head": {
     "requestCode": "PLRQCL01",
@@ -411,7 +411,8 @@ public function dropdown(Request $req){
 
      //print_r($obj->body->prospectno);exit();
      }
-     print_r($obj);
+     // print_r($obj);
+     return response()->json( $obj);
       
     //  $a=$obj->body;
     // return $http_result;
@@ -480,7 +481,7 @@ $url = $this::$url_static."/BankAPIService.svc/createIIFLCoAppDtls";
   
   "body": '.$json_data.'
 }';
-      // print_r($post_data);
+       print_r($post_data);
     $url = $this::$url_static."/BankAPIService.svc/createIIFLAadharOTP";
     $result=$this->call_json_data_api($url,$post_data);
     $http_result=$result['http_result'];

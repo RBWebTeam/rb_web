@@ -251,21 +251,20 @@
        show_card();
   }
   function show_card(){
-      if(interest=='Lifestyle'){
-          document.getElementById('2.5_button').classList.remove("hide");
-      }else{
-          document.getElementById('2.5_button').classList.add("hide");
-          if(income=='>2.5Lacs'){
-            income='>5.0Lacs'
-          }
-      }
-     var div_name=interest+income;
-     var curr=document.getElementById(div_name);
-     var prv_div=document.getElementById(prv);
-     console.log(curr.id +" "+prv_div.id );  
-     prv_div.classList.toggle("hide");
-     curr.classList.toggle("hide");
-     prv=div_name;
+    if(interest=='Lifestyle'){
+        document.getElementById('2.5_button').classList.remove("hide");
+    }else{
+        document.getElementById('2.5_button').classList.add("hide");
+        if(income=='>2.5Lacs'){
+          income='>5.0Lacs'
+        }
+    }
+    var div_name=interest+income;
+    var curr=document.getElementById(div_name);
+    var prv_div=document.getElementById(prv);
+    prv_div.classList.toggle("hide");
+    curr.classList.toggle("hide");
+    prv=div_name;
   }
 </script>
 

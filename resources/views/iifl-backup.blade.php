@@ -1880,7 +1880,7 @@ var global_tenure=0;
         return false;
         }
 
-        $('#EMI').val(installment);
+        // $('#EMI').val(installment);
         // console.log(amount +" " +global_eligible_amount);
         if(! $('#eligibility_form').valid() ){
             alert("You must agree to the terms first.");
@@ -1894,23 +1894,27 @@ var global_tenure=0;
         $('#loanamt').empty().append(applied_loan);
         // $("input[name='AppliedLoanamount']").val(applied_loan);
         var days =$('#tenure').val();
+        console.log(days);
         var no_of_days= days*12;
         $('#LoanTenure').empty().append(days);
         $('#loantenure').empty().append(days);
         // $("input[name='Tenure']").val(days);
         var a = $('#int span').html();
          $('#RateOfInt').empty().append(a);
+         console.log(a);
          $('#intrest').empty().append(applied_loan);
-        var Rate = a/12/100;
-        var installment_iifl=applied_loan * Rate * (Math.pow(1 + Rate, no_of_days) / (Math.pow(1 + Rate, no_of_days) - 1));
+
+
+        // var Rate = a/12/100;
+        // var installment_iifl=applied_loan * Rate * (Math.pow(1 + Rate, no_of_days) / (Math.pow(1 + Rate, no_of_days) - 1));
       
-        var installment =Math.round(installment_iifl);
-        $('#EquatedMonthly').empty().append(installment);
-        $('#EMI').val(installment);
-        $('#e_m_i').empty().append(installment);
-        var total =((installment*no_of_days)-applied_loan);
+        // var installment =Math.round(installment_iifl);
+        // $('#EquatedMonthly').empty().append(installment);
+        // $('#EMI').val(installment);
+        // $('#e_m_i').empty().append(installment);
+        // var total =((installment*no_of_days)-applied_loan);
         
-        var ttl_payment = parseInt(applied_loan) + parseInt(total);;
+        // var ttl_payment = parseInt(applied_loan) + parseInt(total);
         
         // appending into applicant_details
         $('#AppliedLoanamount').val(applied_loan);
@@ -1922,6 +1926,22 @@ var global_tenure=0;
          }
 
     });
+    $('#AppliedLoan, #tenure').on('input', function () {
+    var applied_loan = parseInt($('#AppliedLoan').val());
+    var no_of_days = parseFloat($('#tenure').val())*12;
+    var a = $('#int span').html();
+    var Rate = a/12/100;
+     var installment_iifl=applied_loan * Rate * (Math.pow(1 + Rate, no_of_days) / (Math.pow(1 + Rate, no_of_days) - 1));
+      
+         var installment =Math.round(installment_iifl);
+        $('#EquatedMonthly').empty().append(installment);
+        $('#EMI').val(installment);
+        $('#e_m_i').empty().append(installment);
+        var total =((installment*no_of_days)-applied_loan);
+        
+        var ttl_payment = parseInt(applied_loan) + parseInt(total);
+    
+});
 </script>
 
 <script type="text/javascript">

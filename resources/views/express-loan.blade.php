@@ -107,7 +107,7 @@
 							<h4 class="mrg-btm">Edelweiss</h4>
 							
 							
-							<a class="btn btn-primary btn-outline with-arrow" href="{{URL::to('contact-us')}}">Apply Now<i class="icon-arrow-right"></i></a>
+							<a class="btn btn-primary btn-outline with-arrow" href="{{URL::to('edelweiss')}}">Apply Now<i class="icon-arrow-right"></i></a>
 						</div>
 					</div>
 					

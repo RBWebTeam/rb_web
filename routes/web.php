@@ -266,3 +266,6 @@ Route::post('quotes-head','FormController@quoteshead');
 Route::post('chatPost','ChatController@post');
 
 
+Route::get('smemailersender','UploadController@smemailersender');
+Route::post('smemailer','UploadController@smemailer');
+

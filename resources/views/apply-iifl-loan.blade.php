@@ -99,8 +99,8 @@
             
             <!-- <br>
             <hr class="hr-sty"> -->
-            <h3 class="text-uppercase exp-hed">Almost Done!</h3>
-            <span>Enter your contact information to receive a copy of your loan eligibility.</span>
+           <!--  <h3 class="text-uppercase exp-hed">Almost Done!</h3> -->
+            <h3 class="text-uppercase exp-hed">Enter your contact information to receive a copy of your loan eligibility.</h3>
             <section class="content">
                 
                 <span class="input input--nao">
@@ -160,7 +160,7 @@
                     <td class="bg-info">Current EMI: <b>₹<span id="Current"></span></b></td>
                 </tr>
              </table>
-             <h3><i><b class="text-primary">Hurray !!</b></i>&nbsp;You are eligible for a loan of <b>₹<span id="eligible"></span></b > & tenure for <b><span id="period"></span></b> <a class="bg-primary" href="javascript:void(0);">Apply Now</i></a></h3>
+             <h3><i><b class="text-primary">Hurray !!</b></i>&nbsp;You are eligible for a loan of <b>₹<span id="eligible"></span></b >.Tenure for <b><span id="period"></span> years</b> & EMI is<b> ₹<span id="you_have_to_pay"></span></b ></h3>
              <br>
             </div>
 
@@ -184,7 +184,7 @@
                     </svg>
                 </span>
                 <span class="input input--nao input--filled">
-                    <input class="input__field input__field--nao" type="text" name="EMI" id="EMI" onkeypress="return fnAllowNumeric(event)"  />
+                    <input class="input__field input__field--nao" type="text" name="EMI" id="EMI" onkeypress="return fnAllowNumeric(event)" disabled  />
                     <label class="input__label input__label--nao" for="EMI">
                         <span class="input__label-content input__label-content--nao">EMI</span>
                     </label>
@@ -202,7 +202,7 @@
                 <b><span id="fee"></span>%</b>
                 </span>
                  <hr>
-                <div class="col-md-12 text-danger mar-top"><input type="checkbox" name="check"/> I Agree to all the terms and conditions.</div>
+                <div class="col-md-12 text-danger mar-top"><input type="checkbox" name="check" required /> I Agree to all the terms and conditions.</div>
             
             
             
@@ -1699,6 +1699,8 @@ $(document).ready(function(){
          data: {
          '_token': v_token},
          success: function(msg){
+
+            // console.log(msg);
             if(param=='CityMaster'){
                 populate_city_education(msg,'CurrentCity');
                 populate_city_education(msg,'PermanentCity');
@@ -1847,6 +1849,8 @@ var global_tenure=0;
         var max_emi = foir_calc-obligation;
         // console.log(max_emi);
         $('#EMI').val(max_emi);
+         $('#you_have_to_pay').empty().append(max_emi);
+
          global_tenure=tenure;
         $('#tenure').val(tenure);
         var a =(rate*(Math.pow(1 + rate,period) / (Math.pow(1 + rate,period) - 1)));
@@ -1857,28 +1861,30 @@ var global_tenure=0;
         $('#eligible').empty().append(eligible_amount);
         global_eligible_amount=eligible_amount;
         $('#AppliedLoan').val(eligible_amount);
+
       }
 </script>
 
 <script type="text/javascript">
      
     $('#next_form').click(function(){
-
-       var amount=$('#AppliedLoan').val();
+     
+        var amount=$('#AppliedLoan').val();
        if(amount> global_eligible_amount){
         alert('Enter amount less than or equal to eligible amount');
         return false;
         }
         var divas =$('#tenure').val();
         if(divas> global_tenure){
-        alert('Enter amount less than or equal to required tenure');
+        alert('Enter tenure less than or equal to required tenure');
         return false;
         }
-       // console.log(amount +" " +global_eligible_amount);
+
+        // $('#EMI').val(installment);
+        // console.log(amount +" " +global_eligible_amount);
         if(! $('#eligibility_form').valid() ){
-             alert('okae');
-    //      
-      }else{
+            alert("You must agree to the terms first.");
+         }else{
         $('#Eligibility_details').hide();
         $('#Applicant_Details').show();
 
@@ -1888,31 +1894,33 @@ var global_tenure=0;
         $('#loanamt').empty().append(applied_loan);
         // $("input[name='AppliedLoanamount']").val(applied_loan);
         var days =$('#tenure').val();
+        console.log(days);
         var no_of_days= days*12;
         $('#LoanTenure').empty().append(days);
         $('#loantenure').empty().append(days);
         // $("input[name='Tenure']").val(days);
         var a = $('#int span').html();
          $('#RateOfInt').empty().append(a);
+         console.log(a);
          $('#intrest').empty().append(applied_loan);
-        var Rate = a/12/100;
-        var installment_iifl=applied_loan * Rate * (Math.pow(1 + Rate, no_of_days) / (Math.pow(1 + Rate, no_of_days) - 1));
+        // var Rate = a/12/100;
+        // var installment_iifl=applied_loan * Rate * (Math.pow(1 + Rate, no_of_days) / (Math.pow(1 + Rate, no_of_days) - 1));
       
-        var installment =Math.round(installment_iifl);
-        $('#EquatedMonthly').empty().append(installment);
-        $('#EMI').val(installment);
-        $('#e_m_i').empty().append(installment);
-         var total =((installment*no_of_days)-applied_loan);
+        // var installment =Math.round(installment_iifl);
+        // $('#EquatedMonthly').empty().append(installment);
+        // $('#EMI').val(installment);
+        // $('#e_m_i').empty().append(installment);
+        // var total =((installment*no_of_days)-applied_loan);
         
-        var ttl_payment = parseInt(applied_loan) + parseInt(total);;
+        // var ttl_payment = parseInt(applied_loan) + parseInt(total);
         
         // appending into applicant_details
         $('#AppliedLoanamount').val(applied_loan);
         $('#Tenure').val(days);
         $('#ROI').val(a);
-        $('#Emi').val(installment);
+        // $('#Emi').val(installment);
         // $("#input[name='Emi']").val(installment);
-        $('#TotalPayableAmount').val(ttl_payment);
+        // $('#TotalPayableAmount').val(ttl_payment);
          }
 
     });
@@ -1937,7 +1945,18 @@ var global_tenure=0;
          url: "{{URL::to('apply-iifl-loan-applicant1')}}",
          data : $('#applicant_deatils').serialize(),
          success: function(msg){
-            // console.log(msg);
+            console.log(msg);
+            // console.log(msg.head);
+            console.log(msg.head.status);
+            if (msg.head.status == 1) {
+                 $('#otp').hide();
+             alert('Your application are in process, our RM will get in touch with you.');
+            
+            } 
+            else 
+            {
+              $('#otp').hide();
+            }
          }  
       }); 
         }
@@ -1948,9 +1967,9 @@ var global_tenure=0;
 <!-- Co-applicant Ajax -->
 <script type="text/javascript">
     $('#co_applicant_form').click(function(){
-        alert('ok');
+        // alert('ok');
         if(! $('#co_applicant_details').valid()){
-             alert('not valid');
+             // alert('not valid');
 
         }else{
             $('#otp').show();
@@ -1970,9 +1989,9 @@ var global_tenure=0;
 <!-- Instant Approve -->
 <script type="text/javascript">
     $('#instant_approve').click(function(){
-        alert('ok');
+        // alert('ok');
         if(! $('#instant_form').valid()){
-             alert('not valid');
+             // alert('not valid');
 
         }else{
             var amt= $("#input[name='AppliedLoanamount']").val();
@@ -2015,9 +2034,9 @@ var global_tenure=0;
 <!-- aadhar oyp &verify otp -->
 <script type="text/javascript">
     $('#aadhar_otp').click(function(){
-     alert('okae');
+     // alert('okae');
      if(! $('#aadharotp').valid()){
-             alert('not valid');
+             // alert('not valid');
 
         }else{
            
@@ -2035,9 +2054,9 @@ var global_tenure=0;
 </script>
 <script type="text/javascript">
     $('#confirm').click(function(){
-        alert('ok');
+        // alert('ok');
      if(! $('#confirm_aadharotp').valid()){
-             alert('not valid');
+             // alert('not valid');
 
         }else{
            $('#Instant_Approve').show();
@@ -2076,7 +2095,7 @@ var global_tenure=0;
           // console.log(offer);
           if(offer=="Rejected"){
             $('#Instant_Approve').hide();
-         alert("Thank You For Choosing IIFL. Our Representative Will Get In Contact With You");
+         alert("Thank You For Choosing IIFL. Your application has been rejected due to internal credit policy.");
           }
       var maxloan=maxloanamt;
        //   console.log(maxloanamt);
@@ -2099,9 +2118,9 @@ var global_tenure=0;
 <!-- Document upload -->
 <script type="text/javascript">
     $('#proceed_upload').click(function(){
-        alert('ok');
+        // alert('ok');
        if(! $('#upload_details').valid()){
-             alert('not valid');
+             // alert('not valid');
 
         }else{
             $('#financial_doc').show();
@@ -2122,9 +2141,9 @@ var global_tenure=0;
 </script>
 <script type="text/javascript">
     $('#proceed').click(function(){
-        alert('ok');
+        // alert('ok');
        if(! $('#financial_details').valid()){
-             alert('not valid');
+             // alert('not valid');
 
         }else{
            
@@ -2143,7 +2162,7 @@ var global_tenure=0;
      } 
     });
 </script>
-<script type="text/javascript">PermanentState
+<script type="text/javascript">
     $('#same_id').click(function(){
         $('#PermanentAddress1').val($('#CurrentAddress1').val());
         $('#PermanentAddress2').val($('#CurrentAddress2').val());
@@ -2279,6 +2298,7 @@ var global_tenure=0;
             });
           
         </script>
+        
 
 
 

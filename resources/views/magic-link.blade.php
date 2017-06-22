@@ -95,10 +95,10 @@
 
 	<ul class="mag-lnk">
 	   <li class="bg-none white-bg"><a href="{{URL::to('/')}}"><img src="{{URL::to('images/logo.png')}}" class="center"  alt="Rupeeboss.com " title="Rupeeboss.com " /></a></li>
-	    <li><a href="{{URL::to('home-loan-transfer/home-loan')}}">HOME LOAN BALANCE TRANSFER</a></li>
-		<li><a href="{{URL::to('home-loan-transfer/loan-against-property-loan')}}">LOAN AGAINST PROPERTY BALANCE TRANSFER</a></li>
-		<li><a href="{{URL::to('home-loan-transfer/personal-loan')}}">PERSONAL LOAN BALANCE TRANSFER</a></li>
-		<li><a href="{{URL::to('working-capital')}}">WORKING CAPITAL BALANCE TRANSFER</a></li>
+	    <li><a href="{{URL::to('balance-transfer/home-loan')}}">HOME LOAN BALANCE TRANSFER</a></li>
+		<li><a href="{{URL::to('balance-transfer/loan-against-property-loan')}}">LOAN AGAINST PROPERTY BALANCE TRANSFER</a></li>
+		<li><a href="{{URL::to('balance-transfer/personal-loan')}}">PERSONAL LOAN BALANCE TRANSFER</a></li>
+		<li><a href="{{URL::to('balance-transfer/working-capital')}}">WORKING CAPITAL BALANCE TRANSFER</a></li>
 		<li><a href="{{URL::to('home-loan')}}">APPLY FOR HOME LOAN</a></li>
 		<li><a href="{{URL::to('personal-loan')}}">APPLY FOR PERSONAL LOAN</a></li>
 		<li><a href="{{URL::to('loan-against-property')}}">APPLY FOR LOAN AGAINST PROPERTY</a></li>

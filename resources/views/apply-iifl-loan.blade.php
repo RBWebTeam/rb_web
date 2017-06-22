@@ -1323,6 +1323,14 @@
         
             </div>
             </div>
+
+            <div class="row" id="thank_you">
+                <div class="col-md-10 col-md-offset-1">
+                <hr>
+                <h1 class="text-center pad">Thank You</h1>
+                <h4 class="text-center">Your application are in process, Our RM will get in touch with you.</h4>
+            </div>
+            </div>
                         
             <!-- </section>
             </form>
@@ -1955,7 +1963,9 @@ var global_tenure=0;
             console.log(msg.head.status);
             if (msg.head.status == 1) {
                  $('#otp').hide();
-             alert('Your application are in process, our RM will get in touch with you.');
+                 $('#confirm_otp').hide();
+                 $('#thank_you').show();
+             alert('Your application are in process, Our RM will get in touch with you.');
             
             } 
             else 

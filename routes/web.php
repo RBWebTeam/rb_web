@@ -269,3 +269,9 @@ Route::post('chatPost','ChatController@post');
 Route::get('smemailersender','UploadController@smemailersender');
 Route::post('smemailer','UploadController@smemailer');
 
+
+//pratik route 
+Route::get('track-application','TrackapplicationController@tracking');
+Route::post('view-your-application','TrackapplicationController@tracking_sub');
+// Route::get('view-your-application','TrackapplicationController@tracking_view');
+

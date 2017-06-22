@@ -258,7 +258,7 @@
       }else{
         document.getElementById('2.5_button').classList.add("hide");
         if(income=='>2.5Lacs'){
-          income=='>5.0Lacs'
+          income='>5.0Lacs'
         }
       }
      var div_name=interest+income;

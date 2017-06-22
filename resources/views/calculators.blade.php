@@ -69,12 +69,13 @@
 						<div class="price-box popular1">
 							<div class="center-blg"><img src="{{URL::to('images/cal/01.png')}}" alt="income_loan_calculator_icon" title="Income Calculator" /></div>
 							<h4 class="mrg-btm">Income Calculator</h4>
-							<a class="btn btn-primary btn-outline with-arrow" href="{{URL::to('check-emi')}}">View Now<i class="icon-arrow-right"></i></a>
+							<a class="btn btn-primary btn-outline with-arrow" href="{{URL::to('contact-us')}}">Apply Now<i class="icon-arrow-right"></i></a>
+
 						</div>
 					</div>
 					
 					
-
+                
 				</div>
 			</div>
 		</div>

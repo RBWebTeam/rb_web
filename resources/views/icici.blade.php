@@ -237,9 +237,11 @@
 @include('layout.script')
 
 <script type="text/javascript">
- var income= '>2.5Lacs';
+
+  var income= '>2.5Lacs';
  var interest='Lifestyle';
- var prv=interest+income;
+ var prv='Lifestyle>2.5Lacs';
+
   function set_annual_income(value)
   { 
        income=value;
@@ -251,12 +253,14 @@
        show_card();
   }
   function show_card(){
+      
      var div_name=interest+income;
      var curr=document.getElementById(div_name);
      var prv_div=document.getElementById(prv);
-     
+     console.log(curr.id +" "+prv_div.id );  
      prv_div.classList.toggle("hide");
      curr.classList.toggle("hide");
+     prv=div_name;
     // if (( interest == 'Lifestyle' && income == '>2.5Lacs'))
     //   {
        

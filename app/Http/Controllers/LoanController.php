@@ -411,8 +411,7 @@ public function dropdown(Request $req){
 
      //print_r($obj->body->prospectno);exit();
      }
-     // print_r($obj);
-    return response()->json( $obj);
+     print_r($obj);
       
     //  $a=$obj->body;
     // return $http_result;

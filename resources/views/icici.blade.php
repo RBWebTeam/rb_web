@@ -1,5 +1,6 @@
 
 @include('layout.header')
+
 <div id="fh5co-hero">
 
 
@@ -37,230 +38,187 @@
 </ul>
 
 <div class="tab-content text-left">
-  <div id="home_lifestyle_2"  >
-  <div class="col-md-4">
-  <img src="images/CS/RD_1/SD_ICIC_Rohit_Khanna_Platinum_VISA_Card.jpg" width="230" class="pull-left card-img"/>
-  </div>
-  <div class="col-md-8">
-  <h3>Platinum Chip Credit Card</h3>
-    <ul class="pad-lft">
-    <li>No Joining Fee. No Annual Fee</li>
-        <li>Earn 2 PAYBACK points on every Rs.100 spent</li>
-        <li>Min. 15% savings on dining at participating restaurants</li>
-       <li>Save on 1% fuel surcharge, waived off at HPCL petrol pumps</li>
+      <div id="Lifestyle>2.5Lacs"  >
+      <div class="col-md-4">
+      <img src="images/CS/RD_1/SD_ICIC_Rohit_Khanna_Platinum_VISA_Card.jpg" width="230" class="pull-left card-img"/>
+      </div>
+      <div class="col-md-8">
+      <h3>Platinum Chip Credit Card</h3>
+        <ul class="pad-lft">
+        <li>No Joining Fee. No Annual Fee</li>
+            <li>Earn 2 PAYBACK points on every Rs.100 spent</li>
+            <li>Min. 15% savings on dining at participating restaurants</li>
+           <li>Save on 1% fuel surcharge, waived off at HPCL petrol pumps</li>
 
-  </ul>
-  </div>
-  <div class="col-md-8 pull-right"><a  name="Platinum-Chip-Credit-Card&&amount>2.5Lacs&&interest=Lifestyle" class="btn btn-primary apply apply">Apply Now</a></div>
-  
-  </div>
-  <div id="menu12" style="display: none;" >
-  <div class="col-md-4">
-    <img src="images/CS/RD/JET-CORAL-VISA.jpg" width="230" class="pull-left card-img"/>
-  </div>
-  <div class="col-md-8">
-  <h3>Jet Coral Credit Card</h3>
-    <ul class="pad-lft">
-    <li>Joining Fee - ₹.1,250 + ST</li>
-        <li>2,500 Welcome Bonus JPMiles on joining</li>
-        <li>2,500 activation bonus JPMiles on achieving spends threshold of ₹50,000</li>
-        <li>1,250 bonus JPMiles every year on renewal each year</li>
-  </ul>
-  </div>
-  <div class="col-md-8 pull-right"><a  class="btn btn-primary apply">Apply Now</a></div>
-  </div>
-  <div id="o" style="display: none;" class="tab-pane fade">
-  <div class="col-md-4">
-    <img src="images/CS/RD_1/SD_ICIC_Rohit_Khanna_Platinum_VISA_Card.jpg" width="230" class="pull-left card-img"/>
-  </div>
-  <div class="col-md-8">
-  <h3>Coral Credit Card</h3>
-    <ul class="pad-lft">
-    <li>Limited period offer: Joining fee Rs.500</li>
-        <li>2X cash rewards on dining, groceries and at supermarkets</li>
-        <li>Buy 1, get 1 movie ticket free at BookMyShow</li>
-       <li>Get a complimentary tie from Provogue on joining</li>
-  </ul>
-  </div>
-  <div class="col-md-8 pull-right"><a  class="btn btn-primary apply">Apply Now</a></div>
-  </div>
+      </ul>
+      </div>
+      <div class="col-md-8 pull-right"><a  name="Platinum-Chip-Credit-Card&&amount>2.5Lacs&&interest=Lifestyle" class="btn btn-primary apply apply">Apply Now</a>
+      </div>
+      </div>
+     
+      <div id="Lifestyle>5.0Lacs" class="hide">
+      <div class="col-md-4">
+      <img src="images/CS/RD/DA_Coral-Mastercard-MasterCard_1.jpg" width="230" class="pull-left card-img"/>
+      </div>
+      <div class="col-md-8">
+      <h3>Coral Credit Card</h3>
+        <ul class="pad-lft">
+        <li>No Joining Fee. No Annual Fee</li>
+            <li>Earn 2 PAYBACK points on every Rs.100 spent</li>
+            <li>Min. 15% savings on dining at participating restaurants</li>
+           <li>Save on 1% fuel surcharge, waived off at HPCL petrol pumps</li>
 
+      </ul>
+      </div>
+      <div class="col-md-8 pull-right"><a name="Coral-Credit-Card&&amount=>5.0Lacs&&interest=Lifestyle"  class="btn btn-primary apply">Apply Now</a></div>
 
-<!-- 5.0 -->
+      </div>
+      <div id="Travel>5.0Lacs" class="hide">
+      <div class="col-md-4">
+        <img src="images/CS/RD/JET-CORAL-VISA.jpg" width="230" class="pull-left card-img"/>
+      </div>
+      <div class="col-md-8">
+      <h3>Jet Coral Credit Card</h3>
+        <ul class="pad-lft">
+        <li>Joining Fee - ₹.1,250 + ST</li>
+            <li>2,500 Welcome Bonus JPMiles on joining</li>
+            <li>2,500 activation bonus JPMiles on achieving spends threshold of ₹50,000</li>
+            <li>1,250 bonus JPMiles every year on renewal each year</li>
 
-  <div id="home1_lifestyle_5" style="display: none;">
-  <div class="col-md-4">
-  <img src="images/CS/RD/DA_Coral-Mastercard-MasterCard_1.jpg" width="230" class="pull-left card-img"/>
-  </div>
-  <div class="col-md-8">
-  <h3>Coral Credit Card</h3>
-    <ul class="pad-lft">
-    <li>No Joining Fee. No Annual Fee</li>
-        <li>Earn 2 PAYBACK points on every Rs.100 spent</li>
-        <li>Min. 15% savings on dining at participating restaurants</li>
-       <li>Save on 1% fuel surcharge, waived off at HPCL petrol pumps</li>
+      </ul>
+      </div>
+      <div class="col-md-8 pull-right"><a name="Jet-Coral-Credit-Card&&amount=>5.0Lacs&&interest=Travel"  class="btn btn-primary apply">Apply Now</a></div>
+      
+      </div>
+      <div id="Motorsports>5.0Lacs" class="hide">
+      <div class="col-md-4">
+        <img src="images/CS/RD_1/SS_ICICI-RED-STRAIGHT-CARD-MERGED_DateChange.jpg" width="230" class="pull-left card-img"/>
+      </div>
+      <div class="col-md-8">
+      <h3>Ferrari Platinum Credit Card</h3>
+        <ul class="pad-lft">
+        <li>Limited period offer: Joining fee Rs.500</li>
+            <li>2X cash rewards on dining, groceries and at supermarkets</li>
+            <li>Buy 1, get 1 movie ticket free at BookMyShow</li>
+           <li>Get a complimentary tie from Provogue on joining</li>
 
-  </ul>
-  </div>
-  <div class="col-md-8 pull-right"><a name="Coral-Credit-Card&&amount=>5.0Lacs&&interest=Lifestyle"  class="btn btn-primary apply">Apply Now</a></div>
+      </ul>
+      </div>
+      <div class="col-md-8 pull-right"><a name="Ferrari-Platinum-Credit-Card&&amount=>15Lacs&&interest=Motorsports" class="btn btn-primary apply">Apply Now</a></div>
 
-  </div>
-  <div id="menu1" style="display: none;">
-  <div class="col-md-4">
-    <img src="images/CS/RD/JET-CORAL-VISA.jpg" width="230" class="pull-left card-img"/>
-  </div>
-  <div class="col-md-8">
-  <h3>Jet Coral Credit Card</h3>
-    <ul class="pad-lft">
-    <li>Joining Fee - ₹.1,250 + ST</li>
-        <li>2,500 Welcome Bonus JPMiles on joining</li>
-        <li>2,500 activation bonus JPMiles on achieving spends threshold of ₹50,000</li>
-        <li>1,250 bonus JPMiles every year on renewal each year</li>
-
-  </ul>
-  </div>
-  <div class="col-md-8 pull-right"><a name="Jet-Coral-Credit-Card&&amount=>5.0Lacs&&interest=Travel"  class="btn btn-primary apply">Apply Now</a></div>
-  
-  </div>
-  <div id="menu2_motorsports_5" style="display: none;" >
-  <div class="col-md-4">
-    <img src="images/CS/RD_1/SS_ICICI-RED-STRAIGHT-CARD-MERGED_DateChange.jpg" width="230" class="pull-left card-img"/>
-  </div>
-  <div class="col-md-8">
-  <h3>Ferrari Platinum Credit Card</h3>
-    <ul class="pad-lft">
-    <li>Limited period offer: Joining fee Rs.500</li>
-        <li>2X cash rewards on dining, groceries and at supermarkets</li>
-        <li>Buy 1, get 1 movie ticket free at BookMyShow</li>
-       <li>Get a complimentary tie from Provogue on joining</li>
-
-  </ul>
-  </div>
-  <div class="col-md-8 pull-right"><a name="Ferrari-Platinum-Credit-Card&&amount=>15Lacs&&interest=Motorsports" class="btn btn-primary apply">Apply Now</a></div>
-
-  </div>
+      </div>
 
 
-<!-- 10 -->
+    <!-- 10 -->
 
-  <div id="home2_lifestyle_10" style="display: none;">
-  <div class="col-md-4">
-  <img src="images/CS/RD/Rubyx-MasterCard-02.jpg" width="230" class="pull-left card-img"/>
-  </div>
-  <div class="col-md-8">
-  <h3>Rubyx Credit Card</h3>
-    <ul class="pad-lft">
-    <li>Exclusive privileges - entertainment, dining, wellness and golf</li>
-        <li>Complimentary airport lounge access</li>
-        <li>Buy 1, get 1 movie ticket free at BookMyShows</li>
-       <li>A set of complimentary Sennheiser HD 221 headphones on joining</li>
+      <div id="Lifestyle>10Lacs" class="hide">
+      <div class="col-md-4">
+      <img src="images/CS/RD/Rubyx-MasterCard-02.jpg" width="230" class="pull-left card-img"/>
+      </div>
+      <div class="col-md-8">
+      <h3>Rubyx Credit Card</h3>
+        <ul class="pad-lft">
+        <li>Exclusive privileges - entertainment, dining, wellness and golf</li>
+            <li>Complimentary airport lounge access</li>
+            <li>Buy 1, get 1 movie ticket free at BookMyShows</li>
+           <li>A set of complimentary Sennheiser HD 221 headphones on joining</li>
 
-  </ul>
-  </div>
-  <div class="col-md-8 pull-right"><a name="Rubyx-Credit-Card&&amount=>10Lacs&&interest=Lifestyle" class="btn btn-primary apply">Apply Now</a></div>
-  </div>
+      </ul>
+      </div>
+      <div class="col-md-8 pull-right"><a name="Rubyx-Credit-Card&&amount=>10Lacs&&interest=Lifestyle" class="btn btn-primary apply">Apply Now</a></div>
+      </div>
 
-  
-  <div id="menu1_10" style="display:none;" >
-  <div class="col-md-4">
-    <img src="images/CS/RD/JET-RUBYX-VISA.jpg" width="230" class="pull-left card-img"/>
-  </div>
-  <div class="col-md-8">
-  <h3>Jet Rubyx Credit Card</h3>
-    <ul class="pad-lft">
-    <li>Joining Fee - ₹.2,500 + ST</li>
-    <li>Welcome: 5,000 JPMiles + Complimentary Jet Airways Ticket</li>
-    <li>5,000 activation bonus JPMiles on achieving spends threshold of ₹75,000</li>
-    <li>Renewal: 2,500 JPMiles + Complimentary Jet Airways Ticket</li>
+      
+      <div id="Travel>10Lacs" class="hide" >
+      <div class="col-md-4">
+        <img src="images/CS/RD/JET-RUBYX-VISA.jpg" width="230" class="pull-left card-img"/>
+      </div>
+      <div class="col-md-8">
+      <h3>Jet Rubyx Credit Card</h3>
+        <ul class="pad-lft">
+        <li>Joining Fee - ₹.2,500 + ST</li>
+        <li>Welcome: 5,000 JPMiles + Complimentary Jet Airways Ticket</li>
+        <li>5,000 activation bonus JPMiles on achieving spends threshold of ₹75,000</li>
+        <li>Renewal: 2,500 JPMiles + Complimentary Jet Airways Ticket</li>
 
-  </ul>
-  </div>
-  <div class="col-md-8 pull-right"><a name="Jet-Rubyx-Credit-Card&&amount=>10Lacs&&interest=Travel" class="btn btn-primary apply">Apply Now</a></div>
+      </ul>
+      </div>
+      <div class="col-md-8 pull-right"><a name="Jet-Rubyx-Credit-Card&&amount=>10Lacs&&interest=Travel" class="btn btn-primary apply">Apply Now</a></div>
 
-  </div>
-  <div id="menu_motorsports_10" style="display: none;" > 
-  <div class="col-md-4">
-    <img src="images/CS/RD_1/SS_ICICI-BLACK-STRAIGHT-CARD_R1_EX.jpg" width="230" class="pull-left card-img"/>
-  </div>
-  <div class="col-md-8">
-  <h3>Ferrari Signature Credit Card</h3>
-    <ul class="pad-lft">
-    <li>Complimentary Scuderia Ferrari watch on joining</li>
-        <li>Discounts on Ferrari merchandise at Ferrari Online Store</li>
-        <li>2 complimentary domestic airport lounge visits/ quarter</li>
-        <li>Buy 1, get 1 movie ticket free at BookMyShow</li>
+      </div>
+      <div id="Motorsports>10Lacs" class="hide"> 
+      <div class="col-md-4">
+        <img src="images/CS/RD_1/SS_ICICI-BLACK-STRAIGHT-CARD_R1_EX.jpg" width="230" class="pull-left card-img"/>
+      </div>
+      <div class="col-md-8">
+      <h3>Ferrari Signature Credit Card</h3>
+        <ul class="pad-lft">
+        <li>Complimentary Scuderia Ferrari watch on joining</li>
+            <li>Discounts on Ferrari merchandise at Ferrari Online Store</li>
+            <li>2 complimentary domestic airport lounge visits/ quarter</li>
+            <li>Buy 1, get 1 movie ticket free at BookMyShow</li>
 
-  </ul>
-  </div>
-  <div class="col-md-8 pull-right"><a name="Ferrari-Signature-Credit-Card&&amount=>10Lacs&&interest=Motorsports"  class="btn btn-primary apply">Apply Now</a></div>
+      </ul>
+      </div>
+      <div class="col-md-8 pull-right"><a name="Ferrari-Signature-Credit-Card&&amount=>10Lacs&&interest=Motorsports"  class="btn btn-primary apply">Apply Now</a></div>
 
-  </div>
+      </div>
 
 
-<!-- 15 -->
+    <!-- 15 -->
 
-  <div id="home3_lifestyle_15" style="display: none;">
-  <div class="col-md-4">
-  <img src="images/CS/RD/JET-SAPPHIRO-AMEX.jpg" width="230" class="pull-left card-img"/>
-  </div>
-  <div class="col-md-8">
-  <h3>Sapphiro Credit Card</h3>
-    <ul class="pad-lft">
-    <li>Exclusive privileges - entertainment, dining, wellness and golf</li>
-        <li>Complimentary membership to the Priority Pass programme</li>
-        <li>Buy 1, get 1 movie ticket free at BookMyShow</li>
-        <li>Complimentary All New Kindle on joining</li>
+      <div id="Lifestyle>15Lacs" class="hide">
+      <div class="col-md-4">
+      <img src="images/CS/RD/JET-SAPPHIRO-AMEX.jpg" width="230" class="pull-left card-img"/>
+      </div>
+      <div class="col-md-8">
+      <h3>Sapphiro Credit Card</h3>
+        <ul class="pad-lft">
+        <li>Exclusive privileges - entertainment, dining, wellness and golf</li>
+            <li>Complimentary membership to the Priority Pass programme</li>
+            <li>Buy 1, get 1 movie ticket free at BookMyShow</li>
+            <li>Complimentary All New Kindle on joining</li>
 
-  </ul>
-  </div>
-  <div class="col-md-8 pull-right"><a name="Sapphiro-Credit-Card&&amount=>15Lacs&&interest=Lifestyle"  class="btn btn-primary apply">Apply Now</a></div>
+      </ul>
+      </div>
+      <div class="col-md-8 pull-right"><a name="Sapphiro-Credit-Card&&amount=>15Lacs&&interest=Lifestyle"  class="btn btn-primary apply">Apply Now</a></div>
 
-  </div>
-  <div id="menu_travel_15" style="display: none;">
-  <div class="col-md-4">
-    <img src="images/CS/RD/JET-SAPPHIRO-VISA.jpg" width="230" class="pull-left card-img"/>
-  </div>
-  <div class="col-md-8">
-  <h3>Jet Sapphiro Credit Card</h3>
-    <ul class="pad-lft">
-    <li>Joining Fee - ₹.5,000 + ST</li>
-        <li>Welcome: 10,000 JPMiles + Complimentary Jet Airways Ticket</li>
-        <li>10,000 activation bonus JPMiles on achieving spends threshold of ₹1,00,000</li>
-       <li>Renewal: 5,000 JPMiles + Complimentary Jet Airways Ticket</li>
+      </div>
+      <div id="Travel>15Lacs" class="hide">
+      <div class="col-md-4">
+        <img src="images/CS/RD/JET-SAPPHIRO-VISA.jpg" width="230" class="pull-left card-img"/>
+      </div>
+      <div class="col-md-8">
+      <h3>Jet Sapphiro Credit Card</h3>
+        <ul class="pad-lft">
+        <li>Joining Fee - ₹.5,000 + ST</li>
+            <li>Welcome: 10,000 JPMiles + Complimentary Jet Airways Ticket</li>
+            <li>10,000 activation bonus JPMiles on achieving spends threshold of ₹1,00,000</li>
+           <li>Renewal: 5,000 JPMiles + Complimentary Jet Airways Ticket</li>
 
-  </ul>
-  </div>
-  <div class="col-md-8 pull-right"><a name="Jet-Sapphiro-Credit-Card&&amount=>15Lacs&&interest=Travel" class="btn btn-primary apply">Apply Now</a></div>
+      </ul>
+      </div>
+      <div class="col-md-8 pull-right"><a name="Jet-Sapphiro-Credit-Card&&amount=>15Lacs&&interest=Travel" class="btn btn-primary apply">Apply Now</a></div>
 
-  </div>
-  <div id="menu_motorsports_15" style="display: none;" >
-  <div class="col-md-4">
-    <img src="images/CS/RD_1/SS_ICICI-BLACK-STRAIGHT-CARD_R1_EX.jpg" width="230" class="pull-left card-img"/>
-  </div>
-  <div class="col-md-8">
-  <h3>Ferrari Signature Credit Card</h3>
-    <ul class="pad-lft">
-    <li>Complimentary Scuderia Ferrari watch on joining</li>
-        <li>Discounts on Ferrari merchandise at Ferrari Online Store</li>
-        <li>2 complimentary domestic airport lounge visits/ quarter</li>
-        <li>Buy 1, get 1 movie ticket free at BookMyShow</li>
-  </ul>
-  </div>
-  <div class="col-md-8 pull-right"><a name="Ferrari-Signature-Credit-Card&&amount=>15Lacs&&interest=Motorsports"  class="btn btn-primary apply">Apply Now</a></div>
+      </div>
+      <div id="Motorsports>15Lacs" class="hide">
+      <div class="col-md-4">
+        <img src="images/CS/RD_1/SS_ICICI-BLACK-STRAIGHT-CARD_R1_EX.jpg" width="230" class="pull-left card-img"/>
+      </div>
+      <div class="col-md-8">
+      <h3>Ferrari Signature Credit Card</h3>
+        <ul class="pad-lft">
+        <li>Complimentary Scuderia Ferrari watch on joining</li>
+            <li>Discounts on Ferrari merchandise at Ferrari Online Store</li>
+            <li>2 complimentary domestic airport lounge visits/ quarter</li>
+            <li>Buy 1, get 1 movie ticket free at BookMyShow</li>
+      </ul>
+      </div>
+      <div class="col-md-8 pull-right"><a name="Ferrari-Signature-Credit-Card&&amount=>15Lacs&&interest=Motorsports"  class="btn btn-primary apply">Apply Now</a></div>
 
-  </div>
+      </div>
 </div>
-
-
-  </div>        
-          
-          
-          
-          
-          
-          
-          
-          
+</div>
           </div>
         </div>
       </div>
@@ -281,6 +239,7 @@
 <script type="text/javascript">
  var income= '>2.5Lacs';
  var interest='Lifestyle';
+ var prv=interest+income;
   function set_annual_income(value)
   { 
        income=value;
@@ -292,155 +251,160 @@
        show_card();
   }
   function show_card(){
-    console.log(interest + ""+income);
-    if (( interest == 'Lifestyle' && income == '>2.5Lacs'))
-      {
+     var div_name=interest+income;
+     var curr=document.getElementById(div_name);
+     var prv_div=document.getElementById(prv);
+     
+     prv_div.classList.toggle("hide");
+     curr.classList.toggle("hide");
+    // if (( interest == 'Lifestyle' && income == '>2.5Lacs'))
+    //   {
        
         
-        $("#home_lifestyle_2").show();
-        $("#home1_lifestyle_5").hide();
-        $("#home2_lifestyle_10").hide();
-        $("#home3_lifestyle_15").hide();
-        $('#menu1').hide();
-        $('#menu1_10').hide();
-        $('#menu_travel_15').hide();
-        $('#menu2_motorsports_5').hide();
-        $('#menu_motorsports_10').hide();
-        $('#menu_motorsports_15').hide();
+    //     $("#home_lifestyle_2").show();
+    //     $("#home1_lifestyle_5").hide();
+    //     $("#home2_lifestyle_10").hide();
+    //     $("#home3_lifestyle_15").hide();
+    //     $('#menu1').hide();
+    //     $('#menu1_10').hide();
+    //     $('#menu_travel_15').hide();
+    //     $('#menu2_motorsports_5').hide();
+    //     $('#menu_motorsports_10').hide();
+    //     $('#menu_motorsports_15').hide();
 
          
-      }
-    if (( interest == 'Lifestyle' && income == '>5.0Lacs'))
-      {
+    //   }
+    // if (( interest == 'Lifestyle' && income == '>5.0Lacs'))
+    //   {
        
-        $("#home_lifestyle_2").hide();
-        $("#home1_lifestyle_5").show();
-        $("#home2_lifestyle_10").hide();
-        $("#home3_lifestyle_15").hide();
-        $('#menu1').hide();
-        $('#menu1_10').hide();
-        $('#menu_travel_15').hide();
-        $('#menu2_motorsports_5').hide();
-        $('#menu_motorsports_10').hide();
-        $('#menu_motorsports_15').hide();
-      }
-      if (( interest == 'Lifestyle' && income == '>10Lacs'))
-      {
+    //     $("#home_lifestyle_2").hide();
+    //     $("#home1_lifestyle_5").show();
+    //     $("#home2_lifestyle_10").hide();
+    //     $("#home3_lifestyle_15").hide();
+    //     $('#menu1').hide();
+    //     $('#menu1_10').hide();
+    //     $('#menu_travel_15').hide();
+    //     $('#menu2_motorsports_5').hide();
+    //     $('#menu_motorsports_10').hide();
+    //     $('#menu_motorsports_15').hide();
+    //   }
+    //   if (( interest == 'Lifestyle' && income == '>10Lacs'))
+    //   {
        
-        $("#home_lifestyle_2").hide();
-        $("#home1_lifestyle_5").hide();
-        $("#home2_lifestyle_10").show();
-        $("#home3_lifestyle_15").hide();
-        $('#menu1').hide();
-        $('#menu1_10').hide();
-        $('#menu_travel_15').hide();
-        $('#menu2_motorsports_5').hide();
-        $('#menu_motorsports_10').hide();
-        $('#menu_motorsports_15').hide();
-      }
-      if (( interest == 'Lifestyle' && income == '>15Lacs'))
-      {
+    //     $("#home_lifestyle_2").hide();
+    //     $("#home1_lifestyle_5").hide();
+    //     $("#home2_lifestyle_10").show();
+    //     $("#home3_lifestyle_15").hide();
+    //     $('#menu1').hide();
+    //     $('#menu1_10').hide();
+    //     $('#menu_travel_15').hide();
+    //     $('#menu2_motorsports_5').hide();
+    //     $('#menu_motorsports_10').hide();
+    //     $('#menu_motorsports_15').hide();
+    //   }
+    //   if (( interest == 'Lifestyle' && income == '>15Lacs'))
+    //   {
        
-        $("#home_lifestyle_2").hide();
-        $("#home1_lifestyle_5").hide();
-        $("#home2_lifestyle_10").hide();
-        $("#home3_lifestyle_15").show();
-        $('#menu1').hide();
-        $('#menu1_10').hide();
-        $('#menu_travel_15').hide();
-        $('#menu2_motorsports_5').hide();
-        $('#menu_motorsports_10').hide();
-        $('#menu_motorsports_15').hide();
+    //     $("#home_lifestyle_2").hide();
+    //     $("#home1_lifestyle_5").hide();
+    //     $("#home2_lifestyle_10").hide();
+    //     $("#home3_lifestyle_15").show();
+    //     $('#menu1').hide();
+    //     $('#menu1_10').hide();
+    //     $('#menu_travel_15').hide();
+    //     $('#menu2_motorsports_5').hide();
+    //     $('#menu_motorsports_10').hide();
+    //     $('#menu_motorsports_15').hide();
 
        
-      }
-      if (( interest == 'Travel' && income == '>5.0Lacs'))
-      {
+    //   }
+    //   if (( interest == 'Travel' && income == '>5.0Lacs'))
+    //   {
        
         
-        $("#home_lifestyle_2").hide();
-        $("#home1_lifestyle_5").hide();
-        $("#home2_lifestyle_10").hide();
-        $("#home3_lifestyle_15").hide();
-        $('#menu1').show();
-        $('#menu1_10').hide();
-        $('#menu_travel_15').hide();
-        $('#menu2_motorsports_5').hide();
-        $('#menu_motorsports_10').hide();
-        $('#menu_motorsports_15').hide();
+    //     $("#home_lifestyle_2").hide();
+    //     $("#home1_lifestyle_5").hide();
+    //     $("#home2_lifestyle_10").hide();
+    //     $("#home3_lifestyle_15").hide();
+    //     $('#menu1').show();
+    //     $('#menu1_10').hide();
+    //     $('#menu_travel_15').hide();
+    //     $('#menu2_motorsports_5').hide();
+    //     $('#menu_motorsports_10').hide();
+    //     $('#menu_motorsports_15').hide();
         
-      }
-      if (( interest == 'Travel' && income == '>10Lacs'))
-      {
+    //   }
+    //   if (( interest == 'Travel' && income == '>10Lacs'))
+    //   {
        
-        $("#home_lifestyle_2").hide();
-        $("#home1_lifestyle_5").hide();
-        $("#home2_lifestyle_10").hide();
-        $("#home3_lifestyle_15").hide();
-        $('#menu1').hide();
-        $('#menu1_10').show();
-        $('#menu_travel_15').hide();
-        $('#menu2_motorsports_5').hide();
-        $('#menu_motorsports_10').hide();
-        $('#menu_motorsports_15').hide();
-      }
-      if (( interest == 'Travel' && income == '>15Lacs'))
-      {
-       $("#home_lifestyle_2").hide();
-        $("#home1_lifestyle_5").hide();
-        $("#home2_lifestyle_10").hide();
-        $("#home3_lifestyle_15").hide();
-        $('#menu1').hide();
-        $('#menu1_10').hide();
-        $('#menu_travel_15').show();
-        $('#menu2_motorsports_5').hide();
-        $('#menu_motorsports_10').hide();
-        $('#menu_motorsports_15').hide();
+    //     $("#home_lifestyle_2").hide();
+    //     $("#home1_lifestyle_5").hide();
+    //     $("#home2_lifestyle_10").hide();
+    //     $("#home3_lifestyle_15").hide();
+    //     $('#menu1').hide();
+    //     $('#menu1_10').show();
+    //     $('#menu_travel_15').hide();
+    //     $('#menu2_motorsports_5').hide();
+    //     $('#menu_motorsports_10').hide();
+    //     $('#menu_motorsports_15').hide();
+    //   }
+    //   if (( interest == 'Travel' && income == '>15Lacs'))
+    //   {
+    //    $("#home_lifestyle_2").hide();
+    //     $("#home1_lifestyle_5").hide();
+    //     $("#home2_lifestyle_10").hide();
+    //     $("#home3_lifestyle_15").hide();
+    //     $('#menu1').hide();
+    //     $('#menu1_10').hide();
+    //     $('#menu_travel_15').show();
+    //     $('#menu2_motorsports_5').hide();
+    //     $('#menu_motorsports_10').hide();
+    //     $('#menu_motorsports_15').hide();
         
-      }
-      if (( interest == 'Motorsports' && income == '>5.0Lacs'))
-      {
-        $("#home_lifestyle_2").hide();
-        $("#home1_lifestyle_5").hide();
-        $("#home2_lifestyle_10").hide();
-        $("#home3_lifestyle_15").hide();
-        $('#menu1').hide();
-        $('#menu1_10').hide();
-        $('#menu_travel_15').hide();
-        $('#menu2_motorsports_5').show();
-        $('#menu_motorsports_10').hide();
-        $('#menu_motorsports_15').hide();
+    //   }
+    //   if (( interest == 'Motorsports' && income == '>5.0Lacs'))
+    //   {
+    //     $("#home_lifestyle_2").hide();
+    //     $("#home1_lifestyle_5").hide();
+    //     $("#home2_lifestyle_10").hide();
+    //     $("#home3_lifestyle_15").hide();
+    //     $('#menu1').hide();
+    //     $('#menu1_10').hide();
+    //     $('#menu_travel_15').hide();
+    //     $('#menu2_motorsports_5').show();
+    //     $('#menu_motorsports_10').hide();
+    //     $('#menu_motorsports_15').hide();
         
         
-      }
-      if (( interest == 'Motorsports' && income == '>10Lacs'))
-      {
-       $("#home_lifestyle_2").hide();
-        $("#home1_lifestyle_5").hide();
-        $("#home2_lifestyle_10").hide();
-        $("#home3_lifestyle_15").hide();
-        $('#menu1').hide();
-        $('#menu1_10').hide();
-        $('#menu_travel_15').hide();
-        $('#menu2_motorsports_5').hide();
-        $('#menu_motorsports_10').show();
-        $('#menu_motorsports_15').hide();
+    //   }
+    //   if (( interest == 'Motorsports' && income == '>10Lacs'))
+    //   {
+    //    $("#home_lifestyle_2").hide();
+    //     $("#home1_lifestyle_5").hide();
+    //     $("#home2_lifestyle_10").hide();
+    //     $("#home3_lifestyle_15").hide();
+    //     $('#menu1').hide();
+    //     $('#menu1_10').hide();
+    //     $('#menu_travel_15').hide();
+    //     $('#menu2_motorsports_5').hide();
+    //     $('#menu_motorsports_10').show();
+    //     $('#menu_motorsports_15').hide();
        
         
-      }
-      if (( interest == 'Motorsports' && income == '>15Lacs'))
-      {
-       $("#home_lifestyle_2").hide();
-        $("#home1_lifestyle_5").hide();
-        $("#home2_lifestyle_10").hide();
-        $("#home3_lifestyle_15").hide();
-        $('#menu1').hide();
-        $('#menu1_10').hide();
-        $('#menu_travel_15').hide();
-        $('#menu2_motorsports_5').hide();
-        $('#menu_motorsports_10').hide();
-        $('#menu_motorsports_15').show();
-       }
+    //   }
+    //   if (( interest == 'Motorsports' && income == '>15Lacs'))
+    //   {
+    //    $("#home_lifestyle_2").hide();
+    //     $("#home1_lifestyle_5").hide();
+    //     $("#home2_lifestyle_10").hide();
+    //     $("#home3_lifestyle_15").hide();
+    //     $('#menu1').hide();
+    //     $('#menu1_10').hide();
+    //     $('#menu_travel_15').hide();
+    //     $('#menu2_motorsports_5').hide();
+    //     $('#menu_motorsports_10').hide();
+    //     $('#menu_motorsports_15').show();
+    //    }
       
 
   }

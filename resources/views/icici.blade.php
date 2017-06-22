@@ -252,9 +252,9 @@
   }
   function show_card(){
     if(interest=='Lifestyle'){
-        document.getElementById('2.5_button').classList.remove("hide");
+        $('#2.5_button').removeClass("hide");
     }else{
-        document.getElementById('2.5_button').classList.add("hide");
+        $('#2.5_button').addClass("hide");
         if(income=='>2.5Lacs'){
           income='>5.0Lacs'
         }

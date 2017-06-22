@@ -160,7 +160,7 @@
                     <td class="bg-info">Current EMI: <b>₹<span id="Current"></span></b></td>
                 </tr>
              </table>
-             <h3><i><b class="text-primary">Hurray !!</b></i>&nbsp;You are eligible for a loan of <b>₹<span id="eligible"></span></b > & tenure for <b><span id="period"></span> years.</b></h3>
+             <h3><i><b class="text-primary">Hurray !!</b></i>&nbsp;You are eligible for a loan of <b>₹<span id="eligible"></span></b >.Tenure for <b><span id="period"></span> years</b> & EMI is<b> ₹<span id="you_have_to_pay"></span></b ></h3>
              <br>
             </div>
 
@@ -184,7 +184,7 @@
                     </svg>
                 </span>
                 <span class="input input--nao input--filled">
-                    <input class="input__field input__field--nao" type="text" name="EMI" id="EMI" onkeypress="return fnAllowNumeric(event)"  />
+                    <input class="input__field input__field--nao" type="text" name="EMI" id="EMI" onkeypress="return fnAllowNumeric(event)" disabled  />
                     <label class="input__label input__label--nao" for="EMI">
                         <span class="input__label-content input__label-content--nao">EMI</span>
                     </label>
@@ -1700,7 +1700,7 @@ $(document).ready(function(){
          '_token': v_token},
          success: function(msg){
 
-            console.log(msg);
+            // console.log(msg);
             if(param=='CityMaster'){
                 populate_city_education(msg,'CurrentCity');
                 populate_city_education(msg,'PermanentCity');
@@ -1849,6 +1849,8 @@ var global_tenure=0;
         var max_emi = foir_calc-obligation;
         // console.log(max_emi);
         $('#EMI').val(max_emi);
+         $('#you_have_to_pay').empty().append(max_emi);
+
          global_tenure=tenure;
         $('#tenure').val(tenure);
         var a =(rate*(Math.pow(1 + rate,period) / (Math.pow(1 + rate,period) - 1)));
@@ -1859,6 +1861,7 @@ var global_tenure=0;
         $('#eligible').empty().append(eligible_amount);
         global_eligible_amount=eligible_amount;
         $('#AppliedLoan').val(eligible_amount);
+
       }
 </script>
 
@@ -1876,6 +1879,8 @@ var global_tenure=0;
         alert('Enter tenure less than or equal to required tenure');
         return false;
         }
+
+        $('#EMI').val(installment);
 
        // console.log(amount +" " +global_eligible_amount);
         if(! $('#eligibility_form').valid() ){

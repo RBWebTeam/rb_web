@@ -72,6 +72,10 @@ class HomeController extends CallApiController
 		return view('express-loan')->with($data)->with('keywords',$keywords);
 	}
 
+	public function calculators(){
+		return view('calculators');
+	}
+
 	public function credit_card(){
 		$keywords='Apply for Credit Card,Credit Card Status,Credit card application,Free credit cards,Apply credit card online,Credit Card Offers & Eligibility';
 		$data['title']='Credit Card | Compare & Apply Online on Rupeeboss.com';

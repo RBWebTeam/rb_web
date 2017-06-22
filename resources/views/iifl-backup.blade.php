@@ -1920,9 +1920,9 @@ var global_tenure=0;
         $('#AppliedLoanamount').val(applied_loan);
         $('#Tenure').val(days);
         $('#ROI').val(a);
-        // $('#Emi').val(installment);
+        $('#Emi').val(installment);
         // $("#input[name='Emi']").val(installment);
-        // $('#TotalPayableAmount').val(ttl_payment);
+        $('#TotalPayableAmount').val(ttl_payment);
          }
 
     });
@@ -1933,15 +1933,13 @@ var global_tenure=0;
     var Rate = a/12/100;
      var installment_iifl=applied_loan * Rate * (Math.pow(1 + Rate, no_of_days) / (Math.pow(1 + Rate, no_of_days) - 1));
       
-        var installment =Math.round(installment_iifl);
+         var installment =Math.round(installment_iifl);
         $('#EquatedMonthly').empty().append(installment);
         $('#EMI').val(installment);
         $('#e_m_i').empty().append(installment);
-        $('#Emi').val(installment);
         var total =((installment*no_of_days)-applied_loan);
         
         var ttl_payment = parseInt(applied_loan) + parseInt(total);
-         $('#TotalPayableAmount').val(ttl_payment);
     
 });
 </script>

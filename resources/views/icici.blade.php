@@ -17,7 +17,7 @@
      
    <div class="btn-grp  income-tab" data-toggle="buttons" id="income">
      <h3 class="pad" style="border:1px dashed #ccc;">Net Annual Income</h3>
-      <span class="btn btn-default btn-block active" onclick="set_annual_income('>2.5Lacs')">
+      <span class="btn btn-default btn-block active" id="2.5_button" onclick="set_annual_income('>2.5Lacs')">
      <input type="radio">> 2.5 LACS
       </span>
       <span class="btn btn-default btn-block " onclick="set_annual_income('>5.0Lacs')">
@@ -253,7 +253,14 @@
        show_card();
   }
   function show_card(){
-      
+      if(interest=='Lifestyle'){
+        $('#2.5_button').show();
+      }else{
+        $('#2.5_button').hide();
+        if(income=='>2.5Lacs'){
+          income=='>5.0Lacs'
+        }
+      }
      var div_name=interest+income;
      var curr=document.getElementById(div_name);
      var prv_div=document.getElementById(prv);

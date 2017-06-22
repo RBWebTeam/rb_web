@@ -97,6 +97,7 @@ Route::get('privacy-policy-page','HomeController@privacy_policy');
 Route::get('balance-transfer','CompareController@switchme_mobile');
 Route::get('comfy-sales','ComfyController@comfy_sales');
 Route::get('express-loan','HomeController@express_loan');
+Route::get('calculators','HomeController@calculators');
 Route::get('credit-card','HomeController@credit_card');
 Route::get('savings-account','HomeController@savings_account');
 Route::get('rba-login','HomeController@RBA_login');

@@ -37,7 +37,17 @@
 		   
 
 		</div>
-    <div class="item active">
+		<div class="item active">
+	<div class="slide-txt">
+	<i class="sprite sprite-home-ic center-img-align img-responsive hidden-xs"></i>
+	<h2></h2>
+   <h4></h4>
+
+   </div>
+      <img src="{{URL::to('images/slide_0.jpg')}}" alt="Home Loan Banner" title="Home Loan " class="slide-hm"> 
+    </div>
+	
+    <div class="item">
 	<div class="slide-txt">
 	<i class="sprite sprite-home-ic center-img-align img-responsive hidden-xs"></i>
 	<h2>Home Loan </h2>

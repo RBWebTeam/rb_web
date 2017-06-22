@@ -248,6 +248,11 @@ public function  change_password(Request $req){
     }else{
       $refapp = 0;
     }
+    if(isset($request['pan'])){
+      $pan = $request['pan'];
+    }else{
+      $pan =NULL;
+    }
      $email=Session::get('email');
      $empid=Session::get('empid')?Session::get('empid'):'';
      $brokerid_session=Session::get('brokerid')?Session::get('brokerid'):0;
@@ -260,7 +265,7 @@ public function  change_password(Request $req){
     $update_quote=$update->update_liza_quote($quote_id);
     if(isset($req['is_liza'])){
 
-      $loan_parameters='qoutid='.$quote.'&processingfee='.$processing_fee.'&bankid='.$bank.'&loanamout='.$loan_eligible.'&idtype='.$roi_type.'&empcode='.$empid.'&brokerid='.$brokerid_session.'&source='.$source.'&refapp='.$ref;
+      $loan_parameters='qoutid='.$quote.'&processingfee='.$processing_fee.'&bankid='.$bank.'&loanamout='.$loan_eligible.'&idtype='.$roi_type.'&empcode='.$empid.'&brokerid='.$brokerid_session.'&source='.$source.'&refapp='.$ref.'&pan='.$pan;
 
      
 
@@ -278,7 +283,7 @@ public function  change_password(Request $req){
       }
       
       }else{
-         $balance_transfer_parameter='qoutid='.$quote.'&brokerid='.$brokerid_session.'&loanamout='.$loanamount.'&loaninterest='.$loaninterest.'&loanterm='.$loanterm.'&bankid='.$bank.'&productid='.$product.'&idtype='.$roi_type.'&processingfee='.$processing_fee.'&empcode='.$empid.'&refapp='.$refapp.'&source='.$source.'&coapp=0';
+         $balance_transfer_parameter='qoutid='.$quote.'&brokerid='.$brokerid_session.'&loanamout='.$loanamount.'&loaninterest='.$loaninterest.'&loanterm='.$loanterm.'&bankid='.$bank.'&productid='.$product.'&idtype='.$roi_type.'&processingfee='.$processing_fee.'&empcode='.$empid.'&refapp='.$refapp.'&source='.$source.'&coapp=0&pan='.$pan;
         if ($product == '9') {
         return redirect()->away($this::$erp_url_static.'BalanceTransfer/PL_BT_Form.aspx?'.$balance_transfer_parameter);
 

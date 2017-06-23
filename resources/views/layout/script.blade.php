@@ -429,27 +429,33 @@
               }else if(msg=="right"){
                            // window.location="{{ URL::previous() }}";
                             //window.location.href ="{{URL::to('profile')}}";
+                            if(window.location.href.indexOf("track-application") > -1) {
+                                location.reload();
+                            }else{
+                              $("#log_popup").modal('hide');
+                                                    $("#refreshID").load(location.href + " #refreshID");
+                                                    
+                                                    $('#btn_refresh').show();
+                                                    $('#btn_refresh1').hide();
+                                                    $('.btn_refresh1').hide();
+                                                    $('#no_co_app').hide();
+                                                      // Co-Applicant
+                                                      $('#btn_refresh_co').show();
+                                                      $('#btn_refresh_co1').hide();
+                                                      
+                                                      $(".quote_ID").removeAttr('data-target');
+                                                      $(".quote_ID").removeAttr('data-toggle');
+                                                      $( ".quote_ID" ).addClass( "myClass");
+                                                    //  $( ".quote_IDform" ).val(form);
+                                                     // $(".quote_ID").attr("href", form);
+                                                     // $(".quote_ID").load(location.href + ".quote_ID");
+                                                        $(".apply_digitally").removeAttr('data-target');
+                                                        $(".apply_digitally").removeAttr('data-toggle');
+                                                       $(".apply_digitally").addClass("apply_new");
 
-                            $("#log_popup").modal('hide');
-                            $("#refreshID").load(location.href + " #refreshID");
+                            }
+
                             
-                            $('#btn_refresh').show();
-                            $('#btn_refresh1').hide();
-                            $('.btn_refresh1').hide();
-                            $('#no_co_app').hide();
-                              // Co-Applicant
-                              $('#btn_refresh_co').show();
-                              $('#btn_refresh_co1').hide();
-                              
-                              $(".quote_ID").removeAttr('data-target');
-                              $(".quote_ID").removeAttr('data-toggle');
-                              $( ".quote_ID" ).addClass( "myClass");
-                            //  $( ".quote_IDform" ).val(form);
-                             // $(".quote_ID").attr("href", form);
-                             // $(".quote_ID").load(location.href + ".quote_ID");
-                                $(".apply_digitally").removeAttr('data-target');
-                                $(".apply_digitally").removeAttr('data-toggle');
-                               $(".apply_digitally").addClass("apply_new");
                                 
                             }
 

@@ -251,6 +251,7 @@
        show_card();
   }
   function show_card(){
+    console.log(income+"--"+interest)
     if(interest=='Lifestyle'){
        document.getElementById('2.5_button').classList.remove("hide");
     }else{
@@ -266,9 +267,7 @@
     curr.classList.toggle("hide");
     prv=div_name;
   }
-</script>
 
-<script type="text/javascript">
   $('.apply').click(function(){
     var name=$(this).closest("a").attr('name');
     var url="{{URL::to('credit-card-form')}}?prod="+name;

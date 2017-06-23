@@ -64,6 +64,7 @@ Route::get('api','ApiController@GetLAPQuotes');
 Route::get('get-loan/{loan}','BankController@compareLoan');
 Route::post('contact_us','SocialsiteController@contact_us_otp');
 Route::post('contact_otp','SocialsiteController@contactOTP');
+Route::get('working-capital-emi-calculator','CalculatorController@working_capital_emi_calculator');
 
 /* Working Capital */
 

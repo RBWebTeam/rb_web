@@ -256,7 +256,7 @@
                 <input class="input__field input__field--nao" type="hidden" name="EKYCFlag" required id="EKYCFlag" value="0"/>
                 <input class="input__field input__field--nao" type="hidden" name="Processingfee" required id="Processingfee" value="" />
                 <span class="input input--nao">
-                    <input class="input__field input__field--nao" type="text" name="TotalPayableAmount" required id="TotalPayableAmount"/>
+                    <input class="input__field input__field--nao" type="text" name="TotalPayableAmount" required id="TotalPayableAmount" disabled />
                     <label class="input__label input__label--nao" for="TotalPayableAmount">
                         <span class="input__label-content input__label-content--nao">Total Payable Amount</span>
                     </label>
@@ -265,7 +265,7 @@
                     </svg>
                 </span>
                 <span class="input input--nao">
-                    <input class="input__field input__field--nao" type="text" name="Emi" required id="Emi"/>
+                    <input class="input__field input__field--nao" type="text" name="Emi" required id="Emi" disabled />
                     <label class="input__label input__label--nao" for="Emi">
                         <span class="input__label-content input__label-content--nao">Emi</span>
                     </label>

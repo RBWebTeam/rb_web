@@ -1,46 +1,46 @@
- function validateForm() {
-    var fname = document.forms["myForm"]["fullname"].value;
-    if (fname == "") {
-        alert("Please Enter the Full Name");
-        return false;
-    }
+//  function validateForm() {
+//     var fname = document.forms["myForm"]["fullname"].value;
+//     if (fname == "") {
+//         alert("Please Enter the Full Name");
+//         return false;
+//     }
 
 
-    var fmobile = document.forms["myForm"]["mobile"].value;
-    if (fmobile == "") {
-        alert("Please Enter the Mobile");
-        return false;
-    }
+//     var fmobile = document.forms["myForm"]["mobile"].value;
+//     if (fmobile == "") {
+//         alert("Please Enter the Mobile");
+//         return false;
+//     }
 
-    var fmodel = document.forms["myForm"]["makemodel"].value;
-    if (fmodel == "") {
-        alert("Please Enter Your Designation");
-        return false;
-    }
+//     var fmodel = document.forms["myForm"]["makemodel"].value;
+//     if (fmodel == "") {
+//         alert("Please Enter Your Designation");
+//         return false;
+//     }
 
 			
 			
 
-    var fmakeyear = document.forms["myForm"]["mfdyear"].value;
-    if (fmakeyear == "") {
-        alert("Please Enter Company Name");
-        return false;
-    }
-	var city = document.forms["myForm"]["city"].value;
-    if (city == "") {
-        alert("Please Enter City Name");
-        return false;
-    }
+//     var fmakeyear = document.forms["myForm"]["mfdyear"].value;
+//     if (fmakeyear == "") {
+//         alert("Please Enter Company Name");
+//         return false;
+//     }
+// 	var city = document.forms["myForm"]["city"].value;
+//     if (city == "") {
+//         alert("Please Enter City Name");
+//         return false;
+//     }
 
-    var fexpiredate = document.forms["myForm"]["turnover"].value;
-    if (fexpiredate == "") {
-        alert("Please Enter Turn Over");
-        return false;
-    }
-    	$('#mask').hide();
-		$('.window').hide();
-        $('.dis').show();
-}
+//     var fexpiredate = document.forms["myForm"]["turnover"].value;
+//     if (fexpiredate == "") {
+//         alert("Please Enter Turn Over");
+//         return false;
+//     }
+//     	$('#mask').hide();
+// 		$('.window').hide();
+//         $('.dis').show();
+// }
 
 
 
@@ -65,19 +65,19 @@ $(document).ready(function() {
 		//transition effect
 		$(id).fadeIn(2000);
 
-	$('.close').click(function (e) {
-	    e.preventDefault();
-	   //	$('#mask').hide();
-		//$('.window').hide();
-         var ab= validateForm();
+	// $('.close').click(function (e) {
+	//     e.preventDefault();
+	//    //	$('#mask').hide();
+	// 	//$('.window').hide();
+ //         var ab= validateForm();
 		   
-		   if(ab==false){
+	// 	   if(ab==false){
 			    
-		   }else{
-			   document.location = "sendmail.php";
-		   }
+	// 	   }else{
+	// 		   document.location = "sendmail.php";
+	// 	   }
 		 
 		   
-	});
+	// });
 
 });

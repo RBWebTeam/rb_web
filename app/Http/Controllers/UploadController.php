@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use Mail;
+use Validator;
 class UploadController extends CallApiController
 {
 
@@ -85,26 +86,61 @@ class UploadController extends CallApiController
 
 
      public function smemailer(Request $req){
-          
-                  $data1=$req->all(); 
-
-                  $data=$data1['fullname'];
-
-                  // print_r($data);exit();
-                $email ='scriptdp@gmail.com';
-                $mail = Mail::send('email_view_sme',['data' => $data], function($message) use($email) {
-                $message->from('scriptdp@gmail.com', 'RupeeBoss');
-                $message->to($email)
-                ->subject('Loan application submitted');
-
-                });
-          
-          exit; 
 
 
-          //return view('smemailer');
- 
+$val =Validator::make($req->all(), [
+                'name' => 'required|min:2',
+                'mobile' => 'required|regex:/^[789]\d{9}$/',
+                'email' => 'required|email',
+                'designation' =>'required',
+                'company' => 'required',
+                'city' => 'required',
+                'turnover' => 'required',
+                            ]);
+
+           if ($val->fails()){
+
+              return response()->json($val->messages(), 200);
+           }else{
+
+                    
+    $post_data='{
+    "Name":"'.$req->name.'",
+    "Mobile" : "'.$req->mobile.'",
+    "Email" : "'.$req->email.'",
+    "Designation" : "'.$req->designation.'",
+    "Company" : "'.$req->company.'",
+    "City" : "'.$req->city.'",
+    "Turnover": "'.$req->turnover.'",
+    "Form" : "SME Emailer"
+}';
+                       
+
+                $result=$this->call_json_data_api('http://api.rupeeboss.com/BankAPIService.svc/PostSMEMailer',
+                $post_data);
+                $http_result=$result['http_result'];
+                $response="";
+                $obj = json_decode($http_result);
+
+            
+
+                 if($obj==1){
+                         
+                         echo $error1=1;
+                    }else{
+                         
+                        echo  $error1=0;
+                           
+                    }                      
+    }
+
 
 }
+
+ public function sme_thank_you(){
+
+     return  view('sme-thank-you');
+ }
+
 
 }

@@ -80,11 +80,11 @@ $(".top").click(function() {
 	  <div class="col-md-3"></div>
 	  <div id="hideview" class="text-center col-md-6">
                                             <div class="form-padding">
-                                                <a id="urlweb" href="#">click here</a>
-                                                <h10 class="text-center top-heading">to view this page in browser</h10>
+                                                <h6 class="text-center top-heading"><a id="urlweb" href="#">click here</a>
+                                                to view this page in browser</h6>
                                                
-                                              <div id="hideemailid" class="form-control" style="margin-bottom: 14px; height: 50px; position: relative; display: block;">
-                                                <input class="form-input-new1 pull-center" required="" type="name" id="urlemailid">
+                                              <div id="hideemailid" class="" style="margin-bottom: 14px; height: 50px; position: relative; display: block;">
+                                                <input class="form-control inp-fld pull-center" required="" type="name" id="urlemailid">
                                                 <button class="sbmit-btn pull-right" id="btnweburl">Submit</button> 
                                                   
                                                 <span class="highlight"></span><span class="bar"></span>

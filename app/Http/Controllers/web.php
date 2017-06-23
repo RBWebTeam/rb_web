@@ -64,7 +64,6 @@ Route::get('api','ApiController@GetLAPQuotes');
 Route::get('get-loan/{loan}','BankController@compareLoan');
 Route::post('contact_us','SocialsiteController@contact_us_otp');
 Route::post('contact_otp','SocialsiteController@contactOTP');
-Route::get('working-capital-emi-calculator','CalculatorController@working_capital_emi_calculator');
 
 /* Working Capital */
 
@@ -258,7 +257,7 @@ Route::get('home-loan','NewProcessController@newHomeLoan');
 Route::get('smart-home-loan','NewProcessController@newSmartHomeLoan');
 Route::get('car-loan','NewProcessController@newCarLoan');
 Route::get('business-loan','NewProcessController@newBusinessLoan');
-Route::get('sme-working-capital','WorkingCapitalController@NewWorkingCapital');
+Route::get('new-working-capital','WorkingCapitalController@NewWorkingCapital');
 Route::get('personal-loan','ContactController@new_personal_loan');
 // Route::post('new-personal-loan','ContactController@new_personal_loan_register');
 Route::get('edelweiss','NewProcessController@edelweiss');
@@ -267,11 +266,9 @@ Route::get('used-car-loan','NewProcessController@usedCarLoan');
 Route::post('quotes-head','FormController@quoteshead');
 Route::post('chatPost','ChatController@post');
 
-//sme
+
 Route::get('smemailersender','UploadController@smemailersender');
 Route::post('smemailer','UploadController@smemailer');
-Route::get('sme-thank-you','UploadController@sme_thank_you');
-//sme
 
 
 //pratik route 

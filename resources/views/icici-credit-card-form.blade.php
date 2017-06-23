@@ -42,6 +42,17 @@
                     border:1px solid red;
                 }
 	.lble {bottom:19px;}
+	
+	.sbmit-btn {
+    padding: 10px 30px;
+    top: 0px;
+    position: absolute;
+    color: #fff;
+    font-size: 20px;
+    right: 0px;
+    border: none;
+    background: #0070c0;
+}
   
   </style>
   </head>
@@ -59,11 +70,35 @@ $(".top").click(function() {
                
 <div>
        <!-- Main content -->
-        <section class="out-dv">
+        <section class="container">
       <div class="row">
       <div class="col-md-12">
-      
-      <h3 class="text-center pg-titl">Apply For ICICI Credit Card</h3>
+	  <br>
+      <div id="logo" class="text-center"><img id="myImage" src="http://beta.erp.rupeeboss.com/personalloan/images/logo.png" class=""></div>
+      <h4 class="text-center pg-titl">Apply For ICICI Credit Card</h4>
+	  
+	  <div class="col-md-3"></div>
+	  <div id="hideview" class="text-center col-md-6">
+                                            <div class="form-padding">
+                                                <h6 class="text-center top-heading"><a id="urlweb" href="#">click here</a>
+                                                to view this page in browser</h6>
+                                               
+                                              <div id="hideemailid" class="" style="margin-bottom: 14px; height: 50px; position: relative; display: block;">
+                                                <input class="form-control inp-fld pull-center" required="" type="name" id="urlemailid">
+                                                <button class="sbmit-btn pull-right" id="btnweburl">Submit</button> 
+                                                  
+                                                <span class="highlight"></span><span class="bar"></span>
+                                                <label class="form-label-new">E-MAIL ID (PERSONAL)</label>
+                                                <div class="clear"></div>
+                                              </div>
+                                                
+                                              <h5 id="msgalert" class="top-heading text-success text-center" style="display:none;font-size:15px;font-weight:bold; margin-bottom:15px;">As per your request we have sent a mail to your email ID.</h5>
+                                            </div>
+                                        </div>
+										
+										
+										
+	  
           <div class="col-xs-6 form-padding">
                     <select class="form-control inp-fld" name="net_annual_income" id="net_annual_income" required required>
                       <option value="">NET ANNUAL INCOME</option>

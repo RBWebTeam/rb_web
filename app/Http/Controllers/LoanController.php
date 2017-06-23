@@ -376,7 +376,7 @@ public function dropdown(Request $req){
     public function applicant(Request $req){
        $data=$req->all();
        $json_data=json_encode($data);
-      // print_r($data);
+      print_r($data);
        $post_data = '{
    "head": {
     "requestCode": "PLRQCL01",
@@ -448,7 +448,7 @@ $url = $this::$url_static."/BankAPIService.svc/createIIFLCoAppDtls";
     $s=str_replace('}"', "}", $st);
     $m=$s=str_replace('\\', "", $s);
     $obj = json_decode($m);
-    // print_r($obj);exit();
+    print_r($obj);
    //  $offer=$this::offer_status();
    // return Response::json($offer);
    // $uid=$this::uid();

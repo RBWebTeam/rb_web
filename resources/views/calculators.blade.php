@@ -61,7 +61,7 @@
 							<h4 class="mrg-btm">Working capital calculator</h4>
 							
 							
-							<a class="btn btn-primary btn-outline with-arrow" href="{{URL::to('check-emi')}}">View Now<i class="icon-arrow-right"></i></a>
+							<a class="btn btn-primary btn-outline with-arrow" href="{{URL::to('working-capital-emi-calculator')}}">View Now<i class="icon-arrow-right"></i></a>
 						</div>
 					</div>
 					

@@ -251,6 +251,7 @@
        show_card();
   }
   function show_card(){
+    console.log(income+"--"+interest)
     if(interest=='Lifestyle'){
         $('#2.5_button').removeClass("hide");
     }else{

@@ -54,6 +54,33 @@
     <div class="row">
     
         <div class="col-md-12 bg-white centered well pad1">
+                   <div class="row" style="display: none;">
+                <div class="col-md-10 col-md-offset-1">
+                <hr>
+                <h1 class="text-center pad">Thank You</h1>
+                <h4 class="text-center">Your application is under process our representative will get in touch with to you shortly</h4>
+                <p class="text-center">To learn more about IIFL Express Personal Loan <a href="javascript:void(0)">Click Here</a></p>
+        
+            </div>
+            </div>
+            
+            
+            
+   
+   
+                
+
+            <div class="row" id="error" style="display: none;">
+                <div class="col-md-10 col-md-offset-1">
+                <hr>
+                <h1 class="text-center pad">Oooopssss</h1>
+                <h4 class="text-center">Your application is under process our representative will get in touch with to you shortly</h4>
+                <p class="text-center">To learn more about IIFL Express Personal Loan <a href="javascript:void(0)">Click Here</a></p>
+        
+            </div>
+            </div>
+   
+            <br>
             
         <div id="iifl">
             <form id="iifl_express_loan" name="iifl_express_loan" method="POST">
@@ -618,16 +645,17 @@
                     </svg>
                 </span>
             </section>
+               
+                <div class="btn-grp mrg-top m-status emp-nat" data-toggle="buttons"><h4><b>If Co-Applicant Exist :</b></h4>
+                      <span class="btn btn-primary outer-brd active"><input type="radio"  name="CoapplicantFlag"  value="1">Yes</span>
+                      <span class="btn btn-primary outer-brd"><input type="radio"  name="CoapplicantFlag" checked="" value="0" >No</span>
+                </div>
+                
             <br>
             <div class="col-md-12">
              <a class="btn btn-primary btn-outline with-arrow mrg-top applicant" id="applicant_form" href="javascript:void(0);">NEXT<i class="icon-arrow-right"></i></a>
             </div>
             </form>
-            </div>
-
-            <div class="btn-grp mrg-top m-status emp-nat" id="co_applicant_flag" style="display: none;" data-toggle="buttons"><h4><b>If Co-Applicant Exist :</b></h4>
-                    <span class="btn btn-primary outer-brd active"><input type="radio" id="have" name="CoapplicantFlag"  value="1">Yes</span>
-                    <span class="btn btn-primary outer-brd"><input type="radio" id="not_have" name="CoapplicantFlag" checked="" value="0" >No</span>
             </div>
 
             <div id="co_applicant" style="display: none;">
@@ -877,7 +905,7 @@
                     </svg>
                 </span>
                 
-                <!-- <div class="col-md-12 text-danger mar-top"><input type="checkbox" name="check"> I Agree to all the terms and conditions.</div> -->
+              
                 </section>
 
                 <section class="content">
@@ -944,7 +972,7 @@
                     </svg>
                 </span>
                 
-                <!-- <div class="col-md-12 text-danger mar-top"><input type="checkbox" name="check"> I Agree to all the terms and conditions.</div> -->
+               
                 </section>
                 <div class="col-md-12">
              <a class="btn btn-primary btn-outline with-arrow mrg-top applicant" id="co_applicant_form" href="javascript:void(0);">NEXT<i class="icon-arrow-right"></i></a>
@@ -1029,12 +1057,7 @@
             </section>
             </form>
             </div>
-            <!-- <div style="display: none;" >
-            <h3 class="mrg-tpp">Proceed Without aadhar Number</h3>
-
-            <a class="btn btn-primary btn-outline with-arrow mrg-top" id="proceed_without_aadhar" href="javascript:void(0)">Click Here<i class="icon-arrow-right"></i></a></div> -->
-            
-            
+         
             <br>
             <div id="Instant_Approve" style="display: none;">
             <form name="instant_form" id="instant_form" method="POST">
@@ -1131,31 +1154,7 @@
                 
              <section class="content">
             <div class="col-md-2"></div>
-            <!-- <div class="col-md-8">
-            <table class="table table-bordered" width="100%">
-                <tr>
-                    <td class="bg-info">Company Name: <b>Rupeeboss</b></td>
-                    <td class="bg-danger">Monthly Salary: <b>Rs. 100000</b></td>
-                    <td class="bg-info">Current EMI: <b>Rs. 14000</b></td>
-                </tr>
-             </table>
-                </div> -->
-            
-                <!-- <div class="col-md-12 bg-primary pad mrg-btm">
-                   
-                  <div class="col-md-3 bdr-rigt">Loan Details</div>
-                  <div class="col-md-3 bdr-rigt">
-                  <p>Loan Amount:- <b>2,00,000</b></p>
-                  <p>Loan Amount:- <b>2,00,000</b></p>
-                  </div>
-                  <div class="col-md-3 bdr-rigt">
-                  <p>Rate of Intrest:- <b>15%</b></p>
-                  <p>Processing Fees:- <b>Rs.3000</b></p>
-                  </div>
-                  <div class="col-md-3">
-                  <p>EMI:- <b>Rs.8,000</b></p>
-                  </div>
-                </div> -->
+         
             
                 <div class="col-md-8 col-md-offset-2">
                 <h3 class="text-center pad">Non Financial Documents</h3>
@@ -1245,26 +1244,9 @@
             </div>
             </div>
             </form>
+
             </div>
-            
-            
-            
-            
-   
-   
-   <div class="row">
-                <div class="col-md-10 col-md-offset-1">
-                <hr>
-                <h1 class="text-center pad">Thank You</h1>
-                <h4 class="text-center">Your application is under process our representative will get in touch with to you shortly</h4>
-                <p class="text-center">To learn more about IIFL Express Personal Loan <a href="javascript:void(0)">Click Here</a></p>
-        
-            </div>
-            </div>
-        <!-- </section>
-            </form>
-            </div> -->
-            <br>
+
 @include('layout.footer')
 @include('layout.script')
 
@@ -1856,8 +1838,9 @@ var global_tenure=0;
         $('#e_m_i').empty().append(installment);
         $('#Emi').val(installment);
         var total =((installment*no_of_days)-applied_loan);
+        
         var ttl_payment = parseInt(applied_loan) + parseInt(total);
-        $('#TotalPayableAmount').val(ttl_payment);
+         $('#TotalPayableAmount').val(ttl_payment);
     
 });
 </script>
@@ -1875,25 +1858,26 @@ var global_tenure=0;
             var aadhar=$('#AadhaarNumber').val();
             $('#Aadharno').val(aadhar);
             $('#Applicant_Details').hide();
-            $('#co_applicant_flag').show();
-            $.ajax({  
-         type: "POST",  
-         url: "{{URL::to('apply-iifl-loan-applicant1')}}",
-         data : $('#applicant_deatils').serialize(),
-         success: function(msg){
-            console.log(msg);
+           
+           $.ajax({  
+             type: "POST",  
+             url: "{{URL::to('apply-iifl-loan-applicant1')}}",
+             data : $('#applicant_deatils').serialize(),
+             success: function(msg){
+            // console.log(msg.head);return false;
             // console.log(msg.head);
             console.log(msg.head.status);
-            if (msg.head.status == 1) {
-                 $('#otp').hide();
-                 $('#confirm_otp').hide();
-                 
-             alert('Your application are in process, Our RM will get in touch with you.');
-            
+            if (msg.head.status != 1) {
+                 if($( "input[name=CoapplicantFlag]:checked" ).val()==1){
+                    $('#co_applicant').show();
+                }else{
+                    $('#otp').show();
+                }            
             } 
             else 
             {
-              $('#otp').show();
+              // alert('Your application are in process, Our RM will get in touch with you.');
+              $('#error').show();
             }
          }  
       }); 
@@ -1960,7 +1944,7 @@ var global_tenure=0;
 
 
 <!-- If Co-Applicant Exist -->
-<script type="text/javascript">
+<!-- <script type="text/javascript">
   $('#have').change(function(){
  
   $("#co_applicant").show();
@@ -1972,9 +1956,8 @@ var global_tenure=0;
   $('#not_have').change(function(){
  
   $("#co_applicant").hide();
-  $('#otp').show();
   });
-</script>
+</script> -->
 <!-- aadhar oyp &verify otp -->
 <script type="text/javascript">
     $('#aadhar_otp').click(function(){

@@ -1856,9 +1856,8 @@ var global_tenure=0;
         $('#e_m_i').empty().append(installment);
         $('#Emi').val(installment);
         var total =((installment*no_of_days)-applied_loan);
-        
         var ttl_payment = parseInt(applied_loan) + parseInt(total);
-         $('#TotalPayableAmount').val(ttl_payment);
+        $('#TotalPayableAmount').val(ttl_payment);
     
 });
 </script>

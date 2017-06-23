@@ -446,7 +446,7 @@
                 <!-- <div class="col-md-12 text-danger mar-top"><input type="checkbox" name="check"> I Agree to all the terms and conditions.</div> -->
                 </section>
                 
-                <input type="checkbox" name="same_id" id="same_id"/> Same As Above
+                <input type="checkbox" name="same" id="same_id" onclick="same_as_above('same_id');"/> Same As Above
                 <section class="content">
                 <div class="col-md-12"><h3 class="mrg-tpp">Permanent Address</h3></div>
                 <span class="input input--nao">
@@ -2187,16 +2187,30 @@ var global_tenure=0;
     });
 </script>
 <script type="text/javascript">
-    $('#same_id').click(function(){
-        $('#PermanentAddress1').val($('#CurrentAddress1').val());
-        $('#PermanentAddress2').val($('#CurrentAddress2').val());
-        $('#PermanentAddress3').val($('#CurrentAddress3').val());
-        $('#PermanentPin').val($('#CurrentPin').val());
-        $('#PermanentState').val($('#CurrentState').val());
+  function same_as_above(obj,val){
 
-   
-    });
+     // console.log(obj);
+     var atLeastOneIsChecked = $('#same_id:checkbox:checked').length > 0;
+     // console.log(atLeastOneIsChecked);
+    if (atLeastOneIsChecked == true) {
+      // alert("ok");
+
+    $('#PermanentAddress1').val($('#CurrentAddress1').val());
+     $('#PermanentAddress2').val($('#CurrentAddress2').val());
+     $('#PermanentAddress3').val($('#CurrentAddress3').val());
+     $('#PermanentPin').val($('#CurrentPin').val());
+
+     $('#PermanentState').val($('#CurrentState').val());
+     }else{
+
+     $('#PermanentAddress1').val('');
+     $('#PermanentAddress2').val(''); 
+     $('#PermanentAddress3').val('');
+      $('#PermanentPin').val('');
+    }
+}
 </script>
+
 
 
 

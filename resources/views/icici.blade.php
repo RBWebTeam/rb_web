@@ -267,9 +267,7 @@
     curr.classList.toggle("hide");
     prv=div_name;
   }
-</script>
 
-<script type="text/javascript">
   $('.apply').click(function(){
     var name=$(this).closest("a").attr('name');
     var url="{{URL::to('credit-card-form')}}?prod="+name;

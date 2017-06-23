@@ -75,7 +75,7 @@
                 <td><input type="number" name="turnover" onkeypress="return fnAllowNumeric(event)" placeholder="Turn Over "><span  class="error_turnover error1"></span></td>
             </tr>
             <tr>
-                <td colspan="2" id="popupfoot"> <input type="submit" class="close" name="submit" value="Submit" ></td><!--  class="close" -->
+                <td colspan="2" id="popupfoot"> <input type="submit" class="close1" name="submit" value="Submit" ></td><!--  class="close" -->
             </tr>
         </table>
         </form>
@@ -98,7 +98,7 @@
 // just for the demos, avoids form submit
   $(document).ready(function(){
 
-    $(".close").click(function(e){
+    $(".close1").click(function(e){
    e.preventDefault();
 
 

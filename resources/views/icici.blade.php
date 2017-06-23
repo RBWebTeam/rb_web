@@ -237,11 +237,9 @@
 @include('layout.script')
 
 <script type="text/javascript">
-
   var income= '>2.5Lacs';
- var interest='Lifestyle';
- var prv='Lifestyle>2.5Lacs';
-
+  var interest='Lifestyle';
+  var prv='Lifestyle>2.5Lacs';
   function set_annual_income(value)
   { 
        income=value;
@@ -253,171 +251,20 @@
        show_card();
   }
   function show_card(){
-      if(interest=='Lifestyle'){
+    if(interest=='Lifestyle'){
        document.getElementById('2.5_button').classList.remove("hide");
-      }else{
-        document.getElementById('2.5_button').classList.add("hide");
+    }else{
+         document.getElementById('2.5_button').classList.add("hide");
         if(income=='>2.5Lacs'){
-          income=='>5.0Lacs'
+          income='>5.0Lacs'
         }
-      }
-     var div_name=interest+income;
-     var curr=document.getElementById(div_name);
-     var prv_div=document.getElementById(prv);
-     console.log(curr.id +" "+prv_div.id );  
-     prv_div.classList.toggle("hide");
-     curr.classList.toggle("hide");
-     prv=div_name;
-    // if (( interest == 'Lifestyle' && income == '>2.5Lacs'))
-    //   {
-       
-        
-    //     $("#home_lifestyle_2").show();
-    //     $("#home1_lifestyle_5").hide();
-    //     $("#home2_lifestyle_10").hide();
-    //     $("#home3_lifestyle_15").hide();
-    //     $('#menu1').hide();
-    //     $('#menu1_10').hide();
-    //     $('#menu_travel_15').hide();
-    //     $('#menu2_motorsports_5').hide();
-    //     $('#menu_motorsports_10').hide();
-    //     $('#menu_motorsports_15').hide();
-
-         
-    //   }
-    // if (( interest == 'Lifestyle' && income == '>5.0Lacs'))
-    //   {
-       
-    //     $("#home_lifestyle_2").hide();
-    //     $("#home1_lifestyle_5").show();
-    //     $("#home2_lifestyle_10").hide();
-    //     $("#home3_lifestyle_15").hide();
-    //     $('#menu1').hide();
-    //     $('#menu1_10').hide();
-    //     $('#menu_travel_15').hide();
-    //     $('#menu2_motorsports_5').hide();
-    //     $('#menu_motorsports_10').hide();
-    //     $('#menu_motorsports_15').hide();
-    //   }
-    //   if (( interest == 'Lifestyle' && income == '>10Lacs'))
-    //   {
-       
-    //     $("#home_lifestyle_2").hide();
-    //     $("#home1_lifestyle_5").hide();
-    //     $("#home2_lifestyle_10").show();
-    //     $("#home3_lifestyle_15").hide();
-    //     $('#menu1').hide();
-    //     $('#menu1_10').hide();
-    //     $('#menu_travel_15').hide();
-    //     $('#menu2_motorsports_5').hide();
-    //     $('#menu_motorsports_10').hide();
-    //     $('#menu_motorsports_15').hide();
-    //   }
-    //   if (( interest == 'Lifestyle' && income == '>15Lacs'))
-    //   {
-       
-    //     $("#home_lifestyle_2").hide();
-    //     $("#home1_lifestyle_5").hide();
-    //     $("#home2_lifestyle_10").hide();
-    //     $("#home3_lifestyle_15").show();
-    //     $('#menu1').hide();
-    //     $('#menu1_10').hide();
-    //     $('#menu_travel_15').hide();
-    //     $('#menu2_motorsports_5').hide();
-    //     $('#menu_motorsports_10').hide();
-    //     $('#menu_motorsports_15').hide();
-
-       
-    //   }
-    //   if (( interest == 'Travel' && income == '>5.0Lacs'))
-    //   {
-       
-        
-    //     $("#home_lifestyle_2").hide();
-    //     $("#home1_lifestyle_5").hide();
-    //     $("#home2_lifestyle_10").hide();
-    //     $("#home3_lifestyle_15").hide();
-    //     $('#menu1').show();
-    //     $('#menu1_10').hide();
-    //     $('#menu_travel_15').hide();
-    //     $('#menu2_motorsports_5').hide();
-    //     $('#menu_motorsports_10').hide();
-    //     $('#menu_motorsports_15').hide();
-        
-    //   }
-    //   if (( interest == 'Travel' && income == '>10Lacs'))
-    //   {
-       
-    //     $("#home_lifestyle_2").hide();
-    //     $("#home1_lifestyle_5").hide();
-    //     $("#home2_lifestyle_10").hide();
-    //     $("#home3_lifestyle_15").hide();
-    //     $('#menu1').hide();
-    //     $('#menu1_10').show();
-    //     $('#menu_travel_15').hide();
-    //     $('#menu2_motorsports_5').hide();
-    //     $('#menu_motorsports_10').hide();
-    //     $('#menu_motorsports_15').hide();
-    //   }
-    //   if (( interest == 'Travel' && income == '>15Lacs'))
-    //   {
-    //    $("#home_lifestyle_2").hide();
-    //     $("#home1_lifestyle_5").hide();
-    //     $("#home2_lifestyle_10").hide();
-    //     $("#home3_lifestyle_15").hide();
-    //     $('#menu1').hide();
-    //     $('#menu1_10').hide();
-    //     $('#menu_travel_15').show();
-    //     $('#menu2_motorsports_5').hide();
-    //     $('#menu_motorsports_10').hide();
-    //     $('#menu_motorsports_15').hide();
-        
-    //   }
-    //   if (( interest == 'Motorsports' && income == '>5.0Lacs'))
-    //   {
-    //     $("#home_lifestyle_2").hide();
-    //     $("#home1_lifestyle_5").hide();
-    //     $("#home2_lifestyle_10").hide();
-    //     $("#home3_lifestyle_15").hide();
-    //     $('#menu1').hide();
-    //     $('#menu1_10').hide();
-    //     $('#menu_travel_15').hide();
-    //     $('#menu2_motorsports_5').show();
-    //     $('#menu_motorsports_10').hide();
-    //     $('#menu_motorsports_15').hide();
-        
-        
-    //   }
-    //   if (( interest == 'Motorsports' && income == '>10Lacs'))
-    //   {
-    //    $("#home_lifestyle_2").hide();
-    //     $("#home1_lifestyle_5").hide();
-    //     $("#home2_lifestyle_10").hide();
-    //     $("#home3_lifestyle_15").hide();
-    //     $('#menu1').hide();
-    //     $('#menu1_10').hide();
-    //     $('#menu_travel_15').hide();
-    //     $('#menu2_motorsports_5').hide();
-    //     $('#menu_motorsports_10').show();
-    //     $('#menu_motorsports_15').hide();
-       
-        
-    //   }
-    //   if (( interest == 'Motorsports' && income == '>15Lacs'))
-    //   {
-    //    $("#home_lifestyle_2").hide();
-    //     $("#home1_lifestyle_5").hide();
-    //     $("#home2_lifestyle_10").hide();
-    //     $("#home3_lifestyle_15").hide();
-    //     $('#menu1').hide();
-    //     $('#menu1_10').hide();
-    //     $('#menu_travel_15').hide();
-    //     $('#menu2_motorsports_5').hide();
-    //     $('#menu_motorsports_10').hide();
-    //     $('#menu_motorsports_15').show();
-    //    }
-      
-
+    }
+    var div_name=interest+income;
+    var curr=document.getElementById(div_name);
+    var prv_div=document.getElementById(prv);
+    prv_div.classList.toggle("hide");
+    curr.classList.toggle("hide");
+    prv=div_name;
   }
 </script>
 

@@ -83,7 +83,7 @@
 	<h2>SME Loan</h2>
 
    <h4>We Support Make in India..!!</h4>
-   <a href="{{URL::to('new-working-capital')}}" class="btn btn-primary btn-lg btn-view">View More</a>
+   <a href="{{URL::to('sme-working-capital')}}" class="btn btn-primary btn-lg btn-view">View More</a>
    </div>
       <img src="{{URL::to('images/slide_4.jpg')}}" alt="SME Loan Banner" title="SME Loan " class="slide-hm">
     </div>
@@ -173,7 +173,7 @@
 				</div>
 				<div class="col-md-2 animate-box no-padding">
 					<div class="services3 services">
-						<a class="anchor_decoration" href="{{URL::to('new-working-capital')}}">
+						<a class="anchor_decoration" href="{{URL::to('sme-working-capital')}}">
 						<div class="desc">
 						<span  ><i class="sprite sprite-SME_icon marginauto"></i></span>
 							<h3>SME Loan</h3>

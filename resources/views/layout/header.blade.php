@@ -218,6 +218,7 @@
 										<a href="{{url('profile')}}">My Profile</a>
 										<a href="{{URL::to('profile')}}?credit-score">My Credit Score</a>
 										<a href="{{url('profile')}}?my-quotes">My Quotes</a>
+										<a href="{{url('track-application')}}">Track Applications</a>
 										</li>
 									</ul>
 							</li>

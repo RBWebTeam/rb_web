@@ -258,7 +258,7 @@ Route::get('home-loan','NewProcessController@newHomeLoan');
 Route::get('smart-home-loan','NewProcessController@newSmartHomeLoan');
 Route::get('car-loan','NewProcessController@newCarLoan');
 Route::get('business-loan','NewProcessController@newBusinessLoan');
-Route::get('new-working-capital','WorkingCapitalController@NewWorkingCapital');
+Route::get('sme-working-capital','WorkingCapitalController@NewWorkingCapital');
 Route::get('personal-loan','ContactController@new_personal_loan');
 // Route::post('new-personal-loan','ContactController@new_personal_loan_register');
 Route::get('edelweiss','NewProcessController@edelweiss');

@@ -98,7 +98,9 @@ class UploadController extends CallApiController
                 ->subject('Loan application submitted');
 
                 });
- 
+          
+          exit; 
+
 
           //return view('smemailer');
  

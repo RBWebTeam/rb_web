@@ -1933,9 +1933,9 @@ var global_tenure=0;
     var Rate = a/12/100;
      var installment_iifl=applied_loan * Rate * (Math.pow(1 + Rate, no_of_days) / (Math.pow(1 + Rate, no_of_days) - 1));
         var installment =Math.round(installment_iifl);
-        // if(isNaN( installment) || installment=='Infinity'){
-        //   installment=0;
-        // }
+        if(isNaN( installment) || installment=='Infinity'){
+          installment=0;
+        }
         $('#EquatedMonthly').empty().append(installment);
         $('#EMI').val(installment);
         $('#e_m_i').empty().append(installment);

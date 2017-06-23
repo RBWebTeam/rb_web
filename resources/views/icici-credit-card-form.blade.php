@@ -41,6 +41,7 @@
        .error {
                     border:1px solid red;
                 }
+	.lble {bottom:19px;}
   
   </style>
   </head>
@@ -102,27 +103,27 @@ $(".top").click(function() {
           </div>
 
           <div class="col-xs-6 form-padding">
-                    <div class="form-control inp-fld">
-                      <input type="text" name="ApplicantFirstName" id="ApplicantFirstName" class="form-input-new" onkeypress="return AllowAlphabet(event)" required >
+                    <div>
+                      <input type="text" name="ApplicantFirstName" id="ApplicantFirstName" class="form-control inp-fld" onkeypress="return AllowAlphabet(event)" required >
                       <span class="highlight"></span><span class="bar"></span>
-                      <label class="form-label-new">First Name</label>
+                      <label class="form-label-new lble">First Name</label>
                       <div class="clear"></div>
                     </div>  
                    </div>
              
              <div class="col-xs-6 form-padding">
-                    <div class="form-control inp-fld">
-                      <input type="text" name="ApplicantMiddleName" id="ApplicantMiddleName" class="form-input-new" onkeypress="return AllowAlphabet(event)"  >
+                    <div>
+                      <input type="text" name="ApplicantMiddleName" id="ApplicantMiddleName" class="form-control inp-fld" onkeypress="return AllowAlphabet(event)"  >
                       <span class="highlight"></span><span class="bar"></span>
-                      <label class="form-label-new">Middle Name</label>
+                      <label class="form-label-new lble">Middle Name</label>
                       <div class="clear"></div>
                     </div>  
                              </div>
               <div class="col-xs-6 form-padding">
-                    <div class="form-control inp-fld">
-                      <input type="text" name="ApplicantLastName" id="ApplicantLastName" class="form-input-new" onkeypress="return AllowAlphabet(event)" required >
+                    <div>
+                      <input type="text" name="ApplicantLastName" id="ApplicantLastName" class="form-control inp-fld" onkeypress="return AllowAlphabet(event)" required >
                       <span class="highlight"></span><span class="bar"></span>
-                      <label class="form-label-new">Last Name</label>
+                      <label class="form-label-new lble">Last Name</label>
                       <div class="clear"></div>
                     </div>  
                   </div>
@@ -143,19 +144,19 @@ $(".top").click(function() {
                   </div>
                   
                   <div class="col-xs-6 form-padding">
-                    <div class="form-control inp-fld">
-                      <input type="text" name="NameOnCard" id="NameOnCard" class="form-input-new" onkeypress="return AllowAlphabet(event)" required >
+                    <div>
+                      <input type="text" name="NameOnCard" id="NameOnCard" class="form-control inp-fld" onkeypress="return AllowAlphabet(event)" required >
                       <span class="highlight"></span><span class="bar"></span>
-                      <label class="form-label-new">Name to be printed on the card</label>
+                      <label class="form-label-new lble">Name to be printed on the card</label>
                       <div class="clear"></div>
                     </div>  
                              </div>
 
                              <div class="col-xs-6 form-padding">
-                    <div class="form-control inp-fld">
-                      <input type="text" name="MotherName" id="MotherName" class="form-input-new" onkeypress="return AllowAlphabet(event)" required >
+                    <div>
+                      <input type="text" name="MotherName" id="MotherName" class="form-control inp-fld" onkeypress="return AllowAlphabet(event)" required >
                       <span class="highlight"></span><span class="bar"></span>
-                      <label class="form-label-new">Mother's Maiden Name</label>
+                      <label class="form-label-new lble">Mother's Maiden Name</label>
                       <div class="clear"></div>
                     </div>  
                              </div>
@@ -239,47 +240,47 @@ $(".top").click(function() {
             <h4 class="txt-tlt pull-left hdn5">Company Details</h4> 
             
             <div class="col-xs-6 form-padding">
-                    <div class="form-control inp-fld">
-                      <input type="text" class="form-input-new search_company" name="CompanyName" id="CompanyName" onkeypress="return AllowAlphabet(event)" required >
+                    <div>
+                      <input type="text" class="form-control inp-fld search_company" name="CompanyName" id="CompanyName" onkeypress="return AllowAlphabet(event)" required >
                       <span class="highlight"></span><span class="bar"></span>
-                      <label class="form-label-new">Company Name</label>
+                      <label class="form-label-new lble">Company Name</label>
                       <div class="clear"></div>
                     </div>  
             </div>
              
              <div class="col-xs-6 form-padding">
-                    <div class="form-control inp-fld">
-                      <input type="text" name="designation" id="designation" class="form-input-new" onkeypress="return AllowAlphabet(event)" required >
+                    <div>
+                      <input type="text" name="designation" id="designation" class="form-control inp-fld" onkeypress="return AllowAlphabet(event)" required >
                       <span class="highlight"></span><span class="bar"></span>
-                      <label class="form-label-new">Designation</label>
+                      <label class="form-label-new lble">Designation</label>
                       <div class="clear"></div>
                     </div>  
              </div>
 
              <div class="col-xs-6 form-padding">
-                    <div class="form-control inp-fld">
-                      <input type="text" id="work_email" name="work_email" class="form-input-new" oninput="mail('work_email')"  required >
+                    <div>
+                      <input type="text" id="work_email" name="work_email" class="form-control inp-fld" oninput="mail('work_email')"  required >
                        <span id="email" style="display:none;color: red;">Please Enter Valid Email Id.</span>
                       <span class="highlight"></span><span class="bar"></span>
-                      <label class="form-label-new">Work Email</label>
+                      <label class="form-label-new lble">Work Email</label>
                       <div class="clear"></div>
                     </div>  
                   </div>
 
                   <div class="col-xs-6 form-padding">
-                    <div class="form-control inp-fld">
-                      <input type="text" class="form-input-new" id="work_STDCode" name="work_STDCode"  required  onkeypress="return fnAllowNumeric(event)" maxlength="5" >
+                    <div>
+                      <input type="text" class="form-control inp-fld" id="work_STDCode" name="work_STDCode"  required  onkeypress="return fnAllowNumeric(event)" maxlength="5" >
                       <span class="highlight"></span><span class="bar"></span>
-                      <label class="form-label-new">Work Area STD Code</label>
+                      <label class="form-label-new lble">Work Area STD Code</label>
                       <div class="clear"></div>
                     </div>  
                   </div>
 
                   <div class="col-xs-6 form-padding">
-                    <div class="form-control inp-fld">
-                      <input type="text" class="form-input-new" id="work_number" name="work_number"  required  onkeypress="return fnAllowNumeric(event)" maxlength="10" >
+                    <div>
+                      <input type="text" class="form-control inp-fld" id="work_number" name="work_number"  required  onkeypress="return fnAllowNumeric(event)" maxlength="10" >
                       <span class="highlight"></span><span class="bar"></span>
-                      <label class="form-label-new">Phone Number</label>
+                      <label class="form-label-new lble">Phone Number</label>
                       <div class="clear"></div>
                     </div>  
                   </div>
@@ -310,10 +311,10 @@ $(".top").click(function() {
             </div>
              
               <div class="col-xs-6 form-padding">
-                    <div class="form-control inp-fld">
-                      <input type="text" id="Income" name="Income" class="form-input-new" onkeypress="return fnAllowNumeric(event)"  required >
+                    <div>
+                      <input type="text" id="Income" name="Income" class="form-control inp-fld" onkeypress="return fnAllowNumeric(event)"  required >
                       <span class="highlight"></span><span class="bar"></span>
-                      <label class="form-label-new">Income*</label>
+                      <label class="form-label-new lble">Income*</label>
                       <div class="clear"></div>
                     </div>  
                   </div>
@@ -329,10 +330,10 @@ $(".top").click(function() {
 
 
           <div class="col-xs-6 form-padding">
-                    <div class="form-control inp-fld">
-                      <input type="text" name="Total_Exp" id="Total_Exp" class="form-input-new" onkeypress="return fnAllowNumeric(event)" required >
+                    <div>
+                      <input type="text" name="Total_Exp" id="Total_Exp" class="form-control inp-fld" onkeypress="return fnAllowNumeric(event)" required >
                       <span class="highlight"></span><span class="bar"></span>
-                      <label class="form-label-new">Total Experience</label>
+                      <label class="form-label-new lble">Total Experience</label>
                       <div class="clear"></div>
                     </div>  
                   </div>
@@ -353,50 +354,50 @@ $(".top").click(function() {
                   </div>
               <h4 class="txt-tlt pull-left hdn5">Current Address Details</h4> 
           <div class="col-xs-6 form-padding">
-                    <div class="form-control inp-fld">
-                      <input type="text" name="ResidenceAddress1" id="ResidenceAddress1" class="form-input-new" required >
+                    <div>
+                      <input type="text" name="ResidenceAddress1" id="ResidenceAddress1" class="form-control inp-fld" required >
                       <span class="highlight"></span><span class="bar"></span>
-                      <label class="form-label-new">Flat No / Plot No / House No*</label>
+                      <label class="form-label-new lble">Flat No / Plot No / House No*</label>
                       <div class="clear"></div>
                     </div>  
                   </div>
           <div class="col-xs-6 form-padding">
-                    <div class="form-control inp-fld">
-                      <input type="text"  name="ResidenceAddress2" id="ResidenceAddress2" class="form-input-new" required>
+                    <div>
+                      <input type="text"  name="ResidenceAddress2" id="ResidenceAddress2" class="form-control inp-fld" required>
                       <span class="highlight"></span><span class="bar"></span>
-                      <label class="form-label-new">Building / Society Name</label>
+                      <label class="form-label-new lble">Building / Society Name</label>
                       <div class="clear"></div>
                     </div>  
                   </div>
           <div class="col-xs-6 form-padding">
-                    <div class="form-control inp-fld">
-                      <input type="text"  name="ResidenceAddress3" id="ResidenceAddress3" class="form-input-new" required>
+                    <div>
+                      <input type="text"  name="ResidenceAddress3" id="ResidenceAddress3" class="form-control inp-fld" required>
                       <span class="highlight"></span><span class="bar"></span>
-                      <label class="form-label-new">Road No / Area / Locality</label>
+                      <label class="form-label-new lble">Road No / Area / Locality</label>
                       <div class="clear"></div>
                     </div>  
                   </div>
           <div class="col-xs-6 form-padding">
-                    <div class="form-control inp-fld">
-                      <input type="text" name="City" id="City" class="form-input-new search_citynm" required dis>
+                    <div>
+                      <input type="text" name="City" id="City" class="form-control inp-fld search_citynm" required dis>
                       <span class="highlight"></span><span class="bar"></span>
-                      <label class="form-label-new">City*</label>
+                      <label class="form-label-new lble">City*</label>
                       <div class="clear"></div>
                     </div>  
                   </div>
           <div class="col-xs-6 form-padding">
-                    <div class="form-control inp-fld">
-                      <input type="text" id="ResidencePincode" name="ResidencePincode" class="form-input-new" required onkeypress="return fnAllowNumeric(event)" maxlength="6"  >
+                    <div>
+                      <input type="text" id="ResidencePincode" name="ResidencePincode" class="form-control inp-fld" required onkeypress="return fnAllowNumeric(event)" maxlength="6"  >
                       <span class="highlight"></span><span class="bar"></span>
-                      <label class="form-label-new">Pincode*</label>
+                      <label class="form-label-new lble">Pincode*</label>
                       <div class="clear"></div>
                     </div>  
                   </div>
           <div class="col-xs-6 form-padding">
-                    <div class="form-control inp-fld">
-                      <input type="text" name="ResidenceState" id="ResidenceState" class="form-input-new search_statenm" required>
+                    <div>
+                      <input type="text" name="ResidenceState" id="ResidenceState" class="form-control inp-fld search_statenm" required>
                       <span class="highlight"></span><span class="bar"></span>
-                      <label class="form-label-new">State*</label>
+                      <label class="form-label-new lble">State*</label>
                       <div class="clear"></div>
                     </div>  
                   </div>
@@ -418,50 +419,50 @@ $(".top").click(function() {
               
                   <h4 class="txt-tlt pull-left hdn5">Permanent Address Details</h4> 
           <div class="col-xs-6 form-padding">
-                    <div class="form-control inp-fld">
-                      <input type="text" name="PerResidenceAddress1" id="PerResidenceAddress1" class="form-input-new" required >
+                    <div>
+                      <input type="text" name="PerResidenceAddress1" id="PerResidenceAddress1" class="form-control inp-fld" required >
                       <span class="highlight"></span><span class="bar"></span>
-                      <label class="form-label-new">flat No / Plot No / House No*</label>
+                      <label class="form-label-new lble">flat No / Plot No / House No*</label>
                       <div class="clear"></div>
                     </div>  
                   </div>
           <div class="col-xs-6 form-padding">
-                    <div class="form-control inp-fld">
-                      <input type="text"  name="PerResidenceAddress2" id="PerResidenceAddress2" class="form-input-new" required>
+                    <div>
+                      <input type="text"  name="PerResidenceAddress2" id="PerResidenceAddress2" class="form-control inp-fld" required>
                       <span class="highlight"></span><span class="bar"></span>
-                      <label class="form-label-new">Building / Society Name</label>
+                      <label class="form-label-new lble">Building / Society Name</label>
                       <div class="clear"></div>
                     </div>  
                   </div>
           <div class="col-xs-6 form-padding">
-                    <div class="form-control inp-fld">
-                      <input type="text"  name="PerResidenceAddress3" id="PerResidenceAddress3" class="form-input-new" required>
+                    <div>
+                      <input type="text"  name="PerResidenceAddress3" id="PerResidenceAddress3" class="form-control inp-fld" required>
                       <span class="highlight"></span><span class="bar"></span>
-                      <label class="form-label-new">Road No / Area / Locality</label>
+                      <label class="form-label-new lble">Road No / Area / Locality</label>
                       <div class="clear"></div>
                     </div>  
                   </div>
           <div class="col-xs-6 form-padding">
-                    <div class="form-control inp-fld">
-                      <input type="text" name="PerCity" id="PerCity" class="form-input-new search_citynm" required dis>
+                    <div>
+                      <input type="text" name="PerCity" id="PerCity" class="form-control inp-fld search_citynm" required dis>
                       <span class="highlight"></span><span class="bar"></span>
-                      <label class="form-label-new">City*</label>
+                      <label class="form-label-new lble">City*</label>
                       <div class="clear"></div>
                     </div>  
                   </div>
           <div class="col-xs-6 form-padding">
-                    <div class="form-control inp-fld">
-                      <input type="text" id="PerResidencePincode" name="PerResidencePincode" class="form-input-new" required onkeypress="return fnAllowNumeric(event)" maxlength="6"  >
+                    <div>
+                      <input type="text" id="PerResidencePincode" name="PerResidencePincode" class="form-control inp-fld" required onkeypress="return fnAllowNumeric(event)" maxlength="6"  >
                       <span class="highlight"></span><span class="bar"></span>
-                      <label class="form-label-new">Pincode*</label>
+                      <label class="form-label-new lble">Pincode*</label>
                       <div class="clear"></div>
                     </div>  
                   </div>
           <div class="col-xs-6 form-padding">
-                    <div class="form-control inp-fld">
-                      <input type="text" name="PerResidenceState" id="PerResidenceState" class="form-input-new search_statenm" required>
+                    <div>
+                      <input type="text" name="PerResidenceState" id="PerResidenceState" class="form-control inp-fld search_statenm" required>
                       <span class="highlight"></span><span class="bar"></span>
-                      <label class="form-label-new">State*</label>
+                      <label class="form-label-new lble">State*</label>
                       <div class="clear"></div>
                     </div>  
                   </div>
@@ -482,47 +483,47 @@ $(".top").click(function() {
             </div> 
 
                    <div class="col-xs-6 form-padding">
-                    <div class="form-control inp-fld">
-                      <input type="text" id="email_id" name="email_id" class="form-input-new" oninput="email('email_id')"  required >
+                    <div>
+                      <input type="text" id="email_id" name="email_id" class="form-control inp-fld" oninput="email('email_id')"  required >
                        <span id="mail_id" style="display:none;color: red;">Please Enter Valid Email Id.</span>
                       <span class="highlight"></span><span class="bar"></span>
-                      <label class="form-label-new">Email ID(Personal)*</label>
+                      <label class="form-label-new lble">Email ID(Personal)*</label>
                       <div class="clear"></div>
                     </div>  
                   </div>
                   
           <h4 class="txt-tlt pull-left hdn5">Contact Details</h4> 
           <div class="col-xs-6 form-padding">
-                    <div class="form-control inp-fld">
-                      <input type="text" class="form-input-new" id="ResidencePhoneNumber" name="ResidencePhoneNumber" onkeypress="return fnAllowNumeric(event)" maxlength="10" required>
+                    <div>
+                      <input type="text" class="form-control inp-fld" id="ResidencePhoneNumber" name="ResidencePhoneNumber" onkeypress="return fnAllowNumeric(event)" maxlength="10" required>
                       <span class="highlight"></span><span class="bar"></span>
-                      <label class="form-label-new">Telephone No</label>
+                      <label class="form-label-new lble">Telephone No</label>
                       <div class="clear"></div>
                     </div>  
                   </div>
           <div class="col-xs-6 form-padding">
-                    <div class="form-control inp-fld">
-                      <input type="text" class="form-input-new"  id="ResidenceMobileNo" name="ResidenceMobileNo" required onkeypress="return fnAllowNumeric(event)" maxlength="10" >
+                    <div>
+                      <input type="text" class="form-control inp-fld"  id="ResidenceMobileNo" name="ResidenceMobileNo" required onkeypress="return fnAllowNumeric(event)" maxlength="10" >
                       <span class="highlight"></span><span class="bar"></span>
-                      <label class="form-label-new">Mobile No</label>
+                      <label class="form-label-new lble">Mobile No</label>
                       <div class="clear"></div>
                     </div>  
                   </div>
           <div class="col-xs-6 form-padding">
-                    <div class="form-control inp-fld">
-                      <input type="text" class="form-input-new" id="STDCode" name="STDCode"  required  onkeypress="return fnAllowNumeric(event)" maxlength="5" >
+                    <div>
+                      <input type="text" class="form-control inp-fld" id="STDCode" name="STDCode"  required  onkeypress="return fnAllowNumeric(event)" maxlength="5" >
                       <span class="highlight"></span><span class="bar"></span>
-                      <label class="form-label-new">STD Code</label>
+                      <label class="form-label-new lble">STD Code</label>
                       <div class="clear"></div>
                     </div>  
                   </div>
                   
           <h4 class="txt-tlt pull-left hdn5">Identity Details</h4> 
           <div class="col-xs-6 form-padding">
-                    <div class="form-control inp-fld">
-                      <input type="text" id="ApplicationNumber" name="ApplicationNumber" class="form-input-new" required="" maxlength="13" minlength="13" >
+                    <div>
+                      <input type="text" id="ApplicationNumber" name="ApplicationNumber" class="form-control inp-fld" required="" maxlength="13" minlength="13" >
                       <span class="highlight"></span><span class="bar"></span>
-                      <label class="form-label-new">Application Number*</label>
+                      <label class="form-label-new lble">Application Number*</label>
                       <div class="clear"></div>
                     </div>  
                   </div>
@@ -535,10 +536,10 @@ $(".top").click(function() {
                     </select> 
                                </div>
           <div class="col-xs-6 form-padding">
-                    <div class="form-control inp-fld">
-                      <input class="form-input-new"  type="text" id="PanNo" name="PanNo" required oninput="pancard('PanNo')" maxlength="10" minlength="10" >
+                    <div>
+                      <input class="form-control inp-fld"  type="text" id="PanNo" name="PanNo" required oninput="pancard('PanNo')" maxlength="10" minlength="10" >
                       <span class="highlight"></span><span class="bar"></span>
-                      <label class="form-label-new">Pancard*</label>
+                      <label class="form-label-new lble">Pancard*</label>
                       <div class="clear"></div>
                       <div id="pannumber" style="display:none;color: red;">Oops.Please Enter Valid Pan Number.!!</div>
                     </div>  
@@ -558,10 +559,10 @@ $(".top").click(function() {
             <h4 class="txt-tlt pull-left">Please input details of your Credit Card having Maximum Credit Limit </h4>
            
             <div class="col-xs-6 form-padding" >
-                    <div class="form-control inp-fld">
-                      <input type="text" name="previous_bank" id="previous_bank" class="form-input-new" onkeypress="return AllowAlphabet(event)" required >
+                    <div>
+                      <input type="text" name="previous_bank" id="previous_bank" class="form-control inp-fld" onkeypress="return AllowAlphabet(event)" required >
                       <span class="highlight"></span><span class="bar"></span>
-                      <label class="form-label-new">Select Bank</label>
+                      <label class="form-label-new lble">Select Bank</label>
                       <div class="clear"></div>
                     </div>  
                    </div>
@@ -574,10 +575,10 @@ $(".top").click(function() {
                   </div>
 
                   <div class="col-xs-6 form-padding">
-                    <div class="form-control inp-fld">
-                      <input type="text" id="credit_limit" name="credit_limit" class="form-input-new" onkeypress="return fnAllowNumeric(event)"  required >
+                    <div>
+                      <input type="text" id="credit_limit" name="credit_limit" class="form-control inp-fld" onkeypress="return fnAllowNumeric(event)"  required >
                       <span class="highlight"></span><span class="bar"></span>
-                      <label class="form-label-new">Credit Limit*</label>
+                      <label class="form-label-new lble">Credit Limit*</label>
                       <div class="clear"></div>
                     </div>  
                   </div>

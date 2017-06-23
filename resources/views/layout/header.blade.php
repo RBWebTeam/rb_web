@@ -187,9 +187,25 @@
 								<a href="{{URL::to('balance-transfer',['id' => 'loan-against-property-loan'])}}">Loan Against Property</a>
 								<a href="{{URL::to('balance-transfer/working-capital')}}">Working Capital</a>
 							</li>
-							</ul>	
-							<li><a href="{{URL::to('check-emi')}}">EMI Calculator</a></li>				   
-					        </li>
+							</ul>
+							</li>
+
+							<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" data-target="#">Calculators</a>
+							<ul class="dropdown-menu">
+							<li>
+								<a href="{{URL::to('check-emi')}}">EMI Calculator</a>
+								<a href="{{URL::to('check-emi')}}">Personal Loan Calculator</a>
+								
+								<a href="{{URL::to('check-emi')}}">Home Loan Calculator</a>
+								<a href="{{URL::to('check-emi')}}">Business Loan Calculator</a>
+								<a href="{{URL::to('working-capital-emi-calculator')}}">Working capital calculator</a>
+								<a href="{{URL::to('check-emi')}}">Income Calculator</a>
+
+						   </li>
+							</ul>
+							</li>	
+							<!-- <li><a href="{{URL::to('check-emi')}}">EMI Calculator</a></li> -->				   
+					        <!-- </li> -->
 							<!-- <li><a href="{{URL::to('check_emi')}}">EMI Calculator</a></li> -->
 							<?php if(Session::get('is_login')){
 							?>

@@ -122,7 +122,7 @@ input[type="text"], input[type="email"], input[type="tel"], input[type="password
                 <input type="text" name="App_Id" maxlength="12" value="" id="applicationId"  placeholder="Application ID" required></label>
                     
                     <div class="js-mobileNumber">
-                            <input type="text" name="Mobile" onkeypress="return fnAllowNumeric(event)" placeholder="Number" minlength="10" maxlength="10" required
+                            <input type="text" name="Mobile" onkeypress="return fnAllowNumeric(event)" placeholder="Mobile Number" minlength="10" maxlength="10" required
                             value ="<?php echo Session::get('contact')?Session::get('contact'):"";?>"></label>
                         </div>
                     <button class=" btn-block btn btn-secondary" id="trackid" type="submit">Track application</button>

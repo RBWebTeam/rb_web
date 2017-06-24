@@ -20,8 +20,8 @@ padding: 20px;}
 </div>
 <div class="main">
 
-<h1>Thank You</h1>
-<p>Our Executives are working around the clock.The process takes less than 2 days.We will reach you soon.Thanks for yor patience.</p>
+ 
+<h3>Thank you for submitting your details our executives will reach you soon in two working days.</h3>
 <p> <a href="http://www.rupeeboss.com" class="lnk">www.rupeeboss.com</a></p>
 </div>
 </body>

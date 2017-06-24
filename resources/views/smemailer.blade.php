@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>SME Emailer</title>
-<link rel="stylesheet" href="{{url('sme/main.css')}}">
+<link rel="stylesheet" href="{{url('smejs/main.css')}}">
 
 <style>
    .error1 {font-size:10px;color:red; display:block;}
@@ -15,20 +15,20 @@
 <table width="750" border="0" cellspacing="0" cellpadding="0" align="center" style="font-family:arial; font-size:14px;">
   <tr>
     
-    <td><a href="#" target="_blank"><img src="{{url('sme/images/SME-Emailer_1_01.png')}}" border="0"  /></a></td>
+    <td><a href="#" target="_blank"><img src="{{url('smejs/images/SME-Emailer_1_01.png')}}" border="0"  /></a></td>
   </tr>
   <tr>
     <td>
-  <a href="#" target="_blank"><img src="{{URL::to('sme/images/SME-Emailer_1_02.png')}}" border="0" /></a>  
+  <a href="#" target="_blank"><img src="{{URL::to('smejs/images/SME-Emailer_1_02.png')}}" border="0" /></a>  
   </td>
   </tr>
   <tr>
-  <td><a href="#" target="_blank"><img src="{{URL::to('sme/images/SME-Emailer_1_04.jpg')}}" border="0" /></a></td>
+  <td><a href="#" target="_blank"><img src="{{URL::to('smejs/images/SME-Emailer_1_04.jpg')}}" border="0" /></a></td>
   
   </tr>
   <tr>
     <td>
-  <a href="#" target="_blank"><img src="{{URL::to('sme/images/SME-Emailer_1_06.jpg')}}" border="0" /></a>  
+  <a href="#" target="_blank"><img src="{{URL::to('smejs/images/SME-Emailer_1_06.jpg')}}" border="0" /></a>  
   </td>
   </tr>
 </table>
@@ -85,7 +85,7 @@
   <div style="width: 100%; color:white; height: 100%; display: none; opacity: 0.7;" id="mask"></div>
 </div>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.js"></script>
-<script src="{{URL::to('sme/main.js')}}"></script>
+<script src="{{URL::to('smejs/main.js')}}"></script>
 
 <!-- <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script> -->
 <!-- <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script> -->

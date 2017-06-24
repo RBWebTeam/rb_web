@@ -5,7 +5,15 @@
   <div class=" pad">
 <!--  <p class="text-left">home/{{$product}}</p> -->
     <h2 class="align-center loan-head">View Options</h2>
+
+  <div class="iframeloading" style= "display:none;position:absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
+                <img src="{{URL::to('images/ajaxloader.gif')}}" alt="Loader" title="Loader" style="top: 50%; position: relative; left: 50%;"  /> </div>
   </div>
+
+
+
+
+
    <div class="col-md-3 fadeInUp tbl fltr tbl1" style="display:none;">
     <h3>Filter</h3>
   <hr>
@@ -372,6 +380,9 @@ var last_segment = url_array[url_array.length-1];  // Get the last part of the a
  
 
      var quote_selected_form=($(this).closest("form").attr('id'));
+
+     $(".iframeloading").show();
+      $(window).scrollTop($('.iframeloading').offset().top-20);
     $.ajax({  
              type: "POST",  
           

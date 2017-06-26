@@ -1806,8 +1806,12 @@ var global_tenure=0;
             $('#AppliedLoanamount').val(applied_loan);
             $('#Tenure').val(days);
             $('#ROI').val(a);
+            $('#Emi').val(EMI);
             $('#EquatedMonthly').text(EMI);
+            $('#e_m_i').val(EMI);
             $('#ProcessFee').text(fee);
+            $('#process_fee').text(fee);
+            $('#TotalPayableAmount').val(applied_loan);
             //appending offer div also
             $('#loanamt').val(applied_loan);
             $('#loantenure').val(days);
@@ -2004,7 +2008,7 @@ var global_tenure=0;
          data : $('').serialize(),
          success: function(msg){
 
-             var result=loan_eligibility(msg.body.ROI,msg.body.maxEmi,msg.body.maxTenure,msg.body.maxloanamt,msg.body.minTenure,msg.body.minloanamt,msg.body.processingfee,msg.body.offerstatus);
+             var result=loan_eligibility(msg.body.ROI,msg.body.maxEmi,msg.body.maxTenure,msg.body.maxloanamt,msg.body.minTenure,msg.body.minloanamt,msg.body.processingfee,msg.body.offerstatus,msg.body.remarks);
             // console.log(msg);
             console.log(msg);
             
@@ -2012,12 +2016,12 @@ var global_tenure=0;
       });   
        
     });
-    function loan_eligibility(ROI,maxEmi,maxTenure,maxloanamt,minTenure,minloanamt,processingfee,offerstatus,){
+    function loan_eligibility(ROI,maxEmi,maxTenure,maxloanamt,minTenure,minloanamt,processingfee,offerstatus,error_msg){
           var offer=offerstatus;
           // console.log(offer);
           if(offer=="Rejected"){
             $('#Instant_Approve').hide();
-         alert("Thank You For Choosing IIFL. Your application has been rejected due to internal credit policy.");
+         alert("Thank You For Choosing IIFL. \n Your application has been rejected due to internal credit policy.\n Reason: "+error_msg);
           }
       var maxloan=maxloanamt;
        //   console.log(maxloanamt);

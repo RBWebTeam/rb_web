@@ -1794,6 +1794,7 @@ var global_tenure=0;
             var applied_loan=$('#AppliedLoan').val();
             var fee=$('#fee').text();
             var EMI=$('#EMI').val();
+            console.log(EMI);
             $('#Eligibility_details').hide();
             $('#Applicant_Details').show();
             $('#Amount').empty().append(applied_loan);
@@ -1805,8 +1806,14 @@ var global_tenure=0;
             $('#AppliedLoanamount').val(applied_loan);
             $('#Tenure').val(days);
             $('#ROI').val(a);
-            $('EquatedMonthly').val(EMI);
+            $('#EquatedMonthly').text(EMI);
             $('#ProcessFee').text(fee);
+            //appending offer div also
+            $('#loanamt').val(applied_loan);
+            $('#loantenure').val(days);
+            $('#intrest').val(a);
+            $('#ProcessFee').val(fee);
+            $('#e_m_i').val(EMI);         
          }
 
     });
@@ -1837,7 +1844,7 @@ var global_tenure=0;
        
         if(! $('#applicant_deatils').valid()){
             // alert('not valid');
-
+            return false;
         }else{
             var person_name =$('#FName').val();
             // console.log(person_name);
@@ -1845,7 +1852,8 @@ var global_tenure=0;
             var aadhar=$('#AadhaarNumber').val();
             $('#Aadharno').val(aadhar);
             $('#Applicant_Details').hide();
-           
+
+
            $.ajax({  
              type: "POST",  
              url: "{{URL::to('apply-iifl-loan-applicant1')}}",

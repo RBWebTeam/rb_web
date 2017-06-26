@@ -350,7 +350,7 @@ $(document).ready(function(){
              <div class="col-xs-6 form-padding">
                     <div>
                       <input type="text" id="work_email" name="work_email" class="form-control inp-fld" oninput="mail('work_email')"  required >
-                       <span id="email" style="display:none;color: red;">Please Enter Valid Email Id.</span>
+                       <span id="email_error" style="display:none;color: red; font-size:10px">Please Enter Valid Email Id.</span>
                       <span class="highlight"></span><span class="bar"></span>
                       <label class="form-label-new lble">Work Email</label>
                       <div class="clear"></div>
@@ -431,7 +431,7 @@ $(document).ready(function(){
 
               <div class="col-xs-6 form-padding" style="display: none" id="ICICIRelationshipNumber">
                     <div>
-                      <input type="text" name="ICICIRelationshipNumber" id="ICICIRelationshipNumber" class="form-control inp-fld" onkeypress="return AllowAlphabet(event)" required  >
+                      <input type="text" name="ICICIRelationshipNumber" id="ICICIRelationshipNumber" class="form-control inp-fld" onkeypress="return fnAllowNumeric(event)" required  >
                       <span class="highlight"></span><span class="bar"></span>
                       <label class="form-label-new lble">ICICI Relationship Number</label>
                       <div class="clear"></div>
@@ -1294,7 +1294,7 @@ var inputs = $("#compareform input[required='required']");
     // console.log(obj);
     if(obj=='email_id' ){
                    var str =$('#email_id').val();
-                   var emailPattern = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/; 
+                   var emailPattern = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/; 
                    var res = str.match(emailPattern);
                    if(res){
                      // console.log('Pancard is valid one.!!');
@@ -1313,19 +1313,21 @@ var inputs = $("#compareform input[required='required']");
 
 <script type="text/javascript">
   function mail(obj,val){
-    // console.log(obj);
+ 
     if(obj=='work_email' ){
                    var str =$('#work_email').val();
-                   var emailPattern = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/; 
+                   var emailPattern =/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/; 
                    var res = str.match(emailPattern);
+
+
                    if(res){
                      // console.log('Pancard is valid one.!!');
-                      $('#email').hide();
+                      $('#email_error').hide();
 
                   }else{
                     // console.log('Oops.Please Enter Valid Pan Number.!!');
-                    $('#emai').show();
-
+                    $('#email_error').show();
+ 
                     return false;
                   }
                   
@@ -1486,6 +1488,9 @@ var inputs = $("#compareform input[required='required']");
      $('#per_res_type').val('');
   }
 }
+
+
+
 </script>
 
 

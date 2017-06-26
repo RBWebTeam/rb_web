@@ -83,7 +83,7 @@ $(".top").click(function() {
                                                 <h6 class="text-center top-heading"><a id="urlweb" href="#">click here</a>
                                                 to view this page in browser</h6>
                                                
-                                              <div id="hideemailid" class="" style="margin-bottom: 14px; height: 50px; position: relative; display: block;">
+                                              <div id="hideemailid" class="" style="margin-bottom: 14px; height: 50px; position: relative; display:none;">
                                                 <input class="form-control inp-fld pull-center" required="" type="name" id="urlemailid">
                                                 <button class="sbmit-btn pull-right" id="btnweburl">Submit</button> 
                                                   
@@ -647,6 +647,27 @@ $(".top").click(function() {
                       <div class="clear"></div>
                     </div>  
                   </div>
+				  
+				  </div>
+				  </div>
+				 
+				 
+				 
+				 
+				 
+				 
+				 
+				 
+				 
+			<div class="panel-heading" role="tab" id="headingSix">
+                  <h4 class="panel-title">
+                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSix" aria-expanded="true" aria-controls="collapseSix">
+          <button class="ok-btn"><span class="glyphicon glyphicon-ok"></span></button> &nbsp;IDENTITY DETAILS
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapseSix" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSix">
+                  <div class="panel-body">	  
                   
           <h4 class="txt-tlt pull-left hdn5">Identity Details</h4> 
           <div class="col-xs-6 form-padding">
@@ -717,8 +738,7 @@ $(".top").click(function() {
 	</div>
 	</div>
 	
-	</div>
-	</div>
+	
 
           <div class="col-md-12 pull-left text-justify">
             <p class="p-padding"><input type="checkbox" name="terms"  class="redio-lft"/>&nbsp; I hereby confirm that I have read and understood the Rupeeboss Terms and Conditions applicable to this service and that all the details furnished by me above are true and correct. I further provide consent to Rupeeboss and its affiliates to contact me with reference to financial products and this consent shall override any registration with DNC/NDNC.</p>
@@ -729,7 +749,8 @@ $(".top").click(function() {
 
                   </button>
             <b>All <mark style="color:red">*</mark>fields are mandatory.</b>
-            </div>      
+            </div> 
+			
                   
           </div>
         </div>  

@@ -41,9 +41,9 @@
        .error {
                     border:1px solid red;
                 }
-	.lble {bottom:19px;}
-	
-	.sbmit-btn {
+  .lble {bottom:19px;}
+  
+  .sbmit-btn {
     padding: 10px 30px;
     top: 0px;
     position: absolute;
@@ -53,6 +53,7 @@
     border: none;
     background: #0070c0;
 }
+.icici {position:absolute;margin-top:-10px;}
   
   </style>
   </head>
@@ -73,17 +74,19 @@ $(".top").click(function() {
         <section class="container">
       <div class="row">
       <div class="col-md-12">
-	  <br>
+    <br>
+    <img src="images/bank/icici.png" class="img-responsive pull-left icici" width="150"/>
       <div id="logo" class="text-center"><img id="myImage" src="http://beta.erp.rupeeboss.com/personalloan/images/logo.png" class=""></div>
+    
       <h4 class="text-center pg-titl">Apply For ICICI Credit Card</h4>
-	  
-	  <div class="col-md-3"></div>
-	  <div id="hideview" class="text-center col-md-6">
+    
+    <div class="col-md-3"></div>
+    <div id="hideview" class="text-center col-md-6">
                                             <div class="form-padding">
                                                 <h6 class="text-center top-heading"><a id="urlweb" href="#">click here</a>
                                                 to view this page in browser</h6>
                                                
-                                              <div id="hideemailid" class="" style="margin-bottom: 14px; height: 50px; position: relative; display: block;">
+                                              <div id="hideemailid" class="" style="margin-bottom: 14px; height: 50px; position: relative; display:none;">
                                                 <input class="form-control inp-fld pull-center" required="" type="name" id="urlemailid">
                                                 <button class="sbmit-btn pull-right" id="btnweburl">Submit</button> 
                                                   
@@ -95,13 +98,13 @@ $(".top").click(function() {
                                               <h5 id="msgalert" class="top-heading text-success text-center" style="display:none;font-size:15px;font-weight:bold; margin-bottom:15px;">As per your request we have sent a mail to your email ID.</h5>
                                             </div>
                                         </div>
-										
-										
+                    
+                    
 
                 <div class="tab-content">
                        <div id="home" class="tab-pane fade in active">
-					  
-					<form action="">   
+            
+          <!-- <form action="">  -->  
             <div class="col-md-12">
             <div class="panel-group" id="accordion" >
               <div class="panel panel-default">
@@ -113,12 +116,15 @@ $(".top").click(function() {
                   </h4>
                 </div>
                 <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-                  <div class="panel-body">										
+                  <div class="panel-body">    
 
+               <input type="hidden" name="prod" value="{{$prod}}">
+               <input type="hidden" name="amount" value="{{$amount}}">
+               <input type="hidden" name="interest" value="{{$interest}}">
 
-			
-	  
-          <div class="col-xs-6 form-padding">
+      
+    
+        <!--   <div class="col-xs-6 form-padding">
                     <select class="form-control inp-fld" name="net_annual_income" id="net_annual_income" required required>
                       <option value="">NET ANNUAL INCOME</option>
                         <option value=">2.5Lacs">2.5Lacs</option>
@@ -126,9 +132,9 @@ $(".top").click(function() {
                         <option value=">10Lacs">10Lacs</option>
                         <option value=">15Lacs">15Lacs</option>
                     </select> 
-          </div>
+          </div> -->
 
-          <div class="col-xs-6 form-padding" style='display:none;' id="credit_card_type">
+          <!-- <div class="col-xs-6 form-padding" style='display:none;' id="credit_card_type">
                     <select class="form-control inp-fld" name="your_interests" id="your_interests" required>
                       <option value="">YOUR INTERESTS</option>
                         <option  value="Lifestyle">Lifestyle</option>
@@ -136,9 +142,9 @@ $(".top").click(function() {
                         <option  value="Motorsports">Motorsports</option>
                       
                     </select> 
-          </div>
+          </div> -->
 
-          <div class="col-xs-6 form-padding" style='display:none;' id="credit_card_name">
+         <!--  <div class="col-xs-6 form-padding" style='display:none;' id="credit_card_name">
                     <select class="form-control inp-fld" name="cards" id="cards" required>Ferrari Platinum Credit Card
                     Ferrari Signature Credit Card
                       <option value="">CREDIT CARDS</option>
@@ -155,7 +161,7 @@ $(".top").click(function() {
                       
                     </select> 
           </div>
-
+ -->
           <div class="col-xs-6 form-padding">
                     <div>
                       <input type="text" name="ApplicantFirstName" id="ApplicantFirstName" class="form-control inp-fld" onkeypress="return AllowAlphabet(event)" required >
@@ -193,7 +199,7 @@ $(".top").click(function() {
                         <div class="clear"></div>
                       </div>   -->
                       <input type="text" class="form-control lastReporteddob" id="DateOfBirth" name="DateOfBirth" placeholder="Date of Birth*" required>
-					  <i class="fa fa-calendar" style="font-size: 25px;position: absolute;top: 15px;right: 11px;color: #3f7cb3;"></i>
+            <i class="fa fa-calendar" style="font-size: 25px;position: absolute;top: 15px;right: 11px;color: #3f7cb3;"></i>
                     </div>
                   </div>
                   
@@ -249,8 +255,8 @@ $(".top").click(function() {
                 </div>
                     </div>  
                 </div>
-				
-				<div class="col-xs-6 form-padding">
+        
+        <div class="col-xs-6 form-padding">
                 <div class="form-control inp-fld" style="height:50px; position: relative; padding: 0px 0px;">
                       <span style="position: absolute; z-index: 999; margin: 1px 0 0 8px; font-size: 10px; color: #bababa;">Marital Status</span>
                       <div class="btn-grp mrg-top m-status emp-nat" data-toggle="buttons">
@@ -290,20 +296,20 @@ $(".top").click(function() {
                       </div>
             </div>
         </div>
-		</div>
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		<div class="panel-heading" role="tab" id="headingTwo">
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="panel-heading" role="tab" id="headingTwo">
                   <h4 class="panel-title">
                     <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
           <button class="ok-btn"><span class="glyphicon glyphicon-ok"></span></button> &nbsp; COMPANY DETAILS
@@ -428,17 +434,17 @@ $(".top").click(function() {
          </div>
                     </div>
                   </div>
-			</div>
-         </div>			
+      </div>
+         </div>     
 
 
-		 
-		 
-		 
+     
+     
+     
 
 
 
-               	<div class="panel-heading" role="tab" id="headingThree">
+                <div class="panel-heading" role="tab" id="headingThree">
                   <h4 class="panel-title">
                     <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                       <button class="ok-btn"><span class="glyphicon glyphicon-ok"></span></button>&nbsp; CURRENT ADDRESS DETAILS
@@ -446,8 +452,8 @@ $(".top").click(function() {
                   </h4>
                 </div>
                 <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
-                  <div class="panel-body">			
-				  
+                  <div class="panel-body">      
+          
               <h4 class="txt-tlt pull-left hdn5">Current Address Details</h4> 
           <div class="col-xs-6 form-padding">
                     <div>
@@ -510,19 +516,19 @@ $(".top").click(function() {
                       <option value="Company_Provided">Company Provided</option>
                     </select> 
             </div>
-			
-			<div class="col-xs-12"><P style="padding:10px; display:-webkit-inline-box;" class="pull-left"><input type="checkbox" name="same" id="same_id" onclick="same_as_above('same_id');"/> &nbsp;&nbsp;Same As Above</p></div>
-			
-			
-		</div>
-		</div>
-		
-		
-		
-		
-		
-		
-		<div class="panel-heading" role="tab" id="headingFour">
+      
+      <div class="col-xs-12"><P style="padding:10px; display:-webkit-inline-box;" class="pull-left"><input type="checkbox" name="same" id="same_id" onclick="same_as_above('same_id');"/> &nbsp;&nbsp;Same As Above</p></div>
+      
+      
+    </div>
+    </div>
+    
+    
+    
+    
+    
+    
+    <div class="panel-heading" role="tab" id="headingFour">
                   <h4 class="panel-title">
                     <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
                       <button class="ok-btn"><span class="glyphicon glyphicon-ok"></span></button>&nbsp; PERMANENT ADDRESS  DETAILS
@@ -606,11 +612,11 @@ $(".top").click(function() {
                       <div class="clear"></div>
                     </div>  
                   </div>
-				  
-				 </div>
-				 </div>
-				 
-				 
+          
+         </div>
+         </div>
+         
+         
                 
          <div class="panel-heading" role="tab" id="headingFive">
                   <h4 class="panel-title">
@@ -620,8 +626,8 @@ $(".top").click(function() {
                   </h4>
                 </div>
                 <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
-                  <div class="panel-body">		
-				  
+                  <div class="panel-body">    
+          
           <h4 class="txt-tlt pull-left hdn5">Contact Details</h4> 
           <div class="col-xs-6 form-padding">
                     <div>
@@ -647,6 +653,27 @@ $(".top").click(function() {
                       <div class="clear"></div>
                     </div>  
                   </div>
+          
+          </div>
+          </div>
+         
+         
+         
+         
+         
+         
+         
+         
+         
+      <div class="panel-heading" role="tab" id="headingSix">
+                  <h4 class="panel-title">
+                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSix" aria-expanded="true" aria-controls="collapseSix">
+          <button class="ok-btn"><span class="glyphicon glyphicon-ok"></span></button> &nbsp;IDENTITY DETAILS
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapseSix" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSix">
+                  <div class="panel-body">    
                   
           <h4 class="txt-tlt pull-left hdn5">Identity Details</h4> 
           <div class="col-xs-6 form-padding">
@@ -713,12 +740,11 @@ $(".top").click(function() {
                     </div>  
                   </div>
                   </div>
-				  
-	</div>
-	</div>
-	
-	</div>
-	</div>
+          
+  </div>
+  </div>
+  
+  
 
           <div class="col-md-12 pull-left text-justify">
             <p class="p-padding"><input type="checkbox" name="terms"  class="redio-lft"/>&nbsp; I hereby confirm that I have read and understood the Rupeeboss Terms and Conditions applicable to this service and that all the details furnished by me above are true and correct. I further provide consent to Rupeeboss and its affiliates to contact me with reference to financial products and this consent shall override any registration with DNC/NDNC.</p>
@@ -729,7 +755,8 @@ $(".top").click(function() {
 
                   </button>
             <b>All <mark style="color:red">*</mark>fields are mandatory.</b>
-            </div>      
+            </div> 
+      
                   
           </div>
         </div>  
@@ -1159,16 +1186,25 @@ $(document).ready(function(){
 </script>
 
 <script type="text/javascript">
+var inputs = $("#compareform input[required='required']");
   $(".icici-credit-submit").click(function(event){
     //alert("okae");
     event.preventDefault();
       //var form=$(this).closest("form").attr('id');
       //console.log($('#compareform'));
       //var form=$('#compareform');
-      if(!  $('#compareform').valid()){
+
+
+
+ 
+      if(! $('#compareform').valid()){    
+
         return false;
       }else{
-        //var s=$('#'+form).serialize();
+     
+    if( $('#ResidenceMobileNo').val()!='' && $('#PerResidencePincode').val()!='' && $('#ResidencePincode').val()!='' && $('#work_number').val()!='' && $('#designation').val()!='' && $('#work_email').val()!='' && $('#CompanyName').val()!='' && $('#preferred_address').val()!='' && $('#NameOnCard').val()!='' && $('#ApplicantFirstName').val()!='' && $('#net_annual_income').val()!='' && $('#DateOfBirth').val()!='' && $('#CompanyName').val()!='' && $('#ResidenceAddress1').val()!='' && 
+    $('#PerResidenceAddress1').val()!='' && $('#ResidencePhoneNumber').val()!='' && $('#ApplicationNumber').val()!=''){
+
         //console.log($('#compareform'));
         $(".iframeloading").show();
         // $(".icici-credit-submit").hide(); 
@@ -1203,7 +1239,20 @@ $(document).ready(function(){
 
         }  
       }); 
+
+}else{
+
+  alert("Please fill form carefully...");
+
+}
+
+
       }
+
+
+
+
+
 
     });
 

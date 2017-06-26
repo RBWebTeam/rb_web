@@ -576,7 +576,7 @@ rb-services-section{padding:0px;}
   }
 }
 
-.carousel-inner .slide-txt { position:absolute; padding:30px; width:65%;}
+.carousel-inner .slide-txt { position:absolute; padding:30px; width:100%;}
 .carousel-inner .slide-txt h2 {text-transform:uppercase; font-size: 50px;font-weight: 400;color: #fff;text-shadow: 1px 1px 1px #000;border-radius: 7px;
 -moz-border-radius: 7px;-webkit-border-radius: 7px;-o-border-radius: 7px;display:block;font-weight: bold;text-align:center;}
 .carousel-inner h4 {margin:0 auto; text-align:center;color: #ffffff; font-size:28px;font-weight:bold;text-shadow: 1px 1px 1px #000;}

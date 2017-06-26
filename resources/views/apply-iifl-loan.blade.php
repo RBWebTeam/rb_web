@@ -1794,6 +1794,7 @@ var global_tenure=0;
             var applied_loan=$('#AppliedLoan').val();
             var fee=$('#fee').text();
             var EMI=$('#EMI').val();
+            console.log(EMI);
             $('#Eligibility_details').hide();
             $('#Applicant_Details').show();
             $('#Amount').empty().append(applied_loan);
@@ -1805,8 +1806,18 @@ var global_tenure=0;
             $('#AppliedLoanamount').val(applied_loan);
             $('#Tenure').val(days);
             $('#ROI').val(a);
-            $('EquatedMonthly').val(EMI);
+            $('#Emi').val(EMI);
+            $('#EquatedMonthly').text(EMI);
+            $('#e_m_i').val(EMI);
             $('#ProcessFee').text(fee);
+            $('#process_fee').text(fee);
+            $('#TotalPayableAmount').val(applied_loan);
+            //appending offer div also
+            $('#loanamt').val(applied_loan);
+            $('#loantenure').val(days);
+            $('#intrest').val(a);
+            $('#ProcessFee').val(fee);
+            $('#e_m_i').val(EMI);         
          }
 
     });
@@ -1837,7 +1848,7 @@ var global_tenure=0;
        
         if(! $('#applicant_deatils').valid()){
             // alert('not valid');
-
+            return false;
         }else{
             var person_name =$('#FName').val();
             // console.log(person_name);
@@ -1845,7 +1856,8 @@ var global_tenure=0;
             var aadhar=$('#AadhaarNumber').val();
             $('#Aadharno').val(aadhar);
             $('#Applicant_Details').hide();
-           
+
+
            $.ajax({  
              type: "POST",  
              url: "{{URL::to('apply-iifl-loan-applicant1')}}",
@@ -1996,7 +2008,7 @@ var global_tenure=0;
          data : $('').serialize(),
          success: function(msg){
 
-             var result=loan_eligibility(msg.body.ROI,msg.body.maxEmi,msg.body.maxTenure,msg.body.maxloanamt,msg.body.minTenure,msg.body.minloanamt,msg.body.processingfee,msg.body.offerstatus);
+             var result=loan_eligibility(msg.body.ROI,msg.body.maxEmi,msg.body.maxTenure,msg.body.maxloanamt,msg.body.minTenure,msg.body.minloanamt,msg.body.processingfee,msg.body.offerstatus,msg.body.remarks);
             // console.log(msg);
             console.log(msg);
             
@@ -2004,12 +2016,12 @@ var global_tenure=0;
       });   
        
     });
-    function loan_eligibility(ROI,maxEmi,maxTenure,maxloanamt,minTenure,minloanamt,processingfee,offerstatus,){
+    function loan_eligibility(ROI,maxEmi,maxTenure,maxloanamt,minTenure,minloanamt,processingfee,offerstatus,error_msg){
           var offer=offerstatus;
           // console.log(offer);
           if(offer=="Rejected"){
             $('#Instant_Approve').hide();
-         alert("Thank You For Choosing IIFL. Your application has been rejected due to internal credit policy.");
+         alert("Thank You For Choosing IIFL. \n Your application has been rejected due to internal credit policy.\n Reason: "+error_msg);
           }
       var maxloan=maxloanamt;
        //   console.log(maxloanamt);

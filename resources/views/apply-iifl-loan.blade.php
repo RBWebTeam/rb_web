@@ -1808,7 +1808,6 @@ var global_tenure=0;
             $('#ROI').val(a);
             $('#Emi').val(EMI);
             $('#EquatedMonthly').text(EMI);
-            $('#e_m_i').val(EMI);
             $('#ProcessFee').text(fee);
             $('#process_fee').text(fee);
             $('#TotalPayableAmount').val(applied_loan);

@@ -376,7 +376,7 @@ public function dropdown(Request $req){
     public function applicant(Request $req){
        $data=$req->all();
        $json_data=json_encode($data);
-      print_r($data);
+      // print_r($data);
        $post_data = '{
    "head": {
     "requestCode": "PLRQCL01",
@@ -411,7 +411,10 @@ public function dropdown(Request $req){
 
      //print_r($obj->body->prospectno);exit();
      }
+
+     
      // print_r($obj);
+
      return response()->json( $obj);
       
     //  $a=$obj->body;

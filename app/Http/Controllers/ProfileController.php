@@ -274,8 +274,10 @@ public function  change_password(Request $req){
 
       } else  if ($product == '7') {
 
-        return redirect()->away($this::$erp_url_static.'LAP/LAP_Form.asxp?'.$loan_parameters);
+        return redirect()->away($this::$erp_url_static.'LAP/LAP_Form.aspx?'.$loan_parameters);
       }else if ($product == '13') {
+          return redirect('thank-you');
+      }else if ($product == '4') {
           return redirect('thank-you');
       }
       else{

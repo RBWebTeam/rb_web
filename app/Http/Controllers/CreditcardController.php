@@ -81,6 +81,15 @@ class CreditcardController extends CallApiController
             return view('icici');
      }
 
+
+      public function icici_dc(){
+
+               
+         return view('icici-dc');
+
+     }
+
+
    
 }
 

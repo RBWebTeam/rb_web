@@ -279,3 +279,6 @@ Route::get('track-application','TrackapplicationController@tracking');
 Route::post('view-your-application','TrackapplicationController@tracking_sub');
 // Route::get('view-your-application','TrackapplicationController@tracking_view');
 
+
+
+Route::get('icici-dc','CreditcardController@icici_dc');

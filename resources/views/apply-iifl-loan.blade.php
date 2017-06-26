@@ -63,13 +63,6 @@
         
             </div>
             </div>
-            
-            
-            
-   
-   
-                
-
             <div class="row" id="error" style="display: none;">
                 <div class="col-md-10 col-md-offset-1">
                 <hr>
@@ -1310,7 +1303,7 @@
     // console.log(obj);
     if(obj=='CoPersonalEmailID' ){
                    var str =$('#CoPersonalEmailID').val();
-                   var emailPattern = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/; 
+                   var emailPattern = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/; 
                    var res = str.match(emailPattern);
                    if(res){
                      // console.log('Pancard is valid one.!!');
@@ -1332,7 +1325,7 @@
     // console.log(obj);
     if(obj=='OfficeEmailID' ){
                    var str =$('#OfficeEmailID').val();
-                   var emailPattern = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/; 
+                   var emailPattern = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/; 
                    var res = str.match(emailPattern);
                    if(res){
                      // console.log('Pancard is valid one.!!');
@@ -1782,53 +1775,47 @@ var global_tenure=0;
 <script type="text/javascript">
      
     $('#next_form').click(function(){
-     
         var amount=$('#AppliedLoan').val();
        if(amount> global_eligible_amount){
-        alert('Enter amount less than or equal to eligible amount');
-        return false;
+            alert('Enter amount less than or equal to eligible amount');
+            return false;
         }
         var divas =$('#tenure').val();
         if(divas> global_tenure){
-        alert('Enter tenure less than or equal to required tenure');
-        return false;
+            alert('Enter tenure less than or equal to required tenure');
+            return false;
         }
-
-        // $('#EMI').val(installment);
-        // console.log(amount +" " +global_eligible_amount);
         if(! $('#eligibility_form').valid() ){
             alert("You must agree to the terms first.");
          }else{
-        $('#Eligibility_details').hide();
-        $('#Applicant_Details').show();
-
-        var applied_loan=$('#AppliedLoan').val();
-        console.log(applied_loan);
-        $('#Amount').empty().append(applied_loan);
-        $('#loanamt').empty().append(applied_loan);
-        // $("input[name='AppliedLoanamount']").val(applied_loan);
-        var days =$('#tenure').val();
-        console.log(days);
-        var no_of_days= days*12;
-        $('#LoanTenure').empty().append(days);
-        $('#loantenure').empty().append(days);
-        // $("input[name='Tenure']").val(days);
-        var a = $('#int span').html();
-         $('#RateOfInt').empty().append(a);
-         console.log(a);
-         $('#intrest').empty().append(applied_loan);
-        $('#AppliedLoanamount').val(applied_loan);
-        $('#Tenure').val(days);
-        $('#ROI').val(a);
+            var a = $('#int span').html();
+            var days =$('#tenure').val();
+            var no_of_days= days*12;
+            var applied_loan=$('#AppliedLoan').val();
+            var fee=$('#fee').text();
+            var EMI=$('#EMI').val();
+            $('#Eligibility_details').hide();
+            $('#Applicant_Details').show();
+            $('#Amount').empty().append(applied_loan);
+            $('#loanamt').empty().append(applied_loan);
+            $('#LoanTenure').empty().append(days);
+            $('#loantenure').empty().append(days);
+            $('#RateOfInt').empty().append(a);
+            $('#intrest').empty().append(applied_loan);
+            $('#AppliedLoanamount').val(applied_loan);
+            $('#Tenure').val(days);
+            $('#ROI').val(a);
+            $('EquatedMonthly').val(EMI);
+            $('#ProcessFee').text(fee);
          }
 
     });
     $('#AppliedLoan, #tenure').on('input', function () {
-    var applied_loan = parseInt($('#AppliedLoan').val());
-    var no_of_days = parseFloat($('#tenure').val())*12;
-    var a = $('#int span').html();
-    var Rate = a/12/100;
-     var installment_iifl=applied_loan * Rate * (Math.pow(1 + Rate, no_of_days) / (Math.pow(1 + Rate, no_of_days) - 1));
+        var applied_loan = parseInt($('#AppliedLoan').val());
+        var no_of_days = parseFloat($('#tenure').val())*12;
+        var a = $('#int span').html();
+        var Rate = a/12/100;
+        var installment_iifl=applied_loan * Rate * (Math.pow(1 + Rate, no_of_days) / (Math.pow(1 + Rate, no_of_days) - 1));
         var installment =Math.round(installment_iifl);
         // if(isNaN( installment) || installment=='Infinity'){
         //   installment=0;
@@ -2099,17 +2086,25 @@ var global_tenure=0;
       // alert("ok");
 
     $('#PermanentAddress1').val($('#CurrentAddress1').val());
+    $('#PermanentAddress1').closest( "span" ).addClass( "input--filled" );
      $('#PermanentAddress2').val($('#CurrentAddress2').val());
+     $('#PermanentAddress2').closest( "span" ).addClass( "input--filled" );
      $('#PermanentAddress3').val($('#CurrentAddress3').val());
+     $('#PermanentAddress3').closest( "span" ).addClass( "input--filled" );
      $('#PermanentPin').val($('#CurrentPin').val());
+     $('#PermanentPin').closest( "span" ).addClass( "input--filled" );
 
      $('#PermanentState').val($('#CurrentState').val());
+     $('#PermanentState').closest( "span" ).addClass( "input--filled" );
      }else{
-
      $('#PermanentAddress1').val('');
      $('#PermanentAddress2').val(''); 
      $('#PermanentAddress3').val('');
-      $('#PermanentPin').val('');
+     $('#PermanentPin').val('');
+     $('#PermanentAddress1').closest( "span" ).removeClass( "input--filled" );
+     $('#PermanentAddress2').closest( "span" ).removeClass( "input--filled" ); 
+     $('#PermanentAddress3').closest( "span" ).removeClass( "input--filled" );
+     $('#PermanentPin').closest( "span" ).removeClass( "input--filled" );
     }
 }
 </script>

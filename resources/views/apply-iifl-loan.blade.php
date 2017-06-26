@@ -63,13 +63,6 @@
         
             </div>
             </div>
-            
-            
-            
-   
-   
-                
-
             <div class="row" id="error" style="display: none;">
                 <div class="col-md-10 col-md-offset-1">
                 <hr>
@@ -1310,7 +1303,7 @@
     // console.log(obj);
     if(obj=='CoPersonalEmailID' ){
                    var str =$('#CoPersonalEmailID').val();
-                   var emailPattern = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/; 
+                   var emailPattern = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/; 
                    var res = str.match(emailPattern);
                    if(res){
                      // console.log('Pancard is valid one.!!');
@@ -1332,7 +1325,7 @@
     // console.log(obj);
     if(obj=='OfficeEmailID' ){
                    var str =$('#OfficeEmailID').val();
-                   var emailPattern = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/; 
+                   var emailPattern = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/; 
                    var res = str.match(emailPattern);
                    if(res){
                      // console.log('Pancard is valid one.!!');
@@ -2011,7 +2004,7 @@ var global_tenure=0;
 
              var result=loan_eligibility(msg.body.ROI,msg.body.maxEmi,msg.body.maxTenure,msg.body.maxloanamt,msg.body.minTenure,msg.body.minloanamt,msg.body.processingfee,msg.body.offerstatus);
             // console.log(msg);
-            console.log(msg);
+            console.log(msg.body.ROI+" "+msg.body.maxEmi+" "+msg.body.maxTenure+" "+msg.body.maxloanamt+" "+msg.body.minTenure+" "+msg.body.minloanamt+" "+msg.body.processingfee+" "+msg.body.offerstatus);
             
          }  
       });   

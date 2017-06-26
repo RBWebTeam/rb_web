@@ -97,7 +97,26 @@ $(".top").click(function() {
                                         </div>
 										
 										
-										
+
+                <div class="tab-content">
+                       <div id="home" class="tab-pane fade in active">
+					  
+					<form action="">   
+            <div class="col-md-12">
+            <div class="panel-group" id="accordion" >
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingOne">
+                  <h4 class="panel-title">
+                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          <button class="ok-btn"><span class="glyphicon glyphicon-ok"></span></button> &nbsp; PERSONAL INFORMATION
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                  <div class="panel-body">										
+
+
+			
 	  
           <div class="col-xs-6 form-padding">
                     <select class="form-control inp-fld" name="net_annual_income" id="net_annual_income" required required>
@@ -270,7 +289,29 @@ $(".top").click(function() {
                       </div>
                       </div>
             </div>
-      
+        </div>
+		</div>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<div class="panel-heading" role="tab" id="headingTwo">
+                  <h4 class="panel-title">
+                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+          <button class="ok-btn"><span class="glyphicon glyphicon-ok"></span></button> &nbsp; COMPANY DETAILS
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                  <div class="panel-body">
         
             <h4 class="txt-tlt pull-left hdn5">Company Details</h4> 
             
@@ -387,6 +428,26 @@ $(".top").click(function() {
          </div>
                     </div>
                   </div>
+			</div>
+         </div>			
+
+
+		 
+		 
+		 
+
+
+
+               	<div class="panel-heading" role="tab" id="headingThree">
+                  <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                      <button class="ok-btn"><span class="glyphicon glyphicon-ok"></span></button>&nbsp; CURRENT ADDRESS DETAILS
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                  <div class="panel-body">			
+				  
               <h4 class="txt-tlt pull-left hdn5">Current Address Details</h4> 
           <div class="col-xs-6 form-padding">
                     <div>
@@ -451,8 +512,27 @@ $(".top").click(function() {
             </div>
 			
 			<div class="col-xs-12"><P style="padding:10px; display:-webkit-inline-box;" class="pull-left"><input type="checkbox" name="same" id="same_id" onclick="same_as_above('same_id');"/> &nbsp;&nbsp;Same As Above</p></div>
+			
+			
+		</div>
+		</div>
+		
+		
+		
+		
+		
+		
+		<div class="panel-heading" role="tab" id="headingFour">
+                  <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                      <button class="ok-btn"><span class="glyphicon glyphicon-ok"></span></button>&nbsp; PERMANENT ADDRESS  DETAILS
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+                  <div class="panel-body">
               
-                  <h4 class="txt-tlt pull-left hdn5">Permanent Address Details</h4> 
+                  <h4 class="txt-tlt pull-left hdn5">Permanent Address Details</h4>
           <div class="col-xs-6 form-padding">
                     <div>
                       <input type="text" name="PerResidenceAddress1" id="PerResidenceAddress1" class="form-control inp-fld" required >
@@ -526,7 +606,22 @@ $(".top").click(function() {
                       <div class="clear"></div>
                     </div>  
                   </div>
-                  
+				  
+				 </div>
+				 </div>
+				 
+				 
+                
+         <div class="panel-heading" role="tab" id="headingFive">
+                  <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                      <button class="ok-btn"><span class="glyphicon glyphicon-ok"></span></button>&nbsp; CONTACT DETAILS
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
+                  <div class="panel-body">		
+				  
           <h4 class="txt-tlt pull-left hdn5">Contact Details</h4> 
           <div class="col-xs-6 form-padding">
                     <div>
@@ -618,6 +713,12 @@ $(".top").click(function() {
                     </div>  
                   </div>
                   </div>
+				  
+	</div>
+	</div>
+	
+	</div>
+	</div>
 
           <div class="col-md-12 pull-left text-justify">
             <p class="p-padding"><input type="checkbox" name="terms"  class="redio-lft"/>&nbsp; I hereby confirm that I have read and understood the Rupeeboss Terms and Conditions applicable to this service and that all the details furnished by me above are true and correct. I further provide consent to Rupeeboss and its affiliates to contact me with reference to financial products and this consent shall override any registration with DNC/NDNC.</p>

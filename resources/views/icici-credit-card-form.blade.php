@@ -1477,6 +1477,16 @@ var inputs = $("#compareform input[required='required']");
      $('#PerResidencePincode').val($('#ResidencePincode').val());
      $('#Persearch_statenm').val($('#search_statenm').val());
      $('#per_res_type').val($('#type_current').val());
+     $('#PerResidenceAddress1').addClass("used");
+     $('#PerResidenceAddress2').addClass("used");
+     $('#PerResidenceAddress3').addClass("used");
+     $('#PerResidenceState').addClass("used");
+
+
+     $('#PerCity').addClass("used");
+     $('#PerResidencePincode').addClass("used");
+     $('#Persearch_statenm').addClass("used");
+     $('#per_res_type').addClass("used");
      }else{
 
      $('#PerResidenceAddress1').val('');
@@ -1488,6 +1498,16 @@ var inputs = $("#compareform input[required='required']");
      $('#PerResidencePincode').val('');
      $('#Persearch_statenm').val('');
      $('#per_res_type').val('');
+     $('#PerResidenceAddress1').removeClass("used");
+     $('#PerResidenceAddress2').removeClass("used");
+     $('#PerResidenceAddress3').removeClass("used");
+     $('#PerResidenceState').removeClass("used");
+
+
+     $('#PerCity').removeClass("used");
+     $('#PerResidencePincode').removeClass("used");
+     $('#Persearch_statenm').removeClass("used");
+     $('#per_res_type').removeClass("used");
   }
 }
 

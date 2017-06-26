@@ -17,12 +17,23 @@
   <!-- Animate.css -->
 
   <link  rel="stylesheet" type="text/css" href="{{URL::to('css/mysite.css')}}"/>
-
   <link  rel="stylesheet" type="text/css" href="{{URL::to('css/style.css')}}"/>
  <link href="{{URL::to('css/freshslider.min.css')}}" rel="stylesheet" type="text/css" /> 
 
   
+  
+  
+  <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style>
+body {background:#eee;}
+</style>
   </head>
   <body>
  
@@ -252,7 +263,7 @@
     </div>  
   </div>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  
   
   
   

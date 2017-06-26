@@ -81,14 +81,22 @@ $(".top").click(function() {
       <h4 class="text-center pg-titl">Apply For ICICI Credit Card</h4>
     
     <div class="col-md-3"></div>
+	
+	<script>
+$(document).ready(function(){
+    $(".click-hr").click(function(){
+        $(".emil-id").show();
+    });
+});
+</script>
     <div id="hideview" class="text-center col-md-6">
                                             <div class="form-padding">
-                                                <h6 class="text-center top-heading"><a id="urlweb" href="#">click here</a>
+                                                <h6 class="text-center top-heading click-hr"><a id="urlweb" href="#">click here</a>
                                                 to view this page in browser</h6>
                                                
-                                              <div id="hideemailid" class="" style="margin-bottom: 14px; height: 50px; position: relative; display:none;">
-                                                <input class="form-control inp-fld pull-center" required="" type="name" id="urlemailid">
-                                                <button class="sbmit-btn pull-right" id="btnweburl">Submit</button> 
+                                              <div id="hideemailid" class="emil-id" style="margin-bottom: 14px; height: 50px; position: relative; display:none;">
+                                                <input class="form-control inp-fld pull-center" required type="name" id="urlemailid">
+                                                <button class="sbmit-btn sub-btn1 pull-right" id="btnweburl">Submit</button> 
                                                   
                                                 <span class="highlight"></span><span class="bar"></span>
                                                 <label class="form-label-new">E-MAIL ID (PERSONAL)</label>
@@ -286,7 +294,7 @@ $(".top").click(function() {
             </div>
 
             <div class="col-xs-6 form-padding">
-                        <div class="form-control" style="height:50px; position: relative; padding: 0px 0px;">
+                        <div class="form-control inp-fld" style="height:50px; position: relative; padding: 0px 0px;">
                         <span style="position: absolute; z-index: 999; margin: 1px 0 0 8px; font-size: 10px; color: #bababa;">I want to apply for a Supplementary Card</span>
                       
                       <div class="btn-grp mrg-top m-status emp-nat" data-toggle="buttons">
@@ -420,10 +428,18 @@ $(".top").click(function() {
                     </div>  
                   </div>
 
-                   <div class="col-xs-6 form-padding">
-                   
-                    <input  style='display:none;' type="text" class="form-input-new form-control" name="ICICIRelationshipNumber" id="ICICIRelationshipNumber" placeholder="ICICI Relationship Number" maxlength="15" onkeypress="return fnAllowNumeric(event)"  required>
-                    </div>
+
+              <div class="col-xs-6 form-padding" style="display: none" id="ICICIRelationshipNumber">
+                    <div>
+                      <input type="text" name="ICICIRelationshipNumber" id="ICICIRelationshipNumber" class="form-control inp-fld" onkeypress="return AllowAlphabet(event)" required  >
+                      <span class="highlight"></span><span class="bar"></span>
+                      <label class="form-label-new lble">ICICI Relationship Number</label>
+                      <div class="clear"></div>
+                    </div>  
+             </div>
+
+ 
+					
           <div class="col-xs-6 form-padding">
                     <div class="form-control inp-fld" style="height:50px; position: relative; padding: 0px 0px;">
                       <span style="position: absolute; z-index: 999; margin: 1px 0 0 8px; font-size: 10px; color: #bababa;">Salary Account With Other Bank:</span>
@@ -519,26 +535,8 @@ $(".top").click(function() {
       
       <div class="col-xs-12"><P style="padding:10px; display:-webkit-inline-box;" class="pull-left"><input type="checkbox" name="same" id="same_id" onclick="same_as_above('same_id');"/> &nbsp;&nbsp;Same As Above</p></div>
       
-      
-    </div>
-    </div>
-    
-    
-    
-    
-    
-    
-    <div class="panel-heading" role="tab" id="headingFour">
-                  <h4 class="panel-title">
-                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                      <button class="ok-btn"><span class="glyphicon glyphicon-ok"></span></button>&nbsp; PERMANENT ADDRESS  DETAILS
-                    </a>
-                  </h4>
-                </div>
-                <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
-                  <div class="panel-body">
-              
-                  <h4 class="txt-tlt pull-left hdn5">Permanent Address Details</h4>
+	  
+	  <h4 class="txt-tlt pull-left hdn5">Permanent Address Details</h4>
           <div class="col-xs-6 form-padding">
                     <div>
                       <input type="text" name="PerResidenceAddress1" id="PerResidenceAddress1" class="form-control inp-fld" required >
@@ -653,9 +651,26 @@ $(".top").click(function() {
                       <div class="clear"></div>
                     </div>  
                   </div>
+      
+    </div>
+    </div>
+    
+  
+    
+ <!--   <div class="panel-heading" role="tab" id="headingFour">
+                  <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                      <button class="ok-btn"><span class="glyphicon glyphicon-ok"></span></button>&nbsp; PERMANENT ADDRESS  DETAILS
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+                  <div class="panel-body">
+              
+                  
           
           </div>
-          </div>
+          </div>  -->
          
          
          
@@ -678,7 +693,7 @@ $(".top").click(function() {
           <h4 class="txt-tlt pull-left hdn5">Identity Details</h4> 
           <div class="col-xs-6 form-padding">
                     <div>
-                      <input type="text" id="ApplicationNumber" name="ApplicationNumber" class="form-control inp-fld" required="" maxlength="13" minlength="13" >
+                      <input type="text" id="ApplicationNumber" name="ApplicationNumber" class="form-control inp-fld" required maxlength="13" minlength="13" >
                       <span class="highlight"></span><span class="bar"></span>
                       <label class="form-label-new lble">Application Number*</label>
                       <div class="clear"></div>

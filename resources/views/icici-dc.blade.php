@@ -1,6 +1,34 @@
-@include('layout.header')
+<!DOCTYPE html>
+<html class="no-js"> 
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- <link href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" rel="stylesheet" type="text/css"> -->
+  <title><?php if(isset($title))echo $title; else echo "RupeeBoss-Apply for a Loan";  ?></title>
+  <!-- <meta name="google-signin-client_id" content="752185558821-9vlmac53np7bgdo3kn9d2e5ft39t7gud.apps.googleusercontent.com"> -->
+  <meta name="msvalidate.01" content="3744048BDD61F7FE6837BD664522C8F9" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="<?php if(isset($description))echo $description; else echo "RupeeBoss provides all kind of loans."; ?>" />
+  <meta name="keywords" content="<?php if(isset($keywords))echo $keywords; else echo "rupeeboss loans getloan expressloan"; ?>" />
+  <meta name="p:domain_verify" content="05d8ec5b6a704fa5b78abd5f636fdc24"/>
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+  <link rel="shortcut icon" href="{{URL::to('images/rb_fav.png')}}">
+  <!-- <link rel="stylesheet" href="{{URL::to('fonts/Raleway.css')}}" type="text/css"> -->
+  <!-- Animate.css -->
 
-<div id="fh5co-hero">
+  <link  rel="stylesheet" type="text/css" href="{{URL::to('css/mysite.css')}}"/>
+
+  <link  rel="stylesheet" type="text/css" href="{{URL::to('css/style.css')}}"/>
+ <link href="{{URL::to('css/freshslider.min.css')}}" rel="stylesheet" type="text/css" /> 
+
+  
+
+  </head>
+  <body>
+ 
+
+
+
 
 
   <div class="fh5co-contact animate-box">
@@ -224,16 +252,14 @@
     </div>  
   </div>
 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   
   
   
-  
-  
-  
-  </div>
 
-@include('layout.footer')
-@include('layout.script')
+</body>
+</html>
+
 
 <script type="text/javascript">
   var income= '>2.5Lacs';

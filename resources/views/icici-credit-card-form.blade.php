@@ -12,16 +12,16 @@
   <link href="css/icici_css/responsive-home-loan.css" rel="stylesheet" type="text/css" />
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   <link rel="stylesheet" href="css/icici_css/jquery.datepicker.css">
-  <link rel="stylesheet" href="css/icici_css/bootstrap-material-datetimepicker.css"/>
+
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
   <script src="js/icici_js/jquery.min.js"></script>
   <script type="text/javascript" src="js/icici_js/material.min.js"></script>
   <script type="text/javascript" src="js/icici_js/moment-with-locales.min.js"></script>
-  <script type="text/javascript" src="js/icici_js/bootstrap-material-datetimepicker.js"></script>
+
    
 </script>
-<script type="text/javascript" src="js/icici_js/jquery.datepicker.js"></script>
+
 <script src="js/icici_js/classie.js"></script>
 <script src="js/bootstrap.min.js" type="text/javascript"></script>  
 <link href="css/jquery-ui.min.css" rel="Stylesheet"></link>
@@ -86,7 +86,7 @@ $(".top").click(function() {
                                                 <h6 class="text-center top-heading"><a id="urlweb" href="#">click here</a>
                                                 to view this page in browser</h6>
                                                
-                                              <div id="hideemailid" class="" style="margin-bottom: 14px; height: 50px; position: relative; display:none;">
+                                              <div id="hideemailid" class="" style="margin-bottom: 14px; height: 50px; position: relative;">
                                                 <input class="form-control inp-fld pull-center" required="" type="name" id="urlemailid">
                                                 <button class="sbmit-btn pull-right" id="btnweburl">Submit</button> 
                                                   
@@ -187,14 +187,7 @@ $(".top").click(function() {
                   
             <div class="col-xs-6 form-padding">
                     <div class="form-control" style="margin-bottom:10px; height:50px; position:relative; padding: 0;">
-                      <!-- <div class="input-group">
-                        <input type="text" name="DateOfBirth" class="form-input-new-1" id="DateOfBirth" placeholder="Date of Birth" data-select="datepicker" data-locked="25/12/2014;1/1/2015">
-                        <span class="input-group-btn" style="left:1px;">
-                          <button type="button" class="btn btn-primary success-width" data-toggle="datepicker" style="height:50px;">
-                          <i class="fa fa-calendar"></i></button>
-                        </span>
-                        <div class="clear"></div>
-                      </div>   -->
+                     
                       <input type="text" class="form-control lastReporteddob" id="DateOfBirth" name="DateOfBirth" placeholder="Date of Birth*" required>
 					  <i class="fa fa-calendar" style="font-size: 25px;position: absolute;top: 15px;right: 11px;color: #3f7cb3;"></i>
                     </div>
@@ -1239,7 +1232,7 @@ $(document).ready(function(){
     var year = d.getFullYear() ;
     d.setFullYear(year);
 
-    $(".lastReporteddob").datepicker({ dateFormat: "yy-mm-dd",
+    $(".lastReporteddob").datepicker({ dateFormat: "mm-dd-yy",
       changeMonth: true,
       changeYear: true,
       maxDate: year,

@@ -139,19 +139,10 @@
     </div>
 
    <br>
-    <!-- <?php if(Session::get('is_login')) {?>
-                <?php if(Session::get('contact')!=''){ Session::get('contact'); ?>
-              <button class="btn btn-primary btn-outline with-arrow top-mrg product_name product_ID" >Get Best Quotes<i class="icon-arrow-right"></i></button>
-              <?php }else{?> 
-                <a  class="btn btn-primary btn-outline with-arrow top-mrg product_name product_ID" data-toggle="modal" data-target="#contact_id">Get Best Quotes<i class="icon-arrow-right"></i></a>
-                      <?php }?>
-            <?php }else{?>
-            <button  style="display:none" class="btn btn-primary btn-outline with-arrow top-mrg product_name product_ID" id="btn_refresh_co">Get Best Quotes<i class="icon-arrow-right"></i></button>
+  
+              <!-- <a class="btn btn-primary btn-outline with-arrow top-mrg product_name product_ID" id="btn_refresh_co1" >Get Best Quotes<i class="icon-arrow-right"></i></a>  -->
 
-              <a class="btn btn-primary btn-outline with-arrow top-mrg product_name product_ID" id="btn_refresh_co1" data-toggle="modal" data-target="#login_process">Get Best Quotes<i class="icon-arrow-right"></i></a>
-            <?php } ?> -->
-
-              <a class="btn btn-primary btn-outline with-arrow top-mrg product_name product_ID" id="btn_refresh_co1" >Get Best Quotes<i class="icon-arrow-right"></i></a> 
+                <a class="btn btn-primary btn-outline with-arrow top-mrg product_name product_ID"   >Get Best Quotes<i class="icon-arrow-right mrg-btm"></i></a> 
              
   </div> 
   <div class="iframeloading" style= "display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
@@ -190,8 +181,20 @@
          <br>
         <div> 
           
-         <a id="apply_new" type="button" class="btn btn-info disblk" title="Experience New Digital Era In Loans">Apply Digitally</a>
-         <button id="eligibility" class="btn btn-info disblk" title="See Bankwise Eligibility And Apply Amongst Best Bank">Check Bankwise Eligibility</button>
+         <!-- <a id="apply_new" type="button" class="btn btn-info disblk" title="Experience New Digital Era In Loans">Apply Digitally</a> -->
+
+          @if(Session::get('is_login'))
+          <a id="apply_new" type="button" class="btn btn-info disblk" title="Experience New Digital Era In Loans">Apply Digitally</a>
+           @else
+           <a   data-toggle="modal" data-target="#login_process" class="btn btn-info disblk apply_digitally " title="Experience New Digital Era In Loans">Apply Digitally</a>
+           @endif  
+
+
+        <!--  <button id="eligibility" class="btn btn-info disblk" title="See Bankwise Eligibility And Apply Amongst Best Bank">Check Bankwise Eligibility</button> -->
+
+ <button id="eligibility"  class="btn btn-info disblk" title="See Bankwise Eligibility And Apply Amongst Best Bank" disabled>Check Bankwise Eligibility </button>
+
+
          <button type="button" class="btn btn-info block"  id="call_rm" name="call_rm" data-toggle="modal" data-target="#Modal" title="Call For RM(Single Day Process)">Call Manager</button>
          
         </div>
@@ -291,7 +294,7 @@ $(document).ready(function(){
 $(".product_ID").click(function(e){
    e.preventDefault();
     if(!$('#car_loan_process_form').valid()){
-      $('#valid').empty().append('<span class="icon-remove text-danger" id="tt2"></span>');
+     // $('#valid').empty().append('<span class="icon-remove text-danger" id="tt2"></span>');
             return false;
           }else{
            
@@ -321,12 +324,18 @@ $(".product_ID").click(function(e){
                              $('#processfee').val(processingfee);
                            var Bank_id = msg.Bank_Id;
                              $('#bank').val(Bank_id);
-                           var url = "apply-lead-online?qoutid="+quote+"&BankId="+Bank_id+"&product=12&processing_fee="+processingfee+"&loan_eligible="+loan_eligible+"&roi_type="+roi+"";
+                           // var url = "apply-lead-online?qoutid="+quote+"&BankId="+Bank_id+"&product=12&processing_fee="+processingfee+"&loan_eligible="+loan_eligible+"&roi_type="+roi+"";
+
+                             var url="thank-you";
                              $("#apply_new").attr("href", url);
                              $('#mi_ID').show();
                              $('#err').hide();
                              // $(window).scrollTop($('#form_ID').offset().top-20);
+
+                              $('#eligibility').prop('disabled', false);
                          }else{
+
+                               $('#eligibility').prop('disabled', true);
 
                                 $('#err').show();
                                 $('#loanamount').val("");

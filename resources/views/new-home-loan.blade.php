@@ -433,9 +433,10 @@ $(document).ready(function(){
 $(".product_ID").click(function(e){
    e.preventDefault();
     if(!$('#home_loan_process_form').valid()){
-    	$('#valid').empty().append('<span class="icon-remove text-danger" id="tt2"></span>');
+    	//$('#valid').empty().append('<span class="icon-remove text-danger" id="tt2"></span>');
             return false;
           }else{
+
             // $(".iframeloading").show();
                var property_cost=$('#property_cost').val();
                var obligation=$('#obligation').val();

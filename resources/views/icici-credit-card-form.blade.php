@@ -56,6 +56,14 @@
 .icici {position:absolute;margin-top:-10px;}
   
   </style>
+  
+  <script>
+$(document).ready(function(){
+    $(".click-hr").click(function(){
+        $(".emil-id").toggle();
+    });
+});
+</script>
   </head>
   
   <body class="cbp-spmenu-push">
@@ -82,13 +90,7 @@ $(".top").click(function() {
     
     <div class="col-md-3"></div>
 	
-	<script>
-$(document).ready(function(){
-    $(".click-hr").click(function(){
-        $(".emil-id").show();
-    });
-});
-</script>
+	
     <div id="hideview" class="text-center col-md-6">
                                             <div class="form-padding">
                                                 <h6 class="text-center top-heading click-hr"><a id="urlweb" href="#">click here</a>

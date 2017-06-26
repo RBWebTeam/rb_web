@@ -1,68 +1,34 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html class="no-js"> 
-	<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<!-- <link href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" rel="stylesheet" type="text/css"> -->
-	<title><?php if(isset($title))echo $title; else echo "RupeeBoss-Apply for a Loan";  ?></title>
-	<!-- <meta name="google-signin-client_id" content="752185558821-9vlmac53np7bgdo3kn9d2e5ft39t7gud.apps.googleusercontent.com"> -->
-	<meta name="msvalidate.01" content="3744048BDD61F7FE6837BD664522C8F9" />
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="<?php if(isset($description))echo $description; else echo "RupeeBoss provides all kind of loans."; ?>" />
-	<meta name="keywords" content="<?php if(isset($keywords))echo $keywords; else echo "rupeeboss loans getloan expressloan"; ?>" />
-	<meta name="p:domain_verify" content="05d8ec5b6a704fa5b78abd5f636fdc24"/>
-	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-	<link rel="shortcut icon" href="{{URL::to('images/rb_fav.png')}}">
-	<!-- <link rel="stylesheet" href="{{URL::to('fonts/Raleway.css')}}" type="text/css"> -->
-	<!-- Animate.css -->
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- <link href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" rel="stylesheet" type="text/css"> -->
+  <title><?php if(isset($title))echo $title; else echo "RupeeBoss-Apply for a Loan";  ?></title>
+  <!-- <meta name="google-signin-client_id" content="752185558821-9vlmac53np7bgdo3kn9d2e5ft39t7gud.apps.googleusercontent.com"> -->
+  <meta name="msvalidate.01" content="3744048BDD61F7FE6837BD664522C8F9" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="<?php if(isset($description))echo $description; else echo "RupeeBoss provides all kind of loans."; ?>" />
+  <meta name="keywords" content="<?php if(isset($keywords))echo $keywords; else echo "rupeeboss loans getloan expressloan"; ?>" />
+  <meta name="p:domain_verify" content="05d8ec5b6a704fa5b78abd5f636fdc24"/>
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+  <link rel="shortcut icon" href="{{URL::to('images/rb_fav.png')}}">
+  <!-- <link rel="stylesheet" href="{{URL::to('fonts/Raleway.css')}}" type="text/css"> -->
+  <!-- Animate.css -->
 
-	<link  rel="stylesheet" type="text/css" href="{{URL::to('css/mysite.css')}}"/>
+  <link  rel="stylesheet" type="text/css" href="{{URL::to('css/mysite.css')}}"/>
 
   <link  rel="stylesheet" type="text/css" href="{{URL::to('css/style.css')}}"/>
-
- <link  rel="stylesheet" type="text/css" href="{{URL::to('css/bootstrap.css')}}"/>
-
-
  <link href="{{URL::to('css/freshslider.min.css')}}" rel="stylesheet" type="text/css" /> 
 
-	<!-- Modernizr JS -->
-	<!-- <link rel="manifest" href="{{URL::to('extension/manifest.json')}}"> -->
-	@if( request()->url() == url('/') )
-     <link rel="canonical" href="https://www.rupeeboss.com/" />
-	@else
-	     <link rel="canonical" href="{!! request()->fullUrl() !!}"  />
-	@endif
-	
-	
-<meta name="google-site-verification" content="WX6V_57BIW9ttEdt8-lFFx9AWksmU0OzrSB8CqEW084" />
-<script type="application/ld+json">
- { 
- "@context" : "http://schema.org",
- "@type" : "Organization",
- "name" : "Rupeeboss Financial Services Pvt Ltd",
- "url" : "http://www.rupeeboss.com/",
- "logo": "http://www.rupeeboss.com/images/logo.png",
- "email": "wecare@rupeeboss.com",
- "telephone": "1800-267-629-6",
- "sameAs" : [ 
- "https://www.facebook.com/rupeeboss",
- "https://www.linkedin.com/company/rupeeboss.com",
- "https://plus.google.com/113191059621763008376",
- "https://twitter.com/rupeeboss",
- "https://www.instagram.com/rupeeboss/"
- ]
- }
+  
 
- </script>
-	</head>
-	<body>
+  </head>
+  <body>
+ 
 
-=======
-@include('layout.header')
 
-<div id="fh5co-hero">
->>>>>>> 1e78f97c648056a95d4a3a0349f6bb5373a7a9aa
+
 
 
   <div class="fh5co-contact animate-box">
@@ -286,12 +252,12 @@
     </div>  
   </div>
 
-  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   
   
   
 
-<body>
+</body>
 </html>
 
 

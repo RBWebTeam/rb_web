@@ -428,12 +428,17 @@ $(document).ready(function(){
                     </div>  
                   </div>
 
-                   <div class="col-xs-6 form-padding inp-fld" style='display:none;' id="ICICIRelationshipNumber">
-                    <div class="form-control inp-fld">
-                    <input  type="text" name="ICICIRelationshipNumber" id="ICICIRelationshipNumber" placeholder="ICICI Relationship Number" maxlength="15" onkeypress="return fnAllowNumeric(event)"  required>
-                    </div>
-					</div>
-					
+
+              <div class="col-xs-6 form-padding" style="display: none" id="ICICIRelationshipNumber">
+                    <div>
+                      <input type="text" name="ICICIRelationshipNumber" id="ICICIRelationshipNumber" class="form-control inp-fld" onkeypress="return AllowAlphabet(event)" required  >
+                      <span class="highlight"></span><span class="bar"></span>
+                      <label class="form-label-new lble">ICICI Relationship Number</label>
+                      <div class="clear"></div>
+                    </div>  
+             </div>
+
+ 
 					
           <div class="col-xs-6 form-padding">
                     <div class="form-control inp-fld" style="height:50px; position: relative; padding: 0px 0px;">

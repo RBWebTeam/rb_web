@@ -116,12 +116,15 @@ $(".top").click(function() {
                   </h4>
                 </div>
                 <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-                  <div class="panel-body">                    
+                  <div class="panel-body">    
 
+               <input type="hidden" name="prod" value="{{$prod}}">
+               <input type="hidden" name="amount" value="{{$amount}}">
+               <input type="hidden" name="interest" value="{{$interest}}">
 
       
     
-          <div class="col-xs-6 form-padding">
+        <!--   <div class="col-xs-6 form-padding">
                     <select class="form-control inp-fld" name="net_annual_income" id="net_annual_income" required required>
                       <option value="">NET ANNUAL INCOME</option>
                         <option value=">2.5Lacs">2.5Lacs</option>
@@ -129,9 +132,9 @@ $(".top").click(function() {
                         <option value=">10Lacs">10Lacs</option>
                         <option value=">15Lacs">15Lacs</option>
                     </select> 
-          </div>
+          </div> -->
 
-          <div class="col-xs-6 form-padding" style='display:none;' id="credit_card_type">
+          <!-- <div class="col-xs-6 form-padding" style='display:none;' id="credit_card_type">
                     <select class="form-control inp-fld" name="your_interests" id="your_interests" required>
                       <option value="">YOUR INTERESTS</option>
                         <option  value="Lifestyle">Lifestyle</option>
@@ -139,9 +142,9 @@ $(".top").click(function() {
                         <option  value="Motorsports">Motorsports</option>
                       
                     </select> 
-          </div>
+          </div> -->
 
-          <div class="col-xs-6 form-padding" style='display:none;' id="credit_card_name">
+         <!--  <div class="col-xs-6 form-padding" style='display:none;' id="credit_card_name">
                     <select class="form-control inp-fld" name="cards" id="cards" required>Ferrari Platinum Credit Card
                     Ferrari Signature Credit Card
                       <option value="">CREDIT CARDS</option>
@@ -158,7 +161,7 @@ $(".top").click(function() {
                       
                     </select> 
           </div>
-
+ -->
           <div class="col-xs-6 form-padding">
                     <div>
                       <input type="text" name="ApplicantFirstName" id="ApplicantFirstName" class="form-control inp-fld" onkeypress="return AllowAlphabet(event)" required >

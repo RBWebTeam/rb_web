@@ -39,8 +39,8 @@ class CreditcardController extends CallApiController
     $data['ChannelType']='RupeeBoss';
 
     $post_data=json_encode($data);
-          // print "<pre>";
-         // print_r($post_data);exit();
+          print "<pre>";
+         print_r($post_data);exit();
     $url = $this::$url_static."BankAPIService.svc/PostIciciBank";
     $result=$this->call_json_data_api($url,$post_data);
     $http_result=$result['http_result'];
@@ -73,8 +73,11 @@ class CreditcardController extends CallApiController
     }
     }
 
-    public function icici_credit_card_form(){
-            return view('icici-credit-card-form');
+    public function icici_credit_card_form(Request $req){
+
+                
+        
+            return view('icici-credit-card-form',['prod'=>$req->prod,'amount'=>$req->amount,'interest'=>$req->interest]);
      }
 
      public function icici_form(){

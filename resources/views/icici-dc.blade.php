@@ -1,4 +1,3 @@
-
 @include('layout.header')
 
 <div id="fh5co-hero">
@@ -52,7 +51,7 @@
 
       </ul>
       </div>
-      <div class="col-md-8 pull-right"><a  name="Platinum-Chip-Credit-Card&&amount>2.5Lacs&&interest=Lifestyle" class="btn btn-primary apply apply">Apply Now</a>
+      <div class="col-md-8 pull-right"><a  name="Platinum-Chip-Credit-Card&&amount=>2.5Lacs&&interest=Lifestyle" class="btn btn-primary apply apply">Apply Now</a>
       </div>
       </div>
      
@@ -270,7 +269,7 @@
 
   $('.apply').click(function(){
     var name=$(this).closest("a").attr('name');
-    var url="{{URL::to('credit-card-form')}}?prod="+name;
+    var url="{{URL::to('icici-credit-card-form')}}?prod="+name;
     window.location.href=url;
   });
 </script>

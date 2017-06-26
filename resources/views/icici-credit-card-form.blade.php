@@ -53,6 +53,7 @@
     border: none;
     background: #0070c0;
 }
+.icici {position:absolute;margin-top:-10px;}
   
   </style>
   </head>
@@ -74,7 +75,9 @@ $(".top").click(function() {
       <div class="row">
       <div class="col-md-12">
 	  <br>
+	  <img src="images/bank/icici.png" class="img-responsive pull-left icici" width="150"/>
       <div id="logo" class="text-center"><img id="myImage" src="http://beta.erp.rupeeboss.com/personalloan/images/logo.png" class=""></div>
+	  
       <h4 class="text-center pg-titl">Apply For ICICI Credit Card</h4>
 	  
 	  <div class="col-md-3"></div>

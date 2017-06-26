@@ -1792,6 +1792,8 @@ var global_tenure=0;
             var days =$('#tenure').val();
             var no_of_days= days*12;
             var applied_loan=$('#AppliedLoan').val();
+            var fee=$('#fee').text();
+            var EMI=$('#EMI').val();
             $('#Eligibility_details').hide();
             $('#Applicant_Details').show();
             $('#Amount').empty().append(applied_loan);
@@ -1803,6 +1805,8 @@ var global_tenure=0;
             $('#AppliedLoanamount').val(applied_loan);
             $('#Tenure').val(days);
             $('#ROI').val(a);
+            $('EquatedMonthly').val(EMI);
+            $('#ProcessFee').text(fee);
          }
 
     });
@@ -2082,17 +2086,25 @@ var global_tenure=0;
       // alert("ok");
 
     $('#PermanentAddress1').val($('#CurrentAddress1').val());
+    $('#PermanentAddress1').closest( "span" ).addClass( "input--filled" );
      $('#PermanentAddress2').val($('#CurrentAddress2').val());
+     $('#PermanentAddress2').closest( "span" ).addClass( "input--filled" );
      $('#PermanentAddress3').val($('#CurrentAddress3').val());
+     $('#PermanentAddress3').closest( "span" ).addClass( "input--filled" );
      $('#PermanentPin').val($('#CurrentPin').val());
+     $('#PermanentPin').closest( "span" ).addClass( "input--filled" );
 
      $('#PermanentState').val($('#CurrentState').val());
+     $('#PermanentState').closest( "span" ).addClass( "input--filled" );
      }else{
-
      $('#PermanentAddress1').val('');
      $('#PermanentAddress2').val(''); 
      $('#PermanentAddress3').val('');
-      $('#PermanentPin').val('');
+     $('#PermanentPin').val('');
+     $('#PermanentAddress1').closest( "span" ).removeClass( "input--filled" );
+     $('#PermanentAddress2').closest( "span" ).removeClass( "input--filled" ); 
+     $('#PermanentAddress3').closest( "span" ).removeClass( "input--filled" );
+     $('#PermanentPin').closest( "span" ).removeClass( "input--filled" );
     }
 }
 </script>

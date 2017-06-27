@@ -652,7 +652,7 @@
             </form>
             </div>
 
-            <div id="co_applicant">
+            <div id="co_applicant" style="display: none;">
                 <form id="co_applicant_details" name="co_applicant_details" method="POST">
                  {{ csrf_field() }}
                 <section class="content">

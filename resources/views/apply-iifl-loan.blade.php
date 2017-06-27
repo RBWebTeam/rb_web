@@ -135,7 +135,7 @@
                     </svg>
                     <div id="email" style="display:none;color: red;">Please Enter Valid Email Id.</div>
                 </span>
-                <!-- <span class="input_exp input--nao">
+                <span class="input_exp input--nao">
                     <select class="input__field input__field--nao" name="city" id="city" required>
                     <option disabled selected value=""></option>
                     </select>
@@ -145,7 +145,7 @@
                     <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
                     <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
                     </svg>
-                </span> -->
+                </span>
                 
             </section>
             <a class="btn btn-primary btn-outline with-arrow mrg-top next" href="javascript:void(0)">NEXT<i class="icon-arrow-right"></i></a>
@@ -1084,7 +1084,7 @@
                     </svg>
                 </span>
                 <span class="input input--nao">
-                    <input class="input__field input__field--nao" type="text" name="Emi" id="Emi" onkeypress="return fnAllowNumeric(event)" value=""  />
+                    <input class="input__field input__field--nao" type="text" name="Emi" id="Emi" onkeypress="return fnAllowNumeric(event)" disabled value=""  />
                     <label class="input__label input__label--nao" for="Emi">
                         <span class="input__label-content input__label-content--nao">EMI</span>
                     </label>
@@ -1848,7 +1848,7 @@ var global_tenure=0;
        
         if(! $('#applicant_deatils').valid()){
             // alert('not valid');
-            return false;
+
         }else{
             var person_name =$('#FName').val();
             // console.log(person_name);
@@ -1856,8 +1856,12 @@ var global_tenure=0;
             var aadhar=$('#AadhaarNumber').val();
             $('#Aadharno').val(aadhar);
             $('#Applicant_Details').hide();
-
-
+            if($( "input[name=CoapplicantFlag]:checked" ).val()==1)
+            {
+                    $('#co_applicant').show();
+            }else{
+                 $('#otp').show();
+            }
            $.ajax({  
              type: "POST",  
              url: "{{URL::to('apply-iifl-loan-applicant1')}}",
@@ -1866,18 +1870,19 @@ var global_tenure=0;
             // console.log(msg.head);return false;
             // console.log(msg.head);
             console.log(msg.head.status);
-            if (msg.head.status != 1) {
-                 if($( "input[name=CoapplicantFlag]:checked" ).val()==1){
-                    $('#co_applicant').show();
-                }else{
-                    $('#otp').show();
-                }            
+            if (msg.head.status == 1) {
+                //  if($( "input[name=CoapplicantFlag]:checked" ).val()==1){
+                //     $('#co_applicant').show();
+                // }else{
+                //     $('#otp').show();
+                // } 
+                alert('Your application are in process, Our RM will get in touch with you.');          
             } 
-            else 
-            {
-              // alert('Your application are in process, Our RM will get in touch with you.');
-              $('#error').show();
-            }
+            // else 
+            // {
+            //   // alert('Your application are in process, Our RM will get in touch with you.');
+            //   $('#error').show();
+            // }
          }  
       }); 
         }

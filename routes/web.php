@@ -122,6 +122,7 @@ Route::post('iifl-aadhar-confirm-otp','LoanController@iifl_adhar_confirm_otp');
 Route::post('iifl-offer-status','LoanController@offer_status');
 Route::post('iifl-doc-upload','LoanController@iifl_doc_upload');
 Route::post('iifl-finanacial-doc-upload','LoanController@iifl_financial_doc_upload');
+Route::post('iifl-pincode-status','LoanController@iifl_pincode_status');
 // Creditcardform
 Route::get('credit-card-form','CreditcardController@credit_card_form');
 Route::post('credit-submit','CreditcardController@credit_form_submit');

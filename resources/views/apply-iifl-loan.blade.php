@@ -81,21 +81,22 @@
             
             <section class="content">
                 <h3 class="text-uppercase exp-hed">IIFL Express Loan</h3>
+                
                 <span class="input input--nao">
-                    <input type="hidden" name="Company_Cat" id="Company_Cat" value="">
-
-                    <input type="text" class="input__field input__field--nao search_company"  name="Company_Name" id="Company_Name" required>
-                    <label class="input__label input__label--nao" for="Company_Name">
-                    <span class="input__label-content input__label-content--nao">Where Do You Work</span>
+                    <input class="input__field input__field--nao" type="text" name="Monthly_Salary"  id="Monthly_Salary"  onkeypress="return fnAllowNumeric(event)" required  />
+                    <label class="input__label input__label--nao" for="Monthly_Salary">
+                    <span class="input__label-content input__label-content--nao">Your Net Monthly Salary</span>
                     </label>
                     <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
                     <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
                     </svg>
                 </span>
                 <span class="input input--nao">
-                    <input class="input__field input__field--nao" type="text" name="Monthly_Salary"  id="Monthly_Salary"  onkeypress="return fnAllowNumeric(event)" required  />
-                    <label class="input__label input__label--nao" for="Monthly_Salary">
-                    <span class="input__label-content input__label-content--nao">Your Net Monthly Salary</span>
+                    <input type="hidden" name="Company_Cat" id="Company_Cat" value="">
+
+                    <input type="text" class="input__field input__field--nao search_company"  name="Company_Name" id="Company_Name" required>
+                    <label class="input__label input__label--nao" for="Company_Name">
+                    <span class="input__label-content input__label-content--nao">Where Do You Work</span>
                     </label>
                     <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
                     <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
@@ -390,7 +391,7 @@
                     </svg>
                 </span>
                 <span class="input input--nao">
-                    <select class="input__field input__field--nao" name="CurrentState" id="CurrentState" required>
+                    <select class="input__field input__field--nao" name="CurrentState" id="CurrentState"  required>
                     <option disabled selected value=""></option>
                     </select>
                     <label class="input__label input__label--nao" for="CurrentState">
@@ -400,7 +401,7 @@
                     <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
                     </svg>
                 </span>
-                <span class="input input--nao input--filled">
+                <span class="input input--nao ">
                     <select class="input__field input__field--nao" name="CurrentCity" id="CurrentCity" required>
                     <option disabled selected value=""></option>
                     </select>
@@ -875,7 +876,7 @@
                 </span>
                 <span class="input input--nao">
                     <select class="input__field input__field--nao" name="CoCurrentState" id="CoCurrentState" required>
-                    <option disabled selected value="">Select</option>
+                    <option disabled selected value=""></option>
                       
                     </select>
                     <label class="input__label input__label--nao" for="CoCurrentState">
@@ -887,7 +888,7 @@
                 </span>
                 <span class="input input--nao">
                     <select class="input__field input__field--nao" name="CoCurrentCity" id="CoCurrentCity" required>
-                    <option disabled selected value="">Select</option>
+                    <option disabled selected value=""></option>
                       
                     </select>
                     <label class="input__label input__label--nao" for="CoCurrentCity">
@@ -900,7 +901,7 @@
                 
               
                 </section>
-
+                <input type="checkbox" name="co_same" id="co_same_id" onclick="co_same_as_above('co_same_id');"/> Same As Above
                 <section class="content">
             <div class="col-md-12"><h3 class="mrg-tpp">Permanent Address</h3></div>
                 
@@ -942,7 +943,7 @@
                 </span>
                 <span class="input input--nao">
                      <select class="input__field input__field--nao" name="CoPermanentState" id="CoPermanentState" required>
-                    <option disabled selected value="">Select</option>
+                    <option disabled selected value=""></option>
                       
                     </select>
                     <label class="input__label input__label--nao" for="CoPermanentState">
@@ -954,7 +955,7 @@
                 </span>
                 <span class="input input--nao">
                     <select class="input__field input__field--nao" name="CoPermanentCity" id="CoPermanentCity" required>
-                    <option disabled selected value="">Select</option>
+                    <option disabled selected value=""></option>
                       
                     </select>
                     <label class="input__label input__label--nao" for="CoPermanentCity">
@@ -2104,6 +2105,8 @@ var global_tenure=0;
      $('#PermanentAddress3').closest( "span" ).addClass( "input--filled" );
      $('#PermanentPin').val($('#CurrentPin').val());
      $('#PermanentPin').closest( "span" ).addClass( "input--filled" );
+     $('#PermanentCity').val($('#CurrentCity').val());
+     $('#PermanentCity').closest( "span" ).addClass( "input--filled" );
 
      $('#PermanentState').val($('#CurrentState').val());
      $('#PermanentState').closest( "span" ).addClass( "input--filled" );
@@ -2120,6 +2123,40 @@ var global_tenure=0;
 }
 </script>
 
+<script type="text/javascript">
+  function co_same_as_above(obj,val){
+
+     // console.log(obj);
+     var atLeastOneIsChecked = $('#co_same_id:checkbox:checked').length > 0;
+     // console.log(atLeastOneIsChecked);
+    if (atLeastOneIsChecked == true) {
+      // alert("ok");
+
+    $('#CoPermanentAddress1').val($('#CoCurrentAddress1').val());
+    $('#CoPermanentAddress1').closest( "span" ).addClass( "input--filled" );
+     $('#CoPermanentAddress2').val($('#CoCurrentAddress2').val());
+     $('#CoPermanentAddress2').closest( "span" ).addClass( "input--filled" );
+     $('#CoPermanentAddress3').val($('#CoCurrentAddress3').val());
+     $('#CoPermanentAddress3').closest( "span" ).addClass( "input--filled" );
+     $('#CoPermanentPin').val($('#CoCurrentPin').val());
+     $('#CoPermanentPin').closest( "span" ).addClass( "input--filled" );
+     $('#CoPermanentCity').val($('#CoCurrentCity').val());
+     $('#CoPermanentCity').closest( "span" ).addClass( "input--filled" );
+
+     $('#CoPermanentState').val($('#CoCurrentState').val());
+     $('#CoPermanentState').closest( "span" ).addClass( "input--filled" );
+     }else{
+     $('#CoPermanentAddress1').val('');
+     $('#CoPermanentAddress2').val(''); 
+     $('#CoPermanentAddress3').val('');
+     $('#CoPermanentPin').val('');
+     $('#CoPermanentAddress1').closest( "span" ).removeClass( "input--filled" );
+     $('#CoPermanentAddress2').closest( "span" ).removeClass( "input--filled" ); 
+     $('#CoPermanentAddress3').closest( "span" ).removeClass( "input--filled" );
+     $('#CoPermanentPin').closest( "span" ).removeClass( "input--filled" );
+    }
+}
+</script>
 
 
 
@@ -2245,4 +2282,71 @@ var global_tenure=0;
             });
           
         </script>
+
+        <script type="text/javascript">
+            $('#CurrentPin').keyup(function(){
+                console.log($('#CurrentPin').val().length);
+                if ($('#CurrentPin').val().length == 6) {
+                    var pincode =$('#CurrentPin').val();
+                    var v_token ="{{csrf_token()}}";
+                   $.ajax({  
+                        type: "POST",  
+                        url: "{{URL::to('iifl-pincode-status')}}",
+                        data : {'_token': v_token,'CurrentPin':pincode},
+                        success: function(msg){
+                            console.log(msg.City);
+                            console.log(msg.State);
+
+                            var city =msg.City;
+                            var newOption = $('<option selected value="'+msg.CityCode+'">'+city+'</option>');
+                            $('#CurrentCity').empty().append(newOption);
+                            $('#CurrentCity').closest( "span" ).addClass( "input--filled" );
+
+                            // $('#CurrentCity').empty().append(city);
+
+                            var state=msg.State;
+                            var newOption = $('<option selected value="'+msg.StateCode+'">'+state+'</option>');
+                            $('#CurrentState').empty().append(newOption);
+                            $('#CurrentState').closest( "span" ).addClass( "input--filled" );
+                            // $('#CurrentState').empty().append(state);
+                        }
+                    });       
+                }  
+       });    
+            
+       
+        </script>
         
+        <script type="text/javascript">
+            $('#CoCurrentPin').keyup(function(){
+                console.log($('#CoCurrentPin').val().length);
+                if ($('#CoCurrentPin').val().length == 6) {
+                    var pincode =$('#CoCurrentPin').val();
+                    var v_token ="{{csrf_token()}}";
+                   $.ajax({  
+                        type: "POST",  
+                        url: "{{URL::to('iifl-co-pincode-status')}}",
+                        data : {'_token': v_token,'CoCurrentPin':pincode},
+                        success: function(msg){
+                            console.log(msg.City);
+                            console.log(msg.State);
+
+                            var city =msg.City;
+                            var newOption = $('<option selected value="'+msg.CityCode+'">'+city+'</option>');
+                            $('#CoCurrentCity').empty().append(newOption);
+                            $('#CoCurrentCity').closest( "span" ).addClass( "input--filled" );
+
+                            // $('#CurrentCity').empty().append(city);
+
+                            var state=msg.State;
+                            var newOption = $('<option selected value="'+msg.StateCode+'">'+state+'</option>');
+                            $('#CoCurrentState').empty().append(newOption);
+                            $('#CoCurrentState').closest( "span" ).addClass( "input--filled" );
+                            // $('#CurrentState').empty().append(state);
+                        }
+                    });       
+                }  
+       });    
+            
+       
+        </script>

@@ -427,7 +427,7 @@ label {
         <h4 class="modal-title"></h4>
       </div>
       <div class="modal-body">
-        <h5><p>Interest should be <mark style="color:red">greater than 8.0%</mark>.If less..Congrats you are already on lowest rate.</p></h5>
+        <h5><p>Interest should be <mark style="color:red">greater than 8.0%</mark>.If less.Congrats you are already on lowest rate.</p></h5>
         
       </div>
       

@@ -652,7 +652,7 @@
             </form>
             </div>
 
-            <div id="co_applicant" style="display: none;">
+            <div id="co_applicant">
                 <form id="co_applicant_details" name="co_applicant_details" method="POST">
                  {{ csrf_field() }}
                 <section class="content">
@@ -876,7 +876,7 @@
                 </span>
                 <span class="input input--nao">
                     <select class="input__field input__field--nao" name="CoCurrentState" id="CoCurrentState" required>
-                    <option disabled selected value="">Select</option>
+                    <option disabled selected value=""></option>
                       
                     </select>
                     <label class="input__label input__label--nao" for="CoCurrentState">
@@ -888,7 +888,7 @@
                 </span>
                 <span class="input input--nao">
                     <select class="input__field input__field--nao" name="CoCurrentCity" id="CoCurrentCity" required>
-                    <option disabled selected value="">Select</option>
+                    <option disabled selected value=""></option>
                       
                     </select>
                     <label class="input__label input__label--nao" for="CoCurrentCity">
@@ -901,7 +901,7 @@
                 
               
                 </section>
-
+                <input type="checkbox" name="co_same" id="co_same_id" onclick="co_same_as_above('co_same_id');"/> Same As Above
                 <section class="content">
             <div class="col-md-12"><h3 class="mrg-tpp">Permanent Address</h3></div>
                 
@@ -943,7 +943,7 @@
                 </span>
                 <span class="input input--nao">
                      <select class="input__field input__field--nao" name="CoPermanentState" id="CoPermanentState" required>
-                    <option disabled selected value="">Select</option>
+                    <option disabled selected value=""></option>
                       
                     </select>
                     <label class="input__label input__label--nao" for="CoPermanentState">
@@ -955,7 +955,7 @@
                 </span>
                 <span class="input input--nao">
                     <select class="input__field input__field--nao" name="CoPermanentCity" id="CoPermanentCity" required>
-                    <option disabled selected value="">Select</option>
+                    <option disabled selected value=""></option>
                       
                     </select>
                     <label class="input__label input__label--nao" for="CoPermanentCity">
@@ -2123,6 +2123,40 @@ var global_tenure=0;
 }
 </script>
 
+<script type="text/javascript">
+  function co_same_as_above(obj,val){
+
+     // console.log(obj);
+     var atLeastOneIsChecked = $('#co_same_id:checkbox:checked').length > 0;
+     // console.log(atLeastOneIsChecked);
+    if (atLeastOneIsChecked == true) {
+      // alert("ok");
+
+    $('#CoPermanentAddress1').val($('#CoCurrentAddress1').val());
+    $('#CoPermanentAddress1').closest( "span" ).addClass( "input--filled" );
+     $('#CoPermanentAddress2').val($('#CoCurrentAddress2').val());
+     $('#CoPermanentAddress2').closest( "span" ).addClass( "input--filled" );
+     $('#CoPermanentAddress3').val($('#CoCurrentAddress3').val());
+     $('#CoPermanentAddress3').closest( "span" ).addClass( "input--filled" );
+     $('#CoPermanentPin').val($('#CoCurrentPin').val());
+     $('#CoPermanentPin').closest( "span" ).addClass( "input--filled" );
+     $('#CoPermanentCity').val($('#CoCurrentCity').val());
+     $('#CoPermanentCity').closest( "span" ).addClass( "input--filled" );
+
+     $('#CoPermanentState').val($('#CoCurrentState').val());
+     $('#CoPermanentState').closest( "span" ).addClass( "input--filled" );
+     }else{
+     $('#CoPermanentAddress1').val('');
+     $('#CoPermanentAddress2').val(''); 
+     $('#CoPermanentAddress3').val('');
+     $('#CoPermanentPin').val('');
+     $('#CoPermanentAddress1').closest( "span" ).removeClass( "input--filled" );
+     $('#CoPermanentAddress2').closest( "span" ).removeClass( "input--filled" ); 
+     $('#CoPermanentAddress3').closest( "span" ).removeClass( "input--filled" );
+     $('#CoPermanentPin').closest( "span" ).removeClass( "input--filled" );
+    }
+}
+</script>
 
 
 
@@ -2265,14 +2299,14 @@ var global_tenure=0;
 
                             var city =msg.City;
                             var newOption = $('<option selected value="'+msg.CityCode+'">'+city+'</option>');
-                            $('#CurrentCity').append(newOption);
+                            $('#CurrentCity').empty().append(newOption);
                             $('#CurrentCity').closest( "span" ).addClass( "input--filled" );
 
                             // $('#CurrentCity').empty().append(city);
 
                             var state=msg.State;
                             var newOption = $('<option selected value="'+msg.StateCode+'">'+state+'</option>');
-                            $('#CurrentState').append(newOption);
+                            $('#CurrentState').empty().append(newOption);
                             $('#CurrentState').closest( "span" ).addClass( "input--filled" );
                             // $('#CurrentState').empty().append(state);
                         }
@@ -2283,3 +2317,36 @@ var global_tenure=0;
        
         </script>
         
+        <script type="text/javascript">
+            $('#CoCurrentPin').keyup(function(){
+                console.log($('#CoCurrentPin').val().length);
+                if ($('#CoCurrentPin').val().length == 6) {
+                    var pincode =$('#CoCurrentPin').val();
+                    var v_token ="{{csrf_token()}}";
+                   $.ajax({  
+                        type: "POST",  
+                        url: "{{URL::to('iifl-co-pincode-status')}}",
+                        data : {'_token': v_token,'CoCurrentPin':pincode},
+                        success: function(msg){
+                            console.log(msg.City);
+                            console.log(msg.State);
+
+                            var city =msg.City;
+                            var newOption = $('<option selected value="'+msg.CityCode+'">'+city+'</option>');
+                            $('#CoCurrentCity').empty().append(newOption);
+                            $('#CoCurrentCity').closest( "span" ).addClass( "input--filled" );
+
+                            // $('#CurrentCity').empty().append(city);
+
+                            var state=msg.State;
+                            var newOption = $('<option selected value="'+msg.StateCode+'">'+state+'</option>');
+                            $('#CoCurrentState').empty().append(newOption);
+                            $('#CoCurrentState').closest( "span" ).addClass( "input--filled" );
+                            // $('#CurrentState').empty().append(state);
+                        }
+                    });       
+                }  
+       });    
+            
+       
+        </script>

@@ -273,9 +273,9 @@
    <div class="col-md-12 pad-no">
    <center><div class="type-cover"><span>Current Rate of Interest</span></div></center>
    </div>
-   <div class="col-md-4 form-padding"><input type="text" class="form-input-new form-control" name="currentroi_oneyr_amt" id="currentroi_oneyr_amt" onkeypress="return isNumberKey(event)" required placeholder="1 Year"></div>
-   <div class="col-md-4 form-padding"><input type="text" class="form-input-new form-control" name="currentroi_twoyr_amt" id="currentroi_twoyr_amt" onkeypress="return isNumberKey(event)" required placeholder="2 Year"></div>
-   <div class="col-md-4 form-padding"><input type="text" class="form-input-new form-control" name="currentroi_threeyr_amt" id="currentroi_threeyr_amt" onkeypress="return isNumberKey(event)" required placeholder="3 Year"></div>
+   <div class="col-md-4 form-padding"><input type="text" class="form-input-new form-control" step="0.01" min="0" maxlength="4" name="currentroi_oneyr_amt" id="currentroi_oneyr_amt" onkeypress="return isNumberKey(event)" required placeholder="1 Year"></div>
+   <div class="col-md-4 form-padding"><input type="text" step="0.01" min="0" maxlength="4" class="form-input-new form-control" name="currentroi_twoyr_amt" id="currentroi_twoyr_amt" onkeypress="return isNumberKey(event)" required placeholder="2 Year"></div>
+   <div class="col-md-4 form-padding"><input type="text" step="0.01" min="0" maxlength="4" class="form-input-new form-control" name="currentroi_threeyr_amt" id="currentroi_threeyr_amt" onkeypress="return isNumberKey(event)" required placeholder="3 Year"></div>
  </div>
  <div>
    <div class="col-md-12 pad-no">
@@ -545,7 +545,7 @@
 
         <div> 
           <br>
-         <a id="apply_new" type="button" class="btn btn-info disblk" title="Experience New Digital Era In Loans">Apply Digitally</a>
+         <a id="apply_new" style="display: none;" type="button" class="btn btn-info disblk" title="Experience New Digital Era In Loans">Apply Digitally</a>
          <button id="eligibility" class="btn btn-info disblk" title="See Bankwise Eligibility And Apply Amongst Best Bank">Check Bankwise Eligibility</button>
          <button type="button" class="btn btn-info block"  id="call_rm" name="call_rm" data-toggle="modal" data-target="#Modal" title="Call For RM(Single Day Process)">Call Manager</button>
          
@@ -769,9 +769,10 @@
          dataType: 'json',
          success: function(msg){
          // $(".iframeloading").hide();  
-        
+       
          // console.log(msg);
           if(msg.data==true){
+             $('#apply_new').show();
             // console.log(msg);
 
              // alert("Thank you for your interest in ICICI Bank Credit Cards. Our representative will get in touch with you within 3 working days subject to your application meeting the eligibility criteria");

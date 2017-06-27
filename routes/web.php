@@ -268,7 +268,7 @@ Route::post('quotes-head','FormController@quoteshead');
 Route::post('chatPost','ChatController@post');
 
 //sme
-Route::get('smemailersender','UploadController@smemailersender');
+Route::get('sme','UploadController@smemailersender');
 Route::post('smemailer','UploadController@smemailer');
 Route::get('sme-thank-you','UploadController@sme_thank_you');
 //sme
@@ -279,3 +279,6 @@ Route::get('track-application','TrackapplicationController@tracking');
 Route::post('view-your-application','TrackapplicationController@tracking_sub');
 // Route::get('view-your-application','TrackapplicationController@tracking_view');
 
+
+
+Route::get('icici-dc','CreditcardController@icici_dc');

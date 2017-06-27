@@ -2,7 +2,7 @@
 <br>
 <div class="container" id="fh5co-hero">
 <h1>Hello {{$data[0]->Name?$data[0]->Name:"User"}}</h1>
-<?php if($data[0]->Status =="0"){?>
+<?php if($data[0]->Status =="1"){?>
 <h3>We Cannot find any details with Your given Application Id and Mobile Number</h3>
 <a class="btn btn-success" href="{{URL::to('track-application')}}">Go Back and correct your details!!!</a>
 <?php }else{?>

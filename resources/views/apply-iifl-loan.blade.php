@@ -63,17 +63,10 @@
         
             </div>
             </div>
-            
-            
-            
-   
-   
-                
-
             <div class="row" id="error" style="display: none;">
                 <div class="col-md-10 col-md-offset-1">
                 <hr>
-                <h1 class="text-center pad">Thank You..!!</h1>
+                <h1 class="text-center pad">Oooopssss</h1>
                 <h4 class="text-center">Your application is under process our representative will get in touch with to you shortly</h4>
                 <p class="text-center">To learn more about IIFL Express Personal Loan <a href="javascript:void(0)">Click Here</a></p>
         
@@ -396,23 +389,23 @@
                     <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
                     </svg>
                 </span>
-                <span class="input input--nao input--filled">
-                    <select class="input__field input__field--nao" name="CurrentCity" id="CurrentCity" required>
-                    <option disabled selected value=""></option>
-                    </select>
-                    <label class="input__label input__label--nao" for="CurrentCity">
-                    <span class="input__label-content input__label-content--nao">Current City</span>
-                    </label>
-                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
-                    <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
-                    </svg>
-                </span>
                 <span class="input input--nao">
                     <select class="input__field input__field--nao" name="CurrentState" id="CurrentState" required>
                     <option disabled selected value=""></option>
                     </select>
                     <label class="input__label input__label--nao" for="CurrentState">
-                    <span class="input__label-content input__label-content--nao">Current State</span>
+                    <span class="input__label-content input__label-content--nao">CurrentState</span>
+                    </label>
+                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
+                    <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
+                    </svg>
+                </span>
+                <span class="input input--nao input--filled">
+                    <select class="input__field input__field--nao" name="CurrentCity" id="CurrentCity" required>
+                    <option disabled selected value=""></option>
+                    </select>
+                    <label class="input__label input__label--nao" for="CurrentCity">
+                    <span class="input__label-content input__label-content--nao">CurrentCity</span>
                     </label>
                     <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
                     <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
@@ -422,7 +415,7 @@
                 <input type="checkbox" name="same" id="same_id" onclick="same_as_above('same_id');"/> Same As Above
                 <section class="content">
                 <div class="col-md-12"><h3 class="mrg-tpp">Permanent Address</h3></div>
-                <span class="input input--nao input--filled">
+                <span class="input input--nao">
                     <input class="input__field input__field--nao" type="text" name="PermanentAddress1" id="PermanentAddress1" required />
                     <label class="input__label input__label--nao" for="PermanentAddress1">
                         <span class="input__label-content input__label-content--nao">Address Line 1</span>
@@ -431,7 +424,7 @@
                     <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
                     </svg>
                 </span>
-                <span class="input input--nao input--filled">
+                <span class="input input--nao">
                     <input class="input__field input__field--nao" type="text" name="PermanentAddress2" id="PermanentAddress2" required" />
                     <label class="input__label input__label--nao" for="PermanentAddress2">
                     <span class="input__label-content input__label-content--nao">Address Line 2</span>
@@ -440,7 +433,7 @@
                     <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
                     </svg>
                 </span>
-                <span class="input input--nao input--filled">
+                <span class="input input--nao">
                     <input class="input__field input__field--nao" type="text" name="PermanentAddress3" id="PermanentAddress3" required/>
                     <label class="input__label input__label--nao" for="PermanentAddress3">
                     <span class="input__label-content input__label-content--nao">Address Line 3</span>
@@ -449,10 +442,21 @@
                     <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
                     </svg>
                 </span>
-                <span class="input input--nao input--filled">
+                <span class="input input--nao">
                     <input class="input__field input__field--nao" type="text" name="PermanentPin" id="PermanentPin" required minlength="6" maxlength="6" />
                     <label class="input__label input__label--nao" for="PermanentPin">
                     <span class="input__label-content input__label-content--nao">Pincode</span>
+                    </label>
+                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
+                    <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
+                    </svg>
+                </span>
+                <span class="input input--nao">
+                    <select class="input__field input__field--nao" name="PermanentState" id="PermanentState" required>
+                        <option disabled selected value=""></option>
+                    </select>
+                    <label class="input__label input__label--nao" for="PermanentState">
+                    <span class="input__label-content input__label-content--nao">State</span>
                     </label>
                     <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
                     <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
@@ -469,17 +473,6 @@
                     <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
                     </svg>
                 </span>
-                <span class="input input--nao input--filled">
-                    <select class="input__field input__field--nao" name="PermanentState" id="PermanentState" required>
-                        <option disabled selected value=""></option>
-                    </select>
-                    <label class="input__label input__label--nao" for="PermanentState">
-                    <span class="input__label-content input__label-content--nao">State</span>
-                    </label>
-                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
-                    <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
-                    </svg>
-                </span>
             </section>
             <section class="content">
             <div class="col-md-12"><h3 class="mrg-tpp">Residence Information</h3></div>
@@ -490,7 +483,7 @@
                         <option value="Owned ">Owned</option>
                     </select>
                     <label class="input__label input__label--nao" for="Residencetype">
-                    <span class="input__label-content input__label-content--nao">Residence Type</span>
+                    <span class="input__label-content input__label-content--nao">ResidenceType</span>
                     </label>
                     <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
                     <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
@@ -524,7 +517,7 @@
                        <option disabled selected value=""></option>
                     </select>
                     <label class="input__label input__label--nao" for="PurposeofLoan">
-                    <span class="input__label-content input__label-content--nao">Purpose Of Loan*</span>
+                    <span class="input__label-content input__label-content--nao">PurposeofLoan*</span>
                     </label>
                     <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
                     <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
@@ -602,11 +595,32 @@
                     <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
                     </svg>
                 </span>
-                
+                <span class="input input--nao">
+                    <input class="input__field input__field--nao" type="text" name="OfficeEmailID" id="OfficeEmailID" oninput="office_email('OfficeEmailID')" required />
+                    <label class="input__label input__label--nao" for="OfficeEmailID">
+                    <span class="input__label-content input__label-content--nao">Office EmailID</span>
+                    </label>
+                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
+                    <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
+                    </svg>
+                    <div id="office_email" style="display:none;color: red;">Please Enter Valid Email Id.</div>
+                </span>
                 <span class="input input--nao">
                     <input class="input__field input__field--nao" type="text" name="CompanyPin" id="CompanyPin" minlength="6" maxlength="6" required onkeypress="return fnAllowNumeric(event)" />
                     <label class="input__label input__label--nao" for="CompanyPin">
                     <span class="input__label-content input__label-content--nao">Company PinCode</span>
+                    </label>
+                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
+                    <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
+                    </svg>
+                    <div id="office_email" style="display:none;color: red;">Please Enter Valid Email Id.</div>
+                </span>
+                <span class="input input--nao">
+                    <select class="input__field input__field--nao" name="CompanyState" id="CompanyState" required>
+                        <option disabled selected value=""></option>
+                    </select>
+                    <label class="input__label input__label--nao" for="CompanyState">
+                    <span class="input__label-content input__label-content--nao">Company State</span>
                     </label>
                     <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
                     <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
@@ -622,28 +636,6 @@
                     <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
                     <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
                     </svg>
-                </span>
-                <span class="input input--nao">
-                    <select class="input__field input__field--nao" name="CompanyState" id="CompanyState" required>
-                        <option disabled selected value=""></option>
-                    </select>
-                    <label class="input__label input__label--nao" for="CompanyState">
-                    <span class="input__label-content input__label-content--nao">Company State</span>
-                    </label>
-                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
-                    <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
-                    </svg>
-                </span>
-                
-                <span class="input input--nao">
-                    <input class="input__field input__field--nao" type="text" name="OfficeEmailID" id="OfficeEmailID" oninput="office_email('OfficeEmailID')" required />
-                    <label class="input__label input__label--nao" for="OfficeEmailID">
-                    <span class="input__label-content input__label-content--nao">Office EmailID</span>
-                    </label>
-                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
-                    <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
-                    </svg>
-                    <div id="office_email" style="display:none;color: red;">Please Enter Valid Email Id.</div>
                 </span>
             </section>
                
@@ -677,7 +669,7 @@
                 <span class="input input--nao">
                     <input class="input__field input__field--nao" type="text" name="CoMonthlySalary" required id="CoMonthlySalary" onkeypress="return fnAllowNumeric(event)" />
                     <label class="input__label input__label--nao" for="CoMonthlySalary">
-                        <span class="input__label-content input__label-content--nao">Monthly Salary</span>
+                        <span class="input__label-content input__label-content--nao">MonthlySalary</span>
                     </label>
                     <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
                         <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
@@ -686,7 +678,7 @@
                 <span class="input input--nao">
                     <input class="input__field input__field--nao" type="text" name="CoMonthlyObligation" required id="CoMonthlyObligation" onkeypress="return fnAllowNumeric(event)" />
                     <label class="input__label input__label--nao" for="CoMonthlyObligation">
-                        <span class="input__label-content input__label-content--nao">Monthly Obligation</span>
+                        <span class="input__label-content input__label-content--nao">MonthlyObligation</span>
                     </label>
                     <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
                         <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
@@ -883,11 +875,11 @@
                 </span>
                 <span class="input input--nao">
                     <select class="input__field input__field--nao" name="CoCurrentState" id="CoCurrentState" required>
-                    <option disabled selected value=""></option>
+                    <option disabled selected value="">Select</option>
                       
                     </select>
                     <label class="input__label input__label--nao" for="CoCurrentState">
-                        <span class="input__label-content input__label-content--nao">Current State</span>
+                        <span class="input__label-content input__label-content--nao">CurrentState</span>
                     </label>
                     <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
                         <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
@@ -895,11 +887,11 @@
                 </span>
                 <span class="input input--nao">
                     <select class="input__field input__field--nao" name="CoCurrentCity" id="CoCurrentCity" required>
-                    <option disabled selected value=""></option>
+                    <option disabled selected value="">Select</option>
                       
                     </select>
                     <label class="input__label input__label--nao" for="CoCurrentCity">
-                        <span class="input__label-content input__label-content--nao">Current City</span>
+                        <span class="input__label-content input__label-content--nao">CurrentCity</span>
                     </label>
                     <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
                         <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
@@ -950,7 +942,7 @@
                 </span>
                 <span class="input input--nao">
                      <select class="input__field input__field--nao" name="CoPermanentState" id="CoPermanentState" required>
-                    <option disabled selected value=""></option>
+                    <option disabled selected value="">Select</option>
                       
                     </select>
                     <label class="input__label input__label--nao" for="CoPermanentState">
@@ -962,7 +954,7 @@
                 </span>
                 <span class="input input--nao">
                     <select class="input__field input__field--nao" name="CoPermanentCity" id="CoPermanentCity" required>
-                    <option disabled selected value=""></option>
+                    <option disabled selected value="">Select</option>
                       
                     </select>
                     <label class="input__label input__label--nao" for="CoPermanentCity">
@@ -1017,7 +1009,7 @@
                 
                 <h3 class="col-md-12 mrg-tpp">OTP to verify your Aadhar Details:</h3>
                 <span class="input input--nao">
-                    <input class="input__field input__field--nao input--filled" type="text" name="Aadharno" id="Aadharno" oninput="aadharnum('Aadharno')" required minlength="12" maxlength="12"  />
+                    <input class="input__field input__field--nao" type="text" name="Aadharno" id="Aadharno" oninput="aadharnum('Aadharno')" required minlength="12" maxlength="12"  />
                     <label class="input__label input__label--nao" for="input-1">
                         <span class="input__label-content input__label-content--nao">Enter Your Aadhar No.</span>
                     </label>
@@ -1251,20 +1243,20 @@
 @include('layout.footer')
 @include('layout.script')
 
-<!-- <div class="modal fade" tabindex="-1" role="dialog" id="error">
+<!-- <div class="modal fade" tabindex="-1" role="dialog" id="iifl_process">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title"></h4>
+        <h4 class="modal-title">Confirmation Status</h4>
       </div>
       <div class="modal-body">
-        <h4><p>Your application are in process.Our RM will get in touch with you.</p></h4>
+         <h4><p><b>Thank You For Choosing IIFL. Our Representative Will Get Back To You Soon.</b></p></h4>
         
       </div>
       
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        
         
       </div>
     </div>
@@ -1292,7 +1284,7 @@
     // console.log(obj);
     if(obj=='EmailID' ){
                    var str =$('#EmailID').val();
-                   var emailPattern = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/; 
+                   var emailPattern = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/; 
                    var res = str.match(emailPattern);
                    if(res){
                      // console.log('Pancard is valid one.!!');
@@ -1311,7 +1303,7 @@
     // console.log(obj);
     if(obj=='CoPersonalEmailID' ){
                    var str =$('#CoPersonalEmailID').val();
-                   var emailPattern = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/; 
+                   var emailPattern = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/; 
                    var res = str.match(emailPattern);
                    if(res){
                      // console.log('Pancard is valid one.!!');
@@ -1333,7 +1325,7 @@
     // console.log(obj);
     if(obj=='OfficeEmailID' ){
                    var str =$('#OfficeEmailID').val();
-                   var emailPattern = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/; 
+                   var emailPattern = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/; 
                    var res = str.match(emailPattern);
                    if(res){
                      // console.log('Pancard is valid one.!!');
@@ -1748,8 +1740,6 @@ var global_tenure=0;
         var processing_fee =pf;
         $('#fee').empty().append(processing_fee);
         $('#Processingfee').val(processing_fee);
-        $('#ProcessFee').empty().append(processing_fee);
-        $('#process_fee').empty().append(processing_fee);
         var period =tenure*12;
         $('#period').empty().append(tenure);
         var rate =roi/12/100;
@@ -1766,8 +1756,7 @@ var global_tenure=0;
         var max_emi = foir_calc-obligation;
         // console.log(max_emi);
         $('#EMI').val(max_emi);
-        $('#you_have_to_pay').empty().append(max_emi);
-        $('#EquatedMonthly').empty().append(max_emi);
+         $('#you_have_to_pay').empty().append(max_emi);
 
          global_tenure=tenure;
         $('#tenure').val(tenure);
@@ -1786,67 +1775,57 @@ var global_tenure=0;
 <script type="text/javascript">
      
     $('#next_form').click(function(){
-     
         var amount=$('#AppliedLoan').val();
        if(amount> global_eligible_amount){
-        alert('Enter amount less than or equal to eligible amount');
-        return false;
+            alert('Enter amount less than or equal to eligible amount');
+            return false;
         }
         var divas =$('#tenure').val();
         if(divas> global_tenure){
-        alert('Enter tenure less than or equal to required tenure');
-        return false;
+            alert('Enter tenure less than or equal to required tenure');
+            return false;
         }
-
-        // $('#EMI').val(installment);
-        // console.log(amount +" " +global_eligible_amount);
         if(! $('#eligibility_form').valid() ){
             alert("You must agree to the terms first.");
          }else{
-        $('#Eligibility_details').hide();
-        $('#Applicant_Details').show();
-
-        var applied_loan=$('#AppliedLoan').val();
-        console.log(applied_loan);
-        $('#Amount').empty().append(applied_loan);
-        $('#loanamt').empty().append(applied_loan);
-        // $("input[name='AppliedLoanamount']").val(applied_loan);
-        var days =$('#tenure').val();
-        console.log(days);
-        var no_of_days= days*12;
-        $('#LoanTenure').empty().append(days);
-        $('#loantenure').empty().append(days);
-        // $("input[name='Tenure']").val(days);
-        var a = $('#int span').html();
-        var Rate = a/12/100;
-         $('#RateOfInt').empty().append(a);
-         console.log(Rate);
-         var installment_iifl=applied_loan * Rate * (Math.pow(1 + Rate, no_of_days) / (Math.pow(1 + Rate, no_of_days) - 1));
-         var installment =Math.round(installment_iifl);
-         console.log(installment);
-         var total =((installment*no_of_days)-applied_loan);
-        
-        var ttl_payment = parseInt(applied_loan) + parseInt(total);
-        $('#TotalPayableAmount').val(ttl_payment);
-        console.log(ttl_payment);
-        $('#intrest').empty().append(a);
-        $('#AppliedLoanamount').val(applied_loan);
-        $('#Emi').val(installment);
-        $('#e_m_i').empty().append(installment);
-        $('#Tenure').val(days);
-        $('#ROI').val(a);
+            var a = $('#int span').html();
+            var days =$('#tenure').val();
+            var no_of_days= days*12;
+            var applied_loan=$('#AppliedLoan').val();
+            var fee=$('#fee').text();
+            var EMI=$('#EMI').val();
+            console.log(EMI);
+            $('#Eligibility_details').hide();
+            $('#Applicant_Details').show();
+            $('#Amount').empty().append(applied_loan);
+            $('#loanamt').empty().append(applied_loan);
+            $('#LoanTenure').empty().append(days);
+            $('#loantenure').empty().append(days);
+            $('#RateOfInt').empty().append(a);
+            $('#intrest').empty().append(applied_loan);
+            $('#AppliedLoanamount').val(applied_loan);
+            $('#Tenure').val(days);
+            $('#ROI').val(a);
+            $('#Emi').val(EMI);
+            $('#EquatedMonthly').text(EMI);
+            $('#ProcessFee').text(fee);
+            $('#process_fee').text(fee);
+            $('#TotalPayableAmount').val(applied_loan);
+            //appending offer div also
+            $('#loanamt').val(applied_loan);
+            $('#loantenure').val(days);
+            $('#intrest').val(a);
+            $('#ProcessFee').val(fee);
+            $('#e_m_i').val(EMI);         
          }
 
     });
     $('#AppliedLoan, #tenure').on('input', function () {
-    var applied_loan = parseInt($('#AppliedLoan').val());
-    console.log(applied_loan);
-    var no_of_days = parseFloat($('#tenure').val())*12;
-    console.log(no_of_days);
-    var a = $('#int span').html();
-    var Rate = a/12/100;
-    console.log(Rate);
-     var installment_iifl=applied_loan * Rate * (Math.pow(1 + Rate, no_of_days) / (Math.pow(1 + Rate, no_of_days) - 1));
+        var applied_loan = parseInt($('#AppliedLoan').val());
+        var no_of_days = parseFloat($('#tenure').val())*12;
+        var a = $('#int span').html();
+        var Rate = a/12/100;
+        var installment_iifl=applied_loan * Rate * (Math.pow(1 + Rate, no_of_days) / (Math.pow(1 + Rate, no_of_days) - 1));
         var installment =Math.round(installment_iifl);
         // if(isNaN( installment) || installment=='Infinity'){
         //   installment=0;
@@ -1855,12 +1834,10 @@ var global_tenure=0;
         $('#EMI').val(installment);
         $('#e_m_i').empty().append(installment);
         $('#Emi').val(installment);
-        
-
         var total =((installment*no_of_days)-applied_loan);
         
         var ttl_payment = parseInt(applied_loan) + parseInt(total);
-        $('#TotalPayableAmount').val(ttl_payment);
+         $('#TotalPayableAmount').val(ttl_payment);
     
 });
 </script>
@@ -1870,7 +1847,7 @@ var global_tenure=0;
        
         if(! $('#applicant_deatils').valid()){
             // alert('not valid');
-
+            return false;
         }else{
             var person_name =$('#FName').val();
             // console.log(person_name);
@@ -1878,12 +1855,8 @@ var global_tenure=0;
             var aadhar=$('#AadhaarNumber').val();
             $('#Aadharno').val(aadhar);
             $('#Applicant_Details').hide();
-            if($( "input[name=CoapplicantFlag]:checked" ).val()==1)
-            {
-                    $('#co_applicant').show();
-            }else{
-                 $('#otp').show();
-            }
+
+
            $.ajax({  
              type: "POST",  
              url: "{{URL::to('apply-iifl-loan-applicant1')}}",
@@ -1892,19 +1865,18 @@ var global_tenure=0;
             // console.log(msg.head);return false;
             // console.log(msg.head);
             console.log(msg.head.status);
-            if (msg.head.status == 1) {
-                //  if($( "input[name=CoapplicantFlag]:checked" ).val()==1){
-                //     $('#co_applicant').show();
-                // }else{
-                //     $('#otp').show();
-                // } 
-                alert('Your application are in process, Our RM will get in touch with you.');          
+            if (msg.head.status != 1) {
+                 if($( "input[name=CoapplicantFlag]:checked" ).val()==1){
+                    $('#co_applicant').show();
+                }else{
+                    $('#otp').show();
+                }            
             } 
-            // else 
-            // {
-            //   // alert('Your application are in process, Our RM will get in touch with you.');
-            //   $('#error').show();
-            // }
+            else 
+            {
+              // alert('Your application are in process, Our RM will get in touch with you.');
+              $('#error').show();
+            }
          }  
       }); 
         }
@@ -2028,9 +2000,6 @@ var global_tenure=0;
     </script>
 <script type="text/javascript">
     $('#proceed_without_aadhar').click(function(){
-        $('#otp').hide();
-        $('#confirm_otp').hide();
-
          $('#Instant_Approve').show();
         $.ajax({  
          type: "POST",  
@@ -2038,26 +2007,20 @@ var global_tenure=0;
          data : $('').serialize(),
          success: function(msg){
 
-             var result=loan_eligibility(msg.body.ROI,msg.body.maxEmi,msg.body.maxTenure,msg.body.maxloanamt,msg.body.minTenure,msg.body.minloanamt,msg.body.processingfee,msg.body.offerstatus);
+             var result=loan_eligibility(msg.body.ROI,msg.body.maxEmi,msg.body.maxTenure,msg.body.maxloanamt,msg.body.minTenure,msg.body.minloanamt,msg.body.processingfee,msg.body.offerstatus,msg.body.remarks);
             // console.log(msg);
-            console.log(msg.head);
-            if (msg.head.status == 1) 
-            {
-              // alert('Your application are in process, Our RM will get in touch with you.');
-              $('#error').modal('show');  
-              $('#Instant_Approve').hide();
-            }
+            console.log(msg);
             
          }  
       });   
        
     });
-    function loan_eligibility(ROI,maxEmi,maxTenure,maxloanamt,minTenure,minloanamt,processingfee,offerstatus,){
+    function loan_eligibility(ROI,maxEmi,maxTenure,maxloanamt,minTenure,minloanamt,processingfee,offerstatus,error_msg){
           var offer=offerstatus;
           // console.log(offer);
           if(offer=="Rejected"){
             $('#Instant_Approve').hide();
-         alert("Thank You For Choosing IIFL. Your application has been rejected due to internal credit policy.");
+         alert("Thank You For Choosing IIFL. \n Your application has been rejected due to internal credit policy.\n Reason: "+error_msg);
           }
       var maxloan=maxloanamt;
        //   console.log(maxloanamt);
@@ -2068,7 +2031,12 @@ var global_tenure=0;
       $("#input[name='Processingfee']").val(processingfee);
       // var max_installment=maxEmi;
       //  $('#maxEmi').empty().append(max_installment);
-      
+      g_maxloanamt=maxloanamt;
+      if (g_maxloanamt>maxloanamt) {
+        console.log("Loanamount should be less than maximum loanamount");
+      } if(g_maxTenure>maxTenure) {
+       console.log("Loanamount should be less than maximum tenure");
+      }
      }
 </script>
 
@@ -2129,18 +2097,25 @@ var global_tenure=0;
       // alert("ok");
 
     $('#PermanentAddress1').val($('#CurrentAddress1').val());
+    $('#PermanentAddress1').closest( "span" ).addClass( "input--filled" );
      $('#PermanentAddress2').val($('#CurrentAddress2').val());
+     $('#PermanentAddress2').closest( "span" ).addClass( "input--filled" );
      $('#PermanentAddress3').val($('#CurrentAddress3').val());
+     $('#PermanentAddress3').closest( "span" ).addClass( "input--filled" );
      $('#PermanentPin').val($('#CurrentPin').val());
+     $('#PermanentPin').closest( "span" ).addClass( "input--filled" );
 
      $('#PermanentState').val($('#CurrentState').val());
+     $('#PermanentState').closest( "span" ).addClass( "input--filled" );
      }else{
-
      $('#PermanentAddress1').val('');
      $('#PermanentAddress2').val(''); 
      $('#PermanentAddress3').val('');
-     $('#PermanentState').val('');
      $('#PermanentPin').val('');
+     $('#PermanentAddress1').closest( "span" ).removeClass( "input--filled" );
+     $('#PermanentAddress2').closest( "span" ).removeClass( "input--filled" ); 
+     $('#PermanentAddress3').closest( "span" ).removeClass( "input--filled" );
+     $('#PermanentPin').closest( "span" ).removeClass( "input--filled" );
     }
 }
 </script>
@@ -2150,87 +2125,87 @@ var global_tenure=0;
 
 
 <script>
-			(function() {
-				
-				if (!String.prototype.trim) {
-					(function() {
-						// Make sure we trim BOM and NBSP
-						var rtrim = /^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g;
-						String.prototype.trim = function() {
-							return this.replace(rtrim, '');
-						};
-					})();
-				}
+            (function() {
+                
+                if (!String.prototype.trim) {
+                    (function() {
+                        // Make sure we trim BOM and NBSP
+                        var rtrim = /^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g;
+                        String.prototype.trim = function() {
+                            return this.replace(rtrim, '');
+                        };
+                    })();
+                }
 
-				[].slice.call( document.querySelectorAll( 'input.input__field' ) ).forEach( function( inputEl ) {
-					// in case the input is already filled..
-					if( inputEl.value.trim() !== '' ) {
-						classie.add( inputEl.parentNode, 'input--filled' );
-					}
-		        
+                [].slice.call( document.querySelectorAll( 'input.input__field' ) ).forEach( function( inputEl ) {
+                    // in case the input is already filled..
+                    if( inputEl.value.trim() !== '' ) {
+                        classie.add( inputEl.parentNode, 'input--filled' );
+                    }
+                
 
-					// events:
-					inputEl.addEventListener( 'focus', onInputFocus );
-					inputEl.addEventListener( 'blur', onInputBlur );
-				} );
+                    // events:
+                    inputEl.addEventListener( 'focus', onInputFocus );
+                    inputEl.addEventListener( 'blur', onInputBlur );
+                } );
 
-				function onInputFocus( ev ) {
-					classie.add( ev.target.parentNode, 'input--filled' );
-				}
+                function onInputFocus( ev ) {
+                    classie.add( ev.target.parentNode, 'input--filled' );
+                }
 
-				function onInputBlur( ev ) {
-					if( ev.target.value.trim() === '' ) {
-						classie.remove( ev.target.parentNode, 'input--filled' );
-					}
-				}
-			})();
-			
-			
-			
-			
-			
-		</script>
-		<script>
-			(function() {
-				
-				if (!String.prototype.trim) {
-					(function() {
-						// Make sure we trim BOM and NBSP
-						var rtrim = /^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g;
-						String.prototype.trim = function() {
-							return this.replace(rtrim, '');
-						};
-					})();
-				}
+                function onInputBlur( ev ) {
+                    if( ev.target.value.trim() === '' ) {
+                        classie.remove( ev.target.parentNode, 'input--filled' );
+                    }
+                }
+            })();
+            
+            
+            
+            
+            
+        </script>
+        <script>
+            (function() {
+                
+                if (!String.prototype.trim) {
+                    (function() {
+                        // Make sure we trim BOM and NBSP
+                        var rtrim = /^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g;
+                        String.prototype.trim = function() {
+                            return this.replace(rtrim, '');
+                        };
+                    })();
+                }
 
-				[].slice.call( document.querySelectorAll( 'select.input__field' ) ).forEach( function( inputEl ) {
-					// in case the input is already filled..
-					if( inputEl.value.trim() !== '' ) {
-						classie.add( inputEl.parentNode, 'input--filled' );
-					}
-		        
+                [].slice.call( document.querySelectorAll( 'select.input__field' ) ).forEach( function( inputEl ) {
+                    // in case the input is already filled..
+                    if( inputEl.value.trim() !== '' ) {
+                        classie.add( inputEl.parentNode, 'input--filled' );
+                    }
+                
 
-					// events:
-					inputEl.addEventListener( 'focus', onInputFocus );
-					inputEl.addEventListener( 'blur', onInputBlur );
-				} );
+                    // events:
+                    inputEl.addEventListener( 'focus', onInputFocus );
+                    inputEl.addEventListener( 'blur', onInputBlur );
+                } );
 
-				function onInputFocus( ev ) {
-					classie.add( ev.target.parentNode, 'input--filled' );
-				}
+                function onInputFocus( ev ) {
+                    classie.add( ev.target.parentNode, 'input--filled' );
+                }
 
-				function onInputBlur( ev ) {
-					if( ev.target.value.trim() === '' ) {
-						classie.remove( ev.target.parentNode, 'input--filled' );
-					}
-				}
-			})();
-			
-			
-			
-			
-			
-		</script>
+                function onInputBlur( ev ) {
+                    if( ev.target.value.trim() === '' ) {
+                        classie.remove( ev.target.parentNode, 'input--filled' );
+                    }
+                }
+            })();
+            
+            
+            
+            
+            
+        </script>
         <script type="text/javascript">
         function getAge(dateString) {
             var day=dateString.slice(0,2);
@@ -2271,11 +2246,3 @@ var global_tenure=0;
           
         </script>
         
-
-
-
-
-
-
-
-

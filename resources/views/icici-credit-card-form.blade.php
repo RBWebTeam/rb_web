@@ -41,9 +41,9 @@
        .error {
                     border:1px solid red;
                 }
-	.lble {bottom:19px;}
-	
-	.sbmit-btn {
+  .lble {bottom:19px;}
+  
+  .sbmit-btn {
     padding: 10px 30px;
     top: 0px;
     position: absolute;
@@ -53,8 +53,17 @@
     border: none;
     background: #0070c0;
 }
+.icici {position:absolute;margin-top:-10px;}
   
   </style>
+  
+  <script>
+$(document).ready(function(){
+    $(".click-hr").click(function(){
+        $(".emil-id").toggle();
+    });
+});
+</script>
   </head>
   
   <body class="cbp-spmenu-push">
@@ -73,19 +82,23 @@ $(".top").click(function() {
         <section class="container">
       <div class="row">
       <div class="col-md-12">
-	  <br>
+    <br>
+    <img src="images/bank/icici.png" class="img-responsive pull-left icici" width="150"/>
       <div id="logo" class="text-center"><img id="myImage" src="http://beta.erp.rupeeboss.com/personalloan/images/logo.png" class=""></div>
+    
       <h4 class="text-center pg-titl">Apply For ICICI Credit Card</h4>
-	  
-	  <div class="col-md-3"></div>
-	  <div id="hideview" class="text-center col-md-6">
+    
+    <div class="col-md-3"></div>
+	
+	
+    <div id="hideview" class="text-center col-md-6">
                                             <div class="form-padding">
-                                                <h6 class="text-center top-heading"><a id="urlweb" href="#">click here</a>
+                                                <h6 class="text-center top-heading click-hr"><a id="urlweb" href="#">click here</a>
                                                 to view this page in browser</h6>
                                                
-                                              <div id="hideemailid" class="" style="margin-bottom: 14px; height: 50px; position: relative; display: block;">
-                                                <input class="form-control inp-fld pull-center" required="" type="name" id="urlemailid">
-                                                <button class="sbmit-btn pull-right" id="btnweburl">Submit</button> 
+                                              <div id="hideemailid" class="emil-id" style="margin-bottom: 14px; height: 50px; position: relative; display:none;">
+                                                <input class="form-control inp-fld pull-center" required type="name" id="urlemailid">
+                                                <button class="sbmit-btn sub-btn1 pull-right" id="btnweburl">Submit</button> 
                                                   
                                                 <span class="highlight"></span><span class="bar"></span>
                                                 <label class="form-label-new">E-MAIL ID (PERSONAL)</label>
@@ -95,11 +108,33 @@ $(".top").click(function() {
                                               <h5 id="msgalert" class="top-heading text-success text-center" style="display:none;font-size:15px;font-weight:bold; margin-bottom:15px;">As per your request we have sent a mail to your email ID.</h5>
                                             </div>
                                         </div>
-										
-										
-										
-	  
-          <div class="col-xs-6 form-padding">
+                    
+                    
+
+                <div class="tab-content">
+                       <div id="home" class="tab-pane fade in active">
+            
+          <!-- <form action="">  -->  
+            <div class="col-md-12">
+            <div class="panel-group" id="accordion" >
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingOne">
+                  <h4 class="panel-title">
+                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          <button class="ok-btn"><span class="glyphicon glyphicon-ok"></span></button> &nbsp; PERSONAL INFORMATION
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                  <div class="panel-body">    
+
+               <input type="hidden" name="prod" value="{{$prod}}">
+               <input type="hidden" name="amount" value="{{$amount}}">
+               <input type="hidden" name="interest" value="{{$interest}}">
+
+      
+    
+        <!--   <div class="col-xs-6 form-padding">
                     <select class="form-control inp-fld" name="net_annual_income" id="net_annual_income" required required>
                       <option value="">NET ANNUAL INCOME</option>
                         <option value=">2.5Lacs">2.5Lacs</option>
@@ -107,9 +142,9 @@ $(".top").click(function() {
                         <option value=">10Lacs">10Lacs</option>
                         <option value=">15Lacs">15Lacs</option>
                     </select> 
-          </div>
+          </div> -->
 
-          <div class="col-xs-6 form-padding" style='display:none;' id="credit_card_type">
+          <!-- <div class="col-xs-6 form-padding" style='display:none;' id="credit_card_type">
                     <select class="form-control inp-fld" name="your_interests" id="your_interests" required>
                       <option value="">YOUR INTERESTS</option>
                         <option  value="Lifestyle">Lifestyle</option>
@@ -117,9 +152,9 @@ $(".top").click(function() {
                         <option  value="Motorsports">Motorsports</option>
                       
                     </select> 
-          </div>
+          </div> -->
 
-          <div class="col-xs-6 form-padding" style='display:none;' id="credit_card_name">
+         <!--  <div class="col-xs-6 form-padding" style='display:none;' id="credit_card_name">
                     <select class="form-control inp-fld" name="cards" id="cards" required>Ferrari Platinum Credit Card
                     Ferrari Signature Credit Card
                       <option value="">CREDIT CARDS</option>
@@ -136,7 +171,7 @@ $(".top").click(function() {
                       
                     </select> 
           </div>
-
+ -->
           <div class="col-xs-6 form-padding">
                     <div>
                       <input type="text" name="ApplicantFirstName" id="ApplicantFirstName" class="form-control inp-fld" onkeypress="return AllowAlphabet(event)" required >
@@ -174,7 +209,7 @@ $(".top").click(function() {
                         <div class="clear"></div>
                       </div>   -->
                       <input type="text" class="form-control lastReporteddob" id="DateOfBirth" name="DateOfBirth" placeholder="Date of Birth*" required>
-					  <i class="fa fa-calendar" style="font-size: 25px;position: absolute;top: 15px;right: 11px;color: #3f7cb3;"></i>
+            <i class="fa fa-calendar" style="font-size: 25px;position: absolute;top: 15px;right: 11px;color: #3f7cb3;"></i>
                     </div>
                   </div>
                   
@@ -230,8 +265,8 @@ $(".top").click(function() {
                 </div>
                     </div>  
                 </div>
-				
-				<div class="col-xs-6 form-padding">
+        
+        <div class="col-xs-6 form-padding">
                 <div class="form-control inp-fld" style="height:50px; position: relative; padding: 0px 0px;">
                       <span style="position: absolute; z-index: 999; margin: 1px 0 0 8px; font-size: 10px; color: #bababa;">Marital Status</span>
                       <div class="btn-grp mrg-top m-status emp-nat" data-toggle="buttons">
@@ -261,7 +296,7 @@ $(".top").click(function() {
             </div>
 
             <div class="col-xs-6 form-padding">
-                        <div class="form-control" style="height:50px; position: relative; padding: 0px 0px;">
+                        <div class="form-control inp-fld" style="height:50px; position: relative; padding: 0px 0px;">
                         <span style="position: absolute; z-index: 999; margin: 1px 0 0 8px; font-size: 10px; color: #bababa;">I want to apply for a Supplementary Card</span>
                       
                       <div class="btn-grp mrg-top m-status emp-nat" data-toggle="buttons">
@@ -270,7 +305,29 @@ $(".top").click(function() {
                       </div>
                       </div>
             </div>
-      
+        </div>
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="panel-heading" role="tab" id="headingTwo">
+                  <h4 class="panel-title">
+                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+          <button class="ok-btn"><span class="glyphicon glyphicon-ok"></span></button> &nbsp; COMPANY DETAILS
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                  <div class="panel-body">
         
             <h4 class="txt-tlt pull-left hdn5">Company Details</h4> 
             
@@ -295,7 +352,7 @@ $(".top").click(function() {
              <div class="col-xs-6 form-padding">
                     <div>
                       <input type="text" id="work_email" name="work_email" class="form-control inp-fld" oninput="mail('work_email')"  required >
-                       <span id="email" style="display:none;color: red;">Please Enter Valid Email Id.</span>
+                       <span id="email_error" style="display:none;color: red; font-size:10px">Please Enter Valid Email Id.</span>
                       <span class="highlight"></span><span class="bar"></span>
                       <label class="form-label-new lble">Work Email</label>
                       <div class="clear"></div>
@@ -373,10 +430,18 @@ $(".top").click(function() {
                     </div>  
                   </div>
 
-                   <div class="col-xs-6 form-padding">
-                   
-                    <input  style='display:none;' type="text" class="form-input-new form-control" name="ICICIRelationshipNumber" id="ICICIRelationshipNumber" placeholder="ICICI Relationship Number" maxlength="15" onkeypress="return fnAllowNumeric(event)"  required>
-                    </div>
+
+              <div class="col-xs-6 form-padding" style="display: none" id="ICICIRelationshipNumber">
+                    <div>
+                      <input type="text" name="ICICIRelationshipNumber" id="ICICIRelationshipNumber" class="form-control inp-fld" onkeypress="return fnAllowNumeric(event)" required  >
+                      <span class="highlight"></span><span class="bar"></span>
+                      <label class="form-label-new lble">ICICI Relationship Number</label>
+                      <div class="clear"></div>
+                    </div>  
+             </div>
+
+ 
+					
           <div class="col-xs-6 form-padding">
                     <div class="form-control inp-fld" style="height:50px; position: relative; padding: 0px 0px;">
                       <span style="position: absolute; z-index: 999; margin: 1px 0 0 8px; font-size: 10px; color: #bababa;">Salary Account With Other Bank:</span>
@@ -387,6 +452,26 @@ $(".top").click(function() {
          </div>
                     </div>
                   </div>
+      </div>
+         </div>     
+
+
+     
+     
+     
+
+
+
+                <div class="panel-heading" role="tab" id="headingThree">
+                  <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                      <button class="ok-btn"><span class="glyphicon glyphicon-ok"></span></button>&nbsp; CURRENT ADDRESS DETAILS
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                  <div class="panel-body">      
+          
               <h4 class="txt-tlt pull-left hdn5">Current Address Details</h4> 
           <div class="col-xs-6 form-padding">
                     <div>
@@ -449,10 +534,11 @@ $(".top").click(function() {
                       <option value="Company_Provided">Company Provided</option>
                     </select> 
             </div>
-			
-			<div class="col-xs-12"><P style="padding:10px; display:-webkit-inline-box;" class="pull-left"><input type="checkbox" name="same" id="same_id" onclick="same_as_above('same_id');"/> &nbsp;&nbsp;Same As Above</p></div>
-              
-                  <h4 class="txt-tlt pull-left hdn5">Permanent Address Details</h4> 
+      
+      <div class="col-xs-12"><P style="padding:10px; display:-webkit-inline-box;" class="pull-left"><input type="checkbox" name="same" id="same_id" onclick="same_as_above('same_id');"/> &nbsp;&nbsp;Same As Above</p></div>
+      
+	  
+	  <h4 class="txt-tlt pull-left hdn5">Permanent Address Details</h4>
           <div class="col-xs-6 form-padding">
                     <div>
                       <input type="text" name="PerResidenceAddress1" id="PerResidenceAddress1" class="form-control inp-fld" required >
@@ -526,7 +612,22 @@ $(".top").click(function() {
                       <div class="clear"></div>
                     </div>  
                   </div>
-                  
+          
+         </div>
+         </div>
+         
+         
+                
+         <div class="panel-heading" role="tab" id="headingFive">
+                  <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                      <button class="ok-btn"><span class="glyphicon glyphicon-ok"></span></button>&nbsp; CONTACT DETAILS
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
+                  <div class="panel-body">    
+          
           <h4 class="txt-tlt pull-left hdn5">Contact Details</h4> 
           <div class="col-xs-6 form-padding">
                     <div>
@@ -552,11 +653,49 @@ $(".top").click(function() {
                       <div class="clear"></div>
                     </div>  
                   </div>
+      
+    </div>
+    </div>
+    
+  
+    
+ <!--   <div class="panel-heading" role="tab" id="headingFour">
+                  <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                      <button class="ok-btn"><span class="glyphicon glyphicon-ok"></span></button>&nbsp; PERMANENT ADDRESS  DETAILS
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+                  <div class="panel-body">
+              
+                  
+          
+          </div>
+          </div>  -->
+         
+         
+         
+         
+         
+         
+         
+         
+         
+      <div class="panel-heading" role="tab" id="headingSix">
+                  <h4 class="panel-title">
+                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSix" aria-expanded="true" aria-controls="collapseSix">
+          <button class="ok-btn"><span class="glyphicon glyphicon-ok"></span></button> &nbsp;IDENTITY DETAILS
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapseSix" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSix">
+                  <div class="panel-body">    
                   
           <h4 class="txt-tlt pull-left hdn5">Identity Details</h4> 
           <div class="col-xs-6 form-padding">
                     <div>
-                      <input type="text" id="ApplicationNumber" name="ApplicationNumber" class="form-control inp-fld" required="" maxlength="13" minlength="13" >
+                      <input type="text" id="ApplicationNumber" name="ApplicationNumber" class="form-control inp-fld" required maxlength="13" minlength="13" >
                       <span class="highlight"></span><span class="bar"></span>
                       <label class="form-label-new lble">Application Number*</label>
                       <div class="clear"></div>
@@ -618,6 +757,11 @@ $(".top").click(function() {
                     </div>  
                   </div>
                   </div>
+          
+  </div>
+  </div>
+  
+  
 
           <div class="col-md-12 pull-left text-justify">
             <p class="p-padding"><input type="checkbox" name="terms"  class="redio-lft"/>&nbsp; I hereby confirm that I have read and understood the Rupeeboss Terms and Conditions applicable to this service and that all the details furnished by me above are true and correct. I further provide consent to Rupeeboss and its affiliates to contact me with reference to financial products and this consent shall override any registration with DNC/NDNC.</p>
@@ -628,7 +772,8 @@ $(".top").click(function() {
 
                   </button>
             <b>All <mark style="color:red">*</mark>fields are mandatory.</b>
-            </div>      
+            </div> 
+      
                   
           </div>
         </div>  
@@ -1058,16 +1203,25 @@ $(document).ready(function(){
 </script>
 
 <script type="text/javascript">
+var inputs = $("#compareform input[required='required']");
   $(".icici-credit-submit").click(function(event){
     //alert("okae");
     event.preventDefault();
       //var form=$(this).closest("form").attr('id');
       //console.log($('#compareform'));
       //var form=$('#compareform');
-      if(!  $('#compareform').valid()){
+
+
+
+ 
+      if(! $('#compareform').valid()){    
+
         return false;
       }else{
-        //var s=$('#'+form).serialize();
+     
+    if( $('#ResidenceMobileNo').val()!='' && $('#PerResidencePincode').val()!='' && $('#ResidencePincode').val()!='' && $('#work_number').val()!='' && $('#designation').val()!='' && $('#work_email').val()!='' && $('#CompanyName').val()!='' && $('#preferred_address').val()!='' && $('#NameOnCard').val()!='' && $('#ApplicantFirstName').val()!='' && $('#net_annual_income').val()!='' && $('#DateOfBirth').val()!='' && $('#CompanyName').val()!='' && $('#ResidenceAddress1').val()!='' && 
+    $('#PerResidenceAddress1').val()!='' && $('#ResidencePhoneNumber').val()!='' && $('#ApplicationNumber').val()!=''){
+
         //console.log($('#compareform'));
         $(".iframeloading").show();
         // $(".icici-credit-submit").hide(); 
@@ -1102,7 +1256,20 @@ $(document).ready(function(){
 
         }  
       }); 
+
+}else{
+
+  alert("Please fill form carefully...");
+
+}
+
+
       }
+
+
+
+
+
 
     });
 
@@ -1129,7 +1296,7 @@ $(document).ready(function(){
     // console.log(obj);
     if(obj=='email_id' ){
                    var str =$('#email_id').val();
-                   var emailPattern = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/; 
+                   var emailPattern = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/; 
                    var res = str.match(emailPattern);
                    if(res){
                      // console.log('Pancard is valid one.!!');
@@ -1148,19 +1315,21 @@ $(document).ready(function(){
 
 <script type="text/javascript">
   function mail(obj,val){
-    // console.log(obj);
+ 
     if(obj=='work_email' ){
                    var str =$('#work_email').val();
-                   var emailPattern = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/; 
+                   var emailPattern =/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/; 
                    var res = str.match(emailPattern);
+
+
                    if(res){
                      // console.log('Pancard is valid one.!!');
-                      $('#email').hide();
+                      $('#email_error').hide();
 
                   }else{
                     // console.log('Oops.Please Enter Valid Pan Number.!!');
-                    $('#emai').show();
-
+                    $('#email_error').show();
+ 
                     return false;
                   }
                   
@@ -1308,6 +1477,16 @@ $(document).ready(function(){
      $('#PerResidencePincode').val($('#ResidencePincode').val());
      $('#Persearch_statenm').val($('#search_statenm').val());
      $('#per_res_type').val($('#type_current').val());
+     $('#PerResidenceAddress1').addClass("used");
+     $('#PerResidenceAddress2').addClass("used");
+     $('#PerResidenceAddress3').addClass("used");
+     $('#PerResidenceState').addClass("used");
+
+
+     $('#PerCity').addClass("used");
+     $('#PerResidencePincode').addClass("used");
+     $('#Persearch_statenm').addClass("used");
+     $('#per_res_type').addClass("used");
      }else{
 
      $('#PerResidenceAddress1').val('');
@@ -1319,8 +1498,21 @@ $(document).ready(function(){
      $('#PerResidencePincode').val('');
      $('#Persearch_statenm').val('');
      $('#per_res_type').val('');
+     $('#PerResidenceAddress1').removeClass("used");
+     $('#PerResidenceAddress2').removeClass("used");
+     $('#PerResidenceAddress3').removeClass("used");
+     $('#PerResidenceState').removeClass("used");
+
+
+     $('#PerCity').removeClass("used");
+     $('#PerResidencePincode').removeClass("used");
+     $('#Persearch_statenm').removeClass("used");
+     $('#per_res_type').removeClass("used");
   }
 }
+
+
+
 </script>
 
 

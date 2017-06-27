@@ -1217,7 +1217,7 @@ var inputs = $("#compareform input[required='required']");
 
 }else{
 
-  alert("Kindly,fill required details...!!");
+  alert("Please Enter All Mandatory Fields.");
 
 }
 

@@ -55,6 +55,8 @@
 }
 .icici {margin-top:-13px;}
  select option {text-transform:uppercase;}
+ select {color:#636363 !important;}
+ .lastReporteddob {color:#636363 !important;}
   
   </style>
   
@@ -133,46 +135,7 @@ $(".top").click(function() {
                <input type="hidden" name="amount" value="{{$amount}}">
                <input type="hidden" name="interest" value="{{$interest}}">
 
-      
-    
-        <!--   <div class="col-xs-6 form-padding">
-                    <select class="form-control inp-fld" name="net_annual_income" id="net_annual_income" required required>
-                      <option value="">NET ANNUAL INCOME</option>
-                        <option value=">2.5Lacs">2.5Lacs</option>
-                        <option value=">5.0Lacs">5.0Lacs</option>
-                        <option value=">10Lacs">10Lacs</option>
-                        <option value=">15Lacs">15Lacs</option>
-                    </select> 
-          </div> -->
 
-          <!-- <div class="col-xs-6 form-padding" style='display:none;' id="credit_card_type">
-                    <select class="form-control inp-fld" name="your_interests" id="your_interests" required>
-                      <option value="">YOUR INTERESTS</option>
-                        <option  value="Lifestyle">Lifestyle</option>
-                        <option  value="Travel">Travel</option>
-                        <option  value="Motorsports">Motorsports</option>
-                      
-                    </select> 
-          </div> -->
-
-         <!--  <div class="col-xs-6 form-padding" style='display:none;' id="credit_card_name">
-                    <select class="form-control inp-fld" name="cards" id="cards" required>Ferrari Platinum Credit Card
-                    Ferrari Signature Credit Card
-                      <option value="">CREDIT CARDS</option>
-                      <option  value="Platinum Chip Credit Card">Platinum Chip Credit Card</option>
-                      <option  value="Coral Credit Card">Coral Credit Card</option>
-                      <option  value="Jet Coral Credit Card">Jet Coral Credit Card</option>
-                      <option  value="Ferrari Platinum Credit Card">Ferrari Platinum Credit Card</option>
-                       <option value="Rubyx Credit Card">Rubyx Credit Card</option>
-                       <option value="Sapphiro Credit Card">Sapphiro Credit Card</option>
-                       <option value="Jet Rubyx Credit Card">Jet Rubyx Credit Card</option>
-                       <option value="Jet Sapphiro Credit Card">Jet Sapphiro Credit Card</option>
-                       <option value="Ferrari Platinum Credit Card">Ferrari Platinum Credit Card</option>
-                       <option value=" Ferrari Signature Credit Card"> Ferrari Signature Credit Card</option>
-                      
-                    </select> 
-          </div>
- -->
           <div class="col-xs-6 form-padding">
                     <div>
                       <input type="text" name="ApplicantFirstName" id="ApplicantFirstName" class="form-control inp-fld" onkeypress="return AllowAlphabet(event)" required >
@@ -201,15 +164,8 @@ $(".top").click(function() {
                   
             <div class="col-xs-6 form-padding">
                     <div class="form-control" style="margin-bottom:10px; height:50px; position:relative; padding: 0;">
-                      <!-- <div class="input-group">
-                        <input type="text" name="DateOfBirth" class="form-input-new-1" id="DateOfBirth" placeholder="Date of Birth" data-select="datepicker" data-locked="25/12/2014;1/1/2015">
-                        <span class="input-group-btn" style="left:1px;">
-                          <button type="button" class="btn btn-primary success-width" data-toggle="datepicker" style="height:50px;">
-                          <i class="fa fa-calendar"></i></button>
-                        </span>
-                        <div class="clear"></div>
-                      </div>   -->
-                      <input type="text" class="form-control lastReporteddob" id="DateOfBirth" name="DateOfBirth" placeholder="DATE OF BIRTH*" required>
+                    
+                      <input type="text" class="form-control lastReporteddob" id="DateOfBirth" name="DateOfBirth" placeholder="DATE OF BIRTH*" style="color:#636363 !important;" required>
             <i class="fa fa-calendar" style="font-size: 25px;position: absolute;top: 15px;right: 11px;color: #3f7cb3;"></i>
                     </div>
                   </div>
@@ -298,7 +254,7 @@ $(".top").click(function() {
 
             <div class="col-xs-6 form-padding">
                         <div class="form-control inp-fld" style="height:50px; position: relative; padding: 0px 0px;">
-                        <span style="position: absolute; z-index: 999; margin: 1px 0 0 8px; font-size: 10px; color: #bababa;">I WANT TO Apply FOR SUPPLEMENTARY CARD</span>
+                        <span style="position: absolute; z-index: 999; margin: 1px 0 0 8px; font-size: 10px; color: #bababa;">APPLY FOR SUPPLEMENTARY CARD</span>
                       
                       <div class="btn-grp mrg-top m-status emp-nat" data-toggle="buttons">
                       <span class="btn btn-primary outer-brd active"><input type="radio" name="supplementary_card" checked value="Yes">YES</span>
@@ -465,7 +421,7 @@ $(".top").click(function() {
                 <div class="panel-heading" role="tab" id="headingThree">
                   <h4 class="panel-title">
                     <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                      <button class="ok-btn"><span class="glyphicon glyphicon-ok"></span></button>&nbsp; CURRENT ADDRESS DETAILS
+                      <button class="ok-btn"><span class="glyphicon glyphicon-ok"></span></button>&nbsp; RESIDENCE ADDRESS DETAILS
                     </a>
                   </h4>
                 </div>
@@ -629,6 +585,22 @@ $(".top").click(function() {
                   <div class="panel-body">    
           
           <h4 class="txt-tlt pull-left hdn5">Contact Details</h4> 
+		  <div class="col-xs-6 form-padding">
+                    <div>
+                      <input type="text" class="form-control inp-fld"  id="ResidenceMobileNo" name="ResidenceMobileNo" required onkeypress="return fnAllowNumeric(event)" maxlength="10" >
+                      <span class="highlight"></span><span class="bar"></span>
+                      <label class="form-label-new lble">Mobile No</label>
+                      <div class="clear"></div>
+                    </div>  
+                  </div>
+				   <div class="col-xs-6 form-padding">
+                    <div>
+                      <input type="text" class="form-control inp-fld" id="STDCode" name="STDCode"  required  onkeypress="return fnAllowNumeric(event)" maxlength="5" >
+                      <span class="highlight"></span><span class="bar"></span>
+                      <label class="form-label-new lble">STD Code</label>
+                      <div class="clear"></div>
+                    </div>  
+                  </div>
           <div class="col-xs-6 form-padding">
                     <div>
                       <input type="text" class="form-control inp-fld" id="ResidencePhoneNumber" name="ResidencePhoneNumber" onkeypress="return fnAllowNumeric(event)" maxlength="10" required>
@@ -637,22 +609,8 @@ $(".top").click(function() {
                       <div class="clear"></div>
                     </div>  
                   </div>
-          <div class="col-xs-6 form-padding">
-                    <div>
-                      <input type="text" class="form-control inp-fld"  id="ResidenceMobileNo" name="ResidenceMobileNo" required onkeypress="return fnAllowNumeric(event)" maxlength="10" >
-                      <span class="highlight"></span><span class="bar"></span>
-                      <label class="form-label-new lble">Mobile No</label>
-                      <div class="clear"></div>
-                    </div>  
-                  </div>
-          <div class="col-xs-6 form-padding">
-                    <div>
-                      <input type="text" class="form-control inp-fld" id="STDCode" name="STDCode"  required  onkeypress="return fnAllowNumeric(event)" maxlength="5" >
-                      <span class="highlight"></span><span class="bar"></span>
-                      <label class="form-label-new lble">STD Code</label>
-                      <div class="clear"></div>
-                    </div>  
-                  </div>
+          
+         
       
     </div>
     </div>
@@ -703,9 +661,9 @@ $(".top").click(function() {
                   </div>
           <div class="col-xs-6 form-padding">
                     <select class="form-control inp-fld" name="SalaryAccountOpened" id="SalaryAccountOpened" required >
-                      <option value="">SalaryAccountOpened</option>
+                      <option value="">SALARY ACCOUNT OPENED</option>
                           <option value="Above2Months"> > 2 Months</option>
-                        <option value="Below2Months"><=2 Months</option>
+                        <option value="Below2Months"> < 2 Months</option>
                         
                     </select> 
                                </div>
@@ -721,7 +679,7 @@ $(".top").click(function() {
 
                   <div class="col-xs-6 form-padding">
                         <div class="form-control" style="height:50px; position: relative; padding: 0px 0px;">
-                        <span style="position: absolute; z-index: 999; margin: 1px 0 0 8px; font-size: 10px; color: #bababa;">Do You Have A Credit Card</span>
+                        <span style="position: absolute; z-index: 999; margin: 1px 0 0 8px; font-size: 10px; color: #bababa;">DO YOU HAVE A CREDIT CARD</span> 
                       
                       <div class="btn-grp mrg-top m-status emp-nat" data-toggle="buttons">
                       <span class="btn btn-primary outer-brd active"><input type="radio" id="have" name="have_credit_card" checked value="Yes">Yes</span>
@@ -752,7 +710,7 @@ $(".top").click(function() {
                     <div>
                       <input type="text" id="credit_limit" name="credit_limit" class="form-control inp-fld" onkeypress="return fnAllowNumeric(event)"  required >
                       <span class="highlight"></span><span class="bar"></span>
-                      <label class="form-label-new lble">Credit Limit*</label>
+                      <label class="form-label-new lble">CREDIT LIMIT*</label>
                       <div class="clear"></div>
                     </div>  
                   </div>

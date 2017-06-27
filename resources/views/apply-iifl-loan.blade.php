@@ -210,7 +210,7 @@
             </form>
             </div>
             
-        <div id="Applicant_Details">
+        <div id="Applicant_Details" style="display: none;">
             <form name="applicant_deatils" id="applicant_deatils" method="POST">
                       {{ csrf_field() }}
             <div class="col-md-12">

@@ -1217,7 +1217,7 @@ var inputs = $("#compareform input[required='required']");
 
 }else{
 
-  alert("Please fill form carefully...");
+  alert("Kindly,fill required details...!!");
 
 }
 

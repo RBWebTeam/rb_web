@@ -30,7 +30,7 @@
 <script src="js/jquery.mask.js"></script>
 <script src="js/icici_js/jquery.validate.min.js"></script>
   <style>
-  .inp-fld {margin-bottom:10px; height:50px; position:relative;}
+  .inp-fld {margin-bottom:10px; height:50px; position:relative;text-transform: uppercase;}
   .emp-nat span {padding:3px 5px;}
   .txt-tlt {padding-left:5px;width:100%;text-align:center; color:#666;font-size:18px;}
   .pg-titl {text-transform:uppercase;}
@@ -57,7 +57,16 @@
  select option {text-transform:uppercase;}
  select {color:#636363 !important;}
  .lastReporteddob {color:#636363 !important;}
-  
+ 
+@media only screen and (max-width:768px) {
+	
+	.col-md-12 {padding:0px;margin:2px;}
+}
+.emp-nat span {
+    padding: 3px 5px;
+    font-size: 12px;
+}
+.lastReporteddob {height:49px;border: none;}
   </style>
   
   <script>
@@ -166,7 +175,7 @@ $(".top").click(function() {
                     <div class="form-control" style="margin-bottom:10px; height:50px; position:relative; padding: 0;">
                     
                       <input type="text" class="form-control lastReporteddob" id="DateOfBirth" name="DateOfBirth" placeholder="DATE OF BIRTH*" style="color:#636363 !important;" required>
-            <i class="fa fa-calendar" style="font-size: 25px;position: absolute;top: 15px;right: 11px;color: #3f7cb3;"></i>
+            <a href="#DateOfBirth"><i class="fa fa-calendar" style="font-size: 25px;position: absolute;top: 15px;right: 11px;color: #3f7cb3;"></i></a>
                     </div>
                   </div>
                   
@@ -174,7 +183,7 @@ $(".top").click(function() {
                     <div>
                       <input type="text" name="NameOnCard" id="NameOnCard" class="form-control inp-fld" onkeypress="return AllowAlphabet(event)" required >
                       <span class="highlight"></span><span class="bar"></span>
-                      <label class="form-label-new lble">Name to be printed on the card</label>
+                      <label class="form-label-new lble">NAME TO PRINT ON CARD</label>
                       <div class="clear"></div>
                     </div>  
                              </div>
@@ -202,7 +211,7 @@ $(".top").click(function() {
                   </div>
          
 
-        <div class="col-xs-4 col-md-6 form-padding">
+        <div class="col-xs-6 col-md-6 form-padding">
                     <div class="form-control inp-fld" style="height:50px;position: relative; padding: 0px 0px; margin-bottom:10px;">
                       <div class="padd-lef gender">
                        <div class="btn-grp" data-toggle="buttons">
@@ -213,12 +222,12 @@ $(".top").click(function() {
                      </div>
                   </div>
                 
-                <div class="col-xs-8 col-md-6 form-padding">
+                <div class="col-xs-12 col-md-6 form-padding">
                     <div class="form-control inp-fld" style="height:50px; position: relative; padding: 0px 0px;">
                       <span style="position: absolute; z-index: 999; margin: 1px 0 0 8px; font-size: 10px; color: #bababa;">RESIDENT STATUS</span>
                       <div class="btn-grp mrg-top m-status emp-nat" data-toggle="buttons">
-                      <span class="btn btn-primary outer-brd active"><input type="radio" name="resident_status" checked value="Indian">Indian</span>
-                      <span class="btn btn-primary outer-brd"><input type="radio" name="resident_status" value="NRI/Foreign_National" >NRI/Foreign National</span>
+                      <span class="btn btn-primary outer-brd active"><input type="radio" name="resident_status" checked value="Indian">INDIAN</span>
+                      <span class="btn btn-primary outer-brd"><input type="radio" name="resident_status" value="NRI/Foreign_National" >NRI/FOREIGN NATIONAL</span>
                 </div>
                     </div>  
                 </div>
@@ -254,7 +263,7 @@ $(".top").click(function() {
 
             <div class="col-xs-6 form-padding">
                         <div class="form-control inp-fld" style="height:50px; position: relative; padding: 0px 0px;">
-                        <span style="position: absolute; z-index: 999; margin: 1px 0 0 8px; font-size: 10px; color: #bababa;">APPLY FOR SUPPLEMENTARY CARD</span>
+                        <span style="position: absolute; z-index: 999; margin: 1px 0 0 8px; font-size: 10px; color: #bababa;">APPLY SUPPLEMENTARY CARD</span>
                       
                       <div class="btn-grp mrg-top m-status emp-nat" data-toggle="buttons">
                       <span class="btn btn-primary outer-brd active"><input type="radio" name="supplementary_card" checked value="Yes">YES</span>
@@ -400,7 +409,7 @@ $(".top").click(function() {
 					
           <div class="col-xs-6 form-padding">
                     <div class="form-control inp-fld" style="height:50px; position: relative; padding: 0px 0px;">
-                      <span style="position: absolute; z-index: 999; margin: 1px 0 0 8px; font-size: 10px; color: #bababa;">SALARY ACCOUNT WITH OTHER BANK:</span>
+                      <span style="position: absolute; z-index: 999; margin: 1px 0 0 8px; font-size: 10px; color: #bababa;"> OTHER BANK SALARY ACCT:</span>
                       
                       <div class="btn-grp mrg-top m-status emp-nat" data-toggle="buttons">
       <span class="btn btn-primary outer-brd active"><input type="radio" name="SalaryAccountWithOtherBank" id="SalaryAccountWithOtherBank" checked value="Yes"  >Yes</span>
@@ -433,7 +442,7 @@ $(".top").click(function() {
                     <div>
                       <input type="text" name="ResidenceAddress1" id="ResidenceAddress1" class="form-control inp-fld" required >
                       <span class="highlight"></span><span class="bar"></span>
-                      <label class="form-label-new lble">Flat No / Plot No / House No*</label>
+                      <label class="form-label-new lble">Flat/Plot/House No*</label>
                       <div class="clear"></div>
                     </div>  
                   </div>
@@ -441,7 +450,7 @@ $(".top").click(function() {
                     <div>
                       <input type="text"  name="ResidenceAddress2" id="ResidenceAddress2" class="form-control inp-fld" required>
                       <span class="highlight"></span><span class="bar"></span>
-                      <label class="form-label-new lble">Building / Society Name</label>
+                      <label class="form-label-new lble">Building/Society Name</label>
                       <div class="clear"></div>
                     </div>  
                   </div>
@@ -449,7 +458,7 @@ $(".top").click(function() {
                     <div>
                       <input type="text"  name="ResidenceAddress3" id="ResidenceAddress3" class="form-control inp-fld" required>
                       <span class="highlight"></span><span class="bar"></span>
-                      <label class="form-label-new lble">Road No / Area / Locality</label>
+                      <label class="form-label-new lble">Road No/Area/Locality</label>
                       <div class="clear"></div>
                     </div>  
                   </div>
@@ -499,7 +508,7 @@ $(".top").click(function() {
                     <div>
                       <input type="text" name="PerResidenceAddress1" id="PerResidenceAddress1" class="form-control inp-fld" required >
                       <span class="highlight"></span><span class="bar"></span>
-                      <label class="form-label-new lble">flat No / Plot No / House No*</label>
+                      <label class="form-label-new lble">Flat/Plot/House No*</label>
                       <div class="clear"></div>
                     </div>  
                   </div>
@@ -507,7 +516,7 @@ $(".top").click(function() {
                     <div>
                       <input type="text"  name="PerResidenceAddress2" id="PerResidenceAddress2" class="form-control inp-fld" required>
                       <span class="highlight"></span><span class="bar"></span>
-                      <label class="form-label-new lble">Building / Society Name</label>
+                      <label class="form-label-new lble">Building/Society Name</label>
                       <div class="clear"></div>
                     </div>  
                   </div>
@@ -515,7 +524,7 @@ $(".top").click(function() {
                     <div>
                       <input type="text"  name="PerResidenceAddress3" id="PerResidenceAddress3" class="form-control inp-fld" required>
                       <span class="highlight"></span><span class="bar"></span>
-                      <label class="form-label-new lble">Road No / Area / Locality</label>
+                      <label class="form-label-new lble">Road No/Area/Locality</label>
                       <div class="clear"></div>
                     </div>  
                   </div>

@@ -524,7 +524,6 @@ $url = $this::$url_static."/BankAPIService.svc/createIIFLCoAppDtls";
     $s=str_replace('}"', "}", $st);
     $m=$s=str_replace('\\', "", $s);
      $obj = json_decode($m);
-    
     return response()->json( $obj);
   }
 

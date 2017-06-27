@@ -2296,6 +2296,11 @@ var global_tenure=0;
                         success: function(msg){
                             console.log(msg.City);
                             console.log(msg.State);
+                            if (msg.Status =="Fail" ) 
+                            {
+                               alert('Please Enter Valid Pincode');
+                               return false;
+                            }else if(msg.Status =="Success"){
 
                             var city =msg.City;
                             var newOption = $('<option selected value="'+msg.CityCode+'">'+city+'</option>');
@@ -2310,6 +2315,7 @@ var global_tenure=0;
                             $('#CurrentState').closest( "span" ).addClass( "input--filled" );
                             // $('#CurrentState').empty().append(state);
                         }
+                    }
                     });       
                 }  
        });    
@@ -2328,9 +2334,14 @@ var global_tenure=0;
                         url: "{{URL::to('iifl-co-pincode-status')}}",
                         data : {'_token': v_token,'CoCurrentPin':pincode},
                         success: function(msg){
+                            console.log(msg.Status);
                             console.log(msg.City);
                             console.log(msg.State);
-
+                            if (msg.Status =="Fail" ) 
+                            {
+                               alert('Please Enter Valid Pincode');
+                               return false;
+                            }else if(msg.Status =="Success") {
                             var city =msg.City;
                             var newOption = $('<option selected value="'+msg.CityCode+'">'+city+'</option>');
                             $('#CoCurrentCity').empty().append(newOption);
@@ -2343,6 +2354,7 @@ var global_tenure=0;
                             $('#CoCurrentState').empty().append(newOption);
                             $('#CoCurrentState').closest( "span" ).addClass( "input--filled" );
                             // $('#CurrentState').empty().append(state);
+                        }
                         }
                     });       
                 }  

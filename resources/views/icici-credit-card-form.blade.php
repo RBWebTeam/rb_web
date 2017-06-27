@@ -56,6 +56,14 @@
 .icici {position:absolute;margin-top:-10px;}
   
   </style>
+  
+  <script>
+$(document).ready(function(){
+    $(".click-hr").click(function(){
+        $(".emil-id").toggle();
+    });
+});
+</script>
   </head>
   
   <body class="cbp-spmenu-push">
@@ -82,13 +90,7 @@ $(".top").click(function() {
     
     <div class="col-md-3"></div>
 	
-	<script>
-$(document).ready(function(){
-    $(".click-hr").click(function(){
-        $(".emil-id").show();
-    });
-});
-</script>
+	
     <div id="hideview" class="text-center col-md-6">
                                             <div class="form-padding">
                                                 <h6 class="text-center top-heading click-hr"><a id="urlweb" href="#">click here</a>
@@ -350,7 +352,7 @@ $(document).ready(function(){
              <div class="col-xs-6 form-padding">
                     <div>
                       <input type="text" id="work_email" name="work_email" class="form-control inp-fld" oninput="mail('work_email')"  required >
-                       <span id="email" style="display:none;color: red;">Please Enter Valid Email Id.</span>
+                       <span id="email_error" style="display:none;color: red; font-size:10px">Please Enter Valid Email Id.</span>
                       <span class="highlight"></span><span class="bar"></span>
                       <label class="form-label-new lble">Work Email</label>
                       <div class="clear"></div>
@@ -431,7 +433,7 @@ $(document).ready(function(){
 
               <div class="col-xs-6 form-padding" style="display: none" id="ICICIRelationshipNumber">
                     <div>
-                      <input type="text" name="ICICIRelationshipNumber" id="ICICIRelationshipNumber" class="form-control inp-fld" onkeypress="return AllowAlphabet(event)" required  >
+                      <input type="text" name="ICICIRelationshipNumber" id="ICICIRelationshipNumber" class="form-control inp-fld" onkeypress="return fnAllowNumeric(event)" required  >
                       <span class="highlight"></span><span class="bar"></span>
                       <label class="form-label-new lble">ICICI Relationship Number</label>
                       <div class="clear"></div>
@@ -1294,7 +1296,7 @@ var inputs = $("#compareform input[required='required']");
     // console.log(obj);
     if(obj=='email_id' ){
                    var str =$('#email_id').val();
-                   var emailPattern = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/; 
+                   var emailPattern = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/; 
                    var res = str.match(emailPattern);
                    if(res){
                      // console.log('Pancard is valid one.!!');
@@ -1313,19 +1315,21 @@ var inputs = $("#compareform input[required='required']");
 
 <script type="text/javascript">
   function mail(obj,val){
-    // console.log(obj);
+ 
     if(obj=='work_email' ){
                    var str =$('#work_email').val();
-                   var emailPattern = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/; 
+                   var emailPattern =/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/; 
                    var res = str.match(emailPattern);
+
+
                    if(res){
                      // console.log('Pancard is valid one.!!');
-                      $('#email').hide();
+                      $('#email_error').hide();
 
                   }else{
                     // console.log('Oops.Please Enter Valid Pan Number.!!');
-                    $('#emai').show();
-
+                    $('#email_error').show();
+ 
                     return false;
                   }
                   
@@ -1473,6 +1477,16 @@ var inputs = $("#compareform input[required='required']");
      $('#PerResidencePincode').val($('#ResidencePincode').val());
      $('#Persearch_statenm').val($('#search_statenm').val());
      $('#per_res_type').val($('#type_current').val());
+     $('#PerResidenceAddress1').addClass("used");
+     $('#PerResidenceAddress2').addClass("used");
+     $('#PerResidenceAddress3').addClass("used");
+     $('#PerResidenceState').addClass("used");
+
+
+     $('#PerCity').addClass("used");
+     $('#PerResidencePincode').addClass("used");
+     $('#Persearch_statenm').addClass("used");
+     $('#per_res_type').addClass("used");
      }else{
 
      $('#PerResidenceAddress1').val('');
@@ -1484,8 +1498,21 @@ var inputs = $("#compareform input[required='required']");
      $('#PerResidencePincode').val('');
      $('#Persearch_statenm').val('');
      $('#per_res_type').val('');
+     $('#PerResidenceAddress1').removeClass("used");
+     $('#PerResidenceAddress2').removeClass("used");
+     $('#PerResidenceAddress3').removeClass("used");
+     $('#PerResidenceState').removeClass("used");
+
+
+     $('#PerCity').removeClass("used");
+     $('#PerResidencePincode').removeClass("used");
+     $('#Persearch_statenm').removeClass("used");
+     $('#per_res_type').removeClass("used");
   }
 }
+
+
+
 </script>
 
 

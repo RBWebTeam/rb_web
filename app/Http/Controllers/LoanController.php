@@ -376,7 +376,7 @@ public function dropdown(Request $req){
     public function applicant(Request $req){
        $data=$req->all();
        $json_data=json_encode($data);
-      // print_r($data);
+      print_r($data);
        $post_data = '{
    "head": {
     "requestCode": "PLRQCL01",

@@ -33,7 +33,7 @@
   .inp-fld {margin-bottom:10px; height:50px; position:relative;}
   .emp-nat span {padding:3px 5px;}
   .txt-tlt {padding-left:5px;width:100%;text-align:center; color:#666;font-size:18px;}
-  .pg-titl {padding:10px; text-transform:uppercase;}
+  .pg-titl {text-transform:uppercase;}
   .redio-lft {float:left;}
   .p-padding {padding:10px;}
   .mand-fld { display:block;}
@@ -53,7 +53,8 @@
     border: none;
     background: #0070c0;
 }
-.icici {margin-top:13px;}
+.icici {margin-top:-13px;}
+ select option {text-transform:uppercase;}
   
   </style>
   
@@ -208,7 +209,7 @@ $(".top").click(function() {
                         </span>
                         <div class="clear"></div>
                       </div>   -->
-                      <input type="text" class="form-control lastReporteddob" id="DateOfBirth" name="DateOfBirth" placeholder="Date of Birth*" required>
+                      <input type="text" class="form-control lastReporteddob" id="DateOfBirth" name="DateOfBirth" placeholder="DATE OF BIRTH*" required>
             <i class="fa fa-calendar" style="font-size: 25px;position: absolute;top: 15px;right: 11px;color: #3f7cb3;"></i>
                     </div>
                   </div>
@@ -258,7 +259,7 @@ $(".top").click(function() {
                 
                 <div class="col-xs-8 col-md-6 form-padding">
                     <div class="form-control inp-fld" style="height:50px; position: relative; padding: 0px 0px;">
-                      <span style="position: absolute; z-index: 999; margin: 1px 0 0 8px; font-size: 10px; color: #bababa;">Resident Status</span>
+                      <span style="position: absolute; z-index: 999; margin: 1px 0 0 8px; font-size: 10px; color: #bababa;">RESIDENT STATUS</span>
                       <div class="btn-grp mrg-top m-status emp-nat" data-toggle="buttons">
                       <span class="btn btn-primary outer-brd active"><input type="radio" name="resident_status" checked value="Indian">Indian</span>
                       <span class="btn btn-primary outer-brd"><input type="radio" name="resident_status" value="NRI/Foreign_National" >NRI/Foreign National</span>
@@ -268,21 +269,21 @@ $(".top").click(function() {
         
         <div class="col-xs-6 form-padding">
                 <div class="form-control inp-fld" style="height:50px; position: relative; padding: 0px 0px;">
-                      <span style="position: absolute; z-index: 999; margin: 1px 0 0 8px; font-size: 10px; color: #bababa;">Marital Status</span>
+                      <span style="position: absolute; z-index: 999; margin: 1px 0 0 8px; font-size: 10px; color: #bababa;">MARITAL STATUS</span>
                       <div class="btn-grp mrg-top m-status emp-nat" data-toggle="buttons">
-                      <span class="btn btn-primary outer-brd active"><input type="radio" name="marital_status" checked value="Single">Single</span>
-                      <span class="btn btn-primary outer-brd"><input type="radio" name="marital_status" value="Married" >Married</span>
+                      <span class="btn btn-primary outer-brd active"><input type="radio" name="marital_status" checked value="Single">SINGLE</span>
+                      <span class="btn btn-primary outer-brd"><input type="radio" name="marital_status" value="Married" >MARRIED</span>
                 </div>
                     </div>  
                 </div>
 
               <div class="col-xs-6 form-padding">
                         <div class="form-control inp-fld" style="height:50px; position: relative; padding: 0px 0px;">
-                          <span style="position: absolute; z-index: 999; margin: 1px 0 0 8px; font-size: 10px; color: #bababa;">Employment Nature</span>
+                          <span style="position: absolute; z-index: 999; margin: 1px 0 0 8px; font-size: 10px; color: #bababa;">EMPLOYMENT NATURE</span> 
                       
                       <div class="btn-grp mrg-top m-status emp-nat" data-toggle="buttons">
-                      <span class="btn btn-primary outer-brd active"><input type="radio" name="CustomerProfile" checked value="Salaried">Salaried</span>
-                      <span class="btn btn-primary outer-brd"><input type="radio" name="CustomerProfile" value="Selfemployed" >Self-Emp</span>
+                      <span class="btn btn-primary outer-brd active"><input type="radio" name="CustomerProfile" checked value="Salaried">SALARIED</span>
+                      <span class="btn btn-primary outer-brd"><input type="radio" name="CustomerProfile" value="Selfemployed" >SELF-EMP</span> 
                          </div>
                     </div>
                   </div>
@@ -290,18 +291,18 @@ $(".top").click(function() {
             <div class="col-xs-6 form-padding">
                     <select class="form-control inp-fld" name="preferred_address" id="preferred_address" required>
                       <option value="">PREFERRED MAILING ADDRESS</option>
-                      <option value="Residence">Residence</option>
-                      <option value="Office">Office</option>
+                      <option value="Residence">RESIDENCE</option>
+                      <option value="Office">OFFICE</option>
                     </select> 
             </div>
 
             <div class="col-xs-6 form-padding">
                         <div class="form-control inp-fld" style="height:50px; position: relative; padding: 0px 0px;">
-                        <span style="position: absolute; z-index: 999; margin: 1px 0 0 8px; font-size: 10px; color: #bababa;">I want to apply for a Supplementary Card</span>
+                        <span style="position: absolute; z-index: 999; margin: 1px 0 0 8px; font-size: 10px; color: #bababa;">I WANT TO Apply FOR SUPPLEMENTARY CARD</span>
                       
                       <div class="btn-grp mrg-top m-status emp-nat" data-toggle="buttons">
-                      <span class="btn btn-primary outer-brd active"><input type="radio" name="supplementary_card" checked value="Yes">Yes</span>
-                      <span class="btn btn-primary outer-brd"><input type="radio" name="supplementary_card" value="No" >No</span>
+                      <span class="btn btn-primary outer-brd active"><input type="radio" name="supplementary_card" checked value="Yes">YES</span>
+                      <span class="btn btn-primary outer-brd"><input type="radio" name="supplementary_card" value="No" >NO</span>
                       </div>
                       </div>
             </div>
@@ -329,13 +330,13 @@ $(".top").click(function() {
                 <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
                   <div class="panel-body">
         
-            <h4 class="txt-tlt pull-left hdn5">Company Details</h4> 
+            <h4 class="txt-tlt pull-left hdn5">COMPANY DETAILS</h4> 
             
             <div class="col-xs-6 form-padding">
                     <div>
                       <input type="text" class="form-control inp-fld search_company" name="CompanyName" id="CompanyName" onkeypress="return AllowAlphabet(event)" required >
                       <span class="highlight"></span><span class="bar"></span>
-                      <label class="form-label-new lble">Company Name</label>
+                      <label class="form-label-new lble">COMPANY NAME</label>
                       <div class="clear"></div>
                     </div>  
             </div>
@@ -344,7 +345,7 @@ $(".top").click(function() {
                     <div>
                       <input type="text" name="designation" id="designation" class="form-control inp-fld" onkeypress="return AllowAlphabet(event)" required >
                       <span class="highlight"></span><span class="bar"></span>
-                      <label class="form-label-new lble">Designation</label>
+                      <label class="form-label-new lble">DESIGNATION</label>
                       <div class="clear"></div>
                     </div>  
              </div>
@@ -352,9 +353,8 @@ $(".top").click(function() {
              <div class="col-xs-6 form-padding">
                     <div>
                       <input type="text" id="work_email" name="work_email" class="form-control inp-fld" oninput="mail('work_email')"  required >
-                       <span id="email_error" style="display:none;color: red; font-size:10px">Please Enter Valid Email Id.</span>
                       <span class="highlight"></span><span class="bar"></span>
-                      <label class="form-label-new lble">Work Email</label>
+                      <label class="form-label-new lble">WORK EMAIL</label>
                       <div class="clear"></div>
                     </div>  
                   </div>
@@ -363,7 +363,7 @@ $(".top").click(function() {
                     <div>
                       <input type="text" class="form-control inp-fld" id="work_STDCode" name="work_STDCode"  required  onkeypress="return fnAllowNumeric(event)" maxlength="5" >
                       <span class="highlight"></span><span class="bar"></span>
-                      <label class="form-label-new lble">Work Area STD Code</label>
+                      <label class="form-label-new lble">WORK AREA STD CODE</label>
                       <div class="clear"></div>
                     </div>  
                   </div>
@@ -372,7 +372,7 @@ $(".top").click(function() {
                     <div>
                       <input type="text" class="form-control inp-fld" id="work_number" name="work_number"  required  onkeypress="return fnAllowNumeric(event)" maxlength="10" >
                       <span class="highlight"></span><span class="bar"></span>
-                      <label class="form-label-new lble">Phone Number</label>
+                      <label class="form-label-new lble">PHONE NUMBER</label>
                       <div class="clear"></div>
                     </div>  
                   </div>
@@ -444,7 +444,7 @@ $(".top").click(function() {
 					
           <div class="col-xs-6 form-padding">
                     <div class="form-control inp-fld" style="height:50px; position: relative; padding: 0px 0px;">
-                      <span style="position: absolute; z-index: 999; margin: 1px 0 0 8px; font-size: 10px; color: #bababa;">Salary Account With Other Bank:</span>
+                      <span style="position: absolute; z-index: 999; margin: 1px 0 0 8px; font-size: 10px; color: #bababa;">SALARY ACCOUNT WITH OTHER BANK:</span>
                       
                       <div class="btn-grp mrg-top m-status emp-nat" data-toggle="buttons">
       <span class="btn btn-primary outer-brd active"><input type="radio" name="SalaryAccountWithOtherBank" id="SalaryAccountWithOtherBank" checked value="Yes"  >Yes</span>

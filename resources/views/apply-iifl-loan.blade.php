@@ -1925,7 +1925,7 @@ var global_tenure=0;
              url: "{{URL::to('iifl-instant-eligibility')}}",
              data : $('#instant_form').serialize(),
              success: function(msg){
-                $('#upload').show();
+                 
                 console.log(msg);
              }  
             });  

@@ -398,7 +398,7 @@ $(".top").click(function() {
 
               <div class="col-xs-6 form-padding" style="display: none" id="ICICIRelationshipNumber">
                     <div>
-                      <input type="text" name="ICICIRelationshipNumber" id="ICICIRelationshipNumber" class="form-control inp-fld" onkeypress="return fnAllowNumeric(event)" required  >
+                      <input type="text" name="ICICIRelationshipNumber" id="ICICIRelationshipNumber" class="form-control inp-fld" onkeypress="return fnAllowNumeric(event)" required minlength="12" maxlength="16"  >
                       <span class="highlight"></span><span class="bar"></span>
                       <label class="form-label-new lble">ICICI Relationship Number</label>
                       <div class="clear"></div>
@@ -1182,7 +1182,7 @@ var inputs = $("#compareform input[required='required']");
 
  
       if(! $('#compareform').valid()){    
-
+        
         return false;
       }else{
      
@@ -1192,6 +1192,7 @@ var inputs = $("#compareform input[required='required']");
         //console.log($('#compareform'));
         $(".iframeloading").show();
         // $(".icici-credit-submit").hide(); 
+        $('#upload').show();
         $.ajax({  
          type: "POST",  
          url: "{{URL::to('icici-credit-submit')}}",
@@ -1199,25 +1200,23 @@ var inputs = $("#compareform input[required='required']");
          dataType: 'json',
          success: function(msg){
          $(".iframeloading").hide();  
-        
-         //console.log(.id);
+          console.log(msg);
+         
           if(msg==2){
-            // alert("OKAE");
+            
              alert("Something Went Wrong");
 
-           
-            // $('#credit_process').modal('show');        
+             
           } 
           else{
-            //console.log(msg);
-            // alert(" Your Application id is "+msg.id+".Decision is "+msg.Decision+"Thank you for your interest in ICICI Bank Credit Cards. Our representative will get in touch with you within 3 working days subject to your application meeting the eligibility criteria");
+            
             if (msg.Decision =='Declined') {
               $('#upload').hide();
 
             }
-             $('#drop').empty().append(msg.id);
-              $('#drop1').empty().append(msg.Decision);
-              $('#drop2').empty().append(msg.Reason);
+             $('#drop').text(msg.id);
+              $('#drop1').text(msg.Decision);
+              $('#drop2').text(msg.Reason);
              $('#credit_process_sorry').modal('show');
           }
 
@@ -1308,7 +1307,9 @@ var inputs = $("#compareform input[required='required']");
 <script type="text/javascript">
           function Redirect() 
           {
-          window.location="http://beta.erp.rupeeboss.com/Credit_Card_Upload_Docs.aspx?App_Id=drop&CardType=ICICI";
+            var mobile=$('#ResidenceMobileNo').val();
+            var app_id=$('#drop').text();
+            window.location="http://beta.erp.rupeeboss.com/Credit_Card_Upload_Docs.aspx?App_Id="+app_id+"&CardType=ICICI&MobileNo="+mobile;
           }
 </script>
 

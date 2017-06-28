@@ -66,7 +66,7 @@
             <div class="row" id="error" style="display: none;">
                 <div class="col-md-10 col-md-offset-1">
                 <hr>
-                <h1 class="text-center pad">Oooopssss</h1>
+                <h1 class="text-center pad">Thank You..!!</h1>
                 <h4 class="text-center">Your application is under process our representative will get in touch with to you shortly</h4>
                 <p class="text-center">To learn more about IIFL Express Personal Loan <a href="javascript:void(0)">Click Here</a></p>
         
@@ -2015,7 +2015,12 @@ var global_tenure=0;
 
              var result=loan_eligibility(msg.body.ROI,msg.body.maxEmi,msg.body.maxTenure,msg.body.maxloanamt,msg.body.minTenure,msg.body.minloanamt,msg.body.processingfee,msg.body.offerstatus,msg.body.remarks);
             // console.log(msg);
-            console.log(msg);
+            if (msg.head.status == 1) 
+            {
+              // alert('Your application are in process, Our RM will get in touch with you.');
+              $('#error').modal('show');  
+              $('#Instant_Approve').hide();
+            }
             
          }  
       });   
@@ -2037,12 +2042,7 @@ var global_tenure=0;
       $("#input[name='Processingfee']").val(processingfee);
       // var max_installment=maxEmi;
       //  $('#maxEmi').empty().append(max_installment);
-      g_maxloanamt=maxloanamt;
-      if (g_maxloanamt>maxloanamt) {
-        console.log("Loanamount should be less than maximum loanamount");
-      } if(g_maxTenure>maxTenure) {
-       console.log("Loanamount should be less than maximum tenure");
-      }
+      
      }
 </script>
 

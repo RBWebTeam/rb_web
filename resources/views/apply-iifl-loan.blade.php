@@ -1093,7 +1093,7 @@
                     </svg>
                 </span>
                 <span class="input input--nao">
-                <input class="input__field input__field--nao" type="text" name="ROI"  onkeypress="return fnAllowNumeric(event)" value=""  />
+                <input class="input__field input__field--nao" type="text" name="ROI"  onkeypress="return fnAllowNumeric(event)" value="" disabled />
                     <label class="input__label input__label--nao" for="ROI">
                         <span class="input__label-content input__label-content--nao">ROI</span>
                     </label>
@@ -1102,7 +1102,7 @@
                     </svg>
                 </span>
                 <span class="input input--nao">
-                <input class="input__field input__field--nao" type="text" name="Processingfee"  onkeypress="return fnAllowNumeric(event)" value=""  />
+                <input class="input__field input__field--nao" type="text" name="Processingfee"  onkeypress="return fnAllowNumeric(event)" value="" disabled  />
                     <label class="input__label input__label--nao" for="Processingfee">
                         <span class="input__label-content input__label-content--nao">Processing fee</span>
                     </label>
@@ -1921,6 +1921,8 @@ var global_tenure=0;
              // alert('not valid');
 
         }else{
+
+            
             var amt= $("#input[name='AppliedLoanamount']").val();
             var tenure =$("#input[name='Tenure']").val();
             var days =tenure*12;
@@ -1930,11 +1932,13 @@ var global_tenure=0;
             var total =((emi*days)-amt);
             var ttl_payment = parseInt(amt)+parseInt(total);
             $("#input[name='#TotalPayableAmount']").val(ttl_payment);
+            
            $.ajax({  
          type: "POST",  
          url: "{{URL::to('iifl-instant-eligibility')}}",
          data : $('#instant_form').serialize(),
          success: function(msg){
+            $('#upload').show();
             console.log(msg);
          }  
       });  
@@ -1987,6 +1991,9 @@ var global_tenure=0;
              // alert('not valid');
 
         }else{
+            $('#otp').hide();
+
+           $('#confirm_aadharotp').hide();
            $('#Instant_Approve').show();
            $.ajax({  
          type: "POST",  
@@ -2030,13 +2037,18 @@ var global_tenure=0;
           }
       var maxloan=maxloanamt;
        //   console.log(maxloanamt);
-      $('#maxloan').empty().append(maxloan);
+       $('#maxloan').empty().append(maxloan);
       var rateofint=ROI;
       $("#input[name='ROI']").val(ROI);
-      var processfee=processingfee;
-      $("#input[name='Processingfee']").val(processingfee);
-      // var max_installment=maxEmi;
-      //  $('#maxEmi').empty().append(max_installment);
+       var processfee=processingfee;
+       $("#input[name='Processingfee']").val(processingfee);
+       var applied_loanamount = maxloanamt;
+       $("#input[name='AppliedLoanamount']").val(applied_loanamount);
+       var tenure = maxTenure;
+       $("#input[name='Tenure']").val(tenure);
+       var max_installment=maxEmi;
+       $("#input[name='Emi']").val(max_installment);
+
       
      }
 </script>
@@ -2353,6 +2365,46 @@ var global_tenure=0;
                             var newOption = $('<option selected value="'+msg.StateCode+'">'+state+'</option>');
                             $('#CoCurrentState').empty().append(newOption);
                             $('#CoCurrentState').closest( "span" ).addClass( "input--filled" );
+                            // $('#CurrentState').empty().append(state);
+                        }
+                        }
+                    });       
+                }  
+       });    
+            
+       
+        </script>
+
+        <script type="text/javascript">
+            $('#CompanyPin').keyup(function(){
+                console.log($('#CompanyPin').val().length);
+                if ($('#CompanyPin').val().length == 6) {
+                    var pincode =$('#CompanyPin').val();
+                    var v_token ="{{csrf_token()}}";
+                   $.ajax({  
+                        type: "POST",  
+                        url: "{{URL::to('iifl-company-pincode-status')}}",
+                        data : {'_token': v_token,'CompanyPin':pincode},
+                        success: function(msg){
+                            console.log(msg.Status);
+                            console.log(msg.City);
+                            console.log(msg.State);
+                            if (msg.Status =="Fail" ) 
+                            {
+                               alert('Please Enter Valid Pincode');
+                               return false;
+                            }else if(msg.Status =="Success") {
+                            var city =msg.City;
+                            var newOption = $('<option selected value="'+msg.CityCode+'">'+city+'</option>');
+                            $('#CompanyCity').empty().append(newOption);
+                            $('#CompanyCity').closest( "span" ).addClass( "input--filled" );
+
+                            // $('#CurrentCity').empty().append(city);
+
+                            var state=msg.State;
+                            var newOption = $('<option selected value="'+msg.StateCode+'">'+state+'</option>');
+                            $('#CompanyState').empty().append(newOption);
+                            $('#CompanyState').closest( "span" ).addClass( "input--filled" );
                             // $('#CurrentState').empty().append(state);
                         }
                         }

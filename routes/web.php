@@ -124,6 +124,7 @@ Route::post('iifl-doc-upload','LoanController@iifl_doc_upload');
 Route::post('iifl-finanacial-doc-upload','LoanController@iifl_financial_doc_upload');
 Route::post('iifl-pincode-status','LoanController@iifl_pincode_status');
 Route::post('iifl-co-pincode-status','LoanController@iifl_co_pincode_status');
+Route::post('iifl-company-pincode-status','LoanController@iifl_company_pincode_status');
 // Creditcardform
 Route::get('credit-card-form','CreditcardController@credit_card_form');
 Route::post('credit-submit','CreditcardController@credit_form_submit');
@@ -285,5 +286,6 @@ Route::post('view-your-application','TrackapplicationController@tracking_sub');
 
 Route::get('icici-dc','CreditcardController@icici_dc');
 
-
+//working capital-emi-calculator
+Route::post('working-capital-emi-calculator-api','CalculatorController@working_calculator');
 

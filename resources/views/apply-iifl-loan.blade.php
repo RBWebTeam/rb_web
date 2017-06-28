@@ -1803,12 +1803,13 @@ var global_tenure=0;
             $('#LoanTenure').empty().append(days);
             $('#loantenure').empty().append(days);
             $('#RateOfInt').empty().append(a);
-            $('#intrest').empty().append(applied_loan);
+            $('#intrest').empty().append(a);
             $('#AppliedLoanamount').val(applied_loan);
             $('#Tenure').val(days);
             $('#ROI').val(a);
             $('#Emi').val(EMI);
             $('#EquatedMonthly').text(EMI);
+            $('#e_m_i').text(EMI);
             $('#ProcessFee').text(fee);
             $('#process_fee').text(fee);
             $('#TotalPayableAmount').val(applied_loan);
@@ -1871,11 +1872,7 @@ var global_tenure=0;
             // console.log(msg.head);
             console.log(msg.head.status);
             if (msg.head.status == 1) {
-                //  if($( "input[name=CoapplicantFlag]:checked" ).val()==1){
-                //     $('#co_applicant').show();
-                // }else{
-                //     $('#otp').show();
-                // } 
+                
                 alert('Your application are in process, Our RM will get in touch with you.');          
             } 
             // else 
@@ -2015,12 +2012,7 @@ var global_tenure=0;
 
              var result=loan_eligibility(msg.body.ROI,msg.body.maxEmi,msg.body.maxTenure,msg.body.maxloanamt,msg.body.minTenure,msg.body.minloanamt,msg.body.processingfee,msg.body.offerstatus,msg.body.remarks);
             // console.log(msg);
-            if (msg.head.status == 1) 
-            {
-              // alert('Your application are in process, Our RM will get in touch with you.');
-              $('#error').modal('show');  
-              $('#Instant_Approve').hide();
-            }
+            
             
          }  
       });   
@@ -2032,6 +2024,9 @@ var global_tenure=0;
           if(offer=="Rejected"){
             $('#Instant_Approve').hide();
          alert("Thank You For Choosing IIFL. \n Your application has been rejected due to internal credit policy.\n Reason: "+error_msg);
+          }else if(offer == null){
+            $('#Instant_Approve').hide();
+         alert("Thank You For Choosing IIFL. \n Your application has been rejected due to internal credit policy.\n Reason:" );
           }
       var maxloan=maxloanamt;
        //   console.log(maxloanamt);

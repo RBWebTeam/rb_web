@@ -17,17 +17,17 @@
 	
       <div class="form-group">
        <label class="control-label" for="Loan Amount">Turnover/Topline</label>
-       <input type="text" name="fturnover" class="form-control" id="fturnover" placeholder="Turnover/Topline" onkeypress="return isNumberKey(event)"    required > 
+       <input type="text" name="turnover" class="form-control" id="turnover" placeholder="Turnover/Topline" onkeypress="return isNumberKey(event)"    required > 
      </div>
 
  <div class="form-group">
        <label class="control-label" for="Loan Amount">Profit Before Tax</label>
-       <input type="text" name="fprofitbefore" class="form-control" id="fprofitbefore" placeholder="Profit Before Tax" onkeypress="return isNumberKey(event)"    required > 
+       <input type="text" name="profitbefore" class="form-control" id="profitbefore" placeholder="Profit Before Tax" onkeypress="return isNumberKey(event)"    required > 
      </div>
 
      <div class="form-group">
       <label class="control-label" for="Interest Rate">Depreciation</label>
-      <input type="text" name="fdepreciation"  class="form-control" id="fdepreciation" placeholder="Depreciation" onkeypress="return isNumberKey(event)" required >
+      <input type="text" name="depreciation"  class="form-control" id="depreciation" placeholder="Depreciation" onkeypress="return isNumberKey(event)" required >
     </div>
 
     <div class="form-group right-block">
@@ -45,21 +45,21 @@
 	<div class="heigh-bt2 pad1 white">
       <div class="form-group">
        <label class="control-label" for="Loan Amount">Inventory</label>
-       <input type="text" name="finventory" class="form-control" id="finventory" placeholder="Inventory" onkeypress="return isNumberKey(event)" required > 
+       <input type="text" name="inventory" class="form-control" id="inventory" placeholder="Inventory" onkeypress="return isNumberKey(event)" required > 
     </div>
 
      <div class="form-group">
       <label class="control-label" for="Interest Rate">Debtors</label>
-      <input type="text" name="fdebtors"   class="form-control" id="fdebtors" placeholder="Debtors" onkeypress="return isNumberKey(event)"  required >
+      <input type="text" name="debtors"   class="form-control" id="debtors" placeholder="Debtors" onkeypress="return isNumberKey(event)"  required >
     </div>
     <div class="form-group right-block">
      <label class="control-label" for="Loan Tenure">Creditors</label>
-     <input type="text" name="fcreditors" class="form-control" id="fcreditors" placeholder="Creditors" onkeypress="return isNumberKey(event)" required >
+     <input type="text" name="creditors" class="form-control" id="creditors" placeholder="Creditors" onkeypress="return isNumberKey(event)" required >
 	 </div>
 	 
 	 <div class="form-group">
       <label class="control-label" for="Interest Rate">Existing OD/CC</label>
-      <input type="text" name="fexisting"   class="form-control" id="fexisting" placeholder="Existing OD/CC" onkeypress="return isNumberKey(event)"   required >
+      <input type="text" name="existing"   class="form-control" id="existing" placeholder="Existing OD/CC" onkeypress="return isNumberKey(event)"   required >
     </div>
      <div>
 
@@ -119,7 +119,7 @@
 
            $.ajax({  
              type: "POST",  
-             url: "{{URL::to('working-capital-emi-calculator-api')}}",
+             url: "{{URL::to('api/working-capital-emi-calculator-api')}}",
              data : $("#calculator_form").serialize(),
             dataType: 'json',
         //   data: {_token :_token,username:username,password:password},

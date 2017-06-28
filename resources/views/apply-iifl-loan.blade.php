@@ -1916,35 +1916,38 @@ var global_tenure=0;
 <!-- Instant Approve -->
 <script type="text/javascript">
     $('#instant_approve').click(function(){
-        // alert('ok');
-        if(! $('#instant_form').valid()){
+    if(! $('#instant_form').valid()){
              // alert('not valid');
-
+             return false;
         }else{
-
-            
-            var amt= $("#input[name='AppliedLoanamount']").val();
-            var tenure =$("#input[name='Tenure']").val();
-            var days =tenure*12;
-            var roi =$('#input[name=ROI]').val();
-            var rate=roi/12/100;
-            var emi =amt * rate * (Math.pow(1 + rate, days) / (pow(1 + rate, days) - 1));
-            var total =((emi*days)-amt);
-            var ttl_payment = parseInt(amt)+parseInt(total);
-            $("#input[name='#TotalPayableAmount']").val(ttl_payment);
-            
-           $.ajax({  
-         type: "POST",  
-         url: "{{URL::to('iifl-instant-eligibility')}}",
-         data : $('#instant_form').serialize(),
-         success: function(msg){
-            $('#upload').show();
-            console.log(msg);
-         }  
-      });  
+         $.ajax({  
+             type: "POST",  
+             url: "{{URL::to('iifl-instant-eligibility')}}",
+             data : $('#instant_form').serialize(),
+             success: function(msg){
+                $('#upload').show();
+                console.log(msg);
+             }  
+            });  
         }
-
     });
+
+    $('#AppliedLoanamount, #Tenure').on('input', function () {
+        var applied_loan = parseInt($("#input[name='AppliedLoanamount']").val());
+        var no_of_days = parseFloat($("#input[name='Tenure']").val())*12;
+        var a = $("#input[name='ROI']").val();
+        var Rate = a/12/100;
+        var installment_iifl=applied_loan * Rate * (Math.pow(1 + Rate, no_of_days) / (Math.pow(1 + Rate, no_of_days) - 1));
+        var installment =Math.round(installment_iifl);
+        // if(isNaN( installment) || installment=='Infinity'){
+        //   installment=0;
+        // }
+        var total =((installment*no_of_days)-applied_loan);
+        
+        var ttl_payment = parseInt(applied_loan) + parseInt(total);
+         $("#input[name='TotalPayableAmount']").val(ttl_payment);
+        
+});
 </script>
 
 

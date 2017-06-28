@@ -701,4 +701,22 @@ $url = $this::$url_static."/BankAPIService.svc/updateIIFLRevisedQuote";
     
      return response()->json( $obj);
   }
+
+  public function iifl_company_pincode_status(Request $req){
+    // print_r($req->all());
+    $data['CRMLeadID']=Session::get('leadno');
+    $data['Pincode']=$req->CompanyPin;
+    $post_data=json_encode($data);
+    // print_r($post_data);
+    $url = $this::$url_static."/BankAPIService.svc/getIIFLPincodeDetail";
+     $result=$this->call_json_data_api($url,$post_data);
+     $http_result=$result['http_result'];
+     $error=$result['error'];
+     $st=str_replace('"{', "{", $http_result);
+     $s=str_replace('}"', "}", $st);
+     $m=$s=str_replace('\\', "", $s);
+     $obj = json_decode($m);
+    
+     return response()->json( $obj);
+  }
 }

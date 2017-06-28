@@ -22,14 +22,14 @@ class CalculatorController extends CallApiController
              $data=NULL;
              
  		 try{             
-          $turnover    = $req->fturnover;
-          $profitbefore =$req->fprofitbefore;
-          $depreciation =$req->fdepreciation;
+          $turnover    = $req->turnover;
+          $profitbefore =$req->profitbefore;
+          $depreciation =$req->depreciation;
           $financecost  =$req->financecost;
-          $inventory    =$req->finventory;
-          $debtors      =$req->fdebtors;
-          $creditors    =$req->fcreditors;
-          $existing     =$req->fexisting;
+          $inventory    =$req->inventory;
+          $debtors      =$req->debtors;
+          $creditors    =$req->creditors;
+          $existing     =$req->existing;
 
 
            $turnovertemp =0;
@@ -42,7 +42,7 @@ class CalculatorController extends CallApiController
             if($turnovertemp < $temp){
                $proposedlimit = $turnovertemp;
             }else{
-               $proposedlimit = $temp;
+               //$proposedlimit = $temp;
             }
         
              

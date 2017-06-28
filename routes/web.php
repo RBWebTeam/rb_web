@@ -285,6 +285,5 @@ Route::post('view-your-application','TrackapplicationController@tracking_sub');
 
 Route::get('icici-dc','CreditcardController@icici_dc');
 
-//working capital-emi-calculator
-Route::post('working-capital-emi-calculator-api','CalculatorController@working_calculator');
+
 

@@ -1920,7 +1920,7 @@ var global_tenure=0;
              url: "{{URL::to('iifl-instant-eligibility')}}",
              data : $('#instant_form').serialize(),
              success: function(msg){
-                $('#upload').show();
+              $('#upload').show();
                 console.log(msg);
              }  
             });  
@@ -1945,22 +1945,6 @@ var global_tenure=0;
 });
 </script>
 
-
-<!-- If Co-Applicant Exist -->
-<!-- <script type="text/javascript">
-  $('#have').change(function(){
- 
-  $("#co_applicant").show();
-
-  });
-</script>
-
-<script type="text/javascript">
-  $('#not_have').change(function(){
- 
-  $("#co_applicant").hide();
-  });
-</script> -->
 <!-- aadhar oyp &verify otp -->
 <script type="text/javascript">
     $('#aadhar_otp').click(function(){
@@ -1999,53 +1983,54 @@ var global_tenure=0;
          data : $('#confirm_aadharotp').serialize(),
          success: function(msg){
               console.log(msg);
-           
-            
-         }  
+        }  
       });   
         }
     });
-    </script>
+</script>
+
 <script type="text/javascript">
     $('#proceed_without_aadhar').click(function(){
          $('#Instant_Approve').show();
-        $.ajax({  
+         $.ajax({  
          type: "POST",  
          url: "{{URL::to('iifl-offer-status')}}?_token="+"{{ csrf_token() }}",
          data : $('').serialize(),
          success: function(msg){
 
-             var result=loan_eligibility(msg.body.ROI,msg.body.maxEmi,msg.body.maxTenure,msg.body.maxloanamt,msg.body.minTenure,msg.body.minloanamt,msg.body.processingfee,msg.body.offerstatus,msg.body.remarks);
+          var result=loan_eligibility(msg.body.ROI,msg.body.maxEmi,msg.body.maxTenure,msg.body.maxloanamt,msg.body.minTenure,msg.body.minloanamt,msg.body.processingfee,msg.body.offerstatus,msg.body.remarks);
             // console.log(msg);
-            
-            
-         }  
+        }  
       });   
        
     });
-    function loan_eligibility(ROI,maxEmi,maxTenure,maxloanamt,minTenure,minloanamt,processingfee,offerstatus,error_msg){
+    function loan_eligibility(ROI,maxEmi,maxTenure,maxloanamt,minTenure,minloanamt,processingfee,offerstatus,error_msg)
+    {
           var offer=offerstatus;
           // console.log(offer);
-          if(offer=="Rejected"){
+    if(offer=="Rejected")
+    {
             $('#Instant_Approve').hide();
          alert("Thank You For Choosing IIFL. \n Your application has been rejected due to internal credit policy.\n Reason: "+error_msg);
-          }else if(offer == null){
+    }
+    else if(offer == null)
+    {
             $('#Instant_Approve').hide();
          alert("Thank You For Choosing IIFL. \n Your application has been rejected due to internal credit policy.\n Reason:" );
           }
-      var maxloan=maxloanamt;
-       //   console.log(maxloanamt);
-       $('#maxloan').empty().append(maxloan);
-      var rateofint=ROI;
-      $("#input[name='ROI']").val(ROI);
-       var processfee=processingfee;
-       $("#input[name='Processingfee']").val(processingfee);
-       var applied_loanamount = maxloanamt;
-       $("#input[name='AppliedLoanamount']").val(applied_loanamount);
-       var tenure = maxTenure;
-       $("#input[name='Tenure']").val(tenure);
-       var max_installment=maxEmi;
-       $("#input[name='Emi']").val(max_installment);
+         var maxloan=maxloanamt;
+         //   console.log(maxloanamt);
+         $('#maxloan').empty().append(maxloan);
+         var rateofint=ROI;
+         $("#input[name='ROI']").val(ROI);
+         var processfee=processingfee;
+         $("#input[name='Processingfee']").val(processingfee);
+         var applied_loanamount = maxloanamt;
+         $("#input[name='AppliedLoanamount']").val(applied_loanamount);
+         var tenure = maxTenure;
+         $("#input[name='Tenure']").val(tenure);
+         var max_installment=maxEmi;
+         $("#input[name='Emi']").val(max_installment);
 
       
      }
@@ -2075,13 +2060,16 @@ var global_tenure=0;
      } 
     });
 </script>
+
 <script type="text/javascript">
     $('#proceed').click(function(){
         // alert('ok');
-       if(! $('#financial_details').valid()){
+       if(! $('#financial_details').valid())
+       {
              // alert('not valid');
 
-        }else{
+        }else
+        {
            
         $.ajax({
           url:"{{URL::to('iifl-finanacial-doc-upload')}}" ,  
@@ -2093,22 +2081,21 @@ var global_tenure=0;
           contentType: false,
           success: function(msg){
                  console.log(msg);
-            }
+        }
         });
      } 
     });
 </script>
 <script type="text/javascript">
   function same_as_above(obj,val){
-
      // console.log(obj);
      var atLeastOneIsChecked = $('#same_id:checkbox:checked').length > 0;
      // console.log(atLeastOneIsChecked);
-    if (atLeastOneIsChecked == true) {
+     if (atLeastOneIsChecked == true) {
       // alert("ok");
 
-    $('#PermanentAddress1').val($('#CurrentAddress1').val());
-    $('#PermanentAddress1').closest( "span" ).addClass( "input--filled" );
+     $('#PermanentAddress1').val($('#CurrentAddress1').val());
+     $('#PermanentAddress1').closest( "span" ).addClass( "input--filled" );
      $('#PermanentAddress2').val($('#CurrentAddress2').val());
      $('#PermanentAddress2').closest( "span" ).addClass( "input--filled" );
      $('#PermanentAddress3').val($('#CurrentAddress3').val());
@@ -2135,15 +2122,14 @@ var global_tenure=0;
 
 <script type="text/javascript">
   function co_same_as_above(obj,val){
-
-     // console.log(obj);
+    // console.log(obj);
      var atLeastOneIsChecked = $('#co_same_id:checkbox:checked').length > 0;
      // console.log(atLeastOneIsChecked);
     if (atLeastOneIsChecked == true) {
       // alert("ok");
 
-    $('#CoPermanentAddress1').val($('#CoCurrentAddress1').val());
-    $('#CoPermanentAddress1').closest( "span" ).addClass( "input--filled" );
+     $('#CoPermanentAddress1').val($('#CoCurrentAddress1').val());
+     $('#CoPermanentAddress1').closest( "span" ).addClass( "input--filled" );
      $('#CoPermanentAddress2').val($('#CoCurrentAddress2').val());
      $('#CoPermanentAddress2').closest( "span" ).addClass( "input--filled" );
      $('#CoPermanentAddress3').val($('#CoCurrentAddress3').val());
@@ -2409,6 +2395,4 @@ var global_tenure=0;
                     });       
                 }  
        });    
-            
-       
-        </script>
+   </script>

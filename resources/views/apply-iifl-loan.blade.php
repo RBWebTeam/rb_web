@@ -1688,6 +1688,7 @@ var global_tenure=0;
             var stay_at = $('#city').val();
             // console.log(stay_at);
             $('#CurrentCity').val(stay_at);
+            $('#CurrentCity').closest( "span" ).addClass( "input--filled" );
             $('#PermanentCity').val(stay_at);
             $('#City').val(stay_at);
             // var name= $('#Company_Name option:selected').text();
@@ -1868,18 +1869,12 @@ var global_tenure=0;
              url: "{{URL::to('apply-iifl-loan-applicant1')}}",
              data : $('#applicant_deatils').serialize(),
              success: function(msg){
-            // console.log(msg.head);return false;
-            // console.log(msg.head);
-            console.log(msg.head.status);
-            if (msg.head.status == 1) {
+             console.log(msg.head.status);
+             if (msg.head.status == 1) {
                 
-                alert('Your application are in process, Our RM will get in touch with you.');          
+                alert("Reason: "+status_description);          
             } 
-            // else 
-            // {
-            //   // alert('Your application are in process, Our RM will get in touch with you.');
-            //   $('#error').show();
-            // }
+            
          }  
       }); 
         }

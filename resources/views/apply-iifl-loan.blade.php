@@ -2063,6 +2063,10 @@ var global_tenure=0;
           processData: false,
           contentType: false,
           success: function(msg){
+            if (msg.head.status == 1) {
+                
+                alert("Reason: "+status_description);          
+            } 
             $('#upload').hide();
             $('#financial_doc').show();
                  console.log(msg);

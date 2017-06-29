@@ -33,6 +33,10 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <style>
 body {background:#eee;}
+#logo img {margin:0 auto;}
+.pg-titl {margin:0 auto; width:80%;}
+.pg-titl {padding:20px;}
+
 </style>
   </head>
   <body>
@@ -46,15 +50,19 @@ body {background:#eee;}
     <div class="container">
       <div class="row">
         <div class="col-md-12 text-left fh5co-heading animate-box fadeInUp animated">
-          <h3 class="text-center loan-head">ICICI Credit Card</h3>
-          </div>        
+		  
+		  <div id="logo" class="text-center"><img id="myImage" src="http://beta.erp.rupeeboss.com/personalloan/images/logo.png" class=""></div>
+    
+      <h4 class="text-center pg-titl">ICICI Credit Card</h4>
+          </div> 
+<br>		  
         <div class="col-md-12">
           <div class="row pad white-bg box-shadow">
   <br>
 <div class="col-md-3">
      
    <div class="btn-grp  income-tab" data-toggle="buttons" id="income">
-     <h3 class="pad" style="border:1px dashed #ccc;">Net Annual Income</h3>
+     <h3 class="pad" style="border:1px dashed #ccc; text-align:center;">Net Annual Income</h3>
       <span class="btn btn-default btn-block active" id="2.5_button" onclick="set_annual_income('>2.5Lacs')">
      <input type="radio">> 2.5 LACS
       </span>

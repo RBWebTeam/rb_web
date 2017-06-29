@@ -21,11 +21,11 @@
   <script type="text/javascript" src="js/icici_js/bootstrap-material-datetimepicker.js"></script>
    
 </script>
+
+
 <script type="text/javascript" src="js/icici_js/jquery.datepicker.js"></script>
-<script src="js/icici_js/classie.js"></script>
-<script src="js/bootstrap.min.js" type="text/javascript"></script>  
-<link href="css/jquery-ui.min.css" rel="Stylesheet"></link>
-<script src="js/jquery-ui.js" ></script>
+
+
     
 <script src="js/jquery.mask.js"></script>
 <script src="js/icici_js/jquery.validate.min.js"></script>
@@ -66,7 +66,10 @@
     padding: 3px 5px;
     font-size: 12px;
 }
-.lastReporteddob {height:49px;border: none;}
+.lastReporteddob {height:46px;border: none;} 
+.hdn5 {margin:0px !important}
+#DateOfBirth {cursor:pointer;}
+.text-lower {margin-bottom: 10px;height: 50px;position: relative;}
   </style>
   
   <script>
@@ -86,7 +89,7 @@ $(".top").click(function() {
 });
 </script>
 
-<form class="" id="compareform" role="form" method="POST" >
+<form class="form12" id="compareform" role="form" method="POST" >
                {{ csrf_field() }}
                
 <div>
@@ -174,8 +177,8 @@ $(".top").click(function() {
             <div class="col-xs-6 form-padding">
                     <div class="form-control" style="margin-bottom:10px; height:50px; position:relative; padding: 0;">
                     
-                      <input type="text" class="form-control lastReporteddob" id="DateOfBirth" name="DateOfBirth" placeholder="DATE OF BIRTH*" style="color:#636363 !important;" required>
-            <a href="#DateOfBirth"><i class="fa fa-calendar" style="font-size: 25px;position: absolute;top: 15px;right: 11px;color: #3f7cb3;"></i></a>
+                      <input type="text" class="form-control lastReporteddob" id="datepicker" name="DateOfBirth" placeholder="DATE OF BIRTH*" style="color:#636363 !important;" required>
+           <i class="fa fa-calendar" id="DateOfBirth" style="font-size: 25px;position: absolute;top: 15px;right: 11px;color: #3f7cb3;"></i>
                     </div>
                   </div>
                   
@@ -287,7 +290,7 @@ $(".top").click(function() {
     
     <div class="panel-heading" role="tab" id="headingTwo">
                   <h4 class="panel-title">
-                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                    <a role="button" class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
           <button class="ok-btn"><span class="glyphicon glyphicon-ok"></span></button> &nbsp; COMPANY DETAILS
                     </a>
                   </h4>
@@ -317,7 +320,7 @@ $(".top").click(function() {
 
              <div class="col-xs-6 form-padding">
                     <div>
-                      <input type="text" id="work_email" name="work_email" class="form-control inp-fld" oninput="mail('work_email')"  required >
+                      <input type="text" id="work_email" name="work_email" class="form-control text-lower" oninput="mail('work_email')"  required >
                       <span class="highlight"></span><span class="bar"></span>
                       <label class="form-label-new lble">WORK EMAIL</label>
                       <div class="clear"></div>
@@ -409,7 +412,7 @@ $(".top").click(function() {
 					
           <div class="col-xs-6 form-padding">
                     <div class="form-control inp-fld" style="height:50px; position: relative; padding: 0px 0px;">
-                      <span style="position: absolute; z-index: 999; margin: 1px 0 0 8px; font-size: 10px; color: #bababa;"> OTHER BANK SALARY ACCT:</span>
+                      <span style="position: absolute; z-index: 999; margin: 1px 0 0 8px; font-size: 10px; color: #bababa;"> OTHER BANK SALARY ACCT.</span>
                       
                       <div class="btn-grp mrg-top m-status emp-nat" data-toggle="buttons">
       <span class="btn btn-primary outer-brd active"><input type="radio" name="SalaryAccountWithOtherBank" id="SalaryAccountWithOtherBank" checked value="Yes"  >Yes</span>
@@ -500,7 +503,7 @@ $(".top").click(function() {
                     </select> 
             </div>
       
-      <div class="col-xs-12"><P style="padding:10px; display:-webkit-inline-box;" class="pull-left"><input type="checkbox" name="same" id="same_id" onclick="same_as_above('same_id');"/> &nbsp;&nbsp;Same As Above</p></div>
+      <div class="col-xs-12"><P style="padding:10px;font-size: 14px;line-height: 16px; display:-webkit-inline-box;" class="pull-left"><input type="checkbox" name="same" id="same_id" onclick="same_as_above('same_id');"/> &nbsp;&nbsp;Same As Above</p></div>
       
 	  
 	  <h4 class="txt-tlt pull-left hdn5">Permanent Address Details</h4>
@@ -651,7 +654,7 @@ $(".top").click(function() {
          
       <div class="panel-heading" role="tab" id="headingSix">
                   <h4 class="panel-title">
-                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSix" aria-expanded="true" aria-controls="collapseSix">
+                    <a role="button" class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
           <button class="ok-btn"><span class="glyphicon glyphicon-ok"></span></button> &nbsp;IDENTITY DETAILS
                     </a>
                   </h4>
@@ -1299,20 +1302,7 @@ var inputs = $("#compareform input[required='required']");
 
 </script>
 
-<script type="text/javascript">
-    var d = new Date();
-    var year = d.getFullYear() ;
-    d.setFullYear(year);
 
-    $(".lastReporteddob").datepicker({ dateFormat: "yy-mm-dd",
-      changeMonth: true,
-      changeYear: true,
-      maxDate: year,
-      minDate: "-100Y",
-      yearRange: '-100:' + year + '',
-      defaultDate: d
-    });
-</script>
 
 <script type="text/javascript">
   function email(obj,val){
@@ -1540,6 +1530,28 @@ var inputs = $("#compareform input[required='required']");
 
 </script>
 
+<script src="js/icici_js/classie.js"></script>
+<script src="js/bootstrap.min.js" type="text/javascript"></script>  
+<link href="css/jquery-ui.min.css" rel="Stylesheet"></link>
+<script src="js/jquery-ui.js" ></script>
+<script type="text/javascript" src="js/datepicker.js"></script>
+
+
+<script>
+		  $( function() {
+			$( '#datepicker,#datepicker1,#datepicker2' ).datepicker({
+				changeMonth:true,
+				changeYear:true,
+				dateFormat: 'dd-mm-yy'
+			});
+		  });
+	 </script>
+
+<script>
+  $("#DateOfBirth").click(function() {
+    $(".lastReporteddob").datepicker('show');
+});
+</script>
 
 <!-- var y=$(':input[required]:hidden');
           y.each(function( index, element ) {

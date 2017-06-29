@@ -1009,7 +1009,7 @@
                 <div class="col-md-1"></div>
                 
                 <h3 class="col-md-12 mrg-tpp">OTP to verify your Aadhar Details:</h3>
-                <span class="input input--nao">
+                <span class="input input--nao input--filled">
                     <input class="input__field input__field--nao" type="text" name="Aadharno" id="Aadharno" oninput="aadharnum('Aadharno')" required minlength="12" maxlength="12"  />
                     <label class="input__label input__label--nao" for="input-1">
                         <span class="input__label-content input__label-content--nao">Enter Your Aadhar No.</span>
@@ -1021,7 +1021,7 @@
                 </span>
                  
                 
-                <h4 class="text-danger small-txt">OTP has been sent to your Registred Mobile No.</h4>
+                <!-- <h4 class="text-danger small-txt">OTP has been sent to your Registred Mobile No.</h4> -->
                 <div class="col-md-12"><a class="btn btn-primary btn-outline with-arrow mrg-btm otp" id="aadhar_otp" href="javascript:void(0)">Get OTP<i class="icon-arrow-right"></i></a></div>
                 </section>
                 <h3 class="mrg-tpp">Proceed Without aadhar Number</h3>
@@ -1062,13 +1062,13 @@
             <div class="col-md-12">
              <h3>Congratulation!!<i><b class="text-primary"><span id="first_name"></span></b></i>&nbsp;You are eligible for a loan of <b>₹<span id="maxloan"></span></b> </h3>
              <br>
-             <h6>You Are Applicable For Minimum Loanamount<b>₹<span id="minloanamt"></span></b>.Minimum Tenure<b><span id="minTenure"></span>yrs</b></h6>
+             <h6>You Are Applicable For Minimum Loanamount<h4><b>₹<span id="minloanamt"></span></b></h4>.<br> Minimum Tenure<h4><b><span id="minTenure"></span>months</b></h4></h6>
             </div>
                 
                 <span class="input input--nao input--filled">
                 <input class="input__field input__field--nao" type="hidden" name="TotalPayableAmount" required  value="" />
                     <input class="input__field input__field--nao" type="text" name="AppliedLoanamount" id="Applied"  onkeypress="return fnAllowNumeric(event)" value="" required />
-                    <label class="input__label input__label--nao" for="AppliedLoanamount">
+                    <label class="input__label input__label--nao" for="Applied">
                         <span class="input__label-content input__label-content--nao">Loan Amount</span>
                     </label>
                     <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
@@ -1077,7 +1077,7 @@
                 </span>
                 <span class="input input--nao input--filled">
                     <input class="input__field input__field--nao" type="text" name="Tenure" id="Period"  onkeypress="return fnAllowNumeric(event)" value="" required />
-                    <label class="input__label input__label--nao" for="Tenure">
+                    <label class="input__label input__label--nao" for="Period">
                         <span class="input__label-content input__label-content--nao">Loan Tenure</span>
                     </label>
                     <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
@@ -1127,22 +1127,22 @@
             <div>
             <section class="mrg-top">
               <h1 class="text-center"><i>Congratulation</i></h1>
-              <h3 class="text-info pad">Your Personal Loan of<b><span id="personal_loan_amount"></span></b></h3>
+              <h3 class="text-info pad">Your Personal Loan of<b>₹<span id="personal_loan_amount"></span></b></h3>
               
             
             <div class="col-md-12">
             <table class="table table-bordered" width="100%">
                 <tbody>
                 <tr>
-                    <td class="bg-info">Rate of Intrest: <b><span id="int"></span></b></td>
-                    <td class="bg-info">Processing Fees: <b><span id="fees"></span></b></td>
-                    <td class="bg-info">EMI: <b><span id="installment_amount"></span></b></td>
-                    <td class="bg-info">Loan Tenure: <b><span id="perid"></span></b></td>
+                    <td class="bg-info">Rate of Intrest: <b><span id="intst"></span>%</b></td>
+                    <td class="bg-info">Processing Fees: <b><span id="fees"></span>%</b></td>
+                    <td class="bg-info">EMI: <b>₹<span id="installment_amount"></span></b></td>
+                    <td class="bg-info">Loan Tenure: <b><span id="perid"></span>years</b></td>
                 </tr>
              </tbody>
              </table>
              
-             <h4>Our representive will get in touch with you. Please proceed to upload the necessary document for quick disbursal to learn more about IIFL Express loan <a href="javascript:void(0)"><b class="text-sucsess">Click here</b></a></h4>
+             <h4>Our representive will get in touch with you. Please proceed to upload the necessary document for quick disbursal to learn more about IIFL Express loan </h4>
                 </div>
                 </section>
                 </div>
@@ -1903,10 +1903,8 @@ var global_tenure=0;
              url: "{{URL::to('iifl-instant-eligibility')}}",
              data : $('#instant_form').serialize(),
              success: function(msg){
-
-              $('#instant_form').hide();   
-
-
+              $('#otp').hide();
+              $('#Instant_Approve').hide();   
               $('#upload').show();
 
              }  
@@ -2013,14 +2011,14 @@ var global_tenure=0;
          $('#minTenure').empty().append(minTenure);
          
          var ROI=ROI;
-         var rateofint =Math.round(ROI);
-         $("input[name='ROI']").val(rateofint);
-         $("#int").empty().append(rateofint);
+         
+         $("input[name='ROI']").val(ROI);
+         $("#intst").empty().append(ROI);
 
          var processingfee=processingfee;
-         var process_fee =Math.round(processingfee);
-         $("input[name='Processingfee']").val(process_fee);
-         $("#fees").empty().append(process_fee);
+         
+         $("input[name='Processingfee']").val(processingfee);
+         $("#fees").empty().append(processingfee);
 
          var maxloanamt = maxloanamt;
          var applied_loan =Math.round(maxloanamt);
@@ -2028,7 +2026,7 @@ var global_tenure=0;
          $("#personal_loan_amount").empty().append(applied_loan);
          console.log(maxloanamt);
 
-         var maxTenure = maxTenure;
+         var maxTenure = maxTenure/12;
          var tenure =Math.round(maxTenure);
          $("input[name='Tenure']").val(tenure);
          console.log(maxTenure);
@@ -2065,11 +2063,15 @@ var global_tenure=0;
           success: function(msg){
             if (msg.head.status == 1) {
                 
-                alert("Reason: "+status_description);          
-            } 
-            $('#upload').hide();
-            $('#financial_doc').show();
-                 console.log(msg);
+                alert("Reason: "+status_description); 
+                    $('#financial_doc').hide(); 
+                    $('#error').show(); 
+            }
+              $('#upload').hide();
+              $('#financial_doc').show();
+                console.log(msg);
+             
+            
             }
         });
      } 

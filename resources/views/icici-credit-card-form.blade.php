@@ -1203,7 +1203,15 @@ var inputs = $("#compareform input[required='required']");
 
             
           });
-          console.log(visible_err);
+           x.each(function( index, element ) {
+            var id=element.getAttribute("id");
+             var have_value=$('#'+id).val();
+              if(!have_value){
+                $("#"+id).addClass("error");
+              }
+            
+          });
+          //console.log(visible_err);
           if(visible_err==1){
            return false;
          }else{
@@ -1240,7 +1248,7 @@ var inputs = $("#compareform input[required='required']");
          
         return false;
       }else{
-      
+      //THIS IS USELESS 
     if( $('#ResidenceMobileNo').val()!='' && $('#PerResidencePincode').val()!='' && $('#ResidencePincode').val()!='' && $('#work_number').val()!='' && $('#designation').val()!='' && $('#work_email').val()!='' && $('#CompanyName').val()!='' && $('#preferred_address').val()!='' && $('#NameOnCard').val()!='' && $('#ApplicantFirstName').val()!='' && $('#net_annual_income').val()!='' && $('#DateOfBirth').val()!='' && $('#CompanyName').val()!='' && $('#ResidenceAddress1').val()!='' && 
     $('#PerResidenceAddress1').val()!='' && $('#ResidencePhoneNumber').val()!='' && $('#ApplicationNumber').val()!=''){
 

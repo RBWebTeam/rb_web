@@ -376,7 +376,7 @@ public function dropdown(Request $req){
     public function applicant(Request $req){
        $data=$req->all();
        $json_data=json_encode($data);
-      print_r($data);
+      // print_r($data);
        $post_data = '{
    "head": {
     "requestCode": "PLRQCL01",
@@ -391,7 +391,7 @@ public function dropdown(Request $req){
 }';
     //call API here to save in DB
         //$post=json_encode($post_data);
-     //print_r($post_data);exit();
+     // print_r($post_data);exit();
 
     $url = $this::$url_static."/BankAPIService.svc/createIIFLAppDtls";
     $result=$this->call_json_data_api($url,$post_data);
@@ -413,7 +413,7 @@ public function dropdown(Request $req){
      }
 
      
-     // print_r($obj);
+     // print_r($obj);exit();
 
      return response()->json( $obj);
       
@@ -586,7 +586,7 @@ $url = $this::$url_static."/BankAPIService.svc/updateIIFLRevisedQuote";
     $s=str_replace('}"', "}", $st);
     $m=$s=str_replace('\\', "", $s);
     $obj = json_decode($m);
-    return $obj;
+    return response()->json( $obj);
     }
 
     public function iifl_doc_upload(Request $req){

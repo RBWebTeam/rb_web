@@ -1,4 +1,4 @@
-@include('layout.header')
+ @include('layout.header')
     <link rel="shortcut icon" href="favicon.ico">
 
     <link href="https://fonts.googleapis.com/css?family=Raleway:200,300,400,700" rel="stylesheet">
@@ -66,7 +66,7 @@
             <div class="row" id="error" style="display: none;">
                 <div class="col-md-10 col-md-offset-1">
                 <hr>
-                <h1 class="text-center pad">Oooopssss</h1>
+                <h1 class="text-center pad">Thank You..!!</h1>
                 <h4 class="text-center">Your application is under process our representative will get in touch with to you shortly</h4>
                 <p class="text-center">To learn more about IIFL Express Personal Loan <a href="javascript:void(0)">Click Here</a></p>
         
@@ -1093,7 +1093,7 @@
                     </svg>
                 </span>
                 <span class="input input--nao">
-                <input class="input__field input__field--nao" type="text" name="ROI"  onkeypress="return fnAllowNumeric(event)" value=""  />
+                <input class="input__field input__field--nao" type="text" name="ROI"  onkeypress="return fnAllowNumeric(event)" value="" disabled />
                     <label class="input__label input__label--nao" for="ROI">
                         <span class="input__label-content input__label-content--nao">ROI</span>
                     </label>
@@ -1102,7 +1102,7 @@
                     </svg>
                 </span>
                 <span class="input input--nao">
-                <input class="input__field input__field--nao" type="text" name="Processingfee"  onkeypress="return fnAllowNumeric(event)" value=""  />
+                <input class="input__field input__field--nao" type="text" name="Processingfee"  onkeypress="return fnAllowNumeric(event)" value="" disabled  />
                     <label class="input__label input__label--nao" for="Processingfee">
                         <span class="input__label-content input__label-content--nao">Processing fee</span>
                     </label>
@@ -1688,6 +1688,7 @@ var global_tenure=0;
             var stay_at = $('#city').val();
             // console.log(stay_at);
             $('#CurrentCity').val(stay_at);
+            $('#CurrentCity').closest( "span" ).addClass( "input--filled" );
             $('#PermanentCity').val(stay_at);
             $('#City').val(stay_at);
             // var name= $('#Company_Name option:selected').text();
@@ -1803,12 +1804,13 @@ var global_tenure=0;
             $('#LoanTenure').empty().append(days);
             $('#loantenure').empty().append(days);
             $('#RateOfInt').empty().append(a);
-            $('#intrest').empty().append(applied_loan);
+            $('#intrest').empty().append(a);
             $('#AppliedLoanamount').val(applied_loan);
             $('#Tenure').val(days);
             $('#ROI').val(a);
             $('#Emi').val(EMI);
             $('#EquatedMonthly').text(EMI);
+            $('#e_m_i').text(EMI);
             $('#ProcessFee').text(fee);
             $('#process_fee').text(fee);
             $('#TotalPayableAmount').val(applied_loan);
@@ -1867,22 +1869,12 @@ var global_tenure=0;
              url: "{{URL::to('apply-iifl-loan-applicant1')}}",
              data : $('#applicant_deatils').serialize(),
              success: function(msg){
-            // console.log(msg.head);return false;
-            // console.log(msg.head);
-            console.log(msg.head.status);
-            if (msg.head.status == 1) {
-                //  if($( "input[name=CoapplicantFlag]:checked" ).val()==1){
-                //     $('#co_applicant').show();
-                // }else{
-                //     $('#otp').show();
-                // } 
-                alert('Your application are in process, Our RM will get in touch with you.');          
+             console.log(msg.head.status);
+             if (msg.head.status == 1) {
+                
+                alert("Reason: "+status_description);          
             } 
-            // else 
-            // {
-            //   // alert('Your application are in process, Our RM will get in touch with you.');
-            //   $('#error').show();
-            // }
+            
          }  
       }); 
         }
@@ -1919,49 +1911,41 @@ var global_tenure=0;
 <!-- Instant Approve -->
 <script type="text/javascript">
     $('#instant_approve').click(function(){
-        // alert('ok');
-        if(! $('#instant_form').valid()){
+    if(! $('#instant_form').valid()){
              // alert('not valid');
-
+             return false;
         }else{
-            var amt= $("#input[name='AppliedLoanamount']").val();
-            var tenure =$("#input[name='Tenure']").val();
-            var days =tenure*12;
-            var roi =$('#input[name=ROI]').val();
-            var rate=roi/12/100;
-            var emi =amt * rate * (Math.pow(1 + rate, days) / (pow(1 + rate, days) - 1));
-            var total =((emi*days)-amt);
-            var ttl_payment = parseInt(amt)+parseInt(total);
-            $("#input[name='#TotalPayableAmount']").val(ttl_payment);
-           $.ajax({  
-         type: "POST",  
-         url: "{{URL::to('iifl-instant-eligibility')}}",
-         data : $('#instant_form').serialize(),
-         success: function(msg){
-            console.log(msg);
-         }  
-      });  
+         $.ajax({  
+             type: "POST",  
+             url: "{{URL::to('iifl-instant-eligibility')}}",
+             data : $('#instant_form').serialize(),
+             success: function(msg){
+
+              $('#upload').show();
+
+             }  
+            });  
         }
-
     });
+
+    $('#AppliedLoanamount, #Tenure').on('input', function () {
+        var applied_loan = parseInt($("#input[name='AppliedLoanamount']").val());
+        var no_of_days = parseFloat($("#input[name='Tenure']").val())*12;
+        var a = $("#input[name='ROI']").val();
+        var Rate = a/12/100;
+        var installment_iifl=applied_loan * Rate * (Math.pow(1 + Rate, no_of_days) / (Math.pow(1 + Rate, no_of_days) - 1));
+        var installment =Math.round(installment_iifl);
+        // if(isNaN( installment) || installment=='Infinity'){
+        //   installment=0;
+        // }
+        var total =((installment*no_of_days)-applied_loan);
+        
+        var ttl_payment = parseInt(applied_loan) + parseInt(total);
+         $("#input[name='TotalPayableAmount']").val(ttl_payment);
+        
+});
 </script>
 
-
-<!-- If Co-Applicant Exist -->
-<!-- <script type="text/javascript">
-  $('#have').change(function(){
- 
-  $("#co_applicant").show();
-
-  });
-</script>
-
-<script type="text/javascript">
-  $('#not_have').change(function(){
- 
-  $("#co_applicant").hide();
-  });
-</script> -->
 <!-- aadhar oyp &verify otp -->
 <script type="text/javascript">
     $('#aadhar_otp').click(function(){
@@ -1990,6 +1974,9 @@ var global_tenure=0;
              // alert('not valid');
 
         }else{
+            $('#otp').hide();
+
+           $('#confirm_aadharotp').hide();
            $('#Instant_Approve').show();
            $.ajax({  
          type: "POST",  
@@ -1997,52 +1984,56 @@ var global_tenure=0;
          data : $('#confirm_aadharotp').serialize(),
          success: function(msg){
               console.log(msg);
-           
-            
-         }  
+        }  
       });   
         }
     });
-    </script>
+</script>
+
 <script type="text/javascript">
     $('#proceed_without_aadhar').click(function(){
          $('#Instant_Approve').show();
-        $.ajax({  
+         $.ajax({  
          type: "POST",  
          url: "{{URL::to('iifl-offer-status')}}?_token="+"{{ csrf_token() }}",
          data : $('').serialize(),
          success: function(msg){
 
-             var result=loan_eligibility(msg.body.ROI,msg.body.maxEmi,msg.body.maxTenure,msg.body.maxloanamt,msg.body.minTenure,msg.body.minloanamt,msg.body.processingfee,msg.body.offerstatus,msg.body.remarks);
+          var result=loan_eligibility(msg.body.ROI,msg.body.maxEmi,msg.body.maxTenure,msg.body.maxloanamt,msg.body.minTenure,msg.body.minloanamt,msg.body.processingfee,msg.body.offerstatus,msg.body.remarks);
             // console.log(msg);
-            console.log(msg);
-            
-         }  
+        }  
       });   
        
     });
-    function loan_eligibility(ROI,maxEmi,maxTenure,maxloanamt,minTenure,minloanamt,processingfee,offerstatus,error_msg){
+    function loan_eligibility(ROI,maxEmi,maxTenure,maxloanamt,minTenure,minloanamt,processingfee,offerstatus,error_msg)
+    {
           var offer=offerstatus;
           // console.log(offer);
-          if(offer=="Rejected"){
+    if(offer=="Rejected")
+    {
             $('#Instant_Approve').hide();
          alert("Thank You For Choosing IIFL. \n Your application has been rejected due to internal credit policy.\n Reason: "+error_msg);
+    }
+    else if(offer == null)
+    {
+            $('#Instant_Approve').hide();
+         alert("Thank You For Choosing IIFL. \n Your application has been rejected due to internal credit policy.\n Reason:" );
           }
-      var maxloan=maxloanamt;
-       //   console.log(maxloanamt);
-      $('#maxloan').empty().append(maxloan);
-      var rateofint=ROI;
-      $("#input[name='ROI']").val(ROI);
-      var processfee=processingfee;
-      $("#input[name='Processingfee']").val(processingfee);
-      // var max_installment=maxEmi;
-      //  $('#maxEmi').empty().append(max_installment);
-      g_maxloanamt=maxloanamt;
-      if (g_maxloanamt>maxloanamt) {
-        console.log("Loanamount should be less than maximum loanamount");
-      } if(g_maxTenure>maxTenure) {
-       console.log("Loanamount should be less than maximum tenure");
-      }
+         var maxloan=maxloanamt;
+         //   console.log(maxloanamt);
+         $('#maxloan').empty().append(maxloan);
+         var rateofint=ROI;
+         $("#input[name='ROI']").val(ROI);
+         var processfee=processingfee;
+         $("#input[name='Processingfee']").val(processingfee);
+         var applied_loanamount = maxloanamt;
+         $("#input[name='AppliedLoanamount']").val(applied_loanamount);
+         var tenure = maxTenure;
+         $("#input[name='Tenure']").val(tenure);
+         var max_installment=maxEmi;
+         $("#input[name='Emi']").val(max_installment);
+
+      
      }
 </script>
 
@@ -2070,13 +2061,16 @@ var global_tenure=0;
      } 
     });
 </script>
+
 <script type="text/javascript">
     $('#proceed').click(function(){
         // alert('ok');
-       if(! $('#financial_details').valid()){
+       if(! $('#financial_details').valid())
+       {
              // alert('not valid');
 
-        }else{
+        }else
+        {
            
         $.ajax({
           url:"{{URL::to('iifl-finanacial-doc-upload')}}" ,  
@@ -2088,22 +2082,21 @@ var global_tenure=0;
           contentType: false,
           success: function(msg){
                  console.log(msg);
-            }
+        }
         });
      } 
     });
 </script>
 <script type="text/javascript">
   function same_as_above(obj,val){
-
      // console.log(obj);
      var atLeastOneIsChecked = $('#same_id:checkbox:checked').length > 0;
      // console.log(atLeastOneIsChecked);
-    if (atLeastOneIsChecked == true) {
+     if (atLeastOneIsChecked == true) {
       // alert("ok");
 
-    $('#PermanentAddress1').val($('#CurrentAddress1').val());
-    $('#PermanentAddress1').closest( "span" ).addClass( "input--filled" );
+     $('#PermanentAddress1').val($('#CurrentAddress1').val());
+     $('#PermanentAddress1').closest( "span" ).addClass( "input--filled" );
      $('#PermanentAddress2').val($('#CurrentAddress2').val());
      $('#PermanentAddress2').closest( "span" ).addClass( "input--filled" );
      $('#PermanentAddress3').val($('#CurrentAddress3').val());
@@ -2130,15 +2123,14 @@ var global_tenure=0;
 
 <script type="text/javascript">
   function co_same_as_above(obj,val){
-
-     // console.log(obj);
+    // console.log(obj);
      var atLeastOneIsChecked = $('#co_same_id:checkbox:checked').length > 0;
      // console.log(atLeastOneIsChecked);
     if (atLeastOneIsChecked == true) {
       // alert("ok");
 
-    $('#CoPermanentAddress1').val($('#CoCurrentAddress1').val());
-    $('#CoPermanentAddress1').closest( "span" ).addClass( "input--filled" );
+     $('#CoPermanentAddress1').val($('#CoCurrentAddress1').val());
+     $('#CoPermanentAddress1').closest( "span" ).addClass( "input--filled" );
      $('#CoPermanentAddress2').val($('#CoCurrentAddress2').val());
      $('#CoPermanentAddress2').closest( "span" ).addClass( "input--filled" );
      $('#CoPermanentAddress3').val($('#CoCurrentAddress3').val());
@@ -2367,3 +2359,41 @@ var global_tenure=0;
             
        
         </script>
+
+        <script type="text/javascript">
+            $('#CompanyPin').keyup(function(){
+                console.log($('#CompanyPin').val().length);
+                if ($('#CompanyPin').val().length == 6) {
+                    var pincode =$('#CompanyPin').val();
+                    var v_token ="{{csrf_token()}}";
+                   $.ajax({  
+                        type: "POST",  
+                        url: "{{URL::to('iifl-company-pincode-status')}}",
+                        data : {'_token': v_token,'CompanyPin':pincode},
+                        success: function(msg){
+                            console.log(msg.Status);
+                            console.log(msg.City);
+                            console.log(msg.State);
+                            if (msg.Status =="Fail" ) 
+                            {
+                               alert('Please Enter Valid Pincode');
+                               return false;
+                            }else if(msg.Status =="Success") {
+                            var city =msg.City;
+                            var newOption = $('<option selected value="'+msg.CityCode+'">'+city+'</option>');
+                            $('#CompanyCity').empty().append(newOption);
+                            $('#CompanyCity').closest( "span" ).addClass( "input--filled" );
+
+                            // $('#CurrentCity').empty().append(city);
+
+                            var state=msg.State;
+                            var newOption = $('<option selected value="'+msg.StateCode+'">'+state+'</option>');
+                            $('#CompanyState').empty().append(newOption);
+                            $('#CompanyState').closest( "span" ).addClass( "input--filled" );
+                            // $('#CurrentState').empty().append(state);
+                        }
+                        }
+                    });       
+                }  
+       });    
+   </script>

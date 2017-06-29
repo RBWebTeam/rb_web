@@ -20,8 +20,13 @@
   <script type="text/javascript" src="js/icici_js/moment-with-locales.min.js"></script>
   <script type="text/javascript" src="js/icici_js/bootstrap-material-datetimepicker.js"></script>
    
+</script>
+
 
 <script type="text/javascript" src="js/icici_js/jquery.datepicker.js"></script>
+
+
+    
 <script src="js/jquery.mask.js"></script>
 <script src="js/icici_js/jquery.validate.min.js"></script>
   <style>

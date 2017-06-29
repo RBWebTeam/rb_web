@@ -21,11 +21,11 @@
   <script type="text/javascript" src="js/icici_js/bootstrap-material-datetimepicker.js"></script>
    
 </script>
+
+
 <script type="text/javascript" src="js/icici_js/jquery.datepicker.js"></script>
-<script src="js/icici_js/classie.js"></script>
-<script src="js/bootstrap.min.js" type="text/javascript"></script>  
-<link href="css/jquery-ui.min.css" rel="Stylesheet"></link>
-<script src="js/jquery-ui.js" ></script>
+
+
     
 <script src="js/jquery.mask.js"></script>
 <script src="js/icici_js/jquery.validate.min.js"></script>
@@ -66,7 +66,10 @@
     padding: 3px 5px;
     font-size: 12px;
 }
-.lastReporteddob {height:49px;border: none;}
+.lastReporteddob {height:48px;} 
+.hdn5 {margin:0px !important}
+#DateOfBirth {cursor:pointer;}
+.text-lower {margin-bottom: 10px;height: 50px;position: relative;}
   </style>
   
   <script>
@@ -86,7 +89,7 @@ $(".top").click(function() {
 });
 </script>
 
-<form class="" id="compareform" role="form" method="POST" >
+<form class="form12" id="compareform" role="form" method="POST" >
                {{ csrf_field() }}
                
 <div>
@@ -174,8 +177,8 @@ $(".top").click(function() {
             <div class="col-xs-6 form-padding">
                     <div class="form-control" style="margin-bottom:10px; height:50px; position:relative; padding: 0;">
                     
-                      <input type="text" class="form-control lastReporteddob" id="DateOfBirth" name="DateOfBirth" placeholder="DATE OF BIRTH*" style="color:#636363 !important;" required>
-            <a href="#DateOfBirth"><i class="fa fa-calendar" style="font-size: 25px;position: absolute;top: 15px;right: 11px;color: #3f7cb3;"></i></a>
+                      <input type="text" class="form-control lastReporteddob" id="datepicker" name="DateOfBirth" placeholder="DATE OF BIRTH*" style="color:#636363 !important;" required>
+           <i class="fa fa-calendar" id="DateOfBirth" style="font-size: 25px;position: absolute;top: 15px;right: 11px;color: #3f7cb3;"></i>
                     </div>
                   </div>
                   
@@ -287,7 +290,7 @@ $(".top").click(function() {
     
     <div class="panel-heading" role="tab" id="headingTwo">
                   <h4 class="panel-title">
-                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                    <a role="button" class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
           <button class="ok-btn"><span class="glyphicon glyphicon-ok"></span></button> &nbsp; COMPANY DETAILS
                     </a>
                   </h4>
@@ -317,7 +320,7 @@ $(".top").click(function() {
 
              <div class="col-xs-6 form-padding">
                     <div>
-                      <input type="text" id="work_email" name="work_email" class="form-control inp-fld" oninput="mail('work_email')"  required >
+                      <input type="text" id="work_email" name="work_email" class="form-control text-lower" oninput="mail('work_email')"  required >
                       <span class="highlight"></span><span class="bar"></span>
                       <label class="form-label-new lble">WORK EMAIL</label>
                       <div class="clear"></div>
@@ -398,7 +401,7 @@ $(".top").click(function() {
 
               <div class="col-xs-6 form-padding" style="display: none" id="ICICIRelationshipNumber">
                     <div>
-                      <input type="text" name="ICICIRelationshipNumber" id="ICICIRelationshipNumber" class="form-control inp-fld" onkeypress="return fnAllowNumeric(event)" required  >
+                      <input type="text" name="ICICIRelationshipNumber" id="ICICIRelationshipNumber" class="form-control inp-fld" onkeypress="return fnAllowNumeric(event)" required minlength="12" maxlength="16"  >
                       <span class="highlight"></span><span class="bar"></span>
                       <label class="form-label-new lble">ICICI Relationship Number</label>
                       <div class="clear"></div>
@@ -409,7 +412,7 @@ $(".top").click(function() {
 					
           <div class="col-xs-6 form-padding">
                     <div class="form-control inp-fld" style="height:50px; position: relative; padding: 0px 0px;">
-                      <span style="position: absolute; z-index: 999; margin: 1px 0 0 8px; font-size: 10px; color: #bababa;"> OTHER BANK SALARY ACCT:</span>
+                      <span style="position: absolute; z-index: 999; margin: 1px 0 0 8px; font-size: 10px; color: #bababa;"> OTHER BANK SALARY ACCT.</span>
                       
                       <div class="btn-grp mrg-top m-status emp-nat" data-toggle="buttons">
       <span class="btn btn-primary outer-brd active"><input type="radio" name="SalaryAccountWithOtherBank" id="SalaryAccountWithOtherBank" checked value="Yes"  >Yes</span>
@@ -500,7 +503,7 @@ $(".top").click(function() {
                     </select> 
             </div>
       
-      <div class="col-xs-12"><P style="padding:10px; display:-webkit-inline-box;" class="pull-left"><input type="checkbox" name="same" id="same_id" onclick="same_as_above('same_id');"/> &nbsp;&nbsp;Same As Above</p></div>
+      <div class="col-xs-12"><P style="padding:10px;font-size: 14px;line-height: 16px; display:-webkit-inline-box;" class="pull-left"><input type="checkbox" name="same" id="same_id" onclick="same_as_above('same_id');"/> &nbsp;&nbsp;Same As Above</p></div>
       
 	  
 	  <h4 class="txt-tlt pull-left hdn5">Permanent Address Details</h4>
@@ -651,7 +654,7 @@ $(".top").click(function() {
          
       <div class="panel-heading" role="tab" id="headingSix">
                   <h4 class="panel-title">
-                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSix" aria-expanded="true" aria-controls="collapseSix">
+                    <a role="button" class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
           <button class="ok-btn"><span class="glyphicon glyphicon-ok"></span></button> &nbsp;IDENTITY DETAILS
                     </a>
                   </h4>
@@ -1170,6 +1173,8 @@ $(document).ready(function(){
 </script>
 
 <script type="text/javascript">
+var prv_head;
+var head_index=0;
 var inputs = $("#compareform input[required='required']");
   $(".icici-credit-submit").click(function(event){
     //alert("okae");
@@ -1177,21 +1182,72 @@ var inputs = $("#compareform input[required='required']");
       //var form=$(this).closest("form").attr('id');
       //console.log($('#compareform'));
       //var form=$('#compareform');
+      var visible_err=0;
+      
+      var x=$(':input[required]:visible');
+          x.each(function( index, element ) {
+            var temp= element.getAttribute("value");
+            var id=element.getAttribute("id");
+            if(element.getAttribute("id")!="urlemailid" ){
+              var have_value=$('#'+id).val();
+              if(!have_value){
+                var collapse_id=$('#'+id).parents().parents().parents().parents()[0].getAttribute("id");
+                $("#"+id).addClass("error");
+                prv_head= heading_no1 = "#heading"+collapse_id.replace("collapse", "");
+                $(heading_no1).prop("style","border:1px solid #d02323");
+                //alert("f"+ heading_no1);
+                visible_err=1;
+                return false;
+              }
+            }
 
+            
+          });
+          console.log(visible_err);
+          if(visible_err==1){
+           return false;
+         }else{
+         // alert(prv_head);
+          $(prv_head).prop("style","border:1px solid #33da32 ");
+         }
+      var y=$(':input[required]:hidden');
+          y.each(function( index, element ) {
+            
+            var temp= element.getAttribute("value");
+            var id=element.getAttribute("id");
+            //console.log(temp);
+            if(element.getAttribute("id")!="urlemailid" ){
+              var have_value=$('#'+id).val();
+              //console.log("have"+have_value);
+              if(!have_value){
+                var collapse_id=$('#'+id).parents().parents().parents().parents()[0].getAttribute("id");
+                $("#"+id).addClass("error");
+                 var heading_no = "#heading"+collapse_id.replace("collapse", "");
+                 $(heading_no).prop("style","border:1px solid #d02323 ");
+                $(heading_no).find("a").click();
+                //console.log(collapse_id +" " +id+" "+heading_no);
+                return false;
+               
+              }
+              
+            }
+            
+          });
 
 
  
       if(! $('#compareform').valid()){    
-
+         
         return false;
       }else{
-     
+      
     if( $('#ResidenceMobileNo').val()!='' && $('#PerResidencePincode').val()!='' && $('#ResidencePincode').val()!='' && $('#work_number').val()!='' && $('#designation').val()!='' && $('#work_email').val()!='' && $('#CompanyName').val()!='' && $('#preferred_address').val()!='' && $('#NameOnCard').val()!='' && $('#ApplicantFirstName').val()!='' && $('#net_annual_income').val()!='' && $('#DateOfBirth').val()!='' && $('#CompanyName').val()!='' && $('#ResidenceAddress1').val()!='' && 
     $('#PerResidenceAddress1').val()!='' && $('#ResidencePhoneNumber').val()!='' && $('#ApplicationNumber').val()!=''){
 
         //console.log($('#compareform'));
         $(".iframeloading").show();
         // $(".icici-credit-submit").hide(); 
+        $('#upload').show();
         $.ajax({  
          type: "POST",  
          url: "{{URL::to('icici-credit-submit')}}",
@@ -1199,25 +1255,23 @@ var inputs = $("#compareform input[required='required']");
          dataType: 'json',
          success: function(msg){
          $(".iframeloading").hide();  
-        
-         //console.log(.id);
+          console.log(msg);
+         
           if(msg==2){
-            // alert("OKAE");
+            
              alert("Something Went Wrong");
 
-           
-            // $('#credit_process').modal('show');        
+             
           } 
           else{
-            //console.log(msg);
-            // alert(" Your Application id is "+msg.id+".Decision is "+msg.Decision+"Thank you for your interest in ICICI Bank Credit Cards. Our representative will get in touch with you within 3 working days subject to your application meeting the eligibility criteria");
+            
             if (msg.Decision =='Declined') {
               $('#upload').hide();
 
             }
-             $('#drop').empty().append(msg.id);
-              $('#drop1').empty().append(msg.Decision);
-              $('#drop2').empty().append(msg.Reason);
+             $('#drop').text(msg.id);
+              $('#drop1').text(msg.Decision);
+              $('#drop2').text(msg.Reason);
              $('#credit_process_sorry').modal('show');
           }
 
@@ -1243,20 +1297,7 @@ var inputs = $("#compareform input[required='required']");
 
 </script>
 
-<script type="text/javascript">
-    var d = new Date();
-    var year = d.getFullYear() ;
-    d.setFullYear(year);
 
-    $(".lastReporteddob").datepicker({ dateFormat: "yy-mm-dd",
-      changeMonth: true,
-      changeYear: true,
-      maxDate: year,
-      minDate: "-100Y",
-      yearRange: '-100:' + year + '',
-      defaultDate: d
-    });
-</script>
 
 <script type="text/javascript">
   function email(obj,val){
@@ -1308,7 +1349,9 @@ var inputs = $("#compareform input[required='required']");
 <script type="text/javascript">
           function Redirect() 
           {
-          window.location="http://beta.erp.rupeeboss.com/Credit_Card_Upload_Docs.aspx?App_Id=drop&CardType=ICICI";
+            var mobile=$('#ResidenceMobileNo').val();
+            var app_id=$('#drop').text();
+            window.location="http://beta.erp.rupeeboss.com/Credit_Card_Upload_Docs.aspx?App_Id="+app_id+"&CardType=ICICI&MobileNo="+mobile;
           }
 </script>
 
@@ -1482,6 +1525,40 @@ var inputs = $("#compareform input[required='required']");
 
 </script>
 
+<script src="js/icici_js/classie.js"></script>
+<script src="js/bootstrap.min.js" type="text/javascript"></script>  
+<link href="css/jquery-ui.min.css" rel="Stylesheet"></link>
+<script src="js/jquery-ui.js" ></script>
+<script type="text/javascript" src="js/datepicker.js"></script>
 
 
+<script>
+		  $( function() {
+			$( '#datepicker,#datepicker1,#datepicker2' ).datepicker({
+				changeMonth:true,
+				changeYear:true,
+				dateFormat: 'dd-mm-yy',
+				yearRange : 'c-65:c+10'
+			});
+		  });
+	 </script>
 
+<script>
+  $("#DateOfBirth").click(function() {
+    $(".lastReporteddob").datepicker('show');
+});
+</script>
+
+<!-- var y=$(':input[required]:hidden');
+          y.each(function( index, element ) {
+            
+            var temp= element.getAttribute("value");
+            //console.log(temp);
+            if(element.getAttribute("id")!="urlemailid" && temp==null){
+
+              console.log(element.getAttribute("id")+" "+temp);
+            }
+            
+          });
+      
+ -->

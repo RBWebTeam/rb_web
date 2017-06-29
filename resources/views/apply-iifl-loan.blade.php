@@ -1,4 +1,4 @@
-@include('layout.header')
+ @include('layout.header')
     <link rel="shortcut icon" href="favicon.ico">
 
     <link href="https://fonts.googleapis.com/css?family=Raleway:200,300,400,700" rel="stylesheet">
@@ -1903,9 +1903,12 @@ var global_tenure=0;
              url: "{{URL::to('iifl-instant-eligibility')}}",
              data : $('#instant_form').serialize(),
              success: function(msg){
+
               $('#instant_form').hide();   
+
+
               $('#upload').show();
-                console.log(msg);
+
              }  
             });  
         }

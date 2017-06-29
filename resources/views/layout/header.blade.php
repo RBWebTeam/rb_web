@@ -23,6 +23,7 @@
 
 
 
+
  <link href="{{URL::to('css/freshslider.min.css')}}" rel="stylesheet" type="text/css" /> 
 
 	<!-- Modernizr JS -->

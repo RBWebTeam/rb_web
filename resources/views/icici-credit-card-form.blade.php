@@ -24,7 +24,10 @@
 
 
 <script type="text/javascript" src="js/icici_js/jquery.datepicker.js"></script>
-
+<script src="js/icici_js/classie.js"></script>    +
+ <script src="js/bootstrap.min.js" type="text/javascript"></script>       +
+ <link href="css/jquery-ui.min.css" rel="Stylesheet"></link>   
+ <script src="js/jquery-ui.js" ></script>
 
     
 <script src="js/jquery.mask.js"></script>

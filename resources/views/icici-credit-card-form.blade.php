@@ -1173,6 +1173,8 @@ $(document).ready(function(){
 </script>
 
 <script type="text/javascript">
+var prv_head;
+var head_index=0;
 var inputs = $("#compareform input[required='required']");
   $(".icici-credit-submit").click(function(event){
     //alert("okae");
@@ -1181,39 +1183,32 @@ var inputs = $("#compareform input[required='required']");
       //console.log($('#compareform'));
       //var form=$('#compareform');
       var visible_err=0;
-      var heading_no="";
+      
       var x=$(':input[required]:visible');
           x.each(function( index, element ) {
-            
             var temp= element.getAttribute("value");
             var id=element.getAttribute("id");
-            //console.log(temp);
             if(element.getAttribute("id")!="urlemailid" ){
               var have_value=$('#'+id).val();
-              //console.log("have"+have_value);
               if(!have_value){
                 var collapse_id=$('#'+id).parents().parents().parents().parents()[0].getAttribute("id");
                 $("#"+id).addClass("error");
-                 heading_no = "#heading"+collapse_id.replace("collapse", "");
-                $(heading_no).prop("style","border:2px solid #d02323");
-                // $(heading_no).find("a").click();
+                prv_head= heading_no1 = "#heading"+collapse_id.replace("collapse", "");
+                $(heading_no1).prop("style","border:1px solid #d02323");
+                alert("f"+ heading_no1);
                 visible_err=1;
-                //console.log(collapse_id +" " +id+" "+heading_no);
                 return false;
-               
               }
-                
             }
 
             
           });
-
-          if(visible_err){
-           
+          console.log(visible_err);
+          if(visible_err==1){
            return false;
          }else{
-          alert(heading_no);
-          $(heading_no).prop("style","border:2px solid #21b341 !important");
+          alert(prv_head);
+          $(prv_head).prop("style","border:1px solid #33da32 ");
          }
       var y=$(':input[required]:hidden');
           y.each(function( index, element ) {
@@ -1227,8 +1222,8 @@ var inputs = $("#compareform input[required='required']");
               if(!have_value){
                 var collapse_id=$('#'+id).parents().parents().parents().parents()[0].getAttribute("id");
                 $("#"+id).addClass("error");
-                 heading_no = "#heading"+collapse_id.replace("collapse", "");
-                 $(heading_no).prop("style","border:2px solid #d02323 !important");
+                 var heading_no = "#heading"+collapse_id.replace("collapse", "");
+                 $(heading_no).prop("style","border:1px solid #d02323 ");
                 $(heading_no).find("a").click();
                 //console.log(collapse_id +" " +id+" "+heading_no);
                 return false;

@@ -1177,15 +1177,72 @@ var inputs = $("#compareform input[required='required']");
       //var form=$(this).closest("form").attr('id');
       //console.log($('#compareform'));
       //var form=$('#compareform');
+      var visible_err=0;
+      var heading_no="";
+      var x=$(':input[required]:visible');
+          x.each(function( index, element ) {
+            
+            var temp= element.getAttribute("value");
+            var id=element.getAttribute("id");
+            //console.log(temp);
+            if(element.getAttribute("id")!="urlemailid" ){
+              var have_value=$('#'+id).val();
+              //console.log("have"+have_value);
+              if(!have_value){
+                var collapse_id=$('#'+id).parents().parents().parents().parents()[0].getAttribute("id");
+                $("#"+id).addClass("error");
+                 heading_no = "#heading"+collapse_id.replace("collapse", "");
+                $(heading_no).prop("style","border:2px solid #d02323");
+                // $(heading_no).find("a").click();
+                visible_err=1;
+                //console.log(collapse_id +" " +id+" "+heading_no);
+                return false;
+               
+              }
+                
+            }
 
+            
+          });
+
+          if(visible_err){
+           
+           return false;
+         }else{
+          alert(heading_no);
+          $(heading_no).prop("style","border:2px solid #21b341 !important");
+         }
+      var y=$(':input[required]:hidden');
+          y.each(function( index, element ) {
+            
+            var temp= element.getAttribute("value");
+            var id=element.getAttribute("id");
+            //console.log(temp);
+            if(element.getAttribute("id")!="urlemailid" ){
+              var have_value=$('#'+id).val();
+              //console.log("have"+have_value);
+              if(!have_value){
+                var collapse_id=$('#'+id).parents().parents().parents().parents()[0].getAttribute("id");
+                $("#"+id).addClass("error");
+                 heading_no = "#heading"+collapse_id.replace("collapse", "");
+                 $(heading_no).prop("style","border:2px solid #d02323 !important");
+                $(heading_no).find("a").click();
+                //console.log(collapse_id +" " +id+" "+heading_no);
+                return false;
+               
+              }
+              
+            }
+            
+          });
 
 
  
       if(! $('#compareform').valid()){    
-        
+         
         return false;
       }else{
-     
+      
     if( $('#ResidenceMobileNo').val()!='' && $('#PerResidencePincode').val()!='' && $('#ResidencePincode').val()!='' && $('#work_number').val()!='' && $('#designation').val()!='' && $('#work_email').val()!='' && $('#CompanyName').val()!='' && $('#preferred_address').val()!='' && $('#NameOnCard').val()!='' && $('#ApplicantFirstName').val()!='' && $('#net_annual_income').val()!='' && $('#DateOfBirth').val()!='' && $('#CompanyName').val()!='' && $('#ResidenceAddress1').val()!='' && 
     $('#PerResidenceAddress1').val()!='' && $('#ResidencePhoneNumber').val()!='' && $('#ApplicationNumber').val()!=''){
 
@@ -1484,5 +1541,16 @@ var inputs = $("#compareform input[required='required']");
 </script>
 
 
+<!-- var y=$(':input[required]:hidden');
+          y.each(function( index, element ) {
+            
+            var temp= element.getAttribute("value");
+            //console.log(temp);
+            if(element.getAttribute("id")!="urlemailid" && temp==null){
 
-
+              console.log(element.getAttribute("id")+" "+temp);
+            }
+            
+          });
+      
+ -->

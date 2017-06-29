@@ -1175,6 +1175,8 @@ $(document).ready(function(){
 </script>
 
 <script type="text/javascript">
+var prv_head;
+var head_index=0;
 var inputs = $("#compareform input[required='required']");
   $(".icici-credit-submit").click(function(event){
     //alert("okae");
@@ -1182,15 +1184,65 @@ var inputs = $("#compareform input[required='required']");
       //var form=$(this).closest("form").attr('id');
       //console.log($('#compareform'));
       //var form=$('#compareform');
+      var visible_err=0;
+      
+      var x=$(':input[required]:visible');
+          x.each(function( index, element ) {
+            var temp= element.getAttribute("value");
+            var id=element.getAttribute("id");
+            if(element.getAttribute("id")!="urlemailid" ){
+              var have_value=$('#'+id).val();
+              if(!have_value){
+                var collapse_id=$('#'+id).parents().parents().parents().parents()[0].getAttribute("id");
+                $("#"+id).addClass("error");
+                prv_head= heading_no1 = "#heading"+collapse_id.replace("collapse", "");
+                $(heading_no1).prop("style","border:1px solid #d02323");
+                alert("f"+ heading_no1);
+                visible_err=1;
+                return false;
+              }
+            }
 
+            
+          });
+          console.log(visible_err);
+          if(visible_err==1){
+           return false;
+         }else{
+          alert(prv_head);
+          $(prv_head).prop("style","border:1px solid #33da32 ");
+         }
+      var y=$(':input[required]:hidden');
+          y.each(function( index, element ) {
+            
+            var temp= element.getAttribute("value");
+            var id=element.getAttribute("id");
+            //console.log(temp);
+            if(element.getAttribute("id")!="urlemailid" ){
+              var have_value=$('#'+id).val();
+              //console.log("have"+have_value);
+              if(!have_value){
+                var collapse_id=$('#'+id).parents().parents().parents().parents()[0].getAttribute("id");
+                $("#"+id).addClass("error");
+                 var heading_no = "#heading"+collapse_id.replace("collapse", "");
+                 $(heading_no).prop("style","border:1px solid #d02323 ");
+                $(heading_no).find("a").click();
+                //console.log(collapse_id +" " +id+" "+heading_no);
+                return false;
+               
+              }
+              
+            }
+            
+          });
 
 
  
       if(! $('#compareform').valid()){    
-        
+         
         return false;
       }else{
-     
+      
     if( $('#ResidenceMobileNo').val()!='' && $('#PerResidencePincode').val()!='' && $('#ResidencePincode').val()!='' && $('#work_number').val()!='' && $('#designation').val()!='' && $('#work_email').val()!='' && $('#CompanyName').val()!='' && $('#preferred_address').val()!='' && $('#NameOnCard').val()!='' && $('#ApplicantFirstName').val()!='' && $('#net_annual_income').val()!='' && $('#DateOfBirth').val()!='' && $('#CompanyName').val()!='' && $('#ResidenceAddress1').val()!='' && 
     $('#PerResidenceAddress1').val()!='' && $('#ResidencePhoneNumber').val()!='' && $('#ApplicationNumber').val()!=''){
 
@@ -1498,5 +1550,16 @@ var inputs = $("#compareform input[required='required']");
 });
 </script>
 
+<!-- var y=$(':input[required]:hidden');
+          y.each(function( index, element ) {
+            
+            var temp= element.getAttribute("value");
+            //console.log(temp);
+            if(element.getAttribute("id")!="urlemailid" && temp==null){
 
-
+              console.log(element.getAttribute("id")+" "+temp);
+            }
+            
+          });
+      
+ -->

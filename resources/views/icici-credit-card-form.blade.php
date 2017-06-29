@@ -20,22 +20,14 @@
   <script type="text/javascript" src="js/icici_js/moment-with-locales.min.js"></script>
   <script type="text/javascript" src="js/icici_js/bootstrap-material-datetimepicker.js"></script>
    
-</script>
-
 
 <script type="text/javascript" src="js/icici_js/jquery.datepicker.js"></script>
-<script src="js/icici_js/classie.js"></script>    +
- <script src="js/bootstrap.min.js" type="text/javascript"></script>       +
- <link href="css/jquery-ui.min.css" rel="Stylesheet"></link>   
- <script src="js/jquery-ui.js" ></script>
-
-    
 <script src="js/jquery.mask.js"></script>
 <script src="js/icici_js/jquery.validate.min.js"></script>
   <style>
   .inp-fld {margin-bottom:10px; height:50px; position:relative;text-transform: uppercase;}
   .emp-nat span {padding:3px 5px;}
-  .txt-tlt {padding-left:5px;width:99%;text-align:center; color:#666;font-size:18px;}
+  .txt-tlt {padding-left:5px;width:100%;text-align:center; color:#666;font-size:18px;}
   .pg-titl {text-transform:uppercase;}
   .redio-lft {float:left;}
   .p-padding {padding:10px;}
@@ -64,14 +56,13 @@
 @media only screen and (max-width:768px) {
 	
 	.col-md-12 {padding:0px;margin:2px;}
-	.txt-tlt {width:97%;}
 }
 .emp-nat span {
     padding: 3px 5px;
     font-size: 12px;
 }
 .lastReporteddob {height:46px;border: none;} 
-
+.hdn5 {margin:0px !important}
 #DateOfBirth {cursor:pointer;}
 .text-lower {margin-bottom: 10px;height: 50px;position: relative;}
   </style>
@@ -180,8 +171,8 @@ $(".top").click(function() {
                   
             <div class="col-xs-6 form-padding">
                     <div class="form-control" style="margin-bottom:10px; height:50px; position:relative; padding: 0;">
-                    <span style="position: absolute; z-index: 999; margin: 1px 0 0 8px; font-size: 10px; color: #bababa;">DATE OF BIRTH</span>
-                      <input type="text" class="form-control lastReporteddob" id="datepicker" name="DateOfBirth"  style="color:#636363 !important;" required>
+                    
+                      <input type="text" class="form-control lastReporteddob" id="datepicker" name="DateOfBirth" placeholder="DATE OF BIRTH*" style="color:#636363 !important;" required>
            <i class="fa fa-calendar" id="DateOfBirth" style="font-size: 25px;position: absolute;top: 15px;right: 11px;color: #3f7cb3;"></i>
                     </div>
                   </div>
@@ -302,7 +293,7 @@ $(".top").click(function() {
                 <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
                   <div class="panel-body">
         
-            <!-- <h4 class="txt-tlt pull-left hdn5">COMPANY DETAILS</h4>-->
+            <h4 class="txt-tlt pull-left hdn5">COMPANY DETAILS</h4> 
             
             <div class="col-xs-6 form-padding">
                     <div>
@@ -445,7 +436,6 @@ $(".top").click(function() {
                   <div class="panel-body">      
           
               <h4 class="txt-tlt pull-left hdn5">Current Address Details</h4> 
-			  <br>
           <div class="col-xs-6 form-padding">
                     <div>
                       <input type="text" name="ResidenceAddress1" id="ResidenceAddress1" class="form-control inp-fld" required >
@@ -601,7 +591,7 @@ $(".top").click(function() {
                 <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
                   <div class="panel-body">    
           
-         <!-- <h4 class="txt-tlt pull-left hdn5">Contact Details</h4> -->
+          <h4 class="txt-tlt pull-left hdn5">Contact Details</h4> 
 		  <div class="col-xs-6 form-padding">
                     <div>
                       <input type="text" class="form-control inp-fld"  id="ResidenceMobileNo" name="ResidenceMobileNo" required onkeypress="return fnAllowNumeric(event)" maxlength="10" >
@@ -667,7 +657,7 @@ $(".top").click(function() {
                 <div id="collapseSix" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSix">
                   <div class="panel-body">    
                   
-          <!-- <h4 class="txt-tlt pull-left hdn5">Identity Details</h4> -->
+          <h4 class="txt-tlt pull-left hdn5">Identity Details</h4> 
           <div class="col-xs-6 form-padding">
                     <div>
                       <input type="text" id="ApplicationNumber" name="ApplicationNumber" class="form-control inp-fld" required maxlength="13" minlength="13" >

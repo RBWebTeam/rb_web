@@ -1537,7 +1537,8 @@ var inputs = $("#compareform input[required='required']");
 			$( '#datepicker,#datepicker1,#datepicker2' ).datepicker({
 				changeMonth:true,
 				changeYear:true,
-				dateFormat: 'dd-mm-yy'
+				dateFormat: 'dd-mm-yy',
+				yearRange : 'c-65:c+10'
 			});
 		  });
 	 </script>

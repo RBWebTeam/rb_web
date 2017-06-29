@@ -66,7 +66,7 @@
     padding: 3px 5px;
     font-size: 12px;
 }
-.lastReporteddob {height:46px;border: none;} 
+.lastReporteddob {height:48px;} 
 .hdn5 {margin:0px !important}
 #DateOfBirth {cursor:pointer;}
 .text-lower {margin-bottom: 10px;height: 50px;position: relative;}

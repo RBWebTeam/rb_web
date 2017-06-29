@@ -177,8 +177,8 @@ $(".top").click(function() {
                   
             <div class="col-xs-6 form-padding">
                     <div class="form-control" style="margin-bottom:10px; height:50px; position:relative; padding: 0;">
-                    
-                      <input type="text" class="form-control lastReporteddob" id="datepicker" name="DateOfBirth" placeholder="DATE OF BIRTH*" style="color:#636363 !important;" required>
+                    <span style="position: absolute; z-index: 999; margin: 1px 0 0 8px; font-size: 10px; color: #bababa;">DATE OF BIRTH</span>
+                      <input type="text" class="form-control lastReporteddob" id="datepicker" name="DateOfBirth"  style="color:#636363 !important;" required>
            <i class="fa fa-calendar" id="DateOfBirth" style="font-size: 25px;position: absolute;top: 15px;right: 11px;color: #3f7cb3;"></i>
                     </div>
                   </div>

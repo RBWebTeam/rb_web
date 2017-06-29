@@ -623,10 +623,10 @@ $url = $this::$url_static."/BankAPIService.svc/updateIIFLRevisedQuote";
          $m=$s=str_replace('\\', "", $s);
          $obj = json_decode($m);
          $response[$i]=$obj;
-         print_r("\n");
+         print_r("\n\n");
     }
 
-    // print_r($response);
+     print_r($response);
   }
 
   public function iifl_financial_doc_upload(Request $req){

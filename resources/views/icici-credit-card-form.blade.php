@@ -1203,6 +1203,7 @@ var inputs = $("#compareform input[required='required']");
 
             
           });
+          //highlighting errors
            x.each(function( index, element ) {
             var id=element.getAttribute("id");
              var have_value=$('#'+id).val();

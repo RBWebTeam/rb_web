@@ -1195,7 +1195,7 @@ var inputs = $("#compareform input[required='required']");
                 $("#"+id).addClass("error");
                 prv_head= heading_no1 = "#heading"+collapse_id.replace("collapse", "");
                 $(heading_no1).prop("style","border:1px solid #d02323");
-                alert("f"+ heading_no1);
+                //alert("f"+ heading_no1);
                 visible_err=1;
                 return false;
               }
@@ -1207,7 +1207,7 @@ var inputs = $("#compareform input[required='required']");
           if(visible_err==1){
            return false;
          }else{
-          alert(prv_head);
+         // alert(prv_head);
           $(prv_head).prop("style","border:1px solid #33da32 ");
          }
       var y=$(':input[required]:hidden');

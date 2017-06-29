@@ -32,10 +32,12 @@
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <style>
-body {background:#eee;}
 #logo img {margin:0 auto;}
-.pg-titl {margin:0 auto; width:80%;}
-.pg-titl {padding:20px;}
+.pg-titl {margin:0 auto; width:70%;}
+.pg-titl {padding:20px; text-align:center;}
+.icici {margin:0 auto;}
+.btn-default.active {padding:15px;}
+body {background:#fff;}
 
 </style>
   </head>
@@ -52,12 +54,11 @@ body {background:#eee;}
         <div class="col-md-12 text-left fh5co-heading animate-box fadeInUp animated">
 		  
 		  <div id="logo" class="text-center"><img id="myImage" src="http://beta.erp.rupeeboss.com/personalloan/images/logo.png" class=""></div>
-    
-      <h4 class="text-center pg-titl">ICICI Credit Card</h4>
+    <h4 class="text-center pg-titl"><img src="images/bank/icici-credit-card.png" class="img-responsive icici"/></h4>
           </div> 
 <br>		  
         <div class="col-md-12">
-          <div class="row pad white-bg box-shadow">
+          <div class="row pad white box-shadow">
   <br>
 <div class="col-md-3">
      

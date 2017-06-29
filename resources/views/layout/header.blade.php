@@ -18,7 +18,7 @@
 
 	<link  rel="stylesheet" type="text/css" href="{{URL::to('css/mysite.css')}}"/>
 
-  <link  rel="stylesheet" type="text/css" href="{{URL::to('css/style.css')}}"/>
+  <link  rel="stylesheet" type="text/css" href="{{URL::to('css/style.css')}}"/> 
 
 
 

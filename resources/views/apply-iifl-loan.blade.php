@@ -649,6 +649,9 @@
             <div class="col-md-12">
              <a class="btn btn-primary btn-outline with-arrow mrg-top applicant" id="applicant_form" href="javascript:void(0);">NEXT<i class="icon-arrow-right"></i></a>
             </div>
+            <div class="iframeloading" style= "display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
+                <img src="{{URL::to('images/ajaxloader.gif')}}" alt="Loader" title="Loader" style="top: 50%; position: relative; left: 50%;"  />
+               </div>
             </form>
             </div>
 
@@ -971,6 +974,9 @@
                 <div class="col-md-12">
              <a class="btn btn-primary btn-outline with-arrow mrg-top applicant" id="co_applicant_form" href="javascript:void(0);">NEXT<i class="icon-arrow-right"></i></a>
             </div>
+            <div class="iframeloading" style= "display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
+                <img src="{{URL::to('images/ajaxloader.gif')}}" alt="Loader" title="Loader" style="top: 50%; position: relative; left: 50%;"  />
+               </div>
                 </form>
             </div>
 
@@ -1066,7 +1072,7 @@
             </div>
                 
                 <span class="input input--nao input--filled">
-                <input class="input__field input__field--nao" type="hidden" name="TotalPayableAmount" required  value="" />
+                <input class="input__field input__field--nao" type="hidden" name="TotalPayableAmount" id="PayableAmount" required  value="" />
                     <input class="input__field input__field--nao" type="text" name="AppliedLoanamount" id="Applied"  onkeypress="return fnAllowNumeric(event)" value="" required />
                     <label class="input__label input__label--nao" for="Applied">
                         <span class="input__label-content input__label-content--nao">Loan Amount</span>
@@ -1117,7 +1123,11 @@
             <div class="col-md-12">
              <a class="btn btn-primary btn-outline with-arrow mrg-top" id="instant_approve" href="javascript:void(0)">Get Instant Approve<i class="icon-arrow-right"></i></a>
             </div>
+            <div class="iframeloading" style= "display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
+                <img src="{{URL::to('images/ajaxloader.gif')}}" alt="Loader" title="Loader" style="top: 50%; position: relative; left: 50%;"  />
+               </div>
             </section>
+
             </form>
             </div>
             
@@ -1182,6 +1192,9 @@
                     <a class="btn btn-primary btn-outline with-arrow mrg-top" id="proceed_upload">Proceed<i class="icon-arrow-right"></i></a>
                 </div>
                 </div>
+                <div class="iframeloading" style= "display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
+                <img src="{{URL::to('images/ajaxloader.gif')}}" alt="Loader" title="Loader" style="top: 50%; position: relative; left: 50%;"  />
+               </div>
                 </section>
             </form>
             </div>
@@ -1238,6 +1251,9 @@
         
             </div>
             </div>
+            <div class="iframeloading" style= "display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
+                <img src="{{URL::to('images/ajaxloader.gif')}}" alt="Loader" title="Loader" style="top: 50%; position: relative; left: 50%;"  />
+               </div>
             </form>
 
             </div>
@@ -1703,15 +1719,7 @@ var global_tenure=0;
                         var result=loan_eligibility_calc(data.Max_Tenure,data.pf,data.roi,data.foir);
                         console.log(msg);
                 return false;
-                        var data_1=data['data'];
-                if(data_1){
-                        $('#express_form').hide();
-                        $('#express_loan_verify_form').show();
-                    //console.log("hah");
-                }else{
-                        window.location.href="{{URL::to('went-wrong')}}";
-                        // console.log(data_1);
-                  }
+                        
     }  
       });
         }
@@ -1839,17 +1847,18 @@ var global_tenure=0;
             var aadhar=$('#AadhaarNumber').val();
             $('#Aadharno').val(aadhar);
             $('#Applicant_Details').hide();
+            $(".iframeloading").show();
             if($( "input[name=CoapplicantFlag]:checked" ).val()==1)
             {
                  $('#co_applicant').show();
-            }else{
-                 $('#otp').show();
             }
            $.ajax({  
              type: "POST",  
              url: "{{URL::to('apply-iifl-loan-applicant1')}}",
              data : $('#applicant_deatils').serialize(),
              success: function(msg){
+                 $(".iframeloading").hide();
+                  $('#otp').show();
                 console.log(msg.body);
              console.log(msg.head.status);
              if (msg.head.status == 1) {
@@ -1931,7 +1940,7 @@ $('#Applied, #Period').on('input', function () {
             var total =((installment*no_of_days)-applied_loan);
             
             var ttl_payment = parseInt(applied_loan) + parseInt(total);
-         $("input[name='TotalPayableAmount']").val(ttl_payment);
+            $("#PayableAmount").val(ttl_payment);
         
 }); 
     

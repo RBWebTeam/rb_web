@@ -1072,7 +1072,7 @@
             <div class="col-md-12">
              <h3>Congratulation!!<i><b class="text-primary"><span id="first_name"></span></b></i>&nbsp;You are eligible for a loan of <b>₹<span id="maxloan"></span></b> </h3>
              <br>
-             <h6>You Are Applicable For Minimum Loanamount<b>₹<span style="color: red" id="minloanamt"></span></b> & Minimum Tenure<b><span style="color: red" id="minTenure"></span>(in months)</b></h6>
+             <h6>You Are Applicable For Minimum Loanamount&nbsp;&nbsp;<b>₹<span style="color: red" id="minloanamt"></span></b> & Minimum Tenure&nbsp;&nbsp; <b><span style="color: red" id="minTenure"></span>(in months)</b></h6>
             </div>
                 
                 <span class="input input--nao input--filled">
@@ -1088,7 +1088,7 @@
                 <span class="input input--nao input--filled">
                     <input class="input__field input__field--nao" type="text" name="Tenure" id="Period"  onkeypress="return fnAllowNumeric(event)" value="" required />
                     <label class="input__label input__label--nao" for="Period">
-                        <span class="input__label-content input__label-content--nao">Loan Tenure(in months)</span>
+                        <span class="input__label-content input__label-content--nao">Loan Tenure(in years)</span>
                     </label>
                     <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
                         <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>

@@ -52,7 +52,9 @@
     <br>
     <div class="animate-box">
     <div class="row">
-    
+          <div class="iframeloading" style= "display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
+                <img src="{{URL::to('images/ajaxloader.gif')}}" alt="Loader" title="Loader" style="top: 50%; position: relative; left: 50%;"  />
+               </div>
         <div class="col-md-12 bg-white centered well pad1">
                    <div class="row" style="display: none;">
                 <div class="col-md-10 col-md-offset-1">
@@ -62,10 +64,9 @@
                 <p class="text-center">To learn more about IIFL Express Personal Loan <a href="javascript:void(0)">Click Here</a></p>
         
             </div>
+            
             </div>
-            <div class="iframeloading" style= "display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
-                <img src="{{URL::to('images/ajaxloader.gif')}}" alt="Loader" title="Loader" style="top: 50%; position: relative; left: 50%;"  />
-               </div>
+            
             <div class="row" id="error" style="display: none;">
                 <div class="col-md-10 col-md-offset-1">
                 <hr>
@@ -86,7 +87,7 @@
                 <h3 class="text-uppercase exp-hed">IIFL Express Loan</h3>
                 
                 <span class="input input--nao">
-                    <input class="input__field input__field--nao" type="text" name="Monthly_Salary"  id="Monthly_Salary"  onkeypress="return fnAllowNumeric(event)" required  />
+                    <input class="input__field input__field--nao" type="text" name="Monthly_Salary"  id="Monthly_Salary"  onkeypress="return fnAllowNumeric(event)" minlength="6" maxlength="9" required  />
                     <label class="input__label input__label--nao" for="Monthly_Salary">
                     <span class="input__label-content input__label-content--nao">Your Net Monthly Salary</span>
                     </label>
@@ -1071,7 +1072,7 @@
             </div>
                 
                 <span class="input input--nao input--filled">
-                <input class="input__field input__field--nao" type="hidden" name="TotalPayableAmount" id="PayableAmount" required  value="" />
+                <input class="input__field input__field--nao" type="text" name="TotalPayableAmount" id="PayableAmount" required  value="" />
                     <input class="input__field input__field--nao" type="text" name="AppliedLoanamount" id="Applied"  onkeypress="return fnAllowNumeric(event)" value="" required />
                     <label class="input__label input__label--nao" for="Applied">
                         <span class="input__label-content input__label-content--nao">Loan Amount</span>
@@ -1921,7 +1922,7 @@ $('#Applied, #Period').on('input', function () {
             console.log(applied_loan);
             var no_of_days = parseFloat($('#Period').val());
             console.log(applied_loan);
-            var a = parseInt($("input[name='ROI']").val());
+            var a = ($("input[name='ROI']").val());
             console.log(a);
             var Rate = a/12/100;
             console.log(Rate);
@@ -1934,7 +1935,7 @@ $('#Applied, #Period').on('input', function () {
             var total =((installment*no_of_days)-applied_loan);
             
             var ttl_payment = parseInt(applied_loan) + parseInt(total);
-         $("#PayableAmount").val(ttl_payment);
+             $("#PayableAmount").val(ttl_payment);
         
 }); 
     
@@ -2007,6 +2008,8 @@ $('#Applied, #Period').on('input', function () {
     {
             $('#Instant_Approve').hide();
          alert("Thank You For Choosing IIFL. \n Your application has been rejected due to internal credit policy.\n Reason: "+error_msg);
+    }else if(remarks=="Low Salary"){
+        alert("Your Salary Is Not Upto Mark");
     }
     else if(offer == null)
     {

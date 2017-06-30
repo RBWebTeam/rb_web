@@ -99,7 +99,7 @@ $(".top").click(function() {
       <div class="col-md-12">
     <br>
     
-      <div id="logo" class="text-center"><img id="myImage" src="http://beta.erp.rupeeboss.com/personalloan/images/logo.png" class=""></div>
+      <div id="logo" class="text-center"><img id="myImage" src="http://erp.rupeeboss.com/personalloan/images/logo.png" class=""></div>
     
       <h4 class="text-center pg-titl">Apply For <img src="images/bank/icici.png" class="img-responsive icici" width="130"/> Credit Card</h4>
     
@@ -1360,7 +1360,7 @@ var inputs = $("#compareform input[required='required']");
           {
             var mobile=$('#ResidenceMobileNo').val();
             var app_id=$('#drop').text();
-            window.location="http://beta.erp.rupeeboss.com/Credit_Card_Upload_Docs.aspx?App_Id="+app_id+"&CardType=ICICI&MobileNo="+mobile;
+            window.location="http://erp.rupeeboss.com/Credit_Card_Upload_Docs.aspx?App_Id="+app_id+"&CardType=ICICI&MobileNo="+mobile;
           }
 </script>
 

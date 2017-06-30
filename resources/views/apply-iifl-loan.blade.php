@@ -187,7 +187,7 @@
                     </svg>
                 </span>
                 <span class="input input--nao input--filled">
-                    <input class="input__field input__field--nao" type="text" name="EMI" id="EMI" onkeypress="return fnAllowNumeric(event)" disabled  />
+                    <input class="input__field input__field--nao" type="text" name="EMI" id="EMI" onkeypress="return fnAllowNumeric(event)" readonly="readonly"  />
                     <label class="input__label input__label--nao" for="EMI">
                     <span class="input__label-content input__label-content--nao">EMI</span>
                     </label>
@@ -649,6 +649,9 @@
             <div class="col-md-12">
              <a class="btn btn-primary btn-outline with-arrow mrg-top applicant" id="applicant_form" href="javascript:void(0);">NEXT<i class="icon-arrow-right"></i></a>
             </div>
+            <div class="iframeloading" style= "display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
+                <img src="{{URL::to('images/ajaxloader.gif')}}" alt="Loader" title="Loader" style="top: 50%; position: relative; left: 50%;"  />
+               </div>
             </form>
             </div>
 
@@ -971,6 +974,9 @@
                 <div class="col-md-12">
              <a class="btn btn-primary btn-outline with-arrow mrg-top applicant" id="co_applicant_form" href="javascript:void(0);">NEXT<i class="icon-arrow-right"></i></a>
             </div>
+            <div class="iframeloading" style= "display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
+                <img src="{{URL::to('images/ajaxloader.gif')}}" alt="Loader" title="Loader" style="top: 50%; position: relative; left: 50%;"  />
+               </div>
                 </form>
             </div>
 
@@ -1062,11 +1068,11 @@
             <div class="col-md-12">
              <h3>Congratulation!!<i><b class="text-primary"><span id="first_name"></span></b></i>&nbsp;You are eligible for a loan of <b>₹<span id="maxloan"></span></b> </h3>
              <br>
-             <h6>You Are Applicable For Minimum Loanamount<h4><b>₹<span id="minloanamt"></span></b></h4>.<br> Minimum Tenure<h4><b><span id="minTenure"></span>months</b></h4></h6>
+             <h6>You Are Applicable For Minimum Loanamount<b>₹<span style="color: red" id="minloanamt"></span></b> & Minimum Tenure<b><span style="color: red" id="minTenure"></span>(in months)</b></h6>
             </div>
                 
                 <span class="input input--nao input--filled">
-                <input class="input__field input__field--nao" type="hidden" name="TotalPayableAmount" required  value="" />
+                <input class="input__field input__field--nao" type="hidden" name="TotalPayableAmount" id="PayableAmount" required  value="" />
                     <input class="input__field input__field--nao" type="text" name="AppliedLoanamount" id="Applied"  onkeypress="return fnAllowNumeric(event)" value="" required />
                     <label class="input__label input__label--nao" for="Applied">
                         <span class="input__label-content input__label-content--nao">Loan Amount</span>
@@ -1078,14 +1084,14 @@
                 <span class="input input--nao input--filled">
                     <input class="input__field input__field--nao" type="text" name="Tenure" id="Period"  onkeypress="return fnAllowNumeric(event)" value="" required />
                     <label class="input__label input__label--nao" for="Period">
-                        <span class="input__label-content input__label-content--nao">Loan Tenure</span>
+                        <span class="input__label-content input__label-content--nao">Loan Tenure(in months)</span>
                     </label>
                     <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
                         <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
                     </svg>
                 </span>
                 <span class="input input--nao input--filled">
-                    <input class="input__field input__field--nao" type="text" name="Emi" onkeypress="return fnAllowNumeric(event)"  disabled value=""  />
+                    <input class="input__field input__field--nao" type="text" name="Emi" onkeypress="return fnAllowNumeric(event)"  readonly="readonly" value=""  />
                     <label class="input__label input__label--nao" for="Emi">
                         <span class="input__label-content input__label-content--nao">EMI</span>
                     </label>
@@ -1094,7 +1100,7 @@
                     </svg>
                 </span>
                 <span class="input input--nao input--filled">
-                <input class="input__field input__field--nao" type="text" name="ROI"  onkeypress="return fnAllowNumeric(event)" value="" disabled />
+                <input class="input__field input__field--nao" type="text" name="ROI"  onkeypress="return fnAllowNumeric(event)" value="" readonly="readonly" />
                     <label class="input__label input__label--nao" for="ROI">
                         <span class="input__label-content input__label-content--nao">ROI</span>
                     </label>
@@ -1103,7 +1109,7 @@
                     </svg>
                 </span>
                 <span class="input input--nao input--filled">
-                <input class="input__field input__field--nao" type="text" name="Processingfee"  onkeypress="return fnAllowNumeric(event)" value="" disabled  />
+                <input class="input__field input__field--nao" type="text" name="Processingfee"  onkeypress="return fnAllowNumeric(event)" value="" readonly="readonly"  />
                     <label class="input__label input__label--nao" for="Processingfee">
                         <span class="input__label-content input__label-content--nao">Processing fee</span>
                     </label>
@@ -1117,7 +1123,11 @@
             <div class="col-md-12">
              <a class="btn btn-primary btn-outline with-arrow mrg-top" id="instant_approve" href="javascript:void(0)">Get Instant Approve<i class="icon-arrow-right"></i></a>
             </div>
+            <div class="iframeloading" style= "display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
+                <img src="{{URL::to('images/ajaxloader.gif')}}" alt="Loader" title="Loader" style="top: 50%; position: relative; left: 50%;"  />
+               </div>
             </section>
+
             </form>
             </div>
             
@@ -1182,6 +1192,9 @@
                     <a class="btn btn-primary btn-outline with-arrow mrg-top" id="proceed_upload">Proceed<i class="icon-arrow-right"></i></a>
                 </div>
                 </div>
+                <div class="iframeloading" style= "display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
+                <img src="{{URL::to('images/ajaxloader.gif')}}" alt="Loader" title="Loader" style="top: 50%; position: relative; left: 50%;"  />
+               </div>
                 </section>
             </form>
             </div>
@@ -1238,6 +1251,9 @@
         
             </div>
             </div>
+            <div class="iframeloading" style= "display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
+                <img src="{{URL::to('images/ajaxloader.gif')}}" alt="Loader" title="Loader" style="top: 50%; position: relative; left: 50%;"  />
+               </div>
             </form>
 
             </div>
@@ -1703,15 +1719,7 @@ var global_tenure=0;
                         var result=loan_eligibility_calc(data.Max_Tenure,data.pf,data.roi,data.foir);
                         console.log(msg);
                 return false;
-                        var data_1=data['data'];
-                if(data_1){
-                        $('#express_form').hide();
-                        $('#express_loan_verify_form').show();
-                    //console.log("hah");
-                }else{
-                        window.location.href="{{URL::to('went-wrong')}}";
-                        // console.log(data_1);
-                  }
+                        
     }  
       });
         }
@@ -1811,9 +1819,9 @@ var global_tenure=0;
         var Rate = a/12/100;
         var installment_iifl=applied_loan * Rate * (Math.pow(1 + Rate, no_of_days) / (Math.pow(1 + Rate, no_of_days) - 1));
         var installment =Math.round(installment_iifl);
-        // if(isNaN( installment) || installment=='Infinity'){
-        //   installment=0;
-        // }
+        if(isNaN( installment) || installment=='Infinity'){
+          installment=0;
+        }
         $('#EquatedMonthly').empty().append(installment);
         $('#EMI').val(installment);
         $('#e_m_i').empty().append(installment);
@@ -1835,21 +1843,22 @@ var global_tenure=0;
         }else{
             var person_name =$('#FName').val();
             // console.log(person_name);
-            $('#first_name').val(person_name);
+            $('#first_name').empty().append(person_name);
             var aadhar=$('#AadhaarNumber').val();
             $('#Aadharno').val(aadhar);
             $('#Applicant_Details').hide();
+            $(".iframeloading").show();
             if($( "input[name=CoapplicantFlag]:checked" ).val()==1)
             {
                  $('#co_applicant').show();
-            }else{
-                 $('#otp').show();
             }
            $.ajax({  
              type: "POST",  
              url: "{{URL::to('apply-iifl-loan-applicant1')}}",
              data : $('#applicant_deatils').serialize(),
              success: function(msg){
+                 $(".iframeloading").hide();
+                  $('#otp').show();
                 console.log(msg.body);
              console.log(msg.head.status);
              if (msg.head.status == 1) {
@@ -1908,26 +1917,33 @@ var global_tenure=0;
               $('#upload').show();
 
              }  
-            });  
+            }); 
+            
         }
     });
-
-    $('#Applied, #Period').on('input', function () {
-        var applied_loan = parseInt($("input[name='AppliedLoanamount']").val());
-        var no_of_days = parseFloat($("input[name='Tenure']").val())*12;
-        var a = $("input[name='ROI']").val();
-        var Rate = a/12/100;
-        var installment_iifl=applied_loan * Rate * (Math.pow(1 + Rate, no_of_days) / (Math.pow(1 + Rate, no_of_days) - 1));
-        var installment =Math.round(installment_iifl);
-        // if(isNaN( installment) || installment=='Infinity'){
-        //   installment=0;
-        // }
-        var total =((installment*no_of_days)-applied_loan);
+$('#Applied, #Period').on('input', function () {
+               
+            var applied_loan = parseInt($('#Applied').val());
+            console.log(applied_loan);
+            var no_of_days = parseFloat($('#Period').val());
+            console.log(applied_loan);
+            var a = parseInt($("input[name='ROI']").val());
+            console.log(a);
+            var Rate = a/12/100;
+            console.log(Rate);
+            var installment_iifl=applied_loan * Rate * (Math.pow(1 + Rate, no_of_days) / (Math.pow(1 + Rate, no_of_days) - 1));
+            var installment =Math.round(installment_iifl);
+            if(isNaN( installment) || installment=='Infinity'){
+              installment=0;
+            }
+            $("input[name='Emi']").val(installment);
+            var total =((installment*no_of_days)-applied_loan);
+            
+            var ttl_payment = parseInt(applied_loan) + parseInt(total);
+            $("#PayableAmount").val(ttl_payment);
         
-        var ttl_payment = parseInt(applied_loan) + parseInt(total);
-         $("input[name='TotalPayableAmount']").val(ttl_payment);
-        
-});
+}); 
+    
 </script>
 
 <!-- aadhar oyp &verify otp -->
@@ -2006,9 +2022,11 @@ var global_tenure=0;
          var maxloan=maxloanamt;
          $('#maxloan').empty().append(maxloan);
          var minloanamt =minloanamt;
-         $('#minloanamt').empty().append(minloanamt);
+         var applied_min_loan =Math.round(minloanamt);
+         $('#minloanamt').empty().append(applied_min_loan);
          var minTenure =minTenure;
-         $('#minTenure').empty().append(minTenure);
+         var applied_min_tenure =Math.round(minTenure);
+         $('#minTenure').empty().append(applied_min_tenure);
          
          var ROI=ROI;
          
@@ -2040,6 +2058,7 @@ var global_tenure=0;
 
       
      }
+     
 </script>
 
 <!-- Document upload -->

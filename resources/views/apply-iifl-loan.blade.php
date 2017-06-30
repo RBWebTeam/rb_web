@@ -1046,8 +1046,8 @@
                 <section>
                 <div>
                 <span class="input input--nao">
-                    <input class="input__field input__field--nao" name="otp" id="otp" type="text" onkeypress="return fnAllowNumeric(event)" required/>
-                    <label class="input__label input__label--nao" for="otp">
+                    <input class="input__field input__field--nao" name="otp" id="OTP" type="text" onkeypress="return fnAllowNumeric(event)" required/>
+                    <label class="input__label input__label--nao" for="OTP">
                         <span class="input__label-content input__label-content--nao">Enter OTP</span>
                     </label>
                     <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
@@ -1716,7 +1716,7 @@ var global_tenure=0;
                         console.log(msg);
                         var result=loan_eligibility_calc(data.Max_Tenure,data.pf,data.roi,data.foir);
                         console.log(msg);
-                return false;
+                
                         
     }  
       });
@@ -1907,7 +1907,7 @@ var global_tenure=0;
     $('#instant_approve').click(function(){
     if(! $('#instant_form').valid()){
             alert("You must agree to the terms first.");
-            
+            return false;
         }else{
 
          $.ajax({  
@@ -1915,9 +1915,10 @@ var global_tenure=0;
              url: "{{URL::to('iifl-instant-eligibility')}}",
              data : $('#instant_form').serialize(),
              success: function(msg){
-              $('#otp').hide();
-              $('#Instant_Approve').hide();   
-              $('#upload').show();
+                console.log(msg);
+                  $('#otp').hide();
+                  $('#Instant_Approve').hide();   
+                  $('#upload').show();
 
              }  
             }); 
@@ -2015,6 +2016,7 @@ $('#Applied, #Period').on('input', function () {
     if(offer=="Rejected")
     {
             $('#Instant_Approve').hide();
+            $('#Applicant_Details').show();
          alert("Thank You For Choosing IIFL. \n Your application has been rejected due to internal credit policy.\n Reason: "+remarks);
     }else if(remarks=="Low Salary"){
         alert("Your Salary Is Not Upto Mark");
@@ -2022,6 +2024,7 @@ $('#Applied, #Period').on('input', function () {
     else if(offer == null)
     {
             $('#Instant_Approve').hide();
+             $('#Applicant_Details').show();
          alert("Thank You For Choosing IIFL. \n Your application has been rejected due to internal credit policy.\n Reason:" );
           }
          var maxloan=maxloanamt;
@@ -2060,6 +2063,11 @@ $('#Applied, #Period').on('input', function () {
          $("input[name='Emi']").val(max_installment);
          $("#installment_amount").empty().append(max_installment);
 
+         var total =((max_installment*tenure)-maxloanamt);
+            
+         var ttl_payment = parseInt(maxloanamt) + parseInt(total);
+         $("#PayableAmount").val(ttl_payment);
+
 
       
      }
@@ -2085,16 +2093,17 @@ $('#Applied, #Period').on('input', function () {
           processData: false,
           contentType: false,
           success: function(msg){
-            if (msg.head.status == 1) {
+            if (msg.head.status == "1") {
                 
                 alert("Reason: "+status_description); 
                     $('#financial_doc').hide(); 
                     $('#error').show(); 
-            }
-              $('#upload').hide();
+            }else{
+                $('#upload').hide();
               $('#financial_doc').show();
                 console.log(msg);
-             
+            }
+              
             
             }
         });

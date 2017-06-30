@@ -47,14 +47,17 @@
     <div id="fh5co-hero">
     <div class="express-lon-ban"><img src="images/express-loan-image1.jpg" class="img-responsive"/></div>
     <br>
+<div class="iframeloading" style= "display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
+                <img src="{{URL::to('images/ajaxloader.gif')}}" alt="Loader" title="Loader" style="top: 50%; position: relative; left: 50%;"  />
+</div>
+    <!-- //loader -->
+    
     <div class="container animate-box">
             
     <br>
     <div class="animate-box">
     <div class="row">
-          <div class="iframeloading" style= "display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
-                <img src="{{URL::to('images/ajaxloader.gif')}}" alt="Loader" title="Loader" style="top: 50%; position: relative; left: 50%;"  />
-               </div>
+          
         <div class="col-md-12 bg-white centered well pad1">
                    <div class="row" style="display: none;">
                 <div class="col-md-10 col-md-offset-1">
@@ -78,6 +81,7 @@
             </div>
    
             <br>
+
             
         <div id="iifl">
             <form id="iifl_express_loan" name="iifl_express_loan" method="POST">
@@ -87,7 +91,7 @@
                 <h3 class="text-uppercase exp-hed">IIFL Express Loan</h3>
                 
                 <span class="input input--nao">
-                    <input class="input__field input__field--nao" type="text" name="Monthly_Salary"  id="Monthly_Salary"  onkeypress="return fnAllowNumeric(event)" minlength="6" maxlength="9" required  />
+                    <input class="input__field input__field--nao" type="text" name="Monthly_Salary"  id="Monthly_Salary"  onkeypress="return fnAllowNumeric(event)" minlength="5" maxlength="9" required  />
                     <label class="input__label input__label--nao" for="Monthly_Salary">
                     <span class="input__label-content input__label-content--nao">Your Net Monthly Salary</span>
                     </label>
@@ -1842,12 +1846,7 @@ var global_tenure=0;
             $('#Aadharno').val(aadhar);
             $('#Applicant_Details').hide();
              $(".iframeloading").show();
-            if($( "input[name=CoapplicantFlag]:checked" ).val()==1)
-            {
-                 $('#co_applicant').show();
-            }else{
-                 $('#otp').show();
-            }
+           
            $.ajax({  
              type: "POST",  
              url: "{{URL::to('apply-iifl-loan-applicant1')}}",
@@ -1856,10 +1855,19 @@ var global_tenure=0;
                  $(".iframeloading").hide();
                 console.log(msg.body);
              console.log(msg.head.status);
-             if (msg.head.status == 1) {
-                
-                alert("Reason: "+status_description);          
-            } 
+             if (msg.head.status != "1") {
+                 if($( "input[name=CoapplicantFlag]:checked" ).val()==1)
+                {
+                     $('#co_applicant').show();
+                }else{
+                     $('#otp').show();
+                }
+                      
+            } else{
+                 alert("Reason: "+msg.head.status_description);   
+                 $('#Applicant_Details').show();
+                 return false;
+            }
             
          }  
       }); 
@@ -2000,14 +2008,14 @@ $('#Applied, #Period').on('input', function () {
       });   
        
     });
-    function loan_eligibility(ROI,maxEmi,maxTenure,maxloanamt,minTenure,minloanamt,processingfee,offerstatus,error_msg)
+    function loan_eligibility(ROI,maxEmi,maxTenure,maxloanamt,minTenure,minloanamt,processingfee,offerstatus,remarks)
     {
           var offer=offerstatus;
           // console.log(offer);
     if(offer=="Rejected")
     {
             $('#Instant_Approve').hide();
-         alert("Thank You For Choosing IIFL. \n Your application has been rejected due to internal credit policy.\n Reason: "+error_msg);
+         alert("Thank You For Choosing IIFL. \n Your application has been rejected due to internal credit policy.\n Reason: "+remarks);
     }else if(remarks=="Low Salary"){
         alert("Your Salary Is Not Upto Mark");
     }

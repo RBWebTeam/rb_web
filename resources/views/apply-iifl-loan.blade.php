@@ -63,6 +63,9 @@
         
             </div>
             </div>
+            <div class="iframeloading" style= "display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
+                <img src="{{URL::to('images/ajaxloader.gif')}}" alt="Loader" title="Loader" style="top: 50%; position: relative; left: 50%;"  />
+               </div>
             <div class="row" id="error" style="display: none;">
                 <div class="col-md-10 col-md-offset-1">
                 <hr>
@@ -649,9 +652,7 @@
             <div class="col-md-12">
              <a class="btn btn-primary btn-outline with-arrow mrg-top applicant" id="applicant_form" href="javascript:void(0);">NEXT<i class="icon-arrow-right"></i></a>
             </div>
-            <div class="iframeloading" style= "display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
-                <img src="{{URL::to('images/ajaxloader.gif')}}" alt="Loader" title="Loader" style="top: 50%; position: relative; left: 50%;"  />
-               </div>
+            
             </form>
             </div>
 
@@ -974,9 +975,7 @@
                 <div class="col-md-12">
              <a class="btn btn-primary btn-outline with-arrow mrg-top applicant" id="co_applicant_form" href="javascript:void(0);">NEXT<i class="icon-arrow-right"></i></a>
             </div>
-            <div class="iframeloading" style= "display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
-                <img src="{{URL::to('images/ajaxloader.gif')}}" alt="Loader" title="Loader" style="top: 50%; position: relative; left: 50%;"  />
-               </div>
+            
                 </form>
             </div>
 
@@ -1123,9 +1122,7 @@
             <div class="col-md-12">
              <a class="btn btn-primary btn-outline with-arrow mrg-top" id="instant_approve" href="javascript:void(0)">Get Instant Approve<i class="icon-arrow-right"></i></a>
             </div>
-            <div class="iframeloading" style= "display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
-                <img src="{{URL::to('images/ajaxloader.gif')}}" alt="Loader" title="Loader" style="top: 50%; position: relative; left: 50%;"  />
-               </div>
+            
             </section>
 
             </form>
@@ -1192,9 +1189,7 @@
                     <a class="btn btn-primary btn-outline with-arrow mrg-top" id="proceed_upload">Proceed<i class="icon-arrow-right"></i></a>
                 </div>
                 </div>
-                <div class="iframeloading" style= "display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
-                <img src="{{URL::to('images/ajaxloader.gif')}}" alt="Loader" title="Loader" style="top: 50%; position: relative; left: 50%;"  />
-               </div>
+                
                 </section>
             </form>
             </div>
@@ -1251,9 +1246,7 @@
         
             </div>
             </div>
-            <div class="iframeloading" style= "display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
-                <img src="{{URL::to('images/ajaxloader.gif')}}" alt="Loader" title="Loader" style="top: 50%; position: relative; left: 50%;"  />
-               </div>
+            
             </form>
 
             </div>
@@ -1847,10 +1840,12 @@ var global_tenure=0;
             var aadhar=$('#AadhaarNumber').val();
             $('#Aadharno').val(aadhar);
             $('#Applicant_Details').hide();
-            $(".iframeloading").show();
+             $(".iframeloading").show();
             if($( "input[name=CoapplicantFlag]:checked" ).val()==1)
             {
                  $('#co_applicant').show();
+            }else{
+                 $('#otp').show();
             }
            $.ajax({  
              type: "POST",  
@@ -1858,7 +1853,6 @@ var global_tenure=0;
              data : $('#applicant_deatils').serialize(),
              success: function(msg){
                  $(".iframeloading").hide();
-                  $('#otp').show();
                 console.log(msg.body);
              console.log(msg.head.status);
              if (msg.head.status == 1) {
@@ -1940,7 +1934,7 @@ $('#Applied, #Period').on('input', function () {
             var total =((installment*no_of_days)-applied_loan);
             
             var ttl_payment = parseInt(applied_loan) + parseInt(total);
-            $("#PayableAmount").val(ttl_payment);
+         $("#PayableAmount").val(ttl_payment);
         
 }); 
     

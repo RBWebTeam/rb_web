@@ -20,8 +20,8 @@ class CalculatorController extends CallApiController
        	     $status=1;
              $err_code=NULL;
              $data=NULL;
-             
- 		 try{             
+      try{   
+
           $turnover    = $req->turnover;
           $profitbefore =$req->profitbefore;
           $depreciation =$req->depreciation;
@@ -31,40 +31,86 @@ class CalculatorController extends CallApiController
           $creditors    =$req->creditors;
           $existing     =$req->existing;
 
+          $pbdit=$profitbefore+ $financecost+$depreciation;
+          $rule1 = ($turnover * (0.20));
+          $rule2 = (((($inventory -$creditors) + $debtors) * (0.75)) - $existing);
 
-           $turnovertemp =0;
-           $temp =0;
-           $proposedlimit =0;
+         if ( $rule1 <  $rule2 ){          
+          $proposed_limit= $rule1;
+         }else{
+          $proposed_limit=$rule2;
+         } 
 
-           if ($profitbefore > 0 || ($profitbefore - $financecost) > 0 ){
-           $turnovertemp = ($turnover * (20/100));
-           $temp = (((($inventory + $debtors) - $creditors) * (75/100)) - $existing);
-            if($turnovertemp < $temp){
-               $proposedlimit = $turnovertemp;
-            }else{
-               //$proposedlimit = $temp;
-            }
-        
-             
-            }else{
 
+         if(($profitbefore+$depreciation) < 0 || ($pbdit- $financecost) < 0 ){
+
+              $proposed_limit=0;
               $status=0;
+          }else{
 
-           }
+            $proposed_limit = $proposed_limit;
+
+          }
+
+         $data = array('proposedlimit'=>$proposed_limit,);
 
 
-		    $data = array(
-		     
-		    'proposedlimit' =>$proposedlimit,
-		     
-		);
-	}catch(\Exception $ee){
+}catch(\Exception $ee){
            
            $err_code=$ee->getMessage();
-	} 
+  }
+
+return  json_encode(array('statusid' =>$status,'data'=>$data,"err_code"=>$err_code ));
+
+              
+             
+//  		 try{             
+//           $turnover    = $req->turnover;
+//           $profitbefore =$req->profitbefore;
+//           $depreciation =$req->depreciation;
+//           $financecost  =$req->financecost;
+//           $inventory    =$req->inventory;
+//           $debtors      =$req->debtors;
+//           $creditors    =$req->creditors;
+//           $existing     =$req->existing;
+
+
+//            $turnovertemp =0;
+//            $temp =0;
+//            $proposedlimit =0;
+
+          
+
+
+//            if ($profitbefore > 0 || ($profitbefore - $financecost) > 0 ){
+//            $turnovertemp = ($turnover * (20/100));
+//            $temp = (((($inventory + $debtors) - $creditors) * (75/100)) - $existing);
+//             if($turnovertemp < $temp){
+//                $proposedlimit = $turnovertemp;
+//             }else{
+//                //$proposedlimit = $temp;
+//             }
+        
+             
+//             }else{
+
+//               $status=0;
+
+//            }
+
+
+// 		    $data = array(
+		     
+// 		    'proposedlimit' =>$proposedlimit,
+		     
+// 		);
+// 	}catch(\Exception $ee){
+           
+//            $err_code=$ee->getMessage();
+// 	} 
 
      
-return  json_encode(array('status' =>$status,'data'=>$data,"err_code"=>$err_code ));
+// return  json_encode(array('statusid' =>$status,'data'=>$data,"err_code"=>$err_code ));
 
        }
 

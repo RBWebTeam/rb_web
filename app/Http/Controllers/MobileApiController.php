@@ -92,7 +92,7 @@ class MobileApiController extends ApiController
 		        \Image::make($image)->save($path);
 		        $response = array(
 		            'status' => 'success',
-		            'url'=>"staging.rupeeboss.com/upload/".$user_id.".png"
+		            'url'=>"www.rupeeboss.com/upload/".$user_id.".png"
 		        );
 		    }catch(Exception $ee){
 		    	return $ee->getMessage();

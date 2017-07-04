@@ -55,7 +55,7 @@ class BankController extends InitialController
 
  
     // keywords,title and description
-    if ($data['bank_name']=='ICICI BANK' && $data['product']=='Home Loan') {
+    if (stripos($data['bank_name'],'ICICI BANK' ) !== FALSE && $data['product']=='Home Loan') {
       $data['title']='ICICI Bank | Home Loan Eligibility & Rate of Interest ';
       $keywords='ICICI Bank Home Loan,ICICI Housing Loan,ICICI Bank Home Loan Interest Rate, Apply Online For ICICI Bank Home Loan,ICICI Home Loan Eligibility,ICICI Bank Home Loan Emi Calculator,Flexi Emi Home Loan';
       $data['description']='ICICI Bank Home Loan,ICICI Housing Loan,ICICI Bank Home Loan Interest Rate, Apply Online For ICICI Bank Home Loan,ICICI Home Loan Eligibility,ICICI Bank Home Loan Emi Calculator,Flexi Emi Home Loan';

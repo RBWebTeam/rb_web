@@ -533,7 +533,7 @@ $url = $this::$url_static."/BankAPIService.svc/verifyIIFLAPIAadharOTP";
       $data=$req->all();
       $data['ProspectNumber']=Session::get('prospectno');
        $json_data=json_encode($data);
-    print_r($data);
+   // print_r($data);
        $post_data = '{
   
    "head": {
@@ -547,7 +547,7 @@ $url = $this::$url_static."/BankAPIService.svc/verifyIIFLAPIAadharOTP";
   
   "body": '.$json_data.'
 }';
-print_r($post_data);
+// print_r($post_data);
 $url = $this::$url_static."/BankAPIService.svc/updateIIFLRevisedQuote";
     $result=$this->call_json_data_api($url,$post_data);
     $http_result=$result['http_result'];
@@ -583,7 +583,7 @@ $url = $this::$url_static."/BankAPIService.svc/updateIIFLRevisedQuote";
   },           
                   "body": {"ProspectNumber":"'.$prospectno.'","ApplicantType":"Applicant",
                  "CatID":"'.$cat_id[$i].'","SubCatID":"'.$sub_catg[$i+1].'",,"ImageName":"'.$imageName.'","Extension":"'.$extension.'","Base64string":"'.$base64[$i].'"}}';
-                 print_r($post_data);
+               //  print_r($post_data);
          $url = $this::$url_static."/BankAPIService.svc/uploadIIFLKYC";
          $result=$this->call_json_data_api($url,$post_data);
          $http_result=$result['http_result'];

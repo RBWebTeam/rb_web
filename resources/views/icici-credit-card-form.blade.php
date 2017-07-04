@@ -398,7 +398,9 @@ $(".top").click(function() {
 
               <div class="col-xs-6 form-padding" style="display: none" id="ICICIRelationshipNumbers">
                     <div>
+ 
                       <input type="text" name="ICICIRelationshipNumber" id="ICICIRelationshipNumber" class="form-control inp-fld" onkeypress="return fnAllowNumeric(event)"  value="0" >
+ 
                       <span class="highlight"></span><span class="bar"></span>
                       <label class="form-label-new lble">ICICI Relationship Number</label>
                       <div class="clear"></div>

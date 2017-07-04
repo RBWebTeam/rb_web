@@ -401,7 +401,7 @@ $(".top").click(function() {
 
               <div class="col-xs-6 form-padding" style="display: none" id="ICICIRelationshipNumber">
                     <div>
-                      <input type="text" name="ICICIRelationshipNumber" id="ICICIRelationshipNumber" class="form-control inp-fld" onkeypress="return fnAllowNumeric(event)" required minlength="12" maxlength="16"  >
+                      <input type="text" name="ICICIRelationshipNumber" id="ICICIRelationshipNumber" class="form-control inp-fld" onkeypress="return fnAllowNumeric(event)"  minlength="12" maxlength="16"  >
                       <span class="highlight"></span><span class="bar"></span>
                       <label class="form-label-new lble">ICICI Relationship Number</label>
                       <div class="clear"></div>

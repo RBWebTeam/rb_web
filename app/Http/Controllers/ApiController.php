@@ -1,4 +1,4 @@
- <?php
+<?php
 
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
@@ -8,9 +8,10 @@ use Response;
 use App\bank_quote_api_request;
 class ApiController extends CallApiController
 {
-	//Note:: All calculator API will be in Calulator Controller
+	
 	public function compare(Request $req){
 		//handling corner cases
+		//print_r($req->all());exit();
 		try{
 			if(!isset($req['quote_id']) && $req['quote_id']==0 && !$req['LoanTenure'] ){
 					return Response::json(array(

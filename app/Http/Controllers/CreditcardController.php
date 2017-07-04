@@ -25,7 +25,7 @@ class CreditcardController extends CallApiController
 
     // $newDate = date("d-m-Y",strtotime(str_replace('-','/', $req['SalaryAcOpenDate'])));
     $req['DateOfBirth']=str_replace('-', '/',$newDob);
-     //print_r($newDob);//exit();
+    // print_r( $req['DateOfBirth']);exit();
 
     // $req['SalaryAcOpenDate']=str_replace('-', '/',$newDate);
     $data=$req->all();
@@ -37,10 +37,12 @@ class CreditcardController extends CallApiController
     $data['UserID']='ICICI_CC_RupeeBoss';
     $data['Password']='Password@123';
     $data['ChannelType']='RupeeBoss';
-
+    if($data['ICICIBankRelationship']!='Salary'){
+        unset($data['ICICIRelationshipNumber']);
+    }
     $post_data=json_encode($data);
-          //print "<pre>";
-          //print_r($post_data);exit();
+         //  print "<pre>";
+         // print_r($post_data);exit();
     $url = $this::$url_static."BankAPIService.svc/PostIciciBank";
     $result=$this->call_json_data_api($url,$post_data);
     $http_result=$result['http_result'];
@@ -51,10 +53,7 @@ class CreditcardController extends CallApiController
    // print_r($id);exit();
     $update_user='';
     $obj = json_decode($m);
-
      // print_r($http_result);exit();
-
-
     if ($obj->ApplicationId) 
     {
         // print_r($obj);exit();

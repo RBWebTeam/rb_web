@@ -209,7 +209,7 @@
 											
 
 											<div class="col-md-4">
-										     <input  style='display:none;' type="text" class="form-input-new form-control" name="ICICIRelationshipNumber" id="ICICIRelationshipNumber" placeholder="ICICI Relationship Number" maxlength="15" onkeypress="return isNumberKey(event)"  required>
+										     <input  style='display:none;' type="text" class="form-input-new form-control" name="ICICIRelationshipNumber" id="ICICIRelationshipNumber" placeholder="ICICI Relationship Number" minlength="12" maxlength="16" onkeypress="return isNumberKey(event)"  required>
 											</div>
 		
 		
@@ -854,7 +854,9 @@
 <script type="text/javascript">
           function Redirect() 
           {
-          window.location="http://erp.rupeeboss.com/Credit_Card_Upload_Docs.aspx?App_Id=drop&MobileNo=ResidenceMobileNo&CardType=ICICI";
+          var mobile=$('#ResidenceMobileNo').val();
+            var app_id=$('#drop').text();
+            window.location="http://erp.rupeeboss.com/Credit_Card_Upload_Docs.aspx?App_Id="+app_id+"&CardType=ICICI&MobileNo="+mobile;
           }
 </script>
 

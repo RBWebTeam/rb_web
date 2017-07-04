@@ -89,8 +89,7 @@ $(".top").click(function() {
 });
 </script>
 
-<form class="form12" id="compareform" role="form" method="POST" >
-               {{ csrf_field() }}
+
                
 <div>
        <!-- Main content -->
@@ -127,10 +126,13 @@ $(".top").click(function() {
                     
 
                 <div class="tab-content">
-                       <div id="home" class="tab-pane fade in active">
+            <div id="home" class="tab-pane fade in active">
             
           <!-- <form action="">  -->  
             <div class="col-md-12">
+
+            <form class="form12" id="compareform" role="form" method="POST" >
+              
             <div class="panel-group" id="accordion" >
               <div class="panel panel-default">
                 <div class="panel-heading" role="tab" id="headingOne">
@@ -142,11 +144,6 @@ $(".top").click(function() {
                 </div>
                 <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
                   <div class="panel-body">    
-
-               <input type="hidden" name="prod" value="{{$prod}}">
-               <input type="hidden" name="amount" value="{{$amount}}">
-               <input type="hidden" name="interest" value="{{$interest}}">
-
 
           <div class="col-xs-6 form-padding">
                     <div>
@@ -399,9 +396,11 @@ $(".top").click(function() {
                   </div>
 
 
-              <div class="col-xs-6 form-padding" style="display: none" id="ICICIRelationshipNumber">
+              <div class="col-xs-6 form-padding" style="display: none" id="ICICIRelationshipNumbers">
                     <div>
-                      <input type="text" name="ICICIRelationshipNumber" id="ICICIRelationshipNumber" class="form-control inp-fld" onkeypress="return fnAllowNumeric(event)"  minlength="12" maxlength="16"  >
+ 
+                      <input type="text" name="ICICIRelationshipNumber" id="ICICIRelationshipNumber" class="form-control inp-fld" onkeypress="return fnAllowNumeric(event)"  value="0" >
+ 
                       <span class="highlight"></span><span class="bar"></span>
                       <label class="form-label-new lble">ICICI Relationship Number</label>
                       <div class="clear"></div>
@@ -681,7 +680,7 @@ $(".top").click(function() {
                                </div>
           <div class="col-xs-6 form-padding">
                     <div>
-                      <input class="form-control inp-fld"  type="text" id="PanNo" name="PanNo" required oninput="pancard('PanNo')" maxlength="10" minlength="10" >
+                      <input class="form-control inp-fld"  type="text" id="PanNo" name="PanNo"  oninput="pancard('PanNo')" maxlength="10" minlength="10" >
                       <span class="highlight"></span><span class="bar"></span>
                       <label class="form-label-new lble">Pancard*</label>
                       <div class="clear"></div>
@@ -731,10 +730,14 @@ $(".top").click(function() {
   </div>
   </div>
   
-  
+               <input type="hidden" name="prod" value="{{$prod}}">
+               <input type="hidden" name="amount" value="{{$amount}}">
+               <input type="hidden" name="interest" value="{{$interest}}">
+               <input type="hidden" name="_token" value="{{ csrf_token() }}">
+
 
           <div class="col-md-12 pull-left text-justify">
-            <p class="p-padding"><input type="checkbox" name="terms"  class="redio-lft"/>&nbsp; I hereby confirm that I have read and understood the Rupeeboss Terms and Conditions applicable to this service and that all the details furnished by me above are true and correct. I further provide consent to Rupeeboss and its affiliates to contact me with reference to financial products and this consent shall override any registration with DNC/NDNC.</p>
+            <p class="p-padding"><input type="checkbox" name="terms" id="checkboxid"  class="redio-lft"/>&nbsp; I hereby confirm that I have read and understood the Rupeeboss Terms and Conditions applicable to this service and that all the details furnished by me above are true and correct. I further provide consent to Rupeeboss and its affiliates to contact me with reference to financial products and this consent shall override any registration with DNC/NDNC.</p>
             
             <!-- <button class="sbmt-btn credit-submit dis-tbl">Confirm &amp; Continue</button> -->
             &nbsp;&nbsp;&nbsp;&nbsp;<button class="sbmt-btn icici-credit-submit dis-tbl " >Confirm & Continue<i class="icon-arrow-right"></i>
@@ -1008,15 +1011,20 @@ $(document).ready(function(){
 <script type="text/javascript">
   $(document).ready(function(){
     $('#ICICIBankRelationship').on('change', function() {
-      console.log(this.value);
+       
+
       if ( this.value == 'Salary')
       {
-        $("#ICICIRelationshipNumber").show();
+         $("#ICICIRelationshipNumber").val('');
+         $("#ICICIRelationshipNumbers").show();
       }
-      else
-      {
-        $("#ICICIRelationshipNumber").hide();
+      else{
+        $("#ICICIRelationshipNumbers").hide();
+
+        
       }
+
+
     });
 });
 </script>
@@ -1173,6 +1181,109 @@ $(document).ready(function(){
 </script>
 
 <script type="text/javascript">
+  
+
+window.onload=function(){
+// Change styles according to panels state
+
+
+// Initialize collapsibles
+
+$('.collapse').collapse({
+  toggle: false,
+  parent: '#accordion'
+});
+
+
+$(".icici-credit-submit").click(function(event){event.preventDefault();
+
+
+$('form#compareform').find('input').each(function(){
+    if($(this).val() =="" && $('#compareform').valid()){
+         var current = $(this).closest(".panel-collapse");
+        if (!current.hasClass("in")) {
+           current.collapse("show");
+
+   
+        }else{
+
+          // current.addClass("in");
+
+        } 
+
+
+
+return false;
+         
+    }else{ 
+
+       if( $('#ResidenceMobileNo').val()!='' &&  $('#ResidencePhoneNumber').val()!=''  &&  $('#PanNo').val()!='' &&  $('#checkboxid').val()==1){
+        $(".iframeloading").show();
+        $('#upload').show();
+        $.ajax({  
+         type: "POST",  
+         url: "{{URL::to('icici-credit-submit')}}",
+         data : $('#compareform').serialize(),
+         dataType: 'json',
+         success: function(msg){
+         $(".iframeloading").hide();  
+        
+         
+          if(msg==2){
+            
+             alert("Something Went Wrong");
+
+             
+          }else{
+            
+            if (msg.Decision =='Declined') {
+              $('#upload').hide();
+
+            }
+             $('#drop').text(msg.id);
+              $('#drop1').text(msg.Decision);
+              $('#drop2').text(msg.Reason);
+             $('#credit_process_sorry').modal('show');
+          }
+          return false;
+        }  
+    
+
+      }); 
+
+     
+       return false;
+       
+
+      } 
+    } 
+ 
+    
+});
+
+//................
+
+
+
+
+
+
+
+
+ 
+
+
+
+});
+}
+
+
+ 
+
+
+</script>
+
+<!--script type="text/javascript">
 var prv_head;
 var head_index=0;
 var inputs = $("#compareform input[required='required']");
@@ -1304,7 +1415,7 @@ var inputs = $("#compareform input[required='required']");
     });
 
 
-</script>
+</script-->
 
 
 
@@ -1364,7 +1475,7 @@ var inputs = $("#compareform input[required='required']");
           }
 </script>
 
-<script type="text/javascript">
+<!-- <script type="text/javascript">
     var d = new Date();
     var year = d.getFullYear() ;
     d.setFullYear(year);
@@ -1377,7 +1488,7 @@ var inputs = $("#compareform input[required='required']");
       yearRange: '-100:' + year + '',
       defaultDate: d
     });
-</script>
+</script> -->
 
 <script type="text/javascript">
   $('#have').change(function(){
@@ -1556,6 +1667,23 @@ var inputs = $("#compareform input[required='required']");
   $("#DateOfBirth").click(function() {
     $(".lastReporteddob").datepicker('show');
 });
+
+
+
+
+
+ 
+
+  $('#checkboxid').click(function () {
+    if ($(this).is(':checked')) {
+
+         $('#checkboxid').val(1);
+        
+    } else {
+        $('#checkboxid').val(0);
+    }
+});
+
 </script>
 
 <!-- var y=$(':input[required]:hidden');

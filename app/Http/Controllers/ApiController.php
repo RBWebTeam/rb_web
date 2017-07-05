@@ -720,7 +720,7 @@ run_else:
 	  	    		$err="You are not eligible for loan";
 	  	    	}
 	  	}catch (\Exception $e) {
-	  		print_r($e->getMessage());exit();
+	  		//print_r($e->getMessage());exit();
 	  			$error=$e->getCode();
 	  			$err=$this->getErrorMsg($error);
 		}

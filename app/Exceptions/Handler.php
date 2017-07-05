@@ -50,7 +50,7 @@ class Handler extends ExceptionHandler
         //print_r($e);exit();.
         
             if($e instanceof NotFoundHttpException){
-            // return response()->view('layout.missing', [], 404);
+             return $e;
         }
         // else  if($e instanceof QueryException){
         //      return $e;

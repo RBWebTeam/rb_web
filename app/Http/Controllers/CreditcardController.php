@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use DB;
+use Mail;
 use Session;
 use App\credit_card_form_req;
 class CreditcardController extends CallApiController
@@ -95,6 +96,25 @@ class CreditcardController extends CallApiController
                
          return view('icici-dc');
 
+     }
+
+     public function to_view_on_browser_url(Request $req){
+       try{
+               $url=$this::$current_domain_static."icici-dc";
+               
+               $data="Please click on this url to view on browser :\n".$url;
+               // print_r($data);exit();
+               $email = $req['urlemailid'];
+               $mail = Mail::send('email_view',['data' => $data], function($message) use($email) {
+                               $message->from('wecare@rupeeboss.com', 'RupeeBoss');
+                               $message->to($email)
+                               ->subject('ICICI Credit Card Link');
+                           });
+
+           }catch(\Exception $ee){
+                $mail=$ee->getMessage();
+           }
+       return response()->json($data);
      }
 
 

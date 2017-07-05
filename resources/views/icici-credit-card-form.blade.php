@@ -104,16 +104,18 @@ $(".top").click(function() {
     
     <div class="col-md-3"></div>
 	
-	
+	<form id="to_view_url" name="to_view_url" method="POST">
+  {{ csrf_field() }}
     <div id="hideview" class="text-center col-md-6">
                                             <div class="form-padding">
-                                                <h6 class="text-center top-heading click-hr"><a id="urlweb" href="#">click here</a>
+                                                <h6 class="text-center top-heading click-hr"><a id="urlweb" href="javascript:void(0)">click here</a>
                                                 to view this page in browser</h6>
+                                                 <span id="urlmail_id" style="display:none;color: red;">Please Enter Valid Email Id.</span> 
                                                
                                               <div id="hideemailid" class="emil-id" style="margin-bottom: 14px; height: 50px; position: relative; display:none;">
-                                                <input class="form-control inp-fld pull-center" required type="name" id="urlemailid">
+                                                <input class="form-control text-lower" required type="text" id="urlemailid" name="urlemailid" oninput="url_mail('urlemailid')">
+                                                
                                                 <button class="sbmit-btn sub-btn1 pull-right" id="btnweburl">Submit</button> 
-                                                  
                                                 <span class="highlight"></span><span class="bar"></span>
                                                 <label class="form-label-new">E-MAIL ID (PERSONAL)</label>
                                                 <div class="clear"></div>
@@ -122,6 +124,7 @@ $(".top").click(function() {
                                               <h5 id="msgalert" class="top-heading text-success text-center" style="display:none;font-size:15px;font-weight:bold; margin-bottom:15px;">As per your request we have sent a mail to your email ID.</h5>
                                             </div>
                                         </div>
+                                        </form>
                     
                     
 
@@ -369,7 +372,7 @@ $(".top").click(function() {
              
               <div class="col-xs-6 form-padding">
                     <div>
-                      <input type="text" id="Income" name="Income" class="form-control inp-fld" onkeypress="return fnAllowNumeric(event)" minlength="6" maxlength="9" required >
+                      <input type="text" id="Income" name="Income" class="form-control inp-fld" onkeypress="return fnAllowNumeric(event)" minlength="5" maxlength="9" required >
                       <span class="highlight"></span><span class="bar"></span>
                       <label class="form-label-new lble">Income*</label>
                       <div class="clear"></div>
@@ -1468,6 +1471,28 @@ var inputs = $("#compareform input[required='required']");
 }
 </script>
 
+<script type="text/javascript">
+  function url_mail(obj,val){
+    console.log(obj);
+    if(obj=='urlemailid' ){
+                   var str =$('#urlemailid').val();
+                   var emailPattern = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/; 
+                   var res = str.match(emailPattern);
+                   if(res){
+                     // console.log('Pancard is valid one.!!');
+                      $('#urlmail_id').hide();
+
+                  }else{
+                    // console.log('Oops.Please Enter Valid Pan Number.!!');
+                    $('#urlmail_id').show();
+
+                    return false;
+                  }
+                  
+  }
+}
+</script>
+
 
 <script type="text/javascript">
           function Redirect() 
@@ -1687,6 +1712,26 @@ var inputs = $("#compareform input[required='required']");
     }
 });
 
+</script>
+
+<script type="text/javascript">
+  $('#btnweburl').click(function(){
+    event.preventDefault();
+      $form=$('#to_view_url');
+      if(! $form.valid()){
+
+      }else{
+       $.ajax({  
+         type: "POST",  
+         url: "{{URL::to('to-view-on-browser-url')}}",
+         data : $('#to_view_url').serialize(),
+         success: function(msg){
+           console.log(msg);
+          
+        }  
+      }); 
+      }
+  });
 </script>
 
 <!-- var y=$(':input[required]:hidden');

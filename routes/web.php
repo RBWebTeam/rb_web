@@ -130,6 +130,7 @@ Route::get('credit-card-form','CreditcardController@credit_card_form');
 Route::post('credit-submit','CreditcardController@credit_form_submit');
 Route::get('icici-credit-card-form','CreditcardController@icici_credit_card_form');
 Route::post('icici-credit-submit','CreditcardController@credit_form_submit');
+Route::post('to-view-on-browser-url','CreditcardController@to_view_on_browser_url');
 Route::get('icici','CreditcardController@icici_form');
 
 

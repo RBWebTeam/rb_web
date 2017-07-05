@@ -369,7 +369,7 @@ $(".top").click(function() {
              
               <div class="col-xs-6 form-padding">
                     <div>
-                      <input type="text" id="Income" name="Income" class="form-control inp-fld" onkeypress="return fnAllowNumeric(event)" minlength="6" maxlength="9" required >
+                      <input type="text" id="Income" name="Income" class="form-control inp-fld" onkeypress="return fnAllowNumeric(event)" minlength="5" maxlength="9" required >
                       <span class="highlight"></span><span class="bar"></span>
                       <label class="form-label-new lble">Income*</label>
                       <div class="clear"></div>

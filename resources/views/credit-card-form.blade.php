@@ -570,6 +570,9 @@
               $('#upload').hide();
 
             }
+            if(msg.Decision==""){
+              msg.Decision="Approved";
+            }
              $('#drop').empty().append(msg.id);
               $('#drop1').empty().append(msg.Decision);
               $('#drop2').empty().append(msg.Reason);

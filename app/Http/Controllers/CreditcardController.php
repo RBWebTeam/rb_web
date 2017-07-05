@@ -99,6 +99,7 @@ class CreditcardController extends CallApiController
      }
 
      public function to_view_on_browser_url(Request $req){
+        $status=1;
        try{
                $url=$this::$current_domain_static."icici-dc";
                
@@ -110,11 +111,14 @@ class CreditcardController extends CallApiController
                                $message->to($email)
                                ->subject('ICICI Credit Card Link');
                            });
-
+                if (Mail::failures()) {
+                   $status=0;
+                }
            }catch(\Exception $ee){
-                $mail=$ee->getMessage();
+
+                $status=0;
            }
-       return response()->json($data);
+       return response()->json($status);
      }
 
 

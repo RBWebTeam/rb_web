@@ -184,7 +184,7 @@ class CompareController extends ExperianController
                 $loaninterest=$req['loaninterest']/12/100;
                 $loanterm=$req['loanterm']*12;
                 $old_loaninterest=$req['old_loaninterest']/12/100;
-                $old_drop_emi=$req['old_drop_emi'];
+                
                  // print_r($loanamount."".$loaninterest."".$loanterm."".$old_drop_emi);exit();
          
 
@@ -200,7 +200,7 @@ class CompareController extends ExperianController
 
                 $per_lacs=100000 * $loaninterest * (pow(1 + $loaninterest, $loanterm) / (pow(1 + $loaninterest, $loanterm) - 1));
 
-                $borrow=$old_drop_emi/$per_lacs;
+               
 
                  $drop_emi_new=$old_emi-$emi;
 
@@ -208,7 +208,7 @@ class CompareController extends ExperianController
                   //print_r($drop_in_int_new);exit();
        
                 return response()->json(array('success' => true,'emi' => $emi,
-                                          'after_savings'=>$after_savings,'loaninterest'=>$loaninterest*12*100,'borrow'=>$borrow,'drop_emi_new'=>$drop_emi_new,'drop_in_int_new'=>$drop_in_int_new));
+                                          'after_savings'=>$after_savings,'loaninterest'=>$loaninterest*12*100,'drop_emi_new'=>$drop_emi_new,'drop_in_int_new'=>$drop_in_int_new));
              
                 }
     public function switchme_mobile(){

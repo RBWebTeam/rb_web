@@ -369,7 +369,7 @@ $(".top").click(function() {
              
               <div class="col-xs-6 form-padding">
                     <div>
-                      <input type="text" id="Income" name="Income" class="form-control inp-fld" onkeypress="return fnAllowNumeric(event)"  required >
+                      <input type="text" id="Income" name="Income" class="form-control inp-fld" onkeypress="return fnAllowNumeric(event)" minlength="6" maxlength="9" required >
                       <span class="highlight"></span><span class="bar"></span>
                       <label class="form-label-new lble">Income*</label>
                       <div class="clear"></div>
@@ -388,7 +388,7 @@ $(".top").click(function() {
 
           <div class="col-xs-6 form-padding">
                     <div>
-                      <input type="text" name="Total_Exp" id="Total_Exp" class="form-control inp-fld" onkeypress="return fnAllowNumeric(event)" required >
+                      <input type="text" name="Total_Exp" id="Total_Exp" class="form-control inp-fld" onkeypress="return fnAllowNumeric(event)" minlength="1" maxlength="3" required >
                       <span class="highlight"></span><span class="bar"></span>
                       <label class="form-label-new lble">Total Experience</label>
                       <div class="clear"></div>
@@ -399,7 +399,7 @@ $(".top").click(function() {
               <div class="col-xs-6 form-padding" style="display: none" id="ICICIRelationshipNumbers">
                     <div>
  
-                      <input type="text" name="ICICIRelationshipNumber" id="ICICIRelationshipNumber" class="form-control inp-fld" onkeypress="return fnAllowNumeric(event)"  value="0" >
+                      <input type="text" name="ICICIRelationshipNumber" id="ICICIRelationshipNumber" class="form-control inp-fld" onkeypress="return fnAllowNumeric(event)" minlength="12" maxlength="16"  value="0" >
  
                       <span class="highlight"></span><span class="bar"></span>
                       <label class="form-label-new lble">ICICI Relationship Number</label>
@@ -1239,6 +1239,9 @@ return false;
             if (msg.Decision =='Declined') {
               $('#upload').hide();
 
+            }
+            if(msg.Decision==""){
+              msg.Decision="Approved";
             }
              $('#drop').text(msg.id);
               $('#drop1').text(msg.Decision);

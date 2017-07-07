@@ -34,7 +34,6 @@
       .mrg-tpp {margin-top:35px;}
       .bg-primary {padding:5px; font-size:16px;}
       .bg-primary:hover {color:#fff;}
-      .small-txt {font-size:10px;}
       .input__field {border-radius:0px;}
       .input__label--nao {top:15px;}
       .input__field {border:1px solid #dfdfdf;height:60px;}
@@ -43,6 +42,8 @@
                     border:2px solid red;
                 }
       h1 {font-size:40px;color:#75a8de;padding:20px; padding-bottom:0px;margin-bottom:5px;}
+	  .ull {padding:0px; text-align:left;}
+	  .ull li {list-style-type:none; padding:10px;border-bottom:1px dashed #ccc;}
 </style>
     <div id="fh5co-hero">
     <div class="express-lon-ban"><img src="images/express-loan-image1.jpg" class="img-responsive"/></div>
@@ -1120,7 +1121,7 @@
             </form>
             </div>
             
-            <div id="upload" style="display: none;">
+            <div id="upload">
             <form name="upload_details" id="upload_details" enctype="multipart/form-data" method="POST">
             {{ csrf_field() }}
             <div>
@@ -1146,9 +1147,7 @@
                 </section>
                 </div>
                 
-             <section class="content">
-            <div class="col-md-2"></div>
-         
+             <section class="content">      
             
                 <div class="col-md-8 col-md-offset-2">
                 <h3 class="text-center pad">Non Financial Documents</h3>
@@ -1185,7 +1184,7 @@
             </form>
             </div>
                 
-                <div id="financial_doc" style="display: none;" >
+                <div id="financial_doc">
                 <form name="financial_details" id="financial_details" enctype="multipart/form-data" method="POST">
                  {{ csrf_field() }}
                 <div class="row">

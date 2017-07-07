@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use DB;
+use Mail;
 use Session;
 use App\credit_card_form_req;
 class CreditcardController extends CallApiController
@@ -30,14 +31,16 @@ class CreditcardController extends CallApiController
     // $req['SalaryAcOpenDate']=str_replace('-', '/',$newDate);
     $data=$req->all();
     // print_r($req->all());exit();
-    $data['brokerid']=Session::get('brokerid')?Session::get('brokerid'):'0';
-    $data['empid']=Session::get('empid')?Session::get('empid'):'0';
-    $data['source']=Session::get('source')?Session::get('source'):'0';
+    $data['brokerid']=Session::get('brokerid')?Session::get('brokerid'):'MA==';
+    $data['empid']=Session::get('empid')?Session::get('empid'):'MA==';
+    $data['source']=Session::get('source')?Session::get('source'):'MA==';
     $data['type']='DC';
     $data['UserID']='ICICI_CC_RupeeBoss';
     $data['Password']='Password@123';
     $data['ChannelType']='RupeeBoss';
-
+    if($data['ICICIBankRelationship']!='Salary'){
+        unset($data['ICICIRelationshipNumber']);
+    }
     $post_data=json_encode($data);
          //  print "<pre>";
          // print_r($post_data);exit();
@@ -52,6 +55,9 @@ class CreditcardController extends CallApiController
     $update_user='';
     $obj = json_decode($m);
      // print_r($http_result);exit();
+
+
+
     if ($obj->ApplicationId) 
     {
         // print_r($obj);exit();
@@ -90,6 +96,29 @@ class CreditcardController extends CallApiController
                
          return view('icici-dc');
 
+     }
+
+     public function to_view_on_browser_url(Request $req){
+        $status=1;
+       try{
+               $url=$this::$current_domain_static."icici-dc";
+               
+               $data="Please click on this url to view on browser :\n".$url;
+               // print_r($data);exit();
+               $email = $req['urlemailid'];
+               $mail = Mail::send('email_view',['data' => $data], function($message) use($email) {
+                               $message->from('wecare@rupeeboss.com', 'RupeeBoss');
+                               $message->to($email)
+                               ->subject('ICICI Credit Card Link');
+                           });
+                if (Mail::failures()) {
+                   $status=0;
+                }
+           }catch(\Exception $ee){
+
+                $status=0;
+           }
+       return response()->json($status);
      }
 
 

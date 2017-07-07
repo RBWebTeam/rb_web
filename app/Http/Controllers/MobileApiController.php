@@ -92,12 +92,56 @@ class MobileApiController extends ApiController
 		        \Image::make($image)->save($path);
 		        $response = array(
 		            'status' => 'success',
-		            'url'=>"staging.rupeeboss.com/upload/".$user_id.".png"
+		            'url'=>"www.rupeeboss.com/upload/".$user_id.".png"
 		        );
 		    }catch(Exception $ee){
 		    	return $ee->getMessage();
 		    }
         return Response::json( $response  );
+	}
+
+	public function revise_calculation(Request $req){
+		$status=0;
+		$err="";
+		$data=null;
+		try{
+				$loanamount=$req['loanamount'];
+		        $loaninterest=$req['loaninterest']/12/100;
+		        $loanterm=$req['loanterm']*12;
+		        $old_loaninterest=$req['old_loaninterest']/12/100;
+		
+		        $emi = $loanamount * $loaninterest * (pow(1 + $loaninterest, $loanterm) / (pow(1 + $loaninterest, $loanterm) - 1));
+		
+		        $old_emi = $loanamount * $old_loaninterest * (pow(1 + $old_loaninterest, $loanterm) / (pow(1 + $old_loaninterest, $loanterm) - 1));
+		
+		        $old_total=(($old_emi*$loanterm)-$loanamount);
+		
+		        $total_payable_interest=(($emi*$loanterm)-$loanamount);
+		
+		        $after_savings=$old_total- $total_payable_interest;
+		
+		        $per_lacs=100000 * $loaninterest * (pow(1 + $loaninterest, $loanterm) / (pow(1 + $loaninterest, $loanterm) - 1));
+		
+		  
+		
+		         $drop_emi_new=$old_emi-$emi;
+		
+		         $drop_in_int_new=(($old_loaninterest*12*100)-($loaninterest*12*100));
+		          //print_r($drop_in_int_new);exit();
+		         $data['emi']=round($emi,2);
+		         $data['after_savings']=round($after_savings,2);
+		         $data['loaninterest']=round($loaninterest*12*100,2);
+		         $data['drop_emi_new']=round($drop_emi_new,2);
+		         $data['drop_in_int_new']=round($drop_in_int_new,2);
+		         
+		         $status=1;
+		     }catch(\Exception $ee){
+		     	$err=$ee->getMessage();
+		     }
+
+        return response()->json(array('success' => $status,'data'=>$data,'err'=>$err));
+     
+
 	}
 
 }

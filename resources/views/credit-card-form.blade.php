@@ -13,9 +13,9 @@
 						
 							<form class="" id="compareform" role="form" method="POST" >
 							 {{ csrf_field() }}
-							 <input type="hidden" name="empid" class="empid" value=" <?php echo Session::get('empid')?Session::get('empid'):'0';?>">
-						          <input type="hidden" name="brokerid" class="brokerid" value="<?php echo Session::get('brokerid')?Session::get('brokerid'):'0';?>">
-						          <input type="hidden" name="source" class="source" value="<?php echo Session::get('source')?Session::get('source'):'0';?>"> 
+							 <input type="hidden" name="empid" class="empid" value=" <?php echo Session::get('empid')?Session::get('empid'):'MA==';?>">
+						          <input type="hidden" name="brokerid" class="brokerid" value="<?php echo Session::get('brokerid')?Session::get('brokerid'):'MA==';?>">
+						          <input type="hidden" name="source" class="source" value="<?php echo Session::get('source')?Session::get('source'):'MA==';?>"> 
 						          <input type="hidden" name="cards" class="prod" 
 						          value="<?php if(isset($_GET['prod'])){
 						          	echo str_replace("_"," ",$_GET["prod"]);
@@ -209,7 +209,7 @@
 											
 
 											<div class="col-md-4">
-										     <input  style='display:none;' type="text" class="form-input-new form-control" name="ICICIRelationshipNumber" id="ICICIRelationshipNumber" placeholder="ICICI Relationship Number" maxlength="15" onkeypress="return isNumberKey(event)"  required>
+										     <input  style='display:none;' type="text" class="form-input-new form-control" name="ICICIRelationshipNumber" id="ICICIRelationshipNumber" placeholder="ICICI Relationship Number" minlength="12" maxlength="16" onkeypress="return isNumberKey(event)"  required>
 											</div>
 		
 		
@@ -570,6 +570,9 @@
               $('#upload').hide();
 
             }
+            if(msg.Decision==""){
+              msg.Decision="Approved";
+            }
              $('#drop').empty().append(msg.id);
               $('#drop1').empty().append(msg.Decision);
               $('#drop2').empty().append(msg.Reason);
@@ -789,7 +792,7 @@
     console.log(obj);
     if(obj=='work_email' ){
                    var str =$('#work_email').val();
-                   var emailPattern = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/; 
+                   var emailPattern = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/; 
                    var res = str.match(emailPattern);
                    if(res){
                      // console.log('Pancard is valid one.!!');
@@ -854,7 +857,9 @@
 <script type="text/javascript">
           function Redirect() 
           {
-          window.location="http://beta.erp.rupeeboss.com/Credit_Card_Upload_Docs.aspx?App_Id=drop&MobileNo=ResidenceMobileNo&CardType=ICICI";
+          var mobile=$('#ResidenceMobileNo').val();
+            var app_id=$('#drop').text();
+            window.location="http://erp.rupeeboss.com/Credit_Card_Upload_Docs.aspx?App_Id="+app_id+"&CardType=ICICI&MobileNo="+mobile;
           }
 </script>
 

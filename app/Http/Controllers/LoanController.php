@@ -339,44 +339,12 @@ public function dropdown(Request $req){
     return response()->json($b);
 }     
 
-// public function education(Request $req){
-//     // print_r($req->all());exit();
-//     $post_data = '{
-//    "head": {
-//     "requestCode": "PLRQDD01",
-//     "key": "ae94e5857582d97cd9a8669d51c164c8",
-//     "appVer": "1.0",
-//     "osName": "WebAPI",
-//     "appName": "ALLIANCE",
-//     "source":"RupeeBoss"
-//   },
-  
-//   "body": {"SrchParam":"EducationMaster" }
-// }';
-//     //call API here to save in DB
-//         //$post=json_encode($post_data);
-//      // print_r($post_data);exit();
 
-//     $url = $this::$url_static."/BankAPIService.svc/getIIFLDropdownMasters";
-//     $result=$this->call_json_data_api($url,$post_data);
-//     $http_result=$result['http_result'];
-//     $error=$result['error'];
-//     $st=str_replace('"{', "{", $http_result);
-//     $s=str_replace('}"', "}", $st);
-//     $m=$s=str_replace('\\', "", $s);
-
-
-//      $obj = json_decode($m);
-//       // print_r($obj);exit();
-//      $a=$obj->body;
-//      $b=$a->Values;
-//     return response()->json($b);
-// }   
 
     public function applicant(Request $req){
        $data=$req->all();
        $json_data=json_encode($data);
-      print_r($data);
+      // print_r($data);
        $post_data = '{
    "head": {
     "requestCode": "PLRQCL01",
@@ -391,7 +359,7 @@ public function dropdown(Request $req){
 }';
     //call API here to save in DB
         //$post=json_encode($post_data);
-     //print_r($post_data);exit();
+      //print_r($post_data);
 
     $url = $this::$url_static."/BankAPIService.svc/createIIFLAppDtls";
     $result=$this->call_json_data_api($url,$post_data);
@@ -413,7 +381,7 @@ public function dropdown(Request $req){
      }
 
      
-     // print_r($obj);
+     // print_r($obj);exit();
 
      return response()->json( $obj);
       
@@ -499,7 +467,7 @@ $url = $this::$url_static."/BankAPIService.svc/createIIFLCoAppDtls";
     public function offer_status(){
     $data['prospectNo']=Session::get('prospectno');
     $json_data=json_encode( $data);
-    // print_r($post_data);
+    
        $json_data=json_encode($data);
        
        $post_data = '{
@@ -563,8 +531,9 @@ $url = $this::$url_static."/BankAPIService.svc/verifyIIFLAPIAadharOTP";
 
     public function iifl_instant_eligibility(Request $req){
       $data=$req->all();
+      $data['ProspectNumber']=Session::get('prospectno');
        $json_data=json_encode($data);
-      // print_r($post_data);
+   // print_r($data);
        $post_data = '{
   
    "head": {
@@ -578,6 +547,7 @@ $url = $this::$url_static."/BankAPIService.svc/verifyIIFLAPIAadharOTP";
   
   "body": '.$json_data.'
 }';
+// print_r($post_data);
 $url = $this::$url_static."/BankAPIService.svc/updateIIFLRevisedQuote";
     $result=$this->call_json_data_api($url,$post_data);
     $http_result=$result['http_result'];
@@ -586,7 +556,7 @@ $url = $this::$url_static."/BankAPIService.svc/updateIIFLRevisedQuote";
     $s=str_replace('}"', "}", $st);
     $m=$s=str_replace('\\', "", $s);
     $obj = json_decode($m);
-    return $obj;
+    return response()->json( $obj);
     }
 
     public function iifl_doc_upload(Request $req){
@@ -612,8 +582,8 @@ $url = $this::$url_static."/BankAPIService.svc/updateIIFLRevisedQuote";
     "source":"RupeeBoss"
   },           
                   "body": {"ProspectNumber":"'.$prospectno.'","ApplicantType":"Applicant",
-                 "CatID":"'.$cat_id[$i].'","SubCatID":"'.$sub_catg[$i+1].'",,"ImageName":"'.$imageName.'","Extension":"'.$extension.'","Base64string":"'.$base64[$i].'"}}';
-                 print_r($post_data);
+                 "CatID":"'.$cat_id[$i].'","SubCatID":"'.$sub_catg[$i+1].'","ImageName":"'.$imageName.'","Extension":"'.$extension.'","Base64string":"'.$base64[$i].'"}}';
+               print_r($post_data);print("\n ");
          $url = $this::$url_static."/BankAPIService.svc/uploadIIFLKYC";
          $result=$this->call_json_data_api($url,$post_data);
          $http_result=$result['http_result'];
@@ -623,10 +593,10 @@ $url = $this::$url_static."/BankAPIService.svc/updateIIFLRevisedQuote";
          $m=$s=str_replace('\\', "", $s);
          $obj = json_decode($m);
          $response[$i]=$obj;
-         print_r("\n");
+         print_r("\n\n");
     }
 
-    // print_r($response);
+     print_r($response);
   }
 
   public function iifl_financial_doc_upload(Request $req){
@@ -649,7 +619,7 @@ $url = $this::$url_static."/BankAPIService.svc/updateIIFLRevisedQuote";
                   "source":"RupeeBoss"
                },               
               "body": {"ProspectNumber":"'.$prospectno.'","ApplicantType":"Applicant",
-             "CatID":"'.(4-$i).'","SubCatID":"'.$sub_catg[$i].'",,"ImageName":"'.$imageName.'","Extension":"'.$extension.'","Base64string":"'.$base64[$i].'"}}';
+             "CatID":"'.(4-$i).'","SubCatID":"'.$sub_catg[$i].'","ImageName":"'.$imageName.'","Extension":"'.$extension.'","Base64string":"'.$base64[$i].'"}}';
              print_r($post_data);
 
      $url = $this::$url_static."/BankAPIService.svc/uploadIIFLFinDetls";

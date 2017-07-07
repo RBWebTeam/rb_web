@@ -143,7 +143,7 @@
      <input type="text" class="form-input-new form-control" name="emi[]" id="emi" placeholder="EMI"  onkeypress="return isNumberKey(event)" value="" required>
 	</div>
 	<div class="col-xs-12 col-md-6 form-padding">
-	 <select class="form-input-new form-control" name="loan[]">
+	 <select class="form-input-new form-control" name="loan">
 	 <option>Select Loan</option>
 	     <option>Home Loan</option>
 		 <option>Property Loan</option>

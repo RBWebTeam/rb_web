@@ -1,4 +1,4 @@
- <?php
+<?php
 
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
@@ -8,9 +8,10 @@ use Response;
 use App\bank_quote_api_request;
 class ApiController extends CallApiController
 {
-	//Note:: All calculator API will be in Calulator Controller
+	
 	public function compare(Request $req){
 		//handling corner cases
+		//print_r($req->all());exit();
 		try{
 			if(!isset($req['quote_id']) && $req['quote_id']==0 && !$req['LoanTenure'] ){
 					return Response::json(array(
@@ -706,8 +707,11 @@ run_else:
 
 	  		if($req['ProductId']==12){
 			  	 $data=DB::select('call  usp_get_bank_quot_test("'.$req['PropertyCost'].'","'.$req['LoanTenure'].'","'.$req['LoanRequired'].'","'.$req['ApplicantGender'].'","'.$req['ApplicantIncome'].'","'.$req['ApplicantObligations'].'","1985-12-12","N","","","'.$req['Turnover'].'","'.$req['ProfitAfterTax'].'","'.$req['Depreciation'].'","'.$req['DirectorRemuneration'].'","","","","","'.$req['ApplicantSource'].'","","","'.$req['ProductId'].'")');
-	  			}elseif($req['ProductId']==9){
+	  			}else if($req['ProductId']==9){
 	  			 $data=DB::select('call  usp_get_personal_loan_quot ("1985-12-12","'.$req['ApplicantSource'].'","'.$req['ApplicantIncome'].'","'.$req['ApplicantObligations'].'","'.$req['LoanTenure'].'","'.$req['LoanRequired'].'")');
+	  			}else if($req['ProductId']==13){
+	  				  $data=DB::select(' call usp_get_bankwise_business_loan_quot ("'.$req['applicant_dob'].'","'.$req['emp_detail'].'","'.$req['turnover'].'","'.$req['profit_after_tax'].'","'.$req['depreciation'].'","'.$req['partner_remuneration'].'","'.$req['interest_paid'].'","'.$req['emi'].'","'.$req['no_of_emi_paid'].'","'.$req['loan_tenure'].'","'.$req['loan_amount'].'","'.$req['date'].'","'.$req->Bank_Id.'")');
+        
 	  			}
 	  	    	if($data){
 	  	    		$return_data=$data[0];
@@ -716,6 +720,7 @@ run_else:
 	  	    		$err="You are not eligible for loan";
 	  	    	}
 	  	}catch (\Exception $e) {
+	  		//print_r($e->getMessage());exit();
 	  			$error=$e->getCode();
 	  			$err=$this->getErrorMsg($error);
 		}

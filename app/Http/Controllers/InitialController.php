@@ -5,9 +5,10 @@ use App\Http\Requests;
 use Session;
 class InitialController extends Controller
 {
+  public static $current_domain_static="http://www.rupeeboss.com/";
 	public static $url_static = "http://api.rupeeboss.com/";
 	public static $service_url_static = "http://services.rupeeboss.com/";
-  public static $erp_url_static = "http://beta.erp.rupeeboss.com/";
+  public static $erp_url_static = "http://erp.rupeeboss.com/";
 	//Setting session on the bases of reference
       function __construct(){
             $myString = isset($_GET['referrer']);

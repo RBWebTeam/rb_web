@@ -89,8 +89,7 @@ $(".top").click(function() {
 });
 </script>
 
-<form class="form12" id="compareform" role="form" method="POST" >
-               {{ csrf_field() }}
+
                
 <div>
        <!-- Main content -->
@@ -99,22 +98,24 @@ $(".top").click(function() {
       <div class="col-md-12">
     <br>
     
-      <div id="logo" class="text-center"><img id="myImage" src="http://beta.erp.rupeeboss.com/personalloan/images/logo.png" class=""></div>
+      <div id="logo" class="text-center"><img id="myImage" src="http://erp.rupeeboss.com/personalloan/images/logo.png" class=""></div>
     
       <h4 class="text-center pg-titl">Apply For <img src="images/bank/icici.png" class="img-responsive icici" width="130"/> Credit Card</h4>
     
     <div class="col-md-3"></div>
 	
-	
+	<form id="to_view_url" name="to_view_url" method="POST">
+  {{ csrf_field() }}
     <div id="hideview" class="text-center col-md-6">
                                             <div class="form-padding">
-                                                <h6 class="text-center top-heading click-hr"><a id="urlweb" href="#">click here</a>
+                                                <h6 class="text-center top-heading click-hr"><a id="urlweb" href="javascript:void(0)">click here</a>
                                                 to view this page in browser</h6>
+                                                 <span id="urlmail_id" style="display:none;color: red;">Please Enter Valid Email Id.</span> 
                                                
                                               <div id="hideemailid" class="emil-id" style="margin-bottom: 14px; height: 50px; position: relative; display:none;">
-                                                <input class="form-control inp-fld pull-center" required type="name" id="urlemailid">
+                                                <input class="form-control text-lower" required type="text" id="urlemailid" name="urlemailid" oninput="url_mail('urlemailid')">
+                                                
                                                 <button class="sbmit-btn sub-btn1 pull-right" id="btnweburl">Submit</button> 
-                                                  
                                                 <span class="highlight"></span><span class="bar"></span>
                                                 <label class="form-label-new">E-MAIL ID (PERSONAL)</label>
                                                 <div class="clear"></div>
@@ -123,14 +124,18 @@ $(".top").click(function() {
                                               <h5 id="msgalert" class="top-heading text-success text-center" style="display:none;font-size:15px;font-weight:bold; margin-bottom:15px;">As per your request we have sent a mail to your email ID.</h5>
                                             </div>
                                         </div>
+                                        </form>
                     
                     
 
                 <div class="tab-content">
-                       <div id="home" class="tab-pane fade in active">
+            <div id="home" class="tab-pane fade in active">
             
           <!-- <form action="">  -->  
             <div class="col-md-12">
+
+            <form class="form12" id="compareform" role="form" method="POST" >
+              
             <div class="panel-group" id="accordion" >
               <div class="panel panel-default">
                 <div class="panel-heading" role="tab" id="headingOne">
@@ -142,11 +147,6 @@ $(".top").click(function() {
                 </div>
                 <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
                   <div class="panel-body">    
-
-               <input type="hidden" name="prod" value="{{$prod}}">
-               <input type="hidden" name="amount" value="{{$amount}}">
-               <input type="hidden" name="interest" value="{{$interest}}">
-
 
           <div class="col-xs-6 form-padding">
                     <div>
@@ -372,7 +372,7 @@ $(".top").click(function() {
              
               <div class="col-xs-6 form-padding">
                     <div>
-                      <input type="text" id="Income" name="Income" class="form-control inp-fld" onkeypress="return fnAllowNumeric(event)"  required >
+                      <input type="text" id="Income" name="Income" class="form-control inp-fld" onkeypress="return fnAllowNumeric(event)" minlength="5" maxlength="9" required >
                       <span class="highlight"></span><span class="bar"></span>
                       <label class="form-label-new lble">Income*</label>
                       <div class="clear"></div>
@@ -391,7 +391,7 @@ $(".top").click(function() {
 
           <div class="col-xs-6 form-padding">
                     <div>
-                      <input type="text" name="Total_Exp" id="Total_Exp" class="form-control inp-fld" onkeypress="return fnAllowNumeric(event)" required >
+                      <input type="text" name="Total_Exp" id="Total_Exp" class="form-control inp-fld" onkeypress="return fnAllowNumeric(event)" minlength="1" maxlength="3" required >
                       <span class="highlight"></span><span class="bar"></span>
                       <label class="form-label-new lble">Total Experience</label>
                       <div class="clear"></div>
@@ -399,9 +399,11 @@ $(".top").click(function() {
                   </div>
 
 
-              <div class="col-xs-6 form-padding" style="display: none" id="ICICIRelationshipNumber">
+              <div class="col-xs-6 form-padding" style="display: none" id="ICICIRelationshipNumbers">
                     <div>
-                      <input type="text" name="ICICIRelationshipNumber" id="ICICIRelationshipNumber" class="form-control inp-fld" onkeypress="return fnAllowNumeric(event)" required minlength="12" maxlength="16"  >
+ 
+                      <input type="text" name="ICICIRelationshipNumber" id="ICICIRelationshipNumber" class="form-control inp-fld" onkeypress="return fnAllowNumeric(event)" minlength="12" maxlength="16"  value="0" >
+ 
                       <span class="highlight"></span><span class="bar"></span>
                       <label class="form-label-new lble">ICICI Relationship Number</label>
                       <div class="clear"></div>
@@ -681,7 +683,7 @@ $(".top").click(function() {
                                </div>
           <div class="col-xs-6 form-padding">
                     <div>
-                      <input class="form-control inp-fld"  type="text" id="PanNo" name="PanNo" required oninput="pancard('PanNo')" maxlength="10" minlength="10" >
+                      <input class="form-control inp-fld"  type="text" id="PanNo" name="PanNo"  oninput="pancard('PanNo')" maxlength="10" minlength="10" >
                       <span class="highlight"></span><span class="bar"></span>
                       <label class="form-label-new lble">Pancard*</label>
                       <div class="clear"></div>
@@ -731,10 +733,14 @@ $(".top").click(function() {
   </div>
   </div>
   
-  
+               <input type="hidden" name="prod" value="{{$prod}}">
+               <input type="hidden" name="amount" value="{{$amount}}">
+               <input type="hidden" name="interest" value="{{$interest}}">
+               <input type="hidden" name="_token" value="{{ csrf_token() }}">
+
 
           <div class="col-md-12 pull-left text-justify">
-            <p class="p-padding"><input type="checkbox" name="terms"  class="redio-lft"/>&nbsp; I hereby confirm that I have read and understood the Rupeeboss Terms and Conditions applicable to this service and that all the details furnished by me above are true and correct. I further provide consent to Rupeeboss and its affiliates to contact me with reference to financial products and this consent shall override any registration with DNC/NDNC.</p>
+            <p class="p-padding"><input type="checkbox" name="terms" id="checkboxid"  class="redio-lft"/>&nbsp; I hereby confirm that I have read and understood the Rupeeboss Terms and Conditions applicable to this service and that all the details furnished by me above are true and correct. I further provide consent to Rupeeboss and its affiliates to contact me with reference to financial products and this consent shall override any registration with DNC/NDNC.</p>
             
             <!-- <button class="sbmt-btn credit-submit dis-tbl">Confirm &amp; Continue</button> -->
             &nbsp;&nbsp;&nbsp;&nbsp;<button class="sbmt-btn icici-credit-submit dis-tbl " >Confirm & Continue<i class="icon-arrow-right"></i>
@@ -1008,15 +1014,20 @@ $(document).ready(function(){
 <script type="text/javascript">
   $(document).ready(function(){
     $('#ICICIBankRelationship').on('change', function() {
-      console.log(this.value);
+       
+
       if ( this.value == 'Salary')
       {
-        $("#ICICIRelationshipNumber").show();
+         $("#ICICIRelationshipNumber").val('');
+         $("#ICICIRelationshipNumbers").show();
       }
-      else
-      {
-        $("#ICICIRelationshipNumber").hide();
+      else{
+        $("#ICICIRelationshipNumbers").hide();
+
+        
       }
+
+
     });
 });
 </script>
@@ -1173,6 +1184,112 @@ $(document).ready(function(){
 </script>
 
 <script type="text/javascript">
+  
+
+window.onload=function(){
+// Change styles according to panels state
+
+
+// Initialize collapsibles
+
+$('.collapse').collapse({
+  toggle: false,
+  parent: '#accordion'
+});
+
+
+$(".icici-credit-submit").click(function(event){event.preventDefault();
+
+
+$('form#compareform').find('input').each(function(){
+    if($(this).val() =="" && $('#compareform').valid()){
+         var current = $(this).closest(".panel-collapse");
+        if (!current.hasClass("in")) {
+           current.collapse("show");
+
+   
+        }else{
+
+          // current.addClass("in");
+
+        } 
+
+
+
+return false;
+         
+    }else{ 
+
+       if( $('#ResidenceMobileNo').val()!='' &&  $('#ResidencePhoneNumber').val()!=''  &&  $('#PanNo').val()!='' &&  $('#checkboxid').val()==1){
+        $(".iframeloading").show();
+        $('#upload').show();
+        $.ajax({  
+         type: "POST",  
+         url: "{{URL::to('icici-credit-submit')}}",
+         data : $('#compareform').serialize(),
+         dataType: 'json',
+         success: function(msg){
+         $(".iframeloading").hide();  
+        
+         
+          if(msg==2){
+            
+             alert("Something Went Wrong");
+
+             
+          }else{
+            
+            if (msg.Decision =='Declined') {
+              $('#upload').hide();
+
+            }
+            if(msg.Decision==""){
+              msg.Decision="Approved";
+            }
+             $('#drop').text(msg.id);
+              $('#drop1').text(msg.Decision);
+              $('#drop2').text(msg.Reason);
+             $('#credit_process_sorry').modal('show');
+          }
+          return false;
+        }  
+    
+
+      }); 
+
+     
+       return false;
+       
+
+      } 
+    } 
+ 
+    
+});
+
+//................
+
+
+
+
+
+
+
+
+ 
+
+
+
+});
+}
+
+
+ 
+
+
+</script>
+
+<!--script type="text/javascript">
 var prv_head;
 var head_index=0;
 var inputs = $("#compareform input[required='required']");
@@ -1203,7 +1320,16 @@ var inputs = $("#compareform input[required='required']");
 
             
           });
-          console.log(visible_err);
+          //highlighting errors
+           x.each(function( index, element ) {
+            var id=element.getAttribute("id");
+             var have_value=$('#'+id).val();
+              if(!have_value){
+                $("#"+id).addClass("error");
+              }
+            
+          });
+          //console.log(visible_err);
           if(visible_err==1){
            return false;
          }else{
@@ -1240,7 +1366,7 @@ var inputs = $("#compareform input[required='required']");
          
         return false;
       }else{
-      
+      //THIS IS USELESS 
     if( $('#ResidenceMobileNo').val()!='' && $('#PerResidencePincode').val()!='' && $('#ResidencePincode').val()!='' && $('#work_number').val()!='' && $('#designation').val()!='' && $('#work_email').val()!='' && $('#CompanyName').val()!='' && $('#preferred_address').val()!='' && $('#NameOnCard').val()!='' && $('#ApplicantFirstName').val()!='' && $('#net_annual_income').val()!='' && $('#DateOfBirth').val()!='' && $('#CompanyName').val()!='' && $('#ResidenceAddress1').val()!='' && 
     $('#PerResidenceAddress1').val()!='' && $('#ResidencePhoneNumber').val()!='' && $('#ApplicationNumber').val()!=''){
 
@@ -1295,7 +1421,7 @@ var inputs = $("#compareform input[required='required']");
     });
 
 
-</script>
+</script-->
 
 
 
@@ -1345,17 +1471,39 @@ var inputs = $("#compareform input[required='required']");
 }
 </script>
 
+<script type="text/javascript">
+  function url_mail(obj,val){
+    console.log(obj);
+    if(obj=='urlemailid' ){
+                   var str =$('#urlemailid').val();
+                   var emailPattern = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/; 
+                   var res = str.match(emailPattern);
+                   if(res){
+                     // console.log('Pancard is valid one.!!');
+                      $('#urlmail_id').hide();
+
+                  }else{
+                    // console.log('Oops.Please Enter Valid Pan Number.!!');
+                    $('#urlmail_id').show();
+
+                    return false;
+                  }
+                  
+  }
+}
+</script>
+
 
 <script type="text/javascript">
           function Redirect() 
           {
             var mobile=$('#ResidenceMobileNo').val();
             var app_id=$('#drop').text();
-            window.location="http://beta.erp.rupeeboss.com/Credit_Card_Upload_Docs.aspx?App_Id="+app_id+"&CardType=ICICI&MobileNo="+mobile;
+            window.location="http://erp.rupeeboss.com/Credit_Card_Upload_Docs.aspx?App_Id="+app_id+"&CardType=ICICI&MobileNo="+mobile;
           }
 </script>
 
-<script type="text/javascript">
+<!-- <script type="text/javascript">
     var d = new Date();
     var year = d.getFullYear() ;
     d.setFullYear(year);
@@ -1368,7 +1516,7 @@ var inputs = $("#compareform input[required='required']");
       yearRange: '-100:' + year + '',
       defaultDate: d
     });
-</script>
+</script> -->
 
 <script type="text/javascript">
   $('#have').change(function(){
@@ -1547,6 +1695,50 @@ var inputs = $("#compareform input[required='required']");
   $("#DateOfBirth").click(function() {
     $(".lastReporteddob").datepicker('show');
 });
+
+
+
+
+
+ 
+
+  $('#checkboxid').click(function () {
+    if ($(this).is(':checked')) {
+
+         $('#checkboxid').val(1);
+        
+    } else {
+        $('#checkboxid').val(0);
+    }
+});
+
+</script>
+
+<script type="text/javascript">
+  $('#btnweburl').click(function(){
+    event.preventDefault();
+      $form=$('#to_view_url');
+      if(! $form.valid()){
+
+      }else{
+       $.ajax({  
+         type: "POST",  
+         url: "{{URL::to('to-view-on-browser-url')}}",
+         data : $('#to_view_url').serialize(),
+         success: function(msg){
+           console.log(msg);
+           if (msg == 1) 
+           {
+             alert('As per your request we have sent a mail to your email ID.');
+           } else 
+           {
+            alert('Oops..!! Something Went Wrong');
+           }
+          
+        }  
+      }); 
+      }
+  });
 </script>
 
 <!-- var y=$(':input[required]:hidden');

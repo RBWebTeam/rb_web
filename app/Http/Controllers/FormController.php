@@ -127,7 +127,7 @@ class FormController extends CallApiController
             return response()->json(array('success' => true,'quote_id'=>$id,'Bank_Id'=>$Bank_Id,'loan_eligible'=>$loan_eligible,'roi'=>$roi,'LoanTenure'=>$LoanTenure,'processingfee'=>$processingfee,'html'=>$returnHTML));
         
         }catch(\Exception $ee){
-            return view('went-wrong');
+            return $ee;
         }
     }
     
@@ -261,10 +261,11 @@ class FormController extends CallApiController
                       if($emi_arr[$index]>$max)
                       { 
                         $max=$emi_arr[$index];
+                        $max_key=$index;
                       }
                   }
                       if(isset($req->Bank_Id)){
-                          $quote_data=DB::select(' call usp_get_bankwise_business_loan_quot ("'.$req['applicant_dob'].'","'.$req['emp_detail'].'","'.$req['turnover'].'","'.$req['profit_after_tax'].'","'.$req['depreciation'].'","'.$req['partner_remuneration'].'","'.$req['interest_paid'].'","'.$req['emi'][$index].'","'.$req['no_of_emi_paid'][$index].'","'.$req['loan_tenure'].'","'.$req['loan_amount'].'","'.$req['date'].'","'.$req->Bank_Id.'")');
+                          $quote_data=DB::select(' call usp_get_bankwise_business_loan_quot ("'.$req['applicant_dob'].'","'.$req['emp_detail'].'","'.$req['turnover'].'","'.$req['profit_after_tax'].'","'.$req['depreciation'].'","'.$req['partner_remuneration'].'","'.$req['interest_paid'].'","'.$req['emi'][$max_key].'","'.$req['no_of_emi_paid'][$max_key].'","'.$req['loan_tenure'].'","'.$req['loan_amount'].'","'.$req['date'].'","'.$req->Bank_Id.'")');
         
                          
                                      
@@ -272,7 +273,7 @@ class FormController extends CallApiController
                       }else{
         
                       
-                    $quote_data=DB::select('call  usp_get_business_loan_quot ("'.$req['applicant_dob'].'","'.$req['emp_detail'].'","'.$req['turnover'].'","'.$req['profit_after_tax'].'","'.$req['depreciation'].'","'.$req['partner_remuneration'].'","'.$req['interest_paid'].'","'.$req['emi'][$index].'","'.$req['no_of_emi_paid'][$index].'","'.$req['loan_tenure'].'","'.$req['loan_amount'].'","'.$req['date'].'")');
+                    $quote_data=DB::select('call  usp_get_business_loan_quot ("'.$req['applicant_dob'].'","'.$req['emp_detail'].'","'.$req['turnover'].'","'.$req['profit_after_tax'].'","'.$req['depreciation'].'","'.$req['partner_remuneration'].'","'.$req['interest_paid'].'","'.$req['emi'][$max_key].'","'.$req['no_of_emi_paid'][$max_key].'","'.$req['loan_tenure'].'","'.$req['loan_amount'].'","'.$req['date'].'")');
         
                   }
                 }

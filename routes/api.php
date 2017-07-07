@@ -44,3 +44,4 @@ Route::post('productwise_emi_cal_app','ApiController@productwise_emi_cal_app');
 // Route::get('get-profile-pic','MobileApiController@get_profile_pic');
 //working capital-emi-calculator
 Route::post('working-capital-emi-calculator-api','CalculatorController@working_calculator');
+Route::post('revise-calculation','MobileApiController@revise_calculation');

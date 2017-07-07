@@ -53,7 +53,7 @@ body {background:#fff;}
       <div class="row">
         <div class="col-md-12 text-left fh5co-heading animate-box fadeInUp animated">
 		  
-		  <div id="logo" class="text-center"><img id="myImage" src="http://beta.erp.rupeeboss.com/personalloan/images/logo.png" class=""></div>
+		  <div id="logo" class="text-center"><img id="myImage" src="http://erp.rupeeboss.com/personalloan/images/logo.png" class=""></div>
     <h4 class="text-center pg-titl"><img src="images/bank/icici-credit-card.png" class="img-responsive icici"/></h4>
           </div> 
 <br>		  

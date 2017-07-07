@@ -48,12 +48,17 @@
     <div id="fh5co-hero">
     <div class="express-lon-ban"><img src="images/express-loan-image1.jpg" class="img-responsive"/></div>
     <br>
+<div class="iframeloading" style= "display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
+                <img src="{{URL::to('images/ajaxloader.gif')}}" alt="Loader" title="Loader" style="top: 50%; position: relative; left: 50%;"  />
+</div>
+    <!-- //loader -->
+    
     <div class="container animate-box">
             
     <br>
     <div class="animate-box">
     <div class="row">
-    
+          
         <div class="col-md-12 bg-white centered well pad1">
                    <div class="row" style="display: none;">
                 <div class="col-md-10 col-md-offset-1">
@@ -63,7 +68,9 @@
                 <p class="text-center">To learn more about IIFL Express Personal Loan <a href="javascript:void(0)">Click Here</a></p>
         
             </div>
+            
             </div>
+            
             <div class="row" id="error" style="display: none;">
                 <div class="col-md-10 col-md-offset-1">
                 <hr>
@@ -75,6 +82,7 @@
             </div>
    
             <br>
+
             
         <div id="iifl">
             <form id="iifl_express_loan" name="iifl_express_loan" method="POST">
@@ -84,7 +92,7 @@
                 <h3 class="text-uppercase exp-hed">IIFL Express Loan</h3>
                 
                 <span class="input input--nao">
-                    <input class="input__field input__field--nao" type="text" name="Monthly_Salary"  id="Monthly_Salary"  onkeypress="return fnAllowNumeric(event)" required  />
+                    <input class="input__field input__field--nao" type="text" name="Monthly_Salary"  id="Monthly_Salary"  onkeypress="return fnAllowNumeric(event)" minlength="5" maxlength="9" required  />
                     <label class="input__label input__label--nao" for="Monthly_Salary">
                     <span class="input__label-content input__label-content--nao">Your Net Monthly Salary</span>
                     </label>
@@ -188,7 +196,7 @@
                     </svg>
                 </span>
                 <span class="input input--nao input--filled">
-                    <input class="input__field input__field--nao" type="text" name="EMI" id="EMI" onkeypress="return fnAllowNumeric(event)" disabled  />
+                    <input class="input__field input__field--nao" type="text" name="EMI" id="EMI" onkeypress="return fnAllowNumeric(event)" readonly="readonly"  />
                     <label class="input__label input__label--nao" for="EMI">
                     <span class="input__label-content input__label-content--nao">EMI</span>
                     </label>
@@ -650,6 +658,7 @@
             <div class="col-md-12">
              <a class="btn btn-primary btn-outline with-arrow mrg-top applicant" id="applicant_form" href="javascript:void(0);">NEXT<i class="icon-arrow-right"></i></a>
             </div>
+            
             </form>
             </div>
 
@@ -972,6 +981,7 @@
                 <div class="col-md-12">
              <a class="btn btn-primary btn-outline with-arrow mrg-top applicant" id="co_applicant_form" href="javascript:void(0);">NEXT<i class="icon-arrow-right"></i></a>
             </div>
+            
                 </form>
             </div>
 
@@ -1010,7 +1020,7 @@
                 <div class="col-md-1"></div>
                 
                 <h3 class="col-md-12 mrg-tpp">OTP to verify your Aadhar Details:</h3>
-                <span class="input input--nao">
+                <span class="input input--nao input--filled">
                     <input class="input__field input__field--nao" type="text" name="Aadharno" id="Aadharno" oninput="aadharnum('Aadharno')" required minlength="12" maxlength="12"  />
                     <label class="input__label input__label--nao" for="input-1">
                         <span class="input__label-content input__label-content--nao">Enter Your Aadhar No.</span>
@@ -1022,7 +1032,7 @@
                 </span>
                  
                 
-                <h4 class="text-danger small-txt">OTP has been sent to your Registred Mobile No.</h4>
+                <!-- <h4 class="text-danger small-txt">OTP has been sent to your Registred Mobile No.</h4> -->
                 <div class="col-md-12"><a class="btn btn-primary btn-outline with-arrow mrg-btm otp" id="aadhar_otp" href="javascript:void(0)">Get OTP<i class="icon-arrow-right"></i></a></div>
                 </section>
                 <h3 class="mrg-tpp">Proceed Without aadhar Number</h3>
@@ -1037,8 +1047,8 @@
                 <section>
                 <div>
                 <span class="input input--nao">
-                    <input class="input__field input__field--nao" name="otp" id="otp" type="text" onkeypress="return fnAllowNumeric(event)" required/>
-                    <label class="input__label input__label--nao" for="otp">
+                    <input class="input__field input__field--nao" name="otp" id="OTP" type="text" onkeypress="return fnAllowNumeric(event)" required/>
+                    <label class="input__label input__label--nao" for="OTP">
                         <span class="input__label-content input__label-content--nao">Enter OTP</span>
                     </label>
                     <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
@@ -1061,31 +1071,32 @@
             <hr class="hr-sty">
             
             <div class="col-md-12">
-             <h3>Congratulation<i><b class="text-primary"><span id="first_name"></span></b></i>&nbsp;You are eligible for a loan of <b><span id="maxloan"></span></b> <a class="bg-primary" href="javascript:void(0)">Apply Now</i></a></h3>
+             <h3>Congratulation!!<i><b class="text-primary"><span id="first_name"></span></b></i>&nbsp;You are eligible for a loan of <b>₹<span id="maxloan"></span></b> </h3>
              <br>
+             <h6>You Are Applicable For Minimum Loanamount&nbsp;&nbsp;<b>₹<span style="color: red" id="minloanamt"></span></b> & Minimum Tenure&nbsp;&nbsp; <b><span style="color: red" id="minTenure"></span>(in months)</b></h6>
             </div>
                 
-                <span class="input input--nao">
-                <input class="input__field input__field--nao" type="hidden" name="TotalPayableAmount" required  value="" />
-                    <input class="input__field input__field--nao" type="text" name="AppliedLoanamount"  onkeypress="return fnAllowNumeric(event)" required />
-                    <label class="input__label input__label--nao" for="AppliedLoanamount">
+                <span class="input input--nao input--filled">
+                <input class="input__field input__field--nao" type="text" name="TotalPayableAmount" id="PayableAmount" required  value="" />
+                    <input class="input__field input__field--nao" type="text" name="AppliedLoanamount" id="Applied"  onkeypress="return fnAllowNumeric(event)" value="" required />
+                    <label class="input__label input__label--nao" for="Applied">
                         <span class="input__label-content input__label-content--nao">Loan Amount</span>
                     </label>
                     <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
                         <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
                     </svg>
                 </span>
-                <span class="input input--nao">
-                    <input class="input__field input__field--nao" type="text" name="Tenure" id="Tenure" onkeypress="return fnAllowNumeric(event)" required />
-                    <label class="input__label input__label--nao" for="Tenure">
-                        <span class="input__label-content input__label-content--nao">Loan Tenure</span>
+                <span class="input input--nao input--filled">
+                    <input class="input__field input__field--nao" type="text" name="Tenure" id="Period"  onkeypress="return fnAllowNumeric(event)" value="" required />
+                    <label class="input__label input__label--nao" for="Period">
+                        <span class="input__label-content input__label-content--nao">Loan Tenure(in years)</span>
                     </label>
                     <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
                         <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
                     </svg>
                 </span>
-                <span class="input input--nao">
-                    <input class="input__field input__field--nao" type="text" name="Emi" id="Emi" onkeypress="return fnAllowNumeric(event)" disabled value=""  />
+                <span class="input input--nao input--filled">
+                    <input class="input__field input__field--nao" type="text" name="Emi" onkeypress="return fnAllowNumeric(event)"  readonly="readonly" value=""  />
                     <label class="input__label input__label--nao" for="Emi">
                         <span class="input__label-content input__label-content--nao">EMI</span>
                     </label>
@@ -1093,8 +1104,8 @@
                         <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
                     </svg>
                 </span>
-                <span class="input input--nao">
-                <input class="input__field input__field--nao" type="text" name="ROI"  onkeypress="return fnAllowNumeric(event)" value="" disabled />
+                <span class="input input--nao input--filled">
+                <input class="input__field input__field--nao" type="text" name="ROI"  onkeypress="return fnAllowNumeric(event)" value="" readonly="readonly" />
                     <label class="input__label input__label--nao" for="ROI">
                         <span class="input__label-content input__label-content--nao">ROI</span>
                     </label>
@@ -1102,8 +1113,8 @@
                         <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
                     </svg>
                 </span>
-                <span class="input input--nao">
-                <input class="input__field input__field--nao" type="text" name="Processingfee"  onkeypress="return fnAllowNumeric(event)" value="" disabled  />
+                <span class="input input--nao input--filled">
+                <input class="input__field input__field--nao" type="text" name="Processingfee"  onkeypress="return fnAllowNumeric(event)" value="" readonly="readonly"  />
                     <label class="input__label input__label--nao" for="Processingfee">
                         <span class="input__label-content input__label-content--nao">Processing fee</span>
                     </label>
@@ -1112,37 +1123,39 @@
                     </svg>
                 </span>
                  <hr>
-                <div class="col-md-12 text-danger mar-top"><input type="checkbox" name="check"/> I Agree to all the terms and conditions.</div>
+                <div class="col-md-12 text-danger mar-top"><input type="checkbox" name="check" required /> I Agree to all the terms and conditions.</div>
             
             <div class="col-md-12">
              <a class="btn btn-primary btn-outline with-arrow mrg-top" id="instant_approve" href="javascript:void(0)">Get Instant Approve<i class="icon-arrow-right"></i></a>
             </div>
+            
             </section>
+
             </form>
             </div>
-            
-            <div id="upload">
+
+            <div id="upload" >
             <form name="upload_details" id="upload_details" enctype="multipart/form-data" method="POST">
             {{ csrf_field() }}
             <div>
             <section class="mrg-top">
               <h1 class="text-center"><i>Congratulation</i></h1>
-              <h3 class="text-info pad">Your Personal Loan of Rs.2,00,000</h3>
+              <h3 class="text-info pad">Your Personal Loan of<b>₹<span id="personal_loan_amount"></span></b></h3>
               
             
             <div class="col-md-12">
             <table class="table table-bordered" width="100%">
                 <tbody>
                 <tr>
-                    <td class="bg-info">Rate of Intrest: <b>16%</b></td>
-                    <td class="bg-info">Processing Fees: <b>Rs.2000</b></td>
-                    <td class="bg-info">EMI: <b>Rs.4000</b></td>
-                    <td class="bg-info">Loan Tenure: <b>3 Years</b></td>
+                    <td class="bg-info">Rate of Intrest: <b><span id="intst"></span>%</b></td>
+                    <td class="bg-info">Processing Fees: <b><span id="fees"></span>%</b></td>
+                    <td class="bg-info">EMI: <b>₹<span id="installment_amount"></span></b></td>
+                    <td class="bg-info">Loan Tenure: <b><span id="perid"></span>years</b></td>
                 </tr>
              </tbody>
              </table>
              
-             <h4>Our representive will get in touch with you. Please proceed to upload the necessary document for quick disbursal to learn more about IIFL Express loan <a href="javascript:void(0)"><b class="text-sucsess">Click here</b></a></h4>
+             <h4>Our representive will get in touch with you. Please proceed to upload the necessary document for quick disbursal to learn more about IIFL Express loan </h4>
                 </div>
                 </section>
                 </div>
@@ -1152,7 +1165,7 @@
                 <div class="col-md-8 col-md-offset-2">
                 <h3 class="text-center pad">Non Financial Documents</h3>
                 <ul class="ull">
-                   <li>Identity Proof <input type="file" name="identity_proof" id="identity_proof" class="pull-right" data-category="1" />
+                   <li>Identity Proof <input type="file" name="identity_proof" id="identity_proof" class="pull-right" required data-category="1" />
                    <select  name="sub_catg[1]"  required id="identity_proof_select" class="drop-arr ">
                     <option disabled selected value="">Select</option>
                       
@@ -1161,13 +1174,13 @@
                    </li>
                    
                  
-                   <li>Address Proof <input type="file" name="address_proof" id="address_proof" class="pull-right" data-category="2"/>
+                   <li>Address Proof <input type="file" name="address_proof" id="address_proof" class="pull-right" data-category="2" required />
                     <select  name="sub_catg[2]"  required id="address_proof_select" class="drop-arr ">
                     <option disabled selected value="">Select</option>
                       
                     </select>
                    </li>
-                   <li>Property Ownership Proof <input type="file" name="ownership_proof" id="ownership_proof" class="pull-right" data-category="3"/>
+                   <li>Property Ownership Proof <input type="file" name="ownership_proof" id="ownership_proof" class="pull-right" required data-category="3"/>
                     <select  name="sub_catg[3]"  required id="ownership_proof_select" class="drop-arr ">
                     <option disabled selected value="">Select</option>
                       
@@ -1180,6 +1193,7 @@
                     <a class="btn btn-primary btn-outline with-arrow mrg-top" id="proceed_upload">Proceed<i class="icon-arrow-right"></i></a>
                 </div>
                 </div>
+                
                 </section>
             </form>
             </div>
@@ -1236,32 +1250,18 @@
         
             </div>
             </div>
+            
             </form>
 
             </div>
+            </div>
+            
+            </div>
+           
+          
+            
 
-@include('layout.footer')
-@include('layout.script')
 
-<!-- <div class="modal fade" tabindex="-1" role="dialog" id="iifl_process">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title">Confirmation Status</h4>
-      </div>
-      <div class="modal-body">
-         <h4><p><b>Thank You For Choosing IIFL. Our Representative Will Get Back To You Soon.</b></p></h4>
-        
-      </div>
-      
-      <div class="modal-footer">
-        
-        
-      </div>
-    </div>
-  </div>
-</div> -->
 
 <script type="text/javascript">
   function AllowAlphabet(e)
@@ -1720,16 +1720,8 @@ var global_tenure=0;
                         console.log(msg);
                         var result=loan_eligibility_calc(data.Max_Tenure,data.pf,data.roi,data.foir);
                         console.log(msg);
-                return false;
-                        var data_1=data['data'];
-                if(data_1){
-                        $('#express_form').hide();
-                        $('#express_loan_verify_form').show();
-                    //console.log("hah");
-                }else{
-                        window.location.href="{{URL::to('went-wrong')}}";
-                        // console.log(data_1);
-                  }
+                
+                        
     }  
       });
         }
@@ -1829,9 +1821,9 @@ var global_tenure=0;
         var Rate = a/12/100;
         var installment_iifl=applied_loan * Rate * (Math.pow(1 + Rate, no_of_days) / (Math.pow(1 + Rate, no_of_days) - 1));
         var installment =Math.round(installment_iifl);
-        // if(isNaN( installment) || installment=='Infinity'){
-        //   installment=0;
-        // }
+        if(isNaN( installment) || installment=='Infinity'){
+          installment=0;
+        }
         $('#EquatedMonthly').empty().append(installment);
         $('#EMI').val(installment);
         $('#e_m_i').empty().append(installment);
@@ -1853,26 +1845,33 @@ var global_tenure=0;
         }else{
             var person_name =$('#FName').val();
             // console.log(person_name);
-            $('#first_name').val(person_name);
+            $('#first_name').empty().append(person_name);
             var aadhar=$('#AadhaarNumber').val();
             $('#Aadharno').val(aadhar);
             $('#Applicant_Details').hide();
-            if($( "input[name=CoapplicantFlag]:checked" ).val()==1)
-            {
-                    $('#co_applicant').show();
-            }else{
-                 $('#otp').show();
-            }
+             $(".iframeloading").show();
+           
            $.ajax({  
              type: "POST",  
              url: "{{URL::to('apply-iifl-loan-applicant1')}}",
              data : $('#applicant_deatils').serialize(),
              success: function(msg){
-             console.log(msg.head.status);
-             if (msg.head.status == 1) {
+                 $(".iframeloading").hide();
                 
-                alert("Reason: "+status_description);          
-            } 
+            // console.log(msg);
+             if (msg.head.status != "1") {
+                 if($( "input[name=CoapplicantFlag]:checked" ).val()==1)
+                {
+                     $('#co_applicant').show();
+                }else{
+                     $('#otp').show();
+                }
+                      
+            } else{
+                 alert("Reason: "+msg.head.status_description);   
+                 $('#Applicant_Details').show();
+                 return false;
+            }
             
          }  
       }); 
@@ -1911,38 +1910,48 @@ var global_tenure=0;
 <script type="text/javascript">
     $('#instant_approve').click(function(){
     if(! $('#instant_form').valid()){
-             // alert('not valid');
-             return false;
+            alert("You must agree to the terms first.");
+            return false;
         }else{
+
          $.ajax({  
              type: "POST",  
              url: "{{URL::to('iifl-instant-eligibility')}}",
              data : $('#instant_form').serialize(),
              success: function(msg){
-
-              $('#upload').show();
+                console.log(msg);
+                  $('#otp').hide();
+                  $('#Instant_Approve').hide();   
+                  $('#upload').show();
 
              }  
-            });  
+            }); 
+            
         }
     });
-
-    $('#AppliedLoanamount, #Tenure').on('input', function () {
-        var applied_loan = parseInt($("#input[name='AppliedLoanamount']").val());
-        var no_of_days = parseFloat($("#input[name='Tenure']").val())*12;
-        var a = $("#input[name='ROI']").val();
-        var Rate = a/12/100;
-        var installment_iifl=applied_loan * Rate * (Math.pow(1 + Rate, no_of_days) / (Math.pow(1 + Rate, no_of_days) - 1));
-        var installment =Math.round(installment_iifl);
-        // if(isNaN( installment) || installment=='Infinity'){
-        //   installment=0;
-        // }
-        var total =((installment*no_of_days)-applied_loan);
+$('#Applied, #Period').on('input', function () {
+               
+            var applied_loan = parseInt($('#Applied').val());
+            console.log(applied_loan);
+            var no_of_days = parseFloat($('#Period').val());
+            console.log(applied_loan);
+            var a = ($("input[name='ROI']").val());
+            console.log(a);
+            var Rate = a/12/100;
+            console.log(Rate);
+            var installment_iifl=applied_loan * Rate * (Math.pow(1 + Rate, no_of_days) / (Math.pow(1 + Rate, no_of_days) - 1));
+            var installment =Math.round(installment_iifl);
+            if(isNaN( installment) || installment=='Infinity'){
+              installment=0;
+            }
+            $("input[name='Emi']").val(installment);
+            var total =((installment*no_of_days)-applied_loan);
+            
+            var ttl_payment = parseInt(applied_loan) + parseInt(total);
+             $("#PayableAmount").val(ttl_payment);
         
-        var ttl_payment = parseInt(applied_loan) + parseInt(total);
-         $("#input[name='TotalPayableAmount']").val(ttl_payment);
-        
-});
+}); 
+    
 </script>
 
 <!-- aadhar oyp &verify otp -->
@@ -2004,36 +2013,70 @@ var global_tenure=0;
       });   
        
     });
-    function loan_eligibility(ROI,maxEmi,maxTenure,maxloanamt,minTenure,minloanamt,processingfee,offerstatus,error_msg)
+    function loan_eligibility(ROI,maxEmi,maxTenure,maxloanamt,minTenure,minloanamt,processingfee,offerstatus,remarks)
     {
           var offer=offerstatus;
           // console.log(offer);
     if(offer=="Rejected")
     {
             $('#Instant_Approve').hide();
-         alert("Thank You For Choosing IIFL. \n Your application has been rejected due to internal credit policy.\n Reason: "+error_msg);
+            $('#Applicant_Details').show();
+         alert("Thank You For Choosing IIFL. \n Your application has been rejected due to internal credit policy.\n Reason: "+remarks);
+    }else if(remarks=="Low Salary"){
+        alert("Your Salary Is Not Upto Mark");
     }
     else if(offer == null)
     {
             $('#Instant_Approve').hide();
+             $('#Applicant_Details').show();
          alert("Thank You For Choosing IIFL. \n Your application has been rejected due to internal credit policy.\n Reason:" );
+
           }
          var maxloan=maxloanamt;
-         //   console.log(maxloanamt);
          $('#maxloan').empty().append(maxloan);
-         var rateofint=ROI;
-         $("#input[name='ROI']").val(ROI);
-         var processfee=processingfee;
-         $("#input[name='Processingfee']").val(processingfee);
-         var applied_loanamount = maxloanamt;
-         $("#input[name='AppliedLoanamount']").val(applied_loanamount);
-         var tenure = maxTenure;
-         $("#input[name='Tenure']").val(tenure);
-         var max_installment=maxEmi;
-         $("#input[name='Emi']").val(max_installment);
+         var minloanamt =minloanamt;
+         var applied_min_loan =Math.round(minloanamt);
+         $('#minloanamt').empty().append(applied_min_loan);
+         var minTenure =minTenure;
+         var applied_min_tenure =Math.round(minTenure);
+         $('#minTenure').empty().append(applied_min_tenure);
+         
+         var ROI=ROI;
+         
+         $("input[name='ROI']").val(ROI);
+         $("#intst").empty().append(ROI);
+
+         var processingfee=processingfee;
+         
+         $("input[name='Processingfee']").val(processingfee);
+         $("#fees").empty().append(processingfee);
+
+         var maxloanamt = maxloanamt;
+         var applied_loan =Math.round(maxloanamt);
+         $("input[name='AppliedLoanamount']").val(applied_loan);
+         $("#personal_loan_amount").empty().append(applied_loan);
+         console.log(maxloanamt);
+
+         var maxTenure = maxTenure/12;
+         var tenure =Math.round(maxTenure);
+         $("input[name='Tenure']").val(tenure);
+         console.log(maxTenure);
+         $("#perid").empty().append(tenure);
+
+         var maxEmi=maxEmi;
+          var max_installment =Math.round(maxEmi);
+         $("input[name='Emi']").val(max_installment);
+         $("#installment_amount").empty().append(max_installment);
+
+         var total =((max_installment*tenure)-maxloanamt);
+            
+         var ttl_payment = parseInt(maxloanamt) + parseInt(total);
+         $("#PayableAmount").val(ttl_payment);
+
 
       
      }
+     
 </script>
 
 <!-- Document upload -->
@@ -2044,7 +2087,8 @@ var global_tenure=0;
              // alert('not valid');
 
         }else{
-            $('#financial_doc').show();
+
+            // $('#financial_doc').show();
         $.ajax({
           url:"{{URL::to('iifl-doc-upload')}}" ,  
           data:new FormData($("#upload_details")[0]),
@@ -2054,7 +2098,18 @@ var global_tenure=0;
           processData: false,
           contentType: false,
           success: function(msg){
-                 console.log(msg);
+            if (msg.head.status == "1") {
+                
+                alert("Reason: "+status_description); 
+                    $('#financial_doc').hide(); 
+                    $('#error').show(); 
+            }else{
+                $('#upload').hide();
+              $('#financial_doc').show();
+                console.log(msg);
+            }
+              
+            
             }
         });
      } 
@@ -2080,6 +2135,8 @@ var global_tenure=0;
           processData: false,
           contentType: false,
           success: function(msg){
+                $('#financial_doc').hide();
+                $('#error').show();
                  console.log(msg);
         }
         });
@@ -2396,3 +2453,6 @@ var global_tenure=0;
                 }  
        });    
    </script>
+   
+   @include('layout.footer')
+@include('layout.script')

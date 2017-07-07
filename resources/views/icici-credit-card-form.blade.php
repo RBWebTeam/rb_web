@@ -1727,7 +1727,7 @@ var inputs = $("#compareform input[required='required']");
          data : $('#to_view_url').serialize(),
          success: function(msg){
            console.log(msg);
-           if (msg== 1) 
+           if (msg == 1) 
            {
              alert('As per your request we have sent a mail to your email ID.');
            } else 

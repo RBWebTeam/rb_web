@@ -34,7 +34,6 @@
       .mrg-tpp {margin-top:35px;}
       .bg-primary {padding:5px; font-size:16px;}
       .bg-primary:hover {color:#fff;}
-      .small-txt {font-size:10px;}
       .input__field {border-radius:0px;}
       .input__label--nao {top:15px;}
       .input__field {border:1px solid #dfdfdf;height:60px;}
@@ -43,6 +42,8 @@
                     border:2px solid red;
                 }
       h1 {font-size:40px;color:#75a8de;padding:20px; padding-bottom:0px;margin-bottom:5px;}
+	  .ull {padding:0px; text-align:left;}
+	  .ull li {list-style-type:none; padding:10px;border-bottom:1px dashed #ccc;}
 </style>
     <div id="fh5co-hero">
     <div class="express-lon-ban"><img src="images/express-loan-image1.jpg" class="img-responsive"/></div>
@@ -1132,8 +1133,8 @@
 
             </form>
             </div>
-            
-            <div id="upload" style="display: none;">
+
+            <div id="upload" >
             <form name="upload_details" id="upload_details" enctype="multipart/form-data" method="POST">
             {{ csrf_field() }}
             <div>
@@ -1159,14 +1160,12 @@
                 </section>
                 </div>
                 
-             <section class="content">
-            <div class="col-md-2"></div>
-         
+             <section class="content">      
             
                 <div class="col-md-8 col-md-offset-2">
                 <h3 class="text-center pad">Non Financial Documents</h3>
                 <ul class="ull">
-                   <li>Identity Proof <input type="file" name="identity_proof" id="identity_proof" class="pull-right" data-category="1" />
+                   <li>Identity Proof <input type="file" name="identity_proof" id="identity_proof" class="pull-right" required data-category="1" />
                    <select  name="sub_catg[1]"  required id="identity_proof_select" class="drop-arr ">
                     <option disabled selected value="">Select</option>
                       
@@ -1175,13 +1174,13 @@
                    </li>
                    
                  
-                   <li>Address Proof <input type="file" name="address_proof" id="address_proof" class="pull-right" data-category="2"/>
+                   <li>Address Proof <input type="file" name="address_proof" id="address_proof" class="pull-right" data-category="2" required />
                     <select  name="sub_catg[2]"  required id="address_proof_select" class="drop-arr ">
                     <option disabled selected value="">Select</option>
                       
                     </select>
                    </li>
-                   <li>Property Ownership Proof <input type="file" name="ownership_proof" id="ownership_proof" class="pull-right" data-category="3"/>
+                   <li>Property Ownership Proof <input type="file" name="ownership_proof" id="ownership_proof" class="pull-right" required data-category="3"/>
                     <select  name="sub_catg[3]"  required id="ownership_proof_select" class="drop-arr ">
                     <option disabled selected value="">Select</option>
                       
@@ -1199,7 +1198,7 @@
             </form>
             </div>
                 
-                <div id="financial_doc" style="display: none;" >
+                <div id="financial_doc">
                 <form name="financial_details" id="financial_details" enctype="multipart/form-data" method="POST">
                  {{ csrf_field() }}
                 <div class="row">
@@ -1255,9 +1254,14 @@
             </form>
 
             </div>
+            </div>
+            
+            </div>
+           
+          
+            
 
-@include('layout.footer')
-@include('layout.script')
+
 
 <script type="text/javascript">
   function AllowAlphabet(e)
@@ -1853,8 +1857,8 @@ var global_tenure=0;
              data : $('#applicant_deatils').serialize(),
              success: function(msg){
                  $(".iframeloading").hide();
-                console.log(msg.body);
-             console.log(msg.head.status);
+                
+            // console.log(msg);
              if (msg.head.status != "1") {
                  if($( "input[name=CoapplicantFlag]:checked" ).val()==1)
                 {
@@ -2026,6 +2030,7 @@ $('#Applied, #Period').on('input', function () {
             $('#Instant_Approve').hide();
              $('#Applicant_Details').show();
          alert("Thank You For Choosing IIFL. \n Your application has been rejected due to internal credit policy.\n Reason:" );
+
           }
          var maxloan=maxloanamt;
          $('#maxloan').empty().append(maxloan);
@@ -2083,7 +2088,7 @@ $('#Applied, #Period').on('input', function () {
 
         }else{
 
-            $('#financial_doc').show();
+            // $('#financial_doc').show();
         $.ajax({
           url:"{{URL::to('iifl-doc-upload')}}" ,  
           data:new FormData($("#upload_details")[0]),
@@ -2448,3 +2453,6 @@ $('#Applied, #Period').on('input', function () {
                 }  
        });    
    </script>
+   
+   @include('layout.footer')
+@include('layout.script')

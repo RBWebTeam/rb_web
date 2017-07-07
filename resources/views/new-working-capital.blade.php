@@ -503,7 +503,7 @@
         
         
     </div><!-- panel-group -->
-	<a class="btn btn-primary btn-outline with-arrow apply_now"  data-toggle="modal">Apply Now<i class="icon-arrow-right"></i></a>
+	<a class="btn btn-primary btn-outline with-arrow apply_now"  data-toggle="modal">Apply Now<i class="icon-arrow-right"></i></a> 
   </div>
   
   
@@ -640,6 +640,84 @@
     </div>
   </div>
 </div>
+
+
+
+
+
+
+
+<div class="modal fade" id="newWorkingModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Instant Call Back...</h4>
+        </div>
+        <div class="modal-body">
+          <form name="instant_call_form" id="instant_call_form" method="post" >
+          {{ csrf_field() }}
+          <input type="hidden" name="form" value="instant_call">
+                  <div>
+                    <fieldset>
+                      <input class="newsletter-name" name="name" placeholder="Name" required>
+                    </fieldset>
+                    </div>
+                  <div>
+                    <fieldset>
+                      <input type="text" class="newsletter-name" name="contact" pattern="[789][0-9]{9}" required maxlength="10" placeholder="Mobile Number">
+                    </fieldset>                 
+                    </div>
+
+                    <div>
+                    <fieldset>
+                      <input type="email" class="newsletter-name" name="email"  required maxlength="10" placeholder="Email">
+                    </fieldset>                 
+                    </div>
+
+                  <div>
+                      <button class="btn btn-primary btn-outline with-arrow sidebar-submit" id="instant_call_submit">Call Me Back<i class="icon-arrow-right"></i>
+                      </button>
+                </div>
+                <div class="iframeloading" style= "display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
+                <img src="{{URL::to('images/ajaxloader.gif')}}" alt="Loader" title="Loader" style="top: 50%; position: relative; left: 50%;"  />
+               </div>
+                  
+
+            </form>
+            <div class='msg displaynone' ><p>Thanks. We will reach you soon.</p></div>
+            <div class='msg_err displaynone' ><p>Ooops. Something went wrong.</p></div>
+            
+        </div>
+        
+      </div>
+      
+    </div>
+  </div>
+
+<script type="text/javascript">
+
+$(window).load(function(){  
+
+    $('#newWorkingModal').modal('show') ;
+
+  });
+
+</script>
+ 
+
+
+
+
+
+
+
+
+
+
+
 
 
 

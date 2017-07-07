@@ -359,7 +359,7 @@ public function dropdown(Request $req){
 }';
     //call API here to save in DB
         //$post=json_encode($post_data);
-     // print_r($post_data);exit();
+      //print_r($post_data);
 
     $url = $this::$url_static."/BankAPIService.svc/createIIFLAppDtls";
     $result=$this->call_json_data_api($url,$post_data);
@@ -467,7 +467,7 @@ $url = $this::$url_static."/BankAPIService.svc/createIIFLCoAppDtls";
     public function offer_status(){
     $data['prospectNo']=Session::get('prospectno');
     $json_data=json_encode( $data);
-    // print_r($post_data);
+    
        $json_data=json_encode($data);
        
        $post_data = '{
@@ -582,8 +582,8 @@ $url = $this::$url_static."/BankAPIService.svc/updateIIFLRevisedQuote";
     "source":"RupeeBoss"
   },           
                   "body": {"ProspectNumber":"'.$prospectno.'","ApplicantType":"Applicant",
-                 "CatID":"'.$cat_id[$i].'","SubCatID":"'.$sub_catg[$i+1].'",,"ImageName":"'.$imageName.'","Extension":"'.$extension.'","Base64string":"'.$base64[$i].'"}}';
-               //  print_r($post_data);
+                 "CatID":"'.$cat_id[$i].'","SubCatID":"'.$sub_catg[$i+1].'","ImageName":"'.$imageName.'","Extension":"'.$extension.'","Base64string":"'.$base64[$i].'"}}';
+               print_r($post_data);print("\n ");
          $url = $this::$url_static."/BankAPIService.svc/uploadIIFLKYC";
          $result=$this->call_json_data_api($url,$post_data);
          $http_result=$result['http_result'];
@@ -619,7 +619,7 @@ $url = $this::$url_static."/BankAPIService.svc/updateIIFLRevisedQuote";
                   "source":"RupeeBoss"
                },               
               "body": {"ProspectNumber":"'.$prospectno.'","ApplicantType":"Applicant",
-             "CatID":"'.(4-$i).'","SubCatID":"'.$sub_catg[$i].'",,"ImageName":"'.$imageName.'","Extension":"'.$extension.'","Base64string":"'.$base64[$i].'"}}';
+             "CatID":"'.(4-$i).'","SubCatID":"'.$sub_catg[$i].'","ImageName":"'.$imageName.'","Extension":"'.$extension.'","Base64string":"'.$base64[$i].'"}}';
              print_r($post_data);
 
      $url = $this::$url_static."/BankAPIService.svc/uploadIIFLFinDetls";

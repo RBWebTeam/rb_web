@@ -13,9 +13,9 @@
 						
 							<form class="" id="compareform" role="form" method="POST" >
 							 {{ csrf_field() }}
-							 <input type="hidden" name="empid" class="empid" value=" <?php echo Session::get('empid')?Session::get('empid'):'MA==';?>">
-						          <input type="hidden" name="brokerid" class="brokerid" value="<?php echo Session::get('brokerid')?Session::get('brokerid'):'MA==';?>">
-						          <input type="hidden" name="source" class="source" value="<?php echo Session::get('source')?Session::get('source'):'MA==';?>"> 
+							 <input type="hidden" name="empid" class="empid" value=" <?php echo Session::get('empid')?Session::get('empid'):'MAA==';?>">
+						          <input type="hidden" name="brokerid" class="brokerid" value="<?php echo Session::get('brokerid')?Session::get('brokerid'):'MAA==';?>">
+						          <input type="hidden" name="source" class="source" value="<?php echo Session::get('source')?Session::get('source'):'MAA==';?>"> 
 						          <input type="hidden" name="cards" class="prod" 
 						          value="<?php if(isset($_GET['prod'])){
 						          	echo str_replace("_"," ",$_GET["prod"]);

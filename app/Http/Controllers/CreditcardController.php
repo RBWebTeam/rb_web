@@ -31,9 +31,9 @@ class CreditcardController extends CallApiController
     // $req['SalaryAcOpenDate']=str_replace('-', '/',$newDate);
     $data=$req->all();
     // print_r($req->all());exit();
-    $data['brokerid']=Session::get('brokerid')?Session::get('brokerid'):'MA==';
-    $data['empid']=Session::get('empid')?Session::get('empid'):'MA==';
-    $data['source']=Session::get('source')?Session::get('source'):'MA==';
+    $data['brokerid']=Session::get('brokerid')?Session::get('brokerid'):'MAA=';
+    $data['empid']=Session::get('empid')?Session::get('empid'):'MAA=';
+    $data['source']=Session::get('source')?Session::get('source'):'MAA=';
     $data['type']='DC';
     $data['UserID']='ICICI_CC_RupeeBoss';
     $data['Password']='Password@123';

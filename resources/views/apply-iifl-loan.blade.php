@@ -248,7 +248,7 @@
                 </div>
             <div class="col-md-1"></div>
             <section class="content">
-                <h3 class="col-md-12 mrg-tpp">Tell Us a Bit About YourSelf</h3>
+                <h3 class="col-md-12 mrg-tpp">Tell Us A Bit About YourSelf </h3>
                 <input class="input__field input__field--nao" type="hidden" name="CompanyName" required id="CompanyName" onkeypress="return AllowAlphabet(event)" />
                 <input class="input__field input__field--nao" type="hidden" name="MonthlySalary" required id="MonthlySalary" onkeypress="return AllowAlphabet(event)" />
                 <input class="input__field input__field--nao" type="hidden" name="MonthlyObligation" required id="MonthlyObligation" onkeypress="return AllowAlphabet(event)" />

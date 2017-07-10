@@ -22,7 +22,7 @@
                 
 <!-- plus a jQuery UI theme, here I use "flick" -->
 <link rel="stylesheet" href="https://code.jquery.com/ui/1.10.4/themes/flick/jquery-ui.css">
-  <style>
+<style>
       table {font-size:14px;}
       .input__field--nao {color: #999999;}
       .bg-success {padding:10px; font-size:14px; color:#666;}
@@ -248,7 +248,7 @@
                 </div>
             <div class="col-md-1"></div>
             <section class="content">
-                <h3 class="col-md-12 mrg-tpp">Tell Us A Bit About YourSelf </h3>
+                <h3 class="col-md-12 mrg-tpp">Tell Us a Bit About YourSelf</h3>
                 <input class="input__field input__field--nao" type="hidden" name="CompanyName" required id="CompanyName" onkeypress="return AllowAlphabet(event)" />
                 <input class="input__field input__field--nao" type="hidden" name="MonthlySalary" required id="MonthlySalary" onkeypress="return AllowAlphabet(event)" />
                 <input class="input__field input__field--nao" type="hidden" name="MonthlyObligation" required id="MonthlyObligation" onkeypress="return AllowAlphabet(event)" />
@@ -1061,7 +1061,7 @@
                 
             </section>
             </form>
-            </div>
+        </div>
          
             <br>
             <div id="Instant_Approve" style="display: none;">
@@ -1134,7 +1134,7 @@
             </form>
             </div>
 
-            <div id="upload" style="display: none;" >
+            <div id="upload"  >
             <form name="upload_details" id="upload_details" enctype="multipart/form-data" method="POST">
             {{ csrf_field() }}
             <div>
@@ -1198,7 +1198,7 @@
             </form>
             </div>
                 
-                <div id="financial_doc" style="display: none;">
+            <div id="financial_doc" style="display: none;">
                 <form name="financial_details" id="financial_details" enctype="multipart/form-data" method="POST">
                  {{ csrf_field() }}
                 <div class="row">
@@ -1253,13 +1253,8 @@
             
             </form>
 
-            </div>
-            </div>
-            
-            </div>
-           
-          
-            
+            </div></div></div></div></div></div>
+             
 @include('layout.footer')
 @include('layout.script')
 
@@ -2007,7 +2002,7 @@ $('#Applied, #Period').on('input', function () {
          url: "{{URL::to('iifl-offer-status')}}?_token="+"{{ csrf_token() }}",
          data : $('').serialize(),
          success: function(msg){
-            
+
           var result=loan_eligibility(msg.body.ROI,msg.body.maxEmi,msg.body.maxTenure,msg.body.maxloanamt,msg.body.minTenure,msg.body.minloanamt,msg.body.processingfee,msg.body.offerstatus,msg.body.remarks);
             // console.log(msg);
         }  
@@ -2019,7 +2014,7 @@ $('#Applied, #Period').on('input', function () {
           var offer=offerstatus;
           // console.log(offer);
     if(offer=="Rejected")
-    {       
+    {
             $('#Instant_Approve').hide();
             $('#Applicant_Details').show();
          alert("Thank You For Choosing IIFL. \n Your application has been rejected due to internal credit policy.\n Reason: "+remarks);

@@ -1134,7 +1134,7 @@
             </form>
             </div>
 
-            <div id="upload" >
+            <div id="upload" style="display: none;" >
             <form name="upload_details" id="upload_details" enctype="multipart/form-data" method="POST">
             {{ csrf_field() }}
             <div>
@@ -1198,7 +1198,7 @@
             </form>
             </div>
                 
-                <div id="financial_doc">
+                <div id="financial_doc" style="display: none;">
                 <form name="financial_details" id="financial_details" enctype="multipart/form-data" method="POST">
                  {{ csrf_field() }}
                 <div class="row">
@@ -1266,7 +1266,8 @@
            
           
             
-
+@include('layout.footer')
+@include('layout.script')
 
 
 <script type="text/javascript">
@@ -2104,6 +2105,7 @@ $('#Applied, #Period').on('input', function () {
           processData: false,
           contentType: false,
           success: function(msg){
+            console.log(msg);
             if (msg.head.status == "1") {
                 
                 alert("Reason: "+status_description); 
@@ -2460,4 +2462,7 @@ $('#Applied, #Period').on('input', function () {
        });    
    </script>
    
+<<<<<<< HEAD
   
+=======
+>>>>>>> 4499433603c658d5d7c0742b8c9d792166f6f56b

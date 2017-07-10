@@ -633,7 +633,7 @@ $url = $this::$url_static."/BankAPIService.svc/updateIIFLRevisedQuote";
      $response[$i]=$obj;
 
     }
-    // print_r($response);
+     print_r($http_result);
   }
 
   public function iifl_pincode_status(Request $req){

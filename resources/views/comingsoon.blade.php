@@ -3,7 +3,7 @@
 	<div class="container" id="elem">
 	<div class="col-md-12 pad centeralign" style="margin:104px 30px 30px -46px"   >
 	<center>
-<img src="http://www.bluevalley.in/img/project/upcoming/coming.png" class="img-responsive" >
+<img src=" {{URL::to('images/coming.png')}}" class="img-responsive" >
 
  <div class="error-actions">
                     <a href="{{URL::to('/')}}" class="btn btn-primary btn-lg"><span class="glyphicon glyphicon-home"></span>

@@ -101,6 +101,8 @@
                 <li class="hidden-xs"><a href="{{URL::to('http://www.rupeeboss.com/rblife-style/')}}">RB Life Style</a></li>
 				<li class="hidden-lg"><a href="{{URL::to('magic-link')}}">Magic Link </a></li>
 				<li class="hidden-xs credit-score-btn"><a href="{{URL::to('credit-report')}}" class="btn btn-primary">My Credit Score</a></li>
+				
+				</a></li>
 			<!-- 	<li><a href="{{URL::to('contact-us')}}">Media</a></li> -->
 	            </ul>
                </div>
@@ -112,11 +114,10 @@
                 <li><a href="{{URL::to('https://www.linkedin.com/company/rupeeboss.com')}}" title="Linkedin"><i class="icon-linkedin"></i></a></li>
                 <li><a href="{{URL::to('https://plus.google.com/u/0/113191059621763008376')}}" title="GooglePlus"><i class="icon-google-plus"></i></a></li>
                 <li><a href="{{URL::to('https://www.instagram.com/rupeeboss/')}}" title="instagram"><i class="icon-instagram"></i></a></li>
-                <li><a href="{{URL::to('track-application')}}"><i class="fa fa-map-marker" aria-hidden="true" data-toggle="tooltip" title="Track Application"></i>
-				</a></li>
+                
                 <li><a href="{{URL::to('contact-us')}}">&nbsp;&nbsp;<i class="icon-phone"></i> 1800-267-629-6	</a></li>
                 
-
+              <li><a href="{{URL::to('track-application')}}" style="font-size:20px;margin-top: -6px;position:absolute;"><i class="fa fa-map-marker md-btn" aria-hidden="true" data-toggle="tooltip" title="Track Application"></i>
             </ul>
           </div>
         </div>

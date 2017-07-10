@@ -1166,7 +1166,7 @@
                 <h3 class="text-center pad">Non Financial Documents</h3>
                 <ul class="ull">
                    <li>Identity Proof <input type="file" name="identity_proof" id="identity_proof" class="pull-right" required data-category="1" />
-                   <select  name="sub_catg[1]"  required id="identity_proof_select" class="drop-arr ">
+                   <select  name="sub_catg[1]"  required id="identity_proof_select" class="drop-arr pull-center">
                     <option disabled selected value="">Select</option>
                       
                     </select>
@@ -1206,9 +1206,9 @@
                 <hr>
                 <h3 class="text-center pad">Financial Documents</h3>
                 
-                <input type="text" name="BankName" id="BankName"  Placeholder="Name Of The Bank" class="col-md-8" required />
-                <select class="col-md-8 drop-arr select-sty mrg-top" name="Accounttype" id="Accounttype" required>
-                    <option disabled selected value="">Account Type</option>
+                <input type="text" name="BankName" id="BankName"  Placeholder="Name Of The Bank"  required />
+                <select class="drop-arr select-sty mrg-top" name="Accounttype" id="Accounttype" required>
+                    <option disabled selected vNon Financial Documentspe</option>
                               
                  </select>
                  <div>
@@ -1255,8 +1255,14 @@
 
             </div>
             </div>
-            
             </div>
+            </div>
+            </div>
+            
+          
+            </div>
+            @include('layout.footer')
+            @include('layout.script')
            
           
             
@@ -2454,5 +2460,4 @@ $('#Applied, #Period').on('input', function () {
        });    
    </script>
    
-   @include('layout.footer')
-@include('layout.script')
+  

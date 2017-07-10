@@ -13,22 +13,22 @@
 						
 							<form class="" id="compareform" role="form" method="POST" >
 							 {{ csrf_field() }}
-							 <input type="hidden" name="empid" class="empid" value=" <?php echo Session::get('empid')?Session::get('empid'):'MAA==';?>">
-						          <input type="hidden" name="brokerid" class="brokerid" value="<?php echo Session::get('brokerid')?Session::get('brokerid'):'MAA==';?>">
-						          <input type="hidden" name="source" class="source" value="<?php echo Session::get('source')?Session::get('source'):'MAA==';?>"> 
-						          <input type="hidden" name="cards" class="prod" 
+							 <input type="hidden" name="empid" class="empid" value=" <?php echo Session::get('empid')?Session::get('empid'):'MAA=';?>">
+						          <input type="hidden" name="brokerid" class="brokerid" value="<?php echo Session::get('brokerid')?Session::get('brokerid'):'MAA=';?>">
+						          <input type="hidden" name="source" class="source" value="<?php echo Session::get('source')?Session::get('source'):'MAA=';?>"> 
+						          <input type="hidden" name="prod" class="prod" 
 						          value="<?php if(isset($_GET['prod'])){
 						          	echo str_replace("_"," ",$_GET["prod"]);
 						          	}else{
 						          		echo "0";
 						          		}?>"> 
-						          <input type="hidden" name="net_annual_income" class="amount" 
+						          <input type="hidden" name="amount" class="amount" 
 						          value="<?php if(isset($_GET['amount'])){
 						          	echo str_replace("_"," ",$_GET["amount"]);
 						          	}else{
 						          		echo "0";
 						          		}?>"> 
-						          <input type="hidden" name="your_interests" class="interest" 
+						          <input type="hidden" name="interest" class="interest" 
 						          value="<?php if(isset($_GET['interest'])){
 						          	echo str_replace("_"," ",$_GET["interest"]);
 						          	}else{

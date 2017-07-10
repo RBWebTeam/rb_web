@@ -1166,7 +1166,7 @@
                 <h3 class="text-center pad">Non Financial Documents</h3>
                 <ul class="ull">
                    <li>Identity Proof <input type="file" name="identity_proof" id="identity_proof" class="pull-right" required data-category="1" />
-                   <select  name="sub_catg[1]"  required id="identity_proof_select" class="drop-arr pull-center">
+                   <select  name="sub_catg[1]"  required id="identity_proof_select" class="drop-arr ">
                     <option disabled selected value="">Select</option>
                       
                     </select>
@@ -1206,9 +1206,9 @@
                 <hr>
                 <h3 class="text-center pad">Financial Documents</h3>
                 
-                <input type="text" name="BankName" id="BankName"  Placeholder="Name Of The Bank"  required />
-                <select class="drop-arr select-sty mrg-top" name="Accounttype" id="Accounttype" required>
-                    <option disabled selected vNon Financial Documentspe</option>
+                <input type="text" name="BankName" id="BankName"  Placeholder="Name Of The Bank" class="col-md-8" required />
+                <select class="col-md-8 drop-arr select-sty mrg-top" name="Accounttype" id="Accounttype" required>
+                    <option disabled selected value="">Account Type</option>
                               
                  </select>
                  <div>
@@ -1255,14 +1255,8 @@
 
             </div>
             </div>
-            </div>
-            </div>
-            </div>
             
-          
             </div>
-            @include('layout.footer')
-            @include('layout.script')
            
           
             
@@ -2013,7 +2007,7 @@ $('#Applied, #Period').on('input', function () {
          url: "{{URL::to('iifl-offer-status')}}?_token="+"{{ csrf_token() }}",
          data : $('').serialize(),
          success: function(msg){
-
+            
           var result=loan_eligibility(msg.body.ROI,msg.body.maxEmi,msg.body.maxTenure,msg.body.maxloanamt,msg.body.minTenure,msg.body.minloanamt,msg.body.processingfee,msg.body.offerstatus,msg.body.remarks);
             // console.log(msg);
         }  
@@ -2025,7 +2019,7 @@ $('#Applied, #Period').on('input', function () {
           var offer=offerstatus;
           // console.log(offer);
     if(offer=="Rejected")
-    {
+    {       
             $('#Instant_Approve').hide();
             $('#Applicant_Details').show();
          alert("Thank You For Choosing IIFL. \n Your application has been rejected due to internal credit policy.\n Reason: "+remarks);
@@ -2462,7 +2456,3 @@ $('#Applied, #Period').on('input', function () {
        });    
    </script>
    
-<<<<<<< HEAD
-  
-=======
->>>>>>> 4499433603c658d5d7c0742b8c9d792166f6f56b

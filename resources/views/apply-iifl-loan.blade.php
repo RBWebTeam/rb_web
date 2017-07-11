@@ -2014,7 +2014,7 @@ $('#Applied, #Period').on('input', function () {
           var offer=offerstatus;
           // console.log(offer);
     if(offer=="Rejected")
-    {
+    {       $('#otp').hide();
             $('#Instant_Approve').hide();
             $('#Applicant_Details').show();
          alert("Thank You For Choosing IIFL. \n Your application has been rejected due to internal credit policy.\n Reason: "+remarks);
@@ -2022,7 +2022,7 @@ $('#Applied, #Period').on('input', function () {
         alert("Your Salary Is Not Upto Mark");
     }
     else if(offer == null)
-    {
+    {        $('#otp').hide();
             $('#Instant_Approve').hide();
              $('#Applicant_Details').show();
          alert("Thank You For Choosing IIFL. \n Your application has been rejected due to internal credit policy.\n Reason:" );
@@ -2375,6 +2375,46 @@ $('#Applied, #Period').on('input', function () {
        
         </script>
         
+        <script type="text/javascript">
+            $('#PermanentPin').keyup(function(){
+                console.log($('#PermanentPin').val().length);
+                if ($('#PermanentPin').val().length == 6) {
+                    var pincode =$('#PermanentPin').val();
+                    var v_token ="{{csrf_token()}}";
+                   $.ajax({  
+                        type: "POST",  
+                        url: "{{URL::to('iifl-permanent-pincode-status')}}",
+                        data : {'_token': v_token,'PermanentPin':pincode},
+                        success: function(msg){
+                            console.log(msg.City);
+                            console.log(msg.State);
+                            if (msg.Status =="Fail" ) 
+                            {
+                               alert('Please Enter Valid Pincode');
+                               return false;
+                            }else if(msg.Status =="Success"){
+
+                            var city =msg.City;
+                            var newOption = $('<option selected value="'+msg.CityCode+'">'+city+'</option>');
+                            $('#PermanentCity').empty().append(newOption);
+                            $('#PermanentCity').closest( "span" ).addClass( "input--filled" );
+
+                            // $('#CurrentCity').empty().append(city);
+
+                            var state=msg.State;
+                            var newOption = $('<option selected value="'+msg.StateCode+'">'+state+'</option>');
+                            $('#PermanentState').empty().append(newOption);
+                            $('#PermanentState').closest( "span" ).addClass( "input--filled" );
+                            // $('#CurrentState').empty().append(state);
+                        }
+                    }
+                    });       
+                }  
+       });    
+            
+       
+        </script>
+
         <script type="text/javascript">
             $('#CoCurrentPin').keyup(function(){
                 console.log($('#CoCurrentPin').val().length);

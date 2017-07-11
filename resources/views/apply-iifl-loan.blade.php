@@ -2156,7 +2156,9 @@ $('#Applied, #Period').on('input', function () {
      $('#PermanentAddress3').closest( "span" ).addClass( "input--filled" );
      $('#PermanentPin').val($('#CurrentPin').val());
      $('#PermanentPin').closest( "span" ).addClass( "input--filled" );
-     $('#PermanentCity').val($('#CurrentCity').val());
+     $('#PermanentCity').find("option").val($('#CurrentCity').val());
+     $('#PermanentCity').find("option").text($('#CurrentCity').text());
+     //$('#PermanentCity').val($('#CurrentCity').val());
      $('#PermanentCity').closest( "span" ).addClass( "input--filled" );
 
      $('#PermanentState').val($('#CurrentState').val());

@@ -1684,7 +1684,7 @@ var global_tenure=0;
             // console.log(stay_at);
             $('#CurrentCity').val(stay_at);
             $('#CurrentCity').closest( "span" ).addClass( "input--filled" );
-            $('#PermanentCity').val(stay_at);
+            //$('#PermanentCity').val(stay_at);
             $('#City').val(stay_at);
             // var name= $('#Company_Name option:selected').text();
             var name = $('#Company_Name').val();

@@ -22,7 +22,7 @@
                 
 <!-- plus a jQuery UI theme, here I use "flick" -->
 <link rel="stylesheet" href="https://code.jquery.com/ui/1.10.4/themes/flick/jquery-ui.css">
-  <style>
+<style>
       table {font-size:14px;}
       .input__field--nao {color: #999999;}
       .bg-success {padding:10px; font-size:14px; color:#666;}
@@ -248,7 +248,7 @@
                 </div>
             <div class="col-md-1"></div>
             <section class="content">
-                <h3 class="col-md-12 mrg-tpp">Tell Us A Bit About YourSelf </h3>
+                <h3 class="col-md-12 mrg-tpp">Tell Us a Bit About YourSelf</h3>
                 <input class="input__field input__field--nao" type="hidden" name="CompanyName" required id="CompanyName" onkeypress="return AllowAlphabet(event)" />
                 <input class="input__field input__field--nao" type="hidden" name="MonthlySalary" required id="MonthlySalary" onkeypress="return AllowAlphabet(event)" />
                 <input class="input__field input__field--nao" type="hidden" name="MonthlyObligation" required id="MonthlyObligation" onkeypress="return AllowAlphabet(event)" />
@@ -473,7 +473,7 @@
                     </svg>
                 </span>
                 <span class="input input--nao input--filled">
-                    <select class="input__field input__field--nao" name="PermanentCity" id="PermanentCity" required>
+                <select class="input__field input__field--nao" name="PermanentCity" id="PermanentCity" required>
                         <option disabled selected value=""></option>
                     </select>
                     <label class="input__label input__label--nao" for="PermanentCity">
@@ -1061,7 +1061,7 @@
                 
             </section>
             </form>
-            </div>
+        </div>
          
             <br>
             <div id="Instant_Approve" style="display: none;">
@@ -1166,7 +1166,7 @@
                 <h3 class="text-center pad">Non Financial Documents</h3>
                 <ul class="ull">
                    <li>Identity Proof <input type="file" name="identity_proof" id="identity_proof" class="pull-right" required data-category="1" />
-                   <select  name="sub_catg[1]"  required id="identity_proof_select" class="drop-arr pull-center">
+                   <select  name="sub_catg[1]"  required id="identity_proof_select" class="drop-arr ">
                     <option disabled selected value="">Select</option>
                       
                     </select>
@@ -1198,7 +1198,7 @@
             </form>
             </div>
                 
-                <div id="financial_doc" style="display: none;">
+            <div id="financial_doc" style="display: none;">
                 <form name="financial_details" id="financial_details" enctype="multipart/form-data" method="POST">
                  {{ csrf_field() }}
                 <div class="row">
@@ -1206,9 +1206,9 @@
                 <hr>
                 <h3 class="text-center pad">Financial Documents</h3>
                 
-                <input type="text" name="BankName" id="BankName"  Placeholder="Name Of The Bank"  required />
-                <select class="drop-arr select-sty mrg-top" name="Accounttype" id="Accounttype" required>
-                    <option disabled selected vNon Financial Documentspe</option>
+                <input type="text" name="BankName" id="BankName"  Placeholder="Name Of The Bank" class="col-md-8" required />
+                <select class="col-md-8 drop-arr select-sty mrg-top" name="Accounttype" id="Accounttype" required>
+                    <option disabled selected value="">Account Type</option>
                               
                  </select>
                  <div>
@@ -1253,19 +1253,8 @@
             
             </form>
 
-            </div>
-            </div>
-            </div>
-            </div>
-            </div>
-            
-          
-            </div>
-            @include('layout.footer')
-            @include('layout.script')
-           
-          
-            
+            </div></div></div></div></div></div>
+             
 @include('layout.footer')
 @include('layout.script')
 
@@ -2025,7 +2014,7 @@ $('#Applied, #Period').on('input', function () {
           var offer=offerstatus;
           // console.log(offer);
     if(offer=="Rejected")
-    {
+    {       $('#otp').hide();
             $('#Instant_Approve').hide();
             $('#Applicant_Details').show();
          alert("Thank You For Choosing IIFL. \n Your application has been rejected due to internal credit policy.\n Reason: "+remarks);
@@ -2033,7 +2022,7 @@ $('#Applied, #Period').on('input', function () {
         alert("Your Salary Is Not Upto Mark");
     }
     else if(offer == null)
-    {
+    {        $('#otp').hide();
             $('#Instant_Approve').hide();
              $('#Applicant_Details').show();
          alert("Thank You For Choosing IIFL. \n Your application has been rejected due to internal credit policy.\n Reason:" );
@@ -2168,6 +2157,7 @@ $('#Applied, #Period').on('input', function () {
      $('#PermanentPin').val($('#CurrentPin').val());
      $('#PermanentPin').closest( "span" ).addClass( "input--filled" );
      $('#PermanentCity').val($('#CurrentCity').val());
+     
      $('#PermanentCity').closest( "span" ).addClass( "input--filled" );
 
      $('#PermanentState').val($('#CurrentState').val());
@@ -2177,6 +2167,7 @@ $('#Applied, #Period').on('input', function () {
      $('#PermanentAddress2').val(''); 
      $('#PermanentAddress3').val('');
      $('#PermanentPin').val('');
+     $('#PermanentState').val('');
      $('#PermanentAddress1').closest( "span" ).removeClass( "input--filled" );
      $('#PermanentAddress2').closest( "span" ).removeClass( "input--filled" ); 
      $('#PermanentAddress3').closest( "span" ).removeClass( "input--filled" );
@@ -2385,6 +2376,46 @@ $('#Applied, #Period').on('input', function () {
         </script>
         
         <script type="text/javascript">
+            $('#PermanentPin').keyup(function(){
+                console.log($('#PermanentPin').val().length);
+                if ($('#PermanentPin').val().length == 6) {
+                    var pincode =$('#PermanentPin').val();
+                    var v_token ="{{csrf_token()}}";
+                   $.ajax({  
+                        type: "POST",  
+                        url: "{{URL::to('iifl-permanent-pincode-status')}}",
+                        data : {'_token': v_token,'PermanentPin':pincode},
+                        success: function(msg){
+                            console.log(msg.City);
+                            console.log(msg.State);
+                            if (msg.Status =="Fail" ) 
+                            {
+                               alert('Please Enter Valid Pincode');
+                               return false;
+                            }else if(msg.Status =="Success"){
+
+                            var city =msg.City;
+                            var newOption = $('<option selected value="'+msg.CityCode+'">'+city+'</option>');
+                            $('#PermanentCity').empty().append(newOption);
+                            $('#PermanentCity').closest( "span" ).addClass( "input--filled" );
+
+                            // $('#CurrentCity').empty().append(city);
+
+                            var state=msg.State;
+                            var newOption = $('<option selected value="'+msg.StateCode+'">'+state+'</option>');
+                            $('#PermanentState').empty().append(newOption);
+                            $('#PermanentState').closest( "span" ).addClass( "input--filled" );
+                            // $('#CurrentState').empty().append(state);
+                        }
+                    }
+                    });       
+                }  
+       });    
+            
+       
+        </script>
+
+        <script type="text/javascript">
             $('#CoCurrentPin').keyup(function(){
                 console.log($('#CoCurrentPin').val().length);
                 if ($('#CoCurrentPin').val().length == 6) {
@@ -2462,7 +2493,3 @@ $('#Applied, #Period').on('input', function () {
        });    
    </script>
    
-<<<<<<< HEAD
-  
-=======
->>>>>>> 4499433603c658d5d7c0742b8c9d792166f6f56b

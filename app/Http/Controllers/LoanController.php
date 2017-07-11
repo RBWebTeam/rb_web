@@ -277,7 +277,7 @@ class LoanController extends CallApiController
     $post_data = '{
    "head": {
     "requestCode": "PLRQSTDD01",
-    "key": "ae94e5857582d97cd9a8669d51c164c8",
+    "key": "af28dc2bcd8a5660412407313b31d101",
     "appVer": "1.0",
     "osName": "WebAPI",
     "appName": "ALLIANCE",
@@ -310,7 +310,7 @@ public function dropdown(Request $req){
     $post_data = '{
    "head": {
     "requestCode": "PLRQDD01",
-    "key": "ae94e5857582d97cd9a8669d51c164c8",
+    "key": "af28dc2bcd8a5660412407313b31d101",
     "appVer": "1.0",
     "osName": "WebAPI",
     "appName": "ALLIANCE",
@@ -348,7 +348,7 @@ public function dropdown(Request $req){
        $post_data = '{
    "head": {
     "requestCode": "PLRQCL01",
-    "key": "ae94e5857582d97cd9a8669d51c164c8",
+    "key": "af28dc2bcd8a5660412407313b31d101",
     "appVer": "1.0",
     "osName": "WebAPI",
     "appName": "ALLIANCE",
@@ -359,7 +359,7 @@ public function dropdown(Request $req){
 }';
     //call API here to save in DB
         //$post=json_encode($post_data);
-      //print_r($post_data);
+      print_r($post_data);exit();
 
     $url = $this::$url_static."/BankAPIService.svc/createIIFLAppDtls";
     $result=$this->call_json_data_api($url,$post_data);
@@ -401,7 +401,7 @@ public function dropdown(Request $req){
        $post_data = '{
    "head": {
     "requestCode": "PLRQCOAPP01",
-    "key": "ae94e5857582d97cd9a8669d51c164c8",
+    "key": "af28dc2bcd8a5660412407313b31d101",
     "appVer": "1.0",
     "osName": "WebAPI",
     "appName": "ALLIANCE",
@@ -443,7 +443,7 @@ $url = $this::$url_static."/BankAPIService.svc/createIIFLCoAppDtls";
  
   "head": {
    "requestCode": "PLRQAO01",
-   "key": "ae94e5857582d97cd9a8669d51c164c8",
+   "key": "af28dc2bcd8a5660412407313b31d101",
    "appVer": "1.0",
    "osName": "WebAPI",
    "appName": "ALLIANCE",
@@ -473,7 +473,7 @@ $url = $this::$url_static."/BankAPIService.svc/createIIFLCoAppDtls";
        $post_data = '{
    "head": {
     "requestCode": "PLRQOF01",
-    "key": "ae94e5857582d97cd9a8669d51c164c8",
+    "key": "af28dc2bcd8a5660412407313b31d101",
     "appVer": "1.0",
     "osName": "WebAPI",
     "appName": "ALLIANCE",
@@ -483,7 +483,7 @@ $url = $this::$url_static."/BankAPIService.svc/createIIFLCoAppDtls";
   
   "body": '.$json_data.'
 }';
-// print_r($post_data);
+// print_r($post_data);exit();
     $url = $this::$url_static."/BankAPIService.svc/getIIFLofferstatus";
     $result=$this->call_json_data_api($url,$post_data);
     $http_result=$result['http_result'];
@@ -505,7 +505,7 @@ $url = $this::$url_static."/BankAPIService.svc/createIIFLCoAppDtls";
        $post_data = '{
    "head": {
     "requestCode": "PLRQVER01",
-   "key": "ae94e5857582d97cd9a8669d51c164c8",
+   "key": "af28dc2bcd8a5660412407313b31d101",
    "appVer": "1.0",
    "osName": "WebAPI",
    "appName": "ALLIANCE",
@@ -538,7 +538,7 @@ $url = $this::$url_static."/BankAPIService.svc/verifyIIFLAPIAadharOTP";
   
    "head": {
     "requestCode": "PLRQREVQ01",
-    "key": "ae94e5857582d97cd9a8669d51c164c8",
+    "key": "af28dc2bcd8a5660412407313b31d101",
     "appVer": "1.0",
     "osName": "WebAPI",
     "appName": "ALLIANCE",
@@ -575,7 +575,7 @@ $url = $this::$url_static."/BankAPIService.svc/updateIIFLRevisedQuote";
           $post_data='{
      "head": {
     "requestCode": "PLRQDOCKYC01",
-    "key": "ae94e5857582d97cd9a8669d51c164c8",
+    "key": "af28dc2bcd8a5660412407313b31d101",
     "appVer": "1.0",
     "osName": "WebAPI",
     "appName": "ALLIANCE",
@@ -612,7 +612,7 @@ $url = $this::$url_static."/BankAPIService.svc/updateIIFLRevisedQuote";
       $sub_catg=$req['sub_catg'];
       $post_data='{"head": {
                  "requestCode": "PLRQDOCFIN01",
-                  "key": "ae94e5857582d97cd9a8669d51c164c8",
+                  "key": "af28dc2bcd8a5660412407313b31d101",
                   "appVer": "1.0",
                   "osName": "WebAPI",
                   "appName": "ALLIANCE",
@@ -676,6 +676,23 @@ $url = $this::$url_static."/BankAPIService.svc/updateIIFLRevisedQuote";
     // print_r($req->all());
     $data['CRMLeadID']=Session::get('leadno');
     $data['Pincode']=$req->CompanyPin;
+    $post_data=json_encode($data);
+    // print_r($post_data);
+    $url = $this::$url_static."/BankAPIService.svc/getIIFLPincodeDetail";
+     $result=$this->call_json_data_api($url,$post_data);
+     $http_result=$result['http_result'];
+     $error=$result['error'];
+     $st=str_replace('"{', "{", $http_result);
+     $s=str_replace('}"', "}", $st);
+     $m=$s=str_replace('\\', "", $s);
+     $obj = json_decode($m);
+    
+     return response()->json( $obj);
+  }
+  public function iifl_permanent_pincode_status(Request $req){
+    // print_r($req->all());
+    $data['CRMLeadID']=Session::get('leadno');
+    $data['Pincode']=$req->PermanentPin;
     $post_data=json_encode($data);
     // print_r($post_data);
     $url = $this::$url_static."/BankAPIService.svc/getIIFLPincodeDetail";

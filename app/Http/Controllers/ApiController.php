@@ -714,7 +714,9 @@ run_else:
         
 	  			}
 	  	    	if($data){
+
 	  	    		$return_data=$data[0];
+	  	    		$return_data->processingfee=round($return_data->processingfee);
 	  	    		$status=1;
 	  	    	}else{
 	  	    		$err="You are not eligible for loan";

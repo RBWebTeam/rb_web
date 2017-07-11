@@ -32,7 +32,7 @@
 
     <div class="item active">
 	<div class="slide-txt">
-	<i class="sprite sprite-home-ic center-img-align img-responsive hidden-xs"></i>
+	<!-- <i class="sprite sprite-home-ic center-img-align img-responsive hidden-xs"></i> -->
 	<img src="{{URL::to('../images/home-ic.png')}}" class="center-block"> 
 	<h2>Home Loan </h2>
    <h4>Choose the right Home Loan for you ...!!</h4>
@@ -43,7 +43,7 @@
 
     <div class="item">
 	<div class="slide-txt">
-	<i class="sprite sprite-personal-ic center-img-align img-responsive hidden-xs"></i>
+	<!-- <i class="sprite sprite-personal-ic center-img-align img-responsive hidden-xs"></i> -->
 	<img src="{{URL::to('../images/personal-ic.png')}}" class="center-block">
 	<h2>Personal Loan </h2>
    <h4>Finance Your Dreams...!!</h4>
@@ -54,7 +54,7 @@
 
     <div class="item">
 	<div class="slide-txt">
-	<i class="sprite sprite-lap-ic center-img-align img-responsive hidden-xs"></i>
+	<!-- <i class="sprite sprite-lap-ic center-img-align img-responsive hidden-xs"></i>-->
 	<img src="{{URL::to('../images/lap-ic.png')}}"class="center-block">
 	<h2>Loan Against Property</h2>
    <h4>Finding you a better Deal...!!</h4>
@@ -65,7 +65,7 @@
 
     <div class="item">
 	<div class="slide-txt">
-	<i class="sprite sprite-sme-ic center-img-align img-responsive hidden-xs"></i>
+	<!--  <i class="sprite sprite-sme-ic center-img-align img-responsive hidden-xs"></i>-->
 	<img src="{{URL::to('../images/sme-ic.png')}}" class="center-block">
 	<h2>SME Loan</h2>
 
@@ -78,7 +78,7 @@
 	
 	<div class="item">
 	<div class="slide-txt" >
-	<i class="sprite sprite-balance-ic center-img-align img-responsive hidden-xs"></i>
+	<!-- <i class="sprite sprite-balance-ic center-img-align img-responsive hidden-xs"></i> -->
 	<img src="{{URL::to('../images/balance-ic.png')}}"class="center-block">
 	<h4>Unsecured</h4>
 	<h2>Business Loan</h2>
@@ -90,7 +90,7 @@
     </div>
 	<div class="item">
 	<div class="slide-txt">
-	<i class="sprite sprite-car-ic center-img-align img-responsive hidden-xs"></i>
+	<!-- <i class="sprite sprite-car-ic center-img-align img-responsive hidden-xs"></i> -->
 	<img src="{{URL::to('../images/car-ic.png')}}"class="center-block">
 	<h2>Car Loan</h2>
    <h4>Thinking of your comfort first !!</h4>

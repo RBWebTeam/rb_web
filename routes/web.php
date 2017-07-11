@@ -123,6 +123,7 @@ Route::post('iifl-offer-status','LoanController@offer_status');
 Route::post('iifl-doc-upload','LoanController@iifl_doc_upload');
 Route::post('iifl-finanacial-doc-upload','LoanController@iifl_financial_doc_upload');
 Route::post('iifl-pincode-status','LoanController@iifl_pincode_status');
+Route::post('iifl-permanent-pincode-status','LoanController@iifl_permanent_pincode_status');
 Route::post('iifl-co-pincode-status','LoanController@iifl_co_pincode_status');
 Route::post('iifl-company-pincode-status','LoanController@iifl_company_pincode_status');
 // Creditcardform

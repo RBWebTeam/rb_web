@@ -473,7 +473,7 @@
                     </svg>
                 </span>
                 <span class="input input--nao input--filled">
-                <select class="input__field input__field--nao" name="PermanentCity" id="PermanentCity" required>
+                    <select class="input__field input__field--nao" name="PermanentCity" id="PermanentCity" required>
                         <option disabled selected value=""></option>
                     </select>
                     <label class="input__label input__label--nao" for="PermanentCity">
@@ -1684,7 +1684,7 @@ var global_tenure=0;
             // console.log(stay_at);
             $('#CurrentCity').val(stay_at);
             $('#CurrentCity').closest( "span" ).addClass( "input--filled" );
-            $('#PermanentCity').val(stay_at);
+            //$('#PermanentCity').val(stay_at);
             $('#City').val(stay_at);
             // var name= $('#Company_Name option:selected').text();
             var name = $('#Company_Name').val();
@@ -2157,7 +2157,6 @@ $('#Applied, #Period').on('input', function () {
      $('#PermanentPin').val($('#CurrentPin').val());
      $('#PermanentPin').closest( "span" ).addClass( "input--filled" );
      $('#PermanentCity').val($('#CurrentCity').val());
-     
      $('#PermanentCity').closest( "span" ).addClass( "input--filled" );
 
      $('#PermanentState').val($('#CurrentState').val());
@@ -2167,7 +2166,6 @@ $('#Applied, #Period').on('input', function () {
      $('#PermanentAddress2').val(''); 
      $('#PermanentAddress3').val('');
      $('#PermanentPin').val('');
-     $('#PermanentState').val('');
      $('#PermanentAddress1').closest( "span" ).removeClass( "input--filled" );
      $('#PermanentAddress2').closest( "span" ).removeClass( "input--filled" ); 
      $('#PermanentAddress3').closest( "span" ).removeClass( "input--filled" );

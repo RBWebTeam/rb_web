@@ -35,8 +35,8 @@
       .bg-primary {padding:5px; font-size:16px;}
       .bg-primary:hover {color:#fff;}
       .input__field {border-radius:0px;}
-      .input__label--nao {top:15px;}
-      .input__field {border:1px solid #dfdfdf;height:60px;}
+      .input__label--nao {top:11px;}
+      .input__field {border:1px solid #dfdfdf;height:55px;}
       label.error {display: none !important; }
         .error {
                     border:2px solid red;

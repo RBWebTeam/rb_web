@@ -127,7 +127,7 @@
             <section class="content">
                 
                 <span class="input input--nao">
-                    <input class="input__field input__field--nao" type="text" name="Mob_Num" id="Mob_Num" onkeypress="return fnAllowNumeric(event)"  required />
+                    <input class="input__field input__field--nao" type="text" name="Mob_Num" id="Mob_Num" onkeypress="return fnAllowNumeric(event)" maxlength="10"  required />
                     <label class="input__label input__label--nao" for="Mob_Num">
                     <span class="input__label-content input__label-content--nao">Mobile No. </span>
                     </label>
@@ -1079,7 +1079,7 @@
             </div>
                 
                 <span class="input input--nao input--filled">
-                <input class="input__field input__field--nao" type="text" name="TotalPayableAmount" id="PayableAmount" required  value="" />
+                <input class="input__field input__field--nao" type="hidden" name="TotalPayableAmount" id="PayableAmount" required  value="" />
                     <input class="input__field input__field--nao" type="text" name="AppliedLoanamount" id="Applied"  onkeypress="return fnAllowNumeric(event)" value="" required />
                     <label class="input__label input__label--nao" for="Applied">
                         <span class="input__label-content input__label-content--nao">Loan Amount</span>

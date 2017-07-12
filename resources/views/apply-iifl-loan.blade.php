@@ -221,7 +221,7 @@
             </form>
             </div>
             
-        <div id="Applicant_Details" style="display: none;">
+        <div id="Applicant_Details" style="display: none;" >
             <form name="applicant_deatils" id="applicant_deatils" method="POST">
                       {{ csrf_field() }}
             <div class="col-md-12">
@@ -664,7 +664,7 @@
             </form>
             </div>
 
-            <div id="co_applicant" style="display: none;">
+            <div id="co_applicant" style="display: none;" >
                 <form id="co_applicant_details" name="co_applicant_details" method="POST">
                  {{ csrf_field() }}
                 <section class="content">
@@ -1200,7 +1200,9 @@
             </form>
             </div>
                 
-            <div id="financial_doc" >
+
+            <div id="financial_doc" style="display: none;" >
+
                 <form name="financial_details" id="financial_details" enctype="multipart/form-data" method="POST">
                  {{ csrf_field() }}
                 <div class="row">
@@ -1612,11 +1614,11 @@ $(document).ready(function(){
          data: {
          '_token': v_token},
          success: function(msg){       
-            populate_state(msg,'CurrentState');
-            populate_state(msg,'PermanentState');
-            populate_state(msg,'CoCurrentState');
-            populate_state(msg,'CoPermanentState');
-            populate_state(msg,'CompanyState');
+            // populate_state(msg,'CurrentState');
+            // populate_state(msg,'PermanentState');
+            // populate_state(msg,'CoCurrentState');
+            // populate_state(msg,'CoPermanentState');
+            // populate_state(msg,'CompanyState');
 
     }
 
@@ -1658,12 +1660,12 @@ $(document).ready(function(){
 
             // console.log(msg);
             if(param=='CityMaster'){
-                populate_city_education(msg,'CurrentCity');
-                populate_city_education(msg,'PermanentCity');
+                // populate_city_education(msg,'CurrentCity');
+                // populate_city_education(msg,'PermanentCity');
                 populate_city_education(msg,'city');
-                populate_city_education(msg,'CoCurrentCity');
-                populate_city_education(msg,'CoPermanentCity');
-                 populate_city_education(msg,'CompanyCity');
+                // populate_city_education(msg,'CoCurrentCity');
+                // populate_city_education(msg,'CoPermanentCity');
+                //  populate_city_education(msg,'CompanyCity');
 
             }else if(param=='EducationMaster'){
                 populate_city_education(msg,'Education');
@@ -2204,10 +2206,13 @@ $('#Applied, #Period').on('input', function () {
      $('#PermanentAddress3').closest( "span" ).addClass( "input--filled" );
      $('#PermanentPin').val($('#CurrentPin').val());
      $('#PermanentPin').closest( "span" ).addClass( "input--filled" );
-     $('#PermanentCity').val($('#CurrentCity').val());
+      var newOption1 = $('<option selected value="'+$('#CurrentCity').val()+'">'+$('#CurrentCity').text()+'</option>');
+        $('#PermanentCity').empty().append(newOption1);
+     
      $('#PermanentCity').closest( "span" ).addClass( "input--filled" );
 
-     $('#PermanentState').val($('#CurrentState').val());
+     var newOption2 = $('<option selected value="'+$('#CurrentState').val()+'">'+$('#CurrentState').text()+'</option>');
+        $('#PermanentState').empty().append(newOption2);
      $('#PermanentState').closest( "span" ).addClass( "input--filled" );
      }else{
      $('#PermanentAddress1').val('');
@@ -2238,10 +2243,12 @@ $('#Applied, #Period').on('input', function () {
      $('#CoPermanentAddress3').closest( "span" ).addClass( "input--filled" );
      $('#CoPermanentPin').val($('#CoCurrentPin').val());
      $('#CoPermanentPin').closest( "span" ).addClass( "input--filled" );
-     $('#CoPermanentCity').val($('#CoCurrentCity').val());
+     var newOption3 = $('<option selected value="'+$('#CoCurrentCity').val()+'">'+$('#CoCurrentCity').text()+'</option>');
+        $('#CoPermanentCity').empty().append(newOption3);
      $('#CoPermanentCity').closest( "span" ).addClass( "input--filled" );
 
-     $('#CoPermanentState').val($('#CoCurrentState').val());
+     var newOption4 = $('<option selected value="'+$('#CoCurrentState').val()+'">'+$('#CoCurrentState').text()+'</option>');
+        $('#CoPermanentState').empty().append(newOption4);
      $('#CoPermanentState').closest( "span" ).addClass( "input--filled" );
      }else{
      $('#CoPermanentAddress1').val('');

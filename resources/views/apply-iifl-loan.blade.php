@@ -127,14 +127,14 @@
             <section class="content">
                 
                 <span class="input input--nao">
-                    <input class="input__field input__field--nao" type="text" name="Mob_Num" id="Mob_Num" onkeypress="return fnAllowNumeric(event)" maxlength="10" minlength="10" required />
+                    <input class="input__field input__field--nao" type="text" name="Mob_Num" id="Mob_Num" onkeypress="return fnAllowNumeric(event)"  required />
                     <label class="input__label input__label--nao" for="Mob_Num">
                     <span class="input__label-content input__label-content--nao">Mobile No. </span>
                     </label>
                     <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
                     <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
                     </svg>
-                    <div id="mobile_value" style="display: none;color: red;">Phone number should be of 10 digits.</div>
+                    
                 </span>
                 <span class="input input--nao">
                     <input class="input__field input__field--nao" type="text" name="EmailID" id="EmailID" oninput="mail('EmailID')" required />
@@ -1716,13 +1716,21 @@ var global_tenure=0;
     // alert('okae');
     //      return false;
     }else{
+           var net_income = $('#Monthly_Salary').val();
+           if (net_income < 25000) 
+           {
+             alert('Your Net Income Should Be Greater Than 25000 OR 25000');
+             return false;
+           }
+           var mobile =$('#Mob_Num').val();
+           if (mobile.length<10) 
+           {
+            alert('Contact Number Should Be Of 10 digits.');
+            return false;
+           }
             $('#iifl_express_loan').hide();
             $('#Eligibility_details').show();
-            if(($('#Mob_Num').val().length)<10)
-            {
-              $('#mobile_value').show();
-              return false;
-            }
+            
             var email_address = $('#EmailID').val();
             // console.log(email_address);
             $('#PersonalEmailID').val(email_address);

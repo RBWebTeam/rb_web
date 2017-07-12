@@ -44,6 +44,8 @@
       h1 {font-size:40px;color:#75a8de;padding:20px; padding-bottom:0px;margin-bottom:5px;}
 	  .ull {padding:0px; text-align:left;}
 	  .ull li {list-style-type:none; padding:10px;border-bottom:1px dashed #ccc;}
+	  input {padding:10px; height:55px;}
+	  select {padding:10px;height:55px;}
 </style>
     <div id="fh5co-hero">
     <div class="express-lon-ban"><img src="images/express-loan-image1.jpg" class="img-responsive"/></div>
@@ -125,14 +127,14 @@
             <section class="content">
                 
                 <span class="input input--nao">
-                    <input class="input__field input__field--nao" type="text" name="Mob_Num" id="Mob_Num" onkeypress="return fnAllowNumeric(event)" maxlength="10" minlength="10" required />
+                    <input class="input__field input__field--nao" type="text" name="Mob_Num" id="Mob_Num" onkeypress="return fnAllowNumeric(event)"  required />
                     <label class="input__label input__label--nao" for="Mob_Num">
                     <span class="input__label-content input__label-content--nao">Mobile No. </span>
                     </label>
                     <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
                     <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
                     </svg>
-                    <div id="mobile_value" style="display: none;color: red;">Phone number should be of 10 digits.</div>
+                    
                 </span>
                 <span class="input input--nao">
                     <input class="input__field input__field--nao" type="text" name="EmailID" id="EmailID" oninput="mail('EmailID')" required />
@@ -219,7 +221,7 @@
             </form>
             </div>
             
-        <div id="Applicant_Details" style="display: none;">
+        <div id="Applicant_Details" style="display: none;" >
             <form name="applicant_deatils" id="applicant_deatils" method="POST">
                       {{ csrf_field() }}
             <div class="col-md-12">
@@ -662,7 +664,7 @@
             </form>
             </div>
 
-            <div id="co_applicant" style="display: none;">
+            <div id="co_applicant" style="display: none;" >
                 <form id="co_applicant_details" name="co_applicant_details" method="POST">
                  {{ csrf_field() }}
                 <section class="content">
@@ -1198,51 +1200,99 @@
             </form>
             </div>
                 
-            <div id="financial_doc" style="display: none;">
+
+            <div id="financial_doc" style="display: none;" >
+
                 <form name="financial_details" id="financial_details" enctype="multipart/form-data" method="POST">
                  {{ csrf_field() }}
                 <div class="row">
-                <div class="col-md-10 col-md-offset-1">
+                <div class="col-md-12">
                 <hr>
                 <h3 class="text-center pad">Financial Documents</h3>
                 
-                <input type="text" name="BankName" id="BankName"  Placeholder="Name Of The Bank" class="col-md-8" required />
-                <select class="col-md-8 drop-arr select-sty mrg-top" name="Accounttype" id="Accounttype" required>
-                    <option disabled selected value="">Account Type</option>
-                              
-                 </select>
+              <section class="content">
+				
+				<span class="input input--nao">
+                    <input class="input__field input__field--nao" type="text" name="BankName" id="BankName" required onkeypress="return AllowAlphabet(event)" />
+                    <label class="input__label input__label--nao" for="LName">
+                    <span class="input__label-content input__label-content--nao">Name Of The Bank</span>
+                    </label>
+                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
+                    <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
+                    </svg>
+                </span>
+				
+				<span class="input input--nao">
+                    <select class="input__field input__field--nao" name="Accounttype" id="Accounttype" required>
+                        <option disabled selected value=""></option>
+                    </select>
+                    <label class="input__label input__label--nao" for="Accounttype">
+                    <span class="input__label-content input__label-content--nao">Account Type</span>
+                    </label>
+                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
+                    <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
+                    </svg>
+                </span>
+				
+				
                  <div>
-              <h3 class="text-left mrg-top pad1">Bank Statement</h3>
-                <select class="col-md-8 drop-arr select-sty mrg-top" name="sub_catg[]" id="BankStatement" required="">
-                    <option disabled selected value="">Bank Statement</option>          
-                 </select>
 
-                <div class="col-md-4 no-pad"><input type="file" name="BankStatement" /></div>
+              <h3 class="text-center pad">Bank Statement</h3>
+				 
+				 <span class="input input--nao">
+                    <select class="input__field input__field--nao" name="sub_catg[]" id="BankStatement" required>
+                        <option disabled selected value=""></option>
+                    </select>
+                    <label class="input__label input__label--nao" for="Accounttype">
+                    <span class="input__label-content input__label-content--nao">Bank Statement</span>
+                    </label>
+                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
+                    <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
+                    </svg>
+                </span>
+				<div class="input input--nao"><input type="file" name="BankStatement"/></div>
+				<span class="input input--nao">
+                    <input class="input__field input__field--nao" type="text" name="IFSC" id="IFSC" required onkeypress="return AllowAlphabet(event)" />
+                    <label class="input__label input__label--nao" for="IFSC">
+                    <span class="input__label-content input__label-content--nao">IFSC</span>
+                    </label>
+                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
+                    <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
+                    </svg>
+                </span>
+
+                 <span class="input input--nao">
+                    <select class="input__field input__field--nao" name="sub_catg[]" id="SalarySatement" required>
+                        <option disabled selected value=""></option>
+                    </select>
+                    <label class="input__label input__label--nao" for="SalaryStatement">
+                    <span class="input__label-content input__label-content--nao">Salary Statement</span>
+                    </label>
+                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
+                    <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
+                    </svg>
+                </span>
+				<div class="input input--nao"><input type="file" name="SalarySatement" /></div>
+				
+				 <span class="input input--nao">
+                    <select class="input__field input__field--nao" name="Statementtype" id="Statementtype" required>
+                        <option disabled selected value=""></option>
+						<option value="Manual">Manual</option>
+						<option value="E-verify">E-verify</option>
+                    </select>
+                    <label class="input__label input__label--nao" for="PermanentState">
+                    <span class="input__label-content input__label-content--nao">Statement Type</span>
+                    </label>
+                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
+                    <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
+                    </svg>
+                </span>
+				
                  </div>
             
-                <!-- <div class="col-md-12 mrg-top"> 
-                <div class="col-md-4 no-pad"><input type="file" /></div><div class="col-md-4"><button class="btn btn-primary pull-left" >Upload</button></div> 
-                </div> -->
+			</section>
+               
                 
-                <div class="col-md-12 mrg-top">
-                 <h3 class="text-left pad1">Enter The Disbursement Amount</h3>
-                 <input type="text" name="IFSC" id="IFSC"  Placeholder="IFSC" class="col-md-8"/>
-                 
-                <!--  <input type="text"  Placeholder="Salary Slip" class="col-md-8 mrg-top"/> -->
-                 
-                 <select class="col-md-8 drop-arr select-sty mrg-top" name="sub_catg[]" id="SalarySatement" required>
-                     <option disabled selected value="">Salary Statement</option>                
-                 </select>
-                 <div class="col-md-4 no-pad"><input type="file" name="SalarySatement" /></div>
-                </div>
-                <div class="col-md-12 mrg-top">
-                <select class="col-md-8 drop-arr select-sty mrg-top" name="Statementtype" id="Statementtype" required>
-                     <option disabled selected value="">Statement Type</option> 
-                     <option value="E-Verify">E-Verify</option> 
-                     <option value="Manual">Manual</option>                
-                 </select>
-                 </div>
-
                 <div class="col-md-12 mrg-top"> 
                 <div class="col-md-12">
                     <a class="btn btn-primary btn-outline with-arrow mrg-top" id="proceed">Proceed<i class="icon-arrow-right"></i></a>
@@ -1564,11 +1614,11 @@ $(document).ready(function(){
          data: {
          '_token': v_token},
          success: function(msg){       
-            populate_state(msg,'CurrentState');
-            populate_state(msg,'PermanentState');
-            populate_state(msg,'CoCurrentState');
-            populate_state(msg,'CoPermanentState');
-            populate_state(msg,'CompanyState');
+            // populate_state(msg,'CurrentState');
+            // populate_state(msg,'PermanentState');
+            // populate_state(msg,'CoCurrentState');
+            // populate_state(msg,'CoPermanentState');
+            // populate_state(msg,'CompanyState');
 
     }
 
@@ -1610,12 +1660,12 @@ $(document).ready(function(){
 
             // console.log(msg);
             if(param=='CityMaster'){
-                populate_city_education(msg,'CurrentCity');
-                populate_city_education(msg,'PermanentCity');
+                // populate_city_education(msg,'CurrentCity');
+                // populate_city_education(msg,'PermanentCity');
                 populate_city_education(msg,'city');
-                populate_city_education(msg,'CoCurrentCity');
-                populate_city_education(msg,'CoPermanentCity');
-                 populate_city_education(msg,'CompanyCity');
+                // populate_city_education(msg,'CoCurrentCity');
+                // populate_city_education(msg,'CoPermanentCity');
+                //  populate_city_education(msg,'CompanyCity');
 
             }else if(param=='EducationMaster'){
                 populate_city_education(msg,'Education');
@@ -1666,13 +1716,21 @@ var global_tenure=0;
     // alert('okae');
     //      return false;
     }else{
+           var net_income = $('#Monthly_Salary').val();
+           if (net_income < 25000) 
+           {
+             alert('Your Net Income Should Be Greater Than 25000 OR 25000');
+             return false;
+           }
+           var mobile =$('#Mob_Num').val();
+           if (mobile.length<10) 
+           {
+            alert('Contact Number Should Be Of 10 digits.');
+            return false;
+           }
             $('#iifl_express_loan').hide();
             $('#Eligibility_details').show();
-            if(($('#Mob_Num').val().length)<10)
-            {
-              $('#mobile_value').show();
-              return false;
-            }
+            
             var email_address = $('#EmailID').val();
             // console.log(email_address);
             $('#PersonalEmailID').val(email_address);
@@ -2156,10 +2214,13 @@ $('#Applied, #Period').on('input', function () {
      $('#PermanentAddress3').closest( "span" ).addClass( "input--filled" );
      $('#PermanentPin').val($('#CurrentPin').val());
      $('#PermanentPin').closest( "span" ).addClass( "input--filled" );
-     $('#PermanentCity').val($('#CurrentCity').val());
+      var newOption1 = $('<option selected value="'+$('#CurrentCity').val()+'">'+$('#CurrentCity').text()+'</option>');
+        $('#PermanentCity').empty().append(newOption1);
+     
      $('#PermanentCity').closest( "span" ).addClass( "input--filled" );
 
-     $('#PermanentState').val($('#CurrentState').val());
+     var newOption2 = $('<option selected value="'+$('#CurrentState').val()+'">'+$('#CurrentState').text()+'</option>');
+        $('#PermanentState').empty().append(newOption2);
      $('#PermanentState').closest( "span" ).addClass( "input--filled" );
      }else{
      $('#PermanentAddress1').val('');
@@ -2190,10 +2251,12 @@ $('#Applied, #Period').on('input', function () {
      $('#CoPermanentAddress3').closest( "span" ).addClass( "input--filled" );
      $('#CoPermanentPin').val($('#CoCurrentPin').val());
      $('#CoPermanentPin').closest( "span" ).addClass( "input--filled" );
-     $('#CoPermanentCity').val($('#CoCurrentCity').val());
+     var newOption3 = $('<option selected value="'+$('#CoCurrentCity').val()+'">'+$('#CoCurrentCity').text()+'</option>');
+        $('#CoPermanentCity').empty().append(newOption3);
      $('#CoPermanentCity').closest( "span" ).addClass( "input--filled" );
 
-     $('#CoPermanentState').val($('#CoCurrentState').val());
+     var newOption4 = $('<option selected value="'+$('#CoCurrentState').val()+'">'+$('#CoCurrentState').text()+'</option>');
+        $('#CoPermanentState').empty().append(newOption4);
      $('#CoPermanentState').closest( "span" ).addClass( "input--filled" );
      }else{
      $('#CoPermanentAddress1').val('');

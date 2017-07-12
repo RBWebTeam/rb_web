@@ -358,25 +358,14 @@ public function dropdown(Request $req){
     $s=str_replace('}"', "}", $st);
     $m=$s=str_replace('\\', "", $s);
     // print_r( $http_result);exit();
-
-
-     $obj = json_decode($m);
+      $obj = json_decode($m);
      if($obj->head->status==0){
       Session::put('prospectno',$obj->body->prospectno);
       Session::put('aadhar',$data['AadhaarNumber']);
       Session::put('leadno',$obj->body->leadno);
-
-     //print_r($obj->body->prospectno);exit();
+      //print_r($obj->body->prospectno);exit();
      }
-
-     
-     // print_r($obj);exit();
-
      return response()->json( $obj);
-      
-    //  $a=$obj->body;
-    // return $http_result;
-
     }
 
     //co-applicant
@@ -409,10 +398,7 @@ $url = $this::$url_static."/BankAPIService.svc/createIIFLCoAppDtls";
     $m=$s=str_replace('\\', "", $s);
     $obj = json_decode($m);
     print_r($obj);
-   //  $offer=$this::offer_status();
-   // return Response::json($offer);
-   // $uid=$this::uid();
-   // return Response::json($uid);
+   return response()->json( $obj);
     } 
     
     public function iifl_eligibility(Request $req){
@@ -450,7 +436,8 @@ $url = $this::$url_static."/BankAPIService.svc/createIIFLCoAppDtls";
     $s=str_replace('}"', "}", $st);
     $m=$s=str_replace('\\', "", $s);
      $obj = json_decode($m);
-     print_r($obj);exit();
+     // print_r($obj);exit();
+     return response()->json( $obj);
     }  
     
     public function offer_status(){
@@ -513,9 +500,7 @@ $url = $this::$url_static."/BankAPIService.svc/verifyIIFLAPIAadharOTP";
     $s=str_replace('}"', "}", $st);
     $m=$s=str_replace('\\', "", $s);
      $obj = json_decode($m);
-   //   $offer=$this::offer_status();
-   // return Response::json($offer);
-     // return $obj;
+   return response()->json( $obj);
     }
 
     public function iifl_instant_eligibility(Request $req){

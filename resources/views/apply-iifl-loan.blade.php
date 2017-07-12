@@ -1303,10 +1303,17 @@
             
             </form>
 
-            </div></div></div></div></div></div>
-             
-@include('layout.footer')
-@include('layout.script')
+            </div>
+			</div>
+             @include('layout.script')
+			</div>
+			</div>
+			
+			</div>
+			
+			</div>
+             @include('layout.footer')
+
 
 
 <script type="text/javascript">

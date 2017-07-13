@@ -27,7 +27,7 @@ class TrackapplicationController extends CallApiController
     
     $data['data'] = json_decode($http_result);
     // $status = $obj[0]->Status;
-    // print_r($obj[0]->Status);exit();
+    // print_r($data['data']);exit();
     // if ($status == "0") 
     // {   
     //     return $status

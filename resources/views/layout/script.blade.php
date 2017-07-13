@@ -1402,7 +1402,7 @@
         window.fbAsyncInit = function() {
           // FB JavaScript SDK configuration and setup
           FB.init({
-            appId      : '624024964433110', //'1780983575495725', // FB App ID    624024964433110
+            appId      : '1780983575495725', //'1780983575495725', // FB App ID    624024964433110
             cookie     : true,  // enable cookies to allow the server to access the session
             xfbml      : true,  // parse social plugins on this page
             version    : 'v2.8' // use graph api version 2.8

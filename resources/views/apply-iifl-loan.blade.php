@@ -35,8 +35,8 @@
       .bg-primary {padding:5px; font-size:16px;}
       .bg-primary:hover {color:#fff;}
       .input__field {border-radius:0px;}
-      .input__label--nao {top:15px;}
-      .input__field {border:1px solid #dfdfdf;height:60px;}
+      .input__label--nao {top:11px;}
+      .input__field {border:1px solid #dfdfdf;height:55px;}
       label.error {display: none !important; }
         .error {
                     border:2px solid red;
@@ -127,7 +127,7 @@
             <section class="content">
                 
                 <span class="input input--nao">
-                    <input class="input__field input__field--nao" type="text" name="Mob_Num" id="Mob_Num" onkeypress="return fnAllowNumeric(event)"  required />
+                    <input class="input__field input__field--nao" type="text" name="Mob_Num" id="Mob_Num" onkeypress="return fnAllowNumeric(event)" maxlength="10"  required />
                     <label class="input__label input__label--nao" for="Mob_Num">
                     <span class="input__label-content input__label-content--nao">Mobile No. </span>
                     </label>
@@ -1079,7 +1079,7 @@
             </div>
                 
                 <span class="input input--nao input--filled">
-                <input class="input__field input__field--nao" type="text" name="TotalPayableAmount" id="PayableAmount" required  value="" />
+                <input class="input__field input__field--nao" type="hidden" name="TotalPayableAmount" id="PayableAmount" required  value="" />
                     <input class="input__field input__field--nao" type="text" name="AppliedLoanamount" id="Applied"  onkeypress="return fnAllowNumeric(event)" value="" required />
                     <label class="input__label input__label--nao" for="Applied">
                         <span class="input__label-content input__label-content--nao">Loan Amount</span>
@@ -1303,10 +1303,17 @@
             
             </form>
 
-            </div></div></div></div></div></div>
-             
-@include('layout.footer')
-@include('layout.script')
+            </div>
+			</div>
+             @include('layout.script')
+			</div>
+			</div>
+			
+			</div>
+			
+			</div>
+             @include('layout.footer')
+
 
 
 <script type="text/javascript">
@@ -1963,6 +1970,16 @@ var global_tenure=0;
 <!-- Instant Approve -->
 <script type="text/javascript">
     $('#instant_approve').click(function(){
+        var amt=$('#Applied').val();
+       if(amt> global_amount){
+            alert('Enter amount less than or equal to eligible amount');
+            return false;
+        }
+        var diebus =$('#Period').val();
+        if(diebus> global_days){
+            alert('Enter tenure less than or equal to required tenure');
+            return false;
+        }
     if(! $('#instant_form').valid()){
             alert("You must agree to the terms first.");
             return false;
@@ -2053,6 +2070,8 @@ $('#Applied, #Period').on('input', function () {
 </script>
 
 <script type="text/javascript">
+    var global_amount=0;
+    var global_days=0;
     $('#proceed_without_aadhar').click(function(){
          $('#Instant_Approve').show();
          $.ajax({  
@@ -2106,12 +2125,14 @@ $('#Applied, #Period').on('input', function () {
          $("#fees").empty().append(processingfee);
 
          var maxloanamt = maxloanamt;
+         global_amount =maxloanamt;
          var applied_loan =Math.round(maxloanamt);
          $("input[name='AppliedLoanamount']").val(applied_loan);
          $("#personal_loan_amount").empty().append(applied_loan);
          console.log(maxloanamt);
 
          var maxTenure = maxTenure/12;
+          global_days =maxTenure;
          var tenure =Math.round(maxTenure);
          $("input[name='Tenure']").val(tenure);
          console.log(maxTenure);

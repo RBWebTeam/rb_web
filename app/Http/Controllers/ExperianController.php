@@ -8,6 +8,7 @@ use Response;
 use Session;
 use App\experian_request_model;
 use App\experian_responseModel;
+use App\SEOlibraries\Seolink;
 class ExperianController extends CallApiController
 {
     public function credit_report(){
@@ -35,9 +36,15 @@ class ExperianController extends CallApiController
         $verified=Session::get('otp_verified_credit_score');
        // print_r($contact."  --".$verified);exit();
       if(($contact!=Null &&$verified!=Null) || $login || $user ){
+                
+
           return view('credit-report')->with($data)->with('keywords',$keywords);
         }else{
-           return view('credit-report-otp');
+
+               $query=new Seolink();
+               $data=$query->CreditReport();
+
+           return view('credit-report-otp')->with($data);
         }   
     }
 	public function call(Request $req){

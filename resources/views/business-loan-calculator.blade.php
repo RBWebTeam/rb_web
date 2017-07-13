@@ -80,6 +80,53 @@
 @include('layout.footer')
 @include('layout.script')
 
+<div class="modal fade" tabindex="-1" role="dialog" id="business_eligible">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Eligibility Status</h4>
+      </div>
+      <div class="modal-body">
+        <center>
+        <span id="bank_logo"></span>
+        <h4><b><p>Proposed Bank: <span style="color:#9333FF; font-family:arial; padding:5px 0px;" id="bank_name"></span>.</p></b></h4>
+        <h4><b><p>Loan Eligible: ₹<span style="color:#c2da6b; font-family:arial; padding:5px 0px;" id="loan_eligible"></span>.</p></b></h4>
+        <h4><b><p>Rate Of Interest: <span style="color:#00B9B9; font-family:arial; padding:5px 0px;" id="roi"></span>%.</p></b></h4>
+        <h4><b><p>Proposed EMI: ₹<span style="color:#4A9ACF; font-family:arial; padding:5px 0px;" id="EMI"></span>.</p></b></h4>
+        <h4><b><p>Processing Fee: ₹<span style="color:#33FFEC; font-family:arial; padding:5px 0px;" id="processingfee"></span>.</p></b></h4>
+        </center>
+      </div>
+      
+      <!-- <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        
+      </div> -->
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" tabindex="-1" role="dialog" id="business_ not_eligible">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Eligibility Status</h4>
+      </div>
+      <div class="modal-body">
+        
+        <h4><p><b>Oops!!! You are Not Eligibile</b></p></h4>
+        
+      </div>
+      
+      <!-- <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        
+      </div> -->
+    </div>
+  </div>
+</div>
+
 <script type="text/javascript">
     $('#ckeck_eligibility').click(function(){
       if(! $('#business_loan_calculator_form').valid())
@@ -95,7 +142,38 @@
          url: "{{URL::to('business-loan-calculation')}}",
          data : $('#business_loan_calculator_form').serialize(),
          success: function(msg){
-              console.log(msg);
+              console.log(msg.status);
+              if (msg.status==1) 
+              {
+                 var loan_eligible = msg.data.loan_eligible;
+                 console.log(loan_eligible);
+                  $('#loan_eligible').empty().append(loan_eligible);
+
+                 var roi = msg.data.roi;
+                 $('#roi').empty().append(roi);
+
+                 var emi = msg.data.emi;
+                 console.log(emi);
+                  $('#EMI').empty().append(emi);
+
+
+                 var processingfee = msg.data.processingfee;
+                  console.log(processingfee);
+                  $('#processingfee').empty().append(processingfee);
+
+                  var Bank_Name = msg.data.Bank_Name;
+                  console.log(Bank_Name);
+                  $('#bank_name').empty().append(Bank_Name);
+
+                  var Bank_Logo = msg.data.Bank_Logo;
+                  console.log(Bank_Logo);
+                  $('#bank_logo').html('<img src="http://erp.rupeeboss.com/Banklogo/ADVANTAGE_logo.png"  width="150px">');
+
+                  $('#business_eligible').modal('show');  
+              }
+              else{
+                $('#business_not_eligible').modal('show');  
+              }
         }  
       });   
      } 

@@ -11,7 +11,7 @@
     <div class="col-md-12 ccc">
     <h3 class="titl">1. How would you rate your overall satisfaction with us?</h3>
     <div class="text-left">
-<input type="radio" name="rdo"/> Very satis?ed &nbsp; <input type="radio" name="rdo" /> Somewhat satis?ed &nbsp; <input type="radio" name="rdo" /> Neutral &nbsp; <input type="radio" name="rdo" /> Somewhat dissatis?ed &nbsp; <input type="radio" name="rdo" /> Very dissatis?ed
+<input type="radio" name="rdo"/> Very satisfied &nbsp; <input type="radio" name="rdo" /> Somewhat satisfied &nbsp; <input type="radio" name="rdo" /> Neutral &nbsp; <input type="radio" name="rdo" /> Somewhat dissatisfied &nbsp; <input type="radio" name="rdo" /> Very dissatisfied
 </div>
     </div>
     
@@ -27,21 +27,21 @@
 	<h3 class="text-left"><b>Please rate us on the following attributes:</b></h3>
     <h3 class="titl">3. Customer service</h3>
     <div class="text-left">
-<input type="radio" name="rdo" /> Very satis?ed &nbsp; <input type="radio" name="rdo" /> Somewhat satis?ed &nbsp; <input type="radio" name="rdo" /> Neutral &nbsp; <input type="radio" name="rdo" /> Somewhat dissatis?ed &nbsp; <input type="radio" name="rdo" /> Very dissatis?ed
+<input type="radio" name="rdo" /> Very satisfied &nbsp; <input type="radio" name="rdo" /> Somewhat satisfied &nbsp; <input type="radio" name="rdo" /> Neutral &nbsp; <input type="radio" name="rdo" /> Somewhat dissatisfied &nbsp; <input type="radio" name="rdo" /> Very dissatisfied
 </div>
     </div>
     
     <div class="col-md-12 ccc">
     <h3 class="titl">4.Professionalism</h3>
     <div class="text-left">
-<input type="radio" name="rdo" /> Very satis?ed &nbsp; <input type="radio" name="rdo" /> Somewhat satis?ed &nbsp; <input type="radio" name="rdo" /> Neutral &nbsp; <input type="radio" name="rdo" /> Somewhat dissatis?ed &nbsp; <input type="radio" name="rdo" /> Very dissatis?ed
+<input type="radio" name="rdo" /> Very satisfied &nbsp; <input type="radio" name="rdo" /> Somewhat satisfied &nbsp; <input type="radio" name="rdo" /> Neutral &nbsp; <input type="radio" name="rdo" /> Somewhat dissatisfied &nbsp; <input type="radio" name="rdo" /> Very dissatisfied
 </div>
     </div>
     
     <div class="col-md-12 ccc">
     <h3 class="titl">5.Sales staff</h3>
     <div class="text-left">
-<input type="radio" name="rdo" /> Very satis?ed &nbsp; <input type="radio" name="rdo" /> Somewhat satis?ed &nbsp; <input type="radio" name="rdo" /> Neutral &nbsp; <input type="radio" name="rdo" /> Somewhat dissatis?ed &nbsp; <input type="radio" name="rdo" /> Very dissatis?ed
+<input type="radio" name="rdo" /> Very satisfied &nbsp; <input type="radio" name="rdo" /> Somewhat satisfied &nbsp; <input type="radio" name="rdo" /> Neutral &nbsp; <input type="radio" name="rdo" /> Somewhat dissatisfied &nbsp; <input type="radio" name="rdo" /> Very dissatisfied
 </div>
     </div>
     

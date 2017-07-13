@@ -20,7 +20,7 @@
      <tr class="text-uppercase bg-danger">
         <td><b>Name</b></td>
         <td><b>Product</b></td>
-        <td><b>Loan Amt Taken(in lac)</b></td>
+        <td><b>Loan Amt (in lac)</b></td>
         <td><b>Lead Status</b></td>
       </tr>
     </thead>

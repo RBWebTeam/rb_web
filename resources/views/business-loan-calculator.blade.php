@@ -90,6 +90,7 @@
       <div class="modal-body">
         <center>
         <span id="bank_logo"></span>
+        
         <h4><b><p>Proposed Bank: <span style="color:#9333FF; font-family:arial; padding:5px 0px;" id="bank_name"></span>.</p></b></h4>
         <h4><b><p>Loan Eligible: ₹<span style="color:#c2da6b; font-family:arial; padding:5px 0px;" id="loan_eligible"></span>.</p></b></h4>
         <h4><b><p>Rate Of Interest: <span style="color:#00B9B9; font-family:arial; padding:5px 0px;" id="roi"></span>%.</p></b></h4>
@@ -106,7 +107,7 @@
   </div>
 </div>
 
-<div class="modal fade" tabindex="-1" role="dialog" id="business_ not_eligible">
+<div class="modal fade" tabindex="-1" role="dialog" id="business_not_eligible">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">

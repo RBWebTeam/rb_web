@@ -4,7 +4,7 @@
 <div class="div-heigh" style="height:550px;">
 <br>
 <h3 class="text-center">Hello <b>{{$data[0]->Name?$data[0]->Name:"User"}}</b></h3>
-<?php if($data[0]->Status =="1"){?>
+<?php if($data[0]->Status =="0"){?>
 <h3 class="text-center">We Cannot find any details with Your given Application Id and Mobile Number</h3>
 <br>
 <div class="col-md-5"></div>

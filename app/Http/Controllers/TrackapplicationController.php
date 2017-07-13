@@ -15,6 +15,7 @@ class TrackapplicationController extends CallApiController
          
            return view('tracking')->with($query->TrackApplication());
     }
+
     public function tracking_sub(Request $req){
         try{
         // print "<pre>"; print_r($req->all());exit();
@@ -30,7 +31,7 @@ class TrackapplicationController extends CallApiController
     
     $data['data'] = json_decode($http_result);
     // $status = $obj[0]->Status;
-    // print_r($obj[0]->Status);exit();
+    // print_r($data['data']);exit();
     // if ($status == "0") 
     // {   
     //     return $status
@@ -41,6 +42,10 @@ class TrackapplicationController extends CallApiController
     }catch(\Exception $ee){
         print_r($ee->getMessage());
     }
+    }
+    public function survey(){
+        
+          return view('survey');  
     }
 
  

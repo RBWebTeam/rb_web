@@ -1,87 +1,5 @@
 @include('layout.header')
 
-<!--   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
-  <style>
-   .div-bg {background:#fff;}
-   .bdy-clr {background:#fff; box-shadow:1px 1px 3px 1px #ccc;}
-   .titl {padding:10px; width:100%;text-align:left;font-size:18px;}
-   
-   
-   #myModal .modal-dialog {
-    width: 400px;
-    padding: 0px ;
-    position: relative;
-}
-
-#myModal .modal-dialog {
-    width: 400px;
-    padding: 0px ;
-    position: relative;
-}
-
-
-.custom-modal-header {
-    text-align: center;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
-
-#myModal .modal-dialog .close {
-    z-index: 99999999;
-    color: white;
-    text-shadow: 0px 0px 0px;
-    font-weight: normal;
-    top: 4px;
-    right: 6px;
-    position: absolute;
-    opacity: 1;
-}
-
-.custom-modal-header .modal-title {
-    /* font-weight: bold; */
-    font-size: 18px;
-}
-
-#myModal .modal-dialog:after {
-    content: '';
-    height: 0px;
-    width: 0px;
-    /* border-right: 50px solid rgba(255, 0, 0, 0.98); */
-    border-right: 50px solid #17b6bb;
-    border-bottom: 50px solid transparent;
-    position: absolute;
-    top: 1px;
-    right: -14px;
-    z-index: 999999;
-}
-
-.form-group {
-    margin-bottom: 15px !important;
-}
-
-.form-inline .form-control {
-    display: inline-block;
-    width: 100%;
-    vertical-align: middle;
-}
-.modal-backdrop {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-color: #000;
-}
-.pad {padding:10px;}
-.input-box {border:none;border-bottom:1px dashed #999;}
-
-
-
-
- .ccc {margin-bottom:20px;padding:10px;border-bottom:2px solid #f1f1f1;}
-</style>
-
 <div class="container" id="fh5co-hero">
 <br>
 <div class="container bdy-clr comp-pg">
@@ -163,25 +81,32 @@
 			<!-- Modal content -->
 			<div class="modal-content row">
 				<div class="modal-header custom-modal-header">
-					<button type="button" class="close" data-dismiss="modal">×</button>
-					<h4 class="modal-title">Enquire Now</h4>
+					<button type="button" class="close" data-dismiss="modal">X</button>
+					<h4 class="modal-title">Client Referral Form</h4>
 				</div>
 				<div class="modal-body">
 					<form name="info_form" class="form-inline" action="#" method="post">
 						<div class="form-group col-sm-12">
-							<input type="text" class="form-control" name="name" id="name" placeholder="Enter Name">
+							<input type="text" class="form-control" name="name" id="name" placeholder="Name">
+						</div>
+						
+						
+						<div class="form-group col-sm-12">
+							<select class="form-control block drop-arr select-sty">
+							   <option>Type Of Loan Needed </option>
+							   <option>Home Loan</option>
+							   <option>Personal Loan</option>
+							   <option>Loan Aganst Property</option>
+							   <option>Business Loan</option>
+							   <option>Car Loan</option>
+							   
+							</select>
+						</div>
+						<div class="form-group col-sm-12">
+							<input type="text" class="form-control" name="phone" id="phone" placeholder="Contact Number*">
 						</div>
 						<div class="form-group col-sm-12">
 							<input type="email" class="form-control" name="email" id="email" placeholder="Enter Email">
-						</div>
-						<div class="form-group col-sm-12">
-							<input type="text" class="form-control" name="checkin" id="cheeckin" placeholder="Check-In Date">
-						</div>
-						<div class="form-group col-sm-12">
-							<input type="text" class="form-control" name="checkout" id="cheeckout" placeholder="Check-Out Date">
-						</div>
-						<div class="form-group col-sm-12">
-							<input type="text" class="form-control" name="phone" id="phone" placeholder="Enter Phone">
 						</div>
 						
 						

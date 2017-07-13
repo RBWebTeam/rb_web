@@ -705,7 +705,7 @@ run_else:
 	  		$status=0;
 	  		//return $req->all();
 
-	  		if($req['ProductId']==12){
+	  		if($req['ProductId']==12){	
 			  	 $data=DB::select('call  usp_get_bank_quot_test("'.$req['PropertyCost'].'","'.$req['LoanTenure'].'","'.$req['LoanRequired'].'","'.$req['ApplicantGender'].'","'.$req['ApplicantIncome'].'","'.$req['ApplicantObligations'].'","1985-12-12","N","","","'.$req['Turnover'].'","'.$req['ProfitAfterTax'].'","'.$req['Depreciation'].'","'.$req['DirectorRemuneration'].'","","","","","'.$req['ApplicantSource'].'","","","'.$req['ProductId'].'")');
 	  			}else if($req['ProductId']==9){
 	  			 $data=DB::select('call  usp_get_personal_loan_quot ("1985-12-12","'.$req['ApplicantSource'].'","'.$req['ApplicantIncome'].'","'.$req['ApplicantObligations'].'","'.$req['LoanTenure'].'","'.$req['LoanRequired'].'")');
@@ -714,7 +714,9 @@ run_else:
         
 	  			}
 	  	    	if($data){
+
 	  	    		$return_data=$data[0];
+	  	    		$return_data->processingfee=round($return_data->processingfee);
 	  	    		$status=1;
 	  	    	}else{
 	  	    		$err="You are not eligible for loan";

@@ -3616,13 +3616,13 @@ label.error {display: none !important; }
    
    
    #myModal .modal-dialog {
-    width: 400px;
+    width: 400px !important;
     padding: 0px ;
     position: relative;
 }
 
 #myModal .modal-dialog {
-    width: 400px;
+    width: 400px !important;
     padding: 0px ;
     position: relative;
 }
@@ -3683,9 +3683,6 @@ label.error {display: none !important; }
 .pad {padding:10px;}
 .input-box {border:none;border-bottom:1px dashed #999;}
 
-
-
-
  .ccc {margin-bottom:20px;padding:10px;border-bottom:2px solid #f1f1f1;}
-
+.mrg-lft{margin-left:30px;}
 

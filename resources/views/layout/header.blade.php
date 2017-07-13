@@ -117,7 +117,7 @@
                 
                 <li><a href="{{URL::to('contact-us')}}">&nbsp;&nbsp;<i class="icon-phone"></i> 1800-267-629-6	</a></li>
                 
-              <li><a href="{{URL::to('track-application')}}" style="color:#fff262;width:160px;font-size:14px;margin-top: -2px;position:absolute;"><i class="fa fa-map-marker md-btn" aria-hidden="true" data-toggle="tooltip" title="Track Application"></i> Track Application
+              <li><a href="{{URL::to('track-application')}}" style="color:#fff262;width:160px;font-size:14px;margin-top: -2px;position:absolute;"><i class="fa fa-map-marker md-btn" aria-hidden="true" data-toggle="tooltip" title="Track Application"></i> <span class="hidden-xs">Track Application</span>
             </ul>
           </div>
         </div>

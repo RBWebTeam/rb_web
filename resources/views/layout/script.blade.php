@@ -2327,6 +2327,7 @@ $(document).ready(function(){
 });
 </script>
 
+	</head>
 
 
 <script type="text/javascript">
@@ -2349,6 +2350,17 @@ $(document).ready(function(){
                   
   }
 }
+
+
+
 </script>
+<script>
+$(window).on('load', function(){
+        setTimeout(function() {
+                $('#myModal112').modal('show');
+        }, 1000);
+            });
+            
+  </script>
 
   @include('layout.modal')

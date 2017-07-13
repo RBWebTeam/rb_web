@@ -14506,5 +14506,87 @@ label.error {display: none !important; }
 .white {background:#fff;}
 
 
+/***  Survey Page  *********/
+
+
+  .div-bg {background:#fff;}
+   .bdy-clr {background:#fff; box-shadow:1px 1px 3px 1px #ccc;}
+   .titl {padding:10px; width:100%;text-align:left;font-size:18px;}
+   
+   
+   #myModal .modal-dialog {
+    width: 400px;
+    padding: 0px ;
+    position: relative;
+}
+
+#myModal .modal-dialog {
+    width: 400px;
+    padding: 0px ;
+    position: relative;
+}
+
+
+.custom-modal-header {
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+#myModal .modal-dialog .close {
+    z-index: 99999999;
+    color: white;
+    text-shadow: 0px 0px 0px;
+    font-weight: normal;
+    top: 4px;
+    right: 6px;
+    position: absolute;
+    opacity: 1;
+}
+
+.custom-modal-header .modal-title {
+    /* font-weight: bold; */
+    font-size: 18px;
+}
+
+#myModal .modal-dialog:after {
+    content: '';
+    height: 0px;
+    width: 0px;
+    /* border-right: 50px solid rgba(255, 0, 0, 0.98); */
+    border-right: 50px solid #17b6bb;
+    border-bottom: 50px solid transparent;
+    position: absolute;
+    top: 1px;
+    right: -14px;
+    z-index: 999999;
+}
+
+.form-group {
+    margin-bottom: 15px !important;
+}
+
+.form-inline .form-control {
+    display: inline-block;
+    width: 100%;
+    vertical-align: middle;
+}
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #000;
+}
+.pad {padding:10px;}
+.input-box {border:none;border-bottom:1px dashed #999;}
+
+
+
+
+ .ccc {margin-bottom:20px;padding:10px;border-bottom:2px solid #f1f1f1;}
+
+
 
 /*# sourceMappingURL=mysite.css.map */

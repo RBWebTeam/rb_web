@@ -133,7 +133,7 @@ return  json_encode(array('statusid' =>$status,'data'=>$data,"err_code"=>$err_co
        public function business_loan_calculation(Request $req){
           $data=$req->all();
           $post_data=json_encode($data);
-          print_r($post_data);
+          //print_r($post_data);
           $url = $this::$current_domain_static."/api/productwise_emi_cal_app";
           $result=$this->call_json_data_api($url,$post_data);
           $http_result=$result['http_result'];
@@ -141,6 +141,7 @@ return  json_encode(array('statusid' =>$status,'data'=>$data,"err_code"=>$err_co
           $st=str_replace('"{', "{", $http_result);
           $s=str_replace('}"', "}", $st);
           $m=$s=str_replace('\\', "", $s);
+          // print_r($http_result);exit();
 
 
           $obj = json_decode($m);

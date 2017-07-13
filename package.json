@@ -14,7 +14,11 @@
     "preboot": "^5.0.0-rc.10",
     "socket.io": "^2.0.2"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "laravel-elixir": "^6.0.0-15",
+    "laravel-elixir-vue-2": "^0.3.0",
+    "laravel-elixir-webpack-official": "^1.0.10"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

@@ -132,13 +132,11 @@
              data : $("#calculator_form").serialize(),
              dataType: 'json',
              success: function(msg){ 
-                 if(msg.statusid==1){
-                      if(msg.data['proposedlimit']>0){
+                 if(msg.statusid==0){
+                      
                         $('#proposedlimit_ID').empty().append('<i class="fa fa-inr" aria-hidden="true"></i> '+parseInt(msg.data['proposedlimit']));
-                      }else{
-                        $('#proposedlimit_ID').empty().append("Proposed limit reject..");
-                      }
-                 }else{
+                       
+                 }else if(msg.statusid==1){
                   $('#proposedlimit_ID').empty().append("Proposed limit reject..");
                  }
 

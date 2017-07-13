@@ -45,14 +45,26 @@ class CalculatorController extends CallApiController
          if(($profitbefore+$depreciation) < 0 || ($pbdit- $financecost) < 0 ){
 
               $proposed_limit=0;
-              $status=0;
+              
           }else{
 
             $proposed_limit = $proposed_limit;
 
           }
 
-         $data = array('proposedlimit'=>$proposed_limit,);
+         
+
+
+         if($proposed_limit>0){
+ 
+            $data = array('proposedlimit'=>$proposed_limit,);
+            $err_code='success.';
+            $status=0;
+         }else{
+
+            $err_code='Proposed limit reject.';
+            $status=1;
+         }
 
 
 }catch(\Exception $ee){

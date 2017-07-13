@@ -114,5 +114,9 @@ return  json_encode(array('statusid' =>$status,'data'=>$data,"err_code"=>$err_co
 
        }
 
+       public function business_loan_calculator(){
+        return view('business-loan-calculator');
+       }
+
  
 }

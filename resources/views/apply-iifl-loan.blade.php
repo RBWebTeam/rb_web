@@ -1949,7 +1949,7 @@ var global_tenure=0;
              // alert('not valid');
 
         }else{
-            var aadhar=$('#AadhaarNumber').val();
+            var aadhar=$('#AadhaarNumber').val(); 
             $('#Aadharno').val(aadhar);
             $('#Applicant_Details').hide();
             $('#co_applicant').hide();

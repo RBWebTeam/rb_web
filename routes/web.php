@@ -280,7 +280,7 @@ Route::get('sme-thank-you','UploadController@sme_thank_you');
 //pratik route 
 Route::get('track-application','TrackapplicationController@tracking');
 Route::post('view-your-application','TrackapplicationController@tracking_sub');
-// Route::get('view-your-application','TrackapplicationController@tracking_view');
+Route::get('survey','TrackapplicationController@survey');
 
 
 

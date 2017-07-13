@@ -55,7 +55,7 @@
  }
 
  </script>
-	</head>
+ 
 	<body>
 <!-- 	
 <script async="async" type="text/javascript" src="https://app.tigerapi.com/rest/?i=MTQ5MjY4MDA2OA=="></script> -->

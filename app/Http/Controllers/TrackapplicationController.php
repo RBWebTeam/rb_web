@@ -12,6 +12,7 @@ class TrackapplicationController extends CallApiController
     public function tracking(){
         return view('tracking');
     }
+
     public function tracking_sub(Request $req){
         try{
         // print "<pre>"; print_r($req->all());exit();
@@ -38,6 +39,10 @@ class TrackapplicationController extends CallApiController
     }catch(\Exception $ee){
         print_r($ee->getMessage());
     }
+    }
+    public function survey(){
+        
+          return view('survey');  
     }
 
  

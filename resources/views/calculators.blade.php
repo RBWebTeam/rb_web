@@ -51,7 +51,7 @@
 							<h4 class="mrg-btm">Business Loan Calculator</h4>
 							
 							
-							<a class="btn btn-primary btn-outline with-arrow" href="{{URL::to('coming-soon')}}">View Now<i class="icon-arrow-right"></i></a>
+							<a class="btn btn-primary btn-outline with-arrow" href="{{URL::to('business-loan-calculator')}}">View Now<i class="icon-arrow-right"></i></a>
 						</div>
 					</div>
 					

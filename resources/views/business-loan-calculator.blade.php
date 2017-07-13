@@ -6,7 +6,7 @@
                           <div class="row">
                         <center>
                         <h1 class="loan-head">Business Loan EMI Calculator</h1>
-                        <p class="sub-title">Calculate your Business Loan EMI and Total Interest Due in a snap!</p>
+                        <h2><p class="sub-title">Calculate your Business Loan EMI and Total Interest Due in a snap!</p></h2>
                       </center>
                             <div class="col-md-12">
                             <div class="row text-left comp-pg rate white-bg">
@@ -132,7 +132,7 @@
     $('#ckeck_eligibility').click(function(){
       if(! $('#business_loan_calculator_form').valid())
        {
-              alert('not valid');
+              // alert('not valid');
 
         }
         else

@@ -1,7 +1,7 @@
 @include('layout.header')
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!--   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
   <style>
    .div-bg {background:#fff;}
    .bdy-clr {background:#fff; box-shadow:1px 1px 3px 1px #ccc;}
@@ -81,14 +81,7 @@
 
  .ccc {margin-bottom:20px;padding:10px;border-bottom:2px solid #f1f1f1;}
 </style>
-<script>
-$(window).on('load', function(){
-        setTimeout(function() {
-                $('#myModal11').modal('show');
-        }, 1000);
-			});
-			
-  </script>
+
 <div class="container" id="fh5co-hero">
 <br>
 <div class="container bdy-clr comp-pg">
@@ -164,8 +157,7 @@ $(window).on('load', function(){
 @include('layout.script')
 
 
-
-  <div id="myModal11" class="modal fade" role="dialog" aria-hidden="true" >
+  <div id="myModal112" class="modal fade" role="dialog" aria-hidden="true" >
 		<div class="modal-dialog">
 			
 			<!-- Modal content -->

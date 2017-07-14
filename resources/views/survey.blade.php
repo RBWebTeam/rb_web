@@ -7,17 +7,19 @@
   <div class="col-md-12">
          <h2 class="align-center loan-head">Customer Satisfaction Survey</h2>
     </div>
-    
+
+	<div class="col-md-12 border">
+	
     <div class="col-md-12 ccc">
     <h3 class="titl">1. How would you rate your overall satisfaction with us?</h3>
-    <div class="text-left">
-<input type="radio" name="rdo"/> Very satis?ed &nbsp; <input type="radio" name="rdo" /> Somewhat satis?ed &nbsp; <input type="radio" name="rdo" /> Neutral &nbsp; <input type="radio" name="rdo" /> Somewhat dissatis?ed &nbsp; <input type="radio" name="rdo" /> Very dissatis?ed
+    <div class="text-left mrg-left">
+<input type="radio" name="rdo"/> Very satisfied &nbsp; <input type="radio" name="rdo" /> Somewhat satisfied &nbsp; <input type="radio" name="rdo" /> Neutral &nbsp; <input type="radio" name="rdo" /> Somewhat dissatisfied &nbsp; <input type="radio" name="rdo" /> Very dissatisfied
 </div>
     </div>
     
     <div class="col-md-12 ccc">
     <h3 class="titl">2. How likely is it that you would recommend us to a friend/colleague?</h3>
-    <div class="text-left">
+    <div class="text-left mrg-left">
 <input type="radio" name="rdo" /> Very likely &nbsp; <input type="radio" name="rdo" /> Somewhat likely &nbsp; <input type="radio" name="rdo" /> Neutral &nbsp; <input type="radio" name="rdo" /> Somewhat unlikely &nbsp; <input type="radio" name="rdo" /> Very unlikely
 </div>
     </div>
@@ -26,47 +28,47 @@
     <div class="col-md-12 ccc">
 	<h3 class="text-left"><b>Please rate us on the following attributes:</b></h3>
     <h3 class="titl">3. Customer service</h3>
-    <div class="text-left">
-<input type="radio" name="rdo" /> Very satis?ed &nbsp; <input type="radio" name="rdo" /> Somewhat satis?ed &nbsp; <input type="radio" name="rdo" /> Neutral &nbsp; <input type="radio" name="rdo" /> Somewhat dissatis?ed &nbsp; <input type="radio" name="rdo" /> Very dissatis?ed
+    <div class="text-left mrg-left">
+<input type="radio" name="rdo" /> Very satisfied &nbsp; <input type="radio" name="rdo" /> Somewhat satisfied &nbsp; <input type="radio" name="rdo" /> Neutral &nbsp; <input type="radio" name="rdo" /> Somewhat dissatisfied &nbsp; <input type="radio" name="rdo" /> Very dissatisfied
 </div>
     </div>
     
     <div class="col-md-12 ccc">
     <h3 class="titl">4.Professionalism</h3>
-    <div class="text-left">
-<input type="radio" name="rdo" /> Very satis?ed &nbsp; <input type="radio" name="rdo" /> Somewhat satis?ed &nbsp; <input type="radio" name="rdo" /> Neutral &nbsp; <input type="radio" name="rdo" /> Somewhat dissatis?ed &nbsp; <input type="radio" name="rdo" /> Very dissatis?ed
+    <div class="text-left mrg-left">
+<input type="radio" name="rdo" /> Very satisfied &nbsp; <input type="radio" name="rdo" /> Somewhat satisfied &nbsp; <input type="radio" name="rdo" /> Neutral &nbsp; <input type="radio" name="rdo" /> Somewhat dissatisfied &nbsp; <input type="radio" name="rdo" /> Very dissatisfied
 </div>
     </div>
     
     <div class="col-md-12 ccc">
     <h3 class="titl">5.Sales staff</h3>
-    <div class="text-left">
-<input type="radio" name="rdo" /> Very satis?ed &nbsp; <input type="radio" name="rdo" /> Somewhat satis?ed &nbsp; <input type="radio" name="rdo" /> Neutral &nbsp; <input type="radio" name="rdo" /> Somewhat dissatis?ed &nbsp; <input type="radio" name="rdo" /> Very dissatis?ed
+    <div class="text-left mrg-left">
+<input type="radio" name="rdo" /> Very satisfied &nbsp; <input type="radio" name="rdo" /> Somewhat satisfied &nbsp; <input type="radio" name="rdo" /> Neutral &nbsp; <input type="radio" name="rdo" /> Somewhat dissatisfied &nbsp; <input type="radio" name="rdo" /> Very dissatisfied
 </div>
     </div>
     
     <div class="col-md-12 ccc">
     <h3 class="titl">6.How likely are you to continue doing business with us?</h3>
-    <div class="text-left">
+    <div class="text-left mrg-left">
 <input type="radio" name="rdo" /> Very likely  &nbsp; <input type="radio" name="rdo" /> Somewhat likely &nbsp; <input type="radio" name="rdo" /> Neutral &nbsp; <input type="radio" name="rdo" /> Somewhat unlikely &nbsp; <input type="radio" name="rdo" /> Very unlikely
 </div>
     </div>
     
     <div class="col-md-12 ccc">
     <h3 class="titl">7. Do you have any suggestions for improving our products/ services?</h3>
-    <div class="text-left">
+    <div class="text-left mrg-left">
 <input type="text" placeholder="Suggestions" class="col-md-12 pad input-box"/>
 </div>
     </div>
     
     <div class="col-md-12 ccc">
     <h3 class="titl">8.If your problem was not resolved, did our staff offer to follow-up after the call?</h3>
-    <div class="text-left">
+    <div class="text-left mrg-left">
 <input type="radio" name="rdo" /> Yes &nbsp; <input type="radio" name="rdo" /> No.
 </div>
     </div>
-    
-   <button class="btn btn-info">SUBMIT</button>
+   <button class="btn btn-primary btn-outline with-arrow mrg-top center-block crd_id" id="credit_id">SUBMIT<i class="icon-arrow-right"></i></button>
+   </div>
     </div>
   </div>
 </div>
@@ -92,7 +94,7 @@
 						
 						
 						<div class="form-group col-sm-12">
-							<select class="form-control block drop-arr select-sty">
+							<select class="block drop-arr select-sty">
 							   <option>Type Of Loan Needed </option>
 							   <option>Home Loan</option>
 							   <option>Personal Loan</option>
@@ -111,7 +113,8 @@
 						
 						
 						<div class="form-group col-sm-12">
-							<button type="submit" class="btn btn-default pull-right">Submit</button>
+							<button type="submit" class="btn btn-default pull-left">Submit</button>
+							
 						</div>
 					</form>
 				</div>

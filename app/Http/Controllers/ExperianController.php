@@ -8,7 +8,7 @@ use Response;
 use Session;
 use App\experian_request_model;
 use App\experian_responseModel;
-use App\SEOlibraries\Seolink;
+use App\SEOlibraries\Seo;
 class ExperianController extends CallApiController
 {
     public function credit_report(){
@@ -41,7 +41,7 @@ class ExperianController extends CallApiController
           return view('credit-report')->with($data)->with('keywords',$keywords);
         }else{
 
-               $query=new Seolink();
+               $query=new Seo();
                $data=$query->CreditReport();
 
            return view('credit-report-otp')->with($data);

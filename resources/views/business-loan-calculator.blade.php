@@ -57,7 +57,7 @@
                                         </div>
 
                                         <div class="col-md-4">
-                                            <input type="text" class="form-control" id="emi" name="emi" placeholder="Total EMI "  onkeypress="return fnAllowNumeric(event)" required>
+                                            <input type="text" class="form-control" id="emi" name="emi" placeholder="Total EMI Paying Currently "  onkeypress="return fnAllowNumeric(event)" required>
                                         </div>
 
                                         <div class="col-md-4">
@@ -163,7 +163,7 @@
 
                   var Bank_Logo = msg.data.Bank_Logo;
                   console.log(Bank_Logo);
-                  $('#bank_logo').html('<img src='+Bank_Logo+'  width="150px">');
+                  $('#bank_logo').html('<img src='+Bank_Logo+' width="150px">');
 
                   $('#business_eligible').modal('show');  
               }

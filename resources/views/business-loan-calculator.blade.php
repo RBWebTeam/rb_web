@@ -5,8 +5,8 @@
                          <div class="container">
                           <div class="row">
                         <center>
-                        <h1 class="loan-head">Business Loan EMI Calculator</h1>
-                        <h3><p class="sub-title">Calculate your Business Loan EMI and Eligibility Status Due in a snap!</p></h3>
+                        <h1 class="loan-head" style="color:#85C1E9">Business Loan EMI Calculator</h1>
+                        <h3><b><p class="sub-title" style="color:#3498DB;">Calculate your Business Loan EMI and Eligibility Status Due in a snap! <i class="fa fa-calculator" style="color:#000000" aria-hidden="true"></i></p></b></h3>
                       </center>
                             <div class="col-md-12">
                             <div class="row text-left comp-pg rate white-bg">
@@ -57,7 +57,7 @@
                                         </div>
 
                                         <div class="col-md-4">
-                                            <input type="text" class="form-control" id="emi" name="emi" placeholder="Total EMI "  onkeypress="return fnAllowNumeric(event)" required>
+                                            <input type="text" class="form-control" id="emi" name="emi" placeholder="Total EMI Paying Currently "  onkeypress="return fnAllowNumeric(event)" required>
                                         </div>
 
                                         <div class="col-md-4">
@@ -68,7 +68,7 @@
                                     <hr>
                                 </div>
                                 <div style="text-align: center;">
-                                <a class="btn btn-primary btn-outline with-arrow mrg-top" id="ckeck_eligibility">Check Eligibility<i class="icon-arrow-right"></i></a></div>
+                                <a class="btn btn-danger btn-outline with-arrow mrg-top" id="ckeck_eligibility">Check Eligibility<i class="icon-arrow-right"></i></a></div>
                                 </form>
                                 </div>
                                 </div>
@@ -163,7 +163,7 @@
 
                   var Bank_Logo = msg.data.Bank_Logo;
                   console.log(Bank_Logo);
-                  $('#bank_logo').html('<img src='+Bank_Logo+'  width="150px">');
+                  $('#bank_logo').html('<img src='+Bank_Logo+' width="150px">');
 
                   $('#business_eligible').modal('show');  
               }

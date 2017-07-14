@@ -10,7 +10,10 @@ use App\SEOlibraries\Seo;
 class TrackapplicationController extends CallApiController
 {
     public function tracking(){
-        return view('tracking');
+
+          $query=new Seo();
+         
+           return view('tracking')->with($query->TrackApplication());
     }
 
     public function tracking_sub(Request $req){

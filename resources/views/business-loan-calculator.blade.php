@@ -6,7 +6,7 @@
                           <div class="row">
                         <center>
                         <h1 class="loan-head">Business Loan EMI Calculator</h1>
-                        <h2><p class="sub-title">Calculate your Business Loan EMI and Total Interest Due in a snap!</p></h2>
+                        <h3><p class="sub-title">Calculate your Business Loan EMI and Eligibility Status Due in a snap!</p></h3>
                       </center>
                             <div class="col-md-12">
                             <div class="row text-left comp-pg rate white-bg">
@@ -67,7 +67,8 @@
                                     </div>
                                     <hr>
                                 </div>
-                                <a class="btn btn-primary btn-outline with-arrow mrg-top" id="ckeck_eligibility">Check Eligibility<i class="icon-arrow-right"></i></a>
+                                <div style="text-align: center;">
+                                <a class="btn btn-primary btn-outline with-arrow mrg-top" id="ckeck_eligibility">Check Eligibility<i class="icon-arrow-right"></i></a></div>
                                 </form>
                                 </div>
                                 </div>
@@ -99,10 +100,7 @@
         </center>
       </div>
       
-      <!-- <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        
-      </div> -->
+      
     </div>
   </div>
 </div>
@@ -120,10 +118,7 @@
         
       </div>
       
-      <!-- <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        
-      </div> -->
+      
     </div>
   </div>
 </div>
@@ -168,7 +163,7 @@
 
                   var Bank_Logo = msg.data.Bank_Logo;
                   console.log(Bank_Logo);
-                  $('#bank_logo').html('<img src="http://erp.rupeeboss.com/Banklogo/ADVANTAGE_logo.png"  width="150px">');
+                  $('#bank_logo').html('<img src='+Bank_Logo+'  width="150px">');
 
                   $('#business_eligible').modal('show');  
               }
@@ -183,7 +178,7 @@
 
 <script type="text/javascript">
     var d = new Date();
-    var year = d.getFullYear() ;
+    var year = d.getFullYear();
     d.setFullYear(year);
 
     $(".lastReporteddob").datepicker({ dateFormat: "yy-mm-dd",

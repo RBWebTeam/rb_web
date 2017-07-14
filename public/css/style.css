@@ -3607,12 +3607,12 @@ label.error {display: none !important; }
 .white {background:#fff;}
 
 
-/***  Survey Page  *********/
+/***  Survey Page  *************************************************************************/
 
 
   .div-bg {background:#fff;}
    .bdy-clr {background:#fff; box-shadow:1px 1px 3px 1px #ccc;}
-   .titl {padding:10px; width:100%;text-align:left;font-size:18px;}
+   .titl {padding:10px; width:100%;text-align:left;font-size:18px; background:#fff;}
    
    
    #myModal .modal-dialog {
@@ -3681,8 +3681,8 @@ label.error {display: none !important; }
     background-color: #000;
 }
 .pad {padding:10px;}
-.input-box {border:none;border-bottom:1px dashed #999;}
+.input-box {border:none;border-bottom:1px dashed #999;background:none;}
 
- .ccc {margin-bottom:20px;padding:10px;border-bottom:2px solid #f1f1f1;}
+ .ccc {margin-bottom:20px;padding:10px;border-bottom:none;}
 .mrg-lft{margin-left:30px;}
 

@@ -31,7 +31,7 @@
 							<div class="center-blg"><img src="{{URL::to('images/cal/02.png')}}" alt="personal_loan_calculator_icon" title="Personal Loan Calculator" /></div>
 							<h4 class="mrg-btm">Personal Loan Calculator</h4>
 						
-							<a class="btn btn-primary btn-outline with-arrow" href="{{URL::to('coming-soon')}}">View Now<i class="icon-arrow-right"></i></a>
+							<a class="btn btn-primary btn-outline with-arrow" href="{{URL::to('personal-loan-calculator')}}">View Now<i class="icon-arrow-right"></i></a>
 						</div>
 					</div>
 					

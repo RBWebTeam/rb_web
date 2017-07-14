@@ -39,10 +39,10 @@
 </div>
     </div>
 	
-    
+    <div><p>Please rate us on the following attributes:</p></div>
     <div class="col-md-12 ccc animate-box fadeInUp animated">
 	
-    <h3 class="titl"><div><p>Please rate us on the following attributes:</p></div><span class="head-1 bg-success">3</span> Customer service</h3>
+    <h3 class="titl"><span class="head-1 bg-success">3</span> Customer service</h3>
 
     <div class="text-left mrg-left">
 	<ul class="sur-list">

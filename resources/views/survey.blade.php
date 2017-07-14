@@ -1,119 +1,4 @@
 @include('layout.header')
-<style>
- .head-1 {
-	padding: 10px;
-    font-size: 33px;
-    width: 60px;
-    top: 5px;
-    left: -52px;
-    border: 3px solid #ddd;
-    color: #999;
-    height: 60px;
-    border-radius: 56px;
-    line-height: 29px;
-    text-align: center;
-    position: absolute;
-}
-	}
-	.sur-list li { list-style-type:none;padding:5px;border-bottom:1px dashed #fffef3;}
-	.bg-yellow {background:#fff;}
-	
-	
-	
-	
-	
-	
-@import url('https://fonts.googleapis.com/css?family=Lato');
-
-.container .sur-list{
-  list-style: none;
-  margin: 0;
-  padding: 0;
-	overflow: auto;
-}
-
-.sur-list li{
-  color: #AAAAAA;
-  display: block;
-  position: relative;
-  float: left;
-  width: 100%;
-  height:60px;
-	border-bottom: 1px dashed #ccc;
-}
-
-.sur-list li input[type=radio]{
-  position: absolute;
-  visibility: hidden;
-}
-
-.sur-list li label{
-  display: block;
-  position: relative;
-  font-weight: 300;
-  font-size: 1.35em;
-  padding: 17px 0px 0px 60px;
-  margin: 0px auto;
-
-  z-index: 9;
-  cursor: pointer;
-  -webkit-transition: all 0.25s linear;
-}
-
-.sur-list li:hover label{
-	color: #666;
-}
-
-.sur-list li .check{
-  display: block;
-  position: absolute;
-  border: 5px solid #AAAAAA;
-  border-radius: 100%;
-  height: 35px;
-  width: 35px;
-  top:19px;
-  left: 20px;
-	z-index: 5;
-	transition: border .25s linear;
-	-webkit-transition: border .25s linear;
-}
-
-.sur-list li:hover .check {
-  border: 5px solid #666;
-}
-
-.sur-list li .check::before {
-  display: block;
-  position: absolute;
-	content: '';
-  border-radius: 100%;
-  height: 15px;
-  width: 15px;
-  top: 5px;
-	left: 5px;
-  margin: auto;
-	transition: background 0.25s linear;
-	-webkit-transition: background 0.25s linear;
-}
-
-input[type=radio]:checked ~ .check {
-  border: 5px solid #6dbeff;
-}
-
-input[type=radio]:checked ~ .check::before{
-  background: #6dbeff;
-}
-
-input[type=radio]:checked ~ label{
-  color: #6dbeff;
-}
-
-
-
-
-
-
-</style>
 
 <div class="container" id="fh5co-hero">
 
@@ -129,7 +14,7 @@ input[type=radio]:checked ~ label{
    <div class="col-md-2"></div>
 	<div class="col-md-8">
 	
-    <div class="col-md-12 ccc">
+    <div class="col-md-12 ccc animate-box fadeInUp animated">
     <h3 class="titl bg-danger"><p class="head-1 bg-danger">1</p> How would you rate your overall satisfaction with us?</h3>
     <div class="text-left mrg-left">
 	<ul class="sur-list">
@@ -141,7 +26,7 @@ input[type=radio]:checked ~ label{
 </ul>
 </div>
     </div>
-    <div class="col-md-12 ccc">
+    <div class="col-md-12 ccc animate-box fadeInUp animated">
     <h3 class="titl"><span class="head-1 bg-info">2</span> How likely is it that you would recommend us to a friend/colleague?</h3>
     <div class="text-left mrg-left">
 	<ul class="sur-list">
@@ -155,7 +40,7 @@ input[type=radio]:checked ~ label{
     </div>
 	
     
-    <div class="col-md-12 ccc">
+    <div class="col-md-12 ccc animate-box fadeInUp animated">
 	
     <h3 class="titl"><div><p>Please rate us on the following attributes:</p></div><span class="head-1 bg-success">3</span> Customer service</h3>
 
@@ -170,7 +55,7 @@ input[type=radio]:checked ~ label{
 </div>
     </div>
     
-    <div class="col-md-12 ccc">
+    <div class="col-md-12 ccc animate-box fadeInUp animated">
     <h3 class="titl"><span class="head-1 bg-warning">4</span>Professionalism</h3>
     <div class="text-left mrg-left">
 	<ul class="sur-list">
@@ -183,7 +68,7 @@ input[type=radio]:checked ~ label{
 </div>
     </div>
     
-    <div class="col-md-12 ccc">
+    <div class="col-md-12 ccc animate-box fadeInUp animated">
     <h3 class="titl"><span class="head-1 bg-info">5</span> Sales staff</h3>
     <div class="text-left mrg-left">
 	<ul class="sur-list">
@@ -196,7 +81,7 @@ input[type=radio]:checked ~ label{
 </div>
     </div>
     
-    <div class="col-md-12 ccc">
+    <div class="col-md-12 ccc animate-box fadeInUp animated">
     <h3 class="titl"><span class="head-1 bg-danger">6</span> How likely are you to continue doing business with us?</h3>
     <div class="text-left mrg-left">
 	<ul class="sur-list">
@@ -209,14 +94,14 @@ input[type=radio]:checked ~ label{
 </div>
     </div>
     
-    <div class="col-md-12 ccc">
+    <div class="col-md-12 ccc animate-box fadeInUp animated">
     <h3 class="titl"><span class="head-1 bg-success">7</span> Do you have any suggestions for improving our products/ services?</h3>
     <div class="text-left mrg-left">
 <input type="text" placeholder="" class="col-md-12 pad input-box" border="0"/>
 </div>
     </div>
     
-    <div class="col-md-12 ccc">
+    <div class="col-md-12 ccc animate-box fadeInUp animated">
     <h3 class="titl"><span class="head-1 bg-warning">8</span>If your problem was not resolved, did our staff offer to follow-up after the call?</h3>
     <div class="text-left mrg-left">
 	<ul class="sur-list">

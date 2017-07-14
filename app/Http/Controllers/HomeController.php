@@ -11,6 +11,7 @@ use Redirect;
 use Session;
 use URL;
 use Mail;
+use App\SEOlibraries\Seo;
 use Illuminate\Support\Facades\Hash;
 class HomeController extends CallApiController
 {
@@ -73,7 +74,9 @@ class HomeController extends CallApiController
 	}
 
 	public function calculators(){
-		return view('calculators');
+
+		    $query=new Seo();
+		return view('calculators')->with($query->Calculators());
 	}
 
 	public function credit_card(){

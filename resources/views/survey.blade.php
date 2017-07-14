@@ -14,7 +14,7 @@
    <div class="col-md-2"></div>
 	<div class="col-md-8">
 	
-    <div class="col-md-12 ccc animate-box fadeInUp animated">
+    <div class="col-md-12 ccc animate-box fadeInLeft animated">
     <h3 class="titl bg-danger"><p class="head-1 bg-danger">1</p> How would you rate your overall satisfaction with us?</h3>
     <div class="text-left mrg-left">
 	<ul class="sur-list">
@@ -26,7 +26,7 @@
 </ul>
 </div>
     </div>
-    <div class="col-md-12 ccc animate-box fadeInUp animated">
+    <div class="col-md-12 ccc animate-box fadeInRight animated">
     <h3 class="titl"><span class="head-1 bg-info">2</span> How likely is it that you would recommend us to a friend/colleague?</h3>
     <div class="text-left mrg-left">
 	<ul class="sur-list">
@@ -39,10 +39,10 @@
 </div>
     </div>
 	
-    
+    <div><p>Please rate us on the following attributes:</p></div>
     <div class="col-md-12 ccc animate-box fadeInUp animated">
 	
-    <h3 class="titl"><div><p>Please rate us on the following attributes:</p></div><span class="head-1 bg-success">3</span> Customer service</h3>
+    <h3 class="titl"><span class="head-1 bg-success">3</span> Customer service</h3>
 
     <div class="text-left mrg-left">
 	<ul class="sur-list">
@@ -55,7 +55,7 @@
 </div>
     </div>
     
-    <div class="col-md-12 ccc animate-box fadeInUp animated">
+    <div class="col-md-12 ccc animate-box fadeInLeft animated">
     <h3 class="titl"><span class="head-1 bg-warning">4</span>Professionalism</h3>
     <div class="text-left mrg-left">
 	<ul class="sur-list">
@@ -68,7 +68,7 @@
 </div>
     </div>
     
-    <div class="col-md-12 ccc animate-box fadeInUp animated">
+    <div class="col-md-12 ccc animate-box fadeInRight animated">
     <h3 class="titl"><span class="head-1 bg-info">5</span> Sales staff</h3>
     <div class="text-left mrg-left">
 	<ul class="sur-list">
@@ -94,14 +94,14 @@
 </div>
     </div>
     
-    <div class="col-md-12 ccc animate-box fadeInUp animated">
+    <div class="col-md-12 ccc animate-box fadeInLeft animated">
     <h3 class="titl"><span class="head-1 bg-success">7</span> Do you have any suggestions for improving our products/ services?</h3>
     <div class="text-left mrg-left">
 <input type="text" placeholder="" class="col-md-12 pad input-box" border="0"/>
 </div>
     </div>
     
-    <div class="col-md-12 ccc animate-box fadeInUp animated">
+    <div class="col-md-12 ccc animate-box fadeInRight animated">
     <h3 class="titl"><span class="head-1 bg-warning">8</span>If your problem was not resolved, did our staff offer to follow-up after the call?</h3>
     <div class="text-left mrg-left">
 	<ul class="sur-list">

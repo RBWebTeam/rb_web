@@ -2,125 +2,226 @@
 <style>
  .head-1 {
 	padding: 10px;
-    font-size: 35px;
-    width: 75px;
-    top: -3px;
-    left: -71px;
+    font-size: 33px;
+    width: 60px;
+    top: 5px;
+    left: -52px;
+    border: 3px solid #ddd;
     color: #999;
-    height: 75px;
-	border:13px solid #fff;
+    height: 60px;
     border-radius: 56px;
-    line-height:24px;
+    line-height: 29px;
     text-align: center;
     position: absolute;
+}
 	}
 	.sur-list li { list-style-type:none;padding:5px;border-bottom:1px dashed #fffef3;}
-	.bg-yellow {background:#fff7be;}
+	.bg-yellow {background:#fff;}
+	
+	
+	
+	
+	
+	
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
+.container .sur-list{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+	overflow: auto;
+}
+
+.sur-list li{
+  color: #AAAAAA;
+  display: block;
+  position: relative;
+  float: left;
+  width: 100%;
+  height:60px;
+	border-bottom: 1px dashed #ccc;
+}
+
+.sur-list li input[type=radio]{
+  position: absolute;
+  visibility: hidden;
+}
+
+.sur-list li label{
+  display: block;
+  position: relative;
+  font-weight: 300;
+  font-size: 1.35em;
+  padding: 17px 0px 0px 60px;
+  margin: 0px auto;
+
+  z-index: 9;
+  cursor: pointer;
+  -webkit-transition: all 0.25s linear;
+}
+
+.sur-list li:hover label{
+	color: #666;
+}
+
+.sur-list li .check{
+  display: block;
+  position: absolute;
+  border: 5px solid #AAAAAA;
+  border-radius: 100%;
+  height: 35px;
+  width: 35px;
+  top:19px;
+  left: 20px;
+	z-index: 5;
+	transition: border .25s linear;
+	-webkit-transition: border .25s linear;
+}
+
+.sur-list li:hover .check {
+  border: 5px solid #666;
+}
+
+.sur-list li .check::before {
+  display: block;
+  position: absolute;
+	content: '';
+  border-radius: 100%;
+  height: 15px;
+  width: 15px;
+  top: 5px;
+	left: 5px;
+  margin: auto;
+	transition: background 0.25s linear;
+	-webkit-transition: background 0.25s linear;
+}
+
+input[type=radio]:checked ~ .check {
+  border: 5px solid #6dbeff;
+}
+
+input[type=radio]:checked ~ .check::before{
+  background: #6dbeff;
+}
+
+input[type=radio]:checked ~ label{
+  color: #6dbeff;
+}
+
+
+
+
+
+
 </style>
 
 <div class="container" id="fh5co-hero">
-<br>
-<div class="container bdy-clr comp-pg bg-yellow">
-  <div class="row">
-  <div class="col-md-12">
+
+<div class="col-md-12">
          <h2 class="align-center loan-head">Customer Satisfaction Survey</h2>
     </div>
+	<br>
+	<br>
+	<br>
+<div class="container bdy-clr comp-pg bg-yellow">
+  <div class="row">
+  
    <div class="col-md-2"></div>
 	<div class="col-md-8">
 	
     <div class="col-md-12 ccc">
-    <h3 class="titl bg-danger"><p class="head-1 text-danger">1</p> How would you rate your overall satisfaction with us?</h3>
+    <h3 class="titl bg-danger"><p class="head-1 bg-danger">1</p> How would you rate your overall satisfaction with us?</h3>
     <div class="text-left mrg-left">
 	<ul class="sur-list">
-<li><input type="radio" name="rdo"/> Very satisfied &nbsp; </li>
-<li><input type="radio" name="rdo" /> Somewhat satisfied &nbsp; </li>
-<li><input type="radio" name="rdo" /> Neutral &nbsp; </li>
-<li><input type="radio" name="rdo" /> Somewhat dissatisfied &nbsp;</li> 
-<li><input type="radio" name="rdo" /> Very dissatisfied</li>
+<li><input type="radio" id="s-option" name="selector"/> <label for="s-option">Very satisfied</label><div class="check"><div class="inside"></div></li>
+<li><input type="radio" name="selector" id="t-option" /><label for="t-option"> Somewhat satisfied </label> <div class="check"><div class="inside"></div></li>
+<li><input type="radio" name="selector" id="u-option" /><label for="u-option"> Neutral</label> <div class="check"><div class="inside"></div></li>
+<li><input type="radio" name="selector" id="v-option" /><label for="v-option"> Somewhat dissatisfied</label> <div class="check"><div class="inside"></div></li> 
+<li><input type="radio" name="selector" id="w-option" /><label for="w-option"> Very dissatisfied</label> <div class="check"><div class="inside"></div></li>
 </ul>
 </div>
     </div>
     <div class="col-md-12 ccc">
-    <h3 class="titl"><span class="head-1">2</span> How likely is it that you would recommend us to a friend/colleague?</h3>
+    <h3 class="titl"><span class="head-1 bg-info">2</span> How likely is it that you would recommend us to a friend/colleague?</h3>
     <div class="text-left mrg-left">
 	<ul class="sur-list">
-<li><input type="radio" name="rdo" /> Very likely &nbsp; </li>
-<li><input type="radio" name="rdo" /> Somewhat likely &nbsp; </li>
-<li><input type="radio" name="rdo" /> Neutral &nbsp; </li>
-<li><input type="radio" name="rdo" /> Somewhat unlikely &nbsp; </li>
-<li><input type="radio" name="rdo" /> Very unlikely</li>
+<li><input type="radio" name="selector1" id="a-option" /><label for="a-option"> Very likely</label><div class="check"><div class="inside"></div> </li>
+<li><input type="radio" name="selector1" id="b-option" /> <label for="b-option">Somewhat likely</label><div class="check"><div class="inside"></div></li>
+<li><input type="radio" name="selector1" id="c-option" /><label for="c-option"> Neutral </label><div class="check"><div class="inside"></div></li>
+<li><input type="radio" name="selector1" id="d-option" /><label for="d-option"> Somewhat unlikely</label><div class="check"><div class="inside"></div></li>
+<li><input type="radio" name="selector" id="e-option" /> <label for="e-option">Very unlikely</label><div class="check"><div class="inside"></div></li>
 </ul>
 </div>
     </div>
 	
-    <div><h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Please rate us on the following attributes:</h3></div>
+    
     <div class="col-md-12 ccc">
 	
-    <h3 class="titl"><span class="head-1">3</span> Customer service</h3>
+    <h3 class="titl"><div><p>Please rate us on the following attributes:</p></div><span class="head-1 bg-success">3</span> Customer service</h3>
 
     <div class="text-left mrg-left">
 	<ul class="sur-list">
-<li><input type="radio" name="rdo" /> Very satisfied &nbsp; </li>
-<li><input type="radio" name="rdo" /> Somewhat satisfied &nbsp; </li>
-<li><input type="radio" name="rdo" /> Neutral &nbsp; </li>
-<li><input type="radio" name="rdo" /> Somewhat dissatisfied &nbsp; </li>
-<li><input type="radio" name="rdo" /> Very dissatisfied</li>
+<li><input type="radio" name="selector2" id="f-option" /><label for="f-option"> Very satisfied</label><div class="check"><div class="inside"></div></li>
+<li><input type="radio" name="selector2" id="i-option" /><label for="i-option"> Somewhat satisfied</label><div class="check"><div class="inside"></div></li>
+<li><input type="radio" name="selector2" id="j-option" /><label for="j-option"> Neutral</label><div class="check"><div class="inside"></div></li>
+<li><input type="radio" name="selector2" id="k-option" /><label for="k-option"> Somewhat dissatisfied</label><div class="check"><div class="inside"></div></li>
+<li><input type="radio" name="selector2" id="l-option" /><label for="l-option"> Very dissatisfied</label><div class="check"><div class="inside"></div></li>
 </ul>
 </div>
     </div>
     
     <div class="col-md-12 ccc">
-    <h3 class="titl"><span class="head-1">4</span>Professionalism</h3>
+    <h3 class="titl"><span class="head-1 bg-warning">4</span>Professionalism</h3>
     <div class="text-left mrg-left">
 	<ul class="sur-list">
-<li><input type="radio" name="rdo" /> Very satisfied &nbsp; </li>
-<li><input type="radio" name="rdo" /> Somewhat satisfied &nbsp; </li>
-<li><input type="radio" name="rdo" /> Neutral &nbsp; </li>
-<li><input type="radio" name="rdo" /> Somewhat dissatisfied &nbsp; </li>
-<li><input type="radio" name="rdo" /> Very dissatisfied</li>
+<li><input type="radio" name="selector3" id="m-option" /><label for="m-option"> Very satisfied</label><div class="check"><div class="inside"></div> </li>
+<li><input type="radio" name="selector3" id="n-option" /><label for="n-option"> Somewhat satisfied</label><div class="check"><div class="inside"></div></li>
+<li><input type="radio" name="selector3" id="o-option" /><label for="o-option"> Neutral</label><div class="check"><div class="inside"></div></li>
+<li><input type="radio" name="selector3" id="p-option" /><label for="p-option"> Somewhat dissatisfied</label><div class="check"><div class="inside"></div></li>
+<li><input type="radio" name="selector3" id="q-option" /><label for="q-option"> Very dissatisfied</label><div class="check"><div class="inside"></div></li>
 </ul>
 </div>
     </div>
     
     <div class="col-md-12 ccc">
-    <h3 class="titl"><span class="head-1">5</span> Sales staff</h3>
+    <h3 class="titl"><span class="head-1 bg-info">5</span> Sales staff</h3>
     <div class="text-left mrg-left">
 	<ul class="sur-list">
-<li><input type="radio" name="rdo" /> Very satisfied &nbsp;</li> 
-<li><input type="radio" name="rdo" /> Somewhat satisfied &nbsp;</li> 
-<li><input type="radio" name="rdo" /> Neutral &nbsp; </li>
-<li><input type="radio" name="rdo" /> Somewhat dissatisfied &nbsp;</li> 
-<li><input type="radio" name="rdo" /> Very dissatisfied</li>
+<li><input type="radio" name="selector4" id="qq-option" /><label for="qq-option"> Very satisfied</label><div class="check"><div class="inside"></div></li> 
+<li><input type="radio" name="selector4" id="r-option" /><label for="r-option"> Somewhat satisfied</label><div class="check"><div class="inside"></div></li> 
+<li><input type="radio" name="selector4" id="rr-option" /><label for="rr-option"> Neutral</label><div class="check"><div class="inside"></div> </li>
+<li><input type="radio" name="selector4" id="sss-option" /><label for="sss-option"> Somewhat dissatisfied </label><div class="check"><div class="inside"></div></li> 
+<li><input type="radio" name="selector4" id="ss-option" /><label for="ss-option"> Very dissatisfied</label><div class="check"><div class="inside"></div></li>
 </ul>
 </div>
     </div>
     
     <div class="col-md-12 ccc">
-    <h3 class="titl"><span class="head-1">6</span> How likely are you to continue doing business with us?</h3>
+    <h3 class="titl"><span class="head-1 bg-danger">6</span> How likely are you to continue doing business with us?</h3>
     <div class="text-left mrg-left">
 	<ul class="sur-list">
-<li><input type="radio" name="rdo" /> Very likely  &nbsp; </li>
-<li><input type="radio" name="rdo" /> Somewhat likely &nbsp; </li>
-<li><input type="radio" name="rdo" /> Neutral &nbsp; </li>
-<li><input type="radio" name="rdo" /> Somewhat unlikely &nbsp;</li> 
-<li><input type="radio" name="rdo" /> Very unlikely</li>
+<li><input type="radio" name="selector5" id="tttttt-option" /><label for="tttttt-option"> Very likely</label><div class="check"><div class="inside"></div></li>
+<li><input type="radio" name="selector5" id="tt-option" /><label for="tt-option"> Somewhat likely</label><div class="check"><div class="inside"></div></li>
+<li><input type="radio" name="selector5" id="ttt-option"/><label for="ttt-option"> Neutral</label><div class="check"><div class="inside"></div> </li>
+<li><input type="radio" name="selector5" id="tttt-option"/><label for="tttt-option"> Somewhat unlikely</label><div class="check"><div class="inside"></div></li> 
+<li><input type="radio" name="selector5" id="ttttt-option"/><label for="ttttt-option"> Very unlikely</label><div class="check"><div class="inside"></div></li>
 </ul>
 </div>
     </div>
     
     <div class="col-md-12 ccc">
-    <h3 class="titl"><span class="head-1">7</span> Do you have any suggestions for improving our products/ services?</h3>
+    <h3 class="titl"><span class="head-1 bg-success">7</span> Do you have any suggestions for improving our products/ services?</h3>
     <div class="text-left mrg-left">
-<input type="text" placeholder="Suggestions" class="col-md-12 pad input-box"/>
+<input type="text" placeholder="" class="col-md-12 pad input-box" border="0"/>
 </div>
     </div>
     
     <div class="col-md-12 ccc">
-    <h3 class="titl"><span class="head-1">9</span>If your problem was not resolved, did our staff offer to follow-up after the call?</h3>
+    <h3 class="titl"><span class="head-1 bg-warning">8</span>If your problem was not resolved, did our staff offer to follow-up after the call?</h3>
     <div class="text-left mrg-left">
 	<ul class="sur-list">
-<li><input type="radio" name="rdo" /> Yes &nbsp; </li>
-<li><input type="radio" name="rdo" /> No.</li>
+<li><input type="radio" name="selector6" id="uu-option" /><label for="uu-option"> Yes</label><div class="check"><div class="inside"></div></li>
+<li><input type="radio" name="selector6" id="uuu-option" /><label for="uuu-option"> No.</label><div class="check"><div class="inside"></div></li>
 </ul>
 </div>
     </div>
@@ -129,7 +230,7 @@
     </div>
   </div>
 </div>
-
+<br>
 @include('layout.footer')
 @include('layout.script')
 
@@ -181,3 +282,4 @@
 			
       
 </div>
+

@@ -353,10 +353,13 @@
 										
 										<div class="form-group">
 											<h4 class="hdr">Identity Details</h4>
-											<div class="col-md-4">
+											<!-- <div class="col-md-4">
 												<input type="text" id="ApplicationNumber" name="ApplicationNumber" class="form-control" placeholder="Application Number*"   maxlength="13" minlength="13" required>
+											</div> -->
+											<div class="col-md-4">
+												<input type="text" id="PanNo" name="PanNo" class="form-control" placeholder="Pancard*" oninput="pancard('PanNo')" maxlength="10" minlength="10" required >
+												<div id="pannumber" style="display:none;color: red;">Oops.Please Enter Valid Pan Number.!!</div>
 											</div>
-											
 											<div class="col-md-4">
 										     <select class="block drop-arr select-sty" name="SalaryAccountOpened" id="SalaryAccountOpened" required>
 											  <option value="">Salary Account Opened</option>
@@ -364,10 +367,7 @@
 												<option value="Below2Months"><=2 Months</option>
 											</select>
   											</div>  											
-											<div class="col-md-4">
-												<input type="text" id="PanNo" name="PanNo" class="form-control" placeholder="Pancard*" oninput="pancard('PanNo')" maxlength="10" minlength="10" required >
-												<div id="pannumber" style="display:none;color: red;">Oops.Please Enter Valid Pan Number.!!</div>
-											</div>
+											
 											</div>
 											
 											<!-- <div class="col-md-4">

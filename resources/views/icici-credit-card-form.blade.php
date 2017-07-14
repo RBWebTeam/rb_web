@@ -665,12 +665,21 @@ $(".top").click(function() {
                   <div class="panel-body">    
                   
           <h4 class="txt-tlt pull-left hdn5">Identity Details</h4> 
-          <div class="col-xs-6 form-padding">
+          <!-- <div class="col-xs-6 form-padding">
                     <div>
                       <input type="text" id="ApplicationNumber" name="ApplicationNumber" class="form-control inp-fld" required maxlength="13" minlength="13" >
                       <span class="highlight"></span><span class="bar"></span>
                       <label class="form-label-new lble">Application Number*</label>
                       <div class="clear"></div>
+                    </div>  
+                  </div> -->
+                  <div class="col-xs-6 form-padding">
+                    <div>
+                      <input class="form-control inp-fld"  type="text" id="PanNo" name="PanNo"  oninput="pancard('PanNo')" maxlength="10" minlength="10" >
+                      <span class="highlight"></span><span class="bar"></span>
+                      <label class="form-label-new lble">Pancard*</label>
+                      <div class="clear"></div>
+                      <div id="pannumber" style="display:none;color: red;">Oops.Please Enter Valid Pan Number.!!</div>
                     </div>  
                   </div>
           <div class="col-xs-6 form-padding">
@@ -681,15 +690,7 @@ $(".top").click(function() {
                         
                     </select> 
                                </div>
-          <div class="col-xs-6 form-padding">
-                    <div>
-                      <input class="form-control inp-fld"  type="text" id="PanNo" name="PanNo"  oninput="pancard('PanNo')" maxlength="10" minlength="10" >
-                      <span class="highlight"></span><span class="bar"></span>
-                      <label class="form-label-new lble">Pancard*</label>
-                      <div class="clear"></div>
-                      <div id="pannumber" style="display:none;color: red;">Oops.Please Enter Valid Pan Number.!!</div>
-                    </div>  
-                  </div>
+          
 
                   <div class="col-xs-6 form-padding">
                         <div class="form-control" style="height:50px; position: relative; padding: 0px 0px;">

@@ -2354,13 +2354,14 @@ $(document).ready(function(){
 
 
 </script>
-<script>
+<!-- <script>
 $(window).on('load', function(){
         setTimeout(function() {
                 $('#myModal112').modal('show');
         }, 1000);
             });
             
-  </script>
+  </script> -->
+  
 
   @include('layout.modal')

@@ -675,7 +675,7 @@ $(".top").click(function() {
                   </div> -->
                   <div class="col-xs-6 form-padding">
                     <div>
-                      <input class="form-control inp-fld"  type="text" id="PanNo" name="PanNo"  oninput="pancard('PanNo')" maxlength="10" minlength="10" >
+                      <input class="form-control inp-fld"  type="text" id="PanNo" name="PanNo"  oninput="pancard('PanNo')" required maxlength="10" minlength="10" >
                       <span class="highlight"></span><span class="bar"></span>
                       <label class="form-label-new lble">Pancard*</label>
                       <div class="clear"></div>

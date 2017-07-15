@@ -169,5 +169,9 @@ return  json_encode(array('statusid' =>$status,'data'=>$data,"err_code"=>$err_co
           $obj = json_decode($m);
           return response()->json( $obj);
        }
+
+       public function home_loan_calculator(){
+        return view('home-loan-calculator');
+       }
  
 }

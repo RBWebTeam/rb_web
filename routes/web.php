@@ -130,6 +130,7 @@ Route::get('business-loan-calculator','CalculatorController@business_loan_calcul
 Route::post('business-loan-calculation','CalculatorController@business_loan_calculation');
 Route::get('personal-loan-calculator','CalculatorController@personal_loan_calculator');
 Route::post('personal-loan-calculation','CalculatorController@personal_loan_calculation');
+Route::get('home-loan-calculator','CalculatorController@home_loan_calculator');
 
 Route::get('team','TeamController@team');
 // Creditcardform

@@ -48,6 +48,10 @@
                                             <input type="text" class="form-control " id="ApplicantObligations" name="ApplicantObligations" placeholder="Obligations" onkeypress="return fnAllowNumeric(event)"  required>
                                         </div>
 
+                                        <div class="col-md-4" >
+                                            <input type="text" class="form-control " id="Turnover" name="Turnover" placeholder="Turnover" onkeypress="return fnAllowNumeric(event)"  required>
+                                        </div>
+
                                 </div>
                                     <hr>
                                 </div>

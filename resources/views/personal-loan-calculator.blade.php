@@ -6,10 +6,10 @@
                           <div class="row">
                         <center>
                         <h1 class="loan-head" >Personal Loan EMI Calculator</h1>
-                        <h3><b><p class="sub-title" style="color:#FF3333;">Calculate your Personal Loan EMI and Eligibility Status Due in a snap! <i class="fa fa-calculator" style="color:#000000" aria-hidden="true"></i></p></b></h3>
+                        <p class="sub-title">Calculate your Personal Loan EMI and Eligibility Status Due in a snap! <i class="fa fa-calculator" style="color:#000000" aria-hidden="true"></i></p>
                       </center>
-                      <div class="col-md-2"></div>
-                            <div class="col-md-8 box-shadow">
+                      <div class="col-md-3"></div>
+                            <div class="col-md-6 box-shadow brdr-blue">
                             <div class="row text-left comp-pg rate white-bg">
                                  <form class="" id="personal_loan_calculator_form" name="personal_loan_calculator_form" role="form" method="POST" >
                                  {{ csrf_field() }}
@@ -20,11 +20,11 @@
                                        
                                        <input type="hidden" name="ProductId" id="ProductId" value="9">
                                         
-                                        <div class="col-md-4">
+                                        <div class="col-md-6">
                                             <input type="text" class="form-control" placeholder= "Loan Amount" name="LoanRequired" id="LoanRequired" onkeypress="return fnAllowNumeric(event)" minlength="6" maxlength="9" required>
                                         </div>
-                                        <div class="col-md-4">
-                                            <select class="block drop-arr select-sty" name="LoanTenure" id="LoanTenure" required>
+                                        <div class="col-md-6">
+                                            <select class="drop-arr block drop-arr select-sty" name="LoanTenure" id="LoanTenure" required>
                                               <option disabled selected  value="">Loan Tenure</option>
                                                 <option value="1">1</option>
                                                 <option value="2">2</option>
@@ -36,11 +36,11 @@
                                         </div>
                                         
 
-                                        <div class="col-md-4">
+                                        <div class="col-md-6">
                                             <input type="text" class="form-control" id="ApplicantIncome" name="ApplicantIncome" placeholder="Income"  onkeypress="return fnAllowNumeric(event)" required>
                                         </div>
 
-                                         <div class="col-md-4" >
+                                         <div class="col-md-6" >
                                             <input type="text" class="form-control " id="ApplicantObligations" name="ApplicantObligations" placeholder="Obligations" onkeypress="return fnAllowNumeric(event)"  required>
                                         </div>
 

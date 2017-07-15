@@ -5,30 +5,34 @@
                          <div class="container">
                           <div class="row">
                         <center>
-                        <h1 class="loan-head" >Home Loan EMI Calculator</h1>
-                        <h3><b><p class="sub-title" style="color:#FF3333;">Calculate your Home Loan EMI and Eligibility Status Due in a snap! <i class="fa fa-calculator" style="color:#000000" aria-hidden="true"></i></p></b></h3>
+                        <h1 class="loan-head">Home Loan EMI Calculator</h1>
+                        <h3><p class="sub-title" >Calculate your Home Loan EMI and Eligibility Status Due in a snap! <i class="fa fa-calculator" style="color:#000000" aria-hidden="true"></i></p></h3>
                       </center>
+                      
                       <div class="col-md-2"></div>
-                            <div class="col-md-8 box-shadow">
-                            <div class="row text-left comp-pg rate white-bg">
+                            <div class="col-md-8 box-shadow white-bg">
+                            
+                            <div class="row text-left comp-pg rate">
                                  <form class="" id="home_loan_calculator_form" name="home_loan_calculator_form" role="form" method="POST" >
                                  {{ csrf_field() }}
                                 <div class="row">
                                     <div class="form-group">
                                        
                                        <input type="hidden" name="ApplicantSource" id="ApplicantSource" value="1">
-                                       
-                                       <input type="hidden" name="ProductId" id="ProductId" value="12">
-
-                                       <div class="col-md-4">
-                                            <input type="text" class="form-control" placeholder= "Property Cost" name="PropertyCost" id="PropertyCost" onkeypress="return fnAllowNumeric(event)" minlength="6" maxlength="9" required>
-                                        </div>
+                                      <input type="hidden" name="ProductId" id="ProductId" value="12">
                                         
                                         <div class="col-md-4">
-                                            <input type="text" class="form-control" placeholder= "Loan Amount" name="LoanRequired" id="LoanRequired" onkeypress="return fnAllowNumeric(event)" minlength="6" maxlength="9" required>
+                                            <input type="text" class="form-control" placeholder= "Property Cost" name="PropertyCost" id="PropertyCost" onkeypress="return fnAllowNumeric(event)" minlength="6" maxlength="9" required>
                                         </div>
+
+
+                                        
+                                        <div class="col-md-4 ">
+                                            <input type="text" class="form-control" placeholder="Loan Amount" name="LoanRequired" id="LoanRequired" minlength="6" maxlength="9" required>
+                                        </div>
+
                                         <div class="col-md-4">
-                                            <select class="block drop-arr select-sty" name="LoanTenure" id="LoanTenure" required>
+                                            <select class=" form-control block drop-arr select-sty" name="LoanTenure" id="LoanTenure" required>
                                               <option disabled selected  value="">Loan Tenure</option>
                                                 <option value="1">1</option>
                                                 <option value="2">2</option>
@@ -36,27 +40,57 @@
                                                 <option value="4">4</option>
                                                 <option value="5">5</option>
                                                 <option value="6">6</option>
+                                                <option value="7">7</option>
+                                                <option value="8">8</option>
+                                                <option value="9">9</option>
+                                                <option value="10">10</option>
+                                                <option value="11">11</option>
+                                                <option value="12">12</option>
+                                                <option value="13">13</option>
+                                                <option value="14">14</option>
+                                                <option value="15">15</option>
+                                                <option value="16">16</option>
+                                                <option value="17">17</option>
+                                                <option value="18">18</option>
+                                                <option value="19">19</option>
+                                                <option value="20">20</option>
+                                                <option value="21">21</option>
+                                                <option value="22">22</option>
+
                                             </select> 
                                         </div>
-                                        
 
                                         <div class="col-md-4">
-                                            <input type="text" class="form-control" id="ApplicantIncome" name="ApplicantIncome" placeholder="Income"  onkeypress="return fnAllowNumeric(event)" required>
+                                            <input type="text" class="form-control" id="ApplicantIncome" name="ApplicantIncome" placeholder="Income" minlength="5" maxlength="9"  onkeypress="return fnAllowNumeric(event)" required>
                                         </div>
 
-                                         <div class="col-md-4" >
-                                            <input type="text" class="form-control " id="ApplicantObligations" name="ApplicantObligations" placeholder="Obligations" onkeypress="return fnAllowNumeric(event)"  required>
-                                        </div>
-
-                                        <div class="col-md-4" >
+                                         <div class="col-md-4">
                                             <input type="text" class="form-control " id="Turnover" name="Turnover" placeholder="Turnover" onkeypress="return fnAllowNumeric(event)"  required>
                                         </div>
 
-                                </div>
+                                        <div class="col-md-4">
+                                            <input type="text" class="form-control " id="ApplicantObligations" name="ApplicantObligations" placeholder="Applicant Obligations" onkeypress="return fnAllowNumeric(event)"  required>
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <input type="text" class="form-control" id="ProfitAfterTax" name="ProfitAfterTax" placeholder="Profit After Tax"  onkeypress="return fnAllowNumeric(event)" required>
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <input type="text" class="form-control" id="Depreciation" name="Depreciation" placeholder="Depreciation"  onkeypress="return fnAllowNumeric(event)" required>
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <input type="text" class="form-control" id="DirectorRemuneration" name="DirectorRemuneration" placeholder="Director/Partner Remuneration "  onkeypress="return fnAllowNumeric(event)" required>
+                                        </div>
+
+                                        
+
+                                    </div>
                                     <hr>
                                 </div>
                                 <div style="text-align: center;">
-                                <a class="btn btn-info btn-outline with-arrow mrg-top" id="check_eligibility">Check Eligibility<i class="icon-arrow-right"></i></a></div>
+                                <a class="btn btn-danger btn-outline with-arrow mrg-top" id="ckeck_eligibility">Check Eligibility<i class="icon-arrow-right"></i></a></div>
                                 </form>
                                 </div>
                                 </div>
@@ -69,7 +103,7 @@
 @include('layout.footer')
 @include('layout.script')
 
-<div class="modal fade" tabindex="-1" role="dialog" id="personal_loan_eligible">
+<div class="modal fade" tabindex="-1" role="dialog" id="home_loan_eligible">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -93,7 +127,7 @@
   </div>
 </div>
 
-<div class="modal fade" tabindex="-1" role="dialog" id="personal_loan_not_eligible">
+<div class="modal fade" tabindex="-1" role="dialog" id="home_loan_not_eligible">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -112,9 +146,8 @@
 </div>
 
 <script type="text/javascript">
-    $('#check_eligibility').click(function(){
-
-      if(! $('#personal_loan_calculator_form').valid())
+    $('#ckeck_eligibility').click(function(){
+      if(! $('#home_loan_calculator_form').valid())
        {
               // alert('not valid');
 
@@ -124,8 +157,8 @@
            
         $.ajax({  
          type: "POST",  
-         url: "{{URL::to('personal-loan-calculation')}}",
-         data : $('#personal_loan_calculator_form').serialize(),
+         url: "{{URL::to('home-loan-calculation')}}",
+         data : $('#home_loan_calculator_form').serialize(),
          success: function(msg){
               console.log(msg.status);
               if (msg.status==1) 
@@ -154,10 +187,10 @@
                   console.log(Bank_Logo);
                   $('#bank_logo').html('<img src='+Bank_Logo+' width="150px">');
 
-                  $('#personal_loan_eligible').modal('show');  
+                  $('#home_loan_eligible').modal('show');  
               }
               else{
-                $('#personal_loan_not_eligible').modal('show');  
+                $('#home_loan_not_eligible').modal('show');  
               }
         }  
       });   

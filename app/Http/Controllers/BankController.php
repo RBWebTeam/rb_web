@@ -16,17 +16,27 @@ class BankController extends InitialController
 	}
 
 	public function home_loanBank($product,$bank){
+
+                // $SeoQuery=new Seo();
+                // $SeoData='';
+              //if($product=='home-loan' && $bank=='icici'){
+                   
+                //  $SeoQuery->HICICIbank();
+               // }
+
+
+
  
 
-  $product=ucwords(str_replace('-',' ',$product));
-  $bank= strtoupper(str_replace('-',' ',$bank));
 
 
-          $getQuery=DB::select('call usp_bankwise_detail("'.$product.'","'.$bank.'")');
-          $product_query=json_decode(json_encode($getQuery));
-          //  print "<pre>";
+           $product=ucwords(str_replace('-',' ',$product));
+           $bank= strtoupper(str_replace('-',' ',$bank));
+           $getQuery=DB::select('call usp_bankwise_detail("'.$product.'","'.$bank.'")');
+           $product_query=json_decode(json_encode($getQuery));
+        
           
-          // print_r($getQuery);exit();
+   
 
 
        $bank_detail=DB::table('bank_master')->select('Bank_Name','Document1','bank_id')
@@ -55,12 +65,11 @@ class BankController extends InitialController
 
  
     // keywords,title and description
-    if (stripos($data['bank_name'],'ICICI BANK' ) !== FALSE && $data['product']=='Home Loan') {
+    if($bank=='ICICI' && $product=='Home Loan'){
       $data['title']='ICICI Bank | Home Loan Eligibility & Rate of Interest ';
       $keywords='ICICI Bank Home Loan,ICICI Housing Loan,ICICI Bank Home Loan Interest Rate, Apply Online For ICICI Bank Home Loan,ICICI Home Loan Eligibility,ICICI Bank Home Loan Emi Calculator,Flexi Emi Home Loan';
       $data['description']='ICICI Bank Home Loan,ICICI Housing Loan,ICICI Bank Home Loan Interest Rate, Apply Online For ICICI Bank Home Loan,ICICI Home Loan Eligibility,ICICI Bank Home Loan Emi Calculator,Flexi Emi Home Loan';
-    }
-    elseif ($data['bank_name']=='AXIS BANK LTD' && $data['product']=='Home Loan') {
+    }else if ($data['bank_name']=='AXIS BANK LTD' && $data['product']=='Home Loan') {
       $data['title']='Axis Bank | Home Loan Eligibility & Rate of Interest';
       $keywords='Axis bank Home loan,Axis Bank Home Loan Interest Rate,Axis Bank Home Loan Eligibility,Axis Bank Home Loan Calculator,Apply Online For Axis Bank Home Loan,Axis Bank Home Loan Emi Calculator,Flexi Emi Home Loan';
       $data['description']='Axis bank Home loan,Axis Bank Home Loan Interest Rate,Axis Bank Home Loan Eligibility,Axis Bank Home Loan Calculator,Apply Online For Axis Bank Home Loan,Axis Bank Home Loan Emi Calculator,Flexi Emi Home Loan';
@@ -110,7 +119,7 @@ class BankController extends InitialController
       $keywords='Apply For Home Loan At Standard Charter,Home Loan EMI Calculator,Home Loan Eligibility Of Standard Charter Bank,Home Loan Interest Rate Of Standard Charter,Flexi Emi Home Loan';
       $data['description']='Apply For Home Loan At Standard Charter,Home Loan EMI Calculator,Home Loan Eligibility Of Standard Charter Bank,Home Loan Interest Rate Of Standard Charter,Flexi Emi Home Loan';
     }
-    elseif ($data['bank_name']=='TATA CAPITAL HOUSING FINANCE LIMITED' && $data['product']=='Home Loan') {
+    elseif ($bank=='TATA CAPITAL' && $product=='Home Loan') {
      $data['title']='TATA Capital | Home Loan Eligibility & Rate of Interest';
       $keywords='Tata Capital Home Loan Interest Rate,Tata Home Loans,Tata Home Loan Emi Calculator,Flexi Emi Home Loan';
       $data['description']='Tata Capital Home Loan Interest Rate,Tata Home Loans,Tata Home Loan Emi Calculator,Flexi Emi Home Loan';
@@ -140,8 +149,8 @@ class BankController extends InitialController
       $keywords='Apply for Personal Loan Online Fullerton India';
       $data['description']='Apply for Personal Loan Online Fullerton India';
     }
-    elseif ($data['bank_name']=='ICICI BANK' && $data['product']=='Personal Loan') {
-     $data['title']='ICICI Bank |  Personal Loan Eligibility & Rate of Interest';
+    elseif ($bank=='ICICI' && $product=='Personal Loan') {
+      $data['title']='ICICI Bank |  Personal Loan Eligibility & Rate of Interest';
       $keywords='Personal Loan At ICICI Bank,Apply Online For ICICI Bank Personal Loan';
       $data['description']='Personal Loan At ICICI Bank,Apply Online For ICICI Bank Personal Loan';
     }
@@ -150,13 +159,18 @@ class BankController extends InitialController
       $keywords='Kotak Mahindra Bank Personal Loan,Apply For Personal Loan Online At Kotak Mahindra';
       $data['description']='Kotak Mahindra Bank Personal Loan,Apply For Personal Loan Online At Kotak Mahindra';
     }
-    elseif ($data['bank_name']=='TATA CAPITAL HOUSING FINANCE LIMITED' && $data['product']=='Personal Loan') {
+    elseif ($bank=='TATA CAPITAL' && $product=='Personal Loan') {
      $data['title']='TATA Capital | Personal Loan Eligibility & Rate of Interest';
       $keywords='Tata Capital Personal Loan';
       $data['description']='Tata Capital Personal Loan';
-    }
-    elseif ($data['bank_name']=='INTELLECASH MICROFINANCE NETWORK COMPANY PVT LTD' && $data['product']=='Business Loan') {
-     $data['title']='Intellecash | Business Loan Eligibility';
+    }else if($bank=='CAPITAL FIRST' && $product=='Personal Loan'){
+
+      $data['title']='Capital First | Personal Loan Eligibility & Rate of Interest';
+      $keywords='Capital First Personal Loan Interest rate,Capital First Personal Loan,Capital First Personal Loan Eligibility';
+      $data['description']='Capital First Personal Loan Interest rate,Capital First Personal Loan,Capital First Personal Loan Eligibility';
+
+    }elseif ($data['bank_name']=='INTELLECASH MICROFINANCE NETWORK COMPANY PVT LTD' && $data['product']=='Business Loan') {
+      $data['title']='Intellecash | Business Loan Eligibility';
       $keywords='Intellecash Short Term Business Loan,Apply For Business Loan At Intellecash';
       $data['description']='Intellecash Short Term Business Loan,Apply For Business Loan At Intellecash';
     }
@@ -165,7 +179,7 @@ class BankController extends InitialController
       $keywords='Magma SME Loans,Magma Business Loans';
       $data['description']='Magma SME Loans,Magma Business Loans';
     }
-    elseif ($data['bank_name']=='ICICI BANK' && $data['product']=='Business Loan') {
+    elseif ($bank=='ICICI' && $data['product']=='Business Loan') {
      $data['title']='ICICI Bank |  Business Loan Eligibility ';
       $keywords='ICICI Bank Business Loan,Apply Online At ICICI Business Loan';
       $data['description']='ICICI Bank Business Loan,Apply Online At ICICI Business Loan';
@@ -195,7 +209,7 @@ class BankController extends InitialController
       $keywords='Apply For Business Loan At Standard Charter,Standard Chartered Unsecured Business Loan,Standard Chartered Business Loan Interest Rate,Standard Chartered Bank Business Loan Application Form,Business Installment Loan Standard Chartered Bank,Standard Chartered Loan For Business,Standard Chartered Bank Business Loan Statement';
       $data['description']='Apply For Business Loan At Standard Charter,Standard Chartered Unsecured Business Loan,Standard Chartered Business Loan Interest Rate,Standard Chartered Bank Business Loan Application Form,Business Installment Loan Standard Chartered Bank,Standard Chartered Loan For Business,Standard Chartered Bank Business Loan Statement';
     }
-    elseif ($data['bank_name']=='TATA CAPITAL HOUSING FINANCE LIMITED' && $data['product']=='Business Loan') {
+    elseif ($bank=='TATA CAPITAL' && $product=='Business Loan') {
       $data['title']='TATA Capital | Business Loan Eligibility';
       $keywords='Tata Capital Business Loan Eligibility,Tata Capital Business Loan Interest Rate,Business Loan From Tata Capital';
       $data['description']='Tata Capital Business Loan Eligibility,Tata Capital Business Loan Interest Rate,Business Loan From Tata Capital';
@@ -211,7 +225,7 @@ class BankController extends InitialController
       $keywords='Axis Bank Business Loan Interest Rate,Axis Bank Business Loan Status,Axis Bank Business Loan Application Form,Axis Bank Business Loan Process,Axis Bank Small Business Loan,Axis Bank Business Loan Details,Axis Bank Business Loan Scheme,Axis Bank Business Loan Eligibility,Business Loan By Axis Bank';
       $data['description']='Axis Bank Business Loan Interest Rate,Axis Bank Business Loan Status,Axis Bank Business Loan Application Form,Axis Bank Business Loan Process,Axis Bank Small Business Loan,Axis Bank Business Loan Details,Axis Bank Business Loan Scheme,Axis Bank Business Loan Eligibility,Business Loan By Axis Bank';
     }
-    elseif ($data['bank_name']=='ADITYA BIRLA HOUSING FINANCIAL LIMITED' && $data['product']=='Business Loan') {
+    elseif ($bank=='ADITYA BIRLA' && $product=='Business Loan') {
      $data['title']='Aditya Birla | Business Loan Eligibility';
       $keywords='Aditya Birla Business Loan';
       $data['description']='Aditya Birla Business Loan';

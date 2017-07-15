@@ -1357,7 +1357,7 @@ border: #3px solid #999;background:#1f386e;margin: 10px;margin: 10px auto;text-a
 .#fh5co-header nav ul li a ul {margin-top:10px;}
 #fh5co-header nav ul li a .icon-chevron-down {top:0px; font-size:12px;}
 
-input[placeholder], [placeholder], *[placeholder] {color: #1f386e !important; font-size:14px;}
+input[placeholder], [placeholder], *[placeholder] {color: #1f386e !important; font-size:16px;}
 .mrg-btm1 {margin-bottom:0px;}
 .icon-map-marker {font-size:25px; float:left;}
 .modal-body input, button {margin-bottom:10px; color:#396fbf;border:none;}
@@ -1417,7 +1417,7 @@ input[placeholder], [placeholder], *[placeholder] {color: #1f386e !important; fo
 #fh5co-work-section {padding-bottom:20px;}
  .pad {padding:10px 0px;}
  .filter {background:#fff;}
- .pad1 {padding:20px;}
+ .pad1 {padding:12px;}
  .pad11 table {border:1px solid #eee; font-size:14px;color:#666;margin:0px;}
  .pad11 checkbox {width:50px; height:50px; border:2px solid #ddd;}
  .pad11 .icon-file {padding:5px;}
@@ -1444,7 +1444,7 @@ border-radius: 7px;padding: 1em;margin-top: 1em;}
 .nl-form-errors:after {content: '';position: absolute;border-style: solid;border-width: 12px 12px 0;border-color: #15a9fa transparent;
  display: block;width: 0;z-index: 1;top: 100%;left: 46%;}
  .comp-pg {padding:20px;border: 10px solid #fafafa;}
- .rate input {margin-bottom:10px;}
+ .rate input {margin-bottom:10px; font-size: 17px;}
  .hdr {display:block;display; padding:15px;}
 .border-none {border:none !important;box-shadow:none;} 
  .sec select {width: 100%;padding: 6px;margin-bottom:15px;border:1px solid rgba(0, 0, 0, 0.1); border-radius:2px;-moz-border-radius:2px;-webkit-border-radius:2px;}
@@ -1559,7 +1559,7 @@ input[type=radio]:checked ~ .check {
 }
 .fltr h3 {text-align:center; padding-top:10px; font-weight:bold;}
 .fltr input {padding:5px;margin-right:5px;}
-.modal-body input {background:#eee;border:1px solid #ddd;}
+.modal-body input {background:#fff;border:1px solid #ddd;}
 .modal-body li {color:#15a9fa;}
 .modal-body li span {padding:0px;  border-radius:50px; vertical-align: middle;padding-right: 5px;}     
 .flexslider li a:hover {text-decoration:none;}
@@ -1984,6 +1984,7 @@ body {background:#eee;}
 /*   compare css */
   @media only screen and (max-width:768px) {
  .txt-title {display:none;}
+ .drop-arr {margin-bottom:15px;}
  .bdr-btm {border:1px solid #ddd; margin-bottom:10px;}
  .heigh-bt1 {margin-bottom:20px;}
  .rba-log input {padding: 5px 2px; width:100%; margin-bottom:10px;}
@@ -3452,7 +3453,7 @@ input:checked + .slider:before {
 
     height:44px;
     padding: 6px 6px;
-    font-size: 14px;
+    font-size: 16px;
     color: #999;
 	margin-bottom:10px;
     font-weight: 500;
@@ -3575,6 +3576,7 @@ label {
     padding: 5px;
     border: 1px solid #d4d4d4;
     border-radius: 5px;
+	font-size:16px;
 	color:#999;
 	}
 
@@ -3606,7 +3608,7 @@ label.error {display: none !important; }
 }
 .white {background:#fff;}
 
-
+.brdr-blu {border:10px solid #d5edff;}
 /***  Survey Page  *************************************************************************/
 
 

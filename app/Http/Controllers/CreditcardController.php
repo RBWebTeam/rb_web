@@ -8,11 +8,16 @@ use DB;
 use Mail;
 use Session;
 use App\credit_card_form_req;
+use App\SEOlibraries\Seo;
 class CreditcardController extends CallApiController
 {
      public function credit_card_form(Request $req){
 
-            return view('credit-card-form');
+             $query=new Seo();
+
+
+
+            return view('credit-card-form')->with($query->CreditCardForm());
      }
 
      public function credit_form_submit(Request $req){

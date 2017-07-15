@@ -32,7 +32,7 @@
     
 
   <div class="col-md-12">
-<center><div class="type-cover"><span>Car Type</span></div></center>
+<center><div class="type-cover"><h4>Car Type</h4></div></center>
      
             <div class="col-xs-12 col-md-4 form-padding">
      <input type="text" class="form-input-new form-control" id="car_cost" name="car_cost" placeholder="On Road Price" required onkeypress="return fnAllowNumeric(event)" minlength="6"  maxlength="9">
@@ -184,15 +184,15 @@
          <!-- <a id="apply_new" type="button" class="btn btn-info disblk" title="Experience New Digital Era In Loans">Apply Digitally</a> -->
 
           @if(Session::get('is_login'))
-          <a id="apply_new" type="button" class="btn btn-info disblk" title="Experience New Digital Era In Loans">Apply Digitally</a>
+          <a id="apply_new" type="button" class="block btn btn-info disblk" title="Experience New Digital Era In Loans">Apply Digitally</a>
            @else
-           <a   data-toggle="modal" data-target="#login_process" class="btn btn-info disblk apply_digitally " title="Experience New Digital Era In Loans">Apply Digitally</a>
+           <a   data-toggle="modal" data-target="#login_process" class="block btn btn-info disblk apply_digitally " title="Experience New Digital Era In Loans">Apply Digitally</a>
            @endif  
 
 
         <!--  <button id="eligibility" class="btn btn-info disblk" title="See Bankwise Eligibility And Apply Amongst Best Bank">Check Bankwise Eligibility</button> -->
 
- <button id="eligibility"  class="btn btn-info disblk" title="See Bankwise Eligibility And Apply Amongst Best Bank" disabled>Check Bankwise Eligibility </button>
+ <button id="eligibility"  class="block btn btn-info disblk" title="See Bankwise Eligibility And Apply Amongst Best Bank" disabled>Check Bankwise Eligibility </button>
 
 
          <button type="button" class="btn btn-info block"  id="call_rm" name="call_rm" data-toggle="modal" data-target="#Modal" title="Call For RM(Single Day Process)">Call Manager</button>

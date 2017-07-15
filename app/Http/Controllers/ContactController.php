@@ -52,7 +52,10 @@ class ContactController extends InitialController
 
 
     public function magic_link(){
-        return view('magic-link');
+        
+         $query=new Seo();
+
+        return view('magic-link')->with($query->MagicLink());
     }
 
  

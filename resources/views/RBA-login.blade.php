@@ -9,8 +9,8 @@
   <p id="showerror" class="text-center displaynone">Broker already exist</p>
     <br>
   </div>
-
-  <div class="col-md-6 white-bg box-shadow rba-dv-hei">
+<div class="col-md-2"></div>
+  <div class="col-md-4 white-bg box-shadow rba-dv-hei">
   <form class="form-horizontal" id="rba_form">
     {{ csrf_field() }}
     <div>
@@ -36,22 +36,22 @@
     
     <div>        
       <div class="col-sm-4 mrg-tpp">
-        <button type="submit" class="btn btn-success register">Register</button>
+        <button type="submit" class="btn btn-success btn-outline with-arrow register">Register<i class="icon-arrow-right"></i></button>
       </div>
     </div>
   </form>
   </div>
   
-  <div class="col-md-6 rba_bg">
+  <div class="col-md-4 rba_bg">
   <img src="images/rba_bg.png" alt="Rupeeboss Agent" title="Rupeeboss Agent" class="img-responsive"/>
   <div class="rba-log xyz">
   <form   name="rba_emp_login" id="rba_emp_login"  method="post"  >
 
   {{ csrf_field() }}
 
-  <input type="text" placeholder="Username" class="form-group" required="" /> 
-  <input type="password" placeholder="password" required="" />
-  <button type="submit" id="login_rba" class="btn btn-primary  ">LOGIN</button>
+  <input type="text" placeholder="Username" class="form-control" required="" /> 
+  <input type="password" placeholder="password" required="" class="form-control"/>
+  <button type="submit" id="login_rba" class="btn btn-primary btn-outline with-arrow">LOGIN <i class="icon-arrow-right"></i></button>
   </div>
   </div>
   </form>

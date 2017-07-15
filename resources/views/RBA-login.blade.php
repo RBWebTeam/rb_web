@@ -15,27 +15,27 @@
     {{ csrf_field() }}
     <div>
       
-      <div class="col-sm-12 form-group xyz">
+      <div class="col-sm-12 xyz">
 	  
         <input type="text" class="form-control" id="name" placeholder="Enter name" name="name" required="">
       </div>
     </div>
     <div>
       
-      <div class="col-sm-12 form-group xyz">
+      <div class="col-sm-12 xyz">
 	
         <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" required="">
       </div>
     </div>
     <div>
-      <div class="col-sm-12 form-group xyz"> 
+      <div class="col-sm-12 xyz"> 
   
         <input type="tel" class="form-control" id="contact" placeholder="Enter number" name="contact" maxlength="10" pattern="[789][0-9]{9}" required="">
       </div>
     </div>
     
     <div>        
-      <div class="col-sm-4 mrg-tpp" style="margin-top:5px;">
+      <div class="col-sm-4 mrg-tpp">
         <button type="submit" class="btn btn-success register">Register</button>
       </div>
     </div>
@@ -51,7 +51,7 @@
 
   <input type="text" placeholder="Username" class="form-group" required="" /> 
   <input type="password" placeholder="password" required="" />
-  <button type="submit" id="login_rba" class="btn btn-primary  ">Login</button>
+  <button type="submit" id="login_rba" class="btn btn-primary  ">LOGIN</button>
   </div>
   </div>
   </form>

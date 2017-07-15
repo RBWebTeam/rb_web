@@ -115,7 +115,7 @@ input[type="text"], input[type="email"], input[type="tel"], input[type="password
         <div class="track-app-status"><br>
             <h2>Track Your Application Status</h2>
             <div class="track-form">
-                <div class="dec">For security reasons, please answer the fields below to fetch your application.</div>
+                <div class="dec">To Know Your Loan Application Status, Please fill the following details.</div>
                 <div class="dontshow" id="js-server-error"><table class="message"><tbody><tr><td><span class="error-icon"><img src="images/icon-error.png"></span></td><td><span class="error-info"></span></td></tr></tbody></table></div>
                 <form id="tracapp" name="tracapp" method="post" action="view-your-application">
                 {{ csrf_field() }}

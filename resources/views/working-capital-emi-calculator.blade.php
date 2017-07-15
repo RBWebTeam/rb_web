@@ -12,7 +12,7 @@
 <form  id="calculator_form" name="calculator_form" method="post" action="calculator_form">
   {{ csrf_field() }}
     <div class="col-sm-4">
-	  <div class="heigh-bt2 pad1 white">
+	  <div class="heigh-bt2 pad1 white brdr-blu">
 	<!--  <h3 class="emi-cal"><b>WC Calculator</b></h3> -->
 	
       <div class="form-group">
@@ -42,7 +42,7 @@
   
   
   <div class="col-sm-4">
-	<div class="heigh-bt2 pad1 white">
+	<div class="heigh-bt2 pad1 white brdr-blu">
       <div class="form-group">
        <label class="control-label" for="Loan Amount">Inventory</label>
        <input type="text" name="inventory" class="form-control" id="inventory" placeholder="Inventory" onkeypress="return workNumberKey(event,this)" required > 
@@ -72,7 +72,7 @@
   </form>
   
  <div class="col-sm-4 brd-rgt">
-  <div class="heigh-bt2 pad1 white">
+  <div class="heigh-bt2 pad1 white brdr-blu">
  <h3 class="emi-cal"><b>Eligible Loan Amount</b></h3>
 
     <center><h3 id="proposedlimit_ID" style="color: red; margin: 116px 10px 20px 40px "></h3></center>

@@ -128,6 +128,10 @@ Route::post('iifl-co-pincode-status','LoanController@iifl_co_pincode_status');
 Route::post('iifl-company-pincode-status','LoanController@iifl_company_pincode_status');
 Route::get('business-loan-calculator','CalculatorController@business_loan_calculator');
 Route::post('business-loan-calculation','CalculatorController@business_loan_calculation');
+Route::get('personal-loan-calculator','CalculatorController@personal_loan_calculator');
+Route::post('personal-loan-calculation','CalculatorController@personal_loan_calculation');
+
+Route::get('team','TeamController@team');
 // Creditcardform
 Route::get('credit-card-form','CreditcardController@credit_card_form');
 Route::post('credit-submit','CreditcardController@credit_form_submit');
@@ -281,6 +285,7 @@ Route::get('sme-thank-you','UploadController@sme_thank_you');
 Route::get('track-application','TrackapplicationController@tracking');
 Route::post('view-your-application','TrackapplicationController@tracking_sub');
 Route::get('survey','TrackapplicationController@survey');
+Route::post('survey_form','TrackapplicationController@survey_sub');
 
 
 

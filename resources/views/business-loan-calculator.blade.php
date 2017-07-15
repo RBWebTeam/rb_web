@@ -5,11 +5,14 @@
                          <div class="container">
                           <div class="row">
                         <center>
-                        <h1 class="loan-head">Business Loan EMI Calculator</h1>
-                        <h3><b><p class="sub-title" style="color:#34DBAB;">Calculate your Business Loan EMI and Eligibility Status Due in a snap! <i class="fa fa-calculator" style="color:#000000" aria-hidden="true"></i></p></b></h3>
+                        <h1 class="loan-head" style="color:#85C1E9">Business Loan EMI Calculator</h1>
+                        <h3><p class="sub-title" style="color:#3498DB;">Calculate your Business Loan EMI and Eligibility Status Due in a snap! <i class="fa fa-calculator" style="color:#000000" aria-hidden="true"></i></p></h3>
                       </center>
-                            <div class="col-md-12">
-                            <div class="row text-left comp-pg rate white-bg">
+					  
+					  <div class="col-md-2"></div>
+                            <div class="col-md-8 box-shadow white-bg">
+							
+                            <div class="row text-left comp-pg rate">
                                  <form class="" id="business_loan_calculator_form" name="business_loan_calculator_form" role="form" method="POST" >
                                  {{ csrf_field() }}
                                 <div class="row">
@@ -68,7 +71,7 @@
                                     <hr>
                                 </div>
                                 <div style="text-align: center;">
-                                <a class="btn btn-success btn-outline with-arrow mrg-top" id="ckeck_eligibility">Check Eligibility<i class="icon-arrow-right"></i></a></div>
+                                <a class="btn btn-danger btn-outline with-arrow mrg-top" id="ckeck_eligibility">Check Eligibility<i class="icon-arrow-right"></i></a></div>
                                 </form>
                                 </div>
                                 </div>

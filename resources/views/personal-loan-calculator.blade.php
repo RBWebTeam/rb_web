@@ -6,7 +6,7 @@
                           <div class="row">
                         <center>
                         <h1 class="loan-head" >Personal Loan EMI Calculator</h1>
-                        <p class="sub-title">Calculate your Personal Loan EMI and Eligibility Status Due in a snap! <i class="fa fa-calculator" style="color:#000000" aria-hidden="true"></i></p>
+                        <p class="sub-title"><h4>Calculate your Personal Loan EMI and Eligibility Status Due in a snap! <i class="fa fa-calculator" style="color:#000000" aria-hidden="true"></i></h4></p>
                       </center>
                       <div class="col-md-3"></div>
                             <div class="col-md-6 box-shadow brdr-blue">
@@ -24,7 +24,7 @@
                                             <input type="text" class="form-control" placeholder= "Loan Amount" name="LoanRequired" id="LoanRequired" onkeypress="return fnAllowNumeric(event)" minlength="6" maxlength="9" required>
                                         </div>
                                         <div class="col-md-6">
-                                            <select class="drop-arr block drop-arr select-sty" name="LoanTenure" id="LoanTenure" required>
+                                            <select class="form-control drop-arr block drop-arr select-sty" name="LoanTenure" id="LoanTenure" required>
                                               <option disabled selected  value="">Loan Tenure</option>
                                                 <option value="1">1</option>
                                                 <option value="2">2</option>

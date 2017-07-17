@@ -241,6 +241,7 @@ class LoanController extends CallApiController
 
     public function express_form(Request $req){
     $post_data=json_encode($req->all());
+    // print_r($post_data);
       $url = $this::$url_static."BankAPIService.svc/GetAdityaBirlaAPIReq";
       $result=$this->call_json_data_api($url,$post_data);
       $http_result=json_decode($result['http_result']);

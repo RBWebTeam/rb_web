@@ -1161,7 +1161,7 @@
 <script type="text/javascript">
 	
 	$("#express_loan_submit").click(function(event){
-		// alert('GJHG');
+		alert('GJHG');
     event.preventDefault();
       $form=$('#generic_form');
       if(! $form.valid()){
@@ -1409,7 +1409,7 @@
         }
 	}
 </script>
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 	$('input.amount').keyup(function(event) {
 
   // skip for arrow keys
@@ -1424,6 +1424,6 @@
   });
 });
 
-</script>
+</script> -->
 
 

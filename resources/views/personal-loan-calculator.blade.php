@@ -41,7 +41,7 @@
                                         </div>
 
                                          <div class="col-md-6" >
-                                            <input type="text" class="form-control " id="ApplicantObligations" name="ApplicantObligations" placeholder="Obligations" onkeypress="return fnAllowNumeric(event)"  required>
+                                            <input type="text" class="form-control " id="ApplicantObligations" name="ApplicantObligations" placeholder="Obligations" value="" onkeypress="return fnAllowNumeric(event)" >
                                         </div>
 
                                 </div>
@@ -155,5 +155,31 @@
       });   
      } 
     });
+</script>
+
+<script type="text/javascript">
+  function ApplicantObligations(){
+var result = true;
+$("input").each(function() {
+        if (!this.value) {
+            this.value = 0;
+        }
+        
+        if(jQuery.isNumeric(this.value) && this.value>=0){
+            
+        }else{
+            result = false;
+        }
+    });
+    return result;
+}
+
+$('#check_eligibility').click(function(){
+    var testInput = ApplicantObligations();
+    if(testInput){
+        var finalValue = $('#ApplicantObligations').val();
+         $('span').text(finalValue);
+    }
+});
 </script>
 

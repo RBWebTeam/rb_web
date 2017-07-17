@@ -4,31 +4,31 @@
 </style>
 <br>
 <div class="container" id="fh5co-hero">
-<h2 class="loan-head" style="color:#85C1E9; text-align: center;">The friendly team that makes it all happen</h2>
+<h2 class="loan-head" style="color:#85C1E9; text-align: center;">The team on which you can rely on.</h2>
 
     <div class="col-md-1"></div>
    <div class="col-md-10 white-bg pad box-shadow">
-      <div class="col-md-12"><h4 class="text-center pad mrg-btm"><b>Website Team</b></h4></div>
+      <div class="loan-head"><h6 class="text-center pad mrg-btm"><b>Server-side Developers</b></h6></div>
         <div class="col-sm-3 center-img">
             
             <img src="{{URL::to('images/pratik_telang.jpg')}}" class="img-circle img-responsive" alt="Cinque Terre" width="173" height="173" >
             <p style="text-align: center">
             <b>Pratik Telang</b><br>
-               Senior Front-end Developer <br> 
+               Senior Server-side Developer <br> 
             </p>
         </div>
 
         <div class="col-sm-3 center-img">
             <img src="{{URL::to('images/manish_dixitji.jpg')}}" class="img-circle img-responsive" alt="Cinque Terre" width="173" height="173">
             <p style="text-align: center"><b>Manish Dixit</b><br>
-               Senior Front-end Developer<br> 
+               Senior Server-side Developer<br> 
             </p>
         </div>
         
         <div class="col-sm-3 center-img">
             <img src="{{URL::to('images/joel_jangam.jpg')}}" class="img-circle img-responsive" alt="Cinque Terre" width="173" height="173">
             <p style="text-align: center"><b>Joel Jangam</b><br>
-               Front-end Developer<br></p> 
+               Server-side Developer<br></p> 
               
         </div>
 
@@ -41,7 +41,7 @@
               Looks after sales and UX design</p>
         </div>
         <hr style="border-top: 3px solid #85C1E9; width: 100%">
-        <div class="col-md-12"><h4 class="text-center pad mrg-btm"><b>Android Team</b></h4></div>
+        <div class="loan-head"><h6 class="text-center pad mrg-btm"><b>Android Developers</b></h6></div>
         <div class="col-sm-3 center-img">
             <img src="{{URL::to('images/image_girl.jpg')}}" class="img-circle img-responsive" alt="Cinque Terre" width="173" height="173">
             <p style="text-align: center"><b>Navin Kulkarni</b><br>

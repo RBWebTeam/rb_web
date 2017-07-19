@@ -531,7 +531,7 @@
 
  
 
- ////////////////////
+ 
 
 
   $(".credit-submit").click(function(event){

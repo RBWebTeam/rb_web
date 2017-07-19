@@ -97,7 +97,7 @@
 							<div class="center-blg"><img src="{{URL::to('images/birla.png')}}" alt="Aditya Birla Group Logo" title="Aditya Birla Group Logo" /></div>
 							<h4 class="mrg-btm">Aditya Birla</h4>
 						
-							<a class="btn btn-primary btn-outline with-arrow" href="{{URL::to('apply-express-loan')}}">Apply Now<i class="icon-arrow-right"></i></a>
+							<a class="btn btn-primary btn-outline with-arrow" onclick="Redirect();">Apply Now<i class="icon-arrow-right"></i></a>
 						</div>
 					</div>
 					
@@ -203,4 +203,13 @@
 
 @include('layout.footer')
 @include('layout.script')
+
+<script type="text/javascript">
+	function Redirect() 
+          {
+            
+            window.location="http://www.abfldirect.com?utm_source=RUPEEBOSS&utm_medium=DSA&utm_campaign=DirectSME";
+            
+          }
+</script>
 

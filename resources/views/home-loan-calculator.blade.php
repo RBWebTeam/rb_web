@@ -254,7 +254,7 @@
         $("#pat").hide();
         $("#depreciation").hide();
         $("#remuneration").hide();
-       $("#income").show();
+        $("#income").show();
         $("#obligation").show();
         
       }

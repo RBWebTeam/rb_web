@@ -1621,11 +1621,11 @@ $(document).ready(function(){
          data: {
          '_token': v_token},
          success: function(msg){       
-            populate_state(msg,'CurrentState');
-            populate_state(msg,'PermanentState');
-            populate_state(msg,'CoCurrentState');
-            populate_state(msg,'CoPermanentState');
-            populate_state(msg,'CompanyState');
+            // populate_state(msg,'CurrentState');
+            // populate_state(msg,'PermanentState');
+            // populate_state(msg,'CoCurrentState');
+            // populate_state(msg,'CoPermanentState');
+            // populate_state(msg,'CompanyState');
 
     }
 
@@ -1667,12 +1667,12 @@ $(document).ready(function(){
 
             // console.log(msg);
             if(param=='CityMaster'){
-                populate_city_education(msg,'CurrentCity');
-                populate_city_education(msg,'PermanentCity');
+                // populate_city_education(msg,'CurrentCity');
+                // populate_city_education(msg,'PermanentCity');
                 populate_city_education(msg,'city');
-                populate_city_education(msg,'CoCurrentCity');
-                populate_city_education(msg,'CoPermanentCity');
-                 populate_city_education(msg,'CompanyCity');
+                // populate_city_education(msg,'CoCurrentCity');
+                // populate_city_education(msg,'CoPermanentCity');
+                //  populate_city_education(msg,'CompanyCity');
 
             }else if(param=='EducationMaster'){
                 populate_city_education(msg,'Education');
@@ -1747,8 +1747,8 @@ var global_tenure=0;
 
             var stay_at = $('#city').val();
             // console.log(stay_at);
-            // $('#CurrentCity').val(stay_at);
-            // $('#CurrentCity').closest( "span" ).addClass( "input--filled" );
+            $('#CurrentCity').val(stay_at);
+            $('#CurrentCity').closest( "span" ).addClass( "input--filled" );
             //$('#PermanentCity').val(stay_at);
             $('#City').val(stay_at);
             // var name= $('#Company_Name option:selected').text();
@@ -2432,7 +2432,7 @@ $('#Applied, #Period').on('input', function () {
                             console.log(msg.State);
                             if (msg.Status =="Fail" ) 
                             {
-                               alert('Please Select City & State From The Dropdown Provided.');
+                               alert('Please Enter Valid Pincode');
                                return false;
                             }else if(msg.Status =="Success"){
 

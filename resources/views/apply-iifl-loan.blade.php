@@ -221,7 +221,7 @@
             </form>
             </div>
             
-        <div id="Applicant_Details" style="display: none;" >
+        <div id="Applicant_Details" >
             <form name="applicant_deatils" id="applicant_deatils" method="POST">
                       {{ csrf_field() }}
             <div class="col-md-12">
@@ -474,7 +474,7 @@
                     <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
                     </svg>
                 </span>
-                <span class="input input--nao input--filled">
+                <span class="input input--nao">
                     <select class="input__field input__field--nao" name="PermanentCity" id="PermanentCity" required>
                         <option disabled selected value=""></option>
                     </select>
@@ -1621,7 +1621,7 @@ $(document).ready(function(){
          data: {
          '_token': v_token},
          success: function(msg){       
-            // populate_state(msg,'CurrentState');
+            populate_state(msg,'CurrentState');
             // populate_state(msg,'PermanentState');
             // populate_state(msg,'CoCurrentState');
             // populate_state(msg,'CoPermanentState');
@@ -1667,7 +1667,7 @@ $(document).ready(function(){
 
             // console.log(msg);
             if(param=='CityMaster'){
-                // populate_city_education(msg,'CurrentCity');
+                populate_city_education(msg,'CurrentCity');
                 // populate_city_education(msg,'PermanentCity');
                 populate_city_education(msg,'city');
                 // populate_city_education(msg,'CoCurrentCity');

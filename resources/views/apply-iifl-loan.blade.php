@@ -221,7 +221,7 @@
             </form>
             </div>
             
-        <div id="Applicant_Details" >
+        <div id="Applicant_Details" style="display: none;" >
             <form name="applicant_deatils" id="applicant_deatils" method="POST">
                       {{ csrf_field() }}
             <div class="col-md-12">
@@ -1625,7 +1625,7 @@ $(document).ready(function(){
             // populate_state(msg,'PermanentState');
             // populate_state(msg,'CoCurrentState');
             // populate_state(msg,'CoPermanentState');
-            // populate_state(msg,'CompanyState');
+            populate_state(msg,'CompanyState');
 
     }
 
@@ -1672,7 +1672,7 @@ $(document).ready(function(){
                 populate_city_education(msg,'city');
                 // populate_city_education(msg,'CoCurrentCity');
                 // populate_city_education(msg,'CoPermanentCity');
-                //  populate_city_education(msg,'CompanyCity');
+                 populate_city_education(msg,'CompanyCity');
 
             }else if(param=='EducationMaster'){
                 populate_city_education(msg,'Education');
@@ -1747,8 +1747,8 @@ var global_tenure=0;
 
             var stay_at = $('#city').val();
             // console.log(stay_at);
-            $('#CurrentCity').val(stay_at);
-            $('#CurrentCity').closest( "span" ).addClass( "input--filled" );
+            // $('#CurrentCity').val(stay_at);
+            // $('#CurrentCity').closest( "span" ).addClass( "input--filled" );
             //$('#PermanentCity').val(stay_at);
             $('#City').val(stay_at);
             // var name= $('#Company_Name option:selected').text();
@@ -2235,13 +2235,18 @@ $('#Applied, #Period').on('input', function () {
      $('#PermanentAddress3').closest( "span" ).addClass( "input--filled" );
      $('#PermanentPin').val($('#CurrentPin').val());
      $('#PermanentPin').closest( "span" ).addClass( "input--filled" );
-      var newOption1 = $('<option selected value="'+$('#CurrentCity').val()+'">'+$('#CurrentCity').text()+'</option>');
-        $('#PermanentCity').empty().append(newOption1);
+      var newOption1 = $("#CurrentCity option:selected").text();
+      var newOptions1 = $("#CurrentCity option:selected").val();
+      var city = $('<option selected value="'+newOptions1+'">'+newOption1+'</option>');
+      
+        $('#PermanentCity').empty().append(city);
      
      $('#PermanentCity').closest( "span" ).addClass( "input--filled" );
 
-     var newOption2 = $('<option selected value="'+$('#CurrentState').val()+'">'+$('#CurrentState').text()+'</option>');
-        $('#PermanentState').empty().append(newOption2);
+     var newOption2 = $("#CurrentState option:selected").text();
+      var newOptions2 = $("#CurrentState option:selected").val();
+      var state = $('<option selected value="'+newOptions2+'">'+newOption2+'</option>');
+        $('#PermanentState').empty().append(state);
      $('#PermanentState').closest( "span" ).addClass( "input--filled" );
      }else{
      $('#PermanentAddress1').val('');
@@ -2272,12 +2277,16 @@ $('#Applied, #Period').on('input', function () {
      $('#CoPermanentAddress3').closest( "span" ).addClass( "input--filled" );
      $('#CoPermanentPin').val($('#CoCurrentPin').val());
      $('#CoPermanentPin').closest( "span" ).addClass( "input--filled" );
-     var newOption3 = $('<option selected value="'+$('#CoCurrentCity').val()+'">'+$('#CoCurrentCity').text()+'</option>');
-        $('#CoPermanentCity').empty().append(newOption3);
+     var newOption3 = $("#CoCurrentCity option:selected").text();
+      var newOptions3 = $("#CoCurrentCity option:selected").val();
+      var co_city = $('<option selected value="'+newOptions3+'">'+newOption3+'</option>');
+        $('#CoPermanentCity').empty().append(co_city);
      $('#CoPermanentCity').closest( "span" ).addClass( "input--filled" );
 
-     var newOption4 = $('<option selected value="'+$('#CoCurrentState').val()+'">'+$('#CoCurrentState').text()+'</option>');
-        $('#CoPermanentState').empty().append(newOption4);
+     var newOption4 = $("#CoCurrentState option:selected").text();
+      var newOptions4 = $("#CoCurrentState option:selected").val();
+      var co_state = $('<option selected value="'+newOptions4+'">'+newOption4+'</option>');
+        $('#CoPermanentState').empty().append(co_state);
      $('#CoPermanentState').closest( "span" ).addClass( "input--filled" );
      }else{
      $('#CoPermanentAddress1').val('');
@@ -2432,7 +2441,7 @@ $('#Applied, #Period').on('input', function () {
                             console.log(msg.State);
                             if (msg.Status =="Fail" ) 
                             {
-                               alert('Please Enter Valid Pincode');
+                               alert('Please Select City & State From Dropdown Provided.');
                                return false;
                             }else if(msg.Status =="Success"){
 
@@ -2472,7 +2481,7 @@ $('#Applied, #Period').on('input', function () {
                             console.log(msg.State);
                             if (msg.Status =="Fail" ) 
                             {
-                               alert('Please Enter Valid Pincode');
+                               alert('Please Select City & State From Dropdown Provided.');
                                return false;
                             }else if(msg.Status =="Success"){
 
@@ -2513,7 +2522,7 @@ $('#Applied, #Period').on('input', function () {
                             console.log(msg.State);
                             if (msg.Status =="Fail" ) 
                             {
-                               alert('Please Enter Valid Pincode');
+                               alert('Please Select City & State From Dropdown Provided.');
                                return false;
                             }else if(msg.Status =="Success") {
                             var city =msg.City;
@@ -2553,7 +2562,7 @@ $('#Applied, #Period').on('input', function () {
                             console.log(msg.State);
                             if (msg.Status =="Fail" ) 
                             {
-                               alert('Please Enter Valid Pincode');
+                               alert('Please Select City & State From Dropdown Provided.');
                                return false;
                             }else if(msg.Status =="Success") {
                             var city =msg.City;

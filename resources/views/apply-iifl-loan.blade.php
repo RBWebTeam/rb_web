@@ -116,7 +116,7 @@
                 <span class="input input--nao">
                     <input class="input__field input__field--nao" type="text" name="Monthly_Obligation" id="Monthly_Obligation" onkeypress="return fnAllowNumeric(event)"  />
                     <label class="input__label input__label--nao" for="Monthly_Obligation">
-                    <span class="input__label-content input__label-content--nao">Total Existing EMI if Any.</span>
+                    <span class="input__label-content input__label-content--nao">Total Existing EMI if Any (If Not Enter 0)</span>
                     </label>
                     <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
                     <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
@@ -1767,7 +1767,9 @@ var global_tenure=0;
             $('#salary').empty().append(income);
 
             var emi= $('#Monthly_Obligation').val();
+            if(!emi){emi=0};
             $('#Current_EMI').empty().append(emi);
+
             $('#Current').empty().append(emi);
             $('#MonthlyObligation').val(emi);
             $('#paying_emi').empty().append(emi);
@@ -2583,34 +2585,6 @@ $('#Applied, #Period').on('input', function () {
                 }  
        });    
    </script>
-
-   <script type="text/javascript">
-  function Monthly_Obligation(){
-var result = true;
-$("input").each(function() {
-        if (!this.value) {
-            this.value = 0;
-        }
-        
-        if(jQuery.isNumeric(this.value) && this.value>=0){
-            
-        }else{
-            result = false;
-        }
-    });
-    return result;
-}
-
-$('.next').click(function(){
-    $('#Monthly_Obligation').closest( "span" ).addClass( "input--filled" );
-    var testInput = Monthly_Obligation();
-    if(testInput){
-        var finalValue = $('#Monthly_Obligation').val();
-
-         $('span').text(finalValue);
-    }
-});
-</script>
 
    
 

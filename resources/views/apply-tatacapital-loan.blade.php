@@ -17,6 +17,7 @@
   .pading {padding:1px 20px 1px 1px;}
   .offer {padding:10px; background:#eff8ff;border:1px solid #eee;text-align:center;}
   .border-btm {padding:10px; border-bottom:1px solid #eee;}
+  .bordered {border:1px dashed #ccc;padding:5px;}
 </style>
 <br>
 <div class="container" id="fh5co-hero">
@@ -332,7 +333,7 @@
                     </svg>
                   </span>
 				  
-			<span class="input_exp input--nao">
+		        	<span class="input_exp input--nao">
                     <select class="input__field input__field--nao drop-arr" name="Residance_Type" id="Residance_Type" required>
                     <option disabled selected value=""></option>
 					<option>More Then Six Years</option>
@@ -356,7 +357,7 @@
     <p class="text-left">Your Personal Loan Application No: <b>1000567</b></p>
 	<p class="text-center">We Have Found The Offer best Suited For Your Requirement</p>
 	<h4 class="offer">OUR OFFER</h4>
-	<div class="col-md-12">
+	<div class="col-md-12 bordered">
 	  <div class="col-md-6">
 	  <p class="border-btm">For Chosen Loan Amount & Tenure, You Pay </p>
 	  <table class="table table-bordered">
@@ -406,12 +407,238 @@
   
   
   <div id="menu2" class="tab-pane fade">
-    <h3>Menu 2</h3>
-    <p>Some content in menu 2.</p>
+    
+	<span class="input_exp input--nao">
+                    <select class="input__field input__field--nao drop-arr" name="Marital_Status" id="Marital_Status" required>
+                    <option disabled selected value=""></option>
+					<option>Single</option>
+                    </select>
+                    <label class="input__label input__label--nao" for="Marital_Status">
+                    <span class="input__label-content input__label-content--nao">Marital Status</span>
+                    </label>
+                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
+                    <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
+                    </svg>
+                  </span>
+		<span class="input input--nao">
+                    <input type="hidden" name="Company_Cat" id="Company_Cat" value="">
+
+                    <input type="text" class="input__field input__field--nao search_company"  name="Mother_Maiden_Name" id="Mother_Maiden_Name" required>
+                    <label class="input__label input__label--nao" for="Mother_Meiden_Name">
+                    <span class="input__label-content input__label-content--nao">Mother Maiden Name</span>
+                    </label>
+                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
+                    <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
+                    </svg>
+                </span>
+    
+	<span class="input input--nao">
+                    <input type="hidden" name="Company_Cat" id="Company_Cat" value="">
+
+                    <input type="text" class="input__field input__field--nao search_company"  name="Pan_Card" id="Pan_Card" required>
+                    <label class="input__label input__label--nao" for="Pan_Card">
+                    <span class="input__label-content input__label-content--nao">Pan Card</span>
+                    </label>
+                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
+                    <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
+                    </svg>
+                </span>
+				
+				
+				<span class="input input--nao">
+                    <input type="hidden" name="Company_Cat" id="Company_Cat" value="">
+
+                    <input type="text" class="input__field input__field--nao search_company"  name="Address_Line_1" id="Address_Line_1" required>
+                    <label class="input__label input__label--nao" for="Address_Line_1">
+                    <span class="input__label-content input__label-content--nao">Address Line 1</span>
+                    </label>
+                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
+                    <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
+                    </svg>
+                </span>
+				<span class="input input--nao">
+                    <input type="hidden" name="Company_Cat" id="Company_Cat" value="">
+
+                    <input type="text" class="input__field input__field--nao search_company"  name="Address_Line_2" id="Address_Line_2" required>
+                    <label class="input__label input__label--nao" for="Address_Line_2">
+                    <span class="input__label-content input__label-content--nao">Address Line 2 (Optional)</span>
+                    </label>
+                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
+                    <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
+                    </svg>
+                </span>
+				<span class="input input--nao">
+                    <input type="hidden" name="Company_Cat" id="Company_Cat" value="">
+
+                    <input type="text" class="input__field input__field--nao search_company"  name="Address_Line_3" id="Address_Line_3" required>
+                    <label class="input__label input__label--nao" for="Address_Line_3">
+                    <span class="input__label-content input__label-content--nao">Address Line 3 (Optional)</span>
+                    </label>
+                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
+                    <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
+                    </svg>
+                </span>
+				
+				
+				
+				
+				<span class="input input--nao">
+                    <input type="hidden" name="Company_Cat" id="Company_Cat" value="">
+
+                    <input type="text" class="input__field input__field--nao search_company"  name="City" id="City" required>
+                    <label class="input__label input__label--nao" for="City">
+                    <span class="input__label-content input__label-content--nao">City</span>
+                    </label>
+                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
+                    <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
+                    </svg>
+                </span>
+				<span class="input input--nao">
+                    <input type="hidden" name="Company_Cat" id="Company_Cat" value="">
+
+                    <input type="text" class="input__field input__field--nao search_company"  name="State" id="State" required>
+                    <label class="input__label input__label--nao" for="State">
+                    <span class="input__label-content input__label-content--nao">State</span>
+                    </label>
+                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
+                    <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
+                    </svg>
+                </span>
+				<span class="input input--nao">
+                    <input type="hidden" name="Company_Cat" id="Company_Cat" value="">
+
+                    <input type="text" class="input__field input__field--nao search_company"  name="Pincode" id="Pincode" required>
+                    <label class="input__label input__label--nao" for="Pincode">
+                    <span class="input__label-content input__label-content--nao">Pincode</span>
+                    </label>
+                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
+                    <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
+                    </svg>
+                </span>
+				
+				
+				<span class="input input--nao">
+                    <input type="hidden" name="Company_Cat" id="Company_Cat" value="">
+
+                    <input type="text" class="input__field input__field--nao search_company"  name="Office_Name" id="Office_Name" required>
+                    <label class="input__label input__label--nao" for="Office_Name">
+                    <span class="input__label-content input__label-content--nao">Office Name</span>
+                    </label>
+                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
+                    <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
+                    </svg>
+                </span>
+				<span class="input input--nao">
+                    <input type="hidden" name="Company_Cat" id="Company_Cat" value="">
+
+                    <input type="text" class="input__field input__field--nao search_company"  name="Office_Address_1" id="Office_Address_1" required>
+                    <label class="input__label input__label--nao" for="Office_Address_1">
+                    <span class="input__label-content input__label-content--nao">Office Address Line 1</span>
+                    </label>
+                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
+                    <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
+                    </svg>
+                </span>
+				<span class="input input--nao">
+                    <input type="hidden" name="Company_Cat" id="Company_Cat" value="">
+
+                    <input type="text" class="input__field input__field--nao search_company"  name="Office_Address_2" id="Office_Address_2" required>
+                    <label class="input__label input__label--nao" for="Office_Address_2">
+                    <span class="input__label-content input__label-content--nao">Office Address Line 2 (Optional)</span>
+                    </label>
+                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
+                    <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
+                    </svg>
+                </span>
+				<span class="input input--nao">
+                    <input type="hidden" name="Company_Cat" id="Company_Cat" value="">
+
+                    <input type="text" class="input__field input__field--nao search_company"  name="Office_Address_3" id="Office_Address_3" required>
+                    <label class="input__label input__label--nao" for="Office_Address_3">
+                    <span class="input__label-content input__label-content--nao">Office Address Line 3 (Optional)</span>
+                    </label>
+                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
+                    <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
+                    </svg>
+                </span>
+				<span class="input_exp input--nao">
+                    <select class="input__field input__field--nao drop-arr" name="City" id="City" required>
+                    <option disabled selected value=""></option>
+					<option>Mumbai</option>
+                    </select>
+                    <label class="input__label input__label--nao" for="City">
+                    <span class="input__label-content input__label-content--nao">City</span>
+                    </label>
+                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
+                    <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
+                    </svg>
+                  </span>
+				<span class="input input--nao">
+                    <input type="hidden" name="Company_Cat" id="Company_Cat" value="">
+
+                    <input type="text" class="input__field input__field--nao search_company"  name="State" id="State" required>
+                    <label class="input__label input__label--nao" for="State">
+                    <span class="input__label-content input__label-content--nao">State</span>
+                    </label>
+                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
+                    <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
+                    </svg>
+                </span>
+				<span class="input input--nao">
+                    <input type="hidden" name="Company_Cat" id="Company_Cat" value="">
+
+                    <input type="text" class="input__field input__field--nao search_company"  name="Pincode" id="Pincode" required>
+                    <label class="input__label input__label--nao" for="Pincode">
+                    <span class="input__label-content input__label-content--nao">Pincode</span>
+                    </label>
+                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
+                    <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
+                    </svg>
+                </span>
+				<span class="input input--nao">
+                    <input type="hidden" name="Company_Cat" id="Company_Cat" value="">
+
+                    <input type="text" class="input__field input__field--nao search_company"  name="STD_Code" id="STD_Code" required>
+                    <label class="input__label input__label--nao" for="STD_Code">
+                    <span class="input__label-content input__label-content--nao">STD Code</span>
+                    </label>
+                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
+                    <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
+                    </svg>
+                </span>
+				<span class="input input--nao">
+                    <input type="hidden" name="Company_Cat" id="Company_Cat" value="">
+
+                    <input type="text" class="input__field input__field--nao search_company"  name="Phone_No" id="Phone_No" required>
+                    <label class="input__label input__label--nao" for="Phone_No">
+                    <span class="input__label-content input__label-content--nao">Phone No</span>
+                    </label>
+                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
+                    <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
+                    </svg>
+                </span>
+				<span class="input_exp input--nao">
+                    <select class="input__field input__field--nao drop-arr" name="City" id="City" required>
+                    <option disabled selected value=""></option>
+					<option>Graduate</option>
+                    </select>
+                    <label class="input__label input__label--nao" for="City">
+                    <span class="input__label-content input__label-content--nao">Educational Qualification</span>
+                    </label>
+                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
+                    <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
+                    </svg>
+                  </span>
+	
+	
+	<div class="col-md-12">
+	<br>
+	<p> <input type="checkbox" name="checkbx"/> I agree to the Disclaimer. Terms & Conditions Apply. I authorize TCFSL to make any enquiries with any other finance company/bank/registered credit bureau regarding my credit history with them. </p>
+	<div class="col-md-5"></div>
+	<div class="col-md-6 mrg-top"><button class="btn btn-primary btn-outline with-arrow">Apply Now<i class="icon-arrow-right"></i></button></div>
+	</div>
+	
   </div>
-  
-  
-  
 </div>
 
 </div>

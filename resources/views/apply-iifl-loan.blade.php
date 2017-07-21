@@ -36,7 +36,7 @@
       .bg-primary:hover {color:#fff;}
       .input__field {border-radius:0px;}
       .input__label--nao {top:11px;}
-      .input__field {border:1px solid #dfdfdf;height:55px;}
+      .input__field {height:55px;}
       label.error {display: none !important; }
         .error {
                     border:2px solid red;

@@ -15,15 +15,15 @@
     padding:0.8em 0.8em 4px 0px;
     width: 60%;
     border: none;
-    border-radius: 5px !important;
-    border-bottom:1px solid #eee;
-    /* border-radius: 0; */
-    background:#fbfbfb;
+    border-bottom:1px solid #ccc;
+     border-radius: 0;
+    background:#fff;
     color: #aaa;
     font-weight: 400;
     font-family: "Avenir Next", "Helvetica Neue", Helvetica, Arial, sans-serif;
     -webkit-appearance: none;
 }
+.brdr-btm {border-bottom:1px solid #ccc;}
 
 .input__field:focus {
 	outline: none;

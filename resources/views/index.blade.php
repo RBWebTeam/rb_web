@@ -483,7 +483,7 @@ you in future.
 			</div>
 		</div>
 		@include('layout.script')
-@include('layout.footer')
+        @include('layout.footer')
 		</aside>
 	</div>
 	

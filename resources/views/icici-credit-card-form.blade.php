@@ -768,10 +768,11 @@ $(".top").click(function() {
       <div class="modal-body">
         <h4><p id="modalerr"><h5>Your Application id is <b><span id="drop"></span></b>.<br>You have been <b><span id="drop1"></span></b>.<br><b><span id="drop2"></span></b><h5></p></h4>
         
+        <p><b>Thank You For Choosing ICICI Credit Card.<br>Kindly Click On The Link Sent To Your Mail To Go Ahead For Document Upload.</b></p>
       </div>
       
       <div class="modal-footer">
-        <a type="button" id="upload" name="upload" class="btn btn-primary" onclick="Redirect();" >Proceed to Document Upload</a>
+        <a type="button" id="upload" name="upload" class="btn btn-primary" onclick="Redirect();" >Ok</a>
         
       </div>
     </div>
@@ -1199,7 +1200,9 @@ $('.collapse').collapse({
 });
 
 
-$(".icici-credit-submit").click(function(event){event.preventDefault();
+$(".icici-credit-submit").click(function(event){
+  // alert('ojkae');
+  event.preventDefault();
 
 
 $('form#compareform').find('input').each(function(){
@@ -1498,9 +1501,10 @@ var inputs = $("#compareform input[required='required']");
 <script type="text/javascript">
           function Redirect() 
           {
-            var mobile=$('#ResidenceMobileNo').val();
-            var app_id=$('#drop').text();
-            window.location="http://erp.rupeeboss.com/Credit_Card_Upload_Docs.aspx?App_Id="+app_id+"&CardType=ICICI&MobileNo="+mobile;
+            // var mobile=$('#ResidenceMobileNo').val();
+            // var app_id=$('#drop').text();
+            // window.location="http://erp.rupeeboss.com/Credit_Card_Upload_Docs.aspx?App_Id="+app_id+"&CardType=ICICI&MobileNo="+mobile;
+            window.location.href ="{{URL::to('thank-you')}}";
           }
 </script>
 

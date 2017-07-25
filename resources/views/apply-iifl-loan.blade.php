@@ -36,7 +36,7 @@
       .bg-primary:hover {color:#fff;}
       .input__field {border-radius:0px;}
       .input__label--nao {top:11px;}
-      .input__field {border:1px solid #dfdfdf;height:55px;}
+      .input__field {height:55px;}
       label.error {display: none !important; }
         .error {
                     border:2px solid red;
@@ -114,9 +114,9 @@
                     </svg>
                 </span>
                 <span class="input input--nao">
-                    <input class="input__field input__field--nao" type="text" name="Monthly_Obligation" id="Monthly_Obligation" onkeypress="return fnAllowNumeric(event)" required  />
+                    <input class="input__field input__field--nao" type="text" name="Monthly_Obligation" id="Monthly_Obligation" onkeypress="return fnAllowNumeric(event)"  />
                     <label class="input__label input__label--nao" for="Monthly_Obligation">
-                    <span class="input__label-content input__label-content--nao">Total Existing EMI if Any</span>
+                    <span class="input__label-content input__label-content--nao">Total Existing EMI if Any (If Not Enter 0)</span>
                     </label>
                     <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
                     <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
@@ -474,7 +474,7 @@
                     <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
                     </svg>
                 </span>
-                <span class="input input--nao input--filled">
+                <span class="input input--nao">
                     <select class="input__field input__field--nao" name="PermanentCity" id="PermanentCity" required>
                         <option disabled selected value=""></option>
                     </select>
@@ -1621,11 +1621,11 @@ $(document).ready(function(){
          data: {
          '_token': v_token},
          success: function(msg){       
-            // populate_state(msg,'CurrentState');
+            populate_state(msg,'CurrentState');
             // populate_state(msg,'PermanentState');
             // populate_state(msg,'CoCurrentState');
             // populate_state(msg,'CoPermanentState');
-            // populate_state(msg,'CompanyState');
+            populate_state(msg,'CompanyState');
 
     }
 
@@ -1667,12 +1667,12 @@ $(document).ready(function(){
 
             // console.log(msg);
             if(param=='CityMaster'){
-                // populate_city_education(msg,'CurrentCity');
+                populate_city_education(msg,'CurrentCity');
                 // populate_city_education(msg,'PermanentCity');
                 populate_city_education(msg,'city');
                 // populate_city_education(msg,'CoCurrentCity');
                 // populate_city_education(msg,'CoPermanentCity');
-                //  populate_city_education(msg,'CompanyCity');
+                 populate_city_education(msg,'CompanyCity');
 
             }else if(param=='EducationMaster'){
                 populate_city_education(msg,'Education');
@@ -1747,8 +1747,8 @@ var global_tenure=0;
 
             var stay_at = $('#city').val();
             // console.log(stay_at);
-            $('#CurrentCity').val(stay_at);
-            $('#CurrentCity').closest( "span" ).addClass( "input--filled" );
+            // $('#CurrentCity').val(stay_at);
+            // $('#CurrentCity').closest( "span" ).addClass( "input--filled" );
             //$('#PermanentCity').val(stay_at);
             $('#City').val(stay_at);
             // var name= $('#Company_Name option:selected').text();
@@ -1767,7 +1767,9 @@ var global_tenure=0;
             $('#salary').empty().append(income);
 
             var emi= $('#Monthly_Obligation').val();
+            if(!emi){emi=0};
             $('#Current_EMI').empty().append(emi);
+
             $('#Current').empty().append(emi);
             $('#MonthlyObligation').val(emi);
             $('#paying_emi').empty().append(emi);
@@ -1778,9 +1780,9 @@ var global_tenure=0;
                 data : $('#iifl_express_loan').serialize(),
                 success: function(msg){
                         var data=msg[0];
-                        console.log(msg);
+                        // console.log(msg);
                         var result=loan_eligibility_calc(data.Max_Tenure,data.pf,data.roi,data.foir);
-                        console.log(msg);
+                        // console.log(msg);
                 
                         
     }  
@@ -1789,7 +1791,7 @@ var global_tenure=0;
 
     });
     function loan_eligibility_calc(tenure,pf,roi,foir){
-        console.log(foir);
+        // console.log(foir);
         // console.log(tenure+"  " +pf+ "  "+roi);
         var processing_fee =pf;
         $('#fee').empty().append(processing_fee);
@@ -1848,7 +1850,7 @@ var global_tenure=0;
             var applied_loan=$('#AppliedLoan').val();
             var fee=$('#fee').text();
             var EMI=$('#EMI').val();
-            console.log(EMI);
+            // console.log(EMI);
             $('#Eligibility_details').hide();
             $('#Applicant_Details').show();
             $('#Amount').empty().append(applied_loan);
@@ -1990,7 +1992,7 @@ var global_tenure=0;
              url: "{{URL::to('iifl-instant-eligibility')}}",
              data : $('#instant_form').serialize(),
              success: function(msg){
-                console.log(msg);
+                // console.log(msg);
                   $('#otp').hide();
                   $('#Instant_Approve').hide();   
                   $('#upload').show();
@@ -2003,13 +2005,13 @@ var global_tenure=0;
 $('#Applied, #Period').on('input', function () {
                
             var applied_loan = parseInt($('#Applied').val());
-            console.log(applied_loan);
+            // console.log(applied_loan);
             var no_of_days = parseFloat($('#Period').val());
-            console.log(applied_loan);
+            // console.log(applied_loan);
             var a = ($("input[name='ROI']").val());
-            console.log(a);
+            // console.log(a);
             var Rate = a/12/100;
-            console.log(Rate);
+            // console.log(Rate);
             var installment_iifl=applied_loan * Rate * (Math.pow(1 + Rate, no_of_days) / (Math.pow(1 + Rate, no_of_days) - 1));
             var installment =Math.round(installment_iifl);
             if(isNaN( installment) || installment=='Infinity'){
@@ -2040,7 +2042,7 @@ $('#Applied, #Period').on('input', function () {
          url: "{{URL::to('iifl-aadhar-otp')}}",
          data : $('#aadharotp').serialize(),
          success: function(msg){
-            console.log(msg);
+            // console.log(msg);
          }  
       });   
         }
@@ -2062,7 +2064,7 @@ $('#Applied, #Period').on('input', function () {
          url: "{{URL::to('iifl-aadhar-confirm-otp')}}",
          data : $('#confirm_aadharotp').serialize(),
          success: function(msg){
-              console.log(msg);
+              // console.log(msg);
         }  
       });   
         }
@@ -2129,13 +2131,13 @@ $('#Applied, #Period').on('input', function () {
          var applied_loan =Math.round(maxloanamt);
          $("input[name='AppliedLoanamount']").val(applied_loan);
          $("#personal_loan_amount").empty().append(applied_loan);
-         console.log(maxloanamt);
+         // console.log(maxloanamt);
 
          var maxTenure = maxTenure/12;
           global_days =maxTenure;
          var tenure =Math.round(maxTenure);
          $("input[name='Tenure']").val(tenure);
-         console.log(maxTenure);
+         // console.log(maxTenure);
          $("#perid").empty().append(tenure);
 
          var maxEmi=maxEmi;
@@ -2173,7 +2175,7 @@ $('#Applied, #Period').on('input', function () {
           processData: false,
           contentType: false,
           success: function(msg){
-            console.log(msg);
+            // console.log(msg);
             if (msg.head.status == "1") {
                 
                 alert("Reason: "+status_description); 
@@ -2182,7 +2184,7 @@ $('#Applied, #Period').on('input', function () {
             }else{
                 $('#upload').hide();
               $('#financial_doc').show();
-                console.log(msg);
+                // console.log(msg);
             }
               
             
@@ -2213,7 +2215,7 @@ $('#Applied, #Period').on('input', function () {
           success: function(msg){
                 $('#financial_doc').hide();
                 $('#error').show();
-                 console.log(msg);
+                 // console.log(msg);
         }
         });
      } 
@@ -2235,13 +2237,18 @@ $('#Applied, #Period').on('input', function () {
      $('#PermanentAddress3').closest( "span" ).addClass( "input--filled" );
      $('#PermanentPin').val($('#CurrentPin').val());
      $('#PermanentPin').closest( "span" ).addClass( "input--filled" );
-      var newOption1 = $('<option selected value="'+$('#CurrentCity').val()+'">'+$('#CurrentCity').text()+'</option>');
-        $('#PermanentCity').empty().append(newOption1);
+      var newOption1 = $("#CurrentCity option:selected").text();
+      var newOptions1 = $("#CurrentCity option:selected").val();
+      var city = $('<option selected value="'+newOptions1+'">'+newOption1+'</option>');
+      
+        $('#PermanentCity').empty().append(city);
      
      $('#PermanentCity').closest( "span" ).addClass( "input--filled" );
 
-     var newOption2 = $('<option selected value="'+$('#CurrentState').val()+'">'+$('#CurrentState').text()+'</option>');
-        $('#PermanentState').empty().append(newOption2);
+     var newOption2 = $("#CurrentState option:selected").text();
+      var newOptions2 = $("#CurrentState option:selected").val();
+      var state = $('<option selected value="'+newOptions2+'">'+newOption2+'</option>');
+        $('#PermanentState').empty().append(state);
      $('#PermanentState').closest( "span" ).addClass( "input--filled" );
      }else{
      $('#PermanentAddress1').val('');
@@ -2272,12 +2279,16 @@ $('#Applied, #Period').on('input', function () {
      $('#CoPermanentAddress3').closest( "span" ).addClass( "input--filled" );
      $('#CoPermanentPin').val($('#CoCurrentPin').val());
      $('#CoPermanentPin').closest( "span" ).addClass( "input--filled" );
-     var newOption3 = $('<option selected value="'+$('#CoCurrentCity').val()+'">'+$('#CoCurrentCity').text()+'</option>');
-        $('#CoPermanentCity').empty().append(newOption3);
+     var newOption3 = $("#CoCurrentCity option:selected").text();
+      var newOptions3 = $("#CoCurrentCity option:selected").val();
+      var co_city = $('<option selected value="'+newOptions3+'">'+newOption3+'</option>');
+        $('#CoPermanentCity').empty().append(co_city);
      $('#CoPermanentCity').closest( "span" ).addClass( "input--filled" );
 
-     var newOption4 = $('<option selected value="'+$('#CoCurrentState').val()+'">'+$('#CoCurrentState').text()+'</option>');
-        $('#CoPermanentState').empty().append(newOption4);
+     var newOption4 = $("#CoCurrentState option:selected").text();
+      var newOptions4 = $("#CoCurrentState option:selected").val();
+      var co_state = $('<option selected value="'+newOptions4+'">'+newOption4+'</option>');
+        $('#CoPermanentState').empty().append(co_state);
      $('#CoPermanentState').closest( "span" ).addClass( "input--filled" );
      }else{
      $('#CoPermanentAddress1').val('');
@@ -2385,7 +2396,7 @@ $('#Applied, #Period').on('input', function () {
             var today = new Date();
             var new_dateString=mon+"/"+day+"/"+yr;
             var date_of_joining = new Date(new_dateString);
-            console.log(new_dateString+" "+date_of_joining+" "+today);
+            // console.log(new_dateString+" "+date_of_joining+" "+today);
             if(date_of_joining > today || date_of_joining=='Invalid Date'){
                  $('#CurrentWorkExp').val('');
                  $('#CurrentWorkExp').closest( "span" )
@@ -2393,7 +2404,7 @@ $('#Applied, #Period').on('input', function () {
                 return false;
             }
             var experience = today.getFullYear() - yr;
-            console.log(today.getDay());
+            // console.log(today.getDay());
             //as month start from 0 in js
             var m = today.getMonth()+1 - mon;
             var exp=[experience,m];
@@ -2407,7 +2418,7 @@ $('#Applied, #Period').on('input', function () {
             $('#joining_date').change(function(){
 
                 var exp= getAge($('#joining_date').val());
-                console.log(exp);
+                // console.log(exp);
                 if(exp){
 
                     $('#CurrentWorkExp').val((exp[0]*12)+exp[1]);
@@ -2419,7 +2430,7 @@ $('#Applied, #Period').on('input', function () {
 
         <script type="text/javascript">
             $('#CurrentPin').keyup(function(){
-                console.log($('#CurrentPin').val().length);
+                // console.log($('#CurrentPin').val().length);
                 if ($('#CurrentPin').val().length == 6) {
                     var pincode =$('#CurrentPin').val();
                     var v_token ="{{csrf_token()}}";
@@ -2428,11 +2439,11 @@ $('#Applied, #Period').on('input', function () {
                         url: "{{URL::to('iifl-pincode-status')}}",
                         data : {'_token': v_token,'CurrentPin':pincode},
                         success: function(msg){
-                            console.log(msg.City);
-                            console.log(msg.State);
+                            // console.log(msg.City);
+                            // console.log(msg.State);
                             if (msg.Status =="Fail" ) 
                             {
-                               alert('Please Enter Valid Pincode');
+                               alert('Please Select City & State From Dropdown Provided.');
                                return false;
                             }else if(msg.Status =="Success"){
 
@@ -2459,7 +2470,7 @@ $('#Applied, #Period').on('input', function () {
         
         <script type="text/javascript">
             $('#PermanentPin').keyup(function(){
-                console.log($('#PermanentPin').val().length);
+                // console.log($('#PermanentPin').val().length);
                 if ($('#PermanentPin').val().length == 6) {
                     var pincode =$('#PermanentPin').val();
                     var v_token ="{{csrf_token()}}";
@@ -2468,11 +2479,11 @@ $('#Applied, #Period').on('input', function () {
                         url: "{{URL::to('iifl-permanent-pincode-status')}}",
                         data : {'_token': v_token,'PermanentPin':pincode},
                         success: function(msg){
-                            console.log(msg.City);
-                            console.log(msg.State);
+                            // console.log(msg.City);
+                            // console.log(msg.State);
                             if (msg.Status =="Fail" ) 
                             {
-                               alert('Please Enter Valid Pincode');
+                               alert('Please Select City & State From Dropdown Provided.');
                                return false;
                             }else if(msg.Status =="Success"){
 
@@ -2499,7 +2510,7 @@ $('#Applied, #Period').on('input', function () {
 
         <script type="text/javascript">
             $('#CoCurrentPin').keyup(function(){
-                console.log($('#CoCurrentPin').val().length);
+                // console.log($('#CoCurrentPin').val().length);
                 if ($('#CoCurrentPin').val().length == 6) {
                     var pincode =$('#CoCurrentPin').val();
                     var v_token ="{{csrf_token()}}";
@@ -2508,12 +2519,12 @@ $('#Applied, #Period').on('input', function () {
                         url: "{{URL::to('iifl-co-pincode-status')}}",
                         data : {'_token': v_token,'CoCurrentPin':pincode},
                         success: function(msg){
-                            console.log(msg.Status);
-                            console.log(msg.City);
-                            console.log(msg.State);
+                            // console.log(msg.Status);
+                            // console.log(msg.City);
+                            // console.log(msg.State);
                             if (msg.Status =="Fail" ) 
                             {
-                               alert('Please Enter Valid Pincode');
+                               alert('Please Select City & State From Dropdown Provided.');
                                return false;
                             }else if(msg.Status =="Success") {
                             var city =msg.City;
@@ -2539,7 +2550,7 @@ $('#Applied, #Period').on('input', function () {
 
         <script type="text/javascript">
             $('#CompanyPin').keyup(function(){
-                console.log($('#CompanyPin').val().length);
+                // console.log($('#CompanyPin').val().length);
                 if ($('#CompanyPin').val().length == 6) {
                     var pincode =$('#CompanyPin').val();
                     var v_token ="{{csrf_token()}}";
@@ -2548,12 +2559,12 @@ $('#Applied, #Period').on('input', function () {
                         url: "{{URL::to('iifl-company-pincode-status')}}",
                         data : {'_token': v_token,'CompanyPin':pincode},
                         success: function(msg){
-                            console.log(msg.Status);
-                            console.log(msg.City);
-                            console.log(msg.State);
+                            // console.log(msg.Status);
+                            // console.log(msg.City);
+                            // console.log(msg.State);
                             if (msg.Status =="Fail" ) 
                             {
-                               alert('Please Enter Valid Pincode');
+                               alert('Please Select City & State From Dropdown Provided.');
                                return false;
                             }else if(msg.Status =="Success") {
                             var city =msg.City;
@@ -2574,4 +2585,7 @@ $('#Applied, #Period').on('input', function () {
                 }  
        });    
    </script>
+
+   
+
    

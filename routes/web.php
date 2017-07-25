@@ -74,6 +74,7 @@ Route::post('term-loan/calculate','WorkingCapitalController@termcalculate');
 
 
 Route::post('working-capital-submit','WorkingCapitalController@working_capital_submit');
+Route::get('apply-tatacapital-loan','TataCapitalLoanController@apply_tatacapital_loan');
 
 
 Route::get('refresh-csrf', function(){

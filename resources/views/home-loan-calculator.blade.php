@@ -5,8 +5,8 @@
                          <div class="container">
                           <div class="row">
                         <center>
-                        <h1 class="loan-head">Home Loan EMI Calculator</h1>
-                        <h3><p class="sub-title" >Calculate your Home Loan EMI and Eligibility Status Due in a snap! <i class="fa fa-calculator" style="color:#000000" aria-hidden="true"></i></p></h3>
+                        <h1 class="loan-head" style="color: #C33F53">Home Loan EMI Calculator</h1>
+                        <h3><p class="sub-title" ><b>Calculate your Home Loan EMI and Eligibility Status Due in a snap! <i class="fa fa-calculator" style="color:#000000" aria-hidden="true"></i></b></p></h3>
                       </center>
                       
                       <div class="col-md-2"></div>
@@ -18,9 +18,18 @@
                                 <div class="row">
                                     <div class="form-group">
                                        
-                                       <input type="hidden" name="ApplicantSource" id="ApplicantSource" value="1">
+                                       <!-- <input type="hidden" name="ApplicantSource" id="ApplicantSource" value="1"> -->
                                       <input type="hidden" name="ProductId" id="ProductId" value="12">
                                         
+                                        <div class="col-md-4">
+                                          <select class="form-control block drop-arr select-sty" name="ApplicantSource" id="ApplicantSource"  required>
+                                            <option value="">Applicant Source</option>
+                                            <option value="1">Salaried</option>
+                                            <option value="2">Self-Employed</option>
+                                              
+                                          </select> 
+                                        </div>
+
                                         <div class="col-md-4">
                                             <input type="text" class="form-control" placeholder= "Property Cost" name="PropertyCost" id="PropertyCost" onkeypress="return fnAllowNumeric(event)" minlength="6" maxlength="9" required>
                                         </div>
@@ -60,27 +69,32 @@
                                             </select> 
                                         </div>
 
-                                        <div class="col-md-4">
-                                            <input type="text" class="form-control" id="ApplicantIncome" name="ApplicantIncome" placeholder="Income" minlength="5" maxlength="9"  onkeypress="return fnAllowNumeric(event)" required>
+                                        <div class="col-md-4" id="income" style="display: none;">
+                                            <input type="text" class="form-control" id="ApplicantIncome" name="ApplicantIncome" placeholder="Income"  minlength="5" maxlength="9"   onkeypress="return fnAllowNumeric(event)" required>
                                         </div>
 
-                                         <div class="col-md-4">
+                                         <div class="col-md-4" id="obligation" style="display: none;" >
+                                            <input type="text" class="form-control " id="ApplicantObligations" name="ApplicantObligations" placeholder="Obligations" value="" onkeypress="return fnAllowNumeric(event)" >
+                                        </div>
+
+
+                                        
+
+                                         <div class="col-md-4" id="turnover" style="display: none;">
                                             <input type="text" class="form-control " id="Turnover" name="Turnover" placeholder="Turnover" onkeypress="return fnAllowNumeric(event)"  required>
                                         </div>
 
-                                        <div class="col-md-4">
-                                            <input type="text" class="form-control " id="ApplicantObligations" name="ApplicantObligations" placeholder="Applicant Obligations" onkeypress="return fnAllowNumeric(event)"  required>
-                                        </div>
+                                        
 
-                                        <div class="col-md-4">
+                                        <div class="col-md-4" id="pat" style="display: none;">
                                             <input type="text" class="form-control" id="ProfitAfterTax" name="ProfitAfterTax" placeholder="Profit After Tax"  onkeypress="return fnAllowNumeric(event)" required>
                                         </div>
 
-                                        <div class="col-md-4">
+                                        <div class="col-md-4" id="depreciation" style="display: none;">
                                             <input type="text" class="form-control" id="Depreciation" name="Depreciation" placeholder="Depreciation"  onkeypress="return fnAllowNumeric(event)" required>
                                         </div>
 
-                                        <div class="col-md-4">
+                                        <div class="col-md-4" id="remuneration" style="display: none;">
                                             <input type="text" class="form-control" id="DirectorRemuneration" name="DirectorRemuneration" placeholder="Director/Partner Remuneration "  onkeypress="return fnAllowNumeric(event)" required>
                                         </div>
 
@@ -108,7 +122,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title">Eligibility Status</h4>
+        <h4 class="modal-title" style="text-align: center">Eligibility Status</h4>
       </div>
       <div class="modal-body">
         <center>
@@ -215,6 +229,62 @@
       }
     }
     $(document).on("change, keyup", "#PropertyCost", update);
+});
+</script>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('#ApplicantSource').on('change', function() {
+      // console.log(this.value);
+      if ( this.value == 2)
+
+      {
+        // alert('2');
+        $("#turnover").show();
+        $("#pat").show();
+        $("#depreciation").show();
+        $("#remuneration").show();
+        $("#income").hide();
+        $("#obligation").hide();
+      }
+      else if (this.value == 1) 
+      {
+        // alert('1');
+        $("#turnover").hide();
+        $("#pat").hide();
+        $("#depreciation").hide();
+        $("#remuneration").hide();
+        $("#income").show();
+        $("#obligation").show();
+        
+      }
+    });
+});
+</script>
+
+<script type="text/javascript">
+  function ApplicantObligations(){
+var result = true;
+$("input").each(function() {
+        if (!this.value) {
+            this.value = 0;
+        }
+        
+        if(jQuery.isNumeric(this.value) && this.value>=0){
+            
+        }else{
+            result = false;
+        }
+    });
+    return result;
+}
+
+$('#ckeck_eligibility').click(function(){
+    var testInput = ApplicantObligations();
+    if(testInput){
+        var finalValue = $('#ApplicantObligations').val();
+         $('span').text(finalValue);
+    }
 });
 </script>
 

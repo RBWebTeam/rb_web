@@ -15,15 +15,15 @@
     padding:0.8em 0.8em 4px 0px;
     width: 60%;
     border: none;
-    border-radius: 5px;
-    border: 1px solid #f0f0f0;
-    /* border-radius: 0; */
-    background: #f8f8f8;
+    border-bottom:1px solid #ccc;
+     border-radius: 0;
+    background:#fff;
     color: #aaa;
     font-weight: 400;
     font-family: "Avenir Next", "Helvetica Neue", Helvetica, Arial, sans-serif;
     -webkit-appearance: none;
 }
+.brdr-btm {border-bottom:1px solid #ccc;}
 
 .input__field:focus {
 	outline: none;
@@ -245,7 +245,7 @@
 
 .input__field--nao {
     width: 100%;
-    padding-left: 5px;
+    padding-left:9px;
     color: #9da8b2;
     font-size: 1.25em;
 }

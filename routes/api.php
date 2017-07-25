@@ -40,6 +40,8 @@ Route::post('erp-user','ApiController@create_user_via_erp');
 Route::post('save-profile-pic','MobileApiController@user_profile_picture');
 Route::post('emi-calc-app','ApiController@emi_cal_app');
 Route::post('productwise_emi_cal_app','ApiController@productwise_emi_cal_app');
+Route::post('test-documentupload','ApiController@test_document_upload');
+
 
 // Route::get('get-profile-pic','MobileApiController@get_profile_pic');
 //working capital-emi-calculator

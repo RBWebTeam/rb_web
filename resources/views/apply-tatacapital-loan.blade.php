@@ -95,22 +95,22 @@
                     </svg>
                   </span>
 				  
-				  <span class="input_exp input--nao">
+				  <span class="input_exp input--nao brdr-btm">
 				     <span>Gender</span>
 					 <div class="gray-txt"> <input type="radio" name="gender" />Male &nbsp; &nbsp; <input type="radio" name="gender" /> Female</div>
 				  </span>
 				   <span class="input_exp input--nao">
 				     <span>Date of birth</span>
 					 <div>
-					 <select class="drop-arr pading" name="days" id="days" required>
+					 <select class="drop-arr pading brdr-btm" name="days" id="days" required>
                     <option disabled selected value="">Day</option>
 					<option>25</option>
                     </select>
-					<select class="drop-arr pading" name="Month" id="Month" required>
+					<select class="drop-arr pading brdr-btm" name="Month" id="Month" required>
                     <option disabled selected value="">Month</option>
 					<option>Jan</option>
                     </select>
-					<select class="drop-arr pading" name="Year" id="Year" required>
+					<select class="drop-arr pading brdr-btm" name="Year" id="Year" required>
                     <option disabled selected value="">Year</option>
 					<option>1980</option>
                     </select>

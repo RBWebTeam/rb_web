@@ -1136,7 +1136,7 @@
             </form>
             </div>
 
-            <div id="upload" style="display: none;" >
+            <div id="upload" >
             <form name="upload_details" id="upload_details" enctype="multipart/form-data" method="POST">
             {{ csrf_field() }}
             <div>

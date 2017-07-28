@@ -137,6 +137,10 @@ Route::get('fire-calculator','CalculatorController@fire_calculator');
 Route::get('lendingkart','LoanController@lendingkart');
 Route::post('lendingkart-details','LoanController@lendingkart_details');
 Route::post('lendingkart-doc-upload','LoanController@lendingkart_doc');
+Route::get('test_doc','LoanController@test_doc');
+Route::post('test_doc_upload','LoanController@test_doc_upload');
+
+
 
 Route::get('team','TeamController@team');
 // Creditcardform

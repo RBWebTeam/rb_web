@@ -111,7 +111,7 @@
     });
 </script>
 
-<script type="text/javascript">
+<!-- <script type="text/javascript">
     $('#reset_1').click(function(){
         $("#bank_statement")[0].selectedIndex = 0;
     });
@@ -127,4 +127,4 @@
     $('#reset_4').click(function(){
         $("#activity")[0].selectedIndex = 0;
     });
-</script>
+</script> -->

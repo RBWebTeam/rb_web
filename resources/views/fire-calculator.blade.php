@@ -19,8 +19,8 @@
 					  <table class="table table-striped table-bordered">
 					   
 					   <tr>
-					      <td width="40%">Date</td>
-						  <td width="60%"><input type="date" name="date" class="newsletter-name"/></td>
+					      <td width="60%">Date</td>
+						  <td width="38%"><input type="date" name="date" class="newsletter-name"/></td>
 						  
 					   </tr>
 					   <tr>
@@ -381,6 +381,33 @@
 					  </table>
 					  </div>
 					  </div>
+					  
+					  
+					  
+					  
+					   <div class="col-md-12 container white-bg box-shadow">
+					  <div class="col-md-1"></div>
+					  <div class="col-md-10">
+					  <br>
+					  
+					  <table class="table table-striped table-bordered">
+					  <tr class="text-capitalize">
+					      <td>Company ID</td>
+						  <td>Comapny Name</td>
+						  <td>Ty Rate</td>
+						  <td>Base Rate</td>
+						  <td>Rate 3</td>
+						  <td>Total Premium</td>
+					  </tr>
+					  <tr>
+					      <td>56756765</td>
+						  <td>Rupeeboss</td>
+						  <td>10%</td>
+						  <td>15%</td>
+						  <td>13%</td>
+						  <td>Rs.12,000</td>
+					  </tr>
+					  </table>
 					</div>
 					</div>
 					</div>

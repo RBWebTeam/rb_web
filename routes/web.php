@@ -133,6 +133,10 @@ Route::get('personal-loan-calculator','CalculatorController@personal_loan_calcul
 Route::post('personal-loan-calculation','CalculatorController@personal_loan_calculation');
 Route::get('home-loan-calculator','CalculatorController@home_loan_calculator');
 Route::post('home-loan-calculation','CalculatorController@home_loan_calculation');
+Route::get('fire-calculator','CalculatorController@fire_calculator');
+Route::get('lendingkart','LoanController@lendingkart');
+Route::post('lendingkart-details','LoanController@lendingkart_details');
+Route::post('lendingkart-doc-upload','LoanController@lendingkart_doc');
 
 Route::get('team','TeamController@team');
 // Creditcardform

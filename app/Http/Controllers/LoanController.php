@@ -682,4 +682,29 @@ $url = $this::$url_static."/BankAPIService.svc/updateIIFLRevisedQuote";
     
      return response()->json( $obj);
   }
+
+   public function lendingkart(){
+    return view('lendingkart');
+   }
+
+   public function lendingkart_details(Request $req){
+     $data=$req->all();
+     $data['brokerid']=Session::get('brokerid')?Session::get('brokerid'):'MAA=';
+     $data['empid']=Session::get('empid')?Session::get('empid'):'MAA=';
+     $data['source']=Session::get('source')?Session::get('source'):'MAA=';
+     $post_data=json_encode($data);
+     // print_r($post_data);exit();
+     $url = $this::$url_static."BankAPIService.svc/createLendingKartLead";
+     $result=$this->call_json_data_api($url,$post_data);
+     $http_result=$result['http_result'];
+     $error=$result['error'];
+       $n=(json_decode($http_result));
+        
+     return response()->json(json_decode($n));
+
+   }
+
+   public function lendingkart_doc(Request $req){
+    print_r($req->all());
+   }
 }

@@ -18,7 +18,7 @@
                          
                          </select class="pad">
                      </td>
-                     <td><input type="file" name="bank_proof" id="bank_proof" class="pull-right" required="" data-category="1"> <input type="reset" id="reset_1"></td></td>
+                     <td><input type="file" name="bank_proof" id="bank_proof" class="pull-right" required="" data-category="1"> <a class="btn btn-success btn-outline with-arrow mrg-top" id="reset_1">Reset<i class="icon-arrow-right"></i></a></td>
                    </tr>
 
                    <tr>
@@ -32,7 +32,7 @@
                          </select class="pad">
                      </td>
                      <td><input type="file" name="identity_proof" id="identity_proof" class="pull-right" required="" data-category="2">
-                     <input type="reset"  id="reset_2"></td>
+                     <a class="btn btn-success btn-outline with-arrow mrg-top" id="reset_2">Reset<i class="icon-arrow-right"></i></a></td>
                    </tr>
 
                     <tr>
@@ -43,7 +43,7 @@
                          <option value="Tax_Returns">VAT/Service Tax Returns</option>
                         </select class="pad">
                      </td>
-                     <td><input type="file" name="vat_proof" id="vat_proof" class="pull-right" required data-category="3"> <input type="reset" id="reset_3"></td></td>
+                     <td><input type="file" name="vat_proof" id="vat_proof" class="pull-right" required data-category="3"> <a class="btn btn-success btn-outline with-arrow mrg-top" id="reset_3">Reset<i class="icon-arrow-right"></i></a></td>
                    </tr>
 
                    <tr>
@@ -59,7 +59,7 @@
                          
                          </select class="pad">
                      </td>
-                     <td><input type="file" name="Proof_of_activity" id="Proof_of_activity" class="pull-right" required data-category="4"> <input type="reset" id="reset_4"></td></td>
+                     <td><input type="file" name="Proof_of_activity" id="Proof_of_activity" class="pull-right" required data-category="4"> <a class="btn btn-success btn-outline with-arrow mrg-top" id="reset_4">Reset<i class="icon-arrow-right"></i></a></td>
                    </tr>
                   </table>
 
@@ -111,20 +111,24 @@
     });
 </script>
 
-<!-- <script type="text/javascript">
+<script type="text/javascript">
     $('#reset_1').click(function(){
         $("#bank_statement")[0].selectedIndex = 0;
+        $("#bank_proof").val("");
     });
 
     $('#reset_2').click(function(){
         $("#identity")[0].selectedIndex = 0;
+        $("#identity_proof").val("");
     });
 
     $('#reset_3').click(function(){
         $("#vat")[0].selectedIndex = 0;
+        $("#vat_proof").val("");
     });
 
     $('#reset_4').click(function(){
         $("#activity")[0].selectedIndex = 0;
+        $("#Proof_of_activity").val("");
     });
-</script> -->
+</script>

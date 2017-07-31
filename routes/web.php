@@ -26,6 +26,7 @@ Route::get('searchcompanyajax',array('as'=>'searchcompanyajax','uses'=>'AutoComp
 Route::get('searchiiflcompanyajax',array('as'=>'searchiiflcompanyajax','uses'=>'AutoCompleteController@autoComplete_iiflcompany')); 
 
 
+
 Route::post('loan-submit','FormController@p_loan_submit');
 
 Route::get('apply-car-loan','LoanController@apply_car_loan');
@@ -139,6 +140,7 @@ Route::post('lendingkart-details','LoanController@lendingkart_details');
 Route::post('lendingkart-doc-upload','LoanController@lendingkart_doc');
 Route::get('test_doc','LoanController@test_doc');
 Route::post('test_doc_upload','LoanController@test_doc_upload');
+Route::get('early-salary','LoanController@early_salary');
 
 
 

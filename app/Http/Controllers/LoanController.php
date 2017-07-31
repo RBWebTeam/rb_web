@@ -743,4 +743,8 @@ $url = $this::$url_static."/BankAPIService.svc/updateIIFLRevisedQuote";
       $response=json_encode($res);
    return ($response);
  }
+
+    public function early_salary(){
+      return view('early-salary');
+    }
 }

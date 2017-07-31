@@ -57,12 +57,12 @@
         <div class="panel-body">
 	    <section class="content">
 	  <span class="input_exp input--nao widt-half">
-                    <select class="input__field input__field--nao drop-arr" name="Title" id="Title" required>
+                    <select class="input__field input__field--nao drop-arr" name="title" id="title" required>
                     <option disabled selected value=""></option>
 					<option value="Mr.">Mr</option>
 					<option value="Mrs.">Mrs</option>
                     </select>
-                    <label class="input__label input__label--nao" for="Title">
+                    <label class="input__label input__label--nao" for="title">
                     <span class="input__label-content input__label-content--nao">Title</span>
                     </label>
                     <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
@@ -159,7 +159,7 @@
 				  <span class="input input--nao">
                   
 
-                    <input type="text" class="input__field input__field--nao "   name="resMobNo" id="resMobNo" required onkeypress="return fnAllowNumeric(event)" minlength="0"   maxlength="10">
+                    <input type="text" class="input__field input__field--nao "   name="resMobNo" id="resMobNo" required onkeypress="return fnAllowNumeric(event)" minlength="10"   maxlength="10">
                     <label class="input__label input__label--nao" for="resMobNo">
                     <span class="input__label-content input__label-content--nao">Mobile No</span>
                     </label>
@@ -982,7 +982,8 @@
                     <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
                     </svg>
                 </span>
-
+                 
+                  <center id="loader_id"></center>
               
 
 				<!--span class="input input--nao">
@@ -1085,6 +1086,8 @@
 	<div class="col-md-6 mrg-top"><button class="btn btn-primary btn-outline with-arrow" id="apply_now">Apply Now<i class="icon-arrow-right"></i></button></div>
 	</div>
     </form>
+
+
 	
   </div>
 </div>
@@ -1110,6 +1113,8 @@ var data3= {};
 var serialize1=0;
 var serialize2=0;
 var serialize3=0;
+
+var Errorcheck=0;
 
 window.onload=function(){
 $('.collapse').collapse({
@@ -1176,6 +1181,7 @@ if( $('#resPincode').val()!='' &&  $('#dob').val()!=''  &&  $('#resMobNo').val()
               },
               success: function(data) {
                 response(data);
+                 $('#companyName').removeClass('loading');
               }
             });
           },
@@ -1183,6 +1189,7 @@ if( $('#resPincode').val()!='' &&  $('#dob').val()!=''  &&  $('#resMobNo').val()
              if (ui.item == null || ui.item == undefined || ui.item.value=='No Result Found') {
                     $('#companyName').val('');
                     $('#companyName').val('');
+
                  }else{
                    if(ui.item.nComp) 
             var len=ui.item.nComp;
@@ -1197,6 +1204,9 @@ if( $('#resPincode').val()!='' &&  $('#dob').val()!=''  &&  $('#resMobNo').val()
 
      }
 
+       }).on('keyup',function(){
+              $('#companyName').addClass('loading');
+           
        });
       });
 
@@ -1470,8 +1480,13 @@ $('#selectaddress').change(function(){
           maxDate: year,
           minDate: "-100Y",
           yearRange: '-100:' + year + '',
-          defaultDate: d
+          defaultDate: d,
+
         });
+
+          $(".tatacapitaldate").on('change',function(){
+          $(this).closest('span').addClass('input--filled');
+        })
   </script>
 <script type="text/javascript">
 
@@ -1579,7 +1594,10 @@ function pan_card(obj,val){
  $('#empProvince').val(empProvince );
  $('#empCity').val(empCity);
 
-            if($('#disclaimer:checkbox:checked')){
+
+ var    CheckeID = $('#disclaimer:checkbox:checked').length > 0;
+                if (CheckeID == true) {
+
              serialize3=form.serialize();  // form data
             // var formdata =form.serializeArray();
             // $(formdata ).each(function(index, obj){
@@ -1587,45 +1605,87 @@ function pan_card(obj,val){
             // }); console.log(JSON.stringify(data3));    
 
 
-   // form submit for api
+   
           var ser=serialize1+'&'+serialize2+'&'+serialize3;
-
-          console.log(serialize1+'&'+serialize2+'&'+serialize3);
+         
+        //  console.log(serialize1+'&'+serialize2+'&'+serialize3);
+          $('#loader_id').addClass('loader');
       $.ajax({  
              type: "POST",  
              url: "{{URL::to('tatacapitalsubmitform')}}",
              data :ser,
              success: function(msg){
+
+                    $('#loader_id').removeClass('loader');
+                       Errorcheck=msg;
+                       var obj = JSON.parse(msg);
+                       console.log(obj.RetStatus);
+                         if(obj.RetStatus=='SUCCESS'){
+                               // WebTopNo
+                               // LeadId
+                               // redirect to upload
+                               alert(obj.LeadId);
+                        
+                         }else{
+                            alert(obj.ErrorMessage);
+                            if(obj.Remarks){
+                              alert(obj.Remarks);
+                            }
+                         }
+
+                      
+
                      
-                    
                 }
 
             });
-
-
-
-
 
        }else{
         alert("check checkbox");
        }
 }else{
 
-    alert("Please fill carefully form...");
+    alert("Please fill carefully form.. ");
 }
 }
 
 });
 </script>
 
-
-
-   <script>
- 
+ <script>
 $(document).ready(function() {
    $(".nav li.disabled a").click(function() {
      return false;
    });
 });
    </script>
-              
+ <style type="text/css">
+.loading {
+    background:url('http://www.hsi.com.hk/HSI-Net/pages/images/en/share/ajax-loader.gif') no-repeat right center;
+
+}
+
+ </style>
+
+<style>
+.loader {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498DB;
+  border-bottom: 16px solid #3498DB;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+</style>

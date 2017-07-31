@@ -128,21 +128,15 @@ public function tatacapitalcity(Request $request){
 }
 
 public function tatacapitalsubmitform(Request $req){
-
-       //  print_r($req->all());
-         $reques=$req->all();
-
-
-    
-
+    $reques=$req->all();
     $post_data=json_encode($reques);
     $url ="http://api.rupeeboss.com/BankAPIService.svc/createTataCapitalPLAppln";
     $result=$this->call_json_data_api($url,$post_data);
     $http_result=$result['http_result'];
     $error=$result['error'];
-    $abc= json_decode($http_result);
+    $responce= json_decode($http_result);
 
-     print_r($abc);
+     return response()->json($responce);
 
 }
 

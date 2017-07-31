@@ -11,21 +11,21 @@
                         <center>
                         <h1 class="loan-head">Fire Calculator</h1>
                       </center>
-					  <div class="col-md-12 container white-bg box-shadow">
+					  <div class="col-md-12 container" style="background:#d9e8f4;">
 					  <div class="col-md-2"></div>
 					  <div class="col-md-8">
 					  <br>
 					  <h2 class="pad">SFSP QUOTE</h2>
-					  <table class="table table-striped table-bordered">
+					  <table class="table table-striped table-bordered box-shadow" style="background:#fff;">
 					   
 					   <tr>
-					      <td width="60%">Date</td>
-						  <td width="38%"><input type="date" name="date" class="newsletter-name"/></td>
+					      <td>Date</td>
+						  <td><input type="date" name="date" class="newsletter-name" placeholder="Date of Birth"/></td>
 						  
 					   </tr>
 					   <tr>
 					      <td>Client</td>
-						  <td><input type="text" name="txt" class="newsletter-name"/></td> 
+						  <td><input type="text" name="txt" class="newsletter-name" placeholder="Client Name"/></td> 
 					   </tr>
 					   <tr>
 					      <td>Correspondence Address</td>
@@ -59,12 +59,12 @@
 					  </div>
 					  </div>
 					  
-					  <div class="col-md-12 container white-bg box-shadow">
+					  <div class="col-md-12 container box-shadow" style="background:#d9e8f4;">
 					  <div class="col-md-2"></div>
 					  <div class="col-md-8">
 					  <br>
 					  
-					  <table class="table table-striped table-bordered">
+					  <table class="table table-striped table-bordered" style="background:#fff;">
 					   
 					   <tr class="bg-info">
 					      <td>SL</td>
@@ -115,12 +115,12 @@
 					  
 					  
 					  
-					  <div class="col-md-12 container white-bg box-shadow">
+					  <div class="col-md-12 container" style="background:#d9e8f4;">
 					  <div class="col-md-2"></div>
 					  <div class="col-md-8">
 					  <br>
 					  
-					  <table class="table table-striped table-bordered">
+					  <table class="table table-striped table-bordered box-shadow" style="background:#fff;">
 					   
 					   <tr class="bg-info">
 					      <td colspan="3">Addon Coverage</td>

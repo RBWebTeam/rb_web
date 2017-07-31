@@ -26,9 +26,11 @@
 
 <div class="container">
 <div class="row">
-<div class="col-md-12 white-bg box-shadow">
-<br>
 <h3 class="text-center">Get a Personal Loan From TATA Capital in 3 Simple Steps.</h3>
+<br>
+<div class="col-md-12 white-bg box-shadow">
+
+
 <br>
 <ul class="nav nav-tabs nav-justified">
   <li class="active active-bg home" ><a data-toggle="tab" href="#home" ><b>1. ENTER A DETAILS</b></a></li>

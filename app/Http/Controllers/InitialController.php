@@ -33,7 +33,7 @@ class InitialController extends Controller
 	}
   //for file upload ,file to base 64 conversion
 	public function FileToString($str,$req){
-           // print_r($str);exit();
+             // print_r($req);exit();
 		$imageName = time().'.'.$req->$str->getClientOriginalExtension();
             $extension=$req->$str->getClientOriginalExtension();
             $filename = $req->$str->getpathName();//Image path

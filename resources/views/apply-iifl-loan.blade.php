@@ -1201,7 +1201,7 @@
             </div>
                 
 
-            <div id="financial_doc" style="display: none;" >
+            <div id="financial_doc" >
 
                 <form name="financial_details" id="financial_details" enctype="multipart/form-data" method="POST">
                  {{ csrf_field() }}

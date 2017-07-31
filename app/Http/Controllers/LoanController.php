@@ -535,7 +535,7 @@ $url = $this::$url_static."/BankAPIService.svc/updateIIFLRevisedQuote";
     }
 
     public function iifl_doc_upload(Request $req){
-      //print_r($req->all());exit();
+      // print_r($req->all());exit();
      $prospectno=Session::get('prospectno');
       $str = array('identity_proof','address_proof','ownership_proof');
       $cat_id = array(1,2,5);
@@ -547,6 +547,7 @@ $url = $this::$url_static."/BankAPIService.svc/updateIIFLRevisedQuote";
           $extension=$req->$file->getClientOriginalExtension();
           $sub_catg=$req['sub_catg'];
           //print_r($sub_catg);exit();
+
           $post_data='{
      "head": {
     "requestCode": "PLRQDOCKYC01",
@@ -558,7 +559,7 @@ $url = $this::$url_static."/BankAPIService.svc/updateIIFLRevisedQuote";
   },           
                   "body": {"ProspectNumber":"'.$prospectno.'","ApplicantType":"Applicant",
                  "CatID":"'.$cat_id[$i].'","SubCatID":"'.$sub_catg[$i+1].'","ImageName":"'.$imageName.'","Extension":"'.$extension.'","Base64string":"'.$base64[$i].'"}}';
-             
+             // print_r($post_data);exit(); 
          $url = $this::$url_static."/BankAPIService.svc/uploadIIFLKYC";
          $result=$this->call_json_data_api($url,$post_data);
          $http_result=$result['http_result'];
@@ -681,4 +682,29 @@ $url = $this::$url_static."/BankAPIService.svc/updateIIFLRevisedQuote";
     
      return response()->json( $obj);
   }
+
+   public function lendingkart(){
+    return view('lendingkart');
+   }
+
+   public function lendingkart_details(Request $req){
+     $data=$req->all();
+     $data['brokerid']=Session::get('brokerid')?Session::get('brokerid'):'MAA=';
+     $data['empid']=Session::get('empid')?Session::get('empid'):'MAA=';
+     $data['source']=Session::get('source')?Session::get('source'):'MAA=';
+     $post_data=json_encode($data);
+     // print_r($post_data);exit();
+     $url = $this::$url_static."BankAPIService.svc/createLendingKartLead";
+     $result=$this->call_json_data_api($url,$post_data);
+     $http_result=$result['http_result'];
+     $error=$result['error'];
+       $n=(json_decode($http_result));
+        
+     return response()->json(json_decode($n));
+
+   }
+
+   public function lendingkart_doc(Request $req){
+    print_r($req->all());
+   }
 }

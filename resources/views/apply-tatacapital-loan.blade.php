@@ -1605,10 +1605,11 @@ function pan_card(obj,val){
             // }); console.log(JSON.stringify(data3));    
 
 
-   // form submit for api
+   
           var ser=serialize1+'&'+serialize2+'&'+serialize3;
-           $('#loader_id').addClass('loader');
+         
         //  console.log(serialize1+'&'+serialize2+'&'+serialize3);
+          $('#loader_id').addClass('loader');
       $.ajax({  
              type: "POST",  
              url: "{{URL::to('tatacapitalsubmitform')}}",

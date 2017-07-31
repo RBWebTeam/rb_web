@@ -4,8 +4,8 @@
 		<aside id="fh5co-hero">
 		<div class="col-md-2"></div>
 	   <div class="col-md-8 exp-pad"><h2>You hereby Appoint Rupeeboss As Your Authorised Representive to Receive Your Credit Information from Experian.</h2></div>
-	    <div class="col-lg-3"></div>
-		<div class="col-lg-6">
+	    <div class="col-lg-4"></div>
+		<div class="col-lg-4">
 	                       <div class="exp-form box-shadow">
 						   
 						   <form name="credit_report_otp_form" id="credit_report_otp_form" method="POST">

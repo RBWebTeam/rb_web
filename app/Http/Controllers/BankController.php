@@ -17,16 +17,6 @@ class BankController extends InitialController
 
 	public function home_loanBank($product,$bank){
 
-                // $SeoQuery=new Seo();
-                // $SeoData='';
-              //if($product=='home-loan' && $bank=='icici'){
-                   
-                //  $SeoQuery->HICICIbank();
-               // }
-
-
-
- 
 
 
 

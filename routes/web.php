@@ -299,3 +299,13 @@ Route::post('working-capital-emi-calculator-api','CalculatorController@working_c
 
  
 Route::get('coming-soon',function (){return view('comingsoon');});
+
+
+
+// Tata Capital  
+Route::post('tatacapitalemi','TataCapitalLoanController@emicalculatorapi');
+Route::get('tatacapitalsearchajax',array('as'=>'tatacapitalsearchajax','uses'=>'TataCapitalLoanController@tatacapitalsearchajax'));
+Route::get('tatacapitalbankname',array('as'=>'tatacapitalbankname','uses'=>'TataCapitalLoanController@tatacapitalbankname'));
+Route::get('tatacapitalstate',array('as'=>'tatacapitalstate','uses'=>'TataCapitalLoanController@tatacapitalstate'));
+Route::get('tatacapitalcity',array('as'=>'tatacapitalcity','uses'=>'TataCapitalLoanController@tatacapitalcity'));
+Route::post('tatacapitalsubmitform','TataCapitalLoanController@tatacapitalsubmitform');

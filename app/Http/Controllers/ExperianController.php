@@ -212,7 +212,11 @@ class ExperianController extends CallApiController
       if(Session::get('is_login'))
         return $this->credit_report();
       else
-      return view('credit-report-otp');
+               $query=new Seo();
+               $data=$query->CreditReport();
+ 
+           
+      return view('credit-report-otp')->with($data);
     }
 
  public function send_otp(Request $req){

@@ -18,6 +18,8 @@
   .offer {padding:10px; background:#eff8ff;border:1px solid #eee;text-align:center;}
   .border-btm {padding:10px; border-bottom:1px solid #eee;}
   .bordered {border:1px dashed #ccc;padding:5px;}
+  .upload li{padding:5px; list-style-type:none;}
+  .no-margin {margin:0px;}
 </style>
 
 
@@ -1084,13 +1086,91 @@
 
 
 	<div class="col-md-6 mrg-top"><button class="btn btn-primary btn-outline with-arrow" id="apply_now">Apply Now<i class="icon-arrow-right"></i></button></div>
+	
 	</div>
+
+	<br class="mrg-top">
+	<div class="col-md-1"></div>
+	<div class="col-md-10">
+	<div class="col-md-8 bg-sucsess pad">
+	<h3 class="modal-header">Upload Your Documents</h3>
+	<ul class="upload border no-margin">
+	   <li class="b-info">I Currently don't have the documents. Please collect it from my residence.</li>
+
+	   <li class="bg-info">ID Proof <span></li>
+	   <li><input type="file"></span></li></li>
+	   <li class="bg-info">Address Proof</li>
+	   <li><input type="file"></span></li>
+	   <li class="bg-info">Salary Slips</li>
+	   <li><input type="file"></span></li>
+	   <li class="bg-info">Income Proof</li>
+	   <li><input type="file"></span></li>
+	   <li class="bg-info">Other Documents</li>
+	   <li><input type="file"></span></li>
+	</ul>
+	
+	<br>
+	<ul>
+	<li><b>Please Note:-</b></li>
+	  <li>Please click SUBMIT button to ensure uploaded documents are successfully saved</li>
+	  <li>maximum file size is upto 3.0MB</li>
+	</ul>
+	
+	</div>
+	<div class="col-md-4 pad">
+	<h3 class="modal-header">Details of Loan Offers</h3>
+	<table class="table border no-margin">
+	<tr>
+	<td><b>Interest Rate</b></td>
+	<td>fgfdgdfg</td>
+	</tr>
+	<tr>
+	<td><b>Rate Type</b></td>
+	<td>fgfdgdfg</td>
+	</tr>
+	<tr>
+	<td><b>EMI</b></td>
+	<td>fgfdgdfg</td>
+	</tr>
+	
+	<tr>
+	<td><b>Tenure of Loan</b></td>
+	<td>fgfdgdfg</td>
+	</tr>
+	
+	<tr>
+	<td><b>Loan Amount</b></td>
+	<td>fgfdgdfg</td>
+	</tr>
+	
+	<tr>
+	<td><b>Processing Fees + Tax</b></td>
+	<td>fgfdgdfg</td>
+	</tr>
+	<tr>
+	<td><b>Forecloser Fee</b></td>
+	<td>fgfdgdfg</td>
+	</tr>
+	
+	</table>
+	</div>
+	
+  <div class="col-md-10"> 
+ <p><input type="checkbox" /> I/we confirm that I/we have read the declaration and that all details provided on the form are true and correct</p>
+ <button class="btn btn-primary btn-outline with-arrow pull-left" id="apply_now">SUBMIT<i class="icon-arrow-right"></i></button>
+</div>
+	</div>
+	</div>
+	
+	
+	
+	
     </form>
 
 
-	
+	 
   </div>
-</div>
+  
 
 </div>
 </div>
@@ -1653,11 +1733,11 @@ function pan_card(obj,val){
 </script>
 
  <script>
-$(document).ready(function() {
-   $(".nav li.disabled a").click(function() {
-     return false;
-   });
-});
+//$(document).ready(function() {
+  // $(".nav li.disabled a").click(function() {
+    // return false;
+   //});
+//});
    </script>
  <style type="text/css">
 .loading {

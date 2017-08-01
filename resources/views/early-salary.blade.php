@@ -1,23 +1,28 @@
 @include('layout.header')
 <style>
+#fh5co-hero {
+    padding: 4em 0;
+    background: url(../images/bg.jpg); 
+	background-attachment:fixed;
+	background-size:cover;
+}
+.register {opacity:0.8;}
 
-.register-full {
-    width: 60%;
-    margin: 0 auto;
-}
 .register-left {
-    background: #009688;
-    height: 605px;
+    background: #ed1c24;
+    height: 600px;
 }
+.register-left p {color:#ff9599;}
 .register-right {
     background: #FFFFFF;
+	 height: 600px;
 }
 .register-in {
-    padding: 3em;
+    padding:1.5em;
 }
 .register-left, .register-right {
-    width: 50%;
-    float: left;
+   
+  /*  float: left; */
 }
 .register-left p {
     margin: 2em 0;
@@ -26,12 +31,16 @@
     letter-spacing: 1px;
 }
 .register-left h1 {
-    font-size: 3em;
+    font-size: 3.5em;
     text-transform: uppercase;
     font-weight: 400;
     margin-bottom: 1em;
     color: #FFFFFF;
     text-align: center;
+}
+.register-left h2 {
+	
+	color:#ff9599;
 }
 .register-right h2 {
     text-transform: uppercase;
@@ -45,7 +54,7 @@
     color: #FFFFFF;
     padding: .5em;
     font-size: 1.5em;
-    border:2px solid #0a7369;
+    border:2px solid #fb7b80;
 }
 .checkbox a {
     color: #009688;
@@ -64,12 +73,12 @@
     margin: 0 0 2em 0;
     font-weight: 600;
 }
- .register input[type="text"],.register input[type="email"],.register input[type="password"],.register input[type="tel"]{
+ .register input[type="text"],.register input[type="email"],.register input[type="password"],.register input[type="tel"],.register select{
     font-size: 1em;
     color: #8c8c8c;
     padding: 0.5em 1em;
     border: 0;
-    width: 90%;
+    width:100%;
     border-bottom: 1px solid #dcdcdc;
     background: none;
     -webkit-appearance: none;
@@ -183,250 +192,33 @@ input[type="text"] {
     margin: 2em 0 0;
     word-spacing: 5px;
 }
-.agile-copyright a:hover{
-    color: #FFF;
-}
-.agile-copyright a {
-    color: #009688;
-	font-weight:600;
-}
+
+
 /*-- //copyright --*/
 
-/* responsive design */
-@media (max-width: 1440px) {
-	.register-full {
-		width: 65%;
-	}
-	.register-left h1 {
-		font-size: 2.9em;
-	}
-}
-@media (max-width: 1366px) {
-	.register-left h1 {
-		font-size: 2.7em;
-	}
-}
-@media (max-width: 1080px) {
-	.register-full {
-		width: 75%;
-	}
-	.register-left p {
-		line-height: 1.6em;
-	}
-	.link a {
-		padding: .4em;
-		font-size: 1.4em;
-	}
-}
-@media (max-width: 1024px) {
-	.register-full {
-		width: 75%;
-	}
-	.register-left h1 {
-		font-size: 2.5em;
-	}
-	.register-left {
-		height: 602px;
-}
-	.register-right h2 {
-		font-size: 1.8em;
-	}
-}
-@media (max-width: 991px) {
-	.register-left h1 {
-		font-size: 2.8em;
-	}
-	.register-right h2 {
-		font-size: 1.6em;
-	}
-	.register-left {
-		height: 598px;
-	}
-	.register-full {
-		width: 85%;
-	}
-}
-
-@media (max-width: 800px) {
-	.register-full {
-		width: 84%;
-	}
-	.register-in {
-		padding: 2em;
-	}
-	.register-left {
-		height: 567px;
-	}
-	.register-left h1 {
-		font-size: 2.1em;
-	}
-	.register input[type="text"], .register input[type="email"], .register input[type="password"], .register input[type="tel"] {
-    width: 87%;
-	}
-}
-@media (max-width: 768px) {
-	.register-left h1 {
-		font-size: 2em;
-	}
-	.register-left p {
-		line-height: 1.4em;
-	}
-	.link a {
-		padding: .4em;
-		font-size: 1.2em;
-	}
-	.register-form input[type="submit"] {
-		font-size: 1.2em;
-	}
-	.register-left {
-		height: 559px;
-	}
-}
-
-@media (max-width: 736px) {
-	.styled-input {
-		margin: 0 0 1.2em;
-	}
-	i {
-		line-height: 2em;
-	}
-	.register-left {
-		height: 531px;
-	}
-	.register-left h1 {
-		font-size: 2em;
-	}
-	.register-right h2 {
-		font-size: 1.5em;
-	}
-}
-@media (max-width: 667px) {
-	.register-full {
-		width: 90%;
-	}
-	.register-in {
-		padding: 2em;
-	}
-	.register-left {
-		height: 531px;
-	}
-}
-@media (max-width: 640px) {
-	.register-full {
-		width: 92%;
-	}
-	.register-left {
-		height: 547px;
-	}
-}
-@media (max-width: 600px) {
-	.register-left {
-		height: 547px;
-	}
-}
-@media (max-width: 568px) {
-	.register-in {
-		padding: 1.5em;
-	}
-	.register-left h1 {
-		font-size: 1.7em;
-	}
-	.register-left p {
-		margin: 2em 0;
-		line-height: 1.2em;
-	}
-	.register-left {
-		height: 531px;
-	}
-}
-@media (max-width: 480px) {
-	.register-left, .register-right {
-		width: 100%;
-		height: inherit;
-	}
-	.register-full {
-		width: 70%;
-	}
-}
-@media (max-width: 414px) {
-	.register-left{
-		width: 100%;
-		height: inherit;
-	}
-	body {
-		padding: 3em 0;
-	}
-	.register-right{
-		width:100%;
-	}
-	.register-full {
-		width: 75%;
-	}
-	.styled-input {
-		width: 90%;
-	}
-	.agile-copyright {
-		line-height: 1.4em;
-		padding: 0 3em;
-	}
-}
-@media (max-width: 320px) {
-	body {
-		padding: 2em 0;
-	}
-	.register-left h1 {
-		font-size: 1.6em;
-	}
-	.register-full {
-		width: 80%;
-	}
-	.register input[type="text"], .register input[type="email"], .register input[type="password"], .register input[type="tel"] {
-		padding: 0.3em;
-	}
-	.register-form input[type="submit"] ,.register-form input[type="submit"]:hover{
-		padding: 0.4em;
-		border: 1px solid #009688;
-	}
-	.link a{
-		border: 1px solid #0a7369;
-	}
-	.link a:hover {
-		border: 1px solid #FFFFFF;
-	}
-	.register-left p {
-		margin: 1em 0;
-	}
-	.register-form input[type="submit"] {
-		font-size: 1em;
-	}
-	.agile-copyright {
-		margin: 2em 1em 0;
-		word-spacing: 3px;
-		padding: 0em;
-	}
-}	
 
 </style>
-<br>
-<div class="container" id="fh5co-hero">
 
+<div id="fh5co-hero">
 
+<div class="container">
 <section class="register">
 	<div class="register-full">
-		<div class="register-left">
+		<div class="register-left col-md-4">
 			<div class="register-in">
 				<h1><b>Cash On The Go</b></h1>
 				<h2>Without Any Hassle</h2>
 				<p>Donec ipsum lorem, sodales a sagittis ut, convallis non nibh. Integer vitae cursus nunc, et vestibulum augue. Donec lacinia tristique purus. Aenean in est pretium lectus euismod facilisis.</p>
-				<p>Donec ipsum lorem, sodales a sagittis ut, convallis non nibh. Integer vitae cursus nunc, et vestibulum augue. Donec lacinia tristique purus. Aenean in est pretium lectus euismod facilisis.</p>
+				
 				<div class="link">
-					<a href="#">Already have an account</a>
+					<a href="#">Login</a>
 				</div>
 			</div>
 		</div>
-		<div class="register-right">
+		<form>
+		<div class="register-right col-md-4">
 			<div class="register-in">
-				<h2>register here</h2>
+				<h2>register With Us</h2>
 				<div class="register-form">
 					<form action="#" method="post">
 						<div class="fields-grid">
@@ -446,37 +238,77 @@ input[type="text"] {
 								<span></span>
 							</div>
 							<div class="styled-input">
+								<input type="text" name="Email" required="">
+								<label>City</label>
+								<span></span>
+							</div>
+							<div class="styled-input">
 								<input type="tel" name="Phone" required="">
-								<label>Phone Number</label>
+								<label>Mobile Number</label>
 								<span></span>
 							</div>
 							<div class="styled-input">
-								<input type="password" name="password" required="">
-								<label>Password</label>
+								<input type="text" name="designation" required="">
+								<label>Designation</label>
 								<span></span>
 							</div>
 							<div class="styled-input">
-								<input type="password" name="password" required="">
-								<label> Confirm password</label>
+								<input type="text" name="employees" required="">
+								<label> No of Employees</label>
 								<span></span>
 							</div>
 							<div class="clear"> </div>
-							 <label class="checkbox"><input type="checkbox" name="checkbox" checked><i></i>I agree to the <a href="#">Terms and Conditions</a></label>
+							
 						</div>
-						<input type="submit" value="Register">
-					</form>
+						
+				
 				</div>
 			</div>
 			<div class="clear"> </div>
 		</div>
 		
+		<div class="register-right col-md-4">
+			<div class="register-in">
+			<br>
+				<div class="register-form">
+					
+						<div class="fields-grid">
+							<div class="styled-input">
+								<input type="text" name="company-name" required="">
+								<label>Company Name</label>
+								<span></span>
+							</div>
+							
+							<div class="styled-input">
+								<select>
+								  <option>Company Category</option>
+								</select>
+								<span></span>
+							</div>
+							
+							
+							
+							<div class="clear"> </div>
+							
+						</div>
+						
+						<button class="btn btn-primary btn-outline with-arrow" id="apply_now">Register<i class="icon-arrow-right"></i></button>
+					</form>
+				</div>
+			</div>
+			<div class="clear"> </div>
+		</div>
+		</form>
+		
+		
 	<div class="clear"> </div>
 	</div>
 
 </section>
+</div>
 
 </div>
-<br>
+
 @include('layout.footer')
 @include('layout.script')
 

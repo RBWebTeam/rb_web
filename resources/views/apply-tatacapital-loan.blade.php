@@ -1088,9 +1088,12 @@
 	<div class="col-md-6 mrg-top"><button class="btn btn-primary btn-outline with-arrow" id="apply_now">Apply Now<i class="icon-arrow-right"></i></button></div>
 	
 	</div>
-
+    </form> 
 	
-	<div class="col-md-1"></div>
+	
+	<!-- Upload Document -->
+	<form>
+	    <div class="col-md-1"></div>
 	<div class="col-md-10">
 	<div class="col-md-8 bg-sucsess pad">
 	<h3 class="modal-header">Upload Your Documents</h3>
@@ -1163,8 +1166,7 @@
 
 	</div>
 	</div>
-
-    </form> 
+	</form>
   </div>
 </div>
 </div>

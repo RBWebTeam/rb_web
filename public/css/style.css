@@ -1339,7 +1339,7 @@ border: #3px solid #999;background:#1f386e;margin: 10px;margin: 10px auto;text-a
 .sidebar ul li  {list-style-type:none;margin:0px; padding:8px; border-bottom:1px solid #2f4980;cursor:pointer;}
 .sidebar ul li a {color:#fff;font-size:12px;}
 .sidebar ul li:hover {background:#F60; text-decoration:none;}
-.arrow-don {top:200px;position:fixed; z-index:1000;padding:0px; background:none !important;}
+.arrow-don {top:200px;position:fixed; z-index:1000;padding:0px; background:none !important; display:none;}
 .arrow-don li {margin-bottom:2px;cursor:pointer;}
 .arrow-don li:hover {opacity:0.7;}
 .arrow-don li i {font-size:16px; padding-left:5px; color:#fff;}

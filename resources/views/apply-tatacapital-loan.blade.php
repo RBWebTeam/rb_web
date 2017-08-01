@@ -1022,7 +1022,7 @@
                   </span-->
 	
 	
-	<div class="col-md-12">
+	<div class="col-md-12 mrg-btm">
 	<br>
 	<p> <input type="checkbox"  id="disclaimer"/> I agree to the Disclaimer. Terms & Conditions Apply. I authorize TCFSL to make any enquiries with any other finance company/bank/registered credit bureau regarding my credit history with them. </p>
 	<div class="col-md-5"></div>
@@ -1089,7 +1089,7 @@
 	
 	</div>
 
-	<br class="mrg-top">
+	
 	<div class="col-md-1"></div>
 	<div class="col-md-10">
 	<div class="col-md-8 bg-sucsess pad">
@@ -1115,6 +1115,10 @@
 	  <li>Please click SUBMIT button to ensure uploaded documents are successfully saved</li>
 	  <li>maximum file size is upto 3.0MB</li>
 	</ul>
+	<div class="col-md-10"> 
+ <p><input type="checkbox" /> I/we confirm that I/we have read the declaration and that all details provided on the form are true and correct</p>
+ <button class="btn btn-primary btn-outline with-arrow pull-left" id="apply_now">SUBMIT<i class="icon-arrow-right"></i></button>
+</div>
 	
 	</div>
 	<div class="col-md-4 pad">
@@ -1155,23 +1159,13 @@
 	</table>
 	</div>
 	
-  <div class="col-md-10"> 
- <p><input type="checkbox" /> I/we confirm that I/we have read the declaration and that all details provided on the form are true and correct</p>
- <button class="btn btn-primary btn-outline with-arrow pull-left" id="apply_now">SUBMIT<i class="icon-arrow-right"></i></button>
-</div>
-	</div>
-	</div>
-	
-	
-	
-	
-    </form>
-
-
-	 
-  </div>
   
 
+	</div>
+	</div>
+
+    </form> 
+  </div>
 </div>
 </div>
 </div>

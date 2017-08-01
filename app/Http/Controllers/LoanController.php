@@ -706,9 +706,37 @@ $url = $this::$url_static."/BankAPIService.svc/updateIIFLRevisedQuote";
    }
 
    public function lendingkart_doc(Request $req){
-    print_r($req->all());
+    $res['status']=0;
+    $res['msg']=null;
+    try
+    {
+        $lead_id=12;
+        $str = array('bank_proof','identity_proof','vat_proof','Proof_of_activity');
+        for($i=0;$i<4;$i++){
+         
+          $file=($req->file($str[$i]));
+          $destinationPath = 'uploads/'.$lead_id;
+          $filename=$str[$i].".".$file->getClientOriginalExtension();
+           if(File::exists($destinationPath."/".$filename)){
+           // echo "exists \n";
+            continue;
+          }
+          if($file->getClientOriginalExtension()!='pdf'){
+            throw new \Exception("only Pdf are allowed ", 1);
+          }
+          $file->move($destinationPath,$filename);
+       }
+    }catch(\Exception $ee){
+      $res['status']=1;
+      $res['msg']=$ee->getMessage();
+    }
+
+   
+      $response=json_encode($res);
+   return ($response);
    }
 
+   /*test_upload*/
    public function test_doc(){
     return view('test_doc');
    }

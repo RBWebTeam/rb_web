@@ -19,22 +19,16 @@
 					  <table class="table table-striped table-bordered box-shadow" style="background:#fff;">
 					   
 					   <tr>
-<<<<<<< HEAD
+
 					      <td width="60%">Date</td>
 						  <td width="38%"><input type="text" id="date" name="date" required class="newsletter-name lastReporteddate1"/></td>
-=======
-					      <td>Date</td>
-						  <td><input type="date" name="date" class="newsletter-name" placeholder="Date of Birth"/></td>
->>>>>>> 49a928bb837084c54aab187b81d4fd983d1387e0
+
 						  
 					   </tr>
 					   <tr>
 					      <td>Client</td>
-<<<<<<< HEAD
 						  <td><input type="text" name="company_name" id="company_name" class="newsletter-name"/></td> 
-=======
-						  <td><input type="text" name="txt" class="newsletter-name" placeholder="Client Name"/></td> 
->>>>>>> 49a928bb837084c54aab187b81d4fd983d1387e0
+
 					   </tr>
 					   <tr>
 					      <td>Correspondence Address</td>

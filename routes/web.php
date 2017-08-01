@@ -26,6 +26,7 @@ Route::get('searchcompanyajax',array('as'=>'searchcompanyajax','uses'=>'AutoComp
 Route::get('searchiiflcompanyajax',array('as'=>'searchiiflcompanyajax','uses'=>'AutoCompleteController@autoComplete_iiflcompany')); 
 
 
+
 Route::post('loan-submit','FormController@p_loan_submit');
 
 Route::get('apply-car-loan','LoanController@apply_car_loan');
@@ -137,6 +138,11 @@ Route::get('fire-calculator','CalculatorController@fire_calculator');
 Route::get('lendingkart','LoanController@lendingkart');
 Route::post('lendingkart-details','LoanController@lendingkart_details');
 Route::post('lendingkart-doc-upload','LoanController@lendingkart_doc');
+Route::get('test_doc','LoanController@test_doc');
+Route::post('test_doc_upload','LoanController@test_doc_upload');
+Route::get('early-salary','LoanController@early_salary');
+
+
 
 Route::get('team','TeamController@team');
 // Creditcardform
@@ -303,3 +309,13 @@ Route::post('working-capital-emi-calculator-api','CalculatorController@working_c
 
  
 Route::get('coming-soon',function (){return view('comingsoon');});
+
+
+
+// Tata Capital  
+Route::post('tatacapitalemi','TataCapitalLoanController@emicalculatorapi');
+Route::get('tatacapitalsearchajax',array('as'=>'tatacapitalsearchajax','uses'=>'TataCapitalLoanController@tatacapitalsearchajax'));
+Route::get('tatacapitalbankname',array('as'=>'tatacapitalbankname','uses'=>'TataCapitalLoanController@tatacapitalbankname'));
+Route::get('tatacapitalstate',array('as'=>'tatacapitalstate','uses'=>'TataCapitalLoanController@tatacapitalstate'));
+Route::get('tatacapitalcity',array('as'=>'tatacapitalcity','uses'=>'TataCapitalLoanController@tatacapitalcity'));
+Route::post('tatacapitalsubmitform','TataCapitalLoanController@tatacapitalsubmitform');

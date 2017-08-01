@@ -457,7 +457,7 @@
                      <td>
                        <select class="pad" required>
                          <option disabled selected  value="">Select</option>
-                         <option id="Bank_Statement" value="Bank_Statement">Bank Statement</option>
+                         <option value="Bank_Statement">Bank Statement</option>
                          
                          </select class="pad">
                      </td>
@@ -469,8 +469,8 @@
                      <td>
                        <select class="pad" required>
                          <option disabled selected  value="">Select</option>
-                         <option id="permanent_number" value="PAN">PAN of the entity</option>
-                         <option id="DOB" value="DOB">Date of Birth</option>
+                         <option value="PAN">PAN of the entity</option>
+                         <option value="DOB">Date of Birth</option>
                          
                          </select class="pad">
                      </td>
@@ -482,9 +482,8 @@
                      <td>
                        <select class="pad" required>
                          <option disabled selected  value="">Select</option>
-                         <option id="Tax_Returns" value="Tax_Returns">VAT/Service Tax Returns</option>
-                         
-                         </select class="pad">
+                         <option value="Tax_Returns">VAT/Service Tax Returns</option>
+                        </select class="pad">
                      </td>
                      <td><input type="file" name="vat_proof" id="vat_proof" class="pull-right" required data-category="3"></td>
                    </tr>
@@ -494,19 +493,19 @@
                      <td>
                        <select class="pad" required>
                          <option disabled selected  value="">Select</option>
-                         <option id="Registration_certificate" value="Registration_certificate">Registration certificate</option>
-                         <option id="Sales_and_income_tax_returns" value="Sales_and_income_tax_returns">Sales and income tax returns</option>
-                         <option id="VAT_certificate" value="CST/VAT_certificate">CST/VAT certificate</option>
-                         <option id="Certificate" value="Certificate">License issued by the Municipal</option>
-                         <option id="Registration_Document" value="Registration_Document">Document Issued By Sales Tax</option>
+                         <option value="Registration_certificate">Registration certificate</option>
+                         <option value="Sales_and_income_tax_returns">Sales and income tax returns</option>
+                         <option value="CST/VAT_certificate">CST/VAT certificate</option>
+                         <option value="Certificate">License issued by the Municipal</option>
+                         <option value="Registration_Document">Document Issued By Sales Tax</option>
                          
                          </select class="pad">
                      </td>
-                     <td><input type="file" name="Proof_of_activity" id="Proof_of_activity" class="pull-right" required="" data-category="4"></td>
+                     <td><input type="file" name="Proof_of_activity" id="Proof_of_activity" class="pull-right" required data-category="4"></td>
                    </tr>
                   </table>
 
-                  <span id="statement"></span>
+                  <!-- <span id="statement"></span> -->
                   <div style="text-align: center;">
                                 <a class="btn btn-danger btn-outline with-arrow mrg-top" id="lendingkart_doc">Submit<i class="icon-arrow-right"></i></a></div>
 
@@ -518,9 +517,10 @@
   </div>
 </div>
 
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 $('#Bank_Statement').click(function(){
   var statement =$('#Bank_Statement').text("Last 12 Months Current Bank Account Statements of the entity");
+  console.log(statement);
   $('#statement').empty().html(statement);
   });
 
@@ -538,7 +538,7 @@ $('#Tax_Returns').click(function(){
 var tax_returns =$('#Tax_Returns').text("VAT/Service Tax Returns (whichever applicable) for last 1 year of the entity");
   $('#statement').empty().html(tax_returns);
 });
-</script>
+</script> -->
 
 
 <script type="text/javascript">
@@ -823,9 +823,6 @@ $(function() {
          alert("no")
         
       }else{
-
-        
-   
         $.ajax({  
          type: "POST",  
          url: "{{URL::to('lendingkart-doc-upload')}}",

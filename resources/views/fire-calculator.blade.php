@@ -11,36 +11,43 @@
                         <center>
                         <h1 class="loan-head">Fire Calculator</h1>
                       </center>
-					  <div class="col-md-12 container white-bg box-shadow">
+					  <div class="col-md-12 container" style="background:#d9e8f4;">
 					  <div class="col-md-2"></div>
 					  <div class="col-md-8">
 					  <br>
 					  <h2 class="pad">SFSP QUOTE</h2>
-					  <table class="table table-striped table-bordered">
+					  <table class="table table-striped table-bordered box-shadow" style="background:#fff;">
 					   
 					   <tr>
+<<<<<<< HEAD
 					      <td width="60%">Date</td>
-						  <td width="38%"><input type="date" name="date" class="newsletter-name"/></td>
+						  <td width="38%"><input type="text" id="date" name="date" required class="newsletter-name lastReporteddate1"/></td>
+=======
+					      <td>Date</td>
+						  <td><input type="date" name="date" class="newsletter-name" placeholder="Date of Birth"/></td>
+>>>>>>> 49a928bb837084c54aab187b81d4fd983d1387e0
 						  
 					   </tr>
 					   <tr>
 					      <td>Client</td>
-						  <td><input type="text" name="txt" class="newsletter-name"/></td> 
+<<<<<<< HEAD
+						  <td><input type="text" name="company_name" id="company_name" class="newsletter-name"/></td> 
+=======
+						  <td><input type="text" name="txt" class="newsletter-name" placeholder="Client Name"/></td> 
+>>>>>>> 49a928bb837084c54aab187b81d4fd983d1387e0
 					   </tr>
 					   <tr>
 					      <td>Correspondence Address</td>
-						  <td><input type="text" name="txt" class="newsletter-name"/></td> 
+						  <td><input type="text" name="address" id="address" class="newsletter-name"/></td> 
 					   </tr>
 					   <tr>
 					      <td>Risk Location</td>
-						  <td><input type="text" name="txt" class="newsletter-name"/></td> 
+						  <td><input type="text" name="location" id="location" class="newsletter-name"/></td> 
 					   </tr>
 					   <tr>
 					      <td>Occupied As</td>
 						  <td>
-						  <select class="select-sty drop-arr">
-						      <option>Select Option</option>
-						  </select>
+						  <input type="text" class="newsletter-name search_company" name="company_name" id="company_name" onkeypress="return AllowAlphabet(event)" required >
 						  </td> 
 					   </tr>
 					   <tr>
@@ -59,12 +66,12 @@
 					  </div>
 					  </div>
 					  
-					  <div class="col-md-12 container white-bg box-shadow">
+					  <div class="col-md-12 container box-shadow" style="background:#d9e8f4;">
 					  <div class="col-md-2"></div>
 					  <div class="col-md-8">
 					  <br>
 					  
-					  <table class="table table-striped table-bordered">
+					  <table class="table table-striped table-bordered" style="background:#fff;">
 					   
 					   <tr class="bg-info">
 					      <td>SL</td>
@@ -115,12 +122,12 @@
 					  
 					  
 					  
-					  <div class="col-md-12 container white-bg box-shadow">
+					  <div class="col-md-12 container" style="background:#d9e8f4;">
 					  <div class="col-md-2"></div>
 					  <div class="col-md-8">
 					  <br>
 					  
-					  <table class="table table-striped table-bordered">
+					  <table class="table table-striped table-bordered box-shadow" style="background:#fff;">
 					   
 					   <tr class="bg-info">
 					      <td colspan="3">Addon Coverage</td>
@@ -356,26 +363,11 @@
 						  <td><input type="text" name="txt" class="newsletter-name"/></td>
                         </tr>
 						<tr>
-					      <td>
-						    
-						  </td>
-						  <td>Grand Total</td> 
-						  <td><input type="text" name="txt" class="newsletter-name"/></td>
+					     
+						  <td colspan="3"><button class="btn btn-primary btn-outline with-arrow mrg-top center-block crd_id" id="credit_id">GET QUOTES<i class="icon-arrow-right"></i></button></td> 
+						
                         </tr>
-						<tr>
-					      <td>
-						     
-						  </td>
-						  <td>Service Tax@12.36%</td> 
-						  <td><input type="text" name="txt" class="newsletter-name"/></td>
-                        </tr>
-						<tr>
-					      <td>
-						    
-						  </td>
-						  <td>Total Premium </td> 
-						  <td><input type="text" name="txt" class="newsletter-name"/></td>
-                        </tr>
+						
 						
 						
 					  </table>
@@ -416,4 +408,19 @@
 <br>
 @include('layout.footer')
 @include('layout.script')
+
+<script type="text/javascript">
+    var d = new Date();
+    var year = d.getFullYear() ;
+    d.setFullYear(year);
+
+    $(".lastReporteddate1").datepicker({ dateFormat: "ddmmyy",
+      changeMonth: true,
+      changeYear: true,
+      maxDate: year,
+      minDate: "-100Y",
+      yearRange: '-100:' + year + '',
+      defaultDate: d
+    });
+</script>
 

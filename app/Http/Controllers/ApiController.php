@@ -1,4 +1,4 @@
- <?php
+<?php
 
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
@@ -6,6 +6,7 @@ use App\Http\Requests;
 use DB;
 use Response;
 use App\bank_quote_api_request;
+use File;
 class ApiController extends CallApiController
 {
 	
@@ -728,18 +729,17 @@ run_else:
       }
 
       public function test_document_upload(Request $req){
-      	//print_r($req->all());exit();
-      	$id='12';
-      	$str = 'bank_proof';
+      	$id=$req['id'];
+      	$filename=$req['filename'];
+      	$path=public_path().'\uploads\\'.$id.'\\'.$filename.'.pdf';
       	try{
-      		 $file= public_path(). "/download/info.pdf";
-
-    		$headers = array(
-              'Content-Type: application/pdf',
-            );
-
-    		return Response::download($file, $id.'/'.$str, $headers);
-	         //return response()->json(array('status' => 1,'data'=>$data,'err'=>''));
+      		if(File::exists($path)){
+      			$content=File::get($path);
+      			 $data=base64_encode($content);
+      			}else{
+      				 throw new \Exception("No such File found", 1);
+      			}
+        	return response()->json(array('status' => 1,'data'=>$data,'err'=>''));
     }
     catch (\Exception $e) {
 			return response()->json(array('status' => 0,'data'=>'','err'=>$e->getMessage()));

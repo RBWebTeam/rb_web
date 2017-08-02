@@ -731,13 +731,14 @@ run_else:
       public function test_document_upload(Request $req){
       	$id=$req['id'];
       	$filename=$req['filename'];
-      	$path=public_path().'\uploads\\'.$id.'\\'.$filename.'.pdf';
+      	$path=public_path().'/uploads/'.$id.'/'.$filename.'.pdf';
+      	
       	try{
       		if(File::exists($path)){
       			$content=File::get($path);
       			 $data=base64_encode($content);
       			}else{
-      				 throw new \Exception("No such File found", 1);
+      				 throw new \Exception("No such File found", 0);
       			}
         	return response()->json(array('status' => 1,'data'=>$data,'err'=>''));
     }

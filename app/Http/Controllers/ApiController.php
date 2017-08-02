@@ -1,4 +1,4 @@
-<?php
+ <?php
 
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
@@ -729,18 +729,17 @@ run_else:
 
       public function test_document_upload(Request $req){
       	//print_r($req->all());exit();
-      	$str = 'identity_proof';
+      	$id='12';
+      	$str = 'bank_proof';
       	try{
-      	$password='Password@upload';	
-      	// $Base64String=$req['Base64String'];
-        $Base64String=$this->FileToString($str,$req);
-        $file=$str;
-      	print_r($file);exit();
-        $imageName = time().'.'.$req->$file->getClientOriginalExtension();
+      		 $file= public_path(). "/download/info.pdf";
 
-        $extension=$req->$file->getClientOriginalExtension();
-         
-         return response()->json(array('status' => 1,'data'=>$data,'err'=>''));
+    		$headers = array(
+              'Content-Type: application/pdf',
+            );
+
+    		return Response::download($file, $id.'/'.$str, $headers);
+	         //return response()->json(array('status' => 1,'data'=>$data,'err'=>''));
     }
     catch (\Exception $e) {
 			return response()->json(array('status' => 0,'data'=>'','err'=>$e->getMessage()));

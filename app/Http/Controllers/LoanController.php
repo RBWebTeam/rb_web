@@ -13,55 +13,55 @@ class LoanController extends CallApiController
 {
     public function personal_loan(){
       $keywords='Personal Loan,Compare Personal Loan,Apply Online for Personal Loan,Best Personal Loans in India,Compare Personal Loan,Personal Loan EMI Calculator';
-    	$data['title']='Personal Loan | Apply online at Lowest Interest Rate on Rupeeboss.com';
-    	$data['description']='Finance Your Dreams by Comparing Personal Loan interest rates and apply online for quick approval of low EMI. Apply for Best Personal Loan on Rupeeboss.com';
+      $data['title']='Personal Loan | Apply online at Lowest Interest Rate on Rupeeboss.com';
+      $data['description']='Finance Your Dreams by Comparing Personal Loan interest rates and apply online for quick approval of low EMI. Apply for Best Personal Loan on Rupeeboss.com';
         $data['id']=DB::table('product_master')
                       ->where('Product_Name','=','Personal Loan')
                       ->first();
-    	return view('personal-loan')->with($data)->with('keywords',$keywords);
+      return view('personal-loan')->with($data)->with('keywords',$keywords);
     }
     public function home_loan(){
       
       $keywords='Home Loan,Compare Home Loan,Home Loan at Low Interest Rate,Apply Online for Home Loan,Check Home Loan Eligibility,Best Home Loans in India,Home Loan EMI Calculator';
-    	$data['title']='Home Loan | Apply online at Lowest Interest Rate on Rupeeboss.com';
-    	$data['description']='Choose the right Home Loan for You. Check & Compare home loans from thousand of Banks and Apply for best Home Loan With Low Interest rate on Rupeeboss.com';
+      $data['title']='Home Loan | Apply online at Lowest Interest Rate on Rupeeboss.com';
+      $data['description']='Choose the right Home Loan for You. Check & Compare home loans from thousand of Banks and Apply for best Home Loan With Low Interest rate on Rupeeboss.com';
 
         $data['id']=DB::table('product_master')
                       ->where('Product_Name','=','Home Loan')
                       ->first();
-    	return view('home-loan')->with($data)->with('keywords',$keywords);
+      return view('home-loan')->with($data)->with('keywords',$keywords);
     }
     public function lap(){
       $keywords='Loan against Property,Property Loan,Loan Against Property Interest Rates,Apply for Property Loan,Mortgage Loan Rate,Loan Against Property EMI Calculator';
-    	$data['title']='Loan Against Property | Mortgage Loan Rates | Rupeeboss.com';
-    	$data['description']='Finding Your Dreams. Compare loan against property interest rates, check eligibility and Lowest EMI. Apply for Loan Against Property On Rupeeboss.com';
+      $data['title']='Loan Against Property | Mortgage Loan Rates | Rupeeboss.com';
+      $data['description']='Finding Your Dreams. Compare loan against property interest rates, check eligibility and Lowest EMI. Apply for Loan Against Property On Rupeeboss.com';
 
         $data['id']=DB::table('product_master')
                       ->where('Product_Name','=','LAP')
                       ->first();
-    	return view('loan-against-property')->with($data)->with('keywords',$keywords);
+      return view('loan-against-property')->with($data)->with('keywords',$keywords);
     }
     public function sme_loan(){
       $keywords='SME Loans,SME Loan Application Form,SME Loan Apply Online,How to get a SME Loan,Business Startup Loan';
-    	$data['title']='Apply For SME Loan At Lowest Interest Rate With Rupeeboss.com';
-    	$data['description']='Get small business (SME) loans. Apply now online and avail end-to-end SME loan or finance by just filling up the formOn Rupeeboss.com';
+      $data['title']='Apply For SME Loan At Lowest Interest Rate With Rupeeboss.com';
+      $data['description']='Get small business (SME) loans. Apply now online and avail end-to-end SME loan or finance by just filling up the formOn Rupeeboss.com';
 
         // $data['id']=DB::table('product_master')
         //               ->where('Product_Name','=','sem')
         //               ->first();
-    	return view('sme-loan')->with($data)->with('keywords',$keywords);
+      return view('sme-loan')->with($data)->with('keywords',$keywords);
     }
   
     public function car_loan(){
       $keywords='Car Loan,Car Loan at Low Interest Rates,Best Car Loan in India,Apply Online for Car Loan,Online Car Loans,Car Loan Eligibility';
-    	$data['title']='Car Loan | Apply online at low interest rate On Rupeeboss.com';
-    	$data['description']='Buy Your Dream Car By Applying For Car Loan. Compare Car Loan Interest Rates, Check Loan Eligibility & Calculate Car Loan EMI. Apply now on Rupeeboss.com';
+      $data['title']='Car Loan | Apply online at low interest rate On Rupeeboss.com';
+      $data['description']='Buy Your Dream Car By Applying For Car Loan. Compare Car Loan Interest Rates, Check Loan Eligibility & Calculate Car Loan EMI. Apply now on Rupeeboss.com';
 
         $data['id']=DB::table('product_master')
                       ->where('Product_Name','=','Car Loan')
                       ->first();
 
-    	return view('car-loan')->with($data)->with('keywords',$keywords);
+      return view('car-loan')->with($data)->with('keywords',$keywords);
     }
     public function business_loan(){
         $keywords='Loan for Business,Best Business Loans in India,Business Loan Interest Rate,Apply Online for Business Loan,Compare Business Loan';
@@ -76,8 +76,8 @@ class LoanController extends CallApiController
 
 
 
- 	public function apply(){
-    	return view('personal-loan-process');
+  public function apply(){
+      return view('personal-loan-process');
     }
 
     public function smeLoan(request $request){
@@ -259,8 +259,15 @@ class LoanController extends CallApiController
         
         }
 
-   public function apply_iifl_loan(){
-    return view('apply-iifl-loan');
+   public function apply_iifl_loan(Request $req){
+     if(isset($req->CampaignName)){
+             $CampaignName=$req->CampaignName;
+            }else{
+             $CampaignName='Rupeeboss Online';      
+            }
+
+             
+    return view('apply-iifl-loan',['CampaignName'=>$CampaignName]);
    }
 
    public function state(Request $req){
@@ -335,7 +342,7 @@ public function dropdown(Request $req){
     public function applicant(Request $req){
        $data=$req->all();
        $json_data=json_encode($data);
-      // print_r($data);
+
        $post_data = '{
    "head": {
     "requestCode": "PLRQCL01",
@@ -536,7 +543,7 @@ $url = $this::$url_static."/BankAPIService.svc/updateIIFLRevisedQuote";
     }
 
     public function iifl_doc_upload(Request $req){
-      // print_r($req->all());exit();
+      //print_r($req->all());exit();
      $prospectno=Session::get('prospectno');
       $str = array('identity_proof','address_proof','ownership_proof');
       $cat_id = array(1,2,5);
@@ -548,7 +555,6 @@ $url = $this::$url_static."/BankAPIService.svc/updateIIFLRevisedQuote";
           $extension=$req->$file->getClientOriginalExtension();
           $sub_catg=$req['sub_catg'];
           //print_r($sub_catg);exit();
-
           $post_data='{
      "head": {
     "requestCode": "PLRQDOCKYC01",
@@ -560,7 +566,7 @@ $url = $this::$url_static."/BankAPIService.svc/updateIIFLRevisedQuote";
   },           
                   "body": {"ProspectNumber":"'.$prospectno.'","ApplicantType":"Applicant",
                  "CatID":"'.$cat_id[$i].'","SubCatID":"'.$sub_catg[$i+1].'","ImageName":"'.$imageName.'","Extension":"'.$extension.'","Base64string":"'.$base64[$i].'"}}';
-             // print_r($post_data);exit(); 
+             
          $url = $this::$url_static."/BankAPIService.svc/uploadIIFLKYC";
          $result=$this->call_json_data_api($url,$post_data);
          $http_result=$result['http_result'];
@@ -684,25 +690,35 @@ $url = $this::$url_static."/BankAPIService.svc/updateIIFLRevisedQuote";
      return response()->json( $obj);
   }
 
-   public function lendingkart(){
+  public function lendingkart(){
     return view('lendingkart');
    }
 
    public function lendingkart_details(Request $req){
-     $data=$req->all();
-     $data['brokerid']=Session::get('brokerid')?Session::get('brokerid'):'MAA=';
-     $data['empid']=Session::get('empid')?Session::get('empid'):'MAA=';
-     $data['source']=Session::get('source')?Session::get('source'):'MAA=';
-     $post_data=json_encode($data);
-     // print_r($post_data);exit();
-     $url = $this::$url_static."BankAPIService.svc/createLendingKartLead";
-     $result=$this->call_json_data_api($url,$post_data);
-     $http_result=$result['http_result'];
-     $error=$result['error'];
-       $n=(json_decode($http_result));
-        
-     return response()->json(json_decode($n));
-
+     try {
+       $data=$req->all();
+          $data['brokerid']=Session::get('brokerid')?Session::get('brokerid'):'MAA=';
+          $data['empid']=Session::get('empid')?Session::get('empid'):'MAA=';
+          $data['source']=Session::get('source')?Session::get('source'):'MAA=';
+     
+          $post_data=json_encode($data);
+          // print_r($post_data);exit();
+          $url = $this::$url_static."BankAPIService.svc/createLendingKartLead";
+          $result=$this->call_json_data_api($url,$post_data);
+          $http_result=$result['http_result'];
+          $error=$result['error'];
+            $n=(json_decode($http_result));
+            if(isset(json_decode($n)->lk_lead_id)){
+              $lead_id=(json_decode($n)->lk_lead_id);
+            }else{
+              return response()->json(array('error' =>2 ));
+            }
+            Session::put('lendingkart_id',$lead_id);
+          return response()->json(json_decode($n));
+     } catch (Exception $e) {
+        return response()->json(array('error' =>2 ));
+     }
+     
    }
 
    public function lendingkart_doc(Request $req){
@@ -710,7 +726,7 @@ $url = $this::$url_static."/BankAPIService.svc/updateIIFLRevisedQuote";
     $res['msg']=null;
     try
     {
-        $lead_id=12;
+        $lead_id=Session::get('lendingkart_id');
         $str = array('bank_proof','identity_proof','vat_proof','Proof_of_activity');
         for($i=0;$i<4;$i++){
          
@@ -741,37 +757,7 @@ $url = $this::$url_static."/BankAPIService.svc/updateIIFLRevisedQuote";
     return view('test_doc');
    }
 
-   public function test_doc_upload(Request $req){
-    $res['status']=0;
-    $res['msg']=null;
-    try
-    {
-        $lead_id=12;
-        $str = array('bank_proof','identity_proof','vat_proof','Proof_of_activity');
-        for($i=0;$i<4;$i++){
-         
-          $file=($req->file($str[$i]));
-          $destinationPath = 'uploads/'.$lead_id;
-          $filename=$str[$i].".".$file->getClientOriginalExtension();
-           if(File::exists($destinationPath."/".$filename)){
-           // echo "exists \n";
-            continue;
-          }
-          if($file->getClientOriginalExtension()!='pdf'){
-            throw new \Exception("only Pdf are allowed ", 1);
-          }
-          $file->move($destinationPath,$filename);
-       }
-    }catch(\Exception $ee){
-      $res['status']=1;
-      $res['msg']=$ee->getMessage();
-    }
-
-   
-      $response=json_encode($res);
-   return ($response);
- }
-
+  
     public function early_salary(){
       return view('early-salary');
     }

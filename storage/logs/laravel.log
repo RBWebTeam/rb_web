@@ -1,0 +1,20 @@
+[2017-08-02 17:04:27] local.ERROR: Symfony\Component\Debug\Exception\FatalThrowableError: Type error: Argument 1 passed to Illuminate\Routing\Middleware\ThrottleRequests::addHeaders() must be an instance of Symfony\Component\HttpFoundation\Response, string given, called in C:\xampp\htdocs\laravel_rb_new\vendor\laravel\framework\src\Illuminate\Routing\Middleware\ThrottleRequests.php on line 53 in C:\xampp\htdocs\laravel_rb_new\vendor\laravel\framework\src\Illuminate\Routing\Middleware\ThrottleRequests.php:97
+Stack trace:
+#0 C:\xampp\htdocs\laravel_rb_new\vendor\laravel\framework\src\Illuminate\Routing\Middleware\ThrottleRequests.php(53): Illuminate\Routing\Middleware\ThrottleRequests->addHeaders('Non-static meth...', '60', 59)
+#1 C:\xampp\htdocs\laravel_rb_new\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(137): Illuminate\Routing\Middleware\ThrottleRequests->handle(Object(Illuminate\Http\Request), Object(Closure), '60', '1')
+#2 C:\xampp\htdocs\laravel_rb_new\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(33): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#3 C:\xampp\htdocs\laravel_rb_new\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(104): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#4 C:\xampp\htdocs\laravel_rb_new\vendor\laravel\framework\src\Illuminate\Routing\Router.php(655): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#5 C:\xampp\htdocs\laravel_rb_new\vendor\laravel\framework\src\Illuminate\Routing\Router.php(629): Illuminate\Routing\Router->runRouteWithinStack(Object(Illuminate\Routing\Route), Object(Illuminate\Http\Request))
+#6 C:\xampp\htdocs\laravel_rb_new\vendor\laravel\framework\src\Illuminate\Routing\Router.php(607): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#7 C:\xampp\htdocs\laravel_rb_new\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php(268): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#8 C:\xampp\htdocs\laravel_rb_new\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(53): Illuminate\Foundation\Http\Kernel->Illuminate\Foundation\Http\{closure}(Object(Illuminate\Http\Request))
+#9 C:\xampp\htdocs\laravel_rb_new\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode.php(46): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#10 C:\xampp\htdocs\laravel_rb_new\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(137): Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode->handle(Object(Illuminate\Http\Request), Object(Closure))
+#11 C:\xampp\htdocs\laravel_rb_new\vendor\laravel\framework\src\Illuminate\Routing\Pipeline.php(33): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#12 C:\xampp\htdocs\laravel_rb_new\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(104): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#13 C:\xampp\htdocs\laravel_rb_new\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php(150): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#14 C:\xampp\htdocs\laravel_rb_new\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php(117): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter(Object(Illuminate\Http\Request))
+#15 C:\xampp\htdocs\laravel_rb_new\public\index.php(53): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
+#16 C:\xampp\htdocs\laravel_rb_new\server.php(21): require_once('C:\\xampp\\htdocs...')
+#17 {main}  

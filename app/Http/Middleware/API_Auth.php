@@ -16,9 +16,10 @@ class API_Auth
     public function handle($request, Closure $next)
     {
         try {
+            //print_r(Request::header());exit();
             $user=Request::header('user');
             $pwd=Request::header('pwd');
-            if($user=='landingkart' && $pwd=='landingkart@207'){
+            if($user=='lendingkart' && $pwd=='lendingkart@207'){
                 return $next($request);
             }else{
                 throw new \Exception("Invalid User", 1);

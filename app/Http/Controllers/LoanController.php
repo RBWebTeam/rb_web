@@ -711,9 +711,9 @@ $url = $this::$url_static."/BankAPIService.svc/updateIIFLRevisedQuote";
             Session::put('lendingkart_id',json_decode($n)->lk_lead_id);
           return response()->json(json_decode($n));
      } catch (Exception $e) {
-       return response()->json($e->getMessage());
+       return response()->json(array('error' => "0",'err'=>$e->getMessage()));
      }
-
+     
    }
 
    public function lendingkart_doc(Request $req){

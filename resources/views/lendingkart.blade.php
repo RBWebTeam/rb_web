@@ -261,7 +261,7 @@
                                         </div>
 
                                         <div class="col-md-4">
-                                            <input type="text" class="form-control" id="EMI_BEING_PAID" name="EMI_BEING_PAID" onkeypress="return fnAllowNumeric(event)" placeholder="Obligations">
+                                            <input type="text" class="form-control" id="EMI_BEING_PAID" name="EMI_BEING_PAID" value="0" onkeypress="return fnAllowNumeric(event)" placeholder="Obligations">
                                             
                                         </div>
 
@@ -767,7 +767,7 @@ $(function() {
       $form=$('#lendingkart_form');
       if(! $form.valid()){
         // alert("no")
-        alert("You must agree to the terms first.");
+        alert("Enter Details As Well As Agree to the terms.");
          return false;
       }else{
 

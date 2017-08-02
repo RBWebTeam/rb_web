@@ -8,7 +8,6 @@ use App\Http\Requests;
 use Session;
 use DB;
 use Response;
-use File;
 class LoanController extends CallApiController
 {
     public function personal_loan(){
@@ -259,8 +258,15 @@ class LoanController extends CallApiController
         
         }
 
-   public function apply_iifl_loan(){
-    return view('apply-iifl-loan');
+   public function apply_iifl_loan(Request $req){
+     if(isset($req->CampaignName)){
+             $CampaignName=$req->CampaignName;
+            }else{
+             $CampaignName='Rupeeboss Online';      
+            }
+
+             
+    return view('apply-iifl-loan',['CampaignName'=>$CampaignName]);
    }
 
    public function state(Request $req){
@@ -335,7 +341,7 @@ public function dropdown(Request $req){
     public function applicant(Request $req){
        $data=$req->all();
        $json_data=json_encode($data);
-      // print_r($data);
+
        $post_data = '{
    "head": {
     "requestCode": "PLRQCL01",
@@ -536,7 +542,7 @@ $url = $this::$url_static."/BankAPIService.svc/updateIIFLRevisedQuote";
     }
 
     public function iifl_doc_upload(Request $req){
-      // print_r($req->all());exit();
+      //print_r($req->all());exit();
      $prospectno=Session::get('prospectno');
       $str = array('identity_proof','address_proof','ownership_proof');
       $cat_id = array(1,2,5);
@@ -548,7 +554,6 @@ $url = $this::$url_static."/BankAPIService.svc/updateIIFLRevisedQuote";
           $extension=$req->$file->getClientOriginalExtension();
           $sub_catg=$req['sub_catg'];
           //print_r($sub_catg);exit();
-
           $post_data='{
      "head": {
     "requestCode": "PLRQDOCKYC01",
@@ -560,7 +565,7 @@ $url = $this::$url_static."/BankAPIService.svc/updateIIFLRevisedQuote";
   },           
                   "body": {"ProspectNumber":"'.$prospectno.'","ApplicantType":"Applicant",
                  "CatID":"'.$cat_id[$i].'","SubCatID":"'.$sub_catg[$i+1].'","ImageName":"'.$imageName.'","Extension":"'.$extension.'","Base64string":"'.$base64[$i].'"}}';
-             // print_r($post_data);exit(); 
+             
          $url = $this::$url_static."/BankAPIService.svc/uploadIIFLKYC";
          $result=$this->call_json_data_api($url,$post_data);
          $http_result=$result['http_result'];
@@ -684,7 +689,7 @@ $url = $this::$url_static."/BankAPIService.svc/updateIIFLRevisedQuote";
      return response()->json( $obj);
   }
 
-   public function lendingkart(){
+  public function lendingkart(){
     return view('lendingkart');
    }
 

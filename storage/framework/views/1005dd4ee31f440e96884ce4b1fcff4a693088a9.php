@@ -96,8 +96,8 @@
                 <li class="hidden-xs"><a href="<?php echo e(URL::to('/')); ?>">Home</a></li>
                 <li class="hidden-xs"><a href="<?php echo e(URL::to('about-us')); ?>">About Us</a></li>
                 <li class="hidden-xs"><a href="<?php echo e(URL::to('contact-us')); ?>">Contact Us</a></li>
-				<li class="hidden-xs"><a href="#" data-toggle="modal" data-target="#emp_login">Employee Login </a></li>
-				<li class="hidden-xs"><a href="<?php echo e(URL::to('rba-login')); ?>">RBA Login </a></li>
+				<!-- <li class="hidden-xs"><a href="#" data-toggle="modal" data-target="#emp_login">Employee Login </a></li> -->
+				<!-- <li class="hidden-xs"><a href="<?php echo e(URL::to('rba-login')); ?>">RBA Login </a></li> -->
                 <li class="hidden-xs"><a href="<?php echo e(URL::to('http://www.rupeeboss.com/rblife-style/')); ?>">RB Life Style</a></li>
                 <li class="hidden-xs"><a href="<?php echo e(URL::to('http://www.rupeeboss.com/Elite-Website/')); ?>">Elite</a></li>
 				<li class="hidden-lg"><a href="<?php echo e(URL::to('magic-link')); ?>">Magic Link </a></li>

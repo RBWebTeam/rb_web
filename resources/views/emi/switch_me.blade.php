@@ -339,7 +339,7 @@
   $(document).ready(function(){
     $("#Month").change(function(){
       var amt = $("#loanterm").val();
-      console.log($("#loanterm").val());
+      //console.log($("#loanterm").val());
       var month = amt;
       
       //console.log(month);
@@ -347,7 +347,7 @@
     });
     $("#Year").change(function(){
       var amt1 = $("#loanterm1").val();
-      console.log($("#loanterm").val());
+      //console.log($("#loanterm").val());
       var yr = amt1 / 12;
       //console.log(yr);
       //console.log(year);
@@ -407,7 +407,7 @@
                data : { 'loanamount': loanamount , 'loaninterest': loaninterest ,'loanterm' :loanterm,'_token': v_token,'profession':profession,'product_id':product_id,'brokerid':brokerid,'empcode':empcode,'refapp':refapp},
                // 'bank':bank},
                success: function(msg){
-                    console.log(msg);
+                    //console.log(msg);
                   if(msg.success ==true){
                   var numb = msg.amount.toFixed();
                    $('#emi').empty().append(numb);

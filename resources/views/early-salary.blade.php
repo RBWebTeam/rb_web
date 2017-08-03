@@ -436,7 +436,6 @@ input[type="text"] {
       if(! $('#early_salary_form').valid())
        {
               //alert('not valid');
-
         }
         else
         {
@@ -446,7 +445,7 @@ input[type="text"] {
          url: "{{URL::to('early-salary-submit')}}",
          data : $('#early_salary_form').serialize(),
          success: function(msg){
-              console.log(msg.status);
+              // console.log(msg.status);
               if (msg.status=="200") 
               {
                $('#early_salary').modal('show');

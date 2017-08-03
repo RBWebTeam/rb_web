@@ -2334,7 +2334,7 @@ $(document).ready(function(){
 
 <script type="text/javascript">
   function pan_card(obj,val){
-    console.log(obj);
+    //console.log(obj);
     if(obj=='pan_no' ){
                    var str =$('#pan_no').val();
                    var pancardPattern = /^([a-zA-Z]{5})(\d{4})([a-zA-Z]{1})$/;

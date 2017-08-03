@@ -261,7 +261,7 @@
        show_card();
   }
   function show_card(){
-    console.log(income+"--"+interest)
+    //console.log(income+"--"+interest)
     if(interest=='Lifestyle'){
        document.getElementById('2.5_button').classList.remove("hide");
     }else{

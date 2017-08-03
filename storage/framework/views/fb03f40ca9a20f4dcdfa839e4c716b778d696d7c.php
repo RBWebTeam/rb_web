@@ -121,24 +121,23 @@
 							<a class="btn btn-primary btn-outline with-arrow" href="<?php echo e(URL::to('apply-iifl-loan')); ?>">Apply Now<i class="icon-arrow-right"></i></a>
 						</div>
 					</div>
-					
+
 					<div class="col-md-4 animate-box">
 						<div class="price-box popular1">
-							<div class="center-blg"><img src="<?php echo e(URL::to('images/bank/hdfc.png')); ?>" width="160" alt="apply_online_pic" /></div>
-							<h4 class="mrg-btm">HDFC</h4>
-							
-							
-							<a class="btn btn-primary btn-outline with-arrow" href="<?php echo e(URL::to('contact-us')); ?>">Apply Now<i class="icon-arrow-right"></i></a>
+							<div class="center-blg"><img src="<?php echo e(URL::to('images/lendingkart.png')); ?>" width="150" alt="apply_online_pic" /></div>
+							<h4 class="mrg-btm">LendingKart</h4>
+							<a class="btn btn-primary btn-outline with-arrow" href="<?php echo e(URL::to('lendingkart')); ?>">Apply Now<i class="icon-arrow-right"></i></a>
+						</div>
+					</div>
+					<div class="col-md-4 animate-box">
+						<div class="price-box popular1">
+							<div class="center-blg"><img src="<?php echo e(URL::to('images/earlysalary.png')); ?>" width="150" alt="apply_online_pic" /></div>
+							<h4 class="mrg-btm">Early Salary</h4>
+							<a class="btn btn-primary btn-outline with-arrow" href="<?php echo e(URL::to('early-salary')); ?>">Apply Now<i class="icon-arrow-right"></i></a>
 						</div>
 					</div>
 					
-					<div class="col-md-4 animate-box">
-						<div class="price-box popular1">
-							<div class="center-blg"><img src="<?php echo e(URL::to('images/bank/icici.png')); ?>"width="160" alt="apply_online_pic" /></div>
-							<h4 class="mrg-btm">ICICI</h4>
-							<a class="btn btn-primary btn-outline with-arrow" href="<?php echo e(URL::to('contact-us')); ?>">Apply Now<i class="icon-arrow-right"></i></a>
-						</div>
-					</div>
+					
 					<div class="col-md-4 animate-box">
 						<div class="price-box popular1">
 							<div class="center-blg"><img src="<?php echo e(URL::to('images/bank/yes.png')); ?>" width="150" alt="apply_online_pic" /></div>
@@ -160,18 +159,22 @@
 							<a class="btn btn-primary btn-outline with-arrow" href="<?php echo e(URL::to('contact-us')); ?>">Apply Now<i class="icon-arrow-right"></i></a>
 						</div>
 					</div>
+					
 					<div class="col-md-4 animate-box">
 						<div class="price-box popular1">
-							<div class="center-blg"><img src="<?php echo e(URL::to('images/lendingkart.png')); ?>" width="150" alt="apply_online_pic" /></div>
-							<h4 class="mrg-btm">LendingKart</h4>
-							<a class="btn btn-primary btn-outline with-arrow" href="<?php echo e(URL::to('lendingkart')); ?>">Apply Now<i class="icon-arrow-right"></i></a>
+							<div class="center-blg"><img src="<?php echo e(URL::to('images/bank/hdfc.png')); ?>" width="160" alt="apply_online_pic" /></div>
+							<h4 class="mrg-btm">HDFC</h4>
+							
+							
+							<a class="btn btn-primary btn-outline with-arrow" href="<?php echo e(URL::to('contact-us')); ?>">Apply Now<i class="icon-arrow-right"></i></a>
 						</div>
 					</div>
+					
 					<div class="col-md-4 animate-box">
 						<div class="price-box popular1">
-							<div class="center-blg"><img src="<?php echo e(URL::to('images/earlysalary.png')); ?>" width="150" alt="apply_online_pic" /></div>
-							<h4 class="mrg-btm">Early Salary</h4>
-							<a class="btn btn-primary btn-outline with-arrow" href="<?php echo e(URL::to('early-salary')); ?>">Apply Now<i class="icon-arrow-right"></i></a>
+							<div class="center-blg"><img src="<?php echo e(URL::to('images/bank/icici.png')); ?>"width="160" alt="apply_online_pic" /></div>
+							<h4 class="mrg-btm">ICICI</h4>
+							<a class="btn btn-primary btn-outline with-arrow" href="<?php echo e(URL::to('contact-us')); ?>">Apply Now<i class="icon-arrow-right"></i></a>
 						</div>
 					</div>
 

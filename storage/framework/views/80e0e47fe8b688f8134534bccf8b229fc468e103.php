@@ -262,7 +262,7 @@
                                         </div>
 
                                         <div class="col-md-4">
-                                            <input type="text" class="form-control" id="EMI_BEING_PAID" name="EMI_BEING_PAID" value="0" onkeypress="return fnAllowNumeric(event)" placeholder="Obligations">
+                                            <input type="text" class="form-control" id="EMI_BEING_PAID" name="EMI_BEING_PAID" onkeypress="return fnAllowNumeric(event)" placeholder="Obligations">
                                             
                                         </div>
 

@@ -761,4 +761,25 @@ $url = $this::$url_static."/BankAPIService.svc/updateIIFLRevisedQuote";
     public function early_salary(){
       return view('early-salary');
     }
+
+    public function early_salary_submit(Request $req){
+      // print_r($req->all());
+      $data=$req->all();
+      $data['brokerid']=Session::get('brokerid')?Session::get('brokerid'):'MAA=';
+      $data['empid']=Session::get('empid')?Session::get('empid'):'MAA=';
+      $data['source']=Session::get('source')?Session::get('source'):'MAA=';
+      $post_data=json_encode($data);
+       // print_r($post_data);exit();
+      $url = $this::$url_static."/BankAPIService.svc/createEarlySalaryReq";
+      $result=$this->call_json_data_api($url,$post_data);
+      $http_result=$result['http_result'];
+      $error=$result['error'];
+      $st=str_replace('"{', "{", $http_result);
+      $s=str_replace('}"', "}", $st);
+      $m=$s=str_replace('\\', "", $s);
+      $obj = json_decode($m);
+     // print_r($obj);exit();
+     return response()->json( $obj);
+    }  
+      
 }

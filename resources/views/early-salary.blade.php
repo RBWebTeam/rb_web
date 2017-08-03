@@ -35,7 +35,7 @@
     text-transform: uppercase;
     font-weight: 400;
 	text-align:left;
-    margin-bottom:10px;
+    margin-bottom:12px;
     color: #FFFFFF;
 
 }

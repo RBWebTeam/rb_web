@@ -83,12 +83,14 @@
             </div>
             </div>
    
-            <br>
-
+            <br> 
+ 
             
         <div id="iifl">
             <form id="iifl_express_loan" name="iifl_express_loan" method="POST">
                 {{ csrf_field() }}
+
+
             
             <section class="content">
                 <h3 class="text-uppercase exp-hed">IIFL Express Loan</h3>
@@ -251,6 +253,8 @@
             <div class="col-md-1"></div>
             <section class="content">
                 <h3 class="col-md-12 mrg-tpp">Tell Us a Bit About YourSelf</h3>
+                  <input type="hidden" name="CampaignName" value="{{$CampaignName}}">
+
                 <input class="input__field input__field--nao" type="hidden" name="CompanyName" required id="CompanyName" onkeypress="return AllowAlphabet(event)" />
                 <input class="input__field input__field--nao" type="hidden" name="MonthlySalary" required id="MonthlySalary" onkeypress="return AllowAlphabet(event)" />
                 <input class="input__field input__field--nao" type="hidden" name="MonthlyObligation" required id="MonthlyObligation" onkeypress="return AllowAlphabet(event)" />
@@ -1136,7 +1140,7 @@
             </form>
             </div>
 
-            <div id="upload" >
+            <div id="upload" style="display: none;" >
             <form name="upload_details" id="upload_details" enctype="multipart/form-data" method="POST">
             {{ csrf_field() }}
             <div>
@@ -1201,7 +1205,7 @@
             </div>
                 
 
-            <div id="financial_doc" >
+            <div id="financial_doc" style="display: none;" >
 
                 <form name="financial_details" id="financial_details" enctype="multipart/form-data" method="POST">
                  {{ csrf_field() }}

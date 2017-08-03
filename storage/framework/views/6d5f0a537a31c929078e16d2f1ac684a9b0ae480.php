@@ -1,4 +1,4 @@
-@include('layout.header')
+<?php echo $__env->make('layout.header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 <script
   src="http://code.jquery.com/jquery-3.2.1.min.js"
   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
@@ -90,7 +90,8 @@
                           
                         
                             <form class="" id="lendingkart_form" name="lendingkart_form" role="form" method="POST" >
-                             {{ csrf_field() }}
+                             <?php echo e(csrf_field()); ?>
+
                              
                                 <div class="row">
                                     <div class="form-group">
@@ -384,7 +385,7 @@
                                         <div class="col-md-12">
                                         &nbsp;&nbsp;&nbsp;&nbsp;<button class="btn btn-primary btn-outline with-arrow animate-box fadeInUp animated lendingkart-submit dis-tbl" >Confirm & Continue<i class="icon-arrow-right"></i></button>
                                     <div class="iframeloading" style= "display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
-                <img src="{{URL::to('images/ajaxloader.gif')}}" alt="Loader" title="Loader" style="top: 50%; position: relative; left: 50%;"  />
+                <img src="<?php echo e(URL::to('images/ajaxloader.gif')); ?>" alt="Loader" title="Loader" style="top: 50%; position: relative; left: 50%;"  />
                </div>
                                    
                                 
@@ -399,8 +400,8 @@
         </div>  
     </div>
 </div>
-@include('layout.footer')
-@include('layout.script')
+<?php echo $__env->make('layout.footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php echo $__env->make('layout.script', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 
 <div class="modal fade" tabindex="-1" role="dialog" id="lendingkart-popup">
   <div class="modal-dialog" role="document">
@@ -448,7 +449,8 @@
       </div>
       <div class="modal-body">
            <form name="document_upload_form" id="document_upload_form" enctype="multipart/form-data"  method="post">
-          {{ csrf_field() }}
+          <?php echo e(csrf_field()); ?>
+
           
                   <table class="table table-striped">
                     
@@ -632,7 +634,7 @@ var tax_returns =$('#Tax_Returns').text("VAT/Service Tax Returns (whichever appl
   
 
  $(document).ready(function(){
-    src = "{{ route('searchajax') }}";
+    src = "<?php echo e(route('searchajax')); ?>";
     $(".search_citynm").autocomplete({
       source: function(request, response) {
         
@@ -679,7 +681,7 @@ var tax_returns =$('#Tax_Returns').text("VAT/Service Tax Returns (whichever appl
       source: function(request, response) {
         
         $.ajax({
-          url: "{{ route('searchstateajax') }}",
+          url: "<?php echo e(route('searchstateajax')); ?>",
           dataType: "json",
           data: {
             term : request.term
@@ -785,7 +787,7 @@ $(function() {
    
         $.ajax({  
          type: "POST",  
-         url: "{{URL::to('lendingkart-details')}}",
+         url: "<?php echo e(URL::to('lendingkart-details')); ?>",
          data : $('#lendingkart_form').serialize(),
          success: function(msg){
          
@@ -828,7 +830,7 @@ $(function() {
       }else{
         $.ajax({  
          type: "POST",  
-         url: "{{URL::to('lendingkart-doc-upload')}}",
+         url: "<?php echo e(URL::to('lendingkart-doc-upload')); ?>",
          data : $('#document_upload_form').serialize(),
          success: function(msg){
          
@@ -973,9 +975,9 @@ $(function() {
     /**
      * Constructor to create a new multiselect using the given select.
      *
-     * @param {jQuery} select
-     * @param {Object} options
-     * @returns {Multiselect}
+     * @param  {jQuery} select
+     * @param  {Object} options
+     * @returns  {Multiselect}
      */
     function Multiselect(select, options) {
 
@@ -1037,9 +1039,9 @@ $(function() {
              * option is selected or a list of the selected options up to a length
              * of 3 selected options.
              *
-             * @param {jQuery} options
-             * @param {jQuery} select
-             * @returns {String}
+             * @param  {jQuery} options
+             * @param  {jQuery} select
+             * @returns  {String}
              */
             buttonText: function(options, select) {
                 if (this.disabledText.length > 0
@@ -1080,9 +1082,9 @@ $(function() {
             /**
              * Updates the title of the button similar to the buttonText function.
              *
-             * @param {jQuery} options
-             * @param {jQuery} select
-             * @returns {@exp;selected@call;substr}
+             * @param  {jQuery} options
+             * @param  {jQuery} select
+             * @returns  {@exp;selected@call;substr}
              */
             buttonTitle: function(options, select) {
                 if (options.length === 0) {
@@ -1105,8 +1107,8 @@ $(function() {
             /**
              * Create a label.
              *
-             * @param {jQuery} element
-             * @returns {String}
+             * @param  {jQuery} element
+             * @returns  {String}
              */
             optionLabel: function(element){
                 return $(element).attr('label') || $(element).text();
@@ -1114,8 +1116,8 @@ $(function() {
             /**
              * Create a class.
              *
-             * @param {jQuery} element
-             * @returns {String}
+             * @param  {jQuery} element
+             * @returns  {String}
              */
             optionClass: function(element) {
                 return $(element).attr('class') || '';
@@ -1125,8 +1127,8 @@ $(function() {
              *
              * Not triggered when selecting/deselecting options manually.
              *
-             * @param {jQuery} option
-             * @param {Boolean} checked
+             * @param  {jQuery} option
+             * @param  {Boolean} checked
              */
             onChange : function(option, checked) {
 
@@ -1134,7 +1136,7 @@ $(function() {
             /**
              * Triggered when the dropdown is shown.
              *
-             * @param {jQuery} event
+             * @param  {jQuery} event
              */
             onDropdownShow: function(event) {
 
@@ -1142,7 +1144,7 @@ $(function() {
             /**
              * Triggered when the dropdown is hidden.
              *
-             * @param {jQuery} event
+             * @param  {jQuery} event
              */
             onDropdownHide: function(event) {
 
@@ -1150,7 +1152,7 @@ $(function() {
             /**
              * Triggered after the dropdown is shown.
              *
-             * @param {jQuery} event
+             * @param  {jQuery} event
              */
             onDropdownShown: function(event) {
 
@@ -1158,7 +1160,7 @@ $(function() {
             /**
              * Triggered after the dropdown is hidden.
              *
-             * @param {jQuery} event
+             * @param  {jQuery} event
              */
             onDropdownHidden: function(event) {
 
@@ -1178,8 +1180,8 @@ $(function() {
             /**
              * Triggered after initializing.
              *
-             * @param {jQuery} $select
-             * @param {jQuery} $container
+             * @param  {jQuery} $select
+             * @param  {jQuery} $container
              */
             onInitialized: function($select, $container) {
 
@@ -1187,7 +1189,7 @@ $(function() {
             /**
              * Triggered on filtering.
              *
-             * @param {jQuery} $filter
+             * @param  {jQuery} $filter
              */
             onFiltering: function($filter) {
 
@@ -1641,7 +1643,7 @@ $(function() {
         /**
          * Create an option using the given select option.
          *
-         * @param {jQuery} element
+         * @param  {jQuery} element
          */
         createOptionValue: function(element) {
             var $element = $(element);
@@ -1709,7 +1711,7 @@ $(function() {
         /**
          * Creates a divider using the given select option.
          *
-         * @param {jQuery} element
+         * @param  {jQuery} element
          */
         createDivider: function(element) {
             var $divider = $(this.options.templates.divider);
@@ -1719,7 +1721,7 @@ $(function() {
         /**
          * Creates an optgroup.
          *
-         * @param {jQuery} group
+         * @param  {jQuery} group
          */
         createOptgroup: function(group) {
             var label = $(group).attr("label");
@@ -2007,8 +2009,8 @@ $(function() {
          * If triggerOnChange is set to true, the on change event is triggered if
          * and only if one value is passed.
          *
-         * @param {Array} selectValues
-         * @param {Boolean} triggerOnChange
+         * @param  {Array} selectValues
+         * @param  {Boolean} triggerOnChange
          */
         select: function(selectValues, triggerOnChange) {
             if(!$.isArray(selectValues)) {
@@ -2073,8 +2075,8 @@ $(function() {
          * If triggerOnChange is set to true, the on change event is triggered, if
          * and only if one value is passed.
          *
-         * @param {Array} deselectValues
-         * @param {Boolean} triggerOnChange
+         * @param  {Array} deselectValues
+         * @param  {Boolean} triggerOnChange
          */
         deselect: function(deselectValues, triggerOnChange) {
             if(!$.isArray(deselectValues)) {
@@ -2121,8 +2123,8 @@ $(function() {
          *
          * If justVisible is true or not specified, only visible options are selected.
          *
-         * @param {Boolean} justVisible
-         * @param {Boolean} triggerOnSelectAll
+         * @param  {Boolean} justVisible
+         * @param  {Boolean} triggerOnSelectAll
          */
         selectAll: function (justVisible, triggerOnSelectAll) {
 
@@ -2167,7 +2169,7 @@ $(function() {
          *
          * If justVisible is true or not specified, only visible options are deselected.
          *
-         * @param {Boolean} justVisible
+         * @param  {Boolean} justVisible
          */
         deselectAll: function (justVisible, triggerOnDeselectAll) {
 
@@ -2324,7 +2326,7 @@ $(function() {
         /**
          * Set the options.
          *
-         * @param {Array} options
+         * @param  {Array} options
          */
         setOptions: function(options) {
             this.options = this.mergeOptions(options);
@@ -2333,8 +2335,8 @@ $(function() {
         /**
          * Merges the given options with the default options.
          *
-         * @param {Array} options
-         * @returns {Array}
+         * @param  {Array} options
+         * @returns  {Array}
          */
         mergeOptions: function(options) {
             return $.extend(true, {}, this.defaults, this.options, options);
@@ -2343,7 +2345,7 @@ $(function() {
         /**
          * Checks whether a select all checkbox is present.
          *
-         * @returns {Boolean}
+         * @returns  {Boolean}
          */
         hasSelectAll: function() {
             return $('li.multiselect-all', this.$ul).length > 0;
@@ -2426,7 +2428,7 @@ $(function() {
         /**
          * Get all selected options.
          *
-         * @returns {jQUery}
+         * @returns  {jQUery}
          */
         getSelected: function() {
             return $('option', this.$select).filter(":selected");
@@ -2435,8 +2437,8 @@ $(function() {
         /**
          * Gets a select option by its value.
          *
-         * @param {String} value
-         * @returns {jQuery}
+         * @param  {String} value
+         * @returns  {jQuery}
          */
         getOptionByValue: function (value) {
 
@@ -2454,8 +2456,8 @@ $(function() {
         /**
          * Get the input (radio/checkbox) by its value.
          *
-         * @param {String} value
-         * @returns {jQuery}
+         * @param  {String} value
+         * @returns  {jQuery}
          */
         getInputByValue: function (value) {
 
@@ -2531,7 +2533,7 @@ $(function() {
 
             // $('#financial_doc').show();
         $.ajax({
-          url:"{{URL::to('lendingkart-doc-upload')}}" ,  
+          url:"<?php echo e(URL::to('lendingkart-doc-upload')); ?>" ,  
           data:new FormData($("#document_upload_form")[0]),
           dataType:'json',
           async:false,

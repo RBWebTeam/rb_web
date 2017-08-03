@@ -6,6 +6,7 @@ use App\Http\Requests;
 use DB;
 use Response;
 use App\bank_quote_api_request;
+use File;
 class ApiController extends CallApiController
 {
 	
@@ -728,19 +729,18 @@ run_else:
       }
 
       public function test_document_upload(Request $req){
-      	//print_r($req->all());exit();
-      	$str = 'identity_proof';
+      	$id=$req['id'];
+      	$filename=$req['filename'];
+      	$path=public_path().'/uploads/'.$id.'/'.$filename.'.pdf';
+      	
       	try{
-      	$password='Password@upload';	
-      	// $Base64String=$req['Base64String'];
-        $Base64String=$this->FileToString($str,$req);
-        $file=$str;
-      	print_r($file);exit();
-        $imageName = time().'.'.$req->$file->getClientOriginalExtension();
-
-        $extension=$req->$file->getClientOriginalExtension();
-         
-         return response()->json(array('status' => 1,'data'=>$data,'err'=>''));
+      		if(File::exists($path)){
+      			$content=File::get($path);
+      			 $data=base64_encode($content);
+      			}else{
+      				 throw new \Exception("No such File found", 0);
+      			}
+        	return response()->json(array('status' => 1,'data'=>$data,'err'=>''));
     }
     catch (\Exception $e) {
 			return response()->json(array('status' => 0,'data'=>'','err'=>$e->getMessage()));

@@ -31,12 +31,13 @@
     letter-spacing: 1px;
 }
 .register-left h1 {
-    font-size: 3.5em;
+    font-size: 2.5em;
     text-transform: uppercase;
     font-weight: 400;
-    margin-bottom: 1em;
+	text-align:left;
+    margin-bottom:12px;
     color: #FFFFFF;
-    text-align: center;
+
 }
 .register-left h2 {
 	
@@ -193,6 +194,8 @@ input[type="text"] {
     word-spacing: 5px;
 }
 
+.pad-a {padding:5px 0px; border:1px dashed #eee; width:100%;}
+.col-md-4 {padding:2px;}
 
 /*-- //copyright --*/
 
@@ -208,11 +211,13 @@ input[type="text"] {
 			<div class="register-in">
 				<h1><b>Cash On The Go</b></h1>
 				<h2>Without Any Hassle</h2>
-				<p>Donec ipsum lorem, sodales a sagittis ut, convallis non nibh. Integer vitae cursus nunc, et vestibulum augue. Donec lacinia tristique purus. Aenean in est pretium lectus euismod facilisis.</p>
+				<p>Borrowing money from Rupeeboss Website is as simple as cooking an instant noodle just 3 simple steps and the money is credited to your account.</p>
+				<div class="col-md-4 text-center"><p class="pad-a" title="Login & Apply">APPLY ></p></div>
+				<div class="col-md-4 text-center"><p class="pad-a" title="Approval">APPROVAL ></p></div>
+				<div class="col-md-4 text-center"><p class="pad-a" title="Cash Transfer">TRANSFER</p></div>
 				
-				<div class="link">
-					<a href="#">Login</a>
-				</div>
+				<p>Login your Account, tell us how much cash you need and when you want to return, upload some basic document.</p>
+				
 			</div>
 		</div>
 		<form>

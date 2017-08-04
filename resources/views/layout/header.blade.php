@@ -60,7 +60,7 @@
 <!-- 	
 <script async="async" type="text/javascript" src="https://app.tigerapi.com/rest/?i=MTQ5MjY4MDA2OA=="></script> -->
 	<!-- Side bar -->
-	<ul class="arrow-don">
+	<!--<ul class="arrow-don">
 	<li class="soc-ic-0"><div  title="Help Section"><i class="icon-phone"></i></div></li>
 
 	<li class="soc-ic-1 soc"><a href="https://www.facebook.com/rupeeboss" target="_blank"><div  title="Facebook"><i class="icon-facebook"></i></div></a></li>

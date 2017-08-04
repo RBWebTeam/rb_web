@@ -1077,7 +1077,7 @@
          
          
 
-         console.log(slidr);
+         //console.log(slidr);
 
          var mob_no = $("#mob_no").val();
          $('#mobile_no').val(mob_no);
@@ -1396,7 +1396,7 @@
 
 <script type="text/javascript">
 	function business_turnover(obj,val){
-		console.log(obj);
+		//console.log(obj);
 		if(obj=='turnover' ){
                    var str =$('#turnover').val();
                    if (str<500000) {

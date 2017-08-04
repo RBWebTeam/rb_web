@@ -1,4 +1,4 @@
-@include('layout.header')
+<?php echo $__env->make('layout.header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 
 <div class="container" id="fh5co-hero">
                      <div class="fh5co-contact animate-box">
@@ -14,7 +14,8 @@
                             
                             <div class="row text-left comp-pg rate">
                                  <form class="" id="home_loan_calculator_form" name="home_loan_calculator_form" role="form" method="POST" >
-                                 {{ csrf_field() }}
+                                 <?php echo e(csrf_field()); ?>
+
                                 <div class="row">
                                     <div class="form-group">
                                        
@@ -114,8 +115,8 @@
                                     
 </div>
 <br>
-@include('layout.footer')
-@include('layout.script')
+<?php echo $__env->make('layout.footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php echo $__env->make('layout.script', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 
 <div class="modal fade" tabindex="-1" role="dialog" id="home_loan_eligible">
   <div class="modal-dialog" role="document">
@@ -171,34 +172,34 @@
            
         $.ajax({  
          type: "POST",  
-         url: "{{URL::to('home-loan-calculation')}}",
+         url: "<?php echo e(URL::to('home-loan-calculation')); ?>",
          data : $('#home_loan_calculator_form').serialize(),
          success: function(msg){
-              //console.log(msg.status);
+              console.log(msg.status);
               if (msg.status==1) 
               {
                  var loan_eligible = msg.data.loan_eligible;
-                 //console.log(loan_eligible);
+                 console.log(loan_eligible);
                   $('#loan_eligible').empty().append(loan_eligible);
 
                  var roi = msg.data.roi;
                  $('#roi').empty().append(roi);
 
                  var emi = msg.data.emi;
-                 //console.log(emi);
+                 console.log(emi);
                   $('#EMI').empty().append(emi);
 
 
                  var processingfee = msg.data.processingfee;
-                  //console.log(processingfee);
+                  console.log(processingfee);
                   $('#processingfee').empty().append(processingfee);
 
                   var Bank_Name = msg.data.Bank_Name;
-                  //console.log(Bank_Name);
+                  console.log(Bank_Name);
                   $('#bank_name').empty().append(Bank_Name);
 
                   var Bank_Logo = msg.data.Bank_Logo;
-                  //console.log(Bank_Logo);
+                  console.log(Bank_Logo);
                   $('#bank_logo').html('<img src='+Bank_Logo+' width="150px">');
 
                   $('#home_loan_eligible').modal('show');  

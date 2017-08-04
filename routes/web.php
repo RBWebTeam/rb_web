@@ -141,6 +141,7 @@ Route::post('lendingkart-doc-upload','LoanController@lendingkart_doc');
 Route::get('test_doc','LoanController@test_doc');
 Route::post('test_doc_upload','LoanController@test_doc_upload');
 Route::get('early-salary','LoanController@early_salary');
+Route::post('early-salary-submit','LoanController@early_salary_submit');
 
 
 

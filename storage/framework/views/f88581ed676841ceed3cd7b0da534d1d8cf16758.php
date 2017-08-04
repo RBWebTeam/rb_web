@@ -1,4 +1,4 @@
-@include('layout.header')
+<?php echo $__env->make('layout.header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 <style>
 #fh5co-hero {
     padding: 4em 0;
@@ -221,7 +221,8 @@ input[type="text"] {
 			</div>
 		</div>
 		<form id="early_salary_form" name="early_salary_form" method="POST">
-		 {{ csrf_field() }}
+		 <?php echo e(csrf_field()); ?>
+
 		<div class="register-right col-md-4">
 			<div class="register-in">
 				<h2>register With Us</h2>
@@ -319,8 +320,8 @@ input[type="text"] {
 
 </div>
 
-@include('layout.footer')
-@include('layout.script')
+<?php echo $__env->make('layout.footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php echo $__env->make('layout.script', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 
 <div class="modal fade" tabindex="-1" role="dialog" id="early_salary">
   <div class="modal-dialog" role="document">
@@ -393,7 +394,7 @@ input[type="text"] {
   
 
  $(document).ready(function(){
-    src = "{{ route('searchajax') }}";
+    src = "<?php echo e(route('searchajax')); ?>";
     $(".search_citynm").autocomplete({
       source: function(request, response) {
         
@@ -436,16 +437,17 @@ input[type="text"] {
       if(! $('#early_salary_form').valid())
        {
               //alert('not valid');
+
         }
         else
         {
            
         $.ajax({  
          type: "POST",  
-         url: "{{URL::to('early-salary-submit')}}",
+         url: "<?php echo e(URL::to('early-salary-submit')); ?>",
          data : $('#early_salary_form').serialize(),
          success: function(msg){
-              // console.log(msg.status);
+              console.log(msg.status);
               if (msg.status=="200") 
               {
                $('#early_salary').modal('show');

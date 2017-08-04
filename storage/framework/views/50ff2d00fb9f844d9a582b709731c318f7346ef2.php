@@ -58,7 +58,7 @@
  select {color:#636363 !important;}
  .lastReporteddob {color:#636363 !important;}
  
-@media only screen and (max-width:768px) {
+@media  only screen and (max-width:768px) {
 	
 	.col-md-12 {padding:0px;margin:2px;}
 }
@@ -105,7 +105,8 @@ $(".top").click(function() {
     <div class="col-md-3"></div>
 	
 	<form id="to_view_url" name="to_view_url" method="POST">
-  {{ csrf_field() }}
+  <?php echo e(csrf_field()); ?>
+
     <div id="hideview" class="text-center col-md-6">
                                             <div class="form-padding">
                                                 <h6 class="text-center top-heading click-hr"><a id="urlweb" href="javascript:void(0)">click here</a>
@@ -734,10 +735,10 @@ $(".top").click(function() {
   </div>
   </div>
   
-               <input type="hidden" name="prod" value="{{$prod}}">
-               <input type="hidden" name="amount" value="{{$amount}}">
-               <input type="hidden" name="interest" value="{{$interest}}">
-               <input type="hidden" name="_token" value="{{ csrf_token() }}">
+               <input type="hidden" name="prod" value="<?php echo e($prod); ?>">
+               <input type="hidden" name="amount" value="<?php echo e($amount); ?>">
+               <input type="hidden" name="interest" value="<?php echo e($interest); ?>">
+               <input type="hidden" name="_token" value="<?php echo e(csrf_token()); ?>">
 
 
           <div class="col-md-12 pull-left text-justify">
@@ -1039,7 +1040,7 @@ $(document).ready(function(){
   
 
  $(document).ready(function(){
-    src = "{{ route('searchajax') }}";
+    src = "<?php echo e(route('searchajax')); ?>";
     $(".search_citynm").autocomplete({
       source: function(request, response) {
         
@@ -1086,7 +1087,7 @@ $(document).ready(function(){
       source: function(request, response) {
         
         $.ajax({
-          url: "{{ route('searchstateajax') }}",
+          url: "<?php echo e(route('searchstateajax')); ?>",
           dataType: "json",
           data: {
             term : request.term
@@ -1128,7 +1129,7 @@ $(document).ready(function(){
       source: function(request, response) {
         
         $.ajax({
-          url: "{{ route('searchcompanyajax') }}",
+          url: "<?php echo e(route('searchcompanyajax')); ?>",
           dataType: "json",
           data: {
             term : request.term
@@ -1229,7 +1230,7 @@ return false;
         $('#upload').show();
         $.ajax({  
          type: "POST",  
-         url: "{{URL::to('icici-credit-submit')}}",
+         url: "<?php echo e(URL::to('icici-credit-submit')); ?>",
          data : $('#compareform').serialize(),
          dataType: 'json',
          success: function(msg){
@@ -1380,7 +1381,7 @@ var inputs = $("#compareform input[required='required']");
         $('#upload').show();
         $.ajax({  
          type: "POST",  
-         url: "{{URL::to('icici-credit-submit')}}",
+         url: "<?php echo e(URL::to('icici-credit-submit')); ?>",
          data : $('#compareform').serialize(),
          dataType: 'json',
          success: function(msg){
@@ -1477,7 +1478,7 @@ var inputs = $("#compareform input[required='required']");
 
 <script type="text/javascript">
   function url_mail(obj,val){
-    //console.log(obj);
+    console.log(obj);
     if(obj=='urlemailid' ){
                    var str =$('#urlemailid').val();
                    var emailPattern = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/; 
@@ -1504,7 +1505,7 @@ var inputs = $("#compareform input[required='required']");
             // var mobile=$('#ResidenceMobileNo').val();
             // var app_id=$('#drop').text();
             // window.location="http://erp.rupeeboss.com/Credit_Card_Upload_Docs.aspx?App_Id="+app_id+"&CardType=ICICI&MobileNo="+mobile;
-            window.location.href ="{{URL::to('thank-you')}}";
+            window.location.href ="<?php echo e(URL::to('thank-you')); ?>";
           }
 </script>
 
@@ -1728,10 +1729,10 @@ var inputs = $("#compareform input[required='required']");
       }else{
        $.ajax({  
          type: "POST",  
-         url: "{{URL::to('to-view-on-browser-url')}}",
+         url: "<?php echo e(URL::to('to-view-on-browser-url')); ?>",
          data : $('#to_view_url').serialize(),
          success: function(msg){
-           //console.log(msg);
+           console.log(msg);
            if (msg == 1) 
            {
              alert('As per your request we have sent a mail to your email ID.');

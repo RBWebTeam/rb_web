@@ -1695,7 +1695,7 @@ function pan_card(obj,val){
                     $('#loader_id').removeClass('loader');
                        Errorcheck=msg;
                        var obj = JSON.parse(msg);
-                       console.log(obj.RetStatus);
+                       //console.log(obj.RetStatus);
                          if(obj.RetStatus=='SUCCESS'){
                                // WebTopNo
                                // LeadId

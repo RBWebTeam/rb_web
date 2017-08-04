@@ -139,31 +139,31 @@
          url: "{{URL::to('business-loan-calculation')}}",
          data : $('#business_loan_calculator_form').serialize(),
          success: function(msg){
-              console.log(msg.status);
+              //console.log(msg.status);
               if (msg.status==1) 
               {
                  var loan_eligible = msg.data.loan_eligible;
-                 console.log(loan_eligible);
+                 //console.log(loan_eligible);
                   $('#loan_eligible').empty().append(loan_eligible);
 
                  var roi = msg.data.roi;
                  $('#roi').empty().append(roi);
 
                  var emi = msg.data.emi;
-                 console.log(emi);
+                 //console.log(emi);
                   $('#EMI').empty().append(emi);
 
 
                  var processingfee = msg.data.processingfee;
-                  console.log(processingfee);
+                  //console.log(processingfee);
                   $('#processingfee').empty().append(processingfee);
 
                   var Bank_Name = msg.data.Bank_Name;
-                  console.log(Bank_Name);
+                  //console.log(Bank_Name);
                   $('#bank_name').empty().append(Bank_Name);
 
                   var Bank_Logo = msg.data.Bank_Logo;
-                  console.log(Bank_Logo);
+                  //console.log(Bank_Logo);
                   $('#bank_logo').html('<img src='+Bank_Logo+' width="150px">');
 
                   $('#business_eligible').modal('show');  

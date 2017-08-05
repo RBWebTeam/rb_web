@@ -5,37 +5,39 @@
 	<aside id="fh5co-hero">
 
 		<div class="container-fluid">
-		<div id="myCarousel" class="carousel slide" data-ride="carousel">
+		
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
   <ol class="carousel-indicators">
     <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
     <li data-target="#myCarousel" data-slide-to="1"></li>
-    <li data-target="#myCarousel" data-slide-to="2"></li>
+    <!--<li data-target="#myCarousel" data-slide-to="2"></li>
     <li data-target="#myCarousel" data-slide-to="3"></li>
 	<li data-target="#myCarousel" data-slide-to="4"></li>
-    <li data-target="#myCarousel" data-slide-to="5"></li>
+    <li data-target="#myCarousel" data-slide-to="5"></li>-->
   </ol>
 
   <!-- Wrapper for slides -->
   <div class="carousel-inner" role="listbox">
-  <div class="pull-right mar-tp ">
+<!--  <div class="pull-right mar-tp ">
          <ul>
 		    <li><a href="{{URL::to('comfy')}}"><b>Rupeeboss Comfy</b></a></li>
 			<li><a href="{{URL::to('express-loan')}}"style="background:red;"><b>Express Loan</b></a></li>
 			<li><a href="{{URL::to('idfc')}}">Savings Account</a></li>
 
 			<li><a href="{{URL::to('home-loan')}}"><b>Pradhan Mantri Awas Yojana</b></a></li>
-			<!-- <li><a href="{{URL::to('contact-us')}}"><b>SME Car Leasing</b></a></li> -->
+			<!-- <li><a href="{{URL::to('contact-us')}}"><b>SME Car Leasing</b></a></li> 
 		 </ul>
-</div>
+</div> -->
 
 
     <div class="item active">
 	<div class="slide-txt">
-	<!-- <i class="sprite sprite-home-ic center-img-align img-responsive hidden-xs"></i> -->
-	<img src="{{URL::to('../images/home-ic.png')}}" class="center-block"> 
+
+	<img src="{{URL::to('../images/home-ic.png')}}" class="center-block">
 	<h2>Home Loan </h2>
    <h4>Choose the right Home Loan for you ...!!</h4>
+   <br>
    <a href="{{URL::to('home-loan')}}" class="btn btn-primary btn-lg btn-view">View More</a>
    </div>
       <img src="{{URL::to('images/slide_1.jpg')}}" alt="Home Loan Banner" title="Home Loan " class="slide-hm"> 
@@ -43,7 +45,7 @@
 
     <div class="item">
 	<div class="slide-txt">
-	<!-- <i class="sprite sprite-personal-ic center-img-align img-responsive hidden-xs"></i> -->
+
 	<img src="{{URL::to('../images/personal-ic.png')}}" class="center-block">
 	<h2>Personal Loan </h2>
    <h4>Finance Your Dreams...!!</h4>
@@ -52,9 +54,9 @@
       <img src="{{URL::to('images/slide_2.jpg')}}" alt="Personal Loan Banner" title="Personal Loan " class="slide-hm">
     </div>
 
-    <div class="item">
+   <!-- <div class="item">
 	<div class="slide-txt">
-	<!-- <i class="sprite sprite-lap-ic center-img-align img-responsive hidden-xs"></i>-->
+	
 	<img src="{{URL::to('../images/lap-ic.png')}}"class="center-block">
 	<h2>Loan Against Property</h2>
    <h4>Finding you a better Deal...!!</h4>
@@ -65,7 +67,7 @@
 
     <div class="item">
 	<div class="slide-txt">
-	<!--  <i class="sprite sprite-sme-ic center-img-align img-responsive hidden-xs"></i>-->
+	
 	<img src="{{URL::to('../images/sme-ic.png')}}" class="center-block">
 	<h2>SME Loan</h2>
 
@@ -78,7 +80,7 @@
 	
 	<div class="item">
 	<div class="slide-txt" >
-	<!-- <i class="sprite sprite-balance-ic center-img-align img-responsive hidden-xs"></i> -->
+
 	<img src="{{URL::to('../images/balance-ic.png')}}"class="center-block">
 	<h4>Unsecured</h4>
 	<h2>Business Loan</h2>
@@ -90,7 +92,7 @@
     </div>
 	<div class="item">
 	<div class="slide-txt">
-	<!-- <i class="sprite sprite-car-ic center-img-align img-responsive hidden-xs"></i> -->
+	
 	<img src="{{URL::to('../images/car-ic.png')}}"class="center-block">
 	<h2>Car Loan</h2>
    <h4>Thinking of your comfort first !!</h4>
@@ -100,15 +102,15 @@
     </div>
   </div>
 
-  <!-- Left and right controls -->
+  <!-- Left and right controls 
   <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="icon-chevron-left" aria-hidden="true"></span>
     <span class="sr-only">Previous</span>
   </a>
   <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="icon-chevron-right" aria-hidden="true"></span>
     <span class="sr-only">Next</span>
-  </a>
+  </a>-->
 </div>
 
 </div>
@@ -124,8 +126,71 @@
 </div>
 	
 	
+	
+	<div class="col-md-7 hom-rig" style="position: absolute;z-index: 1;top:150px;right: 54px;">
+	<div class="profile-smdl">
+				<div class="profile-text-left">
+					<span class="fa fa-users" aria-hidden="true"></span>
+					<p>HOME LOAN</p>
+				</div>
+				<div class="profile-text-left">
+					<span class="fa fa-user-plus" aria-hidden="true"></span>
+					<p>PERSONAL LOAN</p>
+				</div>
+				<div class="profile-text-left">
+					<span class="fa fa-heart" aria-hidden="true"></span>
+					<p>1234</p>
+				</div>
+				<div class="profile-text-left">
+					<span class="fa fa-user-plus" aria-hidden="true"></span>
+					<p>900</p>
+				</div>
+				
+				
+				<div class="profile-text-left">
+					<span class="fa fa-user-plus" aria-hidden="true"></span>
+					<p>900</p>
+				</div>
+				<div class="profile-text-left">
+					<span class="fa fa-user-plus" aria-hidden="true"></span>
+					<p>900</p>
+				</div>
+				<div class="profile-text-left">
+					<span class="fa fa-user-plus" aria-hidden="true"></span>
+					<p>900</p>
+				</div>
+				<div class="profile-text-left">
+					<span class="fa fa-user-plus" aria-hidden="true"></span>
+					<p>900</p>
+				</div>
+				
+				
+				
+				
+				<div class="profile-text-left">
+					<span class="fa fa-user-plus" aria-hidden="true"></span>
+					<p>900</p>
+				</div>
+				<div class="profile-text-left">
+					<span class="fa fa-user-plus" aria-hidden="true"></span>
+					<p>900</p>
+				</div>
+				<div class="profile-text-left">
+					<span class="fa fa-user-plus" aria-hidden="true"></span>
+					<p>900</p>
+				</div>
+				<div class="profile-text-left">
+					<span class="fa fa-user-plus" aria-hidden="true"></span>
+					<p>900</p>
+				</div>
+				
+				<div class="clear"> </div>
+			</div>
+	
 	</div>
-	<div id="fh5co-services-section">
+	
+	</div>
+	<!--<div id="fh5co-services-section">
 		<div class="container-fluid">
 			
 			<div class="dv-hr">
@@ -197,7 +262,7 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</div> -->
 	
 		<div class="container-fluid white-bg credit-report-bg flt-non">
 			

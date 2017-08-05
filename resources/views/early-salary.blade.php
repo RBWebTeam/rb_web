@@ -10,15 +10,17 @@
 
 .register-left {
     background: #ed1c24;
-    height: 600px;
+    height: 400px;
+    padding: 38px 0px;
 }
 .register-left p {color:#ff9599;}
 .register-right {
     background: #FFFFFF;
-	 height: 600px;
+	 height:400px;
 }
 .register-in {
     padding:1.5em;
+	padding-top:0px;
 }
 .register-left, .register-right {
    
@@ -109,7 +111,7 @@ input[type="checkbox"] {
 .styled-input {
 	width: 100%;
     position: relative;
-    margin: 0 0 1.6em;
+    margin: 0 0 1.2em;
 }
 .styled-input:nth-child(1),.styled-input:nth-child(3){
 	margin-left:0;
@@ -207,7 +209,7 @@ input[type="text"] {
 <div class="container">
 <section class="register">
 	<div class="register-full">
-		<div class="register-left col-md-4">
+		<!--  <div class="register-left col-md-4">
 			<div class="register-in">
 				<h1><b>Cash On The Go</b></h1>
 				<h2>Without Any Hassle</h2>
@@ -219,12 +221,23 @@ input[type="text"] {
 				<p>Login your Account, tell us how much cash you need and when you want to return, upload some basic document.</p>
 				
 			</div>
-		</div>
+		</div> -->
+		
 		<form id="early_salary_form" name="early_salary_form" method="POST">
 		 {{ csrf_field() }}
-		<div class="register-right col-md-4">
+		 
+		
+		<div class="col-md-4">
+		<h1 class="text-center">WANT TO GET INSTANT LOAN ?</h1>
+		<h4 class="text-center">Apply now and get money transferred to your bank A/C today.</h4>
+			<img src="{{URL::to('images/bag.png')}}" alt="bag" class="img-responsive"/>
+			</div>
+			<div class="col-md-8">
+			<h2 style="padding:10px;background:#2c86c0;color:#fff;margin-bottom:0px;">Register With Us</h2>
+		<div class="register-right col-md-6">
+		 
 			<div class="register-in">
-				<h2>register With Us</h2>
+				
 				<div class="register-form">
 					<!-- <form action="#" method="post"> -->
 						<div class="fields-grid">
@@ -234,37 +247,66 @@ input[type="text"] {
 								<label>First name</label>
 								<span></span>
 							</div>
-							<div class="styled-input">
-								<input type="text" name="LastName" id="LastName" onkeypress="return AllowAlphabet(event)" required=""> 
-								<label>Last name</label>
-								<span></span>
-							</div> 
-							<div class="styled-input">
+							 
+							<!-- <div class="styled-input">
 								<input type="text" name="Email" id="Email" oninput="mail('Email')" required="">
 								<div id="email" style="display:none;color: red; font-size: 10px">Please Enter Valid Email Id.</div>
 								<label>Email</label>
 								<span></span>
-							</div>
-							<div class="styled-input">
-								<input type="text" name="City" id="City" class="search_citynm" required="">
-								<label>City</label>
-								<span></span>
-							</div>
+							</div> -->
 							<div class="styled-input">
 								<input type="text" name="phoneNumber" id="phoneNumber" maxlength="10" onkeypress="return fnAllowNumeric(event)" required>
 								<label>Mobile Number</label>
 								<span></span>
 							</div>
 							<div class="styled-input">
-								<input type="text" name="Designation" id="Designation" required="">
-								<label>Designation</label>
+								<select name="Company_Category" id="Company_Category"  required>
+								 <option value="">Select City</option>
+                                 <option value="Service">Mumbai</option>
+								 <option value="Service">Thane</option>
+								 <option value="Service">Navi-Mumbai</option>
+								 <option value="Service">Delhi</option>
+								 <option value="Service">Nodia</option>
+								 <option value="Service">Gurgaon</option>
+								 <option value="Service">Gaziabad</option>
+								 <option value="Service">Faridabad</option>
+								 <option value="Service">Pune</option>
+								 <option value="Service">PMPC</option>
+								 <option value="Service">Hyderabad</option>
+								 <option value="Service">Secundrabad</option>
+								 <option value="Service">Bangalore</option>
+								 <option value="Service">Gandhinaga</option>
+								 <option value="Service">Jaipur</option>
+								 <option value="Service">Chennai</option>
+                                
+								</select>
 								<span></span>
 							</div>
+							
 							<div class="styled-input">
-								<input type="text" name="NoOfEmployees" id="NoOfEmployees" onkeypress="return fnAllowNumeric(event)" minlength="2" maxlength="6" required="">
-								<label> No of Employees</label>
-								<span></span>
+							<input type="radio" name="sal" /> Salary <input type="radio" name="sal"/> Self Employed </div>
+							
+							<label>LOAN AMOUNT</label>
+							<span class="pull-right">10,00,000</span>
+							<div class="styled-input">
+								<input type="range"list="tickmarks" />
+								<datalist id="tickmarks">
+                                  <option value="0" label="100000">
+                                <option value="10">
+                               <option value="20">
+                                <option value="30">
+                                <option value="40">
+                                <option value="50" label="500000">
+                                 <option value="60">
+                                <option value="70">
+                                <option value="80">
+                                <option value="90">
+                                <option value="100" label="1000000">
+                                  </datalist>
+                              	<span class="pull-left">1,00,000</span>
 							</div>
+							<br>
+							<a class="btn btn-danger btn-outline with-arrow mrg-top" id="early_salary_submit">Submit <i class="icon-arrow-right"></i></a>
 							<div class="clear"> </div>
 							
 						</div>
@@ -275,25 +317,41 @@ input[type="text"] {
 			<div class="clear"> </div>
 		</div>
 		
-		<div class="register-right col-md-4">
+		<div class="register-right col-md-6">
 			<div class="register-in">
-			<br>
+		
 				<div class="register-form">
-					
-						<div class="fields-grid">
-							<div class="styled-input">
-								<input type="text" name="CompanyName" id="CompanyName" required="">
-								<label>Company Name</label>
+				
+				
+				     <div class="styled-input">
+								<input type="text" name="LastName" id="LastName" onkeypress="return AllowAlphabet(event)" required=""> 
+								<label>Last name</label>
 								<span></span>
 							</div>
-							
-							<div class="styled-input">
-								<select name="Company_Category" id="Company_Category"  required>
-								 <option value="">Company Category</option>
-                                 <option value="Service">Service</option>
-                                 <option value="Manufacturing">Manufacturing</option>
-								</select>
+					
+						<div class="fields-grid">
+						      <div class="styled-input">
+								<input type="text" name="Designation" id="Designation" required="">
+								<label>Age</label>
 								<span></span>
+							</div>
+							<div class="styled-input">
+								<input type="text" name="NoOfEmployees" id="NoOfEmployees" onkeypress="return fnAllowNumeric(event)" minlength="2" maxlength="6" required="">
+								<label>Refferal Code (If any)</label>
+								<span></span>
+							</div>
+						
+							<div class="styled-input">
+								<input type="text" name="CompanyName" id="CompanyName" required="">
+								<label>Monthly Take Home Salary</label>
+								<span></span>
+							</div>
+						
+						<div class="styled-input">
+								<input type="text" name="CompanyName" id="CompanyName" required="">
+							
+								<label><h3>5,00,000</h3></label>
+								
 							</div>
 							
 							
@@ -302,12 +360,14 @@ input[type="text"] {
 							
 						</div>
 						
-						<a class="btn btn-danger btn-outline with-arrow mrg-top" id="early_salary_submit">Submit <i class="icon-arrow-right"></i></a>
+						
 					</form>
 				</div>
 			</div>
 			<div class="clear"> </div>
 		</div>
+		</div>
+		
 		<!-- </form> -->
 		
 		

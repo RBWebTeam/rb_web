@@ -1,6 +1,6 @@
-  <script src="{{URL::to('js/Myapp.js')}}"></script>
-    <script src="{{URL::to('js/jsPdf.js')}}"></script>
-	 <script src="{{URL::to('js/freshslider.min.js')}}"></script>
+  <script src="<?php echo e(URL::to('js/Myapp.js')); ?>"></script>
+    <script src="<?php echo e(URL::to('js/jsPdf.js')); ?>"></script>
+	 <script src="<?php echo e(URL::to('js/freshslider.min.js')); ?>"></script>
 	 
  <script>
 	       // Hide Header on on scroll down
@@ -400,7 +400,7 @@ $(window).scroll(function(){
           $(".sidebar-submit").hide(); 
             $.ajax({  
              type: "POST",  
-             url: "{{URL::to('sidebar')}}",
+             url: "<?php echo e(URL::to('sidebar')); ?>",
              data : $('#'+form).serialize(),
              success: function(msg){
                 $(".iframeloading").hide();  
@@ -446,7 +446,7 @@ $(window).scroll(function(){
 
             $.ajax({  
              type: "POST",  
-             url: "{{URL::to('login')}}",
+             url: "<?php echo e(URL::to('login')); ?>",
              data : $('#'+form).serialize(),
              success: function(msg){
 
@@ -455,8 +455,8 @@ $(window).scroll(function(){
 
                 $("#msg").text("Your email or password is incorrect. please try again?");               
               }else if(msg=="right"){
-                           // window.location="{{ URL::previous() }}";
-                            //window.location.href ="{{URL::to('profile')}}";
+                           // window.location="<?php echo e(URL::previous()); ?>";
+                            //window.location.href ="<?php echo e(URL::to('profile')); ?>";
                             if(window.location.href.indexOf("track-application") > -1) {
                                 location.reload();
                             }else{
@@ -504,7 +504,7 @@ $(window).scroll(function(){
           }else{
             $.ajax({  
              type: "POST",  
-             url: "{{URL::to('registration')}}",
+             url: "<?php echo e(URL::to('registration')); ?>",
              dataType: 'json',
              data : $('#'+form).serialize(),
 
@@ -543,7 +543,7 @@ $(window).scroll(function(){
       $form.hide();
       $('.msg').show();
       $('#Login-here').hide();
-                      //  window.location="{{ URL::previous() }}";
+                      //  window.location="<?php echo e(URL::previous()); ?>";
 
                       $("#log_popup").modal('hide');
                       $("#refreshID").load(location.href + " #refreshID");
@@ -593,7 +593,7 @@ $(window).scroll(function(){
 
          $.ajax({  
            type: "POST",  
-           url: "{{URL::to('forgot-password')}}",
+           url: "<?php echo e(URL::to('forgot-password')); ?>",
            data : $('#'+form).serialize(),
            dataType: 'json',
            success: function(msg){
@@ -634,7 +634,7 @@ $(window).scroll(function(){
         }else{
          $.ajax({  
            type: "POST",  
-           url: "{{URL::to('change-password')}}",
+           url: "<?php echo e(URL::to('change-password')); ?>",
            data : $('#'+form).serialize(),
                     // dataType: 'json',
                     success: function(msg){
@@ -695,7 +695,7 @@ $(window).scroll(function(){
               var s=$('#'+form).serialize();
               $.ajax({  
                type: "POST",  
-               url: "{{URL::to('profile/update')}}",
+               url: "<?php echo e(URL::to('profile/update')); ?>",
                data : $('#'+form).serialize(),
                dataType: 'json',
                success: function(msg){
@@ -729,7 +729,7 @@ $(window).scroll(function(){
               var s=$('#'+form).serialize();
               $.ajax({  
                type: "POST",  
-               url: "{{URL::to('profile/extradetails')}}",
+               url: "<?php echo e(URL::to('profile/extradetails')); ?>",
                data : $('#'+form).serialize(),
                success: function(msg){
 
@@ -756,7 +756,7 @@ $(window).scroll(function(){
       $('document').ready(function(){
         /* $('#search-input').attr('autocomplete', 'on');*/
         $("#q").autocomplete({
-          source : "{{ URL('search/autocomplete') }}",
+          source : "<?php echo e(URL('search/autocomplete')); ?>",
           minlength: 3,
           select: function(event,ui){
            $('#q').val(ui.item.value);
@@ -767,7 +767,7 @@ $(window).scroll(function(){
       });
 
       $(document).ready(function(){
-        src = "{{ route('searchajax') }}";
+        src = "<?php echo e(route('searchajax')); ?>";
         $(".search_city").autocomplete({
           source: function(request, response) {
 
@@ -834,7 +834,7 @@ $(window).scroll(function(){
 
             $.ajax({  
              type: "POST",  
-             url: "{{URL::to('otp')}}",
+             url: "<?php echo e(URL::to('otp')); ?>",
              dataType:"json",
              data : $('#'+form).serialize(),
              success: function(data){
@@ -874,7 +874,7 @@ $(window).scroll(function(){
         }else{
           $.ajax({  
            type: "POST",  
-           url: "{{URL::to('otp_verify')}}",
+           url: "<?php echo e(URL::to('otp_verify')); ?>",
            dataType:"json",
            data : $('#'+form).serialize(),
            success: function(data){
@@ -992,10 +992,10 @@ $(window).scroll(function(){
               var loanterm = $("#loanterm").val();
             }
             //console.log(loanterm);
-            var v_token = "{{csrf_token()}}";
+            var v_token = "<?php echo e(csrf_token()); ?>";
             $.ajax({  
              type: "POST",  
-             url: "{{URL::to('emi_cal')}}",
+             url: "<?php echo e(URL::to('emi_cal')); ?>",
              dataType:'json',
              data : { 'loanamount': loanamount , 'loaninterest': loaninterest ,'loanterm' :loanterm, '_token': v_token},
              success: function(msg){
@@ -1472,8 +1472,8 @@ $(window).scroll(function(){
            $.ajax({
             type: "POST",
             dataType: 'json',
-            data: {response,"_token": "{{ csrf_token() }}"},
-            url: "{{url('facebook/login')}}",
+            data: {response,"_token": "<?php echo e(csrf_token()); ?>"},
+            url: "<?php echo e(url('facebook/login')); ?>",
             success: function(msg) {
              if(msg.error==1){
                 if(msg.contact==22){
@@ -1548,8 +1548,8 @@ $(window).scroll(function(){
             $.ajax({
               type: "POST",
               dataType: 'json',
-              data: {resp,"_token": "{{ csrf_token() }}"},
-              url: "{{url('google/login')}}",
+              data: {resp,"_token": "<?php echo e(csrf_token()); ?>"},
+              url: "<?php echo e(url('google/login')); ?>",
               success: function(msg) {
                 if(msg.error==1){
                      if(msg.contact==22){
@@ -1684,7 +1684,7 @@ $(window).scroll(function(){
             $('#mobile_val').hide();
             $.ajax({  
              type: "POST",  
-             url: "{{URL::to('credit-report-send-otp')}}",
+             url: "<?php echo e(URL::to('credit-report-send-otp')); ?>",
              dataType:"json",
              data : $('#credit_report_otp_form').serialize(),
              success: function(data){
@@ -1694,7 +1694,7 @@ $(window).scroll(function(){
                 $('#credit_report_verify_form').show();
                     //console.log("hah");
                   }else{
-                    window.location.href="{{URL::to('went-wrong')}}";
+                    window.location.href="<?php echo e(URL::to('went-wrong')); ?>";
                   }
                 }
               });
@@ -1710,7 +1710,7 @@ $(window).scroll(function(){
     $('#wait_div_otp').show();
     $.ajax({  
      type: "POST",  
-     url: "{{URL::to('credit-report-verify')}}",
+     url: "<?php echo e(URL::to('credit-report-verify')); ?>",
      dataType:"json",
      data : $('#credit_report_verify_form').serialize(),
      success: function(data){
@@ -1719,7 +1719,7 @@ $(window).scroll(function(){
        if(data_1){
         //console.log("data_1");
 
-        window.location.href="{{URL::to('credit-report')}}";
+        window.location.href="<?php echo e(URL::to('credit-report')); ?>";
       }else{
         $('#wrong_otp').show();
         $('#wait_div_otp').hide();
@@ -1793,7 +1793,7 @@ $(window).scroll(function(){
           <br>        
           <div id="send_otp">         
             <form class="form-horizontal" id="login_form_process" method="POST">           
-             {{ csrf_field() }}           
+             <?php echo e(csrf_field()); ?>           
              <div class="form-group">            
               <label for="name" class="col-sm-3 control-label">Name</label>
               <div class="col-sm-6">
@@ -1828,7 +1828,7 @@ $(window).scroll(function(){
           <div class="col-sm-offset-3 col-sm-6">
            <span id='msg_err' class= 'displaynonemsg'>oops something went wrong</span>
          <span class="iframeloading" style= "display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
-                <img src="{{URL::to('images/ajaxloader.gif')}}" alt="Loader" title="Loader" style="top: 50%; position: relative; left: 50%;"  />
+                <img src="<?php echo e(URL::to('images/ajaxloader.gif')); ?>" alt="Loader" title="Loader" style="top: 50%; position: relative; left: 50%;"  />
                </span>
            <span id='pwd_match' class= 'displaynonemsg'>Password do not match.</span>
            <span id='msg_err_email' class ='displaynonemsg'><p class="text-center">Email id already exists.</p></span>
@@ -1852,7 +1852,8 @@ $(window).scroll(function(){
         <div class="modal-header">
           <h4 class="modal-title">Enter OTP</h4>
           <form id="otp_form" class="form-horizontal">
-           {{ csrf_field() }}
+           <?php echo e(csrf_field()); ?>
+
            <input type="text" class="form-control" name="otp" id="otp" minlength="6" maxlength="6" required onkeypress="return fnAllowNumeric(event)">
            <span id='otp_err' class= 'displaynonemsg' >oops!! OTP is wrong</span><br>
            <button class="btn btn-default"  class="form-control" id="verify_otp" >Verify</button><br>
@@ -1874,7 +1875,7 @@ $(window).scroll(function(){
           <br>        
           <div id="send_otp">         
             <form class="form-horizontal" id="contactusID" method="POST">           
-             {{ csrf_field() }}           
+             <?php echo e(csrf_field()); ?>           
              <div class="form-group">            
               <label for="name" class="col-sm-3 control-label">contact us</label>
               <div class="col-sm-6">
@@ -1901,7 +1902,8 @@ $(window).scroll(function(){
         <div class="modal-header">
           <h4 class="modal-title">Enter OTP</h4>
           <form id="contactus_otp_form" class="form-horizontal">
-           {{ csrf_field() }}
+           <?php echo e(csrf_field()); ?>
+
            <input type="tel" class="form-control" name="otp" id="otp" minlength="6" maxlength="6" required onkeypress="return fnAllowNumeric(event)">
            <span id='otp_errs' class= 'displaynonemsg' >oops!! OTP is wrong</span><br>
            <button class="btn btn-default"  class="form-control" id="contactus_verify_otp" >Verify</button><br>
@@ -1923,7 +1925,7 @@ $(window).scroll(function(){
           }else{
             $.ajax({  
              type: "POST",  
-             url: "{{URL::to('contact_us')}}",
+             url: "<?php echo e(URL::to('contact_us')); ?>",
              dataType:"json",
              data : $('#'+form).serialize(),
              success: function(data){
@@ -1945,7 +1947,7 @@ $("#contactus_verify_otp").click(function(event){
           }else{
             $.ajax({  
              type: "POST",  
-             url: "{{URL::to('contact_otp')}}",
+             url: "<?php echo e(URL::to('contact_otp')); ?>",
              dataType:"json",
              data : $('#'+form).serialize(),
              success: function(data){
@@ -2223,7 +2225,7 @@ function SetSession_pop(cookieName,cookieValue){
  
         // var username=$('#username_rb').val();
         // var password=$('#password_rb').val();
-        // var _token='{{csrf_token()}}';
+        // var _token='<?php echo e(csrf_token()); ?>';
 
         $('#emp_msg_err').hide();
           if(! $('#emp_login_form').valid()){
@@ -2232,7 +2234,7 @@ function SetSession_pop(cookieName,cookieValue){
           $(".iframeloading_emp").show();
           $.ajax({  
              type: "POST",  
-             url: "{{URL::to('emp-login')}}",
+             url: "<?php echo e(URL::to('emp-login')); ?>",
            data : $('#emp_login_form').serialize(),
         //   data: {_token :_token,username:username,password:password},
              success: function(msg){
@@ -2468,4 +2470,4 @@ $(window).on('load', function(){
  
   
 
-  @include('layout.modal')
+  <?php echo $__env->make('layout.modal', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

@@ -12,27 +12,27 @@
 	<meta name="keywords" content="<?php if(isset($keywords))echo $keywords; else echo "rupeeboss loans getloan expressloan"; ?>" />
 	<meta name="p:domain_verify" content="05d8ec5b6a704fa5b78abd5f636fdc24"/>
 	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-	<link rel="shortcut icon" href="{{URL::to('images/rb_fav.png')}}">
-	<!-- <link rel="stylesheet" href="{{URL::to('fonts/Raleway.css')}}" type="text/css"> -->
+	<link rel="shortcut icon" href="<?php echo e(URL::to('images/rb_fav.png')); ?>">
+	<!-- <link rel="stylesheet" href="<?php echo e(URL::to('fonts/Raleway.css')); ?>" type="text/css"> -->
 	<!-- Animate.css -->
 
-	<link  rel="stylesheet" type="text/css" href="{{URL::to('css/mysite.css')}}"/>
+	<link  rel="stylesheet" type="text/css" href="<?php echo e(URL::to('css/mysite.css')); ?>"/>
  
-  <link  rel="stylesheet" type="text/css" href="{{URL::to('css/style.css')}}"/>
+  <link  rel="stylesheet" type="text/css" href="<?php echo e(URL::to('css/style.css')); ?>"/>
 
 
 
 
 
- <link href="{{URL::to('css/freshslider.min.css')}}" rel="stylesheet" type="text/css" /> 
+ <link href="<?php echo e(URL::to('css/freshslider.min.css')); ?>" rel="stylesheet" type="text/css" /> 
 
 	<!-- Modernizr JS -->
-	<!-- <link rel="manifest" href="{{URL::to('extension/manifest.json')}}"> -->
-	@if( request()->url() == url('/') )
+	<!-- <link rel="manifest" href="<?php echo e(URL::to('extension/manifest.json')); ?>"> -->
+	<?php if( request()->url() == url('/') ): ?>
      <link rel="canonical" href="https://www.rupeeboss.com/" />
-	@else
-	     <link rel="canonical" href="{!! request()->fullUrl() !!}"  />
-	@endif
+	<?php else: ?>
+	     <link rel="canonical" href="<?php echo request()->fullUrl(); ?>"  />
+	<?php endif; ?>
 	
 	
 <meta name="google-site-verification" content="WX6V_57BIW9ttEdt8-lFFx9AWksmU0OzrSB8CqEW084" />
@@ -95,32 +95,32 @@
         <div class="container">
          <div class="col-md-8">
             <ul class="top-lnk">
-                <li class="hidden-xs"><a href="{{URL::to('/')}}">Home </a></li>
-                <li class="hidden-xs"><a href="{{URL::to('about-us')}}"> About Us </a></li>
-                <li class="hidden-xs"><a href="{{URL::to('contact-us')}}"> Contact Us </a></li>
+                <li class="hidden-xs"><a href="<?php echo e(URL::to('/')); ?>">Home </a></li>
+                <li class="hidden-xs"><a href="<?php echo e(URL::to('about-us')); ?>"> About Us </a></li>
+                <li class="hidden-xs"><a href="<?php echo e(URL::to('contact-us')); ?>"> Contact Us </a></li>
 				<!-- <li class="hidden-xs"><a href="#" data-toggle="modal" data-target="#emp_login">Employee Login </a></li> -->
-				<!-- <li class="hidden-xs"><a href="{{URL::to('rba-login')}}">RBA Login </a></li> -->
-                <li class="hidden-xs"><a href="{{URL::to('http://www.rupeeboss.com/rblife-style/')}}"> RB Life Style </a></li>
-                <li class="hidden-xs"><a href="{{URL::to('http://www.rupeeboss.com/Elite-Website/')}}"> Elite</a></li>
-				<li class="hidden-lg"><a href="{{URL::to('magic-link')}}"> Magic Link </a></li>
-				<li class="hidden-xs credit-score-btn"><a href="{{URL::to('credit-report')}}" class="btn btn-primary"> My Credit Score</a></li>
+				<!-- <li class="hidden-xs"><a href="<?php echo e(URL::to('rba-login')); ?>">RBA Login </a></li> -->
+                <li class="hidden-xs"><a href="<?php echo e(URL::to('http://www.rupeeboss.com/rblife-style/')); ?>"> RB Life Style </a></li>
+                <li class="hidden-xs"><a href="<?php echo e(URL::to('http://www.rupeeboss.com/Elite-Website/')); ?>"> Elite</a></li>
+				<li class="hidden-lg"><a href="<?php echo e(URL::to('magic-link')); ?>"> Magic Link </a></li>
+				<li class="hidden-xs credit-score-btn"><a href="<?php echo e(URL::to('credit-report')); ?>" class="btn btn-primary"> My Credit Score</a></li>
 				
 				</a></li>
-			<!-- 	<li><a href="{{URL::to('contact-us')}}">Media</a></li> -->
+			<!-- 	<li><a href="<?php echo e(URL::to('contact-us')); ?>">Media</a></li> -->
 	            </ul>
                </div>
 			<div class="col-md-4 text-right">      
             <ul class="nav-pills pull-right social-icon">
 
-               <!-- <li><a href="{{URL::to('https://twitter.com/rupeeboss')}}" title="Twitter"><i class="icon-twitter"></i></a></li>
-                <li><a href="{{URL::to('https://www.facebook.com/rupeeboss')}}" title="Facebook"><i class="icon-facebook"></i></a></li>
-                <li><a href="{{URL::to('https://www.linkedin.com/company/rupeeboss.com')}}" title="Linkedin"><i class="icon-linkedin"></i></a></li>
-                <li><a href="{{URL::to('https://plus.google.com/u/0/113191059621763008376')}}" title="GooglePlus"><i class="icon-google-plus"></i></a></li>
-                <li><a href="{{URL::to('https://www.instagram.com/rupeeboss/')}}" title="instagram"><i class="icon-instagram"></i></a></li> -->
+               <!-- <li><a href="<?php echo e(URL::to('https://twitter.com/rupeeboss')); ?>" title="Twitter"><i class="icon-twitter"></i></a></li>
+                <li><a href="<?php echo e(URL::to('https://www.facebook.com/rupeeboss')); ?>" title="Facebook"><i class="icon-facebook"></i></a></li>
+                <li><a href="<?php echo e(URL::to('https://www.linkedin.com/company/rupeeboss.com')); ?>" title="Linkedin"><i class="icon-linkedin"></i></a></li>
+                <li><a href="<?php echo e(URL::to('https://plus.google.com/u/0/113191059621763008376')); ?>" title="GooglePlus"><i class="icon-google-plus"></i></a></li>
+                <li><a href="<?php echo e(URL::to('https://www.instagram.com/rupeeboss/')); ?>" title="instagram"><i class="icon-instagram"></i></a></li> -->
                 
-                <li><a href="{{URL::to('contact-us')}}">&nbsp;&nbsp;<i class="icon-phone"></i> 1800-267-629-6	</a></li>
+                <li><a href="<?php echo e(URL::to('contact-us')); ?>">&nbsp;&nbsp;<i class="icon-phone"></i> 1800-267-629-6	</a></li>
                 
-              <li><a href="{{URL::to('track-application')}}" style="color:#fff262;width:160px;margin-top: -2px;"><i class="fa fa-map-marker md-btn" aria-hidden="true" data-toggle="tooltip" title="Track Application"></i> <span class="hidden-xs">Track Application</span>
+              <li><a href="<?php echo e(URL::to('track-application')); ?>" style="color:#fff262;width:160px;margin-top: -2px;"><i class="fa fa-map-marker md-btn" aria-hidden="true" data-toggle="tooltip" title="Track Application"></i> <span class="hidden-xs">Track Application</span>
             </ul>
           </div>
         </div>
@@ -128,42 +128,43 @@
     </div>
 		<div class="container" id="refreshID">
 			<div class="header-inner">
-	<a href="{{URL::to('/')}}" class="logo"><img src="{{URL::to('images/logo.png')}}" alt="Rupeeboss.com " title="Rupeeboss.com " width="160" height="47" /></a>
+	<a href="<?php echo e(URL::to('/')); ?>" class="logo"><img src="<?php echo e(URL::to('images/logo.png')); ?>" alt="Rupeeboss.com " title="Rupeeboss.com " width="160" height="47" /></a>
 				<nav role="navigation">
 				  <ul>
-                     @if(\Request::is('community/*') || \Request::is('community'))
-                             <li><a href="{{url('community/top_answer')}}">Top Answers</a></li>
-			         @if(Session::has('email'))
-                          	 <li><a href="{{url('community/question')}}">Ask Questions</a></li>
-                             <li><a href="{{url('community/logout')}}"> Log out</a></li>
-                     @else
-                             <li><a href="{{url('community/login/5001')}}">Ask Questions</a></li>
-                     @endif
-					         <li><form action="{{url('community/search')}}" method="post"> {{ csrf_field() }}
+                     <?php if(\Request::is('community/*') || \Request::is('community')): ?>
+                             <li><a href="<?php echo e(url('community/top_answer')); ?>">Top Answers</a></li>
+			         <?php if(Session::has('email')): ?>
+                          	 <li><a href="<?php echo e(url('community/question')); ?>">Ask Questions</a></li>
+                             <li><a href="<?php echo e(url('community/logout')); ?>"> Log out</a></li>
+                     <?php else: ?>
+                             <li><a href="<?php echo e(url('community/login/5001')); ?>">Ask Questions</a></li>
+                     <?php endif; ?>
+					         <li><form action="<?php echo e(url('community/search')); ?>" method="post"> <?php echo e(csrf_field()); ?>
+
                               <input type="text" name="search" id="tags12" class="search" placeholder="Search.."></form></li>
-                    @if (Session::has('email'))
+                    <?php if(Session::has('email')): ?>
                           	 <li><?php echo Session::get('name');?></li>
-                    @endif
-                    @else
+                    <?php endif; ?>
+                    <?php else: ?>
 
 						<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" data-target="#">SME Loan <i class="icon-chevron-down"></i></a> 
 						 <ul class="dropdown-menu">
 						     <li>
-								<a href="{{URL::to('business-loan')}}">Unsecured Business Loan</a>
-								<a href="{{URL::to('loan-against-property')}}">Loan Against Property</a>
-								<a href="{{URL::to('loan-against-property?commercial')}}">Commercial Property Purchase</a>
+								<a href="<?php echo e(URL::to('business-loan')); ?>">Unsecured Business Loan</a>
+								<a href="<?php echo e(URL::to('loan-against-property')); ?>">Loan Against Property</a>
+								<a href="<?php echo e(URL::to('loan-against-property?commercial')); ?>">Commercial Property Purchase</a>
 							</li>
 							<li>
-								<a href="{{URL::to('loan-against-property?lease')}}">Lease Rent Discounting</a>
-								<a href="{{URL::to('sme-working-capital')}}">Working Capital</a>
-								<a href="{{URL::to('contact-us')}}">FCNR Loans</a>
-								<a href="{{URL::to('contact-us')}}">Debt Restructuring </a>
-								<a href="{{URL::to('contact-us')}}">Debt Syndication </a>
-								<a href="{{URL::to('contact-us')}}">Project Finance </a>
+								<a href="<?php echo e(URL::to('loan-against-property?lease')); ?>">Lease Rent Discounting</a>
+								<a href="<?php echo e(URL::to('sme-working-capital')); ?>">Working Capital</a>
+								<a href="<?php echo e(URL::to('contact-us')); ?>">FCNR Loans</a>
+								<a href="<?php echo e(URL::to('contact-us')); ?>">Debt Restructuring </a>
+								<a href="<?php echo e(URL::to('contact-us')); ?>">Debt Syndication </a>
+								<a href="<?php echo e(URL::to('contact-us')); ?>">Project Finance </a>
 								
-							<!-- <a href="{{URL::to('sme-loan')}}">Export/Import Finance</a> -->
+							<!-- <a href="<?php echo e(URL::to('sme-loan')); ?>">Export/Import Finance</a> -->
 							</li>
-							<!-- <li><a href="{{URL::to('sme-loan')}}">Over Draft / Cash Credit</a> -->
+							<!-- <li><a href="<?php echo e(URL::to('sme-loan')); ?>">Over Draft / Cash Credit</a> -->
 							</li>
 							</li>
 						</ul>
@@ -171,27 +172,27 @@
 						<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" data-target="#">Retail Loan <i class="icon-chevron-down"></i></a>
 						<ul class="dropdown-menu">
 						   <li>
-								<a href="{{URL::to('home-loan')}}">Home Loan</a>
-								<a href="{{URL::to('smart-home-loan')}}">Smart Home Loan</a>
+								<a href="<?php echo e(URL::to('home-loan')); ?>">Home Loan</a>
+								<a href="<?php echo e(URL::to('smart-home-loan')); ?>">Smart Home Loan</a>
 								
-								<a href="{{URL::to('loan-against-property')}}">Loan Against Property</a>
-								<a href="{{URL::to('personal-loan')}}">Personal Loan</a>
-								<a href="{{URL::to('car-loan')}}">Car Loan</a>
-								<a href="{{URL::to('used-car-loan')}}">Used Car Loan </a>
+								<a href="<?php echo e(URL::to('loan-against-property')); ?>">Loan Against Property</a>
+								<a href="<?php echo e(URL::to('personal-loan')); ?>">Personal Loan</a>
+								<a href="<?php echo e(URL::to('car-loan')); ?>">Car Loan</a>
+								<a href="<?php echo e(URL::to('used-car-loan')); ?>">Used Car Loan </a>
 
 						   </li>
 						</ul>
-						<li><a href="{{URL::to('credit-card')}}">Credit Card</a></li>
-						<!-- <li><a href="{{URL::to('check_emi')}}">EMI Calculator</a></li> -->
+						<li><a href="<?php echo e(URL::to('credit-card')); ?>">Credit Card</a></li>
+						<!-- <li><a href="<?php echo e(URL::to('check_emi')); ?>">EMI Calculator</a></li> -->
 						
 						 <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" data-target="#">Balance Transfer <i class="icon-chevron-down"></i></a>
 						 
 						 <ul class="dropdown-menu">
 						    <li>
-								<a href="{{URL::to('balance-transfer',['id' => 'home-loan'])}}">Home Loan</a>
-								<a href="{{URL::to('balance-transfer',['id' => 'personal-loan'])}}">Personal Loan</a>
-								<a href="{{URL::to('balance-transfer',['id' => 'loan-against-property-loan'])}}">Loan Against Property</a>
-								<a href="{{URL::to('balance-transfer/working-capital')}}">Working Capital</a>
+								<a href="<?php echo e(URL::to('balance-transfer',['id' => 'home-loan'])); ?>">Home Loan</a>
+								<a href="<?php echo e(URL::to('balance-transfer',['id' => 'personal-loan'])); ?>">Personal Loan</a>
+								<a href="<?php echo e(URL::to('balance-transfer',['id' => 'loan-against-property-loan'])); ?>">Loan Against Property</a>
+								<a href="<?php echo e(URL::to('balance-transfer/working-capital')); ?>">Working Capital</a>
 							</li>
 							</ul>
 							</li>
@@ -199,20 +200,20 @@
 							<!-- <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" data-target="#">Calculators</a>
 							<ul class="dropdown-menu">
 							<li>
-								<a href="{{URL::to('check-emi')}}">EMI Calculator</a>
-								<a href="{{URL::to('check-emi')}}">Personal Loan Calculator</a>
+								<a href="<?php echo e(URL::to('check-emi')); ?>">EMI Calculator</a>
+								<a href="<?php echo e(URL::to('check-emi')); ?>">Personal Loan Calculator</a>
 								
-								<a href="{{URL::to('check-emi')}}">Home Loan Calculator</a>
-								<a href="{{URL::to('check-emi')}}">Business Loan Calculator</a>
-								<a href="{{URL::to('working-capital-emi-calculator')}}">Working capital calculator</a>
-								<a href="{{URL::to('check-emi')}}">Income Calculator</a>
+								<a href="<?php echo e(URL::to('check-emi')); ?>">Home Loan Calculator</a>
+								<a href="<?php echo e(URL::to('check-emi')); ?>">Business Loan Calculator</a>
+								<a href="<?php echo e(URL::to('working-capital-emi-calculator')); ?>">Working capital calculator</a>
+								<a href="<?php echo e(URL::to('check-emi')); ?>">Income Calculator</a>
 
 						   </li>
 							</ul>
 							</li> -->	
-							<li><a href="{{URL::to('calculators')}}">Calculators</a></li>				   
+							<li><a href="<?php echo e(URL::to('calculators')); ?>">Calculators</a></li>				   
 					        <!-- </li> -->
-							<!-- <li><a href="{{URL::to('check_emi')}}">EMI Calculator</a></li> -->
+							<!-- <li><a href="<?php echo e(URL::to('check_emi')); ?>">EMI Calculator</a></li> -->
 							<?php if(Session::get('is_login')){
 							?>
 							<li class="user-ic dropdown">
@@ -220,11 +221,11 @@
 								</a>
 									<ul class="dropdown-menu"  >
 									    <li> 
-										<a id="googleLOG" href={{URL::to('logout')}}>Logout</a>
-										<a href="{{url('profile')}}">My Profile</a>
-										<a href="{{URL::to('profile')}}?credit-score">My Credit Score</a>
-										<a href="{{url('profile')}}?my-quotes">My Quotes</a>
-										<a href="{{url('track-application')}}">Track Applications</a>
+										<a id="googleLOG" href=<?php echo e(URL::to('logout')); ?>>Logout</a>
+										<a href="<?php echo e(url('profile')); ?>">My Profile</a>
+										<a href="<?php echo e(URL::to('profile')); ?>?credit-score">My Credit Score</a>
+										<a href="<?php echo e(url('profile')); ?>?my-quotes">My Quotes</a>
+										<a href="<?php echo e(url('track-application')); ?>">Track Applications</a>
 										</li>
 									</ul>
 							</li>
@@ -236,7 +237,7 @@
 								</a>
 									<ul class="dropdown-menu"  >
 									    <li> 
-										<a id="googleLOG" href={{URL::to('logout')}}>Logout</a>
+										<a id="googleLOG" href=<?php echo e(URL::to('logout')); ?>>Logout</a>
 										</li>
 									</ul>
 							</li>
@@ -252,7 +253,7 @@
 							</ul>
 					</li>
                          <?php } ?>
-						 @endif
+						 <?php endif; ?>
 					</ul>
 				</nav>
 			</div>

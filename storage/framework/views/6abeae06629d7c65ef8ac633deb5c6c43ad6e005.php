@@ -1,4 +1,4 @@
-@include('layout.header')
+<?php echo $__env->make('layout.header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 <style>
 #fh5co-hero {
     padding: 4em 0;
@@ -224,13 +224,14 @@ input[type="text"] {
 		</div> -->
 		
 		<form id="early_salary_form" name="early_salary_form" method="POST">
-		 {{ csrf_field() }}
+		 <?php echo e(csrf_field()); ?>
+
 		 
 		
 		<div class="col-md-4">
 		<h1 class="text-center">WANT TO GET INSTANT LOAN ?</h1>
 		<h4 class="text-center">Apply now and get money transferred to your bank A/C today.</h4>
-			<img src="{{URL::to('images/bag.png')}}" alt="bag" class="img-responsive"/>
+			<img src="<?php echo e(URL::to('images/bag.png')); ?>" alt="bag" class="img-responsive"/>
 			</div>
 			<div class="col-md-8">
 			<h2 style="padding:10px;background:#2c86c0;color:#fff;margin-bottom:0px;">Register With Us</h2>
@@ -379,8 +380,8 @@ input[type="text"] {
 
 </div>
 
-@include('layout.footer')
-@include('layout.script')
+<?php echo $__env->make('layout.footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php echo $__env->make('layout.script', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 
 <div class="modal fade" tabindex="-1" role="dialog" id="early_salary">
   <div class="modal-dialog" role="document">
@@ -453,7 +454,7 @@ input[type="text"] {
   
 
  $(document).ready(function(){
-    src = "{{ route('searchajax') }}";
+    src = "<?php echo e(route('searchajax')); ?>";
     $(".search_citynm").autocomplete({
       source: function(request, response) {
         
@@ -502,7 +503,7 @@ input[type="text"] {
            
         $.ajax({  
          type: "POST",  
-         url: "{{URL::to('early-salary-submit')}}",
+         url: "<?php echo e(URL::to('early-salary-submit')); ?>",
          data : $('#early_salary_form').serialize(),
          success: function(msg){
               // console.log(msg.status);

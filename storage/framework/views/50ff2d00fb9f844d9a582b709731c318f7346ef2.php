@@ -1478,7 +1478,7 @@ var inputs = $("#compareform input[required='required']");
 
 <script type="text/javascript">
   function url_mail(obj,val){
-    console.log(obj);
+    //console.log(obj);
     if(obj=='urlemailid' ){
                    var str =$('#urlemailid').val();
                    var emailPattern = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/; 
@@ -1732,7 +1732,7 @@ var inputs = $("#compareform input[required='required']");
          url: "<?php echo e(URL::to('to-view-on-browser-url')); ?>",
          data : $('#to_view_url').serialize(),
          success: function(msg){
-           console.log(msg);
+           //console.log(msg);
            if (msg == 1) 
            {
              alert('As per your request we have sent a mail to your email ID.');

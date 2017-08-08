@@ -248,63 +248,59 @@ input[type="text"] {
 								<span></span>
 							</div>
 							 
-							<!-- <div class="styled-input">
-								<input type="text" name="Email" id="Email" oninput="mail('Email')" required="">
-								<div id="email" style="display:none;color: red; font-size: 10px">Please Enter Valid Email Id.</div>
-								<label>Email</label>
-								<span></span>
-							</div> -->
+							
 							<div class="styled-input">
 								<input type="text" name="phoneNumber" id="phoneNumber" maxlength="10" onkeypress="return fnAllowNumeric(event)" required>
 								<label>Mobile Number</label>
 								<span></span>
 							</div>
 							<div class="styled-input">
-								<select name="Company_Category" id="Company_Category"  required>
-								 <option value="">Select City</option>
-                                 <option value="Service">Mumbai</option>
-								 <option value="Service">Thane</option>
-								 <option value="Service">Navi-Mumbai</option>
-								 <option value="Service">Delhi</option>
-								 <option value="Service">Nodia</option>
-								 <option value="Service">Gurgaon</option>
-								 <option value="Service">Gaziabad</option>
-								 <option value="Service">Faridabad</option>
-								 <option value="Service">Pune</option>
-								 <option value="Service">PMPC</option>
-								 <option value="Service">Hyderabad</option>
-								 <option value="Service">Secundrabad</option>
-								 <option value="Service">Bangalore</option>
-								 <option value="Service">Gandhinaga</option>
-								 <option value="Service">Jaipur</option>
-								 <option value="Service">Chennai</option>
+								<select name="City" id="City"  required>
+								 <option disabled selected  value="">Select City</option>
+                 <option value="Mumbai">Mumbai</option>
+								 <option value="Thane">Thane</option>
+								 <option value="Navi-Mumbai">Navi-Mumbai</option>
+								 <option value="Delhi">Delhi</option>
+								 <option value="Nodia">Nodia</option>
+								 <option value="Gurgaon">Gurgaon</option>
+								 <option value="Gaziabad">Gaziabad</option>
+								 <option value="Faridabad">Faridabad</option>
+								 <option value="Pune">Pune</option>
+								 <option value="PMPC">PMPC</option>
+								 <option value="Hyderabad">Hyderabad</option>
+								 <option value="Secunderabad">Secunderabad</option>
+								 <option value="Bangalore">Bangalore</option>
+								 <option value="Gandhinagar">Gandhinagar</option>
+								 <option value="Jaipur">Jaipur</option>
+								 <option value="Chennai">Chennai</option>
                                 
 								</select>
 								<span></span>
 							</div>
 							
 							<div class="styled-input">
-							<input type="radio" name="sal" /> Salary <input type="radio" name="sal"/> Self Employed </div>
+							<input type="radio" id="Salary" value="Salary" name="Employment"  /> Salary <input type="radio" id="Self_Employed" value="Self_Employed" name="Employment"/> Self Employed </div>
 							
-							<label>LOAN AMOUNT</label>
+							<!-- <label>LOAN AMOUNT</label>
 							<span class="pull-right">10,00,000</span>
 							<div class="styled-input">
 								<input type="range"list="tickmarks" />
 								<datalist id="tickmarks">
-                                  <option value="0" label="100000">
+                                <option value="0" label="100000">
                                 <option value="10">
-                               <option value="20">
+                                <option value="20">
                                 <option value="30">
                                 <option value="40">
                                 <option value="50" label="500000">
-                                 <option value="60">
+                                <option value="60">
                                 <option value="70">
                                 <option value="80">
                                 <option value="90">
                                 <option value="100" label="1000000">
-                                  </datalist>
+                                </datalist>
                               	<span class="pull-left">1,00,000</span>
-							</div>
+							</div> -->
+              
 							<br>
 							<a class="btn btn-danger btn-outline with-arrow mrg-top" id="early_salary_submit">Submit <i class="icon-arrow-right"></i></a>
 							<div class="clear"> </div>
@@ -328,31 +324,30 @@ input[type="text"] {
 								<label>Last name</label>
 								<span></span>
 							</div>
-					
-						<div class="fields-grid">
-						      <div class="styled-input">
-								<input type="text" name="Designation" id="Designation" required="">
+					     
+              <div class="styled-input">
+								<input type="text" name="Age" id="Age" onkeypress="return fnAllowNumeric(event)"  maxlength="2" required>
 								<label>Age</label>
 								<span></span>
 							</div>
 							<div class="styled-input">
-								<input type="text" name="NoOfEmployees" id="NoOfEmployees" onkeypress="return fnAllowNumeric(event)" minlength="2" maxlength="6" required="">
+								<input type="text" name="RefferalCode" id="RefferalCode" onkeypress="return fnAllowNumeric(event)" value="0">
 								<label>Refferal Code (If any)</label>
 								<span></span>
 							</div>
 						
-							<div class="styled-input">
-								<input type="text" name="CompanyName" id="CompanyName" required="">
+							<div class="styled-input" id="sal_div" style="display: none;">
+								<input type="text" name="MonthlySalary" id="MonthlySalary" onkeypress="return fnAllowNumeric(event)" 
+                maxlength="9" required>
 								<label>Monthly Take Home Salary</label>
 								<span></span>
 							</div>
 						
 						<div class="styled-input">
-								<input type="text" name="CompanyName" id="CompanyName" required="">
-							
-								<label><h3>5,00,000</h3></label>
-								
-							</div>
+                <input type="text" name="LoanAmount" id="LoanAmount"  maxlength="6"  onkeypress="return fnAllowNumeric(event)" required>
+                <label>Loan Amount</label>
+                <span></span>
+              </div>
 							
 							
 							
@@ -390,7 +385,8 @@ input[type="text"] {
         <h4 class="modal-title">Confirmation Status</h4>
       </div>
       <div class="modal-body">
-        <h4><p id="modalerr"><h5 style="color: black"><b>Thank You For Early Salary. Our Representative Will Get In Touch With You.</b><h5></p></h4>
+        <h4><p id="modalerr"><h5 style="color: black"><b>Thank You!<br>
+         For sharing your details. We've sent you a link to download the EarlySalary app on your mobile phone. Go ahead and start applying for instant cash!.</b><h5></p></h4>
         
       </div>
     </div>
@@ -405,7 +401,40 @@ input[type="text"] {
         <h4 class="modal-title">Confirmation Status</h4>
       </div>
       <div class="modal-body">
-        <h4><p id="modalerr"><h5 style="color: black"><b>Mobile No. Already Exists.Try With Alternate Number </b><h5></p></h4>
+        <h4><p id="modalerr"><h5 style="color: black" ><b>Thank You!<br> 
+         For sharing your details. The details that you've shared doesn't meet our basic criteria. You should be living in the 8 cities that we are operational in and drawing a minimum take home salary of Rs 20,000.
+
+         We've SMS'ed you the link to download the app. If you still wish to apply. </b><h5></p></h4>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" tabindex="-1" role="dialog" id="salary">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Confirmation Status</h4>
+      </div>
+      <div class="modal-body">
+        <h4><p id="modalerr"><h5 style="color: black"><b>Salary should be equal to 20000 OR greater than 20000.</b><h5></p></h4>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" tabindex="-1" role="dialog" id="loanamount">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Confirmation Status</h4>
+      </div>
+      <div class="modal-body">
+        <h4><p id="modalerr"><h5 style="color: black"><b>Amount should be equal to 10000 &  less than (OR) equal to 100000.</b><h5></p></h4>
         
       </div>
     </div>
@@ -426,79 +455,34 @@ input[type="text"] {
       }
 }
 </script>
-<script type="text/javascript">
-  function mail(obj,val){
-    // console.log(obj);
-    if(obj=='Email' ){
-                   var str =$('#Email').val();
-                   var emailPattern = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/; 
-                   var res = str.match(emailPattern);
-                   if(res){
-                     // console.log('Pancard is valid one.!!');
-                      $('#email').hide();
 
-                  }else{
-                    // console.log('Oops.Please Enter Valid Pan Number.!!');
-                    $('#email').show();
 
-                    return false;
-                  }
-                  
-  }
-}
-</script>
 
-<script type="text/javascript">
-
-  
-
- $(document).ready(function(){
-    src = "{{ route('searchajax') }}";
-    $(".search_citynm").autocomplete({
-      source: function(request, response) {
-        
-        $.ajax({
-          url: src,
-          dataType: "json",
-          data: {
-            term : request.term
-          },
-          success: function(data) {
-           
-
-            response(data);
-            
-          }
-        });
-      },
-      change: function (event, ui) {
-        if (ui.item == null || ui.item == undefined || ui.item.value=='No Result Found') {
-          $(".search_citynm").val("");
-          $(".search_citynm").attr("disabled", false);
-         
-        }else{
-
-         
-         $(".Q6").show();
-         
-          
-             }
-           }
-
-        
-      });
-   });
-
-</script>
 
 <script type="text/javascript">
 	$('#early_salary_submit').click(function(){
+    if($('input[name=Employment]:checked').length<=0)
+     {
+         alert("No radio checked")
+     }
       if(! $('#early_salary_form').valid())
        {
               //alert('not valid');
         }
         else
         {
+          if ((($('#MonthlySalary').val().length)<5))
+          {
+            // alert('Salary should be equal to 20000 OR greater than 20000');
+            $('#salary').modal('show');
+            return false;
+          }
+          if ((($('#LoanAmount').val().length)<5))
+          {
+            //alert('Amount should be between 10000-1000000');
+            $('#loanamount').modal('show');
+            return false;
+          }
            
         $.ajax({  
          type: "POST",  
@@ -519,5 +503,14 @@ input[type="text"] {
       });   
      }
 	});
+</script>
+
+<script type="text/javascript">
+  $('#Salary').click(function(){
+     $('#sal_div').show();
+  });
+  $('#Self_Employed').click(function(){
+    $('#sal_div').hide();
+  });
 </script>
 

@@ -10,15 +10,17 @@
 
 .register-left {
     background: #ed1c24;
-    height: 600px;
+    height: 400px;
+    padding: 38px 0px;
 }
 .register-left p {color:#ff9599;}
 .register-right {
     background: #FFFFFF;
-	 height: 600px;
+	 height:400px;
 }
 .register-in {
     padding:1.5em;
+	padding-top:0px;
 }
 .register-left, .register-right {
    
@@ -31,12 +33,13 @@
     letter-spacing: 1px;
 }
 .register-left h1 {
-    font-size: 3.5em;
+    font-size: 2.5em;
     text-transform: uppercase;
     font-weight: 400;
-    margin-bottom: 1em;
+	text-align:left;
+    margin-bottom:12px;
     color: #FFFFFF;
-    text-align: center;
+
 }
 .register-left h2 {
 	
@@ -108,7 +111,7 @@ input[type="checkbox"] {
 .styled-input {
 	width: 100%;
     position: relative;
-    margin: 0 0 1.6em;
+    margin: 0 0 1.2em;
 }
 .styled-input:nth-child(1),.styled-input:nth-child(3){
 	margin-left:0;
@@ -193,6 +196,8 @@ input[type="text"] {
     word-spacing: 5px;
 }
 
+.pad-a {padding:5px 0px; border:1px dashed #eee; width:100%;}
+.col-md-4 {padding:2px;}
 
 /*-- //copyright --*/
 
@@ -204,59 +209,100 @@ input[type="text"] {
 <div class="container">
 <section class="register">
 	<div class="register-full">
-		<div class="register-left col-md-4">
+		<!--  <div class="register-left col-md-4">
 			<div class="register-in">
 				<h1><b>Cash On The Go</b></h1>
 				<h2>Without Any Hassle</h2>
-				<p>Donec ipsum lorem, sodales a sagittis ut, convallis non nibh. Integer vitae cursus nunc, et vestibulum augue. Donec lacinia tristique purus. Aenean in est pretium lectus euismod facilisis.</p>
+				<p>Borrowing money from Rupeeboss Website is as simple as cooking an instant noodle just 3 simple steps and the money is credited to your account.</p>
+				<div class="col-md-4 text-center"><p class="pad-a" title="Login & Apply">APPLY</p></div>
+				<div class="col-md-4 text-center"><p class="pad-a" title="Approval">APPROVAL</p></div>
+				<div class="col-md-4 text-center"><p class="pad-a" title="Cash Transfer">TRANSFER</p></div>
 				
-				<div class="link">
-					<a href="#">Login</a>
-				</div>
+				<p>Login your Account, tell us how much cash you need and when you want to return, upload some basic document.</p>
+				
 			</div>
-		</div>
-		<form>
-		<div class="register-right col-md-4">
+		</div> -->
+		
+		<form id="early_salary_form" name="early_salary_form" method="POST">
+		 {{ csrf_field() }}
+		 
+		
+		<div class="col-md-4">
+		<h1 class="text-center">WANT TO GET INSTANT LOAN ?</h1>
+		<h4 class="text-center">Apply now and get money transferred to your bank A/C today.</h4>
+			<img src="{{URL::to('images/bag.png')}}" alt="bag" class="img-responsive"/>
+			</div>
+			<div class="col-md-8">
+			<h2 style="padding:10px;background:#2c86c0;color:#fff;margin-bottom:0px;">Register With Us</h2>
+		<div class="register-right col-md-6">
+		 
 			<div class="register-in">
-				<h2>register With Us</h2>
+				
 				<div class="register-form">
-					<form action="#" method="post">
+					<!-- <form action="#" method="post"> -->
 						<div class="fields-grid">
+						<input type="hidden" name="merchantId" id="merchantId" value="66">
 							<div class="styled-input agile-styled-input-top">
-								<input type="text" name="First name" required=""> 
+								<input type="text" name="FirstName" id="FirstName" onkeypress="return AllowAlphabet(event)"  required=""> 
 								<label>First name</label>
 								<span></span>
 							</div>
+							 
+							
 							<div class="styled-input">
-								<input type="text" name="Last name" required=""> 
-								<label>Last name</label>
-								<span></span>
-							</div> 
-							<div class="styled-input">
-								<input type="email" name="Email" required="">
-								<label>Email</label>
-								<span></span>
-							</div>
-							<div class="styled-input">
-								<input type="text" name="Email" required="">
-								<label>City</label>
-								<span></span>
-							</div>
-							<div class="styled-input">
-								<input type="tel" name="Phone" required="">
+								<input type="text" name="phoneNumber" id="phoneNumber" maxlength="10" onkeypress="return fnAllowNumeric(event)" required>
 								<label>Mobile Number</label>
 								<span></span>
 							</div>
 							<div class="styled-input">
-								<input type="text" name="designation" required="">
-								<label>Designation</label>
+								<select name="City" id="City"  required>
+								 <option disabled selected  value="">Select City</option>
+                 <option value="Mumbai">Mumbai</option>
+								 <option value="Thane">Thane</option>
+								 <option value="Navi-Mumbai">Navi-Mumbai</option>
+								 <option value="Delhi">Delhi</option>
+								 <option value="Nodia">Nodia</option>
+								 <option value="Gurgaon">Gurgaon</option>
+								 <option value="Gaziabad">Gaziabad</option>
+								 <option value="Faridabad">Faridabad</option>
+								 <option value="Pune">Pune</option>
+								 <option value="PMPC">PMPC</option>
+								 <option value="Hyderabad">Hyderabad</option>
+								 <option value="Secunderabad">Secunderabad</option>
+								 <option value="Bangalore">Bangalore</option>
+								 <option value="Gandhinagar">Gandhinagar</option>
+								 <option value="Jaipur">Jaipur</option>
+								 <option value="Chennai">Chennai</option>
+                                
+								</select>
 								<span></span>
 							</div>
+							
 							<div class="styled-input">
-								<input type="text" name="employees" required="">
-								<label> No of Employees</label>
-								<span></span>
-							</div>
+							<input type="radio" id="Salary" value="Salary" name="Employment"  /> Salary <input type="radio" id="Self_Employed" value="Self_Employed" name="Employment"/> Self Employed </div>
+							
+							<!-- <label>LOAN AMOUNT</label>
+							<span class="pull-right">10,00,000</span>
+							<div class="styled-input">
+								<input type="range"list="tickmarks" />
+								<datalist id="tickmarks">
+                                <option value="0" label="100000">
+                                <option value="10">
+                                <option value="20">
+                                <option value="30">
+                                <option value="40">
+                                <option value="50" label="500000">
+                                <option value="60">
+                                <option value="70">
+                                <option value="80">
+                                <option value="90">
+                                <option value="100" label="1000000">
+                                </datalist>
+                              	<span class="pull-left">1,00,000</span>
+							</div> -->
+              
+							<br>
+							<a class="btn btn-danger btn-outline with-arrow mrg-top" id="early_salary_submit">Submit <i class="icon-arrow-right"></i></a>
 							<div class="clear"> </div>
 							
 						</div>
@@ -267,24 +313,41 @@ input[type="text"] {
 			<div class="clear"> </div>
 		</div>
 		
-		<div class="register-right col-md-4">
+		<div class="register-right col-md-6">
 			<div class="register-in">
-			<br>
+		
 				<div class="register-form">
-					
-						<div class="fields-grid">
-							<div class="styled-input">
-								<input type="text" name="company-name" required="">
-								<label>Company Name</label>
+				
+				
+				     <div class="styled-input">
+								<input type="text" name="LastName" id="LastName" onkeypress="return AllowAlphabet(event)" required=""> 
+								<label>Last name</label>
 								<span></span>
 							</div>
-							
-							<div class="styled-input">
-								<select>
-								  <option>Company Category</option>
-								</select>
+					     
+              <div class="styled-input">
+								<input type="text" name="Age" id="Age" onkeypress="return fnAllowNumeric(event)"  maxlength="2" required>
+								<label>Age</label>
 								<span></span>
 							</div>
+							<div class="styled-input">
+								<input type="text" name="RefferalCode" id="RefferalCode" onkeypress="return fnAllowNumeric(event)" value="0">
+								<label>Refferal Code (If any)</label>
+								<span></span>
+							</div>
+						
+							<div class="styled-input" id="sal_div" style="display: none;">
+								<input type="text" name="MonthlySalary" id="MonthlySalary" onkeypress="return fnAllowNumeric(event)" 
+                maxlength="9" required>
+								<label>Monthly Take Home Salary</label>
+								<span></span>
+							</div>
+						
+						<div class="styled-input">
+                <input type="text" name="LoanAmount" id="LoanAmount"  maxlength="6"  onkeypress="return fnAllowNumeric(event)" required>
+                <label>Loan Amount</label>
+                <span></span>
+              </div>
 							
 							
 							
@@ -292,13 +355,15 @@ input[type="text"] {
 							
 						</div>
 						
-						<button class="btn btn-primary btn-outline with-arrow" id="apply_now">Register<i class="icon-arrow-right"></i></button>
+						
 					</form>
 				</div>
 			</div>
 			<div class="clear"> </div>
 		</div>
-		</form>
+		</div>
+		
+		<!-- </form> -->
 		
 		
 	<div class="clear"> </div>
@@ -311,4 +376,141 @@ input[type="text"] {
 
 @include('layout.footer')
 @include('layout.script')
+
+<div class="modal fade" tabindex="-1" role="dialog" id="early_salary">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Confirmation Status</h4>
+      </div>
+      <div class="modal-body">
+        <h4><p id="modalerr"><h5 style="color: black"><b>Thank You!<br>
+         For sharing your details. We've sent you a link to download the EarlySalary app on your mobile phone. Go ahead and start applying for instant cash!.</b><h5></p></h4>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" tabindex="-1" role="dialog" id="early_salary_error">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Confirmation Status</h4>
+      </div>
+      <div class="modal-body">
+        <h4><p id="modalerr"><h5 style="color: black" ><b>Thank You!<br> 
+         For sharing your details. The details that you've shared doesn't meet our basic criteria. You should be living in the 8 cities that we are operational in and drawing a minimum take home salary of Rs 20,000.
+
+         We've SMS'ed you the link to download the app. If you still wish to apply. </b><h5></p></h4>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" tabindex="-1" role="dialog" id="salary">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Confirmation Status</h4>
+      </div>
+      <div class="modal-body">
+        <h4><p id="modalerr"><h5 style="color: black"><b>Salary should be equal to 20000 OR greater than 20000.</b><h5></p></h4>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" tabindex="-1" role="dialog" id="loanamount">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Confirmation Status</h4>
+      </div>
+      <div class="modal-body">
+        <h4><p id="modalerr"><h5 style="color: black"><b>Amount should be equal to 10000 &  less than (OR) equal to 100000.</b><h5></p></h4>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  function AllowAlphabet(e)
+{
+  isIE = document.all ? 1 : 0
+  keyEntry = !isIE ? e.which : event.keyCode;
+  if (((keyEntry >= '65') && (keyEntry <= '90')) || ((keyEntry >= '97') && (keyEntry <= '122')) || (keyEntry == '46') || (keyEntry == '32') || keyEntry == '45')
+     return true;
+  else
+{
+    // alert('Please Enter Only Character values.');
+    return false;
+      }
+}
+</script>
+
+
+
+
+<script type="text/javascript">
+	$('#early_salary_submit').click(function(){
+    if($('input[name=Employment]:checked').length<=0)
+     {
+         alert("No radio checked")
+     }
+      if(! $('#early_salary_form').valid())
+       {
+              //alert('not valid');
+        }
+        else
+        {
+          if ((($('#MonthlySalary').val().length)<5))
+          {
+            // alert('Salary should be equal to 20000 OR greater than 20000');
+            $('#salary').modal('show');
+            return false;
+          }
+          if ((($('#LoanAmount').val().length)<5))
+          {
+            //alert('Amount should be between 10000-1000000');
+            $('#loanamount').modal('show');
+            return false;
+          }
+           
+        $.ajax({  
+         type: "POST",  
+         url: "{{URL::to('early-salary-submit')}}",
+         data : $('#early_salary_form').serialize(),
+         success: function(msg){
+              // console.log(msg.status);
+              if (msg.status=="200") 
+              {
+               $('#early_salary').modal('show');
+              }
+              else if(msg.error=="2")
+              {
+               $('#early_salary_error').modal('show')
+              }
+              
+        }  
+      });   
+     }
+	});
+</script>
+
+<script type="text/javascript">
+  $('#Salary').click(function(){
+     $('#sal_div').show();
+  });
+  $('#Self_Employed').click(function(){
+    $('#sal_div').hide();
+  });
+</script>
 

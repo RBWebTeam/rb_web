@@ -1,6 +1,34 @@
   <script src="{{URL::to('js/Myapp.js')}}"></script>
     <script src="{{URL::to('js/jsPdf.js')}}"></script>
 	 <script src="{{URL::to('js/freshslider.min.js')}}"></script>
+	 
+ <script>
+	       // Hide Header on on scroll down
+//var didScroll;
+//var lastScrollTop = 0;
+//var delta = 5;
+//var navbarHeight = $('.top-bg').outerHeight();
+
+//$(window).scroll(function(event){
+    //didScroll = true;
+	//$(".top-bg").hide();
+//});
+
+var scrollBottom = $(window).scrollTop() + $(window).height();
+
+$(window).scroll(function(){
+      if($(this).scrollTop() > 50) {
+		$('.top-bg').hide(500);
+		$('#fh5co-header').css({'background': '#28a0ff'});   
+		$('#fh5co-header nav ul li a').css({'color': '#fff'});
+       } else if (scrollBottom  > 200) {
+		$('.top-bg').show(500);
+		$('#fh5co-header').css({'background': '#ffffff'});
+		$('#fh5co-header nav ul li a').css({'color': 'rgba(0, 0, 0, 0.7)'});
+      }
+    });
+
+	   </script>
 
   <script>
        function registration(){
@@ -2332,7 +2360,7 @@ $(document).ready(function(){
 
 <script type="text/javascript">
   function pan_card(obj,val){
-    console.log(obj);
+    //console.log(obj);
     if(obj=='pan_no' ){
                    var str =$('#pan_no').val();
                    var pancardPattern = /^([a-zA-Z]{5})(\d{4})([a-zA-Z]{1})$/;
@@ -2434,7 +2462,9 @@ $(window).on('load', function(){
                 }
             })();  
         </script>
-
+		
+		
+       
  
   
 

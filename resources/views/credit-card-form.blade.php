@@ -758,7 +758,7 @@
 <script type="text/javascript">
 	$(document).ready(function(){
     $('#ICICIBankRelationship').on('change', function() {
-    	console.log(this.value);
+    	//console.log(this.value);
       if ( this.value == 'Salary')
       {
         $("#ICICIRelationshipNumber").show();
@@ -789,7 +789,7 @@
 
 <script type="text/javascript">
   function mail(obj,val){
-    console.log(obj);
+    //console.log(obj);
     if(obj=='work_email' ){
                    var str =$('#work_email').val();
                    var emailPattern = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/; 

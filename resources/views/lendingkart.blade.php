@@ -284,7 +284,7 @@
                                         </div>
 
                                         <div class="col-md-4">
-                                            <input type="text" class="form-control" id="Gross_Annual_Income" name="Gross_Annual_Income" maxlength="5" maxlength="9" onkeypress="return fnAllowNumeric(event)" placeholder="Gross Income" required>
+                                            <input type="text" class="form-control" id="Gross_Annual_Income" name="Gross_Annual_Income" minlength="5" maxlength="9" onkeypress="return fnAllowNumeric(event)" placeholder="Gross Income" required>
                                             
                                         </div>
 

@@ -469,31 +469,5 @@ class TribeController extends CallApiController
 	     return view('test_parse')->with('data',$test);
 	  }
 }
-public static function array2xml($array, $xml = false){
-
-		    if($xml === false){
-		        $xml = new SimpleXMLElement('<result/>');
-		    }
-
-		    foreach($array as $key => $value){
-		        if(is_array($value)){
-		            array2xml($value, $xml->addChild($key));
-		        } else {
-		            $xml->addChild($key, $value);
-		        }
-		    }
-
-		    return $xml->asXML();
-		}
-	public function xml(Request $req){
-			$data=$req->all();
-				//var_dump($data);exit();
-			
-			$xml = TribeController::array2xml($data, false);
-
-			echo '<pre>';
-			print_r($xml);
-		}
-	
 
 }

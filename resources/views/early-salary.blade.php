@@ -281,25 +281,7 @@ input[type="text"] {
 							<div class="styled-input">
 							<input type="radio" id="Salary" value="Salary" name="Employment"  /> Salary <input type="radio" id="Self_Employed" value="Self_Employed" name="Employment"/> Self Employed </div>
 							
-							<!-- <label>LOAN AMOUNT</label>
-							<span class="pull-right">10,00,000</span>
-							<div class="styled-input">
-								<input type="range"list="tickmarks" />
-								<datalist id="tickmarks">
-                                <option value="0" label="100000">
-                                <option value="10">
-                                <option value="20">
-                                <option value="30">
-                                <option value="40">
-                                <option value="50" label="500000">
-                                <option value="60">
-                                <option value="70">
-                                <option value="80">
-                                <option value="90">
-                                <option value="100" label="1000000">
-                                </datalist>
-                              	<span class="pull-left">1,00,000</span>
-							</div> -->
+							
               
 							<br>
 							<a class="btn btn-danger btn-outline with-arrow mrg-top" id="early_salary_submit">Submit <i class="icon-arrow-right"></i></a>
@@ -402,7 +384,7 @@ input[type="text"] {
       </div>
       <div class="modal-body">
         <h4><p id="modalerr"><h5 style="color: black" ><b>Thank You!<br> 
-         For sharing your details. The details that you've shared doesn't meet our basic criteria. You should be living in the 8 cities that we are operational in and drawing a minimum take home salary of Rs 20,000.
+         For sharing your details. The details that you've shared doesn't meet our basic criteria. You should be living in the 8 cities that we are operational in and drawing a minimum take home salary of Rs 20,000 (OR) Your Mobile No. Already Exists With Us. Kindly, Try With Your Alternate No.
 
          We've SMS'ed you the link to download the app. If you still wish to apply. </b><h5></p></h4>
         
@@ -464,10 +446,11 @@ input[type="text"] {
     if($('input[name=Employment]:checked').length<=0)
      {
          alert("No radio checked")
+         return false;
      }
       if(! $('#early_salary_form').valid())
        {
-              //alert('not valid');
+              // alert('not valid');
         }
         else
         {

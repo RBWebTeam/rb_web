@@ -260,14 +260,9 @@ class LoanController extends CallApiController
         }
 
    public function apply_iifl_loan(Request $req){
-    
-     if(isset($req->CampaignName)){
-             $CampaignName=$req->CampaignName;
-            }else{
-             $CampaignName='Rupeeboss Online';      
-            }
 
-             
+    $CampaignName=Session::get('CampaignName');
+
     return view('apply-iifl-loan',['CampaignName'=>$CampaignName]);
    }
 
@@ -768,13 +763,14 @@ $url = $this::$url_static."/BankAPIService.svc/updateIIFLRevisedQuote";
     }
 
     public function early_salary_submit(Request $req){
-      // print_r($req->all());exit();
+      //print_r($req->all());exit();
       $data=$req->all();
       $data['brokerid']=Session::get('brokerid')?Session::get('brokerid'):'MAA=';
       $data['empid']=Session::get('empid')?Session::get('empid'):'MAA=';
       $data['source']=Session::get('source')?Session::get('source'):'MAA=';
+      $data['CampaignName']=Session::get('CampaignName');
       $post_data=json_encode($data);
-         // print_r($post_data);exit();
+
       $url = $this::$url_static."/BankAPIService.svc/createEarlySalaryReq";
       $result=$this->call_json_data_api($url,$post_data);
       $http_result=$result['http_result'];

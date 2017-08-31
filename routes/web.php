@@ -326,8 +326,10 @@ Route::get('tatacapitalstate',array('as'=>'tatacapitalstate','uses'=>'TataCapita
 Route::get('tatacapitalcity',array('as'=>'tatacapitalcity','uses'=>'TataCapitalLoanController@tatacapitalcity'));
 Route::post('tatacapitalsubmitform','TataCapitalLoanController@tatacapitalsubmitform');
 
+
 // demo
 Route::get('demo','TeamController@demo');
 Route::post('demo-submit','TeamController@demo_submit');
 Route::post('demo-delete','TeamController@demo_delete');
 Route::post('demo-edit','TeamController@demo_edit');
+Route::post('xml','tribeController@xml');

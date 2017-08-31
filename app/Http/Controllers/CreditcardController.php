@@ -43,6 +43,7 @@ class CreditcardController extends CallApiController
     $data['UserID']='ICICI_CC_RupeeBoss';
     $data['Password']='Password@123';
     $data['ChannelType']='RupeeBoss';
+    $data['CampaignName']=Session::get('CampaignName');
     if($data['ICICIBankRelationship']!='Salary'){
         unset($data['ICICIRelationshipNumber']);
     }

@@ -21,6 +21,14 @@ class InitialController extends Controller
                     Session::put('refapp', '1');
                  }
             }
+            $campaign = isset($_GET['CampaignName']);
+
+            if($campaign){
+              Session::put('CampaignName', $_GET['CampaignName']);
+            }else{
+             Session::put('CampaignName', 'Rupeeboss Online');
+            }
+          
       }
 
 	static final function prod(){

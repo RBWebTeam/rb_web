@@ -385,7 +385,7 @@ input[type="text"] {
       </div>
       <div class="modal-body">
         <h4><p id="modalerr"><h5 style="color: black" ><b>Thank You!<br> 
-         For sharing your details. The details that you've shared doesn't meet our basic criteria. You should be living in the 8 cities that we are operational in and drawing a minimum take home salary of Rs 20,000.
+         For sharing your details. The details that you've shared doesn't meet our basic criteria. You should be living in the 8 cities that we are operational in and drawing a minimum take home salary of Rs 20,000 (OR) Your Mobile No. Already Exists With Us. Kindly, Try With Your Alternate No.
 
          We've SMS'ed you the link to download the app. If you still wish to apply. </b><h5></p></h4>
         
@@ -451,7 +451,7 @@ input[type="text"] {
      }
       if(! $('#early_salary_form').valid())
        {
-              //alert('not valid');
+              // alert('not valid');
         }
         else
         {

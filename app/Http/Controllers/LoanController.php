@@ -260,6 +260,7 @@ class LoanController extends CallApiController
         }
 
    public function apply_iifl_loan(Request $req){
+    
      if(isset($req->CampaignName)){
              $CampaignName=$req->CampaignName;
             }else{
@@ -341,6 +342,9 @@ public function dropdown(Request $req){
 
     public function applicant(Request $req){
        $data=$req->all();
+       $data['brokerid']=Session::get('brokerid')?Session::get('brokerid'):'MAA=';
+        $data['empid']=Session::get('empid')?Session::get('empid'):'MAA=';
+        $data['source']=Session::get('source')?Session::get('source'):'MAA=';
        $json_data=json_encode($data);
 
        $post_data = '{
@@ -356,7 +360,8 @@ public function dropdown(Request $req){
   "body": '.$json_data.'
 }';
     //call API here to save in DB
-        //$post=json_encode($post_data);
+        $post=json_encode($post_data);
+        // print_r($post);exit();
      
 
     $url = $this::$url_static."/BankAPIService.svc/createIIFLAppDtls";
@@ -769,7 +774,7 @@ $url = $this::$url_static."/BankAPIService.svc/updateIIFLRevisedQuote";
       $data['empid']=Session::get('empid')?Session::get('empid'):'MAA=';
       $data['source']=Session::get('source')?Session::get('source'):'MAA=';
       $post_data=json_encode($data);
-        // print_r($post_data);exit();
+         // print_r($post_data);exit();
       $url = $this::$url_static."/BankAPIService.svc/createEarlySalaryReq";
       $result=$this->call_json_data_api($url,$post_data);
       $http_result=$result['http_result'];

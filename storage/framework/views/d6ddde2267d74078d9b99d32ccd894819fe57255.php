@@ -1,4 +1,4 @@
- @include('layout.header')
+ <?php echo $__env->make('layout.header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
     <link rel="shortcut icon" href="favicon.ico">
 
     <link href="https://fonts.googleapis.com/css?family=Raleway:200,300,400,700" rel="stylesheet">
@@ -51,7 +51,7 @@
     <div class="express-lon-ban"><img src="images/express-loan-image1.jpg" class="img-responsive"/></div>
     <br>
 <div class="iframeloading" style= "display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
-                <img src="{{URL::to('images/ajaxloader.gif')}}" alt="Loader" title="Loader" style="top: 50%; position: relative; left: 50%;"  />
+                <img src="<?php echo e(URL::to('images/ajaxloader.gif')); ?>" alt="Loader" title="Loader" style="top: 50%; position: relative; left: 50%;"  />
 </div>
     <!-- //loader -->
     
@@ -88,7 +88,8 @@
             
         <div id="iifl">
             <form id="iifl_express_loan" name="iifl_express_loan" method="POST">
-                {{ csrf_field() }}
+                <?php echo e(csrf_field()); ?>
+
 
 
             
@@ -167,7 +168,8 @@
             
         <div id="Eligibility_details" style="display: none;">
             <form name="eligibility_form" id="eligibility_form" method="POST">
-                      {{ csrf_field() }}
+                      <?php echo e(csrf_field()); ?>
+
             <div class="col-md-12">
             <table class="table table-bordered" width="70%">
                 <tr>
@@ -225,7 +227,8 @@
             
         <div id="Applicant_Details" style="display: none;">
             <form name="applicant_deatils" id="applicant_deatils" method="POST">
-                      {{ csrf_field() }}
+                      <?php echo e(csrf_field()); ?>
+
             <div class="col-md-12">
             <table class="table table-bordered" width="100%">
                 <tr>
@@ -253,7 +256,7 @@
             <div class="col-md-1"></div>
             <section class="content">
                 <h3 class="col-md-12 mrg-tpp">Tell Us a Bit About YourSelf</h3>
-                  <input type="hidden" name="CampaignName" value="{{$CampaignName}}">
+                  <input type="hidden" name="CampaignName" value="<?php echo e($CampaignName); ?>">
 
                 <input class="input__field input__field--nao" type="hidden" name="CompanyName" required id="CompanyName" onkeypress="return AllowAlphabet(event)" />
                 <input class="input__field input__field--nao" type="hidden" name="MonthlySalary" required id="MonthlySalary" onkeypress="return AllowAlphabet(event)" />
@@ -672,7 +675,8 @@
 
             <div id="co_applicant" style="display: none;" >
                 <form id="co_applicant_details" name="co_applicant_details" method="POST">
-                 {{ csrf_field() }}
+                 <?php echo e(csrf_field()); ?>
+
                 <section class="content">
                 <h3 class="col-md-12 mrg-tpp">Tell Us a Bit About Co-applicant</h3>
                 <span class="input input--nao">
@@ -997,7 +1001,8 @@
             <!-- <hr class="hr-sty"> -->
             <div id="otp" style="display: none;">
             <form name="aadharotp" id="aadharotp" method="POST">
-             {{ csrf_field() }}
+             <?php echo e(csrf_field()); ?>
+
              <section class="content">
             
             <div class="col-md-12">
@@ -1051,7 +1056,8 @@
 
                 <div id="confirm_otp" style="display: none;">
                 <form name="confirm_aadharotp" id="confirm_aadharotp" method="POST">
-                {{ csrf_field() }}
+                <?php echo e(csrf_field()); ?>
+
                 <section>
                 <div>
                 <span class="input input--nao">
@@ -1074,7 +1080,8 @@
             <br>
             <div id="Instant_Approve" style="display: none;">
             <form name="instant_form" id="instant_form" method="POST">
-                      {{ csrf_field() }}
+                      <?php echo e(csrf_field()); ?>
+
             <section class="content">
             <hr class="hr-sty">
             
@@ -1144,7 +1151,8 @@
 
             <div id="upload" style="display: none;" >
             <form name="upload_details" id="upload_details" enctype="multipart/form-data" method="POST">
-            {{ csrf_field() }}
+            <?php echo e(csrf_field()); ?>
+
             <div>
             <section class="mrg-top">
               <h1 class="text-center"><i>Congratulation</i></h1>
@@ -1210,7 +1218,8 @@
             <div id="financial_doc" style="display: none;" >
 
                 <form name="financial_details" id="financial_details" enctype="multipart/form-data" method="POST">
-                 {{ csrf_field() }}
+                 <?php echo e(csrf_field()); ?>
+
                 <div class="row">
                 <div class="col-md-12">
                 <hr>
@@ -1311,14 +1320,14 @@
 
             </div>
 			</div>
-             @include('layout.script')
+             <?php echo $__env->make('layout.script', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 			</div>
 			</div>
 			
 			</div>
 			
 			</div>
-             @include('layout.footer')
+             <?php echo $__env->make('layout.footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 
 
 
@@ -1406,7 +1415,7 @@
     
 
  $(document).ready(function(){
-    src = "{{ route('searchajax') }}";
+    src = "<?php echo e(route('searchajax')); ?>";
     $(".search_city_name").autocomplete({
       source: function(request, response) {
         
@@ -1450,7 +1459,7 @@ $(document).ready(function(){
       source: function(request, response) {
         
         $.ajax({
-          url: "{{ route('searchiiflcompanyajax') }}",
+          url: "<?php echo e(route('searchiiflcompanyajax')); ?>",
           dataType: "json",
           data: {
             term : request.term
@@ -1600,10 +1609,10 @@ $(document).ready(function(){
         
 
     //     var aadhar= $('#aadhar_num').val();
-    //     var v_token = "{{csrf_token()}}";
+    //     var v_token = "<?php echo e(csrf_token()); ?>";
     //     $.ajax({  
     //      type: "POST",  
-    //      url: "{{URL::to('apply-iifl-loan-otp')}}",
+    //      url: "<?php echo e(URL::to('apply-iifl-loan-otp')); ?>",
     //      data: {
     //      "AadhaarNumber":aadhar,'_token': v_token},
     //      success: function(msg){
@@ -1620,10 +1629,10 @@ $(document).ready(function(){
 
     $(document).ready(function(){
         // alert('ok');
-        var v_token = "{{csrf_token()}}";
+        var v_token = "<?php echo e(csrf_token()); ?>";
         $.ajax({  
          type: "POST",  
-         url: "{{URL::to('apply-iifl-loan-otp')}}",
+         url: "<?php echo e(URL::to('apply-iifl-loan-otp')); ?>",
          data: {
          '_token': v_token},
          success: function(msg){       
@@ -1663,10 +1672,10 @@ $(document).ready(function(){
     dropdown_populate_api_call('SalarySatement');
     });
    function dropdown_populate_api_call(param){
-     var v_token = "{{csrf_token()}}";
+     var v_token = "<?php echo e(csrf_token()); ?>";
         $.ajax({  
          type: "POST",  
-         url: "{{URL::to('apply-iifl-loan-dropdown')}}?param="+param,
+         url: "<?php echo e(URL::to('apply-iifl-loan-dropdown')); ?>?param="+param,
          data: {
          '_token': v_token},
          success: function(msg){
@@ -1782,7 +1791,7 @@ var global_tenure=0;
 
          $.ajax({  
                 type: "POST",  
-                url: "{{URL::to('iifl-eligibility')}}",
+                url: "<?php echo e(URL::to('iifl-eligibility')); ?>",
                 data : $('#iifl_express_loan').serialize(),
                 success: function(msg){
                         var data=msg[0];
@@ -1928,7 +1937,7 @@ var global_tenure=0;
            
            $.ajax({  
              type: "POST",  
-             url: "{{URL::to('apply-iifl-loan-applicant1')}}",
+             url: "<?php echo e(URL::to('apply-iifl-loan-applicant1')); ?>",
              data : $('#applicant_deatils').serialize(),
              success: function(msg){
                  $(".iframeloading").hide();
@@ -1971,7 +1980,7 @@ var global_tenure=0;
             $('#otp').show();
             $.ajax({  
          type: "POST",  
-         url: "{{URL::to('iifl-coapplicant')}}",
+         url: "<?php echo e(URL::to('iifl-coapplicant')); ?>",
          data : $('#co_applicant_details').serialize(),
          success: function(msg){
             
@@ -2002,7 +2011,7 @@ var global_tenure=0;
 
          $.ajax({  
              type: "POST",  
-             url: "{{URL::to('iifl-instant-eligibility')}}",
+             url: "<?php echo e(URL::to('iifl-instant-eligibility')); ?>",
              data : $('#instant_form').serialize(),
              success: function(msg){
                 // console.log(msg);
@@ -2052,7 +2061,7 @@ $('#Applied, #Period').on('input', function () {
            $('#confirm_otp').show();
            $.ajax({  
          type: "POST",  
-         url: "{{URL::to('iifl-aadhar-otp')}}",
+         url: "<?php echo e(URL::to('iifl-aadhar-otp')); ?>",
          data : $('#aadharotp').serialize(),
          success: function(msg){
             // console.log(msg);
@@ -2074,7 +2083,7 @@ $('#Applied, #Period').on('input', function () {
            $('#Instant_Approve').show();
            $.ajax({  
          type: "POST",  
-         url: "{{URL::to('iifl-aadhar-confirm-otp')}}",
+         url: "<?php echo e(URL::to('iifl-aadhar-confirm-otp')); ?>",
          data : $('#confirm_aadharotp').serialize(),
          success: function(msg){
               // console.log(msg);
@@ -2091,7 +2100,7 @@ $('#Applied, #Period').on('input', function () {
          $('#Instant_Approve').show();
          $.ajax({  
          type: "POST",  
-         url: "{{URL::to('iifl-offer-status')}}?_token="+"{{ csrf_token() }}",
+         url: "<?php echo e(URL::to('iifl-offer-status')); ?>?_token="+"<?php echo e(csrf_token()); ?>",
          data : $('').serialize(),
          success: function(msg){
 
@@ -2182,7 +2191,7 @@ $('#Applied, #Period').on('input', function () {
 
             // $('#financial_doc').show();
         $.ajax({
-          url:"{{URL::to('iifl-doc-upload')}}" ,  
+          url:"<?php echo e(URL::to('iifl-doc-upload')); ?>" ,  
           data:new FormData($("#upload_details")[0]),
           dataType:'json',
           async:false,
@@ -2220,7 +2229,7 @@ $('#Applied, #Period').on('input', function () {
         {
            
         $.ajax({
-          url:"{{URL::to('iifl-finanacial-doc-upload')}}" ,  
+          url:"<?php echo e(URL::to('iifl-finanacial-doc-upload')); ?>" ,  
           data:new FormData($("#financial_details")[0]),
           dataType:'json',
           async:false,
@@ -2448,10 +2457,10 @@ $('#Applied, #Period').on('input', function () {
                 // console.log($('#CurrentPin').val().length);
                 if ($('#CurrentPin').val().length == 6) {
                     var pincode =$('#CurrentPin').val();
-                    var v_token ="{{csrf_token()}}";
+                    var v_token ="<?php echo e(csrf_token()); ?>";
                    $.ajax({  
                         type: "POST",  
-                        url: "{{URL::to('iifl-pincode-status')}}",
+                        url: "<?php echo e(URL::to('iifl-pincode-status')); ?>",
                         data : {'_token': v_token,'CurrentPin':pincode},
                         success: function(msg){
                             // console.log(msg.City);
@@ -2488,10 +2497,10 @@ $('#Applied, #Period').on('input', function () {
                 // console.log($('#PermanentPin').val().length);
                 if ($('#PermanentPin').val().length == 6) {
                     var pincode =$('#PermanentPin').val();
-                    var v_token ="{{csrf_token()}}";
+                    var v_token ="<?php echo e(csrf_token()); ?>";
                    $.ajax({  
                         type: "POST",  
-                        url: "{{URL::to('iifl-permanent-pincode-status')}}",
+                        url: "<?php echo e(URL::to('iifl-permanent-pincode-status')); ?>",
                         data : {'_token': v_token,'PermanentPin':pincode},
                         success: function(msg){
                             // console.log(msg.City);
@@ -2528,10 +2537,10 @@ $('#Applied, #Period').on('input', function () {
                 // console.log($('#CoCurrentPin').val().length);
                 if ($('#CoCurrentPin').val().length == 6) {
                     var pincode =$('#CoCurrentPin').val();
-                    var v_token ="{{csrf_token()}}";
+                    var v_token ="<?php echo e(csrf_token()); ?>";
                    $.ajax({  
                         type: "POST",  
-                        url: "{{URL::to('iifl-co-pincode-status')}}",
+                        url: "<?php echo e(URL::to('iifl-co-pincode-status')); ?>",
                         data : {'_token': v_token,'CoCurrentPin':pincode},
                         success: function(msg){
                             // console.log(msg.Status);
@@ -2568,10 +2577,10 @@ $('#Applied, #Period').on('input', function () {
                 // console.log($('#CompanyPin').val().length);
                 if ($('#CompanyPin').val().length == 6) {
                     var pincode =$('#CompanyPin').val();
-                    var v_token ="{{csrf_token()}}";
+                    var v_token ="<?php echo e(csrf_token()); ?>";
                    $.ajax({  
                         type: "POST",  
-                        url: "{{URL::to('iifl-company-pincode-status')}}",
+                        url: "<?php echo e(URL::to('iifl-company-pincode-status')); ?>",
                         data : {'_token': v_token,'CompanyPin':pincode},
                         success: function(msg){
                             // console.log(msg.Status);

@@ -1,0 +1,307 @@
+
+
+
+/* start editing from here */
+a {
+	text-decoration:none;
+}
+img {
+	max-width:100%;
+}
+/*--- end reset code ---*/
+
+input[type="button"], input[type="submit"] {
+	transition: 0.5s all;
+	-webkit-transition: 0.5s all;
+	-moz-transition: 0.5s all;
+	-o-transition: 0.5s all;
+	-ms-transition: 0.5s all;
+}
+label {
+	margin: 0;
+    letter-spacing: 1px;
+}
+a:focus, a:hover {
+	text-decoration: none;
+	outline: none;
+}
+.application-full {
+    width:100%;
+    margin: 0 auto;
+}
+.application-left {
+    background: #009688;
+    height: 605px;
+}
+
+.application-in {
+    padding: 0px 0em 2em 0em;
+}
+
+.application-left p {
+    margin: 2em 0;
+    line-height: 1.8em;
+    font-size: 1em;
+    letter-spacing: 1px;
+}
+.application-left h1 {
+    font-size: 3em;
+    text-transform: uppercase;
+    font-weight: 400;
+    margin-bottom: 1em;
+    color: #FFFFFF;
+    text-align: center;
+}
+.application-right h2 {
+    text-transform: uppercase;
+    font-size: 2em;
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: 1px;
+    word-spacing: 5px;
+}
+.link a {
+    color: #FFFFFF;
+    padding: .5em;
+    font-size: 1.5em;
+    border:2px solid #0a7369;
+}
+.checkbox a {
+    color: #009688;
+}
+.link a:hover{
+	color:#000;
+    border:2px solid #FFFFFF;
+	background:none;
+}
+.application-form{
+	margin:0em 0 0 0;
+}
+.application-form h4,.address h4{
+    margin-bottom: 2em;
+    color: #404040;
+    margin: 0 0 2em 0;
+    font-weight: 600;
+    background: #fbfbfb;
+    border-bottom: 1px solid #e4e4e4;
+    padding: 13px;
+}
+ .application input[type="text"],.application input[type="email"],.application input[type="password"],.application input[type="tel"],.application select {
+    font-size: 1em;
+    color: #8c8c8c;
+    padding: 0.4em 0em;
+    border: 0;
+    width:100%;
+    border-bottom: 1px solid #dcdcdc;
+    background: none;
+    -webkit-appearance: none;
+	outline: none;
+}
+input[type="checkbox"] {
+    cursor: pointer;
+}
+.application textarea { 
+	min-height: 150px;
+    resize: none;
+}
+/*-- input-effect --*/
+.styled-input.agile-styled-input-top {
+    margin-top: 0;
+} 
+.styled-input input:focus ~ label, .styled-input input:valid ~ label,.styled-input select:valid ~ label,.styled-input option:valid ~ label,.styled-input select:focus ~ label,.styled-input textarea:focus ~ label ,.styled-input textarea:valid ~ label{
+    font-size: .9em;
+    color: #333333;
+    top: -1.3em;
+    -webkit-transition: all 0.125s;
+	-moz-transition: all 0.125s; 
+	-o-transition: all 0.125s;
+	-ms-transition: all 0.125s;
+    transition: all 0.125s;
+}
+
+.styled-input {
+    position: relative;
+    margin: 0 0 1.6em;
+}
+.styled-input:nth-child(1),.styled-input:nth-child(3){
+	margin-left:0;
+}
+.textarea-grid{
+	float:none !important;
+	width:100% !important;
+	margin-left:0 !important;
+}
+.styled-input label {
+	color: #8c8c8c;
+    padding: 0.5em .9em;
+    position: absolute;
+    top: 0;
+    left: 0;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+    pointer-events: none;
+    font-weight: 400;
+    font-size: .9em;
+    display: block;
+    line-height: 1em;
+}
+.styled-input input ~ span,.styled-input textarea ~ span,.styled-input select option ~ span {
+	display: block;
+    width: 0;
+    height: 2px;
+    background: #333;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    -webkit-transition: all 0.125s;
+    -moz-transition: all 0.125s;
+    transition: all 0.125s;
+}
+.styled-input textarea ~ span { 
+    bottom: 5px; 
+}
+.styled-input input:focus.styled-input textarea:focus,.styled-input select option:focus { 
+	outline: 0; 
+} 
+.styled-input input:focus ~ span,.styled-input textarea:focus ~ span,.styled-input select:focus {
+	width: 100%;
+	-webkit-transition: all 0.075s;
+	-moz-transition: all 0.075s;  
+	transition: all 0.075s; 
+} 
+/*-- //input-effect --*/
+.application-form input[type="submit"] {
+    outline: none;
+    color: #FFFFFF;
+    padding: .3em 1em;
+    font-size: 1.4em;
+	width:100%;
+    margin: 1em 0 0 0;
+    -webkit-appearance: none;
+    background:#df3f3f;
+    border: 2px solid #df3f3f;
+    cursor: pointer;
+    -webkit-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -o-transition: 0.5s all;
+    -ms-transition: 0.5s all;
+    transition: 0.5s all;
+	font-family: 'Yanone Kaffeesatz', sans-serif;
+}
+.application-form input[type="submit"]:hover {
+    background: #FFFFFF;
+	color:#df3f3f;
+	border: 2px solid #df3f3f;
+}
+input[type="text"] {
+    width: 100%;
+}
+
+
+@media (max-width: 768px) {
+	.application-left h1 {
+		font-size: 2em;
+	}
+	.application-left p {
+		line-height: 1.4em;
+	}
+	.link a {
+		padding: .4em;
+		font-size: 1.2em;
+	}
+	.application-form input[type="submit"] {
+		font-size: 1.2em;
+	}
+	.application-left {
+		height: 559px;
+	}
+	.fields-grid {padding-top:30px;}
+	.landmark-txt {font-size:15px !important; text-align:center;}
+	.logo-img {    float: none !important;margin-left: 28% !important;}
+	.landmark-txt {display:none;}
+}
+
+
+
+
+
+body {
+   background:#ffffff url("images/bg.jpg") no-repeat;
+}
+   .logo img {margin:0 auto;}
+  .padd {padding:8px;}
+  .fluid-bg {background:rgba(255, 255, 255, 0.9); margin-bottom:20px;}
+  .fluid-bg:hover {box-shadow:1px 1px 3px 1px #999;}
+  .mrg-tp {margin-top:0px;}
+  .bg {background:rgba(255, 255, 255, 0.9);}
+   .mrg-top {margin-top:40px;}
+.menu li{
+         list-style-type:none;
+        }
+  .menu li a {font-size:16px;background:#e3000f;color:#fff;padding:15px;display:block;border-bottom:1px dashed #f3636d;transition:all 0.3s linear;-moz-transition:all 0.3s linear;-webkit-transition:all 0.3s linear;}
+  .menu li a:hover {margin-left:10px;background:#f8f8f8;color:#666;text-decoration:none;transition:all 0.3s linear;-moz-transition:all 0.3s linear;-webkit-transition:all 0.3s linear;}
+  .menu {height:320px;margin:0px; padding:0px;border-radius:5px;}
+  .righ-col {height:320px;border:1px solid #eee;padding:20px;background:#fff;border-radius:5px;}
+  .righ-col ul {margin:0px;padding:0px;}
+  .righ-col li {padding:4px;margin-bottom:5px;list-style-type:none; text-decoration:underline;}
+  .bg-white {background:#fff;}
+  .head-3 {background:#fff;padding:10px;margin:0px; text-align:center;}
+  .landmark-txt {line-height:86px;color:#999; font-size:18px;}
+  .login  {
+    background:rgba(255, 255, 255, 0.9);
+    -webkit-box-shadow: 0px 35px 44px -22px rgba(0,0,0,0.72);
+    -moz-box-shadow: 0px 35px 44px -22px rgba(0,0,0,0.72);
+    box-shadow: 0px 35px 44px -22px #1f181b;
+    padding: 20px 40px;
+	border: 10px solid #eaeaea;
+}
+.login h2 {
+    color: #666;
+    font-size: 25px;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 1em;
+    letter-spacing:1px;
+	text-transform:uppercase;
+}
+.login-inp input[type="text"], input[type="password"] {
+    outline: none;
+    font-size: 17px;
+    color: #333;
+    padding: 15px 40px 15px 10px;
+    letter-spacing:1px;
+    width:100%;
+    border: none;
+    border: 1px solid #d6d6d6;
+    -webkit-appearance: none;
+    margin-bottom: 10px;
+    background: transparent;
+
+}
+.login-inp-bottom {
+    font-size: 16px;
+    color: #666;
+    margin-top: 0em;
+    text-align: center;
+    text-transform: none;
+}
+.submit-btn input {
+    color: #fff;
+    font-size: 17px;
+	text-transform:uppercase;
+    border: none;
+    background: #999;
+    width: 33%;
+    margin: 0 auto;
+    padding: 10px;
+	display:block;
+	margin-top:20px;
+}
+.submit-btn input:hover {background: #e3000f; color:#fff;}
+.mrg-btm {margin-bottom:20px;}
+.padding-80 {padding:30px 100px; background:#fff; float:left; width:100%;}
+.box-shadow {box-shadow:1px 1px 3px 1px #ccc;}
+.bg-white {background:#fff;float:left:}
+.mrg-btm {margin-bottom:20px;}
+.logo-img {float:right;}

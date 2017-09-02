@@ -284,7 +284,7 @@
                                         </div>
 
                                         <div class="col-md-4">
-                                            <input type="text" class="form-control" id="Gross_Annual_Income" name="Gross_Annual_Income" maxlength="5" maxlength="9" onkeypress="return fnAllowNumeric(event)" placeholder="Gross Income" required>
+                                            <input type="text" class="form-control" id="Gross_Annual_Income" name="Gross_Annual_Income" minlength="5" maxlength="9" onkeypress="return fnAllowNumeric(event)" placeholder="Gross Income" required>
                                             
                                         </div>
 
@@ -2574,6 +2574,15 @@ $(function() {
         $("#Proof_of_activity").val("");
     });
 </script>
+
+<!-- to get date dynamically -->
+<!-- <script type="text/javascript">
+var today = new Date();
+var dd = today.getDate();
+var mm = today.getMonth()+1; //January is 0!
+var yyyy = today.getFullYear();
+if(dd<10){dd='0'+dd;} if(mm<10){mm='0'+mm;} $('#date').val(dd+'-'+mm+'-'+yyyy);
+</script> -->
 
 
 

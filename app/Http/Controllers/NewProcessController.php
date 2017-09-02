@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Session;
  
 use App\SEOlibraries\Seo;
-class NewProcessController extends Controller
+class NewProcessController extends CallApiController
 {
       public function  newSmeLoan(){
 
@@ -67,6 +67,29 @@ class NewProcessController extends Controller
 
 
       }
+
+      public function application_form(){
+        return view('application-form');
+      }
+
+       public function application_submit(Request $req){
+        $data=$req->all();
+      
+      $data['CampaignName']='GaneshChaturthi';
+      $post_data=json_encode($data);
+        
+      $url = $this::$url_static."/BankAPIService.svc/createCampaignWebDataReq";
+      $result=$this->call_json_data_api($url,$post_data);
+      $http_result=$result['http_result'];
+      $error=$result['error'];
+      $st=str_replace('"{', "{", $http_result);
+      $s=str_replace('}"', "}", $st);
+      $m=$s=str_replace('\\', "", $s);
+      $obj = json_decode($m);
+     // print_r($obj);exit();
+     return response()->json( $obj);
+    }  
+      
 
 
       

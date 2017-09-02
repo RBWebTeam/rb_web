@@ -223,7 +223,7 @@
             </form>
             </div>
             
-        <div id="Applicant_Details" style="display: none;" >
+        <div id="Applicant_Details" style="display: none;">
             <form name="applicant_deatils" id="applicant_deatils" method="POST">
                       {{ csrf_field() }}
             <div class="col-md-12">
@@ -268,13 +268,14 @@
                 <input class="input__field input__field--nao" type="hidden" name="EKYCFlag" required id="EKYCFlag" value="0"/>
                 <input class="input__field input__field--nao" type="hidden" name="Processingfee" required id="Processingfee" value="" />
                 <span class="input input--nao">
-                    <input class="input__field input__field--nao" type="text" name="FName" required id="FName" onkeypress="return AllowAlphabet(event)" />
+                    <input class="input__field input__field--nao" type="text" name="FName" required id="FName" minlength="3" onkeypress="return AllowAlphabet(event)" />
                     <label class="input__label input__label--nao" for="FName">
                         <span class="input__label-content input__label-content--nao">First Name </span>
                     </label>
                     <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
                     <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
                     </svg>
+                    
                 </span>
                 <span class="input input--nao">
                     <input class="input__field input__field--nao" type="text" name="MName" id="MName" onkeypress="return AllowAlphabet(event)" />
@@ -284,6 +285,7 @@
                     <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
                     <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
                     </svg>
+
                 </span>
                 <span class="input input--nao">
                     <input class="input__field input__field--nao" type="text" name="LName" id="LName" required onkeypress="return AllowAlphabet(event)" />
@@ -357,7 +359,7 @@
                 </span>
 
                 <span class="input input--nao">
-                    <input class="input__field input__field--nao" type="text" name="AadhaarNumber" id="AadhaarNumber" oninput="aadhar('AadhaarNumber')" required minlength="12" maxlength="12"  />
+                    <input class="input__field input__field--nao" type="text" name="AadhaarNumber" id="AadhaarNumber" oninput="aadhar('AadhaarNumber')"  minlength="12" maxlength="12"  />
                     <label class="input__label input__label--nao" for="input-1">
                     <span class="input__label-content input__label-content--nao">Enter Your Aadhar No.</span>
                     </label>
@@ -1905,11 +1907,17 @@ var global_tenure=0;
 
 <script type="text/javascript">
     $('#applicant_form').click(function(){
+        if ($('#FName').val().length<3) {
+                alert('First Name should be more than 3 characters.')
+              return false;
+            }
        
         if(! $('#applicant_deatils').valid()){
             // alert('not valid');
 
         }else{
+            
+            
             var person_name =$('#FName').val();
             // console.log(person_name);
             $('#first_name').empty().append(person_name);
@@ -1925,7 +1933,8 @@ var global_tenure=0;
              success: function(msg){
                  $(".iframeloading").hide();
                 
-            // console.log(msg);
+            console.log(msg);
+
              if (msg.head.status != "1") {
                  if($( "input[name=CoapplicantFlag]:checked" ).val()==1)
                 {
@@ -2086,21 +2095,23 @@ $('#Applied, #Period').on('input', function () {
          data : $('').serialize(),
          success: function(msg){
 
-          var result=loan_eligibility(msg.body.ROI,msg.body.maxEmi,msg.body.maxTenure,msg.body.maxloanamt,msg.body.minTenure,msg.body.minloanamt,msg.body.processingfee,msg.body.offerstatus,msg.body.remarks);
+          var result=loan_eligibility(msg.body.ROI,msg.body.maxEmi,msg.body.maxTenure,msg.body.maxloanamt,msg.body.minTenure,msg.body.minloanamt,msg.body.processingfee,msg.body.offerstatus,msg.body.remarks,msg.body.prospectNo);
             // console.log(msg);
         }  
       });   
        
     });
-    function loan_eligibility(ROI,maxEmi,maxTenure,maxloanamt,minTenure,minloanamt,processingfee,offerstatus,remarks)
+    function loan_eligibility(ROI,maxEmi,maxTenure,maxloanamt,minTenure,minloanamt,processingfee,offerstatus,remarks,prospectNo)
     {
           var offer=offerstatus;
-          // console.log(offer);
+          var number=prospectNo;
+           alert("Prospect Number for the particular customer is \n" +number);
     if(offer=="Rejected")
     {       $('#otp').hide();
             $('#Instant_Approve').hide();
             $('#Applicant_Details').show();
          alert("Thank You For Choosing IIFL. \n Your application has been rejected due to internal credit policy.\n Reason: "+remarks);
+
     }else if(remarks=="Low Salary"){
         alert("Your Salary Is Not Upto Mark");
     }

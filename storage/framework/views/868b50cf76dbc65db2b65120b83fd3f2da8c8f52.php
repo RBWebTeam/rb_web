@@ -1,11 +1,121 @@
 <?php echo $__env->make('layout.header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 
 <div id="fh5co-hero">
+<img src="<?php echo e(url('images/rbl_banner.jpg')); ?>" class="rbl" width="1349" class="img-responsive"/>
+
   <div class="container">
-  <div class=" pad">
+  <div class="row">
+        <div class="col-md-12 bhoechie-tab-container">
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 bhoechie-tab-menu">
+              <div class="list-group">
+                <a href="#" class="list-group-item active text-center">
+                  <h4 class="icon-credit-card"></h4>Titanium Delight Card
+                </a>
+                <a href="#" class="list-group-item text-center">
+                  <h4 class="icon-credit-card"></h4>Platinum Maxima Card
+                </a>
+                <a href="#" class="list-group-item text-center">
+                  <h4 class="icon-credit-card"></h4>Platinum Delight Card
+                </a>
+                
+              </div>
+            </div>
+            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 bhoechie-tab">
+                <!-- flight section -->
+                <div class="bhoechie-tab-content active">
+                    <center>
+                      <h1 class="glyphicon glyphicon-plane" style="font-size:14em;color:#55518a"></h1>
+                      
+                    <div class="col-md-4"><br><img src="<?php echo e(url('images/titanium_crd.png')); ?>" class="rbl" width="260"/></div>
+					<div class="col-md-8">
+					<h3 class="text-left">Titanium Delight Card</h3>
+					 <ul class="rbl-cr-lst text-left">
+					 <li>Exclusive Wednesday offers - free movie tickets, value back on groceries & pizzas</li>
+					 <li>4,000 bonus reward points on crossing spends of Rs. 1.2 lacs</li>
+					 <li>1 Reward point on every Rs.100 spent except fuel</li>
+					 <li>Waiver of fuel surcharge up to Rs. 100 every month</li>
+					 </ul>
+					 <a href="<?php echo e(URL::to('credit-card-rbl')); ?>"><button class="btn btn-primary mrg-btm pad pull-left">APPLY NOW</button></a>
+					</div>
+                    </center>
+                </div>
+                <!-- train section -->
+                <div class="bhoechie-tab-content">
+                    <center>
+                      <h1 class="glyphicon glyphicon-road" style="font-size:12em;color:#55518a"></h1>
+                      
+                     <div class="col-md-4"><br><img src="<?php echo e(url('images/platinum_crd.png')); ?>" class="rbl" width="260"/></div>
+					<div class="col-md-8">
+					<h3 class="text-left">Platinum Maxima Card</h3>
+					<ul class="rbl-cr-lst text-left">
+					 <li>Free movie ticket every month</li>
+					 <li>10 Reward points on every Rs. 100 spent on dining, entertainment, utility bills, fuel and every international spends</li>
+					 <li>2 Reward points for every Rs.100 spent and 5X Reward on selected categories</li>
+					 <li>20,000 bonus Reward Points every year on crossing 3.5 lacs spends</li>
+					 <li>Complimentary access to Airport Lounges</li>
+					 </ul>
+					 <button class="btn btn-primary mrg-btm pad pull-left">APPLY NOW</button>
+					</div>
+                    </center>
+                </div>
+    
+                <!-- hotel search -->
+                <div class="bhoechie-tab-content">
+                    <center>
+                      <h1 class="glyphicon glyphicon-home" style="font-size:12em;color:#55518a"></h1>
+                      
+                     <div class="col-md-4"><br><img src="<?php echo e(url('images/platinum_delight_crd.png')); ?>" class="rbl" width="260"/></div>
+					<div class="col-md-8">
+					<h3 class="text-left">Platinum Delight Card</h3>
+					<ul class="rbl-cr-lst text-left">
+					 <li>2 Reward Points on every Rs. 100 spent on weekdays</li>
+					 <li>2X Reward Points on every Rs. 100 spent on weekends</li>
+					 <li>1,000 bonus Reward Points every month on 5 transactions of Rs.1000 or more</li>
+					 <li>Waiver of fuel surcharge up to Rs.150 every month</li>
+					 </ul>
+					 <button class="btn btn-primary mrg-btm pad pull-left">APPLY NOW</button>
+					</div>
+                    </center>
+                </div>
+                
+                
+            </div>
+        </div>
+  </div>
+  
+  <br>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <div class=" pad" style="display:none;">
     <h2 class="align-center loan-head">Credit Card</h2>
   </div>
-  <div class="col-md-12 pad11">
+  <div class="col-md-12 pad11" style="display:none;">
     <div class="table-responsive box-shadow">
   <table width="100%" border="1" class="tbl table table-striped">
     <tr>
@@ -231,5 +341,18 @@ var HDFC = document.getElementsByClassName("HDFC-Card");
      
 
  
+});
+  </script>
+  
+  <script>
+     $(document).ready(function() {
+    $("div.bhoechie-tab-menu>div.list-group>a").click(function(e) {
+        e.preventDefault();
+        $(this).siblings('a.active').removeClass("active");
+        $(this).addClass("active");
+        var index = $(this).index();
+        $("div.bhoechie-tab>div.bhoechie-tab-content").removeClass("active");
+        $("div.bhoechie-tab>div.bhoechie-tab-content").eq(index).addClass("active");
+    });
 });
   </script>

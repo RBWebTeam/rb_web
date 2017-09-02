@@ -126,7 +126,14 @@ class CreditcardController extends CallApiController
        return response()->json($status);
      }
 
+ public function credit_card_rbl(Request $req){
 
+              
+
+
+
+            return view('credit-card-rbl');
+     }
    
 }
 

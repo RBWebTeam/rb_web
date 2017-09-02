@@ -285,11 +285,11 @@ input[type="text"] {
 							</div>
 							
 							<div class="styled-input">
-							<input type="radio" name="sal" /> Salary <input type="radio" name="sal"/> Self Employed </div>
+							<input type="radio" name="sal" checked/> Salary <input type="radio" name="sal"/> Self Employed </div>
 							
 							<label>LOAN AMOUNT</label>
 							<span class="pull-right">10,00,000</span>
-							<div class="styled-input">
+							<div>
 								<input type="range"list="tickmarks" />
 								<datalist id="tickmarks">
                                   <option value="0" label="100000">

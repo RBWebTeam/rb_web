@@ -320,3 +320,5 @@ Route::get('tatacapitalbankname',array('as'=>'tatacapitalbankname','uses'=>'Tata
 Route::get('tatacapitalstate',array('as'=>'tatacapitalstate','uses'=>'TataCapitalLoanController@tatacapitalstate'));
 Route::get('tatacapitalcity',array('as'=>'tatacapitalcity','uses'=>'TataCapitalLoanController@tatacapitalcity'));
 Route::post('tatacapitalsubmitform','TataCapitalLoanController@tatacapitalsubmitform');
+
+Route::get('credit-card-rbl','CreditcardController@credit_card_rbl');

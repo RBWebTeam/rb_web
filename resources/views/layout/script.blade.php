@@ -19,7 +19,8 @@ var scrollBottom = $(window).scrollTop() + $(window).height();
 $(window).scroll(function(){
       if($(this).scrollTop() > 50) {
 		$('.top-bg').hide(500);
-		$('#fh5co-header').css({'background': '#28a0ff'});   
+		$('#fh5co-header').css({'background': '#666'});   
+		$('#fh5co-header').css({'opacity': '0.9'});   
 		$('#fh5co-header nav ul li a').css({'color': '#fff'});
        } else if (scrollBottom  > 200) {
 		$('.top-bg').show(500);

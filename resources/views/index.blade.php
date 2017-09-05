@@ -39,7 +39,7 @@
    <h4>Choose the right Home Loan for you ...!!</h4>
    <br>
    
-   <a href="{{URL::to('home-loan')}}"><button class="btn btn-primary btn-outline with-arrow sidebar-submit">VIEW MORE<i class="icon-arrow-right"></i></button></a>
+   <a href="{{URL::to('home-loan')}}"><button class="btn btn-primary btn-outline sidebar-submit btn-more">VIEW MORE</button></a>
    </div>
       <img src="{{URL::to('images/slide_1.jpg')}}" alt="Home Loan Banner" title="Home Loan " class="slide-hm"> 
     </div>
@@ -51,7 +51,7 @@
 	<h2>Personal Loan </h2>
    <h4>Finance Your Dreams...!!</h4>
    <br>
-   <a href="{{URL::to('personal-loan')}}"><button class="btn btn-primary btn-outline with-arrow sidebar-submit">VIEW MORE<i class="icon-arrow-right"></i></button></a>
+   <a href="{{URL::to('personal-loan')}}"><button class="btn btn-primary btn-outline sidebar-submit btn-more">VIEW MORE</button></a>
    </div>
       <img src="{{URL::to('images/slide_2.jpg')}}" alt="Personal Loan Banner" title="Personal Loan " class="slide-hm">
     </div>
@@ -129,7 +129,7 @@
 	
 	
 	
-	<div class="col-md-6 hom-rig" style="position: absolute;z-index: 1;top:150px;left:15px;">
+	<div class="col-md-6 hom-rig" style="position: absolute;z-index: 1;top:150px;">
 	<div class="profile-smdl">
 				<div class="profile-text-left">
 					
@@ -486,7 +486,7 @@
 			<div class="animate-box pad1">
                     <div class="col-md-1"></div>
 					<div class="col-md-4 padd">
-					<img src="images/img.jpg" />
+					<img src="images/about.jpg" />
 					</div>
 					<div class="col-md-6 animate-box fadeInUp animated">
 					<h1 class="text-left"><b class="text-danger">Who We Are</b></h1>

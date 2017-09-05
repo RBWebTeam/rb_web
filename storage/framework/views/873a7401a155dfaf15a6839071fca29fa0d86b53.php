@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <title>BALANCE TRANSFER SAVING</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
-    <link href="{{URL::to('css/bootstrap.min.css')}}" rel="stylesheet" type="text/css" />    
-	<link href="{{URL::to('css/component.css')}}" rel="stylesheet" type="text/css"  />
-    <link href="{{URL::to('css/font-awesome.min.css')}}" rel="stylesheet" type="text/css" />
-	<link href="{{URL::to('css/style-home-loan.css')}}" rel="stylesheet" type="text/css" />
-	<link href="{{URL::to('css/responsive-home-loan.css')}}" rel="stylesheet" type="text/css" />
+    <link href="<?php echo e(URL::to('css/bootstrap.min.css')); ?>" rel="stylesheet" type="text/css" />    
+	<link href="<?php echo e(URL::to('css/component.css')); ?>" rel="stylesheet" type="text/css"  />
+    <link href="<?php echo e(URL::to('css/font-awesome.min.css')); ?>" rel="stylesheet" type="text/css" />
+	<link href="<?php echo e(URL::to('css/style-home-loan.css')); ?>" rel="stylesheet" type="text/css" />
+	<link href="<?php echo e(URL::to('css/responsive-home-loan.css')); ?>" rel="stylesheet" type="text/css" />
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -17,15 +17,15 @@
         <script src="js/respond.min.js"></script>css/bootstrap-material-datetimepicker.css
     <![endif]-->
 
-	<link rel="stylesheet" href="{{URL::to('css/bootstrap-material-datetimepicker.css')}}"/>
+	<link rel="stylesheet" href="<?php echo e(URL::to('css/bootstrap-material-datetimepicker.css')); ?>"/>
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<script src="https://code.jquery.com/jquery-1.12.3.min.js" integrity="sha256-aaODHAgvwQW1bFOGXMeX+pC4PZIPsvn2h1sArYOhgXQ=" crossorigin="anonymous"></script>
 	<!--<script src="js/jquery-1.12.3.min.js" integrity="sha256-aaODHAgvwQW1bFOGXMeX+pC4PZIPsvn2h1sArYOhgXQ=" crossorigin="anonymous"></script>-->
 	
 	
-	<script type="text/javascript" src="{{URL::to('js/material.min.js')}}"></script>
-	<script type="text/javascript" src="{{URL::to('js/moment-with-locales.min.js')}}"></script>
-	<script type="text/javascript" src="{{URL::to('js/bootstrap-material-datetimepicker.js')}}"></script>
+	<script type="text/javascript" src="<?php echo e(URL::to('js/material.min.js')); ?>"></script>
+	<script type="text/javascript" src="<?php echo e(URL::to('js/moment-with-locales.min.js')); ?>"></script>
+	<script type="text/javascript" src="<?php echo e(URL::to('js/bootstrap-material-datetimepicker.js')); ?>"></script>
 	<link rel="stylesheet" href="https://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
 <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.min.js"></script>
 
@@ -212,21 +212,19 @@ label {
 .hh4 {padding:5px; padding-left:4px;color:#444;}
 
 
-
 .td-main a{margin-top: 28px;margin-left:10px;}
 
 #submit {width:auto;}
 #submit:hover {background:#c72c3b;}
 
-@media only screen and (max-width: 768px) {
+@media  only screen and (max-width: 768px) {
 	#submit {width:100%;}
 	.hh4 {
     padding-left: 4px;
     position: absolute;
-    margin-top: 10px;
+    margin: 0px;
     color: #444;
 }
-.table {display: table-caption !important;}
 	
 }
 	</style>
@@ -239,12 +237,13 @@ label {
 	<div class="">
        <!-- Main content -->
         <section class="container-1">
+			<div class="row">
 				<!-- Tab Attribute -->
 				
 				
 				
 				<div class="container">
-				<div>
+				<div class="col-xs-12 pad-1">
 				<!-- Tab Contents -->
 				<div id="myTabContent" class="tab-content content-tab-style">
 					<div class="tab-pane fade active top in" id="Property">
@@ -430,7 +429,7 @@ label {
 					</div>
 				</div>
 			</div>
-		
+		</div>
 		<div class="clearfix top-type-info"></div>
         </div><!-- /.row -->
 
@@ -727,10 +726,10 @@ label {
        
 
       
-       var v_token = "{{csrf_token()}}";
+       var v_token = "<?php echo e(csrf_token()); ?>";
       $.ajax({  
                type: "POST",  
-               url: "{{URL::to('calculationfordc')}}",
+               url: "<?php echo e(URL::to('calculationfordc')); ?>",
                dataType:'json',
                data : { 'loanamount': loanamount , 'loaninterest': loaninterest ,'loanterm' :loanterm,'product_id': product_id ,'app': app_id ,'empcode':empcode,'brokerid':brokerid,'_token': v_token},
                // 'bank':bank},

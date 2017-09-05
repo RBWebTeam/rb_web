@@ -1,4 +1,4 @@
-@include('layout.header')
+<?php echo $__env->make('layout.header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 <div id="fh5co-hero">
 	<div class="fh5co-contact animate-box">
 		<div class="container">
@@ -141,8 +141,8 @@
 		</div>	
 	</div>
 </div>
-@include('layout.footer')
-@include('layout.script')
+<?php echo $__env->make('layout.footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php echo $__env->make('layout.script', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 
 <div class="modal fade" tabindex="-1" role="dialog" id="credit_process_sorry">
   <div class="modal-dialog" role="document">

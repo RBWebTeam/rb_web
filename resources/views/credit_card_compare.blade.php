@@ -35,7 +35,7 @@
 					 <li>1 Reward point on every Rs.100 spent except fuel</li>
 					 <li>Waiver of fuel surcharge up to Rs. 100 every month</li>
 					 </ul>
-					 <a href="{{URL::to('credit-card-rbl')}}"><button class="btn btn-primary mrg-btm pad pull-left">APPLY NOW</button></a>
+					 <a href="{{URL::to('credit-card-rbl')}}?card=1" class="btn btn-primary mrg-btm pad pull-left">APPLY NOW</a>
 					</div>
                     </center>
                 </div>
@@ -54,7 +54,7 @@
 					 <li>20,000 bonus Reward Points every year on crossing 3.5 lacs spends</li>
 					 <li>Complimentary access to Airport Lounges</li>
 					 </ul>
-					 <button class="btn btn-primary mrg-btm pad pull-left">APPLY NOW</button>
+					 <a href="{{URL::to('credit-card-rbl')}}?card=2" class="btn btn-primary mrg-btm pad pull-left">APPLY NOW</a>
 					</div>
                     </center>
                 </div>
@@ -73,7 +73,7 @@
 					 <li>1,000 bonus Reward Points every month on 5 transactions of Rs.1000 or more</li>
 					 <li>Waiver of fuel surcharge up to Rs.150 every month</li>
 					 </ul>
-					 <button class="btn btn-primary mrg-btm pad pull-left">APPLY NOW</button>
+					 <a href="{{URL::to('credit-card-rbl')}}?card=3" class="btn btn-primary mrg-btm pad pull-left">APPLY NOW</a>
 					</div>
                     </center>
                 </div>

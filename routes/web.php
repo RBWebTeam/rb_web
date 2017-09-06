@@ -328,7 +328,7 @@ Route::post('tatacapitalsubmitform','TataCapitalLoanController@tatacapitalsubmit
 
 
 Route::get('credit-card-rbl','CreditcardController@credit_card_rbl');
-
+Route::post('rbl-cc-submit','CreditcardController@rbl_cc_post');
 
 // demo
 Route::get('demo','TeamController@demo');

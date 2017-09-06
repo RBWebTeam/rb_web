@@ -15002,7 +15002,22 @@ div.bhoechie-tab div.bhoechie-tab-content:not(.active){
 	
 .btn-more {margin-left:30%;}
 	
-	
+.price-box {
+    text-align: center;
+    padding: 20px;
+    background: #fff;
+	color:#666;
+    margin-bottom: 20px;
+    position: relative;
+    -webkit-box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.11);
+    -moz-box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.11);
+    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.11);
+    top: 2px;
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+}
+.price-box h4 {color:#666666;}
 	
 	
 	

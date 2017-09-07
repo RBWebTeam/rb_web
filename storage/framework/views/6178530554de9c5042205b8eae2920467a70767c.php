@@ -1,4 +1,4 @@
-@include('layout.header')
+<?php echo $__env->make('layout.header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 
 <div id="fh5co-hero">
 	<div class="container">
@@ -11,7 +11,7 @@
 					
 </div>
 				<div class="col-md-6">
-              <img src="{{url('images/rbl_personal_loan.jpg')}}"  width="570" class="img-responsive"/>
+              <img src="<?php echo e(url('images/rbl_personal_loan.jpg')); ?>"  width="570" class="img-responsive"/>
 			  <div>
 			    <ul class="text-left pad1 ull">
 				    <li>Loan amount from Rs.1 Lakh up to Rs.20 Lakhs.</li>
@@ -298,8 +298,8 @@
             
 	</div>
 </div>
-@include('layout.footer')
-@include('layout.script')
+<?php echo $__env->make('layout.footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php echo $__env->make('layout.script', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 <script type="text/javascript">
   function AllowAlphabet(e)
 {
@@ -370,7 +370,7 @@
 <script type="text/javascript">   
 
  $.ajax({ 
-   url: "{{URL::to('rbl-city-master')}}",
+   url: "<?php echo e(URL::to('rbl-city-master')); ?>",
    method:"GET",
    success: function(datas)  
    {

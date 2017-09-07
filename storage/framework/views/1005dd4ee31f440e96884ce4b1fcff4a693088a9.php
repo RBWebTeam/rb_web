@@ -17,8 +17,9 @@
 	<!-- Animate.css -->
 
 	<link  rel="stylesheet" type="text/css" href="<?php echo e(URL::to('css/mysite.css')); ?>"/>
- 
-  <link  rel="stylesheet" type="text/css" href="<?php echo e(URL::to('css/style.css')); ?>"/>
+
+ 	
+<!-- <link  rel="stylesheet" type="text/css" href="<?php echo e(URL::to('css/style.css')); ?>"/>-->
 
 
 
@@ -90,10 +91,10 @@
 	<div id="fh5co-page"   >
 
 	<header id="fh5co-header" role="banner" class="navbar navbar-default navbar-fixed-top">
-	 <div class="container-fluid top-bg nav-down">
+	 <div class="top-bg nav-down">
 
-        <div class="container">
-         <div class="col-md-8">
+        <div class="container-fluid no-pading">
+         <div class="col-md-6">
             <ul class="top-lnk">
                 <li class="hidden-xs"><a href="<?php echo e(URL::to('/')); ?>">Home </a></li>
                 <li class="hidden-xs"><a href="<?php echo e(URL::to('about-us')); ?>"> About Us </a></li>
@@ -103,30 +104,33 @@
                 <li class="hidden-xs"><a href="<?php echo e(URL::to('http://www.rupeeboss.com/rblife-style/')); ?>"> RB Life Style </a></li>
                 <li class="hidden-xs"><a href="<?php echo e(URL::to('http://www.rupeeboss.com/Elite-Website/')); ?>"> Elite</a></li>
 				<li class="hidden-lg"><a href="<?php echo e(URL::to('magic-link')); ?>"> Magic Link </a></li>
-				<li class="hidden-xs credit-score-btn"><a href="<?php echo e(URL::to('credit-report')); ?>" class="btn btn-primary"> My Credit Score</a></li>
+				<li class="hidden-xs credit-score-btn"><a href="<?php echo e(URL::to('credit-report')); ?>"> My Credit Score</a></li>
 				
 				</a></li>
 			<!-- 	<li><a href="<?php echo e(URL::to('contact-us')); ?>">Media</a></li> -->
 	            </ul>
                </div>
-			<div class="col-md-4 text-right">      
+			<div class="col-md-6 text-right">      
             <ul class="nav-pills pull-right social-icon">
 
-               <!-- <li><a href="<?php echo e(URL::to('https://twitter.com/rupeeboss')); ?>" title="Twitter"><i class="icon-twitter"></i></a></li>
+               <li><a href="<?php echo e(URL::to('https://twitter.com/rupeeboss')); ?>" title="Twitter"><i class="icon-twitter"></i></a></li>
                 <li><a href="<?php echo e(URL::to('https://www.facebook.com/rupeeboss')); ?>" title="Facebook"><i class="icon-facebook"></i></a></li>
                 <li><a href="<?php echo e(URL::to('https://www.linkedin.com/company/rupeeboss.com')); ?>" title="Linkedin"><i class="icon-linkedin"></i></a></li>
                 <li><a href="<?php echo e(URL::to('https://plus.google.com/u/0/113191059621763008376')); ?>" title="GooglePlus"><i class="icon-google-plus"></i></a></li>
-                <li><a href="<?php echo e(URL::to('https://www.instagram.com/rupeeboss/')); ?>" title="instagram"><i class="icon-instagram"></i></a></li> -->
+                <li><a href="<?php echo e(URL::to('https://www.instagram.com/rupeeboss/')); ?>" title="instagram"><i class="icon-instagram"></i></a></li> 
                 
                 <li><a href="<?php echo e(URL::to('contact-us')); ?>">&nbsp;&nbsp;<i class="icon-phone"></i> 1800-267-629-6	</a></li>
                 
               <li><a href="<?php echo e(URL::to('track-application')); ?>" style="color:#fff262;width:160px;margin-top: -2px;"><i class="fa fa-map-marker md-btn" aria-hidden="true" data-toggle="tooltip" title="Track Application"></i> <span class="hidden-xs">Track Application</span>
+			  <li><span class="request-fund">Request Funding</span></li>
             </ul>
+			
           </div>
+		  
         </div>
-
+          
     </div>
-		<div class="container" id="refreshID">
+		<div class="container-fluid" id="refreshID">
 			<div class="header-inner">
 	<a href="<?php echo e(URL::to('/')); ?>" class="logo"><img src="<?php echo e(URL::to('images/logo.png')); ?>" alt="Rupeeboss.com " title="Rupeeboss.com " width="160" height="47" /></a>
 				<nav role="navigation">

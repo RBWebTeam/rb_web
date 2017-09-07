@@ -317,4 +317,12 @@ else{
 		 return view('rbl-personal-loan');
 	}
 
+  public function rbl_city_master(){
+    $query = DB::table('rbl_pl_city_master')->select('id', 'code', 'city')->get();
+
+    echo json_encode($query);
+     
+     
+  }
+
 }

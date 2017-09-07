@@ -311,5 +311,10 @@ else{
           
     }
 
+	public function rbl_personal_loan(){
+		
+		 
+		 return view('rbl-personal-loan');
+	}
 
 }

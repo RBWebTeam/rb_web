@@ -5,137 +5,112 @@
 			<div class="row">
 				<div class="col-md-12 text-left fh5co-heading animate-box fadeInUp animated">
 					<h2>RBL Credit Card Form</h2>
-					
 				</div>
 				<div class="col-md-1"></div>
 				<div class="col-md-10">
-					<div class="row text-left comp-pg rate white-bg box-shadow">
+				<div class="row text-left comp-pg rate white-bg box-shadow">
+			<form  id="rbl_ccc_form" role="form">
+			 {{csrf_field()}}
+				<div class="row">
+					<div class="form-group">
+						<div class="col-md-2">
+						     <select class="block drop-arr select-sty" name="Title" id="title" required>
+		                      <option disabled selected  value="">Select Title</option>
+		                       <option value=1>Mr</option>
+		                       <option value=2>Ms</option>
+		                       <option value=2>Mrs</option>
+		                       <option value=2>Dr</option>
+		                       <option value=99>Other</option>
+		                    </select> 
+		                    </div>
+						<div class="col-md-5">
+							<input type="text" class="form-control" placeholder="Credit Card Applied" name="CreditCardApplied" id="cc_applied" value="{{$card}}" disabled="" >
+						</div>
+						<div class="col-md-5">
+							<input type="date" class="form-control " id="dob" name="DOB" placeholder="Date of Birth" required>
+						</div>
+						<div class="col-md-4">
+							<input type="text" class="form-control" id="f_name" name="FirstName" placeholder="First Name" required>
+						</div>
+                         <div class="col-md-4">
+							<input type="text" class="form-control " id="m_name" name="MiddleName" placeholder="Middle Name" required>
+						</div>						
+						<div class="col-md-4">
+							<input type="text" class="form-control " id="l_name" name="LastName" placeholder="Last Name" required>
+						</div>
+						<div class="col-md-4">
+							<input type="text" class="form-control " id="father_name" name="FatherName" placeholder="Father Name"  required>
+						</div>
+						<div class="col-md-4">
+						<div class="form-control border-none">
+					   <label class="label-txt">Gender</label>
+						<input type="radio"  name="Gender" id="male"  class="radiob" checked value="1"><label for="150">&nbsp;Male</label>
+                        <input type="radio" name="Gender" id="female"  class="radiob" value="2" ><label for="151">&nbsp;Female </label>
+	                    </div>
+						</div>
+						<div class="col-md-4">
+						<div class="form-control border-none">
+					   <label class="label-txt">Had Loan Or CreditCard From AnyBank</label>
+						<input type="radio"  name="HadLoanOrCreditCardFromAnyBank" class="radiob" checked value="Y"><label for="150">&nbsp;Yes</label>
+                        <input type="radio" name="HadLoanOrCreditCardFromAnyBank"  class="radiob" value="N" ><label for="151">&nbsp;No </label>
+	                    </div>
+						</div>
+					</div>
+					<hr>
+				</div>
+				<div class="row sec" id="section1">
+					<div class="form-group">
+					<hr>
+						<div class="col-md-4">
+							<input type="text" class="form-control" placeholder="Residence Address 1" name="ResAddress1" id="res_add1" required="">
+						</div>
+						<div class="col-md-4">
+							<input type="text" class="form-control" placeholder="Residence Address 2" name="ResAddress2" id="res_add2" required="">
+						</div>
+						<div class="col-md-4">
+							<input type="text" id="landmark" name="Landmark" class="form-control" placeholder="Landmark"  required>
+						</div>
+						<div class="col-md-4">
+						     <select class="block drop-arr select-sty" name="ResCity" id="city" required>
+		                      <option disabled selected  value="">Select Title</option>
+		                       @foreach ($data as $city)
+								    <option value="{{$city->city_code}}">{{$city->city_name}}</option>
+								@endforeach
+		                    </select> 
+		                    </div>
+						<div class="col-md-4">
+							<input type="text" id="res_pin" name="ResPIN" class="form-control" placeholder="Residence Pincode"  required>
+						</div>
+                        <div class="col-md-4">
+							<input type="email" id="email_id" name="Email" class="form-control" placeholder="Email ID"  required>
+							<div id="email" style="display:none;color: red;">Please Enter Valid Email Id.</div>
+						</div>
+                       <div class="col-md-4">
+							<input type="text" id="monthly_income" name="NMI" class="form-control" placeholder="Applicant Net Monthly Income"  required>
+						</div>
+						<div class="col-md-4">
+							 <input type="text" class="form-control" id="mobile" name="Mobile"  required maxlength="10" placeholder="Mobile Number" minlength="10" maxlength="10" onkeypress="return fnAllowNumeric(event)" onkeydown=" mobile_valid(this)">
+						</div>
+						<div class="col-md-4">
+						<div class="form-control border-none">
+					   <label class="label-txt">Employment Type</label>
+						<input type="radio"  name="EmpType" class="radiob" checked value="1"><label for="150">&nbsp;Salaried</label>
+                        <input type="radio" name="EmpType"  class="radiob" value="2" ><label for="151">&nbsp;Self-Employed </label>
+	                    </div>
+						</div>
+							<div class="col-md-4">
+						     <input  type="text" class="form-input-new form-control" name="PAN" id="pan" placeholder="Pancard No." onkeyup="pan_card_valid(this)" minlength="10" maxlength="10" required>
+						</div>
+						</div>
+						<hr>
+					</div>	
+					<a class="btn btn-primary btn-outline with-arrow mrg-top center-block crd_id" id="rbl_card_submit">SUBMIT<i class="icon-arrow-right" ></i></a>
 
-						
-							<form class="" id="compareform" role="form" method="POST" >
-							 
-
-								<div class="row">
-									<div class="form-group">
-									
-										
-										
-										 
-										<div class="col-md-2">
-										     <select class="block drop-arr select-sty" name="" id="" required>
-						                      <option disabled selected  value="">MR</option>
-						                        <option value="1">MRS</option>
-						                        
-						                    </select> 
-						                    </div>
-										<div class="col-md-5">
-											<input type="text" class="form-control" placeholder="Credit Card Applied" name="" id="">
-										</div>
-										<div class="col-md-5 lst-nam">
-											<input type="text" class="form-control" placeholder="Had Loan or Credit Card From Any Bank" name="" id="" required>
-										</div>
-										
-
-										<div class="col-md-4">
-											<input type="text" class="form-control" id="" name="" placeholder="First Name" required>
-										</div>
-
-                                         <div class="col-md-4">
-											<input type="text" class="form-control " id="" name="" placeholder="Middle Name" required>
-										</div>
-										
-										<div class="col-md-4">
-											<input type="text" class="form-control " id="" name="" placeholder="Last Name" required>
-										</div>
-
-										<div class="col-md-4">
-											<input type="text" class="form-control " id="" name="" placeholder="Father Name" onkeypress="return AllowAlphabet(event)" required>
-										</div>
-
-
-										<div class="col-md-4">
-										<div class="form-control border-none">
-									   <label class="label-txt">Gender</label>
-										<input type="radio"  name="Gender" id="150"  class="radiob" checked value="Male"><label for="150">&nbsp;Male</label>
-                                        <input type="radio" name="Gender" id="151"  class="radiob" value="Female" ><label for="151">&nbsp;Female </label>
-										
-					                    </div>
-										</div>
-										
-										<div class="col-md-4">
-											<input type="text" class="form-control " id="" name="" placeholder="Date of Birth" required>
-										</div>
-										
-									
-                                        
-                                        
-
-					                   
-
-									</div>
-									<hr>
-								</div>
-								
-								
-								
-								
-								<div class="row sec" id="section1">
-									<div class="form-group">
-									
-									<hr>
-										
-										<div class="col-md-4">
-											<input type="text" class="form-control" placeholder="Residence Address 1" name="" id="" required="">
-										</div>
-										<div class="col-md-4">
-											<input type="text" class="form-control" placeholder="Residence Address 2" name="" id="" required="">
-										</div>
-										
-										<div class="col-md-4">
-											<input type="text" id="" name="" class="form-control" placeholder="Landmark"  required>
-										</div>
-
-										<div class="col-md-4">
-											<input type="text" id="" name="" class="form-control" placeholder="Residence City"  required>
-										</div>
-										
-										<div class="col-md-4">
-											<input type="text" id="" name="" class="form-control" placeholder="Residence Pincode"  required>
-										</div>
-                                        
-                                        <div class="col-md-4">
-											<input type="text" id="" name="" class="form-control" placeholder="Email ID"  required>
-											<div id="email" style="display:none;color: red;">Please Enter Valid Email Id.</div>
-										</div>
-                             
-                                       <div class="col-md-4">
-											<input type="text" id="" name="" class="form-control" placeholder="Applicant Net Monthly Income
-"  required>
-										</div>
-
-										<div class="col-md-4">
-											 <input type="text" class="form-control" id="" name=""  required maxlength="10" placeholder="Mobile Number" >
-										</div>
-
-										<div class="col-md-4">
-					                    <select class="block drop-arr select-sty" name="" id="" required>
-					                      <option disabled selected value="">Employee Type</option>
-					                    </select> 
-					                     </div>
-  										<div class="col-md-4">
-										     <input  type="text" class="form-input-new form-control" name="" id="" placeholder="Pancard No." required>
-										</div>
-										
-										
-										</div>
-										<hr>
-									</div>	
-							</form>
+			</form>
 					
 					
 					
-					<button class="btn btn-primary btn-outline with-arrow mrg-top center-block crd_id"  id="credit_id">SUBMIT<i class="icon-arrow-right" ></i></button>
-
+					
 			</div>
 			<br>
 		</div>	
@@ -144,27 +119,51 @@
 @include('layout.footer')
 @include('layout.script')
 
-<div class="modal fade" tabindex="-1" role="dialog" id="credit_process_sorry">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title">Confirmation Status</h4>
-      </div>
-      <div class="modal-body">
-        <h4><p id="modalerr"><h5 style="color: black">Your Application id is <b><span id="drop"></span></b>.<br>You have been <b><span id="drop1"></span></b>.<br><b><span id="drop2"></span></b><h5></p></h4>
-        
-      </div>
-      
-      <div class="modal-footer">
-        <a type="button" id="upload" name="upload" class="btn btn-primary" onclick="Redirect();" >Proceed to Document Upload</a>
-        
-      </div>
-    </div>
-  </div>
+<div id="rb_cc_modal" class="modal fade" role="dialog">
+  <div class="modal-dialog" >
+        <!-- Modal content-->
+   <div class="modal-content">
+        <div class="modal-header">          
+           <h4 class="modal-title text-center"><b>Status</b></h4>
+        </div>
+      <p id="rbl_cc_apply_status"></p>     
+       <p id="reason"></p>     
+       <p id="reference"></p>         	      
+            
+</div>
+</div>
 </div>
 
 
+<script type="text/javascript">
+	$('#rbl_card_submit').click(function(){
+		$('#rb_cc_modal').modal('show');return;
+		if(!$('#rbl_ccc_form').valid()){
+			 
+			return false;
+		}else{
+			$.ajax({
+				type:"POST",
+				data:$('#rbl_ccc_form').serialize(),
+				url:"{{URL::to('rbl-cc-submit')}}",
+				success:function(msg){
+					console.log(msg);
+					if(msg.Status=2){
+						$('#rbl_cc_apply_status').empty().append("Sucessfull");
+						$('#reference').empty().append(msg.ReferenceCode);
+					}else{
+						$('#reason').empty().append(msg.Errorinfo);
+					
+					}
+					$('#rb_cc_modal').modal('show');
+					
+				}
+			});
+		}
+		
+	});
+
+</script>
 
 
 

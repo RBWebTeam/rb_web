@@ -128,14 +128,44 @@ class CreditcardController extends CallApiController
      }
 
  public function credit_card_rbl(Request $req){
-
-              
-
-
-
-            return view('credit-card-rbl');
+            //removing all prv card details
+            $req->session()->forget('rbl_card_id');
+            //getting details and checking correct id sent
+            $card_id=($req['card'] && $req['card']<=3 && $req['card']>0 )?$req['card']:1;
+            $card_data = array( 1=>array('id'=>"16",'card'=>'Titanium Delight Card'),2=>array('id'=>"21",'card' =>'Platinum Maxima Card'),3=>array('id'=>"24",'card'=>'Platinum Delight Card'));
+            //if came directly
+            
+            $name=$card_data[$card_id]['card'];
+            Session::put('rbl_card_id',$card_data[$card_id]['id']);
+            $data=DB::table('rbl_city_master')->select('city_code','city_name')->get();
+           
+            return view('credit-card-rbl')->with('data',$data)->with('card',$name);
      }
-   
+    public function rbl_cc_post(Request $req){
+
+        unset($req['_token']);
+        //random gen token
+        $req['ConUniqRefCode'] = substr(str_shuffle(str_repeat("0123456789abcdefghijklmnopqrstuvwxyz", 15)), 0, 15);
+        $req['Version']="6";
+        //formatting date
+        $req['DOB'] = date("d-m-Y", strtotime($req['DOB']));
+        $req['CreditCardApplied']=Session::get('rbl_card_id');
+        $req['Title']=(int)$req['Title'];
+        $req['EmpType']=(int)$req['EmpType'];
+        $req['ResCity']=(int)$req['ResCity'];
+        $data=$req->all();
+        
+        $post_data =json_encode( array("Authentication"=>array( "UserId"=>"RupeeBossCC", "Password"=>"rupeeb@123" ), "CreditCard"=> $data));
+       //  print_r($post_data);exit();
+         $url = $this::$url_static."BankAPIService.svc/createRBLCreditCardReq ";
+        $result=$this->call_json_data_api($url,$post_data);
+        $http_result=$result['http_result'];
+        $error=$result['error'];
+        $st=str_replace('"{', "{", $http_result);
+        $s=str_replace('}"', "}", $st);
+        $m=$s=str_replace('\\', "", $s);
+        return $m;
+    }
 }
 
 

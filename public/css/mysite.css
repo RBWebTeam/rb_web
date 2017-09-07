@@ -11314,6 +11314,7 @@ td {padding:5px; text-align:center;}
   text-transform:uppercase;
 }
 #fh5co-header nav ul ul li a {font-size:13px; padding:5px 10px; text-transform:capitalize;font-weight:normal;color:#fff !important;}
+#fh5co-header nav ul ul li a:hover {color:666 !important;}
 #fh5co-header nav ul ul {width:auto; margin-top:18px;padding:10px;background: #000;opacity: 0.9;}
 
 #fh5co-header nav ul li a i {
@@ -11328,6 +11329,7 @@ td {padding:5px; text-align:center;}
   position: absolute;
   height: 2px;
   bottom: 7px;
+  color:#666;
   left: 10px;
   right: 10px;
   /* background-color: #ec1b23;*/
@@ -11490,16 +11492,16 @@ rb-services-section{padding:0px;}
 .carousel-inner .slide-txt {
     position: absolute;
     padding: 30px;
-    width: 400px;
+    width: 450px;
     height: 300px;
     opacity: 0.8;
     margin-top:78px;
-    right: 180px;
+    right: 130px;
 	background:#fff;
     text-shadow: none;
 
 }
-.carousel-inner .slide-txt h2 {text-transform:capitalize; font-weight:bold; text-transform:uppercase; font-weight:noraml !important; font-size:44px !important;font-weight:normal !important;color:#3e3e3e; text-shadow:none; margin-top:30px;
+.carousel-inner .slide-txt h2 {text-transform:capitalize; font-weight:bold; text-transform:uppercase; font-weight:noraml !important; font-size:44px !important;font-weight:normal !important;color:#619ab7; text-shadow:none; margin-top:30px;
 -moz-border-radius: 7px;-webkit-border-radius: 7px;-o-border-radius: 7px;display:block;text-align:center;}
 .carousel-inner h4 {margin:0 auto; text-align:center;color:#6d6d6d; font-size:22px;font-weight:normal; text-align:center;text-shadow:none;}
 .btn-view {margin:auto; display: table; margin-top:10px;}
@@ -14481,6 +14483,7 @@ label {
 	height:100%;
 }*/
 @media screen and (max-width:768px) {
+	.hom-rig {margin-left:0%;}
 	.btn-blu {padding:8px 3px;}
 	.border { float: left;width: 100%;}
 	.top-lnk li  {float:none;padding:2px 0px;list-style-type:none;width:120px; margin-right:5px;}
@@ -15018,9 +15021,23 @@ div.bhoechie-tab div.bhoechie-tab-content:not(.active){
     transition: 0.3s;
 }
 .price-box h4 {color:#666666;}
+.hom-rig {margin-left:5%;}	
+.rbl-hed {background: #ccc; padding: 12px;}
+table td {font-size:12px;}
 	
 	
+	/*RBL Personal LOan*/
+#ex1Slider .slider-selection {
+	background: #BABABA;
+}
+    .head-rbl {text-align:center;padding: 20px;}
+	.select11 {width: 100%;padding: 5px;border:1px solid #e6d5d5;}
+	.select11 option{text-align:center;}
+	.amount {border: 1px dashed #eee;padding: 20px;}
+	.para {font-size:12px;}
 	
+.ull {background:#fff; font-size:13px; display:block; border:1px solid #ccc;}
+.ull li {list-style-type:none; display:block;padding:2px;border-bottom:1px dashed #eee;}
 	
 	
 /*# sourceMappingURL=mysite.css.map */

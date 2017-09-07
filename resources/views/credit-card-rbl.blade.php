@@ -79,14 +79,14 @@
 		                    </select> 
 		                    </div>
 						<div class="col-md-4">
-							<input type="text" id="res_pin" name="ResPIN" class="form-control" placeholder="Residence Pincode"  required>
+							<input type="text" id="res_pin" name="ResPIN" class="form-control" placeholder="Residence Pincode" onkeypress="return fnAllowNumeric(event)" required>
 						</div>
                         <div class="col-md-4">
 							<input type="email" id="email_id" name="Email" class="form-control" placeholder="Email ID"  required>
 							<div id="email" style="display:none;color: red;">Please Enter Valid Email Id.</div>
 						</div>
                        <div class="col-md-4">
-							<input type="text" id="monthly_income" name="NMI" class="form-control" placeholder="Applicant Net Monthly Income"  required>
+							<input type="text" id="monthly_income" name="NMI" class="form-control" placeholder="Applicant Net Monthly Income" onkeypress="return fnAllowNumeric(event)" required>
 						</div>
 						<div class="col-md-4">
 							 <input type="text" class="form-control" id="mobile" name="Mobile"  required maxlength="10" placeholder="Mobile Number" minlength="10" maxlength="10" onkeypress="return fnAllowNumeric(event)" onkeydown=" mobile_valid(this)">
@@ -125,6 +125,9 @@
    <div class="modal-content">
         <div class="modal-header">          
            <h4 class="modal-title text-center"><b>Status</b></h4>
+
+
+           
         </div>
       <p id="rbl_cc_apply_status"></p>     
        <p id="reason"></p>     
@@ -137,7 +140,7 @@
 
 <script type="text/javascript">
 	$('#rbl_card_submit').click(function(){
-		$('#rb_cc_modal').modal('show');return;
+		
 		if(!$('#rbl_ccc_form').valid()){
 			 
 			return false;
@@ -148,14 +151,17 @@
 				url:"{{URL::to('rbl-cc-submit')}}",
 				success:function(msg){
 					console.log(msg);
-					if(msg.Status=2){
-						$('#rbl_cc_apply_status').empty().append("Sucessfull");
-						$('#reference').empty().append(msg.ReferenceCode);
+					var returnedData = JSON.parse(msg);
+					if(msg.Status==2){
+						$('#rbl_cc_apply_status').empty().text("Sucessfull");
+						$('#reference').empty().text(msg.ReferenceCode);
 					}else{
 						$('#reason').empty().append(msg.Errorinfo);
 					
 					}
-					$('#rb_cc_modal').modal('show');
+					console.log(msg);
+					console.log(returnedData.Errorinfo);
+					$('#rb_cc_modal').modal('toggle');
 					
 				}
 			});

@@ -164,7 +164,7 @@ class CreditcardController extends CallApiController
         $st=str_replace('"{', "{", $http_result);
         $s=str_replace('}"', "}", $st);
         $m=$s=str_replace('\\', "", $s);
-        return $m;
+        return $http_result;
     }
 }
 

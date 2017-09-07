@@ -19,7 +19,8 @@ var scrollBottom = $(window).scrollTop() + $(window).height();
 $(window).scroll(function(){
       if($(this).scrollTop() > 50) {
 		$('.top-bg').hide(500);
-		$('#fh5co-header').css({'background': '#28a0ff'});   
+		$('#fh5co-header').css({'background': '#666'});   
+		$('#fh5co-header').css({'opacity': '0.9'});   
 		$('#fh5co-header nav ul li a').css({'color': '#fff'});
        } else if (scrollBottom  > 200) {
 		$('.top-bg').show(500);
@@ -1777,6 +1778,35 @@ $(window).scroll(function(){
      window.print();
 
      document.body.innerHTML = originalContents;
+}
+function pan_card_valid(element){
+  str=element.value;
+   pancardPattern = /^([a-zA-Z]{5})(\d{4})([a-zA-Z]{1})$/;
+   res = str.match(pancardPattern);
+ 
+  if(res){
+     $(element).removeClass('error');
+     $(element).addClass('valid');
+  }else{
+     $(element).removeClass('valid');
+     $(element).addClass('error');
+  }
+}
+function mobile_valid(element){
+
+       str=element.value;
+       pancardPattern = /^([7-9]{1})(\d{9})$/;
+       res = str.match(pancardPattern);
+      
+      if(res){
+         $(element).removeClass('error');
+         $(element).addClass('valid');
+      }else{
+         $(element).removeClass('valid');
+         $(element).addClass('error');
+      }
+   
+ 
 }
 </script>
     </body>

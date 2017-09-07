@@ -258,7 +258,7 @@ public function  change_password(Request $req){
      $brokerid_session=Session::get('brokerid')?Session::get('brokerid'):0;
      $ref=Session::get('refapp')?Session::get('refapp'):0;
      $source=Session::get('source')?Session::get('source'):'';
-
+     $CampaignName=Session::get('CampaignName');
     $update = DB::table('bank_quote_api_request')->where('ID', $quote)->where('Email', $email)->update(array('bank_id' => $bank,'roi_type'=>$roi_type,'loan_eligible'=>$loan_eligible,'processing_fee'=>$processing_fee));
     $quote_id=Session::get('quote_id');
     $update=new bank_quote_api_request();    
@@ -285,7 +285,7 @@ public function  change_password(Request $req){
       }
       
       }else{
-         $balance_transfer_parameter='qoutid='.$quote.'&brokerid='.$brokerid_session.'&loanamout='.$loanamount.'&loaninterest='.$loaninterest.'&loanterm='.$loanterm.'&bankid='.$bank.'&productid='.$product.'&idtype='.$roi_type.'&processingfee='.$processing_fee.'&empcode='.$empid.'&refapp='.$refapp.'&source='.$source.'&coapp=0&pan='.$pan;
+         $balance_transfer_parameter='qoutid='.$quote.'&brokerid='.$brokerid_session.'&loanamout='.$loanamount.'&loaninterest='.$loaninterest.'&loanterm='.$loanterm.'&bankid='.$bank.'&productid='.$product.'&idtype='.$roi_type.'&processingfee='.$processing_fee.'&empcode='.$empid.'&refapp='.$refapp.'&source='.$source.'&coapp=0&pan='.$pan.'&CampaignName='.$CampaignName;
         if ($product == '9') {
         return redirect()->away($this::$erp_url_static.'BalanceTransfer/PL_BT_Form.aspx?'.$balance_transfer_parameter);
 

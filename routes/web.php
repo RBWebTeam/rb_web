@@ -327,9 +327,15 @@ Route::get('tatacapitalcity',array('as'=>'tatacapitalcity','uses'=>'TataCapitalL
 Route::post('tatacapitalsubmitform','TataCapitalLoanController@tatacapitalsubmitform');
 
 
+Route::get('credit-card-rbl','CreditcardController@credit_card_rbl');
+Route::post('rbl-cc-submit','CreditcardController@rbl_cc_post');
+
 // demo
 Route::get('demo','TeamController@demo');
 Route::post('demo-submit','TeamController@demo_submit');
 Route::post('demo-delete','TeamController@demo_delete');
 Route::post('demo-edit','TeamController@demo_edit');
 Route::post('xml','tribeController@xml');
+Route::get('rbl-personal-loan','BankController@rbl_personal_loan');
+
+

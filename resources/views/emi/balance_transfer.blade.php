@@ -208,6 +208,27 @@ label {
     transition: all 0.2s ease;
     font-weight: 500;
 }
+
+.hh4 {padding:5px; padding-left:4px;color:#444;}
+
+
+
+.td-main a{margin-top: 28px;margin-left:10px;}
+
+#submit {width:auto;}
+#submit:hover {background:#c72c3b;}
+
+@media only screen and (max-width: 768px) {
+	#submit {width:100%;}
+	.hh4 {
+    padding-left: 4px;
+    position: absolute;
+    margin-top: 10px;
+    color: #444;
+}
+.table {display: table-caption !important;}
+	
+}
 	</style>
 	
   </head>
@@ -218,13 +239,12 @@ label {
 	<div class="">
        <!-- Main content -->
         <section class="container-1">
-			<div class="row">
 				<!-- Tab Attribute -->
 				
 				
 				
 				<div class="container">
-				<div class="col-xs-12 pad-1">
+				<div>
 				<!-- Tab Contents -->
 				<div id="myTabContent" class="tab-content content-tab-style">
 					<div class="tab-pane fade active top in" id="Property">
@@ -321,7 +341,13 @@ label {
 											<div class="clear"></div>
 										</div>
 									</div>
+								<div class="col-xs-12"><button type="button" class="btn btn-success" id="submit">SUBMIT</button></div>
 								</div>
+                                
+								
+                                
+                               
+                                <br>
 
 								<div style="text-align: center;">
                                 <button type="button" class="btn btn-success" id="submit">Submit</button>
@@ -340,7 +366,7 @@ label {
 											<span class="highlight"></span><span class="bar"></span>
 											
 											<span style="position: absolute; z-index: 999; margin: 1px 0 0 4px; font-size: 10px; color: #bababa;">PRESENT EMI</span>
-											<h4 class="em1 pull-right">₹ <b><span id="emi">0</span></b></h4>
+											<h4 class="em1 pull-left hh4">₹ <b><span id="emi">0</span></b></h4>
 											<div class="clear"></div>
 										</div>
 									</div>
@@ -350,7 +376,7 @@ label {
 											<span class="highlight"></span><span class="bar"></span>
 										
 											<span style="position: absolute; z-index: 999; margin: 1px 0 0 4px; font-size: 10px; color: #bababa;">EMI REDUCTION</span>
-											<h4 class="em5 pull-right">₹ <b><span id="emi3">0</span></b></h4>
+											<h4 class="em5 pull-left hh4">₹ <b><span id="emi3">0</span></b></h4>
 											<div class="clear"></div>
 										</div>
 									</div>
@@ -363,7 +389,7 @@ label {
 											<span class="highlight"></span><span class="bar"></span>
 										
 											<span style="position: absolute; z-index: 999; margin: 1px 0 0 4px; font-size: 10px; color: #bababa;">NEW EMI</span>
-											<h4 class="em6 pull-right">₹ <b><span id="emi4">0</span></b></h4>
+											<h4 class="em6 pull-left hh4">₹ <b><span id="emi4">0</span></b></h4>
 											<div class="clear"></div>
 										</div>
 									</div>
@@ -373,7 +399,7 @@ label {
 											<span class="highlight"></span><span class="bar"></span>
 											
 											<span style="position: absolute; z-index: 999; margin: 1px 0 0 4px; font-size: 10px; color: #bababa;">INT. RATE REDUCTION</span>
-											<h4 class="em7 pull-right"> <b><span id="emi5">0</span> %</b></h4>
+											<h4 class="em7 pull-left hh4"> <b><span id="emi5">0</span> %</b></h4>
 											<div class="clear"></div>
 										</div>
 									</div>
@@ -409,7 +435,7 @@ label {
 					</div>
 				</div>
 			</div>
-		</div>
+		
 		<div class="clearfix top-type-info"></div>
         </div><!-- /.row -->
 

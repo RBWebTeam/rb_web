@@ -28,7 +28,7 @@
 				<div class="col-md-6">
 					<div class="row text-left rate box-shadow pad1 white-bg mrg-btm">
 				
-					<form class="" id="compareform" role="form" method="POST" action="">
+					<form class="" id="" role="form" method="POST" action="">
 					<div class="row">
 					<div class="form-group">
 					<h4 class="hdr pad1 text-center">&nbsp;&nbsp;&nbsp;&nbsp;Your Loan Quote in Under 1 Minute.</h4>
@@ -111,6 +111,7 @@
     <div class="table-responsive white-bg pad1  box-shadow">
 	<h4 class="text-center bg-info pad">Personal Information</h4>
 	<br>
+    <form>
 	<table width="100%" border="1" class="tbl table-striped">
   <tr>
     <td>First Name</td>
@@ -186,7 +187,7 @@
 </div>
 <br>
 <button class="btn btn-primary btn-outline with-arrow animate-box fadeInUp animated">Submit my Application<i class="icon-arrow-right"></i></button>
-
+</form>
 </div>
 	</div>
 	
@@ -211,6 +212,7 @@
 				<div class="col-md-6">
 					<h2 class="head-rbl">Move Slider to Customize Your Loan Amount</h2>
 					<div class="col-md-6"><div class="amount"><h3 class="text-center text-info pad">Amount:<b> 300000</b></h3>
+                    
 					<select class="select11 bg-info drop-arr select-sty">
 					   <option>1 Lakh</option>
 					   <option>2 Lakh</option>

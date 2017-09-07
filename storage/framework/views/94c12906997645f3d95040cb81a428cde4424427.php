@@ -1,4 +1,4 @@
-@include('layout.header')
+<?php echo $__env->make('layout.header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 
 <div id="fh5co-hero">
 	<div class="fh5co-contact animate-box">
@@ -11,7 +11,8 @@
 				<div class="col-md-10">
 				<div class="row text-left comp-pg rate white-bg box-shadow">
 			<form  id="rbl_ccc_form" role="form">
-			 {{csrf_field()}}
+			 <?php echo e(csrf_field()); ?>
+
 				<div class="row">
 					<div class="form-group titl-1">
 						<div class="col-md-4">
@@ -27,7 +28,7 @@
 		                    </div>
 						<div class="col-md-4">
 						   <span>Credit Card Applied</span>
-							<input type="text" class="form-control" placeholder="Credit Card Applied" name="CreditCardApplied" id="cc_applied" value="{{$card}}" disabled="" >
+							<input type="text" class="form-control" placeholder="Credit Card Applied" name="CreditCardApplied" id="cc_applied" value="<?php echo e($card); ?>" disabled="" >
 						</div>
 						<div class="col-md-4">
 						   <span>Date of Birth</span>
@@ -86,9 +87,9 @@
 						<span>City</span>
 						     <select class="block drop-arr" name="ResCity" id="city" required>
 		                      <option disabled selected  value="">Select Title</option>
-		                       @foreach ($data as $city)
-								    <option value="{{$city->city_code}}">{{$city->city_name}}</option>
-								@endforeach
+		                       <?php $__currentLoopData = $data; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $city): $__env->incrementLoopIndices(); $loop = $__env->getFirstLoop(); ?>
+								    <option value="<?php echo e($city->city_code); ?>"><?php echo e($city->city_name); ?></option>
+								<?php endforeach; $__env->popLoop(); $loop = $__env->getFirstLoop(); ?>
 		                    </select> 
 		                    </div>
 						<div class="col-md-4">
@@ -137,8 +138,8 @@
 
 </div>
 </div>
-@include('layout.footer')
-@include('layout.script')
+<?php echo $__env->make('layout.footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php echo $__env->make('layout.script', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 
 
 
@@ -174,7 +175,7 @@
 			$.ajax({
 				type:"POST",
 				data:$('#rbl_ccc_form').serialize(),
-				url:"{{URL::to('rbl-cc-submit')}}",
+				url:"<?php echo e(URL::to('rbl-cc-submit')); ?>",
 				success:function(msg){
 					var returnedData = JSON.parse(msg);
 					if(msg.Status==2){

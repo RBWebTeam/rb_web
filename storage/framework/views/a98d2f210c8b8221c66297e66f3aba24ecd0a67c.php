@@ -286,16 +286,16 @@ label {
 									</div>
 
 									<div class="loan-tenure">
-									<center>
+									<!-- <center>
 										<div class="type-cover" >
 											<p>Remaining Tenure</p>
 										</div>
-									</center>
-									<div class="text-center">
+									</center> -->
+									<!-- <div class="text-center">
 										<div class="scaling-slider">
 											
 									<div class="price-box" >
-									        <!-- <form class="form-horizontal form-pricing" role="form" > -->
+									        
 									            
 
 									                <div class="col-sm-12" style="margin-top:30px;">
@@ -305,13 +305,28 @@ label {
 									                </div>
 									           
 									           
-									       <!--  </form> -->
+									       
 									    </div>	
     									
 											
 										</div>
+									</div> -->
+									<div class="col-xs-6 form-padding">
+										<div class="form-control" title="Remaining Tenure" style="margin-bottom:14px; height:50px; position:relative;">
+
+											<input type="text" class="form-input-new" onchange="myfun()" required name="loanterm" id="loanterm" onkeypress="return isNumberKey(event)">
+
+											<span class="highlight"></span><span class="bar"></span>
+											<label class="form-label-new">Remaining Tenure</label>
+											<div class="clear"></div>
+										</div>
 									</div>
 								</div>
+
+								<div style="text-align: center;">
+                                <button type="button" class="btn btn-success" id="submit">Submit</button>
+                                </div>
+                                <br>
 
 
 								</div><!--End form group-->
@@ -652,16 +667,16 @@ label {
 </script>
 
 <script type="text/javascript">
-$('#slider').slider({
-    change: function(event, ui) { 
-        //alert(ui.value); 
-        $("#loanterm").val(ui.value);
-        myfun();
+// $('#slider').slider({
+//     change: function(event, ui) { 
+//         //alert(ui.value); 
+//         $("#loanterm").val(ui.value);
+//         myfun();
 
-    } 
+//     } 
 
-}
-);
+// }
+// );
 
 
  

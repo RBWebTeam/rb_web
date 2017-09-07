@@ -151,17 +151,16 @@
 				data:$('#rbl_ccc_form').serialize(),
 				url:"<?php echo e(URL::to('rbl-cc-submit')); ?>",
 				success:function(msg){
-					console.log(msg);
 					var returnedData = JSON.parse(msg);
 					if(msg.Status==2){
 						$('#rbl_cc_apply_status').empty().text("Sucessfull");
-						$('#reference').empty().text(msg.ReferenceCode);
+						$('#reference').empty().text(returnedData.ReferenceCode);
 					}else{
-						$('#reason').empty().append(msg.Errorinfo);
+						$('#rbl_cc_apply_status').empty().text("Sucessfull");
+						$('#reason').empty().append(returnedData.Errorinfo);
 					
 					}
-					console.log(msg);
-					console.log(returnedData.Errorinfo);
+					
 					$('#rb_cc_modal').modal('toggle');
 					
 				}

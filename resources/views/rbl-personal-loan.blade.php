@@ -71,17 +71,95 @@
 				</div>
 			</div>
             
-            
+        
+        
+        
+        
+        
+        
+         <!--Step 2 -->
+   
+   
+   <div class="row">
+				<div class="col-md-12 text-left fh5co-heading animate-box fadeInUp animated">
+					<h2 class="pad">Personal Loan - Get Quote </h2>
+					
+                </div>
+                 
+				<div class="col-md-12 white-bg comp-pg">
+				<div class="col-md-3"></div>
+				<div class="col-md-6">
+					<h2 class="head-rbl">Move Slider to Customize Your Loan Amount</h2>
+					<div class="col-md-6"><div class="amount"><h3 class="text-center text-info pad">Amount:<b> 300000</b></h3>
+                    
+					<select class="select11 bg-info drop-arr select-sty">
+					   <option>1 Lakh</option>
+					   <option>2 Lakh</option>
+					   <option>3 Lakh</option>
+					   <option>4 Lakh</option>
+					   <option>5 Lakh</option>
+					</select>
+					</div></div>
+					<div class="col-md-6"><div class="amount"><h3 class="text-center text-info pad">Tenure:<b> 5</b></h3>
+					
+					<select class="select11 bg-info drop-arr select-sty">
+					   <option>1 Year</option>
+					   <option>2 Years</option>
+					   <option>3 Years</option>
+					   <option>4 Years</option>
+					   <option>5 Years</option>
+					</select>
+					</div></div>
+				</div>
+				
+				<div class="col-md-12 white-bg">
+				<table class="table table-bordered mrg-top box-shadow">
+				 <tr class="bg-info pad">
+				   <td><b>Max Eligiblity</b></td>
+				   <td><b>Rate Type</b></td>
+				   <td><b>Best Rate</b></td>
+				   <td><b>EMI</b></td>
+				   <td><b>Processing Fee</b></td>
+				   <td><b>Total Savings</b></td>
+				   <td></td>
+				 </tr>
+				 <tr>
+				   <td>4,00,000</td>
+				   <td>Fixed</td>
+				   <td><span><strike>16%</strike></span> <span>15%</span></td>
+				   <td>8900</td>
+				   <td>6000</td>
+				   <td><span class="pad1">You Have Save Rs.5400</span></td>
+				   <td><button class="btn btn-primary btn-outline animate-box fadeInUp animated">APPLY</button></td>
+				 </tr>
+				</table>
+				</div>
+				
+				<div class="row">
+				<div class="col-md-12">
+				 <div class="col-md-8 para">
+				 <p> The Quote displayed here is not the final approved loan amount This is basis the details shared by you. Approval of loan would be to  RBL Bank internal prodct and policy guidelines. the applicants are required to fill the RBL Bank Applications froms to Proceed further.</p>
+				 </div>
+				 <div class="col-md-4 text-justify para">
+				 
+				 <span>Besides offering you the best interest rates and eligibility in the business, RBL Bank now offres you the fastest loan processing service as well</span>
+               <span>Apply Now and experience for yourself RBL Bank's superior loan processing service.</span>
+				 </div>
+				 </div>
+				</div>
+				</div>
+			</div> 
+       
        
      
      
      
      
-         <!--Step 2-->
+         <!--Step 3-->
        
        
        <div class="col-md-2"></div>
-	<div class="col-md-8" style="display:none;">
+	<div class="col-md-8">
 <div class="col-md-12">
 <h2 class="pad">Personal Loan - Customer Details </h2>
 <div class="table-responsive comp-pg white-bg">
@@ -198,79 +276,7 @@
     
     
    
-   <!--Step 3 -->
-   
-   
-   <div class="row" style="display:none;">
-				<div class="col-md-12 text-left fh5co-heading animate-box fadeInUp animated">
-					<h2 class="pad">Personal Loan - Get Quote </h2>
-					
-                </div>
-                 
-				<div class="col-md-12 white-bg comp-pg">
-				<div class="col-md-3"></div>
-				<div class="col-md-6">
-					<h2 class="head-rbl">Move Slider to Customize Your Loan Amount</h2>
-					<div class="col-md-6"><div class="amount"><h3 class="text-center text-info pad">Amount:<b> 300000</b></h3>
-                    
-					<select class="select11 bg-info drop-arr select-sty">
-					   <option>1 Lakh</option>
-					   <option>2 Lakh</option>
-					   <option>3 Lakh</option>
-					   <option>4 Lakh</option>
-					   <option>5 Lakh</option>
-					</select>
-					</div></div>
-					<div class="col-md-6"><div class="amount"><h3 class="text-center text-info pad">Tenure:<b> 5</b></h3>
-					
-					<select class="select11 bg-info drop-arr select-sty">
-					   <option>1 Year</option>
-					   <option>2 Years</option>
-					   <option>3 Years</option>
-					   <option>4 Years</option>
-					   <option>5 Years</option>
-					</select>
-					</div></div>
-				</div>
-				
-				<div class="col-md-12 white-bg">
-				<table class="table table-bordered mrg-top box-shadow">
-				 <tr class="bg-info pad">
-				   <td><b>Max Eligiblity</b></td>
-				   <td><b>Rate Type</b></td>
-				   <td><b>Best Rate</b></td>
-				   <td><b>EMI</b></td>
-				   <td><b>Processing Fee</b></td>
-				   <td><b>Total Savings</b></td>
-				   <td></td>
-				 </tr>
-				 <tr>
-				   <td>4,00,000</td>
-				   <td>Fixed</td>
-				   <td><span><strike>16%</strike></span> <span>15%</span></td>
-				   <td>8900</td>
-				   <td>6000</td>
-				   <td><span class="pad1">You Have Save Rs.5400</span></td>
-				   <td><button class="btn btn-primary btn-outline animate-box fadeInUp animated">APPLY</button></td>
-				 </tr>
-				</table>
-				</div>
-				
-				<div class="row">
-				<div class="col-md-12">
-				 <div class="col-md-8 para">
-				 <p> The Quote displayed here is not the final approved loan amount This is basis the details shared by you. Approval of loan would be to  RBL Bank internal prodct and policy guidelines. the applicants are required to fill the RBL Bank Applications froms to Proceed further.</p>
-				 </div>
-				 <div class="col-md-4 text-justify para">
-				 
-				 <span>Besides offering you the best interest rates and eligibility in the business, RBL Bank now offres you the fastest loan processing service as well</span>
-               <span>Apply Now and experience for yourself RBL Bank's superior loan processing service.</span>
-				 </div>
-				 </div>
-				</div>
-				</div>
-			</div> 
-    
+  
     
     
     

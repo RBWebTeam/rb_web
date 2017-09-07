@@ -1779,6 +1779,35 @@ $(window).scroll(function(){
 
      document.body.innerHTML = originalContents;
 }
+function pan_card_valid(element){
+  str=element.value;
+   pancardPattern = /^([a-zA-Z]{5})(\d{4})([a-zA-Z]{1})$/;
+   res = str.match(pancardPattern);
+ 
+  if(res){
+     $(element).removeClass('error');
+     $(element).addClass('valid');
+  }else{
+     $(element).removeClass('valid');
+     $(element).addClass('error');
+  }
+}
+function mobile_valid(element){
+
+       str=element.value;
+       pancardPattern = /^([7-9]{1})(\d{9})$/;
+       res = str.match(pancardPattern);
+      
+      if(res){
+         $(element).removeClass('error');
+         $(element).addClass('valid');
+      }else{
+         $(element).removeClass('valid');
+         $(element).addClass('error');
+      }
+   
+ 
+}
 </script>
     </body>
     </html>

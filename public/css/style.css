@@ -3685,8 +3685,11 @@ label.error {display: none !important; }
    }
    
    .form-group h4 {color:#666;}
-   .label-txt {position:absolute;font-size:9px; margin-top:-15px;color:#ccc;}
-   
+   .label-txt1 {position: absolute;
+    font-size: 11px;
+    margin-top: -8px;
+    color: #ccc;}
+   .titl-1 span {font-size:10px; color:#999999;}
    #myModal .modal-dialog {
     width: 400px !important;
     padding: 0px ;

@@ -278,17 +278,17 @@
 		</div>
 	</div> -->
 	
-		<div class="container-fluid white-bg pad flt-non">
+		<div class="container pad flt-non">
 			
 			<div class="animate-box pad1">
-                    <div class="col-md-1"></div>
-					<div class="col-md-6 animate-box fadeInUp animated">
+                  
+					<div class="col-md-8 animate-box fadeInUp animated">
 					<h1 class="text-left"><b class="text-danger">Free Credit Report</b> Apply Now</h1>
 						<p class="text-left">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p><p class="text-left"> It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing </p>
-						<p class="text-left"> It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing </p>
+						
 						
 						<br>
-						<button class="btn btn-primary btn-outline with-arrow sidebar-submit pull-left">VIEW MORE<i class="icon-arrow-right"></i></button>
+						<button class="btn btn-primary btn-outline with-arrow sidebar-submit pull-left">Apply Now<i class="icon-arrow-right"></i></button>
 						
 					</div>
 					<div class="col-md-4 padd">
@@ -296,7 +296,7 @@
 					<!-- <img src="images/Report.png" alt="Credit Report" title="Credit Report" class="img-responsive hidden-sm pad crd-rpt"> 
 			
 					<a class="tp-margin" href="{{URL::to('credit-report-otp')}}">Apply For FREE Credit Report</a>-->
-					<img src="images/img.jpg" />
+					<img src="{{URL::to('images/credit-report.png')}}" width="350"/>
 					</div>
 					
 					<br>
@@ -376,7 +376,7 @@
 			  <div class="col-md-9 padd-80 white-bg animate-box fadeInUp animated over-lap box-shadow">
 			   <div class="col-md-4 animate-box hov-brd">
 						<div>
-							 <div class="icon-style"><i class="sprite sprite-icon1"></i></div>
+							 <div class="icon-style"><img src="{{URL::to('images/ico/01.png')}}" /></div>
 							<div>
 						  <h5 class="head-5">Lower Rate</h5>
 							<p>We don't push, We give you plenty of options, solution & facts, its your call, your decision. We are only here to help you.</p>
@@ -385,7 +385,7 @@
 					</div>
 					 <div class="col-md-4 animate-box hov-brd">
 						<div>
-							 <div class="icon-style"><i class="sprite sprite-icon2"></i></div>
+							 <div class="icon-style"><img src="{{URL::to('images/ico/02.png')}}" /></div>
 							<div>
 						     <h5 class="head-5">Quick And Easy</h5>
 							<p>We don't push, We give you plenty of options, solution & facts, its your call, your decision. We are only here to help you.</p>
@@ -394,7 +394,7 @@
 					</div>
 					 <div class="col-md-4 animate-box hov-brd">
 						<div>
-							 <div class="icon-style"><i class="sprite sprite-icon3"></i></div>
+							 <div class="icon-style"><img src="{{URL::to('images/ico/03.png')}}" /></div>
 							<div>
 							<h5 class="head-5">No Payment Penalty</h5>
 							<p>We don't push, We give you plenty of options, solution & facts, its your call, your decision. We are only here to help you.</p>
@@ -407,7 +407,7 @@
 					
 					<div class="col-md-4 animate-box hov-brd">
 						<div>
-							 <div class="icon-style"><i class="sprite sprite-icon4"></i></div>
+							 <div class="icon-style"><img src="{{URL::to('images/ico/04.png')}}" /></div>
 							<div>
 						     <h5 class="head-5">Secure Process</h5>
 							<p>We don't push, We give you plenty of options, solution & facts, its your call, your decision. We are only here to help you.</p>
@@ -416,7 +416,7 @@
 					</div>
 					 <div class="col-md-4 animate-box hov-brd">
 						<div>
-							 <div class="icon-style"><i class="sprite sprite-icon1"></i></div>
+							 <div class="icon-style"><img src="{{URL::to('images/ico/05.png')}}" /></div>
 							<div>
 						     <h5 class="head-5">5-Minute Application</h5>
 							<p>We don't push, We give you plenty of options, solution & facts, its your call, your decision. We are only here to help you.</p>
@@ -425,7 +425,7 @@
 					</div>
 					 <div class="col-md-4 animate-box hov-brd">
 						<div>
-							 <div class="icon-style"><i class="sprite sprite-icon2"></i></div>
+							 <div class="icon-style"><img src="{{URL::to('images/ico/06.png')}}" /></div>
 							<div>
 							<h5 class="head-5">Only 3% Interest</h5>
 							<p>We don't push, We give you plenty of options, solution & facts, its your call, your decision. We are only here to help you.</p>
@@ -481,18 +481,24 @@
 		
 		
 		
-		<div class="container-fluid pad flt-non">
+		<div class="container pad flt-non">
 			<hr>
-			<div class="animate-box pad1">
-                    <div class="col-md-1"></div>
+			<div class="animate-box ">
+                    
 					<div class="col-md-4 padd">
-					<img src="images/about.jpg" />
+					   <img src="images/about.jpg"  class="pull-left"/>
 					</div>
-					<div class="col-md-6 animate-box fadeInUp animated">
+					<div class="col-md-7 animate-box fadeInUp animated">
 					<h1 class="text-left"><b class="text-danger">Who We Are</b></h1>
-					<h1 class="text-left">About Rupeeboss.com</h1>
-						<p class="text-left">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p><p class="text-left"> It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing </p>
-						<p class="text-left"> It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing </p>
+					<h3 class="text-left">About Rupeeboss.com</h3>
+						
+<p class="text-left">At RupeeBoss.com, we are guided by the philosophy – When You Need a Loan, You’re not Alone! This guiding principle is a reflection of our commitment towards ensuring the most hassle-free experience in procuring a loan, be it for personal needs, or that of your business.</p>
+
+<p class="text-left"> RupeeBoss.com aspires to be India’s preferred destination for the widest range of loan products including retail, SME and Credit Card products. We will offer best terms for Person Loan, Home Loan, Car Loan to Working Capital, SME Loan, Business Loan, and more. Our product advisors leave no stone unturned to ensure that your loan requirement is not just well studied, it’s also taken up with utmost sincerity to ensure you get the best of breed options to choose from.</p>
+
+<!-- <p class="text-left">Our extensive relationships with all major national, PSU, Private and NBFC service providers, coupled with the cutting edge technology ensure that upon specifying your requirement, you get the most competitive options that are tailor made to suit your needs, and all of this done at a few clicks.</p>
+
+<p class="text-left">At RupeeBoss.com, we are committed in ensuring the best experience in terms of customer service and satisfaction, and hence all our customer reps are cherry picked and our escalation matrix goes right up to our CEO. So let’s get started together and get you the loan / credit card that you deserve.</p> -->
 						
 						<br>
 						<button class="btn btn-primary btn-outline with-arrow sidebar-submit pull-left">VIEW MORE<i class="icon-arrow-right"></i></button>

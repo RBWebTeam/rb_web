@@ -316,5 +316,9 @@ else{
 		 
 		 return view('rbl-personal-loan');
 	}
+	
+	public function pay_online(){
+		return view('pay-online');
+	}
 
 }

@@ -61,7 +61,7 @@ class CreditcardController extends CallApiController
             }else{
                 $error=2;
             }
-            return $error; 
+             return $error; 
         }catch(\Exception $ee){
             print_r($ee->getMessage());
         }
@@ -124,7 +124,7 @@ class CreditcardController extends CallApiController
             return view('credit-card-rbl')->with('data',$data)->with('card',$name);
      }
     public function rbl_cc_post(Request $req){
-        return '{"Status":0,"ReferenceCode":"#CCP50HSDWK","EligibleCard":"","Errorcode":6,"Errorinfo":"Duplicate application","RequestIP":"49.50.95.141"}';
+        // return '{"Status":1,"ReferenceCode":"#CCP50HSDWK","EligibleCard":"","Errorcode":6,"Errorinfo":"Duplicate application","RequestIP":"49.50.95.141"}';
         unset($req['_token']);
         //random gen token
         $req['ConUniqRefCode'] = substr(str_shuffle(str_repeat("0123456789abcdefghijklmnopqrstuvwxyz", 15)), 0, 15);

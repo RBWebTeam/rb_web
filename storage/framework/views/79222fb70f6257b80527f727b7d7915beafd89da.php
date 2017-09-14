@@ -1682,12 +1682,7 @@ $(document).ready(function(){
 
             // //console.log(msg);
             if(param=='CityMaster'){
-                
-                //sorting city 
-                msg=msg.sort(function (a, b) {
-                    return a.value<b.value?a.value:b.value;
-                });
-                console.log(msg);
+             
                 populate_city_education(msg,'CurrentCity');
                 // populate_city_education(msg,'PermanentCity');
                 populate_city_education(msg,'city');

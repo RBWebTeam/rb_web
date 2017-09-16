@@ -12,8 +12,8 @@
 									<div class="form-group title-1">
 									 
 										<h3 class="hdr col-md-12 text-center">Kotak Home Loan</h4>
-										<div class="col-md-2"></div>
-										<div class="col-md-8 white-bg pad1 box-shadow">
+										<div class="col-md-1"></div>
+										<div class="col-md-10 white-bg pad1 box-shadow">
 										<div class="col-md-4">
 										<span>Loan Purpose</span>
 										     <select class="block drop-arr select-sty" name="" id="" required>
@@ -74,7 +74,7 @@
 										
 										<div class="col-md-12">
 										<div class="col-md-4"></div>
-										<div class="col-md-4"><button class="btn  btn-primary btn-outline animate-box fadeInUp animated lendingkart-submit dis-tbl">Submit</button></div>
+										<div class="col-md-2"><button class="btn  btn-primary block btn-outline animate-box fadeInUp animated lendingkart-submit dis-tbl">Submit</button></div>
 										</div>
 									</div>
 			</div>				

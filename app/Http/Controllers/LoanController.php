@@ -327,9 +327,13 @@ public function dropdown(Request $req){
 
 
      $obj = json_decode($m);
-      // print_r($obj);exit();
+      //print_r($obj);exit();
      $a=$obj->body;
      $b=$a->Values;
+     usort($b,function($x,$y){
+        return ($x->value<$y->value)?-1:1;
+     });
+    // print_r($b);exit();
     return response()->json($b);
 }     
 

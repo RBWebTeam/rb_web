@@ -167,7 +167,7 @@
 <script type="text/javascript">
 	$('#rbl_card_submit').click(function(){
 		
-		if($(!'#rbl_ccc_form').valid()){
+		if($('#rbl_ccc_form').valid()){
 			 
 			return false;
 		}else{

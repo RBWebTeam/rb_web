@@ -101,7 +101,7 @@
                 <li class="hidden-xs"><a href="<?php echo e(URL::to('http://www.rupeeboss.com/rblife-style/')); ?>">RB Life Style</a></li>
                 <li class="hidden-xs"><a href="<?php echo e(URL::to('http://www.rupeeboss.com/elite/')); ?>">Elite</a></li>
 				<li class="hidden-lg"><a href="<?php echo e(URL::to('magic-link')); ?>">Magic Link </a></li>
-				<li class="hidden-xs credit-score-btn"><a href="<?php echo e(URL::to('credit-report')); ?>" class="btn btn-primary">My Credit Score</a></li>
+				<li class="hidden-xs credit-score-btn"><a href="<?php echo e(URL::to('credit-report')); ?>" class="btn-primary">My Credit Score</a></li>
 				
 				</a></li>
 			<!-- 	<li><a href="<?php echo e(URL::to('contact-us')); ?>">Media</a></li> -->

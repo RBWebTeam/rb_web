@@ -124,7 +124,15 @@ class CreditcardController extends CallApiController
             return view('credit-card-rbl')->with('data',$data)->with('card',$name);
      }
     public function rbl_cc_post(Request $req){
-        // return '{"Status":1,"ReferenceCode":"#CCP50HSDWK","EligibleCard":"","Errorcode":6,"Errorinfo":"Duplicate application","RequestIP":"49.50.95.141"}';
+        // $str='"{\"?xml\":{\"@version\":\"1.0\",\"@encoding\":\"UTF-8\"},\"ns0:Response\":{\"@xmlns:ns0\":\"http:\/\/www.kotak.com\/schemas\/HL-InsertResponse.xsd\",\"ns0:Status\":\"1\",\"ns0:ReferenceCode\":\"#HLR4EEPHSK\",\"ns0:UniqueRefCode\":\"330321\",\"ns0:ErrorCode\":\"0\",\"ns0:ErrorInfo\":null,\"ns0:RequestIP\":\"10.10.19.191\"}}"';
+        // $data=str_replace('ns0:','', $str);
+        // print_r(json_decode( json_decode($data)));
+        // echo "\n";
+        // print_r($str);
+
+        // exit();
+
+
         unset($req['_token']);
         //random gen token
         $req['ConUniqRefCode'] = substr(str_shuffle(str_repeat("0123456789abcdefghijklmnopqrstuvwxyz", 15)), 0, 15);

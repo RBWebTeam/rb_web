@@ -338,4 +338,5 @@ Route::post('demo-edit','TeamController@demo_edit');
 Route::post('xml','tribeController@xml');
 Route::get('rbl-personal-loan','BankController@rbl_personal_loan');
 Route::get('pay-online','BankController@pay_online');
+Route::get('kotak-home-loan','LoanController@kotak_home_loan');
 

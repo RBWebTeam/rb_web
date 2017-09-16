@@ -32,7 +32,7 @@
 						</div>
 						<div class="col-md-4">
 						   <span>Date of Birth</span>
-							<input type="date" class="form-control " id="dob" name="DOB" placeholder="Date of Birth" required>
+							<input type="text" class="form-control lastReporteddate " id="dob" name="DOB" placeholder="Date of Birth" required>
 						</div>
 						<div class="col-md-4">
 						<span>First Name</span>
@@ -168,7 +168,7 @@
 <script type="text/javascript">
 	$('#rbl_card_submit').click(function(){
 		
-		if(!$('#rbl_ccc_form').valid()){
+		if($(!'#rbl_ccc_form').valid()){
 			 
 			return false;
 		}else{
@@ -178,14 +178,27 @@
 				url:"<?php echo e(URL::to('rbl-cc-submit')); ?>",
 				success:function(msg){
 					var returnedData = JSON.parse(msg);
-					if(msg.Status==2){
-						$('#rbl_cc_apply_status').empty().text("Sucessfull");
-						$('#reference').empty().text(returnedData.ReferenceCode);
-					}else{
-						$('#rbl_cc_apply_status').empty().text("Sucessfull");
-						$('#reason').empty().append(returnedData.Errorinfo);
+					var status_id=returnedData.Status;
+					var error=returnedData.Errorinfo;
+					if(status_id==0){
+						e_id=returnedData.Errorcode;
+						status="Ooops! Error occured.";
+						if(e_id)
+						error=get_rbl_error(e_id);
+						
+					}else if(status_id==1){
+						status="Sucessfull";
+						reason=returnedData.ReferenceCode;
 					
+					}else if(status_id==2){
+						status="Sucessfull Refered";
+						error=returnedData.ReferenceCode;
+					}else{
+						status="Rejected";
+						error=returnedData.ReferenceCode;
 					}
+					$('#rbl_cc_apply_status').empty().text(status);
+					$('#reason').empty().append(error);
 					
 					$('#rb_cc_modal').modal('toggle');
 					
@@ -194,7 +207,30 @@
 		}
 		
 	});
-
+		function get_rbl_error(id){
+			error='';
+			switch (id) {
+				case 1: 
+					error="INPUT OUT OF MASTERS RANGE";
+					break;
+				case 2: 
+					error="VALIDATION ERROR";
+					break;
+				case 3: 
+					error="INPUT NOT IN VALID DATA FORMAT (SPECIAL CHARACTERS etc)";
+					break;
+				case 4:
+					error="SYSTEM UNAVAILABLE";
+					break;
+				case 5: 
+					error="DECISION CENTER ERROR";
+					break;
+				case 6:
+					error="DUPLICATE APPLICATION";
+				 	break;
+			}
+				return error;
+		}
 </script>
 
 

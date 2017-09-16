@@ -36,6 +36,7 @@
 				<label>Cost</label>
 				<input type="text" />
 			    </div>
+
 				<div class="col-md-12">
 				<a href="#" class="pay-submit-btn">CONFIRM</a>
 				</div>

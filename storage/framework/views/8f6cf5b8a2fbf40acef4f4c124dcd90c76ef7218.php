@@ -480,7 +480,7 @@
 			</div>
 		
 		
-		
+		<div class="container-fluid">
 		<div class="container pad flt-non">
 			<hr>
 			<div class="animate-box ">
@@ -500,7 +500,7 @@
 
 <p class="text-left">At RupeeBoss.com, we are committed in ensuring the best experience in terms of customer service and satisfaction, and hence all our customer reps are cherry picked and our escalation matrix goes right up to our CEO. So let’s get started together and get you the loan / credit card that you deserve.</p> -->
 						
-						<br>
+						
 						<button class="btn btn-primary btn-outline with-arrow sidebar-submit pull-left">VIEW MORE<i class="icon-arrow-right"></i></button>
 						
 					</div>
@@ -510,6 +510,7 @@
                    <div class="col-md-1"></div>
 				   
 			</div>
+		</div>
 		</div>
  <!-- <div class="fh5co-cta backimg" >
 		<div class="overlay"></div>

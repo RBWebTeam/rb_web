@@ -781,6 +781,37 @@ $url = $this::$url_static."/BankAPIService.svc/updateIIFLRevisedQuote";
       $obj = json_decode($m);
      // print_r($obj);exit();
      return response()->json( $obj);
-    }  
+    }
+
+    public function rbl_personal_loan(){
+  return view('rbl-personal-loan');
+  }
+
+  public function rbl_personal_loan_submit(Request $req){
+    // print_r($req->all());
+    $data=$req->all();
+    $data['ConUniqRefCode']=substr(str_shuffle(str_repeat("0123456789abcdefghijklmnopqrstuvwxyz", 15)), 0, 15);
+    $data['UserId']='RupeeBoss';
+    $data['Password']='rupeeb@123';
+    $post_data=json_encode($data);
+    print_r($post_data);
+    $url = $this::$url_static."/BankAPIService.svc/createRBLPersonalLoanReq";
+      $result=$this->call_json_data_api($url,$post_data);
+      $http_result=$result['http_result'];
+      $error=$result['error'];
+      $st=str_replace('"{', "{", $http_result);
+      $s=str_replace('}"', "}", $st);
+      $m=$s=str_replace('\\', "", $s);
+      $obj = json_decode($m);
+     // print_r($obj);exit();
+     return response()->json( $obj);
+
+  }
+
+ public function rbl_city_master(){
+    $query = DB::table('rbl_pl_city_master')->select('id', 'code', 'city')->get();
+
+    echo json_encode($query);
+  }  
       
 }

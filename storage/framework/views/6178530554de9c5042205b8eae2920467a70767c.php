@@ -5,7 +5,7 @@
 		  <!--Step 1 -->
           
           
-        <div class="row">
+        <div id="details" class="row">
 				<div class="col-md-12 text-left fh5co-heading animate-box fadeInUp animated">
                     <h1 class="align-center loan-head">RBL Personal Loan</h1>
 					
@@ -28,7 +28,7 @@
 				<div class="col-md-6">
 					<div class="row text-left rate box-shadow pad1 white-bg mrg-btm">
 				
-					<form class="rbl_personal_loan_form" id="rbl_personal_loan_form" role="form" method="POST" action="">
+					<form class="rbl_personal_loan_form" id="rbl_personal_loan_form" role="form" method="POST">
 					<div class="row">
 					<div class="form-group">
 					<h4 class="hdr pad1 text-center">&nbsp;&nbsp;&nbsp;&nbsp;Your Loan Quote in Under 1 Minute.</h4>
@@ -74,7 +74,7 @@
 				    <div class="col-md-6"><input type="text" class="form-control" placeholder="Mobile No*" name="mobile_no" id="mobile_no" maxlength="10" onkeypress="return fnAllowNumeric(event)" required=""></div>
 
 					<div class="col-md-10">
-					<input type="checkbox" /> I authorize RBL Bank to contact me. This will override registry on DND / NDNC * 
+					<input type="checkbox" name="check" required /> I authorize RBL Bank to contact me. This will override registry on DND / NDNC * 
 					</div>
 					</div>
 					</div>
@@ -88,97 +88,21 @@
 				</div>
 			</div>
             
-        
-        
-        
-        
-        
-        
-         <!--Step 2 -->
-   
-   
-   <div class="row">
-				<div class="col-md-12 text-left fh5co-heading animate-box fadeInUp animated">
-					<h2 class="pad">Personal Loan - Get Quote </h2>
-					
-                </div>
-                 
-				<div class="col-md-12 white-bg comp-pg">
-				<div class="col-md-3"></div>
-				<div class="col-md-6">
-					<h2 class="head-rbl">Move Slider to Customize Your Loan Amount</h2>
-					<div class="col-md-6"><div class="amount"><h3 class="text-center text-info pad">Amount:<b> 300000</b></h3>
-                    
-					<select class="select11 bg-info drop-arr select-sty">
-					   <option>1 Lakh</option>
-					   <option>2 Lakh</option>
-					   <option>3 Lakh</option>
-					   <option>4 Lakh</option>
-					   <option>5 Lakh</option>
-					</select>
-					</div></div>
-					<div class="col-md-6"><div class="amount"><h3 class="text-center text-info pad">Tenure:<b> 5</b></h3>
-					
-					<select class="select11 bg-info drop-arr select-sty">
-					   <option>1 Year</option>
-					   <option>2 Years</option>
-					   <option>3 Years</option>
-					   <option>4 Years</option>
-					   <option>5 Years</option>
-					</select>
-					</div></div>
-				</div>
-				
-				<div class="col-md-12 white-bg">
-				<table class="table table-bordered mrg-top box-shadow">
-				 <tr class="bg-info pad">
-				   <td><b>Max Eligiblity</b></td>
-				   <td><b>Rate Type</b></td>
-				   <td><b>Best Rate</b></td>
-				   <td><b>EMI</b></td>
-				   <td><b>Processing Fee</b></td>
-				   <td><b>Total Savings</b></td>
-				   <td></td>
-				 </tr>
-				 <tr>
-				   <td>4,00,000</td>
-				   <td>Fixed</td>
-				   <td><span><strike>16%</strike></span> <span>15%</span></td>
-				   <td>8900</td>
-				   <td>6000</td>
-				   <td><span class="pad1">You Have Save Rs.5400</span></td>
-				   <td><button class="btn btn-primary btn-outline animate-box fadeInUp animated">APPLY</button></td>
-				 </tr>
-				</table>
-				</div>
-				
-				<div class="row">
-				<div class="col-md-12">
-				 <div class="col-md-8 para">
-				 <p> The Quote displayed here is not the final approved loan amount This is basis the details shared by you. Approval of loan would be to  RBL Bank internal prodct and policy guidelines. the applicants are required to fill the RBL Bank Applications froms to Proceed further.</p>
-				 </div>
-				 <div class="col-md-4 text-justify para">
-				 
-				 <span>Besides offering you the best interest rates and eligibility in the business, RBL Bank now offres you the fastest loan processing service as well</span>
-               <span>Apply Now and experience for yourself RBL Bank's superior loan processing service.</span>
-				 </div>
-				 </div>
-				</div>
-				</div>
-			</div> 
-       
+            
        
      
      
      
      
-         <!--Step 3-->
+         <!--Step 2-->
        
        
        <div class="col-md-2"></div>
+	<div class="col-md-8" >
+	 <form id="customer_details_form" method="POST">
+	  <?php echo e(csrf_field()); ?>
 
-	<div id="customer_details_form" class="col-md-8" >
-
+	
 <div class="col-md-12">
 <h2 class="pad">Personal Loan - Customer Details </h2>
 <div class="table-responsive comp-pg white-bg">
@@ -191,11 +115,11 @@
     <td><b>Processing Fees</b></td>
   </tr>
   <tr>
-    <td><b>10,00,000</b></td>
-    <td><b>10</b></td>
-    <td><b>10%</b></td>
-    <td><b>4765</b></td>
-    <td><b>5000</b></td>
+    <td><b><span id="amount"></span></b></td>
+    <td><b><span id="period"></span></b></td>
+    <td><b>16%</b></td>
+    <td><b><span id="to_pay"></span></b></td>
+    <td><b>2%</b></td>
   </tr>
 
 
@@ -208,86 +132,150 @@
     <div class="table-responsive white-bg pad1  box-shadow">
 	<h4 class="text-center bg-info pad">Personal Information</h4>
 	<br>
-    <form>
+   
 	<table width="100%" border="1" class="tbl table-striped">
+	<input type="text" name="Version" id="Version" value="5">
+	<input type="text" name="Mobile" id="Mobile">
+	<input type="text" name="Email" id="Email">
+	<input type="text" name="EmpType" id="EmpType">
+	<input type="text" name="LnAmt" id="LnAmt">
+	<input type="text" name="TnrMths" id="TnrMths">
+	<input type="text" name="IRR" id="IRR">
+	<input type="text" name="ProcFee" id="ProcFee">
+	<input type="text" name="NMI" id="NMI">
+	<input type="text" name="EmiCurPay" id="EmiCurPay">
+	<input type="text" name="ResCity" id="ResCity">
   <tr>
     <td>First Name</td>
-	<td><input type="text" /></td>
+	<td><input type="text" name="FirstName" id="FirstName" required /></td>
 	<td>Middle Name</td>
-	<td><input type="text" /></td>
+	<td><input type="text" name="MiddleName" id="MiddleName" onkeypress=" return AllowAlphabet(event)" /></td>
   </tr>
   <tr>
     <td>Last Name</td>
-	<td><input type="text" /></td>
+	<td><input type="text" name="LastName" id="LastName" onkeypress="return AllowAlphabet(event)" required /></td>
 	<td>Gender</td>
-	<td><input type="text" /></td>
+	<td><select class="form-control drop-arr select-sty" name="Gender" id="Gender" required>
+					   <option disabled selected  value="">Gender*</option>
+					        <option value="1">Male</option>
+						    <option value="2">Female</option>
+						    <option value="3">Third Gender</option>
+				</select></td>
   </tr>
   <tr>
     <td>Address Line 1</td>
-	<td><input type="text" /></td>
+	<td><input type="text" name="ResAddress1" id="ResAddress1" required /></td>
 	<td>Address Line 2</td>
-	<td><input type="text" /></td>
+	<td><input type="text" name="ResAddress2" id="ResAddress2" /></td>
   </tr>
   <tr>
     <td>Residance Landmark</td>
-	<td><input type="text" /></td>
+	<td><input type="text" name="ResLand" id="ResLand"/></td>
 	<td>Date Of Birth</td>
-	<td><input type="date" /></td>
+	<td><input type="text" name="DOB" id="DOB" required /></td>
   </tr>
+ 
   <tr>
-    <td>City</td>
-	<td><input type="text" /></td>
-	<td>Pincode</td>
-	<td><input type="text" /></td>
+    <td>Residence Type</td>
+	<td><select class="form-control drop-arr select-sty" name="ResType" id="ResType" required>
+					   <option disabled selected  value="">Residence Type*</option>
+					        <option value="1">Owned by Self-Spouse</option>
+						    <option value="2">Owned by Parents/Sibling</option>
+						    <option value="3">Owned by Relative</option>
+						    <option value="4">Rented with Family</option>
+						    <option value="5">Rented with Friends</option>
+						    <option value="6">Rented- Staying Alone</option>
+						    <option value="7">Guest House</option>
+						    <option value="8">Hostel</option>
+						    <option value="9">Company Lease</option>
+						    
+					</select></td>
+
+    <td>Living Since</td>
+	<td><input type="text" class="lastReportedsince" name="CurResSince" id="CurResSince" required /></td>
   </tr>
+
+  <tr>
+    
+	<td>Pincode</td>
+	<td><input type="text" name="ResPIN" id="ResPIN" required/></td>
+  </tr>
+  
 </table>
     <br>
 
 	<h4 class="text-center bg-info pad">Employment & Income Details</h4>
 	<br>
 	<table width="100%" border="1" class="tbl table-striped">
+	 <tr>
+    <td>Company Name</td>
+	<td><input type="text" name="CompanyName" id="CompanyName" required /></td>
+	
+  </tr>
+
   <tr>
     <td>When did You Join This Comapny</td>
-	<td><input type="text" /></td>
+	<td><input type="text" class="lastReporteddoj" name="CurCmpnyJoinDt" id="CurCmpnyJoinDt" required /></td>
 	<td>Total Work Experience</td>
-	<td><input type="text" /></td>
+	<td><input type="text" name="TotWrkExp" id="TotWrkExp" onkeypress="return fnAllowNumeric(event)" required/></td>
+
   </tr>
 
   <tr>
     <td>Ofice Address 1</td>
-	<td><input type="text" /></td>
+	<td><input type="text" name="OffAddress1" id="OffAddress1" required /></td>
 	<td>Ofice Address 2</td>
-	<td><input type="text" /></td>
+	<td><input type="text" name="OffAddress2" id="OffAddress2" required/></td>
   </tr>
   <tr>
-    <td>Office State</td>
-	<td><input type="text" /></td>
+    <td>Organization Category</td>
+	<td><select class="form-control drop-arr select-sty" name="OrgCategory"" id="OrgCategory"" required>
+					   <option disabled selected  value="">Organization Category*</option>
+					        <option value="1">Public Ltd</option>
+						    <option value="2">Private Ltd</option>
+						    <option value="3">MNC</option>
+						    <option value="4">Central/State Govt</option>
+						    <option value="5">Proprietorship</option>
+						    <option value="6">LLP</option>
+						    <option value="7">Partnership firm</option>
+						    <option value="8">Others including Society/Trust/AOP</option>
+					</select></td>
 	<td>Office City</td>
-	<td><input type="text" /></td>
+	<td><input type="text" name="OffCity" id="OffCity" required /></td>
   </tr>
   <tr>
     <td>Pincode</td>
-	<td><input type="text" /></td>
+	<td><input type="text" name="OffPIN" id="OffPIN" onkeypress=" return fnAllowNumeric(event)" maxlength="6" required  /></td>
 	<td>Phone No.</td>
-	<td><input type="text" /></td>
+	<td><input type="text" name="OffPhone" id="OffPhone" onkeypress="return fnAllowNumeric(event)" maxlength="10" required /></td>
   </tr>
   <tr>
     <td>Pancard</td>
-	<td><input type="text" /></td>
+	<td><input type="text" name="PAN" id="PAN" oninput="pan_card('PAN')" maxlength="10" required /></td>
+	<span id="pan_number" style="display:none;color: red;">Oops.Please Enter Valid Pan Number.!!</span>
+	<td>Qualification</td>
+	<td><select class="form-control drop-arr select-sty" name="Qualification" id="Qualification" required>
+					   <option disabled selected  value="">Qualification*</option>
+					        <option value="1">Under Graduate</option>
+						    <option value="2">Graduate</option>
+						    <option value="3">Post Graduate</option>
+						    <option value="4">Professional</option>
+						    <option value="9999">Others</option>
+					</select></td>
 	<td></td>
 	<td></td>
   </tr>
+  
 </table>
 <div class="col-md-12">
 <br>
 <input type="checkbox" name="check" required /> I have read the terms & Conditions and
 </div>
 <br>
-<button class="btn btn-primary btn-outline with-arrow animate-box fadeInUp animated">Submit my Application<i class="icon-arrow-right"></i></button>
-</form>
+<button class="btn btn-primary btn-outline with-arrow animate-box fadeInUp animated" id="submit_application">Submit my Application<i class="icon-arrow-right"></i></button>
 </div>
 	</div>
-	
+	</form>
 	</div>
 	
     
@@ -295,11 +283,10 @@
     
     
    
-<<<<<<< HEAD
    <!--Step 3 -->
    
    
-   <div class="row" >
+   <div id="get_quotes" class="row" >
 				<div class="col-md-12 text-left fh5co-heading animate-box fadeInUp animated">
 					<h2 class="pad">Personal Loan - Get Quote </h2>
 					
@@ -308,48 +295,38 @@
 				<div class="col-md-12 white-bg comp-pg">
 				<div class="col-md-3"></div>
 				<div class="col-md-6">
-					<h2 class="head-rbl">Move Slider to Customize Your Loan Amount</h2>
-					<div class="col-md-6"><div class="amount"><h3 class="text-center text-info pad">Amount:<b> 300000</b></h3>
-                    
-					<select class="select11 bg-info drop-arr select-sty">
-					   <option>1 Lakh</option>
-					   <option>2 Lakh</option>
-					   <option>3 Lakh</option>
-					   <option>4 Lakh</option>
-					   <option>5 Lakh</option>
-					</select>
-					</div></div>
-					<div class="col-md-6"><div class="amount"><h3 class="text-center text-info pad">Tenure:<b> 5</b></h3>
-					
-					<select class="select11 bg-info drop-arr select-sty">
-					   <option>1 Year</option>
-					   <option>2 Years</option>
-					   <option>3 Years</option>
-					   <option>4 Years</option>
-					   <option>5 Years</option>
-					</select>
+					<!-- <h2 class="head-rbl">Move Slider to Customize Your Loan Amount</h2> -->
+					<div class="col-md-6"><div class="amount"><h3 class="text-center text-info pad">Loan amount:</h3>
+                   <input type="text" class="form-control" placeholder="Loan amount*" name="loan_amount" id="loan_amount" minlength="5" maxlength="9" onkeypress="return fnAllowNumeric(event)" required=""></div>
+					</div>
+					<input type="hidden" name="roi" id="roi" value="0.013">
+					<input type="hidden" name="fee" id="fee" value="0.02">
+					<div id="" class="col-md-6"><div class="amount"><h3 class="text-center text-info pad">Tenure:</h3>
+					<input type="text" class="form-control" placeholder="Loan Tenure*" name="tenure" id="tenure" maxlength="2" onkeypress="return fnAllowNumeric(event)" required="">
 					</div></div>
 				</div>
 				
 				<div class="col-md-12 white-bg">
 				<table class="table table-bordered mrg-top box-shadow">
 				 <tr class="bg-info pad">
-				   <td><b>Max Eligiblity</b></td>
+				   <td><b>Loan Eligibilty</b></td>
+				  <!--   <td><b>Max Eligiblity</b></td> -->
 				   <td><b>Rate Type</b></td>
 				   <td><b>Best Rate</b></td>
 				   <td><b>EMI</b></td>
 				   <td><b>Processing Fee</b></td>
-				   <td><b>Total Savings</b></td>
+				  <!--  <td><b>Total Savings</b></td> -->
 				   <td></td>
 				 </tr>
 				 <tr>
-				   <td>4,00,000</td>
+				   <td> <input type="text" class="form-input-new form-control" name="loanamount" id="loanamount" minlength="6" maxlength="9" placeholder="Loan Required" required onkeypress="return fnAllowNumeric(event)"></td>
 				   <td>Fixed</td>
-				   <td><span><strike>16%</strike></span> <span>15%</span></td>
-				   <td>8900</td>
-				   <td>6000</td>
-				   <td><span class="pad1">You Have Save Rs.5400</span></td>
-				   <td><button class="btn btn-primary btn-outline animate-box fadeInUp animated">APPLY</button></td>
+				   <!-- <td><span><strike>16%</strike></span> <span>15%</span></td> -->
+				   <td><span>16%</span></td>
+				   <td><span id="monthly_installment"></span></td>
+				   <!-- <td>6000</td> -->
+				   <td><span>2%</span></td>
+				   <td><a class="btn btn-primary btn-outline animate-box fadeInUp animated" id="apply">APPLY</a></td>
 				 </tr>
 				</table>
 				</div>
@@ -369,9 +346,6 @@
 				</div>
 			</div> 
     
-=======
-  
->>>>>>> e45c3d1f684578ccec5cb5a1a5f180089f0cf07f
     
     
     
@@ -441,12 +415,46 @@
     
       if(! $('#rbl_personal_loan_form').valid())
        {
-               // alert('not valid');
-               alert("You must agree to the terms first.");
+              
+              alert("You must agree to the terms first.");
         }
         else
-        {
-          $('#customer_details_form').show();
+        {   
+        	var city = $('#city').val();
+        	console.log(city);
+        	$('#ResCity').val(city);
+        	
+        	
+        	var name = $('#first_name').val();
+        	console.log(name);
+        	$('#FirstName').val(name);
+
+        	var dob = $('#dob').val();
+        	console.log(dob);
+        	$('#DOB').val(dob);
+
+        	var employment_type =$('#employ_type').val();
+        	console.log(employment_type);
+        	$('#EmpType').val(employment_type);
+
+        	var income =$('#income').val();
+        	console.log(income);
+        	$('#NMI').val(income);
+
+        	var emi =$('#emi').val();
+        	console.log(emi);
+        	$('#EmiCurPay').val(emi);
+
+        	var email_id =$('#email').val();
+        	console.log(email_id);
+        	$('#Email').val(email_id);
+
+        	var mob =$('#mobile_no').val();
+        	console.log(mob);
+        	$('#Mobile').val(mob);
+              
+           //    $('#get_quotes').show();
+	          // $('#details').hide();
         }
 	});
 </script>
@@ -472,6 +480,151 @@
    },
 
  });
-
- 
 </script>
+
+<script type="text/javascript">
+	
+	$(document).ready(function(){
+    $("#tenure").blur(function(){
+    	var amt=$('#loan_amount').val();
+    	var tenure=$('#tenure').val()*12;
+        var roi = 0.013;
+        var emi  = amt * roi * (Math.pow(1 + roi, tenure) / (Math.pow(1 + roi, tenure) - 1));
+        var installment =Math.round(emi);
+        console.log(installment);
+        $('#monthly_installment').empty().append(installment);
+        $('#amount').empty().append(amt);
+        $('#period').empty().append(tenure);
+        $('#to_pay').empty().append(installment);
+    });
+});
+</script>
+
+<script type="text/javascript">
+	// $('#apply').click(function(){
+	// 	alert('okae');
+ //     $('#customer_details_form').show();
+ //     $('#get_quotes').hide();
+	// });
+	$('#apply').click(function(){
+      alert('okae');
+
+      var loanamount =$('#loan_amount').val();
+      console.log(loanamount);
+      $('#LnAmt').val(loanamount);
+
+      var roi =$('#roi').val();
+       console.log(roi);
+      $('#IRR').val(roi);
+
+      var tenure =$('#tenure').val();
+       console.log(tenure);
+      $('#TnrMths').val(tenure);
+
+      var process_fee =$('#fee').val();
+       console.log(process_fee);
+      $('#ProcFee').val(process_fee);
+
+
+      // $('#customer_details_form').show();
+      // $('#get_quotes').hide();
+      // $('#details').hide();
+	});
+</script>
+
+<script type="text/javascript">
+ 
+  $(document).ready(function()
+{
+    function update()
+    {
+      if(! $("#loan_amount").val()){
+          $("#loanamount").val('');
+      }else{
+        var cost = parseFloat($("#loan_amount").val());
+        console.log(cost);
+        var total = (cost);
+       
+        console.log(total);
+        $("#loanamount").val(total);
+      }
+    }
+    $(document).on("change, keyup", "#loan_amount", update);
+});
+</script>
+
+<script type="text/javascript">
+    var d = new Date();
+    var year = d.getFullYear() ;
+    d.setFullYear(year);
+
+    $(".lastReporteddoj").datepicker({ dateFormat: "yy-mm-dd",
+      changeMonth: true,
+      changeYear: true,
+      maxDate: year,
+      minDate: "-100Y",
+      yearRange: '-100:' + year + '',
+      defaultDate: d
+    });
+</script>
+
+<script type="text/javascript">
+    var d = new Date();
+    var year = d.getFullYear() ;
+    d.setFullYear(year);
+
+    $(".lastReportedsince").datepicker({ dateFormat: "yy-mm-dd",
+      changeMonth: true,
+      changeYear: true,
+      maxDate: year,
+      minDate: "-100Y",
+      yearRange: '-100:' + year + '',
+      defaultDate: d
+    });
+</script>
+
+<script type="text/javascript">
+    function pan_card(obj,val){
+        // console.log(obj);
+        if(obj=='PAN' ){
+                   var str =$('#PAN').val();
+                   var pancardPattern = /^([a-zA-Z]{5})(\d{4})([a-zA-Z]{1})$/;
+                   var res = str.match(pancardPattern);
+                   if(res){
+                     // console.log('Pancard is valid one.!!');
+                        $('#pan_number').hide();
+
+                  }else{
+                    // console.log('Oops.Please Enter Valid Pan Number.!!');
+                    $('#pan_number').show();
+
+                    return false;
+                  }
+                  
+    }
+    }
+    </script>
+
+    <script type="text/javascript">
+    	$('#submit_application').click(function(e){
+         event.preventDefault();
+    		alert('okae');
+          
+      if(! $('#customer_details_form').valid())
+       {
+               alert('not valid');
+        }
+        else
+        {
+          $.ajax({  
+         type: "POST",  
+         url: "<?php echo e(URL::to('rbl-personal-loan-submit')); ?>",
+         data : $('#customer_details_form').serialize(),
+         success: function(msg){
+              console.log(msg);
+              
+        }  
+      });   
+     }
+    	});
+    </script>

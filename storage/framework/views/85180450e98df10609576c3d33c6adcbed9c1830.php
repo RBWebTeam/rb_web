@@ -180,19 +180,25 @@
 					var returnedData = JSON.parse(msg);
 					var status_id=returnedData.Status;
 					var error=returnedData.Errorinfo;
+					var mobile=$('#mobile').val();
+					var card=$('#cc_applied').val();
 					if(status_id==0){
 						e_id=returnedData.Errorcode;
 						status="Ooops! Error occured.";
 						if(e_id)
-						error=get_rbl_error(e_id);
+						{
+							error=get_rbl_error(e_id);
+						}
 						
 					}else if(status_id==1){
-						status="Sucessfull";
-						reason=returnedData.ReferenceCode;
-					
-					}else if(status_id==2){
-						status="Sucessfull Refered";
+						status="Successful";
 						error=returnedData.ReferenceCode;
+						
+						window.href='http://erp.rupeeboss.com/Credit_Card_Upload_Docs.aspx?App_Id="'+error+'"&CardType='+card+'&MobileNo="'+mobile+'';
+					}else if(status_id==2){
+						status="Successful Referred";
+						error=returnedData.ReferenceCode;
+						window.href='http://erp.rupeeboss.com/Credit_Card_Upload_Docs.aspx?App_Id="'+error+'"&CardType='+card+'&MobileNo="'+mobile+'';
 					}else{
 						status="Rejected";
 						error=returnedData.ReferenceCode;

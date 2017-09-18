@@ -47,3 +47,4 @@ Route::post('lendingkart-docs','ApiController@test_document_upload')
 //working capital-emi-calculator
 Route::post('working-capital-emi-calculator-api','CalculatorController@working_calculator');
 Route::post('revise-calculation','MobileApiController@revise_calculation');
+Route::post('bussiness-loan-quote','ApiController@bussiness_loan_quote');

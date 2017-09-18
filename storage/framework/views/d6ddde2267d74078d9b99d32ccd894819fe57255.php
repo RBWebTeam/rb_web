@@ -1349,17 +1349,17 @@
 
 <script type="text/javascript">
   function mail(obj,val){
-    // //console.log(obj);
+    // console.log(obj);
     if(obj=='EmailID' ){
                    var str =$('#EmailID').val();
                    var emailPattern = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/; 
                    var res = str.match(emailPattern);
                    if(res){
-                     // //console.log('Pancard is valid one.!!');
+                     // console.log('Pancard is valid one.!!');
                       $('#email').hide();
 
                   }else{
-                    // //console.log('Oops.Please Enter Valid Pan Number.!!');
+                    // console.log('Oops.Please Enter Valid Pan Number.!!');
                     $('#email').show();
 
                     return false;
@@ -1368,17 +1368,17 @@
   }
 }
    function co_mail(obj,val){
-    // //console.log(obj);
+    // console.log(obj);
     if(obj=='CoPersonalEmailID' ){
                    var str =$('#CoPersonalEmailID').val();
                    var emailPattern = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/; 
                    var res = str.match(emailPattern);
                    if(res){
-                     // //console.log('Pancard is valid one.!!');
+                     // console.log('Pancard is valid one.!!');
                       $('#co_email').hide();
 
                   }else{
-                    // //console.log('Oops.Please Enter Valid Pan Number.!!');
+                    // console.log('Oops.Please Enter Valid Pan Number.!!');
                     $('#co_email').show();
 
                     return false;
@@ -1390,17 +1390,17 @@
 
 <script type="text/javascript">
   function office_email(obj,val){
-    // //console.log(obj);
+    // console.log(obj);
     if(obj=='OfficeEmailID' ){
                    var str =$('#OfficeEmailID').val();
                    var emailPattern = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/; 
                    var res = str.match(emailPattern);
                    if(res){
-                     // //console.log('Pancard is valid one.!!');
+                     // console.log('Pancard is valid one.!!');
                       $('#office_email').hide();
 
                   }else{
-                    // //console.log('Oops.Please Enter Valid Pan Number.!!');
+                    // console.log('Oops.Please Enter Valid Pan Number.!!');
                     $('#office_email').show();
 
                     return false;
@@ -1465,7 +1465,7 @@ $(document).ready(function(){
             term : request.term
           },
           success: function(data) {
-           // //console.log(data);
+           // console.log(data);
 
             response(data);
             
@@ -1494,17 +1494,17 @@ $(document).ready(function(){
 
 <script type="text/javascript">
     function aadhar(obj,val){
-        // //console.log(obj);
+        // console.log(obj);
         if(obj=='AadhaarNumber' ){
                    var str =$('#AadhaarNumber').val();
                    var aadharcardPattern = /^\d{4}\d{4}\d{4}$/;
                    var res = str.match(aadharcardPattern);
                    if(res){
-                     // //console.log('Aadhar No. is valid one.!!');
+                     // console.log('Aadhar No. is valid one.!!');
                         $('#aadhar_number').hide();
 
                   }else{
-                    // //console.log('Oops.Please Enter Valid Aadhar No..!!');
+                    // console.log('Oops.Please Enter Valid Aadhar No..!!');
                     $('#aadhar_number').show();
 
                     return false;
@@ -1513,17 +1513,17 @@ $(document).ready(function(){
     }
 }
         function co_aadhar(obj,val){
-        // //console.log(obj);
+        // console.log(obj);
         if(obj=='CoAadhaarNumber' ){
                    var str =$('#CoAadhaarNumber').val();
                    var aadharcardPattern = /^\d{4}\d{4}\d{4}$/;
                    var res = str.match(aadharcardPattern);
                    if(res){
-                     // //console.log('Aadhar No. is valid one.!!');
+                     // console.log('Aadhar No. is valid one.!!');
                         $('#co_aadhar_number').hide();
 
                   }else{
-                    // //console.log('Oops.Please Enter Valid Aadhar No..!!');
+                    // console.log('Oops.Please Enter Valid Aadhar No..!!');
                     $('#co_aadhar_number').show();
 
                     return false;
@@ -1534,17 +1534,17 @@ $(document).ready(function(){
 </script>
 <script type="text/javascript">
     function pan_card(obj,val){
-        // //console.log(obj);
+        // console.log(obj);
         if(obj=='PAN' ){
                    var str =$('#PAN').val();
                    var pancardPattern = /^([a-zA-Z]{5})(\d{4})([a-zA-Z]{1})$/;
                    var res = str.match(pancardPattern);
                    if(res){
-                     // //console.log('Pancard is valid one.!!');
+                     // console.log('Pancard is valid one.!!');
                         $('#pan_number').hide();
 
                   }else{
-                    // //console.log('Oops.Please Enter Valid Pan Number.!!');
+                    // console.log('Oops.Please Enter Valid Pan Number.!!');
                     $('#pan_number').show();
 
                     return false;
@@ -1558,11 +1558,11 @@ $(document).ready(function(){
                    var pancardPattern = /^([a-zA-Z]{5})(\d{4})([a-zA-Z]{1})$/;
                    var res = str.match(pancardPattern);
                    if(res){
-                     // //console.log('Pancard is valid one.!!');
+                     // console.log('Pancard is valid one.!!');
                         $('#co_pan_number').hide();
 
                   }else{
-                    // //console.log('Oops.Please Enter Valid Pan Number.!!');
+                    // console.log('Oops.Please Enter Valid Pan Number.!!');
                     $('#co_pan_number').show();
 
                     return false;
@@ -1616,7 +1616,7 @@ $(document).ready(function(){
     //      data: {
     //      "AadhaarNumber":aadhar,'_token': v_token},
     //      success: function(msg){
-    //     //console.log(msg);
+    //     console.log(msg);
             
           
 
@@ -1646,11 +1646,11 @@ $(document).ready(function(){
 
     })
         function populate_state(msg,id){
-            ////console.log(msg+" "+id);
+            //console.log(msg+" "+id);
              var mySelect = $('#'+id);
             $.each(msg, function(id,state) {
                
-                // //console.log(state.state_Name +"  " +state.state_id);
+                // console.log(state.state_Name +"  " +state.state_id);
                 mySelect.append(
                     $('<option></option>').val(state.state_id).html(state.state_Name)
                 );
@@ -1680,9 +1680,8 @@ $(document).ready(function(){
          '_token': v_token},
          success: function(msg){
 
-            // //console.log(msg);
+            // console.log(msg);
             if(param=='CityMaster'){
-             
                 populate_city_education(msg,'CurrentCity');
                 // populate_city_education(msg,'PermanentCity');
                 populate_city_education(msg,'city');
@@ -1719,7 +1718,7 @@ $(document).ready(function(){
 
     });
          function populate_city_education(msg,id){
-             
+            // console.log(id);
              var mySelect = $('#'+id);
             $.each(msg, function(id,city) {
                 mySelect.append(
@@ -1755,21 +1754,21 @@ var global_tenure=0;
             $('#Eligibility_details').show();
             
             var email_address = $('#EmailID').val();
-            // //console.log(email_address);
+            // console.log(email_address);
             $('#PersonalEmailID').val(email_address);
 
             var mob_number = $('#Mob_Num').val();
             $('#MobileNo').val(mob_number);
 
             var stay_at = $('#city').val();
-            // //console.log(stay_at);
+            // console.log(stay_at);
             // $('#CurrentCity').val(stay_at);
             // $('#CurrentCity').closest( "span" ).addClass( "input--filled" );
             //$('#PermanentCity').val(stay_at);
             $('#City').val(stay_at);
             // var name= $('#Company_Name option:selected').text();
             var name = $('#Company_Name').val();
-            // //console.log(name);
+            // console.log(name);
             var company =$('#Company_Name').attr('data-value');
             $('#CompanyNm').html(name);
             $('#CompanyName').val(name);
@@ -1796,9 +1795,9 @@ var global_tenure=0;
                 data : $('#iifl_express_loan').serialize(),
                 success: function(msg){
                         var data=msg[0];
-                        // //console.log(msg);
+                        // console.log(msg);
                         var result=loan_eligibility_calc(data.Max_Tenure,data.pf,data.roi,data.foir);
-                        // //console.log(msg);
+                        // console.log(msg);
                 
                         
     }  
@@ -1807,8 +1806,8 @@ var global_tenure=0;
 
     });
     function loan_eligibility_calc(tenure,pf,roi,foir){
-        // //console.log(foir);
-        // //console.log(tenure+"  " +pf+ "  "+roi);
+        // console.log(foir);
+        // console.log(tenure+"  " +pf+ "  "+roi);
         var processing_fee =pf;
         $('#fee').empty().append(processing_fee);
         $('#Processingfee').val(processing_fee);
@@ -1817,26 +1816,26 @@ var global_tenure=0;
         var rate =roi/12/100;
         var int =roi;
         $('#interest').empty().append(int);
-        // //console.log(period);
+        // console.log(period);
         var salary=$('#Monthly_Salary').val();
         var obligation=$('#Monthly_Obligation').val();
-        // //console.log(salary);
-        // //console.log(obligation);
+        // console.log(salary);
+        // console.log(obligation);
 
         var foir_calc = (salary)*foir/100;
-        // //console.log(foir_calc);
+        // console.log(foir_calc);
         var max_emi = foir_calc-obligation;
-        // //console.log(max_emi);
+        // console.log(max_emi);
         $('#EMI').val(max_emi);
          $('#you_have_to_pay').empty().append(max_emi);
 
          global_tenure=tenure;
         $('#tenure').val(tenure);
         var a =(rate*(Math.pow(1 + rate,period) / (Math.pow(1 + rate,period) - 1)));
-         // //console.log(a);
+         // console.log(a);
         var amount =max_emi/a;
         var eligible_amount=Math.round(amount);
-        // //console.log(eligible_amount);
+        // console.log(eligible_amount);
         $('#eligible').empty().append(eligible_amount);
         global_eligible_amount=eligible_amount;
         $('#AppliedLoan').val(eligible_amount);
@@ -1866,7 +1865,7 @@ var global_tenure=0;
             var applied_loan=$('#AppliedLoan').val();
             var fee=$('#fee').text();
             var EMI=$('#EMI').val();
-            // //console.log(EMI);
+            // console.log(EMI);
             $('#Eligibility_details').hide();
             $('#Applicant_Details').show();
             $('#Amount').empty().append(applied_loan);
@@ -1929,7 +1928,7 @@ var global_tenure=0;
             
             
             var person_name =$('#FName').val();
-            // //console.log(person_name);
+            // console.log(person_name);
             $('#first_name').empty().append(person_name);
             var aadhar=$('#AadhaarNumber').val();
             $('#Aadharno').val(aadhar);
@@ -1943,7 +1942,7 @@ var global_tenure=0;
              success: function(msg){
                  $(".iframeloading").hide();
                 
-            ////console.log(msg);
+            console.log(msg);
 
              if (msg.head.status != "1") {
                  if($( "input[name=CoapplicantFlag]:checked" ).val()==1)
@@ -2015,7 +2014,7 @@ var global_tenure=0;
              url: "<?php echo e(URL::to('iifl-instant-eligibility')); ?>",
              data : $('#instant_form').serialize(),
              success: function(msg){
-                // //console.log(msg);
+                // console.log(msg);
                   $('#otp').hide();
                   $('#Instant_Approve').hide();   
                   $('#upload').show();
@@ -2028,13 +2027,13 @@ var global_tenure=0;
 $('#Applied, #Period').on('input', function () {
                
             var applied_loan = parseInt($('#Applied').val());
-            // //console.log(applied_loan);
+            // console.log(applied_loan);
             var no_of_days = parseFloat($('#Period').val());
-            // //console.log(applied_loan);
+            // console.log(applied_loan);
             var a = ($("input[name='ROI']").val());
-            // //console.log(a);
+            // console.log(a);
             var Rate = a/12/100;
-            // //console.log(Rate);
+            // console.log(Rate);
             var installment_iifl=applied_loan * Rate * (Math.pow(1 + Rate, no_of_days) / (Math.pow(1 + Rate, no_of_days) - 1));
             var installment =Math.round(installment_iifl);
             if(isNaN( installment) || installment=='Infinity'){
@@ -2065,7 +2064,7 @@ $('#Applied, #Period').on('input', function () {
          url: "<?php echo e(URL::to('iifl-aadhar-otp')); ?>",
          data : $('#aadharotp').serialize(),
          success: function(msg){
-            // //console.log(msg);
+            // console.log(msg);
          }  
       });   
         }
@@ -2087,7 +2086,7 @@ $('#Applied, #Period').on('input', function () {
          url: "<?php echo e(URL::to('iifl-aadhar-confirm-otp')); ?>",
          data : $('#confirm_aadharotp').serialize(),
          success: function(msg){
-              // //console.log(msg);
+              // console.log(msg);
         }  
       });   
         }
@@ -2106,7 +2105,7 @@ $('#Applied, #Period').on('input', function () {
          success: function(msg){
 
           var result=loan_eligibility(msg.body.ROI,msg.body.maxEmi,msg.body.maxTenure,msg.body.maxloanamt,msg.body.minTenure,msg.body.minloanamt,msg.body.processingfee,msg.body.offerstatus,msg.body.remarks,msg.body.prospectNo);
-            // //console.log(msg);
+            // console.log(msg);
         }  
       });   
        
@@ -2156,13 +2155,13 @@ $('#Applied, #Period').on('input', function () {
          var applied_loan =Math.round(maxloanamt);
          $("input[name='AppliedLoanamount']").val(applied_loan);
          $("#personal_loan_amount").empty().append(applied_loan);
-         // //console.log(maxloanamt);
+         // console.log(maxloanamt);
 
          var maxTenure = maxTenure/12;
           global_days =maxTenure;
          var tenure =Math.round(maxTenure);
          $("input[name='Tenure']").val(tenure);
-         // //console.log(maxTenure);
+         // console.log(maxTenure);
          $("#perid").empty().append(tenure);
 
          var maxEmi=maxEmi;
@@ -2200,7 +2199,7 @@ $('#Applied, #Period').on('input', function () {
           processData: false,
           contentType: false,
           success: function(msg){
-            // //console.log(msg);
+            // console.log(msg);
             if (msg.head.status == "1") {
                 
                 alert("Reason: "+status_description); 
@@ -2209,7 +2208,7 @@ $('#Applied, #Period').on('input', function () {
             }else{
                 $('#upload').hide();
               $('#financial_doc').show();
-                // //console.log(msg);
+                // console.log(msg);
             }
               
             
@@ -2240,7 +2239,7 @@ $('#Applied, #Period').on('input', function () {
           success: function(msg){
                 $('#financial_doc').hide();
                 $('#error').show();
-                 // //console.log(msg);
+                 // console.log(msg);
         }
         });
      } 
@@ -2248,9 +2247,9 @@ $('#Applied, #Period').on('input', function () {
 </script>
 <script type="text/javascript">
   function same_as_above(obj,val){
-     // //console.log(obj);
+     // console.log(obj);
      var atLeastOneIsChecked = $('#same_id:checkbox:checked').length > 0;
-     // //console.log(atLeastOneIsChecked);
+     // console.log(atLeastOneIsChecked);
      if (atLeastOneIsChecked == true) {
       // alert("ok");
 
@@ -2290,9 +2289,9 @@ $('#Applied, #Period').on('input', function () {
 
 <script type="text/javascript">
   function co_same_as_above(obj,val){
-    // //console.log(obj);
+    // console.log(obj);
      var atLeastOneIsChecked = $('#co_same_id:checkbox:checked').length > 0;
-     // //console.log(atLeastOneIsChecked);
+     // console.log(atLeastOneIsChecked);
     if (atLeastOneIsChecked == true) {
       // alert("ok");
 
@@ -2421,7 +2420,7 @@ $('#Applied, #Period').on('input', function () {
             var today = new Date();
             var new_dateString=mon+"/"+day+"/"+yr;
             var date_of_joining = new Date(new_dateString);
-            // //console.log(new_dateString+" "+date_of_joining+" "+today);
+            // console.log(new_dateString+" "+date_of_joining+" "+today);
             if(date_of_joining > today || date_of_joining=='Invalid Date'){
                  $('#CurrentWorkExp').val('');
                  $('#CurrentWorkExp').closest( "span" )
@@ -2429,7 +2428,7 @@ $('#Applied, #Period').on('input', function () {
                 return false;
             }
             var experience = today.getFullYear() - yr;
-            // //console.log(today.getDay());
+            // console.log(today.getDay());
             //as month start from 0 in js
             var m = today.getMonth()+1 - mon;
             var exp=[experience,m];
@@ -2443,7 +2442,7 @@ $('#Applied, #Period').on('input', function () {
             $('#joining_date').change(function(){
 
                 var exp= getAge($('#joining_date').val());
-                // //console.log(exp);
+                // console.log(exp);
                 if(exp){
 
                     $('#CurrentWorkExp').val((exp[0]*12)+exp[1]);
@@ -2455,7 +2454,7 @@ $('#Applied, #Period').on('input', function () {
 
         <script type="text/javascript">
             $('#CurrentPin').keyup(function(){
-                // //console.log($('#CurrentPin').val().length);
+                // console.log($('#CurrentPin').val().length);
                 if ($('#CurrentPin').val().length == 6) {
                     var pincode =$('#CurrentPin').val();
                     var v_token ="<?php echo e(csrf_token()); ?>";
@@ -2464,8 +2463,8 @@ $('#Applied, #Period').on('input', function () {
                         url: "<?php echo e(URL::to('iifl-pincode-status')); ?>",
                         data : {'_token': v_token,'CurrentPin':pincode},
                         success: function(msg){
-                            // //console.log(msg.City);
-                            // //console.log(msg.State);
+                            // console.log(msg.City);
+                            // console.log(msg.State);
                             if (msg.Status =="Fail" ) 
                             {
                                alert('Please Select City & State From Dropdown Provided.');
@@ -2495,7 +2494,7 @@ $('#Applied, #Period').on('input', function () {
         
         <script type="text/javascript">
             $('#PermanentPin').keyup(function(){
-                // //console.log($('#PermanentPin').val().length);
+                // console.log($('#PermanentPin').val().length);
                 if ($('#PermanentPin').val().length == 6) {
                     var pincode =$('#PermanentPin').val();
                     var v_token ="<?php echo e(csrf_token()); ?>";
@@ -2504,8 +2503,8 @@ $('#Applied, #Period').on('input', function () {
                         url: "<?php echo e(URL::to('iifl-permanent-pincode-status')); ?>",
                         data : {'_token': v_token,'PermanentPin':pincode},
                         success: function(msg){
-                            // //console.log(msg.City);
-                            // //console.log(msg.State);
+                            // console.log(msg.City);
+                            // console.log(msg.State);
                             if (msg.Status =="Fail" ) 
                             {
                                alert('Please Select City & State From Dropdown Provided.');
@@ -2535,7 +2534,7 @@ $('#Applied, #Period').on('input', function () {
 
         <script type="text/javascript">
             $('#CoCurrentPin').keyup(function(){
-                // //console.log($('#CoCurrentPin').val().length);
+                // console.log($('#CoCurrentPin').val().length);
                 if ($('#CoCurrentPin').val().length == 6) {
                     var pincode =$('#CoCurrentPin').val();
                     var v_token ="<?php echo e(csrf_token()); ?>";
@@ -2544,9 +2543,9 @@ $('#Applied, #Period').on('input', function () {
                         url: "<?php echo e(URL::to('iifl-co-pincode-status')); ?>",
                         data : {'_token': v_token,'CoCurrentPin':pincode},
                         success: function(msg){
-                            // //console.log(msg.Status);
-                            // //console.log(msg.City);
-                            // //console.log(msg.State);
+                            // console.log(msg.Status);
+                            // console.log(msg.City);
+                            // console.log(msg.State);
                             if (msg.Status =="Fail" ) 
                             {
                                alert('Please Select City & State From Dropdown Provided.');
@@ -2575,7 +2574,7 @@ $('#Applied, #Period').on('input', function () {
 
         <script type="text/javascript">
             $('#CompanyPin').keyup(function(){
-                // //console.log($('#CompanyPin').val().length);
+                // console.log($('#CompanyPin').val().length);
                 if ($('#CompanyPin').val().length == 6) {
                     var pincode =$('#CompanyPin').val();
                     var v_token ="<?php echo e(csrf_token()); ?>";
@@ -2584,9 +2583,9 @@ $('#Applied, #Period').on('input', function () {
                         url: "<?php echo e(URL::to('iifl-company-pincode-status')); ?>",
                         data : {'_token': v_token,'CompanyPin':pincode},
                         success: function(msg){
-                            // //console.log(msg.Status);
-                            // //console.log(msg.City);
-                            // //console.log(msg.State);
+                            // console.log(msg.Status);
+                            // console.log(msg.City);
+                            // console.log(msg.State);
                             if (msg.Status =="Fail" ) 
                             {
                                alert('Please Select City & State From Dropdown Provided.');

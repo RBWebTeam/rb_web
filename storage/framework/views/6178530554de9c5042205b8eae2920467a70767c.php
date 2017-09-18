@@ -1,4 +1,4 @@
-@include('layout.header')
+<?php echo $__env->make('layout.header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 
 <div id="fh5co-hero">
 	<div class="container">
@@ -11,7 +11,7 @@
 					
 </div>
 				<div class="col-md-6">
-              <img src="{{url('images/rbl_personal_loan.jpg')}}"  width="570" class="img-responsive"/>
+              <img src="<?php echo e(url('images/rbl_personal_loan.jpg')); ?>"  width="570" class="img-responsive"/>
 			  <div>
 			    <ul class="text-left pad1 ull">
 				    <li>Loan amount from Rs.1 Lakh up to Rs.20 Lakhs.</li>
@@ -100,7 +100,8 @@
        <div class="col-md-2"></div>
 	<div class="col-md-8" >
 	 <form id="customer_details_form" method="POST" style="display: none;">
-	  {{ csrf_field() }}
+	  <?php echo e(csrf_field()); ?>
+
 	
 <div class="col-md-12">
 <h2 class="pad">Personal Loan - Customer Details </h2>
@@ -357,8 +358,8 @@
             
 	</div>
 </div>
-@include('layout.footer')
-@include('layout.script')
+<?php echo $__env->make('layout.footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php echo $__env->make('layout.script', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 
 <div class="modal fade" tabindex="-1" role="dialog" id="rbl-popup">
   <div class="modal-dialog" role="document">
@@ -498,7 +499,7 @@
 <script type="text/javascript">   
 
  $.ajax({ 
-   url: "{{URL::to('rbl-city-master')}}",
+   url: "<?php echo e(URL::to('rbl-city-master')); ?>",
    method:"GET",
    success: function(datas)  
    {
@@ -654,14 +655,11 @@
         {
           $.ajax({  
          type: "POST",  
-         url: "{{URL::to('rbl-personal-loan-submit')}}",
+         url: "<?php echo e(URL::to('rbl-personal-loan-submit')); ?>",
          data : $('#customer_details_form').serialize(),
          success: function(msg){
-         	var returnedData = JSON.parse(msg);
-			var status_id=returnedData.Status;
-			var error=returnedData.Errorinfo;
-              console.log(msg.status_id);
-              if (status_id == "0") 
+              console.log(msg.Status);
+              if (msg.Status == "0") 
               	{
                   $('#rbl-popup').modal('show');
               	} 
@@ -679,7 +677,7 @@
     <script type="text/javascript">   
 
  $.ajax({ 
-   url: "{{URL::to('rbl-off-city-master')}}",
+   url: "<?php echo e(URL::to('rbl-off-city-master')); ?>",
    method:"GET",
    success: function(datas)  
    {

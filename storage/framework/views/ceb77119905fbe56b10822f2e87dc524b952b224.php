@@ -18,11 +18,12 @@ var scrollBottom = $(window).scrollTop() + $(window).height();
 
 $(window).scroll(function(){
       if($(this).scrollTop() > 50) {
-		
-		$('#fh5co-header').css({'background': '#fff'});     
+		$('.top-bg').hide(500);
+		$('#fh5co-header').css({'background': '#666'});   
+		$('#fh5co-header').css({'opacity': '0.9'});   
 		$('#fh5co-header nav ul li a').css({'color': '#fff'});
        } else if (scrollBottom  > 200) {
-		
+		$('.top-bg').show(500);
 		$('#fh5co-header').css({'background': '#ffffff'});
 		$('#fh5co-header nav ul li a').css({'color': 'rgba(0, 0, 0, 0.7)'});
       }

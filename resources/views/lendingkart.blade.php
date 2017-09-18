@@ -70,8 +70,17 @@
   margin-right: 0
 }
 .multiselect {height:42px;z-index:1000;}
- </style>
+
+
+@media only screen and (max-width: 768px) {
+.loan-head {
+	margin-top:0px;
+    width: 80%;
+	margin-bottom:40px;
 }
+}
+ </style>
+
 
 
 <div id="fh5co-hero">
@@ -261,7 +270,7 @@
                                         </div>
 
                                         <div class="col-md-4">
-                                            <input type="text" class="form-control" id="EMI_BEING_PAID" name="EMI_BEING_PAID" onkeypress="return fnAllowNumeric(event)" placeholder="Obligations">
+                                            <input type="text" class="form-control" id="EMI_BEING_PAID" name="EMI_BEING_PAID" value="0" onkeypress="return fnAllowNumeric(event)" placeholder="Obligations">
                                             
                                         </div>
 
@@ -284,7 +293,7 @@
                                         </div>
 
                                         <div class="col-md-4">
-                                            <input type="text" class="form-control" id="Gross_Annual_Income" name="Gross_Annual_Income" minlength="5" maxlength="9" onkeypress="return fnAllowNumeric(event)" placeholder="Gross Income" required>
+                                            <input type="text" class="form-control" id="Gross_Annual_Income" name="Gross_Annual_Income" maxlength="5" maxlength="9" onkeypress="return fnAllowNumeric(event)" placeholder="Gross Income" required>
                                             
                                         </div>
 
@@ -2574,15 +2583,6 @@ $(function() {
         $("#Proof_of_activity").val("");
     });
 </script>
-
-<!-- to get date dynamically -->
-<!-- <script type="text/javascript">
-var today = new Date();
-var dd = today.getDate();
-var mm = today.getMonth()+1; //January is 0!
-var yyyy = today.getFullYear();
-if(dd<10){dd='0'+dd;} if(mm<10){mm='0'+mm;} $('#date').val(dd+'-'+mm+'-'+yyyy);
-</script> -->
 
 
 

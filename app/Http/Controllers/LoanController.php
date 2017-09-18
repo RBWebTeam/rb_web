@@ -787,6 +787,7 @@ $url = $this::$url_static."/BankAPIService.svc/updateIIFLRevisedQuote";
      return response()->json( $obj);
     }
 
+
     public function rbl_personal_loan(){
   return view('rbl-personal-loan');
   }
@@ -830,5 +831,11 @@ $url = $this::$url_static."/BankAPIService.svc/updateIIFLRevisedQuote";
 
     echo json_encode($query);
   }   
+
+	
+	public function kotak_home_loan(){
+		return view('kotak-home-loan');
+		
+		}  
       
 }

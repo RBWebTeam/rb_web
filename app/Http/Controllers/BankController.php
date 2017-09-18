@@ -311,6 +311,13 @@ else{
           
     }
 
+
 	
+
+	
+	public function pay_online(){
+		return view('pay-online');
+	}
+
 
 }

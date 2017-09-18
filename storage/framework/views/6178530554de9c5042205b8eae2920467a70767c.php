@@ -249,7 +249,7 @@
     <td>Pincode</td>
 	<td><input type="text" name="OffPIN" id="OffPIN" onkeypress=" return fnAllowNumeric(event)" maxlength="6" required  /></td>
 	<td>Phone No.</td>
-	<td><input type="text" name="OffPhone" id="OffPhone" onkeypress="return fnAllowNumeric(event)" maxlength="10" required /></td>
+	<td><input type="text" name="OffPhone" id="OffPhone" onkeypress="return fnAllowNumeric(event)" maxlength="8" required /></td>
   </tr>
   <tr>
     <td>Pancard</td>
@@ -274,7 +274,7 @@
 <input type="checkbox" name="check" required /> I have read the terms & Conditions and
 </div>
 <br>
-<button class="btn btn-primary btn-outline with-arrow animate-box fadeInUp animated" id="submit_application">Submit my Application<i class="icon-arrow-right"></i></button>
+<a class="btn btn-primary btn-outline with-arrow animate-box fadeInUp animated" id="submit_application">Submit my Application<i class="icon-arrow-right"></i></a>
 </div>
 	</div>
 	</form>
@@ -302,7 +302,7 @@
                    <input type="text" class="form-control" placeholder="Loan amount*" name="loan_amount" id="loan_amount" minlength="5" maxlength="9" onkeypress="return fnAllowNumeric(event)" required=""></div>
 					</div>
 					<input type="hidden" name="roi" id="roi" value="0.013">
-					<input type="hidden" name="fee" id="fee" value="0.02">
+					<input type="hidden" name="fee" id="fee" value="2">
 					<div id="" class="col-md-6"><div class="amount"><h3 class="text-center text-info pad">Tenure:</h3>
 					<input type="text" class="form-control" placeholder="Loan Tenure*" name="tenure" id="tenure" maxlength="2" onkeypress="return fnAllowNumeric(event)" required="">
 					</div></div>
@@ -369,7 +369,7 @@
         <h4 class="modal-title">Confirmation Status</h4>
       </div>
       <div class="modal-body">
-        <h4><p id="modalerr"><h5 style="color: black">Thank You..!! Our Representative Will Contact You.<h5></p></h4>
+        <h4><p id="modalerr"><h5 style="color: black">Thank You..!! Our Representative Will Contact You.Your Status is<b><span id="rbl"></span></b>.<h5></p></h4>
         
       </div>
       
@@ -386,7 +386,7 @@
         <h4 class="modal-title">Confirmation Status</h4>
       </div>
       <div class="modal-body">
-        <h4><p id="modalerr"><h5 style="color: black">Oops..!! Something Went Wrong.<h5></p></h4>
+        <h4><p id="modalerr"><h5 style="color: black">Oops..!! You have been<b>Rejected</b><h5></p></h4>
         
       </div>
       
@@ -526,6 +526,7 @@
     	var amt=$('#loan_amount').val();
     	var tenure=$('#tenure').val()*12;
         var roi = 0.013;
+       
         var emi  = amt * roi * (Math.pow(1 + roi, tenure) / (Math.pow(1 + roi, tenure) - 1));
         var installment =Math.round(emi);
         console.log(installment);
@@ -550,7 +551,7 @@
       console.log(loanamount);
       $('#LnAmt').val(loanamount);
 
-      var roi =$('#roi').val();
+      var roi =16;
        console.log(roi);
       $('#IRR').val(roi);
 
@@ -644,12 +645,12 @@
 
     <script type="text/javascript">
     	$('#submit_application').click(function(e){
-         event.preventDefault();
-    		alert('okae');
-          
-      if(! $('#customer_details_form').valid())
+        // e.preventDefault();
+         // alert('okae');
+         if(! $('#customer_details_form').valid())
        {
-               alert('not valid');
+              alert("You must agree to the terms first.");
+              return false;
         }
         else
         {
@@ -658,25 +659,65 @@
          url: "<?php echo e(URL::to('rbl-personal-loan-submit')); ?>",
          data : $('#customer_details_form').serialize(),
          success: function(msg){
-              console.log(msg.Status);
-              if (msg.Status == "0") 
-              	{
-                  $('#rbl-popup').modal('show');
-              	} 
-              	else 
-              	{
-                  $('#rbl-popup-error').modal('show');
-              	}
-              
-        }  
-      });   
-     }
-    	});
+         	var returnedData = JSON.parse(msg);
+         	console.log(returnedData);
+			var status_id=returnedData.Status;
+			var error=returnedData.Errorinfo;
+              console.log(status_id);
+               if(status_id==0){
+						e_id=returnedData.Errorcode;
+						status="Ooops! Error occured.";
+						if(e_id)
+						{
+							error=get_rbl_error(e_id);
+						}
+						
+					}else if(status_id==1){
+						$('#rbl').empty().append(returnedData.ReferenceCode);
+						$('#rbl-popup').modal('show');
+					}else if(status_id==4){
+						$('#rbl').empty().append(returnedData.ReferenceCode);
+						$('#rbl-popup-error').modal('show');
+					}else{
+						$('#rbl').empty().append(returnedData.ReferenceCode);
+						$('#rbl-popup-error').modal('show');
+					}
+
+					
+					  
+      }   
+     });
+    	}
+    });
+
+    	function get_rbl_error(id){
+			error='';
+			switch (id) {
+				case 1: 
+					error="INPUT OUT OF MASTERS RANGE";
+					break;
+				case 2: 
+					error="VALIDATION ERROR";
+					break;
+				case 3: 
+					error="INPUT NOT IN VALID DATA FORMAT (SPECIAL CHARACTERS etc)";
+					break;
+				case 4:
+					error="SYSTEM UNAVAILABLE";
+					break;
+				case 5: 
+					error="DECISION CENTER ERROR";
+					break;
+				case 6:
+					error="DUPLICATE APPLICATION";
+				 	break;
+			}
+				return error;
+		}
     </script>
 
     <script type="text/javascript">   
-
- $.ajax({ 
+    $.ajax({ 
    url: "<?php echo e(URL::to('rbl-off-city-master')); ?>",
    method:"GET",
    success: function(datas)  

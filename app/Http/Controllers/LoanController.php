@@ -786,6 +786,52 @@ $url = $this::$url_static."/BankAPIService.svc/updateIIFLRevisedQuote";
      // print_r($obj);exit();
      return response()->json( $obj);
     }
+
+
+    public function rbl_personal_loan(){
+  return view('rbl-personal-loan');
+  }
+
+  public function rbl_personal_loan_submit(Request $req){
+    // print_r($req->all());
+    $data=$req->all();
+    $data['DOB'] = date("d-m-Y", strtotime($req['DOB']));
+    $data['CurCmpnyJoinDt'] = date("d-m-Y", strtotime($req['DOB']));
+    $data['CurResSince'] = date("d-m-Y", strtotime($req['DOB']));
+    $data['brokerid']=Session::get('brokerid')?Session::get('brokerid'):'MAA=';
+    $data['empid']=Session::get('empid')?Session::get('empid'):'MAA=';
+    $data['source']=Session::get('source')?Session::get('source'):'MAA=';
+    $data['ConUniqRefCode']=substr(str_shuffle(str_repeat("0123456789", 15)), 0, 15);
+    
+    $post_data =json_encode( array("Authentication"=>array( "UserId"=>"RupeeBoss", "Password"=>"rupeeb@123" ), "PersonalLoan"=> $data));
+    // print_r($post_data);exit();
+    $url = $this::$url_static."/BankAPIService.svc/createRBLPersonalLoanReq";
+      $result=$this->call_json_data_api($url,$post_data);
+        $http_result=$result['http_result'];
+        $error=$result['error'];
+        $st=str_replace('"{', "{", $http_result);
+        $s=str_replace('}"', "}", $st);
+        $m=$s=str_replace('\\', "", $s);
+        $obj=json_decode($m);
+
+        return json_encode($obj);
+    }
+
+  
+
+ public function rbl_city_master(){
+    $query = DB::table('rbl_pl_city_master')->select('id', 'code', 'city')->get();
+
+    echo json_encode($query);
+  } 
+
+
+  public function rbl_off_city_master(){
+    $query = DB::table('rbl_pl_city_master')->select('id', 'code', 'city')->get();
+
+    echo json_encode($query);
+  }   
+
 	
 	public function kotak_home_loan(){
 		return view('kotak-home-loan');

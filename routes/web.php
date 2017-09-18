@@ -336,7 +336,11 @@ Route::post('demo-submit','TeamController@demo_submit');
 Route::post('demo-delete','TeamController@demo_delete');
 Route::post('demo-edit','TeamController@demo_edit');
 Route::post('xml','tribeController@xml');
-Route::get('rbl-personal-loan','BankController@rbl_personal_loan');
+Route::get('rbl-personal-loan','LoanController@rbl_personal_loan');
+Route::post('rbl-personal-loan-submit','LoanController@rbl_personal_loan_submit');
+Route::get('rbl-off-city-master','LoanController@rbl_off_city_master');
+Route::get('rbl-city-master','LoanController@rbl_city_master');
 Route::get('pay-online','BankController@pay_online');
 Route::get('kotak-home-loan','LoanController@kotak_home_loan');
+
 

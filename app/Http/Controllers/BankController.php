@@ -311,14 +311,13 @@ else{
           
     }
 
-	public function rbl_personal_loan(){
-		
-		 
-		 return view('rbl-personal-loan');
-	}
+
+	
+
 	
 	public function pay_online(){
 		return view('pay-online');
 	}
+
 
 }

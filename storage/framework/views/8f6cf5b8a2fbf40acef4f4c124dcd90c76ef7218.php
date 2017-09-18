@@ -1,4 +1,4 @@
-@include('layout.header')
+<?php echo $__env->make('layout.header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 
 
     <div class="container-fluid">
@@ -21,12 +21,12 @@
   <div class="carousel-inner" role="listbox">
 <!--  <div class="pull-right mar-tp ">
          <ul>
-		    <li><a href="{{URL::to('comfy')}}"><b>Rupeeboss Comfy</b></a></li>
-			<li><a href="{{URL::to('express-loan')}}"style="background:red;"><b>Express Loan</b></a></li>
-			<li><a href="{{URL::to('idfc')}}">Savings Account</a></li>
+		    <li><a href="<?php echo e(URL::to('comfy')); ?>"><b>Rupeeboss Comfy</b></a></li>
+			<li><a href="<?php echo e(URL::to('express-loan')); ?>"style="background:red;"><b>Express Loan</b></a></li>
+			<li><a href="<?php echo e(URL::to('idfc')); ?>">Savings Account</a></li>
 
-			<li><a href="{{URL::to('home-loan')}}"><b>Pradhan Mantri Awas Yojana</b></a></li>
-			<!-- <li><a href="{{URL::to('contact-us')}}"><b>SME Car Leasing</b></a></li> 
+			<li><a href="<?php echo e(URL::to('home-loan')); ?>"><b>Pradhan Mantri Awas Yojana</b></a></li>
+			<!-- <li><a href="<?php echo e(URL::to('contact-us')); ?>"><b>SME Car Leasing</b></a></li> 
 		 </ul>
 </div> -->
 
@@ -34,73 +34,73 @@
     <div class="item active">
 	<div class="slide-txt">
 
-	<!--<img src="{{URL::to('../images/home-ic.png')}}" class="center-block"> --->
+	<!--<img src="<?php echo e(URL::to('../images/home-ic.png')); ?>" class="center-block"> --->
 	<h2>Home Loan </h2>
    <h4>Choose the right Home Loan for you ...!!</h4>
    <br>
    
-   <a href="{{URL::to('home-loan')}}"><button class="btn btn-primary btn-outline sidebar-submit btn-more">VIEW MORE</button></a>
+   <a href="<?php echo e(URL::to('home-loan')); ?>"><button class="btn btn-primary btn-outline sidebar-submit btn-more">VIEW MORE</button></a>
    </div>
-      <img src="{{URL::to('images/slide_1.jpg')}}" alt="Home Loan Banner" title="Home Loan " class="slide-hm"> 
+      <img src="<?php echo e(URL::to('images/slide_1.jpg')); ?>" alt="Home Loan Banner" title="Home Loan " class="slide-hm"> 
     </div>
 
     <div class="item">
 	<div class="slide-txt">
 
-	<!-- <img src="{{URL::to('../images/personal-ic.png')}}" class="center-block"> -->
+	<!-- <img src="<?php echo e(URL::to('../images/personal-ic.png')); ?>" class="center-block"> -->
 	<h2>Personal Loan </h2>
    <h4>Finance Your Dreams...!!</h4>
    <br>
-   <a href="{{URL::to('personal-loan')}}"><button class="btn btn-primary btn-outline sidebar-submit btn-more">VIEW MORE</button></a>
+   <a href="<?php echo e(URL::to('personal-loan')); ?>"><button class="btn btn-primary btn-outline sidebar-submit btn-more">VIEW MORE</button></a>
    </div>
-      <img src="{{URL::to('images/slide_2.jpg')}}" alt="Personal Loan Banner" title="Personal Loan " class="slide-hm">
+      <img src="<?php echo e(URL::to('images/slide_2.jpg')); ?>" alt="Personal Loan Banner" title="Personal Loan " class="slide-hm">
     </div>
 
    <!-- <div class="item">
 	<div class="slide-txt">
 	
-	<img src="{{URL::to('../images/lap-ic.png')}}"class="center-block">
+	<img src="<?php echo e(URL::to('../images/lap-ic.png')); ?>"class="center-block">
 	<h2>Loan Against Property</h2>
    <h4>Finding you a better Deal...!!</h4>
-   <a href="{{URL::to('loan-against-property')}}" class="btn btn-primary btn-lg btn-view">View More</a>
+   <a href="<?php echo e(URL::to('loan-against-property')); ?>" class="btn btn-primary btn-lg btn-view">View More</a>
    </div>
-      <img src="{{URL::to('images/slide_3.jpg')}}" alt="Loan Against Property " title="Loan Against Property " class="slide-hm">
+      <img src="<?php echo e(URL::to('images/slide_3.jpg')); ?>" alt="Loan Against Property " title="Loan Against Property " class="slide-hm">
     </div>
 
     <div class="item">
 	<div class="slide-txt">
 	
-	<img src="{{URL::to('../images/sme-ic.png')}}" class="center-block">
+	<img src="<?php echo e(URL::to('../images/sme-ic.png')); ?>" class="center-block">
 	<h2>SME Loan</h2>
 
    <h4>We Support Make in India..!!</h4>
-   <a href="{{URL::to('sme-working-capital')}}" class="btn btn-primary btn-lg btn-view">View More</a>
+   <a href="<?php echo e(URL::to('sme-working-capital')); ?>" class="btn btn-primary btn-lg btn-view">View More</a>
    </div>
-      <img src="{{URL::to('images/slide_4.jpg')}}" alt="SME Loan Banner" title="SME Loan " class="slide-hm">
+      <img src="<?php echo e(URL::to('images/slide_4.jpg')); ?>" alt="SME Loan Banner" title="SME Loan " class="slide-hm">
     </div>
 	
 	
 	<div class="item">
 	<div class="slide-txt" >
 
-	<img src="{{URL::to('../images/balance-ic.png')}}"class="center-block">
+	<img src="<?php echo e(URL::to('../images/balance-ic.png')); ?>"class="center-block">
 	<h4>Unsecured</h4>
 	<h2>Business Loan</h2>
    <h4>Experience on your side...!!</h4>
-   <a href="{{URL::to('business-loan')}}" class="btn btn-primary btn-lg btn-view">View More</a>
+   <a href="<?php echo e(URL::to('business-loan')); ?>" class="btn btn-primary btn-lg btn-view">View More</a>
 
    </div>
-      <img src="{{URL::to('images/slide_5.jpg')}}" alt="Business Loan Banner" title="Business Loan " class="slide-hm">
+      <img src="<?php echo e(URL::to('images/slide_5.jpg')); ?>" alt="Business Loan Banner" title="Business Loan " class="slide-hm">
     </div>
 	<div class="item">
 	<div class="slide-txt">
 	
-	<img src="{{URL::to('../images/car-ic.png')}}"class="center-block">
+	<img src="<?php echo e(URL::to('../images/car-ic.png')); ?>"class="center-block">
 	<h2>Car Loan</h2>
    <h4>Thinking of your comfort first !!</h4>
-   <a href="{{URL::to('car-loan')}}" class="btn btn-primary btn-lg btn-view">View More</a>
+   <a href="<?php echo e(URL::to('car-loan')); ?>" class="btn btn-primary btn-lg btn-view">View More</a>
    </div>
-      <img src="{{URL::to('images/slide_6.jpg')}}" alt="car-slider-img" title="car Loan " class="slide-hm">
+      <img src="<?php echo e(URL::to('images/slide_6.jpg')); ?>" alt="car-slider-img" title="car Loan " class="slide-hm">
     </div>
   </div> -->
 
@@ -119,11 +119,11 @@
 
 <div class="container-fluid slider-lnk">
 <ul>
-<li><h2 class="pad text-center"><a href="{{URL::to('comfy-sales')}}">Rupeeboss Comfy</a></h2></li>
-<li><h2 class="pad text-center"><a href="{{URL::to('express-loan')}}">Express Loan</a></h2></li>
-<li><h2 class="pad text-center"><a href="{{URL::to('savings-account')}}">Savings Account</a></h2></li>
-<li><h2 class="pad text-center"><a href="{{URL::to('home-loan')}}">Pradhan Mantri Awas Yojana</a></h2></li>
-<li><h2 class="pad text-center"><a href="{{URL::to('contact-us')}}">SME Car Leasing</a></h2></li>
+<li><h2 class="pad text-center"><a href="<?php echo e(URL::to('comfy-sales')); ?>">Rupeeboss Comfy</a></h2></li>
+<li><h2 class="pad text-center"><a href="<?php echo e(URL::to('express-loan')); ?>">Express Loan</a></h2></li>
+<li><h2 class="pad text-center"><a href="<?php echo e(URL::to('savings-account')); ?>">Savings Account</a></h2></li>
+<li><h2 class="pad text-center"><a href="<?php echo e(URL::to('home-loan')); ?>">Pradhan Mantri Awas Yojana</a></h2></li>
+<li><h2 class="pad text-center"><a href="<?php echo e(URL::to('contact-us')); ?>">SME Car Leasing</a></h2></li>
 </ul>
 </div>
 	
@@ -133,67 +133,67 @@
 	<div class="profile-smdl">
 				<div class="profile-text-left">
 					
-					 <img src="{{URL::to('images/loan-icons/home-loan.png')}}" /> 
+					 <img src="<?php echo e(URL::to('images/loan-icons/home-loan.png')); ?>" /> 
 					<p>HOME LOAN</p>
 				</div>
 				<div class="profile-text-left">
-					<img src="{{URL::to('images/loan-icons/personal-loan.png')}}" />
+					<img src="<?php echo e(URL::to('images/loan-icons/personal-loan.png')); ?>" />
 					<p>PERSONAL LOAN</p>
 				</div>
 				<div class="profile-text-left">
-					<img src="{{URL::to('images/loan-icons/lap.png')}}"/>
+					<img src="<?php echo e(URL::to('images/loan-icons/lap.png')); ?>"/>
 					<p>Loan against Property</p>
 				</div>
 				<div class="profile-text-left">
-					<img src="{{URL::to('images/loan-icons/sme.png')}}" />
+					<img src="<?php echo e(URL::to('images/loan-icons/sme.png')); ?>" />
 					<p>SME Loan</p>
 				</div>
 				
 				<div class="profile-text-left">
-					<img src="{{URL::to('images/loan-icons/business.png')}}" />
+					<img src="<?php echo e(URL::to('images/loan-icons/business.png')); ?>" />
 					<p>Business Loan</p>
 				</div>
 				<div class="profile-text-left">
-					<img src="{{URL::to('images/loan-icons/car.png')}}" />
+					<img src="<?php echo e(URL::to('images/loan-icons/car.png')); ?>" />
 					<p>Car Loan</p>
 				</div>
 				<div class="profile-text-left">
-					<img src="{{URL::to('images/loan-icons/working-capital.png')}}" />
+					<img src="<?php echo e(URL::to('images/loan-icons/working-capital.png')); ?>" />
 					<p>Working Capital</p>
 				</div>
 				<div class="profile-text-left">
-					<img src="{{URL::to('images/loan-icons/car.png')}}" />
+					<img src="<?php echo e(URL::to('images/loan-icons/car.png')); ?>" />
 					<p>Used Car Loan</p>
 				</div>
 				<div class="profile-text-left red-bg1">
-					<img src="{{URL::to('images/loan-icons/express-loan.png')}}" />
+					<img src="<?php echo e(URL::to('images/loan-icons/express-loan.png')); ?>" />
 					<p>Express Loan</p>
 				</div>
 				<div class="profile-text-left">
-					<img src="{{URL::to('images/loan-icons/home-loan.png')}}" />
+					<img src="<?php echo e(URL::to('images/loan-icons/home-loan.png')); ?>" />
 					<p>Credit Cards</p>
 				</div>
 				
 				<div class="profile-text-left">
-					<img src="{{URL::to('images/loan-icons/emi-cal.png')}}" />
+					<img src="<?php echo e(URL::to('images/loan-icons/emi-cal.png')); ?>" />
 					<p>EMI Calculators</p>
 				</div>
 				
 				<div class="profile-text-left">
-					<img src="{{URL::to('images/loan-icons/balance-transfer.png')}}" />
+					<img src="<?php echo e(URL::to('images/loan-icons/balance-transfer.png')); ?>" />
 					<p>Balance Transfer</p>
 				</div>
 				
 				<div class="profile-text-left">
-					<img src="{{URL::to('images/loan-icons/credit-report.png')}}"  />
+					<img src="<?php echo e(URL::to('images/loan-icons/credit-report.png')); ?>"  />
 					<p>Free Credit Report</p>
 				</div>
 				<div class="profile-text-left">
-					<img src="{{URL::to('images/loan-icons/home-loan.png')}}" />
+					<img src="<?php echo e(URL::to('images/loan-icons/home-loan.png')); ?>" />
 					<p>Elite</p>
 				</div>
 				<div class="profile-text-left">
-					<img src="{{URL::to('images/loan-icons/home-loan.png')}}" />
+					<img src="<?php echo e(URL::to('images/loan-icons/home-loan.png')); ?>" />
 					<p>RB Life Style</p>
 				</div>
 				
@@ -210,7 +210,7 @@
 			<div class="dv-hr">
 				<div class="col-md-2 animate-box no-padding">
 					<div class="services">
-						<a class="anchor_decoration" href="{{URL::to('home-loan')}}">
+						<a class="anchor_decoration" href="<?php echo e(URL::to('home-loan')); ?>">
 						<div class="desc">
 						<i class="icon-home"></i>
 							<h3>Home Loan</h3>
@@ -221,7 +221,7 @@
 				</div>
 				<div class="col-md-2 animate-box no-padding">
 					<div class="services1 services">
-						<a class="anchor_decoration" href="{{URL::to('personal-loan')}}">
+						<a class="anchor_decoration" href="<?php echo e(URL::to('personal-loan')); ?>">
 						<div class="desc">
 						<i class="icon-user"></i>
 							<h3>Personal Loan</h3>
@@ -232,7 +232,7 @@
 				</div>
 				<div class="col-md-2 animate-box no-padding">
 					<div class="services2 services">
-						<a class="anchor_decoration" href="{{URL::to('loan-against-property')}}">
+						<a class="anchor_decoration" href="<?php echo e(URL::to('loan-against-property')); ?>">
 						<div class="desc">
 						<i class="icon-money"></i>
 							<h3>Loan against <br>Property</h3>
@@ -243,7 +243,7 @@
 				</div>
 				<div class="col-md-2 animate-box no-padding">
 					<div class="services3 services">
-						<a class="anchor_decoration" href="{{URL::to('sme-working-capital')}}">
+						<a class="anchor_decoration" href="<?php echo e(URL::to('sme-working-capital')); ?>">
 						<div class="desc">
 						<span  ><i class="sprite sprite-SME_icon marginauto"></i></span>
 							<h3>SME Loan</h3>
@@ -254,7 +254,7 @@
 				</div>
 				<div class="col-md-2 animate-box no-padding">
 					<div class="services4 services">
-						<a class="anchor_decoration" href="{{URL::to('business-loan')}}">
+						<a class="anchor_decoration" href="<?php echo e(URL::to('business-loan')); ?>">
 						<div class="desc">
 						<i class="icon-line-chart"></i>
 							<h3>Business <br> Loan </h3>
@@ -265,7 +265,7 @@
 				</div>
 				<div class="col-md-2 animate-box no-padding">
 					<div class="services5 services">
-						<a class="anchor_decoration" href="{{URL::to('car-loan')}}">
+						<a class="anchor_decoration" href="<?php echo e(URL::to('car-loan')); ?>">
 						<div class="desc">
 						<i class="icon-car"></i>
 							<h3>Car Loan</h3>
@@ -295,8 +295,8 @@
 				
 					<!-- <img src="images/Report.png" alt="Credit Report" title="Credit Report" class="img-responsive hidden-sm pad crd-rpt"> 
 			
-					<a class="tp-margin" href="{{URL::to('credit-report-otp')}}">Apply For FREE Credit Report</a>-->
-					<img src="{{URL::to('images/credit-report.png')}}" width="350"/>
+					<a class="tp-margin" href="<?php echo e(URL::to('credit-report-otp')); ?>">Apply For FREE Credit Report</a>-->
+					<img src="<?php echo e(URL::to('images/credit-report.png')); ?>" width="350"/>
 					</div>
 					
 					<br>
@@ -376,7 +376,7 @@
 			  <div class="col-md-9 padd-80 white-bg animate-box fadeInUp animated over-lap box-shadow">
 			   <div class="col-md-4 animate-box hov-brd">
 						<div>
-							 <div class="icon-style"><img src="{{URL::to('images/ico/01.png')}}" /></div>
+							 <div class="icon-style"><img src="<?php echo e(URL::to('images/ico/01.png')); ?>" /></div>
 							<div>
 						  <h5 class="head-5">Lower Rate</h5>
 							<p>We don't push, We give you plenty of options, solution & facts, its your call, your decision. We are only here to help you.</p>
@@ -385,7 +385,7 @@
 					</div>
 					 <div class="col-md-4 animate-box hov-brd">
 						<div>
-							 <div class="icon-style"><img src="{{URL::to('images/ico/02.png')}}" /></div>
+							 <div class="icon-style"><img src="<?php echo e(URL::to('images/ico/02.png')); ?>" /></div>
 							<div>
 						     <h5 class="head-5">Quick And Easy</h5>
 							<p>We don't push, We give you plenty of options, solution & facts, its your call, your decision. We are only here to help you.</p>
@@ -394,7 +394,7 @@
 					</div>
 					 <div class="col-md-4 animate-box hov-brd">
 						<div>
-							 <div class="icon-style"><img src="{{URL::to('images/ico/03.png')}}" /></div>
+							 <div class="icon-style"><img src="<?php echo e(URL::to('images/ico/03.png')); ?>" /></div>
 							<div>
 							<h5 class="head-5">No Payment Penalty</h5>
 							<p>We don't push, We give you plenty of options, solution & facts, its your call, your decision. We are only here to help you.</p>
@@ -407,7 +407,7 @@
 					
 					<div class="col-md-4 animate-box hov-brd">
 						<div>
-							 <div class="icon-style"><img src="{{URL::to('images/ico/04.png')}}" /></div>
+							 <div class="icon-style"><img src="<?php echo e(URL::to('images/ico/04.png')); ?>" /></div>
 							<div>
 						     <h5 class="head-5">Secure Process</h5>
 							<p>We don't push, We give you plenty of options, solution & facts, its your call, your decision. We are only here to help you.</p>
@@ -416,7 +416,7 @@
 					</div>
 					 <div class="col-md-4 animate-box hov-brd">
 						<div>
-							 <div class="icon-style"><img src="{{URL::to('images/ico/05.png')}}" /></div>
+							 <div class="icon-style"><img src="<?php echo e(URL::to('images/ico/05.png')); ?>" /></div>
 							<div>
 						     <h5 class="head-5">5-Minute Application</h5>
 							<p>We don't push, We give you plenty of options, solution & facts, its your call, your decision. We are only here to help you.</p>
@@ -425,7 +425,7 @@
 					</div>
 					 <div class="col-md-4 animate-box hov-brd">
 						<div>
-							 <div class="icon-style"><img src="{{URL::to('images/ico/06.png')}}" /></div>
+							 <div class="icon-style"><img src="<?php echo e(URL::to('images/ico/06.png')); ?>" /></div>
 							<div>
 							<h5 class="head-5">Only 3% Interest</h5>
 							<p>We don't push, We give you plenty of options, solution & facts, its your call, your decision. We are only here to help you.</p>
@@ -520,7 +520,8 @@
 				<h3>Talk to our experts to have all your questions answered</h3>
 				<br>
 				 <form name="talk_us_form" id="talk_us_form" method="post">
-          			{{ csrf_field() }}
+          			<?php echo e(csrf_field()); ?>
+
 		          		<input type="hidden" name="form" value="talk_to_us_form">
 		          		
 						<div class=" col-sm-offset-1 col-sm-4">
@@ -656,7 +657,7 @@
   <div class="carousel-inner carousel1" role="listbox">
   <div class="item active">
       <h3 class="title">Customers Speak</h3>
-<img src="{{URL::to('images/rahil.png')}}" alt="Tribe Logo" class="img-responsive user-ico" width="60px;" height="60px;" />							
+<img src="<?php echo e(URL::to('images/rahil.png')); ?>" alt="Tribe Logo" class="img-responsive user-ico" width="60px;" height="60px;" />							
 <p>I'm thankful of the services I have been offered by your staff.Looking forward for 
 more business.I would like to recommend about your services to my family and friends.  
  </p>
@@ -664,7 +665,7 @@ more business.I would like to recommend about your services to my family and fri
     </div>
     <div class="item">
       <h3 class="title">Customers Speak</h3>
-	<img src="{{URL::to('images/user-icon.png')}}" alt="Tribe Logo" class="img-responsive user-ico" width="60px;" height="60px;"/>				
+	<img src="<?php echo e(URL::to('images/user-icon.png')); ?>" alt="Tribe Logo" class="img-responsive user-ico" width="60px;" height="60px;"/>				
 <p> I found them professional, straightforward, and since they don’t push you to apply for a specific bank, they are impartial. On a long term basis one needs an intermediary as a one stop shop and these guys seems to be in the business for long term. Their experts follow up on time, give a frank advise, clarify everything so that one does not feel cheated and make a wise decision to save money. </p>
 
 <p class="align-right">Ashish Sharma</p>
@@ -674,7 +675,7 @@ more business.I would like to recommend about your services to my family and fri
 
     <div class="item">
     <h3 class="title">Customers Speak</h3>
-<img src="{{URL::to('images/user-icon.png')}}" alt="Tribe Logo" class="img-responsive user-ico" width="60px;" height="60px;"/>							
+<img src="<?php echo e(URL::to('images/user-icon.png')); ?>" alt="Tribe Logo" class="img-responsive user-ico" width="60px;" height="60px;"/>							
 <p> Thanks a lot for processing my personal loan in time. I would like to give you 
 special thanks for the service given by you. Your personal visits to my office 
 for all documentation and other queries saved my personal as well as official
@@ -685,7 +686,7 @@ time a lot. I appreciate your positive approach towards customer needs and satis
 
     <div class="item">
     <h3 class="title">Customers Speak</h3>
-<img src="{{URL::to('images/user-icon.png')}}" alt="Tribe Logo" class="img-responsive user-ico" width="60px;" height="60px;"/>							
+<img src="<?php echo e(URL::to('images/user-icon.png')); ?>" alt="Tribe Logo" class="img-responsive user-ico" width="60px;" height="60px;"/>							
 <p> Great Work. I appreciate your efforts for disbursement of my loan in time. Your strong followup and deep subject 
 knowledge helped me to get loan amount in time. Keep up the good work,expecting the same support from 
 you in future.
@@ -696,7 +697,7 @@ you in future.
 
     <div class="item">
     <h3 class="title">Customers Speak</h3>
-<img src="{{URL::to('images/jangam.png')}}" alt="Tribe Logo" class="img-responsive user-ico" width="60px;" height="60px;"/>							
+<img src="<?php echo e(URL::to('images/jangam.png')); ?>" alt="Tribe Logo" class="img-responsive user-ico" width="60px;" height="60px;"/>							
 <p> I would like to thank the team for the outstanding service provided in disbursing my loan. It was a smooth process. Thank You. Keep the good work going .
  
  </p>
@@ -718,7 +719,7 @@ you in future.
 						<div class="v-align blu-clr1">
 							<div class="v-align-middle">
 								<h3 class="title">Our Partners</h3>
-								<img src="{{URL::to('images/dsd.png')}}" class="img-responsive" alt=" Ours Partners" title="Ours Partners" />
+								<img src="<?php echo e(URL::to('images/dsd.png')); ?>" class="img-responsive" alt=" Ours Partners" title="Ours Partners" />
 							</div>
 						</div>
 					</div>
@@ -728,8 +729,8 @@ you in future.
 		</div>
 		</aside>
 		</div> -->
-		@include('layout.script')
-        @include('layout.footer')
+		<?php echo $__env->make('layout.script', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+        <?php echo $__env->make('layout.footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 		
 	
 	
@@ -741,7 +742,7 @@ you in future.
             
             <div class="modal-body">
 			 <button type="button" class="close close-btn" data-dismiss="modal">×</button>
-				<a href="{{URL::to('home-loan-transfer/home-loan')}}"><img src="{{URL::to('images/popup.jpg')}}" class="img-responsive"/></a>
+				<a href="<?php echo e(URL::to('home-loan-transfer/home-loan')); ?>"><img src="<?php echo e(URL::to('images/popup.jpg')); ?>" class="img-responsive"/></a>
                 
             </div>
         </div>

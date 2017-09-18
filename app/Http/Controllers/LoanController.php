@@ -785,6 +785,11 @@ $url = $this::$url_static."/BankAPIService.svc/updateIIFLRevisedQuote";
       $obj = json_decode($m);
      // print_r($obj);exit();
      return response()->json( $obj);
-    }  
+    }
+	
+	public function kotak_home_loan(){
+		return view('kotak-home-loan');
+		
+		}  
       
 }

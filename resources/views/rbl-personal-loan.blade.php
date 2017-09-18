@@ -99,7 +99,7 @@
        
        <div class="col-md-2"></div>
 	<div class="col-md-8" >
-	 <form id="customer_details_form" method="POST">
+	 <form id="customer_details_form" method="POST" style="display: none;">
 	  {{ csrf_field() }}
 	
 <div class="col-md-12">
@@ -133,17 +133,17 @@
 	<br>
    
 	<table width="100%" border="1" class="tbl table-striped">
-	<input type="text" name="Version" id="Version" value="5">
-	<input type="text" name="Mobile" id="Mobile">
-	<input type="text" name="Email" id="Email">
-	<input type="text" name="EmpType" id="EmpType">
-	<input type="text" name="LnAmt" id="LnAmt">
-	<input type="text" name="TnrMths" id="TnrMths">
-	<input type="text" name="IRR" id="IRR">
-	<input type="text" name="ProcFee" id="ProcFee">
-	<input type="text" name="NMI" id="NMI">
-	<input type="text" name="EmiCurPay" id="EmiCurPay">
-	<input type="text" name="ResCity" id="ResCity">
+	<input type="hidden" name="Version" id="Version" value="5">
+	<input type="hidden" name="Mobile" id="Mobile">
+	<input type="hidden" name="Email" id="Email">
+	<input type="hidden" name="EmpType" id="EmpType">
+	<input type="hidden" name="LnAmt" id="LnAmt">
+	<input type="hidden" name="TnrMths" id="TnrMths">
+	<input type="hidden" name="IRR" id="IRR">
+	<input type="hidden" name="ProcFee" id="ProcFee">
+	<input type="hidden" name="NMI" id="NMI">
+	<input type="hidden" name="EmiCurPay" id="EmiCurPay">
+	<input type="hidden" name="ResCity" id="ResCity">
   <tr>
     <td>First Name</td>
 	<td><input type="text" name="FirstName" id="FirstName" required /></td>
@@ -191,7 +191,7 @@
 					</select></td>
 
     <td>Living Since</td>
-	<td><input type="text" class="lastReportedsince" name="CurResSince" id="CurResSince" required /></td>
+	<td><input type="text" class="lastReporteddate" name="CurResSince" id="CurResSince" required /></td>
   </tr>
 
   <tr>
@@ -240,7 +240,9 @@
 						    <option value="8">Others including Society/Trust/AOP</option>
 					</select></td>
 	<td>Office City</td>
-	<td><input type="text" name="OffCity" id="OffCity" required /></td>
+	<td><select class="form-control drop-arr select-sty" name="OffCity" id="OffCity">
+					  <option disabled selected value="">City</option>
+					</select></td>
   </tr>
   <tr>
     <td>Pincode</td>
@@ -285,7 +287,7 @@
    <!--Step 3 -->
    
    
-   <div id="get_quotes" class="row" >
+   <div id="get_quotes" class="row" style="display: none;" >
 				<div class="col-md-12 text-left fh5co-heading animate-box fadeInUp animated">
 					<h2 class="pad">Personal Loan - Get Quote </h2>
 					
@@ -357,6 +359,41 @@
 </div>
 @include('layout.footer')
 @include('layout.script')
+
+<div class="modal fade" tabindex="-1" role="dialog" id="rbl-popup">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Confirmation Status</h4>
+      </div>
+      <div class="modal-body">
+        <h4><p id="modalerr"><h5 style="color: black">Thank You..!! Our Representative Will Contact You.<h5></p></h4>
+        
+      </div>
+      
+      
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" tabindex="-1" role="dialog" id="rbl-popup-error">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Confirmation Status</h4>
+      </div>
+      <div class="modal-body">
+        <h4><p id="modalerr"><h5 style="color: black">Oops..!! Something Went Wrong.<h5></p></h4>
+        
+      </div>
+      
+      
+    </div>
+  </div>
+</div>
+
 <script type="text/javascript">
   function AllowAlphabet(e)
 {
@@ -452,8 +489,8 @@
         	console.log(mob);
         	$('#Mobile').val(mob);
               
-           //    $('#get_quotes').show();
-	          // $('#details').hide();
+              $('#get_quotes').show();
+	          $('#details').hide();
         }
 	});
 </script>
@@ -506,7 +543,7 @@
  //     $('#get_quotes').hide();
 	// });
 	$('#apply').click(function(){
-      alert('okae');
+      // alert('okae');
 
       var loanamount =$('#loan_amount').val();
       console.log(loanamount);
@@ -525,8 +562,8 @@
       $('#ProcFee').val(process_fee);
 
 
-      // $('#customer_details_form').show();
-      // $('#get_quotes').hide();
+      $('#customer_details_form').show();
+      $('#get_quotes').hide();
       // $('#details').hide();
 	});
 </script>
@@ -567,7 +604,7 @@
     });
 </script>
 
-<script type="text/javascript">
+<!-- <script type="text/javascript">
     var d = new Date();
     var year = d.getFullYear() ;
     d.setFullYear(year);
@@ -580,7 +617,7 @@
       yearRange: '-100:' + year + '',
       defaultDate: d
     });
-</script>
+</script> -->
 
 <script type="text/javascript">
     function pan_card(obj,val){
@@ -620,10 +657,41 @@
          url: "{{URL::to('rbl-personal-loan-submit')}}",
          data : $('#customer_details_form').serialize(),
          success: function(msg){
-              console.log(msg);
+              console.log(msg.Status);
+              if (msg.Status == "0") 
+              	{
+                  $('#rbl-popup').modal('show');
+              	} 
+              	else 
+              	{
+                  $('#rbl-popup-error').modal('show');
+              	}
               
         }  
       });   
      }
     	});
     </script>
+
+    <script type="text/javascript">   
+
+ $.ajax({ 
+   url: "{{URL::to('rbl-off-city-master')}}",
+   method:"GET",
+   success: function(datas)  
+   {
+   var data=$.parseJSON(datas);
+   console.log(data);
+   if(data)
+      {      $.each(data, function( index, value ) {
+            $('#OffCity').append('<option selected value="'+value.code+'">'+value.city+'</option>');
+
+        }); 
+    }else{
+      $('#OffCity').empty().append('No Result Found');
+    }
+
+   },
+
+ });
+</script>

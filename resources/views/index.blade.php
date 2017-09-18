@@ -31,7 +31,7 @@
 </div> -->
 
 
-    <div class="item active">
+    <div class="item active animate-box fadeInDown animated">
 	<div class="slide-txt">
 
 	<!--<img src="{{URL::to('../images/home-ic.png')}}" class="center-block"> --->
@@ -129,7 +129,7 @@
 	
 	
 	
-	<div class="col-md-6 hom-rig" style="position: absolute;z-index: 1;top:150px;">
+	<div class="col-md-6 hom-rig animate-box fadeInUp animated" style="position: absolute;z-index: 1;top:150px;">
 	<div class="profile-smdl">
 				<div class="profile-text-left">
 					

@@ -1,4 +1,5 @@
 @include('layout.header')
+
 <div id="fh5co-hero">
   <img src="{{URL::to('images/kotak_banner.jpg')}}" alt="Kotak Home Loan Banner" title="Kotak Home Loan" class="img-responsive">
 

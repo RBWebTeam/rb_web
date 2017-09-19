@@ -17,7 +17,7 @@
     border: none;
     border-bottom:1px solid #ccc;
      border-radius: 0;
-    background:#fff;
+    background:#f8fff3;
     color: #aaa;
     font-weight: 400;
     font-family: "Avenir Next", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -1039,6 +1039,6 @@
 
 @media only screen and (max-width:480px) {
 	
-	.input {width:100%;}
+	.input {width:80%;}
 	margin-top:0px;
 }

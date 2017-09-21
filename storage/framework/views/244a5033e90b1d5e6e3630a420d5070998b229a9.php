@@ -1,12 +1,12 @@
 <?php echo $__env->make('layout.header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 
 <div id="fh5co-hero">
-<img src="<?php echo e(url('images/rbl_banner.jpg')); ?>" class="rbl" width="1349" class="img-responsive"/>
+<img src="<?php echo e(url('images/rbl_banner.jpg')); ?>" class="rbl img-responsive hidden-xs" width="1349"/>
 
   <div class="container">
   <div class="row">
         <div class="col-md-12 bhoechie-tab-container">
-            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 bhoechie-tab-menu">
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 bhoechie-tab-menu">
               <div class="list-group">
                 <a href="#" class="list-group-item active text-center">
                   <h4 class="icon-credit-card"></h4>Titanium Delight Card
@@ -20,7 +20,7 @@
                 
               </div>
             </div>
-            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 bhoechie-tab">
+            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 bhoechie-tab">
                 <!-- flight section -->
                 <div class="bhoechie-tab-content active">
                     <center>

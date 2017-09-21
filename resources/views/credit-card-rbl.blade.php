@@ -85,8 +85,8 @@
 						<div class="col-md-4">
 						<span>City</span>
 						     <select class="block drop-arr" name="ResCity" id="city" required>
-		                      <option disabled selected  value="">Select Title</option>
-		                       @foreach ($data as $city)
+		                      <option disabled selected  value="">Select City</option>
+		                       @foreach ($data as $city)  
 								    <option value="{{$city->city_code}}">{{$city->city_name}}</option>
 								@endforeach
 		                    </select> 
@@ -106,7 +106,7 @@
 						</div>
 						<div class="col-md-4">
 						<span>Mobile Number</span>
-							 <input type="text" class="form-control" id="mobile" name="Mobile"  required maxlength="10" placeholder="Mobile Number" minlength="10" maxlength="10" onkeypress="return fnAllowNumeric(event)" onkeydown=" mobile_valid(this)">
+							 <input type="text" class="form-control" id="mobile" name="Mobile"  required maxlength="10" placeholder="Mobile Number" minlength="10" maxlength="10" onblur ="return fnAllowNumeric(event)" onkeydown=" mobile_valid(this)">
 						</div>
 						<div class="col-md-4">
 						<span>Employment Type</span>
@@ -165,10 +165,11 @@
 
 
 <script type="text/javascript">
+	var application_status=0;
+	var red_url= 'http://www.google.com';
 	$('#rbl_card_submit').click(function(){
 		
-		if($('#rbl_ccc_form').valid()){
-			 
+		if(! $('#rbl_ccc_form').valid()){
 			return false;
 		}else{
 			$.ajax({
@@ -192,12 +193,13 @@
 					}else if(status_id==1){
 						status="Successful";
 						error=returnedData.ReferenceCode;
-						
-						window.href='http://erp.rupeeboss.com/Credit_Card_Upload_Docs.aspx?App_Id="'+error+'"&CardType='+card+'&MobileNo="'+mobile+'';
+						red_url='http://erp.rupeeboss.com/Credit_Card_Upload_Docs.aspx?App_Id="'+error+'"&CardType='+card+'&MobileNo="'+mobile+'';
+						application_status=1;
 					}else if(status_id==2){
 						status="Successful Referred";
 						error=returnedData.ReferenceCode;
-						window.href='http://erp.rupeeboss.com/Credit_Card_Upload_Docs.aspx?App_Id="'+error+'"&CardType='+card+'&MobileNo="'+mobile+'';
+						red_url='http://erp.rupeeboss.com/Credit_Card_Upload_Docs.aspx?App_Id="'+error+'"&CardType='+card+'&MobileNo="'+mobile+'';
+						application_status=1;
 					}else{
 						status="Rejected";
 						error=returnedData.ReferenceCode;
@@ -236,6 +238,13 @@
 			}
 				return error;
 		}
+		$('#rb_cc_modal').on('hidden.bs.modal', function () {
+		 	
+		 	if(application_status==1){
+		 		window.location.href = red_url;
+		 	}
+
+		});
 </script>
 
 

@@ -1,4 +1,4 @@
-@include('layout.header')
+<?php echo $__env->make('layout.header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 <div class="container">
 	
 	<aside id="fh5co-hero">
@@ -19,11 +19,11 @@
   <!-- Wrapper for slides 
   <div class="carousel-inner" role="listbox">
     <div class="item active">
-      <img src="{{URL::to('images/birla_ban.png')}}" alt="birla_banner">
+      <img src="<?php echo e(URL::to('images/birla_ban.png')); ?>" alt="birla_banner">
     </div>
 
     <div class="item">
-      <img src="{{URL::to('images/tribe_bann.png')}}" alt="tribe_banner">
+      <img src="<?php echo e(URL::to('images/tribe_bann.png')); ?>" alt="tribe_banner">
     </div>
   </div>
 
@@ -43,7 +43,8 @@
 	   <div class="form-in">
               <span class="head-1 heading-bmar">Request A Call Back</span>
               <form  id="callback_form" role="form" method="POST">
-              {{ csrf_field() }}
+              <?php echo e(csrf_field()); ?>
+
                 <input type="hidden" name="form" value="subscribe-form">
 				  <div class="has-error">
 				    <div>
@@ -84,17 +85,17 @@
 					<div class="col-md-4 animate-box">
 						<div class="price-box popular1">
 							
-							<div class="center-blg"><img src="{{URL::to('images/tribe.png')}}" alt="Tribe Logo" title="Tribe Logo" /></div>
+							<div class="center-blg"><img src="<?php echo e(URL::to('images/tribe.png')); ?>" alt="Tribe Logo" title="Tribe Logo" /></div>
 							<h4 class="mrg-btm">Tribe</h4>
 							
 						
-							<a class="btn btn-primary btn-outline with-arrow" href="{{URL::to('tribe')}}">Apply Now<i class="icon-arrow-right"></i></a>
+							<a class="btn btn-primary btn-outline with-arrow" href="<?php echo e(URL::to('tribe')); ?>">Apply Now<i class="icon-arrow-right"></i></a>
 						</div>
 					</div>
 
 					<div class="col-md-4 animate-box">
 						<div class="price-box popular1">
-							<div class="center-blg"><img src="{{URL::to('images/birla.png')}}" alt="Aditya Birla Group Logo" title="Aditya Birla Group Logo" /></div>
+							<div class="center-blg"><img src="<?php echo e(URL::to('images/birla.png')); ?>" alt="Aditya Birla Group Logo" title="Aditya Birla Group Logo" /></div>
 							<h4 class="mrg-btm">Aditya Birla</h4>
 						
 							<a class="btn btn-primary btn-outline with-arrow" onclick="Redirect();">Apply Now<i class="icon-arrow-right"></i></a>
@@ -103,88 +104,86 @@
 					
 					<div class="col-md-4 animate-box">
 						<div class="price-box popular1">
-							<div class="center-blg"><img src="{{URL::to('images/apply-online.png')}}" alt="apply_online_pic" /></div>
+							<div class="center-blg"><img src="<?php echo e(URL::to('images/apply-online.png')); ?>" alt="apply_online_pic" /></div>
 							<h4 class="mrg-btm">Edelweiss</h4>
 							
 							
-							<a class="btn btn-primary btn-outline with-arrow" href="{{URL::to('edelweiss')}}">Apply Now<i class="icon-arrow-right"></i></a>
+							<a class="btn btn-primary btn-outline with-arrow" href="<?php echo e(URL::to('edelweiss')); ?>">Apply Now<i class="icon-arrow-right"></i></a>
 						</div>
 					</div>
 					
 					<div class="col-md-4 animate-box">
 						<div class="price-box popular1">
-							<div class="center-blg"><img src="{{URL::to('images/bank/iifl.png')}}" width="140" alt="apply_online_pic" /></div>
+							<div class="center-blg"><img src="<?php echo e(URL::to('images/bank/iifl.png')); ?>" width="140" alt="apply_online_pic" /></div>
 							<h4 class="mrg-btm">IIFL</h4>
 							
 							
-							<a class="btn btn-primary btn-outline with-arrow" href="{{URL::to('apply-iifl-loan')}}">Apply Now<i class="icon-arrow-right"></i></a>
+							<a class="btn btn-primary btn-outline with-arrow" href="<?php echo e(URL::to('apply-iifl-loan')); ?>">Apply Now<i class="icon-arrow-right"></i></a>
 						</div>
 					</div>
 
 					<div class="col-md-4 animate-box">
 						<div class="price-box popular1">
-							<div class="center-blg"><img src="{{URL::to('images/lendingkart.png')}}" width="150" alt="apply_online_pic" /></div>
+							<div class="center-blg"><img src="<?php echo e(URL::to('images/lendingkart.png')); ?>" width="150" alt="apply_online_pic" /></div>
 							<h4 class="mrg-btm">LendingKart</h4>
-							<a class="btn btn-primary btn-outline with-arrow" href="{{URL::to('lendingkart')}}">Apply Now<i class="icon-arrow-right"></i></a>
+							<a class="btn btn-primary btn-outline with-arrow" href="<?php echo e(URL::to('lendingkart')); ?>">Apply Now<i class="icon-arrow-right"></i></a>
 						</div>
 					</div>
 					<div class="col-md-4 animate-box">
 						<div class="price-box popular1">
-							<div class="center-blg"><img src="{{URL::to('images/earlysalary.png')}}" width="150" alt="apply_online_pic" /></div>
+							<div class="center-blg"><img src="<?php echo e(URL::to('images/earlysalary.png')); ?>" width="150" alt="apply_online_pic" /></div>
 							<h4 class="mrg-btm">Early Salary</h4>
-							<a class="btn btn-primary btn-outline with-arrow" href="{{URL::to('early-salary')}}">Apply Now<i class="icon-arrow-right"></i></a>
+							<a class="btn btn-primary btn-outline with-arrow" href="<?php echo e(URL::to('early-salary')); ?>">Apply Now<i class="icon-arrow-right"></i></a>
 						</div>
 					</div>
 					
 					
 					<div class="col-md-4 animate-box">
 						<div class="price-box popular1">
-							<div class="center-blg"><img src="{{URL::to('images/bank/yes.png')}}" width="150" alt="apply_online_pic" /></div>
+							<div class="center-blg"><img src="<?php echo e(URL::to('images/bank/yes.png')); ?>" width="150" alt="apply_online_pic" /></div>
 							<h4 class="mrg-btm">Yes Bank</h4>
-							<a class="btn btn-primary btn-outline with-arrow" href="{{URL::to('contact-us')}}">Apply Now<i class="icon-arrow-right"></i></a>
+							<a class="btn btn-primary btn-outline with-arrow" href="<?php echo e(URL::to('contact-us')); ?>">Apply Now<i class="icon-arrow-right"></i></a>
 						</div>
 					</div>
 					<div class="col-md-4 animate-box">
 						<div class="price-box popular1">
-							<div class="center-blg"><img src="{{URL::to('images/bank/idfc.png')}}" width="150" alt="apply_online_pic" /></div>
+							<div class="center-blg"><img src="<?php echo e(URL::to('images/bank/idfc.png')); ?>" width="150" alt="apply_online_pic" /></div>
 							<h4 class="mrg-btm">IDFC</h4>
-							<a class="btn btn-primary btn-outline with-arrow" href="{{URL::to('contact-us')}}">Apply Now<i class="icon-arrow-right"></i></a>
+							<a class="btn btn-primary btn-outline with-arrow" href="<?php echo e(URL::to('contact-us')); ?>">Apply Now<i class="icon-arrow-right"></i></a>
 						</div>
 					</div>
 					<div class="col-md-4 animate-box">
 						<div class="price-box popular1">
-							<div class="center-blg"><img src="{{URL::to('images/bank/kotak.png')}}" width="150" alt="apply_online_pic" /></div>
+							<div class="center-blg"><img src="<?php echo e(URL::to('images/bank/kotak.png')); ?>" width="150" alt="apply_online_pic" /></div>
 							<h4 class="mrg-btm">Kotak</h4>
-							<a class="btn btn-primary btn-outline with-arrow" href="{{URL::to('contact-us')}}">Apply Now<i class="icon-arrow-right"></i></a>
+							<a class="btn btn-primary btn-outline with-arrow" href="<?php echo e(URL::to('contact-us')); ?>">Apply Now<i class="icon-arrow-right"></i></a>
 						</div>
 					</div>
 					
 					<div class="col-md-4 animate-box">
 						<div class="price-box popular1">
-							<div class="center-blg"><img src="{{URL::to('images/bank/hdfc.png')}}" width="160" alt="apply_online_pic" /></div>
+							<div class="center-blg"><img src="<?php echo e(URL::to('images/bank/hdfc.png')); ?>" width="160" alt="apply_online_pic" /></div>
 							<h4 class="mrg-btm">HDFC</h4>
 							
 							
-							<a class="btn btn-primary btn-outline with-arrow" href="{{URL::to('contact-us')}}">Apply Now<i class="icon-arrow-right"></i></a>
+							<a class="btn btn-primary btn-outline with-arrow" href="<?php echo e(URL::to('contact-us')); ?>">Apply Now<i class="icon-arrow-right"></i></a>
 						</div>
 					</div>
 					<div class="col-md-4 animate-box">
 						<div class="price-box popular1">
-							<div class="center-blg"><img src="{{URL::to('images/bank/rbl.png')}}"width="160" alt="apply_online_pic" /></div>
+							<div class="center-blg"><img src="<?php echo e(URL::to('images/bank/rbl.png')); ?>"width="160" alt="apply_online_pic" /></div>
 							<h4 class="mrg-btm">RBL</h4>
-							<a class="btn btn-primary btn-outline with-arrow" href="{{URL::to('rbl-personal-loan')}}">Apply Now<i class="icon-arrow-right"></i></a>
+							<a class="btn btn-primary btn-outline with-arrow" href="<?php echo e(URL::to('contact-us')); ?>">Apply Now<i class="icon-arrow-right"></i></a>
 						</div>
 					</div>
 					
 					<div class="col-md-4 animate-box">
 						<div class="price-box popular1">
-							<div class="center-blg"><img src="{{URL::to('images/bank/icici.png')}}"width="160" alt="apply_online_pic" /></div>
+							<div class="center-blg"><img src="<?php echo e(URL::to('images/bank/icici.png')); ?>"width="160" alt="apply_online_pic" /></div>
 							<h4 class="mrg-btm">ICICI</h4>
-							<a class="btn btn-primary btn-outline with-arrow" href="{{URL::to('contact-us')}}">Apply Now<i class="icon-arrow-right"></i></a>
+							<a class="btn btn-primary btn-outline with-arrow" href="<?php echo e(URL::to('contact-us')); ?>">Apply Now<i class="icon-arrow-right"></i></a>
 						</div>
 					</div>
-
-					
 					
 
 				</div>
@@ -228,8 +227,8 @@
 </div>
 </div> -->
 
-@include('layout.footer')
-@include('layout.script')
+<?php echo $__env->make('layout.footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php echo $__env->make('layout.script', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 
 <script type="text/javascript">
 	function Redirect() 

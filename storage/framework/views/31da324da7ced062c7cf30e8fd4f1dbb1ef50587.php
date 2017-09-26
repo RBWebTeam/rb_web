@@ -1,7 +1,7 @@
-@include('layout.header')
+<?php echo $__env->make('layout.header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 
 <div id="fh5co-hero">
-  <img src="{{URL::to('images/kotak_banner.jpg')}}" alt="Kotak Home Loan Banner" title="Kotak Home Loan" class="img-responsive">
+  <img src="<?php echo e(URL::to('images/kotak_banner.jpg')); ?>" alt="Kotak Home Loan Banner" title="Kotak Home Loan" class="img-responsive">
 
   <div class="container">
     <br>
@@ -98,8 +98,8 @@
 
 </div>
 <br>
-@include('layout.footer')
-@include('layout.script')
+<?php echo $__env->make('layout.footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php echo $__env->make('layout.script', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 
 <script type="text/javascript">
   function AllowAlphabet(e)
@@ -123,10 +123,10 @@ $('#EmpType').change(function()
     //Depend on Value i.e. 0 or 1 respective function gets called. 
     switch(selectedValue){
         case 0:
-            salaried();
+            handlerFunctionA();
             break;
         case 1:
-            self_employed();
+            handlerFunctionB();
             break;
         //etc... 
         default:
@@ -135,11 +135,11 @@ $('#EmpType').change(function()
     }
 });
 
-function salaried(){
-       
+function handlerFunctionA(){
+    alert("do some stuff");    
 }
 
-function self_employed(){
+function handlerFunctionB(){
     alert("Do some other stuff");
 }
 

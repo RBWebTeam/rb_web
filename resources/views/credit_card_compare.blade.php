@@ -1,8 +1,119 @@
 @include('layout.header')
+<style>
+/* RBL Credit Card CSS*/
+	
+/*  bhoechie tab */
+div.bhoechie-tab-container{
+  z-index: 10;
+  background-color: #ffffff;
+  padding: 0 !important;
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  border:1px solid #ddd;
+  margin-top: 20px;
+  -webkit-box-shadow: 1px 1px 3px 0px rgba(0,0,0,.175);
+  box-shadow: 1px 1px 3px 0px rgba(0,0,0,.175);
+  -moz-box-shadow: 1px 1px 3px 0px rgba(0,0,0,.175);
+  background-clip: padding-box;
+  opacity: 0.97;
+  filter: alpha(opacity=97);
+}
+div.bhoechie-tab-menu{
+  padding-right: 0;
+  padding-left: 0;
+  padding-bottom: 0;
+}
+div.bhoechie-tab-menu div.list-group{
+  margin-bottom: 0;
+}
+div.bhoechie-tab-menu div.list-group>a{
+  margin-bottom: 0;
+}
+div.bhoechie-tab-menu div.list-group>a .icon-credit-card,
+div.bhoechie-tab-menu div.list-group {
+  color: #28a0ff;
+}
+
+div.bhoechie-tab-menu div.list-group>a:first-child{
+  border-top-right-radius: 0;
+  -moz-border-top-right-radius: 0;
+}
+div.bhoechie-tab-menu div.list-group>a:last-child{
+  border-bottom-right-radius: 0;
+  -moz-border-bottom-right-radius: 0;
+}
+div.bhoechie-tab-menu div.list-group>a.active,
+div.bhoechie-tab-menu div.list-group>a.active .glyphicon,
+div.bhoechie-tab-menu div.list-group>a.active .fa{
+  background-color: #0767b3;
+  background-image: #5A55A3;
+  color: #ffffff;
+}
+div.bhoechie-tab-menu div.list-group>a.active:after{
+  content: '';
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  margin-top: -13px;
+  border-left: 0;
+  border-bottom: 13px solid transparent;
+  border-top: 13px solid transparent;
+  border-left: 10px solid #0767b3;
+}
+
+div.bhoechie-tab-content{
+  background-color: #ffffff;
+  /* border: 1px solid #eeeeee; */
+  padding-left: 20px;
+  padding-top: 10px;
+}
+
+div.bhoechie-tab div.bhoechie-tab-content:not(.active){
+  display: none;
+}
+.rbl-cr-lst li {margin-bottom:5px; padding:0px;}
+.rbl-cr-lst {padding:15px;}
+	
+/* RBL Credit Card CSS END */	
+	
+	
+.btn-more {margin-left:30%;}
+	
+.price-box {
+    text-align: center;
+    padding: 20px;
+    background: #fff;
+	color:#666;
+    margin-bottom: 20px;
+    position: relative;
+    -webkit-box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.11);
+    -moz-box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.11);
+    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.11);
+    top: 2px;
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+}
+.price-box h4 {color:#666666;}
+.hom-rig {margin-left:5%;}	
+.rbl-hed {background: #ccc; padding: 12px;}
+table td {font-size:12px;}
+div.bhoechie-tab-content {background:transparent;}
+
+@media only screen and (max-width: 768px) {
+
+h3 {
+    font-size: 20px;
+    padding: 10px 20px;
+}
+}
+	
+</style>
 
 <div id="fh5co-hero">
 <img src="{{url('images/rbl_banner.jpg')}}" class="rbl img-responsive hidden-xs" width="1349"/>
 
+<br>
   <div class="container">
   <div class="row">
         <div class="col-md-12 bhoechie-tab-container">

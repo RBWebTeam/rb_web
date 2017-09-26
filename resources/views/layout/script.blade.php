@@ -23,7 +23,6 @@ $(window).scroll(function(){
        } else if (scrollBottom  > 200) {
 		
 		$('#fh5co-header').css({'background': '#ffffff'});
-		$('#fh5co-header nav ul li a').css({'color': 'rgba(0, 0, 0, 0.7)'});
       }
     });
 

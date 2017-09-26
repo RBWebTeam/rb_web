@@ -91,7 +91,7 @@
        
        
        <div class="col-md-2"></div>
-	<div class="col-md-8" >
+	<div class="col-md-8" style="display: none;" >
 	 <form id="customer_details_form" method="POST">
 	  {{ csrf_field() }}
 	
@@ -126,17 +126,17 @@
 	<br>
    
 	<table width="100%" border="1" class="tbl table-striped">
-	<input type="text" name="Version" id="Version" value="5">
-	<input type="text" name="Mobile" id="Mobile">
-	<input type="text" name="Email" id="Email">
-	<input type="text" name="EmpType" id="EmpType">
-	<input type="text" name="LnAmt" id="LnAmt">
-	<input type="text" name="TnrMths" id="TnrMths">
-	<input type="text" name="IRR" id="IRR">
-	<input type="text" name="ProcFee" id="ProcFee">
-	<input type="text" name="NMI" id="NMI">
-	<input type="text" name="EmiCurPay" id="EmiCurPay">
-	<input type="text" name="ResCity" id="ResCity">
+	<input type="hidden" name="Version" id="Version" value="5">
+	<input type="hidden" name="Mobile" id="Mobile">
+	<input type="hidden" name="Email" id="Email">
+	<input type="hidden" name="EmpType" id="EmpType">
+	<input type="hidden" name="LnAmt" id="LnAmt">
+	<input type="hidden" name="TnrMths" id="TnrMths">
+	<input type="hidden" name="IRR" id="IRR">
+	<input type="hidden" name="ProcFee" id="ProcFee">
+	<input type="hidden" name="NMI" id="NMI">
+	<input type="hidden" name="EmiCurPay" id="EmiCurPay">
+	<input type="hidden" name="ResCity" id="ResCity">
   <tr>
     <td>First Name</td>
 	<td><input type="text" name="FirstName" id="FirstName" required /></td>
@@ -280,7 +280,7 @@
    <!--Step 3 -->
    
    
-   <div id="get_quotes" class="row">
+   <div id="get_quotes" class="row" style="display: none;">
 				<div class="col-md-12 text-left fh5co-heading animate-box fadeInUp animated">
 					<h2 class="pad">Personal Loan - Get Quote </h2>
 					

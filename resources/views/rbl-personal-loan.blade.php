@@ -510,8 +510,8 @@
         	console.log(mob);
         	$('#CompanyName').val(company_name);
               
-           //    $('#get_quotes').show();
-	          // $('#details').hide();
+              $('#get_quotes').show();
+	          $('#details').hide();
         }
 	});
 </script>
@@ -584,8 +584,8 @@
       $('#ProcFee').val(process_fee);
 
 
-      // $('#customer_details_form').show();
-      // $('#get_quotes').hide();
+      $('#customer_details_form').show();
+      $('#get_quotes').hide();
       // $('#details').hide();
 	});
 </script>

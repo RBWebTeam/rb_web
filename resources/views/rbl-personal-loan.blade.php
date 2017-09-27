@@ -91,8 +91,8 @@
        
        
        <div class="col-md-2"></div>
-	<div class="col-md-8" style="display: none;" >
-	 <form id="customer_details_form" method="POST">
+	<div class="col-md-8"  >
+	 <form id="customer_details_form" method="POST" style="display: none;">
 	  {{ csrf_field() }}
 	
 <div class="col-md-12">
@@ -320,7 +320,7 @@
 				   <td></td>
 				 </tr>
 				 <tr>
-				   <td> <input type="text" class="form-input-new form-control" name="loanamount" id="loanamount" minlength="6" maxlength="9" placeholder="Loan Required" required onkeypress="return fnAllowNumeric(event)"></td>
+				   <td> <input type="text" class="form-input-new form-control" name="loanamount" id="loanamount" minlength="6" maxlength="9" placeholder="Loan Required" required onkeypress="return fnAllowNumeric(event)" readonly></td>
 				   <td>Fixed</td>
 				   <!-- <td><span><strike>16%</strike></span> <span>15%</span></td> -->
 				   <td><span>16%</span></td>
@@ -763,7 +763,7 @@
 
 <script type="text/javascript">
 	$('#loan_amount').click(function(){
-       alert('Amount should be greater than 20Lacs (or) equal to 20Lacs');
+       alert('Amount should be equal to 1Lac (or) between 1Lac to 20Lacs');
        return false;
 	});
 </script>

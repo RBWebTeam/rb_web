@@ -71,11 +71,12 @@
 						                    </div>
 									  <div class="col-md-4">
 										 <span>Pan Card</span>
-											<input type="text" class="form-control " id="" name="" placeholder="Pan Card*"  required>
+											<input type="text" class="form-control " id="PAN" name="PAN" placeholder="Pan Card*" oninput="pan_card('PAN')" maxlength="10"  required>
+											<span id="pan_number" style="display:none;color: red;">Oops.Please Enter Valid Pan Number.!!</span>
 										</div>
 										<div class="col-md-4">
 										 <span>Residence City</span>
-											<input type="text" class="form-control " id="" name="" placeholder="Residence City*"  required>
+											<input type="text" class="form-control search_citynm " id="ResCity" name="ResCity" placeholder="Residence City*"  required>
 										</div>
 										
 										<div class="col-md-4">
@@ -115,7 +116,7 @@
       }
 }
 </script>
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 $('#EmpType').change(function() 
 { 
     var selectedValue = parseInt(jQuery(this).val());
@@ -142,6 +143,69 @@ function salaried(){
 function self_employed(){
     alert("Do some other stuff");
 }
+
+</script> -->
+
+<script type="text/javascript">
+    function pan_card(obj,val){
+        // console.log(obj);
+        if(obj=='PAN' ){
+                   var str =$('#PAN').val();
+                   var pancardPattern = /^([a-zA-Z]{5})(\d{4})([a-zA-Z]{1})$/;
+                   var res = str.match(pancardPattern);
+                   if(res){
+                     // console.log('Pancard is valid one.!!');
+                        $('#pan_number').hide();
+
+                  }else{
+                    // console.log('Oops.Please Enter Valid Pan Number.!!');
+                    $('#pan_number').show();
+
+                    return false;
+                  }
+                  
+    }
+    }
+    </script>
+
+<script type="text/javascript">
+
+	
+
+ $(document).ready(function(){
+    src = "{{ route('searchkotakcityajax') }}";
+    $(".search_citynm").autocomplete({
+      source: function(request, response) {
+        
+        $.ajax({
+          url: src,
+          dataType: "json",
+          data: {
+            term : request.term
+          },
+          success: function(data) {
+           
+
+            response(data);
+            
+          }
+        });
+      },
+      change: function (event, ui) {
+        if (ui.item == null || ui.item == undefined || ui.item.value=='No Result Found') {
+          $(".search_citynm").val("data-value");
+          // $(".search_citynm").attr("disabled", false);
+         
+        }else{
+            $(".search_citynm").attr("data-value", ui.item.datavalue);
+                 
+          
+             }
+           }
+
+        
+      });
+   });
 
 </script>
 

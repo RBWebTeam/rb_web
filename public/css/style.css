@@ -3589,6 +3589,7 @@ label {
 }*/
 @media screen and (max-width:768px) {
 	.hom-rig {margin-left:0%;}
+	.pad-no-mob {padding:0px;}
 	.btn-blu {padding:8px 3px;}
 	.border { float: left;width: 100%;}
 	.top-lnk li  {float:none;padding:2px 0px;list-style-type:none;width:120px; margin-right:5px;}

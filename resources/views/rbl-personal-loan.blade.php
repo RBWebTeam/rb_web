@@ -89,9 +89,9 @@
      
          <!--Step 2-->
        
-       
-       <div class="col-md-2"></div>
-	<div class="col-md-8"  >
+       <div class="row">
+       <div class="col-md-1"></div>
+	<div class="col-md-10 pad-no-mob">
 	 <form id="customer_details_form" method="POST" style="display: none;">
 	  {{ csrf_field() }}
 	
@@ -271,7 +271,7 @@
 	</div>
 	</form>
 	</div>
-	
+	</div>
     
     
     
@@ -280,22 +280,23 @@
    <!--Step 3 -->
    
    <form id="quotes" name="quotes">
-   <div id="get_quotes" class="row" style="display: none;">
+   <div id="get_quotes" class="row" style="display:block;">
 				<div class="col-md-12 text-left fh5co-heading animate-box fadeInUp animated">
 					<h2 class="pad">Personal Loan - Get Quote </h2>
 					
                 </div>
-                 
-				<div class="col-md-12 white-bg comp-pg">
-				<div class="col-md-3"></div>
-				<div class="col-md-6">
+                 <div class="col-md-1"></div>
+				<div class="col-md-10 white-bg box-shadow">
+			
+				<div class="col-md-1"></div>
+				<div class="col-md-10 col-xs-12">
 					<!-- <h2 class="head-rbl">Move Slider to Customize Your Loan Amount</h2> -->
-					<div class="col-md-6"><div class="amount"><h3 class="text-center text-info pad">Loan amount:</h3>
+					<div class="col-md-6 col-xs-6"><div class="amount"><h3 class="text-info">Loan amount:</h3>
                    <input type="text" class="form-control" placeholder="Loan amount*" name="loan_amount" id="loan_amount" minlength="5" maxlength="9" onkeypress="return fnAllowNumeric(event)" required=""></div>
 					</div>
 					<input type="hidden" name="roi" id="roi" value="0.013">
 					<input type="hidden" name="fee" id="fee" value="2">
-					<div id="" class="col-md-6"><div class="amount"><h3 class="text-center text-info pad">Tenure:</h3>
+					<div id="" class="col-md-6 col-xs-6"><div class="amount"><h3 class="text-info">Tenure:</h3>
 					 <select class="form-control block drop-arr select-sty" name="tenure" id="tenure"  required>
                                             <option disabled selected  value="">Tenure</option>
                                             <option  value="12">12 months</option>
@@ -306,8 +307,9 @@
 						                    </select> 
 					</div></div>
 				</div>
-				
-				<div class="col-md-12 white-bg">
+				<div class="row">
+				<div class="col-md-12 col-xs-12 ">
+				<div class="table-responsive white-bg" style="margin-bottom:0px;">
 				<table class="table table-bordered mrg-top box-shadow">
 				 <tr class="bg-info pad">
 				   <td><b>Loan Eligibilty</b></td>
@@ -331,21 +333,22 @@
 				 </tr>
 				</table>
 				</div>
-				
-				<div class="row">
-				<div class="col-md-12">
+				</div>
+				</div>
+                   
+				   <div class="row">
 				 <div class="col-md-8 para">
-				 <p> The Quote displayed here is not the final approved loan amount This is basis the details shared by you. Approval of loan would be to  RBL Bank internal prodct and policy guidelines. the applicants are required to fill the RBL Bank Applications froms to Proceed further.</p>
+				 <p class="mrg-top"> The Quote displayed here is not the final approved loan amount This is basis the details shared by you. Approval of loan would be to  RBL Bank internal prodct and policy guidelines. the applicants are required to fill the RBL Bank Applications froms to Proceed further.</p>
 				 </div>
 				 <div class="col-md-4 text-justify para">
+				 <p>Besides offering you the best interest rates and eligibility in the business, RBL Bank now offers you the fastest loan processing service as well</p>
+               <p>Apply Now and experience for yourself RBL Bank's superior loan processing service.</p>
+				 </div>
+				 </div>
+				 </div>
 				 
-				 <span>Besides offering you the best interest rates and eligibility in the business, RBL Bank now offers you the fastest loan processing service as well</span>
-               <span>Apply Now and experience for yourself RBL Bank's superior loan processing service.</span>
-				 </div>
-				 </div>
-				</div>
-				</div>
 			</div> 
+			</br>
 			</form>
     
     

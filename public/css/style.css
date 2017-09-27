@@ -4138,4 +4138,7 @@ table td {font-size:12px;}
     color: #999999 !important;
 }
 .btn-more {margin:0 auto !important;}
+.bg-info {color:#666 !important;}
+.titl-1 span {font-size:11px;color:#999;}
+.date {background: url(../images/date.png) no-repeat right 6px center;}
 	

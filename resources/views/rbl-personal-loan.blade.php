@@ -279,7 +279,7 @@
    
    <!--Step 3 -->
    
-   
+   <form id="quotes" name="quotes">
    <div id="get_quotes" class="row" style="display: none;">
 				<div class="col-md-12 text-left fh5co-heading animate-box fadeInUp animated">
 					<h2 class="pad">Personal Loan - Get Quote </h2>
@@ -346,6 +346,7 @@
 				</div>
 				</div>
 			</div> 
+			</form>
     
     
     
@@ -566,7 +567,12 @@
 	// });
 	$('#apply').click(function(){
       // alert('okae');
-
+       if(! $('#quotes').valid())
+       {
+            return false; 
+        }
+        else
+        {
       var loanamount =$('#loan_amount').val();
       console.log(loanamount);
       $('#LnAmt').val(loanamount);
@@ -587,6 +593,7 @@
       $('#customer_details_form').show();
       $('#get_quotes').hide();
       // $('#details').hide();
+  }
 	});
 </script>
 

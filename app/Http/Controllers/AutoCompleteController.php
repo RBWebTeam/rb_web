@@ -85,4 +85,23 @@ class AutoCompleteController extends InitialController {
         else
             return ['value'=>'No Result Found'];
     }
+
+
+    public function autoComplete_kotak_city(Request $request) {
+        $term = Input::get('term');
+        $products=DB::table('kotak_city_master')->select('city_name','city_code')
+        ->where('city_name', 'LIKE', '%'.$term.'%')
+        ->take(5)->get();
+        //print_r( $products);
+        $data=array();
+        foreach ($products as $product) {
+                $data[]=array('value'=>$product->city_name,'datavalue'=>$product->city_code);
+        }
+        if(count($data)){
+           //    print_r($data);
+             return $data;
+         }
+        else
+            return ['value'=>'No Result Found'];
+    }
 }

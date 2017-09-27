@@ -31,7 +31,7 @@
 </div> -->
 
 
-    <div class="item active">
+    <div class="item active animate-box fadeInDown animated">
 	<div class="slide-txt">
 
 	<!--<img src="<?php echo e(URL::to('../images/home-ic.png')); ?>" class="center-block"> --->
@@ -40,8 +40,9 @@
    <br>
    
    <a href="<?php echo e(URL::to('home-loan')); ?>"><button class="btn btn-primary btn-outline sidebar-submit btn-more">VIEW MORE</button></a>
+   
    </div>
-      <img src="<?php echo e(URL::to('images/slide_1.jpg')); ?>" alt="Home Loan Banner" title="Home Loan " class="slide-hm"> 
+        <img src="<?php echo e(URL::to('images/slide_2.jpg')); ?>" alt="Personal Loan Banner" title="Personal Loan " class="slide-hm">
     </div>
 
     <div class="item">
@@ -53,7 +54,8 @@
    <br>
    <a href="<?php echo e(URL::to('personal-loan')); ?>"><button class="btn btn-primary btn-outline sidebar-submit btn-more">VIEW MORE</button></a>
    </div>
-      <img src="<?php echo e(URL::to('images/slide_2.jpg')); ?>" alt="Personal Loan Banner" title="Personal Loan " class="slide-hm">
+    
+	  <img src="<?php echo e(URL::to('images/slide_1.jpg')); ?>" alt="Home Loan Banner" title="Home Loan " class="slide-hm"> 
     </div>
 
    <!-- <div class="item">
@@ -129,7 +131,7 @@
 	
 	
 	
-	<div class="col-md-6 hom-rig" style="position: absolute;z-index: 1;top:150px;">
+	<div class="col-md-6 hom-rig animate-box fadeInUp animated" style="position: absolute;z-index: 1;top:135px;">
 	<div class="profile-smdl">
 				<div class="profile-text-left">
 					
@@ -170,7 +172,7 @@
 					<p>Express Loan</p>
 				</div>
 				<div class="profile-text-left">
-					<img src="<?php echo e(URL::to('images/loan-icons/home-loan.png')); ?>" />
+					<img src="<?php echo e(URL::to('images/loan-icons/credit-card.png')); ?>" />
 					<p>Credit Cards</p>
 				</div>
 				
@@ -189,11 +191,11 @@
 					<p>Free Credit Report</p>
 				</div>
 				<div class="profile-text-left">
-					<img src="<?php echo e(URL::to('images/loan-icons/home-loan.png')); ?>" />
+					<img src="<?php echo e(URL::to('images/loan-icons/elite.png')); ?>" />
 					<p>Elite</p>
 				</div>
 				<div class="profile-text-left">
-					<img src="<?php echo e(URL::to('images/loan-icons/home-loan.png')); ?>" />
+					<img src="<?php echo e(URL::to('images/loan-icons/rb-lifestyle.png')); ?>" />
 					<p>RB Life Style</p>
 				</div>
 				
@@ -282,12 +284,13 @@
 			
 			<div class="animate-box pad1">
                   
-					<div class="col-md-8 animate-box fadeInUp animated">
-					<h1 class="text-left"><b class="text-danger">Free Credit Report</b> Apply Now</h1>
-						<p class="text-left">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p><p class="text-left"> It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing </p>
+					<div class="col-md-8 animate-box fadeInUp animated mrg-btm">
+					<br>
+					<h1 class="text-left"><b class="text-danger">Free Credit Report</b></h1>
+						<p class="text-left">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+						<p class="text-left"> It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing </p>
 						
 						
-						<br>
 						<button class="btn btn-primary btn-outline with-arrow sidebar-submit pull-left">Apply Now<i class="icon-arrow-right"></i></button>
 						
 					</div>
@@ -296,7 +299,7 @@
 					<!-- <img src="images/Report.png" alt="Credit Report" title="Credit Report" class="img-responsive hidden-sm pad crd-rpt"> 
 			
 					<a class="tp-margin" href="<?php echo e(URL::to('credit-report-otp')); ?>">Apply For FREE Credit Report</a>-->
-					<img src="<?php echo e(URL::to('images/credit-report.png')); ?>" width="350"/>
+					<img src="<?php echo e(URL::to('images/credit-report.png')); ?>" width="350" class="img-circle img-thumbnail hidden-xs"/>
 					</div>
 					
 					<br>
@@ -310,7 +313,7 @@
 			
 			<div class="row no-margin">
 				<div class="pricing">
-					<div class="width-20 animate-box no-padding">
+					<div class="width-20 animate-box no-padding col-xs-6">
 						<div class="img-box popular">
 							
 							<!-- <div class="icon-style"><i class="sprite sprite-icon1"></i></div>-->
@@ -321,7 +324,7 @@
 						</div>
 					</div>
  
-					<div class="width-20 animate-box no-padding">
+					<div class="width-20 animate-box no-padding col-xs-6">
 						<div class="img-box2 popular">
 							<!-- <div class="icon-style"><i class="sprite sprite-icon2"></i></div>  -->
 							<div class="txt-con">
@@ -331,7 +334,7 @@
 						</div>
 					</div>
 					
-					<div class="width-20 animate-box no-padding">
+					<div class="width-20 animate-box no-padding col-xs-6">
 						<div class="img-box3 popular">
 							<!-- <div class="icon-style"><i class="sprite sprite-icon3"></i></div> -->
 							<div class="txt-con">
@@ -341,7 +344,7 @@
 						</div>
 					</div>
 
-					<div class="width-20 animate-box no-padding">
+					<div class="width-20 animate-box no-padding col-xs-6">
 						<div class="img-box4 popular">
 							<!-- <div class="icon-style"><i class="sprite sprite-icon4"></i></div> -->
 							<div class="txt-con">
@@ -350,7 +353,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="width-20 animate-box no-padding">
+					<div class="width-20 animate-box no-padding col-xs-6">
 						<div class="img-box5 popular">
 							<!-- <div class="icon-style"><i class="sprite sprite-icon4"></i></div> -->
 							<div class="txt-con">
@@ -748,10 +751,3 @@ you in future.
         </div>
     </div>
 </div> -->
-
-<script>
-    jQuery('.carousel').carousel({
-		interval: 8000
-	})
-
-</script>

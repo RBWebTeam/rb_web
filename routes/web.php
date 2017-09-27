@@ -342,5 +342,6 @@ Route::get('rbl-off-city-master','LoanController@rbl_off_city_master');
 Route::get('rbl-city-master','LoanController@rbl_city_master');
 Route::get('pay-online','BankController@pay_online');
 Route::get('kotak-home-loan','LoanController@kotak_home_loan');
+Route::get('searchkotakcityajax',array('as'=>'searchkotakcityajax','uses'=>'AutoCompleteController@autoComplete_kotak_city'));
 
 

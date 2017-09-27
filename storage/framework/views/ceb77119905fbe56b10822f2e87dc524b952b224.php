@@ -20,11 +20,9 @@ $(window).scroll(function(){
       if($(this).scrollTop() > 50) {
 		
 		$('#fh5co-header').css({'background': '#fff'});     
-		$('#fh5co-header nav ul li a').css({'color': '#fff'});
        } else if (scrollBottom  > 200) {
 		
 		$('#fh5co-header').css({'background': '#ffffff'});
-		$('#fh5co-header nav ul li a').css({'color': 'rgba(0, 0, 0, 0.7)'});
       }
     });
 
@@ -2494,6 +2492,11 @@ $(window).on('load', function(){
             })();  
         </script>
 		
+		<script>
+		     $(window).bind("load",function() {
+           $('.hom-rig').slideDown(1000);
+        });
+		</script>
 		
        
  

@@ -1,4 +1,4 @@
-@include('layout.header')
+<?php echo $__env->make('layout.header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 <div class="container ">
  <aside id="fh5co-hero">
 	
@@ -6,10 +6,10 @@
  <br>
  <div class="col-md-12 white-bg pad box-shadow">
  <h1 class="text-center loan-head">Home Loan</h1>
-<!--  <img src="{{URL::to('images/info-g-ban.png')}}" alt="Tribe Logo" class="img-responsive" /> -->
+<!--  <img src="<?php echo e(URL::to('images/info-g-ban.png')); ?>" alt="Tribe Logo" class="img-responsive" /> -->
 <div class="col-md-8" id="mod">
-<form name="home_loan_process_form" id="home_loan_process_form" action="{{URL::to('loan-submit')}}" method="POST" >
-<input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
+<form name="home_loan_process_form" id="home_loan_process_form" action="<?php echo e(URL::to('loan-submit')); ?>" method="POST" >
+<input type="hidden" name="_token" id="token" value="<?php echo e(csrf_token()); ?>">
 <input type="hidden" id="product" name="product_name" value="12">
 <input type="hidden" name="empid" class="empid" value=" <?php echo Session::get('empid')?Session::get('empid'):'';?>">
           <input type="hidden" name="brokerid" class="brokerid" value="<?php echo Session::get('brokerid')?Session::get('brokerid'):'';?>">
@@ -78,7 +78,7 @@
   
      <select class="block drop-arr select-sty" name="loan_tenure" id="loan_tenure" required>
 	  <option value="">Loan Tenure</option>
-	   <option value="1">1 Year</option>
+	    <option value="1">1 Year</option>
 		<option value="2">2 Year</option>
 		<option value="3">3 Year</option>
 		<option value="4">4 Year</option>
@@ -271,7 +271,7 @@
 						 
   </div> 
   <div class="iframeloading" style= "display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
-                <img src="{{URL::to('images/ajaxloader.gif')}}" alt="Loader" title="Loader" style="top: 50%; position: relative; left: 50%;"  />
+                <img src="<?php echo e(URL::to('images/ajaxloader.gif')); ?>" alt="Loader" title="Loader" style="top: 50%; position: relative; left: 50%;"  />
                </div>
   </form>
 </div>
@@ -312,11 +312,11 @@
          
 
 
-           @if(Session::get('is_login'))
+           <?php if(Session::get('is_login')): ?>
            <a   type="button" class="btn btn-info disblk apply_new" title="Experience New Digital Era In Loans">Apply Digitally</a>
-           @else
+           <?php else: ?>
            <a   data-toggle="modal" data-target="#login_process" class="block btn btn-info disblk apply_digitally " title="Experience New Digital Era In Loans">Apply Digitally</a>
-           @endif    
+           <?php endif; ?>    
  
 
 
@@ -380,8 +380,8 @@ Bank or NBCF will have possession on all property paper and all type of presale 
 	 </div>
 	 </div>
 <br>
-@include('layout.footer')
-@include('layout.script')
+<?php echo $__env->make('layout.footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php echo $__env->make('layout.script', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 
 <script type="text/javascript">
 
@@ -418,7 +418,7 @@ $(document).ready(function(){
   // co applicant 
  $('#co_sala_DI').change(function(){
  $("#co_self-employed_ID").hide();
-  $("#co_income_ID").show();
+     $("#co_income_ID").show();
   });
 
   $('#co_self_DI').change(function(){
@@ -446,7 +446,7 @@ $(".product_ID").click(function(e){
             $(".iframeloading").show();
               $.ajax({  
              type: "POST",  
-             url: "{{URL::to('loan-submit')}}",
+             url: "<?php echo e(URL::to('loan-submit')); ?>",
            data : $("#home_loan_process_form").serialize(),
         //   data: {_token :_token,username:username,password:password},
              success: function(msg){ 

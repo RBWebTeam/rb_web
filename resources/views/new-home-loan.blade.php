@@ -78,7 +78,7 @@
   
      <select class="block drop-arr select-sty" name="loan_tenure" id="loan_tenure" required>
 	  <option value="">Loan Tenure</option>
-	    <option value="1">1 Year</option>
+	   <option value="1">1 Year</option>
 		<option value="2">2 Year</option>
 		<option value="3">3 Year</option>
 		<option value="4">4 Year</option>
@@ -418,7 +418,7 @@ $(document).ready(function(){
   // co applicant 
  $('#co_sala_DI').change(function(){
  $("#co_self-employed_ID").hide();
-     $("#co_income_ID").show();
+  $("#co_income_ID").show();
   });
 
   $('#co_self_DI').change(function(){

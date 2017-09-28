@@ -349,9 +349,9 @@ label {
                                
                                 <br>
 
-								<div style="text-align: center;">
+								<!--<div style="text-align: center;">
                                 <button type="button" class="btn btn-success" id="submit">Submit</button>
-                                </div>
+                                </div>  -->
                                 <br>
 
 

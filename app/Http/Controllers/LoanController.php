@@ -793,7 +793,7 @@ $url = $this::$url_static."/BankAPIService.svc/updateIIFLRevisedQuote";
   }
 
   public function rbl_personal_loan_submit(Request $req){
-    // print_r($req->all());
+    // print_r($req->all());exit();
     $data=$req->all();
     $data['DOB'] = date("d-m-Y", strtotime($req['DOB']));
     $data['CurCmpnyJoinDt'] = date("d-m-Y", strtotime($req['DOB']));

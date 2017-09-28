@@ -29,7 +29,7 @@
       .lon-det li {float:left; border-right:1px solid #fff; padding:10px;list-style-type:none;vertical-align:middle;}
       .lon-det {height:92px; margin:0px; font-size:14px;}
       .content p {padding:0px;margin:0px; font-size:13px;}
-      .bdr-rigt {border-right:1px dashed #fff;min-height: 50px;}
+      .bdr-rigt {border-right:1px dashed #fff;min-height: 50px;color:#fff;}
       .mrg-btm {margin-bottom:20px;}
       .mrg-tpp {margin-top:35px;}
       .bg-primary {padding:5px; font-size:16px;}
@@ -46,10 +46,18 @@
 	  .ull li {list-style-type:none; padding:10px;border-bottom:1px dashed #ccc;}
 	  input {padding:10px; height:55px;}
 	  select {padding:10px;height:55px;}
+	  .agree input {height: 12px;}
+	  
+	  @media only screen and (max-width: 768px) {
+		  
+		  h3 {font-size:20px;}
+		  .bdr-rigt {border:none;}
+		  .txt-con h4, p {color:#fff;}
+		  .loan-details-txt {font-size:22px;}
+	  }
 </style>
     <div id="fh5co-hero">
-    <div class="express-lon-ban"><img src="images/express-loan-image1.jpg" class="img-responsive"/></div>
-    <br>
+    <div class="express-lon-ban hidden-xs"><img src="images/express-loan-image1.jpg" class="img-responsive"/></div>
 <div class="iframeloading" style= "display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
                 <img src="{{URL::to('images/ajaxloader.gif')}}" alt="Loader" title="Loader" style="top: 50%; position: relative; left: 50%;"  />
 </div>
@@ -61,7 +69,8 @@
     <div class="animate-box">
     <div class="row">
           
-        <div class="col-md-12 bg-white centered well pad1">
+        <div class="col-md-12">
+		<div class="bg-white centered well pad1">
                    <div class="row" style="display: none;">
                 <div class="col-md-10 col-md-offset-1">
                 <hr>
@@ -125,9 +134,10 @@
                     </svg>
                 </span>
             </section>
-                <h3 class="text-uppercase exp-hed">Enter your contact information to receive a copy of your loan eligibility.</h3>
+               
             <section class="content">
-                
+			<br>
+                <div class="col-md-12"> <h3 class="exp-hed">Enter your contact information to receive a copy of your loan eligibility.</h3></div>
                 <span class="input input--nao">
                     <input class="input__field input__field--nao" type="text" name="Mob_Num" id="Mob_Num" onkeypress="return fnAllowNumeric(event)" maxlength="10"  required />
                     <label class="input__label input__label--nao" for="Mob_Num">
@@ -161,14 +171,17 @@
                 </span>
                 
             </section>
+			<div class="col-md-12 mrg-top">
             <a class="btn btn-primary btn-outline with-arrow mrg-top next" href="javascript:void(0)">NEXT<i class="icon-arrow-right"></i></a>
+			</div>
             </form>
             </div>
             
         <div id="Eligibility_details" style="display: none;">
             <form name="eligibility_form" id="eligibility_form" method="POST">
                       {{ csrf_field() }}
-            <div class="col-md-12">
+			<div class="col-md-1"></div>  
+            <div class="col-md-10">
             <table class="table table-bordered" width="70%">
                 <tr>
                     <td class="bg-info">Company Name: <b><span id="Name"></span></b></td>
@@ -208,17 +221,20 @@
                     <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
                     </svg>
                 </span>
-                <span class="input input--nao">
+				<div class="col-md-12 mrg-top mrg-btm">
+                <span class="input input--nao bg-info">
                     <div>Rate Of Interest</div>
                     <div id="int"><b><span id="interest"></span>%</b></div>
                 </span>
-                <span class="input input--nao">
+                <span class="input input--nao bg-info">
                     <div>Proccesing Fee</div>
                     <b><span id="fee"></span>%</b>
                 </span>
-                <hr>
-                <div class="col-md-12 text-danger mar-top"><input type="checkbox" name="check" required /> I Agree to all the terms and conditions.</div>
+                 </div>
+                <div class="col-md-12 text-danger mar-top mrg-btm"><p class="agree"><input type="checkbox" name="check" required /> I Agree to all the terms and conditions</p></div>
+				
         </section>
+		<br>
             <a class="btn btn-primary btn-outline with-arrow mrg-top next_form" id="next_form" href="javascript:void(0)">NEXT<i class="icon-arrow-right"></i></a>
             </form>
             </div>
@@ -237,7 +253,7 @@
             </div>
             <div class="col-md-1"></div>
             <div class="col-md-10 bg-primary pad mrg-btm">
-            <div class="col-md-3 bdr-rigt">Loan Details</div>
+            <div class="col-md-3 bdr-rigt loan-details-txt">Loan Details</div>
                   <div class="col-md-3 bdr-rigt">
                   <p>Loan Amount:- <b>₹<span id="Amount"></span></b></p>
                   <p>Loan Tenure:- <b><span id="LoanTenure"></span></b></p>
@@ -430,7 +446,9 @@
                     </svg>
                 </span>
             </section>
-                <input type="checkbox" name="same" id="same_id" onclick="same_as_above('same_id');"/> Same As Above
+			
+               <div class="col-md-12"> <p class="agree"><input type="checkbox" name="same" id="same_id" onclick="same_as_above('same_id');"/> Same As Above</p></div>
+			   <hr>
                 <section class="content">
                 <div class="col-md-12"><h3 class="mrg-tpp">Permanent Address</h3></div>
                 <span class="input input--nao">
@@ -1312,6 +1330,7 @@
             </div>
 			</div>
              @include('layout.script')
+			</div>
 			</div>
 			</div>
 			

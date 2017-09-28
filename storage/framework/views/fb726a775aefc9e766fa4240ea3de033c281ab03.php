@@ -173,7 +173,7 @@
 						<div class="price-box popular1">
 							<div class="center-blg"><img src="<?php echo e(URL::to('images/bank/rbl.png')); ?>"width="160" alt="apply_online_pic" /></div>
 							<h4 class="mrg-btm">RBL</h4>
-							<a class="btn btn-primary btn-outline with-arrow" href="<?php echo e(URL::to('contact-us')); ?>">Apply Now<i class="icon-arrow-right"></i></a>
+							<a class="btn btn-primary btn-outline with-arrow" href="<?php echo e(URL::to('rbl-personal-loan')); ?>">Apply Now<i class="icon-arrow-right"></i></a>
 						</div>
 					</div>
 					
@@ -184,6 +184,8 @@
 							<a class="btn btn-primary btn-outline with-arrow" href="<?php echo e(URL::to('contact-us')); ?>">Apply Now<i class="icon-arrow-right"></i></a>
 						</div>
 					</div>
+
+					
 					
 
 				</div>

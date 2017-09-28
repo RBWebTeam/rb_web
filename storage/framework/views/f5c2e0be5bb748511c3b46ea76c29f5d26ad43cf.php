@@ -34,18 +34,18 @@
 					<div class="form-group">
 					<h4 class="hdr pad1 text-center">&nbsp;&nbsp;&nbsp;&nbsp;Your Loan Quote in Under 1 Minute.</h4>
 					<br>
-					<div class="col-md-6">
+					<div class="col-md-6 col-xs-6">
 					<select class="form-control drop-arr select-sty" name="city" id="city">
 					  <option disabled selected value="">City</option>
 					</select>
 					</div>
 
-					<div class="col-md-6"><input type="text" class="form-control" placeholder="First Name *" 
+					<div class="col-md-6 col-xs-6"><input type="text" class="form-control" placeholder="First Name *" 
 					name="first_name" id="first_name" onkeypress="return AllowAlphabet(event)" required=""></div>
-					<div class="col-md-6"><input type="text" class="form-control lastReporteddob" placeholder="Date of Birth *" name="dob" id="dob" required=""></div>
+					<div class="col-md-6 col-xs-6"><input type="text" class="form-control date lastReporteddob" placeholder="Date of Birth *" name="dob" id="dob" required=""></div>
 					
 					
-					<div class="col-md-6">
+					<div class="col-md-6 col-xs-6">
 					<select class="form-control drop-arr select-sty" name="employ_type" id="employ_type" required>
 					   <option disabled selected  value="">Select Employment & Mode of Credit *</option>
 					        <option value="1">Salaried: Account Transfer</option>
@@ -56,18 +56,18 @@
 					</select>
 					</div>
 
-					<div class="col-md-6"><input type="text" class="form-control date" placeholder="Employer Name *" name="employer_name" id="employer_name" onkeypress="return AllowAlphabet(event)" required=""></div>
+					<div class="col-md-6 col-xs-6"><input type="text" class="form-control" placeholder="Employer Name *" name="employer_name" id="employer_name" onkeypress="return AllowAlphabet(event)" required=""></div>
 
-					<div class="col-md-6"><input type="text" class="form-control" placeholder="Net Monthly Income *" name="income" id="income" onkeypress="return fnAllowNumeric(event)" minlength="5" maxlength="9" required=""></div>
+					<div class="col-md-6 col-xs-6"><input type="text" class="form-control" placeholder="Net Monthly Income *" name="income" id="income" onkeypress="return fnAllowNumeric(event)" minlength="5" maxlength="9" required=""></div>
 
-					<div class="col-md-6"><input type="text" class="form-control" placeholder="EMI Amount for Existing Loan *" name="emi" id="emi" onkeypress="return fnAllowNumeric(event)" required=""></div>
+					<div class="col-md-6 col-xs-6"><input type="text" class="form-control" placeholder="EMI Amount for Existing Loan *" name="emi" id="emi" onkeypress="return fnAllowNumeric(event)" required=""></div>
 
-					<div class="col-md-6"><input type="text" class="form-control" placeholder="Email ID *" name="email" id="email" oninput="mail('email')" required=""><span id="email_id" style="display:none;color: red; font-size: 10px">Please Enter Valid Email Id.</span></div>
+					<div class="col-md-6 col-xs-6"><input type="text" class="form-control" placeholder="Email ID *" name="email" id="email" oninput="mail('email')" required=""><span id="email_id" style="display:none;color: red; font-size: 10px">Please Enter Valid Email Id.</span></div>
 					
 
-				    <div class="col-md-6"><input type="text" class="form-control" placeholder="Mobile No*" name="mobile_no" id="mobile_no" maxlength="10" onkeypress="return fnAllowNumeric(event)" required=""></div>
+				    <div class="col-md-6 col-xs-6"><input type="text" class="form-control" placeholder="Mobile No*" name="mobile_no" id="mobile_no" maxlength="10" onkeypress="return fnAllowNumeric(event)" required=""></div>
 
-					<div class="col-md-10">
+					<div class="col-md-10 col-xs-12">
 					<input type="checkbox" name="check" required /> I authorize RBL Bank to contact me. This will override registry on DND / NDNC * 
 					</div>
 					</div>

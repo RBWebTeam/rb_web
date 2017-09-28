@@ -838,4 +838,29 @@ $url = $this::$url_static."/BankAPIService.svc/updateIIFLRevisedQuote";
 		
 		}  
       
+
+  public function kotak_home_loan_submit(Request $req){
+   // print_r($req->all());
+    $data=$req->all();
+    $data['Version'] = '1';
+    $data['brokerid']=Session::get('brokerid')?Session::get('brokerid'):'MAA=';
+    $data['empid']=Session::get('empid')?Session::get('empid'):'MAA=';
+    $data['source']=Session::get('source')?Session::get('source'):'MAA=';
+    $data['UniqRefCode']=substr(str_shuffle(str_repeat("0123456789", 15)), 0, 15);
+    
+    $post_data =json_encode( array("Authentication"=>array( "UserId"=>"Rubique", "Password"=>"rub@uat123" ), "AppDetails"=> $data));
+    print_r($post_data);exit();
+    $url = $this::$url_static."/BankAPIService.svc/createKotakHomeLoanReq";
+      $result=$this->call_json_data_api($url,$post_data);
+        $http_result=$result['http_result'];
+        $error=$result['error'];
+        $st=str_replace('"{', "{", $http_result);
+        $s=str_replace('}"', "}", $st);
+        $m=$s=str_replace('\\', "", $s);
+        $obj=json_decode($m);
+
+        return json_encode($obj);
+    }
+    
+    
 }

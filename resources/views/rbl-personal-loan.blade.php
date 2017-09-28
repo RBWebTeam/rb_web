@@ -566,9 +566,12 @@
  //     $('#get_quotes').hide();
 	// });
 	$('#apply').click(function(){
+		
       // alert('okae');
        if(! $('#quotes').valid())
        {
+       	alert('Amount should be equal to 1Lac (or) between 1Lac to 20Lacs');
+       
             return false; 
         }
         else
@@ -768,9 +771,4 @@
  });
 </script>
 
-<script type="text/javascript">
-	$('#loan_amount').click(function(){
-       alert('Amount should be equal to 1Lac (or) between 1Lac to 20Lacs');
-       return false;
-	});
-</script>
+

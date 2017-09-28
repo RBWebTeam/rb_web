@@ -27,6 +27,7 @@ Route::get('searchiiflcompanyajax',array('as'=>'searchiiflcompanyajax','uses'=>'
 
 
 
+
 Route::post('loan-submit','FormController@p_loan_submit');
 
 Route::get('apply-car-loan','LoanController@apply_car_loan');
@@ -343,5 +344,7 @@ Route::get('rbl-city-master','LoanController@rbl_city_master');
 Route::get('pay-online','BankController@pay_online');
 Route::get('kotak-home-loan','LoanController@kotak_home_loan');
 Route::get('searchkotakcityajax',array('as'=>'searchkotakcityajax','uses'=>'AutoCompleteController@autoComplete_kotak_city'));
+Route::get('searchkotakcityareaajax',array('as'=>'searchkotakcityareaajax','uses'=>'AutoCompleteController@autoComplete_kotak_city_area')); 
+Route::POST('kotak-home-loan-submit','LoanController@kotak_home_loan_submit');
 
 

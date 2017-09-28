@@ -52,7 +52,7 @@ foreach ($data as $key => $value){?>
                   <td class="td-main-1" width="100" rowspan="2">
                   <div class="loan-amt no-brd">
                    
-                        <img src="{{ $value['Bank_Logo']}}" width="90" >
+                        <img src="<?php echo e($value['Bank_Logo']); ?>" width="90" >
                       </div>
 
                       
@@ -76,7 +76,7 @@ foreach ($data as $key => $value){?>
                       </div>
                       <div class="loan-floating">
                         <p>PROCESSING FEE</p>
-                        <h6>{{ $value['pf']}} &nbsp;({{ $value['pf_type']}})</h6>
+                        <h6><?php echo e($value['pf']); ?> &nbsp;(<?php echo e($value['pf_type']); ?>)</h6>
                         
 
                       </div>
@@ -95,7 +95,7 @@ foreach ($data as $key => $value){?>
                     </td>
                     <td class="td-main">
                     
-                     <a class="btn btn-success btn-outline with-arrow" href="{{URL::to('apply-lead-online')}}?qoutid=0&BankId={{$value['Bank_Id']}}&brokerid={{$brokerid}}&loanamount={{ $loanamount}}&loaninterest={{$loaninterest }}&loanterm={{$loanterm}}&product={{$product_id}}&empcode={{$empcode}}&processingfee={{$value['processingfee']}}&roi_type={{$value['roi_type']}}"}}">Apply Now
+                     <a class="btn btn-success btn-outline with-arrow" href="<?php echo e(URL::to('apply-lead-online')); ?>?qoutid=0&BankId=<?php echo e($value['Bank_Id']); ?>&brokerid=<?php echo e($brokerid); ?>&loanamount=<?php echo e($loanamount); ?>&loaninterest=<?php echo e($loaninterest); ?>&loanterm=<?php echo e($loanterm); ?>&product=<?php echo e($product_id); ?>&empcode=<?php echo e($empcode); ?>&processingfee=<?php echo e($value['processingfee']); ?>&roi_type=<?php echo e($value['roi_type']); ?>"}}">Apply Now
               <i class="icon-arrow-right"></i></a>
               
                     </td>

@@ -166,7 +166,7 @@
 
 <script type="text/javascript">
 	var application_status=0;
-	var red_url= 'http://www.google.com';
+	var red_url= "{{URL::to('thank-you')}}";
 	$('#rbl_card_submit').click(function(){
 		
 		if(! $('#rbl_ccc_form').valid()){
@@ -193,12 +193,12 @@
 					}else if(status_id==1){
 						status="Successful";
 						error=returnedData.ReferenceCode;
-						red_url='http://erp.rupeeboss.com/Credit_Card_Upload_Docs.aspx?App_Id="'+error+'"&CardType='+card+'&MobileNo="'+mobile+'';
+						//red_url='http://erp.rupeeboss.com/Credit_Card_Upload_Docs.aspx?App_Id="'+error+'"&CardType='+card+'&MobileNo="'+mobile+'';
 						application_status=1;
 					}else if(status_id==2){
 						status="Successful Referred";
 						error=returnedData.ReferenceCode;
-						red_url='http://erp.rupeeboss.com/Credit_Card_Upload_Docs.aspx?App_Id="'+error+'"&CardType='+card+'&MobileNo="'+mobile+'';
+						//red_url='http://erp.rupeeboss.com/Credit_Card_Upload_Docs.aspx?App_Id="'+error+'"&CardType='+card+'&MobileNo="'+mobile+'';
 						application_status=1;
 					}else{
 						status="Rejected";

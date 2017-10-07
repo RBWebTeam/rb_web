@@ -1779,7 +1779,7 @@ var global_tenure=0;
             $('#City').val(stay_at);
             // var name= $('#Company_Name option:selected').text();
             var name = $('#Company_Name').val();
-            // //console.log(name);
+            console.log(name);
             var company =$('#Company_Name').attr('data-value');
             $('#CompanyNm').html(name);
             $('#CompanyName').val(name);

@@ -88,6 +88,7 @@ class AutoCompleteController extends InitialController {
 
 
     public function autoComplete_kotak_city(Request $request) {
+        print_r($request->all());exit();
         $term = Input::get('term');
         $products=DB::table('kotak_city_master')->select('city_name','city_code')
         ->where('city_name', 'LIKE', '%'.$term.'%')
@@ -95,10 +96,10 @@ class AutoCompleteController extends InitialController {
         //print_r( $products);
         $data=array();
         foreach ($products as $product) {
-                $data[]=array('value'=>$product->city_code,'datavalue'=>$product->city_code);
+                $data[]=array('value'=>$product->city_name,'datavalue'=>$product->city_code);
         }
         if(count($data)){
-           //    print_r($data);
+           print_r($data);exit();
              return $data;
          }
         else
@@ -122,4 +123,41 @@ class AutoCompleteController extends InitialController {
         else
             return ['value'=>'No Result Found'];
     }
+
+    public function autoComplete_tata_bl_city(Request $request) {
+        $term = Input::get('term');
+        $products=DB::table('tata_capital_bl_city_master')->select('city_name')
+        ->where('city_name', 'LIKE', '%'.$term.'%')
+        ->take(5)->get();
+        //print_r( $products);
+        $data=array();
+        foreach ($products as $product) {
+                $data[]=array('value'=>$product->city_name);
+        }
+        if(count($data)){
+             // print_r($data);
+             return $data;
+         }
+        else
+            return ['value'=>'No Result Found'];
+    }
+
+    public function autoComplete_tata_bl_state(Request $request) {
+        $term = Input::get('term');
+        $products=DB::table('tata_capital_state_master')->select('state_name')
+        ->where('state_name', 'LIKE', '%'.$term.'%')
+        ->take(5)->get();
+        //print_r( $products);
+        $data=array();
+        foreach ($products as $product) {
+                $data[]=array('value'=>$product->state_name);
+        }
+        if(count($data)){
+             // print_r($data);
+             return $data;
+         }
+        else
+            return ['value'=>'No Result Found'];
+    }
+
 }

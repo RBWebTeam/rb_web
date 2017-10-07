@@ -111,12 +111,14 @@
                     										</div>
                       										<div class="col-md-4">
                       										 <span>Residence City</span>
-                      											<input type="text" class="form-control search_citynm " id="ResCity" name="ResCity" placeholder="Residence City*"  required>
+                      											<input type="text" class="form-control search_citynm " id="City" name="City" placeholder="Residence City*"  required>
+                                            <input type="hidden" name="ResCity" id="ResCity">
                       										</div>
                       										
                       										<div class="col-md-4">
                       										 <span>Residence City Area</span>
-                      											<input type="text" class="form-control search_city_area " id="ResCityArea" name="ResCityArea" placeholder="Residence City Area*"  required>
+                      											<input type="text" class="form-control search_city_area " id="CityArea" name="CityArea" placeholder="Residence City Area*"  required>
+                                            <input type="hidden" name="ResCityArea" id="ResCityArea">
                       										</div>
 
                                             <div class="col-md-4">
@@ -206,11 +208,15 @@
       },
       change: function (event, ui) {
         if (ui.item == null || ui.item == undefined || ui.item.value=='No Result Found') {
-          $(".search_citynm").val("data-value"," ");
+          $("#ResCity").attr("data-value","");
+
+
           // $(".search_citynm").attr("disabled", false);
          
         }else{
-            $(".search_citynm").attr("data-value", ui.item.datavalue);
+
+          alert( ui.item.datavalue);
+            $("#ResCity").val(ui.item.datavalue);
                  
           
              }
@@ -247,11 +253,11 @@
       },
       change: function (event, ui) {
         if (ui.item == null || ui.item == undefined || ui.item.value=='No Result Found') {
-          $(".search_city_area").val("data-value");
+          $("#ResCityArea").attr("data-value","");
           // $(".search_citynm").attr("disabled", false);
          
         }else{
-            $(".search_city_area").attr("data-value", ui.item.datavalue);
+            $("#ResCityArea").val(ui.item.datavalue);
                  
           
              }
@@ -317,7 +323,8 @@ $('#LeadType').on('change', function() {
          url: "<?php echo e(URL::to('kotak-home-loan-submit')); ?>",
          data : $('#Kotak_HL_form').serialize(),
          success: function(msg){
-              // console.log(msg.status);
+            console.log(msg.ReferenceCode);
+             console.log(msg);
               
               
         }  

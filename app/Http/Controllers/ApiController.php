@@ -749,7 +749,7 @@ run_else:
       
       public function bussiness_loan_quote(Request $req){
       		$error='';
-      		$data=NULL;
+      		$data=[];
       		$status=0;
       	 try{
       	 	$data=DB::select('call  usp_get_business_loan_quot ("'.$req['applicant_dob'].'","'.$req['emp_detail'].'","'.$req['turnover'].'","'.$req['profit_after_tax'].'","'.$req['depreciation'].'","'.$req['partner_remuneration'].'","'.$req['interest_paid'].'","'.$req['emi'].'","'.$req['no_of_emi_paid'].'","'.$req['loan_tenure'].'","'.$req['loan_amount'].'","'.$req['date'].'")');
@@ -758,6 +758,6 @@ run_else:
       	 catch(\Exception $ee){
       	 	$error=$ee->getMessage();
       	 }
-      	 return response()->json(array('status' => $status,'data'=>$data,'err'=>$error));
+      	 return response()->json(array('statusId' => $status,'data'=>$data,'message'=>$error));
       }
 }

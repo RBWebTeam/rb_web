@@ -10,62 +10,67 @@ class TribeController extends CallApiController
 	public static $secret="i1fndpWYkU9fgBhqWmKU1Uwt7ogk9q";
 	//public static $name="SampleTribe";
     public function tribe(){
-    	Session::forget('loan_id');
-    	Session::forget('transaction_id');
-    	Session::forget('tribe_id');
-    	Session::forget('company_name');
-    	Session::forget('loan_id');
-    	Session::forget('submission_status');
-    	Session::forget('tribe_abandon');
-    	  	
-    	//print_r("dsfsdf". Session::get('loan_id'));exit();
-		$post='';
-	    $url = $this::$url_static."BankAPIService.svc/GetTribeLoan";
-	    //print_r($url);exit();
-	    $result=$this->call_json_data_get_api($url,$post);
-	    $http_result=$result['http_result'];
-	    $error=$result['error'];
-	    if($error){
-	    	return view('went-wrong');
-	    }else{
-	    $temp_data=json_decode(json_decode($http_result))->response;
-	    $temp=json_decode(json_encode($temp_data));
-	   //	print "<pre>";
-	   	// print_r($temp);exit();
-	    foreach ($temp as $key => $value) {
-
-	    	$sata[$key]=$value;
-	    	$length=sizeof($sata[$key]);
-	    	//sorting array according to key value
-	    	if($length>1){
-    		    	//print_r($sata[$key]);exit();
-    		    	for($i=0;$i<$length;$i++){
-    		    		//print_r($length);
-    		    		$temp=(array)($sata[$key][$i]->mapping);
-    		    		ksort($temp);
-    		    		$test[$sata[$key][$i]->key]=(object)$temp;
-    		    		
-    		    		//print_r($test[$sata[$key][$i]->key]);
-    		    	}
-	    	}else{
-	    		//print_r($sata[$key]->key);
-	    		$temp=(array)($sata[$key]->mapping);
-    		    ksort($temp);
-	    		$test[$sata[$key]->key]=(object)$temp;
-	    		   
-	    	}
-	    	
-	    }
-	     Session::put('tribe_abandon',$test['status']->abandoned); 
-	     Session::put('submission_status',$test['status']->submitted); 
-	     
-	    //exit();
-	   //   $data=$test;
-	   //  print_r($data);exit();
-	    return view('tribe')->with('data',$test);		
+    	try{
+    		Session::forget('loan_id');
+    		        	Session::forget('transaction_id');
+    		        	Session::forget('tribe_id');
+    		        	Session::forget('company_name');
+    		        	Session::forget('loan_id');
+    		        	Session::forget('submission_status');
+    		        	Session::forget('tribe_abandon');
+    		        	  	
+    		        	//print_r("dsfsdf". Session::get('loan_id'));exit();
+    		    		$post='';
+    		    	    $url = $this::$url_static."BankAPIService.svc/GetTribeLoan";
+    		    	    //print_r($url);exit();
+    		    	    $result=$this->call_json_data_get_api($url,$post);
+    		    	    $http_result=$result['http_result'];
+    		    	    $error=$result['error'];
+    		    	    if($error){
+    		    	    	return view('went-wrong');
+    		    	    }else{
+    		    	    $temp_data=json_decode(json_decode($http_result))->response;
+    		    	    $temp=json_decode(json_encode($temp_data));
+    		    	   //	print "<pre>";
+    		    	   	// print_r($temp);exit();
+    		    	    foreach ($temp as $key => $value) {
+    		    
+    		    	    	$sata[$key]=$value;
+    		    	    	$length=sizeof($sata[$key]);
+    		    	    	//sorting array according to key value
+    		    	    	if($length>1){
+    		        		    	//print_r($sata[$key]);exit();
+    		        		    	for($i=0;$i<$length;$i++){
+    		        		    		//print_r($length);
+    		        		    		$temp=(array)($sata[$key][$i]->mapping);
+    		        		    		ksort($temp);
+    		        		    		$test[$sata[$key][$i]->key]=(object)$temp;
+    		        		    		
+    		        		    		//print_r($test[$sata[$key][$i]->key]);
+    		        		    	}
+    		    	    	}else{
+    		    	    		//print_r($sata[$key]->key);
+    		    	    		$temp=(array)($sata[$key]->mapping);
+    		        		    ksort($temp);
+    		    	    		$test[$sata[$key]->key]=(object)$temp;
+    		    	    		   
+    		    	    	}
+    		    	    	
+    		    	    }
+    		    	     Session::put('tribe_abandon',$test['status']->abandoned); 
+    		    	     Session::put('submission_status',$test['status']->submitted); 
+    		    	     
+    		    	    //exit();
+    		    	   //   $data=$test;
+    		    	   //  print_r($data);exit();
+    		    }
+    		}catch(\Exception $ee){
+    		    	return view('contact');
+    		    }	
+    		    return view('tribe')->with('data',$test);		
 	    }
 	    
-	}
+	
 	public function save_tribe_form(Request $req){
 	$data=$req->all();			
 	// $data["name"]="SampleTribe";

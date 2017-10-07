@@ -846,10 +846,10 @@ $url = $this::$url_static."/BankAPIService.svc/updateIIFLRevisedQuote";
     $data['brokerid']=Session::get('brokerid')?Session::get('brokerid'):'MAA=';
     $data['empid']=Session::get('empid')?Session::get('empid'):'MAA=';
     $data['source']=Session::get('source')?Session::get('source'):'MAA=';
-    $data['UniqRefCode']=substr(str_shuffle(str_repeat("0123456789", 15)), 0, 15);
+    $data['UniqRefCode']=substr(str_shuffle(str_repeat("0123456789", 6)), 0, 6);
     
     $post_data =json_encode( array("Authentication"=>array( "UserId"=>"Rubique", "Password"=>"rub@uat123" ), "AppDetails"=> $data));
-    print_r($post_data);exit();
+    // print_r($post_data);exit();
     $url = $this::$url_static."/BankAPIService.svc/createKotakHomeLoanReq";
       $result=$this->call_json_data_api($url,$post_data);
         $http_result=$result['http_result'];
@@ -861,6 +861,8 @@ $url = $this::$url_static."/BankAPIService.svc/updateIIFLRevisedQuote";
 
         return json_encode($obj);
     }
+
+    
     
     
 }

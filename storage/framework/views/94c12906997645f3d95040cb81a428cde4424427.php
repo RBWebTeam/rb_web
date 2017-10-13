@@ -7,23 +7,23 @@
 				<div class="col-md-12 text-left fh5co-heading animate-box fadeInUp animated">
 					<h2>RBL Credit Card Form</h2>
 				</div>
-				<div class="col-md-1"></div>
-				<div class="col-md-10">
-				<div class="row text-left comp-pg rate white-bg box-shadow">
-			<form  id="rbl_ccc_form" role="form">
-			 <?php echo e(csrf_field()); ?>
+				        <div class="col-md-1"></div>
+				        <div class="col-md-10">
+				        <div class="row text-left comp-pg rate white-bg box-shadow">
+			           <form  id="rbl_ccc_form" role="form">
+			           <?php echo e(csrf_field()); ?>
 
-				<div class="row">
-					<div class="form-group titl-1">
+				        <div class="row">
+					     <div class="form-group titl-1">
 						<div class="col-md-4">
 						<span>title</span>
-						     <select class="block drop-arr select-sty" name="Title" id="title" required>
-		                      <option disabled selected  value="">Select Title</option>
-		                       <option value=1>Mr</option>
-		                       <option value=2>Ms</option>
-		                       <option value=2>Mrs</option>
-		                       <option value=2>Dr</option>
-		                       <option value=99>Other</option>
+						    <select class="block drop-arr select-sty" name="Title" id="title" required>
+		                    <option disabled selected  value="">Select Title</option>
+		                    <option value=1>Mr</option>
+		                    <option value=2>Ms</option>
+		                    <option value=2>Mrs</option>
+		                    <option value=2>Dr</option>
+		                    <option value=99>Other</option>
 		                    </select> 
 		                    </div>
 						<div class="col-md-4">
@@ -65,12 +65,12 @@
                         <input type="radio" name="HadLoanOrCreditCardFromAnyBank"  class="radiob" value="N" ><label for="151">&nbsp;No </label>
 	                    </div>
 						</div>
-					</div>
-					<hr>
-				</div>
-				<div class="row sec" id="section1">
-					<div class="form-group titl-1">
-					<hr>
+					    </div>
+					    <hr>
+				        </div>
+				        <div class="row sec" id="section1">
+					    <div class="form-group titl-1">
+					    <hr>
 						<div class="col-md-4">
 						<span>Residence Address 1</span>
 							<input type="text" class="form-control" placeholder="Residence Address 1" name="ResAddress1" id="res_add1" required="">
@@ -122,22 +122,22 @@
 						</div>
 						</div>
 						<hr>
-					</div>	
-					<a class="btn btn-primary btn-outline with-arrow mrg-top center-block crd_id" id="rbl_card_submit">SUBMIT<i class="icon-arrow-right" ></i></a>
+					    </div>	
+					    <a class="btn btn-primary btn-outline with-arrow mrg-top center-block crd_id" id="rbl_card_submit">SUBMIT<i class="icon-arrow-right" ></i></a>
 
-			</form>
+			            </form>
 					
 					
 					
 					
-			</div>
-			<br>
-		</div>	
-	</div>
-</div>
+			            </div>
+			            <br>
+		                </div>	
+	                    </div>
+                        </div>
 
-</div>
-</div>
+                        </div>
+                        </div>
 <?php echo $__env->make('layout.footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 <?php echo $__env->make('layout.script', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 
@@ -150,15 +150,15 @@
         <!-- Modal content-->
    <div class="modal-content pad1">
         <div class="modal-header">          
-           <h4 class="modal-title text-center"><b>Status</b></h4>
+        <h4 class="modal-title text-center"><b>Status</b></h4>
 
 
            
         </div>
 		<div class="text-center">
-      <p id="rbl_cc_apply_status" class="text-success pad"></p>     
-       <p id="reason" class="text-success pad"></p>     
-       <p id="reference" class="text-success pad"></p>         	      
+         <p id="rbl_cc_apply_status" class="text-success pad"></p>     
+         <p id="reason" class="text-success pad"></p>     
+         <p id="reference" class="text-success pad"></p>         	      
          </div>   
 </div>
 </div>
@@ -180,19 +180,25 @@
 					var returnedData = JSON.parse(msg);
 					var status_id=returnedData.Status;
 					var error=returnedData.Errorinfo;
+					var mobile=$('#mobile').val();
+					var card=$('#cc_applied').val();
 					if(status_id==0){
 						e_id=returnedData.Errorcode;
 						status="Ooops! Error occured.";
 						if(e_id)
-						error=get_rbl_error(e_id);
+						{
+							error=get_rbl_error(e_id);
+						}
 						
 					}else if(status_id==1){
-						status="Sucessfull";
-						reason=returnedData.ReferenceCode;
-					
-					}else if(status_id==2){
-						status="Sucessfull Refered";
+						status="Successful";
 						error=returnedData.ReferenceCode;
+						
+						window.href='http://erp.rupeeboss.com/Credit_Card_Upload_Docs.aspx?App_Id="'+error+'"&CardType='+card+'&MobileNo="'+mobile+'';
+					}else if(status_id==2){
+						status="Successful Referred";
+						error=returnedData.ReferenceCode;
+						window.href='http://erp.rupeeboss.com/Credit_Card_Upload_Docs.aspx?App_Id="'+error+'"&CardType='+card+'&MobileNo="'+mobile+'';
 					}else{
 						status="Rejected";
 						error=returnedData.ReferenceCode;

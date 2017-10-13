@@ -34,24 +34,24 @@
 					<div class="form-group">
 					<h4 class="hdr pad1 text-center">&nbsp;&nbsp;&nbsp;&nbsp;Your Loan Quote in Under 1 Minute.</h4>
 					<br>
-					<div class="col-md-6 col-xs-6">
+					<div class="col-md-6 col-xs-12">
 					<span>City</span>
 					<select class="form-control drop-arr select-sty" name="city" id="city">
 					  <option disabled selected value="">City</option>
 					</select>
 					</div>
 
-					<div class="col-md-6 col-xs-6">
+					<div class="col-md-6 col-xs-12">
 					<span>First Name</span>
 					<input type="text" class="form-control" placeholder="First Name *" 
 					name="first_name" id="first_name" onkeypress="return AllowAlphabet(event)" required=""></div>
 					
-					<div class="col-md-6 col-xs-6">
+					<div class="col-md-6 col-xs-12">
 					<span>Date of Birth</span>
 					<input type="text" class="form-control date lastReporteddob" placeholder="Date of Birth *" name="dob" id="dob" required=""></div>
 					
 					
-					<div class="col-md-6 col-xs-6">
+					<div class="col-md-6 col-xs-12">
 					<span>Select Employment & Mode of Credit</span>
 					<select class="form-control drop-arr select-sty" name="employ_type" id="employ_type" required>
 					   <option disabled selected  value="">Select Employment & Mode of Credit *</option>
@@ -63,24 +63,24 @@
 					</select>
 					</div>
 
-					<div class="col-md-6 col-xs-6">
+					<div class="col-md-6 col-xs-12">
 					<span>Employer Name</span>
 					<input type="text" class="form-control" placeholder="Employer Name *" name="employer_name" id="employer_name" onkeypress="return AllowAlphabet(event)" required=""></div>
 
-					<div class="col-md-6 col-xs-6">
+					<div class="col-md-6 col-xs-12">
 					<span>Net Monthly Income</span>
 					<input type="text" class="form-control" placeholder="Net Monthly Income *" name="income" id="income" onkeypress="return fnAllowNumeric(event)" minlength="5" maxlength="9" required=""></div>
 
-					<div class="col-md-6 col-xs-6">
+					<div class="col-md-6 col-xs-12">
 					<span>EMI Amount for Existing Loan</span>
 					<input type="text" class="form-control" placeholder="EMI Amount for Existing Loan *" name="emi" id="emi" onkeypress="return fnAllowNumeric(event)" required=""></div>
 
-					<div class="col-md-6 col-xs-6">
+					<div class="col-md-6 col-xs-12">
 					<span>Email ID</span>
 					<input type="text" class="form-control" placeholder="Email ID *" name="email" id="email" oninput="mail('email')" required=""><span id="email_id" style="display:none;color: red; font-size: 10px">Please Enter Valid Email Id.</span></div>
 					
 
-				    <div class="col-md-6 col-xs-6">
+				    <div class="col-md-6 col-xs-12">
 					<span>Mobile No</span>
 					<input type="text" class="form-control" placeholder="Mobile No*" name="mobile_no" id="mobile_no" maxlength="10" onkeypress="return fnAllowNumeric(event)" required=""></div>
 
@@ -109,7 +109,7 @@
        
        <div class="row">
        <div class="col-md-1"></div>
-	<div class="col-md-10 pad-no-mob">
+	<div class="col-md-10 pad-no-mob padding-0-xs-10">
 	 <form id="customer_details_form" method="POST" style="display: none;">
 	  <?php echo e(csrf_field()); ?>
 
@@ -206,7 +206,7 @@
 	
 	<div class="col-md-4">
 	<span>Living Since</span>
-    <input type="text" class="lastReporteddate form-control" name="CurResSince" id="CurResSince" required />
+    <input type="text" class="lastReporteddate form-control date" name="CurResSince" id="CurResSince" required />
 	</div>
 	
 	<div class="col-md-4">
@@ -242,7 +242,7 @@
 	</div>
 	<div class="col-md-4">
 	<span>When did You Join This Company</span>
-	<input type="text" class="lastReporteddoj form-control" name="CurCmpnyJoinDt" id="CurCmpnyJoinDt" required />
+	<input type="text" class="lastReporteddoj form-control date" name="CurCmpnyJoinDt" id="CurCmpnyJoinDt" required />
 	</div>
 	<div class="col-md-4">
 	<span>Total Work Experience</span>
@@ -334,7 +334,7 @@
 					
                 </div>
                  <div class="col-md-1"></div>
-				<div class="col-md-10 white-bg box-shadow pad">
+				<div class="col-md-10 white-bg box-shadow pad1">
 			
 				<div class="col-md-1"></div>
 				<div class="col-md-10 col-xs-12">

@@ -345,3 +345,7 @@ Route::get('kotak-home-loan','LoanController@kotak_home_loan');
 Route::get('searchkotakcityajax',array('as'=>'searchkotakcityajax','uses'=>'AutoCompleteController@autoComplete_kotak_city'));
 
 
+
+
+Route::get('credit-card-rbl-dc','CreditcardController@credit_card_rbl_dc');
+Route::get('credit-card-rbl-form-dc','CreditcardController@credit_card_rbl_form_dc');

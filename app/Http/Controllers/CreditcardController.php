@@ -158,6 +158,19 @@ class CreditcardController extends CallApiController
 
         return json_encode($obj);
     }
+	
+	
+	public function credit_card_rbl_dc(){
+		
+		 return view('credit_card_rbl_dc');
+		 
+	}
+	
+	public function credit_card_rbl_form_dc(){
+		
+		 return view('credit_card_rbl_form_dc');
+		 
+	}
 }
 
 

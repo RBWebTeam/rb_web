@@ -327,11 +327,7 @@ public function dropdown(Request $req){
 
 
      $obj = json_decode($m);
-<<<<<<< HEAD
       // print_r($obj);exit();
-=======
-      //print_r($obj);exit();
->>>>>>> 7dd5d678ef98737afe94bceabf005bfc977ba924
      $a=$obj->body;
      $b=$a->Values;
      usort($b,function($x,$y){
@@ -800,24 +796,15 @@ $url = $this::$url_static."/BankAPIService.svc/updateIIFLRevisedQuote";
     // print_r($req->all());exit();
     $data=$req->all();
     $data['DOB'] = date("d-m-Y", strtotime($req['DOB']));
-<<<<<<< HEAD
     $data['CurCmpnyJoinDt'] = date("d-m-Y", strtotime($req['CurCmpnyJoinDt']));
     $data['CurResSince'] = date("d-m-Y", strtotime($req['CurResSince']));
-=======
-    $data['CurCmpnyJoinDt'] = date("d-m-Y", strtotime($req['DOB']));
-    $data['CurResSince'] = date("d-m-Y", strtotime($req['DOB']));
->>>>>>> 7dd5d678ef98737afe94bceabf005bfc977ba924
     $data['brokerid']=Session::get('brokerid')?Session::get('brokerid'):'MAA=';
     $data['empid']=Session::get('empid')?Session::get('empid'):'MAA=';
     $data['source']=Session::get('source')?Session::get('source'):'MAA=';
     $data['ConUniqRefCode']=substr(str_shuffle(str_repeat("0123456789", 15)), 0, 15);
     
-<<<<<<< HEAD
     
     $post_data =json_encode(array("PersonalLoan"=> $data));
-=======
-    $post_data =json_encode( array("Authentication"=>array( "UserId"=>"RupeeBoss", "Password"=>"rupeeb@123" ), "PersonalLoan"=> $data));
->>>>>>> 7dd5d678ef98737afe94bceabf005bfc977ba924
     // print_r($post_data);exit();
     $url = $this::$url_static."/BankAPIService.svc/createRBLPersonalLoanReq";
       $result=$this->call_json_data_api($url,$post_data);
@@ -848,7 +835,6 @@ $url = $this::$url_static."/BankAPIService.svc/updateIIFLRevisedQuote";
 
 	
 	public function kotak_home_loan(){
-<<<<<<< HEAD
 		// return view('kotak-home-loan');
     $CampaignName=Session::get('CampaignName');
 
@@ -989,10 +975,4 @@ $url = $this::$url_static."/BankAPIService.svc/updateIIFLRevisedQuote";
     
     
     
-=======
-		return view('kotak-home-loan');
-		
-		}  
-      
->>>>>>> 7dd5d678ef98737afe94bceabf005bfc977ba924
 }

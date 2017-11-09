@@ -143,8 +143,6 @@ class MobileApiController extends ApiController
      
 
 	}
-<<<<<<< HEAD
-=======
 	public function balance_transfer(Request $req){
 		$getQuery=null;
 		$savings=null;
@@ -202,6 +200,5 @@ class MobileApiController extends ApiController
                 $data = array('status'=>$status,'data' =>$resultArray,"saving"=>$savings );
                 return json_encode($data);
 	}
->>>>>>> 7dd5d678ef98737afe94bceabf005bfc977ba924
 
 }

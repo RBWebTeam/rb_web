@@ -21,10 +21,7 @@ class CreditcardController extends CallApiController
      }
 
      public function credit_form_submit(Request $req){
-<<<<<<< HEAD
         // print_r($req->all());exit();
-=======
->>>>>>> 7dd5d678ef98737afe94bceabf005bfc977ba924
         try{
             $save=new credit_card_form_req(); 
             $id=$save->store($req);
@@ -43,10 +40,7 @@ class CreditcardController extends CallApiController
                 unset($data['ICICIRelationshipNumber']);
             }
             $post_data=json_encode($data);
-<<<<<<< HEAD
             // print_r($post_data);exit();
-=======
->>>>>>> 7dd5d678ef98737afe94bceabf005bfc977ba924
             $url = $this::$url_static."BankAPIService.svc/PostIciciBank";
             $result=$this->call_json_data_api($url,$post_data);
             $http_result=$result['http_result'];
@@ -128,13 +122,7 @@ class CreditcardController extends CallApiController
             $name=$card_data[$card_id]['card'];
             Session::put('rbl_card_id',$card_data[$card_id]['id']);
             $data=DB::table('rbl_city_master')->select('city_code','city_name')->get();
-<<<<<<< HEAD
            
-=======
-            if(isset($req['is_dc'])){
-                return view('credit-card-rbl-dc')->with('data',$data)->with('card',$name);
-            }
->>>>>>> 7dd5d678ef98737afe94bceabf005bfc977ba924
             return view('credit-card-rbl')->with('data',$data)->with('card',$name);
      }
     public function rbl_cc_post(Request $req){
@@ -159,13 +147,9 @@ class CreditcardController extends CallApiController
         $req['ResCity']=(int)$req['ResCity'];
         $data=$req->all();
         
-<<<<<<< HEAD
         
         $post_data =json_encode(array("CreditCard"=> $data));
     // print_r($post_data);exit();
-=======
-        $post_data =json_encode( array("Authentication"=>array( "UserId"=>"RupeeBossCC", "Password"=>"rupeeb@123" ), "CreditCard"=> $data));
->>>>>>> 7dd5d678ef98737afe94bceabf005bfc977ba924
        //  print_r($post_data);exit();
          $url = $this::$url_static."BankAPIService.svc/createRBLCreditCardReq ";
         $result=$this->call_json_data_api($url,$post_data);

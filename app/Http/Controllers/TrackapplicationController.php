@@ -1,0 +1,62 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use Session;
+use App\Http\Requests;
+use DB;
+use App\SEOlibraries\Seo;
+class TrackapplicationController extends CallApiController
+{
+    public function tracking(){
+
+          $query=new Seo();
+         
+           return view('tracking')->with($query->TrackApplication());
+    }
+
+    public function tracking_sub(Request $req){
+        try{
+        // print "<pre>"; print_r($req->all());exit();
+    
+    $res=$req->all();
+    
+
+    $post_data=json_encode($res);
+    $url = $this::$url_static."BankAPIService.svc/GetAppStatusDetail";
+    $result=$this->call_json_data_api($url,$post_data);
+    $http_result=$result['http_result'];
+    $error=$result['error'];
+    
+    $data['data'] = json_decode($http_result);
+    // $status = $obj[0]->Status;
+    // print_r($data['data']);exit();
+    // if ($status == "0") 
+    // {   
+    //     return $status
+    // }else{
+    //     $status=2;
+    // }
+    return view('tracking_view')->with($data); 
+    }catch(\Exception $ee){
+        print_r($ee->getMessage());
+    }
+    }
+    public function survey(){
+        
+          return view('survey');  
+    }
+    public function survey_sub(Request $req){
+        
+        $input=$req->all();
+         $new_array = array('empid' => Session::get('empid'), 'brokerid' => Session::get('brokerid'),'source' => Session::get('source'));
+
+         $res_arr=array_merge($input,$new_array);
+         print "<pre>"; print_r($res_arr);exit();
+        
+          return view('survey');  
+    }
+
+ 
+}

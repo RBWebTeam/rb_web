@@ -62,7 +62,7 @@
  select {color:#636363 !important;}
  .lastReporteddob {color:#636363 !important;}
  
-@media only screen and (max-width:768px) {
+@media  only screen and (max-width:768px) {
   
   .col-md-12 {padding:0px;margin:2px;}
 }
@@ -110,7 +110,8 @@ $(".top").click(function() {
     <div class="col-md-3"></div>
   
   <!-- <form id="to_view_url" name="to_view_url" method="POST">
-  {{ csrf_field() }}
+  <?php echo e(csrf_field()); ?>
+
     <div id="hideview" class="text-center col-md-6">
                                             <div class="form-padding">
                                                 <h6 class="text-center top-heading click-hr"><a id="urlweb" href="javascript:void(0)">click here</a>
@@ -140,7 +141,8 @@ $(".top").click(function() {
             <div class="col-md-12">
 
             <form class="form12" id="Kotak_hl_form_dc" name="Kotak_hl_form_dc" role="form" method="POST" >
-              {{ csrf_field() }}
+              <?php echo e(csrf_field()); ?>
+
             <div class="panel-group" id="accordion" >
               <div class="panel panel-default">
                 <div class="panel-heading" role="tab" id="headingOne">
@@ -358,7 +360,8 @@ $(".top").click(function() {
       </div>
       <div class="modal-body">
         <form name="kotak_home_loan_status_dc" id="kotak_home_loan_status_dc" method="post">
-          {{ csrf_field() }}
+          <?php echo e(csrf_field()); ?>
+
           <input type="hidden" name="form" value="kotak_home_loan_status_dc">
                   <div class="col-xs-6 form-padding inp-fld">
                             <div>
@@ -481,7 +484,7 @@ $(".top").click(function() {
 <script type="text/javascript">   
 
  $.ajax({ 
-   url: "{{URL::to('kotak-city-master')}}",
+   url: "<?php echo e(URL::to('kotak-city-master')); ?>",
    method:"GET",
    success: function(datas)  
    {
@@ -506,10 +509,10 @@ $('#ResCity').on('change', function() {
    // alert('okae');
   var ResCity=$('#ResCity').find(":selected").val();
    console.log(ResCity);
-    var v_token ="{{csrf_token()}}";
+    var v_token ="<?php echo e(csrf_token()); ?>";
    $.ajax({  
                 type: "POST",  
-                url: "{{URL::to('kotak-city-area-master')}}",
+                url: "<?php echo e(URL::to('kotak-city-area-master')); ?>",
                  data : {'_token': v_token,'ResCity':ResCity},
                 success: function(msg){
                    
@@ -589,7 +592,7 @@ $('#LeadType').on('change', function() {
            
         $.ajax({  
          type: "POST",  
-         url: "{{URL::to('kotak-home-loan-dc-submit')}}",
+         url: "<?php echo e(URL::to('kotak-home-loan-dc-submit')); ?>",
          data : $('#Kotak_hl_form_dc').serialize(),
          success: function(msg){
            console.log(msg);
@@ -614,7 +617,7 @@ $('#LeadType').on('change', function() {
 
 <script type="text/javascript">
   $('.kotak_hl_proceed').click(function(){
-    window.location.href ="{{URL::to('thank-you')}}";
+    window.location.href ="<?php echo e(URL::to('thank-you')); ?>";
   });
 </script>
 
@@ -638,7 +641,7 @@ $('#LeadType').on('change', function() {
         {
         $.ajax({  
          type: "POST",  
-         url: "{{URL::to('kotak-home-loan-status-dc')}}",
+         url: "<?php echo e(URL::to('kotak-home-loan-status-dc')); ?>",
          data : $('#kotak_home_loan_status_dc').serialize(),
          success: function(msg){
           console.log(msg.status);

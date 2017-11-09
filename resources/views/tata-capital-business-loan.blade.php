@@ -247,13 +247,7 @@
                                         </div>
 
                                          
-                                        <input type="hidden" name="salesOrg" value="Digital vertical">
-                                        <input type="hidden" name="sageProduct" value="Business Loan">
-                                        <input type="hidden" name="sagechannel" value="Rupeeboss">
-                                        <input type="hidden" name="leadType" value="Individual">
-                                        <input type="hidden" name="leadTag" value="WarmLead">
-                                        <input type="hidden" name="semSource" value="Rupeeboss">
-                                         <input type="hidden" name="sageBranch" value="">
+                                        
 
                                         
 
@@ -302,17 +296,7 @@
                                  
 
 
-                                     <input type="hidden" name="campaignId" value="">
-                                     <input type="hidden" name="semCampaignName" value="">
-                                     <input type="hidden" name="semSiteId" value="">
-                                     <input type="hidden" name="semHeadLine" value="">
-                                     <input type="hidden" name="semKeyword" value="">
-                                     <input type="hidden" name="semCreativeId" value="">
-                                     <input type="hidden" name="gclId" value="">
-                                     <input type="hidden" name="leadStage" value="NewLead">
-                                     <input type="hidden" name="companyCategory" value="">
-                                     <input type="hidden" name="rejectionReason" value="">
-                                     <input type="hidden" name="sanctionedAmount" value="">
+                                     
                                      
                                      
                                 

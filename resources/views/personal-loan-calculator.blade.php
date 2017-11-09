@@ -6,10 +6,10 @@
                           <div class="row">
                         <center>
                         <h1 class="loan-head" >Personal Loan EMI Calculator</h1>
-                        <p class="sub-title"><h4>Calculate your Personal Loan EMI and Eligibility Status Due in a snap!</h4></p>
+                        <p class="sub-title"><h4>Calculate your Personal Loan EMI and Eligibility Status Due in a snap! <i class="fa fa-calculator" style="color:#000000" aria-hidden="true"></i></h4></p>
                       </center>
-                      <div class="col-md-2"></div>
-                            <div class="col-md-8 box-shadow brdr-blue">
+                      <div class="col-md-3"></div>
+                            <div class="col-md-6 box-shadow brdr-blue">
                             <div class="row text-left comp-pg rate white-bg">
                                  <form class="" id="personal_loan_calculator_form" name="personal_loan_calculator_form" role="form" method="POST" >
                                  {{ csrf_field() }}

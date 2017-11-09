@@ -105,7 +105,6 @@
                                     <div class="form-group">
                                     
                                        <h1 class="loan-head" >Personal Details</h1>
-                                       
                                         <div class="col-md-4">
                                             <select class="form-control"  name="title"  id="title">
                                               <option selected disabled value="">Title</option>
@@ -212,8 +211,14 @@
                                     <hr>
                                 </div>
 
+                                 <!-- <div class="row">
+                                    <div class="form-group">
                                     
- 
+                                       <h1 class="loan-head" >Personal Details</h1>
+                                    </div>
+                                    <hr>
+                                </div>       
+ -->
                                  <div class="row">
                                     <div class="form-group">
                                    <h1 class="loan-head" >Business Details</h1>
@@ -242,7 +247,14 @@
                                         </div>
 
                                          
-                                        
+                                        <input type="hidden" name="salesOrg" value="Digital vertical">
+                                        <input type="hidden" name="sageProduct" value="Business Loan">
+                                        <input type="hidden" name="sagechannel" value="Rupeeboss">
+                                        <input type="hidden" name="leadType" value="Individual">
+                                        <input type="hidden" name="leadTag" value="WarmLead">
+                                        <input type="hidden" name="semSource" value="Rupeeboss">
+                                         <input type="hidden" name="sageBranch" value="">
+
                                         
 
                                         
@@ -290,7 +302,17 @@
                                  
 
 
-                                     
+                                     <input type="hidden" name="campaignId" value="">
+                                     <input type="hidden" name="semCampaignName" value="">
+                                     <input type="hidden" name="semSiteId" value="">
+                                     <input type="hidden" name="semHeadLine" value="">
+                                     <input type="hidden" name="semKeyword" value="">
+                                     <input type="hidden" name="semCreativeId" value="">
+                                     <input type="hidden" name="gclId" value="">
+                                     <input type="hidden" name="leadStage" value="NewLead">
+                                     <input type="hidden" name="companyCategory" value="">
+                                     <input type="hidden" name="rejectionReason" value="">
+                                     <input type="hidden" name="sanctionedAmount" value="">
                                      
                                      
                                 

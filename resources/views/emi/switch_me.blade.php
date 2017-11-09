@@ -277,8 +277,13 @@
         <h4 class="modal-title"></h4>
       </div>
       <div class="modal-body">
+<<<<<<< HEAD
         <h4 style="color: black"><p>Amount should be greater than <b>"5,00,000" and lesser than "10,00,000,000"</b>.</p></h4>
         <h4 style="color: black"><p>As well as Interest should be greater than <b><?php echo $alert_rate;?></b>. If less you are already on Lower Rate.</p></h4>
+=======
+        <h4><p>Amount should be greater than <b>"5,00,000" and lesser than "10,00,000,000"</b>.</p></h4>
+        <h4><p>As well as Interest should be greater than <b><?php echo $alert_rate;?></b>. If less you are already on Lower Rate.</p></h4>
+>>>>>>> 7dd5d678ef98737afe94bceabf005bfc977ba924
       </div>
       
       <div class="modal-footer">

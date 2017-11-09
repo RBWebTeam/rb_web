@@ -48,7 +48,10 @@ Route::post('lendingkart-docs','ApiController@test_document_upload')
 Route::post('working-capital-emi-calculator-api','CalculatorController@working_calculator');
 Route::post('revise-calculation','MobileApiController@revise_calculation');
 Route::post('bussiness-loan-quote','ApiController@bussiness_loan_quote');
+
 Route::post('calculation','MobileApiController@calculation');
 
 /*WhatsApp*/
 Route::get('wapp','WhatsAppController@wapp');
+Route::post('balance-transfer','MobileApiController@balance_transfer');
+Route::post('test','TribeController@test');

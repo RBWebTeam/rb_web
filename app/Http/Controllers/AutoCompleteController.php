@@ -87,6 +87,7 @@ class AutoCompleteController extends InitialController {
     }
 
 
+<<<<<<< HEAD
     
     public function autoComplete_city_area(Request $request) {
         $term = Input::get('term');
@@ -109,11 +110,17 @@ class AutoCompleteController extends InitialController {
     public function autoComplete_tata_bl_city(Request $request) {
         $term = Input::get('term');
         $products=DB::table('tata_capital_bl_city_master')->select('city_name')
+=======
+    public function autoComplete_kotak_city(Request $request) {
+        $term = Input::get('term');
+        $products=DB::table('kotak_city_master')->select('city_name','city_code')
+>>>>>>> 7dd5d678ef98737afe94bceabf005bfc977ba924
         ->where('city_name', 'LIKE', '%'.$term.'%')
         ->take(5)->get();
         //print_r( $products);
         $data=array();
         foreach ($products as $product) {
+<<<<<<< HEAD
                 $data[]=array('value'=>$product->city_name);
         }
         if(count($data)){
@@ -136,11 +143,18 @@ class AutoCompleteController extends InitialController {
         }
         if(count($data)){
              // print_r($data);
+=======
+                $data[]=array('value'=>$product->city_name,'datavalue'=>$product->city_code);
+        }
+        if(count($data)){
+           //    print_r($data);
+>>>>>>> 7dd5d678ef98737afe94bceabf005bfc977ba924
              return $data;
          }
         else
             return ['value'=>'No Result Found'];
     }
+<<<<<<< HEAD
 
 
     // public function autoComplete_product(Request $request) {
@@ -162,4 +176,6 @@ class AutoCompleteController extends InitialController {
     // }
 
 
+=======
+>>>>>>> 7dd5d678ef98737afe94bceabf005bfc977ba924
 }

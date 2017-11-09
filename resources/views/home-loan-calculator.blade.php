@@ -1,12 +1,12 @@
 @include('layout.header')
-
+<br>
 <div class="container" id="fh5co-hero">
                      <div class="fh5co-contact animate-box">
                          <div class="container">
                           <div class="row">
                         <center>
-                        <h1 class="loan-head">Home Loan EMI Calculator</h1>
-                        <h3><p class="sub-title" >Calculate your Home Loan EMI and Eligibility Status Due in a snap! </p></h3>
+                        <h1 class="loan-head" style="color: #C33F53">Home Loan EMI Calculator</h1>
+                        <h3><p class="sub-title" ><b>Calculate your Home Loan EMI and Eligibility Status Due in a snap! <i class="fa fa-calculator" style="color:#000000" aria-hidden="true"></i></b></p></h3>
                       </center>
                       
                       <div class="col-md-2"></div>
@@ -21,7 +21,7 @@
                                        <!-- <input type="hidden" name="ApplicantSource" id="ApplicantSource" value="1"> -->
                                       <input type="hidden" name="ProductId" id="ProductId" value="12">
                                         
-                                        <div class="col-md-6">
+                                        <div class="col-md-4">
                                           <select class="form-control block drop-arr select-sty" name="ApplicantSource" id="ApplicantSource"  required>
                                             <option value="">Applicant Source</option>
                                             <option value="1">Salaried</option>
@@ -30,17 +30,17 @@
                                           </select> 
                                         </div>
 
-                                        <div class="col-md-6">
+                                        <div class="col-md-4">
                                             <input type="text" class="form-control" placeholder= "Property Cost" name="PropertyCost" id="PropertyCost" onkeypress="return fnAllowNumeric(event)" minlength="6" maxlength="9" required>
                                         </div>
 
 
                                         
-                                        <div class="col-md-6">
+                                        <div class="col-md-4 ">
                                             <input type="text" class="form-control" placeholder="Loan Amount" name="LoanRequired" id="LoanRequired" minlength="6" maxlength="9" required>
                                         </div>
 
-                                        <div class="col-md-6">
+                                        <div class="col-md-4">
                                             <select class=" form-control block drop-arr select-sty" name="LoanTenure" id="LoanTenure" required>
                                               <option disabled selected  value="">Loan Tenure</option>
                                                 <option value="1">1</option>
@@ -104,7 +104,7 @@
                                     <hr>
                                 </div>
                                 <div style="text-align: center;">
-                                <a class="btn btn-primery btn-outline with-arrow mrg-top" id="ckeck_eligibility">Check Eligibility <i class="icon-arrow-right"></i></a></div>
+                                <a class="btn btn-danger btn-outline with-arrow mrg-top" id="ckeck_eligibility">Check Eligibility<i class="icon-arrow-right"></i></a></div>
                                 </form>
                                 </div>
                                 </div>
@@ -174,31 +174,31 @@
          url: "{{URL::to('home-loan-calculation')}}",
          data : $('#home_loan_calculator_form').serialize(),
          success: function(msg){
-              //console.log(msg.status);
+              console.log(msg.status);
               if (msg.status==1) 
               {
                  var loan_eligible = msg.data.loan_eligible;
-                 //console.log(loan_eligible);
+                 console.log(loan_eligible);
                   $('#loan_eligible').empty().append(loan_eligible);
 
                  var roi = msg.data.roi;
                  $('#roi').empty().append(roi);
 
                  var emi = msg.data.emi;
-                 //console.log(emi);
+                 console.log(emi);
                   $('#EMI').empty().append(emi);
 
 
                  var processingfee = msg.data.processingfee;
-                  //console.log(processingfee);
+                  console.log(processingfee);
                   $('#processingfee').empty().append(processingfee);
 
                   var Bank_Name = msg.data.Bank_Name;
-                  //console.log(Bank_Name);
+                  console.log(Bank_Name);
                   $('#bank_name').empty().append(Bank_Name);
 
                   var Bank_Logo = msg.data.Bank_Logo;
-                  //console.log(Bank_Logo);
+                  console.log(Bank_Logo);
                   $('#bank_logo').html('<img src='+Bank_Logo+' width="150px">');
 
                   $('#home_loan_eligible').modal('show');  
@@ -254,7 +254,7 @@
         $("#pat").hide();
         $("#depreciation").hide();
         $("#remuneration").hide();
-        $("#income").show();
+       $("#income").show();
         $("#obligation").show();
         
       }

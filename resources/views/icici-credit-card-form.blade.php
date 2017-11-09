@@ -97,6 +97,9 @@ $(".top").click(function() {
       <div class="row">
       <div class="col-md-12">
     <br>
+    <br>
+    
+    
     
       <div id="logo" class="text-center"><img id="myImage" src="http://erp.rupeeboss.com/personalloan/images/logo.png" class=""></div>
     

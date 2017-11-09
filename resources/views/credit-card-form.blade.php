@@ -383,11 +383,11 @@
 										<div class="col-md-12">
 										&nbsp;&nbsp;&nbsp;&nbsp;<button class="btn btn-primary btn-outline with-arrow animate-box fadeInUp animated credit-submit dis-tbl" >Confirm & Continue<i class="icon-arrow-right"></i></button>
 									<div class="iframeloading" style= "display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
-                                    <img src="{{URL::to('images/ajaxloader.gif')}}" alt="Loader" title="Loader" style="top: 50%; position: relative; left: 50%;"  />
-                                    </div>
+                <img src="{{URL::to('images/ajaxloader.gif')}}" alt="Loader" title="Loader" style="top: 50%; position: relative; left: 50%;"  />
+               </div>
 									<p><b>All <span class="text-danger">* </span>fields are mandatory.</b></p>
 								
-							    </form>
+							</form>
 					</div>
 					<hr>
 					</div>

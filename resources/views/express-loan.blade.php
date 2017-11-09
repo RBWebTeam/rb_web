@@ -154,8 +154,8 @@
 					<div class="col-md-4 animate-box">
 						<div class="price-box popular1">
 							<div class="center-blg"><img src="{{URL::to('images/bank/kotak.png')}}" width="150" alt="apply_online_pic" /></div>
-							<h4 class="mrg-btm">Kotak</h4>
-							<a class="btn btn-primary btn-outline with-arrow" href="{{URL::to('contact-us')}}">Apply Now<i class="icon-arrow-right"></i></a>
+							<h4 class="mrg-btm">Kotak Home Loan</h4>
+							<a class="btn btn-primary btn-outline with-arrow" href="{{URL::to('kotak-home-loan')}}">Apply Now<i class="icon-arrow-right"></i></a>
 						</div>
 					</div>
 					
@@ -171,7 +171,7 @@
 					<div class="col-md-4 animate-box">
 						<div class="price-box popular1">
 							<div class="center-blg"><img src="{{URL::to('images/bank/rbl.png')}}"width="160" alt="apply_online_pic" /></div>
-							<h4 class="mrg-btm">RBL</h4>
+							<h4 class="mrg-btm">RBL Personal Loan </h4>
 							<a class="btn btn-primary btn-outline with-arrow" href="{{URL::to('rbl-personal-loan')}}">Apply Now<i class="icon-arrow-right"></i></a>
 						</div>
 					</div>
@@ -184,13 +184,13 @@
 						</div>
 					</div>
 
-					<div class="col-md-4 animate-box">
+					<!-- <div class="col-md-4 animate-box">
 						<div class="price-box popular1">
 							<div class="center-blg"><img src="{{URL::to('images/bank/kotak.png')}}"width="160" alt="apply_online_pic" /></div>
 							<h4 class="mrg-btm">Kotak Home Loan</h4>
 							<a class="btn btn-primary btn-outline with-arrow" href="{{URL::to('kotak-home-loan')}}">Apply Now<i class="icon-arrow-right"></i></a>
 						</div>
-					</div>
+					</div> -->
 
 					<div class="col-md-4 animate-box">
 						<div class="price-box popular1">

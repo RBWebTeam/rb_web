@@ -292,9 +292,7 @@ $(".top").click(function() {
                 <div class="col-md-12 pull-left text-justify">
                 <!-- <button class="sbmt-btn credit-submit dis-tbl">Confirm &amp; Continue</button> -->
                   &nbsp;&nbsp;&nbsp;&nbsp;<button class="sbmt-btn dis-tbl" id="kotak-hl-submit" >Confirm & Continue<i class="icon-arrow-right"></i></button>
-                 </div>
-
-                  
+                 </div> 
 
                  <div class="col-md-12 pull-left text-justify">
                 <!-- <button class="sbmt-btn credit-submit dis-tbl">Confirm &amp; Continue</button> -->

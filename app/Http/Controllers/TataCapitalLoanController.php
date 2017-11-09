@@ -140,6 +140,7 @@ public function tatacapitalsubmitform(Request $req){
 
 }
 
+<<<<<<< HEAD
 public function tata_capital_business_loan(){
    return view('tata-capital-business-loan');
    }
@@ -172,6 +173,8 @@ public function tata_capital_business_loan(){
     
     }  
 
+=======
+>>>>>>> 7dd5d678ef98737afe94bceabf005bfc977ba924
 
 }
    

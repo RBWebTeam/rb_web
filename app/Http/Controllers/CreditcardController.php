@@ -147,6 +147,9 @@ class CreditcardController extends CallApiController
         $req['Title']=(int)$req['Title'];
         $req['EmpType']=(int)$req['EmpType'];
         $req['ResCity']=(int)$req['ResCity'];
+        $data['brokerid']=Session::get('brokerid')?Session::get('brokerid'):'MAA=';
+        $data['empid']=Session::get('empid')?Session::get('empid'):'MAA=';
+        $data['source']=Session::get('source')?Session::get('source'):'MAA=';
         $data=$req->all();
         
         

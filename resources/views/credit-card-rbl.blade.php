@@ -160,7 +160,7 @@
 		<div class="text-center">
          <p id="rbl_cc_apply_status" class="text-success pad"></p>     
          <p id="reason" class="text-success pad"></p>     
-         <p id="reference" class="text-success pad"></p>         	      
+         <p  id="reference" class="text-success pad"></p>         	      
          </div>   
 </div>
 </div>

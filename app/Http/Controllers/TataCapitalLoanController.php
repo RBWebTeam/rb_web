@@ -140,6 +140,38 @@ public function tatacapitalsubmitform(Request $req){
 
 }
 
+public function tata_capital_business_loan(){
+    return view('tata-capital-business-loan');
+    
+    } 
+
+    public function tata_capital_business_submit(Request $req){
+      // print_r($req->all());exit();
+     $data=$req->all();
+    $data['source'] = 'Rupeeboss';
+    $data['password'] = 'Rupeeboss@123';
+    $data['brokerid']=Session::get('brokerid')?Session::get('brokerid'):'MAA=';
+    $data['empid']=Session::get('empid')?Session::get('empid'):'MAA=';
+    $data['source_rb']=Session::get('source')?Session::get('source'):'MAA=';
+   
+    
+    $post_data=json_encode($data);
+
+    // print_r($post_data);exit();
+    $url = $this::$url_static."/BankAPIService.svc/createTataCapitalBLAppln";
+      $result=$this->call_json_data_api($url,$post_data);
+        $http_result=$result['http_result'];
+        $error=$result['error'];
+        $st=str_replace('"{', "{", $http_result);
+        $s=str_replace('}"', "}", $st);
+        $m=$s=str_replace('\\', "", $s);
+        $obj=json_decode($m);
+
+        return response()->json( $obj);
+
+    
+    }  
+
 
 }
    

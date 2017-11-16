@@ -255,7 +255,13 @@ public function  change_password(Request $req){
     }
      $email=Session::get('email');
      $empid=Session::get('empid')?Session::get('empid'):'';
+     if($empid==''){
+      $empid=$empcode;
+     }
      $brokerid_session=Session::get('brokerid')?Session::get('brokerid'):0;
+     if($brokerid_session==0){
+      $brokerid_session=$req['brokerid']?$req['brokerid']:0;
+     }
      $ref=Session::get('refapp')?Session::get('refapp'):0;
      $source=Session::get('source')?Session::get('source'):'';
      $CampaignName=Session::get('CampaignName');

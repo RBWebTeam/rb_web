@@ -294,7 +294,7 @@ $(".top").click(function() {
                   </div>
 				  <div class="col-xs-6 form-padding">
                     <div>
-                      <input type="text" name="" id="" class=""  required >
+                      <input type="text" name="" id="" class="form-control inp-fld"  required >
                       <span class="highlight"></span><span class="bar"></span>
                       <label class="form-label-new lble">Mobile No.</label>
                       <div class="clear"></div>

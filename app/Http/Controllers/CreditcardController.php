@@ -143,7 +143,7 @@ class CreditcardController extends CallApiController
         //formatting date
         $req['DOB'] = date("d-m-Y", strtotime($req['DOB']));
         $req['CreditCardApplied']=Session::get('rbl_card_id');
-         $req['CreditCardName']=Session::get('rbl_card_name');
+         $req['Card_Type']=Session::get('rbl_card_name');
         $req['Title']=(int)$req['Title'];
         $req['EmpType']=(int)$req['EmpType'];
         $req['ResCity']=(int)$req['ResCity'];

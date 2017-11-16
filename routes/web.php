@@ -355,6 +355,11 @@ Route::get('kotak-city-master','LoanController@kotak_city_master');
 Route::post('kotak-city-area-master','LoanController@kotak_city_area_master');
 Route::post('kotak-home-loan-submit','LoanController@kotak_home_loan_submit');
 Route::post('kotak-home-loan-status','LoanController@kotak_home_loan_status');
+Route::get('kotak-personal-loan','LoanController@kotak_personal_loan');
+
+/*Yes Bank*/
+Route::get('yesbank-home-loan','LoanController@yesbank_home_loan');
+Route::post('yes-bank-home-loan-submit','LoanController@yes_bank_home_loan_submit');
 
 /*For Datacomp- Kotak Home Loan*/
 Route::get('kotak-home-loan-dc','LoanController@kotak_home_loan_dc');

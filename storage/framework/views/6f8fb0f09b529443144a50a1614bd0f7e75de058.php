@@ -106,7 +106,6 @@
                                     <div class="form-group">
                                     
                                        <h1 class="loan-head" >Personal Details</h1>
-                                       
                                         <div class="col-md-4">
                                             <select class="form-control"  name="title"  id="title">
                                               <option selected disabled value="">Title</option>
@@ -213,8 +212,14 @@
                                     <hr>
                                 </div>
 
+                                 <!-- <div class="row">
+                                    <div class="form-group">
                                     
- 
+                                       <h1 class="loan-head" >Personal Details</h1>
+                                    </div>
+                                    <hr>
+                                </div>       
+ -->
                                  <div class="row">
                                     <div class="form-group">
                                    <h1 class="loan-head" >Business Details</h1>
@@ -244,6 +249,7 @@
 
                                          
                                         
+
                                         
 
                                         

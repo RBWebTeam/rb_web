@@ -32,8 +32,7 @@ class CreditcardController extends CallApiController
             $data['empid']=Session::get('empid')?Session::get('empid'):'MAA=';
             $data['source']=Session::get('source')?Session::get('source'):'MAA=';
             $data['type']='DC';
-            $data['UserID']='ICICI_CC_RupeeBoss';
-            $data['Password']='Password@123';
+            
             $data['ChannelType']='RupeeBoss';
             $data['CampaignName']=Session::get('CampaignName');
             if($data['ICICIBankRelationship']!='Salary'){
@@ -158,7 +157,9 @@ class CreditcardController extends CallApiController
         $st=str_replace('"{', "{", $http_result);
         $s=str_replace('}"', "}", $st);
         $m=$s=str_replace('\\', "", $s);
-        $obj=json_decode($m);
+        $n=$s=str_replace('#', "", $m);
+        $obj=json_decode($n);
+        
 
         return json_encode($obj);
     }

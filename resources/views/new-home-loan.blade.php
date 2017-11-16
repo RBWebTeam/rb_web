@@ -78,7 +78,11 @@
   
      <select class="block drop-arr select-sty" name="loan_tenure" id="loan_tenure" required>
 	  <option value="">Loan Tenure</option>
+<<<<<<< HEAD
 	   <option value="1">1 Year</option>
+=======
+	    <option value="1">1 Year</option>
+>>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
 		<option value="2">2 Year</option>
 		<option value="3">3 Year</option>
 		<option value="4">4 Year</option>
@@ -315,13 +319,21 @@
            @if(Session::get('is_login'))
            <a   type="button" class="btn btn-info disblk apply_new" title="Experience New Digital Era In Loans">Apply Digitally</a>
            @else
+<<<<<<< HEAD
            <a   data-toggle="modal" data-target="#login_process" class="block btn btn-info disblk apply_digitally " title="Experience New Digital Era In Loans">Apply Digitally</a>
+=======
+           <a   data-toggle="modal" data-target="#login_process" class="btn btn-info disblk apply_digitally " title="Experience New Digital Era In Loans">Apply Digitally</a>
+>>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
            @endif    
  
 
 
 
+<<<<<<< HEAD
          <button id="eligibility"  class="block btn btn-info disblk" title="See Bankwise Eligibility And Apply Amongst Best Bank" disabled>Check Bankwise Eligibility </button>
+=======
+         <button id="eligibility"  class="btn btn-info disblk" title="See Bankwise Eligibility And Apply Amongst Best Bank" disabled>Check Bankwise Eligibility </button>
+>>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
 
          <button type="button" class="btn btn-info block"  id="call_rm" name="call_rm" data-toggle="modal" data-target="#Modal" title="Call For RM(Single Day Process)">Call Manager</button>
          <div id="log_digital_text" style=" color: red"></div>
@@ -418,7 +430,11 @@ $(document).ready(function(){
   // co applicant 
  $('#co_sala_DI').change(function(){
  $("#co_self-employed_ID").hide();
+<<<<<<< HEAD
   $("#co_income_ID").show();
+=======
+     $("#co_income_ID").show();
+>>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
   });
 
   $('#co_self_DI').change(function(){
@@ -433,10 +449,16 @@ $(document).ready(function(){
 $(".product_ID").click(function(e){
    e.preventDefault();
     if(!$('#home_loan_process_form').valid()){
+<<<<<<< HEAD
     	//$('#valid').empty().append('<span class="icon-remove text-danger" id="tt2"></span>');
             return false;
           }else{
 
+=======
+    //	$('#valid').empty().append('<span class="icon-remove text-danger" id="tt2"></span>');
+            return false;
+          }else{
+>>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
             // $(".iframeloading").show();
                var property_cost=$('#property_cost').val();
                var obligation=$('#obligation').val();

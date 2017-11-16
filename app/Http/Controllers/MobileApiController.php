@@ -143,5 +143,62 @@ class MobileApiController extends ApiController
      
 
 	}
+	public function balance_transfer(Request $req){
+		$getQuery=null;
+		$savings=null;
+		 try {
+		 	$getQuery=DB::select('call usp_get_balance_transfer_quot("'.$req['loanamount'].'","'.$req['loaninterest'].'","'.$req['product_id'].'")');
+                 // print_r($getQuery);exit();
+                $resultArray = json_decode(json_encode($getQuery), true);
+
+     
+                if (!empty($resultArray)) {
+                $loanamount=$req['loanamount'];
+                $loaninterest=$req['loaninterest']/12/100;
+                $loanterm=$req['loanterm']*12;
+                
+
+
+
+                $amount = $loanamount * $loaninterest * (pow(1 + $loaninterest, $loanterm) / (pow(1 + $loaninterest, $loanterm) - 1));
+                $total =(($amount*$loanterm)-$loanamount);
+
+              
+                //savings//
+                if($getQuery[0]->roi==0){
+                	$getQuery[0]->roi=1;
+                 }
+                $new_rate=($getQuery[0]->roi)/12/100;
+                $new_amount = $loanamount * $new_rate * (pow(1 + $new_rate, $loanterm) / (pow(1 + $new_rate, $loanterm) - 1));
+
+                $new_total =(($new_amount*$loanterm)-$loanamount);
+                $new_ttl_payment = $loanamount+$new_total;
+                $drop_emi= $amount-$new_amount;
+                $drop_in_int=(($loaninterest*12*100)-($new_rate*12*100));
+                $savings=$total-$new_total;
+                $emiperlacs=($new_amount/100000);
+
+                //rounding of the amounts
+                $amount=round($amount,2);
+                $new_amount=round($new_amount,2);
+                $drop_emi=round($drop_emi,2);
+                $drop_in_int=round($drop_in_int,2);
+                $savings=round($savings,2);
+
+
+
+                $savings= array('amount'=>$amount, 'new_amount'=>$new_amount, 'drop_emi'=>$drop_emi,'drop_in_int'=>$drop_in_int, 'savings'=>$savings, 'emiperlacs'=> $emiperlacs);                            
+                 }
+
+		                 $status=1;
+		 } catch (\Exception $e) {
+		 	//print_r($e->getMessage());exit();
+		 	$status=0;
+		 	$getQuery=null;
+			$savings=null;	
+		 }
+                $data = array('status'=>$status,'data' =>$resultArray,"saving"=>$savings );
+                return json_encode($data);
+	}
 
 }

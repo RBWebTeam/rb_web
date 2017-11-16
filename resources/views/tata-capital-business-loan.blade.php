@@ -89,7 +89,11 @@
             <div class="row">
                 <div class="col-md-12 text-left fh5co-heading animate-box fadeInUp animated">
                     <center>
+<<<<<<< HEAD
                         <h1 class="loan-head" >Your Business Loan is Just a Click Away</h1>
+=======
+                        <h1 class="loan-head" >TATA CAPITAL BUSINESS LOAN</h1>
+>>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
                        
                       </center>
                     
@@ -198,6 +202,18 @@
                                             <input type="text" class="form-control search_citynm" id="resCity" name="resCity" placeholder="City" required maxlength="20">
                                             
                                         </div>
+<<<<<<< HEAD
+=======
+
+                                        <div class="col-md-4">
+                                            <input type="text" class="form-control" id="loanAmount" name="loanAmount"  minlength="6" maxlength="9" onkeypress="return fnAllowNumeric(event)"  placeholder="Loan Amount">
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <input type="text" class="form-control" id="tenure" name="tenure"  onkeypress="return fnAllowNumeric(event)" minlength="2" maxlength="3"  placeholder="Tenure (in months)">
+                                        </div>
+
+>>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
                                         </div>
                                     <hr>
                                 </div>
@@ -218,11 +234,24 @@
                                             
                                         </div>
 
+<<<<<<< HEAD
                                     <div class="col-md-4">
                                             <input type="text" class="form-control" id="designation" name="designation" placeholder="Designation" maxlength="20">
                                             
                                         </div>
                                    <div class="col-md-4">
+=======
+                                      <div class="col-md-4">
+                                            <input type="text" class="form-control" id="designation" name="designation" placeholder="Designation" maxlength="20">
+                                            
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <input type="text" class="form-control" id="monthlySalary" name="monthlySalary" maxlength="5" maxlength="9" onkeypress="return fnAllowNumeric(event)" placeholder="Salary" >
+                                            
+                                        </div>
+                                       <div class="col-md-4">
+>>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
                                             <input type="text" class="form-control" id="officeEmailId" name="officeEmailId" placeholder="Work Email" maxlength="255" oninput="e_mail('officeEmailId')" >
                                             <div id="mail" style="display:none;color: red; font-size: 10px">Please Enter Valid Email Id.</div>
                                         </div>
@@ -232,6 +261,7 @@
                                             <input type="text" class="form-control" id="officeMobNo" name="officeMobNo" onkeypress="return fnAllowNumeric(event)" maxlength="10" placeholder="Work Phone">
                                         </div>
 
+<<<<<<< HEAD
                                          <div class="col-md-4">
                                             <select class="form-control"  name="salesOrg" id="salesOrg" required>
                                               <option selected disabled value="">Sales Organization</option>
@@ -273,6 +303,12 @@
                                          <div class="col-md-4">
                                             <input type="text" class="form-control" id="sageBranch" name="sageBranch"  maxlength="200"  placeholder="Branch">
                                         </div>
+=======
+                                         
+                                        
+
+                                        
+>>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
 
                                         
 
@@ -284,6 +320,7 @@
                                 <div class="row">
                                     <div class="form-group">
                                      <h1 class="loan-head" >Referral Details</h1>
+<<<<<<< HEAD
                                      <div class="col-md-4">
                                             <input type="text" class="form-control" id="loanAmount" name="loanAmount"  minlength="6" maxlength="9" onkeypress="return fnAllowNumeric(event)"  placeholder="LoanAmount">
                                         </div>
@@ -296,6 +333,10 @@
                                             <input type="text" class="form-control" id="monthlySalary" name="monthlySalary" maxlength="5" maxlength="9" onkeypress="return fnAllowNumeric(event)" placeholder="Salary" >
                                             
                                         </div>
+=======
+                                     
+                                        
+>>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
 
                                         <div class="col-md-4">
                                             <input type="text" class="form-control" id="referralName" name="referralName" placeholder="Referral Name" maxlength="80"  onkeypress="return AllowAlphabet(event)" >
@@ -326,6 +367,7 @@
                                     </div>
                                     <hr>
                                 </div>
+<<<<<<< HEAD
                                  <div class="row">
                                     <div class="form-group">
                                     <h1 class="loan-head" >Others Details</h1>
@@ -404,6 +446,16 @@
                                      <a href="#" data-toggle="modal" data-target="#Experian_terms_modal"></a> Rupeeboss Terms and Conditions applicable to this service and that all the details furnished by me above are true and correct. I further provide consent to Rupeeboss and its affiliates to contact me with reference to financial products and this consent shall override any registration with DNC/NDNC.
 
                                         </div> -->
+=======
+                                 
+
+
+                                     
+                                     
+                                     
+                                
+                              
+>>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
                                         
                                         <div class="col-md-12">
                                         &nbsp;&nbsp;&nbsp;&nbsp;<button class="btn btn-primary btn-outline with-arrow animate-box fadeInUp animated  dis-tbl" id="tata_capital_submit"  >Confirm & Continue<i class="icon-arrow-right"></i></button>

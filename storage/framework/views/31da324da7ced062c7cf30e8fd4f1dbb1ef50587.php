@@ -1,5 +1,10 @@
 <?php echo $__env->make('layout.header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
 <div id="fh5co-hero">
   <img src="<?php echo e(URL::to('images/kotak_banner.jpg')); ?>" alt="Kotak Home Loan Banner" title="Kotak Home Loan" class="img-responsive">
 
@@ -14,10 +19,18 @@
 									 
                     										<h3 class="hdr col-md-12 text-center">Kotak Home Loan</h4>
                     										<div class="col-md-1"></div>
+<<<<<<< HEAD
                                   <form id="Kotak_HL_form" name="Kotak_HL_form" method="POST">
                                    <?php echo e(csrf_field()); ?>
 
                     										<div class="col-md-10 white-bg pad1 box-shadow">
+=======
+                                        <form id="Kotak_HL_form" name="Kotak_HL_form" method="POST">
+                                        <?php echo e(csrf_field()); ?>
+
+                    										<div class="col-md-10 white-bg pad1 box-shadow">
+                                         <input type="hidden" name="CampaignName" value="<?php echo e($CampaignName); ?>">
+>>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
                     										<div class="col-md-4">
                     										<span>Loan Purpose</span>
 										                    <select class="form-control block drop-arr select-sty" name="LoanPurpose" id="LoanPurpose"  required>
@@ -111,6 +124,7 @@
                     										</div>
                       										<div class="col-md-4">
                       										 <span>Residence City</span>
+<<<<<<< HEAD
                       											<input type="text" class="form-control search_citynm " id="City" name="City" placeholder="Residence City*"  required>
                                             <input type="hidden" name="ResCity" id="ResCity">
                       										</div>
@@ -119,6 +133,22 @@
                       										 <span>Residence City Area</span>
                       											<input type="text" class="form-control search_city_area " id="CityArea" name="CityArea" placeholder="Residence City Area*"  required>
                                             <input type="hidden" name="ResCityArea" id="ResCityArea">
+=======
+                      											<!-- <input type="text" class="form-control search_city_kot" id="City" name="City" placeholder="Residence City*"  required>
+                                            <input type="hidden" name="ResCity" id="ResCity"> -->
+                                            <select class="form-control drop-arr select-sty" name="ResCity" id="ResCity" style="height: 50px" required>
+                                            <option disabled selected value="">CITY</option>
+                                            </select>
+                      										</div>
+                      										
+                      										<div style="display: none;" class="col-md-4">
+                      										 <span>Residence City Area</span>
+                      											<!-- <input type="text" class="form-control search_city_area" id="CityArea" name="CityArea" placeholder="Residence City Area*"  required>
+                                            <input type="hidden" name="ResCityArea" id="ResCityArea"> -->
+                                            <select class="form-control drop-arr select-sty" name="ResCityArea" id="ResCityArea" style="height: 50px">
+                                            <option disabled selected value="">CITY AREA</option>
+                                            </select>
+>>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
                       										</div>
 
                                             <div class="col-md-4">
@@ -130,6 +160,16 @@
                       										<div class="col-md-12">
                       										<div class="col-md-4"></div>
                       										<div class="col-md-2"><a class="btn  btn-primary block btn-outline animate-box fadeInUp animated dis-tbl" id="kotak-hl-submit">Submit</a></div>
+<<<<<<< HEAD
+=======
+
+                                          <div class="col-md-2"><a class="btn  btn-success block btn-outline animate-box fadeInUp animated dis-tbl" id="kotak-hl-status">Check Status</a></div>
+                                          
+                                          <div class="iframeloading" style= "display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
+                                          <img src="<?php echo e(URL::to('images/ajaxloader.gif')); ?>" alt="Loader" title="Loader" style="top: 50%; position: relative; left: 50%;"  />
+                                         </div>
+                                         
+>>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
                       										</div>
                       									</div>
                                         </form>
@@ -145,6 +185,118 @@
 <?php echo $__env->make('layout.footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 <?php echo $__env->make('layout.script', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 
+<<<<<<< HEAD
+=======
+<div class="modal fade" tabindex="-1" role="dialog" id="kotak-hl-popup">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Confirmation Status</h4>
+      </div>
+      <div class="modal-body">
+        <h4><p id="modalerr"><h5 style="color: black">Your Kotak Home Loan Lead Id is <b><span id="kotak_hl"></span></b>.<h5></p></h4>
+        
+      </div>
+
+      <div class="modal-footer">
+        <a type="button" id="okae" name="okae" class="btn btn-primary kotak_hl_proceed">OK</a>
+        
+      </div>
+      
+      
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" tabindex="-1" role="dialog" id="kotak-hl-popup-error">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Error Status</h4>
+      </div>
+      <div class="modal-body">
+        <h4><p id="modalerr"><h5 style="color: black">Oops!! Unable To Process Due Duplicate Application.<h5></p></h4>
+        
+      </div>
+      
+      
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" tabindex="-1" role="dialog" id="kotak-hl-popup-status">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Track Status</h4>
+      </div>
+      <div class="modal-body">
+        <form name="kotak_home_loan_status" id="kotak_home_loan_status" method="post">
+          <?php echo e(csrf_field()); ?>
+
+          <input type="hidden" name="form" value="kotak_home_loan_status">
+                  <div>
+                    <fieldset>
+                      <input type="text" class="newsletter-name" name="Mobile" pattern="[789][0-9]{9}" required maxlength="10" placeholder="Mobile Number">
+                    </fieldset>                 
+                    </div>
+                  <div>
+                      <button class="btn btn-primary btn-outline with-arrow" id="kotak_status">Submit<i class="icon-arrow-right"></i></button>
+                  </div>
+
+            </form>
+        
+      </div>
+      
+      
+    </div>
+  </div>
+</div>
+
+<!-- Status Modal -->
+<div class="modal fade" tabindex="-1" role="dialog" id="kotak-status-popup">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Confirmation Status</h4>
+      </div>
+      <div class="modal-body">
+        <h4><p id="modalerr"><h5 style="color: black">Your Kotak Home Loan Lead Id is <b><span id="kotakrefcode"></span></b> And Status Is<b><span id="kotakstatus"></span></b> .<h5></p></h4>
+        
+      </div>
+
+      <div class="modal-footer">
+        <a type="button" id="okae" name="okae" class="btn btn-primary kotak_hl_proceed">OK</a>
+        
+      </div>
+      
+      
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" tabindex="-1" role="dialog" id="kotak-hl-status-error">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Error Status</h4>
+      </div>
+      <div class="modal-body">
+        <h4><p id="modalerr"><h5 style="color: black">Something Went Wrong.<h5></p></h4>
+        
+      </div>
+      
+      
+    </div>
+  </div>
+</div>
+
+>>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
 <script type="text/javascript">
   function AllowAlphabet(e)
 {
@@ -183,6 +335,7 @@
     }
     </script>
 
+<<<<<<< HEAD
 <script type="text/javascript">
 
 	
@@ -270,6 +423,59 @@
 </script>
 
 
+=======
+<script type="text/javascript">   
+
+ $.ajax({ 
+   url: "<?php echo e(URL::to('kotak-city-master')); ?>",
+   method:"GET",
+   success: function(datas)  
+   {
+   var data=$.parseJSON(datas);
+   console.log(data);
+   if(data)
+      {      $.each(data, function( index, value ) {
+            $('#ResCity').append('<option value="'+value.city_code+'">'+value.city_name+'</option>');
+
+        }); 
+    }else{
+      $('#ResCity').empty().append('No Result Found');
+    }
+
+   },
+
+ });
+</script>
+
+<script>
+$('#ResCity').on('change', function() {
+   // alert('okae');
+  var ResCity=$('#ResCity').find(":selected").val();
+   console.log(ResCity);
+    var v_token ="<?php echo e(csrf_token()); ?>";
+   $.ajax({  
+                type: "POST",  
+                url: "<?php echo e(URL::to('kotak-city-area-master')); ?>",
+                 data : {'_token': v_token,'ResCity':ResCity},
+                success: function(msg){
+                   
+                    console.log(msg);
+                    if(msg)
+                    {      $.each(msg, function( index, value ) {
+                              $('#ResCityArea').empty().append('<option value="'+value.area_code+'">'+value.city_area+'</option>');
+
+                    }); 
+                    }else{
+                        $('#ResCityArea').empty().append('No Result Found');
+                      }
+                        
+    }  
+      });
+  
+});
+</script>
+
+>>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
 <script>
 $('#LeadType').on('change', function() {
   // alert('okae');
@@ -295,7 +501,11 @@ $('#LeadType').on('change', function() {
 <script type="text/javascript">
   $('#EmpType').on('change', function() {
     var EmpType=$('#EmpType').find(":selected").val();
+<<<<<<< HEAD
     if ( EmpType == '2')
+=======
+    if ( EmpType == '1')
+>>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
       {
        
         $("#TnrYears option[value='16']").show();
@@ -304,6 +514,16 @@ $('#LeadType').on('change', function() {
         $("#TnrYears option[value='19']").show();
         $("#TnrYears option[value='20']").show();
       }
+<<<<<<< HEAD
+=======
+      else{
+       $("#TnrYears option[value='16']").hide();
+        $("#TnrYears option[value='17']").hide();
+        $("#TnrYears option[value='18']").hide();
+        $("#TnrYears option[value='19']").hide();
+        $("#TnrYears option[value='20']").hide(); 
+      }
+>>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
       });
 </script>
 
@@ -312,19 +532,44 @@ $('#LeadType').on('change', function() {
     // alert('okae');
     if(! $('#Kotak_HL_form').valid())
        {
+<<<<<<< HEAD
                alert('Please Fill Up All Details');
         }
         else
         {
           
            
+=======
+          alert('Please Fill Up All Details');
+        }
+        else
+        {
+            $('#kotak-hl-submit').hide();
+            $(".iframeloading").show();
+>>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
         $.ajax({  
          type: "POST",  
          url: "<?php echo e(URL::to('kotak-home-loan-submit')); ?>",
          data : $('#Kotak_HL_form').serialize(),
          success: function(msg){
+<<<<<<< HEAD
             console.log(msg.ReferenceCode);
              console.log(msg);
+=======
+            $(".iframeloading").hide();
+            console.log(msg);
+            console.log(msg.status);
+            if (msg.status =="1") {
+             $('#kotak_hl').empty().append(msg.refcode);
+             $('#kotak-hl-popup').modal('show');
+            } else {
+             $('#kotak-hl-submit').show();
+             $('#kotak-hl-popup').modal('hide');
+             $('#kotak-hl-popup-error').modal('show');
+            }
+             
+            
+>>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
               
               
         }  
@@ -333,5 +578,59 @@ $('#LeadType').on('change', function() {
   });
 </script>
 
+<<<<<<< HEAD
+=======
+<script type="text/javascript">
+  $('.kotak_hl_proceed').click(function(){
+    window.location.href ="<?php echo e(URL::to('thank-you')); ?>";
+  });
+</script>
+
+<script type="text/javascript">
+  $('#kotak-hl-status').click(function(){
+    // alert('okae');
+     $('#kotak-hl-popup-status').modal('show');
+     
+  });
+</script>
+
+<script type="text/javascript">
+  $('#kotak_status').click(function(event){
+     event.preventDefault();
+     // alert('okae');
+    if(! $('#kotak_home_loan_status').valid())
+       {
+               alert('Please Fill Up All Details');
+        }
+        else
+        {
+         
+        $.ajax({  
+         type: "POST",  
+         url: "<?php echo e(URL::to('kotak-home-loan-status')); ?>",
+         data : $('#kotak_home_loan_status').serialize(),
+         success: function(msg){
+
+          console.log(msg.status);
+         if (msg.status =="1") {
+             
+             $('#kotakrefcode').empty().append(msg.refcode);
+             $('#kotakstatus').empty().append(msg.appstatusdesc);
+             $('#kotak-status-popup').modal('show');
+           } else {
+             $('#kotak-status-popup').modal('hide');
+            
+             $('#kotak-hl-status-error').modal('show');
+           }
+           
+            
+              
+              
+        }  
+      });   
+     }
+  });
+</script>
+>>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
 
 

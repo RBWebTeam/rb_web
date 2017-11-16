@@ -2,10 +2,18 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<<<<<<< HEAD
 <title>SME :: Thank You</title>
 <style>
  body {font-family:Arial, Helvetica, sans-serif;}
  h1 {color:#3d90c5; font-size:60px; text-align:center;margin:0px;padding:0px;}
+=======
+<title>SME - RupeeBoss</title>
+<style>
+ body {font-family:Arial, Helvetica, sans-serif;}
+ h1 {color:#3d90c5; font-size:60px; text-align:center;margin:0px;padding:0px;}
+ h3{text-align: center; font-weight:normal;}
+>>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
  p { text-align:center; color:#666;padding:0px 70px;}
  .main {width: 60%; margin: 0 auto;padding: 20px; border: 16px solid #e7e7e7;margin-top: 10px;background: #f8f8f8;}
  .lnk {text-align:center;text-decoration:none;}

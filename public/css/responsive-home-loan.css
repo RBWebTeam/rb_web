@@ -546,7 +546,11 @@ nav#cbp-spmenu-s2 h3 {
 	font-weight:500;
     display: block;
     width: 100%;
+<<<<<<< HEAD
 
+=======
+    height: 34px;
+>>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
     padding: 6px 9px;
     font-size: 14px;
     line-height: 1.42857143;

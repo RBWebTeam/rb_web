@@ -5,27 +5,43 @@
 	<aside id="fh5co-hero">
 
 		<div class="container-fluid">
+<<<<<<< HEAD
 		
 <div id="myCarousel" class="carousel slide carousel-fade"  data-ride="carousel">
+=======
+		<div id="" class="carousel slide" data-ride="carousel">
+>>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
   <!-- Indicators -->
   <ol class="carousel-indicators">
     <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
     <li data-target="#myCarousel" data-slide-to="1"></li>
+<<<<<<< HEAD
     <!--<li data-target="#myCarousel" data-slide-to="2"></li>
     <li data-target="#myCarousel" data-slide-to="3"></li>
 	<li data-target="#myCarousel" data-slide-to="4"></li>
     <li data-target="#myCarousel" data-slide-to="5"></li>-->
+=======
+    <li data-target="#myCarousel" data-slide-to="2"></li>
+    <li data-target="#myCarousel" data-slide-to="3"></li>
+	<li data-target="#myCarousel" data-slide-to="4"></li>
+    <li data-target="#myCarousel" data-slide-to="5"></li>
+>>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
   </ol>
 
   <!-- Wrapper for slides -->
   <div class="carousel-inner" role="listbox">
+<<<<<<< HEAD
 <!--  <div class="pull-right mar-tp ">
+=======
+  <div class="pull-right mar-tp ">
+>>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
          <ul>
 		    <li><a href="{{URL::to('comfy')}}"><b>Rupeeboss Comfy</b></a></li>
 			<li><a href="{{URL::to('express-loan')}}"style="background:red;"><b>Express Loan</b></a></li>
 			<li><a href="{{URL::to('idfc')}}">Savings Account</a></li>
 
 			<li><a href="{{URL::to('home-loan')}}"><b>Pradhan Mantri Awas Yojana</b></a></li>
+<<<<<<< HEAD
 			<!-- <li><a href="{{URL::to('contact-us')}}"><b>SME Car Leasing</b></a></li> 
 		 </ul>
 </div> -->
@@ -43,10 +59,28 @@
    
    </div>
         <img src="{{URL::to('images/slide_2.jpg')}}" alt="Personal Loan Banner" title="Personal Loan " class="slide-hm">
+=======
+			<li><a href="{{URL::to('contact-us')}}"><b>SME Car Leasing</b></a></li>
+		 </ul>
+</div>
+
+  
+
+    <div class="item active">
+	<div class="slide-txt">
+	<!-- <i class="sprite sprite-home-ic center-img-align img-responsive hidden-xs"></i> -->
+	<img src="{{URL::to('../images/home-ic.png')}}" class="center-block"> 
+	<h2>Home Loan </h2>
+   <h4>Choose the right Home Loan for you ...!!</h4>
+   <a href="{{URL::to('home-loan')}}" class="btn btn-primary btn-lg btn-view">View More</a>
+   </div>
+      <img src="{{URL::to('images/slide_1.jpg')}}" alt="Home Loan Banner" title="Home Loan " class="slide-hm"> 
+>>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
     </div>
 
     <div class="item">
 	<div class="slide-txt">
+<<<<<<< HEAD
 
 	<!-- <img src="{{URL::to('../images/personal-ic.png')}}" class="center-block"> -->
 	<h2>Personal Loan </h2>
@@ -61,6 +95,20 @@
    <!-- <div class="item">
 	<div class="slide-txt">
 	
+=======
+	<!-- <i class="sprite sprite-personal-ic center-img-align img-responsive hidden-xs"></i> -->
+	<img src="{{URL::to('../images/personal-ic.png')}}" class="center-block">
+	<h2>Personal Loan </h2>
+   <h4>Finance Your Dreams...!!</h4>
+   <a href="{{URL::to('personal-loan')}}" class="btn btn-primary btn-lg btn-view">View More</a>
+   </div>
+      <img src="{{URL::to('images/slide_2.jpg')}}" alt="Personal Loan Banner" title="Personal Loan " class="slide-hm">
+    </div>
+
+    <div class="item">
+	<div class="slide-txt">
+	<!-- <i class="sprite sprite-lap-ic center-img-align img-responsive hidden-xs"></i>-->
+>>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
 	<img src="{{URL::to('../images/lap-ic.png')}}"class="center-block">
 	<h2>Loan Against Property</h2>
    <h4>Finding you a better Deal...!!</h4>
@@ -71,7 +119,11 @@
 
     <div class="item">
 	<div class="slide-txt">
+<<<<<<< HEAD
 	
+=======
+	<!--  <i class="sprite sprite-sme-ic center-img-align img-responsive hidden-xs"></i>-->
+>>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
 	<img src="{{URL::to('../images/sme-ic.png')}}" class="center-block">
 	<h2>SME Loan</h2>
 
@@ -84,7 +136,11 @@
 	
 	<div class="item">
 	<div class="slide-txt" >
+<<<<<<< HEAD
 
+=======
+	<!-- <i class="sprite sprite-balance-ic center-img-align img-responsive hidden-xs"></i> -->
+>>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
 	<img src="{{URL::to('../images/balance-ic.png')}}"class="center-block">
 	<h4>Unsecured</h4>
 	<h2>Business Loan</h2>
@@ -96,7 +152,11 @@
     </div>
 	<div class="item">
 	<div class="slide-txt">
+<<<<<<< HEAD
 	
+=======
+	<!-- <i class="sprite sprite-car-ic center-img-align img-responsive hidden-xs"></i> -->
+>>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
 	<img src="{{URL::to('../images/car-ic.png')}}"class="center-block">
 	<h2>Car Loan</h2>
    <h4>Thinking of your comfort first !!</h4>
@@ -104,6 +164,7 @@
    </div>
       <img src="{{URL::to('images/slide_6.jpg')}}" alt="car-slider-img" title="car Loan " class="slide-hm">
     </div>
+<<<<<<< HEAD
   </div> -->
 
   <!-- Left and right controls 
@@ -115,6 +176,19 @@
     <span class="icon-chevron-right" aria-hidden="true"></span>
     <span class="sr-only">Next</span>
   </a>-->
+=======
+  </div>
+
+  <!-- Left and right controls -->
+  <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+>>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
 </div>
 
 </div>
@@ -130,6 +204,7 @@
 </div>
 	
 	
+<<<<<<< HEAD
 	
 	<div class="col-md-6 hom-rig animate-box fadeInUp animated" style="position: absolute;z-index: 1;top:135px;">
 	<div class="profile-smdl">
@@ -207,6 +282,10 @@
 	
 	</div>
 	<!--<div id="fh5co-services-section">
+=======
+	</div>
+	<div id="fh5co-services-section">
+>>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
 		<div class="container-fluid">
 			
 			<div class="dv-hr">
@@ -278,6 +357,7 @@
 				</div>
 			</div>
 		</div>
+<<<<<<< HEAD
 	</div> -->
 	
 		<div class="container pad flt-non">
@@ -292,10 +372,20 @@
 						
 						
 						<button class="btn btn-primary btn-outline with-arrow sidebar-submit pull-left">Apply Now<i class="icon-arrow-right"></i></button>
+=======
+	</div>
+	
+		<div class="container-fluid white-bg credit-report-bg flt-non">
+			
+			<div class="animate-box">
+                    <div class="col-md-1"></div>
+					<div class="col-md-6 animate-box fadeInUp animated">
+>>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
 						
 					</div>
 					<div class="col-md-4 padd">
 				
+<<<<<<< HEAD
 					<!-- <img src="images/Report.png" alt="Credit Report" title="Credit Report" class="img-responsive hidden-sm pad crd-rpt"> 
 			
 					<a class="tp-margin" href="{{URL::to('credit-report-otp')}}">Apply For FREE Credit Report</a>-->
@@ -305,10 +395,19 @@
 					<br>
                    <div class="col-md-1"></div>
 				   
+=======
+					<img src="images/Report.png" alt="Credit Report" title="Credit Report" class="img-responsive hidden-sm pad crd-rpt">
+			
+					<a class="tp-margin" href="{{URL::to('credit-report-otp')}}">Apply For FREE Credit Report</a>
+					</div>
+					<br>
+                   <div class="col-md-1"></div>
+>>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
 			</div>
 		</div>
 	
 	<div id="fh5co-pricing-section">
+<<<<<<< HEAD
 		<div class="container-fluid bg-gray no-padding">
 			
 			<div class="row no-margin">
@@ -363,10 +462,59 @@
 						</div>
 					</div>
 					
+=======
+		<div class="container-fluid bg-gray">
+			<div class="row no-margin">
+				<div class="col-md-6 col-md-offset-3 text-center fh5co-heading animate-box">
+				<br>
+					<h2>What you get?</h2>
+					
+				</div>
+			</div>
+			<div class="row no-margin">
+				<div class="pricing">
+					<div class="col-md-3 animate-box">
+						<div class="price-box popular">
+							
+							<div class="icon-style"><i class="sprite sprite-icon1"></i></div>
+							<h4 class="mrg-btm">Buy With Confidence</h4>
+							<p>Our strong relationship with leading Banks means we can give you the confidence you need to make the right choice.</p>
+							
+						</div>
+					</div>
+
+					<div class="col-md-3 animate-box">
+						<div class="price-box popular">
+							<div class="icon-style"><i class="sprite sprite-icon2"></i></div>
+							<h4 class="mrg-btm">Experts in small stuff</h4>
+							<p>Our Experts take care of all the small & big Terms & conditions so that you enjoy what really matters to you.</p>
+							
+						</div>
+					</div>
+					
+					<div class="col-md-3 animate-box">
+						<div class="price-box popular">
+							<div class="icon-style"><i class="sprite sprite-icon3"></i></div>
+							<h4 class="mrg-btm">Beyond the Bucks</h4>
+							<p>We don't sell a product, We make Relationship and We are together with you in this journey.</p>
+							
+						</div>
+					</div>
+
+					<div class="col-md-3 animate-box">
+						<div class="price-box popular">
+							<div class="icon-style"><i class="sprite sprite-icon4"></i></div>
+							<h4 class="mrg-btm">Your way or Highway</h4>
+							<p>We don't push, We give you plenty of options, solution & facts, its your call, your decision. We are only here to help you.</p>
+							
+						</div>
+					</div>
+>>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
 				</div>
 			</div>
 		</div>
 	</div>
+<<<<<<< HEAD
 	
 	<div class="container no-padding">
 			<div class="row no-margin">
@@ -516,6 +664,9 @@
 		</div>
 		</div>
  <!-- <div class="fh5co-cta backimg" >
+=======
+ <div class="fh5co-cta backimg" >
+>>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="col-md-12 text-center animate-box wht-brd pad">
@@ -546,8 +697,13 @@
 
 			</div>
 		</div>
+<<<<<<< HEAD
 	</div>  -->
 	<!---  <div id="fh5co-work-section" class="fh5co-light-grey-section">
+=======
+	</div>
+	<div id="fh5co-work-section" class="fh5co-light-grey-section">
+>>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
 		<div class="container-fluid bg-gray">
 			<div class="row">
 				<div class="col-md-6 col-md-offset-3 text-center fh5co-heading animate-box">
@@ -643,9 +799,15 @@
 </div>
 			
 </div>
+<<<<<<< HEAD
 </div>  --->
 	
 	<!-- <div id="fh5co-blog-section" class="fh5co-light-grey-section">
+=======
+</div>
+	
+	<div id="fh5co-blog-section" class="fh5co-light-grey-section">
+>>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
 		<div class="container">
 			<div class="row">
             
@@ -655,7 +817,11 @@
 							<div class="v-align-middle">
 	<div id="myCarousel1" class="carousel slide" data-ride="carousel">
  
+<<<<<<< HEAD
   <!-- Wrapper for slides 
+=======
+  <!-- Wrapper for slides -->
+>>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
   <div class="carousel-inner carousel1" role="listbox">
   <div class="item active">
       <h3 class="title">Customers Speak</h3>
@@ -729,12 +895,19 @@ you in future.
 				
 			</div>
 		</div>
+<<<<<<< HEAD
 		</aside>
 		</div> -->
 		@include('layout.script')
         @include('layout.footer')
 		
 	
+=======
+		@include('layout.script')
+@include('layout.footer')
+		</aside>
+	</div>
+>>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
 	
 
 <!-- <div id="popup" class="modal fade">
@@ -749,4 +922,8 @@ you in future.
             </div>
         </div>
     </div>
+<<<<<<< HEAD
 </div> -->
+=======
+</div> -->
+>>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d

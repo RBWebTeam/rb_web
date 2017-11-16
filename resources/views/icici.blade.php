@@ -1,5 +1,6 @@
 
 @include('layout.header')
+<<<<<<< HEAD
 <style>
  .nav-tabs > li.active > a {
     color: #fff;
@@ -10,6 +11,8 @@
  .btn-block + .btn-block {margin-top: 0px;}
  .btn {border-radius:0px;padding:12px 7px;}
 </style>
+=======
+>>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
 
 <div id="fh5co-hero">
 
@@ -47,7 +50,11 @@
   <li><a data-toggle="tab" href="#menu2" onclick="set_interest('Motorsports')">MOTORSPORTS</a></li>
 </ul>
 
+<<<<<<< HEAD
 <div class="tab-content text-left tab-con">
+=======
+<div class="tab-content text-left">
+>>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
       <div id="Lifestyle>2.5Lacs"  >
       <div class="col-md-4">
       <img src="images/CS/RD_1/SD_ICIC_Rohit_Khanna_Platinum_VISA_Card.jpg" width="230" class="pull-left card-img"/>
@@ -261,7 +268,11 @@
        show_card();
   }
   function show_card(){
+<<<<<<< HEAD
     //console.log(income+"--"+interest)
+=======
+    console.log(income+"--"+interest)
+>>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
     if(interest=='Lifestyle'){
        document.getElementById('2.5_button').classList.remove("hide");
     }else{

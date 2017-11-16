@@ -327,7 +327,7 @@ public function dropdown(Request $req){
 
 
      $obj = json_decode($m);
-      //print_r($obj);exit();
+      // print_r($obj);exit();
      $a=$obj->body;
      $b=$a->Values;
      usort($b,function($x,$y){
@@ -796,14 +796,15 @@ $url = $this::$url_static."/BankAPIService.svc/updateIIFLRevisedQuote";
     // print_r($req->all());exit();
     $data=$req->all();
     $data['DOB'] = date("d-m-Y", strtotime($req['DOB']));
-    $data['CurCmpnyJoinDt'] = date("d-m-Y", strtotime($req['DOB']));
-    $data['CurResSince'] = date("d-m-Y", strtotime($req['DOB']));
+    $data['CurCmpnyJoinDt'] = date("d-m-Y", strtotime($req['CurCmpnyJoinDt']));
+    $data['CurResSince'] = date("d-m-Y", strtotime($req['CurResSince']));
     $data['brokerid']=Session::get('brokerid')?Session::get('brokerid'):'MAA=';
     $data['empid']=Session::get('empid')?Session::get('empid'):'MAA=';
     $data['source']=Session::get('source')?Session::get('source'):'MAA=';
     $data['ConUniqRefCode']=substr(str_shuffle(str_repeat("0123456789", 15)), 0, 15);
     
-    $post_data =json_encode( array("Authentication"=>array( "UserId"=>"RupeeBoss", "Password"=>"rupeeb@123" ), "PersonalLoan"=> $data));
+    
+    $post_data =json_encode(array("PersonalLoan"=> $data));
     // print_r($post_data);exit();
     $url = $this::$url_static."/BankAPIService.svc/createRBLPersonalLoanReq";
       $result=$this->call_json_data_api($url,$post_data);
@@ -834,21 +835,39 @@ $url = $this::$url_static."/BankAPIService.svc/updateIIFLRevisedQuote";
 
 	
 	public function kotak_home_loan(){
-		return view('kotak-home-loan');
+		// return view('kotak-home-loan');
+    $CampaignName=Session::get('CampaignName');
+
+    return view('kotak-home-loan',['CampaignName'=>$CampaignName]);
+   }
+
 		
-		}  
-      
+		  
+   public function kotak_city_master(){
+    $query = DB::table('kotak_city_master')->select('city_code', 'city_name')->get();
+
+    echo json_encode($query);
+  }
+
+  public function kotak_city_area_master(Request $req){
+      // print_r($req->all());exit();
+      $quote_data=DB::select('call usp_load_kotak_city_area ("'.$req['ResCity'].'")');
+       // print_r($quote_data);exit();
+      return $quote_data;
+      }    
 
   public function kotak_home_loan_submit(Request $req){
-   // print_r($req->all());
+   // print_r($req->all());exit();
     $data=$req->all();
     $data['Version'] = '1';
     $data['brokerid']=Session::get('brokerid')?Session::get('brokerid'):'MAA=';
     $data['empid']=Session::get('empid')?Session::get('empid'):'MAA=';
     $data['source']=Session::get('source')?Session::get('source'):'MAA=';
-    $data['UniqRefCode']=substr(str_shuffle(str_repeat("0123456789", 6)), 0, 6);
+    $data['UniqRefCode']='135'.(substr(str_shuffle(str_repeat("0123456789", 6)), 0, 6));
     
-    $post_data =json_encode( array("Authentication"=>array( "UserId"=>"Rubique", "Password"=>"rub@uat123" ), "AppDetails"=> $data));
+   
+    $post_data =json_encode(array("AppDetails"=> $data));
+    // $post_data=json_encode($data);
     // print_r($post_data);exit();
     $url = $this::$url_static."/BankAPIService.svc/createKotakHomeLoanReq";
       $result=$this->call_json_data_api($url,$post_data);
@@ -857,10 +876,101 @@ $url = $this::$url_static."/BankAPIService.svc/updateIIFLRevisedQuote";
         $st=str_replace('"{', "{", $http_result);
         $s=str_replace('}"', "}", $st);
         $m=$s=str_replace('\\', "", $s);
+        // print_r($http_result);exit();
         $obj=json_decode($m);
+        try{
+          $a['status']=$obj->Response->Status;
+          if($a['status']=="1"){
+            $a['refcode']=$obj->Response->ReferenceCode;
+          }
+        }catch(\Exception $ee){
+          $a['status']=0;
+         
+        }
+        return response()->json($a) ;
 
-        return json_encode($obj);
+        
     }
+
+    public function kotak_home_loan_status(Request $req){
+      $data=$req->all();
+      $post_data=json_encode($data);
+      // print_r($post_data);exit();
+        $url = $this::$url_static."/BankAPIService.svc/getKotakHLStatusReq?Mobile=".$req->Mobile;
+        $result=$this->call_json_data_get_api($url,$post_data);
+        $http_result=$result['http_result'];
+        $error=$result['error'];
+        $st=str_replace('"{', "{", $http_result);
+        $s=str_replace('}"', "}", $st);
+        $m=$s=str_replace('\\', "", $s);
+        // print_r($http_result);exit();
+        $obj=json_decode($m);
+         
+        try{
+          $a['status']=$obj->Response->Status;
+          if ($a['status']=="1") {
+            $a['refcode']=$obj->Response->ReferenceCode;
+            $a['appstatusdesc']=$obj->Response->AppStatusDesc;
+          }
+            
+          
+        }catch(\Exception $ee){
+          $a['status']=0;
+        }
+        return response()->json($a) ;
+    }
+
+
+    public function kotak_home_loan_dc(){
+      return view('kotak-home-loan-dc');
+    }
+
+     public function kotak_city_master_dc(){
+    $query = DB::table('kotak_city_master')->select('city_code', 'city_name')->get();
+
+    echo json_encode($query);
+  }
+
+  public function kotak_city_area_master_dc(Request $req){
+      // print_r($req->all());exit();
+      $quote_data=DB::select('call usp_load_kotak_city_area ("'.$req['ResCity'].'")');
+       // print_r($quote_data);exit();
+      return $quote_data;
+      }    
+
+    public function other_loans(){
+      return view('other-loans');
+    }
+
+
+    public function other_loans_submit(Request $req){
+      $data=$req->all();
+      $data['brokerid']=Session::get('brokerid')?Session::get('brokerid'):'0';
+      $data['empCode']='Rb40000706';
+      
+      $post_data=json_encode($data);
+      // print_r($post_data);exit();
+      $url = $this::$service_url_static."/LoginDtls.svc/xmlservice/insLeadCaptures";
+      $result=$this->call_json_data_api($url,$post_data);
+      $http_result=$result['http_result'];
+      $error=$result['error'];
+      $st=str_replace('"{', "{", $http_result);
+      $s=str_replace('}"', "}", $st);
+      $m=$s=str_replace('\\', "", $s);
+      $obj=json_decode($m);
+
+      return response()->json( $obj);
+    }
+
+    public function product_master(){
+    $query = DB::table('product_master')->select('Product_Id', 'Product_Name')->get();
+
+    echo json_encode($query);
+  } 
+
+
+
+
 
     
     

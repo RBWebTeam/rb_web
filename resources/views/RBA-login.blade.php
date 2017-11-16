@@ -9,49 +9,81 @@
   <p id="showerror" class="text-center displaynone">Broker already exist</p>
     <br>
   </div>
+<<<<<<< HEAD
 <div class="col-md-2"></div>
   <div class="col-md-4 white-bg box-shadow rba-dv-hei">
+=======
+
+  <div class="col-md-6 white-bg box-shadow rba-dv-hei">
+>>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
   <form class="form-horizontal" id="rba_form">
     {{ csrf_field() }}
     <div>
       
+<<<<<<< HEAD
       <div class="col-sm-12 xyz">
+=======
+      <div class="col-sm-12 form-group xyz">
+>>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
 	  
         <input type="text" class="form-control" id="name" placeholder="Enter name" name="name" required="">
       </div>
     </div>
     <div>
       
+<<<<<<< HEAD
       <div class="col-sm-12 xyz">
+=======
+      <div class="col-sm-12 form-group xyz">
+>>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
 	
         <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" required="">
       </div>
     </div>
     <div>
+<<<<<<< HEAD
       <div class="col-sm-12 xyz"> 
+=======
+      <div class="col-sm-12 form-group xyz"> 
+>>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
   
         <input type="tel" class="form-control" id="contact" placeholder="Enter number" name="contact" maxlength="10" pattern="[789][0-9]{9}" required="">
       </div>
     </div>
     
     <div>        
+<<<<<<< HEAD
       <div class="col-sm-4 mrg-tpp">
         <button type="submit" class="btn btn-success btn-outline with-arrow register">Register<i class="icon-arrow-right"></i></button>
+=======
+      <div class="col-sm-4 mrg-tpp" style="margin-top:5px;">
+        <button type="submit" class="btn btn-success register">Register</button>
+>>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
       </div>
     </div>
   </form>
   </div>
   
+<<<<<<< HEAD
   <div class="col-md-4 rba_bg">
+=======
+  <div class="col-md-6 rba_bg">
+>>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
   <img src="images/rba_bg.png" alt="Rupeeboss Agent" title="Rupeeboss Agent" class="img-responsive"/>
   <div class="rba-log xyz">
   <form   name="rba_emp_login" id="rba_emp_login"  method="post"  >
 
   {{ csrf_field() }}
 
+<<<<<<< HEAD
   <input type="text" placeholder="Username" class="form-control" required="" /> 
   <input type="password" placeholder="password" required="" class="form-control"/>
   <button type="submit" id="login_rba" class="btn btn-primary btn-outline with-arrow">LOGIN <i class="icon-arrow-right"></i></button>
+=======
+  <input type="text" placeholder="Username" class="form-group" required="" /> 
+  <input type="password" placeholder="password" required="" />
+  <button type="submit" id="login_rba" class="btn btn-primary  ">Login</button>
+>>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
   </div>
   </div>
   </form>

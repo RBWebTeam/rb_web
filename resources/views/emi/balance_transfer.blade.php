@@ -349,11 +349,14 @@ label {
                                
                                 <br>
 
+<<<<<<< HEAD
 								<!--<div style="text-align: center;">
                                 <button type="button" class="btn btn-success" id="submit">Submit</button>
                                 </div>  -->
                                 <br>
 
+=======
+>>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
 
 								</div><!--End form group-->
 								

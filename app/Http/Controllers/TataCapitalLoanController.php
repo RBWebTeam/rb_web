@@ -148,12 +148,11 @@ public function tata_capital_business_loan(){
     public function tata_capital_business_submit(Request $req){
       // print_r($req->all());exit();
      $data=$req->all();
-    $data['source'] = 'Rupeeboss';
-    $data['password'] = 'Rupeeboss@123';
+    
     $data['brokerid']=Session::get('brokerid')?Session::get('brokerid'):'MAA=';
     $data['empid']=Session::get('empid')?Session::get('empid'):'MAA=';
-    $data['source_rb']=Session::get('source')?Session::get('source'):'MAA=';
-   
+    $data['source']=Session::get('source')?Session::get('source'):'MAA=';
+    $data['CampaignName']=Session::get('CampaignName');
     
     $post_data=json_encode($data);
 

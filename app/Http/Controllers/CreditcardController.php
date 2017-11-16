@@ -21,6 +21,7 @@ class CreditcardController extends CallApiController
      }
 
      public function credit_form_submit(Request $req){
+        // print_r($req->all());exit();
         try{
             $save=new credit_card_form_req(); 
             $id=$save->store($req);
@@ -39,6 +40,7 @@ class CreditcardController extends CallApiController
                 unset($data['ICICIRelationshipNumber']);
             }
             $post_data=json_encode($data);
+            // print_r($post_data);exit();
             $url = $this::$url_static."BankAPIService.svc/PostIciciBank";
             $result=$this->call_json_data_api($url,$post_data);
             $http_result=$result['http_result'];
@@ -145,7 +147,9 @@ class CreditcardController extends CallApiController
         $req['ResCity']=(int)$req['ResCity'];
         $data=$req->all();
         
-        $post_data =json_encode( array("Authentication"=>array( "UserId"=>"RupeeBossCC", "Password"=>"rupeeb@123" ), "CreditCard"=> $data));
+        
+        $post_data =json_encode(array("CreditCard"=> $data));
+    // print_r($post_data);exit();
        //  print_r($post_data);exit();
          $url = $this::$url_static."BankAPIService.svc/createRBLCreditCardReq ";
         $result=$this->call_json_data_api($url,$post_data);
@@ -158,19 +162,6 @@ class CreditcardController extends CallApiController
 
         return json_encode($obj);
     }
-	
-	
-	public function credit_card_rbl_dc(){
-		
-		 return view('credit_card_rbl_dc');
-		 
-	}
-	
-	public function credit_card_rbl_form_dc(){
-		
-		 return view('credit_card_rbl_form_dc');
-		 
-	}
 }
 
 

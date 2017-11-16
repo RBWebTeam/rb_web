@@ -32,8 +32,7 @@ class CreditcardController extends CallApiController
             $data['empid']=Session::get('empid')?Session::get('empid'):'MAA=';
             $data['source']=Session::get('source')?Session::get('source'):'MAA=';
             $data['type']='DC';
-            $data['UserID']='ICICI_CC_RupeeBoss';
-            $data['Password']='Password@123';
+            
             $data['ChannelType']='RupeeBoss';
             $data['CampaignName']=Session::get('CampaignName');
             if($data['ICICIBankRelationship']!='Salary'){
@@ -114,6 +113,7 @@ class CreditcardController extends CallApiController
  public function credit_card_rbl(Request $req){
             //removing all prv card details
             $req->session()->forget('rbl_card_id');
+              Session::forget('rbl_card_name');
             //getting details and checking correct id sent
             $card_id=($req['card'] && $req['card']<=3 && $req['card']>0 )?$req['card']:1;
             $card_data = array( 1=>array('id'=>"16",'card'=>'Titanium Delight Card'),2=>array('id'=>"21",'card' =>'Platinum Maxima Card'),3=>array('id'=>"24",'card'=>'Platinum Delight Card'));
@@ -121,8 +121,9 @@ class CreditcardController extends CallApiController
             
             $name=$card_data[$card_id]['card'];
             Session::put('rbl_card_id',$card_data[$card_id]['id']);
+            Session::put('rbl_card_name',$name);
             $data=DB::table('rbl_city_master')->select('city_code','city_name')->get();
-           
+   // print_r($name);exit();
             return view('credit-card-rbl')->with('data',$data)->with('card',$name);
      }
     public function rbl_cc_post(Request $req){
@@ -142,6 +143,7 @@ class CreditcardController extends CallApiController
         //formatting date
         $req['DOB'] = date("d-m-Y", strtotime($req['DOB']));
         $req['CreditCardApplied']=Session::get('rbl_card_id');
+         $req['CreditCardName']=Session::get('rbl_card_name');
         $req['Title']=(int)$req['Title'];
         $req['EmpType']=(int)$req['EmpType'];
         $req['ResCity']=(int)$req['ResCity'];
@@ -158,7 +160,9 @@ class CreditcardController extends CallApiController
         $st=str_replace('"{', "{", $http_result);
         $s=str_replace('}"', "}", $st);
         $m=$s=str_replace('\\', "", $s);
-        $obj=json_decode($m);
+        $n=$s=str_replace('#', "", $m);
+        $obj=json_decode($n);
+        
 
         return json_encode($obj);
     }

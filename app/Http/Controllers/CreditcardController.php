@@ -165,7 +165,7 @@ class CreditcardController extends CallApiController
         $m=$s=str_replace('\\', "", $s);
         $n=$s=str_replace('#', "", $m);
         $obj=json_decode($n);
-        
+        $obj['brokerid']='MAA=';
 
         return json_encode($obj);
     }

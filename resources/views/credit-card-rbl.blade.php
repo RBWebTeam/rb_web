@@ -183,6 +183,9 @@
 				success:function(msg){
 					$(".iframeloading").hide();
 					var returnedData = JSON.parse(msg);
+					if(msg.brokerid=='MAA='){
+						red_url="{{URL::to('thank-you')}}";
+					}
 					var status_id=returnedData.Status;
 					var error=returnedData.Errorinfo;
 					var mobile=$('#mobile').val();

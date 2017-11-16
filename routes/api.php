@@ -55,3 +55,4 @@ Route::post('calculation','MobileApiController@calculation');
 Route::get('wapp','WhatsAppController@wapp');
 Route::post('balance-transfer','MobileApiController@balance_transfer');
 Route::post('test','TribeController@test');
+Route::post('equi-generate-pdf','EquifaxController@generate_pdf');

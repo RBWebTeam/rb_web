@@ -171,7 +171,7 @@
 		<div class="text-center">
          <p id="rbl_cc_apply_status" class="text-success pad"></p>     
          <p id="reason" class="text-success pad"></p>     
-         <p id="reference" class="text-success pad"></p>         	      
+         <p  id="reference" class="text-success pad"></p>         	      
          </div>   
 </div>
 </div>
@@ -200,6 +200,9 @@
 					$(".iframeloading").hide();
 >>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
 					var returnedData = JSON.parse(msg);
+
+					console.log(returnedData.broker_status);
+				
 					var status_id=returnedData.Status;
 					var error=returnedData.Errorinfo;
 					var mobile=$('#mobile').val();
@@ -238,7 +241,9 @@
 					$('#reason').empty().append(error);
 					
 					$('#rb_cc_modal').modal('toggle');
-					
+						if(returnedData.broker_status==0){
+						red_url= "{{URL::to('thank-you')}}";
+					}
 				}
 			});
 		}

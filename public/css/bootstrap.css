@@ -2101,11 +2101,7 @@ output {
   color: #999;
 }
 .form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control {
-<<<<<<< HEAD
   background-color: #fff;
-=======
-  background-color: #eeeeee;
->>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
   opacity: 1;
 }
 .form-control[disabled], fieldset[disabled] .form-control {

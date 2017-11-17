@@ -277,8 +277,8 @@
         <h4 class="modal-title"></h4>
       </div>
       <div class="modal-body">
-        <h4 style="color: black"><p>Amount should be greater than <b>"5,00,000" and lesser than "10,00,000,000"</b>.</p></h4>
-        <h4 style="color: black"><p>As well as Interest should be greater than <b><?php echo $alert_rate;?></b>. If less you are already on Lower Rate.</p></h4>
+        <h4><p>Amount should be greater than <b>"5,00,000" and lesser than "10,00,000,000"</b>.</p></h4>
+        <h4><p>As well as Interest should be greater than <b><?php echo $alert_rate;?></b>. If less you are already on Lower Rate.</p></h4>
       </div>
       
       <div class="modal-footer">
@@ -339,7 +339,7 @@
   $(document).ready(function(){
     $("#Month").change(function(){
       var amt = $("#loanterm").val();
-      //console.log($("#loanterm").val());
+      console.log($("#loanterm").val());
       var month = amt;
       
       //console.log(month);
@@ -347,7 +347,7 @@
     });
     $("#Year").change(function(){
       var amt1 = $("#loanterm1").val();
-      //console.log($("#loanterm").val());
+      console.log($("#loanterm").val());
       var yr = amt1 / 12;
       //console.log(yr);
       //console.log(year);
@@ -407,7 +407,7 @@
                data : { 'loanamount': loanamount , 'loaninterest': loaninterest ,'loanterm' :loanterm,'_token': v_token,'profession':profession,'product_id':product_id,'brokerid':brokerid,'empcode':empcode,'refapp':refapp},
                // 'bank':bank},
                success: function(msg){
-                    //console.log(msg);
+                    console.log(msg);
                   if(msg.success ==true){
                   var numb = msg.amount.toFixed();
                    $('#emi').empty().append(numb);

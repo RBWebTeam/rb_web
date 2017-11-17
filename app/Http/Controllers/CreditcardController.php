@@ -142,14 +142,17 @@ class CreditcardController extends CallApiController
         //formatting date
         $req['DOB'] = date("d-m-Y", strtotime($req['DOB']));
         $req['CreditCardApplied']=Session::get('rbl_card_id');
+         $req['Card_Type']=Session::get('rbl_card_name');
+
         $req['Title']=(int)$req['Title'];
         $req['EmpType']=(int)$req['EmpType'];
         $req['ResCity']=(int)$req['ResCity'];
-        $data=$req->all();
-        
-        
+         $data=$req->all();
+        $data['brokerid']=Session::get('brokerid')?Session::get('brokerid'):'MAA=';
+        $data['empid']=Session::get('empid')?Session::get('empid'):'MAA=';
+        $data['source']=Session::get('source')?Session::get('source'):'MAA=';
         $post_data =json_encode(array("CreditCard"=> $data));
-    // print_r($post_data);exit();
+     //print_r($post_data);exit();
        //  print_r($post_data);exit();
          $url = $this::$url_static."BankAPIService.svc/createRBLCreditCardReq ";
         $result=$this->call_json_data_api($url,$post_data);
@@ -157,9 +160,11 @@ class CreditcardController extends CallApiController
         $error=$result['error'];
         $st=str_replace('"{', "{", $http_result);
         $s=str_replace('}"', "}", $st);
-        $m=$s=str_replace('\\', "", $s);
-        $obj=json_decode($m);
-
+        $m=str_replace('\\', "", $s);
+        $n=str_replace('#', "", $m);
+        $obj=json_decode($n);
+        $obj->broker_status=(Session::get('brokerid')||Session::get('empid')||Session::get('source'))?1:0;
+       // print_r($obj);exit();
         return json_encode($obj);
     }
 }

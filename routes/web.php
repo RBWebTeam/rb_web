@@ -145,10 +145,7 @@ Route::get('early-salary','LoanController@early_salary');
 Route::post('early-salary-submit','LoanController@early_salary_submit');
 Route::get('application-form','NewProcessController@application_form');
 Route::post('application-submit','NewProcessController@application_submit');
-<<<<<<< HEAD
-=======
 
->>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
 Route::get('tata-capital-business-loan','TataCapitalLoanController@tata_capital_business_loan');
 Route::post('tata-capital-business-submit','TataCapitalLoanController@tata_capital_business_submit');
 Route::get('searchtatacityajax',array('as'=>'searchtatacityajax','uses'=>'AutoCompleteController@autoComplete_tata_bl_city'));
@@ -158,11 +155,6 @@ Route::get('searchtatastateajax',array('as'=>'searchtatastateajax','uses'=>'Auto
 
 
 
-<<<<<<< HEAD
-
-
-=======
->>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
 Route::get('team','TeamController@team');
 // Creditcardform
 Route::get('credit-card-form','CreditcardController@credit_card_form');
@@ -209,14 +201,10 @@ Route::get('thank-you',function (){return view('thank-you');});
 
 Route::get('no-record-found',function (){return view('no-record-found');});
 //Route::get('test',function (){return view('test_parse');});
-<<<<<<< HEAD
-Route::get('test','TribeController@test');
-=======
 
 Route::get('test','TribeController@test');
 
 // Route::post('test','TribeController@test');
->>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
 Route::get('test-push',function (){return view('test');});
 
 
@@ -362,17 +350,6 @@ Route::get('rbl-off-city-master','LoanController@rbl_off_city_master');
 Route::get('rbl-city-master','LoanController@rbl_city_master');
 Route::get('pay-online','BankController@pay_online');
 Route::get('kotak-home-loan','LoanController@kotak_home_loan');
-<<<<<<< HEAD
-Route::get('searchkotakcityajax',array('as'=>'searchkotakcityajax','uses'=>'AutoCompleteController@autoComplete_kotak_city'));
-Route::get('searchkotakcityareaajax',array('as'=>'searchkotakcityareaajax','uses'=>'AutoCompleteController@autoComplete_kotak_city_area')); 
-Route::POST('kotak-home-loan-submit','LoanController@kotak_home_loan_submit');
-
-
-
-
-Route::get('credit-card-rbl-dc','CreditcardController@credit_card_rbl_dc');
-Route::get('credit-card-rbl-form-dc','CreditcardController@credit_card_rbl_form_dc');
-=======
 // Kotak AutoComplete
 Route::get('kotak-city-master','LoanController@kotak_city_master');
 Route::post('kotak-city-area-master','LoanController@kotak_city_area_master');
@@ -405,4 +382,3 @@ Route::get('searchkotakcityajax',array('as'=>'searchkotakcityajax','uses'=>'Auto
 
 //equifax
 Route::get('test-equifax','TestController@test');
->>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d

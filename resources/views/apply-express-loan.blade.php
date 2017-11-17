@@ -1077,11 +1077,7 @@
          
          
 
-<<<<<<< HEAD
-         //console.log(slidr);
-=======
-         console.log(slidr);
->>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
+
 
          var mob_no = $("#mob_no").val();
          $('#mobile_no').val(mob_no);
@@ -1400,11 +1396,7 @@
 
 <script type="text/javascript">
 	function business_turnover(obj,val){
-<<<<<<< HEAD
-		//console.log(obj);
-=======
-		console.log(obj);
->>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
+
 		if(obj=='turnover' ){
                    var str =$('#turnover').val();
                    if (str<500000) {

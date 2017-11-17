@@ -9,13 +9,9 @@
                          <div class="container">
                           <div class="row">
                         <center>
-<<<<<<< HEAD
-                        <h1 class="loan-head">Home Loan EMI Calculator</h1>
-                        <h3><p class="sub-title" >Calculate your Home Loan EMI and Eligibility Status Due in a snap! </p></h3>
-=======
+
                         <h1 class="loan-head" style="color: #C33F53">Home Loan EMI Calculator</h1>
                         <h3><p class="sub-title" ><b>Calculate your Home Loan EMI and Eligibility Status Due in a snap! <i class="fa fa-calculator" style="color:#000000" aria-hidden="true"></i></b></p></h3>
->>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
                       </center>
                       
                       <div class="col-md-2"></div>
@@ -29,12 +25,8 @@
                                        
                                        <!-- <input type="hidden" name="ApplicantSource" id="ApplicantSource" value="1"> -->
                                       <input type="hidden" name="ProductId" id="ProductId" value="12">
-                                        
-<<<<<<< HEAD
                                         <div class="col-md-6">
-=======
-                                        <div class="col-md-4">
->>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
+
                                           <select class="form-control block drop-arr select-sty" name="ApplicantSource" id="ApplicantSource"  required>
                                             <option value="">Applicant Source</option>
                                             <option value="1">Salaried</option>
@@ -43,29 +35,19 @@
                                           </select> 
                                         </div>
 
-<<<<<<< HEAD
+
                                         <div class="col-md-6">
-=======
-                                        <div class="col-md-4">
->>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
                                             <input type="text" class="form-control" placeholder= "Property Cost" name="PropertyCost" id="PropertyCost" onkeypress="return fnAllowNumeric(event)" minlength="6" maxlength="9" required>
                                         </div>
 
 
-                                        
-<<<<<<< HEAD
+            
                                         <div class="col-md-6">
                                             <input type="text" class="form-control" placeholder="Loan Amount" name="LoanRequired" id="LoanRequired" minlength="6" maxlength="9" required>
                                         </div>
 
                                         <div class="col-md-6">
-=======
-                                        <div class="col-md-4 ">
-                                            <input type="text" class="form-control" placeholder="Loan Amount" name="LoanRequired" id="LoanRequired" minlength="6" maxlength="9" required>
-                                        </div>
 
-                                        <div class="col-md-4">
->>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
                                             <select class=" form-control block drop-arr select-sty" name="LoanTenure" id="LoanTenure" required>
                                               <option disabled selected  value="">Loan Tenure</option>
                                                 <option value="1">1</option>
@@ -129,11 +111,9 @@
                                     <hr>
                                 </div>
                                 <div style="text-align: center;">
-<<<<<<< HEAD
+
                                 <a class="btn btn-primery btn-outline with-arrow mrg-top" id="ckeck_eligibility">Check Eligibility <i class="icon-arrow-right"></i></a></div>
-=======
-                                <a class="btn btn-danger btn-outline with-arrow mrg-top" id="ckeck_eligibility">Check Eligibility<i class="icon-arrow-right"></i></a></div>
->>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
+
                                 </form>
                                 </div>
                                 </div>
@@ -203,35 +183,24 @@
          url: "{{URL::to('home-loan-calculation')}}",
          data : $('#home_loan_calculator_form').serialize(),
          success: function(msg){
-<<<<<<< HEAD
               //console.log(msg.status);
               if (msg.status==1) 
               {
                  var loan_eligible = msg.data.loan_eligible;
                  //console.log(loan_eligible);
-=======
-              console.log(msg.status);
-              if (msg.status==1) 
-              {
-                 var loan_eligible = msg.data.loan_eligible;
-                 console.log(loan_eligible);
->>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
+
                   $('#loan_eligible').empty().append(loan_eligible);
 
                  var roi = msg.data.roi;
                  $('#roi').empty().append(roi);
 
                  var emi = msg.data.emi;
-<<<<<<< HEAD
-                 //console.log(emi);
-=======
-                 console.log(emi);
->>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
+
                   $('#EMI').empty().append(emi);
 
 
                  var processingfee = msg.data.processingfee;
-<<<<<<< HEAD
+
                   //console.log(processingfee);
                   $('#processingfee').empty().append(processingfee);
 
@@ -241,17 +210,7 @@
 
                   var Bank_Logo = msg.data.Bank_Logo;
                   //console.log(Bank_Logo);
-=======
-                  console.log(processingfee);
-                  $('#processingfee').empty().append(processingfee);
 
-                  var Bank_Name = msg.data.Bank_Name;
-                  console.log(Bank_Name);
-                  $('#bank_name').empty().append(Bank_Name);
-
-                  var Bank_Logo = msg.data.Bank_Logo;
-                  console.log(Bank_Logo);
->>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
                   $('#bank_logo').html('<img src='+Bank_Logo+' width="150px">');
 
                   $('#home_loan_eligible').modal('show');  
@@ -307,11 +266,9 @@
         $("#pat").hide();
         $("#depreciation").hide();
         $("#remuneration").hide();
-<<<<<<< HEAD
+
         $("#income").show();
-=======
-       $("#income").show();
->>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
+
         $("#obligation").show();
         
       }

@@ -12,30 +12,21 @@ Please Upload below documents :
 			<input type="hidden" name="app_id" value=<?php if(isset($_GET['app_id']))echo $_GET['app_id'];else echo 0;?>>
 				<div class="col-md-6">Identity Proof</div>
 				<div class="col-md-6">
-<<<<<<< HEAD
-				<input type="file" name="Identity_Proof" required="" />
-=======
+
 				<input type="file" name="Identity_Proof"  />
->>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
 				</div>
 			<div class="col-md-6">Income Proof</div>
 				<div class="col-md-6">
 				
-<<<<<<< HEAD
-					<input type="file" name="Income_Proof" required/>
-=======
+
 					<input type="file" name="Income_Proof" />
->>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
 				</div>
 				
 			<div class="col-md-6">Address Proof</div>
 				<div class="col-md-6">
 				
-<<<<<<< HEAD
-					<input type="file" name="Address_Proof" required />
-=======
+
 					<input type="file" name="Address_Proof"  />
->>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
 				</div>
 
 				<div class="col-md-6">

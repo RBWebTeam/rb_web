@@ -56,10 +56,9 @@ body {background:#fff;}
 		  <div id="logo" class="text-center"><img id="myImage" src="http://erp.rupeeboss.com/personalloan/images/logo.png" class=""></div>
     <h4 class="text-center pg-titl"><img src="images/bank/icici-credit-card.png" class="img-responsive icici"/></h4>
           </div> 
-<<<<<<< HEAD
+
 		  </div>
-=======
->>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
+
 <br>		  
         <div class="col-md-12">
           <div class="row pad white box-shadow">
@@ -300,11 +299,7 @@ body {background:#fff;}
        show_card();
   }
   function show_card(){
-<<<<<<< HEAD
-    //console.log(income+"--"+interest)
-=======
-    console.log(income+"--"+interest)
->>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
+
     if(interest=='Lifestyle'){
        document.getElementById('2.5_button').classList.remove("hide");
     }else{

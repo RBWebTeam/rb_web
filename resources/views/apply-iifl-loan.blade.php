@@ -1779,11 +1779,7 @@ var global_tenure=0;
             $('#City').val(stay_at);
             // var name= $('#Company_Name option:selected').text();
             var name = $('#Company_Name').val();
-<<<<<<< HEAD
-            console.log(name);
-=======
-            // //console.log(name);
->>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
+
             var company =$('#Company_Name').attr('data-value');
             $('#CompanyNm').html(name);
             $('#CompanyName').val(name);

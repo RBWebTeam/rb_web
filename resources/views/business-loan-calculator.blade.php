@@ -1,8 +1,5 @@
 @include('layout.header')
-<<<<<<< HEAD
-=======
-<br>
->>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
+
 <div class="container" id="fh5co-hero">
                      <div class="fh5co-contact animate-box">
                          <div class="container">
@@ -84,11 +81,9 @@
                                     <hr>
                                 </div>
                                 <div style="text-align: center;">
-<<<<<<< HEAD
+
                                 <a class="btn btn-primery btn-outline with-arrow mrg-top" id="ckeck_eligibility">Check Eligibility<i class="icon-arrow-right"></i></a></div>
-=======
-                                <a class="btn btn-danger btn-outline with-arrow mrg-top" id="ckeck_eligibility">Check Eligibility<i class="icon-arrow-right"></i></a></div>
->>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
+
                                 </form>
                                 </div>
                                 </div>
@@ -158,35 +153,25 @@
          url: "{{URL::to('business-loan-calculation')}}",
          data : $('#business_loan_calculator_form').serialize(),
          success: function(msg){
-<<<<<<< HEAD
+
               //console.log(msg.status);
               if (msg.status==1) 
               {
                  var loan_eligible = msg.data.loan_eligible;
                  //console.log(loan_eligible);
-=======
-              console.log(msg.status);
-              if (msg.status==1) 
-              {
-                 var loan_eligible = msg.data.loan_eligible;
-                 console.log(loan_eligible);
->>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
+
                   $('#loan_eligible').empty().append(loan_eligible);
 
                  var roi = msg.data.roi;
                  $('#roi').empty().append(roi);
 
                  var emi = msg.data.emi;
-<<<<<<< HEAD
-                 //console.log(emi);
-=======
-                 console.log(emi);
->>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
+
                   $('#EMI').empty().append(emi);
 
 
                  var processingfee = msg.data.processingfee;
-<<<<<<< HEAD
+
                   //console.log(processingfee);
                   $('#processingfee').empty().append(processingfee);
 
@@ -196,17 +181,7 @@
 
                   var Bank_Logo = msg.data.Bank_Logo;
                   //console.log(Bank_Logo);
-=======
-                  console.log(processingfee);
-                  $('#processingfee').empty().append(processingfee);
 
-                  var Bank_Name = msg.data.Bank_Name;
-                  console.log(Bank_Name);
-                  $('#bank_name').empty().append(Bank_Name);
-
-                  var Bank_Logo = msg.data.Bank_Logo;
-                  console.log(Bank_Logo);
->>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
                   $('#bank_logo').html('<img src='+Bank_Logo+' width="150px">');
 
                   $('#business_eligible').modal('show');  

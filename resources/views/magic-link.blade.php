@@ -31,9 +31,6 @@
 
 <style>
    .mag-lnk1 input {margin-bottom:15px;}
-<<<<<<< HEAD
-   .mag-lnk1 {background:#fff; padding:10px;opacity:0.9; min-height:346px;}
-=======
    .mag-lnk {width:96%;}
    .mag-lnk .bg-none {opacity: 0.9}
    
@@ -45,17 +42,12 @@
 	   .mag-lnk li a {padding:7px;}
    }
    
->>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
 
 </style>
 </head>
 <body>
 <div class="star">
 <div class="container">
-<<<<<<< HEAD
-<div class="col-md-3"></div>
-<div class="col-md-3">
-=======
 <div class="col-md-1"></div>
 <div class="col-md-6">
 
@@ -76,7 +68,6 @@
 	</ul>
 </div>
 <div class="col-md-4">
->>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
     <div class="mag-lnk1" style="margin-top:20px;">
 
 
@@ -128,30 +119,8 @@
             </div>
 
 </div>
-<<<<<<< HEAD
-<div class="col-md-6">
-
-	<ul class="mag-lnk">
-	   <li class="bg-none white-bg"><a href="{{URL::to('/')}}"><img src="{{URL::to('images/logo.png')}}" class="center"  alt="Rupeeboss.com " title="Rupeeboss.com " /></a></li>
-	    <li><a href="{{URL::to('balance-transfer/home-loan')}}">HOME LOAN BALANCE TRANSFER</a></li>
-		<li><a href="{{URL::to('balance-transfer/loan-against-property-loan')}}">LOAN AGAINST PROPERTY BALANCE TRANSFER</a></li>
-		<li><a href="{{URL::to('balance-transfer/personal-loan')}}">PERSONAL LOAN BALANCE TRANSFER</a></li>
-		<li><a href="{{URL::to('balance-transfer/working-capital')}}">WORKING CAPITAL BALANCE TRANSFER</a></li>
-		<li><a href="{{URL::to('home-loan')}}">APPLY FOR HOME LOAN</a></li>
-		<li><a href="{{URL::to('personal-loan')}}">APPLY FOR PERSONAL LOAN</a></li>
-		<li><a href="{{URL::to('loan-against-property')}}">APPLY FOR LOAN AGAINST PROPERTY</a></li>
-		<li><a href="{{URL::to('car-loan')}}">APPLY FOR CAR LOAN</a></li>
-		<li><a href="{{URL::to('business-loan')}}">APPLY FOR UNSECURED BUSINESS LOAN</a></li>
-		<li><a href="{{URL::to('credit-card')}}">APPLY FOR CREDIT CARD</a></li>
-        <!-- <li><button type="button" class="btn btn-danger block"  id="call_rm" name="call_rm" data-toggle="modal" data-target="#Modal" title="Call For RM(Single Day Process)">QUICK CALL MANAGER</button></li> -->
-		
-	</ul>
-</div>	
-	
-=======
 	
 <br>	
->>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
 	
 </div><!-- container -->
 
@@ -215,14 +184,9 @@
 
 
 </script>
-<<<<<<< HEAD
-<!-- Google Analytics -->
-<!-- <script>
-=======
 
 <!-- Google Analytics -->
 <script>
->>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -230,15 +194,7 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 
 ga('create', 'UA-84383331-1', 'auto');
 ga('send', 'pageview');
-<<<<<<< HEAD
-</script> -->
-<!-- End Google Analytics -->
-
-
-
-=======
 </script>
 <!-- End Google Analytics -->
 
 
->>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d

@@ -97,7 +97,10 @@ $(".top").click(function() {
       <div class="row">
       <div class="col-md-12">
     <br>
-
+    <br>
+    
+    
+    
       <div id="logo" class="text-center"><img id="myImage" src="http://erp.rupeeboss.com/personalloan/images/logo.png" class=""></div>
     
       <h4 class="text-center pg-titl">Apply For <img src="images/bank/icici.png" class="img-responsive icici" width="130"/> Credit Card</h4>
@@ -176,9 +179,7 @@ $(".top").click(function() {
                   
             <div class="col-xs-6 form-padding">
                     <div class="form-control" style="margin-bottom:10px; height:50px; position:relative; padding: 0;">
-
-                    <span style="position: absolute; z-index: 999; margin: 1px 0 0 8px; font-size: 10px; color: #bababa;">DATE OF BIRTH*</span>
-
+                    <span style="position: absolute; z-index: 999; margin: 1px 0 0 8px; font-size: 10px; color: #bababa;">DATE OF BIRTH</span>
                       <input type="text" class="form-control lastReporteddob" id="datepicker" name="DateOfBirth" style="color:#636363 !important; font-size:14px;" required>
            <i class="fa fa-calendar" id="DateOfBirth" style="font-size: 25px;position: absolute;top: 15px;right: 11px;color: #3f7cb3;"></i>
                     </div>
@@ -376,9 +377,7 @@ $(".top").click(function() {
                     <div>
                       <input type="text" id="Income" name="Income" class="form-control inp-fld" onkeypress="return fnAllowNumeric(event)" minlength="5" maxlength="9" required >
                       <span class="highlight"></span><span class="bar"></span>
-
-                      <label class="form-label-new lble">Income*</label>
-
+                      <label class="form-label-new lble">Income</label>
                       <div class="clear"></div>
                     </div>  
                   </div>
@@ -451,9 +450,7 @@ $(".top").click(function() {
                     <div>
                       <input type="text" name="ResidenceAddress1" id="ResidenceAddress1" class="form-control inp-fld" required >
                       <span class="highlight"></span><span class="bar"></span>
-
-                      <label class="form-label-new lble">Flat/Plot/House No*</label>
-
+                      <label class="form-label-new lble">Flat/Plot/House No</label>
                       <div class="clear"></div>
                     </div>  
                   </div>
@@ -477,9 +474,7 @@ $(".top").click(function() {
                     <div>
                       <input type="text" name="City" id="City" class="form-control inp-fld search_citynm" required dis>
                       <span class="highlight"></span><span class="bar"></span>
-
-                      <label class="form-label-new lble">City*</label>
-
+                      <label class="form-label-new lble">City</label>
                       <div class="clear"></div>
                     </div>  
                   </div>
@@ -487,9 +482,7 @@ $(".top").click(function() {
                     <div>
                       <input type="text" id="ResidencePincode" name="ResidencePincode" class="form-control inp-fld" required onkeypress="return fnAllowNumeric(event)" maxlength="6"  >
                       <span class="highlight"></span><span class="bar"></span>
-
-                      <label class="form-label-new lble">Pincode*</label>
-
+                      <label class="form-label-new lble">Pincode</label>
                       <div class="clear"></div>
                     </div>  
                   </div>
@@ -497,9 +490,7 @@ $(".top").click(function() {
                     <div>
                       <input type="text" name="ResidenceState" id="ResidenceState" class="form-control inp-fld search_statenm" required>
                       <span class="highlight"></span><span class="bar"></span>
-
-                      <label class="form-label-new lble">State*</label>
-
+                      <label class="form-label-new lble">State</label>
                       <div class="clear"></div>
                     </div>  
                   </div>
@@ -525,9 +516,7 @@ $(".top").click(function() {
                     <div>
                       <input type="text" name="PerResidenceAddress1" id="PerResidenceAddress1" class="form-control inp-fld" required >
                       <span class="highlight"></span><span class="bar"></span>
-
-                      <label class="form-label-new lble">Flat/Plot/House No*</label>
-
+                      <label class="form-label-new lble">Flat/Plot/House No</label>
                       <div class="clear"></div>
                     </div>  
                   </div>
@@ -551,9 +540,7 @@ $(".top").click(function() {
                     <div>
                       <input type="text" name="PerCity" id="PerCity" class="form-control inp-fld search_citynm" required dis>
                       <span class="highlight"></span><span class="bar"></span>
-
-                      <label class="form-label-new lble">City*</label>
-
+                      <label class="form-label-new lble">City</label>
                       <div class="clear"></div>
                     </div>  
                   </div>
@@ -561,8 +548,7 @@ $(".top").click(function() {
                     <div>
                       <input type="text" id="PerResidencePincode" name="PerResidencePincode" class="form-control inp-fld" required onkeypress="return fnAllowNumeric(event)" maxlength="6"  >
                       <span class="highlight"></span><span class="bar"></span>
-                      <label class="form-label-new lble">Pincode*</label>
-
+                      <label class="form-label-new lble">Pincode</label>
                       <div class="clear"></div>
                     </div>  
                   </div>
@@ -570,9 +556,7 @@ $(".top").click(function() {
                     <div>
                       <input type="text" name="PerResidenceState" id="PerResidenceState" class="form-control inp-fld search_statenm" required>
                       <span class="highlight"></span><span class="bar"></span>
-
-                      <label class="form-label-new lble">State*</label>
-
+                      <label class="form-label-new lble">State</label>
                       <div class="clear"></div>
                     </div>  
                   </div>
@@ -597,8 +581,7 @@ $(".top").click(function() {
                       <input type="text" id="email_id" name="email_id" class="form-control inp-fld" oninput="email('email_id')"  required >
                        <span id="mail_id" style="display:none;color: red;">Please Enter Valid Email Id.</span>
                       <span class="highlight"></span><span class="bar"></span>
-                      <label class="form-label-new lble">Email ID(Personal)*</label>
-
+                      <label class="form-label-new lble">Email ID(Personal)</label>
                       <div class="clear"></div>
                     </div>  
                   </div>
@@ -697,10 +680,7 @@ $(".top").click(function() {
                     <div>
                       <input class="form-control inp-fld"  type="text" id="PanNo" name="PanNo"  oninput="pancard('PanNo')" required maxlength="10" minlength="10" >
                       <span class="highlight"></span><span class="bar"></span>
-
-                      <label class="form-label-new lble">Pancard*</label>
-
-
+                      <label class="form-label-new lble">Pancard</label>
                       <div class="clear"></div>
                       <div id="pannumber" style="display:none;color: red;">Oops.Please Enter Valid Pan Number.!!</div>
                     </div>  
@@ -740,9 +720,7 @@ $(".top").click(function() {
                    <div class="col-xs-6 form-padding" >
                     <div class="form-control" style="margin-bottom:10px; height:50px; position:relative; padding: 0;">
                       
-
-                      <input type="text" class="form-control lastReportedsince" id="credit_date" name="credit_date" placeholder="Member Since*" required>
-
+                      <input type="text" class="form-control lastReportedsince" id="credit_date" name="credit_date" placeholder="Member Since" required>
                     </div>
                   </div>
 
@@ -750,9 +728,7 @@ $(".top").click(function() {
                     <div>
                       <input type="text" id="credit_limit" name="credit_limit" class="form-control inp-fld" onkeypress="return fnAllowNumeric(event)"  required >
                       <span class="highlight"></span><span class="bar"></span>
-
-                      <label class="form-label-new lble">CREDIT LIMIT*</label>
-
+                      <label class="form-label-new lble">CREDIT LIMIT</label>
                       <div class="clear"></div>
                     </div>  
                   </div>
@@ -775,9 +751,10 @@ $(".top").click(function() {
 
 
                   </button>
-
-            <b>All <mark style="color:red">*</mark>fields are mandatory.</b>
-
+                  <div class="iframeloading" style= "display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
+                <img src="{{URL::to('images/ajaxloader.gif')}}" alt="Loader" title="Loader" style="top: 50%; position: relative; left: 50%;"  />
+               </div>
+            <!-- <b>All <mark style="color:red">*</mark>fields are mandatory.</b> -->
             </div> 
       
                   
@@ -796,13 +773,12 @@ $(".top").click(function() {
       </div>
       <div class="modal-body">
         <h4><p id="modalerr"><h5>Your Application id is <b><span id="drop"></span></b>.<br>You have been <b><span id="drop1"></span></b>.<br><b><span id="drop2"></span></b><h5></p></h4>
-
-        <p><b>Thank You For Choosing ICICI Credit Card.<br>Kindly Click On The Link Sent To Your Mail To Go Ahead For Document Upload.</b></p>
+        
+        <p><b>Thank You For Choosing ICICI Credit Card.</b></p>
       </div>
       
       <div class="modal-footer">
-        <a type="button" id="upload" name="upload" class="btn btn-primary" onclick="Redirect();" >Ok</a>
-
+        <a type="button" id="upload" name="upload" class="btn btn-primary" onclick="Redirect();" >Proceed to Document Upload</a>
         
       </div>
     </div>
@@ -1309,6 +1285,7 @@ return false;
 
 
 
+
  
 
 
@@ -1530,12 +1507,10 @@ var inputs = $("#compareform input[required='required']");
 <script type="text/javascript">
           function Redirect() 
           {
-
-            // var mobile=$('#ResidenceMobileNo').val();
-            // var app_id=$('#drop').text();
-            // window.location="http://erp.rupeeboss.com/Credit_Card_Upload_Docs.aspx?App_Id="+app_id+"&CardType=ICICI&MobileNo="+mobile;
-            window.location.href ="{{URL::to('thank-you')}}";
-
+            var mobile=$('#ResidenceMobileNo').val();
+            var app_id=$('#drop').text();
+            window.location="http://erp.rupeeboss.com/Credit_Card_Upload_Docs.aspx?App_Id="+app_id+"&CardType=ICICI&MobileNo="+mobile;
+            // window.location.href ="{{URL::to('thank-you')}}";
           }
 </script>
 

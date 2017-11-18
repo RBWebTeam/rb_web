@@ -1,12 +1,6 @@
 @include('layout.header')
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 <style src="css/jquery-ui.min.css"></style>
-<<<<<<< HEAD
-<style type="text/css">
-  .drop-arr {text-transform: uppercase;}
-</style>
-=======
->>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
   <div id="fh5co-hero" ng-app="">
   <form id="tribe_loan_form" method="POST" name="tribe_loan_form" >
   {!! csrf_field() !!}
@@ -21,13 +15,8 @@
     <li><a data-toggle="tab" href="#main3" id="nav3" class="go_to_next"><b>BUSINESS DETAIL</b></a></li>
     <li><a data-toggle="tab" href="#main5" id="nav5" class="go_to_next"><b>ONLINE ID</b></a></li>
     <li><a data-toggle="tab" href="#main6" id="nav6" class="go_to_next"><b>REFERENCE</b></a></li>
-<<<<<<< HEAD
-    <li><a data-toggle="tab"  id="nav4" class="go_to_next"><b>DOCUMENT</b></a></li>
-    <li><a data-toggle="tab"  id="nav7" class="go_to_next"><b>BANK STATEMENT</b></a></li>
-=======
     <li><a data-toggle="tab"  id="nav4" href="#main4" class="go_to_next"><b>DOCUMENT</b></a></li>
     <li><a data-toggle="tab"  id="nav7"  class="go_to_next"><b>BANK STATEMENT</b></a></li>
->>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
   </ul>
 
   <div class="tab-content">
@@ -93,11 +82,7 @@
     <option disabled selected>Select</option>
     @foreach($data['loan_type'] as $key=>$value)
       
-<<<<<<< HEAD
-      <option value="{{$value}}"><?php echo str_replace("_"," ",$key);?></option>
-=======
       <option value="{{$value}}"><?php echo $key;?></option>
->>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
       @endforeach
     </select>
    
@@ -109,11 +94,7 @@
     <option disabled selected>Select</option>
     @foreach($data['repayment_frequency'] as $key=>$value)
       
-<<<<<<< HEAD
-      <option value="{{$value}}"><?php echo str_replace("_"," ",$key);?></option>
-=======
       <option value="{{$value}}"><?php echo $key;?></option>
->>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
       @endforeach
     </select>
     <a class="btn btn-primary btn-outline with-arrow " onclick="go_to_next('main2')">Next<i class="icon-arrow-right"></i></a>
@@ -170,11 +151,7 @@
      <option disabled selected>Select</option>
       @foreach($data['education'] as $key=>$value)
       
-<<<<<<< HEAD
-      <option value="{{$value}}"><?php echo str_replace("_"," ",$key);?></option>
-=======
       <option value="{{$value}}"><?php echo $key;?></option>
->>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
       @endforeach
     </select>
     </select>
@@ -186,11 +163,7 @@
       <option disabled selected>Select</option>
       @foreach($data['family_details'] as $key=>$value)
       
-<<<<<<< HEAD
-      <option value="{{$value}}"><?php echo str_replace("_"," ",$key);?></option>
-=======
       <option value="{{$value}}"><?php echo $key;?></option>
->>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
       @endforeach
     </select>
     
@@ -204,11 +177,7 @@
   <hr>
     <div class="col-md-3"><span>Employees Count*</span></div>
     <div class="col-md-8 form-padding">
-<<<<<<< HEAD
-    <input type="text" class="form-control form-group" name="employee_count" id="employee_count" onkeypress="return fnAllowNumeric(event)" required="" />
-=======
     <input type="text" class="form-control form-group" name="employee_count" id="employee_count" onkeypress="return fnAllowNumeric(event)" />
->>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
     </div>
     
     <div class="col-md-3"><span>Registration Details*</span></div>
@@ -217,11 +186,7 @@
        <option disabled selected>Select</option>
       @foreach($data['registration_details'] as $key=>$value)
       
-<<<<<<< HEAD
-      <option value="{{$value}}" ><?php echo str_replace("_"," ",$key);?></option>
-=======
       <option value="{{$value}}" ><?php echo $key;?></option>
->>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
       @endforeach
     </select>
     </div>
@@ -232,11 +197,7 @@
        <option disabled selected>Select</option>
       @foreach($data['partner_count'] as $key=>$value)
       
-<<<<<<< HEAD
-      <option value="{{$value}}"><?php echo str_replace("_"," ",$key);?></option>
-=======
       <option value="{{$value}}"><?php echo $key;?></option>
->>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
       @endforeach
     </select>
     </div>
@@ -248,11 +209,7 @@
        <option disabled selected>Select</option>
       @foreach($data['director_count'] as $key=>$value)
       
-<<<<<<< HEAD
-      <option value="{{$value}}"><?php echo str_replace("_"," ",$key);?></option>
-=======
       <option value="{{$value}}"><?php echo $key;?></option>
->>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
       @endforeach
     </select>
     </div>
@@ -264,11 +221,7 @@
        <option disabled selected>Select</option>
       @foreach($data['proprietorship_type'] as $key=>$value)
       
-<<<<<<< HEAD
-      <option value="{{$value}}"><?php echo str_replace("_"," ",$key);?></option>
-=======
       <option value="{{$value}}"><?php echo $key;?></option>
->>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
       @endforeach
     </select>
     </div>
@@ -276,28 +229,16 @@
     <div id="company_pan_card_div">
     <div class="col-md-3"><span>Company Pan Number*</span></div>
     <div class="col-md-8 form-padding">
-<<<<<<< HEAD
-    <input type="text" pattern="/^([a-zA-Z]{5})(\d{4})([a-zA-Z]{1})$/" name="company_pan_card" id="company_pan_card" class="form-control form-group pan_valid" required="" /></div>
-=======
     <input type="text" name="company_pan_card" id="company_pan_card" class="form-control form-group" required="" /></div>
->>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
     </div>
     <div id="business_run_by_pan_div" style="display: none;">
     <div class="col-md-3"><span>Pan Number*</span></div>
     <div class="col-md-8 form-padding">
-<<<<<<< HEAD
-    <input type="text" pattern="/^([a-zA-Z]{5})(\d{4})([a-zA-Z]{1})$/" name="business_run_by_pan" id="business_run_by_pan" class="form-control form-group pan_valid" required="" /></div>
-    </div>
-    <div class="col-md-3"><span>Address*</span></div>
-    <div class="col-md-8 form-padding">
-    <textarea class="form-control form-control mrg-btm" colspan="2" id="work_address" name="work_address" required=""></textarea></div>
-=======
     <input type="text" name="business_run_by_pan" id="business_run_by_pan" class="form-control form-group" required="" /></div>
     </div>
     <div class="col-md-3"><span>Address*</span></div>
     <div class="col-md-8 form-padding">
     <textarea class="form-control form-control mrg-btm" colspan="2" id="work_address" name="work_address"></textarea></div>
->>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
     
     <div class="col-md-3"><span>Business Type*</span></div>
     <div class="col-md-8 form-padding sec">
@@ -305,11 +246,7 @@
       <option disabled selected>Select</option>
       @foreach($data['nature_of_business'] as $key=>$value)
       
-<<<<<<< HEAD
-      <option value="{{$value}}"><?php echo str_replace("_"," ",$key);?></option>
-=======
       <option value="{{$value}}"><?php echo $key;?></option>
->>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
       @endforeach
     </select>
     </div>
@@ -330,11 +267,7 @@
       <option disabled selected>Select</option>
       @foreach($data['online_sales_channels'] as $key=>$value)
       
-<<<<<<< HEAD
-      <option value="{{$value}}"><?php echo str_replace("_"," ",$key);?></option>
-=======
       <option value="{{$value}}"><?php echo $key;?></option>
->>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
       @endforeach
     </select>
     </div>
@@ -347,11 +280,7 @@
        <option disabled selected>Select</option>
       @foreach($data['turnover'] as $key=>$value)
       
-<<<<<<< HEAD
-      <option value="{{$value}}"><?php echo str_replace("_"," ",$key);?></option>
-=======
       <option value="{{$value}}"><?php echo $key;?></option>
->>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
       @endforeach
     </select>
     </div>
@@ -362,11 +291,7 @@
        <option disabled selected>Select</option>
       @foreach($data['ownership'] as $key=>$value)
       
-<<<<<<< HEAD
-      <option value="{{$value}}"><?php echo str_replace("_"," ",$key);?></option>
-=======
       <option value="{{$value}}"><?php echo $key;?></option>
->>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
       @endforeach
     </select>
     </div>
@@ -377,11 +302,7 @@
        <option disabled selected>Select</option>
       @foreach($data['product_sell'] as $key=>$value)
       
-<<<<<<< HEAD
-      <option value="{{$value}}"><?php echo str_replace("_"," ",$key);?></option>
-=======
       <option value="{{$value}}"><?php echo $key;?></option>
->>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
       @endforeach
     </select>
     </div>
@@ -401,11 +322,7 @@
     
     <div class="col-md-3"><span>How did you Know About Us?*</span></div>
     <div class="col-md-8 form-padding">
-<<<<<<< HEAD
-    <input type="text" name="reached_us_via" id="reached_us_via" class="form-control form-group" required="" />
-=======
     <input type="text" name="reached_us_via" id="reached_us_via" class="form-control form-group" />
->>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
     
     </div>
 	<div class="col-md-3"></div>
@@ -413,30 +330,18 @@
     <a class="btn btn-primary btn-outline with-arrow " onclick="go_back('main2')">Back<i class="icon-arrow-right"></i></a></div>
     </div>
     
-<<<<<<< HEAD
-    <div id="main5" class="tab-pane fade drop-arr">
-=======
     <div id="main5" class="tab-pane fade">
->>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
       <p>Providing Online Credentials of Platforms/Marketplaces/Software that you make use of in your business will help us understand your business better and make the most appropriate 
     recommendations for Loans. This can also increase your chances of securing Loans at a lower interest rate. As a Business User, you gain free and complete access to all the insights that Tribe draws using your online credentials.</p>
     <ul>
    
      @foreach($data['aggregated_ids'] as $key=>$value)
-<<<<<<< HEAD
-      <li class="pad"><input type="radio" name="online_ids" value="{{$value}}" onclick="showDiv('online_ids_{{$value}}')" /> {{ str_replace("_"," ",$key)}}</li>
-=======
       <li class="pad"><input type="radio" name="online_ids" value="{{$value}}" onclick="showDiv('online_ids_{{$value}}')" /> {{$key}}</li>
->>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
         <div class="col-sm-12" id="online_ids_{{$value}}" style="display: none;" class="extra">
 
           <?php $length=sizeof($data['aggregated_ids_credentials']->$value);
            for($i=0;$i<$length;$i++){ ?>
-<<<<<<< HEAD
-           <label class="col-sm-2"> {{ str_replace("_"," ",$data['aggregated_ids_credentials']->$value[$i])}}:</label>
-=======
            <label class="col-sm-2"> {{$data['aggregated_ids_credentials']->$value[$i]}}:</label>
->>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
            <input type="text" class="form-control form-group col-sm-10" name="online_ids_array[{{$value}}][<?php echo $data['aggregated_ids_credentials']->$value[$i]; ?>]" required />
            
           <?php }?>
@@ -452,11 +357,7 @@
     <div class="col-md-12">
     <h3 class="mrg-top">Reference</h3><hr>
   </div>
-<<<<<<< HEAD
-    <div class="col-md-3">First Name*</div>
-=======
     <div class="col-md-3">First Name</div>
->>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
     <div class="col-md-8 form-padding">
     <input type="text" id="ref_first_name" name="ref_first_name" class="form-control form-group" required="" /></div>
     
@@ -464,19 +365,6 @@
     <div class="col-md-8 form-padding">
     <input type="text" class="form-control form-group" name="ref_middle_name" id="ref_middle_name"/></div>
     
-<<<<<<< HEAD
-    <div class="col-md-3">Last Name*</div>
-    <div class="col-md-8 form-padding">
-    <input type="text" id="ref_last_name" name="ref_last_name" class="form-control form-group" required="" /></div>
-    
-    <div class="col-md-3">Mobile Number*</div>
-    <div class="col-md-8 form-padding">
-    <input type="text" name="ref_mobile" id="ref_mobile" class="form-control form-group" maxlength="10" minlength="10"  onkeypress="return fnAllowNumeric(event)" required="" /></div>
-    
-    <div class="col-md-3">Email*</div>
-    <div class="col-md-8 form-padding">
-    <input type="email" name="ref_email" id="ref_email" class="form-control form-group" required="" /></div>
-=======
     <div class="col-md-3">Last Name</div>
     <div class="col-md-8 form-padding">
     <input type="text" id="ref_last_name" name="ref_last_name" class="form-control form-group" required="" /></div>
@@ -488,7 +376,6 @@
     <div class="col-md-3">Email</div>
     <div class="col-md-8 form-padding">
     <input type="email" name="ref_email" id="ref_email" class="form-control form-group"/></div>
->>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
     <p ng-show="tribe_loan_form.ref_email.$error.email" class="error">Invalid Email address</p>
    <div class="col-md-3">
     <a class="btn btn-primary btn-outline with-arrow" onclick="go_back('main5')">Back<i class="icon-arrow-right"></i></a>
@@ -696,11 +583,7 @@
            <option disabled selected>Select</option>
           @foreach($data['institution'] as $key=>$value)
           
-<<<<<<< HEAD
-          <option value="{{$value}}"><?php echo str_replace("_"," ",$key);?></option>
-=======
           <option value="{{$value}}"><?php echo $key;?></option>
->>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
           @endforeach
         </select>
         </div>
@@ -717,15 +600,8 @@
         
         <div class="col-md-3">Upload Document</div>
         <div class="col-md-8 form-padding">
-<<<<<<< HEAD
-        <input type="file"  name="upload_statement" class="files" id="statement_file" class="form-control form-group no-border" accept="application/pdf"/>
-        <div style="display: none;" class="error file_ext_error">Only Pdf files are allowed</div>
-        </div>
-        
-=======
         <input type="file"  name="upload_statement" class="form-control form-group no-border"/>
         </div>
->>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
        <div class="col-md-3">PDF Password(if any)</div>
         <div class="col-md-8 form-padding"  >
         <input type="checkbox" name="pdf_has_pwd" id="pdf_has_pwd" >
@@ -752,24 +628,6 @@
 <script type="text/javascript">
   var previousPartner;
   var doc_id;
-<<<<<<< HEAD
-  $('.pan_valid').blur(function(){
-    //console.log($(this));
-    var str =$(this).val();
-    var pancardPattern = /^([a-zA-Z]{5})(\d{4})([a-zA-Z]{1})$/;
-    var res = str.match(pancardPattern);
-    if(res){
-      $(this).removeClass('error');
-     
-    }else{
-     
-       $(this).addClass('error');
-       $(this).removeClass('valid');
-       return false;
-    }
-  });
-=======
->>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
     function showDiv(name){
        $('#'+previousPartner).hide();
        $('#'+name).show();
@@ -813,17 +671,7 @@
       $('#business_run_by_pan_div').show();
     }     
   });
-<<<<<<< HEAD
-  $('.go_to_next').click(function(){
-if($('#tribe_loan_form').valid()){
-      //console.log("valid_tab");
-   }else{
-    return false;
-   }
-});
-=======
   
->>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
 function go_to_next(next){
     var nav_number=next.split('main');
    if($('#tribe_loan_form').valid()){
@@ -837,12 +685,6 @@ function go_to_next(next){
  function go_back(next){
     var nav_number=next.split('main');
       $( "#nav"+nav_number[1] ).trigger( "click" );
-<<<<<<< HEAD
-      //return false;
-      window.scrollTo(0,0);
- }
-
-=======
       return false;
       window.scrollTo(0,0);
  }
@@ -853,22 +695,11 @@ if($('#tribe_loan_form').valid()){
     return false;
    }
 });
->>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
 $("#upload_doc_submit").click(function(){
   $('#went_wrong_modal').modal('hide');
     if(!$('#kyc_form').valid()){
       return false;
-<<<<<<< HEAD
-    }
-    //console.log($('#tribe_document_itself'));
-  if(!check_file_ext('tribe_document_itself')){
-   
-    return false;
-  }
-  
-=======
     }               
->>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
   var form_url="{{URL::to('upload-tribe-doc')}}";
   $.ajax({
       url:form_url ,  
@@ -904,15 +735,7 @@ $("#submit_tribe_statement").click(function(){
     return false;
   }
     else{
-<<<<<<< HEAD
-   // var CSRF_TOKEN = $('input[name="_token"]').val();    
-
-   if(!check_file_ext('statement_file')){
-    return false;
-  }              
-=======
    // var CSRF_TOKEN = $('input[name="_token"]').val();                    
->>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
     var form_url="{{URL::to('upload-tribe-bank-statement')}}";
     $.ajax({
           url:form_url ,
@@ -1124,24 +947,4 @@ function del_doc_fun(id,doc){
         dateFormat: "yy-mm-dd"
        });
  });
-<<<<<<< HEAD
- function check_file_ext(id){
-    var ext = $('#'+id).val().split('.').pop().toLowerCase();
-    if(ext!='pdf'){
-      $('#'+id).val('');
-      $('.file_ext_error').show();
-      return false;
-    }else{
-      return true;
-    }
- }
- $('.files').click(function(){
-   $('.file_ext_error').hide();
- });
-
-
 </script>
- 
-=======
-</script>
->>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d

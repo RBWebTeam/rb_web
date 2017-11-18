@@ -1,20 +1,10 @@
 @include('layout.header')
-
+<br>
 <div class="container" id="fh5co-hero">
                      <div class="fh5co-contact animate-box">
                          <div class="container">
                           <div class="row">
                         <center>
-<<<<<<< HEAD
-                        <h1 class="loan-head">Business Loan EMI Calculator</h1>
-                        <h3><p class="sub-title">Calculate your Business Loan EMI and Eligibility Status Due in a snap!</p></h3>
-                      </center>
-					  
-					  <div class="col-md-2"></div>
-                            <div class="col-md-8 box-shadow white-bg comp-pg">
-							
-                            <div class="row text-left rate pad">
-=======
                         <h1 class="loan-head" style="color:#85C1E9">Business Loan EMI Calculator</h1>
                         <h3><p class="sub-title" style="color:#3498DB;">Calculate your Business Loan EMI and Eligibility Status Due in a snap! <i class="fa fa-calculator" style="color:#000000" aria-hidden="true"></i></p></h3>
                       </center>
@@ -23,7 +13,6 @@
                             <div class="col-md-8 box-shadow white-bg">
 							
                             <div class="row text-left comp-pg rate">
->>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
                                  <form class="" id="business_loan_calculator_form" name="business_loan_calculator_form" role="form" method="POST" >
                                  {{ csrf_field() }}
                                 <div class="row">
@@ -81,9 +70,7 @@
                                     <hr>
                                 </div>
                                 <div style="text-align: center;">
-
-                                <a class="btn btn-primery btn-outline with-arrow mrg-top" id="ckeck_eligibility">Check Eligibility<i class="icon-arrow-right"></i></a></div>
-
+                                <a class="btn btn-danger btn-outline with-arrow mrg-top" id="ckeck_eligibility">Check Eligibility<i class="icon-arrow-right"></i></a></div>
                                 </form>
                                 </div>
                                 </div>
@@ -153,35 +140,31 @@
          url: "{{URL::to('business-loan-calculation')}}",
          data : $('#business_loan_calculator_form').serialize(),
          success: function(msg){
-
-              //console.log(msg.status);
+              console.log(msg.status);
               if (msg.status==1) 
               {
                  var loan_eligible = msg.data.loan_eligible;
-                 //console.log(loan_eligible);
-
+                 console.log(loan_eligible);
                   $('#loan_eligible').empty().append(loan_eligible);
 
                  var roi = msg.data.roi;
                  $('#roi').empty().append(roi);
 
                  var emi = msg.data.emi;
-
+                 console.log(emi);
                   $('#EMI').empty().append(emi);
 
 
                  var processingfee = msg.data.processingfee;
-
-                  //console.log(processingfee);
+                  console.log(processingfee);
                   $('#processingfee').empty().append(processingfee);
 
                   var Bank_Name = msg.data.Bank_Name;
-                  //console.log(Bank_Name);
+                  console.log(Bank_Name);
                   $('#bank_name').empty().append(Bank_Name);
 
                   var Bank_Logo = msg.data.Bank_Logo;
-                  //console.log(Bank_Logo);
-
+                  console.log(Bank_Logo);
                   $('#bank_logo').html('<img src='+Bank_Logo+' width="150px">');
 
                   $('#business_eligible').modal('show');  

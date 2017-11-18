@@ -59,11 +59,7 @@
   
   <div class="col-xs-12 col-md-6 form-padding">
   
-<<<<<<< HEAD
-     <select class="block drop-arr select-sty drop-arr form-control"  name="loan_tenure" id="loan_tenure" required>
-=======
      <select class="block drop-arr select-sty"  name="loan_tenure" id="loan_tenure" required>
->>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
     <option value="" >LOAN TENURE</option>
       <option value="1">1 Year</option>
     <option value="2">2 Year</option>
@@ -181,19 +177,11 @@
           @if(Session::get('is_login'))
            <a   type="button" class="btn btn-info disblk apply_new" title="Experience New Digital Era In Loans">Apply Digitally</a>
            @else
-<<<<<<< HEAD
-           <a   data-toggle="modal" data-target="#login_process" class="btn btn-info block disblk apply_digitally " title="Experience New Digital Era In Loans">Apply Digitally</a>
-           @endif    
- 
-
-         <button id="eligibility"  class="btn btn-info disblk block" title="See Bankwise Eligibility And Apply Amongst Best Bank" disabled="" >Check Bankwise Eligibility</button>
-=======
            <a   data-toggle="modal" data-target="#login_process" class="btn btn-info disblk apply_digitally " title="Experience New Digital Era In Loans">Apply Digitally</a>
            @endif    
  
 
          <button id="eligibility"  class="btn btn-info disblk" title="See Bankwise Eligibility And Apply Amongst Best Bank" disabled="" >Check Bankwise Eligibility</button>
->>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
          <button type="button" class="btn btn-info block"  id="call_rm" name="call_rm" data-toggle="modal" data-target="#Modal" title="Call For RM(Single Day Process)">Call Manager</button>
          <div id="log_digital_text" style=" color: red"></div>
         </div>

@@ -339,11 +339,7 @@
   $(document).ready(function(){
     $("#Month").change(function(){
       var amt = $("#loanterm").val();
-<<<<<<< HEAD
-      //console.log($("#loanterm").val());
-=======
       console.log($("#loanterm").val());
->>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
       var month = amt;
       
       //console.log(month);
@@ -351,11 +347,7 @@
     });
     $("#Year").change(function(){
       var amt1 = $("#loanterm1").val();
-<<<<<<< HEAD
-      //console.log($("#loanterm").val());
-=======
       console.log($("#loanterm").val());
->>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
       var yr = amt1 / 12;
       //console.log(yr);
       //console.log(year);
@@ -415,11 +407,7 @@
                data : { 'loanamount': loanamount , 'loaninterest': loaninterest ,'loanterm' :loanterm,'_token': v_token,'profession':profession,'product_id':product_id,'brokerid':brokerid,'empcode':empcode,'refapp':refapp},
                // 'bank':bank},
                success: function(msg){
-<<<<<<< HEAD
-                    //console.log(msg);
-=======
                     console.log(msg);
->>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
                   if(msg.success ==true){
                   var numb = msg.amount.toFixed();
                    $('#emi').empty().append(numb);

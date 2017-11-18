@@ -14,4 +14,9 @@ class EquifaxController extends CallApiController
 		$x=system($command);
 		print_r($x);
 	}
+	
+	public function equifax()
+	{
+		return view('equifax');
+	}
 }

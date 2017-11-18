@@ -40,7 +40,11 @@
 						</div>
                          <div class="col-md-4">
 						 <span>Middle Name</span>
+<<<<<<< HEAD
 							<input type="text" class="form-control " id="m_name" name="MiddleName" placeholder="Middle Name" required>
+=======
+							<input type="text" class="form-control " id="m_name" name="MiddleName" placeholder="Middle Name" >
+>>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
 						</div>						
 						<div class="col-md-4">
 						<span>Last Name</span>
@@ -94,7 +98,11 @@
 		                    </div>
 						<div class="col-md-4">
 						<span>Residence Pincode</span>
+<<<<<<< HEAD
 							<input type="text" id="res_pin" name="ResPIN" class="form-control" placeholder="Residence Pincode" onkeypress="return fnAllowNumeric(event)" required>
+=======
+							<input type="text" id="res_pin" name="ResPIN" class="form-control" placeholder="Residence Pincode" onkeypress="return fnAllowNumeric(event)" maxlength="6" required>
+>>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
 						</div>
                         <div class="col-md-4">
 						<span>Email ID</span>
@@ -124,6 +132,12 @@
 						<hr>
 					    </div>	
 					    <a class="btn btn-primary btn-outline with-arrow mrg-top center-block crd_id" id="rbl_card_submit">SUBMIT<i class="icon-arrow-right" ></i></a>
+<<<<<<< HEAD
+=======
+					    <div class="iframeloading" style= "display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
+						  <img src="<?php echo e(URL::to('images/ajaxloader.gif')); ?>" alt="Loader" title="Loader" style="top: 50%; position: relative; left: 50%;"  />
+						 </div>
+>>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
 
 			            </form>
 					
@@ -158,7 +172,7 @@
 		<div class="text-center">
          <p id="rbl_cc_apply_status" class="text-success pad"></p>     
          <p id="reason" class="text-success pad"></p>     
-         <p id="reference" class="text-success pad"></p>         	      
+         <p  id="reference" class="text-success pad"></p>         	      
          </div>   
 </div>
 </div>
@@ -173,12 +187,23 @@
 		if(! $('#rbl_ccc_form').valid()){
 			return false;
 		}else{
+<<<<<<< HEAD
+=======
+			 $(".iframeloading").show();
+>>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
 			$.ajax({
 				type:"POST",
 				data:$('#rbl_ccc_form').serialize(),
 				url:"<?php echo e(URL::to('rbl-cc-submit')); ?>",
 				success:function(msg){
+<<<<<<< HEAD
+=======
+					$(".iframeloading").hide();
+>>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
 					var returnedData = JSON.parse(msg);
+
+					console.log(returnedData.broker_status);
+				
 					var status_id=returnedData.Status;
 					var error=returnedData.Errorinfo;
 					var mobile=$('#mobile').val();
@@ -194,12 +219,20 @@
 					}else if(status_id==1){
 						status="Successful";
 						error=returnedData.ReferenceCode;
+<<<<<<< HEAD
 						//red_url='http://erp.rupeeboss.com/Credit_Card_Upload_Docs.aspx?App_Id="'+error+'"&CardType='+card+'&MobileNo="'+mobile+'';
+=======
+						red_url='http://erp.rupeeboss.com/Credit_Card_Upload_Docs.aspx?App_Id='+error+'&CardType=RBL&MobileNo='+mobile+'';
+>>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
 						application_status=1;
 					}else if(status_id==2){
 						status="Successful Referred";
 						error=returnedData.ReferenceCode;
+<<<<<<< HEAD
 						//red_url='http://erp.rupeeboss.com/Credit_Card_Upload_Docs.aspx?App_Id="'+error+'"&CardType='+card+'&MobileNo="'+mobile+'';
+=======
+						red_url='http://erp.rupeeboss.com/Credit_Card_Upload_Docs.aspx?App_Id='+error+'&CardType=RBL&MobileNo='+mobile+'';
+>>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
 						application_status=1;
 					}else{
 						status="Rejected";
@@ -209,7 +242,9 @@
 					$('#reason').empty().append(error);
 					
 					$('#rb_cc_modal').modal('toggle');
-					
+						if(returnedData.broker_status==0){
+						red_url= "<?php echo e(URL::to('thank-you')); ?>";
+					}
 				}
 			});
 		}

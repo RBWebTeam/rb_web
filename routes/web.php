@@ -382,3 +382,4 @@ Route::get('searchkotakcityajax',array('as'=>'searchkotakcityajax','uses'=>'Auto
 
 //equifax
 Route::get('test-equifax','TestController@test');
+Route::get('equifax','EquifaxController@equifax');

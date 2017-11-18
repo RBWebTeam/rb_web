@@ -2,11 +2,7 @@
 <div id="fh5co-hero">
 @include('layout.header')
   <div class="container white">
-<<<<<<< HEAD
-  <h1 class="loan-head">Working Capital</h1>
-=======
   <h2 class="loan-head">Working Capital</h2>
->>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
   <div class="col-md-10">
 
   <ul class="nav nav-tabs" id="userTabs">

@@ -12,12 +12,12 @@
 	<meta name="keywords" content="<?php if(isset($keywords))echo $keywords; else echo "rupeeboss loans getloan expressloan"; ?>" />
 	<meta name="p:domain_verify" content="05d8ec5b6a704fa5b78abd5f636fdc24"/>
 	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-	<link rel="shortcut icon" href="<?php echo e(URL::to('images/rb_fav.png')); ?>">
-	<!-- <link rel="stylesheet" href="<?php echo e(URL::to('fonts/Raleway.css')); ?>" type="text/css"> -->
+	<link rel="shortcut icon" href="{{URL::to('images/rb_fav.png')}}">
+	<!-- <link rel="stylesheet" href="{{URL::to('fonts/Raleway.css')}}" type="text/css"> -->
 	<!-- Animate.css -->
 
-	<link  rel="stylesheet" type="text/css" href="<?php echo e(URL::to('css/mysite.css')); ?>"/>
-<link  rel="stylesheet" type="text/css" href="<?php echo e(URL::to('css/style.css')); ?>"/>
+	<link  rel="stylesheet" type="text/css" href="{{URL::to('css/mysite.css')}}"/>
+<link  rel="stylesheet" type="text/css" href="{{URL::to('css/style.css')}}"/>
 
 
 
@@ -128,7 +128,7 @@ div.bhoechie-tab div.bhoechie-tab-content:not(.active){
 table td {font-size:12px;}
 div.bhoechie-tab-content {background:transparent;}
 .vrt-align {vertical-align: -webkit-baseline-middle; color:#666; Font-weight:bold;}
-@media  only screen and (max-width: 768px) {
+@media only screen and (max-width: 768px) {
 
 h3 {
     font-size: 20px;
@@ -142,7 +142,7 @@ div.bhoechie-tab-menu div.list-group>a.active:after {display:none;}
 </style>
 
 <div class="fh5co-contact">
-<!-- <img src="<?php echo e(url('images/rbl_banner.jpg')); ?>" class="rbl img-responsive" width="1349"/> -->
+<!-- <img src="{{url('images/rbl_banner.jpg')}}" class="rbl img-responsive" width="1349"/> -->
         <div class="col-md-12 text-left fh5co-heading animate-box fadeInUp animated">
 		  
 		  <div id="logo" class="text-center"><img id="myImage" src="http://erp.rupeeboss.com/personalloan/images/logo.png" class="" style="margin:0 auto;"></div>
@@ -174,7 +174,7 @@ div.bhoechie-tab-menu div.list-group>a.active:after {display:none;}
                     <center>
                       <h1 class="glyphicon glyphicon-plane" style="font-size:14em;color:#55518a"></h1>
                       
-                    <div class="col-md-4 col-xs-12 mrg-btm"><img src="<?php echo e(url('images/titanium_crd.png')); ?>" class="rbl pull-left" width="260"/></div>
+                    <div class="col-md-4 col-xs-12 mrg-btm"><img src="{{url('images/titanium_crd.png')}}" class="rbl pull-left" width="260"/></div>
 					<div class="col-md-8">
 					<h3 class="text-left mrg-top">Titanium Delight Card</h3>
 					 <ul class="rbl-cr-lst text-left">
@@ -183,7 +183,7 @@ div.bhoechie-tab-menu div.list-group>a.active:after {display:none;}
 					 <li>1 Reward point on every Rs.100 spent except fuel</li>
 					 <li>Waiver of fuel surcharge up to Rs. 100 every month</li>
 					 </ul>
-					 <a href="<?php echo e(URL::to('credit-card-rbl')); ?>?card=1" class="btn btn-primary mrg-btm pad pull-left">APPLY NOW</a>
+					 <a href="{{URL::to('credit-card-rbl-dc')}}?card=1" class="btn btn-primary mrg-btm pad pull-left">APPLY NOW</a>
 					</div>
                     </center>
                 </div>
@@ -192,7 +192,7 @@ div.bhoechie-tab-menu div.list-group>a.active:after {display:none;}
                     <center>
                       <h1 class="glyphicon glyphicon-road" style="font-size:12em;color:#55518a"></h1>
                       
-                     <div class="col-md-4 col-xs-12 mrg-btm"><img src="<?php echo e(url('images/platinum_crd.png')); ?>" class="rbl pull-left" width="260"/><br></div>
+                     <div class="col-md-4 col-xs-12 mrg-btm"><img src="{{url('images/platinum_crd.png')}}" class="rbl pull-left" width="260"/><br></div>
 					<div class="col-md-8">
 					<h3 class="text-left">Platinum Maxima Card</h3>
 					<ul class="rbl-cr-lst text-left">
@@ -202,7 +202,7 @@ div.bhoechie-tab-menu div.list-group>a.active:after {display:none;}
 					 <li>20,000 bonus Reward Points every year on crossing 3.5 lacs spends</li>
 					 <li>Complimentary access to Airport Lounges</li>
 					 </ul>
-					 <a href="<?php echo e(URL::to('credit-card-rbl')); ?>?card=2" class="btn btn-primary mrg-btm pad pull-left">APPLY NOW</a>
+					 <a href="{{URL::to('credit-card-rbl-dc')}}?card=2" class="btn btn-primary mrg-btm pad pull-left">APPLY NOW</a>
 					</div>
                     </center>
                 </div>
@@ -212,7 +212,7 @@ div.bhoechie-tab-menu div.list-group>a.active:after {display:none;}
                     <center>
                       <h1 class="glyphicon glyphicon-home" style="font-size:12em;color:#55518a"></h1>
                       
-                     <div class="col-md-4 col-xs-12 mrg-btm"><img src="<?php echo e(url('images/platinum_delight_crd.png')); ?>" class="rbl pull-left" width="260"/><br></div>
+                     <div class="col-md-4 col-xs-12 mrg-btm"><img src="{{url('images/platinum_delight_crd.png')}}" class="rbl pull-left" width="260"/><br></div>
 					<div class="col-md-8">
 					<h3 class="text-left">Platinum Delight Card</h3>
 					<ul class="rbl-cr-lst text-left">
@@ -221,7 +221,7 @@ div.bhoechie-tab-menu div.list-group>a.active:after {display:none;}
 					 <li>1,000 bonus Reward Points every month on 5 transactions of Rs.1000 or more</li>
 					 <li>Waiver of fuel surcharge up to Rs.150 every month</li>
 					 </ul>
-					 <a href="<?php echo e(URL::to('credit-card-rbl')); ?>?card=3" class="btn btn-primary mrg-btm pad pull-left">APPLY NOW</a>
+					 <a href="{{URL::to('credit-card-rbl-dc')}}?card=3" class="btn btn-primary mrg-btm pad pull-left">APPLY NOW</a>
 					</div>
                     </center>
                 </div>
@@ -277,7 +277,7 @@ div.bhoechie-tab-menu div.list-group>a.active:after {display:none;}
      <!-- RBL Credit Card  - -->
   <tr class="RBL-Card">
        <td class="dis-non"><input type="checkbox" name="cehckbox"/> <button style="display:none;" data-toggle="collapse" data-target="#0" aria-expanded="true">Details </button></td>
-        <td><img src="<?php echo e(url('images/rbl-credit-card.jpg')); ?>" alt="RBL Titanium Delight Card" title="RBL Titanium Delight Card" width="150" height="96" style="margin:0 auto; margin-bottom:5px;">
+        <td><img src="{{url('images/rbl-credit-card.jpg')}}" alt="RBL Titanium Delight Card" title="RBL Titanium Delight Card" width="150" height="96" style="margin:0 auto; margin-bottom:5px;">
         <span>RBL Titanium Delight Card</span>
         </td>
     <td>Blockbuster Benefits Rs. 1000 BookMyShow voucher as a welcome gift free movie ticket per month on crossing spends of Rs. 10,000 and 1 Additional free movie ticket every month 
@@ -285,12 +285,12 @@ div.bhoechie-tab-menu div.list-group>a.active:after {display:none;}
         <td class="v-align"></td>
         
         <td>Annual Fees- Rs.1000/- plus applicable service tax Annual Fees Reversal- On crossing Rs.1.5 lac annual spends in a year get annual fees reversal worth Rs.1000</td>
-        <td class="v-align"><a href="<?php echo e(URL::to('contact-us')); ?>"><button>Apply Online</button></a></td>
+        <td class="v-align"><a href="{{URL::to('contact-us')}}"><button>Apply Online</button></a></td>
   </tr>
   
   <tr class="RBL-Card">
     <td class="dis-non"><input type="checkbox" name="cehckbox"/> <button style="display:none;" data-toggle="collapse" data-target="#1" aria-expanded="true">Details </button></td>
-    <td><img src="<?php echo e(url('images/rbl-credit-card_1.jpg')); ?>" alt="RBL Platinum Maxima Card" title="RBL Platinum Maxima Card" width="150" height="110" style="margin:0 auto; margin-bottom:5px;">
+    <td><img src="{{url('images/rbl-credit-card_1.jpg')}}" alt="RBL Platinum Maxima Card" title="RBL Platinum Maxima Card" width="150" height="110" style="margin:0 auto; margin-bottom:5px;">
     <span>RBL Platinum Maxima Card</span>
     </td>
     
@@ -298,12 +298,12 @@ div.bhoechie-tab-menu div.list-group>a.active:after {display:none;}
       <a data-toggle="popover" data-placement="bottom" data-trigger="hover" data-content="Use your card for purchases of Rs1.2 Lakhs or more in a year and get a gift voucher of Rs1000.Fuel Surcharge waiver of 2.5%*.*Fuel Transactions between Rs 500 to Rs 4,000 will be eligible for waiver of fuel surcharge." style="color:#39F; font-weight:bold;">More</a></td>
      <td class="v-align"></td>
   <td>Annual Fees- Rs 750 Joining Fees Nil Renewal Fees* Rs 750 Renewal Fees is waived on usage of Rs 1 lakh or more in a year.</td>
-    <td class="v-align"><a href="<?php echo e(URL::to('contact-us')); ?>"><button>Apply Online</button></a></td>
+    <td class="v-align"><a href="{{URL::to('contact-us')}}"><button>Apply Online</button></a></td>
   </tr>
 
   <tr class="RBL-Card">
     <td class="dis-non"><input type="checkbox" name="cehckbox"/> <button style="display:none;" data-toggle="collapse" data-target="#2" aria-expanded="true">Details </button></td>
-    <td><img src="<?php echo e(url('images/rbl-credit-card_1.jpg')); ?>" alt="RBL Platinum Delight Card" title="RBL Platinum Delight Card" width="150" height="110" style="margin:0 auto; margin-bottom:5px;">
+    <td><img src="{{url('images/rbl-credit-card_1.jpg')}}" alt="RBL Platinum Delight Card" title="RBL Platinum Delight Card" width="150" height="110" style="margin:0 auto; margin-bottom:5px;">
     <span>RBL Platinum Delight Card</span>
     </td>
     
@@ -312,7 +312,7 @@ div.bhoechie-tab-menu div.list-group>a.active:after {display:none;}
      <td class="v-align"></td>
   
   <td>Annual Fees Rs 1000 Joining Fees - Nil Renewal Fees-Next year fee waived if spend is greater than Rs 1.5 lakh in previous year</td>
-    <td class="v-align"><a href="<?php echo e(URL::to('contact-us')); ?>"><button>Apply Online</button></a></td>
+    <td class="v-align"><a href="{{URL::to('contact-us')}}"><button>Apply Online</button></a></td>
   </tr>
 
     <!-- ICICI Credit Card  - -->
@@ -321,32 +321,32 @@ div.bhoechie-tab-menu div.list-group>a.active:after {display:none;}
   </tr>
   <tr class="ICICI-Card">
     <td class="dis-non" width="20%"><input type="checkbox" name="cehckbox"/> <button style="display:none;" data-toggle="collapse" data-target="#3" aria-expanded="true">Details </button></td>
-    <td><img src="<?php echo e(url('images/CS/RD_1/SD_ICIC_Rohit_Khanna_Platinum_VISA_Card.jpg')); ?>" alt="ICICI Bank Coral Credit Card" title="ICICI Bank Coral Credit Card" width="150" height="100" style="margin:0 auto; margin-bottom:5px;">
+    <td><img src="{{url('images/CS/RD_1/SD_ICIC_Rohit_Khanna_Platinum_VISA_Card.jpg')}}" alt="ICICI Bank Coral Credit Card" title="ICICI Bank Coral Credit Card" width="150" height="100" style="margin:0 auto; margin-bottom:5px;">
     <span>Platinum Chip</span>
     </td>
     <td>No Joining Fee. No Annual Fee, Earn 2 PAYBACK points on every Rs.100 spent <a data-toggle="popover" data-placement="bottom" data-trigger="hover" data-content="Minimum 15% savings on dining bill at over 2,500+ restaurants across India courtesy our Culinary Treats program. Save on 1% fuel surcharge, waived off at HPCL petrol pumps" style="color:#39F; font-weight:bold;">More</a></td>
     <td  class="v-align"></td>
     <td class="v-align"></td>
-    <td class="v-align"><a href="<?php echo e(URL::to('credit-card-form')); ?>"><button>Apply Online</button></a></td>
+    <td class="v-align"><a href="{{URL::to('credit-card-form')}}"><button>Apply Online</button></a></td>
   </tr>
 
   
   <tr class="ICICI-Card">
     <td class="dis-non"><input type="checkbox" name="cehckbox"/> <button style="display:none;" data-toggle="collapse" data-target="#4" aria-expanded="true">Details </button></td>
-    <td><img src="<?php echo e(url('images/CS/RD/DA_Coral-Mastercard-MasterCard_1.jpg')); ?>" alt="ICICI Bank HPCL Coral Visa/MasterCard Credit Cards" title="ICICI Bank HPCL Coral Visa/MasterCard Credit Cards" width="150" height="96" style="margin:0 auto; margin-bottom:5px;">
+    <td><img src="{{url('images/CS/RD/DA_Coral-Mastercard-MasterCard_1.jpg')}}" alt="ICICI Bank HPCL Coral Visa/MasterCard Credit Cards" title="ICICI Bank HPCL Coral Visa/MasterCard Credit Cards" width="150" height="96" style="margin:0 auto; margin-bottom:5px;">
     <span>Coral Contactless</span>
     </td>
     <td>Built-in MasterCard contactless technology to make quick and secure payments at retail outlets<a data-toggle="popover" data-placement="bottom" data-trigger="hover" data-content="2X Cash rewards on dining, groceries and at supermarkets. Complimentary Provogue tie on joining. 1 complimentary domestic airport lounge visits per quarter. 2 complimentary movies every month under the Buy One Get One Offer through www.bookmyshow.com, Minimum 15% savings on dining bill at over 2,500+ restaurants across India courtesy our Culinary Treats program. " style="color:#39F; font-weight:bold;"> More</a></td>
     <td>You pay a Joining Fee of Rs. 1,000 + service tax and get a complimentary tie worth Rs. 999 from Provogue.
       <a data-toggle="popover" data-placement="bottom" data-trigger="hover" data-content=" This will be directly delivered to you within 30 days of payment of the Joining Fee." style="color:#39F; font-weight:bold;"> More</a></td>
     <td>You pay an Annual Fee of Rs.500 + service tax from 2nd year onwards - waived off if you spend more than Rs. 1,50,000 in the previous year</td>
-    <td class="v-align"><a href="<?php echo e(URL::to('credit-card-form')); ?>"><button>Apply Online</button></a></td>
+    <td class="v-align"><a href="{{URL::to('credit-card-form')}}"><button>Apply Online</button></a></td>
   </tr>
   
   
   <tr class="ICICI-Card">
     <td class="dis-non"><input type="checkbox" name="cehckbox"/> <button style="display:none;" data-toggle="collapse" data-target="#5" aria-expanded="true">Details </button></td>
-    <td><img src="<?php echo e(url('images/CS/RD/Rubyx-MasterCard-02.jpg')); ?>" alt="ICICI Ruby Credit Card" title="ICICI Ruby Credit Card" width="150" height="96" style="margin:0 auto; margin-bottom:5px;">
+    <td><img src="{{url('images/CS/RD/Rubyx-MasterCard-02.jpg')}}" alt="ICICI Ruby Credit Card" title="ICICI Ruby Credit Card" width="150" height="96" style="margin:0 auto; margin-bottom:5px;">
     <span>Rubyx</span>
     </td>
     <td>Complimentary set of Sennheiser HD221 Headphones upon joining. Complimentary round of golf every month at the golf course of your choice based on eligible spends on your card<a data-toggle="popover" data-placement="bottom" data-trigger="hover" data-content="2 complimentary movies every month under the Buy One Get One Offer through www.bookmyshow.com, 2 complimentary domestic airport lounge visits per quarter courtesy of MasterCard and 10 domestic airport lounge visits per year courtesy of American Express. Minimum 15% savings on dining bill at over 2,500+ restaurants across India courtesy our Culinary Treats program." style="color:#39F; font-weight:bold;"> More..</a></td>
@@ -354,13 +354,13 @@ div.bhoechie-tab-menu div.list-group>a.active:after {display:none;}
     <td>You pay a Joining Fee of Rs.3,000 + service tax and get a complimentary set of Sennheiser HD221 Headphones directly delivered to you within 30 days of payment</td>
     <td>You Pay an Annual Fee of Rs.2,000 + service tax from 2nd year onwards. This fee is waived off if you spend more than Rs. 3,00,000 in the previous year.</td>
   
-    <td class="v-align"><a href="<?php echo e(URL::to('credit-card-form')); ?>"><button>Apply Online</button></a></td>
+    <td class="v-align"><a href="{{URL::to('credit-card-form')}}"><button>Apply Online</button></a></td>
   </tr>
   
   
   <tr class="ICICI-Card">
     <td class="dis-non"><input type="checkbox" name="cehckbox"/> <button style="display:none;" data-toggle="collapse" data-target="#5" aria-expanded="true">Details </button></td>
-    <td><img src="<?php echo e(url('images/CS/RD/ICICI-BANK-SAPPHIRO-AMEX-CHIP-01.jpg')); ?>" alt="ICICI Ruby Credit Card" title="ICICI Ruby Credit Card" width="150" height="110" style="margin:0 auto; margin-bottom:5px;">
+    <td><img src="{{url('images/CS/RD/ICICI-BANK-SAPPHIRO-AMEX-CHIP-01.jpg')}}" alt="ICICI Ruby Credit Card" title="ICICI Ruby Credit Card" width="150" height="110" style="margin:0 auto; margin-bottom:5px;">
     <span>Sapphiro</span>
     </td>
     <td>Get complimentary All New Kindle on payment of the Joining fee. Complimentary membership to the Priority Pass lounge access programme <a data-toggle="popover" data-placement="bottom" data-trigger="hover" data-content="Unlimited Complimentary access to select airport lounges in India, courtesy of MasterCard and American Express. Complimentary round of golf every month at the golf course of your choice based on eligible spends on your card. 2 Complimentary movie tickets every month under the Buy One Get One Offer through www.bookmyshow.com" style="color:#39F; font-weight:bold;">More</a></td>
@@ -368,7 +368,7 @@ div.bhoechie-tab-menu div.list-group>a.active:after {display:none;}
       </td>
     <td>You pay an Annual Fee of Rs. 3,500 + service tax from 2nd year onwards - waived off if you spend more than Rs. 6,00,000 in the previous year.</td>
   
-    <td class="v-align"><a href="<?php echo e(URL::to('credit-card-form')); ?>"><button>Apply Online</button></a></td>
+    <td class="v-align"><a href="{{URL::to('credit-card-form')}}"><button>Apply Online</button></a></td>
   </tr>
    
     <tr class="ICICI-Card">
@@ -376,34 +376,34 @@ div.bhoechie-tab-menu div.list-group>a.active:after {display:none;}
   </tr>
    <tr class="ICICI-Card">
     <td class="dis-non"><input type="checkbox" name="cehckbox"/> <button style="display:none;" data-toggle="collapse" data-target="#5" aria-expanded="true">Details </button></td>
-    <td><img src="<?php echo e(url('images/CS/RD/JET-CORAL-VISA.jpg')); ?>" alt="ICICI Ruby Credit Card" title="ICICI Ruby Credit Card" width="150" height="110" style="margin:0 auto; margin-bottom:5px;">
+    <td><img src="{{url('images/CS/RD/JET-CORAL-VISA.jpg')}}" alt="ICICI Ruby Credit Card" title="ICICI Ruby Credit Card" width="150" height="110" style="margin:0 auto; margin-bottom:5px;">
     <span>Coral</span>
     </td>
     <td>2,500 welcome bonus JPMiles on joining. 1,250 renewal bonus JPMiles every year. Complimentary airport lounge access<a data-toggle="popover" data-placement="bottom" data-trigger="hover" data-content="Buy one get one free movie ticket through the week at www.bookmyshow.com, Minimum 15% savings on dining bill at over 2,500+ restaurants across India courtesy our Culinary Treats program." style="color:#39F; font-weight:bold;"> More</a></td>
     <td class="v-align">Rs.1250 + ST</td>
     <td class="v-align">Rs.1250 + ST</td>
-    <td class="v-align"><a href="<?php echo e(URL::to('credit-card-form')); ?>"><button>Apply Online</button></a></td>
+    <td class="v-align"><a href="{{URL::to('credit-card-form')}}"><button>Apply Online</button></a></td>
   </tr>
   
   <tr class="ICICI-Card">
     <td class="dis-non"><input type="checkbox" name="cehckbox"/> <button style="display:none;" data-toggle="collapse" data-target="#5" aria-expanded="true">Details </button></td>
-    <td><img src="<?php echo e(url('images/CS/RD/JET-CORAL-AMEX.jpg')); ?>" alt="ICICI Ruby Credit Card" title="ICICI Ruby Credit Card" width="150" height="110" style="margin:0 auto; margin-bottom:5px;">
+    <td><img src="{{url('images/CS/RD/JET-CORAL-AMEX.jpg')}}" alt="ICICI Ruby Credit Card" title="ICICI Ruby Credit Card" width="150" height="110" style="margin:0 auto; margin-bottom:5px;">
     <span>Rubyx</span>
     </td>
     <td>5,000 welcome bonus JPMiles on joining. 2,500 renewal bonus JPMiles every year. Complimentary airport lounge access.<a data-toggle="popover" data-placement="bottom" data-trigger="hover" data-content="Earn upto 5 JPMiles for every `100 spent on the card. Buy one get one free movie ticket through the week at www.bookmyshow.com, Minimum 15% savings on dining bill at over 2,500+ restaurants across India courtesy our Culinary Treats program." style="color:#39F; font-weight:bold;"> More</a></td>
     <td class="v-align">Rs.2500 + ST</td>
     <td class="v-align">Rs. 2500 + ST</td>
-    <td class="v-align"><a href="<?php echo e(URL::to('credit-card-form')); ?>"><button>Apply Online</button></a></td>
+    <td class="v-align"><a href="{{URL::to('credit-card-form')}}"><button>Apply Online</button></a></td>
   </tr>
   <tr class="ICICI-Card">
     <td class="dis-non"><input type="checkbox" name="cehckbox"/> <button style="display:none;" data-toggle="collapse" data-target="#5" aria-expanded="true">Details </button></td>
-    <td><img src="<?php echo e(url('images/CS/RD/JET-SAPPHIRO-VISA.jpg')); ?>" alt="ICICI Ruby Credit Card" title="ICICI Ruby Credit Card" width="150" height="110" style="margin:0 auto; margin-bottom:5px;">
+    <td><img src="{{url('images/CS/RD/JET-SAPPHIRO-VISA.jpg')}}" alt="ICICI Ruby Credit Card" title="ICICI Ruby Credit Card" width="150" height="110" style="margin:0 auto; margin-bottom:5px;">
     <span>Sapphiro</span>
     </td>
     <td>10,000 welcome bonus JPMiles on joining. 5,000 renewal bonus JPMiles every year. Complimentary airport lounge access.<a data-toggle="popover" data-placement="bottom" data-trigger="hover" data-content="Earn upto 7 JPMiles for every `100 spent on the card. Complimentary golf rounds, movie tickets, discounts on dining and more!" style="color:#39F; font-weight:bold;"> More</a></td>
     <td class="v-align">Rs.5000 + ST</td>
     <td class="v-align">Rs.5000 + ST</td>
-    <td class="v-align"><a href="<?php echo e(URL::to('credit-card-form')); ?>"><button>Apply Online</button></a></td>
+    <td class="v-align"><a href="{{URL::to('credit-card-form')}}"><button>Apply Online</button></a></td>
   </tr>
   
   
@@ -412,23 +412,23 @@ div.bhoechie-tab-menu div.list-group>a.active:after {display:none;}
   </tr>
    <tr class="ICICI-Card">
     <td class="dis-non"><input type="checkbox" name="cehckbox"/> <button style="display:none;" data-toggle="collapse" data-target="#5" aria-expanded="true">Details </button></td>
-    <td><img src="<?php echo e(url('images/CS/RD_1/SS_ICICI-RED-STRAIGHT-CARD-MERGED_DateChange.jpg')); ?>" alt="ICICI Ruby Credit Card" title="ICICI Ruby Credit Card" width="150" height="110" style="margin:0 auto; margin-bottom:5px;">
+    <td><img src="{{url('images/CS/RD_1/SS_ICICI-RED-STRAIGHT-CARD-MERGED_DateChange.jpg')}}" alt="ICICI Ruby Credit Card" title="ICICI Ruby Credit Card" width="150" height="110" style="margin:0 auto; margin-bottom:5px;">
     <span>Platinum</span>
     </td>
     <td>Discounts on Ferrari merchandise at the Online Ferrari Store. 1 complimentary domestic Airport Lounge visit per quarter.<a data-toggle="popover" data-placement="bottom" data-trigger="hover" data-content="2 complimentary movie tickets every month under the Buy 1, Get 1 offer from BookMyShow. Minimum 15% savings on dining bill at over 2,500+ restaurants across India courtesy our Culinary Treats program. Waiver of 1% on fuel surcharge valid on a maximum spend of ` 4000 per transaction at all HPCL pumps." style="color:#39F; font-weight:bold;"> More</a></td>
     <td>You pay a Joining Fee of Rs. 499 + Service Tax </td>
     <td>You pay an Annual Fee of Rs. 499 + Service Tax from the second year onwards. The Annual Fee is waived off, if you spend more than Rs.1,25,000 in the previous year.</td>
-    <td class="v-align"><a href="<?php echo e(URL::to('credit-card-form')); ?>"><button>Apply Online</button></a></td>
+    <td class="v-align"><a href="{{URL::to('credit-card-form')}}"><button>Apply Online</button></a></td>
   </tr>
   <tr class="ICICI-Card">
     <td class="dis-non"><input type="checkbox" name="cehckbox"/> <button style="display:none;" data-toggle="collapse" data-target="#5" aria-expanded="true">Details </button></td>
-    <td><img src="<?php echo e(url('images/CS/RD_1/SS_ICICI-BLACK-STRAIGHT-CARD_R1_EX.jpg')); ?>" alt="ICICI Ruby Credit Card" title="ICICI Ruby Credit Card" width="150" height="110" style="margin:0 auto; margin-bottom:5px;">
+    <td><img src="{{url('images/CS/RD_1/SS_ICICI-BLACK-STRAIGHT-CARD_R1_EX.jpg')}}" alt="ICICI Ruby Credit Card" title="ICICI Ruby Credit Card" width="150" height="110" style="margin:0 auto; margin-bottom:5px;">
     <span>Signature</span>
     </td>
     <td>Complimentary Access to domestic airport lounges in India. Buy One Get One’ offer on www.bookmyshow.com<a data-toggle="popover" data-placement="bottom" data-trigger="hover" data-content="Minimum 15% savings on dining bill at over 2,500+ restaurants across India courtesy our Culinary Treats program. Waiver of 1% on fuel surcharge valid on a maximum spend of ` 4000 per transaction at all HPCL pumps" style="color:#39F; font-weight:bold;"> More</a></td>
     <td>You pay a Joining Fee of Rs.3,999 + Service Tax and get a complimentary Scuderia Ferrari watch. This will be directly delivered to you within 30 days of payment of the Joining Fee.</td>
     <td>You pay an Annual Fee of Rs. 999 + Service Tax from the second year onwards. The Annual Fee is waived off, if you spend more than Rs. 2,50,000 in the previous year.</td>
-    <td class="v-align"><a href="<?php echo e(URL::to('credit-card-form')); ?>"><button>Apply Online</button></a></td>
+    <td class="v-align"><a href="{{URL::to('credit-card-form')}}"><button>Apply Online</button></a></td>
   </tr>
   
 
@@ -436,7 +436,7 @@ div.bhoechie-tab-menu div.list-group>a.active:after {display:none;}
   
 <tr class="HDFC-Card">
     <td class="dis-non"><input type="checkbox" name="cehckbox"/> <button style="display:none;" data-toggle="collapse" data-target="#6" aria-expanded="true">Details </button></td>
-    <td><img src="<?php echo e(url('images/hdfc-credit-card.jpg')); ?>" alt="HDFC JetPrivilege Credit Card" title="HDFC JetPrivilege Credit Card" width="150" height="110" style="margin:0 auto; margin-bottom:5px;">
+    <td><img src="{{url('images/hdfc-credit-card.jpg')}}" alt="HDFC JetPrivilege Credit Card" title="HDFC JetPrivilege Credit Card" width="150" height="110" style="margin:0 auto; margin-bottom:5px;">
     <span>JetPrivilege HDFC Bank World</span>
     </td>
     
@@ -444,7 +444,7 @@ div.bhoechie-tab-menu div.list-group>a.active:after {display:none;}
       <a data-toggle="popover" data-placement="bottom" data-trigger="hover" data-content="for every Rs. 150 spent and 18 JP Miles on every flight booked on www.jetairways.com Dedicated Check-in with additional baggage allowance Lounge access through Priority Pass and MasterCard Lounge Program.Get 1 JP Tier Point on every 2 lac spends. Faster way to move to higher JP Tier.Enjoy Lounge access at airport in India or overseas.Get Renewal Fee waived if you spend Rs. 3 lac in 12 months prior to renewal.Get extended validity of JP Miles for 5 years" style="color:#39F; font-weight:bold;">More</a></td>
     <td class="v-align"></td>
   <td>First Year and Renewal Fee on JetPrivilege HDFC Bank World Credit Card is Rs, 2,500/- (Service Tax as applicable)</td>
-    <td class="v-align"><a href="<?php echo e(URL::to('contact-us')); ?>"><button>Apply Online</button></a></td>
+    <td class="v-align"><a href="{{URL::to('contact-us')}}"><button>Apply Online</button></a></td>
   </tr>
   
 </table>
@@ -456,7 +456,7 @@ div.bhoechie-tab-menu div.list-group>a.active:after {display:none;}
 </div>
   
 
-<?php echo $__env->make('layout.script', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+@include('layout.script')
  <script type="text/javascript">
     
 $(document).ready(function(){

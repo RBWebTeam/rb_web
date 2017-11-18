@@ -1,10 +1,7 @@
 @include('layout.header')
 
-<<<<<<< HEAD
-=======
 
 
->>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
 <div id="fh5co-hero">
   <img src="{{URL::to('images/kotak_banner.jpg')}}" alt="Kotak Home Loan Banner" title="Kotak Home Loan" class="img-responsive">
 
@@ -19,16 +16,10 @@
 									 
                     										<h3 class="hdr col-md-12 text-center">Kotak Home Loan</h4>
                     										<div class="col-md-1"></div>
-<<<<<<< HEAD
-                                  <form id="Kotak_HL_form" name="Kotak_HL_form" method="POST">
-                                   {{ csrf_field() }}
-                    										<div class="col-md-10 white-bg pad1 box-shadow">
-=======
                                         <form id="Kotak_HL_form" name="Kotak_HL_form" method="POST">
                                         {{ csrf_field() }}
                     										<div class="col-md-10 white-bg pad1 box-shadow">
                                          <input type="hidden" name="CampaignName" value="{{$CampaignName}}">
->>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
                     										<div class="col-md-4">
                     										<span>Loan Purpose</span>
 										                    <select class="form-control block drop-arr select-sty" name="LoanPurpose" id="LoanPurpose"  required>
@@ -122,16 +113,6 @@
                     										</div>
                       										<div class="col-md-4">
                       										 <span>Residence City</span>
-<<<<<<< HEAD
-                      											<input type="text" class="form-control search_citynm " id="City" name="City" placeholder="Residence City*"  required>
-                                            <input type="hidden" name="ResCity" id="ResCity">
-                      										</div>
-                      										
-                      										<div class="col-md-4">
-                      										 <span>Residence City Area</span>
-                      											<input type="text" class="form-control search_city_area " id="CityArea" name="CityArea" placeholder="Residence City Area*"  required>
-                                            <input type="hidden" name="ResCityArea" id="ResCityArea">
-=======
                       											<!-- <input type="text" class="form-control search_city_kot" id="City" name="City" placeholder="Residence City*"  required>
                                             <input type="hidden" name="ResCity" id="ResCity"> -->
                                             <select class="form-control drop-arr select-sty" name="ResCity" id="ResCity" style="height: 50px" required>
@@ -146,7 +127,6 @@
                                             <select class="form-control drop-arr select-sty" name="ResCityArea" id="ResCityArea" style="height: 50px">
                                             <option disabled selected value="">CITY AREA</option>
                                             </select>
->>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
                       										</div>
 
                                             <div class="col-md-4">
@@ -158,8 +138,6 @@
                       										<div class="col-md-12">
                       										<div class="col-md-4"></div>
                       										<div class="col-md-2"><a class="btn  btn-primary block btn-outline animate-box fadeInUp animated dis-tbl" id="kotak-hl-submit">Submit</a></div>
-<<<<<<< HEAD
-=======
 
                                           <div class="col-md-2"><a class="btn  btn-success block btn-outline animate-box fadeInUp animated dis-tbl" id="kotak-hl-status">Check Status</a></div>
                                           
@@ -167,7 +145,6 @@
                                           <img src="{{URL::to('images/ajaxloader.gif')}}" alt="Loader" title="Loader" style="top: 50%; position: relative; left: 50%;"  />
                                          </div>
                                          
->>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
                       										</div>
                       									</div>
                                         </form>
@@ -183,8 +160,6 @@
 @include('layout.footer')
 @include('layout.script')
 
-<<<<<<< HEAD
-=======
 <div class="modal fade" tabindex="-1" role="dialog" id="kotak-hl-popup">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -293,7 +268,6 @@
   </div>
 </div>
 
->>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
 <script type="text/javascript">
   function AllowAlphabet(e)
 {
@@ -332,95 +306,6 @@
     }
     </script>
 
-<<<<<<< HEAD
-<script type="text/javascript">
-
-	
-
- $(document).ready(function(){
-    src = "{{ route('searchkotakcityajax') }}";
-    $(".search_citynm").autocomplete({
-      source: function(request, response) {
-        
-        $.ajax({
-          url: src,
-          dataType: "json",
-          data: {
-            term : request.term
-          },
-          success: function(data) {
-           
-
-            response(data);
-            
-          }
-        });
-      },
-      change: function (event, ui) {
-        if (ui.item == null || ui.item == undefined || ui.item.value=='No Result Found') {
-          $("#ResCity").attr("data-value","");
-
-
-          // $(".search_citynm").attr("disabled", false);
-         
-        }else{
-
-          alert( ui.item.datavalue);
-            $("#ResCity").val(ui.item.datavalue);
-                 
-          
-             }
-           }
-
-        
-      });
-   });
-
-</script>
-
-<script type="text/javascript">
-
-  
-
- $(document).ready(function(){
-    src = "{{ route('searchkotakcityareaajax') }}";
-    $(".search_city_area").autocomplete({
-      source: function(request, response) {
-        
-        $.ajax({
-          url: src,
-          dataType: "json",
-          data: {
-            term : request.term
-          },
-          success: function(data) {
-           
-
-            response(data);
-            
-          }
-        });
-      },
-      change: function (event, ui) {
-        if (ui.item == null || ui.item == undefined || ui.item.value=='No Result Found') {
-          $("#ResCityArea").attr("data-value","");
-          // $(".search_citynm").attr("disabled", false);
-         
-        }else{
-            $("#ResCityArea").val(ui.item.datavalue);
-                 
-          
-             }
-           }
-
-        
-      });
-   });
-
-</script>
-
-
-=======
 <script type="text/javascript">   
 
  $.ajax({ 
@@ -472,7 +357,6 @@ $('#ResCity').on('change', function() {
 });
 </script>
 
->>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
 <script>
 $('#LeadType').on('change', function() {
   // alert('okae');
@@ -498,11 +382,7 @@ $('#LeadType').on('change', function() {
 <script type="text/javascript">
   $('#EmpType').on('change', function() {
     var EmpType=$('#EmpType').find(":selected").val();
-<<<<<<< HEAD
-    if ( EmpType == '2')
-=======
     if ( EmpType == '1')
->>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
       {
        
         $("#TnrYears option[value='16']").show();
@@ -511,8 +391,6 @@ $('#LeadType').on('change', function() {
         $("#TnrYears option[value='19']").show();
         $("#TnrYears option[value='20']").show();
       }
-<<<<<<< HEAD
-=======
       else{
        $("#TnrYears option[value='16']").hide();
         $("#TnrYears option[value='17']").hide();
@@ -520,7 +398,6 @@ $('#LeadType').on('change', function() {
         $("#TnrYears option[value='19']").hide();
         $("#TnrYears option[value='20']").hide(); 
       }
->>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
       });
 </script>
 
@@ -529,30 +406,17 @@ $('#LeadType').on('change', function() {
     // alert('okae');
     if(! $('#Kotak_HL_form').valid())
        {
-<<<<<<< HEAD
-               alert('Please Fill Up All Details');
-        }
-        else
-        {
-          
-           
-=======
           alert('Please Fill Up All Details');
         }
         else
         {
             $('#kotak-hl-submit').hide();
             $(".iframeloading").show();
->>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
         $.ajax({  
          type: "POST",  
          url: "{{URL::to('kotak-home-loan-submit')}}",
          data : $('#Kotak_HL_form').serialize(),
          success: function(msg){
-<<<<<<< HEAD
-            console.log(msg.ReferenceCode);
-             console.log(msg);
-=======
             $(".iframeloading").hide();
             console.log(msg);
             console.log(msg.status);
@@ -566,7 +430,6 @@ $('#LeadType').on('change', function() {
             }
              
             
->>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
               
               
         }  
@@ -575,8 +438,6 @@ $('#LeadType').on('change', function() {
   });
 </script>
 
-<<<<<<< HEAD
-=======
 <script type="text/javascript">
   $('.kotak_hl_proceed').click(function(){
     window.location.href ="{{URL::to('thank-you')}}";
@@ -628,6 +489,5 @@ $('#LeadType').on('change', function() {
      }
   });
 </script>
->>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
 
 

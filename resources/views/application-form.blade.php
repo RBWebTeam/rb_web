@@ -53,8 +53,6 @@
 .hy-lnk p {margin-top:42px !important;margin: 0px}
 .center-alig input {margin:0 auto;display:block; width:100%;}
 .hy-lnk input {visibility:hidden; position: absolute;}
-<<<<<<< HEAD
-=======
 
 @media only screen and (max-width:768px) {
     .pad {
@@ -71,7 +69,6 @@
 	}
 	#application_submit {display:block;}
 }
->>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
 </style>
 </head>
 <!-- body starts -->
@@ -233,15 +230,9 @@ var product;
                   console.log(msg);
                 if(msg==1){
                          if (product == 'Low Cost Housing Finance') {
-<<<<<<< HEAD
-                           window.location.href ="{{URL::to('contact-us?CampaignName=GaneshChaturthi')}}";
-                          } else if(product =='Credit sudhar'){
-                             window.location.href ="{{URL::to('contact-us?CampaignName=GaneshChaturthi')}}";
-=======
                            window.location.href ="{{URL::to('thank-you?CampaignName=GaneshChaturthi')}}";
                           } else if(product =='Credit sudhar'){
                              window.location.href ="{{URL::to('thank-you?CampaignName=GaneshChaturthi')}}";
->>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
                           }else if(product== 'Early Salary') {
                             window.location.href ="{{URL::to('early-salary?CampaignName=GaneshChaturthi')}}";
                           }else if(product =='Credit Card'){

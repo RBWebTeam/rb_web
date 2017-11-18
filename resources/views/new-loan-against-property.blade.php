@@ -308,17 +308,10 @@
            @if(Session::get('is_login'))
            <a   type="button" class="btn btn-info disblk apply_new" title="Experience New Digital Era In Loans">Apply Digitally</a>
            @else
-<<<<<<< HEAD
-           <a   data-toggle="modal" data-target="#login_process" class="btn btn-info block disblk apply_digitally " title="Experience New Digital Era In Loans">Apply Digitally</a>
-           @endif    
- 
-         <button id="eligibility" class="btn btn-info block disblk" title="See Bankwise Eligibility And Apply Amongst Best Bank" disabled>Check Bankwise Eligibility</button>
-=======
            <a   data-toggle="modal" data-target="#login_process" class="btn btn-info disblk apply_digitally " title="Experience New Digital Era In Loans">Apply Digitally</a>
            @endif    
  
          <button id="eligibility" class="btn btn-info disblk" title="See Bankwise Eligibility And Apply Amongst Best Bank" disabled>Check Bankwise Eligibility</button>
->>>>>>> c0d6c6700c3f44404a38e93d7274089736aec27d
          <button type="button" class="btn btn-info block"  id="call_rm" name="call_rm" data-toggle="modal" data-target="#Modal" title="Call For RM(Single Day Process)">Call Manager</button>
          <div id="log_digital_text" style=" color: red"></div>
         </div>

@@ -324,6 +324,7 @@ $(".top").click(function() {
              <div class="col-xs-6 form-padding">
                     <div>
                       <input type="text" id="work_email" name="work_email" class="form-control text-lower" oninput="mail('work_email')"  required >
+                       <span id="email_error" style="display:none;color: red;">Please Enter Valid Email Id.</span>
                       <span class="highlight"></span><span class="bar"></span>
                       <label class="form-label-new lble">WORK EMAIL</label>
                       <div class="clear"></div>
@@ -774,11 +775,11 @@ $(".top").click(function() {
       <div class="modal-body">
         <h4><p id="modalerr"><h5>Your Application id is <b><span id="drop"></span></b>.<br>You have been <b><span id="drop1"></span></b>.<br><b><span id="drop2"></span></b><h5></p></h4>
         
-        <p><b>Thank You For Choosing ICICI Credit Card.</b></p>
+        <p><b>Thank You For Choosing ICICI Credit Card. A link has been sent to your registered Email Id. Kindly Click on the link to upload your supporting documents.</b></p>
       </div>
       
       <div class="modal-footer">
-        <a type="button" id="upload" name="upload" class="btn btn-primary" onclick="Redirect();" >Proceed to Document Upload</a>
+        <a type="button" id="upload" name="upload" class="btn btn-primary" onclick="Redirect();" >OK</a>
         
       </div>
     </div>
@@ -1504,13 +1505,21 @@ var inputs = $("#compareform input[required='required']");
 </script>
 
 
-<script type="text/javascript">
+<!-- <script type="text/javascript">
           function Redirect() 
           {
             var mobile=$('#ResidenceMobileNo').val();
             var app_id=$('#drop').text();
             window.location="http://erp.rupeeboss.com/Credit_Card_Upload_Docs.aspx?App_Id="+app_id+"&CardType=ICICI&MobileNo="+mobile;
             // window.location.href ="{{URL::to('thank-you')}}";
+          }
+</script> -->
+
+<script type="text/javascript">
+          function Redirect() 
+          {
+            
+             window.location.href ="{{URL::to('thank-you')}}";
           }
 </script>
 

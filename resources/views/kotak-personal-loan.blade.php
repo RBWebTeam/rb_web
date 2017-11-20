@@ -313,7 +313,7 @@
                                         </div>
 
                                         <div class="col-md-4">
-                                        <span>Total EMIs you currently pay per month</span>
+                                        <span>Total EMIs you currently pay per month <h6>(If any,otherwise enter 0)<h6></span>
                                         <input  type="text" class="form-control" onkeypress="return fnAllowNumeric(event)" placeholder="Total EMIs you currently pay/month" name="EmiCurPay" id="EmiCurPay">
                                         </div>
 
@@ -486,7 +486,9 @@
                        if(! $('#Kotak_PL_form').valid()){return false;
                        }else{$('#section4').show();
                
-                       if(! $('#Kotak_PL_form').valid()){return false;
+                       if(! $('#Kotak_PL_form').valid()){
+                        $('.kotak_pl').hide();
+                        return false;
                        }else{      
                                $('.kotak_pl').hide();
                            $('#section5').show();
@@ -518,7 +520,7 @@
      
         $.ajax({  
          type: "POST",  
-         url: "{{URL::to('credit-submit')}}",
+         url: "{{URL::to('kotak-pl-submit')}}",
          data : $('#Kotak_PL_form').serialize(),
          dataType: 'json',
          success: function(msg){
@@ -582,15 +584,15 @@ $('#ExstCustType').on('change', function() {
 
 <script type="text/javascript">
     var d = new Date();
-    var year = d.getFullYear()-18 ;
+    var year = d.getFullYear()-21 ;
     d.setFullYear(year);
 
     $("#DOB").datepicker({ dateFormat: "dd-mm-yy",
       changeMonth: true,
       changeYear: true,
       maxDate: year,
-      minDate: "-100Y",
-      yearRange: '-100:' + year + '',
+      minDate: "-76Y",
+      yearRange: '-76:' + year + '',
       defaultDate: d
     });
 </script>
@@ -709,7 +711,7 @@ $('#ExstCustType').on('change', function() {
 <script type="text/javascript">   
 
  $.ajax({ 
-   url: "{{URL::to('kotak-city-master')}}",
+   url: "{{URL::to('kotak-pl-city-master')}}",
    method:"GET",
    success: function(datas)  
    {
@@ -729,6 +731,52 @@ $('#ExstCustType').on('change', function() {
  });
 </script>
 
+<script type="text/javascript">   
+
+ $.ajax({ 
+   url: "{{URL::to('kotak-pl-city-master')}}",
+   method:"GET",
+   success: function(datas)  
+   {
+   var data=$.parseJSON(datas);
+   console.log(data);
+   if(data)
+      {      $.each(data, function( index, value ) {
+            $('#PerCity').append('<option value="'+value.city_code+'">'+value.city_name+'</option>');
+
+        }); 
+    }else{
+      $('#PerCity').empty().append('No Result Found');
+    }
+
+   },
+
+ });
+</script>
+
+<script type="text/javascript">   
+
+ $.ajax({ 
+   url: "{{URL::to('kotak-pl-city-master')}}",
+   method:"GET",
+   success: function(datas)  
+   {
+   var data=$.parseJSON(datas);
+   console.log(data);
+   if(data)
+      {      $.each(data, function( index, value ) {
+            $('#OffCity').append('<option value="'+value.city_code+'">'+value.city_name+'</option>');
+
+        }); 
+    }else{
+      $('#OffCity').empty().append('No Result Found');
+    }
+
+   },
+
+ });
+</script>
+
 <script type="text/javascript">
   $('#have').change(function(){
  
@@ -741,6 +789,21 @@ $('#ExstCustType').on('change', function() {
  
   $("#co_app_details").hide();
   });
+</script>
+
+<script type="text/javascript">
+  function AllowAlphabet(e)
+{
+  isIE = document.all ? 1 : 0
+  keyEntry = !isIE ? e.which : event.keyCode;
+  if (((keyEntry >= '65') && (keyEntry <= '90')) || ((keyEntry >= '97') && (keyEntry <= '122')) || (keyEntry == '46') || (keyEntry == '32') || keyEntry == '45')
+     return true;
+  else
+{
+    // alert('Please Enter Only Character values.');
+    return false;
+      }
+}
 </script>
 
 

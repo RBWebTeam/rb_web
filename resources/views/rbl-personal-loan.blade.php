@@ -383,21 +383,12 @@
 			</div> 
 			</br>
 			</form>
-    
-    
-    
-    
-    
-    
-         
-            
-            
-	</div>
+</div>
 </div>
 @include('layout.footer')
 @include('layout.script')
 
-
+<!-- modal -->
 <div class="modal fade" tabindex="-1" role="dialog" id="rbl-popup">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -457,7 +448,7 @@
         <h4 class="modal-title">Confirmation Status</h4>
       </div>
       <div class="modal-body">
-        <h4><p id="modalerr"><h5 style="color: black"><b>Ooops! Error occured.ErrorInfo is <b><span id="rbl-duplicate"></span></b>.<h5></p></h4>
+        <h4><p id="modalerr"><h5 style="color: black"><b>Ooops! Error occured.ErrorInfo is : <b><span id="rbl-duplicate"></span></b>.<h5></p></h4>
         
       </div>
       
@@ -465,6 +456,8 @@
     </div>
   </div>
 </div>
+
+<!-- script -->
 
 <script type="text/javascript">
   function AllowAlphabet(e)
@@ -760,7 +753,7 @@
         }
         else
         {     
-        	  $('#submit_application').hide();
+        	  // $('#submit_application').hide();
         	  $(".iframeloading").show();
           $.ajax({  
          type: "POST",  

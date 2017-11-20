@@ -390,8 +390,13 @@ $(".top").click(function() {
     <div class="text-center">
          <p id="rbl_cc_apply_status" class="text-success pad"></p>     
          <p id="reason" class="text-success pad"></p>     
-         <p  id="reference" class="text-success pad"></p>                 
-         </div>   
+         <p  id="reference" class="text-success pad"></p> 
+         <h4><p id="modalerr"><h5>Thank you for choosing RBL Credit Card. A link has been sent to your registered Email Id. Kindly Click on the link to upload your supporting documents.<h5></p></h4>              
+         </div>  
+         <div class="modal-footer">
+        <a type="button" id="upload" name="upload" class="btn btn-primary" onclick="Redirect();" >OK</a>
+        
+      </div> 
 </div>
 </div>
 </div>
@@ -621,7 +626,7 @@ $('.collapse').collapse({
 });
 
 var application_status=0;
-  var red_url= "{{URL::to('thank-you')}}";
+  // var red_url= "{{URL::to('thank-you')}}";
 $(".rbl-credit-submit").click(function(event){
   alert('ojkae');
   event.preventDefault();
@@ -671,13 +676,17 @@ return false;
           }else if(status_id==1){
             status="Successful";
             error=returnedData.ReferenceCode;
-            red_url='http://erp.rupeeboss.com/Credit_Card_Upload_Docs.aspx?App_Id='+error+'&CardType=RBL&MobileNo='+mobile+'';
-            application_status=1;
+            // red_url='http://erp.rupeeboss.com/Credit_Card_Upload_Docs.aspx?App_Id='+error+'&CardType=RBL&MobileNo='+mobile+'';
+            // application_status=1;
+            // red_url="{{URL::to('thank-you')}}";
+            
           }else if(status_id==2){
             status="Successful Referred";
             error=returnedData.ReferenceCode;
-            red_url='http://erp.rupeeboss.com/Credit_Card_Upload_Docs.aspx?App_Id='+error+'&CardType=RBL&MobileNo='+mobile+'';
-            application_status=1;
+            // red_url='http://erp.rupeeboss.com/Credit_Card_Upload_Docs.aspx?App_Id='+error+'&CardType=RBL&MobileNo='+mobile+'';
+            // application_status=1;
+            // red_url="{{URL::to('thank-you')}}";
+            
           }else{
             status="Rejected";
             error=returnedData.ReferenceCode;
@@ -859,6 +868,14 @@ return false;
       }); 
       }
   });
+</script>
+
+<script type="text/javascript">
+          function Redirect() 
+          {
+            
+             window.location.href ="{{URL::to('thank-you')}}";
+          }
 </script>
 
 <!-- var y=$(':input[required]:hidden');

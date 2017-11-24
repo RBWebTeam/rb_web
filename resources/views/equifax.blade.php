@@ -75,8 +75,8 @@
 }
 .register-form h4,.address h4{
     margin-bottom: 1em;
-    color: #404040;
-        margin: 1em 0 1.5em 0;
+    color: #404040 !important;
+    margin: 1em 0 1.5em 0;
     font-weight: normal;
     font-size: 15px;
     color: #8c8c8c;
@@ -225,7 +225,7 @@ textarea {margin-bottom:15px;border:1px solid #ddd;}
 	<div class="register-full">
 		
 		
-		<form id="early_salary_form" name="" method="POST">
+		<form id="equifax_form" name="" method="POST">
 		 {{ csrf_field() }}
 		 
 	
@@ -248,14 +248,17 @@ textarea {margin-bottom:15px;border:1px solid #ddd;}
 							</div>
 							<div class="styled-input col-md-6">
 							
-								<select name="" class="drop-arr select-sty" id=""  required>
+								<select name="InquiryPurpose" class="drop-arr select-sty" id="InquiryPurpose"  required>
 								 <option disabled selected  value="" class="text-danger">Inquiry Purpose</option>
                                  <option value="">Select Inquiry Purpose</option>
+                                 @foreach($inq as $value)
+                                 <option value="{{$value->inquiry_code}}">{{$value->inquiry_purpose}}</option>
+                             	@endforeach
 								</select>
 							</div>
 							 
 							 <div class="styled-input col-md-6">
-								<input type="text" name="" id="" required=""> 
+								<input type="text" name="TransactionAmount" id="TransactionAmount" required=""> 
 								<label>Transaction Amount (Rs)</label>
 								<span></span>
 							</div>
@@ -297,72 +300,160 @@ textarea {margin-bottom:15px;border:1px solid #ddd;}
 				<div class="col-md-12"><h4>Consumer Name And Address</h4></div>
 				        
 						<div class="styled-input col-md-6">
-								<input type="text" name="" id="" required>
+								<input type="text" name="FirstName" id="FirstName" required>
 								<label>First Name</label>
 								<span></span>
 					    </div>
 						<div class="styled-input col-md-6">
-								<input type="text" name="" id="" required>
+								<input type="text" name="MiddleName" id="MiddleName" required>
 								<label>Middle Name</label>
 								<span></span>
 					    </div>
 						<div class="styled-input col-md-6">
-								<input type="text" name="" id="" required>
+								<input type="text" name="LastName" id="LastName" required>
 								<label>Last Name</label>
 								<span></span>
+					    </div>
+					    <div class="styled-input col-md-6 drop-arr">
+								<SELECT name="MaritalStatus" id="MaritalStatus">
+									<option selected disabled>Marital Status</option>
+									<option value="single">Single</option>
+									<option value="married">Married</option>
+									<option value="divorced">Divorced</option>
+								</SELECT> 
 					    </div>
 			           <div class="col-md-12"><h6 class="text-danger text-sm">* Atleast one of the Address is Mandatory (marked in RED)</h6></div>
 					   
 					   
 				<div class="col-md-12"><h4>Address Information 1</h4></div>
 			        <div class="col-md-12">
-					<textarea> Address 1</textarea>
+					<textarea placeholder="Address" name="AddressLine[]"> </textarea>
 					
 					 </div>
+					 <div class="styled-input col-md-6 drop-arr">
+				   	<select name="AddressType[]" id=AddressType>
+				   		<option disabled selected>Select Address Type</option>
+				   		<option value="C">Current or Present</option>
+				   		<option value="P"> Permanent</option>
+				   		<option value="O">Office</option>
+				   		<option value="X">Other or Unspecified</option>
+				   	</select>
+					</div>
+					<div class="styled-input col-md-6">
+								<input type="text" name="Locality1[]" id="Locality1" required>
+								<label>Locality 1</label>
+								<span></span>
+					  </div>
+					  <div class="styled-input col-md-6">
+								<input type="text" name="Locality2[]" id="Locality2" required>
+								<label>Locality 2</label>
+								<span></span>
+					  </div>
+					  <div class="styled-input col-md-6">
+								<input type="text" name="City[]" id="City" required>
+								<label>City</label>
+								<span></span>
+					  </div>
 					 
 					 <div class="styled-input col-md-6">
-								<input type="text" name="" id="" required>
+								<input type="text" name="Postal[]" id="Postal" required>
 								<label>Postal Pin</label>
 								<span></span>
 					  </div>
-				   <div class="styled-input col-md-6">
-								<input type="text" name="" id="" required>
-								<label>State / Union Territory</label>
-								<span></span>
+				   <div class="styled-input col-md-6 drop-arr">
+				   	<select>
+				   		<option disabled selected>Select State</option>
+				   		@foreach($state as $value)
+                         <option value="{{$value->state_code}}">{{$value->state_name}}</option>
+                        @endforeach
+				   	</select>
 					</div>
 				
-				<div class="col-md-12"><h4>Address Information 2</h4></div>
+				<div class="col-md-12"><h4>Address Information 1</h4></div>
 			        <div class="col-md-12">
-					<textarea> Address 2</textarea>
+					<textarea placeholder="Address" name="AddressLine[]"> </textarea>
 					
 					 </div>
+					 <div class="styled-input col-md-6 drop-arr">
+				   	<select name="AddressType[]" id=AddressType>
+				   		<option disabled selected>Select Address Type</option>
+				   		<option value="C">Current or Present</option>
+				   		<option value="P"> Permanent</option>
+				   		<option value="O">Office</option>
+				   		<option value="X">Other or Unspecified</option>
+				   	</select>
+					</div>
+					<div class="styled-input col-md-6">
+								<input type="text" name="Locality1[]" id="Locality1" required>
+								<label>Locality 1</label>
+								<span></span>
+					  </div>
+					  <div class="styled-input col-md-6">
+								<input type="text" name="Locality2[]" id="Locality2" required>
+								<label>Locality 2</label>
+								<span></span>
+					  </div>
+					  <div class="styled-input col-md-6">
+								<input type="text" name="City[]" id="City" required>
+								<label>City</label>
+								<span></span>
+					  </div>
 					 
 					 <div class="styled-input col-md-6">
-								<input type="text" name="" id="" required>
+								<input type="text" name="Postal[]" id="Postal" required>
 								<label>Postal Pin</label>
 								<span></span>
 					  </div>
-				   <div class="styled-input col-md-6">
-								<input type="text" name="" id="" required>
-								<label>State / Union Territory</label>
-								<span></span>
-					    </div>
-				
-				<div class="col-md-12"><h4>Address Information 3</h4></div>
+				   <div class="styled-input col-md-6 drop-arr">
+				   	<select>
+				   		<option disabled selected>Select State</option>
+				   		@foreach($state as $value)
+                         <option value="{{$value->state_code}}">{{$value->state_name}}</option>
+                        @endforeach
+				   	</select>
+					</div>
+					<div class="col-md-12"><h4>Address Information 1</h4></div>
 			        <div class="col-md-12">
-					<textarea> Address 3</textarea>
+					<textarea placeholder="Address" name="AddressLine[]"> </textarea>
 					
 					 </div>
+					 <div class="styled-input col-md-6 drop-arr">
+				   	<select name="AddressType[]" id=AddressType>
+				   		<option disabled selected>Select Address Type</option>
+				   		<option value="C">Current or Present</option>
+				   		<option value="P"> Permanent</option>
+				   		<option value="O">Office</option>
+				   		<option value="X">Other or Unspecified</option>
+				   	</select>
+					</div>
+					<div class="styled-input col-md-6">
+								<input type="text" name="Locality1[]" id="Locality1" required>
+								<label>Locality 1</label>
+								<span></span>
+					  </div>
+					  <div class="styled-input col-md-6">
+								<input type="text" name="Locality2[]" id="Locality2" required>
+								<label>Locality 2</label>
+								<span></span>
+					  </div>
+					  <div class="styled-input col-md-6">
+								<input type="text" name="City[]" id="City" required>
+								<label>City</label>
+								<span></span>
+					  </div>
 					 
 					 <div class="styled-input col-md-6">
-								<input type="text" name="" id="" required>
+								<input type="text" name="Postal[]" id="Postal" required>
 								<label>Postal Pin</label>
 								<span></span>
 					  </div>
-				   <div class="styled-input col-md-6">
-								<input type="text" name="" id="" required>
-								<label>State / Union Territory</label>
-								<span></span>
+				   <div class="styled-input col-md-6 drop-arr">
+				   	<select>
+				   		<option disabled selected>Select State</option>
+				   		@foreach($state as $value)
+                         <option value="{{$value->state_code}}">{{$value->state_name}}</option>
+                        @endforeach
+				   	</select>
 					</div>
 					
 					
@@ -370,27 +461,35 @@ textarea {margin-bottom:15px;border:1px solid #ddd;}
 					<div class="col-md-12"><h4>Consumer ID And Personal Information</h4></div>
 					<div class="col-md-12"><h6 class="text-danger text-sm">* Atleast one of the Personal IDs or Phone Numbers is mandatory.</h6></div>
 						      <div class="styled-input col-md-6">
-								<input type="text" name="" id="" required>
+								<input type="text" name="PANId" id="PANId" required>
 								<label>TAX ID / PAN</label>
 								<span></span> 
 								</div>	
 							<div class="styled-input col-md-6">
-								<input type="text" name="" id="" required>
+								<input type="text" name="PassportId" id="PassportId" required>
 								<label>Passport ID*</label>
 								<span></span> 
 								</div>
 							<div class="styled-input col-md-6">
-								<input type="text" name="" id="" required>
+								<input type="text" name="VoterId" id="VoterId" required>
 								<label>Voter ID*</label>
 								<span></span> 
 								</div>
+								<div class="styled-input col-md-6 drop-arr">
+								<select>
+							   		<option disabled selected>Select Phone Type</option>
+							   		@foreach($phone as $value)
+			                         <option value="{{$value->phone_type_code}}">{{$value->phone_type}}</option>
+			                        @endforeach
+							   	</select>
+								</div>
 							<div class="styled-input col-md-6">
-								<input type="text" name="" id="" required>
+								<input type="text" name="HomePhone" id="HomePhone" required>
 								<label>Phone (Home)</label>
 								<span></span> 
 								</div>
 							<div class="styled-input col-md-6">
-								<input type="text" name="" id="" required>
+								<input type="text" name="MobilePhone" id="MobilePhone" required>
 								<label>Phone (Mobile)</label>
 								<span></span> 
 								</div>
@@ -400,23 +499,28 @@ textarea {margin-bottom:15px;border:1px solid #ddd;}
 								<span></span> 
 								</div>
 							<div class="styled-input col-md-6">
-								<input type="text" name="" id="" required>
+								<input type="text" name="DriverLicense" id="DriverLicense" required>
 								<label>Driver Licence</label>
 								<span></span> 
 								</div>
 							<div class="styled-input col-md-6">
-								<input type="text" name="" id="" required>
+								<input type="text" name="NationalIdCard" id="NationalIdCard" required>
 								<label>National ID Card (UIN)</label>
 								<span></span> 
 								</div>
 							<div class="styled-input col-md-6">
-								<input type="date" name="" id="" required>
+								<input type="text" name="RationCard" id="RationCard" required>
+								<label>Ration Card </label>
+								<span></span> 
+								</div>
+							<div class="styled-input col-md-6">
+								<input type="date" name="DOB" id="DOB" required>
 								<!-- <label>DD/MM/YY</label> -->
 								<span></span> 
 								</div>
 							<div class="styled-input col-md-6">
 							
-								<select name="" class="drop-arr select-sty" id=""  required>
+								<select name="Gender" class="drop-arr select-sty" id="Gender"  required>
 								 <option disabled selected  value="" class="text-danger">Gender</option>
                                  <option value="">Male</option>
 								 <option value="">Female</option>

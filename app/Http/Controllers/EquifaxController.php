@@ -17,6 +17,14 @@ class EquifaxController extends CallApiController
 	
 	public function equifax()
 	{
-		return view('equifax');
+		$inquiry=DB::select('select * from equifax_inquiry_purpose');
+		$state=DB::select('select * from equifax_state_master');
+		$phone=DB::select('select * from equifax_phone_type');
+		//print "<pre>";
+		//print_r($inquiry);
+		//print_r($state);
+		//print_r($phone);
+		//exit();
+		return view('equifax')->with(['inq'=>$inquiry,'state'=>$state,'phone'=>$phone]);
 	}
 }

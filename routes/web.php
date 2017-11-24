@@ -196,7 +196,7 @@ Route::post('doc-upload','UploadController@UploadPost');
 Route::get('went-wrong','ErrorController@went_wrong');
 
 Route::get('thank-you',function (){return view('thank-you');});
-
+Route::get('loan-links',function (){return view('loans-repository');});
 
 
 Route::get('no-record-found',function (){return view('no-record-found');});

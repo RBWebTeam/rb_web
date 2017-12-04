@@ -179,9 +179,9 @@ $post_dataa='{
          }
 	
 if($status)
-  return view('equifaxmail',['NAME'=>$NAME]);
+  return view('equifaxmail',['NAME'=>$NAME,'error'=>0]);
 else
-  return view('equifaxmail',['error'=>1]);
+  return view('equifaxmail',['NAME'=>'','error'=>1]);
 
 		  
 	}

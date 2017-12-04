@@ -3584,3 +3584,21 @@ Caused by: org.hsqldb.HsqlException: user lacks privilege or object not found: S
 	at org.hsqldb.Session.executeDirectStatement(Unknown Source)
 	at org.hsqldb.Session.execute(Unknown Source)
 	... 9 more
+2017-12-04 15:53:57,191 [main] INFO  com.creditReport.Controller - 
+INFO: Reading the customer type
+2017-12-04 15:53:57,193 [main] INFO  com.creditReport.Controller - INFO: Activating the MFI parser
+2017-12-04 15:53:57,193 [main] INFO  com.creditReport.Controller - INFO: Input file:- xxx.xml
+2017-12-04 15:53:57,816 [main] INFO  com.creditReport.Controller - final time 1512383037816
+2017-12-04 15:53:57,816 [main] INFO  com.creditReport.Controller - Total parse time: 0.546s
+2017-12-04 15:53:57,817 [main] INFO  com.creditReport.Controller - complete time 1512383037817
+2017-12-04 15:53:57,817 [main] INFO  com.creditReport.Controller - 2017-12-04 15:53:57  Pdf generation complete.
+2017-12-04 15:53:57,817 [main] INFO  com.creditReport.Controller - Total time: 0.547s
+2017-12-04 15:54:48,669 [main] INFO  com.creditReport.Controller - 
+INFO: Reading the customer type
+2017-12-04 15:54:48,670 [main] INFO  com.creditReport.Controller - INFO: Activating the MFI parser
+2017-12-04 15:54:48,670 [main] INFO  com.creditReport.Controller - INFO: Input file:- xxx.xml
+2017-12-04 15:54:49,146 [main] INFO  com.creditReport.Controller - final time 1512383089146
+2017-12-04 15:54:49,147 [main] INFO  com.creditReport.Controller - Total parse time: 0.464s
+2017-12-04 15:54:49,147 [main] INFO  com.creditReport.Controller - complete time 1512383089147
+2017-12-04 15:54:49,148 [main] INFO  com.creditReport.Controller - 2017-12-04 15:54:49  Pdf generation complete.
+2017-12-04 15:54:49,148 [main] INFO  com.creditReport.Controller - Total time: 0.465s

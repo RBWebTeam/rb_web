@@ -15,6 +15,18 @@
 
 
 	<div class="col-md-12"> 
+		<?php if($error): ?>
+			 <div class="white-bg box-shadow pad thank-u">
+			     <img src="<?php echo e(url('images/thank-you-sign.png')); ?>" width="80" height="80" class="img-responsive center-img thank-sig"/>
+
+				 <h1 class="thank-txt text-center">Ooops!</h1>
+				 
+				 <br><br>
+				 <h4 class="text-center h4-txt">Soory We are unable to get your Credit report</h4>
+				 <a href="<?php echo e(URL::to('/')); ?>" class="downld-btn" style="width: 200px;">Go Home</a>
+			
+			 </div>
+			 <?php else: ?>
 			 <div class="white-bg box-shadow pad thank-u">
 			     <img src="<?php echo e(url('images/thank-you-sign.png')); ?>" width="80" height="80" class="img-responsive center-img thank-sig"/>
 
@@ -25,6 +37,7 @@
 				 
 			<a download="<?php echo e($NAME); ?>" href="<?php echo e(URL::to('Equifax/PDF')); ?>/<?php echo e($NAME); ?>" class="downld-btn" style="width: 200px;">Download Credit Report</a>
 			 </div>
+			 <?php endif; ?>
 			</div>
 
  

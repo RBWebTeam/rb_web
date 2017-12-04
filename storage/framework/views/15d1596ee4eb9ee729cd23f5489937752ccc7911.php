@@ -354,7 +354,7 @@ textarea {margin-bottom:15px;border:1px solid #ddd;}
 					  </div>
 					 
 					 <div class="styled-input col-md-6">
-								<input type="text" name="Postal[]" id="Postal" required>
+								<input type="text" name="Postal[]" id="Postal" onkeypress="return Numeric(event)" required max="10">
 								<label>Postal Pin</label>
 								<span></span>
 					  </div>
@@ -441,7 +441,7 @@ textarea {margin-bottom:15px;border:1px solid #ddd;}
 					  </div>
 					 
 					 <div class="styled-input col-md-6">
-								<input type="text" name="Postal[]" id="Postal" onkeypress="return Numeric(event)" required max="10">
+								<input type="text" name="Postal[]" id="Postal" >
 								<label>Postal Pin</label>
 								<span></span>
 					  </div>

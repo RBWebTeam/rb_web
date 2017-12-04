@@ -14,11 +14,11 @@ use Symfony\Component\Process\Exception\ProcessFailedException;
 
 class EquifaxController extends CallApiController
 {
-	public function generate_pdf(Request $req){
-		$command="java -Xms256m -Xmx512m -jar MParser-6.2.0.jar".$req['file'];
-		$x=system($command);
-		print_r($x);
-	}
+	// public function generate_pdf(Request $req){
+	// 	$command="java -Xms256m -Xmx512m -jar MParser-6.2.0.jar".$req['file'];
+	// 	$x=system($command);
+	// 	print_r($x);
+	// }
 
 
 	public function equifax()
@@ -154,30 +154,34 @@ $post_dataa='{
  
 		    $result=$this->call_json_data_api("http://api.rupeeboss.com/EquifaxAPIService.svc/createCreditReportReq",$post_dataa);
 		    $http_result=$result['http_result'];
-		  
- 
- 
-		   
+        
 
+        $xml = simplexml_load_string($http_result);
+        $xml_S=simplexml_load_string($xml);
+       
+        if($xml_S->ReportData){
+          $status=1;
+        }else{
+          $status=0;
+        }
 
+        file_put_contents(public_path("input/xxx.xml"),$xml);
+        $command="java -Xms256m -Xmx512m -jar MParser-6.2.0.jar "."xxx.xml";
+        $x=system($command);
+        //$x=system("MParser");
+        //$y=system("echo %cd%");
+        $NAME="Hit_".$FirstName.".pdf";
 
-$xml = simplexml_load_string($http_result);
-file_put_contents(public_path("input/xxx.xml"),$xml);
-$command="java -Xms256m -Xmx512m -jar MParser-6.2.0.jar "."xxx.xml";
-$x=system($command);
-//$x=system("MParser");
-//$y=system("echo %cd%");
-$NAME="Hit_".$FirstName.".pdf";
-
-  
- }catch (\Exception $e) {
-
-   return $e->getMessage();
- }
+          
+         }catch (\Exception $e) {
+            $status=0;
+           
+         }
 	
-
-return view('equifaxmail',['NAME'=>$NAME]);
- 
+if($status)
+  return view('equifaxmail',['NAME'=>$NAME]);
+else
+  return view('equifaxmail',['error'=>1]);
 
 		  
 	}

@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<InquiryResponse xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <InquiryResponseHeader xmlns="http://services.equifax.com/eport/ws/schemas/1.0">
+    <ClientID>027BB02400</ClientID>
+    <CustRefField>417476</CustRefField>
+    <ProductCode>IDCR</ProductCode>
+    <SuccessCode>0</SuccessCode>
+    <Date>04-12-2017</Date>
+    <Time>15:55:16</Time>
+  </InquiryResponseHeader>
+  <InquiryRequestInfo xmlns="http://services.equifax.com/eport/ws/schemas/1.0">
+    <InquiryPurpose>02</InquiryPurpose>
+    <FirstName>N VENKATESWARLU</FirstName>
+    <MiddleName>Kumar</MiddleName>
+    <LastName>Sagar</LastName>
+    <InquiryPhones>
+      <InquiryPhone>
+        <Number>9866664534</Number>
+        <PhoneType>X</PhoneType>
+      </InquiryPhone>
+    </InquiryPhones>
+    <DOB>2017-12-05</DOB>
+    <PANId>AGJPN6543P</PANId>
+    <PassportId>23323</PassportId>
+    <VoterId>KBB2141547</VoterId>
+    <HomePhone>
+      <PhoneNumber>9866664534</PhoneNumber>
+    </HomePhone>
+    <MobilePhone>9866664534</MobilePhone>
+    <InquiryCommonAccountDetails>
+      <InquiryAccount>
+        <AccountNumber>CF55347203</AccountNumber>
+      </InquiryAccount>
+      <InquiryAccount>
+        <AccountNumber>CF55347200</AccountNumber>
+      </InquiryAccount>
+      <InquiryAccount>
+        <AccountNumber>CF55347203</AccountNumber>
+      </InquiryAccount>
+      <InquiryAccount>
+        <AccountNumber>CF55347203</AccountNumber>
+      </InquiryAccount>
+    </InquiryCommonAccountDetails>
+  </InquiryRequestInfo>
+  <ReportData xmlns="http://services.equifax.com/eport/ws/schemas/1.0">
+    <Error>
+      <ErrorCode>E0067</ErrorCode>
+      <ErrorMsg>State code is either in wrong format or invalid.</ErrorMsg>
+    </Error>
+  </ReportData>
+</InquiryResponse>

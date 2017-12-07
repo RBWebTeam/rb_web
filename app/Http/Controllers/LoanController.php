@@ -972,7 +972,8 @@ $url = $this::$url_static."/BankAPIService.svc/updateIIFLRevisedQuote";
     $query = DB::table('product_master')->select('Product_Id', 'Product_Name')->get();
 
     echo json_encode($query);
-  }
+  } 
+
 
 
 /*Kotak Personal Loan*/
@@ -1152,5 +1153,5 @@ $url = $this::$url_static."/BankAPIService.svc/updateIIFLRevisedQuote";
            'updated_at'=>date("Y-m-d H:i:s")]
          );
     }
+}
 
- }

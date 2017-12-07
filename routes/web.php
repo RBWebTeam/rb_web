@@ -196,7 +196,7 @@ Route::post('doc-upload','UploadController@UploadPost');
 Route::get('went-wrong','ErrorController@went_wrong');
 
 Route::get('thank-you',function (){return view('thank-you');});
-
+Route::get('loan-links',function (){return view('loans-repository');});
 
 
 Route::get('no-record-found',function (){return view('no-record-found');});
@@ -394,6 +394,9 @@ Route::get('searchkotakcityajax',array('as'=>'searchkotakcityajax','uses'=>'Auto
 //equifax
 Route::get('test-equifax','TestController@test');
 
+
 /*Excel Upload*/
 Route::get('excel-upload','LoanController@excel_upload');
 Route::post('excel-upload-submit','LoanController@excel_upload_submit');
+Route::get('equifax1','EquifaxController@equifax');
+Route::post('equifax-query','EquifaxController@equifax_query');

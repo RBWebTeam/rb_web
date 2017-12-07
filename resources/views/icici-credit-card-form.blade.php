@@ -775,7 +775,10 @@ $(".top").click(function() {
       <div class="modal-body">
         <h4><p id="modalerr"><h5>Your Application id is <b><span id="drop"></span></b>.<br>You have been <b><span id="drop1"></span></b>.<br><b><span id="drop2"></span></b><h5></p></h4>
         
+
         <p><b>Thank You For Choosing ICICI Credit Card. <span id="link">A link has been sent to your registered Email Id. Kindly Click on the link to upload your supporting documents</span>.</b></p>
+
+        
       </div>
       
       <div class="modal-footer">

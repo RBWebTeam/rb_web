@@ -178,5 +178,23 @@ class AutoCompleteController extends InitialController {
             return ['value'=>'No Result Found'];
     }
 
+    public function autoComplete_kotak_plcompany(Request $request) {
+        $term = Input::get('term');
+        $products=DB::table('kotak_pl_company_master')->select('employername','final_category')
+        ->where('employername', 'LIKE', '%'.$term.'%')
+        ->take(5)->get();
+        //print_r( $products);
+        $data=array();
+        foreach ($products as $product) {
+                $data[]=array('value'=>$product->employername,'datavalue'=>$product->final_category);
+        }
+        if(count($data)){
+           //    print_r($data);
+             return $data;
+         }
+        else
+            return ['value'=>'No Result Found'];
+    }
+
 
 }

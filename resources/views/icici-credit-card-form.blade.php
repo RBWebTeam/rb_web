@@ -775,7 +775,10 @@ $(".top").click(function() {
       <div class="modal-body">
         <h4><p id="modalerr"><h5>Your Application id is <b><span id="drop"></span></b>.<br>You have been <b><span id="drop1"></span></b>.<br><b><span id="drop2"></span></b><h5></p></h4>
         
-        <p><b>Thank You For Choosing ICICI Credit Card. A link has been sent to your registered Email Id. Kindly Click on the link to upload your supporting documents.</b></p>
+
+        <p><b>Thank You For Choosing ICICI Credit Card. <span id="link">A link has been sent to your registered Email Id. Kindly Click on the link to upload your supporting documents</span>.</b></p>
+
+        
       </div>
       
       <div class="modal-footer">
@@ -1248,10 +1251,14 @@ return false;
              alert("Something Went Wrong");
 
              
-          }else{
+          }else if(msg==3){
+           alert('Oops..!! Application ID cannot be generated.');
+          }
+          else{
             
             if (msg.Decision =='Declined') {
               $('#upload').hide();
+              $('#link').hide();
 
             }
             if(msg.Decision==""){
@@ -1700,7 +1707,7 @@ var inputs = $("#compareform input[required='required']");
 <script type="text/javascript" src="js/datepicker.js"></script>
 
 
-<script>
+<!-- <script>
 		  $( function() {
 			$( '#datepicker,#datepicker1,#datepicker2' ).datepicker({
 				changeMonth:true,
@@ -1709,12 +1716,27 @@ var inputs = $("#compareform input[required='required']");
 				yearRange : 'c-65:c+10'
 			});
 		  });
-	 </script>
+	 </script> -->
+
+   <script type="text/javascript">
+    var d = new Date();
+    var year = d.getFullYear()-18 ;
+    d.setFullYear(year);
+
+    $("#datepicker").datepicker({ dateFormat: "yy-mm-dd",
+      changeMonth: true,
+      changeYear: true,
+      maxDate: year,
+      minDate: "-83Y",
+      yearRange: '-83:' + year + '',
+      defaultDate: d
+    });
+</script>
 
 <script>
-  $("#DateOfBirth").click(function() {
-    $(".lastReporteddob").datepicker('show');
-});
+//   $("#DateOfBirth").click(function() {
+//     $(".lastReporteddob").datepicker('show');
+// });
 
 
 

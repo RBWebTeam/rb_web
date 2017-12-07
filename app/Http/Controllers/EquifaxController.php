@@ -159,29 +159,36 @@ $post_dataa='{
         $xml = simplexml_load_string($http_result);
         $xml_S=simplexml_load_string($xml);
        
-        if($xml_S->ReportData){
+        if($xml_S->ReportData->Error->ErrorMsg){
+          $err=$xml_S->ReportData->Error->ErrorMsg;
           $status=1;
         }else{
+
+        file_put_contents(public_path("input/xxx.xml"),$xml);
+        $command="java -Xms256m -Xmx512m -jar MParser-6.2.0.jar xxx.xml";
+        $x=system($command);
+        //$x=system("MParser");
+       // $y=system("echo %cd%");
+        
           $status=0;
         }
 
-        file_put_contents(public_path("input/xxx.xml"),$xml);
-        $command="java -Xms256m -Xmx512m -jar MParser-6.2.0.jar "."xxx.xml";
-        $x=system($command);
-        //$x=system("MParser");
-        //$y=system("echo %cd%");
-        $NAME="Hit_".$FirstName.".pdf";
+
+
+
+       $NAME="Hit_".$PANId.".pdf";
 
           
          }catch (\Exception $e) {
-            $status=0;
+          $err="Ohh !! Something is broken inside";
+            $status=1;
            
          }
 	
 if($status)
-  return view('equifaxmail',['NAME'=>$NAME,'error'=>0]);
+  return view('equifaxmail',['NAME'=>$NAME,'error'=>$err]);
 else
-  return view('equifaxmail',['NAME'=>'','error'=>1]);
+  return view('equifaxmail',['NAME'=>$NAME ,'error'=>0]);
 
 		  
 	}

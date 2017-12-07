@@ -22,7 +22,7 @@
 				 <h1 class="thank-txt text-center">Ooops!</h1>
 				 
 				 <br><br>
-				 <h4 class="text-center h4-txt">Soory We are unable to get your Credit report</h4>
+				 <h4 class="text-center h4-txt">{{$error}}</h4>
 				 <a href="{{URL::to('/')}}" class="downld-btn" style="width: 200px;">Go Home</a>
 			
 			 </div>
@@ -35,7 +35,7 @@
 				 <br><br>
 				 <h4 class="text-center h4-txt">Click on Below Button For Download Credit Report</h4>
 				 
-			<a download="{{$NAME}}" href="{{URL::to('Equifax/PDF')}}/{{$NAME}}" class="downld-btn" style="width: 200px;">Download Credit Report</a>
+			<a download="{{$NAME}}" href="{{URL::to('uploads/PDF')}}/{{$NAME}}" class="downld-btn" style="width: 200px;">Download Credit Report</a>
 			 </div>
 			 @endif
 			</div>

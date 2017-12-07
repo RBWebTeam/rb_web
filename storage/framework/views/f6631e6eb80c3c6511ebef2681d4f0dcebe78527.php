@@ -22,7 +22,7 @@
 				 <h1 class="thank-txt text-center">Ooops!</h1>
 				 
 				 <br><br>
-				 <h4 class="text-center h4-txt">Soory We are unable to get your Credit report</h4>
+				 <h4 class="text-center h4-txt"><?php echo e($error); ?></h4>
 				 <a href="<?php echo e(URL::to('/')); ?>" class="downld-btn" style="width: 200px;">Go Home</a>
 			
 			 </div>

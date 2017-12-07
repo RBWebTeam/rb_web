@@ -128,7 +128,18 @@ $(".top").click(function() {
                   </h4>
                 </div>
                 <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-                  <div class="panel-body">    
+                  <div class="panel-body"> 
+                            <?php if(isset($_GET['brokerId'])){?>
+                            <input type="hidden" name="brokerId" id="brokerId" value="<?php echo isset($_GET['brokerId'])?$_GET['brokerId']:'';?>">
+                            <?php }else{?>
+                            <input type="hidden" name="brokerId" id="brokerId" value="0">
+                            <?php }?>
+                            <?php if(isset($_GET['Source'])){?>
+                            <input type="hidden" name="Source" id="Source" value="<?php echo isset($_GET['Source'])?$_GET['Source']:'';?>">
+                            <?php }else{?>
+                            <input type="hidden" name="Source" id="Source" value="">
+                            <?php }?>
+
                             <div class="col-xs-6 form-padding">
                             <div>
                               <input type="text" name="Name" id="Name" class="form-control inp-fld " onkeypress="return AllowAlphabet(event)"  required >
@@ -140,8 +151,8 @@ $(".top").click(function() {
 
                             <div class="col-xs-6 form-padding">
                             <div>
-                              <input type="text" name="EMail" id="EMail" oninput="mail('EMail')" class="form-control inp-fld" required >
-                              <div id="email" style="display:none;color: red; font-size: 10px">Oops.Please Enter Valid Email Id.!!</div>
+                              <input type="text" name="EMail" id="EMail" oninput="mail_id('EMail')" class="form-control inp-fld" required >
+                              <div id="mail" style="display:none;color: red; font-size: 10px">Oops.Please Enter Valid Email Id.!!</div>
                               <span class="highlight"></span><span class="bar"></span>
                               <label class="form-label-new lble">EMAIL</label>
                               <div class="clear"></div>
@@ -171,7 +182,7 @@ $(".top").click(function() {
 
                             
                             <div class="col-xs-6 form-padding">
-                            <select class="form-control drop-arr select-sty" name="ProductID" id="ProductID" style="height: 50px">
+                            <select class="form-control drop-arr select-sty" name="ProductId" id="ProductId" style="height: 50px">
                               <option disabled selected value="">PRODUCT</option>
                             </select>
                             
@@ -179,7 +190,7 @@ $(".top").click(function() {
 
                             <div id="amount" class="col-xs-6 form-padding">
                             <div>
-                              <input type="text" name="Loan_amnt" id="Loan_amnt" class="form-control inp-fld" onkeypress="return fnAllowNumeric(event)"  minlength="5" maxlength="9" required >
+                              <input type="text" name="Loan_amt" id="Loan_amt" class="form-control inp-fld" onkeypress="return fnAllowNumeric(event)"  minlength="5" maxlength="9" required >
                               <span class="highlight"></span><span class="bar"></span>
                               <label class="form-label-new lble">LOAN AMOUNT</label>
                               <div class="clear"></div>
@@ -195,16 +206,16 @@ $(".top").click(function() {
                             </div>  
                             </div>
 
-                            <div class="col-xs-6 form-padding">
+                           <!--  <div class="col-xs-6 form-padding">
                             <div>
-                              <input type="text" name="Assgn" id="Assgn" class="form-control inp-fld used" onkeypress="return fnAllowNumeric(event)" value="AKSHATA SHETTY" readonly required >
+                              <input type="text" name="Assgn" id="Assgn" class="form-control inp-fld used" onkeypress="return fnAllowNumeric(event)" value="CREDIT PERSON" readonly required >
 
                               <span class="highlight"></span><span class="bar"></span>
                               <label class="form-label-new lble">ASSIGNED</label>
                               <div class="clear"></div>
                             </div>  
-                            </div>
-                            <input type="hidden" name="AssgnId" id="AssgnId" value="32418">
+                            </div> -->
+                            <!-- <input type="hidden" name="AssgnId" id="AssgnId" value="1271"> -->
 
                             <div class="col-xs-6 form-padding">
                             <div>
@@ -246,7 +257,7 @@ $(".top").click(function() {
         <h4 class="modal-title">Confirmation Status</h4>
       </div>
       <div class="modal-body">
-        <h4><p id="modalerr"><h5 style="color: black">Your <b><span id="message"></span></b> And LeadId is<b><span id="leadid"></span></b>.<h5></p></h4>
+        <h4><p id="modalerr"><h5 style="color: black">Your lead added successfully And LeadId is <b><span id="leadid"></span></b>.<h5></p></h4>
         
       </div>
 
@@ -265,7 +276,7 @@ $(".top").click(function() {
         <h4 class="modal-title">Error Status</h4>
       </div>
       <div class="modal-body">
-        <h4><p id="modalerr"><h5 style="color: black">Oops!!! Something Went Wrong.<h5></p></h4>
+        <h4><p id="modalerr"><h5 style="color: black"><b><span id="errorinfo"></span></b>.<h5></p></h4>
         
       </div>
       
@@ -304,19 +315,19 @@ $(".top").click(function() {
 
 
 <script type="text/javascript">
-  function mail(obj,val){
-    // //console.log(obj);
+  function mail_id(obj,val){
+    // console.log(obj);
     if(obj=='EMail' ){
                    var str =$('#EMail').val();
-                   var emailPattern = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/; 
+                   var emailPattern = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/; 
                    var res = str.match(emailPattern);
                    if(res){
-                     // //console.log('Pancard is valid one.!!');
-                      $('#email').hide();
+                     // console.log('Pancard is valid one.!!');
+                      $('#mail').hide();
 
                   }else{
-                    // //console.log('Oops.Please Enter Valid Pan Number.!!');
-                    $('#email').show();
+                    // console.log('Oops.Please Enter Valid Pan Number.!!');
+                    $('#mail').show();
 
                     return false;
                   }
@@ -341,11 +352,11 @@ $(".top").click(function() {
    console.log(data);
    if(data)
       {      $.each(data, function( index, value ) {
-            $('#ProductID').append('<option value="'+value.Product_Id+'">'+value.Product_Name+'</option>');
+            $('#ProductId').append('<option value="'+value.Product_Id+'">'+value.Product_Name+'</option>');
 
         }); 
     }else{
-      $('#ProductID').empty().append('No Result Found');
+      $('#ProductId').empty().append('No Result Found');
     }
 
    },
@@ -404,7 +415,7 @@ $(".top").click(function() {
 
 <script type="text/javascript">
   $('#other-loans-submit').click(function(event){
-    alert('okae');
+    // alert('okae');
     event.preventDefault();
     if(! $('#lead_form').valid())
        {
@@ -418,14 +429,15 @@ $(".top").click(function() {
          data : $('#lead_form').serialize(),
          success: function(msg){
           console.log(msg);
-          if (msg.statusId==0) 
+          if (msg.Status==1) 
           {
-            $('#message').empty().append(msg.message);
-            $('#leadid').empty().append(msg.leadId);
+            
+            $('#leadid').empty().append(msg.Lead_Id);
             $('#lead-popup').modal('show');
           } 
           else 
-          {
+          {   
+            $('#errorinfo').empty().append(msg.Errorinfo);
               $('#lead-popup').modal('hide');
             
              $('#lead-popup-error').modal('show');
@@ -476,11 +488,11 @@ $(".top").click(function() {
 
 
     <script>
-$('#ProductID').on('change', function() {
+$('#ProductId').on('change', function() {
   // alert('okae');
-  var ProductID=$('#ProductID').find(":selected").val();
+  var ProductId=$('#ProductId').find(":selected").val();
   // console.log(LeadType);
-  if ( ProductID == '10')
+  if ( ProductId == '10')
       {
        
         

@@ -2,362 +2,382 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>BALANCE TRANSFER SAVING</title>
+    <title>RBL Credit Card :: RupeeBoss</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
-    <link href="{{URL::to('css/bootstrap.min.css')}}" rel="stylesheet" type="text/css" />    
-	<link href="{{URL::to('css/component.css')}}" rel="stylesheet" type="text/css"  />
-    <link href="{{URL::to('css/font-awesome.min.css')}}" rel="stylesheet" type="text/css" />
-	<link href="{{URL::to('css/style-home-loan.css')}}" rel="stylesheet" type="text/css" />
-	<link href="{{URL::to('css/responsive-home-loan.css')}}" rel="stylesheet" type="text/css" />
-	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="js/html5shiv.js"></script>
-        <script src="js/respond.min.js"></script>css/bootstrap-material-datetimepicker.css
-    <![endif]-->
 
-	<link rel="stylesheet" href="{{URL::to('css/bootstrap-material-datetimepicker.css')}}"/>
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	<script src="https://code.jquery.com/jquery-1.12.3.min.js" integrity="sha256-aaODHAgvwQW1bFOGXMeX+pC4PZIPsvn2h1sArYOhgXQ=" crossorigin="anonymous"></script>
-	<!--<script src="js/jquery-1.12.3.min.js" integrity="sha256-aaODHAgvwQW1bFOGXMeX+pC4PZIPsvn2h1sArYOhgXQ=" crossorigin="anonymous"></script>-->
-	
-	
-	<script type="text/javascript" src="{{URL::to('js/material.min.js')}}"></script>
-	<script type="text/javascript" src="{{URL::to('js/moment-with-locales.min.js')}}"></script>
-	<script type="text/javascript" src="{{URL::to('js/bootstrap-material-datetimepicker.js')}}"></script>
-	<link rel="stylesheet" href="https://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
-<script src="https://code.jquery.com/ui/1.10.4/jquery-ui.min.js"></script>
+  <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />    
+  <link href="css/icici_css/component.css" rel="stylesheet" type="text/css"  />
+  <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+  <link href="css/icici_css/style-home-loan.css" rel="stylesheet" type="text/css" />
+  <link href="css/icici_css/responsive-home-loan.css" rel="stylesheet" type="text/css" />
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link rel="stylesheet" href="css/icici_css/jquery.datepicker.css">
+  <link rel="stylesheet" href="css/icici_css/bootstrap-material-datetimepicker.css"/>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <script src="js/icici_js/jquery.min.js"></script>
+  <script type="text/javascript" src="js/icici_js/material.min.js"></script>
+  <script type="text/javascript" src="js/icici_js/moment-with-locales.min.js"></script>
+  <script type="text/javascript" src="js/icici_js/bootstrap-material-datetimepicker.js"></script>
+   
+</script>
 
 
-	<style>
-	.slider {
-  position: relative;
-  margin-top: 20px;
-  margin-bottom: 15px;
-  width: 90%;
-  background: #2A3137;
-  /* -moz-box-shadow: inset 0 0 10px #999;
-  -webkit-box-shadow: inset 0 0 10px #999;
-  box-shadow: inset 0 0 10px #999;*/
-  height: 15px;
-  border-radius: 10px;
-  border: 1px solid #DDDDDD;
-  margin-left: 15px;
-}
+<script type="text/javascript" src="js/icici_js/jquery.datepicker.js"></script>
 
-.slider .ui-slider-handle {
-  position: absolute;
-  background: #10A447;
-  border-radius: 5px;
-  width: 20px;
-  height: 50px;
-  top: -16px;
-  left: 50px;
-  border-style: none;
-  box-shadow: none;
 
-}
-
-.no-brd {border-bottom:none;}
-
-	 
-.price-box {
-	margin: 0 auto;
-	border-radius: 10px;
-	
-}
-
-.ui-widget-content {
-	border: 1px solid #bdc3c7;
-	background: #e1e1e1;
-	color: #222222;
-	margin-top: 4px;
-}
-
-.ui-slider .ui-slider-handle {
-	position: absolute !important;
-	z-index: 2 !important;
-	width: 4.0em !important;
-	height: 2.1em !important;
-	cursor: default !important;
-	margin: 0 -20px auto !important;
-	text-align: center !important;	
-	
-	color: #FFFFFF !important;
-	
-}
-
-.ui-corner-all {
-	/*border-radius: 20px;*/
-}
-
-.ui-slider-horizontal .ui-slider-handle {
-	top: -3em !important;
-}
-
-.ui-state-default,
-.ui-widget-content .ui-state-default {
-	background: #393a40 !important;
-}
-
-.ui-slider-horizontal .ui-slider-handle {
-	margin-left: -27px !important;
-}
-
-.ui-slider .ui-slider-handle {
-	cursor: pointer;
-}
-
-.ui-slider a,
-.ui-slider a:focus {
-	cursor: pointer;
-	outline: none;
-}
-
-.price, .lead p {
-	font-weight: 600;
-	font-size: 32px;
-	display: inline-block;
-	line-height: 60px;
-}
-
-h4.great {
-	background: #00ac98;
-	margin: 0 0 55px -60px;
-	padding: 7px 15px;
-	color: #ffffff;
-	font-size: 18px;
-	font-weight: 600;
-	border-radius: 5px;
-	display: inline-block;
-	-moz-box-shadow:    2px 4px 5px 0 #ccc;
-  	-webkit-box-shadow: 2px 4px 5px 0 #ccc;
-  	box-shadow:         2px 4px 5px 0 #ccc;
-}
-
-.price-slider {
-	margin-bottom: 70px;
-}
-
-.form-pricing {
-	background: #ffffff;
-	padding: 20px;
-	border-radius: 4px;
-}
-
-.price-form {
-	background: #ffffff;
-	margin-bottom: 10px;
-	padding: 20px;
-	border: 1px solid #eeeeee;
-	border-radius: 4px;
-}
-
-.form-group {
-	margin-bottom: 0;
-}
-
-.form-group span.price {
-	font-weight: 200;
-	display: inline-block;
-	color: #7f8c8d;
-	font-size: 14px;
-}
-
-.help-text {
-	display: block;
-	margin-top: 32px;
-	margin-bottom: 10px;
-	color: #737373;
-	position: absolute;
-	font-weight: 200;
-	text-align: right;
-	width: 188px;
-}
-
-.price-form label {
-	font-weight: 200;
-	font-size: 21px;
-}
-
-.ui-slider-range-min {
-	background: #2980b9;
-}
-
-.ui-slider-label-inner {
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
-    border-top: 10px solid #393a40;
-    display: block;
-    left: 50%;
-    margin-left: -10px;
+    
+<script src="js/jquery.mask.js"></script>
+<script src="js/icici_js/jquery.validate.min.js"></script>
+  <style>
+  .inp-fld {margin-bottom:10px; height:50px; position:relative;text-transform: uppercase;}
+  .emp-nat span {padding:3px 5px;}
+  .txt-tlt {padding-left:5px;width:100%;text-align:center; color:#666;font-size:18px;}
+  .pg-titl {text-transform:uppercase;}
+  .redio-lft {float:left;}
+  .p-padding {padding:10px;}
+  .mand-fld { display:block;}
+  label.error {display: none !important; }
+       .error {
+                    border:1px solid red;
+                }
+  .lble {bottom:19px;}
+  
+  .sbmit-btn {
+    padding: 10px 30px;
+    top: 0px;
     position: absolute;
-    top: 100%;
-    z-index: 99;
+    color: #fff;
+    font-size: 20px;
+    right: 0px;
+    border: none;
+    background: #0070c0;
 }
-
-label {
-    color: #fff;13px
-    font-size: ;
-    font-weight: normal;
-    position: absolute;
-    pointer-events: none;
-    left:10px;
-    top: 1px;
-    transition: all 0.2s ease;
-    font-weight: 500;
-}
-.error{
-	color: red !important; 
-}
-	</style>
+.icici {margin-top:-13px;}
+ select option {text-transform:uppercase;}
+ select {color:#636363 !important;}
+ .lastReporteddob {color:#636363 !important;}
+ 
+@media only screen and (max-width:768px) {
 	
+	.col-md-12 {padding:0px;margin:2px;}
+}
+.emp-nat span {
+    padding: 3px 5px;
+    font-size: 12px;
+}
+.lastReporteddob {height:48px;} 
+.hdn5 {margin:0px !important}
+#DateOfBirth {cursor:pointer;}
+.text-lower {margin-bottom: 10px;height: 50px;position: relative;}
+  </style>
+  
+  <script>
+$(document).ready(function(){
+    $(".click-hr").click(function(){
+        $(".emil-id").toggle();
+    });
+});
+</script>
   </head>
-<div id="fh5co-hero">
-	<div class="fh5co-contact animate-box">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12 text-left fh5co-heading animate-box fadeInUp animated">
-					<h2>RBL Credit Card Form</h2>
-				</div>
-				        <div class="col-md-1"></div>
-				        <div class="col-md-10">
-				        <div class="row text-left comp-pg rate white-bg box-shadow">
-			           <form  id="rbl_ccc_form" role="form">
-			           {{csrf_field()}}
-				        <div class="row">
-					     <div class="form-group titl-1">
-						<div class="col-md-4">
-						<span>Title</span>
-						    <select class="block drop-arr select-sty form-control" name="Title" id="title" required>
-		                    <option disabled selected  value="">Select Title</option>
-		                    <option value=1>Mr</option>
-		                    <option value=2>Ms</option>
-		                    <option value=2>Mrs</option>
-		                    <option value=2>Dr</option>
-		                    <option value=99>Other</option>
-		                    </select> 
-		                    </div>
-						<div class="col-md-4">
-						   <span>Credit Card Applied</span>
-							<input type="text" class="form-control" placeholder="Credit Card Applied" name="CreditCardApplied" id="cc_applied" value="{{$card}}" disabled="" >
-						</div>
-						<div class="col-md-4">
-						   <span>Date of Birth</span>
-							<input type="text" class="form-control lastReporteddate " id="dob" name="DOB" placeholder="Date of Birth" required>
-						</div>
-						<div class="col-md-4">
-						<span>First Name</span>
-							<input type="text" class="form-control" id="f_name" name="FirstName" placeholder="First Name" required>
-						</div>
-                         <div class="col-md-4">
-						 <span>Middle Name</span>
-							<input type="text" class="form-control " id="m_name" name="MiddleName" placeholder="Middle Name" required>
-						</div>						
-						<div class="col-md-4">
-						<span>Last Name</span>
-							<input type="text" class="form-control " id="l_name" name="LastName" placeholder="Last Name" required>
-						</div>
-						<div class="col-md-4">
-						<span>Father Name</span>
-							<input type="text" class="form-control " id="father_name" name="FatherName" placeholder="Father Name"  required>
-						</div>
-						<div class="col-md-4">
-						<span>Gender</span>
-						
-						<input type="radio"  name="Gender" id="male"  class="radiob" checked value="1">Male
-                        <input type="radio" name="Gender" id="female"  class="radiob" value="2" >Female 
-	                  
-						</div>
-						<div class="col-md-4">
-						<span>Had Loan Or CreditCard From AnyBank</span>
-						<div class="form-control border-none">
-					 
-						<input type="radio"  name="HadLoanOrCreditCardFromAnyBank" class="radiob" checked value="Y">Yes
-                        <input type="radio" name="HadLoanOrCreditCardFromAnyBank"  class="radiob" value="N" >No
-	                    </div>
-						</div>
-					    </div>
-					    <hr>
-				        </div>
-				        <div class="row sec" id="section1">
-					    <div class="form-group titl-1">
-					    <hr>
-						<div class="col-md-4">
-						<span>Residence Address 1</span>
-							<input type="text" class="form-control" placeholder="Residence Address 1" name="ResAddress1" id="res_add1" required="">
-						</div>
-						<div class="col-md-4">
-						<span>Residence Address 1</span>
-							<input type="text" class="form-control" placeholder="Residence Address 2" name="ResAddress2" id="res_add2" required="">
-						</div>
-						<div class="col-md-4">
-						<span>Landmark</span>
-							<input type="text" id="landmark" name="Landmark" class="form-control" placeholder="Landmark"  required>
-						</div>
-						<div class="col-md-4">
-						<span>City</span>
-						     <select class="block drop-arr form-control" name="ResCity" id="city" required>
-		                      <option disabled selected  value="">Select City</option>
-		                       @foreach ($data as $city)  
-								    <option value="{{$city->city_code}}">{{$city->city_name}}</option>
-								@endforeach
-		                    </select> 
-		                    </div>
-						<div class="col-md-4">
-						<span>Residence Pincode</span>
-							<input type="text" id="res_pin" name="ResPIN" class="form-control" placeholder="Residence Pincode" onkeypress="return fnAllowNumeric(event)" required>
-						</div>
-                        <div class="col-md-4">
-						<span>Email ID</span>
-							<input type="email" id="email_id" name="Email" class="form-control" placeholder="Email ID"  required />
-							<div id="email" style="display:none;color: red;">Please Enter Valid Email Id.</div>
-						</div>
-                       <div class="col-md-4">
-					   <span>Applicant Net Monthly Income</span>
-							<input type="text" id="monthly_income" name="NMI" class="form-control" placeholder="Applicant Net Monthly Income" onkeypress="return fnAllowNumeric(event)" required>
-						</div>
-						<div class="col-md-4">
-						<span>Mobile Number</span>
-							 <input type="text" class="form-control" id="mobile" name="Mobile"  required maxlength="10" placeholder="Mobile Number" minlength="10" maxlength="10" onblur ="return fnAllowNumeric(event)" onkeydown=" mobile_valid(this)">
-						</div>
-						<div class="col-md-4">
-						<span>Employment Type</span>
-						<div class="form-control ">
-						<input type="radio"  name="EmpType" class="radiob" checked value="1">Salaried
-                        <input type="radio" name="EmpType"  class="radiob" value="2" >Self-Employed
-	                    </div>
-						</div>
-							<div class="col-md-4">
-							<span>Pancard No</span>
-						     <input  type="text" class="form-input-new form-control" name="PAN" id="pan" placeholder="Pancard No." onkeyup="pan_card_valid(this)" minlength="10" maxlength="10" required>
-						</div>
-						</div>
-						<hr>
-					    </div>	
-					    <a class="btn btn-primary btn-outline with-arrow mrg-top center-block crd_id" id="rbl_card_submit">SUBMIT<i class="icon-arrow-right" ></i></a>
-					    <div class="iframeloading" style= "display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
-						  <img src="{{URL::to('images/ajaxloader.gif')}}" alt="Loader" title="Loader" style="top: 50%; position: relative; left: 50%;"  />
-						 </div>
+  
+  <body class="cbp-spmenu-push">
+  <script>
+$(".top").click(function() {
+  $("html, body").animate({ scrollTop: 0 }, "slow");
+  return false;
+});
+</script>
 
-			            </form>
-					
-					
-					
-					
-			            </div>
-			            <br>
-		                </div>	
-	                    </div>
+
+               
+<div>
+       <!-- Main content -->
+        <section class="container">
+      <div class="row">
+      <div class="col-md-12">
+    <br>
+    <br>
+    
+    
+    
+      <div id="logo" class="text-center"><img id="myImage" src="http://erp.rupeeboss.com/personalloan/images/logo.png" class=""></div>
+    
+      <h4 class="text-center pg-titl">Apply For <img src="images/bank/rbl.png" class="img-responsive rbl" width="130"/> Credit Card</h4>
+    
+    <!-- <div class="col-md-3"></div>
+	
+	<form id="to_view_url" name="to_view_url" method="POST">
+  {{ csrf_field() }}
+    <div id="hideview" class="text-center col-md-6">
+                                            <div class="form-padding">
+                                                <h6 class="text-center top-heading click-hr"><a id="urlweb" href="javascript:void(0)">click here</a>
+                                                to view this page in browser</h6>
+                                                 <span id="urlmail_id" style="display:none;color: red;">Please Enter Valid Email Id.</span> 
+                                               
+                                              <div id="hideemailid" class="emil-id" style="margin-bottom: 14px; height: 50px; position: relative; display:none;">
+                                                <input class="form-control text-lower" required type="text" id="urlemailid" name="urlemailid" oninput="url_mail('urlemailid')">
+                                                
+                                                <button class="sbmit-btn sub-btn1 pull-right" id="btnweburl">Submit</button> 
+                                                <span class="highlight"></span><span class="bar"></span>
+                                                <label class="form-label-new">E-MAIL ID (PERSONAL)</label>
+                                                <div class="clear"></div>
+                                              </div>
+                                                
+                                              <h5 id="msgalert" class="top-heading text-success text-center" style="display:none;font-size:15px;font-weight:bold; margin-bottom:15px;">As per your request we have sent a mail to your email ID.</h5>
+                                            </div>
+                                        </div>
+                                        </form> -->
+                    
+                    
+
+                <div class="tab-content">
+            <div id="home" class="tab-pane fade in active">
+            
+          <!-- <form action="">  -->  
+            <div class="col-md-12">
+
+            <form class="form12" id="rbl_cc_dc" role="form" method="POST" >
+              
+            <div class="panel-group" id="accordion" >
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingOne">
+                  <h4 class="panel-title">
+                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          <button class="ok-btn"><span class="glyphicon glyphicon-ok"></span></button> &nbsp; PERSONAL INFORMATION
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                  <div class="panel-body">    
+
+          <div class="col-xs-6 form-padding">
+                    <select class="form-control inp-fld" name="Title" id="title" required>
+                      <option disabled selected  value="">Select Title</option>
+                        <option value=1>Mr</option>
+                        <option value=2>Ms</option>
+                        <option value=2>Mrs</option>
+                        <option value=2>Dr</option>
+                        <option value=99>Other</option>
+                    </select> 
+                  </div>
+             
+             <div class="col-xs-6 form-padding">
+                    <div>
+                      <input type="text" name="CreditCardApplied" id="cc_applied" class="form-control inp-fld used" onkeypress="return AllowAlphabet(event)" value="{{$card}}" disabled="" >
+                      <span class="highlight"></span><span class="bar"></span>
+                      <label class="form-label-new lble">Credit Card Applied</label>
+                      <div class="clear"></div>
+                    </div>  
+                             </div>
+              
+                  
+            <div class="col-xs-6 form-padding">
+                    <div class="form-control" style="margin-bottom:10px; height:50px; position:relative; padding: 0;">
+                    <span style="position: absolute; z-index: 999; margin: 1px 0 0 8px; font-size: 10px; color: #bababa;">DATE OF BIRTH</span>
+                      <input type="text" class="form-control lastReporteddob" id="datepicker" name="DOB" style="color:#636363 !important; font-size:14px;" required>
+                    <i class="fa fa-calendar" id="DateOfBirth" style="font-size: 25px;position: absolute;top: 15px;right: 11px;color: #3f7cb3;"></i>
+                    </div>
+                  </div>
+
+                  <div class="col-xs-6 form-padding">
+                    <div>
+                      <input type="text" name="FirstName" id="f_name" class="form-control inp-fld" onkeypress="return AllowAlphabet(event)" required >
+                      <span class="highlight"></span><span class="bar"></span>
+                      <label class="form-label-new lble">First Name</label>
+                      <div class="clear"></div>
+                    </div>  
+                  </div>
+
+                  <div class="col-xs-6 form-padding">
+                    <div>
+                      <input type="text" name="MiddleName" id="m_name" class="form-control inp-fld" onkeypress="return AllowAlphabet(event)" required >
+                      <span class="highlight"></span><span class="bar"></span>
+                      <label class="form-label-new lble">Middle Name</label>
+                      <div class="clear"></div>
+                    </div>  
+                  </div>
+
+                  <div class="col-xs-6 form-padding">
+                    <div>
+                      <input type="text" name="LastName" id="l_name" class="form-control inp-fld" onkeypress="return AllowAlphabet(event)" required >
+                      <span class="highlight"></span><span class="bar"></span>
+                      <label class="form-label-new lble">Last Name</label>
+                      <div class="clear"></div>
+                    </div>  
+                  </div>
+                  
+                  <div class="col-xs-6 form-padding">
+                    <div>
+                      <input type="text" name="FatherName" id="father_name" class="form-control inp-fld" onkeypress="return AllowAlphabet(event)" required >
+                      <span class="highlight"></span><span class="bar"></span>
+                      <label class="form-label-new lble">Father Name</label>
+                      <div class="clear"></div>
+                    </div>  
+                             </div>
+
+                     <div class="col-xs-6 col-md-6 form-padding">
+                    <div class="form-control inp-fld" style="height:50px;position: relative; padding: 0px 0px; margin-bottom:10px;">
+                      <div class="padd-lef gender">
+                       <div class="btn-grp" data-toggle="buttons">
+                                    <span class="btn btn-primary outer-brd1 active"><input type="radio" name="Gender" checked value="1"><img id="myImage"  src="images/male.png" class=""/></span>
+                                    <span class="btn btn-primary outer-brd1"><input type="radio" name="Gender" value="2"><img id="myImage1"  src="images/female.png" class="" ></span>
+                             </div>
                         </div>
+                     </div>
+                  </div>
 
-                        </div>
-                        </div>
+                  <div class="col-xs-6 form-padding">
+                    <div class="form-control inp-fld" style="height:50px; position: relative; padding: 0px 0px;">
+                      <span style="position: absolute; z-index: 999; margin: 1px 0 0 8px; font-size: 10px; color: #bababa;"> Had Loan Or CreditCard From AnyBank.</span>
+                      
+                      <div class="btn-grp mrg-top m-status emp-nat" data-toggle="buttons">
+                      <span class="btn btn-primary outer-brd active"><input type="radio" name="HadLoanOrCreditCardFromAnyBank" id="HadLoanOrCreditCardFromAnyBank" checked value="Y"  >Yes</span>
+                      <span class="btn btn-primary outer-brd"><input type="radio" name="HadLoanOrCreditCardFromAnyBank" id="HadLoanOrCreditCardFromAnyBank" value="N">No</span>
+                  </div>
+                    </div>
+                  </div>
+
+                  <div class="col-xs-6 form-padding">
+                    <div class="form-control inp-fld" style="height:50px; position: relative; padding: 0px 0px;">
+                      <span style="position: absolute; z-index: 999; margin: 1px 0 0 8px; font-size: 10px; color: #bababa;"> Employment Type.</span>
+                      
+                      <div class="btn-grp mrg-top m-status emp-nat" data-toggle="buttons">
+                      <span class="btn btn-primary outer-brd active"><input type="radio" name="EmpType" id="EmpType" checked value="1"  >Yes</span>
+                      <span class="btn btn-primary outer-brd"><input type="radio" name="EmpType" id="EmpType" value="2">No</span>
+                  </div>
+                    </div>
+                  </div>
+
+                  <div class="col-xs-6 form-padding">
+                    <div>
+                      <input type="text" id="monthly_income" name="NMI" class="form-control inp-fld" required onkeypress="return fnAllowNumeric(event)"   >
+                      <span class="highlight"></span><span class="bar"></span>
+                      <label class="form-label-new lble">Applicant Net Monthly Income</label>
+                      <div class="clear"></div>
+                    </div>  
+                  </div>
+         
+                
+               
+        </div>
+    </div>
+    
+  
+  <div class="panel-heading" role="tab" id="headingThree">
+                  <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                      <button class="ok-btn"><span class="glyphicon glyphicon-ok"></span></button>&nbsp; RESIDENCE ADDRESS DETAILS
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                  <div class="panel-body">      
+          
+              <h4 class="txt-tlt pull-left hdn5">Current Address Details</h4> 
+          <div class="col-xs-6 form-padding">
+                    <div>
+                      <input type="text" name="ResAddress1" id="res_add1" class="form-control inp-fld" required >
+                      <span class="highlight"></span><span class="bar"></span>
+                      <label class="form-label-new lble">Residence Address 1</label>
+                      <div class="clear"></div>
+                    </div>  
+                  </div>
+          <div class="col-xs-6 form-padding">
+                    <div>
+                      <input type="text"  name="ResAddress2" id="res_add2" class="form-control inp-fld" required>
+                      <span class="highlight"></span><span class="bar"></span>
+                      <label class="form-label-new lble">Residence Address 2</label>
+                      <div class="clear"></div>
+                    </div>  
+                  </div>
+          <div class="col-xs-6 form-padding">
+                    <div>
+                      <input type="text"  name="Landmark" id="landmark" class="form-control inp-fld" required>
+                      <span class="highlight"></span><span class="bar"></span>
+                      <label class="form-label-new lble">Landmark</label>
+                      <div class="clear"></div>
+                    </div>  
+                  </div>
+          <div class="col-xs-6 form-padding">
+                    <select class="form-control inp-fld" name="ResCity" id="city" required>
+                          <option disabled selected  value="">Select City</option>
+                           @foreach ($data as $city)  
+                    <option value="{{$city->city_code}}">{{$city->city_name}}</option>
+                       @endforeach
+                        </select>
+                  </div>
+          <div class="col-xs-6 form-padding">
+                    <div>
+                      <input type="text" id="res_pin" name="ResPIN" class="form-control inp-fld" required onkeypress="return fnAllowNumeric(event)" maxlength="6"  >
+                      <span class="highlight"></span><span class="bar"></span>
+                      <label class="form-label-new lble">Pincode</label>
+                      <div class="clear"></div>
+                    </div>  
+                  </div>
+
+                  <div class="col-xs-6 form-padding">
+                    <div>
+                      <input type="text" id="mobile" name="Mobile" class="form-control inp-fld" required onkeypress="return fnAllowNumeric(event)" maxlength="10"  >
+                      <span class="highlight"></span><span class="bar"></span>
+                      <label class="form-label-new lble">Mobile Number</label>
+                      <div class="clear"></div>
+                    </div>  
+                  </div>
+         
+          
+      
+                   <div class="col-xs-6 form-padding">
+                    <div>
+                      <input type="text" id="email_id" name="Email" class="form-control inp-fld" oninput="email('email_id')"  required >
+                       <span id="mail_id" style="display:none;color: red; font-size: 10px">Please Enter Valid Email Id.</span>
+                      <span class="highlight"></span><span class="bar"></span>
+                      <label class="form-label-new lble">Email ID(Personal)</label>
+                      <div class="clear"></div>
+                    </div>  
+                  </div>
+
+                  <div class="col-xs-6 form-padding">
+                    <div>
+                      <input type="text" id="pan" name="PAN" class="form-control inp-fld" oninput="pancard('pan')"  required minlength="10" maxlength="10" >
+                       <span id="pannumber" style="display:none;color: red; font-size: 10px">Please Enter Valid Pancard No..</span>
+                      <span class="highlight"></span><span class="bar"></span>
+                      <label class="form-label-new lble">Pancard</label>
+                      <div class="clear"></div>
+                    </div>  
+                    </div>
+          
+                    </div>
+                    </div>
+         
+  </div>
+  </div>
+  
+      <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
 
+          <div class="col-md-12">
+            
+            
+            <!-- <button class="sbmt-btn credit-submit dis-tbl">Confirm &amp; Continue</button> -->
+            &nbsp;&nbsp;&nbsp;&nbsp;<button class="sbmt-btn rbl-credit-submit dis-tbl " >Confirm & Continue<i class="icon-arrow-right"></i>
 
-<div id="rb_cc_modal" class="modal fade" role="dialog">
+
+                  </button>
+                  <div class="iframeloading" style= "display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
+                <img src="{{URL::to('images/ajaxloader.gif')}}" alt="Loader" title="Loader" style="top: 50%; position: relative; left: 50%;"  />
+               </div>
+            <!-- <b>All <mark style="color:red">*</mark>fields are mandatory.</b> -->
+            </div> 
+      
+                  
+          </div>
+        </div>  
+      </section>    
+    </div>
+    </form>
+
+   <div id="rb_cc_modal" class="modal fade" role="dialog">
   <div class="modal-dialog" >
         <!-- Modal content-->
    <div class="modal-content pad1">
@@ -367,103 +387,507 @@ label {
 
            
         </div>
-		<div class="text-center">
+    <div class="text-center">
          <p id="rbl_cc_apply_status" class="text-success pad"></p>     
          <p id="reason" class="text-success pad"></p>     
-         <p id="reference" class="text-success pad"></p>         	      
-         </div>   
+         <p  id="reference" class="text-success pad"></p> 
+         <h4><p id="modalerr"><h5>Thank you for choosing RBL Credit Card. A link has been sent to your registered Email Id. Kindly Click on the link to upload your supporting documents.<h5></p></h4>              
+         </div>  
+         <div class="modal-footer">
+        <a type="button" id="upload" name="upload" class="btn btn-primary" onclick="Redirect();" >OK</a>
+        
+      </div> 
 </div>
 </div>
 </div>
-@include('layout.script')
+
+
+
+    
+    
+    
+    <script>
+    $(document).ready( function(){
+    
+      $('.income-source > div').click(function(){
+        $('.income-source > div').removeClass('income-source-active');
+        $(this).toggleClass('income-source-active');
+      });
+      
+      $('.scenario > div').click(function(){
+        $('.scenario > div').removeClass('scenario-active');
+        $(this).toggleClass('scenario-active');
+      });
+    });
+      
+  </script>
+  
+  
+  
+  
+
+    
+  
+    
+    <script>
+    function toggleChevron(e) {
+      $(e.target)
+        .prev('.panel-heading,.panel-heading1,.panel-heading2')
+        .find("i.indicator")
+        .toggleClass('glyphicon-minus glyphicon-plus');
+    }
+    $('#accordion').on('shown.bs.collapse', toggleChevron);
+    $('#accordion').on('hidden.bs.collapse', toggleChevron);
+    </script>
+    
+    <script>
+      $(window, document, undefined).ready(function() {
+
+        $('input').blur(function() {
+        var $this = $(this);
+        if ($this.val())
+          $this.addClass('used');
+        else
+          $this.removeClass('used');
+        });
+
+        var $ripples = $('.ripples');
+
+        $ripples.on('click.Ripples', function(e) {
+
+        var $this = $(this);
+        var $offset = $this.parent().offset();
+        var $circle = $this.find('.ripplesCircle');
+
+        var x = e.pageX - $offset.left;
+        var y = e.pageY - $offset.top;
+
+        $circle.css({
+          top: y + 'px',
+          left: x + 'px'
+        });
+
+        $this.addClass('is-active');
+
+        });
+
+        $ripples.on('animationend webkitAnimationEnd mozAnimationEnd oanimationend MSAnimationEnd', function(e) {
+        $(this).removeClass('is-active');
+        });
+
+      });
+    </script>
+
+
+  
+    <script>
+      $(window, document, undefined).ready(function() {
+
+        $('input').blur(function() {
+        var $this = $(this);
+        if ($this.val())
+          $this.addClass('used');
+        else
+          $this.removeClass('used');
+        });
+
+        var $ripples = $('.ripples');
+
+        $ripples.on('click.Ripples', function(e) {
+
+        var $this = $(this);
+        var $offset = $this.parent().offset();
+        var $circle = $this.find('.ripplesCircle');
+
+        var x = e.pageX - $offset.left;
+        var y = e.pageY - $offset.top;
+
+        $circle.css({
+          top: y + 'px',
+          left: x + 'px'
+        });
+
+        $this.addClass('is-active');
+
+        });
+
+        $ripples.on('animationend webkitAnimationEnd mozAnimationEnd oanimationend MSAnimationEnd', function(e) {
+        $(this).removeClass('is-active');
+        });
+
+      });
+    </script>
+    
+    
+ 
+
+
+<script>
+$(document).ready(function($){
+    $("#phone").mask("(99) 9999-9999"); 
+    $("#telf1").mask("(99) 9999*-9999");    
+    $("#telf2").mask("(99) 9999?-9999"); 
+});
+</script>
+ 
+ 
+
+<script>
+$(document).ready(function(){
+
+  
+  // fade in #back-top
+  $(function () {
+    
+
+    // scroll body to 0px on click
+    $('.top').click(function () {
+      $('body,html').animate({
+        scrollTop: 0
+      }, 800);
+      
+    });
+  });
+
+});
+</script>
+  </body>
+</html>
+    
+<script type="text/javascript">
+  function AllowAlphabet(e)
+{
+  isIE = document.all ? 1 : 0
+  keyEntry = !isIE ? e.which : event.keyCode;
+  if (((keyEntry >= '65') && (keyEntry <= '90')) || ((keyEntry >= '97') && (keyEntry <= '122')) || (keyEntry == '46') || (keyEntry == '32') || keyEntry == '45')
+     return true;
+  else
+{
+    // alert('Please Enter Only Character values.');
+    return false;
+      }
+}
+</script>
+
+<script type="text/javascript">
+  function fnAllowNumeric(evt) {
+            evt = (evt) ? evt : window.event;
+            var charCode = (evt.which) ? evt.which : evt.keyCode;
+            if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+
+              return false;
+            }
+            return true;
+          }
+</script>
+
+
+
 
 
 
 
 <script type="text/javascript">
-	var application_status=0;
-	var red_url= "{{URL::to('thank-you')}}";
-	$('#rbl_card_submit').click(function(){
-		
-		if(! $('#rbl_ccc_form').valid()){
-			return false;
-		}else{
-			$(".iframeloading").show();
-			$.ajax({
-				type:"POST",
-				data:$('#rbl_ccc_form').serialize(),
-				url:"{{URL::to('rbl-cc-submit')}}",
-				success:function(msg){
-					$(".iframeloading").hide();
-					var returnedData = JSON.parse(msg);
-					var status_id=returnedData.Status;
-					var error=returnedData.Errorinfo;
-					var mobile=$('#mobile').val();
-					var card=$('#cc_applied').val();
-					if(status_id==0){
-						e_id=returnedData.Errorcode;
-						status="Ooops! Error occured.";
-						if(e_id)
-						{
-							error=get_rbl_error(e_id);
-						}
-						
-					}else if(status_id==1){
-						status="Successful";
-						error=returnedData.ReferenceCode;
-						red_url='http://erp.rupeeboss.com/Credit_Card_Upload_Docs.aspx?App_Id="'+error+'"&CardType=RBL&MobileNo="'+mobile+'';
-						application_status=1;
-					}else if(status_id==2){
-						status="Successful Referred";
-						error=returnedData.ReferenceCode;
-						red_url='http://erp.rupeeboss.com/Credit_Card_Upload_Docs.aspx?App_Id='+error+'&CardType=RBL&MobileNo="'+mobile+'';
-						application_status=1;
-					}else{
-						status="Rejected";
-						error=returnedData.ReferenceCode;
-					}
-					$('#rbl_cc_apply_status').empty().text(status);
-					$('#reason').empty().append(error);
-					
-					$('#rb_cc_modal').modal('toggle');
-					
-				}
-			});
-		}
-		
-	});
-		function get_rbl_error(id){
-			error='';
-			switch (id) {
-				case 1: 
-					error="INPUT OUT OF MASTERS RANGE";
-					break;
-				case 2: 
-					error="VALIDATION ERROR";
-					break;
-				case 3: 
-					error="INPUT NOT IN VALID DATA FORMAT (SPECIAL CHARACTERS etc)";
-					break;
-				case 4:
-					error="SYSTEM UNAVAILABLE";
-					break;
-				case 5: 
-					error="DECISION CENTER ERROR";
-					break;
-				case 6:
-					error="DUPLICATE APPLICATION";
-				 	break;
-			}
-				return error;
-		}
-		$('#rb_cc_modal').on('hidden.bs.modal', function () {
-		 	
-		 	if(application_status==1){
-		 		window.location.href = red_url;
-		 	}
+  function pancard(obj,val){
+    console.log(obj);
+    if(obj=='pan' ){
+                   var str =$('#pan').val();
+                   var pancardPattern = /^([a-zA-Z]{5})(\d{4})([a-zA-Z]{1})$/;
+                   var res = str.match(pancardPattern);
+                   if(res){
+                     // console.log('Pancard is valid one.!!');
+                      $('#pannumber').hide();
+                      // $('.credit-submit').show();
 
-		});
+                  }else{
+                    // console.log('Oops.Please Enter Valid Pan Number.!!');
+                    $('#pannumber').show();
+                    // $('.credit-submit').hide();
+
+                    return false;
+                  }
+                  
+  }
+}
+</script>
+
+<script type="text/javascript">
+  
+
+window.onload=function(){
+// Change styles according to panels state
+
+
+// Initialize collapsibles
+
+$('.collapse').collapse({
+  toggle: false,
+  parent: '#accordion'
+});
+
+var application_status=0;
+  // var red_url= "{{URL::to('thank-you')}}";
+$(".rbl-credit-submit").click(function(event){
+  alert('ojkae');
+  event.preventDefault();
+
+
+$('form#rbl_cc_dc').find('input').each(function(){
+    if($(this).val() =="" && $('#rbl_cc_dc').valid()){
+         var current = $(this).closest(".panel-collapse");
+        if (!current.hasClass("in")) {
+           current.collapse("show");
+
+   
+        }else{
+
+          // current.addClass("in");
+
+        } 
+
+
+
+return false;
+         
+    }else{ 
+
+       if( $('#mobile').val()!='' &&  $('#pan').val()!=''){
+        $(".iframeloading").show();
+        $('#upload').show();
+        $.ajax({
+        type:"POST",
+        data:$('#rbl_cc_dc').serialize(),
+        url:"{{URL::to('rbl-credit-submit')}}",
+        success:function(msg){
+          $(".iframeloading").hide();
+          var returnedData = JSON.parse(msg);
+          var status_id=returnedData.Status;
+          var error=returnedData.Errorinfo;
+          var mobile=$('#mobile').val();
+          var card=$('#cc_applied').val();
+          if(status_id==0){
+            e_id=returnedData.Errorcode;
+            status="Ooops! Error occured.";
+            if(e_id)
+            {
+              error=get_rbl_error(e_id);
+            }
+            
+          }else if(status_id==1){
+            status="Successful";
+            error=returnedData.ReferenceCode;
+            // red_url='http://erp.rupeeboss.com/Credit_Card_Upload_Docs.aspx?App_Id='+error+'&CardType=RBL&MobileNo='+mobile+'';
+            // application_status=1;
+            // red_url="{{URL::to('thank-you')}}";
+            
+          }else if(status_id==2){
+            status="Successful Referred";
+            error=returnedData.ReferenceCode;
+            // red_url='http://erp.rupeeboss.com/Credit_Card_Upload_Docs.aspx?App_Id='+error+'&CardType=RBL&MobileNo='+mobile+'';
+            // application_status=1;
+            // red_url="{{URL::to('thank-you')}}";
+            
+          }else{
+            status="Rejected";
+            error=returnedData.ReferenceCode;
+          }
+          $('#rbl_cc_apply_status').empty().text(status);
+          $('#reason').empty().append(error);
+          
+          $('#rb_cc_modal').modal('toggle');
+          
+        }
+      });
+        function get_rbl_error(id){
+      error='';
+      switch (id) {
+        case 1: 
+          error="INPUT OUT OF MASTERS RANGE";
+          break;
+        case 2: 
+          error="VALIDATION ERROR";
+          break;
+        case 3: 
+          error="INPUT NOT IN VALID DATA FORMAT (SPECIAL CHARACTERS etc)";
+          break;
+        case 4:
+          error="SYSTEM UNAVAILABLE";
+          break;
+        case 5: 
+          error="DECISION CENTER ERROR";
+          break;
+        case 6:
+          error="DUPLICATE APPLICATION";
+          break;
+      }
+        return error;
+    }
+    $('#rb_cc_modal').on('hidden.bs.modal', function () {
+      
+      if(application_status==1){
+        window.location.href = red_url;
+      }
+
+    });
+
+     
+       return false;
+       
+
+      } 
+    } 
+ 
+    
+});
+
+});
+}
+
+</script>
+
+<script type="text/javascript">
+  function email(obj,val){
+    // console.log(obj);
+    if(obj=='email_id' ){
+                   var str =$('#email_id').val();
+                   var emailPattern = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/; 
+                   var res = str.match(emailPattern);
+                   if(res){
+                     // console.log('Pancard is valid one.!!');
+                      $('#mail_id').hide();
+
+                  }else{
+                    // console.log('Oops.Please Enter Valid Pan Number.!!');
+                    $('#mail_id').show();
+
+                    return false;
+                  }
+                  
+  }
+}
 </script>
 
 
 
+<script type="text/javascript">
+  function url_mail(obj,val){
+    //console.log(obj);
+    if(obj=='urlemailid' ){
+                   var str =$('#urlemailid').val();
+                   var emailPattern = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/; 
+                   var res = str.match(emailPattern);
+                   if(res){
+                     // console.log('Pancard is valid one.!!');
+                      $('#urlmail_id').hide();
+
+                  }else{
+                    // console.log('Oops.Please Enter Valid Pan Number.!!');
+                    $('#urlmail_id').show();
+
+                    return false;
+                  }
+                  
+  }
+}
+</script>
+
+
+<!-- <script type="text/javascript">
+          function Redirect() 
+          {
+            var mobile=$('#ResidenceMobileNo').val();
+            var app_id=$('#drop').text();
+            window.location="http://erp.rupeeboss.com/Credit_Card_Upload_Docs.aspx?App_Id="+app_id+"&CardType=ICICI&MobileNo="+mobile;
+            // window.location.href ="{{URL::to('thank-you')}}";
+          }
+</script> -->
+
+<script src="js/icici_js/classie.js"></script>
+<script src="js/bootstrap.min.js" type="text/javascript"></script>  
+<link href="css/jquery-ui.min.css" rel="Stylesheet"></link>
+<script src="js/jquery-ui.js" ></script>
+<script type="text/javascript" src="js/datepicker.js"></script>
+
+
+<script>
+		  $( function() {
+			$( '#datepicker,#datepicker1,#datepicker2' ).datepicker({
+				changeMonth:true,
+				changeYear:true,
+				dateFormat: 'dd-mm-yy',
+				yearRange : 'c-65:c+10'
+			});
+		  });
+	 </script>
+
+<script>
+  $("#DateOfBirth").click(function() {
+    $(".lastReporteddob").datepicker('show');
+});
+
+
+
+
+
+ 
+
+  $('#checkboxid').click(function () {
+    if ($(this).is(':checked')) {
+
+         $('#checkboxid').val(1);
+        
+    } else {
+        $('#checkboxid').val(0);
+    }
+});
+
+</script>
+
+<script type="text/javascript">
+  $('#btnweburl').click(function(){
+    event.preventDefault();
+      $form=$('#to_view_url');
+      if(! $form.valid()){
+
+      }else{
+       $.ajax({  
+         type: "POST",  
+         url: "{{URL::to('to-view-on-browser-url')}}",
+         data : $('#to_view_url').serialize(),
+         success: function(msg){
+           //console.log(msg);
+           if (msg == 1) 
+           {
+             alert('As per your request we have sent a mail to your email ID.');
+           } else 
+           {
+            alert('Oops..!! Something Went Wrong');
+           }
+          
+        }  
+      }); 
+      }
+  });
+</script>
+
+<script type="text/javascript">
+          function Redirect() 
+          {
+            
+             window.location.href ="{{URL::to('thank-you')}}";
+          }
+</script>
+
+<!-- var y=$(':input[required]:hidden');
+          y.each(function( index, element ) {
+            
+            var temp= element.getAttribute("value");
+            //console.log(temp);
+            if(element.getAttribute("id")!="urlemailid" && temp==null){
+
+              console.log(element.getAttribute("id")+" "+temp);
+            }
+            
+          });
+      
+ -->

@@ -324,6 +324,7 @@ $(".top").click(function() {
              <div class="col-xs-6 form-padding">
                     <div>
                       <input type="text" id="work_email" name="work_email" class="form-control text-lower" oninput="mail('work_email')"  required >
+                       <span id="email_error" style="display:none;color: red;">Please Enter Valid Email Id.</span>
                       <span class="highlight"></span><span class="bar"></span>
                       <label class="form-label-new lble">WORK EMAIL</label>
                       <div class="clear"></div>
@@ -774,11 +775,11 @@ $(".top").click(function() {
       <div class="modal-body">
         <h4><p id="modalerr"><h5>Your Application id is <b><span id="drop"></span></b>.<br>You have been <b><span id="drop1"></span></b>.<br><b><span id="drop2"></span></b><h5></p></h4>
         
-        <p><b>Thank You For Choosing ICICI Credit Card.</b></p>
+        <p><b>Thank You For Choosing ICICI Credit Card. <span id="link">A link has been sent to your registered Email Id. Kindly Click on the link to upload your supporting documents</span>.</b></p>
       </div>
       
       <div class="modal-footer">
-        <a type="button" id="upload" name="upload" class="btn btn-primary" onclick="Redirect();" >Proceed to Document Upload</a>
+        <a type="button" id="upload" name="upload" class="btn btn-primary" onclick="Redirect();" >OK</a>
         
       </div>
     </div>
@@ -1247,10 +1248,14 @@ return false;
              alert("Something Went Wrong");
 
              
-          }else{
+          }else if(msg==3){
+           alert('Oops..!! Application ID cannot be generated.');
+          }
+          else{
             
             if (msg.Decision =='Declined') {
               $('#upload').hide();
+              $('#link').hide();
 
             }
             if(msg.Decision==""){
@@ -1504,13 +1509,21 @@ var inputs = $("#compareform input[required='required']");
 </script>
 
 
-<script type="text/javascript">
+<!-- <script type="text/javascript">
           function Redirect() 
           {
             var mobile=$('#ResidenceMobileNo').val();
             var app_id=$('#drop').text();
             window.location="http://erp.rupeeboss.com/Credit_Card_Upload_Docs.aspx?App_Id="+app_id+"&CardType=ICICI&MobileNo="+mobile;
             // window.location.href ="{{URL::to('thank-you')}}";
+          }
+</script> -->
+
+<script type="text/javascript">
+          function Redirect() 
+          {
+            
+             window.location.href ="{{URL::to('thank-you')}}";
           }
 </script>
 
@@ -1691,7 +1704,7 @@ var inputs = $("#compareform input[required='required']");
 <script type="text/javascript" src="js/datepicker.js"></script>
 
 
-<script>
+<!-- <script>
 		  $( function() {
 			$( '#datepicker,#datepicker1,#datepicker2' ).datepicker({
 				changeMonth:true,
@@ -1700,12 +1713,27 @@ var inputs = $("#compareform input[required='required']");
 				yearRange : 'c-65:c+10'
 			});
 		  });
-	 </script>
+	 </script> -->
+
+   <script type="text/javascript">
+    var d = new Date();
+    var year = d.getFullYear()-18 ;
+    d.setFullYear(year);
+
+    $("#datepicker").datepicker({ dateFormat: "yy-mm-dd",
+      changeMonth: true,
+      changeYear: true,
+      maxDate: year,
+      minDate: "-83Y",
+      yearRange: '-83:' + year + '',
+      defaultDate: d
+    });
+</script>
 
 <script>
-  $("#DateOfBirth").click(function() {
-    $(".lastReporteddob").datepicker('show');
-});
+//   $("#DateOfBirth").click(function() {
+//     $(".lastReporteddob").datepicker('show');
+// });
 
 
 

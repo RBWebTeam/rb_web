@@ -9,6 +9,7 @@ use Session;
 use DB;
 use Response;
 use File;
+use Excel;
 class LoanController extends CallApiController
 {
     public function personal_loan(){
@@ -417,7 +418,7 @@ $url = $this::$url_static."/BankAPIService.svc/createIIFLCoAppDtls";
     public function iifl_eligibility(Request $req){
       // print_r($req->all());
       $quote_data=DB::select('call usp_iifl_pl_eligibility ("'.$req['Company_Cat'].'","'.$req['Monthly_Salary'].'")');
-       // print_r($quote_data);
+       // print_r($quote_data);exit();
       return $quote_data;
       }
 
@@ -801,7 +802,7 @@ $url = $this::$url_static."/BankAPIService.svc/updateIIFLRevisedQuote";
     $data['brokerid']=Session::get('brokerid')?Session::get('brokerid'):'MAA=';
     $data['empid']=Session::get('empid')?Session::get('empid'):'MAA=';
     $data['source']=Session::get('source')?Session::get('source'):'MAA=';
-    $data['ConUniqRefCode']=substr(str_shuffle(str_repeat("0123456789", 15)), 0, 15);
+    // $data['ConUniqRefCode']=substr(str_shuffle(str_repeat("0123456789", 15)), 0, 15);
     
     
     $post_data =json_encode(array("PersonalLoan"=> $data));
@@ -939,18 +940,22 @@ $url = $this::$url_static."/BankAPIService.svc/updateIIFLRevisedQuote";
       }    
 
     public function other_loans(){
-      return view('other-loans');
+      $brokerId=Session::get('brokerId');
+      $Source=Session::get('Source');
+      return view('other-loans',['brokerId'=>$brokerId],['Source'=>$Source]);
     }
 
 
     public function other_loans_submit(Request $req){
+      // print_r($req->all());exit();
       $data=$req->all();
-      $data['brokerid']=Session::get('brokerid')?Session::get('brokerid'):'0';
-      $data['empCode']='Rb40000706';
+      // $data['brokerid']=Session::get('brokerid')?Session::get('brokerid'):'0';
+      $data['empCode']='Rb40000432';
+      
       
       $post_data=json_encode($data);
       // print_r($post_data);exit();
-      $url = $this::$service_url_static."/LoginDtls.svc/xmlservice/insLeadCaptures";
+      $url = $this::$url_static."/BankAPIService.svc/createOtherLoanLeadReq";
       $result=$this->call_json_data_api($url,$post_data);
       $http_result=$result['http_result'];
       $error=$result['error'];
@@ -958,6 +963,7 @@ $url = $this::$url_static."/BankAPIService.svc/updateIIFLRevisedQuote";
       $s=str_replace('}"', "}", $st);
       $m=$s=str_replace('\\', "", $s);
       $obj=json_decode($m);
+      // print_r($obj);exit();
 
       return response()->json( $obj);
     }
@@ -968,28 +974,131 @@ $url = $this::$url_static."/BankAPIService.svc/updateIIFLRevisedQuote";
     echo json_encode($query);
   }
 
+
+/*Kotak Personal Loan*/
   public function kotak_personal_loan(){
       return view('kotak-personal-loan');
     }
 
-    public function yesbank_home_loan(){
-      return view('yesbank-home-loan');
-    }
+    public function kotak_pl_city_master(){
+    $query = DB::table('kotak_pl_city_master')->select('city_code', 'city_name')->get();
 
-     public function yes_bank_home_loan_submit(Request $req){
-    print_r($req->all());exit();
-    $data=$req->all();
+    echo json_encode($query);
+  }
+
+
+  public function kotak_pl_proceed(Request $req){
+    $proc='call get_kotak_pl_category ("'.$req['Company_Cat'].'","'.$req['Organization'].'","'.$req['NMI'].'")';
+    $quote_data=DB::select($proc);
+    return $quote_data;
+  }
+
+  public function kotak_pl_submit(Request $req){
+    // print_r($req->all());exit();
+     $data=$req->all();
     $data['Version'] = '1';
     $data['brokerid']=Session::get('brokerid')?Session::get('brokerid'):'MAA=';
     $data['empid']=Session::get('empid')?Session::get('empid'):'MAA=';
     $data['source']=Session::get('source')?Session::get('source'):'MAA=';
-    $data['UniqRefCode']='135'.(substr(str_shuffle(str_repeat("0123456789", 6)), 0, 6));
+    // $data['UniqRefCode']='135'.(substr(str_shuffle(str_repeat("0123456789", 6)), 0, 6));
+    
+   
+    $post_data =json_encode(array("PersonalLoan"=> $data));
+    // $post_data=json_encode($data);
+        // print_r($post_data);exit();
+        $url = $this::$url_static."/BankAPIService.svc/createKotakPersonalLoanReq";
+        $result=$this->call_json_data_api($url,$post_data);
+        $http_result=$result['http_result'];
+        $error=$result['error'];
+        $st=str_replace('"{', "{", $http_result);
+        $s=str_replace('}"', "}", $st);
+        $m=$s=str_replace('\\', "", $s);
+        // print_r($http_result);exit();
+        $obj=json_decode($m);
+        
+        try{
+          $a['status']=$obj->Response->Status;
+          if($a['status']=="1"){
+            $a['refcode']=$obj->Response->ReferenceCode;
+          }elseif ($a['status']=="2") {
+           $a['refcode']=$obj->Response->ReferenceCode;
+           $a['EligLnAmt']=$obj->Response->EligLnAmt;
+           $a['ROI']=$obj->Response->ROI;
+          }elseif ($a['status']=="3") {
+           $a['errorinfo']=$obj->Response->ErrorInfo;
+          }elseif ($a['status']=="4") {
+           $a['refcode']=$obj->Response->ReferenceCode;
+          }else{
+            $a['errorinfo']=$obj->Response->ErrorInfo;
+          }
+        }catch(\Exception $ee){
+         $ee->getMessage();
+        }
+        return response()->json($a) ;
+  }
+
+
+  public function kotak_personal_loan_status(Request $req){
+    // print_r($req->all());exit();
+      $data=$req->all();
+      $post_data=json_encode($data);
+      // print_r($post_data);exit();
+        $url = $this::$url_static."/BankAPIService.svc/getKotakPLStatusReq";
+        $result=$this->call_json_data_api($url,$post_data);
+        $http_result=$result['http_result'];
+        $error=$result['error'];
+        $st=str_replace('"{', "{", $http_result);
+        $s=str_replace('}"', "}", $st);
+        $m=$s=str_replace('\\', "", $s);
+        // print_r($http_result);exit();
+        $obj=json_decode($m);
+         
+        try{
+          $a['status']=$obj->Response->Status;
+          if ($a['status']=="1") {
+            $a['refcode']=$obj->Response->ReferenceCode;
+            $a['appstatusdesc']=$obj->Response->AppStatusDesc;
+          }
+
+          
+            
+          
+        }catch(\Exception $ee){
+          $a['status']=0;
+        }
+        return response()->json($a) ;
+    }
+
+
+
+
+
+/*Yes Bank*/
+    public function yesbank_home_loan(){
+      return view('yesbank-home-loan');
+    }
+
+    public function yesbank_hl_city_master(){
+    $query = DB::table('yes_bank_city_master')->select('city_id', 'cityname')->get();
+
+    echo json_encode($query);
+  }
+
+     public function yes_bank_home_loan_submit(Request $req){
+    // print_r($req->all());exit();
+    $data=$req->all();
+    // $data['Version'] = '1';
+    $data['brokerid']=Session::get('brokerid')?Session::get('brokerid'):'MAA=';
+    $data['empid']=Session::get('empid')?Session::get('empid'):'MAA=';
+    $data['source']=Session::get('source')?Session::get('source'):'MAA=';
+    $data['CampaignName']=Session::get('CampaignName');
+    // $data['UniqRefCode']='135'.(substr(str_shuffle(str_repeat("0123456789", 6)), 0, 6));
     
    
     $post_data=json_encode($data);
     // $post_data=json_encode($data);
     // print_r($post_data);exit();
-    $url = $this::$url_static."/BankAPIService.svc/createKotakHomeLoanReq";
+    $url = $this::$url_static."/BankAPIService.svc/createYesBankHLReq";
       $result=$this->call_json_data_api($url,$post_data);
         $http_result=$result['http_result'];
         $error=$result['error'];
@@ -1002,4 +1111,46 @@ $url = $this::$url_static."/BankAPIService.svc/updateIIFLRevisedQuote";
 
         
     }
+
+    public function excel_upload(){
+      return view('excel-upload');
+    }
+
+    public function excel_upload_submit(Request $req){
+     $data = \Excel::load($req['file'])->toObject();
+  
+//employername
+    //hospital_name
+    //name
+
+     foreach ($data as $key => $value) {
+        
+      foreach ($value as $k => $val) {
+      
+        if(isset($val->employername)){
+      $this->insertexcel($val->employername,$val->final_category); 
+    }elseif (isset($val->hospital_name)) {
+     $this->insertexcel($val->hospital_name,$val->category);
+    }elseif (isset($val->name)) {
+      $this->insertexcel($val->name,$val->category);
+    }
+  
+    
+        
+      }
+    
+
+     }
+    }
+
+    public function insertexcel($hospital_name,$category){
+
+         DB::table('kotak_pl_company_master')->insert(
+           ['employername' => $hospital_name?$hospital_name:0,
+           'final_category'=> $category?$category:0,
+           'created_at' => date("Y-m-d H:i:s"),
+           'updated_at'=>date("Y-m-d H:i:s")]
+         );
+    }
+
  }

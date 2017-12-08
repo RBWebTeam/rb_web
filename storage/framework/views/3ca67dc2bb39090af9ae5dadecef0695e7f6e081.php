@@ -1,6 +1,6 @@
 <?php echo $__env->make('layout.header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 <div id="fh5co-hero">
- <img src="<?php echo e(URL::to('images/Personal-Loan-Banner.png')); ?>" alt="Kotak Home Loan Banner" title="Kotak Home Loan" class="img-responsive">
+ <img src="<?php echo e(URL::to('images/Personal-Loan-Banner.png')); ?>" alt="Kotak Personal Loan Banner" title="Kotak Personal Loan" class="img-responsive">
   <div class="fh5co-contact animate-box">
 
     <div class="container">
@@ -1136,7 +1136,7 @@ $(document).ready(function(){
           console.log(data);
 
           $('#IRR').val(data.roi);
-          var processing_fee=LnAmt*data.csc_pf/100;
+          var processing_fee=LnAmt*data.non_csc_pf/100;
           $('#ProcFee').val(processing_fee);
 
          // $(".iframeloading").hide();  
@@ -1191,6 +1191,7 @@ $(document).ready(function(){
      }
   });
 </script>
+
 
 
 

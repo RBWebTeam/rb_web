@@ -3602,3 +3602,180 @@ INFO: Reading the customer type
 2017-12-04 15:54:49,147 [main] INFO  com.creditReport.Controller - complete time 1512383089147
 2017-12-04 15:54:49,148 [main] INFO  com.creditReport.Controller - 2017-12-04 15:54:49  Pdf generation complete.
 2017-12-04 15:54:49,148 [main] INFO  com.creditReport.Controller - Total time: 0.465s
+2017-12-04 19:04:04,910 [main] INFO  com.creditReport.Controller - 
+INFO: Reading the customer type
+2017-12-04 19:04:04,928 [main] INFO  com.creditReport.Controller - INFO: Activating the MFI parser
+2017-12-04 19:04:04,929 [main] INFO  com.creditReport.Controller - INFO: Input file:- xxx.xml
+2017-12-04 19:04:05,808 [main] INFO  com.creditReport.Controller - final time 1512394445808
+2017-12-04 19:04:05,808 [main] INFO  com.creditReport.Controller - Total parse time: 0.77s
+2017-12-04 19:04:05,808 [main] INFO  com.creditReport.Controller - complete time 1512394445808
+2017-12-04 19:04:05,808 [main] INFO  com.creditReport.Controller - 2017-12-04 19:04:05  Pdf generation complete.
+2017-12-04 19:04:05,808 [main] INFO  com.creditReport.Controller - Total time: 0.77s
+2017-12-04 19:04:06,083 [pool-2-thread-1] ERROR com.creditReport.dao.GetDataDAO - 2017-12-04 19:04:05 ERROR: user lacks privilege or object not found: SCORINGELEMENT
+java.sql.SQLSyntaxErrorException: user lacks privilege or object not found: SCORINGELEMENT
+	at org.hsqldb.jdbc.JDBCUtil.sqlException(Unknown Source)
+	at org.hsqldb.jdbc.JDBCUtil.sqlException(Unknown Source)
+	at org.hsqldb.jdbc.JDBCStatement.fetchResult(Unknown Source)
+	at org.hsqldb.jdbc.JDBCStatement.executeQuery(Unknown Source)
+	at com.creditReport.dao.GetDataDAO.getScoreWithScoringElement(GetDataDAO.java:1433)
+	at com.creditReport.pdf.CreatePdf.createPdfContents(CreatePdf.java:481)
+	at com.creditReport.pdf.CreatePdf.createDoc(CreatePdf.java:350)
+	at com.creditReport.pdf.CreatePdf.run(CreatePdf.java:142)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: org.hsqldb.HsqlException: user lacks privilege or object not found: SCORINGELEMENT
+	at org.hsqldb.error.Error.error(Unknown Source)
+	at org.hsqldb.error.Error.error(Unknown Source)
+	at org.hsqldb.ParserDQL.readTableName(Unknown Source)
+	at org.hsqldb.ParserDQL.readTableOrSubquery(Unknown Source)
+	at org.hsqldb.ParserDQL.XreadTableReference(Unknown Source)
+	at org.hsqldb.ParserDQL.XreadFromClause(Unknown Source)
+	at org.hsqldb.ParserDQL.XreadTableExpression(Unknown Source)
+	at org.hsqldb.ParserDQL.XreadQuerySpecification(Unknown Source)
+	at org.hsqldb.ParserDQL.XreadSimpleTable(Unknown Source)
+	at org.hsqldb.ParserDQL.XreadQueryPrimary(Unknown Source)
+	at org.hsqldb.ParserDQL.XreadQueryTerm(Unknown Source)
+	at org.hsqldb.ParserDQL.XreadQueryExpressionBody(Unknown Source)
+	at org.hsqldb.ParserDQL.XreadQueryExpression(Unknown Source)
+	at org.hsqldb.ParserDQL.compileCursorSpecification(Unknown Source)
+	at org.hsqldb.ParserCommand.compilePart(Unknown Source)
+	at org.hsqldb.ParserCommand.compileStatements(Unknown Source)
+	at org.hsqldb.Session.executeDirectStatement(Unknown Source)
+	at org.hsqldb.Session.execute(Unknown Source)
+	... 9 more
+2017-12-04 19:16:46,508 [main] INFO  com.creditReport.Controller - 
+INFO: Reading the customer type
+2017-12-04 19:16:46,511 [main] INFO  com.creditReport.Controller - INFO: Activating the MFI parser
+2017-12-04 19:16:46,511 [main] INFO  com.creditReport.Controller - INFO: Input file:- xxx.xml
+2017-12-04 19:16:47,184 [main] INFO  com.creditReport.Controller - final time 1512395207184
+2017-12-04 19:16:47,184 [main] INFO  com.creditReport.Controller - Total parse time: 0.661s
+2017-12-04 19:16:47,184 [main] INFO  com.creditReport.Controller - complete time 1512395207184
+2017-12-04 19:16:47,184 [main] INFO  com.creditReport.Controller - 2017-12-04 19:16:47  Pdf generation complete.
+2017-12-04 19:16:47,184 [main] INFO  com.creditReport.Controller - Total time: 0.661s
+2017-12-04 19:16:47,308 [pool-2-thread-1] ERROR com.creditReport.dao.GetDataDAO - 2017-12-04 19:16:47 ERROR: user lacks privilege or object not found: SCORINGELEMENT
+java.sql.SQLSyntaxErrorException: user lacks privilege or object not found: SCORINGELEMENT
+	at org.hsqldb.jdbc.JDBCUtil.sqlException(Unknown Source)
+	at org.hsqldb.jdbc.JDBCUtil.sqlException(Unknown Source)
+	at org.hsqldb.jdbc.JDBCStatement.fetchResult(Unknown Source)
+	at org.hsqldb.jdbc.JDBCStatement.executeQuery(Unknown Source)
+	at com.creditReport.dao.GetDataDAO.getScoreWithScoringElement(GetDataDAO.java:1433)
+	at com.creditReport.pdf.CreatePdf.createPdfContents(CreatePdf.java:481)
+	at com.creditReport.pdf.CreatePdf.createDoc(CreatePdf.java:350)
+	at com.creditReport.pdf.CreatePdf.run(CreatePdf.java:142)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: org.hsqldb.HsqlException: user lacks privilege or object not found: SCORINGELEMENT
+	at org.hsqldb.error.Error.error(Unknown Source)
+	at org.hsqldb.error.Error.error(Unknown Source)
+	at org.hsqldb.ParserDQL.readTableName(Unknown Source)
+	at org.hsqldb.ParserDQL.readTableOrSubquery(Unknown Source)
+	at org.hsqldb.ParserDQL.XreadTableReference(Unknown Source)
+	at org.hsqldb.ParserDQL.XreadFromClause(Unknown Source)
+	at org.hsqldb.ParserDQL.XreadTableExpression(Unknown Source)
+	at org.hsqldb.ParserDQL.XreadQuerySpecification(Unknown Source)
+	at org.hsqldb.ParserDQL.XreadSimpleTable(Unknown Source)
+	at org.hsqldb.ParserDQL.XreadQueryPrimary(Unknown Source)
+	at org.hsqldb.ParserDQL.XreadQueryTerm(Unknown Source)
+	at org.hsqldb.ParserDQL.XreadQueryExpressionBody(Unknown Source)
+	at org.hsqldb.ParserDQL.XreadQueryExpression(Unknown Source)
+	at org.hsqldb.ParserDQL.compileCursorSpecification(Unknown Source)
+	at org.hsqldb.ParserCommand.compilePart(Unknown Source)
+	at org.hsqldb.ParserCommand.compileStatements(Unknown Source)
+	at org.hsqldb.Session.executeDirectStatement(Unknown Source)
+	at org.hsqldb.Session.execute(Unknown Source)
+	... 9 more
+2017-12-04 19:17:47,692 [main] INFO  com.creditReport.Controller - 
+INFO: Reading the customer type
+2017-12-04 19:17:47,693 [main] INFO  com.creditReport.Controller - INFO: Activating the MFI parser
+2017-12-04 19:17:47,693 [main] INFO  com.creditReport.Controller - INFO: Input file:- xxx.xml
+2017-12-04 19:17:48,284 [main] INFO  com.creditReport.Controller - final time 1512395268284
+2017-12-04 19:17:48,284 [main] INFO  com.creditReport.Controller - Total parse time: 0.58s
+2017-12-04 19:17:48,284 [main] INFO  com.creditReport.Controller - complete time 1512395268284
+2017-12-04 19:17:48,284 [main] INFO  com.creditReport.Controller - 2017-12-04 19:17:48  Pdf generation complete.
+2017-12-04 19:17:48,284 [main] INFO  com.creditReport.Controller - Total time: 0.58s
+2017-12-04 19:17:48,400 [pool-2-thread-1] ERROR com.creditReport.dao.GetDataDAO - 2017-12-04 19:17:48 ERROR: user lacks privilege or object not found: SCORINGELEMENT
+java.sql.SQLSyntaxErrorException: user lacks privilege or object not found: SCORINGELEMENT
+	at org.hsqldb.jdbc.JDBCUtil.sqlException(Unknown Source)
+	at org.hsqldb.jdbc.JDBCUtil.sqlException(Unknown Source)
+	at org.hsqldb.jdbc.JDBCStatement.fetchResult(Unknown Source)
+	at org.hsqldb.jdbc.JDBCStatement.executeQuery(Unknown Source)
+	at com.creditReport.dao.GetDataDAO.getScoreWithScoringElement(GetDataDAO.java:1433)
+	at com.creditReport.pdf.CreatePdf.createPdfContents(CreatePdf.java:481)
+	at com.creditReport.pdf.CreatePdf.createDoc(CreatePdf.java:350)
+	at com.creditReport.pdf.CreatePdf.run(CreatePdf.java:142)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: org.hsqldb.HsqlException: user lacks privilege or object not found: SCORINGELEMENT
+	at org.hsqldb.error.Error.error(Unknown Source)
+	at org.hsqldb.error.Error.error(Unknown Source)
+	at org.hsqldb.ParserDQL.readTableName(Unknown Source)
+	at org.hsqldb.ParserDQL.readTableOrSubquery(Unknown Source)
+	at org.hsqldb.ParserDQL.XreadTableReference(Unknown Source)
+	at org.hsqldb.ParserDQL.XreadFromClause(Unknown Source)
+	at org.hsqldb.ParserDQL.XreadTableExpression(Unknown Source)
+	at org.hsqldb.ParserDQL.XreadQuerySpecification(Unknown Source)
+	at org.hsqldb.ParserDQL.XreadSimpleTable(Unknown Source)
+	at org.hsqldb.ParserDQL.XreadQueryPrimary(Unknown Source)
+	at org.hsqldb.ParserDQL.XreadQueryTerm(Unknown Source)
+	at org.hsqldb.ParserDQL.XreadQueryExpressionBody(Unknown Source)
+	at org.hsqldb.ParserDQL.XreadQueryExpression(Unknown Source)
+	at org.hsqldb.ParserDQL.compileCursorSpecification(Unknown Source)
+	at org.hsqldb.ParserCommand.compilePart(Unknown Source)
+	at org.hsqldb.ParserCommand.compileStatements(Unknown Source)
+	at org.hsqldb.Session.executeDirectStatement(Unknown Source)
+	at org.hsqldb.Session.execute(Unknown Source)
+	... 9 more
+2017-12-04 19:18:18,669 [main] INFO  com.creditReport.Controller - 
+INFO: Reading the customer type
+2017-12-04 19:18:18,671 [main] INFO  com.creditReport.Controller - INFO: Activating the MFI parser
+2017-12-04 19:18:18,671 [main] INFO  com.creditReport.Controller - INFO: Input file:- xxx.xml
+2017-12-04 19:18:19,364 [main] INFO  com.creditReport.Controller - final time 1512395299364
+2017-12-04 19:18:19,364 [main] INFO  com.creditReport.Controller - Total parse time: 0.682s
+2017-12-04 19:18:19,364 [main] INFO  com.creditReport.Controller - complete time 1512395299364
+2017-12-04 19:18:19,364 [main] INFO  com.creditReport.Controller - 2017-12-04 19:18:19  Pdf generation complete.
+2017-12-04 19:18:19,364 [main] INFO  com.creditReport.Controller - Total time: 0.682s
+2017-12-04 19:18:19,474 [pool-2-thread-1] ERROR com.creditReport.dao.GetDataDAO - 2017-12-04 19:18:19 ERROR: user lacks privilege or object not found: SCORINGELEMENT
+java.sql.SQLSyntaxErrorException: user lacks privilege or object not found: SCORINGELEMENT
+	at org.hsqldb.jdbc.JDBCUtil.sqlException(Unknown Source)
+	at org.hsqldb.jdbc.JDBCUtil.sqlException(Unknown Source)
+	at org.hsqldb.jdbc.JDBCStatement.fetchResult(Unknown Source)
+	at org.hsqldb.jdbc.JDBCStatement.executeQuery(Unknown Source)
+	at com.creditReport.dao.GetDataDAO.getScoreWithScoringElement(GetDataDAO.java:1433)
+	at com.creditReport.pdf.CreatePdf.createPdfContents(CreatePdf.java:481)
+	at com.creditReport.pdf.CreatePdf.createDoc(CreatePdf.java:350)
+	at com.creditReport.pdf.CreatePdf.run(CreatePdf.java:142)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: org.hsqldb.HsqlException: user lacks privilege or object not found: SCORINGELEMENT
+	at org.hsqldb.error.Error.error(Unknown Source)
+	at org.hsqldb.error.Error.error(Unknown Source)
+	at org.hsqldb.ParserDQL.readTableName(Unknown Source)
+	at org.hsqldb.ParserDQL.readTableOrSubquery(Unknown Source)
+	at org.hsqldb.ParserDQL.XreadTableReference(Unknown Source)
+	at org.hsqldb.ParserDQL.XreadFromClause(Unknown Source)
+	at org.hsqldb.ParserDQL.XreadTableExpression(Unknown Source)
+	at org.hsqldb.ParserDQL.XreadQuerySpecification(Unknown Source)
+	at org.hsqldb.ParserDQL.XreadSimpleTable(Unknown Source)
+	at org.hsqldb.ParserDQL.XreadQueryPrimary(Unknown Source)
+	at org.hsqldb.ParserDQL.XreadQueryTerm(Unknown Source)
+	at org.hsqldb.ParserDQL.XreadQueryExpressionBody(Unknown Source)
+	at org.hsqldb.ParserDQL.XreadQueryExpression(Unknown Source)
+	at org.hsqldb.ParserDQL.compileCursorSpecification(Unknown Source)
+	at org.hsqldb.ParserCommand.compilePart(Unknown Source)
+	at org.hsqldb.ParserCommand.compileStatements(Unknown Source)
+	at org.hsqldb.Session.executeDirectStatement(Unknown Source)
+	at org.hsqldb.Session.execute(Unknown Source)
+	... 9 more
+2017-12-04 19:19:19,305 [main] INFO  com.creditReport.Controller - 
+INFO: Reading the customer type
+2017-12-04 19:19:19,322 [main] INFO  com.creditReport.Controller - INFO: Activating the MFI parser
+2017-12-04 19:19:19,322 [main] INFO  com.creditReport.Controller - INFO: Input file:- xxx.xml
+2017-12-04 19:19:19,855 [main] INFO  com.creditReport.Controller - final time 1512395359855
+2017-12-04 19:19:19,855 [main] INFO  com.creditReport.Controller - Total parse time: 0.514s
+2017-12-04 19:19:19,855 [main] INFO  com.creditReport.Controller - complete time 1512395359855
+2017-12-04 19:19:19,855 [main] INFO  com.creditReport.Controller - 2017-12-04 19:19:19  Pdf generation complete.
+2017-12-04 19:19:19,855 [main] INFO  com.creditReport.Controller - Total time: 0.514s

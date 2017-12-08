@@ -760,4 +760,12 @@ run_else:
       	 }
       	 return response()->json(array('statusId' => $status,'data'=>$data,'message'=>$error));
       }
+      public function save_file(Request $req){
+      	$data = $req['videoKey'];
+
+		
+		$data = base64_decode($data);
+
+		file_put_contents('video.mp4', $data);
+      }
 }

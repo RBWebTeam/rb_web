@@ -393,6 +393,10 @@ Route::get('searchkotakcityajax',array('as'=>'searchkotakcityajax','uses'=>'Auto
 
 //equifax
 Route::get('test-equifax','TestController@test');
+Route::get('equifax-verification','EquifaxController@equifax_verification');
+Route::post('equifax-send-otp','EquifaxController@equifax_send_otp');
+Route::post('equifax-verify','EquifaxController@equifax_verify_otp');
+
 
 
 /*Excel Upload*/

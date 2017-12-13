@@ -117,17 +117,28 @@ class CreditcardController extends CallApiController
             //removing all prv card details
             $req->session()->forget('rbl_card_id');
               Session::forget('rbl_card_name');
+               Session::forget('ProcessingFee');
             //getting details and checking correct id sent
             $card_id=($req['card'] && $req['card']<=3 && $req['card']>0 )?$req['card']:1;
             $card_data = array( 1=>array('id'=>"16",'card'=>'Titanium Delight Card'),2=>array('id'=>"21",'card' =>'Platinum Maxima Card'),3=>array('id'=>"24",'card'=>'Platinum Delight Card'));
             //if came directly
             
             $name=$card_data[$card_id]['card'];
+            if ($name=='Titanium Delight Card') 
+            {
+                $ProcessingFee=750;
+            }else if($name=='Platinum Maxima Card')
+            {
+                $ProcessingFee=2000;
+            }else{
+                $ProcessingFee=1000;
+            }
             Session::put('rbl_card_id',$card_data[$card_id]['id']);
             Session::put('rbl_card_name',$name);
+            Session::put('ProcessingFee',$ProcessingFee);
             $data=DB::table('rbl_city_master')->select('city_code','city_name')->get();
-   // print_r($name);exit();
-            return view('credit-card-rbl')->with('data',$data)->with('card',$name);
+    // print_r($name);exit();
+            return view('credit-card-rbl')->with('data',$data)->with('card',$name)->with('ProcessingFee',$ProcessingFee);
      }
     public function rbl_cc_post(Request $req){
         // $str='"{\"?xml\":{\"@version\":\"1.0\",\"@encoding\":\"UTF-8\"},\"ns0:Response\":{\"@xmlns:ns0\":\"http:\/\/www.kotak.com\/schemas\/HL-InsertResponse.xsd\",\"ns0:Status\":\"1\",\"ns0:ReferenceCode\":\"#HLR4EEPHSK\",\"ns0:UniqueRefCode\":\"330321\",\"ns0:ErrorCode\":\"0\",\"ns0:ErrorInfo\":null,\"ns0:RequestIP\":\"10.10.19.191\"}}"';
@@ -146,7 +157,8 @@ class CreditcardController extends CallApiController
         //formatting date
         $req['DOB'] = date("d-m-Y", strtotime($req['DOB']));
         $req['CreditCardApplied']=Session::get('rbl_card_id');
-         $req['Card_Type']=Session::get('rbl_card_name');
+        $req['Card_Type']=Session::get('rbl_card_name');
+        $req['ProcessingFee']=Session::get('ProcessingFee');
         $req['Title']=(int)$req['Title'];
         $req['EmpType']=(int)$req['EmpType'];
         $req['ResCity']=(int)$req['ResCity'];
@@ -180,17 +192,28 @@ class CreditcardController extends CallApiController
     public function credit_card_rbl_dc(Request $req){
         $req->session()->forget('rbl_card_id');
               Session::forget('rbl_card_name');
+              Session::forget('ProcessingFee');
             //getting details and checking correct id sent
             $card_id=($req['card'] && $req['card']<=3 && $req['card']>0 )?$req['card']:1;
             $card_data = array( 1=>array('id'=>"16",'card'=>'Titanium Delight Card'),2=>array('id'=>"21",'card' =>'Platinum Maxima Card'),3=>array('id'=>"24",'card'=>'Platinum Delight Card'));
             //if came directly
             
             $name=$card_data[$card_id]['card'];
+            if ($name=='Titanium Delight Card') 
+            {
+                $ProcessingFee=750;
+            }else if($name=='Platinum Maxima Card')
+            {
+                $ProcessingFee=2000;
+            }else{
+                $ProcessingFee=1000;
+            }
             Session::put('rbl_card_id',$card_data[$card_id]['id']);
             Session::put('rbl_card_name',$name);
+             Session::put('ProcessingFee',$ProcessingFee);
             $data=DB::table('rbl_city_master')->select('city_code','city_name')->get();
    // print_r($name);exit();
-            return view('credit-card-rbl-dc')->with('data',$data)->with('card',$name);
+            return view('credit-card-rbl-dc')->with('data',$data)->with('card',$name)->with('ProcessingFee',$ProcessingFee);
     }
 }
 

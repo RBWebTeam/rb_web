@@ -170,7 +170,16 @@ $(".top").click(function() {
                       <label class="form-label-new lble">Credit Card Applied</label>
                       <div class="clear"></div>
                     </div>  
-                             </div>
+              </div>
+
+              <div class="col-xs-6 form-padding">
+                    <div>
+                      <input type="text" name="ProcessingFee" id="ProcessingFee" class="form-control inp-fld used" onkeypress="return AllowAlphabet(event)" value="<?php echo e($ProcessingFee); ?>" disabled="" >
+                      <span class="highlight"></span><span class="bar"></span>
+                      <label class="form-label-new lble">Joining Fee</label>
+                      <div class="clear"></div>
+                    </div>  
+              </div>
               
                   
             <div class="col-xs-6 form-padding">
@@ -672,6 +681,7 @@ return false;
             if(e_id)
             {
               error=get_rbl_error(e_id);
+               $('#modalerr').hide();
             }
             
           }else if(status_id==1){
@@ -691,6 +701,7 @@ return false;
           }else{
             status="Rejected";
             error=returnedData.ReferenceCode;
+            $('#modalerr').hide();
           }
           $('#rbl_cc_apply_status').empty().text(status);
           $('#reason').empty().append(error);

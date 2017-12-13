@@ -30,6 +30,11 @@
 						   <span>Credit Card Applied</span>
 							<input type="text" class="form-control" placeholder="Credit Card Applied" name="CreditCardApplied" id="cc_applied" value="<?php echo e($card); ?>" disabled="" >
 						</div>
+
+						<div class="col-md-4">
+						   <span>Processing Fee</span>
+							<input type="text" class="form-control" placeholder="Joining Fee" name="ProcessingFee" id="ProcessingFee" value="<?php echo e($ProcessingFee); ?>" disabled="" >
+						</div>
 						<div class="col-md-4">
 						   <span>Date of Birth</span>
 							<input type="text" class="form-control lastReporteddate " id="dob" name="DOB" placeholder="Date of Birth" required>
@@ -98,8 +103,8 @@
 						</div>
                         <div class="col-md-4">
 						<span>Email ID</span>
-							<input type="email" id="email_id" name="Email" class="form-control" placeholder="Email ID"  required />
-							<div id="email" style="display:none;color: red;">Please Enter Valid Email Id.</div>
+							<input type="text" id="email_id" name="Email" class="form-control" placeholder="Email ID" oninput="mail('email_id')" required />
+							<div id="email" style="display:none;color: red; font-size: 10px">Please Enter Valid Email Id.</div>
 						</div>
                        <div class="col-md-4">
 					   <span>Applicant Net Monthly Income</span>
@@ -118,7 +123,8 @@
 						</div>
 							<div class="col-md-4">
 							<span>Pancard No</span>
-						     <input  type="text" class="form-input-new form-control" name="PAN" id="pan" placeholder="Pancard No." onkeyup="pan_card_valid(this)" minlength="10" maxlength="10" required>
+						     <input  type="text" class="form-input-new form-control" name="PAN" id="pan" placeholder="Pancard No." oninput="pan_card('pan')" minlength="10" maxlength="10" required>
+						     <div id="pan_number" style="display:none;color: red; font-size: 10px">Please Enter Valid Email Id.</div>
 						</div>
 						</div>
 						<hr>
@@ -252,6 +258,50 @@
 
 		});
 </script>
+
+<script type="text/javascript">
+  function mail(obj,val){
+    console.log(obj);
+    if(obj=='email_id' ){
+                   var str =$('#email_id').val();
+                   var emailPattern = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/; 
+                   var res = str.match(emailPattern);
+                   if(res){
+                     // //console.log('Pancard is valid one.!!');
+                      $('#email').hide();
+
+                  }else{
+                    // //console.log('Oops.Please Enter Valid Pan Number.!!');
+                    $('#email').show();
+
+                    return false;
+                  }
+                  
+  }
+}
+</script>
+
+<script type="text/javascript">
+    function pan_card(obj,val){
+        console.log(obj);
+        if(obj=='pan' ){
+                   var str =$('#pan').val();
+                   var pancardPattern = /^([a-zA-Z]{5})(\d{4})([a-zA-Z]{1})$/;
+                   var res = str.match(pancardPattern);
+                   if(res){
+                     // //console.log('Pancard is valid one.!!');
+                        $('#pan_number').hide();
+
+                  }else{
+                    // //console.log('Oops.Please Enter Valid Pan Number.!!');
+                    $('#pan_number').show();
+
+                    return false;
+                  }
+                  
+    }
+    }
+    </script>
 
 
 

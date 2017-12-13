@@ -7,6 +7,7 @@ use DB;
 use Response;
 use App\bank_quote_api_request;
 use File;
+use Storage;
 class ApiController extends CallApiController
 {
 	
@@ -760,12 +761,17 @@ run_else:
       	 }
       	 return response()->json(array('statusId' => $status,'data'=>$data,'message'=>$error));
       }
-      public function save_file(Request $req){
-      	$data = $req['videoKey'];
+      public function save_file(Request $request){
+       	
+		$result = array("success" => $_FILES["video"]["name"]);
+		$file_path = basename( $_FILES['video']['name']);
+		if(move_uploaded_file($_FILES['video']['tmp_name'], $file_path)) {
+		    $result = array("success" => "File successfully uploaded");
+		} else{
+		    $result = array("success" => "error uploading file");
+		}
+		echo json_encode($result, JSON_PRETTY_PRINT);
 
-		
-		$data = base64_decode($data);
 
-		file_put_contents('video.mp4', $data);
       }
 }

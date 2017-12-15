@@ -198,19 +198,20 @@ else
 
   public function equifax_send_otp(Request $req){
     // print_r($req->mobile);exit();
-    $otp=123456;
+    // $otp=123456;
+    $otp = mt_rand(100000, 999999);
     Session::put('temp_contact', $req['mobile']);
-    $post_data='{"mobile":"'.$req->mobile.'","msgData":"your otp is '.$otp.' - RupeeBoss.com",
+    $post_data='{"mobNo":"'.$req['mobile'].'","msgData":"your otp is '.$otp.' - RupeeBoss.com",
                 "source":"WEB"}';
-                // print_r($post_data);exit();
-
-    $url = $this::$service_url_static."LoginDtls.svc/xmlservice/sendSMS";
-    $result=$this->call_json_data_api($url,$post_data);
-    $http_result=$result['http_result'];
-    $error=$result['error'];
-    $obj = json_decode($http_result);
-    // print_r($obj);         
-    if($obj->{'statusId'}==0){
+            // $url = "http://beta.services.rupeeboss.com/LoginDtls.svc/xmlservice/sendSMS";
+               $url = $this::$service_url_static."LoginDtls.svc/xmlservice/sendSMS";
+            $result=$this->call_json_data_api($url,$post_data);
+            $http_result=$result['http_result'];
+            $error=$result['error'];
+            $obj = json_decode($http_result);
+            // statusId response 0 for success, 1 for failure
+            
+            if($obj->{'statusId'}==0){
                 return Response::json(array(
                             'data' => true,
                         ));

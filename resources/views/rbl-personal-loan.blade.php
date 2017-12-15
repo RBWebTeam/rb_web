@@ -232,11 +232,11 @@
 	</div>
 	<div class="col-md-4">
 	<span>Office Address 1</span>
-	<input type="text" name="OffAddress1" class="form-control" id="OffAddress1" required />
+	<input type="text" name="OffAddress1" class="form-control" id="OffAddress1"  />
 	</div>
 	<div class="col-md-4">
 	<span>Office Address 2</span>
-	<input type="text" name="OffAddress2" class="form-control" id="OffAddress2" required/>
+	<input type="text" name="OffAddress2" class="form-control" id="OffAddress2" />
 	</div>
 	<div class="col-md-4">
 	<span>Organization Category</span>
@@ -260,11 +260,11 @@
 	</div>
 	<div class="col-md-4">
 	<span>Pincode</span>
-	<input type="text" name="OffPIN" class="form-control" id="OffPIN" onkeypress=" return fnAllowNumeric(event)" maxlength="6" required  />
+	<input type="text" name="OffPIN" class="form-control" id="OffPIN" onkeypress=" return fnAllowNumeric(event)" maxlength="6"  />
 	</div>
 	<div class="col-md-4">
 	<span>Phone No.</span>
-	<input type="text" name="OffPhone" class="form-control" id="OffPhone" onkeypress="return fnAllowNumeric(event)" maxlength="8" required />
+	<input type="text" name="OffPhone" class="form-control" id="OffPhone" onkeypress="return fnAllowNumeric(event)" maxlength="8"/>
 	</div>
 	<div class="col-md-4">
 	<span>Pancard</span>

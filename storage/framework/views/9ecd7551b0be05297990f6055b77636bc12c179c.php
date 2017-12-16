@@ -182,6 +182,7 @@ div.bhoechie-tab-menu div.list-group>a.active:after {display:none;}
 					 <li>4,000 bonus reward points on crossing spends of Rs. 1.2 lacs</li>
 					 <li>1 Reward point on every Rs.100 spent except fuel</li>
 					 <li>Waiver of fuel surcharge up to Rs. 100 every month</li>
+           <li>Joining Fee Rs.750</li>
 					 </ul>
 					 <a href="<?php echo e(URL::to('credit-card-rbl-dc')); ?>?card=1" class="btn btn-primary mrg-btm pad pull-left">APPLY NOW</a>
 					</div>
@@ -201,6 +202,7 @@ div.bhoechie-tab-menu div.list-group>a.active:after {display:none;}
 					 <li>2 Reward points for every Rs.100 spent and 5X Reward on selected categories</li>
 					 <li>20,000 bonus Reward Points every year on crossing 3.5 lacs spends</li>
 					 <li>Complimentary access to Airport Lounges</li>
+            <li>Joining Fee Rs.2000</li>
 					 </ul>
 					 <a href="<?php echo e(URL::to('credit-card-rbl-dc')); ?>?card=2" class="btn btn-primary mrg-btm pad pull-left">APPLY NOW</a>
 					</div>
@@ -220,6 +222,7 @@ div.bhoechie-tab-menu div.list-group>a.active:after {display:none;}
 					 <li>2X Reward Points on every Rs. 100 spent on weekends</li>
 					 <li>1,000 bonus Reward Points every month on 5 transactions of Rs.1000 or more</li>
 					 <li>Waiver of fuel surcharge up to Rs.150 every month</li>
+           <li>Joining Fee Rs.1000</li>
 					 </ul>
 					 <a href="<?php echo e(URL::to('credit-card-rbl-dc')); ?>?card=3" class="btn btn-primary mrg-btm pad pull-left">APPLY NOW</a>
 					</div>

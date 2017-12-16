@@ -328,7 +328,8 @@ $(".top").click(function() {
 
                   <div class="col-xs-6 form-padding">
                     <div>
-                      <input type="text" id="mobile" name="Mobile" class="form-control inp-fld" required onkeypress="return fnAllowNumeric(event)" maxlength="10"  >
+                      <input type="text" id="mobile" name="Mobile" class="form-control inp-fld" required onkeypress="return fnAllowNumeric(event)" maxlength="10" title="Number should of 10 digits" >
+
                       <span class="highlight"></span><span class="bar"></span>
                       <label class="form-label-new lble">Mobile Number</label>
                       <div class="clear"></div>

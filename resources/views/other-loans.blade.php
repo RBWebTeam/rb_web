@@ -351,10 +351,15 @@ $(".top").click(function() {
    var data=$.parseJSON(datas);
    console.log(data);
    if(data)
-      {      $.each(data, function( index, value ) {
-            $('#ProductId').append('<option value="'+value.Product_Id+'">'+value.Product_Name+'</option>');
+     {      $.each(data, function( index, value ) {
+      if (value.Product_Id!='10') {
+         $('#ProductId').append('<option value="'+value.Product_Id+'">'+value.Product_Name+'</option>');
+      }
+            
+
 
         }); 
+
     }else{
       $('#ProductId').empty().append('No Result Found');
     }
@@ -487,7 +492,7 @@ $(".top").click(function() {
     </script>
 
 
-    <script>
+   <!--  <script>
 $('#ProductId').on('change', function() {
   // alert('okae');
   var ProductId=$('#ProductId').find(":selected").val();
@@ -505,7 +510,21 @@ $('#ProductId').on('change', function() {
         
       }
 });
-</script>
+</script> -->
+
+<!-- <script>
+$('#ProductId').on('change', function() {
+  // alert('okae');
+  var ProductId=$('#ProductId').find(":selected").val();
+  // console.log(LeadType);
+  if ( ProductId == '10')
+      {
+      continue;
+      }
+      
+});
+</script> -->
+
 
 
 

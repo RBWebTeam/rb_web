@@ -157,7 +157,7 @@ class CreditcardController extends CallApiController
         //formatting date
         $req['DOB'] = date("d-m-Y", strtotime($req['DOB']));
         $req['CreditCardApplied']=Session::get('rbl_card_id');
-        $req['Card_Type']=Session::get('rbl_card_name');
+        $req['CardType']=Session::get('rbl_card_name');
         $req['ProcessingFee']=Session::get('ProcessingFee');
         $req['Title']=(int)$req['Title'];
         $req['EmpType']=(int)$req['EmpType'];
@@ -168,7 +168,7 @@ class CreditcardController extends CallApiController
         $data['source']=Session::get('source')?Session::get('source'):'MAA=';
         $post_data =json_encode(array("CreditCard"=> $data));
      // print_r($post_data);exit();
-        print_r($post_data);exit();
+        // print_r($post_data);exit();
         $url = $this::$url_static."BankAPIService.svc/createRBLCreditCardReq ";
         $result=$this->call_json_data_api($url,$post_data);
         $http_result=$result['http_result'];

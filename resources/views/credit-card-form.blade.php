@@ -713,7 +713,7 @@
       },
       change: function (event, ui) {
         if (ui.item == null || ui.item == undefined || ui.item.value=='No Result Found') {
-          $(".search_company").val("");
+          // $(".search_company").val("");
           $(".search_company").attr("disabled", false);
          
         }else{

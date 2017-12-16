@@ -130,15 +130,15 @@ $(".top").click(function() {
                 </div>
                 <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
                   <div class="panel-body"> 
-                            <?php if(isset($_GET['brokerid'])){?>
-                            <input type="hidden" name="brokerid" id="brokerid" value="<?php echo isset($_GET['brokerid'])?$_GET['brokerid']:'';?>">
+                            <?php if(isset($_GET['brokerId'])){?>
+                            <input type="hidden" name="brokerId" id="brokerId" value="<?php echo isset($_GET['brokerId'])?$_GET['brokerId']:'';?>">
                             <?php }else{?>
-                            <input type="hidden" name="brokerid" id="brokerid" value="0">
+                            <input type="hidden" name="brokerId" id="brokerId" value="0">
                             <?php }?>
-                            <?php if(isset($_GET['source'])){?>
-                            <input type="hidden" name="source" id="source" value="<?php echo isset($_GET['source'])?$_GET['source']:'';?>">
+                            <?php if(isset($_GET['Source'])){?>
+                            <input type="hidden" name="Source" id="Source" value="<?php echo isset($_GET['Source'])?$_GET['Source']:'';?>">
                             <?php }else{?>
-                            <input type="hidden" name="source" id="source" value="">
+                            <input type="hidden" name="Source" id="Source" value="">
                             <?php }?>
 
                             <div class="col-xs-6 form-padding">

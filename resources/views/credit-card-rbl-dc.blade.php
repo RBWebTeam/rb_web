@@ -401,7 +401,7 @@ $(".top").click(function() {
          <p id="rbl_cc_apply_status" class="text-success pad"></p>     
          <p id="reason" class="text-success pad"></p>     
          <p  id="reference" class="text-success pad"></p> 
-         <h4><p id="modalerr"><h5>Thank you for choosing RBL Credit Card. A link has been sent to your registered Email Id. Kindly Click on the link to upload your supporting documents.<h5></p></h4>              
+         <h4><p id="modalerr"><h5>Thank you for choosing RBL Credit Card.<h5></p></h4>              
          </div>  
          <div class="modal-footer">
         <a type="button" id="upload" name="upload" class="btn btn-primary" onclick="Redirect();" >OK</a>

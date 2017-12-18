@@ -646,25 +646,25 @@ $(".rbl-credit-submit").click(function(event){
 
 
 $('form#rbl_cc_dc').find('input').each(function(){
-    // if($(this).val() =="" && $('#rbl_cc_dc').valid()){
-    //      var current = $(this).closest(".panel-collapse");
-    //     if (!current.hasClass("in")) {
-    //        current.collapse("show");
+    if($(this).val() =="" && $('#rbl_cc_dc').valid()){
+         var current = $(this).closest(".panel-collapse");
+        if (!current.hasClass("in")) {
+           current.collapse("show");
 
    
-    //     }else{
+        }else{
 
-    //       // current.addClass("in");
+          // current.addClass("in");
 
-    //     } 
+        } 
 
 
 
-    //   return false;
+      return false;
          
-    // }else{ 
+    }else{ 
 
-       // if( $('#mobile').val()!='' &&  $('#pan').val()!=''){
+       if( $('#mobile').val()!='' &&  $('#pan').val()!=''){
         $(".iframeloading").show();
         $('#upload').show();
         
@@ -750,8 +750,8 @@ $('form#rbl_cc_dc').find('input').each(function(){
        return false;
        
 
-    //   } 
-    // } 
+      } 
+    } 
  
     
 });

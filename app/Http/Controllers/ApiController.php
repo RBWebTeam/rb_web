@@ -777,8 +777,13 @@ run_else:
       }
 
       public function vehicle_registration(Request $req){
+      	
 try {
-      	$mobile_number = $req['mobile_number'];
+	    date_default_timezone_set('Asia/Kolkata');
+        $time=date('Hi'); 
+        if (($time >= "0900") && ($time <= "1900")) {
+         // echo "Good Morning";
+         $mobile_number = $req['mobile_number'];
       	$vehicle_no=$req['vehicle_no'];
       	Session::put('vehicle_no',$vehicle_no);
       	// print_r($vehicle_no);
@@ -813,6 +818,11 @@ try {
         	 $result=json_decode(json_encode(["mobile_number"=>$mobile_number,"vehicle_no"=>$vehicle_no,"vehicle_id"=>$query]));
          return response()->json(array('status' =>0,'message'=>"success",'result'=>$result));
         }
+         }else{
+         	echo "Unable to run API";
+         } 
+        
+        
        
 
          } catch (Exception $e) {
@@ -865,6 +875,7 @@ try {
    	$res['status']=0;
     $res['msg']="success";
     $document_name=$req['document_name'];
+    
     $vehicle_no=$req['vehicle_no'];
     
 
@@ -872,12 +883,14 @@ try {
     {
 
        $file=$req->file('video');
+        print_r($file);exit();
        if($file == null){
             throw new \Exception("Upload Video ", 1);
           }
           $destinationPath = 'uploads/app/'.$vehicle_no.'/videos/';
           
           $filename=$document_name.".".$file->getClientOriginalExtension();
+         
 
           
            

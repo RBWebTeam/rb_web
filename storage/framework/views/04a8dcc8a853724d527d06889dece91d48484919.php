@@ -134,7 +134,7 @@
 								
 								
 								
-								<div class="row sec"  id="section1">
+								<div class="row sec" style="display:none;" id="section1">
 									<div class="form-group">
 										<h4 class="hdr text-center">Company Name</h4>
 										<div class="col-md-4">
@@ -714,7 +714,7 @@
       },
       change: function (event, ui) {
         if (ui.item == null || ui.item == undefined || ui.item.value=='No Result Found') {
-          //$(".search_company").val("");
+          // $(".search_company").val("");
           $(".search_company").attr("disabled", false);
          
         }else{

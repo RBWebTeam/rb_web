@@ -401,7 +401,11 @@ $(".top").click(function() {
          <p id="rbl_cc_apply_status" class="text-success pad"></p>     
          <p id="reason" class="text-success pad"></p>     
          <p  id="reference" class="text-success pad"></p> 
-         <h4><p id="modalerr"><h5>Thank you for choosing RBL Credit Card.<h5></p></h4>              
+
+         <div id="modalerr">
+            <h4><p ><h5>Thank you for choosing RBL Credit Card. A link has been sent to your registered Email Id. Kindly Click on the link to upload your supporting documents.</h5></p></h4>        
+         </div>
+              
          </div>  
          <div class="modal-footer">
         <a type="button" id="upload" name="upload" class="btn btn-primary" onclick="Redirect();" >OK</a>
@@ -638,30 +642,30 @@ $('.collapse').collapse({
 var application_status=0;
   // var red_url= "{{URL::to('thank-you')}}";
 $(".rbl-credit-submit").click(function(event){
-  alert('ojkae');
+ // alert('ojkae');
   event.preventDefault();
 
 
 $('form#rbl_cc_dc').find('input').each(function(){
-    if($(this).val() =="" && $('#rbl_cc_dc').valid()){
-         var current = $(this).closest(".panel-collapse");
-        if (!current.hasClass("in")) {
-           current.collapse("show");
+    // if($(this).val() =="" && $('#rbl_cc_dc').valid()){
+    //      var current = $(this).closest(".panel-collapse");
+    //     if (!current.hasClass("in")) {
+    //        current.collapse("show");
 
    
-        }else{
+    //     }else{
 
-          // current.addClass("in");
+    //       // current.addClass("in");
 
-        } 
+    //     } 
 
 
 
-return false;
+    //   return false;
          
-    }else{ 
+    // }else{ 
 
-       if( $('#mobile').val()!='' &&  $('#pan').val()!=''){
+       // if( $('#mobile').val()!='' &&  $('#pan').val()!=''){
         $(".iframeloading").show();
         $('#upload').show();
         
@@ -747,8 +751,8 @@ return false;
        return false;
        
 
-      } 
-    } 
+    //   } 
+    // } 
  
     
 });

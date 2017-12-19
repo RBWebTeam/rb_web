@@ -43,62 +43,52 @@ class EquifaxController extends CallApiController
     $Status=array();
 
  try{
-
- 
-	               
-                        $AccountNumber=array();
-               foreach ($req->AccountNumber as $key => $value) {
-               	        $AccountNumber[]=[ "AccountNumber" =>$value,"seq" =>1];    }
-                        $AccountDetails = json_encode($AccountNumber);
-                        
-                        $DOB=$req->DOB?$req->DOB:'';
-                        $DriverLicense=$req->DriverLicense?$req->DriverLicense:'';   
-                        $FirstName=$req->FirstName?$req->FirstName:''; 
-                        $FullName=$req->FullName?$req->FullName:''; 
-                        $Gender=$req->Gender?$req->Gender:''; 
-                        $HomePhone=$req->HomePhone?$req->HomePhone:'';    
-
-
- 
-
-                        $AddressLine1=array();
-                        if($req->AddressType){
-               foreach ($req->AddressType as $key => $value) {
-
-               	              
-            $AddressLine1[]= array('InquiryAddresses' =>["AddressLine" =>$req->AddressLine[$key]?$req->AddressLine[$key]:" ",
-               	        'AddressType'=>$req->AddressType[$key]?$req->AddressType[$key]:" ", 
-               	        'City'=>$req->City[$key]?$req->City[$key]:" ",
-               	        'Locality1'=>$req->Locality1[$key]?$req->Locality1[$key]:" ", 
-               	        'Locality2'=>$req->Locality2[$key]?$req->Locality2[$key]:" ", 
-               	        'State'=>$req->State[$key]?$req->State[$key]:" ",
-               	        'Street'=>$req->Street[$key]?$req->Street[$key]:" ",  
-               	        'Postal'=>$req->Postal[$key]?$req->Postal[$key]:" ",   
-               	        "seq" =>1] ); 
+              $AccountNumber=array();
+     foreach ($req->AccountNumber as $key => $value) {
+     	        $AccountNumber[]=[ "AccountNumber" =>$value,"seq" =>1];    }
+              $AccountDetails = json_encode($AccountNumber);
+              $DOB=$req->DOB?$req->DOB:'';
+              $DriverLicense=$req->DriverLicense?$req->DriverLicense:'';   
+              $FirstName=$req->FirstName?$req->FirstName:''; 
+              $FullName=$req->FullName?$req->FullName:''; 
+              $Gender=$req->Gender?$req->Gender:''; 
+              $HomePhone=$req->HomePhone?$req->HomePhone:'';    
+              $AddressLine1=array();
+              if($req->AddressType){
+     foreach ($req->AddressType as $key => $value) {
+              $AddressLine1[]= array('InquiryAddresses' =>["AddressLine" =>$req->AddressLine[$key]?$req->AddressLine[$key]:" ",
+     	        'AddressType'=>$req->AddressType[$key]?$req->AddressType[$key]:" ", 
+     	        'City'=>$req->City[$key]?$req->City[$key]:" ",
+     	        'Locality1'=>$req->Locality1[$key]?$req->Locality1[$key]:" ", 
+     	        'Locality2'=>$req->Locality2[$key]?$req->Locality2[$key]:" ", 
+     	        'State'=>$req->State[$key]?$req->State[$key]:" ",
+     	        'Street'=>$req->Street[$key]?$req->Street[$key]:" ",  
+     	        'Postal'=>$req->Postal[$key]?$req->Postal[$key]:" ",   
+     	        "seq" =>1] ); 
 
 
 
-               	    }
-               	}
+     	    }
+     	}
 
-               	       
-                    $InquiryAddresses=json_encode($AddressLine1);    
-                     
-                       $InquiryPurpose=$req->InquiryPurpose?$req->InquiryPurpose:'';
-                       $LastName=$req->LastName?$req->LastName:'';
-                       $MaritalStatus=$req->MaritalStatus?$req->MaritalStatus:'';
-                       $MiddleName=$req->MiddleName?$req->MiddleName:'';
-                       $MobilePhone=$req->MobilePhone?$req->MobilePhone:'';
-                       $NationalIdCard=$req->NationalIdCard?$req->NationalIdCard:'';
-                       $PANId=$req->PANId?$req->PANId:'';
-                       $PassportId=$req->PassportId?$req->PassportId:'';
-                       $Postal=$req->Postal?$req->Postal:'';
-                       $RationCard=$req->RationCard?$req->RationCard:'';
-                       $State=$req->State?$req->State:'';
-                       $TransactionAmount=$req->TransactionAmount?$req->TransactionAmount:'';
-                       $VoterId=$req->VoterId?$req->VoterId:'';
- 
- 
+     	       
+          $InquiryAddresses=json_encode($AddressLine1);    
+           
+             $InquiryPurpose=$req->InquiryPurpose?$req->InquiryPurpose:'';
+             $LastName=$req->LastName?$req->LastName:'';
+             $MaritalStatus=$req->MaritalStatus?$req->MaritalStatus:'';
+             $MiddleName=$req->MiddleName?$req->MiddleName:'';
+             $MobilePhone=$req->MobilePhone?$req->MobilePhone:'';
+             $NationalIdCard=$req->NationalIdCard?$req->NationalIdCard:'';
+             $PANId=$req->PANId?$req->PANId:'';
+             $PassportId=$req->PassportId?$req->PassportId:'';
+             $Postal=$req->Postal?$req->Postal:'';
+             $RationCard=$req->RationCard?$req->RationCard:'';
+             $State=$req->State?$req->State:'';
+             $TransactionAmount=$req->TransactionAmount?$req->TransactionAmount:'';
+             $VoterId=$req->VoterId?$req->VoterId:'';
+
+
  
                        
 	  
@@ -106,7 +96,7 @@ class EquifaxController extends CallApiController
 
 
 
-$post_dataa='{
+$post_data='{
     "InquiryCommonAccountDetails":'.$AccountDetails.',
     "RequestBody":{
         "AdditionalId1":"",
@@ -150,8 +140,8 @@ $post_dataa='{
 }';
 
  
- 
-		    $result=$this->call_json_data_api("http://api.rupeeboss.com/EquifaxAPIService.svc/createCreditReportReq",$post_dataa);
+ print_r($post_data);exit();
+		    $result=$this->call_json_data_api("http://api.rupeeboss.com/EquifaxAPIService.svc/createCreditReportReq",$post_data);
 		    $http_result=$result['http_result'];
         
 

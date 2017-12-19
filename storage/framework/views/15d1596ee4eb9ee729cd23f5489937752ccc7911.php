@@ -242,8 +242,7 @@ textarea {margin-bottom:15px;border:1px solid #ddd;}
 							<div class="styled-input col-md-6">
 							
 								<select name="InquiryPurpose" class="drop-arr select-sty" id="InquiryPurpose"  required >
-								 <option disabled selected  value="" class="text-danger">Inquiry Purpose</option>
-                                 <option value="">Select Inquiry Purpose</option>
+								 <option disabled selected value="" class="text-danger">Inquiry Purpose</option>
                                  <?php $__currentLoopData = $inq; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $value): $__env->incrementLoopIndices(); $loop = $__env->getFirstLoop(); ?>
                                  <option value="<?php echo e($value->inquiry_code); ?>"><?php echo e($value->inquiry_purpose); ?></option>
                              	<?php endforeach; $__env->popLoop(); $loop = $__env->getFirstLoop(); ?>
@@ -255,20 +254,7 @@ textarea {margin-bottom:15px;border:1px solid #ddd;}
 								<label>Transaction Amount (Rs)</label>
 								<span></span>
 							</div>
-<!-- 
-							<div class="styled-input col-md-6">
-								<select name="" class="drop-arr select-sty" id=""   >
-								 <option disabled selected  value="">Product</option>
-                                 <option value="">Select Product</option>
-								</select>
-							</div> -->
-							
-							
-							<!-- <div class="styled-input col-md-6">
-								<input type="hiddden" name="ProductCode"   value="IDCR">
-								<label>Product Code</label>
-								<span></span>
-							</div> -->
+
 							
 						</div>
 						<br>
@@ -314,7 +300,7 @@ textarea {margin-bottom:15px;border:1px solid #ddd;}
 					    </div>
 					    <div class="styled-input col-md-6 drop-arr">
 								<SELECT name="MaritalStatus" id="MaritalStatus" required>
-									<option selected disabled>Marital Status</option>
+									<option selected value=""  disabled>Marital Status</option>
 									<option value="single">Single</option>
 									<option value="married">Married</option>
 									<option value="divorced">Divorced</option>
@@ -330,7 +316,7 @@ textarea {margin-bottom:15px;border:1px solid #ddd;}
 					 </div>
 					 <div class="styled-input col-md-6 drop-arr">
 				   	<select name="AddressType[]" id="AddressType" required>
-				   		<option disabled selected>Select Address Type</option>
+				   		<option disabled selected value="" >Select Address Type</option>
 				   		<option value="C">Current or Present</option>
 				   		<option value="P"> Permanent</option>
 				   		<option value="O">Office</option>
@@ -360,7 +346,7 @@ textarea {margin-bottom:15px;border:1px solid #ddd;}
 					  </div>
 				   <div class="styled-input col-md-6 drop-arr">
 				   	<select name="State[]" required>
-				   		<option disabled selected>Select State</option>
+				   		<option disabled selected value="" >Select State</option>
 				   		<?php $__currentLoopData = $state; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $value): $__env->incrementLoopIndices(); $loop = $__env->getFirstLoop(); ?>
                          <option value="<?php echo e($value->state_code); ?>"><?php echo e($value->state_name); ?></option>
                         <?php endforeach; $__env->popLoop(); $loop = $__env->getFirstLoop(); ?>
@@ -374,7 +360,7 @@ textarea {margin-bottom:15px;border:1px solid #ddd;}
 					 </div>
 					 <div class="styled-input col-md-6 drop-arr">
 				   	<select name="AddressType[]" id=AddressType>
-				   		<option disabled selected>Select Address Type</option>
+				   		<option disabled selected value="" >Select Address Type</option>
 				   		<option value="C">Current or Present</option>
 				   		<option value="P"> Permanent</option>
 				   		<option value="O">Office</option>
@@ -404,7 +390,7 @@ textarea {margin-bottom:15px;border:1px solid #ddd;}
 					  </div>
 				   <div class="styled-input col-md-6 drop-arr">
 				   	<select name="State[]">
-				   		<option disabled selected>Select State</option>
+				   		<option disabled selected value="" >Select State</option>
 				   		<?php $__currentLoopData = $state; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $value): $__env->incrementLoopIndices(); $loop = $__env->getFirstLoop(); ?>
                          <option value="<?php echo e($value->state_code); ?>"><?php echo e($value->state_name); ?></option>
                         <?php endforeach; $__env->popLoop(); $loop = $__env->getFirstLoop(); ?>
@@ -417,7 +403,7 @@ textarea {margin-bottom:15px;border:1px solid #ddd;}
 					 </div>
 					 <div class="styled-input col-md-6 drop-arr">
 				   	<select name="AddressType[]" id=AddressType>
-				   		<option disabled selected>Select Address Type</option>
+				   		<option disabled selected value="" >Select Address Type</option>
 				   		<option value="C">Current or Present</option>
 				   		<option value="P"> Permanent</option>
 				   		<option value="O">Office</option>
@@ -447,7 +433,7 @@ textarea {margin-bottom:15px;border:1px solid #ddd;}
 					  </div>
 				   <div class="styled-input col-md-6 drop-arr">
 				   	<select name="State[]">
-				   		<option disabled selected>Select State</option>
+				   		<option disabled selected value="" >Select State</option>
 				   		<?php $__currentLoopData = $state; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $value): $__env->incrementLoopIndices(); $loop = $__env->getFirstLoop(); ?>
                          <option value="<?php echo e($value->state_code); ?>"><?php echo e($value->state_name); ?></option>
                         <?php endforeach; $__env->popLoop(); $loop = $__env->getFirstLoop(); ?>
@@ -477,7 +463,7 @@ textarea {margin-bottom:15px;border:1px solid #ddd;}
 								</div>
 								<div class="styled-input col-md-6 drop-arr">
 								<select name="PhoneType" required>
-							   		<option disabled selected>Select Phone Type</option>
+							   		<option disabled selected value="" >Select Phone Type</option>
 							   		<?php $__currentLoopData = $phone; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $value): $__env->incrementLoopIndices(); $loop = $__env->getFirstLoop(); ?>
 			                         <option value="<?php echo e($value->phone_type_code); ?>"><?php echo e($value->phone_type); ?></option>
 			                        <?php endforeach; $__env->popLoop(); $loop = $__env->getFirstLoop(); ?>
@@ -521,7 +507,7 @@ textarea {margin-bottom:15px;border:1px solid #ddd;}
 							<div class="styled-input col-md-6">
 							
 								<select name="Gender" class="drop-arr select-sty" id="Gender" required >
-								 <option disabled selected  value="" class="text-danger">Gender</option>
+								 <option disabled selected value="" class="text-danger">Gender</option>
                                  <option value="1">Male</option>
 								 <option value="2">Female</option>
 								</select>

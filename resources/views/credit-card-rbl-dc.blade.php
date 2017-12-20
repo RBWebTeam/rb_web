@@ -401,7 +401,6 @@ $(".top").click(function() {
          <p id="rbl_cc_apply_status" class="text-success pad"></p>     
          <p id="reason" class="text-success pad"></p>     
          <p  id="reference" class="text-success pad"></p> 
-
          <div id="modalerr">
             <h4><p ><h5>Thank you for choosing RBL Credit Card. A link has been sent to your registered Email Id. Kindly Click on the link to upload your supporting documents.</h5></p></h4>        
          </div>
@@ -750,9 +749,9 @@ $('form#rbl_cc_dc').find('input').each(function(){
      
        return false;
        
-}
-}
-        
+
+      } 
+    } 
  
     
 });

@@ -1,0 +1,391 @@
+/*
+ * Start Bootstrap - Full (http://startbootstrap.com/)
+ * Copyright 2013-2016 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
+ */
+
+body {
+    margin-top: 50px; /* Required margin for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+}
+
+/* Header Image Background - Change the URL below to your image path (example: ../images/background.jpg) */
+
+.full {
+    background: url('../images/Jeep-Compass-Longitude-9.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+.full-cherokee {
+    background: url('../images/grand-cherokee.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+.full-cherokee-srt {
+    background: url('../images/grand-cherokee-srt.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+.full-wrangler {
+    background: url('../images/wrangler-unlimited.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+.topHeader{
+    background-color: rgba(0, 0, 0, .2)!important;
+}
+
+.call{  background:#000; color:#fff;
+    font-size: 18px;
+    height: 50px;
+    line-height: 20px;
+    padding: 2px 25px;
+}
+
+.shape{
+    -webkit-clip-path: polygon(47% 0, 100% 28%, 100% 100%, 0 100%, 0 34%);
+clip-path: polygon(47% 0, 100% 28%, 100% 100%, 0 100%, 0 34%);
+position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    background-color: #d3d0c9;
+}
+
+/*
+ * Social Buttons for Bootstrap
+ *
+ * Copyright 2013-2016 Panayiotis Lipiridis
+ * Licensed under the MIT License
+ *
+ * https://github.com/lipis/bootstrap-social
+ */
+.btns {
+    -moz-user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 50px;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857;
+    margin-bottom: 0;
+    padding: 6px 12px;
+    text-align: center;
+    touch-action: manipulation;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+.btn-social{position:relative;padding-left:44px;text-align:left;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.btn-social>:first-child{position:absolute;left:0;top:0;bottom:0;width:32px;line-height:34px;font-size:1.6em;text-align:center;border-right:1px solid rgba(0,0,0,0.2)}
+.btn-social.btn-lg{padding-left:61px}.btn-social.btn-lg>:first-child{line-height:45px;width:45px;font-size:1.8em}
+.btn-social.btn-sm{padding-left:38px}.btn-social.btn-sm>:first-child{line-height:28px;width:28px;font-size:1.4em}
+.btn-social.btn-xs{padding-left:30px}.btn-social.btn-xs>:first-child{line-height:20px;width:20px;font-size:1.2em}
+.btn-social-icon{position:relative;padding-left:44px;text-align:left;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;height:34px;width:34px;padding:0}
+.btn-social-icon>:first-child{position:absolute;left:0;top:0;bottom:0;width:32px;line-height:34px;font-size:1.6em;text-align:center;border-right:1px solid rgba(0,0,0,0.2)}
+.btn-social-icon.btn-lg{padding-left:61px}.btn-social-icon.btn-lg>:first-child{line-height:45px;width:45px;font-size:1.8em}
+.btn-social-icon.btn-sm{padding-left:38px}.btn-social-icon.btn-sm>:first-child{line-height:28px;width:28px;font-size:1.4em}
+.btn-social-icon.btn-xs{padding-left:30px}.btn-social-icon.btn-xs>:first-child{line-height:20px;width:20px;font-size:1.2em}
+.btn-social-icon>:first-child{border:none;text-align:center;width:100% !important}
+.btn-social-icon.btn-lg{height:45px;width:45px;padding-left:0;padding-right:0}
+.btn-social-icon.btn-sm{height:30px;width:30px;padding-left:0;padding-right:0}
+.btn-social-icon.btn-xs{height:22px;width:22px;padding-left:0;padding-right:0}
+
+.btn-facebook{color:#000;background-color:#fff;border-color:rgba(0,0,0,0.2)}
+.btn-facebook:focus,.btn-facebook.focus{color:#000;background-color:#fff;border-color:rgba(0,0,0,0.2)}
+.btn-facebook:hover{color:#fff;background-color:#3b5998;border-color:rgba(0,0,0,0.2)}
+
+.btn-instagram{color:#000;background-color:#fff;border-color:rgba(0,0,0,0.2)}
+.btn-instagram:focus,.btn-instagram.focus{color:#000;background-color:#fff;border-color:rgba(0,0,0,0.2)}
+.btn-instagram:hover{color:#fff;background-color:#3f729b;border-color:rgba(0,0,0,0.2)}
+
+.btn-twitter{color:#000;background-color:#fff;border-color:rgba(0,0,0,0.2)}
+.btn-twitter:focus,.btn-twitter.focus{color:#000;background-color:#fff;border-color:rgba(0,0,0,0.2)}
+.btn-twitter:hover{color:#fff;background-color:#55acee;border-color:rgba(0,0,0,0.2)}
+
+.btn-youtube{color:#000;background-color:#fff;border-color:rgba(0,0,0,0.2)}
+.btn-twitter:focus,.btn-twitter.focus{color:#000;background-color:#fff;border-color:rgba(0,0,0,0.2)}
+.btn-youtube:hover{color:#fff;background-color:#E8001F;border-color:rgba(0,0,0,0.2)}
+
+.mainmenu{height: 80px;position: absolute;top:-40px;}
+
+.mainmenu ul{margin:0px;padding:0px;}
+.mainmenu li{display:inline-block; background: #686868;padding:10px 5px!important;}
+.mainmenu li.color{background: #ffb302 !important; text-align: center;}
+.mainmenu li:hover{cursor: hand !important;}
+.mainmenu li.base {
+  background: #fea611;
+  display: inline-block;
+  margin-top: 55px;
+    position: relative;
+    width: 80px;
+    height: 55px;
+}
+.mainmenu li.base:before {
+  border-bottom: 15px solid #fea611;
+  border-left: 40px solid transparent;
+  border-right: 40px solid transparent;
+  content: "";
+  height: 0;
+  left: 0;
+  position: absolute;
+  top: -15px;
+  width: 0;
+}
+
+/* Styling the Popup Window */
+.popup-trigger { display: block; margin: 0 auto; padding: 20px; max-width: 260px; background: #4EBD79; color: #fff;
+		 font-size: 18px; font-weight: 700; text-align: center; text-transform: uppercase; line-height: 24px; cursor: pointer; }
+.popup {display: none; position: absolute; top: 100px; left: 50%; width: 700px; margin-left: -350px; padding: 50px 30px;
+background: #fff; color: #333; font-size: 19px; line-height: 30px; border: 10px solid #150E2D; z-index: 9999;}
+.popup-mobile {position: relative; top: 0; left: 0; margin: 30px 0 0; width: 100%;}
+.popup-btn-close {position: absolute; top: 8px; right: 14px; color: #4EBD79; font-size: 14px; font-weight: bold; text-transform: uppercase; cursor: pointer;}
+
+.jeeptable{
+    border-left:solid 1px #aaa;
+    border-top:solid 1px #aaa;
+}
+
+.jeeptable td,.jeeptable th{
+    border-right:solid 1px #aaa !important;
+    border-bottom:solid 1px #aaa !important;
+    padding:10px;
+}
+
+
+/* Styling for Form */
+.formbox{background:rgba(255,255,255,0.5); border-radius:5px; border:solid 1px rgba(0,0,0,0.5);}
+.formbox h2{color:#000; text-align:center; font-size:18px; font-weight: bold;line-height: 4.2rem; border-bottom:solid 1px #fea611;}
+.booking{right:0px; position:absolute ;width:350px;  background:#fea611; color:#fff; text-align:center; font-size:18px; font-weight: bold; padding:10px;}
+.price{width:100%; border-top:solid 5px #fea611; border-left:solid 1px #fea611; border-right:solid 1px #fea611; border-radius: 20px; border-bottom:solid 5px #fea611; background:#fff; margin-top:20px; color:#000; text-align:center; font-size:18px; font-weight: bold; padding:10px;}
+.imgDiv img{width:100%;}
+
+.bkg-about{background:url(../images/history_hero.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;}
+
+.bkg-about{color:#fff; padding:20px; text-align:center;}
+.bkg-about h1{color:#fff; font-size:16px; text-align:center; font-weight: normal; text-transform: uppercase;}
+.bkg-about h2{color:#fff; font-size:24px; text-align:center; font-weight: normal; text-transform: uppercase;}
+.youtube-player{border:solid 10px #c0c0c0;}
+ .disHide{ display:none;}
+.cname{color:#CC0011; font-size:20px; font-weight: bold;}
+.cadd{font-size:14px;}
+.flex-control-nav{display:none !important;}
+@media(max-width: 500px) {
+  .full {
+    background: url('../images/Jeep-Compass-Longitude-9.jpg') no-repeat center center;
+    height:800px;
+}
+
+.price{width:100%; border-top:solid 5px #fea611; border-left:solid 1px #fea611; border-right:solid 1px #fea611; border-radius: 20px; border-bottom:solid 5px #fea611; background:#fff; margin-top:20px; color:#000; text-align:center; font-size:14px; font-weight: bold; padding:5px;}
+    .disHide{ display:inherit; text-align: center;}
+    .disNone{ display:none;}
+   .formbox{background:rgb(255,255,255); border-radius:5px; border:solid 1px rgba(0,0,0,0.5);}
+   .dropdown-menu {
+    background-clip: padding-box;
+    background-color: #fff !important;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.176);
+    display: none;
+    float: left;
+    font-size: 14px;
+    left: 0;
+    list-style: outside none none;
+    margin: 2px 0 0;
+    min-width: 160px;
+    padding: 0px;
+    position: absolute;
+    text-align: left;
+    top: 100%;
+    left: -100px !important;
+    z-index: 1000;
+}
+md-input-container {
+  display: inline-block;
+  position: relative;
+  padding: 0px  !important;
+  margin: 3px 0  !important;
+  vertical-align: middle;
+  /*
+   * The .md-input class is added to the input/textarea
+   */ }
+
+   .md-button {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  /** Alignment adjustments */
+  min-height: 36px;
+  min-width: 88px;
+  line-height: 36px;
+  vertical-align: middle;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  text-align: center;
+  border-radius: 2px;
+  box-sizing: border-box;
+  /* Reset default button appearance */
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  outline: none;
+  border: 0;
+  /** Custom styling for button */
+  padding: 0 6px;
+  margin: 3px 5px !important;
+  background: #ff0000;
+  color: #fff;
+  white-space: nowrap;
+  /* Uppercase text content */
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 14px;
+  font-style: inherit;
+  font-variant: inherit;
+  font-family: inherit;
+  text-decoration: none;
+  overflow: hidden;
+  -webkit-transition: box-shadow 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), background-color 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition: box-shadow 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), background-color 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); }
+  
+  .layout-padding,
+.layout-padding-gt-sm,
+.layout-padding-md,
+.layout-padding > *,
+.layout-padding-gt-sm > *,
+.layout-padding-md > *,
+.layout-padding > .flex,
+.layout-padding > .flex-gt-sm,
+.layout-padding > .flex-md {
+  padding: 5px; padding !important:}
+
+}
+
+.dropdown-menu {
+    background-clip: padding-box;
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.176);
+    display: none;
+    float: left;
+    font-size: 14px;
+    left: 0;
+    list-style: outside none none;
+    margin: 2px 0 0;
+    min-width: 160px;
+    padding: 0px;
+    position: absolute;
+    text-align: left;
+    top: 100%;
+    z-index: 1000;
+}
+
+.dropdown-menu li{
+     background:#fff;
+     width: 100% !important;
+}
+
+.dropdown-menu li:hover{
+     background:#fea611;
+}
+
+.dropdown-menu li a{
+    color:#000;
+    text-decoration: none;
+}
+
+.dropdown-menu li a:hover{
+    color:#fff;
+    text-decoration: none;
+}
+
+.btn1 {
+    -moz-user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius:0px;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857;
+    margin-bottom: 0;
+    padding: 0px;
+    text-align: center;
+    touch-action: manipulation;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+.btn-group1, .btn-group-vertical1 {
+    vertical-align: inherit;
+}
+
+.tbl-img td{padding:10px; vertical-align: top;}
+.tbl-img  a img{padding:10px; border:solid 1px #c0c0c0!important; width:100%;}
+.tbl-img h2 {margin:0px !important;color:#CC0011; font-size:16px; line-height: 22px!important; font-weight: bold; text-decoration: none;}
+.tbl-img h2 a{margin:0px !important;color:#CC0011; font-size:16px; font-weight: bold; text-decoration: none;}
+.tbl-img p{font-size:14px; line-height: 19px;margin:0px !important;}
+.tbl-img p a{font-size:14px; line-height: 19px;margin:0px !important;text-decoration: none; color:#333333;}
+.source{font-size:12px!important; line-height: 19px;margin:0px !important;text-decoration: none; color:#7e7e7e!important;}
+
+.modal-header{
+    background:#ffb302;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    color:#fff;
+}
+.modal-title{
+    color:#fff; font-weight: bold;
+}
+
+.close {
+    color: #000;
+    float: right;
+    font-size: 21px;
+    font-weight: 700;
+    line-height: 1;
+    opacity: 1;
+    text-shadow: 0 1px 0 #fff;
+}
+
+.ptext p{
+    text-align: justify;
+    padding-top:10px;
+}
+
+.hightlight{background:#d6d6d6; padding:20px;}
+
+.hightlight h2{color:#000; border-bottom:solid 1px #000; text-transform: uppercase;}
+
+.hightlight h2{color:#000;border-bottom:solid 1px #000;}
+
+.hightlight ul{
+    padding:0px !important;
+    margin:0px !important;
+}
+
+.hightlight li{
+    padding-top:10px;
+    font-size:12px;
+    padding-left:0px !important;
+}

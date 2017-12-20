@@ -460,7 +460,7 @@ Rupeeboss Financial Services Private Limited shall access your Credit Informatio
      <label >Document title</label><br>
       <input type="text" name="document_title" id="tribe_document_title" required ><br>
       <label >Upload File</label>
-      <input type="file" name="document_itself" class="files" id="tribe_document_itself" accept="application/pdf" required>
+      <input type="file" name="document_itself" id="tribe_document_itself" required>
         <div style="display: none;" id="doc_special_fields">
             <label >Document Year</label>
             <select name="document_year" class="drop-arr" required>
@@ -488,7 +488,6 @@ Rupeeboss Financial Services Private Limited shall access your Credit Informatio
           
         </div>
 		<br>
-    <div style="display: none;" class="error file_ext_error">Only Pdf files are allowed</div>
 		<div class="mrg-top">
        <a class="btn btn-primary btn-outline with-arrow" data-dismiss="modal" >Cancel</a>
       <a class="btn btn-primary btn-outline with-arrow " id="upload_doc_submit">Save</a>

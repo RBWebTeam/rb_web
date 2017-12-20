@@ -1134,7 +1134,7 @@ $(document).ready(function(){
           console.log(data);
 
           $('#IRR').val(data.roi);
-          var processing_fee=LnAmt*data.non_csc_pf/100;
+          var processing_fee=LnAmt*data.csc_pf/100;
           $('#ProcFee').val(processing_fee);
 
          // $(".iframeloading").hide();  

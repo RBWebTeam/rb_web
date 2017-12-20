@@ -56,3 +56,10 @@ Route::get('wapp','WhatsAppController@wapp');
 Route::post('balance-transfer','MobileApiController@balance_transfer');
 Route::post('test','TribeController@test');
 Route::post('equi-generate-pdf','EquifaxController@generate_pdf');
+Route::post('save-file','ApiController@save_file');
+
+/*Policy Boss*/
+Route::post('vehicle-registration','ApiController@vehicle_registration');
+Route::post('vehicle-documents','ApiController@vehicle_documents');
+Route::post('vehicle-video-documents','ApiController@vehicle_video_documents');
+Route::post('vehicle-inspection-details','ApiController@vehicle_inspection_details');

@@ -169,7 +169,16 @@ $(".top").click(function() {
                       <label class="form-label-new lble">Credit Card Applied</label>
                       <div class="clear"></div>
                     </div>  
-                             </div>
+              </div>
+
+              <div class="col-xs-6 form-padding">
+                    <div>
+                      <input type="text" name="ProcessingFee" id="ProcessingFee" class="form-control inp-fld used" onkeypress="return AllowAlphabet(event)" value="{{$ProcessingFee}}" disabled="" >
+                      <span class="highlight"></span><span class="bar"></span>
+                      <label class="form-label-new lble">Joining Fee</label>
+                      <div class="clear"></div>
+                    </div>  
+              </div>
               
                   
             <div class="col-xs-6 form-padding">
@@ -318,7 +327,8 @@ $(".top").click(function() {
 
                   <div class="col-xs-6 form-padding">
                     <div>
-                      <input type="text" id="mobile" name="Mobile" class="form-control inp-fld" required onkeypress="return fnAllowNumeric(event)" maxlength="10"  >
+                      <input type="text" id="mobile" name="Mobile" class="form-control inp-fld" required onkeypress="return fnAllowNumeric(event)" maxlength="10" title="Number should of 10 digits" >
+
                       <span class="highlight"></span><span class="bar"></span>
                       <label class="form-label-new lble">Mobile Number</label>
                       <div class="clear"></div>
@@ -390,8 +400,17 @@ $(".top").click(function() {
     <div class="text-center">
          <p id="rbl_cc_apply_status" class="text-success pad"></p>     
          <p id="reason" class="text-success pad"></p>     
-         <p  id="reference" class="text-success pad"></p>                 
-         </div>   
+         <p  id="reference" class="text-success pad"></p> 
+
+         <div id="modalerr">
+            <h4><p ><h5>Thank you for choosing RBL Credit Card. A link has been sent to your registered Email Id. Kindly Click on the link to upload your supporting documents.</h5></p></h4>        
+         </div>
+              
+         </div>  
+         <div class="modal-footer">
+        <a type="button" id="upload" name="upload" class="btn btn-primary" onclick="Redirect();" >OK</a>
+        
+      </div> 
 </div>
 </div>
 </div>
@@ -621,9 +640,9 @@ $('.collapse').collapse({
 });
 
 var application_status=0;
-  var red_url= "{{URL::to('thank-you')}}";
+  // var red_url= "{{URL::to('thank-you')}}";
 $(".rbl-credit-submit").click(function(event){
-  alert('ojkae');
+ // alert('ojkae');
   event.preventDefault();
 
 
@@ -642,13 +661,14 @@ $('form#rbl_cc_dc').find('input').each(function(){
 
 
 
-return false;
+      return false;
          
     }else{ 
 
        if( $('#mobile').val()!='' &&  $('#pan').val()!=''){
         $(".iframeloading").show();
         $('#upload').show();
+        
         $.ajax({
         type:"POST",
         data:$('#rbl_cc_dc').serialize(),
@@ -666,21 +686,27 @@ return false;
             if(e_id)
             {
               error=get_rbl_error(e_id);
+               $('#modalerr').hide();
             }
             
           }else if(status_id==1){
             status="Successful";
             error=returnedData.ReferenceCode;
-            red_url='http://erp.rupeeboss.com/Credit_Card_Upload_Docs.aspx?App_Id='+error+'&CardType=RBL&MobileNo='+mobile+'';
-            application_status=1;
+            // red_url='http://erp.rupeeboss.com/Credit_Card_Upload_Docs.aspx?App_Id='+error+'&CardType=RBL&MobileNo='+mobile+'';
+            // application_status=1;
+            // red_url="{{URL::to('thank-you')}}";
+            
           }else if(status_id==2){
             status="Successful Referred";
             error=returnedData.ReferenceCode;
-            red_url='http://erp.rupeeboss.com/Credit_Card_Upload_Docs.aspx?App_Id='+error+'&CardType=RBL&MobileNo='+mobile+'';
-            application_status=1;
+            // red_url='http://erp.rupeeboss.com/Credit_Card_Upload_Docs.aspx?App_Id='+error+'&CardType=RBL&MobileNo='+mobile+'';
+            // application_status=1;
+            // red_url="{{URL::to('thank-you')}}";
+            
           }else{
             status="Rejected";
             error=returnedData.ReferenceCode;
+            $('#modalerr').hide();
           }
           $('#rbl_cc_apply_status').empty().text(status);
           $('#reason').empty().append(error);
@@ -724,9 +750,9 @@ return false;
      
        return false;
        
-
-      } 
-    } 
+}
+}
+        
  
     
 });
@@ -859,6 +885,14 @@ return false;
       }); 
       }
   });
+</script>
+
+<script type="text/javascript">
+          function Redirect() 
+          {
+            
+             window.location.href ="{{URL::to('thank-you')}}";
+          }
 </script>
 
 <!-- var y=$(':input[required]:hidden');

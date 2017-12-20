@@ -179,12 +179,12 @@
         <h4 class="modal-title">Confirmation Status</h4>
       </div>
       <div class="modal-body">
-        <h4><p id="modalerr"><h5 style="color: black">Your Yes Bank Home Loan Lead Id is .<h5></p></h4>
+        <h4><p id="modalerr"><h5 style="color: red; font-size: 10px" >Your Yes Bank Home Loan Lead Id is <span id="yesbank"></span> .<h5></p></h4>
         
       </div>
 
       <div class="modal-footer">
-        <a type="button" id="okae" name="okae" class="btn btn-primary kotak_hl_proceed">OK</a>
+        <a type="button" id="okae" name="okae" class="btn btn-primary yesbank_hl_proceed">OK</a>
         
       </div>
       
@@ -201,7 +201,7 @@
         <h4 class="modal-title">Error Status</h4>
       </div>
       <div class="modal-body">
-        <h4><p id="modalerr"><h5 style="color: black">Oops!! Unable To Process.<h5></p></h4>
+        <h4><p id="modalerr"><h5 style="color: black">Oops!! Unable To Process.Thank You For Banking With Yes Bank.<h5></p></h4>
         
       </div>
       
@@ -279,7 +279,7 @@
 <script type="text/javascript">   
 
  $.ajax({ 
-   url: "{{URL::to('kotak-city-master')}}",
+   url: "{{URL::to('yesbank-hl-city-master')}}",
    method:"GET",
    success: function(datas)  
    {
@@ -287,7 +287,7 @@
    console.log(data);
    if(data)
       {      $.each(data, function( index, value ) {
-            $('#ResCity').append('<option value="'+value.city_code+'">'+value.city_name+'</option>');
+            $('#ResCity').append('<option value="'+value.cityname+'">'+value.cityname+'</option>');
 
         }); 
     }else{
@@ -354,7 +354,7 @@ $('#LeadType').on('change', function() {
         }
         else
         {
-            $('#yes-bank-hl-submit').hide();
+            // $('#yes-bank-hl-submit').hide();
             $(".iframeloading").show();
         $.ajax({  
          type: "POST",  
@@ -363,6 +363,15 @@ $('#LeadType').on('change', function() {
          success: function(msg){
             $(".iframeloading").hide();
             console.log(msg);
+            if (msg.Status==1) {
+              $('#yes-bank-hl-popup').modal('show');
+              $('#yesbank').empty().append(msg.Lead_Id);
+            } 
+            else {
+                $('#yes-bank-hl-popup').modal('hide');
+                 $('#yes-bank-hl-popup-error').modal('show');
+                
+            }
             
              
             
@@ -375,7 +384,7 @@ $('#LeadType').on('change', function() {
 </script>
 
 <script type="text/javascript">
-  $('.kotak_hl_proceed').click(function(){
+  $('.yesbank_hl_proceed').click(function(){
     window.location.href ="{{URL::to('thank-you')}}";
   });
 </script>

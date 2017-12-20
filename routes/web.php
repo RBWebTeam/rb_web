@@ -196,7 +196,7 @@ Route::post('doc-upload','UploadController@UploadPost');
 Route::get('went-wrong','ErrorController@went_wrong');
 
 Route::get('thank-you',function (){return view('thank-you');});
-
+Route::get('loan-links',function (){return view('loans-repository');});
 
 
 Route::get('no-record-found',function (){return view('no-record-found');});
@@ -337,6 +337,10 @@ Route::post('tatacapitalsubmitform','TataCapitalLoanController@tatacapitalsubmit
 
 Route::get('credit-card-rbl','CreditcardController@credit_card_rbl');
 Route::post('rbl-cc-submit','CreditcardController@rbl_cc_post');
+Route::get('credit-card-rbl-dc','CreditcardController@credit_card_rbl_dc');
+Route::post('rbl-credit-submit','CreditcardController@rbl_cc_post');
+Route::get('rbl-dc','CreditcardController@rbl_dc');
+
 
 // demo
 Route::get('demo','TeamController@demo');
@@ -356,10 +360,17 @@ Route::post('kotak-city-area-master','LoanController@kotak_city_area_master');
 Route::post('kotak-home-loan-submit','LoanController@kotak_home_loan_submit');
 Route::post('kotak-home-loan-status','LoanController@kotak_home_loan_status');
 Route::get('kotak-personal-loan','LoanController@kotak_personal_loan');
+Route::get('kotak-pl-city-master','LoanController@kotak_pl_city_master');
+Route::post('kotak-pl-submit','LoanController@kotak_pl_submit');
+Route::get('searchkotak_plcompanyajax',array('as'=>'searchkotak_plcompanyajax','uses'=>'AutoCompleteController@autoComplete_kotak_plcompany')); 
+Route::post('kotak-pl-proceed','LoanController@kotak_pl_proceed');
+Route::post('kotak-personal-loan-status','LoanController@kotak_personal_loan_status');
+
 
 /*Yes Bank*/
 Route::get('yesbank-home-loan','LoanController@yesbank_home_loan');
 Route::post('yes-bank-home-loan-submit','LoanController@yes_bank_home_loan_submit');
+Route::get('yesbank-hl-city-master','LoanController@yesbank_hl_city_master');
 
 /*For Datacomp- Kotak Home Loan*/
 Route::get('kotak-home-loan-dc','LoanController@kotak_home_loan_dc');
@@ -382,4 +393,14 @@ Route::get('searchkotakcityajax',array('as'=>'searchkotakcityajax','uses'=>'Auto
 
 //equifax
 Route::get('test-equifax','TestController@test');
-Route::get('equifax','EquifaxController@equifax');
+Route::get('equifax-verification','EquifaxController@equifax_verification');
+Route::post('equifax-send-otp','EquifaxController@equifax_send_otp');
+Route::post('equifax-verify','EquifaxController@equifax_verify_otp');
+
+
+
+/*Excel Upload*/
+Route::get('excel-upload','LoanController@excel_upload');
+Route::post('excel-upload-submit','LoanController@excel_upload_submit');
+Route::get('equifax1','EquifaxController@equifax');
+Route::post('equifax-query','EquifaxController@equifax_query');

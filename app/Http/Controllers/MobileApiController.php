@@ -146,9 +146,11 @@ class MobileApiController extends ApiController
 	public function balance_transfer(Request $req){
 		$getQuery=null;
 		$savings=null;
+		$resultArray=[];
 		 try {
 		 	$getQuery=DB::select('call usp_get_balance_transfer_quot("'.$req['loanamount'].'","'.$req['loaninterest'].'","'.$req['product_id'].'")');
-                 // print_r($getQuery);exit();
+                 if(sizeof($getQuery)==0)throw new \Exception("Error Processing Request", 1);
+                
                 $resultArray = json_decode(json_encode($getQuery), true);
 
      

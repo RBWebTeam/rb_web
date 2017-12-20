@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd" >
+
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+	<!-- ====== Appenders ===== -->
+	<appender name="DefaultFileAppender" class="org.apache.log4j.RollingFileAppender">
+		<!-- absolute path to log file -->
+		<param name="File" value="./logs/MParser.log" />
+		<!-- setting this to false will cause the file to be truncated with each restart -->
+		<param name="Append" value="true" />
+		<!-- MaxFileSize -->
+		<param name="MaxFileSize" value="10240KB" />
+		<!-- Oldest file will be deleted if more than n files were generated -->
+		<param name="MaxBackupIndex" value="5" />
+		<!-- Layout -->
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d [%t] %-5p %c - %m%n" />
+		</layout>
+	</appender>
+	
+	  <!-- Append messages to the console -->
+	  <appender name="CONSOLE" class="org.apache.log4j.ConsoleAppender">
+		<param name="Threshold" value="ERROR" />
+		<param name="Encoding" value="UTF-8" />
+		<layout class="org.apache.log4j.PatternLayout">
+		  <!-- The default pattern: Date Priority [Category] Message\n -->
+		  <param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss,SSSZ} %-5p [%c{1}] %m%n" />
+		</layout>
+	  </appender>
+	  
+	<!-- ====== Categories ===== -->
+	<category name="com.creditReport" additivity="true">
+		<priority value="INFO" />
+	</category>
+	<category name=" hsqldb.db" additivity="true">
+		<priority value="WARN" />
+	</category>
+
+
+
+  <!-- The root category -->
+	<root>
+		<priority value="WARN" />
+		<appender-ref ref="DefaultFileAppender" />
+		<!-- <appender-ref ref="CONSOLE" /> -->
+	</root>
+</log4j:configuration>

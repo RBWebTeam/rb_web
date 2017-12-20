@@ -158,7 +158,7 @@
 
  -->                                    
                                          <div class="col-md-4">
-											<input type="text" class="form-control" id="work_STDCode" name="work_STDCode"  required  onkeypress="return fnAllowNumeric(event)" maxlength="5" placeholder="Work Area STD Code*" >
+											<input type="text" class="form-control" id="work_STDCode" name="work_STDCode"  required  onkeypress="return fnAllowNumeric(event)" maxlength="5" minlength="3" placeholder="Work Area STD Code*" >
 										</div>
 
 										<div class="col-md-4">
@@ -319,7 +319,7 @@
 											</div>
 											
 											<div class="col-md-4">
-												<input type="text" class="form-control" id="STDCode" name="STDCode" placeholder="STD Code" required  onkeypress="return fnAllowNumeric(event)" maxlength="4"  >
+												<input type="text" class="form-control" id="STDCode" name="STDCode" placeholder="STD Code" required  onkeypress="return fnAllowNumeric(event)" minlength="3" maxlength="5"  >
 											</div>
 												
 										</div>
@@ -713,7 +713,7 @@
       },
       change: function (event, ui) {
         if (ui.item == null || ui.item == undefined || ui.item.value=='No Result Found') {
-          $(".search_company").val("");
+          // $(".search_company").val("");
           $(".search_company").attr("disabled", false);
          
         }else{

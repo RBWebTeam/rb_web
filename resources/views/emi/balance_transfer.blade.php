@@ -295,7 +295,7 @@ label {
 									</div>
 									
 									<div class="col-xs-6 form-padding">
-										<div class="form-control" title="Present Interest Rate(should be greater than 9.0%)" style="margin-bottom:14px; height:50px; position:relative;">
+										<div class="form-control" title="Present Interest Rate(should be greater than 11.49%)" style="margin-bottom:14px; height:50px; position:relative;">
 
 											<input type="text" class="form-input-new" onkeyup="myfun();alert_him1(this);" required name="loaninterest" id="loaninterest" step="0.01" min="0"  onkeypress="return isNumberKey(event)">
 
@@ -463,7 +463,7 @@ label {
         <h4 class="modal-title"></h4>
       </div>
       <div class="modal-body">
-        <h5><p>Interest should be <mark style="color:red">greater than 8.0%</mark>.If less.Congrats you are already on lowest rate.</p></h5>
+        <h5><p>Interest should be <mark style="color:red">greater than 11.49%</mark>.If less.Congrats you are already on lowest rate.</p></h5>
         
       </div>
       
@@ -824,7 +824,7 @@ label {
 	function alert_him1(e){
 		
  	$("#loaninterest").change(function(){
-	if(parseInt(this.value) < 8 || this.value == 8){
+	if(parseInt(this.value) < 11.49 || this.value == 11.49){
         $('#homeTransfer1').modal('show');
      }
 })

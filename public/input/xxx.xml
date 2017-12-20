@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<InquiryResponse xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <InquiryResponseHeader xmlns="http://services.equifax.com/eport/ws/schemas/1.0">
+    <CustomerCode>IC01</CustomerCode>
+    <ClientID>027BB02400</ClientID>
+    <CustRefField>417476</CustRefField>
+    <ReportOrderNO>21542821</ReportOrderNO>
+    <ProductCode>IDCR</ProductCode>
+    <SuccessCode>1</SuccessCode>
+    <Date>04-12-2017</Date>
+    <Time>19:19:49</Time>
+    <HitCode>00</HitCode>
+  </InquiryResponseHeader>
+  <InquiryRequestInfo xmlns="http://services.equifax.com/eport/ws/schemas/1.0">
+    <InquiryPurpose>01</InquiryPurpose>
+    <FirstName>dp</FirstName>
+    <MiddleName>Kumar</MiddleName>
+    <LastName>Kolajangam</LastName>
+    <AddrLine1> S/O VENKATA SUBBAIAH D NO 15-1-365 NEW BUILDING MACHERLA GUNTUR DIST ANDHRA PRADESH MACHERLA</AddrLine1>
+    <State>AP</State>
+    <Postal>522426</Postal>
+    <InquiryAddresses>
+      <InquiryAddress seq="1">
+        <AddressLine> S/O VENKATA SUBBAIAH D NO 15-1-365 NEW BUILDING MACHERLA GUNTUR DIST ANDHRA PRADESH MACHERLA</AddressLine>
+        <State>AP</State>
+        <Postal>522426</Postal>
+      </InquiryAddress>
+    </InquiryAddresses>
+    <InquiryPhones>
+      <InquiryPhone seq="0">
+        <Number>9866664534</Number>
+        <PhoneType>H</PhoneType>
+      </InquiryPhone>
+      <InquiryPhone seq="2">
+        <Number>9866664534</Number>
+        <PhoneType>H</PhoneType>
+      </InquiryPhone>
+      <InquiryPhone seq="3">
+        <Number>9866664534</Number>
+        <PhoneType>M</PhoneType>
+      </InquiryPhone>
+    </InquiryPhones>
+    <DOB>2017-12-03</DOB>
+    <NationalIdCard>sad</NationalIdCard>
+    <VoterId>KBB2141547</VoterId>
+    <MobilePhone>9866664534</MobilePhone>
+    <DriverLicense>9866664534</DriverLicense>
+    <InquiryCommonAccountDetails>
+      <InquiryAccount seq="1">
+        <AccountNumber>CF55347203</AccountNumber>
+      </InquiryAccount>
+      <InquiryAccount seq="2">
+        <AccountNumber>CF55347200</AccountNumber>
+      </InquiryAccount>
+      <InquiryAccount seq="3">
+        <AccountNumber>CF55347203</AccountNumber>
+      </InquiryAccount>
+      <InquiryAccount seq="4">
+        <AccountNumber>CF55347200</AccountNumber>
+      </InquiryAccount>
+    </InquiryCommonAccountDetails>
+  </InquiryRequestInfo>
+  <ReportData xmlns="http://services.equifax.com/eport/ws/schemas/1.0">
+    <Error>
+      <ErrorCode>00</ErrorCode>
+      <ErrorMsg>Consumer record not found</ErrorMsg>
+    </Error>
+  </ReportData>
+</InquiryResponse>

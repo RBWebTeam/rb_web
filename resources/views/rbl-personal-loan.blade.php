@@ -199,7 +199,7 @@
 	
    
 	<table width="100%" border="1" class="tbl table-bordered table-striped">
-	<input type="hidden" name="Version" id="Version" value="5">
+	<!-- <input type="hidden" name="Version" id="Version" value="3"> -->
 	<input type="hidden" name="Mobile" id="Mobile">
 	<input type="hidden" name="Email" id="Email">
 	<input type="hidden" name="EmpType" id="EmpType">
@@ -232,11 +232,11 @@
 	</div>
 	<div class="col-md-4">
 	<span>Office Address 1</span>
-	<input type="text" name="OffAddress1" class="form-control" id="OffAddress1" required />
+	<input type="text" name="OffAddress1" class="form-control" id="OffAddress1"  />
 	</div>
 	<div class="col-md-4">
 	<span>Office Address 2</span>
-	<input type="text" name="OffAddress2" class="form-control" id="OffAddress2" required/>
+	<input type="text" name="OffAddress2" class="form-control" id="OffAddress2" />
 	</div>
 	<div class="col-md-4">
 	<span>Organization Category</span>
@@ -260,11 +260,11 @@
 	</div>
 	<div class="col-md-4">
 	<span>Pincode</span>
-	<input type="text" name="OffPIN" class="form-control" id="OffPIN" onkeypress=" return fnAllowNumeric(event)" maxlength="6" required  />
+	<input type="text" name="OffPIN" class="form-control" id="OffPIN" onkeypress=" return fnAllowNumeric(event)" maxlength="6"  />
 	</div>
 	<div class="col-md-4">
 	<span>Phone No.</span>
-	<input type="text" name="OffPhone" class="form-control" id="OffPhone" onkeypress="return fnAllowNumeric(event)" maxlength="8" required />
+	<input type="text" name="OffPhone" class="form-control" id="OffPhone" onkeypress="return fnAllowNumeric(event)" maxlength="8"/>
 	</div>
 	<div class="col-md-4">
 	<span>Pancard</span>
@@ -383,21 +383,12 @@
 			</div> 
 			</br>
 			</form>
-    
-    
-    
-    
-    
-    
-         
-            
-            
-	</div>
+</div>
 </div>
 @include('layout.footer')
 @include('layout.script')
 
-
+<!-- modal -->
 <div class="modal fade" tabindex="-1" role="dialog" id="rbl-popup">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -457,7 +448,7 @@
         <h4 class="modal-title">Confirmation Status</h4>
       </div>
       <div class="modal-body">
-        <h4><p id="modalerr"><h5 style="color: black"><b>Ooops! Error occured.ErrorInfo is <b><span id="rbl-duplicate"></span></b>.<h5></p></h4>
+        <h4><p id="modalerr"><h5 style="color: black"><b>Ooops! Error occured.ErrorInfo is : <b><span id="rbl-duplicate"></span></b>.<h5></p></h4>
         
       </div>
       
@@ -465,6 +456,8 @@
     </div>
   </div>
 </div>
+
+<!-- script -->
 
 <script type="text/javascript">
   function AllowAlphabet(e)
@@ -760,7 +753,7 @@
         }
         else
         {     
-        	  $('#submit_application').hide();
+        	  // $('#submit_application').hide();
         	  $(".iframeloading").show();
           $.ajax({  
          type: "POST",  

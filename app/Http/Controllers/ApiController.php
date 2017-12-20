@@ -1308,6 +1308,5 @@ try {
      }
      return response()->json(array('status' =>$status,'message'=>$msg,"front_rear_id"=>$query,"left_id"=>$query1,"right_id"=>$query2,"tyre_id"=>$query3,"glass_id"=>$query4,));
    }
-
     
 }

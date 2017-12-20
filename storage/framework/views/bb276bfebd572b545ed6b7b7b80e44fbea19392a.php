@@ -208,6 +208,11 @@ input[type="text"] {
 .flt-left {float:left; width:100%;}
 }
 textarea {margin-bottom:15px;border:1px solid #ddd;}
+#accordion {
+    margin-top: 34px;
+    float: left;
+    width: 100%;
+}
 </style>
 
 <div id="fh5co-hero">
@@ -231,50 +236,277 @@ textarea {margin-bottom:15px;border:1px solid #ddd;}
 				
 				<div class="register-form col-md-12 col-xs-12">
 					<!-- <form action="#" method="post"> -->
-					<div><h4>Report Information</h4></div>
-						<div class="fields-grid">
+					<div><h3><b>Report Information</b></h3></div>
+						<div class="col-md-12"><h4><b>Consumer Name And Address :</b></h4></div>
+				        
+						<div class="styled-input col-md-6">
+								<input type="text" name="FirstName" id="FirstName" maxlength="40"   onkeypress="return AllowAlphabet(event)" required >
+								<label>First Name</label>
+								<span></span>
+					    </div>
+						<div class="styled-input col-md-6">
+								<input type="text" name="MiddleName" id="MiddleName"  maxlength="40"  onkeypress="return AllowAlphabet(event)" >
+								<label>Middle Name</label>
+								<span></span>
+					    </div>
+						<div class="styled-input col-md-6">
+								<input type="text" name="LastName" id="LastName" maxlength="40"  onkeypress="return AllowAlphabet(event)" required>
+								<label>Last Name</label>
+								<span></span>
+					    </div>
+					    <div class="styled-input col-md-6 drop-arr">
+								<SELECT name="MaritalStatus" id="MaritalStatus" required>
+									<option selected value=""  disabled>Marital Status</option>
+									<option value="single">Single</option>
+									<option value="married">Married</option>
+									<option value="divorced">Divorced</option>
+								</SELECT> 
+					    </div>
+			           <div class="col-md-12"><h6 class="text-danger text-sm">* Atleast one of the Address is Mandatory (marked in RED)</h6></div>
+					   </div>
+			   
+<div class="panel-group" id="accordion">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+        Address Information 1</a>
+      </h4>
+    </div>
+    <div id="collapse1" class="panel-collapse collapse in">
+      <div class="panel-body">
+      <div class="col-md-12">
+					<textarea placeholder="Address" name="AddressLine[]" required> </textarea>
 					
-							<!-- <div class="styled-input agile-styled-input-top col-md-6">
-								<input type="text" name="" id=""    > 
-								<label>Reference No.</label>
+					 </div>
+					 <div class="styled-input col-md-6 drop-arr">
+				   	<select name="AddressType[]" id="AddressType" required>
+				   		<option disabled selected value="" >Select Address Type</option>
+				   		<option value="C">Current or Present</option>
+				   		<option value="P"> Permanent</option>
+				   		<option value="O">Office</option>
+				   		<option value="X">Other or Unspecified</option>
+				   	</select>
+					</div>
+					<div class="styled-input col-md-6">
+								<input type="text" name="Locality1[]" id="Locality1" maxlength="40" required>
+								<label>Locality 1</label>
 								<span></span>
-							</div> -->
+					  </div>
+					  <div class="styled-input col-md-6">
+								<input type="text" name="Locality2[]" id="Locality2" maxlength="40" required>
+								<label>Locality 2</label>
+								<span></span>
+					  </div>
+					  <div class="styled-input col-md-6">
+								<input type="text" name="City[]" id="City" required>
+								<label>City</label>
+								<span></span>
+					  </div>
+					 
+					 <div class="styled-input col-md-6">
+								<input type="text" name="Postal[]" id="Postal" onkeypress="return Numeric(event)" required maxlength="6">
+								<label>Postal Pin</label>
+								<span></span>
+					  </div>
+				   <div class="styled-input col-md-6 drop-arr">
+				   	<select name="State[]" required>
+				   		<option disabled selected value="" >Select State</option>
+				   		<?php $__currentLoopData = $state; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $value): $__env->incrementLoopIndices(); $loop = $__env->getFirstLoop(); ?>
+                         <option value="<?php echo e($value->state_code); ?>"><?php echo e($value->state_name); ?></option>
+                        <?php endforeach; $__env->popLoop(); $loop = $__env->getFirstLoop(); ?>
+				   	</select>
+					</div>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
+        Address Information 2</a>
+      </h4>
+    </div>
+    <div id="collapse2" class="panel-collapse collapse">
+      <div class="panel-body">
+      	
+      	<div class="col-md-12">
+					<textarea placeholder="Address" name="AddressLine[]" maxlength="220"> </textarea>
+					
+					 </div>
+					 <div class="styled-input col-md-6 drop-arr">
+				   	<select name="AddressType[]" id=AddressType>
+				   		<option disabled selected value="" >Select Address Type</option>
+				   		<option value="C">Current or Present</option>
+				   		<option value="P"> Permanent</option>
+				   		<option value="O">Office</option>
+				   		<option value="X">Other or Unspecified</option>
+				   	</select>
+					</div>
+					<div class="styled-input col-md-6">
+								<input type="text" name="Locality1[]" id="Locality1" maxlength="40" >
+								<label>Locality 1</label>
+								<span></span>
+					  </div>
+					  <div class="styled-input col-md-6">
+								<input type="text" name="Locality2[]" id="Locality2" maxlength="40" >
+								<label>Locality 2</label>
+								<span></span>
+					  </div>
+					  <div class="styled-input col-md-6">
+								<input type="text" name="City[]" id="City" maxlength="40" >
+								<label>City</label>
+								<span></span>
+					  </div>
+					 
+					 <div class="styled-input col-md-6">
+								<input type="text" name="Postal[]" id="Postal"  maxlength="6">
+								<label>Postal Pin</label>
+								<span></span>
+					  </div>
+				   <div class="styled-input col-md-6 drop-arr">
+				   	<select name="State[]">
+				   		<option disabled selected value="" >Select State</option>
+				   		<?php $__currentLoopData = $state; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $value): $__env->incrementLoopIndices(); $loop = $__env->getFirstLoop(); ?>
+                         <option value="<?php echo e($value->state_code); ?>"><?php echo e($value->state_name); ?></option>
+                        <?php endforeach; $__env->popLoop(); $loop = $__env->getFirstLoop(); ?>
+				   	</select>
+					</div>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">
+        Address Information 3</a>
+      </h4>
+    </div>
+    <div id="collapse3" class="panel-collapse collapse">
+      <div class="panel-body">
+      	<div class="col-md-12">
+					<textarea placeholder="Address" name="AddressLine[]"> </textarea>
+					
+					 </div>
+					 <div class="styled-input col-md-6 drop-arr">
+				   	<select name="AddressType[]" id=AddressType>
+				   		<option disabled selected value="" >Select Address Type</option>
+				   		<option value="C">Current or Present</option>
+				   		<option value="P"> Permanent</option>
+				   		<option value="O">Office</option>
+				   		<option value="X">Other or Unspecified</option>
+				   	</select>
+					</div>
+					<div class="styled-input col-md-6">
+								<input type="text" name="Locality1[]" id="Locality1" maxlength="40" >
+								<label>Locality 1</label>
+								<span></span>
+					  </div>
+					  <div class="styled-input col-md-6">
+								<input type="text" name="Locality2[]" id="Locality2" maxlength="40" >
+								<label>Locality 2</label>
+								<span></span>
+					  </div>
+					  <div class="styled-input col-md-6">
+								<input type="text" name="City[]" id="City" >
+								<label>City</label>
+								<span></span>
+					  </div>
+					 
+					 <div class="styled-input col-md-6">
+								<input type="text" name="Postal[]" id="Postal"  maxlength="6" >
+								<label>Postal Pin</label>
+								<span></span>
+					  </div>
+				   <div class="styled-input col-md-6 drop-arr">
+				   	<select name="State[]">
+				   		<option disabled selected value="" >Select State</option>
+				   		<?php $__currentLoopData = $state; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $value): $__env->incrementLoopIndices(); $loop = $__env->getFirstLoop(); ?>
+                         <option value="<?php echo e($value->state_code); ?>"><?php echo e($value->state_name); ?></option>
+                        <?php endforeach; $__env->popLoop(); $loop = $__env->getFirstLoop(); ?>
+				   	</select>
+					</div>
+      </div>
+    </div>
+  </div>
+</div>
+					
+					
+					
+					<div class="col-md-12"><h4><b>Consumer ID And Personal Information :</b></h4>
+                    <p class="text-danger text-xs">* Atleast one of the Personal IDs or Phone Numbers is mandatory.</p>
+					</div>
+					
+						      <div class="styled-input col-md-6">
+								<input type="text" name="PANId" id="PANId" required minlength="10" maxlength="20">
+								<label>TAX ID / PAN</label>
+								<span></span> 
+								</div>	
+							<div class="styled-input col-md-6">
+								<input type="text" name="PassportId" id="PassportId" minlength="7" maxlength="20" >
+								<label>Passport ID*</label>
+								<span></span> 
+								</div>
+							<div class="styled-input col-md-6">
+								<input type="text" name="VoterId" id="VoterId" minlength="10" maxlength="20" >
+								<label>Voter ID*</label>
+								<span></span> 
+								</div>
+								<div class="styled-input col-md-6 drop-arr">
+								<select name="PhoneType" required>
+							   		<option disabled selected value="" >Select Phone Type</option>
+							   		<?php $__currentLoopData = $phone; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $value): $__env->incrementLoopIndices(); $loop = $__env->getFirstLoop(); ?>
+			                         <option value="<?php echo e($value->phone_type_code); ?>"><?php echo e($value->phone_type); ?></option>
+			                        <?php endforeach; $__env->popLoop(); $loop = $__env->getFirstLoop(); ?>
+							   	</select>
+								</div>
+							<div class="styled-input col-md-6">
+								<input type="text" name="HomePhone" id="HomePhone" onkeypress="return Numeric(event)" required minlength="5" maxlength="12" >
+								<label>Phone (Home)</label>
+								<span></span> 
+								</div>
+							<div class="styled-input col-md-6">
+								<input type="text" name="MobilePhone" id="MobilePhone" minlength="10" maxlength="12" onkeypress="return Numeric(event)" required>
+								<label>Phone (Mobile)</label>
+								<span></span> 
+								</div>
+							<div class="styled-input col-md-6">
+								<input type="text" name="" id="" onkeypress="return Numeric(event)"  >
+								<label>Phone (Other)</label>
+								<span></span> 
+								</div>
+							<div class="styled-input col-md-6">
+								<input type="text" name="DriverLicense" id="DriverLicense" maxlength="20" >
+								<label>Driver Licence</label>
+								<span></span> 
+								</div>
+							<div class="styled-input col-md-6">
+								<input type="text" name="NationalIdCard" id="NationalIdCard" maxlength="20" >
+								<label>National ID Card (UIN)</label>
+								<span></span> 
+								</div>
+							<div class="styled-input col-md-6">
+								<input type="text" name="RationCard" id="RationCard" maxlength="20" >
+								<label>Ration Card </label>
+								<span></span> 
+								</div>
+							<div class="styled-input col-md-6">
+								<input type="date" name="DOB" id="DOB" required>
+								<!-- <label>DD/MM/YY</label> -->
+								<span></span> 
+								</div>
 							<div class="styled-input col-md-6">
 							
-								<select name="InquiryPurpose" class="drop-arr select-sty" id="InquiryPurpose"  required >
-								 <option disabled selected  value="" class="text-danger">Inquiry Purpose</option>
-                                 <option value="">Select Inquiry Purpose</option>
-                                 <?php $__currentLoopData = $inq; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $value): $__env->incrementLoopIndices(); $loop = $__env->getFirstLoop(); ?>
-                                 <option value="<?php echo e($value->inquiry_code); ?>"><?php echo e($value->inquiry_purpose); ?></option>
-                             	<?php endforeach; $__env->popLoop(); $loop = $__env->getFirstLoop(); ?>
+								<select name="Gender" class="drop-arr select-sty" id="Gender" required >
+								 <option disabled selected value="" class="text-danger">Gender</option>
+                                 <option value="1">Male</option>
+								 <option value="2">Female</option>
 								</select>
 							</div>
-							 
-							 <div class="styled-input col-md-6">
-								<input type="text" name="TransactionAmount" id="TransactionAmount"   onkeypress="return Numeric(event)" required> 
-								<label>Transaction Amount (Rs)</label>
-								<span></span>
-							</div>
-<!-- 
-							<div class="styled-input col-md-6">
-								<select name="" class="drop-arr select-sty" id=""   >
-								 <option disabled selected  value="">Product</option>
-                                 <option value="">Select Product</option>
-								</select>
-							</div> -->
-							
-							
-							<!-- <div class="styled-input col-md-6">
-								<input type="hiddden" name="ProductCode"   value="IDCR">
-								<label>Product Code</label>
-								<span></span>
-							</div> -->
-							
-						</div>
 						<br>
 
 			
-			<div class="col-md-12"><h4>Retail Account No.</h4></div>
+			<div class="col-md-12"><h4><b>Retail Account No :</b></h4></div>
 				      <div class="styled-input col-md-6">
 								<input type="text" name="AccountNumber[0]" id="" maxlength="14"  required>
 								<label>Account Number 01</label>
@@ -295,237 +527,32 @@ textarea {margin-bottom:15px;border:1px solid #ddd;}
 								<label>Account Number 04</label>
 								<span></span>
 					    </div>
-				<div class="col-md-12"><h4>Consumer Name And Address</h4></div>
-				        
-						<div class="styled-input col-md-6">
-								<input type="text" name="FirstName" id="FirstName"   onkeypress="return AllowAlphabet(event)" required >
-								<label>First Name</label>
-								<span></span>
-					    </div>
-						<div class="styled-input col-md-6">
-								<input type="text" name="MiddleName" id="MiddleName"  onkeypress="return AllowAlphabet(event)" >
-								<label>Middle Name</label>
-								<span></span>
-					    </div>
-						<div class="styled-input col-md-6">
-								<input type="text" name="LastName" id="LastName"  onkeypress="return AllowAlphabet(event)" required>
-								<label>Last Name</label>
-								<span></span>
-					    </div>
-					    <div class="styled-input col-md-6 drop-arr">
-								<SELECT name="MaritalStatus" id="MaritalStatus" required>
-									<option selected disabled>Marital Status</option>
-									<option value="single">Single</option>
-									<option value="married">Married</option>
-									<option value="divorced">Divorced</option>
-								</SELECT> 
-					    </div>
-			           <div class="col-md-12"><h6 class="text-danger text-sm">* Atleast one of the Address is Mandatory (marked in RED)</h6></div>
-					   
-					   
-				<div class="col-md-12"><h4>Address Information 1</h4></div>
-			        <div class="col-md-12">
-					<textarea placeholder="Address" name="AddressLine[]" required> </textarea>
+			<div class="fields-grid">
 					
-					 </div>
-					 <div class="styled-input col-md-6 drop-arr">
-				   	<select name="AddressType[]" id="AddressType" required>
-				   		<option disabled selected>Select Address Type</option>
-				   		<option value="C">Current or Present</option>
-				   		<option value="P"> Permanent</option>
-				   		<option value="O">Office</option>
-				   		<option value="X">Other or Unspecified</option>
-				   	</select>
-					</div>
-					<div class="styled-input col-md-6">
-								<input type="text" name="Locality1[]" id="Locality1" required>
-								<label>Locality 1</label>
+							<!-- <div class="styled-input agile-styled-input-top col-md-6">
+								<input type="text" name="" id=""    > 
+								<label>Reference No.</label>
 								<span></span>
-					  </div>
-					  <div class="styled-input col-md-6">
-								<input type="text" name="Locality2[]" id="Locality2" required>
-								<label>Locality 2</label>
-								<span></span>
-					  </div>
-					  <div class="styled-input col-md-6">
-								<input type="text" name="City[]" id="City" required>
-								<label>City</label>
-								<span></span>
-					  </div>
-					 
-					 <div class="styled-input col-md-6">
-								<input type="text" name="Postal[]" id="Postal" onkeypress="return Numeric(event)" required max="10">
-								<label>Postal Pin</label>
-								<span></span>
-					  </div>
-				   <div class="styled-input col-md-6 drop-arr">
-				   	<select name="State[]" required>
-				   		<option disabled selected>Select State</option>
-				   		<?php $__currentLoopData = $state; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $value): $__env->incrementLoopIndices(); $loop = $__env->getFirstLoop(); ?>
-                         <option value="<?php echo e($value->state_code); ?>"><?php echo e($value->state_name); ?></option>
-                        <?php endforeach; $__env->popLoop(); $loop = $__env->getFirstLoop(); ?>
-				   	</select>
-					</div>
-				
-				<div class="col-md-12"><h4>Address Information 2</h4></div>
-			        <div class="col-md-12">
-					<textarea placeholder="Address" name="AddressLine[]"> </textarea>
-					
-					 </div>
-					 <div class="styled-input col-md-6 drop-arr">
-				   	<select name="AddressType[]" id=AddressType>
-				   		<option disabled selected>Select Address Type</option>
-				   		<option value="C">Current or Present</option>
-				   		<option value="P"> Permanent</option>
-				   		<option value="O">Office</option>
-				   		<option value="X">Other or Unspecified</option>
-				   	</select>
-					</div>
-					<div class="styled-input col-md-6">
-								<input type="text" name="Locality1[]" id="Locality1" >
-								<label>Locality 1</label>
-								<span></span>
-					  </div>
-					  <div class="styled-input col-md-6">
-								<input type="text" name="Locality2[]" id="Locality2" >
-								<label>Locality 2</label>
-								<span></span>
-					  </div>
-					  <div class="styled-input col-md-6">
-								<input type="text" name="City[]" id="City" >
-								<label>City</label>
-								<span></span>
-					  </div>
-					 
-					 <div class="styled-input col-md-6">
-								<input type="text" name="Postal[]" id="Postal" >
-								<label>Postal Pin</label>
-								<span></span>
-					  </div>
-				   <div class="styled-input col-md-6 drop-arr">
-				   	<select name="State[]">
-				   		<option disabled selected>Select State</option>
-				   		<?php $__currentLoopData = $state; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $value): $__env->incrementLoopIndices(); $loop = $__env->getFirstLoop(); ?>
-                         <option value="<?php echo e($value->state_code); ?>"><?php echo e($value->state_name); ?></option>
-                        <?php endforeach; $__env->popLoop(); $loop = $__env->getFirstLoop(); ?>
-				   	</select>
-					</div>
-					<div class="col-md-12"><h4>Address Information 3</h4></div>
-			        <div class="col-md-12">
-					<textarea placeholder="Address" name="AddressLine[]"> </textarea>
-					
-					 </div>
-					 <div class="styled-input col-md-6 drop-arr">
-				   	<select name="AddressType[]" id=AddressType>
-				   		<option disabled selected>Select Address Type</option>
-				   		<option value="C">Current or Present</option>
-				   		<option value="P"> Permanent</option>
-				   		<option value="O">Office</option>
-				   		<option value="X">Other or Unspecified</option>
-				   	</select>
-					</div>
-					<div class="styled-input col-md-6">
-								<input type="text" name="Locality1[]" id="Locality1" >
-								<label>Locality 1</label>
-								<span></span>
-					  </div>
-					  <div class="styled-input col-md-6">
-								<input type="text" name="Locality2[]" id="Locality2" >
-								<label>Locality 2</label>
-								<span></span>
-					  </div>
-					  <div class="styled-input col-md-6">
-								<input type="text" name="City[]" id="City" >
-								<label>City</label>
-								<span></span>
-					  </div>
-					 
-					 <div class="styled-input col-md-6">
-								<input type="text" name="Postal[]" id="Postal" >
-								<label>Postal Pin</label>
-								<span></span>
-					  </div>
-				   <div class="styled-input col-md-6 drop-arr">
-				   	<select name="State[]">
-				   		<option disabled selected>Select State</option>
-				   		<?php $__currentLoopData = $state; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $value): $__env->incrementLoopIndices(); $loop = $__env->getFirstLoop(); ?>
-                         <option value="<?php echo e($value->state_code); ?>"><?php echo e($value->state_name); ?></option>
-                        <?php endforeach; $__env->popLoop(); $loop = $__env->getFirstLoop(); ?>
-				   	</select>
-					</div>
-					
-					
-					
-					<div class="col-md-12"><h4>Consumer ID And Personal Information</h4>
-                    <p class="text-danger text-xs">* Atleast one of the Personal IDs or Phone Numbers is mandatory.</p>
-					</div>
-					
-						      <div class="styled-input col-md-6">
-								<input type="text" name="PANId" id="PANId" required>
-								<label>TAX ID / PAN</label>
-								<span></span> 
-								</div>	
-							<div class="styled-input col-md-6">
-								<input type="text" name="PassportId" id="PassportId" >
-								<label>Passport ID*</label>
-								<span></span> 
-								</div>
-							<div class="styled-input col-md-6">
-								<input type="text" name="VoterId" id="VoterId" >
-								<label>Voter ID*</label>
-								<span></span> 
-								</div>
-								<div class="styled-input col-md-6 drop-arr">
-								<select name="PhoneType" required>
-							   		<option disabled selected>Select Phone Type</option>
-							   		<?php $__currentLoopData = $phone; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $value): $__env->incrementLoopIndices(); $loop = $__env->getFirstLoop(); ?>
-			                         <option value="<?php echo e($value->phone_type_code); ?>"><?php echo e($value->phone_type); ?></option>
-			                        <?php endforeach; $__env->popLoop(); $loop = $__env->getFirstLoop(); ?>
-							   	</select>
-								</div>
-							<div class="styled-input col-md-6">
-								<input type="text" name="HomePhone" id="HomePhone" onkeypress="return Numeric(event)" required >
-								<label>Phone (Home)</label>
-								<span></span> 
-								</div>
-							<div class="styled-input col-md-6">
-								<input type="text" name="MobilePhone" id="MobilePhone" onkeypress="return Numeric(event)" required>
-								<label>Phone (Mobile)</label>
-								<span></span> 
-								</div>
-							<div class="styled-input col-md-6">
-								<input type="text" name="" id="" onkeypress="return Numeric(event)"  >
-								<label>Phone (Other)</label>
-								<span></span> 
-								</div>
-							<div class="styled-input col-md-6">
-								<input type="text" name="DriverLicense" id="DriverLicense" >
-								<label>Driver Licence</label>
-								<span></span> 
-								</div>
-							<div class="styled-input col-md-6">
-								<input type="text" name="NationalIdCard" id="NationalIdCard" >
-								<label>National ID Card (UIN)</label>
-								<span></span> 
-								</div>
-							<div class="styled-input col-md-6">
-								<input type="text" name="RationCard" id="RationCard" >
-								<label>Ration Card </label>
-								<span></span> 
-								</div>
-							<div class="styled-input col-md-6">
-								<input type="date" name="DOB" id="DOB" required>
-								<!-- <label>DD/MM/YY</label> -->
-								<span></span> 
-								</div>
+							</div> -->
 							<div class="styled-input col-md-6">
 							
-								<select name="Gender" class="drop-arr select-sty" id="Gender" required >
-								 <option disabled selected  value="" class="text-danger">Gender</option>
-                                 <option value="1">Male</option>
-								 <option value="2">Female</option>
+								<select name="InquiryPurpose" class="drop-arr select-sty" id="InquiryPurpose"  required >
+								 <option disabled selected value="" class="text-danger">Inquiry Purpose</option>
+                                 <?php $__currentLoopData = $inq; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $value): $__env->incrementLoopIndices(); $loop = $__env->getFirstLoop(); ?>
+                                 <option value="<?php echo e($value->inquiry_code); ?>"><?php echo e($value->inquiry_purpose); ?></option>
+                             	<?php endforeach; $__env->popLoop(); $loop = $__env->getFirstLoop(); ?>
 								</select>
 							</div>
+							 
+							 <div class="styled-input col-md-6">
+								<input type="text" name="TransactionAmount" id="TransactionAmount"   onkeypress="return Numeric(event)" required> 
+								<label>Transaction Amount (Rs)</label>
+								<span></span>
+							</div>
+
+							
+						</div>		    
+				
 				</div>
 		
 		</div>

@@ -140,7 +140,7 @@ $post_data='{
 }';
 
  
- print_r($post_data);exit();
+ // print_r($post_data);exit();
 		    $result=$this->call_json_data_api("http://api.rupeeboss.com/EquifaxAPIService.svc/createCreditReportReq",$post_data);
 		    $http_result=$result['http_result'];
         

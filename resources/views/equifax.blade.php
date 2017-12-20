@@ -2,7 +2,7 @@
 <style>
 #fh5co-hero {
     padding: 4em 0;
-    /* background: url(../images/bg.jpg); */
+     background: url(../images/bg.jpg);
 	background-attachment:fixed;
 	background-size:cover;
 }
@@ -162,7 +162,7 @@ input[type="checkbox"] {
 .register-form input[type="submit"] {
     outline: none;
     color: #FFFFFF;
-    padding: .3em 1em;
+    padding: .3em 3em;
     font-size: 1.4em;
     margin: 1em 0 0 0;
     -webkit-appearance: none;
@@ -213,6 +213,11 @@ textarea {margin-bottom:15px;border:1px solid #ddd;}
     float: left;
     width: 100%;
 }
+.panel-default > .panel-heading {
+    color: #333333;
+    background-color: #ffd7d9;
+    border-color: #ddd;
+}
 </style>
 
 <div id="fh5co-hero">
@@ -228,7 +233,7 @@ textarea {margin-bottom:15px;border:1px solid #ddd;}
 	
 			<div class="col-md-2"></div>
 			<div class="col-md-8">
-			<h2 style="padding:10px;background:#666;color:#fff;margin-bottom:0px; text-align:center;">Prescreen Credit Score</h2>
+			<h2 style="padding:10px;background:#666;color:#fff;margin-bottom:0px; text-align:center;">Credit Score</h2>
 		<div class="register-right">
 		 
 			<div class="register-in">
@@ -236,7 +241,7 @@ textarea {margin-bottom:15px;border:1px solid #ddd;}
 				<div class="register-form col-md-12 col-xs-12">
 					<!-- <form action="#" method="post"> -->
 					<div><h3><b>Report Information</b></h3></div>
-						<div class="col-md-12"><h4><b>Consumer Name And Address :</b></h4></div>
+						<div class="col-md-12"><h4><b>Consumer Name And Address</b></h4></div>
 				        
 						<div class="styled-input col-md-6">
 								<input type="text" name="FirstName" id="FirstName" maxlength="40"   onkeypress="return AllowAlphabet(event)" required >
@@ -432,8 +437,9 @@ textarea {margin-bottom:15px;border:1px solid #ddd;}
 					
 					
 					
-					<div class="col-md-12"><h4><b>Consumer ID And Personal Information :</b></h4>
-                    <p class="text-danger text-xs">* Atleast one of the Personal IDs or Phone Numbers is mandatory.</p>
+					<div class="col-md-12 address"><h4><b>Consumer ID And Personal Information</b></h4>
+                    <h6 class="text-danger text-sm">* Atleast one of the Personal IDs or Phone Numbers is mandatory.</h6>
+                    <br />
 					</div>
 					
 						      <div class="styled-input col-md-6">
@@ -505,7 +511,7 @@ textarea {margin-bottom:15px;border:1px solid #ddd;}
 						<br>
 
 			
-			<div class="col-md-12"><h4><b>Retail Account No :</b></h4></div>
+			<div class="col-md-12 address"><h4><b>Retail Account No</b></h4></div>
 				      <div class="styled-input col-md-6">
 								<input type="text" name="AccountNumber[0]" id="" maxlength="14"  required>
 								<label>Account Number 01</label>
@@ -556,7 +562,12 @@ textarea {margin-bottom:15px;border:1px solid #ddd;}
 		
 		</div>
 		<div class="col-md-12 white-bg flt-left"><div class="col-md-4"></div><div class="col-md-4 col-xs-12">
-		<!-- 	<a class="btn btn-danger block col-xs-12 btn-outline  mrg-top mrg-btm " id="early_salary_submit">Submit</a> --> <input type="submit" name="submit" value="submit"> </div></div>
+		<!-- 	<a class="btn btn-danger block col-xs-12 btn-outline  mrg-top mrg-btm " id="early_salary_submit">Submit</a> --> 
+		<!-- <a href="#"><input type="submit" name="submit" value="submit" class="btn btn-danger btn-outline with-arrow animate-box fadeInUp animated" ><i class="icon-arrow-right"></i></a>-->
+
+		<input type="submit" name="submit" value="submit" class="btn btn-danger btn-outline animate-box fadeInUp animated otp-btn">
+
+		</div></div>
 
 	 
 		

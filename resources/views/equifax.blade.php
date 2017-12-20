@@ -216,6 +216,13 @@ input[type="text"] {
 .flt-left {float:left; width:100%;}
 }
 textarea {margin-bottom:15px;border:1px solid #ddd;}
+
+.thank-u {margin-bottom:20px;}
+.thank-u .center-img {margin:0 auto; display:block;}
+.thank-txt {padding:10px; color:#666666; font-size:65px; display:block;}
+.h4-txt {color:#666;}
+.downld-btn {margin:0 auto; display:block; background:#0767b3;padding:10px 20px;; color:#fff;margin-top:20px; margin-bottom:20px;border-radius:40px;-moz-border-radius:40px;-webkit-border-radius:40px;}
+.thank-sig {margin-top:20px;}
 </style>
 
 <div id="fh5co-hero">
@@ -229,6 +236,20 @@ textarea {margin-bottom:15px;border:1px solid #ddd;}
 		 {{ csrf_field() }}
 		 
 	
+			
+			<div class="col-md-12"> 
+			 <div class="white-bg box-shadow pad thank-u">
+			     <img src="images/thank-you-sign.png" width="80" height="80" class="img-responsive center-img thank-sig"/>
+
+				 <h1 class="thank-txt text-center">Thank You!</h1>
+				 
+				 <br><br>
+				 <h4 class="text-center h4-txt">Click on Below Button For Download Credit Report</h4>
+				 
+				 <button class="downld-btn">DOWNLOAD PDF</button>
+			 </div>
+			</div>
+		
 			<div class="col-md-2"></div>
 			<div class="col-md-8">
 			<h2 style="padding:10px;background:#981e32;color:#fff;margin-bottom:0px; text-align:left;">Prescreen Credit Score</h2>
@@ -467,13 +488,4 @@ textarea {margin-bottom:15px;border:1px solid #ddd;}
 
 
 
-
-<script type="text/javascript">
-  $('#Salary').click(function(){
-     $('#sal_div').show();
-  });
-  $('#Self_Employed').click(function(){
-    $('#sal_div').hide();
-  });
-</script>
 

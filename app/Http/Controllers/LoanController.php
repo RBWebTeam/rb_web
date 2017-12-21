@@ -802,6 +802,7 @@ $url = $this::$url_static."/BankAPIService.svc/updateIIFLRevisedQuote";
     $data['brokerid']=Session::get('brokerid')?Session::get('brokerid'):'MAA=';
     $data['empid']=Session::get('empid')?Session::get('empid'):'MAA=';
     $data['source']=Session::get('source')?Session::get('source'):'MAA=';
+    $data['CampaignName']=Session::get('CampaignName');
     // $data['ConUniqRefCode']=substr(str_shuffle(str_repeat("0123456789", 15)), 0, 15);
     
     

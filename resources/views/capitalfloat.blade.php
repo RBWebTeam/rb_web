@@ -19,23 +19,28 @@
                                     
                                         <h6 class="loan-head">Registration</h6>
                                         <div class="col-md-4">
-                                            <input type="text" class="form-control" placeholder= "First Name*" name="ApplicantFirstName" id="ApplicantFirstName" onkeypress="return AllowAlphabet(event)" required>
+                                        <label>First Name :</label>
+                                            <input type="text" class="form-control" placeholder= "First Name" name="ApplicantFirstName" id="ApplicantFirstName" onkeypress="return AllowAlphabet(event)" required>
                                         </div>
                                         
                                         <div class="col-md-4">
+                                        <label>Email Addresss :</label>
                                             <input type="text" class="form-control" oninput="mail('Email')" id="Email" name="Email" placeholder="Email Address" required>
                                             <div id="email" style="display:none;color: red; font-size: 10px">Please Enter Valid Email Id.</div>
                                         </div>
 
                                          <div class="col-md-4">
+                                          <label>Mobile No :</label>
                                             <input type="text" class="form-control " maxlength="10" id="Mobile_no" name="Mobile_no" placeholder="Mobile No" onkeypress="return fnAllowNumeric(event)" required>
                                         </div>
 
                                         <div class="col-md-4">
+                                         <label>City :</label>
                                             <input type="text" class="form-control search_citynm" placeholder="City*" name="City" id="City" required>
                                         </div>
 
                                         <div class="col-md-4">
+                                        <label>You Operates As :</label>
                                         <select class="block drop-arr select-sty" name="operates_as" id="operates_as" required>
                                           <option disabled selected value="">You Operates As</option>
                                           <option value="MNC">MNC</option>
@@ -48,14 +53,17 @@
                                         </div>
 
                                         <div class="col-md-4">
+                                        <label>Company Turnover :</label>
                                             <input type="text" class="form-control " id="Company_turnover" name="Company_turnover" placeholder="Company Turnover" onkeypress="return fnAllowNumeric(event)" required>
                                         </div>
 
                                         <div class="col-md-4">
+                                        <label>Loan Required :</label>
                                             <input type="text" class="form-control " id="Loan_required" name="Loan_required" placeholder="Loan Required" onkeypress="return fnAllowNumeric(event)" required>
                                         </div>
 
                                         <div class="col-md-4 mrg-top">
+                                        <label>Do You Sell Online ? </label>
                                         <select class="drop-arr select-sty pull-left" name="Sell_online" id="Sell_online" required>
                                           <option disabled selected >Do You Sell Online?</option>
                                           <option value="Yes">Yes</option>
@@ -72,12 +80,14 @@
                                 
                                 <div class="row sec" id="section1">
                                     <div class="form-group">
-                                        <h6 class="loan-head">Business</h6>
+                                        <h6 class="loan-head">Business Details</h6>
                                          <div class="col-md-4" >
+                                         <label>Business Operating Since</label>
                                         <input type="text" class="form-control lastReportedsince" id="business_operating_since" name="business_operating_since" placeholder="Business Operating Since" required>
                                         </div>
 
                                         <div class="col-md-4">
+                                        <label>Business Model</label>
                                         <select class="block drop-arr select-sty" name="business_model" id="business_model" required>
                                           <option disabled selected value="">Business Model</option>
                                           <option value="Trading">Distribution/Trading</option>
@@ -87,6 +97,7 @@
                                         </div>
 
                                         <div class="col-md-4">
+                                        <label>Office Premises</label>
                                         <select class="block drop-arr select-sty" name="office_premises" id="office_premises" required>
                                           <option disabled selected value="">Office Premises</option>
                                           <option value="Owned">Owned</option>
@@ -95,83 +106,28 @@
                                         </div>
 
                                         <div class="col-md-4">
-                                            <input type="text" id="Income" name="Income" class="form-control" placeholder="Income*" onkeypress="return fnAllowNumeric(event)"  required>
-                                        </div>
-
-                                        <div class="col-md-4">
-                                            <input type="text" id="designation" name="designation" class="form-control" placeholder="Designation*"onkeypress="return AllowAlphabet(event)"  required>
-                                        </div>
-                                        
-                                        <!-- <div class="col-md-4">
-                                            <input type="text" id="work_email" name="work_email"  oninput="mail('work_email')" class="form-control" placeholder="Work Email*"  required>
-                                            <div id="email" style="display:none;color: red;">Please Enter Valid Email Id.</div>
-                                        </div> -->
-
-                                        <!-- <div class="col-md-4">ICICI Bank Relationship<b>:</b> Yes &nbsp;&nbsp;
-                                            <input type="radio" name="ICICIBankRelationship" id="ICICIBankRelationship"  class="radiob" required value="Yesrelationship">&nbsp;&nbsp;  No&nbsp;&nbsp;<input type="radio" name="ICICIBankRelationship" id="ICICIBankRelationship" class="radiob" value="Norelationship">
-                                        </div>
-
- -->                                    
-                                         <div class="col-md-4">
-                                            <input type="text" class="form-control" id="work_STDCode" name="work_STDCode"  required  onkeypress="return fnAllowNumeric(event)" maxlength="5" minlength="3" placeholder="Work Area STD Code*" >
-                                        </div>
-
-                                        <div class="col-md-4">
-                                             <input type="text" class="form-control" id="work_number" name="work_number"  required  onkeypress="return fnAllowNumeric(event)" maxlength="10" placeholder="Phone Number" >
-                                        </div>
-
-                                        <div class="col-md-4">
-                                        <select class="block drop-arr select-sty" name="type_of_company" id="type_of_company" required>
-                                          <option disabled selected value="">Type of Company</option>
-                                          <option value="Central Government">Central Government</option>
-                                          <option value="MNC">MNC</option>
-                                          <option value="Partnership">Partnership</option>
-                                          <option value="Private Limited">Private Limited</option>
-                                          <option value="Proprietorship">Proprietorship</option>
-                                          <option value="PSU">PSU</option>
-                                          <option value="Public Limited">Public Limited</option>
-                                          <option value="State Government">State Government</option>
-                                        </select> 
-                                </div>
-
-                                        <div class="col-md-4">
-                                            <select class="block drop-arr select-sty" name="highest_education" id="highest_education" required>
-                                              <option selected disabled="" value="">Highest Educational Qualifications</option>
-                                              <option value="Under Graduate">Under Graduate</option>
-                                              <option value="Graduate/Diploma">Graduate/Diploma</option>
-                                              <option value="Post Graduate">Post Graduate</option>
-                                              <option value="Professional">Professional</option>
-                                              
-                                            </select> 
-                                    </div>
-             
-                                           <div class="col-md-4">
-  
-                                             <select class="block drop-arr select-sty" name="ICICIBankRelationship" id="ICICIBankRelationship" required>
-                                              <option value="">ICICI Bank Relationship</option>
-                                                <option value="Salary">Salary</option>
-                                                <option value="Saving">Saving</option>
-                                                <option value="Loan">Loan</option>
-                                                <option value="Norelationship">Norelationship</option>
-                                                
-                                            </select>
-                                            </div>
-
-                                            <div class="col-md-4">
-                                             <input  type="text" class="form-input-new form-control" name="Total_Exp" id="Total_Exp" placeholder="Total Experience" onkeypress="return isNumberKey(event)"  required>
-                                            </div>
-
-                                            
-
-                                            <div class="col-md-4">
-                                             <input  style='display:none;' type="text" class="form-input-new form-control" name="ICICIRelationshipNumber" id="ICICIRelationshipNumber" placeholder="ICICI Relationship Number" minlength="12" maxlength="16" onkeypress="return isNumberKey(event)"  required>
-                                            </div>
-        
-        
-                                        
-                                        
-                                            <div class="col-md-8">Salary Account With Other Bank<b>:</b> <label for="160">Yes</label>
-                                            <input type="radio" id="160" name="SalaryAccountWithOtherBank" id="SalaryAccountWithOtherBank"  class="radiob" checked value="Yes"> <label for="161"> &nbsp;&nbsp; No</label> <input type="radio" id="161" name="SalaryAccountWithOtherBank" id="SalaryAccountWithOtherBank" class="radiob" value=" No">
+                                        <label>Product Category</label>
+                                        <select class="block drop-arr select-sty" name="product_category" id="product_category" required>
+                                          <option disabled selected value="">Product Category</option>
+                                          <option value="Apparels">Apparels</option>
+                                          <option value="Appliances">Appliances</option>
+                                          <option value="Automotive">Automotive</option>
+                                          <option value="Baby_Care">Baby Care</option>
+                                          <option value="Bags_and_Luggage">Bags & Luggage</option>
+                                          <option value="Beauty_and_Personal_Care">Beauty & Personal Care</option>
+                                          <option value="Books">Books</option>
+                                          <option value="Camera_and_Accessories">Camera & Accessories</option>
+                                          <option value="Computer_and_Peripherals">Computer & Peripherals</option>
+                                          <option value="Eyewear">Eyewear</option>
+                                          <option value="Fashion_Accessories">Fashion Accessories</option>
+                                          <option value="Fragrances">Fragrances</option>
+                                          <option value="Furniture">Furniture</option>
+                                          <option value="Gaming">Gaming</option>
+                                          <option value="Gifting_Events">Gifting Events</option>
+                                          <option value="Hardware_and_Sanitary_Fittings">Hardware & Sanitary Fittings</option>
+                                          <option value="Health">Health</option>
+                                          <option value="Hobbies">Hobbies</option>
+                                          </select> 
                                         </div>
                                         </div>
                                         <hr>
@@ -179,14 +135,16 @@
                                     
                                     
                                     
-                                <div class="row sec" style="display:none;" id="section2">   
+                                <div class="row sec" id="section2">   
                                     <div class="form-group">
-                                        <h4 class="hdr text-center">Current Address Details:</h4>
+                                        <h6 class="loan-head">Financials Details</h6>
                                         <div class="col-md-4">
-                                            <input type="text" class="form-control" placeholder="Flat No / Plot No / House No*" name="ResidenceAddress1" id="ResidenceAddress1" required>
+                                        <label>Company Turnover For FY 2014-2015</label>
+                                            <input type="text" class="form-control" placeholder="Company Turnover(2014-2015)" name="company_turnover(2014-2015)" id="company_trnover" onkeypress="return fnAllowNumeric(event)" required>
                                         </div>
                                         <div class="col-md-4">
-                                            <input type="text" class="form-control" placeholder="Building / Society Name" name="ResidenceAddress2" id="ResidenceAddress2">
+                                        <label>Company Turnover For FY 2015-2016</label>
+                                            <input type="text" class="form-control" placeholder="Company Turnover(2015-2016)" name="company_turnover(2015-2016)" id="company_trnovr">
                                         </div>
                                         <div class="col-md-4">
                                             <input type="text" class="form-control" placeholder="Road No / Area / Locality" name="ResidenceAddress3" id="ResidenceAddress3">

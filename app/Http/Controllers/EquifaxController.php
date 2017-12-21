@@ -183,8 +183,8 @@ $post_data='{
         // $name=$x;
           
          }catch (\Exception $e) {
-          $err="Ohh !! Something is broken inside";
-         $status=0;
+          $err=$e->getMessage();
+          $status=0;
            
          }
 	

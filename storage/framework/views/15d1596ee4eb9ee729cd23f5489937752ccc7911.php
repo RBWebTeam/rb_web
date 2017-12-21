@@ -711,8 +711,8 @@ textarea {margin-bottom:15px;border:1px solid #ddd;}
          url: "<?php echo e(URL::to('equifax-query')); ?>",
          data : $('#equifax_form').serialize(),
          success: function(msg){
-         	  console.log(msg);
-         	  json=JSON.parse(msg)
+         	  
+         	  json=(msg)
               if(json.status==1){
               	$('.equi_doc_link').attr("href","<?php echo e(URL::to('/uploads/PDF')); ?>/"+json.name);
               	$('.equi_doc_link').show();
@@ -724,15 +724,7 @@ textarea {margin-bottom:15px;border:1px solid #ddd;}
               }
               
               $('#equifax_modal').modal('show');
-              // if (msg.status=="200") 
-              // {
-              //  $('#early_salary').modal('show');
-              // }
-              // else if(msg.error=="2")
-              // {
-              //  $('#early_salary_error').modal('show')
-              // }
-              
+            
         },
 
 

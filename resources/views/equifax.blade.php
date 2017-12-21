@@ -583,6 +583,9 @@ textarea {margin-bottom:15px;border:1px solid #ddd;}
 		<!-- <input type="submit" name="submit" value="submit" class="btn btn-danger btn-outline animate-box fadeInUp animated otp-btn">
  -->
 		</div></div>
+		<div class="iframeloading" style= "display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
+		  <img src="{{URL::to('images/ajaxloader.gif')}}" alt="Loader" title="Loader" style="top: 50%; position: relative; left: 50%;"  />
+		 </div>
 
 	 
 		
@@ -706,12 +709,13 @@ textarea {margin-bottom:15px;border:1px solid #ddd;}
         
            $('#equi_score').empty();
            $('.equi_msg_err').addClass('displaynone');
+           $(".iframeloading").show();
         $.ajax({  
          type: "POST",  
          url: "{{URL::to('equifax-query')}}",
          data : $('#equifax_form').serialize(),
          success: function(msg){
-         	  
+         	 
          	  json=(msg)
               if(json.status==1){
               	$('.equi_doc_link').attr("href","{{URL::to('/uploads/PDF')}}/"+json.name);
@@ -728,7 +732,8 @@ textarea {margin-bottom:15px;border:1px solid #ddd;}
         },
 
 
-      });   
+      }); 
+       $(".iframeloading").hide();  
      }
 	});
 </script>

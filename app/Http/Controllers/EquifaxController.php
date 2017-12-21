@@ -40,10 +40,13 @@ class EquifaxController extends CallApiController
 // echo system("echo %cd%");exit;
 
 //file_put_contents(public_path("input/xxx.xml"),$http_result);
-    $Status=array();
+    $status=0;
+    $name="";
+    $err="";
+    $score=0;
 
- try{
-              $AccountNumber=array();
+try{
+     $AccountNumber=array();
      foreach ($req->AccountNumber as $key => $value) {
      	        $AccountNumber[]=[ "AccountNumber" =>$value,"seq" =>1];    }
               $AccountDetails = json_encode($AccountNumber);
@@ -146,6 +149,14 @@ $post_data='{
         
 
         $xml = simplexml_load_string($http_result);
+        // $file="equifax-xml-response.xml";
+        // //print_r(file_exists($file));exit();
+        // if (file_exists($file)) {
+        //   flush();
+          
+        //   $handle=fopen($file, "r");
+        //   $xml=fread($handle, filesize($file));
+        // }
         $xml_S=simplexml_load_string($xml);
        
         if($xml_S->ReportData->Error->ErrorMsg){
@@ -153,31 +164,32 @@ $post_data='{
           $status=1;
         }else{
 
-        file_put_contents(public_path("input/xxx.xml"),$xml);
+          if(isset($xml_S->ReportData->Score->Value)){
+            $score=$xml_S->ReportData->Score->Value;
+          }
+        $tt=file_put_contents(public_path("input/xxx.xml"),$xml);
         $command="java -Xms256m -Xmx512m -jar MParser-6.2.0.jar xxx.xml";
         $x=system($command);
-        //$x=system("MParser");
-       // $y=system("echo %cd%");
+        $x=system("MParser");
+       $y=system("echo %cd%");
         
-          $status=0;
+          $status=1;
         }
 
 
 
 
-       $NAME="Hit_".$PANId.".pdf";
-
+       $name="Hit_".$PANId.".pdf";
+        // $name=$x;
           
          }catch (\Exception $e) {
           $err="Ohh !! Something is broken inside";
-            $status=1;
+         $status=0;
            
          }
 	
-if($status)
-  return view('equifaxmail',['NAME'=>$NAME,'error'=>$err]);
-else
-  return view('equifaxmail',['NAME'=>$NAME ,'error'=>0]);
+        $arr=['name'=>$name,'error'=>$err,'score'=>$score,'status'=>$status];
+    return response()->json($arr);  
 
 		  
 	}

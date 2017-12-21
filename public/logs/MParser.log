@@ -1536,3 +1536,59 @@ Caused by: org.hsqldb.HsqlException: user lacks privilege or object not found: S
 	at org.hsqldb.Session.executeDirectStatement(Unknown Source)
 	at org.hsqldb.Session.execute(Unknown Source)
 	... 9 more
+2017-12-21 12:15:35,352 [main] INFO  com.creditReport.Controller - 
+INFO: Reading the customer type
+2017-12-21 12:15:35,390 [main] INFO  com.creditReport.Controller - INFO: Activating the MFI parser
+2017-12-21 12:15:35,390 [main] INFO  com.creditReport.Controller - INFO: Input file:- xxx.xml
+2017-12-21 12:15:36,284 [main] ERROR com.creditReport.Controller - ERROR: Error in main()
+java.lang.RuntimeException: MParser Exception
+	at com.creditReport.ParseXmlMfi.parseXml(ParseXmlMfi.java:454)
+	at com.creditReport.ParseXmlMfi.startParser(ParseXmlMfi.java:154)
+	at com.creditReport.Controller.initSAWithFileName(Controller.java:115)
+	at com.creditReport.Controller.main(Controller.java:46)
+Caused by: java.lang.NullPointerException
+	at com.creditReport.ParseXmlMfi.readFile(ParseXmlMfi.java:788)
+	at com.creditReport.ParseXmlMfi.parseXml(ParseXmlMfi.java:379)
+	... 3 more
+2017-12-21 12:51:55,941 [main] INFO  com.creditReport.Controller - 
+INFO: Reading the customer type
+2017-12-21 12:51:55,958 [main] INFO  com.creditReport.Controller - INFO: Activating the MFI parser
+2017-12-21 12:51:55,958 [main] INFO  com.creditReport.Controller - INFO: Input file:- xxx.xml
+2017-12-21 12:51:56,544 [main] ERROR com.creditReport.Controller - ERROR: Error in main()
+java.lang.RuntimeException: MParser Exception
+	at com.creditReport.ParseXmlMfi.parseXml(ParseXmlMfi.java:454)
+	at com.creditReport.ParseXmlMfi.startParser(ParseXmlMfi.java:154)
+	at com.creditReport.Controller.initSAWithFileName(Controller.java:115)
+	at com.creditReport.Controller.main(Controller.java:46)
+Caused by: java.lang.NullPointerException
+	at com.creditReport.ParseXmlMfi.readFile(ParseXmlMfi.java:788)
+	at com.creditReport.ParseXmlMfi.parseXml(ParseXmlMfi.java:379)
+	... 3 more
+2017-12-21 12:52:47,967 [main] INFO  com.creditReport.Controller - 
+INFO: Reading the customer type
+2017-12-21 12:52:47,968 [main] INFO  com.creditReport.Controller - INFO: Activating the MFI parser
+2017-12-21 12:52:47,968 [main] INFO  com.creditReport.Controller - INFO: Input file:- xxx.xml
+2017-12-21 12:52:48,465 [main] ERROR com.creditReport.Controller - ERROR: Error in main()
+java.lang.RuntimeException: MParser Exception
+	at com.creditReport.ParseXmlMfi.parseXml(ParseXmlMfi.java:454)
+	at com.creditReport.ParseXmlMfi.startParser(ParseXmlMfi.java:154)
+	at com.creditReport.Controller.initSAWithFileName(Controller.java:115)
+	at com.creditReport.Controller.main(Controller.java:46)
+Caused by: java.lang.NullPointerException
+	at com.creditReport.ParseXmlMfi.readFile(ParseXmlMfi.java:788)
+	at com.creditReport.ParseXmlMfi.parseXml(ParseXmlMfi.java:379)
+	... 3 more
+2017-12-21 12:52:57,048 [main] INFO  com.creditReport.Controller - 
+INFO: Reading the customer type
+2017-12-21 12:52:57,049 [main] INFO  com.creditReport.Controller - INFO: Activating the MFI parser
+2017-12-21 12:52:57,049 [main] INFO  com.creditReport.Controller - INFO: Input file:- xxx.xml
+2017-12-21 12:52:59,632 [main] ERROR com.creditReport.Controller - ERROR: Error in main()
+java.lang.RuntimeException: MParser Exception
+	at com.creditReport.ParseXmlMfi.parseXml(ParseXmlMfi.java:454)
+	at com.creditReport.ParseXmlMfi.startParser(ParseXmlMfi.java:154)
+	at com.creditReport.Controller.initSAWithFileName(Controller.java:115)
+	at com.creditReport.Controller.main(Controller.java:46)
+Caused by: java.lang.NullPointerException
+	at com.creditReport.ParseXmlMfi.readFile(ParseXmlMfi.java:788)
+	at com.creditReport.ParseXmlMfi.parseXml(ParseXmlMfi.java:379)
+	... 3 more

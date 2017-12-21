@@ -695,21 +695,34 @@ textarea {margin-bottom:15px;border:1px solid #ddd;}
 
 <script type="text/javascript">
 	$('#equifax_submit').click(function(){
-		alert('okae');
+		
     
-      if(! $('#equifax_form').valid())
-       {
-              // alert('not valid');
-        }
-        else{
+      // if(! $('#equifax_form').valid())
+      //  {
+      //         // alert('not valid');
+      //   }
+      //   else{
         
-           
+           $('#equi_score').empty();
+           $('.equi_msg_err').addClass('displaynone');
         $.ajax({  
          type: "POST",  
          url: "{{URL::to('equifax-query')}}",
          data : $('#equifax_form').serialize(),
          success: function(msg){
-              console.log(msg);
+         	  console.log(msg);
+         	  json=JSON.parse(msg)
+              if(json.status==1){
+              	$('.equi_doc_link').attr("href","{{URL::to('/uploads/PDF')}}/"+json.name);
+              	$('.equi_doc_link').show();
+              	$('#equi_score').append(json.score[0]);
+              }else{
+              	$('.equi_msg_err').append(json.err);
+              	$('.equi_msg_err').removeClass('displaynone');
+              	$('.equi_doc_link').hide();
+              }
+              
+              $('#equifax_modal').modal('show');
               // if (msg.status=="200") 
               // {
               //  $('#early_salary').modal('show');
@@ -719,9 +732,11 @@ textarea {margin-bottom:15px;border:1px solid #ddd;}
               //  $('#early_salary_error').modal('show')
               // }
               
-        }  
+        },
+
+
       });   
-     }
+     //}
 	});
 </script>
 

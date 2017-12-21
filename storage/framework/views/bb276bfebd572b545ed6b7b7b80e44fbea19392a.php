@@ -227,7 +227,7 @@ textarea {margin-bottom:15px;border:1px solid #ddd;}
 	<div class="register-full">
 		
 		
-		<form id="equifax_form"   method="POST" action="<?php echo e(url('equifax-query')); ?>">
+		<form id="equifax_form" method="POST" >
 		 <?php echo e(csrf_field()); ?>
 
 		 
@@ -260,22 +260,7 @@ textarea {margin-bottom:15px;border:1px solid #ddd;}
 								<span></span>
 					    </div>
 
-					    <div class="styled-input col-md-6">
-								<input type="text" class="lastReporteddob" name="DOB" id="DOB" required>
-								<!-- <label>DD/MM/YY</label> -->
-								<label>Date Of Birth</label>
-								<span></span> 
-								</div>
-					   
-					    <div class="styled-input col-md-6">
-							
-								<select name="Gender" class="drop-arr select-sty" id="Gender" required >
-								 <option disabled selected value="" class="text-danger">Gender</option>
-                                 <option value="1">Male</option>
-								 <option value="2">Female</option>
-								</select>
-							</div>
-							
+					    
 								 <div class="styled-input col-md-6 drop-arr">
 								<SELECT name="MaritalStatus" id="MaritalStatus" required>
 									<option selected value=""  disabled>Marital Status</option>
@@ -484,6 +469,23 @@ textarea {margin-bottom:15px;border:1px solid #ddd;}
 								<span></span> 
 								</div>
 
+								<div class="styled-input col-md-6">
+								<input type="text" class="lastReporteddob" name="DOB" id="DOB" required>
+								<!-- <label>DD/MM/YY</label> -->
+								<label>Date Of Birth</label>
+								<span></span> 
+								</div>
+					   
+					    <div class="styled-input col-md-6">
+							
+								<select name="Gender" class="drop-arr select-sty" id="Gender" required >
+								 <option disabled selected value="" class="text-danger">Gender</option>
+                                 <option value="1">Male</option>
+								 <option value="2">Female</option>
+								</select>
+							</div>
+							
+
 								<div class="styled-input col-md-6 drop-arr">
 								<select name="PhoneType" required>
 							   		<option disabled selected value="" >Select Phone Type</option>
@@ -576,11 +578,11 @@ textarea {margin-bottom:15px;border:1px solid #ddd;}
 		
 		</div>
 		<div class="col-md-12 white-bg flt-left"><div class="col-md-4"></div><div class="col-md-4 col-xs-12">
-		<!-- 	<a class="btn btn-danger block col-xs-12 btn-outline  mrg-top mrg-btm " id="early_salary_submit">Submit</a> --> 
+			<a class="btn btn-danger block col-xs-12 btn-outline  mrg-top mrg-btm " id="equifax_submit">Submit</a> 
 		<!-- <a href="#"><input type="submit" name="submit" value="submit" class="btn btn-danger btn-outline with-arrow animate-box fadeInUp animated" ><i class="icon-arrow-right"></i></a>-->
 
-		<input type="submit" name="submit" value="submit" class="btn btn-danger btn-outline animate-box fadeInUp animated otp-btn">
-
+		<!-- <input type="submit" name="submit" value="submit" class="btn btn-danger btn-outline animate-box fadeInUp animated otp-btn">
+ -->
 		</div></div>
 
 	 
@@ -690,6 +692,38 @@ textarea {margin-bottom:15px;border:1px solid #ddd;}
       yearRange: '-100:' + year + '',
       defaultDate: d
     });
+</script>
+
+<script type="text/javascript">
+	$('#equifax_submit').click(function(){
+		alert('okae');
+    
+      if(! $('#equifax_form').valid())
+       {
+              // alert('not valid');
+        }
+        else{
+        
+           
+        $.ajax({  
+         type: "POST",  
+         url: "<?php echo e(URL::to('equifax-query')); ?>",
+         data : $('#equifax_form').serialize(),
+         success: function(msg){
+              console.log(msg);
+              // if (msg.status=="200") 
+              // {
+              //  $('#early_salary').modal('show');
+              // }
+              // else if(msg.error=="2")
+              // {
+              //  $('#early_salary_error').modal('show')
+              // }
+              
+        }  
+      });   
+     }
+	});
 </script>
 
 

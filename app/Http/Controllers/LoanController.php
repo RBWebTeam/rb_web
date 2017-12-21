@@ -1153,5 +1153,10 @@ $url = $this::$url_static."/BankAPIService.svc/updateIIFLRevisedQuote";
            'updated_at'=>date("Y-m-d H:i:s")]
          );
     }
+
+    /*Capital Float*/
+   public function capitalfloat(){
+    return view('capitalfloat');
+   }
 }
 

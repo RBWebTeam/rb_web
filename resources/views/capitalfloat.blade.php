@@ -45,68 +45,19 @@
                                           <option value="Public Limited">Public Limited</option>
                                           
                                         </select> 
-                                </div>
-
-                                        <div class="col-md-4">
-  
-                                             <select class="block drop-arr select-sty" name="no_of_dependents" id="no_of_dependents" required>
-                                              <option disabled selected  value="">No of Dependents</option>
-                                                <option value="0">0</option>
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                                <option value="3">3</option>
-                                                <option value="4">4</option>
-                                                <option value="5">5</option>
-                                                <option value="5+">5+</option>
-                                            </select> 
-                                            </div>
-
-                                        
-
-                                        <div class="col-md-4">
-                                        <div class="form-control border-none">
-                                       
-                                        <input type="radio"  name="Gender" id="150"  class="radiob" checked value="Male"><label for="150">&nbsp;Male</label>
-                                        <input type="radio" name="Gender" id="151"  class="radiob" value="Female" ><label for="151">&nbsp;Female </label>
-                                        
-                                        </div>
-                                        </div>
-                                    
-                                       
-                                       <div class="col-md-4">
-                                       <div class="form-control border-none">
-                                        <input type="radio"  name="marital_status" id="152" class="radiob" checked value="Single">   <label for="152">Single</label>
-                                        <input type="radio" name="marital_status" id="153"  class="radiob" value="Married" > <label for="153">Married</label>
-                                        </div>
-                                        </div>
-                                        
-                                         <div class="col-md-4">
-                                        <select class="drop-arr select-sty" name="preferred_address" id="preferred_address"  required>
-                                          <option value="" disabled selected>Preferred Mailing Address</option>
-                                          <option value="Residence">Residence</option> 
-                                          <option value="Office">Office</option>
-                                        </select> 
                                         </div>
 
                                         <div class="col-md-4">
-                                        <div class="form-control border-none">
-                                        <input type="radio"  name="resident_status" id="154"  class="radiob" checked value="Indian"> <label for="154"> Indian</label>
-                                        <input type="radio" name="resident_status" id="155"  class="radiob" value="NRI/Foreign National" > <label for="155">NRI/Foreign National</label>
+                                            <input type="text" class="form-control " id="Company_turnover" name="Company_turnover" placeholder="Company Turnover" onkeypress="return fnAllowNumeric(event)" required>
                                         </div>
-                                        </div>
-                                        
+
                                         <div class="col-md-4">
-                                        <div class="form-control border-none">
-                                        <input type="radio"  name="CustomerProfile" id="156"  class="radiob" checked value="Salaried">  <label for="156">Salaried </label>
-                                        <input type="radio" name="CustomerProfile" id="157"  class="radiob" value="Selfemployed" >  <label for="157"> Selfemployed </label>
+                                            <input type="text" class="form-control " id="Loan_required" name="Loan_required" placeholder="Loan Required" onkeypress="return fnAllowNumeric(event)" required>
                                         </div>
-                                        </div>
-                                        
-                                        
 
                                         <div class="col-md-4 mrg-top">
-                                        <select class="drop-arr select-sty pull-left" name="supplementary_card" id="supplementary_card" required>
-                                          <option disabled selected >I Want to Apply For a Supplementary Card</option>
+                                        <select class="drop-arr select-sty pull-left" name="Sell_online" id="Sell_online" required>
+                                          <option disabled selected >Do You Sell Online?</option>
                                           <option value="Yes">Yes</option>
                                           <option value="No">No</option>
                                         </select> 
@@ -119,12 +70,30 @@
                                 
                                 
                                 
-                                <div class="row sec" style="display:none;" id="section1">
+                                <div class="row sec" id="section1">
                                     <div class="form-group">
-                                        <h4 class="hdr text-center">Company Name</h4>
-                                        <div class="col-md-4">
-                                            <input type="text" class="form-control search_company" placeholder="Company Name*" name="CompanyName" id="CompanyName" required="">
+                                        <h6 class="loan-head">Business</h6>
+                                         <div class="col-md-4" >
+                                        <input type="text" class="form-control lastReportedsince" id="business_operating_since" name="business_operating_since" placeholder="Business Operating Since" required>
                                         </div>
+
+                                        <div class="col-md-4">
+                                        <select class="block drop-arr select-sty" name="business_model" id="business_model" required>
+                                          <option disabled selected value="">Business Model</option>
+                                          <option value="Trading">Distribution/Trading</option>
+                                          <option value="Manufacturing">Manufacturing</option>
+                                          <option value="Partnership">Services</option>
+                                        </select> 
+                                        </div>
+
+                                        <div class="col-md-4">
+                                        <select class="block drop-arr select-sty" name="office_premises" id="office_premises" required>
+                                          <option disabled selected value="">Office Premises</option>
+                                          <option value="Owned">Owned</option>
+                                          <option value="Rented">Rented/Leased</option>
+                                        </select> 
+                                        </div>
+
                                         <div class="col-md-4">
                                             <input type="text" id="Income" name="Income" class="form-control" placeholder="Income*" onkeypress="return fnAllowNumeric(event)"  required>
                                         </div>
@@ -465,5 +434,49 @@
    });
 
 </script>
+
+<script type="text/javascript">
+
+ $("#credit_id").click(function(event){
+         event.preventDefault();
+      if(!  $('#capital_float_form').valid()){
+        return false;
+      }else{$('#section1').show();
+            if(!  $('#capital_float_form').valid()){return false;
+            }else{ $('#section2').show();
+                if(! $('#capital_float_form').valid()){
+                       return false;
+                }else{$('#section3').show();
+               
+                         if(! $('#capital_float_form').valid()){return false;
+                         }else{      
+                               $('.crd_id').hide();
+                               $('#section4').show();
+
+
+                               
+                         }
+                }
+      }
+
+      }
+});
+</script> 
+
+<script type="text/javascript">
+    var d = new Date();
+    var year = d.getFullYear() ;
+    d.setFullYear(year);
+
+    $(".lastReportedsince").datepicker({ dateFormat: "yy-mm-dd",
+      changeMonth: true,
+      changeYear: true,
+      maxDate: year,
+      minDate: "-100Y",
+      yearRange: '-100:' + year + '',
+      defaultDate: d
+    });
+</script>
+
 
 

@@ -1,7 +1,6 @@
   <script src="<?php echo e(URL::to('js/Myapp.js')); ?>"></script>
     <script src="<?php echo e(URL::to('js/jsPdf.js')); ?>"></script>
 	 <script src="<?php echo e(URL::to('js/freshslider.min.js')); ?>"></script>
-<!--      <script src="<?php echo e(URL::to('js/serviceWorker.js')); ?>"></script> -->
 	 
  <script>
 	       // Hide Header on on scroll down

@@ -21,19 +21,16 @@
 				</ul>
 			</div>
 			<div class="col-md-2 col-md-push-1 col-sm-12 col-sm-push-0 col-xs-12 col-xs-push-0">
-      
 				<h3>Personal Loan</h3>
 				<ul class="float">
-
 					<li><a href="<?php echo e(URL::to('loan-details/personal-loan/axis')); ?>">Axis Bank</a></li>
 					<li><a href="<?php echo e(URL::to('loan-details/personal-loan/hdfc-ltd')); ?>">HDFC</a></li>
 					<li><a href="<?php echo e(URL::to('loan-details/personal-loan/bajaj-finance')); ?>">Bajaj Finance</a></li>
 					<li><a href="<?php echo e(URL::to('loan-details/personal-loan/capital-first')); ?>">Capital First </a></li>
           <li><a href="<?php echo e(URL::to('loan-details/personal-loan/fullerton')); ?>">Fullerton India</a></li>
 					<li><a href="<?php echo e(URL::to('loan-details/personal-loan/icici')); ?>">ICICI Bank</a></li>
-					<li><a href="<?php echo e(URL::to('loan-details/personal-loan/kotak-mahindra')); ?>">Kotak Mahindra</a> </li>
+					<li><a href="<?php echo e(URL::to('loan-details/personal-loan/kotak-mahindra')); ?>">Kotak Mahindra</a></li>
 					<li><a href="<?php echo e(URL::to('loan-details/personal-loan/tata-capital')); ?>">Tata Capital</a></li>
-
                  </ul>
 
 			</div>
@@ -66,8 +63,10 @@
 					<!-- <li><a href="<?php echo e(URL::to('loan-details/business-loan/YES-BANK')); ?>">Yes Bank</a></li> -->
 					<li><a href="<?php echo e(URL::to('loan-details/business-loan/bajaj-finance')); ?>">Bajaj Finance</a></li>
                     <li><a href="<?php echo e(URL::to('loan-details/business-loan/lendingkart')); ?>">Lendingkart</a></li>
-                    <li><a href="<?php echo e(URL::to('loan-details/business-loan/fullerton')); ?>">Fullerton India </a></li>                                                              
+                    <li><a href="<?php echo e(URL::to('loan-details/business-loan/fullerton')); ?>">Fullerton India </a></li>
+                                                                       
 				</ul>
+
 			</div>
 
 			<div class="col-md-3 col-md-push-1 col-sm-12 col-sm-push-0 col-xs-12 col-xs-push-0">
@@ -88,7 +87,7 @@
                 
                 <p class="white-txt"><b>Appointment Now</b></p>
 				
-            <p class="mrg-btm"><a href="<?php echo e(URL::to('contact-us')); ?>" class="white-txt"><b>1800-267-629-6</b></a></p>
+            <p class="mrg-btm white-txt"><b>1800-267-629-6</b></p>
 			<span class="mrg-btm white-txt"><i class="icon-envelope"></i>&nbsp;wecare(@)rupeeboss(.)com</span>
 			</div>
 			
@@ -182,7 +181,5 @@
 
   </div>
 </div>
-
-
 
 <?php echo $__env->make('layout.login_modal', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

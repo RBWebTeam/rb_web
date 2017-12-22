@@ -52,9 +52,11 @@
 		<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3770.51082761713!2d72.8894307!3d19.0852334!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c87d64ffffff%3A0x52070606740f342d!2sRupeeBoss+financial+Services+Pvt.+ltd!5e0!3m2!1sen!2s!4v1492498308982" width="100%" height="350" frameborder="0" style="border:0" allowfullscreen></iframe>
 		</div>
 	</div>
-
+<button class="btn btn-default" data-toggle="modal" data-target="#equifax_modal" >Model Popup</button>
 </div>
 <br>
+
+
 <?php echo $__env->make('layout.footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 <?php echo $__env->make('layout.script', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 

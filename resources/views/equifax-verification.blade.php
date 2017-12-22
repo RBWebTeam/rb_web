@@ -1,5 +1,5 @@
 @include('layout.header')
-<br>
+
 <div id="fh5co-hero" class="equifax-bg">
     <div class="container">
     <br>
@@ -18,7 +18,7 @@
     <img src="images/verification_img.png" class="img-align-center"/>
     <input type="text" name="mobile" id="mobile" placeholder="9XXXX XXXXX" onkeypress="return fnAllowNumeric(event)" maxlength="10" class="eqfx-input"/>
 
-    <a class="btn btn-danger btn-outline with-arrow animate-box fadeInUp animated" id="equifax_get_otp">Get OTP<i class="icon-arrow-right"></i></a>
+    <a class="btn btn-danger btn-outline with-arrow animate-box fadeInUp animated otp-btn" id="equifax_get_otp">Get OTP<i class="icon-arrow-right"></i></a>
     <span id="mobile_value" style="display: none;color: red;">Phone number should be of 10 digits.</span>
     </div>
     <br>
@@ -46,7 +46,7 @@
     </div>
     </div>
 
-<br>
+
 @include('layout.footer')
 @include('layout.script')
 

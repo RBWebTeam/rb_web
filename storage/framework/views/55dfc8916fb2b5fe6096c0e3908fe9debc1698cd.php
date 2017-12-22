@@ -1,17 +1,18 @@
-@include('layout.header')
+<?php echo $__env->make('layout.header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 <br>
 <div class="container" id="fh5co-hero">
 
 <div class="row white-bg pad1">
 		<div class="col-sm-5">
-			<img src="{{URL::to('images/contact_img.jpg')}}" alt="Contact Us" title="Contact Us" class="img-responsive">
+			<img src="<?php echo e(URL::to('images/contact_img.jpg')); ?>" alt="Contact Us" title="Contact Us" class="img-responsive">
 		</div>
 		<div  class="col-sm-6">
 			<h2 class="">Have us call you now.</h2>
 			<h3>Your contact details:</h3>
 			<div class="row">
 			<form name="contact_back_now" id="subscribe-form" method="post"> 
-                   {{ csrf_field() }}
+                   <?php echo e(csrf_field()); ?>
+
                 <input type="hidden" name="form" value="contact-back-form">
                         
                     <div class="form-group col-sm-12">
@@ -34,7 +35,7 @@
 
                   
                     <div class="iframeloading" style= "display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
-                <img src="{{URL::to('images/ajaxloader.gif')}}" alt="Loader" title="Loader" style="top: 50%; position: relative; left: 50%;"  />
+                <img src="<?php echo e(URL::to('images/ajaxloader.gif')); ?>" alt="Loader" title="Loader" style="top: 50%; position: relative; left: 50%;"  />
                </div> 
             </form>
             
@@ -51,10 +52,11 @@
 		<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3770.51082761713!2d72.8894307!3d19.0852334!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c87d64ffffff%3A0x52070606740f342d!2sRupeeBoss+financial+Services+Pvt.+ltd!5e0!3m2!1sen!2s!4v1492498308982" width="100%" height="350" frameborder="0" style="border:0" allowfullscreen></iframe>
 		</div>
 	</div>
+<button class="btn btn-default" data-toggle="modal" data-target="#equifax_modal" >Model Popup</button>
 </div>
 <br>
 
 
-@include('layout.footer')
-@include('layout.script')
+<?php echo $__env->make('layout.footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php echo $__env->make('layout.script', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 

@@ -11,7 +11,8 @@
         </div>
         <div class="modal-body">
           <form name="talk_to_us_form" id="talk_to_us_form" method="post">
-          {{ csrf_field() }}
+          <?php echo e(csrf_field()); ?>
+
           <input type="hidden" name="form" value="talk_to_us_form">
                   <div>
                     <fieldset>
@@ -51,7 +52,8 @@
         </div>
         <div class="modal-body">
           <form name="email_us_form" id="email_us_form" method="post">
-          {{ csrf_field() }}
+          <?php echo e(csrf_field()); ?>
+
           <input type="hidden" name="form" value="email_us_form">
                   <div>
                     <fieldset>
@@ -90,7 +92,8 @@
         </div>
         <div class="modal-body">
           <form name="help_form" id="help_form" method="post">
-          {{ csrf_field() }}
+          <?php echo e(csrf_field()); ?>
+
           <input type="hidden" name="form" value="help_form">
                   <div>
                     <fieldset>
@@ -133,7 +136,8 @@
           
           <h4 class="modal-title"><b>Would You Like To Borrow</b></h4>
         </div>
-          {{ csrf_field() }}
+          <?php echo e(csrf_field()); ?>
+
           <input type="hidden" name="form" value="balance_transfer_borrow_home_form">
           <input type="hidden" name="Principal_Amt" class="Principal_Amt" value="">
           <input type="hidden" name="Interest_Rate" class="Interest_Rate" value="">
@@ -158,7 +162,7 @@
                      <button class="btn btn-primary btn-outline with-arrow sidebar-submit">Submit<i class="icon-arrow-right"></i></button>
                   </div>
                   <div class="iframeloading" style= "display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
-                <img src="{{URL::to('images/ajaxloader.gif')}}" alt="Loader" title="Loader" style="top: 50%; position: relative; left: 50%;"  />
+                <img src="<?php echo e(URL::to('images/ajaxloader.gif')); ?>" alt="Loader" title="Loader" style="top: 50%; position: relative; left: 50%;"  />
                </div>
             </form>
             <div class='msg displaynone' ><b>Thanks.We will reach you soon.</b></div>
@@ -190,7 +194,8 @@
           <input type="hidden" name="Interest_Rate" class="Interest_Rate" value="">
           <input type="hidden" name="Remaining_Tenure" class="Remaining_Tenure" value="">
          
-          {{ csrf_field() }}
+          <?php echo e(csrf_field()); ?>
+
           
                   <div>
                     <fieldset>
@@ -211,7 +216,7 @@
                      <button class="btn btn-primary btn-outline with-arrow sidebar-submit">Submit<i class="icon-arrow-right"></i></button>
                   </div>
                   <div class="iframeloading" style= "display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
-                <img src="{{URL::to('images/ajaxloader.gif')}}" alt="Loader" title="Loader" style="top: 50%; position: relative; left: 50%;"  />
+                <img src="<?php echo e(URL::to('images/ajaxloader.gif')); ?>" alt="Loader" title="Loader" style="top: 50%; position: relative; left: 50%;"  />
                </div>
             </form>
             <div class='msg displaynone'><b>Thanks.We will reach you soon.</b></div>
@@ -243,7 +248,8 @@
           <input type="hidden" name="Interest_Rate" class="Interest_Rate" value="">
           <input type="hidden" name="Remaining_Tenure" class="Remaining_Tenure" value="">
           
-          {{ csrf_field() }}
+          <?php echo e(csrf_field()); ?>
+
           
                   <div>
                     <fieldset>
@@ -264,7 +270,7 @@
                      <button class="btn btn-primary btn-outline with-arrow sidebar-submit">Submit<i class="icon-arrow-right"></i></button>
                   </div>
                   <div class="iframeloading" style= "display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
-                <img src="{{URL::to('images/ajaxloader.gif')}}" alt="Loader" title="Loader" style="top: 50%; position: relative; left: 50%;"  />
+                <img src="<?php echo e(URL::to('images/ajaxloader.gif')); ?>" alt="Loader" title="Loader" style="top: 50%; position: relative; left: 50%;"  />
                </div>
             </form>
 
@@ -289,7 +295,8 @@
         </div>
         <div class="modal-body">
           <form name="talk_to_us_RM_form" id="talk_to_us_RM_form" method="post">
-          {{ csrf_field() }}
+          <?php echo e(csrf_field()); ?>
+
           <input type="hidden" name="form" value="talk_to_us_RM_form">
                   <div>
                     <fieldset>
@@ -446,7 +453,8 @@ Rupeeboss Financial Services Private Limited shall access your Credit Informatio
 </div>
 <div id="tribe_doc_upload_modal" class="modal fade" role="dialog">
 <form id="kyc_form" name="kyc_form" enctype="multipart/form-data" >
-        {{ csrf_field() }}
+        <?php echo e(csrf_field()); ?>
+
     <input type="hidden" name="tribe_id" class="tribe_id">
     <input type="hidden" name="uplaoding_doc_name" id="uplaoding_doc_name">
   <div class="modal-dialog">
@@ -525,7 +533,8 @@ Rupeeboss Financial Services Private Limited shall access your Credit Informatio
         </div>
         <div class="modal-body">
           <form name="working_capital_form" id="working_capital_form" method="post">
-          {{ csrf_field() }}
+          <?php echo e(csrf_field()); ?>
+
           <input type="hidden" name="form" value="working_capital">
                   <div>
                     <fieldset>
@@ -583,7 +592,7 @@ Rupeeboss Financial Services Private Limited shall access your Credit Informatio
                 
                   <div>
                     <fieldset>
-                      <div class="text-center">Your Score is<h2 id="equi_score" style="font-size:80px !important;"></h2></div>
+                      <div class="text-center">Your Score is<h2 id="equi_score" style="font-size:80px !important;">768</h2></div>
                     </fieldset>
                     </div>
                  

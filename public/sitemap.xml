@@ -16,16 +16,20 @@
   <loc>http://www.rupeeboss.com/contact-us</loc>
 </url>
 <url>
-  <loc>http://www.rupeeboss.com/rba-login</loc>
+  <loc>http://www.rupeeboss.com/rblife-style/</loc>
 </url>
 <url>
-  <loc>http://www.rupeeboss.com/rblife-style/</loc>
+  <loc>http://www.rupeeboss.com/elite/</loc>
+  <lastmod>2017-08-09T07:14:12+00:00</lastmod>
 </url>
 <url>
   <loc>http://www.rupeeboss.com/magic-link</loc>
 </url>
 <url>
   <loc>http://www.rupeeboss.com/credit-report</loc>
+</url>
+<url>
+  <loc>http://www.rupeeboss.com/track-application</loc>
 </url>
 <url>
   <loc>http://www.rupeeboss.com/business-loan</loc>
@@ -37,7 +41,10 @@
   <loc>http://www.rupeeboss.com/loan-against-property?commercial</loc>
 </url>
 <url>
-  <loc>http://www.rupeeboss.com/new-working-capital</loc>
+  <loc>http://www.rupeeboss.com/loan-against-property?lease</loc>
+</url>
+<url>
+  <loc>http://www.rupeeboss.com/sme-working-capital</loc>
 </url>
 <url>
   <loc>http://www.rupeeboss.com/home-loan</loc>
@@ -58,19 +65,19 @@
   <loc>http://www.rupeeboss.com/credit-card</loc>
 </url>
 <url>
-  <loc>http://www.rupeeboss.com/home-loan-transfer/home-loan</loc>
+  <loc>http://www.rupeeboss.com/balance-transfer/home-loan</loc>
 </url>
 <url>
-  <loc>http://www.rupeeboss.com/home-loan-transfer/personal-loan</loc>
+  <loc>http://www.rupeeboss.com/balance-transfer/personal-loan</loc>
 </url>
 <url>
-  <loc>http://www.rupeeboss.com/home-loan-transfer/loan-against-property-loan</loc>
+  <loc>http://www.rupeeboss.com/balance-transfer/loan-against-property-loan</loc>
 </url>
 <url>
-  <loc>http://www.rupeeboss.com/working-capital</loc>
+  <loc>http://www.rupeeboss.com/balance-transfer/working-capital</loc>
 </url>
 <url>
-  <loc>http://www.rupeeboss.com/check-emi</loc>
+  <loc>http://www.rupeeboss.com/calculators</loc>
 </url>
 <url>
   <loc>http://www.rupeeboss.com/comfy</loc>
@@ -229,19 +236,43 @@
   <loc>http://www.rupeeboss.com/credit-card-compare/rbl</loc>
 </url>
 <url>
-  <loc>http://www.rupeeboss.com/credit-card-compare/icici</loc>
+  <loc>http://www.rupeeboss.com/icici</loc>
 </url>
 <url>
   <loc>http://www.rupeeboss.com/credit-card-compare/hdfc</loc>
 </url>
 <url>
+  <loc>http://www.rupeeboss.com/check-emi</loc>
+</url>
+<url>
+  <loc>http://www.rupeeboss.com/personal-loan-calculator</loc>
+</url>
+<url>
+  <loc>http://www.rupeeboss.com/home-loan-calculator</loc>
+</url>
+<url>
+  <loc>http://www.rupeeboss.com/business-loan-calculator</loc>
+</url>
+<url>
+  <loc>http://www.rupeeboss.com/working-capital-emi-calculator</loc>
+</url>
+<url>
+  <loc>http://www.rupeeboss.com/coming-soon</loc>
+</url>
+<url>
   <loc>http://www.rupeeboss.com/tribe</loc>
 </url>
 <url>
-  <loc>http://www.rupeeboss.com/apply-express-loan</loc>
+  <loc>http://www.rupeeboss.com/edelweiss</loc>
 </url>
 <url>
-  <loc>http://www.rupeeboss.com/edelweiss</loc>
+  <loc>http://www.rupeeboss.com/apply-iifl-loan</loc>
+</url>
+<url>
+  <loc>http://www.rupeeboss.com/lendingkart</loc>
+</url>
+<url>
+  <loc>http://www.rupeeboss.com/early-salary</loc>
 </url>
 <url>
   <loc>http://www.rupeeboss.com/rblife-style/index.php</loc>

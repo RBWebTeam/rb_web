@@ -145,7 +145,6 @@ Route::get('early-salary','LoanController@early_salary');
 Route::post('early-salary-submit','LoanController@early_salary_submit');
 Route::get('application-form','NewProcessController@application_form');
 Route::post('application-submit','NewProcessController@application_submit');
-
 Route::get('tata-capital-business-loan','TataCapitalLoanController@tata_capital_business_loan');
 Route::post('tata-capital-business-submit','TataCapitalLoanController@tata_capital_business_submit');
 Route::get('searchtatacityajax',array('as'=>'searchtatacityajax','uses'=>'AutoCompleteController@autoComplete_tata_bl_city'));
@@ -404,3 +403,6 @@ Route::get('excel-upload','LoanController@excel_upload');
 Route::post('excel-upload-submit','LoanController@excel_upload_submit');
 Route::get('equifax1','EquifaxController@equifax');
 Route::post('equifax-query','EquifaxController@equifax_query');
+
+/*Capital Float*/
+Route::get('capitalfloat','LoanController@capitalfloat');

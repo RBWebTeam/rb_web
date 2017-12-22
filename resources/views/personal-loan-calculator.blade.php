@@ -5,8 +5,8 @@
                          <div class="container">
                           <div class="row">
                         <center>
-                        <h1 class="loan-head">Personal Loan EMI Calculator</h1>
-                        <p class="sub-title"></p><h4>Calculate your Personal Loan EMI and Eligibility Status Due in a snap! <i class="fa fa-calculator" style="color:#000000" aria-hidden="true"></i></h4><p></p>
+                        <h1 class="loan-head" >Personal Loan EMI Calculator</h1>
+                        <p class="sub-title"><h4>Calculate your Personal Loan EMI and Eligibility Status Due in a snap! <i class="fa fa-calculator" style="color:#000000" aria-hidden="true"></i></h4></p>
                       </center>
                       <div class="col-md-3"></div>
                             <div class="col-md-6 box-shadow brdr-blue">

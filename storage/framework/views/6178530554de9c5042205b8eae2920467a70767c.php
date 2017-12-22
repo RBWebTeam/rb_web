@@ -19,7 +19,7 @@
                     <li>Convenient loan repayment option of 12 to 60 months.</li>
                     <li>No security or collateral required to avail this loan.</li>
                    <li> Simplified and quick documentation.</li>
-                    <li>Attractive interest rates from 14.5% p.a. up to 23% p.a.</li>
+                    <li>Attractive interest rates from 9% p.a.onwards.</li>
                     <li>Hassle-free loan sanction and disbursal procedure.</li>
                     <li>Representative example: Borrowing Rs. 5,00,000 at 16% interest rate and repaying over a tenure of 4 years with 48 monthly repayments of Rs 14,170.</li>
 				</ul>
@@ -27,6 +27,7 @@
 				</div>
 				
 				<div class="col-md-6">
+				
 					<div class="row text-left rate box-shadow pad1 white-bg mrg-btm">
 				
 					<form class="rbl_personal_loan_form" id="rbl_personal_loan_form" role="form" method="POST">
@@ -34,6 +35,11 @@
 					<div class="form-group">
 					<h4 class="hdr pad1 text-center">&nbsp;&nbsp;&nbsp;&nbsp;Your Loan Quote in Under 1 Minute.</h4>
 					<br>
+					<?php if(isset($_GET['source'])){?>
+                            <input type="text" name="source" id="source" value="<?php echo isset($_GET['source'])?$_GET['source']:'';?>">
+                            <?php }else{?>
+                            <input type="text" name="source" id="source" value="">
+                            <?php }?>
 					<div class="col-md-6 col-xs-6">
 					<select class="form-control drop-arr select-sty" name="city" id="city">
 					  <option disabled selected value="">City</option>

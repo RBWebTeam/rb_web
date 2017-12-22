@@ -19,7 +19,7 @@
                     <li>Convenient loan repayment option of 12 to 60 months.</li>
                     <li>No security or collateral required to avail this loan.</li>
                    <li> Simplified and quick documentation.</li>
-                    <li>Attractive interest rates from 14.5% p.a. up to 23% p.a.</li>
+                    <li>Attractive interest rates from 9% p.a.onwards.</li>
                     <li>Hassle-free loan sanction and disbursal procedure.</li>
                     <li>Representative example: Borrowing Rs. 5,00,000 at 16% interest rate and repaying over a tenure of 4 years with 48 monthly repayments of Rs 14,170.</li>
 				</ul>

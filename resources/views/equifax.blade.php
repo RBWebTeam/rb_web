@@ -240,7 +240,7 @@ textarea {margin-bottom:15px;border:1px solid #ddd;}
 	<div class="register-full">
 		
 		
-		<form id="equifax_form"   method="POST" action="{{url('equifax-query')}}">
+		<form id="equifax_form" method="POST" >
 		 {{ csrf_field() }}
 		 
 	
@@ -285,7 +285,9 @@ textarea {margin-bottom:15px;border:1px solid #ddd;}
 								<label>Last Name</label>
 								<span></span>
 					    </div>
-					    <div class="styled-input col-md-6 drop-arr">
+
+					    
+								 <div class="styled-input col-md-6 drop-arr">
 								<SELECT name="MaritalStatus" id="MaritalStatus" required>
 									<option selected value=""  disabled>Marital Status</option>
 									<option value="single">Single</option>
@@ -465,25 +467,51 @@ textarea {margin-bottom:15px;border:1px solid #ddd;}
 					
 					
 					<div class="col-md-12 address"><h4><b>Consumer ID And Personal Information</b></h4>
-                    <h6 class="text-danger text-sm">* Atleast one of the Personal IDs or Phone Numbers is mandatory.</h6>
+                    <!-- <h6 class="text-danger text-sm">* Atleast one of the Personal IDs or Phone Numbers is mandatory.</h6> -->
                     <br />
 					</div>
 					
 						      <div class="styled-input col-md-6">
-								<input type="text" name="PANId" id="PANId" required minlength="10" maxlength="20">
+								<input type="text" name="PANId" id="PANId" oninput="pancard('PANId')" required maxlength="10">
+								<span id="pannumber" style="display:none;color: red; font-size: 10px;">Oops.Please Enter Valid Pan Number.!!</span>
 								<label>TAX ID / PAN</label>
 								<span></span> 
 								</div>	
 							<div class="styled-input col-md-6">
 								<input type="text" name="PassportId" id="PassportId" minlength="7" maxlength="20" >
-								<label>Passport ID*</label>
+								<label>Passport ID</label>
 								<span></span> 
 								</div>
 							<div class="styled-input col-md-6">
-								<input type="text" name="VoterId" id="VoterId" minlength="10" maxlength="20" >
-								<label>Voter ID*</label>
+								<input type="text" name="VoterId" id="VoterId" oninput="voterid('VoterId')"  maxlength="10">
+								<span id="voternumber" style="display:none;color: red; font-size: 10px;">Oops.Please Enter Valid VoterId Number.!!</span>
+								<label>Voter ID</label>
 								<span></span> 
 								</div>
+
+								<div class="styled-input col-md-6">
+								<input type="text" name="DriverLicense" id="DriverLicense" maxlength="20" >
+								<label>Driving License</label>
+								<span></span> 
+								</div>
+
+								<div class="styled-input col-md-6">
+								<input type="text" class="lastReporteddob" name="DOB" id="DOB" required>
+								<!-- <label>DD/MM/YY</label> -->
+								<label>Date Of Birth</label>
+								<span></span> 
+								</div>
+					   
+					    <div class="styled-input col-md-6">
+							
+								<select name="Gender" class="drop-arr select-sty" id="Gender" required >
+								 <option disabled selected value="" class="text-danger">Gender</option>
+                                 <option value="1">Male</option>
+								 <option value="2">Female</option>
+								</select>
+							</div>
+							
+
 								<div class="styled-input col-md-6 drop-arr">
 								<select name="PhoneType" required>
 							   		<option disabled selected value="" >Select Phone Type</option>
@@ -492,49 +520,36 @@ textarea {margin-bottom:15px;border:1px solid #ddd;}
 			                        @endforeach
 							   	</select>
 								</div>
-							<div class="styled-input col-md-6">
-								<input type="text" name="HomePhone" id="HomePhone" onkeypress="return Numeric(event)" required minlength="5" maxlength="12" >
-								<label>Phone (Home)</label>
-								<span></span> 
-								</div>
+							
 							<div class="styled-input col-md-6">
 								<input type="text" name="MobilePhone" id="MobilePhone" minlength="10" maxlength="12" onkeypress="return Numeric(event)" required>
 								<label>Phone (Mobile)</label>
 								<span></span> 
 								</div>
-							<div class="styled-input col-md-6">
+
+								<div class="styled-input col-md-6">
+								<input type="text" name="HomePhone" id="HomePhone" onkeypress="return Numeric(event)" minlength="5" maxlength="12" >
+								<label>Phone (Home)</label>
+								<span></span> 
+								</div>
+							<div class="styled-input col-md-6" style="display: none;">
 								<input type="text" name="" id="" onkeypress="return Numeric(event)"  >
 								<label>Phone (Other)</label>
 								<span></span> 
 								</div>
-							<div class="styled-input col-md-6">
-								<input type="text" name="DriverLicense" id="DriverLicense" maxlength="20" >
-								<label>Driver Licence</label>
-								<span></span> 
-								</div>
-							<div class="styled-input col-md-6">
+							
+							<div class="styled-input col-md-6" style="display: none;">
 								<input type="text" name="NationalIdCard" id="NationalIdCard" maxlength="20" >
 								<label>National ID Card (UIN)</label>
 								<span></span> 
 								</div>
-							<div class="styled-input col-md-6">
+							<div class="styled-input col-md-6" style="display: none;">
 								<input type="text" name="RationCard" id="RationCard" maxlength="20" >
 								<label>Ration Card </label>
 								<span></span> 
 								</div>
-							<div class="styled-input col-md-6">
-								<input type="date" name="DOB" id="DOB" required>
-								<!-- <label>DD/MM/YY</label> -->
-								<span></span> 
-								</div>
-							<div class="styled-input col-md-6">
 							
-								<select name="Gender" class="drop-arr select-sty" id="Gender" required >
-								 <option disabled selected value="" class="text-danger">Gender</option>
-                                 <option value="1">Male</option>
-								 <option value="2">Female</option>
-								</select>
-							</div>
+							
 						<br>
 
 			
@@ -589,12 +604,15 @@ textarea {margin-bottom:15px;border:1px solid #ddd;}
 		
 		</div>
 		<div class="col-md-12 white-bg flt-left"><div class="col-md-4"></div><div class="col-md-4 col-xs-12">
-		<!-- 	<a class="btn btn-danger block col-xs-12 btn-outline  mrg-top mrg-btm " id="early_salary_submit">Submit</a> --> 
+			<a class="btn btn-danger block col-xs-12 btn-outline  mrg-top mrg-btm " id="equifax_submit">Submit</a> 
 		<!-- <a href="#"><input type="submit" name="submit" value="submit" class="btn btn-danger btn-outline with-arrow animate-box fadeInUp animated" ><i class="icon-arrow-right"></i></a>-->
 
-		<input type="submit" name="submit" value="submit" class="btn btn-danger btn-outline animate-box fadeInUp animated otp-btn">
-
+		<!-- <input type="submit" name="submit" value="submit" class="btn btn-danger btn-outline animate-box fadeInUp animated otp-btn">
+ -->
 		</div></div>
+		<div class="iframeloading" style= "display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
+		  <img src="{{URL::to('images/ajaxloader.gif')}}" alt="Loader" title="Loader" style="top: 50%; position: relative; left: 50%;"  />
+		 </div>
 
 	 
 		
@@ -640,6 +658,111 @@ textarea {margin-bottom:15px;border:1px solid #ddd;}
     }
 
 
+</script>
+
+<script type="text/javascript">
+	function pancard(obj,val){
+		// console.log(obj);
+		if(obj=='PANId' ){
+                   var str =$('#PANId').val();
+                   var pancardPattern = /^([a-zA-Z]{5})(\d{4})([a-zA-Z]{1})$/;
+                   var res = str.match(pancardPattern);
+                   if(res){
+                     // console.log('Pancard is valid one.!!');
+                     	$('#pannumber').hide();
+                     	// $('.credit-submit').show();
+
+                  }else{
+                  	// console.log('Oops.Please Enter Valid Pan Number.!!');
+                  	$('#pannumber').show();
+                  	// $('.credit-submit').hide();
+
+                  	return false;
+                  }
+                  
+	}
+}
+</script>
+
+<script type="text/javascript">
+	function voterid(obj,val){
+		// console.log(obj);
+		if(obj=='VoterId' ){
+                   var str =$('#VoterId').val();
+                   var voteridPattern = /^([a-zA-Z]{3})(\d{7})$/;
+                   var res = str.match(voteridPattern);
+                   if(res){
+                     // console.log('Pancard is valid one.!!');
+                     	$('#voternumber').hide();
+                     	// $('.credit-submit').show();
+
+                  }else{
+                  	// console.log('Oops.Please Enter Valid Pan Number.!!');
+                  	$('#voternumber').show();
+                  	// $('.credit-submit').hide();
+
+                  	return false;
+                  }
+                  
+	}
+}
+</script>
+
+<script type="text/javascript">
+    var d = new Date();
+    var year = d.getFullYear() ;
+    d.setFullYear(year);
+
+    $(".lastReporteddob").datepicker({ dateFormat: "yy-mm-dd",
+      changeMonth: true,
+      changeYear: true,
+      maxDate: year,
+      minDate: "-100Y",
+      yearRange: '-100:' + year + '',
+      defaultDate: d
+    });
+</script>
+
+<script type="text/javascript">
+	$('#equifax_submit').click(function(){
+		
+    
+      if(! $('#equifax_form').valid())
+       {
+              // alert('not valid');
+              return false;
+        }
+        else{
+        
+           $('#equi_score').empty();
+           $('.equi_msg_err').addClass('displaynone');
+           $(".iframeloading").show();
+        $.ajax({  
+         type: "POST",  
+         url: "{{URL::to('equifax-query')}}",
+         data : $('#equifax_form').serialize(),
+         success: function(msg){
+         	 
+         	  json=(msg)
+              if(json.status==1){
+              	$('.equi_doc_link').attr("href","{{URL::to('/uploads/PDF')}}/"+json.name);
+              	$('.equi_doc_link').show();
+              	$('#equi_score').append(json.score[0]);
+              }else{
+              	$('.equi_msg_err').append(json.err);
+              	$('.equi_msg_err').removeClass('displaynone');
+              	$('.equi_doc_link').hide();
+              }
+              
+              $('#equifax_modal').modal('show');
+            
+        },
+
+
+      }); 
+       $(".iframeloading").hide();  
+     }
+	});
 </script>
 
 

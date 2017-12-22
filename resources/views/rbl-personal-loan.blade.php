@@ -30,6 +30,58 @@
 					<div class="row text-left rate box-shadow pad1 white-bg mrg-btm">
 				
 					<form class="rbl_personal_loan_form" id="rbl_personal_loan_form" role="form" method="POST">
+					 <?php
+		          $myString = isset($_GET['referrer']);
+		          if($myString){
+
+		            $myArray = explode('@', $_GET['referrer']);
+		            if(isset($myArray[0])){
+		              Session::put('empid', $myArray[0]);
+		              $empid = Session::get('empid');
+		            }else{
+		              $empid="";
+		            }
+		            if(isset($myArray[1])){
+		             Session::put('brokerid', $myArray[1]);
+		              $brokerid = Session::get('brokerid');
+		            }else{
+		              $brokerid ="";
+		            }
+		            if(isset($myArray[2])){
+		              Session::put('source', $myArray[2]);
+		              $source = Session::get('source');
+
+
+		            }else{
+		               $source="";
+		            }
+		            if(isset($myArray[3])){
+		              Session::put('CampaignName', $myArray[2]);
+		              $campaign = Session::get('CampaignName');
+
+
+		            }else{
+		               $campaign="";
+		            }
+		            if($campaign){
+		              Session::put('CampaignName', $_GET['CampaignName']);
+		            }else{
+		             Session::put('CampaignName', 'Christmas');
+		            }
+		            
+		            //$a= str_replace('�', '', $brokerid);
+		            // echo $empid;
+		             
+		          }else{
+
+
+		            $empid = Session::get('empid')?Session::get('empid'):'MA';
+		            $brokerid =Session::get('brokerid')?Session::get('brokerid'):'MA';
+		            $source =Session::get('source')?Session::get('source'):'MA';
+		            $campaign=Session::get('CampaignName')?Session::get('CampaignName'):'MA';
+		          }
+		          
+		          ?>
 					<div class="row">
 					<div class="form-group">
 					<h4 class="hdr pad1 text-center">&nbsp;&nbsp;&nbsp;&nbsp;Your Loan Quote in Under 1 Minute.</h4>
@@ -193,7 +245,7 @@
 	
 	<div class="col-md-4">
 	<span>Pincode</span>
-	<input type="text" class="form-control" name="ResPIN" id="ResPIN" required/>
+	<input type="text" class="form-control" name="ResPIN" id="ResPIN" maxlength="10" required/>
 	</div>
 	
 	

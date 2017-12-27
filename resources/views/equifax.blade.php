@@ -1,7 +1,7 @@
 @include('layout.header')
 <style>
 #fh5co-hero {
-    padding: 4em 0;
+    padding: 2em 0;
      background: url(../images/bg.jpg);
 	background-attachment:fixed;
 	background-size:cover;
@@ -82,19 +82,48 @@
     color: #8c8c8c;
     background: #f3f3f3;
     padding: 10px;
+    float: left;
+    width: 100%;
 }
  .register input[type="text"],.register input[type="date"],.register input[type="email"],.register input[type="password"],.register input[type="tel"],.register select{
     font-size: 1em;
     color: #333;
-    padding: 0.5em 0em;
-    padding-bottom:0.2em;
+    padding: 0.5em 0.6em;
+    padding-bottom:0.5em;
     border: 0;
     width:100%;
-    border-bottom: 1px solid #dcdcdc;
+    margin-bottom:10px;
+    border: 1px solid #dcdcdc;
     background: none;
     -webkit-appearance: none;
 	outline: none;
 }
+.gen {font-size: 1em;
+    color: #333;
+    padding: 0.5em 0.6em;
+    padding-bottom:0.5em;
+    border: 0;
+    width:100%;
+    margin-bottom:10px;
+    background: none;
+    -webkit-appearance: none;
+	outline: none;}
+input:focus { 
+    outline: none !important;
+    border-color:red;
+    box-shadow: 0 0 5px #ed1f27;
+}
+textarea:focus { 
+    outline: none !important;
+    border-color:red;
+    box-shadow: 0 0 5px #ed1f27;
+}
+select:focus { 
+    outline: none !important;
+    border-color:red;
+    box-shadow: 0 0 5px #ed1f27;
+}
+
 input[type="checkbox"] {
     cursor: pointer;
 }
@@ -119,68 +148,8 @@ input[type="checkbox"] {
 	width:100% !important;
 	margin-left:0 !important;
 }
-.styled-input label {
-	color: #8c8c8c;
-    padding: 0.8em 16px;
-    position: absolute;
-    top:-10px;
-    left: 0;
-    -webkit-transition: all 0.3s;
-    -moz-transition: all 0.3s;
-    transition: all 0.3s;
-    pointer-events: none;
-    font-weight: 400;
-    font-size: .7em;
-    display: block;
-    line-height: 1em;
-}
-.styled-input input ~ span,.styled-input textarea ~ span {
-	display: block;
-    width: 0;
-    height: 2px;
-    background: #333;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    -webkit-transition: all 0.125s;
-    -moz-transition: all 0.125s;
-    transition: all 0.125s;
-}
-.styled-input textarea ~ span { 
-    bottom: 5px; 
-}
-.styled-input input:focus.styled-input textarea:focus { 
-	outline: 0; 
-} 
-.styled-input input:focus ~ span,.styled-input textarea:focus ~ span {
-	width: 100%;
-	-webkit-transition: all 0.075s;
-	-moz-transition: all 0.075s;  
-	transition: all 0.075s; 
-} 
-/*-- //input-effect --*/
-.register-form input[type="submit"] {
-    outline: none;
-    color: #FFFFFF;
-    padding: .3em 3em;
-    font-size: 1.4em;
-    margin: 1em 0 0 0;
-    -webkit-appearance: none;
-    background: #009688;
-    border: 2px solid #009688;
-    cursor: pointer;
-    -webkit-transition: 0.5s all;
-    -moz-transition: 0.5s all;
-    -o-transition: 0.5s all;
-    -ms-transition: 0.5s all;
-    transition: 0.5s all;
-	font-family: 'Yanone Kaffeesatz', sans-serif;
-}
-.register-form input[type="submit"]:hover {
-    background: #FFFFFF;
-	color:#009688;
-	border: 2px solid #009688;
-}
+
+
 input[type="text"] {
     width: 100%;
 }
@@ -199,16 +168,9 @@ input[type="text"] {
 
 /*-- //copyright --*/
 
-@media only screen and (max-width: 768px) {
-.register-right {
-    background: #FFFFFF;
-	 height:auto;
-	 float:left;
-}
-.flt-left {float:left; width:100%;}
-}
+
 textarea {margin-bottom:15px;border:1px solid #ddd;}
-<<<<<<< HEAD
+
 
 .thank-u {margin-bottom:20px;}
 .thank-u .center-img {margin:0 auto; display:block;}
@@ -216,21 +178,29 @@ textarea {margin-bottom:15px;border:1px solid #ddd;}
 .h4-txt {color:#666;}
 .downld-btn {margin:0 auto; display:block; background:#0767b3;padding:10px 20px;; color:#fff;margin-top:20px; margin-bottom:20px;border-radius:40px;-moz-border-radius:40px;-webkit-border-radius:40px;}
 .thank-sig {margin-top:20px;}
-=======
+
 #accordion {
     margin-top: 34px;
     float: left;
     width: 100%;
 }
-<<<<<<< HEAD
->>>>>>> 560e7f34fa662f4ad039d31b3dab64d1f52984c9
-=======
+
 .panel-default > .panel-heading {
     color: #333333;
     background-color: #ffd7d9;
     border-color: #ddd;
 }
->>>>>>> 5b0cf53297b9612faced45ebf614444d68ca2bb3
+.drop-arr {
+    background: #fff url(../images/down_arrow.png) no-repeat center right !important;
+    padding-right:15px;
+}
+textarea {
+   resize: none;
+}
+@media screen and (max-width: 768px) {
+	.col-md-6 {float:left;width:100%;}
+	.alrt-msg {float:left;width:100%;}
+}
 </style>
 
 <div id="fh5co-hero">
@@ -245,7 +215,7 @@ textarea {margin-bottom:15px;border:1px solid #ddd;}
 		 
 	
 			
-			<div class="col-md-12"> 
+			<div class="col-md-12" style="display: none;"> 
 			 <div class="white-bg box-shadow pad thank-u">
 			     <img src="images/thank-you-sign.png" width="80" height="80" class="img-responsive center-img thank-sig"/>
 
@@ -270,32 +240,29 @@ textarea {margin-bottom:15px;border:1px solid #ddd;}
 					<div><h3><b>Report Information</b></h3></div>
 						<div class="col-md-12"><h4><b>Consumer Name And Address</b></h4></div>
 				        
-						<div class="styled-input col-md-6">
-								<input type="text" name="FirstName" id="FirstName" maxlength="40"   onkeypress="return AllowAlphabet(event)" required >
-								<label>First Name</label>
-								<span></span>
+						<div class="col-md-6">
+								<input type="text" name="FirstName" id="FirstName" maxlength="40"   onkeypress="return AllowAlphabet(event)" Placeholder="First Name" required >
+								
 					    </div>
-						<div class="styled-input col-md-6">
-								<input type="text" name="MiddleName" id="MiddleName"  maxlength="40"  onkeypress="return AllowAlphabet(event)" >
-								<label>Middle Name</label>
-								<span></span>
+						<div class="col-md-6">
+								<input type="text" name="MiddleName" id="MiddleName"  maxlength="40"  onkeypress="return AllowAlphabet(event)" Placeholder="Middle Name" >
+								
 					    </div>
-						<div class="styled-input col-md-6">
-								<input type="text" name="LastName" id="LastName" maxlength="40"  onkeypress="return AllowAlphabet(event)" required>
-								<label>Last Name</label>
-								<span></span>
+						<div class="col-md-6">
+								<input type="text" name="LastName" id="LastName" maxlength="40"  onkeypress="return AllowAlphabet(event)" Placeholder="Last Name" required>
+							
 					    </div>
 
 					    
-								 <div class="styled-input col-md-6 drop-arr">
-								<SELECT name="MaritalStatus" id="MaritalStatus" required>
+								 <div class=" col-md-6">
+								<select name="MaritalStatus" class="drop-arr" id="MaritalStatus" required>
 									<option selected value=""  disabled>Marital Status</option>
 									<option value="single">Single</option>
 									<option value="married">Married</option>
 									<option value="divorced">Divorced</option>
-								</SELECT> 
+								</select> 
 					    </div>
-			           <div class="col-md-12"><h6 class="text-danger text-sm">* Atleast one of the Address is Mandatory (marked in RED)</h6></div>
+			           <div class="col-md-12"><h6 class="text-danger text-sm alrt-msg">* Atleast one of the Address is Mandatory (marked in RED)</h6></div>
 					   </div>
 			   
 <div class="panel-group" id="accordion">
@@ -309,11 +276,11 @@ textarea {margin-bottom:15px;border:1px solid #ddd;}
     <div id="collapse1" class="panel-collapse collapse in">
       <div class="panel-body">
       <div class="col-md-12">
-					<textarea placeholder="Address" name="AddressLine[]" required> </textarea>
+					<textarea placeholder="Address" name="AddressLine[]"  required></textarea>
 					
 					 </div>
-					 <div class="styled-input col-md-6 drop-arr">
-				   	<select name="AddressType[]" id="AddressType" required>
+					 <div class="col-md-6">
+				   	<select name="AddressType[]" class="drop-arr" id="AddressType" required>
 				   		<option disabled selected value="" >Select Address Type</option>
 				   		<option value="C">Current or Present</option>
 				   		<option value="P"> Permanent</option>
@@ -321,29 +288,25 @@ textarea {margin-bottom:15px;border:1px solid #ddd;}
 				   		<option value="X">Other or Unspecified</option>
 				   	</select>
 					</div>
-					<div class="styled-input col-md-6">
-								<input type="text" name="Locality1[]" id="Locality1" maxlength="40" required>
-								<label>Locality 1</label>
-								<span></span>
+					<div class="col-md-6">
+								<input type="text" name="Locality1[]" id="Locality1" maxlength="40" Placeholder="Locality 1"  required>
+								
 					  </div>
-					  <div class="styled-input col-md-6">
-								<input type="text" name="Locality2[]" id="Locality2" maxlength="40" required>
-								<label>Locality 2</label>
-								<span></span>
+					  <div class="col-md-6">
+								<input type="text" name="Locality2[]" id="Locality2" maxlength="40" Placeholder="Locality 2"  required>
+								
 					  </div>
-					  <div class="styled-input col-md-6">
-								<input type="text" name="City[]" id="City" required>
-								<label>City</label>
-								<span></span>
+					  <div class="col-md-6">
+								<input type="text" name="City[]" id="City" Placeholder="City" required>
+								
 					  </div>
 					 
-					 <div class="styled-input col-md-6">
-								<input type="text" name="Postal[]" id="Postal" onkeypress="return Numeric(event)" required maxlength="6">
-								<label>Postal Pin</label>
-								<span></span>
+					 <div class="col-md-6">
+								<input type="text" name="Postal[]" id="Postal" onkeypress="return Numeric(event)" required maxlength="6" Placeholder="Postal Pin">
+							
 					  </div>
-				   <div class="styled-input col-md-6 drop-arr">
-				   	<select name="State[]" required>
+				   <div class="col-md-6">
+				   	<select name="State[]" class="drop-arr" required>
 				   		<option disabled selected value="" >Select State</option>
 				   		@foreach($state as $value)
                          <option value="{{$value->state_code}}">{{$value->state_name}}</option>
@@ -367,8 +330,8 @@ textarea {margin-bottom:15px;border:1px solid #ddd;}
 					<textarea placeholder="Address" name="AddressLine[]" maxlength="220"> </textarea>
 					
 					 </div>
-					 <div class="styled-input col-md-6 drop-arr">
-				   	<select name="AddressType[]" id=AddressType>
+					 <div class="col-md-6">
+				   	<select name="AddressType[]" class="drop-arr" id=AddressType>
 				   		<option disabled selected value="" >Select Address Type</option>
 				   		<option value="C">Current or Present</option>
 				   		<option value="P"> Permanent</option>
@@ -376,29 +339,25 @@ textarea {margin-bottom:15px;border:1px solid #ddd;}
 				   		<option value="X">Other or Unspecified</option>
 				   	</select>
 					</div>
-					<div class="styled-input col-md-6">
-								<input type="text" name="Locality1[]" id="Locality1" maxlength="40" >
-								<label>Locality 1</label>
-								<span></span>
+					<div class="col-md-6">
+								<input type="text" name="Locality1[]" id="Locality1" maxlength="40" placeholder="Locality 1">
+								
 					  </div>
-					  <div class="styled-input col-md-6">
-								<input type="text" name="Locality2[]" id="Locality2" maxlength="40" >
-								<label>Locality 2</label>
-								<span></span>
+					  <div class="col-md-6">
+								<input type="text" name="Locality2[]" id="Locality2" maxlength="40" placeholder="Locality 2" >
+								
 					  </div>
-					  <div class="styled-input col-md-6">
-								<input type="text" name="City[]" id="City" maxlength="40" >
-								<label>City</label>
-								<span></span>
+					  <div class="col-md-6">
+								<input type="text" name="City[]" id="City" maxlength="40" placeholder="City">
+								
 					  </div>
 					 
-					 <div class="styled-input col-md-6">
-								<input type="text" name="Postal[]" id="Postal"  maxlength="6">
-								<label>Postal Pin</label>
-								<span></span>
+					 <div class="col-md-6">
+								<input type="text" name="Postal[]" id="Postal"  maxlength="6" placeholder="Postal Pin">
+								
 					  </div>
-				   <div class="styled-input col-md-6 drop-arr">
-				   	<select name="State[]">
+				   <div class="col-md-6">
+				   	<select name="State[]" class="drop-arr">
 				   		<option disabled selected value="" >Select State</option>
 				   		@foreach($state as $value)
                          <option value="{{$value->state_code}}">{{$value->state_name}}</option>
@@ -421,8 +380,8 @@ textarea {margin-bottom:15px;border:1px solid #ddd;}
 					<textarea placeholder="Address" name="AddressLine[]"> </textarea>
 					
 					 </div>
-					 <div class="styled-input col-md-6 drop-arr">
-				   	<select name="AddressType[]" id=AddressType>
+					 <div class="col-md-6">
+				   	<select name="AddressType[]" class="drop-arr" id=AddressType>
 				   		<option disabled selected value="" >Select Address Type</option>
 				   		<option value="C">Current or Present</option>
 				   		<option value="P"> Permanent</option>
@@ -430,29 +389,25 @@ textarea {margin-bottom:15px;border:1px solid #ddd;}
 				   		<option value="X">Other or Unspecified</option>
 				   	</select>
 					</div>
-					<div class="styled-input col-md-6">
-								<input type="text" name="Locality1[]" id="Locality1" maxlength="40" >
-								<label>Locality 1</label>
-								<span></span>
+					<div class="col-md-6">
+								<input type="text" name="Locality1[]" id="Locality1" maxlength="40" placeholder="Locality 1" >
+								
 					  </div>
-					  <div class="styled-input col-md-6">
-								<input type="text" name="Locality2[]" id="Locality2" maxlength="40" >
-								<label>Locality 2</label>
-								<span></span>
+					  <div class="col-md-6">
+								<input type="text" name="Locality2[]" id="Locality2" maxlength="40" placeholder="Locality 2" >
+								
 					  </div>
-					  <div class="styled-input col-md-6">
-								<input type="text" name="City[]" id="City" >
-								<label>City</label>
-								<span></span>
+					  <div class="col-md-6">
+								<input type="text" name="City[]" id="City" placeholder="City">
+								
 					  </div>
 					 
-					 <div class="styled-input col-md-6">
-								<input type="text" name="Postal[]" id="Postal"  maxlength="6" >
-								<label>Postal Pin</label>
-								<span></span>
+					 <div class="col-md-6">
+								<input type="text" name="Postal[]" id="Postal"  maxlength="6" placeholder="Postal Pin">
+								
 					  </div>
-				   <div class="styled-input col-md-6 drop-arr">
-				   	<select name="State[]">
+				   <div class="col-md-6">
+				   	<select name="State[]" class="drop-arr">
 				   		<option disabled selected value="" >Select State</option>
 				   		@foreach($state as $value)
                          <option value="{{$value->state_code}}">{{$value->state_name}}</option>
@@ -471,49 +426,45 @@ textarea {margin-bottom:15px;border:1px solid #ddd;}
                     <br />
 					</div>
 					
-						      <div class="styled-input col-md-6">
-								<input type="text" name="PANId" id="PANId" oninput="pancard('PANId')" required maxlength="10">
+						      <div class="col-md-6">
+								<input type="text" name="PANId" id="PANId" oninput="pancard('PANId')" required maxlength="10" placeholder="TAX ID / PAN">
 								<span id="pannumber" style="display:none;color: red; font-size: 10px;">Oops.Please Enter Valid Pan Number.!!</span>
-								<label>TAX ID / PAN</label>
-								<span></span> 
+								
 								</div>	
-							<div class="styled-input col-md-6">
-								<input type="text" name="PassportId" id="PassportId" minlength="7" maxlength="20" >
-								<label>Passport ID</label>
-								<span></span> 
+							<div class="col-md-6">
+								<input type="text" name="PassportId" id="PassportId" minlength="7" maxlength="20" placeholder="Passport ID">
+								
 								</div>
-							<div class="styled-input col-md-6">
-								<input type="text" name="VoterId" id="VoterId" oninput="voterid('VoterId')"  maxlength="10">
+							<div class="col-md-6">
+								<input type="text" name="VoterId" id="VoterId" oninput="voterid('VoterId')"  maxlength="10" placeholder="Voter ID">
 								<span id="voternumber" style="display:none;color: red; font-size: 10px;">Oops.Please Enter Valid VoterId Number.!!</span>
-								<label>Voter ID</label>
-								<span></span> 
+								
 								</div>
 
-								<div class="styled-input col-md-6">
-								<input type="text" name="DriverLicense" id="DriverLicense" maxlength="20" >
-								<label>Driving License</label>
-								<span></span> 
+								<div class="col-md-6">
+								<input type="text" name="DriverLicense" id="DriverLicense" maxlength="20" placeholder="Driving License">
+								
 								</div>
 
-								<div class="styled-input col-md-6">
-								<input type="text" class="lastReporteddob" name="DOB" id="DOB" required>
-								<!-- <label>DD/MM/YY</label> -->
-								<label>Date Of Birth</label>
-								<span></span> 
+								<div class="col-md-6">
+								<input type="text" class="lastReporteddob" name="DOB" id="DOB" placeholder="Date Of Birth"  required>
+								
 								</div>
 					   
-					    <div class="styled-input col-md-6">
+					    <div class="col-md-6">
 							
-								<select name="Gender" class="drop-arr select-sty" id="Gender" required >
+								<!-- <select name="Gender" class="drop-arr select-sty" id="Gender" required >
 								 <option disabled selected value="" class="text-danger">Gender</option>
                                  <option value="1">Male</option>
 								 <option value="2">Female</option>
-								</select>
+								</select> -->
+								<div class="gen">Male <input type="radio" name="Gender" checked value="1" /> Female <input type="radio" name="Gender" value="2" /></div>
 							</div>
+
 							
 
-								<div class="styled-input col-md-6 drop-arr">
-								<select name="PhoneType" required>
+								<div class="col-md-6">
+								<select name="PhoneType" class="drop-arr" required>
 							   		<option disabled selected value="" >Select Phone Type</option>
 							   		@foreach($phone as $value)
 			                         <option value="{{$value->phone_type_code}}">{{$value->phone_type}}</option>
@@ -521,32 +472,28 @@ textarea {margin-bottom:15px;border:1px solid #ddd;}
 							   	</select>
 								</div>
 							
-							<div class="styled-input col-md-6">
-								<input type="text" name="MobilePhone" id="MobilePhone" minlength="10" maxlength="12" onkeypress="return Numeric(event)" required>
-								<label>Phone (Mobile)</label>
-								<span></span> 
+							<div class="col-md-6">
+								<input type="text" name="MobilePhone" id="MobilePhone" minlength="10" maxlength="12" onkeypress="return Numeric(event)" placeholder="Phone (Mobile)" required>
+							
 								</div>
 
-								<div class="styled-input col-md-6">
-								<input type="text" name="HomePhone" id="HomePhone" onkeypress="return Numeric(event)" minlength="5" maxlength="12" >
-								<label>Phone (Home)</label>
-								<span></span> 
+								<div class="col-md-6">
+								<input type="text" name="HomePhone" id="HomePhone" onkeypress="return Numeric(event)" minlength="5" maxlength="12" placeholder="Phone (Home)" >
+								
 								</div>
-							<div class="styled-input col-md-6" style="display: none;">
+							<div class="col-md-6" style="display: none;">
 								<input type="text" name="" id="" onkeypress="return Numeric(event)"  >
 								<label>Phone (Other)</label>
 								<span></span> 
 								</div>
 							
-							<div class="styled-input col-md-6" style="display: none;">
-								<input type="text" name="NationalIdCard" id="NationalIdCard" maxlength="20" >
-								<label>National ID Card (UIN)</label>
-								<span></span> 
+							<div class="col-md-6" style="display: none;">
+								<input type="text" name="NationalIdCard" id="NationalIdCard" maxlength="20" placeholder="National ID Card (UIN)" >
+								 
 								</div>
-							<div class="styled-input col-md-6" style="display: none;">
-								<input type="text" name="RationCard" id="RationCard" maxlength="20" >
-								<label>Ration Card </label>
-								<span></span> 
+							<div class="col-md-6" style="display: none;">
+								<input type="text" name="RationCard" id="RationCard" maxlength="20" placeholder="Ration Card" >
+								
 								</div>
 							
 							
@@ -554,25 +501,21 @@ textarea {margin-bottom:15px;border:1px solid #ddd;}
 
 			
 			<div class="col-md-12 address"><h4><b>Retail Account No</b></h4></div>
-				      <div class="styled-input col-md-6">
-								<input type="text" name="AccountNumber[0]" id="" maxlength="14"  required>
-								<label>Account Number 01</label>
-								<span></span>
+				      <div class="col-md-6">
+								<input type="text" name="AccountNumber[0]" id="" maxlength="14" placeholder="Account Number 01"  required>
+							
 					    </div>
-						<div class="styled-input col-md-6">
-								<input type="text" name="AccountNumber[1]" id="" maxlength="14"  >
-								<label>Account Number 02</label>
-								<span></span>
+						<div class="col-md-6">
+								<input type="text" name="AccountNumber[1]" id="" maxlength="14" placeholder="Account Number 02"  >
+								
 					    </div>
-						<div class="styled-input col-md-6">
-								<input type="text" name="AccountNumber[2]" id="" maxlength="14" >
-								<label>Account Number 03</label>
-								<span></span>
+						<div class="col-md-6">
+								<input type="text" name="AccountNumber[2]" id="" maxlength="14" placeholder="Account Number 03">
+								
 					    </div>
-						<div class="styled-input col-md-6">
-								<input type="text" name="AccountNumber[3]" id="" maxlength="14" >
-								<label>Account Number 04</label>
-								<span></span>
+						<div class="col-md-6">
+								<input type="text" name="AccountNumber[3]" id="" maxlength="14" placeholder="Account Number 04" >
+							
 					    </div>
 			<div class="fields-grid">
 					
@@ -581,7 +524,7 @@ textarea {margin-bottom:15px;border:1px solid #ddd;}
 								<label>Reference No.</label>
 								<span></span>
 							</div> -->
-							<div class="styled-input col-md-6">
+							<div class="col-md-6">
 							
 								<select name="InquiryPurpose" class="drop-arr select-sty" id="InquiryPurpose"  required >
 								 <option disabled selected value="" class="text-danger">Inquiry Purpose</option>
@@ -591,10 +534,9 @@ textarea {margin-bottom:15px;border:1px solid #ddd;}
 								</select>
 							</div>
 							 
-							 <div class="styled-input col-md-6">
-								<input type="text" name="TransactionAmount" id="TransactionAmount"   onkeypress="return Numeric(event)" required> 
-								<label>Transaction Amount (Rs)</label>
-								<span></span>
+							 <div class="col-md-6">
+								<input type="text" name="TransactionAmount" id="TransactionAmount"   onkeypress="return Numeric(event)" placeholder="Transaction Amount (Rs)" required> 
+								
 							</div>
 
 							
@@ -770,7 +712,4 @@ textarea {margin-bottom:15px;border:1px solid #ddd;}
 
 
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 560e7f34fa662f4ad039d31b3dab64d1f52984c9
+.

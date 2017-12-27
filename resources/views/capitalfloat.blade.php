@@ -144,32 +144,33 @@
                                         </div>
                                         <div class="col-md-4">
                                         <label>Company Turnover For FY 2015-2016</label>
-                                            <input type="text" class="form-control" placeholder="Company Turnover(2015-2016)" name="company_turnover(2015-2016)" id="company_trnovr">
+                                            <input type="text" class="form-control" placeholder="Company Turnover(2015-2016)" name="company_turnover(2015-2016)" id="company_trnovr" onkeypress="return fnAllowNumeric(event)">
                                         </div>
-                                        <div class="col-md-4">
-                                            <input type="text" class="form-control" placeholder="Road No / Area / Locality" name="ResidenceAddress3" id="ResidenceAddress3">
-                                        </div>
-                                        
-                                        <div class="col-md-4">
-                                                <input type="text" id="ResidencePincode" name="ResidencePincode" class="form-control" placeholder="Pincode*" onkeypress="return fnAllowNumeric(event)" maxlength="6" required>
-                                            </div>
-                                        <div class="col-md-4">
-                                            <input type="text" class="form-control search_statenm" placeholder="State*" name="ResidenceState" id="ResidenceState" required>
-                                        </div>
-                                        
-                                        <div class="col-md-4">
-                                            <select class="block drop-arr select-sty" name="type_current" id="type_current" required>
-                                              <option disabled selected value="">Residence Type</option>
-                                             <option value="Owned_by_self/spouse">Owned by self/spouse</option>
-                                              <option value="Owned_by_parents/siblings">Owned by parents/siblings</option>
-                                              <option value="Rented_with_Family">Rented with Family</option>
-                                              <option value="Rented_with_Friends">Rented with Friends</option>
-                                              <option value="Rented_staying_alone">Rented staying alone</option>
-                                              <option value="Paying_guest/Hostel">Paying guest/Hostel</option>
-                                              <option value="Company_Provided">Company Provided</option>
-                                            </select> 
-                                    </div>
 
+                                        <div class="col-md-4">
+                                        <label>Net Profit/Loss For FY 2014-2015</label>
+                                            <input type="text" class="form-control" placeholder="Company Profit/Loss(2014-2015)" name="profit_loss(2014-2015)" id="company_trnovr" onkeypress="return fnAllowNumeric(event)">
+                                        </div>
+                                        
+                                        <div class="col-md-4">
+                                        <label>Net Profit/Loss For FY 2015-2016</label>
+                                            <input type="text" class="form-control" placeholder="Company Profit/Loss(2015-2016)" name="profit_loss(2015-2016)" id="loss_profit" onkeypress="return fnAllowNumeric(event)">
+                                        </div>
+
+                                        <div class="col-md-4">
+                                        <label>Net Profit/Loss For FY 2015-2016</label>
+                                            <input type="text" class="form-control" placeholder="Company Profit/Loss(2015-2016)" name="profit_loss(2015-2016)" id="loss_profit" onkeypress="return fnAllowNumeric(event)">
+                                        </div>
+
+                                        <div class="col-md-4">
+                                        <label>Are You Currently Availing Any Of The Following Credit Facilities For Your Business ?</label>
+                                            <select class="block drop-arr select-sty" name="availing_any_credit" id="availing_any_credit" required multiple>
+                                            <option value="OD/CC">OD/CC</option>
+                                            <option value="Unsecured_business_loan">Unsecured Business Loan</option>
+                                            <option value="Loan_Against_Property">Loan Against Property</option>
+                                            <option value="Auto_Loan">Auto Loan</option>
+                                          </select>
+                                        </div>
                                         </div>
                                         <hr>
                                     </div>

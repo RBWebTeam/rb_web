@@ -592,7 +592,7 @@ Rupeeboss Financial Services Private Limited shall access your Credit Informatio
                 
                   <div>
                     <fieldset>
-                      <div class="text-center">Your Score is<h2 id="equi_score" style="font-size:80px !important;"></h2></div>
+                      <div class="text-center">Your Score is<h2 id="equi_score" style="font-size:80px !important;">768</h2></div>
                     </fieldset>
                     </div>
                  

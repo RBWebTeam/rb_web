@@ -1,4 +1,4 @@
-@include('layout.header')
+<?php echo $__env->make('layout.header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 
 
 <div id="fh5co-hero">
@@ -12,7 +12,7 @@
 					
 </div>
 				<div class="col-md-6">
-              <img src="{{url('images/rbl_personal_loan.jpg')}}"  width="570" class="img-responsive"/>
+              <img src="<?php echo e(url('images/rbl_personal_loan.jpg')); ?>"  width="570" class="img-responsive"/>
 			  <div>
 			    <ul class="text-left pad1 ull">
 				    <li>Loan amount from Rs.1 Lakh up to Rs.20 Lakhs.</li>
@@ -146,7 +146,8 @@
        <div class="col-md-1"></div>
 	<div class="col-md-10 pad-no-mob">
 	 <form id="customer_details_form" method="POST" style="display: none;">
-	  {{ csrf_field() }}
+	  <?php echo e(csrf_field()); ?>
+
 	
 <div class="col-md-12">
 <h2 class="pad">Personal Loan - Customer Details </h2>
@@ -245,7 +246,7 @@
 	
 	<div class="col-md-4">
 	<span>Pincode</span>
-	<input type="text" class="form-control" name="ResPIN" id="ResPIN" maxlength="10" required/>
+	<input type="text" class="form-control" name="ResPIN" id="ResPIN" required/>
 	</div>
 	
 	
@@ -350,7 +351,7 @@
 <a class="btn btn-primary btn-outline with-arrow animate-box fadeInUp animated" id="submit_application">Submit my Application<i class="icon-arrow-right"></i></a>
 </div>
  <div class="iframeloading" style= "display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
-  <img src="{{URL::to('images/ajaxloader.gif')}}" alt="Loader" title="Loader" style="top: 50%; position: relative; left: 50%;"  />
+  <img src="<?php echo e(URL::to('images/ajaxloader.gif')); ?>" alt="Loader" title="Loader" style="top: 50%; position: relative; left: 50%;"  />
  </div>
 </div>
 	</div>
@@ -437,8 +438,8 @@
 			</form>
 </div>
 </div>
-@include('layout.footer')
-@include('layout.script')
+<?php echo $__env->make('layout.footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php echo $__env->make('layout.script', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 
 <!-- modal -->
 <div class="modal fade" tabindex="-1" role="dialog" id="rbl-popup">
@@ -639,7 +640,7 @@
 <script type="text/javascript">   
 
  $.ajax({ 
-   url: "{{URL::to('rbl-city-master')}}",
+   url: "<?php echo e(URL::to('rbl-city-master')); ?>",
    method:"GET",
    success: function(datas)  
    {
@@ -809,7 +810,7 @@
         	  $(".iframeloading").show();
           $.ajax({  
          type: "POST",  
-         url: "{{URL::to('rbl-personal-loan-submit')}}",
+         url: "<?php echo e(URL::to('rbl-personal-loan-submit')); ?>",
          data : $('#customer_details_form').serialize(),
          success: function(msg){
          	$(".iframeloading").hide();
@@ -875,7 +876,7 @@
 
     <script type="text/javascript">   
     $.ajax({ 
-   url: "{{URL::to('rbl-off-city-master')}}",
+   url: "<?php echo e(URL::to('rbl-off-city-master')); ?>",
    method:"GET",
    success: function(datas)  
    {

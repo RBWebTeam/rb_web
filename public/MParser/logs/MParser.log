@@ -208,3 +208,14 @@ Caused by: org.hsqldb.HsqlException: user lacks privilege or object not found: S
 	at org.hsqldb.Session.executeDirectStatement(Unknown Source)
 	at org.hsqldb.Session.execute(Unknown Source)
 	... 9 more
+2017-12-29 15:14:58,856 [main] INFO  com.creditReport.Controller - 
+INFO: Reading the customer type
+2017-12-29 15:14:58,856 [main] INFO  com.creditReport.Controller - INFO: Activating the Retail parser
+2017-12-29 15:14:58,856 [main] INFO  com.creditReport.Controller - INFO: Input file:- xxx.xml
+2017-12-29 15:14:58,872 [main] INFO  com.creditReport.ParseXMLRetail - 2017-12-29 15:14:58  Application Started.
+2017-12-29 15:14:58,872 [main] INFO  com.creditReport.ParseXMLRetail - initial time 1514540698872
+2017-12-29 15:14:59,481 [main] INFO  com.creditReport.ParseXMLRetail - final time 1514540699481
+2017-12-29 15:14:59,481 [main] INFO  com.creditReport.ParseXMLRetail - Total parse time: 0.609s
+2017-12-29 15:14:59,481 [main] INFO  com.creditReport.ParseXMLRetail - complete time 1514540699481
+2017-12-29 15:14:59,481 [main] INFO  com.creditReport.ParseXMLRetail - 2017-12-29 15:14:59  Pdf generation complete.
+2017-12-29 15:14:59,481 [main] INFO  com.creditReport.ParseXMLRetail - Total time: 0.609s

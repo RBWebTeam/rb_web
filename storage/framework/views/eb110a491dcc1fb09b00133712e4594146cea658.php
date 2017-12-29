@@ -592,19 +592,17 @@ Rupeeboss Financial Services Private Limited shall access your Credit Informatio
                 
                   <div>
                     <fieldset>
-                      Your Score is <h2 id="equi_score"></h2>
+                      <div class="text-center">Your Score is<h2 id="equi_score" style="font-size:80px !important;"></h2></div>
                     </fieldset>
                     </div>
                  
-                  <div>
-                      <a class="btn btn-primary btn-outline with-arrow equi_doc_link" >See Full report<i class="icon-arrow-right"></i></a>
-                  </div>
-
+                 
            
-            <div class='msg displaynone' ><p>Thanks. We will reach you soon.</p></div>
+            
             <div class='equi_msg_err displaynone error' ><p>Ooops. Something went wrong.</p></div>
         </div>
         <div class="modal-footer">
+		<a class="btn btn-primary btn-outline with-arrow equi_doc_link pull-left" >See Full report<i class="icon-arrow-right"></i></a>
           <button type="button" class="btn btn-default close1" data-dismiss="modal">Close</button>
         </div>
       </div>

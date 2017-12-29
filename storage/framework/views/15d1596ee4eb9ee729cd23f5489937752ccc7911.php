@@ -283,7 +283,7 @@ textarea {margin-bottom:15px;border:1px solid #ddd;}
     <div id="collapse1" class="panel-collapse collapse in">
       <div class="panel-body">
       <div class="col-md-12">
-					<textarea placeholder="Address" name="AddressLine[]" required> </textarea>
+					<input type="text"  placeholder="Address" name="AddressLine[]" required> </input>
 					
 					 </div>
 					 <div class="styled-input col-md-6 drop-arr">
@@ -338,7 +338,7 @@ textarea {margin-bottom:15px;border:1px solid #ddd;}
       <div class="panel-body">
       	
       	<div class="col-md-12">
-					<textarea placeholder="Address" name="AddressLine[]" maxlength="220"> </textarea>
+					<input type="text"  placeholder="Address" name="AddressLine[]" maxlength="220"> </input>
 					
 					 </div>
 					 <div class="styled-input col-md-6 drop-arr">
@@ -392,7 +392,7 @@ textarea {margin-bottom:15px;border:1px solid #ddd;}
     <div id="collapse3" class="panel-collapse collapse">
       <div class="panel-body">
       	<div class="col-md-12">
-					<textarea placeholder="Address" name="AddressLine[]"> </textarea>
+					<input type="text"  placeholder="Address" name="AddressLine[]"> </input>
 					
 					 </div>
 					 <div class="styled-input col-md-6 drop-arr">
@@ -698,11 +698,12 @@ textarea {margin-bottom:15px;border:1px solid #ddd;}
 	$('#equifax_submit').click(function(){
 		
     
-      // if(! $('#equifax_form').valid())
-      //  {
-      //         // alert('not valid');
-      //   }
-      //   else{
+      if(! $('#equifax_form').valid())
+       {
+              // alert('not valid');
+              return false;
+        }
+        else{
         
            $('#equi_score').empty();
            $('.equi_msg_err').addClass('displaynone');
@@ -711,8 +712,13 @@ textarea {margin-bottom:15px;border:1px solid #ddd;}
          url: "<?php echo e(URL::to('equifax-query')); ?>",
          data : $('#equifax_form').serialize(),
          success: function(msg){
+         	  if (msg.constructor ===  {}.constructor) {
+			        json=msg;
+			    }else{
+			    	json=JSON.parse(msg);
+			    }
          	  
-         	  json=(msg)
+         	  //console.log(json);
               if(json.status==1){
               	$('.equi_doc_link').attr("href","<?php echo e(URL::to('/uploads/PDF')); ?>/"+json.name);
               	$('.equi_doc_link').show();
@@ -729,7 +735,7 @@ textarea {margin-bottom:15px;border:1px solid #ddd;}
 
 
       });   
-     //}
+     }
 	});
 </script>
 

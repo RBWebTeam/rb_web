@@ -113,9 +113,9 @@
         
        if(msg.data=="true"){
         // console.log("yes");
-        alert('OTP verified')
+       
         $('#waiting_div_otp').hide();
-        window.location.href="{{URL::to('equifax1')}}";
+        window.location.href="{{URL::to('equifax')}}";
 
       }else{
         // console.log("no");

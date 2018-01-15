@@ -1854,7 +1854,7 @@ function mobile_valid(element){
         <div class="form-group">        
           <div class="col-sm-offset-3 col-sm-6">
            <span id='msg_err' class= 'displaynonemsg'>oops something went wrong</span>
-         <span class="iframeloading" style= "display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
+         <span class="iframeloading" style= "display: none; position: fixed; top: 0px; left: 0px; width: 100%; height: 100%;">
                 <img src="<?php echo e(URL::to('images/ajaxloader.gif')); ?>" alt="Loader" title="Loader" style="top: 50%; position: relative; left: 50%;"  />
                </span>
            <span id='pwd_match' class= 'displaynonemsg'>Password do not match.</span>

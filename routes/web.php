@@ -395,14 +395,16 @@ Route::get('test-equifax','TestController@test');
 Route::get('equifax-verification','EquifaxController@equifax_verification');
 Route::post('equifax-send-otp','EquifaxController@equifax_send_otp');
 Route::post('equifax-verify','EquifaxController@equifax_verify_otp');
+Route::get('equifax1','EquifaxController@equifax');
+Route::post('equifax-query','EquifaxController@equifax_query');
+Route::get('equifax-test','EquifaxController@equifax_test');
 
 
 
 /*Excel Upload*/
 Route::get('excel-upload','LoanController@excel_upload');
 Route::post('excel-upload-submit','LoanController@excel_upload_submit');
-Route::get('equifax1','EquifaxController@equifax');
-Route::post('equifax-query','EquifaxController@equifax_query');
+
 
 /*Capital Float*/
 Route::get('capitalfloat','LoanController@capitalfloat');

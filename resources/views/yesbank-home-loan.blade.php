@@ -1,64 +1,79 @@
 @include('layout.header')
+<script
+  src="http://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script> 
+ 
+
+<div class="iifl-image">
+    <img src="images/yesbank.png">
+</div>
 
 
-
-<div id="fh5co-hero">
-  <img src="{{URL::to('images/yesbank.png')}}" alt="Yes Bank Home Loan Banner" width="100%" title="Yes Bank Home Loan" class="img-responsive">
-
-  <div class="container">
-    <br>
-<div class="row">
-		
-
-				<div class="row">
-				                  
-									<div class="form-group title-1">
-									 
-                    										<h1 class="loan-head" >Yes Bank Home Loan</h1>
-                    										<div class="col-md-1"></div>
+<div class=" ">
+        <!-- content start -->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="wrapper-content bg-white pinside40">
+                        <div class="section-faq" id="section-faq">
+                            <div class="">
+                                
+                               
+                                <div class="col-md-offset-2 col-md-8 col-sm-12 col-xs-12" >
+                                <div class="mb60  section-title text-center  ">
+                                <h1 class="">
+                                <center>Yes Bank Home Loan</center></h1>
+                                </div>
+                                </div>
+                                
+                                <div class="row">    
+                       
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding-bottom: 20px">
+                    <div class="how-it-block1 bg-boxshadow" style=" min-height: 375px;">
                                         <form id="Yes_Bank_HL_form" name="Yes_Bank_HL_form" method="POST">
                                         {{ csrf_field() }}
-                    										<div class="col-md-10 white-bg pad1 box-shadow">
+                                        <div class="col-md-10 white-bg pad1 box-shadow">
                                         
-                    										
+                                        
 
                                         <div class="col-md-4">
-                                        <span>Lead Type</span>
-                                        <select class="form-control block drop-arr select-sty" name="LeadType" id="LeadType"  required>
+                                        <!-- <span>Lead Type</span> -->
+                                        <select class="form-control drop-arr select-sty" name="LeadType" id="LeadType"  required>
                                             <option disabled selected  value="">Lead Type</option>
                                             <option value="I">Individual</option>
                                             <option  value="C">Company</option>
                                         </select> 
                                         </div>
-										                    <div class="col-md-4">
-										                    <span>Employment Type</span>
-										                    <select class="form-control block drop-arr select-sty" name="EmpType" id="EmpType"  required>
+                                        <div class="col-md-4">
+                                        <!-- <span>Employment Type</span> -->
+                                        <select class="form-control drop-arr select-sty" name="EmpType" id="EmpType"  required>
                                             <option disabled selected  value="">Employment Type</option>
                                             <option  value="1">Salaried</option>
                                             <option  value="2">Self Employed</option>
-						                            </select> 
-						                            </div>
+                                        </select> 
+                                        </div>
 
                             
 
-                    										<div class="col-md-4" style="display: none;" id="first_nm">
-                    										<span>First Name</span>
-                    											<input  type="text" class="form-control" placeholder= "First Name*" name="FirstName" id="FirstName" onkeypress="return AllowAlphabet(event)" maxlength="40" required>
-                    										</div>
-                    										
-										
-                    										<div class="col-md-4 lst-nam" style="display: none;" id="last_nm">
-                    										<span>Last Name</span>
-                    											<input  type="text" class="form-control" placeholder="Last Name*" name="LastName" id="LastName" onkeypress="return AllowAlphabet(event)" maxlength="40"  required>
-                    										</div>
-                    										<div class="col-md-4 lst-nam">
-                    										<span>Company Name</span>
-                    											<input type="text" class="form-control" placeholder="Company Name*" name="CompanyName" id="CompanyName" maxlength="140"  required>
-                    										</div>
+                                        <div class="col-md-4" style="display: none;" id="first_nm">
+                                        <!-- <span>First Name</span> -->
+                                          <input  type="text" class="form-control" placeholder= "First Name*" name="FirstName" id="FirstName" onkeypress="return AllowAlphabet(event)" maxlength="40" required>
+                                        </div>
+                                        
+                    
+                                        <div class="col-md-4 lst-nam" style="display: none;" id="last_nm">
+                                        <!-- <span>Last Name</span> -->
+                                          <input  type="text" class="form-control" placeholder="Last Name*" name="LastName" id="LastName" onkeypress="return AllowAlphabet(event)" maxlength="40"  required>
+                                        </div>
+                                        <div class="col-md-4 lst-nam">
+                                        <!-- <span>Company Name</span> -->
+                                          <input type="text" class="form-control" placeholder="Company Name*" name="CompanyName" id="CompanyName" maxlength="140"  required>
+                                        </div>
 
                                         <div class="col-md-4">
-                                        <span>Company Type</span>
-                                        <select class="form-control block drop-arr select-sty" name="Company_Type" 
+                                        <!-- <span>Company Type</span> -->
+                                        <select class="form-control drop-arr select-sty" name="Company_Type" 
                                         id="Company_Type" required>
                                             <option disabled selected  value="">Company Type</option>
                                             <option value="Central Government">Central Government</option>
@@ -72,26 +87,26 @@
                                         </select> 
                                         </div>
 
-                    										<div class="col-md-4">
-                    										<span>Contact Person</span>
-                    											<input type="text" class="form-control lastReporteddob" id="ContactPerson"  name="ContactPerson" onkeypress="return AllowAlphabet(event)" maxlength="40" placeholder="Contact Person" required>
-                    										</div>
+                                        <div class="col-md-4">
+                                        <!-- <span>Contact Person</span> -->
+                                          <input type="text" class="form-control lastReporteddob" id="ContactPerson"  name="ContactPerson" onkeypress="return AllowAlphabet(event)" maxlength="40" placeholder="Contact Person" required>
+                                        </div>
                                         
                                         <div class="col-md-4">
-                                          <span>Applicant Email</span>
+                                          <!-- <span>Applicant Email</span> -->
                                           <input  type="text" class="form-control" placeholder="Email" name="Email" id="Email" oninput="mail('Email')" required>
                                           <div id="email" style="display:none;color: red; font-size: 10px">Please Enter Valid Email Id.</div>
                                           </div>
 
-                                        <div class="col-md-12"><hr></div>
+                                      
                                          <div class="col-md-4">
-                    										 <span>Loan Amount</span>
-                    											<input type="text" class="form-control " id="LnAmt" name="LnAmt" placeholder="Loan Amount*" onkeypress="return fnAllowNumeric(event)" minlength="1" maxlength="9" required>
-                    										</div>
-                    										<div class="col-md-4">
-                                             <span>Tenure(in years)</span>
-										                        <select class="block drop-arr select-sty" name="TnrYears" id="TnrYears" required>
-						                                <option disabled selected  value="">Tenure Years</option>
+                                         <!-- <span>Loan Amount</span> -->
+                                          <input type="text" class="form-control " id="LnAmt" name="LnAmt" placeholder="Loan Amount*" onkeypress="return fnAllowNumeric(event)" minlength="1" maxlength="9" required>
+                                        </div>
+                                        <div class="col-md-4">
+                                             <!-- <span>Tenure(in years)</span> -->
+                                            <select class="form-control drop-arr select-sty" name="TnrYears" id="TnrYears" required>
+                                            <option disabled selected  value="">Tenure Years</option>
                                             <option value="1">1 Year</option>
                                             <option value="2">2 Year</option>
                                             <option value="3">3 Year</option>
@@ -112,59 +127,64 @@
                                             <option style="display: none;" value="18">18 Year</option>
                                             <option style="display: none;" value="19">19 Year</option>
                                             <option style="display: none;" value="20">20 Year</option>
-						                       
-          						                    </select> 
-          						                    </div>
-                    									  <div class="col-md-4">
-                    										 <span>Pan Card</span>
-                    											<input type="text" class="form-control " id="PAN" name="PAN" placeholder="Pan Card*" oninput="pan_card('PAN')" maxlength="10"  required>
-                    											<span id="pan_number" style="display:none;color: red;">Oops.Please Enter Valid Pan Number.!!</span>
-                    										</div>
-                      										<div class="col-md-4">
-                      										 <span>Residence City</span>
-                      											<!-- <input type="text" class="form-control search_city_kot" id="City" name="City" placeholder="Residence City*"  required>
+                                   
+                                          </select> 
+                                          </div>
+                                        <div class="col-md-4">
+                                         <!-- <span>Pan Card</span> -->
+                                          <input type="text" class="form-control " id="PAN" name="PAN" placeholder="Pan Card*" oninput="pan_card('PAN')" maxlength="10"  required>
+                                          <span id="pan_number" style="display:none;color: red;">Oops.Please Enter Valid Pan Number.!!</span>
+                                        </div>
+                                          <div class="col-md-4">
+                                           <!-- <span>Residence City</span> -->
+                                            <!-- <input type="text" class="form-control search_city_kot" id="City" name="City" placeholder="Residence City*"  required>
                                             <input type="hidden" name="ResCity" id="ResCity"> -->
                                             <select class="form-control drop-arr select-sty" name="ResCity" id="ResCity" style="height: 50px" required>
                                             <option disabled selected value="">CITY</option>
                                             </select>
-                      										</div>
-                      										
-                      										
+                                          </div>
+                                          
+                                          
 
                                             <div class="col-md-4">
-                                           <span>Mobile Number</span>
+                                           <!-- <span>Mobile Number</span> -->
                                             <input type="text" class="form-control" id="Mobile" name="Mobile" placeholder="Mobile*" maxlength="10" onkeypress="return fnAllowNumeric(event)"  required>
                                           </div>
 
                                           <div class="col-md-4">
-                                           <span>Alternate Number</span>
+                                           <!-- <span>Alternate Number</span> -->
                                             <input type="text" class="form-control" id="Alt_Mobile" name="Alt_Mobile" placeholder="Alternate Mobile Number" maxlength="10" onkeypress="return fnAllowNumeric(event)"  >
                                           </div>
 
                                           
 
 
-                      										
-                      										
-                      										<div class="col-md-12">
-                      										<div class="col-md-4"></div>
-                      										<div class="col-md-2"><a class="btn  btn-primary block btn-outline animate-box fadeInUp animated dis-tbl" id="yes-bank-hl-submit">Submit</a></div>
+                                          
+                                          <br>
+                                          <br>
+                                          <div class="col-md-12">
+                                          <div class="col-md-4"></div>
+                                          <div class="col-md-2"><a class="btn  btn-primary block btn-outline animate-box fadeInUp animated dis-tbl" id="yes-bank-hl-submit">Submit</a></div>
 
-                                          
-                                          
                                           <div class="iframeloading" style= "display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
                                           <img src="{{URL::to('images/ajaxloader.gif')}}" alt="Loader" title="Loader" style="top: 50%; position: relative; left: 50%;"  />
                                          </div>
                                          
-                      										</div>
-                      									</div>
+                                          </div>
+                                        </div>
                                         </form>
-			</div>				
-		</div>
-		</div>
-		<br>
-		
-	</div>
+                         </div>       
+    </div>
+    </div>
+    <br>
+    
+  </div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
 
 </div>
 <br>
@@ -388,9 +408,4 @@ $('#LeadType').on('change', function() {
     window.location.href ="{{URL::to('thank-you')}}";
   });
 </script>
-
-
-
-
-
 

@@ -3,13 +3,13 @@
 	
 	<aside id="fh5co-hero">
 	<div class="col-md-12">
-	<!-- <p class="text-left"><a href="{{URL::to('/')}}">Home</a>/{{$id->Product_Name}}</p> -->
+	<p class="text-left"><a href="{{URL::to('/')}}">Home</a>/{{$id->Product_Name}}</p>
 	<h2 class="align-center loan-head">Personal Loan</h2>
 	</div>
 	<div class=""></div>
 	<div class="flexslider col-md-8">
 	<div id="myCarousel" class="carousel slide" data-ride="carousel">
-  <!-- Indicators -->
+ <!--  Indicators -->
   <ol class="carousel-indicators">
     <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
     <li data-target="#myCarousel" data-slide-to="1"></li>

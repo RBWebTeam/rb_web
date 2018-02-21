@@ -129,8 +129,7 @@
         </div>
         <div class="modal-body">
           <form name="borrow_form" id="borrow_form" method="post" >
-        <div class="modal-header">
-          
+        <div class="modal-header">          
           <h4 class="modal-title"><b>Would You Like To Borrow</b></h4>
         </div>
           {{ csrf_field() }}
@@ -144,24 +143,27 @@
                       <input class="newsletter-name" name="name" placeholder="Name" required>
                     </fieldset>
                     </div>
+                    <br>
                      <div>
                     <fieldset>
                       <input type="email" class="newsletter-name" name="email"  required  placeholder="Email address">
                     </fieldset>                 
                     </div>
+                    <br>
                     <div>
                     <fieldset>
                       <input type="text" class="newsletter-name" name="contact" pattern="[789][0-9]{9}" required maxlength="10" placeholder="Mobile Number">
                     </fieldset>                 
                     </div>
+                    <br>
                   <div>
-                     <button class="btn btn-primary btn-outline with-arrow sidebar-submit">Submit<i class="icon-arrow-right"></i></button>
+                     <button class="btn btn-default sidebar-submit">Submit</button>
                   </div>
                   <div class="iframeloading" style= "display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
                 <img src="{{URL::to('images/ajaxloader.gif')}}" alt="Loader" title="Loader" style="top: 50%; position: relative; left: 50%;"  />
                </div>
             </form>
-            <div class='msg displaynone' ><b>Thanks.We will reach you soon.</b></div>
+            <div class='msg displaynone' ><b>Thank You. We will reach you soon.</b></div>
             <div class='msg_err displaynone' ><p>Ooops. Something went wrong.</p></div>
         </div>
         
@@ -197,24 +199,27 @@
                       <input class="newsletter-name" name="name" placeholder="Name" required>
                     </fieldset>
                     </div>
+                    <br>
                      <div>
                     <fieldset>
                       <input type="email" class="newsletter-name" name="email"  required  placeholder="Email address">
                     </fieldset>                 
                     </div>
+                    <br>
                     <div>
                     <fieldset>
                       <input type="text" class="newsletter-name" name="contact" pattern="[789][0-9]{9}" required maxlength="10" placeholder="Mobile Number">
                     </fieldset>                 
                     </div>
+                    <br>
                   <div>
-                     <button class="btn btn-primary btn-outline with-arrow sidebar-submit">Submit<i class="icon-arrow-right"></i></button>
+                     <button class="btn btn-default sidebar-submit">Submit</button>
                   </div>
                   <div class="iframeloading" style= "display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
                 <img src="{{URL::to('images/ajaxloader.gif')}}" alt="Loader" title="Loader" style="top: 50%; position: relative; left: 50%;"  />
                </div>
             </form>
-            <div class='msg displaynone'><b>Thanks.We will reach you soon.</b></div>
+            <div class='msg displaynone'><b>Thank You. We will reach you soon.</b></div>
             <div class='msg_err displaynone' ><p>Ooops. Something went wrong.</p></div>
         </div>
         
@@ -250,25 +255,28 @@
                       <input class="newsletter-name" name="name" placeholder="Name" required>
                     </fieldset>
                     </div>
+                    <br>
                      <div>
                     <fieldset>
                       <input type="email" class="newsletter-name" name="email"  required  placeholder="Email address">
                     </fieldset>                 
                     </div>
+                    <br>
                     <div>
                     <fieldset>
                       <input type="text" class="newsletter-name" name="contact" pattern="[789][0-9]{9}" required maxlength="10" placeholder="Mobile Number">
                     </fieldset>                 
                     </div>
+                    <br>
                   <div>
-                     <button class="btn btn-primary btn-outline with-arrow sidebar-submit">Submit<i class="icon-arrow-right"></i></button>
+                     <button class="btn btn-default sidebar-submit">Submit</button>
                   </div>
                   <div class="iframeloading" style= "display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
                 <img src="{{URL::to('images/ajaxloader.gif')}}" alt="Loader" title="Loader" style="top: 50%; position: relative; left: 50%;"  />
                </div>
             </form>
 
-            <div class='msg displaynone'><b>Thanks.We will reach you soon.</b></div>
+            <div class='msg displaynone'><b>Thank You. We will reach you soon.</b></div>
             <div class='msg_err displaynone' ><p>Ooops. Something went wrong.</p></div>
         </div>
         
@@ -293,25 +301,28 @@
           <input type="hidden" name="form" value="talk_to_us_RM_form">
                   <div>
                     <fieldset>
-                      <input class="newsletter-name" name="name" placeholder="Name" required>
+                      <input class="newsletter-name" name="name" placeholder="Enter Name" required>
                     </fieldset>
                     </div>
+                    <br>
                   <div>
                     <fieldset>
-                      <input type="text" class="newsletter-name" name="contact" pattern="[789][0-9]{9}" required maxlength="10" placeholder="Mobile Number">
+                      <input type="text" class="newsletter-name" name="contact" pattern="[789][0-9]{9}" required maxlength="10" placeholder="Enter Mobile Number">
                     </fieldset>                 
                     </div>
+                    <br>
                     <div>
                     <fieldset>
-                      <input type="email" class="newsletter-name" name="email"  required  placeholder="Email ">
+                      <input type="email" class="newsletter-name" name="email"  required  placeholder="Enter Email ">
                     </fieldset>                 
                     </div>
+                    <br>
                   <div>
-                      <button class="btn btn-primary btn-outline with-arrow sidebar-submit">Submit<i class="icon-arrow-right"></i></button>
+                      <button class="btn btn-default btn-sm sidebar-submit">Submit</button>
                   </div>
 
             </form>
-            <div class='msg displaynone' ><p>Thanks. We will reach you soon.</p></div>
+            <div class='msg displaynone' ><p>Thank You. We will reach you soon.</p></div>
             <div class='msg_err displaynone' ><p>Ooops. Something went wrong.</p></div>
         </div>
         

@@ -1,642 +1,424 @@
 @include('layout.header')
 <div class="container">
-	
-	<aside id="fh5co-hero">
-	<!-- <div class="col-md-12">
-	<h2 class="align-center loan-head">Unsecured Business Loan</h2>
-	</div> -->
- <br>
- <div class="col-md-12 white-bg pad box-shadow">
- <h1 class="text-center loan-head">Unsecured Business Loan</h1>
-<div class="col-md-8" id="mod">
-<form name='business_loan_process_form' id='business_loan_process_form' action={{URL::to('loan-submit')}} method="POST">
-{{ csrf_field() }}  
- <!-- <img src="{{URL::to('images/9.png')}}" alt="Tribe Logo" class="img-responsive" /> -->
- <div class="col-md-6">
-  <div class="col-xs-12 pad-no">
-  
-	 <input type="hidden" id="product" name="product_name" value="13">
-	 <input type="hidden" name="empid" class="empid" value=" <?php echo Session::get('empid')?Session::get('empid'):'';?>">
-          <input type="hidden" name="brokerid" class="brokerid" value="<?php echo Session::get('brokerid')?Session::get('brokerid'):'';?>">
-          <input type="hidden" name="source" class="source" value="<?php echo Session::get('source')?Session::get('source'):'';?>"> 
-          <input type="hidden" name="refapp" class="refapp" value="<?php echo Session::get('refid')?Session::get('refid'):'';?>"> 
+    <aside id="fh5co-hero">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="wrapper-content bg-white pinside40">
+                    <div class="section-faq" id="section-faq">
+                        <div class="">
+                            <h1 class=""><center>Unsecured Business Loan</center></h1>
+                            </br>
+                            <div class="row">
+                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12" style="padding-bottom: 20px">
+                                    <div class="how-it-block1 bg-boxshadow" style=" min-height:auto; float:left;">
+                                        <h4 >Business Information</h4>
+                                        <form name='business_loan_process_form' id='business_loan_process_form' action={{URL::to('loan-submit')}} method="POST">
+                                            <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
+                                            <input type="hidden" id="product" name="product_name" value="13">
+                                            <input type="hidden" name="empid" class="empid" value=" <?php echo Session::get('empid')?Session::get('empid'):'';?>">
+                                            <input type="hidden" name="brokerid" class="brokerid" value="<?php echo Session::get('brokerid')?Session::get('brokerid'):'';?>">
+                                            <input type="hidden" name="source" class="source" value="<?php echo Session::get('source')?Session::get('source'):'';?>"> 
+                                            <input type="hidden" name="refapp" class="refapp" value="<?php echo Session::get('refid')?Session::get('refid'):'';?>"> 
 
-	   <div class="btn-grp mrg-top pad status" data-toggle="buttons">
-	  
-		<center><div class="type-cover"><span>Company Type</span></div></center>
-      <span class="btn btn-default outer-brd mob-blk-dv active"><input type="radio" name="proprietor"  value="Sole Proprietor">Sole Proprietor</span>
-      <span class="btn btn-default outer-brd mob-blk-dv"><input type="radio" name="proprietor"  value="Partnership">Partnership</span>
-      <span class="btn btn-default outer-brd mob-blk-dv"><input  type="radio" name="proprietor"  value="Company" >Company</span>
-      
-      </div>
-		</div>
-		<div class="col-xs-12 pad-no">
-	   <div class="btn-grp pad status" data-toggle="buttons">
-	   <center><div class="type-cover"><span>Business Type</span></div></center>
-      <span class="btn btn-default circle outer-brd active"><input type="radio" name="emp_detail" value="2">Self Employed Non-Professional (SENP)</span>
-      <span class="btn btn-default circle outer-brd"><input type="radio" name="emp_detail" value="2">Self Employed Professional (SEP)</span>
+                                            <div class="col-md-4 col-sm-12 col-xs-12">
+                                            <div class="form-group">
+                                            <select id="proprietor" class="form-control input-md" name="proprietor">
+                                                <option selected disabled="">Company Type</option>
+                                                <option value="Sole Proprietor">Sole Proprietor</option>
+                                                <option value="Partnership">Partnership</option>
+                                                <option value="Company">Company</option>
+                                            </select>
+                                            </div>
+                                            </div>
+                                            
 
-      </div>
-		</div>
-		
-		<div class="col-xs-12 col-md-6 form-padding">
-     <input type="text" class="form-input-new form-control" name="loan_amount" id="loan_amount" minlength="6" maxlength="9" placeholder="Loan Amount" onkeypress="return isNumberKey(event)"  required>
-	</div>
-	<div class="col-xs-12 col-md-6 form-padding">
-	
-     <input class="form-input-new form-control" type="text" id="pan_no" name="pan_no" oninput="pan_card('pan_no')"  placeholder="Pan No" required>
-	 <span id="pan_number"  style="display:none;color: red;font-size:12px;">Enter Valid Pan No.</span>
-     
-	</div>
-  <div class="col-xs-12 col-md-6 form-padding">
-     <input type="text" class="form-input-new form-control lastReporteddate1" name="applicant_dob" id="applicant_dob" placeholder="Date Of Birth"   required>
-  </div>
+                                            <div class="col-md-4 col-sm-12 col-xs-12">
+                                            <div class="form-group">
+                                               <select id="emp_detail" class="form-control input-md" name="emp_detail" >
+                                                <option selected disabled="">Business Type</option>
+                                                <option value="2" >Self Employed Non-Professional (SENP)</option>
+                                                <option value="2">Self Employed Professional (SEP)</option>
+                                                </select>
+                                            </div>
+                                            </div>
 
-  <div class="col-xs-12 col-md-6 form-padding" >
-  
-     <select class="block drop-arr select-sty"  name="loan_tenure" id="loan_tenure" required>
-	  <option value="">Loan Tenure</option>
-	  <option value="1">1 Year</option>
-		<option value="2">2 Year</option>
-		<option value="3">3 Year</option>
-		<option value="4">4 Year</option>
-		<option value="5">5 Year</option>
-	</select>
-  </div>
-  
-  
+                                            <div class="col-md-4 col-sm-12 col-xs-12">
+                                            <div class="form-group">
+                                            <input type="text" class="form-input-new form-control" name="loan_amount" id="loan_amount" minlength="6" maxlength="9" placeholder="Loan Amount" onkeypress="return isNumberKey(event)"  required>
+                                            </div>
+                                            </div>
 
-  
-  
-  <div class="col-md-12 pad-no comp-fin">
-    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                                            <hr style="color:transparent; width:100%" />
+                                            <h4 >Business Details</h4>
 
-        <div class="panel panel-default">
-            <div class="panel-heading" role="tab" id="headingOne">
-                <h4 class="panel-title">
-                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse6" aria-expanded="true" aria-controls="collapse6">
-                        <i class="icon-plus more-less pull-right"></i>
-                        COMPANY FINANCIALS
-                    </a>
-                </h4>
-            </div>
-            <div id="collapse6" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading6">
-                <div class="panel-body">
-                     
-					 <div class="col-xs-12 col-md-6 form-padding">
-     <input type="text" class="form-input-new form-control"  name="company_name" id="company_name"  placeholder="Company Name" onkeypress="return AllowAlphabet(event)" required  >
+                                            <div class="col-md-4 col-sm-12 col-xs-12">
+                                            <div class="form-group">
+                                            <input class="form-input-new form-control" type="text" id="pan_no" name="pan_no" oninput="pan_card('pan_no')"  placeholder="Pan No" required>
+                                                <span id="pan_number"  style="display:none;color: red;font-size:12px;">Enter Valid Pan No.</span>
+                                            </div>
+                                            </div>
 
-	</div>
-	<div class="col-xs-12 col-md-6 form-padding">
-     <input type="text" class="form-input-new form-control"  name="income_tax_paid" id="income_tax_paid" onkeypress="return isNumberKey(event)" required="" placeholder="Income Tax Paid - Firm">
-	</div>
-	<div class="col-xs-12 col-md-6 form-padding">
-     <input type="text" class="form-input-new form-control" name="turnover" id="turnover" placeholder="Turnover/Topline" onkeypress="return isNumberKey(event)" required>
-	</div>
-	<div class="col-xs-12 col-md-6 form-padding">
-     <input type="text" class="form-input-new form-control" name="profit_after_tax" id="profit_after_tax" placeholder="Profit After Tax"  onkeypress="return isNumberKey(event)" required>
-	</div>
-	<div class="col-xs-12 col-md-6 form-padding">
-     <input type="text" class="form-input-new form-control" name="depreciation" id="depreciation" placeholder="Depreciation" onkeypress="return isNumberKey(event)" required>
-	</div>
-	<div class="col-xs-12 col-md-6 form-padding">
-     <input type="text" class="form-input-new form-control" name="partner_remuneration" id="partner_remuneration" placeholder="Partner Remuneration" 
-     onkeypress="return isNumberKey(event)"  required>
-	</div>
+                                            <div class="col-md-4 col-sm-12 col-xs-12">
+                                            <div class="form-group">
+                                                <input type="text" class="form-input-new form-control lastReporteddate1" name="applicant_dob" id="applicant_dob" placeholder="Date Of Birth"   required>
+                                            </div>
+                                            </div>
 
-			
-<div class="col-xs-12 col-md-6 form-padding"> 
-     <input type="name" class="form-input-new form-control" placeholder="Interest Paid On Loan" step="0.01" min="0" name="interest_paid" id="interest_paid" onkeypress="return isNumberKey(event)" required>
-	</div>
-	<div class="col-xs-12 col-md-6 form-padding"> 
+                                            <div class="col-md-4 col-sm-12 col-xs-12">
+                                            <div class="form-group">
+                                                <select id="loan_tenure" class="form-control input-md select-sty" name="loan_tenure" id="loan_tenure" >
+                                                            <option selected disabled="">Loan Tenure</option>
+                                                            <option value="1 Year">1 Year</option>
+                                                            <option value="2 Year">2 Year</option>
+                                                            <option value="3 Year">3 Year</option>
+                                                            <option value="4 Year">4 Year</option>
+                                                            <option value="5 Year">5 Year</option>
+ 
+                                                    </select>
+                                            </div>
+                                            </div>
 
-     <input type="text" class="form-input-new form-control" name="existing_emi" id="existing_emi" placeholder="Existing All EMI" onkeypress="return isNumberKey(event)"  required>
+                                            <div class="col-md-4 col-sm-12 col-xs-12">
+                                            <div class="form-group">
+                                                <select id="exchange" class="form-control input-md" name="exchange">
+                                                    <option selected disabled="">Export / Import</option>
+                                                    <option value="Y">Yes</option>
+                                                    <option value="N">No</option> 
+                                                </select>
+                                            </div>
+                                            </div>
 
-	</div>			
-					 
+                                            <div class="col-md-4 col-sm-12 col-xs-12">
+                                            <div class="form-group">
+                                                <select id="loanTenur" class="form-control input-md" name="loanTenur">
+                                                            <option selected disabled="">Export / Import in %</option>
+                                                            <option value="10">10 %</option>
+                                                            <option value="20">20 %</option>
+                                                            <option value="30">30 %</option>
+                                                            <option value="40">40 %</option>
+                                                            <option value="50">50 %</option>
+                                                            <option value="60">60 %</option>
+                                                            <option value="70">70 %</option>
+                                                            <option value="80">80 %</option>
+                                                            <option value="90">90 %</option>
+                                                            <option value="100">100 %</option>
+ 
+                                                    </select>                                                 
+                                            </div>
+                                            </div>
+
+                                            <div class="col-md-4 col-sm-12 col-xs-12">
+                                            <div class="form-group">
+                                                <select id="repayment_track" class="form-control input-md" name="repayment_track" >
+                                                    <option selected disabled="">Good Repayment Track Record in existing UBL/CC/OD?</option>
+                                                    <option value="Y">Yes</option>
+                                                    <option value="N">No</option> 
+                                                </select>
+                                            </div>
+                                            </div>
+
+                                            <div class="col-md-4 col-sm-12 col-xs-12">
+                                            <div class="form-group">
+                                                <select id="nature_of_business" class="form-control input-md" name="nature_of_business">
+                                                    <option selected disabled="">Nature of Business</option>
+                                                    <option value="Manufacturing">Manufacturing</option>
+                                                    <option value="Auto Trading">Trading</option>
+                                                    <option value="Services">Services</option>
+                                                    <option value="Retailer">Retailer</option>
+                                                    <option value="Others">Other</option>
+                                                 </select>
+                                                 <!-- <input type="hidden" name="nature_of_business" id="nature_of_business"> -->
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-4 col-sm-12 col-xs-12">
+                                            <div class="form-group">
+                                                <select id="industry_name" class="form-control input-md" name="industry_name">
+                                                            <option selected disabled="">Industry</option>
+                                                            <option value="Agriculture">Agriculture</option>
+                                                            <option value="Auto Components">Auto Components</option>
+                                                            <option value="Automobiles">Automobiles</option>
+                                                            <option value="Aviation">Aviation</option>
+                                                            <option value="Banking">Banking</option>
+                                                            <option value="Biotechnology">Biotechnology </option>
+                                                            <option value="Cement">Cement</option>
+                                                            <option value="Consumer Markets">Consumer Markets</option>
+                                                            <option value="Education And Training">Education And Training</option>
+                                                            <option value="Engineering">Engineering</option>
+                                                            <option value="Financial Services">Financial Services</option>
+                                                            <option value="Food Industry">Food Industry</option>
+                                                            <option value="Gems And Jewellery">Gems And Jewellery</option>
+                                                            <option value="Healthcare">Healthcare</option>
+                                                            <option value="Infrastructure">Infrastructure</option>
+                                                            <option value="Insurance">Insurance</option>
+                                                            <option value="IT &ITeS">IT &ITeS</option>
+                                                            <option value="Manufacturing">Manufacturing</option>
+                                                            <option value="Marketing And Strategy">Marketing And Strategy</option>
+                                                            <option value="Media And Entertainment">Media And Entertainment</option>
+                                                            <option value="Oil And Gas">Oil And Gas</option>
+                                                            <option value="Pharmaceuticals">Pharmaceuticals</option>
+                                                            <option value="Ports">Ports</option>
+                                                            <option value="Power">Power</option>
+                                                            <option value="Railways">Railways</option>
+                                                            <option value="Real Estate">Real Estate</option>
+                                                            <option value="Research And Development">Research And Development</option>
+                                                            <option value="Retail">Retail</option>
+                                                            <option value="Roads">Roads</option>
+                                                            <option value="Rural Market">Rural Market</option>
+                                                            <option value="Science And Technology">Science And Technology</option>
+                                                            <option value="Semiconductor">Semiconductor</option>
+                                                            <option value="Services">Services</option>
+                                                            <option value="Steel">Steel</option>
+                                                            <option value="Telecommunications">Telecommunications</option>
+                                                            <option value="Textiles">Textiles</option>
+                                                            <option value="Tourism And Hospitality">Tourism And Hospitality</option> 
+                                                    </select>                                                 
+                                                </div>
+                                                </div>
+
+                                                <div class="col-md-4 col-sm-12 col-xs-12">
+                                                <div class="form-group">
+                                                    <input type="text" id="date" name="date" class="form-control input-md lastReporteddate1" placeholder="Date Of Incorporation" required>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-4 col-sm-12 col-xs-12">
+                                            <div class="form-group">                              
+                                                <select id="office_type" class="form-control input-md" name="office_type">
+                                                    <option selected disabled="">Office Type</option>
+                                                    <option value="Owned">Owned</option>
+                                                    <option value="Rented">Rented</option>
+                                                    <option value="Parental">Parental</option>
+                                                    <option value="Other">Other</option> 
+                                                </select>   
+                                                <!-- <input type="hidden" name="office_type" id="office_type"> -->                                                 
+                                            </div>
+                                            </div>
+
+                                            <div class="col-md-4 col-sm-12 col-xs-12">
+                                            <div class="form-group">                                         
+                                                    <select id="residence_type" class="form-control input-md" name="residence_type">
+                                                            <option selected disabled="">Residence Type</option>
+                                                            <option value="Owned">Owned</option>
+                                                            <option value="Rented">Rented</option>
+                                                            <option value="Parental">Parental</option>
+                                                            <option value="Other">Other</option>
+                                                        <!-- <input type="hidden" name="residence_type" id="residence_type"> --> 
+                                                    </select>                                                 
+                                            </div>
+                                            </div>
+
+                                        <hr style="color:transparent; width:100%" />
+                                        <h4 >Company Financials</h4>
+
+                                        <div class="col-md-4 col-sm-12 col-xs-12">
+                                        <div class="form-group">
+                                            <input type="text" class="form-input-new form-control"  name="company_name" id="company_name"  placeholder="Company Name" onkeypress="return AllowAlphabet(event)" required  >
+                                        </div>
+                                        </div>
+
+                                        <div class="col-md-4 col-sm-12 col-xs-12">
+                                        <div class="form-group">
+                                            <input type="text" class="form-input-new form-control"  name="income_tax_paid" id="income_tax_paid" onkeypress="return isNumberKey(event)" required="" placeholder="Income Tax Paid - Firm">
+                                        </div>
+                                        </div>
+
+                                        <div class="col-md-4 col-sm-12 col-xs-12">
+                                        <div class="form-group">
+                                            <input type="text" class="form-input-new form-control" name="turnover" id="turnover" placeholder="Turnover / Topline" onkeypress="return isNumberKey(event)" required>
+                                        </div>
+                                        </div>
+
+                                        <div class="col-md-4 col-sm-12 col-xs-12">
+                                        <div class="form-group">
+                                            <input type="text" class="form-input-new form-control" name="profit_after_tax" id="profit_after_tax" placeholder="Profit After Tax"  onkeypress="return isNumberKey(event)" required>
+                                        </div>
+                                        </div>
+
+                                        <div class="col-md-4 col-sm-12 col-xs-12">
+                                        <div class="form-group">
+                                            <input type="text" class="form-input-new form-control" name="depreciation" id="depreciation" placeholder="Depreciation" onkeypress="return isNumberKey(event)" required>
+                                        </div>
+                                        </div>
+
+                                        <div class="col-md-4 col-sm-12 col-xs-12">
+                                        <div class="form-group">
+                                            <input type="text" class="form-input-new form-control" name="partner_remuneration" id="partner_remuneration" placeholder="Partner Remuneration" onkeypress="return isNumberKey(event)"  required>
+                                        </div>
+                                        </div>
+
+                                        <div class="col-md-4 col-sm-12 col-xs-12">
+                                        <div class="form-group">
+                                            <input type="name" class="form-input-new form-control" placeholder="Interest Paid On Loan" step="0.01" min="0" name="interest_paid" id="interest_paid" onkeypress="return isNumberKey(event)" required>
+                                        </div>
+                                        </div>
+
+                                        <div class="col-md-4 col-sm-12 col-xs-12">
+                                        <div class="form-group">
+                                            <input type="text" class="form-input-new form-control" name="existing_emi" id="existing_emi" placeholder="Existing All EMI" onkeypress="return isNumberKey(event)"  required>
+                                        </div>
+                                        </div>
+
+                            <hr style="color:transparent; width:100%" />
+                            <h4 >Bankwise EMI Details - List of Loan EMI</h4>
+
+                            <div class="col-md-6 col-sm-12 col-xs-12">
+                             <div class="form-group">
+                                <input type="text" class="form-input-new form-control" name="bank_name[]" id="bank_name" placeholder="Bank" onkeypress="return AllowAlphabet(event)" value=""   required="">
+                             </div>
+                             </div>
+
+
+                             <div class="col-md-6 col-sm-12 col-xs-12">
+                             <div class="form-group">
+                                <input type="text" class="form-input-new form-control" name="emi[]" id="emi" placeholder="EMI"  onkeypress="return isNumberKey(event)" value="" required>
+                             </div>
+                             </div>
+
+                            <div class="col-md-6 col-sm-12 col-xs-12">
+                            <div class="form-group">
+                                <select class="form-input-new form-control" name="loan">
+                                    <option>Select Loan</option>
+                                    <option>Home Loan</option>
+                                    <option>Property Loan</option>
+                                    <option>Unsecured Business Loan</option>
+                                    <option>Car Loan</option>
+                                    <option>Term Loan</option>
+                                    <option>OD/CC</option>
+                                    <option>Others</option>
+                                </select>
+                             </div>
+                             </div>
+
+                            <div class="col-md-6 col-sm-12 col-xs-12">
+                             <div class="form-group">
+                                <input type="text" class="form-input-new form-control" name="no_of_emi_paid[]" id="no_of_emi_paid" placeholder="No Of EMI Paid"  onkeypress="return isNumberKey(event)" minlength="2" maxlength="2" required value="">
+                             </div>
+                             </div>
+
+                             <div>
+                               <!--  <input id="btnAdd" type="button" value="Add" /> -->
+                                <button type="button" id="btnAdd" class="btn btn-default ">Add Bank</button>
+                                    <br />
+                                    
+                                        <div id="TextBoxContainer">
+                                                <!--Textboxes will be added here -->
+
+                                        </div>
+                                    <br />
+                                <!-- <input id="btnGet" type="button" value="Get Values" /> -->
+                            </div>   
+
+                               <div class="valid_ID"></div>
+
+                             <a class="btn btn-primary btn-outline with-arrow top-mrg product_name product_ID" id="btn_refresh_co1" >Get Best Quotes<i class="icon-arrow-right"></i></a>                     
+
+
+                                        </form>
+                                    </div>
+                                </div>
+
+
+
+                <!-- Apply digitally right panel -->
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" style="padding-bottom: 20px">
+                    <div class="how-it-block1 bg-boxshadow" style=" min-height: 480px;">
+                        
+                                        <div class=" ">
+                                            <!-- Text input-->
+                                            <div class="col-md-12 col-xs-12">
+                                                <div class="form-group">
+                                                    <input type="text" class="form-control" id="loanamount" name="name" value="" placeholder="Loan Amount" required class="clr-ddd" readonly />
+                                                </div>
+                                            </div>
+                                            <!-- Text input-->
+                                            <div class="col-md-12 col-xs-12">
+                                                <div class="form-group">
+                                                     <input type="text" class="form-control" id="rate" name="name" value="" placeholder="Best ROI" required class="clr-ddd" readonly />
+                                                </div>
+                                            </div>
+                                            <!-- Text input-->
+                                            <div class="col-md-12 col-xs-12">
+                                                <div class="form-group">
+                                                    <input type="text" class="form-control" id="term" name="name" value="" placeholder="Tenure" required class="clr-ddd" readonly>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 col-xs-12">
+                                                <div class="form-group">
+                                                    <input type="text" class="form-control" id="processfee" name="name" placeholder="Processing Fee" required class="clr-ddd" readonly />
+                                                </div>
+                                            </div>
+
+                                            @if(Session::get('is_login'))
+                                            <a   type="button" class="btn btn-default btn-sm apply_new" title="Experience New Digital Era In Loans">Apply<br>Digitally</a>
+                                            @else
+                                            <a   data-toggle="modal" data-target="#login_process" class="btn btn-default btn-sm apply_digitally " title="Experience New Digital Era In Loans">Apply<br> Digitally</a>
+                                            @endif  
+
+                                             
+                                     <div class="col-md-6 col-xs-12">
+                                    <br>
+                                        <button type="button" class="btn btn-default btn-sm"  id="call_rm" name="call_rm" data-toggle="modal" data-target="#Modal" title="Call For RM(Single Day Process)">Call<br> Manager</button>
+                                                <div id="log_digital_text" style=" color: red"></div>
+                                                
+                                    </div>
+
+                                     <div class="col-md-12 col-xs-12">
+                                    <br>
+                                               <!--  <button type="submit" disabled="" class="btn btn-default btn-sm" style="width: 100%;">Check Bankwise<br>Eligibility</button> -->
+
+                                                <button id="eligibility"  class="btn btn-default btn-sm disblk" title="See Bankwise Eligibility And Apply Amongst Best Bank" disabled>Check Bankwise<br>Eligibility </button>
+                                                
+                                    </div>  
+
+                                    <p id="err" style="display:none;" ><span style="color: red;font-size: 20px;display: block; text-align: center;">Sorry, No quotes found for your given requirements.</span></p>                                        
+                                            
+                                        </div>
+                                                       
+                    </div>
+                </div>
+                <!-- Apply digitally right panel end -->
+
+
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
-
-        <div class="panel panel-default">
-            <div class="panel-heading" role="tab" id="heading7">
-                <h4 class="panel-title">
-                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse7" aria-expanded="false" aria-controls="collapse7">
-                        <i class="icon-plus more-less pull-right"></i>
-                        BANKWISE EMI DETAILS 
-                    </a>
-                </h4>
-            </div>
-            <div id="collapse7" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading7">
-<div class="panel-body">
-<div>
-
-<h4 class="text-center">List of Loan EMI</h4>
-<div class="add_new_content">
-        <div class="col-xs-12 col-md-6 form-padding"> 
-
-     <input type="text" class="form-input-new form-control" name="bank_name[]" id="bank_name" placeholder="Bank" onkeypress="return AllowAlphabet(event)" value=""   required="">
-
-     
-	</div>
-	<div class="col-xs-12 col-md-6 form-padding">
-     <input type="text" class="form-input-new form-control" name="emi[]" id="emi" placeholder="EMI"  onkeypress="return isNumberKey(event)" value="" required>
-	</div>
-	<div class="col-xs-12 col-md-6 form-padding">
-	 <select class="form-input-new form-control" name="loan">
-	 <option>Select Loan</option>
-	     <option>Home Loan</option>
-		 <option>Property Loan</option>
-		 <option>Unsecured Business Loan</option>
-		 <option>Car Loan</option>
-		 <option>Term Loan</option>
-		 <option>OD/CC</option>
-		 <option>Others</option>
-	 </select>
-	</div>
-	<div class="col-xs-12 col-md-6 form-padding">
-     <input type="text" class="form-input-new form-control" name="no_of_emi_paid[]" id="no_of_emi_paid" placeholder="No Of EMI Paid"  onkeypress="return isNumberKey(event)" minlength="2" maxlength="2" required value="">
-	</div>
-	
-  </div>
-  
-
-  <div><input type="button" class=" btn btn-info add_new_box" value="Add Bank" 
-  > &nbsp;<input type="button"  class="btn btn-info remove_new_box" value="Remove" >
-  </div>
-
-
-	
-
-  
-<!-- <a href="javascript:void(0)" class="btn btn-info" id="button" va >Add Bank</a>
- <a href="javascript:void(0)" class="btn btn-info" id="button_remove" >Remove</a> -->
-  
-
-	</div>
-	</div>
-	
-     </div>
-        </div>
-    </div><!-- panel-group -->
-
-
-  </div>
- </div>
- 
- 
-	<div class="col-md-6 no-pad flt-lft" style="display:inline-table;">
-	<div class="panel-group" id="accordion1">
-	<div class="panel-default">
-      <div id="collapse0" class="panel-collapse collapse in">
-  <div class="panel-body">
-		
-	
-	<div class="col-xs-8 form-padding pad-no">
-	 <h4 class="mrg-top">Export/Import</h4>
-	</div>
-	<div class="col-xs-4 form-padding pad">
-     <div class="btn-grp border-none" data-toggle="buttons">
-      <span class="btn btn-default outer-brd btn-blu active"><input type="radio" name="exchange" value="Y">Y</span>
-      <span class="btn btn-default outer-brd btn-blu"><input type="radio" name="exchange" value="N">N</span>
-	  <select class="pull-right btn-default outer-brd btn-blu pad-ten">
-	       <option>10%</option>
-		   <option>20%</option>
-		   <option>30%</option>
-		   <option>40%</option>
-		   <option>50%</option>
-		   <option>60%</option>
-		   <option>70%</option>
-		   <option>80%</option>
-		   <option>90%</option>
-		   <option>100%</option>
-	  </select>
-         </div>
-	</div>
-
-	<div class="col-xs-8 form-padding">
-	 <span>Has a Good Repayment track record in existing UBL /CC/OD?</span>
-	</div>
-	<div class="col-xs-4 form-padding pad">
-     <div class="btn-grp  border-none" data-toggle="buttons">
-      <span class="btn btn-default outer-brd btn-blu active"><input type="radio" name="repayment_track" value="Y">Y</span>
-      <span class="btn btn-default outer-brd btn-blu"><input type="radio" name="repayment_track" value="N">N</span>
-         </div>
-	</div>
-</div>
-		
-		
-      </div>
+    </aside>
     </div>
-	
-	
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion1" href="#collapse1">NATURE OF BUSINESS <i class="icon-plus pull-right more-less"></i></a>
-		
-        </h4>
-      </div>
-      <div id="collapse1" class="panel-collapse collapse">
-        <div class="panel-body">
-	<div class="scenario">
 
-                                
-                                <div class="col-xs-12 col-md-6 pad-no scenario-active"><a class="scenario-1 btn"  onclick="alertme('Manufacturing')">
-								Manufacturing</a></div>
+<div id ="test123"></div>
 
-								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn" onclick="alertme('Auto Trading')">Trading </a></div>
-								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn" onclick="alertme('Services')">Services</a></div>
-								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn" onclick="alertme('Retailer')">Retailer</a></div>
-								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn" onclick="alertme('Others')">Others</a></div>
+<!-- footer content -->
 
-								<input type="hidden" name="nature_of_business" id="nature_of_business">
-
-								
-							
-							</div>
-
-		</div>
-      </div>
-    </div>
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion1" href="#collapse2">INDUSTRY <i class="icon-plus pull-right more-less"></i></a>
-		 
-        </h4>
-      </div>
-      <div id="collapse2" class="panel-collapse collapse">
-        <div class="panel-body sec">
-		<select class="drop-arr" name="industry_name" id="industry_name">
-		<option>-- Select Industry Type --</option>
-		   <option>Agriculture</option>
-		   <option>Auto Components</option>
-		   <option>Automobiles</option>
-		   <option>Aviation</option>
-		   <option>Banking</option>
-		   <option>Biotechnology </option>
-		  <option>Cement</option>
-		<option>Consumer Markets</option>
-		<option>Education And Training</option>
-         <option>Engineering</option>
-           <option>Financial Services</option>
-		<option>Food Industry</option>
-		<option>Gems And Jewellery</option>
-		<option>Healthcare</option>
-		<option>Infrastructure</option>
-		<option>Insurance</option>
-		<option>IT & ITeS</option>
-		<option>Manufacturing</option>
-		<option>Marketing And Strategy</option>
-		<option>Media And Entertainment</option>
-		<option>Oil And Gas</option>
-        <option>Pharmaceuticals</option>
-		<option>Ports </option>
-		<option>Power</option>
-		<option>Railways</option>
-		<option>Real Estate</option>
-		<option>Research And Development</option>
-		<option>Retail</option>
-		<option>Roads</option>
-		<option>Rural Market</option>
-		<option>Science And Technology</option>
-		<option>Semiconductor</option>
-		<option>Services</option>
-		<option>Steel</option>
-		<option>Telecommunications</option>
-		<option>Textiles</option>
-		<option>Tourism And Hospitality</option>
-
-		</select>
-		   <!-- <div class="scenario1">
-
-								<div class="col-xs-12 col-md-6 pad-no scenario-active"><a class="scenario-1 btn"  onclick="callme('Agriculture')">
-								Agriculture</a></div>
-
-								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn" onclick="callme('Auto Components')">Auto Components </a></div>
-								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn" onclick="callme('Automobiles')">Automobiles</a></div>
-								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn" onclick="callme('Aviation')">Aviation</a></div>
-								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn" onclick="callme('Banking')">Banking</a></div>
-								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn" onclick="callme('Biotechnology')">Biotechnology </a></div>
-								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn" onclick="callme('Cement')">Cement</a></div>
-								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn" onclick="callme('Consumer Markets')">Consumer Markets</a></div>
-								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn" onclick="callme('Education And Training')">Education And Training </a></div>
-
-								<div class="col-xs-12 col-md-6 pad-no "><a class="scenario-1 btn"  onclick="callme('Engineering')">
-								Engineering</a></div>
-
-								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn" onclick="callme('Financial Services')">Financial Services </a></div>
-								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn" onclick="callme('Food Industry')">Food Industry</a></div>
-								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn" onclick="callme('Gems And Jewellery')">Gems And Jewellery</a></div>
-								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn" onclick="callme('Healthcare')">Healthcare</a></div>
-								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn" onclick="callme('Infrastructure')">Infrastructure </a></div>
-								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn" onclick="callme('Insurance')">Insurance</a></div>
-								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn" onclick="callme('IT & ITeS')">IT & ITeS</a></div>
-								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn" onclick="callme('Manufacturing')">Manufacturing</a></div>
-
-								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn" onclick="callme('Marketing And Strategy')">Marketing And Strategy </a></div>
-								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn" onclick="callme('Media And Entertainment')">Media And Entertainment</a></div>
-								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn" onclick="callme('Oil And Gas')">Oil And Gas</a></div>
-								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn" onclick="callme('Pharmaceuticals')">Pharmaceuticals</a></div>
-								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn" onclick="callme('Ports')">Ports </a></div>
-								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn" onclick="callme('Power')">Power</a></div>
-								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn" onclick="callme('Railways')">Railways</a></div>
-								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn" onclick="callme('Real Estate')">Real Estate</a></div>
-
-								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn" onclick="callme('Research And Development')">Research And Development </a></div>
-								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn" onclick="callme('Retail')">Retail</a></div>
-								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn" onclick="callme('Roads')">Roads</a></div>
-								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn" onclick="callme('Rural Market')">Rural Market</a></div>
-								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn" onclick="callme('Science And Technology')">Science And Technology </a></div>
-								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn" onclick="callme('Semiconductor')">Semiconductor</a></div>
-								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn" onclick="callme('Services')">Services</a></div>
-								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn" onclick="callme('Steel')">Steel</a></div>
-								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn" onclick="callme('Telecommunications')">Telecommunications</a></div>
-								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn" onclick="callme('Textiles')">Textiles</a></div>
-								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn" onclick="callme('Tourism And Hospitality')">Tourism And Hospitality</a></div>
-								<input type="hidden" name="industry_name" id="industry_name">
-							</div> -->
-		</div>
-      </div>
-    </div>
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion1" href="#collapse3">COMPANY'S DATE OF INCORPORATION <i class="icon-plus pull-right more-less"></i></a>
-		 
-        </h4>
-      </div>
-      <div id="collapse3" class="panel-collapse collapse">
-        <div class="panel-body">
-		  <div class="col-xs-12 form-padding">
-     <input type="text" id="date" name="date" class="form-input-new form-control lastReporteddate1" placeholder="Date Of Incorporation" required>
-	</div>
-		</div>
-      </div>
-    </div>
-	
-	
-	<div class="panel panel-default">
-      <div class="panel-heading">
-        <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion1" href="#collapse4">RESIDENCE TYPE <i class="icon-plus pull-right more-less"></i></a>
-		 
-        </h4>
-      </div>
-      <div id="collapse4" class="panel-collapse collapse">
-        <div class="panel-body">
-		   <div class="scenario2">
-								
-
-								<div class="col-xs-12 col-md-6 pad-no scenario-active"><a class="scenario-1 btn"  onclick="alert('Owned')">
-								Owned</a></div>
-
-								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn" onclick="alert('Rented')">Rented </a></div>
-								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn" onclick="alert('Parental')">Parental</a></div>
-								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn" onclick="alert('Others')">Others</a></div>
-								
-								<input type="hidden" name="residence_type" id="residence_type">
-								
-								
-							</div>
-		</div>
-      </div>
-    </div>
-	<div class="panel panel-default">
-      <div class="panel-heading">
-        <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion1" href="#collapse5">OFFICE TYPE<i class="icon-plus pull-right more-less"></i></a>
-		  
-        </h4>
-      </div>
-      <div id="collapse5" class="panel-collapse collapse">
-        <div class="panel-body">
-		   <div class="scenario3">
-								<div class="col-xs-12 col-md-6 pad-no scenario-active"><a class="scenario-1 btn"  onclick="call('Owned')">
-								Owned</a></div>
-
-								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn" onclick="call('Rented')">Rented </a></div>
-								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn" onclick="call('Parental')">Parental</a></div>
-								<div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn" onclick="call('Others')">Others</a></div>
-								
-								<input type="hidden" name="office_type" id="office_type">
-								
-							</div>
-		</div>
-      </div>
-    </div>
-  </div> 
-   
-   <div class="valid_ID"></div>
-
-  <!--  <?php if(Session::get('is_login')) {?>
-                <?php if(Session::get('contact')!=''){ Session::get('contact'); ?>
-              <button class="btn btn-primary btn-outline with-arrow top-mrg product_name product_ID " >Get Best Quotes<i class="icon-arrow-right"></i></button>
-              <?php }else{?> 
-                <a  class="btn btn-primary btn-outline with-arrow top-mrg product_name product_ID" data-toggle="modal" data-target="#contact_id">Get Best Quotes<i class="icon-arrow-right"></i></a>
-                      <?php }?>
-            <?php }else{?>
-            <button  style="display:none" class="btn btn-primary btn-outline with-arrow top-mrg product_name product_ID " id="btn_refresh_co">Get Best Quotes<i class="icon-arrow-right"></i></button>
+<!-- end footer content -->
 
 
-              <a class="btn btn-primary btn-outline with-arrow top-mrg product_name product_ID" id="btn_refresh_co1" data-toggle="modal" data-target="#login_process">Get Best Quotes<i class="icon-arrow-right"></i></a>
-            <?php } ?> -->
-
- <a class="btn btn-primary btn-outline with-arrow top-mrg product_name product_ID" id="btn_refresh_co1" >Get Best Quotes<i class="icon-arrow-right"></i></a>  
-
-
-   </form>
-   <div class="iframeloading" style= "display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
-                <img src="{{URL::to('images/ajaxloader.gif')}}" alt="Loader" title="Loader" style="top: 50%; position: relative; left: 50%;"  />
-               </div>
-</div>
-</div>
-		
-	
-	<div class="col-md-4" >
-     <div class="border brd-for" id="mi_id">
-
-             <!-- <form name="compareform" id="compareform" > -->
-          
-           <p id="err" style="display:none;" ><span style="color: red;font-size: 20px;display: block; text-align: center;">Sorry, No quotes found for your given requirements.</span></p> 
-           
-            <div class="inp-hig">
-            <label class="form-label-new">Loan Amount</label>
-              <input type="text" class="form-control" id="loanamount" name="name" value="" placeholder="" required class="clr-ddd" readonly />
-            </div>
-
-            <div class="inp-hig">
-          <label class="form-label-new">Best ROI</label>
-              <input type="text" class="form-control" id="rate" name="name" value="" placeholder="" required class="clr-ddd" readonly />
-            </div>
-
-            <div class="inp-hig">
-            <label class="form-label-new">Tenure</label>
-                 <input type="text" class="form-control" id="term" name="name" value="" placeholder="" required class="clr-ddd" readonly>
-            </div>
-
-            <div class="inp-hig">
-          <label class="form-label-new">Processing Fee</label>
-              <input type="text" class="form-control" id="processfee" name="name" placeholder="" required class="clr-ddd" readonly />
-            </div>
-          <br>
-        <div> 
-          
-         
-
-
-           @if(Session::get('is_login'))
-           <a   type="button" class="btn btn-info disblk apply_new" title="Experience New Digital Era In Loans">Apply Digitally</a>
-           @else
-           <a   data-toggle="modal" data-target="#login_process" class="btn btn-info disblk apply_digitally " title="Experience New Digital Era In Loans">Apply Digitally</a>
-           @endif    
- 
-
-
-
-         <button id="eligibility"  class="btn btn-info disblk" title="See Bankwise Eligibility And Apply Amongst Best Bank" disabled>Check Bankwise Eligibility </button>
-
-         <button type="button" class="btn btn-info block"  id="call_rm" name="call_rm" data-toggle="modal" data-target="#Modal" title="Call For RM(Single Day Process)">Call Manager</button>
-         <div id="log_digital_text" style=" color: red"></div>
-        </div>
-        
-        <!-- <p id="err" style="display:none;" ><span style="color:skyblue;position:absolute;font-size:13px;">No Quotes Found.</span></p> -->
-   
-    <!--   </form> -->
-
-    </div> 
-   <!--  <p id="err" style="display:none;" ><span style="color: red;font-size: 20px;display: block; text-align: center;">Sorry, No quotes found for your given requirements.</span></p>  -->
-  </div> 
-	
-	
-	
-	
-	</div>
-	</aside>
-	</div>
-	<br>
-   <div id ="test123"></div>
-   
-     <div class="container">
-  <div class="col-md-12 mrg-top white-bg pad1 box-shadow">
-	 <hr>
-	 <p>Funds require to manage day to day operations of your business???......funds require to expand your business?? …...fund requirement is a most important factor for any business to run smoothly.....here is a Rupeeboss to understand your needs deeply,and make funds available for you to your doorstep.</p>
-	 <p>Business loan fulfills any kind of  business needs. It is a type of short term unsecured loan for 3 to 5 year of repayment period. Business loan can be easily sanction in minimum 7 working days.</p>
-	    <div class="panel-group">
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h4 class="panel-title">
-        <a data-toggle="collapse" href="#collapse102">Documents Required  </a>
-      </h4>
-    </div>
-    <div id="collapse102" class="panel-collapse collapse">
-      <div class="panel-body">
-	  
-	  
-	  <ul>
-	     <li>Proof of Identity / address proof.(business as well as All directors)</li>
-		 <li>Memorandum of association & article of association ,certificate of commencement of business</li>
-		 <li>Bank statements (business as well as Director)</li>
-		 <li>Require Income tax return file (ITR) along with Computation of income ,B/S&P/L accounts for last 3 year. It should be audited and certified by CA</li>
-		 <li>Proof of continuation: Trade license /Establishment /Sales Tax certificate </li>
-	  </ul>
-	  </div>
-      
-    </div>
-    </div>
-   </div>
-	 </div>
-	 </div>
-	 <br>
-  
-@include('layout.footer')
 @include('layout.script')
 
 <script type="text/javascript">
-  function AllowAlphabet(e)
-{
-  isIE = document.all ? 1 : 0
-  keyEntry = !isIE ? e.which : event.keyCode;
-  if (((keyEntry >= '65') && (keyEntry <= '90')) || ((keyEntry >= '97') && (keyEntry <= '122')) || (keyEntry == '46') || (keyEntry == '32') || keyEntry == '45')
-     return true;
-  else
-{
-    // alert('Please Enter Only Character values.');
-    return false;
-      }
-}
-
-
-function callme(test){
-	//alert($(this).closest("radio").attr('value'));
-	$('#industry_name').val(test);
-	
-//		alert(test);
-}
-
-
-</script>
-
-<script type="text/javascript">
-    var d = new Date();
-    var year = d.getFullYear()  ;
-    d.setFullYear(year);
-
-    $(".lastReporteddate1").datepicker({ dateFormat: "yy-mm-dd",
-      changeMonth: true,
-      changeYear: true,
-      maxDate: year,
-      minDate: "-100Y",
-      yearRange: '-100:' + year + '',
-      defaultDate: d
-    });
-</script>
-
-
-
-<script type="text/javascript">
-	
-  function AllowAlphabet(e)
-{
-  isIE = document.all ? 1 : 0
-  keyEntry = !isIE ? e.which : event.keyCode;
-  if (((keyEntry >= '65') && (keyEntry <= '90')) || ((keyEntry >= '97') && (keyEntry <= '122')) || (keyEntry == '46') || (keyEntry == '32') || keyEntry == '45')
-     return true;
-  else
-{
-    // alert('Please Enter Only Character values.');
-    return false;
-      }
-}
-</script>
-
-<script type="text/javascript">
-$(".product_ID").click(function(e){
-   e.preventDefault();
- 
-
-
-
+$(".product_ID").click(function(e){ e.preventDefault();
+     
     if(!$('#business_loan_process_form').valid()){
-
-    
-            return false;
-           
-          }else{
-          	var company_name=$('#company_name').val();
+        // alert('not valid');
+        return false;
+    }else{
+   
+               var company_name=$('#company_name').val();
                var bank_name=$('#bank_name').val();
                var emi=$('#emi1').val();
                console.log(emi);
 
-              
-      if(company_name!='' && bank_name!=''){
-         $('#login_process').attr( 'id', 'login_process');
- //$(".iframeloading").show();
+               if(company_name!='' && bank_name!=''){
+               $('#login_process').attr( 'id', 'login_process');
+ //$(".iframeloading").show(); 
               $.ajax({  
-             type: "POST",  
-             url: "{{URL::to('loan-submit')}}",
-           data : $("#business_loan_process_form").serialize(),
+                type: "POST",  
+                url: "{{URL::to('loan-submit')}}",
+                data : $("#business_loan_process_form").serialize(),
         //   data: {_token :_token,username:username,password:password},
              success: function(msg){
               console.log(msg);
@@ -670,7 +452,7 @@ $(".product_ID").click(function(e){
                        // $(window).scrollTop($('#lowest').offset().top-50);
 
                    }else{
-                   	$('#eligibility').prop('disabled', true);
+                    $('#eligibility').prop('disabled', true);
                                 getUrl='';
                      $('#err').show();
                      $('#loanamount').val("");
@@ -704,90 +486,97 @@ $(".product_ID").click(function(e){
 
 
 });
-
-
-
 </script>
 
-<!-- <script>
-$(document).ready(function(){
-    // $("#button").click(function(){
-    //     $("#emp_detail").clone().appendTo("#new_div");
-    // });
+<script type="text/javascript">
+  function AllowAlphabet(e)
+{
+  isIE = document.all ? 1 : 0
+  keyEntry = !isIE ? e.which : event.keyCode;
+  if (((keyEntry >= '65') && (keyEntry <= '90')) || ((keyEntry >= '97') && (keyEntry <= '122')) || (keyEntry == '46') || (keyEntry == '32') || keyEntry == '45')
+     return true;
+  else
+{
+    // alert('Please Enter Only Character values.');
+    return false;
+      }
+}
 
-    $("#addChild").click(function(){
-    $(".emp_detail:last").after($(".emp_detail:first").clone(true));
-});
-
-
+function callme(test){
+    //alert($(this).closest("radio").attr('value'));
+    $('#industry_name').val(test);
     
-});
+//      alert(test);
+}
 </script>
 
-<script>
-$(document).ready(function(){
-    // $('#button_remove').click(function(){
-    //     $('#new_div').css('display','none');
-    $("#deleteChild").click(function() {
-    if($(".emp_detail").length!=1)
-    $(".emp_detail:last").remove();
+<script type="text/javascript">
+    var d = new Date();
+    var year = d.getFullYear()  ;
+    d.setFullYear(year);
+
+    $(".lastReporteddate1").datepicker({ dateFormat: "yy-mm-dd",
+      changeMonth: true,
+      changeYear: true,
+      maxDate: year,
+      minDate: "-100Y",
+      yearRange: '-100:' + year + '',
+      defaultDate: d
     });
-});
+</script>
 
+<script type="text/javascript">
     
-// });
-</script> -->
+  function AllowAlphabet(e)
+{
+  isIE = document.all ? 1 : 0
+  keyEntry = !isIE ? e.which : event.keyCode;
+  if (((keyEntry >= '65') && (keyEntry <= '90')) || ((keyEntry >= '97') && (keyEntry <= '122')) || (keyEntry == '46') || (keyEntry == '32') || keyEntry == '45')
+     return true;
+  else
+{
+    // alert('Please Enter Only Character values.');
+    return false;
+      }
+}
+</script>
 
 <script type="text/javascript">
 $("#eligibility").click(function() {
   $(window).scrollTop($('#test123').offset().top-20);
 });
-
-
-
 </script>
 
-<!-- <script type="text/javascript">
-	
-	$("#everything").validate({
-    messages: {
-     loan_tenure: {
-      required: "Please select an option from the list, if none are appropriate please select 'Other'",
-     },
-    }
-});
-</script> -->
-
 <script type="text/javascript">
-	function alertme(test){
-	//alert($(this).closest("radio").attr('value'));
-	
-	$('#nature_of_business').val(test);
-	
-//		alert(test);
+    function alertme(test){
+    //alert($(this).closest("radio").attr('value'));
+    
+    $('#nature_of_business').val(test);
+    
+//      alert(test);
 }
 </script>
 
 <script type="text/javascript">
-	function alert(test){
-	//alert($(this).closest("radio").attr('value'));
-	$('#residence_type').val(test);
-	
-//		alert(test);
+    function alert(test){
+    //alert($(this).closest("radio").attr('value'));
+    $('#residence_type').val(test);
+    
+//      alert(test);
 }
 </script>
 
 <script type="text/javascript">
-	function call(test){
-	//alert($(this).closest("radio").attr('value'));
-	$('#office_type').val(test);
-	
-//		alert(test);
+    function call(test){
+    //alert($(this).closest("radio").attr('value'));
+    $('#office_type').val(test);
+    
+//      alert(test);
 }
 </script>
 
 <script type="text/javascript">
-	$(document).ready(function(){
+    $(document).ready(function(){
     
      $(".add_new_box").click(function(){
     
@@ -813,4 +602,3 @@ $(document).ready(function(){
     
 // });
 </script>
-

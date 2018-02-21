@@ -1,606 +1,683 @@
 @include('layout.header')
-<div class="container">
-	
-	<aside id="fh5co-hero">
-	<!-- <div class="col-md-12">
-	<h2 class="align-center loan-head">Unsecured Business Loan</h2>
-	</div> -->
+
+<div class=" ">
+        <!-- content start -->
+        <div class="container">
+          <aside id="fh5co-hero">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="wrapper-content bg-white pinside40">
+                        <div class="section-faq" id="section-faq">
+                            <div class="">                       
+                 <h1 class=""><center>SME Working Capital</center></h1>
+                </br>             
+                    <div class="row">    
+                      <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12" style="padding-bottom: 20px">
+                    <div class="how-it-block1 bg-boxshadow" style=" min-height: 600px;">
+                        <h4 >Business Information</h4>
+                        <form name='working_capital_process_form' id='working_capital_process_form' action={{URL::to('loan-submit')}} method="POST">
+                        {{ csrf_field() }}
+                        <input type="hidden" id="product" name="product_name" value="11">                    
+
+                        <div class="col-md-4 col-sm-12 col-xs-12">
+                            <div class="form-group">
+                                <select id="company_type" class="form-control input-md" name="company_type">
+                                                            <option selected disabled="">Company Type</option>
+                                                            <option value="Sole Proprietor">Sole Proprietor</option>
+                                                            <option value="Partnership">Partnership</option>
+                                                            <option value="Company">Company</option>
  
- <div class="col-md-12 white-bg pad box-shadow">
- <h1 class="text-center loan-head">Working Capital</h1>
-<div class="col-md-8" id="mod">
-<form name='working_capital_process_form' id='working_capital_process_form' action={{URL::to('loan-submit')}} method="POST">
-{{ csrf_field() }}  
- <!-- <img src="{{URL::to('images/9.png')}}" alt="Tribe Logo" class="img-responsive" /> -->
- <div class="col-md-6">
-  <div class="col-xs-12">
-  
-	 <input type="hidden" id="product" name="product_name" value="11">
+                                                    </select>
+                            </div>
+                            </div>
 
-	   <div class="btn-grp mrg-top pad status" data-toggle="buttons">
-	  
-		<center><div class="type-cover"><span>Company type</span></div></center>
-      <span class="btn btn-default outer-brd active mob-blk-dv"><input type="radio" name="company_type"  value="Sole Proprietor">Sole Proprietor</span>
-      <span class="btn btn-default outer-brd mob-blk-dv"><input type="radio" name="company_type"  value="Partnership">Partnership</span>
-      <span class="btn btn-default outer-brd mob-blk-dv"><input  type="radio" name="company_type"  value="Company" >Company</span>
-      
-      </div>
-		</div>
-		
-		<div class="col-xs-6 form-padding pad text-right">
-	 <span class="mrg-top">Export/Import - </span>
-	</div>
-	<div class="col-xs-6 form-padding pad">
-    
-		 <div id="ifYes" style="visibility:hidden">
-        <select class="pull-right btn-default outer-brd btn-blu pad-ten" id='yes'>
-        <option>10%</option>
-       <option>20%</option>
-       <option>30%</option>
-       <option>40%</option>
-       <option>50%</option>
-       <option>60%</option>
-       <option>70%</option>
-       <option>80%</option>
-       <option>90%</option>
-       <option>100%</option>
-    </select>
-    </div>
-         <input type="radio" onclick="javascript:yesnoCheck();" name="yesno" id="yesCheck"> Yes <input type="radio" onclick="javascript:yesnoCheck();" name="yesno" id="noCheck"> No&nbsp;&nbsp;
-    
-        
-	</div>
-		
-		
-		<div class="col-xs-12 mrg-top">
-		<center><div class="type-cover"><span>Name of The Company</span></div></center>
-     <input type="text" class="form-input-new  form-control" name="company_name" id="company_name" placeholder="Company Name" onkeypress="return AllowAlphabet(event)" required >
-	
-	</div>
-	
-	<div class="col-xs-12 mrg-top">
-	<center><div class="type-cover"><span>Date of Incorporation</span></div></center>
-     <input class="form-input-new form-control lastReporteddate1" type="text" name="date_of_incorp" id="date_of_incorp" placeholder="Date Of Incorporation">
-	 
-	</div>
- <div class="col-md-12 pos-ins mrg-top">
- <input type="text" class="form-input-new form-control" name="loan_required" id="loan_required" placeholder="Loan Amount Required in Crores" onkeypress="return isNumberKey(event)" required>
- </div>
+                            <div class="col-md-4 col-sm-12 col-xs-12">
+                             <div class="form-group">
+                                                   
+                                                    <select id="yesno" class="form-control input-md" name="yesno">
+                                                            <option selected disabled="">Export / Import</option>
+                                                            <option value="Yes">Yes</option>
+                                                            <option value="No">No</option>
+ 
+                                                    </select>
 
-    <div class="col-md-12 mrg-top">
-<div class="panel-group" id="accordion2" role="tablist" aria-multiselectable="true">
-        <div class="panel panel-default">
-            <div class="panel-heading" role="tab" id="headingOne">
-                <h4 class="panel-title">
-                    <a role="button" data-toggle="collapse" data-parent="#accordion2" href="#collapse61" aria-expanded="true" aria-controls="collapse61">
-                        <i class="icon-plus more-less pull-right"></i>
-                        Details 1
-                    </a>
-                </h4>
-            </div>
-            <div id="collapse61" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading61">
-                <div class="panel-body">
-                  <div class="col-md-12 pad-no">
-<div>
-   <div class="col-md-12 pad-no">
+                             </div>
+                             </div>
 
-   <center><div class="type-cover"><span>Inventory</span></div></center>
-   </div>
-   <div class="col-md-4 form-padding">
-   <input type="text" class="form-input-new form-control" name="inventory_oneyr_amt" id="inventory_oneyr_amt" onkeypress="return isNumberKey(event)" required  placeholder="1 Year">
-   </div>
-   <div class="col-md-4 form-padding">
-   <input type="text" class="form-input-new form-control" name="inventory_twoyr_amt" id="inventory_twoyr_amt" onkeypress="return isNumberKey(event)" required placeholder="2 Year">
-   </div>
-   <div class="col-md-4 form-padding">
-   <input type="text" class="form-input-new form-control" name="inventory_threeyr_amt" id="inventory_threeyr_amt" onkeypress="return isNumberKey(event)" required placeholder="3 Year">
-   </div>
- </div>
+                             <div class="col-md-4 col-sm-12 col-xs-12">
+                             <div class="form-group">
+                                                   
+                                                    <select id="loanTenur" class="form-control input-md" name="loanTenur" onchange="ChooseContact(this)">
+                                                            <option selected disabled="">Export / Import in %</option>
+                                                            <option value="10">10 %</option>
+                                                            <option value="20">20 %</option>
+                                                            <option value="30">30 %</option>
+                                                            <option value="40">40 %</option>
+                                                            <option value="50">50 %</option>
+                                                            <option value="60">60 %</option>
+                                                            <option value="70">70 %</option>
+                                                            <option value="80">80 %</option>
+                                                            <option value="90">90 %</option>
+                                                            <option value="100">100 %</option>
+ 
+                                                    </select>
+                                                    
+                             </div>
+                             </div>                           
 
- <div>
-   <div class="col-md-12 pad-no">
-   <center><div class="type-cover"><span>Debtors</span></div></center>
-   </div>
-   <div class="col-md-4 form-padding">
-   <input type="text" class="form-input-new form-control" name="debtor_oneyr_amt" id="debtor_oneyr_amt" onkeypress="return isNumberKey(event)" required placeholder="1 Year">
-   </div>
-   <div class="col-md-4 form-padding">
-   <input type="text" class="form-input-new form-control" name="debtor_twoyr_amt" id="debtor_twoyr_amt" onkeypress="return isNumberKey(event)" required placeholder="2 Year">
-   </div>
-   <div class="col-md-4 form-padding">
-   <input type="text" class="form-input-new form-control" name="debtor_threeyr_amt" id="debtor_threeyr_amt" onkeypress="return isNumberKey(event)" required placeholder="3 Year">
-   </div>
- </div>
+                 <hr style="color:transparent; width:100%" />
 
- <div>
-   <div class="col-md-12 pad-no">
-   <center><div class="type-cover"><span>Creditors</span></div></center>
-   </div>
-   <div class="col-md-4 form-padding">
-   <input type="text" class="form-input-new form-control" name="creditor_oneyr_amt" id="creditor_oneyr_amt" onkeypress="return isNumberKey(event)" required placeholder="1 Year">
-   </div>
-   <div class="col-md-4 form-padding">
-   <input type="text" class="form-input-new form-control" name="creditor_twoyr_amt" id="creditor_twoyr_amt" onkeypress="return isNumberKey(event)" required placeholder="2 Year">
-   </div>
-   <div class="col-md-4 form-padding">
-   <input type="text" class="form-input-new form-control" name="creditor_threeyr_amt" id="creditor_threeyr_amt" onkeypress="return isNumberKey(event)" required placeholder="3 Year">
-   </div>
- </div>
+                            <h4 >Business Details</h4>
 
- <div>
-   <div class="col-md-12 pad-no">
-   <center><div class="type-cover"><span>Share Capital</span></div></center>
-   </div>
-   <div class="col-md-4 form-padding">
-   <input type="text" class="form-input-new form-control" name="sharecap_oneyr_amt" id="sharecap_oneyr_amt" onkeypress="return isNumberKey(event)" required placeholder="1 Year">
-   </div>
-   <div class="col-md-4 form-padding">
-   <input type="text" class="form-input-new form-control" name="sharecap_twoyr_amt" id="sharecap_twoyr_amt" onkeypress="return isNumberKey(event)" required placeholder="2 Year">
-   </div>
-   <div class="col-md-4 form-padding">
-   <input type="text" class="form-input-new form-control" name="sharecap_threeyr_amt" id="sharecap_threeyr_amt" onkeypress="return isNumberKey(event)" required placeholder="3 Year">
-   </div>
- </div>
+                            <div class="col-md-4 col-sm-12 col-xs-12">
+                             <div class="form-group">
+                                <input type="text" class="form-input-new  form-control" name="company_name" id="company_name" placeholder="Company Name" onkeypress="return AllowAlphabet(event)" required >
+                             </div>
+                             </div>
 
- <div>
-   <div class="col-md-12 pad-no">
-   <center><div class="type-cover"><span>Reserve Surplus</span></div></center>
-   </div>
-   <div class="col-md-4 form-padding"><input type="text" class="form-input-new form-control" name="reserve_oneyr_amt" id="reserve_oneyr_amt" onkeypress="return isNumberKey(event)" required  placeholder="1 Year"></div>
-   <div class="col-md-4 form-padding"><input type="text" class="form-input-new form-control" name="reserve_twoyr_amt" id="reserve_twoyr_amt" onkeypress="return isNumberKey(event)" required  placeholder="2 Year"></div>
-   <div class="col-md-4 form-padding"><input type="text" class="form-input-new form-control" name="reserve_threeyr_amt" id="reserve_threeyr_amt" onkeypress="return isNumberKey(event)" required  placeholder="3 Year"></div>
- </div>
-</div>
-				
+                             <div class="col-md-4 col-sm-12 col-xs-12">
+                             <div class="form-group">
+                                <input class="form-input-new form-control lastReporteddate1" type="text" name="date_of_incorp" id="date_of_incorp" placeholder="Date Of Incorporation">
+                              </div>
+                             </div>
+
+                            <div class="col-md-4 col-sm-12 col-xs-12">
+                             <div class="form-group">
+                               <input type="text" class="form-input-new form-control" name="loan_required" id="loan_required" placeholder="Loan Amount Required (In Crores)" onkeypress="return isNumberKey(event)" required>
+                             </div>
+                             </div>
+
+                   <hr style="color:transparent; width:100%" />
+
+                       <div class="st-accordion ">
+                        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                            <div class="panel panel-default">
+                                <div class="panel-heading" role="tab" id="headingOne">
+                                    <h4 class="panel-title" style="font-size: 16px"> <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne"><i class="fa sign fa-minus-circle" style="color: #ed1c24;"></i>Company Financials</a> </h4>
+                                </div>
+                                <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                                    <div class="panel-body">
+                             
+                            <p style="margin-bottom: 5px;">Turnover / Topline : </p>
+                             <div class="col-md-4 col-sm-12 col-xs-12">
+                             <div class="form-group">                                
+                              <input type="text" name="turnover_oneyr_amt" id="turnover_oneyr_amt" onkeypress="return isNumberKey(event)" required class="form-input-new form-control" placeholder="1 Year">
+                             </div>
+                             </div>
+
+                              <div class="col-md-4 col-sm-12 col-xs-12">
+                             <div class="form-group">
+                                <input type="text" name="turnover_twoyr_amt" id="turnover_twoyr_amt" onkeypress="return isNumberKey(event)" required class="form-input-new form-control" placeholder="2 Year">
+                             </div>
+                             </div>
+
+
+                              <div class="col-md-4 col-sm-12 col-xs-12">
+                             <div class="form-group">
+                                <input type="text" name="turnover_threeyr_amt" id="turnover_threeyr_amt" onkeypress="return isNumberKey(event)" required class="form-input-new form-control" placeholder="3 Year">
+                             </div>
+                             </div>
+
+                             <p style="margin-bottom: 5px;">EBIT / Net Operating Income : </p>
+                             <div class="col-md-4 col-sm-12 col-xs-12">
+                             <div class="form-group">
+                                <input type="text" name="ebit_oneyr_amt" id="ebit_oneyr_amt" onkeypress="return isNumberKey(event)" required class="form-input-new form-control" placeholder="1 Year">
+                             </div>
+                             </div>
+
+
+                              <div class="col-md-4 col-sm-12 col-xs-12">
+                             <div class="form-group">
+                                <input type="text" name="ebit_twoyr_amt" id="ebit_twoyr_amt" onkeypress="return isNumberKey(event)" required class="form-input-new form-control" placeholder="2 Year">
+                             </div>
+                             </div>
+
+                              <div class="col-md-4 col-sm-12 col-xs-12">
+                             <div class="form-group">
+                                <input type="text" name="ebit_threeyr_amt" id="ebit_threeyr_amt" onkeypress="return isNumberKey(event)" required class="form-input-new form-control" placeholder="3 Year">
+                             </div>
+                             </div>
+
+                             <p style="margin-bottom: 5px;">Profit Before Tax : </p>
+                             <div class="col-md-4 col-sm-12 col-xs-12">
+                             <div class="form-group">
+                                <input type="text" class="form-input-new form-control" name="pbt_oneyr_amt" id="pbt_oneyr_amt" onkeypress="return isNumberKey(event)" required placeholder="1 Year">
+                             </div>
+                             </div>
+
+                              <div class="col-md-4 col-sm-12 col-xs-12">
+                             <div class="form-group">
+                                <input type="text" class="form-input-new form-control" name="pbt_twoyr_amt " id="pbt_twoyr_amt " onkeypress="return isNumberKey(event)" required placeholder="2 Year">
+                             </div>
+                             </div>
+
+                              <div class="col-md-4 col-sm-12 col-xs-12">
+                             <div class="form-group">
+                                <input type="text" class="form-input-new form-control" name="pbt_threeyr_amt" id="pbt_threeyr_amt" onkeypress="return isNumberKey(event)" required placeholder="3 Year">
+                             </div>
+                             </div>
+
+
+                             <p style="margin-bottom: 5px;">Profit After Tax : </p>
+                             <div class="col-md-4 col-sm-12 col-xs-12">
+                             <div class="form-group">
+                                <input type="text" class="form-input-new form-control" name="pat_oneyr_amt" id="pat_oneyr_amt" onkeypress="return isNumberKey(event)" required placeholder="1 Year">
+                             </div>
+                             </div>
+
+                            <div class="col-md-4 col-sm-12 col-xs-12">
+                             <div class="form-group">
+                                <input type="text" class="form-input-new form-control" name="pat_twoyr_amt" id="pat_twoyr_amt" onkeypress="return isNumberKey(event)" required placeholder="2 Year">
+                             </div>
+                             </div>
+
+                            <div class="col-md-4 col-sm-12 col-xs-12">
+                             <div class="form-group">
+                                <input type="text" class="form-input-new form-control" name="pat_threeyr_amt" id="pat_threeyr_amt" onkeypress="return isNumberKey(event)" required placeholder="3 Year">
+                             </div>
+                             </div>
+
+                             <p style="margin-bottom: 5px;">Depreciation : </p>
+                             <div class="col-md-4 col-sm-12 col-xs-12">
+                             <div class="form-group">
+                                <input type="text" class="form-input-new form-control" name="depre_oneyr_amt" id="depre_oneyr_amt" onkeypress="return isNumberKey(event)" required  placeholder="1 Year">
+                             </div>
+                             </div>
+
+
+                              <div class="col-md-4 col-sm-12 col-xs-12">
+                             <div class="form-group">
+                                <input type="text" class="form-input-new form-control" name="depre_twoyr_amt" id="depre_twoyr_amt" onkeypress="return isNumberKey(event)" required placeholder="2 Year">
+                             </div>
+                             </div>
+
+                              <div class="col-md-4 col-sm-12 col-xs-12">
+                             <div class="form-group">
+                                <input type="text" class="form-input-new form-control" name="depre_threeyr_amt" id="depre_threeyr_amt" onkeypress="return isNumberKey(event)" required placeholder="3 Year">
+                             </div>
+                             </div>
+
+                             <p style="margin-bottom: 5px;">Existing Term Loan : </p>
+                             <div class="col-md-4 col-sm-12 col-xs-12">
+                             <div class="form-group">
+                                <input type="text" class="form-input-new form-control" name="termloan_oneyr_amt" id="termloan_oneyr_amt" onkeypress="return isNumberKey(event)" required placeholder="1 Year">
+                             </div>
+                             </div>
+
+                              <div class="col-md-4 col-sm-12 col-xs-12">
+                             <div class="form-group">
+                                <input type="text" class="form-input-new form-control" name="termloan_twoyr_amt" id="termloan_twoyr_amt" onkeypress="return isNumberKey(event)" required placeholder="2 Year">
+                             </div>
+                             </div>
+
+                              <div class="col-md-4 col-sm-12 col-xs-12">
+                             <div class="form-group">
+                                <input type="text" class="form-input-new form-control" name="termloan_threeyr_amt" id="termloan_threeyr_amt" onkeypress="return isNumberKey(event)" required placeholder="3 Year">
+                             </div>
+                             </div>
+
+
+                             <p style="margin-bottom: 5px;">Existing OD/CC : </p>
+                             <div class="col-md-4 col-sm-12 col-xs-12">
+                             <div class="form-group">
+                                <input type="text" class="form-input-new form-control" name="odcc_oneyr_amt" id="odcc_oneyr_amt" onkeypress="return isNumberKey(event)" required placeholder="1 Year">
+                             </div>
+                             </div>
+
+
+                              <div class="col-md-4 col-sm-12 col-xs-12">
+                             <div class="form-group">
+                                <input type="text" class="form-input-new form-control" name="odcc_twoyr_amt" id="odcc_twoyr_amt" onkeypress="return isNumberKey(event)" required placeholder="2 Year">
+                             </div>
+                             </div>
+
+                              <div class="col-md-4 col-sm-12 col-xs-12">
+                             <div class="form-group">
+                                <input type="text" class="form-input-new form-control" name="odcc_threeyr_amt" id="odcc_threeyr_amt" onkeypress="return isNumberKey(event)" required placeholder="3 Year">
+                             </div>
+                             </div>
+
+                             <p style="margin-bottom: 5px;">Interest Paid : </p>
+                             <div class="col-md-4 col-sm-12 col-xs-12">
+                             <div class="form-group">
+                                <input type="text" class="form-input-new form-control" name="interestpaid_oneyr_amt" id="interestpaid_oneyr_amt" onkeypress="return isNumberKey(event)" required placeholder="1 Year">
+                             </div>
+                             </div>
+
+                              <div class="col-md-4 col-sm-12 col-xs-12">
+                             <div class="form-group">
+                                <input type="text" class="form-input-new form-control" name="interestpaid_twoyr_amt" id="interestpaid_twoyr_amt" onkeypress="return isNumberKey(event)" required placeholder="2 Year">
+                             </div>
+                             </div>
+
+                              <div class="col-md-4 col-sm-12 col-xs-12">
+                             <div class="form-group">
+                                <input type="text" class="form-input-new form-control" name="interestpaid_threeyr_amt" id="interestpaid_threeyr_amt" onkeypress="return isNumberKey(event)" required placeholder="3 Year">
+                             </div>
+                             </div>
+
+                             <p style="margin-bottom: 5px;">Current Rate of Interest : </p>
+                             <div class="col-md-4 col-sm-12 col-xs-12">
+                             <div class="form-group">
+                                <input type="text" class="form-input-new form-control" step="0.01" min="0" maxlength="4" name="currentroi_oneyr_amt" id="currentroi_oneyr_amt" onkeypress="return isNumberKey(event)" required placeholder="1 Year">
+                             </div>
+                             </div>
+
+                              <div class="col-md-4 col-sm-12 col-xs-12">
+                             <div class="form-group">
+                                <input type="text" step="0.01" min="0" maxlength="4" class="form-input-new form-control" name="currentroi_twoyr_amt" id="currentroi_twoyr_amt" onkeypress="return isNumberKey(event)" required placeholder="2 Year">
+                             </div>
+                             </div>
+
+                              <div class="col-md-4 col-sm-12 col-xs-12">
+                             <div class="form-group">
+                                <input type="text" step="0.01" min="0" maxlength="4" class="form-input-new form-control" name="currentroi_threeyr_amt" id="currentroi_threeyr_amt" onkeypress="return isNumberKey(event)" required placeholder="3 Year">
+                             </div>
+                             </div>
+
+                             <p style="margin-bottom: 5px;">Total EMI : </p>
+                             <div class="col-md-4 col-sm-12 col-xs-12">
+                             <div class="form-group">
+                                <input type="text" class="form-input-new form-control" name="totalemi_oneyr_amt" id="totalemi_oneyr_amt" onkeypress="return isNumberKey(event)" required placeholder="1 Year">
+                             </div>
+                             </div>
+
+                              <div class="col-md-4 col-sm-12 col-xs-12">
+                             <div class="form-group">
+                                <input type="text" class="form-input-new form-control" name="totalemi_twoyr_amt" id="totalemi_twoyr_amt" onkeypress="return isNumberKey(event)" required placeholder="2 Year">
+                             </div>
+                             </div>
+
+                            <div class="col-md-4 col-sm-12 col-xs-12">
+                             <div class="form-group">
+                                <input type="text" class="form-input-new form-control" name="totalemi_threeyr_amt" id="totalemi_threeyr_amt" onkeypress="return isNumberKey(event)" required placeholder="3 Year">
+                             </div>
+                             </div>
+
+                        </div>
+                                </div>
+                            </div>
+
+                            <div class="panel panel-default">
+                                                <div class="panel-heading" role="tab" id="headingTwo">
+                                                    <h4 class="panel-title" style="font-size: 16px"> <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo"><i class="fa sign fa-minus-circle" style="color: #ed1c24;"></i>Details 1</a> </h4>
+                                                </div>
+                                                <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                                                    <div class="panel-body">
+                                                         <p style="margin-bottom: 5px;">Inventory : </p>
+                             <div class="col-md-4 col-sm-12 col-xs-12">
+                             <div class="form-group">
+                                <input type="text" class="form-input-new form-control" name="inventory_oneyr_amt" id="inventory_oneyr_amt" onkeypress="return isNumberKey(event)" required  placeholder="1 Year">
+                             </div>
+                             </div>
+
+                             <div class="col-md-4 col-sm-12 col-xs-12">
+                             <div class="form-group">
+                                <input type="text" class="form-input-new form-control" name="inventory_twoyr_amt" id="inventory_twoyr_amt" onkeypress="return isNumberKey(event)" required placeholder="2 Year">
+                             </div>
+                             </div>
+
+                             <div class="col-md-4 col-sm-12 col-xs-12">
+                             <div class="form-group">
+                                <input type="text" class="form-input-new form-control" name="inventory_threeyr_amt" id="inventory_threeyr_amt" onkeypress="return isNumberKey(event)" required placeholder="3 Year">
+                             </div>
+                             </div>
+
+                             <p style="margin-bottom: 5px;">Debtors : </p>
+                             <div class="col-md-4 col-sm-12 col-xs-12">
+                             <div class="form-group">
+                                <input type="text" class="form-input-new form-control" name="debtor_oneyr_amt" id="debtor_oneyr_amt" onkeypress="return isNumberKey(event)" required placeholder="1 Year">
+                             </div>
+                             </div>
+
+                             <div class="col-md-4 col-sm-12 col-xs-12">
+                             <div class="form-group">
+                                <input type="text" class="form-input-new form-control" name="debtor_twoyr_amt" id="debtor_twoyr_amt" onkeypress="return isNumberKey(event)" required placeholder="2 Year">
+                             </div>
+                             </div>
+
+                             <div class="col-md-4 col-sm-12 col-xs-12">
+                             <div class="form-group">
+                                <input type="text" class="form-input-new form-control" name="debtor_threeyr_amt" id="debtor_threeyr_amt" onkeypress="return isNumberKey(event)" required placeholder="3 Year">
+                             </div>
+                             </div>
+
+
+                             <p style="margin-bottom: 5px;">Creditors : </p>
+                             <div class="col-md-4 col-sm-12 col-xs-12">
+                             <div class="form-group">
+                                 <input type="text" class="form-input-new form-control" name="creditor_oneyr_amt" id="creditor_oneyr_amt" onkeypress="return isNumberKey(event)" required placeholder="1 Year">
+                             </div>
+                             </div>
+
+                             <div class="col-md-4 col-sm-12 col-xs-12">
+                             <div class="form-group">
+                                <input type="text" class="form-input-new form-control" name="creditor_twoyr_amt" id="creditor_twoyr_amt" onkeypress="return isNumberKey(event)" required placeholder="2 Year">
+                             </div>
+                             </div>
+
+                             <div class="col-md-4 col-sm-12 col-xs-12">
+                             <div class="form-group">
+                                <input type="text" class="form-input-new form-control" name="creditor_threeyr_amt" id="creditor_threeyr_amt" onkeypress="return isNumberKey(event)" required placeholder="3 Year">
+                             </div>
+                             </div>
+
+
+                             <p style="margin-bottom: 5px;">Share Capital : </p>
+                             <div class="col-md-4 col-sm-12 col-xs-12">
+                             <div class="form-group">
+                                <input type="text" class="form-input-new form-control" name="sharecap_oneyr_amt" id="sharecap_oneyr_amt" onkeypress="return isNumberKey(event)" required placeholder="1 Year">
+                             </div>
+                             </div>
+
+                             <div class="col-md-4 col-sm-12 col-xs-12">
+                             <div class="form-group">
+                                <input type="text" class="form-input-new form-control" name="sharecap_twoyr_amt" id="sharecap_twoyr_amt" onkeypress="return isNumberKey(event)" required placeholder="2 Year">
+                             </div>
+                             </div>
+
+                             <div class="col-md-4 col-sm-12 col-xs-12">
+                             <div class="form-group">
+                               <input type="text" class="form-input-new form-control" name="sharecap_threeyr_amt" id="sharecap_threeyr_amt" onkeypress="return isNumberKey(event)" required placeholder="3 Year">
+                             </div>
+                             </div>
+
+
+                             <p style="margin-bottom: 5px;">Reserve Surplus : </p>
+                             <div class="col-md-4 col-sm-12 col-xs-12">
+                             <div class="form-group">
+                                <input type="text" class="form-input-new form-control" name="reserve_oneyr_amt" id="reserve_oneyr_amt" onkeypress="return isNumberKey(event)" required  placeholder="1 Year">
+                             </div>
+                             </div>
+
+                             <div class="col-md-4 col-sm-12 col-xs-12">
+                             <div class="form-group">
+                                <input type="text" class="form-input-new form-control" name="reserve_twoyr_amt" id="reserve_twoyr_amt" onkeypress="return isNumberKey(event)" required  placeholder="2 Year">
+                             </div>
+                             </div>
+
+                             <div class="col-md-4 col-sm-12 col-xs-12">
+                             <div class="form-group">
+                                <input type="text" class="form-input-new form-control" name="reserve_threeyr_amt" id="reserve_threeyr_amt" onkeypress="return isNumberKey(event)" required  placeholder="3 Year">
+                             </div>
+                             </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                <div class="panel panel-default">
+                                 <div class="panel-heading" role="tab" id="headingThree">
+                                    <h4 class="panel-title" style="font-size: 16px"> <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree"><i class="fa sign fa-minus-circle" style="color: #ed1c24;"></i>Details 2</a> </h4>
+                                    </div>
+                                  <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                            <div class="panel-body">
+                                                         
+                             <div class="col-md-4 col-sm-12 col-xs-12">
+                             <div class="form-group">
+                                <input type="text" class="form-input-new form-control" name="total_current_asset" id="total_current_asset" onkeypress="return isNumberKey(event)" required placeholder="Total Current Asset">
+                             </div>
+                             </div>
+
+                             <div class="col-md-4 col-sm-12 col-xs-12">
+                             <div class="form-group">
+                                <input type="text" class="form-input-new form-control" name="total_current_liable" id="total_current_liable" onkeypress="return isNumberKey(event)" required placeholder="Total Current Liability">
+                             </div>
+                             </div>
+
+                             <div class="col-md-4 col-sm-12 col-xs-12">
+                             <div class="form-group">
+                               <input type="text" class="form-input-new form-control" name="total_noncurrent_liable" id="total_noncurrent_liable" onkeypress="return isNumberKey(event)" required placeholder="Total Non-Current Liability">
+                             </div>
+                             </div>
+                          </div>
+                              </div>
+                         </div>                          
+                      </div>
+                    </div>     
+                        <h4 >Other Details</h4>
+
+                          <div class="col-md-4 col-sm-12 col-xs-12">
+                             <div class="form-group">  
+                              <select id="nature_of_business" class="form-control input-md" name="nature_of_business">
+                                                            <option selected disabled="">Nature of Business</option>
+                                                            <option value="Manufacturing">Manufacturing</option>
+                                                            <option value="Trading">Trading</option>
+                                                            <option value="Services">Services</option>
+                                                            <option value="Retailer">Retailer</option>
+                                                            <option value="Others">Other</option>
+ 
+                                                    </select>
+                                                    
+                             </div>
+                             </div>
+
+                             <div class="col-md-4 col-sm-12 col-xs-12">
+                             <div class="form-group">
+                                                   
+                                                    <select id="industry_type" class="form-control input-md" name="industry_type">
+                                                            <option selected disabled="">Industry</option>
+                                                            <option value="Agriculture">Agriculture</option>
+                                                            <option value="Auto Components">Auto Components</option>
+                                                            <option value="Automobiles">Automobiles</option>
+                                                            <option value="Aviation">Aviation</option>
+                                                            <option value="Banking">Banking</option>
+                                                            <option value="Biotechnology">Biotechnology </option>
+                                                            <option value="Cement">Cement</option>
+                                                            <option value="Consumer Markets">Consumer Markets</option>
+                                                            <option value="Education And Training">Education And Training</option>
+                                                            <option value="Engineering">Engineering</option>
+                                                            <option value="Financial Services">Financial Services</option>
+                                                            <option value="Food Industry">Food Industry</option>
+                                                            <option value="Gems And Jewellery">Gems And Jewellery</option>
+                                                            <option value="Healthcare">Healthcare</option>
+                                                            <option value="Infrastructure">Infrastructure</option>
+                                                            <option value="Insurance">Insurance</option>
+                                                            <option value="IT &ITeS">IT &ITeS</option>
+                                                            <option value="Manufacturing">Manufacturing</option>
+                                                            <option value="Marketing And Strategy">Marketing And Strategy</option>
+                                                            <option value="Media And Entertainment">Media And Entertainment</option>
+                                                            <option value="Oil And Gas">Oil And Gas</option>
+                                                            <option value="Pharmaceuticals">Pharmaceuticals</option>
+                                                            <option value="Ports">Ports</option>
+                                                            <option value="Power">Power</option>
+                                                            <option value="Railways">Railways</option>
+                                                            <option value="Real Estate">Real Estate</option>
+                                                            <option value="Research And Development">Research And Development</option>
+                                                            <option value="Retail">Retail</option>
+                                                            <option value="Roads">Roads</option>
+                                                            <option value="Rural Market">Rural Market</option>
+                                                            <option value="Science And Technology">Science And Technology</option>
+                                                            <option value="Semiconductor">Semiconductor</option>
+                                                            <option value="Services">Services</option>
+                                                            <option value="Steel">Steel</option>
+                                                            <option value="Telecommunications">Telecommunications</option>
+                                                            <option value="Textiles">Textiles</option>
+                                                            <option value="Tourism And Hospitality">Tourism And Hospitality</option>
+ 
+                                                    </select>
+                                                    
+                             </div>
+                             </div>
+
+
+                              <div class="col-md-4 col-sm-12 col-xs-12">
+                             <div class="form-group">
+                                                   
+                                                    <select id="office_type" class="form-control input-md" name="office_type">
+                                                            <option selected disabled="">Office Type</option>
+                                                            <option value="Owned">Owned</option>
+                                                            <option value="Rented">Rented</option>
+                                                            <option value="Parental">Parental</option>
+                                                            <option value="Other">Other</option>
+ 
+                                                    </select>
+                                                    
+                             </div>
+                             </div>
+
+
+                              <div class="col-md-4 col-sm-12 col-xs-12">
+                             <div class="form-group">
+                                                   
+                                                    <select id="residence_type" class="form-control input-md" name="residence_type">
+                                                            <option selected disabled="">Residence Type</option>
+                                                            <option value="Owned">Owned</option>
+                                                            <option value="Rented">Rented</option>
+                                                            <option value="Parental">Parental</option>
+                                                            <option value="Other">Other</option>
+ 
+                                                    </select>
+                                                    
+                             </div>
+                             </div>
+
+
+                            <hr style="color:transparent; width:100%" />
+
+                            <h4 >Applicant Details</h4>
+
+
+                            <div class="col-md-4 col-sm-12 col-xs-12">
+                             <div class="form-group">
+                                <input type="text" id="customer_name" name="customer_name" class="form-input-new form-control" placeholder="Applicant Name" onkeypress="return AllowAlphabet(event)" required >
+                             </div>
+                             </div>
+
+
+                             <div class="col-md-4 col-sm-12 col-xs-12">
+                             <div class="form-group">
+                                <input type="text" id="customer_contact " name="customer_contact " class="form-input-new form-control" placeholder="Contact No" pattern="[789][0-9]{9}" maxlength="10" onkeypress="return isNumberKey(event)" required>
+                             </div>
+                             </div>
+
+                             <div class="col-md-4 col-sm-12 col-xs-12">
+                             <div class="form-group">
+                                <input type="text" id="customer_email" name="customer_email" class="form-input-new form-control" placeholder="Email Id" oninput="email('customer_email')" required>
+                  <span id="email_id" style="display:none;color: red;">Please Enter Valid Email Id.</span>
+                             </div>
+                             </div>
+
+                <!-- <button type="submit" class="btn btn-default btn-sm">Apply Now</button> -->
+                <a class="btn btn-default btn-sm apply_now"  data-toggle="modal">Apply Now</a>
+                                                
+                                          
+                    </div>
+                 </div>
+                   
+           <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" style="padding-bottom: 20px">
+                    <div class="how-it-block1 bg-boxshadow" style=" min-height: 480px;">
+                                        <div class=" ">
+                                            <!-- Text input-->
+                                            <div class="col-md-12 col-xs-12">
+                                                <div class="form-group">
+                                                   <input type="text" class="form-control" id="loanamount_new" name="loanamount_new" value="" placeholder="Loan Amount" required class="clr-ddd" readonly />
+                                                </div>
+                                            </div>
+                                            <!-- Text input-->
+                                            <div class="col-md-12 col-xs-12">
+                                                <div class="form-group">
+                                                    <input type="text" class="form-control" id="rate" name="rate" placeholder="Best ROI" required class="clr-ddd" readonly />
+                                                </div>
+                                            </div>
+                                            <!-- Text input-->
+                                            <input type="hidden" class="form-control" id="ratio_liability" name="ratio_liability" value="" placeholder="" required class="clr-ddd"  />
+
+                                            <input type="hidden" class="form-control" id="debt_service_coverage_ratio" name="debt_service_coverage_ratio" value="" placeholder="" required class="clr-ddd"  />
+                                            
+                                            <div class="col-md-12 col-xs-12">
+                                    <br>
+                                                <!-- <button type="submit"  class="btn btn-default btn-sm" style="width: 100%;">Check Bankwise<br>Eligibility</button> -->
+
+                                                <button id="eligibility" class="btn btn-default btn-sm disblk" title="See Bankwise Eligibility And Apply Amongst Best Bank"style="width: 100%;">Check Bankwise<br>Eligibility</button>                                          
+                                    </div>
+
+                                     <div class="col-md-12 col-xs-12">
+                                    <br>
+                                                <!-- <button type="submit" class="btn btn-default btn-sm trigger-custom" style="width: 100%;">Call<br>Manager</button> -->
+
+                                                 <button type="button" class="btn btn-default btn-sm block"  id="call_rm" name="call_rm" data-toggle="modal" data-target="#Modal" title="Call For RM(Single Day Process)"style="width: 100%;">Call<br>Manager</button>
+                                                
+                                    </div>                               
+                                   </div>                                 
+                        </div>
                 </div>
-            </div>
-        </div>
 
-        <div class="panel panel-default">
-            <div class="panel-heading" role="tab" id="heading71">
-                <h4 class="panel-title">
-                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion2" href="#collapse71" aria-expanded="false" aria-controls="collapse71">
-                        <i class="icon-plus more-less pull-right"></i>
-                        Details 2
-                    </a>
-                </h4>
-            </div>
-            <div id="collapse71" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading7">
-                <div class="panel-body">
-             <div class="col-md-12 form-padding">
-     <input type="text" class="form-input-new form-control" name="total_current_asset" id="total_current_asset" onkeypress="return isNumberKey(event)" required placeholder="Total Current Asset">
-	         </div>
-			 <div class="col-md-12 form-padding">
-     <input type="text" class="form-input-new form-control" name="total_current_liable" id="total_current_liable" onkeypress="return isNumberKey(event)" required placeholder="Total Current Liability">
-	         </div>
-			 <div class="col-md-12 form-padding">
-     <input type="text" class="form-input-new form-control" name="total_noncurrent_liable" id="total_noncurrent_liable" onkeypress="return isNumberKey(event)" required placeholder="Total Non-Current Liability">
-	         </div>
-			
-					
-                </div>
-            </div>
-        </div>
-        
-        
-    </div><!-- panel-group -->
-	</div>
-  
-   </div>
-
-  
-  
-  <div class="col-md-6 no-pad comp-fin">
-    <div class="panel-group" id="accordion1">
-
-        <div class="panel panel-default">
-            <div class="panel-heading" role="tab" id="headingOne">
-                <h4 class="panel-title">
-                    <a role="button" data-toggle="collapse" data-parent="#accordion1" href="#collapse6" aria-expanded="true" aria-controls="collapse6">
-                        <i class="icon-minus more-less pull-right"></i>
-                        COMPANY FINANCIALS
-                    </a>
-                </h4>
-            </div>
-            <div id="collapse6" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading6">
-                <div class="panel-body">
-                     
-					 <div>
-   <div class="col-md-12 pad-no">
-   <center><div class="type-cover"><span>Turnover/Topline</span></div></center>
-   </div>
-   <div class="col-md-4 form-padding"><input type="text" name="turnover_oneyr_amt" id="turnover_oneyr_amt" onkeypress="return isNumberKey(event)" required class="form-input-new form-control" placeholder="1 Year"></div>
-   <div class="col-md-4 form-padding"><input type="text" name="turnover_twoyr_amt" id="turnover_twoyr_amt" onkeypress="return isNumberKey(event)" required class="form-input-new form-control" placeholder="2 Year"></div>
-   <div class="col-md-4 form-padding"><input type="text" name="turnover_threeyr_amt" id="turnover_threeyr_amt" onkeypress="return isNumberKey(event)" required class="form-input-new form-control" placeholder="3 Year"></div>
- </div>
- <div>
-   <div class="col-md-12 pad-no">
-   <center><div class="type-cover"><span>EBIT/Net Operating Income</span></div></center>
-   </div>
-   <div class="col-md-4 form-padding"><input type="text" name="ebit_oneyr_amt" id="ebit_oneyr_amt" onkeypress="return isNumberKey(event)" required class="form-input-new form-control" placeholder="1 Year"></div>
-   <div class="col-md-4 form-padding"><input type="text" name="ebit_twoyr_amt" id="ebit_twoyr_amt" onkeypress="return isNumberKey(event)" required class="form-input-new form-control" placeholder="2 Year"></div>
-   <div class="col-md-4 form-padding"><input type="text" name="ebit_threeyr_amt" id="ebit_threeyr_amt" onkeypress="return isNumberKey(event)" required class="form-input-new form-control" placeholder="3 Year"></div>
- </div>
- <div>
-   <div class="col-md-12 pad-no">
-   <center><div class="type-cover"><span>Profit Before Tax</span></div></center>
-   </div>
-   <div class="col-md-4 form-padding"><input type="text" class="form-input-new form-control" name="pbt_oneyr_amt" id="pbt_oneyr_amt" onkeypress="return isNumberKey(event)" required placeholder="1 Year"></div>
-   <div class="col-md-4 form-padding"><input type="text" class="form-input-new form-control" name="pbt_twoyr_amt " id="pbt_twoyr_amt " onkeypress="return isNumberKey(event)" required placeholder="2 Year"></div>
-   <div class="col-md-4 form-padding"><input type="text" class="form-input-new form-control" name="pbt_threeyr_amt" id="pbt_threeyr_amt" onkeypress="return isNumberKey(event)" required placeholder="3 Year"></div>
- </div>
- <div>
-   <div class="col-md-12 pad-no">
-   <center><div class="type-cover"><span>Profit After Tax</span></div></center>
-   </div>
-   <div class="col-md-4 form-padding"><input type="text" class="form-input-new form-control" name="pat_oneyr_amt" id="pat_oneyr_amt" onkeypress="return isNumberKey(event)" required placeholder="1 Year"></div>
-   <div class="col-md-4 form-padding"><input type="text" class="form-input-new form-control" name="pat_twoyr_amt" id="pat_twoyr_amt" onkeypress="return isNumberKey(event)" required placeholder="2 Year"></div>
-   <div class="col-md-4 form-padding"><input type="text" class="form-input-new form-control" name="pat_threeyr_amt" id="pat_threeyr_amt" onkeypress="return isNumberKey(event)" required placeholder="3 Year"></div>
- </div>
- <div>
-   <div class="col-md-12 pad-no">
-   <center><div class="type-cover"><span>Depreciation</span></div></center>
-   </div>
-   <div class="col-md-4 form-padding"><input type="text" class="form-input-new form-control" name="depre_oneyr_amt" id="depre_oneyr_amt" onkeypress="return isNumberKey(event)" required  placeholder="1 Year"></div>
-   <div class="col-md-4 form-padding"><input type="text" class="form-input-new form-control" name="depre_twoyr_amt" id="depre_twoyr_amt" onkeypress="return isNumberKey(event)" required placeholder="2 Year"></div>
-   <div class="col-md-4 form-padding"><input type="text" class="form-input-new form-control" name="depre_threeyr_amt" id="depre_threeyr_amt" onkeypress="return isNumberKey(event)" required placeholder="3 Year"></div>
- </div>
- <div>
-   <div class="col-md-12 pad-no">
-   <center><div class="type-cover"><span>Existing Term Loan</span></div></center>
-   </div>
-   <div class="col-md-4 form-padding"><input type="text" class="form-input-new form-control" name="termloan_oneyr_amt" id="termloan_oneyr_amt" onkeypress="return isNumberKey(event)" required placeholder="1 Year"></div>
-   <div class="col-md-4 form-padding"><input type="text" class="form-input-new form-control" name="termloan_twoyr_amt" id="termloan_twoyr_amt" onkeypress="return isNumberKey(event)" required placeholder="2 Year"></div>
-   <div class="col-md-4 form-padding"><input type="text" class="form-input-new form-control" name="termloan_threeyr_amt" id="termloan_threeyr_amt" onkeypress="return isNumberKey(event)" required placeholder="3 Year"></div>
- </div>
- <div>
-   <div class="col-md-12 pad-no">
-   <center><div class="type-cover"><span>Existing OD/CC</span></div></center>
-   </div>
-   <div class="col-md-4 form-padding"><input type="text" class="form-input-new form-control" name="odcc_oneyr_amt" id="odcc_oneyr_amt" onkeypress="return isNumberKey(event)" required placeholder="1 Year"></div>
-   <div class="col-md-4 form-padding"><input type="text" class="form-input-new form-control" name="odcc_twoyr_amt" id="odcc_twoyr_amt" onkeypress="return isNumberKey(event)" required placeholder="2 Year"></div>
-   <div class="col-md-4 form-padding"><input type="text" class="form-input-new form-control" name="odcc_threeyr_amt" id="odcc_threeyr_amt" onkeypress="return isNumberKey(event)" required placeholder="3 Year"></div>
- </div>
- <div>
-   <div class="col-md-12 pad-no">
-   <center><div class="type-cover"><span>Interest Paid</span></div></center>
-   </div>
-   <div class="col-md-4 form-padding"><input type="text" class="form-input-new form-control" name="interestpaid_oneyr_amt" id="interestpaid_oneyr_amt" onkeypress="return isNumberKey(event)" required placeholder="1 Year"></div>
-   <div class="col-md-4 form-padding"><input type="text" class="form-input-new form-control" name="interestpaid_twoyr_amt" id="interestpaid_twoyr_amt" onkeypress="return isNumberKey(event)" required placeholder="2 Year"></div>
-   <div class="col-md-4 form-padding"><input type="text" class="form-input-new form-control" name="interestpaid_threeyr_amt" id="interestpaid_threeyr_amt" onkeypress="return isNumberKey(event)" required placeholder="3 Year"></div>
- </div>
- <div>
-   <div class="col-md-12 pad-no">
-   <center><div class="type-cover"><span>Current Rate of Interest</span></div></center>
-   </div>
-   <div class="col-md-4 form-padding"><input type="text" class="form-input-new form-control" step="0.01" min="0" maxlength="4" name="currentroi_oneyr_amt" id="currentroi_oneyr_amt" onkeypress="return isNumberKey(event)" required placeholder="1 Year"></div>
-   <div class="col-md-4 form-padding"><input type="text" step="0.01" min="0" maxlength="4" class="form-input-new form-control" name="currentroi_twoyr_amt" id="currentroi_twoyr_amt" onkeypress="return isNumberKey(event)" required placeholder="2 Year"></div>
-   <div class="col-md-4 form-padding"><input type="text" step="0.01" min="0" maxlength="4" class="form-input-new form-control" name="currentroi_threeyr_amt" id="currentroi_threeyr_amt" onkeypress="return isNumberKey(event)" required placeholder="3 Year"></div>
- </div>
- <div>
-   <div class="col-md-12 pad-no">
-   <center><div class="type-cover"><span>Total EMI</span></div></center>
-   </div>
-   <div class="col-md-4 form-padding"><input type="text" class="form-input-new form-control" name="totalemi_oneyr_amt" id="totalemi_oneyr_amt" onkeypress="return isNumberKey(event)" required placeholder="1 Year"></div>
-   <div class="col-md-4 form-padding"><input type="text" class="form-input-new form-control" name="totalemi_twoyr_amt" id="totalemi_twoyr_amt" onkeypress="return isNumberKey(event)" required placeholder="2 Year"></div>
-   <div class="col-md-4 form-padding"><input type="text" class="form-input-new form-control" name="totalemi_threeyr_amt" id="totalemi_threeyr_amt" onkeypress="return isNumberKey(event)" required placeholder="3 Year"></div>
- </div>
-					
-		
-					 
-                </div>
-            </div>
-        </div>
-
-        <div class="panel panel-default">
-            <div class="panel-heading" role="tab" id="heading7">
-                <h4 class="panel-title">
-                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion1" href="#collapse7" aria-expanded="false" aria-controls="collapse7">
-                        <i class="icon-plus more-less pull-right"></i>
-                       OTHER DETAILS 
-                    </a>
-                </h4>
-            </div>
-            <div id="collapse7" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading7">
-                <div class="panel-body">
-
-	             <div class="panel-group" id="accordion5">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion5" href="#collapse111">NATURE OF BUSINESS <i class="icon-plus pull-right more-less"></i></a>
-		
-        </h4>
-      </div>
-      <div id="collapse111" class="panel-collapse collapse">
-        <div class="panel-body">
-	<div class="scenario">
-								<div class="col-xs-6 pad-no scenario-active"><a class="scenario-1 btn"  onclick="alertme('Manufacturing')">
-                Manufacturing</a></div>
-
-                <div class="col-xs-6 pad-no"><a class="scenario-1 btn" onclick="alertme('Trading')">Trading </a></div>
-                <div class="col-xs-6 pad-no"><a class="scenario-1 btn" onclick="alertme('Services')">Services</a></div>
-                <div class="col-xs-6 pad-no"><a class="scenario-1 btn" onclick="alertme('Retailer')">Retailer</a></div>
-                <div class="col-xs-6 pad-no"><a class="scenario-1 btn" onclick="alertme('Others')">Others</a></div>
-
-                <input type="hidden" name="nature_of_business" id="nature_of_business">
-
-								
-							</div>
-						
-	   
-	   
-		
-		</div>
-      </div>
-    </div>
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion5" href="#collapse112">INDUSTRY <i class="icon-plus pull-right more-less"></i></a>
-		 
-        </h4>
-      </div>
-      <div id="collapse112" class="panel-collapse collapse">
-        <div class="panel-body">
-		   
-		   <div class="scenario1">
-								<div class="col-xs-6 pad-no scenario-active"><a class="scenario-1 btn"  onclick="callme('Agriculture')">
-                Agriculture</a></div>
-
-                <div class="col-xs-6 pad-no"><a class="scenario-1 btn" onclick="callme('Auto Components')">Auto Components </a></div>
-                <div class="col-xs-6 pad-no"><a class="scenario-1 btn" onclick="callme('Automobiles')">Automobiles</a></div>
-                <div class="col-xs-6 pad-no"><a class="scenario-1 btn" onclick="callme('Aviation')">Aviation</a></div>
-                <div class="col-xs-6 pad-no"><a class="scenario-1 btn" onclick="callme('Banking')">Banking</a></div>
-                <div class="col-xs-6 pad-no"><a class="scenario-1 btn" onclick="callme('Biotechnology')">Biotechnology </a></div>
-                <div class="col-xs-6 pad-no"><a class="scenario-1 btn" onclick="callme('Cement')">Cement</a></div>
-                <div class="col-xs-6 pad-no"><a class="scenario-1 btn" onclick="callme('Consumer Markets')">Consumer Markets</a></div>
-                <div class="col-xs-6 pad-no"><a class="scenario-1 btn" onclick="callme('Education And Training')">Education And Training </a></div>
-
-                <div class="col-xs-6 pad-no "><a class="scenario-1 btn"  onclick="callme('Engineering')">
-                Engineering</a></div>
-
-                <div class="col-xs-6 pad-no"><a class="scenario-1 btn" onclick="callme('Financial Services')">Financial Services </a></div>
-                <div class="col-xs-6 pad-no"><a class="scenario-1 btn" onclick="callme('Food Industry')">Food Industry</a></div>
-                <div class="col-xs-6 pad-no"><a class="scenario-1 btn" onclick="callme('Gems And Jewellery')">Gems And Jewellery</a></div>
-                <div class="col-xs-6 pad-no"><a class="scenario-1 btn" onclick="callme('Healthcare')">Healthcare</a></div>
-                <div class="col-xs-6 pad-no"><a class="scenario-1 btn" onclick="callme('Infrastructure')">Infrastructure </a></div>
-                <div class="col-xs-6 pad-no"><a class="scenario-1 btn" onclick="callme('Insurance')">Insurance</a></div>
-                <div class="col-xs-6 pad-no"><a class="scenario-1 btn" onclick="callme('IT & ITeS')">IT & ITeS</a></div>
-                <div class="col-xs-6 pad-no"><a class="scenario-1 btn" onclick="callme('Manufacturing')">Manufacturing</a></div>
-
-                <div class="col-xs-6 pad-no"><a class="scenario-1 btn" onclick="callme('Marketing And Strategy')">Marketing And Strategy </a></div>
-                <div class="col-xs-6 pad-no"><a class="scenario-1 btn" onclick="callme('Media And Entertainment')">Media And Entertainment</a></div>
-                <div class="col-xs-6 pad-no"><a class="scenario-1 btn" onclick="callme('Oil And Gas')">Oil And Gas</a></div>
-                <div class="col-xs-6 pad-no"><a class="scenario-1 btn" onclick="callme('Pharmaceuticals')">Pharmaceuticals</a></div>
-                <div class="col-xs-6 pad-no"><a class="scenario-1 btn" onclick="callme('Ports')">Ports </a></div>
-                <div class="col-xs-6 pad-no"><a class="scenario-1 btn" onclick="callme('Power')">Power</a></div>
-                <div class="col-xs-6 pad-no"><a class="scenario-1 btn" onclick="callme('Railways')">Railways</a></div>
-                <div class="col-xs-6 pad-no"><a class="scenario-1 btn" onclick="callme('Real Estate')">Real Estate</a></div>
-
-                <div class="col-xs-6 pad-no"><a class="scenario-1 btn" onclick="callme('Research And Development')">Research And Development </a></div>
-                <div class="col-xs-6 pad-no"><a class="scenario-1 btn" onclick="callme('Retail')">Retail</a></div>
-                <div class="col-xs-6 pad-no"><a class="scenario-1 btn" onclick="callme('Roads')">Roads</a></div>
-                <div class="col-xs-6 pad-no"><a class="scenario-1 btn" onclick="callme('Rural Market')">Rural Market</a></div>
-                <div class="col-xs-6 pad-no"><a class="scenario-1 btn" onclick="callme('Science And Technology')">Science And Technology </a></div>
-                <div class="col-xs-6 pad-no"><a class="scenario-1 btn" onclick="callme('Semiconductor')">Semiconductor</a></div>
-                <div class="col-xs-6 pad-no"><a class="scenario-1 btn" onclick="callme('Services')">Services</a></div>
-                <div class="col-xs-6 pad-no"><a class="scenario-1 btn" onclick="callme('Steel')">Steel</a></div>
-                <div class="col-xs-6 pad-no"><a class="scenario-1 btn" onclick="callme('Telecommunications')">Telecommunications</a></div>
-                <div class="col-xs-6 pad-no"><a class="scenario-1 btn" onclick="callme('Textiles')">Textiles</a></div>
-                <div class="col-xs-6 pad-no"><a class="scenario-1 btn" onclick="callme('Tourism And Hospitality')">Tourism And Hospitality</a></div>
-                <input type="hidden" name="industry_type" id="industry_type">
-                 
-
-                
-
-							</div>
-		</div>
-      </div>
-    </div>
-    <!--<div class="panel panel-default">
-      <div class="panel-heading">
-        <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion1" href="#collapse3">COMPANY'S DATE OF INCORPORATION <i class="icon-plus pull-right more-less"></i></a>
-		 
-        </h4>
-      </div>
-      <div id="collapse3" class="panel-collapse collapse">
-        <div class="panel-body">
-		  <div class="col-xs-12 form-padding">
-     <input type="text" id="date" name="date" class="form-input-new form-control lastReporteddate1" placeholder="Date of incorporation" required>
-	</div>
-		</div>
-      </div>
-    </div> -->
-	
-	
-	<div class="panel panel-default">
-      <div class="panel-heading">
-        <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion5" href="#collapse114">RESIDENCE TYPE <i class="icon-plus pull-right more-less"></i></a>
-		 
-        </h4>
-      </div>
-      <div id="collapse114" class="panel-collapse collapse">
-        <div class="panel-body">
-		   <div class="scenario2">
-								<div class="col-xs-6 pad-no scenario-active"><a class="scenario-1 btn"  onclick="alert('Owned')">
-                Owned</a></div>
-
-                <div class="col-xs-6 pad-no"><a class="scenario-1 btn" onclick="alert('Rented')">Rented </a></div>
-                <div class="col-xs-6 pad-no"><a class="scenario-1 btn" onclick="alert('Parental')">Parental</a></div>
-                <div class="col-xs-6 pad-no"><a class="scenario-1 btn" onclick="alert('Others')">Others</a></div>
-                
-                <input type="hidden" name="residence_type" id="residence_type">
-								
-							</div>
-		</div>
-      </div>
-    </div>
-	<div class="panel panel-default">
-      <div class="panel-heading">
-        <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion5" href="#collapse115">OFFICE TYPE<i class="icon-plus pull-right more-less"></i></a>
-		  
-        </h4>
-      </div>
-      <div id="collapse115" class="panel-collapse collapse">
-        <div class="panel-body">
-		   <div class="scenario3">
-								<div class="col-xs-6 pad-no scenario-active"><a class="scenario-1 btn"  onclick="call('Owned')">
-                Owned</a></div>
-
-                <div class="col-xs-6 pad-no"><a class="scenario-1 btn" onclick="call('Rented')">Rented </a></div>
-                <div class="col-xs-6 pad-no"><a class="scenario-1 btn" onclick="call('Parental')">Parental</a></div>
-                <div class="col-xs-6 pad-no"><a class="scenario-1 btn" onclick="call('Others')">Others</a></div>
-                
-                <input type="hidden" name="office_type" id="office_type">
-								
-							</div>
-		</div>
-      </div>
-    </div>
-  </div> 
-					
-                </div>
-            </div>
-        </div>
-		
-<div class="panel panel-default">
-            <div class="panel-heading" role="tab" id="headingFour">
-                <h4 class="panel-title">
-                    <a role="button" data-toggle="collapse" data-parent="#accordion1" href="#collapse711" aria-expanded="true" aria-controls="collapse711">
-                        <i class="icon-plus more-less pull-right"></i>
-                        APPLICANT DETAILS
-                    </a>
-                </h4>
-            </div>
-            <div id="collapse711" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading71">
-                <div class="panel-body">
-                    
-					<div class="col-xs-6 form-padding">
-     <input type="text" id="customer_name" name="customer_name" class="form-input-new form-control" placeholder="Applicant Name" onkeypress="return AllowAlphabet(event)" required >
-                  </div>
-				  
-				  <div class="col-xs-6 form-padding">
-     <input type="text" id="customer_contact " name="customer_contact " class="form-input-new form-control" placeholder="Contact No." pattern="[789][0-9]{9}" maxlength="10" onkeypress="return isNumberKey(event)" required>
-                  </div>
-				  <div class="col-xs-12 form-padding">
-     <input type="text" id="customer_email" name="customer_email" class="form-input-new form-control" placeholder="Email Id" oninput="email('customer_email')" required>
-    <span id="email_id" style="display:none;color: red;">Please Enter Valid Email Id.</span>
-                  </div>
-				  
-
-					
-		
-					 
-                </div>
-            </div>
-        </div>
-
-
-        
-        
-    </div><!-- panel-group -->
-	<a class="btn btn-primary btn-outline with-arrow apply_now"  data-toggle="modal">Apply Now<i class="icon-arrow-right"></i></a> 
-  </div>
-  
-  
-
-
-</div>
-
-		
-	
-	<div class="col-md-4" >
-     <div class="border brd-for" id="mi_id">
-
-             
-          
-          
-            <div class="inp-hig">
-            <label class="form-label-new">Loan Amount</label>
-              <input type="text" class="form-control" id="loanamount_new" name="loanamount_new" value="" placeholder="" required class="clr-ddd" readonly />
-            </div>
-
-            <div class="inp-hig">
-          <label class="form-label-new">Best ROI</label>
-              <input type="text" class="form-control" id="rate" name="rate" placeholder="" required class="clr-ddd" readonly />
-            </div>
-
-             <input type="hidden" class="form-control" id="ratio_liability" name="ratio_liability" value="" placeholder="" required class="clr-ddd"  />
-
-             <input type="hidden" class="form-control" id="debt_service_coverage_ratio" name="debt_service_coverage_ratio" value="" placeholder="" required class="clr-ddd"  />
-
-            <!-- <div class="inp-hig">
-            <label class="form-label-new">Tenure</label>
-                 <input type="text" class="form-control" id="term" name="term" value="" placeholder="" required class="clr-ddd" readonly>
-            </div>
-
-            <div class="inp-hig">
-          <label class="form-label-new">Processing Fee</label>
-              <input type="text" class="form-control" id="processfee" name="processfee" placeholder="" required class="clr-ddd" readonly />
-            </div> -->
-
-        <div> 
-          <br>
-         <a id="apply_new" style="display: none;" type="button" class="btn btn-info disblk" title="Experience New Digital Era In Loans">Apply Digitally</a>
-         <button id="eligibility" class="btn btn-info disblk" title="See Bankwise Eligibility And Apply Amongst Best Bank">Check Bankwise Eligibility</button>
-         <button type="button" class="btn btn-info block"  id="call_rm" name="call_rm" data-toggle="modal" data-target="#Modal" title="Call For RM(Single Day Process)">Call Manager</button>
-         
-        </div>
-        
-        <!-- <p id="err" style="display:none;" ><span style="color:skyblue;position:absolute;font-size:13px;">No Quotes Found.</span></p> -->
-   
-      </form>
-
-    </div> 
+                </form>     
+                    </div> 
     <p id="err" style="display:none;" ><span style="color: red;font-size: 20px;display: block; text-align: center;">Sorry, We are unable to process your request. Will get back to you in future.</span></p> 
   </div> 
-	
-	
-	
-	
-	</div>
-	</aside>
-	</div>
-	<br>
+  </div></div></div></div></div></aside></div></div>
+  <br>
    <div id ="test123" class="col-md-8"></div>
-   
-     <div class="container">
-  <div class="col-md-12 mrg-top white-bg pad1 box-shadow">
-	 <hr>
-	 <p>working capital loan is basically meant to meet all financing needs for everyday operations and activity of a company. companies that have high seasonality sales cycles usually rely on working capital loans to manage and cover their accounts payable ,wages ,etc. Working capital loan is a secured loan usually duration of a working capital loan from 6 to 12 months .whereas the interest rates lies between 11 % to 16%</p>
-	    <div class="panel-group">
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h4 class="panel-title">
-        <a data-toggle="collapse" href="#collapse1">Documents Required  </a>
-      </h4>
-    </div>
-    <div id="collapse1" class="panel-collapse collapse">
-      <div class="panel-body">
-	  
-	  
-	  <ul>
-	     <li>Proof of Identity / address proof.(business as well as All directors).</li>
-		 <li>2 years ITR with computation of income,balance sheet ,profit & loss account .</li>
-		 <li>Bank statements</li>
-		 <li>Business should be in operation from last 3 years </li>
 
-	  </ul>
-	  </div>
-      
+<div class=" ">
+        <!-- content start -->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+
+                    <div class="wrapper-content bg-white pinside40">
+                     <p>Working Capital Loan is basically meant to meet all financing needs for everyday operations and activity of a company. companies that have high seasonality sales cycles usually rely on working capital loans to manage and cover their accounts payable ,wages ,etc. Working capital loan is a secured loan usually duration of a working capital loan from 6 to 12 months .whereas the interest rates lies between 11% to 16%.</p>
+                      <div class="section-faq" id="section-faq">
+                            <div class="">                                
+                                <div class="row">
+                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                            <div class="st-accordion ">
+                        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                            <div class="panel panel-default">
+                                <div class="panel-heading" role="tab" id="headingOne">
+                                    <h4 class="panel-title"> <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne"><i class="fa sign fa-minus-circle" style="color: #ed1c24;"></i>Documents Required</a> </h4>
+                                </div>
+                                <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                                    <div class="panel-body">
+
+                                    <ul class="listnone bullet bullet-check-circle-default">
+                                                <li>Proof of Identity / Address Proof.(Business as well as All Directors)</li>
+                                                <li>2 years ITR with Computation of Income, Balance Sheet, Profit & Loss Account</li>
+                                                <li>Bank Statements</li>
+                                                <li>Business should be in operation from last 3 years</li>
+                                            </ul>
+
+                                        </div>
+                                </div>
+                            </div>                          
+                        </div>
+                    </div>
+                  </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    </div>
-   </div>
-	 </div>
-	 </div>
-	 <br>
-  
-@include('layout.footer')
+
+    <a href="#0" class="cd-top" title="Go to top">Top</a>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/menumaker.js"></script>
+    <!-- animsition -->
+    <script type="text/javascript" src="js/animsition.js"></script>
+    <script type="text/javascript" src="js/animsition-script.js"></script>
+    <!-- sticky header -->
+    <script type="text/javascript" src="js/jquery.sticky.js"></script>
+    <script type="text/javascript" src="js/sticky-header.js"></script>
+    <!-- slider script -->
+    <script type="text/javascript" src="js/owl.carousel.min.js"></script>
+    <script type="text/javascript" src="js/slider-carousel.js"></script>
+    <script type="text/javascript" src="js/service-carousel.js"></script>
+    <!-- Back to top script -->
+    <script src="js/back-to-top.js" type="text/javascript"></script>
+    <!-- Faq Accordion -->
+    <script src="js/accordion.js" type="text/javascript"></script>
+   
 @include('layout.script')
+
 
 <div class="modal fade" tabindex="-1" role="dialog" id="working_capital_process">
   <div class="modal-dialog" role="document">
@@ -641,87 +718,6 @@
   </div>
 </div>
 
-
-
-
-
-
-
-<!-- <div class="modal fade" id="newWorkingModal" role="dialog">
-    <div class="modal-dialog">
-    
- 
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Instant Call Back...</h4>
-        </div>
-        <div class="modal-body">
-          <form name="instant_call_form" id="instant_call_form" method="post" >
-          {{ csrf_field() }}
-          <input type="hidden" name="form" value="instant_call">
-                  <div>
-                    <fieldset>
-                      <input class="newsletter-name" name="name" placeholder="Name" required>
-                    </fieldset>
-                    </div>
-                  <div>
-                    <fieldset>
-                      <input type="text" class="newsletter-name" name="contact" pattern="[789][0-9]{9}" required maxlength="10" placeholder="Mobile Number">
-                    </fieldset>                 
-                    </div>
-
-                    <div>
-                    <fieldset>
-                      <input type="email" class="newsletter-name" name="email"  required maxlength="10" placeholder="Email">
-                    </fieldset>                 
-                    </div>
-
-                  <div>
-                      <button class="btn btn-primary btn-outline with-arrow sidebar-submit" id="instant_call_submit">Call Me Back<i class="icon-arrow-right"></i>
-                      </button>
-                </div>
-                <div class="iframeloading" style= "display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
-                <img src="{{URL::to('images/ajaxloader.gif')}}" alt="Loader" title="Loader" style="top: 50%; position: relative; left: 50%;"  />
-               </div>
-                  
-
-            </form>
-            <div class='msg displaynone' ><p>Thanks. We will reach you soon.</p></div>
-            <div class='msg_err displaynone' ><p>Ooops. Something went wrong.</p></div>
-            
-        </div>
-        
-      </div>
-      
-    </div>
-  </div>
-
-<script type="text/javascript">
-
-$(window).load(function(){  
-
-    $('#newWorkingModal').modal('show') ;
-
-  });
-
-</script> -->
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <script type="text/javascript">
   
   function AllowAlphabet(e)
@@ -751,43 +747,6 @@ $(window).load(function(){
       yearRange: '-100:' + year + '',
       defaultDate: d
     });
-</script>
-
-<script type="text/javascript">
-  function callme(test){
-  //alert($(this).closest("radio").attr('value'));
-  $('#industry_type').val(test);
-  
-//    alert(test);
-}
-</script>
-
-<script type="text/javascript">
-  function alertme(test){
-  //alert($(this).closest("radio").attr('value'));
-  
-  $('#nature_of_business').val(test);
-  
-//    alert(test);
-}
-</script>
-
-<script type="text/javascript">
-  function alert(test){
-  //alert($(this).closest("radio").attr('value'));
-  $('#residence_type').val(test);
-  
-//    alert(test);
-}
-</script>
-
-<script type="text/javascript">
-  function call(test){
-  //alert($(this).closest("radio").attr('value'));
-  $('#office_type').val(test);
-  
-//    alert(test);
-}
 </script>
 
 <script type="text/javascript">
@@ -893,26 +852,8 @@ $(window).load(function(){
 }
 </script>
 
-<script type="text/javascript">
-
-function yesnoCheck() {
-    if (document.getElementById('yesCheck').checked) {
-        document.getElementById('ifYes').style.visibility = 'visible';
-    }
-    else document.getElementById('ifYes').style.visibility = 'hidden';
-
-}
-
-</script>
-
-
-  <script type="text/javascript">
+ <script type="text/javascript">
 $("#apply_new").click(function() {
    window.location.href ="{{URL::to('thank-you')}}";
 });
 </script>
-
-
-
-
-

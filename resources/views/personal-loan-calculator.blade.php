@@ -1,30 +1,41 @@
 @include('layout.header')
-<br>
-<div class="container" id="fh5co-hero">
-                     <div class="fh5co-contact animate-box">
-                         <div class="container">
-                          <div class="row">
-                        <center>
-                        <h1 class="loan-head" >Personal Loan EMI Calculator</h1>
-                        <p class="sub-title"><h4>Calculate your Personal Loan EMI and Eligibility Status Due in a snap! <i class="fa fa-calculator" style="color:#000000" aria-hidden="true"></i></h4></p>
-                      </center>
-                      <div class="col-md-3"></div>
-                            <div class="col-md-6 box-shadow brdr-blue">
-                            <div class="row text-left comp-pg rate white-bg">
-                                 <form class="" id="personal_loan_calculator_form" name="personal_loan_calculator_form" role="form" method="POST" >
-                                 {{ csrf_field() }}
+<div class=" ">
+        <!-- content start -->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="wrapper-content bg-white pinside40">
+                        <div class="contact-form mb60">
+                            <div class=" ">
+                                <div class="col-md-offset-2 col-md-8 col-sm-12 col-xs-12" >
+                                    <div class="mb60  section-title text-center  ">
+                                        <!-- section title start-->
+                                        <h1>Personal Loan Calculator</h1>
+                                        <p>Calculate your Personal Loan EMI and Eligibility Status Due in a snap! <i class="fa fa-calculator" style="color:#000000" aria-hidden="true"></i></p>
+                                    </div>
+                                </div>
                                 <div class="row">
-                                    <div class="form-group">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding-bottom: 20px">
+                    <div class="how-it-block1 bg-boxshadow" style=" min-height: 360px;">
+                       <!--  <h4 style="text-align: center;" >EMI Calculator</h4> -->
+                        <form class="" id="personal_loan_calculator_form" name="personal_loan_calculator_form" role="form" method="POST" >
+                                 {{ csrf_field() }}
+                                        <div class=" ">
+                                        <br>
+                                            <!-- Text input-->
+                                             <input type="hidden" name="ApplicantSource" id="ApplicantSource" value="2">
                                        
-                                       <input type="hidden" name="ApplicantSource" id="ApplicantSource" value="2">
-                                       
-                                       <input type="hidden" name="ProductId" id="ProductId" value="9">
-                                        
-                                        <div class="col-md-6">
-                                            <input type="text" class="form-control" placeholder= "Loan Amount" name="LoanRequired" id="LoanRequired" onkeypress="return fnAllowNumeric(event)" minlength="6" maxlength="9" required>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <select class="form-control drop-arr block drop-arr select-sty" name="LoanTenure" id="LoanTenure" required>
+                                             <input type="hidden" name="ProductId" id="ProductId" value="9">
+                                            <div class="col-md-6 col-sm-12 col-xs-12">
+                                                <div class="form-group">
+                                                    <label class="sr-only control-label" for="LoanRequired">Loan Amount<span class=" "> </span></label>
+                                                    <input id="LoanRequired" name="LoanRequired" type="text" placeholder="Loan Amount" class="form-control input-md" onkeypress="return fnAllowNumeric(event)" minlength="6" maxlength="9" required>
+                                                </div>
+                                            </div>
+                                            <!-- Text input-->
+                                            <div class="col-md-6 col-sm-12 col-xs-12">
+                                                <div class="form-group">
+                                                    <select class="form-control drop-arr block drop-arr select-sty" name="LoanTenure" id="LoanTenure" required>
                                               <option disabled selected  value="">Loan Tenure</option>
                                                 <option value="1">1</option>
                                                 <option value="2">2</option>
@@ -33,31 +44,50 @@
                                                 <option value="5">5</option>
                                                 <option value="6">6</option>
                                             </select> 
-                                        </div>
-                                        
+                                                </div>
+                                            </div>
+                                            <!-- Text input-->
+                                            <div class="col-md-6 col-sm-12 col-xs-12">
+                                                <div class="form-group">
+                                                    <label class="sr-only control-label" for="ApplicantIncome">Income<span class=" "> </span></label>
+                                                    <input id="ApplicantIncome" name="ApplicantIncome" type="text" placeholder="Income" onkeypress="return fnAllowNumeric(event)" class="form-control input-md" required>
+                                                </div>
+                                            </div>
 
-                                        <div class="col-md-6">
-                                            <input type="text" class="form-control" id="ApplicantIncome" name="ApplicantIncome" placeholder="Income"  onkeypress="return fnAllowNumeric(event)" required>
-                                        </div>
+                                            <div class="col-md-6 col-sm-12 col-xs-12">
+                                                <div class="form-group">
+                                                    <label class="sr-only control-label" for="ApplicantObligations">Obligations<span class=" "> </span></label>
+                                                    <input id="ApplicantObligations" name="ApplicantObligations" type="text" placeholder="Obligations" class="form-control input-md" required>
+                                                </div>
+                                            </div>
 
-                                         <div class="col-md-6" >
-                                            <input type="text" class="form-control " id="ApplicantObligations" name="ApplicantObligations" placeholder="Obligations" value="" onkeypress="return fnAllowNumeric(event)" >
+                                             <!-- Button -->
+                                            <div class="col-md-5 col-xs-6">
+                                                <a class="btn btn-default btn-sm" id="check_eligibility">Check Eligibility</a>
+                                                
+                                            </div>
+                                            
+                                            
                                         </div>
-
-                                </div>
-                                    <hr>
-                                </div>
-                                <div style="text-align: center;">
-                                <a class="btn btn-info btn-outline with-arrow mrg-top" id="check_eligibility">Check Eligibility<i class="icon-arrow-right"></i></a></div>
-                                </form>
-                                </div>
-                                </div>
-                                </div>
-                                </div>
-                                </div>
+                                    </form>
+                        
+                    </div>
+                </div>
+               
+               
                                     
-</div>
-<br>
+                                </div>
+                              
+                            </div>
+                            <!-- /.section title start-->
+                        </div>
+                        
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 @include('layout.footer')
 @include('layout.script')
 

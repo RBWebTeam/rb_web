@@ -1,24 +1,13 @@
-
 @include('layout.header')
-
 <div class="container">
-
-  
   <aside id="fh5co-hero">
-
- <!-- <div class="col-md-12 white-bg pad1 mrg-btm box-shadow">
-<img src="{{URL::to('images/9.png')}}" alt="Tribe Logo" class="img-responsive" />
-
-
- </div>
- <div class="col-md-12 white-bg pad box-shadow fl-lft" id="lowest">
-
-</div> -->
-<br>
- <div class="col-md-12 white-bg pad box-shadow fl-lft">
-<h1 class="align-center loan-head">Personal Loan</h1>
-  <!--   <div id ="test123" class="col-md-8"></div> -->
- 
+    <div class="row">
+ <div class="col-md-12">
+  <div class="wrapper-content bg-white pinside40">
+                        <div class="section-faq" id="section-faq">
+                            <div class="">
+<h1 class=""><center>Personal Loan</center></h1>
+  <div id="mod">
     <form name="personal_loan_process_form" id="personal_loan_process_form" action="#" method="POST" >
       {{ csrf_field() }}
       <input type="hidden" id="product" name="product_name" value=9>
@@ -27,94 +16,126 @@
           <input type="hidden" name="source" class="source" value="<?php echo Session::get('source')?Session::get('source'):'';?>"> 
           <input type="hidden" name="refapp" class="refapp" value="<?php echo Session::get('refid')?Session::get('refid'):'';?>"> 
    <!--  <div id ="test123" class="col-md-8"></div> -->
-  <div class="col-md-8"  id="mod">
+  <div class="row">
  <!--  <h3 class="main-header">Genral Information</h3> -->
- <br>
-<center><div class="type-cover"><span>PURPOSE OF LOAN</span></div></center>
+ <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12" style="padding-bottom: 20px">
+    <div class="how-it-block1 bg-boxshadow" style=" min-height:auto; float:left;">
 
-<div class="text-center flt-lft btn-grp" data-toggle="buttons">
-              <div class="scenario">
-                <div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="purpose"  value="Marriage" class="radio1">Marriage</a></div>
-                <div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="purpose"  value="Home Releted" class="radio1">Home Related</a></div>
-                <div class="col-xs-12 col-md-6 pad-no"><a class="scenario-1 btn"><input type="radio" name="purpose"  value="Business" class="radio1">Business</a></div>
-                <div class="col-xs-12 col-md-6 pad-no scenario-active"><a class="scenario-1 btn"><input type="radio" name="purpose"  value="Other" class="radio1" checked >Other</a></div>
-              
-                
-              </div>
-            </div> 
+                        <div class="col-md-6 col-sm-12 col-xs-12">
+                             <div class="form-group">
+                              <select id="purpose" name="purpose" class="form-control">
+                                    <option selected disabled="">Purpose of Loan</option>
+                                    <option value="Marriage">Marriage</option>
+                                    <option value="Home Related">Home Related</option>
+                                    <option value="Business">Business</option>
+                                    <option value="Other">Other</option>                                    
+                                </select>
+                              </div>
+                            </div>
 
+                          <div class="col-md-6 col-sm-12 col-xs-12">
+                            <div class="form-group">
+                              <input type="text" name="loan_amount" id="loan_amount" class="form-input-new form-control" placeholder="Loan Required" onkeypress="return isNumberKey(event)" minlength="6" maxlength="9" required="">
+                            </div>
+                          </div>
 
+                          <div class="col-md-6 col-sm-12 col-xs-12">
+                            <div class="form-group">
+                              <input type="text" id="city_name" name="city_name" class="form-input-new form-control search_city" placeholder="City of Location" required="">
+                            </div>
+                          </div>
 
+                          <div class="col-md-6 col-sm-12 col-xs-12">  
+                            <div class="form-group">
+                            <select class="form-control input-md select-sty" name="loan_tenure" id="loan_tenure" required>
+                                        <option selected value="">Loan Tenure</option>
+                                        <option value="1">1 Year</option>
+                                        <option value="2">2 Year</option>
+                                        <option value="3">3 Year</option>
+                                        <option value="4">4 Year</option>
+                                        <option value="5">5 Year</option>
+                                        <option value="6">6 Year</option>
+                                        <option value="7">7 Year</option>                                     
+                                </select>
+                              </div>
+                          </div>
 
-            
-            <!-- <div class="col-xs-4 form-padding">
-     <input type="text" name="custom_id" id="custom_id" class="form-input-new form-control" placeholder="Existing Custom Id if Any" onkeypress="return isNumberKey(event)" >
-  </div> -->
-  <div class="col-xs-12 col-md-6 form-padding">
-     <input type="text" name="loan_amount" id="loan_amount" class="form-input-new form-control" placeholder="Loan Required" onkeypress="return isNumberKey(event)" minlength="6" maxlength="9" required="">
-  </div>
-  <div class="col-xs-12 col-md-6 form-padding">
-     <input type="text" id="city_name" name="city_name" class="form-input-new form-control search_city" placeholder="City of Location" required="">
-  </div>
-  
-  <div class="col-xs-12 col-md-6 form-padding">
-  
-     <select class="block drop-arr select-sty"  name="loan_tenure" id="loan_tenure" required>
-    <option value="" >LOAN TENURE</option>
-      <option value="1">1 Year</option>
-    <option value="2">2 Year</option>
-    <option value="3">3 Year</option>
-    <option value="4">4 Year</option>
-    <option value="5">5 Year</option>
-    <option value="6">6 Year</option>
-    <option value="7">7 Year</option>
-  </select>
-  </div>
+                          <div class="col-md-6 col-sm-12 col-xs-12">  
+                            <div class="form-group">
+                              <input type="text" name="applicant_name" id="applicant_name" class="form-input-new form-control" placeholder="Applicant Name" onkeypress="return AllowAlphabet(event)" required="">
+                            </div>
+                          </div>
 
-                
-                
-                
-  
-     <div class="col-xs-12 col-md-6 form-padding">
-     <input type="text" name="applicant_name" id="applicant_name" class="form-input-new form-control" placeholder="Applicant Name" onkeypress="return AllowAlphabet(event)" required="">
-  </div>
-  <div class="col-xs-12 col-md-6 form-padding">
-     <input type="text" id="dob" name="dob" class="form-input-new form-control lastReporteddate1" placeholder="Date of Birth" required="">
-  </div>
-  <div class="col-xs-12 col-md-6 form-padding">
-   <div class="btn-grp border-none pad-no form-control" data-toggle="buttons">
-                                    <span class="btn btn-default outer-brd1 outer-brd1 active"><input type="radio" name="gender"  value="M" checked><img id="myImage" src="images/male.png" cla></span><span class="hidden-xs"> Male</span>
-                                   <span class="btn btn-default outer-brd1 outer-brd1 "><input type="radio" name="gender"  value="F"><img id="myImage1" src="images/female.png" class=""></span> <span class="hidden-xs">Female</span>
-           </div>      
-     </div>
+                          <div class="col-md-6 col-sm-12 col-xs-12">
+                             <div class="form-group">
+                              <select id="gender" class="form-control input-md" name="gender">
+                                  <option selected disabled="">Gender</option>
+                                  <option value="M">Male</option>
+                                  <option value="F">Female</option> 
+                              </select>
+                              <input type="hidden" name="emp_detail_id" value="1" >
+                             </div>
+                          </div>
 
-  
-  <div class="col-xs-12 col-md-6 form-padding">
-     <div class="btn-grp form-control border-none pad-no" data-toggle="buttons">
-      <span class="btn btn-default outer-brd active"><input type="radio" name="emp_detail_id" id="sala_DI"    value="1" checked>Salaried</span>
-      <span class="btn btn-default outer-brd "><input type="radio" name="emp_detail_id" id="self_DI"  value="2"> Self-Emp</span>
-         </div>
-     </div>
+                          <div class="col-md-6 col-sm-12 col-xs-12">  
+                            <div class="form-group">
+                              <input type="text" id="dob" name="dob" class="form-input-new form-control lastReporteddate1" placeholder="Date of Birth" required="">
+                            </div>
+                          </div>
 
-     <div  style="display: none;" id="self-employed_ID">  <!-- self-employed-->
+                          
+                          <div class="col-md-6 col-sm-12 col-xs-12">
+                              <div class="form-group">                                
+                                   <input type="radio" id="sala_DI" value="salaried" name="emp_detail" checked="checked" >Salaried                                  
+                                    <input type="radio" id="self_DI" value="self-employed" name="emp_detail"  >Self Employee                                  
+                                </div>
+                            </div>
+
+                            <div  style="display: none;" id="self-employed_ID"> 
        
-       <div class="col-xs-12 col-md-6 form-padding">
-          <input type="text" class="form-input-new form-control " name="turnover" placeholder="Annual income" required  onkeypress="return fnAllowNumeric(event)">
-      </div>
-      </div>
-     
-     <div class="col-xs-12 col-md-6 form-padding"  id="income_ID">
-     <input type="text" name="income" id="income" class="form-input-new form-control"  onkeypress="return isNumberKey(event)"  placeholder="Monthly Income" required="">
-  </div>
-  
-  <div class="col-xs-12 col-md-6 form-padding">
-     <input type="text" name="obligation" id="obligation" class="form-input-new form-control" placeholder="Existing EMI (If Any)" onkeypress="return isNumberKey(event)" >
-  </div>
-  
-  <div class="col-md-12 fl-lft">
+                              <div class="col-md-6 col-sm-12 col-xs-12">
+                              <div class="form-group">
+                                <input type="text" class="form-input-new form-control " name="turnover" placeholder="Annual Turnover" required  onkeypress="return fnAllowNumeric(event)">
+                              </div>
+                              </div>
 
- 
-<br>
+                              <div class="col-md-6 col-sm-12 col-xs-12">
+                              <div class="form-group">
+                                <input type="text" class="form-input-new form-control " name="profit_after_tax" placeholder="Profit After Tax" required  onkeypress="return fnAllowNumeric(event)">
+                              </div>
+                              </div>
+
+                              <div class="col-md-6 col-sm-12 col-xs-12">
+                              <div class="form-group">
+                                <input type="text" class="form-input-new form-control " name="depreciation" placeholder="Depreciation"  required onkeypress="return fnAllowNumeric(event)">
+                              </div>
+                              </div>
+
+                              <div class="col-md-6 col-sm-12 col-xs-12">
+                              <div class="form-group">
+                                <input type="text" class="form-input-new form-control " name="remuneration" placeholder="Partner/Director Remuneration"  required onkeypress="return fnAllowNumeric(event)">
+                              </div>
+                            </div>
+
+                            </div>
+
+                            <div class="col-md-6 col-sm-12 col-xs-12" id="income_ID">
+                              <div class="form-group">
+                                <input type="text" class="form-input-new form-control"  id="income" name="income"  placeholder="Monthly Income" required onkeypress="return fnAllowNumeric(event)">
+                              </div>
+                            </div>
+
+                            <div class="col-md-6 col-sm-12 col-xs-12">
+                              <div class="form-group">
+                                <input type="text" class="form-input-new form-control"   name="obligation" placeholder="Existing EMI (If Any)"  onkeypress="return fnAllowNumeric(event)"> 
+                              </div>
+                            </div>
+
+                            <hr style="color:transparent; width:100%" />
+  
+
+  
+              <br>
     <!-- <?php if(Session::get('is_login')) {?>
                 <?php if(Session::get('contact')!=''){ Session::get('contact'); ?>
               <button class="btn btn-primary btn-outline with-arrow top-mrg product_name " >Get Best Quotes<i class="icon-arrow-right"></i></button>
@@ -128,118 +149,129 @@
               <a class="btn btn-primary btn-outline with-arrow top-mrg product_name" id="btn_refresh_co1" data-toggle="modal" data-target="#login_process">Get Best Quotes<i class="icon-arrow-right"></i></a>
             <?php } ?> -->
 
-
-             <a class="btn btn-primary btn-outline with-arrow top-mrg product_name product_ID"   >Get Best Quotes<i class="icon-arrow-right mrg-btm"></i></a> 
-
- 
-      </div>
-      <div class="iframeloading" style= "display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
-                <img src="{{URL::to('images/ajaxloader.gif')}}" alt="Loader" title="Loader" style="top: 50%; position: relative; left: 50%;"  />
-               </div>
-      </form>
-	  
-	 
-     </div>
-	 
-	 
-	 
-	 
-     <div class="col-md-4" >
-     <div class="border brd-for hei-frtrt" id="mi_id">
-
-             <!-- <form name="compareform" id="compareform" > -->
-          <p id="err" style="display:none;" ><span style="color: red;font-size: 20px;display: block;text-align: center;">Sorry, No quotes found for your given requirements.</span></p> 
-          
-            <div class="inp-hig">
-            <label class="form-label-new">Loan Amount</label>
-              <input type="text" class="form-control" id="loanamount" name="name" value="" placeholder="" required class="clr-ddd" readonly />
-            </div>
-
-            <div class="inp-hig">
-          <label class="form-label-new">Best ROI</label>
-              <input type="text" class="form-control" id="rate" name="name" value="" placeholder="" required class="clr-ddd" readonly />
-            </div>
-
-            <div class="inp-hig">
-            <label class="form-label-new">Tenure</label>
-                 <input type="text" class="form-control" id="term" name="name" value="" placeholder="" required class="clr-ddd" readonly>
-            </div>
-
-            <div class="inp-hig">
-          <label class="form-label-new">Processing Fee</label>
-              <input type="text" class="form-control" id="processfee" name="name" placeholder="" required class="clr-ddd" readonly />
-            </div>
-         <br>
-        <div class="col-md-12 pad-no"> 
-          
-      <!--    <a id="apply_new" type="button" class="btn btn-info disblk" title="Experience New Digital Era In Loans">Apply Digitally</a> -->
-
-          @if(Session::get('is_login'))
-           <a   type="button" class="btn btn-info disblk apply_new" title="Experience New Digital Era In Loans">Apply Digitally</a>
-           @else
-           <a   data-toggle="modal" data-target="#login_process" class="btn btn-info disblk apply_digitally " title="Experience New Digital Era In Loans">Apply Digitally</a>
-           @endif    
- 
-
-         <button id="eligibility"  class="btn btn-info disblk" title="See Bankwise Eligibility And Apply Amongst Best Bank" disabled="" >Check Bankwise Eligibility</button>
-         <button type="button" class="btn btn-info block"  id="call_rm" name="call_rm" data-toggle="modal" data-target="#Modal" title="Call For RM(Single Day Process)">Call Manager</button>
-         <div id="log_digital_text" style=" color: red"></div>
-        </div>
-       
-       
-
-    </div> 
-
-    <!-- <p id="err" style="display:none;" ><span style="color: red;font-size: 20px;display: block; text-align: center;">Sorry, no quotes found for your given requirements.</span></p>  -->
+             <a class="btn btn-default btn-sm product_name product_ID" >Get Best Quotes</a>  
 
      
-  </div> 
- 
-   </aside>
-   
+    </div>
   </div>
-  
-  
-  <br>
+
+<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" style="padding-bottom: 20px">
+      <div class="how-it-block1 bg-boxshadow" style=" min-height: auto; float:left;">
+        <div class="border" id="mi_ID">
+
+          <p id="err" style="display:none;" ><span style="color: red;font-size: 20px;display: block;text-align: center;">Sorry, No quotes found for your given requirements.</span></p> 
+
+          <div class="col-md-12 col-xs-12">
+            <div class="form-group">
+            <label class="form-label-new">Loan Amount</label>
+              <input type="text" class="form-control" id="loanamount" name="name" value="" placeholder="Loan Amount" readonly />
+            </div>
+            </div>
+
+            <div class="col-md-12 col-xs-12">
+            <div class="form-group">
+                <label class="form-label-new">Best ROI</label>
+                <input type="text" class="form-control" id="rate" name="name" value="" placeholder="Best ROI" readonly />
+            </div>
+            </div>
+
+            <div class="col-md-12 col-xs-12">
+            <div class="form-group">
+            <label class="form-label-new">Tenure</label>
+                 <input type="text" class="form-control" id="term" name="name" value="" placeholder="Tenure"  class="clr-ddd" readonly>
+            </div>
+            </div>
+
+            <div class="col-md-12 col-xs-12">
+            <div class="form-group">
+              <label class="form-label-new">Processing Fee </label>
+              <input type="text" class="form-control" id="processfee" name="name" placeholder="Processing Fee" readonly />
+            </div>
+            </div>
+
+          </div>
+
+
+        <div class="col-md-6 col-xs-12">
+          @if(Session::get('is_login'))
+           <a type="button" class="btn btn-default btn-sm apply_new" title="Experience New Digital Era In Loans" style="width: 100%;">Apply <br>Digitally</a>
+           @else
+           <a data-toggle="modal" data-target="#login_process" class="btn btn-default btn-sm disblk apply_digitally " title="Experience New Digital Era In Loans">Apply <br> Digitally</a>
+           @endif 
+         </div>
+
+           <div class="col-md-6 col-xs-12">
+
+           <button type="button" class="btn btn-default btn-sm block"  id="call_rm" name="call_rm" data-toggle="modal" data-target="#Modal" title="Call For RM(Single Day Process)">Call <br> Manager</button>
+         </div>
+
+           <div class="col-md-12 col-xs-12">
+            <br>
+           <button id="eligibility"  class="btn btn-default btn-sm disblk" title="See Bankwise Eligibility And Apply Amongst Best Bank" style="width: 100%;" disabled>Check Bankwise Eligibility </button>            
+
+            <div id="log_digital_text" style=" color: red"></div>
+         </div>
+
+
+        </div>
+      </div>
+      </form>	 
+    </div></div> </div></div></div></div></aside></div>  
+	 
   <div id ="test123"></div>
-  <div class="container">
-  <div class="col-md-12 mrg-top white-bg pad1 box-shadow">
-	 <hr>
-	 <p>Dreaming to Enjoy Vacation in foreign country, A Royal Wedding plan, Renovation of your house.... Here we have Personal Loan to make your dreams true. A Personal Loan is a Short Term Unsecured Loan for 1 to 5 years which helps individual to make their dream true by fulfilling their needs. Personal Loan can be disburse within 48 hours as well.</p>
-	    <div class="panel-group">
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h4 class="panel-title">
-        <a data-toggle="collapse" href="#collapse1">Documents Required  </a>
-      </h4>
+  <!-- product description -->
+  <div class=" ">
+        <!-- content start -->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+
+                    <div class="wrapper-content bg-white pinside40">
+                     <p>Dreaming to Enjoy Vacation in foreign country??&nbsp;&nbsp; A Royal Wedding plan??&nbsp;&nbsp; Renovation of your house??&nbsp;&nbsp; Here we have Personal Loan to make your dreams true.&nbsp;&nbsp;<br> A Personal Loan is a Short Term Unsecured Loan for 1 to 5 years which helps individual to make their dream true by fulfilling their needs. Personal Loan can be disburse within 48 hours as well.</p>
+
+
+                        <div class="section-faq" id="section-faq">
+                            <div class="">                                
+                                <div class="row">
+                          <div class="col-md-12 col-sm-12 col-xs-12">
+                      <div class="st-accordion ">
+                        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">    <div class="panel panel-default">
+                                <div class="panel-heading" role="tab" id="headingThree">
+                                    <h4 class="panel-title"><i class="fa fa-minus-circle sign"></i>Documents Required</h4>
+                                </div>
+                                
+                                    <div class="panel-body">
+                                        <strong>Important parameters Banks look for :</strong>
+                                            <ul class="listnone bullet bullet-check-circle-default">
+                                                <li>A Copy of Latest Salary Slips or Salary Certificate.</li>
+                                                <li>Form 16 and Copy of ITR for the last two years.</li>
+                                                <li>Last 6 months bank statements, S.O.A (Statements of Accounts)</li>
+                                                <li>Appointment Letter </li>
+                                                <li>Other Loan/ Obligation / Existing Specified Expenses (last 1 year)</li>
+                                                <li>CIBIL Score / Credit Rating</li>
+                                                <li>Government Recognize ID and Address Proof </li>
+                                            </ul>
+                                    </div>
+                               
+                            </div>                           
+                        </div>
+                    </div>                                    
+                          </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div id="collapse1" class="panel-collapse collapse">
-      <div class="panel-body">
-	  
-	  
-	  <ul>
-	     <li>A Copy of Latest Salary Slips or Salary Certificate.</li>
-		 <li>Form 16 and Copy of ITR for the last two years.</li>
-		 <li>Last 6 months bank statements, S.O.A (Statements of Accounts)</li>
-		 <li>Appointment Letter </li>
-		 <li>Other Loan/ Obligation / Existing Specified Expenses (last 1 year)</li>
-		 <li>CIBIL Score / Credit Rating</li>
-		 <li>Government Recognize ID and Address Proof </li>
-	  </ul>
-	  </div>
-      
-    </div>
-    </div>
-   </div>
-	 </div>
-	 </div>
-	 <br>
-  @include('layout.footer')
+  <!-- end of product description -->
+
+@include('layout.footer')
 @include('layout.script')
   </div>
  
   </div>
-
 
 <script type="text/javascript">
 $(document).ready(function(){
@@ -301,7 +333,7 @@ $(document).ready(function(){
 <script type="text/javascript">
 var getUrl=0;
 
-$(".btn-primary").click(function(e){
+$(".product_ID").click(function(e){
    e.preventDefault();
   
 
@@ -310,7 +342,6 @@ $(".btn-primary").click(function(e){
 
     if(!$('#personal_loan_process_form').valid()){
 
-    
             return false;
            
           }else{

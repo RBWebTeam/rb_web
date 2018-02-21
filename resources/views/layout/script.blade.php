@@ -1,7 +1,8 @@
   <script src="{{URL::to('js/Myapp.js')}}"></script>
     <script src="{{URL::to('js/jsPdf.js')}}"></script>
 	 <script src="{{URL::to('js/freshslider.min.js')}}"></script>
-	 
+
+ 
  <script>
 	       // Hide Header on on scroll down
 //var didScroll;
@@ -60,6 +61,10 @@ $(window).scroll(function(){
         }); 
 
   </script>
+
+
+
+
       <script type="text/javascript">
         var d = new Date();
         var year = d.getFullYear() - 18;
@@ -296,6 +301,31 @@ $(window).scroll(function(){
             }
             return true;
           }
+
+
+</script>
+<!-- Property cost & loan Amount -->
+<script type="text/javascript">
+  $(document).ready(function()
+{
+    function update()
+    { 
+      if(! $("#property_cost").val()){
+          $("#loan_amount").val('');
+      }else{
+        var cost = parseFloat($("#property_cost").val());
+        // console.log(cost);
+        var total = (cost)*80/100;
+        // var total = total.toFixed(2);
+        // console.log(total);
+        $("#loan_amount").val(total);
+      }
+    }
+    $(document).on("change, keyup", "#property_cost", update);
+});
+</script>
+
+
 
   </script>
   <script>
@@ -764,7 +794,7 @@ $(window).scroll(function(){
 
       });
 
-      $(document).ready(function(){
+           $(document).ready(function(){
         src = "{{ route('searchajax') }}";
         $(".search_city").autocomplete({
           source: function(request, response) {
@@ -848,6 +878,7 @@ $(window).scroll(function(){
                         $('#login_process').modal('show');
                         $('#send_otp_button').show();
                         $('#pls_wait').hide();
+
                         $('#pwd_match').hide();
                         $('#msg_err').hide();
                         $('#msg_err_email').show();
@@ -1806,6 +1837,10 @@ function mobile_valid(element){
  
 }
 </script>
+<script type="text/javascript">
+  
+
+</script>
     </body>
     </html>
     <!-- login Start-->
@@ -1824,7 +1859,7 @@ function mobile_valid(element){
              <div class="form-group">            
               <label for="name" class="col-sm-3 control-label">Name</label>
               <div class="col-sm-6">
-                <input type="text" class="form-control" id="name" name="name" placeholder="your good name" autofocus="autofocus" required>
+                <input type="text" class="form-control" id="name" name="name" placeholder="Your good name" autofocus="autofocus" required>
               </div>
             </div>
             <div class="form-group">
@@ -1853,7 +1888,7 @@ function mobile_valid(element){
         </div>
         <div class="form-group">        
           <div class="col-sm-offset-3 col-sm-6">
-           <span id='msg_err' class= 'displaynonemsg'>oops something went wrong</span>
+           <span id='msg_err' class='displaynonemsg'>oops something went wrong</span>
          <span class="iframeloading" style= "display: none; position: fixed; top: 0px; left: 0px; width: 100%; height: 100%;">
                 <img src="{{URL::to('images/ajaxloader.gif')}}" alt="Loader" title="Loader" style="top: 50%; position: relative; left: 50%;"  />
                </span>
@@ -1862,10 +1897,10 @@ function mobile_valid(element){
          </div>
        </div>
        <div class="form-group ">
-        <div class="col-sm-offset-3 col-sm-6">
+        <div class="col-sm-offset-3 col-sm-12">
           <input type="hidden" name="product" id="product_login" value="">
           <button class="btn btn-default"  id="send_otp_button"  >Send OTP</button>
-          <a class="btn btn-default"  id="already_user" data-toggle="modal" data-target="#log_popup" data-dismiss="modal" >Already User</a>
+          <a class="btn btn-default"  id="already_user" data-toggle="modal" data-target="#modal-custom2" data-dismiss="modal" >Already User</a>
         </div>  
       </div> 
     </form>
@@ -1913,7 +1948,7 @@ function mobile_valid(element){
         <div class="col-sm-offset-3 col-sm-6">
          <!--  <input type="hidden" name="product" id="product_login" value=""> -->
           <button class="btn btn-default"  id="send_productid"  >sent otp </button>
-          <a class="btn btn-default"  id="already_user_" data-toggle="modal" data-target="#log_popup" data-dismiss="modal" >Already User</a>
+          <a class="btn btn-default"  id="already_user_" data-toggle="modal" data-target="#modal-custom2" data-dismiss="modal" >Already User</a>
         </div>  
       </div> 
       
@@ -2495,9 +2530,4 @@ $(window).on('load', function(){
            $('.hom-rig').slideDown(1000);
         });
 		</script>
-		
-       
- 
-  
-
-  @include('layout.modal')
+ @include('layout.modal')

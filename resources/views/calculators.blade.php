@@ -1,88 +1,92 @@
 @include('layout.header')
-<div class="container">
-	
-	<aside id="fh5co-hero">
-	<div class="col-md-12">
-	
-	<h2 class="align-center loan-head">Calculators</h2>
-	</div>
-
-	
-	
-
-	<div id="fh5co-pricing-section">
-		<div class="container">
+ <div class="container">
+        <div class="row">
+            <div class="col-md-12">
 			
-			<div class="row">
-				<div class="pricing pad">
-					<div class="col-md-4 animate-box">
-						<div class="price-box popular1">
-							
-							<div class="center-blg"><img src="{{URL::to('images/cal/04.png')}}" alt="emi_calculator_icon" title="EMI Calculator" /></div>
-							<h4 class="mrg-btm">EMI Calculator</h4>
-							
-						
-							<a class="btn btn-primary btn-outline with-arrow" href="{{URL::to('check-emi')}}">View Now<i class="icon-arrow-right"></i></a>
-						</div>
-					</div>
-
-					<div class="col-md-4 animate-box">
-						<div class="price-box popular1">
-							<div class="center-blg"><img src="{{URL::to('images/cal/02.png')}}" alt="personal_loan_calculator_icon" title="Personal Loan Calculator" /></div>
-							<h4 class="mrg-btm">Personal Loan Calculator</h4>
-						
-							<a class="btn btn-primary btn-outline with-arrow" href="{{URL::to('personal-loan-calculator')}}">View Now<i class="icon-arrow-right"></i></a>
-						</div>
-					</div>
-					
-					<div class="col-md-4 animate-box">
-						<div class="price-box popular1">
-							<div class="center-blg"><img src="{{URL::to('images/cal/03.png')}}" alt="home_loan_calculator_icon" title="Home Loan Calculator" /></div>
-							<h4 class="mrg-btm">Home Loan Calculator</h4>
-							
-							
-							<a class="btn btn-primary btn-outline with-arrow" href="{{URL::to('home-loan-calculator')}}">View Now<i class="icon-arrow-right"></i></a>
-						</div>
-					</div>
-					
-					<div class="col-md-4 animate-box">
-						<div class="price-box popular1">
-							<div class="center-blg"><img src="{{URL::to('images/cal/06.png')}}" alt="business_loan_calculator_icon" title="Business Loan Calculator" /></div>
-							<h4 class="mrg-btm">Business Loan Calculator</h4>
-							
-							
-							<a class="btn btn-primary btn-outline with-arrow" href="{{URL::to('business-loan-calculator')}}">View Now<i class="icon-arrow-right"></i></a>
-						</div>
-					</div>
-					
-					<div class="col-md-4 animate-box">
-						<div class="price-box popular1">
-							<div class="center-blg"><img src="{{URL::to('images/cal/05.png')}}" alt="working_capital_loan_calculator_icon" title="Working capital calculator" /></div>
-							<h4 class="mrg-btm">Working capital calculator</h4>
-							
-							
-							<a class="btn btn-primary btn-outline with-arrow" href="{{URL::to('working-capital-emi-calculator')}}">View Now<i class="icon-arrow-right"></i></a>
-						</div>
-					</div>
-					
-					<div class="col-md-4 animate-box">
-						<div class="price-box popular1">
-							<div class="center-blg"><img src="{{URL::to('images/cal/01.png')}}" alt="income_loan_calculator_icon" title="Income Calculator" /></div>
-							<h4 class="mrg-btm">Income Calculator</h4>
-							<a class="btn btn-primary btn-outline with-arrow" href="{{URL::to('coming-soon')}}">Apply Now<i class="icon-arrow-right"></i></a>
-
-						</div>
-					</div>
-					
-					
-                
-				</div>
-			</div>
-		</div>
-	</div>
-	
-	</aside>
-	</div> 
+			
+                <div class="wrapper-content bg-white pinside40">
+				<h1 class=""><center>Calculators</center></h1>
+				</br>
+                    <div class="row">
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" style="padding-bottom: 20px">
+                    <div class="how-it-block hvr-float-shadow2" style="background-color: #f7f7f7; ">
+                        <!-- <h3 class="how-it-no">1.</h3> -->
+                        <div class="mb40" style="text-align: center; border: 1px solid #ed1c24; border-radius: 100px; height: 100px; width: 100px; line-height: 100px; margin-left: 85px; background-color: #ed1c24; "><i class="icon-calculator icon-2x icon-default" style="font-size: 56px; color: #fff"></i></div>
+                        <div class="how-it-content" style="text-align: center;">
+                             <h4 >EMI Calculator</h4>
+                       
+                        <a href="emi-calculator.html" class="btn btn-default btn-sm" >View Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" style="padding-bottom: 20px">
+                    <div class="how-it-block hvr-float-shadow2" style="background-color: #f7f7f7; ">
+                        <!-- <h3 class="how-it-no">1.</h3> -->
+                        <div class="mb40" style="text-align: center; border: 1px solid #ed1c24; border-radius: 100px; height: 100px; width: 100px; line-height: 100px; margin-left: 85px; background-color: #ed1c24; "><i class="icon-users icon-2x icon-default" style="font-size: 56px; color: #fff"></i></div>
+                        <div class="how-it-content" style="text-align: center;">
+                             <h4 >Personal Loan Calculator</h4>
+                       
+                        <a href="{{URL::to('personal-loan-calculator')}}" class="btn btn-default btn-sm" >View Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" style="padding-bottom: 20px">
+                    <div class="how-it-block hvr-float-shadow2" style="background-color: #f7f7f7; ">
+                        <!-- <h3 class="how-it-no">1.</h3> -->
+                        <div class="mb40" style="text-align: center; border: 1px solid #ed1c24; border-radius: 100px; height: 100px; width: 100px; line-height: 100px; margin-left: 85px; background-color: #ed1c24; "><i class="icon-house icon-2x icon-default" style="font-size: 56px; color: #fff"></i></div>
+                        <div class="how-it-content" style="text-align: center;">
+                             <h4 >Home Loan Calculator</h4>
+                       
+                        <a href="{{URL::to('home-loan-calculator')}}" class="btn btn-default btn-sm" >View Now</a>
+                        </div>
+                    </div>
+                </div>
+                        
+                        
+                        
+                    </div><br>
+                    <div class="row">
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" style="padding-bottom: 20px">
+                    <div class="how-it-block hvr-float-shadow2" style="background-color: #f7f7f7; ">
+                        <!-- <h3 class="how-it-no">1.</h3> -->
+                        <div class="mb40" style="text-align: center; border: 1px solid #ed1c24; border-radius: 100px; height: 100px; width: 100px; line-height: 100px; margin-left: 85px; background-color: #ed1c24; "><i class="icon-store icon-2x icon-default" style="font-size: 56px; color: #fff"></i></div>
+                        <div class="how-it-content" style="text-align: center;">
+                             <h4 >Business Loan Calculator</h4>
+                       
+                        <a href="{{URL::to('business-loan-calculator')}}" class="btn btn-default btn-sm" >View Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" style="padding-bottom: 20px">
+                    <div class="how-it-block hvr-float-shadow2" style="background-color: #f7f7f7; ">
+                        <!-- <h3 class="how-it-no">1.</h3> -->
+                        <div class="mb40" style="text-align: center; border: 1px solid #ed1c24; border-radius: 100px; height: 100px; width: 100px; line-height: 100px; margin-left: 85px; background-color: #ed1c24;"><i class="icon-briefcase-1 icon-2x icon-default" style="font-size: 56px; color: #fff"></i></div>
+                        <div class="how-it-content" style="text-align: center;">
+                             <h4 >Working Capital Calculator</h4>
+                       
+                        <a href="{{URL::to('working-capital-emi-calculator')}}" class="btn btn-default btn-sm" >View Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" style=" padding-bottom: 20px">
+                    <div class="how-it-block hvr-float-shadow2" style="background-color: #f7f7f7;">
+                        <!-- <h3 class="how-it-no">1.</h3> -->
+                        <div class="mb40" style="text-align: center; border: 1px solid #ed1c24; border-radius: 100px; height: 100px; width: 100px; line-height: 100px; margin-left: 85px; background-color: #ed1c24; "><i class="icon-money icon-2x icon-default" style="font-size: 56px; color: #fff"></i></div>
+                        <div class="how-it-content" style="text-align: center;">
+                             <h4 >Income Calculator</h4>
+                       
+                        <a href="{{URL::to('coming-soon')}}" class="btn btn-default btn-sm" >View Now</a>
+                        </div>
+                    </div>
+                </div>
+                        
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
 @include('layout.footer')

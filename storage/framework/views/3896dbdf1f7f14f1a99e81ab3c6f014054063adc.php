@@ -19,15 +19,15 @@
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding-bottom: 20px">
                     <div class="how-it-block1 bg-boxshadow" style=" min-height: 300px;">
                         
-                       <form class="" id="business_loan_calculator_form" name="business_loan_calculator_form" role="form" method="POST" >
+                        <form class="" id="business_loan_calculator_form" name="business_loan_calculator_form" role="form" method="POST" >
                                  <?php echo e(csrf_field()); ?>
 
                             <!-- Text input-->
 
-                             <input type="hidden" name="applicant_dob" id="applicant_dob" value="1980-12-12">
-                             <input type="hidden" name="emp_detail" id="emp_detail" value="2">
-                             <input type="hidden" name="Bank_Id" id="Bank_Id" value="113">
-                             <input type="hidden" name="ProductId" id="ProductId" value="13">
+                            <input type="hidden" name="applicant_dob" id="applicant_dob" value="1980-12-12">
+                                       <input type="hidden" name="emp_detail" id="emp_detail" value="2">
+                                       <input type="hidden" name="Bank_Id" id="Bank_Id" value="113">
+                                       <input type="hidden" name="ProductId" id="ProductId" value="13">
                             <div class="col-md-4 col-sm-12 col-xs-12">
                             <div class="form-group">
                                 <label class="control-label sr-only" for="loan_amount">Loan Amount</label>
@@ -60,7 +60,7 @@
                             <div class="col-md-4 col-sm-12 col-xs-12">
                             <div class="form-group">
                                 <label class="control-label sr-only" for="turnover">Turnover</label>
-                                <input id="turnover" name="turnover" type="text" placeholder="Turnover" class="form-control input-md" onkeypress="return fnAllowNumeric(event)" required="required">
+                                <input id="turnover" name="turnover" type="text" placeholder="Turnover" class="form-control input-md"  onkeypress="return fnAllowNumeric(event)" required="required">
                             </div>
                             </div>
 
@@ -101,32 +101,32 @@
                              <div class="col-md-4 col-sm-12 col-xs-12">
                             <div class="form-group">
                                 <label class="control-label sr-only" for="partner_remuneration">Dir/Partners Remuneration</label>
-                                <input id="partner_remuneration" name="partner_remuneration" type="text" placeholder="Dir/Partners Remuneration" onkeypress="return fnAllowNumeric(event)" class="form-control input-md" required="required">
+                                <input id="partner_remuneration" name="partner_remuneration" type="text" placeholder="Dir/Partners Remuneration" class="form-control input-md" onkeypress="fnAllowNumeric(event)" required="required">
                             </div>
                             </div>
-                            
-                            <div class="col-md-4 col-sm-12 col-xs-12">
-                            <div class="form-group">
-                                <label class="control-label sr-only" for="emi">Total EMI Paying Currently</label>
-                                <input id="emi" name="emi" type="text" placeholder="Total EMI Paying Currently" class="form-control input-md" onkeypress="return fnAllowNumeric(event)" required="required">
-                            </div>
-                            </div>
+
 
 
                              <div class="col-md-4 col-sm-12 col-xs-12">
                             <div class="form-group">
-                                <label class="control-label sr-only" for="no_of_emi_paid">No Of EMI Paid</label>
-                                <input id="no_of_emi_paid" name="no_of_emi_paid" type="text" placeholder="No Of EMI Paid" class="form-control input-md" required="required">
+                                <label class="control-label sr-only" for="emi">Total EMI Paying Currently</label>
+                                <input id="emi" name="emi" type="text" onkeypress="fnAllowNumeric(event)" placeholder="Total EMI Paying Currently" class="form-control input-md" required="required">
                             </div>
-                            </div><br>
+                            </div>
+
+                            <div class="col-md-4 col-sm-12 col-xs-12">
+                            <div class="form-group">
+                                <label class="control-label sr-only" for="no_of_emi_paid">No Of EMI Paid</label>
+                                <input id="no_of_emi_paid" name="no_of_emi_paid" type="text" onkeypress="fnAllowNumeric(event)" onkeypress="fnAllowNumeric(event)" placeholder="No Of EMI Paid" class="form-control input-md" required="required">
+                            </div>
+                            </div>
 
                             
 
 
                     <div class="col-md-12">
                                     
-                            
-                              <a class="btn btn-default btn-sm" id="ckeck_eligibility">Check Eligibility</a>
+                            <a class="btn btn-default btn-sm" id="ckeck_eligibility">Check Eligibility</a>
                                                 
                     </div>
 
@@ -156,72 +156,6 @@
                                 </div>
                             </div>
                         
-    </div>
-
-<div class=" ">
-        <!-- content start -->
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-
-                    <div class="wrapper-content bg-white pinside40">
-                     <p>Home loan liked with bank account either current account or saving bank account with the same bank. Borrower can deposit their surplus funds or savings into bank account and bank will subtract it from the principal amount of your home loan and calculate interest on the remaining amount and not the entire .Smart home loan offers repayment tenure up to 20 years.</p>
-
-
-                        <div class="section-faq" id="section-faq">
-                            <div class="">
-                                
-                                <div class="row">
-
-
-
-
-                                    <div class="col-md-12 col-sm-12 col-xs-12">
-
-
-
-                                            <div class="st-accordion ">
-                        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-                            <div class="panel panel-default">
-                                <div class="panel-heading" role="tab" id="headingOne">
-                                    <h4 class="panel-title"> <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Benefits for a Borrower</a> </h4>
-                                </div>
-                                <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-                                    <div class="panel-body">
-
-                                    <ul class="listnone bullet bullet-check-circle-default">
-                                                <li>End up paying less EMI :- As bank consider and subtract surplus funds from the principal outstanding ,your principal get reduce while EMI calculation done by bank and you will end up paying less EMI than usual</li>
-                                                <li>Borrower can withdraw the funds fully or partially when needed</li>
-                                            </ul>
-
-                                        </div>
-                                </div>
-                            </div>
-                            
-                            
-
-                           
-                        </div>
-                    </div>
-
-
-
-                                             
-
-
-
-
-
-
-                                       
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
 <?php echo $__env->make('layout.footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 <?php echo $__env->make('layout.script', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
@@ -334,15 +268,5 @@
       yearRange: '-100:' + year + '',
       defaultDate: d
     });
-</script>
-
-<script type="text/javascript">
-    function fnAllowNumeric(event) {
-      if ((event.keyCode < 48 || event.keyCode > 57) && event.keyCode != 8) {
-          event.keyCode = 0;
-          
-          return false;
-      }
-    }
 </script>
 

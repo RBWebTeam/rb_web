@@ -1,155 +1,314 @@
-@include('layout.header')
+ @include('layout.header')
 
-<div id="fh5co-hero">
-	<div class="fh5co-contact animate-box">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12 text-left fh5co-heading animate-box fadeInUp animated">
-					<h2>RBL Credit Card Form</h2>
-				</div>
-				        <div class="col-md-1"></div>
-				        <div class="col-md-10">
-				        <div class="row text-left comp-pg rate white-bg box-shadow">
-			           <form  id="rbl_ccc_form" role="form">
-			           {{csrf_field()}}
-				        <div class="row">
-					     <div class="form-group titl-1">
-						<div class="col-md-4">
-						<span>title</span>
-						    <select class="block drop-arr select-sty" name="Title" id="title" required>
-		                    <option disabled selected  value="">Select Title</option>
-		                    <option value=1>Mr</option>
-		                    <option value=2>Ms</option>
-		                    <option value=2>Mrs</option>
-		                    <option value=2>Dr</option>
-		                    <option value=99>Other</option>
-		                    </select> 
-		                    </div>
-						<div class="col-md-4">
-						   <span>Credit Card Applied</span>
-							<input type="text" class="form-control" placeholder="Credit Card Applied" name="CreditCardApplied" id="cc_applied" value="{{$card}}" disabled="" >
+<div class=" ">
+        <!-- content start -->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+
+                    <div class="wrapper-content bg-white pinside40">
+                        <h1 class=""><center>Apply Now</center></h1>
+                        <div class="section-faq" id="section-faq">
+                            <div class="">
+                                
+                                <div class="row">
+                                    
+                       
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding-bottom: 20px">
+
+
+
+                    <div class="how-it-block1 bg-boxshadow" style=" min-height: 600px;">
+                       
+
+             <form action=""  id="rbl_ccc_form" role="form" action="method">
+             {{csrf_field()}}
+                            <!-- Text input-->
+
+                            <div class="col-md-4 col-sm-12 col-xs-12">
+                            <div class="form-group">
+                              
+                                <select class="form-control input-md select-sty" name="Title" id="title" required>
+                                                            <option selected disabled>Select Title</option>
+                                                            <option value="1">Mr</option>
+                                                            <option value="2">Ms</option>
+                                                            <option value="2">Mrs</option>
+                                                            <option value="2">Dr</option>
+                                                            <option value="99">Other</option>
+ 
+                                                    </select>
+                                                     
+                            </div>
+                            </div>
+                           
+                            <div class="col-md-4 col-sm-12 col-xs-12">
+                            <div class="form-group">
+                                <label class="control-label sr-only" for="cc_applied" >Platinum Delight Card</label>
+                                <!-- <input id="platinum-delight-card" name="loan-required" type="text" placeholder="Platinum Delight Card" disabled class="form-control input-md" required="required"> -->
+
+                                 <input type="text" class="form-control" placeholder="Credit Card Applied" name="CreditCardApplied" id="cc_applied" value="{{$card}}" disabled="" >
+
+
+
+                            </div>
+                            </div>
+
+
+
+
+                            <div class="col-md-4 col-sm-12 col-xs-12">
+                            <div class="form-group">
+                                <label class="control-label sr-only" for="ProcessingFee" >Procesing Fee</label>
+                                <!-- <input id="platinum-delight-card" name="loan-required" type="text" placeholder="Platinum Delight Card" disabled class="form-control input-md" required="required"> -->
+
+                                 <input type="text" class="form-control" placeholder="Joining Fee" name="ProcessingFee" id="ProcessingFee" value="{{$ProcessingFee}}" disabled="" >
+
+
+
+                            </div>
+                            </div>
+
+
+
+                            
+                            <div class="col-md-4 col-sm-12 col-xs-12">
+                            <div class="form-group">
+                                <label class="control-label sr-only" for="dob">Date of Birth</label>
+                                <!-- <input id="date" type="date" placeholder="Date of Birth"> -->
+                                <input type="text" class="form-control lastReporteddate " id="dob" name="dob"  placeholder="Date of Birth" required">
+
+                               <!--  <input type="text" class="form-control lastReporteddate " id="dob" name="DOB" placeholder="Date of Birth" required> -->
+						</div>
+                            </div>
+                           
+                            
+                             <div class="col-md-4 col-sm-12 col-xs-12">
+                             <div class="form-group">
+                             	<label class="control-label sr-only" for="f_name">First Name</label>
+                               <!--  <input id="first-name" name="first-name" type="text" placeholder="First Name" class="form-control input-md" required="required"> -->
+                               <input type="text" class="form-control" id="f_name" name="FirstName" placeholder="First Name" required>
+						
+
+                             </div>
+                             </div>
+                             <div class="col-md-4 col-sm-12 col-xs-12">
+                             <div class="form-group">
+
+                             	<label class="control-label sr-only" for="m_name">Middle Name</label>
+                                <input id="m_name" name="MiddleName" type="text" placeholder="Middle Name" class="form-control input-md" required="required">
+
+
+
+                               <!--  
+                                <input type="text" class="form-control " id="m_name" name="MiddleName" placeholder="Middle Name" onkeypress="return AllowAlphabet(event)" required >
+ -->
+                                <!--  <input type="text" class="form-input-new  form-control" name="company_name" id="company_name" placeholder="Company Name" onkeypress="return AllowAlphabet(event)" required >
+ -->
+						
+
+                             </div>
+                             </div>
+                             <div class="col-md-4 col-sm-12 col-xs-12">
+                             <div class="form-group">
+
+                             	<label class="control-label sr-only" for="l_name">Last Name</label>
+                                <!-- <input id="last-name" name="last-name" type="text" placeholder="Last Name" class="form-control input-md" required="required"> -->
+                                <input type="text" class="form-control " id="l_name" name="LastName" placeholder="Last Name" required>
 						</div>
 
-						<div class="col-md-4">
-						   <span>Processing Fee</span>
-							<input type="text" class="form-control" placeholder="Joining Fee" name="ProcessingFee" id="ProcessingFee" value="{{$ProcessingFee}}" disabled="" >
-						</div>
-						<div class="col-md-4">
-						   <span>Date of Birth</span>
-							<input type="text" class="form-control lastReporteddate " id="dob" name="DOB" placeholder="Date of Birth" required>
-						</div>
-						<div class="col-md-4">
-						<span>First Name</span>
-							<input type="text" class="form-control" id="f_name" name="FirstName" placeholder="First Name" required>
-						</div>
-                         <div class="col-md-4">
-						 <span>Middle Name</span>
-							<input type="text" class="form-control " id="m_name" name="MiddleName" placeholder="Middle Name" >
-						</div>						
-						<div class="col-md-4">
-						<span>Last Name</span>
-							<input type="text" class="form-control " id="l_name" name="LastName" placeholder="Last Name" required>
-						</div>
-						<div class="col-md-4">
-						<span>Father Name</span>
-							<input type="text" class="form-control " id="father_name" name="FatherName" placeholder="Father Name"  required>
-						</div>
-						<div class="col-md-4">
-						<span>Gender</span>
-						<div class="form-control border-none">
-						<input type="radio"  name="Gender" id="male"  class="radiob" checked value="1"><label for="150">&nbsp;Male</label>
-                        <input type="radio" name="Gender" id="female"  class="radiob" value="2" ><label for="151">&nbsp;Female </label>
-	                    </div>
-						</div>
-						<div class="col-md-4">
-						<span>Had Loan Or CreditCard From AnyBank</span>
-						<div class="form-control border-none">
-					 
-						<input type="radio"  name="HadLoanOrCreditCardFromAnyBank" class="radiob" checked value="Y"><label for="150">&nbsp;Yes</label>
-                        <input type="radio" name="HadLoanOrCreditCardFromAnyBank"  class="radiob" value="N" ><label for="151">&nbsp;No </label>
-	                    </div>
-						</div>
-					    </div>
-					    <hr>
-				        </div>
-				        <div class="row sec" id="section1">
-					    <div class="form-group titl-1">
-					    <hr>
-						<div class="col-md-4">
-						<span>Residence Address 1</span>
-							<input type="text" class="form-control" placeholder="Residence Address 1" name="ResAddress1" id="res_add1" required="">
-						</div>
-						<div class="col-md-4">
-						<span>Residence Address 1</span>
-							<input type="text" class="form-control" placeholder="Residence Address 2" name="ResAddress2" id="res_add2" required="">
-						</div>
-						<div class="col-md-4">
-						<span>Landmark</span>
-							<input type="text" id="landmark" name="Landmark" class="form-control" placeholder="Landmark"  required>
-						</div>
-						<div class="col-md-4">
-						<span>City</span>
-						     <select class="block drop-arr" name="ResCity" id="city" required>
+                             </div>
+                             <!-- </div> -->
+
+                             <div class="col-md-4 col-sm-12 col-xs-12">
+                             <div class="form-group">
+
+                                <label class="control-label sr-only" for="father_name">Father Name</label>
+                               <!--  <input id="father-name" name="father-name" type="text" placeholder="Father Name" class="form-control input-md" required="required"> -->
+                               <input type="text" class="form-control " id="father_name" name="FatherName" placeholder="Father Name"  required>
+
+                             </div>
+                             </div>
+
+                             <div class="col-md-4 col-sm-12 col-xs-12">
+                             <div class="form-group">
+
+                                <select id="Female" class="form-control input-md" name="Gender" required>
+                                                            <option selected disabled>Gender</option>
+                                                            <option value="1">Male</option>
+                                                            <option value="2">Female</option>
+ 
+                                </select>
+
+                             </div>
+                             </div>
+
+                             <div class="col-md-4 col-sm-12 col-xs-12">
+                             <div class="form-group">
+
+                                <select id="HadLoanOrCreditCardFromAnyBank" class="form-control input-md" name="HadLoanOrCreditCardFromAnyBank" required>
+                                                            <option selected disabled>Had Loan / Credit Card From Any Bank</option>
+                                                            <option value="Y">Yes</option>
+                                                            <option value="N">No</option>
+ 
+                                </select>
+
+                             </div>
+                             </div>
+
+                              <div class="col-md-4 col-sm-12 col-xs-12">
+                             <div class="form-group">
+
+                                <label class="control-label sr-only" for="res_add1">Residence Address 1</label>
+                                <!-- <input id="address1" name="address1" type="text" placeholder="Residence Address 1" class="form-control input-md" required="required"> -->
+                                <input type="text" class="form-control" placeholder="Residence Address 1" name="ResAddress1" id="res_add1" required="">
+
+                             </div>
+                             </div>
+
+                              <div class="col-md-4 col-sm-12 col-xs-12">
+                             <div class="form-group">
+
+                                <label class="control-label sr-only" for="res_add2">Residence Address 2</label>
+                                <!-- <input id="address2" name="address1" type="text" placeholder="Residence Address 2" class="form-control input-md" required="required"> -->
+                                <input type="text" class="form-control" placeholder="Residence Address 2" name="ResAddress2" id="res_add2" required="">
+
+                             </div>
+                             </div>
+
+                              <div class="col-md-4 col-sm-12 col-xs-12">
+                             <div class="form-group">
+
+                                <label class="control-label sr-only" for="landmark">Landmark</label>
+                                <!-- <input id="landmark" name="landmark" type="text" placeholder="Landmark" class="form-control input-md" required="required"> -->
+                                <input type="text" id="landmark" name="Landmark" class="form-control" placeholder="Landmark"  required>
+
+                             </div>
+                             </div>
+
+                             <div class="col-md-4 col-sm-12 col-xs-12">
+                             <div class="form-group">
+
+                                <label class="control-label sr-only" for="city">City</label>
+                               <!--  <input id="city" name="city" type="text" placeholder="City" class="form-control input-md" required="required"> -->
+                                <select class="form-control input-md" name="ResCity" id="city" required>
 		                      <option disabled selected  value="">Select City</option>
 		                       @foreach ($data as $city)  
 								    <option value="{{$city->city_code}}">{{$city->city_name}}</option>
 								@endforeach
 		                    </select> 
-		                    </div>
-						<div class="col-md-4">
-						<span>Residence Pincode</span>
-							<input type="text" id="res_pin" name="ResPIN" class="form-control" placeholder="Residence Pincode" onkeypress="return fnAllowNumeric(event)" maxlength="6" required>
-						</div>
-                        <div class="col-md-4">
-						<span>Email ID</span>
-							<input type="text" id="email_id" name="Email" class="form-control" placeholder="Email ID" oninput="mail('email_id')" required />
+
+		                   
+                             </div>
+                             </div>
+
+                             <div class="col-md-4 col-sm-12 col-xs-12">
+                             <div class="form-group">
+
+                                <label class="control-label sr-only" for="res_pin">Residence Pincode</label>
+                                <!-- <input id="pincode" name="pincode" type="text" placeholder="Residence Pincode" class="form-control input-md" required="required"> -->
+                                <input type="text" id="res_pin" name="ResPIN" class="form-control" placeholder="Residence Pincode" onkeypress="return fnAllowNumeric(event)" maxlength="6" required>
+
+                       
+                             </div>
+                             </div>
+
+                             <div class="col-md-4 col-sm-12 col-xs-12">
+                             <div class="form-group">
+
+                                <label class="control-label sr-only" for="email_id">Email ID</label>
+                               <!--  <input id="email" name="email" type="email" placeholder="Email" class="form-control input-md" required="required"> -->
+                                <input type="Email" id="email_id" name="Email" class="form-control" placeholder="Email ID" oninput="mail('email_id')" required />
+
+
 							<div id="email" style="display:none;color: red; font-size: 10px">Please Enter Valid Email Id.</div>
-						</div>
-                       <div class="col-md-4">
-					   <span>Applicant Net Monthly Income</span>
-							<input type="text" id="monthly_income" name="NMI" class="form-control" placeholder="Applicant Net Monthly Income" onkeypress="return fnAllowNumeric(event)" required>
-						</div>
-						<div class="col-md-4">
-						<span>Mobile Number</span>
-							 <input type="text" class="form-control" id="mobile" name="Mobile"  required maxlength="10" placeholder="Mobile Number" minlength="10" maxlength="10" onblur ="return fnAllowNumeric(event)" onkeydown=" mobile_valid(this)">
-						</div>
-						<div class="col-md-4">
-						<span>Employment Type</span>
-						<div class="form-control border-none">
-						<input type="radio"  name="EmpType" class="radiob" checked value="1"><label for="150">&nbsp;Salaried</label>
-                        <input type="radio" name="EmpType"  class="radiob" value="2" ><label for="151">&nbsp;Self-Employed </label>
-	                    </div>
-						</div>
-							<div class="col-md-4">
-							<span>Pancard No</span>
-						     <input  type="text" class="form-input-new form-control" name="PAN" id="pan" placeholder="Pancard No." oninput="pan_card('pan')" minlength="10" maxlength="10" required>
-						     <div id="pan_number" style="display:none;color: red; font-size: 10px">Please Enter Valid Email Id.</div>
-						</div>
-						</div>
-						<hr>
-					    </div>	
-					    <a class="btn btn-primary btn-outline with-arrow mrg-top center-block crd_id" id="rbl_card_submit">SUBMIT<i class="icon-arrow-right" ></i></a>
-					    <div class="iframeloading" style= "display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
-						  <img src="{{URL::to('images/ajaxloader.gif')}}" alt="Loader" title="Loader" style="top: 50%; position: relative; left: 50%;"  />
-						 </div>
 
-			            </form>
-					
-					
-					
-					
-			            </div>
-			            <br>
-		                </div>	
-	                    </div>
-                        </div>
+         
 
-                        </div>
-                        </div>
+
+
+                             </div>
+                             </div>
+
+                              <div class="col-md-4 col-sm-12 col-xs-12">
+                             <div class="form-group">
+
+                                <label class="control-label sr-only" for="monthly_income">Applicant Net Monthly Income</label>
+                                <!-- <input id="mothly-income" name="mothly-income" type="text" placeholder="Applicant Net Monthly Income" class="form-control input-md" required="required"> -->
+                                <input type="text" id="monthly_income" name="NMI" class="form-control" placeholder="Applicant Net Monthly Income" onkeypress="return fnAllowNumeric(event)" required>
+
+
+                             </div>
+                             </div>
+
+
+
+
+                              <div class="col-md-4 col-sm-12 col-xs-12">
+                             <div class="form-group">
+
+                                <label class="control-label sr-only" for="mobile">Mobile Number</label>
+                               <!--  <input id="mobile" name="mobile" type="text" placeholder="Mobile Number" class="form-control input-md" required="required"> -->
+
+                               <input type="text" class="form-control" id="mobile" name="Mobile"  required maxlength="10" placeholder="Mobile Number" minlength="10" maxlength="10" onblur ="return fnAllowNumeric(event)" onkeydown=" mobile_valid(this)">
+
+
+                             </div>
+                             </div>
+
+                              <div class="col-md-4 col-sm-12 col-xs-12">
+                             <div class="form-group">
+
+                                <select id="EmpType" class="form-control input-md" name="EmpType" required>
+                                                            <option selected disabled>Employment Type</option>
+                                                            <option value="1">Salaried</option>
+                                                            <option value="2">Self Employed</option>
+ 
+                                </select>
+
+                             </div>
+                             </div>
+
+                              <div class="col-md-4 col-sm-12 col-xs-12">
+                             <div class="form-group">
+
+                                <label class="control-label sr-only" for="pan">Pancard No</label>
+                               <!--  <input id="pancard" name="pancard" type="text" placeholder="Pancard No." class="form-control input-md" required="required"> -->
+
+                               <input  type="text" class="form-input-new form-control" name="PAN" id="pan" placeholder="Pancard No." oninput="pan_card('pan')" minlength="10" maxlength="10" required>
+						     <div id="pan_number" style="display:none;color: red; font-size: 10px">Please Enter Valid Pancard Number.</div>
+
+                             </div>
+                             
+
+                                   <br>
+                                                <a class="btn btn-primary btn-outline with-arrow mrg-top center-block crd_id" id="rbl_card_submit">SUBMIT</a>
+
+
+                        </form>
+                        
+                    </div>
+                </div>
+               
+                
+                                    
+                                </div>
+                    </div>
+                                                </div>
+                                            </div>
+
+
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        
+    </div>
+
+
 @include('layout.footer')
 @include('layout.script')
-
-
 
 
 
@@ -163,99 +322,98 @@
 
            
         </div>
-		<div class="text-center">
+        <div class="text-center">
          <p id="rbl_cc_apply_status" class="text-success pad"></p>     
          <p id="reason" class="text-success pad"></p>     
-         <p  id="reference" class="text-success pad"></p>         	      
+         <p  id="reference" class="text-success pad"></p>                 
          </div>   
 </div>
 </div>
 </div>
 
-
 <script type="text/javascript">
-	var application_status=0;
-	var red_url= "{{URL::to('thank-you')}}";
-	$('#rbl_card_submit').click(function(){
-		
-		if(! $('#rbl_ccc_form').valid()){
-			return false;
-		}else{
-			 $(".iframeloading").show();
-			$.ajax({
-				type:"POST",
-				data:$('#rbl_ccc_form').serialize(),
-				url:"{{URL::to('rbl-cc-submit')}}",
-				success:function(msg){
-					$(".iframeloading").hide();
-					var returnedData = JSON.parse(msg);
-					var status_id=returnedData.Status;
-					var error=returnedData.Errorinfo;
-					var mobile=$('#mobile').val();
-					var card=$('#cc_applied').val();
-					if(status_id==0){
-						e_id=returnedData.Errorcode;
-						status="Ooops! Error occured.";
-						if(e_id)
-						{
-							error=get_rbl_error(e_id);
-						}
-						
-					}else if(status_id==1){
-						status="Successful";
-						error=returnedData.ReferenceCode;
-						red_url='http://erp.rupeeboss.com/Credit_Card_Upload_Docs.aspx?App_Id='+error+'&CardType=RBL&MobileNo='+mobile+'';
-						application_status=1;
-					}else if(status_id==2){
-						status="Successful Referred";
-						error=returnedData.ReferenceCode;
-						red_url='http://erp.rupeeboss.com/Credit_Card_Upload_Docs.aspx?App_Id='+error+'&CardType=RBL&MobileNo='+mobile+'';
-						application_status=1;
-					}else{
-						status="Rejected";
-						error=returnedData.ReferenceCode;
-					}
-					$('#rbl_cc_apply_status').empty().text(status);
-					$('#reason').empty().append(error);
-					
-					$('#rb_cc_modal').modal('toggle');
-					
-				}
-			});
-		}
-		
-	});
-		function get_rbl_error(id){
-			error='';
-			switch (id) {
-				case 1: 
-					error="INPUT OUT OF MASTERS RANGE";
-					break;
-				case 2: 
-					error="VALIDATION ERROR";
-					break;
-				case 3: 
-					error="INPUT NOT IN VALID DATA FORMAT (SPECIAL CHARACTERS etc)";
-					break;
-				case 4:
-					error="SYSTEM UNAVAILABLE";
-					break;
-				case 5: 
-					error="DECISION CENTER ERROR";
-					break;
-				case 6:
-					error="DUPLICATE APPLICATION";
-				 	break;
-			}
-				return error;
-		}
-		$('#rb_cc_modal').on('hidden.bs.modal', function () {
-		 	
-		 	if(application_status==1){
-		 		window.location.href = red_url;
-		 	}
+    var application_status=0;
+    var red_url= "{{URL::to('thank-you')}}";
+    $('#rbl_card_submit').click(function(){
+        // alert('okae');
+        if(! $('#rbl_ccc_form').valid()){
+            return false;
+        }else{
+             $(".iframeloading").show();
+            $.ajax({
+                type:"POST",
+                data:$('#rbl_ccc_form').serialize(),
+                url:"{{URL::to('rbl-cc-submit')}}",
+                success:function(msg){
+                    $(".iframeloading").hide();
+                    var returnedData = JSON.parse(msg);
+                    var status_id=returnedData.Status;
+                    var error=returnedData.Errorinfo;
+                    var mobile=$('#mobile').val();
+                    var card=$('#cc_applied').val();
+                    if(status_id==0){
+                        e_id=returnedData.Errorcode;
+                        status="Ooops! Error occured.";
+                        if(e_id)
+                        {
+                            error=get_rbl_error(e_id);
+                        }
+                        
+                    }else if(status_id==1){
+                        status="Successful";
+                        error=returnedData.ReferenceCode;
+                        red_url='http://erp.rupeeboss.com/Credit_Card_Upload_Docs.aspx?App_Id='+error+'&CardType=RBL&MobileNo='+mobile+'';
+                        application_status=1;
+                    }else if(status_id==2){
+                        status="Successful Referred";
+                        error=returnedData.ReferenceCode;
+                        red_url='http://erp.rupeeboss.com/Credit_Card_Upload_Docs.aspx?App_Id='+error+'&CardType=RBL&MobileNo='+mobile+'';
+                        application_status=1;
+                    }else{
+                        status="Rejected";
+                        error=returnedData.ReferenceCode;
+                    }
+                    $('#rbl_cc_apply_status').empty().text(status);
+                    $('#reason').empty().append(error);
+                    
+                    $('#rb_cc_modal').modal('toggle');
+                    
+                }
+            });
+        }
+        
+    });
+        function get_rbl_error(id){
+            error='';
+            switch (id) {
+                case 1: 
+                    error="INPUT OUT OF MASTERS RANGE";
+                    break;
+                case 2: 
+                    error="VALIDATION ERROR";
+                    break;
+                case 3: 
+                    error="INPUT NOT IN VALID DATA FORMAT (SPECIAL CHARACTERS etc)";
+                    break;
+                case 4:
+                    error="SYSTEM UNAVAILABLE";
+                    break;
+                case 5: 
+                    error="DECISION CENTER ERROR";
+                    break;
+                case 6:
+                    error="DUPLICATE APPLICATION";
+                    break;
+            }
+                return error;
+        }
+        $('#rb_cc_modal').on('hidden.bs.modal', function () {
+            
+            if(application_status==1){
+                window.location.href = red_url;
+            }
 
-		});
+        });
 </script>
 
 <script type="text/javascript">
@@ -301,6 +459,3 @@
     }
     }
     </script>
-
-
-

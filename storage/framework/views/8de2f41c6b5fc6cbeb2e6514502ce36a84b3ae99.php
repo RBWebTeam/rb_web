@@ -1,5 +1,5 @@
 
-@include('layout.header')
+<?php echo $__env->make('layout.header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 
     <div class=" ">
         <!-- content start -->
@@ -20,10 +20,11 @@
                     <div class="how-it-block1 bg-boxshadow" style=" min-height: 360px;">
                        <!--  <h4 style="text-align: center;" >EMI Calculator</h4> -->
                       <!--   <form class="calculator_form" name="calculator_form" method="post" action="calculator_form"> -->
-                       <!--    {{ csrf_field() }} -->
+                       <!--    <?php echo e(csrf_field()); ?> -->
                         
                          <form  id="calculator_form" name="calculator_form" method="post" action="calculator_form">
-                               {{ csrf_field() }}
+                               <?php echo e(csrf_field()); ?>
+
 
 
                                         <div class="row">
@@ -177,8 +178,8 @@
    }
 </script>
 
-@include('layout.footer')
-@include('layout.script') 
+<?php echo $__env->make('layout.footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php echo $__env->make('layout.script', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?> 
 <script type="text/javascript">
   $(document).ready(function(){
     $('#calculator_id').on('click',function(e){
@@ -188,7 +189,7 @@
         }else{
            $.ajax({  
              type: "POST",  
-             url: "{{URL::to('api/working-capital-emi-calculator-api')}}",
+             url: "<?php echo e(URL::to('api/working-capital-emi-calculator-api')); ?>",
              data : $("#calculator_form").serialize(),
              dataType: 'json',
              success: function(msg){ 

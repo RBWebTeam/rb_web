@@ -128,7 +128,7 @@
 					<!-- <p>Have you been at the current address for more then 6 month. if no, provide the previous address</p> -->
 					
 					<br>
-					<a class="btn btn-primary btn-outline with-arrow animate-box fadeInUp animated" id="proceed">Proceed<i class="icon-arrow-right"></i></a>
+					<a class="btn btn-default btn-sm" id="proceed">Proceed</a>
 					</form>
 					</div>		
 				</div>
@@ -347,7 +347,7 @@
 </div>
 <br>
 <div class="col-md-12">
-<a class="btn btn-primary btn-outline with-arrow animate-box fadeInUp animated" id="submit_application">Submit my Application<i class="icon-arrow-right"></i></a>
+<a class="btn btn-default btn-sm" id="submit_application">Submit my Application</a>
 </div>
  <div class="iframeloading" style= "display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
   <img src="{{URL::to('images/ajaxloader.gif')}}" alt="Loader" title="Loader" style="top: 50%; position: relative; left: 50%;"  />
@@ -414,7 +414,7 @@
 				   <td><span id="monthly_installment"></span></td>
 				   <!-- <td>6000</td> -->
 				   <td><span id="processingfee"></span></td>
-				   <td><a class="btn btn-primary btn-outline animate-box fadeInUp animated" id="apply">APPLY</a></td>
+				   <td><a class="btn btn-default btn-sm" id="apply">APPLY</a></td>
 				 </tr>
 				</table>
 				</div>

@@ -1,5 +1,5 @@
 <?php echo $__env->make('layout.header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
-<div class="container">
+ <div class="container">
         <div class="row">
             <div class="col-md-12">
 			
@@ -64,7 +64,7 @@
                         <div class="how-it-content" style="text-align: center;">
                              <h4 >Working Capital Calculator</h4>
                        
-                        <a href="working-capital-emi-calculator.html" class="btn btn-default btn-sm" >View Now</a>
+                        <a href="<?php echo e(URL::to('working-capital-emi-calculator')); ?>" class="btn btn-default btn-sm" >View Now</a>
                         </div>
                     </div>
                 </div>

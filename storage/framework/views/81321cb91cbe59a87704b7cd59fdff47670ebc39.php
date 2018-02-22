@@ -27,12 +27,12 @@
                             <div class="card-listing how-it-block2 hvr-float-shadow2">
                                 <!-- card listing -->
                                 <div class="card-img">
-                                    <a href="https://www.abfldirect.com/?utm_source=RUPEEBOSS&utm_medium=DSA&utm_campaign=DirectSME#/smeLanding"><img src="images/express-loan/aditya-birla-group.png" alt="Aditya Birla Group"></a>
+                                    <a ><img src="images/express-loan/aditya-birla-group.png" alt="Aditya Birla Group"></a>
                                 </div>
                                 <div class="card-content" style="text-align: center;">
-                                    <h4 class="card-name"><a  class="title">Aditya Birla</a></h4>
+                                    <h4 class="card-name"><a class="title">Aditya Birla</a></h4>
                                     
-                                    <a onclick="Redirect();" target="_blank" class="btn btn-default btn-sm" style="margin-right: 0px;">Apply Now</a>
+                                    <a onclick="Redirect();" class="btn btn-default btn-sm" style="margin-right: 0px;">Apply Now</a>
                                 </div>
                             </div>
                             <!-- /.card listing -->
@@ -41,12 +41,12 @@
                             <div class="card-listing how-it-block2 hvr-float-shadow2">
                                 <!-- card listing -->
                                 <div class="card-img">
-                                    <a href="edelweiss.html"><img src="images/express-loan/edelweiss.png" alt="Edelweiss"></a>
+                                    <a ><img src="images/express-loan/edelweiss.png" alt="Edelweiss"></a>
                                 </div>
                                 <div class="card-content" style="text-align: center;">
-                                    <h4 class="card-name"><a href="edelweiss.html" class="title">Edelweiss</a></h4>
+                                    <h4 class="card-name"><a class="title">Edelweiss</a></h4>
                                     
-                                    <a href="edelweiss.html" class="btn btn-default btn-sm" style="margin-right: 0px;">Apply Now</a>
+                                    <a href="<?php echo e(URL::to('edelweiss')); ?>" class="btn btn-default btn-sm" style="margin-right: 0px;">Apply Now</a>
                                     
                                 </div>
                             </div>
@@ -85,12 +85,12 @@
                             <div class="card-listing how-it-block2 hvr-float-shadow2">
                                 <!-- card listing -->
                                 <div class="card-img">
-                                    <a ><img src="images/express-loan/early-salary.png" alt="Early Salary"></a>
+                                    <a href="early-salary.html"><img src="images/express-loan/early-salary.png" alt="Early Salary"></a>
                                 </div>
                                 <div class="card-content" style="text-align: center;">
-                                    <h4 class="card-name"><a class="title">Early Salary</a></h4>
+                                    <h4 class="card-name"><a href="early-salary.html" class="title">Early Salary</a></h4>
                                     
-                                    <a href="<?php echo e(URL::to('early-salary')); ?>" class="btn btn-default btn-sm" style="margin-right: 0px;">Apply Now</a>
+                                    <a href="early-salary.html" class="btn btn-default btn-sm" style="margin-right: 0px;">Apply Now</a>
                                     
                                 </div>
                             </div>
@@ -100,12 +100,12 @@
                             <div class="card-listing how-it-block2 hvr-float-shadow2">
                                 <!-- card listing -->
                                 <div class="card-img">
-                                    <a ><img src="images/express-loan/yes-bank.png" alt="Yes Bank"></a>
+                                    <a href="contact-us.html"><img src="images/express-loan/yes-bank.png" alt="Yes Bank"></a>
                                 </div>
                                 <div class="card-content" style="text-align: center;">
-                                    <h4 class="card-name"><a  class="title">Yes Bank</a></h4>
+                                    <h4 class="card-name"><a href="contact-us.html" class="title">Yes Bank</a></h4>
                                     
-                                    <a href="<?php echo e(URL::to('yesbank-home-loan')); ?>" class="btn btn-default btn-sm" style="margin-right: 0px;">Apply Now</a>
+                                    <a href="contact-us.html" class="btn btn-default btn-sm" style="margin-right: 0px;">Apply Now</a>
                                    
                                 </div>
                             </div>
@@ -115,12 +115,12 @@
                             <div class="card-listing how-it-block2 hvr-float-shadow2">
                                 <!-- card listing -->
                                 <div class="card-img">
-                                    <a href="contact-us.html"><img src="images/express-loan/idfc.png" alt="IDFC"></a>
+                                    <a ><img src="images/express-loan/idfc.png" alt="IDFC"></a>
                                 </div>
                                 <div class="card-content" style="text-align: center;">
-                                    <h4 class="card-name"><a href="contact-us.html" class="title">IDFC</a></h4>
+                                    <h4 class="card-name"><a class="title">IDFC</a></h4>
                                     
-                                    <a href="contact-us.html" class="btn btn-default btn-sm" style="margin-right: 0px;">Apply Now</a>
+                                    <a href="<?php echo e(URL::to('coming-soon')); ?>" class="btn btn-default btn-sm" style="margin-right: 0px;">Apply Now</a>
                                 </div>
                             </div>
                             <!-- /.card listing -->
@@ -132,7 +132,7 @@
                                     <a ><img src="images/express-loan/kotak-mahindra-bank.png" alt="Kotak Home Loan"></a>
                                 </div>
                                 <div class="card-content" style="text-align: center;">
-                                    <h4 class="card-name"><a  class="title">Kotak Home Loan</a></h4>
+                                    <h4 class="card-name"><a class="title">Kotak Home Loan</a></h4>
                                     
                                     <a href="<?php echo e(URL::to('kotak-home-loan')); ?>" class="btn btn-default btn-sm" style="margin-right: 0px;">Apply Now</a>
                                     
@@ -144,12 +144,12 @@
                             <div class="card-listing how-it-block2 hvr-float-shadow2">
                                 <!-- card listing -->
                                 <div class="card-img">
-                                    <a href="contact-us.html"><img src="images/express-loan/hdfc-bank.png" alt="HDFC"></a>
+                                    <a ><img src="images/express-loan/hdfc-bank.png" alt="HDFC"></a>
                                 </div>
                                 <div class="card-content" style="text-align: center;">
-                                    <h4 class="card-name"><a href="contact-us.html" class="title">HDFC</a></h4>
+                                    <h4 class="card-name"><a class="title">HDFC</a></h4>
                                     
-                                    <a href="contact-us.html" class="btn btn-default btn-sm" style="margin-right: 0px;">Apply Now</a>
+                                    <a href="<?php echo e(URL::to('coming-soon')); ?>" class="btn btn-default btn-sm" style="margin-right: 0px;">Apply Now</a>
                                    
                                 </div>
                             </div>
@@ -162,7 +162,7 @@
                                     <a><img src="images/express-loan/rbl-bank.png" alt="RBL Personal Loan"></a>
                                 </div>
                                 <div class="card-content" style="text-align: center;">
-                                    <h4 class="card-name"><a  class="title">RBL Personal Loan</a></h4>
+                                    <h4 class="card-name"><a class="title">RBL Personal Loan</a></h4>
                                     
                                     <a href="<?php echo e(URL::to('rbl-personal-loan')); ?>" class="btn btn-default btn-sm" style="margin-right: 0px;">Apply Now</a>
                                 </div>
@@ -191,7 +191,7 @@
                                     <a><img src="images/express-loan/tata-capital.png" alt="Tata Capital BL"></a>
                                 </div>
                                 <div class="card-content" style="text-align: center;">
-                                    <h4 class="card-name"><a  class="title">Tata Capital BL</a></h4>
+                                    <h4 class="card-name"><a class="title">Tata Capital BL</a></h4>
                                     
                                     <a href="<?php echo e(URL::to('tata-capital-business-loan')); ?>" class="btn btn-default btn-sm" style="margin-right: 0px;">Apply Now</a>
                                     
@@ -212,7 +212,7 @@
             </div>
         </div>
     </div>
- 
+
 <?php echo $__env->make('layout.footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 <?php echo $__env->make('layout.script', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 

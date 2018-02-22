@@ -1,6 +1,8 @@
 <?php echo $__env->make('layout.header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 
- <div class="iifl-image">
+
+
+<div class="iifl-image">
     <img src="images/kotak-banner.jpg">
     </div>
     <div class=" ">
@@ -34,19 +36,19 @@
 
                             <!-- Text input-->
 
-
+                             <input type="hidden" name="CampaignName" value="<?php echo e($CampaignName); ?>">
                             <div class="col-md-4 col-sm-12 col-xs-12">
                             <div class="form-group">
-                                <label class="control-label sr-only" for="city">Loan Purpose</label>
-                                <select id="city" name="city" class="form-control">
+                                <label class="control-label sr-only" for="LoanPurpose">Loan Purpose</label>
+                                <select id="LoanPurpose" name="LoanPurpose" class="form-control">
                                     <option selected disabled="">Loan Purpose</option>
-                                    <option value="Purchase of Home/Flat">Purchase of Home / Flat</option>
-                                    <option value="Balance Transfer of existing loan from another bank">Balance Transfer of Existing Loan from Another Bank</option>
-                                    <option value="Composite Loan (Plot + Construction)">Composite Loan (Plot + Construction)</option>
-                                    <option value="Construction on a Plot Owned by You">Construction on a Plot Owned by You</option>
-                                    <option value="Extension / Renovation of Owned House">Extension / Renovation of Owned House</option>
-                                    <option value="Corporate Home Loan">Corporate Home Loan</option>
-                                    <option value="Purchase of Commercial Property">Purchase of Commercial Property</option>
+                                    <option value="1">Purchase of Home / Flat</option>
+                                    <option value="2">Balance Transfer of Existing Loan from Another Bank</option>
+                                    <option value="3">Composite Loan (Plot + Construction)</option>
+                                    <option value="4">Construction on a Plot Owned by You</option>
+                                    <option value="5">Extension / Renovation of Owned House</option>
+                                    <option value="6">Corporate Home Loan</option>
+                                    <option value="7">Purchase of Commercial Property</option>
                                 </select>
                             </div>
                             </div>
@@ -74,26 +76,25 @@
                                 </select>
                             </div>
                             </div>
-                            
+
                             <div class="col-md-4 col-sm-12 col-xs-12" style="display: none;" id="first_nm">
                             <div class="form-group">
                                 <label class="control-label sr-only" for="FirstName">First Name</label>
-                                <input id="FirstName" name="FirstName" type="text" placeholder="First Name" class="form-control input-md" maxlength="40" onkeypress="return AllowAlphabet(event)" required>
+                                <input  type="text" class="form-control" placeholder= "First Name*" name="FirstName" id="FirstName" onkeypress="return AllowAlphabet(event)" maxlength="40" required>
                             </div>
                             </div>
 
                             <div class="col-md-4 col-sm-12 col-xs-12" style="display: none;" id="last_nm">
                             <div class="form-group">
-                                <label class="control-label sr-only" for="LastName">Last Name</label>
-                                <input id="LastName" name="LastName" type="text" placeholder="Last Name" class="form-control input-md" maxlength="40" onkeypress="return AllowAlphabet(event)" required>
+                                <label class="control-label sr-only" for="LastName">First Name</label>
+                                <input  type="text" class="form-control" placeholder= "Last Name*" name="LastName" id="LastName" onkeypress="return AllowAlphabet(event)" maxlength="40" required>
                             </div>
                             </div>
-
 
                             <div class="col-md-4 col-sm-12 col-xs-12">
                             <div class="form-group">
                                 <label class="control-label sr-only" for="CompanyName">Company Name</label>
-                                <input id="CompanyName" name="CompanyName" type="text" placeholder="Company Name" class="form-control input-md" maxlength="140" required>
+                                <input id="CompanyName" name="CompanyName" type="text" placeholder="Company Name" class="form-control input-md" maxlength="140" required="required">
                             </div>
                             </div>
 
@@ -101,7 +102,7 @@
                             <div class="col-md-4 col-sm-12 col-xs-12">
                             <div class="form-group">
                                 <label class="control-label sr-only" for="ContactPerson">Contact Person</label>
-                                <input id="ContactPerson" name="ContactPerson" onkeypress="return AllowAlphabet(event)" maxlength="40" type="text" placeholder="Contact Person" class="form-control input-md" required>
+                                <input id="ContactPerson" name="ContactPerson" onkeypress="return AllowAlphabet(event)" maxlength="40" type="text" placeholder="Contact Person" class="form-control input-md" required="required">
                             </div>
                             </div>
 
@@ -110,7 +111,7 @@
                             <div class="col-md-4 col-sm-12 col-xs-12">
                             <div class="form-group">
                                 <label class="control-label sr-only" for="LnAmt">Loan Amount</label>
-                                <input id="LnAmt" name="LnAmt" type="text" placeholder="Loan Amount" class="form-control input-md" onkeypress="return fnAllowNumeric(event)" minlength="1" maxlength="9" required>
+                                <input id="LnAmt" name="LnAmt" type="text" placeholder="Loan Amount" class="form-control input-md" onkeypress="return fnAllowNumeric(event)" minlength="1" maxlength="9" required="required">
                             </div>
                             </div>
 
@@ -120,26 +121,26 @@
                                 <label class="control-label sr-only" for="TnrYears">Tenure (in years)</label>
                                 <select id="TnrYears" name="TnrYears" class="form-control">
                                     <option selected disabled="">Tenure (in years)</option>
-                                    <option value="1">1 Year</option>
-                                    <option value="2">2 Year</option>
-                                    <option value="3">3 Year</option>
-                                    <option value="4">4 Year</option>
-                                    <option value="5">5 Year</option>
-                                    <option value="6">6 Year</option>
-                                    <option value="7">7 Year</option>
-                                    <option value="8">8 Year</option>
-                                    <option value="9">9 Year</option>
-                                    <option value="10">10 Year</option>
-                                    <option value="11">11 Year</option>
-                                    <option value="12">12 Year</option>
-                                    <option value="13">13 Year</option>
-                                    <option value="14">14 Year</option>
-                                    <option value="15">15 Year</option>
+                                    <option value="1 Year">1 Year</option>
+                                    <option value="2 Year">2 Year</option>
+                                    <option value="3 Year">3 Year</option>
+                                    <option value="4 Year">4 Year</option>
+                                    <option value="5 Year">5 Year</option>
+                                    <option value="6 Year">6 Year</option>
+                                    <option value="7 Year">7 Year</option>
+                                    <option value="8 Year">8 Year</option>
+                                    <option value="9 Year">9 Year</option>
+                                    <option value="10 Year">10 Year</option>
+                                    <option value="11 Year">11 Year</option>
+                                    <option value="12 Year">12 Year</option>
+                                    <option value="13 Year">13 Year</option>
+                                    <option value="14 Year">14 Year</option>
+                                    <option value="15 Year">15 Year</option>
                                     <option style="display: none;" value="16">16 Year</option>
-                                    <option style="display: none;" value="17">17 Year</option>
-                                    <option style="display: none;" value="18">18 Year</option>
-                                    <option style="display: none;" value="19">19 Year</option>
-                                    <option style="display: none;" value="20">20 Year</option>
+                                            <option style="display: none;" value="17">17 Year</option>
+                                            <option style="display: none;" value="18">18 Year</option>
+                                            <option style="display: none;" value="19">19 Year</option>
+                                            <option style="display: none;" value="20">20 Year</option>
                                 </select>
                             </div>
                             </div>
@@ -148,34 +149,34 @@
                             <div class="col-md-4 col-sm-12 col-xs-12">
                             <div class="form-group">
                                 <label class="control-label sr-only" for="PAN"> Pan Card</label>
-                                <input id="PAN" name="PAN" type="text" placeholder="Pan Card" class="form-control input-md" oninput="pan_card('PAN')" maxlength="10"  required>
+                                <input id="PAN" name="PAN" type="text" oninput="pan_card('PAN')" minlength="10" maxlength="10" placeholder="Pan Card" class="form-control input-md" required="required">
                                 <span id="pan_number" style="display:none;color: red; font-size: 10px">Oops.Please Enter Valid Pan Number.!!</span>
                             </div>
                             </div>
 
                             <div class="col-md-4 col-sm-12 col-xs-12">
                             <div class="form-group">
-                                
-                                <select class="form-control drop-arr select-sty" name="ResCity" id="ResCity" style="height: 50px" required>
-                                            <option disabled selected value="">Residence City</option>
+                                <label class="control-label sr-only" for="ResCity">Residence City</label>
+                                 <select id="ResCity" name="ResCity" class="form-control">
+                                  <option disabled selected value="">CITY</option>
                                             </select>
                             </div>
                             </div>
-
+                            
                             <div class="col-md-4 col-sm-12 col-xs-12" style="display: none;">
                             <div class="form-group">
-                                
-                                <select class="form-control drop-arr select-sty" name="ResCityArea" id="ResCityArea" style="height: 50px" required>
-                                            <option disabled selected value="">City Area</option>
+                                <label class="control-label sr-only" for="ResCityArea">Residence City Area</label>
+                                 <select id="ResCityArea" name="ResCityArea" class="form-control">
+                                 <option disabled selected value="">CITY AREA</option>
+
                                             </select>
                             </div>
                             </div>
-
 
                             <div class="col-md-4 col-sm-12 col-xs-12">
                             <div class="form-group">
                                 <label class="control-label sr-only" for="Mobile">Mobile Number</label>
-                                <input id="Mobile" name="Mobile" type="text" placeholder="Mobile Number" class="form-control input-md" maxlength="10" onkeypress="return fnAllowNumeric(event)"  required>
+                                <input id="Mobile" name="Mobile" type="text" minlength="10" maxlength="10" placeholder="Mobile Number" class="form-control input-md" onkeypress="return fnAllowNumeric(event)" required="required">
                             </div>
                             </div>
 
@@ -183,18 +184,9 @@
 
 
                             
-                         
-                            <div class="col-md-12">
-                                          <div class="col-md-4"></div>
-                                          <div class="col-md-2"><a class="btn btn-default btn-sm" id="kotak-hl-submit">Submit</a></div>
+                            <a class="btn btn-default btn-sm" id="kotak-hl-submit">Submit</a><br><br>
 
-                                          <!-- <div class="col-md-2"><a class="btn btn-default btn-sm" id="kotak-hl-status">Check Status</a></div> -->
-                                          
-                                          <!-- <div class="iframeloading" style= "display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
-                                          <img src="<?php echo e(URL::to('images/ajaxloader.gif')); ?>" alt="Loader" title="Loader" style="top: 50%; position: relative; left: 50%;"  />
-                                         </div> -->
-                                         
-                                          </div>
+                            <a class="btn btn-default btn-sm" id="kotak-hl-status">Check Status</a>
 
 
                             
@@ -228,10 +220,8 @@
                             </div>
                         
     </div>
-
 <?php echo $__env->make('layout.footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 <?php echo $__env->make('layout.script', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
-
 
 <div class="modal fade" tabindex="-1" role="dialog" id="kotak-hl-popup">
   <div class="modal-dialog" role="document">
@@ -284,13 +274,15 @@
           <?php echo e(csrf_field()); ?>
 
           <input type="hidden" name="form" value="kotak_home_loan_status">
+                 
+                    <div class="col-md-4 col-sm-12 col-xs-12">
+                            <div class="form-group">
+                                <label class="control-label sr-only" for="Mobile">Mobile Number</label>
+                                <input id="Mobile" name="Mobile" type="text" minlength="10" maxlength="10" placeholder="Mobile Number" class="form-control input-md" onkeypress="return fnAllowNumeric(event)" required="required">
+                            </div>
+                            </div>
                   <div>
-                    <fieldset>
-                      <input type="text" class="newsletter-name" name="Mobile" pattern="[789][0-9]{9}" required maxlength="10" placeholder="Mobile Number">
-                    </fieldset>                 
-                    </div>
-                  <div>
-                      <button class="btn btn-primary btn-outline with-arrow" id="kotak_status">Submit<i class="icon-arrow-right"></i></button>
+                      <button class="btn btn-default btn-sm" id="kotak_status">Submit</button>
                   </div>
 
             </form>
@@ -556,4 +548,12 @@ $('#LeadType').on('change', function() {
            }
            
             
-     
+              
+              
+        }  
+      });   
+     }
+  });
+</script>
+
+

@@ -1,5 +1,4 @@
 <?php echo $__env->make('layout.header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
-
 <div class=" ">
         <!-- content start -->
         <div class="container">
@@ -25,11 +24,22 @@
 
                             <!-- Text input-->
 
-                            <input type="hidden" name="ProductId" id="ProductId" value="12">
+                             <input type="hidden" name="ProductId" id="ProductId" value="12">
+
+                             <div class="col-md-4 col-sm-12 col-xs-12">
+                            <div class="form-group">
+                                <label class="control-label sr-only" for="ApplicantSource">Loan Tenure</label>
+                                <select id="ApplicantSource" name="ApplicantSource" class="form-control">
+                                                <option value="">Applicant Source</option>
+                                            <option value="1">Salaried</option>
+                                            <option value="2">Self-Employed</option>
+                                </select>
+                            </div>
+                            </div>
                             <div class="col-md-4 col-sm-12 col-xs-12">
                             <div class="form-group">
                                 <label class="control-label sr-only" for="PropertyCost">Property Cost</label>
-                                <input id="PropertyCost" name="PropertyCost" type="text" placeholder="Property Cost" class="form-control input-md" onkeypress="return fnAllowNumeric(event)" minlength="6" maxlength="9" required="required">
+                                <input id="PropertyCost" name="PropertyCost" type="text" placeholder="Property Cost" class="form-control input-md" onkeypress="return fnAllowNumeric(event)" minlength="6" maxlength="9" required>
                             </div>
                             </div>
 
@@ -39,7 +49,7 @@
                             <div class="col-md-4 col-sm-12 col-xs-12">
                             <div class="form-group">
                                 <label class="control-label sr-only" for="LoanRequired">Loan Amount</label>
-                                <input id="LoanRequired" name="LoanRequired" type="text" placeholder="Loan Amount" class="form-control input-md" minlength="6" maxlength="9" readonly="">
+                                <input id="LoanRequired" name="LoanRequired" readonly type="text" placeholder="Loan Amount" class="form-control input-md" required="required">
                             </div>
                             </div>
 
@@ -78,68 +88,58 @@
 
                             
                                         <!-- Nav tabs -->
-                                       <div class="col-md-4 col-sm-12 col-xs-12">
-                            <div class="form-group">
-                                <label class="control-label sr-only" for="ApplicantSource">Loan Tenure</label>
-                                <select id="ApplicantSource" name="ApplicantSource" class="form-control">
-                                                
-                                                <option selected disabled="">Applicant Source</option>
-                                                <option value="1">Salaried</option>
-                                                <option value="2">Self-Employed</option>
-                                </select>
-                            </div>
-                            </div>
-
-
-
                                         
+
+
+
+                                        <!-- Tab panes -->
                                         
-                                            
+                                           
                             <div class="col-md-4 col-sm-12 col-xs-12" id="income" style="display: none;">
                             <div class="form-group">
                                 <label class="control-label sr-only" for="ApplicantIncome">Income</label>
-                                <input id="ApplicantIncome" name="ApplicantIncome" type="text" placeholder="Income" class="form-control input-md" minlength="5" maxlength="9"   onkeypress="return fnAllowNumeric(event)" required="">
+                                <input id="ApplicantIncome" name="ApplicantIncome" type="text" placeholder="Loan Amount" class="form-control input-md" minlength="5" maxlength="9"   onkeypress="return fnAllowNumeric(event)" required>
                             </div>
                             </div>
                             <!-- Text input-->
-                             <div class="col-md-4 col-sm-12 col-xs-12" id="obligation" style="display: none;">
+                            <div class="col-md-4 col-sm-12 col-xs-12" id="obligation" style="display: none;">
                             <div class="form-group">
-                                <label class="control-label sr-only" for="ApplicantObligations">Obligation</label>
-                                <input id="ApplicantObligations" name="ApplicantObligations" type="text" placeholder="Obligations" class="form-control input-md" onkeypress="return fnAllowNumeric(event)" required="" >
+                                <label class="control-label sr-only" for="ApplicantObligations">Loan Amount</label>
+                                <input type="text" id="ApplicantObligations" name="ApplicantObligations" placeholder="Obligations" value="" onkeypress="return fnAllowNumeric(event)"  class="form-control input-md" required="required">
                             </div>
                             </div>
                             
-                                           
                                             
+                                           
                                                 <div class="col-md-4 col-sm-12 col-xs-12" id="turnover" style="display: none;">
                             <div class="form-group">
                                 <label class="control-label sr-only" for="Turnover">Turnover</label>
-                                <input id="Turnover" name="Turnover" type="text" placeholder="Turnover" class="form-control input-md" onkeypress="return fnAllowNumeric(event)" required="required">
+                                <input type="text" id="Turnover" name="Turnover" placeholder="Turnover" onkeypress="return fnAllowNumeric(event)" class="form-control input-md" required="required">
                             </div>
                             </div>
                             <!-- Text input-->
                             <div class="col-md-4 col-sm-12 col-xs-12" id="pat" style="display: none;">
                             <div class="form-group">
                                 <label class="control-label sr-only" for="ProfitAfterTax">Profit After Tax</label>
-                                <input id="ProfitAfterTax" name="ProfitAfterTax" type="text" placeholder="Profit After Tax" class="form-control input-md" onkeypress="return fnAllowNumeric(event)" required="required">
+                                <input id="ProfitAfterTax" name="ProfitAfterTax" placeholder="Profit After Tax"  onkeypress="return fnAllowNumeric(event)" type="text" class="form-control input-md" required="required">
                             </div>
                             </div>
                             <div class="col-md-4 col-sm-12 col-xs-12" id="depreciation" style="display: none;">
                             <div class="form-group">
                                 <label class="control-label sr-only" for="Depreciation">Depreciation</label>
-                                <input id="Depreciation" name="Depreciation" type="text" placeholder="Depreciation" class="form-control input-md" onkeypress="return fnAllowNumeric(event)" required="required">
+                                <input id="Depreciation" name="Depreciation" placeholder="Depreciation"  onkeypress="return fnAllowNumeric(event)" type="text"  class="form-control input-md" required="required">
                             </div>
                             </div>
                             <div class="col-md-4 col-sm-12 col-xs-12" id="remuneration" style="display: none;">
                             <div class="form-group">
                                 <label class="control-label sr-only" for="DirectorRemuneration">Director/Partner Remuneration </label>
-                                <input id="DirectorRemuneration" name="DirectorRemuneration" type="text" placeholder="Director/Partner Remuneration" onkeypress="return fnAllowNumeric(event)" class="form-control input-md" required="required">
+                                <input id="DirectorRemuneration" name="DirectorRemuneration" placeholder="Director/Partner Remuneration " type="text" onkeypress="return fnAllowNumeric(event)" class="form-control input-md" required="required">
                             </div>
                             </div>
                             
-                                            
+                                        
                                          
-                                       
+                                      
                                     
 
                            
@@ -184,77 +184,8 @@
                         
     </div>
 
-<div class=" ">
-        <!-- content start -->
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-
-                    <div class="wrapper-content bg-white pinside40">
-                     <p>Home loan liked with bank account either current account or saving bank account with the same bank. Borrower can deposit their surplus funds or savings into bank account and bank will subtract it from the principal amount of your home loan and calculate interest on the remaining amount and not the entire .Smart home loan offers repayment tenure up to 20 years.</p>
-
-
-                        <div class="section-faq" id="section-faq">
-                            <div class="">
-                                
-                                <div class="row">
-
-
-
-
-                                    <div class="col-md-12 col-sm-12 col-xs-12">
-
-
-
-                                            <div class="st-accordion ">
-                        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-                            <div class="panel panel-default">
-                                <div class="panel-heading" role="tab" id="headingOne">
-                                    <h4 class="panel-title"> <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Benefits for a Borrower</a> </h4>
-                                </div>
-                                <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-                                    <div class="panel-body">
-
-                                    <ul class="listnone bullet bullet-check-circle-default">
-                                                <li>End up paying less EMI :- As bank consider and subtract surplus funds from the principal outstanding ,your principal get reduce while EMI calculation done by bank and you will end up paying less EMI than usual</li>
-                                                <li>Borrower can withdraw the funds fully or partially when needed</li>
-                                            </ul>
-
-                                        </div>
-                                </div>
-                            </div>
-                            
-                            
-
-                           
-                        </div>
-                    </div>
-
-
-
-                                             
-
-
-
-
-
-
-                                       
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-
 <?php echo $__env->make('layout.footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 <?php echo $__env->make('layout.script', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
-
 
 <div class="modal fade" tabindex="-1" role="dialog" id="home_loan_eligible">
   <div class="modal-dialog" role="document">
@@ -426,8 +357,4 @@ $('#ckeck_eligibility').click(function(){
     }
 });
 </script>
-
-
-
-
 

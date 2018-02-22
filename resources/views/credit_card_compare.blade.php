@@ -135,7 +135,7 @@ h3 {
                 <!-- flight section -->
                 <div class="bhoechie-tab-content active">
                     <center>
-                      <h1 class="glyphicon glyphicon-plane" style="font-size:14em;color:#55518a"></h1>
+                      <h1 style="font-size:14em;color:#55518a"></h1>
                       
                     <div class="col-md-4"><br><img src="{{url('images/titanium_crd.png')}}" class="rbl" width="260"/></div>
 					<div class="col-md-8">
@@ -154,7 +154,7 @@ h3 {
                 <!-- train section -->
                 <div class="bhoechie-tab-content">
                     <center>
-                      <h1 class="glyphicon glyphicon-road" style="font-size:12em;color:#55518a"></h1>
+                      <h1 style="font-size:12em;color:#55518a"></h1>
                       
                      <div class="col-md-4"><br><img src="{{url('images/platinum_crd.png')}}" class="rbl" width="260"/></div>
 					<div class="col-md-8">
@@ -175,7 +175,7 @@ h3 {
                 <!-- hotel search -->
                 <div class="bhoechie-tab-content">
                     <center>
-                      <h1 class="glyphicon glyphicon-home" style="font-size:12em;color:#55518a"></h1>
+                      <h1 style="font-size:12em;color:#55518a"></h1>
                       
                      <div class="col-md-4"><br><img src="{{url('images/platinum_delight_crd.png')}}" class="rbl" width="260"/></div>
 					<div class="col-md-8">

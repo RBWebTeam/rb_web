@@ -22,53 +22,56 @@
 
 <body>
 
+ 
 
-<div class="fh5co-cta bt-bg" style="background:url(../images/bt-bg.jpg) no-repeat; width:100%;">
-    <div class="overlay"></div>
-    <?php if($loan == "home-loan") {?>
-    <div class="container">
-      <div class="col-md-12 text-center animate-box wht-brd fadeInUp animated">
-        <h1 class="h1-hd">Home Loan Balance Transfer</h1>
-        <h3>Let's find out how much you can save!!</h3>
-        <h3>To know,please enter your current home loan details.</h3>
-      </div>
-    </div>
-    <?php }elseif($loan == "personal-loan"){?>
-    <div class="container">
-      <div class="col-md-12 text-center animate-box wht-brd pad fadeInUp animated">
-        <h1 class="h1-hd">Personal Loan Balance Transfer </h1>
-        <h3>Let's find out how much you can save!!</h3>
-        <h3>To know,please enter your current personal loan details.</h3>
-      </div>
-    </div>
-    <?php }else{?>
-    <div class="container">
-      <div class="col-md-12 text-center animate-box wht-brd pad fadeInUp animated">
-        <h1 class="h1-hd">Loan Against Property Balance Transfer </h1>
-        <h3>Let's find out how much you can save!!</h3>
-        <h3>To know,please enter your current loan against property details.</h3>
-      </div>
-    </div>
-    <?php }?>
-  </div>
+<?php if($loan == "home-loan") {?>
+  <div class="col-md-offset-2 col-md-8 col-sm-12 col-xs-12" >
+                                    <div class="mb60  section-title text-center  ">
+                                        <!-- section title start-->
+                                        <h1>Home Loan Balance Transfer </h1>
+                                        <p>Let's find out how much you can save!! To know, please enter your current Home Loan details.</p>
+                                    </div>
+                                </div>
+                                <?php }elseif($loan == "personal-loan"){?>
+                                <div class="col-md-offset-2 col-md-8 col-sm-12 col-xs-12" >
+                                    <div class="mb60  section-title text-center  ">
+                                        <!-- section title start-->
+                                        <h1>Personal Loan Balance Transfer </h1>
+                                        <p>Let's find out how much you can save!! To know, please enter your current Personal Loan details.</p>
+                                    </div>
+                                </div>
+                                <?php }else{?>
+                                <div class="col-md-offset-2 col-md-8 col-sm-12 col-xs-12" >
+                                    <div class="mb60  section-title text-center  ">
+                                        <!-- section title start-->
+                                        <h1>Loan Against Property Balance Transfer </h1>
+                                        <p>Let's find out how much you can save!! To know, please enter your current Loan Against Property details.</p>
+                                    </div>
+                                </div>
+                                <?php }?>
+
+                                <br><br>
   
   
 <div class="container">
   <div class="row">
      <div class="col-sm-4 rw-hei">
-	 <div class="white-bg pad1 heigh-bt">
-	 <h3 class="emi-cal">
+   <div class="white-bg pad1 heigh-bt">
+   
     <?php if($loan == "home-loan") {?>
-     Current Loan Status  <i class="fa fa-exchange" aria-hidden="true"></i></h3>
+     <h4>Current Loan Status  <i class="fa fa-exchange" aria-hidden="true"></i></h4>
     <?php }elseif($loan == "personal-loan"){?>
-    Current Loan Status  <i class="fa fa-exchange" aria-hidden="true"></i></h3>
+    <h4>Current Loan Status  <i class="fa fa-exchange" aria-hidden="true"></i></h4>
     <?php }else{?>
-    Current Loan Status  <i class="fa fa-exchange" aria-hidden="true"></i></h3>
+    <h4>Current Loan Status  <i class="fa fa-exchange" aria-hidden="true"></i></h>
     <?php }?>
+
+
 
 
      <!-- <i class="fa fa-exchange" aria-hidden="true"></i> -->
      
+    <div class="col-md-12 col-xs-12">
     <div class="form-group">
     <?php
           $myString = isset($_GET['referrer']);
@@ -112,7 +115,7 @@
           }
           
           ?>
-	
+  
     <input type="hidden" name="empid" class="empid" id="empid"  value="<?php echo $empid;?>">
           <input type="hidden" name="brokerid" id="brokerid" class="brokerid" value="<?php echo $brokerid;?>">
           <input type="hidden" name="source" id="source"  class="source" value="<?php echo $source;?>">
@@ -121,20 +124,24 @@
        <input type="text" name="loanamount" class="form-control" id="loanamount" placeholder="Outstanding Principal" value="" onblur ="myfun()" onKeyPress="return isNumberKey(event)" maxlength="10" title="Outstanding Principal">
 
     </div>
+  </div>
+  <div class="col-md-12 col-xs-12">
     <div class="form-group">
       <!-- <label class="control-label" for="Interest Rate"> Current Interest Rate:</label> -->
 
       <input type="text" name="loaninterest" step="0.01" min="0" class="form-control" id="loaninterest" placeholder="Present Int.Rate"  value="" onBlur="myfun()" onKeyPress="return isNumberKey(event)" title="Present Int.Rate">
 
     </div>
+  </div>
    
-    <div class="form-group right-block">
+   <div class="col-md-12 col-xs-12">
+    <div class="form-group">
        <!-- <label class="control-label" for="Loan Tenure">Remaining Tenure:</label> -->
         <input type="text" name="loanterm" class="form-control" id="loanterm" placeholder="Remaining Tenure" value="" onBlur="myfun()" onKeyPress="return isNumberKey(event)" title="Remaining Tenure">
     <span style="color:red; font-size:13px;display:none" id="err">Please Fill All Inputs</span>
   
     <div class="col-md-12 pad">
-  <button class="btn btn-success pull-left ">Submit</button>
+  <button class="btn btn-default btn-sm">Submit</button>
   <div class="pull-right">
           <label><input type="radio" name="Year" id="Year" value="" checked="checked"> Year</label>
              <label><input type="radio" name="Year" id="Month" value=""> Month</label>
@@ -142,7 +149,7 @@
     </div>
   
 
-
+</div>
     </div>
 
     <?php if($loan == "home-loan") {?>
@@ -156,40 +163,39 @@
      </div>
     </div>
     <div class="col-sm-4 rw-hei brd-rgt">
-	<div class="white-bg pad1 heigh-bt1">
-	<h3 class="text-center">
+  <div class="white-bg pad1 heigh-bt1">
+  <h3 class="text-center">
     My Savings <i class="fa fa-credit-card" aria-hidden="true"></i></h3>
     <!-- <i class="fa fa-cog fa-spin fa-2x fa-fw"></i>
     <span class="sr-only">Loading...</span></h3> -->
      <!-- <i class="fa fa-credit-card" aria-hidden="true"></i></h3> -->
      
      <center class="my-saving">
-       <p>Loan EMI :<b class="em1"> ₹ <span id="emi">0</span></b></p>
+       <p>Loan EMI :<b class="em1"><i class="fa fa-inr"></i><span id="emi">0</span></b></p>
       
       <!--  <p>Total Payable Interest :</p>
        <h2 class="em2">₹ <b><span id="emi1">0</span></b></h2>
        <p>Total Payment(Principal + Int) :</p>
        <h2 class="em3">₹ <b><span id="emi2">0</span></b></h2> -->
-       <p>Drop_EMI : ₹ <b class="em5"><span id="emi3">0</span></b></p>
-       <p>New Loan EMI : <b class="em6">₹<span id="emi4">0</span></b></p>
+       <p>Drop_EMI : <i class="fa fa-inr"></i><b class="em5"><span id="emi3">0</span></b></p>
+       <p>New Loan EMI : <b class="em6"><i class="fa fa-inr"></i><span id="emi4">0</span></b></p>
    
-        <p>Drop-in Interest Rate:<b class="em7"><span id="emi5">0</span>%</b></p>
     
        <p><h6>Your <mark style="color:red"><b>Savings</b></mark> through reduced Interest:</h6></p>
-       <h2 class="em8">₹ <b><span id="emi6">0</span></b></h2>
+       <h2 class="em8"><i class="fa fa-inr"></i><b><span id="emi6">0</span></b></h2>
        <?php if($loan == "home-loan") {?>
-       <button type="button" class="btn btn-success" id="revise_apply2" name="revise_apply" data-toggle="modal" data-target="#myModaltest" style="display:none;">Apply Now</button>
+       <button type="button" class="btn btn-default btn-sm" id="revise_apply2" name="revise_apply" data-toggle="modal" data-target="#myModaltest" style="display:none;">Apply Now</button>
        <?php }elseif($loan == "personal-loan"){?>
-       <button type="button" class="btn btn-success" id="revise_apply2" name="revise_apply" data-toggle="modal" data-target="#borrow_personal" style="display:none;">Apply Now</button>
+       <button type="button" class="btn btn-default btn-sm" id="revise_apply2" name="revise_apply" data-toggle="modal" data-target="#borrow_personal" style="display:none;">Apply Now</button>
         <?php }else{?>
-        <button type="button" class="btn btn-success" id="revise_apply2" name="revise_apply" data-toggle="modal" data-target="#borrow_lap" style="display:none;">Apply Now</button>
+        <button type="button" class="btn btn-default btn-sm" id="revise_apply2" name="revise_apply" data-toggle="modal" data-target="#borrow_lap" style="display:none;">Apply Now</button>
          <?php }?>
 
 
        <!-- <div id="b"></div> -->
       </center>
-	  </div>
-	  
+    </div>
+    
   </div>
   <div class="col-sm-4 rw-hei">
   <div class="white-bg pad1 heigh-bt">
@@ -215,7 +221,7 @@
       <input type="text" name="loaninterest" step="0.01" min="0" class="form-control" id="loaninterest_new" placeholder="Interest"  value=""  onkeypress="return isNumberKey(event)" title="Interest" >
 
     </div>
-	
+  
     <div class="form-group right-block">
        <!-- <label class="control-label" for="Loan Tenure">Remaining Tenure:</label> -->
 
@@ -223,9 +229,9 @@
         <input type="text" name="loanterm" class="form-control" id="loanterm_new" placeholder="Loan Tenure" value="" onKeyPress="return isNumberKey(event)" title="Tenure"  >
     <p id="err" style="display:none;"><span style="color:red; font-size:13px; position:absolute;">Please Fill All Inputs</span></p>
 
-	
+  
    <!-- <div class="col-md-12 pad"><button class="btn btn-success pull-left" onclick="myfun_new()" >Revise & calculate</button></div> -->
-   <div class="col-md-12 pad"><button type="button" class="btn btn-success" onClick="myfun_new()" id="revise" name="revise" style="display:none;">Revise & calculate</button></div>
+   <div class="col-md-12 pad"><button type="button" class="btn btn-default btn-sm" onClick="myfun_new()" id="revise" name="revise" style="display:none;">Revise & calculate</button></div>
 
   
   
@@ -242,22 +248,23 @@
     <?php }?>
 
      </div>
-	 
+   
     </div>
 
-
+<center>
 <?php if($loan == "home-loan") {?>
 
-    <div class="col-md-12"><h3 class="blue-bg">Would you like to borrow &nbsp;&nbsp;<b>₹<span id="drop">0</span> (in lacs)</b>&nbsp;&nbsp;extra and pay the same EMI.&nbsp;&nbsp;<button type="button" class="btn btn-success" id="revise_apply" name="revise_apply" data-toggle="modal" data-target="#myModaltest" style="display:none;">Apply Now</button></h3></div>
+    <div class="col-md-12"><h3 class="blue-bg">Would you like to borrow &nbsp;&nbsp;<b>₹<span id="drop">0</span> (in lacs)</b>&nbsp;&nbsp;extra and pay the same EMI.&nbsp;&nbsp;<button type="button" class="btn btn-default btn-sm" id="revise_apply" name="revise_apply" data-toggle="modal" data-target="#myModaltest" style="display:none;">Apply Now</button></h3></div>
   
     <?php }elseif($loan == "personal-loan"){?>
   
     <?php }else{?>
-   <div class="col-md-12"><h3 class="blue-bg">Would you like to borrow &nbsp;&nbsp;<b>₹<span id="drop">0</span> (in lacs)</b>&nbsp;&nbsp;extra and pay the same EMI.&nbsp;&nbsp;<button type="button" class="btn btn-success" id="revise_apply" name="revise_apply" data-toggle="modal" data-target="#borrow_lap" style="display:none;">Apply Now</button>
+   <div class="col-md-12"><h3 class="blue-bg">Would you like to borrow &nbsp;&nbsp;<b>₹<span id="drop">0</span> (in lacs)</b>&nbsp;&nbsp;extra and pay the same EMI.&nbsp;&nbsp;<button type="button" class="btn btn-default btn-sm" id="revise_apply" name="revise_apply" data-toggle="modal" data-target="#borrow_lap" style="display:none;">Apply Now</button>
 </h3></div>
   
     <?php }?>
-	
+  </center>
+  
 </div>
 
 </div>
@@ -330,6 +337,7 @@
     </div>
   </div>
 </div>
+
     <?php }?>
 
 

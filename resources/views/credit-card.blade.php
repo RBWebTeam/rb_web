@@ -1,32 +1,64 @@
 @include('layout.header')
-  <div id="fh5co-hero">
-    <div class="container animate-box" id="fh5co-services-section">
-       <div class="row">
-          <div class="col-md-12">
-         <h1 class="align-center loan-head">Credit Cards</h1>
+  <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+      
+                <div class="wrapper-content bg-white pinside40">
+         <h1 class=""><center>Credit Cards</center></h1>
+         </br>
+                    <div class="row">
+          
+                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                            <div class="card-listing how-it-block hvr-float-shadow2">
+                                <!-- card listing -->
+                                <div class="card-img">
+                                    <a href="#"><img src="images/rbl-credit-card.png" alt="RBL Credit Card"></a>
+                                </div>
+                                <div class="card-content" style="text-align: center;">
+                                    <h4 class="card-name"><a href="#" class="title">RBL Bank Credit Card</a></h4>
+                                    
+                                    <a href="{{URL::to('credit-card-compare/rbl')}}" class="btn btn-default btn-sm" style="margin-right: 0px;">Apply Now</a>
+                                   
+                                </div>
+                            </div>
+                            <!-- /.card listing -->
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                            <div class="card-listing how-it-block hvr-float-shadow2">
+                                <!-- card listing -->
+                                <div class="card-img">
+                                    <a href="#"><img src="images/icici-credit-card.png" alt="ICICI Credit Card"></a>
+                                </div>
+                                <div class="card-content" style="text-align: center;">
+                                    <h4 class="card-name"><a href="#" class="title">ICICI Bank Credit Card</a></h4>
+                                    
+                                    <a href="icici-credit-card.html" class="btn btn-default btn-sm" style="margin-right: 0px;">Apply Now</a>
+                                </div>
+                            </div>
+                            <!-- /.card listing -->
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                            <div class="card-listing how-it-block hvr-float-shadow2">
+                                <!-- card listing -->
+                                <div class="card-img">
+                                    <a href="#"><img src="images/hdfc-credit-card.png" alt="HDFC Credit Card"></a>
+                                </div>
+                                <div class="card-content" style="text-align: center;">
+                                    <h4 class="card-name"><a href="#" class="title">HDFC Bank Credit Card</a></h4>
+                                    
+                                    <a href="hdfc-bank-credit-card.html" class="btn btn-default btn-sm" style="margin-right: 0px;">Apply Now</a>
+                                    
+                                </div>
+                            </div>
+                            <!-- /.card listing -->
+                        </div>
+                        
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-  <div class="row">
-  <div class="col-md-12">
-        <div class="col-md-4">
-            <div class="desc">
-            <a href="{{url('credit-card-compare/rbl')}}"> <img src="images/rbl_credit-crd.jpg" alt="RBL Credit Cards" title="RBL Credit Cards" class="img-responsive box-shadow"/></a>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="desc">
-              <a href="{{url('icici')}}"> <img src="images/icici_credit-crd.jpg" alt="ICICI Credit Cards" title="ICICI Credit Cards"  class="img-responsive box-shadow"/></a>
-          </div>
-        </div>
-        <div class="col-md-4">
-            <div class="desc">
-              <a href="{{url('coming-soon')}}">  <img src="images/hdfc_credit-crd.jpg" alt="HDFC Credit Cards" title="HDFC Credit Cards" class="img-responsive box-shadow"/></a>
-            </div>
-        </div>
-   </div>
-        </div> 
-      </div>
-    </div>  
-</div>
-<br>   
 @include('layout.footer')
 @include('layout.script')

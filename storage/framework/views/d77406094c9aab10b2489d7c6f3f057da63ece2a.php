@@ -19,7 +19,7 @@
     <!-- owl Carousel Css -->
     <link href="../css/owl.carousel.css" rel="stylesheet">
     <link href="../css/owl.theme.css" rel="stylesheet">
-    <link rel="icon" href="image/rb_fav.png" type="image/png" sizes="16x16">
+    <link rel="icon" href="images/rb_fav.png" type="image/png" sizes="16x16">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
   
@@ -221,4 +221,4 @@ $(document).ready(function(){
     <script src="../js/iziModal.mind1eb.js?=v2" type="text/javascript"></script>
     <script src="../js/javascript.js?v=1" type="text/javascript"></script>
     
-    </html>
+

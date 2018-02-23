@@ -1,5 +1,5 @@
 @include('layout.header')
-<div class=" ">
+
         <!-- content start -->
         <div class="container">
             <div class="row">
@@ -17,7 +17,7 @@
                                 <div class="row">
 
     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" style="padding-bottom: 20px">
-                    <div class="how-it-block1 bg-boxshadow" style=" min-height: 360px;">
+                    <div class="how-it-block1 bg-boxshadow" style=" min-height: 420px;">
   <h4 style="text-align: center;" >EMI Calculator</h4>
   
       <div class="form-group">
@@ -52,7 +52,7 @@
   </div>
   </div>
     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" style="padding-bottom: 20px">
-                    <div class="how-it-block1 bg-boxshadow" style=" min-height: 360px;">
+                    <div class="how-it-block1 bg-boxshadow" style=" min-height: 420px;">
                         <h4 style="text-align: center;" >Loan Details</h4>
                         <div class="mb40" style="text-align: center;">
                             <p>Loan EMI : <br><i class="fa fa-inr" style="font-size: 24px"></i> <span id="emi" style="font-size: 24px; color: #ed1c24;">0</span><br>
@@ -63,7 +63,7 @@
                     </div>
                 </div>
  <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" style="padding-bottom: 20px">
-                    <div class="how-it-block1 bg-boxshadow" style=" min-height: 360px;">
+                    <div class="how-it-block1 bg-boxshadow" style=" min-height: 420px;">
  <h4 style="text-align: center;" >Break-up of Loan Details</h4>
                         <div class="mb40" style="text-align: center;">
    <i class="fa fa-cloud" style="font-size:20px;color:#ed1c24;"></i> Loan EMI<br>
@@ -80,8 +80,15 @@
 <table class="table table-bordered table-striped" id="emipaymenttable"></table>
 </div>
 </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 
-@include('layout.footer')
+
+
 @include('layout.script') 
-
+@include('layout.footer')
 

@@ -15,8 +15,8 @@
                                     </div>
                                 </div>
                                 <div class="row">
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding-bottom: 20px">
-                    <div class="how-it-block1 bg-boxshadow" style=" min-height: 360px;">
+                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-md-offset-3 col-lg-offset-3" style="padding-bottom: 20px">
+                    <div class="how-it-block1 bg-boxshadow" style=" min-height: 260px;">
                        <!--  <h4 style="text-align: center;" >EMI Calculator</h4> -->
                         <form class="" id="personal_loan_calculator_form" name="personal_loan_calculator_form" role="form" method="POST" >
                                  <?php echo e(csrf_field()); ?>

@@ -611,3 +611,5 @@ $("#eligibility").click(function() {
     $(document).on("change, keyup", "#property_cost", update);
 });
 </script>
+
+

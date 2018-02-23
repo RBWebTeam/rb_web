@@ -1,3 +1,5 @@
+
+
 <div class="footer section-space40">
         <!-- footer -->
         <div class="container">
@@ -173,8 +175,16 @@
                     <p>© Copyright 2017 | Rupee Boss</p>
                 </div>
                 <div class="col-md-6 col-sm-6 text-right col-xs-6">
-                    <p><a href="#" style="color: #fff">Disclaimer</a>   |   <a href="#" style="color: #fff">Privacy Policy</a></p>
+                    <p><a href="<?php echo e(URL::to('disclaimer-page')); ?>" style="color: #fff">Disclaimer</a>   |   <a href="<?php echo e(URL::to('privacy-policy-page')); ?>" style="color: #fff">Privacy Policy</a></p>
                 </div>
             </div>
         </div>
     </div>
+
+
+<a href="#0" class="cd-top" title="Go to top">Top</a>
+
+     
+
+
+  

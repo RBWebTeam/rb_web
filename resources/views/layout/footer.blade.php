@@ -1,3 +1,5 @@
+
+
 <div class="footer section-space40">
         <!-- footer -->
         <div class="container">
@@ -178,3 +180,11 @@
             </div>
         </div>
     </div>
+
+
+<a href="#0" class="cd-top" title="Go to top">Top</a>
+
+     
+
+
+  

@@ -1,4 +1,4 @@
-@include('layout.header')
+<?php echo $__env->make('layout.header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 <style>
 #fh5co-hero {
     padding: 2em 0;
@@ -187,7 +187,7 @@ textarea {
 .center-obj {margin:0 auto; display:block;}
 .width-btn {width:20%;}
 
-@media screen and (max-width: 768px) {
+@media  screen and (max-width: 768px) {
     .col-md-6 {float:left;width:100%;}
     .alrt-msg {float:left;width:100%;}
     .width-btn {width:80%;}
@@ -207,7 +207,8 @@ textarea {
        
        
         <form id="equifax_form" method="POST" >
-         {{ csrf_field() }}
+         <?php echo e(csrf_field()); ?>
+
          
    
            
@@ -226,7 +227,7 @@ textarea {
        
             <div class="col-md-1"></div>
             <div class="col-md-10">
-            <h2 style="padding:10px;background:#fff;color:#666;margin-bottom:0px; text-align:center;"><img src="{{URL::to('../images/Equifax_logo.png')}}" class="center-block">Credit Score</h2>
+            <h2 style="padding:10px;background:#fff;color:#666;margin-bottom:0px; text-align:center;"><img src="<?php echo e(URL::to('../images/Equifax_logo.png')); ?>" class="center-block">Credit Score</h2>
         <div class="register-right">
          
             <div class="register-in">
@@ -304,9 +305,9 @@ textarea {
                    <div class="col-md-6">
                        <select name="State[]" class="drop-arr" required>
                            <option disabled selected value="" >Select State</option>
-                           @foreach($state as $value)
-                         <option value="{{$value->state_code}}">{{$value->state_name}}</option>
-                        @endforeach
+                           <?php $__currentLoopData = $state; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $value): $__env->incrementLoopIndices(); $loop = $__env->getFirstLoop(); ?>
+                         <option value="<?php echo e($value->state_code); ?>"><?php echo e($value->state_name); ?></option>
+                        <?php endforeach; $__env->popLoop(); $loop = $__env->getFirstLoop(); ?>
                        </select>
                     </div>
       </div>
@@ -355,9 +356,9 @@ textarea {
                    <div class="col-md-6">
                        <select name="State[]" class="drop-arr">
                            <option disabled selected value="" >Select State</option>
-                           @foreach($state as $value)
-                         <option value="{{$value->state_code}}">{{$value->state_name}}</option>
-                        @endforeach
+                           <?php $__currentLoopData = $state; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $value): $__env->incrementLoopIndices(); $loop = $__env->getFirstLoop(); ?>
+                         <option value="<?php echo e($value->state_code); ?>"><?php echo e($value->state_name); ?></option>
+                        <?php endforeach; $__env->popLoop(); $loop = $__env->getFirstLoop(); ?>
                        </select>
                     </div>
       </div>
@@ -405,9 +406,9 @@ textarea {
                    <div class="col-md-6">
                        <select name="State[]" class="drop-arr">
                            <option disabled selected value="" >Select State</option>
-                           @foreach($state as $value)
-                         <option value="{{$value->state_code}}">{{$value->state_name}}</option>
-                        @endforeach
+                           <?php $__currentLoopData = $state; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $value): $__env->incrementLoopIndices(); $loop = $__env->getFirstLoop(); ?>
+                         <option value="<?php echo e($value->state_code); ?>"><?php echo e($value->state_name); ?></option>
+                        <?php endforeach; $__env->popLoop(); $loop = $__env->getFirstLoop(); ?>
                        </select>
                     </div>
       </div>
@@ -458,9 +459,9 @@ textarea {
                                 <div class="col-md-6">
                                 <select name="PhoneType" class="drop-arr" required>
                                        <option disabled selected value="" >Select Phone Type</option>
-                                       @foreach($phone as $value)
-                                     <option value="{{$value->phone_type_code}}">{{$value->phone_type}}</option>
-                                    @endforeach
+                                       <?php $__currentLoopData = $phone; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $value): $__env->incrementLoopIndices(); $loop = $__env->getFirstLoop(); ?>
+                                     <option value="<?php echo e($value->phone_type_code); ?>"><?php echo e($value->phone_type); ?></option>
+                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getFirstLoop(); ?>
                                    </select>
                                 </div>
                            
@@ -516,9 +517,9 @@ textarea {
                            
                                 <select name="InquiryPurpose" class="drop-arr select-sty" id="InquiryPurpose"  required >
                                  <option disabled selected value="" class="text-danger">Inquiry Purpose</option>
-                                 @foreach($inq as $value)
-                                 <option value="{{$value->inquiry_code}}">{{$value->inquiry_purpose}}</option>
-                                 @endforeach
+                                 <?php $__currentLoopData = $inq; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $value): $__env->incrementLoopIndices(); $loop = $__env->getFirstLoop(); ?>
+                                 <option value="<?php echo e($value->inquiry_code); ?>"><?php echo e($value->inquiry_purpose); ?></option>
+                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getFirstLoop(); ?>
                                 </select>
                             </div>
                              
@@ -545,7 +546,7 @@ textarea {
        
         </div>
         <div class="iframeloading" style= "display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
-          <img src="{{URL::to('images/ajaxloader.gif')}}" alt="Loader" title="Loader" style="top: 50%; position: relative; left: 50%;"  />
+          <img src="<?php echo e(URL::to('images/ajaxloader.gif')); ?>" alt="Loader" title="Loader" style="top: 50%; position: relative; left: 50%;"  />
          </div>
 
      
@@ -566,8 +567,8 @@ textarea {
 
 </div>
 
-@include('layout.footer')
-@include('layout.script')
+<?php echo $__env->make('layout.footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php echo $__env->make('layout.script', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 
 
 
@@ -674,7 +675,7 @@ textarea {
            $('.equi_msg_err').addClass('displaynone');
         $.ajax({ 
          type: "POST", 
-         url: "{{URL::to('equifax-query')}}",
+         url: "<?php echo e(URL::to('equifax-query')); ?>",
          data : $('#equifax_form').serialize(),
          success: function(msg){
                if (msg.constructor ===  {}.constructor) {
@@ -685,7 +686,7 @@ textarea {
               
                //console.log(json);
               if(json.status==1){
-                  $('.equi_doc_link').attr("href","{{URL::to('/uploads/PDF')}}/"+json.name);
+                  $('.equi_doc_link').attr("href","<?php echo e(URL::to('/uploads/PDF')); ?>/"+json.name);
                   $('.equi_doc_link').show();
                   $('#equi_score').append(json.score[0]);
               }else{

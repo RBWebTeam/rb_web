@@ -2,6 +2,7 @@
 <div id="fh5co-hero">
 	<div class="container" id="elem">
 	<div class="col-md-12 pad centeralign" style="margin:104px 30px 30px -46px"   >
+		<div class="wrapper-content bg-white pinside40">
 	<center>
 <img src=" {{URL::to('images/coming.png')}}" class="img-responsive" >
 
@@ -13,6 +14,7 @@
 </center>
 
 
+</div>
 </div>
 </div>
 </div>

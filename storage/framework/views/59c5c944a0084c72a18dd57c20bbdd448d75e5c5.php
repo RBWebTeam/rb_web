@@ -57,7 +57,7 @@
             <br><br><br>
                 <div class="col-md-4 col-sm-6 col-xs-12">
                     <div class="number-block text-white">
-                        <a href="#">
+                        <a href="<?php echo e(URL::to('home-loan')); ?>">
                         <div class="circle-3 circle11"><img src="images/home-loan.svg" alt="Home Loan" style="width:60px"><!--<i class="icon-command  icon-4x icon-white"></i>--></div>
                         <h3 class="text-black mb30" style="font-size: 17px;">Home Loan</h3>
                         </a>
@@ -65,7 +65,7 @@
                 </div>
                 <div class="col-md-4 col-sm-6   col-xs-12">
                     <div class="number-block text-white">
-                        <a href="#">
+                        <a href="<?php echo e(URL::to('contact-us')); ?>">
                         <div class="circle-3 circle11"><img src="images/transfer2.svg" alt="Personal Loan" style="width:60px"><!--<i class="icon-calculator  icon-4x icon-white"></i>--></div>
                         <h3 class="text-black mb30" style="font-size: 17px;">Balance Transfer</h3>
                         </a>
@@ -73,7 +73,7 @@
                 </div>
                 <div class="col-md-4 col-sm-6   col-xs-12">
                     <div class="number-block text-white">
-                        <a href="#">
+                        <a href="<?php echo e(URL::to('personal-loan')); ?>">
                         <div class="circle-3 circle11"><img src="images/personal-loan.svg" alt="Loans Against Property" style="width:60px"><!--<i class="icon-dialog  icon-4x icon-white"></i>--></div>
                         <h3 class="text-black mb30" style="font-size: 17px;">Personal Loan</h3>
                         </a>
@@ -82,7 +82,7 @@
 
                 <div class="col-md-4 col-sm-6 col-xs-12">
                     <div class="number-block text-white">
-                        <a href="#">
+                        <a href="<?php echo e(URL::to('sme-working-capital')); ?>">
                         <div class="circle-3 circle11"><img src="images/sme_loan.svg" alt="SME Loan" style="width:60px"><!--<i class="icon-command  icon-4x icon-white"></i>--></div>
                         <h3 class="text-black mb30" style="font-size: 17px;">SME Loan</h3>
                         </a>
@@ -90,7 +90,7 @@
                 </div>
                 <div class="col-md-4 col-sm-6   col-xs-12">
                     <div class="number-block text-white">
-                        <a href="#">
+                        <a href="<?php echo e(URL::to('businesss-loan')); ?>">
                         <div class="circle-3 circle11"><img src="images/business_loan.svg" alt="Business Loan" style="width:60px"><!--<i class="icon-calculator  icon-4x icon-white"></i>--></div>
                         <h3 class="text-black mb30" style="font-size: 17px;">Business Loan</h3>
                         </a>
@@ -98,7 +98,7 @@
                 </div>
                 <div class="col-md-4 col-sm-6   col-xs-12">
                     <div class="number-block text-white">
-                        <a href="#">
+                        <a href="<?php echo e(URL::to('loan-against-property')); ?>">
                         <div class="circle-3 circle11"><img src="images/loan-against-property.svg" alt="Car Loan" style="width:60px"><!--<i class="icon-dialog  icon-4x icon-white"></i>--></div>
                         <h3 class="text-black mb30" style="font-size: 17px;">Loans Against Property</h3><br>
                         </a>

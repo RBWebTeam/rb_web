@@ -1114,7 +1114,7 @@ $(window).scroll(function(){
             mi=lP*mir;
             map=E-mi;
             lP=lP-map;
-            fdr+='<tr style="background-color:'+color+'"><td class="mthy">'+month[tempDate.getMonth()]+'-'+tempDate.getFullYear()+'</td><td class="pa"><span class="WebRupee"> ₹ </span>'+CommaFormatted(Math.round(E-mi))+'</td><td class="int"><span class="WebRupee">₹ </span>'+CommaFormatted(Math.round(mi))+'</td><td class="tp"><span class="WebRupee">₹ </span>'+CommaFormatted(Math.round(E))+'</td><td class="tbal"><span class="WebRupee"> ₹ </span>'+CommaFormatted(Math.round(lP))+'</td></tr>';
+            fdr+='<tr style="background-color:'+color+'"><td class="mthy">'+month[tempDate.getMonth()]+'-'+tempDate.getFullYear()+'</td><td class="pa"><span <i class="fa fa-inr"></span>'+CommaFormatted(Math.round(E-mi))+'</td><td class="int"><span <i class="fa fa-inr"></span>'+CommaFormatted(Math.round(mi))+'</td><td class="tp"><span <i class="fa fa-inr"></span>'+CommaFormatted(Math.round(E))+'</td><td class="tbal"><span <i class="fa fa-inr"></span>'+CommaFormatted(Math.round(lP))+'</td></tr>';
             tempDate.setMonth(e);
           }
 

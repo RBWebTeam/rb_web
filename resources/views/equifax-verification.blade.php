@@ -1,49 +1,91 @@
 @include('layout.header')
 
-<div id="fh5co-hero" class="equifax-bg">
-    <div class="container">
-    <br>
-    <div>
-    
-    </div>
-    <div class="col-md-3"></div>
-    <div class="col-md-6">
-    <form name="equifax_otp_form" id="equifax_otp_form" method="POST">
-    {{ csrf_field() }}
-    <h2 class="align-center crd-tit">Mobile verification</h2>
-    <div class="whit-bg">
-    
-    <h4 class="text-center h4-text">Enter Your Mobile No. and Get Started</h4>
-    <br>
-    <img src="images/verification_img.png" class="img-align-center"/>
-    <input type="text" name="mobile" id="mobile" placeholder="9XXXX XXXXX" onkeypress="return fnAllowNumeric(event)" maxlength="10" class="eqfx-input"/>
+<div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="wrapper-content bg-white pinside40">
+                    <div class="row">
+          
+          
+                        <div class="col-md-12">
+            
+            <h2 class="text-center">Mobile Verification</h2>
+            
+            <br>
+                            <div class="row" id="equifax_otp">
+                               
+                                <div class="col-md-6 col-md-offset-3">
+                        <div class="request-form" style="background-color: #fbfbfb;box-shadow: 1px 1px 3px 1px #ccc;padding:0px;border-radius: 4px;">
+                        <h4 class="text-center" style="padding:10px;background:#ccc;">ENTER YOUR MOBILE NO. AND GET STARTED</h4>
+            <img src="images/verification_img.png" style="margin:0 auto; display:block; padding:20px;"/>
+                        <!-- <p>Easy to apply for a loan with us,Once you have complete this form. </p> -->
+                        <form name="equifax_otp_form" id="equifax_otp_form" method="POST" style="padding:0px 30px 20px 30px;">
+                         {{ csrf_field() }}
+                        
+                           
+                          
+                            <!-- Text input-->
+                            <div class="form-group">
+                                <label class="control-label sr-only" for="mobile">Phone</label>
+                                <input id="mobile" name="mobile" type="text" placeholder="+91 XXXXX XXXXX" class="form-control input-md" onkeypress="return fnAllowNumeric(event)" minlength="10" maxlength="10" required="">
+                            </div>
+                            
+                            
+                            <!-- Button -->
+                            <div class="form-group">
+                                <a class="btn btn-default btn-sm" id="equifax_get_otp" style="margin:0 auto; display:block;">GET OTP</a>
+                            </div>
+                        </form>
+                    </div>
+                                </div>
+                                
+                                 
+                            </div>
 
-    <a class="btn btn-danger btn-outline with-arrow animate-box fadeInUp animated otp-btn" id="equifax_get_otp">Get OTP<i class="icon-arrow-right"></i></a>
-    <span id="mobile_value" style="display: none;color: red;">Phone number should be of 10 digits.</span>
-    </div>
-    <br>
-    </form>
-   </div>
+                            <div class="row" id="otp_verify" style="display: none;">
+                               
+                                <div class="col-md-6 col-md-offset-3">
+                        <div class="request-form" style="background-color: #fbfbfb;box-shadow: 1px 1px 3px 1px #ccc;padding:0px;border-radius: 4px;">
+                        <h4 class="text-center" style="padding:10px;background:#ccc;">Enter your verification code sent on your number</h4>
 
-   <form name="equifax_verify_form" id="equifax_verify_form" style="display:none" method="POST">
-    {{ csrf_field() }}
-    <h2 class="align-center crd-tit">Mobile verification</h2>
-    <div class="whit-bg">
-    
-    <h4 class="text-center h4-text">Enter your verification code sent on your number</h4>
-    <br>
-    <img src="images/verification_img.png" class="img-align-center"/>
-    <input type="text" name="verify_otp_equifax" id="verify_otp_equifax" onkeypress="return fnAllowNumeric(event)" required maxlength="6" placeholder="Enter OTP Code" class="eqfx-input"/>
-
-    <a class="btn btn-primary btn-lg btn-view" id="equifax_verify">VERIFY OTP</a>
-    <div id="otp_value" style="display: none;color: red;">Otp is of 6 digits.</div>
+            <img src="images/verification_img.png" style="margin:0 auto; display:block; padding:20px;"/>
+                        <!-- <p>Easy to apply for a loan with us,Once you have complete this form. </p> -->
+                        <form name="equifax_verify_form" id="equifax_verify_form" method="POST" style="padding:0px 30px 20px 30px;">
+                         {{ csrf_field() }}
+                        
+                           
+                          
+                            <!-- Text input-->
+                            <div class="form-group">
+                                <label class="control-label sr-only" for="verify_otp_equifax">Phone</label>
+                                <input id="verify_otp_equifax" name="verify_otp_equifax" type="text" placeholder="ENTER OTP" class="form-control input-md" onkeypress="return fnAllowNumeric(event)" maxlength="6" required="">
+                            </div>
+                            
+                            
+                            <!-- Button -->
+                            <div class="form-group">
+                                <a class="btn btn-default btn-sm" id="equifax_verify" style="margin:0 auto; display:block;">VERIFY OTP</a>
+                                 <div id="otp_value" style="display: none;color: red;">Otp is of 6 digits.</div>
                            <div id="wrong_otp_value" style="display: none;color: red;">Wrong Otp !!!</div>
                            <div id="waiting_div_otp" style="display: none;color: red;">Please wait ...</div>
-    </div>
-    <br>
-    </form>
+                            </div>
+                        </form>
+                    </div>
+                                </div>
+                                
+                                 
+                            </div>
 
+                           
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </div>
+
     </div>
 
 
@@ -73,8 +115,8 @@
             console.log(msg);
             if (msg.data==true) 
                 {
-                $('#equifax_otp_form').hide();
-                $('#equifax_verify_form').show();
+                $('#equifax_otp').hide();
+                $('#otp_verify').show();
                 } 
                 else 
                 {
@@ -115,7 +157,7 @@
         // console.log("yes");
         alert('OTP verified')
         $('#waiting_div_otp').hide();
-        window.location.href="{{URL::to('equifax')}}";
+        window.location.href="{{URL::to('equifax1')}}";
 
       }else{
         // console.log("no");

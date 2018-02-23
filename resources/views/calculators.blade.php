@@ -15,7 +15,7 @@
                         <div class="how-it-content" style="text-align: center;">
                              <h4 >EMI Calculator</h4>
                        
-                        <a href="emi-calculator.html" class="btn btn-default btn-sm" >View Now</a>
+                        <a href="{{URL::to('check-emi')}}" class="btn btn-default btn-sm" >View Now</a>
                         </div>
                     </div>
                 </div>

@@ -173,7 +173,7 @@
                     <p>© Copyright 2017 | Rupee Boss</p>
                 </div>
                 <div class="col-md-6 col-sm-6 text-right col-xs-6">
-                    <p><a href="#" style="color: #fff">Disclaimer</a>   |   <a href="#" style="color: #fff">Privacy Policy</a></p>
+                    <p><a href="{{URL::to('disclaimer-page')}}" style="color: #fff">Disclaimer</a>   |   <a href="{{URL::to('privacy-policy-page')}}" style="color: #fff">Privacy Policy</a></p>
                 </div>
             </div>
         </div>

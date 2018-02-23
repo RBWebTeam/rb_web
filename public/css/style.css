@@ -1190,6 +1190,7 @@ Landing Page Template
   .loan-rate { font-size: 24px; }
 
   /*--------------- index - 4 ()-------------*/
+  
   .header-transparent { position: relative; background-color: #fff; }
   .header-transparent #navigation.small-screen #menu-button { display: block; padding: 16px 0px; color: #ed1c24; cursor: pointer; font-size: 12px; text-transform: uppercase; font-weight: 700; border-top: 1px solid #0a4587; margin-top: 20px; }
   .header-transparent #navigation.small-screen ul li { width: 100%; border-top: 1px solid #0a4587; }

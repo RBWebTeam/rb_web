@@ -7,6 +7,7 @@
     <script type="text/javascript" src="{{URL::to('js/service-carousel.js')}}"></script>
     <!-- Back to top script -->
     <script src="{{URL::to('js/back-to-top.js')}}" type="text/javascript"></script>
+    <script type="text/javascript" src="{{URL::to('js/menumaker.js')}}"></script>
     
      <script>
 $(document).ready(function(){

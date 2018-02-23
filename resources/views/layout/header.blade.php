@@ -55,6 +55,10 @@ $(document).ready(function(){
 <link rel="stylesheet" href="../css/icons.css?v=1">
 
 </head>
+
+<body>
+
+    
     <div class="header-transparent navbar-fixed-top">
          <div class="container">
             <div class="row">

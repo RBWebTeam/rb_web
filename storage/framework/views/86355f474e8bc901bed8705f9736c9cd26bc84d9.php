@@ -85,12 +85,7 @@
                           </div>
 
                           
-                          <div class="col-md-6 col-sm-12 col-xs-12">
-                              <div class="form-group">                                
-                                   <input type="radio" id="sala_DI" value="salaried" name="emp_detail" checked="checked" >Salaried                                  
-                                    <input type="radio" id="self_DI" value="self-employed" name="emp_detail"  >Self Employee                                  
-                                </div>
-                            </div>
+                          
 
                             <div  style="display: none;" id="self-employed_ID"> 
        
@@ -132,7 +127,14 @@
                               </div>
                             </div>
 
-                            <hr style="color:transparent; width:100%" />
+                            <div class="col-md-6 col-sm-12 col-xs-12">
+                              <div class="form-group">                                
+                                   <input type="radio" id="sala_DI" value="salaried" name="emp_detail" checked="checked" >Salaried                                  
+                                    <input type="radio" id="self_DI" value="self-employed" name="emp_detail"  >Self Employee                                  
+                                </div>
+                            </div>
+
+                            
   
 
   
@@ -194,21 +196,22 @@
 
 
         <div class="col-md-6 col-xs-12">
+          <br>
           <?php if(Session::get('is_login')): ?>
-           <a type="button" class="btn btn-default btn-sm apply_new" title="Experience New Digital Era In Loans" style="width: 100%;">Apply <br>Digitally</a>
+           <a type="button" class="btn btn-default btn-sm apply_new" title="Experience New Digital Era In Loans">Apply <br>Digitally</a>
            <?php else: ?>
-           <a data-toggle="modal" data-target="#login_process" class="btn btn-default btn-sm disblk apply_digitally " title="Experience New Digital Era In Loans">Apply <br> Digitally</a>
+           <a data-toggle="modal" data-target="#login_process" class="btn btn-default btn-sm disblk apply_digitally " title="Experience New Digital Era In Loans">Apply <br>Digitally</a>
            <?php endif; ?> 
          </div>
 
            <div class="col-md-6 col-xs-12">
-
+           <br>
            <button type="button" class="btn btn-default btn-sm block"  id="call_rm" name="call_rm" data-toggle="modal" data-target="#Modal" title="Call For RM(Single Day Process)">Call <br> Manager</button>
          </div>
 
            <div class="col-md-12 col-xs-12">
             <br>
-           <button id="eligibility"  class="btn btn-default btn-sm disblk" title="See Bankwise Eligibility And Apply Amongst Best Bank" style="width: 100%;" disabled>Check Bankwise Eligibility </button>            
+           <button id="eligibility"  class="btn btn-default btn-sm disblk" title="See Bankwise Eligibility And Apply Amongst Best Bank" style="width: 100%;" disabled>Check Eligibility </button>            
 
             <div id="log_digital_text" style=" color: red"></div>
          </div>

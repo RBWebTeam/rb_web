@@ -67,7 +67,7 @@ $(document).ready(function(){
                 
                 <div class="col-md-10 col-sm-6 col-xs-6 text-right">
                     <div class="header-action">
-                        <a href="<?php echo e(URL::to('contact-us')); ?>" class="btn btn-credit" style="padding:14px 12px">Free Credit Report</a>
+                        <a href="<?php echo e(URL::to('equifax-verification')); ?>" class="btn btn-credit" style="padding:14px 12px">Free Credit Report</a>
                         <a href="<?php echo e(URL::to('contact-us')); ?>" class="btn btn-default" style="padding:14px 13px">Expert Assistance</a>
                         <a class="search-btn-2 search-btn2 trigger-custom2"  href="#" style="text-align: center; width: 45px; height: 45px; padding: 7px; display: inline-block; vertical-align:bottom"><i style="font-size: 30px;" class="fa fa-user"></i><span class="tooltiptext">Sign In</span></a>
                     </div>
@@ -399,7 +399,7 @@ $(document).ready(function(){
 
                     <div class="col-md-02 col-sm-4 col-xs-6">
                         <div class="service-block-v5">
-                            <a href="#" class="btn-2 btn-secondary btn-block" style="background-color: #000;">SME CAR LEASING</a>
+                            <a href="<?php echo e(URL::to('sme-working-capital')); ?>" class="btn-2 btn-secondary btn-block" style="background-color: #000;">SME CAR LEASING</a>
                         </div>
                     </div>
 

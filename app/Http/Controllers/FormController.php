@@ -77,6 +77,7 @@ class FormController extends CallApiController
             // $error=$result['error'];
             // if($http_result==1){                
                 $quote_data=$this::get_quotes($req);
+
                 $save=new bank_quote_api_request();    
                 $id=$save->save_liza($req);
                 Session::put('quote_id',$id);
@@ -107,6 +108,7 @@ class FormController extends CallApiController
             }
             $data['loan_amount'] =$req['loan_amount'];
             $data['quote_data'] =$quote_data;
+           
             if ($quote_data) {
               // print_r($data['quote_data'] );exit();
                $Bank_Id=$data['quote_data'][0]->Bank_Id;

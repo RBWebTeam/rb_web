@@ -2,11 +2,7 @@
 <div class="iifl-image">
     <img src="images/early-salary.jpg">
     </div>
-    <div class=" ">
-        <!-- content start -->
-
-
-
+ 
 <div class=" ">
         <!-- content start -->
         <div class="container">
@@ -15,10 +11,7 @@
                     <div class="wrapper-content bg-white pinside40">
                         <div class="section-faq" id="section-faq">
                             <div class="">
-                                
-                                
-                                
-                                <h1 class=""><center>Early Salary</center></h1>
+                               <h1 class=""><center>Early Salary</center></h1>
                                 </br>
                                 
                                 <div class="row">    
@@ -130,9 +123,10 @@
                             <a class="btn btn-default btn-sm" id="early_salary_submit">Submit</a>
                                                 
                     </div>
+                    </form>
                                       </div>
 
-                        </form>
+                        
                         
                     </div>
                 </div>
@@ -149,7 +143,7 @@
                                 </div>
                             </div>
                         
-    </div>
+   
 
 
 <?php echo $__env->make('layout.footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

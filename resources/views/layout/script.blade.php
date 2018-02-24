@@ -1890,36 +1890,48 @@ function mobile_valid(element){
           <div id="send_otp">         
             <form class="form-horizontal" id="login_form_process" method="POST">           
              {{ csrf_field() }}           
-             <div class="form-group">            
-              <label for="name" class="col-sm-3 control-label">Name</label>
-              <div class="col-sm-6">
-                <input type="text" class="form-control" id="name" name="name" placeholder="Your good name" autofocus="autofocus" required>
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="email" class="col-sm-3 control-label">Email</label>
-              <div class="col-sm-6">
-                <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="contact" class="col-sm-3 control-label">Contact</label>
-              <div class="col-sm-6">
-                <input type="text" class="form-control" id="contact" name="contact" placeholder="Contact number"  pattern="[789][0-9]{9}" required maxlength="10" minlength="10" onkeypress="return fnAllowNumeric(event)">
-              </div>
-            </div>
-            <div class="form-group">
-             <label for="set_pwd" class="col-sm-3 control-label">Password</label>
-             <div class="col-sm-6">
-              <input type="password" class="form-control" id="set_pwd" name="set_pwd" placeholder="Password" required maxlength="10" minlength="6" >
-            </div>
-          </div>
-          <div class="form-group">
-           <label for="set_pwd_confirm" class="col-sm-3 control-label">Confirm Password</label>
-           <div class="col-sm-6">
-            <input type="password" class="form-control" id="set_pwd_confirm" name="set_pwd_confirm" placeholder="Confirm Password" required maxlength="10" minlength="6" >
-          </div>
-        </div>
+             
+            <div class="col-md-6 col-sm-12 col-xs-12">
+                             <div class="form-group">
+                              <label>Name</label>
+                                <input type="text" class="form-input-new form-control" name="name" id="name" placeholder="Your good name" autofocus="autofocus" required>
+                             </div>
+                             </div>
+            
+            
+            <div class="col-md-6 col-sm-12 col-xs-12">
+                             <div class="form-group">
+                              <label>Email</label>
+                                 <input type="email" class="form-input-new form-control" name="email" id="email" placeholder="Email" required>
+                             </div>
+                             </div>
+
+            
+            
+            <div class="col-md-6 col-sm-12 col-xs-12">
+                             <div class="form-group">
+                              <label>Contact</label>
+                                <input type="text" class="form-input-new form-control" name="contact" id="contact" placeholder="Contact" pattern="[789][0-9]{9}" required maxlength="10" minlength="10" onkeypress="return fnAllowNumeric(event)" required>
+                             </div>
+                             </div>
+
+            
+          
+          <div class="col-md-6 col-sm-12 col-xs-12">
+                             <div class="form-group">
+                              <label>Password</label>
+                                <input type="password" class="form-input-new form-control" name="set_pwd" id="set_pwd" placeholder="Password" required maxlength="10" minlength="6">
+                             </div>
+                             </div>
+
+                             <div class="col-md-6 col-sm-12 col-xs-12">
+                             <div class="form-group">
+                              <label>Confirm Password</label>
+                                <input type="password" class="form-input-new form-control" name="set_pwd_confirm" id="set_pwd_confirm" placeholder="Password" required maxlength="10" minlength="6">
+                             </div>
+                             </div>
+
+          
         <div class="form-group">        
           <div class="col-sm-offset-3 col-sm-6">
            <span id='msg_err' class='displaynonemsg'>oops something went wrong</span>

@@ -315,6 +315,7 @@
 
 
         <div class="col-md-6 col-xs-12">
+          <br>
           @if(Session::get('is_login'))
            <a type="button" class="btn btn-default btn-sm apply_new" title="Experience New Digital Era In Loans">Apply <br>Digitally</a>
            @else
@@ -324,14 +325,14 @@
 
 
            <div class="col-md-6 col-xs-12">
-
+           <br>
            <button type="button" class="btn btn-default btn-sm block"  id="call_rm" name="call_rm" data-toggle="modal" data-target="#Modal" title="Call For RM(Single Day Process)">Call<br> Manager</button>
            <div id="log_digital_text" style=" color: red"></div>
          </div>
 
           <div class="col-md-12 col-xs-12">
                 <br>
-           <button id="eligibility"  class="btn btn-default btn-sm disblk" title="See Bankwise Eligibility And Apply Amongst Best Bank" style="width: 100%;" disabled>Check Bankwise Eligibility </button>      
+           <button id="eligibility"  class="btn btn-default btn-sm disblk" title="See Bankwise Eligibility And Apply Amongst Best Bank" style="width: 100%;" disabled>Check Eligibility </button>      
             
           </div>
 

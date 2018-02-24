@@ -7,7 +7,7 @@
                 <div class="col-md-4 col-sm-4 col-xs-12">
                     <div class="footer-logo">
                         <!-- Footer Logo -->
-                        <img src="images/footer-rupee-boss-logo.png" alt="Rupee Boss"> </div>
+                        <img src="<?php echo e(URL::to('images/footer-rupee-boss-logo.png')); ?>" alt="Rupee Boss"> </div>
                     <!-- /.Footer Logo -->
                 </div>
                 <div class="col-md-8 col-sm-8 col-xs-12">
@@ -70,11 +70,11 @@
                             <li><a href="<?php echo e(URL::to('contact-us')); ?>" style="font-weight: normal;">Contact Us</a></li>
                             <li><a href="<?php echo e(URL::to('express-loan')); ?>" style="font-weight: normal;">EXPRESS LOAN</a></li>
                             <li><a href="<?php echo e(URL::to('home-loan')); ?>" style="font-weight: normal;">PM AWAS YOJANA</a></li>
-                            <li><a href="#" style="font-weight: normal;">SME CAR LEASING</a></li>
+                            <li><a href="<?php echo e(URL::to('sme-working-loan')); ?>" style="font-weight: normal;">SME CAR LEASING</a></li>
                             <li><a href="<?php echo e(URL::to('http://www.rupeeboss.com/rblife-style/')); ?>" style="font-weight: normal;">RB LIFE STYLE</a></li>
                             <li><a href="<?php echo e(URL::to('http://www.rupeeboss.com/elite/')); ?>" style="font-weight: normal;">ELITE</a></li>
                              <li><a href="<?php echo e(URL::to('http://www.rupeeboss.com/mf/')); ?>" style="font-weight: normal;">MUTUAL FUNDS</a></li>
-                            <li><a href="<?php echo e(URL::to('contact-us')); ?>" style="font-weight: normal;">MY CREDIT SCORE</a></li>
+                            <li><a href="<?php echo e(URL::to('equifax-verification')); ?>" style="font-weight: normal;">MY CREDIT SCORE</a></li>
                         </ul>
                         </div>
 

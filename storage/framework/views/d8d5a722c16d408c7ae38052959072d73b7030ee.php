@@ -465,7 +465,7 @@
                 
               </form>
           </div>
-          <hr>
+          
           </div>
           <button class="btn btn-default btn-sm kotak_pl"  id="kotak_personal_loan">NEXT<i class="" ></i></button>
 

@@ -68,11 +68,11 @@
                                             <div class="form-group">
                                                 <select id="loan_tenure" class="form-control input-md select-sty" name="loan_tenure" id="loan_tenure" >
                                                             <option selected disabled="">Loan Tenure</option>
-                                                            <option value="1 Year">1 Year</option>
-                                                            <option value="2 Year">2 Year</option>
-                                                            <option value="3 Year">3 Year</option>
-                                                            <option value="4 Year">4 Year</option>
-                                                            <option value="5 Year">5 Year</option>
+                                                            <option value="1">1 Year</option>
+                                                            <option value="2">2 Year</option>
+                                                            <option value="3">3 Year</option>
+                                                            <option value="4">4 Year</option>
+                                                            <option value="5">5 Year</option>
  
                                                     </select>
                                             </div>
@@ -90,7 +90,7 @@
 
                                             <div class="col-md-4 col-sm-12 col-xs-12">
                                             <div class="form-group">
-                                                <select id="loanTenur" class="form-control input-md" name="loanTenur">
+                                                <select class="form-control input-md">
                                                             <option selected disabled="">Export / Import in %</option>
                                                             <option value="10">10 %</option>
                                                             <option value="20">20 %</option>
@@ -296,25 +296,14 @@
                              </div>
                              </div>
 
-                             <div>
-                               <!--  <input id="btnAdd" type="button" value="Add" /> -->
-                                <button type="button" id="btnAdd" class="btn btn-default ">Add Bank</button>
-                                    <br />
-                                    
-                                        <div id="TextBoxContainer">
-                                                <!--Textboxes will be added here -->
-
-                                        </div>
-                                    <br />
-                                <!-- <input id="btnGet" type="button" value="Get Values" /> -->
-                            </div>   
+                               
 
                                <div class="valid_ID"></div>
 
-                             <a class="btn btn-primary btn-outline with-arrow top-mrg product_name product_ID" id="btn_refresh_co1" >Get Best Quotes<i class="icon-arrow-right"></i></a>                     
+                             <a class="btn btn-default btn-sm product_ID">Get Best Quotes</a>                     
 
 
-                                        </form>
+                                        
                                     </div>
                                 </div>
 
@@ -322,75 +311,77 @@
 
                 <!-- Apply digitally right panel -->
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" style="padding-bottom: 20px">
-                    <div class="how-it-block1 bg-boxshadow" style=" min-height: 480px;">
-                        
-                                        <div class=" ">
-                                            <!-- Text input-->
-                                            <div class="col-md-12 col-xs-12">
-                                                <div class="form-group">
-                                                    <input type="text" class="form-control" id="loanamount" name="name" value="" placeholder="Loan Amount" required class="clr-ddd" readonly />
-                                                </div>
-                                            </div>
-                                            <!-- Text input-->
-                                            <div class="col-md-12 col-xs-12">
-                                                <div class="form-group">
-                                                     <input type="text" class="form-control" id="rate" name="name" value="" placeholder="Best ROI" required class="clr-ddd" readonly />
-                                                </div>
-                                            </div>
-                                            <!-- Text input-->
-                                            <div class="col-md-12 col-xs-12">
-                                                <div class="form-group">
-                                                    <input type="text" class="form-control" id="term" name="name" value="" placeholder="Tenure" required class="clr-ddd" readonly>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-12 col-xs-12">
-                                                <div class="form-group">
-                                                    <input type="text" class="form-control" id="processfee" name="name" placeholder="Processing Fee" required class="clr-ddd" readonly />
-                                                </div>
-                                            </div>
+      <div class="how-it-block1 bg-boxshadow" style=" min-height: 600px;">
+        <div class="border" id="mi_ID">
 
-                                            @if(Session::get('is_login'))
-                                            <a   type="button" class="btn btn-default btn-sm apply_new" title="Experience New Digital Era In Loans">Apply<br>Digitally</a>
-                                            @else
-                                            <a   data-toggle="modal" data-target="#login_process" class="btn btn-default btn-sm apply_digitally " title="Experience New Digital Era In Loans">Apply<br> Digitally</a>
-                                            @endif  
+          <p id="err" style="display:none;" ><span style="color: red;font-size: 20px;display: block;text-align: center;">Sorry, No quotes found for your given requirements.</span></p>
 
-                                             
-                                     <div class="col-md-6 col-xs-12">
-                                    <br>
-                                        <button type="button" class="btn btn-default btn-sm"  id="call_rm" name="call_rm" data-toggle="modal" data-target="#Modal" title="Call For RM(Single Day Process)">Call<br> Manager</button>
-                                                <div id="log_digital_text" style=" color: red"></div>
-                                                
-                                    </div>
+           <div class="col-md-12 col-xs-12">
+            <div class="form-group">
+            <label class="form-label-new">Loan Amount</label>
+              <input type="text" class="form-control" id="loanamount" name="name" value="" placeholder="Loan Amount" readonly />
+            </div>
+            </div>
 
-                                     <div class="col-md-12 col-xs-12">
-                                    <br>
-                                               <!--  <button type="submit" disabled="" class="btn btn-default btn-sm" style="width: 100%;">Check Bankwise<br>Eligibility</button> -->
+            <div class="col-md-12 col-xs-12">
+            <div class="form-group">
+                <label class="form-label-new">Best ROI</label>
+                <input type="text" class="form-control" id="rate" name="name" value="" placeholder="Best ROI" readonly />
+            </div>
+            </div>
 
-                                                <button id="eligibility"  class="btn btn-default btn-sm disblk" title="See Bankwise Eligibility And Apply Amongst Best Bank" disabled>Check Bankwise<br>Eligibility </button>
-                                                
-                                    </div>  
+            <div class="col-md-12 col-xs-12">
+            <div class="form-group">
+            <label class="form-label-new">Tenure</label>
+                 <input type="text" class="form-control" id="term" name="name" value="" placeholder="Tenure"  class="clr-ddd" readonly>
+            </div>
+            </div>
 
-                                    <p id="err" style="display:none;" ><span style="color: red;font-size: 20px;display: block; text-align: center;">Sorry, No quotes found for your given requirements.</span></p>                                        
-                                            
-                                        </div>
-                                                       
-                    </div>
-                </div>
+            <div class="col-md-12 col-xs-12">
+            <div class="form-group">
+              <label class="form-label-new">Processing Fee </label>
+              <input type="text" class="form-control" id="processfee" name="name" placeholder="Processing Fee" readonly />
+            </div>
+            </div>
+
+            
+
+          </div>
+
+
+        <div class="col-md-6 col-xs-12">
+            <br>
+          @if(Session::get('is_login'))
+           <a type="button" class="btn btn-default btn-sm apply_new" title="Experience New Digital Era In Loans">Apply <br>Digitally</a>
+           @else
+           <a data-toggle="modal" data-target="#login_process" class="btn btn-default btn-sm disblk apply_digitally " title="Experience New Digital Era In Loans">Apply <br>Digitally</a>
+           @endif 
+         </div>
+
+
+           <div class="col-md-6 col-xs-12">
+            <br>
+
+           <button type="button" class="btn btn-default btn-sm block"  id="call_rm" name="call_rm" data-toggle="modal" data-target="#Modal" title="Call For RM(Single Day Process)">Call<br> Manager</button>
+           <div id="log_digital_text" style=" color: red"></div>
+         </div>
+
+          <div class="col-md-12 col-xs-12">
+                <br>
+           <button id="eligibility"  class="btn btn-default btn-sm disblk" title="See Bankwise Eligibility And Apply Amongst Best Bank" style="width: 100%;" disabled>Check Eligibility </button>      
+            
+          </div>
+
+
+        </div>
+      </div>
+      </form></div></div></div></div></div></div></aside></div>
                 <!-- Apply digitally right panel end -->
 
 
-                            </div>
-                        </div>
-                    </div>
+                           
 
-                </div>
-            </div>
-        </div>
-    </aside>
-    </div>
-
-<div id ="test123"></div>
+<div  id="test123"></div>
 
 <!-- footer content -->
 

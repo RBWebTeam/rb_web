@@ -1,5 +1,4 @@
 <?php echo $__env->make('layout.header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
-
 <div class="container ">
  <aside id="fh5co-hero">
 
@@ -8,55 +7,37 @@
                     <div class="wrapper-content bg-white pinside40">
                         <div class="section-faq" id="section-faq">
                             <div class="">
-                    <!-- <h1 class=""><center>Loan Against Property</center></h1> -->
+                    <h1 class=""><center>Smart Home Loan</center></h1>
 <!--  <img src="<?php echo e(URL::to('images/info-g-ban.png')); ?>" alt="Tribe Logo" class="img-responsive" /> -->
- <br>
- 
- <?php   
-    if(isset($_GET['commercial'])){ ?>
-      <h1 class="text-center loan-head">Commercial Property Purchase</h1>
-      <?php }else if(isset($_GET['lease'])){?> 
-           <h1 class="text-center loan-head">Lease Rent Discounting</h1>
-        <?php }else{ ?>
-  <h1 class=""><center>Loan Against Property</center></h1>
- <?php }?>
-
 <div id="mod">
-<form name="lap_process_form" id="lap_process_form" action="<?php echo e(URL::to('loan-submit')); ?>" method="POST" >
+<form name="home_loan_process_form" id="home_loan_process_form" action="<?php echo e(URL::to('loan-submit')); ?>" method="POST" >
 <input type="hidden" name="_token" id="token" value="<?php echo e(csrf_token()); ?>">
-<input type="hidden" id="product" name="product_name" value=7>
+<input type="hidden" id="product" name="product_name" value="12">
 <input type="hidden" name="empid" class="empid" value=" <?php echo Session::get('empid')?Session::get('empid'):'';?>">
           <input type="hidden" name="brokerid" class="brokerid" value="<?php echo Session::get('brokerid')?Session::get('brokerid'):'';?>">
           <input type="hidden" name="source" class="source" value="<?php echo Session::get('source')?Session::get('source'):'';?>"> 
-          <input type="hidden" name="refapp" class="refapp" value="<?php echo Session::get('refid')?Session::get('refid'):'';?>">
+          <input type="hidden" name="refapp" class="refapp" value="<?php echo Session::get('refid')?Session::get('refid'):'';?>"> 
           <div class="row">
                        
                   <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12" style="padding-bottom: 20px">
                     <div class="how-it-block1 bg-boxshadow" style=" min-height:auto; float:left;">
 
                         <h4 >Property Information</h4>
-               <?php
-                  if(isset($_GET['commercial'])){ ?>
-      
-                  <?php }else{ ?>
                   
                           <div class="col-md-6 col-sm-12 col-xs-12">
                             <div class="form-group">
                 
                                 <select id="propery_types" name="propery_types" class="form-control">
                                     <option selected disabled="">Property Type</option>
-                                    <option value="residential">Residential</option>
-                                    <option value="commercial">Commercial</option>
-                                    <option value="industrial">Industrial</option>
-                                    <option value="land">Land</option>                                    
+                                    <option value="ready">Ready</option>
+                                    <option value="searching">Searching</option>
+                                    <option value="underconst">Under Construction</option>
+                                    <option value="resale">Resale</option>
+                                    <option value="constuction">Construction</option>
                                     <option value="others">Other</option>
                                 </select>
                               </div>
                             </div>
-
-               <?php }
-
-               ?>
 
                             <div class="col-md-6 col-sm-12 col-xs-12">
                               <div class="form-group">
@@ -180,13 +161,13 @@
 
                             <hr style="color:transparent; width:100%" />
                 <!-- ADD CO-APPLICANT -->
-                <!-- <script>
-               $(document).ready(function(){
-                  $(".co-applicant").click(function(){
-                  $("#co-applicant-cont").toggle();
-                  });
-                });
-              </script> -->
+                <script>
+               // $(document).ready(function(){
+               //    $(".co-applicant").click(function(){
+               //    $("#co-applicant-cont").toggle();
+               //    });
+               //  });
+              </script>
               <div class="raw " >
                   <label class="switch">                             
                                Add Co-Applicant     
@@ -298,9 +279,9 @@
       <div class="how-it-block1 bg-boxshadow" style=" min-height: 600px;">
         <div class="border" id="mi_ID">
 
-          <p id="err" style="display:none;" ><span style="color: red;font-size: 20px;display: block;text-align: center;">Sorry, No quotes found for your given requirements.</span></p> 
+          <p id="err" style="display:none;" ><span style="color: red;font-size: 20px;display: block;text-align: center;">Sorry, No quotes found for your given requirements.</span></p>
 
-          <div class="col-md-12 col-xs-12">
+           <div class="col-md-12 col-xs-12">
             <div class="form-group">
             <label class="form-label-new">Loan Amount</label>
               <input type="text" class="form-control" id="loanamount" name="name" value="" placeholder="Loan Amount" readonly />
@@ -328,6 +309,8 @@
             </div>
             </div>
 
+            
+
           </div>
 
 
@@ -336,7 +319,7 @@
           <?php if(Session::get('is_login')): ?>
            <a type="button" class="btn btn-default btn-sm apply_new" title="Experience New Digital Era In Loans">Apply <br>Digitally</a>
            <?php else: ?>
-           <a data-toggle="modal" data-target="#login_process" class="btn btn-default btn-sm disblk apply_digitally " title="Experience New Digital Era In Loans">Apply<br> Digitally</a>
+           <a data-toggle="modal" data-target="#login_process" class="btn btn-default btn-sm disblk apply_digitally " title="Experience New Digital Era In Loans">Apply <br>Digitally</a>
            <?php endif; ?> 
          </div>
 
@@ -344,108 +327,102 @@
            <div class="col-md-6 col-xs-12">
            <br>
            <button type="button" class="btn btn-default btn-sm block"  id="call_rm" name="call_rm" data-toggle="modal" data-target="#Modal" title="Call For RM(Single Day Process)">Call<br> Manager</button>
+           <div id="log_digital_text" style=" color: red"></div>
          </div>
 
           <div class="col-md-12 col-xs-12">
                 <br>
            <button id="eligibility"  class="btn btn-default btn-sm disblk" title="See Bankwise Eligibility And Apply Amongst Best Bank" style="width: 100%;" disabled>Check Eligibility </button>      
-            <div id="log_digital_text" style=" color: red"></div>
+            
           </div>
 
 
         </div>
       </div>
-    </form></div></div></div></div></div></aside></div>
+    </form></div></div></div></div></div></div></aside></div>
 
 
 
  <div  id="form_ID"></div>
 
 <!-- product description start-->
-<div class=" ">
-        <!-- content start -->
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
+<div class="">
+    <div class="container">
 
-                    <div class="wrapper-content bg-white pinside40">
-                     <p>What if, you are not salaried person???......what if ,your salary is not enough to fulfill your fund requirement ?? if you fall in same situation now make optimum utilization of your property.........here we have loan against property to deal with your fund requirement.</p>
+      <div class="row">
 
-                     <p>Loan against property is available with any bank and all Non Banking Financial Companies(NBFC). It is a type of secured loan which fund you for a long time. Borrower should mortgage his property to the bank till the successful repayment of loan. The loan is given as a certain percentage of the property's market value, usually around 40 per cent to 60 percent.</p>
+        <div class="col-md-12">
+          <div class="wrapper-content bg-white pinside40">
+
+              <p>It will be a proud movement for you to buy your own home at your dream location, so don't wait just click and apply for a home loan.</p>
+
+              <p>Home Loan is a type of secured loan which is offered by Banks and Non banking Financial Companies (NBFC) with lowest interest rates possible. Bank or NBCF will have possession on all property paper and all type of presale documentation between buyer and seller till the successful completion of loan tenure.</p>
 
 
-                        <div class="section-faq" id="section-faq">
-                            <div class="">
-                                
+              <div class="section-faq" id="section-faq">
+                            <div class="">                                
                                 <div class="row">
-
-
-
-
                                     <div class="col-md-12 col-sm-12 col-xs-12">
+                                <div class="st-accordion ">
+                                      <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
 
+                                          <div class="panel panel-default">
+                                              <div class="panel-heading" role="tab" id="headingOne">
+                                                  <h4 class="panel-title"><i class="fa fa-minus-circle sign"></i>
+                                                  Who can apply for a Home loan??</h4>
+                                                  <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                                                    <div class="panel-body">
+                                                  <ul class="listnone bullet bullet-check-circle-default">
+                                                          <li>Individual (salaried)</li>
+                                                          <li>Self Employed Professionals (Doctors, Lawyers, Teachers, etc)</li>
+                                                          <li>Businessman</li>
+                                                      </ul>
+                                                    </div>
+                                                  </div>
+                                                     </div>
+                                                   </div>
 
+                                          <div class="panel panel-default">
+                                              <div class="panel-heading" role="tab" id="headingTwo">
+                                                  <h4 class="panel-title"><i class="fa fa-minus-circle sign"></i>Type of property bank and NBFC fund for??</h4>  <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                                                    <div class="panel-body">                                       
+                                                  <ul class="listnone bullet bullet-check-circle-default">
+                                                      <li>It should be registered and clearly identifiable whether the property is in under construction, fully constructed or Re-sale</li>
+                                                  </ul>
+                                                </div>
+                                              </div>
+                                              </div>
+                                              </div> 
 
-                                            <div class="st-accordion ">
-                        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-                            <div class="panel panel-default">
-                                <div class="panel-heading" role="tab" id="headingOne">
-                                    <h4 class="panel-title"><i class="fa fa-minus-circle sign"></i>Loan against Property can be taken for following purposes</h4>
+                                          <div class="panel panel-default">
+                                              <div class="panel-heading" role="tab" id="headingThree">
+                                                  <h4 class="panel-title"><i class="fa fa-minus-circle sign"></i>Documents Required</h4>            
+                                                  <strong>Important parameters Banks look for :</strong>
+                                                  <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                                                    <div class="panel-body">
+                                                      <ul class="listnone bullet bullet-check-circle-default">
+                                                              <li>Employment Status</li>
+                                                              <li>Duration of Current Employment</li>
+                                                              <li>Credit History and Credit Score</li>
+                                                          </ul>
+                                                        </div>
+                                                      </div>
+                                                  </div>
+                                              </div>
+                                         </div>
+                                         
+                                      </div>                    
+                                 </div>                             
+
                                 </div>
-                                <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-                                    <div class="panel-body">
-                                    <ul class="listnone bullet bullet-check-circle-default">
-                                                <li>Expanding your Business</li>
-                                                <li>Getting your Son/Daughter Married</li>
-                                                <li>Sending your Son/Daughter for Higher Studies Abroad</li>
-                                                <li>Funding your Dream Vacation</li>
-                                                <li>Funding Medical Treatments</li>
-                                            </ul>
-
-                                        </div>
-                                </div>
-                            </div>
-
-                            <div class="panel panel-default">
-                                <div class="panel-heading" role="tab" id="headingTwo">
-                                    <h4 class="panel-title"><i class="fa fa-minus-circle sign"></i>Criteria for Property</h4>
-                                </div>
-                                
-                                    <div class="panel-body">
-                                    <ul class="listnone bullet bullet-check-circle-default">
-                                                <li>Residence Self-Occupied</li>
-                                                <li>Residence Vacant/on Rent</li>
-                                                <li>Commercial Property</li>
-                                                <li>Factory / Warehouse</li>
-                                            </ul>
-
-                                        </div>                                
-                            </div>
-                           
-                           
-                        </div>
-                    </div>
-
-
-
-                                             
-
-
-
-
-
-
-                                       
-                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+      </div>
+      </div>
     </div>
-
+    </div>
+</div>
 <!-- product description end-->
 
 
@@ -454,7 +431,10 @@
 <?php echo $__env->make('layout.script', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 
 <script type="text/javascript">
+
 var getUrl=0;
+
+
 $(document).ready(function(){
     $('#co_applicant_DI').change(function(){
 
@@ -499,22 +479,24 @@ $(document).ready(function(){
 
 $(".product_ID").click(function(e){
    e.preventDefault();
-    if(!$('#lap_process_form').valid()){
-     // $('#valid').empty().append('<span class="icon-remove text-danger" id="tt2"></span>');
+    if(!$('#home_loan_process_form').valid()){
+    //  $('#valid').empty().append('<span class="icon-remove text-danger" id="tt2"></span>');
             return false;
           }else{
-             
+            // $(".iframeloading").show();
                var property_cost=$('#property_cost').val();
                var obligation=$('#obligation').val();
-               if(property_cost!='' && obligation!=''){
+      if(property_cost!='' && obligation!=''){
          $('#login_process').attr( 'id', 'login_process');
+         $('#valid_ID').hide();
             $(".iframeloading").show();
               $.ajax({  
              type: "POST",  
              url: "<?php echo e(URL::to('loan-submit')); ?>",
-           data : $("#lap_process_form").serialize(),
+           data : $("#home_loan_process_form").serialize(),
         //   data: {_token :_token,username:username,password:password},
              success: function(msg){ 
+              //console.log(msg);
                             $(".iframeloading").hide();                  
                              if(msg.success ==true){
                               var quote=msg.quote_id;
@@ -530,15 +512,21 @@ $(".product_ID").click(function(e){
                              $('#processfee').val(processingfee);
                            var Bank_id = msg.Bank_Id;
                              $('#bank').val(Bank_id);
-                           var url = "apply-lead-online?qoutid="+quote+"&is_liza=1&BankId="+Bank_id+"&product=7&processing_fee="+processingfee+"&loan_eligible="+loan_eligible+"&roi_type="+roi+"";
-                             $("#apply_new").attr("href", url);
+                           var url = "apply-lead-online?qoutid="+quote+"&is_liza=1&BankId="+Bank_id+"&product=12&processing_fee="+processingfee+"&loan_eligible="+loan_eligible+"&roi_type="+roi+"";
+                             $("#apply_new").attr("href", url+'&is_liza=1');
                              $('#mi_ID').show();
                              $('#err').hide();
+                              
                               $('#eligibility').prop('disabled', false);
+                           
+                            
                              // $(window).scrollTop($('#form_ID').offset().top-20);
-                             getUrl=url;
+
+                               
+                                 getUrl=url;
+
                          }else{
-                               $('#eligibility').prop('disabled', true);
+                                $('#eligibility').prop('disabled', true);
                                 getUrl='';
                                 $('#err').show();
                                 $('#loanamount').val("");
@@ -546,9 +534,10 @@ $(".product_ID").click(function(e){
                                 $('#term').val("");
                                 $('#processfee').val("");
                                 $('#bank').val("");
-                                $('#apply_new').hide();
+                              //  $('#apply_new').hide();
                                 // $('#mi_ID').hide();
                                 $("#form_ID").empty();
+
                                 
                                 
                          }
@@ -557,10 +546,12 @@ $(".product_ID").click(function(e){
            }  
        });
 
-}else{
+}
+else{
  $('#login_process').removeAttr('id');
-  alert("This field is required.");
+  //alert("This field is required.");
 
+ $('.valid_ID').empty().append('<div style=" color: red" >Please Fill All Inputs</div>');
   
 }
 
@@ -569,9 +560,16 @@ $(".product_ID").click(function(e){
 
   });
 
+
+// $('.log_digital').click(function(){
+//   $('#log_digital_text').empty().append(" please login and get quotes.");
+// });
+
+
+
 });
 
- 
+
 $(document).on('click','.apply_new',function(e){
      if(getUrl!=0 || getUrl!=''){
          $(".iframeloading").show();
@@ -583,6 +581,7 @@ $(document).on('click','.apply_new',function(e){
      
 });
  
+
 </script>
 
 <script type="text/javascript">
@@ -595,17 +594,16 @@ $("#eligibility").click(function() {
 </script>
 
 <script type="text/javascript">
- 
   $(document).ready(function()
 {
     function update()
-    {
+    { 
       if(! $("#property_cost").val()){
           $("#loan_amount").val('');
       }else{
         var cost = parseFloat($("#property_cost").val());
         // console.log(cost);
-        var total = (cost)*60/100;
+        var total = (cost)*80/100;
         // var total = total.toFixed(2);
         // console.log(total);
         $("#loan_amount").val(total);

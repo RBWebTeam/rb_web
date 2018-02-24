@@ -295,6 +295,7 @@
 </script>
 <script type="text/javascript">
    $("#Modify_Details").click(function() {
+    console.log('okae');
      $(window).scrollTop($('#mod').offset().top-20);
     
    });

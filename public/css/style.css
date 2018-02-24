@@ -1781,3 +1781,12 @@ button.ui-button::-moz-focus-inner {
 }
 .col-md-4 label {display:none !important;}
 .form-group label {display:none !important;}
+
+.displaynone{
+  display: none;
+}
+.displaynonemsg{
+  display: none;
+  color:red;
+  text-align:center;
+}

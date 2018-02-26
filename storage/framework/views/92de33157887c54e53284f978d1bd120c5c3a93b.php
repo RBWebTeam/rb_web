@@ -7,7 +7,7 @@
                 <div class="col-md-4 col-sm-4 col-xs-12">
                     <div class="footer-logo">
                         <!-- Footer Logo -->
-                        <img src="{{URL::to('images/footer-rupee-boss-logo.png')}}" alt="Rupee Boss"> </div>
+                        <img src="<?php echo e(URL::to('images/footer-rupee-boss-logo.png')); ?>" alt="Rupee Boss"> </div>
                     <!-- /.Footer Logo -->
                 </div>
                 <div class="col-md-8 col-sm-8 col-xs-12">
@@ -55,10 +55,10 @@
                     <div class="widget-social mt10">
                         <!-- widget footer -->
                         <ul class="listnone">
-                            <li><a href="{{URL::to('https://www.facebook.com/rupeeboss')}}"><i class="fa fa-facebook"></i></a>
-                            <a href="{{URL::to('https://plus.google.com/113191059621763008376')}}"><i class="fa fa-google-plus"></i></a>
-                            <a href="{{URL::to('https://twitter.com/rupeeboss')}}"><i class="fa fa-twitter"></i></a>
-                            <a href="{{URL::to('https://www.linkedin.com/company/rupeeboss.com')}}"><i class="fa fa-linkedin"></i></a></li>
+                            <li><a href="<?php echo e(URL::to('https://www.facebook.com/rupeeboss')); ?>"><i class="fa fa-facebook"></i></a>
+                            <a href="<?php echo e(URL::to('https://plus.google.com/113191059621763008376')); ?>"><i class="fa fa-google-plus"></i></a>
+                            <a href="<?php echo e(URL::to('https://twitter.com/rupeeboss')); ?>"><i class="fa fa-twitter"></i></a>
+                            <a href="<?php echo e(URL::to('https://www.linkedin.com/company/rupeeboss.com')); ?>"><i class="fa fa-linkedin"></i></a></li>
                         </ul>
 
                         <div class="mt10 widget-footer">
@@ -66,15 +66,15 @@
                         <h4><strong>Others Links</strong></h4>
                         <!-- widget footer -->
                         <ul class="listnone " style=" margin: 0px 0px 10px 0px;">
-                            <li><a href="{{URL::to('about-us')}}" style="font-weight: normal;">About Us</a></li>
-                            <li><a href="{{URL::to('contact-us')}}" style="font-weight: normal;">Contact Us</a></li>
-                            <li><a href="{{URL::to('express-loan')}}" style="font-weight: normal;">EXPRESS LOAN</a></li>
-                            <li><a href="{{URL::to('home-loan')}}" style="font-weight: normal;">PM AWAS YOJANA</a></li>
-                            <li><a href="{{URL::to('sme-working-capital')}}" style="font-weight: normal;">SME CAR LEASING</a></li>
-                            <li><a href="{{URL::to('http://www.rupeeboss.com/rblife-style/')}}" style="font-weight: normal;">RB LIFE STYLE</a></li>
-                            <li><a href="{{URL::to('http://www.rupeeboss.com/elite/')}}" style="font-weight: normal;">ELITE</a></li>
-                             <li><a href="{{URL::to('http://www.rupeeboss.com/mf/')}}" style="font-weight: normal;">MUTUAL FUNDS</a></li>
-                            <li><a href="{{URL::to('equifax-verification')}}" style="font-weight: normal;">MY CREDIT SCORE</a></li>
+                            <li><a href="<?php echo e(URL::to('about-us')); ?>" style="font-weight: normal;">About Us</a></li>
+                            <li><a href="<?php echo e(URL::to('contact-us')); ?>" style="font-weight: normal;">Contact Us</a></li>
+                            <li><a href="<?php echo e(URL::to('express-loan')); ?>" style="font-weight: normal;">EXPRESS LOAN</a></li>
+                            <li><a href="<?php echo e(URL::to('home-loan')); ?>" style="font-weight: normal;">PM AWAS YOJANA</a></li>
+                            <li><a href="<?php echo e(URL::to('sme-working-capital')); ?>" style="font-weight: normal;">SME CAR LEASING</a></li>
+                            <li><a href="<?php echo e(URL::to('http://www.rupeeboss.com/rblife-style/')); ?>" style="font-weight: normal;">RB LIFE STYLE</a></li>
+                            <li><a href="<?php echo e(URL::to('http://www.rupeeboss.com/elite/')); ?>" style="font-weight: normal;">ELITE</a></li>
+                             <li><a href="<?php echo e(URL::to('http://www.rupeeboss.com/mf/')); ?>" style="font-weight: normal;">MUTUAL FUNDS</a></li>
+                            <li><a href="<?php echo e(URL::to('equifax-verification')); ?>" style="font-weight: normal;">MY CREDIT SCORE</a></li>
                         </ul>
                         </div>
 
@@ -175,7 +175,7 @@
                     <p>© Copyright 2017 | Rupee Boss</p>
                 </div>
                 <div class="col-md-6 col-sm-6 text-right col-xs-6">
-                    <p><a href="{{URL::to('disclaimer-page')}}" style="color: #fff">Disclaimer</a>   |   <a href="{{URL::to('privacy-policy-page')}}" style="color: #fff">Privacy Policy</a></p>
+                    <p><a href="<?php echo e(URL::to('disclaimer-page')); ?>" style="color: #fff">Disclaimer</a>   |   <a href="<?php echo e(URL::to('privacy-policy-page')); ?>" style="color: #fff">Privacy Policy</a></p>
                 </div>
             </div>
         </div>

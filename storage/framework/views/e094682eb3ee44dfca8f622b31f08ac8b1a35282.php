@@ -65,14 +65,14 @@ $(document).ready(function(){
                 <div class="col-md-2 col-sm-6 col-xs-6">
                     
                     <div class="logo">
-                        <a href="{{URL::to('/')}}"><img src="../images/logo-rupee-boss.png" alt="Rupeeboss"></a>
+                        <a href="<?php echo e(URL::to('/')); ?>"><img src="../images/logo-rupee-boss.png" alt="Rupeeboss"></a>
                     </div>
                 </div>
                 
                 <div class="col-md-10 col-sm-6 col-xs-6 text-right">
                     <div class="header-action">
-                        <a href="{{URL::to('equifax-verification')}}" class="btn btn-credit" style="padding:14px 12px">Free Credit Report</a>
-                        <a href="{{URL::to('contact-us')}}" class="btn btn-default" style="padding:14px 13px">Expert Assistance</a>
+                        <a href="<?php echo e(URL::to('equifax-verification')); ?>" class="btn btn-credit" style="padding:14px 12px">Free Credit Report</a>
+                        <a href="<?php echo e(URL::to('contact-us')); ?>" class="btn btn-default" style="padding:14px 13px">Expert Assistance</a>
                         <a class="search-btn-2 search-btn2 trigger-custom2"  href="#" style="text-align: center; width: 45px; height: 45px; padding: 7px; display: inline-block; vertical-align:bottom"><i style="font-size: 30px;" class="fa fa-user"></i><span class="tooltiptext">Sign In</span></a>
                     </div>
                 </div>
@@ -87,41 +87,41 @@ $(document).ready(function(){
                         <ul>
                             <li ><a href="#" class="animsition-link">SME Loan</a>
                                 <ul>
-                                    <li><a href="{{URL::to('business-loan')}}" class="animsition-link">Unsecured Business Loan</a></li>
-                                    <li><a href="{{URL::to('loan-against-property')}}" class="animsition-link">Loan Against Property</a></li>
-                                    <li><a href="{{URL::to('loan-against-property?commercial')}}" class="animsition-link">Commercial Property Purchase</a></li>
-                                    <li><a href="{{URL::to('loan-against-property')}}" class="animsition-link">Lease Rent Discounting</a></li>
-                                    <li><a href="{{URL::to('sme-working-capital')}}" class="animsition-link">Working Capital</a></li>
-                                    <li><a href="{{URL::to('contact-us')}}" class="animsition-link">FCNR Loans</a></li>
-                                    <li><a href="{{URL::to('contact-us')}}" class="animsition-link">Debt Restructuring</a></li>
-                                    <li><a href="{{URL::to('contact-us')}}" class="animsition-link">Debt Syndication</a></li>
-                                    <li><a href="{{URL::to('contact-us')}}" class="animsition-link">Project Finance</a></li>
+                                    <li><a href="<?php echo e(URL::to('business-loan')); ?>" class="animsition-link">Unsecured Business Loan</a></li>
+                                    <li><a href="<?php echo e(URL::to('loan-against-property')); ?>" class="animsition-link">Loan Against Property</a></li>
+                                    <li><a href="<?php echo e(URL::to('loan-against-property?commercial')); ?>" class="animsition-link">Commercial Property Purchase</a></li>
+                                    <li><a href="<?php echo e(URL::to('loan-against-property')); ?>" class="animsition-link">Lease Rent Discounting</a></li>
+                                    <li><a href="<?php echo e(URL::to('sme-working-capital')); ?>" class="animsition-link">Working Capital</a></li>
+                                    <li><a href="<?php echo e(URL::to('contact-us')); ?>" class="animsition-link">FCNR Loans</a></li>
+                                    <li><a href="<?php echo e(URL::to('contact-us')); ?>" class="animsition-link">Debt Restructuring</a></li>
+                                    <li><a href="<?php echo e(URL::to('contact-us')); ?>" class="animsition-link">Debt Syndication</a></li>
+                                    <li><a href="<?php echo e(URL::to('contact-us')); ?>" class="animsition-link">Project Finance</a></li>
                                 </ul>
                             </li>
                             <li><a href="#" class="animsition-link">Retail Loan</a>
                                 <ul>
-                                    <li><a href="{{URL::to('home-loan')}}" class="animsition-link">Home Loan</a></li>
-                                    <li><a href="{{URL::to('smart-home-loan')}}" class="animsition-link">Smart Home Loan</a></li>
-                                    <li><a href="{{URL::to('loan-against-property')}}" class="animsition-link">Loan Against Property</a></li>
-                                    <li><a href="{{URL::to('personal-loan')}}" class="animsition-link">Personal Loan</a></li>
-                                    <li><a href="{{URL::to('car-loan')}}" class="animsition-link">Car Loan</a></li>
-                                    <li><a href="{{URL::to('sme-working-capital')}}" class="animsition-link">Working Capital</a></li>
-                                    <li><a href="{{URL::to('used-car-loan')}}" class="animsition-link">Used Car Loan</a></li>
+                                    <li><a href="<?php echo e(URL::to('home-loan')); ?>" class="animsition-link">Home Loan</a></li>
+                                    <li><a href="<?php echo e(URL::to('smart-home-loan')); ?>" class="animsition-link">Smart Home Loan</a></li>
+                                    <li><a href="<?php echo e(URL::to('loan-against-property')); ?>" class="animsition-link">Loan Against Property</a></li>
+                                    <li><a href="<?php echo e(URL::to('personal-loan')); ?>" class="animsition-link">Personal Loan</a></li>
+                                    <li><a href="<?php echo e(URL::to('car-loan')); ?>" class="animsition-link">Car Loan</a></li>
+                                    <li><a href="<?php echo e(URL::to('sme-working-capital')); ?>" class="animsition-link">Working Capital</a></li>
+                                    <li><a href="<?php echo e(URL::to('used-car-loan')); ?>" class="animsition-link">Used Car Loan</a></li>
                                 </ul>
                             </li>
-                            <li><a href="{{URL::to('credit-card')}}">Credit Card</a></li>
+                            <li><a href="<?php echo e(URL::to('credit-card')); ?>">Credit Card</a></li>
                             <li class="active"><a class="animsition-link">Balance Transfer</a>
                                 <ul>
-                                    <li><a href="{{URL::to('balance-transfer',['id' => 'home-loan'])}}" class="animsition-link">Home Loan</a></li>
-                                    <li><a href="{{URL::to('balance-transfer',['id' => 'personal-loan'])}}" class="animsition-link">Personal Loan</a></li>
-                                    <li><a href="{{URL::to('balance-transfer',['id' => 'loan-against-property-loan'])}}" class="animsition-link">Loan Against Property</a></li>
-                                    <li><a href="{{URL::to('balance-transfer/working-capital')}}" class="animsition-link">Working Capital</a></li>
+                                    <li><a href="<?php echo e(URL::to('balance-transfer',['id' => 'home-loan'])); ?>" class="animsition-link">Home Loan</a></li>
+                                    <li><a href="<?php echo e(URL::to('balance-transfer',['id' => 'personal-loan'])); ?>" class="animsition-link">Personal Loan</a></li>
+                                    <li><a href="<?php echo e(URL::to('balance-transfer',['id' => 'loan-against-property-loan'])); ?>" class="animsition-link">Loan Against Property</a></li>
+                                    <li><a href="<?php echo e(URL::to('balance-transfer/working-capital')); ?>" class="animsition-link">Working Capital</a></li>
                                     
                                 </ul>
                             </li>
-                            <li ><a href="{{URL::to('calculators')}}" class="animsition-link">Calculators</a></li>
+                            <li ><a href="<?php echo e(URL::to('calculators')); ?>" class="animsition-link">Calculators</a></li>
 
-                            <li><a href="{{URL::to('track-application')}}" class="animsition-link">Track Application</a></li>
+                            <li><a href="<?php echo e(URL::to('track-application')); ?>" class="animsition-link">Track Application</a></li>
                         </ul>
                     </div>
                         

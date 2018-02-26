@@ -1881,14 +1881,14 @@ function mobile_valid(element){
     <div id="login_process" class="modal fade" role="dialog">
       <div class="modal-dialog" id="login_first">
         <!-- Modal content-->
-        <div class="modal-content">
+        <div class="modal-content" style="float:left;padding-bottom:15px;">
           <div class="modal-header"> 
            <button type="button" class="close" data-dismiss="modal">&times;</button>         
             <h4 class="modal-title text-center"><b>Registration Form</b></h4>
           </div>
           <br>        
           <div id="send_otp">         
-            <form class="form-horizontal" id="login_form_process" method="POST">           
+            <form id="login_form_process" method="POST">           
              <?php echo e(csrf_field()); ?>           
              
             <div class="col-md-6 col-sm-12 col-xs-12">

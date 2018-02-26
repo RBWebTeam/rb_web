@@ -1,1202 +1,1059 @@
  <?php echo $__env->make('layout.header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
-    <link rel="shortcut icon" href="favicon.ico">
 
-    <link href="https://fonts.googleapis.com/css?family=Raleway:200,300,400,700" rel="stylesheet">
-    
-    <!-- Animate.css -->
-    <link rel="stylesheet" href="css/iifl_css/animate.css">
-    <!-- Icomoon Icon Fonts-->
-    <link rel="stylesheet" href="css/iifl_css/icomoon.css">
+ <div class="iifl-image">
+    <img src="images/iifl.jpg">
+    </div>
 
-<!--    <link rel="stylesheet" href="css/iifl_css/style.css">  -->
-    <link rel="stylesheet" href="css/iifl_css/input/demo.css"> 
-    <link rel="stylesheet" href="css/iifl_css/input/normalize.css"> 
-    <link rel="stylesheet" href="css/iifl_css/input/set2.css"> 
-    <!-- Chatbox  -->
-    <link rel="stylesheet" href="css/iifl_css/chatbox.css">
-    <link rel="stylesheet" href="build/freshslider.min.css">
-    
-
-    
-
-                
-<!-- plus a jQuery UI theme, here I use "flick" -->
-<link rel="stylesheet" href="https://code.jquery.com/ui/1.10.4/themes/flick/jquery-ui.css">
-<style>
-      table {font-size:14px;}
-      .input__field--nao {color: #999999;}
-      .bg-success {padding:10px; font-size:14px; color:#666;}
-      .lon-det li {float:left; border-right:1px solid #fff; padding:10px;list-style-type:none;vertical-align:middle;}
-      .lon-det {height:92px; margin:0px; font-size:14px;}
-      .content p {padding:0px;margin:0px; font-size:13px;}
-      .bdr-rigt {border-right:1px dashed #fff;min-height: 50px;color:#fff;}
-      .mrg-btm {margin-bottom:20px;}
-      .mrg-tpp {margin-top:35px;}
-      .bg-primary {padding:5px; font-size:16px;}
-      .bg-primary:hover {color:#fff;}
-      .input__field {border-radius:0px;}
-      .input__label--nao {top:11px;}
-      .input__field {height:55px;}
-      label.error {display: none !important; }
-        .error {
-                    border:2px solid red;
-                }
-      h1 {font-size:40px;color:#75a8de;padding:20px; padding-bottom:0px;margin-bottom:5px;}
-	  .ull {padding:0px; text-align:left;}
-	  .ull li {list-style-type:none; padding:10px;border-bottom:1px dashed #ccc;}
-	  input {padding:10px; height:55px;}
-	  select {padding:10px;height:55px;}
-	  .agree input {height: 12px;}
-	  
-	  @media  only screen and (max-width: 768px) {
-		  
-		  h3 {font-size:20px;}
-		  .bdr-rigt {border:none;}
-		  .txt-con h4, p {color:#fff;}
-		  .loan-details-txt {font-size:22px;}
-	  }
-</style>
-    <div id="fh5co-hero">
-    <div class="express-lon-ban hidden-xs"><img src="images/express-loan-image1.jpg" class="img-responsive"/></div>
-<div class="iframeloading" style= "display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
-                <img src="<?php echo e(URL::to('images/ajaxloader.gif')); ?>" alt="Loader" title="Loader" style="top: 50%; position: relative; left: 50%;"  />
-</div>
-    <!-- //loader -->
-    
-    <div class="container animate-box">
+    <!-- content start -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="wrapper-content bg-white pinside40" style="float:left;width:100%;"> 
+                                      
+                        <div class="row" style="display: none;">
+                            <div class="col-md-10 col-md-offset-1">
+                        <hr>
+                            <h1 class="text-center pad">Thank You</h1>
+                            <h4 class="text-center">Your application is under process our representative will get in touch with to you shortly</h4>
+                            <p class="text-center">To learn more about IIFL Express Personal Loan <a href="javascript:void(0)">Click Here</a></p>
+                            </div>
+                        </div>
             
-    <br>
-    <div class="animate-box">
-    <div class="row">
-          
-        <div class="col-md-12">
-		<div class="bg-white centered well pad1">
-                   <div class="row" style="display: none;">
-                <div class="col-md-10 col-md-offset-1">
-                <hr>
-                <h1 class="text-center pad">Thank You</h1>
-                <h4 class="text-center">Your application is under process our representative will get in touch with to you shortly</h4>
-                <p class="text-center">To learn more about IIFL Express Personal Loan <a href="javascript:void(0)">Click Here</a></p>
-        
-            </div>
-            
-            </div>
-            
-            <div class="row" id="error" style="display: none;">
-                <div class="col-md-10 col-md-offset-1">
-                <hr>
-                <h1 class="text-center pad">Thank You..!!</h1>
-                <h4 class="text-center">Your application is under process our representative will get in touch with to you shortly</h4>
-                <p class="text-center">To learn more about IIFL Express Personal Loan <a href="javascript:void(0)">Click Here</a></p>
-        
-            </div>
-            </div>
-   
-            <br> 
- 
-            
-        <div id="iifl">
-            <form id="iifl_express_loan" name="iifl_express_loan" method="POST">
-                <?php echo e(csrf_field()); ?>
+                        <div class="row" id="error" style="display: none;">
+                            <div class="col-md-10 col-md-offset-1">
+                                <hr>
+                                <h1 class="text-center pad">Thank You..!!</h1>
+                                <h4 class="text-center">Your application is under process our representative will get in touch with to you shortly</h4>
+                                <p class="text-center">To learn more about IIFL Express Personal Loan <a href="javascript:void(0)">Click Here</a></p>
+                             </div>
+                        </div>
+
+            <!-- iifl main page -->
+                  <div id="iifl"> 
+                    <h2 class=""><center>IIFL Express Loan</center></h2>
+                    <form id="iifl_express_loan" name="iifl_express_loan" method="POST">
+                        <?php echo e(csrf_field()); ?>
 
 
+                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">                           
+                             <div class="card-content">
+                                <div class="form-group">
+                                  <!-- <span>Monthly Salary</span> -->
+                                <input class="form-input-new form-control" type="text" name="Monthly_Salary"  id="Monthly_Salary" placeholder="Your Net Monthly Salary"  onkeypress="return fnAllowNumeric(event)" minlength="5" maxlength="9" required  />
+                                </div>
+                            </div>                           
+                        </div>
 
-            
-            <section class="content">
-                <h3 class="text-uppercase exp-hed">IIFL Express Loan</h3>
-                
-                <span class="input input--nao">
-                    <input class="input__field input__field--nao" type="text" name="Monthly_Salary"  id="Monthly_Salary"  onkeypress="return fnAllowNumeric(event)" minlength="5" maxlength="9" required  />
-                    <label class="input__label input__label--nao" for="Monthly_Salary">
-                    <span class="input__label-content input__label-content--nao">Your Net Monthly Salary</span>
-                    </label>
-                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
-                    <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
-                    </svg>
-                </span>
-                <span class="input input--nao">
-                    <input type="hidden" name="Company_Cat" id="Company_Cat" value="">
+                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">  
+                        <div class="card-content">                         
+                                <div class="form-group">
+                                  <!-- <span>Where Do You Work</span> -->
+                                  <input type="hidden" name="Company_Cat" id="Company_Cat" value="">
+                                  <input type="text" placeholder="Where Do You Work" class="form-control input-md search_company" name="Company_Name" id="Company_Name" required>
+                              </div>  
+                              </div>                          
+                        </div>
 
-                    <input type="text" class="input__field input__field--nao search_company"  name="Company_Name" id="Company_Name" required>
-                    <label class="input__label input__label--nao" for="Company_Name">
-                    <span class="input__label-content input__label-content--nao">Where Do You Work</span>
-                    </label>
-                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
-                    <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
-                    </svg>
-                </span>
-                <span class="input input--nao">
-                    <input class="input__field input__field--nao" type="text" name="Monthly_Obligation" id="Monthly_Obligation" onkeypress="return fnAllowNumeric(event)"  />
-                    <label class="input__label input__label--nao" for="Monthly_Obligation">
-                    <span class="input__label-content input__label-content--nao">Total Existing EMI if Any (If Not Enter 0)</span>
-                    </label>
-                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
-                    <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
-                    </svg>
-                </span>
-            </section>
-               
-            <section class="content">
-			<br>
-                <div class="col-md-12"> <h3 class="exp-hed">Enter your contact information to receive a copy of your loan eligibility.</h3></div>
-                <span class="input input--nao">
-                    <input class="input__field input__field--nao" type="text" name="Mob_Num" id="Mob_Num" onkeypress="return fnAllowNumeric(event)" maxlength="10"  required />
-                    <label class="input__label input__label--nao" for="Mob_Num">
-                    <span class="input__label-content input__label-content--nao">Mobile No. </span>
-                    </label>
-                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
-                    <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
-                    </svg>
-                    
-                </span>
-                <span class="input input--nao">
-                    <input class="input__field input__field--nao" type="text" name="EmailID" id="EmailID" oninput="mail('EmailID')" required />
-                    <label class="input__label input__label--nao" for="EmailID">
-                        <span class="input__label-content input__label-content--nao">Email Id</span>
-                    </label>
-                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
-                    <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
-                    </svg>
-                    <div id="email" style="display:none;color: red;">Please Enter Valid Email Id.</div>
-                </span>
-                <span class="input_exp input--nao">
-                    <select class="input__field input__field--nao" name="city" id="city" required>
-                    <option disabled selected value=""></option>
-                    </select>
-                    <label class="input__label input__label--nao" for="city">
-                    <span class="input__label-content input__label-content--nao">City</span>
-                    </label>
-                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
-                    <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
-                    </svg>
-                </span>
-                
-            </section>
-			<div class="col-md-12 mrg-top">
-            <a class="btn btn-primary btn-outline with-arrow mrg-top next" href="javascript:void(0)">NEXT<i class="icon-arrow-right"></i></a>
-			</div>
-            </form>
-            </div>
-            
-        <div id="Eligibility_details" style="display: none;">
-            <form name="eligibility_form" id="eligibility_form" method="POST">
+                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                            <div class="card-content">
+                                <div class="form-group">
+                                  <!-- <span>Total Existing EMI if Any (If Not Enter 0)</span> -->
+                                <input class="form-control input-md" type="text" name="Monthly_Obligation" id="Monthly_Obligation" placeholder="Total Existing EMI if Any (If Not Enter 0)" onkeypress="return fnAllowNumeric(event)"  />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="">
+                            <br /><br /><br /><br />
+                            <h3 style="padding:30px 0;"><center>Enter your contact information to receive a copy of your loan eligibility.</center></h3>
+                        </div>
+
+                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                            <div class="card-content">
+                                <div class="form-group">
+                                  
+                                    <input  class="form-control input-md" type="text" name="Mob_Num" id="Mob_Num" onkeypress="return fnAllowNumeric(event)" placeholder="Mobile No" maxlength="10"  required />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                            <div class="card-content">
+                                <div class="form-group">
+                                  <!-- <span>Email ID</span> -->
+                                    <input class="form-control input-md" type="text" name="EmailID" id="EmailID" oninput="mail('EmailID')" placeholder="Email ID"  required />
+                                </div>
+                                <div id="email" style="display:none;color: red;">Please Enter Valid Email Id.</div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                            <div class="card-content">
+                                <div class="form-group">
+                                  <!-- <span>Select City</span> -->
+                                <select class="form-control input-md" name="city" id="city" required>
+                                  <option selected value="">Select City</option>
+                                  </select>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    <a href="javascript: void(0)" class="btn btn-default btn-sm next" >Next</a>                
+
+                    </form>
+                </div>
+                <!-- iifl main page end -->
+                <!-- next Eligibilitydetails -->
+                                <div id="Eligibility_details" style="display: none;">
+                                  <form name="eligibility_form" id="eligibility_form" method="POST">
+                                  <?php echo e(csrf_field()); ?>
+
+                                  
+                                  <div class="col-lg-12">
+                                    <table class="">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">Company Name:</th>
+                                                <th scope="col">Monthly Salary:</th>
+                                                <th scope="col">Current EMI:</th>                                  
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><span id="Name"></span></td>
+                                                <td><i class="fa fa-inr"></i> <span id="Salary"></span></td>
+                                                <td><i class="fa fa-inr"></i> <span id="Current"></span></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                     <spam style="font-size: 20px;"><center style="padding:30px 0;"><strong style="color: #ed1c24;">Hurray !!</strong> You are eligible for a loan of <i class="fa fa-inr"></i> <span id="eligible"></span>. Tenure for  <b><span id="period"></span> years</b> & EMI is <i class="fa fa-inr"></i> <span id="you_have_to_pay"></span></center></spam>
+
+                                </div> 
+
+                                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">                           
+                             <div class="card-content">
+                                    <div class="form-group">
+                                      <b><span>Loan Amount</span></b>
+                                       <input class="form-control input-md" type="text" name="AppliedLoan" id="AppliedLoan" onkeypress="return fnAllowNumeric(event)" minlength="6" maxlength="9" />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">                           
+                             <div class="card-content">
+                                    <div class="form-group">
+                                      <b><span>Loan Tenure</span></b>
+                                        <input class="form-control input-md" type="text" name="tenure" id="tenure" onkeypress="return fnAllowNumeric(event)" maxlength="3" />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">                           
+                             <div class="card-content">
+                                    <div class="form-group">
+                                      <b><span>Monthly EMI</span></b>
+                                        <input class="form-control input-md" type="text" name="EMI" id="EMI" onkeypress="return fnAllowNumeric(event)" readonly="readonly"  />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                              <div class="col-md-2"></div>
+                            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                <div class="loan-apply">
+                                  <div id="int">
+                                    <p style="text-align:center; font-weight:bold">Rate Of Interest <br />
+                                        <b><span id="interest"></span>%</b>
+                                    </p>
+                                  </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                            <div class="loan-apply">
+                                   <p style="text-align:center; font-weight:bold">Proccesing Fee <br />
+                                    <b><span id="fee"></span>%</b></p>
+                                </div>
+                            </div>
+
+                            </div>
+
+                            <div class="col-lg-12">
+                                <p class="agree" style="text-align:center; font-weight:bold">
+                                    <input type="checkbox" name="check" required /> I Agree to all the terms and conditions</p><br />
+                            </div>
+
+                            <a class="btn btn-default btn-sm next_form" id="next_form" href="javascript:void(0)">NEXT</a>
+
+                        
+                                </form>
+                                </div>
+              <!-- next Eligibilitydetails end -->
+
+              <!-- iifl-lead -->
+              <div id="iifl-lead" style="display: none;">
+                <form id="iifl_lead" name="iifl_lead" method="POST">
+                  <?php echo e(csrf_field()); ?>
+
+                  <input class="form-control input-md" type="hidden" name="Token"  id="Token" readonly value="" />
+                  <input type="hidden" class="form-control input-md"  name="object_name" id="object_name" value="Lead" required>
+
+                          <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                            <div class="card-content">
+                                <div class="form-group">
+                                  <input class="form-control input-md" type="text" name="Parameters[FirstName]" id="FirstName" placeholder="First Name" onkeypress="return AllowAlphabet(event)" required  />
+                                </div>
+                              </div>
+                            </div>
+
+                             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                            <div class="card-content">
+                                <div class="form-group">
+                                  <input class="form-control input-md" type="text" name="Parameters[LastName]" id="LastName" placeholder="Last Name" onkeypress="return AllowAlphabet(event)" required />
+                                </div>
+                              </div>
+                            </div>
+
+                            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                            <div class="card-content">
+                                <div class="form-group">
+                                  <input class="form-control input-md" type="text" name="Parameters[MobilePhone]" id="MobilePhone" onkeypress="return AllowAlphabet(event)"  />
+                                </div>
+                              </div>
+                            </div>
+
+                            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                            <div class="card-content">
+                                <div class="form-group">
+                                  <input class="form-control input-md" type="text" name="Parameters[Email]" id="Email" onkeypress="return AllowAlphabet(event)"  />
+                                </div>
+                              </div>
+                            </div>
+
+                            <div class="col-md-12 mrg-top">
+                                <a class="btn btn-default btn-sm lead_save" href="javascript:void(0)">NEXT</a>
+                            </div>
+
+                </form>
+              </div>
+              <!-- iifl-lead end -->
+              <!-- next Applicant_Details -->
+              <div id="Applicant_Details" style="display: none;">
+                <form name="applicant_deatils" id="applicant_deatils" method="POST">
                       <?php echo e(csrf_field()); ?>
 
-			<div class="col-md-1"></div>  
-            <div class="col-md-10">
-            <table class="table table-bordered" width="70%">
-                <tr>
-                    <td class="bg-info">Company Name: <b><span id="Name"></span></b></td>
-                    <td class="bg-danger">Monthly Salary: <b>₹<span id="Salary"></span></b></td>
-                    <td class="bg-info">Current EMI: <b>₹<span id="Current"></span></b></td>
-                </tr>
-             </table>
-                <h3><i><b class="text-primary">Hurray !!</b></i>&nbsp;You are eligible for a loan of <b>₹<span id="eligible"></span></b >.Tenure for <b><span id="period"></span> years</b> & EMI is<b> ₹<span id="you_have_to_pay"></span></b ></h3>
-            <br>
-            </div>
+                      <div class="col-lg-12">
+                        <table class="">
+                          <thead>
+                              <tr>
+                                <th scope="col">Company Name:</th>
+                                <th scope="col">Monthly Salary:</th>
+                                <th scope="col">Current EMI:</th>                                              
+                              </tr>
+                          </thead>
+                          <tbody>
+                              <tr>
+                                <td><span id="CompanyNm"></span></td>
+                                <td><i class="fa fa-inr"></i> <span id="Income"></span></td>
+                                <td><i class="fa fa-inr"></i> <span id="Current_EMI"></span></td>
+                              </tr>
+                          </tbody>
+                        </table>    
+                         <br><br> 
+                         <table class="">
+                          <thead>
+                            <tr>
+                              <th colspan="5" style="text-align: center;">Loan Details</th>
+                            </tr>
+                              <tr>
+                                <th scope="col">Loan Amount</th>
+                                <th scope="col">Rate of Interest</th>
+                                <th scope="col">EMI</th>
+                                <th scope="col">Loan Tenure</th>
+                                <th scope="col">Processing Fees</th>                                           
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td><i class="fa fa-inr"></i> <span id="Amount"></span></td>
+                                <td><span id="RateOfInt"></span>%</td>
+                                <td><i class="fa fa-inr"></i> <span id="EquatedMonthly"></span></td>
+                                <td><span id="LoanTenure"></span></td>
+                                <td><span id="ProcessFee"></span></td>
+                              </tr>
+                            </tbody>
+                         </table>                                           
+                      </div>
+                      <br><br>
 
-            <section class="content">
-             <span class="input input--nao input--filled">
-                    <input class="input__field input__field--nao" type="text" name="AppliedLoan" id="AppliedLoan" onkeypress="return fnAllowNumeric(event)" minlength="6" maxlength="9" />
-                    <label class="input__label input__label--nao" for="AppliedLoan">
-                    <span class="input__label-content input__label-content--nao">Loan Amount</span>
-                    </label>
-                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
-                    <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
-                    </svg>
-                </span>
-                <span class="input input--nao input--filled">
-                    <input class="input__field input__field--nao" type="text" name="tenure" id="tenure" onkeypress="return fnAllowNumeric(event)" maxlength="3" />
-                    <label class="input__label input__label--nao" for="tenure">
-                    <span class="input__label-content input__label-content--nao">Loan Tenure</span>
-                    </label>
-                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
-                    <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
-                    </svg>
-                </span>
-                <span class="input input--nao input--filled">
-                    <input class="input__field input__field--nao" type="text" name="EMI" id="EMI" onkeypress="return fnAllowNumeric(event)" readonly="readonly"  />
-                    <label class="input__label input__label--nao" for="EMI">
-                    <span class="input__label-content input__label-content--nao">EMI</span>
-                    </label>
-                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
-                    <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
-                    </svg>
-                </span>
-				<div class="col-md-12 mrg-top mrg-btm">
-                <span class="input input--nao bg-info">
-                    <div>Rate Of Interest</div>
-                    <div id="int"><b><span id="interest"></span>%</b></div>
-                </span>
-                <span class="input input--nao bg-info">
-                    <div>Proccesing Fee</div>
-                    <b><span id="fee"></span>%</b>
-                </span>
-                 </div>
-                <div class="col-md-12 text-danger mar-top mrg-btm"><p class="agree"><input type="checkbox" name="check" required /> I Agree to all the terms and conditions</p></div>
-				
-        </section>
-		<br>
-            <a class="btn btn-primary btn-outline with-arrow mrg-top next_form" id="next_form" href="javascript:void(0)">NEXT<i class="icon-arrow-right"></i></a>
-            </form>
-            </div>
-            
-        <div id="Applicant_Details" style="display: none;">
-            <form name="applicant_deatils" id="applicant_deatils" method="POST">
-                      <?php echo e(csrf_field()); ?>
+                      <!-- user information -->
+                      <!-- Tell Us a Bit About YourSelf -->
 
-            <div class="col-md-12">
-            <table class="table table-bordered" width="100%">
-                <tr>
-                    <td class="bg-info">Company Name:<b><span id="CompanyNm"></span></b></td>
-                    <td class="bg-danger">Monthly Salary:<b><span id="Income"></span></b></td>
-                    <td class="bg-info">Current EMI:<b><span id="Current_EMI"></span></b></td>
-                </tr>
-             </table>
-            </div>
-            <div class="col-md-1"></div>
-            <div class="col-md-10 bg-primary pad mrg-btm">
-            <div class="col-md-3 bdr-rigt loan-details-txt">Loan Details</div>
-                  <div class="col-md-3 bdr-rigt">
-                  <p>Loan Amount:- <b>₹<span id="Amount"></span></b></p>
-                  <p>Loan Tenure:- <b><span id="LoanTenure"></span></b></p>
-                  </div>
-                  <div class="col-md-3 bdr-rigt">
-                  <p>Rate of Interest:- <b><span id="RateOfInt"></span>%</b></p>
-                  <p>Processing Fees:- <b><span id="ProcessFee"></span></b></p>
-                  </div>
-                  <div class="col-md-3">
-                  <p>EMI:- <b>₹<span id="EquatedMonthly"></span></b></p>
-                  </div>
-                </div>
-            <div class="col-md-1"></div>
-            <section class="content">
-                <h3 class="col-md-12 mrg-tpp">Tell Us a Bit About YourSelf</h3>
-                  <input type="hidden" name="CampaignName" value="<?php echo e($CampaignName); ?>">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding-bottom: 20px">
+                        <div class="how-it-block1 bg-boxshadow" style=" min-height: auto;float: left;">
+                          <h4 >Tell Us a Bit About YourSelf</h4>
+                          <input type="text" name="CampaignName" value="<?php echo e($CampaignName); ?>">
+                          <input type="text" name="CRMLeadId" id="CRMLeadId" value="">
+                          <input class="input__field input__field--nao" type="hidden" name="CompanyName" required id="CompanyName" onkeypress="return AllowAlphabet(event)" />
+                          <input class="input__field input__field--nao" type="hidden" name="MonthlySalary" required id="MonthlySalary" onkeypress="return AllowAlphabet(event)" />
+                          <input class="input__field input__field--nao" type="hidden" name="MonthlyObligation" required id="MonthlyObligation" onkeypress="return AllowAlphabet(event)" />
+                          <input class="input__field input__field--nao" type="hidden" name="AppliedLoanamount" required id="AppliedLoanamount" value="" />
+                          <input class="input__field input__field--nao" type="hidden" name="Tenure" required id="Tenure" value="" />
+                          <input class="input__field input__field--nao" type="hidden" name="Emi" required id="Emi" value="" />
+                          <input class="input__field input__field--nao" type="hidden" name="ROI" required id="ROI" value="" />
+                          <input class="input__field input__field--nao" type="hidden" name="TotalPayableAmount" required id="TotalPayableAmount" value="" />
+                          <input class="input__field input__field--nao" type="hidden" name="ApplicantType" required id="ApplicantType" value="Applicant" />
+                          <input class="input__field input__field--nao" type="hidden" name="City" required id="City" value="" />
+                          <input class="input__field input__field--nao" type="hidden" name="EKYCFlag" required id="EKYCFlag" value="0"/>
+                          <input class="input__field input__field--nao" type="hidden" name="Processingfee" required id="Processingfee" value="" />
 
-                <input class="input__field input__field--nao" type="hidden" name="CompanyName" required id="CompanyName" onkeypress="return AllowAlphabet(event)" />
-                <input class="input__field input__field--nao" type="hidden" name="MonthlySalary" required id="MonthlySalary" onkeypress="return AllowAlphabet(event)" />
-                <input class="input__field input__field--nao" type="hidden" name="MonthlyObligation" required id="MonthlyObligation" onkeypress="return AllowAlphabet(event)" />
-                <input class="input__field input__field--nao" type="hidden" name="AppliedLoanamount" required id="AppliedLoanamount" value="" />
-                <input class="input__field input__field--nao" type="hidden" name="Tenure" required id="Tenure" value="" />
-                <input class="input__field input__field--nao" type="hidden" name="Emi" required id="Emi" value="" />
-                <input class="input__field input__field--nao" type="hidden" name="ROI" required id="ROI" value="" />
-                <input class="input__field input__field--nao" type="hidden" name="TotalPayableAmount" required id="TotalPayableAmount" value="" />
-                <input class="input__field input__field--nao" type="hidden" name="ApplicantType" required id="ApplicantType" value="Applicant" />
-                <input class="input__field input__field--nao" type="hidden" name="City" required id="City" value="" />
-                <input class="input__field input__field--nao" type="hidden" name="EKYCFlag" required id="EKYCFlag" value="0"/>
-                <input class="input__field input__field--nao" type="hidden" name="Processingfee" required id="Processingfee" value="" />
-                <span class="input input--nao">
-                    <input class="input__field input__field--nao" type="text" name="FName" required id="FName" minlength="3" onkeypress="return AllowAlphabet(event)" />
-                    <label class="input__label input__label--nao" for="FName">
-                        <span class="input__label-content input__label-content--nao">First Name </span>
-                    </label>
-                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
-                    <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
-                    </svg>
-                    
-                </span>
-                <span class="input input--nao">
-                    <input class="input__field input__field--nao" type="text" name="MName" id="MName" onkeypress="return AllowAlphabet(event)" />
-                    <label class="input__label input__label--nao" for="MName">
-                    <span class="input__label-content input__label-content--nao">Middle Name</span>
-                    </label>
-                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
-                    <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
-                    </svg>
+                          <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                             <div class="form-group">
+                              <input class="form-control input-md" type="text" name="FName" required id="FName" minlength="3" placeholder="First Name" onkeypress="return AllowAlphabet(event)" />
+                             </div>
+                          </div>
 
-                </span>
-                <span class="input input--nao">
-                    <input class="input__field input__field--nao" type="text" name="LName" id="LName" required onkeypress="return AllowAlphabet(event)" />
-                    <label class="input__label input__label--nao" for="LName">
-                    <span class="input__label-content input__label-content--nao">Last Name</span>
-                    </label>
-                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
-                    <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
-                    </svg>
-                </span>
-                <span class="input input--nao">
-                    <input class="input__field input__field--nao" type="text" name="PAN" id="PAN" oninput="pan_card('PAN')" required minlength="10" maxlength="10" />
-                    <label class="input__label input__label--nao" for="PAN">
-                    <span class="input__label-content input__label-content--nao">Pan Card No*</span>
-                    </label>
-                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
-                    <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
-                    </svg>
-                    <div id="pan_number" style="display:none;color: red;">Oops.Please Enter Valid Pan Number.!!</div>
-                </span>
+                          <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                             <div class="form-group">
+                                <input class="form-control input-md" type="text" placeholder="Middle Name" name="MName" id="MName" onkeypress="return AllowAlphabet(event)" />
+                             </div>
+                          </div>
 
+                          <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                             <div class="form-group">
+                                <input class="form-control input-md" placeholder="Last Name" type="text" name="LName" id="LName" required onkeypress="return AllowAlphabet(event)" />
+                             </div>
+                          </div>
 
-                <span class="input input--nao">
-                    <input class="input__field input__field--nao lastReporteddate1" type="text" placeholder="Date Of Birth" id="DOB" name="DOB" required />
-                    <label class="input__label input__label--nao" for="input-3">
-                    </label>
-                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
-                    <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
-                    </svg>
-                </span>
-                <span class="input input--nao">
-                    <select class="input__field input__field--nao" name="Gender" id="Gender" required>
-                        <option disabled selected value=""></option>
-                        <option>Male</option>
-                        <option>Female</option>
-                    </select>
-                    <label class="input__label input__label--nao" for="Gender">
-                    <span class="input__label-content input__label-content--nao">Gender</span>
-                    </label>
-                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
-                    <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
-                    </svg>
-                </span>
-                <h3 class="col-md-12 mrg-tpp">Where Can We Reach you</h3>
-                    <span class="input input--nao">
-                    <input class="input__field input__field--nao" type="text" name="MobileNo" id="MobileNo" onkeypress="return fnAllowNumeric(event)" maxlength="10" minlength="10" required />
-                    <label class="input__label input__label--nao" for="MobileNo">
-                    <span class="input__label-content input__label-content--nao">Mobile No.</span>
-                    </label>
-                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
-                    <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
-                    </svg>
-                </span>
-                <span class="input input--nao">
-                    <input class="input__field input__field--nao" type="text" name="AlternateMobileNo" id="AlternateMobileNo" onkeypress="return fnAllowNumeric(event)" maxlength="10" minlength="10"/>
-                    <label class="input__label input__label--nao" for="AlternateMobileNo">
-                    <span class="input__label-content input__label-content--nao">Alternate MobileNo</span>
-                    </label>
-                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
-                    <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
-                    </svg>
-                </span>
-                <span class="input input--nao">
-                    <input class="input__field input__field--nao" type="text" name="PersonalEmailID" id="PersonalEmailID" required/>
-                    <label class="input__label input__label--nao" for="PersonalEmailID">
-                    <span class="input__label-content input__label-content--nao">Email Id</span>
-                    </label>
-                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
-                    <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
-                    </svg>
-                </span>
+                          <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                             <div class="form-group">
+                                <input class="form-control input-md" type="text" name="PAN" id="PAN" oninput="pan_card('PAN')" placeholder="PAN Number" required minlength="10" maxlength="10" />
+                                <div id="pan_number" style="display:none;color: red;">Oops.Please Enter Valid Pan Number.!!
+                             </div>
+                            </div>
+                          </div>
 
-                <span class="input input--nao">
-                    <input class="input__field input__field--nao" type="text" name="AadhaarNumber" id="AadhaarNumber" oninput="aadhar('AadhaarNumber')"  minlength="12" maxlength="12"  />
-                    <label class="input__label input__label--nao" for="input-1">
-                    <span class="input__label-content input__label-content--nao">Enter Your Aadhar No.</span>
-                    </label>
-                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
-                    <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
-                    </svg>
-                    <div id="aadhar_number" style="display:none;color: red;">Oops.Please Enter Valid Aadhar Number.!!</div>
-                </span>
-            </section>
-            <section class="content">
-            <div class="col-md-12"><h3 class="mrg-tpp">Where Do You Stay</h3></div>
-                <span class="input input--nao">
-                    <input class="input__field input__field--nao" type="text" name="CurrentAddress1" id="CurrentAddress1" required />
-                    <label class="input__label input__label--nao" for="CurrentAddress1">
-                    <span class="input__label-content input__label-content--nao">Address Line 1</span>
-                    </label>
-                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
-                    <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
-                    </svg>
-                </span>
-                <span class="input input--nao">
-                    <input class="input__field input__field--nao" type="text" name="CurrentAddress2" id="CurrentAddress2" required" />
-                    <label class="input__label input__label--nao" for="CurrentAddress2">
-                    <span class="input__label-content input__label-content--nao">Address Line 2</span>
-                    </label>
-                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
-                    <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
-                    </svg>
-                </span>
-                <span class="input input--nao">
-                    <input class="input__field input__field--nao" type="text" name="CurrentAddress3" id="CurrentAddress3" required/>
-                    <label class="input__label input__label--nao" for="CurrentAddress3">
-                    <span class="input__label-content input__label-content--nao">Address Line 3</span>
-                    </label>
-                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
-                    <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
-                    </svg>
-                </span>
-                <span class="input input--nao">
-                    <input class="input__field input__field--nao" type="text" name="CurrentPin" id="CurrentPin" required minlength="6" maxlength="6" onkeypress="return fnAllowNumeric(event)" />
-                    <label class="input__label input__label--nao" for="CurrentPin">
-                    <span class="input__label-content input__label-content--nao">Pincode</span>
-                    </label>
-                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
-                    <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
-                    </svg>
-                </span>
-                <span class="input input--nao">
-                    <select class="input__field input__field--nao" name="CurrentState" id="CurrentState"  required>
-                    <option disabled selected value=""></option>
-                    </select>
-                    <label class="input__label input__label--nao" for="CurrentState">
-                    <span class="input__label-content input__label-content--nao">CurrentState</span>
-                    </label>
-                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
-                    <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
-                    </svg>
-                </span>
-                <span class="input input--nao ">
-                    <select class="input__field input__field--nao" name="CurrentCity" id="CurrentCity" required>
-                    <option disabled selected value=""></option>
-                    </select>
-                    <label class="input__label input__label--nao" for="CurrentCity">
-                    <span class="input__label-content input__label-content--nao">CurrentCity</span>
-                    </label>
-                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
-                    <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
-                    </svg>
-                </span>
-            </section>
-			
-               <div class="col-md-12"> <p class="agree"><input type="checkbox" name="same" id="same_id" onclick="same_as_above('same_id');"/> Same As Above</p></div>
-			   <hr>
-                <section class="content">
-                <div class="col-md-12"><h3 class="mrg-tpp">Permanent Address</h3></div>
-                <span class="input input--nao">
-                    <input class="input__field input__field--nao" type="text" name="PermanentAddress1" id="PermanentAddress1" required />
-                    <label class="input__label input__label--nao" for="PermanentAddress1">
-                        <span class="input__label-content input__label-content--nao">Address Line 1</span>
-                    </label>
-                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
-                    <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
-                    </svg>
-                </span>
-                <span class="input input--nao">
-                    <input class="input__field input__field--nao" type="text" name="PermanentAddress2" id="PermanentAddress2" required" />
-                    <label class="input__label input__label--nao" for="PermanentAddress2">
-                    <span class="input__label-content input__label-content--nao">Address Line 2</span>
-                    </label>
-                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
-                    <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
-                    </svg>
-                </span>
-                <span class="input input--nao">
-                    <input class="input__field input__field--nao" type="text" name="PermanentAddress3" id="PermanentAddress3" required/>
-                    <label class="input__label input__label--nao" for="PermanentAddress3">
-                    <span class="input__label-content input__label-content--nao">Address Line 3</span>
-                    </label>
-                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
-                    <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
-                    </svg>
-                </span>
-                <span class="input input--nao">
-                    <input class="input__field input__field--nao" type="text" name="PermanentPin" id="PermanentPin" required minlength="6" maxlength="6" />
-                    <label class="input__label input__label--nao" for="PermanentPin">
-                    <span class="input__label-content input__label-content--nao">Pincode</span>
-                    </label>
-                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
-                    <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
-                    </svg>
-                </span>
-                <span class="input input--nao">
-                    <select class="input__field input__field--nao" name="PermanentState" id="PermanentState" required>
-                        <option disabled selected value=""></option>
-                    </select>
-                    <label class="input__label input__label--nao" for="PermanentState">
-                    <span class="input__label-content input__label-content--nao">State</span>
-                    </label>
-                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
-                    <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
-                    </svg>
-                </span>
-                <span class="input input--nao">
-                    <select class="input__field input__field--nao" name="PermanentCity" id="PermanentCity" required>
-                        <option disabled selected value=""></option>
-                    </select>
-                    <label class="input__label input__label--nao" for="PermanentCity">
-                    <span class="input__label-content input__label-content--nao">City</span>
-                    </label>
-                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
-                    <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
-                    </svg>
-                </span>
-            </section>
-            <section class="content">
-            <div class="col-md-12"><h3 class="mrg-tpp">Residence Information</h3></div>
-                <span class="input input--nao">
-                    <select class="input__field input__field--nao fnt-clr" id="Residencetype" name="Residencetype" required>
-                        <option selected disabled value=""></option>
-                        <option value="Rented">Rented</option>
-                        <option value="Owned ">Owned</option>
-                    </select>
-                    <label class="input__label input__label--nao" for="Residencetype">
-                    <span class="input__label-content input__label-content--nao">ResidenceType</span>
-                    </label>
-                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
-                    <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
-                    </svg>
-                </span>
-                <span class="input input--nao">
-                    <input class="input__field input__field--nao" name="ResidenceStability" id="ResidenceStability" onkeypress="return fnAllowNumeric(event)" type="text"  minlength="2" maxlength="3" required />
-                    <label class="input__label input__label--nao" for="ResidenceStability">
-                    <span class="input__label-content input__label-content--nao">Period of Residence(In Months)</span>
-                    </label>
-                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
-                    <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
-                    </svg>
-                </span> 
-        </section>
-        <section class="content">
-            <div class="col-md-12"><h3 class="mrg-tpp">Personal Information</h3></div>
-                <span class="input input--nao">
-                    <select class="input__field input__field--nao" name="Education" id="Education" required>
-                       <option disabled selected value=""></option>
-                    </select>
-                    <label class="input__label input__label--nao" for="Education">
-                    <span class="input__label-content input__label-content--nao">Education*</span>
-                    </label>
-                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
-                    <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
-                    </svg>
-                </span>
-                <span class="input input--nao">
-                    <select class="input__field input__field--nao" name="PurposeofLoan" id="PurposeofLoan" required>
-                       <option disabled selected value=""></option>
-                    </select>
-                    <label class="input__label input__label--nao" for="PurposeofLoan">
-                    <span class="input__label-content input__label-content--nao">PurposeofLoan*</span>
-                    </label>
-                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
-                    <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
-                    </svg>
-                </span>
-                <span class="input input--nao">
-                    <select class="input__field input__field--nao" name="MaritalStatus" id="MaritalStatus" required>
-                       <option disabled selected value=""></option>
-                       <option value="N">Single</option>
-                       <option value="Y">Married</option>
-                    </select>
-                    <label class="input__label input__label--nao" for="input-3">
-                    <span class="input__label-content input__label-content--nao">Marital Status*</span>
-                    </label>
-                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
-                    <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
-                    </svg>
-                </span> 
-                </section>
-                <section class="content">
-                    <h3 class="col-md-12 mrg-tpp">Employment Details.</h3>
-                
-                <span class="input input--nao">
-                    <input class="input__field input__field--nao lastReporteddate1" placeholder="Joining Date" type="text" name="joining_date" id="joining_date" required />
-                    <label class="input__label input__label--nao" for="joining_date">
-                    </label>
-                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
-                    <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
-                    </svg>
-                </span>
+                            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                             <div class="form-group">
+                                <input class="form-control input-md lastReporteddate1" type="text" placeholder="Date Of Birth" id="DOB" placeholder="Date of Birth(DD/MM/YY)" name="DOB" required />
+                             </div>
+                            </div>
 
-                <span class="input input--nao">
-                    <input class="input__field input__field--nao" type="text" name="CurrentWorkExp" id="CurrentWorkExp" onkeypress="return fnAllowNumeric(event)" required />
-                    <label class="input__label input__label--nao" for="CurrentWorkExp">
-                    <span class="input__label-content input__label-content--nao">Current Work Experience (In Months)</span>
-                    </label>
-                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
-                    <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
-                    </svg>
-                </span>
+                            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                             <div class="form-group">
+                              <select class="form-control input-md" name="Gender" id="Gender" required>
+                                  <option selected="" disabled="">Gender</option>
+                                  <option value="M">Male</option>
+                                  <option value="F">Female</option>
+                              </select>
+                             </div>
+                           </div>
+                           <hr style="color:transparent; width:100%">
 
-                <span class="input input--nao">
-                    <input class="input__field input__field--nao" type="text" name="TotalWorkExp" id="TotalWorkExp" onkeypress="return fnAllowNumeric(event)" required />
-                    <label class="input__label input__label--nao" for="TotalWorkExp">
-                    <span class="input__label-content input__label-content--nao">Total Work Experience  (In Months)</span>
-                    </label>
-                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
-                    <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
-                    </svg>
-                </span>
-                <span class="input input--nao">
-                    <input class="input__field input__field--nao" type="text" name="CompanyAddress1" id="CompanyAddress1" required />
-                    <label class="input__label input__label--nao" for="CompanyAddress1">
-                    <span class="input__label-content input__label-content--nao">Company Address1</span>
-                    </label>
-                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
-                    <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
-                    </svg>
-                </span>
-                <span class="input input--nao">
-                    <input class="input__field input__field--nao" type="text" name="CompanyAddress2" id="CompanyAddress2" required />
-                    <label class="input__label input__label--nao" for="CompanyAddress2">
-                    <span class="input__label-content input__label-content--nao">Company Address2</span>
-                    </label>
-                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
-                    <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
-                    </svg>
-                </span>
-                <span class="input input--nao">
-                    <input class="input__field input__field--nao" type="text" name="CompanyAddress3" id="CompanyAddress3" required />
-                    <label class="input__label input__label--nao" for="CompanyAddress3">
-                    <span class="input__label-content input__label-content--nao">Company Address3</span>
-                    </label>
-                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
-                    <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
-                    </svg>
-                </span>
-                <span class="input input--nao">
-                    <input class="input__field input__field--nao" type="text" name="OfficeEmailID" id="OfficeEmailID" oninput="office_email('OfficeEmailID')" required />
-                    <label class="input__label input__label--nao" for="OfficeEmailID">
-                    <span class="input__label-content input__label-content--nao">Office EmailID</span>
-                    </label>
-                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
-                    <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
-                    </svg>
-                    <div id="office_email" style="display:none;color: red;">Please Enter Valid Email Id.</div>
-                </span>
-                <span class="input input--nao">
-                    <input class="input__field input__field--nao" type="text" name="CompanyPin" id="CompanyPin" minlength="6" maxlength="6" required onkeypress="return fnAllowNumeric(event)" />
-                    <label class="input__label input__label--nao" for="CompanyPin">
-                    <span class="input__label-content input__label-content--nao">Company PinCode</span>
-                    </label>
-                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
-                    <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
-                    </svg>
-                    <div id="office_email" style="display:none;color: red;">Please Enter Valid Email Id.</div>
-                </span>
-                <span class="input input--nao">
-                    <select class="input__field input__field--nao" name="CompanyState" id="CompanyState" required>
-                        <option disabled selected value=""></option>
-                    </select>
-                    <label class="input__label input__label--nao" for="CompanyState">
-                    <span class="input__label-content input__label-content--nao">Company State</span>
-                    </label>
-                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
-                    <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
-                    </svg>
-                </span>
-                <span class="input input--nao">
-                    <select class="input__field input__field--nao" name="CompanyCity" id="CompanyCity" required>
-                        <option disabled selected value=""></option>
-                    </select>
-                    <label class="input__label input__label--nao" for="CompanyCity">
-                    <span class="input__label-content input__label-content--nao">Company City</span>
-                    </label>
-                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
-                    <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
-                    </svg>
-                </span>
-            </section>
-               
-                <div class="btn-grp mrg-top m-status emp-nat" data-toggle="buttons"><h4><b>If Co-Applicant Exist :</b></h4>
-                      <span class="btn btn-primary outer-brd active"><input type="radio"  name="CoapplicantFlag"  value="1">Yes</span>
-                      <span class="btn btn-primary outer-brd"><input type="radio"  name="CoapplicantFlag" checked="" value="0" >No</span>
-                </div>
-                
-            <br>
-            <div class="col-md-12">
-             <a class="btn btn-primary btn-outline with-arrow mrg-top applicant" id="applicant_form" href="javascript:void(0);">NEXT<i class="icon-arrow-right"></i></a>
-            </div>
-            
-            </form>
-            </div>
+                           <h4 >Where Can We Reach you</h4>
 
-            <div id="co_applicant" style="display: none;" >
-                <form id="co_applicant_details" name="co_applicant_details" method="POST">
-                 <?php echo e(csrf_field()); ?>
+                           <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                             <div class="form-group">
+                              <input class="form-control input-md" type="text" name="MobileNo" id="MobileNo" onkeypress="return fnAllowNumeric(event)" maxlength="10" minlength="10" required />
+                             </div>
+                            </div>
 
-                <section class="content">
-                <h3 class="col-md-12 mrg-tpp">Tell Us a Bit About Co-applicant</h3>
-                <span class="input input--nao">
-                <input class="input__field input__field--nao" type="hidden" name="CoKYCFlag" required id="CoKYCFlag" value="1"/>
-                    <input class="input__field input__field--nao" type="text" name="CoCompanyName" required id="CoCompanyName" onkeypress="return AllowAlphabet(event)" />
-                    <label class="input__label input__label--nao" for="CoCompanyName">
-                        <span class="input__label-content input__label-content--nao">Company Name </span>
-                    </label>
-                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
-                        <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
-                    </svg>
-                </span>
-                <span class="input input--nao">
-                    <input class="input__field input__field--nao" type="text" name="CoMonthlySalary" required id="CoMonthlySalary" onkeypress="return fnAllowNumeric(event)" />
-                    <label class="input__label input__label--nao" for="CoMonthlySalary">
-                        <span class="input__label-content input__label-content--nao">MonthlySalary</span>
-                    </label>
-                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
-                        <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
-                    </svg>
-                </span>
-                <span class="input input--nao">
-                    <input class="input__field input__field--nao" type="text" name="CoMonthlyObligation" required id="CoMonthlyObligation" onkeypress="return fnAllowNumeric(event)" />
-                    <label class="input__label input__label--nao" for="CoMonthlyObligation">
-                        <span class="input__label-content input__label-content--nao">MonthlyObligation</span>
-                    </label>
-                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
-                        <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
-                    </svg>
-                </span>
-                <span class="input input--nao">
-                    <select class="input__field input__field--nao" name="RelationwithApplicant" id="RelationwithApplicant" required>
-                    <option disabled selected value="Relation With Applicant"></option>
-                      <option value="Father">Father</option>
-                      <option value="Mother">Mother</option>
-                      <option value="Brother">Brother</option>
-                      <option value="Sister">Sister</option>
-                      <option value="Niece">Niece</option>
-                      <option value="Nephew">Nephew</option>
-                      <option value="Son">Son</option>
-                      <option value="Daughter">Daughter</option>
-                      <option value="Self">Self</option>
-                      <option value="Spouse">Spouse</option>
-                      <option value="Other">Other</option>
-                    </select>
-                    <label class="input__label input__label--nao" for="RelationwithApplicant">
-                        <span class="input__label-content input__label-content--nao">Relation with Applicant</span>
-                    </label>
-                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
-                        <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
-                    </svg>
-                </span>
-                <span class="input input--nao">
-                    <input class="input__field input__field--nao" type="text" name="CoFName" required id="CoFName" onkeypress="return AllowAlphabet(event)" />
-                    <label class="input__label input__label--nao" for="CoFName">
-                        <span class="input__label-content input__label-content--nao">First Name </span>
-                    </label>
-                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
-                        <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
-                    </svg>
-                </span>
-                <span class="input input--nao">
-                    <input class="input__field input__field--nao" type="text" name="CoMName" id="CoMName" onkeypress="return AllowAlphabet(event)" />
-                    <label class="input__label input__label--nao" for="CoMName">
-                        <span class="input__label-content input__label-content--nao">Middle Name</span>
-                    </label>
-                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
-                        <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
-                    </svg>
-                </span>
-                <span class="input input--nao">
-                    <input class="input__field input__field--nao" type="text" name="CoLName" id="CoLName" required onkeypress="return AllowAlphabet(event)" />
-                    <label class="input__label input__label--nao" for="CoLName">
-                        <span class="input__label-content input__label-content--nao">Last Name</span>
-                    </label>
-                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
-                        <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
-                    </svg>
-                </span>
-                <span class="input input--nao">
-                    <input class="input__field input__field--nao" type="text" name="CoPAN" id="CoPAN" oninput="co_pan_card('CoPAN')" required minlength="10" maxlength="10" />
-                    <label class="input__label input__label--nao" for="CoPAN">
-                        <span class="input__label-content input__label-content--nao">Pan Card No*</span>
-                    </label>
-                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
-                        <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
-                    </svg>
-                  <div id="co_pan_number" style="display:none;color: red;">Oops.Please Enter Valid Pan Number.!!</div>
-                </span>
+                            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                             <div class="form-group">
+                                <input class="form-control input-md" type="text" name="AlternateMobileNo" id="AlternateMobileNo" placeholder="Alternate Mobile Number" onkeypress="return fnAllowNumeric(event)" maxlength="10" minlength="10"/>
+                             </div>
+                            </div>
+
+                            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                              <div class="form-group">
+                                <input class="form-control input-md" type="text" name="PersonalEmailID" id="PersonalEmailID" required/>
+                                </div>
+                              </div>
+
+                              <div class="row" style="margin-left: 0px;">
+                              <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                <div class="form-group">
+                                <input class="form-control input-md" type="text" name="AadhaarNumber" id="AadhaarNumber" placeholder="Aadhar Number" oninput="aadhar('AadhaarNumber')"  minlength="12" maxlength="12"  />
+                                <div id="aadhar_number" style="display:none;color: red;">Oops.Please Enter Valid Aadhar Number.!!</div>
+                                </div>
+                              </div>
+                            </div>
+                            <hr style="color:transparent; width:100%">
+
+                              <h4 >Where Do You Stay</h4>
+
+                              <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                <div class="form-group">
+                                <input class="form-control input-md" type="text" placeholder="Address Line 1" name="CurrentAddress1" id="CurrentAddress1" required />
+                                </div>
+                               </div>
+
+                               <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                  <div class="form-group">
+                                   <input class="form-control input-md" placeholder="Address Line 2" type="text" name="CurrentAddress2" id="CurrentAddress2" required" />
+                                  </div>
+                                </div>
+
+                                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                    <div class="form-group">
+                                   <input class="form-control input-md" type="text" name="CurrentAddress3" id="CurrentAddress3" placeholder="Address Line 3" required/>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                <div class="form-group">
+                                <input class="form-control input-md" type="text" name="CurrentPin" id="CurrentPin" placeholder="Pincode" required minlength="6" maxlength="6" onkeypress="return fnAllowNumeric(event)" />
+                                </div>
+                                </div>
+
+                                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                  <div class="form-group">
+                                    <select class="form-control input-md" name="CurrentState" id="CurrentState"  required>
+                                    <option selected value="">Select State</option>
+                                    </select>
+                                   </div>
+                                </div>
+
+                                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                   <div class="form-group">
+                                  <select class="form-control input-md" name="CurrentCity" id="CurrentCity" required>
+                                  <option selected value="">Select City</option>
+                                  </select>                                
+                                  </div>
+                              </div>
 
 
-                <span class="input input--nao">
-                    <input class="input__field input__field--nao lastReportedcodate1" type="text" placeholder="Date Of Birth" id="CoDOB" name="CoDOB" required />
-                    <label class="input__label input__label--nao" for="CoDOB">
-                        <!-- <span class="input__label-content input__label-content--nao">Date of Birth</span> -->
-                    </label>
-                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
-                        <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
-                    </svg>
-                </span>
-                <span class="input input--nao">
-                    <select class="input__field input__field--nao" name="CoGender" id="CoGender" required>
-                    <option disabled selected value=""></option>
-                      <option>Male</option>
-                      <option>Female</option>
-                    </select>
-                    <label class="input__label input__label--nao" for="CoGender">
-                        <span class="input__label-content input__label-content--nao">Gender</span>
-                    </label>
-                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
-                        <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
-                    </svg>
-                </span>
-                
-                <h3 class="col-md-12 mrg-tpp">Where Can We Reach you</h3>
-                
-                <span class="input input--nao">
-                    <input class="input__field input__field--nao" type="text" name="CoMobileNo" id="CoMobileNo" onkeypress="return fnAllowNumeric(event)" maxlength="10" minlength="10" required />
-                    <label class="input__label input__label--nao" for="CoMobileNo">
-                        <span class="input__label-content input__label-content--nao">Mobile No.</span>
-                    </label>
-                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
-                        <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
-                    </svg>
-                </span>
-                <span class="input input--nao">
-                    <input class="input__field input__field--nao" type="text" name="CoAlternateMobileNo" id="CoAlternateMobileNo" onkeypress="return fnAllowNumeric(event)" maxlength="10" minlength="10"/>
-                    <label class="input__label input__label--nao" for="AlternateMobileNo">
-                        <span class="input__label-content input__label-content--nao">Residence Landline</span>
-                    </label>
-                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
-                        <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
-                    </svg>
-                </span>
-                <span class="input input--nao">
-                    <input class="input__field input__field--nao" type="text" name="CoAadhaarNumber" id="CoAadhaarNumber" oninput="co_aadhar('CoAadhaarNumber')" required minlength="12" maxlength="12"  />
-                    <label class="input__label input__label--nao" for="CoAadhaarNumber">
-                        <span class="input__label-content input__label-content--nao">Enter Your Aadhar No.</span>
-                    </label>
-                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
-                        <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
-                    </svg>
-                    <div id="co_aadhar_number" style="display:none;color: red;">Oops.Please Enter Valid Aadhar Number.!!</div>
-                </span>
-                <span class="input input--nao">
-                    <input class="input__field input__field--nao" type="text" name="CoPersonalEmailID" id="CoPersonalEmailID" oninput="co_mail('CoPersonalEmailID')" required />
-                    <label class="input__label input__label--nao" for="CoPersonalEmailID">
-                        <span class="input__label-content input__label-content--nao">Email Id</span>
-                    </label>
-                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
-                        <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
-                    </svg>
-                    <div id="co_email" style="display:none;color: red;">Please Enter Valid Email Id.</div>
-                </span>
-                
+                                <div class="col-md-12"> <p class="agree"><input type="checkbox" name="same" id="same_id" onclick="same_as_above('same_id');"/> Same As Above</p></div>
+                                <hr style="color:transparent; width:100%">
+                                <h4 >Permanent Address</h4>
 
-                
-            </section>
-            <section class="content">
-                    <h3 class="col-md-12 mrg-tpp">Employment Details.</h3>
-                    <span class="input input--nao">
-                    <input class="input__field input__field--nao" type="text" name="CoCurrentWorkExp" id="CoCurrentWorkExp" onkeypress="return fnAllowNumeric(event)" required />
-                    <label class="input__label input__label--nao" for="CoCurrentWorkExp">
-                        <span class="input__label-content input__label-content--nao">Current Work Experience (In Months)</span>
-                    </label>
-                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
-                        <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
-                    </svg>
-                </span>
+                                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                  <div class="form-group">
+                                <input id="PermanentAddress1" name="PermanentAddress1" type="text" placeholder="Address Line 1" class="form-control input-md" required="required">
+                                 </div>
+                                </div>
 
-                <span class="input input--nao">
-                    <input class="input__field input__field--nao" type="text" name="CoTotalWorkExp" id="CoTotalWorkExp" onkeypress="return fnAllowNumeric(event)" required />
-                    <label class="input__label input__label--nao" for="CoTotalWorkExp">
-                        <span class="input__label-content input__label-content--nao">Total Work Experience  (In Months)</span>
-                    </label>
-                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
-                        <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
-                    </svg>
-                </span>
-                </section>
-                <section class="content">
-            <div class="col-md-12"><h3 class="mrg-tpp">Where Co-Applicant Stays</h3></div>
-                
-                <span class="input input--nao">
-                    <input class="input__field input__field--nao" type="text" name="CoCurrentAddress1" id="CoCurrentAddress1" required />
-                    <label class="input__label input__label--nao" for="CoCurrentAddress1">
-                        <span class="input__label-content input__label-content--nao">Address Line 1</span>
-                    </label>
-                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
-                        <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
-                    </svg>
-                </span>
-                <span class="input input--nao">
-                    <input class="input__field input__field--nao" type="text" name="CoCurrentAddress2" id="CoCurrentAddress2" required" />
-                    <label class="input__label input__label--nao" for="CoCurrentAddress2">
-                        <span class="input__label-content input__label-content--nao">Address Line 2</span>
-                    </label>
-                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
-                        <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
-                    </svg>
-                </span>
-                <span class="input input--nao">
-                    <input class="input__field input__field--nao" type="text" name="CoCurrentAddress3" id="CoCurrentAddress3" required/>
-                    <label class="input__label input__label--nao" for="CoCurrentAddress3">
-                        <span class="input__label-content input__label-content--nao">Address Line 3</span>
-                    </label>
-                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
-                        <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
-                    </svg>
-                </span>
-                <span class="input input--nao">
-                    <input class="input__field input__field--nao" type="text" name="CoCurrentPin" id="CoCurrentPin" required minlength="6" maxlength="6" onkeypress="return fnAllowNumeric(event)" />
-                    <label class="input__label input__label--nao" for="CoCurrentPin">
-                        <span class="input__label-content input__label-content--nao">Pincode</span>
-                    </label>
-                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
-                        <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
-                    </svg>
-                </span>
-                <span class="input input--nao">
-                    <select class="input__field input__field--nao" name="CoCurrentState" id="CoCurrentState" required>
-                    <option disabled selected value=""></option>
-                      
-                    </select>
-                    <label class="input__label input__label--nao" for="CoCurrentState">
-                        <span class="input__label-content input__label-content--nao">CurrentState</span>
-                    </label>
-                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
-                        <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
-                    </svg>
-                </span>
-                <span class="input input--nao">
-                    <select class="input__field input__field--nao" name="CoCurrentCity" id="CoCurrentCity" required>
-                    <option disabled selected value=""></option>
-                      
-                    </select>
-                    <label class="input__label input__label--nao" for="CoCurrentCity">
-                        <span class="input__label-content input__label-content--nao">CurrentCity</span>
-                    </label>
-                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
-                        <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
-                    </svg>
-                </span>
-                
-              
-                </section>
-                <input type="checkbox" name="co_same" id="co_same_id" onclick="co_same_as_above('co_same_id');"/> Same As Above
-                <section class="content">
-            <div class="col-md-12"><h3 class="mrg-tpp">Permanent Address</h3></div>
-                
-                <span class="input input--nao">
-                    <input class="input__field input__field--nao" type="text" name="CoPermanentAddress1" id="CoPermanentAddress1" required />
-                    <label class="input__label input__label--nao" for="CoPermanentAddress1">
-                        <span class="input__label-content input__label-content--nao">Address Line 1</span>
-                    </label>
-                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
-                        <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
-                    </svg>
-                </span>
-                <span class="input input--nao">
-                    <input class="input__field input__field--nao" type="text" name="CoPermanentAddress2" id="CoPermanentAddress2" required" />
-                    <label class="input__label input__label--nao" for="CoPermanentAddress2">
-                        <span class="input__label-content input__label-content--nao">Address Line 2</span>
-                    </label>
-                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
-                        <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
-                    </svg>
-                </span>
-                <span class="input input--nao">
-                    <input class="input__field input__field--nao" type="text" name="CoPermanentAddress3" id="CoPermanentAddress3" required/>
-                    <label class="input__label input__label--nao" for="CoPermanentAddress3">
-                        <span class="input__label-content input__label-content--nao">Address Line 3</span>
-                    </label>
-                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
-                        <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
-                    </svg>
-                </span>
-                <span class="input input--nao">
-                    <input class="input__field input__field--nao" type="text" name="CoPermanentPin" id="CoPermanentPin" required minlength="6" maxlength="6" onkeypress="return fnAllowNumeric(event)" />
-                    <label class="input__label input__label--nao" for="CoPermanentPin">
-                        <span class="input__label-content input__label-content--nao">Pincode</span>
-                    </label>
-                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
-                        <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
-                    </svg>
-                </span>
-                <span class="input input--nao">
-                     <select class="input__field input__field--nao" name="CoPermanentState" id="CoPermanentState" required>
-                    <option disabled selected value=""></option>
-                      
-                    </select>
-                    <label class="input__label input__label--nao" for="CoPermanentState">
-                        <span class="input__label-content input__label-content--nao">State</span>
-                    </label>
-                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
-                        <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
-                    </svg>
-                </span>
-                <span class="input input--nao">
-                    <select class="input__field input__field--nao" name="CoPermanentCity" id="CoPermanentCity" required>
-                    <option disabled selected value=""></option>
-                      
-                    </select>
-                    <label class="input__label input__label--nao" for="CoPermanentCity">
-                        <span class="input__label-content input__label-content--nao">City</span>
-                    </label>
-                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
-                        <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
-                    </svg>
-                </span>
-                
-               
-                </section>
-                <div class="col-md-12">
+                                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                  <div class="form-group">
+                                <input id="PermanentAddress2" name="PermanentAddress2" type="text" placeholder="Address Line 2" class="form-control input-md" required="required">
+                                   </div>
+                                </div>
+
+                                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                  <div class="form-group">
+                                      <input id="PermanentAddress3" name="PermanentAddress3" type="text" placeholder="Address Line 3" class="form-control input-md" required="required">
+                                       </div>
+                                  </div>
+
+                                  <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                   <div class="form-group">
+                                      <input id="PermanentPin" name="PermanentPin" type="text" placeholder="Pincode" class="form-control input-md" required="required" minlength="6" maxlength="6">
+                                       </div>
+                                  </div>
+
+
+                                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                  <div class="form-group">
+                                    <select class="form-control input-md" name="PermanentState" id="PermanentState"  required>
+                                    <option selected value="0">Select State</option>
+                                    </select>
+                                   </div>
+                                </div>
+
+                                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                   <div class="form-group">
+                                  <select class="form-control input-md" name="PermanentCity" id="PermanentCity" required>
+                                  <option selected value="">Select City</option>
+                                  </select>                                
+                                  </div>
+                              </div>
+                              <hr style="color:transparent; width:100%">
+
+                              <div class="row" style="margin-left: 0px;">
+                                <h4 >Residence Information</h4>
+
+                                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                   <div class="form-group">                                                     
+                                      <select class="form-control input-md" id="Residencetype" name="Residencetype" required>
+                                        <option selected value="">Recidence Type</option>
+                                        <option value="Rented">Rented</option>
+                                        <option value="Owned ">Owned</option>
+                                    </select>
+                                   </div>
+                                </div>
+
+                                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                   <div class="form-group"> 
+                                      <select class="form-control input-md" id="PermanentResidenceType" name="PermanentResidenceType" required>
+                                          <option selected value="">Permanent Residence Type</option>
+                                          <option value="Rented">Rented</option>
+                                          <option value="Owned">Owned</option>
+                                      </select>
+                                    </div>
+                                  </div>
+
+
+
+                                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                   <div class="form-group">
+                                    <input class="form-control input-md" name="ResidenceStability" id="ResidenceStability" placeholder="Period of Residence (In Months)" onkeypress="return fnAllowNumeric(event)" type="text"  minlength="2" maxlength="3" required />
+                                   </div>
+                              </div>
+                               <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"> </div>
+
+                              </div>
+                              <hr style="color:transparent; width:100%">
+
+                              <h4 >Personal Information</h4>
+
+                            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                             <div class="form-group">
+                              <select class="form-control input-md" name="Education" id="Education" required>
+                                 <option selected value="">Education</option>
+                              </select>
+                             </div>
+                           </div>
+
+                           <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                             <div class="form-group">
+                              <select class="form-control input-md" name="PurposeofLoan" id="PurposeofLoan" required>
+                               <option selected value="">Purpose Of Loan</option>
+                            </select>
+                             </div>
+                           </div>
+
+                           <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                             <div class="form-group">
+                              <select class="form-control input-md" name="MaritalStatus" id="MaritalStatus" required>
+                                 <option selected value="">Marital Status</option>
+                                 <option value="N">Single</option>
+                                 <option value="Y">Married</option>
+                              </select>
+                             </div>
+                           </div>
+
+                           <hr style="color:transparent; width:100%">
+
+                           <h4 >Employment Details</h4>
+
+                           <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                             <div class="form-group">
+                                <input class="form-control input-md lastReporteddate1" placeholder="Joining Date" type="text" name="joining_date" id="joining_date" required />
+                             </div>
+                            </div>
+
+                            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                             <div class="form-group">
+                                <input class="form-control input-md" type="text" name="CurrentWorkExp" id="CurrentWorkExp" placeholder="Current Work Experience (In Months)" onkeypress="return fnAllowNumeric(event)" required />
+                             </div>
+                            </div>
+
+                            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                             <div class="form-group">
+                                <input class="form-control input-md" type="text" name="TotalWorkExp" id="TotalWorkExp" placeholder="Total Work Experience (In Months)" onkeypress="return fnAllowNumeric(event)" required />   
+                              </div>
+                              </div>
+
+                              <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                 <div class="form-group">
+                                    <input class="form-control input-md" type="text" name="CompanyAddress1" id="CompanyAddress1" placeholder="Company Address 1" required />
+                                 </div>
+                              </div>
+
+                              <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                   <div class="form-group">
+                                     <input class="form-control input-md" placeholder="Company Address 2" type="text" name="CompanyAddress2" id="CompanyAddress2" required />
+                                   </div>
+                              </div>
+
+                              <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                 <div class="form-group">
+                                    <input class="form-control input-md" type="text" name="CompanyAddress3" placeholder="Company Address 3" id="CompanyAddress3" required />            
+                                  </div>
+                              </div>
+
+                              <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                <div class="form-group">
+                                  <input class="form-control input-md" type="text" name="OfficeEmailID" id="OfficeEmailID" placeholder="Office Email ID" oninput="office_email('OfficeEmailID')" required />
+                                </div>
+                                <div id="office_email" style="display:none;color: red;">Please Enter Valid Email Id.</div>
+                              </div>
+
+                              <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                <div class="form-group">
+                                  <input placeholder="Company Pincode" class="form-control input-md" type="text" name="CompanyPin" id="CompanyPin" minlength="6" maxlength="6" required onkeypress="return fnAllowNumeric(event)" />
+                                </div>
+                                <div id="office_email" style="display:none;color: red;">Please Enter Valid Pincode.</div>
+                                </div>
+
+                                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                <div class="form-group">
+                                  <select class="form-control input-md" name="CompanyState" id="CompanyState" required>
+                                    <option selected value="">Select State</option>
+                                   </select>
+                                 </div>
+                               </div>
+
+                               <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                <div class="form-group">
+                                  <select class="form-control input-md" name="CompanyCity" id="CompanyCity" required>
+                                          <option selected value="">Select City</option>
+                                      </select>
+                                    </div>
+                                  </div>
+
+                                  
+
+                              <!-- <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                             <div class="form-group">
+                                  <label class="switch">                             
+                               Add Co-Applicant     
+                                <input type="checkbox" id="co_applicant_DI" value="1" name="CoapplicantFlag"> 
+                              <input type="hidden" id="co_applicant_DI" name="CoapplicantFlag" value="0">
+                              </label>
+                                  </div>
+                                </div> -->
+
+                            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                             <div class="form-group">
+                              <select id="CoapplicantFlag" class="form-control input-md" name="CoapplicantFlag">
+                                    <option selected disabled="">If Co-Applicant Exist</option>
+                                    <option value="1">Yes</option>
+                                    <option value="0">No</option>
+                                </select>
+                              </div>
+                            </div>
+
+                              <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                               <a class="btn btn-default btn-sm applicant" id="applicant_form" href="javascript:void(0);">NEXT</a>
+                              </div>
+
+                              <hr style="color:transparent; width:100%">
+                        </div>
+                      </div>
+
+                    </form>
+                    <!-- Applicant detail form close -->
+
+                    <!-- coaaplicant details -->
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding-bottom: 20px;display: none;" id="co_applicant">
+                        <div class="how-it-block1 bg-boxshadow" style=" min-height: auto;float: left;">
+                          <div id="" style="" >
+                            <form id="co_applicant_details" name="co_applicant_details" method="POST">
+                             <?php echo e(csrf_field()); ?>
+
+                             <h4>Tell Us a Bit About Co-applicant</h4>
+                             <input class="input__field input__field--nao" type="hidden" name="CoKYCFlag" required id="CoKYCFlag" value="1"/>
+
+                             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                             <div class="form-group">
+                              <input class="form-control input-md" type="text" name="CoCompanyName" required id="CoCompanyName" placeholder="Company Name" onkeypress="return AllowAlphabet(event)" />
+                              </div>
+                              </div>
+
+                              <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                <div class="form-group">
+                                  <input class="form-control input-md" type="text" name="CoMonthlySalary" required id="CoMonthlySalary" placeholder="Monthly Salary" onkeypress="return fnAllowNumeric(event)" />
+                                </div>
+                              </div>
+
+                              <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                <div class="form-group">
+                                  <input class="form-control input-md" type="text" name="CoMonthlyObligation" required id="CoMonthlyObligation" placeholder="Monthly obligation" onkeypress="return fnAllowNumeric(event)" />
+                                </div>
+                              </div>
+
+                              <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                <div class="form-group">
+                                  <select class="form-control input-md" name="RelationwithApplicant" id="RelationwithApplicant" required>
+                                      <option selected value="Relation With Applicant"></option>
+                                      <option value="Father">Father</option>
+                                      <option value="Mother">Mother</option>
+                                      <option value="Brother">Brother</option>
+                                      <option value="Sister">Sister</option>
+                                      <option value="Niece">Niece</option>
+                                      <option value="Nephew">Nephew</option>
+                                      <option value="Son">Son</option>
+                                      <option value="Daughter">Daughter</option>
+                                      <option value="Self">Self</option>
+                                      <option value="Spouse">Spouse</option>
+                                      <option value="Other">Other</option>
+                                    </select>
+                                </div>
+                              </div>
+
+                              <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                <div class="form-group">
+                                  <input class="form-control input-md" type="text" name="CoFName" required id="CoFName" placeholder="First Name" onkeypress="return AllowAlphabet(event)" />
+                                </div>
+                              </div>
+
+                              <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                <div class="form-group">
+                                  <input class="form-control input-md" type="text" name="CoMName" id="CoMName" onkeypress="return AllowAlphabet(event)" placeholder="Middle Name" />
+                                </div>
+                              </div>
+
+                              <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                <div class="form-group">
+                                  <input class="form-control input-md" type="text" name="CoLName" id="CoLName" required onkeypress="return AllowAlphabet(event)" placeholder="Last Name" />
+                                </div>
+                              </div>
+
+                              <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                <div class="form-group">
+                                  <input class="form-control input-md" type="text" name="CoPAN" id="CoPAN" oninput="co_pan_card('CoPAN')" placeholder="Pan Card No*" required minlength="10" maxlength="10" />
+                                </div>
+                                <div id="co_pan_number" style="display:none;color: red;">Oops.Please Enter Valid Pan Number.!!
+                              </div>
+                            </div>
+
+                              <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                <div class="form-group">
+                                  <input class="form-control input-md lastReportedcodate1" type="text" placeholder="Date Of Birth" id="CoDOB" name="CoDOB" required />
+                                </div>
+                              </div>
+
+                              <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                <div class="form-group">
+                                  <select class="form-control input-md" name="CoGender" id="CoGender" required>
+                                    <option selected value="">Gender</option>
+                                    <option value="M">Male</option>
+                                    <option value="F">Female</option>
+                                  </select>
+                                </div>
+                              </div>
+
+                              <hr style="color:transparent; width:100%">
+
+                              <h4 >Where Can We Reach you</h4>
+
+                              <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                <div class="form-group">
+                                  <input class="form-control input-md" type="text" name="CoMobileNo" id="CoMobileNo" onkeypress="return fnAllowNumeric(event)" maxlength="10" minlength="10" placeholder="Mobile Number" required />
+                                </div>
+                              </div>
+
+                               <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                <div class="form-group">
+                                  <input class="form-control input-md" type="text" name="CoAlternateMobileNo" id="CoAlternateMobileNo" onkeypress="return fnAllowNumeric(event)" maxlength="10" minlength="10" placeholder="Alternate Mobile" />
+                                </div>
+                                </div>
+
+                                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                <div class="form-group">
+                                  <input class="form-control input-md" type="text" name="CoAadhaarNumber" id="CoAadhaarNumber" oninput="co_aadhar('CoAadhaarNumber')" required minlength="12" maxlength="12" placeholder="Enter Your Aadhar No."  />
+                                </div>
+                                <div id="co_aadhar_number" style="display:none;color: red;">Oops.Please Enter Valid Aadhar Number.!!</div>
+                                </div>
+
+                                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                <div class="form-group">
+                                  <input class="form-control input-md" type="text" name="CoPersonalEmailID" id="CoPersonalEmailID" oninput="co_mail('CoPersonalEmailID')" placeholder="Email Id" required />
+                                </div>
+                                <div id="co_email" style="display:none;color: red;">Please Enter Valid Email Id.</div>
+                                </div>
+
+                                <hr style="color:transparent; width:100%">
+
+                              <h4 >Employment Details</h4>
+
+                                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                <div class="form-group">
+                                  <input class="form-control input-md" type="text" name="CoCurrentWorkExp" id="CoCurrentWorkExp" onkeypress="return fnAllowNumeric(event)" placeholder="Current Work Experience (In Months)" required />
+                                </div>
+                                </div>
+
+                                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                <div class="form-group">
+                                  <input class="form-control input-md" type="text" name="CoTotalWorkExp" id="CoTotalWorkExp" onkeypress="return fnAllowNumeric(event)" placeholder="Total Work Experience  (In Months)" required />
+                                </div>
+                                </div>
+
+                                <hr style="color:transparent; width:100%">
+
+                              <h4 >Where Co-Applicant Stays</h4>
+
+                                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                <div class="form-group">
+                                  <input class="form-control input-md" type="text" name="CoCurrentAddress1" id="CoCurrentAddress1" placeholder="Address Line 1" required />
+                                </div>
+                                </div>
+
+                                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                <div class="form-group">
+                                  <input class="form-control input-md" type="text" name="CoCurrentAddress2" id="CoCurrentAddress2" placeholder="Address Line 2" required" />
+                                </div>
+                                </div>
+
+                                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                <div class="form-group">
+                                  <input class="form-control input-md" type="text" name="CoCurrentAddress3" id="CoCurrentAddress3" placeholder="Address Line 3" required/>
+                                </div>
+                                </div>
+
+                                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                <div class="form-group">
+                                   <input class="form-control input-md" type="text" name="CoCurrentPin" id="CoCurrentPin" required minlength="6" maxlength="6" onkeypress="return fnAllowNumeric(event)" placeholder="Pincode" />
+                                </div>
+                                </div>
+
+                                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                <div class="form-group">
+                                  <select class="form-control input-md" name="CoCurrentState" id="CoCurrentState" required>
+                                    <option selected value="">State</option>
+                                   </select>
+                                  </div>
+                                </div>
+
+                                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                <div class="form-group">
+                                  <select class="form-control input-md" name="CoCurrentCity" id="CoCurrentCity" required>
+                                    <option selected value="">City</option>
+                                  </select>
+                                </div>
+                                </div>
+
+                                <div class="col-md-12"> 
+                                  <input type="checkbox" name="co_same" id="co_same_id" onclick="co_same_as_above('co_same_id');"/> Same As Above</div>
+                                <hr style="color:transparent; width:100%">
+                                <h4 >Permanent Address</h4>                          
+
+                                
+
+                                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                <div class="form-group">
+                                  <input class="form-control input-md" type="text" name="CoPermanentAddress1" id="CoPermanentAddress1" placeholder="Address Line 1" required />
+                                </div>
+                                </div>
+
+                                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                <div class="form-group">
+                                  <input class="form-control input-md" type="text" name="CoPermanentAddress2" id="CoPermanentAddress2" placeholder="Address Line 2" required />
+                                </div>
+                                </div>
+
+                                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                <div class="form-group">
+                                  <input class="form-control input-md" type="text" name="CoPermanentAddress3" id="CoPermanentAddress3" placeholder="Address Line 3" required />
+                                </div>
+                                </div>
+
+                                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                <div class="form-group">
+                                <input class="form-control input-md" type="text" name="CoPermanentPin" id="CoPermanentPin" required minlength="6" maxlength="6" placeholder="Pincode" onkeypress="return fnAllowNumeric(event)" />
+                                  </div>
+                                </div>
+
+                                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                <div class="form-group">
+                                  <select class="form-control input-md" name="CoPermanentState" id="CoPermanentState" required>
+                                  <option selected value="">State</option>
+                                  </select>
+                                </div>
+                                </div>
+
+                                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                <div class="form-group">
+                                  <select class="form-control input-md" name="CoPermanentCity" id="CoPermanentCity" required>
+                                    <option selected value="">City</option>
+                                  </select>
+                                </div>
+                                </div>
+
+                                <div class="col-md-12">
              <a class="btn btn-primary btn-outline with-arrow mrg-top applicant" id="co_applicant_form" href="javascript:void(0);">NEXT<i class="icon-arrow-right"></i></a>
             </div>
-            
+
+
+
+
+
+                           </form>
+                         </div>
+                       </div>
+                     </div>
+              <!-- coaaplicant details end -->
+
+              </div>
+              <!-- Applicant detail div close -->
+
+              <!-- adhaar OTP  -->
+              
+              <div id="otp" style="display: none;">
+                <form name="aadharotp" id="aadharotp" method="POST">
+                  <?php echo e(csrf_field()); ?>
+
+                  <div class="col-lg-12">
+                                    <table class="">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">Company Name:</th>
+                                                <th scope="col">Monthly Salary:</th>
+                                                <th scope="col">Current EMI:</th>                                  
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><span id="comp_name"></span></td>
+                                                <td><i class="fa fa-inr"></i> <span id="salary"></span></td>
+                                                <td><i class="fa fa-inr"></i> <span id="paying_emi"></span></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <br><br> 
+                         <table class="">
+                          <thead>
+                            <tr>
+                              <th colspan="5" style="text-align: center;">Loan Details</th>
+                            </tr>
+                              <tr>
+                                <th scope="col">Loan Amount</th>
+                                <th scope="col">Rate of Interest</th>
+                                <th scope="col">EMI</th>
+                                <th scope="col">Loan Tenure</th>
+                                <th scope="col">Processing Fees</th>                                           
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td><i class="fa fa-inr"></i> <span id="loanamt"></span></td>
+                                <td><span id="intrest"></span>%</td>
+                                <td><i class="fa fa-inr"></i> <span id="e_m_i"></span></td>
+                                <td><span id="loantenure"></span></td>
+                                <td><span id="process_fee"></span></td>
+                              </tr>
+                            </tbody>
+                         </table>      
+                       </div>
+                                       
+                <h4>OTP to verify your Aadhar Details:</h4>
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                  <div class="form-group">
+                 <input class="form-control input-md" type="text" name="Aadharno" id="Aadharno" oninput="aadharnum('Aadharno')" required minlength="12" maxlength="12" placeholder="Enter Your Aadhar No" />
+               </div>
+               <div id="aadhar_no" style="display:none;color: red;">Oops.Please Enter Valid Aadhar Number.!!</div>
+              </div>
+
+              <div class="col-md-12"><a class="btn btn-primary btn-outline with-arrow mrg-btm otp" id="aadhar_otp" href="javascript:void(0)">Get OTP<i class="icon-arrow-right"></i></a></div>
+
+              <h4>Proceed Without aadhar Number</h4>
+
+              <a class="btn btn-primary btn-outline with-arrow mrg-top" id="proceed_without_aadhar" href="javascript:void(0)">Click  Here<i class="icon-arrow-right"></i></a>
+
                 </form>
-            </div>
-
-            <br>
-            <!-- <hr class="hr-sty"> -->
-            <div id="otp" style="display: none;">
-            <form name="aadharotp" id="aadharotp" method="POST">
-             <?php echo e(csrf_field()); ?>
-
-             <section class="content">
+              </div>
             
-            <div class="col-md-12">
-            <table class="table table-bordered" width="100%">
-                <tr>
-                    <td class="bg-info">Company Name: <b><span id="comp_name"></span></b></td>
-                    <td class="bg-danger">Monthly Salary: <b><span id="salary"></span></b></td>
-                    <td class="bg-info">Current EMI: <b><span id="paying_emi"></span></b></td>
-                </tr>
-             </table>
-                </div>
-                <div class="col-md-1"></div>
-                <div class="col-md-10 bg-primary pad mrg-btm">
-                   
-                  <div class="col-md-3 bdr-rigt">Loan Details</div>
-                  <div class="col-md-3 bdr-rigt">
-                  <p>Loan Amount:- <b><span id="loanamt"></span></b></p>
-                  <p>Loan Tenure:- <b><span id="loantenure"></span></b></p>
-                  </div>
-                  <div class="col-md-3 bdr-rigt">
-                  <p>Rate of Intrest:- <b><span id="intrest"></span></b></p>
-                  <p>Processing Fees:- <b><span id="process_fee"></span></b></p>
-                  </div>
-                  <div class="col-md-3">
-                  <p>EMI:- <b><span id="e_m_i"></span></b></p>
-                  </div>
-                </div>
-                <div class="col-md-1"></div>
-                
-                <h3 class="col-md-12 mrg-tpp">OTP to verify your Aadhar Details:</h3>
-                <span class="input input--nao input--filled">
-                    <input class="input__field input__field--nao" type="text" name="Aadharno" id="Aadharno" oninput="aadharnum('Aadharno')" required minlength="12" maxlength="12"  />
-                    <label class="input__label input__label--nao" for="input-1">
-                        <span class="input__label-content input__label-content--nao">Enter Your Aadhar No.</span>
-                    </label>
-                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
-                        <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
-                    </svg>
-                    <div id="aadhar_no" style="display:none;color: red;">Oops.Please Enter Valid Aadhar Number.!!</div>
-                </span>
-                 
-                
-                <!-- <h4 class="text-danger small-txt">OTP has been sent to your Registred Mobile No.</h4> -->
-                <div class="col-md-12"><a class="btn btn-primary btn-outline with-arrow mrg-btm otp" id="aadhar_otp" href="javascript:void(0)">Get OTP<i class="icon-arrow-right"></i></a></div>
-                </section>
-                <h3 class="mrg-tpp">Proceed Without aadhar Number</h3>
-                <a class="btn btn-primary btn-outline with-arrow mrg-top" id="proceed_without_aadhar" href="javascript:void(0)">Click  Here<i class="icon-arrow-right"></i></a>
-                </form>
-                </div>
-                
+              <!-- adhaar OTP end -->
 
-                <div id="confirm_otp" style="display: none;">
+              <!-- confirm otp -->
+              <div id="confirm_otp" style="display: none;">
                 <form name="confirm_aadharotp" id="confirm_aadharotp" method="POST">
                 <?php echo e(csrf_field()); ?>
 
-                <section>
-                <div>
-                <span class="input input--nao">
-                    <input class="input__field input__field--nao" name="otp" id="OTP" type="text" onkeypress="return fnAllowNumeric(event)" required/>
-                    <label class="input__label input__label--nao" for="OTP">
-                        <span class="input__label-content input__label-content--nao">Enter OTP</span>
-                    </label>
-                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
-                        <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
-                    </svg>
-                </span>
-                <div class="col-md-12 mrg-btm"><a class="btn btn-primary btn-outline with-arrow mrg-top" id="confirm" href="javascript:void(0)">Confirm<i class="icon-arrow-right"></i></a></div>
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                  <div class="form-group">
+                    <input class="form-control input-md" name="otp" id="OTP" type="text" onkeypress="return fnAllowNumeric(event)" placeholder="Enter OTP" required/>
+                  </div>
                 </div>
-                
-                
-            </section>
-            </form>
-        </div>
-         
-            <br>
-            <div id="Instant_Approve" style="display: none;">
-            <form name="instant_form" id="instant_form" method="POST">
-                      <?php echo e(csrf_field()); ?>
-
-            <section class="content">
-            <hr class="hr-sty">
-            
-            <div class="col-md-12">
-             <h3>Congratulation!!<i><b class="text-primary"><span id="first_name"></span></b></i>&nbsp;You are eligible for a loan of <b>₹<span id="maxloan"></span></b> </h3>
-             <br>
-             <h6>You Are Applicable For Minimum Loanamount&nbsp;&nbsp;<b>₹<span style="color: red" id="minloanamt"></span></b> & Minimum Tenure&nbsp;&nbsp; <b><span style="color: red" id="minTenure"></span>(in months)</b></h6>
-            </div>
-                
-                <span class="input input--nao input--filled">
-                <input class="input__field input__field--nao" type="hidden" name="TotalPayableAmount" id="PayableAmount" required  value="" />
-                    <input class="input__field input__field--nao" type="text" name="AppliedLoanamount" id="Applied"  onkeypress="return fnAllowNumeric(event)" value="" required />
-                    <label class="input__label input__label--nao" for="Applied">
-                        <span class="input__label-content input__label-content--nao">Loan Amount</span>
-                    </label>
-                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
-                        <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
-                    </svg>
-                </span>
-                <span class="input input--nao input--filled">
-                    <input class="input__field input__field--nao" type="text" name="Tenure" id="Period"  onkeypress="return fnAllowNumeric(event)" value="" required />
-                    <label class="input__label input__label--nao" for="Period">
-                        <span class="input__label-content input__label-content--nao">Loan Tenure(in years)</span>
-                    </label>
-                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
-                        <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
-                    </svg>
-                </span>
-                <span class="input input--nao input--filled">
-                    <input class="input__field input__field--nao" type="text" name="Emi" onkeypress="return fnAllowNumeric(event)"  readonly="readonly" value=""  />
-                    <label class="input__label input__label--nao" for="Emi">
-                        <span class="input__label-content input__label-content--nao">EMI</span>
-                    </label>
-                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
-                        <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
-                    </svg>
-                </span>
-                <span class="input input--nao input--filled">
-                <input class="input__field input__field--nao" type="text" name="ROI"  onkeypress="return fnAllowNumeric(event)" value="" readonly="readonly" />
-                    <label class="input__label input__label--nao" for="ROI">
-                        <span class="input__label-content input__label-content--nao">ROI</span>
-                    </label>
-                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
-                        <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
-                    </svg>
-                </span>
-                <span class="input input--nao input--filled">
-                <input class="input__field input__field--nao" type="text" name="Processingfee"  onkeypress="return fnAllowNumeric(event)" value="" readonly="readonly"  />
-                    <label class="input__label input__label--nao" for="Processingfee">
-                        <span class="input__label-content input__label-content--nao">Processing fee</span>
-                    </label>
-                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
-                        <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
-                    </svg>
-                </span>
-                 <hr>
-                <div class="col-md-12 text-danger mar-top"><input type="checkbox" name="check" required /> I Agree to all the terms and conditions.</div>
-            
-            <div class="col-md-12">
-             <a class="btn btn-primary btn-outline with-arrow mrg-top" id="instant_approve" href="javascript:void(0)">Get Instant Approve<i class="icon-arrow-right"></i></a>
-            </div>
-            
-            </section>
-
-            </form>
-            </div>
-
-            <div id="upload" style="display: none;" >
-            <form name="upload_details" id="upload_details" enctype="multipart/form-data" method="POST">
-            <?php echo e(csrf_field()); ?>
-
-            <div>
-            <section class="mrg-top">
-              <h1 class="text-center"><i>Congratulation</i></h1>
-              <h3 class="text-info pad">Your Personal Loan of<b>₹<span id="personal_loan_amount"></span></b></h3>
-              
-            
-            <div class="col-md-12">
-            <table class="table table-bordered" width="100%">
-                <tbody>
-                <tr>
-                    <td class="bg-info">Rate of Intrest: <b><span id="intst"></span>%</b></td>
-                    <td class="bg-info">Processing Fees: <b><span id="fees"></span>%</b></td>
-                    <td class="bg-info">EMI: <b>₹<span id="installment_amount"></span></b></td>
-                    <td class="bg-info">Loan Tenure: <b><span id="perid"></span>years</b></td>
-                </tr>
-             </tbody>
-             </table>
-             
-             <h4>Our representive will get in touch with you. Please proceed to upload the necessary document for quick disbursal to learn more about IIFL Express loan </h4>
+                <div class="col-md-12 mrg-btm"><a class="btn btn-primary btn-outline with-arrow mrg-top" id="confirm" href="javascript:void(0)">Confirm<i class="icon-arrow-right"></i></a>
                 </div>
-                </section>
-                </div>
-                
-             <section class="content">      
-            
-                <div class="col-md-8 col-md-offset-2">
+              </form>
+              </div>
+              <!-- confirm otp end -->
+
+              <!-- InstantApproval -->
+              <div id="Instant_Approve" style="display: none;">
+                <form name="instant_form" id="instant_form" method="POST">
+                  <?php echo e(csrf_field()); ?>
+
+                  <div class="col-md-12">
+                  <h3>Congratulation!!<i><b class="text-primary"><span id="first_name"></span></b></i>&nbsp;You are eligible for a loan of <b>₹<span id="maxloan"></span></b> </h3>
+                    <br>
+                    <h5>You Are Applicable For Minimum Loanamount&nbsp;&nbsp;<b>₹<span style="color: red" id="minloanamt"></span></b> & Minimum Tenure&nbsp;&nbsp; <b><span style="color: red" id="minTenure"></span>(in months)</b></h5>
+                  </div>
+
+                      <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                      <div class="form-group">
+                        <input class="form-control input-md" type="hidden" name="TotalPayableAmount" id="PayableAmount" required  value="" />
+                        <input class="form-control input-md" type="text" name="AppliedLoanamount" id="Applied"  onkeypress="return fnAllowNumeric(event)" placeholder="Loan Amount" value="" required />
+                        </div>
+                      </div>
+
+                      <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                      <div class="form-group">
+                      <input class="form-control input-md" type="text" name="Tenure" id="Period"  onkeypress="return fnAllowNumeric(event)" placeholder="Loan Tenure(in years)" value="" required />
+                        </div>
+                      </div>
+
+                          <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                            <div class="form-group">
+                              <input class="form-control input-md" type="text" name="Emi" onkeypress="return fnAllowNumeric(event)" placeholder="Emi"  readonly="readonly" value=""  />
+                            </div>
+                          </div>
+
+                          <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                            <div class="form-group">
+                              <input class="form-control input-md" type="text" name="ROI"  onkeypress="return fnAllowNumeric(event)" value="" placeholder="ROI" readonly="readonly" />
+                            </div>
+                          </div>
+
+                          <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                            <div class="form-group">
+                              <input class="form-control input-md" type="text" name="Processingfee"  onkeypress="return fnAllowNumeric(event)" value="" placeholder="Processing fee" readonly="readonly"  />
+                            </div>
+                          </div>
+
+                          <hr>
+                          <div class="col-md-12 text-danger mar-top">
+                            <input type="checkbox" name="check" required /> I Agree to all the terms and conditions.
+                          </div>
+
+                          
+                              <div class="col-md-12">
+                                 <a class="btn btn-primary btn-outline with-arrow mrg-top" id="instant_approve" href="javascript:void(0)">Get Instant Approve<i class="icon-arrow-right"></i></a>
+                               </div>                        
+
+               </form>
+              </div>
+              <!-- InstantApproval end -->
+
+              <!-- UploadDetails -->
+              <div id="upload" style="display: none;" >
+                <form name="upload_details" id="upload_details" enctype="multipart/form-data" method="POST">
+                  <?php echo e(csrf_field()); ?>
+
+                  <div class="col-md-12">
+                   <h1 class="text-center"><i>Congratulation</i></h1>
+                   <h3 class="text-info pad">Your Personal Loan of<b>₹<span id="personal_loan_amount"></span></b></h3>
+                   <table>
+                    <thead>
+                        <tr>
+                          <th colspan="5" style="text-align: center;">Loan Details</th>
+                            </tr>
+                              <tr>
+                                <th scope="col">Rate of Intrest</th>
+                                <th scope="col">Processing Fees</th>
+                                <th scope="col">EMI</th>
+                                <th scope="col">Loan Tenure</th>                                           
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td><b><span id="intst"></span>%</b></td>
+                                <td><b><span id="fees"></span>%</b></td>
+                                <td><b>₹<span id="installment_amount"></span></b></td>
+                                <td><span id="LoanTenure"></span></td>
+                                <td><b><span id="perid"></span>years</b></td>
+                              </tr>
+                            </tbody>
+                            </table>
+
+                            <h4>Our representive will get in touch with you. Please proceed to upload the necessary document for quick disbursal to learn more about IIFL Express loan </h4>
+                          </div>
+
+                           <div class="col-md-8 col-md-offset-2">
                 <h3 class="text-center pad">Non Financial Documents</h3>
                 <ul class="ull">
                    <li>Identity Proof <input type="file" name="identity_proof" id="identity_proof" class="pull-right" required data-category="1" />
@@ -1227,127 +1084,102 @@
                     <a class="btn btn-primary btn-outline with-arrow mrg-top" id="proceed_upload">Proceed<i class="icon-arrow-right"></i></a>
                 </div>
                 </div>
-                
-                </section>
-            </form>
-            </div>
-                
 
-            <div id="financial_doc" style="display: none;" >
 
-                <form name="financial_details" id="financial_details" enctype="multipart/form-data" method="POST">
-                 <?php echo e(csrf_field()); ?>
+                </form>
+              </div>
+              <!-- UploadDetails end -->
+              <!-- financial doc -->
+              <div id="financial_doc" style="display: none;" >
+                    <form name="financial_details" id="financial_details" enctype="multipart/form-data" method="POST">
+                     <?php echo e(csrf_field()); ?>
 
-                <div class="row">
-                <div class="col-md-12">
-                <hr>
-                <h3 class="text-center pad">Financial Documents</h3>
-                
-              <section class="content">
-				
-				<span class="input input--nao">
-                    <input class="input__field input__field--nao" type="text" name="BankName" id="BankName" required onkeypress="return AllowAlphabet(event)" />
-                    <label class="input__label input__label--nao" for="LName">
-                    <span class="input__label-content input__label-content--nao">Name Of The Bank</span>
-                    </label>
-                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
-                    <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
-                    </svg>
-                </span>
-				
-				<span class="input input--nao">
-                    <select class="input__field input__field--nao" name="Accounttype" id="Accounttype" required>
-                        <option disabled selected value=""></option>
-                    </select>
-                    <label class="input__label input__label--nao" for="Accounttype">
-                    <span class="input__label-content input__label-content--nao">Account Type</span>
-                    </label>
-                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
-                    <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
-                    </svg>
-                </span>
-				
-				
-                 <div>
+                          <hr>
+                            <h4>Financial Documents</h4>
 
-              <h3 class="text-center pad">Bank Statement</h3>
-				 
-				 <span class="input input--nao">
-                    <select class="input__field input__field--nao" name="sub_catg[]" id="BankStatement" required>
-                        <option disabled selected value=""></option>
-                    </select>
-                    <label class="input__label input__label--nao" for="Accounttype">
-                    <span class="input__label-content input__label-content--nao">Bank Statement</span>
-                    </label>
-                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
-                    <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
-                    </svg>
-                </span>
-				<div class="input input--nao"><input type="file" name="BankStatement"/></div>
-				<span class="input input--nao">
-                    <input class="input__field input__field--nao" type="text" name="IFSC" id="IFSC" required onkeypress="return AllowAlphabet(event)" />
-                    <label class="input__label input__label--nao" for="IFSC">
-                    <span class="input__label-content input__label-content--nao">IFSC</span>
-                    </label>
-                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
-                    <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
-                    </svg>
-                </span>
+                            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                             <div class="form-group">
+                              <input class="form-control input-md" type="text" name="BankName" id="BankName" required onkeypress="return AllowAlphabet(event)" />
+                             </div>
+                              </div>
 
-                 <span class="input input--nao">
-                    <select class="input__field input__field--nao" name="sub_catg[]" id="SalarySatement" required>
-                        <option disabled selected value=""></option>
-                    </select>
-                    <label class="input__label input__label--nao" for="SalaryStatement">
-                    <span class="input__label-content input__label-content--nao">Salary Statement</span>
-                    </label>
-                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
-                    <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
-                    </svg>
-                </span>
-				<div class="input input--nao"><input type="file" name="SalarySatement" /></div>
-				
-				 <span class="input input--nao">
-                    <select class="input__field input__field--nao" name="Statementtype" id="Statementtype" required>
-                        <option disabled selected value=""></option>
-						<option value="Manual">Manual</option>
-						<option value="E-verify">E-verify</option>
-                    </select>
-                    <label class="input__label input__label--nao" for="PermanentState">
-                    <span class="input__label-content input__label-content--nao">Statement Type</span>
-                    </label>
-                    <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
-                    <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
-                    </svg>
-                </span>
-				
-                 </div>
-            
-			</section>
-               
-                
-                <div class="col-md-12 mrg-top"> 
-                <div class="col-md-12">
+                              <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                <div class="form-group">
+                                  <select class="form-control input-md" name="Accounttype" id="Accounttype" required>
+                                      <option selected value="">Select A/C Type</option>
+                                  </select>
+                                </div>
+                              </div>
+
+                              <h4>Bank Statement</h4>
+                              <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                <div class="form-group">
+                                      <select class="form-control input-md" name="sub_catg[]" id="BankStatement" required>
+                                          <option selected value="">Bank Statement</option>
+                                      </select>
+                                    </div>
+                                  </div>
+
+                                  <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                    <div class="form-group">
+                                      <input class="form-control input-md" type="text" name="IFSC" id="IFSC" required onkeypress="return AllowAlphabet(event)" />
+                                    </div>
+                                  </div>
+
+                                  <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                    <div class="form-group">
+                                      <select class="form-control input-md" name="sub_catg[]" id="SalarySatement" required>
+                                          <option selected value="">Salary Statement</option>
+                                      </select>
+                                    </div>
+                                  </div>
+                                  <div class="input input--nao"><input type="file" name="SalarySatement"/></div>
+
+                                  <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                    <div class="form-group">
+                                      <select class="form-control input-md" name="Statementtype" id="Statementtype" required>
+                                        <option selected value="">Statement Type</option>
+                                        <option value="Manual">Manual</option>
+                                        <option value="E-verify">E-verify</option>
+                                      </select>
+                                    </div>
+                                  </div>
+
+                                  <div class="col-md-12">
                     <a class="btn btn-primary btn-outline with-arrow mrg-top" id="proceed">Proceed<i class="icon-arrow-right"></i></a>
                 </div>
-        
-            </div>
-            </div>
-            
-            </form>
 
-            </div>
-			</div>
-             <?php echo $__env->make('layout.script', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
-			</div>
-			</div>
-			</div>
-			
-			</div>
-			
-			</div>
-             <?php echo $__env->make('layout.footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+                          
+                          </form>
+                        </div>
+                <!-- financial doc end-->
 
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+<?php echo $__env->make('layout.script', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php echo $__env->make('layout.footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<!-- script -->
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('#co_applicant_DI').change(function(){
+
+      $('.co_applicant_DI').val('1');
+     
+        if(this.checked)
+           $('#co_applicant').show();
+         // $('#co_applicant_DI').val('YES');
+         else
+         $('#co_applicant').hide();
+         // $('#co_applicant_DI').val('YES');           
+
+    });
+  });
+</script>
 
 
 <script type="text/javascript">
@@ -1429,9 +1261,7 @@
 }
 </script>
 
-<script type="text/javascript">
-
-    
+<script type="text/javascript">    
 
  $(document).ready(function(){
     src = "<?php echo e(route('searchajax')); ?>";
@@ -1473,19 +1303,18 @@
 </script>
 <script type="text/javascript">
 $(document).ready(function(){
-
+  src = "<?php echo e(route('searchiiflcompanyajax')); ?>";
     $(".search_company").autocomplete({
       source: function(request, response) {
         
         $.ajax({
-          url: "<?php echo e(route('searchiiflcompanyajax')); ?>",
+          url: src,
           dataType: "json",
           data: {
             term : request.term
           },
           success: function(data) {
-           // //console.log(data);
-
+           console.log(data);
             response(data);
             
           }
@@ -1657,8 +1486,8 @@ $(document).ready(function(){
          success: function(msg){       
             populate_state(msg,'CurrentState');
             // populate_state(msg,'PermanentState');
-            // populate_state(msg,'CoCurrentState');
-            // populate_state(msg,'CoPermanentState');
+            populate_state(msg,'CoCurrentState');
+            populate_state(msg,'CoPermanentState');
             populate_state(msg,'CompanyState');
 
     }
@@ -1705,9 +1534,9 @@ $(document).ready(function(){
                 populate_city_education(msg,'CurrentCity');
                 // populate_city_education(msg,'PermanentCity');
                 populate_city_education(msg,'city');
-                // populate_city_education(msg,'CoCurrentCity');
-                // populate_city_education(msg,'CoPermanentCity');
-                 populate_city_education(msg,'CompanyCity');
+                populate_city_education(msg,'CoCurrentCity');
+                populate_city_education(msg,'CoPermanentCity');
+                populate_city_education(msg,'CompanyCity');
 
             }else if(param=='EducationMaster'){
                 populate_city_education(msg,'Education');
@@ -1749,19 +1578,38 @@ $(document).ready(function(){
    }
 </script>
 
+<!-- <script>
+$(document).ready(function(){
+    $("#Monthly_Salary").blur(function(){
+       var sal = $('#Monthly_Salary').val();
+           if (sal < 25000) 
+           {
+             alert('Your Net Income Should Be Greater than 25000 OR 25000');
+            // $("#Monthly_Salary").focus();
+             return false;
+           }
+    });
+});
+</script> -->
+
 <script type="text/javascript">
 var global_eligible_amount=0;
 var global_tenure=0;
+var $ = jQuery;
+// $.noConflict();
     $('.next').click(function(event){
-    //event.preventDefault();
-    if(! $('#iifl_express_loan').valid()){
-    // alert('okae');
-    //      return false;
-    }else{
+      // alert('hii');
+    // event.preventDefault();
+    
+    if(!$('#iifl_express_loan').valid()){
+    // alert('not valid');
+         return false;
+    }else{ //alert('okae');
            var net_income = $('#Monthly_Salary').val();
            if (net_income < 25000) 
            {
              alert('Your Net Income Should Be Greater Than 25000 OR 25000');
+             // $('#Monthly_Salary').val("");
              return false;
            }
            var mobile =$('#Mob_Num').val();
@@ -1772,13 +1620,17 @@ var global_tenure=0;
            }
             $('#iifl_express_loan').hide();
             $('#Eligibility_details').show();
-            
+            // $("#Eligibility_details").css("display", "block");
             var email_address = $('#EmailID').val();
             // //console.log(email_address);
             $('#PersonalEmailID').val(email_address);
+            $('#Email').val(email_address);
+            $('#Email').closest( "span" ).addClass( "input--filled" );
 
             var mob_number = $('#Mob_Num').val();
             $('#MobileNo').val(mob_number);
+            $('#MobilePhone').val(mob_number);
+            $('#MobilePhone').closest( "span" ).addClass( "input--filled" );
 
             var stay_at = $('#city').val();
             // //console.log(stay_at);
@@ -1808,16 +1660,16 @@ var global_tenure=0;
             $('#Current').empty().append(emi);
             $('#MonthlyObligation').val(emi);
             $('#paying_emi').empty().append(emi);
-
+// console.log()
          $.ajax({  
                 type: "POST",  
                 url: "<?php echo e(URL::to('iifl-eligibility')); ?>",
                 data : $('#iifl_express_loan').serialize(),
                 success: function(msg){
                         var data=msg[0];
-                        // //console.log(msg);
+                        console.log(msg);
                         var result=loan_eligibility_calc(data.Max_Tenure,data.pf,data.roi,data.foir);
-                        // //console.log(msg);
+                        console.log(msg);
                 
                         
     }  
@@ -1826,8 +1678,8 @@ var global_tenure=0;
 
     });
     function loan_eligibility_calc(tenure,pf,roi,foir){
-        // //console.log(foir);
-        // //console.log(tenure+"  " +pf+ "  "+roi);
+        console.log(foir);
+        console.log(tenure+"  " +pf+ "  "+roi);
         var processing_fee =pf;
         $('#fee').empty().append(processing_fee);
         $('#Processingfee').val(processing_fee);
@@ -1884,10 +1736,16 @@ var global_tenure=0;
             var no_of_days= days*12;
             var applied_loan=$('#AppliedLoan').val();
             var fee=$('#fee').text();
+            console.log(fee);
+            var processing=fee/100*applied_loan;
+            console.log(processing);
+            $('#Processingfee').val(processing);
+
             var EMI=$('#EMI').val();
             // //console.log(EMI);
             $('#Eligibility_details').hide();
-            $('#Applicant_Details').show();
+            $('#iifl-lead').show();
+            // $('#Applicant_Details').show();
             $('#Amount').empty().append(applied_loan);
             $('#loanamt').empty().append(applied_loan);
             $('#LoanTenure').empty().append(days);
@@ -1908,7 +1766,19 @@ var global_tenure=0;
             $('#loantenure').val(days);
             $('#intrest').val(a);
             $('#ProcessFee').val(fee);
-            $('#e_m_i').val(EMI);         
+            $('#e_m_i').val(EMI);  
+
+            $.ajax({
+              type: "POST",  
+              url: "<?php echo e(URL::to('iifl-token')); ?>",
+              data :$('#eligibility_form').serialize(),
+              success: function(msg){
+                console.log(msg);
+                $('#Token').val(msg);
+                $('#Token').closest( "span" ).addClass( "input--filled" );
+
+              }
+            });       
          }
 
     });
@@ -1932,6 +1802,33 @@ var global_tenure=0;
          $('#TotalPayableAmount').val(ttl_payment);
     
 });
+</script>
+
+<script type="text/javascript">
+    $('.lead_save').click(function(){
+        
+     if(! $('#iifl_lead').valid() ){
+            
+         }else{
+            var name=$('#FirstName').val();
+            $('#FName').val(name);
+            var lname=$('#LastName').val();
+            $('#LName').val(lname);
+             $('#iifl-lead').hide();
+            $('#Applicant_Details').show();
+            $.ajax({  
+             type: "POST",  
+             url: "<?php echo e(URL::to('iifl-lead-save')); ?>",
+             data : $('#iifl_lead').serialize(),
+             success: function(msg){
+                console.log(msg[0].ID);
+                $('#CRMLeadId').val(msg[0].ID);
+              
+            
+         }  
+      });
+         }
+    });
 </script>
 
 <script type="text/javascript">
@@ -1968,9 +1865,19 @@ var global_tenure=0;
                  if($( "input[name=CoapplicantFlag]:checked" ).val()==1)
                 {
                      $('#co_applicant').show();
+                     // alert('hii');
                 }else{
                      $('#otp').show();
                 }
+             // if (msg.head.status != "1") {
+             //  // $("#CoapplicantFlag option:selected").val();
+             //     if($("#CoapplicantFlag option:selected").val()==1)
+             //    {
+             //         $('#co_applicant').show();
+             //         // alert('hii');
+             //    }else{
+             //         $('#otp').show();
+             //    }
                       
             } else{
                  alert("Reason: "+msg.head.status_description);   
@@ -2303,6 +2210,12 @@ $('#Applied, #Period').on('input', function () {
      $('#PermanentAddress2').closest( "span" ).removeClass( "input--filled" ); 
      $('#PermanentAddress3').closest( "span" ).removeClass( "input--filled" );
      $('#PermanentPin').closest( "span" ).removeClass( "input--filled" );
+     $('#PermanentState').val('');
+     $('#PermanentCity').val('');
+     // $('#PermanentState option[value="0"]').attr('selected','selected');
+     
+    
+     
     }
 }
 </script>
@@ -2630,6 +2543,15 @@ $('#Applied, #Period').on('input', function () {
        });    
    </script>
 
-   
 
-   
+<script type="text/javascript">
+    $(function () {
+        $("#CoapplicantFlag").change(function () {
+            if ($(this).val() == "1") {
+                $("#co_applicant").show();
+            } else {
+                $("#co_applicant").hide();
+            }
+        });
+    });
+</script>

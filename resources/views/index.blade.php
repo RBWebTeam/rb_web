@@ -69,7 +69,7 @@ $(document).ready(function(){
                     <div class="header-action">
                         <a href="{{URL::to('equifax-verification')}}" class="btn btn-credit" style="padding:14px 12px">Free Credit Report</a>
                         <a href="{{URL::to('contact-us')}}" class="btn btn-default" style="padding:14px 13px">Expert Assistance</a>
-                        <a class="search-btn-2 search-btn2 trigger-custom2"  href="#" style="text-align: center; width: 45px; height: 45px; padding: 7px; display: inline-block; vertical-align:bottom"><i style="font-size: 30px;" class="fa fa-user"></i><span class="tooltiptext">Sign In</span></a>
+                        <a class="search-btn-2 search-btn2 trigger-custom2"  href="#modal-custom2" style="text-align: center; width: 45px; height: 45px; padding: 7px; display: inline-block; vertical-align:bottom"><i style="font-size: 30px;" class="fa fa-user"></i><span class="tooltiptext">Sign In</span></a>
                     </div>
                 </div>
             </div>

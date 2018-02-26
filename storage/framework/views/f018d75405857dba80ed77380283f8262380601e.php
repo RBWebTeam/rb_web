@@ -1,4 +1,4 @@
-@include('layout.header')
+<?php echo $__env->make('layout.header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 
 <div class=" ">
         <!-- content start -->
@@ -15,8 +15,9 @@
                       <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12" style="padding-bottom: 20px">
                     <div class="how-it-block1 bg-boxshadow" style=" min-height: 600px;">
                         <h4 >Business Information</h4>
-                        <form name='working_capital_process_form' id='working_capital_process_form' action={{URL::to('loan-submit')}} method="POST">
-                        {{ csrf_field() }}
+                        <form name='working_capital_process_form' id='working_capital_process_form' action=<?php echo e(URL::to('loan-submit')); ?> method="POST">
+                        <?php echo e(csrf_field()); ?>
+
                         <input type="hidden" id="product" name="product_name" value="11">                    
 
                         <div class="col-md-4 col-sm-12 col-xs-12">
@@ -675,8 +676,8 @@
     <script src="js/back-to-top.js" type="text/javascript"></script>
     <!-- Faq Accordion -->
     <script src="js/accordion.js" type="text/javascript"></script>
- @include('layout.footer')
-  @include('layout.script')
+ <?php echo $__env->make('layout.footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+  <?php echo $__env->make('layout.script', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 
 
 <div class="modal fade" tabindex="-1" role="dialog" id="working_capital_process">
@@ -801,7 +802,7 @@
         // $(".credit-submit").hide(); 
         $.ajax({  
          type: "POST",  
-         url: "{{URL::to('working-capital-submit')}}",
+         url: "<?php echo e(URL::to('working-capital-submit')); ?>",
          data : $('#'+form).serialize(),
          dataType: 'json',
          success: function(msg){
@@ -854,6 +855,6 @@
 
  <script type="text/javascript">
 $("#apply_new").click(function() {
-   window.location.href ="{{URL::to('thank-you')}}";
+   window.location.href ="<?php echo e(URL::to('thank-you')); ?>";
 });
 </script>

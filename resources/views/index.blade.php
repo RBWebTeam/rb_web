@@ -70,6 +70,7 @@ $(document).ready(function(){
                         <a href="{{URL::to('equifax-verification')}}" class="btn btn-credit" style="padding:14px 12px">Free Credit Report</a>
                         <a href="{{URL::to('contact-us')}}" class="btn btn-default" style="padding:14px 13px">Expert Assistance</a>
                         <a class="search-btn-2 search-btn2 trigger-custom2"  href="#modal-custom2" style="text-align: center; width: 45px; height: 45px; padding: 7px; display: inline-block; vertical-align:bottom"><i style="font-size: 30px;" class="fa fa-user"></i><span class="tooltiptext">Sign In</span></a>
+                        <a href="#" data-toggle="modal" data-target="#log_popup">Sign in</a>
                     </div>
                 </div>
             </div>
@@ -128,75 +129,6 @@ $(document).ready(function(){
     </div>
 
  <div id="modal-welcome" class="iziModal"></div>
- <div id="modal-custom2" class="iziModal" data-iziModal-group="grupo1">
-
-
-        <button data-iziModal-close class="fa fa-times-circle"></button>
-
-
-      
-
-
-
-
-         <header>
-            <a href="#" id="signin">Log In</a>
-            <a href="#" class="active">Register</a>
-        </header>
-
-
-        <section class="hide">
-
-             <a type="button" style="background-color: #3D5A98; color: #fff;  padding: 14px 20px; margin-bottom:50px; border: none; cursor: pointer; text-align:center; width: 30%;" href="http://facebook.com" target="_blank" class="ui-link"><strong>With Facebook</strong></a>
-
-             <a type="button" style="background-color: #ed1c24; color: #fff;  padding: 14px 20px; margin-bottom:50px; border: none; cursor: pointer; text-align:center; width: 30%;" href="http://gmail.com" target="_blank" class="ui-link"><strong>With Google Plus</strong></a>
-            <br /><br />
-            <h4>OR</h4>
-            
-
-            <input type="text" placeholder="Email">
-            <input type="password" placeholder="Password">
-            <p style="text-align:right"><a href="forgot-password.html">Forgot Password ?</a></p>
-            <div class="col-md-4 col-sm-4 col-xs-12">
-                <button type="login" class="btn btn-default btn-sm " style="width: 100%;">Log In</button>     
-                
-                       
-            </div>
-
-           
-        </section>
-
-
-        <section>
-
-             <a type="button" style="background-color: #3D5A98; color: #fff;  padding: 14px 20px; margin-bottom:50px; border: none; cursor: pointer; text-align:center; width: 30%;" href="http://facebook.com" target="_blank" class="ui-link"><strong>With Facebook</strong></a>
-
-             <a type="button" style="background-color: #ed1c24; color: #fff;  padding: 14px 20px; margin-bottom:50px; border: none; cursor: pointer; text-align:center; width: 30%;" href="http://gmail.com" target="_blank" class="ui-link"><strong>With Google Plus</strong></a>
-            <br /><br />
-            <h4>OR</h4>
-            
-
-            <!--<button class="thm-btn"><i class="fa fa-facebook"></i> Sign up with Facebook</button>    -->
-
-            <input type="text" placeholder="User Name">
-            <input type="text" placeholder="Email Address">
-            <input type="mobile" placeholder="Mobile Number">
-            <input type="password" placeholder="Password">
-            <input type="confirm-password" placeholder="Confirm Password">
-            
-           <div class="col-md-4 col-sm-4 col-xs-12">
-                    
-                 <button type="register" class="btn btn-default btn-sm " style="width: 100%;">Register</button>
-                    
-            </div>
-
-           
-        </section>
-
-
-
-        <br /><br />
-    </div>
 
 
 

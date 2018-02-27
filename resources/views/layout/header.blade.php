@@ -74,6 +74,7 @@ $(document).ready(function(){
                         <a href="{{URL::to('equifax-verification')}}" class="btn btn-credit" style="padding:14px 12px">Free Credit Report</a>
                         <a href="{{URL::to('contact-us')}}" class="btn btn-default" style="padding:14px 13px">Expert Assistance</a>
                         <a class="search-btn-2 search-btn2 trigger-custom2"  href="#" style="text-align: center; width: 45px; height: 45px; padding: 7px; display: inline-block; vertical-align:bottom"><i style="font-size: 30px;" class="fa fa-user"></i><span class="tooltiptext">Sign In</span></a>
+                        <!-- <a href="#" data-toggle="modal" data-target="#log_popup">Sign in</a> -->
                     </div>
                 </div>
             </div>
@@ -155,12 +156,7 @@ $(document).ready(function(){
         <button data-iziModal-close class="fa fa-times-circle"></button>
 
 
-      
-
-
-
-
-         <header>
+        <header>
             <a href="#" id="signin">Log In</a>
             <a href="#" class="active">Register</a>
         </header>
@@ -175,11 +171,12 @@ $(document).ready(function(){
             <h4>OR</h4>
             
 
-            <input type="text" placeholder="Email">
+            <input type="text" placeholder="Enter Email">
             <input type="password" placeholder="Password">
             <p style="text-align:right"><a href="forgot-password.html">Forgot Password ?</a></p>
             <div class="col-md-4 col-sm-4 col-xs-12">
-                <button type="login" class="btn btn-default btn-sm " style="width: 100%;">Log In</button>     
+                <button type="login" class="btn btn-default btn-sm " style="width: 100%;">Log In</button> 
+                <button id="login_submit" class="btn btn-default btn-sm login-submit " style="width: 100%;">Login</button>    
                 
                        
             </div>

@@ -326,9 +326,9 @@ angular.module('MyApp',['ngMaterial', 'ngMessages', 'material.svgAssetsCache'])
                 <hr>
                 <p><b>Landmark Lifestyle Cars Pvt Ltd - Showroom</b></p>
                 <p>15, Mahableshwar Property, Champion Compound, <br>Parsi Panchayat Off Western Express Highway, <br>Andheri East - 400069, Mumbai, Maharashtra
-<br><b>Phone No :</b> 022 - 49056600, 7045877732
-<br><b>Opening Days :</b> Mon - Sat
-<br><b>Opening hours :</b> 09:30 AM - 06:30 PM</p-->
+<b>Phone No :</b> 022 - 49056600, 7045877732
+<b>Opening Days :</b> Mon - Sat
+<b>Opening hours :</b> 09:30 AM - 06:30 PM</p-->
                 <h2>RupeeBoss Financial Services Pvt. Ltd.</h2>
                 <p>5C/5D, 1st Floor, The Centrium, Phoenix Marketcity, Kurla West, Mumbai-400070, Maharashtra</p>
               </div>
@@ -422,6 +422,7 @@ $('.video-lnk').click(function(){
   });
 });
 </script>
+@include('layout.script')
 </body>
 
 </html>

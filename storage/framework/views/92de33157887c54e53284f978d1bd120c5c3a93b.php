@@ -1,13 +1,13 @@
-
-
 <div class="footer section-space40">
         <!-- footer -->
         <div class="container">
-            <div class="row">
+            <!-- container div -->
+             <div class="row">
                 <div class="col-md-4 col-sm-4 col-xs-12">
                     <div class="footer-logo">
                         <!-- Footer Logo -->
-                        <img src="<?php echo e(URL::to('images/footer-rupee-boss-logo.png')); ?>" alt="Rupee Boss"> </div>
+                        <img src="<?php echo e(URL::to('images/footer-rupee-boss-logo.png')); ?>" alt="Rupee Boss"> 
+                    </div>
                     <!-- /.Footer Logo -->
                 </div>
                 <div class="col-md-8 col-sm-8 col-xs-12">
@@ -31,7 +31,7 @@
                     <!-- /.col-lg-6 -->
                 </div>
             </div>
-            <hr class="dark-line">
+<hr class="dark-line">
             <div class="row">
                 <div class="col-md-4 col-sm-12 col-xs-12">
                     <div class="widget-text mt10">
@@ -87,19 +87,19 @@
                     <h4><strong>Home Loan</strong></h4>
                         <!-- widget footer -->
                         <ul class="listnone">
-                            <li><a href="#">ICICI Bank</a></li>
-                            <li><a href="#">Axis Bank</a></li>
-                            <li><a href="#">DBS</a></li>
-                            <li><a href="#">DCB Bank</a></li>
-                            <li><a href="#">HDFC Ltd</a></li>
-                            <li><a href="#">IDFC Ltd</a></li>
-                            <li><a href="#">IIFL</a></li>
-                            <li><a href="#">Indiabulls</a></li>
-                            <li><a href="#">Kotak Mahindra Bank</a></li>
-                            <li><a href="#">PNB Housing Finance Ltd</a></li>
-                            <li><a href="#">Standard Chartered</a></li>
-                            <li><a href="#">Tata Capital</a></li>
-                            <li><a href="#">Yes Bank</a></li>
+                            <li><a href="<?php echo e(URL::to('loan-details/home-loan/icici')); ?>">ICICI Bank</a></li>
+                            <li><a href="<?php echo e(URL::to('loan-details/home-loan/axis')); ?>">Axis Bank</a></li>
+                            <li><a href="<?php echo e(URL::to('loan-details/home-loan/dbs')); ?>">DBS</a></li>
+                            <li><a href="<?php echo e(URL::to('loan-details/home-loan/dcb')); ?>">DCB Bank</a></li>
+                            <li><a href="<?php echo e(URL::to('loan-details/home-loan/hdfc-ltd')); ?>">HDFC Ltd</a></li>
+                            <li><a href="<?php echo e(URL::to('loan-details/home-loan/idfc')); ?>">IDFC Ltd</a></li>
+                            <li><a href="<?php echo e(URL::to('loan-details/home-loan/iifl')); ?>">IIFL</a></li>
+                            <li><a href="<?php echo e(URL::to('loan-details/home-loan/indiabulls')); ?>">Indiabulls</a></li>
+                            <li><a href="<?php echo e(URL::to('loan-details/home-loan/kotak-mahindra')); ?>">Kotak Mahindra Bank</a></li>
+                            <li><a href="<?php echo e(URL::to('loan-details/home-loan/pnb-housing')); ?>">PNB Housing Finance Ltd</a></li>
+                            <li><a href="<?php echo e(URL::to('loan-details/home-loan/standard-chartered')); ?>">Standard Chartered</a></li>
+                            <li><a href="<?php echo e(URL::to('loan-details/home-loan/tata-capital')); ?>">Tata Capital</a></li>
+                            <li><a href="<?php echo e(URL::to('loan-details/home-loan/yes-bank')); ?>">Yes Bank</a></li>
                         </ul>
                     </div>
                     <!-- /.widget footer -->
@@ -109,14 +109,14 @@
                     <h4><strong>Personal Loan</strong></h4>
                         <!-- widget footer -->
                         <ul class="listnone">
-                            <li><a href="#">Axis Bank</a></li>
-                            <li><a href="#">HDFC</a></li>
-                            <li><a href="#">Bajaj Finance</a></li>
-                            <li><a href="#">Capital First</a></li>
-                            <li><a href="#">Fullerton India</a></li>
-                            <li><a href="#">ICICI Bank</a></li>
-                            <li><a href="#">Kotak Mahindra</a></li>
-                            <li><a href="#">Tata Capital</a></li>
+                            <li><a href="<?php echo e(URL::to('loan-details/personal-loan/axis')); ?>">Axis Bank</a></li>
+                            <li><a href="<?php echo e(URL::to('loan-details/personal-loan/hdfc-ltd')); ?>">HDFC</a></li>
+                            <li><a href="<?php echo e(URL::to('loan-details/personal-loan/bajaj-finance')); ?>">Bajaj Finance</a></li>
+                            <li><a href="<?php echo e(URL::to('loan-details/personal-loan/capital-first')); ?>">Capital First</a></li>
+                            <li><a href="<?php echo e(URL::to('loan-details/personal-loan/fullerton')); ?>">Fullerton India</a></li>
+                            <li><a href="<?php echo e(URL::to('loan-details/personal-loan/icici')); ?>">ICICI Bank</a></li>
+                            <li><a href="<?php echo e(URL::to('loan-details/personal-loan/kotak-mahindra')); ?>">Kotak Mahindra</a></li>
+                            <li><a href="<?php echo e(URL::to('loan-details/personal-loan/tata-capital')); ?>">Tata Capital</a></li>
                         </ul>
                     </div>
                     <!-- /.widget footer -->
@@ -126,16 +126,16 @@
                     <h4><strong>Business Loan</strong></h4>
                         <!-- widget footer -->
                         <ul class="listnone">
-                            <li><a href="#">Intellecash</a></li>
-                            <li><a href="#">Magma Fincorp</a></li>
-                            <li><a href="#">ICICI Bank</a></li>
-                            <li><a href="#">HDFC</a></li>
-                            <li><a href="#">Indusind Bank</a></li>
-                            <li><a href="#">UPF (Kapitaltech)</a></li>
-                            <li><a href="#">RBL</a></li>
-                            <li><a href="#">Standard Chartered</a></li>
-                            <li><a href="#">Tata Capital</a></li>
-                            <li><a href="#">Capital First</a></li>
+                            <li><a href="<?php echo e(URL::to('loan-details/business-loan/intellecash')); ?>">Intellecash</a></li>
+                            <li><a href="<?php echo e(URL::to('loan-details/business-loan/magma-fincorp')); ?>">Magma Fincorp</a></li>
+                            <li><a href="<?php echo e(URL::to('loan-details/business-loan/icici')); ?>">ICICI Bank</a></li>
+                            <li><a href="<?php echo e(URL::to('loan-details/business-loan/hdfc-ltd')); ?>">HDFC</a></li>
+                            <li><a href="<?php echo e(URL::to('loan-details/business-loan/indusind')); ?>">Indusind Bank</a></li>
+                            <li><a href="<?php echo e(URL::to('loan-details/business-loan/upf')); ?>">UPF (Kapitaltech)</a></li>
+                            <li><a href="<?php echo e(URL::to('loan-details/business-loan/rbl')); ?>">RBL</a></li>
+                            <li><a href="<?php echo e(URL::to('loan-details/business-loan/standard-chartered')); ?>">Standard Chartered</a></li>
+                            <li><a href="<?php echo e(URL::to('loan-details/business-loan/tata-capital')); ?>">Tata Capital</a></li>
+                            <li><a href="<?php echo e(URL::to('loan-details/business-loan/capital-first')); ?>">Capital First</a></li>
                         </ul>
                     </div>
                     <!-- /.widget footer -->
@@ -145,16 +145,16 @@
                     <h4><strong>Business Loan</strong></h4>
                         <!-- widget footer -->
                         <ul class="listnone">
-                            <li><a href="#">Axis Bank</a></li>
-                            <li><a href="#">Aditya Birla</a></li>
-                            <li><a href="#">Edelweiss</a></li>
-                            <li><a href="#">Capital First Limited</a></li>
-                            <li><a href="#">DHFL</a></li>
-                            <li><a href="#">Deutsche Bank</a></li>
-                            <li><a href="#">Kotak Mahindra</a></li>
-                            <li><a href="#">Bajaj Finance</a></li>
-                            <li><a href="#">Lendingkart</a></li>
-                            <li><a href="#">Fullerton India </a></li>
+                            <li><a href="<?php echo e(URL::to('loan-details/business-loan/axis')); ?>">Axis Bank</a></li>
+                            <li><a href="<?php echo e(URL::to('loan-details/business-loan/aditya-birla')); ?>">Aditya Birla</a></li>
+                            <li><a href="<?php echo e(URL::to('loan-details/business-loan/edelweiss')); ?>">Edelweiss</a></li>
+                            <li><a href="<?php echo e(URL::to('loan-details/business-loan/capital-first')); ?>">Capital First Limited</a></li>
+                            <li><a href="<?php echo e(URL::to('loan-details/business-loan/dhfl')); ?>">DHFL</a></li>
+                            <li><a href="<?php echo e(URL::to('loan-details/business-loan/deustche')); ?>">Deutsche Bank</a></li>
+                            <li><a href="<?php echo e(URL::to('loan-details/business-loan/kotak-mahindra')); ?>">Kotak Mahindra</a></li>
+                            <li><a href="<?php echo e(URL::to('loan-details/business-loan/bajaj-finance')); ?>">Bajaj Finance</a></li>
+                            <li><a href="<?php echo e(URL::to('loan-details/business-loan/lendingkart')); ?>">Lendingkart</a></li>
+                            <li><a href="<?php echo e(URL::to('loan-details/business-loan/fullerton')); ?>">Fullerton India </a></li>
                         </ul>
                     </div>
                     <!-- /.widget footer -->
@@ -162,17 +162,22 @@
             </div>
             <hr class="dark-line">
             <p style="text-align: center; font-size: 12px;">Disclaimer : Please note that the interest rates given here are based on the market research. To enable the comparisons certain set of data has been reorganized / restructured / tabulated. Users are advised to recheck the same with the individual companies / organizations. This site does not take any responsibility for any sudden / uninformed changes in interest rates.</p>
+
+        </div>   <!-- container div end -->
+
+        
+
         </div>
-    </div>
-    <!-- /.footer -->
+     <!-- footer end-->
 
 
-    <div class="tiny-footer">
+
+<div class="tiny-footer">
         <!-- tiny footer -->
         <div class="container">
             <div class="row">
                 <div class="col-md-6 col-sm-6 col-xs-6">
-                    <p>© Copyright 2017 | Rupee Boss</p>
+                    <p>© Copyright 2017 | RupeeBoss</p>
                 </div>
                 <div class="col-md-6 col-sm-6 text-right col-xs-6">
                     <p><a href="<?php echo e(URL::to('disclaimer-page')); ?>" style="color: #fff">Disclaimer</a>   |   <a href="<?php echo e(URL::to('privacy-policy-page')); ?>" style="color: #fff">Privacy Policy</a></p>
@@ -180,11 +185,3 @@
             </div>
         </div>
     </div>
-
-
-<a href="#0" class="cd-top" title="Go to top">Top</a>
-
-     
-
-
-  

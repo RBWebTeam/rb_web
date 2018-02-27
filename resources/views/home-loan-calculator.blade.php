@@ -5,11 +5,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="wrapper-content bg-white pinside40">
-                        
-                            <div class="">
-                                
-                                
-                                
+                            <div class="contact-form mb60">
                                 <h1 class=""><center>Home Loan EMI Calculator</center></h1>
                                 <p style="margin: 0 0 0px;"><center>Calculate your Home Loan EMI and Eligibility Status Due in a snap! <i class="fa fa-calculator" style="color:#000000" aria-hidden="true"></i></center></p>
                                 </br>
@@ -182,9 +178,9 @@
                             </div>
                         
     </div>
-
-@include('layout.footer')
 @include('layout.script')
+@include('layout.footer')
+
 
 <div class="modal fade" tabindex="-1" role="dialog" id="home_loan_eligible">
   <div class="modal-dialog" role="document">

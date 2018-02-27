@@ -245,12 +245,11 @@ $(document).ready(function(){
 
 
 
-                <div class="row text-center">
+                <!-- <div class="row text-center">
 
-<br>
-                <a href="#section2"><img src="images/scroll002.gif" style="opacity: 0.8; margin-top:-60px"></a><br><br>
+                <a href="#section2"><img src="images/scroll002.gif" style="opacity: 0.8; margin-top:-30px"></a>
 
-                </div>
+                </div> -->
 
 
 

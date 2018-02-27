@@ -9,16 +9,16 @@
     <meta name="keywords" content="loan, bad credit, EMI Calculator, credit cars, home loan, car loan, education loan">
     <title>Compare & Apply for all kind of Loan & Credit Cards | Rupeeboss.com</title>
     <!-- Bootstrap -->
-    <link href="../css/bootstrap.min.css" rel="stylesheet">
-    <link href="../css/style.css" rel="stylesheet">
-    <link href="../css/font-awesome.min.css" rel="stylesheet">
-    <link href="../css/fontello.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="../css/animsition.min.css">
+    <link href="<?php echo e(URL::to('css/bootstrap.min.css')); ?>" rel="stylesheet">
+    <link href="<?php echo e(URL::to('css/style.css')); ?>" rel="stylesheet">
+    <link href="<?php echo e(URL::to('css/font-awesome.min.css')); ?>" rel="stylesheet">
+    <link href="<?php echo e(URL::to('css/fontello.css')); ?>" rel="stylesheet">  
+    <link rel="stylesheet" type="text/css" href="<?php echo e(URL::to('css/animsition.min.css')); ?>">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700|Merriweather:300,300i,400,400i,700,700i" rel="stylesheet">
     <!-- owl Carousel Css -->
-    <link href="../css/owl.carousel.css" rel="stylesheet">
-    <link href="../css/owl.theme.css" rel="stylesheet">
+    <link href="<?php echo e(URL::to('css/owl.carousel.css')); ?>" rel="stylesheet">
+    <link href="<?php echo e(URL::to('css/owl.theme.css')); ?>" rel="stylesheet">
     <link rel="icon" href="images/rb_fav.png" type="image/png" sizes="16x16">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
@@ -51,8 +51,8 @@ $(document).ready(function(){
 });
 </script>
 
-<link rel="stylesheet" href="../css/iziModal.min.css">
-<link rel="stylesheet" href="../css/icons.css?v=1">
+<link rel="stylesheet" href="<?php echo e(URL::to('css/iziModal.min.css')); ?>">
+<link rel="stylesheet" href="<?php echo e(URL::to('css/icons.css?v=1')); ?>">
 
 </head>
 
@@ -65,7 +65,7 @@ $(document).ready(function(){
                 <div class="col-md-2 col-sm-6 col-xs-6">
                     
                     <div class="logo">
-                        <a href="<?php echo e(URL::to('/')); ?>"><img src="../images/logo-rupee-boss.png" alt="Rupeeboss"></a>
+                        <a href="<?php echo e(URL::to('/')); ?>"><img src="<?php echo e(URL::to('images/logo-rupee-boss.png')); ?>" alt="Rupeeboss"></a>
                     </div>
                 </div>
                 
@@ -222,9 +222,5 @@ $(document).ready(function(){
 
 
 
-
-     <!--<script src="assets/js/vendor/jquery-2.1.3.min.js" type="text/javascript"></script>-->
-    <script src="../js/iziModal.mind1eb.js?=v2" type="text/javascript"></script>
-    <script src="../js/javascript.js?v=1" type="text/javascript"></script>
     
 

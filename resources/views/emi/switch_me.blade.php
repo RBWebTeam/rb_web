@@ -22,7 +22,12 @@
 
 <body>
 
- 
+ <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="wrapper-content bg-white pinside40">
+                        <div class="contact-form mb60">
+                            <div class=" ">
 
 <?php if($loan == "home-loan") {?>
   <div class="col-md-offset-2 col-md-8 col-sm-12 col-xs-12" >
@@ -268,7 +273,13 @@
 </div>
 
 </div>
-<div id="test"></div>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 
 
 
@@ -337,6 +348,11 @@
     </div>
   </div>
 </div>
+
+
+
+
+
 
     <?php }?>
 

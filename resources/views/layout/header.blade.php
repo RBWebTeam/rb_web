@@ -12,7 +12,7 @@
     <link href="{{URL::to('css/bootstrap.min.css')}}" rel="stylesheet">
     <link href="{{URL::to('css/style.css')}}" rel="stylesheet">
     <link href="{{URL::to('css/font-awesome.min.css')}}" rel="stylesheet">
-    <link href="{{URL::to('css/fontello.css')}}" rel="stylesheet">
+    <link href="{{URL::to('css/fontello.css')}}" rel="stylesheet">  
     <link rel="stylesheet" type="text/css" href="{{URL::to('css/animsition.min.css')}}">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700|Merriweather:300,300i,400,400i,700,700i" rel="stylesheet">
@@ -222,9 +222,5 @@ $(document).ready(function(){
 
 
 
-
-     <!--<script src="assets/js/vendor/jquery-2.1.3.min.js" type="text/javascript"></script>-->
-    <script src="../js/iziModal.mind1eb.js?=v2" type="text/javascript"></script>
-    <script src="../js/javascript.js?v=1" type="text/javascript"></script>
     
 

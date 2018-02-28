@@ -159,9 +159,9 @@
                   <div>
                      <button class="btn btn-default sidebar-submit">Submit</button>
                   </div>
-                  <div class="iframeloading" style= "display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
+                  <!-- <div class="iframeloading" style= "display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
                 <img src="{{URL::to('images/ajaxloader.gif')}}" alt="Loader" title="Loader" style="top: 50%; position: relative; left: 50%;"  />
-               </div>
+               </div> -->
             </form>
             <div class='msg displaynone' ><b>Thank You. We will reach you soon.</b></div>
             <div class='msg_err displaynone' ><p>Ooops. Something went wrong.</p></div>
@@ -215,9 +215,9 @@
                   <div>
                      <button class="btn btn-default sidebar-submit">Submit</button>
                   </div>
-                  <div class="iframeloading" style= "display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
+                  <!-- <div class="iframeloading" style= "display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
                 <img src="{{URL::to('images/ajaxloader.gif')}}" alt="Loader" title="Loader" style="top: 50%; position: relative; left: 50%;"  />
-               </div>
+               </div> -->
             </form>
             <div class='msg displaynone'><b>Thank You. We will reach you soon.</b></div>
             <div class='msg_err displaynone' ><p>Ooops. Something went wrong.</p></div>
@@ -271,9 +271,9 @@
                   <div>
                      <button class="btn btn-default sidebar-submit">Submit</button>
                   </div>
-                  <div class="iframeloading" style= "display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
+                  <!-- <div class="iframeloading" style= "display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
                 <img src="{{URL::to('images/ajaxloader.gif')}}" alt="Loader" title="Loader" style="top: 50%; position: relative; left: 50%;"  />
-               </div>
+               </div> -->
             </form>
 
             <div class='msg displaynone'><b>Thank You. We will reach you soon.</b></div>

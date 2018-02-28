@@ -1168,6 +1168,8 @@ Landing Page Template
 /*============= media query max-width: 768px; =============*/
 @media only screen and (max-width:768px) {
   .sticky-container {display: none;}
+  .blue-bg {float:left;}
+  .pinside40 { padding: 10px;}
   /* start query */
   .header { padding-top: 5px; padding-bottom: 5px; }
   .logo {margin-top:10px;}

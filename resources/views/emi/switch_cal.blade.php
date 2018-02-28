@@ -3,12 +3,12 @@
 <div class="white-bg pad1 box-shadow">
 <div class="table-responsive">
 <div class="outer-border">
-<center><h1>Savings Table:</center>
+<center><h1>Savings Table</center>
 <br>
 <table class="table table-bordered table-striped" id="emipaymenttable">
 
   <tr class="tbl-clr">
-    <th bgcolor="#999"  class="col-xs-3 col-md-1" id="bankheader" style="width: 15%">Bank Name</th>
+    <th bgcolor="#999"  class="col-sm-4" id="bankheader" style="width: 15%">Bank Name</th>
 
     <th bgcolor="#999" class="col-sm-2" id="rateheader"><center>Rate Of Interest</center></th>
 
@@ -18,11 +18,11 @@
 
     <th bgcolor="#999" class="col-sm-3 " id="newemiheader"><center>New Loan EMI</center></th>
 
-    <th bgcolor="#999" class="col-xs-4 col-sm-3" id="dropemiheader"><center>Drop EMI</center></th>
+    <th bgcolor="#999" class="col-xs-2 " id="dropemiheader"><center>Drop EMI</center></th>
 
-    <th bgcolor="#999" class="col-sm-3 " id="dropininterestheader"><center>Drop In Interest</center></th>
+    <th bgcolor="#999" class="col-sm-2 " id="dropininterestheader"><center>Drop In Interest</center></th>
 
-    <th bgcolor="#999" class="col-sm-3" id="savingsheader"><center>Savings</center></th>
+    <th bgcolor="#999" class="col-sm-2" id="savingsheader"><center>Savings</center></th>
 
     <th bgcolor="#999" class="col-sm-3" id="applyheader"><center>Apply Online</center></th>
 

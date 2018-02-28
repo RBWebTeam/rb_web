@@ -176,7 +176,6 @@ $(document).ready(function(){
             <p style="text-align:right"><a href="forgot-password.html">Forgot Password ?</a></p>
             <div class="col-md-4 col-sm-4 col-xs-12">
                 <button type="login" class="btn btn-default btn-sm " style="width: 100%;">Log In</button> 
-                <button id="login_submit" class="btn btn-default btn-sm login-submit " style="width: 100%;">Login</button>    
                 
                        
             </div>

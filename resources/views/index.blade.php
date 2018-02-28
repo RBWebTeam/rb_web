@@ -69,8 +69,12 @@ $(document).ready(function(){
                     <div class="header-action">
                         <a href="{{URL::to('equifax-verification')}}" class="btn btn-credit" style="padding:14px 12px">Free Credit Report</a>
                         <a href="{{URL::to('contact-us')}}" class="btn btn-default" style="padding:14px 13px">Expert Assistance</a>
-                        <a class="search-btn-2 search-btn2 trigger-custom2"  href="#modal-custom2" style="text-align: center; width: 45px; height: 45px; padding: 7px; display: inline-block; vertical-align:bottom"><i style="font-size: 30px;" class="fa fa-user"></i><span class="tooltiptext">Sign In</span></a>
-                        <a href="#" data-toggle="modal" data-target="#log_popup">Sign in</a>
+
+
+                        <a class="search-btn-2 search-btn2 trigger-custom2"  href="#modal-custom2" data-target="#modal-custom2" style="text-align: center; width: 45px; height: 45px; padding: 7px; display: inline-block; vertical-align:bottom"><i style="font-size: 30px;" class="fa fa-user"></i><span class="tooltiptext">Sign In</span></a>  
+
+                        
+                                                                 
                     </div>
                 </div>
             </div>
@@ -129,12 +133,72 @@ $(document).ready(function(){
     </div>
 
  <div id="modal-welcome" class="iziModal"></div>
+ <div id="modal-custom2" class="iziModal" data-iziModal-group="grupo1">
+    <button data-iziModal-close class="fa fa-times-circle"></button>
+    <header>
+        <a href="#" id="signin" class="active">Log In</a>
+        <a href="#" class="">Register</a>
+
+    </header>
+
+
+   
+
+
+    <section>
+
+         <form class="login-form block" name="login_form" id="login_form"  method="post" >                   
+        {{ csrf_field() }}
+
+         <a type="button" style="background-color: #3D5A98; color: #fff;  padding: 14px 20px; margin-bottom:50px; border: none; cursor: pointer; text-align:center; width: 30%;" href="http://facebook.com" target="_blank" class="ui-link"><strong>With Facebook</strong></a>
+
+             <a type="button" style="background-color: #ed1c24; color: #fff;  padding: 14px 20px; margin-bottom:50px; border: none; cursor: pointer; text-align:center; width: 30%;" href="http://gmail.com" target="_blank" class="ui-link"><strong>With Google Plus</strong></a>
+            <br /><br />
+        <h4>OR</h4>
+
+        <input type="text" name="email_login" id="email_login" tabindex="1" class="form-control" placeholder="Email" value="">
+
+        <input type="password" name="login_pass" id="login_pass" tabindex="2" class="form-control" placeholder="Password">
+
+        <!-- <span id="msg" class="error-msg"></span> -->
+
+        <p style="text-align:right"><a href="#" id="forgot-form-link">Forgot Password ?</a></p>
+
+        <div class="col-md-4 col-sm-4 col-xs-12">
+        <button id="login_submit" class="btn btn-default btn-sm login-submit ">Login</button>
+    </div>
+        </form>
+
+    </section>
+
+    <section class="hide">
+        <form class="register-form"  name="registration_form" id="registration_form"  method="post" > 
+                 {{ csrf_field() }}
+        <a type="button" style="background-color: #3D5A98; color: #fff;  padding: 14px 20px; margin-bottom:50px; border: none; cursor: pointer; text-align:center; width: 30%;" href="http://facebook.com" target="_blank" class="ui-link"><strong>With Facebook</strong></a>
+
+             <a type="button" style="background-color: #ed1c24; color: #fff;  padding: 14px 20px; margin-bottom:50px; border: none; cursor: pointer; text-align:center; width: 30%;" href="http://gmail.com" target="_blank" class="ui-link"><strong>With Google Plus</strong></a>
+            <br /><br />
+            <h4>OR</h4>            
+
+            <!--<button class="thm-btn"><i class="fa fa-facebook"></i> Sign up with Facebook</button>    -->
+
+            <input type="text" name="name" id="name" tabindex="1" class="form-control" placeholder="User name" >
+            <input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="Email Address"  >
+            <input type="text" name="contact" id="contact" onkeypress="return fnAllowNumeric(event)" maxlength="10"  tabindex="1" class="form-control" placeholder="Mobile Number" >
+            <input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Password">
+            <input type="password" name="confirm_password" id="confirm_password" tabindex="2" class="form-control" placeholder="Confirm Password">
+            
+           <div class="col-md-4 col-sm-4 col-xs-12">
+                    
+                 <button type="register" class="btn btn-default btn-sm " style="width: 100%;">Register</button>
+                    
+            </div>
+              </form>
+    </section>
 
 
 
-
-
-
+ </div>
 
 
 <body class="">
@@ -602,6 +666,7 @@ $(document).ready(function(){
 		
 @include('layout.script')
 @include('layout.footer')
+
 
 		
 	

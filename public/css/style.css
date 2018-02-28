@@ -431,13 +431,15 @@ index-1
 
 
 
-.products { -webkit-background-size: cover;   -moz-background-size: cover;   -o-background-size: cover; background-size: cover; margin: 0; min-height: 100%; border: none; /*padding: 120px 0px;*/ padding: 54px 0px 0px 0px; background: linear-gradient(rgba(183, 183, 183, 0.6), rgba(183, 183, 183, 0.6)), rgba(183, 183, 183, 0.6) url(../images/home-page-bg.jpg) no-repeat center top; }
+.products { -webkit-background-size: cover;   -moz-background-size: cover;   -o-background-size: cover; background-size: cover; margin: 0; min-height: 100%; border: none; /*padding: 120px 0px;*/ padding: 115px 0px 0px 0px; background: linear-gradient(rgba(183, 183, 183, 0.6), rgba(183, 183, 183, 0.6)), rgba(183, 183, 183, 0.6) url(../images/home-page-bg.jpg) no-repeat center top; }
 
 @media only screen and (max-width: 768px) {
   .products { min-height: 100%; margin: 0;  padding: 0px; background: linear-gradient(rgba(183, 183, 183, 0.6), rgba(183, 183, 183, 0.6)), rgba(183, 183, 183, 0.6) url(../images/home-page-bg.jpg) no-repeat center top; -webkit-background-size: cover;   -moz-background-size: cover;   -o-background-size: cover; background-size: cover; }
   .btn-credit {display:none;}
-  .btn-default {display:none;}
+  /*.btn-default {display:none;}*/
+  .hide-btn {display:none;}
 }
+
 
 
 

@@ -7,7 +7,7 @@
 <br>
 <table class="table table-bordered table-striped" id="emipaymenttable">
 
-  <tr class="tbl-clr">
+  <tr class="tbl-clr" style="color:#fff;">
     <th bgcolor="#999"  class="col-sm-4" id="bankheader" style="width: 15%">Bank Name</th>
 
     <th bgcolor="#999" class="col-sm-2" id="rateheader"><center>Rate Of Interest</center></th>

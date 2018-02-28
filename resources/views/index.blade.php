@@ -9,16 +9,16 @@
     <meta name="keywords" content="loan, bad credit, EMI Calculator, credit cars, home loan, car loan, education loan">
     <title>Compare & Apply for all kind of Loan & Credit Cards | Rupeeboss.com</title>
     <!-- Bootstrap -->
-    <link href="../css/bootstrap.min.css" rel="stylesheet">
-    <link href="../css/style.css" rel="stylesheet">
-    <link href="../css/font-awesome.min.css" rel="stylesheet">
-    <link href="../css/fontello.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="../css/animsition.min.css">
+   <link href="{{URL::to('css/bootstrap.min.css')}}" rel="stylesheet">
+    <link href="{{URL::to('css/style.css')}}" rel="stylesheet">
+    <link href="{{URL::to('css/font-awesome.min.css')}}" rel="stylesheet">
+    <link href="{{URL::to('css/fontello.css')}}" rel="stylesheet">  
+    <link rel="stylesheet" type="text/css" href="{{URL::to('css/animsition.min.css')}}">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700|Merriweather:300,300i,400,400i,700,700i" rel="stylesheet">
     <!-- owl Carousel Css -->
-    <link href="../css/owl.carousel.css" rel="stylesheet">
-    <link href="../css/owl.theme.css" rel="stylesheet">
+    <link href="{{URL::to('css/owl.carousel.css')}}" rel="stylesheet">
+    <link href="{{URL::to('css/owl.theme.css')}}" rel="stylesheet">
     <link rel="icon" href="images/rb_fav.png" type="image/png" sizes="16x16">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
@@ -51,8 +51,9 @@ $(document).ready(function(){
 });
 </script>
 
-<link rel="stylesheet" href="../css/iziModal.min.css">
-<link rel="stylesheet" href="../css/icons.css?v=1">
+<link rel="stylesheet" href="{{URL::to('css/iziModal.min.css')}}">
+<link rel="stylesheet" href="{{URL::to('css/icons.css?v=1')}}">
+
 
 </head>
     <div class="header-transparent navbar-fixed-top">
@@ -61,14 +62,14 @@ $(document).ready(function(){
                 <div class="col-md-2 col-sm-6 col-xs-6">
                     
                     <div class="logo">
-                        <a href="{{URL::to('/')}}"><img src="../images/logo-rupee-boss.png" alt="Rupeeboss"></a>
+                        <a href="{{URL::to('/')}}"><img src="{{URL::to('images/logo-rupee-boss.png')}}" alt="Rupeeboss"></a>
                     </div>
                 </div>
                 
                 <div class="col-md-10 col-sm-6 col-xs-6 text-right">
                     <div class="header-action">
                         <a href="{{URL::to('equifax-verification')}}" class="btn btn-credit" style="padding:14px 12px">Free Credit Report</a>
-                        <a href="{{URL::to('contact-us')}}" class="btn btn-default" style="padding:14px 13px">Expert Assistance</a>
+                        <a href="{{URL::to('contact-us')}}" class="btn btn-default hide-btn" style="padding:14px 13px">Expert Assistance</a>
 						
 						<a class="hidden-lg top-ic top-ic1" title="Free Credit Report"  href="#"><i class="fa fa-tachometer"></i></a>
 						<a class="hidden-lg top-ic" title="Expert Assistance"  href="#"><i class="fa fa-phone"></i></a>
@@ -308,11 +309,11 @@ $(document).ready(function(){
 
 
 
-                <!-- <div class="row text-center">
+                 <div class="row text-center">
 
                 <a href="#section2"><img src="images/scroll002.gif" style="opacity: 0.8; margin-top:-30px"></a>
 
-                </div> -->
+                </div>
 
 
 

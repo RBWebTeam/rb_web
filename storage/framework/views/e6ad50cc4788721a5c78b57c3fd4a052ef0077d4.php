@@ -69,9 +69,11 @@ $(document).ready(function(){
                     <div class="header-action">
                         <a href="<?php echo e(URL::to('equifax-verification')); ?>" class="btn btn-credit" style="padding:14px 12px">Free Credit Report</a>
                         <a href="<?php echo e(URL::to('contact-us')); ?>" class="btn btn-default" style="padding:14px 13px">Expert Assistance</a>
+						
 						<a class="hidden-lg top-ic top-ic1" title="Free Credit Report"  href="#"><i class="fa fa-tachometer"></i></a>
 						<a class="hidden-lg top-ic" title="Expert Assistance"  href="#"><i class="fa fa-phone"></i></a>
                         <a class="search-btn-2 search-btn2 trigger-custom2"  href="#modal-custom2" style="text-align: center; width: 45px; height: 45px; padding: 7px; display: inline-block; vertical-align:bottom"><i style="font-size: 30px;" class="fa fa-user"></i><span class="tooltiptext">Sign In</span></a>
+
                     </div>
                 </div>
             </div>
@@ -131,80 +133,73 @@ $(document).ready(function(){
 
  <div id="modal-welcome" class="iziModal"></div>
  <div id="modal-custom2" class="iziModal" data-iziModal-group="grupo1">
+    <button data-iziModal-close class="fa fa-times-circle"></button>
+    <header>
+        <a href="#" id="signin" class="active">Log In</a>
+        <a href="#" class="">Register</a>
+
+    </header>
 
 
-        <button data-iziModal-close class="fa fa-times-circle"></button>
+   
 
 
-      
+    <section>
+
+         <form class="login-form block" name="login_form" id="login_form"  method="post" >                   
+        <?php echo e(csrf_field()); ?>
 
 
-
-
-         <header>
-            <a href="#" id="signin">Log In</a>
-            <a href="#" class="active">Register</a>
-        </header>
-
-
-        <section class="hide">
-
-             <a type="button" style="background-color: #3D5A98; color: #fff;  padding: 14px 20px; margin-bottom:50px; border: none; cursor: pointer; text-align:center; width: 30%;" href="http://facebook.com" target="_blank" class="ui-link"><strong>With Facebook</strong></a>
-
-             <a type="button" style="background-color: #ed1c24; color: #fff;  padding: 14px 20px; margin-bottom:50px; border: none; cursor: pointer; text-align:center; width: 30%;" href="http://gmail.com" target="_blank" class="ui-link"><strong>With Google Plus</strong></a>
-            <br /><br />
-            <h4>OR</h4>
-            
-
-            <input type="text" placeholder="Email">
-            <input type="password" placeholder="Password">
-            <p style="text-align:right"><a href="forgot-password.html">Forgot Password ?</a></p>
-            <div class="col-md-4 col-sm-4 col-xs-12">
-                <button type="login" class="btn btn-default btn-sm " style="width: 100%;">Log In</button>     
-                
-                       
-            </div>
-
-           
-        </section>
-
-
-        <section>
-
-             <a type="button" style="background-color: #3D5A98; color: #fff;  padding: 14px 20px; margin-bottom:50px; border: none; cursor: pointer; text-align:center; width: 30%;" href="http://facebook.com" target="_blank" class="ui-link"><strong>With Facebook</strong></a>
+         <a type="button" style="background-color: #3D5A98; color: #fff;  padding: 14px 20px; margin-bottom:50px; border: none; cursor: pointer; text-align:center; width: 30%;" href="http://facebook.com" target="_blank" class="ui-link"><strong>With Facebook</strong></a>
 
              <a type="button" style="background-color: #ed1c24; color: #fff;  padding: 14px 20px; margin-bottom:50px; border: none; cursor: pointer; text-align:center; width: 30%;" href="http://gmail.com" target="_blank" class="ui-link"><strong>With Google Plus</strong></a>
             <br /><br />
-            <h4>OR</h4>
-            
+        <h4>OR</h4>
+
+        <input type="text" name="email_login" id="email_login" tabindex="1" class="form-control" placeholder="Email" value="">
+
+        <input type="password" name="login_pass" id="login_pass" tabindex="2" class="form-control" placeholder="Password">
+
+        <!-- <span id="msg" class="error-msg"></span> -->
+
+        <p style="text-align:right"><a href="#" id="forgot-form-link">Forgot Password ?</a></p>
+
+        <div class="col-md-4 col-sm-4 col-xs-12">
+        <button id="login_submit" class="btn btn-default btn-sm login-submit ">Login</button>
+    </div>
+        </form>
+
+    </section>
+
+    <section class="hide">
+        <form class="register-form"  name="registration_form" id="registration_form"  method="post" > 
+                 <?php echo e(csrf_field()); ?>
+
+        <a type="button" style="background-color: #3D5A98; color: #fff;  padding: 14px 20px; margin-bottom:50px; border: none; cursor: pointer; text-align:center; width: 30%;" href="http://facebook.com" target="_blank" class="ui-link"><strong>With Facebook</strong></a>
+
+             <a type="button" style="background-color: #ed1c24; color: #fff;  padding: 14px 20px; margin-bottom:50px; border: none; cursor: pointer; text-align:center; width: 30%;" href="http://gmail.com" target="_blank" class="ui-link"><strong>With Google Plus</strong></a>
+            <br /><br />
+            <h4>OR</h4>            
 
             <!--<button class="thm-btn"><i class="fa fa-facebook"></i> Sign up with Facebook</button>    -->
 
-            <input type="text" placeholder="User Name">
-            <input type="text" placeholder="Email Address">
-            <input type="mobile" placeholder="Mobile Number">
-            <input type="password" placeholder="Password">
-            <input type="confirm-password" placeholder="Confirm Password">
+            <input type="text" name="name" id="name" tabindex="1" class="form-control" placeholder="User name" >
+            <input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="Email Address"  >
+            <input type="text" name="contact" id="contact" onkeypress="return fnAllowNumeric(event)" maxlength="10"  tabindex="1" class="form-control" placeholder="Mobile Number" >
+            <input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Password">
+            <input type="password" name="confirm_password" id="confirm_password" tabindex="2" class="form-control" placeholder="Confirm Password">
             
            <div class="col-md-4 col-sm-4 col-xs-12">
                     
                  <button type="register" class="btn btn-default btn-sm " style="width: 100%;">Register</button>
                     
             </div>
-
-           
-        </section>
-
-
-
-        <br /><br />
-    </div>
+              </form>
+    </section>
 
 
 
-
-
-
+ </div>
 
 
 <body class="">
@@ -671,6 +666,7 @@ $(document).ready(function(){
 		
 <?php echo $__env->make('layout.script', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 <?php echo $__env->make('layout.footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
 
 		
 	

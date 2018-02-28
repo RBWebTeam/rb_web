@@ -69,6 +69,8 @@ $(document).ready(function(){
                     <div class="header-action">
                         <a href="<?php echo e(URL::to('equifax-verification')); ?>" class="btn btn-credit" style="padding:14px 12px">Free Credit Report</a>
                         <a href="<?php echo e(URL::to('contact-us')); ?>" class="btn btn-default" style="padding:14px 13px">Expert Assistance</a>
+						<a class="hidden-lg top-ic top-ic1" title="Free Credit Report"  href="#"><i class="fa fa-tachometer"></i></a>
+						<a class="hidden-lg top-ic" title="Expert Assistance"  href="#"><i class="fa fa-phone"></i></a>
                         <a class="search-btn-2 search-btn2 trigger-custom2"  href="#modal-custom2" style="text-align: center; width: 45px; height: 45px; padding: 7px; display: inline-block; vertical-align:bottom"><i style="font-size: 30px;" class="fa fa-user"></i><span class="tooltiptext">Sign In</span></a>
                     </div>
                 </div>
@@ -255,12 +257,12 @@ $(document).ready(function(){
                         <!-- <h1 class="text-white">Why People Choose Us</h1>
                         <p>We understand how to effectively guide you through the home loan or refinance process and avoid potential problems along the way. </p> --><br><br>
                     </div>
-                    <!-- /.section title start-->
+                    
                 </div>
             </div>
             <div class="row">
             <br><br><br>
-                <div class="col-md-4 col-sm-6 col-xs-12">
+                <div class="col-md-4 col-sm-6 col-xs-6">
                     <div class="number-block text-white">
                         <a href="<?php echo e(URL::to('home-loan')); ?>">
                         <div class="circle-3 circle11"><img src="images/home-loan.svg" alt="Home Loan" style="width:60px"><!--<i class="icon-command  icon-4x icon-white"></i>--></div>
@@ -269,7 +271,7 @@ $(document).ready(function(){
                         </a>
                     </div>
                 </div>
-                <div class="col-md-4 col-sm-6   col-xs-12">
+                <div class="col-md-4 col-sm-6   col-xs-6">
                     <div class="number-block text-white">
                         <a href="<?php echo e(URL::to('contact-us')); ?>">
                         <div class="circle-3 circle11"><img src="images/transfer2.svg" alt="Personal Loan" style="width:60px"><!--<i class="icon-calculator  icon-4x icon-white"></i>--></div>
@@ -277,7 +279,7 @@ $(document).ready(function(){
                         </a>
                     </div>
                 </div>
-                <div class="col-md-4 col-sm-6   col-xs-12">
+                <div class="col-md-4 col-sm-6   col-xs-6">
                     <div class="number-block text-white">
                         <a href="<?php echo e(URL::to('personal-loan')); ?>">
                         <div class="circle-3 circle11"><img src="images/personal-loan.svg" alt="Loans Against Property" style="width:60px"><!--<i class="icon-dialog  icon-4x icon-white"></i>--></div>
@@ -286,7 +288,7 @@ $(document).ready(function(){
                     </div>
                 </div>
 
-                <div class="col-md-4 col-sm-6 col-xs-12">
+                <div class="col-md-4 col-sm-6 col-xs-6">
                     <div class="number-block text-white">
                         <a href="<?php echo e(URL::to('sme-working-capital')); ?>">
                         <div class="circle-3 circle11"><img src="images/sme_loan.svg" alt="SME Loan" style="width:60px"><!--<i class="icon-command  icon-4x icon-white"></i>--></div>
@@ -294,7 +296,7 @@ $(document).ready(function(){
                         </a>
                     </div>
                 </div>
-                <div class="col-md-4 col-sm-6   col-xs-12">
+                <div class="col-md-4 col-sm-6   col-xs-6">
                     <div class="number-block text-white">
                         <a href="<?php echo e(URL::to('business-loan')); ?>">
                         <div class="circle-3 circle11"><img src="images/business_loan.svg" alt="Business Loan" style="width:60px"><!--<i class="icon-calculator  icon-4x icon-white"></i>--></div>
@@ -302,7 +304,7 @@ $(document).ready(function(){
                         </a>
                     </div>
                 </div>
-                <div class="col-md-4 col-sm-6   col-xs-12">
+                <div class="col-md-4 col-sm-6   col-xs-6">
                     <div class="number-block text-white">
                         <a href="<?php echo e(URL::to('loan-against-property')); ?>">
                         <div class="circle-3 circle11"><img src="images/loan-against-property.svg" alt="Car Loan" style="width:60px"><!--<i class="icon-dialog  icon-4x icon-white"></i>--></div>
@@ -663,7 +665,6 @@ $(document).ready(function(){
     <script src="js/javascript.js?v=1" type="text/javascript"></script>
 
 </body>
-
 
 
 

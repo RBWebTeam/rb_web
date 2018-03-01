@@ -1796,6 +1796,7 @@ button.ui-button::-moz-focus-inner {
 .error {
     border: 1px solid red !important;
 }
+
 .col-md-4 label {display:none !important;}
 .form-group label {display:none !important;}
 
@@ -1820,3 +1821,4 @@ button.ui-button::-moz-focus-inner {
     border-radius: 40px;
     color: #000;
 }
+

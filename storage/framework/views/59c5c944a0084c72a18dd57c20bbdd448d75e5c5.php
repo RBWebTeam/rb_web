@@ -71,15 +71,20 @@ $(document).ready(function(){
                         <a href="<?php echo e(URL::to('equifax-verification')); ?>" class="btn btn-credit" style="padding:14px 12px">Free Credit Report</a>
                         <a href="<?php echo e(URL::to('contact-us')); ?>" class="btn btn-default hide-btn" style="padding:14px 13px">Expert Assistance</a>
 						
-						<a class="hidden-lg top-ic top-ic1" title="Free Credit Report"  href="#"><i class="fa fa-tachometer"></i></a>
-						<a class="hidden-lg top-ic" title="Expert Assistance"  href="#"><i class="fa fa-phone"></i></a>
-                        <a class="search-btn-2 search-btn2 trigger-custom2"  href="#modal-custom2" style="text-align: center; width: 45px; height: 45px; padding: 7px; display: inline-block; vertical-align:bottom"><i style="font-size: 30px;" class="fa fa-user"></i><span class="tooltiptext">Sign In</span></a>
+						<a class="hidden-lg top-ic top-ic1" title="Free Credit Report"  href="<?php echo e(URL::to('equifax-verification')); ?>"><i class="fa fa-tachometer"></i></a>
+						<a class="hidden-lg top-ic" title="Expert Assistance"  href="<?php echo e(URL::to('contact-us')); ?>"><i class="fa fa-phone"></i></a>
+
+                        <a class="search-btn-2 search-btn2 trigger-custom2"  href="#" style="text-align: center; width: 45px; height: 45px; padding: 7px; display: inline-block; vertical-align:bottom"><i style="font-size: 30px;" class="fa fa-user"></i><span class="tooltiptext">Sign In</span></a>
+
+                                                               
 
                     </div>
                 </div>
             </div>
         </div>
-                <div class="navigation-2">
+
+
+        <div class="navigation-2">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12 col-sm-12 col-xs-12">
@@ -132,18 +137,140 @@ $(document).ready(function(){
         </div>
     </div>
 
+
+
+  <!-- login modal popup -->
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>                
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-8" style="border-right: 1px dotted #C2C2C2;padding-right: 30px;">
+                        <!-- Nav tabs -->
+                        <ul class="nav nav-tabs">
+                            <li class="active"><a href="" data-toggle="tab">Login</a></li>
+                            <li><a href="" data-toggle="tab">Registration</a></li>
+                        </ul>
+                        <!-- Tab panes -->
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="Login">
+                                <form role="form" class="form-horizontal">
+                                <div class="form-group">
+                                    <label for="email" class="col-sm-2 control-label">
+                                        Email</label>
+                                    <div class="col-sm-10">
+                                        <input type="email" class="form-control" id="email1" placeholder="Email" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1" class="col-sm-2 control-label">
+                                        Password</label>
+                                    <div class="col-sm-10">
+                                        <input type="email" class="form-control" id="exampleInputPassword1" placeholder="Email" />
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-2">
+                                    </div>
+                                    <div class="col-sm-10">
+                                        <button type="submit" class="btn btn-primary btn-sm">
+                                            Submit</button>
+                                        <a href="javascript:;">Forgot your password?</a>
+                                    </div>
+                                </div>
+                                </form>
+                            </div>
+                            <div class="tab-pane" id="Registration">
+                                <form role="form" class="form-horizontal">
+                                <div class="form-group">
+                                    <label for="email" class="col-sm-2 control-label">
+                                        Name</label>
+                                    <div class="col-sm-10">
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <select class="form-control">
+                                                    <option>Mr.</option>
+                                                    <option>Ms.</option>
+                                                    <option>Mrs.</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-9">
+                                                <input type="text" class="form-control" placeholder="Name" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email" class="col-sm-2 control-label">
+                                        Email</label>
+                                    <div class="col-sm-10">
+                                        <input type="email" class="form-control" id="email" placeholder="Email" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="mobile" class="col-sm-2 control-label">
+                                        Mobile</label>
+                                    <div class="col-sm-10">
+                                        <input type="email" class="form-control" id="mobile" placeholder="Mobile" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="password" class="col-sm-2 control-label">
+                                        Password</label>
+                                    <div class="col-sm-10">
+                                        <input type="password" class="form-control" id="password" placeholder="Password" />
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-2">
+                                    </div>
+                                    <div class="col-sm-10">
+                                        <button type="button" class="btn btn-primary btn-sm">
+                                            Save & Continue</button>
+                                        <button type="button" class="btn btn-default btn-sm">
+                                            Cancel</button>
+                                    </div>
+                                </div>
+                                </form>
+                            </div>
+                        </div>
+                        <!-- <div id="OR" class="hidden-xs">
+                            OR</div> -->
+                    </div>
+                    <div class="col-md-4">
+                        <div class="row text-center sign-with">
+                            <div class="col-md-12">
+                                <h3>
+                                    Sign in with</h3>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="btn-group btn-group-justified">
+                                    <a href="#" class="btn btn-primary">Facebook</a> <a href="#" class="btn btn-danger">
+                                        Google</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+        <!-- login popup end -->
+
  <div id="modal-welcome" class="iziModal"></div>
- <div id="modal-custom2" class="iziModal" data-iziModal-group="grupo1">
+  <div id="modal-custom2" class="iziModal" data-iziModal-group="grupo1">
     <button data-iziModal-close class="fa fa-times-circle"></button>
     <header>
         <a href="#" id="signin" class="active">Log In</a>
         <a href="#" class="">Register</a>
-
     </header>
-
-
-   
-
 
     <section>
 
@@ -182,7 +309,7 @@ $(document).ready(function(){
             <br /><br />
             <h4>OR</h4>            
 
-            <!--<button class="thm-btn"><i class="fa fa-facebook"></i> Sign up with Facebook</button>    -->
+            <button class="thm-btn"><i class="fa fa-facebook"></i> Sign up with Facebook</button>    
 
             <input type="text" name="name" id="name" tabindex="1" class="form-control" placeholder="User name" >
             <input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="Email Address"  >
@@ -200,7 +327,7 @@ $(document).ready(function(){
 
 
 
- </div>
+ </div> 
 
 
 <body class="">

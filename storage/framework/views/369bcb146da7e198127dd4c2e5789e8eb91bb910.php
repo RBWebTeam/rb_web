@@ -498,6 +498,7 @@ $(window).scroll(function(){
       // by dp
 
       $(".login-submit").click(function(event){
+        // alert('hii');
         event.preventDefault();
         var form=$(this).closest("form").attr('id');
           //console.log(form);return false;
@@ -646,7 +647,7 @@ $(window).scroll(function(){
       });
 
       $("#f_password").click(function(event){
-
+// alert('hii');
        event.preventDefault();
        var form=$(this).closest("form").attr('id');
        $form=$('#'+form);
@@ -1708,7 +1709,7 @@ $(window).scroll(function(){
 
     $('#back_id').click(function(e) {
       $(".login-form").delay(100).fadeIn(100);
-      $(".register-form").fadeOut(100);
+      $(".register-form").fadeIn(100);
       $("#forgot-password-hide").delay(100).fadeIn(100);
       $("#forgot-password-show").fadeOut(100);
       $(".social-ico").fadeIn(100);

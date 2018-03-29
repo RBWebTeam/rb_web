@@ -58,7 +58,7 @@
 /*-----------------------------------
 General css class
 -----------------------------------*/
-
+.img-center img {margin:0 auto; display:block;}
 body { font-size: 15px; font-family: 'Poppins', sans-serif; line-height: 1.4; color: #778191; margin-top:-10px; background-color: #f4f6f8; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
 h1, h2, h3, h4, h5, h6 { margin: 0px 0px 10px 0px; color: #3c4d6b; font-weight: 500; }
 h1 { font-size: 32px; line-height: 44px; letter-spacing: -1px; }

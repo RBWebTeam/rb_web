@@ -1,4 +1,9 @@
 @include('layout.header')
+
+<div class="iifl-image">
+    <img src="images/edelweiss.jpg">
+</div>
+
 <div class="container">
     <aside id="fh5co-hero">
         <div class="row">

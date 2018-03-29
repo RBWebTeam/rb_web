@@ -56,48 +56,48 @@
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <form class="contact-us" method="post" action="#">
+                                    <form name="contact_back_now" id="subscribe-form" method="post"> 
+                                           {{ csrf_field() }}
+                                        <input type="hidden" name="form" value="contact-back-form">
                                         <div class=" ">
                                             <!-- Text input-->
                                             <div class="col-md-4 col-sm-12 col-xs-12">
                                                 <div class="form-group">
                                                     <label class="sr-only control-label" for="name">name<span class=" "> </span></label>
-                                                    <input id="name" name="name" type="text" placeholder="Name" class="form-control input-md" required>
+                                                    <!-- <input id="name" name="name" type="text" placeholder="Name" class="form-control input-md" required> -->
+                                                    <input class="form-control input-md" id="name" name="name" placeholder="Name" required />
                                                 </div>
                                             </div>
+                                            
                                             <!-- Text input-->
                                             <div class="col-md-4 col-sm-12 col-xs-12">
                                                 <div class="form-group">
-                                                    <label class="sr-only control-label" for="email">Email<span class=" "> </span></label>
-                                                    <input id="email" name="email" type="email" placeholder="Email" class="form-control input-md" required>
+                                                    <label class="sr-only control-label" for="contact">Phone<span class=" "> </span></label>
+                                                    <!-- <input id="phone" name="phone" type="text" placeholder="Phone" class="form-     input-md" required> -->
+                                                    <input type="tel" class="form-control input-md" name="contact" onkeypress="return fnAllowNumeric(event)" placeholder="Number" minlength="10" maxlength="10" required />
                                                 </div>
                                             </div>
-                                            <!-- Text input-->
+                                            
                                             <div class="col-md-4 col-sm-12 col-xs-12">
-                                                <div class="form-group">
-                                                    <label class="sr-only control-label" for="phone">Phone<span class=" "> </span></label>
-                                                    <input id="phone" name="phone" type="text" placeholder="Phone" class="form-control input-md" required>
-                                                </div>
+                                                <!-- <button type="submit" class="btn btn-default sidebar-submit">Submit</button> -->
+                                                <a class="btn btn-default sidebar-submit" id="target" >Call Me Back</a>
                                             </div>
-                                            <!-- Select Basic -->
-                                            <div class="col-md-12 col-xs-12">
-                                                <div class="form-group">
-                                                    <label class="control-label" for="message"> </label>
-                                                    <textarea class="form-control" id="message" rows="7" name="message" placeholder="Message"></textarea>
-                                                </div>
-                                            </div>
-                                            <!-- Button -->
-                                            <div class="col-md-12 col-xs-12">
-                                                <button type="submit" class="btn btn-default">Submit</button>
-                                            </div>
+                                    
                                         </div>
                                     </form>
+
                                 </div>
+                                <div class='msg displaynone' ><p>Thanks. We will reach you soon.</p></div>
+                                <div class='msg_err displaynone'><p>Ooops. Something went wrong.</p></div>
                             </div>
                             <!-- /.section title start-->
                         </div>
                         
-                        <div class="map" id="googleMap"></div>
+                        <!-- <div class="map" id="googleMap"></div> -->
+                        <div class="map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3770.51082761713!2d72.8894307!3d19.0852334!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c87d64ffffff%3A0x52070606740f342d!2sRupeeBoss+financial+Services+Pvt.+ltd!5e0!3m2!1sen!2s!4v1492498308982" width="100%" height="350" frameborder="0" style="border:0" allowfullscreen></iframe>
+        </div>
+
                     </div>
                 </div>
             </div>
@@ -105,8 +105,6 @@
     </div>
     <!-- /.content end -->
     
-
-
    
     <!-- /.tiny footer -->
     <!-- /.tiny footer -->
@@ -153,82 +151,6 @@
 
 
 
-<div id="modal-welcome" class="iziModal"></div>
-
-    
-
-
-    
-    <div id="modal-custom2" class="iziModal" data-iziModal-group="grupo1">
-
-
-        <button data-iziModal-close class="fa fa-times-circle"></button>
-
-
-      
-
-
-
-
-         <header>
-            <a href="#" id="signin">Log In</a>
-            <a href="#" class="active">Register</a>
-        </header>
-
-
-        <section class="hide">
-
-             <a type="button" style="background-color: #3D5A98; color: #fff;  padding: 14px 20px; margin-bottom:50px; border: none; cursor: pointer; text-align:center; width: 30%;" href="http://facebook.com" target="_blank" class="ui-link"><strong>With Facebook</strong></a>
-
-             <a type="button" style="background-color: #ed1c24; color: #fff;  padding: 14px 20px; margin-bottom:50px; border: none; cursor: pointer; text-align:center; width: 30%;" href="http://gmail.com" target="_blank" class="ui-link"><strong>With Google Plus</strong></a>
-            <br /><br />
-            <h4>OR</h4>
-            
-
-            <input type="text" placeholder="Email">
-            <input type="password" placeholder="Password">
-            <p style="text-align:right"><a href="forgot-password.html">Forgot Password ?</a></p>
-            <div class="col-md-4 col-sm-4 col-xs-12">
-                <button type="login" class="btn btn-default btn-sm " style="width: 100%;">Log In</button>     
-                
-                       
-            </div>
-
-           
-        </section>
-
-
-        <section>
-
-             <a type="button" style="background-color: #3D5A98; color: #fff;  padding: 14px 20px; margin-bottom:50px; border: none; cursor: pointer; text-align:center; width: 30%;" href="http://facebook.com" target="_blank" class="ui-link"><strong>With Facebook</strong></a>
-
-             <a type="button" style="background-color: #ed1c24; color: #fff;  padding: 14px 20px; margin-bottom:50px; border: none; cursor: pointer; text-align:center; width: 30%;" href="http://gmail.com" target="_blank" class="ui-link"><strong>With Google Plus</strong></a>
-            <br /><br />
-            <h4>OR</h4>
-            
-
-            <!--<button class="thm-btn"><i class="fa fa-facebook"></i> Sign up with Facebook</button>    -->
-
-            <input type="text" placeholder="User Name">
-            <input type="text" placeholder="Email Address">
-            <input type="mobile" placeholder="Mobile Number">
-            <input type="password" placeholder="Password">
-            <input type="confirm-password" placeholder="Confirm Password">
-            
-           <div class="col-md-4 col-sm-4 col-xs-12">
-                    
-                 <button type="register" class="btn btn-default btn-sm " style="width: 100%;">Register</button>
-                    
-            </div>
-
-           
-        </section>
-
-
-
-        <br /><br />
-    </div>
-    
 
      <!--<script src="assets/js/vendor/jquery-2.1.3.min.js" type="text/javascript"></script>-->
     <script src="js/iziModal.mind1eb.js?=v2" type="text/javascript"></script>
@@ -239,3 +161,5 @@
 
 
 @include('layout.footer')
+@include('layout.script')
+

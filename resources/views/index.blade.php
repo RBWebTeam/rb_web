@@ -521,7 +521,7 @@ $(document).ready(function(){
 
                     <div class="col-md-02 col-sm-4 col-xs-6">
                         <div class="service-block-v5">
-                            <a href="{{URL::to('sme-working-capital')}}" class="btn-2 btn-secondary btn-block" style="background-color: #000;">SME CAR LEASING</a>
+                            <a href="{{URL::to('contact-us')}}" class="btn-2 btn-secondary btn-block" style="background-color: #000;">SME CAR LEASING</a>
                         </div>
                     </div>
 

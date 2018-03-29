@@ -676,8 +676,8 @@
     <script src="js/back-to-top.js" type="text/javascript"></script>
     <!-- Faq Accordion -->
     <script src="js/accordion.js" type="text/javascript"></script>
-   
-<?php echo $__env->make('layout.script', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+ <?php echo $__env->make('layout.footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+  <?php echo $__env->make('layout.script', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 
 
 <div class="modal fade" tabindex="-1" role="dialog" id="working_capital_process">

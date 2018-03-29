@@ -347,6 +347,7 @@
   
 <!---Borrow end -->
 
+
 <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" id="Experian_terms_modal">
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content col-md-12 text-justify model-hig">

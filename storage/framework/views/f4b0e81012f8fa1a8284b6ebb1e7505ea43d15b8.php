@@ -1,4 +1,9 @@
 <?php echo $__env->make('layout.header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+<div class="iifl-image">
+    <img src="images/edelweiss.jpg">
+</div>
+
 <div class="container">
     <aside id="fh5co-hero">
         <div class="row">

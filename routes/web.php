@@ -410,3 +410,9 @@ Route::post('excel-upload-submit','LoanController@excel_upload_submit');
 
 /*Capital Float*/
 Route::get('capitalfloat','LoanController@capitalfloat');
+
+// express loan
+Route::get('hdfc-personal-loan','LoanController@hdfc_personal_loan');
+Route::post('hdfc-personal-loan-submit','LoanController@hdfc_personal_loan_submit');
+Route::get('hdfc-business-loan','LoanController@hdfc_business_loan');
+Route::post('hdfc-business-loan-submit','LoanController@hdfc_business_loan_submit');

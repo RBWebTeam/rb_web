@@ -1,15 +1,16 @@
-  <script src="<?php echo e(URL::to('js/Myapp.js')); ?>"></script>
-    <script src="<?php echo e(URL::to('js/jsPdf.js')); ?>"></script>
-	 <script src="<?php echo e(URL::to('js/freshslider.min.js')); ?>"></script>
+  <script src="<?php echo e(URL::to('js/Myapp.js')); ?>"></script>    
+  <script src="<?php echo e(URL::to('js/jsPdf.js')); ?>"></script>
+   <script src="<?php echo e(URL::to('js/freshslider.min.js')); ?>"></script>
 
    <script type="text/javascript" src="<?php echo e(URL::to('js/owl.carousel.min.js')); ?>"></script>
     <script type="text/javascript" src="<?php echo e(URL::to('js/slider-carousel.js')); ?>"></script>
     <script type="text/javascript" src="<?php echo e(URL::to('js/service-carousel.js')); ?>"></script>
-    <!-- Back to top script -->
+  <!--   Back to top script -->
     <script src="<?php echo e(URL::to('js/back-to-top.js')); ?>" type="text/javascript"></script>
-    <script type="text/javascript" src="<?php echo e(URL::to('js/menumaker.js')); ?>"></script>
-    
-     <script>
+    <script type="text/javascript" src="<?php echo e(URL::to('js/menumaker.js')); ?>"></script> 
+
+
+<script>
 $(document).ready(function(){
   // Add smooth scrolling to all links
   $("a").on('click', function(event) {
@@ -360,8 +361,6 @@ $(window).scroll(function(){
 </script>
 
 
-
-  </script>
   <script>
 
           $(document).ready(function(){
@@ -498,15 +497,17 @@ $(window).scroll(function(){
       // by dp
 
       $(".login-submit").click(function(event){
-        // alert('hii');
+      // alert('hii');
         event.preventDefault();
+        // alert('hello');
         var form=$(this).closest("form").attr('id');
           //console.log(form);return false;
           $form=$('#'+form);
           if(! $form.valid()){
           }else{
+            // alert('hii');
             var s=$('#'+form).serialize();
-
+// alert('hello');
             $.ajax({  
              type: "POST",  
              url: "<?php echo e(URL::to('login')); ?>",
@@ -639,7 +640,7 @@ $(window).scroll(function(){
         });
 
 
-      $("#forgotps").click(function(event){
+        $("#forgotps").click(function(event){
         $("#forgotpassword").show();
         $("#registration1").hide();
         $("#login").hide();
@@ -1164,7 +1165,7 @@ $(window).scroll(function(){
           return thousandsAndRest[1].replace(/\B(?=(\d{2})+(?!\d))/g, ",") + "," + thousandsAndRest[2];
         }
   </script>
-      <!-- emi scripts end -->
+      <!-- emi scripts end
 
       <!-- adding new scripts for loan form process -->
   <script>
@@ -1895,7 +1896,7 @@ function mobile_valid(element){
             <div class="col-md-6 col-sm-12 col-xs-12">
                              <div class="form-group">
                               <label>Name</label>
-                                <input type="text" class="form-input-new form-control" name="name" id="name" placeholder="Your good name" autofocus="autofocus" required>
+                                <input type="text" class="form-input-new form-control" name="name" id="name" placeholder="Name" autofocus="autofocus" required>
                              </div>
                              </div>
             
@@ -1909,16 +1910,16 @@ function mobile_valid(element){
 
             
             
-            <div class="col-md-6 col-sm-12 col-xs-12">
+                            <div class="col-md-6 col-sm-12 col-xs-12">
                              <div class="form-group">
                               <label>Contact</label>
-                                <input type="text" class="form-input-new form-control" name="contact" id="contact" placeholder="Contact" pattern="[789][0-9]{9}" required maxlength="10" minlength="10" onkeypress="return fnAllowNumeric(event)" required>
+                                <input type="text" class="form-input-new form-control" name="contact" id="contact" placeholder="Mobile" pattern="[789][0-9]{9}" required maxlength="10" minlength="10" onkeypress="return fnAllowNumeric(event)" required>
                              </div>
                              </div>
 
             
           
-          <div class="col-md-6 col-sm-12 col-xs-12">
+                            <div class="col-md-6 col-sm-12 col-xs-12">
                              <div class="form-group">
                               <label>Password</label>
                                 <input type="password" class="form-input-new form-control" name="set_pwd" id="set_pwd" placeholder="Password" required maxlength="10" minlength="6">
@@ -1928,7 +1929,7 @@ function mobile_valid(element){
                              <div class="col-md-6 col-sm-12 col-xs-12">
                              <div class="form-group">
                               <label>Confirm Password</label>
-                                <input type="password" class="form-input-new form-control" name="set_pwd_confirm" id="set_pwd_confirm" placeholder="Password" required maxlength="10" minlength="6">
+                                <input type="password" class="form-input-new form-control" name="set_pwd_confirm" id="set_pwd_confirm" placeholder="Confirm Password" required maxlength="10" minlength="6">
                              </div>
                              </div>
 
@@ -2578,5 +2579,15 @@ $(window).on('load', function(){
 		     $(window).bind("load",function() {
            $('.hom-rig').slideDown(1000);
         });
+
+
+
+
+         
 		</script>
+
+
+
+
+
  <?php echo $__env->make('layout.modal', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

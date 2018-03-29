@@ -334,7 +334,7 @@
 
           <div class="col-md-12 col-xs-12">
                 <br>
-           <button id="eligibility"  class="btn btn-default btn-sm disblk" title="See Bankwise Eligibility And Apply Amongst Best Bank" style="width: 100%;" disabled>Check Eligibility </button>      
+           <a id="eligibility"  class="btn btn-default btn-sm disabled" title="See Bankwise Eligibility And Apply Amongst Best Bank" style="width: 100%;">Check Eligibility </a>      
             
           </div>
 
@@ -432,6 +432,7 @@
 @include('layout.footer')
 @include('layout.script')
 
+
 <script type="text/javascript">
 
 var getUrl=0;
@@ -519,7 +520,8 @@ $(".product_ID").click(function(e){
                              $('#mi_ID').show();
                              $('#err').hide();
                               
-                              $('#eligibility').prop('disabled', false);
+                              // $('#eligibility').show();
+                              $("#eligibility").removeClass("disabled", true);
                            
                             
                              // $(window).scrollTop($('#form_ID').offset().top-20);
@@ -590,29 +592,8 @@ $(document).on('click','.apply_new',function(e){
 $("#eligibility").click(function() {
   $(window).scrollTop($('#form_ID').offset().top-20);
 });
-
-
-
 </script>
 
-<script type="text/javascript">
-  $(document).ready(function()
-{
-    function update()
-    { 
-      if(! $("#property_cost").val()){
-          $("#loan_amount").val('');
-      }else{
-        var cost = parseFloat($("#property_cost").val());
-        // console.log(cost);
-        var total = (cost)*80/100;
-        // var total = total.toFixed(2);
-        // console.log(total);
-        $("#loan_amount").val(total);
-      }
-    }
-    $(document).on("change, keyup", "#property_cost", update);
-});
-</script>
+
 
 

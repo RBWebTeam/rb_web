@@ -1,192 +1,133 @@
 @include('layout.header')
-<script
-  src="http://code.jquery.com/jquery-3.2.1.min.js"
-  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-  crossorigin="anonymous"></script> 
- <style>
-   
-   span.multiselect-native-select select {
-  border: 0!important;
-  clip: rect(0 0 0 0)!important;
-  height: 1px!important;
-  margin: -1px -1px -1px -3px!important;
-  overflow: hidden!important;
-  padding: 0!important;
-  position: absolute!important;
-  width: 1px!important;
-  left: 50%;
-  top: 30px
-}
-.multiselect-container {
-  position: absolute;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  margin-top: -738px;
-}
-.multiselect-container .input-group {
-  margin: 5px
-}
-.multiselect-container>li {
-  padding: 0
-}
-.multiselect-container>li>a.multiselect-all label {
-  font-weight: 700
-}
-.multiselect-container>li.multiselect-group label {
-  margin: 0;
-  padding: 3px 20px 3px 20px;
-  height: 100%;
-  font-weight: 700
-}
-.multiselect-container>li.multiselect-group-clickable label {
-  cursor: pointer
-}
-.multiselect-container>li>a {
-  padding: 0
-}
-.multiselect-container>li>a>label {
-  margin: 0;
-  height: 100%;
-  cursor: pointer;
-  font-weight: 400;
-  padding: 3px 0 3px 30px
-}
-.multiselect-container>li>a>label.radio, .multiselect-container>li>a>label.checkbox {
-  margin: 0
-}
-.multiselect-container>li>a>label>input[type=checkbox] {
-  margin-bottom: 5px
-}
-.btn-group>.btn-group:nth-child(2)>.multiselect.btn {
-  border-top-left-radius: 4px;
-  border-bottom-left-radius: 4px
-}
-.form-inline .multiselect-container label.checkbox, .form-inline .multiselect-container label.radio {
-  padding: 3px 20px 3px 40px
-}
-.form-inline .multiselect-container li a label.checkbox input[type=checkbox], .form-inline .multiselect-container li a label.radio input[type=radio] {
-  margin-left: -20px;
-  margin-right: 0
-}
-.multiselect {height:42px;z-index:1000;}
+<div class="iifl-image">
+    <img src="images/lendingkart.jpg">
+</div>
 
-
-@media only screen and (max-width: 768px) {
-.loan-head {
-	margin-top:0px;
-    width: 80%;
-	margin-bottom:40px;
-}
-}
- </style>
-
-
-
-<div id="fh5co-hero">
-    <div class="fh5co-contact animate-box">
+<div class=" ">
+  <!-- content start -->
         <div class="container">
             <div class="row">
-                <div class="col-md-12 text-left fh5co-heading animate-box fadeInUp animated">
-                    <center>
-                        <h1 class="loan-head" >Your Business Loan is Just a Click Away</h1>
-                       
-                      </center>
-                    
-                </div>
                 <div class="col-md-12">
-                    <div class="row text-left comp-pg rate white-bg">
-                          
-                        
-                            <form class="" id="lendingkart_form" name="lendingkart_form" role="form" method="POST" >
-                             {{ csrf_field() }}
-                             
-                                <div class="row">
-                                    <div class="form-group">
-                                    
-                                       <h1 class="loan-head" >Personal Details</h1>
-                                       <input type="hidden" name="personal_first_name" id="personal_first_name" value="">
+                    <div class="wrapper-content bg-white pinside40">
+                        <div class="section-faq" id="section-faq">
+                            <!-- heading                                -->
+                                <div class="mb60  section-title text-center  ">
+                                <h1 class=""><center>Lending Kart</center></h1>
+                                <p>Your Business Loan is just a Click Away</p>
+                                </div>
+                                <!-- heading end -->
+                              
+                              <div class="row">    
+                       
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding-bottom: 20px">
+                                  <div class="how-it-block1 bg-boxshadow" style=" min-height: 600px;">
+                                      <h4 >Personal Details</h4>
+                                      <form class="" id="lendingkart_form" name="lendingkart_form" role="form" method="POST" >
+                                        {{ csrf_field() }}
+                                        <input type="hidden" name="personal_first_name" id="personal_first_name" value="">
                                        <input type="hidden" name="personal_middle_name" id="personal_middle_name" value="">
                                        <input type="hidden" name="personal_last_name" id="personal_last_name" value="">
-                                        <div class="col-md-4">
-                                            <input type="text" class="form-control" id="first_name" name="first_name" placeholder="First Name(as per PAN Record)"  onkeypress="return AllowAlphabet(event)" required>
-                                        </div>
-                                        <div class="col-md-4">
-                                             <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Last Name(as per PAN Record)"  onkeypress="return AllowAlphabet(event)" required>
+
+                                        <div class="col-md-4 col-sm-12 col-xs-12">
+                                          <div class="form-group">
+                                            <input type="text" class="form-control" id="first_name" name="first_name" placeholder="First Name (As per PAN Record)"  onkeypress="return AllowAlphabet(event)" required>
+                                          </div>
                                         </div>
 
-                                        <div class="col-md-4" >
-                                        
-                                            <input type="text" class="form-control lastReporteddob" id="personal_dob" name="personal_dob" placeholder="DOB" required>
-                                            
+                                        <div class="col-md-4 col-sm-12 col-xs-12">
+                                          <div class="form-group">
+                                            <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Last Name (As per PAN Record)"  onkeypress="return AllowAlphabet(event)" required>
+                                          </div>
                                         </div>
 
-                                         <div class="col-md-4" >
-                                        
+                                        <div class="col-md-4 col-sm-12 col-xs-12">
+                                          <div class="form-group">
+                                            <input type="text" class="form-control lastReporteddob" id="personal_dob" name="personal_dob" placeholder="Date of Birth" required>
+                                          </div>
+                                        </div>
+
+                                        <div class="col-md-4 col-sm-12 col-xs-12">
+                                          <div class="form-group">
                                             <input type="text" class="form-control" id="PAN" name="PAN" oninput="pan_card('PAN')" maxlength="10" placeholder="PAN Number" required>
                                             <div id="pan_number" style="display:none;color: red; font-size: 10px">Oops.Please Enter Valid Pan Number.!!</div>
+                                          </div>
                                         </div>
 
-                                        <div class="col-md-4">
+                                        <div class="col-md-4 col-sm-12 col-xs-12">
+                                          <div class="form-group">
                                             <input type="text" class="form-control" id="personal_email" name="personal_email" placeholder="Email" oninput="mail('personal_email')" required>
                                             <div id="email" style="display:none;color: red; font-size: 10px">Please Enter Valid Email Id.</div>
+                                          </div>
                                         </div>
 
-                                         <div class="col-md-4">
+                                        <div class="col-md-4 col-sm-12 col-xs-12">
+                                          <div class="form-group">
                                             <input type="text" class="form-control" id="personal_mobile" name="personal_mobile" placeholder="Mobile No" maxlength="10" required>
-                                            <div id="mob_no" style="display:none;color: red; font-size: 10px">Mobile No should be of 10 digits.</div>
+                                            <div id="mob_no" style="display:none;color: red; font-size: 10px">Mobile No should be of 10 digit</div>
+                                          </div>
                                         </div>
 
-                                        <div class="col-md-4">
-                                            <input type="text" class="form-control" id="permanent_address1" name="permanent_address1" placeholder="Permanent Add1" required>
+                                        <div class="col-md-4 col-sm-12 col-xs-12">
+                                          <div class="form-group">
+                                            <input type="text" class="form-control" id="permanent_address1" name="permanent_address1" placeholder="Permanent Address1" required>
+                                          </div>
                                         </div>
 
-                                        <div class="col-md-4">
-                                            <input type="text" class="form-control" id="permanent_address2" name="permanent_address2" placeholder="Permanent Add2" required>
+                                        <div class="col-md-4 col-sm-12 col-xs-12">
+                                          <div class="form-group">
+                                            <input type="text" class="form-control" id="permanent_address2" name="permanent_address2" placeholder="Permanent Address2" required>
+                                          </div>
                                         </div>
 
-                                        <div class="col-md-4">
+                                        <div class="col-md-4 col-sm-12 col-xs-12">
+                                          <div class="form-group">
                                             <input type="text" class="form-control" id="permanent_pincode" name="permanent_pincode" placeholder="Pincode" required>
-                                            
+                                          </div>
                                         </div>
 
-                                         <div class="col-md-4">
+                                        <div class="col-md-4 col-sm-12 col-xs-12">
+                                          <div class="form-group">
                                             <input type="text" class="form-control search_statenm" id="permanent_state" name="permanent_state" placeholder="State" required>
+                                          </div>
                                         </div>
 
-                                        <div class="col-md-4">
+                                        <div class="col-md-4 col-sm-12 col-xs-12">
+                                          <div class="form-group">
                                             <input type="text" class="form-control search_citynm" id="permanent_city" name="permanent_city" placeholder="City" required>
-                                            
+                                          </div>
                                         </div>
-                                        </div>
-                                    <hr>
-                                </div>
 
-                                 <div class="row">
-                                    <div class="form-group">
-                                   <h1 class="loan-head" >Business Details</h1>
-                                   <div class="col-md-4">
+                                        <hr style="color:transparent; width:100%">
+                                         <h4 >Business Details</h4>
+
+                                        <div class="col-md-4 col-sm-12 col-xs-12">
+                                          <div class="form-group">
                                             <input type="text" class="form-control" id="business_Email" name="business_Email" placeholder="Business Email" oninput="e_mail('business_Email')" required>
-                                            <div id="e_mail" style="display:none;color: red; font-size: 10px">Please Enter Valid Email Id.</div>
+                                            <div id="e_mail" style="display:none;color: red; font-size: 10px">Please Enter Valid Email Id</div>
+                                          </div>
                                         </div>
 
-                                        <div class="col-md-4" >
-                                        
+                                        <div class="col-md-4 col-sm-12 col-xs-12">
+                                          <div class="form-group">
                                             <input type="text" class="form-control" id="business_Mobile" name="business_Mobile" onkeypress="return fnAllowNumeric(event)" maxlength="10" placeholder="Business Mobile" required>
+                                          </div>
                                         </div>
 
-                                        <div class="col-md-4" >
-                                        
-                                            <input type="text" class="form-control" id="last_12_Months_Turnover" name="last_12_Months_Turnover" onkeypress="return fnAllowNumeric(event)" maxlength="6" maxlength="9" placeholder="Revenue in Last 12 months" required>
+                                        <div class="col-md-4 col-sm-12 col-xs-12">
+                                          <div class="form-group">
+                                            <input type="text" class="form-control" id="last_12_Months_Turnover" name="last_12_Months_Turnover" onkeypress="return fnAllowNumeric(event)" maxlength="6" maxlength="9" placeholder="Revenue in Last 12 Months" required>
+                                          </div>
                                         </div>
 
-                                        <div class="col-md-4" >
-                                        
+                                        <div class="col-md-4 col-sm-12 col-xs-12">
+                                          <div class="form-group">
                                             <input type="text" class="form-control" id="Age_of_business" name="Age_of_business" onkeypress="return fnAllowNumeric(event)" minlength="1" maxlength="3" placeholder="Age of Business" required>
+                                          </div>
                                         </div>
 
-                                         <div class="col-md-4">
-                                            <select class="form-control drop-arr block drop-arr select-sty" name="Business_Type" id="Business_Type" required>
+                                        <div class="col-md-4 col-sm-12 col-xs-12">
+                                          <div class="form-group">
+                                            <select class="form-control select-sty" name="Business_Type" id="Business_Type" required>
                                               <option disabled selected  value="">Business Type</option>
                                                 <option value="Proprietorship">Proprietorship</option>
                                                 <option value="Partnership">Partnership</option>
@@ -196,116 +137,126 @@
                                                 <option value="LLP">LLP</option>
                                                 <option value="Not Registered">Not Registered</option>
                                             </select> 
+                                          </div>
                                         </div>
 
-                                        <div class="col-md-4">
-                                            <select class="form-control drop-arr block drop-arr select-sty" name="Nature_of_business" id="Nature_of_business" required>
+                                        <div class="col-md-4 col-sm-12 col-xs-12">
+                                          <div class="form-group">
+                                            <select class="form-control select-sty" name="Nature_of_business" id="Nature_of_business" required>
                                               <option disabled selected  value="">Nature of Business</option>
                                                 <option value="Online">Online</option>
                                                 <option value="Offline">Offline</option>
-                                                <option value="Both">Both</option>
-                                                
+                                                <option value="Both">Both</option>                           
                                             </select> 
+                                          </div>
                                         </div>
 
-                                        <div class="col-md-4" >
-                                        
+                                        <div class="col-md-4 col-sm-12 col-xs-12">
+                                          <div class="form-group">
                                             <input type="text" class="form-control" id="Company_PAN" name="Company_PAN" oninput="pancard('Company_PAN')" maxlength="10" placeholder="Company PAN Number" required>
-                                            <div id="pan_no" style="display:none;color: red; font-size: 10px">Oops.Please Enter Valid Pan Number.!!</div>
+                                            <div id="pan_no" style="display:none;color: red; font-size: 10px">Oops.Please Enter Valid Pan Number</div>
+                                          </div>
                                         </div>
 
-                                        <div class="col-md-4" >
-                                        
-                                            <input type="text" class="form-control" id="VAT_Tin" name="VAT_Tin" maxlength="11" placeholder="Tax Payer Identification Number">
-                                            
+                                        <div class="col-md-4 col-sm-12 col-xs-12">
+                                          <div class="form-group">
+                                             <input type="text" class="form-control" id="VAT_Tin" name="VAT_Tin" maxlength="11" placeholder="Tax Payer Identification Number">
+                                          </div>
                                         </div>
 
-                                        <div class="col-md-4" >
-                                        
+                                        <div class="col-md-4 col-sm-12 col-xs-12">
+                                          <div class="form-group">
                                             <input type="text" class="form-control" id="Service_Tax_No" name="Service_Tax_No" maxlength="15" placeholder="Service Tax No">
-                                            
+                                          </div>
                                         </div>
 
-                                        <div class="col-md-4">
-                                            <select class="form-control drop-arr block drop-arr select-sty" name="business_premise" id="business_premise" required>
-                                              <option disabled selected  value="">Business Premise</option>
+                                        <div class="col-md-4 col-sm-12 col-xs-12">
+                                          <div class="form-group">
+                                            <select class="form-control select-sty" name="business_premise" id="business_premise" required>
+                                                <option disabled selected  value="">Business Premise</option>
                                                 <option value="Owned">Owned</option>
-                                                <option value="Rented">Rented</option>
-                                                
-                                                
-                                            </select> 
+                                                <option value="Rented">Rented</option>              
+                                              </select> 
+                                          </div>
                                         </div>
 
-                                        <div class="col-md-4">
-                                            <input type="text" class="form-control" id="business_address1" name="business_address1" placeholder="Business Add1" required>
+                                        <div class="col-md-4 col-sm-12 col-xs-12">
+                                          <div class="form-group">
+                                            <input type="text" class="form-control" id="business_address1" name="business_address1" placeholder="Business Address1" required>
+                                          </div>
                                         </div>
 
-                                        <div class="col-md-4">
-                                            <input type="text" class="form-control" id="business_address2" name="business_address2" placeholder="Business Add2" required>
+                                        <div class="col-md-4 col-sm-12 col-xs-12">
+                                          <div class="form-group">
+                                            <input type="text" class="form-control" id="business_address2" name="business_address2" placeholder="Business Address2" required>
+                                          </div>
                                         </div>
 
-                                        <div class="col-md-4">
+                                        <div class="col-md-4 col-sm-12 col-xs-12">
+                                          <div class="form-group">
                                             <input type="text" class="form-control" id="business_pincode" name="business_pincode" placeholder="Pincode" required>
-                                            
+                                          </div>
                                         </div>
 
-                                         <div class="col-md-4">
+                                        <div class="col-md-4 col-sm-12 col-xs-12">
+                                          <div class="form-group">
                                             <input type="text" class="form-control search_statenm" id="business_state" name="business_state" placeholder="State" required>
+                                          </div>
                                         </div>
 
-                                        <div class="col-md-4">
+                                        <div class="col-md-4 col-sm-12 col-xs-12">
+                                          <div class="form-group">
                                             <input type="text" class="form-control search_citynm" id="business_city" name="business_city" placeholder="City" required>
-                                            
+                                          </div>
                                         </div>
-                                    </div>
-                                    <hr>
-                                </div>
 
-                                <div class="row">
-                                    <div class="form-group">
-                                     <h1 class="loan-head" >Financial Details</h1>
-                                     <div class="col-md-4">
+                                        <hr style="color:transparent; width:100%" />
+                                        <h4 >Financial Details</h4>
+
+                                        <div class="col-md-4 col-sm-12 col-xs-12">
+                                          <div class="form-group">
                                             <input type="text" class="form-control" id="Desired_Loan_Amount" name="Desired_Loan_Amount" onkeypress="return fnAllowNumeric(event)" minlength="6" maxlength="9" placeholder="Loan Required" required>
-                                            
+                                          </div>
                                         </div>
 
-                                        <div class="col-md-4">
-                                            <input type="text" class="form-control" id="EMI_BEING_PAID" name="EMI_BEING_PAID" value="0" onkeypress="return fnAllowNumeric(event)" placeholder="Obligations">
-                                            
+                                        <div class="col-md-4 col-sm-12 col-xs-12">
+                                          <div class="form-group">
+                                             <input type="text" class="form-control" id="EMI_BEING_PAID" name="EMI_BEING_PAID" value="0" onkeypress="return fnAllowNumeric(event)" placeholder="Obligations">
+                                          </div>
                                         </div>
 
-                                        <div class="col-md-4">
-                                            <select class="form-control drop-arr block drop-arr select-sty" name="Availed_Loan_In_Past" id="Availed_Loan_In_Past">
+                                        <div class="col-md-4 col-sm-12 col-xs-12">
+                                          <div class="form-group">
+                                             <select class="form-control select-sty" name="Availed_Loan_In_Past" id="Availed_Loan_In_Past">
                                               <option disabled selected  value="">Availed Loan In Past</option>
                                                 <option value="Y">Yes</option>
-                                                <option selected="" value="N">No</option>
-                                                
-                                                
+                                                <option selected="" value="N">No</option>                        
                                             </select> 
+                                          </div>
                                         </div>
 
-                                        <div class="col-md-4">
-                                            <select class="form-control drop-arr block drop-arr select-sty" name="Have_Credit_Card" id="Have_Credit_Card" >
+                                        <div class="col-md-4 col-sm-12 col-xs-12">
+                                          <div class="form-group">
+                                            <select class="form-control select-sty" name="Have_Credit_Card" id="Have_Credit_Card" >
                                               <option disabled selected  value="">Have Credit Card</option>
                                                 <option value="Y">Yes</option>
                                                 <option selected="" value="N">No</option>
                                             </select> 
+                                          </div>
                                         </div>
 
-                                        <div class="col-md-4">
-                                            <input type="text" class="form-control" id="Gross_Annual_Income" name="Gross_Annual_Income" maxlength="5" maxlength="9" onkeypress="return fnAllowNumeric(event)" placeholder="Gross Income" required>
-                                            
+                                        <div class="col-md-4 col-sm-12 col-xs-12">
+                                          <div class="form-group">
+                                             <input type="text" class="form-control" id="Gross_Annual_Income" name="Gross_Annual_Income" maxlength="5" maxlength="9" onkeypress="return fnAllowNumeric(event)" placeholder="Gross Income" required>
+                                          </div>
                                         </div>
 
+                                        <hr style="color:transparent; width:100%" />
+                                         <h4 >Others Details</h4>
 
-                                    </div>
-                                    <hr>
-                                </div>
-                                 <div class="row">
-                                    <div class="form-group">
-                                    <h1 class="loan-head" >Others Details</h1>
-                                    <div class="col-md-4">
-                                            <select class="form-control drop-arr block drop-arr select-sty" name="Bank_with" id="Bank_with" required>
+                                        <div class="col-md-4 col-sm-12 col-xs-12">
+                                          <div class="form-group">
+                                            <select class="form-control select-sty" name="Bank_with" id="Bank_with" required>
                                               <option disabled selected  value="">Bank Name</option>
                                                 <option value="Allahabad Bank">Allahabad Bank</option>
                                                 <option value="AXIS Bank">AXIS Bank</option>
@@ -324,24 +275,25 @@
                                                 <option value="YES Bank Ltd.">YES Bank Ltd.</option>
                                                 <option value="Others">Others</option>
                                             </select> 
+                                          </div>
                                         </div>
 
-                                        <div class="col-md-4">
-                                            <select class="form-control drop-arr block drop-arr select-sty" name="loan_purpose" id="loan_purpose" required>
+                                        <div class="col-md-4 col-sm-12 col-xs-12">
+                                          <div class="form-group">
+                                            <select class="form-control select-sty" name="loan_purpose" id="loan_purpose" required>
                                               <option disabled selected  value="">Purpose Of Loan</option>
                                                 <option value="Inventory Rotation">Inventory Rotation</option>
                                                 <option value="Product Differentiation">Product Differentiation</option>
                                                 <option value="Expansion">Expansion</option>
                                                 <option value="Launch of new product">Launch of new product</option>
-                                                <option value="Working Capital">Working Capital</option>
-                                                
+                                                <option value="Working Capital">Working Capital</option>        
                                               </select>
+                                          </div>
                                         </div>
 
-                                     
-                                      <div class="col-md-4">
-
-                                              <select  name="product_cat" id="product_cat" class="multiselect-ui form-control block select-sty" multiple="multiple">
+                                        <div class="col-md-4 col-sm-12 col-xs-12">
+                                          <div class="form-group">
+                                             <select  name="product_cat" id="product_cat" class="multiselect-ui form-control block select-sty" placeholder="Products" multiple="multiple">
                                                
                                                 <option  value="Apparels">Apparels</option>
                                                 <option value="Appliances">Appliances</option>
@@ -372,42 +324,36 @@
                                                 <option value="Musical Instruments">Musical Instruments</option>
                                                 <option value="Nutrition and Supplements">Nutrition and Supplements</option>
                                                 <option value="Others">Others</option>
-
-                                             </select>
-
-                                               </div>
-
-                                               <input type="hidden" name="product_category" id="product_category" value="">
-
-                                               </div>
-                                    <hr>
-                                </div>
-                                
-                              <div class="col-md-12">
-                                        <input type="checkbox"  name="terms" required>
-                                            I hereby confirm that I have read and understood the
-                                     <a href="#" data-toggle="modal" data-target="#Experian_terms_modal"></a> Rupeeboss Terms and Conditions applicable to this service and that all the details furnished by me above are true and correct. I further provide consent to Rupeeboss and its affiliates to contact me with reference to financial products and this consent shall override any registration with DNC/NDNC.
-
+                                              </select>
+                                          </div>
                                         </div>
-                                        
-                                        <div class="col-md-12">
-                                        &nbsp;&nbsp;&nbsp;&nbsp;<button class="btn btn-primary btn-outline with-arrow animate-box fadeInUp animated lendingkart-submit dis-tbl" >Confirm & Continue<i class="icon-arrow-right"></i></button>
-                                    <div class="iframeloading" style= "display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
-                <img src="{{URL::to('images/ajaxloader.gif')}}" alt="Loader" title="Loader" style="top: 50%; position: relative; left: 50%;"  />
-               </div>
-                                   
-                                
-                            </form>
-                    </div>
-                    <hr>
-                    </div>
-                    
 
+                                    <input type="hidden" name="product_category" id="product_category" value="">
+
+                                        
+                                    <input type="checkbox"  name="terms" required>&nbsp;&nbsp;I hereby confirm that I have read and understood the<a href="#" data-toggle="modal" data-target="#Experian_terms_modal"></a> Rupeeboss Terms and Conditions applicable to this service and that all the details furnished by me above are true and correct. I further provide consent to Rupeeboss and its affiliates to contact me with reference to financial products and this consent shall override any registration with DNC/NDNC.
+
+
+                                    <div class="col-md-4 col-sm-12 col-xs-12">
+                                          <div class="form-group">
+                                        <button class="btn btn-default btn-sm lendingkart-submit dis-tbl" >Confirm & Continue<i class="icon-arrow-right"></i></button>       
+                                       </div>
+                                     </div>                       
+
+                                    </form>
+                                  </div>
+                                </div>
+
+                              </div>
+
+                            
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>  
-    </div>
+        </div>
 </div>
+
 @include('layout.footer')
 @include('layout.script')
 
@@ -525,6 +471,26 @@
             
         </div>
       
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" tabindex="-1" role="dialog" id="lendingkart-doc">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Confirmation Status</h4>
+      </div>
+      <div class="modal-body">
+        <h4><p id="modalerr"><h5 style="color: black">Your Documents have been uploaded successfully.<h5></p></h4>
+        
+      </div>
+      
+      <div class="modal-footer">
+        <a type="button" class="btn btn-primary lendingkart_documents">Proceed to Document Upload</a>
+        
+      </div>
     </div>
   </div>
 </div>
@@ -841,7 +807,14 @@ $(function() {
          data : $('#document_upload_form').serialize(),
          success: function(msg){
          
-         
+         if (msg.status==0) 
+          {
+            $('#lendingkart-doc').modal('show');
+          } 
+          else 
+          {
+              alert('Sorry could not upload documents');
+          }
           
 
         }  
@@ -2532,7 +2505,7 @@ $(function() {
 
 <script type="text/javascript">
   $('#lendingkart_doc').click(function(){
-        alert('ok');
+        // alert('ok');
        if(! $('#document_upload_form').valid()){
              // alert('not valid');
 
@@ -2584,8 +2557,9 @@ $(function() {
     });
 </script>
 
-
-
-
-
+<script type="text/javascript">
+  $('.lendingkart_documents').click(function(){
+     window.location.href ="{{URL::to('thank-you')}}";
+  });
+</script>
 

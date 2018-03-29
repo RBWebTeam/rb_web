@@ -736,8 +736,11 @@ $url = $this::$url_static."/BankAPIService.svc/updateIIFLRevisedQuote";
         for($i=0;$i<4;$i++){
          
           $file=($req->file($str[$i]));
+
           $destinationPath = 'uploads/'.$lead_id;
+
           $filename=$str[$i].".".$file->getClientOriginalExtension();
+          // print_r($filename);exit();
            if(File::exists($destinationPath."/".$filename)){
            // echo "exists \n";
             continue;
@@ -1159,5 +1162,59 @@ $url = $this::$url_static."/BankAPIService.svc/updateIIFLRevisedQuote";
    public function capitalfloat(){
     return view('capitalfloat');
    }
+
+   // HDFC personal loan
+public function hdfc_personal_loan(){
+    return view('hdfc-personal-loan');
+   }
+
+    public function hdfc_personal_loan_submit(Request $req){
+     $data=$req->all();
+     $data['brokerid']=Session::get('brokerid')?Session::get('brokerid'):'MAA=';
+    $data['empid']=Session::get('empid')?Session::get('empid'):'MAA=';
+    $data['source']=Session::get('source')?Session::get('source'):'MAA=';
+    $data['CampaignName']="HDFC PL";
+    $post_data=json_encode($data);
+    // print_r($post_data);exit();
+    $url = $this::$url_static."/BankAPIService.svc/createHDFCPLReq";
+      $result=$this->call_json_data_api($url,$post_data);
+        $http_result=$result['http_result'];
+        $error=$result['error'];
+        $st=str_replace('"{', "{", $http_result);
+        $s=str_replace('}"', "}", $st);
+        $m=$s=str_replace('\\', "", $s);
+         // print_r($http_result);exit();
+        $obj=json_decode($m);
+        return response()->json( $obj);
+   }
+
+   // HDFC BL 
+
+   public function hdfc_business_loan(){
+    return view('hdfc-business-loan');
+   }
+
+
+   public function hdfc_business_loan_submit(Request $req){
+    // print_r($req->all());exit();
+     $data=$req->all();
+     $data['brokerid']=Session::get('brokerid')?Session::get('brokerid'):'MAA=';
+    $data['empid']=Session::get('empid')?Session::get('empid'):'MAA=';
+    $data['source']=Session::get('source')?Session::get('source'):'MAA=';
+    $data['CampaignName']="HDFC BL";
+    $post_data=json_encode($data);
+    // print_r($post_data);exit();
+    $url = $this::$url_static."/BankAPIService.svc/createHDFCBLReq";
+      $result=$this->call_json_data_api($url,$post_data);
+        $http_result=$result['http_result'];
+        $error=$result['error'];
+        $st=str_replace('"{', "{", $http_result);
+        $s=str_replace('}"', "}", $st);
+        $m=$s=str_replace('\\', "", $s);
+        // print_r($http_result);exit();
+        $obj=json_decode($m);
+        return response()->json( $obj);
+   }
+
 }
 

@@ -21,6 +21,7 @@
     <link href="<?php echo e(URL::to('css/owl.theme.css')); ?>" rel="stylesheet">
     <link rel="icon" href="images/rb_fav.png" type="image/png" sizes="16x16">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
   
 
@@ -73,15 +74,46 @@ $(document).ready(function(){
 						
 						<a class="hidden-lg top-ic top-ic1" title="Free Credit Report"  href="<?php echo e(URL::to('equifax-verification')); ?>"><i class="fa fa-tachometer"></i></a>
 						<a class="hidden-lg top-ic" title="Expert Assistance"  href="<?php echo e(URL::to('contact-us')); ?>"><i class="fa fa-phone"></i></a>
+                     
+ <a id="sign-in" class="search-btn-2 search-btn2 login-submit"  href="#" style="text-align: center; width: 45px; height: 45px; padding: 7px; display: inline-block; vertical-align:bottom">
+    <i style="font-size: 30px;" class="fa fa-user"></i>
+    <span class="tooltiptext">Sign In</span></a>
 
-                        <a class="search-btn-2 search-btn2 trigger-custom2"  href="#" style="text-align: center; width: 45px; height: 45px; padding: 7px; display: inline-block; vertical-align:bottom"><i style="font-size: 30px;" class="fa fa-user"></i><span class="tooltiptext">Sign In</span></a>
 
-                                                               
+
+                            
+                        
+                         <div id="refreshID" class="pull-right">
+                        
+                        <div>
+                    <ul class="nav navbar-nav">
+                    <?php if(Session::has('email')): ?>
+                     <li class="dropdown">
+                      <a class="dropdown-toggle" data-toggle="dropdown" href="#"><?php echo Session::get('name');?>
+                      <span class="caret"></span></a>
+                      <ul class="dropdown-menu">
+                      <li><a id="googleLOG" href="<?php echo e(URL::to('logout')); ?>">Logout</a></li>
+                     <!-- <li><a href="<?php echo e(url('profile')); ?>">My Profile</a></li>
+                     <li><a href="<?php echo e(URL::to('profile')); ?>?credit-score">My Credit Score</a></li>
+                     <li><a href="<?php echo e(url('profile')); ?>?my-quotes">My Quotes</a></li> -->
+                     <li><a href="<?php echo e(url('track-application')); ?>">Track Applications</a></li>
+                     </ul>
+                     </li>
+                     </ul>
+                      <?php endif; ?>
+                       
+                        </div>
+                    </div>                                                                        
 
                     </div>
+                   
+
+                    
                 </div>
             </div>
         </div>
+
+      
 
 
         <div class="navigation-2">
@@ -139,195 +171,9 @@ $(document).ready(function(){
 
 
 
-  <!-- login modal popup -->
-
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>                
-            </div>
-            <div class="modal-body">
-                <div class="row">
-                    <div class="col-md-8" style="border-right: 1px dotted #C2C2C2;padding-right: 30px;">
-                        <!-- Nav tabs -->
-                        <ul class="nav nav-tabs">
-                            <li class="active"><a href="" data-toggle="tab">Login</a></li>
-                            <li><a href="" data-toggle="tab">Registration</a></li>
-                        </ul>
-                        <!-- Tab panes -->
-                        <div class="tab-content">
-                            <div class="tab-pane active" id="Login">
-                                <form role="form" class="form-horizontal">
-                                <div class="form-group">
-                                    <label for="email" class="col-sm-2 control-label">
-                                        Email</label>
-                                    <div class="col-sm-10">
-                                        <input type="email" class="form-control" id="email1" placeholder="Email" />
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="exampleInputPassword1" class="col-sm-2 control-label">
-                                        Password</label>
-                                    <div class="col-sm-10">
-                                        <input type="email" class="form-control" id="exampleInputPassword1" placeholder="Email" />
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-sm-2">
-                                    </div>
-                                    <div class="col-sm-10">
-                                        <button type="submit" class="btn btn-primary btn-sm">
-                                            Submit</button>
-                                        <a href="javascript:;">Forgot your password?</a>
-                                    </div>
-                                </div>
-                                </form>
-                            </div>
-                            <div class="tab-pane" id="Registration">
-                                <form role="form" class="form-horizontal">
-                                <div class="form-group">
-                                    <label for="email" class="col-sm-2 control-label">
-                                        Name</label>
-                                    <div class="col-sm-10">
-                                        <div class="row">
-                                            <div class="col-md-3">
-                                                <select class="form-control">
-                                                    <option>Mr.</option>
-                                                    <option>Ms.</option>
-                                                    <option>Mrs.</option>
-                                                </select>
-                                            </div>
-                                            <div class="col-md-9">
-                                                <input type="text" class="form-control" placeholder="Name" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="email" class="col-sm-2 control-label">
-                                        Email</label>
-                                    <div class="col-sm-10">
-                                        <input type="email" class="form-control" id="email" placeholder="Email" />
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="mobile" class="col-sm-2 control-label">
-                                        Mobile</label>
-                                    <div class="col-sm-10">
-                                        <input type="email" class="form-control" id="mobile" placeholder="Mobile" />
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="password" class="col-sm-2 control-label">
-                                        Password</label>
-                                    <div class="col-sm-10">
-                                        <input type="password" class="form-control" id="password" placeholder="Password" />
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-sm-2">
-                                    </div>
-                                    <div class="col-sm-10">
-                                        <button type="button" class="btn btn-primary btn-sm">
-                                            Save & Continue</button>
-                                        <button type="button" class="btn btn-default btn-sm">
-                                            Cancel</button>
-                                    </div>
-                                </div>
-                                </form>
-                            </div>
-                        </div>
-                        <!-- <div id="OR" class="hidden-xs">
-                            OR</div> -->
-                    </div>
-                    <div class="col-md-4">
-                        <div class="row text-center sign-with">
-                            <div class="col-md-12">
-                                <h3>
-                                    Sign in with</h3>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="btn-group btn-group-justified">
-                                    <a href="#" class="btn btn-primary">Facebook</a> <a href="#" class="btn btn-danger">
-                                        Google</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-        <!-- login popup end -->
-
- <div id="modal-welcome" class="iziModal"></div>
-  <div id="modal-custom2" class="iziModal" data-iziModal-group="grupo1">
-    <button data-iziModal-close class="fa fa-times-circle"></button>
-    <header>
-        <a href="#" id="signin" class="active">Log In</a>
-        <a href="#" class="">Register</a>
-    </header>
-
-    <section>
-
-         <form class="login-form block" name="login_form" id="login_form"  method="post" >                   
-        <?php echo e(csrf_field()); ?>
+ 
 
 
-         <a type="button" style="background-color: #3D5A98; color: #fff;  padding: 14px 20px; margin-bottom:50px; border: none; cursor: pointer; text-align:center; width: 30%;" href="http://facebook.com" target="_blank" class="ui-link"><strong>With Facebook</strong></a>
-
-             <a type="button" style="background-color: #ed1c24; color: #fff;  padding: 14px 20px; margin-bottom:50px; border: none; cursor: pointer; text-align:center; width: 30%;" href="http://gmail.com" target="_blank" class="ui-link"><strong>With Google Plus</strong></a>
-            <br /><br />
-        <h4>OR</h4>
-
-        <input type="text" name="email_login" id="email_login" tabindex="1" class="form-control" placeholder="Email" value="">
-
-        <input type="password" name="login_pass" id="login_pass" tabindex="2" class="form-control" placeholder="Password">
-
-        <!-- <span id="msg" class="error-msg"></span> -->
-
-        <p style="text-align:right"><a href="#" id="forgot-form-link">Forgot Password ?</a></p>
-
-        <div class="col-md-4 col-sm-4 col-xs-12">
-        <button id="login_submit" class="btn btn-default btn-sm login-submit ">Login</button>
-    </div>
-        </form>
-
-    </section>
-
-    <section class="hide">
-        <form class="register-form"  name="registration_form" id="registration_form"  method="post" > 
-                 <?php echo e(csrf_field()); ?>
-
-        <a type="button" style="background-color: #3D5A98; color: #fff;  padding: 14px 20px; margin-bottom:50px; border: none; cursor: pointer; text-align:center; width: 30%;" href="http://facebook.com" target="_blank" class="ui-link"><strong>With Facebook</strong></a>
-
-             <a type="button" style="background-color: #ed1c24; color: #fff;  padding: 14px 20px; margin-bottom:50px; border: none; cursor: pointer; text-align:center; width: 30%;" href="http://gmail.com" target="_blank" class="ui-link"><strong>With Google Plus</strong></a>
-            <br /><br />
-            <h4>OR</h4>            
-
-            <button class="thm-btn"><i class="fa fa-facebook"></i> Sign up with Facebook</button>    
-
-            <input type="text" name="name" id="name" tabindex="1" class="form-control" placeholder="User name" >
-            <input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="Email Address"  >
-            <input type="text" name="contact" id="contact" onkeypress="return fnAllowNumeric(event)" maxlength="10"  tabindex="1" class="form-control" placeholder="Mobile Number" >
-            <input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Password">
-            <input type="password" name="confirm_password" id="confirm_password" tabindex="2" class="form-control" placeholder="Confirm Password">
-            
-           <div class="col-md-4 col-sm-4 col-xs-12">
-                    
-                 <button type="register" class="btn btn-default btn-sm " style="width: 100%;">Register</button>
-                    
-            </div>
-              </form>
-    </section>
-
-
-
- </div> 
 
 
 <body class="">
@@ -783,10 +629,163 @@ $(document).ready(function(){
         </div>
     </div>
 
-<!--<script src="assets/js/vendor/jquery-2.1.3.min.js" type="text/javascript"></script>-->
-    <script src="js/iziModal.mind1eb.js?=v2" type="text/javascript"></script>
-    <script src="js/javascript.js?v=1" type="text/javascript"></script>
+    <!-- Modal  Sign in-->
+  <div class="modal fade" id="log_popup" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+         <div class="modal-content">
+          <div id="login">
+             <!-- login-->
+         
+      <div class="modal-body login-modal">  
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+  <br>
+       <div class="panel pan-log">
+          <div class="panel-heading">
+            <div class="row" id="forgot-password-hide">
 
+              <div class="col-xs-6">
+                <a href="#" class="active" id="login-form-link">Login</a>
+              </div>
+              <div class="col-xs-6">
+                <a href="#" id="register-form-link">Register</a>
+              </div>
+            </div>
+            <div class="row displaynone" id="forgot-password-show">
+              <div class="col-xs-6">
+                <h3>Forgot Password</h3>
+              </div>
+            </div>
+            <hr>
+          </div>
+
+          <a type="button" style="background-color: #3D5A98; color: #fff;  padding: 14px 20px; margin-bottom:50px; border: none; cursor: pointer; text-align:center; width: 30%;" href="http://facebook.com" target="_blank" class="ui-link"><strong>With Facebook</strong></a>
+
+             <a type="button" style="background-color: #ed1c24; color: #fff;  padding: 14px 20px; margin-bottom:50px; border: none; cursor: pointer; text-align:center; width: 30%;" href="http://gmail.com" target="_blank" class="ui-link"><strong>With Google Plus</strong></a>
+
+             <br /><br />
+            <h4>OR</h4>
+
+
+          <div class="panel-body">
+            <div class="row">
+              <div class="col-lg-6">
+            <form class="login-form block" name="login_form" id="login_form"  method="post" >                   <?php echo e(csrf_field()); ?>
+
+                  <div class="form-group">
+                    <input type="text" name="email_login" id="email_login" tabindex="1" class="form-control" placeholder="Email" value="">
+                  </div>
+                     <div class="form-group">
+                    <input type="password" name="login_pass" id="login_pass" tabindex="2" class="form-control" placeholder="Password">
+                    <span id="msg" class="error-msg"></span>
+                  </div>
+                      
+                
+                  <div class="form-group">
+                    <div class="row">
+                      <div class="col-lg-12">
+                        <div class="text-center">
+                         <!--  <a href="#" tabindex="5" class="forgot-password">Forgot Password?</a> -->
+                           <a href="#" id="forgot-form-link">Forgot password?</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="row">
+                      <div class="col-sm-6 col-sm-offset-3">
+                            <button id="login_submit" class="form-control btn btn-log login-submit ">Login</button>
+                      </div>
+                    </div>
+                  </div>
+
+                </form>
+                </div>
+                <!-- <div class="col-lg-6 social-ico"> -->
+               <!-- <a href="javascript:void(0);" onclick="fbLogin();" id="fbid" class="btn btn-default facebook"> <i class="fa fa-facebook modal-icons"></i> Facebook </a> -->
+               <!-- <br/>
+               <a type="button" style="background-color: #3D5A98; color: #fff;  padding: 14px 20px; margin-bottom:50px; border: none; cursor: pointer; text-align:center; width: 30%;" href="http://facebook.com" target="_blank" class="ui-link" id="fbid"><strong>With Facebook</strong></a>
+               <br /><br /><br /> -->
+                <!-- <a href="#" class="btn btn-default google" onclick="login();"> <i class="fa fa-google-plus modal-icons"></i> Google</a> -->
+                <!-- <a type="button" style="background-color: #ed1c24; color: #fff;  padding: 14px 20px; margin-bottom:50px; border: none; cursor: pointer; text-align:center; width: 30%;" href="http://gmail.com" target="_blank" class="ui-link" ><strong>With Google Plus</strong></a> -->
+               <!-- </div> -->
+
+                <div class="col-lg-12">
+                <form class="register-form displaynone"  name="registration_form" id="registration_form"   method="post" > 
+                 <?php echo e(csrf_field()); ?>
+
+
+                  <div class="form-group">
+                    <input type="text" name="name" id="name" tabindex="1" class="form-control" placeholder="Username" >
+                      <span id="errorName" class="error-msg"></span>
+                  </div>
+
+                  <div class="form-group">
+                    <input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="Email Address"  >
+                    <span id="errorEmail"  class="error-msg" ></span>
+                  </div>
+
+                   <div class="form-group">
+                    <input type="text" name="contact" id="contact" onkeypress="return fnAllowNumeric(event)" maxlength="10"  tabindex="1" class="form-control" placeholder="Mobile Number" >
+                    <span id="errorcontact"  class="error-msg"></span>
+                  </div>
+
+                  <div class="form-group">
+                    <input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Password">
+                     <span id="errorpassword"  class="error-msg" ></span>
+                  </div>
+                   
+                  <div class="form-group">
+                    <input type="password" name="confirm_password" id="confirm_password" tabindex="2" class="form-control" placeholder="Confirm Password">
+                     <span id="errorpasswordconfirm"  class="error-msg"></span>
+                  </div>
+
+                  <div class="form-group">
+                    <div class="row">
+                      <div class="col-sm-6 col-sm-offset-3">
+                        <button class="form-control btn btn-log registration-submit" id="registration_submit"> Register</button>
+                      </div>
+                    </div>
+                  </div>
+
+                </form>
+              </div>
+              
+         <div class="col-lg-12">
+             <form class="forgot-form displaynone"  name="forgot_password_form" id="forgot_password_form"   method="post"  >
+              <?php echo e(csrf_field()); ?>
+
+                 <div class="form-group">
+                    <input type="text" name="email" id="email" tabindex="1" class="form-control" placeholder="Email ID" >
+                    <span id="forgotpass"  class="text-danger"></span>
+                  </div>
+                    <div class="form-group">
+                    <div class="row">
+                      <div class="col-sm-3 col-sm-offset-3">
+                        <button class="form-control btn btn-log " id="f_password">Submit</button>
+                        
+                      </div>
+                      <a href="#" id="back_id" class="btn btn-default">Back</a>
+                    </div>
+
+
+                  </div>           
+              </form>
+                <span class="forgotps"></span>
+          </div>
+              
+              
+            </div>
+          </div>
+        </div>
+      
+
+           </div>
+         </div>
+       </div>
+    </div>
+</div>
 </body>
 
 
@@ -794,6 +793,14 @@ $(document).ready(function(){
 		
 <?php echo $__env->make('layout.script', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 <?php echo $__env->make('layout.footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+
+<script type="text/javascript">
+  $(".login-submit").click(function(event){
+    
+    $('#log_popup').modal('show');
+  });
+</script>
 
 
 		

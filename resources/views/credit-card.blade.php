@@ -12,10 +12,10 @@
                             <div class="card-listing how-it-block hvr-float-shadow2">
                                 <!-- card listing -->
                                 <div class="card-img">
-                                    <a href="#"><img src="images/rbl-credit-card.png" alt="RBL Credit Card"></a>
+                                    <img src="images/rbl-credit-card.png" alt="RBL Credit Card">
                                 </div>
                                 <div class="card-content" style="text-align: center;">
-                                    <h4 class="card-name"><a href="#" class="title">RBL Bank Credit Card</a></h4>
+                                    <h4 class="card-name">RBL Bank Credit Card</h4>
                                     
                                     <a href="{{URL::to('credit-card-compare/rbl')}}" class="btn btn-default btn-sm" style="margin-right: 0px;">Apply Now</a>
                                    
@@ -27,12 +27,12 @@
                             <div class="card-listing how-it-block hvr-float-shadow2">
                                 <!-- card listing -->
                                 <div class="card-img">
-                                    <a href="#"><img src="images/icici-credit-card.png" alt="ICICI Credit Card"></a>
+                                    <img src="images/icici-credit-card.png" alt="ICICI Credit Card">
                                 </div>
                                 <div class="card-content" style="text-align: center;">
-                                    <h4 class="card-name"><a href="#" class="title">ICICI Bank Credit Card</a></h4>
+                                    <h4 class="card-name">ICICI Bank Credit Card</h4>
                                     
-                                    <a href="icici-credit-card.html" class="btn btn-default btn-sm" style="margin-right: 0px;">Apply Now</a>
+                                    <a href="{{URL::to('credit-card-form')}}" class="btn btn-default btn-sm" style="margin-right: 0px;">Apply Now</a>
                                 </div>
                             </div>
                             <!-- /.card listing -->
@@ -41,10 +41,10 @@
                             <div class="card-listing how-it-block hvr-float-shadow2">
                                 <!-- card listing -->
                                 <div class="card-img">
-                                    <a href="#"><img src="images/hdfc-credit-card.png" alt="HDFC Credit Card"></a>
+                                    <img src="images/hdfc-credit-card.png" alt="HDFC Credit Card">
                                 </div>
                                 <div class="card-content" style="text-align: center;">
-                                    <h4 class="card-name"><a href="#" class="title">HDFC Bank Credit Card</a></h4>
+                                    <h4 class="card-name">HDFC Bank Credit Card</h4>
                                     
                                     <a href="hdfc-bank-credit-card.html" class="btn btn-default btn-sm" style="margin-right: 0px;">Apply Now</a>
                                     

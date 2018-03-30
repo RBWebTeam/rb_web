@@ -1238,9 +1238,9 @@ Landing Page Template
     left: 50%; 
     margin-left: -60px;
     top: 100%;
- 
-    /* Position the tooltip text - see examples below! */
-    position: absolute;
+    float:left;
+    /* Position the tooltip text - see examples below! 
+    position: absolute; */
     z-index: 999999;
 }
 
@@ -1822,3 +1822,6 @@ button.ui-button::-moz-focus-inner {
     color: #000;
 }
 
+.radio-box {margin-top: -20px;padding: 2px;background: #fff;display: table;}
+
+/*.form-group ul li a {background:#fff;padding:2px; color:#333;}*/

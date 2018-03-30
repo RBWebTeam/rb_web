@@ -339,8 +339,10 @@ $(window).scroll(function(){
 
 
 </script>
+
 <!-- Property cost & loan Amount -->
 <script type="text/javascript">
+        $('#hideshow').hide();
   $(document).ready(function()
 {
     function update()
@@ -496,6 +498,8 @@ $(window).scroll(function(){
 
       // by dp
 
+
+
       $(".login-submit").click(function(event){
       // alert('hii');
         event.preventDefault();
@@ -504,6 +508,7 @@ $(window).scroll(function(){
           //console.log(form);return false;
           $form=$('#'+form);
           if(! $form.valid()){
+            return false;
           }else{
             // alert('hii');
             var s=$('#'+form).serialize();
@@ -515,39 +520,54 @@ $(window).scroll(function(){
              success: function(msg){
 
                $("#login_form").show();
-               if(msg=="email"){
+               if(msg.error==1){
 
-                $("#msg").text("Your email or password is incorrect. please try again?");               
-              }else if(msg=="right"){
+                $("#msg").text("Your email or password is incorrect. please try again?"); 
+                $('#sign-in').show();              
+              }else if(msg.error==0){   
+
+              // $('#hideshow').show(); 
                            // window.location="<?php echo e(URL::previous()); ?>";
-                            //window.location.href ="<?php echo e(URL::to('profile')); ?>";
-                            if(window.location.href.indexOf("track-application") > -1) {
-                                location.reload();
-                            }else{
-                              $("#log_popup").modal('hide');
-                                                    $("#refreshID").load(location.href + " #refreshID");
+                            // //window.location.href ="<?php echo e(URL::to('profile')); ?>";
+                            // if(window.location.href.indexOf("track-application") > -1) {
+                            //     location.reload();
+                            // }else{
+                            //                         $("#log_popup").modal('hide');
+                            //                         $("#refreshID").load(location.href + " #refreshID");
                                                     
-                                                    $('#btn_refresh').show();
-                                                    $('#btn_refresh1').hide();
-                                                    $('.btn_refresh1').hide();
-                                                    $('#no_co_app').hide();
-                                                      // Co-Applicant
-                                                      $('#btn_refresh_co').show();
-                                                      $('#btn_refresh_co1').hide();
+                            //                         $('#btn_refresh').show();
+                            //                         $('#btn_refresh1').hide();
+                            //                         $('.btn_refresh1').hide();
+                            //                         $('#no_co_app').hide();
+                            //                           // Co-Applicant
+                            //                           $('#btn_refresh_co').show();
+                            //                           $('#btn_refresh_co1').hide();
                                                       
-                                                      $(".quote_ID").removeAttr('data-target');
-                                                      $(".quote_ID").removeAttr('data-toggle');
-                                                      $( ".quote_ID" ).addClass( "myClass");
-                                                    //  $( ".quote_IDform" ).val(form);
-                                                     // $(".quote_ID").attr("href", form);
-                                                     // $(".quote_ID").load(location.href + ".quote_ID");
-                                                        $(".apply_digitally").removeAttr('data-target');
-                                                        $(".apply_digitally").removeAttr('data-toggle');
-                                                       $(".apply_digitally").addClass("apply_new");
+                            //                           $(".quote_ID").removeAttr('data-target');
+                            //                           $(".quote_ID").removeAttr('data-toggle');
+                            //                           $( ".quote_ID" ).addClass( "myClass");
+                            //                         //  $( ".quote_IDform" ).val(form);
+                            //                          // $(".quote_ID").attr("href", form);
+                            //                          // $(".quote_ID").load(location.href + ".quote_ID");
+                            //                             $(".apply_digitally").removeAttr('data-target');
+                            //                             $(".apply_digitally").removeAttr('data-toggle');
+                            //                            $(".apply_digitally").addClass("apply_new");
 
-                            }
 
-                            
+
+
+                            //}
+
+                             var login= "<div id='refreshID' class='pull-right'><ul class='nav navbar-nav'><li class='dropdown'><a class='dropdown-toggle' data-toggle='dropdown' href='#'>"+msg.username+"<span class='caret'></span></a><ul class='dropdown-menu'><li><a id='googleLOG' href='<?php echo e(URL::to('logout')); ?>'>Logout</a><a href='<?php echo e(url('profile')); ?>'>My Profile</a><a href='<?php echo e(URL::to('profile')); ?>'?credit-score'>My Credit Score</a><a href='<?php echo e(url('profile')); ?>'?my-quotes'>My Quotes</a> <a href='<?php echo e(url('track-application')); ?>'>Track Applications</a></li></ul></li></ul></div>";
+
+
+                        
+
+                               
+                               $('#refreshID').append(login);
+                               $("#log_popup").modal('hide');
+                               $('#sign-in').hide();
+ 
                                 
                             }
 
@@ -845,8 +865,9 @@ $(window).scroll(function(){
         
 
                 response(data);
+                
                  $(".applicant_add" ).addClass( "in" ); 
-
+               
               }
             });
           },

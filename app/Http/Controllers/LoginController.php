@@ -30,15 +30,15 @@ class LoginController extends CallApiController
 
 		             
 
-		          	  $error="right";
-          	     echo $error;
+		          	 return   array('username' =>$value->username,'error'=>0);
+          	      
                 }else{
-               	      $error="email";
-               	 echo $error;
+               	     
+               	     return   array('error'=>1);
                	 // Session::flush(); 
                 }
 
-
+ 
        }
 
 

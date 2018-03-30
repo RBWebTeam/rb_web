@@ -75,9 +75,30 @@ $(document).ready(function(){
             
             <a class="hidden-lg top-ic top-ic1" title="Free Credit Report"  href="<?php echo e(URL::to('equifax-verification')); ?>"><i class="fa fa-tachometer"></i></a>
             <a class="hidden-lg top-ic" title="Expert Assistance"  href="<?php echo e(URL::to('contact-us')); ?>"><i class="fa fa-phone"></i></a>
-                        <a class="search-btn-2 search-btn2 login-submit"  href="#" style="text-align: center; width: 45px; height: 45px; padding: 7px; display: inline-block; vertical-align:bottom"><i style="font-size: 30px;" class="fa fa-user"></i><span class="tooltiptext">Sign In</span></a>
+                        <a id="sign-in" class="search-btn-2 search-btn2 login-submit"  href="#" style="text-align: center; width: 45px; height: 45px; padding: 7px; display: inline-block; vertical-align:bottom"><i style="font-size: 30px;" class="fa fa-user"></i><span class="tooltiptext">Sign In</span></a>
+
+                        <div id="refreshID" class="pull-right">
+                        
+                        <div>
+                    <ul class="nav navbar-nav">
+                    <?php if(Session::has('email')): ?>
+                     <li class="dropdown">
+                      <a class="dropdown-toggle" data-toggle="dropdown" href="#"><?php echo Session::get('name');?>
+                      <span class="caret"></span></a>
+                      <ul class="dropdown-menu">
+                      <li><a id="googleLOG" href="<?php echo e(URL::to('logout')); ?>">Logout</a></li>
+                     <!-- <li><a href="<?php echo e(url('profile')); ?>">My Profile</a></li>
+                     <li><a href="<?php echo e(URL::to('profile')); ?>?credit-score">My Credit Score</a></li>
+                     <li><a href="<?php echo e(url('profile')); ?>?my-quotes">My Quotes</a></li> -->
+                     <li><a href="<?php echo e(url('track-application')); ?>">Track Applications</a></li>
+                     </ul>
+                     </li>
+                     </ul>
+                      <?php endif; ?>
                        
-                        <!-- <button id="login_submit" class="form-control btn btn-log login-submit ">Login</button> -->
+                        </div>
+                    </div>      
+                       
                                                
                     </div>
                 </div>
@@ -313,21 +334,10 @@ $(document).ready(function(){
        </div>
     </div>
 </div>
-
-
-
-
-
 </body>
 </html>
 
-
-<script src="js/iziModal.mind1eb.js?=v2" type="text/javascript"></script>
-<script src="js/javascript.js?v=1" type="text/javascript"></script>
-
-<!-- <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> -->
-
+<?php echo $__env->make('layout.script', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 <script type="text/javascript">
   $(".login-submit").click(function(event){
     // alert('hii');

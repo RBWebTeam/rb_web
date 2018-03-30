@@ -1,16 +1,32 @@
 @include('layout.header')
-<div id="fh5co-hero">
-	<div class="fh5co-contact animate-box">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12 text-left fh5co-heading animate-box fadeInUp animated">
+<div class=" ">
+        <!-- content start -->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="wrapper-content bg-white pinside40">
+                        <div class="section-faq" id="section-faq">
+                            <div class="">
+                            	 <div class="col-md-offset-2 col-md-8 col-sm-12 col-xs-12" >
+                                <div class="mb60  section-title text-center  ">
+                                <h1 class="">
+                                
+                        <h1 class=""><center>Apply For Credit Card</center></h1>
+                        <!-- <div class="section-faq" id="section-faq"> -->
+                        </div>
+                    </div>
+
+                 <!--            <div class="">
+					<div class="mb40  section-title text-center  ">
 					<h2>Apply For Credit Card</h2>
 					
-				</div>
-				<div class="col-md-12">
-					<div class="row text-left comp-pg rate white-bg">
-
-						
+				</div> -->
+				
+                                <div class="row">
+                                    
+                       
+                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding-bottom: 20px">
+                    <div class="how-it-block1 bg-boxshadow" style=" min-height: 600px;">
 							<form class="" id="compareform" role="form" method="POST" >
 							 {{ csrf_field() }}
 							 <input type="hidden" name="empid" class="empid" value=" <?php echo Session::get('empid')?Session::get('empid'):'MAA=';?>">
@@ -33,37 +49,50 @@
 						          	echo str_replace("_"," ",$_GET["interest"]);
 						          	}else{
 						          		echo "0";
-						          		}?>"> 
-
+						          		}?>">
+							 
 								<div class="row">
 									<div class="form-group">
 									
-										<h4 class="hdr col-md-12 text-center">Personal Details</h4>
-										<div class="col-md-4">
-											<input type="text" class="form-control" placeholder= "First Name*" name="ApplicantFirstName" id="ApplicantFirstName" onkeypress="return AllowAlphabet(event)" required>
+										<center><h2>Personal Details</h2></center>
+										<div class="col-md-4 col-sm-12 col-xs-12">
+                                          <div class="form-group">
+											<input type="text" class="form-control input-md" placeholder= "First Name *" name="ApplicantFirstName" id="ApplicantFirstName" onkeypress="return AllowAlphabet(event)" required>
 										</div>
-										<div class="col-md-4">
-											<input type="text" class="form-control" placeholder="Middle Name" name="ApplicantMiddleName" id="ApplicantMiddleName">
+									</div>
+										<div class="col-md-4 col-sm-12 col-xs-12">
+                                     <div class="form-group">
+											<input type="text" class="form-control input-md" placeholder="Middle Name" name="ApplicantMiddleName" id="ApplicantMiddleName" requird>
 										</div>
-										<div class="col-md-4 lst-nam">
-											<input type="text" class="form-control" placeholder="Last Name*" name="ApplicantLastName" id="ApplicantLastName" onkeypress="return AllowAlphabet(event)" required>
+									</div>
+										<div class="col-md-4 col-sm-12 col-xs-12">
+                                     <div class="form-group">
+											<input type="text" class="form-control input-md" placeholder="Last Name *" name="ApplicantLastName" id="ApplicantLastName" onkeypress="return AllowAlphabet(event)" required>
 										</div>
+									</div>
 
-										<div class="col-md-4">
-											<input type="text" class="form-control lastReporteddob" id="DateOfBirth" name="DateOfBirth" placeholder="Date of Birth*" required>
+										<div class="col-md-4 col-sm-12 col-xs-12">
+                                     <div class="form-group">
+											<input type="text" class="form-control lastReporteddob" id="DateOfBirth" name="DateOfBirth" placeholder="Date of Birth *" required>
 										</div>
+									</div>
 
-                                         <div class="col-md-4">
-											<input type="text" class="form-control " id="NameOnCard" name="NameOnCard" placeholder="Name To Be Printed On Card*" onkeypress="return AllowAlphabet(event)" required>
+                                         <div class="col-md-4 col-sm-12 col-xs-12">
+                                     <div class="form-group">
+											<input type="text" class="form-control input-md" id="NameOnCard" name="NameOnCard" placeholder="Name To Be Printed On Card *" onkeypress="return AllowAlphabet(event)" required>
 										</div>
+									</div>
 
-										<div class="col-md-4">
-											<input type="text" class="form-control " id="MotherName" name="MotherName" placeholder="Mother's Maiden Name*" onkeypress="return AllowAlphabet(event)" required>
+										<div class="col-md-4 col-sm-12 col-xs-12">
+                                     <div class="form-group">
+											<input type="text" class="form-control input-md" id="MotherName" name="MotherName" placeholder="Mother's Maiden Name *" onkeypress="return AllowAlphabet(event)" required>
 										</div>
+									</div>
 
-										<div class="col-md-4">
-  
-										     <select class="block drop-arr select-sty" name="no_of_dependents" id="no_of_dependents" required>
+
+						            <div class="col-md-4 col-sm-12 col-xs-12">
+                                     <div class="form-group">
+										<select class="form-control select-sty" name="no_of_dependents" id="no_of_dependents" required>
 						                      <option disabled selected  value="">No of Dependents</option>
 						                        <option value="0">0</option>
 						                        <option value="1">1</option>
@@ -72,101 +101,134 @@
 						                        <option value="4">4</option>
 						                        <option value="5">5</option>
 						                        <option value="5+">5+</option>
-						                    </select> 
+						                    </select>
+						                    </div>
 						                    </div>
 
 										
 
-										<div class="col-md-4">
-										<div class="form-control border-none">
-									   
-										<input type="radio"  name="Gender" id="150"  class="radiob" checked value="Male"><label for="150">&nbsp;Male</label>
-                                        <input type="radio" name="Gender" id="151"  class="radiob" value="Female" ><label for="151">&nbsp;Female </label>
+										<div class="col-md-4 col-sm-12 col-xs-12">
+                                     <div class="form-group">
+                                     	<div class="form-control border-none">									
+                                     	<span class="radio-box">Gender </span> &nbsp;&nbsp;				   
+										<input type="radio"  name="Gender" id="150"  class="radiob" checked value="Male">&nbsp;&nbsp;Male
+										&nbsp;&nbsp;
+                                        <input type="radio" name="Gender" id="151"  class="radiob" value="Female" >&nbsp;&nbsp;Female
 										
 					                    </div>
+					                </div>
 										</div>
 									
                                        
-                                       <div class="col-md-4">
+                                       <div class="col-md-4 col-sm-12 col-xs-12">
+                                     <div class="form-group">
 									   <div class="form-control border-none">
-										<input type="radio"  name="marital_status" id="152" class="radiob" checked value="Single">   <label for="152">Single</label>
-                                        <input type="radio" name="marital_status" id="153"  class="radiob" value="Married" > <label for="153">Married</label>
+										<input type="radio"  name="marital_status" id="152" class="radiob" checked value="Single"> <label for="152">Single</label>&nbsp;&nbsp;Single
+										&nbsp;&nbsp;&nbsp;
+                                        <input type="radio" name="marital_status" id="153"  class="radiob" value="Married" > <label for="153">Married</label>&nbsp;&nbsp;Married
 					                    </div>
 										</div>
+									</div>
 										
-                                         <div class="col-md-4">
-										<select class="drop-arr select-sty" name="preferred_address" id="preferred_address"  required>
+                                      <div class="col-md-4 col-sm-12 col-xs-12">
+                                     	<div class="form-group">
+										  <select class="form-control select-sty" name="preferred_address" id="preferred_address"  required>
 					                      <option value="" disabled selected>Preferred Mailing Address</option>
 					                      <option value="Residence">Residence</option> 
 					                      <option value="Office">Office</option>
-					                    </select> 
+					                    </select>
 					                    </div>
+					                </div>
 
-										<div class="col-md-4">
+
+
+
+										<div class="col-md-4 col-sm-12 col-xs-12">
+                                     <div class="form-group">
 										<div class="form-control border-none">
-										<input type="radio"  name="resident_status" id="154"  class="radiob" checked value="Indian"> <label for="154"> Indian</label>
-                                        <input type="radio" name="resident_status" id="155"  class="radiob" value="NRI/Foreign National" > <label for="155">NRI/Foreign National</label>
+										<input type="radio"  name="resident_status" id="154"  class="radiob" checked value="Indian"> <label for="154"> Indian</label>&nbsp;Indian
+										&nbsp;&nbsp;&nbsp;
+                                        <input type="radio" name="resident_status" id="155"  class="radiob" value="NRI/Foreign National" > <label for="155">NRI/Foreign National</label>&nbsp;NRI/Foreign National
 					                    </div>
 										</div>
+									</div>
 										
-										<div class="col-md-4">
+										<div class="col-md-4 col-sm-12 col-xs-12">
+                                     <div class="form-group">
 										<div class="form-control border-none">
-										<input type="radio"  name="CustomerProfile" id="156"  class="radiob" checked value="Salaried">  <label for="156">Salaried </label>
-                                        <input type="radio" name="CustomerProfile" id="157"  class="radiob" value="Selfemployed" >  <label for="157"> Selfemployed </label>
+										<input type="radio"  name="CustomerProfile" id="156"  class="radiob" checked value="Salaried">  <label for="156">Salaried </label>&nbsp;Salaried
+										&nbsp;&nbsp;
+                                        <input type="radio" name="CustomerProfile" id="157"  class="radiob" value="Selfemployed" >  <label for="157"> Selfemployed </label>&nbsp;Selfemployed
 					                    </div>
 										</div>
+									</div>
                                         
                                         
 
-					                    <div class="col-md-4 mrg-top">
-										<select class="drop-arr select-sty pull-left" name="supplementary_card" id="supplementary_card" required>
+					                    <div class="col-md-4 col-sm-12 col-xs-12">
+                                     <div class="form-group">
+										<select class="form-control select-sty pull-left" name="supplementary_card" id="supplementary_card" required>
 					                      <option disabled selected >I Want to Apply For a Supplementary Card</option>
 					                      <option value="Yes">Yes</option>
 					                      <option value="No">No</option>
 					                    </select> 
 					                    </div>
+					                </div>
 
 									</div>
-									<hr>
+									
+									<br>
 								</div>
-								
-								
+																
 								
 								
 								<div class="row sec" style="display:none;" id="section1">
-									<div class="form-group">
-										<h4 class="hdr text-center">Company Name</h4>
-										<div class="col-md-4">
-											<input type="text" class="form-control search_company" placeholder="Company Name*" name="CompanyName" id="CompanyName" required="">
+									
+										<h2 class="hdr text-center">Company Name</h2>
+										<div class="col-md-4 col-sm-12 col-xs-12">
+                                     <div class="form-group">
+										<input type="text" class="form-control search_company" placeholder="Company Name*" name="CompanyName" id="CompanyName" required>
 										</div>
-										<div class="col-md-4">
-											<input type="text" id="Income" name="Income" class="form-control" placeholder="Income*" onkeypress="return fnAllowNumeric(event)"  required>
+									</div>
+										<div class="col-md-4 col-sm-12 col-xs-12">
+                                    <div class="form-group">
+											<input type="text" id="Income" name="Income" class="form-control input-md" placeholder="Income*" onkeypress="return fnAllowNumeric(event)"  required>
 										</div>
+									</div>
 
-										<div class="col-md-4">
-											<input type="text" id="designation" name="designation" class="form-control" placeholder="Designation*"onkeypress="return AllowAlphabet(event)"  required>
+										<div class="col-md-4 col-sm-12 col-xs-12">
+                                     <div class="form-group">
+											<input type="text" id="designation" name="designation" class="form-control input-md" placeholder="Designation*"onkeypress="return AllowAlphabet(event)"  required>
 										</div>
+									</div>
                                         
-                                        <div class="col-md-4">
-											<input type="text" id="work_email" name="work_email"  oninput="mail('work_email')" class="form-control" placeholder="Work Email*"  required>
+                                        <div class="col-md-4 col-sm-12 col-xs-12">
+                                     <div class="form-group">
+											<input type="text" id="work_email" name="work_email"  oninput="mail('work_email')" class="form-control input-md" placeholder="Work Email*"  required>
 											<div id="email" style="display:none;color: red;">Please Enter Valid Email Id.</div>
 										</div>
+									</div>
 
 										<!-- <div class="col-md-4">ICICI Bank Relationship<b>:</b> Yes &nbsp;&nbsp;
 											<input type="radio" name="ICICIBankRelationship" id="ICICIBankRelationship"  class="radiob" required value="Yesrelationship">&nbsp;&nbsp;  No&nbsp;&nbsp;<input type="radio" name="ICICIBankRelationship" id="ICICIBankRelationship" class="radiob" value="Norelationship">
 										</div>
 
  -->                                    
-                                         <div class="col-md-4">
-											<input type="text" class="form-control" id="work_STDCode" name="work_STDCode"  required  onkeypress="return fnAllowNumeric(event)" maxlength="5" minlength="3" placeholder="Work Area STD Code*" >
+                                         <div class="col-md-4 col-sm-12 col-xs-12">
+                                     <div class="form-group">
+											<input type="text" class="form-control input-md" id="work_STDCode" name="work_STDCode"  required  onkeypress="return fnAllowNumeric(event)" maxlength="5" minlength="3" placeholder="Work Area STD Code*" required>
 										</div>
+									</div>
 
-										<div class="col-md-4">
-											 <input type="text" class="form-control" id="work_number" name="work_number"  required  onkeypress="return fnAllowNumeric(event)" maxlength="10" placeholder="Phone Number" >
+										<div class="col-md-4 col-sm-12 col-xs-12">
+                                     <div class="form-group">
+											 <input type="text" class="form-control input-md" id="work_number" name="work_number"  required  onkeypress="return fnAllowNumeric(event)" maxlength="10" placeholder="Phone Number" required>
 										</div>
+									</div>
 
-										<div class="col-md-4">
-					                    <select class="block drop-arr select-sty" name="type_of_company" id="type_of_company" required>
+										<div class="col-md-4 col-sm-12 col-xs-12">
+                                     <div class="form-group">
+					                    <select class="form-control block drop-arr select-sty" name="type_of_company" id="type_of_company" required>
 					                      <option disabled selected value="">Type of Company</option>
 					                      <option value="Central Government">Central Government</option>
 					                      <option value="MNC">MNC</option>
@@ -178,9 +240,11 @@
 					                      <option value="State Government">State Government</option>
 					                    </select> 
 					            </div>
+					        </div>
 
-					                    <div class="col-md-4">
-						                    <select class="block drop-arr select-sty" name="highest_education" id="highest_education" required>
+					                    <div class="col-md-4 col-sm-12 col-xs-12">
+                                     <div class="form-group">
+						                    <select class="form-control block drop-arr select-sty" name="highest_education" id="highest_education" required>
 						                      <option selected disabled="" value="">Highest Educational Qualifications</option>
 						                      <option value="Under Graduate">Under Graduate</option>
 						                      <option value="Graduate/Diploma">Graduate/Diploma</option>
@@ -189,10 +253,11 @@
 						                      
 						                    </select> 
 						            </div>
+						        </div>
              
- 									       <div class="col-md-4">
-  
-										     <select class="block drop-arr select-sty" name="ICICIBankRelationship" id="ICICIBankRelationship" required>
+ 									       <div class="col-md-4 col-sm-12 col-xs-12">
+                                     <div class="form-group">
+                                     	<select class="form-control block drop-arr select-sty" name="ICICIBankRelationship" id="ICICIBankRelationship" required>
 											  <option value="">ICICI Bank Relationship</option>
 											    <option value="Salary">Salary</option>
 												<option value="Saving">Saving</option>
@@ -201,53 +266,86 @@
 												
 											</select>
   											</div>
+  										</div>
 
-  											<div class="col-md-4">
-										     <input  type="text" class="form-input-new form-control" name="Total_Exp" id="Total_Exp" placeholder="Total Experience" onkeypress="return isNumberKey(event)"  required>
+  											<div class="col-md-4 col-sm-12 col-xs-12">
+                                          <div class="form-group">
+										     <input  type="text" class="form-control input-md" name="Total_Exp" id="Total_Exp" placeholder="Total Experience" onkeypress="return isNumberKey(event)"  required>
 											</div>
+										</div>
 
 											
 
-											<div class="col-md-4">
+											<div class="col-md-4 col-sm-12 col-xs-12">
+                                          <div class="form-group">
 										     <input  style='display:none;' type="text" class="form-input-new form-control" name="ICICIRelationshipNumber" id="ICICIRelationshipNumber" placeholder="ICICI Relationship Number" minlength="12" maxlength="16" onkeypress="return isNumberKey(event)"  required>
 											</div>
+										</div>
 		
 		
 										
 										
-											<div class="col-md-8">Salary Account With Other Bank<b>:</b> <label for="160">Yes</label>
+										<!-- 	<div class="col-md-8">Salary Account With Other Bank<b>:</b> <label for="160">Yes</label>
 											<input type="radio" id="160" name="SalaryAccountWithOtherBank" id="SalaryAccountWithOtherBank"  class="radiob" checked value="Yes"> <label for="161"> &nbsp;&nbsp; No</label> <input type="radio" id="161" name="SalaryAccountWithOtherBank" id="SalaryAccountWithOtherBank" class="radiob" value=" No">
-										</div>
-										</div>
-										<hr>
+										</div> -->
+
+
+
+
+									  <div class="col-md-4 mrg-top">
+										<select class="form-control drop-arr select-sty pull-left" name="SalaryAccountWithOtherBank" id="SalaryAccountWithOtherBank" required>
+					                      <option disabled selected >SalaryAccountWithOtherBank</option>
+					                      <option value="Yes">Yes</option>
+					                      <option value="No">No</option>
+					                    </select> 
+					                    </div>
+
+					                    
+										
+										<br>
 									</div>
+
+
 									
 									
 									
 								<div class="row sec" style="display:none;" id="section2">   
-									<div class="form-group">
-										<h4 class="hdr text-center">Current Address Details:</h4>
-										<div class="col-md-4">
-											<input type="text" class="form-control" placeholder="Flat No / Plot No / House No*" name="ResidenceAddress1" id="ResidenceAddress1" required>
+									
+										<h2 class="hdr text-center">Current Address Details</h2>
+										<div class="col-md-4 col-sm-12 col-xs-12">
+                                          <div class="form-group">
+											<input type="text" class="form-control input-md" placeholder="Flat No / Plot No / House No*" name="ResidenceAddress1" id="ResidenceAddress1" required>
 										</div>
-										<div class="col-md-4">
-											<input type="text" class="form-control" placeholder="Building / Society Name" name="ResidenceAddress2" id="ResidenceAddress2">
+									</div>
+										<div class="col-md-4 col-sm-12 col-xs-12">
+                                          <div class="form-group">
+											<input type="text" class="form-control input-md" placeholder="Building / Society Name" name="ResidenceAddress2" id="ResidenceAddress2" required>
 										</div>
-										<div class="col-md-4">
-											<input type="text" class="form-control" placeholder="Road No / Area / Locality" name="ResidenceAddress3" id="ResidenceAddress3">
+									</div>
+										<div class="col-md-4 col-sm-12 col-xs-12">
+                                          <div class="form-group">
+											<input type="text" class="form-control input-md" placeholder="Road No / Area / Locality" name="ResidenceAddress3" id="ResidenceAddress3" required>
 										</div>
-										<div class="col-md-4">
+									</div>
+										<div class="col-md-4 col-sm-12 col-xs-12">
+                                          <div class="form-group">
 											<input type="text" class="form-control search_citynm" placeholder="City*" name="City" id="City" required>
 										</div>
-										<div class="col-md-4">
-												<input type="text" id="ResidencePincode" name="ResidencePincode" class="form-control" placeholder="Pincode*" onkeypress="return fnAllowNumeric(event)" maxlength="6" required>
+									</div>
+										<div class="col-md-4 col-sm-12 col-xs-12">
+                                          <div class="form-group">
+												<input type="text" id="ResidencePincode" name="ResidencePincode" class="form-control input-md" placeholder="Pincode*" onkeypress="return fnAllowNumeric(event)" maxlength="6" required>
 											</div>
-										<div class="col-md-4">
-											<input type="text" class="form-control search_statenm" placeholder="State*" name="ResidenceState" id="ResidenceState" required>
 										</div>
+										<div class="col-md-4 col-sm-12 col-xs-12">
+                                          <div class="form-group">
+										<input type="text" class="form-control search_statenm" placeholder="State*" name="ResidenceState" id="ResidenceState" required>
+										</div>
+									</div>
                                         
-                                        <div class="col-md-4">
-						                    <select class="block drop-arr select-sty" name="type_current" id="type_current" required>
+                                        <div class="col-md-4 col-sm-12 col-xs-12">
+                                          <div class="form-group">
+						                    <select class="form-control block drop-arr select-sty" name="type_current" id="type_current" required>
 						                      <option disabled selected value="">Residence Type</option>
 						                     <option value="Owned_by_self/spouse">Owned by self/spouse</option>
 						                      <option value="Owned_by_parents/siblings">Owned by parents/siblings</option>
@@ -258,38 +356,54 @@
 						                      <option value="Company_Provided">Company Provided</option>
 						                    </select> 
 						            </div>
+						        </div>
 
 										</div>
-										<hr>
-									</div>
+
+										
+										<br>
+									
                                     
 									
 									
                                     <div class="row sec" style="display:none;" id="section3" >  
 									<div class="form-group">
 									    &nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="same" id="same_id" onclick="same_fn();" /> Same As Above
-										<h4 class="hdr text-center">Permanent Address Details:</h4>
-										<div class="col-md-4">
+										<h2 class="hdr text-center">Permanent Address Details</h2>
+										<div class="col-md-4 col-sm-12 col-xs-12">
+                                          <div class="form-group">
 											<input type="text" class="form-control" placeholder="flat No / Plot No / House No*" name="PerResidenceAddress1" id="PerResidenceAddress1" required>
 										</div>
-										<div class="col-md-4">
-											<input type="text" class="form-control" placeholder="Building / Society Name" name="PerResidenceAddress2" id="PerResidenceAddress2">
+									</div>
+										<div class="col-md-4 col-sm-12 col-xs-12">
+                                          <div class="form-group">
+											<input type="text" class="form-control input-md" placeholder="Building / Society Name" name="PerResidenceAddress2" id="PerResidenceAddress2" required>
 										</div>
-										<div class="col-md-4">
-											<input type="text" class="form-control" placeholder="Road No / Area / Locality" name="PerResidenceAddress3" id="PerResidenceAddress3">
+									</div>
+										<div class="col-md-4 col-sm-12 col-xs-12">
+                                          <div class="form-group">
+											<input type="text" class="form-control input-md" placeholder="Road No / Area / Locality" name="PerResidenceAddress3" id="PerResidenceAddress3" required>
 										</div>
-										<div class="col-md-4">
+									</div>
+										<div class="col-md-4 col-sm-12 col-xs-12">
+                                          <div class="form-group">
 											<input type="text" class="form-control search_citynm" placeholder="City*" name="PerCity" id="PerCity" required>
 										</div>
-										<div class="col-md-4">
+									</div>
+										<div class="col-md-4 col-sm-12 col-xs-12">
+                                          <div class="form-group">
 												<input type="text" id="PerResidencePincode" name="PerResidencePincode" class="form-control" placeholder="Pincode*" onkeypress="return fnAllowNumeric(event)" maxlength="6" required>
 											</div>
-										<div class="col-md-4">
+										</div>
+										<div class="col-md-4 col-sm-12 col-xs-12">
+                                          <div class="form-group">
 											<input type="text" class="form-control search_statenm" placeholder="State*" name="PerResidenceState" id="PerResidenceState" required>
 										</div>
+									</div>
                                         
-                                        <div class="col-md-4">
-						                    <select class="block drop-arr select-sty" name="per_res_type" id="per_res_type" required>
+                                        <div class="col-md-4 col-sm-12 col-xs-12">
+                                          <div class="form-group">
+						                    <select class="form-control block drop-arr select-sty" name="per_res_type" id="per_res_type" required>
 						                      <option disabled selected value="">Residence Type</option>
 						                     <option value="Owned_by_self/spouse">Owned by self/spouse</option>
 						                      <option value="Owned_by_parents/siblings">Owned by parents/siblings</option>
@@ -300,73 +414,102 @@
 						                      <option value="Company_Provided">Company Provided</option>
 						                    </select> 
 						            </div>
+						        </div>
 
 										</div>
-										 <hr>
+										
+										 <br>
 									</div>
   
 									
 									
 									<div class="row sec" style="display:none;" id="section4">
 										<div class="form-group">
-											<h4 class="hdr text-center">Contact Details</h4>
+											<h2 class="hdr text-center">Contact Details</h2>
 										
-											<div class="col-md-4">
-												<input type="text" class="form-control" id="ResidencePhoneNumber" name="ResidencePhoneNumber" placeholder="Telephone No" required="" onkeypress="return fnAllowNumeric(event)" maxlength="10" >
+											<div class="col-md-4 col-sm-12 col-xs-12">
+                                          <div class="form-group">
+												<input type="text" class="form-control input-md" id="ResidencePhoneNumber" name="ResidencePhoneNumber" placeholder="Telephone No" required="" onkeypress="return fnAllowNumeric(event)" maxlength="10" >
 											</div>
-											<div class="col-md-4">
-												<input type="text" class="form-control" id="ResidenceMobileNo" name="ResidenceMobileNo" placeholder="Mobile No" required="" onkeypress="return fnAllowNumeric(event)" maxlength="10" minlength="10">
+										</div>
+											<div class="col-md-4 col-sm-12 col-xs-12">
+                                          <div class="form-group">
+												<input type="text" class="form-control input-md" id="ResidenceMobileNo" name="ResidenceMobileNo" placeholder="Mobile No" required="" onkeypress="return fnAllowNumeric(event)" maxlength="10" minlength="10">
 											</div>
+										</div>
 											
-											<div class="col-md-4">
-												<input type="text" class="form-control" id="STDCode" name="STDCode" placeholder="STD Code" required  onkeypress="return fnAllowNumeric(event)" minlength="3" maxlength="5"  >
+											<div class="col-md-4 col-sm-12 col-xs-12">
+                                          <div class="form-group">
+												<input type="text" class="form-control input-md" id="STDCode" name="STDCode" placeholder="STD Code" required  onkeypress="return fnAllowNumeric(event)" minlength="3" maxlength="5"  >
 											</div>
+										</div>
 												
 										</div>
 									
-
-									<div class="col-md-4">Do You Have A Credit Card :
+                                       <div class="col-md-4 col-sm-12 col-xs-12">
+                                          <div class="form-group">
+									   <div class="form-control border-none">
+									<!-- div class="col-md-4"> -->Do You Have A Credit Card :
 					                    <input type="radio" id="have" name="have_credit_card"  value="Yes"> Yes
-                                        <input type="radio" name="have_credit_card" id="not_have" checked value="No" > No
-					                    </div><br>
+                                        <input type="radio" class="" name="have_credit_card" id="not_have" checked value="No" > No
+					                    </div>
+					                </div>
+					                </div><br>
 
 
 									<div class="row">
 									<div style="display: none;"  id="credit_details" >
-                                    <h4 class="hdr">Please input details of your Credit Card having Maximum Credit Limit </h4>
+										<div class="form-group">
+                                    <h4 class="hdr text-center">Contact DetailsPlease input details of your Credit Card having Maximum Credit Limit </h4>
            
-					                    <div class="col-md-4" >
-					                    <input type="text" class="form-control" name="previous_bank" id="previous_bank" class="form-input-new" onkeypress="return AllowAlphabet(event)" placeholder="Select Bank" required >
+					                    <div class="col-md-4 col-sm-12 col-xs-12">
+                                          <div class="form-group">
+					                    <input type="text" class="form-control input-md" name="previous_bank" id="previous_bank" class="form-input-new" onkeypress="return AllowAlphabet(event)" placeholder="Select Bank" required >
 					                    </div>
+					                </div>
 
-                                        <div class="col-md-4" >
+                                        <div class="col-md-4 col-sm-12 col-xs-12">
+                                          <div class="form-group">
 					                    <input type="text" class="form-control lastReportedsince" id="credit_date" name="credit_date" placeholder="Member Since*" required>
 					                    </div>
-					                    <div class="col-md-4">
-					                   <input type="text" class="form-control" id="credit_limit" name="credit_limit" class="form-input-new" onkeypress="return fnAllowNumeric(event)" placeholder="Credit Limit"  required >
+					                </div>
+					                    <div class="col-md-4 col-sm-12 col-xs-12">
+                                          <div class="form-group">
+					                   <input type="text" class="form-control input-md" id="credit_limit" name="credit_limit" class="form-input-new" onkeypress="return fnAllowNumeric(event)" placeholder="Credit Limit"  required >
 					                    </div>  
+					                </div>
+					            </div>
 						                  </div>
 						                  </div>
+						                 
+						                  <br>
 										  
                                         
 										
 										
 										<div class="form-group">
-											<h4 class="hdr">Identity Details</h4>
+											<!-- <h4 class="hdr col-md-12 text-center">Personal Details</h4>
+ -->
+
+											<h2 class="hdr col-md-12 text-center">Identity Details</h2>
 											<!-- <div class="col-md-4">
 												<input type="text" id="ApplicationNumber" name="ApplicationNumber" class="form-control" placeholder="Application Number*"   maxlength="13" minlength="13" required>
 											</div> -->
-											<div class="col-md-4">
+											<div class="col-md-4 col-sm-12 col-xs-12">
+                                          <div class="form-group">
 												<input type="text" id="PanNo" name="PanNo" class="form-control" placeholder="Pancard*" oninput="pancard('PanNo')" maxlength="10" minlength="10" required >
 												<div id="pannumber" style="display:none;color: red;">Oops.Please Enter Valid Pan Number.!!</div>
 											</div>
-											<div class="col-md-4">
-										     <select class="block drop-arr select-sty" name="SalaryAccountOpened" id="SalaryAccountOpened" required>
+										</div>
+											<div class="col-md-4 col-sm-12 col-xs-12">
+                                          <div class="form-group">
+										     <select class="form-control block drop-arr select-sty" name="SalaryAccountOpened" id="SalaryAccountOpened" required>
 											  <option value="">Salary Account Opened</option>
 											    <option value="Above2Months"> > 2 Months</option>
 												<option value="Below2Months"><=2 Months</option>
 											</select>
-  											</div>  											
+  											</div> 
+  											</div> 											
 											
 											</div>
 											
@@ -386,18 +529,28 @@
                 <img src="{{URL::to('images/ajaxloader.gif')}}" alt="Loader" title="Loader" style="top: 50%; position: relative; left: 50%;"  />
                </div>
 									<p><b>All <span class="text-danger">* </span>fields are mandatory.</b></p>
-								
-							</form>
-					</div>
-					<hr>
-					</div>
-					<button class="btn btn-primary btn-outline with-arrow mrg-top center-block crd_id"  id="credit_id">NEXT<i class="icon-arrow-right" ></i></button>
 
+									</div></div>
+				
+
+								
+					<div class="col-md-2"><a class="btn btn-default btn-sm crd_id"  id="credit_id">NEXT</a></div>
+							</form>
+					
+				</div>
+				
+					
 				</div>
 			</div>
+			<br>
+			</div>
+		</div>
 		</div>	
 	</div>
 </div>
+</div>
+</div>
+<br>
 @include('layout.footer')
 @include('layout.script')
 

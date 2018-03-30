@@ -147,7 +147,7 @@ h3 {
 					 <li>Waiver of fuel surcharge up to Rs. 100 every month</li>
            <li>Joining Fee Rs.750</li>
 					 </ul>
-					 <a href="{{URL::to('credit-card-rbl')}}?card=1" class="btn btn-primary mrg-btm pad pull-left">APPLY NOW</a>
+					 <a href="{{URL::to('credit-card-rbl')}}?card=1" class="btn btn-default btn-sm pull-left">APPLY NOW</a>
 					</div>
                     </center>
                 </div>
@@ -167,7 +167,7 @@ h3 {
 					 <li>Complimentary access to Airport Lounges</li>
            <li>Joining Fee Rs.2000</li>
 					 </ul>
-					 <a href="{{URL::to('credit-card-rbl')}}?card=2" class="btn btn-primary mrg-btm pad pull-left">APPLY NOW</a>
+					 <a href="{{URL::to('credit-card-rbl')}}?card=2" class="btn btn-default btn-sm pull-left">APPLY NOW</a>
 					</div>
                     </center>
                 </div>
@@ -187,7 +187,7 @@ h3 {
 					 <li>Waiver of fuel surcharge up to Rs.150 every month</li>
            <li>Joining Fee Rs.1000</li>
 					 </ul>
-					 <a href="{{URL::to('credit-card-rbl')}}?card=3" class="btn btn-primary mrg-btm pad pull-left">APPLY NOW</a>
+					 <a href="{{URL::to('credit-card-rbl')}}?card=3" class="btn btn-default btn-sm pull-left">APPLY NOW</a>
 					</div>
                     </center>
                 </div>

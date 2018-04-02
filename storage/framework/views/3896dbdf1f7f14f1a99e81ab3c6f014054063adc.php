@@ -17,7 +17,7 @@
                                 <div class="row">    
                        
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding-bottom: 20px">
-                    <div class="how-it-block1 bg-boxshadow" style=" min-height: 300px;">
+                    <div class="how-it-block1 bg-boxshadow" style=" min-height: auto;float: left;">
                         
                         <form class="" id="business_loan_calculator_form" name="business_loan_calculator_form" role="form" method="POST" >
                                  <?php echo e(csrf_field()); ?>
@@ -39,7 +39,7 @@
                             <div class="col-md-4 col-sm-12 col-xs-12">
                             <div class="form-group">
                                 <label class="control-label sr-only" for="loan_tenure">Loan Tenure</label>
-                                <select id="loan_tenure" name="loan_tenure" class="form-control">
+                                <select id="loan_tenure" name="loan_tenure" class="form-control" required>
                                                 <option selected disabled="">Loan Tenure</option>
                                                 <option value="1">1</option>
                                                 <option value="2">2</option>

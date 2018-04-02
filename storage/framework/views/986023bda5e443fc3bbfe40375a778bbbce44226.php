@@ -129,12 +129,11 @@
       <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title text-center" style="position:relative;"><b>Would You Like To Borrow</b></h4>
         </div>
         <div class="modal-body">
           <form name="borrow_form" id="borrow_form" method="post" >
-        <div class="modal-header">          
-          <h4 class="modal-title"><b>Would You Like To Borrow</b></h4>
-        </div>
+        
           <?php echo e(csrf_field()); ?>
 
           <input type="hidden" name="form" value="balance_transfer_borrow_home_form">
@@ -142,26 +141,28 @@
           <input type="hidden" name="Interest_Rate" class="Interest_Rate" value="">
           <input type="hidden" name="Remaining_Tenure" class="Remaining_Tenure" value="">
          
-          <div>
+                  <div class="col-md-4 col-xs-12">
                     <fieldset>
-                      <input class="newsletter-name" name="name" placeholder="Name" required>
+                      <input class="newsletter-name form-control" name="name" placeholder="Name" required>
                     </fieldset>
                     </div>
-                    <br>
-                     <div>
+                    
+                     <div class="col-md-4 col-xs-12">
                     <fieldset>
-                      <input type="email" class="newsletter-name" name="email"  required  placeholder="Email address">
+                      <input type="email" class="newsletter-name form-control" name="email"  required  placeholder="Email address">
                     </fieldset>                 
                     </div>
-                    <br>
-                    <div>
+                    
+                    <div class="col-md-4 col-xs-12">
                     <fieldset>
-                      <input type="text" class="newsletter-name" name="contact" pattern="[789][0-9]{9}" required maxlength="10" placeholder="Mobile Number">
+                      <input type="text" class="newsletter-name form-control" name="contact" pattern="[789][0-9]{9}" required maxlength="10" placeholder="Mobile Number">
                     </fieldset>                 
                     </div>
-                    <br>
+                     
                   <div>
-                     <button class="btn btn-default sidebar-submit">Submit</button>
+                    <br>
+                    <br>
+                     <button class="btn btn-default btn-sm sidebar-submit" style="margin:0 auto;display:block;">Submit</button>
                   </div>
                   <!-- <div class="iframeloading" style= "display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
                 <img src="<?php echo e(URL::to('images/ajaxloader.gif')); ?>" alt="Loader" title="Loader" style="top: 50%; position: relative; left: 50%;"  />
@@ -302,39 +303,41 @@
           <h4 class="modal-title">Call RM</h4>
         </div>
         <div class="modal-body">
-          <form name="talk_to_us_RM_form" id="talk_to_us_RM_form" method="post">
+          <form name="talk_to_us_RM_form" id="talk_to_us_RM_form" class="frm" method="post">
           <?php echo e(csrf_field()); ?>
 
           <input type="hidden" name="form" value="talk_to_us_RM_form">
-                  
-                       <div class="col-md-4 col-sm-12 col-xs-12">
+                 
+                       <div class="col-sm-12 col-xs-12">
                             <div class="form-group">
                                 <label class="control-label sr-only" for="name">Name</label>
-                                <input id="name" name="name" type="text"  placeholder="Enter Name" class="form-control input-md" required="required">
+                                <input id="name" name="name" type="text"  placeholder="Name" class="form-control input-md" required="required">
                             </div>
                             </div>
                     
                   
 
-                    <div class="col-md-4 col-sm-12 col-xs-12">
+                    <div class="col-sm-12 col-xs-12">
                             <div class="form-group">
                                 <label class="control-label sr-only" for="contact">Mobile Number</label>
-                                <input id="contact" name="contact" type="text"  pattern="[789][0-9]{9}" maxlength="10" placeholder="Enter Mobile" class="form-control input-md" required="required">
+                                <input id="contact" name="contact" type="text"  pattern="[789][0-9]{9}" maxlength="10" placeholder="Mobile" class="form-control input-md" required="required">
                             </div>
                             </div>
                     
                    
 
-                     <div class="col-md-4 col-sm-12 col-xs-12">
+                     <div class="col-sm-12 col-xs-12">
                             <div class="form-group">
                                 <label class="control-label sr-only" for="email">Email</label>
-                                <input id="email" name="email" type="email" placeholder="Enter Email " class="form-control input-md" required="required">
+                                <input id="email" name="email" type="email" placeholder="Email " class="form-control input-md" required="required">
                             </div>
                             </div>
                     
-                  <div>
-                      <button class="btn btn-default btn-sm sidebar-submit">Submit</button>
+                  
+                    <div class="form-group">
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button class="btn btn-default btn-sm sidebar-submit">Submit</button>
                   </div>
+
 
             </form>
             <div class='msg displaynone' ><p>Thank You. We will reach you soon.</p></div>
@@ -352,6 +355,7 @@
 
   
 <!---Borrow end -->
+
 
 <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" id="Experian_terms_modal">
   <div class="modal-dialog modal-lg" role="document">

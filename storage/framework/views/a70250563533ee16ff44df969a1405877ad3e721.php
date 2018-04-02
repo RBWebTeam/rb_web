@@ -73,7 +73,7 @@
 
                             <div class="col-md-6 col-sm-12 col-xs-12">
                              <div class="form-group">
-                              <select id="gender" class="form-control input-md" name="gender">
+                              <select id="gender" class="form-control input-md" name="gender" required>
                                   <option selected disabled="">Gender</option>
                                   <option value="M">Male</option>
                                   <option value="F">Female</option> 
@@ -88,10 +88,10 @@
                                </div>
                              </div>
 
-                             <div class="col-md-6 col-sm-12 col-xs-12">
+                             <div class="col-md-12 col-sm-12 col-xs-12">
                               <div class="form-group">                                
-                                   <input type="radio" id="sala_DI" value="salaried" name="emp_detail" checked="checked" >Salaried                                  
-                                    <input type="radio" id="self_DI" value="self-employed" name="emp_detail"  >Self Employee                                  
+                                   <input type="radio" id="sala_DI" value="salaried" name="emp_detail" checked="checked" >&nbsp; Salaried &nbsp;                                 
+                                    <input type="radio" id="self_DI" value="self-employed" name="emp_detail"  > Self Employee                                  
                                 </div>
                             </div>
 

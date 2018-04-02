@@ -524,7 +524,7 @@
         <h4 class="modal-title">Confirmation Status</h4>
       </div>
       <div class="modal-body">
-        <h4><p id="modalerr"><h5 style="color: black">Your Kotak Personal Loan Lead Id is <b><span id="kotak_pl_refcode"></span>You Are Eligible For LoanAmount<span id="kotak_pl_eligLnAmt"></span>And Eligible ROI is<span id="kotak_pl_roi"></span></b>.<h5></p></h4>
+        <h4><p id="modalerr"><h5 style="color: black">Your Kotak Personal Loan Lead Id is <b><span id="kotak_pl_code"></span>You Are Eligible For LoanAmount<span id="kotak_pl_eligLnAmt"></span>And Eligible ROI is<span id="kotak_pl_roi"></span></b>.<h5></p></h4>
         
       </div>
       
@@ -541,7 +541,7 @@
         <h4 class="modal-title">Confirmation Status</h4>
       </div>
       <div class="modal-body">
-        <h4><p id="modalerr"><h5 style="color: black;font-size: 15px">Thank You For Banking With Kotak Bank Personal Loan. We are sorry to say, you have been <b>Rejected <span id="kotak_pl_errcode"></span></b><h5></p></h4>
+        <h4><p id="modalerr"><h5 style="color: black;font-size: 15px">Thank You For Banking With Kotak Bank Personal Loan. We are sorry to say, you have been<span id="kotak_pl_errcode"></span>Lead Id is<span id="kotak_pll"></span></b><h5></p></h4>
         
       </div>
       
@@ -597,18 +597,18 @@
           <input type="hidden" name="form" value="kotak_personal_loan_status">
                   <div>
                     <fieldset>
-                      <input type="text" class="form-control newsletter-name" name="Mobile" pattern="[789][0-9]{9}" required maxlength="10" placeholder="Mobile Number">
+                      <input type="text" class="newsletter-name" name="Mobile" pattern="[789][0-9]{9}" required maxlength="10" placeholder="Mobile Number">
                     </fieldset>                 
                     </div>
 
                     <div>
                     <fieldset>
-                      <input type="text" class="form-control newsletter-name" name="PAN" id="pan" oninput="pan_nmbr('pan')" required  placeholder="PAN Number">
+                      <input type="text" class="newsletter-name" name="PAN" id="pan" oninput="pan_nmbr('pan')" required  placeholder="PAN Number">
                        <span id="pan_num" style="display:none;color: red; font-size: 10px">Oops.Please Enter Valid Pan Number.!!</span>
                     </fieldset>                 
                     </div>
                   <div>
-                      <button class="btn btn-primary btn-outline with-arrow" id="kotak_status">Submit<i class=""></i></button>
+                      <button class="btn btn-primary btn-outline with-arrow" id="kotak_status">Submit<i class="icon-arrow-right"></i></button>
                   </div>
 
             </form>
@@ -754,23 +754,25 @@
          data : $('#Kotak_PL_form').serialize(),
          dataType: 'json',
          success: function(msg){
-          $(".iframeloading").hide();
+          // $(".iframeloading").hide();
           
-          console.log(msg);
+          console.log(msg.status);
           if (msg.status=='1') 
           {
           $('#kotak_pl_refcode').empty().append(msg.refcode);
           $('#kotak_pl_popup').modal('show');
           }else if(msg.status=='2')
           {
-          $('#kotak_pl_refcode').empty().append(msg.refcode);
+          $('#kotak_pl_code').empty().append(msg.refcode);
           $('#kotak_pl_eligLnAmt').empty().append(msg.EligLnAmt);
           $('#kotak_pl_roi').empty().append(msg.ROI);
           $('#kotak_pl_popup_eligible').modal('show');
           }
           else if(msg.status=='3')
           {
-           $('#kotak_pl_errcode').empty().append(msg.errorinfo);
+           var reject="Rejected";
+           $('#kotak_pl_errcode').empty().append(reject);
+           $('#kotak_pll').empty().append(msg.errorinfo);
            $('#kotak_pl_errcode_popup').modal('show');
           }
           else if(msg.status=='4'){

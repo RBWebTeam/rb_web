@@ -14,11 +14,12 @@
  
  <?php   
     if(isset($_GET['commercial'])){ ?>
-      <h1 class="text-center loan-head">Commercial Property Purchase</h1>
+      <h1 class="text-center loan-head">Commercial Property Purchase</h1><br />
       <?php }else if(isset($_GET['lease'])){?> 
-           <h1 class="text-center loan-head">Lease Rent Discounting</h1>
+           <h1 class="text-center loan-head">Lease Rent Discounting</h1><br />
         <?php }else{ ?>
   <h1 class=""><center>Loan Against Property</center></h1>
+  <br />
  <?php }?>
 
 <div id="mod">
@@ -109,13 +110,13 @@
 
                           <div class="col-md-6 col-sm-12 col-xs-12">
                             <div class="form-group">
-                              <input type="text" class="form-input-new form-control" name="applicantname" placeholder="Applicant Name"  required>
+                              <input type="text" class="form-input-new form-control" name="applicantname" placeholder="Applicant Name" maxlength="100"  required>
                             </div>
                           </div>
 
                           <div class="col-md-6 col-sm-12 col-xs-12">
                              <div class="form-group">
-                              <select id="gender" class="form-control input-md" name="gender">
+                              <select id="gender" class="form-control input-md" name="gender" required="">
                                   <option selected disabled="">Gender</option>
                                   <option value="M">Male</option>
                                   <option value="F">Female</option> 
@@ -131,10 +132,10 @@
                           </div>
                     <!-- sal/selfemp -->
                              <!-- tab sal/selfemp -->
-                             <div class="col-md-6 col-sm-12 col-xs-12">
+                             <div class="col-md-12 col-sm-12 col-xs-12">
                               <div class="form-group">                                
-                                   <input type="radio" id="sala_DI" value="salaried" name="emp_detail" checked="checked" >Salaried                                  
-                                    <input type="radio" id="self_DI" value="self-employed" name="emp_detail"  >Self Employee                                  
+                                   <input type="radio" id="sala_DI" value="salaried" name="emp_detail" checked="checked" >&nbsp; Salaried &nbsp;                                 
+                                    <input type="radio" id="self_DI" value="self-employed" name="emp_detail"  >&nbsp;Self Employee                                  
                                 </div>
                             </div>
 
@@ -220,10 +221,10 @@
                           </div>
                           </div>
 
-                          <div class="col-md-6 col-sm-12 col-xs-12" >
+                          <div class="col-md-12 col-sm-12 col-xs-12">
                               <div class="form-group">                                
-                                   <input type="radio" id="co_sala_DI" value="salaried" name="co_emp_detail" checked="checked">Salaried                                  
-                                    <input type="radio" id="co_self_DI" value="self-employed" name="co_emp_detail">Self Employee                                  
+                                   <input type="radio" id="co_sala_DI" value="salaried" name="co_emp_detail" checked="checked">&nbsp; Salaried &nbsp;                                 
+                                    <input type="radio" id="co_self_DI" value="self-employed" name="co_emp_detail">  &nbsp;Self Employee                                  
                                 </div>
                             </div>
 

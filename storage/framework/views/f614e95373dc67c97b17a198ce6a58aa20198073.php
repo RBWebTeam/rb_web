@@ -84,19 +84,29 @@
                                         <option value="18">18 Year</option>
                                         <option value="19">19 Year</option>
                                         <option value="20">20 Year</option>
+                                        <option value="11">21 Year</option>
+                                        <option value="12">22 Year</option>
+                                        <option value="13">23 Year</option>
+                                        <option value="14">24 Year</option>
+                                        <option value="15">25 Year</option>
+                                        <option value="16">26 Year</option>
+                                        <option value="17">27 Year</option>
+                                        <option value="18">28 Year</option>
+                                        <option value="19">29 Year</option>
+                                        <option value="20">30 Year</option>
                                         </select>
                               </div>
                           </div>
 
                           <div class="col-md-6 col-sm-12 col-xs-12">
                             <div class="form-group">
-                              <input type="text" class="form-input-new form-control" name="applicantname" placeholder="Applicant Name"  required>
+                              <input type="text" class="form-input-new form-control" name="applicantname" placeholder="Applicant Name" maxlength="100"  required>
                             </div>
                           </div>
 
                           <div class="col-md-6 col-sm-12 col-xs-12">
                              <div class="form-group">
-                              <select id="gender" class="form-control input-md" name="gender">
+                              <select id="gender" class="form-control input-md" name="gender" required>
                                   <option selected disabled="">Gender</option>
                                   <option value="M">Male</option>
                                   <option value="F">Female</option> 
@@ -112,7 +122,12 @@
                           </div>
                     <!-- sal/selfemp -->
                              <!-- tab sal/selfemp -->
-                             
+                             <div class="col-md-12 col-sm-12 col-xs-12">
+                              <div class="form-group">                                
+                                   <input type="radio" id="sala_DI" value="salaried" name="emp_detail" checked="checked" >&nbsp; Salaried  &nbsp;                                
+                                    <input type="radio" id="self_DI" value="self-employed" name="emp_detail"  > Self Employee                                  
+                                </div>
+                            </div>
 
                             <div  style="display: none;" id="self-employed_ID"> 
        
@@ -144,22 +159,17 @@
 
                             <div class="col-md-6 col-sm-12 col-xs-12" id="income_ID">
                               <div class="form-group">
-                                <input type="text" class="form-input-new form-control"  id="income" name="income"  placeholder="Monthly Income" required onkeypress="return fnAllowNumeric(event)">
+                                <input type="text" class="form-input-new form-control"  id="income" name="income"  placeholder="Monthly Income" minlength="5" maxlength="9" required onkeypress="return fnAllowNumeric(event)">
                               </div>
                             </div>
 
                             <div class="col-md-6 col-sm-12 col-xs-12">
                               <div class="form-group">
-                                <input type="text" class="form-input-new form-control"   name="obligation" placeholder="Existing EMI (If Any)"  onkeypress="return fnAllowNumeric(event)"> 
+                                <input type="text" class="form-input-new form-control"   name="obligation" placeholder="Existing EMI (If Any)" maxlength="8"  onkeypress="return fnAllowNumeric(event)"> 
                               </div>
                             </div>
 
-                            <div class="col-md-6 col-sm-12 col-xs-12">
-                              <div class="form-group">                                
-                                   <input type="radio" id="sala_DI" value="salaried" name="emp_detail" checked="checked" >Salaried                                  
-                                    <input type="radio" id="self_DI" value="self-employed" name="emp_detail"  >Self Employee                                  
-                                </div>
-                            </div>
+                            
 
                             <hr style="color:transparent; width:100%" />
                 <!-- ADD CO-APPLICANT -->
@@ -203,10 +213,10 @@
                           </div>
                           </div>
 
-                          <div class="col-md-6 col-sm-12 col-xs-12" >
+                          <div class="col-md-12 col-sm-12 col-xs-12">
                               <div class="form-group">                                
-                                   <input type="radio" id="co_sala_DI" value="salaried" name="co_emp_detail" checked="checked">Salaried                                  
-                                    <input type="radio" id="co_self_DI" value="self-employed" name="co_emp_detail">Self Employee                                  
+                                   <input type="radio" id="co_sala_DI" value="salaried" name="co_emp_detail" checked="checked">&nbsp; Salaried &nbsp;                                 
+                                    <input type="radio" id="co_self_DI" value="self-employed" name="co_emp_detail"> Self Employee                                  
                                 </div>
                             </div>
 
@@ -240,13 +250,13 @@
 
                             <div class="col-md-6 col-sm-12 col-xs-12" id="co_income_ID">
                               <div class="form-group">
-                                <input type="text" class="form-input-new form-control" name="co_applicant_income"  placeholder="Monthly Income" required onkeypress="return fnAllowNumeric(event)">
+                                <input type="text" class="form-input-new form-control" name="co_applicant_income"  placeholder="Monthly Income" maxlength="10" required onkeypress="return fnAllowNumeric(event)">
                               </div>
                             </div>
 
                             <div class="col-md-6 col-sm-12 col-xs-12">
                               <div class="form-group">
-                                <input type="text" class="form-input-new form-control"   name="co_applicant_obligation" placeholder="Existing EMI (If Any)"  onkeypress="return fnAllowNumeric(event)"> 
+                                <input type="text" class="form-input-new form-control"   name="co_applicant_obligation" maxlength="8" placeholder="Existing EMI (If Any)"  onkeypress="return fnAllowNumeric(event)"> 
                               </div>
                             </div>         
                         </div>
@@ -334,7 +344,7 @@
 
           <div class="col-md-12 col-xs-12">
                 <br>
-           <button id="eligibility"  class="btn btn-default btn-sm disblk" title="See Bankwise Eligibility And Apply Amongst Best Bank" style="width: 100%;" disabled>Check Eligibility </button>      
+           <a id="eligibility"  class="btn btn-default btn-sm disabled" title="See Bankwise Eligibility And Apply Amongst Best Bank" style="width: 100%;">Check Eligibility </a>      
             
           </div>
 
@@ -432,6 +442,7 @@
 <?php echo $__env->make('layout.footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 <?php echo $__env->make('layout.script', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 
+
 <script type="text/javascript">
 
 var getUrl=0;
@@ -519,7 +530,8 @@ $(".product_ID").click(function(e){
                              $('#mi_ID').show();
                              $('#err').hide();
                               
-                              $('#eligibility').prop('disabled', false);
+                              // $('#eligibility').show();
+                              $("#eligibility").removeClass("disabled", true);
                            
                             
                              // $(window).scrollTop($('#form_ID').offset().top-20);
@@ -590,29 +602,8 @@ $(document).on('click','.apply_new',function(e){
 $("#eligibility").click(function() {
   $(window).scrollTop($('#form_ID').offset().top-20);
 });
-
-
-
 </script>
 
-<script type="text/javascript">
-  $(document).ready(function()
-{
-    function update()
-    { 
-      if(! $("#property_cost").val()){
-          $("#loan_amount").val('');
-      }else{
-        var cost = parseFloat($("#property_cost").val());
-        // console.log(cost);
-        var total = (cost)*80/100;
-        // var total = total.toFixed(2);
-        // console.log(total);
-        $("#loan_amount").val(total);
-      }
-    }
-    $(document).on("change, keyup", "#property_cost", update);
-});
-</script>
+
 
 

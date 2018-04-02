@@ -9,50 +9,27 @@
     <meta name="keywords" content="loan, bad credit, EMI Calculator, credit cars, home loan, car loan, education loan">
     <title>Compare & Apply for all kind of Loan & Credit Cards | Rupeeboss.com</title>
     <!-- Bootstrap -->
-    <link href="../css/bootstrap.min.css" rel="stylesheet">
-    <link href="../css/style.css" rel="stylesheet">
-    <link href="../css/font-awesome.min.css" rel="stylesheet">
-    <link href="../css/fontello.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="../css/animsition.min.css">
+   <link href="<?php echo e(URL::to('css/bootstrap.min.css')); ?>" rel="stylesheet">
+    <link href="<?php echo e(URL::to('css/style.css')); ?>" rel="stylesheet">
+    <link href="<?php echo e(URL::to('css/font-awesome.min.css')); ?>" rel="stylesheet">
+    <link href="<?php echo e(URL::to('css/fontello.css')); ?>" rel="stylesheet">  
+    <link rel="stylesheet" type="text/css" href="<?php echo e(URL::to('css/animsition.min.css')); ?>">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700|Merriweather:300,300i,400,400i,700,700i" rel="stylesheet">
     <!-- owl Carousel Css -->
-    <link href="../css/owl.carousel.css" rel="stylesheet">
-    <link href="../css/owl.theme.css" rel="stylesheet">
+    <link href="<?php echo e(URL::to('css/owl.carousel.css')); ?>" rel="stylesheet">
+    <link href="<?php echo e(URL::to('css/owl.theme.css')); ?>" rel="stylesheet">
     <link rel="icon" href="images/rb_fav.png" type="image/png" sizes="16x16">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
   
 
-    <script>
-$(document).ready(function(){
-  // Add smooth scrolling to all links
-  $("a").on('click', function(event) {
+  
 
-    // Make sure this.hash has a value before overriding default behavior
-    if (this.hash !== "") {
-      // Prevent default anchor click behavior
-      event.preventDefault();
+<link rel="stylesheet" href="<?php echo e(URL::to('css/iziModal.min.css')); ?>">
+<link rel="stylesheet" href="<?php echo e(URL::to('css/icons.css?v=1')); ?>">
 
-      // Store hash
-      var hash = this.hash;
-
-      // Using jQuery's animate() method to add smooth page scroll
-      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
-      $('html, body').animate({
-        scrollTop: $(hash).offset().top
-      }, 800, function(){
-   
-        // Add hash (#) to URL when done scrolling (default click behavior)
-        window.location.hash = hash;
-      });
-    } // End if
-  });
-});
-</script>
-
-<link rel="stylesheet" href="../css/iziModal.min.css">
-<link rel="stylesheet" href="../css/icons.css?v=1">
 
 </head>
     <div class="header-transparent navbar-fixed-top">
@@ -61,24 +38,53 @@ $(document).ready(function(){
                 <div class="col-md-2 col-sm-6 col-xs-6">
                     
                     <div class="logo">
-                        <a href="<?php echo e(URL::to('/')); ?>"><img src="../images/logo-rupee-boss.png" alt="Rupeeboss"></a>
+                        <a href="<?php echo e(URL::to('/')); ?>"><img src="<?php echo e(URL::to('images/logo-rupee-boss.png')); ?>" alt="Rupeeboss"></a>
                     </div>
                 </div>
                 
                 <div class="col-md-10 col-sm-6 col-xs-6 text-right">
                     <div class="header-action">
                         <a href="<?php echo e(URL::to('equifax-verification')); ?>" class="btn btn-credit" style="padding:14px 12px">Free Credit Report</a>
-                        <a href="<?php echo e(URL::to('contact-us')); ?>" class="btn btn-default" style="padding:14px 13px">Expert Assistance</a>
+                        <a href="<?php echo e(URL::to('contact-us')); ?>" class="btn btn-default hide-btn" style="padding:14px 13px">Expert Assistance</a>
 						
-						<a class="hidden-lg top-ic top-ic1" title="Free Credit Report"  href="#"><i class="fa fa-tachometer"></i></a>
-						<a class="hidden-lg top-ic" title="Expert Assistance"  href="#"><i class="fa fa-phone"></i></a>
-                        <a class="search-btn-2 search-btn2 trigger-custom2"  href="#modal-custom2" style="text-align: center; width: 45px; height: 45px; padding: 7px; display: inline-block; vertical-align:bottom"><i style="font-size: 30px;" class="fa fa-user"></i><span class="tooltiptext">Sign In</span></a>
-
+						<a class="hidden-lg top-ic top-ic1" title="Free Credit Report"  href="<?php echo e(URL::to('equifax-verification')); ?>"><i class="fa fa-tachometer"></i></a>
+						<a class="hidden-lg top-ic" title="Expert Assistance"  href="<?php echo e(URL::to('contact-us')); ?>"><i class="fa fa-phone"></i></a>
+                     
+ <a  class="search-btn-2 search-btn2 login-submit sign-in"  href="#" style="text-align: center; width: 45px; height: 45px; padding: 7px; display: inline-block; vertical-align:bottom">
+    <i style="font-size: 30px;" class="fa fa-user"></i>
+   <!--  <span class="tooltiptext">Sign In</span> --></a>                                            
+                        
+                <div id="refreshID" class="pull-right">                        
+                    <div>
+                        <ul class="nav navbar-nav">
+                        <?php if(Session::has('email')): ?>
+                         <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#"><?php echo Session::get('name');?>
+                          <span class="caret"></span></a>
+                          <ul class="dropdown-menu">
+                          <li><a id="googleLOG" href="<?php echo e(URL::to('logout')); ?>">Logout</a></li>
+                         <!-- <li><a href="<?php echo e(url('profile')); ?>">My Profile</a></li>
+                         <li><a href="<?php echo e(URL::to('profile')); ?>?credit-score">My Credit Score</a></li>
+                         <li><a href="<?php echo e(url('profile')); ?>?my-quotes">My Quotes</a></li> -->
+                         <li><a href="<?php echo e(url('track-application')); ?>">Track Applications</a></li>
+                         </ul>
+                         </li>
+                         </ul>
+                          <?php endif; ?>                       
                     </div>
+                </div>                                                                        
+
+                    </div>               
+
+                    
                 </div>
             </div>
         </div>
-                <div class="navigation-2">
+
+      
+
+
+        <div class="navigation-2">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12 col-sm-12 col-xs-12">
@@ -115,7 +121,7 @@ $(document).ready(function(){
                                     <li><a href="<?php echo e(URL::to('balance-transfer',['id' => 'home-loan'])); ?>" class="animsition-link">Home Loan</a></li>
                                     <li><a href="<?php echo e(URL::to('balance-transfer',['id' => 'personal-loan'])); ?>" class="animsition-link">Personal Loan</a></li>
                                     <li><a href="<?php echo e(URL::to('balance-transfer',['id' => 'loan-against-property-loan'])); ?>" class="animsition-link">Loan Against Property</a></li>
-                                    <li><a href="<?php echo e(URL::to('balance-transfer/working-capital')); ?>" class="animsition-link">Working Capital</a></li>
+                                    <li><a href="<?php echo e(URL::to('coming-soon')); ?>" class="animsition-link">Working Capital</a></li>
                                     
                                 </ul>
                             </li>
@@ -131,75 +137,11 @@ $(document).ready(function(){
         </div>
     </div>
 
- <div id="modal-welcome" class="iziModal"></div>
- <div id="modal-custom2" class="iziModal" data-iziModal-group="grupo1">
-    <button data-iziModal-close class="fa fa-times-circle"></button>
-    <header>
-        <a href="#" id="signin" class="active">Log In</a>
-        <a href="#" class="">Register</a>
-
-    </header>
 
 
-   
+ 
 
 
-    <section>
-
-         <form class="login-form block" name="login_form" id="login_form"  method="post" >                   
-        <?php echo e(csrf_field()); ?>
-
-
-         <a type="button" style="background-color: #3D5A98; color: #fff;  padding: 14px 20px; margin-bottom:50px; border: none; cursor: pointer; text-align:center; width: 30%;" href="http://facebook.com" target="_blank" class="ui-link"><strong>With Facebook</strong></a>
-
-             <a type="button" style="background-color: #ed1c24; color: #fff;  padding: 14px 20px; margin-bottom:50px; border: none; cursor: pointer; text-align:center; width: 30%;" href="http://gmail.com" target="_blank" class="ui-link"><strong>With Google Plus</strong></a>
-            <br /><br />
-        <h4>OR</h4>
-
-        <input type="text" name="email_login" id="email_login" tabindex="1" class="form-control" placeholder="Email" value="">
-
-        <input type="password" name="login_pass" id="login_pass" tabindex="2" class="form-control" placeholder="Password">
-
-        <!-- <span id="msg" class="error-msg"></span> -->
-
-        <p style="text-align:right"><a href="#" id="forgot-form-link">Forgot Password ?</a></p>
-
-        <div class="col-md-4 col-sm-4 col-xs-12">
-        <button id="login_submit" class="btn btn-default btn-sm login-submit ">Login</button>
-    </div>
-        </form>
-
-    </section>
-
-    <section class="hide">
-        <form class="register-form"  name="registration_form" id="registration_form"  method="post" > 
-                 <?php echo e(csrf_field()); ?>
-
-        <a type="button" style="background-color: #3D5A98; color: #fff;  padding: 14px 20px; margin-bottom:50px; border: none; cursor: pointer; text-align:center; width: 30%;" href="http://facebook.com" target="_blank" class="ui-link"><strong>With Facebook</strong></a>
-
-             <a type="button" style="background-color: #ed1c24; color: #fff;  padding: 14px 20px; margin-bottom:50px; border: none; cursor: pointer; text-align:center; width: 30%;" href="http://gmail.com" target="_blank" class="ui-link"><strong>With Google Plus</strong></a>
-            <br /><br />
-            <h4>OR</h4>            
-
-            <!--<button class="thm-btn"><i class="fa fa-facebook"></i> Sign up with Facebook</button>    -->
-
-            <input type="text" name="name" id="name" tabindex="1" class="form-control" placeholder="User name" >
-            <input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="Email Address"  >
-            <input type="text" name="contact" id="contact" onkeypress="return fnAllowNumeric(event)" maxlength="10"  tabindex="1" class="form-control" placeholder="Mobile Number" >
-            <input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Password">
-            <input type="password" name="confirm_password" id="confirm_password" tabindex="2" class="form-control" placeholder="Confirm Password">
-            
-           <div class="col-md-4 col-sm-4 col-xs-12">
-                    
-                 <button type="register" class="btn btn-default btn-sm " style="width: 100%;">Register</button>
-                    
-            </div>
-              </form>
-    </section>
-
-
-
- </div>
 
 
 <body class="">
@@ -285,7 +227,7 @@ $(document).ready(function(){
 
                 <div class="col-md-4 col-sm-6 col-xs-6">
                     <div class="number-block text-white">
-                        <a href="<?php echo e(URL::to('sme-working-capital')); ?>">
+                        <a href="<?php echo e(URL::to('contact-us')); ?>">
                         <div class="circle-3 circle11"><img src="images/sme_loan.svg" alt="SME Loan" style="width:60px"><!--<i class="icon-command  icon-4x icon-white"></i>--></div>
                         <h3 class="text-black mb30" style="font-size: 17px;">SME Loan</h3>
                         </a>
@@ -310,11 +252,11 @@ $(document).ready(function(){
 
 
 
-                <!-- <div class="row text-center">
+                 <div class="row text-center">
 
                 <a href="#section2"><img src="images/scroll002.gif" style="opacity: 0.8; margin-top:-30px"></a>
 
-                </div> -->
+                </div>
 
 
 
@@ -395,7 +337,7 @@ $(document).ready(function(){
 
                     <div class="col-md-02 col-sm-4 col-xs-6">
                         <div class="service-block-v5">
-                            <a href="<?php echo e(URL::to('sme-working-capital')); ?>" class="btn-2 btn-secondary btn-block" style="background-color: #000;">SME CAR LEASING</a>
+                            <a href="<?php echo e(URL::to('contact-us')); ?>" class="btn-2 btn-secondary btn-block" style="background-color: #000;">SME CAR LEASING</a>
                         </div>
                     </div>
 
@@ -655,17 +597,179 @@ $(document).ready(function(){
         </div>
     </div>
 
-<!--<script src="assets/js/vendor/jquery-2.1.3.min.js" type="text/javascript"></script>-->
-    <script src="js/iziModal.mind1eb.js?=v2" type="text/javascript"></script>
-    <script src="js/javascript.js?v=1" type="text/javascript"></script>
+    <!-- Modal  Sign in-->
+  <div class="modal fade" id="log_popup" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+         <div class="modal-content">
+          <div id="login">
+             <!-- login-->
+         
+      <div class="modal-body login-modal">  
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+  <br>
+       <div class="panel pan-log">
+          <div class="panel-heading">
+            <div class="row" id="forgot-password-hide">
 
+              <div class="col-xs-6">
+                <a href="#" class="active" id="login-form-link">Login</a>
+              </div>
+              <div class="col-xs-6">
+                <a href="#" id="register-form-link">Register</a>
+              </div>
+            </div>
+            <div class="row displaynone" id="forgot-password-show">
+              <div class="col-xs-6">
+                <h3>Forgot Password</h3>
+              </div>
+            </div>
+            <hr>
+          </div>
+
+          <a type="button" style="background-color: #3D5A98; color: #fff;  padding: 14px 20px; margin-bottom:50px; border: none; cursor: pointer; text-align:center; width: 30%;" href="http://facebook.com" target="_blank" class="ui-link"><strong>With Facebook</strong></a>
+
+             <a type="button" style="background-color: #ed1c24; color: #fff;  padding: 14px 20px; margin-bottom:50px; border: none; cursor: pointer; text-align:center; width: 30%;" href="http://gmail.com" target="_blank" class="ui-link"><strong>With Google Plus</strong></a>
+
+             <br /><br />
+            <h4>OR</h4>
+
+
+          <div class="panel-body">
+            <div class="row">
+              <div class="col-lg-6">
+            <form class="login-form block" name="login_form" id="login_form"  method="post" >                   <?php echo e(csrf_field()); ?>
+
+                  <div class="form-group">
+                    <input type="text" name="email_login" id="email_login" tabindex="1" class="form-control" placeholder="Email" value="">
+                  </div>
+                     <div class="form-group">
+                    <input type="password" name="login_pass" id="login_pass" tabindex="2" class="form-control" placeholder="Password">
+                    <span id="msg" class="error-msg"></span>
+                  </div>
+                      
+                
+                  <div class="form-group">
+                    <div class="row">
+                      <div class="col-lg-12">
+                        <div class="text-center">
+                         <!--  <a href="#" tabindex="5" class="forgot-password">Forgot Password?</a> -->
+                           <a href="#" id="forgot-form-link">Forgot password?</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="row">
+                      <div class="col-sm-6 col-sm-offset-3">
+                            <button id="login_submit" class="btn btn-default btn-sm login-submit ">Login</button>
+                      </div>
+                    </div>
+                  </div>
+
+                </form>
+                </div>
+                <!-- <div class="col-lg-6 social-ico"> -->
+               <!-- <a href="javascript:void(0);" onclick="fbLogin();" id="fbid" class="btn btn-default facebook"> <i class="fa fa-facebook modal-icons"></i> Facebook </a> -->
+               <!-- <br/>
+               <a type="button" style="background-color: #3D5A98; color: #fff;  padding: 14px 20px; margin-bottom:50px; border: none; cursor: pointer; text-align:center; width: 30%;" href="http://facebook.com" target="_blank" class="ui-link" id="fbid"><strong>With Facebook</strong></a>
+               <br /><br /><br /> -->
+                <!-- <a href="#" class="btn btn-default google" onclick="login();"> <i class="fa fa-google-plus modal-icons"></i> Google</a> -->
+                <!-- <a type="button" style="background-color: #ed1c24; color: #fff;  padding: 14px 20px; margin-bottom:50px; border: none; cursor: pointer; text-align:center; width: 30%;" href="http://gmail.com" target="_blank" class="ui-link" ><strong>With Google Plus</strong></a> -->
+               <!-- </div> -->
+
+                <div class="col-lg-12">
+                <form class="register-form displaynone"  name="registration_form" id="registration_form"   method="post" > 
+                 <?php echo e(csrf_field()); ?>
+
+
+                  <div class="form-group">
+                    <input type="text" name="name" id="name" tabindex="1" class="form-control" placeholder="Username" >
+                      <span id="errorName" class="error-msg"></span>
+                  </div>
+
+                  <div class="form-group">
+                    <input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="Email Address"  >
+                    <span id="errorEmail"  class="error-msg" ></span>
+                  </div>
+
+                   <div class="form-group">
+                    <input type="text" name="contact" id="contact" onkeypress="return fnAllowNumeric(event)" maxlength="10"  tabindex="1" class="form-control" placeholder="Mobile Number" >
+                    <span id="errorcontact"  class="error-msg"></span>
+                  </div>
+
+                  <div class="form-group">
+                    <input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Password">
+                     <span id="errorpassword"  class="error-msg" ></span>
+                  </div>
+                   
+                  <div class="form-group">
+                    <input type="password" name="confirm_password" id="confirm_password" tabindex="2" class="form-control" placeholder="Confirm Password">
+                     <span id="errorpasswordconfirm"  class="error-msg"></span>
+                  </div>
+
+                  <div class="form-group">
+                    <div class="row">
+                      <div class="col-sm-6 col-sm-offset-3">
+                        <button class="btn btn-default btn-sm registration-submit" id="registration_submit"> Register</button>
+                      </div>
+                    </div>
+                  </div>
+
+                </form>
+              </div>
+              
+         <div class="col-lg-12">
+             <form class="forgot-form displaynone"  name="forgot_password_form" id="forgot_password_form"   method="post"  >
+              <?php echo e(csrf_field()); ?>
+
+                 <div class="form-group">
+                    <input type="text" name="email" id="email" tabindex="1" class="form-control" placeholder="Email ID" >
+                    <span id="forgotpass"  class="text-danger"></span>
+                  </div>
+                    <div class="form-group">
+                    <div class="row">
+                      <div class="col-sm-3 col-sm-offset-3">
+                        <button class="btn btn-default btn-sm " id="f_password">Submit</button>
+                        
+                      </div>
+                      <a href="#" id="back_id" class="btn btn-default btn-sm">Back</a>
+                    </div>
+
+
+                  </div>           
+              </form>
+                <span class="forgotps"></span>
+          </div>
+              
+              
+            </div>
+          </div>
+        </div>
+      
+
+           </div>
+         </div>
+       </div>
+    </div>
+</div>
 </body>
 
-
+<a href="javascript:void(0)" class="cd-top cd-is-visible cd-fade-out" title="Go to top">Top</a>
 
 		
 <?php echo $__env->make('layout.script', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 <?php echo $__env->make('layout.footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+
+<script type="text/javascript">
+  $(".login-submit").click(function(event){
+    
+    $('#log_popup').modal('show');
+    $('.sign-in').hide();
+  });
+</script>
 
 
 		

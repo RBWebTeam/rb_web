@@ -62,13 +62,13 @@
 
                           <div class="col-md-6 col-sm-12 col-xs-12">  
                             <div class="form-group">
-                              <input type="text" name="applicant_name" id="applicant_name" class="form-input-new form-control" placeholder="Applicant Name" onkeypress="return AllowAlphabet(event)" required="">
+                              <input type="text" name="applicant_name" id="applicant_name" class="form-input-new form-control" placeholder="Applicant Name" maxlength="100" onkeypress="return AllowAlphabet(event)" required="">
                             </div>
                           </div>
 
                           <div class="col-md-6 col-sm-12 col-xs-12">
                              <div class="form-group">
-                              <select id="gender" class="form-control input-md" name="gender">
+                              <select id="gender" class="form-control input-md" name="gender" required>
                                   <option selected disabled="">Gender</option>
                                   <option value="M">Male</option>
                                   <option value="F">Female</option> 
@@ -84,7 +84,24 @@
                           </div>
 
                           
-                          
+                           <div class="col-md-12 col-sm-12 col-xs-12">
+                              <div class="form-group">                                
+                                   <input type="radio" id="sala_DI" value="salaried" name="emp_detail" checked="checked" >&nbsp; Salaried &nbsp;                                
+                                    <input type="radio" id="self_DI" value="self-employed" name="emp_detail"  > Self Employee                                  
+                                </div>
+                            </div>
+
+                             <div class="col-md-6 col-sm-12 col-xs-12" id="income_ID">
+                              <div class="form-group">
+                                <input type="text" class="form-input-new form-control"  id="income" name="income"  placeholder="Monthly Income" minlength="5" maxlength="9" required onkeypress="return fnAllowNumeric(event)">
+                              </div>
+                            </div>
+
+                            <div class="col-md-6 col-sm-12 col-xs-12">
+                              <div class="form-group">
+                                <input type="text" class="form-input-new form-control"   name="obligation" placeholder="Existing EMI (If Any)"  onkeypress="return fnAllowNumeric(event)"> 
+                              </div>
+                            </div>
 
                             <div  style="display: none;" id="self-employed_ID"> 
        
@@ -114,26 +131,9 @@
 
                             </div>
 
-                            <div class="col-md-6 col-sm-12 col-xs-12" id="income_ID">
-                              <div class="form-group">
-                                <input type="text" class="form-input-new form-control"  id="income" name="income"  placeholder="Monthly Income" required onkeypress="return fnAllowNumeric(event)">
-                              </div>
-                            </div>
+                           
 
-                            <div class="col-md-6 col-sm-12 col-xs-12">
-                              <div class="form-group">
-                                <input type="text" class="form-input-new form-control"   name="obligation" placeholder="Existing EMI (If Any)"  onkeypress="return fnAllowNumeric(event)"> 
-                              </div>
-                            </div>
-
-                            <div class="col-md-6 col-sm-12 col-xs-12">
-                              <div class="form-group">                                
-                                   <input type="radio" id="sala_DI" value="salaried" name="emp_detail" checked="checked" >Salaried                                  
-                                    <input type="radio" id="self_DI" value="self-employed" name="emp_detail"  >Self Employee                                  
-                                </div>
-                            </div>
-
-                            
+                                                     
   
 
   
@@ -151,7 +151,10 @@
               <a class="btn btn-primary btn-outline with-arrow top-mrg product_name" id="btn_refresh_co1" data-toggle="modal" data-target="#login_process">Get Best Quotes<i class="icon-arrow-right"></i></a>
             <?php } ?> -->
 
+            <div class="col-md-12">
+
              <a class="btn btn-default btn-sm product_name product_ID" >Get Best Quotes</a>  
+             </div>
 
      
     </div>
@@ -319,7 +322,7 @@ $(document).ready(function(){
 
 <script type="text/javascript">
     var d = new Date();
-    var year = d.getFullYear() ;
+    var year = d.getFullYear() -21 ;
     d.setFullYear(year);
 
     $(".lastReporteddate1").datepicker({ dateFormat: "yy-mm-dd",

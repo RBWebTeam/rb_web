@@ -9,35 +9,6 @@
     <script src="{{URL::to('js/back-to-top.js')}}" type="text/javascript"></script>
     <script type="text/javascript" src="{{URL::to('js/menumaker.js')}}"></script> 
 
-
-<script>
-$(document).ready(function(){
-  // Add smooth scrolling to all links
-  $("a").on('click', function(event) {
-
-    // Make sure this.hash has a value before overriding default behavior
-    if (this.hash !== "") {
-      // Prevent default anchor click behavior
-      event.preventDefault();
-
-      // Store hash
-      var hash = this.hash;
-
-      // Using jQuery's animate() method to add smooth page scroll
-      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
-      $('html, body').animate({
-        scrollTop: $(hash).offset().top
-      }, 800, function(){
-   
-        // Add hash (#) to URL when done scrolling (default click behavior)
-        window.location.hash = hash;
-      });
-    } // End if
-  });
-});
-</script>
-
- 
  <script>
 	       // Hide Header on on scroll down
 //var didScroll;
@@ -102,7 +73,7 @@ $(window).scroll(function(){
 
       <script type="text/javascript">
         var d = new Date();
-        var year = d.getFullYear() - 18;
+        var year = d.getFullYear() - 21;
         d.setFullYear(year);
 
         $(".lastReporteddate").datepicker({ dateFormat: "yy-mm-dd",
@@ -460,7 +431,8 @@ $(window).scroll(function(){
             return false;
           }else{
           $(".iframeloading").show();
-          $(".sidebar-submit").hide(); 
+          $(".frm").hide(); 
+          
             $.ajax({  
              type: "POST",  
              url: "{{URL::to('sidebar')}}",
@@ -498,21 +470,14 @@ $(window).scroll(function(){
 
       // by dp
 
-
-
       $(".login-submit").click(function(event){
-      // alert('hii');
-        event.preventDefault();
-        // alert('hello');
-        var form=$(this).closest("form").attr('id');
-          //console.log(form);return false;
-          $form=$('#'+form);
+            event.preventDefault();
+              var form=$(this).closest("form").attr('id');
+                  $form=$('#'+form);
           if(! $form.valid()){
             return false;
           }else{
-            // alert('hii');
-            var s=$('#'+form).serialize();
-// alert('hello');
+                  var s=$('#'+form).serialize();
             $.ajax({  
              type: "POST",  
              url: "{{URL::to('login')}}",
@@ -521,40 +486,37 @@ $(window).scroll(function(){
 
                $("#login_form").show();
                if(msg.error==1){
-
                 $("#msg").text("Your email or password is incorrect. please try again?"); 
-                $('#sign-in').show();              
+                            
               }else if(msg.error==0){   
-
+                
               // $('#hideshow').show(); 
                            // window.location="{{ URL::previous() }}";
-                            // //window.location.href ="{{URL::to('profile')}}";
-                            // if(window.location.href.indexOf("track-application") > -1) {
-                            //     location.reload();
-                            // }else{
-                            //                         $("#log_popup").modal('hide');
-                            //                         $("#refreshID").load(location.href + " #refreshID");
+                           //  //window.location.href ="{{URL::to('profile')}}";
+                           //  if(window.location.href.indexOf("track-application") > -1) {
+                           //      location.reload();
+                           //  }else{
+                                                    $("#log_popup").modal('hide');
+                                                    $("#refreshID").load(location.href + " #refreshID");
                                                     
-                            //                         $('#btn_refresh').show();
-                            //                         $('#btn_refresh1').hide();
-                            //                         $('.btn_refresh1').hide();
-                            //                         $('#no_co_app').hide();
-                            //                           // Co-Applicant
-                            //                           $('#btn_refresh_co').show();
-                            //                           $('#btn_refresh_co1').hide();
+                                                    $('#btn_refresh').show();
+                                                    $('#btn_refresh1').hide();
+                                                    $('.btn_refresh1').hide();
+                                                    $('#no_co_app').hide();
+                                                    //   // Co-Applicant
+                                                      $('#btn_refresh_co').show();
+                                                      $('#btn_refresh_co1').hide();
                                                       
-                            //                           $(".quote_ID").removeAttr('data-target');
-                            //                           $(".quote_ID").removeAttr('data-toggle');
-                            //                           $( ".quote_ID" ).addClass( "myClass");
-                            //                         //  $( ".quote_IDform" ).val(form);
-                            //                          // $(".quote_ID").attr("href", form);
-                            //                          // $(".quote_ID").load(location.href + ".quote_ID");
-                            //                             $(".apply_digitally").removeAttr('data-target');
-                            //                             $(".apply_digitally").removeAttr('data-toggle');
-                            //                            $(".apply_digitally").addClass("apply_new");
-
-
-
+                                                      $(".quote_ID").removeAttr('data-target');
+                                                      $(".quote_ID").removeAttr('data-toggle');
+                                                      $( ".quote_ID" ).addClass( "myClass");
+                                                    // //  $( ".quote_IDform" ).val(form);
+                                                    //  // $(".quote_ID").attr("href", form);
+                                                    //  // $(".quote_ID").load(location.href + ".quote_ID");
+                                                        $(".apply_digitally").removeAttr('data-target');
+                                                        $(".apply_digitally").removeAttr('data-toggle');
+                                                       $(".apply_digitally").addClass("apply_new");
+                                                       
 
                             //}
 
@@ -562,11 +524,13 @@ $(window).scroll(function(){
 
 
                         
-
                                
+                               // location.reload();                               
                                $('#refreshID').append(login);
-                               $("#log_popup").modal('hide');
-                               $('#sign-in').hide();
+                             //   $("#log_popup").modal('hide');
+                               $(".sign-in").hide(); 
+                              
+
  
                                 
                             }
@@ -1731,7 +1695,7 @@ $(window).scroll(function(){
 
     $('#back_id').click(function(e) {
       $(".login-form").delay(100).fadeIn(100);
-      $(".register-form").fadeIn(100);
+      $(".register-form").fadeOut(100);
       $("#forgot-password-hide").delay(100).fadeIn(100);
       $("#forgot-password-show").fadeOut(100);
       $(".social-ico").fadeIn(100);
@@ -1958,9 +1922,7 @@ function mobile_valid(element){
         <div class="form-group">        
           <div class="col-sm-offset-3 col-sm-6">
            <span id='msg_err' class='displaynonemsg'>oops something went wrong</span>
-         <span class="iframeloading" style= "display: none; position: fixed; top: 0px; left: 0px; width: 100%; height: 100%;">
-                <img src="{{URL::to('images/ajaxloader.gif')}}" alt="Loader" title="Loader" style="top: 50%; position: relative; left: 50%;"  />
-               </span>
+      
            <span id='pwd_match' class= 'displaynonemsg'>Password do not match.</span>
            <span id='msg_err_email' class ='displaynonemsg'><p class="text-center">Email id already exists.</p></span>
          </div>
@@ -1969,7 +1931,7 @@ function mobile_valid(element){
         <div class="col-sm-offset-3 col-sm-12">
           <input type="hidden" name="product" id="product_login" value="">
           <button class="btn btn-default"  id="send_otp_button"  >Send OTP</button>
-          <a class="btn btn-default"  id="already_user" data-toggle="modal" data-target="#modal-custom2" data-dismiss="modal" >Already User</a>
+          <a class="btn btn-default"  id="already_user" data-toggle="modal" data-target="#log_popup" data-dismiss="modal" >Already User</a>
         </div>  
       </div> 
     </form>

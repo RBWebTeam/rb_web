@@ -303,39 +303,41 @@
           <h4 class="modal-title">Call RM</h4>
         </div>
         <div class="modal-body">
-          <form name="talk_to_us_RM_form" id="talk_to_us_RM_form" method="post">
+          <form name="talk_to_us_RM_form" id="talk_to_us_RM_form" class="frm" method="post">
           <?php echo e(csrf_field()); ?>
 
           <input type="hidden" name="form" value="talk_to_us_RM_form">
-                  
-                       <div class="col-md-4 col-sm-12 col-xs-12">
+                 
+                       <div class="col-sm-12 col-xs-12">
                             <div class="form-group">
                                 <label class="control-label sr-only" for="name">Name</label>
-                                <input id="name" name="name" type="text"  placeholder="Enter Name" class="form-control input-md" required="required">
+                                <input id="name" name="name" type="text"  placeholder="Name" class="form-control input-md" required="required">
                             </div>
                             </div>
                     
                   
 
-                    <div class="col-md-4 col-sm-12 col-xs-12">
+                    <div class="col-sm-12 col-xs-12">
                             <div class="form-group">
                                 <label class="control-label sr-only" for="contact">Mobile Number</label>
-                                <input id="contact" name="contact" type="text"  pattern="[789][0-9]{9}" maxlength="10" placeholder="Enter Mobile" class="form-control input-md" required="required">
+                                <input id="contact" name="contact" type="text"  pattern="[789][0-9]{9}" maxlength="10" placeholder="Mobile" class="form-control input-md" required="required">
                             </div>
                             </div>
                     
                    
 
-                     <div class="col-md-4 col-sm-12 col-xs-12">
+                     <div class="col-sm-12 col-xs-12">
                             <div class="form-group">
                                 <label class="control-label sr-only" for="email">Email</label>
-                                <input id="email" name="email" type="email" placeholder="Enter Email " class="form-control input-md" required="required">
+                                <input id="email" name="email" type="email" placeholder="Email " class="form-control input-md" required="required">
                             </div>
                             </div>
                     
-                  <div>
-                      <button class="btn btn-default btn-sm sidebar-submit">Submit</button>
+                  
+                    <div class="form-group">
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button class="btn btn-default btn-sm sidebar-submit">Submit</button>
                   </div>
+
 
             </form>
             <div class='msg displaynone' ><p>Thank You. We will reach you soon.</p></div>

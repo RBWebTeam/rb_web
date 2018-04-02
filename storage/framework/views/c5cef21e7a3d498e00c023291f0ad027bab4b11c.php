@@ -218,8 +218,8 @@
 										
 										<div class="col-md-4 col-sm-12 col-xs-12">
                                           <div class="form-group">
-										<input type="text" name="email" id="email" oninput="mail('email')" class="form-control"  required="" placeholder="Email ID">
-										<span id="email_id" style="display:none;color: red; font-size: 10px">Please Enter Valid Email Id.</span>
+										<input type="email" name="email" id="email" oninput="mail('email')" class="form-control"  required="" placeholder="Email ID">
+										<!-- <span id="email_id" style="display:none;color: red; font-size: 10px">Please Enter Valid Email Id.</span> -->
 										</div>
 									</div>
 									 <br />

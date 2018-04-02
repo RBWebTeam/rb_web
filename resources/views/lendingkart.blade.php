@@ -55,7 +55,7 @@
 
                                         <div class="col-md-4 col-sm-12 col-xs-12">
                                           <div class="form-group">
-                                            <input type="text" class="form-control" id="personal_email" name="personal_email" placeholder="Email" oninput="mail('personal_email')" required>
+                                            <input type="text" class="form-control" id="personal_email" name="personal_email" placeholder="Email" onblur="mail('personal_email')" required>
                                             <div id="email" style="display:none;color: red; font-size: 10px">Please Enter Valid Email Id.</div>
                                           </div>
                                         </div>
@@ -582,18 +582,18 @@ var tax_returns =$('#Tax_Returns').text("VAT/Service Tax Returns (whichever appl
 
 <script type="text/javascript">
   function mail(obj,val){
-    // console.log(obj);
+    console.log(obj);
     if(obj=='personal_email' ){
                    var str =$('#personal_email').val();
                    var emailPattern = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/; 
                    var res = str.match(emailPattern);
                    if(res){
-                     // console.log('Pancard is valid one.!!');
-                      $('#email').hide();
+                     alert('Email Pattern Matches');
+                      // $('#email').hide();
 
                   }else{
-                    // console.log('Oops.Please Enter Valid Pan Number.!!');
-                    $('#email').show();
+                    alert('Oops.Please Enter Valid Email.!!');
+                    // $('#email').show();
 
                     return false;
                   }

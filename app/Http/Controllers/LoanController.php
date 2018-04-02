@@ -695,6 +695,51 @@ $url = $this::$url_static."/BankAPIService.svc/updateIIFLRevisedQuote";
      return response()->json( $obj);
   }
 
+  public function iifl_token(Request $req){
+    
+    $data=$req->all();
+    $post_data=json_encode($data);
+    // print_r($post_data);exit();
+
+   $url = $this::$url_static."/BankAPIService.svc/getIIFLToken";
+     $result=$this->call_json_data_api($url,$post_data);
+     $http_result=$result['http_result'];
+     // print_r($http_result);exit();
+     // $error=$result['error'];
+     $st=str_replace('"\"', " ", $http_result);
+     // print_r($st);exit();
+    
+     $s=str_replace('\""', "", $st);
+      // print_r($s);exit();
+     // $m=$s=str_replace('\\', "", $s);
+    // return $obj = json_decode($s);
+    
+     return response()->json( $s);
+     
+  }
+
+  public function iifl_lead_save(Request $req){
+    $data=$req->all();
+   
+    unset($data['_token']);
+
+    $post_data=json_encode($data);
+
+
+    $url = $this::$url_static."/BankAPIService.svc/createIIFLLeadSave";
+     $result=$this->call_json_data_api($url,$post_data);
+     $http_result=$result['http_result'];
+     $error=$result['error'];
+     $st=str_replace('"{', "{", $http_result);
+     $s=str_replace('}"', "}", $st);
+     $m=$s=str_replace('\\', "", $s);
+     $obj = json_decode($m);
+     //print_r( $obj);
+     return $obj->Body->SaveDetails;
+  }
+
+  
+
   public function lendingkart(){
     return view('lendingkart');
    }
@@ -736,11 +781,8 @@ $url = $this::$url_static."/BankAPIService.svc/updateIIFLRevisedQuote";
         for($i=0;$i<4;$i++){
          
           $file=($req->file($str[$i]));
-
           $destinationPath = 'uploads/'.$lead_id;
-
           $filename=$str[$i].".".$file->getClientOriginalExtension();
-          // print_r($filename);exit();
            if(File::exists($destinationPath."/".$filename)){
            // echo "exists \n";
             continue;
@@ -838,16 +880,16 @@ $url = $this::$url_static."/BankAPIService.svc/updateIIFLRevisedQuote";
     echo json_encode($query);
   }   
 
-	
-	public function kotak_home_loan(){
-		// return view('kotak-home-loan');
+  
+  public function kotak_home_loan(){
+    // return view('kotak-home-loan');
     $CampaignName=Session::get('CampaignName');
 
     return view('kotak-home-loan',['CampaignName'=>$CampaignName]);
    }
 
-		
-		  
+    
+      
    public function kotak_city_master(){
     $query = DB::table('kotak_city_master')->select('city_code', 'city_name')->get();
 
@@ -863,6 +905,7 @@ $url = $this::$url_static."/BankAPIService.svc/updateIIFLRevisedQuote";
 
   public function kotak_home_loan_submit(Request $req){
    // print_r($req->all());exit();
+    $a = array();
     $data=$req->all();
     $data['Version'] = '1';
     $data['brokerid']=Session::get('brokerid')?Session::get('brokerid'):'MAA=';
@@ -887,9 +930,11 @@ $url = $this::$url_static."/BankAPIService.svc/updateIIFLRevisedQuote";
           $a['status']=$obj->Response->Status;
           if($a['status']=="1"){
             $a['refcode']=$obj->Response->ReferenceCode;
+          }else{
+            $a['errorinfo']=$obj->Response->ErrorInfo;
           }
         }catch(\Exception $ee){
-          $a['status']=0;
+          $ee->getMessage();
          
         }
         return response()->json($a) ;
@@ -958,7 +1003,7 @@ $url = $this::$url_static."/BankAPIService.svc/updateIIFLRevisedQuote";
       
       
       $post_data=json_encode($data);
-      // print_r($post_data);exit();
+       //print_r($post_data);exit();
       $url = $this::$url_static."/BankAPIService.svc/createOtherLoanLeadReq";
       $result=$this->call_json_data_api($url,$post_data);
       $http_result=$result['http_result'];
@@ -967,7 +1012,7 @@ $url = $this::$url_static."/BankAPIService.svc/updateIIFLRevisedQuote";
       $s=str_replace('}"', "}", $st);
       $m=$s=str_replace('\\', "", $s);
       $obj=json_decode($m);
-      // print_r($obj);exit();
+       // print_r($result);exit();
 
       return response()->json( $obj);
     }
@@ -993,18 +1038,22 @@ $url = $this::$url_static."/BankAPIService.svc/updateIIFLRevisedQuote";
 
 
   public function kotak_pl_proceed(Request $req){
-    $proc='call get_kotak_pl_category ("'.$req['Company_Cat'].'","'.$req['Organization'].'","'.$req['NMI'].'")';
+    $proc='call get_kotak_pl_category ("'.$req['NMI'].'","'.$req['Organization'].'")';
+     // print_r($proc);exit();
     $quote_data=DB::select($proc);
+    // print_r($quote_data);exit();
     return $quote_data;
   }
 
   public function kotak_pl_submit(Request $req){
+     $a = array();
     // print_r($req->all());exit();
      $data=$req->all();
     $data['Version'] = '1';
     $data['brokerid']=Session::get('brokerid')?Session::get('brokerid'):'MAA=';
     $data['empid']=Session::get('empid')?Session::get('empid'):'MAA=';
     $data['source']=Session::get('source')?Session::get('source'):'MAA=';
+    $data['CampaignName']=Session::get('CampaignName');
     // $data['UniqRefCode']='135'.(substr(str_shuffle(str_repeat("0123456789", 6)), 0, 6));
     
    
@@ -1014,12 +1063,14 @@ $url = $this::$url_static."/BankAPIService.svc/updateIIFLRevisedQuote";
         $url = $this::$url_static."/BankAPIService.svc/createKotakPersonalLoanReq";
         $result=$this->call_json_data_api($url,$post_data);
         $http_result=$result['http_result'];
+        // print_r($http_result);exit();
         $error=$result['error'];
         $st=str_replace('"{', "{", $http_result);
         $s=str_replace('}"', "}", $st);
         $m=$s=str_replace('\\', "", $s);
-        // print_r($http_result);exit();
+        
         $obj=json_decode($m);
+         // print_r($http_result);exit();
         
         try{
           $a['status']=$obj->Response->Status;
@@ -1030,7 +1081,7 @@ $url = $this::$url_static."/BankAPIService.svc/updateIIFLRevisedQuote";
            $a['EligLnAmt']=$obj->Response->EligLnAmt;
            $a['ROI']=$obj->Response->ROI;
           }elseif ($a['status']=="3") {
-           $a['errorinfo']=$obj->Response->ErrorInfo;
+           $a['refcode']=$obj->Response->ReferenceCode;
           }elseif ($a['status']=="4") {
            $a['refcode']=$obj->Response->ReferenceCode;
           }else{
@@ -1122,6 +1173,7 @@ $url = $this::$url_static."/BankAPIService.svc/updateIIFLRevisedQuote";
     }
 
     public function excel_upload_submit(Request $req){
+      // print_r($req->all());exit();
      $data = \Excel::load($req['file'])->toObject();
   
 //employername
@@ -1159,16 +1211,83 @@ $url = $this::$url_static."/BankAPIService.svc/updateIIFLRevisedQuote";
     }
 
     /*Capital Float*/
-   public function capitalfloat(){
+   public function capitalfloat(Request $req){
     return view('capitalfloat');
    }
 
-   // HDFC personal loan
-public function hdfc_personal_loan(){
+   public function capital_float_form(Request $req){
+    //print_r($req->all());exit();
+   $data=$req->all();
+    // $data['Version'] = '1';
+    $data['brokerid']=Session::get('brokerid')?Session::get('brokerid'):'MAA=';
+    $data['empid']=Session::get('empid')?Session::get('empid'):'MAA=';
+    $data['source']=Session::get('source')?Session::get('source'):'MAA=';
+    $data['CampaignName']=Session::get('CampaignName');
+    $post_data=json_encode($data);
+   
+    $url = $this::$url_static."/BankAPIService.svc/createCapitalFloatBLReq";
+      $result=$this->call_json_data_api($url,$post_data);
+        $http_result=$result['http_result'];
+         //print_r($http_result);exit();
+        $error=$result['error'];
+        $st=str_replace('"{', "{", $http_result);
+        $s=str_replace('}"', "}", $st);
+        $m=$s=str_replace('\\', "", $s);
+        $obj=json_decode($m);
+
+        return response()->json( $obj);
+
+   }
+
+/*Emailer Purpose*/
+   public function rbl_personal_loan_dc(){
+    return view('rbl-personal-loan-dc');
+   }
+
+   public function kotak_personal_loan_dc(){
+    return view('kotak-personal-loan-dc');
+   }
+
+   public function apply_iifl_loan_dc(Request $req){
+    $CampaignName=Session::get('CampaignName');
+    // print_r($CampaignName);exit();
+
+    return view('apply-iifl-loan-dc',['CampaignName'=>$CampaignName]);
+   }
+
+   public function medsave(){
+    return view('medsave');
+   }
+
+   public function lenden(){
+    return view('lenden');
+   }
+
+   public function otp(Request $req){
+    $data=$req->all();
+    $post_data=json_encode($data);
+   
+    $url = $this::$url_static."/LendenAPIService.svc/SendOTP";
+    $result=$this->call_json_data_api($url,$post_data);
+    $http_result=$result['http_result'];
+    $error=$result['error'];
+    $st=str_replace('"{', "{", $http_result);
+    $s=str_replace('}"', "}", $st);
+    $m=$s=str_replace('\\', "", $s);
+    // print_r($http_result);exit();
+    $obj=json_decode($m);
+    return response()->json( $obj);
+   }
+
+   public function hdfc_personal_loan(){
     return view('hdfc-personal-loan');
    }
 
-    public function hdfc_personal_loan_submit(Request $req){
+   public function hdfc_business_loan(){
+    return view('hdfc-business-loan');
+   }
+
+   public function hdfc_personal_loan_submit(Request $req){
      $data=$req->all();
      $data['brokerid']=Session::get('brokerid')?Session::get('brokerid'):'MAA=';
     $data['empid']=Session::get('empid')?Session::get('empid'):'MAA=';
@@ -1183,17 +1302,10 @@ public function hdfc_personal_loan(){
         $st=str_replace('"{', "{", $http_result);
         $s=str_replace('}"', "}", $st);
         $m=$s=str_replace('\\', "", $s);
-         // print_r($http_result);exit();
+        // print_r($http_result);exit();
         $obj=json_decode($m);
         return response()->json( $obj);
    }
-
-   // HDFC BL 
-
-   public function hdfc_business_loan(){
-    return view('hdfc-business-loan');
-   }
-
 
    public function hdfc_business_loan_submit(Request $req){
     // print_r($req->all());exit();
@@ -1215,6 +1327,9 @@ public function hdfc_personal_loan(){
         $obj=json_decode($m);
         return response()->json( $obj);
    }
+   
 
+
+   
 }
 

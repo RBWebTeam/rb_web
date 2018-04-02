@@ -541,7 +541,7 @@
 
                             <div class="col-md-4 col-sm-12 col-xs-12">
                              <div class="form-group">
-                                <input type="text" id="customer_name" name="customer_name" class="form-input-new form-control" placeholder="Applicant Name" onkeypress="return AllowAlphabet(event)" required >
+                                <input type="text" id="customer_name" name="customer_name" class="form-input-new form-control" placeholder="Applicant Name" maxlength="100" onkeypress="return AllowAlphabet(event)" required >
                              </div>
                              </div>
 
@@ -588,7 +588,7 @@
                                             
                                             <div class="col-md-12 col-xs-12">
                                     <br>
-                                                <!-- <button type="submit"  class="btn btn-default btn-sm" style="width: 100%;">Check Bankwise<br>Eligibility</button> -->
+                                                
 
                                                 <button id="eligibility" class="btn btn-default btn-sm disblk" title="See Bankwise Eligibility And Apply Amongst Best Bank"style="width: 100%;">Check Bankwise<br>Eligibility</button>                                          
                                     </div>

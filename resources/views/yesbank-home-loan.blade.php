@@ -133,7 +133,7 @@
                                         <div class="col-md-4">
                                          <!-- <span>Pan Card</span> -->
                                           <input type="text" class="form-control " id="PAN" name="PAN" placeholder="Pan Card*" oninput="pan_card('PAN')" maxlength="10"  required>
-                                          <span id="pan_number" style="display:none;color: red;">Oops.Please Enter Valid Pan Number.!!</span>
+                                          <span id="pan_number" style="display:none;color: red;">Please Enter Valid Pan Number.</span>
                                         </div>
                                           <div class="col-md-4">
                                            <!-- <span>Residence City</span> -->
@@ -156,10 +156,7 @@
                                             <input type="text" class="form-control" id="Alt_Mobile" name="Alt_Mobile" placeholder="Alternate Mobile Number" maxlength="10" onkeypress="return fnAllowNumeric(event)"  >
                                           </div>
 
-                                          
-
-
-                                          
+                                                                                    
                                           <br>
                                           <br>
                                           <div class="col-md-12">
@@ -221,11 +218,9 @@
         <h4 class="modal-title">Error Status</h4>
       </div>
       <div class="modal-body">
-        <h4><p id="modalerr"><h5 style="color: black">Oops!! Unable To Process.Thank You For Banking With Yes Bank.<h5></p></h4>
+        <h4><p id="modalerr"><h5 style="color: black">Oops!! Unable To Process.Thank You For Banking With Yes Bank.</h5></p></h4>
         
-      </div>
-      
-      
+      </div>      
     </div>
   </div>
 </div>

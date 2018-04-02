@@ -135,10 +135,10 @@
 
 					                      <div class="col-md-4 col-sm-12 col-xs-12">
 					                         <div class="form-group">
-					                     <input type="text" class="form-control" id="EmailId" name="EmailId" placeholder="Email ID *" maxlength="255" oninput="e_mail('officeEmailId')" >
-<div id="mail" style="display:none;color: red; font-size: 10px">Please Enter Valid Email Id.</div>
-</div>
-</div>
+					                     <input type="text" class="form-control" id="EmailId" name="EmailId" placeholder="Email ID *" maxlength="255" oninput="e_mail('EmailId')" >
+                                        <div id="mail" style="display:none;color: red; font-size: 10px">Please Enter Valid Email Id.</div>
+                                         </div>
+                                        </div>
 
 					                     
 

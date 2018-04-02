@@ -22,6 +22,8 @@
     <link href="{{URL::to('css/owl.theme.css')}}" rel="stylesheet">
     <link rel="icon" href="images/rb_fav.png" type="image/png" sizes="16x16">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link href="{{URL::to('css/jquery-ui1.css')}}" rel="stylesheet">
+    
     
 
 
@@ -75,7 +77,7 @@ $(document).ready(function(){
             
             <a class="hidden-lg top-ic top-ic1" title="Free Credit Report"  href="{{URL::to('equifax-verification')}}"><i class="fa fa-tachometer"></i></a>
             <a class="hidden-lg top-ic" title="Expert Assistance"  href="{{URL::to('contact-us')}}"><i class="fa fa-phone"></i></a>
-                        <a id="sign-in" class="search-btn-2 search-btn2 login-submit"  href="#" style="text-align: center; width: 45px; height: 45px; padding: 7px; display: inline-block; vertical-align:bottom"><i style="font-size: 30px;" class="fa fa-user"></i><span class="tooltiptext">Sign In</span></a>
+                        <a class="search-btn-2 search-btn2 login-submit sign-in"  href="#" style="text-align: center; width: 45px; height: 45px; padding: 7px; display: inline-block; vertical-align:bottom"><i style="font-size: 30px;" class="fa fa-user"></i></a>
 
                         <div id="refreshID" class="pull-right">
                         
@@ -87,8 +89,8 @@ $(document).ready(function(){
                       <span class="caret"></span></a>
                       <ul class="dropdown-menu">
                       <li><a id="googleLOG" href="{{URL::to('logout')}}">Logout</a></li>
-                     <!-- <li><a href="{{url('profile')}}">My Profile</a></li>
-                     <li><a href="{{URL::to('profile')}}?credit-score">My Credit Score</a></li>
+                    <!--  <li><a href="{{url('profile')}}">My Profile</a></li> -->
+                    <!--  <li><a href="{{URL::to('profile')}}?credit-score">My Credit Score</a></li>
                      <li><a href="{{url('profile')}}?my-quotes">My Quotes</a></li> -->
                      <li><a href="{{url('track-application')}}">Track Applications</a></li>
                      </ul>
@@ -242,7 +244,7 @@ $(document).ready(function(){
                   <div class="form-group">
                     <div class="row">
                       <div class="col-sm-6 col-sm-offset-3">
-                            <button id="login_submit" class="form-control btn btn-log login-submit ">Login</button>
+                            <button id="login_submit" class="btn btn-default btn-sm login-submit ">Login</button>
                       </div>
                     </div>
                   </div>
@@ -290,7 +292,7 @@ $(document).ready(function(){
                   <div class="form-group">
                     <div class="row">
                       <div class="col-sm-6 col-sm-offset-3">
-                        <button class="form-control btn btn-log registration-submit" id="registration_submit"> Register</button>
+                        <button class="btn btn-default btn-sm registration-submit" id="registration_submit"> Register</button>
                       </div>
                     </div>
                   </div>
@@ -308,10 +310,10 @@ $(document).ready(function(){
                     <div class="form-group">
                     <div class="row">
                       <div class="col-sm-3 col-sm-offset-3">
-                        <button class="form-control btn btn-log " id="f_password">Submit</button>
+                        <button class="btn btn-default btn-sm " id="f_password">Submit</button>
                         
                       </div>
-                      <a href="#" id="back_id" class="btn btn-default">Back</a>
+                      <a href="#" id="back_id" class="btn btn-default btn-sm">Back</a>
                     </div>
 
 
@@ -333,16 +335,16 @@ $(document).ready(function(){
 </div>
 
 
+<a href="javascript:void(0)" class="cd-top cd-is-visible cd-fade-out" title="Go to top">Top</a>
 
-
- <div id="loading" style="position: absolute;z-index: 1000;left: 44%;top: 40%; ">
+ <div id="loading" style="position: absolute;z-index: 100000;left: 44%;top: 40%; ">
    <img src="loading.gif" width="100" />
 
   </div>  
 </body>
 </html>
 
-@include('layout.script')
+
 <script type="text/javascript">
   $(".login-submit").click(function(event){
     // alert('hii');

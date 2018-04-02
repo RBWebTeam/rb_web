@@ -75,38 +75,31 @@ $(document).ready(function(){
 						<a class="hidden-lg top-ic top-ic1" title="Free Credit Report"  href="<?php echo e(URL::to('equifax-verification')); ?>"><i class="fa fa-tachometer"></i></a>
 						<a class="hidden-lg top-ic" title="Expert Assistance"  href="<?php echo e(URL::to('contact-us')); ?>"><i class="fa fa-phone"></i></a>
                      
- <a id="sign-in" class="search-btn-2 search-btn2 login-submit"  href="#" style="text-align: center; width: 45px; height: 45px; padding: 7px; display: inline-block; vertical-align:bottom">
+ <a  class="search-btn-2 search-btn2 login-submit sign-in"  href="#" style="text-align: center; width: 45px; height: 45px; padding: 7px; display: inline-block; vertical-align:bottom">
     <i style="font-size: 30px;" class="fa fa-user"></i>
-    <span class="tooltiptext">Sign In</span></a>
-
-
-
-                            
+   <!--  <span class="tooltiptext">Sign In</span> --></a>                                            
                         
-                         <div id="refreshID" class="pull-right">
-                        
-                        <div>
-                    <ul class="nav navbar-nav">
-                    <?php if(Session::has('email')): ?>
-                     <li class="dropdown">
-                      <a class="dropdown-toggle" data-toggle="dropdown" href="#"><?php echo Session::get('name');?>
-                      <span class="caret"></span></a>
-                      <ul class="dropdown-menu">
-                      <li><a id="googleLOG" href="<?php echo e(URL::to('logout')); ?>">Logout</a></li>
-                     <!-- <li><a href="<?php echo e(url('profile')); ?>">My Profile</a></li>
-                     <li><a href="<?php echo e(URL::to('profile')); ?>?credit-score">My Credit Score</a></li>
-                     <li><a href="<?php echo e(url('profile')); ?>?my-quotes">My Quotes</a></li> -->
-                     <li><a href="<?php echo e(url('track-application')); ?>">Track Applications</a></li>
-                     </ul>
-                     </li>
-                     </ul>
-                      <?php endif; ?>
-                       
-                        </div>
-                    </div>                                                                        
-
+                <div id="refreshID" class="pull-right">                        
+                    <div>
+                        <ul class="nav navbar-nav">
+                        <?php if(Session::has('email')): ?>
+                         <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#"><?php echo Session::get('name');?>
+                          <span class="caret"></span></a>
+                          <ul class="dropdown-menu">
+                          <li><a id="googleLOG" href="<?php echo e(URL::to('logout')); ?>">Logout</a></li>
+                         <!-- <li><a href="<?php echo e(url('profile')); ?>">My Profile</a></li>
+                         <li><a href="<?php echo e(URL::to('profile')); ?>?credit-score">My Credit Score</a></li>
+                         <li><a href="<?php echo e(url('profile')); ?>?my-quotes">My Quotes</a></li> -->
+                         <li><a href="<?php echo e(url('track-application')); ?>">Track Applications</a></li>
+                         </ul>
+                         </li>
+                         </ul>
+                          <?php endif; ?>                       
                     </div>
-                   
+                </div>                                                                        
+
+                    </div>               
 
                     
                 </div>
@@ -695,7 +688,7 @@ $(document).ready(function(){
                   <div class="form-group">
                     <div class="row">
                       <div class="col-sm-6 col-sm-offset-3">
-                            <button id="login_submit" class="form-control btn btn-log login-submit ">Login</button>
+                            <button id="login_submit" class="btn btn-default btn-sm login-submit ">Login</button>
                       </div>
                     </div>
                   </div>
@@ -744,7 +737,7 @@ $(document).ready(function(){
                   <div class="form-group">
                     <div class="row">
                       <div class="col-sm-6 col-sm-offset-3">
-                        <button class="form-control btn btn-log registration-submit" id="registration_submit"> Register</button>
+                        <button class="btn btn-default btn-sm registration-submit" id="registration_submit"> Register</button>
                       </div>
                     </div>
                   </div>
@@ -763,10 +756,10 @@ $(document).ready(function(){
                     <div class="form-group">
                     <div class="row">
                       <div class="col-sm-3 col-sm-offset-3">
-                        <button class="form-control btn btn-log " id="f_password">Submit</button>
+                        <button class="btn btn-default btn-sm " id="f_password">Submit</button>
                         
                       </div>
-                      <a href="#" id="back_id" class="btn btn-default">Back</a>
+                      <a href="#" id="back_id" class="btn btn-default btn-sm">Back</a>
                     </div>
 
 
@@ -799,6 +792,7 @@ $(document).ready(function(){
   $(".login-submit").click(function(event){
     
     $('#log_popup').modal('show');
+    $('.sign-in').hide();
   });
 </script>
 

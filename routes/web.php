@@ -416,3 +416,8 @@ Route::get('hdfc-personal-loan','LoanController@hdfc_personal_loan');
 Route::post('hdfc-personal-loan-submit','LoanController@hdfc_personal_loan_submit');
 Route::get('hdfc-business-loan','LoanController@hdfc_business_loan');
 Route::post('hdfc-business-loan-submit','LoanController@hdfc_business_loan_submit');
+
+
+/*Rectify Credit*/
+Route::get('rectifycredit','EquifaxController@rectifycredit');
+Route::post('rectify-submit','EquifaxController@rectify');

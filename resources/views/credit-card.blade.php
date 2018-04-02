@@ -32,7 +32,7 @@
                                 <div class="card-content" style="text-align: center;">
                                     <h4 class="card-name">ICICI Bank Credit Card</h4>
                                     
-                                    <a href="{{URL::to('credit-card-form')}}" class="btn btn-default btn-sm" style="margin-right: 0px;">Apply Now</a>
+                                    <a href="{{URL::to('coming-soon')}}" class="btn btn-default btn-sm" style="margin-right: 0px;">Apply Now</a>
                                 </div>
                             </div>
                             <!-- /.card listing -->
@@ -46,7 +46,7 @@
                                 <div class="card-content" style="text-align: center;">
                                     <h4 class="card-name">HDFC Bank Credit Card</h4>
                                     
-                                    <a href="hdfc-bank-credit-card.html" class="btn btn-default btn-sm" style="margin-right: 0px;">Apply Now</a>
+                                    <a href="{{URL::to('coming-soon')}}" class="btn btn-default btn-sm" style="margin-right: 0px;">Apply Now</a>
                                     
                                 </div>
                             </div>

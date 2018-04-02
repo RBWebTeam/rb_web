@@ -55,15 +55,17 @@
                                 <!-- card listing -->
                                 
                                 <div class="card-img">
-                                    <a href="tribe.html"><img src="images/express-loan/tribe.png" alt="tribe"></a>
+                                    <a><img src="images/express-loan/tribe.png" alt="tribe"></a>
                                 </div>
                                 <div class="card-content" style="text-align: center;">
                                     <h4 class="card-name"><a href="tribe.html" class="title">Tribe</a></h4>
                                     
-                                    <a href="tribe.html" class="btn btn-default btn-sm" style="margin-right: 0px;">Apply Now</a>
+                                    <a href="{{URL::to('coming-soon')}}" class="btn btn-default btn-sm" style="margin-right: 0px;">Apply Now</a>
                                    
                                 </div>
                             </div>
+
+                           
                             <!-- /.card listing -->
                             <div class="card-listing how-it-block2 hvr-float-shadow2">
                                 <!-- card listing -->
@@ -96,7 +98,7 @@
                             <div class="card-listing how-it-block2 hvr-float-shadow2">
                                 <!-- card listing -->
                                 <div class="card-img">
-                                    <a ><img src="images/express-loan/capital_first.png" alt="Capital First"></a>
+                                    <a ><img src="images/express-loan/CapitalFloat.png" alt="Capital First"></a>
                                 </div>
                                 <div class="card-content" style="text-align: center;">
                                     <h6 class="text-center text-danger"><i>Coming Soon</i></h6>
@@ -336,6 +338,9 @@
             </div>
         </div>
     </div>
+
+@include('layout.footer')
+@include('layout.script')
 
 <script type="text/javascript">
     function Redirect() 

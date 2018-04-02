@@ -1,42 +1,14 @@
-  <script src="<?php echo e(URL::to('js/Myapp.js')); ?>"></script>
-    <script src="<?php echo e(URL::to('js/jsPdf.js')); ?>"></script>
-	 <script src="<?php echo e(URL::to('js/freshslider.min.js')); ?>"></script>
+  <script src="<?php echo e(URL::to('js/Myapp.js')); ?>"></script>    
+  <script src="<?php echo e(URL::to('js/jsPdf.js')); ?>"></script>
+   <script src="<?php echo e(URL::to('js/freshslider.min.js')); ?>"></script>
 
    <script type="text/javascript" src="<?php echo e(URL::to('js/owl.carousel.min.js')); ?>"></script>
     <script type="text/javascript" src="<?php echo e(URL::to('js/slider-carousel.js')); ?>"></script>
     <script type="text/javascript" src="<?php echo e(URL::to('js/service-carousel.js')); ?>"></script>
-    <!-- Back to top script -->
+  <!--   Back to top script -->
     <script src="<?php echo e(URL::to('js/back-to-top.js')); ?>" type="text/javascript"></script>
-    <script type="text/javascript" src="<?php echo e(URL::to('js/menumaker.js')); ?>"></script>
-    
-     <script>
-$(document).ready(function(){
-  // Add smooth scrolling to all links
-  $("a").on('click', function(event) {
+    <script type="text/javascript" src="<?php echo e(URL::to('js/menumaker.js')); ?>"></script> 
 
-    // Make sure this.hash has a value before overriding default behavior
-    if (this.hash !== "") {
-      // Prevent default anchor click behavior
-      event.preventDefault();
-
-      // Store hash
-      var hash = this.hash;
-
-      // Using jQuery's animate() method to add smooth page scroll
-      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
-      $('html, body').animate({
-        scrollTop: $(hash).offset().top
-      }, 800, function(){
-   
-        // Add hash (#) to URL when done scrolling (default click behavior)
-        window.location.hash = hash;
-      });
-    } // End if
-  });
-});
-</script>
-
- 
  <script>
 	       // Hide Header on on scroll down
 //var didScroll;
@@ -101,7 +73,7 @@ $(window).scroll(function(){
 
       <script type="text/javascript">
         var d = new Date();
-        var year = d.getFullYear() - 18;
+        var year = d.getFullYear() - 21;
         d.setFullYear(year);
 
         $(".lastReporteddate").datepicker({ dateFormat: "yy-mm-dd",
@@ -338,8 +310,10 @@ $(window).scroll(function(){
 
 
 </script>
+
 <!-- Property cost & loan Amount -->
 <script type="text/javascript">
+        $('#hideshow').hide();
   $(document).ready(function()
 {
     function update()
@@ -360,8 +334,6 @@ $(window).scroll(function(){
 </script>
 
 
-
-  </script>
   <script>
 
           $(document).ready(function(){
@@ -459,7 +431,8 @@ $(window).scroll(function(){
             return false;
           }else{
           $(".iframeloading").show();
-          $(".sidebar-submit").hide(); 
+          $(".frm").hide(); 
+          
             $.ajax({  
              type: "POST",  
              url: "<?php echo e(URL::to('sidebar')); ?>",
@@ -498,14 +471,13 @@ $(window).scroll(function(){
       // by dp
 
       $(".login-submit").click(function(event){
-        event.preventDefault();
-        var form=$(this).closest("form").attr('id');
-          //console.log(form);return false;
-          $form=$('#'+form);
+            event.preventDefault();
+              var form=$(this).closest("form").attr('id');
+                  $form=$('#'+form);
           if(! $form.valid()){
+            return false;
           }else{
-            var s=$('#'+form).serialize();
-
+                  var s=$('#'+form).serialize();
             $.ajax({  
              type: "POST",  
              url: "<?php echo e(URL::to('login')); ?>",
@@ -513,39 +485,53 @@ $(window).scroll(function(){
              success: function(msg){
 
                $("#login_form").show();
-               if(msg=="email"){
-
-                $("#msg").text("Your email or password is incorrect. please try again?");               
-              }else if(msg=="right"){
+               if(msg.error==1){
+                $("#msg").text("Your email or password is incorrect. please try again?"); 
+                            
+              }else if(msg.error==0){   
+                
+              // $('#hideshow').show(); 
                            // window.location="<?php echo e(URL::previous()); ?>";
-                            //window.location.href ="<?php echo e(URL::to('profile')); ?>";
-                            if(window.location.href.indexOf("track-application") > -1) {
-                                location.reload();
-                            }else{
-                              $("#log_popup").modal('hide');
+                           //  //window.location.href ="<?php echo e(URL::to('profile')); ?>";
+                           //  if(window.location.href.indexOf("track-application") > -1) {
+                           //      location.reload();
+                           //  }else{
+                                                    $("#log_popup").modal('hide');
                                                     $("#refreshID").load(location.href + " #refreshID");
                                                     
                                                     $('#btn_refresh').show();
                                                     $('#btn_refresh1').hide();
                                                     $('.btn_refresh1').hide();
                                                     $('#no_co_app').hide();
-                                                      // Co-Applicant
+                                                    //   // Co-Applicant
                                                       $('#btn_refresh_co').show();
                                                       $('#btn_refresh_co1').hide();
                                                       
                                                       $(".quote_ID").removeAttr('data-target');
                                                       $(".quote_ID").removeAttr('data-toggle');
                                                       $( ".quote_ID" ).addClass( "myClass");
-                                                    //  $( ".quote_IDform" ).val(form);
-                                                     // $(".quote_ID").attr("href", form);
-                                                     // $(".quote_ID").load(location.href + ".quote_ID");
+                                                    // //  $( ".quote_IDform" ).val(form);
+                                                    //  // $(".quote_ID").attr("href", form);
+                                                    //  // $(".quote_ID").load(location.href + ".quote_ID");
                                                         $(".apply_digitally").removeAttr('data-target');
                                                         $(".apply_digitally").removeAttr('data-toggle');
                                                        $(".apply_digitally").addClass("apply_new");
+                                                       
 
-                            }
+                            //}
 
-                            
+                             var login= "<div id='refreshID' class='pull-right'><ul class='nav navbar-nav'><li class='dropdown'><a class='dropdown-toggle' data-toggle='dropdown' href='#'>"+msg.username+"<span class='caret'></span></a><ul class='dropdown-menu'><li><a id='googleLOG' href='<?php echo e(URL::to('logout')); ?>'>Logout</a><a href='<?php echo e(url('profile')); ?>'>My Profile</a><a href='<?php echo e(URL::to('profile')); ?>'?credit-score'>My Credit Score</a><a href='<?php echo e(url('profile')); ?>'?my-quotes'>My Quotes</a> <a href='<?php echo e(url('track-application')); ?>'>Track Applications</a></li></ul></li></ul></div>";
+
+
+                        
+                               
+                               // location.reload();                               
+                               $('#refreshID').append(login);
+                             //   $("#log_popup").modal('hide');
+                               $(".sign-in").hide(); 
+                              
+
+ 
                                 
                             }
 
@@ -638,7 +624,7 @@ $(window).scroll(function(){
         });
 
 
-      $("#forgotps").click(function(event){
+        $("#forgotps").click(function(event){
         $("#forgotpassword").show();
         $("#registration1").hide();
         $("#login").hide();
@@ -646,7 +632,7 @@ $(window).scroll(function(){
       });
 
       $("#f_password").click(function(event){
-
+// alert('hii');
        event.preventDefault();
        var form=$(this).closest("form").attr('id');
        $form=$('#'+form);
@@ -843,8 +829,9 @@ $(window).scroll(function(){
         
 
                 response(data);
+                
                  $(".applicant_add" ).addClass( "in" ); 
-
+               
               }
             });
           },
@@ -1163,7 +1150,7 @@ $(window).scroll(function(){
           return thousandsAndRest[1].replace(/\B(?=(\d{2})+(?!\d))/g, ",") + "," + thousandsAndRest[2];
         }
   </script>
-      <!-- emi scripts end -->
+      <!-- emi scripts end
 
       <!-- adding new scripts for loan form process -->
   <script>
@@ -1894,7 +1881,7 @@ function mobile_valid(element){
             <div class="col-md-6 col-sm-12 col-xs-12">
                              <div class="form-group">
                               <label>Name</label>
-                                <input type="text" class="form-input-new form-control" name="name" id="name" placeholder="Your good name" autofocus="autofocus" required>
+                                <input type="text" class="form-input-new form-control" name="name" id="name" placeholder="Name" autofocus="autofocus" required>
                              </div>
                              </div>
             
@@ -1908,16 +1895,16 @@ function mobile_valid(element){
 
             
             
-            <div class="col-md-6 col-sm-12 col-xs-12">
+                            <div class="col-md-6 col-sm-12 col-xs-12">
                              <div class="form-group">
                               <label>Contact</label>
-                                <input type="text" class="form-input-new form-control" name="contact" id="contact" placeholder="Contact" pattern="[789][0-9]{9}" required maxlength="10" minlength="10" onkeypress="return fnAllowNumeric(event)" required>
+                                <input type="text" class="form-input-new form-control" name="contact" id="contact" placeholder="Mobile" pattern="[789][0-9]{9}" required maxlength="10" minlength="10" onkeypress="return fnAllowNumeric(event)" required>
                              </div>
                              </div>
 
             
           
-          <div class="col-md-6 col-sm-12 col-xs-12">
+                            <div class="col-md-6 col-sm-12 col-xs-12">
                              <div class="form-group">
                               <label>Password</label>
                                 <input type="password" class="form-input-new form-control" name="set_pwd" id="set_pwd" placeholder="Password" required maxlength="10" minlength="6">
@@ -1927,7 +1914,7 @@ function mobile_valid(element){
                              <div class="col-md-6 col-sm-12 col-xs-12">
                              <div class="form-group">
                               <label>Confirm Password</label>
-                                <input type="password" class="form-input-new form-control" name="set_pwd_confirm" id="set_pwd_confirm" placeholder="Password" required maxlength="10" minlength="6">
+                                <input type="password" class="form-input-new form-control" name="set_pwd_confirm" id="set_pwd_confirm" placeholder="Confirm Password" required maxlength="10" minlength="6">
                              </div>
                              </div>
 
@@ -1935,9 +1922,7 @@ function mobile_valid(element){
         <div class="form-group">        
           <div class="col-sm-offset-3 col-sm-6">
            <span id='msg_err' class='displaynonemsg'>oops something went wrong</span>
-         <span class="iframeloading" style= "display: none; position: fixed; top: 0px; left: 0px; width: 100%; height: 100%;">
-                <img src="<?php echo e(URL::to('images/ajaxloader.gif')); ?>" alt="Loader" title="Loader" style="top: 50%; position: relative; left: 50%;"  />
-               </span>
+      
            <span id='pwd_match' class= 'displaynonemsg'>Password do not match.</span>
            <span id='msg_err_email' class ='displaynonemsg'><p class="text-center">Email id already exists.</p></span>
          </div>
@@ -1946,7 +1931,7 @@ function mobile_valid(element){
         <div class="col-sm-offset-3 col-sm-12">
           <input type="hidden" name="product" id="product_login" value="">
           <button class="btn btn-default"  id="send_otp_button"  >Send OTP</button>
-          <a class="btn btn-default"  id="already_user" data-toggle="modal" data-target="#modal-custom2" data-dismiss="modal" >Already User</a>
+          <a class="btn btn-default"  id="already_user" data-toggle="modal" data-target="#log_popup" data-dismiss="modal" >Already User</a>
         </div>  
       </div> 
     </form>
@@ -2577,5 +2562,31 @@ $(window).on('load', function(){
 		     $(window).bind("load",function() {
            $('.hom-rig').slideDown(1000);
         });
+
+
+
+
+         
 		</script>
+
+<script>
+     var $loading = $('#loading').hide();
+     //Attach the event handler to any element
+     $(document)
+       .ajaxStart(function () {
+          //ajax request went so show the loading image
+           $loading.show();
+       })
+     .ajaxStop(function () {
+         //got response so hide the loading image
+          $loading.hide();
+      });
+           //         <div id="loading">
+           //      <img src="loading.gif" />  
+           // </div>
+</script>
+
+
+
+
  <?php echo $__env->make('layout.modal', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

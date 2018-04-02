@@ -59,15 +59,15 @@ class CompareController extends ExperianController
 
     public function view_loan(){
         // if(Session::get('is_login')){
-    	   return view('view-loan');
+         return view('view-loan');
        //}else{
          //   return redirect('/');
        // }
         
     }
- 	// public function emi(){
+  // public function emi(){
   //       //print_r("hiiiiiiiiiii");
-  //   	return view('emi');
+  //    return view('emi');
   //   }
     public function emi2(){
       $keywords='EMI Calculator,Online EMI Calculator,Personal Loan EMI Calculator,Loan Against Property EMI Calculator,Home Loan EMI Calculator,Check EMI Card Status';
@@ -84,8 +84,6 @@ class CompareController extends ExperianController
     
 
     public function switchme($loan){
-
-
         // print"<pre>";print_r($loan);exit();
       if ($loan=="home-loan") {
         $data['title']='Home Loan Balance Transfer – Compare Savings & Apply Online on Rupeeboss.com';
@@ -259,7 +257,8 @@ class CompareController extends ExperianController
                 $user =array('loanamount' => $loanamount, 'loaninterest' => $loaninterest , 'loanterm'=> $loanterm,'product_id'=>$req['product_id'],'brokerid'=>$brokerid,'app'=>$app,'empcode'=>$empcode);
                 
                 $returnHTML = view('emi/switch_cal2')->with('data', $test)->with('sata', $user)->render();
-                return response()->json(array('success' => true, 'amount'=>$amount, 'new_amount'=>$new_amount, 'drop_emi'=>$drop_emi,'drop_in_int'=>$drop_in_int, 'savings'=>$savings, 'emiperlacs'=> $emiperlacs, 'html'=>$returnHTML));                            
+                return response()->json(array('success' => true, 'amount'=>$amount, 'new_amount'=>$new_amount, 'drop_emi'=>$drop_emi,'drop_in_int'=>$drop_in_int, 'savings'=>$savings, 'emiperlacs'=> $emiperlacs, 'html'=>$returnHTML));   
+                // print_r( $returnHTML);exit();                         
                  }
                 else{
    

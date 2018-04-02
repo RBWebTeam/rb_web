@@ -96,13 +96,13 @@
                             <div class="card-listing how-it-block2 hvr-float-shadow2">
                                 <!-- card listing -->
                                 <div class="card-img">
-                                    <a ><img src="images/express-loan/capital_first.png" alt="Capital First"></a>
+                                    <a ><img src="images/express-loan/CapitalFloat.png" alt="Capital First"></a>
                                 </div>
                                 <div class="card-content" style="text-align: center;">
                                     <h6 class="text-center text-danger"><i>Coming Soon</i></h6>
                                     <h4 class="card-name"><a class="title">Capital First</a></h4>
                                     
-                                    <a href="<?php echo e(URL::to('coming-soon')); ?>" class="btn btn-default btn-sm" style="margin-right: 0px;">Apply Now</a>
+                                    <!-- <a href="<?php echo e(URL::to('coming-soon')); ?>" class="btn btn-default btn-sm" style="margin-right: 0px;">Apply Now</a> -->
                                    
                                 </div>
                             </div>
@@ -336,6 +336,9 @@
             </div>
         </div>
     </div>
+
+<?php echo $__env->make('layout.footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php echo $__env->make('layout.script', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 
 <script type="text/javascript">
     function Redirect() 

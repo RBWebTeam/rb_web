@@ -112,10 +112,10 @@
                           </div>
                     <!-- sal/selfemp -->
                              <!-- tab sal/selfemp -->
-                             <div class="col-md-6 col-sm-12 col-xs-12">
+                             <div class="col-md-12 col-sm-12 col-xs-12">
                               <div class="form-group">                                
-                                   <input type="radio" id="sala_DI" value="salaried" name="emp_detail" checked="checked" >Salaried                                  
-                                    <input type="radio" id="self_DI" value="self-employed" name="emp_detail"  >Self Employee                                  
+                                   <input type="radio" id="sala_DI" value="salaried" name="emp_detail" checked="checked" >&nbsp; Salaried &nbsp;                                  
+                                    <input type="radio" id="self_DI" value="self-employed" name="emp_detail"> Self Employee                                  
                                 </div>
                             </div>
 
@@ -149,7 +149,7 @@
 
                             <div class="col-md-6 col-sm-12 col-xs-12" id="income_ID">
                               <div class="form-group">
-                                <input type="text" class="form-input-new form-control"  id="income" name="income"  placeholder="Monthly Income" required onkeypress="return fnAllowNumeric(event)">
+                                <input type="text" class="form-input-new form-control"  id="income" name="income"  placeholder="Monthly Income" minlength="5" maxlength="9" required onkeypress="return fnAllowNumeric(event)">
                               </div>
                             </div>
 
@@ -201,10 +201,10 @@
                           </div>
                           </div>
 
-                          <div class="col-md-6 col-sm-12 col-xs-12" >
+                          <div class="col-md-12 col-sm-12 col-xs-12">
                               <div class="form-group">                                
-                                   <input type="radio" id="co_sala_DI" value="salaried" name="co_emp_detail" checked="checked">Salaried                                  
-                                    <input type="radio" id="co_self_DI" value="self-employed" name="co_emp_detail">Self Employee                                  
+                                   <input type="radio" id="co_sala_DI" value="salaried" name="co_emp_detail" checked="checked">&nbsp; Salaried &nbsp;                                 
+                                    <input type="radio" id="co_self_DI" value="self-employed" name="co_emp_detail"> Self Employee                                  
                                 </div>
                             </div>
 

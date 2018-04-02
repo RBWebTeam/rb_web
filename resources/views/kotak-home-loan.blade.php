@@ -120,21 +120,21 @@
                                 <label class="control-label sr-only" for="TnrYears">Tenure (in years)</label>
                                 <select id="TnrYears" name="TnrYears" class="form-control">
                                     <option selected disabled="">Tenure (in years)</option>
-                                    <option value="1 Year">1 Year</option>
-                                    <option value="2 Year">2 Year</option>
-                                    <option value="3 Year">3 Year</option>
-                                    <option value="4 Year">4 Year</option>
-                                    <option value="5 Year">5 Year</option>
-                                    <option value="6 Year">6 Year</option>
-                                    <option value="7 Year">7 Year</option>
-                                    <option value="8 Year">8 Year</option>
-                                    <option value="9 Year">9 Year</option>
-                                    <option value="10 Year">10 Year</option>
-                                    <option value="11 Year">11 Year</option>
-                                    <option value="12 Year">12 Year</option>
-                                    <option value="13 Year">13 Year</option>
-                                    <option value="14 Year">14 Year</option>
-                                    <option value="15 Year">15 Year</option>
+                                    <option value="1">1 Year</option>
+                                    <option value="2">2 Year</option>
+                                    <option value="3">3 Year</option>
+                                    <option value="4">4 Year</option>
+                                    <option value="5">5 Year</option>
+                                    <option value="6">6 Year</option>
+                                    <option value="7">7 Year</option>
+                                    <option value="8">8 Year</option>
+                                    <option value="9">9 Year</option>
+                                    <option value="10">10 Year</option>
+                                    <option value="11">11 Year</option>
+                                    <option value="12">12 Year</option>
+                                    <option value="13">13 Year</option>
+                                    <option value="14">14 Year</option>
+                                    <option value="15">15 Year</option>
                                     <option style="display: none;" value="16">16 Year</option>
                                             <option style="display: none;" value="17">17 Year</option>
                                             <option style="display: none;" value="18">18 Year</option>
@@ -252,7 +252,7 @@
         <h4 class="modal-title">Error Status</h4>
       </div>
       <div class="modal-body">
-        <h4><p id="modalerr"><h5 style="color: black">Oops!! Unable To Process Due Duplicate Application.<h5></p></h4>
+        <h4><p id="modalerr"><h5 style="color: black">Oops!! Unable To Process Due to <span id="kotakerror"></span>.<h5></p></h4>
         
       </div>
       
@@ -272,15 +272,13 @@
         <form name="kotak_home_loan_status" id="kotak_home_loan_status" method="post">
           {{ csrf_field() }}
           <input type="hidden" name="form" value="kotak_home_loan_status">
-                 
-                    <div class="col-md-4 col-sm-12 col-xs-12">
-                            <div class="form-group">
-                                <label class="control-label sr-only" for="Mobile">Mobile Number</label>
-                                <input id="Mobile" name="Mobile" type="text" minlength="10" maxlength="10" placeholder="Mobile Number" class="form-control input-md" onkeypress="return fnAllowNumeric(event)" required="required">
-                            </div>
-                            </div>
                   <div>
-                      <button class="btn btn-default btn-sm" id="kotak_status">Submit</button>
+                    <fieldset>
+                      <input type="text" class="newsletter-name" name="Mobile" pattern="[789][0-9]{9}" required maxlength="10" placeholder="Mobile Number">
+                    </fieldset>                 
+                    </div>
+                  <div>
+                      <button class="btn btn-primary btn-outline with-arrow" id="kotak_status">Submit<i class="icon-arrow-right"></i></button>
                   </div>
 
             </form>
@@ -474,7 +472,7 @@ $('#LeadType').on('change', function() {
         }
         else
         {
-            $('#kotak-hl-submit').hide();
+            // $('#kotak-hl-submit').hide();
             $(".iframeloading").show();
         $.ajax({  
          type: "POST",  
@@ -484,12 +482,16 @@ $('#LeadType').on('change', function() {
             $(".iframeloading").hide();
             console.log(msg);
             console.log(msg.status);
+             console.log(msg.errorinfo);
             if (msg.status =="1") {
              $('#kotak_hl').empty().append(msg.refcode);
              $('#kotak-hl-popup').modal('show');
-            } else {
-             $('#kotak-hl-submit').show();
-             $('#kotak-hl-popup').modal('hide');
+            } 
+            else if(msg.status =="0")
+            {
+             // $('#kotak-hl-submit').show();
+             // $('#kotak-hl-popup').modal('hide');
+             $('#kotakerror').empty().append(msg.errorinfo);
              $('#kotak-hl-popup-error').modal('show');
             }
              
@@ -539,9 +541,9 @@ $('#LeadType').on('change', function() {
              $('#kotakrefcode').empty().append(msg.refcode);
              $('#kotakstatus').empty().append(msg.appstatusdesc);
              $('#kotak-status-popup').modal('show');
-           } else {
+           }else {
              $('#kotak-status-popup').modal('hide');
-            
+             
              $('#kotak-hl-status-error').modal('show');
            }
            

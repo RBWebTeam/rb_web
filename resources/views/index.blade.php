@@ -516,7 +516,7 @@ setInterval(blink_text, 1000);
 
 
 
-                 <div class="row text-center">
+                 <div class="text-center">
 
                 <a href="#section2"><img src="images/scroll002.gif" style="opacity: 0.8; margin-top:-68px"></a>
 

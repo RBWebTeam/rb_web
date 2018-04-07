@@ -1025,7 +1025,7 @@ $url = $this::$url_static."/BankAPIService.svc/updateIIFLRevisedQuote";
 
 
 
-/*Kotak Personal Loan*/
+ /*Kotak Personal Loan*/
   public function kotak_personal_loan(){
       return view('kotak-personal-loan');
     }
@@ -1046,9 +1046,10 @@ $url = $this::$url_static."/BankAPIService.svc/updateIIFLRevisedQuote";
   }
 
   public function kotak_pl_submit(Request $req){
-     $a = array();
     // print_r($req->all());exit();
-     $data=$req->all();
+    $a = array();
+    
+    $data=$req->all();
     $data['Version'] = '1';
     $data['brokerid']=Session::get('brokerid')?Session::get('brokerid'):'MAA=';
     $data['empid']=Session::get('empid')?Session::get('empid'):'MAA=';
@@ -1070,7 +1071,7 @@ $url = $this::$url_static."/BankAPIService.svc/updateIIFLRevisedQuote";
         $m=$s=str_replace('\\', "", $s);
         
         $obj=json_decode($m);
-         // print_r($http_result);exit();
+        // print_r($obj);exit();
         
         try{
           $a['status']=$obj->Response->Status;
@@ -1124,6 +1125,7 @@ $url = $this::$url_static."/BankAPIService.svc/updateIIFLRevisedQuote";
         }
         return response()->json($a) ;
     }
+    
 
 
 

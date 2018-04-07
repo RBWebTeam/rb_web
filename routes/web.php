@@ -1,5 +1,6 @@
 <?php
 Route::get('/','HomeController@index');
+Route::get('switch','HomeController@switch');
 // Route::get('personal-loan','LoanController@personal_loan');
 // Route::get('home-loan','LoanController@home_loan');
 // Route::get('loan-against-property','LoanController@lap');
@@ -327,13 +328,13 @@ Route::get('coming-soon',function (){return view('comingsoon');});
 
 
 
-// Tata Capital  
-Route::post('tatacapitalemi','TataCapitalLoanController@emicalculatorapi');
-Route::get('tatacapitalsearchajax',array('as'=>'tatacapitalsearchajax','uses'=>'TataCapitalLoanController@tatacapitalsearchajax'));
-Route::get('tatacapitalbankname',array('as'=>'tatacapitalbankname','uses'=>'TataCapitalLoanController@tatacapitalbankname'));
-Route::get('tatacapitalstate',array('as'=>'tatacapitalstate','uses'=>'TataCapitalLoanController@tatacapitalstate'));
-Route::get('tatacapitalcity',array('as'=>'tatacapitalcity','uses'=>'TataCapitalLoanController@tatacapitalcity'));
-Route::post('tatacapitalsubmitform','TataCapitalLoanController@tatacapitalsubmitform');
+// // Tata Capital  
+// Route::post('tatacapitalemi','TataCapitalLoanController@emicalculatorapi');
+// Route::get('tatacapitalsearchajax',array('as'=>'tatacapitalsearchajax','uses'=>'TataCapitalLoanController@tatacapitalsearchajax'));
+// Route::get('tatacapitalbankname',array('as'=>'tatacapitalbankname','uses'=>'TataCapitalLoanController@tatacapitalbankname'));
+// Route::get('tatacapitalstate',array('as'=>'tatacapitalstate','uses'=>'TataCapitalLoanController@tatacapitalstate'));
+// Route::get('tatacapitalcity',array('as'=>'tatacapitalcity','uses'=>'TataCapitalLoanController@tatacapitalcity'));
+// Route::post('tatacapitalsubmitform','TataCapitalLoanController@tatacapitalsubmitform');
 
 
 Route::get('credit-card-rbl','CreditcardController@credit_card_rbl');
@@ -418,6 +419,16 @@ Route::get('hdfc-business-loan','LoanController@hdfc_business_loan');
 Route::post('hdfc-business-loan-submit','LoanController@hdfc_business_loan_submit');
 
 
-/*Rectify Credit*/
+/*Rectify Creditm*/
 Route::get('rectifycredit','EquifaxController@rectifycredit');
 Route::post('rectify-submit','EquifaxController@rectify');
+
+/*Tata Capital PL*/
+Route::get('tata-capital-city','TataCapitalLoanController@tatacapital_city');
+Route::get('tata-capital-state','TataCapitalLoanController@tatacapital_state');
+Route::post('tata-capital-personal-submit','TataCapitalLoanController@tata_capital_personal_submit');
+// Route::post('tata-capital-doc-upload','TataCapitalLoanController@tata_capital_doc_upload');
+Route::post('tata-capital-company-master','TataCapitalLoanController@tata_capital_company_master');
+Route::post('tata-capital-roi','TataCapitalLoanController@tata_capital_roi');
+// Route::get('tata-capital-doc-upload','TataCapitalLoanController@tata_capital_doc');
+Route::post('tata-capital-documents','TataCapitalLoanController@tata_capital_doc_upload');

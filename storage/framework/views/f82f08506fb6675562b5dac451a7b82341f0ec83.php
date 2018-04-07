@@ -115,7 +115,7 @@
     <script src="js/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/menumaker.js"></script>
+
     <!-- animsition -->
     <script type="text/javascript" src="js/animsition.js"></script>
     <script type="text/javascript" src="js/animsition-script.js"></script>
@@ -160,7 +160,7 @@
 
 
 
-
-<?php echo $__env->make('layout.footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 <?php echo $__env->make('layout.script', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php echo $__env->make('layout.footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
 

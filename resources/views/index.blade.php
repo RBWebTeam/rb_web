@@ -21,17 +21,132 @@
     <link href="{{URL::to('css/owl.theme.css')}}" rel="stylesheet">
     <link rel="icon" href="images/rb_fav.png" type="image/png" sizes="16x16">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
   
 
-  
+    <script>
+$(document).ready(function(){
+  // Add smooth scrolling to all links
+  $("a").on('click', function(event) {
+
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 800, function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+});
+</script>
 
 <link rel="stylesheet" href="{{URL::to('css/iziModal.min.css')}}">
 <link rel="stylesheet" href="{{URL::to('css/icons.css?v=1')}}">
 
+<style>
 
+.link {    line-height: 1.72222;
+       font-size: 13px;
+    position:fixed;
+    background-color: #ed1e26;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    padding: 10px 0;
+    right: -48px;
+    text-align: center;
+    top: 26%;
+    width: 140px;
+    z-index: 100000;
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    color:#fff;
+}
+.link:hover {color:#fff;}
+.link h3 {color:#fff; font-size:16px;}
+.slide-dv {    border-top-left-radius: 5px;border-bottom-left-radius: 5px;padding-bottom:25px !important;z-index:10000;position:fixed;right:0px; top:22%;background-color: #fff; padding:5px;display:none;}
+.slide-dv li { border-bottom:1px dashed #ccc; padding:5px;list-style-type:none;}
+.slide-dv ul {margin:0px; padding:0px;}
+.slide-dv li a {color:#fff;padding: 10px; font-size:12px;}
+.carousel-indicators {bottom:-30px;}
+.carousel-control.left {background:transparent;}
+.carousel-control.right {background:transparent;}
+.carousel-control {width:0%;}
+.fa-times-circle-o {cursor:pointer;font-size: 25px;color: #ed1e26; margin-left: -10px; margin-top: -8px;position: absolute;z-index: 100;
+    background: #fff; height:28px;padding:2px;border-radius: 50%;}
+    .carousel-indicators li {border:1px solid #ccc;}
+    .carousel-indicators .active {background:#ed1e26;}
+    .fa-angle-up {font-weight: bold; font-size: 15px;}
+    .fa-gift {font-weight: bold; font-size: 15px;}
+</style>
+<script>
+$(document).ready(function(){
+    $(".link").click(function(){
+        $(".slide-dv").show("slow");
+        $(".link").hide();
+    });
+    $(".fa-times-circle-o").click(function(){
+        $(".slide-dv").hide("slow");
+        $(".link").show();
+    });
+
+    function blink_text() {
+    $('.blink').fadeOut(500);
+    $('.blink').fadeIn(500);
+}
+setInterval(blink_text, 1000);
+});
+</script>
 </head>
+<body>
+<div class="whats-new"><a href="javascript:void(0)" class="link"><i class="fa fa-gift"></i>&nbsp;<b class="blink">What's New </b>&nbsp;&nbsp;<i class="fa fa-angle-up"></i></a>
+
+<div class="slide-dv">
+<i class="fa fa-times-circle-o"></i>
+ <div id="myCarousel" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
+    <li data-target="#myCarousel" data-slide-to="3"></li>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+    <div class="item active">
+      <a href="http://www.rupeeboss.com/mf/" target="_blank"><img src="images/001.png" width="266"></a>
+    </div>
+
+    <div class="item">
+      <a href="http://www.rupeeboss.com/rblife-style/" target="_blank"><img src="images/002.png" width="266"></a>
+    </div>
+
+    <div class="item">
+      <a href="http://www.rupeeboss.com/rectifycredit" target="_blank"><img src="images/003.png" width="266"></a>
+    </div>
+    <div class="item">
+      <a href="http://www.rupeeboss.com/elite/" target="_blank"><img src="images/004.png" width="266"></a>
+    </div>
+  </div>
+
+ 
+</div>
+</div>
+</div>
     <div class="header-transparent navbar-fixed-top">
          <div class="container">
             <div class="row">
@@ -46,42 +161,18 @@
                     <div class="header-action">
                         <a href="{{URL::to('equifax-verification')}}" class="btn btn-credit" style="padding:14px 12px">Free Credit Report</a>
                         <a href="{{URL::to('contact-us')}}" class="btn btn-default hide-btn" style="padding:14px 13px">Expert Assistance</a>
-						
-						<a class="hidden-lg top-ic top-ic1" title="Free Credit Report"  href="{{URL::to('equifax-verification')}}"><i class="fa fa-tachometer"></i></a>
-						<a class="hidden-lg top-ic" title="Expert Assistance"  href="{{URL::to('contact-us')}}"><i class="fa fa-phone"></i></a>
-                     
- <a  class="search-btn-2 search-btn2 login-submit sign-in"  href="#" style="text-align: center; width: 45px; height: 45px; padding: 7px; display: inline-block; vertical-align:bottom">
-    <i style="font-size: 30px;" class="fa fa-user"></i>
-   <!--  <span class="tooltiptext">Sign In</span> --></a>                                            
                         
-                <div id="refreshID" class="pull-right">                        
-                    <div>
-                        <ul class="nav navbar-nav">
-                        @if (Session::has('email'))
-                         <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#"><?php echo Session::get('name');?>
-                          <span class="caret"></span></a>
-                          <ul class="dropdown-menu">
-                          <li><a id="googleLOG" href="{{URL::to('logout')}}">Logout</a></li>
-                         <!-- <li><a href="{{url('profile')}}">My Profile</a></li>
-                         <li><a href="{{URL::to('profile')}}?credit-score">My Credit Score</a></li>
-                         <li><a href="{{url('profile')}}?my-quotes">My Quotes</a></li> -->
-                         <li><a href="{{url('track-application')}}">Track Applications</a></li>
-                         </ul>
-                         </li>
-                         </ul>
-                          @endif                       
+                        <a class="hidden-lg top-ic top-ic1" title="Free Credit Report"  href="{{URL::to('equifax-verification')}}"><i class="fa fa-tachometer"></i></a>
+                        <a class="hidden-lg top-ic" title="Expert Assistance"  href="{{URL::to('contact-us')}}"><i class="fa fa-phone"></i></a>
+
+                        <a class="search-btn-2 search-btn2 trigger-custom2"  href="#" style="text-align: center; width: 45px; height: 45px; padding: 7px; display: inline-block; vertical-align:bottom"><i style="font-size: 30px;" class="fa fa-user"></i><span class="tooltiptext">Sign In</span></a>
+
+                                                               
+
                     </div>
-                </div>                                                                        
-
-                    </div>               
-
-                    
                 </div>
             </div>
         </div>
-
-      
 
 
         <div class="navigation-2">
@@ -121,7 +212,7 @@
                                     <li><a href="{{URL::to('balance-transfer',['id' => 'home-loan'])}}" class="animsition-link">Home Loan</a></li>
                                     <li><a href="{{URL::to('balance-transfer',['id' => 'personal-loan'])}}" class="animsition-link">Personal Loan</a></li>
                                     <li><a href="{{URL::to('balance-transfer',['id' => 'loan-against-property-loan'])}}" class="animsition-link">Loan Against Property</a></li>
-                                    <li><a href="{{URL::to('coming-soon')}}" class="animsition-link">Working Capital</a></li>
+                                    <li><a href="{{URL::to('balance-transfer/working-capital')}}" class="animsition-link">Working Capital</a></li>
                                     
                                 </ul>
                             </li>
@@ -139,12 +230,194 @@
 
 
 
- 
+  <!-- login modal popup -->
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>                
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-8" style="border-right: 1px dotted #C2C2C2;padding-right: 30px;">
+                        <!-- Nav tabs -->
+                        <ul class="nav nav-tabs">
+                            <li class="active"><a href="" data-toggle="tab">Login</a></li>
+                            <li><a href="" data-toggle="tab">Registration</a></li>
+                        </ul>
+                        <!-- Tab panes -->
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="Login">
+                                <form role="form" class="form-horizontal">
+                                <div class="form-group">
+                                    <label for="email" class="col-sm-2 control-label">
+                                        Email</label>
+                                    <div class="col-sm-10">
+                                        <input type="email" class="form-control" id="email1" placeholder="Email" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1" class="col-sm-2 control-label">
+                                        Password</label>
+                                    <div class="col-sm-10">
+                                        <input type="email" class="form-control" id="exampleInputPassword1" placeholder="Email" />
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-2">
+                                    </div>
+                                    <div class="col-sm-10">
+                                        <button type="submit" class="btn btn-primary btn-sm">
+                                            Submit</button>
+                                        <a href="javascript:;">Forgot your password?</a>
+                                    </div>
+                                </div>
+                                </form>
+                            </div>
+                            <div class="tab-pane" id="Registration">
+                                <form role="form" class="form-horizontal">
+                                <div class="form-group">
+                                    <label for="email" class="col-sm-2 control-label">
+                                        Name</label>
+                                    <div class="col-sm-10">
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <select class="form-control">
+                                                    <option>Mr.</option>
+                                                    <option>Ms.</option>
+                                                    <option>Mrs.</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-9">
+                                                <input type="text" class="form-control" placeholder="Name" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email" class="col-sm-2 control-label">
+                                        Email</label>
+                                    <div class="col-sm-10">
+                                        <input type="email" class="form-control" id="email" placeholder="Email" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="mobile" class="col-sm-2 control-label">
+                                        Mobile</label>
+                                    <div class="col-sm-10">
+                                        <input type="email" class="form-control" id="mobile" placeholder="Mobile" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="password" class="col-sm-2 control-label">
+                                        Password</label>
+                                    <div class="col-sm-10">
+                                        <input type="password" class="form-control" id="password" placeholder="Password" />
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-2">
+                                    </div>
+                                    <div class="col-sm-10">
+                                        <button type="button" class="btn btn-primary btn-sm">
+                                            Save & Continue</button>
+                                        <button type="button" class="btn btn-default btn-sm">
+                                            Cancel</button>
+                                    </div>
+                                </div>
+                                </form>
+                            </div>
+                        </div>
+                        <!-- <div id="OR" class="hidden-xs">
+                            OR</div> -->
+                    </div>
+                    <div class="col-md-4">
+                        <div class="row text-center sign-with">
+                            <div class="col-md-12">
+                                <h3>
+                                    Sign in with</h3>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="btn-group btn-group-justified">
+                                    <a href="#" class="btn btn-primary">Facebook</a> <a href="#" class="btn btn-danger">
+                                        Google</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+        <!-- login popup end -->
+
+ <div id="modal-welcome" class="iziModal"></div>
+  <div id="modal-custom2" class="iziModal" data-iziModal-group="grupo1">
+    <button data-iziModal-close class="fa fa-times-circle"></button>
+    <header>
+        <a href="#" id="signin" class="active">Log In</a>
+        <a href="#" class="">Register</a>
+    </header>
+
+    <section>
+
+         <form class="login-form block" name="login_form" id="login_form"  method="post" >                   
+        {{ csrf_field() }}
+
+         <a type="button" style="background-color: #3D5A98; color: #fff;  padding: 14px 20px; margin-bottom:50px; border: none; cursor: pointer; text-align:center; width: 30%;" href="http://facebook.com" target="_blank" class="ui-link"><strong>With Facebook</strong></a>
+
+             <a type="button" style="background-color: #ed1c24; color: #fff;  padding: 14px 20px; margin-bottom:50px; border: none; cursor: pointer; text-align:center; width: 30%;" href="http://gmail.com" target="_blank" class="ui-link"><strong>With Google Plus</strong></a>
+            <br /><br />
+        <h4>OR</h4>
+
+        <input type="text" name="email_login" id="email_login" tabindex="1" class="form-control" placeholder="Email" value="">
+
+        <input type="password" name="login_pass" id="login_pass" tabindex="2" class="form-control" placeholder="Password">
+
+        <!-- <span id="msg" class="error-msg"></span> -->
+
+        <p style="text-align:right"><a href="#" id="forgot-form-link">Forgot Password ?</a></p>
+
+        <div class="col-md-4 col-sm-4 col-xs-12">
+        <button id="login_submit" class="btn btn-default btn-sm login-submit ">Login</button>
+    </div>
+        </form>
+
+    </section>
+
+    <section class="hide">
+        <form class="register-form"  name="registration_form" id="registration_form"  method="post" > 
+                 {{ csrf_field() }}
+        <a type="button" style="background-color: #3D5A98; color: #fff;  padding: 14px 20px; margin-bottom:50px; border: none; cursor: pointer; text-align:center; width: 30%;" href="http://facebook.com" target="_blank" class="ui-link"><strong>With Facebook</strong></a>
+
+             <a type="button" style="background-color: #ed1c24; color: #fff;  padding: 14px 20px; margin-bottom:50px; border: none; cursor: pointer; text-align:center; width: 30%;" href="http://gmail.com" target="_blank" class="ui-link"><strong>With Google Plus</strong></a>
+            <br /><br />
+            <h4>OR</h4>            
+
+            <button class="thm-btn"><i class="fa fa-facebook"></i> Sign up with Facebook</button>    
+
+            <input type="text" name="name" id="name" tabindex="1" class="form-control" placeholder="User name" >
+            <input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="Email Address"  >
+            <input type="text" name="contact" id="contact" onkeypress="return fnAllowNumeric(event)" maxlength="10"  tabindex="1" class="form-control" placeholder="Mobile Number" >
+            <input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Password">
+            <input type="password" name="confirm_password" id="confirm_password" tabindex="2" class="form-control" placeholder="Confirm Password">
+            
+           <div class="col-md-4 col-sm-4 col-xs-12">
+                    
+                 <button type="register" class="btn btn-default btn-sm " style="width: 100%;">Register</button>
+                    
+            </div>
+              </form>
+    </section>
 
 
 
+ </div> 
 
-<body class="">
 
 <div class="sticky-container">
     <ul class="sticky">
@@ -187,18 +460,9 @@
 
       <div class="products">
         <div class="container">
+            
             <div class="row">
-                <div class="col-md-offset-2 col-md-8 col-xs-12 ">
-                    <div class="mb60 text-center section-title text-white">
-                        <!-- section title start-->
-                        <!-- <h1 class="text-white">Why People Choose Us</h1>
-                        <p>We understand how to effectively guide you through the home loan or refinance process and avoid potential problems along the way. </p> --><br><br>
-                    </div>
-                    
-                </div>
-            </div>
-            <div class="row">
-            <br><br><br>
+            <br>
                 <div class="col-md-4 col-sm-6 col-xs-6">
                     <div class="number-block text-white">
                         <a href="{{URL::to('home-loan')}}">
@@ -227,7 +491,7 @@
 
                 <div class="col-md-4 col-sm-6 col-xs-6">
                     <div class="number-block text-white">
-                        <a href="{{URL::to('contact-us')}}">
+                        <a href="{{URL::to('sme-working-capital')}}">
                         <div class="circle-3 circle11"><img src="images/sme_loan.svg" alt="SME Loan" style="width:60px"><!--<i class="icon-command  icon-4x icon-white"></i>--></div>
                         <h3 class="text-black mb30" style="font-size: 17px;">SME Loan</h3>
                         </a>
@@ -254,7 +518,7 @@
 
                  <div class="row text-center">
 
-                <a href="#section2"><img src="images/scroll002.gif" style="opacity: 0.8; margin-top:-30px"></a>
+                <a href="#section2"><img src="images/scroll002.gif" style="opacity: 0.8; margin-top:-68px"></a>
 
                 </div>
 
@@ -337,7 +601,7 @@
 
                     <div class="col-md-02 col-sm-4 col-xs-6">
                         <div class="service-block-v5">
-                            <a href="{{URL::to('contact-us')}}" class="btn-2 btn-secondary btn-block" style="background-color: #000;">SME CAR LEASING</a>
+                            <a href="{{URL::to('sme-working-capital')}}" class="btn-2 btn-secondary btn-block" style="background-color: #000;">SME CAR LEASING</a>
                         </div>
                     </div>
 
@@ -504,7 +768,7 @@
                 <div class="service" id="service">
                 <div class="col-md-12 col-sm-4 clearfix col-xs-12">
                     <div class="testimonial-block mb30 text-center">
-                        <div class=" mb20 testimonial-img-1"> <img src="images/testimonial-img-rupee-boss.jpg" alt="testimonial" class="img-circle"> </div>
+                        <div class=" mb20 testimonial-img-1"> <img src="images/rahil.png" alt="testimonial" class="img-circle"> </div>
                         <div class="mb20">
                             <p class="testimonial-text"> “I'm thankful of the services I have been offered by your staff. Looking forward for more business.I would like to recommend about your services to my family and friends.”</p>
                         </div>
@@ -517,7 +781,7 @@
                 </div>
                 <div class="col-md-12 col-sm-4 clearfix col-xs-12">
                     <div class="testimonial-block mb30 text-center">
-                        <div class=" mb20 testimonial-img-1"> <img src="images/testimonial-img-rupee-boss.jpg" alt="testimonial" class="img-circle"> </div>
+                        <div class=" mb20 testimonial-img-1"> <img src="images/joel_jangam.png" alt="testimonial" class="img-circle"> </div>
                         <div class="mb20">
                             <p class="testimonial-text"> I would like to thank the team for the outstanding service provided in disbursing my loan. It was a smooth process. Thank You. Keep the good work going .</p>
                         </div>
@@ -597,178 +861,19 @@
         </div>
     </div>
 
-    <!-- Modal  Sign in-->
-  <div class="modal fade" id="log_popup" role="dialog">
-    <div class="modal-dialog">
-    
-      <!-- Modal content-->
-         <div class="modal-content">
-          <div id="login">
-             <!-- login-->
-         
-      <div class="modal-body login-modal">  
-    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-  <br>
-       <div class="panel pan-log">
-          <div class="panel-heading">
-            <div class="row" id="forgot-password-hide">
+<!--<script src="assets/js/vendor/jquery-2.1.3.min.js" type="text/javascript"></script>-->
+    <script src="js/iziModal.mind1eb.js?=v2" type="text/javascript"></script>
+    <script src="js/javascript.js?v=1" type="text/javascript"></script>
 
-              <div class="col-xs-6">
-                <a href="#" class="active" id="login-form-link">Login</a>
-              </div>
-              <div class="col-xs-6">
-                <a href="#" id="register-form-link">Register</a>
-              </div>
-            </div>
-            <div class="row displaynone" id="forgot-password-show">
-              <div class="col-xs-6">
-                <h3>Forgot Password</h3>
-              </div>
-            </div>
-            <hr>
-          </div>
-
-          <a type="button" style="background-color: #3D5A98; color: #fff;  padding: 14px 20px; margin-bottom:50px; border: none; cursor: pointer; text-align:center; width: 30%;" href="http://facebook.com" target="_blank" class="ui-link"><strong>With Facebook</strong></a>
-
-             <a type="button" style="background-color: #ed1c24; color: #fff;  padding: 14px 20px; margin-bottom:50px; border: none; cursor: pointer; text-align:center; width: 30%;" href="http://gmail.com" target="_blank" class="ui-link"><strong>With Google Plus</strong></a>
-
-             <br /><br />
-            <h4>OR</h4>
-
-
-          <div class="panel-body">
-            <div class="row">
-              <div class="col-lg-6">
-            <form class="login-form block" name="login_form" id="login_form"  method="post" >                   {{ csrf_field() }}
-                  <div class="form-group">
-                    <input type="text" name="email_login" id="email_login" tabindex="1" class="form-control" placeholder="Email" value="">
-                  </div>
-                     <div class="form-group">
-                    <input type="password" name="login_pass" id="login_pass" tabindex="2" class="form-control" placeholder="Password">
-                    <span id="msg" class="error-msg"></span>
-                  </div>
-                      
-                
-                  <div class="form-group">
-                    <div class="row">
-                      <div class="col-lg-12">
-                        <div class="text-center">
-                         <!--  <a href="#" tabindex="5" class="forgot-password">Forgot Password?</a> -->
-                           <a href="#" id="forgot-form-link">Forgot password?</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <div class="row">
-                      <div class="col-sm-6 col-sm-offset-3">
-                            <button id="login_submit" class="btn btn-default btn-sm login-submit ">Login</button>
-                      </div>
-                    </div>
-                  </div>
-
-                </form>
-                </div>
-                <!-- <div class="col-lg-6 social-ico"> -->
-               <!-- <a href="javascript:void(0);" onclick="fbLogin();" id="fbid" class="btn btn-default facebook"> <i class="fa fa-facebook modal-icons"></i> Facebook </a> -->
-               <!-- <br/>
-               <a type="button" style="background-color: #3D5A98; color: #fff;  padding: 14px 20px; margin-bottom:50px; border: none; cursor: pointer; text-align:center; width: 30%;" href="http://facebook.com" target="_blank" class="ui-link" id="fbid"><strong>With Facebook</strong></a>
-               <br /><br /><br /> -->
-                <!-- <a href="#" class="btn btn-default google" onclick="login();"> <i class="fa fa-google-plus modal-icons"></i> Google</a> -->
-                <!-- <a type="button" style="background-color: #ed1c24; color: #fff;  padding: 14px 20px; margin-bottom:50px; border: none; cursor: pointer; text-align:center; width: 30%;" href="http://gmail.com" target="_blank" class="ui-link" ><strong>With Google Plus</strong></a> -->
-               <!-- </div> -->
-
-                <div class="col-lg-12">
-                <form class="register-form displaynone"  name="registration_form" id="registration_form"   method="post" > 
-                 {{ csrf_field() }}
-
-                  <div class="form-group">
-                    <input type="text" name="name" id="name" tabindex="1" class="form-control" placeholder="Username" >
-                      <span id="errorName" class="error-msg"></span>
-                  </div>
-
-                  <div class="form-group">
-                    <input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="Email Address"  >
-                    <span id="errorEmail"  class="error-msg" ></span>
-                  </div>
-
-                   <div class="form-group">
-                    <input type="text" name="contact" id="contact" onkeypress="return fnAllowNumeric(event)" maxlength="10"  tabindex="1" class="form-control" placeholder="Mobile Number" >
-                    <span id="errorcontact"  class="error-msg"></span>
-                  </div>
-
-                  <div class="form-group">
-                    <input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Password">
-                     <span id="errorpassword"  class="error-msg" ></span>
-                  </div>
-                   
-                  <div class="form-group">
-                    <input type="password" name="confirm_password" id="confirm_password" tabindex="2" class="form-control" placeholder="Confirm Password">
-                     <span id="errorpasswordconfirm"  class="error-msg"></span>
-                  </div>
-
-                  <div class="form-group">
-                    <div class="row">
-                      <div class="col-sm-6 col-sm-offset-3">
-                        <button class="btn btn-default btn-sm registration-submit" id="registration_submit"> Register</button>
-                      </div>
-                    </div>
-                  </div>
-
-                </form>
-              </div>
-              
-         <div class="col-lg-12">
-             <form class="forgot-form displaynone"  name="forgot_password_form" id="forgot_password_form"   method="post"  >
-              {{ csrf_field() }}
-                 <div class="form-group">
-                    <input type="text" name="email" id="email" tabindex="1" class="form-control" placeholder="Email ID" >
-                    <span id="forgotpass"  class="text-danger"></span>
-                  </div>
-                    <div class="form-group">
-                    <div class="row">
-                      <div class="col-sm-3 col-sm-offset-3">
-                        <button class="btn btn-default btn-sm " id="f_password">Submit</button>
-                        
-                      </div>
-                      <a href="#" id="back_id" class="btn btn-default btn-sm">Back</a>
-                    </div>
-
-
-                  </div>           
-              </form>
-                <span class="forgotps"></span>
-          </div>
-              
-              
-            </div>
-          </div>
-        </div>
-      
-
-           </div>
-         </div>
-       </div>
-    </div>
-</div>
 </body>
 
-<a href="javascript:void(0)" class="cd-top cd-is-visible cd-fade-out" title="Go to top">Top</a>
 
-		
+
+        
 @include('layout.script')
 @include('layout.footer')
 
 
-<script type="text/javascript">
-  $(".login-submit").click(function(event){
+        
     
-    $('#log_popup').modal('show');
-    $('.sign-in').hide();
-  });
-</script>
-
-
-		
-	
 

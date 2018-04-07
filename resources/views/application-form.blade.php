@@ -1,88 +1,83 @@
 @include('layout.header')
-<br>
-<div class="container" id="fh5co-hero">
-
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<title>Application Form</title>
-<!-- meta data -->
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 <!-- css files -->
 <link href="css/ganeshchaturthi_offer/css/style1.css" type="text/css" rel="stylesheet" media="all">   
-<!-- //css files -->
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-
-<!-- jQuery library -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-<!-- Latest compiled JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>   
+   
 <style>
-  .pad {padding:20px;background:#fff; border:10px solid #f8f8f8;mrg-top:margin-top:40px 60px;box-shadow:1px 1px 3px 1px #999;} 
+ /* .pad {padding:20px;background:#fff; border:10px solid #f8f8f8;mrg-top:margin-top:40px 60px;box-shadow:1px 1px 3px 1px #999;} 
   body {font-family:arial;
   background:url("images/ganeshchaturthi/landmark.jpg"); repeat-x;
-}
+}*/
+body {background:#f5f5f5 !important;}
 .text-center {padding:20px;display:block;}
 .hy-lnk 
 {
     color:#333333;
-    width: 150px;
-    height: 150px;
-    padding:10px;
+    width: 130px;
+    height: 130px;
+  
     text-align: center;
     border-radius: 50%;
-    border: 10px solid #f1f1f1;
-    display: block;
+   
+  
     cursor: pointer;
     margin-bottom: 10px;
     background:#ffe9e9;
     font-size:13px;
     text-transform:uppercase;
-    border: 10px solid #fbe6e6;
+  
     transition:all 0.3s linear;
     -moz-transition:all 0.3s linear;
     -webkit-transition:all 0.3s linear;
 }
-.hy-lnk:hover {background:#fff;padding:10px;border:1px solid #ffe9e9; box-shadow:1px 1px 3px 1px #999;transition:all 0.3s linear;-moz-transition:all 0.3s linear; -webkit-transition:all 0.3s linear;}
+.hy-lnk:hover {background:#ff0000;border:1px solid #ffe9e9; box-shadow:1px 1px 3px 1px #999;transition:all 0.3s linear;-moz-transition:all 0.3s linear; -webkit-transition:all 0.3s linear;}
 .tit {padding:10px; margin:15px 0px;border-bottom:1px dashed #eee; float:left;width:100%;font-size:20px;}
-.hy-lnk p {margin-top:42px !important;margin: 0px}
+.fa-building {margin-top:15px;font-size:25px; color:#999; margin-bottom:5px;}
+.hy-lnk:hover .fa-building {color:#fff;}
+.hy-lnk:active .fa-building {color:#fff;}
+.hy-lnk p {margin: -2px !important; text-align:center;}
 .center-alig input {margin:0 auto;display:block; width:100%;}
 .hy-lnk input {visibility:hidden; position: absolute;}
 
 @media only screen and (max-width:768px) {
     .pad {
         float: left;
-		padding:2px;
-		
+    padding:2px;
+    
     }
-	.btn.with-arrow {
+    .col-md-12 {padding:0px !important;}
+    .heading-1 {width:100%;display: contents;} 
+  .btn.with-arrow {
     float: left;
     width: 100%;
-	}
-	.container {
-		    padding: 4px !important;
-	}
-	#application_submit {display:block;}
-}
+  }
+  .container {
+        padding: 4px !important;
+  }
+
+  #application_submit {display:block;}
+} 
+.box-shadow {box-shadow:1px 1px 3px 1px #ccc;}
+.mrg-btm {margin-bottom: 20px;}
+.pad {padding:15px; margin-top:0px;}
+.wrapper-content {margin-top: -50px; float:left;}
+.mrg-btm {margin-bottom:20px;}
+#application_submit {float:left;}
 </style>
-</head>
 <!-- body starts -->
 <body>
 <!-- section -->
+<br>
 <div class="container">
-<div class="col-md-3"></div>
-<div class="col-md-6 pad mrg-top">
+<div class="col-md-12">
+<div class="wrapper-content bg-white pinside40">
+<div class="col-md-6 col-md-offset-3 pad mrg-top box-shadow">
 <section class="application">
     <div class="application-full">
         
         <div class="application-right">
             <div class="application-in">
-                <h2>Application Form</h2>
+                <h3 class="pad bg-danger text-center mrg-btm heading-1">Application Form</h3>
                 <div class="application-form">
                     <form action="application_form" id="application_form" method="POST">
                     {{ csrf_field() }}
@@ -113,25 +108,35 @@
                         </div>
                         <div class="btn-grp" data-toggle="buttons">
                         <p class="text-center tit">Click One of Them</p>
-                        <div class="col-md-4 col-xs-6"><span class="hy-lnk btn btn-primary company "><p><input type="radio" name="Status" id="option1">Landmark</p></span></div>
-                        <div class="col-md-4 col-xs-6"><span class="hy-lnk btn btn-primary company "><p><input type="radio" name="Status" id="option1">DC</p></span></div>
-                        <div class="col-md-4 col-xs-6"><span class="hy-lnk btn btn-primary company" ><p><input type="radio" name="Status" id="option1">Intersteller</p></span></div>
-                        <div class="col-md-4 col-xs-6"><span class="hy-lnk btn btn-primary company"><p><input type="radio" name="Status" id="option1">Rupeeboss</p></span></div>
-                        <div class="col-md-4 col-xs-6"><span class="hy-lnk btn btn-primary company"><p><input type="radio" name="Status" id="option1">Landmark Auto</p></span></div>
+                        <div class="col-md-4 col-xs-6"><span class="hy-lnk btn btn-primary company ">
+                        <i class="fa fa-building" aria-hidden="true"></i>
+                        <p><input type="radio" name="Status" id="option1">Landmark</p></span></div>
+                        <div class="col-md-4 col-xs-6"><span class="hy-lnk btn btn-primary company "><i class="fa fa-building" aria-hidden="true"></i>
+                        <p><input type="radio" name="Status" id="option1">DC</p></span></div>
+                        <div class="col-md-4 col-xs-6"><span class="hy-lnk btn btn-primary company" ><i class="fa fa-building" aria-hidden="true"></i>
+                        <p><input type="radio" name="Status" id="option1">Intersteller</p></span></div>
+                        <div class="col-md-4 col-xs-6"><span class="hy-lnk btn btn-primary company"><i class="fa fa-building" aria-hidden="true"></i>
+                        <p><input type="radio" name="Status" id="option1">Rupeeboss</p></span></div>
+                        <div class="col-md-4 col-xs-6"><span class="hy-lnk btn btn-primary company"><i class="fa fa-building" aria-hidden="true"></i>
+                        <p><input type="radio" name="Status" id="option1">Landmark</p><p>Auto</p></span></div>
                         </div>
                         <br>
                         <div class="btn-grp" data-toggle="buttons">
                         <p class="text-center tit">Click One of Them</p>
-                        <div class="col-md-4 col-xs-6"><span class="hy-lnk btn btn-primary product"><p><input type="radio" name="Status" id="option1">Early Salary</p></span></div>
-                        <div class="col-md-4 col-xs-6"><span class="hy-lnk btn btn-primary product"><p><input type="radio" name="Status" id="option1">Credit Card</p></span></div>
-                        <div class="col-md-4 col-xs-6"><span class="hy-lnk btn btn-primary product"><p><input type="radio" name="Status" id="option1">Low Cost</p> Housing Finance</span></div>
-                        <div class="col-md-4 col-xs-6"><span class="hy-lnk btn btn-primary product"><p><input type="radio" name="Status" id="option1">Balance Transfer</p></span></div>
-                        <div class="col-md-4 col-xs-6"><span class="hy-lnk btn btn-primary product"><p><input type="radio" name="Status" id="option1">Personal Loan</p></span></div>
-                        <div class="col-md-4 col-xs-6"><span class="hy-lnk btn btn-primary product"><p><input type="radio" name="Status" id="option1">Credit sudhar</p></span></div>
+                        <div class="col-md-4 col-xs-6"><span class="hy-lnk btn btn-primary product"><img src="images/application-form/early_Salary.png"><p><input type="radio" name="Status" id="option1">Early</p><p>Salary</p></span></div>
+                        <div class="col-md-4 col-xs-6"><span class="hy-lnk btn btn-primary product"><img src="images/application-form/credit_card.png"><p><input type="radio" name="Status" id="option1">Credit</p><p>Card</p></span></div>
+                        <div class="col-md-4 col-xs-6"><span class="hy-lnk btn btn-primary product"><img src="images/application-form/H_lone.png"><p><input type="radio" name="Status" id="option1">Low Cost</p> <p>Housing</p><p>Finance</p></span></div>
+
+                        <div class="col-md-4 col-xs-6"><span class="hy-lnk btn btn-primary product"><img src="images/application-form/balance_transfer.png"><p><input type="radio" name="Status" id="option1">Balance </p><p>Transfer</p></span></div>
+
+                        <div class="col-md-4 col-xs-6"><span class="hy-lnk btn btn-primary product"><img src="images/application-form/personal_loan.png"><p><input type="radio" name="Status" id="option1">Personal</p><p>Loan</p></span></div>
+
+                        <div class="col-md-4 col-xs-6"><span class="hy-lnk btn btn-primary product"><img src="images/application-form/credit_sudhar.png"><p><input type="radio" name="Status" id="option1">Credit</p><p>Sudhar</p></span></div> 
                         </div>
                         
                         
-                        <div class="col-md-12"><a class="btn btn-danger btn-outline with-arrow mrg-top" id="application_submit">Submit <i class="icon-arrow-right"></i></a></div>
+                        <div class="col-md-12"><a class="btn btn-default btn-sm mrg-top mrg-btm" id="application_submit">Submit</a><br>
+                        </div>
                     </form>
                 </div>
             </div>
@@ -139,14 +144,15 @@
         </div>
     <div class="clear"> </div>
     </div>
-
+    </div>
 </section>
+</div>
 </div>
 </div>
 <!-- //section -->
 </body> 
 <!-- //body ends -->
-</html>
+
 
 </div>
 <br>

@@ -4,7 +4,7 @@ if (isset($_POST)) {
 	// the message
 
 	$data='{"Name":"'.$_POST['clientName'].'","Email_Id":"'.$_POST['clientEmail'].'","Mobile":"'.$_POST['phone'].'","City":"'.$_POST['SelectCity'].'","Form":"'.$_POST['product'].'","CampaignName":"JeepCompass-Test Drive"}';
-//print_r($data);exit();
+// print_r($data);exit();
         $url ="http://api.rupeeboss.com/BankAPIService.svc/PostRBLifestyle";
 
        
@@ -26,10 +26,10 @@ if (isset($_POST)) {
         $s=str_replace('}"', "}", $st);
         $m=$s=str_replace('\\', "", $s);
          $obj = json_decode($m);
-    //print_r($obj);exit();
-        // print_r( $obj );exit();
+    // print_r($http_result);exit();
+        // print_r($obj->Id);exit();
         // $obj->Id ==1;
-        if($obj->ID !=""){
+        if($obj->ID==""){
             if ($_POST['product'] == "Jeep Compass") {
                 header("Location: http://www.rupeeboss.com/rblife-style?true");
             }elseif ($_POST['product'] == "Jeep Grand Cherokee SRT") {

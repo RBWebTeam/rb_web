@@ -14,10 +14,10 @@
                             <div class="card-listing how-it-block2 hvr-float-shadow2">
                                 <!-- card listing -->
                                 <div class="card-img">
-                                    <a><img src="images/express-loan/tata-capital.png" alt="Tata Capital BL"></a>
+                                    <a href="{{URL::to('tata-capital-business-loan')}}"><img src="images/express-loan/tata-capital.png" alt="Tata Capital BL"></a>
                                 </div>
                                 <div class="card-content" style="text-align: center;">
-                                    <h4 class="card-name"><a class="title">Tata Capital BL</a></h4>
+                                    <h4 class="card-name"><a href="{{URL::to('tata-capital-business-loan')}}" class="title">Tata Capital BL</a></h4>
                                     
                                     <a href="{{URL::to('tata-capital-business-loan')}}" class="btn btn-default btn-sm" style="margin-right: 0px;">Apply Now</a>
                                     
@@ -28,10 +28,10 @@
                             <div class="card-listing how-it-block2 hvr-float-shadow2">
                                 <!-- card listing -->
                                 <div class="card-img">
-                                    <a ><img src="images/express-loan/lendingkart.png" alt="LendingKart"></a>
+                                    <a href="{{URL::to('lendingkart')}}"><img src="images/express-loan/lendingkart.png" alt="LendingKart"></a>
                                 </div>
                                 <div class="card-content" style="text-align: center;">
-                                    <h4 class="card-name"><a class="title">LendingKart</a></h4>
+                                    <h4 class="card-name"><a href="{{URL::to('lendingkart')}}" class="title">LendingKart</a></h4>
                                     
                                     <a href="{{URL::to('lendingkart')}}" class="btn btn-default btn-sm" style="margin-right: 0px;">Apply Now</a>
                                 </div>
@@ -41,7 +41,7 @@
                             <div class="card-listing how-it-block2 hvr-float-shadow2">
                                 <!-- card listing -->
                                 <div class="card-img">
-                                    <a ><img src="images/express-loan/aditya-birla-group.png" alt="Aditya Birla Group"></a>
+                                    <a onclick="Redirect();" class="btn btn-default btn-sm" style="margin-right: 0px;" ><img src="images/express-loan/aditya-birla-group.png" alt="Aditya Birla Group"></a>
                                 </div>
                                 <div class="card-content" style="text-align: center;">
                                     <h4 class="card-name"><a class="title">Aditya Birla</a></h4>
@@ -55,10 +55,10 @@
                                 <!-- card listing -->
                                 
                                 <div class="card-img">
-                                    <a><img src="images/express-loan/tribe.png" alt="tribe"></a>
+                                    <a href="{{URL::to('coming-soon')}}" ><img src="images/express-loan/tribe.png" alt="tribe"></a>
                                 </div>
                                 <div class="card-content" style="text-align: center;">
-                                    <h4 class="card-name"><a href="tribe.html" class="title">Tribe</a></h4>
+                                    <h4 class="card-name"><a href="{{URL::to('coming-soon')}}" href="tribe.html" class="title">Tribe</a></h4>
                                     
                                     <a href="{{URL::to('coming-soon')}}" class="btn btn-default btn-sm" style="margin-right: 0px;">Apply Now</a>
                                    
@@ -70,10 +70,10 @@
                             <div class="card-listing how-it-block2 hvr-float-shadow2">
                                 <!-- card listing -->
                                 <div class="card-img">
-                                    <a ><img src="images/express-loan/edelweiss.png" alt="Edelweiss"></a>
+                                    <a href="{{URL::to('edelweiss')}}" ><img src="images/express-loan/edelweiss.png" alt="Edelweiss"></a>
                                 </div>
                                 <div class="card-content" style="text-align: center;">
-                                    <h4 class="card-name"><a class="title">Edelweiss</a></h4>
+                                    <h4 class="card-name"><a href="{{URL::to('edelweiss')}}" class="title">Edelweiss</a></h4>
                                     
                                     <a href="{{URL::to('edelweiss')}}" class="btn btn-default btn-sm" style="margin-right: 0px;">Apply Now</a>
                                     
@@ -84,10 +84,10 @@
                              <div class="card-listing how-it-block2 hvr-float-shadow2">
                                 <!-- card listing -->
                                 <div class="card-img">
-                                    <a ><img src="images/express-loan/hdfc-bank.png" alt="HDFC"></a>
+                                    <a href="{{URL::to('hdfc-business-loan')}}"><img src="images/express-loan/hdfc-bank.png" alt="HDFC"></a>
                                 </div>
                                 <div class="card-content" style="text-align: center;">
-                                    <h4 class="card-name"><a class="title">HDFC Business Loan</a></h4>
+                                    <h4 class="card-name"><a href="{{URL::to('hdfc-business-loan')}}" class="title">HDFC Business Loan</a></h4>
                                     
                                     <a href="{{URL::to('hdfc-business-loan')}}" class="btn btn-default btn-sm" style="margin-right: 0px;">Apply Now</a>
                                    
@@ -98,11 +98,11 @@
                             <div class="card-listing how-it-block2 hvr-float-shadow2">
                                 <!-- card listing -->
                                 <div class="card-img">
-                                    <a ><img src="images/express-loan/CapitalFloat.png" alt="Capital First"></a>
+                                    <a href="{{URL::to('coming-soon')}}"><img src="images/express-loan/capital_first.png" alt="Capital First"></a>
                                 </div>
                                 <div class="card-content" style="text-align: center;">
                                     <h6 class="text-center text-danger"><i>Coming Soon</i></h6>
-                                    <h4 class="card-name"><a class="title">Capital First</a></h4>
+                                    <h4 class="card-name"><a href="{{URL::to('coming-soon')}}" class="title">Capital First</a></h4>
                                     
                                     <a href="{{URL::to('coming-soon')}}" class="btn btn-default btn-sm" style="margin-right: 0px;">Apply Now</a>
                                    
@@ -113,11 +113,11 @@
                             <div class="card-listing how-it-block2 hvr-float-shadow2">
                                 <!-- card listing -->
                                 <div class="card-img">
-                                    <a ><img src="images/express-loan/capital_first.png" alt="Capital First"></a>
+                                    <a  href="{{URL::to('coming-soon')}}" ><img src="images/express-loan/CapitalFloat.png" alt="Capital First"></a>
                                 </div>
                                 <div class="card-content" style="text-align: center;">
                                     <h6 class="text-center text-danger"><i>Coming Soon</i></h6>
-                                    <h4 class="card-name"><a class="title">Capital Float</a></h4>
+                                    <h4 class="card-name"><a  href="{{URL::to('coming-soon')}}" class="title">Capital Float</a></h4>
                                     
                                     <a href="{{URL::to('coming-soon')}}" class="btn btn-default btn-sm" style="margin-right: 0px;">Apply Now</a>
                                    
@@ -135,10 +135,10 @@
                             <div class="card-listing how-it-block2 hvr-float-shadow2">
                                 <!-- card listing -->
                                 <div class="card-img">
-                                    <a href="rbl-personal-loan.html"><img src="images/express-loan/rbl-bank.png" alt="RBL Personal Loan"></a>
+                                    <a href="{{URL::to('rbl-personal-loan')}}"><img src="images/express-loan/rbl-bank.png" alt="RBL Personal Loan"></a>
                                 </div>
                                 <div class="card-content" style="text-align: center;">
-                                    <h4 class="card-name"><a href="rbl-personal-loan.html" class="title">RBL Personal Loan</a></h4>
+                                    <h4 class="card-name"><a href="{{URL::to('rbl-personal-loan')}}" class="title">RBL Personal Loan</a></h4>
                                     
                                     <a href="{{URL::to('rbl-personal-loan')}}" class="btn btn-default btn-sm" style="margin-right: 0px;">Apply Now</a>
                                 </div>
@@ -162,10 +162,10 @@
                             <div class="card-listing how-it-block2 hvr-float-shadow2">
                                 <!-- card listing -->
                                 <div class="card-img">
-                                    <a href="iifl-loan-apply.html"><img src="images/express-loan/iifl.png" alt="IIFL"></a>
+                                    <a href="{{URL::to('apply-iifl-loan')}}"><img src="images/express-loan/iifl.png" alt="IIFL"></a>
                                 </div>
                                 <div class="card-content" style="text-align: center;">
-                                    <h4 class="card-name"><a href="iifl-loan-apply.html" class="title">IIFL</a></h4>
+                                    <h4 class="card-name"><a href="{{URL::to('apply-iifl-loan')}}" class="title">IIFL</a></h4>
                                     
                                     <a href="{{URL::to('apply-iifl-loan')}}" class="btn btn-default btn-sm" style="margin-right: 0px;">Apply Now</a>
                                    
@@ -176,13 +176,13 @@
                             <div class="card-listing how-it-block2 hvr-float-shadow2">
                                 <!-- card listing -->
                                 <div class="card-img">
-                                    <a><img src="images/express-loan/tata-capital.png" alt="Tata Capital PL"></a>
+                                    <a href="{{URL::to('apply-tata-capital-loan')}}"><img src="images/express-loan/tata-capital.png" alt="Tata Capital PL"></a>
                                 </div>
                                 <div class="card-content" style="text-align: center;">
-                                    <h6 class="text-center text-danger"><i>Coming Soon</i></h6>
-                                    <h4 class="card-name"><a class="title">Tata Capital PL</a></h4>
+                                    <h6 class="text-center text-danger"></h6>
+                                    <h4 class="card-name"><a href="{{URL::to('apply-tata-capital-loan')}}" class="title">Tata Capital PL</a></h4>
                                     
-                                    <a href="{{URL::to('contact-us')}}" class="btn btn-default btn-sm" style="margin-right: 0px;">Apply Now</a>
+                                    <a href="{{URL::to('apply-tata-capital-loan')}}" class="btn btn-default btn-sm" style="margin-right: 0px;">Apply Now</a>
                                     
                                 </div>
                             </div>
@@ -191,11 +191,11 @@
                              <div class="card-listing how-it-block2 hvr-float-shadow2">
                                 <!-- card listing -->
                                 <div class="card-img">
-                                    <a ><img src="images/express-loan/capital_first.png" alt="Capital First"></a>
+                                    <a href="{{URL::to('coming-soon')}}" ><img src="images/express-loan/capital_first.png" alt="Capital First"></a>
                                 </div>
                                 <div class="card-content" style="text-align: center;">
                                     <h6 class="text-center text-danger"><i>Coming Soon</i></h6>
-                                    <h4 class="card-name"><a class="title">Capital First</a></h4>
+                                    <h4 class="card-name"><a href="{{URL::to('coming-soon')}}" class="title">Capital First</a></h4>
                                     
                                     <a href="{{URL::to('coming-soon')}}" class="btn btn-default btn-sm" style="margin-right: 0px;">Apply Now</a>
                                    
@@ -206,10 +206,10 @@
                             <div class="card-listing how-it-block2 hvr-float-shadow2">
                                 <!-- card listing -->
                                 <div class="card-img">
-                                    <a ><img src="images/express-loan/hdfc-bank.png" alt="HDFC"></a>
+                                    <a href="{{URL::to('hdfc-personal-loan')}}" ><img src="images/express-loan/hdfc-bank.png" alt="HDFC"></a>
                                 </div>
                                 <div class="card-content" style="text-align: center;">
-                                    <h4 class="card-name"><a class="title">HDFC Personal Loan</a></h4>
+                                    <h4 class="card-name"><a href="{{URL::to('hdfc-personal-loan')}}" class="title">HDFC Personal Loan</a></h4>
                                     
                                     <a href="{{URL::to('hdfc-personal-loan')}}" class="btn btn-default btn-sm" style="margin-right: 0px;">Apply Now</a>
                                    
@@ -252,7 +252,7 @@
                             <div class="card-listing how-it-block2 hvr-float-shadow2">
                                 <!-- card listing -->
                                 <div class="card-img">
-                                    <a href="contact-us.html"><img src="images/express-loan/hdfc-bank.png" alt="HDFC"></a>
+                                    <a  href="{{URL::to('contact-us')}}"><img src="images/express-loan/hdfc-bank.png" alt="HDFC"></a>
                                 </div>
                                 <div class="card-content" style="text-align: center;">
                                     <h6 class="text-center text-danger"><i>Coming Soon</i></h6>
@@ -267,7 +267,7 @@
                             <div class="card-listing how-it-block2 hvr-float-shadow2">
                                 <!-- card listing -->
                                 <div class="card-img">
-                                    <a href="contact-us.html"><img src="images/express-loan/vastu.png" alt="HDFC"></a>
+                                    <a href="{{URL::to('contact-us')}}"><img src="images/express-loan/vastu.png" alt="HDFC"></a>
                                 </div>
                                 <div class="card-content" style="text-align: center;">
                                     <h6 class="text-center text-danger"><i>Coming Soon</i></h6>
@@ -286,7 +286,7 @@
                         <div class="card-listing how-it-block2 hvr-float-shadow2">
                                 <!-- card listing -->
                                 <div class="card-img">
-                                    <a href="early-salary.html"><img src="images/express-loan/early-salary.png" alt="Early Salary"></a>
+                                    <a href="{{URL::to('early-salary')}}"><img src="images/express-loan/early-salary.png" alt="Early Salary"></a>
                                 </div>
                                 <div class="card-content" style="text-align: center;">
                                     <h4 class="card-name"><a href="{{URL::to('early-salary')}}" class="title">Short Term PL</a></h4>
@@ -300,7 +300,7 @@
                             <div class="card-listing how-it-block2 hvr-float-shadow2">
                                 <!-- card listing -->
                                 <div class="card-img">
-                                    <a href="early-salary.html"><img src="images/express-loan/pay.png" alt="Early Salary"></a>
+                                    <a href="{{URL::to('contact-us')}}"><img src="images/express-loan/pay.png" alt="Early Salary"></a>
                                 </div>
                                 <div class="card-content" style="text-align: center;">
                                     <h6 class="text-center text-danger"><i>Coming Soon</i></h6>
@@ -319,7 +319,7 @@
                          <div class="card-listing how-it-block2 hvr-float-shadow2">
                                 <!-- card listing -->
                                 <div class="card-img">
-                                    <a href="iifl-loan-apply.html"><img src="images/express-loan/iifl.png" alt="IIFL"></a>
+                                    <a href="{{URL::to('contact-us')}}"><img src="images/express-loan/iifl.png" alt="IIFL"></a>
                                 </div>
                                 <div class="card-content" style="text-align: center;">
                                     <h6 class="text-center text-danger"><i>Coming Soon</i></h6>

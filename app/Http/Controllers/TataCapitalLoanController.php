@@ -169,7 +169,136 @@ public function tata_capital_business_loan(){
         return response()->json( $obj);
 
     
+    }
+
+    public function tatacapital_city(){
+
+          $query = DB::table('tata_capital_city_master')->select('id', 'city_name', 'los_city_id')->get();
+          // print_r($query);exit();
+
+          echo json_encode($query);
+  
     }  
+
+
+          public function tatacapital_state(){
+
+          $query = DB::table('tata_capital_state_master')->select('id', 'state_name', 'los_state_id')->get();
+          echo json_encode($query);
+  
+    }  
+
+    public function tata_capital_personal_submit(Request $req){
+          $data=$req->all();
+          $post_data =json_encode($data);
+          // print_r($post_data);exit();
+          $url = $this::$url_static."/BankAPIService.svc/createTataCapitalPLAppln";
+          $result=$this->call_json_data_api($url,$post_data);
+          $http_result=$result['http_result'];
+          // print_r($http_result);exit();
+          $error=$result['error'];
+          $st=str_replace('"{', "{", $http_result);
+          $s=str_replace('}"', "}", $st);
+          $m=$s=str_replace('\\', "", $s);
+          $obj = json_decode($m);
+          // print_r($obj);exit();
+          return response()->json( $obj);
+    }
+
+
+    public function tata_capital_company_master(Request $req){
+     // print_r($req->all());exit();
+          $data=$req->all();
+          $post_data =json_encode($data);
+          // print_r($post_data);exit();
+          $url = $this::$url_static."/BankAPIService.svc/GetTataCapitalPLCompanyList";
+          $result=$this->call_json_data_api($url,$post_data);
+          $http_result=$result['http_result'];
+          // print_r($http_result);exit();
+          $error=$result['error'];
+          $st=str_replace('"{', "{", $http_result);
+          $s=str_replace('}"', "}", $st);
+          $m=$s=str_replace('\\', "", $s);
+          $obj = json_decode($m);
+       // print_r($obj);exit();
+           foreach ($obj->aComp as $product) {
+                $company_list[]=array('value'=>$product->cName,'datavalue'=>$product->nComp);
+        }
+        if(count($company_list)){
+           //    print_r($data);
+             return $company_list;
+         }
+        else{
+            return ['value'=>'Others'];
+    }
+    }
+
+    
+
+  public function tata_capital_doc(){
+    return view('tata-capital-doc-upload');
+  }
+
+  public function tata_capital_doc_upload(Request $req){
+
+
+  $destinationPath = public_path(). '/upload/policy_documents/';
+   $arr=array();
+   $doc_upload=array();
+  
+   $fi = $req->file('docUploadName');
+   $docUploadType=$req['docUploadType'];
+   $webtopNo=$req['webtopNo'];
+
+   foreach ($fi as $key=> $file) {
+
+   $imagedata = file_get_contents($file);
+            
+
+  $base64 = base64_encode($imagedata);
+
+   $doc=$fileName = rand(1, 999) . $file->getClientOriginalName();
+   $doc_upload=$docUploadType[$key];
+  
+   // $arr[]=array('webtopNo'=>$webtopNo,'docUploadType' =>$doc_upload,'docUploadName'=> $doc,'base64'=>$base64);
+   $post_data=json_encode($arr[]=array('webtopNo'=>$webtopNo,'docUploadType' =>$doc_upload,'docUploadName'=> $doc_upload.".jpg",'base64'=>$base64));
+ // print_r( $post_data);exit();
+ 
+    $url = $this::$url_static."/BankAPIService.svc/uploadTataCapitalPLDoc";
+    $result=$this->call_json_data_api($url,$post_data);
+    $http_result=$result['http_result'];
+    print_r($http_result);
+    $error=$result['error'];
+    $st=str_replace('"{', "{", $http_result);
+    $s=str_replace('}"', "}", $st);
+    $m=$s=str_replace('\\', "", $s);
+    $obj = json_decode($m);
+    // print_r($obj);exit();
+    return response()->json( $obj);
+  } 
+
+    
+  }
+
+        /*TATA CAPITAL ROI*/
+         public function tata_capital_roi(Request $req){
+          // print_r($req->all());exit();
+          $data=$req->all();
+          $post_data =json_encode($data);
+          // print_r($post_data);exit();
+          $url = $this::$url_static."/BankAPIService.svc/GetTataCapitalPLRate";
+          $result=$this->call_json_data_api($url,$post_data);
+          $http_result=$result['http_result'];
+          // print_r($http_result);exit();
+          $error=$result['error'];
+          $st=str_replace('"{', "{", $http_result);
+          $s=str_replace('}"', "}", $st);
+          $m=$s=str_replace('\\', "", $s);
+          $obj = json_decode($m);
+          // print_r($obj);exit();
+          return response()->json( $obj);
+   }
+  
 
 
 }

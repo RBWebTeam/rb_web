@@ -1,5 +1,15 @@
 @include('layout.header')
 
+<style>
+
+.tbl-css tr { background: #f8f8f8;border: 1px solid #ddd;}
+.tbl-css th {color: #3c4d6b;letter-spacing: .1em;padding:10px;}
+.tbl-css td {padding:10px;}
+.tbl-css {border: 1px solid #ccc;width: 100%;table-layout: fixed;}
+.pinside40 {padding:20px !important;box-shadow:1px 1px 3px 1px #eee;}
+.request-form {padding:0px;}
+</style>
+
 <div class="container">
   <aside class="pad-tp">
         <div class="row">
@@ -78,7 +88,7 @@
 
 <div class="wrapper-content bg-white pinside40 " style="overflow-x:auto;">
  <div class="table-responsive outer-brd">
-  <table class="">
+  <table class="tbl-css">
    <thead>
       <tr>
         <th scope="col">Rate Of Interest</th>

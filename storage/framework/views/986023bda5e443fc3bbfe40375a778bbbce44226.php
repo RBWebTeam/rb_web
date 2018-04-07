@@ -121,6 +121,62 @@
   </div>
 
 
+  <!-- Instant Call Back -->
+<div class="modal fade" id="myModaltest1" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title text-center" style="position:relative;"><b>Instant Call Back</b></h4>
+        </div>
+        <div class="modal-body">
+          <form name="instant_call_back_form" id="instant_call_back_form" method="post" >
+        
+          <?php echo e(csrf_field()); ?>
+
+          <input type="hidden" name="form" value="instant_call_back">
+          <input type="hidden" name="Principal_Amt" class="Principal_Amt" value="">
+          <input type="hidden" name="Interest_Rate" class="Interest_Rate" value="">
+          <input type="hidden" name="Remaining_Tenure" class="Remaining_Tenure" value="">
+         
+                  <div class="col-md-4 col-xs-12">
+                    <fieldset>
+                      <input class="newsletter-name form-control" name="name" placeholder="Name" required>
+                    </fieldset>
+                    </div>
+                    
+                     <div class="col-md-4 col-xs-12">
+                    <fieldset>
+                      <input type="email" class="newsletter-name form-control" name="email"  required  placeholder="Email address">
+                    </fieldset>                 
+                    </div>
+                    
+                    <div class="col-md-4 col-xs-12">
+                    <fieldset>
+                      <input type="text" class="newsletter-name form-control" name="contact" pattern="[789][0-9]{9}" required maxlength="10" placeholder="Mobile Number">
+                    </fieldset>                 
+                    </div>
+                     
+                  <div>
+                    <br>
+                    <br>
+                     <button class="btn btn-default btn-sm sidebar-submit" style="margin:0 auto;display:block;">Submit</button>
+                  </div>
+                  <!-- <div class="iframeloading" style= "display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
+                <img src="<?php echo e(URL::to('images/ajaxloader.gif')); ?>" alt="Loader" title="Loader" style="top: 50%; position: relative; left: 50%;"  />
+               </div> -->
+            </form>
+            <div class='msg displaynone' ><b>Thank You. We will reach you soon.</b></div>
+            <div class='msg_err displaynone' ><p>Ooops. Something went wrong.</p></div>
+        </div>
+        
+      </div>
+      
+    </div>
+  </div>
+
   <!---Borrow-->
 <div class="modal fade" id="myModaltest" role="dialog">
     <div class="modal-dialog">

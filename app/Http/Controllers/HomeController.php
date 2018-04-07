@@ -191,4 +191,8 @@ class HomeController extends CallApiController
          return view('credit_card_compare')->with($data)->with('keywords',$keywords);
 
 	}
+
+	public function switch(){
+		return view('switch');
+	}
 }

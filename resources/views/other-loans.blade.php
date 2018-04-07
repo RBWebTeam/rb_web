@@ -161,7 +161,7 @@ $(".top").click(function() {
 
                             <div class="col-xs-6 form-padding">
                             <div>
-                              <input type="text" name="Mobile" id="Mobile" class="form-control inp-fld"  maxlength="10" onkeypress="return fnAllowNumeric(event)" required >
+                              <input type="tel" name="Mobile" id="Mobile" class="form-control inp-fld" minlength="10"  maxlength="10" required >
                              
                               <span class="highlight"></span><span class="bar"></span>
                               <label class="form-label-new lble">MOBILE NUMBER</label>
@@ -190,16 +190,25 @@ $(".top").click(function() {
 
                             <div id="amount" class="col-xs-6 form-padding">
                             <div>
-                              <input type="text" name="Loan_amt" id="Loan_amt" class="form-control inp-fld" onkeypress="return fnAllowNumeric(event)"  minlength="5" maxlength="9" required >
+                              <input type="number" name="Loan_amt" id="Loan_amt" class="form-control inp-fld" onkeypress="return fnAllowNumeric(event)"  minlength="5" maxlength="9" required >
                               <span class="highlight"></span><span class="bar"></span>
                               <label class="form-label-new lble">LOAN AMOUNT</label>
                               <div class="clear"></div>
                             </div>  
                             </div>
 
+                              <div class="col-xs-6 form-padding">
+                            <div>
+                              <input type="number" name="FBA_Id" id="FBA_Id" class="form-control inp-fld" onkeypress="return fnAllowNumeric(event)"required >
+                              <span class="highlight"></span><span class="bar"></span>
+                              <label class="form-label-new lble">FBA ID</label>
+                              <div class="clear"></div>
+                            </div>  
+                            </div>
+
                             <div class="col-xs-6 form-padding">
                             <div>
-                              <input type="text" name="Monthly_income" id="Monthly_income" class="form-control inp-fld" onkeypress="return fnAllowNumeric(event)"  minlength="5" maxlength="9" required >
+                              <input type="number" name="Monthly_income" id="Monthly_income" class="form-control inp-fld" onkeypress="return fnAllowNumeric(event)"  minlength="5" maxlength="9" required >
                               <span class="highlight"></span><span class="bar"></span>
                               <label class="form-label-new lble">MONTHLY INCOME</label>
                               <div class="clear"></div>
@@ -389,6 +398,7 @@ $(".top").click(function() {
       $( '#datepicker,#datepicker1,#datepicker2' ).datepicker({
         changeMonth:true,
         changeYear:true,
+        minDate: new Date(),
         dateFormat: 'mm-dd-yy',
         yearRange : 'c-65:c+10'
       });
@@ -433,7 +443,7 @@ $(".top").click(function() {
          url: "{{URL::to('other-loans-submit')}}",
          data : $('#lead_form').serialize(),
          success: function(msg){
-          console.log(msg);
+          console.log(msg.Status);
           if (msg.Status==1) 
           {
             
@@ -524,6 +534,13 @@ $('#ProductId').on('change', function() {
       
 });
 </script> -->
+<script type="text/javascript">
+$('#Mobile').keyup(function () {
+    if (!this.value.match(/[0-9]/)) {
+        this.value = this.value.replace(/[^0-9]/g, '');
+    }
+});
+</script>
 
 
 

@@ -75,7 +75,7 @@ class NewProcessController extends CallApiController
        public function application_submit(Request $req){
         $data=$req->all();
       
-      $data['CampaignName']='GaneshChaturthi';
+      $data['CampaignName']='LandmarkNewYear';
       $post_data=json_encode($data);
         
       $url = $this::$url_static."/BankAPIService.svc/createCampaignWebDataReq";

@@ -34,11 +34,18 @@
 <hr class="dark-line">
             <div class="row">
                 <div class="col-md-4 col-sm-12 col-xs-12">
+                <span style="font-size: 12px;"><b>Experience Our Associate App</b></span>
+                <div class="col-md-12 col-xs-12 " style="padding:0px; z-index: 10000;position:relative;margin-bottom:10px;">
+                                <a target="_blank" href="<?php echo e(URL::to('https://play.google.com/store/apps/details?id=com.rupeeboss.rba')); ?>"><img src="<?php echo e(URL::to('images/google_play.png')); ?>" width="150" alt="Rupee Boss"></a>
+                                
+                            </div>
                     <div class="widget-text mt10">
+                    <br>
                     <h4><strong>Office Address</strong></h4>
                         <!-- widget text -->
                         
                         <div class="row">
+
                             <div class="col-md-12 col-xs-12">
                                 <p class="address-text"><span><i class="icon-placeholder-3 icon-1x"></i> </span>5C/5D, 1 st ﬂoor, The Centrium, Phoenix Marketcity, Kurla West, Mumbai-400070, Maharashtra, India</p>
                             </div>
@@ -46,11 +53,15 @@
                             <div class="col-md-12 col-xs-12 ">
                                 <p class="call-text"><span><i class="icon-phone-call icon-1x"></i></span>1800-267-629-6</p>
                             </div>
+
+
                             <div class="col-md-12 col-xs-12 ">
                                 <p class="call-text"><span><i class="icon-letter icon-1x"></i></span>wecare@rupeeboss.com</p>
                             </div>
+
                         </div>
                     </div>
+                    
 
                     <div class="widget-social mt10">
                         <!-- widget footer -->
@@ -61,9 +72,13 @@
                             <a href="<?php echo e(URL::to('https://www.linkedin.com/company/rupeeboss.com')); ?>"><i class="fa fa-linkedin"></i></a></li>
                         </ul>
 
-                        <div class="mt10 widget-footer">
+                        
 
-                        <h4><strong>Others Links</strong></h4>
+                        
+                        <h4><strong>Others Links</strong></h4> 
+                        <div class="mt10 widget-footer">
+                         
+                        
                         <!-- widget footer -->
                         <ul class="listnone " style=" margin: 0px 0px 10px 0px;">
                             <li><a href="<?php echo e(URL::to('about-us')); ?>" style="font-weight: normal;">About Us</a></li>
@@ -77,14 +92,18 @@
                             <li><a href="<?php echo e(URL::to('equifax-verification')); ?>" style="font-weight: normal;">MY CREDIT SCORE</a></li>
                         </ul>
                         </div>
+                        </div>
 
-                    </div>
+
+
+                    
                   
                     <!-- /.widget text -->
                 </div>
                 <div class="col-md-2 col-sm-4 col-xs-12">
+                <h4><strong>Home Loan</strong></h4>
                     <div class="widget-footer mt10">
-                    <h4><strong>Home Loan</strong></h4>
+                    
                         <!-- widget footer -->
                         <ul class="listnone">
                             <li><a href="<?php echo e(URL::to('loan-details/home-loan/icici')); ?>">ICICI Bank</a></li>
@@ -105,8 +124,9 @@
                     <!-- /.widget footer -->
                 </div>
                 <div class="col-md-2 col-sm-4 col-xs-12">
+                <h4><strong>Personal Loan</strong></h4>
                     <div class="widget-footer mt10">
-                    <h4><strong>Personal Loan</strong></h4>
+                    
                         <!-- widget footer -->
                         <ul class="listnone">
                             <li><a href="<?php echo e(URL::to('loan-details/personal-loan/axis')); ?>">Axis Bank</a></li>
@@ -122,8 +142,9 @@
                     <!-- /.widget footer -->
                 </div>
                 <div class="col-md-2 col-sm-4 col-xs-12">
+                   <h4><strong>Business Loan</strong></h4>
                     <div class="widget-footer mt10">
-                    <h4><strong>Business Loan</strong></h4>
+                 
                         <!-- widget footer -->
                         <ul class="listnone">
                             <li><a href="<?php echo e(URL::to('loan-details/business-loan/intellecash')); ?>">Intellecash</a></li>
@@ -141,8 +162,9 @@
                     <!-- /.widget footer -->
                 </div>
                 <div class="col-md-2 col-sm-4 col-xs-12">
+                <h4><strong>Business Loan</strong></h4>
                     <div class="widget-footer mt10">
-                    <h4><strong>Business Loan</strong></h4>
+                    
                         <!-- widget footer -->
                         <ul class="listnone">
                             <li><a href="<?php echo e(URL::to('loan-details/business-loan/axis')); ?>">Axis Bank</a></li>

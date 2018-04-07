@@ -32,7 +32,7 @@
                                 <div class="card-content" style="text-align: center;">
                                     <h4 class="card-name">ICICI Bank Credit Card</h4>
                                     
-                                    <a href="{{URL::to('coming-soon')}}" class="btn btn-default btn-sm" style="margin-right: 0px;">Apply Now</a>
+                                    <a href="{{URL::to('icici')}}" class="btn btn-default btn-sm" style="margin-right: 0px;">Apply Now</a>
                                 </div>
                             </div>
                             <!-- /.card listing -->
@@ -40,13 +40,9 @@
                         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
                             <div class="card-listing how-it-block hvr-float-shadow2">
                                 <!-- card listing -->
-                                <div class="card-img">
-                                    <img src="images/hdfc-credit-card.png" alt="HDFC Credit Card">
-                                </div>
+                                
                                 <div class="card-content" style="text-align: center;">
-                                    <h4 class="card-name">HDFC Bank Credit Card</h4>
-                                    
-                                    <a href="{{URL::to('coming-soon')}}" class="btn btn-default btn-sm" style="margin-right: 0px;">Apply Now</a>
+                                <a href="{{url('coming-soon')}}">  <img src="images/coming_soon_credit_card.jpg" width="200px" height="250px" alt="SBI Credit Cards" title="SBI Credit Cards" class="img-responsive box-shadow"/></a>
                                     
                                 </div>
                             </div>

@@ -494,19 +494,19 @@ textarea {
            
             <div class="col-md-12 address"><h4><b>Retail Account No</b></h4></div>
                       <div class="col-md-6">
-                                <input type="text" name="AccountNumber[0]" id="" maxlength="14" placeholder="Account Number 01"  required>
+                                <input type="text" name="AccountNumber[0]" id="" mixnlength="11" maxlength="16" placeholder="Account Number 01"  required>
                            
                         </div>
                         <div class="col-md-6">
-                                <input type="text" name="AccountNumber[1]" id="" maxlength="14" placeholder="Account Number 02"  >
+                                <input type="text" name="AccountNumber[1]" id="" mixnlength="11" maxlength="16" placeholder="Account Number 02"  >
                                
                         </div>
                         <div class="col-md-6">
-                                <input type="text" name="AccountNumber[2]" id="" maxlength="14" placeholder="Account Number 03">
+                                <input type="text" name="AccountNumber[2]" id="" mixnlength="11" maxlength="16" placeholder="Account Number 03">
                                
                         </div>
                         <div class="col-md-6">
-                                <input type="text" name="AccountNumber[3]" id="" maxlength="14" placeholder="Account Number 04" >
+                                <input type="text" name="AccountNumber[3]" id="" mixnlength="11" maxlength="16" placeholder="Account Number 04" >
                            
                         </div>
             <div class="fields-grid">

@@ -26,7 +26,7 @@
 
              <div class="col-md-12">
           <div class="row text-left comp-pg rate white-bg">
-          <button class="btn btn-default btn-sm" id="kotak-pl-status" >Tack Status If Already Applied<i class="
+          <button class="btn btn-default btn-sm" id="kotak-pl-status" >Track Status If Already Applied<i class="
             "></i></button>
 
               <form class="" id="Kotak_PL_form" role="form" method="POST" >
@@ -52,7 +52,7 @@
                                 <!-- <span><b>Existing Customer Type Master :<b></span> -->
                                 <select class="form-control block drop-arr select-sty" name="ExstCustType" id="ExstCustType" required>
                                     <option disabled selected  value="">Existing Customer Type Master</option>
-                                    <option selected value="0">0</option>
+                                    <option selected value="0">None</option>
                                     <option value="1">Bank</option>
                                     <option  value="2">Loan</option>
                                 </select> 
@@ -114,7 +114,7 @@
 
                                 <div class="col-md-4">
                                 <!-- <span><b>Mobile</b></span> -->
-                                <input  type="text" class="form-control" onkeypress="return fnAllowNumeric(event)" placeholder="Mobile Number" name="Mobile" id="Mobile" maxlength="10" required>
+                                <input  type="text" class="form-control" onkeypress="return fnAllowNumeric(event)" placeholder="Mobile Number" name="Mobile" id="Mobile" minlength="10" maxlength="10" required>
                                 </div>
 
                                 <div class="col-md-4">
@@ -131,7 +131,7 @@
 
                                 <div class="col-md-4">
                                 <!-- <span>Pan Card</span> -->
-                                <input type="text" class="form-control " id="PAN" name="PAN" placeholder="Pan Card" oninput="pan_card('PAN')" maxlength="10"  required>
+                                <input type="text" class="form-control " id="PAN" name="PAN" placeholder="Pan Card" oninput="pan_card('PAN')" minlength="10" maxlength="10"  required>
                                 <span id="pan_number" style="display:none;color: red; font-size: 10px">Oops.Please Enter Valid Pan Number.!!</span>
                                 </div>
 
@@ -173,18 +173,18 @@
 
                                  <div class="col-md-4">
                                   <!-- <span><b>Office Address1</b></span> -->
-                                  <input  type="text" class="form-control" placeholder="Office Address1" name="OffAddress1" id="OffAddress1" minlength="4" maxlength="30"  required>
+                                  <input  type="text" class="form-control" placeholder="Office Address1" name="OffAddress1" id="OffAddress1"  required>
                                   </div>
 
                                   <div class="col-md-4">
 
                                   <!-- <span>Office Address2</span> -->
-                                  <input  type="text" class="form-control" placeholder="Office Address2" name="OffAddress2" id="OffAddress2" minlength="4" maxlength="30">
+                                  <input  type="text" class="form-control" placeholder="Office Address2" name="OffAddress2" id="OffAddress2">
                                   </div>
 
                                   <div class="col-md-4">
                                   <!-- <span>Office Address3</span> -->
-                                  <input  type="text" class="form-control" placeholder="Office Address3" name="OffAddress3" id="OffAddress3" minlength="4" maxlength="30" required>
+                                  <input  type="text" class="form-control" placeholder="Office Address3" name="OffAddress3" id="OffAddress3" required>
                                   </div>
 
                                         
@@ -197,12 +197,12 @@
 
                                   <div class="col-md-4">
                                   <!-- <span>Office Pincode</span> -->
-                                  <input  type="text" class="form-control" placeholder= "Office Pincode" name="OffPin" id="OffPin" onkeypress="return fnAllowNumeric(event)" maxlength="6" required>
+                                  <input  type="text" class="form-control" placeholder= "Office Pincode" name="OffPin" id="OffPin" onkeypress="return fnAllowNumeric(event)" minlength="6" maxlength="6" required>
                                   </div>
 
                                   <div class="col-md-4">
                                   <!-- <span><b>Office Phone</b></span> -->
-                                  <input  type="text" class="form-control" onkeypress="return fnAllowNumeric(event)" placeholder="Office Phone" name="OffPhone" id="OffPhone" required maxlength="9" minlength="9">
+                                  <input  type="text" class="form-control" onkeypress="return fnAllowNumeric(event)" placeholder="Office Phone" name="OffPhone" id="OffPhone" value="0" required maxlength="9" minlength="9">
                                   </div>
 
                                   <div class="col-md-4">
@@ -232,12 +232,12 @@
                                         <div class="col-md-4">
 
                                         <!-- <span>Address 2</span> -->
-                                          <input  type="text" class="form-control" placeholder="Address 2" name="ResAddress2" id="ResAddress2" minlength="4" maxlength="30">
+                                          <input  type="text" class="form-control" placeholder="Address 2" name="ResAddress2" id="ResAddress2">
                                         </div>
 
                                         <div class="col-md-4">
                                         <!-- <span>Address 3</span> -->
-                                          <input  type="text" class="form-control" placeholder="Address 3" name="ResAddress3" id="ResAddress3" minlength="4" maxlength="30" required>
+                                          <input  type="text" class="form-control" placeholder="Address 3" name="ResAddress3" id="ResAddress3" required>
                                         </div>
 
                                         
@@ -277,7 +277,7 @@
 
                                           <div class="col-md-4">
                                           <!-- <span>Residence Phone Number</span> -->
-                                          <input  type="text" class="form-control" onkeypress="return fnAllowNumeric(event)" placeholder="Residence PhNo" maxlength="10" name="ResPhNo" id="ResPhNo">
+                                          <input  type="text" class="form-control" onkeypress="return fnAllowNumeric(event)" placeholder="Residence PhNo" minlength="10" maxlength="10" name="ResPhNo" id="ResPhNo" required>
                                           </div>
                     </div>
                     <hr>
@@ -292,17 +292,17 @@
                     <br>
                     <div class="col-md-4">
                                           <!-- <span>Address 1</span> -->
-                                            <input  type="text" class="form-control" placeholder="Per Address1" name="PerAddress1" id="PerAddress1" minlength="4" maxlength="30"  required>
+                                            <input  type="text" class="form-control" placeholder="Per Address1" name="PerAddress1" id="PerAddress1" required>
                                           </div>
 
                                           <div class="col-md-4">
                                           <!-- <span>Address 2</span> -->
-                                            <input  type="text" class="form-control" placeholder="Per Address2" name="PerAddress2" id="PerAddress2" minlength="4" maxlength="30">
+                                            <input  type="text" class="form-control" placeholder="Per Address2" name="PerAddress2" id="PerAddress2" >
                                           </div>
 
                                           <div class="col-md-4">
                                           <!-- <span>Address 3</span> -->
-                                            <input  type="text" class="form-control" placeholder="Per Address3 " name="PerAddress3" id="PerAddress3" minlength="4" maxlength="30" required>
+                                            <input  type="text" class="form-control" placeholder="Per Address3 " name="PerAddress3" id="PerAddress3" required>
                                           </div>
 
                                           <div class="col-md-4">
@@ -319,7 +319,7 @@
 
                                             <div class="col-md-4">
                                             <!-- <span>Permanent Residence Phone numnber</span> -->
-                                            <input  type="text" class="form-control" onkeypress="return fnAllowNumeric(event)" placeholder="Residence PhNo" name="PerResPhNo" id="PerResPhNo">
+                                            <input  type="text" class="form-control" onkeypress="return fnAllowNumeric(event)" placeholder="Residence PhNo" name="PerResPhNo" id="PerResPhNo" minlength="10" maxlength="10" required>
                                             </div>
 
                     </div>
@@ -453,8 +453,8 @@
                    
                     
                     <div class="col-md-12">
-                    &nbsp;&nbsp;&nbsp;&nbsp;<button class="btn btn-default btn-sm" >Click To Proceed<i class="icon-arrow-right"></i></button>
-                    <button style="display: none;" class="btn btn-default btn-sm" >Confirm & Continue<i class="icon-arrow-right"></i></button>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<button class="btn btn-default btn-sm kotak-pl-proceed " >Click To Proceed<i class="icon-arrow-right"></i></button>
+                    <a style="display: none;" class="btn btn-default btn-sm "  id="kotak-pl-submit">Confirm & Continue<i class="icon-arrow-right"></i></a>
 
                   <div class="iframeloading" style= "display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
                 <img src="{{URL::to('images/ajaxloader.gif')}}" alt="Loader" title="Loader" style="top: 50%; position: relative; left: 50%;"  />
@@ -733,12 +733,13 @@
       }
 });
 
- 
+ </script>
 
  
 
-
-  $(".kotak-pl-submit").click(function(event){
+<script type="text/javascript">
+  $("#kotak-pl-submit").click(function(event){
+    alert('Okae');
     
     event.preventDefault();
      
@@ -1158,17 +1159,20 @@ $(document).ready(function(){
   $('.kotak-pl-proceed').click(function(event){
    event.preventDefault();
      
-      if(!  ($('#Organization')&&($('NMI'))&&($('NMI')))){
+      if(!  ($('#Organization')&&($('NMI')))){
         return false;
       }else{
+
         var Organization=$("#Organization").val();
         var NMI=$("#NMI").val();
+        if (NMI < 18000) 
+        {
+           alert('Your Net Income Should Be Minimum 18000');
+             return false;
+        } 
         var LnAmt=$("#LnAmt").val();
         var v_token = "{{csrf_token()}}";
-        
-        
-        // $(".iframeloading").show();
-     
+
         $.ajax({  
          type: "POST",  
          url: "{{URL::to('kotak-pl-proceed')}}",
@@ -1236,3 +1240,4 @@ $(document).ready(function(){
      }
   });
 </script>
+

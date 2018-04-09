@@ -646,6 +646,11 @@
 
         	var mob =$('#mobile_no').val();
         	console.log(mob);
+        	if(($('#mobile_no').val().length)<10)
+            {
+              alert('Enter 10 digits number');
+              return false;
+            }
         	$('#Mobile').val(mob);
 
         	var company_name =$('#employer_name').val();
@@ -827,6 +832,13 @@
         }
         else
         {     
+
+        	
+        	if (($('#ResAddress1').val().length)<4) 
+           {
+             alert('Res Address 1 minimum characters should be 4');
+             return false;
+           }
         	  // $('#submit_application').hide();
         	  $(".iframeloading").show();
           $.ajax({  

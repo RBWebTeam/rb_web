@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Hash;
 class LoginController extends CallApiController
 {
       public function login(Request $request){
-         
+         // print_r($request->all());exit();
   
           $query=new registrationModel();
           $value=$query->where('email','=',$request->email_login)

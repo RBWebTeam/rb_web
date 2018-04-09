@@ -202,5 +202,173 @@ class MobileApiController extends ApiController
                 $data = array('status'=>$status,'data' =>$resultArray,"saving"=>$savings );
                 return json_encode($data);
 	}
+public function balance_transfer_with_quoteid(Request $req){
+		//try {
+			//save and get quote id
+		$save_req =new Request( ['status'=>'NA','LoanRequired' =>$req['loanamount'] , 'LoanTenure'=>$req['loaninterest'],'ProductId'=>$req['product_id'],'LoanTenure'=>$req['loanterm'],"ApplicantNme"=>$req['applicantname'],"Email"=>$req['email'],"Contact"=>$req['contact'],"BrokerId"=>$req['brokerid'],"api_source"=>$req['source']]);
+
+		$save=new bank_quote_api_request();	
+		$id=$save->store_bt_req($save_req);
+		//get real quotes
+		$quote=json_decode($this::balance_transfer($req));
+		
+
+		
+		$data=$quote->data;
+		$savings=$quote->saving;
+		// print_r($savings);exit();
+		if($data!=[]){
+			foreach ($data as $key => $value){
+
+			    $new_rate=$value->roi/12/100;
+			    //print_r($new_rate);exit();
+			    $loanamount=$req['loanamount'];
+			    $loaninterest=$req['loaninterest']/12/100;
+			    $loanterm=$req['loanterm']*12;
+			    $amount = $loanamount * $loaninterest * (pow(1 + $loaninterest, $loanterm) / (pow(1 + $loaninterest, $loanterm) - 1));
+			    $total =(($amount*$loanterm)-$loanamount);
+
+			    $ttl_payment = $loanamount+$total;
+
+			    $new_amount = $loanamount * $new_rate * (pow(1 + $new_rate, $loanterm) / (pow(1 + $new_rate, $loanterm) - 1));
+
+			  $new_total =(($new_amount*$loanterm)-$loanamount);
+			  $new_ttl_payment = $loanamount+$new_total;
+			  $drop_emi= round($amount-$new_amount,2);
+			  $drop_in_int=round((($loaninterest*12*100)-($new_rate*12*100)),2);
+			  $savings=$total-$new_total;
+			  $value->drop_emi=$drop_emi;
+			  $value->drop_in_int=$drop_in_int;
+			}
+			$status_Id=0;
+			$msg="data delievered";
+			$new_data=$data;
+			$savings=$quote->saving;
+            $quote=$id;
+			$url=$this::$erp_url_static."BalanceTransfer/PL_BT_Form.aspx";
+		}
+		else{
+			$new_data=NULL;
+			$status_Id=1;
+			$msg="No record Found";
+			$savings=NULL;
+			$quote=NULL;
+			$url=NULL;
+		}
+		
+		//print_r($a);
+         $result=json_decode(json_encode(['bank_data' =>$new_data,'savings'=>[$savings]]));
+		$new_data=array('data' =>$result ,'msg' =>$msg,'status_Id'=>$status_Id,'quote_id'=>$quote,'url'=>$url );
+		// } catch (\Exception $e) {
+		// 	$new_data=NULL;
+		// 	$status_Id=1;
+		// 	$msg=$e->getMessage();
+		// 	$quote=NULL;
+		// 	$url=NULL;
+		// 	$new_data=array('data' =>$new_data ,'msg' =>$msg,'status_Id'=>$status_Id,'quote_id'=>$quote,'url'=>$url );
+		// }
+		
+		return $new_data;
+			
+	}
+
+	public function balance_transfer_fm(Request $req){
+       $getQuery=null;
+		$savings=null;
+		$resultArray=[];
+		 try {
+		 	$getQuery=DB::select('call usp_get_balance_transfer_quot("'.$req['loanamount'].'","'.$req['loaninterest'].'","'.$req['product_id'].'")');
+                 if(sizeof($getQuery)==0)throw new \Exception("Error Processing Request", 1);
+                
+                $resultArray = json_decode(json_encode($getQuery), true);
+
+     
+                if (!empty($resultArray)) {
+                $loanamount=$req['loanamount'];
+                $loaninterest=$req['loaninterest']/12/100;
+                $loanterm=$req['loanterm']*12;
+                
+
+
+
+                $amount = $loanamount * $loaninterest * (pow(1 + $loaninterest, $loanterm) / (pow(1 + $loaninterest, $loanterm) - 1));
+                $total =(($amount*$loanterm)-$loanamount);
+
+              
+                //savings//
+                if($getQuery[0]->roi==0){
+                	$getQuery[0]->roi=1;
+                 }
+                $new_rate=($getQuery[0]->roi)/12/100;
+                $new_amount = $loanamount * $new_rate * (pow(1 + $new_rate, $loanterm) / (pow(1 + $new_rate, $loanterm) - 1));
+
+                $new_total =(($new_amount*$loanterm)-$loanamount);
+                $new_ttl_payment = $loanamount+$new_total;
+                $drop_emi= $amount-$new_amount;
+                $drop_in_int=(($loaninterest*12*100)-($new_rate*12*100));
+                $savings=$total-$new_total;
+                $emiperlacs=($new_amount/100000);
+
+                //rounding of the amounts
+                $amount=round($amount,2);
+                $new_amount=round($new_amount,2);
+                $drop_emi=round($drop_emi,2);
+                $drop_in_int=round($drop_in_int,2);
+                $savings=round($savings,2);
+
+
+
+                $savings= array('amount'=>$amount, 'new_amount'=>$new_amount, 'drop_emi'=>$drop_emi,'drop_in_int'=>$drop_in_int, 'savings'=>$savings, 'emiperlacs'=> $emiperlacs);                            
+                 }
+
+		                 $status_Id=1;
+		 } catch (\Exception $e) {
+		 	//print_r($e->getMessage());exit();
+
+		 	$status_Id=0;
+		 	$getQuery=null;
+			$savings=null;	
+		 }
+                $data = array('msg'=>"Data delivered",'status_Id'=>$status_Id,'data' =>$resultArray,"saving"=>$savings );
+               // print_r($data );exit();
+                return json_encode($data);
+	}
+
+	public function kotak_pl_company_master(Request $req){
+		$res['status']=0;
+        $res['msg']="success";
+       try {
+       	$query = DB::table('kotak_pl_company_master')->select('id', 'employername','final_category')->get();
+		$company = json_decode(json_encode($query));
+		$kotal_pl=json_encode($company);
+		 $result=json_decode(json_encode(['company'=>[$kotal_pl]]));
+		return response()->json(array('status' =>0,'message'=>"success",'company'=>$result));
+       } catch (Exception $e) {
+       	 return response()->json(array('status' =>1,'message'=>$ee->getMessage()));
+       }
+		
+	}
+	public function kotak_pl_proceedAPI(Request $req){
+		return LoanController::kotak_pl_proceed($req);
+	}
+
+
+	/*RBL Personal Loan*/
+	public function rbl_pl_city_master(Request $req){
+		$query = DB::table('rbl_pl_city_master')->select('code','city')->get();
+		$rbl=json_encode($query);
+		return $rbl;
+	}
+
+	public function rbl_pl_calc(Request $req){
+		$loanamount=$req['LnAmt'];
+		$tenure=$req['TnrMths']*12;
+		$roi=0.013;
+
+		$emi  = $loanamount * $roi * (pow(1 + $roi, $tenure) / (pow(1 + $roi, $tenure) - 1));
+		$emi=round($emi);
+		$fee =$loanamount*0.02;
+		return response()->json(array('emi'=>$emi,'fee'=>$fee));
+	}
 
 }

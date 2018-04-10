@@ -8,6 +8,7 @@ use Response;
 use App\bank_quote_api_request;
 use stdClass;
 use Intervention\Image\Facades\Image as Image;
+use App\Http\Controllers\LoanController;
 class MobileApiController extends ApiController
 {
 	public function mobile_api_compare(Request $req){
@@ -335,22 +336,32 @@ public function balance_transfer_with_quoteid(Request $req){
 	}
 
 	public function kotak_pl_company_master(Request $req){
-		$res['status']=0;
-        $res['msg']="success";
-       try {
-       	$query = DB::table('kotak_pl_company_master')->select('id', 'employername','final_category')->get();
-		$company = json_decode(json_encode($query));
-		$kotal_pl=json_encode($company);
-		 $result=json_decode(json_encode(['company'=>[$kotal_pl]]));
-		return response()->json(array('status' =>0,'message'=>"success",'company'=>$result));
-       } catch (Exception $e) {
-       	 return response()->json(array('status' =>1,'message'=>$ee->getMessage()));
-       }
+		
+       	$kotak_company_list = DB::table('kotak_pl_company_master')->select('employername','final_category')->get();
+        $kotak=json_encode($kotak_company_list);
+		return $kotak;
+    }
+
+	public function kotak_pl_calc(Request $req){
+		// print_r($req->all());exit();
+        $loan=new LoanController();
+		$calc=$loan->kotak_pl_proceed($req);
+		$LnAmt=$req->LnAmt*$calc[0]->non_csc_pf/100;
+		//print_r($calc);exit();
+
+        $arr=array_merge($calc,array('LnAmt' =>$LnAmt));
+
+		return $arr;
+	}
+
+	public function kotak_pl_city_list(Request $req){
+        $query = DB::table('kotak_pl_city_master')->select('city_code','city_name')->get();
+		$kotak_city_list=json_encode($query);
+		return $kotak_city_list;
 		
 	}
-	public function kotak_pl_proceedAPI(Request $req){
-		return LoanController::kotak_pl_proceed($req);
-	}
+
+
 
 
 	/*RBL Personal Loan*/

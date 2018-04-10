@@ -58,6 +58,81 @@
 /*-----------------------------------
 General css class
 -----------------------------------*/
+.tbl {
+  border: 1px solid #ccc;
+  /*border-collapse: collapse;*/
+  /*margin: 0;
+  padding: 0;*/
+  width: 100%;
+  table-layout: fixed;
+}
+/*table caption {
+  font-size: 1.5em;
+  margin: .5em 0 .75em;
+}*/
+.tbl tr {
+  background: #f8f8f8;
+  border: 1px solid #ddd;
+  /*padding: .35em;*/
+}
+.tbl th,
+.tbl td {
+  padding: .625em;
+  text-align: center;
+}
+.tbl th {
+  /*font-size: .85em;*/
+  color: #3c4d6b;
+  letter-spacing: .1em;
+  /*text-transform: uppercase;*/
+}
+@media screen and (max-width: 600px) {
+  .tbl {
+    border: 0;
+  }
+  .tbl caption {
+    font-size: 1.3em;
+  }
+  .tbl thead {
+    border: none;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+  .tbl tr {
+    border-bottom: 3px solid #ddd;
+    display: block;
+    margin-bottom: .625em;
+  }
+  .tbl td {
+    border-bottom: 1px solid #ddd;
+    display: block;
+    font-size: 13px;
+    text-align: right;
+  }
+  .tbl td:before {
+    /*
+    * aria-label has no advantage, it won't be read inside a table
+    content: attr(aria-label);
+    */
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    /*text-transform: uppercase;*/
+  }
+  .tbl td:last-child {
+    border-bottom: 0;
+  }
+}
+
+
+
+
+
 .img-center img {margin:0 auto; display:block;}
 body { font-size: 15px; font-family: 'Poppins', sans-serif; line-height: 1.4; color: #778191; margin-top:-10px; background-color: #f4f6f8; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
 h1, h2, h3, h4, h5, h6 { margin: 0px 0px 10px 0px; color: #3c4d6b; font-weight: 500; }
@@ -1694,3 +1769,10 @@ button.ui-button::-moz-focus-inner {
 .thank-bg {background:url("../images/thank_you.jpg");" width:100%; height:800px;}
 .thnk-txt {font-size:50px; padding:20px;}
 .btn-center {}
+
+
+
+
+
+
+

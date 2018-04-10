@@ -51,8 +51,8 @@
                                 <div class="col-md-4" style="display: none;" id="customer_type">
                                 <!-- <span><b>Existing Customer Type Master :<b></span> -->
                                 <select class="form-control block drop-arr select-sty" name="ExstCustType" id="ExstCustType" required>
-                                    <option disabled selected  value="">Existing Customer Type Master</option>
-                                    <option selected value="0">None</option>
+                                    <option disabled selected  value="0">Existing Customer Type Master</option>
+                                  
                                     <option value="1">Bank</option>
                                     <option  value="2">Loan</option>
                                 </select> 
@@ -173,7 +173,7 @@
 
                                  <div class="col-md-4">
                                   <!-- <span><b>Office Address1</b></span> -->
-                                  <input  type="text" class="form-control" placeholder="Office Address1" name="OffAddress1" id="OffAddress1"  required>
+                                  <input  type="text" class="form-control" placeholder="Office Address1" name="OffAddress1" id="OffAddress1" minlength="4"  required>
                                   </div>
 
                                   <div class="col-md-4">
@@ -184,7 +184,7 @@
 
                                   <div class="col-md-4">
                                   <!-- <span>Office Address3</span> -->
-                                  <input  type="text" class="form-control" placeholder="Office Address3" name="OffAddress3" id="OffAddress3" required>
+                                  <input  type="text" class="form-control" placeholder="Office Address3" name="OffAddress3" id="OffAddress3" minlength="4" required>
                                   </div>
 
                                         
@@ -202,7 +202,7 @@
 
                                   <div class="col-md-4">
                                   <!-- <span><b>Office Phone</b></span> -->
-                                  <input  type="text" class="form-control" onkeypress="return fnAllowNumeric(event)" placeholder="Office Phone" name="OffPhone" id="OffPhone" value="0" required maxlength="9" minlength="9">
+                                  <input  type="hidden" class="form-control" onkeypress="return fnAllowNumeric(event)" placeholder="Office Phone" name="OffPhone" id="OffPhone" value="0" required>
                                   </div>
 
                                   <div class="col-md-4">
@@ -227,7 +227,7 @@
 
                     <div class="col-md-4">
                                         <!-- <span><b>Address 1</b></span> -->
-                                        <input  type="text" class="form-control" placeholder="Address 1" name="ResAddress1" id="ResAddress1" minlength="4" maxlength="30"  required>
+                                        <input  type="text" class="form-control" placeholder="Address 1" name="ResAddress1" id="ResAddress1" minlength="4" required>
                                         </div>
                                         <div class="col-md-4">
 
@@ -237,7 +237,7 @@
 
                                         <div class="col-md-4">
                                         <!-- <span>Address 3</span> -->
-                                          <input  type="text" class="form-control" placeholder="Address 3" name="ResAddress3" id="ResAddress3" required>
+                                          <input  type="text" class="form-control" placeholder="Address 3" minlength="4" name="ResAddress3" id="ResAddress3" required>
                                         </div>
 
                                         
@@ -277,7 +277,7 @@
 
                                           <div class="col-md-4">
                                           <!-- <span>Residence Phone Number</span> -->
-                                          <input  type="text" class="form-control" onkeypress="return fnAllowNumeric(event)" placeholder="Residence PhNo" minlength="10" maxlength="10" name="ResPhNo" id="ResPhNo" required>
+                                          <input  type="hidden" class="form-control" onkeypress="return fnAllowNumeric(event)" placeholder="Residence PhNo" value="0" name="ResPhNo" id="ResPhNo" required>
                                           </div>
                     </div>
                     <hr>
@@ -319,7 +319,7 @@
 
                                             <div class="col-md-4">
                                             <!-- <span>Permanent Residence Phone numnber</span> -->
-                                            <input  type="text" class="form-control" onkeypress="return fnAllowNumeric(event)" placeholder="Residence PhNo" name="PerResPhNo" id="PerResPhNo" minlength="10" maxlength="10" required>
+                                            <input  type="hidden" class="form-control" onkeypress="return fnAllowNumeric(event)" placeholder="Residence PhNo" name="PerResPhNo" id="PerResPhNo" value="0" required>
                                             </div>
 
                     </div>
@@ -597,7 +597,7 @@
           <input type="hidden" name="form" value="kotak_personal_loan_status">
                   <div>
                     <fieldset>
-                      <input type="text" class="newsletter-name" name="Mobile" pattern="[789][0-9]{9}" required maxlength="10" placeholder="Mobile Number">
+                      <input type="text" class="newsletter-name" name="Mobile" pattern="[789][0-9]{9}" required  maxlength="10" placeholder="Mobile Number">
                     </fieldset>                 
                     </div>
 
@@ -757,7 +757,7 @@
          success: function(msg){
           // $(".iframeloading").hide();
           
-          console.log(msg.status);
+          // console.log(msg.status);
           if (msg.status=='1') 
           {
           $('#kotak_pl_refcode').empty().append(msg.refcode);
@@ -828,7 +828,7 @@
 $('#IsExstCust').on('change', function() {
   // alert('okae');
   var IsExstCust=$('#IsExstCust').find(":selected").val();
-  console.log(IsExstCust);
+  // console.log(IsExstCust);
   if ( IsExstCust == 'Y')
       {
        
@@ -928,7 +928,7 @@ $('#ExstCustType').on('change', function() {
 
 <script type="text/javascript">
   function mail(obj,val){
-    // console.log(obj);
+    console.log(obj);
     if(obj=='Email' ){
                    var str =$('#Email').val();
                    var emailPattern = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/; 
@@ -994,10 +994,10 @@ $('#ExstCustType').on('change', function() {
 
     <script type="text/javascript">
     function pan_nmbr(obj,val){
-        console.log(obj);
+        // console.log(obj);
         if(obj=='pan' ){
                    var str =$('#pan').val();
-                   console.log(str);
+                   // console.log(str);
                    var pancardPattern = /^([a-zA-Z]{5})(\d{4})([a-zA-Z]{1})$/;
                    var res = str.match(pancardPattern);
                    if(res){
@@ -1024,7 +1024,7 @@ $('#ExstCustType').on('change', function() {
    success: function(datas)  
    {
    var data=$.parseJSON(datas);
-   console.log(data);
+   // console.log(data);
    if(data)
       {      $.each(data, function( index, value ) {
             $('#ResCity').append('<option value="'+value.city_code+'">'+value.city_name+'</option>');
@@ -1047,7 +1047,7 @@ $('#ExstCustType').on('change', function() {
    success: function(datas)  
    {
    var data=$.parseJSON(datas);
-   console.log(data);
+   // console.log(data);
    if(data)
       {      $.each(data, function( index, value ) {
             $('#PerCity').append('<option value="'+value.city_code+'">'+value.city_name+'</option>');
@@ -1070,7 +1070,7 @@ $('#ExstCustType').on('change', function() {
    success: function(datas)  
    {
    var data=$.parseJSON(datas);
-   console.log(data);
+   // console.log(data);
    if(data)
       {      $.each(data, function( index, value ) {
             $('#OffCity').append('<option value="'+value.city_code+'">'+value.city_name+'</option>');
@@ -1179,7 +1179,7 @@ $(document).ready(function(){
          data : { 'Organization': Organization ,'LnAmt': LnAmt , 'NMI': NMI ,'_token': v_token},
          dataType: 'json',
          success: function(msg){
-          $('.kotak-pl-submit').show();
+          $('#kotak-pl-submit').show();
           $('.kotak-pl-proceed').hide();
           var data=msg[0];
           console.log(data);
@@ -1220,7 +1220,7 @@ $(document).ready(function(){
          data : $('#kotak_personal_loan_status').serialize(),
          success: function(msg){
 
-          console.log(msg.status);
+          // console.log(msg.status);
          if (msg.status =="1") {
              
              $('#kotakrefcode').empty().append(msg.refcode);

@@ -66,9 +66,12 @@ Route::post('vehicle-inspection-details','ApiController@vehicle_inspection_detai
 
 /*Kotak Personal Loan*/
 Route::get('kotak-pl-company-master','MobileApiController@kotak_pl_company_master');
+Route::get('kotak-pl-city-list','MobileApiController@kotak_pl_city_list');
+Route::post('kotak-pl-calc','MobileApiController@kotak_pl_calc');
 
 
 /*RBL Personal Loan*/
 Route::get('rbl-pl-city-master','MobileApiController@rbl_pl_city_master');
 Route::post('rbl-pl-calc','MobileApiController@rbl_pl_calc');
+
 

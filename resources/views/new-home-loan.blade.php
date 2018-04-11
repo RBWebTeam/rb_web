@@ -27,7 +27,7 @@
                           <div class="col-md-6 col-sm-12 col-xs-12">
                             <div class="form-group">
                 
-                                <select id="propery_types" name="propery_types" class="form-control">
+                                <select id="propery_types" name="propery_types" class="form-control" required>
                                     <option selected disabled="">Property Type</option>
                                     <option value="ready">Ready</option>
                                     <option value="searching">Searching</option>
@@ -47,7 +47,7 @@
 
                             <div class="col-md-6 col-sm-12 col-xs-12">
                               <div class="form-group">
-                                <input type="text" class="form-input-new form-control" name="loan_amount" id="loan_amount" placeholder="Loan Required" required onkeypress="return fnAllowNumeric(event)"   >
+                                <input type="text" class="form-input-new form-control" name="loan_amount" id="loan_amount" placeholder="Loan Required"  readonly onkeypress="return fnAllowNumeric(event)"   >
                               </div>
                             </div>
 
@@ -133,25 +133,25 @@
        
                               <div class="col-md-6 col-sm-12 col-xs-12">
                               <div class="form-group">
-                                <input type="text" class="form-input-new form-control " name="turnover" placeholder="Annual Turnover" required  onkeypress="return fnAllowNumeric(event)">
+                                <input type="text" class="form-input-new form-control " name="turnover" placeholder="Annual Turnover" minlength="5" maxlength="9" required  onkeypress="return fnAllowNumeric(event)">
                               </div>
                               </div>
 
                               <div class="col-md-6 col-sm-12 col-xs-12">
                               <div class="form-group">
-                                <input type="text" class="form-input-new form-control " name="profit_after_tax" placeholder="Profit After Tax" required  onkeypress="return fnAllowNumeric(event)">
+                                <input type="text" class="form-input-new form-control " name="profit_after_tax" placeholder="Profit After Tax" minlength="5" maxlength="9" required  onkeypress="return fnAllowNumeric(event)">
                               </div>
                               </div>
 
                               <div class="col-md-6 col-sm-12 col-xs-12">
                               <div class="form-group">
-                                <input type="text" class="form-input-new form-control " name="depreciation" placeholder="Depreciation"  required onkeypress="return fnAllowNumeric(event)">
+                                <input type="text" class="form-input-new form-control " name="depreciation" placeholder="Depreciation" minlength="5" maxlength="9"  required onkeypress="return fnAllowNumeric(event)">
                               </div>
                               </div>
 
                               <div class="col-md-6 col-sm-12 col-xs-12">
                               <div class="form-group">
-                                <input type="text" class="form-input-new form-control " name="remuneration" placeholder="Partner/Director Remuneration"  required onkeypress="return fnAllowNumeric(event)">
+                                <input type="text" class="form-input-new form-control " name="remuneration" placeholder="Partner/Director Remuneration" minlength="5" maxlength="9"  required onkeypress="return fnAllowNumeric(event)">
                               </div>
                             </div>
 
@@ -165,7 +165,7 @@
 
                             <div class="col-md-6 col-sm-12 col-xs-12">
                               <div class="form-group">
-                                <input type="text" class="form-input-new form-control"   name="obligation" placeholder="Existing EMI (If Any)" maxlength="8"  onkeypress="return fnAllowNumeric(event)"> 
+                                <input type="text" class="form-input-new form-control"   name="obligation" placeholder="Existing EMI (If Any)" maxlength="6"  onkeypress="return fnAllowNumeric(event)"> 
                               </div>
                             </div>
 

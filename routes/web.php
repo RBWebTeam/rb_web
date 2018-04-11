@@ -432,3 +432,6 @@ Route::post('tata-capital-company-master','TataCapitalLoanController@tata_capita
 Route::post('tata-capital-roi','TataCapitalLoanController@tata_capital_roi');
 // Route::get('tata-capital-doc-upload','TataCapitalLoanController@tata_capital_doc');
 Route::post('tata-capital-documents','TataCapitalLoanController@tata_capital_doc_upload');
+
+/*Flexi*/
+Route::get('flexi-loans','LoanController@flexi');

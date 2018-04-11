@@ -1329,6 +1329,11 @@ $url = $this::$url_static."/BankAPIService.svc/updateIIFLRevisedQuote";
         $obj=json_decode($m);
         return response()->json( $obj);
    }
+
+   public function flexi()
+   {
+     return view('flexi-loans');
+   }
    
 
 

@@ -23,7 +23,7 @@
 
                         <div class="col-md-6 col-sm-12 col-xs-12">
                              <div class="form-group">
-                              <select id="purpose" name="purpose" class="form-control">
+                              <select id="purpose" name="purpose" class="form-control" required>
                                     <option selected disabled="">Purpose of Loan</option>
                                     <option value="Marriage">Marriage</option>
                                     <option value="Home Related">Home Related</option>
@@ -99,7 +99,7 @@
 
                             <div class="col-md-6 col-sm-12 col-xs-12">
                               <div class="form-group">
-                                <input type="text" class="form-input-new form-control"   name="obligation" placeholder="Existing EMI (If Any)"  onkeypress="return fnAllowNumeric(event)"> 
+                                <input type="text" class="form-input-new form-control"   name="obligation" placeholder="Existing EMI (If Any)" minlength="1" maxlength="6"  onkeypress="return fnAllowNumeric(event)"> 
                               </div>
                             </div>
 

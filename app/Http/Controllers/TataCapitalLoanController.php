@@ -241,7 +241,7 @@ public function tata_capital_business_loan(){
 
   public function tata_capital_doc_upload(Request $req){
 
-
+  $arrpush=array();
   $destinationPath = public_path(). '/upload/policy_documents/';
    $arr=array();
    $doc_upload=array();
@@ -250,37 +250,40 @@ public function tata_capital_business_loan(){
    $docUploadType=$req['docUploadType'];
    $webtopNo=$req['webtopNo'];
 
+    $post_data[]='';
    foreach ($fi as $key=> $file) {
 
+  
+     
    $imagedata = file_get_contents($file);
-            
-
-  $base64 = base64_encode($imagedata);
-
+   $base64 = base64_encode($imagedata);
    $doc=$fileName = rand(1, 999) . $file->getClientOriginalName();
    $doc_upload=$docUploadType[$key];
-  
-   // $arr[]=array('webtopNo'=>$webtopNo,'docUploadType' =>$doc_upload,'docUploadName'=> $doc,'base64'=>$base64);
-   $post_data=json_encode($arr[]=array('webtopNo'=>$webtopNo,'docUploadType' =>$doc_upload,'docUploadName'=> $doc_upload.".jpg",'base64'=>$base64));
- // print_r( $post_data);exit();
+
+  $extension=strtolower(pathinfo($doc,PATHINFO_EXTENSION));
+  $filename=$docUploadType[$key].".".$extension;
+
+  $post_data=json_encode($arr[]=array('webtopNo'=>$webtopNo,'docUploadType' =>$doc_upload,'docUploadName'=> $filename,'base64'=>$base64));
  
+
     $url = $this::$url_static."/BankAPIService.svc/uploadTataCapitalPLDoc";
     $result=$this->call_json_data_api($url,$post_data);
     $http_result=$result['http_result'];
-    print_r($http_result);
+    
     $error=$result['error'];
     $st=str_replace('"{', "{", $http_result);
     $s=str_replace('}"', "}", $st);
     $m=$s=str_replace('\\', "", $s);
-    $obj = json_decode($m);
-    // print_r($obj);exit();
-    return response()->json( $obj);
+    $obj = json_encode($m);
+
+  
   } 
 
-    
+   return response()->json( $obj);
+
   }
 
-        /*TATA CAPITAL ROI*/
+   /*Tata Capital Roi*/
          public function tata_capital_roi(Request $req){
           // print_r($req->all());exit();
           $data=$req->all();

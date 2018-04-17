@@ -32,7 +32,7 @@
                                     <!-- Branch Location -->
                                        <div class="col-md-4 col-sm-12 col-xs-12">
                                           <div class="form-group">                                           
-                                            <select name="branch_location" id="branch_location" class="form-control select-sty">
+                                            <select name="branch_location" id="branch_location" class="form-control select-sty" required="">
 											  <option selected disabled="" value="">Branch Location</option>
 											  <option value="AHMEDABAD">AHMEDABAD</option>
 											  <option value="Bangalore-PL">Bangalore-PL</option>
@@ -68,8 +68,8 @@
                                         <!-- Branch Code -->
                                         <div class="col-md-4 col-sm-12 col-xs-12">
                                           <div class="form-group">
-                                          	<select name="branch_code" id="branch_code" class="form-control block drop-arr select-sty">
-											<option data-group='SHOW' value='0'>Branch Code</option>
+                                          	<select name="branch_code" id="branch_code" class="form-control block drop-arr select-sty" required="">
+											<option data-group='SHOW' value=''>Branch Code</option>
 											  <option data-group="AHMEDABAD" value="AhmedabadOpen - BEU">AhmedabadOpen - BEU</option>
 											  <option data-group="Bangalore-PL" value="BangaloreOpen - BEU">BangaloreOpen - BEU</option>
 											  <option data-group="Bangalore-BL" value="BangaloreOpen - BEU">BangaloreOpen - BEU</option>
@@ -154,7 +154,7 @@
 
 										<div class="col-md-4 col-sm-12 col-xs-12">
                                           <div class="form-group">
-										<select name="profile" id="profile" class="form-control block drop-arr select-sty" >
+										<select name="profile" id="profile" class="form-control block drop-arr select-sty" required="" >
 										<option selected disabled="" value="">Profile</option>
 										  <option value="Salaried">Salaried</option>
 										  <option value="Self Employed">Self Employed</option>
@@ -176,7 +176,7 @@
 
 										<div class="col-md-4 col-sm-12 col-xs-12">
                                           <div class="form-group">
-										<input type="text" name="landline" id="landline" minlength="8" maxlength="10" class="form-control" onkeypress="return fnAllowNumeric(event)" required="" placeholder="Landline no 1">
+										<input type="text" name="landline" id="landline" minlength="8" maxlength="10" class="form-control" onkeypress="return fnAllowNumeric(event)" placeholder="Landline no 1">
 										</div>
 									</div>
 									<br />
@@ -292,7 +292,7 @@
         <h4 class="modal-title">Error Status</h4>
       </div>
       <div class="modal-body">
-        <h4><p id="modalerr"><h5 style="color: black;">Oops!! Couldn't process due to <span id="hdfc_pl_bank"></span>. Kindly Try With Alternate Number.<h5></p></h4>
+        <h4><p id="modalerr"><h5 style="color: black;">Oops!! Couldn't process due to <b><span id="hdfc_pl_bank"></span></b>. Kindly Try With Alternate Number.<h5></p></h4>
         
       </div>
       
@@ -305,6 +305,7 @@
 <script type="text/javascript">
 	
     $('#branch_location').on('change', function(){
+    	$("#branch_code").val('');
         var val = $(this).val();
         // alert(val);
         
@@ -341,7 +342,7 @@
 
 <script type="text/javascript">
     var d = new Date();
-    var year = d.getFullYear()-25 ;
+    var year = d.getFullYear()-21 ;
     d.setFullYear(year);
 
     $("#dob").datepicker({ dateFormat: "yy-mm-dd",
@@ -450,4 +451,30 @@
   $('.hdfcbank_pl_proceed').click(function(){
     window.location.href ="{{URL::to('thank-you')}}";
   });
+</script>
+
+<script type="text/javascript">
+  function ApplicantObligations(){
+var result = true;
+$("#emi").each(function() {
+        if (!this.value) {
+            this.value = 0;
+        }
+        
+        if(jQuery.isNumeric(this.value) && this.value>=0){
+            
+        }else{
+            result = false;
+        }
+    });
+    return result;
+}
+
+$('#hdfc_submit').click(function(){
+    var testInput = ApplicantObligations();
+    if(testInput){
+        var finalValue = $('#ApplicantObligations').val();
+         $('span').text(finalValue);
+    }
+});
 </script>

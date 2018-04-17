@@ -664,14 +664,14 @@ Rupeeboss Financial Services Private Limited shall access your Credit Informatio
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Talk To Us</h4>
+          <h4 class="modal-title">Confirmation</h4>
         </div>
         <div class="modal-body">
           
                 
                   <div>
                     <fieldset>
-                      <div class="text-center">Your Score is<h2 id="equi_score" style="font-size:80px !important;"></h2></div>
+                      <div class="text-center">Your Score is<br><h2 id="equi_score" style="font-size:80px !important;"></h2></div>
                     </fieldset>
                     </div>
                  

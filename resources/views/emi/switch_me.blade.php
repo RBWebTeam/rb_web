@@ -99,7 +99,7 @@
 
                         <!-- <h4 style="text-align: center;" >Current Loan Status <i class="fa fa-exchange" ></i></h4> -->
                         <div class="form-group">
-                          <input type="text" name="loaninterest" step="0.01" min="0" class="form-control" id="loaninterest" placeholder="Present Int. Rate"  value="" onBlur="myfun()" onKeyPress="return isNumberKey(event)" title="Present Int.Rate">
+                          <input type="text" name="loaninterest" step="0.01"  maxlength="5" class="form-control" id="loaninterest" placeholder="Present Int. Rate"  value="" onBlur="myfun()" onKeyPress="return isNumberKey(event)" title="Present Int.Rate">
                         </div>
 
                         <div class="form-group">

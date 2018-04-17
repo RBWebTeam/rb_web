@@ -258,21 +258,16 @@ textarea {
                                     <option value="divorced">Divorced</option>
                                 </select>
                         </div>
-                       <div class="col-md-12"><h6 class="text-danger text-sm alrt-msg">* Atleast one of the Address is Mandatory (marked in RED)</h6></div>
+                       <!-- <div class="col-md-12"><h6 class="text-danger text-sm alrt-msg">* Atleast one of the Address is Mandatory (marked in RED)</h6></div> -->
                        </div>
               
-<div class="panel-group" id="accordion">
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h4 class="panel-title">
-        <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
-        Address Information 1</a>
-      </h4>
-    </div>
-    <div id="collapse1" class="panel-collapse collapse in">
+ <div class="col-md-12 address"><h4><b>Address Information</b></h4>
+
+                    <br />
+                    
       <div class="panel-body">
       <div class="col-md-12">
-                    <input type="text" placeholder="Address" name="AddressLine[]"  required></input>
+                    <input type="text" placeholder="Address" name="AddressLine[]" maxlength="200"  required></input>
                    
                      </div>
                      <div class="col-md-6">
@@ -285,20 +280,20 @@ textarea {
                        </select>
                     </div>
                     <div class="col-md-6">
-                                <input type="text" name="Locality1[]" id="Locality1" maxlength="40" Placeholder="Locality 1"  required>
+                                <input type="text" name="Locality1" id="Locality1" maxlength="40" Placeholder="Locality 1" maxlength="40"  required>
                                
                       </div>
-                      <div class="col-md-6">
+                      <div class="col-md-6" style="display: none;">
                                 <input type="text" name="Locality2[]" id="Locality2" maxlength="40" Placeholder="Locality 2"  >
                                
                       </div>
                       <div class="col-md-6">
-                                <input type="text" name="City[]" id="City" Placeholder="City" required>
+                                <input type="text" class="search_citynm" name="City[]" id="City" Placeholder="City" required>
                                
                       </div>
                      
                      <div class="col-md-6">
-                                <input type="text" name="Postal[]" id="Postal" onkeypress="return Numeric(event)" required maxlength="6" Placeholder="Postal Pin">
+                                <input type="text" name="Postal[]" id="Postal" onkeypress="return Numeric(event)" required minlength="6" maxlength="6" Placeholder="Postal Pin">
                            
                       </div>
                    <div class="col-md-6">
@@ -312,7 +307,7 @@ textarea {
       </div>
     </div>
   </div>
-  <div class="panel panel-default">
+  <!-- <div class="panel panel-default">
     <div class="panel-heading">
       <h4 class="panel-title">
         <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
@@ -362,8 +357,8 @@ textarea {
                     </div>
       </div>
     </div>
-  </div>
-  <div class="panel panel-default">
+  </div> -->
+ <!--  <div class="panel panel-default">
     <div class="panel-heading">
       <h4 class="panel-title">
         <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">
@@ -413,7 +408,7 @@ textarea {
       </div>
     </div>
   </div>
-</div>
+</div> -->
                    
                    
                    
@@ -423,21 +418,21 @@ textarea {
                     </div>
                    
                               <div class="col-md-6">
-                                <input type="text" name="PANId" id="PANId" oninput="pancard('PANId')" required maxlength="10" placeholder="TAX ID / PAN">
-                                <span id="pannumber" style="display:none;color: red; font-size: 10px;">Oops.Please Enter Valid Pan Number.!!</span>
+                                <input type="text" name="PANId" id="PANId" oninput="pancard('PANId')" required minlength="10" maxlength="10" placeholder="PAN">
+                                <span id="pannumber" style="display:none;color: red; font-size: 10px;text-transform:uppercase">Oops.Please Enter Valid Pan Number.!!</span>
                                
                                 </div>   
-                            <div class="col-md-6">
+                            <div class="col-md-6" style="display: none;">
                                 <input type="text" name="PassportId" id="PassportId" minlength="7" maxlength="20" placeholder="Passport ID">
                                
                                 </div>
-                            <div class="col-md-6">
+                            <div class="col-md-6" style="display: none;">
                                 <input type="text" name="VoterId" id="VoterId" oninput="voterid('VoterId')"  maxlength="10" placeholder="Voter ID">
                                 <span id="voternumber" style="display:none;color: red; font-size: 10px;">Oops.Please Enter Valid VoterId Number.!!</span>
                                
                                 </div>
 
-                                <div class="col-md-6">
+                                <div class="col-md-6" style="display: none;">
                                 <input type="text" name="DriverLicense" id="DriverLicense" maxlength="20" placeholder="Driving Licence">
                                
                                 </div>
@@ -447,11 +442,7 @@ textarea {
                                
                                 </div>
                       
-                        <div class="col-md-6">
-                           
-
-                                <div class="gen">Male <input type="radio" name="Gender" checked value="1" /> Female <input type="radio" name="Gender" value="2" /></div>
-                            </div>
+                        
 
                            
 
@@ -469,7 +460,7 @@ textarea {
                            
                                 </div>
 
-                                <div class="col-md-6">
+                                <div class="col-md-6" style="display: none;">
                                 <input type="text" name="HomePhone" id="HomePhone" onkeypress="return Numeric(event)" minlength="5" maxlength="12" placeholder="Phone (Home)" >
                                
                                 </div>
@@ -478,6 +469,32 @@ textarea {
                                 <label>Phone (Other)</label>
                                 <span></span>
                                 </div>
+
+                                <div class="col-md-6">
+                                <input type="text" name="AccountNumber[0]" id="" mixnlength="11" maxlength="16" placeholder="Saving/Current Account No"  required>
+                           
+                            </div>
+
+                            <div class="col-md-6" style="display: none;">
+                                <input type="text" name="TransactionAmount" id="TransactionAmount"   onkeypress="return Numeric(event)" placeholder="Transaction Amount (Rs)" minlength="5" maxlength="9" required>
+                               
+                            </div>
+
+                            <div class="col-md-6" style="display: none;">
+                           
+                                <select name="InquiryPurpose" class="drop-arr select-sty" id="InquiryPurpose" required>
+                                 <option disabled selected value="" class="text-danger">Inquiry Purpose</option>
+                                 @foreach($inq as $value)
+                                 <option value="{{$value->inquiry_code}}">{{$value->inquiry_purpose}}</option>
+                                 @endforeach
+                                </select>
+                            </div>
+
+                            <div class="col-md-6">
+                           
+
+                                <div class="gen">Male <input type="radio" name="Gender" checked value="1" /> Female <input type="radio" name="Gender" value="2" /></div>
+                            </div>
                            
                             <div class="col-md-6" style="display: none;">
                                 <input type="text" name="NationalIdCard" id="NationalIdCard" maxlength="20" placeholder="National ID Card (UIN)" >
@@ -492,12 +509,9 @@ textarea {
                         <br>
 
            
-            <div class="col-md-12 address"><h4><b>Retail Account No</b></h4></div>
-                      <div class="col-md-6">
-                                <input type="text" name="AccountNumber[0]" id="" mixnlength="11" maxlength="16" placeholder="Account Number 01"  required>
-                           
-                        </div>
-                        <div class="col-md-6">
+           <!--  <div class="col-md-12 address"><h4><b>Retail Account No</b></h4></div> -->
+                      
+                        <!-- <div class="col-md-6">
                                 <input type="text" name="AccountNumber[1]" id="" mixnlength="11" maxlength="16" placeholder="Account Number 02"  >
                                
                         </div>
@@ -508,8 +522,8 @@ textarea {
                         <div class="col-md-6">
                                 <input type="text" name="AccountNumber[3]" id="" mixnlength="11" maxlength="16" placeholder="Account Number 04" >
                            
-                        </div>
-            <div class="fields-grid">
+                        </div> -->
+            <!-- <div class="fields-grid">
                    
 
                             <div class="col-md-6">
@@ -528,25 +542,26 @@ textarea {
                             </div>
 
                            
-                        </div>           
-               
-                </div>
-       
-        </div>
-        <div class="col-md-12 white-bg ">
+                        </div> -->           
+                <div class="col-md-12 white-bg ">
            <div class="col-md-12">
                     <input type="checkbox"  name="terms" required>
                                             I hereby confirm that I have read and understood the <a href="#" data-toggle="modal" data-target="#equifaxTerm"> Rupeeboss Terms</a> and Conditions applicable to this service and that all the details furnished by me above are true and correct.
                                             I further provide consent to Rupeeboss and its affiliates to contact me with reference to financial products and this consent shall override any registration with DNC/NDNC.
                                             </div>
                                             </div>
+                                            <br>
        
-        <div class="col-md-12 white-bg flt-left"><a class="btn btn-danger btn-outline center-obj width-btn" id="equifax_submit">Submit</a></div>
+        <div  class="col-md-12 white-bg flt-left "><a class="btn btn-danger btn btn-sm" id="equifax_submit">Submit</a></div>
+                </div>
        
         </div>
-        <div class="iframeloading" style= "display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
+       
+       
+        </div>
+       <!--  <div class="iframeloading" style= "display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
           <img src="{{URL::to('images/ajaxloader.gif')}}" alt="Loader" title="Loader" style="top: 50%; position: relative; left: 50%;"  />
-         </div>
+         </div> -->
 
      
        
@@ -644,7 +659,7 @@ textarea {
 
 <script type="text/javascript">
     var d = new Date();
-    var year = d.getFullYear() ;
+    var year = d.getFullYear()-21 ;
     d.setFullYear(year);
 
     $(".lastReporteddob").datepicker({ dateFormat: "yy-mm-dd",
@@ -702,4 +717,47 @@ textarea {
       });  
      }
     });
+</script>
+
+<script type="text/javascript">
+
+  
+
+ $(document).ready(function(){
+    src = "{{ route('searchajax') }}";
+    $(".search_citynm").autocomplete({
+      source: function(request, response) {
+        
+        $.ajax({
+          url: src,
+          dataType: "json",
+          data: {
+            term : request.term
+          },
+          success: function(data) {
+           
+
+            response(data);
+            
+          }
+        });
+      },
+      change: function (event, ui) {
+        if (ui.item == null || ui.item == undefined || ui.item.value=='No Result Found') {
+          $(".search_citynm").val("");
+          $(".search_citynm").attr("disabled", false);
+         
+        }else{
+
+         
+         $(".Q6").show();
+         
+          
+             }
+           }
+
+        
+      });
+   });
+
 </script>

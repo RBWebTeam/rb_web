@@ -83,91 +83,83 @@
 
 
 
-<div id="fh5co-hero">
-    <div class="fh5co-contact animate-box">
+       <div class=" ">
         <div class="container">
             <div class="row">
-                <div class="col-md-12 text-left fh5co-heading animate-box fadeInUp animated">
-                   
-                        
-                       <h1 class=""><center>Tata Capital Personal Loan</center></h1>
-
-                       
-                     
-                    
-                </div>
-                <div id="personal_loan">
                 <div class="col-md-12">
-                    <div class="row text-left comp-pg rate white-bg">
+                    <div class="wrapper-content bg-white pinside40">
+                        <div class="section-faq" id="section-faq">
+                            <div class="">
+                               <div class="col-md-offset-2 col-md-8 col-sm-12 col-xs-12" >
+                                <div class="mb60  section-title text-center  ">
+                                <h1 class="">
+                                  <h2 class=""><center>Tata Capital Personal Loan</center></h2>
+                         </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding-bottom: 20px">
+                    <div class="how-it-block1 bg-boxshadow" style=" min-height: 400px;">
+                      <div id="personal_loan">
                 <form id="company_list" name="company_list" method="POST">
                            {{ csrf_field() }}
-                            <div class="row">
-                            <div class="form-group">
-                            <h3>Company List:</h3>
-                             <div class="col-md-4">
-                            <label for="Company_Name">Company Name: </label>
-                            <input type="text" class="form-control" name="cFilter" id="Company_Name">
+                               <div class="row">
+                  <div class="form-group">
+                    <div class="col-md-12"><h4 class="hdr pad1 text-center">Company List</h4></div>
+                            <div class="col-md-4 col-sm-12 col-xs-12">
+                      <div class="form-group">
+                            <!-- <label for="Company_Name">Company Name: </label> -->
+                            <input type="text" class="form-control" name="cFilter" placeholder="Company Name" id="Company_Name">
                             </div>
+                          </div>
                             
                             </div>
                             </div>
-                          </form>
-                          </div>
-                          </div>
 
-                          <div class="col-md-12">
-                          <div class="row text-left comp-pg rate white-bg">
+
+                          </form>
+
                           <form id="roi" name="roi" method="POST">
                            {{ csrf_field() }}
-                            <div class="row">
-                            <div class="form-group">
-                            <h1 class="loan-head" >ROI Acc.To Company</h1>
-                            <!-- <input type="hidden" name="cSource" value="CVIDYA">
-                            <input type="hidden" name="cKey" value="CVIDYAUAT">
-                            <input type="hidden" name="nMaxRec" value="10">
-                            <input type="hidden" name="nMaker" value="1"> -->
-                             <div class="col-md-4">
-                            <label for="nSalary">Net Salary: </label>
-                            <input type="text" class="form-control" name="nSalary" id="nSalary" minlength="5" maxlength="9" onkeypress="return fnAllowNumeric(event)"" required>
-                            </div>
 
-                            <div class="col-md-4">
-                            <label for="nSalary">Required Loan Amount: </label>
-                            <input type="text" class="form-control" minlength="5" maxlength="6" name="nAmount" id="nAmount"  onkeypress="return fnAllowNumeric(event)" required>
-                            </div>
+                           <div class="col-md-12"><h4 class="hdr pad1 text-center">ROI Acc.To Company</h4></div>
 
-                             <div class="col-md-4">
-                             <label for="nSalary">City: </label>
+                           <div class="col-md-4 col-sm-12 col-xs-12">
+                      <div class="form-group">
+                        <input type="text" class="form-control" name="nSalary" id="nSalary" minlength="5" maxlength="9" placeholder="Net Salary" onkeypress="return fnAllowNumeric(event)"" required>
+                      </div>
+                    </div>
+                     <div class="col-md-4 col-sm-12 col-xs-12">
+                      <div class="form-group">
+                        <input type="text" class="form-control" minlength="5" maxlength="9" name="nAmount" id="nAmount" placeholder="Required Loan Amount" onkeypress="return fnAllowNumeric(event)" required>
+                      </div>
+                    </div>
+                    <div class="col-md-4 col-sm-12 col-xs-12">
+                      <div class="form-group">
+                        <label for="nSalary">City: </label>
                                         <select class="form-control drop-arr select-sty" name="cCity" id="cCity" required>
                                           <option disabled selected value="">City</option>
                                         </select>
-                                        </div>
-
+                                      </div>
+                                    </div>
+                                     <input type="hidden" class="form-control" name="nComp" id="Company">
                             
-                            <input type="hidden" class="form-control" name="nComp" id="Company">
-                            
-                            <a class="btn btn-primary btn-outline with-arrow animate-box fadeInUp animated  dis-tbl" id="tata_capital_roi"  >Submit<i class="icon-arrow-right"></i></a>
-
-                            
-                            </div>
-                            </div>
+                            <a class="btn btn-primary btn btn-sm" id="tata_capital_roi"  >Submit</a>
                           </form>
                           </div>
-                          </div>
-                          </div>
+                         
 
-                         <div id="tata_capital_pl_form" style="display: none;">
-                         <div class="col-md-12">
-                          <div class="row text-left comp-pg rate white-bg">
-                          
-                            <form class="" id="tata_capital_form" name="tata_capital_form" role="form" method="POST" >
+                      <div id="tata_capital_pl_form" style="display: none;">
+                        <form class="" id="tata_capital_form" name="tata_capital_form" role="form" method="POST" >
                              {{ csrf_field() }}
                              
-                                <div class="row">
+                               <div class="row">
                                     <div class="form-group">
+                                      <div class="col-md-12"><h4 class="hdr pad1 text-center">Personal Details</h4></div>
+
                                     
-                                       <h1 class="loan-head" >Personal Details</h1>
-                                        <div class="col-md-4">
+                                       
+                                       <div class="col-md-4 col-sm-12 col-xs-12">
+                      <div class="form-group">
                                             <select class="form-control"  name="title"  id="title" required>
                                               <option selected disabled value="">Title</option>
                                               <option value="Mr.">Mr.</option>
@@ -176,21 +168,31 @@
                                                 
                                             </select>
                                         </div>
-                                        <div class="col-md-4">
+                                      </div>
+                                        <div class="col-md-4 col-sm-12 col-xs-12">
+                      <div class="form-group">
                                             <input type="text" class="form-control" id="fname" name="fname" placeholder="First Name(as per PAN Record)" maxlength="30" onkeypress="return AllowAlphabet(event)" required>
                                         </div>
-                                        <div class="col-md-4">
+                                      </div>
+                                        <div class="col-md-4 col-sm-12 col-xs-12">
+                      <div class="form-group">
                                             <input type="text" class="form-control" id="mname" name="mname" placeholder="Middle Name(as per PAN Record)" maxlength="30"  onkeypress="return AllowAlphabet(event)">
                                         </div>
-                                        <div class="col-md-4">
+                                      </div>
+                                        <div class="col-md-4 col-sm-12 col-xs-12">
+                      <div class="form-group">
                                              <input type="text" class="form-control" id="lname" name="lname" placeholder="Last Name(as per PAN Record)" maxlength="30"  onkeypress="return AllowAlphabet(event)" required>
                                         </div>
+                                      </div>
 
-                                        <div class="col-md-4">
+                                        <div class="col-md-4 col-sm-12 col-xs-12">
+                      <div class="form-group">
                                              <input type="text" class="form-control" id="motherMaidenName" name="motherMaidenName" placeholder="Mother Maiden Name" maxlength="40"  onkeypress="return AllowAlphabet(event)">
                                         </div>
+                                      </div>
 
-                                        <div class="col-md-4">
+                                        <div class="col-md-4 col-sm-12 col-xs-12">
+                      <div class="form-group">
                                             <select class="form-control"  name="maritalStatus"  id="maritalStatus" required>
                                               <option selected disabled value="">Marital Status</option>
                                                 <option value="M">Married</option>
@@ -200,25 +202,33 @@
                                                 
                                             </select>
                                         </div>
+                                      </div>
 
-                                        <div class="col-md-4" >
+                                        <div class="col-md-4 col-sm-12 col-xs-12">
+                      <div class="form-group">
                                         
                                             <input type="text" class="form-control lastReporteddob" id="dob" name="dob" placeholder="DOB" required="">
                                             
                                         </div>
+                                      </div>
 
-                                         <div class="col-md-4" >
+                                        <div class="col-md-4 col-sm-12 col-xs-12">
+                      <div class="form-group">
                                         
                                             <input type="text" class="form-control" id="idValue" name="idValue" oninput="pan_card('idValue')" maxlength="10" placeholder="PAN Number" required>
                                             <div id="pan_number" style="display:none;color: red; font-size: 10px">Oops.Please Enter Valid Pan Number.!!</div>
                                         </div>
+                                      </div>
 
-                                        <div class="col-md-4">
+                                       <div class="col-md-4 col-sm-12 col-xs-12">
+                      <div class="form-group">
                                             <input type="text" class="form-control" id="resEmailId" name="resEmailId" placeholder="Email" oninput="mail('resEmailId')" maxlength="255" required>
                                             <div id="email" style="display:none;color: red; font-size: 10px">Please Enter Valid Email Id.</div>
                                         </div>
+                                      </div>
 
-                                        <div class="col-md-4">
+                                       <div class="col-md-4 col-sm-12 col-xs-12">
+                      <div class="form-group">
                                             <select class="form-control"  name="gender" id="gender" required>
                                               <option value="">Gender</option>
                                                 <option value="M">Male</option>
@@ -226,12 +236,16 @@
                                                 
                                             </select>
                                         </div>
+                                      </div>
 
-                                        <div class="col-md-4">
+                                        <div class="col-md-4 col-sm-12 col-xs-12">
+                      <div class="form-group">
                                             <input type="text" class="form-control" id="relationshipFirstName" name="relationshipFirstName" placeholder="Relationship First Name" maxlength="30" onkeypress="return AllowAlphabet(event)" required>
                                         </div>
+                                      </div>
 
-                                        <div class="col-md-4">
+                                       <div class="col-md-4 col-sm-12 col-xs-12">
+                      <div class="form-group">
                                             <select class="form-control"  name="relationship"  id="relationship" required>
                                               <option selected disabled value="">Relationship</option>
                                                 <option value="F">Father</option>
@@ -239,18 +253,22 @@
                                                 <option value="NA">NA</option>
                                             </select>
                                         </div>
+                                      </div>
 
                                         
-                                         <div class="col-md-4">
+                                <div class="col-md-4 col-sm-12 col-xs-12">
+                                    <div class="form-group">
                                             <input type="text" class="form-control" id="resMobNo" name="resMobNo" placeholder="Mobile No" maxlength="10" onkeypress=" return fnAllowNumeric(event)" required>
                                             <div id="mob_no" style="display:none;color: red; font-size: 10px">Mobile No should be of 10 digits.</div>
                                         </div>
+                                      </div>
 
 
 
                                         </div>
-                                    <hr>
+                                    
                                 </div>
+                                <hr>
 
                                  <!-- <div class="row">
                                     <div class="form-group">
@@ -262,26 +280,36 @@
  -->
                                  <div class="row">
                                     <div class="form-group">
-                                   <h1 class="loan-head" >Address Details</h1>
-                                    <div class="col-md-4">
+                                      <div class="col-md-12"><h4 class="hdr pad1 text-center">Address Details</h4></div>
+                                  
+                                     <div class="col-md-4 col-sm-12 col-xs-12">
+                                    <div class="form-group">
                                             <input type="text" class="form-control" id="resAddress1" name="resAddress1" placeholder="Address Line1" maxlength="200" required>
                                         </div>
+                                      </div>
 
-                                        <div class="col-md-4">
+                                         <div class="col-md-4 col-sm-12 col-xs-12">
+                                    <div class="form-group">
                                             <input type="text" class="form-control" id="resAddress2" name="resAddress2" placeholder="Address Line2" maxlength="200" required>
                                         </div>
+                                      </div>
 
-                                        <div class="col-md-4">
+                                         <div class="col-md-4 col-sm-12 col-xs-12">
+                                    <div class="form-group">
                                             <input type="text" class="form-control" id="resAddress3" name="resAddress3" placeholder="Address Line3" maxlength="200" required >
                                         </div>
+                                      </div>
 
-                                        <div class="col-md-4">
+                                         <div class="col-md-4 col-sm-12 col-xs-12">
+                                    <div class="form-group">
                                             <input type="text" class="form-control" id="resAddress4" name="resAddress4" placeholder="Address Line4" maxlength="200">
                                         </div>
+                                      </div>
 
                                         
 
-                                         <div class="col-md-4">
+                                          <div class="col-md-4 col-sm-12 col-xs-12">
+                                    <div class="form-group">
                                           <select name="resState" id="resState" class="form-control block drop-arr select-sty" required>
                                           <option selected disabled="" value="">State</option>
                                           <option value="ANDHRA PRADESH">ANDHRA PRADESH</option>
@@ -302,8 +330,10 @@
                                           <option value="DELHI">DELHI</option>
                                           </select>
                                         </div>
+                                      </div>
 
-                                        <div class="col-md-4">
+                                        <div class="col-md-4 col-sm-12 col-xs-12">
+                                    <div class="form-group">
                                           <select name="losState" id="losState" class="form-control block drop-arr select-sty" required>
                                           
                                           <option data-group='SHOW' value='0'>StateID</option>
@@ -325,8 +355,10 @@
                                           <option data-group="DELHI" value="84">84</option>
                                           </select>
                                         </div>
+                                      </div>
 
-                                        <div class="col-md-4">
+                                        <div class="col-md-4 col-sm-12 col-xs-12">
+                                    <div class="form-group">
                                           <select name="resCity" id="resCity" class="form-control block drop-arr select-sty" required>
                                           <option selected disabled="" value="">City</option>
                                           <option value="HYDERABAD">HYDERABAD</option>
@@ -363,8 +395,10 @@
                                           
                                           </select>
                                         </div>
+                                      </div>
 
-                                        <div class="col-md-4">
+                                       <div class="col-md-4 col-sm-12 col-xs-12">
+                                    <div class="form-group">
                                           <select name="losCity" id="losCity" class="form-control block drop-arr select-sty" required>
                                           <option data-group='SHOW' value='0'>CityID</option>
                                           <option data-group="HYDERABAD" value="500">500</option>
@@ -401,13 +435,17 @@
                                           
                                           </select>
                                         </div>
+                                      </div>
 
-                                        <div class="col-md-4">
+                                        <div class="col-md-4 col-sm-12 col-xs-12">
+                                    <div class="form-group">
                                             <input type="text" class="form-control" id="resPincode" name="resPincode" placeholder="Pincode" maxlength="6" onkeypress="return fnAllowNumeric(event)" required>
                                             
                                         </div>
+                                      </div>
 
-                                        <div class="col-md-4">
+                                       <div class="col-md-4 col-sm-12 col-xs-12">
+                                    <div class="form-group">
                                           <select name="residenceOwnedBy" id="residenceOwnedBy" class="form-control block drop-arr select-sty">
                                           <option selected disabled="" value="">Residence</option>
                                           <option value="BA">Bachelor Accommodation</option>
@@ -421,63 +459,89 @@
                                           <option value="SQ">STAFF QUARTER-not work</option>
                                           </select>
                                         </div>
+                                      </div>
 
-                                          <div class="col-md-4">
+                                          <div class="col-md-4 col-sm-12 col-xs-12">
+                                    <div class="form-group">
                                             <input type="text" class="form-control" id="noOfYearsInCity" name="noOfYearsInCity" placeholder="No Of Years In City" onkeypress="return fnAllowNumeric(event)" required>
                                             
                                           </div>
+                                        </div>
 
-                                          <div class="col-md-4">
+                                          <div class="col-md-4 col-sm-12 col-xs-12">
+                                    <div class="form-group">
                                             <input type="text" class="form-control" id="yrsCurrentResidence" name="yrsCurrentResidence" placeholder="No Of Years At CurrentResidence" onkeypress="return fnAllowNumeric(event)" required>
                                             
                                           </div>
+                                        </div>
 
                                           
                                     </div>
-                                    <hr>
+                                    
                                 </div>
+                                <hr>
 
                                 <div class="row">
                                    <div class="form-group">
                                   &nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="same" id="same_id" onclick="same_fn();" />Same As Above
-                                <h1 class="loan-head" >Permanent Address Details</h1>
-                                <div class="col-md-4">
+                                   <div class="col-md-12"><h4 class="hdr pad1 text-center">Permanent Address Details</h4></div>
+                                
+                                <div class="col-md-4 col-sm-12 col-xs-12">
+                                    <div class="form-group">
                                   <input type="text" class="form-control" placeholder="Permanent Addr1" name="permAddr1" id="permAddr1" readonly>
                                 </div>
-                                <div class="col-md-4">
+                              </div>
+                                <div class="col-md-4 col-sm-12 col-xs-12">
+                                    <div class="form-group">
                                   <input type="text" class="form-control" placeholder="Permanent Addr2" name="permAddr2" id="permAddr2" readonly>
                                 </div>
-                                <div class="col-md-4">
+                              </div>
+                                <div class="col-md-4 col-sm-12 col-xs-12">
+                                    <div class="form-group">
                                   <input type="text" class="form-control" placeholder="Permanent Addr3" name="permAddr3" id="permAddr3" readonly>
                                 </div>
+                              </div>
                                 
-                                <div class="col-md-4">
+                                <div class="col-md-4 col-sm-12 col-xs-12">
+                                    <div class="form-group">
                                     <input type="hidden" id="permPincode" name="permPincode" class="form-control" placeholder="Pincode" onkeypress="return fnAllowNumeric(event)" maxlength="6" required>
                                   </div>
-                                  <div class="col-md-4">
+                                </div>
+                                  <div class="col-md-4 col-sm-12 col-xs-12">
+                                    <div class="form-group">
                                   <input type="hidden" class="form-control" placeholder="City" name="losPermCity" id="losPermCity" required>
                                 </div>
-                                <div class="col-md-4">
+                              </div>
+                                <div class="col-md-4 col-sm-12 col-xs-12">
+                                    <div class="form-group">
                                   <input type="hidden" class="form-control" placeholder="State" name="losPermState" id="losPermState" required>
                                 </div>
+                              </div>
+                                </div>
+                                
                                 </div>
                                 <hr>
-                                </div>
 
                                  <div class="row">
                                     <div class="form-group">
-                                   <h1 class="loan-head" >Office Details</h1>
-                                    <div class="col-md-4">
+                                       <div class="col-md-12"><h4 class="hdr pad1 text-center">Office Details</h4></div>
+                                   
+                                     <div class="col-md-4 col-sm-12 col-xs-12">
+                                    <div class="form-group">
                                             <input type="text" class="form-control" id="companyName" name="companyName" readonly placeholder="Company Name" required>
                                             
                                         </div>
+                                      </div>
 
-                                      <div class="col-md-4">
+                                       <div class="col-md-4 col-sm-12 col-xs-12">
+                                    <div class="form-group">
                                             <input type="text" class="form-control" id="yrsInCurrentEmp" name="yrsInCurrentEmp" required placeholder="Yrs In CurrentEmp" minlength="1" maxlength="2" onkeypress="return fnAllowNumeric(event)">
                                             
                                         </div>
+                                      </div>
 
-                                         <div class="col-md-4">
+                                          <div class="col-md-4 col-sm-12 col-xs-12">
+                                    <div class="form-group">
                                           <select name="employmentType" id="employmentType" class="form-control block drop-arr select-sty" required>
                                           
                                           <option disabled selected value="">Employment Type</option>
@@ -486,8 +550,10 @@
                                           <option value="SEP">SELF EMPLOYED PROFESSIONAL</option>
                                           </select>
                                         </div>
+                                      </div>
                                         
-                                        <div class="col-md-4">
+                                         <div class="col-md-4 col-sm-12 col-xs-12">
+                                    <div class="form-group">
                                           <select name="employerType" id="employerType" class="form-control block drop-arr select-sty" required>
                                           
                                           <option disabled selected value="">Employer Type</option>
@@ -502,13 +568,17 @@
                                           <option value="Public Sector">Public Sector</option>
                                           </select>
                                         </div>
+                                      </div>
 
-                                        <div class="col-md-4">
+                                         <div class="col-md-4 col-sm-12 col-xs-12">
+                                    <div class="form-group">
                                             <input type="text" class="form-control" id="totWorkExp" name="totWorkExp" required placeholder="Tot Work Exp" minlength="1" maxlength="2" onkeypress="return fnAllowNumeric(event)">
                                             
                                         </div>
+                                      </div>
 
-                                        <div class="col-md-4">
+                                        <div class="col-md-4 col-sm-12 col-xs-12">
+                                    <div class="form-group">
                                           <select name="industry" id="industry" class="form-control block drop-arr select-sty" required>
                                           
                                           <option disabled selected value="">Industry</option>
@@ -518,16 +588,23 @@
                                           <option value="04">Others</option>
                                           </select>
                                         </div>
+                                      </div>
 
-                                        <div class="col-md-4">
+                                         <div class="col-md-4 col-sm-12 col-xs-12">
+                                    <div class="form-group">
                                         <input type="text" class="form-control" placeholder="Office Addr1" name="empAddressLine1" id="empAddressLine1" required>
                                         </div>
-                                        <div class="col-md-4">
+                                      </div>
+                                        <div class="col-md-4 col-sm-12 col-xs-12">
+                                    <div class="form-group">
                                         <input type="text" class="form-control" placeholder="Office Addr2" name="empAddressLine2" id="empAddressLine2" required>
                                         </div>
-                                        <div class="col-md-4">
+                                      </div>
+                                         <div class="col-md-4 col-sm-12 col-xs-12">
+                                    <div class="form-group">
                                         <input type="text" class="form-control" placeholder="Office Addr3" name="empAddressLine3" id="empAddressLine3" required>
                                         </div>
+                                      </div>
 
                                         <!-- <div class="col-md-4">
                                         <select class="form-control drop-arr select-sty" name="empCity" id="empCity" required>
@@ -536,29 +613,38 @@
                                         </div> -->
                                         <input type="hidden" name="empCity" id="empCity" value="">
 
-                                        <div class="col-md-4">
+                                        <div class="col-md-4 col-sm-12 col-xs-12">
+                                    <div class="form-group">
                                         <select class="form-control drop-arr select-sty" name="empProvince" id="empProvince" required>
                                           <option disabled selected value="">State</option>
                                         </select>
                                         </div>
+                                      </div>
 
-                                         <div class="col-md-4">
+                                     <div class="col-md-4 col-sm-12 col-xs-12">
+                                    <div class="form-group">
                                             <input type="text" class="form-control" id="empPostalCode" name="empPostalCode" required placeholder="Pincode" maxlength="6" onkeypress="return fnAllowNumeric(event)">
                                             
                                         </div>
+                                      </div>
 
-                                        <div class="col-md-4">
+                                         <div class="col-md-4 col-sm-12 col-xs-12">
+                                    <div class="form-group">
                                             <input type="text" class="form-control" id="officeEmailId" name="officeEmailId" placeholder="Email" oninput="email('officeEmailId')" maxlength="255" >
                                             <div id="e_mail" style="display:none;color: red; font-size: 10px">Please Enter Valid Email Id.</div>
                                         </div>
+                                      </div>
 
-                                        <div class="col-md-4">
+                                         <div class="col-md-4 col-sm-12 col-xs-12">
+                                    <div class="form-group">
                                             <input type="text" class="form-control" id="empCode" name="empCode" placeholder="Employer Code" required>
                                             
                                         </div>
+                                      </div>
                                         <input type="hidden" name="employerCode" id="employerCode">
 
-                                        <div class="col-md-4">
+                                         <div class="col-md-4 col-sm-12 col-xs-12">
+                                    <div class="form-group">
                                           <select name="customerCategory" id="customerCategory" class="form-control block drop-arr select-sty" required>
                                           
                                           <option disabled selected value="">Customer Category</option>
@@ -570,71 +656,93 @@
                                           <option value="0202">SELF EMPLOYED PROFESSIONAL</option>
                                           </select>
                                         </div>
+                                      </div>
 
                                     </div>
-                                    <hr>
+                                    
                                 </div>
+                                <hr>
 
                                 <div class="row">
                                     <div class="form-group">
-                                     <h1 class="loan-head" >Financial Details</h1>
+                                       <div class="col-md-12"><h4 class="hdr pad1 text-center">Financial Details</h4></div>
+                                    
                                      <input type="hidden" name="includeFinancial" value="Y">
                                      <input type="hidden" name="includeIncomeFlag" value="Y">
                                      
 
-                                     <div class="col-md-4">
+                                      <div class="col-md-4 col-sm-12 col-xs-12">
+                                    <div class="form-group">
                                           <select name="mainBankingReq" id="mainBankingReq" class="form-control block drop-arr select-sty" required>
                                           <option disabled selected value="">Main Banking Req</option>
                                           <option value="Y">Yes</option>
                                           <option value="N">No</option>
                                           </select>
                                         </div>
+                                      </div>
 
-                                        <div class="col-md-4">
+                                        <div class="col-md-4 col-sm-12 col-xs-12">
+                                    <div class="form-group">
                                           <select name="pdcEcsReq" id="pdcEcsReq" class="form-control block drop-arr select-sty" required>
                                           <option disabled selected value="">pdc Ecs Req</option>
                                           <option value="Y">Yes</option>
                                           <option value="N">No</option>
                                           </select>
                                         </div>
+                                      </div>
 
-                                        <div class="col-md-4">
+                                        <div class="col-md-4 col-sm-12 col-xs-12">
+                                    <div class="form-group">
                                           <select name="modeOfSalary" id="modeOfSalary" class="form-control block drop-arr select-sty" required>
                                           <option disabled selected value="">Mode Of Salary</option>
                                           <option value="P"> PDC </option>
                                           <option value="D"> Direct </option>
                                           </select>
                                         </div>
+                                      </div>
 
-                                        <div class="col-md-4">
+                                         <div class="col-md-4 col-sm-12 col-xs-12">
+                                    <div class="form-group">
                                             <input type="text" class="form-control" id="prevMonthSalary" name="prevMonthSalary" required placeholder="Prev Month Salary" maxlength="9" onkeypress="return fnAllowNumeric(event)">
                                             
                                         </div>
+                                      </div>
 
-                                        <div class="col-md-4">
+                                        <div class="col-md-4 col-sm-12 col-xs-12">
+                                    <div class="form-group">
                                             <input type="text" class="form-control" id="currMonthIncome" name="currMonthIncome" required placeholder="Curr Month Income" maxlength="9" onkeypress="return fnAllowNumeric(event)">
                                             
                                         </div>
+                                      </div>
 
-                                        <div class="col-md-4">
+                                        <div class="col-md-4 col-sm-12 col-xs-12">
+                                    <div class="form-group">
                                             <input type="text" class="form-control" id="nextMonthSalary" name="nextMonthSalary" required placeholder="Next Month Salary" maxlength="6" onkeypress="return fnAllowNumeric(event)">
                                             
                                         </div>
+                                      </div>
 
-                                        <div class="col-md-4">
+                                         <div class="col-md-4 col-sm-12 col-xs-12">
+                                    <div class="form-group">
                                             <input type="text" class="form-control" id="obligationMonth" name="obligationMonth" required placeholder="EMI(if existing otherwise 0)"  onkeypress="return fnAllowNumeric(event)">
                                             
                                         </div>
+                                      </div>
 
-                                        <div class="col-md-4">
+                                       <div class="col-md-4 col-sm-12 col-xs-12">
+                                    <div class="form-group">
                                             <input type="text" class="form-control" id="bankName" name="bankName" required placeholder="Bank Name" >
                                         </div>
+                                      </div>
 
-                                        <div class="col-md-4">
+                                        <div class="col-md-4 col-sm-12 col-xs-12">
+                                    <div class="form-group">
                                             <input type="text" class="form-control" id="noOfChequeBounced" name="noOfChequeBounced" required placeholder="No Of ChequeBounced"  onkeypress="return fnAllowNumeric(event)">
                                         </div>
+                                      </div>
 
-                                        <div class="col-md-4">
+                                         <div class="col-md-4 col-sm-12 col-xs-12">
+                                    <div class="form-group">
                                           <select name="accountType" id="accountType" class="form-control block drop-arr select-sty" required>
                                           <option disabled selected value="">Account Type</option>
                                           <option value="CC"> CC</option>
@@ -643,12 +751,16 @@
                                           <option value="OD"> Over Draft</option>
                                           </select>
                                         </div>
+                                      </div>
 
-                                        <div class="col-md-4">
+                                         <div class="col-md-4 col-sm-12 col-xs-12">
+                                    <div class="form-group">
                                             <input type="text" class="form-control" id="loanAmount" name="loanAmount" required placeholder="Req LoanAmount" minlength="5" maxlength="9"  onkeypress="return fnAllowNumeric(event)">
                                         </div>
+                                      </div>
                                      
-                                        <div class="col-md-4">
+                                         <div class="col-md-4 col-sm-12 col-xs-12">
+                                    <div class="form-group">
                                           <select name="loanTerm" id="loanTerm" class="form-control block drop-arr select-sty" required>
                                           <option disabled selected value="">Loan Term</option>
                                           <option  value="12">12 months</option>
@@ -658,8 +770,10 @@
                                             <option  value="60">60 months</option>
                                           </select>
                                         </div>
+                                      </div>
 
-                                        <div class="col-md-4">
+                                         <div class="col-md-4 col-sm-12 col-xs-12">
+                                    <div class="form-group">
                                           <select name="incomeCategory" id="incomeCategory" class="form-control block drop-arr select-sty" required>
                                           <option disabled selected value="">Income Category</option>
                                           <option value="009">INSURANCE</option>
@@ -678,33 +792,51 @@
                                           <option value="101">SEP: OTHERS</option>
                                           </select>
                                         </div>
+                                      </div>
                                         
                                     </div>
                                     <hr>
                                 </div>
                                  
-
-
-                                     
-                                     
-                                     
-                                
-                              
-                                        
-                                        <div class="col-md-12">
-                                        &nbsp;&nbsp;&nbsp;&nbsp;<a class="btn btn-primary btn-outline with-arrow animate-box fadeInUp animated  dis-tbl" id="tata_capital_submit"  >Confirm & Continue<i class="icon-arrow-right"></i></a>
-                                    <!-- <div class="iframeloading" style= "display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
+                                      <div class="col-md-12">
+                                        &nbsp;&nbsp;&nbsp;&nbsp;<a class="btn btn-primary btn btn-sm" id="tata_capital_submit"  >Confirm & Continue<i class="icon-arrow-right"></i></a>
+                                    <div class="iframeloading" style= "display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
                 <img src="{{URL::to('images/ajaxloader.gif')}}" alt="Loader" title="Loader" style="top: 50%; position: relative; left: 50%;"  />
-               </div> -->
+               </div>
                                    
                                 
                             </form>
+                    
+
+
+
+
+
+
+
+
+
+
+
+                                     
+                                     
+                                     
+                                
                     </div>
                     <hr>
                     </div>
+                  </form>
+                </div>
+              </div>
+
                     
 
                 </div>
+              </div>
+            </h1>
+          </div>
+        </div>
+
             </div>
         </div>  
     </div>
@@ -761,7 +893,34 @@
         <h4 class="modal-title">Details</h4>
       </div>
       <div class="modal-body">
-        <h4><p id="modalerr"><h5 style="color: black">You Are Eligible for:<b>Max Loanamt:<span id="nMaxLoanAmount"></span>&nbps;<b>Min Loanamt:<span id="nMinLoanAmount"></span><br><b>Min Tenure:<span id="nMinTenureMonths">months</span><br><b>Min Tenure:<span id="nMinTenureYears">years</span><br><b>Max EMI:<span id="nMaxEMI"></span><br><b>Max FOIR:<span id="nMaxFOIR"></span><br><b>Info:<span id="cInfo"></span><h5></p></h4>
+        <h4><p id="modalerr"><h5 style="color: black">You Are Eligible for:<br><b>Max Loanamt:<span id="nMaxLoanAmount"></span><br><b>Min Loanamt:<span id="nMinLoanAmount"></span><br><b>Min Tenure:<span id="nMinTenureMonths">months</span><br><b>Min Tenure:<span id="nMinTenureYears">years</span><br><b>Max EMI:<span id="nMaxEMI"></span><br><b>Max FOIR:<span id="nMaxFOIR"></span><br><b>Info:<span id="cInfo"></span><h5></p></h4>
+
+        <p>Kindly fill the below details to proceed.</p>
+        
+      </div>
+
+       
+      
+      
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" tabindex="-1" role="dialog" id="doc_popup">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Confirmation Status</h4>
+      </div>
+      <div class="modal-body">
+        <h4><p id="modalerr"><h5 style="color: black">Documents Uploaded Successfully.<h5></p></h4>
+        
+      </div>
+
+      <div class="modal-footer">
+        <a type="button" id="doc" name="okae" class="btn btn-primary">OK</a>
         
       </div>
       
@@ -778,17 +937,19 @@
         <h4 class="modal-title">Document Upload</h4>
       </div>
       <div class="modal-body">
+
            <form name="document_upload_form" id="document_upload_form" enctype="multipart/form-data"  method="post">
           {{ csrf_field() }}
-               <input type="text" name="webtopNo" id="web_top_no">
+               <input type="hidden" name="webtopNo" id="web_top_no">
               
-                  <table class="table table-striped">
+                <div class="row">
+                                    <div class="form-group">
                     
-                   <tr >
-                     <td><b>ID Proof</b></td>
-                     <td>
-                      <select  class="pad" id="identity_proof" name="docUploadType[]" required>
-                      <option disabled selected  value="0">Select</option>
+                     
+                      <div class="col-md-6 col-sm-12 col-xs-12">
+                                    <div class="form-group">
+                      <select  class="form-control" id="identity_proof" name="docUploadType[]" required>
+                      <option disabled selected  value="0">ID Proof</option>
                       <option value="Aadhar Card">Aadhar Card</option>
                       <option value="Bank Pass Book with photograph">Bank Pass Book with photograph</option>
                       <option value="Bankers Certificate with Photo attested">Bankers Certificate with Photo attested</option>
@@ -797,15 +958,23 @@
                       <option value="Passport">Passport</option>
                        <option value="Photo ID Card (Credit or Debit or  Kisan)">Photo ID Card (Credit or Debit or  Kisan)</option>
                       </select class="pad">
-                     </td>
-                     <td><input type="file" name="docUploadName[1]" id="identity" class="pull-right" required="" data-category="1"> <!-- <a class="btn btn-success btn-outline with-arrow mrg-top" id="reset_1">Reset<i class="icon-arrow-right"></i></a> --></td>
-                   </tr>
+                  </div>
+              </div>
 
-                   <tr>
-                     <td><b>Address Proof</b></td>
-                     <td>
-                      <select  class="pad" id="address_proof" name="docUploadType[]" required>
-                      <option disabled selected  value="0">Select</option>
+                <div class="col-md-6 col-sm-12 col-xs-12">
+                                    <div class="form-group">
+                     <input type="file"  name="docUploadName[]" id="identity" class="form-control" required="" data-category="1">
+                     </div>
+                     </div>
+                      <!-- <a class="btn btn-success btn-outline with-arrow mrg-top" id="reset_1">Reset<i class="icon-arrow-right"></i></a> -->
+                 
+
+                  
+                    
+                    <div class="col-md-6 col-sm-12 col-xs-12">
+                                    <div class="form-group"> 
+                      <select  class="form-control" id="address_proof" name="docUploadType[]" required>
+                      <option disabled selected  value="0">Address Proof</option>
                       <option value="Electricity Bill">Electricity Bill</option>
                       <option value="Gas Connection Bill">Gas Connection Bill</option>
                       <option value="Leave and License Agreement (Registered)">Leave and License Agreement (Registered)</option>
@@ -819,16 +988,22 @@
                       <option value="MOA and AOA (Companies)">MOA and AOA (Companies)</option>
                       <option value="Property registration document">Property registration document</option>
                       </select class="pad">
-                      </td>
-                     <td><input type="file" name="docUploadName[2]" id="address" class="pull-right" required="" data-category="2">
-                     <!-- <a class="btn btn-success btn-outline with-arrow mrg-top" id="reset_2">Reset<i class="icon-arrow-right"></i></a> --></td>
-                    </tr>
+                  </div>
+              </div>
+              <div class="col-md-6 col-sm-12 col-xs-12">
+                                    <div class="form-group">
+                     <input type="file" name="docUploadName[]" id="address" class="form-control" required="" data-category="2">
+                 </div>
+             </div>
 
-                    <tr>
-                     <td><b>Income Proof</b></td>
-                     <td>
-                      <select  class="pad" id="income_proof" name="docUploadType[]" required>
-                      <option disabled selected  value="0">Select</option>
+                     <!-- <a class="btn btn-success btn-outline with-arrow mrg-top" id="reset_2">Reset<i class="icon-arrow-right"></i></a> -->
+                   
+
+          
+                    <div class="col-md-6 col-sm-12 col-xs-12">
+                                    <div class="form-group"> 
+                      <select  class="form-control" id="income_proof" name="docUploadType[]" required>
+                      <option disabled selected  value="0">Income Proof</option>
                       <option value="AppointmentIncrement Letter">AppointmentIncrement Letter</option>
                       <option value="Audit or Provisional Breakup">Audit or Provisional Breakup</option>
                       <option value="Audited Financials year -1">Audited Financials year -1</option>
@@ -848,15 +1023,22 @@
                       <option value="Salary Slips">Salary Slips</option>
                       <option value="Tax Audit report">Tax Audit report</option>
                       </select class="pad">
-                     </td>
-                     <td><input type="file" name="docUploadName[3]" id="income" class="pull-right" required data-category="3"> <!-- <a class="btn btn-success btn-outline with-arrow mrg-top" id="reset_3">Reset<i class="icon-arrow-right"></i></a> --></td>
-                    </tr>
+                  </div>
+              </div>
 
-                    <tr>
-                     <td><b>Other Documents</b></td>
-                     <td>
-                      <select  class="pad" id="other_documents" name="docUploadType[]" required>
-                      <option disabled selected  value="0">Select</option>
+                   <div class="col-md-6 col-sm-12 col-xs-12">
+                                    <div class="form-group">
+                  <input type="file" name="docUploadName[]" id="income" class="form-control" required data-category="3">
+                  </div>
+                  </div>
+                   <!-- <a class="btn btn-success btn-outline with-arrow mrg-top" id="reset_3">Reset<i class="icon-arrow-right"></i></a> -->
+                   
+
+                 
+                   <div class="col-md-6 col-sm-12 col-xs-12">
+                                    <div class="form-group">  
+                      <select  class="form-control" id="other_documents" name="docUploadType[]" required>
+                      <option disabled selected  value="0">Other Documents</option>
                       <option value="Approval COM Name Mismatch">Approval COM Name Mismatch</option>
                       <option value="Approval DOB Mismatch">Approval DOB Mismatch</option>
                       <option value="Approval SM Confirmation">Approval SM Confirmation</option>
@@ -873,14 +1055,26 @@
                       <option value="Tata AIA Group Mediprime">Tata AIA Group Mediprime</option>
                       <option value="Waiver Approval">Waiver Approval</option>
                       </select class="pad">
-                     </td>
-                     <td><input type="file" name="docUploadName[4]" id="other_doc" class="pull-right" required data-category="4"> <!-- <a class="btn btn-success btn-outline with-arrow mrg-top" id="reset_4">Reset<i class="icon-arrow-right"></i></a> --></td>
-                    </tr>
-                    </table>
+                  </div>
+              </div>
+              <div class="col-md-6 col-sm-12 col-xs-12">
+                                    <div class="form-group">
+                    <input type="file" name="docUploadName[]" id="other_doc" class="form-control" required data-category="4">
+                    </div>
+                    </div>
+
+                     </div>
+                       </div>
+
+                     <!-- <a class="btn btn-success btn-outline with-arrow mrg-top" id="reset_4">Reset<i class="icon-arrow-right"></i></a> -->
+                 
+           
 
                   <!-- <span id="statement"></span> -->
                   <div style="text-align: center;">
-                                <a class="btn btn-danger btn-outline with-arrow mrg-top" id="tatacapital_doc">Submit<i class="icon-arrow-right"></i></a></div>
+                                <a class="btn btn-danger btn btn-sm" id="tatacapital_doc">Submit</a></div>
+
+                           
 
                                 
 
@@ -1201,28 +1395,6 @@
 </script>
 
 
-<!-- <script type="text/javascript">   
-
- $.ajax({ 
-   url: "{{URL::to('tata-capital-city')}}",
-   method:"GET",
-   success: function(datas)  
-   {
-   var data=$.parseJSON(datas);
-   console.log(data);
-   if(data)
-      {      $.each(data, function( index, value ) {
-            $('#empCity').append('<option value="'+value.los_city_id+'">'+value.city_name+'</option>');
-
-        }); 
-    }else{
-      $('#empCity').empty().append('No Result Found');
-    }
-
-   },
-
- });
-</script> -->
 
 <script type="text/javascript">   
 
@@ -1279,7 +1451,7 @@
 
 <script type="text/javascript">
   $('#tatacapital_doc').click(function(){
-        // alert('ok');
+        //alert('ok');
        if(! $('#document_upload_form').valid()){
              // alert('not valid');
 
@@ -1295,14 +1467,14 @@
           processData: false,
           contentType: false,
           success: function(msg){
-             console.log(msg.status);
+             console.log(msg.RetStatus);
              if (msg.RetStatus=="SUCCESS") 
              {
              
-             alert("Documents Uploaded Successfully");
+             $('#doc_popup').modal('show');
              }
              else{
-              alert("Only Pdf are allowed");
+              alert("Your Documents Could not be Uploaded");
              }
             
               
@@ -1446,6 +1618,12 @@
       }   
      });
       }
+  });
+</script>
+
+<script type="text/javascript">
+  $('#doc').click(function(){
+    window.location.href ="{{URL::to('thank-you')}}";
   });
 </script>
 

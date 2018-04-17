@@ -1334,6 +1334,110 @@ $url = $this::$url_static."/BankAPIService.svc/updateIIFLRevisedQuote";
    {
      return view('flexi-loans');
    }
+
+
+/*Flexi Token*/
+   public function flexi_loans_token(Request $req){
+   
+        $data=$req->all();
+        $post_data=json_encode($data);
+       
+        $url = $this::$url_static."/BankAPIService.svc/getFlexiLoanToken";
+        $result=$this->call_json_data_api($url,$post_data);
+        $http_result=$result['http_result'];
+        $error=$result['error'];
+        $st=str_replace('"{', "{", $http_result);
+        $s=str_replace('}"', "}", $st);
+        $m=$s=str_replace('\\', "", $s);
+        // print_r($http_result);exit();
+        $obj=json_decode($m);
+        return response()->json( $obj);
+    }
+
+
+/*Flexi Partner List*/
+    public function flexi_loans_partner_list(Request $req){
+        // $data=$req->all();
+        // print_r($data);exit();
+        $url = $this::$url_static."/BankAPIService.svc/getFlexiLoanPartnerList";
+        $result=$this->call_json_data_get_api($url,null);
+        $http_result=$result['http_result'];
+        // print_r($http_result);exit();
+        $error=$result['error'];
+        $st=str_replace('"{', "{", $http_result);
+        $s=str_replace('}"', "}", $st);
+        $m=$s=str_replace('\\', "", $s);
+        
+        $obj=json_decode($m);
+        return response()->json( $obj);
+    }
+
+
+/*Flexi Create Application*/
+    public function flexi_loans_appln(Request $req){
+         // print_r($req->all());exit();
+         $data=$req->all();
+         $post_data=json_encode($data);
+         $url = $this::$url_static."/BankAPIService.svc/CreateFlexiLoanAppln";
+         $result=$this->call_json_data_api($url,$post_data);
+         $http_result=$result['http_result'];
+         $error=$result['error'];
+         $st=str_replace('"{', "{", $http_result);
+         $s=str_replace('}"', "}", $st);
+         $m=$s=str_replace('\\', "", $s);
+         // print_r($http_result);exit();
+         $obj=json_decode($m);
+         return response()->json( $obj);
+    }
+
+    /*Flexi Update Application*/
+    public function flexi_loans_appln_update(Request $req){
+      $post_data= '{
+    "access_token":"'.$req->access_token.'",
+    "loanCode":"'.$req->loanCode.'",
+    "params": {
+        "customer_code": "'.$req->customerCode.'",
+        "name": "'.$req->name.'",
+        "email": "'.$req->email.'",
+        "mobileNo": "'.$req->mobileNo.'",
+        "dob": "'.$req->dob.'",
+        "gender": "'.$req->gender.'",
+        "amount": "'.$req->amount.'",
+        "pan": "'.$req->pan.'",
+        "monthly_turnover": "'.$req->monthly_turnover.'",
+        "partner_code": "'.$req->partner_code.'",
+        "loan_type": "'.$req->loan_type.'",
+        "address_flat_no":"'.$req->address_flat_no.'",
+        "address_building": "'.$req->address_building.'",
+        "address_area": "'.$req->address_area.'",
+        "address_landmark": "'.$req->address_landmark.'",
+        "address_pincode": "'.$req->address_pincode.'",
+        "address_city": "'.$req->address_city.'",
+        "address_state": "'.$req->address_state.'",
+        "address_ownership_status": "'.$req->address_ownership_status.'",
+        "address_living_since": "'.$req->address_living_since.'",
+        "cloneLoanCode": "",
+        "clone": "false",
+        "legal_status": "'.$req->legal_status.'",
+        "partner_count": "'.$req->partner_count.'",
+    }
+}';
+
+    
+    // print_r($post_data);
+         $url = $this::$url_static."/BankAPIService.svc/UpdateFlexiLoanAppln";
+         $result=$this->call_json_data_api($url,$post_data);
+         $http_result=$result['http_result'];
+         $error=$result['error'];
+         $st=str_replace('"{', "{", $http_result);
+         $s=str_replace('}"', "}", $st);
+         $m=$s=str_replace('\\', "", $s);
+         print_r($http_result);exit();
+         $obj=json_decode($m);
+         return response()->json( $obj); 
+
+
+  }
    
 
 

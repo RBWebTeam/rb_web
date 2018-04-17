@@ -435,3 +435,7 @@ Route::post('tata-capital-documents','TataCapitalLoanController@tata_capital_doc
 
 /*Flexi*/
 Route::get('flexi-loans','LoanController@flexi');
+Route::post('flexi-loans-token','LoanController@flexi_loans_token');
+Route::get('flexi-loans-partner-list','LoanController@flexi_loans_partner_list');
+Route::post('flexi-loans-appln','LoanController@flexi_loans_appln');
+Route::post('flexi-loans-appln-update','LoanController@flexi_loans_appln_update');

@@ -398,9 +398,9 @@ Route::get('test-equifax','TestController@test');
 Route::get('equifax-verification','EquifaxController@equifax_verification');
 Route::post('equifax-send-otp','EquifaxController@equifax_send_otp');
 Route::post('equifax-verify','EquifaxController@equifax_verify_otp');
-Route::get('equifax1','EquifaxController@equifax');
-Route::post('equifax-query','EquifaxController@equifax_query');
-Route::get('equifax-test','EquifaxController@equifax_test');
+// Route::get('equifax1','EquifaxController@equifax');
+// Route::post('equifax-query','EquifaxController@equifax_query');
+// Route::get('equifax-test','EquifaxController@equifax_test');
 
 
 
@@ -439,3 +439,9 @@ Route::post('flexi-loans-token','LoanController@flexi_loans_token');
 Route::get('flexi-loans-partner-list','LoanController@flexi_loans_partner_list');
 Route::post('flexi-loans-appln','LoanController@flexi_loans_appln');
 Route::post('flexi-loans-appln-update','LoanController@flexi_loans_appln_update');
+
+
+/*Demo*/
+Route::get('equifax1','EquifaxController@equifax');
+Route::post('equifax-query','EquifaxController@equifax_query');
+Route::get('equifax-test','EquifaxController@equifax_test');

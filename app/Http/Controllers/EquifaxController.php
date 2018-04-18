@@ -20,22 +20,22 @@ class EquifaxController extends CallApiController
   // }
 
 
-  public function equifax()
-  {
-    $inquiry=DB::select('select * from equifax_inquiry_purpose');
-    $state=DB::select('select * from equifax_state_master');
-    $phone=DB::select('select * from equifax_phone_type');
-    //print "<pre>";
-    //print_r($inquiry);
-    //print_r($state);
-    //print_r($phone);
-    //exit();
-    return view('equifax')->with(['inq'=>$inquiry,'state'=>$state,'phone'=>$phone]);
-  }
+  // public function equifax()
+  // {
+  //   $inquiry=DB::select('select * from equifax_inquiry_purpose');
+  //   $state=DB::select('select * from equifax_state_master');
+  //   $phone=DB::select('select * from equifax_phone_type');
+  //   //print "<pre>";
+  //   //print_r($inquiry);
+  //   //print_r($state);
+  //   //print_r($phone);
+  //   //exit();
+  //   return view('equifax')->with(['inq'=>$inquiry,'state'=>$state,'phone'=>$phone]);
+  // }
 
 
   public function equifax_query(Request $req){
-
+// print_r($req->all());exit();
 
 // echo system("echo %cd%");exit;
 
@@ -155,6 +155,7 @@ $post_data='{
  // print_r($post_data);exit();
         $result=$this->call_json_data_api("http://api.rupeeboss.com/EquifaxAPIService.svc/createCreditReportReq",$post_data);
         $http_result=$result['http_result'];
+            // print_r($result);exit();
         
 
         $xml = simplexml_load_string($http_result);
@@ -177,16 +178,23 @@ $post_data='{
             $score=$xml_S->ReportData->Score->Value;
           }
         $tt=file_put_contents(public_path("input/xxx.xml"),$xml);
-        $command="java -Xms256m -Xmx512m -jar MParser-6.2.0.jar xxx.xml";
-        $x=exec($command);
-        
+        $process = new Process('java -Xms256m -Xmx512m -jar MParser-6.2.0.jar xxx.xml');
+        $process->run();
+        if (!$process->isSuccessful()) {
+          
+            throw new ProcessFailedException($process);
+        }else{
           $status=1;
+        }
+        
+          
         }
 
 
 
 
-       $name="Hit_".$PANId.".pdf";
+       $name="Hit_".strtoupper($PANId).".pdf";
+       // print_r($name);exit();
         // $name=$x;
           
          }catch (\Exception $e) {
@@ -253,64 +261,9 @@ $post_data='{
                         ));
         }
  }
-        
-  public function equifax_test(Request $req){
 
 
-// echo system("echo %cd%");exit;
-
-//file_put_contents(public_path("input/xxx.xml"),$http_result);
-    $status=0;
-    $name="";
-    $err="";
-    $score=0;
-
-try{
-
-        $file="equifax-xml-response.xml";
-        //print_r(file_exists($file));exit();
-        if (file_exists($file)) {
-          flush();
-          
-          $handle=fopen($file, "r");
-          $xml=fread($handle, filesize($file));
-        }
-        $xml_S=simplexml_load_string($xml);
-       
-        if($xml_S->ReportData->Error->ErrorMsg){
-          $err=$xml_S->ReportData->Error->ErrorMsg;
-          $status=1;
-        }else{
-
-          if(isset($xml_S->ReportData->Score->Value)){
-            $score=$xml_S->ReportData->Score->Value;
-          }
-        $tt=file_put_contents(public_path("input/xxx.xml"),$xml);
-        $command="java -Xms256m -Xmx512m -jar MParser-6.2.0.jar xxx.xml";
-        $x=exec($command);
-
-          $status=1;
-        }
-
-
-
-
-       $name="Hit_".$PANId.".pdf";
-        // $name=$x;
-          
-         }catch (\Exception $e) {
-          $err=$e->getMessage();
-          $status=0;
-           
-         }
-  
-        $arr=['name'=>$name,'error'=>$err,'score'=>$score,'status'=>$status];
-    return response()->json($arr);  
-
-      
-  }
-
-  public function rectifycredit(){
+         public function rectifycredit(){
         return view('rectifycredit');
  }
 
@@ -341,5 +294,22 @@ try{
        return response()->json( $obj);
 
  }
+
+       public function rectify_credit(){
+        return view('rectify-credit');
+ }
+
+
+ public function equifax(){
+ $inquiry=DB::select('select * from equifax_inquiry_purpose');
+    $state=DB::select('select * from equifax_state_master');
+    $phone=DB::select('select * from equifax_phone_type');
+    
+    return view('equifax')->with(['inq'=>$inquiry,'state'=>$state,'phone'=>$phone]);
+ }
+
+
+        
+
   
 }

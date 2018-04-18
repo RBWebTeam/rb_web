@@ -260,7 +260,7 @@ setInterval(blink_text, 1000);
        
         <li>
             <img src="images/phone-circle.png" width="32" height="32">
-            <p><a href="tel:1800267629" target="_blank">Call Us on<br>1800267629</a></p>
+            <p><a data-toggle="modal" data-target="#myModaltest1" target="_blank">Call Us on<br>1800267629</a></p>
         </li>
 
         <li>
@@ -286,7 +286,7 @@ setInterval(blink_text, 1000);
 
         <li>
             <img src="images/linkedin-circle.png" width="32" height="32">
-            <p><a href="https://www.linkedin.com/company/codexworld" target="_blank">Follow Us on<br>LinkedIn</a></p>
+            <p><a href="https://www.linkedin.com/company/rupeeboss/" target="_blank">Follow Us on<br>LinkedIn</a></p>
         </li>
 
        

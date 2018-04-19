@@ -121,7 +121,7 @@ h4 {color:#999;}
 
 	  <div class="col-md-3">
 	  <label>State <span class="mandtry"> *</span></label>
-	  <input type="text" name="address_state" id="address_state" onkeypress="return AllowAlphabet(event)"  class="form-control" required="">
+	  <input type="text" name="address_state" id="address_state" onkeypress="return AllowAlphabet(event)"  class="form-control search_statenm" required="">
 	  </div>
 	  
 	  
@@ -734,6 +734,49 @@ h4 {color:#999;}
     }
     }
     </script>
+    <!-- State Dropdown -->
+    <script type="text/javascript">
+  
+
+ $(document).ready(function(){
+    
+    $(".search_statenm").autocomplete({
+      source: function(request, response) {
+        
+        $.ajax({
+          url: "{{ route('searchstateajax') }}",
+          dataType: "json",
+          data: {
+            term : request.term
+          },
+          success: function(data) {
+           
+
+            response(data);
+            
+          }
+        });
+      },
+      change: function (event, ui) {
+        if (ui.item == null || ui.item == undefined || ui.item.value=='No Result Found') {
+          $(".search_statenm").val("");
+          $(".search_statenm").attr("disabled", false);
+         
+        }else{
+
+         
+         $(".Q6").show();
+         
+          
+             }
+           }
+
+        
+      });
+   });
+
+</script>
+
 
 
 <!-- API -->

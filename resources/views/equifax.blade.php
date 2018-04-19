@@ -24,7 +24,7 @@
                                 
                                 <div class="col-md-offset-2 col-md-8 col-sm-12 col-xs-12" >
                                 <div class="mb60  section-title text-center  ">
-                                <h1 class=""><center>Equifax credit Score</center></h1>
+                                <h1 class=""><center>Equifax Credit Score</center></h1>
                                 
                                 </div>
                                 </div>
@@ -32,10 +32,10 @@
                                 <div class="row">    
                        
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding-bottom: 20px">
-                    <div class="how-it-block1 bg-boxshadow" style=" min-height: 830px;">
+                    <div class="how-it-block1 bg-boxshadow" style=" min-height: 920px;">
                      <form id="equifax_form" method="POST" >
                      {{ csrf_field() }}
-                        <div class="col-md-12"><h4 >Consumer Name And Address </h4></div>
+                        <div class="col-md-12"><h4 >CONSUMER NAME AND ADDRESS </h4></div>
                        
                             <!-- Text input-->
                             <div class="col-md-12" style="display: none;">
@@ -85,6 +85,19 @@
                             </div>
                             </div>
 
+                          <div class="col-md-4 col-sm-12 col-xs-12">
+                           <div class="form-group">
+                           <!-- <label class="control-label sr-only" for="Gender">Gender</label>
+                           <select id="Gender" name="Gender" class="form-control dropdown" required>
+                          <option selected disabled="">Select Gender</option> 
+                          <option value="1">Male</option>
+                          <option value="2">Female</option>
+                          </select> -->
+                          <b>Gender</b>:&nbsp;
+                          <input type="radio" value="1" name="Gender" checked="checked" >&nbsp; Male  &nbsp; <input type="radio" value="2" name="Gender">&nbsp;Female                                  
+                          </div>
+                          </div>
+
 
                             <hr style="color:transparent; width:100%">
 
@@ -98,6 +111,7 @@
         
         <div class="col-md-12">ADDRESS INFORMATION </div>
       </h4>
+      <br>
     </div>
     <div>
       <div >
@@ -166,7 +180,7 @@
 </div>
                          
 
-                           <div class="col-md-12"> <h4 >Consumer id And Personal Information</h4></div>
+                           <div class="col-md-12"> <h4 >CONSUMER ID AND PERSONAL INFORMATION</h4></div>
 
                             <div class="col-md-4 col-sm-12 col-xs-12">
                             <div class="form-group">
@@ -194,19 +208,10 @@
                             </div>
                             <div class="col-md-4 col-sm-12 col-xs-12">
                             <div class="form-group">
-                                 <input type="text" class=" form-control input-md lastReporteddob" name="DOB" id="DOB" placeholder="Date Of Birth"  required>
+                                 <input type="text" class=" form-control input-md lastReporteddob" name="DOB" id="DOB" placeholder="Date Of Birth" readonly required>
                             </div>
                             </div>
-                            <div class="col-md-4 col-sm-12 col-xs-12">
-                           <div class="form-group">
-                           <label class="control-label sr-only" for="Gender">Gender</label>
-                           <select id="Gender" name="Gender" class="form-control dropdown" required>
-                          <option selected disabled="">Select Gender</option> 
-                          <option value="1">Male</option>
-                          <option value="2">Female</option>
-                          </select>
-                           </div>
-                          </div>
+                            
                           
                           <div class="col-md-4 col-sm-12 col-xs-12">
                            <div class="form-group">
@@ -233,7 +238,7 @@
                             
                              <div class="col-md-4 col-sm-12 col-xs-12">
                             <div class="form-group">
-                                <input type="text" name="AccountNumber[0]" id="" mixnlength="11" maxlength="16" placeholder="Saving/Current Account No" class="form-control input-md"  required>
+                                <input type="text" name="AccountNumber[0]" id="Acc_no" maxlength="16" placeholder="Saving/Current Account No" class="form-control input-md"  required>
                            
                             </div>
                             </div>
@@ -270,9 +275,10 @@
 
                               <div class="col-md-12 white-bg ">
            <div class="col-md-12">
-                    <input type="checkbox"  name="terms" required>
+                    <p><input type="checkbox"  name="terms" required>
                                             I hereby confirm that I have read and understood the <b>Rupeeboss Terms</b> and Conditions applicable to this service and that all the details furnished by me above are true and correct.
-                                            I further provide consent to Rupeeboss and its affiliates to contact me with reference to financial products and this consent shall override any registration with DNC/NDNC.
+                                            I further provide consent to Rupeeboss and its affiliates to contact me with reference to financial products and this consent shall override any registration with DNC/NDNC.</p>
+                                             <br>
                                             </div>
                                             </div>
                                             
@@ -482,4 +488,37 @@
       });
    });
 
+</script>
+
+<!-- To Prevent Special Characters -->
+<script type="text/javascript">
+$('#PANId').bind('keypress', function(e) {
+    // console.log( e.which );
+    if($('#PANId').val().length == 0){
+        var k = e.which;
+        var ok = k >= 65 && k <= 90 || // A-Z
+            k >= 97 && k <= 122 || // a-z
+            k >= 48 && k <= 57; // 0-9
+        
+        if (!ok){
+            e.preventDefault();
+        }
+    }
+}); 
+</script>
+
+<script type="text/javascript">
+$('#Acc_no').bind('keypress', function(e) {
+    // console.log( e.which );
+    if($('#Acc_no').val().length == 0){
+        var k = e.which;
+        var ok = k >= 65 && k <= 90 || // A-Z
+            k >= 97 && k <= 122 || // a-z
+            k >= 48 && k <= 57; // 0-9
+        
+        if (!ok){
+            e.preventDefault();
+        }
+    }
+}); 
 </script>

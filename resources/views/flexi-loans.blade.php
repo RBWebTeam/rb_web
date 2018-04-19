@@ -59,7 +59,7 @@ h4 {color:#999;}
         <div class="panel-body">
 		<div class="col-md-3">
 		<label>Full Name<span class="mandtry"> *</span></label>
-		<input type="text" name="name" id="name" onkeypress="return AllowAlphabet(event)" class="form-control" required="">
+		<input type="text" name="name" id="f_name" onkeypress="return AllowAlphabet(event)" class="form-control" required="">
 		</div>
 
 	  <div class="col-md-3">
@@ -116,7 +116,7 @@ h4 {color:#999;}
 
 	  <div class="col-md-3">
 	  <label>City<span class="mandtry"> *</span></label>
-	  <input type="text" name="address_city" id="address_city" onkeypress="return AllowAlphabet(event)"  class="form-control" required="">
+	  <input type="text" name="address_city" id="address_city" onkeypress="return AllowAlphabet(event)"  class="form-control search_city" required="">
 	  </div>
 
 	  <div class="col-md-3">
@@ -148,7 +148,7 @@ h4 {color:#999;}
 	   
 	   <div class="col-md-3">
 	   <label>Personal PAN Number<span class="mandtry"> *</span></label>
-	   <input type="text" name="pan" id="pan" oninput="pan_card('pan')" minlength="10" maxlength="10" class="form-control" required="">
+	   <input type="text" name="pan" style="text-transform:uppercase" id="pan" oninput="pan_card('pan')" minlength="10" maxlength="10" class="form-control" required="">
 	   <span id="pan_number" style="display:none;color: red; font-size: 10px;">Oops.Please Enter Valid Pan Number.!!</span>
 	   </div>
 
@@ -338,7 +338,7 @@ h4 {color:#999;}
 	  
         <div class="col-md-3">
         <label>Loan Via<span class="mandtry"> *</span></label>
-        <select class="form-control input-md partner_code" name="partner_code"   required>
+        <select class="form-control input-md partner_code" name="partner_code" id="partner_list" required>
         <option disabled selected value="">Select Partner</option>
         </select>
         </div>
@@ -799,9 +799,9 @@ $(document).ready(function(){
        	} 
        	else 
        	{   
-       		var name = $('#name').val();
-       		console.log(name);
-       		$('#full_name').val(name);
+       		var f_name = $('#f_name').val();
+       		console.log(f_name);
+       		$('#full_name').val(f_name);
 
        		var mobileNo = $('#mobileNo').val();
        		console.log(mobileNo);
@@ -867,6 +867,10 @@ $(document).ready(function(){
        		console.log(legal_status);
        		$('#status').val(legal_status);
 
+       		var partner_code=$('.partner_code').val();
+       		console.log(partner_code);
+       		$('#partner_list').val(partner_code);
+
        		
        		
           $.ajax({  
@@ -910,6 +914,9 @@ $(document).ready(function(){
          	if (msg.success==true) 
          	{
               alert('Your Application has been updated');
+         	}else
+         	{
+             alert(msg.error);
          	}
          
 					

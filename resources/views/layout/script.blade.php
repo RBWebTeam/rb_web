@@ -1881,7 +1881,7 @@ function mobile_valid(element){
             <div class="col-md-6 col-sm-12 col-xs-12">
                              <div class="form-group">
                               <label>Name</label>
-                                <input type="text" class="form-input-new form-control" name="name" id="name" placeholder="Name" autofocus="autofocus" required>
+                                <input type="text" class="form-input-new form-control" name="name" id="nmne" placeholder="Name" autofocus="autofocus" required>
                              </div>
                              </div>
             
@@ -1889,7 +1889,7 @@ function mobile_valid(element){
             <div class="col-md-6 col-sm-12 col-xs-12">
                              <div class="form-group">
                               <label>Email</label>
-                                 <input type="email" class="form-input-new form-control" name="email" id="email" placeholder="Email" required>
+                                 <input type="email" class="form-input-new form-control" name="email" id="login_form_email" placeholder="Email" required>
                              </div>
                              </div>
 
@@ -1898,7 +1898,7 @@ function mobile_valid(element){
                             <div class="col-md-6 col-sm-12 col-xs-12">
                              <div class="form-group">
                               <label>Contact</label>
-                                <input type="text" class="form-input-new form-control" name="contact" id="contact" placeholder="Mobile" pattern="[789][0-9]{9}" required maxlength="10" minlength="10" onkeypress="return fnAllowNumeric(event)" required>
+                                <input type="text" class="form-input-new form-control" name="contact" id="contact_send_otp" placeholder="Mobile" pattern="[789][0-9]{9}" required maxlength="10" minlength="10" onkeypress="return fnAllowNumeric(event)" required>
                              </div>
                              </div>
 
@@ -1995,7 +1995,7 @@ function mobile_valid(element){
           <h4 class="modal-title">Enter OTP</h4>
           <form id="contactus_otp_form" class="form-horizontal">
            {{ csrf_field() }}
-           <input type="tel" class="form-control" name="otp" id="otp" minlength="6" maxlength="6" required onkeypress="return fnAllowNumeric(event)">
+           <input type="tel" class="form-control" name="otp" id="onetimepassword" minlength="6" maxlength="6" required onkeypress="return fnAllowNumeric(event)">
            <span id='otp_errs' class= 'displaynonemsg' >oops!! OTP is wrong</span><br>
            <button class="btn btn-default"  class="form-control" id="contactus_verify_otp" >Verify</button><br>
          </form>

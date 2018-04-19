@@ -265,17 +265,17 @@ $(document).ready(function(){
                  {{ csrf_field() }}
 
                   <div class="form-group">
-                    <input type="text" name="name" id="name" tabindex="1" class="form-control" placeholder="Username" >
+                    <input type="text" name="name" id="name_register" tabindex="1" class="form-control" placeholder="Username" >
                       <span id="errorName" class="error-msg"></span>
                   </div>
 
                   <div class="form-group">
-                    <input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="Email Address"  >
+                    <input type="email" name="email" id="email_register" tabindex="1" class="form-control" placeholder="Email Address"  >
                     <span id="errorEmail"  class="error-msg" ></span>
                   </div>
 
                    <div class="form-group">
-                    <input type="text" name="contact" id="contact" onkeypress="return fnAllowNumeric(event)" maxlength="10"  tabindex="1" class="form-control" placeholder="Mobile Number" >
+                    <input type="text" name="contact" id="contact_register" onkeypress="return fnAllowNumeric(event)" maxlength="10"  tabindex="1" class="form-control" placeholder="Mobile Number" >
                     <span id="errorcontact"  class="error-msg"></span>
                   </div>
 
@@ -304,7 +304,7 @@ $(document).ready(function(){
              <form class="forgot-form displaynone"  name="forgot_password_form" id="forgot_password_form"   method="post"  >
               {{ csrf_field() }}
                  <div class="form-group">
-                    <input type="text" name="email" id="email" tabindex="1" class="form-control" placeholder="Email ID" >
+                    <input type="text" name="email" id="f_email" tabindex="1" class="form-control" placeholder="Email ID" >
                     <span id="forgotpass"  class="text-danger"></span>
                   </div>
                     <div class="form-group">

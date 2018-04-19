@@ -86,13 +86,13 @@
 
                                         <div class="col-md-4 col-sm-12 col-xs-12" >
                                           <div class="form-group">
-                                            <input type="text" class="form-control lastReporteddob" id="dob" name="dob" placeholder="DOB" maxlength="10">
+                                            <input type="text" class="form-control lastReporteddob" id="dob" name="dob" placeholder="DOB">
                                           </div>  
                                         </div>
 
                                          <div class="col-md-4 col-sm-12 col-xs-12" >
                                            <div class="form-group">
-                                            <input type="text" class="form-control" id="pan" name="pan" oninput="pan_card('pan')" maxlength="10" placeholder="PAN Number" required>
+                                            <input type="text" class="form-control" id="pan" name="pan" oninput="pan_card('pan')" minlength="10" maxlength="10" placeholder="PAN Number" required style="text-transform:uppercase">
                                             <div id="pan_number" style="display:none;color: red; font-size: 10px">Oops.Please Enter Valid Pan Number.!!</div>
                                            </div>                                        
                                          </div>
@@ -116,34 +116,34 @@
 
                                          <div class="col-md-4 col-sm-12 col-xs-12">
                                             <div class="form-group">
-                                            <input type="text" class="form-control" id="resMobNo" name="resMobNo" placeholder="Mobile No" maxlength="10" onkeypress=" return fnAllowNumeric(event)" required>
+                                            <input type="text" class="form-control" id="resMobNo" name="resMobNo" placeholder="Mobile No" minlength="10" maxlength="10" onkeypress=" return fnAllowNumeric(event)" required>
                                             <div id="mob_no" style="display:none;color: red; font-size: 10px">Mobile No should be of 10 digits.</div>
                                             </div>
                                         </div>
 
                                         <div class="col-md-4 col-sm-12 col-xs-12">
                                             <div class="form-group">
-                                            <input type="text" class="form-control" id="resLandlineNo" name="resLandlineNo" placeholder="Home Phone" maxlength="10" onkeypress=" return fnAllowNumeric(event)">
+                                            <input type="text" class="form-control" id="resLandlineNo" name="resLandlineNo" placeholder="Home Phone" minlength="10" maxlength="10" onkeypress=" return fnAllowNumeric(event)">
                                             <div id="mob_no" style="display:none;color: red; font-size: 10px">Mobile No should be of 10 digits.</div>
                                             </div>
                                         </div>
 
                                         <div class="col-md-4 col-sm-12 col-xs-12">
                                             <div class="form-group">
-                                            <input type="text" class="form-control" id="resAddress1" name="resAddress1" placeholder="Address Line1" maxlength="200">
+                                            <input type="text" class="form-control" id="resAddress1" name="resAddress1" placeholder="Address Line 1" maxlength="200">
                                            </div>
                                         </div>
 
                                         <div class="col-md-4 col-sm-12 col-xs-12">
                                             <div class="form-group">
 
-                                            <input type="text" class="form-control" id="resAddress2" name="resAddress2" placeholder="Address Line2" maxlength="200" >
+                                            <input type="text" class="form-control" id="resAddress2" name="resAddress2" placeholder="Address Line 2" maxlength="200" >
                                             </div>
                                         </div>
 
                                         <div class="col-md-4 col-sm-12 col-xs-12">
                                             <div class="form-group">
-                                            <input type="text" class="form-control" id="resAddress3" name="resAddress3" placeholder="Address Line3" maxlength="200" >
+                                            <input type="text" class="form-control" id="resAddress3" name="resAddress3" placeholder="Address Line 3" maxlength="200" >
                                             </div>
                                         </div>
 
@@ -229,13 +229,13 @@
 
                                         <div class="col-md-4 col-sm-12 col-xs-12">
                                           <div class="form-group">                                        
-                                            <input type="text" class="form-control lastReporteddob" id="referralDob" name="referralDob" placeholder="Referral DOB" maxlength="10">
+                                            <input type="text" class="form-control lastReporteddob" id="referralDob" name="referralDob" placeholder="Referral DOB" >
                                           </div>                                            
                                         </div>
 
                                         <div class="col-md-4 col-sm-12 col-xs-12">
                                           <div class="form-group">
-                                            <input type="text" class="form-control" id="referralMob" name="referralMob" placeholder="Referral Mobile" maxlength="10" onkeypress=" return fnAllowNumeric(event)" >
+                                            <input type="text" class="form-control" id="referralMob" name="referralMob" placeholder="Referral Mobile" minlength="10" maxlength="10" onkeypress=" return fnAllowNumeric(event)" >
                                             <div id="mob_no" style="display:none;color: red; font-size: 10px">Mobile No should be of 10 digits.</div>
                                           </div>
                                         </div>
@@ -421,7 +421,7 @@
 
 <script type="text/javascript">
     var d = new Date();
-    var year = d.getFullYear()  ;
+    var year = d.getFullYear()-21  ;
     d.setFullYear(year);
 
     $(".lastReporteddob").datepicker({ dateFormat: "dd/mm/yy",

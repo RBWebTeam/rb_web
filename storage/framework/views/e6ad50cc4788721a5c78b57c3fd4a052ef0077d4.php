@@ -260,7 +260,7 @@ setInterval(blink_text, 1000);
        
         <li>
             <img src="images/phone-circle.png" width="32" height="32">
-            <p><a href="tel:1800267629" target="_blank">Call Us on<br>1800267629</a></p>
+            <p><a data-toggle="modal" data-target="#myModaltest1" target="_blank">Call Us on<br>1800267629</a></p>
         </li>
 
         <li>
@@ -286,7 +286,7 @@ setInterval(blink_text, 1000);
 
         <li>
             <img src="images/linkedin-circle.png" width="32" height="32">
-            <p><a href="https://www.linkedin.com/company/codexworld" target="_blank">Follow Us on<br>LinkedIn</a></p>
+            <p><a href="https://www.linkedin.com/company/rupeeboss/" target="_blank">Follow Us on<br>LinkedIn</a></p>
         </li>
 
        
@@ -785,17 +785,17 @@ setInterval(blink_text, 1000);
 
 
                   <div class="form-group">
-                    <input type="text" name="name" id="name" tabindex="1" class="form-control" placeholder="Username" >
+                    <input type="text" name="name" id="register_name" tabindex="1" class="form-control" placeholder="Username" >
                       <span id="errorName" class="error-msg"></span>
                   </div>
 
                   <div class="form-group">
-                    <input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="Email Address"  >
+                    <input type="email" name="email" id="mail" tabindex="1" class="form-control" placeholder="Email Address"  >
                     <span id="errorEmail"  class="error-msg" ></span>
                   </div>
 
                    <div class="form-group">
-                    <input type="text" name="contact" id="contact" onkeypress="return fnAllowNumeric(event)" maxlength="10"  tabindex="1" class="form-control" placeholder="Mobile Number" >
+                    <input type="text" name="contact" id="to_reach" onkeypress="return fnAllowNumeric(event)" maxlength="10"  tabindex="1" class="form-control" placeholder="Mobile Number" >
                     <span id="errorcontact"  class="error-msg"></span>
                   </div>
 
@@ -825,7 +825,7 @@ setInterval(blink_text, 1000);
               <?php echo e(csrf_field()); ?>
 
                  <div class="form-group">
-                    <input type="text" name="email" id="email" tabindex="1" class="form-control" placeholder="Email ID" >
+                    <input type="text" name="email" id="forgot_email" tabindex="1" class="form-control" placeholder="Email ID" >
                     <span id="forgotpass"  class="text-danger"></span>
                   </div>
                     <div class="form-group">

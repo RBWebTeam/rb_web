@@ -77,7 +77,7 @@ Route::post('term-loan/calculate','WorkingCapitalController@termcalculate');
 
 
 Route::post('working-capital-submit','WorkingCapitalController@working_capital_submit');
-Route::get('apply-tatacapital-loan','TataCapitalLoanController@apply_tatacapital_loan');
+
 
 
 Route::get('refresh-csrf', function(){
@@ -101,7 +101,8 @@ Route::get('disclaimer-page','HomeController@disclaimer');
 Route::get('privacy-policy-page','HomeController@privacy_policy');
 Route::get('balance-transfer','CompareController@switchme_mobile');
 Route::get('comfy-sales','ComfyController@comfy_sales');
-Route::get('express-loan','HomeController@express_loan');
+
+
 Route::get('calculators','HomeController@calculators');
 Route::get('credit-card','HomeController@credit_card');
 Route::get('savings-account','HomeController@savings_account');
@@ -114,7 +115,7 @@ Route::get('apply-express-loan','LoanController@apply_express_loan');
 Route::post('express-loan-send-otp','LoanController@express_send_otp');
 Route::post('express-loan-verify','LoanController@express_verify_otp');
 Route::post('aditya-express-loan','LoanController@express_form');
-Route::get('apply-iifl-loan','LoanController@apply_iifl_loan');
+
 Route::post('apply-iifl-loan-otp','LoanController@state');
 Route::post('apply-iifl-loan-dropdown','LoanController@dropdown');
 Route::post('apply-iifl-loan-applicant1','LoanController@applicant');
@@ -139,7 +140,7 @@ Route::post('personal-loan-calculation','CalculatorController@personal_loan_calc
 Route::get('home-loan-calculator','CalculatorController@home_loan_calculator');
 Route::post('home-loan-calculation','CalculatorController@home_loan_calculation');
 Route::get('fire-calculator','CalculatorController@fire_calculator');
-Route::get('lendingkart','LoanController@lendingkart');
+
 Route::post('lendingkart-details','LoanController@lendingkart_details');
 Route::post('lendingkart-doc-upload','LoanController@lendingkart_doc');
 Route::get('test_doc','LoanController@test_doc');
@@ -350,18 +351,18 @@ Route::post('demo-submit','TeamController@demo_submit');
 Route::post('demo-delete','TeamController@demo_delete');
 Route::post('demo-edit','TeamController@demo_edit');
 Route::post('xml','tribeController@xml');
-Route::get('rbl-personal-loan','LoanController@rbl_personal_loan');
+
 Route::post('rbl-personal-loan-submit','LoanController@rbl_personal_loan_submit');
 Route::get('rbl-off-city-master','LoanController@rbl_off_city_master');
 Route::get('rbl-city-master','LoanController@rbl_city_master');
 Route::get('pay-online','BankController@pay_online');
-Route::get('kotak-home-loan','LoanController@kotak_home_loan');
+
 // Kotak AutoComplete
 Route::get('kotak-city-master','LoanController@kotak_city_master');
 Route::post('kotak-city-area-master','LoanController@kotak_city_area_master');
 Route::post('kotak-home-loan-submit','LoanController@kotak_home_loan_submit');
 Route::post('kotak-home-loan-status','LoanController@kotak_home_loan_status');
-Route::get('kotak-personal-loan','LoanController@kotak_personal_loan');
+
 Route::get('kotak-pl-city-master','LoanController@kotak_pl_city_master');
 Route::post('kotak-pl-submit','LoanController@kotak_pl_submit');
 Route::get('searchkotak_plcompanyajax',array('as'=>'searchkotak_plcompanyajax','uses'=>'AutoCompleteController@autoComplete_kotak_plcompany')); 
@@ -398,9 +399,10 @@ Route::get('test-equifax','TestController@test');
 Route::get('equifax-verification','EquifaxController@equifax_verification');
 Route::post('equifax-send-otp','EquifaxController@equifax_send_otp');
 Route::post('equifax-verify','EquifaxController@equifax_verify_otp');
-// Route::get('equifax1','EquifaxController@equifax');
-// Route::post('equifax-query','EquifaxController@equifax_query');
-// Route::get('equifax-test','EquifaxController@equifax_test');
+Route::get('equifax1','EquifaxController@equifax');
+Route::post('equifax-query','EquifaxController@equifax_query');
+Route::get('equifax-test','EquifaxController@equifax_test');
+
 
 
 
@@ -441,7 +443,26 @@ Route::post('flexi-loans-appln','LoanController@flexi_loans_appln');
 Route::post('flexi-loans-appln-update','LoanController@flexi_loans_appln_update');
 
 
-/*Demo*/
-Route::get('equifax1','EquifaxController@equifax');
-Route::post('equifax-query','EquifaxController@equifax_query');
-Route::get('equifax-test','EquifaxController@equifax_test');
+// /*Demo*/
+// Route::get('equifax1','EquifaxController@equifax');
+// Route::post('equifax-query','EquifaxController@equifax_query');
+// Route::get('equifax-test','EquifaxController@equifax_test');
+
+
+/*Express Loan OTP */
+Route::get('otp-verification','OtpController@otp_verification');
+Route::post('express-send-otp','OtpController@express_loan_send_otp');
+Route::post('express-verify','OtpController@express_loan_verify_otp');
+
+Route::get('express-loan','HomeController@express_loan');
+
+/*To Secure*/
+Route::group(['middleware'=>'OtpVerification'], function(){
+
+Route::get('kotak-home-loan','LoanController@kotak_home_loan');
+Route::get('kotak-personal-loan','LoanController@kotak_personal_loan');
+Route::get('lendingkart','LoanController@lendingkart');
+Route::get('apply-tatacapital-loan','TataCapitalLoanController@apply_tatacapital_loan');
+Route::get('rbl-personal-loan','LoanController@rbl_personal_loan');
+Route::get('apply-iifl-loan','LoanController@apply_iifl_loan');
+});

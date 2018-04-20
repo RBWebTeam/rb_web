@@ -902,9 +902,7 @@ $(document).ready(function(){
        		console.log(address_living_since);
        		$('#living_since').val(address_living_since);
 
-       		var monthly_turnover=$('#monthly_turnover').val();
-       		console.log(monthly_turnover);
-       		$('#turnover').val(monthly_turnover);
+       		
 
        		var legal_status=$('#legal_status').val();
        		console.log(legal_status);

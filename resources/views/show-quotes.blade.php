@@ -89,7 +89,11 @@
                            $prod="12"; 
                              }?>
                         @if(Session::get('is_login'))
+                         @if($q->Is_Online == '0')
                         <td width="17%"><a class="btn btn-success myClass" >Apply Online</a></td>
+                        @elseif($q->Is_Online == '1')
+                        <td width="17%"><a class="btn btn-danger myClass" >Instant Sanction</a></td>
+                         @endif 
                         @else
                         <td width="17%"><a class="btn btn-success quote_ID"   data-toggle="modal" data-target="#login_process"
                            >Apply Online </a> 

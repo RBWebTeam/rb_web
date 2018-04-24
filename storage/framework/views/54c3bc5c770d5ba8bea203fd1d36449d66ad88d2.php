@@ -368,7 +368,8 @@
 
           <div class="col-md-12 col-xs-12">
                 <br>
-           <button id="eligibility"  class="btn btn-default btn-sm disblk" title="See Bankwise Eligibility And Apply Amongst Best Bank" style="width: 100%;" disabled>Check Eligibility </button>      
+           <!-- <button id="eligibility"  class="btn btn-default btn-sm disblk" title="See Bankwise Eligibility And Apply Amongst Best Bank" style="width: 100%;" disabled>Check Eligibility </button> --> 
+           <a id="eligibility"  class="btn btn-default btn-sm disabled" title="See Bankwise Eligibility And Apply Amongst Best Bank" style="width: 100%;">Check Eligibility </a>     
             
           </div>
 
@@ -438,7 +439,8 @@ $(".product_ID").click(function(e){ e.preventDefault();
                       $('#err').hide();
                       $('#apply_new').show();
                       $('#mi_id').show();
-                       $('#eligibility').prop('disabled',false);
+                       // $('#eligibility').prop('disabled',false);
+                       $("#eligibility").removeClass("disabled", true);
                               
                        // $(window).scrollTop($('#lowest').offset().top-50);
 

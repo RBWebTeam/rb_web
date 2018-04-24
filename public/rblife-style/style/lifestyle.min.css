@@ -1,0 +1,244 @@
+ @font-face {
+  font-family: 'Lato-Regular';
+  src: url('../fonts/Lato-Regular.ttf')  format('truetype');
+}
+
+ @font-face {
+  font-family: 'bahnschrift';
+  src: url('../fonts/bahnschrift.ttf')  format('truetype');
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    font-family:bahnschrift;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+}
+.videobkg{background:#2b91d1;  background-size: cover; height:100%; width:100%;}
+
+
+img{border-width:0px}
+.clear{clear:both;}
+.space{padding:10px;}
+.box{padding:11px;}
+.box, .box a, .box a:visited, .box a:hover, .box a:active{color:rgba(0, 0, 0, 0); display: block;}
+
+.txt-call{font-size:16px; color:#000;}
+
+.compass{
+    text-align:center;
+    /*background: #E31E24 url(../images/jeep-compass.png) no-repeat center center;*/
+     background: #E31E24;
+    width:50%;
+    -webkit-transition: color 1s;
+  transition: color 1s;
+}
+.jio{
+    text-align:center;
+    /*background: #005AAC url(../images/jio.png) no-repeat center center;*/
+    background: #005AAC;
+    width:50%;
+    -webkit-transition: color 1s;
+  transition: color 1s;
+}
+
+/*.compass:hover{
+    background: url(../images/jeep-compass-hover.png) no-repeat center center;
+    cursor: pointer;
+}*/
+
+/*.jio:hover{
+    background: #c4d7db url(../images/jio-hover.png) no-repeat center center;
+    cursor: pointer;
+}*/
+
+
+.jio:hover {
+    cursor: pointer;
+  -webkit-animation: halftone 1s forwards;
+          animation: halftone 1s forwards;
+          background-image:url(../images/jeep-compass-hover.png);
+  background: radial-gradient(circle, #005AAC 0.2em, transparent 0.25em) 0 0/1.25em 1.25em, radial-gradient(circle, #005AAC 0.2em, transparent 0.25em) 6.25em 6.25em/1.25em 1.25em;
+}
+
+@-webkit-keyframes halftone {
+  100% {
+    background-size: 2.375em 2.375em, 0.1em 0.1em;
+  }
+}
+
+@keyframes halftone {
+  100% {
+    background-size: 2.375em 2.375em, 0.1em 0.1em;
+  }
+}
+
+@keyframes halftone {
+  100% {
+    background-size: 2.375em 2.375em, 0.1em 0.1em;
+  }
+}
+
+
+.compass:hover {
+    cursor: pointer;
+  -webkit-animation: blinds 0.75s linear forwards;
+          animation: blinds 0.75s linear forwards;
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(25%, #E31E24), color-stop(25%, transparent)) 0 0/0.5em 0.5em, -webkit-gradient(linear, left bottom, left top, color-stop(50%, #E31E24), color-stop(50%, transparent)) 0 0/1em 1em;
+  background: linear-gradient(0deg, #E31E24 25%, transparent 25%) 0 0/0.5em 0.5em, linear-gradient(0deg, #E31E24 50%, transparent 50%) 0 0/1em 1em;
+}
+
+@-webkit-keyframes blinds {
+  100% {
+    background-position: 0 0, 0 -3em;
+    background-size: 0 0, 1em 6em;
+  }
+}
+
+@keyframes blinds {
+  100% {
+    background-position: 0 0, 0 -3em;
+    background-size: 0 0, 1em 6em;
+  }
+}
+
+
+.about{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background: #EBECEC;
+}
+
+.about h1{
+    font-size: 30px;
+    font-family:bahnschrift;
+    font-weight: 400;
+}
+
+.about p{
+    font-size: 18px;
+    text-align: justify;
+    font-family:bahnschrift;
+}
+
+.topHeader{
+  background:#1b232d;
+  color:#fff;
+  font-size:14px;
+  text-align: right;
+  position: fixed;
+  z-index: 999;
+  width:100%;
+}
+
+.menu{
+  background:#fff;
+  position: fixed;
+  z-index: 999;
+  top:30px;
+  width:100%;
+}
+
+footer{
+    background:#000;
+    color:#fff;
+    font-size:12px;
+    text-align: center;
+    padding:10px;
+}
+
+.btns {
+    -moz-user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 50px;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857;
+    margin-bottom: 0;
+    padding: 6px 12px;
+    text-align: center;
+    touch-action: manipulation;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+.btn-social{position:relative;padding-left:44px;text-align:left;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.btn-social>:first-child{position:absolute;left:0;top:0;bottom:0;width:32px;line-height:34px;font-size:1.6em;text-align:center;border-right:1px solid rgba(0,0,0,0.2)}
+.btn-social.btn-lg{padding-left:61px}.btn-social.btn-lg>:first-child{line-height:45px;width:45px;font-size:1.8em}
+.btn-social.btn-sm{padding-left:38px}.btn-social.btn-sm>:first-child{line-height:28px;width:28px;font-size:1.4em}
+.btn-social.btn-xs{padding-left:30px}.btn-social.btn-xs>:first-child{line-height:20px;width:20px;font-size:1.2em}
+.btn-social-icon{position:relative;padding-left:44px;text-align:left;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;height:34px;width:34px;padding:0}
+.btn-social-icon>:first-child{position:absolute;left:0;top:0;bottom:0;width:32px;line-height:34px;font-size:1.6em;text-align:center;border-right:1px solid rgba(0,0,0,0.2)}
+.btn-social-icon.btn-lg{padding-left:61px}.btn-social-icon.btn-lg>:first-child{line-height:45px;width:45px;font-size:1.8em}
+.btn-social-icon.btn-sm{padding-left:38px}.btn-social-icon.btn-sm>:first-child{line-height:28px;width:28px;font-size:1.4em}
+.btn-social-icon.btn-xs{padding-left:30px}.btn-social-icon.btn-xs>:first-child{line-height:20px;width:20px;font-size:1.2em}
+.btn-social-icon>:first-child{border:none;text-align:center;width:100% !important}
+.btn-social-icon.btn-lg{height:45px;width:45px;padding-left:0;padding-right:0}
+.btn-social-icon.btn-sm{height:30px;width:30px;padding-left:0;padding-right:0}
+.btn-social-icon.btn-xs{height:22px;width:22px;padding-left:0;padding-right:0}
+
+.btn-facebook{color:#000;background-color:#fff;border-color:rgba(0,0,0,0.2)}
+.btn-facebook:focus,.btn-facebook.focus{color:#000;background-color:#fff;border-color:rgba(0,0,0,0.2)}
+.btn-facebook:hover{color:#fff;background-color:#3b5998;border-color:rgba(0,0,0,0.2)}
+
+.btn-instagram{color:#000;background-color:#fff;border-color:rgba(0,0,0,0.2)}
+.btn-instagram:focus,.btn-instagram.focus{color:#000;background-color:#fff;border-color:rgba(0,0,0,0.2)}
+.btn-instagram:hover{color:#fff;background-color:#3f729b;border-color:rgba(0,0,0,0.2)}
+
+.btn-twitter{color:#000;background-color:#fff;border-color:rgba(0,0,0,0.2)}
+.btn-twitter:focus,.btn-twitter.focus{color:#000;background-color:#fff;border-color:rgba(0,0,0,0.2)}
+.btn-twitter:hover{color:#fff;background-color:#55acee;border-color:rgba(0,0,0,0.2)}
+
+.btn-youtube{color:#000;background-color:#fff;border-color:rgba(0,0,0,0.2)}
+.btn-twitter:focus,.btn-twitter.focus{color:#000;background-color:#fff;border-color:rgba(0,0,0,0.2)}
+.btn-youtube:hover{color:#fff;background-color:#E8001F;border-color:rgba(0,0,0,0.2)}
+
+/*@media (max-width: 767px) {
+.compass{
+    text-align:center;
+    background: #E31E24 url(../images/jeep-compass-sm.png) no-repeat center center;
+    width:50%;
+}
+.jio{
+    text-align:center;
+    background: #005AAC url(../images/jio-sm.png) no-repeat center center;
+    width:50%;
+}
+
+.compass:hover{
+    background: #c4d7db url(../images/jeep-compass-sm-hover.png) no-repeat center center;
+    cursor: pointer;
+}
+
+.jio:hover{
+    background: #c4d7db url(../images/jio-sm-hover.png) no-repeat center center;
+    cursor: pointer;
+}
+
+}*/
+    .phone{
+        display:none;
+    }
+
+
+
+@media (max-width: 640px) {
+    .disnone{
+        display:none;
+    }
+
+    .phone{
+        display:inline-block;
+    }
+
+    .rightalign{
+        text-align: right;
+    }
+
+}

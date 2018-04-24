@@ -108,7 +108,8 @@
                         <input type="hidden" name="Pre_Closer_Fixed" class="Pre_Closer_Fixed" value="{{$q->Pre_Closer_Fixed }}">
                         <input type="hidden" name="product" class="product" value="{{$product}}">
                         <input type="hidden" name="processingfee" class="processingfee" value="{{$q->processingfee }}">
-                        <input type="hidden" name="url" class="url" value="{{URL::to('apply-lead-online')}}?&BankId={{$q->Bank_Id}}&quote_id={{$quote_id}}&product={{$prod}}&processing_fee={{$q->processingfee}}&loan_eligible={{$q->loan_eligible}}&roi_type={{$q->roi_type}}">
+                        <input type="hidden" name="Is_Online" class="Is_Online" value="{{$q->Is_Online }}">
+                        <input type="hidden" name="url" class="url" value="{{URL::to('apply-lead-online')}}?&BankId={{$q->Bank_Id}}&quote_id={{$quote_id}}&product={{$prod}}&processing_fee={{$q->processingfee}}&loan_eligible={{$q->loan_eligible}}&roi_type={{$q->roi_type}}&Is_Online={{$q->Is_Online}}">
                         <td >{{$product}}</td>
                         <td >{{$q->roi }}%</td>
                         <td >{{$q->loan_eligible}}</td>

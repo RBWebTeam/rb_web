@@ -193,7 +193,7 @@ public function  change_password(Request $req){
   public function applyonline(Request $req){
     
     $request = $req->all();
-      //print_r($request);exit();
+      // print_r($request);exit();
     // $app = $request['appid'];
     $quote = $request['qoutid'];
     $bank = $request['BankId'];
@@ -216,6 +216,10 @@ public function  change_password(Request $req){
       $product = $request['product'];
     }else{
       $product = "";
+    }
+
+    if(isset($request['Is_Online'])){
+      $Is_Online = $request['Is_Online'];
     }
 
     if(isset($request['loan_eligible'])){
@@ -269,26 +273,88 @@ public function  change_password(Request $req){
     $quote_id=Session::get('quote_id');
     $update=new bank_quote_api_request();    
     $update_quote=$update->update_liza_quote($quote_id);
+
+
     if(isset($req['is_liza'])){
 
       $loan_parameters='qoutid='.$quote.'&processingfee='.$processing_fee.'&bankid='.$bank.'&loanamout='.$loan_eligible.'&idtype='.$roi_type.'&empcode='.$empid.'&brokerid='.$brokerid_session.'&source='.$source.'&refapp='.$ref.'&pan='.$pan;
 
      
-
-      if ($product == '9') {
+      /*Personal*/ 
+      if ($product == '9' && $Is_Online == '0' ) {
        return redirect()->away($this::$erp_url_static.'personalloan/personalloan.aspx?'.$loan_parameters);
 
-      } else  if ($product == '7') {
+      }else if($product == '9' && $Is_Online == '1' && $bank == '50' ){
+        
+      return redirect()->away($this::$current_domain_static.'/apply-tatacapital-loan');
+      } 
+      else if($product == '9' && $Is_Online == '1' && $bank == '20' ){
+        
+      return redirect()->away($this::$current_domain_static.'/hdfc-personal-loan');
+      } 
+      else if($product == '9' && $Is_Online == '1' && $bank == '27' ){
+        
+      return redirect()->away($this::$current_domain_static.'/apply-iifl-loan');
+      } 
+      else if($product == '9' && $Is_Online == '1' && $bank == '33' ){
+        
+      return redirect()->away($this::$current_domain_static.'/kotak-personal-loan');
+      }
+
+      /*LAP*/ 
+      else  if ($product == '7' && $Is_Online == '0') {
 
         return redirect()->away($this::$erp_url_static.'LAP/LAP_Form.aspx?'.$loan_parameters);
-      }else if ($product == '13') {
+      }
+      else if($product == '12' && $Is_Online == '1' && $bank == '33' ){
+        
+      return redirect()->away($this::$current_domain_static.'/kotak-home-loan');
+      } 
+      else if($product == '12' && $Is_Online == '1' && $bank == '53' ){
+        
+      return redirect()->away($this::$current_domain_static.'/yesbank-home-loan');
+      }
+      
+       /*Business*/ 
+      else if ($product == '13' && $Is_Online == '0') {
           return redirect('thank-you');
-      }else if ($product == '4') {
+        }
+      else if($product == '13' && $Is_Online == '1' && $bank == '21')
+      {
+       return redirect()->away($this::$current_domain_static.'/hdfc-business-loan');
+            
+      }
+      else if($product == '13' && $Is_Online == '1' && $bank == '50')
+      {
+       return redirect()->away($this::$current_domain_static.'/tata-capital-business-loan');
+            
+      }
+      else if($product == '13' && $Is_Online == '1' && $bank == '15')
+      {
+        return redirect()->away($this::$current_domain_static.'/edelweiss');
+            
+      }
+
+      /*Car*/ 
+      else if ($product == '4') {
           return redirect('thank-you');
       }
-      else{
+
+      /*Home*/ 
+      else if($product == '12' && $Is_Online == '0'){
+        
         return redirect()->away($this::$erp_url_static.'homeloan/Home_Loan_Application_Form.aspx?'.$loan_parameters);
       }
+      else if($product == '12' && $Is_Online == '1' && $bank == '33' ){
+        
+      return redirect()->away($this::$current_domain_static.'/kotak-home-loan');
+      } 
+      else if($product == '12' && $Is_Online == '1' && $bank == '53' ){
+        
+      return redirect()->away($this::$current_domain_static.'/yesbank-home-loan');
+      }
+
+
       
       }else{
          $balance_transfer_parameter='qoutid='.$quote.'&brokerid='.$brokerid_session.'&loanamout='.$loanamount.'&loaninterest='.$loaninterest.'&loanterm='.$loanterm.'&bankid='.$bank.'&productid='.$product.'&idtype='.$roi_type.'&processingfee='.$processing_fee.'&empcode='.$empid.'&refapp='.$refapp.'&source='.$source.'&coapp=0&pan='.$pan.'&CampaignName='.$CampaignName;

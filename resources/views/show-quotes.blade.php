@@ -89,11 +89,21 @@
                            $prod="12"; 
                              }?>
                         @if(Session::get('is_login'))
+                        @if($q->Is_Online == '0')
                         <td width="17%"><a class="btn btn-success myClass" >Apply Online</a></td>
+                        @else($q->Is_Online == '1')
+                        <td width="17%"><a class="btn btn-danger myClass" >Paperless Approval</a></td>
+                        @endif    
                         @else
-                        <td width="17%"><a class="btn btn-success quote_ID"   data-toggle="modal" data-target="#login_process"
+                        
+                         @if($q->Is_Online == '0')
+                         <td width="17%"><a class="btn btn-success quote_ID"   data-toggle="modal" data-target="#login_process"
                            >Apply Online </a> 
                         </td>
+                       
+                        @else($q->Is_Online == '1')
+                        <td width="17%"><a class="btn btn-danger quote_ID" data-toggle="modal" data-target="#login_process" >Paperless Approval</a></td>
+                        @endif    
                         @endif    
                      </tr>
                      <tr>
@@ -108,7 +118,8 @@
                         <input type="hidden" name="Pre_Closer_Fixed" class="Pre_Closer_Fixed" value="{{$q->Pre_Closer_Fixed }}">
                         <input type="hidden" name="product" class="product" value="{{$product}}">
                         <input type="hidden" name="processingfee" class="processingfee" value="{{$q->processingfee }}">
-                        <input type="hidden" name="url" class="url" value="{{URL::to('apply-lead-online')}}?&BankId={{$q->Bank_Id}}&quote_id={{$quote_id}}&product={{$prod}}&processing_fee={{$q->processingfee}}&loan_eligible={{$q->loan_eligible}}&roi_type={{$q->roi_type}}">
+                        <input type="hidden" name="Is_Online" class="Is_Online" value="{{$q->Is_Online }}">
+                        <input type="hidden" name="url" class="url" value="{{URL::to('apply-lead-online')}}?&BankId={{$q->Bank_Id}}&quote_id={{$quote_id}}&product={{$prod}}&processing_fee={{$q->processingfee}}&loan_eligible={{$q->loan_eligible}}&roi_type={{$q->roi_type}}&Is_Online={{$q->Is_Online}}">
                         <td >{{$product}}</td>
                         <td >{{$q->roi }}%</td>
                         <td >{{$q->loan_eligible}}</td>

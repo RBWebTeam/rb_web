@@ -51,7 +51,7 @@ $(document).ready(function(){
 });
 </script>
 
-<link rel="stylesheet" href="<?php echo e(URL::to('css/iziModal.min.css')); ?>">
+<!-- <link rel="stylesheet" href="<?php echo e(URL::to('css/iziModal.min.css')); ?>"> -->
 <link rel="stylesheet" href="<?php echo e(URL::to('css/icons.css?v=1')); ?>">
 
 <style>

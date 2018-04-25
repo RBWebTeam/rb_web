@@ -227,8 +227,10 @@ $post_data='{
                $url = $this::$service_url_static."LoginDtls.svc/xmlservice/sendSMS";
             $result=$this->call_json_data_api($url,$post_data);
             $http_result=$result['http_result'];
+            // print_r($http_result);exit();
             $error=$result['error'];
             $obj = json_decode($http_result);
+            // print_r($http_result);exit();
             // statusId response 0 for success, 1 for failure
             
             if($obj->{'statusId'}==0){

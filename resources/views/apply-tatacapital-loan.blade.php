@@ -120,6 +120,7 @@
 
                           <form id="roi" name="roi" method="POST">
                            {{ csrf_field() }}
+                           
 
                            <div class="col-md-12"><h4 class="hdr pad1 text-center">ROI Acc.To Company</h4></div>
 
@@ -238,14 +239,10 @@
                                         </div>
                                       </div>
 
-                                        <div class="col-md-4 col-sm-12 col-xs-12">
-                      <div class="form-group">
-                                            <input type="text" class="form-control" id="relationshipFirstName" name="relationshipFirstName" placeholder="Relationship First Name" maxlength="30" onkeypress="return AllowAlphabet(event)" required>
-                                        </div>
-                                      </div>
+                     
 
-                                       <div class="col-md-4 col-sm-12 col-xs-12">
-                      <div class="form-group">
+                                        <div class="col-md-4 col-sm-12 col-xs-12">
+                                        <div class="form-group">
                                             <select class="form-control"  name="relationship"  id="relationship" required>
                                               <option selected disabled value="">Relationship</option>
                                                 <option value="F">Father</option>
@@ -253,7 +250,13 @@
                                                 <option value="NA">NA</option>
                                             </select>
                                         </div>
-                                      </div>
+                                        </div>
+
+                                        <div class="col-md-4 col-sm-12 col-xs-12">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" id="relationshipFirstName" name="relationshipFirstName" placeholder="Relationship First Name" maxlength="30" onkeypress="return AllowAlphabet(event)" required>
+                                        </div>
+                                        </div>
 
                                         
                                 <div class="col-md-4 col-sm-12 col-xs-12">
@@ -468,9 +471,10 @@
                                           </div>
                                         </div>
 
-                                          <div class="col-md-4 col-sm-12 col-xs-12">
-                                    <div class="form-group">
-                                            <input type="text" class="form-control" id="yrsCurrentResidence" name="yrsCurrentResidence" placeholder="Living Since" onkeypress="return fnAllowNumeric(event)" required>
+                                      
+
+                                            <input type="text" class="form-control" id="yrsCurrentResidence" name="yrsCurrentResidence" placeholder="No Of Years At Current Residence" onkeypress="return fnAllowNumeric(event)" required>
+
                                             
                                           </div>
                                         </div>
@@ -488,23 +492,23 @@
                                 
                                 <div class="col-md-4 col-sm-12 col-xs-12">
                                     <div class="form-group">
-                                  <input type="text" class="form-control" placeholder="Permanent Addr1" name="permAddr1" id="permAddr1" readonly>
+                                  <input type="text" class="form-control" placeholder="Permanent Addr 1" name="permAddr1" id="permAddr1" readonly>
                                 </div>
                               </div>
                                 <div class="col-md-4 col-sm-12 col-xs-12">
                                     <div class="form-group">
-                                  <input type="text" class="form-control" placeholder="Permanent Addr2" name="permAddr2" id="permAddr2" readonly>
+                                  <input type="text" class="form-control" placeholder="Permanent Addr 2" name="permAddr2" id="permAddr2" readonly>
                                 </div>
                               </div>
                                 <div class="col-md-4 col-sm-12 col-xs-12">
                                     <div class="form-group">
-                                  <input type="text" class="form-control" placeholder="Permanent Addr3" name="permAddr3" id="permAddr3" readonly>
+                                  <input type="text" class="form-control" placeholder="Permanent Addr 3" name="permAddr3" id="permAddr3" readonly>
                                 </div>
                               </div>
                                 
                                 <div class="col-md-4 col-sm-12 col-xs-12">
                                     <div class="form-group">
-                                    <input type="hidden" id="permPincode" name="permPincode" class="form-control" placeholder="Pincode" onkeypress="return fnAllowNumeric(event)" maxlength="6" required>
+                                    <input type="hidden" id="permPincode" name="permPincode" class="form-control" placeholder="Pincode" onkeypress="return fnAllowNumeric(event)" minlength="6" maxlength="6" required>
                                   </div>
                                 </div>
                                   <div class="col-md-4 col-sm-12 col-xs-12">
@@ -535,7 +539,7 @@
 
                                        <div class="col-md-4 col-sm-12 col-xs-12">
                                     <div class="form-group">
-                                            <input type="text" class="form-control" id="yrsInCurrentEmp" name="yrsInCurrentEmp" required placeholder="Yrs In CurrentEmp" minlength="1" maxlength="2" onkeypress="return fnAllowNumeric(event)">
+                                            <input type="text" class="form-control" id="yrsInCurrentEmp" name="yrsInCurrentEmp" required placeholder="Yrs In Current Emp" minlength="1" maxlength="2" onkeypress="return fnAllowNumeric(event)">
                                             
                                         </div>
                                       </div>
@@ -592,17 +596,23 @@
 
                                          <div class="col-md-4 col-sm-12 col-xs-12">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Office Address 1" name="empAddressLine1" id="empAddressLine1" required>
+
+                                        <input type="text" class="form-control" placeholder="Office Addr 1" name="empAddressLine1" id="empAddressLine1" required>
+
                                         </div>
                                       </div>
                                         <div class="col-md-4 col-sm-12 col-xs-12">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Office Address 2" name="empAddressLine2" id="empAddressLine2" required>
+
+                                        <input type="text" class="form-control" placeholder="Office Addr 2" name="empAddressLine2" id="empAddressLine2" required>
+
                                         </div>
                                       </div>
                                          <div class="col-md-4 col-sm-12 col-xs-12">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Office Address 3" name="empAddressLine3" id="empAddressLine3" required>
+
+                                        <input type="text" class="form-control" placeholder="Office Addr 3" name="empAddressLine3" id="empAddressLine3" required>
+
                                         </div>
                                       </div>
 
@@ -671,7 +681,7 @@
                                      <input type="hidden" name="includeIncomeFlag" value="Y">
                                      
 
-                                      <div class="col-md-4 col-sm-12 col-xs-12">
+                                      <!-- <div class="col-md-4 col-sm-12 col-xs-12">
                                     <div class="form-group">
                                           <select name="mainBankingReq" id="mainBankingReq" class="form-control block drop-arr select-sty" required>
                                           <option disabled selected value="">Main Banking Req</option>
@@ -679,17 +689,19 @@
                                           <option value="N">No</option>
                                           </select>
                                         </div>
-                                      </div>
+                                      </div> -->
+                                      <input type="hidden" name="mainBankingReq" value="Y">
+                                      <input type="hidden" name="pdcEcsReq" value="Y">
 
-                                        <div class="col-md-4 col-sm-12 col-xs-12">
+                                        <!-- <div class="col-md-4 col-sm-12 col-xs-12">
                                     <div class="form-group">
                                           <select name="pdcEcsReq" id="pdcEcsReq" class="form-control block drop-arr select-sty" required>
-                                          <option disabled selected value="">pdc Ecs Req</option>
+                                          <option disabled selected value="">Pdc Ecs Req</option>
                                           <option value="Y">Yes</option>
                                           <option value="N">No</option>
                                           </select>
                                         </div>
-                                      </div>
+                                      </div> -->
 
                                         <div class="col-md-4 col-sm-12 col-xs-12">
                                     <div class="form-group">
@@ -800,9 +812,10 @@
                                  
                                       <div class="col-md-12">
                                         &nbsp;&nbsp;&nbsp;&nbsp;<a class="btn btn-primary btn btn-sm" id="tata_capital_submit"  >Confirm & Continue<i class="icon-arrow-right"></i></a>
+                                        
                                     <div class="iframeloading" style= "display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
-                <img src="{{URL::to('images/ajaxloader.gif')}}" alt="Loader" title="Loader" style="top: 50%; position: relative; left: 50%;"  />
-               </div>
+                                    <img src="{{URL::to('images/ajaxloader.gif')}}" alt="Loader" title="Loader" style="top: 50%; position: relative; left: 50%;"  />
+                                   </div>
                                    
                                 
                             </form>
@@ -878,6 +891,11 @@
         <h4><p id="modalerr"><h5 style="color: black">Remarks:<b><span id="tata-capital-remarks"></span>.<h5></p></h4>
         
       </div>
+
+       <!-- <div class="modal-footer">
+        <a type="button" id="okae" name="okae" class="btn btn-primary tata_capital_pl_proceed">Proceed to Document Upload</a>
+        
+      </div> -->
       
       
     </div>
@@ -929,6 +947,22 @@
   </div>
 </div>
 
+<div class="modal fade" tabindex="-1" role="dialog" id="status">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Confirmation Status</h4>
+      </div>
+      <div class="modal-body">
+        <h4><p id="modalerr"><h5 style="color: black">Your:<b><span id="meassge"></span>&nbsp;&nbsp;<span id="Status"></span><h5></p></h4>
+        
+      </div>
+ 
+    </div>
+  </div>
+</div>
+
 <div class="modal fade" tabindex="-1" role="dialog" id="document_upload">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -941,6 +975,7 @@
            <form name="document_upload_form" id="document_upload_form" enctype="multipart/form-data"  method="post">
           {{ csrf_field() }}
                <input type="hidden" name="webtopNo" id="web_top_no">
+               <input type="hidden" name="lead_id" id="lead_id">
               
                 <div class="row">
                                     <div class="form-group">
@@ -1071,8 +1106,11 @@
            
 
                   <!-- <span id="statement"></span> -->
-                  <div style="text-align: center;">
-                                <a class="btn btn-danger btn btn-sm" id="tatacapital_doc">Submit</a></div>
+                                <div style="text-align: center;">
+                                <a class="btn btn-danger btn btn-sm" id="tatacapital_doc">Submit</a>
+                                <a class="btn btn-info btn btn-sm" id="tatacapital_status"  >Check Status</a></div>
+
+                                
 
                            
 
@@ -1404,7 +1442,7 @@
    success: function(datas)  
    {
    var data=$.parseJSON(datas);
-   console.log(data);
+   // console.log(data);
    if(data)
       {      $.each(data, function( index, value ) {
             $('#cCity').append('<option value="'+value.los_city_id+'">'+value.city_name+'</option>');
@@ -1427,7 +1465,7 @@
    success: function(datas)  
    {
    var data=$.parseJSON(datas);
-   console.log(data);
+   // console.log(data);
    if(data)
       {      $.each(data, function( index, value ) {
             $('#empProvince').append('<option value="'+value.los_state_id+'">'+value.state_name+'</option>');
@@ -1548,12 +1586,12 @@
             
 
             response(data);
-            console.log(data);
+            // console.log(data);
           }
     
         });
       },     change: function (event, ui) {
-          console.log(ui);
+          // console.log(ui);
         if (ui.item == null || ui.item == undefined || ui.item.value=='Others') {
                
           // $("#Company_Name").val("");
@@ -1601,7 +1639,7 @@
          success: function(msg){
           $('#tata_capital_pl_form').show();
            $('#personal_loan').hide();
-          console.log(msg.nErrorNo);
+          // console.log(msg.nErrorNo);
           if (msg.nErrorNo==0) 
           {
             $('#tata-capital-pl-roi').modal('show');
@@ -1627,5 +1665,32 @@
   $('#doc').click(function(){
     window.location.href ="{{URL::to('thank-you')}}";
   });
+</script>
+
+<!-- Status -->
+<script type="text/javascript">
+ $('#tatacapital_status').click(function(){
+     var lead_id = $('#lead_id').val();
+     console.log(lead_id);
+     $.ajax({ 
+     url: "{{URL::to('tata-capital-status')}}",
+     method:"GET",
+     data:{ 'lead_id': lead_id},
+     success: function(msg)  
+     {
+       console.log(msg);
+
+       if (msg.RetStatus=="SUCCESS") 
+        {
+         $('#message').val(msg.Message);
+         $('#Status').val(msg.Status); ]
+         $('#status').modal('show');
+        } 
+        
+      
+     },
+
+ });
+ });
 </script>
 

@@ -370,6 +370,212 @@ h4 {color:#999;}
        </div>
 	   </form>
        </div>
+
+       <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse2" class="text-center"><span class="decoration1">2</span> Business Details </a>
+        </h4>
+      </div>
+      <div id="collapse2" class="panel-collapse collapse">
+        <div class="panel-body">
+		  <div class="col-md-3"><label>Business Name<span class="mandtry"> *</span></label><input type="text" class="form-control" required=""></div>
+		  <div class="col-md-3">
+           <label>Nature of Business<span class="mandtry"> *</span></label>
+           <select class="block drop-arr select-sty form-control"  required="">
+           <option>Retailer</option>
+           <option>Manufacturer</option>
+           <option>Trader</option>
+		   <option>Service</option>
+		   <option>Distributor</option>
+		   <option>Importer</option>
+		   <option>Exporter</option>
+		   <option>Job Worker</option>
+           </select> 
+           </div>
+		  <div class="col-md-3"><label>Date of Incorporation<span class="mandtry"> *</span></label><input type="date" class="form-control" required=""></div>
+		  <div class="col-md-3"><label>Number of Employees<span class="mandtry"> *</span></label><input type="number" class="form-control" required=""></div>
+		   <div class="col-md-3">
+           <label>Loan Purpose<span class="mandtry"> *</span></label>
+           <select class="block drop-arr select-sty form-control"  required="">
+           <option>Term Loan</option>
+           <option>Loan against POS Transactions</option>
+           <option>Drop-line Overdraft</option>
+		   <option>Invoice Discounting</option>
+           </select> 
+           </div>
+		   
+		   <div class="col-md-3"><label>Flat No<span class="mandtry"> *</span></label><input type="text" class="form-control" required=""></div>
+		   <div class="col-md-3"><label>Building<span class="mandtry"> *</span></label><input type="text" class="form-control" required=""></div>
+		   <div class="col-md-3"><label>Area<span class="mandtry"> *</span></label><input type="text" class="form-control" required=""></div>
+		   
+		   <div class="col-md-3"><label>Pincode<span class="mandtry"> *</span></label><input type="text" class="form-control" required=""></div>
+		   <div class="col-md-3"><label>City<span class="mandtry"> *</span></label><input type="text" class="form-control" required=""></div>
+		   <div class="col-md-3"><label>State<span class="mandtry"> *</span></label><input type="text" class="form-control" required=""></div>
+		   <div class="col-md-3">
+           <label>Business Premise Ownership Status<span class="mandtry"> *</span></label>
+           <select class="block drop-arr select-sty form-control"  required="">
+           <option>Rented</option>
+           <option>Owned</option>
+           </select> 
+           </div>
+		  <div class="col-md-3"><label>Loan from Previous Sources<span class="mandtry"> *</span></label><div class="form-control"><input type="radio" name="yes"> Yes &nbsp;<input type="radio" name="yes"> No</div></div>
+		  
+		  <div class="col-md-12"><br><h3>Taxation Details</h3><hr></div>
+		  <div class="col-md-3"><label>Company PAN Number<span class="mandtry"> *</span></label><input type="text" class="form-control" required=""></div>
+		  <div class="col-md-3"><label>GST number</label><input type="text" class="form-control" required=""></div>
+		  <div class="col-md-3"><label>TIN Number</label><input type="text" class="form-control" required=""></div>
+		  <div class="col-md-3"><label>Udyog Aadhaar Number</label><input type="text" class="form-control" required=""></div>
+		  
+		</div>
+      </div>
+    </div>
+
+    <!-- Business Details -->
+
+    <div  class="row">
+        <h3><center>Business Details</center></h3>
+        <br/>
+        <form id="business-details" name="business-details" method="POST"  class="frm">
+			{{ csrf_field() }}								
+
+	    <input type="hidden" name="access_token" id="access_token" value="">
+        <input type="hidden" name="loanCode" id="loanCode" value="">
+        <div class="panel-body">
+		<div class="col-md-3">
+		<label>Business Name<span class="mandtry"> *</span></label>
+		<input type="text" name="name" id="business_name" class="form-control" required="">
+		</div>
+
+	 <div class="col-md-3">
+      <label>Nature Of Business<span class="mandtry"> *</span></label>
+       <select name="nature_of_business" id="nature_of_business" class="block drop-arr select-sty form-control" required="">
+       <option disabled selected value="">Nature Of Business</option>
+       <option value="Retailer">Retailer</option>
+       <option value="Manufacturer">Manufacturer</option>
+	    <option value="Trader">Trader</option>
+		 <option value="Service">Service</option>
+		 <option value="Distributor">Distributor</option>
+		 <option value="Importer">Importer</option>
+		 <option value="Exporter">Exporter</option>
+		 <option value="Job Worker">Job Worker</option>
+       </select> 
+       </div>
+
+	 <div class="col-md-3">
+      <label>Product<span class="mandtry"> *</span></label>
+       <select name="product_classfication" id="product_classfication" class="block drop-arr select-sty form-control" required="">
+       <option disabled selected value="">Product</option>
+       <option value="Accessories">Accessories</option>
+       <option value="Appliances">Appliances</option>
+	    <option value="Baby Care">Baby Care</option>
+		<option value="Bags & Luggages">Bags & Luggages</option>
+		<option value="Beauty & Personal Care">Beauty & Personal Care</option>
+		<option value="Camera & Accessories">Camera & Accessories</option>
+		<option value="Mobile">Mobile</option>
+		<option value="Computers">Computers</option>
+		<option value="Electronics">Electronics</option>
+		<option value="Computers">Computers</option>
+		<option value="Eyewear">Eyewear</option>
+		<option value="Fashion">Fashion</option>
+		<option value="Fragrance">Fragrance</option>
+		<option value="Furniture">Furniture</option>
+		<option value="Footwear">Footwear</option>
+		<option value="Garments">Garments</option>
+		<option value="Hardware & Sanitary">Hardware & Sanitary</option>
+		<option value="Hotels">Hotels</option>
+		<option value="Jewellery">Jewellery</option>
+		<option value="Others">Others</option>
+       </select> 
+       </div>
+	  
+	  
+	  <div class="col-md-3">
+	  <label>Date of Incorporation<span class="mandtry"> *</span></label>
+	  <input type="text" name="date_of_incorporation" id="date_of_incorporation" class="form-control lastReported" required="">
+	  </div>
+
+	  <div class="col-md-3">
+		<label>No. Of Employess<span class="mandtry"> *</span></label>
+		<input type="text" name="employee_count" id="employee_count" onkeypress="return fnAllowNumeric(event)" class="form-control" required="">
+		</div>
+
+	  <div class="col-md-3">
+	  <label>Loan Purpose<span class="mandtry"> *</span></label>
+	  <select name="loan_purpose" id="loan_purpose" class="block drop-arr select-sty form-control"  required="">
+       <option disabled selected value>Loan Purpose</option>
+       <option value="Term Loan">Term Loan</option>
+       <option value="Female">Loan Against POS Transactions</option>
+       <option value="Other">Drop-line OverDraft</option>
+       <option value="Invoice Discounting">Invoice Discounting</option>
+       </select> 
+	  </div>
+	  
+	  <div class="col-md-3">
+	  <label>Flat No<span class="mandtry"> *</span></label>
+	  <input type="text" name="address_flat_no" id="addr" class="form-control" required="">
+	  </div>
+
+	  <div class="col-md-3">
+	  <label>Building<span class="mandtry"> *</span></label>
+	  <input type="text" name="address_building" id="addr_building" class="form-control" required="">
+	  </div>
+
+	  <div class="col-md-3">
+	  <label>Area<span class="mandtry"> *</span></label>
+	  <input type="text" name="address_area" id="addr_area" class="form-control" required="">
+	  </div>
+
+	  
+	  
+	  <div class="col-md-3">
+	  <label>Pincode<span class="mandtry"> *</span></label>
+	  <input type="text" name="address_pincode" id="addr_pincode" minlength="6" maxlength="6" class="form-control" required="">
+	  </div>
+
+	  <div class="col-md-3">
+	  <label>City<span class="mandtry"> *</span></label>
+	  <input type="text" name="address_city" id="addr_city" onkeypress="return AllowAlphabet(event)"  class="form-control search_city" required="">
+	  </div>
+
+	  <div class="col-md-3">
+	  <label>State <span class="mandtry"> *</span></label>
+	  <input type="text" name="address_state" id="addr_state" onkeypress="return AllowAlphabet(event)"  class="form-control search_statenm" required="">
+	  </div>
+	  
+	  
+	  <div class="col-md-3">
+      <label>Premise Ownership Status<span class="mandtry"> *</span></label>
+       <select name="address_ownership_status" id="addr_ownership_status" class="block drop-arr select-sty form-control"  required="">
+       <option disabled selected value>Premise Ownership Status</option>
+       <option value="Rented">Rented</option>
+       <option value="Owned">Owned</option>
+       </select> 
+       </div>
+
+       <div class="col-md-3">
+      <label>Loan From Previous Sources<span class="mandtry"> *</span></label><br>
+       
+                          <input type="radio" id="Yes" value="true" name="previous_loan_taken"  >&nbsp; Yes  &nbsp; <input id="No" checked type="radio" value="false" name="previous_loan_taken">&nbsp;No                                  
+       </div>
+
+       <div id="source" class="col-md-3" style="display: none;">
+      <label>Source Of Loan<span class="mandtry"> *</span></label><br>
+       
+                          <input type="checkbox" name="OD/CC" value="odCC"> OD/CC<br>
+                          <input type="checkbox" name="Personal Loan" value="personalLoan">Personal Loan<br>
+                          <input type="checkbox" name="Unsecured Business Loan" value="unsecuredBusinessLoan">Unsecured Business Loan<br>
+                          <input type="checkbox" name="Loan Against Property" value="loanAgainstProperty" >Loan Against Property<br>
+                          <input type="checkbox" name="Auto Loan" value="autoLoan">Auto Loan<br>
+                          <input type="checkbox" name="Other" value="other">Other<br>                                  
+       </div>
+	   
+       <div class="col-md-12 ">
+       <a class="btn btn-default btn-sm" id="flexi_loan_application">NEXT<i class="icon-arrow-right"></i></a>
+       </div>
+	</div>
+	</form>
+    </div>
                     			
        <div id="get_quotes" class="row" style="display: none;" >
                     				<form id="quotes" name="quotes" >
@@ -713,6 +919,22 @@ h4 {color:#999;}
     });
 </script>
 
+<!-- Date Of Incorporation -->
+<script type="text/javascript">
+    var d = new Date();
+    var year = d.getFullYear();
+    d.setFullYear(year);
+
+    $(".lastReported").datepicker({ dateFormat: "yy-mm-dd",
+      changeMonth: true,
+      changeYear: true,
+      maxDate: year,
+      minDate: "-100Y",
+      yearRange: '-100:' + year + '',
+      defaultDate: d
+    });
+</script>
+
 <script type="text/javascript">
     function pan_card(obj,val){
         // console.log(obj);
@@ -902,9 +1124,7 @@ $(document).ready(function(){
        		console.log(address_living_since);
        		$('#living_since').val(address_living_since);
 
-       		var monthly_turnover=$('#monthly_turnover').val();
-       		console.log(monthly_turnover);
-       		$('#turnover').val(monthly_turnover);
+       		
 
        		var legal_status=$('#legal_status').val();
        		console.log(legal_status);
@@ -969,5 +1189,20 @@ $(document).ready(function(){
       	}
 	});
 </script>
+
+<script type="text/javascript">
+	$('#Yes').change(function(){
+ 
+  $("#source").show();
+  });
+
+	$('#No').change(function(){
+ 
+  $("#source").hide();
+  });
+
+</script>
+
+
 
 

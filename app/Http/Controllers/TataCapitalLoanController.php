@@ -302,7 +302,22 @@ public function tata_capital_business_loan(){
           return response()->json( $obj);
    }
   
+    public function tatacapital_status(Request $req){
+      // print_r($req->all());
+        $data=$req->lead_id;
+        $url = $this::$url_static."/BankAPIService.svc/geTataPLStatusReq?Lead_Id=$data";
+        $result=$this->call_json_data_get_api($url,null);
+        $http_result=$result['http_result'];
+        // print_r($http_result);exit();
+        $error=$result['error'];
+        $st=str_replace('"{', "{", $http_result);
+        $s=str_replace('}"', "}", $st);
+        $m=$s=str_replace('\\', "", $s);
+        $obj=json_decode($m);
+        // print_r($obj);exit();
+        return response()->json( $obj);
 
+    }
 
 }
    

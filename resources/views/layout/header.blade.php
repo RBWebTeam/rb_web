@@ -52,7 +52,7 @@ $(document).ready(function(){
 });
 </script>
 
-<link rel="stylesheet" href="{{URL::to('css/iziModal.min.css')}}">
+<!-- <link rel="stylesheet" href="{{URL::to('css/iziModal.min.css')}}"> -->
 <link rel="stylesheet" href="{{URL::to('css/icons.css?v=1')}}">
 
 </head>

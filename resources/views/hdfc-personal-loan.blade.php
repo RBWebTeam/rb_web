@@ -28,6 +28,7 @@
                         
                             <form id="hdfc_personal_loan" name="hdfc_personal_loan" role="form" method="POST">
 							 {{ csrf_field() }}
+							 
                              
                                     <!-- Branch Location -->
                                        <div class="col-md-4 col-sm-12 col-xs-12">

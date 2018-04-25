@@ -284,25 +284,25 @@
                                   
                                      <div class="col-md-4 col-sm-12 col-xs-12">
                                     <div class="form-group">
-                                            <input type="text" class="form-control" id="resAddress1" name="resAddress1" placeholder="Address Line1" maxlength="200" required>
+                                            <input type="text" class="form-control" id="resAddress1" name="resAddress1" placeholder="Address Line 1" maxlength="200" required>
                                         </div>
                                       </div>
 
                                          <div class="col-md-4 col-sm-12 col-xs-12">
                                     <div class="form-group">
-                                            <input type="text" class="form-control" id="resAddress2" name="resAddress2" placeholder="Address Line2" maxlength="200" required>
+                                            <input type="text" class="form-control" id="resAddress2" name="resAddress2" placeholder="Address Line 2" maxlength="200" required>
                                         </div>
                                       </div>
 
                                          <div class="col-md-4 col-sm-12 col-xs-12">
                                     <div class="form-group">
-                                            <input type="text" class="form-control" id="resAddress3" name="resAddress3" placeholder="Address Line3" maxlength="200" required >
+                                            <input type="text" class="form-control" id="resAddress3" name="resAddress3" placeholder="Address Line 3" maxlength="200" required >
                                         </div>
                                       </div>
 
                                          <div class="col-md-4 col-sm-12 col-xs-12">
                                     <div class="form-group">
-                                            <input type="text" class="form-control" id="resAddress4" name="resAddress4" placeholder="Address Line4" maxlength="200">
+                                            <input type="text" class="form-control" id="resAddress4" name="resAddress4" placeholder="Address Line 4" maxlength="200">
                                         </div>
                                       </div>
 
@@ -470,7 +470,7 @@
 
                                           <div class="col-md-4 col-sm-12 col-xs-12">
                                     <div class="form-group">
-                                            <input type="text" class="form-control" id="yrsCurrentResidence" name="yrsCurrentResidence" placeholder="No Of Years At CurrentResidence" onkeypress="return fnAllowNumeric(event)" required>
+                                            <input type="text" class="form-control" id="yrsCurrentResidence" name="yrsCurrentResidence" placeholder="Living Since" onkeypress="return fnAllowNumeric(event)" required>
                                             
                                           </div>
                                         </div>
@@ -572,7 +572,7 @@
 
                                          <div class="col-md-4 col-sm-12 col-xs-12">
                                     <div class="form-group">
-                                            <input type="text" class="form-control" id="totWorkExp" name="totWorkExp" required placeholder="Tot Work Exp" minlength="1" maxlength="2" onkeypress="return fnAllowNumeric(event)">
+                                            <input type="text" class="form-control" id="totWorkExp" name="totWorkExp" required placeholder="Total Work Exp" minlength="1" maxlength="2" onkeypress="return fnAllowNumeric(event)">
                                             
                                         </div>
                                       </div>
@@ -592,17 +592,17 @@
 
                                          <div class="col-md-4 col-sm-12 col-xs-12">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Office Addr1" name="empAddressLine1" id="empAddressLine1" required>
+                                        <input type="text" class="form-control" placeholder="Office Address 1" name="empAddressLine1" id="empAddressLine1" required>
                                         </div>
                                       </div>
                                         <div class="col-md-4 col-sm-12 col-xs-12">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Office Addr2" name="empAddressLine2" id="empAddressLine2" required>
+                                        <input type="text" class="form-control" placeholder="Office Address 2" name="empAddressLine2" id="empAddressLine2" required>
                                         </div>
                                       </div>
                                          <div class="col-md-4 col-sm-12 col-xs-12">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Office Addr3" name="empAddressLine3" id="empAddressLine3" required>
+                                        <input type="text" class="form-control" placeholder="Office Address 3" name="empAddressLine3" id="empAddressLine3" required>
                                         </div>
                                       </div>
 
@@ -737,7 +737,7 @@
 
                                         <div class="col-md-4 col-sm-12 col-xs-12">
                                     <div class="form-group">
-                                            <input type="text" class="form-control" id="noOfChequeBounced" name="noOfChequeBounced" required placeholder="No Of ChequeBounced"  onkeypress="return fnAllowNumeric(event)">
+                                            <input type="text" class="form-control" id="noOfChequeBounced" name="noOfChequeBounced" required placeholder="No Of Cheque Bounced"  onkeypress="return fnAllowNumeric(event)">
                                         </div>
                                       </div>
 
@@ -755,7 +755,7 @@
 
                                          <div class="col-md-4 col-sm-12 col-xs-12">
                                     <div class="form-group">
-                                            <input type="text" class="form-control" id="loanAmount" name="loanAmount" required placeholder="Req LoanAmount" minlength="5" maxlength="9"  onkeypress="return fnAllowNumeric(event)">
+                                            <input type="text" class="form-control" id="loanAmount" name="loanAmount" required placeholder="Req Loan Amount" minlength="5" maxlength="9"  onkeypress="return fnAllowNumeric(event)">
                                         </div>
                                       </div>
                                      
@@ -1176,7 +1176,7 @@
 
 <script type="text/javascript">
     var d = new Date();
-    var year = d.getFullYear()  ;
+    var year = d.getFullYear()-21  ;
     d.setFullYear(year);
 
     $(".lastReporteddob").datepicker({ dateFormat: "dd/mm/yy",
@@ -1484,6 +1484,8 @@
      } 
     });
 </script>
+
+
 
 <!-- <script type="text/javascript">
     $('#reset_1').click(function(){

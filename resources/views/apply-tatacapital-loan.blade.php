@@ -879,6 +879,11 @@
         <h4><p id="modalerr"><h5 style="color: black">Remarks:<b><span id="tata-capital-remarks"></span>.<h5></p></h4>
         
       </div>
+
+       <div class="modal-footer">
+        <a type="button" id="okae" name="okae" class="btn btn-primary tata_capital_pl_proceed">Proceed to Document Upload</a>
+        
+      </div>
       
       
     </div>

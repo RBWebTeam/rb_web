@@ -434,6 +434,7 @@ Route::post('tata-capital-company-master','TataCapitalLoanController@tata_capita
 Route::post('tata-capital-roi','TataCapitalLoanController@tata_capital_roi');
 // Route::get('tata-capital-doc-upload','TataCapitalLoanController@tata_capital_doc');
 Route::post('tata-capital-documents','TataCapitalLoanController@tata_capital_doc_upload');
+Route::get('tata-capital-status','TataCapitalLoanController@tatacapital_status');
 
 /*Flexi*/
 Route::get('flexi-loans','LoanController@flexi');
@@ -455,14 +456,22 @@ Route::post('express-send-otp','OtpController@express_loan_send_otp');
 Route::post('express-verify','OtpController@express_loan_verify_otp');
 
 Route::get('express-loan','HomeController@express_loan');
-
+Route::get('apply-tatacapital-loan','TataCapitalLoanController@apply_tatacapital_loan');
 /*To Secure*/
 Route::group(['middleware'=>'OtpVerification'], function(){
 
 Route::get('kotak-home-loan','LoanController@kotak_home_loan');
 Route::get('kotak-personal-loan','LoanController@kotak_personal_loan');
 Route::get('lendingkart','LoanController@lendingkart');
-Route::get('apply-tatacapital-loan','TataCapitalLoanController@apply_tatacapital_loan');
+
 Route::get('rbl-personal-loan','LoanController@rbl_personal_loan');
 Route::get('apply-iifl-loan','LoanController@apply_iifl_loan');
 });
+
+/*Emailer purpose*/
+Route::get('rbl-personal-loan-dc','LoanController@rbl_personal_loan_dc');
+Route::post('rbl-personal-loan-submit-dc','LoanController@rbl_personal_loan_submit');
+Route::get('kotak-personal-loan-dc','LoanController@kotak_personal_loan_dc');
+Route::post('kotak-pl-submit-dc','LoanController@kotak_pl_submit');
+Route::get('apply-iifl-loan-dc','LoanController@apply_iifl_loan_dc');
+Route::get('medsave','LoanController@medsave');

@@ -1610,6 +1610,12 @@
         var city = $('#cCity').val();
         // alert(city);
         $('#empCity').val(city);
+
+        var salary = $('#nSalary').val();
+        $('#currMonthIncome').val(salary);
+
+        var loanamt = $('#nAmount').val();
+        $('#loanAmount').val(loanamt);
         $.ajax({  
          type: "POST",  
          url: "{{URL::to('tata-capital-roi')}}",
@@ -1661,7 +1667,7 @@
        if (msg.RetStatus=="SUCCESS") 
         {
          $('#message').val(msg.Message);
-         $('#Status').val(msg.Status); ]
+         $('#Status').val(msg.Status); 
          $('#status').modal('show');
         } 
         

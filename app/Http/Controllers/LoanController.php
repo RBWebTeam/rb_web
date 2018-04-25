@@ -1337,40 +1337,40 @@ $url = $this::$url_static."/BankAPIService.svc/updateIIFLRevisedQuote";
 
 
 /*Flexi Token*/
-   // public function flexi_loans_token(Request $req){
+   public function flexi_loans_token(Request $req){
    
-   //      $data=$req->all();
-   //      $post_data=json_encode($data);
+        $data=$req->all();
+        $post_data=json_encode($data);
        
-   //      $url = $this::$url_static."/BankAPIService.svc/getFlexiLoanToken";
-   //      $result=$this->call_json_data_api($url,$post_data);
-   //      $http_result=$result['http_result'];
-   //      $error=$result['error'];
-   //      $st=str_replace('"{', "{", $http_result);
-   //      $s=str_replace('}"', "}", $st);
-   //      $m=$s=str_replace('\\', "", $s);
-   //      // print_r($http_result);exit();
-   //      $obj=json_decode($m);
-   //      return response()->json( $obj);
-   //  }
+        $url = $this::$url_static."/BankAPIService.svc/getFlexiLoanToken";
+        $result=$this->call_json_data_api($url,$post_data);
+        $http_result=$result['http_result'];
+        $error=$result['error'];
+        $st=str_replace('"{', "{", $http_result);
+        $s=str_replace('}"', "}", $st);
+        $m=$s=str_replace('\\', "", $s);
+        // print_r($http_result);exit();
+        $obj=json_decode($m);
+        return response()->json( $obj);
+    }
 
 
 /*Flexi Partner List*/
-    // public function flexi_loans_partner_list(Request $req){
-    //     // $data=$req->all();
-    //     // print_r($data);exit();
-    //     $url = $this::$url_static."/BankAPIService.svc/getFlexiLoanPartnerList";
-    //     $result=$this->call_json_data_get_api($url,null);
-    //     $http_result=$result['http_result'];
-    //     // print_r($http_result);exit();
-    //     $error=$result['error'];
-    //     $st=str_replace('"{', "{", $http_result);
-    //     $s=str_replace('}"', "}", $st);
-    //     $m=$s=str_replace('\\', "", $s);
+    public function flexi_loans_partner_list(Request $req){
+        // $data=$req->all();
+        // print_r($data);exit();
+        $url = $this::$url_static."/BankAPIService.svc/getFlexiLoanPartnerList";
+        $result=$this->call_json_data_get_api($url,null);
+        $http_result=$result['http_result'];
+        // print_r($http_result);exit();
+        $error=$result['error'];
+        $st=str_replace('"{', "{", $http_result);
+        $s=str_replace('}"', "}", $st);
+        $m=$s=str_replace('\\', "", $s);
         
-    //     $obj=json_decode($m);
-    //     return response()->json( $obj);
-    // }
+        $obj=json_decode($m);
+        return response()->json( $obj);
+    }
 
 
 /*Flexi Create Application*/

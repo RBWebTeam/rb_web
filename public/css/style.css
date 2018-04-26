@@ -314,7 +314,7 @@ Input Form
 ------------------------------------------*/
 label { }
 .control-label { text-transform: uppercase; color: #3c4d6b; font-size: 13px; font-weight: 600; }
-.form-control { width: 100%; height: 52px; padding: 6px 16px; font-size: 14px; line-height: 1.42857143; color: #555; background-image: none; background-color: #fff; border-radius: 4px; -webkit-box-shadow: inset 0 0px 0px rgba(0, 0, 0, .075); box-shadow: inset 0 0px 0px rgba(0, 0, 0, .075); margin-bottom: 10px; border: 2px solid #e6ecef; }
+.form-control { width: 100%; height: 52px; padding: 6px 16px; font-size: 14px; line-height: 1.42857143; color: #555; background-image: none; background-color: #fff; border-radius: 4px; -webkit-box-shadow: inset 0 0px 0px rgba(0, 0, 0, .075); box-shadow: inset 0 0px 0px rgba(0, 0, 0, .075); margin-bottom: 10px; border: 2px solid #ddd; }
 .form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control { background-color: #fff; }
 .form-control:focus { }
 .required { color: red }
@@ -327,7 +327,7 @@ content
 .content { padding-bottom: 100px; padding-top: 100px; }
 .content-area { }
 .sidebar-area { }
-.wrapper-content { margin-top: -30px; margin-bottom: 100px; position: relative; }
+.wrapper-content { margin-top: -30px; margin-bottom:20px; position: relative; }
 
 /*-----------------------------------------
 Bullet
@@ -681,7 +681,7 @@ padding-top: 3%;
 .customer-meta { }
 .customer-quote-circle { background-color: #ed1c24; border-radius: 100%; padding: 10px; position: absolute; width: 40px; height: 40px; top: 20px; left: 30px; color: #fff; text-align: center; z-index: 1; }
 .how-it-block { background-color: #fff; padding: 30px; min-height: 320px; }
-.how-it-block1 { background-color: #fff; padding: 20px; min-height: 320px; }
+.how-it-block1 { background-color: #fff; padding: 20px;padding-bottom:30px; min-height: 320px; width:100%; float:left;}
 .how-it-no { font-size: 76px; color: #000000; }
 .how-it-content { }
 

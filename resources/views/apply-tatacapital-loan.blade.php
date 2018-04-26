@@ -93,19 +93,20 @@
                                <div class="col-md-offset-2 col-md-8 col-sm-12 col-xs-12" >
                                 <div class="mb60  section-title text-center  ">
                                 <h1 class="">
-                                  <h2 class=""><center>Tata Capital Personal Loan</center></h2>
+                                  <h2><center style="border-bottom:1px dashed #ccc;padding-bottom:5px;">Tata Capital Personal Loan</center></h2>
                          </div>
                     </div>
                     <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding-bottom: 20px">
-                    <div class="how-it-block1 bg-boxshadow" style=" min-height: 400px;">
+                    <div class="how-it-block1 bg-boxshadow" style=" min-height: 300px;">
                       <div id="personal_loan">
                 <form id="company_list" name="company_list" method="POST">
                            {{ csrf_field() }}
                                <div class="row">
                   <div class="form-group">
-                    <div class="col-md-12"><h4 class="hdr pad1 text-center">Company List</h4></div>
-                            <div class="col-md-4 col-sm-12 col-xs-12">
+                    <!-- <div class="col-md-12"><h4 class="hdr pad1 text-center">Company List</h4></div> -->
+
+                            <div class="col-md-4 col-sm-12 col-xs-12 col-md-offset-4">
                       <div class="form-group">
                             <!-- <label for="Company_Name">Company Name: </label> -->
                             <input type="text" class="form-control" name="cFilter" placeholder="Company Name" id="Company_Name">
@@ -143,8 +144,8 @@
                                       </div>
                                     </div>
                                      <input type="hidden" class="form-control" name="nComp" id="Company">
-                            
-                            <a class="btn btn-primary btn btn-sm" id="tata_capital_roi"  >Submit</a>
+                            <br>
+                           <div class="col-md-2 col-md-offset-5"> <a class="btn btn-primary btn btn-sm" id="tata_capital_roi"  >Submit</a></div>
                           </form>
                           </div>
                          
@@ -807,36 +808,22 @@
                                       </div>
                                         
                                     </div>
-                                    <hr>
+                                    
                                 </div>
                                  
-                                      <div class="col-md-12">
+                                      <div class="col-md-4 col-md-offset-4">
                                         &nbsp;&nbsp;&nbsp;&nbsp;<a class="btn btn-primary btn btn-sm" id="tata_capital_submit"  >Confirm & Continue<i class="icon-arrow-right"></i></a>
+                                        </div>
                                         
                                     <div class="iframeloading" style= "display: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
                                     <img src="{{URL::to('images/ajaxloader.gif')}}" alt="Loader" title="Loader" style="top: 50%; position: relative; left: 50%;"  />
                                    </div>
                                    
                                 
-                            </form>
-                    
-
-
-
-
-
-
-
-
-
-
-
-                                     
-                                     
-                                     
+                            </form>         
                                 
                     </div>
-                    <hr>
+                   
                     </div>
                   </form>
                 </div>
@@ -1632,6 +1619,12 @@
         var city = $('#cCity').val();
         // alert(city);
         $('#empCity').val(city);
+
+        var salary = $('#nSalary').val();
+        $('#currMonthIncome').val(salary);
+
+        var loanamt = $('#nAmount').val();
+        $('#loanAmount').val(loanamt);
         $.ajax({  
          type: "POST",  
          url: "{{URL::to('tata-capital-roi')}}",
@@ -1683,7 +1676,7 @@
        if (msg.RetStatus=="SUCCESS") 
         {
          $('#message').val(msg.Message);
-         $('#Status').val(msg.Status); ]
+         $('#Status').val(msg.Status); 
          $('#status').modal('show');
         } 
         

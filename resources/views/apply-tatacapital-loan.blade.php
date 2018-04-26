@@ -123,7 +123,7 @@
                            {{ csrf_field() }}
                            
 
-                           <div class="col-md-12"><h4 class="hdr pad1 text-center">ROI Acc.To Company</h4></div>
+                           <div class="col-md-12"><h4 class="hdr pad1 text-center">Additional Details</h4></div>
 
                            <div class="col-md-4 col-sm-12 col-xs-12">
                       <div class="form-group">
@@ -178,12 +178,12 @@
                                       </div>
                                         <div class="col-md-4 col-sm-12 col-xs-12">
                       <div class="form-group">
-                                            <input type="text" class="form-control" id="mname" name="mname" placeholder="Middle Name(as per PAN Record)" maxlength="30"  onkeypress="return AllowAlphabet(event)">
+                                            <input type="text" class="form-control" id="mname" name="mname" placeholder="Middle Name" maxlength="30"  onkeypress="return AllowAlphabet(event)">
                                         </div>
                                       </div>
                                         <div class="col-md-4 col-sm-12 col-xs-12">
                       <div class="form-group">
-                                             <input type="text" class="form-control" id="lname" name="lname" placeholder="Last Name(as per PAN Record)" maxlength="30"  onkeypress="return AllowAlphabet(event)" required>
+                                             <input type="text" class="form-control" id="lname" name="lname" placeholder="Last Name" maxlength="30"  onkeypress="return AllowAlphabet(event)" required>
                                         </div>
                                       </div>
 
@@ -768,7 +768,8 @@
 
                                          <div class="col-md-4 col-sm-12 col-xs-12">
                                     <div class="form-group">
-                                            <input type="text" class="form-control" id="loanAmount" name="loanAmount" required placeholder="Req Loan Amount" minlength="5" maxlength="9"  onkeypress="return fnAllowNumeric(event)">
+                                            <input type="text" class="form-control" id="loanAmount" name="loanAmount" required placeholder="Required Loan Amount" minlength="5" maxlength="9"  onkeypress="return fnAllowNumeric(event)">
+
                                         </div>
                                       </div>
                                      

@@ -91,6 +91,10 @@ class NewProcessController extends CallApiController
     }  
       
 
+      public function personal_loan_demo(){
+        return view('personal-loan-demo');
+      }
+
 
       
 }

@@ -150,7 +150,7 @@
                           </div>
                          
 
-                      <div id="tata_capital_pl_form" style="display: none;">
+                      <div id="tata_capital_pl_form" style="display: none;" >
                         <form class="" id="tata_capital_form" name="tata_capital_form" role="form" method="POST" >
                              {{ csrf_field() }}
                              
@@ -312,7 +312,7 @@
 
                                         
 
-                                          <div class="col-md-4 col-sm-12 col-xs-12">
+                                          <!-- <div class="col-md-4 col-sm-12 col-xs-12">
                                     <div class="form-group">
                                           <select name="resState" id="resState" class="form-control block drop-arr select-sty" required>
                                           <option selected disabled="" value="">State</option>
@@ -359,9 +359,32 @@
                                           <option data-group="DELHI" value="84">84</option>
                                           </select>
                                         </div>
+                                      </div> -->
+
+                                      <div class="col-md-4 col-sm-12 col-xs-12">
+                                      <div class="form-group">
+                               
+                                      <select id="losState" name="losState" class="form-control">
+                                      <option disabled selected value="">State</option>
+                                      </select>
+                                      </div>
                                       </div>
 
-                                        <div class="col-md-4 col-sm-12 col-xs-12">
+                                      
+                                            <input type="hidden" id="resState" name="resState" required>
+                                            
+                                        
+
+                                      <div class="col-md-4 col-sm-12 col-xs-12">
+                                      <div class="form-group">
+                               
+                                      <select id="losCity" name="losCity" class="form-control">
+                                      <option disabled selected value="">City</option>
+                                      </select>
+                                      </div>
+                                      </div>
+
+                                        <!-- <div class="col-md-4 col-sm-12 col-xs-12">
                                     <div class="form-group">
                                           <select name="resCity" id="resCity" class="form-control block drop-arr select-sty" required>
                                           <option selected disabled="" value="">City</option>
@@ -399,9 +422,9 @@
                                           
                                           </select>
                                         </div>
-                                      </div>
+                                      </div> -->
 
-                                       <div class="col-md-4 col-sm-12 col-xs-12">
+                                       <!-- <div class="col-md-4 col-sm-12 col-xs-12">
                                     <div class="form-group">
                                           <select name="losCity" id="losCity" class="form-control block drop-arr select-sty" required>
                                           <option data-group='SHOW' value='0'>CityID</option>
@@ -439,7 +462,13 @@
                                           
                                           </select>
                                         </div>
-                                      </div>
+                                      </div> -->
+
+                                     
+                                            <input type="hidden" id="resCity" name="resCity" required>
+                                            
+                                        
+
 
                                         <div class="col-md-4 col-sm-12 col-xs-12">
                                     <div class="form-group">
@@ -1357,7 +1386,7 @@
     $('#resCity').trigger('change');
 </script>
 
-<script type="text/javascript">
+<!-- <script type="text/javascript">
   
     $('#resState').on('change', function(){
         var val = $(this).val();
@@ -1377,7 +1406,7 @@
         });
     });
     $('#resState').trigger('change');
-</script>
+</script> -->
 
 <script type="text/javascript">
 
@@ -1449,10 +1478,13 @@
    if(data)
       {      $.each(data, function( index, value ) {
             $('#empProvince').append('<option value="'+value.los_state_id+'">'+value.state_name+'</option>');
-
+            $('#losState').append('<option value="'+value.los_state_id+'">'+value.state_name+'</option>');
+           
+            // $('#losState').val(value.state_name);
         }); 
     }else{
       $('#empProvince').empty().append('No Result Found');
+      $('#losState').empty().append('No Result Found');
     }
 
    },
@@ -1678,3 +1710,54 @@
  });
 </script>
 
+
+<script>
+$('#losState').on('change', function() {
+   // alert('okae');
+  var losState=$('#losState').find(":selected").val();
+   console.log(losState);
+    var v_token ="{{csrf_token()}}";
+   $.ajax({  
+                type: "POST",  
+                url: "{{URL::to('tatacapital')}}",
+                 data : {'_token': v_token,'losState':losState},
+                success: function(msg){
+                   
+                    console.log(msg);
+                    if(msg)
+                    {      $.each(msg, function( index, value ) {
+                              $('#losCity').empty().append('<option value="'+value.los_city_id+'">'+value.city_name+'</option>');
+
+                              $('#resCity').val(value.city_name);
+
+
+                    }); 
+                    }else{
+                        $('#losCity').empty().append('No Result Found');
+                      }
+                        
+    }  
+      });
+  
+});
+</script>
+
+<script>
+$('#losState').on('change', function() {
+   // alert('okae');
+  var losState=$('#losState').find(":selected").val();
+   console.log(losState);
+    var v_token ="{{csrf_token()}}";
+   $.ajax({  
+                type: "POST",  
+                url: "{{URL::to('tatacapitalstate')}}",
+                 data : {'_token': v_token,'losState':losState},
+                success: function(msg){
+                   
+                    // console.log(msg[0].state_name);
+                   $('#resState').val(msg[0].state_name);  
+      }
+  
+});
+ });
+</script>

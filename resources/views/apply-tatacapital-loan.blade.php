@@ -472,10 +472,9 @@
                                           </div>
                                         </div>
 
-                                      
-
+                                          <div class="col-md-4 col-sm-12 col-xs-12">
+                                    <div class="form-group">
                                             <input type="text" class="form-control" id="yrsCurrentResidence" name="yrsCurrentResidence" placeholder="No Of Years At Current Residence" onkeypress="return fnAllowNumeric(event)" required>
-
                                             
                                           </div>
                                         </div>
@@ -597,23 +596,17 @@
 
                                          <div class="col-md-4 col-sm-12 col-xs-12">
                                     <div class="form-group">
-
                                         <input type="text" class="form-control" placeholder="Office Addr 1" name="empAddressLine1" id="empAddressLine1" required>
-
                                         </div>
                                       </div>
                                         <div class="col-md-4 col-sm-12 col-xs-12">
                                     <div class="form-group">
-
                                         <input type="text" class="form-control" placeholder="Office Addr 2" name="empAddressLine2" id="empAddressLine2" required>
-
                                         </div>
                                       </div>
                                          <div class="col-md-4 col-sm-12 col-xs-12">
                                     <div class="form-group">
-
                                         <input type="text" class="form-control" placeholder="Office Addr 3" name="empAddressLine3" id="empAddressLine3" required>
-
                                         </div>
                                       </div>
 
@@ -750,7 +743,7 @@
 
                                         <div class="col-md-4 col-sm-12 col-xs-12">
                                     <div class="form-group">
-                                            <input type="text" class="form-control" id="noOfChequeBounced" name="noOfChequeBounced" required placeholder="No Of Cheque Bounced"  onkeypress="return fnAllowNumeric(event)">
+                                            <input type="text" class="form-control" id="noOfChequeBounced" name="noOfChequeBounced" required placeholder="No Of ChequeBounced"  onkeypress="return fnAllowNumeric(event)">
                                         </div>
                                       </div>
 
@@ -769,7 +762,6 @@
                                          <div class="col-md-4 col-sm-12 col-xs-12">
                                     <div class="form-group">
                                             <input type="text" class="form-control" id="loanAmount" name="loanAmount" required placeholder="Required Loan Amount" minlength="5" maxlength="9"  onkeypress="return fnAllowNumeric(event)">
-
                                         </div>
                                       </div>
                                      
@@ -1510,8 +1502,6 @@
      } 
     });
 </script>
-
-
 
 <!-- <script type="text/javascript">
     $('#reset_1').click(function(){

@@ -150,7 +150,7 @@
                           </div>
                          
 
-                      <div id="tata_capital_pl_form" style="display: none;" >
+                      <div id="tata_capital_pl_form">
                         <form class="" id="tata_capital_form" name="tata_capital_form" role="form" method="POST" >
                              {{ csrf_field() }}
                              

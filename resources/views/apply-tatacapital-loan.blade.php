@@ -150,7 +150,7 @@
                           </div>
                          
 
-                      <div id="tata_capital_pl_form" style="display: none;">
+                      <div id="tata_capital_pl_form">
                         <form class="" id="tata_capital_form" name="tata_capital_form" role="form" method="POST" >
                              {{ csrf_field() }}
                              
@@ -1713,6 +1713,7 @@
 
 <script>
 $('#losState').on('change', function() {
+  $("#losCity").empty().append('');
    // alert('okae');
   var losState=$('#losState').find(":selected").val();
    console.log(losState);
@@ -1726,7 +1727,7 @@ $('#losState').on('change', function() {
                     console.log(msg);
                     if(msg)
                     {      $.each(msg, function( index, value ) {
-                              $('#losCity').empty().append('<option value="'+value.los_city_id+'">'+value.city_name+'</option>');
+                              $('#losCity').append('<option value="'+value.los_city_id+'">'+value.city_name+'</option>');
 
                               $('#resCity').val(value.city_name);
 
@@ -1754,7 +1755,7 @@ $('#losState').on('change', function() {
                  data : {'_token': v_token,'losState':losState},
                 success: function(msg){
                    
-                    // console.log(msg[0].state_name);
+                    console.log(msg[0].state_name);
                    $('#resState').val(msg[0].state_name);  
       }
   

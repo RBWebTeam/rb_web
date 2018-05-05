@@ -176,13 +176,13 @@
                             <div class="card-listing how-it-block2 hvr-float-shadow2">
                                 <!-- card listing -->
                                 <div class="card-img">
-                                    <a href="{{URL::to('apply-tata-capital-loan')}}"><img src="images/express-loan/tata-capital.png" alt="Tata Capital PL"></a>
+                                    <a href="{{URL::to('apply-tatacapital-loan')}}"><img src="images/express-loan/tata-capital.png" alt="Tata Capital PL"></a>
                                 </div>
                                 <div class="card-content" style="text-align: center;">
                                     <h6 class="text-center text-danger"></h6>
-                                    <h4 class="card-name"><a href="{{URL::to('apply-tata-capital-loan')}}" class="title">Tata Capital PL</a></h4>
+                                    <h4 class="card-name"><a href="{{URL::to('apply-tatacapital-loan')}}" class="title">Tata Capital PL</a></h4>
                                     
-                                    <a href="{{URL::to('apply-tata-capital-loan')}}" class="btn btn-default btn-sm" style="margin-right: 0px;">Apply Now</a>
+                                    <a href="{{URL::to('apply-tatacapital-loan')}}" class="btn btn-default btn-sm" style="margin-right: 0px;">Apply Now</a>
                                     
                                 </div>
                             </div>

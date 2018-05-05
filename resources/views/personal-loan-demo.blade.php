@@ -6,7 +6,7 @@
   <div class="wrapper-content bg-white pinside40">
                         <div class="section-faq" id="section-faq">
                             <div class="">
-<h3 class="text-center">Let’s find the best Personal loan for you!</h3>
+<h1 class=""><center>Personal Loan</center></h1>
   <div id="mod">
     <form name="personal_loan_process_form" id="personal_loan_process_form" action="#" method="POST" >
       {{ csrf_field() }}
@@ -18,10 +18,10 @@
    <!--  <div id ="test123" class="col-md-8"></div> -->
   <div class="row">
  <!--  <h3 class="main-header">Genral Information</h3> -->
- <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12" style="padding-bottom: 20px">
+ <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding-bottom: 20px">
     <div class="how-it-block1 bg-boxshadow" style=" min-height:auto; float:left;">
 
-                        <div class="col-md-6 col-sm-12 col-xs-12">
+                        <div class="col-sm-3">
                              <div class="form-group">
                               <select id="purpose" name="purpose" class="form-control" required>
                                     <option selected disabled="">Purpose of Loan</option>
@@ -33,19 +33,19 @@
                               </div>
                             </div>
 
-                          <div class="col-md-6 col-sm-12 col-xs-12">
+                          <div class="col-sm-3">
                             <div class="form-group">
                               <input type="text" name="loan_amount" id="loan_amount" class="form-input-new form-control" placeholder="Loan Required" onkeypress="return isNumberKey(event)" minlength="6" maxlength="9" required="">
                             </div>
                           </div>
 
-                          <div class="col-md-6 col-sm-12 col-xs-12">
+                          <div class="col-sm-3">
                             <div class="form-group">
                               <input type="text" id="city_name" name="city_name" class="form-input-new form-control search_city" placeholder="City of Location" required="">
                             </div>
                           </div>
 
-                          <div class="col-md-6 col-sm-12 col-xs-12">  
+                          <div class="col-sm-3">  
                             <div class="form-group">
                             <select class="form-control input-md select-sty" name="loan_tenure" id="loan_tenure" required>
                                         <option selected value="">Loan Tenure</option>
@@ -59,14 +59,15 @@
                                 </select>
                               </div>
                           </div>
-
-                          <div class="col-md-6 col-sm-12 col-xs-12">  
+                           
+                          <div id="abc" style="display: none;">
+                          <div class="col-sm-3">  
                             <div class="form-group">
                               <input type="text" name="applicant_name" id="applicant_name" class="form-input-new form-control" placeholder="Applicant Name" maxlength="100" onkeypress="return AllowAlphabet(event)" required="">
                             </div>
                           </div>
 
-                          <div class="col-md-6 col-sm-12 col-xs-12">
+                          <div class="col-sm-3">
                              <div class="form-group">
                               <select id="gender" class="form-control input-md" name="gender" required>
                                   <option selected disabled="">Gender</option>
@@ -77,59 +78,73 @@
                              </div>
                           </div>
 
-                          <div class="col-md-6 col-sm-12 col-xs-12">  
+                          <div class="col-sm-3">  
                             <div class="form-group">
                               <input type="text" id="dob" name="dob" class="form-input-new form-control lastReporteddate1" placeholder="Date of Birth" required="">
                             </div>
                           </div>
 
-                          
-                           <div class="col-md-12 col-sm-12 col-xs-12">
+                          <div class="col-sm-3">
+                             <div class="form-group">
+                              <select id="emp_detail" class="form-control input-md" name="emp_detail" required>
+                                  <option selected disabled="">Employment</option>
+                                  <option value="salaried">Salaried</option>
+                                  <option value="self-employed">Self Employed</option> 
+                              </select>
+                              <input type="hidden" name="emp_detail_id" value="1" >
+                             </div>
+                          </div>
+                          </div>
+
+                           <!-- <div class="col-sm-3">
                               <div class="form-group">                                
                                    <input type="radio" id="sala_DI" value="salaried" name="emp_detail" checked="checked" >&nbsp; Salaried &nbsp;                                
                                     <input type="radio" id="self_DI" value="self-employed" name="emp_detail"  > Self Employee                                  
                                 </div>
-                            </div>
-
-                             <div class="col-md-6 col-sm-12 col-xs-12" id="income_ID">
+                            </div> -->
+                             <div id="efg" style="display: none;">
+                             <div class="col-sm-3" id="income_ID">
                               <div class="form-group">
                                 <input type="text" class="form-input-new form-control"  id="income" name="income"  placeholder="Monthly Income" minlength="5" maxlength="9" required onkeypress="return fnAllowNumeric(event)">
                               </div>
                             </div>
 
-                            <div class="col-md-6 col-sm-12 col-xs-12">
-                              <div class="form-group">
-                                <input type="text" class="form-input-new form-control"   name="obligation" placeholder="Existing EMI (If Any)" minlength="1" maxlength="6"  onkeypress="return fnAllowNumeric(event)"> 
-                              </div>
-                            </div>
-
                             <div  style="display: none;" id="self-employed_ID"> 
        
-                              <div class="col-md-6 col-sm-12 col-xs-12">
+                              <div class="col-sm-3">
                               <div class="form-group">
                                 <input type="text" class="form-input-new form-control " name="turnover" placeholder="Annual Turnover" required  onkeypress="return fnAllowNumeric(event)">
                               </div>
                               </div>
 
-                              <div class="col-md-6 col-sm-12 col-xs-12">
+                              <div class="col-sm-3">
                               <div class="form-group">
                                 <input type="text" class="form-input-new form-control " name="profit_after_tax" placeholder="Profit After Tax" required  onkeypress="return fnAllowNumeric(event)">
                               </div>
                               </div>
 
-                              <div class="col-md-6 col-sm-12 col-xs-12">
+                              <div class="col-sm-3">
                               <div class="form-group">
                                 <input type="text" class="form-input-new form-control " name="depreciation" placeholder="Depreciation"  required onkeypress="return fnAllowNumeric(event)">
                               </div>
                               </div>
 
-                              <div class="col-md-6 col-sm-12 col-xs-12">
+                              <div class="col-sm-3">
                               <div class="form-group">
                                 <input type="text" class="form-input-new form-control " name="remuneration" placeholder="Partner/Director Remuneration"  required onkeypress="return fnAllowNumeric(event)">
                               </div>
                             </div>
 
                             </div>
+
+                            <div class="col-sm-3">
+                              <div class="form-group">
+                                <input type="text" class="form-input-new form-control"   name="obligation" placeholder="Existing EMI (If Any)" minlength="1" maxlength="6"  onkeypress="return fnAllowNumeric(event)"> 
+                              </div>
+                            </div>
+                            </div>
+
+                            
 
                            
 
@@ -160,71 +175,10 @@
     </div>
   </div>
 
-<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" style="padding-bottom: 20px">
-      <div class="how-it-block1 bg-boxshadow" style=" min-height: auto; float:left;">
-        <div class="border" id="mi_ID">
 
-          <p id="err" style="display:none;" ><span style="color: red;font-size: 20px;display: block;text-align: center;">Sorry, No quotes found for your given requirements.</span></p> 
-
-          <div class="col-md-12 col-xs-12">
-            <div class="form-group">
-            <label class="form-label-new">Loan Amount</label>
-              <input type="text" class="form-control" id="loanamount" name="name" value="" placeholder="Loan Amount" readonly />
-            </div>
-            </div>
-
-            <div class="col-md-12 col-xs-12">
-            <div class="form-group">
-                <label class="form-label-new">Best ROI</label>
-                <input type="text" class="form-control" id="rate" name="name" value="" placeholder="Best ROI" readonly />
-            </div>
-            </div>
-
-            <div class="col-md-12 col-xs-12">
-            <div class="form-group">
-            <label class="form-label-new">Tenure</label>
-                 <input type="text" class="form-control" id="term" name="name" value="" placeholder="Tenure"  class="clr-ddd" readonly>
-            </div>
-            </div>
-
-            <div class="col-md-12 col-xs-12">
-            <div class="form-group">
-              <label class="form-label-new">Processing Fee </label>
-              <input type="text" class="form-control" id="processfee" name="name" placeholder="Processing Fee" readonly />
-            </div>
-            </div>
-
-          </div>
-
-
-        <div class="col-md-6 col-xs-12">
-          <br>
-          @if(Session::get('is_login'))
-           <a type="button" class="btn btn-default btn-sm apply_new" title="Experience New Digital Era In Loans">Apply <br>Digitally</a>
-           @else
-           <a data-toggle="modal" data-target="#login_process" class="btn btn-default btn-sm disblk apply_digitally " title="Experience New Digital Era In Loans">Apply <br>Digitally</a>
-           @endif 
-         </div>
-
-           <div class="col-md-6 col-xs-12">
-           <br>
-           <button type="button" class="btn btn-default btn-sm block"  id="call_rm" name="call_rm" data-toggle="modal" data-target="#Modal" title="Call For RM(Single Day Process)">Call <br> Manager</button>
-         </div>
-
-           <div class="col-md-12 col-xs-12">
-            <br>
-           <!-- <button id="eligibility"  class="btn btn-default btn-sm disblk" title="See Bankwise Eligibility And Apply Amongst Best Bank" style="width: 100%;" disabled>Check Eligibility </button> -->  
-            <a id="eligibility"  class="btn btn-default btn-sm disabled" title="See Bankwise Eligibility And Apply Amongst Best Bank" style="width: 100%;">Check Eligibility </a>               
-
-            <div id="log_digital_text" style=" color: red"></div>
-         </div>
-
-
-        </div>
-      </div>
-      </form>    
+      </form>  
     </div></div> </div></div></div></div></aside></div>  
-     
+   
   <div id ="test123"></div>
   <!-- product description -->
   <div class=" ">
@@ -462,7 +416,7 @@ $("#eligibility").click(function() {
 
 </script>
 
-<script type="text/javascript">
+<!-- <script type="text/javascript">
   $(document).ready(function(){
   $('#sala_DI').change(function(){
    $("#self-employed_ID").hide();
@@ -475,4 +429,45 @@ $("#eligibility").click(function() {
   });
 
   });
+</script> -->
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('#emp_detail').on('change', function() {
+       
+
+      if ( this.value == 'salaried')
+      {
+         
+         $("#income_ID").show();
+         $("#self-employed_ID").hide();
+      }
+      else{
+        $("#self-employed_ID").show();
+        $("#income_ID").hide();
+
+        
+      }
+
+
+    });
+});
+</script>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('#loan_tenure').on('change', function() {
+       $('#abc').show();
+
+    });
+});
+</script>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('#emp_detail').on('change', function() {
+       $('#efg').show();
+
+    });
+});
 </script>

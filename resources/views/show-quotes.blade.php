@@ -92,7 +92,7 @@
                         @if($q->Is_Online == '0')
                         <td width="17%"><a class="btn btn-success myClass" >Apply Online</a></td>
                         @else($q->Is_Online == '1')
-                        <td width="17%"><a class="btn btn-danger myClass" >Paperless Approval</a></td>
+                        <td width="17%"><a class="btn btn-danger myClass" style="padding: 20px 3px" >Paperless Approval</a></td>
                         @endif    
                         @else
                         
@@ -102,7 +102,7 @@
                         </td>
                        
                         @else($q->Is_Online == '1')
-                        <td width="17%"><a class="btn btn-danger quote_ID" data-toggle="modal" data-target="#login_process" >Paperless Approval</a></td>
+                        <td width="17%"><a class="btn btn-danger quote_ID" style="padding: 20px 3px" data-toggle="modal" data-target="#login_process" >Paperless Approval</a></td>
                         @endif    
                         @endif    
                      </tr>

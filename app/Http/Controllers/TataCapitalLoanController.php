@@ -89,22 +89,22 @@ public function tatacapitalbankname(Request $request){
 }
 
 
-public function tatacapitalstate(Request $request){
-        $term = $request->term;
-        $products=DB::table('tata_capital_state_master')->select('state_name','los_state_id')
-        ->where('state_name', 'LIKE', '%'.$term.'%')
-        ->take(5)->get();
-        $data=array();
-        foreach ($products as $product) {
-                $data[]=array('value'=>$product->state_name,'los_state_id'=>$product->los_state_id);
-        }
-        if(count($data)){
-             return $data;
-         }
-        else
-            return ['value'=>'No Result Found'];
+// public function tatacapitalstate(Request $request){
+//         $term = $request->term;
+//         $products=DB::table('tata_capital_state_master')->select('state_name','los_state_id')
+//         ->where('state_name', 'LIKE', '%'.$term.'%')
+//         ->take(5)->get();
+//         $data=array();
+//         foreach ($products as $product) {
+//                 $data[]=array('value'=>$product->state_name,'los_state_id'=>$product->los_state_id);
+//         }
+//         if(count($data)){
+//              return $data;
+//          }
+//         else
+//             return ['value'=>'No Result Found'];
      
-}
+// }
     
 
 
@@ -319,6 +319,23 @@ public function tata_capital_business_loan(){
 
     }
 
+    public function tatacapital(Request $req){
+     $quote_data=DB::select('call usp_load_tata_city_master ("'.$req['losState'].'")');
+       // print_r($quote_data);exit();
+      return $quote_data;
+    }
+
+    public function tatacapitalstate(Request $req){
+      $quote_data=DB::select('call usp_load_tata_state_master ("'.$req['losState'].'")');
+       return $quote_data;
+    }
+
+
+    /*Medsave related*/
+    
+    public function tatacapitalpl(){
+      return view('tatacapital-personal-loan-dc');
+    }
 }
    
  

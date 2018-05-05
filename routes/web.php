@@ -435,6 +435,8 @@ Route::post('tata-capital-roi','TataCapitalLoanController@tata_capital_roi');
 // Route::get('tata-capital-doc-upload','TataCapitalLoanController@tata_capital_doc');
 Route::post('tata-capital-documents','TataCapitalLoanController@tata_capital_doc_upload');
 Route::get('tata-capital-status','TataCapitalLoanController@tatacapital_status');
+Route::post('tatacapital','TataCapitalLoanController@tatacapital');
+Route::post('tatacapitalstate','TataCapitalLoanController@tatacapitalstate');
 
 /*Flexi*/
 Route::get('flexi-loans','LoanController@flexi');
@@ -474,6 +476,11 @@ Route::post('rbl-personal-loan-submit-dc','LoanController@rbl_personal_loan_subm
 Route::get('kotak-personal-loan-dc','LoanController@kotak_personal_loan_dc');
 Route::post('kotak-pl-submit-dc','LoanController@kotak_pl_submit');
 Route::get('apply-iifl-loan-dc','LoanController@apply_iifl_loan_dc');
+Route::get('tatacapital-personal-loan-dc','TataCapitalLoanController@tatacapitalpl');
+Route::post('tata-capital-roi-dc','TataCapitalLoanController@tata_capital_roi');
+Route::post('tata-capital-personal-submit-dc','TataCapitalLoanController@tata_capital_personal_submit');
+Route::post('tata-capital-documents-dc','TataCapitalLoanController@tata_capital_doc_upload');
+
 Route::get('medsave','LoanController@medsave');
 
 /*Loans*/

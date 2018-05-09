@@ -373,9 +373,11 @@ public function balance_transfer_with_quoteid(Request $req){
 	}
 
 	public function rbl_pl_calc(Request $req){
+		// print_r($req->all());exit();
 		$loanamount=$req['LnAmt'];
-		$tenure=$req['TnrMths']*12;
-		$roi=0.013;
+		$tenure=$req['TnrMths'];
+		// print_r($tenure);exit();
+		$roi=13.99/12/100;
 
 		$emi  = $loanamount * $roi * (pow(1 + $roi, $tenure) / (pow(1 + $roi, $tenure) - 1));
 		$emi=round($emi);

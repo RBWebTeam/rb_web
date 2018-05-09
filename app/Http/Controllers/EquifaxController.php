@@ -8,6 +8,7 @@ use DB;
 use Mail;
 use Session;
 use Response;
+use DateTime;
 use Symfony\Component\Process\Process;
 use Symfony\Component\Process\Exception\ProcessFailedException;
 
@@ -271,6 +272,7 @@ $post_data='{
 
       public function rectify_registration(Request $req){
         // print_r($req->all());exit();
+        $req['created_on'] =date('d-m-Y');
         $data=$req->all();
         $data['brokerid']=Session::get('brokerid')?Session::get('brokerid'):'MAA=';
         $data['empid']=Session::get('empid')?Session::get('empid'):'MAA=';
@@ -291,21 +293,22 @@ $post_data='{
       }
 
         public function rectify(Request $req){
-          // print_r($req->all());exit();
+        // print_r($req->all());exit();
+        $req['datetime'] =date('d-m-Y');
         $data=$req->all();
         $data['brokerid']=Session::get('brokerid')?Session::get('brokerid'):'MAA=';
         $data['empid']=Session::get('empid')?Session::get('empid'):'MAA=';
         $data['source']=Session::get('source')?Session::get('source'):'MAA=';
         $data['CampaignName']=Session::get('CampaignName');
-        // $file=$req->file('file');
-        // $destinationPath = $_SERVER['DOCUMENT_ROOT'] .'/uploads/rectify/'.$req->Mobile_Num.'/';
-        // $filename=$file->getClientOriginalExtension();
-        // $file->move($destinationPath,$filename);
-        // // print_r($destinationPath.$filename);exit();
-        // $d=array_merge($data,['file_path'=>$destinationPath.$filename]);
-        // unset($d['file']);
-        $post_data=json_encode($data);
-        print_r($post_data);exit();
+        $file=$req->file('attachment');
+        $destinationPath = $_SERVER['DOCUMENT_ROOT'] .'/uploads/rectify/'.$req->Mobile_Num.'/';
+        $filename=$file->getClientOriginalExtension();
+        $file->move($destinationPath,$filename);
+        // print_r($destinationPath.$filename);exit();
+        $d=array_merge($data,['file_path'=>$destinationPath.$filename]);
+        unset($d['attachment']);
+        $post_data=json_encode($d);
+        // print_r($post_data);exit();
         $url = $this::$url_static."/BankAPIService.svc/createRectifyCreditCustBasicReq";
         $result=$this->call_json_data_api($url,$post_data);
         $http_result=$result['http_result'];
@@ -314,7 +317,7 @@ $post_data='{
         $s=str_replace('}"', "}", $st);
         $m=$s=str_replace('\\', "", $s);
         $obj = json_decode($m);
-       print_r($obj);exit();
+        // print_r($obj);exit();
        return response()->json( $obj);
 
  }

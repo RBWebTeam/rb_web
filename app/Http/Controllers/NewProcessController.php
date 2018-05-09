@@ -95,6 +95,8 @@ class NewProcessController extends CallApiController
         return view('personal-loan-demo');
       }
 
-
+      public function nri(){
+        return view('nri-expert');
+      }
       
 }

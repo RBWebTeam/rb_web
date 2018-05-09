@@ -346,10 +346,11 @@ public function balance_transfer_with_quoteid(Request $req){
 		// print_r($req->all());exit();
         $loan=new LoanController();
 		$calc=$loan->kotak_pl_proceed($req);
+		$x = json_decode(json_encode($calc[0]), true);
 		$LnAmt=$req->LnAmt*$calc[0]->non_csc_pf/100;
-		//print_r($calc);exit();
-
-        $arr=array_merge($calc,array('LnAmt' =>$LnAmt));
+		//print_r();exit();
+         	
+        $arr=array_merge($x,array('LnAmt' =>$LnAmt));
 
 		return $arr;
 	}

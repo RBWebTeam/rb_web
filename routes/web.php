@@ -426,6 +426,7 @@ Route::post('hdfc-business-loan-submit','LoanController@hdfc_business_loan_submi
 /*Rectify Creditm*/
 Route::get('rectifycredit','EquifaxController@rectifycredit');
 Route::post('rectify-submit','EquifaxController@rectify');
+Route::post('rectify-registration','EquifaxController@rectify_registration');
 
 /*Tata Capital PL*/
 Route::get('tata-capital-city','TataCapitalLoanController@tatacapital_city');
@@ -488,3 +489,6 @@ Route::get('medsave','LoanController@medsave');
 
 /*Loans*/
 Route::get('personal-loan-demo','NewProcessController@personal_loan_demo');
+
+/*NRI Expert*/
+Route::get('nri-expert','NewProcessController@nri');

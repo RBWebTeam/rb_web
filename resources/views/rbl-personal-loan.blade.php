@@ -76,7 +76,7 @@
 								          <div class="col-md-4 col-sm-12 col-xs-12">
 					                         <div class="form-group">
 					                         <input type="text" class="form-control" placeholder="First Name *" 
-					name="first_name" id="first_name" onkeypress="return AllowAlphabet(event)" required="">
+					                         name="first_name" id="first_name" onkeypress="return AllowAlphabet(event)" required="">
 					                         </div>
 					                      </div>
 

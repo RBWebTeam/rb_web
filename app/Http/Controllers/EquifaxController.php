@@ -269,22 +269,44 @@ $post_data='{
         return view('rectifycredit');
  }
 
+      public function rectify_registration(Request $req){
+        // print_r($req->all());exit();
+        $data=$req->all();
+        $data['brokerid']=Session::get('brokerid')?Session::get('brokerid'):'MAA=';
+        $data['empid']=Session::get('empid')?Session::get('empid'):'MAA=';
+        $data['source']=Session::get('source')?Session::get('source'):'MAA=';
+        // $data['CampaignName']="HDFC PL";
+        $post_data=json_encode($data);
+        // print_r($post_data);exit();
+        $url = $this::$url_static."/BankAPIService.svc/createRectifyCreditCustReq";
+        $result=$this->call_json_data_api($url,$post_data);
+        $http_result=$result['http_result'];
+        $error=$result['error'];
+        $st=str_replace('"{', "{", $http_result);
+        $s=str_replace('}"', "}", $st);
+        $m=$s=str_replace('\\', "", $s);
+        // print_r($http_result);exit();
+        $obj=json_decode($m);
+        return response()->json( $obj);
+      }
+
         public function rectify(Request $req){
+          // print_r($req->all());exit();
         $data=$req->all();
         $data['brokerid']=Session::get('brokerid')?Session::get('brokerid'):'MAA=';
         $data['empid']=Session::get('empid')?Session::get('empid'):'MAA=';
         $data['source']=Session::get('source')?Session::get('source'):'MAA=';
         $data['CampaignName']=Session::get('CampaignName');
-        $file=$req->file('file');
-        $destinationPath = $_SERVER['DOCUMENT_ROOT'] .'/uploads/rectify/'.$req->Mobile_Num.'/';
-        $filename=$file->getClientOriginalExtension();
-        $file->move($destinationPath,$filename);
-        // print_r($destinationPath.$filename);exit();
-        $d=array_merge($data,['file_path'=>$destinationPath.$filename]);
-        unset($d['file']);
-        $post_data=json_encode($d);
-        // print_r($post_data);exit();
-        $url = $this::$url_static."/BankAPIService.svc/createRectifyCreditReq";
+        // $file=$req->file('file');
+        // $destinationPath = $_SERVER['DOCUMENT_ROOT'] .'/uploads/rectify/'.$req->Mobile_Num.'/';
+        // $filename=$file->getClientOriginalExtension();
+        // $file->move($destinationPath,$filename);
+        // // print_r($destinationPath.$filename);exit();
+        // $d=array_merge($data,['file_path'=>$destinationPath.$filename]);
+        // unset($d['file']);
+        $post_data=json_encode($data);
+        print_r($post_data);exit();
+        $url = $this::$url_static."/BankAPIService.svc/createRectifyCreditCustBasicReq";
         $result=$this->call_json_data_api($url,$post_data);
         $http_result=$result['http_result'];
         $error=$result['error'];
@@ -292,7 +314,7 @@ $post_data='{
         $s=str_replace('}"', "}", $st);
         $m=$s=str_replace('\\', "", $s);
         $obj = json_decode($m);
-       // print_r($obj);exit();
+       print_r($obj);exit();
        return response()->json( $obj);
 
  }

@@ -78,7 +78,7 @@
                                 <div class="col-md-4" style="display: none;" id="customer_type">
                                 <span><b>Existing Customer Type Master :<b></span>
                                 <select class="block drop-arr select-sty" name="ExstCustType" id="ExstCustType" required>
-                                    <option disabled selected  value="">Existing Customer Type Master</option>
+                                    <option selected  value="">Existing Customer Type Master</option>
                                     <option selected value="0">0</option>
                                     <option value="1">Bank</option>
                                     <option  value="2">Loan</option>

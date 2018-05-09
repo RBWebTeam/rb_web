@@ -51,7 +51,7 @@
                                 <div class="col-md-4" style="display: none;" id="customer_type">
                                 <!-- <span><b>Existing Customer Type Master :<b></span> -->
                                 <select class="form-control block drop-arr select-sty" name="ExstCustType" id="ExstCustType" required>
-                                    <option disabled selected  value="0">Existing Customer Type Master</option>
+                                    <option  selected  value="0">Existing Customer Type Master</option>
                                   
                                     <option value="1">Bank</option>
                                     <option  value="2">Loan</option>

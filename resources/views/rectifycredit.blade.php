@@ -173,7 +173,7 @@
 
 					        <div class="col-md-12"><h4 class="hdr pad1 text-center">Rectify Form</h4></div>
                              
-                                    <input type="hidden" name="App_Id" id="App_Id" >
+                                    <input type="text" name="App_Id" id="App_Id" >
                                       <!-- customer name -->
                                       <div class="col-md-4 col-sm-12 col-xs-12">
                                           <div class="form-group">
@@ -416,7 +416,7 @@
         <h4 class="modal-title">Confirmation Status</h4>
       </div>
       <div class="modal-body">
-        <h4><p id="modalerr"><h5 style="color: black;" >Your Lead Id is <span id="app_id"></span> .<h5></p></h4>
+        <h4><p id="modalerr"><h5 style="color: black;" >Your Lead Id is <span id="app_id"></span> and <span id="reasn"></span> successfully.<h5></p></h4>
         
       </div>
 
@@ -438,7 +438,7 @@
         <h4 class="modal-title">Error Status</h4>
       </div>
       <div class="modal-body">
-        <h4><p id="modalerr"><h5 style="color: black;">Oops!! Couldn't process due to <span id="rectify-error"></span>.Kindly Try With Alternate Number.<h5></p></h4>
+        <h4><p id="modalerr"><h5 style="color: black;">Oops!! Couldn't process due to <span id="rectify-error"></span> and <span id="reason"></span> .<h5></p></h4>
         
       </div>
    </div>
@@ -584,15 +584,17 @@
           success: function(msg){
              console.log(msg.Status);
              
-             if (msg.Status==1) 
+             if (msg.status==1) 
               {
-              $('#app_id').empty().append(msg.App_Id);
+              $('#app_id').empty().append(msg.response_id);
               $('#rectify-credit-popup').modal('show');
+              $('#reasn').empty().append(msg.message);
               } 
               else 
               {
               $('#rectify-credit-popup').modal('hide');
-              $('#rectify-error').empty().append(msg.Errorinfo);
+              $('#rectify-error').empty().append(msg.error_message);
+              $('#reason').empty().append(msg.message);
               $('#rectify-popup-error').modal('show');
               }
              
@@ -635,17 +637,13 @@
          data : $('#rectify_credit_form').serialize(),
          success: function(msg){
             
-         if (msg.Status==1) {
+         if (msg.status==1) {
               $('#registration_form').hide();
               $('#rectify_form').show();
-              $('#App_Id').val(msg.App_Id);
+              $('#App_Id').val(msg.response_id);
+              $('#message').val(msg.message);
             } 
-            else {
-              $('#rectify-credit-popup').modal('hide');
-              $('#rectify-error').empty().append(msg.Errorinfo);
-              $('#rectify-popup-error').modal('show');
-                
-            }
+            
               
         }  
       });   

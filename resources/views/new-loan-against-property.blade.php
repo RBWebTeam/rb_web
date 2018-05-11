@@ -135,7 +135,7 @@
                              <div class="col-md-12 col-sm-12 col-xs-12">
                               <div class="form-group">                                
                                    <input type="radio" id="sala_DI" value="salaried" name="emp_detail" checked="checked" >&nbsp; Salaried &nbsp;                                 
-                                    <input type="radio" id="self_DI" value="self-employed" name="emp_detail"  >&nbsp;Self Employee                                  
+                                    <input type="radio" id="self_DI" value="self-employed" name="emp_detail"  >&nbsp;Self Employed                                  
                                 </div>
                             </div>
 

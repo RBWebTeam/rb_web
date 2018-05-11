@@ -59,7 +59,7 @@ try{
               $HomePhone=$req->HomePhone?$req->HomePhone:'';    
               $AddressLine1=array();
               if($req->AddressType){
-     foreach ($req->AddressType as $key => $value) {
+              foreach ($req->AddressType as $key => $value) {
               $AddressLine1[]= array('InquiryAddresses' =>["AddressLine" =>$req->AddressLine[$key]?$req->AddressLine[$key]:" ",
               'AddressType'=>$req->AddressType[$key]?$req->AddressType[$key]:" ", 
               'City'=>$req->City[$key]?$req->City[$key]:" ",
@@ -312,12 +312,13 @@ $post_data='{
         $url = $this::$url_static."/BankAPIService.svc/createRectifyCreditCustBasicReq";
         $result=$this->call_json_data_api($url,$post_data);
         $http_result=$result['http_result'];
+         // print_r($http_result);exit();
         $error=$result['error'];
         $st=str_replace('"{', "{", $http_result);
         $s=str_replace('}"', "}", $st);
         $m=$s=str_replace('\\', "", $s);
         $obj = json_decode($m);
-        // print_r($obj);exit();
+       
        return response()->json( $obj);
 
  }
@@ -334,9 +335,5 @@ $post_data='{
     
     return view('equifax')->with(['inq'=>$inquiry,'state'=>$state,'phone'=>$phone]);
  }
-
-
-        
-
-  
+ 
 }

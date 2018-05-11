@@ -127,7 +127,7 @@
                                 <label class="control-label sr-only" for="AddressType">Select Address Type</label>
                                 <select id="AddressType" name="AddressType[]" class="form-control dropdown" required="">
                                     <option disabled selected value="" >Select Address Type</option>
-                                       <option value="C">Current or Present</option>
+                                       <option value="C">Present</option>
                                        <option value="P"> Permanent</option>
                                        <option value="O">Office</option>
                                        <option value="X">Other or Unspecified</option>
@@ -246,7 +246,7 @@
                             <div class="col-md-4 col-sm-12 col-xs-12">
                             <div class="form-group">
                                 <select name="InquiryPurpose" class="form-control dropdown" id="InquiryPurpose" required>
-                                 <option disabled selected value="" class="text-danger">Inquiry Purpose</option>
+                                 <option disabled selected value="" class="text-danger">Enquiry Purpose</option>
                                  @foreach($inq as $value)
                                  <option value="{{$value->inquiry_code}}">{{$value->inquiry_purpose}}</option>
                                  @endforeach
@@ -257,7 +257,7 @@
 
                             <div class="col-md-4 col-sm-12 col-xs-12">
                             <div class="form-group">
-                                <input type="text" name="TransactionAmount" id="TransactionAmount"   onkeypress="return Numeric(event)" placeholder="Transaction Amount" minlength="5" maxlength="9" class="form-control input-md" required>
+                                <input type="text" name="TransactionAmount" id="TransactionAmount"   onkeypress="return Numeric(event)" placeholder="Last Transaction Amount" minlength="5" maxlength="9" class="form-control input-md" required>
                            
                             </div>
                             </div>

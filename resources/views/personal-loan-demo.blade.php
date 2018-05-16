@@ -1,239 +1,160 @@
 @include('layout.header')
-<div class="container">
-  <aside id="fh5co-hero">
-    <div class="row">
- <div class="col-md-12">
-  <div class="wrapper-content bg-white pinside40">
-                        <div class="section-faq" id="section-faq">
-                            <div class="">
-<h1 class=""><center>Personal Loan</center></h1>
-  <div id="mod">
-    <form name="personal_loan_process_form" id="personal_loan_process_form" action="#" method="POST" >
-      {{ csrf_field() }}
-      <input type="hidden" id="product" name="product_name" value=9>
-      <input type="hidden" name="empid" class="empid" value=" <?php echo Session::get('empid')?Session::get('empid'):'';?>">
-          <input type="hidden" name="brokerid" class="brokerid" value="<?php echo Session::get('brokerid')?Session::get('brokerid'):'';?>">
-          <input type="hidden" name="source" class="source" value="<?php echo Session::get('source')?Session::get('source'):'';?>"> 
-          <input type="hidden" name="refapp" class="refapp" value="<?php echo Session::get('refid')?Session::get('refid'):'';?>"> 
-   <!--  <div id ="test123" class="col-md-8"></div> -->
-  <div class="row">
- <!--  <h3 class="main-header">Genral Information</h3> -->
- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding-bottom: 20px">
-    <div class="how-it-block1 bg-boxshadow" style=" min-height:auto; float:left;">
-
-                        <div class="col-sm-3">
-                             <div class="form-group">
-                              <select id="purpose" name="purpose" class="form-control" required>
-                                    <option selected disabled="">Purpose of Loan</option>
-                                    <option value="Marriage">Marriage</option>
-                                    <option value="Home Related">Home Related</option>
-                                    <option value="Business">Business</option>
-                                    <option value="Other">Other</option>                                    
-                                </select>
-                              </div>
-                            </div>
-
-                          <div class="col-sm-3">
-                            <div class="form-group">
-                              <input type="text" name="loan_amount" id="loan_amount" class="form-input-new form-control" placeholder="Loan Required" onkeypress="return isNumberKey(event)" minlength="6" maxlength="9" required="">
-                            </div>
-                          </div>
-
-                          <div class="col-sm-3">
-                            <div class="form-group">
-                              <input type="text" id="city_name" name="city_name" class="form-input-new form-control search_city" placeholder="City of Location" required="">
-                            </div>
-                          </div>
-
-                          <div class="col-sm-3">  
-                            <div class="form-group">
-                            <select class="form-control input-md select-sty" name="loan_tenure" id="loan_tenure" required>
-                                        <option selected value="">Loan Tenure</option>
-                                        <option value="1">1 Year</option>
-                                        <option value="2">2 Year</option>
-                                        <option value="3">3 Year</option>
-                                        <option value="4">4 Year</option>
-                                        <option value="5">5 Year</option>
-                                        <option value="6">6 Year</option>
-                                        <option value="7">7 Year</option>                                     
-                                </select>
-                              </div>
-                          </div>
-                           
-                          <div id="abc" style="display: none;">
-                          <div class="col-sm-3">  
-                            <div class="form-group">
-                              <input type="text" name="applicant_name" id="applicant_name" class="form-input-new form-control" placeholder="Applicant Name" maxlength="100" onkeypress="return AllowAlphabet(event)" required="">
-                            </div>
-                          </div>
-
-                          <div class="col-sm-3">
-                             <div class="form-group">
-                              <select id="gender" class="form-control input-md" name="gender" required>
-                                  <option selected disabled="">Gender</option>
-                                  <option value="M">Male</option>
-                                  <option value="F">Female</option> 
-                              </select>
-                              <input type="hidden" name="emp_detail_id" value="1" >
-                             </div>
-                          </div>
-
-                          <div class="col-sm-3">  
-                            <div class="form-group">
-                              <input type="text" id="dob" name="dob" class="form-input-new form-control lastReporteddate1" placeholder="Date of Birth" required="">
-                            </div>
-                          </div>
-
-                          <div class="col-sm-3">
-                             <div class="form-group">
-                              <select id="emp_detail" class="form-control input-md" name="emp_detail" required>
-                                  <option selected disabled="">Employment</option>
-                                  <option value="salaried">Salaried</option>
-                                  <option value="self-employed">Self Employed</option> 
-                              </select>
-                              <input type="hidden" name="emp_detail_id" value="1" >
-                             </div>
-                          </div>
-                          </div>
-
-                           <!-- <div class="col-sm-3">
-                              <div class="form-group">                                
-                                   <input type="radio" id="sala_DI" value="salaried" name="emp_detail" checked="checked" >&nbsp; Salaried &nbsp;                                
-                                    <input type="radio" id="self_DI" value="self-employed" name="emp_detail"  > Self Employee                                  
-                                </div>
-                            </div> -->
-                             <div id="efg" style="display: none;">
-                             <div class="col-sm-3" id="income_ID">
-                              <div class="form-group">
-                                <input type="text" class="form-input-new form-control"  id="income" name="income"  placeholder="Monthly Income" minlength="5" maxlength="9" required onkeypress="return fnAllowNumeric(event)">
-                              </div>
-                            </div>
-
-                            <div  style="display: none;" id="self-employed_ID"> 
-       
-                              <div class="col-sm-3">
-                              <div class="form-group">
-                                <input type="text" class="form-input-new form-control " name="turnover" placeholder="Annual Turnover" required  onkeypress="return fnAllowNumeric(event)">
-                              </div>
-                              </div>
-
-                              <div class="col-sm-3">
-                              <div class="form-group">
-                                <input type="text" class="form-input-new form-control " name="profit_after_tax" placeholder="Profit After Tax" required  onkeypress="return fnAllowNumeric(event)">
-                              </div>
-                              </div>
-
-                              <div class="col-sm-3">
-                              <div class="form-group">
-                                <input type="text" class="form-input-new form-control " name="depreciation" placeholder="Depreciation"  required onkeypress="return fnAllowNumeric(event)">
-                              </div>
-                              </div>
-
-                              <div class="col-sm-3">
-                              <div class="form-group">
-                                <input type="text" class="form-input-new form-control " name="remuneration" placeholder="Partner/Director Remuneration"  required onkeypress="return fnAllowNumeric(event)">
-                              </div>
-                            </div>
-
-                            </div>
-
-                            <div class="col-sm-3">
-                              <div class="form-group">
-                                <input type="text" class="form-input-new form-control"   name="obligation" placeholder="Existing EMI (If Any)" minlength="1" maxlength="6"  onkeypress="return fnAllowNumeric(event)"> 
-                              </div>
-                            </div>
-                            </div>
-
-                            
-
-                           
-
-                                                     
-  
-
-  
-              <br>
-    <!-- <?php if(Session::get('is_login')) {?>
-                <?php if(Session::get('contact')!=''){ Session::get('contact'); ?>
-              <button class="btn btn-primary btn-outline with-arrow top-mrg product_name " >Get Best Quotes<i class="icon-arrow-right"></i></button>
-              <?php }else{?> 
-                <a  class="btn btn-primary btn-outline with-arrow top-mrg product_name" data-toggle="modal" data-target="#contact_id">Get Best Quotes<i class="icon-arrow-right"></i></a>
-                      <?php }?>
-            <?php }else{?>
-            <button  style="display:none" class="btn btn-primary btn-outline with-arrow top-mrg product_name " id="btn_refresh_co">Get Best Quotes<i class="icon-arrow-right"></i></button>
-
-
-              <a class="btn btn-primary btn-outline with-arrow top-mrg product_name" id="btn_refresh_co1" data-toggle="modal" data-target="#login_process">Get Best Quotes<i class="icon-arrow-right"></i></a>
-            <?php } ?> -->
-
-            <div class="col-md-12">
-
-             <a class="btn btn-default btn-sm product_name product_ID" >Get Best Quotes</a>  
-             </div>
-
-     
-    </div>
-  </div>
-
-
-      </form>  
-    </div></div> </div></div></div></div></aside></div>  
+ <style>
+   .bg-img {background: url("images/bg_img.png")no-repeat; width:447px; height:502px;}
+   .pl-frm {padding-top:190px;}
+   .form-group {margin-bottom: 5px !important;} 
+   .form-control {margin-bottom:6px !important;}
+   .wrapper-content {background:#ffffff url("images/watermark_img.png")no-repeat;}
+</style>
    
-  <div id ="test123"></div>
-  <!-- product description -->
   <div class=" ">
         <!-- content start -->
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-
                     <div class="wrapper-content bg-white pinside40">
-                     <p>Dreaming to Enjoy Vacation in foreign country??&nbsp;&nbsp; A Royal Wedding plan??&nbsp;&nbsp; Renovation of your house??&nbsp;&nbsp; Here we have Personal Loan to make your dreams true.&nbsp;&nbsp;<br> A Personal Loan is a Short Term Unsecured Loan for 1 to 5 years which helps individual to make their dream true by fulfilling their needs. Personal Loan can be disburse within 48 hours as well.</p>
-
-
+                     <!-- <h1 class=""><center>Personal Loan</center></h1> -->
                         <div class="section-faq" id="section-faq">
-                            <div class="">                                
                                 <div class="row">
-                          <div class="col-md-12 col-sm-12 col-xs-12">
-                      <div class="st-accordion ">
-                        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">    <div class="panel panel-default">
-                                <div class="panel-heading" role="tab" id="headingThree">
-                                    <h4 class="panel-title"><i class="fa fa-minus-circle sign"></i>Documents Required</h4>
-                                </div>
-                                
-                                    <div class="panel-body">
-                                        <strong>Important parameters Banks look for :</strong>
-                                            <ul class="listnone bullet bullet-check-circle-default">
-                                                <li>A Copy of Latest Salary Slips or Salary Certificate.</li>
-                                                <li>Form 16 and Copy of ITR for the last two years.</li>
-                                                <li>Last 6 months bank statements, S.O.A (Statements of Accounts)</li>
-                                                <li>Appointment Letter </li>
-                                                <li>Other Loan/ Obligation / Existing Specified Expenses (last 1 year)</li>
-                                                <li>CIBIL Score / Credit Rating</li>
-                                                <li>Government Recognize ID and Address Proof </li>
-                                            </ul>
-                                    </div>
+                                <div id="pl_form" class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding-bottom: 20px">
+                                 
+                             <div class="col-md-6 col-md-offset-3 ">
+                 <div class="bg-img" id="show-hid" style="display:none; padding:0px 10px;">
+                 <form class="pl-frm" name="personal_loan_process_form" id="personal_loan_process_form"  method="post">
+                 <div id="section">
+
+                 {{ csrf_field() }}
+                            <input type="hidden" id="product" name="product_name" value=9>
+                            <input type="hidden" name="empid" class="empid" value=" <?php echo Session::get('empid')?Session::get('empid'):'';?>">
+                            <input type="hidden" name="brokerid" class="brokerid" value="<?php echo Session::get('brokerid')?Session::get('brokerid'):'';?>">
+                            <input type="hidden" name="source" class="source" value="<?php echo Session::get('source')?Session::get('source'):'';?>"> 
+                            <input type="hidden" name="refapp" class="refapp" value="<?php echo Session::get('refid')?Session::get('refid'):'';?>"> 
+                  
+                               <div class="col-md-12 col-sm-12 col-xs-12">
+                                <div class="form-group">
+                                <input type="text" name="loan_amount" id="loan_amount" class="form-input-new form-control" placeholder="Desired Loan Amt" onkeypress="return isNumberKey(event)" minlength="6" maxlength="9" required="">
+                               </div>
+                               </div>
+
+                               <div class="col-md-12 col-sm-12 col-xs-12">
+                                <div class="form-group">
+                               <select class="form-control input-md select-sty" name="loan_tenure" id="loan_tenure" required>
+                                <option selected value="">Loan Tenure</option>
+                                <option value="1">1 Year</option>
+                                <option value="2">2 Year</option>
+                                <option value="3">3 Year</option>
+                                <option value="4">4 Year</option>
+                                <option value="5">5 Year</option>
+                                <option value="6">6 Year</option>
+                                <option value="7">7 Year</option>                                     
+                                </select>
+                               </div>
+                               </div>
+
+                             <div class="col-md-12 col-sm-12 col-xs-12">
+                                <div class="form-group">
+                               <select class="form-control input-md select-sty" name="emp_detail" id="emp_detail" required>
+                                        <option selected value="">Employment Status</option>
+                                        <option value="salaried">Salaried</option>
+                                        <option value="self-employed">Self-Employed</option>
+                                                                         
+                                </select>
+                               </div>
+                               </div>
+
+                               <div class="col-md-12 col-sm-12 col-xs-12" style="display: none;" id="monthly_income">
+                                <div class="form-group">
+                                <input type="text" name="income" id="income" class="form-input-new form-control" placeholder="Monthly Income" onkeypress="return isNumberKey(event)" minlength="5" maxlength="9" required="">
+                               </div>
+                               </div>
+                               </div>
                                
-                            </div>                           
-                        </div>
-                    </div>                                    
-                          </div>
+                               <!-- SECTION 1 -->
+                               <div id="section1" style="display: none;">
+                               <div class="col-md-12 col-sm-12 col-xs-12">
+                               <div class="form-group">
+                               <input type="text" name="city_name" id="city_name" class="form-input-new form-control search_city" placeholder="City" required="">
+                               </div>
+                               </div>
+
+                               <div class="col-md-12 col-sm-12 col-xs-12">
+                                <div class="form-group">
+                                <input type="text" name="applicant_name" id="applicant_name" class="form-input-new form-control" placeholder="Applicant Name" maxlength="100" onkeypress="return AllowAlphabet(event)" required="">
+                               </div>
+                               </div>
+
+                               <div class="col-md-12 col-sm-12 col-xs-12" >
+                               <div class="form-group">
+                                <select id="gender" class="form-control input-md" name="gender" required>
+                                <option selected disabled="">Gender</option>
+                                <option value="M">Male</option>
+                                <option value="F">Female</option> 
+                                </select>
+                                <input type="hidden" name="emp_detail_id" value="1" >
+                                </div>
+                                </div>
+
+                              <div class="col-md-12 col-sm-12 col-xs-12">  
+                              <div class="form-group">
+                              <input type="text" id="dob" name="dob" class="form-input-new form-control lastReporteddate1" placeholder="Date of Birth" required="">
+                              </div>
+                             </div>
+
+                             </div>
+
+                             <!-- SECTION 2 -->
+                              <div id="section2" style="display: none;">
+                               <div class="col-md-12 col-sm-12 col-xs-12">
+                               <div class="form-group">
+                               <input type="text" name="mobile" id="mobile" class="form-input-new form-control" placeholder="Mobile" minlength="10" maxlength="10" onkeypress="return fnAllowNumeric(event)" required="">
+                               </div>
+                               </div>
+
+                               <div class="col-md-12 col-sm-12 col-xs-12">
+                                <div class="form-group">
+                                <input type="text" name="pan_number" id="pan_number" class="form-input-new form-control" placeholder="Pan No" oninput="pan_card('pan_number')" required="">
+                                <span id="pan" style="display:none;color: red; font-size: 10px">Oops.Please Enter Valid Pan Number.!!</span>
+                               </div>
+                               </div>
+
+                               
+
+                             </div>
+
+                               <div class="col-md-12 col-sm-12 col-xs-12">
+                                <div class="form-group">
+                                
+                               </div>
+                               </div>
+                 
+                 
+                 
+                               <div class="col-md-12">
+                               <a class="btn btn-default btn-sm" id="next">Next</a>
+                               <a style="display: none;" class="btn btn-default btn-sm product_name product_ID" >Get Best Quotes</a>  
+                               </div>
+              
+                               </form>
+                               </div>
+                               </div>
+      
+                 
+                               </div> 
+                                </div>
+                                 
+                                   </div>
+                                    </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-  <!-- end of product description -->
+
+  <div id ="test123"></div>
+
 
 @include('layout.footer')
 @include('layout.script')
-  </div>
- 
-  </div>
-
+  
 <script type="text/javascript">
 $(document).ready(function(){
     src = "{{ route('searchajax') }}";
@@ -295,18 +216,7 @@ $(document).ready(function(){
 var getUrl=0;
 
 $(".product_ID").click(function(e){
-   e.preventDefault();
-  
-
-
-
-
-    if(!$('#personal_loan_process_form').valid()){
-
-            return false;
-           
-          }else{
- $(".iframeloading").show();
+   $(".iframeloading").show();
               $.ajax({  
              type: "POST",  
              url: "{{URL::to('loan-submit')}}",
@@ -324,6 +234,7 @@ $(".product_ID").click(function(e){
 
 
                              if (loan_eligible>0) {
+                              $('#pl_form').hide();
                              $("#test123").empty().append(msg.html);  
                              $('#loanamount').val(loan_eligible);
                             var roi = msg.roi;
@@ -371,7 +282,7 @@ $(".product_ID").click(function(e){
                     }  
                   });
 
-          }
+          
 
 
 });
@@ -471,3 +382,65 @@ $("#eligibility").click(function() {
     });
 });
 </script>
+
+<script>
+        $( window ).load(function() {
+        $('#show-hid').slideDown(1000);
+        });
+        </script>
+
+
+<script>
+$('#emp_detail').on('change', function() {
+  // alert('okae');
+  var emp_detail=$('#emp_detail').find(":selected").val();
+  // console.log(LeadType);
+  if ( emp_detail == 'salaried')
+      {
+       
+        $("#monthly_income").show();
+
+        
+      }
+      else{
+        $("#monthly_income").show();
+      }
+});
+</script>
+
+<script type="text/javascript">
+
+ $("#next").click(function(event){
+  // alert('okae');
+         event.preventDefault();
+      if(!  $('#personal_loan_process_form').valid()){
+        return false;
+      }else{
+        $('#section').hide();
+        $('#section1').show();
+        $('#section2').hide();
+            if(!  $('#personal_loan_process_form').valid())
+              {
+                return false;
+            }
+            else
+              { 
+                $('#section1').hide();
+                $('#section2').show();
+                if(! $('#personal_loan_process_form').valid())
+                {
+                       return false;
+                }
+                else{     
+                     $('#next').hide();
+                     $('.product_ID').show();
+                   
+    
+                }
+      }
+    }
+
+      });
+
+
+ </script>

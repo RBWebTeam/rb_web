@@ -169,9 +169,9 @@
 
                                  <div id="rectify_form" style="display: none;">
                             <form id="rectify_personal_details" name="rectify_personal_details" role="form" enctype="multipart/form-data" method="POST">
-					        {{ csrf_field() }}
+					                  {{ csrf_field() }}
 
-					        <div class="col-md-12"><h4 class="hdr pad1 text-center">Rectify Form</h4></div>
+					                  <div class="col-md-12"><h4 class="hdr pad1 text-center">Rectify Form</h4></div>
                              
                                     <input type="text" name="App_Id" id="App_Id" >
                                       <!-- customer name -->
@@ -655,6 +655,32 @@
   $('.rectify_proceed').click(function(){
     window.location.href ="{{URL::to('thank-you')}}";
   });
+</script>
+
+<script type="text/javascript">
+  function ApplicantObligations(){
+var result = true;
+$("#txtemi").each(function() {
+        if (!this.value) {
+            this.value = 0;
+        }
+        
+        if(jQuery.isNumeric(this.value) && this.value>=0){
+            
+        }else{
+            result = false;
+        }
+    });
+    return result;
+}
+
+$('#submit_form').click(function(){
+    var testInput = ApplicantObligations();
+    if(testInput){
+        var finalValue = $('#txtemi').val();
+         $('span').text(finalValue);
+    }
+});
 </script>
 
 

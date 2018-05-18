@@ -4,7 +4,7 @@
    .pl-frm {padding-top:190px;}
    .form-group {margin-bottom: 5px !important;} 
    .form-control {margin-bottom:6px !important;}
-   .wrapper-content {background:#ffffff url("images/watermark_img.png")no-repeat;}
+   .wrapper-content {background:#ffffff url("images/personal-loan.jpg")no-repeat;}
 </style>
    
   <div class=" ">
@@ -12,11 +12,12 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <div class="wrapper-content bg-white pinside40">
+                    <div class="wrapper-content bg-white pinside40" id="pl_form">
                      <!-- <h1 class=""><center>Personal Loan</center></h1> -->
                         <div class="section-faq" id="section-faq">
                                 <div class="row">
-                                <div id="pl_form" class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding-bottom: 20px">
+                                <div class="col-md-6 col-md-offset-3 text-center"><h5>Let's find out best <b>Personal Loan</b> quotes and your <b> Free Credit Score.</b></h5></div>
+                                <div  class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding-bottom: 20px">
                                  
                              <div class="col-md-6 col-md-offset-3 ">
                  <div class="bg-img" id="show-hid" style="display:none; padding:0px 10px;">
@@ -45,8 +46,7 @@
                                 <option value="3">3 Year</option>
                                 <option value="4">4 Year</option>
                                 <option value="5">5 Year</option>
-                                <option value="6">6 Year</option>
-                                <option value="7">7 Year</option>                                     
+                                                        
                                 </select>
                                </div>
                                </div>
@@ -98,6 +98,7 @@
                               <div class="form-group">
                               <input type="text" id="dob" name="dob" class="form-input-new form-control lastReporteddate1" placeholder="Date of Birth" required="">
                               </div>
+                              <div style="font-style: oblique; font-size: 10px";  ><p class="blink"><b>"Hey bingo..!!<br> Just few more details to get quotes and also avail your 50% discount on Credit Report"</b></p></div>
                              </div>
 
                              </div>
@@ -130,8 +131,9 @@
                  
                  
                                <div class="col-md-12">
-                               <a class="btn btn-default btn-sm" id="next">Next</a>
-                               <a style="display: none;" class="btn btn-default btn-sm product_name product_ID" >Get Best Quotes</a>  
+                               <a class="btn btn-danger btn-sm" id="next">Next</a>
+                                <!-- <a class="btn btn-default btn-sm" id="prev">Previous</a> -->
+                               <a style="display: none;" class="btn btn-danger btn-sm product_name product_ID" >Get Best Quotes</a>  
                                </div>
               
                                </form>
@@ -406,6 +408,13 @@ $('#emp_detail').on('change', function() {
         $("#monthly_income").show();
       }
 });
+
+// function blink_text() {
+//     $('.blink').fadeOut(1000);
+//     $('.blink').fadeIn(1000);
+// }
+// setInterval(blink_text, 2000);
+
 </script>
 
 <script type="text/javascript">

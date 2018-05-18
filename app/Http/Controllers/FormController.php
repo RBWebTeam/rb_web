@@ -11,6 +11,10 @@ use App\registrationModel;
 use App\bank_quote_api_request;
 class FormController extends CallApiController
 {
+
+    
+
+
     function sidebar(Request $req){
 
         $input = $req->all();
@@ -30,7 +34,7 @@ class FormController extends CallApiController
     //call API here to save in DB
         $post=json_encode($post_data);
         // print_r($post);exit();
-    $url = $this::$url_static."BankAPIService.svc/GetCustomerWebRequest";
+       $url = $this::$url_static."BankAPIService.svc/GetCustomerWebRequest";
     $result=$this->call_json_data_api($url,$post);
     $http_result=$result['http_result'];
     $error=$result['error'];
@@ -139,6 +143,8 @@ class FormController extends CallApiController
             return $ee;
         }
     }
+
+    
     
      public function otp(Request $req){
         try{
@@ -295,6 +301,8 @@ class FormController extends CallApiController
           // print_r($req->all());exit();
        return view('show-quotes')->with($req);
     }
+
+    
 
 
 

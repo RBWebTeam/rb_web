@@ -385,4 +385,11 @@ public function balance_transfer_with_quoteid(Request $req){
 		return response()->json(array('emi'=>$emi,'fee'=>$fee));
 	}
 
+
+	/*NRI*/
+	public function nri(Request $req){
+		$getQuery=DB::select('call usp_get_nri_bank_quot("'.$req['loanamount'].'","'.$req['loantenure'].'","'.$req['income'].'","'.$req['obligations'].'","'.$req['gender'].'","'.$req['dob'].'","'.$req['emp_detail'].'")');
+		return $getQuery;
+	}
+
 }

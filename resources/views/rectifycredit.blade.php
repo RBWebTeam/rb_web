@@ -167,7 +167,7 @@
                                  </form>
                                  </div>
 
-                                 <div id="rectify_form" style="display: none;">
+                                 <div id="rectify_form">
                             <form id="rectify_personal_details" name="rectify_personal_details" role="form" enctype="multipart/form-data" method="POST">
 					                  {{ csrf_field() }}
 

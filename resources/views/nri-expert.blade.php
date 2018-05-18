@@ -559,7 +559,7 @@ $(".product_ID").click(function(e){
             $(".iframeloading").show();
               $.ajax({  
              type: "POST",  
-             url: "{{URL::to('loan-submit')}}",
+             url: "{{URL::to('nri-loan-submit')}}",
            data : $("#home_loan_process_form").serialize(),
         //   data: {_token :_token,username:username,password:password},
              success: function(msg){ 

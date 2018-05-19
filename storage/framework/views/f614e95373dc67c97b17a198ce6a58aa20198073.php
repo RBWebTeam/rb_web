@@ -14,7 +14,7 @@
 <input type="hidden" name="_token" id="token" value="<?php echo e(csrf_token()); ?>">
 <input type="hidden" id="product" name="product_name" value="12">
 
-          <input type="text" name="CampaignName" class="CampaignName" value="<?php echo Session::get('CampaignName')?Session::get('CampaignName'):'';?>"> 
+          
           <div class="row">
                        
                   <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12" style="padding-bottom: 20px">

@@ -388,8 +388,17 @@ public function balance_transfer_with_quoteid(Request $req){
 
 	/*NRI*/
 	public function nri(Request $req){
-		$getQuery=DB::select('call usp_get_nri_bank_quot("'.$req['loanamount'].'","'.$req['loantenure'].'","'.$req['income'].'","'.$req['obligations'].'","'.$req['gender'].'","'.$req['dob'].'","'.$req['emp_detail'].'")');
-		return $getQuery;
-	}
+		try {
+			$header = $req->header('auth_key');
+		if ($header=="NRI") {
+			$getQuery=DB::select('call usp_get_nri_bank_quot("'.$req['loanamount'].'","'.$req['loantenure'].'","'.$req['income'].'","'.$req['obligations'].'","'.$req['gender'].'","'.$req['dob'].'","'.$req['emp_detail'].'")');
+		return response()->json(array('status' =>0,'message'=>"success",'result'=>$getQuery));
+		}else{
+           return response()->json(array('status' =>1,'message'=>"Invalid Credentials",'result'=>''));
+		}
+		} catch (Exception $e) {
+			return response()->json(array('status' => 1,'err'=>$e->getMessage()));
+		}
+		}
 
 }

@@ -309,7 +309,7 @@
 									
 									
 									
-								<div class="row sec" style="display:none;" id="section2">   
+								<div class="row sec" style="display: none;" id="section2">   
 									
 										<h2 class="hdr text-center">Current Address Details</h2>
 										<div class="col-md-4 col-sm-12 col-xs-12">
@@ -327,21 +327,33 @@
 											<input type="text" class="form-control input-md" placeholder="Road No / Area / Locality" name="ResidenceAddress3" id="ResidenceAddress3" required>
 										</div>
 									</div>
-										<div class="col-md-4 col-sm-12 col-xs-12">
-                                          <div class="form-group">
-											<input type="text" class="form-control search_citynm" placeholder="City*" name="City" id="City" required>
-										</div>
+
+									<div class="col-md-4 col-sm-12 col-xs-12">
+                                    <div class="form-group">
+                                    <select id="ResidenceState" name="ResidenceState" class="form-control">
+                                    <option disabled selected value="">State</option>
+                                    </select>
+                                    </div>
 									</div>
+
+									<div class="col-md-4 col-sm-12 col-xs-12">
+                                    <div class="form-group">
+                                    <select id="City" name="City" class="form-control">
+                                    <option disabled selected value="">City</option>
+                                    </select>
+                                    </div>
+									</div>
+
+										
 										<div class="col-md-4 col-sm-12 col-xs-12">
                                           <div class="form-group">
 												<input type="text" id="ResidencePincode" name="ResidencePincode" class="form-control input-md" placeholder="Pincode*" onkeypress="return fnAllowNumeric(event)" maxlength="6" required>
 											</div>
 										</div>
-										<div class="col-md-4 col-sm-12 col-xs-12">
-                                          <div class="form-group">
-										<input type="text" class="form-control search_statenm" placeholder="State*" name="ResidenceState" id="ResidenceState" required>
-										</div>
-									</div>
+										
+
+									
+
                                         
                                         <div class="col-md-4 col-sm-12 col-xs-12">
                                           <div class="form-group">
@@ -387,7 +399,7 @@
 									</div>
 										<div class="col-md-4 col-sm-12 col-xs-12">
                                           <div class="form-group">
-											<input type="text" class="form-control search_citynm" placeholder="City*" name="PerCity" id="PerCity" required>
+											<input type="hidden" class="form-control search_citynm" placeholder="City*" name="PerCity" id="PerCity" required>
 										</div>
 									</div>
 										<div class="col-md-4 col-sm-12 col-xs-12">
@@ -397,7 +409,7 @@
 										</div>
 										<div class="col-md-4 col-sm-12 col-xs-12">
                                           <div class="form-group">
-											<input type="text" class="form-control search_statenm" placeholder="State*" name="PerResidenceState" id="PerResidenceState" required>
+											<input type="hidden" class="form-control search_statenm" placeholder="State*" name="PerResidenceState" id="PerResidenceState" required>
 										</div>
 									</div>
                                         
@@ -745,7 +757,7 @@
 
 <script type="text/javascript">
     var d = new Date();
-    var year = d.getFullYear() ;
+    var year = d.getFullYear()-21 ;
     d.setFullYear(year);
 
     $(".lastReporteddob").datepicker({ dateFormat: "yy-mm-dd",
@@ -758,7 +770,7 @@
     });
 </script>
 
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 
 	
 
@@ -799,8 +811,8 @@
       });
    });
 
-</script>
-<script type="text/javascript">
+</script> -->
+<!-- <script type="text/javascript">
 	
 
  $(document).ready(function(){
@@ -840,12 +852,60 @@
       });
    });
 
+</script> -->
+
+<script type="text/javascript">   
+$.ajax({ 
+   url: "{{URL::to('icici-state')}}",
+   method:"GET",
+   success: function(datas)  
+   {
+   var data=$.parseJSON(datas);
+   // console.log(data);
+   if(data)
+      {      $.each(data, function( index, value ) {
+            $('#ResidenceState').append('<option value="'+value.State_Id+'">'+value.state_name+'</option>');
+      }); 
+    }else{
+      $('#ResidenceState').empty().append('No Result Found');
+    }
+},
+});
+
+$('#ResidenceState').on('change', function() {
+   // alert('okae');
+$("#City").empty().append('');
+  var ResidenceState=$('#ResidenceState').find(":selected").val();
+   console.log(ResidenceState);
+
+    var v_token ="{{csrf_token()}}";
+   $.ajax({  
+                type: "POST",  
+                url: "{{URL::to('icici-city')}}",
+                 data : {'_token': v_token,'ResidenceState':ResidenceState},
+                success: function(msg){
+                   
+                    console.log(msg);
+                    if(msg.length != 0)
+                    {      $.each(msg, function( index, value ) {
+                              $('#City').append('<option value="'+value.city_id+'">'+value.city_name+'</option>');
+
+                   }); 
+                    }else{
+                    	// console.log('guyjguy');
+                        $('#City').append('<option>0</option>');
+                      }
+                        
+    }  
+      });
+  
+});
 </script>
 
-<script type="text/javascript">
-	
 
- $(document).ready(function(){
+
+<script type="text/javascript">
+$(document).ready(function(){
 	  
     $(".search_company").autocomplete({
       source: function(request, response) {

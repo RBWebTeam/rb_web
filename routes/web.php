@@ -162,6 +162,8 @@ Route::get('team','TeamController@team');
 // Creditcardform
 Route::get('credit-card-form','CreditcardController@credit_card_form');
 Route::post('credit-submit','CreditcardController@credit_form_submit');
+Route::get('icici-state','CreditcardController@icici_state');
+Route::post('icici-city','CreditcardController@icici_city');
 Route::get('icici-credit-card-form','CreditcardController@icici_credit_card_form');
 Route::post('icici-credit-submit','CreditcardController@credit_form_submit');
 Route::post('to-view-on-browser-url','CreditcardController@to_view_on_browser_url');
@@ -459,15 +461,16 @@ Route::post('express-verify','OtpController@express_loan_verify_otp');
 
 Route::get('express-loan','HomeController@express_loan');
 Route::get('apply-tatacapital-loan','TataCapitalLoanController@apply_tatacapital_loan');
-/*To Secure*/
-Route::group(['middleware'=>'OtpVerification'], function(){
-
 Route::get('kotak-home-loan','LoanController@kotak_home_loan');
 Route::get('kotak-personal-loan','LoanController@kotak_personal_loan');
 Route::get('lendingkart','LoanController@lendingkart');
 
 Route::get('rbl-personal-loan','LoanController@rbl_personal_loan');
 Route::get('apply-iifl-loan','LoanController@apply_iifl_loan');
+/*To Secure*/
+Route::group(['middleware'=>'OtpVerification'], function(){
+
+
 });
 
 /*Emailer purpose*/

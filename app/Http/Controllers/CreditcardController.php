@@ -14,11 +14,22 @@ class CreditcardController extends CallApiController
      public function credit_card_form(Request $req){
 
              $query=new Seo();
-
-
-
-            return view('credit-card-form')->with($query->CreditCardForm());
+         return view('credit-card-form')->with($query->CreditCardForm());
      }
+
+
+     public function icici_state(){
+     $query = DB::table('state_master')->select('State_Id', 'state_name')->get();
+          // print_r($query);exit();
+     echo json_encode($query);
+ }
+
+    public function icici_city(Request $req){
+      // print_r($req->all());exit();
+      $quote_data=DB::select('call usp_load_icici_cc_city_master ("'.$req['ResidenceState'].'")');
+       // print_r($quote_data);exit();
+      return $quote_data;
+      }
 
      public function credit_form_submit(Request $req){
         // print_r($req->all());exit();

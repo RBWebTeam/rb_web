@@ -59,8 +59,8 @@
  .lastReporteddob {color:#636363 !important;}
  
 @media only screen and (max-width:768px) {
-	
-	.col-md-12 {padding:0px;margin:2px;}
+  
+  .col-md-12 {padding:0px;margin:2px;}
 }
 .emp-nat span {
     padding: 3px 5px;
@@ -106,8 +106,8 @@ $(".top").click(function() {
       <h4 class="text-center pg-titl">Apply For <img src="images/bank/icici.png" class="img-responsive icici" width="130"/> Credit Card</h4>
     
     <div class="col-md-3"></div>
-	
-	<form id="to_view_url" name="to_view_url" method="POST">
+  
+  <form id="to_view_url" name="to_view_url" method="POST">
   {{ csrf_field() }}
     <div id="hideview" class="text-center col-md-6">
                                             <div class="form-padding">
@@ -415,7 +415,7 @@ $(".top").click(function() {
              </div>
 
  
-					
+          
           <div class="col-xs-6 form-padding">
                     <div class="form-control inp-fld" style="height:50px; position: relative; padding: 0px 0px;">
                       <span style="position: absolute; z-index: 999; margin: 1px 0 0 8px; font-size: 10px; color: #bababa;"> OTHER BANK SALARY ACCT.</span>
@@ -511,8 +511,8 @@ $(".top").click(function() {
       
       <div class="col-xs-12"><P style="padding:10px;font-size: 14px;line-height: 16px; display:-webkit-inline-box;" class="pull-left"><input type="checkbox" name="same" id="same_id" onclick="same_as_above('same_id');"/> &nbsp;&nbsp;Same As Above</p></div>
       
-	  
-	  <h4 class="txt-tlt pull-left hdn5">Permanent Address Details</h4>
+    
+    <h4 class="txt-tlt pull-left hdn5">Permanent Address Details</h4>
           <div class="col-xs-6 form-padding">
                     <div>
                       <input type="text" name="PerResidenceAddress1" id="PerResidenceAddress1" class="form-control inp-fld" required >
@@ -603,7 +603,7 @@ $(".top").click(function() {
                   <div class="panel-body">    
           
           <h4 class="txt-tlt pull-left hdn5">Contact Details</h4> 
-		  <div class="col-xs-6 form-padding">
+      <div class="col-xs-6 form-padding">
                     <div>
                       <input type="text" class="form-control inp-fld"  id="ResidenceMobileNo" name="ResidenceMobileNo" required onkeypress="return fnAllowNumeric(event)" maxlength="10" >
                       <span class="highlight"></span><span class="bar"></span>
@@ -611,7 +611,7 @@ $(".top").click(function() {
                       <div class="clear"></div>
                     </div>  
                   </div>
-				   <div class="col-xs-6 form-padding">
+           <div class="col-xs-6 form-padding">
                     <div>
                       <input type="text" class="form-control inp-fld" id="STDCode" name="STDCode"  required  onkeypress="return fnAllowNumeric(event)" minlength="3" maxlength="5" >
                       <span class="highlight"></span><span class="bar"></span>
@@ -779,6 +779,25 @@ $(".top").click(function() {
         <p><b style="color: red">Thank You For Choosing ICICI Credit Card. <span id="mail_link">A link has been sent to your registered Email Id. Kindly Click on the link to upload your supporting documents</span>.</b></p>
 
         
+      </div>
+      
+      <div class="modal-footer">
+        <a type="button" id="upload" name="upload" class="btn btn-primary" onclick="Redirect();" >OK</a>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" tabindex="-1" role="dialog" id="errormessage">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title"></h4>
+      </div>
+      <div class="modal-body">
+        <h4><p id="modalerr"><h5>Error Message is <b><span id="drop3"></span></b>.<h5></p></h4>
       </div>
       
       <div class="modal-footer">
@@ -1243,6 +1262,8 @@ return false;
          data : $('#compareform').serialize(),
          dataType: 'json',
          success: function(msg){
+
+          console.log(msg.ErrorMessage);
          $(".iframeloading").hide();  
         
          
@@ -1251,8 +1272,11 @@ return false;
              alert("Something Went Wrong");
 
              
-          }else if(msg==3){
-           alert('Oops..!! Application ID cannot be generated.');
+          }else if(msg.ApplicationId==null){
+           
+              $('#drop3').text(msg.ErrorMessage);
+             $('#errormessage').modal('show');
+
           }
           else{
             
@@ -1267,6 +1291,7 @@ return false;
              $('#drop').text(msg.id);
               $('#drop1').text(msg.Decision);
               $('#drop2').text(msg.Reason);
+              $('#drop3').text(msg.ErrorMessgae);
              $('#credit_process_sorry').modal('show');
           }
           return false;
@@ -1708,15 +1733,15 @@ var inputs = $("#compareform input[required='required']");
 
 
 <!-- <script>
-		  $( function() {
-			$( '#datepicker,#datepicker1,#datepicker2' ).datepicker({
-				changeMonth:true,
-				changeYear:true,
-				dateFormat: 'dd-mm-yy',
-				yearRange : 'c-65:c+10'
-			});
-		  });
-	 </script> -->
+      $( function() {
+      $( '#datepicker,#datepicker1,#datepicker2' ).datepicker({
+        changeMonth:true,
+        changeYear:true,
+        dateFormat: 'dd-mm-yy',
+        yearRange : 'c-65:c+10'
+      });
+      });
+   </script> -->
 
    <script type="text/javascript">
     var d = new Date();

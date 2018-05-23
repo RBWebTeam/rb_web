@@ -126,6 +126,7 @@ setInterval(blink_text, 1000);
     <li data-target="#myCarousel" data-slide-to="1"></li>
     <li data-target="#myCarousel" data-slide-to="2"></li>
     <li data-target="#myCarousel" data-slide-to="3"></li>
+    <li data-target="#myCarousel" data-slide-to="4"></li>
   </ol>
 
   <!-- Wrapper for slides -->
@@ -143,6 +144,10 @@ setInterval(blink_text, 1000);
     </div>
     <div class="item">
       <a href="http://www.rupeeboss.com/elite/" target="_blank"><img src="images/004.png" width="266"></a>
+    </div>
+
+    <div class="item">
+      <a href="http://rupeeboss.mytaxpert.in" target="_blank"><img src="images/mytaxpert_logo_banner.png" width="266"></a>
     </div>
   </div>
 
@@ -443,6 +448,8 @@ setInterval(blink_text, 1000);
                             <a href="{{URL::to('sme-working-capital')}}" class="btn-2 btn-secondary btn-block" style="background-color: #000;">SME CAR LEASING</a>
                         </div>
                     </div>
+
+                    
 
                 </div>
             </div>

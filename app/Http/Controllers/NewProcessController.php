@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Session;
+use Response;
  
 use App\SEOlibraries\Seo;
 class NewProcessController extends CallApiController
@@ -94,6 +95,8 @@ class NewProcessController extends CallApiController
       public function personal_loan_demo(){
         return view('personal-loan-demo');
       }
+
+     
 
       public function nri(){
         return view('nri-expert');

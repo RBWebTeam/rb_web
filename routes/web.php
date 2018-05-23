@@ -491,4 +491,6 @@ Route::get('medsave','LoanController@medsave');
 
 /*Loans*/
 Route::get('personal-loan-demo','NewProcessController@personal_loan_demo');
+Route::get('state','NewProcessController@state');
+Route::post('p_loansubmit','FormController@p_loan');
 

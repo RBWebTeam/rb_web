@@ -587,12 +587,12 @@
 
                                             <input type="hidden" class="form-control" id="debt_service_coverage_ratio" name="debt_service_coverage_ratio" value="" placeholder="" required class="clr-ddd"  />
                                             
-                                            <!-- <div class="col-md-12 col-xs-12">
+                                            <div class="col-md-12 col-xs-12">
                                     <br>
                                                 
 
                                                 <button id="eligibility" class="btn btn-default btn-sm disblk" title="See Bankwise Eligibility And Apply Amongst Best Bank"style="width: 100%;">Check Bankwise<br>Eligibility</button>                                          
-                                    </div> -->
+                                    </div>
 
                                      <div class="col-md-12 col-xs-12">
                                     <br>

@@ -9,13 +9,10 @@ use DB;
 use Redirect;
 use App\registrationModel;
 use App\bank_quote_api_request;
+use App\Http\Controllers\EquifaxController;
 class FormController extends CallApiController
 {
-
-    
-
-
-    function sidebar(Request $req){
+function sidebar(Request $req){
 
         $input = $req->all();
 
@@ -44,8 +41,29 @@ class FormController extends CallApiController
         return 'false';
       
     }
+
+    public function p_loan(Request $req){
+       // print_r($req->all());exit();
+        $equifax=new EquifaxController();
+        $score=$equifax->equifax_query_pl($req);
+         
+         $va=$score['score'];
+         $scorarr = json_decode(json_encode($va), TRUE);
+
+         // $merg=$req->Request->add(['score'=>$array[0]]);
+          
+          // $dadd=array_merge($req->all(), ['score'=>$array[0]]);
+
+            
+        
+        $quotes=$this->p_loan_score($req,$scorarr[0]);
+        
+          return $quotes;
+    }
+
     public function p_loan_submit(Request $req){
-         // print_r($req->all());exit();
+          
+            
       Session::forget('quote_id');
         try{
         //call api to submit form data
@@ -135,7 +153,117 @@ class FormController extends CallApiController
                $LoanTenure="";
                $processingfee="";
            }
+                  
+                
+                // $data['score']=$true_val;
+            $returnHTML = view('show-quotes')->with($data)->render();
+            return response()->json(array('success' => true,'quote_id'=>$id,'Bank_Id'=>$Bank_Id,'loan_eligible'=>$loan_eligible,'roi'=>$roi,'LoanTenure'=>$LoanTenure,'processingfee'=>$processingfee,'html'=>$returnHTML));
+        
+        }catch(\Exception $ee){
+            return $ee;
+        }
+    }
+
+    /*score loan*/
+    public function p_loan_score(Request $req,$ar){
+          
+            
+      Session::forget('quote_id');
+        try{
+        //call api to submit form data
+            $inputquotes = $req->all();
+            $input = $req->all();
+
+            $new_array = array('customer_contact' => Session::get('contact'), 'customer_name' => Session::get('name'),'customer_email' => Session::get('email'));
+            // print_r($new_array);exit();
+           $update_id=Session::get('verify_id');
+             $update_user=DB::table('user_registration')
+             ->where('id',$update_id)
+             ->update(['provider'=>'WEBSITE-VERIFIED']);
+            //replacing city name with id
+            if($req['city_name']){
+                $city_id=DB::table('city_master')->select('city_id')
+                ->where('city_name', 'LIKE', '%'.$req['city_name'].'%')
+                ->get();
+                $input['city_name']=(string)$city_id[0]->city_id;
+                //adding city_id to post data
+            } 
+            $res_arr=array_merge($input,$new_array);
+            // send empcode if its a refferal
+            $res_arr['empid']=Session::get('empid')?Session::get('empid'):'';
+             $res_arr['brokerid']=Session::get('brokerid')?Session::get('brokerid'):'';
+            $json_data=json_encode($res_arr);
+            $prod_id=$req['product_name'];
+
+            // if($prod_id==7 || $prod_id==9 || $prod_id==12){
+            //         $url="http://api.rupeeboss.com/BankAPIService.svc/GetCustomerLizaWebReqTest";
+            // }else{
+            //         $url="http://api.rupeeboss.com/BankAPIService.svc/GetCustomerLizaWebReqTest";
+            // }
+            // $result=$this->call_json_data_api($url,$json_data);
+            // $http_result=$result['http_result'];
+               
+            // $error=$result['error'];
+            // if($http_result==1){                
+                $quote_data=$this::get_quotes($req);
+
+                $save=new bank_quote_api_request();    
+                $id=$save->save_liza($req);
+                Session::put('quote_id',$id);
+                $data['quote_id']=$id;
+
+                // print_r($data['quote_id']);exit();
+            // }else{
+            //     $quote_data =$req['product_name'];
+            //     return view("went-wrong");
+            // }
+            if($req['product_name'] == 9){
+              // print_r($req['product_name']);exit();
+                $data['product'] ="Personal Loan";
+                $data['url'] ="apply-personal-loan";
+            }elseif($req['product_name'] == 12){
+                $data['product'] ="Home Loan";
+                $data['url'] ="apply-home-loan";
+            }elseif($req['product_name'] == 7){
+                $data['product'] ="Loan Against Property";
+                $data['url'] ="apply-loan-against-property";
+            }elseif($req['product_name'] == 4){
+                $data['product'] ="Car Loan";
+                $data['url'] ="apply-car-loan";
+            }elseif($req['product_name'] == 1){
+               $data['product'] ="Used Car Loan";
+               $data['url'] ="apply-used-car-loan";
+            }elseif($req['product_name'] == 13){
+               $data['product'] ="Business Loan";
+               $data['url'] ="new-business-loan";
+            }
+            $data['loan_amount'] =$req['loan_amount'];
+
+            $data['quote_data'] =$quote_data;
+            // print_r($data['quote_data'] );exit();
            
+            if ($quote_data) {
+             
+               $Bank_Id=$data['quote_data'][0]->Bank_Id;
+               $loan_eligible=$data['quote_data'][0]->loan_eligible;
+               $roi=$data['quote_data'][0]->roi;
+               $LoanTenure=$data['quote_data'][0]->LoanTenure;
+               $processingfee=$data['quote_data'][0]->processingfee;
+           }
+           else{
+            $Bank_Id="";
+               $loan_eligible="";
+               $roi="";
+               $LoanTenure="";
+               $processingfee="";
+           }
+                  
+                if(isset($ar)){
+                    $data['score']=$ar;
+                }else{
+                   $data['score']=0;
+                }
+                // $data['score']=$true_val;
             $returnHTML = view('show-quotes')->with($data)->render();
             return response()->json(array('success' => true,'quote_id'=>$id,'Bank_Id'=>$Bank_Id,'loan_eligible'=>$loan_eligible,'roi'=>$roi,'LoanTenure'=>$LoanTenure,'processingfee'=>$processingfee,'html'=>$returnHTML));
         

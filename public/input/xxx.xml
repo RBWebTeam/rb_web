@@ -4,24 +4,22 @@
     <CustomerCode>RSPV</CustomerCode>
     <ClientID>027FP14254</ClientID>
     <CustRefField>417476</CustRefField>
-    <ReportOrderNO>537066889</ReportOrderNO>
+    <ReportOrderNO>539110024</ReportOrderNO>
     <ProductCode>PCS</ProductCode>
     <SuccessCode>1</SuccessCode>
-    <Date>18-05-2018</Date>
-    <Time>15:41:27</Time>
+    <Date>23-05-2018</Date>
+    <Time>12:37:36</Time>
     <HitCode>11</HitCode>
   </InquiryResponseHeader>
   <InquiryRequestInfo xmlns="http://services.equifax.com/eport/ws/schemas/1.0">
     <InquiryPurpose>01</InquiryPurpose>
     <FirstName>Praveen</FirstName>
-    <MiddleName>Padmarao</MiddleName>
-    <LastName>Kola Jangam</LastName>
-    <AddrLine1>Nav Bharat Seva Sangh,Hanuman Tekdi, Gate No 1,R.No A/79,Santacruz East</AddrLine1>
+    <AddrLine1>Nav Bharat Seva Sangh,Hnauman Tekdi,Gate No 1,R.No A/79,Santacruz East</AddrLine1>
     <State>MH</State>
     <Postal>400055</Postal>
     <InquiryAddresses>
       <InquiryAddress seq="1">
-        <AddressLine>Nav Bharat Seva Sangh,Hanuman Tekdi, Gate No 1,R.No A/79,Santacruz East</AddressLine>
+        <AddressLine>Nav Bharat Seva Sangh,Hnauman Tekdi,Gate No 1,R.No A/79,Santacruz East</AddressLine>
         <State>MH</State>
         <Postal>400055</Postal>
       </InquiryAddress>
@@ -39,11 +37,6 @@
     <DOB>1991-12-03</DOB>
     <PANId>CEAPK5523G</PANId>
     <MobilePhone>7506010213</MobilePhone>
-    <InquiryCommonAccountDetails>
-      <InquiryAccount seq="1">
-        <AccountNumber>10005054208</AccountNumber>
-      </InquiryAccount>
-    </InquiryCommonAccountDetails>
   </InquiryRequestInfo>
   <ReportData xmlns="http://services.equifax.com/eport/ws/schemas/1.0">
     <IDAndContactInfo>
@@ -123,7 +116,7 @@
     <RecentActivities>
       <AccountsDeliquent>1</AccountsDeliquent>
       <AccountsOpened>0</AccountsOpened>
-      <TotalInquiries>31</TotalInquiries>
+      <TotalInquiries>180</TotalInquiries>
       <AccountsUpdated>1</AccountsUpdated>
     </RecentActivities>
     <OtherKeyInd>
@@ -135,131 +128,131 @@
     </OtherKeyInd>
     <EnquirySummary>
       <Purpose>ALL</Purpose>
-      <Total>34</Total>
-      <Past30Days>12</Past30Days>
-      <Past12Months>34</Past12Months>
-      <Past24Months>34</Past24Months>
-      <Recent>18-05-2018</Recent>
+      <Total>183</Total>
+      <Past30Days>161</Past30Days>
+      <Past12Months>183</Past12Months>
+      <Past24Months>183</Past24Months>
+      <Recent>23-05-2018</Recent>
     </EnquirySummary>
     <Enquiries seq="1">
       <Institution>Rishti Stock &amp; Share Pvt Ltd</Institution>
-      <Date>2018-05-18</Date>
-      <Time>10:53</Time>
-      <RequestPurpose>04</RequestPurpose>
+      <Date>2018-05-23</Date>
+      <Time>12:32</Time>
+      <RequestPurpose>01</RequestPurpose>
     </Enquiries>
     <Enquiries seq="2">
       <Institution>Rishti Stock &amp; Share Pvt Ltd</Institution>
-      <Date>2018-05-18</Date>
-      <Time>10:53</Time>
-      <RequestPurpose>04</RequestPurpose>
+      <Date>2018-05-22</Date>
+      <Time>19:10</Time>
+      <RequestPurpose>01</RequestPurpose>
     </Enquiries>
     <Enquiries seq="3">
       <Institution>Rishti Stock &amp; Share Pvt Ltd</Institution>
-      <Date>2018-05-18</Date>
-      <Time>10:49</Time>
-      <RequestPurpose>04</RequestPurpose>
+      <Date>2018-05-22</Date>
+      <Time>18:45</Time>
+      <RequestPurpose>01</RequestPurpose>
     </Enquiries>
     <Enquiries seq="4">
       <Institution>Rishti Stock &amp; Share Pvt Ltd</Institution>
-      <Date>2018-05-18</Date>
-      <Time>10:48</Time>
-      <RequestPurpose>04</RequestPurpose>
+      <Date>2018-05-22</Date>
+      <Time>18:43</Time>
+      <RequestPurpose>01</RequestPurpose>
     </Enquiries>
     <Enquiries seq="5">
       <Institution>Rishti Stock &amp; Share Pvt Ltd</Institution>
-      <Date>2018-05-18</Date>
-      <Time>10:47</Time>
-      <RequestPurpose>04</RequestPurpose>
+      <Date>2018-05-22</Date>
+      <Time>18:34</Time>
+      <RequestPurpose>01</RequestPurpose>
     </Enquiries>
     <Enquiries seq="6">
       <Institution>Rishti Stock &amp; Share Pvt Ltd</Institution>
-      <Date>2018-05-18</Date>
-      <Time>10:35</Time>
-      <RequestPurpose>04</RequestPurpose>
+      <Date>2018-05-22</Date>
+      <Time>18:30</Time>
+      <RequestPurpose>01</RequestPurpose>
     </Enquiries>
     <Enquiries seq="7">
       <Institution>Rishti Stock &amp; Share Pvt Ltd</Institution>
-      <Date>2018-05-18</Date>
-      <Time>10:34</Time>
-      <RequestPurpose>04</RequestPurpose>
+      <Date>2018-05-22</Date>
+      <Time>18:28</Time>
+      <RequestPurpose>01</RequestPurpose>
     </Enquiries>
     <Enquiries seq="8">
       <Institution>Rishti Stock &amp; Share Pvt Ltd</Institution>
-      <Date>2018-05-18</Date>
-      <Time>10:26</Time>
-      <RequestPurpose>04</RequestPurpose>
+      <Date>2018-05-22</Date>
+      <Time>18:28</Time>
+      <RequestPurpose>01</RequestPurpose>
     </Enquiries>
     <Enquiries seq="9">
       <Institution>Rishti Stock &amp; Share Pvt Ltd</Institution>
-      <Date>2018-05-18</Date>
-      <Time>10:26</Time>
-      <RequestPurpose>04</RequestPurpose>
+      <Date>2018-05-22</Date>
+      <Time>18:27</Time>
+      <RequestPurpose>01</RequestPurpose>
     </Enquiries>
     <Enquiries seq="10">
       <Institution>Rishti Stock &amp; Share Pvt Ltd</Institution>
-      <Date>2018-05-18</Date>
-      <Time>10:22</Time>
-      <RequestPurpose>04</RequestPurpose>
+      <Date>2018-05-22</Date>
+      <Time>18:27</Time>
+      <RequestPurpose>01</RequestPurpose>
     </Enquiries>
     <Enquiries seq="11">
       <Institution>Rishti Stock &amp; Share Pvt Ltd</Institution>
-      <Date>2018-05-17</Date>
-      <Time>17:53</Time>
-      <RequestPurpose>04</RequestPurpose>
+      <Date>2018-05-22</Date>
+      <Time>18:26</Time>
+      <RequestPurpose>01</RequestPurpose>
     </Enquiries>
     <Enquiries seq="12">
       <Institution>Rishti Stock &amp; Share Pvt Ltd</Institution>
-      <Date>2018-05-17</Date>
-      <Time>17:44</Time>
-      <RequestPurpose>04</RequestPurpose>
+      <Date>2018-05-22</Date>
+      <Time>18:26</Time>
+      <RequestPurpose>01</RequestPurpose>
     </Enquiries>
     <Enquiries seq="13">
       <Institution>Rishti Stock &amp; Share Pvt Ltd</Institution>
-      <Date>2018-04-18</Date>
-      <Time>12:16</Time>
-      <RequestPurpose>11</RequestPurpose>
+      <Date>2018-05-22</Date>
+      <Time>18:23</Time>
+      <RequestPurpose>01</RequestPurpose>
     </Enquiries>
     <Enquiries seq="14">
       <Institution>Rishti Stock &amp; Share Pvt Ltd</Institution>
-      <Date>2018-04-18</Date>
-      <Time>11:51</Time>
-      <RequestPurpose>11</RequestPurpose>
+      <Date>2018-05-22</Date>
+      <Time>18:21</Time>
+      <RequestPurpose>01</RequestPurpose>
     </Enquiries>
     <Enquiries seq="15">
       <Institution>Rishti Stock &amp; Share Pvt Ltd</Institution>
-      <Date>2018-04-18</Date>
-      <Time>11:33</Time>
-      <RequestPurpose>11</RequestPurpose>
+      <Date>2018-05-22</Date>
+      <Time>18:21</Time>
+      <RequestPurpose>01</RequestPurpose>
     </Enquiries>
     <Enquiries seq="16">
       <Institution>Rishti Stock &amp; Share Pvt Ltd</Institution>
-      <Date>2018-04-18</Date>
-      <Time>11:33</Time>
-      <RequestPurpose>11</RequestPurpose>
+      <Date>2018-05-22</Date>
+      <Time>18:20</Time>
+      <RequestPurpose>01</RequestPurpose>
     </Enquiries>
     <Enquiries seq="17">
       <Institution>Rishti Stock &amp; Share Pvt Ltd</Institution>
-      <Date>2018-04-18</Date>
-      <Time>11:27</Time>
-      <RequestPurpose>11</RequestPurpose>
+      <Date>2018-05-22</Date>
+      <Time>18:20</Time>
+      <RequestPurpose>01</RequestPurpose>
     </Enquiries>
     <Enquiries seq="18">
       <Institution>Rishti Stock &amp; Share Pvt Ltd</Institution>
-      <Date>2018-04-18</Date>
-      <Time>11:26</Time>
-      <RequestPurpose>11</RequestPurpose>
+      <Date>2018-05-22</Date>
+      <Time>18:19</Time>
+      <RequestPurpose>01</RequestPurpose>
     </Enquiries>
     <Enquiries seq="19">
       <Institution>Rishti Stock &amp; Share Pvt Ltd</Institution>
-      <Date>2018-04-18</Date>
-      <Time>11:25</Time>
-      <RequestPurpose>11</RequestPurpose>
+      <Date>2018-05-22</Date>
+      <Time>18:19</Time>
+      <RequestPurpose>01</RequestPurpose>
     </Enquiries>
     <Enquiries seq="20">
       <Institution>Rishti Stock &amp; Share Pvt Ltd</Institution>
-      <Date>2018-04-18</Date>
-      <Time>11:14</Time>
-      <RequestPurpose>11</RequestPurpose>
+      <Date>2018-05-22</Date>
+      <Time>18:17</Time>
+      <RequestPurpose>01</RequestPurpose>
     </Enquiries>
     <Enquiries seq="21">
       <Institution>Rishti Stock &amp; Share Pvt Ltd</Institution>
@@ -320,7 +313,7 @@
             <AssetClassificationStatus>*</AssetClassificationStatus>
           </Month>
           <Month key="12-17">
-            <PaymentStatus>*</PaymentStatus>
+            <PaymentStatus>000</PaymentStatus>
             <SuitFiledStatus>*</SuitFiledStatus>
             <AssetClassificationStatus>*</AssetClassificationStatus>
           </Month>

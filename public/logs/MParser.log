@@ -1816,3 +1816,45 @@ Caused by: java.lang.NullPointerException
 	at com.creditReport.ParseXmlMfi.readFile(ParseXmlMfi.java:788)
 	at com.creditReport.ParseXmlMfi.parseXml(ParseXmlMfi.java:379)
 	... 3 more
+2018-05-22 15:12:01,089 [main] INFO  com.creditReport.Controller - 
+INFO: Reading the customer type
+2018-05-22 15:12:01,112 [main] INFO  com.creditReport.Controller - INFO: Activating the MFI parser
+2018-05-22 15:12:01,113 [main] INFO  com.creditReport.Controller - INFO: Input file:- xxx.xml
+2018-05-22 15:12:02,115 [main] INFO  com.creditReport.Controller - final time 1526982122115
+2018-05-22 15:12:02,115 [main] INFO  com.creditReport.Controller - Total parse time: 0.989s
+2018-05-22 15:12:02,115 [main] INFO  com.creditReport.Controller - complete time 1526982122115
+2018-05-22 15:12:02,115 [main] INFO  com.creditReport.Controller - 2018-05-22 15:12:02  Pdf generation complete.
+2018-05-22 15:12:02,115 [main] INFO  com.creditReport.Controller - Total time: 0.989s
+2018-05-22 15:12:02,270 [pool-2-thread-1] ERROR com.creditReport.dao.GetDataDAO - 2018-05-22 15:12:02 ERROR: user lacks privilege or object not found: SCORINGELEMENT
+java.sql.SQLSyntaxErrorException: user lacks privilege or object not found: SCORINGELEMENT
+	at org.hsqldb.jdbc.JDBCUtil.sqlException(Unknown Source)
+	at org.hsqldb.jdbc.JDBCUtil.sqlException(Unknown Source)
+	at org.hsqldb.jdbc.JDBCStatement.fetchResult(Unknown Source)
+	at org.hsqldb.jdbc.JDBCStatement.executeQuery(Unknown Source)
+	at com.creditReport.dao.GetDataDAO.getScoreWithScoringElement(GetDataDAO.java:1433)
+	at com.creditReport.pdf.CreatePdf.createPdfContents(CreatePdf.java:481)
+	at com.creditReport.pdf.CreatePdf.createDoc(CreatePdf.java:350)
+	at com.creditReport.pdf.CreatePdf.run(CreatePdf.java:142)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: org.hsqldb.HsqlException: user lacks privilege or object not found: SCORINGELEMENT
+	at org.hsqldb.error.Error.error(Unknown Source)
+	at org.hsqldb.error.Error.error(Unknown Source)
+	at org.hsqldb.ParserDQL.readTableName(Unknown Source)
+	at org.hsqldb.ParserDQL.readTableOrSubquery(Unknown Source)
+	at org.hsqldb.ParserDQL.XreadTableReference(Unknown Source)
+	at org.hsqldb.ParserDQL.XreadFromClause(Unknown Source)
+	at org.hsqldb.ParserDQL.XreadTableExpression(Unknown Source)
+	at org.hsqldb.ParserDQL.XreadQuerySpecification(Unknown Source)
+	at org.hsqldb.ParserDQL.XreadSimpleTable(Unknown Source)
+	at org.hsqldb.ParserDQL.XreadQueryPrimary(Unknown Source)
+	at org.hsqldb.ParserDQL.XreadQueryTerm(Unknown Source)
+	at org.hsqldb.ParserDQL.XreadQueryExpressionBody(Unknown Source)
+	at org.hsqldb.ParserDQL.XreadQueryExpression(Unknown Source)
+	at org.hsqldb.ParserDQL.compileCursorSpecification(Unknown Source)
+	at org.hsqldb.ParserCommand.compilePart(Unknown Source)
+	at org.hsqldb.ParserCommand.compileStatements(Unknown Source)
+	at org.hsqldb.Session.executeDirectStatement(Unknown Source)
+	at org.hsqldb.Session.execute(Unknown Source)
+	... 9 more

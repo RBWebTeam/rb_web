@@ -47,18 +47,10 @@ function sidebar(Request $req){
         $equifax=new EquifaxController();
         $score=$equifax->equifax_query_pl($req);
          
-         $va=$score['score'];
-         $scorarr = json_decode(json_encode($va), TRUE);
-
-         // $merg=$req->Request->add(['score'=>$array[0]]);
-          
-          // $dadd=array_merge($req->all(), ['score'=>$array[0]]);
-
-            
-        
+        $va=$score['score'];
+        $scorarr = json_decode(json_encode($va), TRUE);
         $quotes=$this->p_loan_score($req,$scorarr[0]);
-        
-          return $quotes;
+        return $quotes;
     }
 
     public function p_loan_submit(Request $req){

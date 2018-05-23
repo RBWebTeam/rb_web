@@ -83,7 +83,7 @@
                                </div>
                                
                                </div>
-                               <div id="text" style="display: none;font-style: oblique; font-size: 10px";><p class="blink"><b>"Hey bingo..!! Just few more details to get quotes and also avail your 50% discount on Credit Report"</b></p></div>
+                               
                                </div>
                                
                                <!-- SECTION 1 -->
@@ -91,6 +91,7 @@
                                
 
                                <div class="col-md-12 col-sm-12 col-xs-12">
+                               <div id="text" style="display: none;font-style: oblique; font-size: 10px";><p class="blink"><b>"Hey bingo..!! Just few more details to get quotes and also avail your 50% discount on Credit Report"</b></p></div>
                                <div class="form-group">
                                <input type="text" name="AddressLine[]" id="AddressLine" class="form-input-new form-control" placeholder="Address" required="">
                                </div>
@@ -158,7 +159,7 @@
                                </div>
                                
                                </div>
-                               <div id="few_more" style="display:none;font-style: oblique; font-size: 10px";><p class="blink"><b>"Going Good. Few More details..."</b></p></div>
+                               
 
 
                                
@@ -521,12 +522,10 @@ $("#eligibility").click(function() {
 
       });
 
-$('#AddressType').on('change', function(){
-  $('#text').show();
-});
+
 
 $('#applicant_name').click(function(){
-$('#few_more').show();
+$('#text').show();
 });
  </script>
 

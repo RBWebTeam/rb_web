@@ -1,28 +1,61 @@
 @include('layout.header')
- <style>
+ <!-- <style>
    .bg-img {background: url("images/bg_img.png")no-repeat; width:447px; height:502px;}
    .pl-frm {padding-top:190px;}
    .form-group {margin-bottom: 5px !important;} 
    .form-control {margin-bottom:6px !important;}
    .wrapper-content {background:#ffffff url("images/personal-loan.jpg")no-repeat;}
    .form-control{height:45px !important;}
+</style> -->
+<style>
+   .bg-img {background: url("images/bg_img.gif")no-repeat; width:447px; height:179px; z-index:1000;position:inherit;margin-left:20px;}
+   .heading {background: url("images/heading.png")no-repeat;z-index:10000;right:90px; position:absolute; width:235px; height:175px;}
+   .bg-img img {margin:0 auto; display:block;}
+   .form-group {margin-bottom: 5px !important;} 
+   .form-control {margin-bottom:6px !important;}
+   /*.wrapper-content {background:#ffffff url("images/watermark_bg.png");}*/
+   .btn-center {display:block;margin:0 auto;}
+   .bg1 {background: #e6ecef !important;border:5px solid #dce8ef; padding: 20px 0px;float: left;z-index: 0;margin-top: -13px;box-shadow: 10px 10px 5px #888;}
+   
+   .hero-bkg-animated {
+  background: #fff url("images/watermark_bg_1.png") repeat 0 0;
+  width: 100%;
+  
+  -webkit-animation: slide 20s linear infinite;
+}
+
+@-webkit-keyframes slide {
+    from { background-position: 0 0; }
+    to { background-position: -400px 0; }
+}
+
+
+   
+   @media only screen and (max-width: 768px) {
+    .wrapper-content {background:transparent;}
+   }
 </style>
+
    
   <div class=" ">
         <!-- content start -->
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <div class="wrapper-content bg-white pinside40" id="pl_form">
+        <div class="heading" style="display:none;"></div>
+                    <div class="wrapper-content bg-white pinside40 hero-bkg-animated">
                      <!-- <h1 class=""><center>Personal Loan</center></h1> -->
                         <div class="section-faq" id="section-faq">
                                 <div class="row">
-                                <div class="col-md-6 col-md-offset-3 text-center"><h5>Let's find out best <b>Personal Loan</b> quotes and your <b> Free Credit Score.</b></h5></div>
-                                <div  class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding-bottom: 20px">
+                
+                <!-- <div style="font-style: oblique" class="col-md-6 col-md-offset-3 text-center"><h3>Hey.. Let me find out best <b>Personal Loan</b> quotes and your <b> Free Credit Score.</b></h3></div> -->
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding-bottom: 20px">
                                  
                              <div class="col-md-6 col-md-offset-3 ">
-                 <div class="bg-img" id="show-hid" style="display:none; padding:0px 10px;">
-                 <form class="pl-frm" name="personal_loan_process_form" id="personal_loan_process_form"  method="post">
+                 <div class="bg-img" id="show-hid" style="display:none; padding:0px 10px;"></div>
+                 
+                  <div class="bg1">
+                  <form class="pl-frm" name="personal_loan_process_form" id="personal_loan_process_form"  method="post">
                  <div id="section">
 
                  {{ csrf_field() }}
@@ -85,7 +118,7 @@
                                </div>
                                
                                </div>
-                               
+
                                <!-- SECTION 1 -->
                                <div id="section1" style="display: none;">
                                
@@ -219,7 +252,7 @@
                                <input type="hidden" name="PANId" id="PANId">
                                <input type="hidden" name="PhoneType" id="PhoneType" value="M">
                                <input type="hidden" name="City[]" id="City">
-                               <input type="hidden" name="AccountNumber[0]" id="AccountNumber" value="">
+                               <input type="hidden" name="AccountNumber[0]" id="AccountNumber" value="10005054208">
                                <input type="hidden" name="MiddleName" id="MiddleName" value="">
                                <input type="hidden" name="LastName" id="LastName" value="">
                                <input type="hidden" name="Locality1[]" id="Locality1" value="">
@@ -235,24 +268,17 @@
                                
 
                              </div>
-
-                               <div class="col-md-12 col-sm-12 col-xs-12">
-                                <div class="form-group">
-                                
-                               </div>
-                               </div>
-                 
-                 
-                 
-                               <div class="col-md-12">
+                
+                              <div class="col-md-12">
                                <a class="btn btn-danger btn-sm" id="next">Next</a>
                                 <!-- <a class="btn btn-default btn-sm" id="prev">Previous</a> -->
                                <a style="display: none;" class="btn btn-danger btn-sm product_name product_ID" >Get Best Quotes</a>  
                                </div>
-              
-                               </form>
-                               </div>
-                               </div>
+                               </form>                                         
+                 </div>
+                 
+                 
+                 </div>
       
                  
                                </div> 

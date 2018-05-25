@@ -31,6 +31,7 @@
                                 <div class="mb60  section-title text-center  ">
                                 <h1 class=""><center>Rectify Credit Score</center></h1>
                                 
+                                
                                 </div>
                             </div>
 
@@ -41,357 +42,208 @@
                                            
                         <div id="registration_form">
                             <form id="rectify_credit_form" name="rectify_credit_form" enctype="multipart/form-data" role="form" method="POST">
-					        {{ csrf_field() }}
+					                 {{ csrf_field() }}
 
 					        <div class="col-md-12"><h4 class="hdr pad1 text-center">Registration Form</h4></div>
                              
                                     
                                       <!-- customer name -->
                                       <div class="col-md-4 col-sm-12 col-xs-12">
-                                          <div class="form-group">
-                                          	<input name="first_name" id="first_name" type="text" class="form-control" onkeypress="return AllowAlphabet(event)" placeholder="First Name"  required="">
-                                          </div>
+                                      <div class="form-group">
+                                      <input name="FirstName" id="first_name" type="text" class="form-control" onkeypress="return AllowAlphabet(event)" placeholder="First Name"  required="">
+                                      </div>
                                       </div>
 
                                       <div class="col-md-4 col-sm-12 col-xs-12">
-                                          <div class="form-group">
-                                          	<input name="last_name" id="last_name" type="text" class="form-control" onkeypress="return AllowAlphabet(event)" placeholder="Last Name"  required="">
-                                          </div>
+                                      <div class="form-group">
+                                      <input name="LastName" id="last_name" type="text" class="form-control" onkeypress="return AllowAlphabet(event)" placeholder="Last Name"  required="">
+                                      </div>
                                       </div>
                                      
                                       
                                       <div class="col-md-4 col-sm-12 col-xs-12">
-                                          <div class="form-group">
-										<input type="text" name="email" id="email_address" oninput="mail('email_address')" class="form-control"  required="" placeholder="Email ID">
-										<span id="email_id" style="display:none;color: red; font-size: 10px">Please Enter Valid Email Id.</span>
-										</div>
-									</div>
+                                      <div class="form-group">
+										                  <select id="MaritalStatus" name="MaritalStatus" class="form-control" required="">
+                                      <option selected value=""  disabled>Marital Status</option>
+                                      <option value="single">Single</option>
+                                      <option value="married">Married</option>
+                                      <option value="divorced">Divorced</option>
+                                      </select>
+										                  </div>
+									                   </div>
 
                                       <div class="col-md-4 col-sm-12 col-xs-12">
-                                          <div class="form-group">
-										<input type="text" name="mobile" id="mobile" minlength="10" maxlength="10" class="form-control" onkeypress="return fnAllowNumeric(event)" placeholder="Mobile No" required="">
-										</div>
-									</div>
-
-									<div class="col-md-4 col-sm-12 col-xs-12">
-                                   <div class="form-group">
-                                  	<select class="form-control select-sty" name="state" id="state" required>
-				                      <option selected disabled="" value="">State</option>
-									  <option value="ANDAMAN-NICOBAR">ANDAMAN-NICOBAR</option>
-									  <option value="ANDHRA PRADESH">ANDHRA PRADESH</option>
-									  <option value="ARUNACHAL PRADESH">ARUNACHAL PRADESH</option>
-									  <option value="ASSAM">ASSAM</option>
-									  <option value="BIHAR">BIHAR</option>
-									  <option value="CHANDIGARH">CHANDIGARH</option>
-									  <option value="CHHATTISGARH">CHHATTISGARH</option>
-									  <option value="DADRA & NAGAR HAVELI">DADRA & NAGAR HAVELI</option>
-									  <option value="DAMAN & DIU">DAMAN & DIU</option>
-									  <option value="DELHI">DELHI</option>
-									  <option value="GOA">GOA</option>
-									  <option value="GUJARAT">GUJARAT</option>
-									  <option value="HARYANA">HARYANA</option>
-									  <option value="HIMACHAL PRADESH">HIMACHAL PRADESH</option>
-									  <option value="JAMMU KASHMIR">JAMMU KASHMIR</option>
-									  <option value="JHARKHAND">JHARKHAND</option>
-									  <option value="KARNATAKA">KARNATAKA</option>
-									  <option value="KERALA">KERALA</option>
-									  <option value="LAKSHADWEEP">LAKSHADWEEP</option>
-									  <option value="MADHYA PRADESH">MADHYA PRADESH</option>
-									  <option value="MAHARASHTRA">MAHARASHTRA</option>
-									  <option value="MANIPUR">MANIPUR</option>
-									  <option value="MEGHALAYA">MEGHALAYA</option>
-									  <option value="MIZORAM">MIZORAM</option>
-									  <option value="NAGALAND">NAGALAND</option>
-									  <option value="ORISSA">ORISSA</option>
-									  <option value="PONDICHERRY">PONDICHERRY</option>
-									  <option value="PUNJAB">PUNJAB</option>
-									  <option value="RAJASTHAN">RAJASTHAN</option>
-									  <option value="SIKKIM">SIKKIM</option>
-									  <option value="TAMILNADU">TAMILNADU</option>
-									  <option value="TRIPURA">TRIPURA</option>
-									  <option value="UTTAR PRADESH">UTTAR PRADESH</option>
-									  <option value="UTTARAKHAND">UTTARAKHAND</option>
-									  <option value="WEST BENGAL">WEST BENGAL</option>
-						                      
-		                              </select> 
-                                      </div>
-                                      </div>
-
-                                    <div class="col-md-4 col-sm-12 col-xs-12">
-                                          <div class="form-group">
-                                          <input type="text" name="city" id="city" class="form-control" placeholder="City" required="">
-                                      </div>
-									</div>
-
-
-
-									  <div class="col-md-4 col-sm-12 col-xs-12">
-                                   <div class="form-group">
-                                  	<select class="form-control select-sty" name="language" id="language" required>
-				                        <option selected disabled="" value="">Language Of Preference</option>
-										<option value="hindi">Hindi</option>
-										<option value="english">English</option>
-										<option value="marathi">Marathi</option>
-										<option value="punjabi">Punjabi</option>
-										<option value="gujarati">Gujarati</option>
-										<option value="malayalam">Malayalam</option>
-										<option value="kannada">Kannada</option>
-										<option value="tamil">Tamil</option>
-										<option value="telugu">Telugu</option>
-										<option value="bengali">Bengali</option>
-										<option value="santali">Santali</option>
-										<option value="odia">Odia</option>
-										<option value="maithili">Maithili</option>
-										<option value="other">Other</option>
-							          </select>
-                                      </div>
-                                      </div>
-
-                                      <div class="col-md-4 col-sm-12 col-xs-12">
-									 <div class="form-group">
-									 <textarea class="form-control" placeholder="Comments" id="comment" name="comment" rows="2"></textarea>
-									 </div>	
-									</div>
-
-									<!-- <div class="col-md-4 col-sm-12 col-xs-12">
-                                          <div class="form-group">
-                                          	<input type="text" name="created_on" id="created_on" class="form-control" placeholder="Created On" required="">
-                                          </div>
-                                      </div> -->
-                                      <br />
-                               <div class="col-md-12">
-                              <a class="btn btn-default btn-sm" id="confirm_registration">Confirm And Proceed</a>
-                              </div>
-
-
-                                 </form>
-                                 </div>
-
-                                 <div id="rectify_form">
-                            <form id="rectify_personal_details" name="rectify_personal_details" role="form" enctype="multipart/form-data" method="POST">
-					                  {{ csrf_field() }}
-
-					                  <div class="col-md-12"><h4 class="hdr pad1 text-center">Rectify Form</h4></div>
-                             
-                                    <input type="text" name="App_Id" id="App_Id" >
-                                      <!-- customer name -->
-                                      <div class="col-md-4 col-sm-12 col-xs-12">
-                                          <div class="form-group">
-                                          	<input name="FullName" id="FullName" type="text" class="form-control"  onkeypress="return AllowAlphabet(event)" placeholder="Full Name"  required="">
-                                          </div>
-                                      </div>
-
-                                       <div class="col-md-4 col-sm-12 col-xs-12">
-                                          <div class="form-group">
-                                            <input type="text" name="DOB" id="date" class="form-control" placeholder="Date of Birth" required="">
-                                          </div>
-                                      </div>
-
-                                       <div class="col-md-4 col-sm-12 col-xs-12">
-                                        <div class="form-group">
-                                        <input type="text" name="PAN" id="txtpan" oninput="pan_card('txtpan')" style="text-transform:uppercase" minlength="10" maxlength="10" class="form-control" placeholder="Pan No"  required="">
-                                        <span id="pan_number" style="display:none;color: red; font-size: 10px">Oops.Please Enter Valid Pan Number.!!</span>
-                                          </div>
-                                      </div>
-
-                                      <div class="col-md-4 col-sm-12 col-xs-12">
-                                          <div class="form-group">
-                                            <input type="text" name="AadharNo" id="txtadhar" oninput="aadhar('txtadhar')" minlength="12" maxlength="12" class="form-control" placeholder="Aadhar Number">
-                                            <span id="aadhar_number" style="display:none;color: red; font-size: 10px">Oops.Please Enter Valid Aadhar Number.!!</span>
-
-                                          </div>
-                                      </div>
-
+                                      <div class="form-group">
+										                  <select id="Gender" name="Gender" class="form-control" required="">
+                                      <option selected value=""  disabled>Gender</option>
+                                      <option value="1">Male</option>
+                                      <option value="2">Female</option>
                                       
-                                     
-                                      
-                                      <div class="col-md-4 col-sm-12 col-xs-12">
-                                      <div class="form-group">
-                  										<input type="text" name="Email" id="txtemail" class="form-control"   required="" placeholder="Email ID">
-                  										
-                  										</div>
-									                    </div>
-
-                                      <div class="col-md-4 col-sm-12 col-xs-12">
-                                      <div class="form-group">
-                  										<input type="text" name="Mobile" id="txtmobile"  class="form-control"  placeholder="Mobile No" required="">
-                  										</div>
-									                    </div>
-
-									                   <div class="col-md-4 col-sm-12 col-xs-12">
-                                      <div class="form-group">
-										                  <input type="text" name="State" id="txtstate" class="form-control"   required="" placeholder="State">
-										
+                                      </select>
 										                  </div>
 									                    </div>
 
-                                    <div class="col-md-4 col-sm-12 col-xs-12">
-                                          <div class="form-group">
-                                          <input type="text" name="City" id="txtcity" class="form-control"   placeholder="City" required="">
-                                      </div>
-									                  </div>
-
-                                     <div class="col-md-4 col-sm-12 col-xs-12">
-                                     <div class="form-group">
-                                     <textarea class="form-control" placeholder="Address" id="txtadd" name="Addr" required rows="2"></textarea>
-                                     </div> 
-                                    </div>
-
-                                     <div class="col-md-4 col-sm-12 col-xs-12">
-                                          <div class="form-group">
-                                      <input type="text" name="PinNo" id="txtpin" onkeypress="return fnAllowNumeric(event)" minlength="6" maxlength="6" class="form-control" placeholder="Pincode"  required="">
+                                      <div class="col-md-4 col-sm-12 col-xs-12">
+                                      <div class="form-group">
+                                      <input type="text" class="form-control input-md" placeholder="Address" name="AddressLine[]" maxlength="200"  required>
                                       </div>
                                       </div>
-                                       
-                                       <hr style="color:transparent; width:100%" /></br>
-                                      <div class="col-md-12"><h4 class="hdr pad1 text-center mrg-top">Financial Details</h4></div>
+                                      
 
-                                          <div class="col-md-4 col-sm-12 col-xs-12">
-                                          <div class="form-group">
-                                              <input type="text" name="LoanFin" id="txtloanfin" class="form-control" placeholder="Loans / Bank from Financial Institutions" onkeypress="return fnAllowNumeric(event)"  required="">
+                                      <div class="col-md-4 col-sm-12 col-xs-12">
+                                      <div class="form-group">
+                                      <select id="AddressType" name="AddressType[]" class="form-control dropdown" required="">
+                                      <option disabled selected value="" >Select Address Type</option>
+                                      <option value="C">Present</option>
+                                      <option value="P"> Permanent</option>
+                                      <option value="O">Office</option>
+                                      <option value="X">Other or Unspecified</option>
+                                      </select>
+                                      </div>
+                                      </div>
 
-
-                                            </div>
-                                          </div>
-
-                                          <div class="col-md-4 col-sm-12 col-xs-12">
-                                          <div class="form-group">
-                                              <input type="text" name="LoanOther" id="txtloanother" class="form-control" placeholder="Loans from Family / Friends" onkeypress="return fnAllowNumeric(event)"  required="">
-
-
-                                            </div>
-                                            </div>
-
-                                            <div class="col-md-4 col-sm-12 col-xs-12">
-                                            <div class="form-group">
-                                              <input type="text" name="NoLoan" id="txtnoloan" class="form-control" placeholder="Total number of loans" onkeypress="return fnAllowNumeric(event)"  required="">
-                                              </div>
-                                              </div>
-
-                                              <div class="col-md-4 col-sm-12 col-xs-12">
-                                              <div class="form-group">
-                                              <input type="text" name="MonthlyIncome" id="txtmonincome" class="form-control" placeholder="Total Monthly Income" minlength="5" maxlength="9" onkeypress="return fnAllowNumeric(event)"  required="">
+                                      <div class="col-md-4 col-sm-12 col-xs-12">
+                                      <div class="form-group">
+                                      <input type="text" class=" form-control dropdown search_citynm" name="City[]" id="City" Placeholder="City" required>
+                                      </div>
+                                      </div>
 
 
-                                              </div>
-                                              </div>
+									                    <div class="col-md-4 col-sm-12 col-xs-12">
+                                      <div class="form-group">
+                                      <select name="State[]" class="form-control dropdown valid" required="">
+                                      <option disabled="" selected="" value="">Select State</option>
+                                      <option value="AN">Andaman &amp; Nicobar Islands</option>
+                                      <option value="AP">Andhra Pradesh</option>
+                                      <option value="AR">Arunachal Pradesh</option>
+                                      <option value="AS">Assam</option>
+                                      <option value="BR">Bihar</option>
+                                      <option value="CH">Chandigarh</option>
+                                      <option value="CG">Chhattisgarh</option>
+                                      <option value="DN">Dadra &amp; Nagar Haveli</option>
+                                      <option value="DD">Daman &amp; Diu</option>
+                                      <option value="DL">Delhi</option>
+                                      <option value="GA">Goa</option>
+                                      <option value="GJ">Gujarat</option>
+                                      <option value="HR">Haryana</option>
+                                      <option value="HP">Himachal Pradesh</option>
+                                      <option value="JK">Jammu &amp; Kashmir</option>
+                                      <option value="JH">Jharkhand</option>
+                                      <option value="KA">Karnataka</option>
+                                      <option value="KL">Kerala</option>
+                                      <option value="LD">Lakshadweep</option>
+                                      <option value="MP">Madhya Pradesh</option>
+                                      <option value="MH">Maharashtra</option>
+                                      <option value="MN">Manipur</option>
+                                      <option value="ML">Meghalaya</option>
+                                      <option value="MZ">Mizoram</option>
+                                      <option value="NL">Nagaland</option>
+                                      <option value="OR">Orissa</option>
+                                      <option value="PY">Pondicherry/Puducherry</option>
+                                      <option value="PB">Punjab</option>
+                                      <option value="RJ">Rajasthan</option>
+                                      <option value="SK">Sikkim</option>
+                                      <option value="TN">Tamil Nadu</option>
+                                      <option value="TR">Tripura</option>
+                                      <option value="UP">Uttar Pradesh</option>
+                                      <option value="UL">Uttaranchal/Uttarakhand</option>
+                                      <option value="WB">West Bengal</option>
+                                      </select>
+                                      </div>
+                                      </div>
 
-                                              <div class="col-md-4 col-sm-12 col-xs-12">
-                                              <div class="form-group">
-                                              <input type="text" name="AvgCredit" id="txtavgcredit" class="form-control" placeholder="Average Monthly CC Payment" onkeypress="return fnAllowNumeric(event)"  required="">
-                                              </div>
-                                              </div>
+                                      <div class="col-md-4 col-sm-12 col-xs-12">
+                                      <div class="form-group">
+                                      <input type="text" name="Postal[]" id="Postal" class="form-input-new form-control" placeholder="Pincode" required="">
+                                      </div>
+                                      </div>
 
-                                              <div class="col-md-4 col-sm-12 col-xs-12">
-                                              <div class="form-group">
-                                              <input type="text" name="Expenses" id="txtexp" class="form-control" placeholder="Monthly Expenses" onkeypress="return fnAllowNumeric(event)"  required="">
-                                              </div>
-                                              </div>
+                                      <div class="col-md-4 col-sm-12 col-xs-12">
+                                      <div class="form-group">
+                                      <input type="text" name="PANId" id="PANId" oninput="pancard('PANId')" style="text-transform:uppercase" class="form-control input-md" required minlength="10" maxlength="10" placeholder="PAN">
+                                      <span id="pannumber" style="display:none;color: red; font-size: 10px;">Oops.Please Enter Valid Pan Number.!!</span>
+                                      </div>
+                                      </div>
 
-                                              <div class="col-md-4 col-sm-12 col-xs-12">
-                                              <div class="form-group">
-                                              <input type="text" name="EMI" id="txtemi" class="form-control" placeholder="Total Monthly EMI" onkeypress="return fnAllowNumeric(event)"  required="">
-                                              </div>
-                                              </div>
+                                      <div class="col-md-4 col-sm-12 col-xs-12">
+                                      <div class="form-group">
+                                      <input type="text" name="Email" id="mail" oninput="e_mail('mail')" class="form-control input-md" required placeholder="Email">
+                                      <span id="mailing" style="display:none;color: red; font-size: 10px;">Oops.Please Enter Valid Email Addr.!!</span>
+                                      </div>
+                                      </div>
 
-                                              <hr style="color:transparent; width:100%" /></br>
+                                      <div class="col-md-4 col-sm-12 col-xs-12">
+                                      <div class="form-group">
+                                      <input type="text" class=" form-control input-md lastReporteddob" name="DOB" id="DOB" placeholder="Date Of Birth" readonly required>
+                                      </div>
+                                      </div>
 
-                                              <div class="col-md-12"><h4 class="hdr pad1 text-center">Education Qalification</h4></div>
+                                      <input type="hidden" name="PhoneType" id="PhoneType" value="M">
 
-                                              <div class="col-md-4 col-sm-12 col-xs-12">
-                                              <div class="form-group">
-                                              <select class="form-control select-sty" name="Degree" id="txtdeg" required>
-                                              <option selected disabled="" value="">Highest Educational Qualification</option>
-                                              <option value="Under Graduate">Under Graduate</option>
-                                              <option value="Graduate/Diploma">Graduate/Diploma</option>
-                                              <option value="Post Graduate">Post Graduate</option>
-                                              <option value="Professional">Professional</option>
-                                              </select> 
-                                              </div>
-                                              </div>
+                                      <div class="col-md-4 col-sm-12 col-xs-12">
+                                      <div class="form-group">
+                                      <input type="text" name="MobilePhone" id="MobilePhone" minlength="10" maxlength="10" class="form-control input-md" onkeypress="return Numeric(event)" placeholder="Phone (Mobile)" required>
+                                      </div>
+                                      </div>
 
-                                              <div class="col-md-4 col-sm-12 col-xs-12">
-                                              <div class="form-group">
-                                              <input type="text" name="University" id="txtuni" class="form-control" placeholder="Name of University & Collage"   required="">
-                                              </div>
-                                              </div>
+                                      <input type="hidden" name="InquiryPurpose" id="InquiryPurpose" value="00">
 
-                                              <div class="col-md-4 col-sm-12 col-xs-12">
-                                              <div class="form-group">
-                                              <input type="text" name="YrofPassing" id="datepickeryear" class="form-control" placeholder="Year of Passing"  required="">
-                                              </div>
-                                              </div>
+                                      <input type="hidden" name="TransactionAmount" id="TransactionAmount" value="0">
 
-                                              <hr style="color:transparent; width:100%" /></br>
+                                      <div class="col-md-4 col-sm-12 col-xs-12">
+                                      <div class="form-group">
+                                  	  <select class="form-control select-sty" name="Lang_Preferred" id="Lang_Preferred" required>
+				                              <option selected disabled="" value="">Language Of Preference</option>
+                  										<option value="hindi">Hindi</option>
+                  										<option value="english">English</option>
+                  										<option value="marathi">Marathi</option>
+                  										<option value="punjabi">Punjabi</option>
+                  										<option value="gujarati">Gujarati</option>
+                  										<option value="malayalam">Malayalam</option>
+                  										<option value="kannada">Kannada</option>
+                  										<option value="tamil">Tamil</option>
+                  										<option value="telugu">Telugu</option>
+                  										<option value="bengali">Bengali</option>
+                  										<option value="santali">Santali</option>
+                  										<option value="odia">Odia</option>
+                  										<option value="maithili">Maithili</option>
+                  										<option value="other">Other</option>
+							                        </select>
+                                      </div>
+                                      </div>
 
-                                              <div class="col-md-12"><h4 class="hdr pad1 text-center">Employment Details</h4></div>
+                                       <input type="hidden" name="AccountNumber[]" id="AccountNumber" value="">
+                                       <input type="hidden" name="MiddleName" id="MiddleName" value="">
+                                       <input type="hidden" name="LastName" id="LastName" value="">
+                                       <input type="hidden" name="Locality1[]" id="Locality1" value="">
+                                       <input type="hidden" name="Locality2[]" id="Locality2" value="">
+                                       <input type="hidden" name="PassportId" id="PassportId" value="">
+                                       <input type="hidden" name="VoterId" id="VoterId" value="">
+                                       <input type="hidden" name="DriverLicense" id="DriverLicense" value="">
+                                       <input type="hidden" name="HomePhone" id="HomePhone" value="">
+                                       <input type="hidden" name="NationalIdCard" id="NationalIdCard" value="">
+                                       <input type="hidden" name="RationCard" id="RationCard" value="">
+                                      
 
-                                              <div class="col-md-4 col-sm-12 col-xs-12">
-                                              <div class="form-group">
-                                              <input type="text" name="CurrentEmployer" id="txtemp" class="form-control" placeholder="Name of Current Employer"   required="">
-                                              </div>
-                                              </div>
+                                      <div class="col-md-12"><h4 class="hdr pad1 text-center">Upload Your Credit Report</h4></div>
+                                      <div class="col-md-4 col-sm-12 col-xs-12">
+                                      <div class="form-group">
+                                      <input type="file" name="attachment" id="image_file" class="form-control"  required="">
+                                      </div>
+                                      </div>
+                                      <div class="col-md-2"><h3 class="text-center"> -- OR --</h3></div>
+                                      <div class="col-md-5"><h5 class="form-control">In case if you don't have <b>Credit Report</b>
+                                      <a href="{{URL::to('http://www.rupeeboss.com/equifax-verification')}}">Click here</a></h5></div>
+                                      <hr style="color:transparent; width:100%" />
+                                      </br><br />
 
-                                              <div class="col-md-4 col-sm-12 col-xs-12">
-                                              <div class="form-group">
-                                              <input type="text" name="TotWorkExp" id="txtworkexp" class="form-control" placeholder="Total Years of Work Expesrience" maxlength="2" onkeypress="return fnAllowNumeric(event)"  required="">
-                                              </div>
-                                              </div>
+                                      <div class="col-md-12">
+                                      <a class="btn btn-default btn-sm" id="confirm_registration">Confirm And Proceed</a>
+                                      </div>
+                                      </form>
+                                      </div>
 
-                                              <div class="col-md-4 col-sm-12 col-xs-12">
-                                              <div class="form-group">
-                                              <input type="text" name="Designation" id="txtdesig" class="form-control" placeholder="Current Designation"   required="">
-                                              </div>
-                                              </div>
-
-
-                                              <div class="col-md-4 col-sm-12 col-xs-12">
-                                              <div class="form-group">
-                                              <input type="text" name="TotalJobDone" id="txtnojob" class="form-control" placeholder="Total No. of Jobs Done" onkeypress="return fnAllowNumeric(event)" maxlength="2"  required="">
-                                              </div>
-                                              </div>
-
-                                              <div class="col-md-4 col-sm-12 col-xs-12">
-                                              <div class="form-group">
-                                              <input type="text" name="LongestJob" id="txtlongjob" class="form-control" maxlength="2" placeholder="Longest Job in years" onkeypress="return fnAllowNumeric(event)"  required="">
-                                              </div>
-                                              </div>
-
-                                              <hr style="color:transparent; width:100%" /></br>
-
-
-
-                  <div class="col-md-12"><h4 class="hdr pad1 text-center">Upload Report</h4></div>
-
-
-
-                  <div class="col-md-4 col-sm-12 col-xs-12">
-                                          <div class="form-group">
-                                            <input type="file" name="attachment" id="image_file" class="form-control"  required="">
-
-                                            </div>
-                  </div>
-
-                                 <div class="col-md-2"><h3 class="text-center"> -- OR --</h3></div>
-
-                                   <div class="col-md-5"><h5 class="form-control">In case if you don't have <b>Credit Report</b>
-                                   <a href="{{URL::to('http://qa.rupeeboss.com/equifax-verification')}}">Click here</a></h5></div>
-
-                                            <hr style="color:transparent; width:100%" />
-                                          </br>
-
-
-
-                                              
-
-                                  <br />
-                               <div class="col-md-12">
-                              <a class="btn btn-default btn-sm" id="submit_form">Submit</a>
-                              </div>
-
-
-                                 </form>
-                                 </div>
+                                 
 
                               </div>
                            </div>
@@ -416,7 +268,7 @@
         <h4 class="modal-title">Confirmation Status</h4>
       </div>
       <div class="modal-body">
-        <h4><p id="modalerr"><h5 style="color: black;" >Your Lead Id is <span id="app_id"></span> and <span id="reasn"></span> successfully.<h5></p></h4>
+        <h4><p id="modalerr"><h5 style="color: black;" >Your Lead Id is <span id="App_Id"></span> and <span id="message"></span> successfully.<h5></p></h4>
         
       </div>
 
@@ -438,7 +290,7 @@
         <h4 class="modal-title">Error Status</h4>
       </div>
       <div class="modal-body">
-        <h4><p id="modalerr"><h5 style="color: black;">Oops!! Couldn't process due to <span id="rectify-error"></span> and <span id="reason"></span> .<h5></p></h4>
+        <h4><p id="modalerr"><h5 style="color: black;">Oops!! Couldn't process due to <span id="error_message"></span> and <span id="reasn"></span>.<h5></p></h4>
         
       </div>
    </div>
@@ -458,27 +310,11 @@
     return false;
       }
 }
-
-
-    var d = new Date();
-    var year = d.getFullYear() ;
-    d.setFullYear(year);
-
-    $("#created_on").datepicker({ dateFormat: "dd-mm-yy",
-      changeMonth: true,
-      changeYear: true,
-      maxDate: year,
-      minDate: "-100Y",
-      yearRange: '-100:' + year + '',
-      defaultDate: d
-    });
-
-
     var d = new Date();
     var year = d.getFullYear()-21;
     d.setFullYear(year);
 
-    $("#date").datepicker({ dateFormat: "dd-mm-yy",
+    $("#DOB").datepicker({ dateFormat: "dd-mm-yy",
       changeMonth: true,
       changeYear: true,
       maxDate: year,
@@ -487,124 +323,48 @@
       defaultDate: d
     });
 
-    var d = new Date();
-    var year = d.getFullYear();
-    d.setFullYear(year);
-
-    $("#datepickeryear").datepicker({ dateFormat: "yy",
-      changeMonth: true,
-      changeYear: true,
-      maxDate: year,
-      minDate: "-100Y",
-      yearRange: '-100:' + year + '',
-      defaultDate: d
-    });
-
-
-
-    function pan_card(obj,val){
+    function pancard(obj,val){
         // console.log(obj);
-        if(obj=='txtpan' ){
-                   var str =$('#txtpan').val();
+        if(obj=='PANId' ){
+                   var str =$('#PANId').val();
                    var pancardPattern = /^([a-zA-Z]{5})(\d{4})([a-zA-Z]{1})$/;
                    var res = str.match(pancardPattern);
                    if(res){
                      // console.log('Pancard is valid one.!!');
-                        $('#pan_number').hide();
+                         $('#pannumber').hide();
+                         // $('.credit-submit').show();
 
                   }else{
-                    // console.log('Oops.Please Enter Valid Pan Number.!!');
-                    $('#pan_number').show();
+                      // console.log('Oops.Please Enter Valid Pan Number.!!');
+                      $('#pannumber').show();
+                      // $('.credit-submit').hide();
 
-                    return false;
+                      return false;
                   }
-                  
-    }
-    }
-    
-
-    
-    function aadhar(obj,val){
-        // //console.log(obj);
-        if(obj=='txtadhar' ){
-                   var str =$('#txtadhar').val();
-                   var aadharcardPattern = /^\d{4}\d{4}\d{4}$/;
-                   var res = str.match(aadharcardPattern);
-                   if(res){
-                     // //console.log('Aadhar No. is valid one.!!');
-                        $('#aadhar_number').hide();
-
-                  }else{
-                    // //console.log('Oops.Please Enter Valid Aadhar No..!!');
-                    $('#aadhar_number').show();
-
-                    return false;
-                  }
-                  
+                 
     }
 }
 
 
- function mail(obj,val){
-    // console.log(obj);
-    if(obj=='email_address' ){
-                   var str =$('#email_address').val();
+function e_mail(obj,val){
+    // //console.log(obj);
+    if(obj=='mail' ){
+                   var str =$('#mail').val();
                    var emailPattern = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/; 
                    var res = str.match(emailPattern);
                    if(res){
-                     // console.log('Pancard is valid one.!!');
-                      $('#email_id').hide();
+                     // //console.log('Pancard is valid one.!!');
+                      $('#mailing').hide();
 
                   }else{
-                    // console.log('Oops.Please Enter Valid Pan Number.!!');
-                    $('#email_id').show();
+                    // //console.log('Oops.Please Enter Valid Pan Number.!!');
+                    $('#mailing').show();
 
                     return false;
                   }
                   
   }
 }
-</script>
-
-
-<script type="text/javascript">
-	$('#submit_form').click(function(){
-    
-  if (!$('#rectify_personal_details').valid()) {
-
- }else{
-  $.ajax({
-          url:"{{URL::to('rectify-submit')}}" ,  
-          data:new FormData($("#rectify_personal_details")[0]),
-          dataType:'json',
-          async:false,
-          type:'POST',
-          processData: false,
-          contentType: false,
-          success: function(msg){
-             console.log(msg.Status);
-             
-             if (msg.status==1) 
-              {
-              $('#app_id').empty().append(msg.response_id);
-              $('#rectify-credit-popup').modal('show');
-              $('#reasn').empty().append(msg.message);
-              } 
-              else 
-              {
-              $('#rectify-credit-popup').modal('hide');
-              $('#rectify-error').empty().append(msg.error_message);
-              $('#reason').empty().append(msg.message);
-              $('#rectify-popup-error').modal('show');
-              }
-             
-              
-            
-            }
-        });
-}
-  });
-  
 </script>
 
 <script type="text/javascript">
@@ -616,32 +376,29 @@
     else
     {    
 
-    	var f_name=$('#first_name').val().concat($('#last_name').val());;
-    	 $('#FullName').val(f_name);
-
-    	 var mobile=$('#mobile').val();
-    	 $('#txtmobile').val(mobile);
-
-    	 var email=$('#email').val();
-       console.log(email);
-    	 $('#txtemail').val(email);
-
-    	 var state=$('#state').val();
-    	 $('#txtstate').val(state);
-
-    	 var city=$('#city').val();
-    	 $('#txtcity').val(city);
-        $.ajax({  
-         type: "POST",  
-         url: "{{URL::to('rectify-registration')}}",
-         data : $('#rectify_credit_form').serialize(),
-         success: function(msg){
-            
+    	$.ajax({  
+         url:"{{URL::to('rectify-submit')}}" ,  
+          data:new FormData($("#rectify_credit_form")[0]),
+          dataType:'json',
+          async:false,
+          type:'POST',
+          processData: false,
+          contentType: false,
+          success: function(msg){
+            console.log(msg.response_id);
          if (msg.status==1) {
-              $('#registration_form').hide();
-              $('#rectify_form').show();
-              $('#App_Id').val(msg.response_id);
-              $('#message').val(msg.message);
+            
+             
+             $('#App_Id').text(msg.response_id);
+             $('#message').text(msg.message);
+             $('#rectify-credit-popup').modal('show');
+            }
+            else{
+             
+             
+             $('#error_message').text(msg.error_message);
+             $('#reasn').text(msg.message);
+              $('#rectify-popup-error').modal('show');
             } 
             
               
@@ -657,30 +414,46 @@
   });
 </script>
 
-<script type="text/javascript">
-  function ApplicantObligations(){
-var result = true;
-$("#txtemi").each(function() {
-        if (!this.value) {
-            this.value = 0;
-        }
-        
-        if(jQuery.isNumeric(this.value) && this.value>=0){
-            
-        }else{
-            result = false;
-        }
-    });
-    return result;
-}
 
-$('#submit_form').click(function(){
-    var testInput = ApplicantObligations();
-    if(testInput){
-        var finalValue = $('#txtemi').val();
-         $('span').text(finalValue);
-    }
-});
+
+<script type="text/javascript">
+ $(document).ready(function(){
+    src = "{{ route('searchajax') }}";
+    $(".search_citynm").autocomplete({
+      source: function(request, response) {
+        
+        $.ajax({
+          url: src,
+          dataType: "json",
+          data: {
+            term : request.term
+          },
+          success: function(data) {
+           
+
+            response(data);
+            
+          }
+        });
+      },
+      change: function (event, ui) {
+        if (ui.item == null || ui.item == undefined || ui.item.value=='No Result Found') {
+          $(".search_citynm").val("");
+          $(".search_citynm").attr("disabled", false);
+         
+        }else{
+
+         
+         $(".Q6").show();
+         
+          
+             }
+           }
+
+        
+      });
+   });
+
 </script>
 
 

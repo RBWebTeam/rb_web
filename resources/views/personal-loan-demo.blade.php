@@ -8,8 +8,8 @@
    .form-control{height:45px !important;}
 </style> -->
 <style>
-   .bg-img {background: url("images/bg_img.gif")no-repeat; width:447px; height:179px; z-index:1000;position:inherit;margin-left:20px;}
-   .heading {background: url("images/heading.png")no-repeat;z-index:10000;right:90px; position:absolute; width:235px; height:175px;}
+   .bg-img {background: url("../images/bg_img.gif")no-repeat; width:447px; height:179px; z-index:1000;position:inherit;margin-left:20px;}
+   .heading {background: url("../images/heading.png")no-repeat;z-index:10000;right:90px; position:absolute; width:235px; height:175px;}
    .bg-img img {margin:0 auto; display:block;}
    .form-group {margin-bottom: 5px !important;} 
    .form-control {margin-bottom:6px !important;}
@@ -18,7 +18,7 @@
    .bg1 {background: #e6ecef !important;border:5px solid #dce8ef; padding: 20px 0px;float: left;z-index: 0;margin-top: -13px;box-shadow: 10px 10px 5px #888;}
    
    .hero-bkg-animated {
-  background: #fff url("images/watermark_bg_1.png") repeat 0 0;
+  background: #f3f3f3 url("images/watermark_bg_1.png") repeat 0 0;
   width: 100%;
   
   -webkit-animation: slide 20s linear infinite;
@@ -554,4 +554,11 @@ $('#applicant_name').click(function(){
 $('#text').show();
 });
  </script>
+
+ <script>
+        $( window ).load(function() {
+        $('#show-hid').show("slow");
+    $('.heading').show(1500);
+        });
+        </script>
 

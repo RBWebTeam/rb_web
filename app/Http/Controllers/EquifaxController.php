@@ -203,15 +203,13 @@ $post_data='{
           $status=0;
            
          }
-  
-    //     $arr=['name'=>$name,'error'=>$err,'score'=>$score,'status'=>$status];
-    // return  $arr ; //response()->json($arr);  
-
-          $arr=['name'=>$name,'error'=>$err,'score'=>$score,'status'=>$status];
+     $arr=['name'=>$name,'error'=>$err,'score'=>$score,'status'=>$status];
     return response()->json($arr);
+}
 
-      
-  }
+  
+
+
 
   public function equifax_verification(){
     $data['brokerid']=Session::get('brokerid')?Session::get('brokerid'):'MAA=';
@@ -273,36 +271,45 @@ $post_data='{
         return view('rectifycredit');
  }
 
-      public function rectify_registration(Request $req){
-        // print_r($req->all());exit();
-        $req['created_on'] =date('d-m-Y');
-        $data=$req->all();
-        $data['brokerid']=Session::get('brokerid')?Session::get('brokerid'):'MAA=';
-        $data['empid']=Session::get('empid')?Session::get('empid'):'MAA=';
-        $data['source']=Session::get('source')?Session::get('source'):'MAA=';
-        // $data['CampaignName']="HDFC PL";
-        $post_data=json_encode($data);
-        // print_r($post_data);exit();
-        $url = $this::$url_static."/BankAPIService.svc/createRectifyCreditCustReq";
-        $result=$this->call_json_data_api($url,$post_data);
-        $http_result=$result['http_result'];
-        $error=$result['error'];
-        $st=str_replace('"{', "{", $http_result);
-        $s=str_replace('}"', "}", $st);
-        $m=$s=str_replace('\\', "", $s);
-        // print_r($http_result);exit();
-        $obj=json_decode($m);
-        return response()->json( $obj);
-      }
+       public function rectify_equi_score(Request $req){
 
-        public function rectify(Request $req){
-        // print_r($req->all());exit();
-        $req['datetime'] =date('d-m-Y');
+       
+
+     
+         $score=$this->equifax_query_pl($req);
+         $va=$score['score'];
+         $scorarr = json_decode(json_encode($va), TRUE);
+      
+
+          $req['AddressLine']=$req['AddressLine'][0];
+          $req['AddressType']=$req['AddressType'][0];
+          $req['City']=$req['City'][0];
+          $req['State']=$req['State'][0];
+          $req['Postal']=$req['Postal'][0];
+          $req['Locality1']=$req['Locality1'][0];
+          $req['Locality2']=$req['Locality2'][0];
+          $req['AccountNumber']=$req['AccountNumber'][0];
+          // print_r($req->all());exit();
+          // $scorarr[0]=799;
+         $rectify=$this->rectify($req,$scorarr[0]);
+       //  print_r($rectify);exit();
+         return $rectify;
+    } 
+
+
+      
+
+        public function rectify(Request $req,$ar){
+          // print_r($req->all());exit();
+        // print_r($ar);exit();
+        // $req['datetime'] =date('d-m-Y');
+        $data['score']=$ar;
         $data=$req->all();
         $data['brokerid']=Session::get('brokerid')?Session::get('brokerid'):'MAA=';
         $data['empid']=Session::get('empid')?Session::get('empid'):'MAA=';
         $data['source']=Session::get('source')?Session::get('source'):'MAA=';
         $data['CampaignName']=Session::get('CampaignName');
+        $data['score']=$ar;
         $file=$req->file('attachment');
         $destinationPath = $_SERVER['DOCUMENT_ROOT'] .'/uploads/rectify/'.$req->Mobile_Num.'/';
         $filename=$file->getClientOriginalExtension();
@@ -312,17 +319,19 @@ $post_data='{
         unset($d['attachment']);
         $post_data=json_encode($d);
         // print_r($post_data);exit();
-        $url = $this::$url_static."/BankAPIService.svc/createRectifyCreditCustBasicReq";
+        $url = $this::$url_static."/BankAPIService.svc/createRectifyCreditCustDetail";
         $result=$this->call_json_data_api($url,$post_data);
         $http_result=$result['http_result'];
-         // print_r($http_result);exit();
+        // print_r($http_result);exit();
         $error=$result['error'];
         $st=str_replace('"{', "{", $http_result);
         $s=str_replace('}"', "}", $st);
         $m=$s=str_replace('\\', "", $s);
         $obj = json_decode($m);
-       
-       return response()->json( $obj);
+        $obj1=json_decode($ar);
+         $obj_merged = (object) array_merge((array) $obj, (array) $obj1);
+       // print_r( $obj_merged);exit();
+       return response()->json($obj_merged);
 
  }
 

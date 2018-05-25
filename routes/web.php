@@ -427,8 +427,8 @@ Route::post('hdfc-business-loan-submit','LoanController@hdfc_business_loan_submi
 
 /*Rectify Creditm*/
 Route::get('rectifycredit','EquifaxController@rectifycredit');
-Route::post('rectify-submit','EquifaxController@rectify');
-Route::post('rectify-registration','EquifaxController@rectify_registration');
+Route::post('rectify-submit','EquifaxController@rectify_equi_score');
+// Route::post('rectify-registration','EquifaxController@rectify_registration');
 
 /*Tata Capital PL*/
 Route::get('tata-capital-city','TataCapitalLoanController@tatacapital_city');

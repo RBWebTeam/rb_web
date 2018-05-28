@@ -14,7 +14,7 @@
    .form-group {margin-bottom: 5px !important;} 
    .form-control {margin-bottom:6px !important;}
    /*.wrapper-content {background:#ffffff url("images/watermark_bg.png");}*/
-   .btn-center {display:block;margin:0 auto;}
+   .btn-center {display:block;margin:0 auto;width: 80px;}
    .bg1 {background: #e6ecef !important;border:5px solid #dce8ef; padding: 20px 0px;float: left;z-index: 0;margin-top: -13px;box-shadow: 10px 10px 5px #888;}
    
    .hero-bkg-animated {
@@ -34,6 +34,8 @@
    @media only screen and (max-width: 768px) {
     .wrapper-content {background:transparent;}
    }
+
+   .btn-sm {background:#fff;padding: 15px 16px !important;}
 </style>
 
    
@@ -43,7 +45,7 @@
             <div class="row">
                 <div class="col-md-12">
         <div class="heading" style="display:none;"></div>
-                    <div class="wrapper-content bg-white pinside40 hero-bkg-animated">
+                    <div class="wrapper-content bg-white pinside40 hero-bkg-animated" id="pl_form">
                      <!-- <h1 class=""><center>Personal Loan</center></h1> -->
                         <div class="section-faq" id="section-faq">
                                 <div class="row">
@@ -71,7 +73,7 @@
                                </div>
                                </div>
 
-                               <div class="col-md-12 col-sm-12 col-xs-12">
+                               <!-- <div class="col-md-12 col-sm-12 col-xs-12">
                                 <div class="form-group">
                                <select class="form-control input-md select-sty" name="loan_tenure" id="loan_tenure" required>
                                 <option selected value="">Loan Tenure</option>
@@ -83,9 +85,22 @@
                                                         
                                 </select>
                                </div>
+                               </div> -->
+
+                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                 <div style="background:transparent;float:left;margin-bottom:8px;width:100%;margin:5px;margin-bottom:8px;">
+                                 <span style="font-size:14px;">Loan Tenure</span>
+                                <div class="btn-grp mrg-top status form-control1" data-toggle="buttons">
+                                   <span class="btn btn-primary btn-sm outer-brd active"><input type="radio" name="loan_tenure" id="option1" value="1">1 Year</span>
+                                   <span class="btn btn-primary btn-sm outer-brd"><input type="radio" name="loan_tenure" id="option2" value="2" >2 Years</span>
+                                   <span class="btn btn-primary btn-sm outer-brd"><input type="radio" name="loan_tenure" id="option3" value="3" >3 Years</span>
+                                 <span class="btn btn-primary btn-sm outer-brd"><input type="radio" name="loan_tenure" id="option3" value="4" >4 Years</span>
+                                 <span class="btn btn-primary btn-sm outer-brd"><input type="radio" name="loan_tenure" id="option3" value="5" >5 Years</span>
+                               </div>
+                               </div>
                                </div>
 
-                             <div class="col-md-12 col-sm-12 col-xs-12">
+                             <!-- <div class="col-md-12 col-sm-12 col-xs-12">
                                 <div class="form-group">
                                <select class="form-control input-md select-sty" name="emp_detail" id="emp_detail" required>
                                         <option selected value="">Employment Status</option>
@@ -95,6 +110,17 @@
                                 </select>
                                </div>
                                
+                               </div> -->
+
+                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                 <div style="background:transparent;float:left;margin-bottom:8px;width:100%;margin:5px;margin-bottom:8px;">
+                                 <span style="font-size:14px;">Employment</span>
+                                <div class="btn-grp mrg-top status form-control1" data-toggle="buttons">
+                                   <span class="btn btn-primary btn-sm outer-brd active"><input type="radio" name="emp_detail" id="option1" value="salaried">Salaried</span>
+                                   <span class="btn btn-primary btn-sm outer-brd"><input type="radio" name="emp_detail" id="option2" value="self-employed" >Self-Emp</span>
+                                   
+                               </div>
+                               </div>
                                </div>
 
 
@@ -252,7 +278,7 @@
                                <input type="hidden" name="PANId" id="PANId">
                                <input type="hidden" name="PhoneType" id="PhoneType" value="M">
                                <input type="hidden" name="City[]" id="City">
-                               <input type="hidden" name="AccountNumber[0]" id="AccountNumber" value="10005054208">
+                               <input type="hidden" name="AccountNumber[0]" id="AccountNumber" value="">
                                <input type="hidden" name="MiddleName" id="MiddleName" value="">
                                <input type="hidden" name="LastName" id="LastName" value="">
                                <input type="hidden" name="Locality1[]" id="Locality1" value="">
@@ -268,11 +294,12 @@
                                
 
                              </div>
+                             
                 
-                              <div class="col-md-12">
-                               <a class="btn btn-danger btn-sm" id="next">Next</a>
+                              <div class="col-md-12"><br>
+                               <a class="btn btn-default btn-sm btn-center" id="next">Next</a>
                                 <!-- <a class="btn btn-default btn-sm" id="prev">Previous</a> -->
-                               <a style="display: none;" class="btn btn-danger btn-sm product_name product_ID" >Get Best Quotes</a>  
+                               <a style="display: none;" class="btn btn-default btn-sm product_name product_ID btn-center" >Get Best Quotes</a>  
                                </div>
                                </form>                                         
                  </div>

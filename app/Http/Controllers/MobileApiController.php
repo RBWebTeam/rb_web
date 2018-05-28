@@ -44,8 +44,8 @@ class MobileApiController extends ApiController
 	public function personal_loan_mobile(Request $req){
 		//return "hiiiii";
 		$data= $this->comapre_personal_loan($req);
-		//print_r($data);exit;
-		//		print_r( $data->getData()->data);exit();
+		// print_r($data);exit;
+				// print_r( $data->getData()->data);exit();
 		if($data->getData()->data!=[]){
 			$status_Id=0;
 			$msg="data delievered";

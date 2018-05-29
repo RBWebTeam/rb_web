@@ -9,8 +9,7 @@
 </style> -->
 <style>
    .bg-img {width:447px; height:179px; z-index:1000;position:inherit;margin-left:20px;}
-   .heading {/*background: url("images/heading.png")no-repeat; */ z-index:10000;right:248px; position:absolute; width:235px; height:175px;}
-   .heading {z-index: 10000;right: 171px;position: absolute;width: 377px;height: 59px;}
+   .heading {background: url("images/heading.png")no-repeat;z-index:10000;right:248px; position:absolute; width:235px; height:175px;}
    .bg-img img {margin:0 auto; display:block;}
    .form-group {margin-bottom: 5px !important;} 
    .form-control {margin-bottom:6px !important;}
@@ -40,17 +39,14 @@
    
    @media only screen and (max-width: 768px) {
     .wrapper-content {background:transparent;}
-  
-  .bg-img {
+	
+	.bg-img {
     width: 301px;
     height: 125px;
     z-index: 1000;
     position: inherit;
     margin-left: 8px;
 }
-.dv-para {right:53px !important; top:-35px;}
-.dv-para:after {left: 55% !important;}
-
 .btn-sm {
     background: #fff;
     padding: 12px 8px !important;
@@ -71,103 +67,19 @@
 }
 
    
- 
-
- h1 {
-  font-size:20px;
-  color: #000;
-  line-height:25px !important;
-  font-weight:normal;
-}
-
-@keyframes caret {
-  50% {
-    border-color: transparent;
-  }
-}
-
-.dv-para {    
-    width:300px;
-    position: absolute;
-    z-index: 10;
-    right: 230px;
-  padding:5px 15px; background:#ddd;
-}
-
-.dv-para:after {
-    border-top: 18px solid #dddddd;
-    border-left: 15px solid transparent;
-    border-right: 15px solid transparent;
-    bottom: -17px;
-    content: "";
-    position: absolute;
-    left: 15%;
-    margin-left: -21px;
-    width: 0;
-    margin-top: -40px;
-    height: 0;
-  border-radius:5px;
-}
-
-
-
+   
+   
+   
 
 </style>
 
-<script>
- document.addEventListener('DOMContentLoaded',function(event){
-  // array with texts to type in typewriter
-  var dataText = ["Hey, Let me find out best personal loan Quotes and your free credit score"];
-  
-  // type one text in the typwriter
-  // keeps calling itself until the text is finished
-  function typeWriter(text, i, fnCallback) {
-    // chekc if text isn't finished yet
-    if (i < (text.length)) {
-      // add next character to h1
-     document.querySelector("h1").innerHTML = text.substring(0, i+1) +'<span aria-hidden="true"></span>';
-
-      // wait for a while and call this function again for next character
-      setTimeout(function() {
-        typeWriter(text, i + 1, fnCallback)
-      }, 100);
-    }
-    // text finished, call callback if there is a callback function
-    else if (typeof fnCallback == 'function') {
-      // call callback after timeout
-      setTimeout(fnCallback, 700);
-    }
-  }
-  // start a typewriter animation for a text in the dataText array
-   function StartTextAnimation(i) {
-     if (typeof dataText[i] == 'undefined'){
-        setTimeout(function() {
-          StartTextAnimation(0);
-        }, 20000);
-     }
-     // check if dataText[i] exists
-    if (i < dataText[i].length) {
-      // text exists! start typewriter animation
-     typeWriter(dataText[i], 0, function(){
-       // after callback (and whole text has been animated), start next text
-       StartTextAnimation(i + 1);
-     });
-    }
-  }
-  // start the text animation
-  StartTextAnimation(0);
-});
-
-</script>
    
   <div class=" ">
         <!-- content start -->
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-        <!-- <div class="heading" style="display:none;"></div> -->
-              
-               <div class="dv-para" style="display:none;"> <h1>Hey, Let me find out best <b>personal loan</b> quotes and your free credit score</h1></div>
+        <div class="heading" style="display:none;"></div>
                     <div class="wrapper-content bg-white pinside40 hero-bkg-animated" id="pl_form">
                      <!-- <h1 class=""><center>Personal Loan</center></h1> -->
                         <div class="section-faq" id="section-faq">
@@ -253,7 +165,7 @@
                                </div>
                                </div>
 
-                               <!-- <div class="col-md-12 col-sm-12 col-xs-12">
+                               <div class="col-md-12 col-sm-12 col-xs-12">
                                <div class="form-group">
                                <select id="AddressType" class="form-control input-md" name="AddressType[]" required>
                                 <option selected disabled="">AddressType</option>
@@ -264,19 +176,6 @@
                                 </select>
                                </div>
                                
-                               </div> -->
-
-                                <div class="col-md-12 col-sm-12 col-xs-12">
-                                 <div style="background:transparent;float:left;margin-bottom:8px;width:100%;margin:5px;margin-bottom:8px;">
-                                 <span style="font-size:14px;">AddressType</span>
-                                <div class="btn-grp mrg-top status form-control1" data-toggle="buttons">
-                                   <span class="btn btn-primary btn-sm outer-brd active"><input type="radio" name="AddressType[]" id="option1" value="C">Present</span>
-                                   <span class="btn btn-primary btn-sm outer-brd"><input type="radio" name="AddressType[]" id="option2" value="P" >Permanent</span>
-                                   <span class="btn btn-primary btn-sm outer-brd"><input type="radio" name="AddressType[]" id="option2" value="O" >Office</span>
-                                   <span class="btn btn-primary btn-sm outer-brd"><input type="radio" name="AddressType[]" id="option2" value="X" >Other</span>
-                                   
-                               </div>
-                               </div>
                                </div>
                                
                                </div>
@@ -293,19 +192,11 @@
                                </div>
 
 
-                               
-                                <div class="btn-grp mrg-top status form-control1 col-md-12 mrg-btn" data-toggle="buttons">
-                                <span class="btn btn-primary btn-sm outer-brd"><input type="radio" name="city_name" id="option1" value="MUMBAI">Mumbai</span>
-                                <span class="btn btn-primary btn-sm outer-brd"><input type="radio" name="city_name" id="option2" value="Pune" >Pune</span>
-                                <span class="btn btn-primary btn-sm outer-brd"><input type="radio" name="city_name" id="option2" value="KOLKATA" >Kolkata</span>
-                                <span class="btn btn-primary btn-sm outer-brd"><input type="radio" name="city_name" id="option2" value="BANGALORE" >Bangalore</span>
-                               <!-- <input  type="text" name="city_name" id="city_name" class="form-input-new  col-md-2 pull-right" style="padding: 10px;margin-bottom: 10px; border: 1px solid #000 ;width:93px; color: #000 !important;" placeholder="Other"> -->
-                               <select style="padding: 10px;margin-bottom: 10px; border: 1px solid #000 ;width:93px; color: #000 !important;" name="city_name" id="city_name">
-                                <option disabled selected value="">OTHER</option>
-                              </select>
+                               <div class="col-md-12 col-sm-12 col-xs-12">
+                               <div class="form-group">
+                               <input type="text" name="city_name" id="city_name" class="form-input-new form-control search_city" placeholder="City" required="">
                                </div>
-
-                              <br>
+                               </div>
 
                                 <div class="col-md-12 col-sm-12 col-xs-12">
                                    <div class="form-group">
@@ -370,8 +261,8 @@
                              </div>
 
                              <!-- SECTION 2 -->
-                              <div id="section2" style="display: none;">
-                              <!-- <div class="col-md-12 col-sm-12 col-xs-12" >
+                              <div id="section2" style="display: none;" ;>
+                              <div class="col-md-12 col-sm-12 col-xs-12" >
                                <div class="form-group">
                                 <select id="Gender" class="form-control input-md" name="Gender" required>
                                 <option selected disabled="">Gender</option>
@@ -381,20 +272,7 @@
                                 </div>
                                 <input type="hidden" name="emp_detail_id" value="1" >
                                
-                                </div> -->
-
-                                <div class="col-md-12 col-sm-12 col-xs-12">
-                                 <div style="background:transparent;float:left;margin-bottom:8px;width:100%;margin:5px;margin-bottom:8px;">
-                                 <span style="font-size:14px;">Gender</span>
-                                <div class="btn-grp mrg-top status form-control1" data-toggle="buttons">
-                                   <span class="btn btn-primary btn-sm outer-brd active"><input type="radio" name="Gender" id="option1" value="1">Male</span>
-                                   <span class="btn btn-primary btn-sm outer-brd"><input type="radio" name="Gender" id="option2" value="2" >Female</span>
-                                  
-                                   
-                               </div>
-                               </div>
-                               <input type="hidden" name="emp_detail_id" value="1" >
-                               </div>
+                                </div>
                                  
                                  <div class="col-md-12 col-sm-12 col-xs-12" >
                                 <div class="form-group">
@@ -456,7 +334,7 @@
                               <div class="col-md-12 flt-left"><br>
                                <a class="btn btn-default btn-sm btn-center" id="next">Next</a>
                                 <!-- <a class="btn btn-default btn-sm" id="prev">Previous</a> -->
-                               <a style="display: none;" class="btn btn-default btn-sm product_name product_ID " >Get Best Quotes</a>  
+                               <a style="display: none;" class="btn btn-default btn-sm product_name product_ID btn-center" >Get Best Quotes</a>  
                                </div>
                                </form>                                         
                  </div>
@@ -562,7 +440,6 @@ $(".product_ID").click(function(e){
 
                              if (loan_eligible>0) {
                               $('#pl_form').hide();
-                              $('.dv-para').hide();
                              $("#test123").empty().append(msg.html);  
                              $('#loanamount').val(loan_eligible);
                             var roi = msg.roi;
@@ -742,32 +619,8 @@ $('#text').show();
 
  <script>
         $( window ).load(function() {
-        $('#show-hid').show("fast");
-    $('.dv-para').show(1000);
+        $('#show-hid').show("slow");
+    $('.heading').show(1500);
         });
         </script>
-
-
-<script type="text/javascript">   
-
- $.ajax({ 
-   url: "{{URL::to('pl-city-master')}}",
-   method:"GET",
-   success: function(msg)  
-   {
-   // var data=$.parseJSON(datas);
-   console.log(msg);
-   if(msg)
-      {      $.each(msg, function( index, value ) {
-            $('#city_name').append('<option value="'+value.City_Name+'">'+value.City_Name+'</option>');
-
-        }); 
-    }else{
-      $('#city_name').empty().append('No Result Found');
-    }
-
-   },
-
- });
-</script>
 

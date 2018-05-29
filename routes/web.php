@@ -450,6 +450,7 @@ Route::post('flexi-loans-token','LoanController@flexi_loans_token');
 Route::get('flexi-loans-partner-list','LoanController@flexi_loans_partner_list');
 Route::post('flexi-loans-appln','LoanController@flexi_loans_appln');
 Route::post('flexi-loans-appln-update','LoanController@flexi_loans_appln_update');
+Route::post('flexi-business','LoanController@flexi_business_dtls');
 
 
 // /*Demo*/
@@ -494,4 +495,5 @@ Route::get('medsave','LoanController@medsave');
 Route::get('personal-loan-demo','NewProcessController@personal_loan_demo');
 Route::get('state','NewProcessController@state');
 Route::post('p_loansubmit','FormController@p_loan');
+Route::get('pl-city-master','NewProcessController@pl_city_master');
 

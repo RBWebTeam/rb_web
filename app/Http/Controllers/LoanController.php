@@ -1338,7 +1338,7 @@ $url = $this::$url_static."/BankAPIService.svc/updateIIFLRevisedQuote";
 
 /*Flexi Token*/
    public function flexi_loans_token(Request $req){
-   
+   // print_r($req->all());exit();
         $data=$req->all();
         $post_data=json_encode($data);
        
@@ -1378,6 +1378,7 @@ $url = $this::$url_static."/BankAPIService.svc/updateIIFLRevisedQuote";
          // print_r($req->all());exit();
          $data=$req->all();
          $post_data=json_encode($data);
+         // print_r($post_data);exit();
          $url = $this::$url_static."/BankAPIService.svc/CreateFlexiLoanAppln";
          $result=$this->call_json_data_api($url,$post_data);
          $http_result=$result['http_result'];
@@ -1423,7 +1424,6 @@ $url = $this::$url_static."/BankAPIService.svc/updateIIFLRevisedQuote";
     }
 }';
 
-    
     // print_r($post_data);
          $url = $this::$url_static."/BankAPIService.svc/UpdateFlexiLoanAppln";
          $result=$this->call_json_data_api($url,$post_data);
@@ -1432,12 +1432,55 @@ $url = $this::$url_static."/BankAPIService.svc/updateIIFLRevisedQuote";
          $st=str_replace('"{', "{", $http_result);
          $s=str_replace('}"', "}", $st);
          $m=$s=str_replace('\\', "", $s);
-         print_r($http_result);exit();
+         // print_r($http_result);exit();
          $obj=json_decode($m);
          return response()->json( $obj); 
+ }
 
+ public function flexi_business_dtls(Request $req){
+  // print_r($req->all());exit();
+   $post_data= '{ 
+   "params":{ 
+      "name":"'.$req->name.'",
+      "nature_of_business":"'.$req->nature_of_business.'",
+      "product_classfication":"'.$req->product_classfication.'",
+      "date_of_incorporation":"'.$req->date_of_incorporation.'",
+      "employee_count":"'.$req->employee_count.'",
+      "loan_purpose":"'.$req->loan_purpose.'",
+      "pan_no":"'.$req->pan_no.'",
+      "tin_no":"'.$req->tin_no.'",
+      "gst_no":"'.$req->gst_no.'",
+      "udyog_aadhaar_no":"'.$req->udyog_aadhaar_no.'",
+      "address_flat_no":"'.$req->address_flat_no.'",
+      "address_building":"'.$req->address_building.'",
+      "address_area":"'.$req->address_area.'",
+      "address_pincode":"'.$req->address_pincode.'",
+      "address_city":"'.$req->address_city.'",
+      "address_state":"'.$req->address_state.'",
+      "address_ownership_status":"'.$req->address_ownership_status.'",
+      "partner_details":[
+      {
+        "name": "'.$req->name.'",
+        "pan": "'.$req->pan.'",
+        "dob": "'.$req->dob.'",
+        "gender": "'.$req->gender.'",
+        "postal_code": "'.$req->postal_code.'",
+        "city": "'.$req->city.'",
+        "state": "'.$req->state.'",
+        "address": "'.$req->address.'",
+        "residence_ownership_status": "'.$req->residence_ownership_status.'",
+        "mobile_no": "'.$req->mobile_no.'",
+      }],
+      "previous_loan_taken" : "'.$req->previous_loan_taken.'",
+      
+   },
+   "loanCode":"'.$req->loanCode.'",
+   "access_token":"'.$req->access_token.'"
+}';
 
-  }
+print_r($post_data);
+
+ }
    
 
 

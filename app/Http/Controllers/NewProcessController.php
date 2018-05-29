@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Session;
 use Response;
+use DB;
  
 use App\SEOlibraries\Seo;
 class NewProcessController extends CallApiController
@@ -95,6 +96,13 @@ class NewProcessController extends CallApiController
       public function personal_loan_demo(){
         return view('personal-loan-demo');
       }
+
+      public function pl_city_master(Request $req){
+      // print_r($req->all());exit();
+      $quote_data=DB::select('call usp_load_nonmetro_city_master ()');
+       // print_r($quote_data);exit();
+      return $quote_data;
+      }   
 
      
 

@@ -744,6 +744,19 @@ $url = $this::$url_static."/BankAPIService.svc/updateIIFLRevisedQuote";
     return view('lendingkart');
    }
 
+   public function lendingkart_state(){
+     $query = DB::table('state_master')->select('State_Id', 'state_name')->get();
+          // print_r($query);exit();
+     echo json_encode($query);
+ }
+
+   public function lendingkart_city(Request $req){
+      // print_r($req->all());exit();
+      $quote_data=DB::select('call usp_load_lendingkart_city_master ("'.$req['permanent_state'].'")');
+       // print_r($quote_data);exit();
+      return $quote_data;
+      }
+
    public function lendingkart_details(Request $req){
      try {
        $data=$req->all();

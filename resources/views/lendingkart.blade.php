@@ -85,16 +85,32 @@
                                           </div>
                                         </div>
 
-                                        <div class="col-md-4 col-sm-12 col-xs-12">
+                                        <!-- <div class="col-md-4 col-sm-12 col-xs-12">
                                           <div class="form-group">
                                             <input type="text" class="form-control search_statenm" id="permanent_state" name="permanent_state" placeholder="State" required>
                                           </div>
-                                        </div>
+                                        </div> -->
 
                                         <div class="col-md-4 col-sm-12 col-xs-12">
+                                        <div class="form-group">
+                                        <select id="permanent_state" name="permanent_state" class="form-control">
+                                        <option disabled selected value="">State</option>
+                                        </select>
+                                        </div>
+                                        </div>
+
+                                        <!-- <div class="col-md-4 col-sm-12 col-xs-12">
                                           <div class="form-group">
                                             <input type="text" class="form-control search_citynm" id="permanent_city" name="permanent_city" placeholder="City" required>
                                           </div>
+                                        </div> -->
+
+                                        <div class="col-md-4 col-sm-12 col-xs-12">
+                                        <div class="form-group">
+                                        <select id="permanent_city" name="permanent_city" class="form-control">
+                                        <option disabled selected value="">City</option>
+                                        </select>
+                                        </div>
                                         </div>
 
                                         <hr style="color:transparent; width:100%">
@@ -328,7 +344,7 @@
                                           </div>
                                         </div>
 
-                                    <input type="hidden" name="product_category" id="product_category" value="">
+                                    <input style="display: none;" type="hidden" name="product_category" id="product_category" value="">
 
                                         
                                     <input type="checkbox"  name="terms" required>&nbsp;&nbsp;I hereby confirm that I have read and understood the<a href="#" data-toggle="modal" data-target="#Experian_terms_modal"></a> Rupeeboss Terms and Conditions applicable to this service and that all the details furnished by me above are true and correct. I further provide consent to Rupeeboss and its affiliates to contact me with reference to financial products and this consent shall override any registration with DNC/NDNC.
@@ -2561,5 +2577,54 @@ $(function() {
   $('.lendingkart_documents').click(function(){
      window.location.href ="{{URL::to('thank-you')}}";
   });
+</script>
+
+
+<script type="text/javascript">   
+$.ajax({ 
+   url: "{{URL::to('lendingkart-state')}}",
+   method:"GET",
+   success: function(datas)  
+   {
+   var data=$.parseJSON(datas);
+   // console.log(data);
+   if(data)
+      {      $.each(data, function( index, value ) {
+            $('#permanent_state').append('<option value="'+value.state_name+'">'+value.state_name+'</option>');
+      }); 
+    }else{
+      $('#permanent_state').empty().append('No Result Found');
+    }
+},
+});
+
+$('#permanent_state').on('change', function() {
+   // alert('okae');
+$("#permanent_city").empty().append('');
+  var permanent_state=$('#permanent_state').find(":selected").val();
+   console.log(permanent_state);
+
+    var v_token ="{{csrf_token()}}";
+   $.ajax({  
+                type: "POST",  
+                url: "{{URL::to('lendingkart-city')}}",
+                 data : {'_token': v_token,'permanent_state':permanent_state},
+                success: function(msg){
+                   
+                    console.log(msg);
+                    if(msg.length != 0)
+                    {      $.each(msg, function( index, value ) {
+                              $('#permanent_city').append('<option value="'+value.city_name+'">'+value.city_name+'</option>');
+
+                   }); 
+                    }else{
+                      // console.log('guyjguy');
+                        $('#permanent_city').append('<option>No Result Found</option>');
+                      }
+                        
+    }  
+      });
+  
+});
 </script>
 

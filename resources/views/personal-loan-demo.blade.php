@@ -167,7 +167,7 @@
                 <div class="col-md-12">
         <!-- <div class="heading" style="display:none;"></div> -->
               
-               <div class="dv-para" style="display:none;"> <h1>Hey, Let me find out best <b>personal loan</b> quotes and your free credit score</h1></div>
+               <div class="dv-para" style="display:none; "> <h1>Hey, Let me find out best <b>personal loan</b> quotes and your free credit score</h1></div>
                     <div class="wrapper-content bg-white pinside40 hero-bkg-animated" id="pl_form">
                      <!-- <h1 class=""><center>Personal Loan</center></h1> -->
                         <div class="section-faq" id="section-faq">
@@ -177,7 +177,7 @@
                                 <div style="padding-bottom: 20px">
                                  
                              <div class="col-md-6 col-md-offset-3 ">
-                 <div class="bg-img" id="show-hid" style="display:none;padding:7px 10px;"><img src="images/bg_img.png" class="img-responsive"/></div>
+                 <div class="bg-img" id="show-hid" style="display:none;padding:7px 10px;"><img src="images/bg_img.gif" class="img-responsive"/></div>
                  
                   <div class="bg1">
                   <form class="pl-frm" name="personal_loan_process_form" id="personal_loan_process_form"  method="post">
@@ -214,11 +214,11 @@
                                  <div style="background:transparent;float:left;margin-bottom:8px;width:100%;margin:5px;margin-bottom:8px;">
                                  <span style="font-size:14px;">Loan Tenure</span>
                                 <div class="btn-grp mrg-top status form-control1" data-toggle="buttons">
-                                   <span class="btn btn-primary btn-sm outer-brd active"><input type="radio" name="loan_tenure" id="option1" value="1">1 yr</span>
-                                   <span class="btn btn-primary btn-sm outer-brd"><input type="radio" name="loan_tenure" id="option2" value="2" >2 yrs</span>
-                                   <span class="btn btn-primary btn-sm outer-brd"><input type="radio" name="loan_tenure" id="option3" value="3" >3 yrs</span>
-                                 <span class="btn btn-primary btn-sm outer-brd"><input type="radio" name="loan_tenure" id="option3" value="4" >4 yrs</span>
-                                 <span class="btn btn-primary btn-sm outer-brd"><input type="radio" name="loan_tenure" id="option3" value="5" >5 yrs</span>
+                                   <span class="btn btn-primary btn-sm outer-brd active"><input type="radio" name="loan_tenure"  value="1">1 yr</span>
+                                   <span class="btn btn-primary btn-sm outer-brd"><input type="radio" name="loan_tenure"  value="2" >2 yrs</span>
+                                   <span class="btn btn-primary btn-sm outer-brd"><input type="radio" name="loan_tenure"  value="3" >3 yrs</span>
+                                 <span class="btn btn-primary btn-sm outer-brd"><input type="radio" name="loan_tenure"  value="4" >4 yrs</span>
+                                 <span class="btn btn-primary btn-sm outer-brd"><input type="radio" name="loan_tenure"  value="5" >5 yrs</span>
                                </div>
                                </div>
                                </div>
@@ -239,8 +239,8 @@
                                  <div style="background:transparent;float:left;margin-bottom:8px;width:100%;margin:5px;margin-bottom:8px;">
                                  <span style="font-size:14px;">Employment</span>
                                 <div class="btn-grp mrg-top status form-control1" data-toggle="buttons">
-                                   <span class="btn btn-primary btn-sm outer-brd active"><input type="radio" name="emp_detail" id="option1" value="salaried">Salaried</span>
-                                   <span class="btn btn-primary btn-sm outer-brd"><input type="radio" name="emp_detail" id="option2" value="self-employed" >Self-Emp</span>
+                                   <span class="btn btn-primary btn-sm outer-brd active"><input type="radio" name="emp_detail"  value="salaried">Salaried</span>
+                                   <span class="btn btn-primary btn-sm outer-brd"><input type="radio" name="emp_detail"  value="self-employed" >Self-Emp</span>
                                    
                                </div>
                                </div>
@@ -270,10 +270,10 @@
                                  <div style="background:transparent;float:left;margin-bottom:8px;width:100%;margin:5px;margin-bottom:8px;">
                                  <span style="font-size:14px;">AddressType</span>
                                 <div class="btn-grp mrg-top status form-control1" data-toggle="buttons">
-                                   <span class="btn btn-primary btn-sm outer-brd active"><input type="radio" name="AddressType[]" id="option1" value="C">Present</span>
-                                   <span class="btn btn-primary btn-sm outer-brd"><input type="radio" name="AddressType[]" id="option2" value="P" >Permanent</span>
-                                   <span class="btn btn-primary btn-sm outer-brd"><input type="radio" name="AddressType[]" id="option2" value="O" >Office</span>
-                                   <span class="btn btn-primary btn-sm outer-brd"><input type="radio" name="AddressType[]" id="option2" value="X" >Other</span>
+                                   <span class="btn btn-primary btn-sm outer-brd active"><input type="radio" name="AddressType[]"  value="C">Present</span>
+                                   <span class="btn btn-primary btn-sm outer-brd"><input type="radio" name="AddressType[]"  value="P" >Permanent</span>
+                                   <span class="btn btn-primary btn-sm outer-brd"><input type="radio" name="AddressType[]"  value="O" >Office</span>
+                                   <span class="btn btn-primary btn-sm outer-brd"><input type="radio" name="AddressType[]"  value="X" >Other</span>
                                    
                                </div>
                                </div>
@@ -286,31 +286,16 @@
                                
 
                                <div class="col-md-12 col-sm-12 col-xs-12">
-                               <div id="text" style="display: none;font-style: oblique; font-size: 10px";><p class="blink"><b>"Hey bingo..!! Just few more details to get quotes and also avail your 50% discount on Credit Report"</b></p></div>
+                               <div id="text" style="display: none;font-style: oblique; font-size: 15px";><p class="blink"><b>"Hey bingo..!! Just few more details to get quotes and also avail your 50% discount on Credit Report."</b></p></div><br>
                                <div class="form-group">
                                <input type="text" name="AddressLine[]" id="AddressLine" class="form-input-new form-control" placeholder="Address" required="">
                                </div>
                                </div>
 
-
-                               
-                                <div class="btn-grp mrg-top status form-control1 col-md-12 mrg-btn" data-toggle="buttons">
-                                <span class="btn btn-primary btn-sm outer-brd"><input type="radio" name="city_name" id="option1" value="MUMBAI">Mumbai</span>
-                                <span class="btn btn-primary btn-sm outer-brd"><input type="radio" name="city_name" id="option2" value="Pune" >Pune</span>
-                                <span class="btn btn-primary btn-sm outer-brd"><input type="radio" name="city_name" id="option2" value="KOLKATA" >Kolkata</span>
-                                <span class="btn btn-primary btn-sm outer-brd"><input type="radio" name="city_name" id="option2" value="BANGALORE" >Bangalore</span>
-                               <!-- <input  type="text" name="city_name" id="city_name" class="form-input-new  col-md-2 pull-right" style="padding: 10px;margin-bottom: 10px; border: 1px solid #000 ;width:93px; color: #000 !important;" placeholder="Other"> -->
-                               <select style="padding: 10px;margin-bottom: 10px; border: 1px solid #000 ;width:93px; color: #000 !important;" name="city_name" id="city_name">
-                                <option disabled selected value="">OTHER</option>
-                              </select>
-                               </div>
-
-                              <br>
-
                                 <div class="col-md-12 col-sm-12 col-xs-12">
                                    <div class="form-group">
                                   <select name="State[]" class="form-control dropdown valid" required="">
-                                   <option disabled="" selected="" value="">Select State</option>
+                                   <option disabled="" selected="" value="">State</option>
                                                     <option value="AN">Andaman &amp; Nicobar Islands</option>
                                                  <option value="AP">Andhra Pradesh</option>
                                                  <option value="AR">Arunachal Pradesh</option>
@@ -349,6 +334,17 @@
                                                </select>
                                    </div>
                                 </div>
+                                
+                               <div class="col-md-12 col-sm-12 col-xs-12">
+                              <div class="form-group">
+                              <input type="text" id="city_name" name="city_name" class="form-input-new form-control search_city" placeholder="City" required="">
+                              </div>
+                             </div>
+                              
+
+                              <br>
+
+                                
 
                                <div class="col-md-12 col-sm-12 col-xs-12">
                                <div class="form-group">
@@ -387,8 +383,8 @@
                                  <div style="background:transparent;float:left;margin-bottom:8px;width:100%;margin:5px;margin-bottom:8px;">
                                  <span style="font-size:14px;">Gender</span>
                                 <div class="btn-grp mrg-top status form-control1" data-toggle="buttons">
-                                   <span class="btn btn-primary btn-sm outer-brd active"><input type="radio" name="Gender" id="option1" value="1">Male</span>
-                                   <span class="btn btn-primary btn-sm outer-brd"><input type="radio" name="Gender" id="option2" value="2" >Female</span>
+                                   <span class="btn btn-primary btn-sm outer-brd active"><input type="radio" name="Gender"  value="1">Male</span>
+                                   <span class="btn btn-primary btn-sm outer-brd"><input type="radio" name="Gender"  value="2" >Female</span>
                                   
                                    
                                </div>
@@ -655,34 +651,11 @@ $("#eligibility").click(function() {
 
 </script>
 
-
-
-<script type="text/javascript">
-  $(document).ready(function(){
-    $('#loan_tenure').on('change', function() {
-       $('#abc').show();
-
-    });
-});
-</script>
-
-<script type="text/javascript">
-  $(document).ready(function(){
-    $('#emp_detail').on('change', function() {
-       $('#efg').show();
-
-    });
-});
-</script>
-
 <script>
-        $( window ).load(function() {
-        $('#show-hid').slideDown(1000);
-        });
-        </script>
-
-
-
+$( window ).load(function() {
+$('#show-hid').slideDown(1000);
+});
+</script>
 
 <script type="text/javascript">
 
@@ -709,7 +682,11 @@ $("#eligibility").click(function() {
                 $('#DOB').val(dob);
                 
                 var city_name=$('#city_name').val();
+                // var city=$("input[name=city_name]").val();
+                // console.log(city);
+                console.log(city_name);
                 $('#City').val(city_name);
+                // $('#City').val(city);
                
                 $('#section1').hide();
                 $('#section2').show();
@@ -735,7 +712,7 @@ $("#eligibility").click(function() {
 
 
 
-$('#applicant_name').click(function(){
+$('#AddressLine').click(function(){
 $('#text').show();
 });
  </script>
@@ -743,31 +720,14 @@ $('#text').show();
  <script>
         $( window ).load(function() {
         $('#show-hid').show("fast");
-    $('.dv-para').show(1000);
+        $('.dv-para').show(1000);
         });
-        </script>
 
-
-<script type="text/javascript">   
-
- $.ajax({ 
-   url: "{{URL::to('pl-city-master')}}",
-   method:"GET",
-   success: function(msg)  
-   {
-   // var data=$.parseJSON(datas);
-   console.log(msg);
-   if(msg)
-      {      $.each(msg, function( index, value ) {
-            $('#city_name').append('<option value="'+value.City_Name+'">'+value.City_Name+'</option>');
-
-        }); 
-    }else{
-      $('#city_name').empty().append('No Result Found');
-    }
-
-   },
-
- });
+        $('#next').click(function(){
+        $('.dv-para').hide();
+        });
 </script>
+
+
+
 

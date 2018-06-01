@@ -99,7 +99,7 @@ class NewProcessController extends CallApiController
 
       public function pl_city_master(Request $req){
       // print_r($req->all());exit();
-      $quote_data=DB::select('call usp_load_nonmetro_city_master ()');
+      $quote_data=DB::select('call usp_load_pl_city_master ("'.$req['State'].'")');
        // print_r($quote_data);exit();
       return $quote_data;
       }   

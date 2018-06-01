@@ -158,7 +158,7 @@ function sidebar(Request $req){
 
     /*score loan*/
     public function p_loan_score(Request $req,$ar){
-        print_r($req->all());exit();  
+        // print_r($req->all());exit();  
             
       Session::forget('quote_id');
         try{

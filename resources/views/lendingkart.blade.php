@@ -93,7 +93,7 @@
 
                                         <div class="col-md-4 col-sm-12 col-xs-12">
                                         <div class="form-group">
-                                        <select id="permanent_state" name="permanent_state" class="form-control">
+                                        <select id="permanent_state" name="permanent_state" class="form-control" required>
                                         <option disabled selected value="">State</option>
                                         </select>
                                         </div>
@@ -107,7 +107,7 @@
 
                                         <div class="col-md-4 col-sm-12 col-xs-12">
                                         <div class="form-group">
-                                        <select id="permanent_city" name="permanent_city" class="form-control">
+                                        <select id="permanent_city" name="permanent_city" class="form-control" required>
                                         <option disabled selected value="">City</option>
                                         </select>
                                         </div>
@@ -209,20 +209,24 @@
                                         </div>
 
                                         <div class="col-md-4 col-sm-12 col-xs-12">
-                                          <div class="form-group">
-                                            <input type="text" class="form-control" id="business_pincode" name="business_pincode" placeholder="Pincode" required>
-                                          </div>
+                                        <div class="form-group">
+                                        <input type="text" class="form-control" id="business_pincode" name="business_pincode" placeholder="Pincode" required>
+                                        </div>
+                                        </div>
+
+                                        <div class="col-md-4 col-sm-12 col-xs-12">
+                                        <div class="form-group">
+                                        <select id="business_state" name="business_state" class="form-control" required>
+                                        <option disabled selected value="">State</option>
+                                        </select>
+                                        </div>
                                         </div>
 
                                         <div class="col-md-4 col-sm-12 col-xs-12">
                                           <div class="form-group">
-                                            <input type="text" class="form-control search_statenm" id="business_state" name="business_state" placeholder="State" required>
-                                          </div>
-                                        </div>
-
-                                        <div class="col-md-4 col-sm-12 col-xs-12">
-                                          <div class="form-group">
-                                            <input type="text" class="form-control search_citynm" id="business_city" name="business_city" placeholder="City" required>
+                                            <select id="business_city" name="business_city" class="form-control" required>
+                                        <option disabled selected value="">City</option>
+                                        </select>
                                           </div>
                                         </div>
 
@@ -235,7 +239,7 @@
                                           </div>
                                         </div>
 
-                                        <div class="col-md-4 col-sm-12 col-xs-12">
+                                        <div style="display: none;" class="col-md-4 col-sm-12 col-xs-12">
                                           <div class="form-group">
                                              <input type="text" class="form-control" id="EMI_BEING_PAID" name="EMI_BEING_PAID" value="0" onkeypress="return fnAllowNumeric(event)" placeholder="Obligations">
                                           </div>
@@ -344,7 +348,7 @@
                                           </div>
                                         </div>
 
-                                    <input style="display: none;" type="hidden" name="product_category" id="product_category" value="">
+                                    <input  type="hidden" name="product_category" id="product_category" value="">
 
                                         
                                     <input type="checkbox"  name="terms" required>&nbsp;&nbsp;I hereby confirm that I have read and understood the<a href="#" data-toggle="modal" data-target="#Experian_terms_modal"></a> Rupeeboss Terms and Conditions applicable to this service and that all the details furnished by me above are true and correct. I further provide consent to Rupeeboss and its affiliates to contact me with reference to financial products and this consent shall override any registration with DNC/NDNC.
@@ -727,7 +731,7 @@ var tax_returns =$('#Tax_Returns').text("VAT/Service Tax Returns (whichever appl
 
 <script type="text/javascript">
     var d = new Date();
-    var year = d.getFullYear() ;
+    var year = d.getFullYear()-21 ;
     d.setFullYear(year);
 
     $(".lastReporteddob").datepicker({ dateFormat: "yy-mm-dd",
@@ -1226,7 +1230,7 @@ $(function() {
             disabledText: '',
             delimiterText: ', ',
             templates: {
-                button: '<button type="button" class="multiselect dropdown-toggle btn-block text-left" data-toggle="dropdown"><span id="product" class="multiselect-selected-text"></span> <b class="caret"></b></button>',
+                button: '<button style="display:none"; type="button" class="multiselect dropdown-toggle btn-block text-left" data-toggle="dropdown"><span id="product" class="multiselect-selected-text"></span> <b class="caret"></b></button>',
                 ul: '<ul class="multiselect-container dropdown-menu"></ul>',
                 filter: '<li class="multiselect-item multiselect-filter"><div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span><input class="form-control multiselect-search" type="text"></div></li>',
                 filterClearBtn: '<span class="input-group-btn"><button class="btn btn-default multiselect-clear-filter" type="button"><i class="glyphicon glyphicon-remove-circle"></i></button></span>',
@@ -2591,9 +2595,11 @@ $.ajax({
    if(data)
       {      $.each(data, function( index, value ) {
             $('#permanent_state').append('<option value="'+value.state_name+'">'+value.state_name+'</option>');
+            $('#business_state').append('<option value="'+value.state_name+'">'+value.state_name+'</option>');
       }); 
     }else{
       $('#permanent_state').empty().append('No Result Found');
+      $('#business_state').append('<option value="'+value.state_name+'">'+value.state_name+'</option>');
     }
 },
 });
@@ -2602,7 +2608,7 @@ $('#permanent_state').on('change', function() {
    // alert('okae');
 $("#permanent_city").empty().append('');
   var permanent_state=$('#permanent_state').find(":selected").val();
-   console.log(permanent_state);
+   // console.log(permanent_state);
 
     var v_token ="{{csrf_token()}}";
    $.ajax({  
@@ -2611,7 +2617,7 @@ $("#permanent_city").empty().append('');
                  data : {'_token': v_token,'permanent_state':permanent_state},
                 success: function(msg){
                    
-                    console.log(msg);
+                    // console.log(msg);
                     if(msg.length != 0)
                     {      $.each(msg, function( index, value ) {
                               $('#permanent_city').append('<option value="'+value.city_name+'">'+value.city_name+'</option>');
@@ -2620,6 +2626,35 @@ $("#permanent_city").empty().append('');
                     }else{
                       // console.log('guyjguy');
                         $('#permanent_city').append('<option>No Result Found</option>');
+                      }
+                        
+    }  
+      });
+  
+});
+
+$('#business_state').on('change', function() {
+   // alert('okae');
+$("#business_city").empty().append('');
+  var business_state=$('#business_state').find(":selected").val();
+   // console.log(business_state);
+
+    var v_token ="{{csrf_token()}}";
+   $.ajax({  
+                type: "POST",  
+                url: "{{URL::to('lendingkart-business-city')}}",
+                 data : {'_token': v_token,'business_state':business_state},
+                success: function(msg){
+                   
+                    // console.log(msg);
+                    if(msg.length != 0)
+                    {      $.each(msg, function( index, value ) {
+                              $('#business_city').append('<option value="'+value.city_name+'">'+value.city_name+'</option>');
+
+                   }); 
+                    }else{
+                      // console.log('guyjguy');
+                        $('#business_city').append('<option>No Result Found</option>');
                       }
                         
     }  

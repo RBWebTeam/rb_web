@@ -757,7 +757,15 @@ $url = $this::$url_static."/BankAPIService.svc/updateIIFLRevisedQuote";
       return $quote_data;
       }
 
+      public function lendingkart_business_city(Request $req){
+      // print_r($req->all());exit();
+      $quote_data=DB::select('call usp_load_lendingkart_business_city_master ("'.$req['business_state'].'")');
+       // print_r($quote_data);exit();
+      return $quote_data;
+      }
+
    public function lendingkart_details(Request $req){
+    // print_r($req->all());
      try {
        $data=$req->all();
           $data['brokerid']=Session::get('brokerid')?Session::get('brokerid'):'MAA=';

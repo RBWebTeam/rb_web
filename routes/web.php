@@ -471,6 +471,7 @@ Route::get('kotak-personal-loan','LoanController@kotak_personal_loan');
 Route::get('lendingkart','LoanController@lendingkart');
 Route::get('lendingkart-state','LoanController@lendingkart_state');
 Route::post('lendingkart-city','LoanController@lendingkart_city');
+Route::post('lendingkart-business-city','LoanController@lendingkart_business_city');
 
 Route::get('rbl-personal-loan','LoanController@rbl_personal_loan');
 Route::get('apply-iifl-loan','LoanController@apply_iifl_loan');
@@ -497,7 +498,7 @@ Route::get('medsave','LoanController@medsave');
 Route::get('personal-loan-demo','NewProcessController@personal_loan_demo');
 Route::get('state','NewProcessController@state');
 Route::post('p_loansubmit','FormController@p_loan');
-Route::post('pl-city-master','NewProcessController@pl_city_master');
+// Route::post('pl-city-master','NewProcessController@pl_city_master');
 
 
 

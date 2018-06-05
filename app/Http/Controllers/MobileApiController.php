@@ -346,10 +346,11 @@ public function balance_transfer_with_quoteid(Request $req){
 		// print_r($req->all());exit();
         $loan=new LoanController();
 		$calc=$loan->kotak_pl_proceed($req);
+		$x = json_decode(json_encode($calc[0]), true);
 		$LnAmt=$req->LnAmt*$calc[0]->non_csc_pf/100;
-		//print_r($calc);exit();
-
-        $arr=array_merge($calc,array('LnAmt' =>$LnAmt));
+		//print_r();exit();
+         	
+        $arr=array_merge($x,array('LnAmt' =>$LnAmt));
 
 		return $arr;
 	}
@@ -372,14 +373,32 @@ public function balance_transfer_with_quoteid(Request $req){
 	}
 
 	public function rbl_pl_calc(Request $req){
+		// print_r($req->all());exit();
 		$loanamount=$req['LnAmt'];
-		$tenure=$req['TnrMths']*12;
-		$roi=0.013;
+		$tenure=$req['TnrMths'];
+		// print_r($tenure);exit();
+		$roi=13.99/12/100;
 
 		$emi  = $loanamount * $roi * (pow(1 + $roi, $tenure) / (pow(1 + $roi, $tenure) - 1));
 		$emi=round($emi);
 		$fee =$loanamount*0.02;
 		return response()->json(array('emi'=>$emi,'fee'=>$fee));
 	}
+
+
+	/*NRI*/
+	public function nri(Request $req){
+		try {
+			$header = $req->header('auth_key');
+		if ($header=="NRI") {
+			$getQuery=DB::select('call usp_get_nri_bank_quot("'.$req['loanamount'].'","'.$req['loantenure'].'","'.$req['income'].'","'.$req['obligations'].'","'.$req['gender'].'","'.$req['dob'].'","'.$req['emp_detail'].'")');
+		return response()->json(array('status' =>0,'message'=>"success",'result'=>$getQuery));
+		}else{
+           return response()->json(array('status' =>1,'message'=>"Invalid Credentials",'result'=>''));
+		}
+		} catch (Exception $e) {
+			return response()->json(array('status' => 1,'err'=>$e->getMessage()));
+		}
+		}
 
 }

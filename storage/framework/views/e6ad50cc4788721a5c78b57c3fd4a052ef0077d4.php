@@ -112,6 +112,9 @@ setInterval(blink_text, 1000);
 </script>
 </head>
 <body>
+ 
+
+                                        
 <div class="whats-new"><a href="javascript:void(0)" class="link"><i class="fa fa-gift"></i>&nbsp;<b class="blink">What's New </b>&nbsp;&nbsp;<i class="fa fa-angle-up"></i></a>
 
 <div class="slide-dv">

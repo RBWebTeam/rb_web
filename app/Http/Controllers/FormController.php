@@ -11,6 +11,10 @@ use App\registrationModel;
 use App\bank_quote_api_request;
 class FormController extends CallApiController
 {
+
+    
+
+
     function sidebar(Request $req){
 
         $input = $req->all();
@@ -30,7 +34,7 @@ class FormController extends CallApiController
     //call API here to save in DB
         $post=json_encode($post_data);
         // print_r($post);exit();
-    $url = $this::$url_static."BankAPIService.svc/GetCustomerWebRequest";
+       $url = $this::$url_static."BankAPIService.svc/GetCustomerWebRequest";
     $result=$this->call_json_data_api($url,$post);
     $http_result=$result['http_result'];
     $error=$result['error'];
@@ -47,7 +51,9 @@ class FormController extends CallApiController
         //call api to submit form data
             $inputquotes = $req->all();
             $input = $req->all();
+
             $new_array = array('customer_contact' => Session::get('contact'), 'customer_name' => Session::get('name'),'customer_email' => Session::get('email'));
+            // print_r($new_array);exit();
            $update_id=Session::get('verify_id');
              $update_user=DB::table('user_registration')
              ->where('id',$update_id)
@@ -66,6 +72,7 @@ class FormController extends CallApiController
              $res_arr['brokerid']=Session::get('brokerid')?Session::get('brokerid'):'';
             $json_data=json_encode($res_arr);
             $prod_id=$req['product_name'];
+
             // if($prod_id==7 || $prod_id==9 || $prod_id==12){
             //         $url="http://api.rupeeboss.com/BankAPIService.svc/GetCustomerLizaWebReqTest";
             // }else{
@@ -82,12 +89,14 @@ class FormController extends CallApiController
                 $id=$save->save_liza($req);
                 Session::put('quote_id',$id);
                 $data['quote_id']=$id;
-                // print_r( $data);exit();
+
+                // print_r($data['quote_id']);exit();
             // }else{
             //     $quote_data =$req['product_name'];
             //     return view("went-wrong");
             // }
             if($req['product_name'] == 9){
+              // print_r($req['product_name']);exit();
                 $data['product'] ="Personal Loan";
                 $data['url'] ="apply-personal-loan";
             }elseif($req['product_name'] == 12){
@@ -107,10 +116,12 @@ class FormController extends CallApiController
                $data['url'] ="new-business-loan";
             }
             $data['loan_amount'] =$req['loan_amount'];
+
             $data['quote_data'] =$quote_data;
+            // print_r($data['quote_data'] );exit();
            
             if ($quote_data) {
-              // print_r($data['quote_data'] );exit();
+             
                $Bank_Id=$data['quote_data'][0]->Bank_Id;
                $loan_eligible=$data['quote_data'][0]->loan_eligible;
                $roi=$data['quote_data'][0]->roi;
@@ -132,6 +143,8 @@ class FormController extends CallApiController
             return $ee;
         }
     }
+
+    
     
      public function otp(Request $req){
         try{
@@ -288,6 +301,8 @@ class FormController extends CallApiController
           // print_r($req->all());exit();
        return view('show-quotes')->with($req);
     }
+
+    
 
 
 

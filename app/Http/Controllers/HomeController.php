@@ -16,6 +16,8 @@ use Illuminate\Support\Facades\Hash;
 class HomeController extends CallApiController
 {
 	public function index(){
+		// Session::get('CampaignName');
+		//print_r(" index   =---".Session::get('CampaignName'));exit();
 		
 		//$product_list=InitialController::prod();
 		//print_r($product_list);

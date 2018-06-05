@@ -74,4 +74,6 @@ Route::post('kotak-pl-calc','MobileApiController@kotak_pl_calc');
 Route::get('rbl-pl-city-master','MobileApiController@rbl_pl_city_master');
 Route::post('rbl-pl-calc','MobileApiController@rbl_pl_calc');
 
+/*NRI*/
+Route::post('nri-home-loan','MobileApiController@nri');
 

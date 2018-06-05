@@ -76,7 +76,7 @@
 								          <div class="col-md-4 col-sm-12 col-xs-12">
 					                         <div class="form-group">
 					                         <input type="text" class="form-control" placeholder="First Name *" 
-					name="first_name" id="first_name" onkeypress="return AllowAlphabet(event)" required="">
+					                         name="first_name" id="first_name" onkeypress="return AllowAlphabet(event)" required="">
 					                         </div>
 					                      </div>
 
@@ -177,7 +177,7 @@
 				                	 			</div>
 				                	 		</div>
 
-				                	 		<input type="hidden" name="roi" id="roi" value="0.013">
+				                	 		<!-- <input type="hidden" name="roi" id="roi" value="0.012"> -->
 
 				                	 		<div class="col-md-6 col-sm-12 col-xs-12">
 				                	 			<div class="form-group">
@@ -698,7 +698,7 @@
     	var amt=$('#loan_amount').val();
     	var tenure=$('#tenure').val();
     	if(!tenure)return;
-        var roi = 0.013;
+        var roi = 16/12/100;
        
         var emi  = amt * roi * (Math.pow(1 + roi, tenure) / (Math.pow(1 + roi, tenure) - 1));
         var installment =Math.round(emi);

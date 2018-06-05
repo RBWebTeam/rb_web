@@ -13,10 +13,8 @@
 <form name="home_loan_process_form" id="home_loan_process_form" action="{{URL::to('loan-submit')}}" method="POST" >
 <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
 <input type="hidden" id="product" name="product_name" value="12">
-<input type="hidden" name="empid" class="empid" value=" <?php echo Session::get('empid')?Session::get('empid'):'';?>">
-          <input type="hidden" name="brokerid" class="brokerid" value="<?php echo Session::get('brokerid')?Session::get('brokerid'):'';?>">
-          <input type="hidden" name="source" class="source" value="<?php echo Session::get('source')?Session::get('source'):'';?>"> 
-          <input type="hidden" name="refapp" class="refapp" value="<?php echo Session::get('refid')?Session::get('refid'):'';?>"> 
+
+          
           <div class="row">
                        
                   <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12" style="padding-bottom: 20px">
@@ -28,13 +26,10 @@
                             <div class="form-group">
                 
                                 <select id="propery_types" name="propery_types" class="form-control" required>
-                                    <option selected disabled="">Property Type</option>
-                                    <option value="ready">Ready</option>
-                                    <option value="searching">Searching</option>
-                                    <option value="underconst">Under Construction</option>
-                                    <option value="resale">Resale</option>
-                                    <option value="constuction">Construction</option>
-                                    <option value="others">Other</option>
+                                    <option selected disabled="">Property Identified</option>
+                                    <option value="Y">Yes</option>
+                                    <option value="N">No</option>
+                                   
                                 </select>
                               </div>
                             </div>
@@ -47,7 +42,7 @@
 
                             <div class="col-md-6 col-sm-12 col-xs-12">
                               <div class="form-group">
-                                <input type="text" class="form-input-new form-control" name="loan_amount" id="loan_amount" placeholder="Loan Required"  readonly onkeypress="return fnAllowNumeric(event)"   >
+                                <input type="text" class="form-input-new form-control" name="loan_amount" id="loan_amount" placeholder="Loan Required" minlength="5" maxlength="9" onkeypress="return fnAllowNumeric(event)"   >
                               </div>
                             </div>
 
@@ -104,6 +99,19 @@
                             </div>
                           </div>
 
+                          <div class="col-md-6 col-sm-12 col-xs-12">  
+                            <div class="form-group">
+                              <input type="text" name="mobile" id="mobile" class="form-input-new form-control" placeholder="Mobile" minlength="10" maxlength="10" onkeypress="return fnAllowNumeric(event)" required="">
+                            </div>
+                          </div>
+
+                          <div class="col-md-6 col-sm-12 col-xs-12">  
+                            <div class="form-group">
+                              <input type="text" name="pan_number" id="pannumber" class="form-input-new form-control" placeholder="Pan No" oninput="pan_card('pannumber')" required="">
+                              <span id="pan" style="display:none;color: red; font-size: 10px">Oops.Please Enter Valid Pan Number.!!</span>
+                            </div>
+                          </div>
+
                           <div class="col-md-6 col-sm-12 col-xs-12">
                              <div class="form-group">
                               <select id="gender" class="form-control input-md" name="gender" required>
@@ -125,7 +133,7 @@
                              <div class="col-md-12 col-sm-12 col-xs-12">
                               <div class="form-group">                                
                                    <input type="radio" id="sala_DI" value="salaried" name="emp_detail" checked="checked" >&nbsp; Salaried  &nbsp;                                
-                                    <input type="radio" id="self_DI" value="self-employed" name="emp_detail"  > Self Employee                                  
+                                    <input type="radio" id="self_DI" value="self-employed" name="emp_detail"  > Self Employed                                  
                                 </div>
                             </div>
 
@@ -603,6 +611,29 @@ $("#eligibility").click(function() {
   $(window).scrollTop($('#form_ID').offset().top-20);
 });
 </script>
+
+
+<script type="text/javascript">
+    function pan_card(obj,val){
+        // console.log(obj);
+        if(obj=='pannumber' ){
+                   var str =$('#pannumber').val();
+                   var pancardPattern = /^([a-zA-Z]{5})(\d{4})([a-zA-Z]{1})$/;
+                   var res = str.match(pancardPattern);
+                   if(res){
+                     // console.log('Pancard is valid one.!!');
+                        $('#pan').hide();
+
+                  }else{
+                    // console.log('Oops.Please Enter Valid Pan Number.!!');
+                    $('#pan').show();
+
+                    return false;
+                  }
+                  
+    }
+    }
+    </script>
 
 
 

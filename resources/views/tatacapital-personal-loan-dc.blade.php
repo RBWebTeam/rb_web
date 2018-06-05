@@ -934,7 +934,7 @@ $(document).ready(function(){
         <h4 class="modal-title">Confirmation Status</h4>
       </div>
       <div class="modal-body">
-        <h4><p id="modalerr"><h5 style="color: black">Your:<b><span id="meassge"></span>&nbsp;&nbsp;<span id="Status"></span><h5></p></h4>
+        <h4><p id="modalerr"><h5 style="color: black">Your:<b><span id="message"></span>&nbsp;&nbsp;<span id="Status"></span><h5></p></h4>
         
       </div>
  

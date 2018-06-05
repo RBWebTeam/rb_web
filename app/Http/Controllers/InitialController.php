@@ -10,24 +10,29 @@ class InitialController extends Controller
 	public static $service_url_static = "http://services.rupeeboss.com/";
   public static $erp_url_static = "http://erp.rupeeboss.com/";
 	//Setting session on the bases of reference
-      function __construct(){
-            $myString = isset($_GET['referrer']);
+      public function __construct(){
+            $this->middleware(function ($request, $next) {
+              $myString = isset($_GET['referrer']);
             if($myString){
                   $myArray = explode('@', $_GET['referrer']);
                   if(isset($myArray[0])){
-                    Session::put('empid', $myArray[0]);
-                    Session::put('brokerid', $myArray[1]);
-                    Session::put('source', $myArray[2]);
-                    Session::put('refapp', '1');
+                    session()->put('empid', $myArray[0]);
+                    session()->put('brokerid', $myArray[1]);
+                    session()->put('source', $myArray[2]);
+                    session()->put('refapp', '1');
                  }
             }
             $campaign = isset($_GET['CampaignName']);
 
             if($campaign){
-              Session::put('CampaignName', $_GET['CampaignName']);
+              session()->put('CampaignName', $_GET['CampaignName']);
             }else{
-             Session::put('CampaignName', 'Rupeeboss Online');
+              if(! session()->get('CampaignName'))
+                session()->put('CampaignName', 'Rupeeboss Online');
             }
+                return $next($request);
+        });
+            
           
       }
 

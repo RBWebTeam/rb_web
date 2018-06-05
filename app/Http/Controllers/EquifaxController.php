@@ -8,6 +8,7 @@ use DB;
 use Mail;
 use Session;
 use Response;
+use DateTime;
 use Symfony\Component\Process\Process;
 use Symfony\Component\Process\Exception\ProcessFailedException;
 
@@ -58,7 +59,7 @@ try{
               $HomePhone=$req->HomePhone?$req->HomePhone:'';    
               $AddressLine1=array();
               if($req->AddressType){
-     foreach ($req->AddressType as $key => $value) {
+              foreach ($req->AddressType as $key => $value) {
               $AddressLine1[]= array('InquiryAddresses' =>["AddressLine" =>$req->AddressLine[$key]?$req->AddressLine[$key]:" ",
               'AddressType'=>$req->AddressType[$key]?$req->AddressType[$key]:" ", 
               'City'=>$req->City[$key]?$req->City[$key]:" ",
@@ -269,30 +270,55 @@ $post_data='{
         return view('rectifycredit');
  }
 
-        public function rectify(Request $req){
+      public function rectify_registration(Request $req){
+        // print_r($req->all());exit();
+        $req['created_on'] =date('d-m-Y');
         $data=$req->all();
         $data['brokerid']=Session::get('brokerid')?Session::get('brokerid'):'MAA=';
         $data['empid']=Session::get('empid')?Session::get('empid'):'MAA=';
         $data['source']=Session::get('source')?Session::get('source'):'MAA=';
-        $data['CampaignName']=Session::get('CampaignName');
-        $file=$req->file('file');
-        $destinationPath = $_SERVER['DOCUMENT_ROOT'] .'/uploads/rectify/'.$req->Mobile_Num.'/';
-        $filename=$file->getClientOriginalExtension();
-        $file->move($destinationPath,$filename);
-        // print_r($destinationPath.$filename);exit();
-        $d=array_merge($data,['file_path'=>$destinationPath.$filename]);
-        unset($d['file']);
-        $post_data=json_encode($d);
+        // $data['CampaignName']="HDFC PL";
+        $post_data=json_encode($data);
         // print_r($post_data);exit();
-        $url = $this::$url_static."/BankAPIService.svc/createRectifyCreditReq";
+        $url = $this::$url_static."/BankAPIService.svc/createRectifyCreditCustReq";
         $result=$this->call_json_data_api($url,$post_data);
         $http_result=$result['http_result'];
         $error=$result['error'];
         $st=str_replace('"{', "{", $http_result);
         $s=str_replace('}"', "}", $st);
         $m=$s=str_replace('\\', "", $s);
+        // print_r($http_result);exit();
+        $obj=json_decode($m);
+        return response()->json( $obj);
+      }
+
+        public function rectify(Request $req){
+        // print_r($req->all());exit();
+        $req['datetime'] =date('d-m-Y');
+        $data=$req->all();
+        $data['brokerid']=Session::get('brokerid')?Session::get('brokerid'):'MAA=';
+        $data['empid']=Session::get('empid')?Session::get('empid'):'MAA=';
+        $data['source']=Session::get('source')?Session::get('source'):'MAA=';
+        $data['CampaignName']=Session::get('CampaignName');
+        $file=$req->file('attachment');
+        $destinationPath = $_SERVER['DOCUMENT_ROOT'] .'/uploads/rectify/'.$req->Mobile_Num.'/';
+        $filename=$file->getClientOriginalExtension();
+        $file->move($destinationPath,$filename);
+        // print_r($destinationPath.$filename);exit();
+        $d=array_merge($data,['file_path'=>$destinationPath.$filename]);
+        unset($d['attachment']);
+        $post_data=json_encode($d);
+        // print_r($post_data);exit();
+        $url = $this::$url_static."/BankAPIService.svc/createRectifyCreditCustBasicReq";
+        $result=$this->call_json_data_api($url,$post_data);
+        $http_result=$result['http_result'];
+         // print_r($http_result);exit();
+        $error=$result['error'];
+        $st=str_replace('"{', "{", $http_result);
+        $s=str_replace('}"', "}", $st);
+        $m=$s=str_replace('\\', "", $s);
         $obj = json_decode($m);
-       // print_r($obj);exit();
+       
        return response()->json( $obj);
 
  }
@@ -309,9 +335,5 @@ $post_data='{
     
     return view('equifax')->with(['inq'=>$inquiry,'state'=>$state,'phone'=>$phone]);
  }
-
-
-        
-
-  
+ 
 }

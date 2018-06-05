@@ -30,6 +30,7 @@ Route::get('searchiiflcompanyajax',array('as'=>'searchiiflcompanyajax','uses'=>'
 
 
 Route::post('loan-submit','FormController@p_loan_submit');
+Route::post('nri-loan-submit','FormController@nri_p_loan_submit');
 
 Route::get('apply-car-loan','LoanController@apply_car_loan');
 Route::get('apply-business-loan','LoanController@apply_business_loan');
@@ -179,6 +180,7 @@ Route::get('magic-link','ContactController@magic_link');
 Route::get('test-personal-loan','LoanController@apply_p_test');
 Route::get('test-home-loan','LoanController@apply_h_test');
 Route::get('show-quotes','FormController@show_quotes');
+Route::get('nri-show-quotes','FormController@nri_show_quotes');
 Route::get('directory','ProfileController@directory');
 
 
@@ -426,6 +428,7 @@ Route::post('hdfc-business-loan-submit','LoanController@hdfc_business_loan_submi
 /*Rectify Creditm*/
 Route::get('rectifycredit','EquifaxController@rectifycredit');
 Route::post('rectify-submit','EquifaxController@rectify');
+Route::post('rectify-registration','EquifaxController@rectify_registration');
 
 /*Tata Capital PL*/
 Route::get('tata-capital-city','TataCapitalLoanController@tatacapital_city');
@@ -488,3 +491,4 @@ Route::get('medsave','LoanController@medsave');
 
 /*Loans*/
 Route::get('personal-loan-demo','NewProcessController@personal_loan_demo');
+

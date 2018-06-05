@@ -26,7 +26,7 @@
                                                 <option selected disabled="">Company Type</option>
                                                 <option value="Sole Proprietor">Sole Proprietor</option>
                                                 <option value="Partnership">Partnership</option>
-                                                <option value="Company">Company</option>
+                                                <option value="Private">Pvt.Ltd</option>
                                             </select>
                                             </div>
                                             </div>
@@ -78,7 +78,7 @@
                                             </div>
                                             </div>
 
-                                            <div class="col-md-4 col-sm-12 col-xs-12">
+                                           <!--  <div class="col-md-4 col-sm-12 col-xs-12">
                                             <div class="form-group">
                                                 <select id="exchange" class="form-control input-md" name="exchange">
                                                     <option selected disabled="">Export / Import</option>
@@ -86,9 +86,13 @@
                                                     <option value="N">No</option> 
                                                 </select>
                                             </div>
-                                            </div>
+                                            </div> -->
 
-                                            <div class="col-md-4 col-sm-12 col-xs-12">
+                                            <input type="hidden" name="exchange" value="Y">
+
+                                            <input type="hidden" name="repayment_track" value="Y">
+
+                                            <!-- <div class="col-md-4 col-sm-12 col-xs-12">
                                             <div class="form-group">
                                                 <select class="form-control input-md">
                                                             <option selected disabled="">Export / Import in %</option>
@@ -105,9 +109,9 @@
  
                                                     </select>                                                 
                                             </div>
-                                            </div>
+                                            </div> -->
 
-                                            <div class="col-md-4 col-sm-12 col-xs-12">
+                                            <!-- <div class="col-md-4 col-sm-12 col-xs-12">
                                             <div class="form-group">
                                                 <select id="repayment_track" class="form-control input-md" name="repayment_track" >
                                                     <option selected disabled="">Good Repayment Track Record in existing UBL/CC/OD?</option>
@@ -115,7 +119,7 @@
                                                     <option value="N">No</option> 
                                                 </select>
                                             </div>
-                                            </div>
+                                            </div> -->
 
                                             <div class="col-md-4 col-sm-12 col-xs-12">
                                             <div class="form-group">
@@ -243,19 +247,19 @@
 
                                         <div class="col-md-4 col-sm-12 col-xs-12">
                                         <div class="form-group">
-                                            <input type="text" class="form-input-new form-control" name="partner_remuneration" id="partner_remuneration" placeholder="Partner Remuneration" onkeypress="return isNumberKey(event)"  required>
+                                            <input type="text" class="form-input-new form-control" name="partner_remuneration" id="partner_remuneration" placeholder="Partner/Director Remuneration" onkeypress="return isNumberKey(event)"  required>
                                         </div>
                                         </div>
 
                                         <div class="col-md-4 col-sm-12 col-xs-12">
                                         <div class="form-group">
-                                            <input type="name" class="form-input-new form-control" placeholder="Interest Paid On Loan" step="0.01" min="0" name="interest_paid" id="interest_paid" onkeypress="return isNumberKey(event)" required>
+                                            <input type="name" class="form-input-new form-control" placeholder="Interest paid on Loans" step="0.01" min="0" name="interest_paid" id="interest_paid" onkeypress="return isNumberKey(event)" required>
                                         </div>
                                         </div>
 
                                         <div class="col-md-4 col-sm-12 col-xs-12">
                                         <div class="form-group">
-                                            <input type="text" class="form-input-new form-control" name="existing_emi" id="existing_emi" placeholder="Existing All EMI" onkeypress="return isNumberKey(event)"  required>
+                                            <input type="text" class="form-input-new form-control" name="existing_emi" id="existing_emi" placeholder="Total Existing EMI" onkeypress="return isNumberKey(event)"  required>
                                         </div>
                                         </div>
 

@@ -4,7 +4,7 @@
       <div class="table-responsive">
          <div class=" pad">
             <!--  <p class="text-left">home/{{$product}}</p> -->
-            <h2 class="align-center loan-head">View Options</h2>
+            <h2 style="font-style: oblique" class="align-center loan-head text-center">Quotes related {{$product}}</h2>
             <div class="iframeloading" style= "display:none;position:absolute; top: 0px; left: 0px; width: 100%; height: 100%;">
                <img src="{{URL::to('images/ajaxloader.gif')}}" alt="Loader" title="Loader" style="top: 50%; position: relative; left: 50%;"  /> 
             </div>
@@ -68,7 +68,7 @@
                   {{ csrf_field() }}
                   <table width="100%" border="1" class="tbl">
                      <tr>
-                        <td width="9%" class="upper">Compare</td>
+                       <!--  <td width="9%" class="upper">Compare</td> -->
                         <td width="16%" class="upper"><span style="color:red;"><img src="{{$q->Bank_Logo}}" class="img-responsive"></span></td>
                         <td width="16%" class="upper">Interest Rate</td>
                         <td width="16%" class="upper">Loan Amount</td>

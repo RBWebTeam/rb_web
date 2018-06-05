@@ -1,7 +1,9 @@
 <?php
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\User;
+use App\Repositories\UserRepository;
+use App\Http\Controllers\Controller;
 
 class IdfcController extends Controller
 {

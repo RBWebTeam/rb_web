@@ -420,6 +420,9 @@
          url: "{{URL::to('equifax-query')}}",
          data : $('#equifax_form').serialize(),
          success: function(msg){
+
+
+          
                if (msg.constructor ===  {}.constructor) {
                     json=msg;
                 }else{

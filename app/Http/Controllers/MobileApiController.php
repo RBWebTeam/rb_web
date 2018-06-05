@@ -44,8 +44,8 @@ class MobileApiController extends ApiController
 	public function personal_loan_mobile(Request $req){
 		//return "hiiiii";
 		$data= $this->comapre_personal_loan($req);
-		//print_r($data);exit;
-		//		print_r( $data->getData()->data);exit();
+		// print_r($data);exit;
+				// print_r( $data->getData()->data);exit();
 		if($data->getData()->data!=[]){
 			$status_Id=0;
 			$msg="data delievered";
@@ -389,7 +389,8 @@ public function balance_transfer_with_quoteid(Request $req){
 	/*NRI*/
 	public function nri(Request $req){
 		try {
-			$header = $req->header('auth_key');
+			$header = $req->header('key');
+			// print_r($header);exit();
 		if ($header=="NRI") {
 			$getQuery=DB::select('call usp_get_nri_bank_quot("'.$req['loanamount'].'","'.$req['loantenure'].'","'.$req['income'].'","'.$req['obligations'].'","'.$req['gender'].'","'.$req['dob'].'","'.$req['emp_detail'].'")');
 		return response()->json(array('status' =>0,'message'=>"success",'result'=>$getQuery));

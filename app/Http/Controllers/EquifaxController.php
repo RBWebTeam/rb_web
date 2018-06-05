@@ -89,7 +89,7 @@ try{
              $Postal=$req->Postal?$req->Postal:'';
              $RationCard=$req->RationCard?$req->RationCard:'';
              $State=$req->State?$req->State:'';
-             $TransactionAmount=$req->TransactionAmount?$req->TransactionAmount:'';
+             $TransactionAmount=$req->TransactionAmount?$req->TransactionAmount:0;
              $VoterId=$req->VoterId?$req->VoterId:'';
              $data['brokerid']=Session::get('brokerid')?Session::get('brokerid'):'MAA=';
 
@@ -203,12 +203,13 @@ $post_data='{
           $status=0;
            
          }
-  
-        $arr=['name'=>$name,'error'=>$err,'score'=>$score,'status'=>$status];
-    return response()->json($arr);  
+     $arr=['name'=>$name,'error'=>$err,'score'=>$score,'status'=>$status];
+    return response()->json($arr);
+}
 
-      
-  }
+  
+
+
 
   public function equifax_verification(){
     $data['brokerid']=Session::get('brokerid')?Session::get('brokerid'):'MAA=';
@@ -270,36 +271,45 @@ $post_data='{
         return view('rectifycredit');
  }
 
-      public function rectify_registration(Request $req){
-        // print_r($req->all());exit();
-        $req['created_on'] =date('d-m-Y');
-        $data=$req->all();
-        $data['brokerid']=Session::get('brokerid')?Session::get('brokerid'):'MAA=';
-        $data['empid']=Session::get('empid')?Session::get('empid'):'MAA=';
-        $data['source']=Session::get('source')?Session::get('source'):'MAA=';
-        // $data['CampaignName']="HDFC PL";
-        $post_data=json_encode($data);
-        // print_r($post_data);exit();
-        $url = $this::$url_static."/BankAPIService.svc/createRectifyCreditCustReq";
-        $result=$this->call_json_data_api($url,$post_data);
-        $http_result=$result['http_result'];
-        $error=$result['error'];
-        $st=str_replace('"{', "{", $http_result);
-        $s=str_replace('}"', "}", $st);
-        $m=$s=str_replace('\\', "", $s);
-        // print_r($http_result);exit();
-        $obj=json_decode($m);
-        return response()->json( $obj);
-      }
+       public function rectify_equi_score(Request $req){
 
-        public function rectify(Request $req){
-        // print_r($req->all());exit();
-        $req['datetime'] =date('d-m-Y');
+       
+
+     
+         $score=$this->equifax_query_pl($req);
+         $va=$score['score'];
+         $scorarr = json_decode(json_encode($va), TRUE);
+      
+
+          $req['AddressLine']=$req['AddressLine'][0];
+          $req['AddressType']=$req['AddressType'][0];
+          $req['City']=$req['City'][0];
+          $req['State']=$req['State'][0];
+          $req['Postal']=$req['Postal'][0];
+          $req['Locality1']=$req['Locality1'][0];
+          $req['Locality2']=$req['Locality2'][0];
+          $req['AccountNumber']=$req['AccountNumber'][0];
+          // print_r($req->all());exit();
+          // $scorarr[0]=799;
+         $rectify=$this->rectify($req,$scorarr[0]);
+       //  print_r($rectify);exit();
+         return $rectify;
+    } 
+
+
+      
+
+        public function rectify(Request $req,$ar){
+          // print_r($req->all());exit();
+        // print_r($ar);exit();
+        // $req['datetime'] =date('d-m-Y');
+        $data['score']=$ar;
         $data=$req->all();
         $data['brokerid']=Session::get('brokerid')?Session::get('brokerid'):'MAA=';
         $data['empid']=Session::get('empid')?Session::get('empid'):'MAA=';
         $data['source']=Session::get('source')?Session::get('source'):'MAA=';
         $data['CampaignName']=Session::get('CampaignName');
+        $data['score']=$ar;
         $file=$req->file('attachment');
         $destinationPath = $_SERVER['DOCUMENT_ROOT'] .'/uploads/rectify/'.$req->Mobile_Num.'/';
         $filename=$file->getClientOriginalExtension();
@@ -309,17 +319,19 @@ $post_data='{
         unset($d['attachment']);
         $post_data=json_encode($d);
         // print_r($post_data);exit();
-        $url = $this::$url_static."/BankAPIService.svc/createRectifyCreditCustBasicReq";
+        $url = $this::$url_static."/BankAPIService.svc/createRectifyCreditCustDetail";
         $result=$this->call_json_data_api($url,$post_data);
         $http_result=$result['http_result'];
-         // print_r($http_result);exit();
+        // print_r($http_result);exit();
         $error=$result['error'];
         $st=str_replace('"{', "{", $http_result);
         $s=str_replace('}"', "}", $st);
         $m=$s=str_replace('\\', "", $s);
         $obj = json_decode($m);
-       
-       return response()->json( $obj);
+        $obj1=json_decode($ar);
+         $obj_merged = (object) array_merge((array) $obj, (array) $obj1);
+       // print_r( $obj_merged);exit();
+       return response()->json($obj_merged);
 
  }
 
@@ -335,5 +347,152 @@ $post_data='{
     
     return view('equifax')->with(['inq'=>$inquiry,'state'=>$state,'phone'=>$phone]);
  }
+
+
+ /*Equifax Score for PL*/
+ public function equifax_query_pl(Request $req){
+
+    $status=0;
+    $name="";
+    $err="";
+    $score=0;
+
+try{
+     $AccountNumber=array();
+     foreach ($req->AccountNumber as $key => $value) {
+              $AccountNumber[]=[ "AccountNumber" =>$value,"seq" =>1];    }
+              $AccountDetails = json_encode($AccountNumber);
+              $DOB=$req->DOB?$req->DOB:'';
+              $DriverLicense=$req->DriverLicense?$req->DriverLicense:'';   
+              $FirstName=$req->FirstName?$req->FirstName:''; 
+              $FullName=$req->FullName?$req->FullName:''; 
+              $Gender=$req->Gender?$req->Gender:''; 
+              $HomePhone=$req->HomePhone?$req->HomePhone:'';    
+              $AddressLine1=array();
+              if($req->AddressType){
+              foreach ($req->AddressType as $key => $value) {
+              $AddressLine1[]= array('InquiryAddresses' =>["AddressLine" =>$req->AddressLine[$key]?$req->AddressLine[$key]:" ",
+              'AddressType'=>$req->AddressType[$key]?$req->AddressType[$key]:" ", 
+              'City'=>$req->City[$key]?$req->City[$key]:" ",
+              'Locality1'=>$req->Locality1[$key]?$req->Locality1[$key]:" ", 
+              'Locality2'=>$req->Locality2[$key]?$req->Locality2[$key]:" ", 
+              'State'=>$req->State[$key]?$req->State[$key]:" ",
+              'Street'=>$req->Street[$key]?$req->Street[$key]:" ",  
+              'Postal'=>$req->Postal[$key]?$req->Postal[$key]:" ",   
+              "seq" =>1] ); 
+
+
+
+          }
+      }
+
+             
+          $InquiryAddresses=json_encode($AddressLine1);    
+           
+             $InquiryPurpose=$req->InquiryPurpose?$req->InquiryPurpose:'';
+             $LastName=$req->LastName?$req->LastName:'';
+             $MaritalStatus=$req->MaritalStatus?$req->MaritalStatus:'';
+             $MiddleName=$req->MiddleName?$req->MiddleName:'';
+             $MobilePhone=$req->MobilePhone?$req->MobilePhone:'';
+             $NationalIdCard=$req->NationalIdCard?$req->NationalIdCard:'';
+             $PANId=$req->PANId?$req->PANId:'';
+             $PassportId=$req->PassportId?$req->PassportId:'';
+             $Postal=$req->Postal?$req->Postal:'';
+             $RationCard=$req->RationCard?$req->RationCard:'';
+             $State=$req->State?$req->State:'';
+             $TransactionAmount=$req->TransactionAmount?$req->TransactionAmount:0;
+             $VoterId=$req->VoterId?$req->VoterId:'';
+             $data['brokerid']=Session::get('brokerid')?Session::get('brokerid'):'MAA=';
+
+             $data['empid']=Session::get('empid')?Session::get('empid'):'MAA=';
+
+             $data['source']=Session::get('source')?Session::get('source'):'MAA=';
+             // print_r($data['source']);exit();
+
+$post_data='{
+    "InquiryCommonAccountDetails":'.$AccountDetails.',
+    "RequestBody":{
+        "brokerid":"'.$data['brokerid'].'",
+         "empid":"'.$data['empid'].'",
+         "source":"'. $data['source'].'",
+        "AdditionalId1":"",
+        "AdditionalId2":"",
+        "AddrLine1":"'.$req->AddressLine[0].'",
+        "DOB":"'.$DOB.'",
+        "DriverLicense":"'.$DriverLicense.'",
+        "FirstName":"'.$FirstName.'",
+        "FullName":"'.$FullName.'",
+        "Gender":"2",
+        "HomePhone":{
+            "PhoneNumber":"'.$HomePhone.'",
+            "ReportedDate":"'. date("Y-m-d").'",
+            "seq":1
+        },
+        "InquiryAddresses":'.$InquiryAddresses.',
+        "InquiryPhones":[{
+            "InquiryPhones":{
+                "AreaCode":"",
+                "CountryCode":"",
+                "Number":"'.$MobilePhone.'",
+                "PhoneNumberExtension":"",
+                "PhoneType":"M",
+                "seq":1
+            }
+        }],
+        "InquiryPurpose":"'.$InquiryPurpose.'",
+        "LastName":"'.$LastName.'",
+        "MaritalStatus":"'.$MaritalStatus.'",
+        "MiddleName":"'.$MiddleName.'",
+        "MobilePhone":"'.$MobilePhone.'",
+        "NationalIdCard":"'.$NationalIdCard.'",
+        "PANId":"'.$PANId.'",
+        "PassportId":"'.$PassportId.'",
+        "Postal":"'.$Postal[0].'",
+        "RationCard":"'.$RationCard.'",
+        "State":"'.$State[0].'",
+        "TransactionAmount":'.$TransactionAmount.',
+        "VoterId":"'.$VoterId.'"  
+    }
+}';
+
+        $result=$this->call_json_data_api("http://api.rupeeboss.com/EquifaxAPIService.svc/createCreditReportReq",$post_data);
+        $http_result=$result['http_result'];
+           
+        
+
+        $xml = simplexml_load_string($http_result);
+        
+        $xml_S=simplexml_load_string($xml);
+       
+        if($xml_S->ReportData->Error->ErrorMsg){
+          $err=$xml_S->ReportData->Error->ErrorMsg;
+          $status=1;
+        }else{
+
+          if(isset($xml_S->ReportData->Score->Value)){
+            $score=$xml_S->ReportData->Score->Value;
+          }
+        $tt=file_put_contents(public_path("input/xxx.xml"),$xml);
+        $process = new Process('java -Xms256m -Xmx512m -jar MParser-6.2.0.jar xxx.xml');
+        $process->run();
+        if (!$process->isSuccessful()) {
+          
+            throw new ProcessFailedException($process);
+        }else{
+          $status=1;
+        }
+        
+        }
+        $name="Hit_".strtoupper($PANId).".pdf";
+        }catch (\Exception $e) {
+          $err=$e->getMessage();
+          $status=0;
+           
+         }
+  
+        $arr=['name'=>$name,'error'=>$err,'score'=>$score,'status'=>$status];
+    return  $arr ;
+  
+  }
  
 }

@@ -417,6 +417,7 @@ Route::post('excel-upload-submit','LoanController@excel_upload_submit');
 
 /*Capital Float*/
 Route::get('capitalfloat','LoanController@capitalfloat');
+Route::post('capital-submit','LoanController@capital_float_form');
 
 // express loan
 Route::get('hdfc-personal-loan','LoanController@hdfc_personal_loan');
@@ -427,8 +428,8 @@ Route::post('hdfc-business-loan-submit','LoanController@hdfc_business_loan_submi
 
 /*Rectify Creditm*/
 Route::get('rectifycredit','EquifaxController@rectifycredit');
-Route::post('rectify-submit','EquifaxController@rectify');
-Route::post('rectify-registration','EquifaxController@rectify_registration');
+Route::post('rectify-submit','EquifaxController@rectify_equi_score');
+// Route::post('rectify-registration','EquifaxController@rectify_registration');
 
 /*Tata Capital PL*/
 Route::get('tata-capital-city','TataCapitalLoanController@tatacapital_city');
@@ -449,6 +450,7 @@ Route::post('flexi-loans-token','LoanController@flexi_loans_token');
 Route::get('flexi-loans-partner-list','LoanController@flexi_loans_partner_list');
 Route::post('flexi-loans-appln','LoanController@flexi_loans_appln');
 Route::post('flexi-loans-appln-update','LoanController@flexi_loans_appln_update');
+Route::post('flexi-business','LoanController@flexi_business_dtls');
 
 
 // /*Demo*/
@@ -467,6 +469,9 @@ Route::get('apply-tatacapital-loan','TataCapitalLoanController@apply_tatacapital
 Route::get('kotak-home-loan','LoanController@kotak_home_loan');
 Route::get('kotak-personal-loan','LoanController@kotak_personal_loan');
 Route::get('lendingkart','LoanController@lendingkart');
+Route::get('lendingkart-state','LoanController@lendingkart_state');
+Route::post('lendingkart-city','LoanController@lendingkart_city');
+Route::post('lendingkart-business-city','LoanController@lendingkart_business_city');
 
 Route::get('rbl-personal-loan','LoanController@rbl_personal_loan');
 Route::get('apply-iifl-loan','LoanController@apply_iifl_loan');
@@ -491,4 +496,9 @@ Route::get('medsave','LoanController@medsave');
 
 /*Loans*/
 Route::get('personal-loan-demo','NewProcessController@personal_loan_demo');
+Route::get('state','NewProcessController@state');
+Route::post('p_loansubmit','FormController@p_loan');
+// Route::post('pl-city-master','NewProcessController@pl_city_master');
+
+
 

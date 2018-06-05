@@ -1,27 +1,186 @@
 @include('layout.header')
- <style>
+ <!-- <style>
    .bg-img {background: url("images/bg_img.png")no-repeat; width:447px; height:502px;}
    .pl-frm {padding-top:190px;}
    .form-group {margin-bottom: 5px !important;} 
    .form-control {margin-bottom:6px !important;}
    .wrapper-content {background:#ffffff url("images/personal-loan.jpg")no-repeat;}
+   .form-control{height:45px !important;}
+</style> -->
+<style>
+   .bg-img {width:447px; height:179px; z-index:1000;position:inherit;margin-left:20px;}
+   .heading {/*background: url("images/heading.png")no-repeat; */ z-index:10000;right:248px; position:absolute; width:235px; height:175px;}
+   .heading {z-index: 10000;right: 171px;position: absolute;width: 377px;height: 59px;}
+   .bg-img img {margin:0 auto; display:block;}
+   .form-group {margin-bottom: 5px !important;} 
+   .form-control {margin-bottom:6px !important;}
+   /*.wrapper-content {background:#ffffff url("images/watermark_bg.png");}*/
+   .btn-center {display:block;margin:0 auto;width: 80px;}
+   .bg1 {background: #ececec !important;border:5px solid #e2e2e2; padding: 20px 0px;float: left;z-index: 0;margin-top: -13px;box-shadow: 10px 10px 5px #888;}
+      .btn-sm {background:#fff;padding: 15px 16px;}
+   .hero-bkg-animated {
+  background: #ffffff url("images/watermark_bg_1.png") repeat 0 0;
+  width: 100%;
+  
+  -webkit-animation: slide 20s linear infinite;
+}
+
+.btn-primary.active, .btn-primary:active, .open>.dropdown-toggle.btn-primary {
+    color: #fff;
+    background-color: #de3c3c;
+    border-color: #b11a1a;
+}
+
+@-webkit-keyframes slide {
+    from { background-position: 0 0; }
+    to { background-position: -400px 0; }
+}
+
+
+   
+   @media only screen and (max-width: 768px) {
+    .wrapper-content {background:transparent;}
+  
+  .bg-img {
+    width: 301px;
+    height: 125px;
+    z-index: 1000;
+    position: inherit;
+    margin-left: 8px;
+}
+.dv-para {right:53px !important; top:-35px;}
+.dv-para:after {left: 55% !important;}
+
+.btn-sm {
+    background: #fff;
+    padding: 12px 8px !important;
+}
+.bg-img {margin-top:60px;}
+
+.heading {
+    background: url(images/heading.png)no-repeat;
+    z-index: 10000;
+    right: 0px;
+    top: -105px;
+    position: absolute;
+    width: 235px;
+    height: 177px;
+}
+.flt-left {float:left;}
+.row, col-lg-12, col-md-12 {padding:0px !important;}
+}
+
+   
+ 
+
+ h1 {
+  font-size:20px;
+  color: #000;
+  line-height:25px !important;
+  font-weight:normal;
+}
+
+@keyframes caret {
+  50% {
+    border-color: transparent;
+  }
+}
+
+.dv-para {    
+    width:300px;
+    position: absolute;
+    z-index: 10;
+    right: 230px;
+  padding:5px 15px; background:#ddd;
+}
+
+.dv-para:after {
+    border-top: 18px solid #dddddd;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    bottom: -17px;
+    content: "";
+    position: absolute;
+    left: 15%;
+    margin-left: -21px;
+    width: 0;
+    margin-top: -40px;
+    height: 0;
+  border-radius:5px;
+}
+
+
+
+
 </style>
+
+<script>
+ document.addEventListener('DOMContentLoaded',function(event){
+  // array with texts to type in typewriter
+  var dataText = ["Hey, Let me find out best personal loan Quotes and your free credit score"];
+  
+  // type one text in the typwriter
+  // keeps calling itself until the text is finished
+  function typeWriter(text, i, fnCallback) {
+    // chekc if text isn't finished yet
+    if (i < (text.length)) {
+      // add next character to h1
+     document.querySelector("h1").innerHTML = text.substring(0, i+1) +'<span aria-hidden="true"></span>';
+
+      // wait for a while and call this function again for next character
+      setTimeout(function() {
+        typeWriter(text, i + 1, fnCallback)
+      }, 100);
+    }
+    // text finished, call callback if there is a callback function
+    else if (typeof fnCallback == 'function') {
+      // call callback after timeout
+      setTimeout(fnCallback, 700);
+    }
+  }
+  // start a typewriter animation for a text in the dataText array
+   function StartTextAnimation(i) {
+     if (typeof dataText[i] == 'undefined'){
+        setTimeout(function() {
+          StartTextAnimation(0);
+        }, 20000);
+     }
+     // check if dataText[i] exists
+    if (i < dataText[i].length) {
+      // text exists! start typewriter animation
+     typeWriter(dataText[i], 0, function(){
+       // after callback (and whole text has been animated), start next text
+       StartTextAnimation(i + 1);
+     });
+    }
+  }
+  // start the text animation
+  StartTextAnimation(0);
+});
+
+</script>
    
   <div class=" ">
         <!-- content start -->
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <div class="wrapper-content bg-white pinside40" id="pl_form">
+        <!-- <div class="heading" style="display:none;"></div> -->
+              
+               <div class="dv-para" style="display:none; "> <h1>Hey, Let me find out best <b>personal loan</b> quotes and your free credit score</h1></div>
+                    <div class="wrapper-content bg-white pinside40 hero-bkg-animated" id="pl_form">
                      <!-- <h1 class=""><center>Personal Loan</center></h1> -->
                         <div class="section-faq" id="section-faq">
                                 <div class="row">
-                                <div class="col-md-6 col-md-offset-3 text-center"><h5>Let's find out best <b>Personal Loan</b> quotes and your <b> Free Credit Score.</b></h5></div>
-                                <div  class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding-bottom: 20px">
+                
+                <!-- <div style="font-style: oblique" class="col-md-6 col-md-offset-3 text-center"><h3>Hey.. Let me find out best <b>Personal Loan</b> quotes and your <b> Free Credit Score.</b></h3></div> -->
+                                <div style="padding-bottom: 20px">
                                  
                              <div class="col-md-6 col-md-offset-3 ">
-                 <div class="bg-img" id="show-hid" style="display:none; padding:0px 10px;">
-                 <form class="pl-frm" name="personal_loan_process_form" id="personal_loan_process_form"  method="post">
+                 <div class="bg-img" id="show-hid" style="display:none;padding:7px 10px;"><img src="images/bg_img.gif" class="img-responsive"/></div>
+                 
+                  <div class="bg1">
+                  <form class="pl-frm" name="personal_loan_process_form" id="personal_loan_process_form"  method="post">
                  <div id="section">
 
                  {{ csrf_field() }}
@@ -37,7 +196,7 @@
                                </div>
                                </div>
 
-                               <div class="col-md-12 col-sm-12 col-xs-12">
+                               <!-- <div class="col-md-12 col-sm-12 col-xs-12">
                                 <div class="form-group">
                                <select class="form-control input-md select-sty" name="loan_tenure" id="loan_tenure" required>
                                 <option selected value="">Loan Tenure</option>
@@ -49,9 +208,22 @@
                                                         
                                 </select>
                                </div>
+                               </div> -->
+
+                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                 <div style="background:transparent;float:left;margin-bottom:8px;width:100%;margin:5px;margin-bottom:8px;">
+                                 <span style="font-size:14px;">Loan Tenure</span>
+                                <div class="btn-grp mrg-top status form-control1" data-toggle="buttons">
+                                   <span class="btn btn-primary btn-sm outer-brd active"><input type="radio" name="loan_tenure"  value="1">1 yr</span>
+                                   <span class="btn btn-primary btn-sm outer-brd"><input type="radio" name="loan_tenure"  value="2" >2 yrs</span>
+                                   <span class="btn btn-primary btn-sm outer-brd"><input type="radio" name="loan_tenure"  value="3" >3 yrs</span>
+                                 <span class="btn btn-primary btn-sm outer-brd"><input type="radio" name="loan_tenure"  value="4" >4 yrs</span>
+                                 <span class="btn btn-primary btn-sm outer-brd"><input type="radio" name="loan_tenure"  value="5" >5 yrs</span>
+                               </div>
+                               </div>
                                </div>
 
-                             <div class="col-md-12 col-sm-12 col-xs-12">
+                             <!-- <div class="col-md-12 col-sm-12 col-xs-12">
                                 <div class="form-group">
                                <select class="form-control input-md select-sty" name="emp_detail" id="emp_detail" required>
                                         <option selected value="">Employment Status</option>
@@ -60,20 +232,123 @@
                                                                          
                                 </select>
                                </div>
+                               
+                               </div> -->
+
+                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                 <div style="background:transparent;float:left;margin-bottom:8px;width:100%;margin:5px;margin-bottom:8px;">
+                                 <span style="font-size:14px;">Employment</span>
+                                <div class="btn-grp mrg-top status form-control1" data-toggle="buttons">
+                                   <span class="btn btn-primary btn-sm outer-brd active"><input type="radio" name="emp_detail"  value="salaried">Salaried</span>
+                                   <span class="btn btn-primary btn-sm outer-brd"><input type="radio" name="emp_detail"  value="self-employed" >Self-Emp</span>
+                                   
+                               </div>
+                               </div>
                                </div>
 
-                               <div class="col-md-12 col-sm-12 col-xs-12" style="display: none;" id="monthly_income">
+
+                               <div class="col-md-12 col-sm-12 col-xs-12" id="monthly_income">
                                 <div class="form-group">
                                 <input type="text" name="income" id="income" class="form-input-new form-control" placeholder="Monthly Income" onkeypress="return isNumberKey(event)" minlength="5" maxlength="9" required="">
                                </div>
                                </div>
+
+                               <!-- <div class="col-md-12 col-sm-12 col-xs-12">
+                               <div class="form-group">
+                               <select id="AddressType" class="form-control input-md" name="AddressType[]" required>
+                                <option selected disabled="">AddressType</option>
+                                 <option value="C">Current or Present</option>
+                                 <option value="P"> Permanent</option>
+                                 <option value="O">Office</option>
+                                 <option value="X">Other or Unspecified</option>
+                                </select>
                                </div>
                                
+                               </div> -->
+
+                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                 <div style="background:transparent;float:left;margin-bottom:8px;width:100%;margin:5px;margin-bottom:8px;">
+                                 <span style="font-size:14px;">AddressType</span>
+                                <div class="btn-grp mrg-top status form-control1" data-toggle="buttons">
+                                   <span class="btn btn-primary btn-sm outer-brd active"><input type="radio" name="AddressType[]"  value="C">Present</span>
+                                   <span class="btn btn-primary btn-sm outer-brd"><input type="radio" name="AddressType[]"  value="P" >Permanent</span>
+                                   <span class="btn btn-primary btn-sm outer-brd"><input type="radio" name="AddressType[]"  value="O" >Office</span>
+                                   <span class="btn btn-primary btn-sm outer-brd"><input type="radio" name="AddressType[]"  value="X" >Other</span>
+                                   
+                               </div>
+                               </div>
+                               </div>
+                               
+                               </div>
+
                                <!-- SECTION 1 -->
                                <div id="section1" style="display: none;">
+                               
+
+                               <div class="col-md-12 col-sm-12 col-xs-12">
+                               <div id="text" style="display: none;font-style: oblique; font-size: 15px";><p class="blink"><b>"Hey bingo..!! Just few more details to get quotes and also avail your 50% discount on Credit Report."</b></p></div><br>
+                               <div class="form-group">
+                               <input type="text" name="AddressLine[]" id="AddressLine" class="form-input-new form-control" placeholder="Address" required="">
+                               </div>
+                               </div>
+
+                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                   <div class="form-group">
+                                  <select name="State[]" class="form-control dropdown valid" required="">
+                                   <option disabled="" selected="" value="">State</option>
+                                                    <option value="AN">Andaman &amp; Nicobar Islands</option>
+                                                 <option value="AP">Andhra Pradesh</option>
+                                                 <option value="AR">Arunachal Pradesh</option>
+                                                 <option value="AS">Assam</option>
+                                                 <option value="BR">Bihar</option>
+                                                 <option value="CH">Chandigarh</option>
+                                                 <option value="CG">Chhattisgarh</option>
+                                                 <option value="DN">Dadra &amp; Nagar Haveli</option>
+                                                 <option value="DD">Daman &amp; Diu</option>
+                                                 <option value="DL">Delhi</option>
+                                                 <option value="GA">Goa</option>
+                                                 <option value="GJ">Gujarat</option>
+                                                 <option value="HR">Haryana</option>
+                                                 <option value="HP">Himachal Pradesh</option>
+                                                 <option value="JK">Jammu &amp; Kashmir</option>
+                                                 <option value="JH">Jharkhand</option>
+                                                 <option value="KA">Karnataka</option>
+                                                 <option value="KL">Kerala</option>
+                                                 <option value="LD">Lakshadweep</option>
+                                                 <option value="MP">Madhya Pradesh</option>
+                                                 <option value="MH">Maharashtra</option>
+                                                 <option value="MN">Manipur</option>
+                                                 <option value="ML">Meghalaya</option>
+                                                 <option value="MZ">Mizoram</option>
+                                                 <option value="NL">Nagaland</option>
+                                                 <option value="OR">Orissa</option>
+                                                 <option value="PY">Pondicherry/Puducherry</option>
+                                                 <option value="PB">Punjab</option>
+                                                 <option value="RJ">Rajasthan</option>
+                                                 <option value="SK">Sikkim</option>
+                                                 <option value="TN">Tamil Nadu</option>
+                                                 <option value="TR">Tripura</option>
+                                                 <option value="UP">Uttar Pradesh</option>
+                                                 <option value="UL">Uttaranchal/Uttarakhand</option>
+                                                 <option value="WB">West Bengal</option>
+                                               </select>
+                                   </div>
+                                </div>
+                                
+                               <div class="col-md-12 col-sm-12 col-xs-12">
+                              <div class="form-group">
+                              <input type="text" id="city_name" name="city_name" class="form-input-new form-control search_city" placeholder="City" required="">
+                              </div>
+                             </div>
+                              
+
+                              <br>
+
+                                
+
                                <div class="col-md-12 col-sm-12 col-xs-12">
                                <div class="form-group">
-                               <input type="text" name="city_name" id="city_name" class="form-input-new form-control search_city" placeholder="City" required="">
+                               <input type="text" name="Postal[]" id="Postal" class="form-input-new form-control" placeholder="Pincode" required="">
                                </div>
                                </div>
 
@@ -81,16 +356,51 @@
                                 <div class="form-group">
                                 <input type="text" name="applicant_name" id="applicant_name" class="form-input-new form-control" placeholder="Applicant Name" maxlength="100" onkeypress="return AllowAlphabet(event)" required="">
                                </div>
+                               
                                </div>
+                               
 
-                               <div class="col-md-12 col-sm-12 col-xs-12" >
+
+                               
+
+                             </div>
+
+                             <!-- SECTION 2 -->
+                              <div id="section2" style="display: none;">
+                              <!-- <div class="col-md-12 col-sm-12 col-xs-12" >
                                <div class="form-group">
-                                <select id="gender" class="form-control input-md" name="gender" required>
+                                <select id="Gender" class="form-control input-md" name="Gender" required>
                                 <option selected disabled="">Gender</option>
-                                <option value="M">Male</option>
-                                <option value="F">Female</option> 
+                                <option value="1">Male</option>
+                                <option value="2">Female</option> 
                                 </select>
+                                </div>
                                 <input type="hidden" name="emp_detail_id" value="1" >
+                               
+                                </div> -->
+
+                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                 <div style="background:transparent;float:left;margin-bottom:8px;width:100%;margin:5px;margin-bottom:8px;">
+                                 <span style="font-size:14px;">Gender</span>
+                                <div class="btn-grp mrg-top status form-control1" data-toggle="buttons">
+                                   <span class="btn btn-primary btn-sm outer-brd active"><input type="radio" name="Gender"  value="1">Male</span>
+                                   <span class="btn btn-primary btn-sm outer-brd"><input type="radio" name="Gender"  value="2" >Female</span>
+                                  
+                                   
+                               </div>
+                               </div>
+                               <input type="hidden" name="emp_detail_id" value="1" >
+                               </div>
+                                 
+                                 <div class="col-md-12 col-sm-12 col-xs-12" >
+                                <div class="form-group">
+                                <select id="MaritalStatus" name="MaritalStatus" class="form-control valid" required="">
+                                    <option selected="" value="" disabled="">Marital Status</option>
+                                    <option value="single">Single</option>
+                                    <option value="married">Married</option>
+                                    <option value="divorced">Divorced</option>
+                                </select>
+                               
                                 </div>
                                 </div>
 
@@ -98,13 +408,8 @@
                               <div class="form-group">
                               <input type="text" id="dob" name="dob" class="form-input-new form-control lastReporteddate1" placeholder="Date of Birth" required="">
                               </div>
-                              <div style="font-style: oblique; font-size: 10px";  ><p class="blink"><b>"Hey bingo..!!<br> Just few more details to get quotes and also avail your 50% discount on Credit Report"</b></p></div>
+                              
                              </div>
-
-                             </div>
-
-                             <!-- SECTION 2 -->
-                              <div id="section2" style="display: none;">
                                <div class="col-md-12 col-sm-12 col-xs-12">
                                <div class="form-group">
                                <input type="text" name="mobile" id="mobile" class="form-input-new form-control" placeholder="Mobile" minlength="10" maxlength="10" onkeypress="return fnAllowNumeric(event)" required="">
@@ -118,27 +423,42 @@
                                </div>
                                </div>
 
+                               <input type="hidden" name="FirstName" id="FirstName">
+                               <input type="hidden" name="InquiryPurpose" id="InquiryPurpose" value="00">
+                               <input type="hidden" name="DOB" id="DOB">
+                               <input type="hidden" name="TransactionAmount" id="TransactionAmount" value="0">
+                               <input type="hidden" name="MobilePhone" id="MobilePhone">
+                               <input type="hidden" name="PANId" id="PANId">
+                               <input type="hidden" name="PhoneType" id="PhoneType" value="M">
+                               <input type="hidden" name="City[]" id="City">
+                               <input type="hidden" name="AccountNumber[0]" id="AccountNumber" value="">
+                               <input type="hidden" name="MiddleName" id="MiddleName" value="">
+                               <input type="hidden" name="LastName" id="LastName" value="">
+                               <input type="hidden" name="Locality1[]" id="Locality1" value="">
+                               <input type="hidden" name="Locality2[]" id="Locality2" value="">
+                               <input type="hidden" name="PassportId" id="PassportId" value="">
+                               <input type="hidden" name="VoterId" id="VoterId" value="">
+                               <input type="hidden" name="DriverLicense" id="DriverLicense" value="">
+                               <input type="hidden" name="HomePhone" id="HomePhone" value="">
+                               <input type="hidden" name="NationalIdCard" id="NationalIdCard" value="">
+                               <input type="hidden" name="RationCard" id="RationCard" value="">
+
+
                                
 
                              </div>
-
-                               <div class="col-md-12 col-sm-12 col-xs-12">
-                                <div class="form-group">
-                                
-                               </div>
-                               </div>
-                 
-                 
-                 
-                               <div class="col-md-12">
-                               <a class="btn btn-danger btn-sm" id="next">Next</a>
+                             
+                
+                              <div class="col-md-12 flt-left"><br>
+                               <a class="btn btn-default btn-sm btn-center" id="next">Next</a>
                                 <!-- <a class="btn btn-default btn-sm" id="prev">Previous</a> -->
-                               <a style="display: none;" class="btn btn-danger btn-sm product_name product_ID" >Get Best Quotes</a>  
+                               <a style="display: none;" class="btn btn-default btn-sm product_name product_ID " >Get Best Quotes</a>  
                                </div>
-              
-                               </form>
-                               </div>
-                               </div>
+                               </form>                                         
+                 </div>
+                 
+                 
+                 </div>
       
                  
                                </div> 
@@ -218,14 +538,15 @@ $(document).ready(function(){
 var getUrl=0;
 
 $(".product_ID").click(function(e){
+  event.preventDefault();
    $(".iframeloading").show();
               $.ajax({  
              type: "POST",  
-             url: "{{URL::to('loan-submit')}}",
+             url: "{{URL::to('p_loansubmit')}}",
            data : $("#personal_loan_process_form").serialize(),
         //   data: {_token :_token,username:username,password:password},
              success: function(msg){
-              // console.log(msg);
+              console.log(msg);
                     $(".iframeloading").hide();
                            if(msg.success ==true){
 
@@ -237,6 +558,7 @@ $(".product_ID").click(function(e){
 
                              if (loan_eligible>0) {
                               $('#pl_form').hide();
+                              $('.dv-para').hide();
                              $("#test123").empty().append(msg.html);  
                              $('#loanamount').val(loan_eligible);
                             var roi = msg.roi;
@@ -329,92 +651,10 @@ $("#eligibility").click(function() {
 
 </script>
 
-<!-- <script type="text/javascript">
-  $(document).ready(function(){
-  $('#sala_DI').change(function(){
-   $("#self-employed_ID").hide();
-   $("#income_ID").show();
-  });
-
-  $('#self_DI').change(function(){
-  $("#income_ID").hide();
-  $("#self-employed_ID").show();
-  });
-
-  });
-</script> -->
-
-<script type="text/javascript">
-  $(document).ready(function(){
-    $('#emp_detail').on('change', function() {
-       
-
-      if ( this.value == 'salaried')
-      {
-         
-         $("#income_ID").show();
-         $("#self-employed_ID").hide();
-      }
-      else{
-        $("#self-employed_ID").show();
-        $("#income_ID").hide();
-
-        
-      }
-
-
-    });
-});
-</script>
-
-<script type="text/javascript">
-  $(document).ready(function(){
-    $('#loan_tenure').on('change', function() {
-       $('#abc').show();
-
-    });
-});
-</script>
-
-<script type="text/javascript">
-  $(document).ready(function(){
-    $('#emp_detail').on('change', function() {
-       $('#efg').show();
-
-    });
-});
-</script>
-
 <script>
-        $( window ).load(function() {
-        $('#show-hid').slideDown(1000);
-        });
-        </script>
-
-
-<script>
-$('#emp_detail').on('change', function() {
-  // alert('okae');
-  var emp_detail=$('#emp_detail').find(":selected").val();
-  // console.log(LeadType);
-  if ( emp_detail == 'salaried')
-      {
-       
-        $("#monthly_income").show();
-
-        
-      }
-      else{
-        $("#monthly_income").show();
-      }
+$( window ).load(function() {
+$('#show-hid').slideDown(1000);
 });
-
-// function blink_text() {
-//     $('.blink').fadeOut(1000);
-//     $('.blink').fadeIn(1000);
-// }
-// setInterval(blink_text, 2000);
-
 </script>
 
 <script type="text/javascript">
@@ -434,13 +674,32 @@ $('#emp_detail').on('change', function() {
             }
             else
               { 
+                var first_nm=$('#applicant_name').val();
+                console.log(first_nm);
+                $('#FirstName').val(first_nm);
+
+                var dob=$('#dob').val();
+                $('#DOB').val(dob);
+                
+                var city_name=$('#city_name').val();
+                // var city=$("input[name=city_name]").val();
+                // console.log(city);
+                console.log(city_name);
+                $('#City').val(city_name);
+                // $('#City').val(city);
+               
                 $('#section1').hide();
                 $('#section2').show();
                 if(! $('#personal_loan_process_form').valid())
                 {
                        return false;
                 }
-                else{     
+                else{ 
+                 var mobile=$('#mobile').val();
+                $('#MobilePhone').val(mobile); 
+
+                var pan_no=$('#pan_number').val();
+                $('#PANId').val(pan_no);      
                      $('#next').hide();
                      $('.product_ID').show();
                    
@@ -452,4 +711,23 @@ $('#emp_detail').on('change', function() {
       });
 
 
+
+$('#AddressLine').click(function(){
+$('#text').show();
+});
  </script>
+
+ <script>
+        $( window ).load(function() {
+        $('#show-hid').show("fast");
+        $('.dv-para').show(1000);
+        });
+
+        $('#next').click(function(){
+        $('.dv-para').hide();
+        });
+</script>
+
+
+
+

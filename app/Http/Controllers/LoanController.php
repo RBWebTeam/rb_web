@@ -269,18 +269,7 @@ class LoanController extends CallApiController
 
    public function state(Request $req){
     // print_r($req->all());exit();
-    $post_data = '{
-   "head": {
-    "requestCode": "PLRQSTDD01",
-    "key": "af28dc2bcd8a5660412407313b31d101",
-    "appVer": "1.0",
-    "osName": "WebAPI",
-    "appName": "ALLIANCE",
-    "source":"RupeeBoss"
-  },
-  
-  "body": {"SrchParam":"StateMaster" }
-}';
+    $post_data = '{"SrchParam":"StateMaster"}';
     //call API here to save in DB
         //$post=json_encode($post_data);
      // print_r($post_data);exit();
@@ -288,6 +277,7 @@ class LoanController extends CallApiController
     $url = $this::$url_static."BankAPIService.svc/getIIFLStateMaster";
     $result=$this->call_json_data_api($url,$post_data);
     $http_result=$result['http_result'];
+    // print_r( $http_result);exit();
     $error=$result['error'];
     $st=str_replace('"{', "{", $http_result);
     $s=str_replace('}"', "}", $st);
@@ -301,19 +291,8 @@ class LoanController extends CallApiController
 }   
 
 public function dropdown(Request $req){
-    // print_r($req->all());exit();
-    $post_data = '{
-   "head": {
-    "requestCode": "PLRQDD01",
-    "key": "af28dc2bcd8a5660412407313b31d101",
-    "appVer": "1.0",
-    "osName": "WebAPI",
-    "appName": "ALLIANCE",
-    "source":"RupeeBoss"
-  },
-  
-  "body": {"SrchParam":"'.$req['param'].'" }
-}';
+    
+    $post_data = '{"SrchParam":"'.$req['param'].'" }';
     //call API here to save in DB
         //$post=json_encode($post_data);
      // print_r($post_data);exit();
@@ -321,6 +300,7 @@ public function dropdown(Request $req){
     $url = $this::$url_static."/BankAPIService.svc/getIIFLDropdownMasters";
     $result=$this->call_json_data_api($url,$post_data);
     $http_result=$result['http_result'];
+    // print_r($http_result);exit();
     $error=$result['error'];
     $st=str_replace('"{', "{", $http_result);
     $s=str_replace('}"', "}", $st);
@@ -347,18 +327,7 @@ public function dropdown(Request $req){
         $data['source']=Session::get('source')?Session::get('source'):'MAA=';
        $json_data=json_encode($data);
 
-       $post_data = '{
-   "head": {
-    "requestCode": "PLRQCL01",
-    "key": "af28dc2bcd8a5660412407313b31d101",
-    "appVer": "1.0",
-    "osName": "WebAPI",
-    "appName": "ALLIANCE",
-    "source":"RupeeBoss"
-  },
-  
-  "body": '.$json_data.'
-}';
+       $post_data = $json_data;
     //call API here to save in DB
         $post=json_encode($post_data);
         // print_r($post);exit();
@@ -390,18 +359,7 @@ public function dropdown(Request $req){
        $data['ApplicantType']="COBORROWER";
        $json_data=json_encode($data);
        
-       $post_data = '{
-   "head": {
-    "requestCode": "PLRQCOAPP01",
-    "key": "af28dc2bcd8a5660412407313b31d101",
-    "appVer": "1.0",
-    "osName": "WebAPI",
-    "appName": "ALLIANCE",
-    "source":"RupeeBoss"
-  },
-  
-  "body": '.$json_data.'
-}';
+       $post_data = $json_data;
 //print_r($post_data);
 $url = $this::$url_static."/BankAPIService.svc/createIIFLCoAppDtls";
     $result=$this->call_json_data_api($url,$post_data);
@@ -428,19 +386,7 @@ $url = $this::$url_static."/BankAPIService.svc/createIIFLCoAppDtls";
       $data['CRMLeadID']=Session::get('leadno');
 
       $json_data=json_encode($data);
-      $post_data = '{
- 
-  "head": {
-   "requestCode": "PLRQAO01",
-   "key": "af28dc2bcd8a5660412407313b31d101",
-   "appVer": "1.0",
-   "osName": "WebAPI",
-   "appName": "ALLIANCE",
-   "source":"RupeeBoss"
- },
-  
-  "body": '.$json_data.'
-}';
+      $post_data = $json_data;
        print_r($post_data);
     $url = $this::$url_static."/BankAPIService.svc/createIIFLAadharOTP";
     $result=$this->call_json_data_api($url,$post_data);
@@ -460,19 +406,7 @@ $url = $this::$url_static."/BankAPIService.svc/createIIFLCoAppDtls";
     
        $json_data=json_encode($data);
        
-       $post_data = '{
-   "head": {
-    "requestCode": "PLRQOF01",
-    "key": "af28dc2bcd8a5660412407313b31d101",
-    "appVer": "1.0",
-    "osName": "WebAPI",
-    "appName": "ALLIANCE",
-    "source":"RupeeBoss"
-
-  },
-  
-  "body": '.$json_data.'
-}';
+       $post_data = $json_data;
 // print_r($post_data);exit();
     $url = $this::$url_static."/BankAPIService.svc/getIIFLofferstatus";
     $result=$this->call_json_data_api($url,$post_data);
@@ -492,20 +426,7 @@ $url = $this::$url_static."/BankAPIService.svc/createIIFLCoAppDtls";
       $data['Otp']=$req->otp;
       $json_data=json_encode($data);
        
-       $post_data = '{
-   "head": {
-    "requestCode": "PLRQVER01",
-   "key": "af28dc2bcd8a5660412407313b31d101",
-   "appVer": "1.0",
-   "osName": "WebAPI",
-   "appName": "ALLIANCE",
-   "source":"RupeeBoss"
-
-
-  },
-  
-  "body": '.$json_data.'
-}';
+       $post_data = $json_data;
 $url = $this::$url_static."/BankAPIService.svc/verifyIIFLAPIAadharOTP";
     $result=$this->call_json_data_api($url,$post_data);
     $http_result=$result['http_result'];
@@ -522,19 +443,7 @@ $url = $this::$url_static."/BankAPIService.svc/verifyIIFLAPIAadharOTP";
       $data['ProspectNumber']=Session::get('prospectno');
        $json_data=json_encode($data);
    // print_r($data);
-       $post_data = '{
-  
-   "head": {
-    "requestCode": "PLRQREVQ01",
-    "key": "af28dc2bcd8a5660412407313b31d101",
-    "appVer": "1.0",
-    "osName": "WebAPI",
-    "appName": "ALLIANCE",
-    "source":"RupeeBoss"
-  },
-  
-  "body": '.$json_data.'
-}';
+       $post_data = $json_data;
 // print_r($post_data);
 $url = $this::$url_static."/BankAPIService.svc/updateIIFLRevisedQuote";
     $result=$this->call_json_data_api($url,$post_data);
@@ -560,17 +469,8 @@ $url = $this::$url_static."/BankAPIService.svc/updateIIFLRevisedQuote";
           $extension=$req->$file->getClientOriginalExtension();
           $sub_catg=$req['sub_catg'];
           //print_r($sub_catg);exit();
-          $post_data='{
-     "head": {
-    "requestCode": "PLRQDOCKYC01",
-    "key": "af28dc2bcd8a5660412407313b31d101",
-    "appVer": "1.0",
-    "osName": "WebAPI",
-    "appName": "ALLIANCE",
-    "source":"RupeeBoss"
-  },           
-                  "body": {"ProspectNumber":"'.$prospectno.'","ApplicantType":"Applicant",
-                 "CatID":"'.$cat_id[$i].'","SubCatID":"'.$sub_catg[$i+1].'","ImageName":"'.$imageName.'","Extension":"'.$extension.'","Base64string":"'.$base64[$i].'"}}';
+          $post_data=' {"ProspectNumber":"'.$prospectno.'","ApplicantType":"Applicant",
+                 "CatID":"'.$cat_id[$i].'","SubCatID":"'.$sub_catg[$i+1].'","ImageName":"'.$imageName.'","Extension":"'.$extension.'","Base64string":"'.$base64[$i].'"}';
              
          $url = $this::$url_static."/BankAPIService.svc/uploadIIFLKYC";
          $result=$this->call_json_data_api($url,$post_data);
@@ -598,16 +498,8 @@ $url = $this::$url_static."/BankAPIService.svc/updateIIFLRevisedQuote";
       $imageName = time().'.'.$req->$file->getClientOriginalExtension();
       $extension=$req->$file->getClientOriginalExtension();
       $sub_catg=$req['sub_catg'];
-      $post_data='{"head": {
-                 "requestCode": "PLRQDOCFIN01",
-                  "key": "af28dc2bcd8a5660412407313b31d101",
-                  "appVer": "1.0",
-                  "osName": "WebAPI",
-                  "appName": "ALLIANCE",
-                  "source":"RupeeBoss"
-               },               
-              "body": {"ProspectNumber":"'.$prospectno.'","ApplicantType":"Applicant",
-             "CatID":"'.(4-$i).'","SubCatID":"'.$sub_catg[$i].'","ImageName":"'.$imageName.'","Extension":"'.$extension.'","Base64string":"'.$base64[$i].'"}}';
+      $post_data='{"ProspectNumber":"'.$prospectno.'","ApplicantType":"Applicant",
+             "CatID":"'.(4-$i).'","SubCatID":"'.$sub_catg[$i].'","ImageName":"'.$imageName.'","Extension":"'.$extension.'","Base64string":"'.$base64[$i].'"}';
          
 
      $url = $this::$url_static."/BankAPIService.svc/uploadIIFLFinDetls";
@@ -1247,7 +1139,7 @@ $url = $this::$url_static."/BankAPIService.svc/updateIIFLRevisedQuote";
     $data['source']=Session::get('source')?Session::get('source'):'MAA=';
     $data['CampaignName']=Session::get('CampaignName');
     $post_data=json_encode($data);
-   
+   // print_r($post_data);exit();
     $url = $this::$url_static."/BankAPIService.svc/createCapitalFloatBLReq";
       $result=$this->call_json_data_api($url,$post_data);
         $http_result=$result['http_result'];
@@ -1407,7 +1299,7 @@ $url = $this::$url_static."/BankAPIService.svc/updateIIFLRevisedQuote";
          $st=str_replace('"{', "{", $http_result);
          $s=str_replace('}"', "}", $st);
          $m=$s=str_replace('\\', "", $s);
-         // print_r($http_result);exit();
+         print_r($http_result);exit();
          $obj=json_decode($m);
          return response()->json( $obj);
     }
@@ -1493,6 +1385,19 @@ $url = $this::$url_static."/BankAPIService.svc/updateIIFLRevisedQuote";
         "mobile_no": "'.$req->mobile_no.'",
       }],
       "previous_loan_taken" : "'.$req->previous_loan_taken.'",
+      "previous_loan_details":[ 
+         { 
+            "type":0,
+            "displayName":0,
+            "bank":0,
+            "bankOther":0,
+            "loanAmount":0,
+            "monthlyEmi":0,
+            "odCcLimit":0,
+            "odCcUtilized":0
+         },
+         
+      ]
       
    },
    "loanCode":"'.$req->loanCode.'",

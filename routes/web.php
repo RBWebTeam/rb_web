@@ -501,4 +501,12 @@ Route::post('p_loansubmit','FormController@p_loan');
 // Route::post('pl-city-master','NewProcessController@pl_city_master');
 
 
+/*Lenden*/
+Route::get('lenden','LoanController@lenden');
+Route::post('lenden-get-otp','LoanController@get_otp');
+Route::post('lenden-verify','LoanController@verify_otp');
+Route::post('lenden-sign-up','LoanController@sign_up');
+Route::post('lenden-taskid','LoanController@task_id');
+
+
 

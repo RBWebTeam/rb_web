@@ -396,7 +396,7 @@ h4 {color:#999;}
         <input type="text" name="residence_ownership_status" id="ownership_status">
         <input type="text" name="mobile_no" id="mobile_numbr">
 	    <input type="text" name="access_token" id="access_tkn">
-        <input type="text" name="loanCode" id="loancode">
+        <input type="text" name="loanCode" id="loancode" value="5b1780329d8c7">
         <div class="panel-body">
 		<div class="col-md-3">
 		<label>Business Name<span class="mandtry"> *</span></label>
@@ -544,6 +544,44 @@ h4 {color:#999;}
 	</div>
 	</form>
     </div>
+
+    <!-- Financial Details -->
+    <div  class="row">
+        <h3><center>Financial Details</center></h3>
+        <br/>
+        <form id="financial-details" name="financial-details" method="POST"  class="frm">
+			{{ csrf_field() }}								
+        
+        <div class="panel-body">
+		<div class="col-md-3">
+		<label>Channel you use to sell products</label>
+		<select name="platform" id="platform" class="block drop-arr select-sty form-control" required="">
+       <option disabled selected value="">Platform</option>
+       <option value="Online">Online</option>
+       <option value="Offline">Offline</option>
+	    <option value="Both">Both</option>
+		</select> 
+		</div>
+
+	 <div class="col-md-3" id="selling_since">
+      <label>Selling Online Since</label>
+       <input type="text" name="selling_online_since" id="selling_online_since" class="form-control lastReported" required="">
+       </div>
+
+       <div class="col-md-3">
+       <label>Top market place that you sell on</label>
+	   <select  name="marketPlaces"  id="marketPlaces" class="block drop-arr select-sty form-control" required="">
+       <option disabled selected value="">Market Place</option>
+       <option value="1c41176794537">Flipkart</option>
+       <option value="78f92504ce5be">Jabong</option>
+	   <option value="4aa1fdfded9cc">Limeroad</option>
+	   </select> 
+       </div>
+
+	 
+	</div>
+	</form>
+    </div>
                     			
        <div id="get_quotes" class="row" style="display: none;" >
                     				
@@ -684,7 +722,7 @@ h4 {color:#999;}
          url: "{{URL::to('flexi-loans-token')}}",
          data : {'_token': v_token},
          success: function(msg){
-         	console.log(msg.access_token);
+         	// console.log(msg.access_token);
 
           $('#access_token').val(msg.access_token);
           $('#acc_token').val(msg.access_token);
@@ -708,7 +746,7 @@ $(document).ready(function(){
    // data : {'_token': v_token}, 
    success: function(msg)  
    {
-   	console.log(msg.partnerList);
+   	// console.log(msg.partnerList);
    	if(msg.partnerList)
       {      $.each(msg.partnerList, function( index, value ) {
             $('.partner_code').append('<option value="'+value.code+'">'+value.name+'</option>');
@@ -817,7 +855,7 @@ $(document).ready(function(){
          url: "{{URL::to('flexi-loans-appln')}}",
          data : $('#flexi-loan-application').serialize(),
          success: function(msg){
-         	console.log(msg.success);
+         	// console.log(msg.success);
          if(msg.success==true)
          {
            $('#loanCode').val(msg.loanCode);
@@ -866,6 +904,37 @@ $(document).ready(function(){
 	});
 </script>
 
+<!-- Business Details -->
+<script type="text/javascript">
+	$('#business_details').click(function(){
+		if (!$('#business-details').valid()) 
+			{
+             return false;
+			} 
+			else 
+			{
+              $.ajax({  
+         type: "POST",  
+         url: "{{URL::to('flexi-business')}}",
+         data : $('#business-details').serialize(),
+         success: function(msg){
+         	
+         	if (msg.success==true) 
+         		{
+                 alert('Your Business Details has been recieved');
+         		} 
+         		else 
+         		{
+                  alert(msg.errorMsg);
+         		}
+         			  
+      }   
+     });
+			}
+	})
+</script>
+
+
 
 
 <script type="text/javascript">
@@ -887,6 +956,21 @@ function pan_card(obj,val){
                   }               
     }
     }
+
+$('#platform').on('change', function() {
+  // alert('okae');
+  var platform=$('#platform').find(":selected").val();
+  console.log(platform);
+  if ( platform == 'Online' || platform == 'Both')
+      {
+       
+        $("#selling_since").show();
+       
+      }
+      else{
+       $("#selling_since").hide();
+      }
+});
 </script>
 
 

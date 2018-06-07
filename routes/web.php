@@ -451,6 +451,10 @@ Route::get('flexi-loans-partner-list','LoanController@flexi_loans_partner_list')
 Route::post('flexi-loans-appln','LoanController@flexi_loans_appln');
 Route::post('flexi-loans-appln-update','LoanController@flexi_loans_appln_update');
 Route::post('flexi-business','LoanController@flexi_business_dtls');
+Route::post('flexi-financial','LoanController@flexi_financial_dtls');
+Route::post('flexi-personal','LoanController@flexi_personal_dtls');
+Route::post('flexi-doc-kyc','LoanController@flexi_doc_kyc');
+
 
 
 // /*Demo*/

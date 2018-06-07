@@ -32,7 +32,7 @@ h4 {color:#999;}
 }
 </style>
 
-<div class=" ">
+<div class=" " >
     <!-- content start -->
     <div class="container">
         <div class="row"> 	 	
@@ -213,17 +213,17 @@ h4 {color:#999;}
 
 
     <!-- UpdateFlexiLoanAppln -->
-    <div id="details" class="row">
+    <div id="details" class="row" style="display: none;">
     <h3><center>Update Flexi Loan Application</center></h3>
     <br/>
     <form id="update-flexi-loan-application" name="update-flexi-loan-application" method="POST"  class="frm">
 
       {{ csrf_field() }}
-      <input type="text" name="customerCode" id="customerCode">
-      <input type="text" name="loanCode" id="loanCode" value="">
-      <input type="text" name="access_token" id="acc_token" value="">
-      <input type="text" name="partner_count" value="2">
-      <input type="text" name="loan_type" value="ecom">
+      <input type="hidden" name="customerCode" id="customerCode">
+      <input type="hidden" name="loanCode" id="loanCode" value="">
+      <input type="hidden" name="access_token" id="acc_token" value="">
+      <input type="hidden" name="partner_count" value="2">
+      <input type="hidden" name="loan_type" value="ecom">
         <div class="panel-body">
 		<div class="col-md-3">
 		<label>Full Name<span class="mandtry"> *</span></label>
@@ -380,7 +380,7 @@ h4 {color:#999;}
 
     <!-- Business Details -->
 
-    <div  class="row">
+    <div  class="row" style="display: none;">
         <h3><center>Business Details</center></h3>
         <br/>
         <form id="business-details" name="business-details" method="POST"  class="frm">
@@ -395,8 +395,8 @@ h4 {color:#999;}
         <input type="text" name="address" id="which_address">
         <input type="text" name="residence_ownership_status" id="ownership_status">
         <input type="text" name="mobile_no" id="mobile_numbr">
-	    <input type="text" name="access_token" id="access_tkn">
-        <input type="text" name="loanCode" id="loancode" value="5b1780329d8c7">
+	    <input type="hidden" name="access_token" id="access_tkn">
+        <input type="hidden" name="loanCode" id="loancode">
         <div class="panel-body">
 		<div class="col-md-3">
 		<label>Business Name<span class="mandtry"> *</span></label>
@@ -546,12 +546,13 @@ h4 {color:#999;}
     </div>
 
     <!-- Financial Details -->
-    <div  class="row">
+    <div  class="row" style="display: none;">
         <h3><center>Financial Details</center></h3>
         <br/>
         <form id="financial-details" name="financial-details" method="POST"  class="frm">
 			{{ csrf_field() }}								
-        
+        <input type="hidden" name="access_token" id="access">
+        <input type="hidden" name="loanCode" id="code">
         <div class="panel-body">
 		<div class="col-md-3">
 		<label>Channel you use to sell products</label>
@@ -565,28 +566,156 @@ h4 {color:#999;}
 
 	 <div class="col-md-3" id="selling_since">
       <label>Selling Online Since</label>
-       <input type="text" name="selling_online_since" id="selling_online_since" class="form-control lastReported" required="">
+       <input type="text" name="selling_online_since" id="selling_online_since" placeholder="Online Since" class="form-control lastReported" required="">
        </div>
 
        <div class="col-md-3">
        <label>Top market place that you sell on</label>
-	   <select  name="marketPlaces"  id="marketPlaces" class="block drop-arr select-sty form-control" required="">
-       <option disabled selected value="">Market Place</option>
-       <option value="1c41176794537">Flipkart</option>
-       <option value="78f92504ce5be">Jabong</option>
-	   <option value="4aa1fdfded9cc">Limeroad</option>
+	   <select multiple name="marketPlaces"  id="marketPlaces" class="block drop-arr select-sty form-control" required="">
+       <option data-group='SHOW' disabled value=''>Market Place</option>
+       <option data-group="Online" value="1c41176794537">Flipkart</option>
+       <option data-group="Online"  value="78f92504ce5be">Jabong</option>
+	   <option data-group="Online" value="4aa1fdfded9cc">Limeroad</option>
+	   <option data-group="Online" value="59631bc68f9e3">OverCart</option>
+	   <option data-group="Online" value="5969727576129">Paytm</option>
+	   <option data-group="Online" value="019c03d0e6beb">Shopclues</option>
+	   <option data-group="Online" value="504147b7ed54c">Snapdeal</option>
+	   <option data-group="Online" value="051417102815b">Voonik</option>
+	   <option data-group="Online" value="aa31a9fd5ed3b">XSTOK</option>
+	   <option data-group="Offline" value="59002aaed7a40">ICICI Merchant Services</option>
+	   <option data-group="Offline" value="8ce45a8c335e1">MSwipe</option>
+	   <option data-group="Offline" value="0b16a2206f607">Pine Labs</option>
+	   <option  value="9c7bfcd45af46">Other</option>
 	   </select> 
        </div>
 
+       <div class="col-md-3">
+	    <label>Total monthly sales</label>
+	    <input type="text" name="total_monthly_sales" id="total_monthly_sales" onkeypress="return fnAllowNumeric(event)" minlength="5"  maxlength="9" class="form-control" required="">
+	    </div>
+          <div class="col-md-12 ">
+       <a class="btn btn-default btn-sm" id="financial_details">NEXT<i class="icon-arrow-right"></i></a>
+       </div>
 	 
 	</div>
 	</form>
     </div>
+
+    <!-- Personal Details -->
+    <div  class="row">
+        <h3><center>Personal Details</center></h3>
+        <br/>
+        <form id="personal-details" name="personal-details" method="POST"  class="frm">
+			{{ csrf_field() }}								
+        <input type="hidden" name="access_token" id="acc_tkn">
+        <input type="hidden" name="loanCode" id="loancd">
+        <div class="panel-body">
+		<div class="col-md-3">
+		<label>Education</label>
+		<select name="education" id="education" class="block drop-arr select-sty form-control" required="">
+       <option disabled selected value="">Education</option>
+       <option value="Primary">Primary</option>
+       <option value="Secondary">Secondary</option>
+	   <option value="Bachelor's Degree">Bachelor's Degree</option>
+	   <option value="Master's Degree">Master's Degree</option>
+		</select> 
+		</div>
+
+		<div class="col-md-3">
+		<label>Marital Status</label>
+		<select name="marital_status" id="marital_status" class="block drop-arr select-sty form-control" required="">
+       <option disabled selected value="">Marital Status</option>
+       <option value="Married">Married</option>
+       <option value="Single">Single</option>
+	   <option value="Divorced">Divorced</option>
+	   
+		</select> 
+		</div>
+
+	 <div class="col-md-3">
+      <label>Aadhar number</label>
+       <input type="text" name="aadhar_no" id="aadhar_no" minlength="12" maxlength="12"  class="form-control" >
+       </div>
+
+       <div class="col-md-3">
+		<label>Annual Income(all sources)</label>
+		<select name="annual_income" id="annual_income" class="block drop-arr select-sty form-control" required="">
+       <option disabled selected value="">Annual Income</option>
+       <option value="100000 <">100000 <</option>
+       <option value="100000 - 500000">100000 - 500000</option>
+	   <option value="500001 - 1000000">500001 - 1000000</option>
+	   <option value="> 1000000">> 1000000</option>
+	   
+		</select> 
+		</div>
+
+		<h4><b>References:</b></h4>
+		<h4>Business Colleague 1</h4><hr>
+		<div class="col-md-3">
+      <label>Full Name</label>
+       <input type="text" name="name" id="nm"  onkeypress="return AllowAlphabet(event)"  class="form-control" required>
+       </div>
+
+       <div class="col-md-3">
+      <label>Phone number</label>
+       <input type="text" name="mobile" id="mobile" minlength="10" maxlength="10" onkeypress="return fnAllowNumeric(event)"  class="form-control" required >
+       </div>
+
+       <div class="col-md-3">
+      <label>Profession</label>
+       <input type="text" name="profession" id="profession" class="form-control" required >
+       </div>
+
+       <div class="col-md-3">
+      <label>Number of Years Known</label>
+       <input type="text" name="yearsOfKnowability" id="yearsOfKnowability" onkeypress="return fnAllowNumeric(event)" minlength="1" maxlength="2"  class="form-control" required >
+       </div>
+
+       <h4>Business Colleague 2</h4><hr>
+		<div class="col-md-3">
+      <label>Full Name</label>
+       <input type="text" name="name" id="nme"  onkeypress="return AllowAlphabet(event)"  class="form-control" required>
+       </div>
+
+       <div class="col-md-3">
+      <label>Phone number</label>
+       <input type="text" name="mobile" id="mobi" minlength="10" maxlength="10" onkeypress="return fnAllowNumeric(event)"  class="form-control" required >
+       </div>
+
+       <div class="col-md-3">
+      <label>Profession</label>
+       <input type="text" name="profession" id="professn" class="form-control" required >
+       </div>
+
+       <div class="col-md-3">
+      <label>Number of Years Known</label>
+       <input type="text" name="yearsOfKnowability" id="yearsOfKnow" onkeypress="return fnAllowNumeric(event)" minlength="1" maxlength="2"  class="form-control" required >
+       </div>
+
+          <div class="col-md-12 ">
+       <a class="btn btn-default btn-sm" id="personal_details">NEXT<i class="icon-arrow-right"></i></a>
+       </div>
+	 
+	</div>
+	</form>
+    </div>
+
+    <div  class="row">
+        <h3><center>Upload Documents</center></h3>
+        <br/>
+        <form id="doc-details" name="doc-details" enctype="multipart/form-data"  method="POST"  class="frm">
+			{{ csrf_field() }}
+			<div class="col-md-3">PAN Card - Personal</div>
+            <div class="col-md-4">
+			<input type="file" name="name" class="form-control" placeholder="Upload File" required>
+			</div>
+			<div class="col-md-3 ">
+            <a class="btn btn-default btn-sm" id="doc_details">NEXT<i class="icon-arrow-right"></i></a>
+            </div>
+			</form>
+			</div>
                     			
-       <div id="get_quotes" class="row" style="display: none;" >
-                    				
-                    				
-                    			</div>
+       
                     			
                     		</div>
                     	</div>
@@ -727,6 +856,9 @@ h4 {color:#999;}
           $('#access_token').val(msg.access_token);
           $('#acc_token').val(msg.access_token);
           $('#access_tkn').val(msg.access_token);
+          $('#access').val(msg.access_token);
+          $('#acc_tkn').val(msg.access_token);
+          
       }   
      });
 	});
@@ -859,6 +991,8 @@ $(document).ready(function(){
          if(msg.success==true)
          {
            $('#loanCode').val(msg.loanCode);
+           $('#code').val(msg.loanCode);
+           $('#loancd').val(msg.loanCode);
            $('#customerCode').val(msg.customerCode);
            // $('#loancode').val(msg.loanCode);
          }else
@@ -934,7 +1068,94 @@ $(document).ready(function(){
 	})
 </script>
 
+<!-- Financial Details -->
+<script type="text/javascript">
+	$('#financial_details').click(function(){
+		if (!$('#financial-details').valid()) 
+			{
+             return false;
+			} 
+			else 
+			{
+              $.ajax({  
+         type: "POST",  
+         url: "{{URL::to('flexi-financial')}}",
+         data : $('#financial-details').serialize(),
+         success: function(msg){
+         	
+         	if (msg.success==true) 
+         		{
+                 alert('Your Financial Details has been recieved');
+         		} 
+         		else 
+         		{
+                  alert(msg.errorMsg);
+         		}
+         			  
+      }   
+     });
+			}
+	})
+</script>
 
+<!-- Personal Details -->
+<script type="text/javascript">
+	$('#personal_details').click(function(){
+		if (!$('#personal-details').valid()) 
+			{
+             return false;
+			} 
+			else 
+			{
+              $.ajax({  
+         type: "POST",  
+         url: "{{URL::to('flexi-personal')}}",
+         data : $('#personal-details').serialize(),
+         success: function(msg){
+         	
+         	if (msg.success==true) 
+         		{
+                 alert('Your Personal Details has been recieved');
+         		} 
+         		else 
+         		{
+                  alert(msg.errorMsg);
+         		}
+         			  
+      }   
+     });
+			}
+	})
+</script>
+
+
+<!-- Doc Upload -->
+<script type="text/javascript">
+	$('#doc_details').click(function(){
+ 
+  if (!$('#doc-details').valid()) {
+  return false;
+    }
+    else
+    {    
+
+    	$.ajax({  
+         url:"{{URL::to('flexi-doc-kyc')}}" ,  
+          data:new FormData($("#doc-details")[0]),
+          dataType:'json',
+          async:false,
+          type:'POST',
+          processData: false,
+          contentType: false,
+          success: function(msg){
+          
+            
+              
+        }  
+      });   
+     }
+  });
+</script>
 
 
 <script type="text/javascript">
@@ -965,12 +1186,33 @@ $('#platform').on('change', function() {
       {
        
         $("#selling_since").show();
+        
        
       }
       else{
        $("#selling_since").hide();
       }
 });
+
+$('#platform').on('change', function(){
+    	$("#marketPlaces").val('');
+        var val = $(this).val();
+        // alert(val);
+        
+        var sub = $('#marketPlaces');
+
+        $('option', sub).filter(function(){
+            if (
+                 $(this).attr('data-group') === val 
+              || $(this).attr('data-group') === 'SHOW'
+            ) {
+                $(this).show();
+            } else {
+                $(this).show();
+            }
+        });
+    });
+    $('#platform').trigger('change');
 </script>
 
 

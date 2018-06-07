@@ -47,7 +47,7 @@
 					        <div class="col-md-12"><h4 class="hdr pad1 text-center">Registration Form</h4></div>
                              
                                     
-                                      <!-- customer name -->
+                                      <!-- Customer Details -->
                                       <div class="col-md-4 col-sm-12 col-xs-12">
                                       <div class="form-group">
                                       <input name="FirstName" id="first_name" type="text" class="form-control" onkeypress="return AllowAlphabet(event)" placeholder="First Name"  required="">
@@ -85,7 +85,7 @@
 
                                       <div class="col-md-4 col-sm-12 col-xs-12">
                                       <div class="form-group">
-                                      <input type="text" class="form-control input-md" placeholder="Address" name="AddressLine[]" maxlength="200"  required>
+                                      <input type="text" class="form-control input-md" placeholder="Address" name="AddrLine1[]" maxlength="200"  required>
                                       </div>
                                       </div>
                                       
@@ -214,7 +214,7 @@
 
                                        <input type="hidden" name="AccountNumber[]" id="AccountNumber" value="">
                                        <input type="hidden" name="MiddleName" id="MiddleName" value="">
-                                       <input type="hidden" name="LastName" id="LastName" value="">
+                                   
                                        <input type="hidden" name="Locality1[]" id="Locality1" value="">
                                        <input type="hidden" name="Locality2[]" id="Locality2" value="">
                                        <input type="hidden" name="PassportId" id="PassportId" value="">

@@ -451,6 +451,10 @@ Route::get('flexi-loans-partner-list','LoanController@flexi_loans_partner_list')
 Route::post('flexi-loans-appln','LoanController@flexi_loans_appln');
 Route::post('flexi-loans-appln-update','LoanController@flexi_loans_appln_update');
 Route::post('flexi-business','LoanController@flexi_business_dtls');
+Route::post('flexi-financial','LoanController@flexi_financial_dtls');
+Route::post('flexi-personal','LoanController@flexi_personal_dtls');
+Route::post('flexi-doc-kyc','LoanController@flexi_doc_kyc');
+
 
 
 // /*Demo*/
@@ -499,6 +503,14 @@ Route::get('personal-loan-demo','NewProcessController@personal_loan_demo');
 Route::get('state','NewProcessController@state');
 Route::post('p_loansubmit','FormController@p_loan');
 // Route::post('pl-city-master','NewProcessController@pl_city_master');
+
+
+/*Lenden*/
+Route::get('lenden','LoanController@lenden');
+Route::post('lenden-get-otp','LoanController@get_otp');
+Route::post('lenden-verify','LoanController@verify_otp');
+Route::post('lenden-sign-up','LoanController@sign_up');
+Route::post('lenden-taskid','LoanController@task_id');
 
 
 

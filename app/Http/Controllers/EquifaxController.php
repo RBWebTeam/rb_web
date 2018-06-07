@@ -272,16 +272,12 @@ $post_data='{
  }
 
        public function rectify_equi_score(Request $req){
-
-       
-
-     
          $score=$this->equifax_query_pl($req);
          $va=$score['score'];
          $scorarr = json_decode(json_encode($va), TRUE);
       
 
-          $req['AddressLine']=$req['AddressLine'][0];
+          $req['AddrLine1']=$req['AddrLine1'][0];
           $req['AddressType']=$req['AddressType'][0];
           $req['City']=$req['City'][0];
           $req['State']=$req['State'][0];
@@ -311,12 +307,12 @@ $post_data='{
         $data['CampaignName']=Session::get('CampaignName');
         $data['score']=$ar;
         $file=$req->file('attachment');
-        $destinationPath = $_SERVER['DOCUMENT_ROOT'] .'/uploads/rectify/'.$req->Mobile_Num.'/';
-        $filename=$file->getClientOriginalExtension();
+        $destinationPath = public_path() .'/uploads/rectify/'.$req->Mobile_Num.'/';
+        $filename=$file->getClientOriginalName();
         $file->move($destinationPath,$filename);
         // print_r($destinationPath.$filename);exit();
-        $d=array_merge($data,['file_path'=>$destinationPath.$filename]);
-        unset($d['attachment']);
+        $d=array_merge($data,['attachment'=>$destinationPath.$filename]);
+        $d['attachment'];
         $post_data=json_encode($d);
         // print_r($post_data);exit();
         $url = $this::$url_static."/BankAPIService.svc/createRectifyCreditCustDetail";

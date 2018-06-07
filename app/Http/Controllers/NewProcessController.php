@@ -97,12 +97,12 @@ class NewProcessController extends CallApiController
         return view('personal-loan-demo');
       }
 
-      public function pl_city_master(Request $req){
-      // print_r($req->all());exit();
-      $quote_data=DB::select('call usp_load_pl_city_master ("'.$req['State'].'")');
-       // print_r($quote_data);exit();
-      return $quote_data;
-      }   
+      // public function pl_city_master(Request $req){
+      // // print_r($req->all());exit();
+      // $quote_data=DB::select('call usp_load_pl_city_master ("'.$req['State'].'")');
+      //  // print_r($quote_data);exit();
+      // return $quote_data;
+      // }   
 
      
 

@@ -1,4 +1,5 @@
 <?php
+Route::get('logsi', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
 Route::get('/','HomeController@index');
 Route::get('switch','HomeController@switch');
 // Route::get('personal-loan','LoanController@personal_loan');

@@ -65,7 +65,7 @@ return [
             'strict' => true,
             'engine' => null,
         ],
-        'mysql2' => [
+        'ERP' => [
 
             'driver' => 'mysql',
             'host' => env('DB_HOST_SECOND'),

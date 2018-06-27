@@ -33,7 +33,6 @@
                     <div class="how-it-block1 bg-boxshadow" style=" min-height: 375px;">
                                         <form id="Yes_Bank_HL_form" name="Yes_Bank_HL_form" method="POST">
                                         {{ csrf_field() }}
-                                       
                                         <div class="col-md-10 white-bg pad1 box-shadow">
                                         
                                         

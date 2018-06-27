@@ -14,9 +14,11 @@ class CreditcardController extends CallApiController
      public function credit_card_form(Request $req){
 
              $query=new Seo();
-         return view('credit-card-form')->with($query->CreditCardForm());
-     }
 
+
+
+            return view('credit-card-form')->with($query->CreditCardForm());
+     }
 
      public function icici_state(){
      $query = DB::table('state_master')->select('State_Id', 'state_name')->get();
@@ -33,6 +35,7 @@ class CreditcardController extends CallApiController
 
      public function credit_form_submit(Request $req){
         // print_r($req->all());exit();
+        $error=0;
         try{
             $save=new credit_card_form_req(); 
             $id=$save->store($req);
@@ -60,25 +63,31 @@ class CreditcardController extends CallApiController
             $m=$s=str_replace('\\', "", $s);
             $update_user='';
             $obj = json_decode($m);
-            // print_r($obj);exit();
-            if (isset($obj->ApplicationId))  
-            {
-                $update_user=DB::table('credit_card_form_req')
-                 ->where('id',$id)
-                 ->update(['ApplicationId'=>$obj->ApplicationId]);
-                 if(!$update_user){
-                    $error=2;  
-                }else{  
-                    $error =json_encode( array('id' =>$obj->ApplicationId,'Decision'=>$obj->Decision,'Reason'=>$obj->Reason ));
-                  }
-            }else{
-                $error=3;
-            }
-             
+
+            
+            // if (isset($obj->ApplicationId) && $obj->ApplicationId!=null)  
+            // {
+            //     $update_user=DB::table('credit_card_form_req')
+            //      ->where('id',$id)
+            //      ->update(['ApplicationId'=>$obj->ApplicationId]);
+            //      if(!$update_user){
+            //         $error=2;  
+            //     }else{  
+            //         $error =json_encode( array('id' =>$obj->ApplicationId,'Decision'=>$obj->Decision,'Reason'=>$obj->Reason ));
+            //       }
+            // }else{
+            //    echo json_encode($obj);
+               
+
+            // }
+             $error=1;
+        return  json_encode( array('id' =>$obj->ApplicationId,'Decision'=>$obj->Decision,'Reason'=>$obj->Reason,'error'=>$error));          
         }catch(\Exception $ee){
             $error=2;
+             
         }
-        return $error; 
+      
+        return  json_encode( array('error'=>$error)); 
 
     }
 
@@ -189,6 +198,7 @@ class CreditcardController extends CallApiController
         $m=$s=str_replace('\\', "", $s);
         $n=$s=str_replace('#', "", $m);
         $obj=json_decode($n);
+        // print_r($obj);exit();
 
         // $obj->broker_status=(Session::get('brokerid')||Session::get('empid')||Session::get('source'))?1:0;
        // print_r($obj);exit();
@@ -226,6 +236,44 @@ class CreditcardController extends CallApiController
    // print_r($name);exit();
             return view('credit-card-rbl-dc')->with('data',$data)->with('card',$name)->with('ProcessingFee',$ProcessingFee);
     }
+
+
+    /*SBI CC*/
+
+    public function sbi_cc(){
+        return view('new-cc');
+    }
+
+    public function sbi_cc_submit(Request $req){
+        // print_r($req->all());exit();
+            $data=$req->all();
+            $data['brokerid']=Session::get('brokerid')?Session::get('brokerid'):'MAA=';
+            $data['empid']=Session::get('empid')?Session::get('empid'):'MAA=';
+            $data['source']=Session::get('source')?Session::get('source'):'MAA=';
+            $data['CampaignName']=Session::get('CampaignName');
+            
+            $post_data=json_encode($data);
+      // print_r($post_data);exit();
+              $url = $this::$url_static."/BankAPIService.svc/createSBICCLeadReq";
+              $result=$this->call_json_data_api($url,$post_data);
+              $http_result=$result['http_result'];
+                // print_r($http_result);exit();
+              $error=$result['error'];
+              $st=str_replace('"{', "{", $http_result);
+              $s=str_replace('}"', "}", $st);
+              $m=$s=str_replace('\\', "", $s);
+              $obj=json_decode($m);
+             
+             
+
+      return response()->json( $obj);
+
+       
+    }
+
+    public function sbi(){
+    return view('sbi');
+     }
 }
 
 

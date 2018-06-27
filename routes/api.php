@@ -77,4 +77,4 @@ Route::post('rbl-pl-calc','MobileApiController@rbl_pl_calc');
 /*NRI*/
 Route::post('nri-home-loan','MobileApiController@nri');
 Route::post('balance-transfer-with-qid','MobileApiController@balance_transfer_with_quoteid');
-
+Route::post('integrate-test','ApiController@integrate_test');

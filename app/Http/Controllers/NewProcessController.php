@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Session;
-use Response;
 use DB;
  
 use App\SEOlibraries\Seo;
@@ -91,23 +90,20 @@ class NewProcessController extends CallApiController
      // print_r($obj);exit();
      return response()->json( $obj);
     }  
-      
 
-      public function personal_loan_demo(){
+
+    public function personal_loan_demo(){
         return view('personal-loan-demo');
       }
 
-      // public function pl_city_master(Request $req){
-      // // print_r($req->all());exit();
-      // $quote_data=DB::select('call usp_load_pl_city_master ("'.$req['State'].'")');
-      //  // print_r($quote_data);exit();
-      // return $quote_data;
-      // }   
+      public function pl_city_master(Request $req){
+      // print_r($req->all());exit();
+      $quote_data=DB::select('call usp_load_nonmetro_city_master ()');
+       // print_r($quote_data);exit();
+      return $quote_data;
+      }  
+      
 
-     
 
-      public function nri(){
-        return view('nri-expert');
-      }
       
 }

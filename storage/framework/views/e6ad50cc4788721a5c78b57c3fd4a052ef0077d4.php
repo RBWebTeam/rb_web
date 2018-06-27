@@ -52,7 +52,7 @@ $(document).ready(function(){
 </script>
 
 <!-- <link rel="stylesheet" href="<?php echo e(URL::to('css/iziModal.min.css')); ?>"> -->
-<link rel="stylesheet" href="<?php echo e(URL::to('css/icons.css?v=1')); ?>">
+<!-- <link rel="stylesheet" href="<?php echo e(URL::to('css/icons.css?v=1')); ?>"> -->
 
 <style>
 
@@ -112,9 +112,6 @@ setInterval(blink_text, 1000);
 </script>
 </head>
 <body>
- 
-
-                                        
 <div class="whats-new"><a href="javascript:void(0)" class="link"><i class="fa fa-gift"></i>&nbsp;<b class="blink">What's New </b>&nbsp;&nbsp;<i class="fa fa-angle-up"></i></a>
 
 <div class="slide-dv">
@@ -147,7 +144,8 @@ setInterval(blink_text, 1000);
     </div>
 
     <div class="item">
-      <a href="http://rupeeboss.mytaxpert.in" target="_blank"><img src="images/mytaxpert_logo_banner.png" width="266"></a>
+      <a href="http://rupeeboss.mytaxpert.in" target="_blank">
+      <img src="images/mytaxpert_logo_banner.png" width="266"></a>
     </div>
   </div>
 
@@ -168,7 +166,7 @@ setInterval(blink_text, 1000);
                 <div class="col-md-10 col-sm-6 col-xs-6 text-right">
                     <div class="header-action">
                         <a href="<?php echo e(URL::to('equifax-verification')); ?>" class="btn btn-credit" style="padding:14px 12px">Free Credit Report</a>
-                        <a href="<?php echo e(URL::to('contact-us')); ?>" class="btn btn-default hide-btn" style="padding:14px 13px">Expert Assistance</a>
+                        <a href="<?php echo e(URL::to('contact-us')); ?>" class="btn btn-default hide-btn" style="padding:14px 13px">Chat Box</a>
                         
                         <a class="hidden-lg top-ic top-ic1" title="Free Credit Report"  href="<?php echo e(URL::to('equifax-verification')); ?>"><i class="fa fa-tachometer"></i></a>
                         <a class="hidden-lg top-ic" title="Expert Assistance"  href="<?php echo e(URL::to('contact-us')); ?>"><i class="fa fa-phone"></i></a>
@@ -182,7 +180,7 @@ setInterval(blink_text, 1000);
                         <ul class="nav navbar-nav">
                         <?php if(Session::has('email')): ?>
                          <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#"><?php echo Session::get('name');?>
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#"><?php echo ucfirst(Session::get('name'));?>
                           <span class="caret"></span></a>
                           <ul class="dropdown-menu">
                           <li><a id="googleLOG" href="<?php echo e(URL::to('logout')); ?>">Logout</a></li>
@@ -448,8 +446,6 @@ setInterval(blink_text, 1000);
                             <a href="<?php echo e(URL::to('sme-working-capital')); ?>" class="btn-2 btn-secondary btn-block" style="background-color: #000;">SME CAR LEASING</a>
                         </div>
                     </div>
-
-                    
 
                 </div>
             </div>

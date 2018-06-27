@@ -134,7 +134,40 @@
                                 </select>
                             </div>
                             </div>
+      
+
+
+          <div class="col-md-4 col-sm-12 col-xs-12">
+         <div class="form-group">
+         <select name="State[]" class="form-control dropdown" id="state_id" required>
+                           <option disabled selected value="" >Select State</option>
+                           @foreach($state as $value)
+                         <option value="{{$value->state_code}}">{{$value->state_name}}</option>
+                        @endforeach
+                       </select>
+           </div>
+           </div>
+
+
         <div class="col-md-4 col-sm-12 col-xs-12">
+         <div class="form-group">
+     
+         
+          <input type="text" class=" form-control dropdown search_citynm" name="City[]" id="City" Placeholder="City" required>
+
+                   <!--     <select name="City[]" class="form-control dropdown search_citynm" id="City" required>
+                       <option disabled selected value="" >Select City</option>
+                          
+                       </select> -->
+
+
+
+           </div>
+           </div>
+
+
+
+             <div class="col-md-4 col-sm-12 col-xs-12">
             <div class="form-group">
              <input type="text" name="Locality1" id="Locality1" maxlength="40" Placeholder="Locality 1" maxlength="40" class="form-control input-md"  required>
             </div>
@@ -146,13 +179,6 @@
             </div>
         </div>
 
-        <div class="col-md-4 col-sm-12 col-xs-12">
-         <div class="form-group">
-         <label class="control-label sr-only" for="City">Select City</label>
-         
-          <input type="text" class=" form-control dropdown search_citynm" name="City[]" id="City" Placeholder="City" required>
-           </div>
-           </div>
            
           <div class="col-md-4 col-sm-12 col-xs-12">
             <div class="form-group">
@@ -160,16 +186,7 @@
             </div>
           </div>
 
-          <div class="col-md-4 col-sm-12 col-xs-12">
-         <div class="form-group">
-         <select name="State[]" class="form-control dropdown" required>
-                           <option disabled selected value="" >Select State</option>
-                           @foreach($state as $value)
-                         <option value="{{$value->state_code}}">{{$value->state_name}}</option>
-                        @endforeach
-                       </select>
-           </div>
-           </div>
+        
         
       
       
@@ -238,14 +255,14 @@
                             
                              <div class="col-md-4 col-sm-12 col-xs-12">
                             <div class="form-group">
-                                <input type="text" name="AccountNumber[0]" id="Acc_no" maxlength="16" placeholder="Saving/Current Account No" class="form-control input-md"  required>
+                                <input type="text" name="AccountNumber[0]" id="Acc_no" maxlength="16" required="" placeholder="Saving/Current Account No" class="form-control input-md"  >
                            
                             </div>
                             </div>
 
                             <div class="col-md-4 col-sm-12 col-xs-12">
                             <div class="form-group">
-                                <select name="InquiryPurpose" class="form-control dropdown" id="InquiryPurpose" required>
+                                <select name="InquiryPurpose" class="form-control dropdown" id="InquiryPurpose" required="">
                                  <option disabled selected value="" class="text-danger">Enquiry Purpose</option>
                                  @foreach($inq as $value)
                                  <option value="{{$value->inquiry_code}}">{{$value->inquiry_purpose}}</option>
@@ -257,7 +274,7 @@
 
                             <div class="col-md-4 col-sm-12 col-xs-12">
                             <div class="form-group">
-                                <input type="text" name="TransactionAmount" id="TransactionAmount"   onkeypress="return Numeric(event)" placeholder="Last Transaction Amount" minlength="5" maxlength="9" class="form-control input-md" required>
+                                <input type="text" name="TransactionAmount" id="TransactionAmount"   onkeypress="return Numeric(event)" placeholder="  Last Financial transaction" minlength="5" maxlength="9" class="form-control input-md" required="" >
                            
                             </div>
                             </div>
@@ -403,7 +420,7 @@
 <script type="text/javascript">
     $('#equifax_submit').click(function(){
        
-   
+  
       if(! $('#equifax_form').valid())
        {
              
@@ -420,9 +437,6 @@
          url: "{{URL::to('equifax-query')}}",
          data : $('#equifax_form').serialize(),
          success: function(msg){
-
-
-          
                if (msg.constructor ===  {}.constructor) {
                     json=msg;
                 }else{
@@ -433,7 +447,18 @@
               if(json.status==1){
                   $('.equi_doc_link').attr("href","{{URL::to('/uploads/PDF')}}/"+json.name);
                   $('.equi_doc_link').show();
-                  $('#equi_score').append(json.score[0]);
+
+                    if(json.score[0]<=700){
+
+                  $('#equi_score').append(json.score[0]+" Improve your Credit Score!!!");
+
+                }else{
+
+                   $('#equi_score').append(json.score[0]);
+                }
+
+                    
+
               }else{
                   $('.equi_msg_err').append(json.err);
                   $('.equi_msg_err').removeClass('displaynone');
@@ -451,41 +476,74 @@
 </script>
 
 <script type="text/javascript">
+ var  state_id='';
+ 
 
-  
+ $(document).on('change','#state_id',function(){
+                    
+                             state_id=$(this).val();
+                             $('#City').val('');
+                             // $('.search_citynm').empty();
+                             // if(state_id!=null || state_id!=0){
+                             // $.get("{{url('searchcity')}}",{'state_id':state_id}).done(function(data){
+                             
+                             //        var arr=Array();
+                             //    $(data).each(function(index,c) { 
+                             //           arr.push('<option value="'+c.City_Name+'" >'+c.City_Name+'</option>');
+                                     
+                             //    });
+
+                             //    $('.search_citynm').append(arr);
+                                  
+                             //   }).fail(function(xhr, status, error) {
+                             //         console.log(error);
+                             //    });
+
+                             // }
+
+     
+
+ });
+
 
  $(document).ready(function(){
-    src = "{{ route('searchajax') }}";
+  
     $(".search_citynm").autocomplete({
-      source: function(request, response) {
-        
+      source: function(request, response) {  
+     if(state_id!=""){   
         $.ajax({
-          url: src,
+          url: "{{url('searchcity')}}",
           dataType: "json",
           data: {
-            term : request.term
+            term : request.term,state_id:state_id
           },
           success: function(data) {
-           
-
             response(data);
-            
           }
         });
+}else{
+          
+      $('#City').val('');
+    alert("Please select State...");
+
+     
+    return false;
+}
+
       },
-      change: function (event, ui) {
-        if (ui.item == null || ui.item == undefined || ui.item.value=='No Result Found') {
-          $(".search_citynm").val("");
-          $(".search_citynm").attr("disabled", false);
+      // change: function (event, ui) {
+      //   if (ui.item == null || ui.item == undefined || ui.item.value=='No Result Found') {
+      //     $(".search_citynm").val("");
+      //     $(".search_citynm").attr("disabled", false);
          
-        }else{
+      //   }else{
 
          
-         $(".Q6").show();
+      //    $(".Q6").show();
          
           
-             }
-           }
+      //        }
+      //      }
 
         
       });

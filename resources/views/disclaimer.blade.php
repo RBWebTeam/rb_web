@@ -8,7 +8,7 @@
                         <div class="about-section pinside40">
                             <div class="row">
                                 <div class="col-md-12 col-sm-12 col-xs-12">
-								   <h2 class="mb30">Disclaimer</h2>
+                                   <h2 class="mb30">Disclaimer</h2>
                                     <!-- <p class="lead mb30">Insight loan advisors is completely independent loan advising service and our directory of lenders gives you all the information lorem ipsums sitamets.</p> -->
                                     <p style="text-align: justify;">RupeeBoss intends to provide clear information about loans and insurance products and services. The information and data are generic in nature. Our efforts are to offer accurate and responsible data. We are not responsible for any sort of discrepancies.</p>
 
@@ -38,7 +38,7 @@
                                 </div> -->
                             </div>
                         </div>                    
-					 </div>
+                     </div>
                 </div>
             </div>
         </div>

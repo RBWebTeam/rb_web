@@ -182,7 +182,7 @@ $(".top").click(function() {
 
                             
                             <div class="col-xs-6 form-padding">
-                            <select class="form-control drop-arr select-sty" name="ProductId" id="ProductId" style="height: 50px">
+                            <select class="form-control drop-arr select-sty" name="ProductId" id="ProductId" style="height: 50px" required>
                               <option disabled selected value="">PRODUCT</option>
                             </select>
                             
@@ -190,7 +190,7 @@ $(".top").click(function() {
 
                             <div id="amount" class="col-xs-6 form-padding">
                             <div>
-                              <input type="number" name="Loan_amt" id="Loan_amt" class="form-control inp-fld" onkeypress="return fnAllowNumeric(event)"  minlength="5" maxlength="9" required >
+                              <input type="tel" name="Loan_amt" id="Loan_amt" class="form-control inp-fld"   minlength="5" maxlength="9" required >
                               <span class="highlight"></span><span class="bar"></span>
                               <label class="form-label-new lble">LOAN AMOUNT</label>
                               <div class="clear"></div>
@@ -199,7 +199,7 @@ $(".top").click(function() {
 
                               <div class="col-xs-6 form-padding">
                             <div>
-                              <input type="number" name="FBA_Id" id="FBA_Id" class="form-control inp-fld" onkeypress="return fnAllowNumeric(event)"required >
+                              <input type="tel" name="FBA_Id" id="FBA_Id" class="form-control inp-fld" minlength="1" required >
                               <span class="highlight"></span><span class="bar"></span>
                               <label class="form-label-new lble">FBA ID</label>
                               <div class="clear"></div>
@@ -208,7 +208,7 @@ $(".top").click(function() {
 
                             <div class="col-xs-6 form-padding">
                             <div>
-                              <input type="number" name="Monthly_income" id="Monthly_income" class="form-control inp-fld" onkeypress="return fnAllowNumeric(event)"  minlength="5" maxlength="9" required >
+                              <input type="tel" name="Monthly_income" id="Monthly_income" class="form-control inp-fld"   minlength="5" maxlength="9" required >
                               <span class="highlight"></span><span class="bar"></span>
                               <label class="form-label-new lble">MONTHLY INCOME</label>
                               <div class="clear"></div>
@@ -293,6 +293,23 @@ $(".top").click(function() {
     </div>
   </div>
 </div>
+
+<div class="modal fade" tabindex="-1" role="dialog" id="lead-popup-errormsg">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Error Status</h4>
+      </div>
+      <div class="modal-body">
+        <h4><p id="modalerr"><h5 style="color: black"><b><span id="errormsg"></span></b>.<h5></p></h4>
+        
+      </div>
+      
+      
+    </div>
+  </div>
+</div>
     
   <!-- Script -->  
     <script type="text/javascript">
@@ -328,7 +345,7 @@ $(".top").click(function() {
     // console.log(obj);
     if(obj=='EMail' ){
                    var str =$('#EMail').val();
-                   var emailPattern = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/; 
+                   var emailPattern =/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/; 
                    var res = str.match(emailPattern);
                    if(res){
                      // console.log('Pancard is valid one.!!');
@@ -450,12 +467,18 @@ $(".top").click(function() {
             $('#leadid').empty().append(msg.Lead_Id);
             $('#lead-popup').modal('show');
           } 
-          else 
-          {   
-            $('#errorinfo').empty().append(msg.Errorinfo);
-              $('#lead-popup').modal('hide');
+          else if(msg.Status==0){
+           $('#errorinfo').empty().append(msg.Errorinfo);
+           $('#lead-popup').modal('hide');
             
              $('#lead-popup-error').modal('show');
+          } 
+          else{   
+            $('#errormsg').empty().append(msg.Errorinfo);
+              $('#lead-popup').modal('hide');
+            
+             $('#lead-popup-error').modal('hide');
+             $('#lead-popup-errormsg').modal('show');
           }
          }  
       });   
@@ -536,6 +559,25 @@ $('#ProductId').on('change', function() {
 </script> -->
 <script type="text/javascript">
 $('#Mobile').keyup(function () {
+    if (!this.value.match(/[0-9]/)) {
+        this.value = this.value.replace(/[^0-9]/g, '');
+    }
+});
+
+$('#Monthly_income').keyup(function () {
+    if (!this.value.match(/[0-9]/)) {
+        this.value = this.value.replace(/[^0-9]/g, '');
+    }
+});
+
+$('#FBA_Id').keyup(function () {
+    if (!this.value.match(/[0-9]/)) {
+        this.value = this.value.replace(/[^0-9]/g, '');
+    }
+});
+
+
+$('#Loan_amt').keyup(function () {
     if (!this.value.match(/[0-9]/)) {
         this.value = this.value.replace(/[^0-9]/g, '');
     }

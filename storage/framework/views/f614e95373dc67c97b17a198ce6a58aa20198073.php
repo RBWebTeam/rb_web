@@ -13,8 +13,11 @@
 <form name="home_loan_process_form" id="home_loan_process_form" action="<?php echo e(URL::to('loan-submit')); ?>" method="POST" >
 <input type="hidden" name="_token" id="token" value="<?php echo e(csrf_token()); ?>">
 <input type="hidden" id="product" name="product_name" value="12">
-
-          
+<input type="hidden" name="empid" class="empid" value=" <?php echo Session::get('empid')?Session::get('empid'):'';?>">
+          <input type="hidden" name="brokerid" class="brokerid" value="<?php echo Session::get('brokerid')?Session::get('brokerid'):'';?>">
+          <input type="hidden" name="source" class="source" value="<?php echo Session::get('source')?Session::get('source'):'';?>"> 
+          <input type="hidden" name="refapp" class="refapp" value="<?php echo Session::get('refid')?Session::get('refid'):'';?>">
+           
           <div class="row">
                        
                   <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12" style="padding-bottom: 20px">
@@ -26,10 +29,13 @@
                             <div class="form-group">
                 
                                 <select id="propery_types" name="propery_types" class="form-control" required>
-                                    <option selected disabled="">Property Identified</option>
-                                    <option value="Y">Yes</option>
-                                    <option value="N">No</option>
-                                   
+                                    <option selected disabled="">Property Type</option>
+                                    <option value="ready">Ready</option>
+                                    <option value="searching">Searching</option>
+                                    <option value="underconst">Under Construction</option>
+                                    <option value="resale">Resale</option>
+                                    <option value="constuction">Construction</option>
+                                    <option value="others">Other</option>
                                 </select>
                               </div>
                             </div>
@@ -42,7 +48,7 @@
 
                             <div class="col-md-6 col-sm-12 col-xs-12">
                               <div class="form-group">
-                                <input type="text" class="form-input-new form-control" name="loan_amount" id="loan_amount" placeholder="Loan Required" minlength="5" maxlength="9" onkeypress="return fnAllowNumeric(event)"   >
+                                <input type="text" class="form-input-new form-control" name="loan_amount" id="loan_amount" placeholder="Loan Required"  readonly onkeypress="return fnAllowNumeric(event)"   >
                               </div>
                             </div>
 
@@ -79,16 +85,16 @@
                                         <option value="18">18 Year</option>
                                         <option value="19">19 Year</option>
                                         <option value="20">20 Year</option>
-                                        <option value="11">21 Year</option>
-                                        <option value="12">22 Year</option>
-                                        <option value="13">23 Year</option>
-                                        <option value="14">24 Year</option>
-                                        <option value="15">25 Year</option>
-                                        <option value="16">26 Year</option>
-                                        <option value="17">27 Year</option>
-                                        <option value="18">28 Year</option>
-                                        <option value="19">29 Year</option>
-                                        <option value="20">30 Year</option>
+                                        <option value="21">21 Year</option>
+                                        <option value="22">22 Year</option>
+                                        <option value="23">23 Year</option>
+                                        <option value="24">24 Year</option>
+                                        <option value="25">25 Year</option>
+                                        <option value="26">26 Year</option>
+                                        <option value="27">27 Year</option>
+                                        <option value="28">28 Year</option>
+                                        <option value="29">29 Year</option>
+                                        <option value="30">30 Year</option>
                                         </select>
                               </div>
                           </div>
@@ -96,19 +102,6 @@
                           <div class="col-md-6 col-sm-12 col-xs-12">
                             <div class="form-group">
                               <input type="text" class="form-input-new form-control" name="applicantname" placeholder="Applicant Name" maxlength="100"  required>
-                            </div>
-                          </div>
-
-                          <div class="col-md-6 col-sm-12 col-xs-12">  
-                            <div class="form-group">
-                              <input type="text" name="mobile" id="mobile" class="form-input-new form-control" placeholder="Mobile" minlength="10" maxlength="10" onkeypress="return fnAllowNumeric(event)" required="">
-                            </div>
-                          </div>
-
-                          <div class="col-md-6 col-sm-12 col-xs-12">  
-                            <div class="form-group">
-                              <input type="text" name="pan_number" id="pannumber" class="form-input-new form-control" placeholder="Pan No" oninput="pan_card('pannumber')" required="">
-                              <span id="pan" style="display:none;color: red; font-size: 10px">Oops.Please Enter Valid Pan Number.!!</span>
                             </div>
                           </div>
 
@@ -133,7 +126,7 @@
                              <div class="col-md-12 col-sm-12 col-xs-12">
                               <div class="form-group">                                
                                    <input type="radio" id="sala_DI" value="salaried" name="emp_detail" checked="checked" >&nbsp; Salaried  &nbsp;                                
-                                    <input type="radio" id="self_DI" value="self-employed" name="emp_detail"  > Self Employed                                  
+                                    <input type="radio" id="self_DI" value="self-employed" name="emp_detail"  >Self Employed
                                 </div>
                             </div>
 
@@ -386,49 +379,64 @@
                                 <div class="st-accordion ">
                                       <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
 
-                                          <div class="panel panel-default">
-                                              <div class="panel-heading" role="tab" id="headingOne">
-                                                  <h4 class="panel-title"><i class="fa fa-minus-circle sign"></i>
-                                                  Who can apply for a Home loan??</h4>
-                                                  <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-                                                    <div class="panel-body">
-                                                  <ul class="listnone bullet bullet-check-circle-default">
+
+
+                         <div class="panel panel-default">
+                                <div class="panel-heading" role="tab"  data-toggle="collapse" data-target="#home_collapse1" >
+                                    <h4 class="panel-title"> <i class="glyphicon glyphicon-plus   sign"></i>Who can apply for a Home loan??</h4>
+                                </div>
+                                <div id="home_collapse1"   class="panel-collapse collapse in" role="tabpanel"  >
+                                    <div class="panel-body">
+                                    <ul class="listnone bullet bullet-check-circle-default">
                                                           <li>Individual (salaried)</li>
                                                           <li>Self Employed Professionals (Doctors, Lawyers, Teachers, etc)</li>
-                                                          <li>Businessman</li>
-                                                      </ul>
-                                                    </div>
-                                                  </div>
-                                                     </div>
-                                                   </div>
+                                                          <li>Businessman</li>  
+                                            </ul>
 
-                                          <div class="panel panel-default">
-                                              <div class="panel-heading" role="tab" id="headingTwo">
-                                                  <h4 class="panel-title"><i class="fa fa-minus-circle sign"></i>Type of property bank and NBFC fund for??</h4>  <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-                                                    <div class="panel-body">                                       
-                                                  <ul class="listnone bullet bullet-check-circle-default">
-                                                      <li>It should be registered and clearly identifiable whether the property is in under construction, fully constructed or Re-sale</li>
-                                                  </ul>
-                                                </div>
-                                              </div>
-                                              </div>
-                                              </div> 
+                                        </div>
+                                </div>
+                            </div> 
+ 
 
-                                          <div class="panel panel-default">
-                                              <div class="panel-heading" role="tab" id="headingThree">
-                                                  <h4 class="panel-title"><i class="fa fa-minus-circle sign"></i>Documents Required</h4>            
-                                                  <strong>Important parameters Banks look for :</strong>
-                                                  <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-                                                    <div class="panel-body">
-                                                      <ul class="listnone bullet bullet-check-circle-default">
+
+                               <div class="panel panel-default">
+                                <div class="panel-heading" role="tab"  data-toggle="collapse" data-target="#collapseid2" >
+                                    <h4 class="panel-title">  <i class="glyphicon glyphicon-plus   sign"></i>Type of property bank and NBFC fund for?? </h4>
+                                </div>
+                                <div id="collapseid2"   class="panel-collapse collapse in" role="tabpanel"  >
+                                    <div class="panel-body">
+                                    <ul class="listnone bullet bullet-check-circle-default">
+                                                  <li>It should be registered and clearly identifiable whether the property is in under construction, fully constructed or Re-sale</li>
+                                            </ul>
+
+                                        </div>
+                                </div>
+                            </div> 
+
+
+ 
+
+                              <div class="panel panel-default">
+                                <div class="panel-heading" role="tab"  data-toggle="collapse" data-target="#collapseid3" >
+                                    <h4 class="panel-title">
+                                                  <h4 class="panel-title"><i class="glyphicon glyphicon-plus   sign"></i>Documents Required</h4>            
+                                                  <strong>Important parameters Banks look for :  </strong>
+                                </div>
+                                <div id="collapseid3"   class="panel-collapse collapse in" role="tabpanel"  >
+                                    <div class="panel-body">
+                                    <ul class="listnone bullet bullet-check-circle-default">
                                                               <li>Employment Status</li>
                                                               <li>Duration of Current Employment</li>
                                                               <li>Credit History and Credit Score</li>
-                                                          </ul>
-                                                        </div>
-                                                      </div>
-                                                  </div>
-                                              </div>
+                                    </ul>
+
+                                        </div>
+                                </div>
+                            </div> 
+
+
+
+
                                          </div>
                                          
                                       </div>                    
@@ -611,30 +619,6 @@ $("#eligibility").click(function() {
   $(window).scrollTop($('#form_ID').offset().top-20);
 });
 </script>
-
-
-<script type="text/javascript">
-    function pan_card(obj,val){
-        // console.log(obj);
-        if(obj=='pannumber' ){
-                   var str =$('#pannumber').val();
-                   var pancardPattern = /^([a-zA-Z]{5})(\d{4})([a-zA-Z]{1})$/;
-                   var res = str.match(pancardPattern);
-                   if(res){
-                     // console.log('Pancard is valid one.!!');
-                        $('#pan').hide();
-
-                  }else{
-                    // console.log('Oops.Please Enter Valid Pan Number.!!');
-                    $('#pan').show();
-
-                    return false;
-                  }
-                  
-    }
-    }
-    </script>
-
 
 
 

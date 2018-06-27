@@ -269,7 +269,7 @@ class LoanController extends CallApiController
 
    public function state(Request $req){
     // print_r($req->all());exit();
-    $post_data = '{"SrchParam":"StateMaster"}';
+    $post_data = '{"SrchParam":"StateMaster" }';
     //call API here to save in DB
         //$post=json_encode($post_data);
      // print_r($post_data);exit();
@@ -277,7 +277,7 @@ class LoanController extends CallApiController
     $url = $this::$url_static."BankAPIService.svc/getIIFLStateMaster";
     $result=$this->call_json_data_api($url,$post_data);
     $http_result=$result['http_result'];
-    // print_r( $http_result);exit();
+    // print_r($http_result);exit();
     $error=$result['error'];
     $st=str_replace('"{', "{", $http_result);
     $s=str_replace('}"', "}", $st);
@@ -291,7 +291,7 @@ class LoanController extends CallApiController
 }   
 
 public function dropdown(Request $req){
-    
+    // print_r($req->all());exit();
     $post_data = '{"SrchParam":"'.$req['param'].'" }';
     //call API here to save in DB
         //$post=json_encode($post_data);
@@ -300,7 +300,6 @@ public function dropdown(Request $req){
     $url = $this::$url_static."/BankAPIService.svc/getIIFLDropdownMasters";
     $result=$this->call_json_data_api($url,$post_data);
     $http_result=$result['http_result'];
-    // print_r($http_result);exit();
     $error=$result['error'];
     $st=str_replace('"{', "{", $http_result);
     $s=str_replace('}"', "}", $st);
@@ -327,7 +326,7 @@ public function dropdown(Request $req){
         $data['source']=Session::get('source')?Session::get('source'):'MAA=';
        $json_data=json_encode($data);
 
-       $post_data = $json_data;
+        $post_data = $json_data;
     //call API here to save in DB
         $post=json_encode($post_data);
         // print_r($post);exit();
@@ -386,7 +385,7 @@ $url = $this::$url_static."/BankAPIService.svc/createIIFLCoAppDtls";
       $data['CRMLeadID']=Session::get('leadno');
 
       $json_data=json_encode($data);
-      $post_data = $json_data;
+       $post_data = $json_data;
        print_r($post_data);
     $url = $this::$url_static."/BankAPIService.svc/createIIFLAadharOTP";
     $result=$this->call_json_data_api($url,$post_data);
@@ -406,7 +405,7 @@ $url = $this::$url_static."/BankAPIService.svc/createIIFLCoAppDtls";
     
        $json_data=json_encode($data);
        
-       $post_data = $json_data;
+        $post_data = $json_data;
 // print_r($post_data);exit();
     $url = $this::$url_static."/BankAPIService.svc/getIIFLofferstatus";
     $result=$this->call_json_data_api($url,$post_data);
@@ -657,7 +656,6 @@ $url = $this::$url_static."/BankAPIService.svc/updateIIFLRevisedQuote";
       }
 
    public function lendingkart_details(Request $req){
-    // print_r($req->all());
      try {
        $data=$req->all();
           $data['brokerid']=Session::get('brokerid')?Session::get('brokerid'):'MAA=';
@@ -733,7 +731,7 @@ $url = $this::$url_static."/BankAPIService.svc/updateIIFLRevisedQuote";
       $data['source']=Session::get('source')?Session::get('source'):'MAA=';
       $data['CampaignName']=Session::get('CampaignName');
       $post_data=json_encode($data);
-
+       // print_r($post_data);exit();
       $url = $this::$url_static."/BankAPIService.svc/createEarlySalaryReq";
       $result=$this->call_json_data_api($url,$post_data);
       $http_result=$result['http_result'];
@@ -804,7 +802,9 @@ $url = $this::$url_static."/BankAPIService.svc/updateIIFLRevisedQuote";
     
       
    public function kotak_city_master(){
-    $query = DB::table('kotak_city_master')->select('city_code', 'city_name')->get();
+    $query = DB::table('kotak_hl_city_area_master')->select('city_code', 'city_area')->get();
+
+  
 
     echo json_encode($query);
   }
@@ -973,7 +973,7 @@ $url = $this::$url_static."/BankAPIService.svc/updateIIFLRevisedQuote";
    
     $post_data =json_encode(array("PersonalLoan"=> $data));
     // $post_data=json_encode($data);
-        // print_r($post_data);exit();
+       // print_r($post_data);exit();
         $url = $this::$url_static."/BankAPIService.svc/createKotakPersonalLoanReq";
         $result=$this->call_json_data_api($url,$post_data);
         $http_result=$result['http_result'];
@@ -1139,7 +1139,7 @@ $url = $this::$url_static."/BankAPIService.svc/updateIIFLRevisedQuote";
     $data['source']=Session::get('source')?Session::get('source'):'MAA=';
     $data['CampaignName']=Session::get('CampaignName');
     $post_data=json_encode($data);
-   // print_r($post_data);exit();
+   
     $url = $this::$url_static."/BankAPIService.svc/createCapitalFloatBLReq";
       $result=$this->call_json_data_api($url,$post_data);
         $http_result=$result['http_result'];
@@ -1249,9 +1249,9 @@ $url = $this::$url_static."/BankAPIService.svc/updateIIFLRevisedQuote";
    }
 
 
-// /*Flexi Token*/
+/*Flexi Token*/
    public function flexi_loans_token(Request $req){
-   // print_r($req->all());exit();
+   
         $data=$req->all();
         $post_data=json_encode($data);
        
@@ -1291,7 +1291,6 @@ $url = $this::$url_static."/BankAPIService.svc/updateIIFLRevisedQuote";
          // print_r($req->all());exit();
          $data=$req->all();
          $post_data=json_encode($data);
-         // print_r($post_data);exit();
          $url = $this::$url_static."/BankAPIService.svc/CreateFlexiLoanAppln";
          $result=$this->call_json_data_api($url,$post_data);
          $http_result=$result['http_result'];
@@ -1299,7 +1298,7 @@ $url = $this::$url_static."/BankAPIService.svc/updateIIFLRevisedQuote";
          $st=str_replace('"{', "{", $http_result);
          $s=str_replace('}"', "}", $st);
          $m=$s=str_replace('\\', "", $s);
-         print_r($http_result);exit();
+         // print_r($http_result);exit();
          $obj=json_decode($m);
          return response()->json( $obj);
     }
@@ -1337,6 +1336,7 @@ $url = $this::$url_static."/BankAPIService.svc/updateIIFLRevisedQuote";
     }
 }';
 
+    
     // print_r($post_data);
          $url = $this::$url_static."/BankAPIService.svc/UpdateFlexiLoanAppln";
          $result=$this->call_json_data_api($url,$post_data);
@@ -1345,154 +1345,13 @@ $url = $this::$url_static."/BankAPIService.svc/updateIIFLRevisedQuote";
          $st=str_replace('"{', "{", $http_result);
          $s=str_replace('}"', "}", $st);
          $m=$s=str_replace('\\', "", $s);
-         // print_r($http_result);exit();
-         $obj=json_decode($m);
-         return response()->json( $obj); 
- }
-
- public function flexi_business_dtls(Request $req){
-  // print_r($req->all());exit();
-   $post_data= '{ 
-   "params":{ 
-      "name":"'.$req->name.'",
-      "nature_of_business":"'.$req->nature_of_business.'",
-      "product_classfication":"'.$req->product_classfication.'",
-      "date_of_incorporation":"'.$req->date_of_incorporation.'",
-      "employee_count":"'.$req->employee_count.'",
-      "loan_purpose":"'.$req->loan_purpose.'",
-      "pan_no":"'.$req->pan_no.'",
-      "tin_no":"'.$req->tin_no.'",
-      "gst_no":"'.$req->gst_no.'",
-      "udyog_aadhaar_no":"'.$req->udyog_aadhaar_no.'",
-      "address_flat_no":"'.$req->address_flat_no.'",
-      "address_building":"'.$req->address_building.'",
-      "address_area":"'.$req->address_area.'",
-      "address_pincode":"'.$req->address_pincode.'",
-      "address_city":"'.$req->address_city.'",
-      "address_state":"'.$req->address_state.'",
-      "address_ownership_status":"'.$req->address_ownership_status.'",
-      "partner_details":[
-      {
-        "name": "'.$req->name.'",
-        "pan": "'.$req->pan.'",
-        "dob": "'.$req->dob.'",
-        "gender": "'.$req->gender.'",
-        "postal_code": "'.$req->postal_code.'",
-        "city": "'.$req->city.'",
-        "state": "'.$req->state.'",
-        "address": "'.$req->address.'",
-        "residence_ownership_status": "'.$req->residence_ownership_status.'",
-        "mobile_no": "'.$req->mobile_no.'",
-      }],
-      "previous_loan_taken" : "'.$req->previous_loan_taken.'",
-      "previous_loan_details":[ 
-         { 
-            "type":0,
-            "displayName":0,
-            "bank":0,
-            "bankOther":0,
-            "loanAmount":0,
-            "monthlyEmi":0,
-            "odCcLimit":0,
-            "odCcUtilized":0
-         },
-         
-      ]
-      
-   },
-   "loanCode":"'.$req->loanCode.'",
-   "access_token":"'.$req->access_token.'"
-}';
-
-// print_r($post_data);
-$url = $this::$url_static."/BankAPIService.svc/SaveFlexiLoanBusinessDetail";
-         $result=$this->call_json_data_api($url,$post_data);
-         $http_result=$result['http_result'];
-         $error=$result['error'];
-         $st=str_replace('"{', "{", $http_result);
-         $s=str_replace('}"', "}", $st);
-         $m=$s=str_replace('\\', "", $s);
-         // print_r($http_result);exit();
-         $obj=json_decode($m);
-         return response()->json( $obj); 
-
- }
-
- public function flexi_financial_dtls(Request $req)
- {
-   $post_data= '{ 
-            "params": {
-                "selling_online_since": "'.$req->selling_online_since.'",
-                "average_monthly_inventory": "0",
-                "total_monthly_sales": "'.$req->total_monthly_sales.'",
-                "mothly_online_sales": "0",
-                "credit_period_customers": "0",
-                "credit_period_creditors": "0",
-                "last_year_turnover": "0",
-                "last_year_profit": "0",
-                "projected_turnover": "0",
-                "average_profit_margin": "0",
-                "platform": "'.$req->platform.'",
-                "marketPlaces": "'.$req->marketPlaces.'",
-                "market_place_other" : ""
-               
-            },
-            "loanCode": "'.$req->code.'",
-            "access_token":"'.$req->access.'"
-        
-        }';
-        $url = $this::$url_static."/BankAPIService.svc/SaveFlexiLoanFinanceDetail";
-         $result=$this->call_json_data_api($url,$post_data);
-         $http_result=$result['http_result'];
-         $error=$result['error'];
-         $st=str_replace('"{', "{", $http_result);
-         $s=str_replace('}"', "}", $st);
-         $m=$s=str_replace('\\', "", $s);
-         // print_r($http_result);exit();
+         print_r($http_result);exit();
          $obj=json_decode($m);
          return response()->json( $obj); 
 
 
- }  
-
- public function flexi_personal_dtls(Request $req){
-$post_data='{
-  { 
-    "loanCode":"'.$req->loanCode.'",
-    "access_token":"'.$req->access_token.'"
-    "params":{ 
-      "education":"'.$req->education.'",
-      "marital_status":"'.$req->marital_status.'",
-      "annual_income":"'.$req->annual_income.'",
-      "aadhar_no" : "'.$req->aadhar_no.'",
-      "reference_details":[ 
-         { 
-            "name":"'.$req->name.'",
-            "mobile":"'.$req->mobile.'",
-            "profession":"'.$req->profession.'",
-            "yearsOfKnowability":"'.$req->yearsOfKnowability.'",
-         },
-         { 
-            "name":"'.$req->name.'",
-            "mobile":"'.$req->mobile.'",
-            "profession":"'.$req->profession.'",
-            "yearsOfKnowability":"'.$req->yearsOfKnowability.'",
-         }
-      ]
-   }
-}
-}';
-$url = $this::$url_static."/BankAPIService.svc/SaveFlexiLoanPersonalDetail";
-         $result=$this->call_json_data_api($url,$post_data);
-         $http_result=$result['http_result'];
-         $error=$result['error'];
-         $st=str_replace('"{', "{", $http_result);
-         $s=str_replace('}"', "}", $st);
-         $m=$s=str_replace('\\', "", $s);
-         // print_r($http_result);exit();
-         $obj=json_decode($m);
-         return response()->json( $obj); 
- }
+  }
+   
 
 
    

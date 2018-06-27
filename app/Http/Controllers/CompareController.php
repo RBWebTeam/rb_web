@@ -59,15 +59,15 @@ class CompareController extends ExperianController
 
     public function view_loan(){
         // if(Session::get('is_login')){
-         return view('view-loan');
+    	   return view('view-loan');
        //}else{
          //   return redirect('/');
        // }
         
     }
-  // public function emi(){
+ 	// public function emi(){
   //       //print_r("hiiiiiiiiiii");
-  //    return view('emi');
+  //   	return view('emi');
   //   }
     public function emi2(){
       $keywords='EMI Calculator,Online EMI Calculator,Personal Loan EMI Calculator,Loan Against Property EMI Calculator,Home Loan EMI Calculator,Check EMI Card Status';
@@ -114,7 +114,6 @@ class CompareController extends ExperianController
        //print_r($req->all());exit();
 
      $getQuery=DB::select('call usp_get_balance_transfer_quot("'.$req['loanamount'].'","'.$req['loaninterest'].'","'.$req['product_id'].'")');
-     // print_r($getQuery);exit();
 
     $resultArray = json_decode(json_encode($getQuery), true);
        // print_r($resultArray);exit();

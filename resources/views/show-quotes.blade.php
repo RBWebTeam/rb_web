@@ -5,10 +5,10 @@
          <div class=" pad">
             <!--  <p class="text-left">home/{{$product}}</p> -->
             <h2 class="align-center loan-head text-center">Quotes related {{$product}}</h2>
-            <center><h3>Your Credit Score is <strong style="color: #27DFA4";>
-              @if(isset($score))
-            {{$score}}
-                                                        @endif
+            <center><h3>Your Credit Score is <strong style="color: #27DFA4;">
+                                                        @if(isset($score))
+                                                        {{$score}}
+                                                        @endif      
             </strong> </h3></center>
              
 

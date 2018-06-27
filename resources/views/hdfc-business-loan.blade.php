@@ -141,7 +141,7 @@
                                       <div class="col-md-4 col-sm-12 col-xs-12">
                                           <div class="form-group">
                                           	<input type="text" name="company_pancard" id="company_pancard" oninput="pan_card('company_pancard')" minlength="10" maxlength="10" class="form-control" placeholder="Company PAN Number"  required="">
-					<span id="pan_number" style="display:none;color: red; font-size: 10px">Oops.Please Enter Valid Pan Number.!!</span>
+					                  <span id="pan_number" style="display:none;color: red; font-size: 10px">Oops.Please Enter Valid Pan Number.!!</span>
                                           </div>
                                       </div>
                                       <!-- pan end -->
@@ -192,7 +192,7 @@
 
 										<div class="col-md-4 col-sm-12 col-xs-12">
                                           <div class="form-group">
-										<input type="text" name="net_income" id="net_income" minlength="5" maxlength="6" class="form-control" placeholder="Net Income" required="">
+										<input type="text" name="net_income" id="net_income" minlength="5" maxlength="9" class="form-control" placeholder="Net Income" required="">
 										</div>
 									</div>
 

@@ -422,7 +422,9 @@ $('.video-lnk').click(function(){
   });
 });
 </script>
+
 @include('layout.script')
 </body>
+
 
 </html>

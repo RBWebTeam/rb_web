@@ -317,7 +317,7 @@ function contactOTP(Request $req){
                 $post_data='{"mobNo":"'.$req->contact_name.'","msgData":"your otp is '.$otp.' - RupeeBoss.com",
                     "source":"WEB"}';
                 // $url = "http://beta.services.rupeeboss.com/LoginDtls.svc/xmlservice/sendSMS";
-                $url =$this::$service_url_static."LoginDtls.svc/xmlservice/sendSMS";
+                $url ="http://services.rupeeboss.com/LoginDtls.svc/xmlservice/sendSMS";
                 $result=$this->call_json_data_api($url,$post_data);
                 $http_result=$result['http_result'];
                 $error=$result['error'];

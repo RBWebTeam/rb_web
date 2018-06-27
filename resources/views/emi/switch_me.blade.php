@@ -99,15 +99,15 @@
 
                         <!-- <h4 style="text-align: center;" >Current Loan Status <i class="fa fa-exchange" ></i></h4> -->
                         <div class="form-group">
-                          <input type="text" name="loaninterest" step="0.01"  maxlength="5" class="form-control" id="loaninterest" placeholder="Present Int. Rate"  value="" onBlur="myfun()" onKeyPress="return isNumberKey(event)" title="Present Int.Rate">
+                          <input type="text" name="loaninterest" step="0.01" maxlength="5" class="form-control" id="loaninterest" placeholder="Present Int. Rate"  value="" onBlur="myfun()" onKeyPress="return isNumberKey(event)" title="Present Int.Rate">
                         </div>
 
                         <div class="form-group">
-                          <input type="text" name="loanterm" class="form-control" id="loanterm" placeholder="Remaining Tenure" value="" onBlur="myfun()" onKeyPress="return isNumberKey(event)" title="Remaining Tenure">
+                          <input type="text" name="loanterm" class="form-control" id="loanterm" placeholder="Remaining Tenure" minlength="1" maxlength="3" value="" onBlur="myfun()" onKeyPress="return isNumberKey(event)" title="Remaining Tenure">
                       <span style="color:red; font-size:13px;display:none" id="err">Please Fill All Inputs</span>
                         </div>
 
-                        <div class="col-md-5 col-xs-6" style="padding:0px;">
+                        <div class="col-md-5 col-xs-4" style="padding:0px;">
                           <button class="btn btn-default btn-sm ">Submit</button>
                             <!-- <div class="pull-right">
                               <input type="radio" name="Year" id="Year" value="" checked="checked">Year
@@ -115,7 +115,7 @@
                             </div> -->
                         </div>
 
-                        <div class="col-md-7 col-xs-6 text-right" style="padding-right:0px;">
+                        <div class="col-md-7 col-xs-8 text-right" style="padding-right:0px;">
                                             <input type="radio" name="Year" id="Year" value="" checked="checked">Year &nbsp;
                                                 <input type="radio" name="Year" id="Month" value=""> Month
                                             </div>

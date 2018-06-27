@@ -10,7 +10,7 @@
     <script type="text/javascript" src="{{URL::to('js/menumaker.js')}}"></script> 
 
  <script>
-	       // Hide Header on on scroll down
+         // Hide Header on on scroll down
 //var didScroll;
 //var lastScrollTop = 0;
 //var delta = 5;
@@ -18,22 +18,22 @@
 
 //$(window).scroll(function(event){
     //didScroll = true;
-	//$(".top-bg").hide();
+  //$(".top-bg").hide();
 //});
 
 var scrollBottom = $(window).scrollTop() + $(window).height();
 
 $(window).scroll(function(){
       if($(this).scrollTop() > 50) {
-		
-		$('#fh5co-header').css({'background': '#fff'});     
+    
+    $('#fh5co-header').css({'background': '#fff'});     
        } else if (scrollBottom  > 200) {
-		
-		$('#fh5co-header').css({'background': '#ffffff'});
+    
+    $('#fh5co-header').css({'background': '#ffffff'});
       }
     });
 
-	   </script>
+     </script>
 
   <script>
        function registration(){
@@ -340,25 +340,25 @@ $(window).scroll(function(){
             $(".callclass").click(function(){
               $(".sidebar").hide("fast");
               $(".soc-ic-0").show("fast");
-			  $(".soc-ic-0").hide("fast");
+        $(".soc-ic-0").hide("fast");
             });
             $(".hide-dv").click(function(){
               $(".sidebar").hide("fast");
               $(".soc-ic-0").show("fast");
-			  $(".soc").show("fast");
+        $(".soc").show("fast");
             });
             $(".soc-ic-0").click(function(){
               $(".sidebar").show("fast");
               $(".soc").hide("fast");
               $(".sidebar1").hide("fast");
             });
-			$(".call-back").click(function(){
+      $(".call-back").click(function(){
               $(".soc").show("fast");
-			  $(".soc-ic-0").show(1000);
+        $(".soc-ic-0").show(1000);
             });
-			$(".soc").click(function(){
+      $(".soc").click(function(){
               $(".sidebar").hide("fast");
-			 
+       
           
             });
           });
@@ -2349,47 +2349,47 @@ function SetSession_pop(cookieName,cookieValue){
   </script>
   
   <script type="text/javascript">
-	$(document).ready(function(){
-		$("#popup").modal('show');
-	});
+  $(document).ready(function(){
+    $("#popup").modal('show');
+  });
 </script>
    <!-- emp login end -->
    
    <script>
-		$(document).ready( function(){
-		
-			
-			$('.scenario > div').click(function(){
-				$('.scenario > div').removeClass('scenario-active');
-				$(this).toggleClass('scenario-active');
-				
-			});
-			$('.scenario1 > div').click(function(){
-				$('.scenario1 > div').removeClass('scenario-active');
-				$(this).toggleClass('scenario-active');
-				
-			});
-			$('.scenario2 > div').click(function(){
-				$('.scenario2 > div').removeClass('scenario-active');
-				$(this).toggleClass('scenario-active');
-				
-			});
-			$('.scenario3 > div').click(function(){
-				$('.scenario3 > div').removeClass('scenario-active');
-				$(this).toggleClass('scenario-active');
-				
-			});
-		});
-			
-	</script> 
-	
-	<!-- <script>
+    $(document).ready( function(){
+    
+      
+      $('.scenario > div').click(function(){
+        $('.scenario > div').removeClass('scenario-active');
+        $(this).toggleClass('scenario-active');
+        
+      });
+      $('.scenario1 > div').click(function(){
+        $('.scenario1 > div').removeClass('scenario-active');
+        $(this).toggleClass('scenario-active');
+        
+      });
+      $('.scenario2 > div').click(function(){
+        $('.scenario2 > div').removeClass('scenario-active');
+        $(this).toggleClass('scenario-active');
+        
+      });
+      $('.scenario3 > div').click(function(){
+        $('.scenario3 > div').removeClass('scenario-active');
+        $(this).toggleClass('scenario-active');
+        
+      });
+    });
+      
+  </script> 
+  
+  <!-- <script>
     var s0 = $("#unranged").freshslider({
         step: 10,
-		scale: [1,,100],
+    scale: [1,,100],
         unit:'%',
         enabled:false
-		
+    
     });
 
     var s1 = $("#ranged").freshslider({
@@ -2448,7 +2448,7 @@ $(document).ready(function(){
 });
 </script>
 
-	</head>
+  </head>
 
 
 <script type="text/javascript">
@@ -2555,9 +2555,9 @@ $(window).on('load', function(){
                 }
             })();  
         </script>
-		
-		<script>
-		     $(window).bind("load",function() {
+    
+    <script>
+         $(window).bind("load",function() {
            $('.hom-rig').slideDown(1000);
         });
 
@@ -2565,7 +2565,7 @@ $(window).on('load', function(){
 
 
          
-		</script>
+    </script>
 
 <script>
      var $loading = $('#loading').hide();

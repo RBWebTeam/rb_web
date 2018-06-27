@@ -15,7 +15,7 @@
 
                             <div class="col-md-offset-2 col-md-8 col-sm-12 col-xs-12" >
                                 <div class="mb60  section-title text-center  ">
-                                <h1 class=""><center>Apply HDFC Business Loan</center></h1>
+                                <h1 class=""><center>Apply HDFC Personal Loan</center></h1>
                                 
                                 </div>
                             </div>
@@ -28,12 +28,11 @@
                         
                             <form id="hdfc_personal_loan" name="hdfc_personal_loan" role="form" method="POST">
 							 {{ csrf_field() }}
-							 
                              
                                     <!-- Branch Location -->
                                        <div class="col-md-4 col-sm-12 col-xs-12">
                                           <div class="form-group">                                           
-                                            <select name="branch_location" id="branch_location" class="form-control select-sty" required="">
+                                            <select name="branch_location" id="branch_location" class="form-control select-sty" required>
 											  <option selected disabled="" value="">Branch Location</option>
 											  <option value="AHMEDABAD">AHMEDABAD</option>
 											  <option value="Bangalore-PL">Bangalore-PL</option>
@@ -69,7 +68,7 @@
                                         <!-- Branch Code -->
                                         <div class="col-md-4 col-sm-12 col-xs-12">
                                           <div class="form-group">
-                                          	<select name="branch_code" id="branch_code" class="form-control block drop-arr select-sty" required="">
+                                          	<select name="branch_code" id="branch_code" class="form-control block drop-arr select-sty" required>
 											<option data-group='SHOW' value=''>Branch Code</option>
 											  <option data-group="AHMEDABAD" value="AhmedabadOpen - BEU">AhmedabadOpen - BEU</option>
 											  <option data-group="Bangalore-PL" value="BangaloreOpen - BEU">BangaloreOpen - BEU</option>
@@ -155,7 +154,7 @@
 
 										<div class="col-md-4 col-sm-12 col-xs-12">
                                           <div class="form-group">
-										<select name="profile" id="profile" class="form-control block drop-arr select-sty" required="" >
+										<select name="profile" id="profile" class="form-control block drop-arr select-sty" required >
 										<option selected disabled="" value="">Profile</option>
 										  <option value="Salaried">Salaried</option>
 										  <option value="Self Employed">Self Employed</option>

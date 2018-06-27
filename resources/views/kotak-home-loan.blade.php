@@ -165,8 +165,8 @@
                             <div class="col-md-4 col-sm-12 col-xs-12" style="display: none;">
                             <div class="form-group">
                                 <label class="control-label sr-only" for="ResCityArea">Residence City Area</label>
-                                 <select id="ResCityArea" name="ResCityArea" class="form-control">
-                                 <option disabled selected value="">CITY AREA</option>
+                                 <select  id="ResCityArea" name="ResCityArea" class="form-control">
+                                 <option disabled selected  value="">CITY AREA</option>
 
                                             </select>
                             </div>
@@ -379,7 +379,7 @@
    console.log(data);
    if(data)
       {      $.each(data, function( index, value ) {
-            $('#ResCity').append('<option value="'+value.city_code+'">'+value.city_name+'</option>');
+            $('#ResCity').append('<option value="'+value.city_code+'">'+value.city_area+'</option>');
 
         }); 
     }else{

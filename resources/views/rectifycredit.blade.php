@@ -47,7 +47,7 @@
 					        <div class="col-md-12"><h4 class="hdr pad1 text-center">Registration Form</h4></div>
                              
                                     
-                                      <!-- Customer Details -->
+                                      <!-- customer name -->
                                       <div class="col-md-4 col-sm-12 col-xs-12">
                                       <div class="form-group">
                                       <input name="FirstName" id="first_name" type="text" class="form-control" onkeypress="return AllowAlphabet(event)" placeholder="First Name"  required="">
@@ -102,14 +102,9 @@
                                       </div>
                                       </div>
 
-                                      <div class="col-md-4 col-sm-12 col-xs-12">
-                                      <div class="form-group">
-                                      <input type="text" class=" form-control dropdown search_citynm" name="City[]" id="City" Placeholder="City" required>
-                                      </div>
-                                      </div>
 
 
-									                    <div class="col-md-4 col-sm-12 col-xs-12">
+                                        <div class="col-md-4 col-sm-12 col-xs-12">
                                       <div class="form-group">
                                       <select name="State[]" class="form-control dropdown valid" required="">
                                       <option disabled="" selected="" value="">Select State</option>
@@ -151,6 +146,15 @@
                                       </select>
                                       </div>
                                       </div>
+
+                                      <div class="col-md-4 col-sm-12 col-xs-12">
+                                      <div class="form-group">
+                                      <input type="text" class=" form-control dropdown search_citynm" name="City[]" id="City" Placeholder="City" required>
+                                      </div>
+                                      </div>
+
+
+									                  
 
                                       <div class="col-md-4 col-sm-12 col-xs-12">
                                       <div class="form-group">
@@ -214,7 +218,7 @@
 
                                        <input type="hidden" name="AccountNumber[]" id="AccountNumber" value="">
                                        <input type="hidden" name="MiddleName" id="MiddleName" value="">
-                                   
+                                     
                                        <input type="hidden" name="Locality1[]" id="Locality1" value="">
                                        <input type="hidden" name="Locality2[]" id="Locality2" value="">
                                        <input type="hidden" name="PassportId" id="PassportId" value="">
@@ -225,8 +229,8 @@
                                        <input type="hidden" name="RationCard" id="RationCard" value="">
                                       
 
-                                      <div class="col-md-12"><h4 class="hdr pad1 text-center">Upload Your Credit Report</h4></div>
-                                      <div class="col-md-4 col-sm-12 col-xs-12">
+                                    <!--   <div class="col-md-12"><h4 class="hdr pad1 text-center">Upload Your Credit Report</h4></div> -->
+                                      <!-- <div class="col-md-4 col-sm-12 col-xs-12">
                                       <div class="form-group">
                                       <input type="file" name="attachment" id="image_file" class="form-control"  required="">
                                       </div>
@@ -235,7 +239,7 @@
                                       <div class="col-md-5"><h5 class="form-control">In case if you don't have <b>Credit Report</b>
                                       <a href="{{URL::to('http://www.rupeeboss.com/equifax-verification')}}">Click here</a></h5></div>
                                       <hr style="color:transparent; width:100%" />
-                                      </br><br />
+                                      </br><br /> -->
 
                                       <div class="col-md-12">
                                       <a class="btn btn-default btn-sm" id="confirm_registration">Confirm And Proceed</a>
@@ -268,7 +272,7 @@
         <h4 class="modal-title">Confirmation Status</h4>
       </div>
       <div class="modal-body">
-        <h4><p id="modalerr"><h5 style="color: black;" >Your Lead Id is <span id="App_Id"></span> and <span id="message"></span> successfully.<h5></p></h4>
+        <h4><p id="modalerr"><h5 style="color: black;" >Your Reference Id is <span id="App_Id"></span><h5></p></h4>
         
       </div>
 
@@ -385,12 +389,12 @@ function e_mail(obj,val){
           processData: false,
           contentType: false,
           success: function(msg){
-            console.log(msg.response_id);
-         if (msg.status==1) {
+            console.log(msg.Ref_Id);
+         if (msg.Status==1) {
             
              
-             $('#App_Id').text(msg.response_id);
-             $('#message').text(msg.message);
+             $('#App_Id').text(msg.Ref_Id);
+             // $('#message').text(msg.message);
              $('#rectify-credit-popup').modal('show');
             }
             else{

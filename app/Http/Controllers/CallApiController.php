@@ -59,11 +59,11 @@ class CallApiController extends InitialController
 
 		return $result;
 	}
-	public function call_other_data_api($url,$data,$type){
+		public function call_other_data_api($url,$data,$type){
 		//data in Content-Type: application/x-www-form-urlencoded format is just like get key=value&key2=value2
 		$ch = curl_init();
         curl_setopt($ch, CURLOPT_VERBOSE, 1);
-        curl_setopt($ch, CURLOPT_HTTPHEADER, array($type));
+        curl_setopt($ch, CURLOPT_HTTPHEADER, ($type));
         curl_setopt($ch, CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_POST, 1);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);

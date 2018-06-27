@@ -51,7 +51,7 @@
                                 <div class="col-md-4" style="display: none;" id="customer_type">
                                 <!-- <span><b>Existing Customer Type Master :<b></span> -->
                                 <select class="form-control block drop-arr select-sty" name="ExstCustType" id="ExstCustType" required>
-                                    <option  selected  value="0">Existing Customer Type Master</option>
+                                    <option selected  value="0">Existing Customer Type Master</option>
                                   
                                     <option value="1">Bank</option>
                                     <option  value="2">Loan</option>
@@ -597,13 +597,13 @@
           <input type="hidden" name="form" value="kotak_personal_loan_status">
                   <div>
                     <fieldset>
-                      <input type="text" class="newsletter-name" name="Mobile" pattern="[789][0-9]{9}" required  maxlength="10" placeholder="Mobile Number">
+                      <input type="text"  name="Mobile" pattern="[789][0-9]{9}" required class="form-control"  maxlength="10" placeholder="Mobile Number">
                     </fieldset>                 
                     </div>
 
                     <div>
                     <fieldset>
-                      <input type="text" class="newsletter-name" name="PAN" id="pan" oninput="pan_nmbr('pan')" required  placeholder="PAN Number">
+                      <input type="text"  name="PAN" id="pan" oninput="pan_nmbr('pan')" class="form-control" required  placeholder="PAN Number">
                        <span id="pan_num" style="display:none;color: red; font-size: 10px">Oops.Please Enter Valid Pan Number.!!</span>
                     </fieldset>                 
                     </div>
@@ -739,7 +739,7 @@
 
 <script type="text/javascript">
   $("#kotak-pl-submit").click(function(event){
-    alert('Okae');
+ 
     
     event.preventDefault();
      
@@ -747,7 +747,7 @@
         return false;
       }else{
         
-        // $(".iframeloading").show();
+         $(".iframeloading").show();
      
         $.ajax({  
          type: "POST",  
@@ -755,9 +755,9 @@
          data : $('#Kotak_PL_form').serialize(),
          dataType: 'json',
          success: function(msg){
-          // $(".iframeloading").hide();
+           
           
-          // console.log(msg.status);
+         // console.log(msg.status);
           if (msg.status=='1') 
           {
           $('#kotak_pl_refcode').empty().append(msg.refcode);
@@ -785,7 +785,7 @@
            $('#kotak_popup_error').modal('show');
           }
          
-
+          $(".iframeloading").hide();
           
           
             
@@ -828,7 +828,7 @@
 $('#IsExstCust').on('change', function() {
   // alert('okae');
   var IsExstCust=$('#IsExstCust').find(":selected").val();
-  // console.log(IsExstCust);
+  console.log(IsExstCust);
   if ( IsExstCust == 'Y')
       {
        
@@ -928,7 +928,7 @@ $('#ExstCustType').on('change', function() {
 
 <script type="text/javascript">
   function mail(obj,val){
-    console.log(obj);
+    // console.log(obj);
     if(obj=='Email' ){
                    var str =$('#Email').val();
                    var emailPattern = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/; 
@@ -994,10 +994,10 @@ $('#ExstCustType').on('change', function() {
 
     <script type="text/javascript">
     function pan_nmbr(obj,val){
-        // console.log(obj);
+        console.log(obj);
         if(obj=='pan' ){
                    var str =$('#pan').val();
-                   // console.log(str);
+                   console.log(str);
                    var pancardPattern = /^([a-zA-Z]{5})(\d{4})([a-zA-Z]{1})$/;
                    var res = str.match(pancardPattern);
                    if(res){
@@ -1024,7 +1024,7 @@ $('#ExstCustType').on('change', function() {
    success: function(datas)  
    {
    var data=$.parseJSON(datas);
-   // console.log(data);
+   console.log(data);
    if(data)
       {      $.each(data, function( index, value ) {
             $('#ResCity').append('<option value="'+value.city_code+'">'+value.city_name+'</option>');
@@ -1047,7 +1047,7 @@ $('#ExstCustType').on('change', function() {
    success: function(datas)  
    {
    var data=$.parseJSON(datas);
-   // console.log(data);
+   console.log(data);
    if(data)
       {      $.each(data, function( index, value ) {
             $('#PerCity').append('<option value="'+value.city_code+'">'+value.city_name+'</option>');
@@ -1070,7 +1070,7 @@ $('#ExstCustType').on('change', function() {
    success: function(datas)  
    {
    var data=$.parseJSON(datas);
-   // console.log(data);
+   console.log(data);
    if(data)
       {      $.each(data, function( index, value ) {
             $('#OffCity').append('<option value="'+value.city_code+'">'+value.city_name+'</option>');
@@ -1220,7 +1220,7 @@ $(document).ready(function(){
          data : $('#kotak_personal_loan_status').serialize(),
          success: function(msg){
 
-          // console.log(msg.status);
+          console.log(msg.status);
          if (msg.status =="1") {
              
              $('#kotakrefcode').empty().append(msg.refcode);

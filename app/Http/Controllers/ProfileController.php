@@ -306,11 +306,11 @@ public function  change_password(Request $req){
 
         return redirect()->away($this::$erp_url_static.'LAP/LAP_Form.aspx?'.$loan_parameters);
       }
-      else if($product == '12' && $Is_Online == '1' && $bank == '33' ){
+      else if($product == '7' && $Is_Online == '1' && $bank == '33' ){
         
       return redirect()->away($this::$current_domain_static.'/kotak-home-loan');
       } 
-      else if($product == '12' && $Is_Online == '1' && $bank == '53' ){
+      else if($product == '7' && $Is_Online == '1' && $bank == '53' ){
         
       return redirect()->away($this::$current_domain_static.'/yesbank-home-loan');
       }

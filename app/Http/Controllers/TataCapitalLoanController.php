@@ -32,16 +32,16 @@ $ttl_payment = $loanamount+$total;
 
 ///echo round($amount);
 echo json_encode($arrayName = array('amount' => ($amount),
-									'ttl_pay'=>($total),
-									'ttl_payment'=>($ttl_payment)));
+                  'ttl_pay'=>($total),
+                  'ttl_payment'=>($ttl_payment)));
  
 }
 
 
 public  function tatacapitalsearchajax(Request $request){
 
-     	
-		$post="cSource=CVIDYA&cKey=CVIDYAUAT&cFilter=".$request->term."&nMaker=1&nMaxRec=10";
+      
+    $post="cSource=CVIDYA&cKey=CVIDYAUAT&cFilter=".$request->term."&nMaker=1&nMaxRec=10";
      //$post=json_encode($request->all());
     $type="Content-Type: application/x-www-form-urlencoded";
     $url ="https://apps50.tatacapital.com/CDA-API-UAT/api_CDA_CM_GetComp.asp";
@@ -56,7 +56,7 @@ public  function tatacapitalsearchajax(Request $request){
 
         //$data[]=$value->nComp;
         $data[]= array('value'=>$value->cName,'nComp'=>$value->nComp);
-   	 
+     
    }
 
     if(count($data)){
@@ -124,7 +124,7 @@ public function tatacapitalcity(Request $request){
         else
             return ['value'=>'No Result Found'];
   
-	
+  
 }
 
 public function tatacapitalsubmitform(Request $req){
@@ -189,6 +189,7 @@ public function tata_capital_business_loan(){
     }  
 
     public function tata_capital_personal_submit(Request $req){
+      // print_r($req->all());exit();
           $data=$req->all();
           $post_data =json_encode($data);
           // print_r($post_data);exit();

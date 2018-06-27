@@ -52,7 +52,7 @@
                             <div class="col-md-4 col-sm-12 col-xs-12">
                             <div class="form-group">
                                 <label class="control-label sr-only" for="Age">Age</label>
-                                <input id="Age" name="Age" type="text" minlength="2" maxlength="2" onkeypress="return fnAllowNumeric(event)" placeholder="Age" class="form-control input-md" required="required">
+                                <input id="Age" name="Age" type="text" onkeypress="return fnAllowNumeric(event)" placeholder="Age" class="form-control input-md" required="required">
                             </div>
                             </div>
 
@@ -197,6 +197,21 @@
   </div>
 </div>
 
+<div class="modal fade" tabindex="-1" role="dialog" id="age">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Confirmation Status</h4>
+      </div>
+      <div class="modal-body">
+        <h4><p id="modalerr"><h5 style="color: black"><b>Age should be greater than 21 (or) equal to 21.</b><h5></p></h4>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="modal fade" tabindex="-1" role="dialog" id="loanamount">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -243,6 +258,12 @@
         }
         else
         {
+
+          var Age=$('#Age').val();
+          if (Age<21) {
+           $('#age').modal('show');
+            return false; 
+          }
           if ((($('#MonthlySalary').val().length)<5))
           {
             // alert('Salary should be equal to 20000 OR greater than 20000');

@@ -110,10 +110,13 @@ body {background:#fff;}
       <div class="col-md-8">
       <h3>Coral Credit Card</h3>
         <ul class="pad-lft">
-        <li>No Joining Fee. No Annual Fee</li>
-            <li>Earn 2 PAYBACK points on every Rs.100 spent</li>
-            <li>Min. 15% savings on dining at participating restaurants</li>
-           <li>Save on 1% fuel surcharge, waived off at HPCL petrol pumps</li>
+        <li>Railway Lounge Access Privilege : 1 complimentary lounge visit per quarter</li>
+        <li>Payback points : 2 PAYBACK points(Visa & Master) on every Rs.100 spent on all retail transactions</li>
+        <li>Savings On Fuel Purchases : A complete waiver of 1% on fuel surcharge</li>
+        <li>BookMYShow : Get up to 2 free tickets per month valued at up to Rs.250 per ticket</li>
+        <li>Joining FEE : Rs.500 + GST</li>
+        <li>Annual FEE : Rs.500 + GST(waived off if you spend more than Rs.1,50,00 in the previous year.)</li>
+        <li>Additional Payback points : 2000 bonus points on spending Rs.2,00,000</li>
 
       </ul>
       </div>
@@ -165,10 +168,14 @@ body {background:#fff;}
       <div class="col-md-8">
       <h3>Rubyx Credit Card</h3>
         <ul class="pad-lft">
-        <li>Exclusive privileges - entertainment, dining, wellness and golf</li>
-            <li>Complimentary airport lounge access</li>
-            <li>Buy 1, get 1 movie ticket free at BookMyShows</li>
-           <li>A set of complimentary Sennheiser HD 221 headphones on joining</li>
+        
+        <li>Railway Lounge Access Privilege : 2 complimentary lounge visit per quarter</li>
+        <li>Payback points : 2 PAYBACK points(Visa & Master) on every Rs.100 spent on all retail transactions</li>
+        <li>Savings On Fuel Purchases : A complete waiver of 1% on fuel surcharge</li>
+        <li>BookMYShow : Get up to 2 free tickets per month valued at up to Rs.300 per ticket</li>
+        <li>Joining FEE : Rs.3,000 + GST</li>
+        <li>Annual FEE : Rs.2,000 + GST(waived off if you spend more than Rs.3,00,00 in the previous year.)</li>
+        <li>Additional Payback points : 3000 bonus points on spending Rs.3,00,000</li>
 
       </ul>
       </div>
@@ -221,10 +228,13 @@ body {background:#fff;}
       <div class="col-md-8">
       <h3>Sapphiro Credit Card</h3>
         <ul class="pad-lft">
-        <li>Exclusive privileges - entertainment, dining, wellness and golf</li>
-            <li>Complimentary membership to the Priority Pass programme</li>
-            <li>Buy 1, get 1 movie ticket free at BookMyShow</li>
-            <li>Complimentary All New Kindle on joining</li>
+        
+        <li>Payback points : 2 PAYBACK points(Visa & Master) on every Rs.100 spent on all retail transactions</li>
+        <li>Savings On Fuel Purchases : A complete waiver of 1% on fuel surcharge</li>
+        <li>BookMYShow : Get up to 2 free tickets per month valued at up to Rs.500 per ticket</li>
+        <li>Joining FEE : Rs.6,500 + GST</li>
+        <li>Annual FEE : Rs.3,500 + GST(waived off if you spend more than Rs.6,00,00 in the previous year.)</li>
+        <li>Additional Payback points : 4000 bonus points on spending Rs.4,00,000</li>
 
       </ul>
       </div>

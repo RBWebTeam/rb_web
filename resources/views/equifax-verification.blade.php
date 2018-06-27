@@ -112,7 +112,7 @@
          url: "{{URL::to('equifax-send-otp')}}",
          data : $('#equifax_otp_form').serialize(),
          success: function(msg){
-            console.log(msg);
+            // console.log(msg);
             if (msg.data==true) 
                 {
                 $('#equifax_otp').hide();
@@ -151,13 +151,13 @@
      dataType:"json",
      data : $('#equifax_verify_form').serialize(),
      success: function(msg){
-        console.log(msg.data)
+        // console.log(msg.data)
         
        if(msg.data=="true"){
         // console.log("yes");
         alert('OTP verified')
         $('#waiting_div_otp').hide();
-        window.location.href="{{URL::to('equifax1')}}";
+        window.location.href="{{URL::to('equifax')}}";
 
       }else{
         // console.log("no");

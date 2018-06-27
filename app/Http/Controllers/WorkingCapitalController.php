@@ -5,17 +5,13 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use Session;
-use App\SEOlibraries\Seo;
 use DB;
 use Response;
 class WorkingCapitalController extends CallApiController
 {
       public function WorkingCapital(){
 
-                     $un=new Seo();
-                   $data=$un->Working_Capital_2();
-
-         return view('WorkingCapital')->with($data);
+         return view('WorkingCapital');
 
       }
 
@@ -235,9 +231,8 @@ public function termloanFN($loanamount,$loaninterest,$loanterm){
 
 public function NewWorkingCapital(){
 
-               $un=new Seo();
-              $data=$un->Working_C_Loan();
-         return view('new-working-capital')->with($data);
+
+         return view('new-working-capital');
 }
 
 public function working_capital_submit(Request $req){
@@ -246,7 +241,7 @@ public function working_capital_submit(Request $req){
   $post_data=json_encode($req->all());
   // print_r($post_data);exit();
   
-  $url = $this::$url_static."BankAPIService.svc/GetCustomerWorkingCapitalReq";
+  $url = "http://api.rupeeboss.com/BankAPIService.svc/GetCustomerWorkingCapitalReq";
       $result=$this->call_json_data_api($url,$post_data);
       $http_result=json_decode($result['http_result']);
       $error=$result['error'];

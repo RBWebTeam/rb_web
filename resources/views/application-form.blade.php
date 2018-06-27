@@ -42,20 +42,20 @@ body {background:#f5f5f5 !important;}
 @media only screen and (max-width:768px) {
     .pad {
         float: left;
-    padding:2px;
-    
+		padding:2px;
+		
     }
     .col-md-12 {padding:0px !important;}
     .heading-1 {width:100%;display: contents;} 
-  .btn.with-arrow {
+	.btn.with-arrow {
     float: left;
     width: 100%;
-  }
-  .container {
-        padding: 4px !important;
-  }
+	}
+	.container {
+		    padding: 4px !important;
+	}
 
-  #application_submit {display:block;}
+	#application_submit {display:block;}
 } 
 .box-shadow {box-shadow:1px 1px 3px 1px #ccc;}
 .mrg-btm {margin-bottom: 20px;}
@@ -126,11 +126,8 @@ body {background:#f5f5f5 !important;}
                         <div class="col-md-4 col-xs-6"><span class="hy-lnk btn btn-primary product"><img src="images/application-form/early_Salary.png"><p><input type="radio" name="Status" id="option1">Early</p><p>Salary</p></span></div>
                         <div class="col-md-4 col-xs-6"><span class="hy-lnk btn btn-primary product"><img src="images/application-form/credit_card.png"><p><input type="radio" name="Status" id="option1">Credit</p><p>Card</p></span></div>
                         <div class="col-md-4 col-xs-6"><span class="hy-lnk btn btn-primary product"><img src="images/application-form/H_lone.png"><p><input type="radio" name="Status" id="option1">Low Cost</p> <p>Housing</p><p>Finance</p></span></div>
-
                         <div class="col-md-4 col-xs-6"><span class="hy-lnk btn btn-primary product"><img src="images/application-form/balance_transfer.png"><p><input type="radio" name="Status" id="option1">Balance </p><p>Transfer</p></span></div>
-
                         <div class="col-md-4 col-xs-6"><span class="hy-lnk btn btn-primary product"><img src="images/application-form/personal_loan.png"><p><input type="radio" name="Status" id="option1">Personal</p><p>Loan</p></span></div>
-
                         <div class="col-md-4 col-xs-6"><span class="hy-lnk btn btn-primary product"><img src="images/application-form/credit_sudhar.png"><p><input type="radio" name="Status" id="option1">Credit</p><p>Sudhar</p></span></div> 
                         </div>
                         

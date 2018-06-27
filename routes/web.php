@@ -1,5 +1,5 @@
 <?php
-Route::get('logsi', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
+Route::get('watch-it', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
 Route::get('/','HomeController@index');
 Route::get('switch','HomeController@switch');
 // Route::get('personal-loan','LoanController@personal_loan');
@@ -24,11 +24,13 @@ Route::get('widget','LoanController@car_loan');
 Route::get('autocomplete',array('as'=>'autocomplete','uses'=>'AutoCompleteController@index'));
 Route::get('searchajax',array('as'=>'searchajax','uses'=>'AutoCompleteController@autoComplete'));
 Route::get('searchstateajax',array('as'=>'searchstateajax','uses'=>'AutoCompleteController@autoComplete_state'));
-Route::get('searchcompanyajax',array('as'=>'searchcompanyajax','uses'=>'AutoCompleteController@autoComplete_company'));	
+Route::get('searchcompanyajax',array('as'=>'searchcompanyajax','uses'=>'AutoCompleteController@autoComplete_company')); 
 Route::get('searchiiflcompanyajax',array('as'=>'searchiiflcompanyajax','uses'=>'AutoCompleteController@autoComplete_iiflcompany')); 
 
+ 
 
-
+//Route::get('searchcity','AutoCompleteController@searchcityfn');
+Route::get('searchcity',array('as'=>'searchcity','uses'=>'AutoCompleteController@searchcityfn'));
 
 Route::post('loan-submit','FormController@p_loan_submit');
 Route::post('nri-loan-submit','FormController@nri_p_loan_submit');
@@ -250,13 +252,13 @@ Route::group(['middleware'=>'user_community'], function(){
     Route::post('community/comment','controller_index@comment');
  
     Route::get('community/logout',function(){
-    	Session::flush();
-    	 return redirect('community');
+        Session::flush();
+         return redirect('community');
     });
   
 
  // Route::get('autocomplete',array('as'=>'autocomplete','uses'=>'AutoCompleteController@index'));
-Route::get('searchajaxqu',array('as'=>'searchajaxqu','uses'=>'Login_and_Reg_Controller@autoCompletetags'));	
+Route::get('searchajaxqu',array('as'=>'searchajaxqu','uses'=>'Login_and_Reg_Controller@autoCompletetags')); 
 
 });
 
@@ -404,7 +406,7 @@ Route::get('test-equifax','TestController@test');
 Route::get('equifax-verification','EquifaxController@equifax_verification');
 Route::post('equifax-send-otp','EquifaxController@equifax_send_otp');
 Route::post('equifax-verify','EquifaxController@equifax_verify_otp');
-Route::get('equifax1','EquifaxController@equifax');
+Route::get('equifax','EquifaxController@equifax');
 Route::post('equifax-query','EquifaxController@equifax_query');
 Route::get('equifax-test','EquifaxController@equifax_test');
 

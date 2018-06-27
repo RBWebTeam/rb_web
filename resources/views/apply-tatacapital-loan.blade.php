@@ -123,7 +123,7 @@
                            {{ csrf_field() }}
                            
 
-                           <div class="col-md-12"><h4 class="hdr pad1 text-center">Additional Details</h4></div>
+                           <!-- <div class="col-md-12"><h4 class="hdr pad1 text-center">Additional Details</h4></div> -->
 
                            <div class="col-md-4 col-sm-12 col-xs-12">
                       <div class="form-group">
@@ -150,7 +150,7 @@
                           </div>
                          
 
-                      <div id="tata_capital_pl_form">
+                      <div id="tata_capital_pl_form" style="display: none;">
                         <form class="" id="tata_capital_form" name="tata_capital_form" role="form" method="POST" >
                              {{ csrf_field() }}
                              
@@ -1701,6 +1701,7 @@
          $('#message').val(msg.Message);
          $('#Status').val(msg.Status); 
          $('#status').modal('show');
+         $('#doc_popup').modal('hide');
         } 
         
       
@@ -1714,6 +1715,7 @@
 <script>
 $('#losState').on('change', function() {
   $("#losCity").empty().append('');
+
    // alert('okae');
   var losState=$('#losState').find(":selected").val();
    console.log(losState);
@@ -1755,7 +1757,7 @@ $('#losState').on('change', function() {
                  data : {'_token': v_token,'losState':losState},
                 success: function(msg){
                    
-                    console.log(msg[0].state_name);
+                    // console.log(msg[0].state_name);
                    $('#resState').val(msg[0].state_name);  
       }
   

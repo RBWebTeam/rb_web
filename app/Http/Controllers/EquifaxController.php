@@ -272,9 +272,16 @@ $post_data='{
  }
 
        public function rectify_equi_score(Request $req){
+
+     
+     
          $score=$this->equifax_query_pl($req);
-         $va=$score['score'];
-         $scorarr = json_decode(json_encode($va), TRUE);
+        // $va=$score['score'];
+
+
+
+         //$scorarr = json_decode(json_encode($va), TRUE);
+      
       
 
           $req['AddrLine1']=$req['AddrLine1'][0];
@@ -287,8 +294,8 @@ $post_data='{
           $req['AccountNumber']=$req['AccountNumber'][0];
           // print_r($req->all());exit();
           // $scorarr[0]=799;
-         $rectify=$this->rectify($req,$scorarr[0]);
-       //  print_r($rectify);exit();
+         $rectify=$this->rectify($req,$score);
+         //print_r($rectify);exit();
          return $rectify;
     } 
 
@@ -296,38 +303,48 @@ $post_data='{
       
 
         public function rectify(Request $req,$ar){
-          // print_r($req->all());exit();
-        // print_r($ar);exit();
-        // $req['datetime'] =date('d-m-Y');
-        $data['score']=$ar;
+          try {
+                
+        $scorarr = json_decode(json_encode($ar['score']), TRUE);
+        $data['score']=$scorarr[0];
         $data=$req->all();
         $data['brokerid']=Session::get('brokerid')?Session::get('brokerid'):'MAA=';
         $data['empid']=Session::get('empid')?Session::get('empid'):'MAA=';
         $data['source']=Session::get('source')?Session::get('source'):'MAA=';
         $data['CampaignName']=Session::get('CampaignName');
-        $data['score']=$ar;
-        $file=$req->file('attachment');
-        $destinationPath = public_path() .'/uploads/rectify/'.$req->Mobile_Num.'/';
-        $filename=$file->getClientOriginalName();
-        $file->move($destinationPath,$filename);
-        // print_r($destinationPath.$filename);exit();
-        $d=array_merge($data,['attachment'=>$destinationPath.$filename]);
-        $d['attachment'];
+         
+
+
+        // $file=$req->file('attachment');
+        // $path='/uploads/rectify/'.$req->MobilePhone.'/';
+        // $destinationPath = public_path() .$path;
+        // $filename=$file->getClientOriginalName();
+        // $file->move($destinationPath,$filename);
+
+ 
+        
+
+        $d=array_merge($data,['attachment'=>url('/uploads/PDF')."/".$ar['name']]);
         $post_data=json_encode($d);
-        // print_r($post_data);exit();
         $url = $this::$url_static."/BankAPIService.svc/createRectifyCreditCustDetail";
         $result=$this->call_json_data_api($url,$post_data);
         $http_result=$result['http_result'];
-        // print_r($http_result);exit();
+       
+
         $error=$result['error'];
         $st=str_replace('"{', "{", $http_result);
         $s=str_replace('}"', "}", $st);
         $m=$s=str_replace('\\', "", $s);
-        $obj = json_decode($m);
-        $obj1=json_decode($ar);
-         $obj_merged = (object) array_merge((array) $obj, (array) $obj1);
-       // print_r( $obj_merged);exit();
-       return response()->json($obj_merged);
+            $obj = json_decode($m);
+        //$obj1=json_decode($ar);
+        //$obj_merged = (object) array_merge((array) $obj, (array) $obj1);
+         
+          return response()->json($obj);
+          } catch (\Exception $e) {
+            echo ($e->getMessage()); 
+          }
+          // print_r($req->all());exit();
+         
 
  }
 
@@ -348,6 +365,8 @@ $post_data='{
  /*Equifax Score for PL*/
  public function equifax_query_pl(Request $req){
 
+ 
+
     $status=0;
     $name="";
     $err="";
@@ -358,16 +377,21 @@ try{
      foreach ($req->AccountNumber as $key => $value) {
               $AccountNumber[]=[ "AccountNumber" =>$value,"seq" =>1];    }
               $AccountDetails = json_encode($AccountNumber);
-              $DOB=$req->DOB?$req->DOB:'';
+              $datef=$req->DOB?$req->DOB:'';
+              $DOB=date("Y-m-d", strtotime($datef));
               $DriverLicense=$req->DriverLicense?$req->DriverLicense:'';   
               $FirstName=$req->FirstName?$req->FirstName:''; 
               $FullName=$req->FullName?$req->FullName:''; 
               $Gender=$req->Gender?$req->Gender:''; 
               $HomePhone=$req->HomePhone?$req->HomePhone:'';    
               $AddressLine1=array();
+
+
+
+
               if($req->AddressType){
               foreach ($req->AddressType as $key => $value) {
-              $AddressLine1[]= array('InquiryAddresses' =>["AddressLine" =>$req->AddressLine[$key]?$req->AddressLine[$key]:" ",
+              $AddressLine1[]= array('InquiryAddresses' =>["AddressLine" =>$req->AddrLine1[$key]?$req->AddrLine1[$key]:" ",
               'AddressType'=>$req->AddressType[$key]?$req->AddressType[$key]:" ", 
               'City'=>$req->City[$key]?$req->City[$key]:" ",
               'Locality1'=>$req->Locality1[$key]?$req->Locality1[$key]:" ", 
@@ -381,9 +405,14 @@ try{
 
           }
       }
+     
 
+ 
+ 
              
-          $InquiryAddresses=json_encode($AddressLine1);    
+          $InquiryAddresses=json_encode($AddressLine1); 
+
+         
            
              $InquiryPurpose=$req->InquiryPurpose?$req->InquiryPurpose:'';
              $LastName=$req->LastName?$req->LastName:'';
@@ -413,7 +442,7 @@ $post_data='{
          "source":"'. $data['source'].'",
         "AdditionalId1":"",
         "AdditionalId2":"",
-        "AddrLine1":"'.$req->AddressLine[0].'",
+        "AddrLine1":"'.$req->AddrLine1[0].'",
         "DOB":"'.$DOB.'",
         "DriverLicense":"'.$DriverLicense.'",
         "FirstName":"'.$FirstName.'",
@@ -451,13 +480,15 @@ $post_data='{
     }
 }';
 
+
+
+
         $result=$this->call_json_data_api("http://api.rupeeboss.com/EquifaxAPIService.svc/createCreditReportReq",$post_data);
         $http_result=$result['http_result'];
-           
+          
         
 
         $xml = simplexml_load_string($http_result);
-        
         $xml_S=simplexml_load_string($xml);
        
         if($xml_S->ReportData->Error->ErrorMsg){
@@ -467,6 +498,8 @@ $post_data='{
 
           if(isset($xml_S->ReportData->Score->Value)){
             $score=$xml_S->ReportData->Score->Value;
+            $name="Hit_".strtoupper($PANId).".pdf";
+
           }
         $tt=file_put_contents(public_path("input/xxx.xml"),$xml);
         $process = new Process('java -Xms256m -Xmx512m -jar MParser-6.2.0.jar xxx.xml');
@@ -478,8 +511,9 @@ $post_data='{
           $status=1;
         }
         
+
         }
-        $name="Hit_".strtoupper($PANId).".pdf";
+      
         }catch (\Exception $e) {
           $err=$e->getMessage();
           $status=0;

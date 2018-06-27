@@ -47,16 +47,6 @@ class TrackapplicationController extends CallApiController
         
           return view('survey');  
     }
-    public function survey_sub(Request $req){
-        
-        $input=$req->all();
-         $new_array = array('empid' => Session::get('empid'), 'brokerid' => Session::get('brokerid'),'source' => Session::get('source'));
-
-         $res_arr=array_merge($input,$new_array);
-         print "<pre>"; print_r($res_arr);exit();
-        
-          return view('survey');  
-    }
 
  
 }

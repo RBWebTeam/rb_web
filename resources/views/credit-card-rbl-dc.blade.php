@@ -825,7 +825,7 @@ $('form#rbl_cc_dc').find('input').each(function(){
 <script type="text/javascript" src="js/datepicker.js"></script>
 
 
-<script>
+<!-- <script>
 		  $( function() {
 			$( '#datepicker,#datepicker1,#datepicker2' ).datepicker({
 				changeMonth:true,
@@ -834,12 +834,27 @@ $('form#rbl_cc_dc').find('input').each(function(){
 				yearRange : 'c-65:c+10'
 			});
 		  });
-	 </script>
+	 </script> -->
+
+   <script type="text/javascript">
+    var d = new Date();
+    var year = d.getFullYear()-21 ;
+    d.setFullYear(year);
+
+    $("#datepicker").datepicker({ dateFormat: "yy-mm-dd",
+      changeMonth: true,
+      changeYear: true,
+      maxDate: year,
+      minDate: "-84Y",
+      yearRange: '-84:' + year + '',
+      defaultDate: d
+    });
+</script>
 
 <script>
-  $("#DateOfBirth").click(function() {
-    $(".lastReporteddob").datepicker('show');
-});
+//   $("#DateOfBirth").click(function() {
+//     $(".lastReporteddob").datepicker('show');
+// });
 
 
 

@@ -99,11 +99,7 @@
                                         <option value="13">13 Year</option>
                                         <option value="14">14 Year</option>
                                         <option value="15">15 Year</option>
-                                        <option value="16">16 Year</option>
-                                        <option value="17">17 Year</option>
-                                        <option value="18">18 Year</option>
-                                        <option value="19">19 Year</option>
-                                        <option value="20">20 Year</option>
+                                        
                                         </select>
                               </div>
                           </div>
@@ -135,7 +131,7 @@
                              <div class="col-md-12 col-sm-12 col-xs-12">
                               <div class="form-group">                                
                                    <input type="radio" id="sala_DI" value="salaried" name="emp_detail" checked="checked" >&nbsp; Salaried &nbsp;                                 
-                                    <input type="radio" id="self_DI" value="self-employed" name="emp_detail"  >&nbsp;Self Employed                                  
+                                    <input type="radio" id="self_DI" value="self-employed" name="emp_detail"  >&nbsp;Self Employed                                 
                                 </div>
                             </div>
 
@@ -382,19 +378,19 @@
                                 <div class="row">
 
 
-
-
+ 
                                     <div class="col-md-12 col-sm-12 col-xs-12">
 
 
 
-                                            <div class="st-accordion ">
+                    <div class="st-accordion ">
                         <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+
                             <div class="panel panel-default">
-                                <div class="panel-heading" role="tab" id="headingOne">
-                                    <h4 class="panel-title"><i class="fa fa-minus-circle sign"></i>Loan against Property can be taken for following purposes</h4>
+                                <div class="panel-heading" role="tab"  data-toggle="collapse" data-target="#collapseid1" >
+                                    <h4 class="panel-title"><i class="glyphicon glyphicon-plus   sign"></i>Loan against Property can be taken for following purposes</h4>
                                 </div>
-                                <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                                <div id="collapseid1"   class="panel-collapse collapse in" role="tabpanel"  >
                                     <div class="panel-body">
                                     <ul class="listnone bullet bullet-check-circle-default">
                                                 <li>Expanding your Business</li>
@@ -408,37 +404,40 @@
                                 </div>
                             </div>
 
+
+
                             <div class="panel panel-default">
-                                <div class="panel-heading" role="tab" id="headingTwo">
-                                    <h4 class="panel-title"><i class="fa fa-minus-circle sign"></i>Criteria for Property</h4>
+                                <div class="panel-heading" role="tab"  data-toggle="collapse" data-target="#collapseid2" >
+                                    <h4 class="panel-title"><i class="glyphicon glyphicon-plus   sign"></i>Criteria for Property</h4>
                                 </div>
-                                
+                                <div id="collapseid2"   class="panel-collapse collapse in" role="tabpanel"  >
                                     <div class="panel-body">
                                     <ul class="listnone bullet bullet-check-circle-default">
-                                                <li>Residence Self-Occupied</li>
+                                                 <li>Residence Self-Occupied</li>
                                                 <li>Residence Vacant/on Rent</li>
                                                 <li>Commercial Property</li>
                                                 <li>Factory / Warehouse</li>
                                             </ul>
 
-                                        </div>                                
+                                        </div>
+                                </div>
                             </div>
-                           
-                           
+
+
+                            
+
+
                         </div>
                     </div>
 
 
 
-                                             
-
-
-
-
-
-
-                                       
+                                                 
                                     </div>
+
+
+
+
                                 </div>
                             </div>
                         </div>

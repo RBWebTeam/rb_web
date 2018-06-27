@@ -182,7 +182,7 @@ class ApiController extends CallApiController
 		}
 		}catch (\Exception $e) {
 			$error="Failure occured";
-			return $e;
+			return $error;
 		}
 	}
 	
@@ -883,7 +883,7 @@ try {
     {
 
        $file=$req->file('video');
-        print_r($file);exit();
+        // print_r($file);exit();
        if($file == null){
             throw new \Exception("Upload Video ", 1);
           }
@@ -1308,5 +1308,45 @@ try {
      }
      return response()->json(array('status' =>$status,'message'=>$msg,"front_rear_id"=>$query,"left_id"=>$query1,"right_id"=>$query2,"tyre_id"=>$query3,"glass_id"=>$query4,));
    }
+
+    public function integrate_test(Request $req){
     
+    try {
+	$curl = curl_init();
+
+	curl_setopt_array($curl, array(
+		  CURLOPT_SSLKEY => "/var/www/ssl/rb.key.pem",
+		  CURLOPT_SSLCERT => "/var/www/ssl/rb.crt.pem",
+		  CURLOPT_PORT => "444",
+		  CURLOPT_URL => "https://uatsky.yesbank.in:444/app/uat/rsProductLeadService/createLead",
+		  CURLOPT_RETURNTRANSFER => true,
+		  CURLOPT_ENCODING => "",
+		  CURLOPT_MAXREDIRS => 10,
+		  CURLOPT_TIMEOUT => 30,
+		  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+		  CURLOPT_CUSTOMREQUEST => "POST",
+		  CURLOPT_POSTFIELDS => "{\r\n\t\"CreateLeadReq\":\r\n        {\r\n        \"ReqHdr\":\r\n                {\r\n                \"ConsumerContext\":\r\n                        {\r\n                        \"RequesterID\":\"RPB\"\r\n                        }\r\n                ,\r\n                \"ServiceContext\":\r\n                        {\r\n                        \"ServiceName\":\"ProductsLeadManagement\",\r\n                        \"ReqRefNum\":\"1000000000000000\",\r\n                        \"ReqRefTimeStamp\":\"2014-10-12T16:30:15\",\r\n                       \"ServiceVersionNo\":\"1.0\"\r\n                        }\r\n                \r\n                }\r\n        ,\r\n        \"ReqBody\":\r\n                {\r\n\t\"FirstName\":\"Kishor\", \r\n\"LastName\":\"Sagar\", \r\n\"Telephone1\":\"9930968796\",\r\n\"BranchCode\":\"55555\",\r\n\"Source\":\"Alternate Banking Channel\",\r\n\"Channel\":\"RupeeBoss\",\r\n\"SourceReferenceId\":\"Home Loan Retail Banking Assets\",\r\n\"Remark\":\"RupeeBoss lead\",\r\n\"ProductName\":\"Home Loan\"               \r\n               \r\n                }\r\n        \r\n        }\r\n}\r\n",
+		  CURLOPT_HTTPHEADER => array(
+		    "authorization: Basic dGVzdGNsaWVudDp0ZXN0QDEyMw==",
+		    "cache-control: no-cache",
+		    "postman-token: 96c8ad8c-1c14-fa3b-b06c-07d0f57f0158",
+		    "x-ibm-client-id: 8f124e30-3c37-4f8c-9ad4-e267b06b0628",
+		    "x-ibm-client-secret: yR7uM6mC6tD8dB1pB1eC5mR6aF3cO0dK4tA3bP1sX6gE1hB2pV"
+  ),
+));
+
+	$response = curl_exec($curl);
+	$err = curl_error($curl);
+	curl_close($curl);
+	if ($err) {
+	  echo "cURL Error #:" . $err;
+	} else {
+	  echo $response;
+	}
+
+    	} catch (\Exception $e) {
+    		return $e->getMessage();
+    	}
+
+	}
 }

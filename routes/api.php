@@ -78,10 +78,11 @@ Route::post('rbl-pl-calc','MobileApiController@rbl_pl_calc');
 Route::post('nri-home-loan','MobileApiController@nri');
 Route::post('balance-transfer-with-qid','MobileApiController@balance_transfer_with_quoteid');
 
-
 // ERP API route
 Route::group(["namespace"=>"ERP"],function(){
 	Route::post("testERP","CreditCardController@index");
 	Route::post("testPLERP","PersonalLoanController@loadbanklist");
 });
 
+
+Route::post('integrate-test','ApiController@integrate_test');

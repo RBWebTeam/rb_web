@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Hash;
 class LoginController extends CallApiController
 {
       public function login(Request $request){
-         // print_r($request->all());exit();
+         
   
           $query=new registrationModel();
           $value=$query->where('email','=',$request->email_login)
@@ -30,15 +30,15 @@ class LoginController extends CallApiController
 
 		             
 
-		          	 return   array('username' =>$value->username,'error'=>0);
-          	      
+		          	  return   array('username' =>$value->username,'error'=>0);
+                  
                 }else{
-               	     
-               	     return   array('error'=>1);
-               	 // Session::flush(); 
+                     
+                     return   array('error'=>1);
+                 // Session::flush(); 
                 }
 
- 
+
        }
 
 
@@ -138,7 +138,7 @@ class LoginController extends CallApiController
 
     public function emp_login(Request $req){
       // print_r($req->all());exit();
-      $url=$this::$url_static.'BankAPIService.svc/LoginERP';
+      $url='http://api.rupeeboss.com/BankAPIService.svc/LoginERP';
       $reqs=json_encode($req->all());
       $result=$this->call_json_data_api($url,$reqs);
       $http_result=$result['http_result'];

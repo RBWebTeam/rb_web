@@ -9,10 +9,9 @@ use DB;
 use Redirect;
 use App\registrationModel;
 use App\bank_quote_api_request;
-use App\Http\Controllers\EquifaxController;
 class FormController extends CallApiController
 {
-function sidebar(Request $req){
+    function sidebar(Request $req){
 
         $input = $req->all();
 
@@ -31,7 +30,7 @@ function sidebar(Request $req){
     //call API here to save in DB
         $post=json_encode($post_data);
         // print_r($post);exit();
-       $url = $this::$url_static."BankAPIService.svc/GetCustomerWebRequest";
+    $url = $this::$url_static."BankAPIService.svc/GetCustomerWebRequest";
     $result=$this->call_json_data_api($url,$post);
     $http_result=$result['http_result'];
     $error=$result['error'];
@@ -54,16 +53,13 @@ function sidebar(Request $req){
     }
 
     public function p_loan_submit(Request $req){
-          
-            
+         // print_r($req->all());exit();
       Session::forget('quote_id');
         try{
         //call api to submit form data
             $inputquotes = $req->all();
             $input = $req->all();
-
             $new_array = array('customer_contact' => Session::get('contact'), 'customer_name' => Session::get('name'),'customer_email' => Session::get('email'));
-            // print_r($new_array);exit();
            $update_id=Session::get('verify_id');
              $update_user=DB::table('user_registration')
              ->where('id',$update_id)
@@ -82,7 +78,6 @@ function sidebar(Request $req){
              $res_arr['brokerid']=Session::get('brokerid')?Session::get('brokerid'):'';
             $json_data=json_encode($res_arr);
             $prod_id=$req['product_name'];
-
             // if($prod_id==7 || $prod_id==9 || $prod_id==12){
             //         $url="http://api.rupeeboss.com/BankAPIService.svc/GetCustomerLizaWebReqTest";
             // }else{
@@ -94,19 +89,16 @@ function sidebar(Request $req){
             // $error=$result['error'];
             // if($http_result==1){                
                 $quote_data=$this::get_quotes($req);
-
                 $save=new bank_quote_api_request();    
                 $id=$save->save_liza($req);
                 Session::put('quote_id',$id);
                 $data['quote_id']=$id;
-
-                // print_r($data['quote_id']);exit();
+                // print_r( $data);exit();
             // }else{
             //     $quote_data =$req['product_name'];
             //     return view("went-wrong");
             // }
             if($req['product_name'] == 9){
-              // print_r($req['product_name']);exit();
                 $data['product'] ="Personal Loan";
                 $data['url'] ="apply-personal-loan";
             }elseif($req['product_name'] == 12){
@@ -126,12 +118,9 @@ function sidebar(Request $req){
                $data['url'] ="new-business-loan";
             }
             $data['loan_amount'] =$req['loan_amount'];
-
             $data['quote_data'] =$quote_data;
-            // print_r($data['quote_data'] );exit();
-           
             if ($quote_data) {
-             
+              // print_r($data['quote_data'] );exit();
                $Bank_Id=$data['quote_data'][0]->Bank_Id;
                $loan_eligible=$data['quote_data'][0]->loan_eligible;
                $roi=$data['quote_data'][0]->roi;
@@ -145,9 +134,7 @@ function sidebar(Request $req){
                $LoanTenure="";
                $processingfee="";
            }
-                  
-                
-                // $data['score']=$true_val;
+           
             $returnHTML = view('show-quotes')->with($data)->render();
             return response()->json(array('success' => true,'quote_id'=>$id,'Bank_Id'=>$Bank_Id,'loan_eligible'=>$loan_eligible,'roi'=>$roi,'LoanTenure'=>$LoanTenure,'processingfee'=>$processingfee,'html'=>$returnHTML));
         
@@ -264,7 +251,6 @@ function sidebar(Request $req){
         }
     }
 
-    
     
      public function otp(Request $req){
         try{
@@ -421,8 +407,6 @@ function sidebar(Request $req){
           // print_r($req->all());exit();
        return view('show-quotes')->with($req);
     }
-
-    
 
 
 

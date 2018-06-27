@@ -21,7 +21,7 @@
  <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12" style="padding-bottom: 20px">
     <div class="how-it-block1 bg-boxshadow" style=" min-height:auto; float:left;">
 
-                        <!-- <div class="col-md-6 col-sm-12 col-xs-12">
+                        <div class="col-md-6 col-sm-12 col-xs-12">
                              <div class="form-group">
                               <select id="purpose" name="purpose" class="form-control" required>
                                     <option selected disabled="">Purpose of Loan</option>
@@ -31,7 +31,7 @@
                                     <option value="Other">Other</option>                                    
                                 </select>
                               </div>
-                            </div> -->
+                            </div>
 
                           <div class="col-md-6 col-sm-12 col-xs-12">
                             <div class="form-group">
@@ -66,19 +66,6 @@
                             </div>
                           </div>
 
-                          <div class="col-md-6 col-sm-12 col-xs-12">  
-                            <div class="form-group">
-                              <input type="text" name="mobile" id="mobile" class="form-input-new form-control" placeholder="Mobile" minlength="10" maxlength="10" onkeypress="return fnAllowNumeric(event)" required="">
-                            </div>
-                          </div>
-
-                          <div class="col-md-6 col-sm-12 col-xs-12">  
-                            <div class="form-group">
-                              <input type="text" name="pan_number" id="pan_number" class="form-input-new form-control" placeholder="Pan No" oninput="pan_card('pan_number')" required="">
-                              <span id="pan" style="display:none;color: red; font-size: 10px">Oops.Please Enter Valid Pan Number.!!</span>
-                            </div>
-                          </div>
-
                           <div class="col-md-6 col-sm-12 col-xs-12">
                              <div class="form-group">
                               <select id="gender" class="form-control input-md" name="gender" required>
@@ -100,7 +87,7 @@
                            <div class="col-md-12 col-sm-12 col-xs-12">
                               <div class="form-group">                                
                                    <input type="radio" id="sala_DI" value="salaried" name="emp_detail" checked="checked" >&nbsp; Salaried &nbsp;                                
-                                    <input type="radio" id="self_DI" value="self-employed" name="emp_detail"  > Self Employed                                  
+                                    <input type="radio" id="self_DI" value="self-employed" name="emp_detail"  >  Self Employed                                 
                                 </div>
                             </div>
 
@@ -255,13 +242,20 @@
                                 <div class="row">
                           <div class="col-md-12 col-sm-12 col-xs-12">
                       <div class="st-accordion ">
-                        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">    <div class="panel panel-default">
-                                <div class="panel-heading" role="tab" id="headingThree">
-                                    <h4 class="panel-title"><i class="fa fa-minus-circle sign"></i>Documents Required</h4>
+                        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">  
+                          
+
+
+
+                              <div class="panel panel-default">
+                                <div class="panel-heading" role="tab"  data-toggle="collapse" data-target="#collapseid" >
+                                    <h4 class="panel-title">
+                                                  <h4 class="panel-title"><i class="glyphicon glyphicon-plus   sign"></i>Documents Required</h4>            
+                                                  
                                 </div>
-                                
+                                <div id="collapseid"   class="panel-collapse collapse in" role="tabpanel"  >
                                     <div class="panel-body">
-                                        <strong>Important parameters Banks look for :</strong>
+                                    <strong>Important parameters Banks look for :</strong>
                                             <ul class="listnone bullet bullet-check-circle-default">
                                                 <li>A Copy of Latest Salary Slips or Salary Certificate.</li>
                                                 <li>Form 16 and Copy of ITR for the last two years.</li>
@@ -271,9 +265,12 @@
                                                 <li>CIBIL Score / Credit Rating</li>
                                                 <li>Government Recognize ID and Address Proof </li>
                                             </ul>
-                                    </div>
-                               
-                            </div>                           
+
+                                        </div>
+                                </div>
+                            </div> 
+
+
                         </div>
                     </div>                                    
                           </div>
@@ -489,25 +486,3 @@ $("#eligibility").click(function() {
 
   });
 </script>
-
-<script type="text/javascript">
-    function pan_card(obj,val){
-        // console.log(obj);
-        if(obj=='pan_number' ){
-                   var str =$('#pan_number').val();
-                   var pancardPattern = /^([a-zA-Z]{5})(\d{4})([a-zA-Z]{1})$/;
-                   var res = str.match(pancardPattern);
-                   if(res){
-                     // console.log('Pancard is valid one.!!');
-                        $('#pan').hide();
-
-                  }else{
-                    // console.log('Oops.Please Enter Valid Pan Number.!!');
-                    $('#pan').show();
-
-                    return false;
-                  }
-                  
-    }
-    }
-    </script>

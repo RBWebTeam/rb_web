@@ -137,7 +137,7 @@ $(document).ready(function(){
 
 
 
-       <div class=" ">
+<div class=" ">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -152,7 +152,7 @@ $(document).ready(function(){
                     </div>
                     <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding-bottom: 20px">
-                    <div class="how-it-block1 bg-boxshadow" style=" min-height: 200px;">
+                    <div class="how-it-block1 bg-boxshadow" style=" min-height: 300px;">
                       <div id="personal_loan">
                 <form id="company_list" name="company_list" method="POST">
                            {{ csrf_field() }}
@@ -177,7 +177,7 @@ $(document).ready(function(){
                            {{ csrf_field() }}
                            
 
-                           <div class="col-md-12"><h4 class="hdr pad1 text-center">Additional Details</h4></div>
+                           <!-- <div class="col-md-12"><h4 class="hdr pad1 text-center">Additional Details</h4></div> -->
 
                            <div class="col-md-4 col-sm-12 col-xs-12">
                       <div class="form-group">
@@ -438,7 +438,86 @@ $(document).ready(function(){
                                       </div>
                                       </div>
 
-                                  
+                                        <!-- <div class="col-md-4 col-sm-12 col-xs-12">
+                                    <div class="form-group">
+                                          <select name="resCity" id="resCity" class="form-control block drop-arr select-sty" required>
+                                          <option selected disabled="" value="">City</option>
+                                          <option value="HYDERABAD">HYDERABAD</option>
+                                          <option value="VIJAYAWADA">VIJAYAWADA</option>
+                                          <option value="RAIPUR">RAIPUR</option>
+                                          <option value="AHMEDABAD">AHMEDABAD</option>
+                                          <option value="BARODA">BARODA</option>
+                                          <option value="SURAT">SURAT</option>
+                                          <option value="FARIDABAD">FARIDABAD</option>
+                                          <option value="GURGAON">GURGAON</option>
+                                          <option value="BENGALURU">BENGALURU</option>
+                                          <option value="HUBLI">HUBLI</option>
+                                          <option value="BHOPAL">BHOPAL</option>
+                                          <option value="MUMBAI">MUMBAI</option>
+                                          <option value="PUNE">PUNE</option>
+                                          <option value="NASIK">NASIK</option>
+                                          <option value="THANE">THANE</option>
+                                          <option value="NAVI MUMBAI">NAVI MUMBAI</option>
+                                          <option value="JAMSHEDPUR">JAMSHEDPUR</option>
+                                          <option value="RANCHI">RANCHI</option>
+                                          <option value="BHUBANESWAR">BHUBANESWAR</option>
+                                          <option value="PATIALA">PATIALA</option>
+                                          <option value=" JAIPUR">JAIPUR</option>
+                                          <option value="UDAIPUR">UDAIPUR</option>
+                                          <option value="JAIPUR (RAJASTHAN)">JAIPUR (RAJASTHAN)</option>
+                                          <option value="CHENNAI">CHENNAI</option>
+                                          <option value="KANPUR">KANPUR</option>
+                                          <option value="LUCKNOW">LUCKNOW</option>
+                                          <option value="GHAZIABAD - NOIDA">GHAZIABAD - NOIDA</option>
+                                          <option value=" KOLKATA">KOLKATA</option>
+                                          <option value="CHANDIGARH">CHANDIGARH</option>
+                                          <option value="DELHI">DELHI</option>
+                                          <option value="DELHI, NCR">DELHI, NCR</option>
+                                          
+                                          </select>
+                                        </div>
+                                      </div> -->
+
+                                       <!-- <div class="col-md-4 col-sm-12 col-xs-12">
+                                    <div class="form-group">
+                                          <select name="losCity" id="losCity" class="form-control block drop-arr select-sty" required>
+                                          <option data-group='SHOW' value='0'>CityID</option>
+                                          <option data-group="HYDERABAD" value="500">500</option>
+                                          <option data-group="VIJAYAWADA" value="520">520</option>
+                                          <option data-group="RAIPUR" value="492">492</option>
+                                          <option data-group="AHMEDABAD" value="380">380</option>
+                                          <option data-group="BARODA" value="390">390</option>
+                                          <option data-group="SURAT" value="395">395</option>
+                                          <option data-group="FARIDABAD" value="121">121</option>
+                                          <option data-group="GURGAON" value="113">113</option>
+                                          <option data-group="BENGALURU" value="560">560</option>
+                                          <option data-group="HUBLI" value="58A">58A</option>
+                                          <option data-group="BHOPAL" value="462">462</option>
+                                          <option data-group="MUMBAI" value="400">400</option>
+                                          <option data-group="PUNE" value="411">411</option>
+                                          <option data-group="NASIK" value="422">422</option>
+                                          <option data-group="THANE" value="406">406</option>
+                                          <option data-group="NAVI MUMBAI" value="40R">40R</option>
+                                          <option data-group="JAMSHEDPUR" value="831">831</option>
+                                          <option data-group="RANCHI" value="83U">83U</option>
+                                          <option data-group="BHUBANESWAR" value="751">751</option>
+                                          <option data-group="PATIALA" value="147">147</option>
+                                          <option data-group=" JAIPUR" value="30C">30C</option>
+                                          <option data-group="UDAIPUR" value="313">313</option>
+                                          <option data-group="JAIPUR (RAJASTHAN)" value="302">302</option>
+                                          <option data-group="CHENNAI" value="600">600</option>
+                                          <option data-group="KANPUR" value="200">200</option>
+                                          <option data-group="LUCKNOW" value="226">226</option>
+                                          <option data-group="GHAZIABAD - NOIDA" value="201">201</option>
+                                          <option data-group=" KOLKATA" value="700">700</option>
+                                          <option data-group="CHANDIGARH" value="160">160</option>
+                                          <option data-group="DELHI" value="100">100</option>
+                                          <option data-group="DELHI, NCR" value="110">110</option>
+                                          
+                                          </select>
+                                        </div>
+                                      </div> -->
+
                                      
                                             <input type="hidden" id="resCity" name="resCity" required>
                                             
@@ -614,7 +693,11 @@ $(document).ready(function(){
                                         </div>
                                       </div>
 
-                                        
+                                        <!-- <div class="col-md-4">
+                                        <select class="form-control drop-arr select-sty" name="empCity" id="empCity" required>
+                                          <option disabled selected value="">City</option>
+                                        </select>
+                                        </div> -->
                                         <input type="hidden" name="empCity" id="empCity" value="">
 
                                         <div class="col-md-4 col-sm-12 col-xs-12">
@@ -675,10 +758,27 @@ $(document).ready(function(){
                                      <input type="hidden" name="includeIncomeFlag" value="Y">
                                      
 
+                                      <!-- <div class="col-md-4 col-sm-12 col-xs-12">
+                                    <div class="form-group">
+                                          <select name="mainBankingReq" id="mainBankingReq" class="form-control block drop-arr select-sty" required>
+                                          <option disabled selected value="">Main Banking Req</option>
+                                          <option value="Y">Yes</option>
+                                          <option value="N">No</option>
+                                          </select>
+                                        </div>
+                                      </div> -->
                                       <input type="hidden" name="mainBankingReq" value="Y">
                                       <input type="hidden" name="pdcEcsReq" value="Y">
 
-                                     
+                                        <!-- <div class="col-md-4 col-sm-12 col-xs-12">
+                                    <div class="form-group">
+                                          <select name="pdcEcsReq" id="pdcEcsReq" class="form-control block drop-arr select-sty" required>
+                                          <option disabled selected value="">Pdc Ecs Req</option>
+                                          <option value="Y">Yes</option>
+                                          <option value="N">No</option>
+                                          </select>
+                                        </div>
+                                      </div> -->
 
                                         <div class="col-md-4 col-sm-12 col-xs-12">
                                     <div class="form-group">
@@ -887,7 +987,7 @@ $(document).ready(function(){
   </div>
 </div>
 
-<!-- Documents -->
+
 <div class="modal fade" tabindex="-1" role="dialog" id="doc_popup">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -906,22 +1006,6 @@ $(document).ready(function(){
       </div>
       
       
-    </div>
-  </div>
-</div>
-
-<div class="modal fade" tabindex="-1" role="dialog" id="doc_popup_err">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title">Confirmation Status</h4>
-      </div>
-      <div class="modal-body">
-        <h4><p id="modalerr"><h5 style="color: black">Your Documents Could not be Uploaded.<h5></p></h4>
-        
-      </div>
- 
     </div>
   </div>
 </div>
@@ -1213,21 +1297,24 @@ $(document).ready(function(){
       $form=$('#tata_capital_form');
       if(! $form.valid()){
         // alert("no")
-       
+        alert("Please Fill All Mandatory Fields.");
          return false;
       }else{
+
 
         var empcode=$('#empCode').val();
         var employerCode= String('0000000000000000' + empcode).slice(-16);
         // alert(employerCode);
         $('#employerCode').val(employerCode);
-
+         $(".iframeloading").show();
    
         $.ajax({  
+
          type: "POST",  
-         url: "{{URL::to('tata-capital-personal-submit-dc')}}",
+         url: "{{URL::to('tata-capital-personal-submit')}}",
          data : $('#tata_capital_form').serialize(),
          success: function(msg){
+          $(".iframeloading").hide();
           console.log(msg.RetStatus);
           if (msg.RetStatus=="SUCCESS") 
           {
@@ -1334,7 +1421,49 @@ $(document).ready(function(){
 
 </script>
 
+<script type="text/javascript">
+  
+    $('#resCity').on('change', function(){
+        var val = $(this).val();
+        // alert(val);
+        
+        var sub = $('#losCity');
 
+        $('option', sub).filter(function(){
+            if (
+                 $(this).attr('data-group') === val 
+              || $(this).attr('data-group') === 'SHOW'
+            ) {
+                $(this).show();
+            } else {
+                $(this).hide();
+            }
+        });
+    });
+    $('#resCity').trigger('change');
+</script>
+
+<!-- <script type="text/javascript">
+  
+    $('#resState').on('change', function(){
+        var val = $(this).val();
+        // alert(val);
+        
+        var sub = $('#losState');
+
+        $('option', sub).filter(function(){
+            if (
+                 $(this).attr('data-group') === val 
+              || $(this).attr('data-group') === 'SHOW'
+            ) {
+                $(this).show();
+            } else {
+                $(this).hide();
+            }
+        });
+    });
+    $('#resState').trigger('change');
+</script> -->
 
 <script type="text/javascript">
 
@@ -1437,7 +1566,7 @@ $(document).ready(function(){
 
             // $('#financial_doc').show();
         $.ajax({
-          url:"{{URL::to('tata-capital-documents-dc')}}" ,  
+          url:"{{URL::to('tata-capital-documents')}}" ,  
           data:new FormData($("#document_upload_form")[0]),
           dataType:'json',
           async:false,
@@ -1452,7 +1581,7 @@ $(document).ready(function(){
              $('#doc_popup').modal('show');
              }
              else{
-               $('#doc_popup_err').modal('show');
+              alert("Your Documents Could not be Uploaded");
              }
             
               
@@ -1463,6 +1592,53 @@ $(document).ready(function(){
     });
 </script>
 
+<!-- <script type="text/javascript">
+    $('#reset_1').click(function(){
+        $("#identity_proof")[0].selectedIndex = 0;
+        $("#identity").val("");
+    });
+
+    $('#reset_2').click(function(){
+        $("#address_proof")[0].selectedIndex = 0;
+        $("#address").val("");
+    });
+
+    $('#reset_3').click(function(){
+        $("#vat")[0].selectedIndex = 0;
+        $("#vat_proof").val("");
+    });
+
+    $('#reset_4').click(function(){
+        $("#activity")[0].selectedIndex = 0;
+        $("#Proof_of_activity").val("");
+    });
+</script> -->
+
+<!-- <script type="text/javascript">
+  $("#Company_Name").blur(function(){
+        // alert('okae');
+         $.ajax({  
+         type: "POST",  
+         url: "{{URL::to('tata-capital-company-master')}}",
+         data : $('#company_list').serialize(),
+         success: function(msg){
+        
+         var availableTags = msg.aComp;
+         console.log(availableTags);
+         ;
+
+          
+
+          
+            
+      }   
+     });
+      
+    });
+   $( "#Company_Name" ).autocomplete({
+            source: availableTags
+          })
+</script> -->
 
 <script type="text/javascript">
   $("#Company_Name").autocomplete({
@@ -1531,7 +1707,7 @@ $(document).ready(function(){
         $('#loanAmount').val(loanamt);
         $.ajax({  
          type: "POST",  
-         url: "{{URL::to('tata-capital-roi-dc')}}",
+         url: "{{URL::to('tata-capital-roi')}}",
          data : $('#roi').serialize(),
          success: function(msg){
           $('#tata_capital_pl_form').show();
@@ -1582,6 +1758,7 @@ $(document).ready(function(){
          $('#message').val(msg.Message);
          $('#Status').val(msg.Status); 
          $('#status').modal('show');
+         $('#document_upload').modal('hide');
         } 
         
       
@@ -1594,6 +1771,8 @@ $(document).ready(function(){
 
 <script>
 $('#losState').on('change', function() {
+  $("#losCity").empty().append('');
+
    // alert('okae');
   var losState=$('#losState').find(":selected").val();
    console.log(losState);
@@ -1607,7 +1786,7 @@ $('#losState').on('change', function() {
                     console.log(msg);
                     if(msg)
                     {      $.each(msg, function( index, value ) {
-                              $('#losCity').empty().append('<option value="'+value.los_city_id+'">'+value.city_name+'</option>');
+                              $('#losCity').append('<option value="'+value.los_city_id+'">'+value.city_name+'</option>');
 
                               $('#resCity').val(value.city_name);
 

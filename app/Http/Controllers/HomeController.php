@@ -16,8 +16,6 @@ use Illuminate\Support\Facades\Hash;
 class HomeController extends CallApiController
 {
 	public function index(){
-		// Session::get('CampaignName');
-		//print_r(" index   =---".Session::get('CampaignName'));exit();
 		
 		//$product_list=InitialController::prod();
 		//print_r($product_list);
@@ -72,6 +70,7 @@ class HomeController extends CallApiController
 
 		$data['title']='Express Loan– Instant loan at Low interest rate on Rupeeboss.com';
     	$data['description']='Get loans approved instantly. Express Loan provide quick loans at lowest interest apply Online on Rupeeboss.com';
+    	
 		return view('express-loan')->with($data)->with('keywords',$keywords);
 	}
 

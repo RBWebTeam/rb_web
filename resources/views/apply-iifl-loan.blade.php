@@ -190,7 +190,7 @@
               <!-- next Eligibilitydetails end -->
 
               <!-- iifl-lead -->
-              <div id="iifl-lead" style="display: none;">
+              <div id="iifl-lead" style="display: none;" >
                 <form id="iifl_lead" name="iifl_lead" method="POST">
                   {{ csrf_field() }}
                   <input class="form-control input-md" type="hidden" name="Token"  id="Token" readonly value="" />

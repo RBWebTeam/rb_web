@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>MEDSAVE</title>
+    <title>NIHON</title>
     
 
 
@@ -98,21 +98,21 @@
       <td>1 Lakh-20 lakhs</td>
       <td>1 Lakh-15 lakhs</td>
       <td>1 Lakh-5 lakhs</td>
-	   <td>1 Lakh-5 lakhs</td>
+	   <td>0.75 Lakh-20 lakhs</td>
     </tr>
     <tr>
       <th scope="row">Rate of Interest</th>
       <td>14-16%</td>
       <td>10.99-18%</td>
       <td>13-21%</td>
-	  <td>13-21%</td>
+	  <td>11.5-18%</td>
     </tr>
     <tr>
       <th scope="row">Processing Fee </th>
       <td>2%</td>
       <td>0.99 - 2%</td>
       <td>2%</td>
-	   <td>2%</td>
+	   <td>1.25-2.50%</td>
     </tr>
 	<tr>
       <th scope="row">Tenure</th>
@@ -126,22 +126,22 @@
       <td>3 days</td>
       <td>6 days</td>
       <td>2 days</td>
-	  <td>2 days</td>
+	  <td>3-4 days</td>
     </tr>
 	
 	<tr class="no-brd">
       <th scope="row"></th>
       <td>              
-	  <a href="http://www.rupeeboss.com/rbl-personal-loan-dc" target="_blank" class="apply-btn">APPLY NOW</a>
+	  <a href="http://35.154.72.18/rbl-personal-loan-dc" target="_blank" class="apply-btn">APPLY NOW</a>
 	  </td>
       <td>               
-	  <a href="http://www.rupeeboss.com/kotak-personal-loan-dc" target="_blank" class="apply-btn">APPLY NOW</a>
+	  <a href="http://35.154.72.18/kotak-personal-loan-dc" target="_blank" class="apply-btn">APPLY NOW</a>
 	  </td>
       <td>
-	     <a href="http://www.rupeeboss.com/apply-iifl-loan-dc" target="_blank" class="apply-btn">APPLY NOW</a>
+	     <a href="http://35.154.72.18/apply-iifl-loan-dc" target="_blank" class="apply-btn">APPLY NOW</a>
 	  </td>
 	  <td>
-	     <a href="http://www.rupeeboss.com/tata-capital" target="_blank" class="apply-btn">APPLY NOW</a>
+	     <a href="http://35.154.72.18/tatacapital-personal-loan-dc" target="_blank" class="apply-btn">APPLY NOW</a>
 	  </td>
     </tr>
   </tbody>

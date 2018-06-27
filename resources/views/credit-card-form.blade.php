@@ -864,7 +864,7 @@ $.ajax({
    // console.log(data);
    if(data)
       {      $.each(data, function( index, value ) {
-            $('#ResidenceState').append('<option value="'+value.State_Id+'">'+value.state_name+'</option>');
+            $('#ResidenceState').append('<option value="'+value.state_name+'">'+value.state_name+'</option>');
       }); 
     }else{
       $('#ResidenceState').empty().append('No Result Found');
@@ -888,7 +888,7 @@ $("#City").empty().append('');
                     console.log(msg);
                     if(msg.length != 0)
                     {      $.each(msg, function( index, value ) {
-                              $('#City').append('<option value="'+value.city_id+'">'+value.city_name+'</option>');
+                              $('#City').append('<option value="'+value.city_name+'">'+value.city_name+'</option>');
 
                    }); 
                     }else{

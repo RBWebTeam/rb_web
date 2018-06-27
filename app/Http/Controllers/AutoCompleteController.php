@@ -31,6 +31,32 @@ class AutoCompleteController extends InitialController {
             return ['value'=>'No Result Found'];
     }
 
+ public function searchcityfn(Request $request) {
+
+
+
+        $term = Input::get('term');
+        $query=DB::select('call usp_load_statecodewise_city(?,?)',[$request->state_id,$term]);
+
+
+         $data=array();
+        foreach ($query as $product) {
+                $data[]=array('value'=>$product->City_Name);
+        }
+        if(count($data)){
+            
+             return $data;
+         }
+        // else
+        //     return ['value'=>' '];
+
+ 
+        
+   
+
+    }
+
+
 
     public function autoComplete_state(Request $request) {
         $term = Input::get('term');

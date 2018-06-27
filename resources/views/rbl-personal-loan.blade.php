@@ -76,14 +76,14 @@
 								          <div class="col-md-4 col-sm-12 col-xs-12">
 					                         <div class="form-group">
 					                         <input type="text" class="form-control" placeholder="First Name *" 
-					                         name="first_name" id="first_name" onkeypress="return AllowAlphabet(event)" required="">
+					name="first_name" id="first_name" maxlength="50" onkeypress="return AllowAlphabet(event)" required="">
 					                         </div>
 					                      </div>
 
 					                    
 					                      <div class="col-md-4 col-sm-12 col-xs-12">
 					                         <div class="form-group">
-					                         	<select class="form-control select-sty" name="city" id="city">
+					                         	<select class="form-control select-sty" name="city" id="city" required>
 												  <option disabled selected value="">City</option>
 												</select>
 					                         </div>
@@ -110,19 +110,19 @@
 
 					                      <div class="col-md-4 col-sm-12 col-xs-12">
 					                         <div class="form-group">
-					                         	<input type="text" class="form-control" placeholder="Employer Name *" name="employer_name" id="employer_name" onkeypress="return AllowAlphabet(event)" required="">
+					                         	<input type="text" class="form-control" placeholder="Employer Name *" name="employer_name" id="employer_name" onkeypress="return AllowAlphabet(event)" maxlength="100" required="">
 					                         </div>
 					                     </div>
 
 					                      <div class="col-md-4 col-sm-12 col-xs-12">
 					                         <div class="form-group">
-					                         	<input type="text" class="form-control" placeholder="Net Monthly Income *" name="income" id="income" onkeypress="return fnAllowNumeric(event)" required="">
+					                         	<input type="text" class="form-control" placeholder="Net Monthly Income *" name="income" id="income" onkeypress="return fnAllowNumeric(event)" minlength="5" maxlength="9" required="">
 					                         </div>
 					                     </div>
 
 					                      <div class="col-md-4 col-sm-12 col-xs-12">
 					                         <div class="form-group">
-					                         	<input type="text" class="form-control" placeholder="EMI Amount for Existing Loan *" name="emi" id="emi" onkeypress="return fnAllowNumeric(event)" required="">
+					                         	<input type="text" class="form-control" placeholder="EMI (If not,Enter 0) " name="emi" id="emi" onkeypress="return fnAllowNumeric(event)" required="">
 					                         </div>
 					                     </div>
 
@@ -135,7 +135,7 @@
 
 					                      <div class="col-md-4 col-sm-12 col-xs-12">
 					                         <div class="form-group">
-					                     <input type="text" class="form-control" id="EmailId" name="EmailId" placeholder="Email ID *" maxlength="255" oninput="e_mail('EmailId')" >
+					                     <input type="text" class="form-control" id="EmailId" name="EmailId" placeholder="Email ID *" maxlength="255" oninput="e_mail('EmailId')" required>
                                         <div id="mail" style="display:none;color: red; font-size: 10px">Please Enter Valid Email Id.</div>
                                          </div>
                                         </div>
@@ -165,7 +165,7 @@
 
                     			<!-- step 2 -->
                     			<!-- Personal Loan - Get Quote -->
-                    			<div id="get_quotes" class="row" style="display: none;" >
+                    			<div id="get_quotes" class="row" style="display: none;">
                     				<form id="quotes" name="quotes" >
                     					<h3 class=""><center>Get Quote</center></h3>
 
@@ -177,7 +177,7 @@
 				                	 			</div>
 				                	 		</div>
 
-				                	 		<!-- <input type="hidden" name="roi" id="roi" value="0.012"> -->
+				                	 		<input type="hidden" name="roi" id="roi" value="0.012">
 
 				                	 		<div class="col-md-6 col-sm-12 col-xs-12">
 				                	 			<div class="form-group">
@@ -269,19 +269,19 @@
 
                             			<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                             				<div class="form-group">
-                            				<input type="text" name="FirstName" class="form-control" id="FirstName" placeholder="First Name" required />	
+                            				<input type="text" name="FirstName" class="form-control" maxlength="50" id="FirstName" placeholder="First Name"  required />	
                             				</div>
                             			</div>
 
                             			<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                             				<div class="form-group">
-                            					<input type="text" name="MiddleName" class="form-control" id="MiddleName" placeholder="Middle Name" onkeypress=" return AllowAlphabet(event)" />
+                            					<input type="text" name="MiddleName" class="form-control" id="MiddleName" placeholder="Middle Name" maxlength="50" onkeypress=" return AllowAlphabet(event)" />
                             				</div>
                             			</div>
 
                             			<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                             				<div class="form-group">
-                            					<input type="text" name="LastName" class="form-control" id="LastName" placeholder="Last Name" onkeypress="return AllowAlphabet(event)" required />
+                            					<input type="text" name="LastName" class="form-control" id="LastName" maxlength="50" placeholder="Last Name" onkeypress="return AllowAlphabet(event)" required />
                             				</div>
                             			</div>
 
@@ -316,7 +316,7 @@
 
                             			<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                             				<div class="form-group">
-                            				<input type="text" class="form-control date" placeholder="Date of Birth" name="DOB" id="DOB" required />	
+                            				<input type="text" class="form-control date" placeholder="Date of Birth" readonly name="DOB" id="DOB" required />	
                             				</div>
                             			</div>
 
@@ -345,7 +345,7 @@
 
                             			<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                             				<div class="form-group">
-                            				<input type="text" class="form-control" name="ResPIN" id="ResPIN" maxlength="10" placeholder="Pincode" required/>	
+                            				<input type="text" class="form-control" name="ResPIN" id="ResPIN" minlength="6" maxlength="6" placeholder="Pincode" required/>	
                             				</div>
                             			</div>
 
@@ -368,7 +368,7 @@
 
                             			<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                             				<div class="form-group">
-                            				<input type="text" class="form-control" name="CompanyName" id="CompanyName" placeholder="Company Name" required />	
+                            				<input type="text" class="form-control" name="CompanyName" id="CompanyName" placeholder="Company Name" readonly required />	
                             				</div>
                             			</div>
 
@@ -380,7 +380,7 @@
 
                             			<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                             				<div class="form-group">
-                            					<input type="text" name="TotWrkExp" class="form-control" id="TotWrkExp" onkeypress="return fnAllowNumeric(event)" placeholder="Total Work Experience" required/>
+                            					<input type="text" name="TotWrkExp" class="form-control" id="TotWrkExp" onkeypress="return fnAllowNumeric(event)" minlength="1"  maxlength="2" placeholder="Total Work Experience" required/>
                             				</div>
                             			</div>
 
@@ -414,28 +414,28 @@
 
                             			<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                             				<div class="form-group">
-                            				<select class="form-control drop-arr select-sty" name="OffCity" id="OffCity">
+                            				<select class="form-control drop-arr select-sty" name="OffCity" id="OffCity" required="">
 											  <option disabled selected value="">City</option>
 											</select>
                             				</div>
                             			</div>
 
                             			<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                            				<div class="form-group">
-                            					<input type="text" name="OffPIN" class="form-control" id="OffPIN" onkeypress=" return fnAllowNumeric(event)" placeholder=" Pincode" maxlength="6"  />
+                            				<div class="form-group" >
+                            					<input type="text" name="OffPIN" class="form-control" id="OffPIN" onkeypress=" return fnAllowNumeric(event)" placeholder=" Pincode" minlength="6" maxlength="6" required  />
                             				</div>
                             			</div>
 
                             			<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                             				<div class="form-group">
-                            					<input type="text" name="OffPhone" class="form-control" id="OffPhone" onkeypress="return fnAllowNumeric(event)" placeholder="Phone No." maxlength="8"/>
+                            					<input type="text" name="OffPhone" class="form-control" id="OffPhone" onkeypress="return fnAllowNumeric(event)" placeholder="Phone No." value="0" required />
                             				</div>
                             			</div>
 
                             			<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                             				<div class="form-group">
                             					<input type="text" name="PAN" id="PAN" class="form-control" oninput="pan_card('PAN')" maxlength="10" placeholder="Pancard Number" required />
-	<span id="pan_number" style="display:none;color: red;">Oops.Please Enter Valid Pan Number.!!</span>
+	                                    <span id="pan_number" style="display:none;color: red;">Oops.Please Enter Valid Pan Number.!!</span>
                             				</div>
                             			</div>
 
@@ -833,7 +833,6 @@
         else
         {     
 
-        	
         	if (($('#ResAddress1').val().length)<4) 
            {
              alert('Res Address 1 minimum characters should be 4');

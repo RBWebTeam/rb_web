@@ -555,7 +555,7 @@ $(".top").click(function() {
                   </div>
           <div class="col-xs-6 form-padding">
                     <div>
-                      <input type="text" name="PerResidenceState" id="PerResidenceState" class="form-control inp-fld search_statenm" required>
+                      <input type="text" name="PerResidenceState" id="PerResidenceState"   class="form-control inp-fld search_statenm" required>
                       <span class="highlight"></span><span class="bar"></span>
                       <label class="form-label-new lble">State</label>
                       <div class="clear"></div>
@@ -773,10 +773,12 @@ $(".top").click(function() {
         <h4 class="modal-title"></h4>
       </div>
       <div class="modal-body">
-        <h4><p id="modalerr"><h5>Your Application id is <b><span id="drop"></span></b>.<br>You have been <b><span id="drop1"></span></b>.<br><b><span id="drop2"></span></b><h5></p></h4>
+        <h4><p id="modalerr">
+        <!-- <h5>Your Application id is <b><span id="drop"></span></b>.<br>You have been <b><span id="drop1"></span></b>.<br><b><span id="drop2"></span></b><h5 -->
+        ></p></h4>
         
 
-        <p><b style="color: red">Thank You For Choosing ICICI Credit Card. <span id="mail_link">A link has been sent to your registered Email Id. Kindly Click on the link to upload your supporting documents</span>.</b></p>
+      <!--   <p><b style="color: red">Thank You For Choosing ICICI Credit Card. <span id="mail_link">A link has been sent to your registered Email Id. Kindly Click on the link to upload your supporting documents</span>.</b></p> -->
 
         
       </div>
@@ -789,7 +791,7 @@ $(".top").click(function() {
   </div>
 </div>
 
-<div class="modal fade" tabindex="-1" role="dialog" id="errormessage">
+<!-- <div class="modal fade" tabindex="-1" role="dialog" id="errormessage">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -806,7 +808,7 @@ $(".top").click(function() {
       </div>
     </div>
   </div>
-</div>
+</div> -->
 
 
 
@@ -1239,72 +1241,23 @@ $('form#compareform').find('input').each(function(){
          var current = $(this).closest(".panel-collapse");
         if (!current.hasClass("in")) {
            current.collapse("show");
-
    
         }else{
 
           // current.addClass("in");
 
         } 
-
-
-
-return false;
+    return false;
          
     }else{ 
 
        if( $('#ResidenceMobileNo').val()!='' &&  $('#ResidencePhoneNumber').val()!=''  &&  $('#PanNo').val()!='' &&  $('#checkboxid').val()==1){
         $(".iframeloading").show();
-        $('#upload').show();
-        $.ajax({  
-         type: "POST",  
-         url: "{{URL::to('icici-credit-submit')}}",
-         data : $('#compareform').serialize(),
-         dataType: 'json',
-         success: function(msg){
-
-          console.log(msg.ErrorMessage);
-         $(".iframeloading").hide();  
-        
-         
-          if(msg==2){
-            
-             alert("Something Went Wrong");
-
-             
-          }else if(msg.ApplicationId==null){
-           
-              $('#drop3').text(msg.ErrorMessage);
-             $('#errormessage').modal('show');
-
-          }
-          else{
-            
-            if (msg.Decision =='Declined') {
-              $('#upload').hide();
-              $('#mail_link').hide();
-
-            }
-            if(msg.Decision==""){
-              msg.Decision="Approved";
-            }
-             $('#drop').text(msg.id);
-              $('#drop1').text(msg.Decision);
-              $('#drop2').text(msg.Reason);
-              $('#drop3').text(msg.ErrorMessgae);
-             $('#credit_process_sorry').modal('show');
-          }
-          return false;
-        }  
-    
-
-      }); 
-
-     
-       return false;
+         getfn();
+         return false;
        
 
-      } 
+      }
     } 
  
     
@@ -1313,6 +1266,83 @@ return false;
 });
 }
 
+
+
+function getfn(){
+
+$.ajax({  
+         type: "POST",  
+         url: "{{URL::to('icici-credit-submit')}}",
+         data : $('#compareform').serialize(),
+         dataType: 'json',
+         success: function(msg){   
+           
+           if(msg.error==1){
+              if(msg.Decision=='Declined'){
+                    
+                  Decision='<h5> Status :<b><span>'+msg.Decision+'</span></h5></b>';
+                    Reason='<h5>Message :<b><span>'+msg.Reason+'</span></h5></b>';
+                  $('#modalerr').html(Decision+Reason);
+                  $('#upload').hide();
+              }else{
+                  
+                        id='<h5>Your Application id is :<b><span>'+msg.id+'</span></h5></b>';
+                  Decision='<h5> Status :<b><span>'+msg.Decision+'</span></h5></b>';
+                    Reason='<h5>Message :<b><span>'+msg.Reason+'</span></h5></b>';
+                  $('#modalerr').html(id+Decision+Reason);
+                  $('#upload').show();
+                  
+              }
+               $('#credit_process_sorry').modal('show');        
+
+           }else{
+
+               alert("Something Went Wrong");
+               console.log(msg);
+           }
+
+          
+
+          
+         $(".iframeloading").hide();  
+        
+         
+          // if(msg==2){
+            
+          //    alert("Something Went Wrong");
+
+             
+          // }else if(msg.ApplicationId==null){
+           
+          //     $('#drop3').text(msg.ErrorMessage);
+          //    $('#errormessage').modal('show');
+
+          // }
+          // else{
+            
+          //   if (msg.Decision =='Declined') {
+          //     $('#upload').hide();
+          //     $('#mail_link').hide();
+
+          //   }
+          //   if(msg.Decision==""){
+          //     msg.Decision="Approved";
+          //   }
+          //    $('#drop').text(msg.id);
+          //     $('#drop1').text(msg.Decision);
+          //     $('#drop2').text(msg.Reason);
+          //     $('#drop3').text(msg.ErrorMessgae);
+          //    $('#credit_process_sorry').modal('show');
+          // }
+
+           return false;
+        }  
+    
+
+      }); 
+
+
+}
 
 </script>
 

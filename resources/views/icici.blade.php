@@ -67,7 +67,7 @@
         <li>Railway Lounge Access Privilege : 1 complimentary lounge visit per quarter</li>
         <li>Payback points : 2 PAYBACK points(Visa & Master) on every Rs.100 spent on all retail transactions</li>
         <li>Savings On Fuel Purchases : A complete waiver of 1% on fuel surcharge</li>
-        <li>BookMYShow : Get up to 2 free tickets per month valued at up to Rs.500 per ticket</li>
+        <li>BookMYShow : Get up to 2 free tickets per month valued at up to Rs.250 per ticket</li>
         <li>Joining FEE : Rs.500 + GST</li>
         <li>Annual FEE : Rs.500 + GST(waived off if you spend more than Rs.1,50,00 in the previous year.)</li>
         <li>Additional Payback points : 2000 bonus points on spending Rs.2,00,000</li>
@@ -125,7 +125,7 @@
       <div class="col-md-8">
       <h3>Rubyx Credit Card</h3>
         <ul class="pad-lft">
-        <li>Welcome Vouchers on shopping and travel worth 5000</li>
+        
         <li>Railway Lounge Access Privilege : 2 complimentary lounge visit per quarter</li>
         <li>Payback points : 2 PAYBACK points(Visa & Master) on every Rs.100 spent on all retail transactions</li>
         <li>Savings On Fuel Purchases : A complete waiver of 1% on fuel surcharge</li>
@@ -188,10 +188,10 @@
       <div class="col-md-8">
       <h3>Sapphiro Credit Card</h3>
         <ul class="pad-lft">
-        <li>Welcome Vouchers on shopping and travel worth 10000</li>
+        
         <li>Payback points : 2 PAYBACK points(Visa & Master) on every Rs.100 spent on all retail transactions</li>
         <li>Savings On Fuel Purchases : A complete waiver of 1% on fuel surcharge</li>
-        <li>BookMYShow : Get up to 2 free tickets per month valued at up to Rs.250 per ticket</li>
+        <li>BookMYShow : Get up to 2 free tickets per month valued at up to Rs.500 per ticket</li>
         <li>Joining FEE : Rs.6,500 + GST</li>
         <li>Annual FEE : Rs.3,500 + GST(waived off if you spend more than Rs.6,00,00 in the previous year.)</li>
         <li>Additional Payback points : 4000 bonus points on spending Rs.4,00,000</li>

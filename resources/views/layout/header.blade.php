@@ -53,7 +53,7 @@ $(document).ready(function(){
 </script>
 
 <!-- <link rel="stylesheet" href="{{URL::to('css/iziModal.min.css')}}"> -->
-<link rel="stylesheet" href="{{URL::to('css/icons.css?v=1')}}">
+<!-- <link rel="stylesheet" href="{{URL::to('css/icons.css?v=1')}}"> -->
 
 </head>
 
@@ -73,7 +73,7 @@ $(document).ready(function(){
                     <div class="col-md-10 col-sm-6 col-xs-6 text-right">
                     <div class="header-action">
                         <a href="{{URL::to('equifax-verification')}}" class="btn btn-credit" style="padding:14px 12px">Free Credit Report</a>
-                        <a href="{{URL::to('contact-us')}}" class="btn btn-default hide-btn" style="padding:14px 13px">Expert Assistance</a>
+                        <a href="{{URL::to('contact-us')}}" class="btn btn-default hide-btn" style="padding:14px 13px">Chat Box</a>
             
             <a class="hidden-lg top-ic top-ic1" title="Free Credit Report"  href="{{URL::to('equifax-verification')}}"><i class="fa fa-tachometer"></i></a>
             <a class="hidden-lg top-ic" title="Expert Assistance"  href="{{URL::to('contact-us')}}"><i class="fa fa-phone"></i></a>
@@ -85,7 +85,7 @@ $(document).ready(function(){
                     <ul class="nav navbar-nav">
                     @if (Session::has('email'))
                      <li class="dropdown">
-                      <a class="dropdown-toggle" data-toggle="dropdown" href="#"><?php echo Session::get('name');?>
+                      <a class="dropdown-toggle" data-toggle="dropdown" href="#"><?php echo ucfirst(Session::get('name'));?>
                       <span class="caret"></span></a>
                       <ul class="dropdown-menu">
                       <li><a id="googleLOG" href="{{URL::to('logout')}}">Logout</a></li>
@@ -352,6 +352,22 @@ $(document).ready(function(){
   });
 </script>
 
+
+<script>
+    $(document).ready(function(){
+        // Add minus icon for collapse element which is open by default
+        $(".collapse.in").each(function(){
+          $(this).siblings(".panel-heading").find(".glyphicon").addClass("glyphicon-minus").removeClass("glyphicon-plus");
+        });
+        
+        // Toggle plus minus icon on show hide of collapse element
+        $(".collapse").on('show.bs.collapse', function(){
+          $(this).parent().find(".glyphicon").removeClass("glyphicon-plus").addClass("glyphicon-minus");
+        }).on('hide.bs.collapse', function(){
+          $(this).parent().find(".glyphicon").removeClass("glyphicon-minus").addClass("glyphicon-plus");
+        });
+    });
+</script>
 
 
 

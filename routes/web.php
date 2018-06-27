@@ -24,7 +24,7 @@ Route::get('widget','LoanController@car_loan');
 Route::get('autocomplete',array('as'=>'autocomplete','uses'=>'AutoCompleteController@index'));
 Route::get('searchajax',array('as'=>'searchajax','uses'=>'AutoCompleteController@autoComplete'));
 Route::get('searchstateajax',array('as'=>'searchstateajax','uses'=>'AutoCompleteController@autoComplete_state'));
-Route::get('searchcompanyajax',array('as'=>'searchcompanyajax','uses'=>'AutoCompleteController@autoComplete_company'));	
+Route::get('searchcompanyajax',array('as'=>'searchcompanyajax','uses'=>'AutoCompleteController@autoComplete_company')); 
 Route::get('searchiiflcompanyajax',array('as'=>'searchiiflcompanyajax','uses'=>'AutoCompleteController@autoComplete_iiflcompany')); 
 
  
@@ -252,13 +252,13 @@ Route::group(['middleware'=>'user_community'], function(){
     Route::post('community/comment','controller_index@comment');
  
     Route::get('community/logout',function(){
-    	Session::flush();
-    	 return redirect('community');
+        Session::flush();
+         return redirect('community');
     });
   
 
  // Route::get('autocomplete',array('as'=>'autocomplete','uses'=>'AutoCompleteController@index'));
-Route::get('searchajaxqu',array('as'=>'searchajaxqu','uses'=>'Login_and_Reg_Controller@autoCompletetags'));	
+Route::get('searchajaxqu',array('as'=>'searchajaxqu','uses'=>'Login_and_Reg_Controller@autoCompletetags')); 
 
 });
 

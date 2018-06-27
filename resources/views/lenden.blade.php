@@ -1,44 +1,28 @@
+@if(isset($data))dd($data);
+@endif
 @include('layout.header')
-<style>
- .img-center {margin:0 auto; display:block;padding:10px;}
- label {font-size:11px;}
- .yellow-bg {background:#ffc000; font-size:13px; color:#333; margin:0 auto; padding:10px 10px; margin:0 auto; cursor:pointer; border-radius:5px;-moz-border-radius:5px;-webkit-border-radius:5px;}
- .gray-bg {background:#666; font-size:13px; color:#fff; padding:10px 10px; margin:0 auto;display:block;border-radius:5px;-moz-border-radius:5px;-webkit-border-radius:5px; }
- .yellow-bg:hover {background:#eab102;color:#333;}
- .pad-btm {padding-bottom:18px;}
- .blu-head-bg {background:#28a0ff; padding:15px; display:block;float:left; width:100%; text-align:center; color:#fff;font-size:16px;}
- .mrg-tp-btm {margin:15px auto;}
- .step1, .step2, .step3, .step4, .step5, .step6, .step7, .step8, .step9 {float:left;margin-bottom:20px;}
- .center-div {margin:0 auto; display:block;}
-  th {text-align:center;}
-  .form-control {height: 38px !important;border-radius: 0px !important;}
- @media only screen and (max-width: 768px) 
- {
- .step1, .step2, .step3, .step4, .step5, .step6, .step7, .step8, .step9, .step10, .step11 {float:none;}
- }
-</style>
+
+<link rel="stylesheet" type="text/css" href="css/lenden.css">
 <br>
 <div id="fh5co-hero">
 <div class="container">
-
-<div class="col-md-4 col-md-offset-4" style="display:block;">
-<form id="lenden_otp" name="lenden_otp" method="POST">
- {{ csrf_field() }}
+<div class="col-md-4 col-md-offset-4" id="step1">
+<form id="lenden_send_otp_form" method="POST" >
+ 	{{ csrf_field() }}
 	<div class="step1 white-bg box-shadow pad-btm">
 	<img src="images/lenden_logo.jpg" class="img-center"/>
 
 	<input type="hidden" name="request_type" id="request_type" value="send_otp">
 	
-
 	<div class="col-md-12">
 	<label>Mobile</label>
-	<input name="mobile_number" id="mobile_number" minlength="10" maxlength="10" onkeypress="return fnAllowNumeric(event)" type="text" class="form-control"  required="">
+	<input name="mobile_number" id="mobile_number"  maxlength="10" minlength="10"  type="text" class="form-control" required="" placeholder="Mobile number">
 	</div>
 	
 	<div class="col-md-12">
 	<label>Email Id</label>
-	<input name="email" id="email" oninput="mail('email')" type="text" class="form-control"  required="">
-	<span id="email_id" style="display:none;color: red; font-size: 10px">Please Enter Valid Email Id.</span>
+	<input name="email" id="email" type="email" class="form-control"  required="" placeholder="Email Address">
+
 	</div>
 	
 	
@@ -51,9 +35,18 @@
 	</div>
 	</div>
 	</form>
-	
 	</div>
-<div class="col-md-4 col-md-offset-4" style="display:block;">
+
+
+
+
+
+
+
+
+
+
+	<div class="col-md-4 col-md-offset-4 hidden" id="step2" >
 	<form name="lenden_verify_form" id="lenden_verify_form" method="POST">
     {{ csrf_field() }}
    <h4 class="blu-head-bg">Verify OTP</h4>
@@ -78,32 +71,31 @@
     </form>
     </div>
 
-    <div class="col-md-4 col-md-offset-4" style="display:block;">
+    <div class="col-md-4 col-md-offset-4 hidden" id="step3" >
 	<form name="borrower_signup_form" id="borrower_signup_form" method="POST">
     {{ csrf_field() }}
    <h4 class="blu-head-bg">Borrower Sign Up</h4>
-
     <div class="whit-bg">
     <br>
     <img src="images/verification_img.png" class="img-align-center"/>
     <div class="col-md-12">
 	<label>Full Name:</label>
-    <input type="text" class="form-control" name="full_name" id="full_name" required>
+    <input type="text" class="form-control" name="full_name" placeholder="Full Name" id="full_name" required>
     </div>
 
     <div class="col-md-12">
 	<label>Mobile No:</label>
-    <input type="text" class="form-control" name="mobile_number" id="mob" readonly required>
+    <input type="text" class="form-control" name="mobile_number" placeholder="Mobile Number" id="mob" readonly required>
     </div>
 
     <div class="col-md-12">
 	<label>Email:</label>
-    <input type="text" class="form-control" name="email" id="email_address" readonly required>
+    <input type="text" class="form-control" name="email" placeholder="Email" id="email_address" readonly required>
     </div>
 
     <div class="col-md-12">
 	<label>Password:</label>
-    <input type="text" class="form-control" name="password" id="password" required>
+    <input type="password" class="form-control" name="password" id="password" placeholder="Password" required>
     </div>
 
     <div class="col-md-12">
@@ -113,12 +105,12 @@
 
     <div class="col-md-12">
 	<label>Type:</label>
-    <input type="text" class="form-control" name="type" id="type">
+    <input type="text" class="form-control" placeholder="Type" name="type" id="type">
     </div>
 
     <div class="col-md-12">
 	<label>OTP</label>
-    <input type="text" class="form-control" name="otp" id="one-time-password">
+    <input type="text" class="form-control" name="otp" placeholder="OTP" id="one-time-password">
     </div>
     <a class="yellow-bg " id="sign-up">SIGN UP</a>
   
@@ -129,7 +121,7 @@
     </form>
     </div>
 
-    <div class="col-md-4 col-md-offset-4" style="display:block;">
+    <div class="col-md-4 col-md-offset-4 " id="step4">
 	<form name="lenden_task_id" id="lenden_task_id" method="POST">
     {{ csrf_field() }}
    <h4 class="blu-head-bg">GET TASK ID</h4>
@@ -181,29 +173,29 @@
     </div>
 	
 	
-	<div class="col-md-4 col-md-offset-4" style="display:block;">
+	<div class="col-md-4 col-md-offset-4 hidden" id="step5" >
 	<div class="step2 white-bg box-shadow pad-btm">
 	<h4 class="blu-head-bg">Enter Your Loan Requirements</h4>
 
 	
 	<div class="col-md-12">
 	<label>Enter the loan Amount you Require</label>
-	<input type="text" class="form-control"  required="">
+	<input type="text" class="form-control" placeholder="Loan Amount" required="">
 	</div>
 	
 	<div class="col-md-12">
 	<label>Select the Purpose of your loan</label>
-	<input type="text" class="form-control"  required="">
+	<input type="text" class="form-control" placeholder="Loan Purpose"  required="">
 	</div>
 	
 	<div class="col-md-12">
 	<label>Enter the loan tenure in Months</label>
-	<input type="text" class="form-control"  required="">
+	<input type="text" class="form-control" placeholder="Tenure in Months" required="">
 	</div>
 	
 	<div class="col-md-12">
 	<label>Please write the description of the loan</label>
-	<input type="text" class="form-control"  required="">
+	<input type="text" class="form-control" placeholder="description" required="">
 	</div>
 	
 	<div class="col-md-12">
@@ -214,7 +206,7 @@
 	</div>
 	
 	
-	<div class="col-md-4 col-md-offset-4" style="display:block;">
+	<div class="col-md-4 col-md-offset-4 hidden" id="step6" >
 	<div class="step3 white-bg box-shadow pad-btm">
 	<h4 class="blu-head-bg">Enter Pan Details</h4>
 	<div class="col-md-8 col-xs-8">
@@ -255,7 +247,7 @@
 	
 	
 	
-	<div class="col-md-4 col-md-offset-4" style="display:block;">
+	<div class="col-md-4 col-md-offset-4 hidden" id="step7" >
 	<div class="step4 white-bg box-shadow pad-btm">
 	<h4 class="blu-head-bg">Enter Aadhar Details</h4>
 	<div class="col-md-8 col-xs-8">
@@ -308,7 +300,7 @@
 
 	
 	
-	<div style="display:block;">
+	<div class="hidden" id="step8">
 	<div class="col-md-4 col-md-offset-2">
 	<div class="step5 white-bg box-shadow pad-btm">
 	<h4 class="blu-head-bg">Enter Address Details</h4>
@@ -421,7 +413,7 @@
 	
 
 	
-	<div class="col-md-4 col-md-offset-4" style="display:block;">
+	<div class="col-md-4 col-md-offset-4 hidden" id="step10" >
 	<div class="step4 white-bg box-shadow pad-btm">
 	<h4 class="blu-head-bg">Enter Personal Details</h4>
 	
@@ -483,7 +475,7 @@
 	
 	
 	
-	<div style="display:block;">
+	<div class="hidden" id="step11">
 	<div class="col-md-4 col-md-offset-2">
 	<div class="step6 white-bg box-shadow pad-btm">
 	<h4 class="blu-head-bg">Enter Professional Details</h4>
@@ -625,7 +617,7 @@
 	</div>
 	
 	
-	<div class="col-md-4 col-md-offset-4" style="display:block;">
+	<div class="col-md-4 col-md-offset-4 hidden" id="step12" >
 	<div class="step7 white-bg box-shadow pad-btm">
 	<h4 class="blu-head-bg">Enter Financial Details</h4>
 	<div class="col-md-8 col-xs-8">
@@ -671,7 +663,7 @@
 	
 	
 	
-	<div class="col-md-4 col-md-offset-4" style="display:block;">
+	<div class="col-md-4 col-md-offset-4 hidden" id="step13" >
 	<div class="step8 white-bg box-shadow pad-btm">
 	<h4 class="blu-head-bg">Enter Financial Details</h4>
 	<p class="col-md-12">Please Upload Your Cheque</p>
@@ -733,7 +725,7 @@
 	
 	
 	
-	<div class="col-md-4 col-md-offset-4" style="display:block;">
+	<div class="col-md-4 col-md-offset-4 hidden" id="step14" >
 	<div class="step8 white-bg box-shadow pad-btm">
 	<h4 class="blu-head-bg">Enter Assets Details</h4>
 	<p class="col-md-12">Please Provide the details of active loans have</p>
@@ -793,7 +785,7 @@
 	
 	
 	
-	<div class="col-md-4 col-md-offset-4" style="display:block;">
+	<div class="col-md-4 col-md-offset-4 hidden" id="step15" >
 	<div class="step8 white-bg box-shadow pad-btm">
 	<h4 class="blu-head-bg">Enter Active Loan Details</h4>
 	<p class="col-md-12">Please Provide the details of active loans have</p>
@@ -859,7 +851,7 @@
 	
 	
 	
-	<div class="col-md-4 col-md-offset-4" style="display:block;">
+	<div class="col-md-4 col-md-offset-4 hidden" id="step16" >
 	<div class="step8 white-bg box-shadow pad-btm">
 	<h4 class="blu-head-bg">Upload Documents</h4>
 	<p class="col-md-12">Please Upload any additional documents if any</p>
@@ -914,6 +906,7 @@
 
 
 
+
 @include('layout.footer')
 @include('layout.script')
 
@@ -926,88 +919,33 @@
      return true;
   else
 {
-    // alert('Please Enter Only Character values.');
+    // console.log('Please Enter Only Character values.');
     return false;
       }
 }
 </script>
 
-<script type="text/javascript">
-  function mail(obj,val){
-    // //console.log(obj);
-    if(obj=='email' ){
-                   var str =$('#email').val();
-                   var emailPattern = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/; 
-                   var res = str.match(emailPattern);
-                   if(res){
-                     // //console.log('Pancard is valid one.!!');
-                      $('#email_id').hide();
 
-                  }else{
-                    // //console.log('Oops.Please Enter Valid Pan Number.!!');
-                    $('#email_id').show();
-
-                    return false;
-                  }
-                  
-  }
-}
-</script>
 
 <script type="text/javascript">
 	$('#otp').click(function(){
-     if (!$('#lenden_otp').valid()) 
+     if (!$('#lenden_send_otp_form').valid()) 
      	{
-
+     		return false;
      	} 
      	else 
      	{
-        var mobile_number=$('#mobile_number').val();
-        $('#mob_no').val(mobile_number);
-        $('#mob').val(mobile_number);
-
-        var email=$('#email').val();
-        $('#email_addr').val(email);
-        $('#email_address').val(email);
-
-        
-
-     	$.ajax({  
-        type: "POST",  
-        url: "{{URL::to('lenden-get-otp')}}",
-        data : $('#lenden_otp').serialize(),
-        success: function(msg){
-        console.log(msg.code);
-        if (msg.code==200 && msg.response =="OTP Sent") 
-        {
-          $('#lenden_otp').hide();
-          $('#lenden_verify_form').show();
-          alert('OTP has been sent to your mobile number');
-        }
-        else if(msg.code==401)
-        {
-          alert('Invalid OTP');
-        }
-        else if(msg.code==403)
-        {
-          alert('Number already Registered');
-        }
-        else if(msg.code==404)
-        {
-          alert('Request type Not Found ');
-        }
-        else
-        {
-          alert('OTP sending Failed');
-        }
-         
-          
-          
-
-          
-
-        }  
-      }); 
+			$.post("{{URL::to('lenden-send-otp')}}",$('#lenden_send_otp_form').serialize())
+			  .done(function(msg) {
+			    if(msg.code==1){
+			    	$("#step1").addClass("hidden");
+			    	$("#step2").removeClass("hidden");
+			    }
+			  })
+			  .fail(function() {
+			    console.log( "error" );
+			  });
+			       
      	}
 	});
 
@@ -1016,32 +954,21 @@
 	<script>
 
 	$("#lenden_verify").click(function(){
-    // alert('hiee');
+    // console.log('hiee');
      
             if (! $('#lenden_verify_form').valid()) {
 
             }else{
-            	var otp=$('#OTP').val();
-            	$('#one-time-password').val(otp);
-            $.ajax({  
-		    type: "POST",  
-		    url: "{{URL::to('lenden-verify')}}",
-		    dataType:"json",
-		    data : $('#lenden_verify_form').serialize(),
-		    success: function(msg){
-		    console.log(msg.code)
-		        if (msg.code==200) 
-		        {
-		        	
-		        alert('OTP has been verified Successfully');
-		        }
-		        else 
-		        {
-                 alert('Invalid OTP');
-		        }
-		       
-		    }
-		    });
+            $.post("{{URL::to('lenden-verify-otp')}}",$('#lenden_verify_form').serialize())
+			  .done(function(msg) {
+			    if(msg.code==1){
+			    	$("#step2").addClass("hidden");
+			    	$("#step3").removeClass("hidden");
+			    }
+			  })
+			  .fail(function() {
+			    console.log( "error" );
+			  });
 		    }
 		    });
 </script>
@@ -1064,15 +991,15 @@
 		    if (msg.code==200) 
 	        {
 	          
-	          alert('Sign up Successful');
+	          console.log('Sign up Successful');
 	        }
 	        else if(msg.code==401)
 	        {
-	          alert('Invalid verification code');
+	          console.log('Invalid verification code');
 	        }
 	        else
 	        {
-	          alert('Mobile Already Exists OR Email Already Exists');
+	          console.log('Mobile Already Exists OR Email Already Exists');
 	        }
 	        
 		        
@@ -1091,19 +1018,17 @@
      }
      else
      {
-       $.ajax({  
-		    type: "POST",  
-		    url: "{{URL::to('lenden-taskid')}}",
-		    dataType:"json",
-		    data : $('#lenden_task_id').serialize(),
-		    success: function(msg){
-		    console.log(msg)
-		    
-	        
-		        
-		       
-		    }
-		    });
+        $.post("{{URL::to('lenden-taskid')}}",$('#lenden_verify_form').serialize())
+			  .done(function(msg) {
+
+			    if(msg.code==1){
+			    	$("#step4").addClass("hidden");
+			    	$("#step5").removeClass("hidden");
+			    }
+			  })
+			  .fail(function() {
+			    console.log( "error" );
+			  });
      }
 	});
 </script>

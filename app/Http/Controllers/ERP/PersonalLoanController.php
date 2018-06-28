@@ -10,7 +10,7 @@ class PersonalLoanController extends Controller
 {
      function loadbanklist(Request $req)
      {
-     	$data = DB::connection("ERP")->select("select * from tests");
+     	$data = DB::connection("ERP")->select("select * from Bank_Master");
      	return ($data);
      }
 }

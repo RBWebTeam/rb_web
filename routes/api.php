@@ -82,6 +82,10 @@ Route::post('balance-transfer-with-qid','MobileApiController@balance_transfer_wi
 Route::group(["namespace"=>"ERP"],function(){
 	Route::post("testERP","CreditCardController@index");
 	Route::post("testPLERP","PersonalLoanController@loadbanklist");
+	Route::post("Product-Master","MasterController@getProductMaster");
+	Route::post("Lead-Status","MasterController@getLeadStatusMaster");
+	Route::post("Quick-Lead-Detail","MasterController@getQuickLeadDetail");
+
 });
 
 

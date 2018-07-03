@@ -84,7 +84,9 @@ Route::group(["namespace"=>"ERP"],function(){
 	Route::post("testPLERP","PersonalLoanController@loadbanklist");
 	Route::post("Product-Master","MasterController@getProductMaster");
 	Route::post("Lead-Status","MasterController@getLeadStatusMaster");
+	
 	Route::post("Quick-Lead-Detail","MasterController@getQuickLeadDetail");
+
 
 });
 

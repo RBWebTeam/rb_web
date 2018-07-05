@@ -98,13 +98,13 @@
                             <div class="card-listing how-it-block2 hvr-float-shadow2">
                                 <!-- card listing -->
                                 <div class="card-img">
-                                    <a  href="{{URL::to('capitalfloat')}}" ><img src="images/express-loan/CapitalFloat.png" alt="Capital First"></a>
+                                    <a  href="{{URL::to('coming-soon')}}" ><img src="images/express-loan/CapitalFloat.png" alt="Capital Float"></a>
                                 </div>
                                 <div class="card-content" style="text-align: center;">
-                                    <h6 class="text-center text-danger"></h6>
-                                    <h4 class="card-name"><a  href="{{URL::to('capitalfloat')}}" class="title">Capital Float</a></h4>
+                                    <h6 class="text-center text-danger"><i>Coming Soon</i></h6>
+                                    <h4 class="card-name"><a  href="{{URL::to('coming-soon')}}" class="title">Capital Float</a></h4>
                                     
-                                    <a href="{{URL::to('capitalfloat')}}" class="btn btn-default btn-sm" style="margin-right: 0px;">Apply Now</a>
+                                    <a href="{{URL::to('coming-soon')}}" class="btn btn-default btn-sm" style="margin-right: 0px;">Apply Now</a>
                                    
                                 </div>
                             </div>
